@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biochemistry English Oral Exam Trainer | 生化国考口试备考系统</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo-group">
+      <h1>Biochem Oral Exam Trainer</h1>
+      <p>Czech Syllabus ↔ Chinese Concept Learning ↔ English Oral Output</p>
+    </div>
+    <nav>
+      <button class="nav-btn active" data-tab="simulator-tab">🎙️ 口试模拟器 (Oral Simulator)</button>
+      <button class="nav-btn" data-tab="cards-tab">🎴 抽背卡片 (Flashcards)</button>
+      <button class="nav-btn" data-tab="guide-tab">📖 完整大纲教材 (Master Guide)</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- TAB 1: Oral Simulator -->
+    <section id="simulator-tab" class="tab-content active">
+      <div class="glass-panel">
+        <div class="simulator-header">
+          <h2>考官抽题与实时英文口答特训</h2>
+          <div class="select-box">
+            <label for="topic-select" style="color:var(--text-sub); margin-right:0.5rem;">选择章节:</label>
+            <select id="topic-select"></select>
+          </div>
+          <button id="generate-btn" class="btn-primary">🎲 抽取考题 (Random Question)</button>
+        </div>
+
+        <div class="question-card">
+          <h3 id="question-en">Question will appear here...</h3>
+          <p id="question-cn" style="color:var(--text-sub); font-size:0.95rem; margin-top:0.5rem;"></p>
+        </div>
+
+        <!-- Timer -->
+        <div class="timer-container">
+          <span style="color:var(--text-sub); font-weight:600;">⏱️ 口试计时 (2 Min Timer):</span>
+          <div class="timer-display" id="timer-display">02:00</div>
+          <div class="timer-controls">
+            <button onclick="startTimer()">▶️ 开始 (Start)</button>
+            <button onclick="pauseTimer()">⏸️ 暂停 (Pause)</button>
+            <button onclick="resetTimer()">🔄 重置 (Reset)</button>
+          </div>
+        </div>
+
+        <!-- Answer Checklist & Blueprints -->
+        <div class="blueprint-box">
+          <h4>💡 英语口试核心必做答要点 (Must-Include Speaking Points)</h4>
+          <div id="checklist-container"></div>
+
+          <h4 style="margin-top:1.5rem;">🔑 必用标准英文学术词汇 (Key Vocabulary)</h4>
+          <div id="keywords-container" style="margin-top:0.5rem;"></div>
+
+          <details style="margin-top:1.5rem;">
+            <summary style="cursor:pointer; color:var(--accent-purple); font-weight:600; padding:0.5rem 0;">
+              ✨ 查看满分口试回答范例 (View Model Spoken Script)
+            </summary>
+            <div id="model-answer" style="margin-top:1rem; background:rgba(15,23,42,0.9); padding:1rem; border-radius:8px; line-height:1.7; font-family:monospace; color:#e2e8f0; border-left:3px solid var(--accent-purple);"></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Flashcards -->
+    <section id="cards-tab" class="tab-content">
+      <div class="glass-panel" style="text-align:center;">
+        <h2>大纲考点抽背卡 (Flashcards)</h2>
+        <p style="color:var(--text-sub); margin-bottom:1rem;">点击卡片翻面，核对英文专业词汇与回答框架。</p>
+
+        <div class="flashcard-container">
+          <div class="flashcard" id="flashcard">
+            <!-- Front -->
+            <div class="card-face card-front">
+              <div class="card-tag" id="card-tag">Topic</div>
+              <h3 id="card-question-cn" style="font-size:1.4rem; color:#fff; line-height:1.5;">卡片正面</h3>
+              <p id="card-question-en" style="color:var(--accent-blue); font-size:1rem; margin-top:1rem;"></p>
+              <div class="card-hint">💡 点击卡片翻面 (Click to Flip)</div>
+            </div>
+            <!-- Back -->
+            <div class="card-face card-back">
+              <h4 style="color:var(--accent-purple); margin-bottom:1rem;">🔑 英文口试关键词 & 回答要点</h4>
+              <ul id="card-keywords" style="text-align:left; color:#cbd5e1; line-height:1.8; padding-left:1.2rem;"></ul>
+              <div class="card-hint">💡 点击卡片返回 (Click to Flip Back)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flashcard-nav">
+          <button id="card-prev" class="btn-primary">◀ 上一张 (Prev)</button>
+          <button id="card-next" class="btn-primary">下一张 (Next) ▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: Master Guide -->
+    <section id="guide-tab" class="tab-content">
+      <div class="glass-panel">
+        <h2>📖 完整生化国考中文教材与英文口试模板</h2>
+        <p style="color:var(--text-sub); margin-bottom:1.5rem;">
+          已根据查尔斯大学《Biochemie - Základní kurz》大纲及中文手写笔记生成全套 Markdown 教材。
+        </p>
+
+        <div style="background:rgba(15,23,42,0.8); border-radius:12px; padding:1.5rem; border:1px solid var(--panel-border);">
+          <p style="color:#e2e8f0; line-height:1.7;">
+            主教材文件位于工作区目录下的 <code>Biochemistry_Master_Guide_CN_EN.md</code>。<br>
+            您可以使用任意 Markdown 浏览器，或者直接在 VS Code / Editor 中开启边学边刷。
+          </p>
+          <a href="../Biochemistry_Master_Guide_CN_EN.md" target="_blank" style="display:inline-block; margin-top:1rem; color:var(--accent-blue); font-weight:600; text-decoration:underline;">
+            🔗 在新窗口打开主教材文件 (Open Master Guide)
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Biochemistry State Exam Prep System • Built for Czech Syllabus & English Oral Defense</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
