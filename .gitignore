@@ -1,5 +1,6 @@
 *.pdf
 pdf_samples/
+extracted_raw/*.png
 node_modules/
 dist/
 .DS_Store
