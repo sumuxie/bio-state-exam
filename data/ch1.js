@@ -100,7 +100,7 @@ window.BIOCHEM.topics.push(
   cnTitle: "生物与非生物",
   pages: [10, 11],
   coverage: "full",
-  coverageNote: "Both pages verified against the extracted scans.",
+  coverageNote: "Both pages verified against the extracted scans. Tab. 1.2 and the Obr. 1.1 size scale were recovered by re-reading the page images — the raw OCR had dropped the whole composition table and garbled all four order-of-magnitude markers.",
   cnNote: { topic: "一", title: "序论", status: "mapped" },
   summary: {
     en: "Distinguishing living from non-living looks trivial but is not sharply defined — viruses show very limited vital manifestations and structurally approach crystals, while at the other end of the size scale some hypotheses treat the whole Earth as a living 'superorganism' (Gaia). The most exclusive manifestation of life turns out to be reproduction; the most conspicuous structural feature is a high degree of organisation.",
@@ -117,6 +117,9 @@ window.BIOCHEM.topics.push(
     { en: "The most important difference in the FORM of elements is carbon: in inanimate nature carbon is mostly oxidised (carbonates, CO₂), whereas living matter is characterised by formally reduced (hydrogenated), energy-rich carbon, whose energy can be released simply by burning it in air to water and CO₂.", cn: "元素存在形式上最重要的差别在于碳：在无生命自然界中碳多为氧化态（碳酸盐、CO₂），而生命物质的特征是形式上被还原（加氢）的、富能的碳，其能量只需在空气中燃烧生成水和 CO₂ 即可释放。" },
     { cz: "chiralita", en: "A further striking feature of the carbon compounds in living matter is their chirality: unlike laboratory-prepared analogues, natural substances are mostly optically active. The causes of this are not yet fully explained.", cn: "生命物质中碳化合物另一显著特征是手性：与实验室制备的类似物不同，天然物质大多具有旋光活性。其原因至今尚未完全阐明。" },
     { en: "Nitrogen shows the same pattern: in inanimate nature mostly free gas and oxidised (nitrates), while living matter typically contains reduced-nitrogen compounds (especially amines).", cn: "氮表现出同样的规律：在无生命自然界中主要为游离气体和氧化态（硝酸盐），而生命物质的典型形式是还原态氮化合物（尤其是胺类）。" },
+    { cz: "Tab. 1.2 — složení těla vs. zemská kůra", en: "TAB. 1.2 — composition of the human body vs. the Earth's crust, as mass % / atomic %, recovered directly from the page scan. HUMAN BODY: O 65.0 / 25.5 · C 18.5 / 9.7 · H 10.0 / 62.8 · Ca 1.5 / 0.24 · Si <0.001 / <0.001 · Al <0.001 / <0.001. EARTH'S CRUST: O 49.5 / 54.9 · C 0.1 / 0.14 · H 0.9 / 16.0 · Ca 3.4 / 1.5 · Si 25.7 / 16.3 · Al 7.5 / 4.9.", cn: "表 1.2——人体与地壳的组成，以质量% / 原子%表示，直接从页面扫描件恢复。人体：O 65.0 / 25.5 · C 18.5 / 9.7 · H 10.0 / 62.8 · Ca 1.5 / 0.24 · Si <0.001 / <0.001 · Al <0.001 / <0.001。地壳：O 49.5 / 54.9 · C 0.1 / 0.14 · H 0.9 / 16.0 · Ca 3.4 / 1.5 · Si 25.7 / 16.3 · Al 7.5 / 4.9。" },
+    { en: "READ THE TABLE THIS WAY: hydrogen is only 10 % of body mass but 62.8 ATOMIC per cent — this is exactly the point that the trend towards light elements 'stands out even more sharply in atomic per cent'. Carbon is 18.5 % of the body against 0.1 % of the crust, a 185-fold enrichment, while silicon runs the other way: 25.7 % of the crust against less than 0.001 % of the body.", cn: "表格的正确读法：氢只占人体质量的 10%，却占 62.8 个原子百分比——这正是「用原子百分比比较时轻元素的趋势更加突出」这句话的确切含义。碳占人体 18.5%，而地壳仅 0.1%，富集达 185 倍；硅则相反：占地壳 25.7%，而在人体中不足 0.001%。" },
+    { cz: "Obr. 1.1 — rozměrová variabilita", en: "OBR. 1.1 — the size comparison of living and non-living objects runs over four order-of-magnitude markers: 10⁻⁹ m (atoms, proteins, membrane thickness, viruses) · 10⁻⁶ m (chloroplast, cell) · 10⁻³ m (flea, length of DNA) · 10³ m (car, whale, sequoia, and man at about 1 m).", cn: "图 1.1——生物与非生物对象的尺寸比较跨越四个数量级刻度：10⁻⁹ m（原子、蛋白质、膜厚度、病毒）· 10⁻⁶ m（叶绿体、细胞）· 10⁻³ m（跳蚤、DNA 长度）· 10³ m（汽车、鲸、红杉，人约为 1 m）。" },
     { en: "Summary statement of the section: living matter is a dynamic system, subject to constant change and constantly renewing itself.", cn: "本节的总结性论断：生命物质是一个动态系统，不断发生变化并不断自我更新。" }
   ],
   terms: [
@@ -164,6 +167,20 @@ window.BIOCHEM.topics.push(
       answer: 1,
       why_en: "Silicon and aluminium are among the commonest elements on Earth, yet their representation in living matter is strikingly low.",
       why_cn: "硅和铝属于地球上最常见的元素，但它们在生命物质中的占比却明显偏低。"
+    },
+    {
+      type: "mcq",
+      q_en: "Hydrogen is 10 % of the human body by MASS but 62.8 % by ATOMIC per cent. What does this illustrate?",
+      q_cn: "氢占人体质量的 10%，却占 62.8 个原子百分比。这说明了什么？",
+      options: [
+        "That mass per cent is the more reliable measure for living matter",
+        "That the trend towards light elements stands out even more sharply in atomic per cent than in mass per cent",
+        "That hydrogen is a variable trace element",
+        "That the human body is chemically identical to the Earth's crust"
+      ],
+      answer: 1,
+      why_en: "This is exactly the textbook's point: living matter is conspicuous for a high concentration of light elements, and the trend emerges even more strongly when one compares atomic per cent instead of mass per cent — a light atom contributes little mass but counts fully as one atom.",
+      why_cn: "这正是教材的论点：生命物质以轻元素浓度高为显著特征，而若比较原子百分比而非质量百分比，这一趋势会更加突出——轻原子贡献的质量很小，但在计数上算作完整的一个原子。"
     },
     {
       type: "short",

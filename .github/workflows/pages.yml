@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - claude/biochem-chapters-1-3-notes-1g3f2a
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; queue at most one more.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the topic data parses and is well formed
+        run: |
+          node -e "
+          global.window = {};
+          require('./data/ch1.js'); require('./data/ch2.js'); require('./data/ch3.js');
+          const T = window.BIOCHEM.topics;
+          if (!T.length) throw new Error('no topics loaded');
+          const problems = [];
+          T.forEach(t => {
+            ['id','chapter','section','czTitle','enTitle','cnTitle','coverage','summary'].forEach(k => {
+              if (!t[k]) problems.push(t.id + ': missing ' + k);
+            });
+            (t.quiz || []).forEach(q => {
+              if (q.type === 'mcq' && (!Array.isArray(q.options) || typeof q.answer !== 'number'
+                  || q.answer < 0 || q.answer >= q.options.length)) problems.push(t.id + ': bad mcq');
+            });
+          });
+          const ids = T.map(t => t.id);
+          ids.filter((v, i) => ids.indexOf(v) !== i).forEach(d => problems.push('duplicate id ' + d));
+          if (problems.length) { console.error(problems.join('\n')); process.exit(1); }
+          console.log('ok: ' + T.length + ' topics');
+          "
+
+      - uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

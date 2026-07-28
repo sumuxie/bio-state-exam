@@ -736,7 +736,7 @@ window.BIOCHEM.topics.push(
   cnTitle: "简单蛋白质与结合蛋白质",
   pages: [36, 37],
   coverage: "full",
-  coverageNote: "Both pages verified against the extracted scans. One numeric detail on p.36 — the number of phosphate residues in phosvitin — has an ambiguous exponent in the scan; it is given below as approximately 100.",
+  coverageNote: "Both pages verified against the extracted scans. The phosvitin figure was re-read from the p.36 image and confirmed as 10² phosphate residues per chain, an exponent the raw OCR rendered as an unreadable '10*'.",
   cnNote: { topic: "七", title: "结构与功能关系", status: "partial" },
   summary: {
     en: "Proteins are sometimes divided into SIMPLE and CONJUGATED: simple proteins yield only amino acids on hydrolysis, i.e. they contain only the peptide component; conjugated proteins contain further components besides amino acids. According to current ideas, non-peptide components are a regular part of the vast majority of proteins — so-called simple proteins are rather the EXCEPTION.",
