@@ -1,6 +1,8 @@
 *.pdf
 pdf_samples/
 extracted_raw/*.png
+# 分卷 PDF 只保留本地（约 444 MB），说明文件仍然提交
+生物化学笔记_分卷/*.pdf
 node_modules/
 dist/
 .DS_Store
