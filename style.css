@@ -458,3 +458,14 @@ body.bionic-on .q-text, body.bionic-on .oral-q, body.bionic-on .model-answer {
   .timer-btns { margin-left: 0; width: 100%; }
   .card-actions button { flex: 1; min-width: 0; }
 }
+
+@media (max-width: 380px) {
+  /* Four icon-sized controls (bionic, theme) plus the language and mode
+     groups no longer fit at this width without shrinking further. */
+  .topbar { gap: 0.2rem; padding: 0 0.3rem; }
+  .icon-btn { width: 27px; height: 27px; font-size: 0.82rem; }
+  .modes { gap: 0.05rem; }
+  .mode-btn { padding: 0.32rem 0.38rem; }
+  .lang-toggle button { padding: 0.28rem 0.3rem; font-size: 0.66rem; }
+  .topbar-right { gap: 0.2rem; }
+}

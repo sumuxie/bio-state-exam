@@ -83,13 +83,23 @@
   // always split on sentence boundaries first.
   function speak(text, lang, btn) {
     if (!speechAvailable || !text) return;
-    if (btn && btn === activeSayBtn) { window.speechSynthesis.cancel(); return; }
+    // Clicking the button that is already speaking cancels it. cancel() does
+    // not reliably fire onend in every browser, so the visual state is
+    // cleared here explicitly rather than left to depend on that event.
+    if (btn && btn === activeSayBtn) {
+      window.speechSynthesis.cancel();
+      btn.classList.remove('speaking');
+      activeSayBtn = null;
+      return;
+    }
     window.speechSynthesis.cancel();
-    if (activeSayBtn) activeSayBtn.classList.remove('speaking');
+    if (activeSayBtn) { activeSayBtn.classList.remove('speaking'); activeSayBtn = null; }
 
     const chunks = (String(text).match(/[^.!?。！？]+[.!?。！？]*/g) || [String(text)])
       .map((c) => c.trim()).filter(Boolean);
     if (!chunks.length) return;
+
+    const clearActive = () => { if (btn) btn.classList.remove('speaking'); if (activeSayBtn === btn) activeSayBtn = null; };
 
     chunks.forEach((chunk, i) => {
       const u = new SpeechSynthesisUtterance(chunk);
@@ -98,9 +108,7 @@
       const v = pickVoice(lang);
       if (v) u.voice = v;
       if (i === 0) u.onstart = () => { if (btn) { btn.classList.add('speaking'); activeSayBtn = btn; } };
-      if (i === chunks.length - 1) {
-        u.onend = () => { if (btn) btn.classList.remove('speaking'); if (activeSayBtn === btn) activeSayBtn = null; };
-      }
+      if (i === chunks.length - 1) { u.onend = clearActive; u.onerror = clearActive; }
       window.speechSynthesis.speak(u);
     });
   }
@@ -123,7 +131,11 @@
   // listener rebound after each render rather than delegated globally.
   function wireSayButtons(root) {
     if (!root) return;
-    root.querySelectorAll('.say-btn').forEach((btn) => {
+    // Some render paths (e.g. answering a quiz question) rewire the same
+    // container without rebuilding every node in it, so a button that
+    // survived from the previous pass must not get a second listener.
+    root.querySelectorAll('.say-btn:not([data-wired])').forEach((btn) => {
+      btn.dataset.wired = '1';
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -831,7 +843,10 @@
     // Keyboard: space flips a card, 1/2 grade it.
     document.addEventListener('keydown', (e) => {
       if (!$('#panel-cards').classList.contains('active')) return;
-      if (/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;
+      // A focused button (e.g. a speaker icon, or "Got it"/"Missed it")
+      // should get its own native Space/Enter activation, not have it
+      // hijacked into flipping the card.
+      if (/^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(document.activeElement.tagName)) return;
       if (e.code === 'Space') { e.preventDefault(); $('#flashcard').classList.toggle('flipped'); }
       if (e.key === '1') gradeCard(false);
       if (e.key === '2') gradeCard(true);
