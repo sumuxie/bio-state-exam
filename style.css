@@ -188,6 +188,27 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-family: var(--mono); font-size: 0.78rem; padding: 0 0.3rem 0 0;
 }
 
+/* ------------------------------------------------------- pronunciation */
+.say-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 21px; height: 21px; padding: 0; margin-left: 0.3rem;
+  border: 1px solid var(--line); border-radius: 50%; background: var(--bg);
+  color: var(--fg-dim); font-size: 0.68rem; line-height: 1; cursor: pointer;
+  vertical-align: middle;
+}
+.say-btn:hover { color: var(--accent); border-color: var(--accent); }
+.say-btn.speaking { color: var(--accent); border-color: var(--accent); animation: say-pulse 0.55s ease-in-out infinite alternate; }
+@keyframes say-pulse { from { opacity: 0.55; transform: scale(0.94); } to { opacity: 1; transform: scale(1.04); } }
+
+/* --------------------------------------------------------- bionic reading */
+.icon-btn.active { background: var(--accent-dim); border-color: var(--accent-dim); color: #fff; }
+.bionic-b { font-weight: 700; }
+body.bionic-on .summary, body.bionic-on .points, body.bionic-on .term-def,
+body.bionic-on .q-text, body.bionic-on .oral-q, body.bionic-on .model-answer {
+  letter-spacing: 0.005em;
+  word-spacing: 0.06em;
+}
+
 /* ------------------------------------------------------------------- study */
 .welcome { padding-top: 1.5rem; }
 .welcome h1 { font-size: 1.9rem; letter-spacing: -0.02em; }
@@ -436,4 +457,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .timer-face { font-size: 1.6rem; }
   .timer-btns { margin-left: 0; width: 100%; }
   .card-actions button { flex: 1; min-width: 0; }
+}
+
+@media (max-width: 380px) {
+  /* Four icon-sized controls (bionic, theme) plus the language and mode
+     groups no longer fit at this width without shrinking further. */
+  .topbar { gap: 0.2rem; padding: 0 0.3rem; }
+  .icon-btn { width: 27px; height: 27px; font-size: 0.82rem; }
+  .modes { gap: 0.05rem; }
+  .mode-btn { padding: 0.32rem 0.38rem; }
+  .lang-toggle button { padding: 0.28rem 0.3rem; font-size: 0.66rem; }
+  .topbar-right { gap: 0.2rem; }
 }
