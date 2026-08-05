@@ -11,21 +11,47 @@ and consequently nobody could `git grep` it, nothing forced it to stay in sync w
 `main` actually contained, and a real feature (see §5) silently regressed as a result. Keep
 this file itself committed and current — that is the entire point of it existing.
 
-## 0. Current state as of this handoff (2026-08-04)
+## 0. Current state as of this handoff (updated 2026-08-05)
 
-- **Chapters 1–5 done and live**: 1 General principles, 2 Amino acids/proteins, 3 Enzymes,
-  4 Nucleic acids/protein synthesis, 5 Further protein metabolism/amino acid
-  interconversions. 53 topic nodes total.
-- **Chapters 6–10 not started**: 6 Bioenergetika (pp.130–147), 7 Sacharidy (pp.148–175),
-  8 Lipidy (pp.176–201), 9 Fotosyntéza (pp.202–217), 10 Vzájemné vztahy v intermediárním
-  metabolismu a regulační mechanismy, incl. Hormony (pp.218–228). See §11 for the Chinese
-  notes' already-located page ranges for most of these — do the TOC/page-number legwork in
-  §3 anyway to confirm, don't just trust this table blindly as it ages.
-- **Pronunciation + bionic reading**: implemented, fixed, and (as of this handoff) actually
-  on `main` — see §5 and §7 for exactly what went wrong before and how to not repeat it.
-- **Flashcard/glossary language priority**: changed 2026-08-04, see §5a. Front of flashcard
-  is now English, not Czech. This was a deliberate, user-requested change — do not revert it
-  under the assumption the original CZ-first design was intentional.
+- **Chapters 1–6 done and live on `main`**: 1 General principles, 2 Amino acids/proteins,
+  3 Enzymes, 4 Nucleic acids/protein synthesis, 5 Further protein metabolism/amino acid
+  interconversions, 6 Bioenergetika (bioenergetics, incl. the citric acid cycle and the
+  respiratory chain/oxidative phosphorylation). 72 topic nodes total. Pushed and merged to
+  `main` directly (see the two merge commits around `12c2d9d`/`a4d7499`) — GitHub Actions
+  should have deployed it live within a few minutes of that push.
+- **Chapters 7–10 not started**: 7 Sacharidy (pp.148–175, sugars — includes glycolysis,
+  gluconeogenesis, glycogen), 8 Lipidy (pp.176–201, lipids — fatty acids, membranes),
+  9 Fotosyntéza (pp.202–217, photosynthesis), 10 Vzájemné vztahy v intermediárním
+  metabolismu a regulační mechanismy, incl. §10.3 Hormony (pp.218–228, metabolic
+  integration + hormones). See §11 for the Chinese notes' already-located page ranges for
+  most of these — do the TOC/page-number legwork in §3 anyway to confirm, don't just trust
+  the table blindly as it ages. This is roughly 78 more pages across 4 chapters — comparable
+  in size to what chapters 4–6 already covered (66 pages), so budget accordingly; it will
+  not fit in one session's context window done to the same depth, expect to split it.
+- **Pronunciation + bionic reading**: implemented, fixed, and on `main` — merged TWICE
+  independently (once via a manual `git apply` of the orphaned commits' diff during this
+  session, once via the user properly merging PR #2 on GitHub at almost the same time),
+  which produced a real merge conflict in `app.js` when the two lineages met — resolved in
+  favor of the flashcard EN-first fix (§5a) over the old CZ-first version PR #2's code still
+  had. See §5 and §7 for the full story and how to not repeat the original mistake.
+- **Flashcard/glossary language priority**: changed 2026-08-04/05, see §5a. Front of
+  flashcard is now English, not Czech. This was a deliberate, user-requested change — do not
+  revert it under the assumption the original CZ-first design was intentional.
+- **Operational note — this session hit "monthly spend limit" API errors repeatedly** while
+  running background verification/drafting agents for chapters 5 and 6 (error message points
+  to claude.ai/settings/usage). It is NOT a content problem and not something code can fix.
+  What worked: (1) retry the same agent call — sometimes succeeds immediately, sometimes
+  fails again; (2) if an agent fails mid-task, check whether it had already written its
+  output file before dying (`ls` the scratch dir) — several ch6 agents had fully written
+  valid, complete scratch files moments before the fatal error, and those were reused as-is
+  rather than re-running the whole drafting pass. Always check for a recoverable file before
+  assuming a failed agent's work is lost.
+- **Independent verification passes for chapter 6 did not all complete before this handoff
+  was last updated** — retry them (or, if picking this up much later, check
+  `data/ch6.js` nodes for any node whose content looks unreviewed) before treating chapter 6
+  as fully audited to the same standard as chapters 1–5. One real issue was already found and
+  fixed (node `6-2-3`'s summary/oral overstated "sole carbon source" where the book, and the
+  node's own `points`, correctly say "acetate or other acetyl-CoA-producing compounds").
 
 ## 1. What this is
 
@@ -426,44 +452,52 @@ tree tidier — not part of the chapter-4/5 or bionic-reading work.
 
 ## 11. Open items and the Chinese-notes map, as of this handoff
 
-**Chapters 6–10**: not started. Page ranges (confirm against the book's own TOC pages 4–6
+**Chapters 7–10**: not started. Page ranges (confirm against the book's own TOC pages 4–6
 before trusting this table, since it's hand-transcribed and could have a typo):
 
 | Ch | Title | Pages |
 |---|---|---|
-| 6 | Bioenergetika | 130–147 |
 | 7 | Sacharidy | 148–175 |
 | 8 | Lipidy | 176–201 |
 | 9 | Fotosyntéza a další biosyntetické pochody fotoautotrofů | 202–217 |
 | 10 | Vzájemné vztahy v intermediárním metabolismu a regulační mechanismy (incl. 10.3 Hormony) | 218–228 |
 
+**Chapter 6 is done** (Bioenergetika, pp.130–147, 19 nodes). Its drafting agents mostly
+self-served their `cnNote` pairings straight from this table after being told to read this
+whole file — keep instructing future drafting agents to do that, it works. Two things
+chapter 6 could NOT confidently pair and correctly left `status: "pending"`: §6.2.3
+(glyoxylate cycle — no notes topic found covering it) and all three §6.3 porphyrin-protein
+nodes (十二's actual content was never verified by reading it — see below).
+
 **Chinese notes (`生物化学笔记.pdf`, 230 handwritten pages, pre-split into 16 volumes of 15
 pages each in `生物化学笔记_分卷/`, page footers preserve true page numbers)** — mapping
-confirmed so far, most of it located during chapters 4–5's background searches and NOT yet
-consumed by any chapter, so check here first before dispatching a fresh 16-volume search:
+confirmed so far. Rows marked "mapped" have actually been read and used by a chapter; rows
+marked "title-match only" are an inference from the topic's title/starting page, never
+actually opened and read — treat those as a strong hint, not a citation, and verify by
+actually reading the pages before upgrading a node's `cnNote.status` past `"partial"`:
 
-| Notes topic | Title | Pages | Likely textbook match |
-|---|---|---|---|
-| 一 | 序论 | — | ch.1 (mapped) |
-| 二 | 糖类 | not yet pinned down to exact pages | ch.7 Sacharidy |
-| 三 | 脂质 | not yet pinned down to exact pages | ch.8 Lipidy |
-| 四–八 | 氨基酸 / 蛋白质结构 | — | ch.2 (mapped) |
-| 九–十一 | 酶 (general/kinetics/mechanism) | pp.47–76 | ch.3 (mapped) |
-| 十二 | 维生素和辅酶 | p.77 | possibly ch.6 §6.3 porphyrin proteins, or ch.3 coenzymes — unconfirmed |
-| 十三–十六 | 核酸 (general/structure/physicochem/methods) | pp.83–98 | ch.4 (mapped) |
-| 十七 | 代谢总论 | p.99 | possibly ch.6 §6.1 general bioenergetics principles — unconfirmed |
-| 十八 | 生物能学 | p.103 | ch.6 §6.1 Bioenergetika — strong title match |
-| 十九 | 糖酵解 | p.105 | ch.7 §7.8 Glykolýza |
-| 二十 | 柠檬酸循环 | p.119 | ch.6 §6.2.2 Citrátový cyklus |
-| 二十一 | 氧化磷酸化作用 | p.127 | ch.6 §6.2.4 Respirační řetězec a aerobní fosforylace |
-| 二十二 | 戊糖磷酸途径和糖的其它代谢途径 | p.139 | ch.7 §7.7 Dvě cesty k pentosafosfátům, and/or other ch.7 sugar-interconversion sections |
-| 二十三 | 脂类的分解 | p.147 | ch.8 §8.4 Odbourávání lipidů |
-| 二十四 | 脂类的生物合成 | p.153 | ch.8 §8.3 Biosyntéza lipidů |
-| 二十五 | 蛋白质的降解及氨基酸的分解代谢 | pp.161–170 | ch.5 (mapped, this handoff) |
-| 二十六 | 氨基酸及其重要衍生物的生物合成 | p.171 | no obvious ch.1–10 match — the CZ book's TOC doesn't show a dedicated amino-acid-biosynthesis section; possibly not paired to anything |
-| 二十七 | 核苷酸的降解及核苷酸代谢 | ~p.180 (title match only, not read) | ch.4 §4.1.1.1/.2, §4.1.5 (marked "partial" — inferred from title, not directly verified) |
-| *(unnumbered)* | 抗生素 Antibiotics | p.181 | no CZ match found |
-| *(unnumbered)* | 激素 Hormones | p.183 | ch.10 §10.3 Hormony — strong title match, not yet consumed |
+| Notes topic | Title | Pages | Likely textbook match | Status |
+|---|---|---|---|---|
+| 一 | 序论 | — | ch.1 | mapped |
+| 二 | 糖类 | not yet pinned down to exact pages | ch.7 Sacharidy | not located — search needed |
+| 三 | 脂质 | not yet pinned down to exact pages | ch.8 Lipidy | not located — search needed |
+| 四–八 | 氨基酸 / 蛋白质结构 | — | ch.2 | mapped |
+| 九–十一 | 酶 (general/kinetics/mechanism) | pp.47–76 | ch.3 | mapped |
+| 十二 | 维生素和辅酶 | p.77 | ch.6 §6.3 porphyrin proteins, OR ch.3 coenzymes | title-match only, still unconfirmed after ch.6 — actually read pp.77-82ish and settle this |
+| 十三–十六 | 核酸 (general/structure/physicochem/methods) | pp.83–98 | ch.4 | mapped |
+| 十七 | 代谢总论 | p.99 | ch.6 §6.1.3 Katabolické a anabolické děje | title-match only, used by ch.6 as "partial" |
+| 十八 | 生物能学 | p.103 | ch.6 §6.1/§6.1.1/§6.1.2.x/§6.2.1 | title-match only, used by ch.6 as "partial" |
+| 十九 | 糖酵解 | p.105 | ch.7 §7.8 Glykolýza | title-match only, not yet consumed |
+| 二十 | 柠檬酸循环 | p.119 | ch.6 §6.2.2 (all 4 nodes) | title-match only, used by ch.6 as "partial" |
+| 二十一 | 氧化磷酸化作用 | p.127 | ch.6 §6.2.4 (all 5 nodes) | title-match only, used by ch.6 as "partial" |
+| 二十二 | 戊糖磷酸途径和糖的其它代谢途径 | p.139 | ch.7 §7.7 Dvě cesty k pentosafosfátům, and/or other ch.7 sugar-interconversion sections | title-match only, not yet consumed |
+| 二十三 | 脂类的分解 | p.147 | ch.8 §8.4 Odbourávání lipidů | title-match only, not yet consumed |
+| 二十四 | 脂类的生物合成 | p.153 | ch.8 §8.3 Biosyntéza lipidů | title-match only, not yet consumed |
+| 二十五 | 蛋白质的降解及氨基酸的分解代谢 | pp.161–170 | ch.5 | mapped |
+| 二十六 | 氨基酸及其重要衍生物的生物合成 | p.171 | no obvious ch.1–10 match — the CZ book's TOC doesn't show a dedicated amino-acid-biosynthesis section; possibly not paired to anything | unmatched |
+| 二十七 | 核苷酸的降解及核苷酸代谢 | ~p.180 (title match only, not read) | ch.4 §4.1.1.1/.2, §4.1.5 | title-match only, used by ch.4 as "partial" |
+| *(unnumbered)* | 抗生素 Antibiotics | p.181 | no CZ match found | unmatched |
+| *(unnumbered)* | 激素 Hormones | p.183 | ch.10 §10.3 Hormony — strong title match | not yet consumed |
 | *(unnumbered)* | 光合作用 Photosynthesis | pp.197–203 | ch.9 Fotosyntéza — strong title match, not yet consumed |
 | *(unnumbered)* | DNA重组 / 转座子 Recombination/transposons | pp.205–210 | no CZ ch.1–10 match found |
 | *(unnumbered)* | DNA的复制 Replication | pp.211–212 | ch.4 §4.1.3 (mapped, no numeral exists — cite pages, not a number) |
