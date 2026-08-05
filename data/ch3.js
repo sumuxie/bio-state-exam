@@ -17,7 +17,7 @@ window.BIOCHEM.topics.push(
   pages: [41, 42],
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans.",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "九", title: "酶通论——酶的分类与命名 (笔记 pp.47–52)", status: "mapped" },
   summary: {
     en: "Enzymes are proteins specialised for the catalysis of reactions occurring in living organisms. They are remarkable biomacromolecules with high specificity of action and high catalytic efficiency. Enzymes are divided into SIX MAIN CLASSES according to the reaction they catalyse.",
     cn: "酶是专门用于催化生物体内所进行反应的蛋白质。它们是作用特异性高、催化效率高的非凡生物大分子。酶按其所催化的反应被分为六大类。"
@@ -118,7 +118,7 @@ window.BIOCHEM.topics.push(
   pages: [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54],
   coverage: "partial",
   coverageNote: "pp. 42, 43 and 54 verified against the scans — this includes the full Tab. 3.1, which was re-read from the image and corrected against the OCR. pp. 44–53, covering the detailed structures of the individual coenzymes, are not in the extracted page set.",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "九", title: "酶通论——酶分子结构与辅酶 (笔记 pp.47–52)", status: "mapped" },
   summary: {
     en: "All enzymes known until recently were of protein nature; research of the last twenty years or so shows that some other types of macromolecule can also have a certain catalytic ability, though so far only the case of one ribonucleic acid is described. The molecule of some enzymes is formed only by a polypeptide chain or chains; the active form of others contains in addition a non-protein component, the COFACTOR.",
     cn: "直到不久前所知的全部酶都是蛋白质性质的；近约二十年的研究表明，某些其他类型的大分子也可能具有一定的催化能力，不过迄今只描述了一种核糖核酸的情形。某些酶的分子仅由一条或多条多肽链构成；另一些酶的活性形式还含有非蛋白质组分，即辅因子。"
@@ -234,7 +234,7 @@ window.BIOCHEM.topics.push(
   pages: [54, 55, 56, 57],
   coverage: "partial",
   coverageNote: "pp. 54 and 57 verified against the scans — including the Lineweaver–Burk form, which the book writes with V_lim and [A]. pp. 55–56, carrying the derivation of the Michaelis–Menten equation itself and the definition of K_m, are not in the extracted page set; the derivation given below is standard course material and should be checked against those pages.",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "十", title: "酶促反应动力学——米氏方程 (笔记 pp.53–62)", status: "mapped" },
   summary: {
     en: "From the functional standpoint enzymes can be defined as catalysts of the chemical reactions occurring in organisms. For a substance A to be converted into a product X, the molecules of A must overcome an ENERGY BARRIER — they must be supplied with so-called ACTIVATION ENERGY.",
     cn: "从功能角度看，酶可定义为生物体内所进行化学反应的催化剂。为使物质 A 转变为产物 X，A 的分子必须越过一道能垒——必须获得所谓的活化能。"
@@ -337,7 +337,7 @@ window.BIOCHEM.topics.push(
   pages: [57, 58],
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans, including the reaction schemes.",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "十", title: "酶促反应动力学——双底物反应 (笔记 pp.53–62)", status: "mapped" },
   summary: {
     en: "The Michaelis–Menten equation holds for reactions in which a SINGLE substrate is converted. When two substrates take part in the reaction the situation is more complicated. In principle TWO MECHANISMS of two-substrate reactions are possible.",
     cn: "米氏方程适用于只有单一底物发生转变的反应。当有两种底物参与反应时情况更为复杂。原则上双底物反应有两种可能的机制。"
@@ -419,7 +419,7 @@ window.BIOCHEM.topics.push(
   pages: [58],
   coverage: "full",
   coverageNote: "Page verified against the extracted scan.",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "十", title: "酶促反应动力学——酶活性测定 (笔记 pp.53–62)", status: "mapped" },
   summary: {
     en: "The quantity of an enzyme can be expressed in grams or moles as with other substances, but only when working with a PURE enzyme whose molecular mass is known. Because often NEITHER of these assumptions is fulfilled, it is more usual to express the quantity of enzyme by its ACTIVITY.",
     cn: "酶的量可以像其他物质一样以克或摩尔表示，但仅限于处理分子质量已知的纯酶时。由于这两个前提常常都不满足，更常见的做法是用酶的活性来表示其数量。"
@@ -516,7 +516,7 @@ window.BIOCHEM.topics.push(
   pages: [58, 59],
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans.",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "十", title: "酶促反应动力学——pH与温度的影响 (笔记 pp.53–62)", status: "mapped" },
   summary: {
     en: "The activity of most enzymes depends on the concentration of H⁺ in the environment. For most enzymes this dependence has the shape of a CURVE WITH A MAXIMUM; the pH value corresponding to the highest activity is called the pH OPTIMUM.",
     cn: "多数酶的活性取决于环境中 H⁺ 的浓度。对多数酶而言，这一依赖关系呈现为带有极大值的曲线；对应最高活性的 pH 值称为 pH 最适值。"
@@ -609,7 +609,7 @@ window.BIOCHEM.topics.push(
   pages: [59, 60, 61],
   coverage: "partial",
   coverageNote: "pp. 59 and 61 verified against the scans. p. 60, which carries the detailed treatment of COMPETITIVE and uncompetitive inhibition, is not in the extracted page set — the competitive/uncompetitive characteristics below are standard course material and are marked as such.",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "十", title: "酶促反应动力学——抑制作用 (笔记 pp.53–62)", status: "mapped" },
   summary: {
     en: "Substances which influence the rate of an enzyme reaction by interacting with the catalyst are called MODULATORS. Those which increase the rate are ACTIVATORS, those which decrease it are INHIBITORS. The discussion deals only with inhibitors, which occur in practice much more often, but all the data hold for activators as well, only in the opposite sense.",
     cn: "通过与催化剂相互作用而影响酶反应速率的物质称为调节物。使速率提高的是激活剂，使速率降低的是抑制剂。以下只讨论抑制剂（它们在实践中出现得频繁得多），但所有内容对激活剂同样成立，只是意义相反。"
@@ -716,7 +716,7 @@ window.BIOCHEM.topics.push(
   pages: [61, 62],
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans. The urease rate-enhancement factor was re-read from the p.61 image: the book states 10¹⁴-fold, an exponent the raw OCR dropped entirely (it rendered it as '10krát', i.e. 10-fold).",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "十一", title: "酶的作用机理及酶的调节——作用机理 (笔记 pp.63–76)", status: "mapped" },
   summary: {
     en: "Only PART of the enzyme molecule is responsible for its catalytic ability — the so-called ACTIVE CENTRE. It is that part in which the contact between enzyme and substrate is realised and where the groups responsible for the actual catalysis of the chemical reaction are located.",
     cn: "只有酶分子的一部分负责其催化能力——即所谓的活性中心。它是酶与底物之间实现接触的部位，也是负责化学反应实际催化过程的基团所在之处。"
@@ -831,7 +831,7 @@ window.BIOCHEM.topics.push(
   pages: [62, 63, 64, 65],
   coverage: "partial",
   coverageNote: "p. 62 verified against the scan, covering the definition of regulatory enzymes and the opening of 3.7.1. pp. 63–65, which continue the allosteric enzymes and cover the covalently modulated enzymes, are not in the extracted page set.",
-  cnNote: { topic: null, title: "酶（笔记编号待确认）", status: "pending" },
+  cnNote: { topic: "十一", title: "酶的作用机理及酶的调节——调节酶 (笔记 pp.63–76)", status: "mapped" },
   summary: {
     en: "All enzymes have properties that can be used to influence their activity in the cell — activity is affected by the pH of the environment, the concentration of substrate or coenzyme, the presence of an inhibitor or activator, and so on. There exist, however, enzymes with SPECIFIC PROPERTIES that PREDESTINE THEM FOR A REGULATORY ROLE in metabolism.",
     cn: "所有酶都具有可被用来影响其细胞内活性的性质——活性受环境 pH、底物或辅酶浓度、抑制剂或激活剂的存在等因素影响。然而，存在一些具有特殊性质的酶，这些性质使它们注定在代谢中承担调节作用。"
