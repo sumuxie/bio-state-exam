@@ -49,16 +49,56 @@ this file itself committed and current — that is the entire point of it existi
     unverified. Page images for the whole chapter remain at `extracted_full_ch7/page_148.png`
     through `page_175.png` — no re-extraction needed to run this pass.
   - `data/ch7.js`'s own header comment reflects this: content-complete, verification pending.
-- **Chapters 8–10 not started at all**: 8 Lipidy (pp.176–201, lipids — fatty acids,
-  membranes), 9 Fotosyntéza (pp.202–217, photosynthesis), 10 Vzájemné vztahy v intermediárním
-  metabolismu a regulační mechanismy, incl. §10.3 Hormony (pp.218–228, metabolic
-  integration + hormones). Page ranges confirmed directly against the book's own TOC
-  (pp.4–6) on 2026-08-05 — see §11 for the Chinese notes' page ranges, several of which were
-  newly located this session (see below). No page images extracted yet for these three
-  chapters, no wiring done in `index.html`/`app.js`/`pages.yml` yet. This is roughly 61 more
-  pages across 3 chapters (plus the ~20 pages still owed on chapter 7) — it will not fit in
-  one session's context window done to full verification depth; expect to split it, as this
-  session itself was forced to.
+- **Chapter 8 (Lipidy, pp.176–201): CONTENT IS COMPLETE (40 nodes, `8-1` through `8-5-3-3`),
+  INDEPENDENT VERIFICATION HAS NOT BEEN RUN.** Wired into `index.html`/`app.js`/`pages.yml`
+  the same way as every prior chapter. All 26 pages covered with no gaps (checked
+  programmatically); site-wide total is now 154 topics with zero schema problems. Drafted in
+  ONE wave this time — 4 parallel agents (pp.176–179, 180–186, 187–192, 193–201), all 4
+  succeeded cleanly with no infra failures (contrast chapter 7, which needed two waves across
+  two turns because of spend-limit hits — infra reliability appears to vary turn-to-turn, not
+  something to plan around). One id collision needed reconciling by hand: the pp.180–186
+  agent didn't know what section-8.2.3 id suffix the pp.176–179 agent had already used, so it
+  picked placeholder ids (`8-2-3-9/10/11`) explicitly flagged for renumbering — renamed to
+  `8-2-3-2/3/4` before merging. **If you dispatch adjacent-range agents in parallel again,
+  either tell each one the previous range's actual last id (impossible before that agent
+  finishes) or just accept this renumbering step as routine** — it's cheap to fix after the
+  fact, cheaper than serializing the dispatch to avoid it.
+  - **One genuine page-boundary content gap was found and patched** (not just an id
+    collision): p.193's top half — the HMG-CoA-reductase paragraph, the Phase C
+    (terpenoid-modification) description, and the squalene→lanosterol→cholesterol completion
+    — fell between the biosynthesis agent (pp.187–192, which explicitly stopped at squalene
+    and flagged Phase C as "on p.193, outside my range") and the breakdown agent (pp.193–201,
+    which explicitly started at the "8.4" heading and didn't summarize what precedes it on the
+    same page). Neither agent was wrong to stop where it did — this is exactly the kind of
+    seam pipeline step 5 exists to catch. Patched by reading p.193 directly and adding node
+    `8-3-9`. **When two agents' ranges meet mid-page, always check explicitly whether content
+    right at that page number was actually claimed by either side, don't assume adjacency
+    implies coverage.**
+  - Independent verification (pipeline step 8) has not been attempted yet for chapter 8 —
+    same outstanding item as chapter 7, now doubled. Page images remain at
+    `extracted_full_ch8/page_176.png` through `page_201.png`.
+  - Several book-internal issues were flagged by the drafting agents and preserved as-is with
+    notes rather than silently corrected — worth checking first during verification: p.185's
+    steran ring diagram lacks A/B/C/D ring letters that a later diagram (p.186) does use;
+    p.188 prose spells "malonyl-CoA" as "matonyl-CoA" (typo, structural equation is
+    unambiguous); p.188's acetyl-CoA-carboxylase equation specifies Mn²⁺, not the Mg²⁺ most
+    general references give; p.191's own diagram routes the mevalonate pathway's first
+    condensation "via malonyl-SCoA" with CO2 released, contradicting the simple
+    thiolase-catalyzed Claisen condensation standard references describe for this step — this
+    one in particular is flagged as a real, unresolved mechanism discrepancy worth a second
+    look, not a typo; p.196's beta-oxidation diagram labels the thiolytic-cleavage enzyme
+    "β-ketokinasa," which contradicts its own drawn (non-phosphate, non-ATP) chemistry —
+    standard "thiolase" was used instead, flagged; Tab. 8.1 misspells "ethanolamin" as
+    "etnanolamin"; p.179 prints cetyl alcohol as "C₁₁" (should be C16).
+- **Chapter 8 content is done (see above); chapters 9–10 not started at all**: 9 Fotosyntéza
+  (pp.202–217, photosynthesis), 10 Vzájemné vztahy v intermediárním metabolismu a regulační
+  mechanismy, incl. §10.3 Hormony (pp.218–228, metabolic integration + hormones). Page ranges
+  confirmed directly against the book's own TOC (pp.4–6) on 2026-08-05 — see §11 for the
+  Chinese notes' page ranges. No page images extracted yet for these two chapters, no wiring
+  done in `index.html`/`app.js`/`pages.yml` yet. This is roughly 35 more pages across 2
+  chapters (plus the independent-verification passes still owed on BOTH chapters 7 and 8) —
+  budget a full session-worth of work for verification alone before assuming the book is
+  "done" even once 9–10's content exists.
 - **New Chinese-notes pairing found this session (2026-08-05): topics 二 and 三 are now
   located.** Previously "not yet pinned down to exact pages" in the table below. A search
   agent confirmed by reading the actual note pages: **二 糖类 (carbohydrates) = true pages

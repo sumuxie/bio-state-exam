@@ -17,7 +17,8 @@
     4: { cz: 'Nukleové kyseliny a proteosyntéza',  en: 'Nucleic acids and protein synthesis', cn: '核酸与蛋白质合成' },
     5: { cz: 'Další metabolismus proteinů a vzájemné přeměny aminokyselin', en: 'Further protein metabolism and amino acid interconversions', cn: '蛋白质代谢续篇与氨基酸互变' },
     6: { cz: 'Bioenergetika', en: 'Bioenergetics', cn: '生物能学' },
-    7: { cz: 'Sacharidy', en: 'Carbohydrates', cn: '糖类' }
+    7: { cz: 'Sacharidy', en: 'Carbohydrates', cn: '糖类' },
+    8: { cz: 'Lipidy', en: 'Lipids', cn: '脂质' }
   };
 
   /* ----------------------------------------------------------- persistence */
@@ -254,7 +255,7 @@
 
   function fillScopeSelect(sel, allLabel) {
     let html = `<option value="all">${esc(allLabel)}</option>`;
-    [1, 2, 3, 4, 5, 6, 7].forEach((ch) => {
+    [1, 2, 3, 4, 5, 6, 7, 8].forEach((ch) => {
       const list = TOPICS.filter((t) => t.chapter === ch);
       if (!list.length) return;
       html += `<optgroup label="${esc('Ch. ' + ch + ' — ' + CHAPTER_TITLES[ch].en)}">`;
@@ -306,7 +307,7 @@
     const needle = state.filter.trim().toLowerCase();
     let html = '';
 
-    [1, 2, 3, 4, 5, 6, 7].forEach((ch) => {
+    [1, 2, 3, 4, 5, 6, 7, 8].forEach((ch) => {
       const list = TOPICS.filter((t) => t.chapter === ch && topicMatches(t, needle));
       if (!list.length) return;
       const info = CHAPTER_TITLES[ch];

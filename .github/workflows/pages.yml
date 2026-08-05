@@ -29,7 +29,7 @@ jobs:
         run: |
           node -e "
           global.window = {};
-          require('./data/ch1.js'); require('./data/ch2.js'); require('./data/ch3.js'); require('./data/ch4.js'); require('./data/ch5.js'); require('./data/ch6.js'); require('./data/ch7.js');
+          require('./data/ch1.js'); require('./data/ch2.js'); require('./data/ch3.js'); require('./data/ch4.js'); require('./data/ch5.js'); require('./data/ch6.js'); require('./data/ch7.js'); require('./data/ch8.js');
           const T = window.BIOCHEM.topics;
           if (!T.length) throw new Error('no topics loaded');
           const problems = [];
