@@ -11,7 +11,7 @@ and consequently nobody could `git grep` it, nothing forced it to stay in sync w
 `main` actually contained, and a real feature (see §5) silently regressed as a result. Keep
 this file itself committed and current — that is the entire point of it existing.
 
-## 0. Current state as of this handoff (updated 2026-08-05)
+## 0. Current state as of this handoff (updated 2026-08-05, evening)
 
 - **Chapters 1–6 done and live on `main`**: 1 General principles, 2 Amino acids/proteins,
   3 Enzymes, 4 Nucleic acids/protein synthesis, 5 Further protein metabolism/amino acid
@@ -19,15 +19,77 @@ this file itself committed and current — that is the entire point of it existi
   respiratory chain/oxidative phosphorylation). 72 topic nodes total. Pushed and merged to
   `main` directly (see the two merge commits around `12c2d9d`/`a4d7499`) — GitHub Actions
   should have deployed it live within a few minutes of that push.
-- **Chapters 7–10 not started**: 7 Sacharidy (pp.148–175, sugars — includes glycolysis,
-  gluconeogenesis, glycogen), 8 Lipidy (pp.176–201, lipids — fatty acids, membranes),
-  9 Fotosyntéza (pp.202–217, photosynthesis), 10 Vzájemné vztahy v intermediárním
+- **Chapter 7 (Sacharidy, pp.148–175) IS STARTED BUT ONLY PARTIALLY DRAFTED — read this
+  before assuming it's done.** `data/ch7.js` exists and is wired into `index.html`, `app.js`
+  (both `CHAPTER_TITLES` and both `[1,2,...,7]` scope arrays), and `pages.yml`'s validate
+  list — all of that mechanical wiring is complete and correct. But of the chapter's 28 pages
+  (148–175), only **pp.148–155 are actually drafted** (15 nodes: `7-1` through `7-3-2`,
+  covering §7.1 Monosacharidy through the first half of §7.3 Oligosacharidy). **Sections
+  7.3(cont.)/7.4–7.12, pp.156–175, are NOT YET WRITTEN** — this includes polysaccharides
+  (7.4), glycoproteins (7.5), sugar interconversions (7.6), the pentose phosphate pathway
+  (7.7), **glycolysis (7.8)** and its pyruvate fates (7.8.1), gluconeogenesis (7.9/7.9.1),
+  and glycoside/polysaccharide enzymology (7.10–7.12). Glycolysis in particular is one of the
+  most exam-critical topics in the whole book and has not been touched yet.
+  - The full chapter's page images are ALREADY EXTRACTED to `extracted_full_ch7/page_148.png`
+    through `page_175.png` (all 28 pages) — a follow-up session does not need to re-run the
+    PyMuPDF extraction step, just dispatch drafting agents directly against the existing PNGs
+    for pp.156–175.
+  - `data/ch7.js`'s own header comment states this partial status explicitly — read it before
+    doing anything else with this file.
+  - The independent verification pass (pipeline step 8) has NOT been run on the pp.148–155
+    content that does exist — do it once the rest of the chapter is drafted, covering the
+    whole chapter in one pass, rather than twice.
+- **Chapters 8–10 not started at all**: 8 Lipidy (pp.176–201, lipids — fatty acids,
+  membranes), 9 Fotosyntéza (pp.202–217, photosynthesis), 10 Vzájemné vztahy v intermediárním
   metabolismu a regulační mechanismy, incl. §10.3 Hormony (pp.218–228, metabolic
-  integration + hormones). See §11 for the Chinese notes' already-located page ranges for
-  most of these — do the TOC/page-number legwork in §3 anyway to confirm, don't just trust
-  the table blindly as it ages. This is roughly 78 more pages across 4 chapters — comparable
-  in size to what chapters 4–6 already covered (66 pages), so budget accordingly; it will
-  not fit in one session's context window done to the same depth, expect to split it.
+  integration + hormones). Page ranges confirmed directly against the book's own TOC
+  (pp.4–6) on 2026-08-05 — see §11 for the Chinese notes' page ranges, several of which were
+  newly located this session (see below). No page images extracted yet for these three
+  chapters, no wiring done in `index.html`/`app.js`/`pages.yml` yet. This is roughly 61 more
+  pages across 3 chapters (plus the ~20 pages still owed on chapter 7) — it will not fit in
+  one session's context window done to full verification depth; expect to split it, as this
+  session itself was forced to.
+- **New Chinese-notes pairing found this session (2026-08-05): topics 二 and 三 are now
+  located.** Previously "not yet pinned down to exact pages" in the table below. A search
+  agent confirmed by reading the actual note pages: **二 糖类 (carbohydrates) = true pages
+  5–10**, **三 脂质 (lipids) = true pages 11–16**, and as a bonus, confirmed **四 氨基酸
+  starts exactly at true page 17** (previously only known as "before p.47"). See the updated
+  §11 table for the subtopic lists — 二 covers monosaccharide stereochemistry, oligo/poly-
+  saccharide structure, glycoconjugates and blood-group sugars; 三 covers fatty
+  acid/eicosanoid chemistry, lipid peroxidation, phospho-/sphingo-/glyco-lipids, and
+  lipoprotein classes. Both were read at a topic-overview level (confirmed page range +
+  subtopic list) but NOT yet cross-checked point-by-point against the CZ chapter 7/8
+  subsections that will eventually cite them — the `cnNote.status` on the chapter-7 nodes
+  drafted so far is `"mapped"` for the page range itself, with a note in the title that
+  point-level cross-checking is still outstanding. Do the same point-level pass whenever you
+  next touch a node that cites topic 二 or 三, rather than treating today's finding as the
+  final word.
+- **Operational note (recurrence, 2026-08-05 evening): the account hit its monthly spend
+  limit again**, this time mid-dispatch of 5 parallel agents (4 chapter-7 drafters + 1 CN-
+  notes search agent) for chapter 7. This is the same non-content, account-level constraint
+  documented below from the chapter 5/6 work — nothing new about the failure mode itself, but
+  a new wrinkle in how to recover from it was learned: **the harness's "Agent terminated
+  early due to an API error" wrapper message is not proof the agent's actual work was lost.**
+  Of the 4 chapter-7 drafters, one (`pp.148–153`) had in fact FULLY completed all 13 of its
+  assigned nodes and only got cut off while composing its final prose report back to the
+  orchestrator — its scratch file was complete and immediately usable as-is. A second
+  (`pp.154–161`) had only gotten 2 of its ~9 expected nodes written before the same cutoff.
+  The other two drafters (`pp.162–169` glycolysis/PPP, and `pp.170–175`) left no scratch file
+  at all — their assigned page ranges are the ones still owed on chapter 7 (see above). The
+  practical upshot: after ANY multi-agent dispatch that hits this error, always check the
+  scratch dir for every agent in the batch individually rather than writing off the whole
+  batch — completion is decided per-agent by how far into its own work it had gotten when the
+  account-wide cutoff landed (all 4 drafters + the search agent were cut at within ~1–2
+  minutes of each other, i.e. it is a wall-clock account event, not something tied to any one
+  agent's task complexity), not by the wrapper message, which is identical and equally scary
+  for an agent that finished and one that barely started.
+  - **This session stopped here and pushed what existed rather than continuing to retry**,
+    at the user's explicit instruction, because retrying immediately after a monthly-limit
+    hit reliably fails again (see the ch5/6 note below) and burns the same limit on a
+    different account would need to pick up — check claude.ai/settings/usage before
+    resuming, and re-read this section plus `data/ch7.js`'s own header comment before
+    dispatching new chapter-7 drafting agents so you don't accidentally re-draft pp.148–155
+    (already done) instead of the pp.156–175 that's actually still missing.
 - **Pronunciation + bionic reading**: implemented, fixed, and on `main` — merged TWICE
   independently (once via a manual `git apply` of the orphaned commits' diff during this
   session, once via the user properly merging PR #2 on GitHub at almost the same time),
@@ -484,9 +546,9 @@ actually reading the pages before upgrading a node's `cnNote.status` past `"part
 | Notes topic | Title | Pages | Likely textbook match | Status |
 |---|---|---|---|---|
 | 一 | 序论 | — | ch.1 | mapped |
-| 二 | 糖类 | not yet pinned down to exact pages | ch.7 Sacharidy | not located — search needed |
-| 三 | 脂质 | not yet pinned down to exact pages | ch.8 Lipidy | not located — search needed |
-| 四–八 | 氨基酸 / 蛋白质结构 | — | ch.2 | mapped |
+| 二 | 糖类 | pp.5–10 | ch.7 Sacharidy §7.1–7.6ish | mapped (page range read + subtopic list confirmed 2026-08-05: monosaccharide stereochem/mutarotation, oligo/polysaccharide structure incl. starch/glycogen/cellulose/chitin/peptidoglycan, glycoconjugates incl. N-/O-glycoproteins/proteoglycans/GAGs/ABO sugars, bacterial LPS/teichoic acid — NOT yet cross-checked point-by-point against individual CZ subsections) |
+| 三 | 脂质 | pp.11–16 | ch.8 Lipidy | mapped (page range read + subtopic list confirmed 2026-08-05: FA nomenclature/eicosanoids, lipid peroxidation, triglycerides, phospho-/sphingo-/glyco-lipids, sterols, membrane asymmetry, lipoprotein classes — NOT yet cross-checked point-by-point against individual CZ subsections) |
+| 四–八 | 氨基酸 / 蛋白质结构 | starts p.17 (start page confirmed 2026-08-05) | ch.2 | mapped |
 | 九–十一 | 酶 (general/kinetics/mechanism) | pp.47–76 | ch.3 | mapped |
 | 十二 | 维生素和辅酶 | p.77 | ch.6 §6.3 porphyrin proteins, OR ch.3 coenzymes | title-match only, still unconfirmed after ch.6 — actually read pp.77-82ish and settle this |
 | 十三–十六 | 核酸 (general/structure/physicochem/methods) | pp.83–98 | ch.4 | mapped |

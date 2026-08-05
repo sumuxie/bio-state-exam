@@ -71,6 +71,12 @@ The Chinese notes cover sugars (二) and lipids (三) between the introduction a
 amino acids; those correspond to textbook chapters beyond ch. 3 and will attach
 to topic nodes added later.
 
+**Update 2026-08-05**: 二 糖类 and 三 脂质 are now located — true pages 5–10 and
+11–16 respectively (四 氨基酸 starts immediately after, at true page 17). See
+HANDOFF.md §11 for the confirmed subtopic lists. They pair with ch.7 Sacharidy
+and ch.8 Lipidy, which are themselves still being drafted — see HANDOFF.md §0
+for exactly how much of ch.7 exists so far.
+
 ### Nucleic acids / protein synthesis (ch. 4) — pre-scouted, not yet wired up
 
 A background search (2026-08-03) covering notes volumes 4–16 (pp.46–230) found:
