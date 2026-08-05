@@ -46,12 +46,17 @@ this file itself committed and current — that is the entire point of it existi
   valid, complete scratch files moments before the fatal error, and those were reused as-is
   rather than re-running the whole drafting pass. Always check for a recoverable file before
   assuming a failed agent's work is lost.
-- **Independent verification passes for chapter 6 did not all complete before this handoff
-  was last updated** — retry them (or, if picking this up much later, check
-  `data/ch6.js` nodes for any node whose content looks unreviewed) before treating chapter 6
-  as fully audited to the same standard as chapters 1–5. One real issue was already found and
-  fixed (node `6-2-3`'s summary/oral overstated "sole carbon source" where the book, and the
-  node's own `points`, correctly say "acetate or other acetyl-CoA-producing compounds").
+- **Chapter 6's independent verification passes all completed and all fixes are applied** —
+  chapter 6 is now audited to the same standard as chapters 1–5. Three real issues were
+  found and fixed: node `6-2-3`'s summary/oral overstated "sole carbon source" where the
+  book, and the node's own `points`, correctly say "acetate or other acetyl-CoA-producing
+  compounds"; and node `6-1-3` claimed the pyruvate→acetyl-CoA arrow in Obr. 6.2 was
+  uniquely one-way (it isn't — same double-headed glyph as every other arrow) and that
+  glycerol enters the pathway near glyceraldehyde-3-phosphate (it actually enters near
+  phosphoenolpyruvate, one step later) — both claims had propagated into a quiz question and
+  an oral checklist item, not just the prose, so check for that pattern (an error
+  duplicated across `points`/`summary`/`quiz`/`oral` rather than confined to one field) when
+  reviewing future verification findings.
 
 ## 1. What this is
 
