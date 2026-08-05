@@ -11,7 +11,7 @@ and consequently nobody could `git grep` it, nothing forced it to stay in sync w
 `main` actually contained, and a real feature (see §5) silently regressed as a result. Keep
 this file itself committed and current — that is the entire point of it existing.
 
-## 0. Current state as of this handoff (updated 2026-08-05, evening)
+## 0. Current state as of this handoff (updated 2026-08-06)
 
 - **Chapters 1–6 done and live on `main`**: 1 General principles, 2 Amino acids/proteins,
   3 Enzymes, 4 Nucleic acids/protein synthesis, 5 Further protein metabolism/amino acid
@@ -19,26 +19,36 @@ this file itself committed and current — that is the entire point of it existi
   respiratory chain/oxidative phosphorylation). 72 topic nodes total. Pushed and merged to
   `main` directly (see the two merge commits around `12c2d9d`/`a4d7499`) — GitHub Actions
   should have deployed it live within a few minutes of that push.
-- **Chapter 7 (Sacharidy, pp.148–175) IS STARTED BUT ONLY PARTIALLY DRAFTED — read this
-  before assuming it's done.** `data/ch7.js` exists and is wired into `index.html`, `app.js`
-  (both `CHAPTER_TITLES` and both `[1,2,...,7]` scope arrays), and `pages.yml`'s validate
-  list — all of that mechanical wiring is complete and correct. But of the chapter's 28 pages
-  (148–175), only **pp.148–155 are actually drafted** (15 nodes: `7-1` through `7-3-2`,
-  covering §7.1 Monosacharidy through the first half of §7.3 Oligosacharidy). **Sections
-  7.3(cont.)/7.4–7.12, pp.156–175, are NOT YET WRITTEN** — this includes polysaccharides
-  (7.4), glycoproteins (7.5), sugar interconversions (7.6), the pentose phosphate pathway
-  (7.7), **glycolysis (7.8)** and its pyruvate fates (7.8.1), gluconeogenesis (7.9/7.9.1),
-  and glycoside/polysaccharide enzymology (7.10–7.12). Glycolysis in particular is one of the
-  most exam-critical topics in the whole book and has not been touched yet.
-  - The full chapter's page images are ALREADY EXTRACTED to `extracted_full_ch7/page_148.png`
-    through `page_175.png` (all 28 pages) — a follow-up session does not need to re-run the
-    PyMuPDF extraction step, just dispatch drafting agents directly against the existing PNGs
-    for pp.156–175.
-  - `data/ch7.js`'s own header comment states this partial status explicitly — read it before
-    doing anything else with this file.
-  - The independent verification pass (pipeline step 8) has NOT been run on the pp.148–155
-    content that does exist — do it once the rest of the chapter is drafted, covering the
-    whole chapter in one pass, rather than twice.
+- **Chapter 7 (Sacharidy, pp.148–175): CONTENT IS NOW COMPLETE, INDEPENDENT VERIFICATION IS
+  NOT.** `data/ch7.js` has all 42 nodes (`7-1` through `7-12-2`), every one of the 28 pages
+  148–175 is covered by at least one node's `pages` field (checked programmatically, no
+  gaps), and it validates cleanly against the CI-equivalent browser check (114 total topics
+  site-wide, zero schema problems, zero duplicate ids). It got there in two drafting waves
+  across two separate turns of this session (see the spend-limit notes below for why) — first
+  wave: pp.148–155 (`7-1` through `7-3-2`, 15 nodes); second wave: pp.155(cont.)–175 (`7-4`
+  through `7-12-2`, 27 more nodes), including glycolysis split across five nodes (`7-8-1`
+  through `7-8-5`) and the pentose phosphate pathway across two (`7-7-1`, `7-7-2`). Two
+  genuine page-boundary seams were caught and patched directly (pattern from pipeline step 5):
+  node `7-2-6` (Glykosidy) originally stopped mid-sentence at the bottom of p.153 and was
+  extended to include p.154's continuation (O-/N-glycoside distinction, aglykon, glucuronoside
+  detoxification note); node `7-9` (Glukoneogeneze intro) originally stopped at p.169 and was
+  extended to include two paragraphs that open p.170 before the `7.9.1` heading (the
+  three-high-energy-phosphates tally and the muscle/liver Cori-cycle explanation, which the
+  book describes without ever using that name).
+  - **What's still outstanding: the independent verification pass (pipeline step 8) has NOT
+    been completed for this chapter.** Three consecutive attempts to dispatch verification
+    agents this session failed for two different infrastructure reasons (see the spend-limit
+    note below) — one attempt got zero output from two of three agents, a later single-agent
+    retry failed on an SSL certificate error partway through. A partial MANUAL spot-check (no
+    agent — read pages 165 and cross-checked nodes `7-8-1`/`7-8-2` directly) found the content
+    accurate against the scan (enzyme names, mechanism steps, and the exergonic/substrate-
+    level-phosphorylation claims all matched p.165's figure and prose exactly), but this
+    covers only 2 of 42 nodes. **Do not treat chapter 7 as audited to the same standard as
+    chapters 1–6 until a real verification pass covers the rest** — pentose phosphate pathway,
+    the other four glycolysis nodes, gluconeogenesis, and all of §7.4–7.6 and §7.9.1–7.12 are
+    unverified. Page images for the whole chapter remain at `extracted_full_ch7/page_148.png`
+    through `page_175.png` — no re-extraction needed to run this pass.
+  - `data/ch7.js`'s own header comment reflects this: content-complete, verification pending.
 - **Chapters 8–10 not started at all**: 8 Lipidy (pp.176–201, lipids — fatty acids,
   membranes), 9 Fotosyntéza (pp.202–217, photosynthesis), 10 Vzájemné vztahy v intermediárním
   metabolismu a regulační mechanismy, incl. §10.3 Hormony (pp.218–228, metabolic
@@ -90,6 +100,29 @@ this file itself committed and current — that is the entire point of it existi
     resuming, and re-read this section plus `data/ch7.js`'s own header comment before
     dispatching new chapter-7 drafting agents so you don't accidentally re-draft pp.148–155
     (already done) instead of the pp.156–175 that's actually still missing.
+  - **Update, same session, next turn: it was NOT actually done for the account** — a second
+    dispatch of 3 parallel drafting agents for pp.155–175 (issued after the user said to
+    continue) succeeded 3-for-3 with zero errors, drafting all 27 remaining nodes cleanly in
+    one pass. So a spend-limit hit is not a reliable predictor of the next attempt failing —
+    it can clear within the same session/turn, not just after a account switch. **Don't
+    conclude a whole session is blocked from one failed batch; a retry a turn or two later is
+    worth trying before giving up and asking the user to switch accounts.**
+  - **A second, different infrastructure failure mode showed up later the same session**: a
+    subsequent attempt to dispatch 3 parallel verification agents for chapter 7 got a
+    "monthly spend limit" error again (two of three agents produced zero output at all, the
+    third got partway through with 34 tool calls before dying — consistent with the earlier
+    finding that concurrent agents share one exhaustible budget and whichever one is mid-flight
+    when it runs out just stops). A follow-up attempt with a single (non-concurrent) agent for
+    the same task failed differently: `API Error: Unable to connect to API: SSL certificate
+    verification failed. Check your proxy or corporate SSL certificates` — a transient
+    network/proxy error, NOT a spend-limit message, that also killed the agent partway through
+    (20 tool calls in). **Lesson: don't assume every "agent terminated early" failure is the
+    same root cause just because the symptom (task incomplete) looks the same — read the
+    actual error text.** A spend-limit message means stop and wait/switch accounts; an SSL or
+    other transient network error is worth one immediate retry, since it may not recur.
+  - Net effect: chapter 7's independent verification pass was never completed this session
+    despite three attempts across two different failure modes. It remains the single most
+    important open item for whoever picks this up next — see above.
 - **Pronunciation + bionic reading**: implemented, fixed, and on `main` — merged TWICE
   independently (once via a manual `git apply` of the orphaned commits' diff during this
   session, once via the user properly merging PR #2 on GitHub at almost the same time),
@@ -119,6 +152,29 @@ this file itself committed and current — that is the entire point of it existi
   an oral checklist item, not just the prose, so check for that pattern (an error
   duplicated across `points`/`summary`/`quiz`/`oral` rather than confined to one field) when
   reviewing future verification findings.
+- **A second textbook has, in fact, already been built — see §4, which used to be pure
+  speculation and now describes a real, working example.** A directory `PESB/` (Protein
+  Engineering & Synthetic Biology, a different course entirely) appeared in this working tree
+  during this session — a self-contained fork of this exact app (own `index.html`/`app.js`/
+  `style.css`/`data/`, own `window.PESB.topics` namespace) built from lecture-slide notes
+  rather than a textbook. **It is currently UNTRACKED — not committed to this git repo at
+  all.** Nobody in this session's chat asked for it and it wasn't built by this conversation;
+  it was simply found sitting on disk. Do not delete it, and do not commit it without asking
+  the user first (per this project's own standing rule: only commit/push what's been asked
+  for). Flag its existence and ask what they want done with it — at minimum it represents
+  real work that isn't yet safely version-controlled.
+- **An orphaned, superseded handoff document was also found**: commit `15fd05e` ("Add
+  HANDOFF.md for future chapters and additional textbooks") sits unmerged on
+  `origin/claude/biochem-chapters-1-3-notes-1g3f2a`, dated 2026-08-03 — a different session's
+  attempt at exactly this file, written before chapters 4–7 existed. This is precisely the
+  failure mode §5 warns about (a handoff that isn't on `main` can't be trusted or kept in
+  sync). Compared line-by-line against the current file: everything in it is now either
+  superseded (chapters 4–7 status, PDF/notes sourcing, the pronunciation bug list) or actively
+  wrong for this session's environment (its §9 testing section assumes a Linux container with
+  Playwright and a pre-installed Chromium at a fixed path — this session's environment is
+  Windows and uses the Browser MCP tool instead, per §9 below). **Nothing needed merging from
+  it.** The branch is safe to delete once the user confirms — it's fully superseded, but
+  deleting a branch is exactly the kind of action to ask about first rather than just do.
 
 ## 1. What this is
 
@@ -294,12 +350,60 @@ multi-agent version; do the same for 6–10):
    permissions even when the user is clearly asking for the content work to be finished
    end-to-end).
 
-## 4. Adding a second, different textbook entirely
+## 4. Adding a second, different textbook or course entirely
 
-Never done here — treat this as a starting point, not a tested path. Current hardcoded
-assumptions a second book would break:
+This used to be pure speculation ("never done here"). It has now actually happened once —
+see §0's note on `PESB/` — so this section describes the real approach taken plus the
+alternative that's still available if you'd rather integrate than fork.
 
-- `CHAPTER_TITLES` in `app.js` is a flat `{1: {...}, ..., 5: {...}}` map — chapter numbers
+### 4a. What was actually done: fork into a fully separate app (the `PESB/` precedent)
+
+`PESB/` is a complete, independent copy of this app's architecture — its own `index.html`,
+`app.js`, `style.css`, `data/ch*.js` — living in a subdirectory, covering an entirely
+different course (Protein Engineering & Synthetic Biology, built from lecture-slide notes
+rather than a textbook page-image pipeline). It is NOT wired into the root `index.html` in
+any way; it's a second, standalone site that happens to share a git working tree with this
+one. Concretely, per its own `app.js` header comment (which documents its deltas from this
+app for anyone porting a fix between the two — read that comment before touching either
+file):
+
+- Namespace `window.PESB.topics` instead of `window.BIOCHEM.topics`; localStorage keys
+  prefixed `pesb.` instead of `bio.`, so the two apps coexist in the same browser without
+  clobbering each other's progress.
+- No Czech layer at all — this course has no third source language. `cz` becomes `term`
+  (a short headword, same *role* as `cz` — a compact anchor for a point — but not tied to any
+  particular language), and the glossary is EN/CN only.
+- `pages` (a book page range) becomes `slides` (a lecture-and-slide-number range like
+  `"L1 s.1–4"` — the schema field name changed because the underlying source material is
+  structurally different, not interchangeable with a page number.
+- `gapPoints` (this app's "pages we could not read from a scan, use with caution" concept)
+  becomes `beyondPoints` — a DIFFERENT meaning: not a gap in verification, but supplementary
+  material deliberately added because the lecture slides never covered it. Both render as a
+  dashed block in the UI for the same reason (visually mark "this isn't the primary verified
+  source"), but don't assume they're interchangeable if you ever port a rendering fix — check
+  which meaning the render code actually needs.
+- Added a `figures` field as a first-class block, which this app doesn't have.
+
+**Trade-off to understand before choosing this path again**: forking means `app.js` and
+`style.css` now exist in two places. A bug fixed in one (e.g. a future fifth pronunciation or
+bionic-reading bug beyond the four already documented in §5) does NOT automatically fix the
+other — someone has to notice and manually port it, the same way PESB's own header comment
+exists specifically so a human/session porting a fix knows what's different and what to leave
+alone. If you're maintaining both going forward, treat that header comment as a living
+changelog and update it if you add a third divergence.
+
+**Housekeeping**: `PESB/` is currently untracked in this repo (see §0) — resolve that with
+the user (commit it, gitignore it, or move it elsewhere) before it's at risk of being lost to
+a stray `git clean`.
+
+### 4b. The alternative not taken: integrate into one shared app
+
+Still a valid option for a *closely related* second book (e.g. a second textbook on the same
+subject, or a revised edition) where sharing one sidebar/search/progress-tracking surface is
+more valuable than the isolation forking gives you. Current hardcoded assumptions this
+approach would need to break:
+
+- `CHAPTER_TITLES` in `app.js` is a flat `{1: {...}, ..., 7: {...}}` map — chapter numbers
   are the only identity a topic has. **Fix**: add a `book` field to every topic node, key
   `CHAPTER_TITLES` by `book + ":" + chapter`, add a book selector to the sidebar.
 - `fillScopeSelect()`/`inScope()` assume `scope` is `"all" | "ch:N" | topicId` — extend the
@@ -307,7 +411,8 @@ assumptions a second book would break:
 - `cnNote` is specific to *this* book's pairing with *these* Chinese notes. A second book
   needs its own equivalent field or `cnNote` needs to become keyed by note-source.
 - None of `style.css`, pronunciation, bionic reading, or the flashcard front/back split
-  reference chapter or book identity — zero changes needed there.
+  reference chapter or book identity — zero changes needed there either way, fork or
+  integrate.
 
 ## 5. Pronunciation (speaker buttons) — and the branch that got lost
 
