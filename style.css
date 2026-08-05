@@ -188,6 +188,27 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-family: var(--mono); font-size: 0.78rem; padding: 0 0.3rem 0 0;
 }
 
+/* ------------------------------------------------------- pronunciation */
+.say-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 21px; height: 21px; padding: 0; margin-left: 0.3rem;
+  border: 1px solid var(--line); border-radius: 50%; background: var(--bg);
+  color: var(--fg-dim); font-size: 0.68rem; line-height: 1; cursor: pointer;
+  vertical-align: middle;
+}
+.say-btn:hover { color: var(--accent); border-color: var(--accent); }
+.say-btn.speaking { color: var(--accent); border-color: var(--accent); animation: say-pulse 0.55s ease-in-out infinite alternate; }
+@keyframes say-pulse { from { opacity: 0.55; transform: scale(0.94); } to { opacity: 1; transform: scale(1.04); } }
+
+/* --------------------------------------------------------- bionic reading */
+.icon-btn.active { background: var(--accent-dim); border-color: var(--accent-dim); color: #fff; }
+.bionic-b { font-weight: 700; }
+body.bionic-on .summary, body.bionic-on .points, body.bionic-on .term-def,
+body.bionic-on .q-text, body.bionic-on .oral-q, body.bionic-on .model-answer {
+  letter-spacing: 0.005em;
+  word-spacing: 0.06em;
+}
+
 /* ------------------------------------------------------------------- study */
 .welcome { padding-top: 1.5rem; }
 .welcome h1 { font-size: 1.9rem; letter-spacing: -0.02em; }
@@ -229,8 +250,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .block > h2 {
   font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.09em;
   color: var(--fg-dim); margin-bottom: 0.75rem; padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--line-soft); display: flex; gap: 0.5rem; align-items: center;
+  border-bottom: 1px solid var(--line-soft);
 }
+/* Not display:flex on purpose: h2's text content can be walked and
+   partially re-wrapped by the bionic-reading transform (data/*.js prose,
+   not just this short label), and any element that's a direct flex-item
+   child gets CSS-blockified — which would force a bionic <b> mid-word onto
+   its own line. Fake the row layout with inline-flex + margin instead so
+   nothing inside h2 is a flex item. */
+.block > h2 .muted, .block > h2 .say-btn { margin-left: 0.5rem; vertical-align: middle; }
 .block-gap { background: var(--bg-raise); border: 1px dashed var(--warn); border-radius: var(--radius); padding: 1rem 1.15rem; }
 .gap-warn { font-size: 0.8rem; color: var(--warn); margin-bottom: 0.75rem; }
 
@@ -263,8 +291,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   background: var(--bg-raise); border: 1px solid var(--line);
   border-radius: var(--radius); padding: 0.75rem 0.85rem;
 }
-.term-cz { color: var(--cz); font-weight: 600; font-size: 0.93rem; }
-.term-en { font-size: 0.88rem; }
+.term-en { color: var(--fg); font-weight: 600; font-size: 0.93rem; }
 .term-cn { font-size: 0.88rem; color: var(--fg-mute); }
 .term-def { margin-top: 0.45rem; font-size: 0.8rem; color: var(--fg-mute); border-top: 1px solid var(--line-soft); padding-top: 0.45rem; }
 .term-def .t-cn { color: var(--fg-dim); }
@@ -298,10 +325,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
   position: absolute; top: 0.85rem; left: 0.85rem;
   font-family: var(--mono); font-size: 0.7rem; color: var(--fg-dim);
 }
-.fc-cz { font-size: 1.85rem; font-weight: 600; color: var(--cz); line-height: 1.3; }
+.fc-primary { font-size: 1.85rem; font-weight: 600; line-height: 1.3; }
 .fc-hint { position: absolute; bottom: 0.9rem; font-size: 0.72rem; color: var(--fg-dim); }
-.fc-en { font-size: 1.3rem; font-weight: 600; }
-.fc-cn { font-size: 1.1rem; color: var(--fg-mute); margin-bottom: 0.75rem; }
+.fc-cz-ref { margin-bottom: 0.6rem; }
+.fc-cn { font-size: 1.3rem; font-weight: 600; color: var(--fg-mute); margin-bottom: 0.75rem; }
 .fc-def { font-size: 0.85rem; color: var(--fg-mute); max-width: 52ch; }
 .fc-def .t-cn { color: var(--fg-dim); }
 
@@ -436,4 +463,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .timer-face { font-size: 1.6rem; }
   .timer-btns { margin-left: 0; width: 100%; }
   .card-actions button { flex: 1; min-width: 0; }
+}
+
+@media (max-width: 380px) {
+  /* Four icon-sized controls (bionic, theme) plus the language and mode
+     groups no longer fit at this width without shrinking further. */
+  .topbar { gap: 0.2rem; padding: 0 0.3rem; }
+  .icon-btn { width: 27px; height: 27px; font-size: 0.82rem; }
+  .modes { gap: 0.05rem; }
+  .mode-btn { padding: 0.32rem 0.38rem; }
+  .lang-toggle button { padding: 0.28rem 0.3rem; font-size: 0.66rem; }
+  .topbar-right { gap: 0.2rem; }
 }

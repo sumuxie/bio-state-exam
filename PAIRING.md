@@ -63,11 +63,40 @@ simulator automatically.
 | 2.1.4, 2.2.1 | 五. 蛋白质一级结构 | mapped |
 | 2.2.2 – 2.2.4 | 六. 蛋白质三维结构 | mapped |
 | 2.2.5 – 2.2.6 | 七. 结构与功能关系 | partial |
-| 3.1 – 3.7 | *number not yet confirmed* | pending |
+| 3.1, 3.2 | 九. 酶通论 (pp.47–52) | mapped |
+| 3.3.1 – 3.3.3, 3.4, 3.5 | 十. 酶促反应动力学 (pp.53–62) | mapped |
+| 3.6, 3.7 | 十一. 酶的作用机理及酶的调节 (pp.63–76) | mapped |
 
 The Chinese notes cover sugars (二) and lipids (三) between the introduction and
 amino acids; those correspond to textbook chapters beyond ch. 3 and will attach
 to topic nodes added later.
+
+### Nucleic acids / protein synthesis (ch. 4) — pre-scouted, not yet wired up
+
+A background search (2026-08-03) covering notes volumes 4–16 (pp.46–230) found:
+
+| Notes topic | Title | Pages | Likely ch.4 sections |
+|---|---|---|---|
+| 十三 | 核酸通论 | pp.83–86 | 4.1 |
+| 十四 | 核酸的结构 | pp.87–90 | 4.1.2, 4.1.3 |
+| 十五 | 核酸的物理化学性质 | pp.91–94 | adjacent/bonus |
+| 十六 | 核酸研究方法 | pp.95–98 | adjacent/bonus, likely no CZ counterpart |
+
+Important: **DNA replication, transcription and translation exist in the notes but
+carry no Chinese-numeral topic header at all.** The numbered exam-topic list runs
+一 through 二十七 and ends around p.180 (二十七 = 核苷酸的降解及核苷酸代谢); everything
+from p.181 on (antibiotics, hormones, photosynthesis, DNA recombination,
+transposons, and — critically — DNA replication p.211–212, transcription
+p.212–217, translation p.223–224) is titled but unnumbered, read as appendix
+material the student added beyond the core 27-topic list. Do not invent a
+"二十八"-style number for this content — cite it as `{ topic: null, title:
+"DNA的复制, 笔记无编号 pp.211–212, 27个主题之外的补充内容", status: "mapped" }`
+(or equivalent), honest about the page location without a numeral that was never
+written. No dedicated post-translational-modification topic was found anywhere
+in the 230 pages — leave §4.3.x `cnNote.status` as `"pending"` rather than force
+a match to the scattered, non-general mentions that do exist (covalent
+modification under 十一 pp.71–73; ubiquitin-proteasome under 二十五 p.161;
+protein trafficking tacked onto the unnumbered translation section p.224).
 
 ## The honesty rule
 
