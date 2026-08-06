@@ -55,10 +55,18 @@ matters, Lehninger §3.4 says *how* one is determined.
 > `E-tryptophan` is written and live, the validator has a separate required-field list for
 > `kind: "entity"`, and `app.js` renders cards in their own sidebar group. See §12.
 >
-> **⛔ Still not built: the topic view** — `topicKey` grouping both books side by side, the
-> actual feature `pro` exists for (§4). The data is ready for it: `amino-acids` already joins
-> `E-tryptophan`, `2-1-1` and `2-1-2`; `protein-primary-structure` joins `L-3-4-1` and `2-2-1`.
-> Nothing in the UI surfaces those groupings yet. **This is now the top remaining item.**
+> **✅ And the topic view landed 2026-08-06 (commit `f115a96`).** Two surfaces: a sidebar
+> **By book / By topic** toggle, and a **"Same topic"** strip at the top of the study pane that
+> links a Czech section to the Lehninger node going deeper on the same thing and to any
+> integration card gathering it. Verified against the data: of 61 keys, exactly two currently
+> join more than one source — `amino-acids` (Czech `2-1-1`/`2-1-2`/`2-1-3` + the tryptophan
+> card) and `protein-primary-structure` (Czech `2-2-1` + Lehninger `L-3-4-1`). **Everything
+> §13b listed is now done.**
+>
+> **What is left is content, not plumbing.** Only 2 of 61 topicKeys join more than one source,
+> because only one Lehninger node and one card exist. Every further node makes the topic view
+> worth more; nothing more needs building first. §9a's depth queue and §9b's `full`-scope list
+> are the work. §15 (figures) is the other open thread.
 
 **Working locally — read §14 before assuming the remote is the source of truth.** Since the
 2026-08-06 scan-exposure fix the working copy and the remote deliberately hold different things:
