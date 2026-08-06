@@ -44,10 +44,10 @@ work is judgement, and the pieces that need a human are listed below rather than
 2. **Any classmate report of a real exam question.** §3 makes these outrank everything in this
    file, and one has already overturned a plan once.
 3. ~~Which topic to start with~~ → **answered 2026-08-06: the first integration card, on
-   tryptophan**, before batch-producing depth-queue topics. §4's reasoning for tryptophan
-   stands (§6 already confirms the source material — aromaticity, 280 nm, hydrophobic core —
-   is all there). This is now in progress; see §12 for the schema decision and where the work
-   stands.
+   tryptophan**, before batch-producing depth-queue topics. **§12 is the research dossier —
+   every fact located with the A page to open. Nothing is written yet, and §12a is a schema
+   decision that has to be made before the first entity node exists**, because the validator
+   will reject a node with no `chapter`.
 
 ---
 
@@ -689,3 +689,92 @@ silently lies) and **§9b** (crop-and-upscale a scan region to read printed numb
   `git merge` + `git push` is equivalent and sufficient.
 - Discouraged by raw volume numbers, and one of them was wrong by 4×. When a number looks
   frightening, **check what it actually measures before reacting to it**.
+
+---
+
+## 12. The tryptophan integration card — research done, **nothing written yet**
+
+**Status, stated plainly: the source material is located and extracted; no node exists, and the
+schema for entity cards is still undecided.** This section is the dossier so the next session
+can write rather than re-search. It is the first integration card by the user's own choice
+(2026-08-06), taken before batch-producing depth-queue topics because it exposes the card shape
+early (§4).
+
+### 12a. The one thing to decide first
+
+§7 proposes `kind: "entity"` with a `topicKey` but no `chapter`/`pages`, since an entity card is
+not anchored to one place in either book. **That is a proposal, not a decision, and it collides
+with the validator**: `REQUIRED` currently includes `chapter`, `section`, `czTitle` and
+`coverage`, and `tools/validate-data.js` will reject any node missing them. So either:
+
+- the card carries a synthetic `chapter`/`section` (ugly, and it would pollute the book view and
+  the chapter-scoped page-gap check), or
+- `REQUIRED` becomes conditional on `kind` — entity cards require `topicKey` + `summary` +
+  `points` and are exempt from `chapter`/`section`/`pages`/`coverage`.
+
+**The second is right**, and it is a small change to the validator (`kind === 'entity'` takes a
+different required list, and the page-gap loop already skips anything that is not `book: "cz"`).
+Do this before writing the card, not after — otherwise CI goes red on the first entity node and
+the temptation will be to fake a `chapter` to make it quiet.
+
+Also unresolved: `app.js` renders from a fixed field list and has no entity view. A card that
+validates but renders nowhere is not done. Check what the Study/Flashcard/Oral modes do with a
+node that has no `chapter` before assuming it degrades gracefully.
+
+### 12b. The dossier — every fact located, with the page to open in A
+
+Read in **A** (printed page numbers below); extract clean text from **B** via
+`lehninger_index/scripts/locate.py`. Everything here was verified by reading B's text, not
+recalled.
+
+| what | A page | § | the passage |
+|---|---|---|---|
+| Trp is aromatic, and *why it is not simply hydrophobic* | 72–73 | 3.1 | *"Tyrosine and tryptophan are significantly more polar than phenylalanine because of the tyrosine hydroxyl group and the nitrogen of the tryptophan indole ring."* |
+| Trp absorbs UV at 280 nm — **with the number that makes it useful** | 73 | 3.1 | Fig. 3-6: *"The measured absorbance of tryptophan is more than four times that of tyrosine at a wavelength of 280 nm."* Phe contributes little. |
+| **A → concentration: the Lambert-Beer law** | 75–76 | 3.1, Box 3-1 | *"ε is the molar extinction coefficient (in units of liters per mole-centimeter), c is the concentration…, l is the path length"*. Note the book's word order is **Lambert-Beer**, not Beer-Lambert. |
+| Trp's constants | 71–79 (Table 3-1) | 3.1 | Mr 204, pK₁ 2.38, pK₂ 9.39, pI 5.89. No R-group pKa — the indole N is not ionisable at biological pH, which is *why* Trp is a hydrophobic-effect contributor. |
+| Trp at the membrane interface — the payoff fact | 396–397 | 11.1 | Fig. 11-15: *"Tyr and Trp residues… are found predominantly where the nonpolar region of acyl chains meets the polar head-group region"*, acting as **"membrane interface anchors, able to interact simultaneously with the central lipid phase and the aqueous phases on either side."* |
+| aromatics at the lipid–protein interface of β-barrels | 396 | 11.1 | *"in β strands of membrane proteins… aromatic side chains are commonly found at the lipid-protein interface."* |
+| where the indole ring comes from | 810–812 | 22.2 | chorismate → anthranilate (Gln donates the N that becomes the indole N) → condenses with **PRPP** → indole-3-glycerol phosphate. Final step: **tryptophan synthase**, α₂β₂, dissociable into α and β₂ catalysing the two halves. |
+| Trp is the most expensive amino acid to make | 810–812 | 22.2 | the aromatic branch is the longest biosynthetic pathway of the twenty — the reason the cell regulates it so hard, which is the bridge to the next row |
+| the trp operon — repression **and** attenuation | 1067–1069 | 28.2 | Trp binds the repressor (a homodimer) → it binds the operator, which overlaps the promoter. Then attenuation fine-tunes on top: *"Different cellular concentrations of tryptophan can vary the rate of synthesis… over a 700-fold range."* mRNA half-life ~3 min. |
+| Trp is both ketogenic **and** glucogenic | 640–654 | 18.3 | one of five amino acids that are both. Its indole ring's fate is Fig. 18-21. |
+| what Trp becomes | 816–824 | 22.3 | serotonin and the other Trp-derived signalling molecules |
+
+**The Czech book's own coverage of Trp**, for the CZ half of the card: §2.1.1 (structure and
+occurrence, book pp.21–23) and §2.1.2 (physico-chemical properties, pp.23–24), nodes `2-1-1`
+and `2-1-2`, both `topicKey: "amino-acids"`. The Chinese notes cover Trp's colour reaction
+(乙醛酸反应) on note p.19 and the aromatic amino acids on pp.17–19.
+
+### 12c. The chain the card should actually make
+
+§4 sketched this; the dossier above now supports every link with a page. Written as the §5 rule
+demands — each step lands on something observable:
+
+indole ring is flat and carries no charge → so it avoids water → so it sits in the hydrophobic
+core, **or** at the membrane interface where the acyl chains meet the head groups (A p.397) →
+and because it is a conjugated ring it absorbs UV at 280 nm, four times more strongly than Tyr
+(A p.73) → so `A₂₈₀ = εcl` turns that absorbance into a protein concentration (A p.75) → which
+is the Nanodrop reading on the bench.
+
+Second chain, the regulatory one: Trp is the most expensive amino acid to synthesise (A p.810)
+→ so *E. coli* regulates it twice over, by repression and again by attenuation, across a
+700-fold range (A p.1068) → which is why the trp operon became the textbook example, and it is
+already in the Czech book at §4.2.4.
+
+**No orbitals, no resonance structures, no 4n+2** — see §5. The user has said their organic
+chemistry has almost no foundation, and §5a shows this card sits in exactly the vocabulary band
+(aromaticity, conjugation, polarity) where that bites hardest. Every claim above already has a
+bench consequence attached; keep it that way.
+
+### 12d. What is genuinely missing from the sources
+
+- **The extinction coefficient of tryptophan itself.** Lehninger gives the law and defines ε but
+  does not print ε₂₈₀ for Trp (~5,500 M⁻¹cm⁻¹) or the protein rule of thumb. If the card needs a
+  worked number, it comes from outside both books — mark it as such. `PESB/` already has a
+  `beyondPoints` field for exactly this (see `HANDOFF.md` §4a); this app has only `gapPoints`,
+  which means something different, so adding `beyondPoints` here is part of the schema question
+  in §12a.
+- **Trp fluorescence** — `tryptophan fluorescence` is **0** hits in Lehninger 8 (checked after
+  the ligature fix). A real and commonly examined property of Trp, absent from the source.
+  Same treatment: outside-the-book, marked.
