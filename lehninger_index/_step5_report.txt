@@ -2,7 +2,7 @@ tools/validate-data.js parses as JavaScript: OK (207 lines)
 
 simulating the validator's logic against the real data:
 ok biochemie_basic: 207 topics (207 cz, 0 lehninger, 0 entity), cz book pages 8-228, 0 topicKeys, 1010 terms, 603 questions
-ok biochemie_pro: 212 topics (207 cz, 4 lehninger, 1 entity), cz book pages 8-228, 61 topicKeys, 1059 terms, 621 questions
+ok biochemie_pro: 213 topics (207 cz, 5 lehninger, 1 entity), cz book pages 8-228, 61 topicKeys, 1072 terms, 625 questions
 
 negative tests -- a check that never fails is not a check:
   half-migrated app (one node missing `book`): got=206, len=207 -> FIRES

@@ -32,7 +32,7 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — four Lehninger nodes now exist.** `L-3-4-1` in
+**§9 step 6 is under way — five Lehninger nodes now exist.** `L-3-4-1` in
 `biochemie_pro/data/leh_ch3.js` (§13) joins Czech node `2-2-1` through
 `topicKey: "protein-primary-structure"` — the Czech book says *why* an amino acid sequence
 matters, Lehninger §3.4 says *how* one is determined. `L-11-3-1` in
@@ -50,7 +50,11 @@ first node where **Lehninger is the weaker source on the topic's own theory**: t
 gives the fuller thermodynamics (G = U + pV − TS, chemical potential, activity, local
 equilibrium) and what it lacks is *numbers*. §13f explains how that changed the selection rule,
 and records two tooling problems it exposed — a **wrong anchor** and a **silently
-under-reporting `verify_citations.py`**, now fixed.
+under-reporting `verify_citations.py`**, now fixed. **`L-21-1-1` in
+`biochemie_pro/data/leh_ch21.js` (§13g) joins all nine `8-3-*` Czech nodes** through
+`topicKey: "fatty-acid-biosynthesis"` — rank 5, the highest ratio in the writable set, and
+**the §5a organic-chemistry topic, which turned out to be writable**; §13g records the method
+that made it work and is worth reading before attempting rank 9.
 
 > **⛔ Before writing a second node, read §13b.** `app.js` **never reads `book` or `topicKey`**
 > — it filters on `chapter` alone against a hardcoded 1–10 map of *Czech* chapter names. So
@@ -78,16 +82,19 @@ under-reporting `verify_citations.py`**, now fixed.
 > card) and `protein-primary-structure` (Czech `2-2-1` + Lehninger `L-3-4-1`). **Everything
 > §13b listed is now done.**
 >
-> **Updated 2026-08-06: five joins now, not two.** `L-11-3-1` (§13d) joins `membrane-transport`
+> **Updated 2026-08-06: six joins now, not two.** `L-11-3-1` (§13d) joins `membrane-transport`
 > to all three `8-5-3-*` Czech nodes, `L-19-1-1` (§13e) joins `respiratory-chain` to all
-> five `6-2-4-*` Czech nodes — the largest join yet — and `L-1-3-1` (§13f) joins
-> `bioenergetics-basics` to both `1-4` and `1-5`. Together these are a much stronger topic-view
-> demonstration than the earlier single-Czech-node joins.
+> five `6-2-4-*` Czech nodes, `L-1-3-1` (§13f) joins `bioenergetics-basics` to both `1-4` and
+> `1-5`, and `L-21-1-1` (§13g) joins `fatty-acid-biosynthesis` to all **nine** `8-3-*` Czech
+> nodes — the largest join yet, though §13g explains why only four of those nine are genuinely
+> deepened, and why that gap is worth knowing before reading the topic view as a coverage claim.
+> Together these are a much stronger topic-view demonstration than the earlier
+> single-Czech-node joins.
 >
-> **What is left is content, not plumbing.** Only 5 of 61 topicKeys join more than one source,
-> because only four Lehninger nodes and one card exist. Every further node makes the topic view
-> worth more; nothing more needs building first. §9a's depth queue (61 writable primaries, 4
-> done, 57 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is
+> **What is left is content, not plumbing.** Only 6 of 61 topicKeys join more than one source,
+> because only five Lehninger nodes and one card exist. Every further node makes the topic view
+> worth more; nothing more needs building first. §9a's depth queue (61 writable primaries, 5
+> done, 56 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is
 > the other open thread.
 
 **⚠️ Before writing or reusing any `A p.N` citation, read §16.** Three of six citations in the
@@ -755,7 +762,7 @@ key already exists and the node joins the topic view the moment it is written.
 | rank | Lehninger § | ratio | `topicKey` to use | Czech nodes waiting |
 |---|---|---|---|---|
 | 4 | 11.3 Solute Transport across Membranes | 9.5 | `membrane-transport` | ✅ **done — `L-11-3-1`** |
-| 5 | 21.1 Biosynthesis of Fatty Acids and Eicosanoids | 9.1 | `fatty-acid-biosynthesis` | 9 |
+| 5 | 21.1 Biosynthesis of Fatty Acids and Eicosanoids | 9.1 | `fatty-acid-biosynthesis` | ✅ **done — `L-21-1-1`** |
 | 6 | 19.1 The Mitochondrial Respiratory Chain | 7.5 | `respiratory-chain` | ✅ **done — `L-19-1-1`** |
 | 7 | 23.2 Tissue-Specific Metabolism | 7.3 | `tissue-specific-metabolism` | 1 |
 | 9 | 17.2 Oxidation of Fatty Acids | 6.5 | `fatty-acid-oxidation` | 2 |
@@ -773,15 +780,16 @@ above. **Four of the ten writable primaries are now done: rank 14 (`L-3-4-1`), r
 nodes (`6-2-4-1..5`) — the topic view's largest join yet; `L-1-3-1` covers all of §1.3 (A
 pp.18-27) and joins both `1-4` and `1-5`.
 
-**Six writable primaries remain in this table**, and the ordering advice has shifted with
-experience. Rank 5 (§21.1, fatty acid biosynthesis, 9 waiting Czech nodes) is still the highest
-ratio left, but §5a's organic-chemistry warning applies to it and to rank 9 — both land in the
-Czech lipid chapter, where §5's rule does the most work. The remaining picks, easiest first:
-**rank 7** (§23.2 tissue-specific metabolism, 1 waiting) and **rank 18** (§3.3 working with
-proteins, 1 waiting) are the quickest; **rank 17** (§22.3 molecules derived from amino acids,
-3 waiting) and **rank 20** (§25.1 DNA replication, 2 waiting) are mid-sized; **rank 9** (§17.2
-fatty acid oxidation, 2 waiting) is §5a-flagged but now pairs naturally with `L-19-1-1`'s ETF
-point, which already names the link from β-oxidation into the respiratory chain.
+**Five writable primaries remain in this table.** Rank 5 is now done (`L-21-1-1`, §13g) and
+**§5a's organic-chemistry warning turned out to be manageable** — see §13g for the approach that
+worked, which is reusable for rank 9. The remaining picks, easiest first: **rank 7** (§23.2
+tissue-specific metabolism, 1 waiting) and **rank 18** (§3.3 working with proteins, 1 waiting)
+are the quickest; **rank 17** (§22.3 molecules derived from amino acids, 3 waiting) and **rank
+20** (§25.1 DNA replication, 2 waiting) are mid-sized; **rank 9** (§17.2 fatty acid oxidation,
+2 waiting) is the natural next one — it is §5a-flagged like rank 5 was, but it now has two
+ready-made hooks: `L-19-1-1`'s ETF point already names the link from β-oxidation into the
+respiratory chain, and `L-21-1-1`'s reciprocal-regulation point already explains why β-oxidation
+and synthesis cannot run together.
 
 **One lesson from `L-1-3-1` that changes how to pick, not just what to pick (§13f):** the ratio
 is computed from page counts and cannot see whether the Czech section is thin on *theory* or
@@ -1257,6 +1265,71 @@ hyphenation/whitespace class of problem §16b catalogues. Teaching the regex abo
 `biochemie_pro` now reports **212 topics (207 cz, 4 lehninger, 1 entity), 61 topicKeys**;
 citation audit **39 OK, 0 ELSEWHERE, 16 UNCHECKED**.
 
+### 13g. The fifth node — `L-21-1-1`, §21.1 Fatty Acids and Eicosanoids (2026-08-06): the §5a topic, survived
+
+**`biochemie_pro/data/leh_ch21.js`, one node, `id: "L-21-1-1"`,
+`topicKey: "fatty-acid-biosynthesis"`.** Rank 5, ratio 9.1 — the highest ratio in the
+writable-today set — covering all of §21.1 (A pp.745–760, eleven subheadings). **This is the
+topic §5a flagged as the worst organic-chemistry load in the book, and it was writable.** The
+approach that made it work is the reusable part, and it applies directly to rank 9 (§17.2).
+
+**How §5's rule was satisfied without gutting the content.** Every chemical statement was routed
+to one of four things the reader can hold onto: a **named enzyme**, a **measured quantity**, a
+**drug**, or a **clinical consequence**. No reaction mechanism is drawn in prose and no
+electronic structure is invoked anywhere. Two examples of the translation. The carboxylase is
+described as a *machine* — three domains, a biotin on a flexible arm that physically rotates
+between two active sites — rather than as a carboxylation mechanism. Desaturation, which is
+where the organic chemistry would normally bite hardest, is given entirely as *what goes in and
+what carries the electrons*: two substrates oxidised at once by one O₂, electrons routed through
+cytochrome b5 reductase and cytochrome b5, all in the smooth ER. The chemistry is still there;
+what is removed is the part the reader cannot check at a bench.
+
+**Scope — the topicKey over-groups here, and this is the first case big enough to matter.**
+`fatty-acid-biosynthesis` joins **nine** Czech nodes (`8-3-1..8-3-9`), because Czech §8.3
+*Biosyntéza lipidů* is one broad section whose primary Lehninger mapping is §21.1. This node
+genuinely deepens only the first four. Czech `8-3-5`/`8-3-6` (phosphatidic acid, DAG,
+CDP-derivatives, triglycerides, phospholipids) belong to Lehninger §21.2–21.3, and
+`8-3-7..8-3-9` (mevalonate, IPP, squalene, HMG-CoA reductase, cholesterol) to §21.4 — separate
+`depth_queue.tsv` rows, none covered. **So the topic view will display this node beside five
+Czech nodes it does not deepen.** That is a property of §9c's granularity, not a defect in the
+node, but it is worth knowing before someone reads the topic view as a coverage claim.
+
+**What was deliberately NOT repeated.** The Czech nodes are strong here: `8-3-1` already names
+biotin *and* Mn²⁺ and gives the malonyl-CoA equation; `8-3-2`/`8-3-3` already walk steps I–VI
+with ACP and phosphopantetheine; `8-3-4` already gives the full stoichiometry and CO₂'s
+catalytic role. None of that is restated. What Lehninger adds is the **supply, the control and
+the destination**: the citrate shuttle (which answers how acetyl-CoA leaves the mitochondrion at
+all, and — via malate and malic enzyme — where roughly half of the 14 NADPH come from, a
+question the Czech balance sheet raises and never answers); the entire regulatory layer
+(citrate as allosteric activator, palmitoyl-CoA feedback, AMPK phosphorylation); and then two
+subjects Czech §8.3 never reaches — **essential fatty acids** and **eicosanoids**, the latter
+five pages of directly clinical material (COX-1 vs COX-2, aspirin's Ser acetylation, the
+Vioxx/Bextra withdrawals, low-dose aspirin, and why NSAIDs do nothing for asthma).
+
+**Two places this node corrects or qualifies the Czech text, both flagged rather than smoothed
+over.** (1) Czech `8-3-1` lists β-oxidation as a source of acetyl-CoA for synthesis; Lehninger
+states that in animals it is *not* a significant source, precisely because malonyl-CoA inhibits
+carnitine acyltransferase I and the two pathways are reciprocally regulated. The Czech statement
+is not wrong chemically, but as a description of an animal cell it needs the qualification.
+(2) Czech `8-3-1` places the elongase system in the **mitochondrial matrix**; Lehninger places
+elongation in **both** the smooth ER and mitochondria and calls the **ER system the more
+active** one. Answering from the Czech book alone would name the wrong principal site. Both are
+given side by side in the node rather than resolved silently.
+
+**Checker notes.** 13 citations, **11 machine-verified OK, 0 ELSEWHERE**, 2 UNCHECKED and both
+hand-verified (`citrate lyase` and `malic enzyme` on A p.752; `carnitine` and `futile` on
+A p.753). Two small lessons. First, the case-sensitive caption test from §13f needed a
+**word-boundary refinement** here: `FIGURE 21-1` is a prefix of `FIGURE 21-13` and `FIGURE
+21-15`, so a plain substring search reports FIGURE 21-1 as captioned on seven different pages.
+Require the label not be followed by another digit. Second — **do not use quotation marks for
+emphasis or for a rhetorical question in a field that also carries a citation.** The checker
+treats any quoted span as a quotation *from the book* and tries to verify it, so a rhetorical
+`'can both run at the same time?'` produced a `probe not found` line that reads exactly like a
+bad citation. Rewriting it unquoted turned the row into an honest `no searchable phrase`.
+
+`biochemie_pro` now reports **213 topics (207 cz, 5 lehninger, 1 entity), 61 topicKeys**;
+citation audit **50 OK, 0 ELSEWHERE, 18 UNCHECKED**, invariant 68 = 50 + 0 + 18.
+
 ---
 
 ## 14. Working locally — the local copy is the real one
@@ -1474,8 +1547,8 @@ Three verdicts, and the middle one is the whole point:
   `A p.71–79, §3.1` with no quotation. Reported honestly rather than passed silently; these
   still need a human.
 
-Current state (2026-08-06, four Lehninger nodes + one card): **55 citations — 39
-machine-verified OK, 0 ELSEWHERE, 16 UNCHECKED**, and the unchecked ones were checked by hand
+Current state (2026-08-06, five Lehninger nodes + one card): **68 citations — 50
+machine-verified OK, 0 ELSEWHERE, 18 UNCHECKED**, and the unchecked ones were checked by hand
 and all hold. (Was 20 citations when only `L-3-4-1` and `E-tryptophan` existed.)
 
 **⚠️ This tool has now silently under-reported twice, in two different ways. Both are fixed, and
@@ -1495,8 +1568,8 @@ actually in the data, and nothing said so.** So count them independently before 
 clean run. The invariant that actually holds is **grep count == OK + ELSEWHERE + UNCHECKED**:
 
 ```bash
-grep -oE "A pp?\.[0-9]" biochemie_pro/data/*.js | wc -l   # 55
-grep "^OK .* | ELSEWHERE" lehninger_index/_citation_audit.txt   # OK 39 | ELSEWHERE 0 | UNCHECKED 16
+grep -oE "A pp?\.[0-9]" biochemie_pro/data/*.js | wc -l   # 68
+grep "^OK .* | ELSEWHERE" lehninger_index/_citation_audit.txt   # OK 50 | ELSEWHERE 0 | UNCHECKED 18
 ```
 
 **Do not compare against the report's own `found N citations` line** — it read 56 against a grep
