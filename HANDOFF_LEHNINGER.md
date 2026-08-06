@@ -68,6 +68,12 @@ matters, Lehninger §3.4 says *how* one is determined.
 > worth more; nothing more needs building first. §9a's depth queue and §9b's `full`-scope list
 > are the work. §15 (figures) is the other open thread.
 
+**⚠️ Before writing or reusing any `A p.N` citation, read §16.** Three of six citations in the
+first integration card were wrong — the quotes were right, the page numbers were not, one by 21
+pages. `python lehninger_index/scripts/verify_citations.py` checks them all; run it after
+writing any node. This blocks the figure work in §15, because a wrong page crops the wrong
+figure and nothing downstream notices.
+
 **Working locally — read §14 before assuming the remote is the source of truth.** Since the
 2026-08-06 scan-exposure fix the working copy and the remote deliberately hold different things:
 ~500 MB of textbook page scans are local-only *by design*. §14a is the table of what lives
@@ -839,6 +845,11 @@ kinds.
 
 ### 12b. The dossier — every fact located, with the page to open in A
 
+> **⚠️ The A page numbers in the table below have NOT all been re-verified, and three of them
+> were wrong** (§16). The ones now in the shipped card are correct; this table is the original
+> and is kept for its quotes and structure. **Re-check any page here against A before reusing
+> it** — `python lehninger_index/scripts/verify_citations.py`.
+
 Read in **A** (printed page numbers below); extract clean text from **B** via
 `lehninger_index/scripts/locate.py`. Everything here was verified by reading B's text, not
 recalled.
@@ -1124,10 +1135,88 @@ pushed, exactly like the page scans in §14a. So:
   says `"full"` while its `coverageNote` admits the figures were never read as images, only
   their captions. Cropping the figures is what would make `"full"` true. Fix the definition and
   the node together, not separately.
-- **Spot-check the anchor before cropping.** §13c found `FIGURE 3-24` recorded at A p.104 when
-  the figure is near A p.92 — the entry matched a later cross-reference. `lehninger_AB_anchors.json`
-  is good to ~1 page (§9 step 2) but individual entries can be wrong, and a wrong anchor here
-  crops the wrong page rather than merely citing it. Verify against surrounding text first.
+- **⚠️ Resolve the figure's page IN A, do not trust any written page number — see §16.** Three
+  of six citations in the tryptophan card were wrong, one by 21 pages, and they came from §12b's
+  prose. For cropping this is fatal rather than annoying: a wrong page silently crops the wrong
+  figure and nothing downstream notices. **The robust method is to search A's own OCR for the
+  caption** (`FIGURE 11-15` is found on printed 376 that way, with a usable rect), which is
+  self-verifying and needs neither the anchors file nor the dossier. §13c separately found
+  `FIGURE 3-24` recorded at A p.104 when the figure is near A p.92 — anchors can be wrong too.
+- **A's OCR mangles Greek letters, ligatures and line-break hyphens** — see §16b for all four
+  traps. A caption search that does not handle them returns a silent zero.
+- **Caption search does not always hit.** Measured 2026-08-06: `FIGURE 3-28` and `FIGURE 11-15`
+  were found with rects; `FIGURE 3-6` on p.75 was not matched by a naive `search_for`. Expect to
+  fall back to rendering the whole page when the caption cannot be located.
 - **PyMuPDF renders a page region directly** — `page.get_pixmap(clip=fitz.Rect(...), dpi=…)`.
   `HANDOFF.md` §9b already documents the crop-and-upscale pattern used to read printed numbers
   off a scan; the same call produces a figure crop. Nothing new needs installing.
+
+---
+
+## 16. ⚠️ Page citations were wrong 3 times out of 6 — verify them, never copy them
+
+**Found 2026-08-06, right after the tryptophan card shipped.** A spot check of six `A p.N`
+citations inside `E-tryptophan` found **three wrong**:
+
+| citation | the card said | actually on |
+|---|---|---|
+| `FIGURE 3-6` | A p.73 | **A p.75** |
+| "…more polar than phenylalanine…" | A p.72–73 | **A p.75** |
+| `FIGURE 11-15` | A p.396–397 | **A p.375–376** — off by 21 pages |
+
+**Every quoted sentence was accurate. Only the page numbers were wrong.** That is the dangerous
+shape of error: nothing about the text reads as suspect, so it survives any review that checks
+whether the content is *true* rather than whether the *pointer* is.
+
+**Root cause — and it is not "the anchors file is unreliable".** The anchors were right;
+`lehninger_AB_anchors.json` puts `FIGURE 3-6` on printed 75, which is correct. The wrong numbers
+came from **§12b's dossier prose**, written earlier, never checked against A, then copied into
+the card. So:
+
+> **Never take an A page number from prose — including from this handoff. Look it up in A.**
+
+This also cleared an earlier scare: the `−36` offset was briefly suspected of drifting, because
+pages that "should" have carried a figure did not. **The offset is constant at −36** — re-measured
+on 23 sample pages spanning pdf 60→1100, every one agreeing. The pages cited were wrong, not the
+offset.
+
+**Why this was worth stopping the figure work for:** §15 plans to *crop figures* from these
+pages. A wrong page number there silently crops the wrong content into the app, and nothing
+downstream would notice. Trustworthy citations are a prerequisite for figures, not a detour.
+
+### 16a. `scripts/verify_citations.py` — run it after writing any node
+
+Checks every `A p.N` in the app data against what that page of A actually contains, using the
+quoted text or the figure label in the citation as the probe. Writes
+`lehninger_index/_citation_audit.txt`.
+
+```bash
+python lehninger_index/scripts/verify_citations.py
+```
+
+Three verdicts, and the middle one is the whole point:
+
+- **OK** — probe found inside the cited range.
+- **ELSEWHERE** — the quote is real but sits on a different page. **Fix the citation, not the
+  quote.** This is the verdict that would have caught all three errors above.
+- **UNCHECKED** — no phrase distinctive enough to search on, usually a broad range like
+  `A p.71–79, §3.1` with no quotation. Reported honestly rather than passed silently; these
+  still need a human.
+
+Current state: **11 citations — 6 machine-verified OK, 0 ELSEWHERE, 5 UNCHECKED**, and those
+five were checked by hand and all hold.
+
+### 16b. Four OCR realities the checker had to learn
+
+Each was found by the checker reporting a **false negative** on a citation that was in fact
+correct. Any future tool that matches text against A needs all four:
+
+| trap | what A's OCR actually produces |
+|---|---|
+| ligatures | `ff`/`fi`/`fl` as single glyphs; **`ft` as `×` (U+00D7) or `ƞ`** — the same bug as `locate.py` |
+| line-break hyphenation | `"sig- nificantly"`, `"trypto- phan"` — rejoin before matching |
+| **Greek letters do not survive at all** | β reads as `/3`, `f3`, `,B` or `13`; α as `a`. `"in β strands of membrane proteins"` — verbatim on p.375 — looked absent from the entire book |
+| ellipsis in a quote | `"A…B"` is not contiguous text; split on the ellipsis and require every fragment |
+
+The Greek one is the nastiest, because β and α are everywhere in biochemistry and the failure is
+always a silent zero-hit rather than an error.
