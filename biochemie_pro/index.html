@@ -59,6 +59,52 @@
   .chain li:first-child::before{ content:'●'; font-size:.55rem; }
   .chain .ch-en{ display:block; }
   .chain .ch-cn{ display:block; opacity:.8; font-size:.92em; margin-top:.15rem; }
+  /* Sidebar grouping toggle */
+  .nav-toggle{ display:flex; gap:.3rem; padding:0 .75rem .55rem; }
+  .nav-toggle button{
+    flex:1; cursor:pointer; padding:.3rem .2rem; border-radius:.3rem;
+    background:var(--bg-sink); border:1px solid var(--line); color:var(--fg-dim);
+    font-size:.72rem; letter-spacing:.03em;
+  }
+  .nav-toggle button span{ opacity:.7; margin-left:.25em; }
+  .nav-toggle button.active{ background:#7c3aed; border-color:#7c3aed; color:#fff; }
+
+  /* Topic-view grouping: one heading per topicKey, the nodes under it from either book. */
+  .tk-head{
+    display:flex; align-items:baseline; gap:.4rem;
+    padding:.75rem .75rem .25rem; margin-top:.3rem;
+    border-top:1px solid var(--line);
+    font-size:.74rem; font-weight:700; letter-spacing:.03em; color:var(--accent);
+  }
+  .tk-head .tk-count{
+    margin-left:auto; font-weight:400; color:var(--fg-dim);
+    background:var(--bg-sink); border:1px solid var(--line); border-radius:4px; padding:0 .35rem;
+  }
+  /* Two or more books under one key is the thing pro exists to show -- mark it. */
+  .tk-head.tk-joined{ color:#a78bfa; }
+  .tk-head.tk-joined::after{ content:'⇄'; margin-left:.15rem; }
+  .ti-src{
+    flex:0 0 auto; font-size:.62rem; font-weight:700; letter-spacing:.05em;
+    padding:0 .3em; border-radius:.25em; background:var(--bg-sink);
+    border:1px solid var(--line); color:var(--fg-dim);
+  }
+  .ti-src.src-lehninger{ background:#b45309; border-color:#b45309; color:#fff; }
+  .ti-src.src-entity{ background:#7c3aed; border-color:#7c3aed; color:#fff; }
+
+  /* "Same topic" strip in the study pane. */
+  .same-topic{
+    margin:0 0 1rem; padding:.6rem .75rem; border-radius:.4rem;
+    background:var(--bg-sink); border:1px solid var(--line);
+  }
+  .same-topic h3{ margin:0 0 .4rem; font-size:.74rem; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--fg-dim); font-weight:700; }
+  .same-topic ul{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.4rem; }
+  .same-topic button{
+    cursor:pointer; padding:.25rem .55rem; border-radius:.3rem; font-size:.8rem;
+    background:var(--bg-raise); border:1px solid var(--line); color:var(--fg-mute);
+  }
+  .same-topic button:hover{ border-color:#7c3aed; color:var(--fg); }
+
   .chain .ch-src{
     display:inline-block; margin-left:.4rem; padding:0 .35em;
     font-size:.7em; border-radius:.25em;
@@ -99,6 +145,13 @@
   <aside class="sidebar" id="sidebar">
     <div class="search-wrap">
       <input type="search" id="search" placeholder="Search topics, terms, CZ words…" autocomplete="off">
+    </div>
+    <!-- PRO only. "By book" is the original linear reading order; "By topic" groups on
+         topicKey so the Czech section, the Lehninger depth node and any integration card
+         about the same thing sit together. HANDOFF_LEHNINGER.md section 7. -->
+    <div class="nav-toggle" id="nav-toggle" role="tablist" aria-label="Sidebar grouping">
+      <button data-nav="book"  class="active" role="tab">By book <span>分书</span></button>
+      <button data-nav="topic"               role="tab">By topic <span>按主题</span></button>
     </div>
     <div class="progress-strip">
       <div class="progress-bar"><div id="overall-progress"></div></div>

@@ -99,6 +99,77 @@
     return perBook[ch] || { cz: '—', en: 'Chapter ' + ch, cn: '第 ' + ch + ' 章' };
   }
 
+  /* ---------------------------------------------------------------- topicKey */
+  /* The join key. Nodes about the same thing share it regardless of which book they
+     came from, which is the whole point of `pro` -- see HANDOFF_LEHNINGER.md section 4.
+     A slug like "protein-primary-structure" is not readable in a sidebar, so a heading
+     is built from the nodes themselves rather than kept in a second hand-maintained map
+     that could drift out of sync with the data. */
+  function topicKeyLabel(key, members) {
+    const cz = members.filter((t) => bookOf(t) === 'cz' && !isEntity(t));
+    const pick = cz[0] || members[0];
+    if (!pick) return key;
+    return state.lang === 'cn' ? (pick.cnTitle || key) : (pick.enTitle || key);
+  }
+
+  /* Groups in a stable, meaningful order: Czech book order first (that is the reading
+     order the exam follows), then any key with no Czech node at all. */
+  function topicGroups() {
+    const groups = new Map();
+    TOPICS.forEach((t) => {
+      const k = t.topicKey;
+      if (!k) return;
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(t);
+    });
+    const rank = (members) => {
+      const cz = members.filter((t) => bookOf(t) === 'cz' && !isEntity(t));
+      if (!cz.length) return [99, 99];
+      const first = cz.reduce((a, b) => (secKey(a) <= secKey(b) ? a : b));
+      return [first.chapter, 0, secKey(first)];
+    };
+    return Array.from(groups.entries())
+      .map(([key, members]) => ({ key: key, members: members, rank: rank(members) }))
+      .sort((a, b) => (a.rank[0] - b.rank[0]) || String(a.rank[2]).localeCompare(String(b.rank[2]), undefined, { numeric: true }));
+  }
+
+  // "7.11.2" sorts after "7.9" numerically, not lexically.
+  function secKey(t) {
+    return String(t.section || '').split('.').map((n) => String(n).padStart(3, '0')).join('.');
+  }
+
+  function sourceTag(t) {
+    if (isEntity(t)) return { cls: 'src-entity', text: 'CARD' };
+    if (bookOf(t) === 'lehninger') return { cls: 'src-lehninger', text: 'LEH' };
+    return { cls: 'src-cz', text: 'CZ' };
+  }
+
+  /* The integration payoff shown where you would actually want it: while reading a Czech
+     section, a link to the Lehninger node that goes deeper on the same thing, and to any
+     integration card that gathers it. Renders nothing when the key is not shared, so a
+     topic covered by one book only stays visually clean. */
+  function sameTopicHtml(t) {
+    if (!t.topicKey) return '';
+    const others = TOPICS.filter((x) => x.topicKey === t.topicKey && x.id !== t.id);
+    if (!others.length) return '';
+    others.sort((a, b) => {
+      const order = (x) => (isEntity(x) ? 2 : bookOf(x) === 'cz' ? 0 : 1);
+      return (order(a) - order(b)) || String(secKey(a)).localeCompare(String(secKey(b)));
+    });
+    const items = others.map((x) => {
+      const tag = sourceTag(x);
+      const label = state.lang === 'cn' ? x.cnTitle : x.enTitle;
+      return `<li><button class="link-btn same-topic-link" data-id="${esc(x.id)}">
+                <span class="ti-src ${tag.cls}">${esc(tag.text)}</span>
+                ${esc(label)}
+              </button></li>`;
+    }).join('');
+    return `<div class="same-topic">
+              <h3>Same topic <span class="muted">同一主题 · ${esc(t.topicKey)}</span></h3>
+              <ul>${items}</ul>
+            </div>`;
+  }
+
   /* ----------------------------------------------------------- persistence */
   const store = {
     get(key, fallback) {
@@ -120,7 +191,8 @@
     boxes:   store.get('boxes', {}),      // cardKey -> Leitner box 1..5
     scores:  store.get('scores', {}),     // topicId -> {correct,total}
     topicId: null,
-    filter:  ''
+    filter:  '',
+    nav:     store.get('nav', 'book')     // 'book' = linear reading order, 'topic' = by topicKey
   };
 
   /* ---------------------------------------------------------------- helpers */
@@ -375,6 +447,11 @@
       b.classList.toggle('active', b.dataset.lang === state.lang));
   }
 
+  function applyNav() {
+    $$('#nav-toggle button').forEach((b) =>
+      b.classList.toggle('active', b.dataset.nav === state.nav));
+  }
+
   function setMode(mode) {
     $$('.mode-btn').forEach((b) => b.classList.toggle('active', b.dataset.mode === mode));
     $$('.panel').forEach((p) => p.classList.toggle('active', p.id === 'panel-' + mode));
@@ -400,9 +477,55 @@
     return hay.includes(needle);
   }
 
+  function topicItemHtml(t, opts) {
+    const done = state.studied.has(t.id);
+    const label = state.lang === 'cn' ? t.cnTitle : t.enTitle;
+    const lead = (opts && opts.showSource)
+      ? `<span class="ti-src ${sourceTag(t).cls}">${esc(sourceTag(t).text)}</span>`
+      : `<span class="ti-sec">${esc(isEntity(t) ? '◆' : t.section)}</span>`;
+    return `<button class="topic-item${t.id === state.topicId ? ' current' : ''}" data-id="${esc(t.id)}">
+              ${lead}
+              <span class="ti-title">${esc(label)}</span>
+              ${done ? '<span class="ti-done">✓</span>' : ''}
+            </button>`;
+  }
+
+  /* Topic view: one heading per topicKey, every node about that thing beneath it
+     regardless of book. This is the feature `pro` exists for (HANDOFF_LEHNINGER.md
+     section 4) -- the book view stays for linear reading. */
+  function renderSidebarByTopic(needle) {
+    let html = '';
+    let joined = 0;
+    topicGroups().forEach((g) => {
+      const members = g.members.filter((t) => topicMatches(t, needle));
+      if (!members.length) return;
+      members.sort((a, b) => {
+        const order = (t) => (isEntity(t) ? 2 : bookOf(t) === 'cz' ? 0 : 1);
+        return (order(a) - order(b)) || String(secKey(a)).localeCompare(String(secKey(b)));
+      });
+      const sources = new Set(members.map((t) => (isEntity(t) ? 'card' : bookOf(t))));
+      const isJoined = sources.size > 1;
+      if (isJoined) joined++;
+      html += `<div class="tk-head${isJoined ? ' tk-joined' : ''}" title="${esc(g.key)}">
+                 <span>${esc(topicKeyLabel(g.key, g.members))}</span>
+                 <span class="tk-count">${members.length}</span>
+               </div>`;
+      members.forEach((t) => { html += topicItemHtml(t, { showSource: true }); });
+    });
+    return html;
+  }
+
   function renderSidebar() {
     const needle = state.filter.trim().toLowerCase();
     let html = '';
+
+    if (state.nav === 'topic') {
+      html = renderSidebarByTopic(needle);
+      if (!html) html = '<p class="no-results">No topic matches that search.</p>';
+      $('#topic-list').innerHTML = html;
+      wireTopicItems();
+      return;
+    }
 
     const books = booksPresent();
     books.forEach((book) => {
@@ -464,6 +587,10 @@
     if (!html) html = '<p class="no-results">No topic matches that search.</p>';
     $('#topic-list').innerHTML = html;
 
+    wireTopicItems();
+  }
+
+  function wireTopicItems() {
     $$('.topic-item').forEach((btn) => {
       btn.addEventListener('click', () => {
         state.topicId = btn.dataset.id;
@@ -539,6 +666,8 @@
             : `<h1 class="th-en">${esc(t.enTitle)} ${speakBtn(t.enTitle, 'en-US')}</h1>`}
           <p class="th-cn">${esc(t.cnTitle)} ${speakBtn(t.cnTitle, 'zh-CN')}</p>
         </div>
+
+        ${sameTopicHtml(t)}
 
         ${t.coverageNote ? `<p class="cov-note">${esc(t.coverageNote)}</p>` : ''}
 
@@ -619,6 +748,15 @@
       store.set('studied', Array.from(state.studied));
       renderStudy();
       renderSidebar();
+    });
+
+    body.querySelectorAll('.same-topic-link').forEach((b) => {
+      b.addEventListener('click', () => {
+        state.topicId = b.dataset.id;
+        renderStudy();
+        renderSidebar();
+        $('.content').scrollTop = 0;
+      });
     });
 
     wireSayButtons(body);
@@ -920,6 +1058,7 @@
 
     applyTheme();
     applyLang();
+    applyNav();
 
     document.body.classList.toggle('bionic-on', state.bionic);
     $('#bionic-toggle').classList.toggle('active', state.bionic);
@@ -950,6 +1089,15 @@
       store.set('lang', state.lang);
       applyLang(); renderSidebar(); renderStudy();
       if (currentCard) renderCard();
+    });
+
+    $('#nav-toggle').addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      state.nav = btn.dataset.nav;
+      store.set('nav', state.nav);
+      applyNav();
+      renderSidebar();
     });
 
     $('#theme-toggle').addEventListener('click', () => {
