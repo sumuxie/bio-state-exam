@@ -47,7 +47,11 @@ def parse_nodes(src):
         if n.type == "ObjectExpression":
             keys = {pr.key.name if pr.key.type == "Identifier" else pr.key.value
                     for pr in n.properties}
-            if {"id", "chapter", "section"} <= keys:
+            # Section nodes have id+chapter+section. Entity cards deliberately have
+            # NEITHER (HANDOFF_LEHNINGER.md 12a), so keying the detector on those three
+            # silently skipped every integration card: the simulation said 208 topics
+            # while the browser would load 209.
+            if {"id", "chapter", "section"} <= keys or {"id", "kind", "topicKey"} <= keys:
                 found.append(lit(n)); return
         for k in dir(n):
             if k.startswith("_") or k == "type": continue
@@ -57,7 +61,9 @@ def parse_nodes(src):
     walk(tree.body)
     return found
 
-REQUIRED = ["id","chapter","section","czTitle","enTitle","cnTitle","coverage","summary"]
+REQUIRED_SECTION = ["id","chapter","section","czTitle","enTitle","cnTitle","coverage","summary"]
+REQUIRED_ENTITY  = ["id","enTitle","cnTitle","topicKey","summary"]
+KINDS = ["section","entity"]
 BOOKS = ["cz", "lehninger"]
 TAG = re.compile(r'<script\s+src="data/([^"]+\.js)"\s*>')
 
@@ -79,8 +85,15 @@ def validate(app):
     if not T: problems.append("no topics loaded")
 
     for t in T:
-        for k in REQUIRED:
+        req = REQUIRED_ENTITY if t.get("kind") == "entity" else REQUIRED_SECTION
+        for k in req:
             if not t.get(k): problems.append(f'{t.get("id")}: missing {k}')
+        if t.get("kind") is not None and t["kind"] not in KINDS:
+            problems.append(f'{t["id"]}: bad kind {t["kind"]!r}')
+        if t.get("kind") == "entity" and ("chapter" in t or "pages" in t):
+            problems.append(f'{t["id"]}: entity card must not carry chapter/pages')
+        if t.get("kind") == "entity" and "book" in t:
+            problems.append(f'{t["id"]}: entity card must not carry book')
         s = t.get("summary") or {}
         if not s.get("en") or not s.get("cn"):
             problems.append(f'{t.get("id")}: summary missing a language')
@@ -105,10 +118,11 @@ def validate(app):
         if o and (not o.get("model_en") or not o.get("checklist")):
             problems.append(f'{t["id"]}: bad oral block')
 
-    for name in ("book", "topicKey"):
-        got = sum(1 for t in T if t.get(name))
-        if got not in (0, len(T)):
-            problems.append(f"{name}: {got} of {len(T)} topics have it -- all or none")
+    secs = [t for t in T if t.get("kind") != "entity"]
+    for name, pool in (("book", secs), ("topicKey", T)):
+        got = sum(1 for t in pool if t.get(name))
+        if got not in (0, len(pool)):
+            problems.append(f"{name}: {got} of {len(pool)} have it -- all or none")
 
     ids = [t["id"] for t in T]
     for d in sorted({i for i in ids if ids.count(i) > 1}):
@@ -116,6 +130,7 @@ def validate(app):
 
     by = {}
     for t in T:
+        if t.get("kind") == "entity": continue
         if (t.get("book") or "cz") != "cz": continue
         by.setdefault(f'cz/{t["chapter"]}', set()).update(t.get("pages") or [])
     for k in sorted(by):
@@ -123,8 +138,9 @@ def validate(app):
         gaps = [x for x in range(pg[0], pg[-1] + 1) if x not in by[k]]
         if gaps: problems.append(f'{k}: page gaps {",".join(map(str,gaps))}')
 
-    cz = [t for t in T if (t.get("book") or "cz") == "cz"]
-    leh = [t for t in T if t.get("book") == "lehninger"]
+    ents = [t for t in T if t.get("kind") == "entity"]
+    cz = [t for t in secs if (t.get("book") or "cz") == "cz"]
+    leh = [t for t in secs if t.get("book") == "lehninger"]
     pages = [x for t in cz for x in (t.get("pages") or [])]
     keys = {t["topicKey"] for t in T if t.get("topicKey")}
     terms = sum(len(t.get("terms") or []) for t in T)
@@ -133,7 +149,7 @@ def validate(app):
         p(f"FAIL {app}")
         for x in problems[:40]: p("   " + x)
         return False
-    p(f'ok {app}: {len(T)} topics ({len(cz)} cz, {len(leh)} lehninger), '
+    p(f'ok {app}: {len(T)} topics ({len(cz)} cz, {len(leh)} lehninger, {len(ents)} entity), '
       f'cz book pages {min(pages)}-{max(pages)}, {len(keys)} topicKeys, '
       f'{terms} terms, {qs} questions')
     return True

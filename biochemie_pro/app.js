@@ -73,17 +73,24 @@
      biochemie_basic's data working unchanged if this file is ever shared back. */
   function bookOf(t) { return t.book || 'cz'; }
 
+  /* Integration cards (kind: "entity") gather one entity from wherever it is scattered,
+     so they belong to no book and no chapter. They get their own sidebar group rather
+     than being forced into one. HANDOFF_LEHNINGER.md sections 4 and 12a. */
+  function isEntity(t) { return t.kind === 'entity'; }
+  function entityCards() { return TOPICS.filter(isEntity); }
+  function sectionNodes() { return TOPICS.filter((t) => !isEntity(t)); }
+
   /* Books in display order, but only those that actually have nodes, so the sidebar
      does not grow an empty "Lehninger 8" heading before any Lehninger node exists. */
   function booksPresent() {
-    return ['cz', 'lehninger'].filter((b) => TOPICS.some((t) => bookOf(t) === b));
+    return ['cz', 'lehninger'].filter((b) => sectionNodes().some((t) => bookOf(t) === b));
   }
 
   /* Chapters present in one book, ascending. Derived from the data rather than a
      hardcoded [1..10], so chapter 22 or 25 appears the moment a node claims it. */
   function chaptersOf(book) {
     const seen = new Set();
-    TOPICS.forEach((t) => { if (bookOf(t) === book) seen.add(t.chapter); });
+    sectionNodes().forEach((t) => { if (bookOf(t) === book) seen.add(t.chapter); });
     return Array.from(seen).sort((a, b) => a - b);
   }
 
@@ -343,7 +350,7 @@
         html += `<option value="book:${esc(book)}">${esc('All of ' + bt.en)}</option>`;
       }
       chaptersOf(book).forEach((ch) => {
-        const list = TOPICS.filter((t) => bookOf(t) === book && t.chapter === ch);
+        const list = sectionNodes().filter((t) => bookOf(t) === book && t.chapter === ch);
         if (!list.length) return;
         const label = (books.length > 1 ? bt.short + ' · ' : '')
                     + 'Ch. ' + ch + ' — ' + chapterInfo(book, ch).en;
@@ -399,7 +406,7 @@
 
     const books = booksPresent();
     books.forEach((book) => {
-      const bookRows = TOPICS.filter((t) => bookOf(t) === book && topicMatches(t, needle));
+      const bookRows = sectionNodes().filter((t) => bookOf(t) === book && topicMatches(t, needle));
       if (!bookRows.length) return;
 
       // Only label the book when there is more than one, so the Czech-only view is
@@ -433,6 +440,26 @@
         });
       });
     });
+
+    // Integration cards last: they are the synthesis, and they read better after the
+    // sections they draw on. HANDOFF_LEHNINGER.md section 4.
+    const cards = entityCards().filter((t) => topicMatches(t, needle));
+    if (cards.length) {
+      html += `<div class="book-head book-entity">
+                 <span class="book-name">Integration cards</span>
+                 <span class="book-cn">整合卡片</span>
+                 <span class="book-count">${cards.length}</span>
+               </div>`;
+      cards.forEach((t) => {
+        const done = state.studied.has(t.id);
+        const label = state.lang === 'cn' ? t.cnTitle : t.enTitle;
+        html += `<button class="topic-item${t.id === state.topicId ? ' current' : ''}" data-id="${esc(t.id)}">
+                   <span class="ti-sec">◆</span>
+                   <span class="ti-title">${esc(label)}</span>
+                   ${done ? '<span class="ti-done">✓</span>' : ''}
+                 </button>`;
+      });
+    }
 
     if (!html) html = '<p class="no-results">No topic matches that search.</p>';
     $('#topic-list').innerHTML = html;
@@ -496,16 +523,20 @@
       <article class="topic">
         <div class="topic-head">
           <div class="th-meta">
-            <span class="book-pill${bookOf(t) === 'cz' ? ' is-cz' : ''}">${esc(BOOK_TITLES[bookOf(t)].en)}</span>
-            <span class="th-sec">${esc(t.section)}</span>
-            <span class="badge ${cov.cls}">${esc(cov.text)}</span>
-            ${pages ? `<span class="badge badge-page">${esc(pages)}</span>` : ''}
+            ${isEntity(t)
+              ? `<span class="book-pill is-entity">Integration card 整合卡片</span>`
+              : `<span class="book-pill${bookOf(t) === 'cz' ? ' is-cz' : ''}">${esc(BOOK_TITLES[bookOf(t)].en)}</span>
+                 <span class="th-sec">${esc(t.section)}</span>
+                 <span class="badge ${cov.cls}">${esc(cov.text)}</span>
+                 ${pages ? `<span class="badge badge-page">${esc(pages)}</span>` : ''}`}
             ${t.cnNote && t.cnNote.status === 'mapped'
               ? `<span class="badge badge-note">中文笔记 ${esc(t.cnNote.topic)}. ${esc(t.cnNote.title)}</span>`
-              : `<span class="badge badge-pending">中文笔记待对应</span>`}
+              : (isEntity(t) ? '' : `<span class="badge badge-pending">中文笔记待对应</span>`)}
           </div>
-          <h1 class="th-cz">${esc(t.czTitle)} ${speakBtn(t.czTitle, 'cs-CZ')}</h1>
-          <p class="th-en">${esc(t.enTitle)} ${speakBtn(t.enTitle, 'en-US')}</p>
+          ${t.czTitle ? `<h1 class="th-cz">${esc(t.czTitle)} ${speakBtn(t.czTitle, 'cs-CZ')}</h1>` : ''}
+          ${t.czTitle
+            ? `<p class="th-en">${esc(t.enTitle)} ${speakBtn(t.enTitle, 'en-US')}</p>`
+            : `<h1 class="th-en">${esc(t.enTitle)} ${speakBtn(t.enTitle, 'en-US')}</h1>`}
           <p class="th-cn">${esc(t.cnTitle)} ${speakBtn(t.cnTitle, 'zh-CN')}</p>
         </div>
 
@@ -515,6 +546,21 @@
           <h2>Summary <span class="muted">概要</span> ${speakPairBtn(t.summary && t.summary.en, t.summary && t.summary.cn)}</h2>
           <div class="summary">${bi(t.summary && t.summary.en, t.summary && t.summary.cn)}</div>
         </section>`;
+
+    /* `chains` is entity-card-only: an ordered causal run, each step landing on something
+       observable, per the organic-chemistry rule in HANDOFF_LEHNINGER.md section 5. */
+    (t.chains || []).forEach((chain) => {
+      html += `<section class="block">
+                 <h2>${esc(chain.title_en)} <span class="muted">${esc(chain.title_cn || '')}</span></h2>
+                 <ol class="chain">`;
+      (chain.steps || []).forEach((s) => {
+        html += `<li>
+                   <span class="ch-en">${esc(s.en)}${s.src ? `<span class="ch-src">${esc(s.src)}</span>` : ''}</span>
+                   <span class="ch-cn">${esc(s.cn || '')}</span>
+                 </li>`;
+      });
+      html += `</ol></section>`;
+    });
 
     if (t.points && t.points.length) {
       html += `<section class="block"><h2>Point by point <span class="muted">逐条要点</span></h2><ol class="points">`;

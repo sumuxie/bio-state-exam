@@ -32,7 +32,19 @@
 const fs = require('fs');
 const path = require('path');
 
-const REQUIRED = ['id', 'chapter', 'section', 'czTitle', 'enTitle', 'cnTitle', 'coverage', 'summary'];
+/* Section nodes are anchored to a place in a book, so they must say where. Entity cards
+   (kind: "entity") are not: an integration card gathers one entity -- tryptophan, say --
+   from wherever it is scattered, so `chapter`/`section`/`pages`/`coverage` have no honest
+   value to hold. See HANDOFF_LEHNINGER.md section 12a. Requiring them anyway would force a
+   synthetic chapter number, and there is no neutral one available: the test below is
+   `if (!t[k])`, which is falsy, so even `chapter: 0` fails. */
+const REQUIRED_SECTION = ['id', 'chapter', 'section', 'czTitle', 'enTitle', 'cnTitle', 'coverage', 'summary'];
+const REQUIRED_ENTITY  = ['id', 'enTitle', 'cnTitle', 'topicKey', 'summary'];
+const KINDS = ['section', 'entity'];
+
+function requiredFor(t) {
+  return t.kind === 'entity' ? REQUIRED_ENTITY : REQUIRED_SECTION;
+}
 const BOOKS = ['cz', 'lehninger'];
 
 /* The data files an app actually ships, taken from its index.html rather than
@@ -81,7 +93,15 @@ function validate(app) {
   if (!T.length) problems.push('no topics loaded');
 
   T.forEach((t) => {
-    REQUIRED.forEach((k) => { if (!t[k]) problems.push(t.id + ': missing ' + k); });
+    requiredFor(t).forEach((k) => { if (!t[k]) problems.push(t.id + ': missing ' + k); });
+    if (t.kind !== undefined && KINDS.indexOf(t.kind) === -1) {
+      problems.push(t.id + ': kind must be one of ' + KINDS.join('/') + ', got ' + JSON.stringify(t.kind));
+    }
+    /* An entity card that claims a chapter is lying about being unanchored, and it would
+       land in a book view it does not belong to. */
+    if (t.kind === 'entity' && (t.chapter !== undefined || t.pages !== undefined)) {
+      problems.push(t.id + ': entity cards must not carry chapter or pages');
+    }
     if (!t.summary || !t.summary.en || !t.summary.cn) problems.push(t.id + ': summary missing a language');
     if (t.book !== undefined && BOOKS.indexOf(t.book) === -1) {
       problems.push(t.id + ': book must be one of ' + BOOKS.join('/') + ', got ' + JSON.stringify(t.book));
@@ -113,12 +133,23 @@ function validate(app) {
      tagged, some not -- is the state where the topic view silently drops
      whatever was missed, and it looks fine on screen. Either the app has been
      migrated or it has not. */
-  [['book', (t) => t.book], ['topicKey', (t) => t.topicKey]].forEach((pair) => {
+  /* `book` says which book a node was written FROM. An entity card is written from
+     several at once -- that is the whole point of it -- so it carries no `book` and is
+     excluded from this count rather than being given a false one. `topicKey` is the join
+     key and every node needs it, entity cards included. */
+  const sectionNodes = T.filter((t) => t.kind !== 'entity');
+  [['book', sectionNodes], ['topicKey', T]].forEach((pair) => {
     const name = pair[0];
-    const got = T.filter(pair[1]).length;
-    if (got !== 0 && got !== T.length) {
-      problems.push(name + ': ' + got + ' of ' + T.length
+    const pool = pair[1];
+    const got = pool.filter((t) => t[name]).length;
+    if (got !== 0 && got !== pool.length) {
+      problems.push(name + ': ' + got + ' of ' + pool.length
         + ' topics have it -- it must be on all of them or none');
+    }
+  });
+  T.forEach((t) => {
+    if (t.kind === 'entity' && t.book !== undefined) {
+      problems.push(t.id + ': entity cards must not carry book -- they draw on several');
     }
   });
 
@@ -131,6 +162,7 @@ function validate(app) {
      only, and keyed by book because `chapter` is book-local. */
   const byChapter = {};
   T.forEach((t) => {
+    if (t.kind === 'entity') return;          // unanchored: no chapter, no pages to check
     if ((t.book || 'cz') !== 'cz') return;
     const key = 'cz/' + t.chapter;
     (t.pages || []).forEach((p) => {
@@ -146,8 +178,9 @@ function validate(app) {
     if (gaps.length) problems.push(key + ': page gaps ' + gaps.join(','));
   });
 
-  const czTopics = T.filter((t) => (t.book || 'cz') === 'cz');
-  const lehTopics = T.filter((t) => t.book === 'lehninger');
+  const entityCards = T.filter((t) => t.kind === 'entity');
+  const czTopics = sectionNodes.filter((t) => (t.book || 'cz') === 'cz');
+  const lehTopics = sectionNodes.filter((t) => t.book === 'lehninger');
   const allPages = czTopics.reduce((s, t) => s.concat(t.pages || []), []);
   const terms = T.reduce((n, t) => n + (t.terms || []).length, 0);
   const qs = T.reduce((n, t) => n + (t.quiz || []).length, 0);
@@ -160,7 +193,8 @@ function validate(app) {
     return false;
   }
   console.log('ok ' + app + ': ' + T.length + ' topics ('
-    + czTopics.length + ' cz, ' + lehTopics.length + ' lehninger)'
+    + czTopics.length + ' cz, ' + lehTopics.length + ' lehninger'
+    + (entityCards.length ? ', ' + entityCards.length + ' entity cards' : '') + ')'
     + ', cz book pages ' + Math.min.apply(null, allPages) + '-' + Math.max.apply(null, allPages)
     + ', ' + Object.keys(keys).length + ' topicKeys'
     + ', ' + terms + ' terms, ' + qs + ' questions');

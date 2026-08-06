@@ -40,6 +40,30 @@
     background:#b45309; color:#fff; vertical-align:.15em;
   }
   .book-pill.is-cz{ background:var(--bg-sink); color:var(--accent); border:1px solid var(--line); }
+  .book-pill.is-entity{ background:#7c3aed; }
+  .book-entity{ border-top-color:#7c3aed; }
+  .book-entity .book-name{ color:#a78bfa; }
+
+  /* Entity cards read as chains: claim -> therefore -> therefore. The chain block makes
+     that visible instead of leaving it as prose the reader has to reconstruct. */
+  .chain{ list-style:none; padding:0; margin:.6rem 0 0; }
+  .chain li{
+    position:relative; padding:.55rem 0 .55rem 1.6rem;
+    border-left:2px solid #7c3aed; margin-left:.5rem;
+  }
+  .chain li::before{
+    content:'↓'; position:absolute; left:-.62rem; top:.45rem;
+    width:1.1rem; height:1.1rem; line-height:1.05rem; text-align:center;
+    border-radius:50%; background:#7c3aed; color:#fff; font-size:.7rem;
+  }
+  .chain li:first-child::before{ content:'●'; font-size:.55rem; }
+  .chain .ch-en{ display:block; }
+  .chain .ch-cn{ display:block; opacity:.8; font-size:.92em; margin-top:.15rem; }
+  .chain .ch-src{
+    display:inline-block; margin-left:.4rem; padding:0 .35em;
+    font-size:.7em; border-radius:.25em;
+    background:var(--bg-sink); border:1px solid var(--line); color:var(--fg-dim);
+  }
 </style>
 </head>
 <body>
@@ -189,6 +213,7 @@
 <script src="data/ch9.js"></script>
 <script src="data/ch10.js"></script>
 <script src="data/leh_ch3.js"></script>
+<script src="data/entity_cards.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
