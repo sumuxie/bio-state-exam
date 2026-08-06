@@ -2270,7 +2270,7 @@ window.BIOCHEM.topics.push(
 {
   id: "8-4-4-2",
   book: "cz",
-  topicKey: "fat-mobilization",
+  topicKey: "fatty-acid-oxidation",
   chapter: 8,
   section: "8.4.4",
   czTitle: "Mastné kyseliny — mechanismus β-oxidace",
@@ -2357,7 +2357,7 @@ window.BIOCHEM.topics.push(
 {
   id: "8-4-4-3",
   book: "cz",
-  topicKey: "fat-mobilization",
+  topicKey: "fatty-acid-oxidation",
   chapter: 8,
   section: "8.4.4",
   czTitle: "Mastné kyseliny — osud acetyl-CoA, ketolátky",
@@ -2442,7 +2442,7 @@ window.BIOCHEM.topics.push(
 {
   id: "8-4-4-4",
   book: "cz",
-  topicKey: "fat-mobilization",
+  topicKey: "fatty-acid-oxidation",
   chapter: 8,
   section: "8.4.4",
   czTitle: "Mastné kyseliny — nenasycené, lichouhlíkaté a větvené kyseliny",

@@ -32,7 +32,7 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — five Lehninger nodes now exist.** `L-3-4-1` in
+**§9 step 6 is under way — six Lehninger nodes now exist.** `L-3-4-1` in
 `biochemie_pro/data/leh_ch3.js` (§13) joins Czech node `2-2-1` through
 `topicKey: "protein-primary-structure"` — the Czech book says *why* an amino acid sequence
 matters, Lehninger §3.4 says *how* one is determined. `L-11-3-1` in
@@ -82,7 +82,7 @@ that made it work and is worth reading before attempting rank 9.
 > card) and `protein-primary-structure` (Czech `2-2-1` + Lehninger `L-3-4-1`). **Everything
 > §13b listed is now done.**
 >
-> **Updated 2026-08-06: six joins now, not two.** `L-11-3-1` (§13d) joins `membrane-transport`
+> **Updated 2026-08-06: seven joins now, not two.** `L-11-3-1` (§13d) joins `membrane-transport`
 > to all three `8-5-3-*` Czech nodes, `L-19-1-1` (§13e) joins `respiratory-chain` to all
 > five `6-2-4-*` Czech nodes, `L-1-3-1` (§13f) joins `bioenergetics-basics` to both `1-4` and
 > `1-5`, and `L-21-1-1` (§13g) joins `fatty-acid-biosynthesis` to all **nine** `8-3-*` Czech
@@ -91,10 +91,10 @@ that made it work and is worth reading before attempting rank 9.
 > Together these are a much stronger topic-view demonstration than the earlier
 > single-Czech-node joins.
 >
-> **What is left is content, not plumbing.** Only 6 of 61 topicKeys join more than one source,
-> because only five Lehninger nodes and one card exist. Every further node makes the topic view
-> worth more; nothing more needs building first. §9a's depth queue (61 writable primaries, 5
-> done, 56 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is
+> **What is left is content, not plumbing.** Only 7 of 61 topicKeys join more than one source,
+> because only six Lehninger nodes and one card exist. Every further node makes the topic view
+> worth more; nothing more needs building first. §9a's depth queue (61 writable primaries, 6
+> done, 55 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is
 > the other open thread.
 
 **⚠️ Before writing or reusing any `A p.N` citation, read §16.** Three of six citations in the
@@ -765,7 +765,7 @@ key already exists and the node joins the topic view the moment it is written.
 | 5 | 21.1 Biosynthesis of Fatty Acids and Eicosanoids | 9.1 | `fatty-acid-biosynthesis` | ✅ **done — `L-21-1-1`** |
 | 6 | 19.1 The Mitochondrial Respiratory Chain | 7.5 | `respiratory-chain` | ✅ **done — `L-19-1-1`** |
 | 7 | 23.2 Tissue-Specific Metabolism | 7.3 | `tissue-specific-metabolism` | 1 |
-| 9 | 17.2 Oxidation of Fatty Acids | 6.5 | `fatty-acid-oxidation` | 2 |
+| 9 | 17.2 Oxidation of Fatty Acids | 6.5 | `fatty-acid-oxidation` | ✅ **done — `L-17-2-1`** |
 | 12 | 1.3 Physical Foundations | 5.0 | `bioenergetics-basics` | ✅ **done — `L-1-3-1`** |
 | 14 | 3.4 Primary Structure | 5.0 | `protein-primary-structure` | ✅ **done — `L-3-4-1`** |
 | 17 | 22.3 Molecules Derived from Amino Acids | 4.5 | `amino-acid-derived-molecules` | 3 |
@@ -780,16 +780,19 @@ above. **Four of the ten writable primaries are now done: rank 14 (`L-3-4-1`), r
 nodes (`6-2-4-1..5`) — the topic view's largest join yet; `L-1-3-1` covers all of §1.3 (A
 pp.18-27) and joins both `1-4` and `1-5`.
 
-**Five writable primaries remain in this table.** Rank 5 is now done (`L-21-1-1`, §13g) and
-**§5a's organic-chemistry warning turned out to be manageable** — see §13g for the approach that
-worked, which is reusable for rank 9. The remaining picks, easiest first: **rank 7** (§23.2
-tissue-specific metabolism, 1 waiting) and **rank 18** (§3.3 working with proteins, 1 waiting)
-are the quickest; **rank 17** (§22.3 molecules derived from amino acids, 3 waiting) and **rank
-20** (§25.1 DNA replication, 2 waiting) are mid-sized; **rank 9** (§17.2 fatty acid oxidation,
-2 waiting) is the natural next one — it is §5a-flagged like rank 5 was, but it now has two
-ready-made hooks: `L-19-1-1`'s ETF point already names the link from β-oxidation into the
-respiratory chain, and `L-21-1-1`'s reciprocal-regulation point already explains why β-oxidation
-and synthesis cannot run together.
+**Four writable primaries remain in this table.** Ranks 5 and 9 are both done (`L-21-1-1` §13g,
+`L-17-2-1` §13h) and **§5a's organic-chemistry warning turned out to be manageable in both** —
+§13g records the approach and §13h confirms it holds. Treat the §5a flag as "write it this way",
+not "avoid". What is left: **rank 7** (§23.2 tissue-specific metabolism, 1 waiting) and **rank
+18** (§3.3 working with proteins, 1 waiting) are the quickest; **rank 17** (§22.3 molecules
+derived from amino acids, 3 waiting) and **rank 20** (§25.1 DNA replication, 2 waiting) are
+mid-sized. Rank 17 is probably the best next pick — it has the most waiting nodes of the four
+and no §5a flag.
+
+**⚠️ Before writing any of them, do §9e's two-minute check:** list the Czech nodes the intended
+`topicKey` actually holds and confirm they are the ones teaching the subject. Rank 9 looked
+routine and turned out to need a data correction first; nothing in `depth_queue.tsv` warned of
+it.
 
 **One lesson from `L-1-3-1` that changes how to pick, not just what to pick (§13f):** the ratio
 is computed from page counts and cannot see whether the Czech section is thin on *theory* or
@@ -834,7 +837,53 @@ so no gap appeared and the test "passed" without proving anything. **Czech secti
 (§7.1.3 is pp.149–152, §7.1.4 is p.151); anything that reasons about page ownership has to
 account for that. It now searches for a uniquely-owned interior page instead.
 
-## 10. Reproducing the measurements
+### 9e. The first `topicKey` correction — β-oxidation, decided by the user 2026-08-06
+
+**§9c said a `topicKey` "may be corrected later". This is the first time it was, and the case is
+worth reading before writing any node, because the same shape will recur.**
+
+The problem, found while scoping `L-17-2-1` (§17.2 Oxidation of Fatty Acids) and *not* visible
+from `depth_queue.tsv` alone:
+
+| key, before | held | should hold |
+|---|---|---|
+| `fat-mobilization` | `8-4-1`, **`8-4-4-1`**, `8-4-4-2`, `8-4-4-3`, `8-4-4-4` | `8-4-1`, `8-4-4-1` |
+| `fatty-acid-oxidation` | `10-8`, **`10-9`** | `10-8`, `8-4-4-2/3/4` |
+
+The three Czech nodes that actually *teach* β-oxidation — `8-4-4-2` (the four-step cycle),
+`8-4-4-3` (acetyl-CoA's fate, ketone bodies) and `8-4-4-4` (unsaturated, odd-chain, branched
+special cases) — sat under `fat-mobilization`, because §9c derives the key from the **primary**
+(first) Lehninger mapping and Czech §8.4.4's primary is §17.1. Meanwhile `fatty-acid-oxidation`
+held only `10-8`, a one-page summary, and `10-9`, which is **about synthesis**, not oxidation.
+Writing the §17.2 node under the unmodified key would have joined it to the two wrong nodes and
+left it invisible from the three that matter — the topic view failing precisely on the topic it
+was built for.
+
+**Put to the user, who chose to move the data rather than bend the node.** Applied:
+
+- `8-4-4-2`, `8-4-4-3`, `8-4-4-4` → `fatty-acid-oxidation`
+- `8-4-4-1` (activation and transport) **stays** on `fat-mobilization`, which is genuinely §17.1
+  territory — so that key is now coherent rather than a grab-bag, and still has a future §17.1
+  node to receive
+- `10-9` → `fatty-acid-biosynthesis`, where a node about synthesis belongs
+
+**⚠️ These four are HAND edits and `step4_topickeys.py` would silently revert them**, because it
+regenerates from `master_map.tsv`, whose mapping is unchanged. `topickey_by_node.json` and
+`topickey_assignment.json` were updated to match the app data, and both carry a `manual_note`
+recording the change. **If that script is ever re-run, re-apply this section by hand or teach it
+an override table first.** Verify at any time with:
+
+```bash
+grep -B2 'topicKey: "fatty-acid-oxidation"' biochemie_pro/data/ch8.js | grep 'id:'
+```
+
+**The general lesson, which §9c's own "third case" only half-anticipated.** §9c warned about a
+Lehninger section that is a *secondary* everywhere and therefore has no key. This is the mirror
+image: a Lehninger section that **is** a primary, but of a *thin summary* Czech section, while
+the *substantive* Czech section points at it only as a secondary. The rule "prefer a primary"
+does not protect against it. **Before writing any node, list the Czech nodes its key actually
+holds and check they are the ones teaching the subject** — a two-minute check that would have
+caught this and will catch the next one.
 
 No `node`/`deno`/`bun` on this machine. **PyMuPDF (`fitz`), `esprima` and PIL are installed in
 Python 3.12.** The console is cp1252 — **printing extracted PDF text to stdout crashes with
@@ -1330,6 +1379,63 @@ bad citation. Rewriting it unquoted turned the row into an honest `no searchable
 `biochemie_pro` now reports **213 topics (207 cz, 5 lehninger, 1 entity), 61 topicKeys**;
 citation audit **50 OK, 0 ELSEWHERE, 18 UNCHECKED**, invariant 68 = 50 + 0 + 18.
 
+### 13h. The sixth node — `L-17-2-1`, §17.2 Oxidation of Fatty Acids (2026-08-06)
+
+**`biochemie_pro/data/leh_ch17.js`, one node, `id: "L-17-2-1"`,
+`topicKey: "fatty-acid-oxidation"`.** Rank 9, ratio 6.5, covering all of §17.2 (A pp.607–618,
+ten subheadings). **Read §9e first** — this node could not be written correctly until the
+`topicKey` was fixed, and that fix is the more reusable half of this entry.
+
+**The §5a method held for a second lipid topic.** Same discipline as §13g: every chemical
+statement routed to a named enzyme, a measured quantity, or a clinical consequence, no
+mechanism drawn in prose. Two topics in, that approach now looks reliable rather than lucky, and
+the §5a flag is better read as "write it this way" than as "avoid".
+
+**The single largest gap it fills is a word the Czech book never uses: carnitine.** A text
+search of node `8-4-4-1` finds no *carnitine*, *karnitin* or *shuttle*, so the entire regulatory
+gate of fatty acid oxidation is absent from the Czech account — even though `8-4-4-1` is the
+node about fatty acid activation and transport. The carnitine shuttle is the committed,
+rate-limiting step, and it decides whether a cytosolic acyl-CoA is burned or esterified. Adding
+it also **closes a loop `L-21-1-1` left open**: that node's reciprocal-regulation point already
+said malonyl-CoA inhibits carnitine acyltransferase I, and this node now supplies the other
+side. Likewise `L-19-1-1`'s ETF point named ETF as an entry into ubiquinone; this node names the
+three acyl-CoA dehydrogenase isozymes that feed it. **Three Lehninger nodes now interlock, which
+is the first time the depth layer has behaved like a layer rather than a set of separate
+articles.**
+
+Other genuinely additive material, none of it in the Czech nodes: the chain-length division of
+labour (VLCAD / MCAD / SCAD, and the trifunctional protein for chains ≥12 C with substrate
+channelling); the arithmetic (**108 ATP gross, 106 net**, because activation breaks *both*
+phosphoanhydride bonds — and **two** efficiency figures, ~33 % standard versus **>60 %** at real
+intracellular concentrations, since quoting only the first understates the pathway); the two
+auxiliary enzymes rescuing polyunsaturated chains; coenzyme B12 in the odd-chain route; PPARα as
+the slower transcriptional layer, with endurance training as its observable; and five diseases
+mapped onto specific steps — propionic acidemia, MCAD deficiency (the commonest inherited
+disorder of fatty acid catabolism in northern European populations), TFP defects, Zellweger,
+XALD and Refsum.
+
+**Scope:** ketone bodies are **not** covered — they are §17.3, a separate `depth_queue.tsv` row
+— even though Czech `8-4-4-3`, now joined here, does discuss them. Stated in `coverageNote` so
+the join is not misread as a coverage claim.
+
+**A new page-map caveat, and a citation error it caught.** `lehninger_toc.tsv` places the
+*Transcription Factors* subheading on A p.614 and *Genetic Defects* on 615, but direct search
+finds PPAR and MCAD only from **616**. The cause: **A pp.614–615 are entirely occupied by the
+two-page Box on coenzyme B12**, and the running text resumes on 616. So a TOC row can be
+displaced by the length of an interleaved Box. This extends §16's rule — *never take an A page
+from prose* — to **never take one from the TOC either when a Box intervenes in the range**. The
+same trap then bit this node directly: a first draft cited the propionic-acidemia passage to
+`A pp.614-615` on the assumption it sat near the B12 Box, when the whole passage (diagnosis and
+all four treatments) is on **A p.613**. `verify_citations.py` could not catch it — the citation
+had no figure label, so it reported `UNCHECKED`, not `ELSEWHERE` — and it was found only by
+hand-checking every UNCHECKED row, which is exactly why §16a requires that.
+
+Citations: 11 total, **7 machine-verified OK, 0 ELSEWHERE**, 4 UNCHECKED and all four
+hand-verified (A p.611 for the ATP arithmetic; A p.613 twice, for the carnitine gate and for
+propionic acidemia; A pp.616-617 for MCAD and TFP). `biochemie_pro` now reports **214 topics
+(207 cz, 6 lehninger, 1 entity), 61 topicKeys**; audit **57 OK, 0 ELSEWHERE, 22 UNCHECKED**,
+invariant 79 = 57 + 0 + 22.
+
 ---
 
 ## 14. Working locally — the local copy is the real one
@@ -1547,8 +1653,8 @@ Three verdicts, and the middle one is the whole point:
   `A p.71–79, §3.1` with no quotation. Reported honestly rather than passed silently; these
   still need a human.
 
-Current state (2026-08-06, five Lehninger nodes + one card): **68 citations — 50
-machine-verified OK, 0 ELSEWHERE, 18 UNCHECKED**, and the unchecked ones were checked by hand
+Current state (2026-08-06, six Lehninger nodes + one card): **79 citations — 57
+machine-verified OK, 0 ELSEWHERE, 22 UNCHECKED**, and the unchecked ones were checked by hand
 and all hold. (Was 20 citations when only `L-3-4-1` and `E-tryptophan` existed.)
 
 **⚠️ This tool has now silently under-reported twice, in two different ways. Both are fixed, and
@@ -1568,8 +1674,8 @@ actually in the data, and nothing said so.** So count them independently before 
 clean run. The invariant that actually holds is **grep count == OK + ELSEWHERE + UNCHECKED**:
 
 ```bash
-grep -oE "A pp?\.[0-9]" biochemie_pro/data/*.js | wc -l   # 68
-grep "^OK .* | ELSEWHERE" lehninger_index/_citation_audit.txt   # OK 50 | ELSEWHERE 0 | UNCHECKED 18
+grep -oE "A pp?\.[0-9]" biochemie_pro/data/*.js | wc -l   # 79
+grep "^OK .* | ELSEWHERE" lehninger_index/_citation_audit.txt   # OK 57 | ELSEWHERE 0 | UNCHECKED 22
 ```
 
 **Do not compare against the report's own `found N citations` line** — it read 56 against a grep

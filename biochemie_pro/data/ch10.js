@@ -580,7 +580,7 @@ window.BIOCHEM.topics.push(
 {
   id: "10-9",
   book: "cz",
-  topicKey: "fatty-acid-oxidation",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 10,
   section: "10.1.2",
   czTitle: "Syntéza mastných kyselin — tři zásadní odlišnosti od odbourávání",

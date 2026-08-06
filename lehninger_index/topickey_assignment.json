@@ -1,1339 +1,1351 @@
 {
- "1|1.1": {
-  "topicKey": "cells-and-biomolecules",
-  "primary": "1.1",
-  "primary_title": "1.1 Cellular Foundations",
-  "page_a": "2-9",
-  "enTitle": "What is biochemistry?",
-  "nodes": [
-   "1-1"
-  ],
-  "cz_pages": "8-9"
- },
- "1|1.2": {
-  "topicKey": "cells-and-biomolecules",
-  "primary": "1.1",
-  "primary_title": "1.1 Cellular Foundations",
-  "page_a": "2-9",
-  "enTitle": "Living and non-living",
-  "nodes": [
-   "1-2"
-  ],
-  "cz_pages": "10-11"
- },
- "1|1.3": {
-  "topicKey": "cells-and-biomolecules",
-  "primary": "1.1",
-  "primary_title": "1.1 Cellular Foundations",
-  "page_a": "2-9",
-  "enTitle": "Building blocks of living matter: from molecule to cell",
-  "nodes": [
-   "1-3"
-  ],
-  "cz_pages": "11-16"
- },
- "1|1.4": {
-  "topicKey": "bioenergetics-basics",
-  "primary": "1.3",
-  "primary_title": "1.3 Physical Foundations",
-  "page_a": "18-27",
-  "enTitle": "Nutrition and metabolism",
-  "nodes": [
-   "1-4"
-  ],
-  "cz_pages": "16-17"
- },
- "1|1.5": {
-  "topicKey": "bioenergetics-basics",
-  "primary": "1.3",
-  "primary_title": "1.3 Physical Foundations",
-  "page_a": "18-27",
-  "enTitle": "Energy and life",
-  "nodes": [
-   "1-5"
-  ],
-  "cz_pages": "17-18"
- },
- "1|1.6": {
-  "topicKey": "origin-and-evolution-of-life",
-  "primary": "1.5",
-  "primary_title": "1.5 Evolutionary Foundations",
-  "page_a": "30-36",
-  "enTitle": "Origin and evolution of life",
-  "nodes": [
-   "1-6"
-  ],
-  "cz_pages": "18-20"
- },
- "2|2.1.1": {
-  "topicKey": "amino-acids",
-  "primary": "3.1",
-  "primary_title": "3.1 Amino Acids",
-  "page_a": "71-79",
-  "enTitle": "Structure and occurrence of amino acids",
-  "nodes": [
-   "2-1-1"
-  ],
-  "cz_pages": "21-23"
- },
- "2|2.1.2": {
-  "topicKey": "amino-acids",
-  "primary": "3.1",
-  "primary_title": "3.1 Amino Acids",
-  "page_a": "71-79",
-  "enTitle": "Physico-chemical properties of amino acids",
-  "nodes": [
-   "2-1-2"
-  ],
-  "cz_pages": "23-24"
- },
- "2|2.1.3": {
-  "topicKey": "amino-acids",
-  "primary": "3.1",
-  "primary_title": "3.1 Amino Acids",
-  "page_a": "71-79",
-  "enTitle": "Chemical reactions of amino acids",
-  "nodes": [
-   "2-1-3"
-  ],
-  "cz_pages": "24-25"
- },
- "2|2.1.4": {
-  "topicKey": "peptides-and-proteins",
-  "primary": "3.2",
-  "primary_title": "3.2 Peptides and Proteins",
-  "page_a": "79-83",
-  "enTitle": "Formation of the peptide bond",
-  "nodes": [
-   "2-1-4"
-  ],
-  "cz_pages": "26"
- },
- "2|2.2.1": {
-  "topicKey": "protein-primary-structure",
-  "primary": "3.4",
-  "primary_title": "3.4 The Structure of Proteins: Primary Structure",
-  "page_a": "91-100",
-  "enTitle": "Amino acid sequence (primary structure)",
-  "nodes": [
-   "2-2-1"
-  ],
-  "cz_pages": "26-27"
- },
- "2|2.2.2": {
-  "topicKey": "protein-structure-overview",
-  "primary": "4.1",
-  "primary_title": "4.1 Overview of Protein Structure",
-  "page_a": "108-110",
-  "enTitle": "Principles of conformation",
-  "nodes": [
-   "2-2-2"
-  ],
-  "cz_pages": "27-33"
- },
- "2|2.2.3": {
-  "topicKey": "protein-tertiary-quaternary",
-  "primary": "4.3",
-  "primary_title": "4.3 Protein Tertiary and Quaternary Structures",
-  "page_a": "116-129",
-  "enTitle": "Conformation of proteins — the levels of structure",
-  "nodes": [
-   "2-2-3"
-  ],
-  "cz_pages": "33-34"
- },
- "2|2.2.4": {
-  "topicKey": "protein-tertiary-quaternary",
-  "primary": "4.3",
-  "primary_title": "4.3 Protein Tertiary and Quaternary Structures",
-  "page_a": "116-129",
-  "enTitle": "Types of construction of the protein molecule",
-  "nodes": [
-   "2-2-4"
-  ],
-  "cz_pages": "34-35"
- },
- "2|2.2.5": {
-  "topicKey": "peptides-and-proteins",
-  "primary": "3.2",
-  "primary_title": "3.2 Peptides and Proteins",
-  "page_a": "79-83",
-  "enTitle": "Simple and conjugated proteins",
-  "nodes": [
-   "2-2-5"
-  ],
-  "cz_pages": "36-37"
- },
- "2|2.2.6": {
-  "topicKey": "working-with-proteins",
-  "primary": "3.3",
-  "primary_title": "3.3 Working with Proteins",
-  "page_a": "83-90",
-  "enTitle": "Properties of proteins",
-  "nodes": [
-   "2-2-6"
-  ],
-  "cz_pages": "37-40"
- },
- "3|3.1": {
-  "topicKey": "enzymes-introduction",
-  "primary": "6.1",
-  "primary_title": "6.1 An Introduction to Enzymes",
-  "page_a": "177-179",
-  "enTitle": "Classification and nomenclature of enzymes",
-  "nodes": [
-   "3-1"
-  ],
-  "cz_pages": "41-42"
- },
- "3|3.2": {
-  "topicKey": "enzymes-introduction",
-  "primary": "6.1",
-  "primary_title": "6.1 An Introduction to Enzymes",
-  "page_a": "177-179",
-  "enTitle": "Structure of the enzyme molecule; Coenzymes",
-  "nodes": [
-   "3-2"
-  ],
-  "cz_pages": "42-54"
- },
- "3|3.3.1": {
-  "topicKey": "enzyme-kinetics",
-  "primary": "6.3",
-  "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
-  "page_a": "188-203",
-  "enTitle": "Enzyme reaction kinetics; the Michaelis–Menten equation",
-  "nodes": [
-   "3-3-1"
-  ],
-  "cz_pages": "54-57"
- },
- "3|3.3.2": {
-  "topicKey": "enzyme-kinetics",
-  "primary": "6.3",
-  "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
-  "page_a": "188-203",
-  "enTitle": "Two-substrate reactions",
-  "nodes": [
-   "3-3-2"
-  ],
-  "cz_pages": "57-58"
- },
- "3|3.3.3": {
-  "topicKey": "enzyme-kinetics",
-  "primary": "6.3",
-  "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
-  "page_a": "188-203",
-  "enTitle": "Measurement of enzyme activity",
-  "nodes": [
-   "3-3-3"
-  ],
-  "cz_pages": "58"
- },
- "3|3.4": {
-  "topicKey": "enzyme-kinetics",
-  "primary": "6.3",
-  "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
-  "page_a": "188-203",
-  "enTitle": "Influence of pH and temperature on enzyme reactions",
-  "nodes": [
-   "3-4"
-  ],
-  "cz_pages": "58-59"
- },
- "3|3.5": {
-  "topicKey": "enzyme-kinetics",
-  "primary": "6.3",
-  "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
-  "page_a": "188-203",
-  "enTitle": "Inhibition of enzyme reactions",
-  "nodes": [
-   "3-5"
-  ],
-  "cz_pages": "59-61"
- },
- "3|3.6": {
-  "topicKey": "enzyme-mechanism",
-  "primary": "6.2",
-  "primary_title": "6.2 How Enzymes Work",
-  "page_a": "179-188",
-  "enTitle": "Mechanism of enzyme action",
-  "nodes": [
-   "3-6"
-  ],
-  "cz_pages": "61-62"
- },
- "3|3.7": {
-  "topicKey": "regulatory-enzymes",
-  "primary": "6.5",
-  "primary_title": "6.5 Regulatory Enzymes",
-  "page_a": "213-223",
-  "enTitle": "Regulatory enzymes; allosteric enzymes",
-  "nodes": [
-   "3-7"
-  ],
-  "cz_pages": "62-65"
- },
- "4|4.1": {
-  "topicKey": "nucleotides",
-  "primary": "8.1",
-  "primary_title": "8.1 Some Basic Definitions and Conventions",
-  "page_a": "263-269",
-  "enTitle": "Nucleic acids are the basic molecules of heredity",
-  "nodes": [
-   "4-1"
-  ],
-  "cz_pages": "66-67"
- },
- "4|4.1.1.1": {
-  "topicKey": "nucleotide-metabolism",
-  "primary": "22.4",
-  "primary_title": "22.4 Biosynthesis and Degradation of Nucleotides",
-  "page_a": "824-837",
-  "enTitle": "Biosynthesis of nucleotides; biosynthesis of purine nucleotides",
-  "nodes": [
-   "4-1-1-1"
-  ],
-  "cz_pages": "67-70"
- },
- "4|4.1.1.2": {
-  "topicKey": "nucleotide-metabolism",
-  "primary": "22.4",
-  "primary_title": "22.4 Biosynthesis and Degradation of Nucleotides",
-  "page_a": "824-837",
-  "enTitle": "Biosynthesis of pyrimidine nucleotides",
-  "nodes": [
-   "4-1-1-2"
-  ],
-  "cz_pages": "70-72"
- },
- "4|4.1.2": {
-  "topicKey": "nucleotides",
-  "primary": "8.1",
-  "primary_title": "8.1 Some Basic Definitions and Conventions",
-  "page_a": "263-269",
-  "enTitle": "Structure of nucleic acids",
-  "nodes": [
-   "4-1-2"
-  ],
-  "cz_pages": "72-75"
- },
- "4|4.1.3": {
-  "topicKey": "dna-replication",
-  "primary": "25.1",
-  "primary_title": "25.1 DNA Replication",
-  "page_a": "914-930",
-  "enTitle": "DNA structure and biosynthesis explain the principle of heredity — 1) DNA polymerases",
-  "nodes": [
-   "4-1-3-1",
-   "4-1-3-2"
-  ],
-  "cz_pages": "76-84"
- },
- "4|4.1.4": {
-  "topicKey": "transcription",
-  "primary": "26.1",
-  "primary_title": "26.1 DNA-Dependent Synthesis of RNA",
-  "page_a": "961-972",
-  "enTitle": "DNA is transcribed into RNA — types and properties of RNA",
-  "nodes": [
-   "4-1-4-1",
-   "4-1-4-2"
-  ],
-  "cz_pages": "85-91"
- },
- "4|4.1.5": {
-  "topicKey": "nucleotide-metabolism",
-  "primary": "22.4",
-  "primary_title": "22.4 Biosynthesis and Degradation of Nucleotides",
-  "page_a": "824-837",
-  "enTitle": "Degradation of nucleic acids",
-  "nodes": [
-   "4-1-5"
-  ],
-  "cz_pages": "91-92"
- },
- "4|4.2.1": {
-  "topicKey": "genetic-code",
-  "primary": "27.1",
-  "primary_title": "27.1 The Genetic Code",
-  "page_a": "1006-1015",
-  "enTitle": "The gene sequence determines the order of amino acids in proteins",
-  "nodes": [
-   "4-2-1"
-  ],
-  "cz_pages": "92-94"
- },
- "4|4.2.2": {
-  "topicKey": "translation",
-  "primary": "27.2",
-  "primary_title": "27.2 Protein Synthesis",
-  "page_a": "1015-1040",
-  "enTitle": "Protein synthesis takes place in ribosomes",
-  "nodes": [
-   "4-2-2"
-  ],
-  "cz_pages": "94-95"
- },
- "4|4.2.3": {
-  "topicKey": "translation",
-  "primary": "27.2",
-  "primary_title": "27.2 Protein Synthesis",
-  "page_a": "1015-1040",
-  "enTitle": "Phases of protein synthesis (I): amino acid activation, initiation and elongation",
-  "nodes": [
-   "4-2-3-1",
-   "4-2-3-2"
-  ],
-  "cz_pages": "95-102"
- },
- "4|4.2.4": {
-  "topicKey": "gene-regulation-proteins",
-  "primary": "28.1",
-  "primary_title": "28.1 The Proteins and RNAs of Gene Regulation",
-  "page_a": "1055-1065",
-  "enTitle": "Regulation of protein synthesis (I): the lactose and tryptophan operons",
-  "nodes": [
-   "4-2-4-1",
-   "4-2-4-2"
-  ],
-  "cz_pages": "102-108"
- },
- "4|4.3.1": {
-  "topicKey": "protein-folding-and-denaturation",
-  "primary": "4.4",
-  "primary_title": "4.4 Protein Denaturation and Folding",
-  "page_a": "129-136",
-  "enTitle": "Non-covalent interactions and folding of the polypeptide chain into its biologically active form",
-  "nodes": [
-   "4-3-1"
-  ],
-  "cz_pages": "108-110"
- },
- "4|4.3.2": {
-  "topicKey": "protein-targeting-and-degradation",
-  "primary": "27.3",
-  "primary_title": "27.3 Protein Targeting and Degradation",
-  "page_a": "1040-1050",
-  "enTitle": "Post-translational modification of the polypeptide chain and transport of proteins across the membrane",
-  "nodes": [
-   "4-3-2"
-  ],
-  "cz_pages": "110-111"
- },
- "4|4.3.3": {
-  "topicKey": "protein-targeting-and-degradation",
-  "primary": "27.3",
-  "primary_title": "27.3 Protein Targeting and Degradation",
-  "page_a": "1040-1050",
-  "enTitle": "Covalent modification of amino acid side chains",
-  "nodes": [
-   "4-3-3"
-  ],
-  "cz_pages": "111-114"
- },
- "5|5.1": {
-  "topicKey": "protein-targeting-and-degradation",
-  "primary": "27.3",
-  "primary_title": "27.3 Protein Targeting and Degradation",
-  "page_a": "1040-1050",
-  "enTitle": "Proteolytic cleavage of proteins",
-  "nodes": [
-   "5-1"
-  ],
-  "cz_pages": "115-118"
- },
- "5|5.2": {
-  "topicKey": "amino-group-metabolism",
-  "primary": "18.1",
-  "primary_title": "18.1 Metabolic Fates of Amino Groups",
-  "page_a": "627-634",
-  "enTitle": "Degradation of amino acids",
-  "nodes": [
-   "5-2"
-  ],
-  "cz_pages": "118"
- },
- "5|5.2.1": {
-  "topicKey": "amino-group-metabolism",
-  "primary": "18.1",
-  "primary_title": "18.1 Metabolic Fates of Amino Groups",
-  "page_a": "627-634",
-  "enTitle": "Metabolic reactions at the amino acid α-carbon — deamination mechanisms",
-  "nodes": [
-   "5-2-1-1",
-   "5-2-1-2"
-  ],
-  "cz_pages": "118-122"
- },
- "5|5.2.2": {
-  "topicKey": "urea-cycle",
-  "primary": "18.2",
-  "primary_title": "18.2 Nitrogen Excretion and the Urea Cycle",
-  "page_a": "634-640",
-  "enTitle": "Ammonia detoxification, the urea (ornithine) cycle — sources and elimination of ammonia",
-  "nodes": [
-   "5-2-2-1",
-   "5-2-2-2"
-  ],
-  "cz_pages": "123-125"
- },
- "5|5.2.3": {
-  "topicKey": "amino-acid-degradation",
-  "primary": "18.3",
-  "primary_title": "18.3 Pathways of Amino Acid Degradation",
-  "page_a": "640-654",
-  "enTitle": "Degradation of the carbon skeleton and mutual interconversion of amino acids — glucogenic/ketogenic classification; 1) Conversion to acetyl-CoA via pyruvate (C3 family)",
-  "nodes": [
-   "5-2-3-1",
-   "5-2-3-2",
-   "5-2-3-3",
-   "5-2-3-4"
-  ],
-  "cz_pages": "125-129"
- },
- "6|6.1": {
-  "topicKey": "bioenergetics-and-thermodynamics",
-  "primary": "13.1",
-  "primary_title": "13.1 Bioenergetics and Thermodynamics",
-  "page_a": "466-471",
-  "enTitle": "Principles of bioenergetics",
-  "nodes": [
-   "6-1"
-  ],
-  "cz_pages": "130"
- },
- "6|6.1.1": {
-  "topicKey": "bioenergetics-and-thermodynamics",
-  "primary": "13.1",
-  "primary_title": "13.1 Bioenergetics and Thermodynamics",
-  "page_a": "466-471",
-  "enTitle": "Exergonic and endergonic reactions",
-  "nodes": [
-   "6-1-1"
-  ],
-  "cz_pages": "131"
- },
- "6|6.1.2": {
-  "topicKey": "atp-and-phosphoryl-transfer",
-  "primary": "13.3",
-  "primary_title": "13.3 Phosphoryl Group Transfers and ATP",
-  "page_a": "478-488",
-  "enTitle": "High-energy (macroergic) compounds — the concept, anhydrides and phosphoamides",
-  "nodes": [
-   "6-1-2-1",
-   "6-1-2-2"
-  ],
-  "cz_pages": "131-133"
- },
- "6|6.1.3": {
-  "topicKey": "biochemical-reaction-logic",
-  "primary": "13.2",
-  "primary_title": "13.2 Chemical Logic and Common Biochemical Reactions",
-  "page_a": "472-478",
-  "enTitle": "Catabolic and anabolic processes",
-  "nodes": [
-   "6-1-3"
-  ],
-  "cz_pages": "133-134"
- },
- "6|6.2.1": {
-  "topicKey": "biological-redox",
-  "primary": "13.4",
-  "primary_title": "13.4 Biological Oxidation-Reduction Reactions",
-  "page_a": "488-496",
-  "enTitle": "Oxidation-reduction processes",
-  "nodes": [
-   "6-2-1-1"
-  ],
-  "cz_pages": "134-135"
- },
- "6|6.2.2": {
-  "topicKey": "acetyl-coa-production",
-  "primary": "16.1",
-  "primary_title": "16.1 Production of Acetyl-CoA (Activated Acetate)",
-  "page_a": "575-578",
-  "enTitle": "The citrate cycle — introduction, cycle overview, and citrate synthase",
-  "nodes": [
-   "6-2-2-1",
-   "6-2-2-2",
-   "6-2-2-3",
-   "6-2-2-4"
-  ],
-  "cz_pages": "136-140"
- },
- "6|6.2.3": {
-  "topicKey": "starch-sucrose-biosynthesis",
-  "primary": "20.6",
-  "primary_title": "20.6 Biosynthesis of Starch, Sucrose, and Cellulose",
-  "page_a": "732-739",
-  "enTitle": "The glyoxylate cycle",
-  "nodes": [
-   "6-2-3"
-  ],
-  "cz_pages": "140-141"
- },
- "6|6.2.4": {
-  "topicKey": "respiratory-chain",
-  "primary": "19.1",
-  "primary_title": "19.1 The Mitochondrial Respiratory Chain",
-  "page_a": "660-674",
-  "enTitle": "The respiratory chain and aerobic phosphorylation — introduction and Complex I",
-  "nodes": [
-   "6-2-4-1",
-   "6-2-4-2",
-   "6-2-4-3",
-   "6-2-4-4",
-   "6-2-4-5"
-  ],
-  "cz_pages": "141-146"
- },
- "6|6.3": {
-  "topicKey": "amino-acid-derived-molecules",
-  "primary": "22.3",
-  "primary_title": "22.3 Molecules Derived from Amino Acids",
-  "page_a": "816-824",
-  "enTitle": "Porphyrin proteins — structure and biological versatility (Table 6.4)",
-  "nodes": [
-   "6-3-1",
-   "6-3-2",
-   "6-3-3"
-  ],
-  "cz_pages": "146-147"
- },
- "7|7.1": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Monosaccharides",
-  "nodes": [
-   "7-1"
-  ],
-  "cz_pages": "148"
- },
- "7|7.1.1": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Aldoses, ketoses",
-  "nodes": [
-   "7-1-1"
-  ],
-  "cz_pages": "148"
- },
- "7|7.1.2": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Deriving aldoses and ketoses — the aldose family tree (Obr. 7.1)",
-  "nodes": [
-   "7-1-2-1",
-   "7-1-2-2"
-  ],
-  "cz_pages": "148-150"
- },
- "7|7.1.3": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Hemiacetal/hemiketal forms — formation, anomers, Haworth formulas",
-  "nodes": [
-   "7-1-3-1",
-   "7-1-3-2"
-  ],
-  "cz_pages": "149-152"
- },
- "7|7.1.4": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Mutarotation",
-  "nodes": [
-   "7-1-4"
-  ],
-  "cz_pages": "151"
- },
- "7|7.2.1": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Sugar esters",
-  "nodes": [
-   "7-2-1"
-  ],
-  "cz_pages": "152"
- },
- "7|7.2.2": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Sugar acids",
-  "nodes": [
-   "7-2-2"
-  ],
-  "cz_pages": "152-153"
- },
- "7|7.2.3": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Sugar alcohols",
-  "nodes": [
-   "7-2-3"
-  ],
-  "cz_pages": "153"
- },
- "7|7.2.4": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Amino sugars",
-  "nodes": [
-   "7-2-4"
-  ],
-  "cz_pages": "153"
- },
- "7|7.2.5": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Deoxy sugars",
-  "nodes": [
-   "7-2-5"
-  ],
-  "cz_pages": "153"
- },
- "7|7.2.6": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Glycosides",
-  "nodes": [
-   "7-2-6"
-  ],
-  "cz_pages": "153-154"
- },
- "7|7.3": {
-  "topicKey": "monosaccharides",
-  "primary": "7.1",
-  "primary_title": "7.1 Monosaccharides and Disaccharides",
-  "page_a": "230-241",
-  "enTitle": "Oligosaccharides — definitions and non-reducing oligosaccharides",
-  "nodes": [
-   "7-3-1",
-   "7-3-2"
-  ],
-  "cz_pages": "154-155"
- },
- "7|7.4": {
-  "topicKey": "polysaccharides",
-  "primary": "7.2",
-  "primary_title": "7.2 Polysaccharides",
-  "page_a": "241-246",
-  "enTitle": "Polysaccharides",
-  "nodes": [
-   "7-4"
-  ],
-  "cz_pages": "155"
- },
- "7|7.4.1": {
-  "topicKey": "polysaccharides",
-  "primary": "7.2",
-  "primary_title": "7.2 Polysaccharides",
-  "page_a": "241-246",
-  "enTitle": "Homopolysaccharides -- A. Storage polysaccharides (starch, glycogen, dextrans, inulin, mannans)",
-  "nodes": [
-   "7-4-1-1",
-   "7-4-1-2"
-  ],
-  "cz_pages": "156-157"
- },
- "7|7.4.2": {
-  "topicKey": "polysaccharides",
-  "primary": "7.2",
-  "primary_title": "7.2 Polysaccharides",
-  "page_a": "241-246",
-  "enTitle": "Heteropolysaccharides (glycosaminoglycans, hyaluronic acid, chondroitin sulfates, heparin)",
-  "nodes": [
-   "7-4-2"
-  ],
-  "cz_pages": "157-158"
- },
- "7|7.5": {
-  "topicKey": "glycoconjugates",
-  "primary": "7.3",
-  "primary_title": "7.3 Glycoconjugates: Proteoglycans, Glycoproteins, and Glycolipids",
-  "page_a": "247-253",
-  "enTitle": "Oligosaccharides bound to proteins",
-  "nodes": [
-   "7-5"
-  ],
-  "cz_pages": "158-160"
- },
- "7|7.6": {
-  "topicKey": "feeder-pathways-glycolysis",
-  "primary": "14.2",
-  "primary_title": "14.2 Feeder Pathways for Glycolysis",
-  "page_a": "522-525",
-  "enTitle": "Sugar interconversions — introduction (three reaction types)",
-  "nodes": [
-   "7-6"
-  ],
-  "cz_pages": "159"
- },
- "7|7.6.1": {
-  "topicKey": "feeder-pathways-glycolysis",
-  "primary": "14.2",
-  "primary_title": "14.2 Feeder Pathways for Glycolysis",
-  "page_a": "522-525",
-  "enTitle": "Epimerization and isomerization",
-  "nodes": [
-   "7-6-1"
-  ],
-  "cz_pages": "160"
- },
- "7|7.6.2": {
-  "topicKey": "pentose-phosphate-pathway",
-  "primary": "14.6",
-  "primary_title": "14.6 Pentose Phosphate Pathway of Glucose Oxidation",
-  "page_a": "546-551",
-  "enTitle": "Oxidation and decarboxylation of glucose",
-  "nodes": [
-   "7-6-2"
-  ],
-  "cz_pages": "160-161"
- },
- "7|7.6.3": {
-  "topicKey": "pentose-phosphate-pathway",
-  "primary": "14.6",
-  "primary_title": "14.6 Pentose Phosphate Pathway of Glucose Oxidation",
-  "page_a": "546-551",
-  "enTitle": "Transfer of three-carbon or two-carbon fragments",
-  "nodes": [
-   "7-6-3"
-  ],
-  "cz_pages": "161"
- },
- "7|7.7": {
-  "topicKey": "pentose-phosphate-pathway",
-  "primary": "14.6",
-  "primary_title": "14.6 Pentose Phosphate Pathway of Glucose Oxidation",
-  "page_a": "546-551",
-  "enTitle": "Two routes to pentose phosphates — the oxidative pentose phosphate pathway",
-  "nodes": [
-   "7-7-1",
-   "7-7-2"
-  ],
-  "cz_pages": "162-163"
- },
- "7|7.8": {
-  "topicKey": "glycolysis",
-  "primary": "14.1",
-  "primary_title": "14.1 Glycolysis",
-  "page_a": "511-521",
-  "enTitle": "Glycolysis — introduction and the preparatory phase (glucose to fructose-1,6-bisphosphate and its cleavage to trioses)",
-  "nodes": [
-   "7-8-1",
-   "7-8-2",
-   "7-8-3"
-  ],
-  "cz_pages": "164-167"
- },
- "7|7.8.1": {
-  "topicKey": "fates-of-pyruvate",
-  "primary": "14.3",
-  "primary_title": "14.3 Fates of Pyruvate",
-  "page_a": "525-532",
-  "enTitle": "Formation of ethanol, lactate, or acetyl-CoA — ethanol and lactate",
-  "nodes": [
-   "7-8-4",
-   "7-8-5"
-  ],
-  "cz_pages": "167-169"
- },
- "7|7.9": {
-  "topicKey": "gluconeogenesis",
-  "primary": "14.4",
-  "primary_title": "14.4 Gluconeogenesis",
-  "page_a": "533-538",
-  "enTitle": "Gluconeogenesis, glucose resynthesis — bypassing glycolysis's irreversible steps",
-  "nodes": [
-   "7-9"
-  ],
-  "cz_pages": "169-170"
- },
- "7|7.9.1": {
-  "topicKey": "gluconeogenesis",
-  "primary": "14.4",
-  "primary_title": "14.4 Gluconeogenesis",
-  "page_a": "533-538",
-  "enTitle": "Gluconeogenesis from amino acids",
-  "nodes": [
-   "7-9-1"
-  ],
-  "cz_pages": "170"
- },
- "7|7.10": {
-  "topicKey": "feeder-pathways-glycolysis",
-  "primary": "14.2",
-  "primary_title": "14.2 Feeder Pathways for Glycolysis",
-  "page_a": "522-525",
-  "enTitle": "Enzymatic cleavage of glycosides and oligosaccharides — glycosidases",
-  "nodes": [
-   "7-10-1",
-   "7-10-2",
-   "7-10-3"
-  ],
-  "cz_pages": "170-172"
- },
- "7|7.11.1": {
-  "topicKey": "feeder-pathways-glycolysis",
-  "primary": "14.2",
-  "primary_title": "14.2 Feeder Pathways for Glycolysis",
-  "page_a": "522-525",
-  "enTitle": "Hydrolytic cleavage — alpha- and beta-amylases",
-  "nodes": [
-   "7-11-1-1",
-   "7-11-1-2"
-  ],
-  "cz_pages": "172-173"
- },
- "7|7.11.2": {
-  "topicKey": "glycogen-metabolism",
-  "primary": "15.2",
-  "primary_title": "15.2 Breakdown and Synthesis of Glycogen",
-  "page_a": "558-564",
-  "enTitle": "Phosphorolysis of starch and glycogen — general mechanism",
-  "nodes": [
-   "7-11-2-1",
-   "7-11-2-2"
-  ],
-  "cz_pages": "173-174"
- },
- "7|7.12": {
-  "topicKey": "glycogen-metabolism",
-  "primary": "15.2",
-  "primary_title": "15.2 Breakdown and Synthesis of Glycogen",
-  "page_a": "558-564",
-  "enTitle": "Biosynthesis of polysaccharides — glycogen synthase and the branching enzyme",
-  "nodes": [
-   "7-12-1",
-   "7-12-2"
-  ],
-  "cz_pages": "174-175"
- },
- "8|8.1": {
-  "topicKey": "storage-lipids",
-  "primary": "10.1",
-  "primary_title": "10.1 Storage Lipids",
-  "page_a": "340-346",
-  "enTitle": "Definition and classification",
-  "nodes": [
-   "8-1"
-  ],
-  "cz_pages": "176"
- },
- "8|8.2.1": {
-  "topicKey": "storage-lipids",
-  "primary": "10.1",
-  "primary_title": "10.1 Storage Lipids",
-  "page_a": "340-346",
-  "enTitle": "Fatty acids — definition, classification, natural occurrence (Tab. 8.2)",
-  "nodes": [
-   "8-2-1-1",
-   "8-2-1-2"
-  ],
-  "cz_pages": "177-178"
- },
- "8|8.2.2": {
-  "topicKey": "storage-lipids",
-  "primary": "10.1",
-  "primary_title": "10.1 Storage Lipids",
-  "page_a": "340-346",
-  "enTitle": "Simple lipids — Neutral acylglycerols",
-  "nodes": [
-   "8-2-2-1",
-   "8-2-2-2"
-  ],
-  "cz_pages": "178-179"
- },
- "8|8.2.3": {
-  "topicKey": "membrane-lipids",
-  "primary": "10.2",
-  "primary_title": "10.2 Structural Lipids in Membranes",
-  "page_a": "346-353",
-  "enTitle": "Complex lipids — Glycoacylglycerols (introduction)",
-  "nodes": [
-   "8-2-3",
-   "8-2-3-2",
-   "8-2-3-3",
-   "8-2-3-4"
-  ],
-  "cz_pages": "179-182"
- },
- "8|8.2.4": {
-  "topicKey": "lipid-signals-and-pigments",
-  "primary": "10.3",
-  "primary_title": "10.3 Lipids as Signals, Cofactors, and Pigments",
-  "page_a": "353-360",
-  "enTitle": "Derived lipids — terpenes (isoprenoids): characteristics and classification",
-  "nodes": [
-   "8-2-4-1",
-   "8-2-4-2",
-   "8-2-4-3",
-   "8-2-4-4",
-   "8-2-4-5",
-   "8-2-4-6"
-  ],
-  "cz_pages": "182-187"
- },
- "8|8.3": {
-  "topicKey": "fatty-acid-biosynthesis",
-  "primary": "21.1",
-  "primary_title": "21.1 Biosynthesis of Fatty Acids and Eicosanoids",
-  "page_a": "745-760",
-  "enTitle": "Lipid biosynthesis — Fatty acids: subcellular compartmentalization, the source of acetyl-CoA, and malonyl-CoA formation",
-  "nodes": [
-   "8-3-1",
-   "8-3-2",
-   "8-3-3",
-   "8-3-4",
-   "8-3-5",
-   "8-3-6",
-   "8-3-7",
-   "8-3-8",
-   "8-3-9"
-  ],
-  "cz_pages": "187-193"
- },
- "8|8.4.1": {
-  "topicKey": "fat-mobilization",
-  "primary": "17.1",
-  "primary_title": "17.1 Digestion, Mobilization, and Transport of Fats",
-  "page_a": "603-606",
-  "enTitle": "Simple lipids",
-  "nodes": [
-   "8-4-1"
-  ],
-  "cz_pages": "193"
- },
- "8|8.4.2": {
-  "topicKey": "working-with-lipids",
-  "primary": "10.4",
-  "primary_title": "10.4 Working with Lipids",
-  "page_a": "361-363",
-  "enTitle": "Complex lipids — phospholipids and phospholipases",
-  "nodes": [
-   "8-4-2-1",
-   "8-4-2-2"
-  ],
-  "cz_pages": "193-194"
- },
- "8|8.4.3": {
-  "topicKey": "cholesterol-and-isoprenoids",
-  "primary": "21.4",
-  "primary_title": "21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesis, Regulation, and Transport",
-  "page_a": "772-789",
-  "enTitle": "Derived lipids",
-  "nodes": [
-   "8-4-3"
-  ],
-  "cz_pages": "194"
- },
- "8|8.4.4": {
-  "topicKey": "fat-mobilization",
-  "primary": "17.1",
-  "primary_title": "17.1 Digestion, Mobilization, and Transport of Fats",
-  "page_a": "603-606",
-  "enTitle": "Fatty acids — activation",
-  "nodes": [
-   "8-4-4-1",
-   "8-4-4-2",
-   "8-4-4-3",
-   "8-4-4-4"
-  ],
-  "cz_pages": "194-197"
- },
- "8|8.5": {
-  "topicKey": "membrane-architecture",
-  "primary": "11.1",
-  "primary_title": "11.1 The Composition and Architecture of Membranes",
-  "page_a": "367-376",
-  "enTitle": "Biological membranes (introduction)",
-  "nodes": [
-   "8-5"
-  ],
-  "cz_pages": "197-198"
- },
- "8|8.5.1": {
-  "topicKey": "membrane-architecture",
-  "primary": "11.1",
-  "primary_title": "11.1 The Composition and Architecture of Membranes",
-  "page_a": "367-376",
-  "enTitle": "Chemical composition",
-  "nodes": [
-   "8-5-1"
-  ],
-  "cz_pages": "198"
- },
- "8|8.5.2": {
-  "topicKey": "membrane-architecture",
-  "primary": "11.1",
-  "primary_title": "11.1 The Composition and Architecture of Membranes",
-  "page_a": "367-376",
-  "enTitle": "Structure — the lipid bilayer",
-  "nodes": [
-   "8-5-2-1",
-   "8-5-2-2",
-   "8-5-2-3"
-  ],
-  "cz_pages": "198-200"
- },
- "8|8.5.3": {
-  "topicKey": "membrane-transport",
-  "primary": "11.3",
-  "primary_title": "11.3 Solute Transport across Membranes",
-  "page_a": "385-403",
-  "enTitle": "Membrane transport — passive transport, simple diffusion",
-  "nodes": [
-   "8-5-3-1",
-   "8-5-3-2",
-   "8-5-3-3"
-  ],
-  "cz_pages": "200-201"
- },
- "9|9": {
-  "topicKey": "photosynthetic-pigments",
-  "primary": "20.1",
-  "primary_title": "20.1 Light Absorption",
-  "page_a": "701-707",
-  "enTitle": "Photoautotrophy — the five metabolisms specific to autotrophs",
-  "nodes": [
-   "9-1"
-  ],
-  "cz_pages": "202"
- },
- "9|9.1": {
-  "topicKey": "photosynthetic-pigments",
-  "primary": "20.1",
-  "primary_title": "20.1 Light Absorption",
-  "page_a": "701-707",
-  "enTitle": "Basic processes of photosynthesis — the general equation, thylakoid, chloroplast",
-  "nodes": [
-   "9-2",
-   "9-3",
-   "9-4"
-  ],
-  "cz_pages": "202-204"
- },
- "9|9.1.1": {
-  "topicKey": "photosynthetic-pigments",
-  "primary": "20.1",
-  "primary_title": "20.1 Light Absorption",
-  "page_a": "701-707",
-  "enTitle": "The three categories of photosynthetic pigment",
-  "nodes": [
-   "9-5",
-   "9-6",
-   "9-7",
-   "9-8"
-  ],
-  "cz_pages": "204-206"
- },
- "9|9.1.2": {
-  "topicKey": "photochemical-reaction-centers",
-  "primary": "20.2",
-  "primary_title": "20.2 Photochemical Reaction Centers",
-  "page_a": "708-716",
-  "enTitle": "Other components of the thylakoid membranes",
-  "nodes": [
-   "9-9"
-  ],
-  "cz_pages": "206"
- },
- "9|9.1.3": {
-  "topicKey": "photochemical-reaction-centers",
-  "primary": "20.2",
-  "primary_title": "20.2 Photochemical Reaction Centers",
-  "page_a": "708-716",
-  "enTitle": "The reaction centre, and the legend to Obr. 9.5",
-  "nodes": [
-   "9-10",
-   "9-11",
-   "9-12",
-   "9-13",
-   "9-14"
-  ],
-  "cz_pages": "206-209"
- },
- "9|9.1.4": {
-  "topicKey": "co2-assimilation",
-  "primary": "20.4",
-  "primary_title": "20.4 CO[2]-Assimilation Reactions",
-  "page_a": "719-727",
-  "enTitle": "Photosynthetic CO₂ fixation — why 'dark phase' is a bad term",
-  "nodes": [
-   "9-15",
-   "9-16",
-   "9-17",
-   "9-18",
-   "9-19"
-  ],
-  "cz_pages": "209-212"
- },
- "9|9.2": {
-  "topicKey": "photorespiration-c4-cam",
-  "primary": "20.5",
-  "primary_title": "20.5 Photorespiration and the C[4] and CAM Pathways",
-  "page_a": "727-732",
-  "enTitle": "Photorespiration — three enzymes, three compartments",
-  "nodes": [
-   "9-20"
-  ],
-  "cz_pages": "212-213"
- },
- "9|9.3": {
-  "topicKey": "photorespiration-c4-cam",
-  "primary": "20.5",
-  "primary_title": "20.5 Photorespiration and the C[4] and CAM Pathways",
-  "page_a": "727-732",
-  "enTitle": "C-4 plants — the Hatch–Slack cycle",
-  "nodes": [
-   "9-21",
-   "9-22"
-  ],
-  "cz_pages": "212-214"
- },
- "9|9.4": {
-  "topicKey": "nitrogen-metabolism",
-  "primary": "22.1",
-  "primary_title": "22.1 Overview of Nitrogen Metabolism",
-  "page_a": "795-804",
-  "enTitle": "Fixation of atmospheric nitrogen — nitrogenase",
-  "nodes": [
-   "9-23",
-   "9-24",
-   "9-25",
-   "9-26"
-  ],
-  "cz_pages": "214-216"
- },
- "9|9.5": {
-  "topicKey": "cholesterol-and-isoprenoids",
-  "primary": "21.4",
-  "primary_title": "21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesis, Regulation, and Transport",
-  "page_a": "772-789",
-  "enTitle": "Secondary plant metabolites",
-  "nodes": [
-   "9-27"
-  ],
-  "cz_pages": "216-217"
- },
- "10|10.1": {
-  "topicKey": "biochemical-reaction-logic",
-  "primary": "13.2",
-  "primary_title": "13.2 Chemical Logic and Common Biochemical Reactions",
-  "page_a": "472-478",
-  "enTitle": "Intermediary metabolism — catabolism, anabolism and the four functions",
-  "nodes": [
-   "10-1",
-   "10-2",
-   "10-3",
-   "10-4",
-   "10-5"
-  ],
-  "cz_pages": "218-219"
- },
- "10|10.1.1": {
-  "topicKey": "glycolysis",
-  "primary": "14.1",
-  "primary_title": "14.1 Glycolysis",
-  "page_a": "511-521",
-  "enTitle": "Carbohydrate metabolism — degradation",
-  "nodes": [
-   "10-6",
-   "10-7"
-  ],
-  "cz_pages": "219"
- },
- "10|10.1.2": {
-  "topicKey": "fatty-acid-oxidation",
-  "primary": "17.2",
-  "primary_title": "17.2 Oxidation of Fatty Acids",
-  "page_a": "607-618",
-  "enTitle": "Lipid metabolism — degradation and ketone bodies",
-  "nodes": [
-   "10-8",
-   "10-9"
-  ],
-  "cz_pages": "220"
- },
- "10|10.1.3": {
-  "topicKey": "tissue-specific-metabolism",
-  "primary": "23.2",
-  "primary_title": "23.2 Tissue-Specific Metabolism",
-  "page_a": "848-858",
-  "enTitle": "The relation of carbohydrate and lipid metabolism — why fats cannot make sugars",
-  "nodes": [
-   "10-10"
-  ],
-  "cz_pages": "220"
- },
- "10|10.1.4": {
-  "topicKey": "intermediary-metabolism-hub",
-  "primary": "16.3",
-  "primary_title": "16.3 The Hub of Intermediary Metabolism",
-  "page_a": "590-592",
-  "enTitle": "The citrate cycle and respiratory chain — energetics and biosynthesis",
-  "nodes": [
-   "10-11"
-  ],
-  "cz_pages": "220-221"
- },
- "10|10.2": {
-  "topicKey": "metabolic-regulation",
-  "primary": "13.5",
-  "primary_title": "13.5 Regulation of Metabolic Pathways",
-  "page_a": "497-503",
-  "enTitle": "Regulatory mechanisms — why, and at what levels",
-  "nodes": [
-   "10-12",
-   "10-13",
-   "10-14",
-   "10-15",
-   "10-16"
-  ],
-  "cz_pages": "221-222"
- },
- "10|10.3": {
-  "topicKey": "hormone-structure-and-action",
-  "primary": "23.1",
-  "primary_title": "23.1 Hormone Structure and Action",
-  "page_a": "842-848",
-  "enTitle": "Hormones — definition, the gland hierarchy, and hormonal receptors",
-  "nodes": [
-   "10-17",
-   "10-18",
-   "10-19",
-   "10-20",
-   "10-21",
-   "10-22",
-   "10-23",
-   "10-24",
-   "10-25",
-   "10-26"
-  ],
-  "cz_pages": "222-228"
- }
+  "1|1.1": {
+    "topicKey": "cells-and-biomolecules",
+    "primary": "1.1",
+    "primary_title": "1.1 Cellular Foundations",
+    "page_a": "2-9",
+    "enTitle": "What is biochemistry?",
+    "nodes": [
+      "1-1"
+    ],
+    "cz_pages": "8-9"
+  },
+  "1|1.2": {
+    "topicKey": "cells-and-biomolecules",
+    "primary": "1.1",
+    "primary_title": "1.1 Cellular Foundations",
+    "page_a": "2-9",
+    "enTitle": "Living and non-living",
+    "nodes": [
+      "1-2"
+    ],
+    "cz_pages": "10-11"
+  },
+  "1|1.3": {
+    "topicKey": "cells-and-biomolecules",
+    "primary": "1.1",
+    "primary_title": "1.1 Cellular Foundations",
+    "page_a": "2-9",
+    "enTitle": "Building blocks of living matter: from molecule to cell",
+    "nodes": [
+      "1-3"
+    ],
+    "cz_pages": "11-16"
+  },
+  "1|1.4": {
+    "topicKey": "bioenergetics-basics",
+    "primary": "1.3",
+    "primary_title": "1.3 Physical Foundations",
+    "page_a": "18-27",
+    "enTitle": "Nutrition and metabolism",
+    "nodes": [
+      "1-4"
+    ],
+    "cz_pages": "16-17"
+  },
+  "1|1.5": {
+    "topicKey": "bioenergetics-basics",
+    "primary": "1.3",
+    "primary_title": "1.3 Physical Foundations",
+    "page_a": "18-27",
+    "enTitle": "Energy and life",
+    "nodes": [
+      "1-5"
+    ],
+    "cz_pages": "17-18"
+  },
+  "1|1.6": {
+    "topicKey": "origin-and-evolution-of-life",
+    "primary": "1.5",
+    "primary_title": "1.5 Evolutionary Foundations",
+    "page_a": "30-36",
+    "enTitle": "Origin and evolution of life",
+    "nodes": [
+      "1-6"
+    ],
+    "cz_pages": "18-20"
+  },
+  "2|2.1.1": {
+    "topicKey": "amino-acids",
+    "primary": "3.1",
+    "primary_title": "3.1 Amino Acids",
+    "page_a": "71-79",
+    "enTitle": "Structure and occurrence of amino acids",
+    "nodes": [
+      "2-1-1"
+    ],
+    "cz_pages": "21-23"
+  },
+  "2|2.1.2": {
+    "topicKey": "amino-acids",
+    "primary": "3.1",
+    "primary_title": "3.1 Amino Acids",
+    "page_a": "71-79",
+    "enTitle": "Physico-chemical properties of amino acids",
+    "nodes": [
+      "2-1-2"
+    ],
+    "cz_pages": "23-24"
+  },
+  "2|2.1.3": {
+    "topicKey": "amino-acids",
+    "primary": "3.1",
+    "primary_title": "3.1 Amino Acids",
+    "page_a": "71-79",
+    "enTitle": "Chemical reactions of amino acids",
+    "nodes": [
+      "2-1-3"
+    ],
+    "cz_pages": "24-25"
+  },
+  "2|2.1.4": {
+    "topicKey": "peptides-and-proteins",
+    "primary": "3.2",
+    "primary_title": "3.2 Peptides and Proteins",
+    "page_a": "79-83",
+    "enTitle": "Formation of the peptide bond",
+    "nodes": [
+      "2-1-4"
+    ],
+    "cz_pages": "26"
+  },
+  "2|2.2.1": {
+    "topicKey": "protein-primary-structure",
+    "primary": "3.4",
+    "primary_title": "3.4 The Structure of Proteins: Primary Structure",
+    "page_a": "91-100",
+    "enTitle": "Amino acid sequence (primary structure)",
+    "nodes": [
+      "2-2-1"
+    ],
+    "cz_pages": "26-27"
+  },
+  "2|2.2.2": {
+    "topicKey": "protein-structure-overview",
+    "primary": "4.1",
+    "primary_title": "4.1 Overview of Protein Structure",
+    "page_a": "108-110",
+    "enTitle": "Principles of conformation",
+    "nodes": [
+      "2-2-2"
+    ],
+    "cz_pages": "27-33"
+  },
+  "2|2.2.3": {
+    "topicKey": "protein-tertiary-quaternary",
+    "primary": "4.3",
+    "primary_title": "4.3 Protein Tertiary and Quaternary Structures",
+    "page_a": "116-129",
+    "enTitle": "Conformation of proteins — the levels of structure",
+    "nodes": [
+      "2-2-3"
+    ],
+    "cz_pages": "33-34"
+  },
+  "2|2.2.4": {
+    "topicKey": "protein-tertiary-quaternary",
+    "primary": "4.3",
+    "primary_title": "4.3 Protein Tertiary and Quaternary Structures",
+    "page_a": "116-129",
+    "enTitle": "Types of construction of the protein molecule",
+    "nodes": [
+      "2-2-4"
+    ],
+    "cz_pages": "34-35"
+  },
+  "2|2.2.5": {
+    "topicKey": "peptides-and-proteins",
+    "primary": "3.2",
+    "primary_title": "3.2 Peptides and Proteins",
+    "page_a": "79-83",
+    "enTitle": "Simple and conjugated proteins",
+    "nodes": [
+      "2-2-5"
+    ],
+    "cz_pages": "36-37"
+  },
+  "2|2.2.6": {
+    "topicKey": "working-with-proteins",
+    "primary": "3.3",
+    "primary_title": "3.3 Working with Proteins",
+    "page_a": "83-90",
+    "enTitle": "Properties of proteins",
+    "nodes": [
+      "2-2-6"
+    ],
+    "cz_pages": "37-40"
+  },
+  "3|3.1": {
+    "topicKey": "enzymes-introduction",
+    "primary": "6.1",
+    "primary_title": "6.1 An Introduction to Enzymes",
+    "page_a": "177-179",
+    "enTitle": "Classification and nomenclature of enzymes",
+    "nodes": [
+      "3-1"
+    ],
+    "cz_pages": "41-42"
+  },
+  "3|3.2": {
+    "topicKey": "enzymes-introduction",
+    "primary": "6.1",
+    "primary_title": "6.1 An Introduction to Enzymes",
+    "page_a": "177-179",
+    "enTitle": "Structure of the enzyme molecule; Coenzymes",
+    "nodes": [
+      "3-2"
+    ],
+    "cz_pages": "42-54"
+  },
+  "3|3.3.1": {
+    "topicKey": "enzyme-kinetics",
+    "primary": "6.3",
+    "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
+    "page_a": "188-203",
+    "enTitle": "Enzyme reaction kinetics; the Michaelis–Menten equation",
+    "nodes": [
+      "3-3-1"
+    ],
+    "cz_pages": "54-57"
+  },
+  "3|3.3.2": {
+    "topicKey": "enzyme-kinetics",
+    "primary": "6.3",
+    "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
+    "page_a": "188-203",
+    "enTitle": "Two-substrate reactions",
+    "nodes": [
+      "3-3-2"
+    ],
+    "cz_pages": "57-58"
+  },
+  "3|3.3.3": {
+    "topicKey": "enzyme-kinetics",
+    "primary": "6.3",
+    "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
+    "page_a": "188-203",
+    "enTitle": "Measurement of enzyme activity",
+    "nodes": [
+      "3-3-3"
+    ],
+    "cz_pages": "58"
+  },
+  "3|3.4": {
+    "topicKey": "enzyme-kinetics",
+    "primary": "6.3",
+    "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
+    "page_a": "188-203",
+    "enTitle": "Influence of pH and temperature on enzyme reactions",
+    "nodes": [
+      "3-4"
+    ],
+    "cz_pages": "58-59"
+  },
+  "3|3.5": {
+    "topicKey": "enzyme-kinetics",
+    "primary": "6.3",
+    "primary_title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
+    "page_a": "188-203",
+    "enTitle": "Inhibition of enzyme reactions",
+    "nodes": [
+      "3-5"
+    ],
+    "cz_pages": "59-61"
+  },
+  "3|3.6": {
+    "topicKey": "enzyme-mechanism",
+    "primary": "6.2",
+    "primary_title": "6.2 How Enzymes Work",
+    "page_a": "179-188",
+    "enTitle": "Mechanism of enzyme action",
+    "nodes": [
+      "3-6"
+    ],
+    "cz_pages": "61-62"
+  },
+  "3|3.7": {
+    "topicKey": "regulatory-enzymes",
+    "primary": "6.5",
+    "primary_title": "6.5 Regulatory Enzymes",
+    "page_a": "213-223",
+    "enTitle": "Regulatory enzymes; allosteric enzymes",
+    "nodes": [
+      "3-7"
+    ],
+    "cz_pages": "62-65"
+  },
+  "4|4.1": {
+    "topicKey": "nucleotides",
+    "primary": "8.1",
+    "primary_title": "8.1 Some Basic Definitions and Conventions",
+    "page_a": "263-269",
+    "enTitle": "Nucleic acids are the basic molecules of heredity",
+    "nodes": [
+      "4-1"
+    ],
+    "cz_pages": "66-67"
+  },
+  "4|4.1.1.1": {
+    "topicKey": "nucleotide-metabolism",
+    "primary": "22.4",
+    "primary_title": "22.4 Biosynthesis and Degradation of Nucleotides",
+    "page_a": "824-837",
+    "enTitle": "Biosynthesis of nucleotides; biosynthesis of purine nucleotides",
+    "nodes": [
+      "4-1-1-1"
+    ],
+    "cz_pages": "67-70"
+  },
+  "4|4.1.1.2": {
+    "topicKey": "nucleotide-metabolism",
+    "primary": "22.4",
+    "primary_title": "22.4 Biosynthesis and Degradation of Nucleotides",
+    "page_a": "824-837",
+    "enTitle": "Biosynthesis of pyrimidine nucleotides",
+    "nodes": [
+      "4-1-1-2"
+    ],
+    "cz_pages": "70-72"
+  },
+  "4|4.1.2": {
+    "topicKey": "nucleotides",
+    "primary": "8.1",
+    "primary_title": "8.1 Some Basic Definitions and Conventions",
+    "page_a": "263-269",
+    "enTitle": "Structure of nucleic acids",
+    "nodes": [
+      "4-1-2"
+    ],
+    "cz_pages": "72-75"
+  },
+  "4|4.1.3": {
+    "topicKey": "dna-replication",
+    "primary": "25.1",
+    "primary_title": "25.1 DNA Replication",
+    "page_a": "914-930",
+    "enTitle": "DNA structure and biosynthesis explain the principle of heredity — 1) DNA polymerases",
+    "nodes": [
+      "4-1-3-1",
+      "4-1-3-2"
+    ],
+    "cz_pages": "76-84"
+  },
+  "4|4.1.4": {
+    "topicKey": "transcription",
+    "primary": "26.1",
+    "primary_title": "26.1 DNA-Dependent Synthesis of RNA",
+    "page_a": "961-972",
+    "enTitle": "DNA is transcribed into RNA — types and properties of RNA",
+    "nodes": [
+      "4-1-4-1",
+      "4-1-4-2"
+    ],
+    "cz_pages": "85-91"
+  },
+  "4|4.1.5": {
+    "topicKey": "nucleotide-metabolism",
+    "primary": "22.4",
+    "primary_title": "22.4 Biosynthesis and Degradation of Nucleotides",
+    "page_a": "824-837",
+    "enTitle": "Degradation of nucleic acids",
+    "nodes": [
+      "4-1-5"
+    ],
+    "cz_pages": "91-92"
+  },
+  "4|4.2.1": {
+    "topicKey": "genetic-code",
+    "primary": "27.1",
+    "primary_title": "27.1 The Genetic Code",
+    "page_a": "1006-1015",
+    "enTitle": "The gene sequence determines the order of amino acids in proteins",
+    "nodes": [
+      "4-2-1"
+    ],
+    "cz_pages": "92-94"
+  },
+  "4|4.2.2": {
+    "topicKey": "translation",
+    "primary": "27.2",
+    "primary_title": "27.2 Protein Synthesis",
+    "page_a": "1015-1040",
+    "enTitle": "Protein synthesis takes place in ribosomes",
+    "nodes": [
+      "4-2-2"
+    ],
+    "cz_pages": "94-95"
+  },
+  "4|4.2.3": {
+    "topicKey": "translation",
+    "primary": "27.2",
+    "primary_title": "27.2 Protein Synthesis",
+    "page_a": "1015-1040",
+    "enTitle": "Phases of protein synthesis (I): amino acid activation, initiation and elongation",
+    "nodes": [
+      "4-2-3-1",
+      "4-2-3-2"
+    ],
+    "cz_pages": "95-102"
+  },
+  "4|4.2.4": {
+    "topicKey": "gene-regulation-proteins",
+    "primary": "28.1",
+    "primary_title": "28.1 The Proteins and RNAs of Gene Regulation",
+    "page_a": "1055-1065",
+    "enTitle": "Regulation of protein synthesis (I): the lactose and tryptophan operons",
+    "nodes": [
+      "4-2-4-1",
+      "4-2-4-2"
+    ],
+    "cz_pages": "102-108"
+  },
+  "4|4.3.1": {
+    "topicKey": "protein-folding-and-denaturation",
+    "primary": "4.4",
+    "primary_title": "4.4 Protein Denaturation and Folding",
+    "page_a": "129-136",
+    "enTitle": "Non-covalent interactions and folding of the polypeptide chain into its biologically active form",
+    "nodes": [
+      "4-3-1"
+    ],
+    "cz_pages": "108-110"
+  },
+  "4|4.3.2": {
+    "topicKey": "protein-targeting-and-degradation",
+    "primary": "27.3",
+    "primary_title": "27.3 Protein Targeting and Degradation",
+    "page_a": "1040-1050",
+    "enTitle": "Post-translational modification of the polypeptide chain and transport of proteins across the membrane",
+    "nodes": [
+      "4-3-2"
+    ],
+    "cz_pages": "110-111"
+  },
+  "4|4.3.3": {
+    "topicKey": "protein-targeting-and-degradation",
+    "primary": "27.3",
+    "primary_title": "27.3 Protein Targeting and Degradation",
+    "page_a": "1040-1050",
+    "enTitle": "Covalent modification of amino acid side chains",
+    "nodes": [
+      "4-3-3"
+    ],
+    "cz_pages": "111-114"
+  },
+  "5|5.1": {
+    "topicKey": "protein-targeting-and-degradation",
+    "primary": "27.3",
+    "primary_title": "27.3 Protein Targeting and Degradation",
+    "page_a": "1040-1050",
+    "enTitle": "Proteolytic cleavage of proteins",
+    "nodes": [
+      "5-1"
+    ],
+    "cz_pages": "115-118"
+  },
+  "5|5.2": {
+    "topicKey": "amino-group-metabolism",
+    "primary": "18.1",
+    "primary_title": "18.1 Metabolic Fates of Amino Groups",
+    "page_a": "627-634",
+    "enTitle": "Degradation of amino acids",
+    "nodes": [
+      "5-2"
+    ],
+    "cz_pages": "118"
+  },
+  "5|5.2.1": {
+    "topicKey": "amino-group-metabolism",
+    "primary": "18.1",
+    "primary_title": "18.1 Metabolic Fates of Amino Groups",
+    "page_a": "627-634",
+    "enTitle": "Metabolic reactions at the amino acid α-carbon — deamination mechanisms",
+    "nodes": [
+      "5-2-1-1",
+      "5-2-1-2"
+    ],
+    "cz_pages": "118-122"
+  },
+  "5|5.2.2": {
+    "topicKey": "urea-cycle",
+    "primary": "18.2",
+    "primary_title": "18.2 Nitrogen Excretion and the Urea Cycle",
+    "page_a": "634-640",
+    "enTitle": "Ammonia detoxification, the urea (ornithine) cycle — sources and elimination of ammonia",
+    "nodes": [
+      "5-2-2-1",
+      "5-2-2-2"
+    ],
+    "cz_pages": "123-125"
+  },
+  "5|5.2.3": {
+    "topicKey": "amino-acid-degradation",
+    "primary": "18.3",
+    "primary_title": "18.3 Pathways of Amino Acid Degradation",
+    "page_a": "640-654",
+    "enTitle": "Degradation of the carbon skeleton and mutual interconversion of amino acids — glucogenic/ketogenic classification; 1) Conversion to acetyl-CoA via pyruvate (C3 family)",
+    "nodes": [
+      "5-2-3-1",
+      "5-2-3-2",
+      "5-2-3-3",
+      "5-2-3-4"
+    ],
+    "cz_pages": "125-129"
+  },
+  "6|6.1": {
+    "topicKey": "bioenergetics-and-thermodynamics",
+    "primary": "13.1",
+    "primary_title": "13.1 Bioenergetics and Thermodynamics",
+    "page_a": "466-471",
+    "enTitle": "Principles of bioenergetics",
+    "nodes": [
+      "6-1"
+    ],
+    "cz_pages": "130"
+  },
+  "6|6.1.1": {
+    "topicKey": "bioenergetics-and-thermodynamics",
+    "primary": "13.1",
+    "primary_title": "13.1 Bioenergetics and Thermodynamics",
+    "page_a": "466-471",
+    "enTitle": "Exergonic and endergonic reactions",
+    "nodes": [
+      "6-1-1"
+    ],
+    "cz_pages": "131"
+  },
+  "6|6.1.2": {
+    "topicKey": "atp-and-phosphoryl-transfer",
+    "primary": "13.3",
+    "primary_title": "13.3 Phosphoryl Group Transfers and ATP",
+    "page_a": "478-488",
+    "enTitle": "High-energy (macroergic) compounds — the concept, anhydrides and phosphoamides",
+    "nodes": [
+      "6-1-2-1",
+      "6-1-2-2"
+    ],
+    "cz_pages": "131-133"
+  },
+  "6|6.1.3": {
+    "topicKey": "biochemical-reaction-logic",
+    "primary": "13.2",
+    "primary_title": "13.2 Chemical Logic and Common Biochemical Reactions",
+    "page_a": "472-478",
+    "enTitle": "Catabolic and anabolic processes",
+    "nodes": [
+      "6-1-3"
+    ],
+    "cz_pages": "133-134"
+  },
+  "6|6.2.1": {
+    "topicKey": "biological-redox",
+    "primary": "13.4",
+    "primary_title": "13.4 Biological Oxidation-Reduction Reactions",
+    "page_a": "488-496",
+    "enTitle": "Oxidation-reduction processes",
+    "nodes": [
+      "6-2-1-1"
+    ],
+    "cz_pages": "134-135"
+  },
+  "6|6.2.2": {
+    "topicKey": "acetyl-coa-production",
+    "primary": "16.1",
+    "primary_title": "16.1 Production of Acetyl-CoA (Activated Acetate)",
+    "page_a": "575-578",
+    "enTitle": "The citrate cycle — introduction, cycle overview, and citrate synthase",
+    "nodes": [
+      "6-2-2-1",
+      "6-2-2-2",
+      "6-2-2-3",
+      "6-2-2-4"
+    ],
+    "cz_pages": "136-140"
+  },
+  "6|6.2.3": {
+    "topicKey": "starch-sucrose-biosynthesis",
+    "primary": "20.6",
+    "primary_title": "20.6 Biosynthesis of Starch, Sucrose, and Cellulose",
+    "page_a": "732-739",
+    "enTitle": "The glyoxylate cycle",
+    "nodes": [
+      "6-2-3"
+    ],
+    "cz_pages": "140-141"
+  },
+  "6|6.2.4": {
+    "topicKey": "respiratory-chain",
+    "primary": "19.1",
+    "primary_title": "19.1 The Mitochondrial Respiratory Chain",
+    "page_a": "660-674",
+    "enTitle": "The respiratory chain and aerobic phosphorylation — introduction and Complex I",
+    "nodes": [
+      "6-2-4-1",
+      "6-2-4-2",
+      "6-2-4-3",
+      "6-2-4-4",
+      "6-2-4-5"
+    ],
+    "cz_pages": "141-146"
+  },
+  "6|6.3": {
+    "topicKey": "amino-acid-derived-molecules",
+    "primary": "22.3",
+    "primary_title": "22.3 Molecules Derived from Amino Acids",
+    "page_a": "816-824",
+    "enTitle": "Porphyrin proteins — structure and biological versatility (Table 6.4)",
+    "nodes": [
+      "6-3-1",
+      "6-3-2",
+      "6-3-3"
+    ],
+    "cz_pages": "146-147"
+  },
+  "7|7.1": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Monosaccharides",
+    "nodes": [
+      "7-1"
+    ],
+    "cz_pages": "148"
+  },
+  "7|7.1.1": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Aldoses, ketoses",
+    "nodes": [
+      "7-1-1"
+    ],
+    "cz_pages": "148"
+  },
+  "7|7.1.2": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Deriving aldoses and ketoses — the aldose family tree (Obr. 7.1)",
+    "nodes": [
+      "7-1-2-1",
+      "7-1-2-2"
+    ],
+    "cz_pages": "148-150"
+  },
+  "7|7.1.3": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Hemiacetal/hemiketal forms — formation, anomers, Haworth formulas",
+    "nodes": [
+      "7-1-3-1",
+      "7-1-3-2"
+    ],
+    "cz_pages": "149-152"
+  },
+  "7|7.1.4": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Mutarotation",
+    "nodes": [
+      "7-1-4"
+    ],
+    "cz_pages": "151"
+  },
+  "7|7.2.1": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Sugar esters",
+    "nodes": [
+      "7-2-1"
+    ],
+    "cz_pages": "152"
+  },
+  "7|7.2.2": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Sugar acids",
+    "nodes": [
+      "7-2-2"
+    ],
+    "cz_pages": "152-153"
+  },
+  "7|7.2.3": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Sugar alcohols",
+    "nodes": [
+      "7-2-3"
+    ],
+    "cz_pages": "153"
+  },
+  "7|7.2.4": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Amino sugars",
+    "nodes": [
+      "7-2-4"
+    ],
+    "cz_pages": "153"
+  },
+  "7|7.2.5": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Deoxy sugars",
+    "nodes": [
+      "7-2-5"
+    ],
+    "cz_pages": "153"
+  },
+  "7|7.2.6": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Glycosides",
+    "nodes": [
+      "7-2-6"
+    ],
+    "cz_pages": "153-154"
+  },
+  "7|7.3": {
+    "topicKey": "monosaccharides",
+    "primary": "7.1",
+    "primary_title": "7.1 Monosaccharides and Disaccharides",
+    "page_a": "230-241",
+    "enTitle": "Oligosaccharides — definitions and non-reducing oligosaccharides",
+    "nodes": [
+      "7-3-1",
+      "7-3-2"
+    ],
+    "cz_pages": "154-155"
+  },
+  "7|7.4": {
+    "topicKey": "polysaccharides",
+    "primary": "7.2",
+    "primary_title": "7.2 Polysaccharides",
+    "page_a": "241-246",
+    "enTitle": "Polysaccharides",
+    "nodes": [
+      "7-4"
+    ],
+    "cz_pages": "155"
+  },
+  "7|7.4.1": {
+    "topicKey": "polysaccharides",
+    "primary": "7.2",
+    "primary_title": "7.2 Polysaccharides",
+    "page_a": "241-246",
+    "enTitle": "Homopolysaccharides -- A. Storage polysaccharides (starch, glycogen, dextrans, inulin, mannans)",
+    "nodes": [
+      "7-4-1-1",
+      "7-4-1-2"
+    ],
+    "cz_pages": "156-157"
+  },
+  "7|7.4.2": {
+    "topicKey": "polysaccharides",
+    "primary": "7.2",
+    "primary_title": "7.2 Polysaccharides",
+    "page_a": "241-246",
+    "enTitle": "Heteropolysaccharides (glycosaminoglycans, hyaluronic acid, chondroitin sulfates, heparin)",
+    "nodes": [
+      "7-4-2"
+    ],
+    "cz_pages": "157-158"
+  },
+  "7|7.5": {
+    "topicKey": "glycoconjugates",
+    "primary": "7.3",
+    "primary_title": "7.3 Glycoconjugates: Proteoglycans, Glycoproteins, and Glycolipids",
+    "page_a": "247-253",
+    "enTitle": "Oligosaccharides bound to proteins",
+    "nodes": [
+      "7-5"
+    ],
+    "cz_pages": "158-160"
+  },
+  "7|7.6": {
+    "topicKey": "feeder-pathways-glycolysis",
+    "primary": "14.2",
+    "primary_title": "14.2 Feeder Pathways for Glycolysis",
+    "page_a": "522-525",
+    "enTitle": "Sugar interconversions — introduction (three reaction types)",
+    "nodes": [
+      "7-6"
+    ],
+    "cz_pages": "159"
+  },
+  "7|7.6.1": {
+    "topicKey": "feeder-pathways-glycolysis",
+    "primary": "14.2",
+    "primary_title": "14.2 Feeder Pathways for Glycolysis",
+    "page_a": "522-525",
+    "enTitle": "Epimerization and isomerization",
+    "nodes": [
+      "7-6-1"
+    ],
+    "cz_pages": "160"
+  },
+  "7|7.6.2": {
+    "topicKey": "pentose-phosphate-pathway",
+    "primary": "14.6",
+    "primary_title": "14.6 Pentose Phosphate Pathway of Glucose Oxidation",
+    "page_a": "546-551",
+    "enTitle": "Oxidation and decarboxylation of glucose",
+    "nodes": [
+      "7-6-2"
+    ],
+    "cz_pages": "160-161"
+  },
+  "7|7.6.3": {
+    "topicKey": "pentose-phosphate-pathway",
+    "primary": "14.6",
+    "primary_title": "14.6 Pentose Phosphate Pathway of Glucose Oxidation",
+    "page_a": "546-551",
+    "enTitle": "Transfer of three-carbon or two-carbon fragments",
+    "nodes": [
+      "7-6-3"
+    ],
+    "cz_pages": "161"
+  },
+  "7|7.7": {
+    "topicKey": "pentose-phosphate-pathway",
+    "primary": "14.6",
+    "primary_title": "14.6 Pentose Phosphate Pathway of Glucose Oxidation",
+    "page_a": "546-551",
+    "enTitle": "Two routes to pentose phosphates — the oxidative pentose phosphate pathway",
+    "nodes": [
+      "7-7-1",
+      "7-7-2"
+    ],
+    "cz_pages": "162-163"
+  },
+  "7|7.8": {
+    "topicKey": "glycolysis",
+    "primary": "14.1",
+    "primary_title": "14.1 Glycolysis",
+    "page_a": "511-521",
+    "enTitle": "Glycolysis — introduction and the preparatory phase (glucose to fructose-1,6-bisphosphate and its cleavage to trioses)",
+    "nodes": [
+      "7-8-1",
+      "7-8-2",
+      "7-8-3"
+    ],
+    "cz_pages": "164-167"
+  },
+  "7|7.8.1": {
+    "topicKey": "fates-of-pyruvate",
+    "primary": "14.3",
+    "primary_title": "14.3 Fates of Pyruvate",
+    "page_a": "525-532",
+    "enTitle": "Formation of ethanol, lactate, or acetyl-CoA — ethanol and lactate",
+    "nodes": [
+      "7-8-4",
+      "7-8-5"
+    ],
+    "cz_pages": "167-169"
+  },
+  "7|7.9": {
+    "topicKey": "gluconeogenesis",
+    "primary": "14.4",
+    "primary_title": "14.4 Gluconeogenesis",
+    "page_a": "533-538",
+    "enTitle": "Gluconeogenesis, glucose resynthesis — bypassing glycolysis's irreversible steps",
+    "nodes": [
+      "7-9"
+    ],
+    "cz_pages": "169-170"
+  },
+  "7|7.9.1": {
+    "topicKey": "gluconeogenesis",
+    "primary": "14.4",
+    "primary_title": "14.4 Gluconeogenesis",
+    "page_a": "533-538",
+    "enTitle": "Gluconeogenesis from amino acids",
+    "nodes": [
+      "7-9-1"
+    ],
+    "cz_pages": "170"
+  },
+  "7|7.10": {
+    "topicKey": "feeder-pathways-glycolysis",
+    "primary": "14.2",
+    "primary_title": "14.2 Feeder Pathways for Glycolysis",
+    "page_a": "522-525",
+    "enTitle": "Enzymatic cleavage of glycosides and oligosaccharides — glycosidases",
+    "nodes": [
+      "7-10-1",
+      "7-10-2",
+      "7-10-3"
+    ],
+    "cz_pages": "170-172"
+  },
+  "7|7.11.1": {
+    "topicKey": "feeder-pathways-glycolysis",
+    "primary": "14.2",
+    "primary_title": "14.2 Feeder Pathways for Glycolysis",
+    "page_a": "522-525",
+    "enTitle": "Hydrolytic cleavage — alpha- and beta-amylases",
+    "nodes": [
+      "7-11-1-1",
+      "7-11-1-2"
+    ],
+    "cz_pages": "172-173"
+  },
+  "7|7.11.2": {
+    "topicKey": "glycogen-metabolism",
+    "primary": "15.2",
+    "primary_title": "15.2 Breakdown and Synthesis of Glycogen",
+    "page_a": "558-564",
+    "enTitle": "Phosphorolysis of starch and glycogen — general mechanism",
+    "nodes": [
+      "7-11-2-1",
+      "7-11-2-2"
+    ],
+    "cz_pages": "173-174"
+  },
+  "7|7.12": {
+    "topicKey": "glycogen-metabolism",
+    "primary": "15.2",
+    "primary_title": "15.2 Breakdown and Synthesis of Glycogen",
+    "page_a": "558-564",
+    "enTitle": "Biosynthesis of polysaccharides — glycogen synthase and the branching enzyme",
+    "nodes": [
+      "7-12-1",
+      "7-12-2"
+    ],
+    "cz_pages": "174-175"
+  },
+  "8|8.1": {
+    "topicKey": "storage-lipids",
+    "primary": "10.1",
+    "primary_title": "10.1 Storage Lipids",
+    "page_a": "340-346",
+    "enTitle": "Definition and classification",
+    "nodes": [
+      "8-1"
+    ],
+    "cz_pages": "176"
+  },
+  "8|8.2.1": {
+    "topicKey": "storage-lipids",
+    "primary": "10.1",
+    "primary_title": "10.1 Storage Lipids",
+    "page_a": "340-346",
+    "enTitle": "Fatty acids — definition, classification, natural occurrence (Tab. 8.2)",
+    "nodes": [
+      "8-2-1-1",
+      "8-2-1-2"
+    ],
+    "cz_pages": "177-178"
+  },
+  "8|8.2.2": {
+    "topicKey": "storage-lipids",
+    "primary": "10.1",
+    "primary_title": "10.1 Storage Lipids",
+    "page_a": "340-346",
+    "enTitle": "Simple lipids — Neutral acylglycerols",
+    "nodes": [
+      "8-2-2-1",
+      "8-2-2-2"
+    ],
+    "cz_pages": "178-179"
+  },
+  "8|8.2.3": {
+    "topicKey": "membrane-lipids",
+    "primary": "10.2",
+    "primary_title": "10.2 Structural Lipids in Membranes",
+    "page_a": "346-353",
+    "enTitle": "Complex lipids — Glycoacylglycerols (introduction)",
+    "nodes": [
+      "8-2-3",
+      "8-2-3-2",
+      "8-2-3-3",
+      "8-2-3-4"
+    ],
+    "cz_pages": "179-182"
+  },
+  "8|8.2.4": {
+    "topicKey": "lipid-signals-and-pigments",
+    "primary": "10.3",
+    "primary_title": "10.3 Lipids as Signals, Cofactors, and Pigments",
+    "page_a": "353-360",
+    "enTitle": "Derived lipids — terpenes (isoprenoids): characteristics and classification",
+    "nodes": [
+      "8-2-4-1",
+      "8-2-4-2",
+      "8-2-4-3",
+      "8-2-4-4",
+      "8-2-4-5",
+      "8-2-4-6"
+    ],
+    "cz_pages": "182-187"
+  },
+  "8|8.3": {
+    "topicKey": "fatty-acid-biosynthesis",
+    "primary": "21.1",
+    "primary_title": "21.1 Biosynthesis of Fatty Acids and Eicosanoids",
+    "page_a": "745-760",
+    "enTitle": "Lipid biosynthesis — Fatty acids: subcellular compartmentalization, the source of acetyl-CoA, and malonyl-CoA formation",
+    "nodes": [
+      "8-3-1",
+      "8-3-2",
+      "8-3-3",
+      "8-3-4",
+      "8-3-5",
+      "8-3-6",
+      "8-3-7",
+      "8-3-8",
+      "8-3-9"
+    ],
+    "cz_pages": "187-193"
+  },
+  "8|8.4.1": {
+    "topicKey": "fat-mobilization",
+    "primary": "17.1",
+    "primary_title": "17.1 Digestion, Mobilization, and Transport of Fats",
+    "page_a": "603-606",
+    "enTitle": "Simple lipids",
+    "nodes": [
+      "8-4-1"
+    ],
+    "cz_pages": "193"
+  },
+  "8|8.4.2": {
+    "topicKey": "working-with-lipids",
+    "primary": "10.4",
+    "primary_title": "10.4 Working with Lipids",
+    "page_a": "361-363",
+    "enTitle": "Complex lipids — phospholipids and phospholipases",
+    "nodes": [
+      "8-4-2-1",
+      "8-4-2-2"
+    ],
+    "cz_pages": "193-194"
+  },
+  "8|8.4.3": {
+    "topicKey": "cholesterol-and-isoprenoids",
+    "primary": "21.4",
+    "primary_title": "21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesis, Regulation, and Transport",
+    "page_a": "772-789",
+    "enTitle": "Derived lipids",
+    "nodes": [
+      "8-4-3"
+    ],
+    "cz_pages": "194"
+  },
+  "8|8.4.4": {
+    "topicKey": "fat-mobilization",
+    "primary": "17.1",
+    "primary_title": "17.1 Digestion, Mobilization, and Transport of Fats",
+    "page_a": "603-606",
+    "enTitle": "Fatty acids — activation",
+    "nodes": [
+      "8-4-4-1"
+    ],
+    "cz_pages": "194-197",
+    "manual_note": "Split 2026-08-06: 8-4-4-2/3/4 moved to fatty-acid-oxidation (they are beta-oxidation, Lehninger 17.2); only 8-4-4-1 (activation/transport) belongs to 17.1."
+  },
+  "8|8.5": {
+    "topicKey": "membrane-architecture",
+    "primary": "11.1",
+    "primary_title": "11.1 The Composition and Architecture of Membranes",
+    "page_a": "367-376",
+    "enTitle": "Biological membranes (introduction)",
+    "nodes": [
+      "8-5"
+    ],
+    "cz_pages": "197-198"
+  },
+  "8|8.5.1": {
+    "topicKey": "membrane-architecture",
+    "primary": "11.1",
+    "primary_title": "11.1 The Composition and Architecture of Membranes",
+    "page_a": "367-376",
+    "enTitle": "Chemical composition",
+    "nodes": [
+      "8-5-1"
+    ],
+    "cz_pages": "198"
+  },
+  "8|8.5.2": {
+    "topicKey": "membrane-architecture",
+    "primary": "11.1",
+    "primary_title": "11.1 The Composition and Architecture of Membranes",
+    "page_a": "367-376",
+    "enTitle": "Structure — the lipid bilayer",
+    "nodes": [
+      "8-5-2-1",
+      "8-5-2-2",
+      "8-5-2-3"
+    ],
+    "cz_pages": "198-200"
+  },
+  "8|8.5.3": {
+    "topicKey": "membrane-transport",
+    "primary": "11.3",
+    "primary_title": "11.3 Solute Transport across Membranes",
+    "page_a": "385-403",
+    "enTitle": "Membrane transport — passive transport, simple diffusion",
+    "nodes": [
+      "8-5-3-1",
+      "8-5-3-2",
+      "8-5-3-3"
+    ],
+    "cz_pages": "200-201"
+  },
+  "9|9": {
+    "topicKey": "photosynthetic-pigments",
+    "primary": "20.1",
+    "primary_title": "20.1 Light Absorption",
+    "page_a": "701-707",
+    "enTitle": "Photoautotrophy — the five metabolisms specific to autotrophs",
+    "nodes": [
+      "9-1"
+    ],
+    "cz_pages": "202"
+  },
+  "9|9.1": {
+    "topicKey": "photosynthetic-pigments",
+    "primary": "20.1",
+    "primary_title": "20.1 Light Absorption",
+    "page_a": "701-707",
+    "enTitle": "Basic processes of photosynthesis — the general equation, thylakoid, chloroplast",
+    "nodes": [
+      "9-2",
+      "9-3",
+      "9-4"
+    ],
+    "cz_pages": "202-204"
+  },
+  "9|9.1.1": {
+    "topicKey": "photosynthetic-pigments",
+    "primary": "20.1",
+    "primary_title": "20.1 Light Absorption",
+    "page_a": "701-707",
+    "enTitle": "The three categories of photosynthetic pigment",
+    "nodes": [
+      "9-5",
+      "9-6",
+      "9-7",
+      "9-8"
+    ],
+    "cz_pages": "204-206"
+  },
+  "9|9.1.2": {
+    "topicKey": "photochemical-reaction-centers",
+    "primary": "20.2",
+    "primary_title": "20.2 Photochemical Reaction Centers",
+    "page_a": "708-716",
+    "enTitle": "Other components of the thylakoid membranes",
+    "nodes": [
+      "9-9"
+    ],
+    "cz_pages": "206"
+  },
+  "9|9.1.3": {
+    "topicKey": "photochemical-reaction-centers",
+    "primary": "20.2",
+    "primary_title": "20.2 Photochemical Reaction Centers",
+    "page_a": "708-716",
+    "enTitle": "The reaction centre, and the legend to Obr. 9.5",
+    "nodes": [
+      "9-10",
+      "9-11",
+      "9-12",
+      "9-13",
+      "9-14"
+    ],
+    "cz_pages": "206-209"
+  },
+  "9|9.1.4": {
+    "topicKey": "co2-assimilation",
+    "primary": "20.4",
+    "primary_title": "20.4 CO[2]-Assimilation Reactions",
+    "page_a": "719-727",
+    "enTitle": "Photosynthetic CO₂ fixation — why 'dark phase' is a bad term",
+    "nodes": [
+      "9-15",
+      "9-16",
+      "9-17",
+      "9-18",
+      "9-19"
+    ],
+    "cz_pages": "209-212"
+  },
+  "9|9.2": {
+    "topicKey": "photorespiration-c4-cam",
+    "primary": "20.5",
+    "primary_title": "20.5 Photorespiration and the C[4] and CAM Pathways",
+    "page_a": "727-732",
+    "enTitle": "Photorespiration — three enzymes, three compartments",
+    "nodes": [
+      "9-20"
+    ],
+    "cz_pages": "212-213"
+  },
+  "9|9.3": {
+    "topicKey": "photorespiration-c4-cam",
+    "primary": "20.5",
+    "primary_title": "20.5 Photorespiration and the C[4] and CAM Pathways",
+    "page_a": "727-732",
+    "enTitle": "C-4 plants — the Hatch–Slack cycle",
+    "nodes": [
+      "9-21",
+      "9-22"
+    ],
+    "cz_pages": "212-214"
+  },
+  "9|9.4": {
+    "topicKey": "nitrogen-metabolism",
+    "primary": "22.1",
+    "primary_title": "22.1 Overview of Nitrogen Metabolism",
+    "page_a": "795-804",
+    "enTitle": "Fixation of atmospheric nitrogen — nitrogenase",
+    "nodes": [
+      "9-23",
+      "9-24",
+      "9-25",
+      "9-26"
+    ],
+    "cz_pages": "214-216"
+  },
+  "9|9.5": {
+    "topicKey": "cholesterol-and-isoprenoids",
+    "primary": "21.4",
+    "primary_title": "21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesis, Regulation, and Transport",
+    "page_a": "772-789",
+    "enTitle": "Secondary plant metabolites",
+    "nodes": [
+      "9-27"
+    ],
+    "cz_pages": "216-217"
+  },
+  "10|10.1": {
+    "topicKey": "biochemical-reaction-logic",
+    "primary": "13.2",
+    "primary_title": "13.2 Chemical Logic and Common Biochemical Reactions",
+    "page_a": "472-478",
+    "enTitle": "Intermediary metabolism — catabolism, anabolism and the four functions",
+    "nodes": [
+      "10-1",
+      "10-2",
+      "10-3",
+      "10-4",
+      "10-5"
+    ],
+    "cz_pages": "218-219"
+  },
+  "10|10.1.1": {
+    "topicKey": "glycolysis",
+    "primary": "14.1",
+    "primary_title": "14.1 Glycolysis",
+    "page_a": "511-521",
+    "enTitle": "Carbohydrate metabolism — degradation",
+    "nodes": [
+      "10-6",
+      "10-7"
+    ],
+    "cz_pages": "219"
+  },
+  "10|10.1.2": {
+    "topicKey": "fatty-acid-oxidation",
+    "primary": "17.2",
+    "primary_title": "17.2 Oxidation of Fatty Acids",
+    "page_a": "607-618",
+    "enTitle": "Lipid metabolism — degradation and ketone bodies",
+    "nodes": [
+      "10-8"
+    ],
+    "cz_pages": "220",
+    "manual_note": "10-9 moved to fatty-acid-biosynthesis 2026-08-06: it describes SYNTHESIS (three differences from degradation), not oxidation."
+  },
+  "10|10.1.3": {
+    "topicKey": "tissue-specific-metabolism",
+    "primary": "23.2",
+    "primary_title": "23.2 Tissue-Specific Metabolism",
+    "page_a": "848-858",
+    "enTitle": "The relation of carbohydrate and lipid metabolism — why fats cannot make sugars",
+    "nodes": [
+      "10-10"
+    ],
+    "cz_pages": "220"
+  },
+  "10|10.1.4": {
+    "topicKey": "intermediary-metabolism-hub",
+    "primary": "16.3",
+    "primary_title": "16.3 The Hub of Intermediary Metabolism",
+    "page_a": "590-592",
+    "enTitle": "The citrate cycle and respiratory chain — energetics and biosynthesis",
+    "nodes": [
+      "10-11"
+    ],
+    "cz_pages": "220-221"
+  },
+  "10|10.2": {
+    "topicKey": "metabolic-regulation",
+    "primary": "13.5",
+    "primary_title": "13.5 Regulation of Metabolic Pathways",
+    "page_a": "497-503",
+    "enTitle": "Regulatory mechanisms — why, and at what levels",
+    "nodes": [
+      "10-12",
+      "10-13",
+      "10-14",
+      "10-15",
+      "10-16"
+    ],
+    "cz_pages": "221-222"
+  },
+  "10|10.3": {
+    "topicKey": "hormone-structure-and-action",
+    "primary": "23.1",
+    "primary_title": "23.1 Hormone Structure and Action",
+    "page_a": "842-848",
+    "enTitle": "Hormones — definition, the gland hierarchy, and hormonal receptors",
+    "nodes": [
+      "10-17",
+      "10-18",
+      "10-19",
+      "10-20",
+      "10-21",
+      "10-22",
+      "10-23",
+      "10-24",
+      "10-25",
+      "10-26"
+    ],
+    "cz_pages": "222-228"
+  },
+  "8|8.4.4-beta-oxidation": {
+    "topicKey": "fatty-acid-oxidation",
+    "primary": "17.2",
+    "primary_title": "17.2 Oxidation of Fatty Acids",
+    "page_a": "607-618",
+    "enTitle": "Fatty acids - beta-oxidation, ketone bodies, special cases",
+    "nodes": [
+      "8-4-4-2",
+      "8-4-4-3",
+      "8-4-4-4"
+    ],
+    "cz_pages": "195-197",
+    "manual_note": "Added 2026-08-06 by hand, see HANDOFF_LEHNINGER.md 9e. step4_topickeys.py would NOT regenerate this."
+  }
 }
