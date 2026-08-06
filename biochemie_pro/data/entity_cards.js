@@ -42,10 +42,10 @@ window.BIOCHEM.topics.push(
             src: "A p.116–129, §4.3" },
           { en: "But the ring is not purely greasy either — the indole nitrogen makes Trp measurably more polar than phenylalanine. The book says so directly: Tyr and Trp are 'significantly more polar than phenylalanine because of the tyrosine hydroxyl group and the nitrogen of the tryptophan indole ring.' Half-greasy, half-polar is exactly the property the next step needs.",
             cn: "但这个环也不是纯粹的油性——吲哚氮使色氨酸的极性明显强于苯丙氨酸。书里直说：酪氨酸和色氨酸「因为酪氨酸的羟基和色氨酸吲哚环上的氮，极性显著强于苯丙氨酸」。半油半极性，正是下一步需要的性质。",
-            src: "A p.72–73, §3.1" },
+            src: "A p.75, §3.1" },
           { en: "A conjugated flat ring absorbs ultraviolet light. Trp absorbs at 280 nm, and — this is the number that makes it useful rather than merely true — more than four times as strongly as tyrosine at that wavelength. Phenylalanine contributes little.",
             cn: "共轭的扁平环会吸收紫外光。色氨酸在 280 nm 处吸收，而且——这个数字才是它有用而非仅仅正确的关键——在该波长下的吸收强度是酪氨酸的四倍以上。苯丙氨酸贡献很小。",
-            src: "A p.73, Fig. 3-6" },
+            src: "A p.75, Fig. 3-6" },
           { en: "Absorbance becomes concentration through the Lambert-Beer law, which Lehninger states in a boxed methods section four sentences after the 280 nm passage: A = εcl, where 'ε is the molar extinction coefficient (in units of liters per mole-centimeter), c is the concentration, l is the path length'. Note the book's word order is Lambert-Beer, not Beer-Lambert.",
             cn: "吸光度通过 Lambert-Beer 定律变成浓度。Lehninger 就在 280 nm 那段之后第四句的方法框里给出：A = εcl，其中「ε 是摩尔消光系数（单位为升每摩尔厘米），c 是浓度，l 是光程」。注意书里的语序是 Lambert-Beer，不是 Beer-Lambert。",
             src: "A p.75–76, Box 3-1" },
@@ -63,10 +63,10 @@ window.BIOCHEM.topics.push(
             src: "A p.367–376, §11.1" },
           { en: "And that is where they are found. Fig. 11-15: Tyr and Trp residues 'are found predominantly where the nonpolar region of acyl chains meets the polar head-group region', acting as 'membrane interface anchors, able to interact simultaneously with the central lipid phase and the aqueous phases on either side.'",
             cn: "而它们确实就在那里。Fig. 11-15：酪氨酸和色氨酸残基「主要出现在酰基链的非极性区与极性头部基团区相接之处」，充当「膜界面锚，能够同时与中央的脂相和两侧的水相相互作用」。",
-            src: "A p.396–397, Fig. 11-15" },
-          { en: "The same logic shows up again in β-barrel membrane proteins: 'in β strands of membrane proteins… aromatic side chains are commonly found at the lipid-protein interface.' One structural property, two independent places it predicts the answer.",
-            cn: "同样的逻辑在 β 桶状膜蛋白中再次出现：「在膜蛋白的 β 折叠股中……芳香族侧链常见于脂-蛋白界面。」一个结构性质，在两个彼此独立的地方都预测对了答案。",
-            src: "A p.396, §11.1" }
+            src: "A p.375–376, Fig. 11-15" },
+          { en: "The same logic shows up again in β-barrel membrane proteins, on the very same page: 'in β strands of membrane proteins… aromatic side chains are commonly found at the lipid-protein interface.' One structural property, two independent places it predicts the answer.",
+            cn: "同样的逻辑在同一页里的 β 桶状膜蛋白中再次出现：「在膜蛋白的 β 折叠股中……芳香族侧链常见于脂-蛋白界面。」一个结构性质，在两个彼此独立的地方都预测对了答案。",
+            src: "A p.375, §11.1" }
         ]
       },
       {
@@ -138,7 +138,7 @@ window.BIOCHEM.topics.push(
         q_en: "Why is tryptophan found specifically at the membrane interface rather than in the middle of the lipid bilayer or out in the water?",
         q_cn: "为什么色氨酸恰好出现在膜界面，而不是脂双层中央或水相之中？",
         accept: ["interface", "界面", "both", "polar", "极性", "indole nitrogen", "吲哚氮", "amphi", "anchor", "锚"],
-        answer_en: "Because it is both at once. The flat ring is nonpolar enough to avoid water, but the indole nitrogen makes it measurably more polar than phenylalanine — so it has no ideal home either in bulk water or in the greasy core, and its ideal home is precisely the boundary where acyl chains meet head groups. Lehninger calls Trp and Tyr 'membrane interface anchors' able to interact with the lipid phase and both aqueous phases simultaneously (A p.396–397).",
+        answer_en: "Because it is both at once. The flat ring is nonpolar enough to avoid water, but the indole nitrogen makes it measurably more polar than phenylalanine — so it has no ideal home either in bulk water or in the greasy core, and its ideal home is precisely the boundary where acyl chains meet head groups. Lehninger calls Trp and Tyr 'membrane interface anchors' able to interact with the lipid phase and both aqueous phases simultaneously (A p.375–376).",
         answer_cn: "因为它两者兼具。扁平的环足够非极性以躲开水，但吲哚氮又使它的极性明显强于苯丙氨酸——所以它在纯水相和油性核心中都没有理想归宿，而它的理想归宿恰恰是酰基链与头部基团相接的边界。Lehninger 称色氨酸与酪氨酸为「膜界面锚」，能同时与脂相和两侧水相相互作用（A 第 396–397 页）。" }
     ],
 

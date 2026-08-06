@@ -1,0 +1,20 @@
+Citation audit: every `A p.N` in the app data, checked against what that page of PDF A
+actually contains. printed page = pdf page - 36.
+A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
+
+found 12 citations carrying a source string
+
+UNCHECKED E-tryptophan   A p.71–79, §3.1              no searchable phrase -- verify by hand
+UNCHECKED E-tryptophan   A p.116–129, §4.3            no searchable phrase -- verify by hand
+OK        E-tryptophan   A p.75, §3.1                 quote found on [75]
+OK        E-tryptophan   A p.75, Fig. 3-6             label found on [75]
+OK        E-tryptophan   A p.75–76, Box 3-1           label found on [75]
+UNCHECKED E-tryptophan   A p.367–376, §11.1           no searchable phrase -- verify by hand
+OK        E-tryptophan   A p.375–376, Fig. 11-15      label found on [376]
+OK        E-tryptophan   A p.375, §11.1               quote(split) found on [375]
+UNCHECKED E-tryptophan   A p.810–812, §22.2           no searchable phrase -- verify by hand
+UNCHECKED E-tryptophan   A p.1067–1069, §28.2         no searchable phrase -- verify by hand
+OK        E-tryptophan   A p.1068, §28.2              quote(split) found on [1068]
+SKIP      E-tryptophan   CZ §4.2.4                    (no A page in citation)
+
+OK 6 | ELSEWHERE 0 | UNCHECKED 5
