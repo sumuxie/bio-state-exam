@@ -10,18 +10,87 @@
 
   const TOPICS = (window.BIOCHEM && window.BIOCHEM.topics) || [];
 
-  const CHAPTER_TITLES = {
-    1: { cz: 'Obecné zákonitosti živých soustav', en: 'General principles of living systems', cn: '生命系统的普遍规律' },
-    2: { cz: 'Aminokyseliny a proteiny',          en: 'Amino acids and proteins',            cn: '氨基酸与蛋白质' },
-    3: { cz: 'Enzymy',                            en: 'Enzymes',                             cn: '酶' },
-    4: { cz: 'Nukleové kyseliny a proteosyntéza',  en: 'Nucleic acids and protein synthesis', cn: '核酸与蛋白质合成' },
-    5: { cz: 'Další metabolismus proteinů a vzájemné přeměny aminokyselin', en: 'Further protein metabolism and amino acid interconversions', cn: '蛋白质代谢续篇与氨基酸互变' },
-    6: { cz: 'Bioenergetika', en: 'Bioenergetics', cn: '生物能学' },
-    7: { cz: 'Sacharidy', en: 'Carbohydrates', cn: '糖类' },
-    8: { cz: 'Lipidy', en: 'Lipids', cn: '脂质' },
-    9: { cz: 'Fotosyntéza a další biosyntetické pochody fotoautotrofů', en: 'Photosynthesis and other biosynthetic processes of photoautotrophs', cn: '光合作用与光合自养生物的其他生物合成过程' },
-    10: { cz: 'Vzájemné vztahy v intermediárním metabolismu a regulační mechanismy', en: 'Interrelationships in intermediary metabolism and regulatory mechanisms', cn: '中间代谢的相互关系与调节机制' }
+  /* Chapter numbering is BOOK-LOCAL: chapter 3 is Enzymy in the Czech textbook and
+     Amino Acids, Peptides, and Proteins in Lehninger. Keying this map on the number
+     alone filed every Lehninger node under a Czech chapter name, and any node with
+     chapter > 10 did not render at all. See HANDOFF_LEHNINGER.md section 13b. */
+  const BOOK_TITLES = {
+    cz:        { short: 'CZ',  en: 'Czech textbook',  cn: '捷克教材' },
+    lehninger: { short: 'LEH', en: 'Lehninger 8',     cn: 'Lehninger 第8版' }
   };
+
+  const CHAPTER_TITLES = {
+    cz: {
+      1: { cz: 'Obecné zákonitosti živých soustav', en: 'General principles of living systems', cn: '生命系统的普遍规律' },
+      2: { cz: 'Aminokyseliny a proteiny',          en: 'Amino acids and proteins',            cn: '氨基酸与蛋白质' },
+      3: { cz: 'Enzymy',                            en: 'Enzymes',                             cn: '酶' },
+      4: { cz: 'Nukleové kyseliny a proteosyntéza',  en: 'Nucleic acids and protein synthesis', cn: '核酸与蛋白质合成' },
+      5: { cz: 'Další metabolismus proteinů a vzájemné přeměny aminokyselin', en: 'Further protein metabolism and amino acid interconversions', cn: '蛋白质代谢续篇与氨基酸互变' },
+      6: { cz: 'Bioenergetika', en: 'Bioenergetics', cn: '生物能学' },
+      7: { cz: 'Sacharidy', en: 'Carbohydrates', cn: '糖类' },
+      8: { cz: 'Lipidy', en: 'Lipids', cn: '脂质' },
+      9: { cz: 'Fotosyntéza a další biosyntetické pochody fotoautotrofů', en: 'Photosynthesis and other biosynthetic processes of photoautotrophs', cn: '光合作用与光合自养生物的其他生物合成过程' },
+      10: { cz: 'Vzájemné vztahy v intermediárním metabolismu a regulační mechanismy', en: 'Interrelationships in intermediary metabolism and regulatory mechanisms', cn: '中间代谢的相互关系与调节机制' }
+    },
+    /* Lehninger 8th ed. Titles are the book's own; `cz` here holds the Czech chapter
+       this depth material most often attaches to, so the sidebar still reads in the
+       language priority set by HANDOFF.md section 2. Only chapters that actually have
+       nodes need an entry, but the whole list is kept so a new node never lands in an
+       undefined slot -- that was the crash mode being fixed. */
+    lehninger: {
+      1:  { cz: '—', en: 'The Foundations of Biochemistry',            cn: '生物化学基础' },
+      2:  { cz: '—', en: 'Water, the Solvent of Life',                  cn: '水——生命的溶剂' },
+      3:  { cz: 'Aminokyseliny a proteiny', en: 'Amino Acids, Peptides, and Proteins', cn: '氨基酸、肽与蛋白质' },
+      4:  { cz: '—', en: 'The Three-Dimensional Structure of Proteins', cn: '蛋白质的三维结构' },
+      5:  { cz: '—', en: 'Protein Function',                            cn: '蛋白质的功能' },
+      6:  { cz: 'Enzymy', en: 'Enzymes',                                cn: '酶' },
+      7:  { cz: 'Sacharidy', en: 'Carbohydrates and Glycobiology',      cn: '糖类与糖生物学' },
+      8:  { cz: '—', en: 'Nucleotides and Nucleic Acids',               cn: '核苷酸与核酸' },
+      9:  { cz: '—', en: 'DNA-Based Information Technologies',          cn: 'DNA 信息技术' },
+      10: { cz: 'Lipidy', en: 'Lipids',                                 cn: '脂质' },
+      11: { cz: '—', en: 'Biological Membranes and Transport',          cn: '生物膜与运输' },
+      12: { cz: '—', en: 'Biochemical Signaling',                       cn: '生化信号转导' },
+      13: { cz: 'Bioenergetika', en: 'Introduction to Metabolism',      cn: '代谢导论' },
+      14: { cz: '—', en: 'Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway', cn: '糖酵解、糖异生与磷酸戊糖途径' },
+      15: { cz: '—', en: 'The Metabolism of Glycogen in Animals',       cn: '动物糖原代谢' },
+      16: { cz: '—', en: 'The Citric Acid Cycle',                       cn: '柠檬酸循环' },
+      17: { cz: '—', en: 'Fatty Acid Catabolism',                       cn: '脂肪酸分解代谢' },
+      18: { cz: '—', en: 'Amino Acid Oxidation and the Production of Urea', cn: '氨基酸氧化与尿素生成' },
+      19: { cz: '—', en: 'Oxidative Phosphorylation',                   cn: '氧化磷酸化' },
+      20: { cz: '—', en: 'Photosynthesis and Carbohydrate Synthesis in Plants', cn: '光合作用与植物糖类合成' },
+      21: { cz: '—', en: 'Lipid Biosynthesis',                          cn: '脂质生物合成' },
+      22: { cz: '—', en: 'Biosynthesis of Amino Acids, Nucleotides, and Related Molecules', cn: '氨基酸、核苷酸及相关分子的生物合成' },
+      23: { cz: '—', en: 'Hormonal Regulation and Integration of Mammalian Metabolism', cn: '激素调节与哺乳动物代谢整合' },
+      24: { cz: '—', en: 'Genes and Chromosomes',                       cn: '基因与染色体' },
+      25: { cz: '—', en: 'DNA Metabolism',                              cn: 'DNA 代谢' },
+      26: { cz: '—', en: 'RNA Metabolism',                              cn: 'RNA 代谢' },
+      27: { cz: '—', en: 'Protein Metabolism',                          cn: '蛋白质代谢' },
+      28: { cz: '—', en: 'Regulation of Gene Expression',               cn: '基因表达调控' }
+    }
+  };
+
+  /* A node with no `book` is Czech -- that is the pre-migration default and it keeps
+     biochemie_basic's data working unchanged if this file is ever shared back. */
+  function bookOf(t) { return t.book || 'cz'; }
+
+  /* Books in display order, but only those that actually have nodes, so the sidebar
+     does not grow an empty "Lehninger 8" heading before any Lehninger node exists. */
+  function booksPresent() {
+    return ['cz', 'lehninger'].filter((b) => TOPICS.some((t) => bookOf(t) === b));
+  }
+
+  /* Chapters present in one book, ascending. Derived from the data rather than a
+     hardcoded [1..10], so chapter 22 or 25 appears the moment a node claims it. */
+  function chaptersOf(book) {
+    const seen = new Set();
+    TOPICS.forEach((t) => { if (bookOf(t) === book) seen.add(t.chapter); });
+    return Array.from(seen).sort((a, b) => a - b);
+  }
+
+  function chapterInfo(book, ch) {
+    const perBook = CHAPTER_TITLES[book] || {};
+    return perBook[ch] || { cz: '—', en: 'Chapter ' + ch, cn: '第 ' + ch + ' 章' };
+  }
 
   /* ----------------------------------------------------------- persistence */
   const store = {
@@ -248,24 +317,43 @@
     return out;
   }
 
-  // Scope selects share one shape: "all", "ch:N" or a topic id.
+  /* Scope selects share one shape: "all", "ch:BOOK:N", "book:BOOK" or a topic id.
+     "ch:N" without a book is the old format and is still accepted -- a stored scope
+     from before the two-book split must not silently select nothing. */
   function inScope(topic, scope) {
     if (!scope || scope === 'all') return true;
-    if (scope.startsWith('ch:')) return String(topic.chapter) === scope.slice(3);
+    if (scope.startsWith('book:')) return bookOf(topic) === scope.slice(5);
+    if (scope.startsWith('ch:')) {
+      const rest = scope.slice(3);
+      const i = rest.lastIndexOf(':');
+      if (i === -1) return String(topic.chapter) === rest;         // legacy "ch:7"
+      return bookOf(topic) === rest.slice(0, i)
+          && String(topic.chapter) === rest.slice(i + 1);
+    }
     return topic.id === scope;
   }
 
   function fillScopeSelect(sel, allLabel) {
     let html = `<option value="all">${esc(allLabel)}</option>`;
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach((ch) => {
-      const list = TOPICS.filter((t) => t.chapter === ch);
-      if (!list.length) return;
-      html += `<optgroup label="${esc('Ch. ' + ch + ' — ' + CHAPTER_TITLES[ch].en)}">`;
-      html += `<option value="ch:${ch}">Whole chapter ${ch}</option>`;
-      list.forEach((t) => {
-        html += `<option value="${esc(t.id)}">${esc(t.section + '  ' + t.enTitle)}</option>`;
+    const books = booksPresent();
+    books.forEach((book) => {
+      const bt = BOOK_TITLES[book];
+      // Only worth a whole-book option once there is more than one book to choose between.
+      if (books.length > 1) {
+        html += `<option value="book:${esc(book)}">${esc('All of ' + bt.en)}</option>`;
+      }
+      chaptersOf(book).forEach((ch) => {
+        const list = TOPICS.filter((t) => bookOf(t) === book && t.chapter === ch);
+        if (!list.length) return;
+        const label = (books.length > 1 ? bt.short + ' · ' : '')
+                    + 'Ch. ' + ch + ' — ' + chapterInfo(book, ch).en;
+        html += `<optgroup label="${esc(label)}">`;
+        html += `<option value="ch:${esc(book)}:${ch}">${esc('Whole chapter ' + ch)}</option>`;
+        list.forEach((t) => {
+          html += `<option value="${esc(t.id)}">${esc(t.section + '  ' + t.enTitle)}</option>`;
+        });
+        html += `</optgroup>`;
       });
-      html += `</optgroup>`;
     });
     sel.innerHTML = html;
   }
@@ -309,23 +397,40 @@
     const needle = state.filter.trim().toLowerCase();
     let html = '';
 
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach((ch) => {
-      const list = TOPICS.filter((t) => t.chapter === ch && topicMatches(t, needle));
-      if (!list.length) return;
-      const info = CHAPTER_TITLES[ch];
-      html += `<div class="chap-head">
-                 <span class="chap-no">${ch}</span>
-                 <span class="chap-cz">${esc(info.cz)}</span>
-                 <span class="chap-cn">${esc(info.cn)}</span>
-               </div>`;
-      list.forEach((t) => {
-        const done = state.studied.has(t.id);
-        const label = state.lang === 'cn' ? t.cnTitle : t.enTitle;
-        html += `<button class="topic-item${t.id === state.topicId ? ' current' : ''}" data-id="${esc(t.id)}">
-                   <span class="ti-sec">${esc(t.section)}</span>
-                   <span class="ti-title">${esc(label)}</span>
-                   ${done ? '<span class="ti-done">✓</span>' : ''}
-                 </button>`;
+    const books = booksPresent();
+    books.forEach((book) => {
+      const bookRows = TOPICS.filter((t) => bookOf(t) === book && topicMatches(t, needle));
+      if (!bookRows.length) return;
+
+      // Only label the book when there is more than one, so the Czech-only view is
+      // visually unchanged from how it has always looked.
+      if (books.length > 1) {
+        const bt = BOOK_TITLES[book];
+        html += `<div class="book-head book-${esc(book)}">
+                   <span class="book-name">${esc(bt.en)}</span>
+                   <span class="book-cn">${esc(bt.cn)}</span>
+                   <span class="book-count">${bookRows.length}</span>
+                 </div>`;
+      }
+
+      chaptersOf(book).forEach((ch) => {
+        const list = bookRows.filter((t) => t.chapter === ch);
+        if (!list.length) return;
+        const info = chapterInfo(book, ch);
+        html += `<div class="chap-head">
+                   <span class="chap-no">${ch}</span>
+                   <span class="chap-cz">${esc(info.cz && info.cz !== '—' ? info.cz : info.en)}</span>
+                   <span class="chap-cn">${esc(info.cn)}</span>
+                 </div>`;
+        list.forEach((t) => {
+          const done = state.studied.has(t.id);
+          const label = state.lang === 'cn' ? t.cnTitle : t.enTitle;
+          html += `<button class="topic-item${t.id === state.topicId ? ' current' : ''}" data-id="${esc(t.id)}">
+                     <span class="ti-sec">${esc(t.section)}</span>
+                     <span class="ti-title">${esc(label)}</span>
+                     ${done ? '<span class="ti-done">✓</span>' : ''}
+                   </button>`;
+        });
       });
     });
 
@@ -391,6 +496,7 @@
       <article class="topic">
         <div class="topic-head">
           <div class="th-meta">
+            <span class="book-pill${bookOf(t) === 'cz' ? ' is-cz' : ''}">${esc(BOOK_TITLES[bookOf(t)].en)}</span>
             <span class="th-sec">${esc(t.section)}</span>
             <span class="badge ${cov.cls}">${esc(cov.text)}</span>
             ${pages ? `<span class="badge badge-page">${esc(pages)}</span>` : ''}

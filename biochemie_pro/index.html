@@ -14,6 +14,32 @@
     font-size:.62em; font-weight:700; letter-spacing:.08em; vertical-align:.18em;
     border-radius:.3em; background:#b45309; color:#fff;
   }
+
+  /* Sidebar book separator. Only rendered when more than one book has nodes, so the
+     Czech-only view looks exactly as it always did. */
+  .book-head{
+    display:flex; align-items:baseline; gap:.5rem;
+    padding:.9rem .75rem .3rem; margin-top:.4rem;
+    font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    border-top:1px solid var(--line);
+  }
+  .book-head .book-cn{ font-weight:400; letter-spacing:0; text-transform:none; opacity:.75; }
+  .book-head .book-count{
+    margin-left:auto; font-weight:400; letter-spacing:0;
+    background:var(--bg-sink); border:1px solid var(--line); border-radius:4px;
+    padding:0 .35rem;
+  }
+  .book-cz  .book-name{ color:var(--accent); }
+  .book-lehninger .book-name{ color:#f59e0b; }
+  .book-lehninger{ border-top-color:#b45309; }
+
+  /* Which book a topic came from, shown on the topic itself in the study pane. */
+  .book-pill{
+    display:inline-block; padding:.1em .5em; border-radius:.3em;
+    font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    background:#b45309; color:#fff; vertical-align:.15em;
+  }
+  .book-pill.is-cz{ background:var(--bg-sink); color:var(--accent); border:1px solid var(--line); }
 </style>
 </head>
 <body>
