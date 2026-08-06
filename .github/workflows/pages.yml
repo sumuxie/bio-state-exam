@@ -47,10 +47,22 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
+      # Upload only what is actually served. The repo also carries
+      # extracted_raw/ -- ~117 MB of textbook page scans kept as the evidence
+      # trail for the content, since the source PDF is copyrighted and never
+      # committed. Uploading the repo root shipped all of it to Pages on every
+      # deploy, which is why a deploy took over seven minutes for a 9 MB site.
+      - name: Stage only the site files
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r biochemie_basic biochemie_pro PESB _site/
+          echo "artifact contents:"; du -sh _site/*; du -sh _site
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - id: deployment
         uses: actions/deploy-pages@v4
