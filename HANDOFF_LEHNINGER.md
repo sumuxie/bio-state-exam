@@ -44,6 +44,13 @@ matters, Lehninger §3.4 says *how* one is determined.
 > also no topic view, so the two-books-side-by-side feature `pro` exists for (§4) does not yet
 > exist in the UI. **This — not the entity-card schema — is what has actually been blocking
 > the integration.** §12a filed it as an entity-card problem; it applies to every Lehninger node.
+>
+> **✅ Fixed 2026-08-06 (commit `8b4a064`).** `app.js` now keys on `book + chapter`, derives the
+> chapter list from the data instead of a literal `[1..10]`, and shows a book separator in the
+> sidebar plus a book pill in the study pane. `L-3-4-1` files under *Lehninger 8 / Ch. 3* and a
+> `chapter > 10` node renders. Both new UI elements are suppressed when only one book has nodes,
+> so `biochemie_basic` is visually unchanged. **The topic view — `topicKey` grouping both books
+> side by side, the actual feature `pro` exists for (§4) — is still not built.**
 
 **Working locally — read §14 before assuming the remote is the source of truth.** Since the
 2026-08-06 scan-exposure fix the working copy and the remote deliberately hold different things:
@@ -1047,3 +1054,47 @@ Two things to keep in mind now that local ≠ remote:
   published the scans in the first place: the rule `extracted_raw/*.png` was written *after* the
   files were committed, so it never applied to them and everyone assumed it had. For an
   already-tracked file you need `git rm --cached`.
+
+---
+
+## 15. Figures — the plan the user set, 2026-08-06
+
+**Not started. This section is the brief, not a report.**
+
+The user's instruction, verbatim: *"图片是从 `…8th(DavidL.Nelson,MichaelCox) (1).pdf` 取得，
+你说直接从 `…8thedDavidLNel.pdf` 里找对照就行的，然后这个版本主要在本地运行就行."*
+
+Three decisions in that sentence, all of which fit the machinery that already exists:
+
+**1. Images come from A, not B.** §2 measured why and it is not close: A holds 1252 full-page
+images at real print size; B's images are a median 43×28 px and only two are usable at all.
+So a figure is cropped out of **A**.
+
+**2. B is how you find it.** Search B's text layer for the figure caption with
+`lehninger_index/scripts/locate.py`, convert to A's page with the step-2 anchor map
+(**printed page = A pdf page − 36**), then crop from A. This is exactly the read-in-A /
+search-in-B split §2(b) established, now used for pixels instead of prose.
+
+**3. The figure-carrying build is local-only.** *"这个版本主要在本地运行就行."* That settles
+the copyright and size questions before they are asked — cropped textbook figures are **not**
+pushed, exactly like the page scans in §14a. So:
+
+- figures go in a directory matched by `.gitignore` before the first one is written;
+- `_site` (the Pages artifact) must not pick them up — check the `cp -r` list in
+  `.github/workflows/pages.yml` at the time, not from memory;
+- the node schema needs the figure to be **optional**, so a node renders without it. The public
+  build then degrades to text and stays honest rather than showing broken images.
+
+### 15a. Before writing the extractor
+
+- **`coverage: "full"` currently over-claims on Lehninger nodes.** §13c flagged it: `L-3-4-1`
+  says `"full"` while its `coverageNote` admits the figures were never read as images, only
+  their captions. Cropping the figures is what would make `"full"` true. Fix the definition and
+  the node together, not separately.
+- **Spot-check the anchor before cropping.** §13c found `FIGURE 3-24` recorded at A p.104 when
+  the figure is near A p.92 — the entry matched a later cross-reference. `lehninger_AB_anchors.json`
+  is good to ~1 page (§9 step 2) but individual entries can be wrong, and a wrong anchor here
+  crops the wrong page rather than merely citing it. Verify against surrounding text first.
+- **PyMuPDF renders a page region directly** — `page.get_pixmap(clip=fitz.Rect(...), dpi=…)`.
+  `HANDOFF.md` §9b already documents the crop-and-upscale pattern used to read printed numbers
+  off a scan; the same call produces a figure crop. Nothing new needs installing.
