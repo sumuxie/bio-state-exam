@@ -25,40 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Check the topic data parses and is well formed
-        run: |
-          for APP in biochemie_basic biochemie_pro; do
-          echo "=== $APP ==="
-          APP=$APP node -e "
-          global.window = {};
-          for (let i = 1; i <= 10; i++) require('./' + process.env.APP + '/data/ch' + i + '.js');
-          const T = window.BIOCHEM.topics;
-          if (!T.length) throw new Error('no topics loaded');
-          const problems = [];
-          T.forEach(t => {
-            ['id','chapter','section','czTitle','enTitle','cnTitle','coverage','summary'].forEach(k => {
-              if (!t[k]) problems.push(t.id + ': missing ' + k);
-            });
-            if (!t.summary.en || !t.summary.cn) problems.push(t.id + ': summary missing a language');
-            (t.quiz || []).forEach(q => {
-              if (!q.q_en || !q.q_cn) problems.push(t.id + ': question missing a language');
-              if (q.type === 'mcq') {
-                if (!Array.isArray(q.options) || typeof q.answer !== 'number'
-                    || q.answer < 0 || q.answer >= q.options.length) problems.push(t.id + ': bad mcq answer index');
-              } else if (!q.answer_en || !Array.isArray(q.accept) || !q.accept.length) {
-                problems.push(t.id + ': written question missing model answer or key terms');
-              }
-            });
-            if (t.oral && (!t.oral.model_en || !Array.isArray(t.oral.checklist))) problems.push(t.id + ': bad oral block');
-          });
-          const ids = T.map(t => t.id);
-          ids.filter((v, i) => ids.indexOf(v) !== i).forEach(d => problems.push('duplicate id ' + d));
-          if (problems.length) { console.error(problems.join('\n')); process.exit(1); }
-          const terms = T.reduce((n, t) => n + (t.terms || []).length, 0);
-          const qs = T.reduce((n, t) => n + (t.quiz || []).length, 0);
-          console.log('ok: ' + T.length + ' topics, ' + terms + ' terms, ' + qs + ' questions');
-          "
-          done
+        run: node tools/validate-data.js biochemie_basic biochemie_pro
 
   # The github-pages environment only permits deployments from the default
   # branch, which is also the behaviour we want: feature branches must not
