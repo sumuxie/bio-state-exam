@@ -64,12 +64,11 @@ backwards. §3 and §6 have been rewritten; if you are working from a cached cop
 
 ---
 
-## 0. Current state — everything is committed; **not** everything is live
+## 0. Current state — the site is live and current; the open problem is exposure, not deploys
 
-Nothing is left dangling in git. `main` = `585664c` (2026-08-06), pushed, working tree clean
-apart from the long-standing untracked `extracted_*/` evidence folders. But the live site is
-**not** current — see the deploy section immediately below, and do not read the URLs in this
-table as showing today's work.
+`main` = `3ac38e6` (2026-08-06), pushed. Working tree is clean apart from the untracked
+`extracted_*/` and `verify_crops/` evidence folders — **which are no longer harmless; see the
+exposure section below.**
 
 | | |
 |---|---|
@@ -77,68 +76,75 @@ table as showing today's work.
 | local, same content | `file:///C:/Users/Admin/Downloads/bio-state-exam/biochemie_basic/index.html` |
 | **where you work** | `biochemie_pro/` — https://sumuxie.github.io/bio-state-exam/biochemie_pro/ |
 
-### Deploys have been failing for five consecutive runs — no longer cosmetic
+### The deploy is slow, not broken — the red ✗ is a reporting timeout
 
-**This needs the user; it cannot be fixed from a shell.** Earlier versions of this section
-called it a flake and said "once is noise". It is now five in a row, so that call has expired.
+Measured 2026-08-06 14:37 UTC. The live site now matches `HEAD`:
 
-Measured 2026-08-06 via the unauthenticated Actions API:
-
-| commit | `validate` | `deploy` |
+| probe | result | means |
 |---|---|---|
-| 3cba8e0 | ✅ | `deploy-pages@v4` failed after **603 s** |
-| 3c74aba | ✅ | failed after **606 s** |
-| 0b0d079 | ✅ | failed after **602 s** |
-| e6241f9 | ✅ | failed after **601 s** |
-| 585664c | ✅ | cancelled (superseded) |
+| live `biochemie_pro/data/ch1.js`, `topicKey` count | **6** | matches local HEAD exactly |
+| `https://sumuxie.github.io/bio-state-exam/HANDOFF.md` | **404** | `_site` staging took effect |
+| `lehninger_index/README.md` | 404 | correctly excluded from `_site` |
 
-**`validate` has passed every single time** — the data and the validator are not the problem.
-The failing step is always `actions/deploy-pages@v4`, and ~601 s is that action's own default
-10-minute timeout, i.e. the artifact uploads fine and then Pages never reports the deployment
-as succeeded. **The last deployment that actually reached production is `c9f9eb2`.**
+So the `_site` artifact **is** in production, carrying `book`/`topicKey`. In run `ac3c867`,
+`Upload site` succeeded in 1 s and `deploy-pages@v4` then reported failure 603 s later — the
+action hit its own default 10-minute timeout waiting for Pages to *confirm* a deployment that
+had in fact gone through. The HEAD run for `3ac38e6` has likewise been queued/in-progress for
+10+ minutes. `validate` has passed on every run; the data is not the problem.
 
-Two hypotheses were tested and both are dead — do not spend time re-testing them:
+**Raising the `timeout` input on `deploy-pages@v4` is now the indicated fix** (~20 min). An
+earlier version of this section rejected that as "treating a symptom the evidence does not
+support" — that was written before the live-site probes above, which show the deploy
+completing. Until it is raised, the red ✗ is noise and masks any real failure.
 
-- *"Pages is serving the branch, not the artifact."* No. `lehninger_index/README.md` (added
-  today) returns **404**, and the live `biochemie_pro/data/ch1.js` contains **zero** occurrences
-  of `topicKey`. The site is serving a stale Actions artifact. `HANDOFF.md` returns 200 only
-  because the last *successful* artifact was the old repo-root one.
+Dead hypotheses — do not re-test:
+
+- *"Pages is serving the branch, not the artifact."* No. It serves the artifact, confirmed by
+  the 404/200 probes above.
 - *"The `github-pages` environment has a wait timer or a required reviewer."* No. Its only
-  protection rule is a `branch_policy`, which the deploy satisfies — the job runs for ten
-  minutes rather than sitting blocked.
+  protection rule is a `branch_policy`, which the deploy satisfies.
 
-Note the failures begin exactly at `807eb90`, the commit that introduced the `_site` staging.
-That correlation is suspicious but the obvious reading does not hold up: the *previous*
-artifact was ~117 MB and deployed in 7.5 minutes, and the new one is ~9 MB, so "the artifact is
-too slow to process" would predict the opposite. Raising the action's `timeout` input was
-considered and rejected for the same reason — it treats a symptom the evidence does not support.
+What the `_site` change was for: the deploy job used to upload the repository root, shipping
+~117 MB of page scans to serve a 9 MB site. It now stages only `index.html` and the three app
+directories. `actions/checkout@v4` still pulls the full repo before staging, so if slowness
+ever turns out to be checkout-related, `sparse-checkout` on the deploy job is the lever.
 
-**What actually helps, and only the user can do it:** open the repository on GitHub and check
-**Settings → Pages** (is the source still "GitHub Actions"?) and the **Actions** tab for the
-full `deploy-pages` log, which says more than the API exposes unauthenticated. A stuck
-server-side deployment usually clears by re-running the job from that page.
+### ⚠️ The page scans were publicly downloadable — front of HEAD is fixed 2026-08-06, history is not
 
-**User impact so far: none, and this is why it has not been treated as an emergency.**
-`git diff c9f9eb2..HEAD -- biochemie_basic` is **empty** — the tool the user studies from every
-day is byte-identical to what is live, so the stale deployment costs them nothing yet. What is
-*not* live is everything in `biochemie_pro` since then, including `book`/`topicKey`. No UI reads
-those yet, so nothing looks broken.
+`sumuxie/bio-state-exam` is a **public** repo, and `extracted_raw/` was committed before
+`.gitignore` was written. **`.gitignore` has no effect on already-tracked files**, so the rule
+`extracted_raw/*.png` never applied to them:
 
-**That changes the moment the first Lehninger content node is written.** At that point the
-stale deployment starts hiding real work, and this stops being deferrable.
+- **84 full-page textbook scans plus one file of verbatim OCR'd Czech text (`ch1_3_summary.txt`,
+  72 KB, chapters 1–3) were tracked and served publicly**, e.g.
+  `raw.githubusercontent.com/sumuxie/bio-state-exam/main/extracted_raw/page_10.png` → HTTP 200,
+  1.2 MB, no authentication.
+- The Pages site itself never served them (that is what the earlier `_site` change fixed), but
+  the **repository** did, which `_site` did not touch.
 
-**How to tell which artifact is live, without the API:** request
-`https://sumuxie.github.io/bio-state-exam/HANDOFF.md`. A **200** means the old repo-root
-artifact is still being served; a **404** means `_site` has taken effect. As of 2026-08-06,
-after the step 4/5 push: still 200.
+**The user was asked whether to instead make the repo private** — the simpler, more complete
+fix — and confirmed they read the live site from a phone, which needs the public
+`sumuxie.github.io` URL to keep working on the free plan. So the repo **stays public**, fixed by
+removing the files instead. Done 2026-08-06:
 
-For the record, what the `_site` change was for: the deploy job used to upload the repository
-root, which shipped `extracted_raw/` — roughly 117 MB of page scans kept as the content's
-evidence trail — to serve a 9 MB site. It now stages only `index.html` and the three app
-directories. `actions/checkout@v4` still pulls the full 117 MB before staging, so if the
-timeout ever turns out to be checkout-related rather than Pages-side, `sparse-checkout` on the
-deploy job is the lever. The evidence does not currently point there — checkout is not the step
-that fails.
+1. **`git rm --cached -r extracted_raw`** — all 85 tracked files (84 pngs + the text file)
+   untracked from `HEAD` going forward. Nothing was deleted locally; every file is still on disk
+   for the evidence trail. Once this commit is pushed, `raw.githubusercontent.com/…/main/…`
+   404s, because that URL serves the tip of the branch.
+2. **`.gitignore` broadened**: `extracted_raw/*.png` → `extracted_raw/` (the whole directory,
+   catching the text file too), plus `extracted_full_*/`, `extracted_toc/`, `verify_crops/` —
+   the second, larger set (229 + 16 files, ~389 MB) that was untracked but matched by no rule at
+   all, one `git add -A` away from the same exposure. Used a glob (`extracted_full_*/`) rather
+   than one line per chapter so a future chapter's evidence folder is covered automatically.
+
+**What this does not fix, and was not done — needs an explicit decision, not a default:** the 85
+files are still readable from **history** — any commit before this one, by SHA
+(`raw.githubusercontent.com/…/<old-sha>/extracted_raw/page_10.png` still 200s) or via
+`git clone` followed by `git log`. Removing them from history needs `git filter-repo` (or BFG)
+and a **force push**, which rewrites `main` and invalidates any existing clone. That is
+destructive enough that it should not happen as a side effect of this fix — ask the user
+explicitly before doing it, and expect to warn about force-pushing `main` per this project's own
+git-safety rule (`HANDOFF.md` intro) when they say yes.
 
 Outstanding content debt, unchanged: **chapter 7 has never been verified against the scans**
 (42 nodes, images already in `extracted_full_ch7/`). Chapters 7 and 8 also still lack their
@@ -349,6 +355,31 @@ Measured impact: of the 895 glossary terms used to build `master_map.tsv`'s cros
 undercounts (e.g. `induced fit` 5→23 hits), not zero-flips, so the 65 % agreement figure is
 approximately right but not exact; do not quote it to more precision than that. Full detail in
 `lehninger_index/_ligature_impact.txt`.
+
+**The same bug had a second half, missed the first time and fixed 2026-08-06 while reading
+§3.4.** The `ft` ligature is **not** in the U+FB00–FB04 block, so the fix above never touched
+it. B renders `ft` as **U+00D7 × ** or **U+019E ƞ**: the text reads `o×en`, `a×er`, `le×`,
+`shiƞ`. **1260 occurrences on 927 pages — 19 % of the book.** Unlike the first half, this one
+produces **true zero-flips**, measured before → after:
+
+| term | was | is | | term | was | is |
+|---|---|---|---|---|---|---|
+| `lipid raft` | **0** | 8 | | `often` | 3 | 369 |
+| `cleft` | **0** | 16 | | `after` | 6 | 362 |
+| `frameshift` | **0** | 9 | | `shift` | 2 | 63 |
+
+`lipid raft` reading as absent was not harmless — it is one of the models the Chinese notes
+teach (§6a, 脂筏模型), and this book looked like it never mentioned it.
+
+A blind replace would corrupt real arithmetic (`1.9926 × 10−23 g` is a genuine multiplication
+sign). Requiring a **letter immediately before** separates them cleanly: across all 4893 pages,
+letter-`×` is followed by a digit **exactly 0 times**. `locate.py` now does this, and because
+`_delig` is re-applied on cache load, existing `_B_text.pkl` caches self-heal.
+
+**Re-checked after this second fix, and they survive:** `ninhydrin` **0**, `colloid` **0**,
+`tryptophan fluorescence` **0**. So §5a, §6a and §12d's absence claims still stand. Any *other*
+"0 hits" result computed before 2026-08-06 that involves a word containing `ft` is still
+unverified — `reverify_absences.py` was run against the incomplete fix.
 
 **What is actually present, corrected:**
 
@@ -717,9 +748,15 @@ different required list, and the page-gap loop already skips anything that is no
 Do this before writing the card, not after — otherwise CI goes red on the first entity node and
 the temptation will be to fake a `chapter` to make it quiet.
 
-Also unresolved: `app.js` renders from a fixed field list and has no entity view. A card that
-validates but renders nowhere is not done. Check what the Study/Flashcard/Oral modes do with a
-node that has no `chapter` before assuming it degrades gracefully.
+The first option is worse than it looks: the check is `if (!t[k])`, a **falsy** test, so
+`chapter: 0` fails too. A synthetic chapter would have to be a real non-zero number that
+collides with an actual chapter — there is no neutral sentinel value available.
+
+Both facts confirmed by measurement 2026-08-06: `kind:` appears **0 times** anywhere in
+`biochemie_pro/data/`, and `entity` appears **0 times** in `biochemie_pro/app.js`. So no entity
+node exists yet and nothing renders one — `app.js` needs an entity view before a card counts as
+done, not just a validator change. Check what Study/Flashcard/Oral do with a node that has no
+`chapter` before assuming it degrades gracefully.
 
 ### 12b. The dossier — every fact located, with the page to open in A
 

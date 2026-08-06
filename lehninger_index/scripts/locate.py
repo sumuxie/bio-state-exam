@@ -17,10 +17,25 @@ CACHE = os.path.join(OUT, "_B_text.pkl")
 # sentences after the Trp 280 nm passage. Normalize before indexing, not after, so every
 # consumer of B_TEXT gets the fix for free.
 _LIG = {"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl"}
+
+# The SAME bug again, in a second disguise, found 2026-08-06 while reading section 3.4 for the
+# primary-structure node: the `ft` ligature is not in the U+FB00-FB04 block above. B renders it
+# as U+00D7 MULTIPLICATION SIGN or U+019E, so the text reads "o×en", "a×er", "le×", "shiƞ".
+# 1260 occurrences on 927 pages (19% of the book). This produces TRUE zero-flips, not just the
+# undercounts the block above caused -- measured before/after:
+#     lipid raft  0 -> 8 pages     cleft      0 -> 16     frameshift 0 -> 9
+#     raft        0 -> 33          often      3 -> 369    after      6 -> 362
+# `lipid raft` mattering is not hypothetical: it is one of the models the Chinese notes teach
+# (HANDOFF_LEHNINGER.md section 6a), and this book appeared to not mention it at all.
+# A blind replace would corrupt real arithmetic -- "1.9926 × 10−23 g" is a genuine
+# multiplication sign. Requiring a LETTER immediately before separates the two cleanly:
+# measured across all 4893 pages, letter-× is followed by a digit exactly 0 times.
+_FT = re.compile(r"(?<=[A-Za-z])[×ƞ]")
+
 def _delig(t):
     for k, v in _LIG.items():
         t = t.replace(k, v)
-    return t
+    return _FT.sub("ft", t)
 
 if os.path.exists(CACHE):
     B_TEXT = pickle.load(open(CACHE, "rb"))

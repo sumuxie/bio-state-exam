@@ -1,11 +1,21 @@
 *.pdf
 pdf_samples/
-extracted_raw/*.png
+# 2026-08-06: broadened from `extracted_raw/*.png` to the whole directory, and added every
+# other page-scan/evidence folder that was untracked but NOT covered by any rule -- one
+# `git add -A` away from repeating the exposure below. All of these are copyrighted textbook
+# page images or verbatim OCR text; the evidence trail is meant to stay local only.
+# Glob (not one line per chapter) so a folder for a future chapter is covered automatically.
+extracted_raw/
+extracted_full_*/
+extracted_toc/
+verify_crops/
 # 分卷 PDF 只保留本地（约 444 MB），说明文件仍然提交
 生物化学笔记_分卷/*.pdf
 node_modules/
 dist/
 .DS_Store
+__pycache__/
+*.pyc
 
 # Lehninger full-text search cache (5.7 MB of book text) - never commit
 lehninger_index/_B_text.pkl
