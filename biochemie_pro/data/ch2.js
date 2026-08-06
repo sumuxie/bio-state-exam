@@ -9,6 +9,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-1-1",
+  book: "cz",
+  topicKey: "amino-acids",
   chapter: 2,
   section: "2.1.1",
   czTitle: "Struktura aminokyselin a výskyt",
@@ -111,6 +113,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-1-2",
+  book: "cz",
+  topicKey: "amino-acids",
   chapter: 2,
   section: "2.1.2",
   czTitle: "Fyzikálně chemické vlastnosti aminokyselin",
@@ -201,6 +205,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-1-3",
+  book: "cz",
+  topicKey: "amino-acids",
   chapter: 2,
   section: "2.1.3",
   czTitle: "Chemické reakce aminokyselin",
@@ -264,6 +270,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-1-4",
+  book: "cz",
+  topicKey: "peptides-and-proteins",
   chapter: 2,
   section: "2.1.4",
   czTitle: "Tvorba peptidové vazby",
@@ -346,6 +354,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-2-1",
+  book: "cz",
+  topicKey: "protein-primary-structure",
   chapter: 2,
   section: "2.2.1",
   czTitle: "Sekvence aminokyselin (primární struktura)",
@@ -424,6 +434,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-2-2",
+  book: "cz",
+  topicKey: "protein-structure-overview",
   chapter: 2,
   section: "2.2.2",
   czTitle: "Principy konformace",
@@ -527,6 +539,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-2-3",
+  book: "cz",
+  topicKey: "protein-tertiary-quaternary",
   chapter: 2,
   section: "2.2.3",
   czTitle: "Konformace proteinů",
@@ -630,6 +644,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-2-4",
+  book: "cz",
+  topicKey: "protein-tertiary-quaternary",
   chapter: 2,
   section: "2.2.4",
   czTitle: "Typy stavby proteinové molekuly",
@@ -729,6 +745,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-2-5",
+  book: "cz",
+  topicKey: "peptides-and-proteins",
   chapter: 2,
   section: "2.2.5",
   czTitle: "Jednoduché a složené proteiny",
@@ -839,6 +857,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "2-2-6",
+  book: "cz",
+  topicKey: "working-with-proteins",
   chapter: 2,
   section: "2.2.6",
   czTitle: "Vlastnosti proteinů",

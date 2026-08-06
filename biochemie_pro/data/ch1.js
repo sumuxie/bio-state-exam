@@ -9,6 +9,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "1-1",
+  book: "cz",
+  topicKey: "cells-and-biomolecules",
   chapter: 1,
   section: "1.1",
   czTitle: "Co je biochemie?",
@@ -93,6 +95,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "1-2",
+  book: "cz",
+  topicKey: "cells-and-biomolecules",
   chapter: 1,
   section: "1.2",
   czTitle: "Živé a neživé",
@@ -216,6 +220,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "1-3",
+  book: "cz",
+  topicKey: "cells-and-biomolecules",
   chapter: 1,
   section: "1.3",
   czTitle: "Stavební kameny živé hmoty: od molekuly k buňce",
@@ -289,6 +295,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "1-4",
+  book: "cz",
+  topicKey: "bioenergetics-basics",
   chapter: 1,
   section: "1.4",
   czTitle: "Výživa a metabolismus",
@@ -383,6 +391,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "1-5",
+  book: "cz",
+  topicKey: "bioenergetics-basics",
   chapter: 1,
   section: "1.5",
   czTitle: "Energie a život",
@@ -505,6 +515,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "1-6",
+  book: "cz",
+  topicKey: "origin-and-evolution-of-life",
   chapter: 1,
   section: "1.6",
   czTitle: "Vznik a vývoj života",

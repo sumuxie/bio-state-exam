@@ -17,6 +17,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-1",
+  book: "cz",
+  topicKey: "storage-lipids",
   chapter: 8,
   section: "8.1",
   czTitle: "Definice a klasifikace",
@@ -103,6 +105,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-1-1",
+  book: "cz",
+  topicKey: "storage-lipids",
   chapter: 8,
   section: "8.2.1",
   czTitle: "Mastné kyseliny — definice, klasifikace, přirozený výskyt (tab. 8.2)",
@@ -181,6 +185,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-1-2",
+  book: "cz",
+  topicKey: "storage-lipids",
   chapter: 8,
   section: "8.2.1",
   czTitle: "Mastné kyseliny — názvosloví, esenciální mastné kyseliny, vliv na vlastnosti lipidů",
@@ -257,6 +263,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-2-1",
+  book: "cz",
+  topicKey: "storage-lipids",
   chapter: 8,
   section: "8.2.2",
   czTitle: "Jednoduché lipidy — Neutrální acylglyceroly",
@@ -339,6 +347,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-2-2",
+  book: "cz",
+  topicKey: "storage-lipids",
   chapter: 8,
   section: "8.2.2",
   czTitle: "Jednoduché lipidy — Vosky",
@@ -414,6 +424,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-3",
+  book: "cz",
+  topicKey: "membrane-lipids",
   chapter: 8,
   section: "8.2.3",
   czTitle: "Složené lipidy — Glykoacylglyceroly (úvod)",
@@ -486,6 +498,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-3-2",
+  book: "cz",
+  topicKey: "membrane-lipids",
   chapter: 8,
   section: "8.2.3",
   czTitle: "Fosfoacylglyceroly (fosfolipidy)",
@@ -570,6 +584,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-3-3",
+  book: "cz",
+  topicKey: "membrane-lipids",
   chapter: 8,
   section: "8.2.3",
   czTitle: "Sfingolipidy — sfingomyeliny",
@@ -637,6 +653,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-3-4",
+  book: "cz",
+  topicKey: "membrane-lipids",
   chapter: 8,
   section: "8.2.3",
   czTitle: "Cerebrosidy a gangliosidy",
@@ -721,6 +739,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-4-1",
+  book: "cz",
+  topicKey: "lipid-signals-and-pigments",
   chapter: 8,
   section: "8.2.4",
   czTitle: "Odvozené lipidy — terpeny (isoprenoidy): charakteristika a klasifikace",
@@ -803,6 +823,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-4-2",
+  book: "cz",
+  topicKey: "lipid-signals-and-pigments",
   chapter: 8,
   section: "8.2.4",
   czTitle: "Terpenoidní vitaminy a koenzym Q: vitamin E, koenzym Q, vitamin A (retinol)",
@@ -862,6 +884,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-4-3",
+  book: "cz",
+  topicKey: "lipid-signals-and-pigments",
   chapter: 8,
   section: "8.2.4",
   czTitle: "Triterpeny: skvalen a úvod do steroidů (steran)",
@@ -922,6 +946,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-4-4",
+  book: "cz",
+  topicKey: "lipid-signals-and-pigments",
   chapter: 8,
   section: "8.2.4",
   czTitle: "Steroly a cholesterol: rozmanitost steroidů a jejich deriváty",
@@ -1002,6 +1028,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-4-5",
+  book: "cz",
+  topicKey: "lipid-signals-and-pigments",
   chapter: 8,
   section: "8.2.4",
   czTitle: "Vitamin D (kalciferoly)",
@@ -1065,6 +1093,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-2-4-6",
+  book: "cz",
+  topicKey: "lipid-signals-and-pigments",
   chapter: 8,
   section: "8.2.4",
   czTitle: "Tetraterpeny: karotenoidy a xantofyly",
@@ -1158,6 +1188,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-1",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Biosyntéza lipidů — Mastné kyseliny: subcelulární lokalizace, zdroj acetyl-CoA a vznik malonyl-CoA",
@@ -1231,6 +1263,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-2",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Biosyntéza mastných kyselin — multienzymový komplex, ACP, fosfopanthetein a kroky I–II (nasazení a kondenzace)",
@@ -1304,6 +1338,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-3",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Biosyntéza mastných kyselin — kroky III–VI (redukce, dehydratace, redukce, přenos), opakování cyklu a vznik palmitoyl-ACP",
@@ -1380,6 +1416,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-4",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Biosyntéza mastných kyselin — celková bilance (8 acetyl-CoA -> palmitát) a další osud kyseliny palmitové",
@@ -1451,6 +1489,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-5",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Biosyntéza jednoduchých lipidů a fosfolipidů — aktivace prekurzorů a vznik kyseliny fosfatidové",
@@ -1526,6 +1566,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-6",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Biosyntéza fosfolipidů a glykolipidů — diglycerid, CDP-diglycerid a vznik triglyceridů, fosfatidylderivátů a galaktolipidů",
@@ -1601,6 +1643,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-7",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Odvozené lipidy — tři fáze biosyntézy terpenoidů/cholesterolu a fáze A: acetyl-CoA až kyselina mevalonová přes HMG-CoA",
@@ -1676,6 +1720,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-8",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Odvozené lipidy — fáze B: aktivace mevalonátu na isopentenylpyrofosfát a kondenzace na geranyl-, farnesylpyrofosfát, skvalen a geranylgeranylpyrofosfát/fytoen",
@@ -1753,6 +1799,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-3-9",
+  book: "cz",
+  topicKey: "fatty-acid-biosynthesis",
   chapter: 8,
   section: "8.3",
   czTitle: "Odvozené lipidy — HMG-CoA-reduktasa, fáze C (obecné modifikace terpenoidů) a přeměna skvalenu na cholesterol",
@@ -1817,6 +1865,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-4-1",
+  book: "cz",
+  topicKey: "fat-mobilization",
   chapter: 8,
   section: "8.4.1",
   czTitle: "Jednoduché lipidy",
@@ -1892,6 +1942,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-4-2-1",
+  book: "cz",
+  topicKey: "working-with-lipids",
   chapter: 8,
   section: "8.4.2",
   czTitle: "Složené lipidy — fosfolipidy a fosfolipasy",
@@ -1971,6 +2023,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-4-2-2",
+  book: "cz",
+  topicKey: "working-with-lipids",
   chapter: 8,
   section: "8.4.2",
   czTitle: "Složené lipidy — sfingolipidy (sfingomyelin, gangliosid)",
@@ -2056,6 +2110,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-4-3",
+  book: "cz",
+  topicKey: "cholesterol-and-isoprenoids",
   chapter: 8,
   section: "8.4.3",
   czTitle: "Odvozené lipidy",
@@ -2131,6 +2187,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-4-4-1",
+  book: "cz",
+  topicKey: "fat-mobilization",
   chapter: 8,
   section: "8.4.4",
   czTitle: "Mastné kyseliny — aktivace",
@@ -2211,6 +2269,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-4-4-2",
+  book: "cz",
+  topicKey: "fat-mobilization",
   chapter: 8,
   section: "8.4.4",
   czTitle: "Mastné kyseliny — mechanismus β-oxidace",
@@ -2296,6 +2356,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-4-4-3",
+  book: "cz",
+  topicKey: "fat-mobilization",
   chapter: 8,
   section: "8.4.4",
   czTitle: "Mastné kyseliny — osud acetyl-CoA, ketolátky",
@@ -2379,6 +2441,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-4-4-4",
+  book: "cz",
+  topicKey: "fat-mobilization",
   chapter: 8,
   section: "8.4.4",
   czTitle: "Mastné kyseliny — nenasycené, lichouhlíkaté a větvené kyseliny",
@@ -2461,6 +2525,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-5",
+  book: "cz",
+  topicKey: "membrane-architecture",
   chapter: 8,
   section: "8.5",
   czTitle: "Biologické membrány (úvod)",
@@ -2539,6 +2605,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-5-1",
+  book: "cz",
+  topicKey: "membrane-architecture",
   chapter: 8,
   section: "8.5.1",
   czTitle: "Chemické složení",
@@ -2609,6 +2677,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-5-2-1",
+  book: "cz",
+  topicKey: "membrane-architecture",
   chapter: 8,
   section: "8.5.2",
   czTitle: "Struktura — lipidová dvojvrstva",
@@ -2690,6 +2760,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-5-2-2",
+  book: "cz",
+  topicKey: "membrane-architecture",
   chapter: 8,
   section: "8.5.2",
   czTitle: "Struktura — membránové proteiny",
@@ -2767,6 +2839,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-5-2-3",
+  book: "cz",
+  topicKey: "membrane-architecture",
   chapter: 8,
   section: "8.5.2",
   czTitle: "Struktura — funkce membránových proteinů",
@@ -2847,6 +2921,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-5-3-1",
+  book: "cz",
+  topicKey: "membrane-transport",
   chapter: 8,
   section: "8.5.3",
   czTitle: "Membránový transport — pasivní transport, prostá difúze",
@@ -2927,6 +3003,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-5-3-2",
+  book: "cz",
+  topicKey: "membrane-transport",
   chapter: 8,
   section: "8.5.3",
   czTitle: "Membránový transport — usnadněná difúze",
@@ -3006,6 +3084,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "8-5-3-3",
+  book: "cz",
+  topicKey: "membrane-transport",
   chapter: 8,
   section: "8.5.3",
   czTitle: "Membránový transport — aktivní transport, skupinová translokace, transport makromolekul",

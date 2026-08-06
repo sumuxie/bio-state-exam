@@ -18,6 +18,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-1",
+  book: "cz",
+  topicKey: "biochemical-reaction-logic",
   chapter: 10,
   section: "10.1",
   czTitle: "Intermediární metabolismus — katabolismus, anabolismus a čtyři funkce",
@@ -87,6 +89,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-2",
+  book: "cz",
+  topicKey: "biochemical-reaction-logic",
   chapter: 10,
   section: "10.1",
   czTitle: "Tři fáze katabolismu a tři fáze biosyntézy",
@@ -156,6 +160,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-3",
+  book: "cz",
+  topicKey: "biochemical-reaction-logic",
   chapter: 10,
   section: "10.1",
   czTitle: "Proč katabolismus není obrácený anabolismus",
@@ -221,6 +227,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-4",
+  book: "cz",
+  topicKey: "biochemical-reaction-logic",
   chapter: 10,
   section: "10.1",
   czTitle: "Křížová propojení, uzlové body, dynamická rovnováha a „pool\"",
@@ -291,6 +299,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-5",
+  book: "cz",
+  topicKey: "biochemical-reaction-logic",
   chapter: 10,
   section: "10.1",
   czTitle: "Acetyl-CoA jako ukázkový „pool\" (obr. 10.1)",
@@ -356,6 +366,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-6",
+  book: "cz",
+  topicKey: "glycolysis",
   chapter: 10,
   section: "10.1.1",
   czTitle: "Metabolismus sacharidů — odbourávání",
@@ -426,6 +438,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-7",
+  book: "cz",
+  topicKey: "glycolysis",
   chapter: 10,
   section: "10.1.1",
   czTitle: "Glukoneogeneze — obrácená glykolýza a její tři obcházené kroky",
@@ -495,6 +509,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-8",
+  book: "cz",
+  topicKey: "fatty-acid-oxidation",
   chapter: 10,
   section: "10.1.2",
   czTitle: "Metabolismus lipidů — odbourávání a ketolátky",
@@ -563,6 +579,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-9",
+  book: "cz",
+  topicKey: "fatty-acid-oxidation",
   chapter: 10,
   section: "10.1.2",
   czTitle: "Syntéza mastných kyselin — tři zásadní odlišnosti od odbourávání",
@@ -631,6 +649,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-10",
+  book: "cz",
+  topicKey: "tissue-specific-metabolism",
   chapter: 10,
   section: "10.1.3",
   czTitle: "Vztah metabolismu sacharidů a lipidů — proč z tuků nevzniknou cukry",
@@ -700,6 +720,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-11",
+  book: "cz",
+  topicKey: "intermediary-metabolism-hub",
   chapter: 10,
   section: "10.1.4",
   czTitle: "Citrátový cyklus a respirační řetězec — energetika i biosyntéza",
@@ -773,6 +795,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-12",
+  book: "cz",
+  topicKey: "metabolic-regulation",
   chapter: 10,
   section: "10.2",
   czTitle: "Regulační mechanismy — proč a na jakých úrovních",
@@ -839,6 +863,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-13",
+  book: "cz",
+  topicKey: "metabolic-regulation",
   chapter: 10,
   section: "10.2",
   czTitle: "Michaelisova kinetika a regulace změnou hladiny enzymu",
@@ -909,6 +935,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-14",
+  book: "cz",
+  topicKey: "metabolic-regulation",
   chapter: 10,
   section: "10.2",
   czTitle: "Inhibice a alosterická kontrola — zpětná vazba a řídící enzym",
@@ -980,6 +1008,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-15",
+  book: "cz",
+  topicKey: "metabolic-regulation",
   chapter: 10,
   section: "10.2",
   czTitle: "Řídící reakce a regulace limitujícími metabolity",
@@ -1049,6 +1079,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-16",
+  book: "cz",
+  topicKey: "metabolic-regulation",
   chapter: 10,
   section: "10.2",
   czTitle: "Enzymová modifikace, isoenzymy a kompartmentace",
@@ -1120,6 +1152,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-17",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "Hormony — definice, hierarchie žláz a hormonální receptory",
@@ -1191,6 +1225,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-18",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "Adenylátcyklasová kaskáda a cyklický AMP",
@@ -1263,6 +1299,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-19",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "Fosfoinositidová kaskáda — IP₃ a diacylglycerol",
@@ -1334,6 +1372,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-20",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "Tyrosinkinasové receptory, jaderný mechanismus steroidů a čtyři chemické skupiny",
@@ -1407,6 +1447,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-21",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "Tab. 10.1 — steroidní hormony a hormony odvozené od aminokyselin",
@@ -1480,6 +1522,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-22",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "Tab. 10.1 — peptidové a bílkovinné hormony a ikosanoidy",
@@ -1554,6 +1598,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-23",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "1. Steroidní hormony — kortikoidy a pohlavní hormony",
@@ -1627,6 +1673,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-24",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "2. Hormony odvozené od aminokyselin — katecholaminy, melatonin, thyroxin",
@@ -1699,6 +1747,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-25",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "3. Peptidové a proteinové hormony — od nonapeptidů k glykoproteinům",
@@ -1773,6 +1823,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "10-26",
+  book: "cz",
+  topicKey: "hormone-structure-and-action",
   chapter: 10,
   section: "10.3",
   czTitle: "4. Ikosanoidy — od arachidonátu k prostaglandinům a leukotrienům",

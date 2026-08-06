@@ -1,0 +1,79 @@
+  ch1.js:   6 nodes parsed,   6 insertions
+  ch2.js:  10 nodes parsed,  10 insertions
+  ch3.js:   9 nodes parsed,   9 insertions
+  ch4.js:  18 nodes parsed,  18 insertions
+  ch5.js:  10 nodes parsed,  10 insertions
+  ch6.js:  19 nodes parsed,  19 insertions
+  ch7.js:  42 nodes parsed,  42 insertions
+  ch8.js:  40 nodes parsed,  40 insertions
+  ch9.js:  27 nodes parsed,  27 insertions
+ ch10.js:  26 nodes parsed,  26 insertions
+total insertions: 207
+verification passed: 207 nodes, ids and order intact, every pre-existing field identical,
+only new keys are book and topicKey
+
+written: 10 files
+re-read from disk: 207 nodes, all have book=cz, 61 distinct topicKeys
+
+topicKeys in the data:
+     4  acetyl-coa-production
+     4  amino-acid-degradation
+     3  amino-acid-derived-molecules
+     3  amino-acids
+     3  amino-group-metabolism
+     2  atp-and-phosphoryl-transfer
+     6  biochemical-reaction-logic
+     2  bioenergetics-and-thermodynamics
+     2  bioenergetics-basics
+     1  biological-redox
+     3  cells-and-biomolecules
+     2  cholesterol-and-isoprenoids
+     5  co2-assimilation
+     2  dna-replication
+     5  enzyme-kinetics
+     1  enzyme-mechanism
+     2  enzymes-introduction
+     5  fat-mobilization
+     2  fates-of-pyruvate
+     9  fatty-acid-biosynthesis
+     2  fatty-acid-oxidation
+     7  feeder-pathways-glycolysis
+     2  gene-regulation-proteins
+     1  genetic-code
+     2  gluconeogenesis
+     1  glycoconjugates
+     4  glycogen-metabolism
+     5  glycolysis
+    10  hormone-structure-and-action
+     1  intermediary-metabolism-hub
+     6  lipid-signals-and-pigments
+     5  membrane-architecture
+     4  membrane-lipids
+     3  membrane-transport
+     5  metabolic-regulation
+    15  monosaccharides
+     4  nitrogen-metabolism
+     3  nucleotide-metabolism
+     2  nucleotides
+     1  origin-and-evolution-of-life
+     4  pentose-phosphate-pathway
+     2  peptides-and-proteins
+     6  photochemical-reaction-centers
+     3  photorespiration-c4-cam
+     8  photosynthetic-pigments
+     4  polysaccharides
+     1  protein-folding-and-denaturation
+     1  protein-primary-structure
+     1  protein-structure-overview
+     3  protein-targeting-and-degradation
+     2  protein-tertiary-quaternary
+     1  regulatory-enzymes
+     5  respiratory-chain
+     1  starch-sucrose-biosynthesis
+     5  storage-lipids
+     1  tissue-specific-metabolism
+     2  transcription
+     3  translation
+     2  urea-cycle
+     2  working-with-lipids
+     1  working-with-proteins

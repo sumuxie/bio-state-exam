@@ -9,6 +9,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1",
+  book: "cz",
+  topicKey: "nucleotides",
   chapter: 4,
   section: "4.1",
   czTitle: "Nukleové kyseliny jsou základní molekuly dědičnosti",
@@ -95,6 +97,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1-1-1",
+  book: "cz",
+  topicKey: "nucleotide-metabolism",
   chapter: 4,
   section: "4.1.1.1",
   czTitle: "Biosyntéza nukleotidů; Biosyntéza purinových nukleotidů",
@@ -180,6 +184,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1-1-2",
+  book: "cz",
+  topicKey: "nucleotide-metabolism",
   chapter: 4,
   section: "4.1.1.2",
   czTitle: "Biosyntéza pyrimidinových nukleotidů",
@@ -265,6 +271,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1-2",
+  book: "cz",
+  topicKey: "nucleotides",
   chapter: 4,
   section: "4.1.2",
   czTitle: "Struktura nukleových kyselin",
@@ -353,6 +361,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1-3-1",
+  book: "cz",
+  topicKey: "dna-replication",
   chapter: 4,
   section: "4.1.3",
   czTitle: "Struktura a biosyntéza DNA vysvětluje princip dědičnosti — 1) DNA-polymerasy",
@@ -452,6 +462,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1-3-2",
+  book: "cz",
+  topicKey: "dna-replication",
   chapter: 4,
   section: "4.1.3",
   czTitle: "Struktura a biosyntéza DNA vysvětluje princip dědičnosti — 2) Helikasy, vazebné proteiny a DNA-ligasy",
@@ -556,6 +568,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1-4-1",
+  book: "cz",
+  topicKey: "transcription",
   chapter: 4,
   section: "4.1.4",
   czTitle: "DNA je přepisována do RNA — druhy a vlastnosti RNA",
@@ -657,6 +671,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1-4-2",
+  book: "cz",
+  topicKey: "transcription",
   chapter: 4,
   section: "4.1.4",
   czTitle: "DNA je přepisována do RNA — syntéza RNA (RNA-polymerasa, promotory, terminace)",
@@ -763,6 +779,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-1-5",
+  book: "cz",
+  topicKey: "nucleotide-metabolism",
   chapter: 4,
   section: "4.1.5",
   czTitle: "Odbourávání nukleových kyselin",
@@ -865,6 +883,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-2-1",
+  book: "cz",
+  topicKey: "genetic-code",
   chapter: 4,
   section: "4.2.1",
   czTitle: "Sekvence genu určuje pořadí aminokyselin v proteinech",
@@ -953,6 +973,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-2-2",
+  book: "cz",
+  topicKey: "translation",
   chapter: 4,
   section: "4.2.2",
   czTitle: "Proteosyntéza probíhá v ribosomech",
@@ -1030,6 +1052,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-2-3-1",
+  book: "cz",
+  topicKey: "translation",
   chapter: 4,
   section: "4.2.3",
   czTitle: "Fáze proteosyntézy (I): aktivace aminokyselin, iniciace a elongace",
@@ -1125,6 +1149,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-2-3-2",
+  book: "cz",
+  topicKey: "translation",
   chapter: 4,
   section: "4.2.3",
   czTitle: "Fáze proteosyntézy (II): terminace",
@@ -1202,6 +1228,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-2-4-1",
+  book: "cz",
+  topicKey: "gene-regulation-proteins",
   chapter: 4,
   section: "4.2.4",
   czTitle: "Regulace proteosyntézy (I): operon laktosy a tryptofanu",
@@ -1293,6 +1321,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-2-4-2",
+  book: "cz",
+  topicKey: "gene-regulation-proteins",
   chapter: 4,
   section: "4.2.4",
   czTitle: "Regulace proteosyntézy (II): eukaryontní geny, čepička a sestřih mRNA",
@@ -1408,6 +1438,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-3-1",
+  book: "cz",
+  topicKey: "protein-folding-and-denaturation",
   chapter: 4,
   section: "4.3.1",
   czTitle: "Nekovalentní interakce a uspořádání peptidového řetězce do biologicky aktivní formy",
@@ -1506,6 +1538,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-3-2",
+  book: "cz",
+  topicKey: "protein-targeting-and-degradation",
   chapter: 4,
   section: "4.3.2",
   czTitle: "Posttranslační modifikace polypeptidového řetězce a přenos proteinů přes membránu",
@@ -1602,6 +1636,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "4-3-3",
+  book: "cz",
+  topicKey: "protein-targeting-and-degradation",
   chapter: 4,
   section: "4.3.3",
   czTitle: "Kovalentní modifikace bočních řetězců aminokyselin",

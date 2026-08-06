@@ -9,6 +9,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-1",
+  book: "cz",
+  topicKey: "protein-targeting-and-degradation",
   chapter: 5,
   section: "5.1",
   czTitle: "Proteolytické štěpení bílkovin",
@@ -98,6 +100,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2",
+  book: "cz",
+  topicKey: "amino-group-metabolism",
   chapter: 5,
   section: "5.2",
   czTitle: "Odbourávání aminokyselin",
@@ -175,6 +179,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2-1-1",
+  book: "cz",
+  topicKey: "amino-group-metabolism",
   chapter: 5,
   section: "5.2.1",
   czTitle: "Metabolické reakce na α-uhlíkovém atomu aminokyselin — deaminace",
@@ -265,6 +271,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2-1-2",
+  book: "cz",
+  topicKey: "amino-group-metabolism",
   chapter: 5,
   section: "5.2.1",
   czTitle: "Metabolické reakce na α-uhlíkovém atomu aminokyselin — transaminace a PLP",
@@ -363,6 +371,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2-2-1",
+  book: "cz",
+  topicKey: "urea-cycle",
   chapter: 5,
   section: "5.2.2",
   czTitle: "Detoxikace amoniaku, močovinový (ornithinový) cyklus — zdroje a eliminace amoniaku",
@@ -432,6 +442,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2-2-2",
+  book: "cz",
+  topicKey: "urea-cycle",
   chapter: 5,
   section: "5.2.2",
   czTitle: "Detoxikace amoniaku, močovinový (ornithinový) cyklus — mechanismus, energetika a lokalizace cyklu",
@@ -510,6 +522,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2-3-1",
+  book: "cz",
+  topicKey: "amino-acid-degradation",
   chapter: 5,
   section: "5.2.3",
   czTitle: "Odbourávání uhlíkové kostry a vzájemné přeměny aminokyselin — glukogenní/ketogenní klasifikace; 1) Přeměna na acetylkoenzym A přes pyruvát (C3-rodina)",
@@ -579,6 +593,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2-3-2",
+  book: "cz",
+  topicKey: "amino-acid-degradation",
   chapter: 5,
   section: "5.2.3",
   czTitle: "Odbourávání uhlíkové kostry a vzájemné přeměny aminokyselin — 2) Přeměna na acetylkoenzym A přes acetoacetylkoenzym A",
@@ -646,6 +662,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2-3-3",
+  book: "cz",
+  topicKey: "amino-acid-degradation",
   chapter: 5,
   section: "5.2.3",
   czTitle: "Odbourávání uhlíkové kostry a vzájemné přeměny aminokyselin — 3) Přeměna na 2-oxoglutarát (C5-rodina); 4) Přeměna na sukcinylkoenzym A",
@@ -713,6 +731,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "5-2-3-4",
+  book: "cz",
+  topicKey: "amino-acid-degradation",
   chapter: 5,
   section: "5.2.3",
   czTitle: "Odbourávání uhlíkové kostry a vzájemné přeměny aminokyselin — 5) Přeměna na oxalacetát (C4-rodina); souhrnné schéma (Obr. 5.6)",

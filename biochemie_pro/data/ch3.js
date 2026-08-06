@@ -9,6 +9,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-1",
+  book: "cz",
+  topicKey: "enzymes-introduction",
   chapter: 3,
   section: "3.1",
   czTitle: "Klasifikace a názvosloví enzymů",
@@ -110,6 +112,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-2",
+  book: "cz",
+  topicKey: "enzymes-introduction",
   chapter: 3,
   section: "3.2",
   czTitle: "Struktura molekuly enzymu; Koenzymy",
@@ -226,6 +230,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-3-1",
+  book: "cz",
+  topicKey: "enzyme-kinetics",
   chapter: 3,
   section: "3.3.1",
   czTitle: "Kinetika enzymové reakce; Rovnice Michaelise a Mentenové",
@@ -329,6 +335,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-3-2",
+  book: "cz",
+  topicKey: "enzyme-kinetics",
   chapter: 3,
   section: "3.3.2",
   czTitle: "Dvousubstrátové reakce",
@@ -411,6 +419,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-3-3",
+  book: "cz",
+  topicKey: "enzyme-kinetics",
   chapter: 3,
   section: "3.3.3",
   czTitle: "Měření enzymové aktivity",
@@ -508,6 +518,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-4",
+  book: "cz",
+  topicKey: "enzyme-kinetics",
   chapter: 3,
   section: "3.4",
   czTitle: "Vliv pH a teploty na enzymové reakce",
@@ -601,6 +613,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-5",
+  book: "cz",
+  topicKey: "enzyme-kinetics",
   chapter: 3,
   section: "3.5",
   czTitle: "Inhibice enzymových reakcí",
@@ -708,6 +722,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-6",
+  book: "cz",
+  topicKey: "enzyme-mechanism",
   chapter: 3,
   section: "3.6",
   czTitle: "Mechanismus působení enzymů",
@@ -823,6 +839,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "3-7",
+  book: "cz",
+  topicKey: "regulatory-enzymes",
   chapter: 3,
   section: "3.7",
   czTitle: "Regulační enzymy; Alosterické enzymy",

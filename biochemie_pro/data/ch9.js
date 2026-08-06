@@ -16,6 +16,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-1",
+  book: "cz",
+  topicKey: "photosynthetic-pigments",
   chapter: 9,
   section: "9.",
   czTitle: "Fotoautotrofie — pět specifických metabolismů",
@@ -83,6 +85,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-2",
+  book: "cz",
+  topicKey: "photosynthetic-pigments",
   chapter: 9,
   section: "9.1",
   czTitle: "Základní děje fotosyntézy — obecná rovnice, thylakoid, chloroplast",
@@ -155,6 +159,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-3",
+  book: "cz",
+  topicKey: "photosynthetic-pigments",
   chapter: 9,
   section: "9.1",
   czTitle: "Oxygenní fotosyntéza — stechiometrie a energetika",
@@ -221,6 +227,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-4",
+  book: "cz",
+  topicKey: "photosynthetic-pigments",
   chapter: 9,
   section: "9.1",
   czTitle: "Vědní disciplíny studující fotosyntézu a jejich časová měřítka",
@@ -289,6 +297,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-5",
+  book: "cz",
+  topicKey: "photosynthetic-pigments",
   chapter: 9,
   section: "9.1.1",
   czTitle: "Tři kategorie fotosyntetických pigmentů",
@@ -355,6 +365,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-6",
+  book: "cz",
+  topicKey: "photosynthetic-pigments",
   chapter: 9,
   section: "9.1.1",
   czTitle: "Chlorofyly — struktura a výsadní role chlorofylu a",
@@ -425,6 +437,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-7",
+  book: "cz",
+  topicKey: "photosynthetic-pigments",
   chapter: 9,
   section: "9.1.1",
   czTitle: "Absorpční spektra chlorofylů — proč je rostlinný svět zelený",
@@ -491,6 +505,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-8",
+  book: "cz",
+  topicKey: "photosynthetic-pigments",
   chapter: 9,
   section: "9.1.1",
   czTitle: "Pomocné (akcesorické) pigmenty a pokrytí slunečního spektra",
@@ -559,6 +575,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-9",
+  book: "cz",
+  topicKey: "photochemical-reaction-centers",
   chapter: 9,
   section: "9.1.2",
   czTitle: "Další složky thylakoidních membrán",
@@ -626,6 +644,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-10",
+  book: "cz",
+  topicKey: "photochemical-reaction-centers",
   chapter: 9,
   section: "9.1.3",
   czTitle: "Reakční centrum a legenda k obr. 9.5",
@@ -699,6 +719,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-11",
+  book: "cz",
+  topicKey: "photochemical-reaction-centers",
   chapter: 9,
   section: "9.1.3",
   czTitle: "Primární fotochemický děj a světlosběrné antény",
@@ -769,6 +791,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-12",
+  book: "cz",
+  topicKey: "photochemical-reaction-centers",
   chapter: 9,
   section: "9.1.3",
   czTitle: "Fotosystém, orientovaná separace náboje, sekundární akceptory a donory",
@@ -839,6 +863,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-13",
+  book: "cz",
+  topicKey: "photochemical-reaction-centers",
   chapter: 9,
   section: "9.1.3",
   czTitle: "Cyklický a lineární tok elektronů, Z-schéma, definice PS I a PS II",
@@ -909,6 +935,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-14",
+  book: "cz",
+  topicKey: "photochemical-reaction-centers",
   chapter: 9,
   section: "9.1.3",
   czTitle: "Přenos protonů, ΔpH a ATP-synthasa — obrácená orientace thylakoidu",
@@ -980,6 +1008,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-15",
+  book: "cz",
+  topicKey: "co2-assimilation",
   chapter: 9,
   section: "9.1.4",
   czTitle: "Fotosyntetická fixace CO₂ — proč „temná fáze\" je špatný termín",
@@ -1044,6 +1074,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-16",
+  book: "cz",
+  topicKey: "co2-assimilation",
   chapter: 9,
   section: "9.1.4",
   czTitle: "Dvě nesprávné interpretace sumární rovnice; Calvinův cyklus",
@@ -1109,6 +1141,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-17",
+  book: "cz",
+  topicKey: "co2-assimilation",
   chapter: 9,
   section: "9.1.4",
   czTitle: "RubisCO — struktura, mechanismus a první stabilní produkt",
@@ -1180,6 +1214,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-18",
+  book: "cz",
+  topicKey: "co2-assimilation",
   chapter: 9,
   section: "9.1.4",
   czTitle: "Od PG ke GAP a uzavření cyklu přes ribulosa-5-fosfát",
@@ -1250,6 +1286,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-19",
+  book: "cz",
+  topicKey: "co2-assimilation",
   chapter: 9,
   section: "9.1.4",
   czTitle: "Celkové schéma Calvinova cyklu (obr. 9.6) a čistý výtěžek",
@@ -1322,6 +1360,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-20",
+  book: "cz",
+  topicKey: "photorespiration-c4-cam",
   chapter: 9,
   section: "9.2",
   czTitle: "Fotorespirace — tři enzymy, tři kompartmenty",
@@ -1395,6 +1435,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-21",
+  book: "cz",
+  topicKey: "photorespiration-c4-cam",
   chapter: 9,
   section: "9.3",
   czTitle: "Rostliny C-4 — Hatchův-Slackův cyklus",
@@ -1464,6 +1506,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-22",
+  book: "cz",
+  topicKey: "photorespiration-c4-cam",
   chapter: 9,
   section: "9.3",
   czTitle: "Proč C-4 funguje — Km, průduchy, Kranzova anatomie (obr. 9.8)",
@@ -1537,6 +1581,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-23",
+  book: "cz",
+  topicKey: "nitrogen-metabolism",
   chapter: 9,
   section: "9.4",
   czTitle: "Fixace atmosférického dusíku — nitrogenasa",
@@ -1609,6 +1655,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-24",
+  book: "cz",
+  topicKey: "nitrogen-metabolism",
   chapter: 9,
   section: "9.4",
   czTitle: "Asimilace amoniaku — glutamátdehydrogenasa a glutaminsynthasa",
@@ -1678,6 +1726,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-25",
+  book: "cz",
+  topicKey: "nitrogen-metabolism",
   chapter: 9,
   section: "9.4",
   czTitle: "Nitrifikace, denitrifikace a nitrátreduktasa",
@@ -1749,6 +1799,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-26",
+  book: "cz",
+  topicKey: "nitrogen-metabolism",
   chapter: 9,
   section: "9.4",
   czTitle: "Nitritreduktasa a koloběh dusíku v biosféře (obr. 9.9)",
@@ -1820,6 +1872,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "9-27",
+  book: "cz",
+  topicKey: "cholesterol-and-isoprenoids",
   chapter: 9,
   section: "9.5",
   czTitle: "Sekundární rostlinné metabolity",

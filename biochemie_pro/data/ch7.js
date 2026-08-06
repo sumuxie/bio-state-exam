@@ -14,6 +14,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-1",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.1",
   czTitle: "Monosacharidy",
@@ -92,6 +94,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-1-1",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.1.1",
   czTitle: "Aldosy, ketosy",
@@ -175,6 +179,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-1-2-1",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.1.2",
   czTitle: "Odvozování aldos a ketos — odvození řady aldos (obr. 7.1)",
@@ -253,6 +259,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-1-2-2",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.1.2",
   czTitle: "Odvozování aldos a ketos — odvození řady ketos (obr. 7.2)",
@@ -328,6 +336,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-1-3-1",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.1.3",
   czTitle: "Poloacetálové formy — vznik, anomery, Haworthovy vzorce",
@@ -414,6 +424,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-1-3-2",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.1.3",
   czTitle: "Poloacetálové formy — obr. 7.5, různá zobrazení D-glukosy",
@@ -475,6 +487,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-1-4",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.1.4",
   czTitle: "Mutarotace",
@@ -554,6 +568,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-2-1",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.2.1",
   czTitle: "Cukerné estery",
@@ -633,6 +649,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-2-2",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.2.2",
   czTitle: "Cukerné kyseliny",
@@ -718,6 +736,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-2-3",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.2.3",
   czTitle: "Cukerné alkoholy",
@@ -799,6 +819,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-2-4",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.2.4",
   czTitle: "Aminocukry",
@@ -882,6 +904,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-2-5",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.2.5",
   czTitle: "Deoxycukry",
@@ -952,6 +976,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-2-6",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.2.6",
   czTitle: "Glykosidy",
@@ -1016,6 +1042,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-3-1",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.3",
   czTitle: "Oligosacharidy — definice a neredukující oligosacharidy",
@@ -1086,6 +1114,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-3-2",
+  book: "cz",
+  topicKey: "monosaccharides",
   chapter: 7,
   section: "7.3",
   czTitle: "Oligosacharidy — redukující oligosacharidy",
@@ -1152,6 +1182,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-4",
+  book: "cz",
+  topicKey: "polysaccharides",
   chapter: 7,
   section: "7.4",
   czTitle: "Polysacharidy",
@@ -1231,6 +1263,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-4-1-1",
+  book: "cz",
+  topicKey: "polysaccharides",
   chapter: 7,
   section: "7.4.1",
   czTitle: "Homopolysacharidy -- A. Zásobní polysacharidy (škrob, glykogen, dextrany, inulin, mannany)",
@@ -1316,6 +1350,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-4-1-2",
+  book: "cz",
+  topicKey: "polysaccharides",
   chapter: 7,
   section: "7.4.1",
   czTitle: "Homopolysacharidy -- B. Strukturní polysacharidy (celulosa, chitin)",
@@ -1400,6 +1436,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-4-2",
+  book: "cz",
+  topicKey: "polysaccharides",
   chapter: 7,
   section: "7.4.2",
   czTitle: "Heteropolysacharidy (glykosaminglykany, kyselina hyaluronová, chondroitinsulfáty, heparin)",
@@ -1480,6 +1518,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-5",
+  book: "cz",
+  topicKey: "glycoconjugates",
   chapter: 7,
   section: "7.5",
   czTitle: "Oligosacharidy vázané na proteiny",
@@ -1559,6 +1599,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-6",
+  book: "cz",
+  topicKey: "feeder-pathways-glycolysis",
   chapter: 7,
   section: "7.6",
   czTitle: "Vzájemné přeměny cukrů — úvod (tři typy reakcí)",
@@ -1623,6 +1665,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-6-1",
+  book: "cz",
+  topicKey: "feeder-pathways-glycolysis",
   chapter: 7,
   section: "7.6.1",
   czTitle: "Epimerace a izomerace",
@@ -1698,6 +1742,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-6-2",
+  book: "cz",
+  topicKey: "pentose-phosphate-pathway",
   chapter: 7,
   section: "7.6.2",
   czTitle: "Oxidace a dekarboxylace glukosy",
@@ -1783,6 +1829,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-6-3",
+  book: "cz",
+  topicKey: "pentose-phosphate-pathway",
   chapter: 7,
   section: "7.6.3",
   czTitle: "Přenos tříuhlíkových nebo dvouuhlíkových štěpů",
@@ -1862,6 +1910,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-7-1",
+  book: "cz",
+  topicKey: "pentose-phosphate-pathway",
   chapter: 7,
   section: "7.7",
   czTitle: "Dvě cesty k pentosafosfátům — oxidační pentosafosfátová cesta",
@@ -1941,6 +1991,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-7-2",
+  book: "cz",
+  topicKey: "pentose-phosphate-pathway",
   chapter: 7,
   section: "7.7",
   czTitle: "Dvě cesty k pentosafosfátům — neoxidační cesta a pentosový cyklus",
@@ -2022,6 +2074,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-8-1",
+  book: "cz",
+  topicKey: "glycolysis",
   chapter: 7,
   section: "7.8",
   czTitle: "Glykolýza — úvod a přípravná fáze (glukosa až fruktosa-1,6-bisfosfát a jeho štěpení na triosy)",
@@ -2104,6 +2158,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-8-2",
+  book: "cz",
+  topicKey: "glycolysis",
   chapter: 7,
   section: "7.8",
   czTitle: "Glykolýza — glyceraldehyd-3-fosfátdehydrogenasa a substrátová fosforylace na 3-fosfoglycerát",
@@ -2184,6 +2240,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-8-3",
+  book: "cz",
+  topicKey: "glycolysis",
   chapter: 7,
   section: "7.8",
   czTitle: "Glykolýza — fosfoglycerátmutasa, enolasa, pyruvátkinasa, energetická bilance a shrnutí dráhy",
@@ -2258,6 +2316,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-8-4",
+  book: "cz",
+  topicKey: "fates-of-pyruvate",
   chapter: 7,
   section: "7.8.1",
   czTitle: "Tvorba ethanolu, laktátu nebo acetyl-CoA — ethanol a laktát",
@@ -2335,6 +2395,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-8-5",
+  book: "cz",
+  topicKey: "fates-of-pyruvate",
   chapter: 7,
   section: "7.8.1",
   czTitle: "Tvorba ethanolu, laktátu nebo acetyl-CoA — acetyl-CoA a komplex pyruvátdehydrogenasy",
@@ -2416,6 +2478,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-9",
+  book: "cz",
+  topicKey: "gluconeogenesis",
   chapter: 7,
   section: "7.9",
   czTitle: "Glukoneogeneze, resyntéza glukosy — obchvat ireverzibilních kroků glykolýzy",
@@ -2519,6 +2583,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-9-1",
+  book: "cz",
+  topicKey: "gluconeogenesis",
   chapter: 7,
   section: "7.9.1",
   czTitle: "Glukoneogenéze z aminokyselin",
@@ -2578,6 +2644,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-10-1",
+  book: "cz",
+  topicKey: "feeder-pathways-glycolysis",
   chapter: 7,
   section: "7.10",
   czTitle: "Enzymové štěpení glykosidů a oligosacharidů — glykosidasy",
@@ -2661,6 +2729,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-10-2",
+  book: "cz",
+  topicKey: "feeder-pathways-glycolysis",
   chapter: 7,
   section: "7.10",
   czTitle: "Enzymová biosyntéza glykosidů a oligosacharidů — glykosyltransferasy a aktivace monosacharidů",
@@ -2745,6 +2815,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-10-3",
+  book: "cz",
+  topicKey: "feeder-pathways-glycolysis",
   chapter: 7,
   section: "7.10",
   czTitle: "Další reakce nukleotidových derivátů — epimerace na C-4 a výměna galaktosa/glukosa",
@@ -2807,6 +2879,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-11-1-1",
+  book: "cz",
+  topicKey: "feeder-pathways-glycolysis",
   chapter: 7,
   section: "7.11.1",
   czTitle: "Hydrolytické štěpení — α- a β-amylasy",
@@ -2878,6 +2952,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-11-1-2",
+  book: "cz",
+  topicKey: "feeder-pathways-glycolysis",
   chapter: 7,
   section: "7.11.1",
   czTitle: "Hydrolytické štěpení — konečné produkty, γ-amylasy a celulasy",
@@ -2944,6 +3020,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-11-2-1",
+  book: "cz",
+  topicKey: "glycogen-metabolism",
   chapter: 7,
   section: "7.11.2",
   czTitle: "Fosforolýza škrobu a glykogenu — obecný mechanismus",
@@ -3010,6 +3088,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-11-2-2",
+  book: "cz",
+  topicKey: "glycogen-metabolism",
   chapter: 7,
   section: "7.11.2",
   czTitle: "Fosforolýza glykogenu — odvětvení a energetická bilance",
@@ -3077,6 +3157,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-12-1",
+  book: "cz",
+  topicKey: "glycogen-metabolism",
   chapter: 7,
   section: "7.12",
   czTitle: "Biosyntéza polysacharidů — glykogensynthasa a větvící enzym",
@@ -3140,6 +3222,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "7-12-2",
+  book: "cz",
+  topicKey: "glycogen-metabolism",
   chapter: 7,
   section: "7.12",
   czTitle: "Biosyntéza a odbourávání glykogenu — hormonální kaskádová regulace",

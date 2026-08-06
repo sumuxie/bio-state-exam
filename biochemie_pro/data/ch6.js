@@ -9,6 +9,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-1",
+  book: "cz",
+  topicKey: "bioenergetics-and-thermodynamics",
   chapter: 6,
   section: "6.1",
   czTitle: "Principy bioenergetiky",
@@ -93,6 +95,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-1-1",
+  book: "cz",
+  topicKey: "bioenergetics-and-thermodynamics",
   chapter: 6,
   section: "6.1.1",
   czTitle: "Reakce exergonické a endergonické",
@@ -176,6 +180,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-1-2-1",
+  book: "cz",
+  topicKey: "atp-and-phosphoryl-transfer",
   chapter: 6,
   section: "6.1.2",
   czTitle: "Makroergické sloučeniny — pojem, anhydridy a fosfamidy",
@@ -260,6 +266,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-1-2-2",
+  book: "cz",
+  topicKey: "atp-and-phosphoryl-transfer",
   chapter: 6,
   section: "6.1.2",
   czTitle: "Makroergické sloučeniny — enolfosfáty, thioestery a Tab. 6.1",
@@ -357,6 +365,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-1-3",
+  book: "cz",
+  topicKey: "biochemical-reaction-logic",
   chapter: 6,
   section: "6.1.3",
   czTitle: "Katabolické a anabolické děje",
@@ -442,6 +452,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-1-1",
+  book: "cz",
+  topicKey: "biological-redox",
   chapter: 6,
   section: "6.2.1",
   czTitle: "Oxidačně redukční pochody",
@@ -544,6 +556,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-2-1",
+  book: "cz",
+  topicKey: "acetyl-coa-production",
   chapter: 6,
   section: "6.2.2",
   czTitle: "Citrátový cyklus — úvod, přehled cyklu, citrátsynthasa",
@@ -628,6 +642,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-2-2",
+  book: "cz",
+  topicKey: "acetyl-coa-production",
   chapter: 6,
   section: "6.2.2",
   czTitle: "Citrátový cyklus — izomerace a dvě oxidační dekarboxylace (citrát → isocitrát → 2-oxoglutarát → sukcinyl-CoA)",
@@ -706,6 +722,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-2-3",
+  book: "cz",
+  topicKey: "acetyl-coa-production",
   chapter: 6,
   section: "6.2.2",
   czTitle: "Citrátový cyklus — substrátová fosforylace a regenerace oxalacetátu, souhrnná rovnice a energetická bilance",
@@ -793,6 +811,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-2-4",
+  book: "cz",
+  topicKey: "acetyl-coa-production",
   chapter: 6,
   section: "6.2.2",
   czTitle: "Citrátový cyklus — vztah k biosyntetickým pochodům a anaplerotické reakce",
@@ -865,6 +885,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-3",
+  book: "cz",
+  topicKey: "starch-sucrose-biosynthesis",
   chapter: 6,
   section: "6.2.3",
   czTitle: "Glyoxylátový cyklus",
@@ -941,6 +963,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-4-1",
+  book: "cz",
+  topicKey: "respiratory-chain",
   chapter: 6,
   section: "6.2.4",
   czTitle: "Respirační řetězec a aerobní fosforylace — úvod a komplex I",
@@ -1025,6 +1049,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-4-2",
+  book: "cz",
+  topicKey: "respiratory-chain",
   chapter: 6,
   section: "6.2.4",
   czTitle: "Komplex I a Komplex II respiračního řetězce",
@@ -1111,6 +1137,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-4-3",
+  book: "cz",
+  topicKey: "respiratory-chain",
   chapter: 6,
   section: "6.2.4",
   czTitle: "Komplex III respiračního řetězce a Q-cyklus",
@@ -1187,6 +1215,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-4-4",
+  book: "cz",
+  topicKey: "respiratory-chain",
   chapter: 6,
   section: "6.2.4",
   czTitle: "Komplex IV a souhrnné schéma komplexů I až IV",
@@ -1268,6 +1298,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-2-4-5",
+  book: "cz",
+  topicKey: "respiratory-chain",
   chapter: 6,
   section: "6.2.4",
   czTitle: "Komplex V (ATP-synthasa) a mechanismus aerobní fosforylace",
@@ -1353,6 +1385,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-3-1",
+  book: "cz",
+  topicKey: "amino-acid-derived-molecules",
   chapter: 6,
   section: "6.3",
   czTitle: "Porfyrinové proteiny — struktura a mnohostrannost (Tab. 6.4)",
@@ -1427,6 +1461,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-3-2",
+  book: "cz",
+  topicKey: "amino-acid-derived-molecules",
   chapter: 6,
   section: "6.3",
   czTitle: "Biosyntéza hemu (Obr. 6.12)",
@@ -1531,6 +1567,8 @@ window.BIOCHEM.topics.push(
 
 {
   id: "6-3-3",
+  book: "cz",
+  topicKey: "amino-acid-derived-molecules",
   chapter: 6,
   section: "6.3",
   czTitle: "Degradace porfyrinů",

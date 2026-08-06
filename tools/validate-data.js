@@ -10,24 +10,64 @@
    quoting that nobody can verify by reading. This file can at least be
    parsed and linted locally. The deploy job is `needs: validate`, so a
    break here silently stops the site updating -- worth the extra file.
+
+   2026-08-06: taught about the second book. See HANDOFF_LEHNINGER.md 7.
+   Two things changed and both matter:
+
+     - The page-gap check now applies only to Czech-book nodes. For the
+       Czech textbook, full page coverage with no holes IS the quality bar.
+       For Lehninger it is the opposite: the plan is to take two or three
+       sections per topic and skip the rest, so gaps are the intended
+       outcome and enforcing coverage would push someone to pad the data
+       until the check goes quiet. A node with no `book` counts as "cz",
+       so biochemie_basic keeps exactly the check it had.
+
+     - `chapter` is book-local -- chapter 7 is Sacharidy in the Czech book
+       and Carbohydrates and Glycobiology in Lehninger -- so anything that
+       groups by chapter now groups by book AND chapter. Merging those
+       numbering spaces would silently union two unrelated page ranges.
    ========================================================================= */
 
 'use strict';
+const fs = require('fs');
 const path = require('path');
 
 const REQUIRED = ['id', 'chapter', 'section', 'czTitle', 'enTitle', 'cnTitle', 'coverage', 'summary'];
-const CHAPTERS = 10;
+const BOOKS = ['cz', 'lehninger'];
 
-function loadApp(app) {
+/* The data files an app actually ships, taken from its index.html rather than
+   hardcoded. A file sitting in data/ that no <script> tag loads is dead, and a
+   tag pointing at a missing file breaks the site -- both used to pass silently
+   because this list was a hardcoded ch1..ch10 loop. */
+function dataFiles(app) {
+  const html = fs.readFileSync(path.resolve(process.cwd(), app, 'index.html'), 'utf8');
+  const tagged = [];
+  const re = /<script\s+src="data\/([^"]+\.js)"\s*>/g;
+  let m;
+  while ((m = re.exec(html)) !== null) tagged.push(m[1]);
+
+  const dir = path.resolve(process.cwd(), app, 'data');
+  const onDisk = fs.readdirSync(dir).filter((f) => f.endsWith('.js')).sort();
+
+  const missing = tagged.filter((f) => onDisk.indexOf(f) === -1);
+  const unloaded = onDisk.filter((f) => tagged.indexOf(f) === -1);
+  const problems = [];
+  missing.forEach((f) => problems.push('index.html loads data/' + f + ' but it does not exist'));
+  unloaded.forEach((f) => problems.push('data/' + f + ' exists but no <script> tag loads it'));
+  if (!tagged.length) problems.push('index.html loads no data files at all');
+  return { files: tagged, problems: problems };
+}
+
+function loadApp(app, files) {
   // Each data file does `window.BIOCHEM = window.BIOCHEM || { topics: [] }`
   // and pushes onto it, so the namespace must be reset between apps or the
   // second app inherits the first one's topics and every id looks duplicated.
   global.window = {};
-  for (let i = 1; i <= CHAPTERS; i++) {
-    const f = path.resolve(process.cwd(), app, 'data', 'ch' + i + '.js');
+  files.forEach((name) => {
+    const f = path.resolve(process.cwd(), app, 'data', name);
     delete require.cache[f];
     require(f);
-  }
+  });
   if (!global.window.BIOCHEM || !Array.isArray(global.window.BIOCHEM.topics)) {
     throw new Error(app + ': window.BIOCHEM.topics was never created');
   }
@@ -35,13 +75,17 @@ function loadApp(app) {
 }
 
 function validate(app) {
-  const T = loadApp(app);
-  const problems = [];
+  const wiring = dataFiles(app);
+  const problems = wiring.problems.slice();
+  const T = loadApp(app, wiring.files);
   if (!T.length) problems.push('no topics loaded');
 
   T.forEach((t) => {
     REQUIRED.forEach((k) => { if (!t[k]) problems.push(t.id + ': missing ' + k); });
     if (!t.summary || !t.summary.en || !t.summary.cn) problems.push(t.id + ': summary missing a language');
+    if (t.book !== undefined && BOOKS.indexOf(t.book) === -1) {
+      problems.push(t.id + ': book must be one of ' + BOOKS.join('/') + ', got ' + JSON.stringify(t.book));
+    }
 
     (t.points || []).forEach((p, i) => {
       if (!p.en || !p.cn) problems.push(t.id + ': points[' + i + '] missing a language');
@@ -65,38 +109,60 @@ function validate(app) {
     }
   });
 
+  /* All-or-nothing on the two new fields. A half-migrated app -- some nodes
+     tagged, some not -- is the state where the topic view silently drops
+     whatever was missed, and it looks fine on screen. Either the app has been
+     migrated or it has not. */
+  [['book', (t) => t.book], ['topicKey', (t) => t.topicKey]].forEach((pair) => {
+    const name = pair[0];
+    const got = T.filter(pair[1]).length;
+    if (got !== 0 && got !== T.length) {
+      problems.push(name + ': ' + got + ' of ' + T.length
+        + ' topics have it -- it must be on all of them or none');
+    }
+  });
+
   const ids = T.map((t) => t.id);
   ids.filter((v, i) => ids.indexOf(v) !== i)
      .filter((v, i, a) => a.indexOf(v) === i)
      .forEach((d) => problems.push('duplicate id ' + d));
 
-  // Page coverage must have no holes inside a chapter's own span.
+  /* Page coverage must have no holes inside a chapter's own span -- Czech book
+     only, and keyed by book because `chapter` is book-local. */
   const byChapter = {};
   T.forEach((t) => {
+    if ((t.book || 'cz') !== 'cz') return;
+    const key = 'cz/' + t.chapter;
     (t.pages || []).forEach((p) => {
-      (byChapter[t.chapter] = byChapter[t.chapter] || new Set()).add(p);
+      (byChapter[key] = byChapter[key] || new Set()).add(p);
     });
   });
-  Object.keys(byChapter).forEach((ch) => {
-    const pages = Array.from(byChapter[ch]).sort((a, b) => a - b);
+  Object.keys(byChapter).forEach((key) => {
+    const pages = Array.from(byChapter[key]).sort((a, b) => a - b);
     const gaps = [];
     for (let p = pages[0]; p <= pages[pages.length - 1]; p++) {
-      if (!byChapter[ch].has(p)) gaps.push(p);
+      if (!byChapter[key].has(p)) gaps.push(p);
     }
-    if (gaps.length) problems.push('ch' + ch + ': page gaps ' + gaps.join(','));
+    if (gaps.length) problems.push(key + ': page gaps ' + gaps.join(','));
   });
 
-  const allPages = T.reduce((s, t) => s.concat(t.pages || []), []);
+  const czTopics = T.filter((t) => (t.book || 'cz') === 'cz');
+  const lehTopics = T.filter((t) => t.book === 'lehninger');
+  const allPages = czTopics.reduce((s, t) => s.concat(t.pages || []), []);
   const terms = T.reduce((n, t) => n + (t.terms || []).length, 0);
   const qs = T.reduce((n, t) => n + (t.quiz || []).length, 0);
+  const keys = {};
+  T.forEach((t) => { if (t.topicKey) keys[t.topicKey] = true; });
 
   if (problems.length) {
     console.error('FAIL ' + app);
     problems.forEach((p) => console.error('  ' + p));
     return false;
   }
-  console.log('ok ' + app + ': ' + T.length + ' topics, book pages '
-    + Math.min.apply(null, allPages) + '-' + Math.max.apply(null, allPages)
+  console.log('ok ' + app + ': ' + T.length + ' topics ('
+    + czTopics.length + ' cz, ' + lehTopics.length + ' lehninger)'
+    + ', cz book pages ' + Math.min.apply(null, allPages) + '-' + Math.max.apply(null, allPages)
+    + ', ' + Object.keys(keys).length + ' topicKeys'
     + ', ' + terms + ' terms, ' + qs + ' questions');
   return true;
 }

@@ -1,0 +1,247 @@
+slugs defined: 85; every one of the 85 claimed sections has one; all distinct
+nodes assigned: 207
+
+distinct topicKeys in use: 61, over 113 Czech sections and 207 nodes
+
+=== every topicKey, and the Czech sections that join on it ===
+
+  monosaccharides   [L7.1 A pp.230-241]  12 CZ sections, 15 nodes
+      CZ 7.1      pp.148       Monosaccharides
+      CZ 7.1.1    pp.148       Aldoses, ketoses
+      CZ 7.1.2    pp.148-150   Deriving aldoses and ketoses — the aldose family tree (O
+      CZ 7.1.3    pp.149-152   Hemiacetal/hemiketal forms — formation, anomers, Haworth
+      CZ 7.1.4    pp.151       Mutarotation
+      CZ 7.2.1    pp.152       Sugar esters
+      CZ 7.2.2    pp.152-153   Sugar acids
+      CZ 7.2.3    pp.153       Sugar alcohols
+      CZ 7.2.4    pp.153       Amino sugars
+      CZ 7.2.5    pp.153       Deoxy sugars
+      CZ 7.2.6    pp.153-154   Glycosides
+      CZ 7.3      pp.154-155   Oligosaccharides — definitions and non-reducing oligosac
+
+  enzyme-kinetics   [L6.3 A pp.188-203]  5 CZ sections, 5 nodes
+      CZ 3.3.1    pp.54-57     Enzyme reaction kinetics; the Michaelis–Menten equation
+      CZ 3.3.2    pp.57-58     Two-substrate reactions
+      CZ 3.3.3    pp.58        Measurement of enzyme activity
+      CZ 3.4      pp.58-59     Influence of pH and temperature on enzyme reactions
+      CZ 3.5      pp.59-61     Inhibition of enzyme reactions
+
+  feeder-pathways-glycolysis   [L14.2 A pp.522-525]  4 CZ sections, 7 nodes
+      CZ 7.10     pp.170-172   Enzymatic cleavage of glycosides and oligosaccharides — 
+      CZ 7.11.1   pp.172-173   Hydrolytic cleavage — alpha- and beta-amylases
+      CZ 7.6      pp.159       Sugar interconversions — introduction (three reaction ty
+      CZ 7.6.1    pp.160       Epimerization and isomerization
+
+  amino-acids   [L3.1 A pp.71-79]  3 CZ sections, 3 nodes
+      CZ 2.1.1    pp.21-23     Structure and occurrence of amino acids
+      CZ 2.1.2    pp.23-24     Physico-chemical properties of amino acids
+      CZ 2.1.3    pp.24-25     Chemical reactions of amino acids
+
+  cells-and-biomolecules   [L1.1 A pp.2-9]  3 CZ sections, 3 nodes
+      CZ 1.1      pp.8-9       What is biochemistry?
+      CZ 1.2      pp.10-11     Living and non-living
+      CZ 1.3      pp.11-16     Building blocks of living matter: from molecule to cell
+
+  membrane-architecture   [L11.1 A pp.367-376]  3 CZ sections, 5 nodes
+      CZ 8.5      pp.197-198   Biological membranes (introduction)
+      CZ 8.5.1    pp.198       Chemical composition
+      CZ 8.5.2    pp.198-200   Structure — the lipid bilayer
+
+  nucleotide-metabolism   [L22.4 A pp.824-837]  3 CZ sections, 3 nodes
+      CZ 4.1.1.1  pp.67-70     Biosynthesis of nucleotides; biosynthesis of purine nucl
+      CZ 4.1.1.2  pp.70-72     Biosynthesis of pyrimidine nucleotides
+      CZ 4.1.5    pp.91-92     Degradation of nucleic acids
+
+  pentose-phosphate-pathway   [L14.6 A pp.546-551]  3 CZ sections, 4 nodes
+      CZ 7.6.2    pp.160-161   Oxidation and decarboxylation of glucose
+      CZ 7.6.3    pp.161       Transfer of three-carbon or two-carbon fragments
+      CZ 7.7      pp.162-163   Two routes to pentose phosphates — the oxidative pentose
+
+  photosynthetic-pigments   [L20.1 A pp.701-707]  3 CZ sections, 8 nodes
+      CZ 9        pp.202       Photoautotrophy — the five metabolisms specific to autot
+      CZ 9.1      pp.202-204   Basic processes of photosynthesis — the general equation
+      CZ 9.1.1    pp.204-206   The three categories of photosynthetic pigment
+
+  polysaccharides   [L7.2 A pp.241-246]  3 CZ sections, 4 nodes
+      CZ 7.4      pp.155       Polysaccharides
+      CZ 7.4.1    pp.156-157   Homopolysaccharides -- A. Storage polysaccharides (starc
+      CZ 7.4.2    pp.157-158   Heteropolysaccharides (glycosaminoglycans, hyaluronic ac
+
+  protein-targeting-and-degradation   [L27.3 A pp.1040-1050]  3 CZ sections, 3 nodes
+      CZ 4.3.2    pp.110-111   Post-translational modification of the polypeptide chain
+      CZ 4.3.3    pp.111-114   Covalent modification of amino acid side chains
+      CZ 5.1      pp.115-118   Proteolytic cleavage of proteins
+
+  storage-lipids   [L10.1 A pp.340-346]  3 CZ sections, 5 nodes
+      CZ 8.1      pp.176       Definition and classification
+      CZ 8.2.1    pp.177-178   Fatty acids — definition, classification, natural occurr
+      CZ 8.2.2    pp.178-179   Simple lipids — Neutral acylglycerols
+
+  amino-group-metabolism   [L18.1 A pp.627-634]  2 CZ sections, 3 nodes
+      CZ 5.2      pp.118       Degradation of amino acids
+      CZ 5.2.1    pp.118-122   Metabolic reactions at the amino acid α-carbon — deamina
+
+  biochemical-reaction-logic   [L13.2 A pp.472-478]  2 CZ sections, 6 nodes
+      CZ 6.1.3    pp.133-134   Catabolic and anabolic processes
+      CZ 10.1     pp.218-219   Intermediary metabolism — catabolism, anabolism and the 
+
+  bioenergetics-and-thermodynamics   [L13.1 A pp.466-471]  2 CZ sections, 2 nodes
+      CZ 6.1      pp.130       Principles of bioenergetics
+      CZ 6.1.1    pp.131       Exergonic and endergonic reactions
+
+  bioenergetics-basics   [L1.3 A pp.18-27]  2 CZ sections, 2 nodes
+      CZ 1.4      pp.16-17     Nutrition and metabolism
+      CZ 1.5      pp.17-18     Energy and life
+
+  cholesterol-and-isoprenoids   [L21.4 A pp.772-789]  2 CZ sections, 2 nodes
+      CZ 8.4.3    pp.194       Derived lipids
+      CZ 9.5      pp.216-217   Secondary plant metabolites
+
+  enzymes-introduction   [L6.1 A pp.177-179]  2 CZ sections, 2 nodes
+      CZ 3.1      pp.41-42     Classification and nomenclature of enzymes
+      CZ 3.2      pp.42-54     Structure of the enzyme molecule; Coenzymes
+
+  fat-mobilization   [L17.1 A pp.603-606]  2 CZ sections, 5 nodes
+      CZ 8.4.1    pp.193       Simple lipids
+      CZ 8.4.4    pp.194-197   Fatty acids — activation
+
+  gluconeogenesis   [L14.4 A pp.533-538]  2 CZ sections, 2 nodes
+      CZ 7.9      pp.169-170   Gluconeogenesis, glucose resynthesis — bypassing glycoly
+      CZ 7.9.1    pp.170       Gluconeogenesis from amino acids
+
+  glycogen-metabolism   [L15.2 A pp.558-564]  2 CZ sections, 4 nodes
+      CZ 7.11.2   pp.173-174   Phosphorolysis of starch and glycogen — general mechanis
+      CZ 7.12     pp.174-175   Biosynthesis of polysaccharides — glycogen synthase and 
+
+  glycolysis   [L14.1 A pp.511-521]  2 CZ sections, 5 nodes
+      CZ 7.8      pp.164-167   Glycolysis — introduction and the preparatory phase (glu
+      CZ 10.1.1   pp.219       Carbohydrate metabolism — degradation
+
+  nucleotides   [L8.1 A pp.263-269]  2 CZ sections, 2 nodes
+      CZ 4.1      pp.66-67     Nucleic acids are the basic molecules of heredity
+      CZ 4.1.2    pp.72-75     Structure of nucleic acids
+
+  peptides-and-proteins   [L3.2 A pp.79-83]  2 CZ sections, 2 nodes
+      CZ 2.1.4    pp.26        Formation of the peptide bond
+      CZ 2.2.5    pp.36-37     Simple and conjugated proteins
+
+  photochemical-reaction-centers   [L20.2 A pp.708-716]  2 CZ sections, 6 nodes
+      CZ 9.1.2    pp.206       Other components of the thylakoid membranes
+      CZ 9.1.3    pp.206-209   The reaction centre, and the legend to Obr. 9.5
+
+  photorespiration-c4-cam   [L20.5 A pp.727-732]  2 CZ sections, 3 nodes
+      CZ 9.2      pp.212-213   Photorespiration — three enzymes, three compartments
+      CZ 9.3      pp.212-214   C-4 plants — the Hatch–Slack cycle
+
+  protein-tertiary-quaternary   [L4.3 A pp.116-129]  2 CZ sections, 2 nodes
+      CZ 2.2.3    pp.33-34     Conformation of proteins — the levels of structure
+      CZ 2.2.4    pp.34-35     Types of construction of the protein molecule
+
+  translation   [L27.2 A pp.1015-1040]  2 CZ sections, 3 nodes
+      CZ 4.2.2    pp.94-95     Protein synthesis takes place in ribosomes
+      CZ 4.2.3    pp.95-102    Phases of protein synthesis (I): amino acid activation, 
+
+  acetyl-coa-production   [L16.1 A pp.575-578]  1 CZ sections, 4 nodes
+      CZ 6.2.2    pp.136-140   The citrate cycle — introduction, cycle overview, and ci
+
+  amino-acid-degradation   [L18.3 A pp.640-654]  1 CZ sections, 4 nodes
+      CZ 5.2.3    pp.125-129   Degradation of the carbon skeleton and mutual interconve
+
+  amino-acid-derived-molecules   [L22.3 A pp.816-824]  1 CZ sections, 3 nodes
+      CZ 6.3      pp.146-147   Porphyrin proteins — structure and biological versatilit
+
+  atp-and-phosphoryl-transfer   [L13.3 A pp.478-488]  1 CZ sections, 2 nodes
+      CZ 6.1.2    pp.131-133   High-energy (macroergic) compounds — the concept, anhydr
+
+  biological-redox   [L13.4 A pp.488-496]  1 CZ sections, 1 nodes
+      CZ 6.2.1    pp.134-135   Oxidation-reduction processes
+
+  co2-assimilation   [L20.4 A pp.719-727]  1 CZ sections, 5 nodes
+      CZ 9.1.4    pp.209-212   Photosynthetic CO₂ fixation — why 'dark phase' is a bad 
+
+  dna-replication   [L25.1 A pp.914-930]  1 CZ sections, 2 nodes
+      CZ 4.1.3    pp.76-84     DNA structure and biosynthesis explain the principle of 
+
+  enzyme-mechanism   [L6.2 A pp.179-188]  1 CZ sections, 1 nodes
+      CZ 3.6      pp.61-62     Mechanism of enzyme action
+
+  fates-of-pyruvate   [L14.3 A pp.525-532]  1 CZ sections, 2 nodes
+      CZ 7.8.1    pp.167-169   Formation of ethanol, lactate, or acetyl-CoA — ethanol a
+
+  fatty-acid-biosynthesis   [L21.1 A pp.745-760]  1 CZ sections, 9 nodes
+      CZ 8.3      pp.187-193   Lipid biosynthesis — Fatty acids: subcellular compartmen
+
+  fatty-acid-oxidation   [L17.2 A pp.607-618]  1 CZ sections, 2 nodes
+      CZ 10.1.2   pp.220       Lipid metabolism — degradation and ketone bodies
+
+  gene-regulation-proteins   [L28.1 A pp.1055-1065]  1 CZ sections, 2 nodes
+      CZ 4.2.4    pp.102-108   Regulation of protein synthesis (I): the lactose and try
+
+  genetic-code   [L27.1 A pp.1006-1015]  1 CZ sections, 1 nodes
+      CZ 4.2.1    pp.92-94     The gene sequence determines the order of amino acids in
+
+  glycoconjugates   [L7.3 A pp.247-253]  1 CZ sections, 1 nodes
+      CZ 7.5      pp.158-160   Oligosaccharides bound to proteins
+
+  hormone-structure-and-action   [L23.1 A pp.842-848]  1 CZ sections, 10 nodes
+      CZ 10.3     pp.222-228   Hormones — definition, the gland hierarchy, and hormonal
+
+  intermediary-metabolism-hub   [L16.3 A pp.590-592]  1 CZ sections, 1 nodes
+      CZ 10.1.4   pp.220-221   The citrate cycle and respiratory chain — energetics and
+
+  lipid-signals-and-pigments   [L10.3 A pp.353-360]  1 CZ sections, 6 nodes
+      CZ 8.2.4    pp.182-187   Derived lipids — terpenes (isoprenoids): characteristics
+
+  membrane-lipids   [L10.2 A pp.346-353]  1 CZ sections, 4 nodes
+      CZ 8.2.3    pp.179-182   Complex lipids — Glycoacylglycerols (introduction)
+
+  membrane-transport   [L11.3 A pp.385-403]  1 CZ sections, 3 nodes
+      CZ 8.5.3    pp.200-201   Membrane transport — passive transport, simple diffusion
+
+  metabolic-regulation   [L13.5 A pp.497-503]  1 CZ sections, 5 nodes
+      CZ 10.2     pp.221-222   Regulatory mechanisms — why, and at what levels
+
+  nitrogen-metabolism   [L22.1 A pp.795-804]  1 CZ sections, 4 nodes
+      CZ 9.4      pp.214-216   Fixation of atmospheric nitrogen — nitrogenase
+
+  origin-and-evolution-of-life   [L1.5 A pp.30-36]  1 CZ sections, 1 nodes
+      CZ 1.6      pp.18-20     Origin and evolution of life
+
+  protein-folding-and-denaturation   [L4.4 A pp.129-136]  1 CZ sections, 1 nodes
+      CZ 4.3.1    pp.108-110   Non-covalent interactions and folding of the polypeptide
+
+  protein-primary-structure   [L3.4 A pp.91-100]  1 CZ sections, 1 nodes
+      CZ 2.2.1    pp.26-27     Amino acid sequence (primary structure)
+
+  protein-structure-overview   [L4.1 A pp.108-110]  1 CZ sections, 1 nodes
+      CZ 2.2.2    pp.27-33     Principles of conformation
+
+  regulatory-enzymes   [L6.5 A pp.213-223]  1 CZ sections, 1 nodes
+      CZ 3.7      pp.62-65     Regulatory enzymes; allosteric enzymes
+
+  respiratory-chain   [L19.1 A pp.660-674]  1 CZ sections, 5 nodes
+      CZ 6.2.4    pp.141-146   The respiratory chain and aerobic phosphorylation — intr
+
+  starch-sucrose-biosynthesis   [L20.6 A pp.732-739]  1 CZ sections, 1 nodes
+      CZ 6.2.3    pp.140-141   The glyoxylate cycle
+
+  tissue-specific-metabolism   [L23.2 A pp.848-858]  1 CZ sections, 1 nodes
+      CZ 10.1.3   pp.220       The relation of carbohydrate and lipid metabolism — why 
+
+  transcription   [L26.1 A pp.961-972]  1 CZ sections, 2 nodes
+      CZ 4.1.4    pp.85-91     DNA is transcribed into RNA — types and properties of RN
+
+  urea-cycle   [L18.2 A pp.634-640]  1 CZ sections, 2 nodes
+      CZ 5.2.2    pp.123-125   Ammonia detoxification, the urea (ornithine) cycle — sou
+
+  working-with-lipids   [L10.4 A pp.361-363]  1 CZ sections, 2 nodes
+      CZ 8.4.2    pp.193-194   Complex lipids — phospholipids and phospholipases
+
+  working-with-proteins   [L3.3 A pp.83-90]  1 CZ sections, 1 nodes
+      CZ 2.2.6    pp.37-40     Properties of proteins
+
+=== sanity: topicKeys carrying an unusually large or small load ===
+  5+ Czech sections on one key: [('enzyme-kinetics', 5), ('monosaccharides', 12)]
+  keys used by exactly one Czech section: 33 of 61
+
+OK: wrote topickey_assignment.json, topickey_by_node.json
