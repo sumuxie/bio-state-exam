@@ -12,6 +12,8 @@ nothing in `biochemie_pro/` or `biochemie_basic/` was touched. Regenerate with
 | `lehninger_AB_anchors.json` | the 713 FIGURE/TABLE/BOX anchors the A↔B map is built from |
 | `master_map.tsv` / `.json` | **step 3.** One row per Czech section (113): its pages, its node ids, the Lehninger sections it corresponds to, and where to read them in A and in B. |
 | `depth_queue.tsv` / `.json` | Lehninger sections ranked by how much more they say than the Czech book. Read `HANDOFF_LEHNINGER.md` §9a before using the ratio. |
+| `lehninger_only_scope.tsv` | the 32 Lehninger sections with no Czech counterpart, each tagged `full` / `brief` / `depth-layer-ASK` per the user's 2026-08-06 ruling (§9b) |
+| `cz_organic_load.json` | organic-chemistry vocabulary density per Czech section — which sections §5's rule has to carry (§5a) |
 | `cz_skeleton.json` | the 113 Czech sections — the skeleton settled in §8 |
 | `cz_nodes.json` | the 207 existing Czech nodes, parsed out of `biochemie_pro/data/ch*.js` |
 | `cz_to_lehninger_proposed.json` | the automatic matcher's independent proposal, kept as the cross-check evidence for `master_map` |
@@ -44,8 +46,14 @@ search index for `locate.py` and nothing else reads it. Delete it freely; it reb
   arbitrated from this book.
 - **Lehninger says "isoprenoid", never "terpene"** (0 in-chapter hits). Czech §8.2.4's
   "terpeny (isoprenoidy)" maps to §21.4.
-- **§6's documented absences re-confirmed:** `Beer-Lambert`, `Beer's law`,
-  `molar extinction coefficient`, `molar absorption coefficient` — 0 hits each.
+- **§6's documented absences re-confirmed, and five more found:** `Beer-Lambert`, `Beer's law`,
+  `molar extinction coefficient`, `molar absorption coefficient`, **`ninhydrin`**, `Merrifield`,
+  **`sedimentation coefficient`**, `colloid`, `creationism` / `intelligent design` — 0 hits each.
+  `Tyndall` appears in the index only. This strands Czech §2.1.3 and §2.2.6; see
+  `HANDOFF_LEHNINGER.md` §5a and §6.
+- **`locate.py` reports Glossary/Index hits separately as `(outside chapters)`.** It has to:
+  the back matter is 460 pages of a 1252-page file, and before the section upper bound was
+  added, every single query appeared to have a large hit in §28.3.
 
 ## Known limitations
 

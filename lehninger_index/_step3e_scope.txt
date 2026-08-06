@@ -1,0 +1,141 @@
+=== Lehninger sections with no Czech counterpart, with the user's scope ruling ===
+
+-- WORK PROPERLY: 7 sections, 88 printed pages
+   9.1    A pp.301-316   B 1154-1201  9.1 Studying Genes and Their Products
+   9.2    A pp.317-326   B 1202-1236  9.2 Exploring Protein Function on the Scale of Cells or Whole Organisms
+   22.2   A pp.805-816   B 2829-2862  22.2 Biosynthesis of Amino Acids
+   24.2   A pp.890-898   B 3115-3141  24.2 DNA Supercoiling
+   24.3   A pp.898-910   B 3142-3178  24.3 The Structure of Chromosomes
+   25.2   A pp.930-940   B 3251-3280  25.2 DNA Repair
+   25.3   A pp.940-956   B 3281-3324  25.3 DNA Recombination
+
+-- one-line mention: 19 sections, 125 printed pages
+   2.1    A pp.44-53    B 254-288   2.1 Weak Interactions in Aqueous Systems
+   2.3    A pp.59-64    B 313-334   2.3 Buffering against pH Changes in Biological Systems
+   4.5    A pp.136-142   B 581-598   4.5 Determination of Protein and Biomolecular Structures
+   5.2    A pp.164-168   B 681-695   5.2 Complementary Interactions between Proteins and Ligands: The Immune System and Immunoglobulins
+   5.3    A pp.168-172   B 696-708   5.3 Protein Interactions Modulated by Chemical Energy: Actin, Myosin, and Molecular Motors
+   8.4    A pp.294-296   B 1123-1131  8.4 Other Functions of Nucleotides
+   9.3    A pp.326-334   B 1237-1266  9.3 Genomics and the Human Story
+   12.1   A pp.408-411   B 1519-1527  12.1 General Features of Signal Transduction
+   12.2   A pp.412-428   B 1528-1580  12.2 G Protein–Coupled Receptors and Second Messengers
+   12.3   A pp.429-432   B 1581-1593  12.3 GPCRs in Vision, Olfaction, and Gustation
+   12.4   A pp.433-438   B 1594-1610  12.4 Receptor Tyrosine Kinases
+   12.5   A pp.438-442   B 1611-1622  12.5 Multivalent Adaptor Proteins and Membrane Rafts
+   12.6   A pp.442-445   B 1623-1632  12.6 Gated Ion Channels
+   12.8   A pp.446-450   B 1638-1653  12.8 Regulation of the Cell Cycle by Protein Kinases
+   12.9   A pp.451-456   B 1654-1671  12.9 Oncogenes, Tumor Suppressor Genes, and Programmed Cell Death
+   23.4   A pp.867-875   B 3030-3060  23.4 Obesity and the Regulation of Body Mass
+   23.5   A pp.875-880   B 3061-3074  23.5 Diabetes Mellitus
+   26.3   A pp.988-995   B 3429-3450  26.3 RNA-Dependent Synthesis of RNA and DNA
+   26.4   A pp.996-1001  B 3451-3469  26.4 Catalytic RNAs and the RNA World Hypothesis
+
+-- NOT a new topic - regulation of something already taught; ASK: 6 sections, 43 printed pages
+   14.5   A pp.539-546   B 1962-1987  14.5 Coordinated Regulation of Glycolysis and Gluconeogenesis
+   15.1   A pp.557-558   B 2030-2035  15.1 The Structure and Function of Glycogen
+   15.3   A pp.565-571   B 2056-2073  15.3 Coordinated Regulation of Glycogen Breakdown and Synthesis
+   19.4   A pp.689-691   B 2458-2466  19.4 Mitochondria in Thermogenesis, Steroid Synthesis, and Apoptosis
+   19.5   A pp.692-696   B 2467-2480  19.5 Mitochondrial Genes: Their Origin and the Effects of Mutations
+   28.3   A pp.1075-1092  B 3710-3759  28.3 Regulation of Gene Expression in Eukaryotes
+
+Sub-headings inside the FULL ones, so the writing has a target list:
+
+  9.1 9.1 Studying Genes and Their Products  (A pp.301-316)
+      A p.301   Genes Can Be Isolated by DNA Cloning
+      A p.302   Restriction Endonucleases and DNA Ligases Yield Recombinant DNA
+      A p.305   Cloning Vectors Allow Amplification of Inserted DNA Segments
+      A p.308   Cloned Genes Can Be Expressed to Amplify Protein Production
+      A p.309   Many Different Systems Are Used to Express Recombinant Proteins
+      A p.311   Alteration of Cloned Genes Produces Altered Proteins
+      A p.313   Terminal Tags Provide Handles for Affinity Purification
+      A p.314   The Polymerase Chain Reaction Offers Many Options for Cloning Experiments
+      A p.315   DNA Libraries Are Specialized Catalogs of Genetic Information
+
+  9.2 9.2 Exploring Protein Function on the Scale of Cells or Whole Organisms  (A pp.317-326)
+      A p.317   Sequence or Structural Relationships Can Suggest Protein Function
+      A p.318   When and Where a Protein Is Present in a Cell Can Suggest Protein Function
+      A p.320   Knowing What a Protein Interacts with Can Suggest Its Function
+      A p.322   The Effect of Deleting or Altering a Protein Can Suggest Its Function
+      A p.324   Many Proteins Are Still Undiscovered
+
+  24.2 24.2 DNA Supercoiling  (A pp.890-898)
+      A p.892   Most Cellular DNA Is Underwound
+      A p.892   DNA Underwinding Is Defined by Topological Linking Number
+      A p.895   Topoisomerases Catalyze Changes in the Linking Number of DNA
+      A p.897   DNA Compaction Requires a Special Form of Supercoiling
+
+  24.3 24.3 The Structure of Chromosomes  (A pp.898-910)
+      A p.898   Chromatin Consists of DNA, Proteins, and RNA
+      A p.899   Histones Are Small, Basic Proteins
+      A p.900   Nucleosomes Are the Fundamental Organizational Units of Chromatin
+      A p.902   Nucleosomes Are Packed into Highly Condensed Chromosome Structures
+      A p.906   Condensed Chromosome Structures Are Maintained by SMC Proteins
+      A p.909   Bacterial DNA Is Also Highly Organized
+      A p.910   Chapter Review
+      A p.910   Key Terms
+      A p.911   Problems
+
+  25.2 25.2 DNA Repair  (A pp.930-940)
+      A p.930   Mutations Are Linked to Cancer
+      A p.931   All Cells Have Multiple DNA Repair Systems
+      A p.938   The Interaction of Replication Forks with DNA Damage Can Lead to Error-Prone Translesion DNA Synthesis
+
+  25.3 25.3 DNA Recombination  (A pp.940-956)
+      A p.940   Bacterial Homologous Recombination Is a DNA Repair Function
+      A p.944   Eukaryotic Homologous Recombination Is Required for Proper Chromosome Segregation during Meiosis
+      A p.948   Some Double-Strand Breaks Are Repaired by Nonhomologous End Joining
+      A p.950   Site-Specific Recombination Results in Precise DNA Rearrangements
+      A p.952   Transposable Genetic Elements Move from One Location to Another
+      A p.954   Immunoglobulin Genes Assemble by Recombination
+      A p.956   Chapter Review
+      A p.956   Key Terms
+      A p.956   Problems
+
+  22.2 22.2 Biosynthesis of Amino Acids  (A pp.805-816)
+      A p.805   Organisms Vary Greatly in Their Ability to Synthesize the 20 Common Amino Acids
+      A p.805   α-Ketoglutarate Gives Rise to Glutamate, Glutamine, Proline, and Arginine
+      A p.806   Serine, Glycine, and Cysteine Are Derived from 3-Phosphoglycerate
+      A p.808   Three Nonessential and Six Essential Amino Acids Are Synthesized from Oxaloacetate and Pyruvate
+      A p.810   Chorismate Is a Key Intermediate in the Synthesis of Tryptophan, Phenylalanine, and Tyrosine
+      A p.814   Histidine Biosynthesis Uses Precursors of Purine Biosynthesis
+      A p.815   Amino Acid Biosynthesis Is under Allosteric Regulation
+
+
+=== how organic-chemistry-heavy each Czech section is ===
+per_1k = organic-chemistry vocabulary hits per 1000 words of the node's own English text.
+This is a keyword proxy, not a judgement of difficulty -- but the top of the list is
+exactly where the user has said they have no ground to stand on.
+
+ per1k  hits  CZ       title                                          Lehninger
+ 130.1    35  7.1.1    Aldoses, ketoses                               7.1
+ 102.7    15  7.6.1    Epimerization and isomerization                14.2
+  95.5    17  2.1.3    Chemical reactions of amino acids              3.1
+  91.4    18  7.2.1    Sugar esters                                   7.1
+  86.2    25  7.2.6    Glycosides                                     7.1
+  80.9    36  7.1.2    Deriving aldoses and ketoses — the aldose fa   7.1
+  76.4    12  8.4.1    Simple lipids                                  17.1
+  68.6    43  7.1.3    Hemiacetal/hemiketal forms — formation, anom   7.1
+  67.6    46  8.2.2    Simple lipids — Neutral acylglycerols          10.1
+  50.6    40  8.2.1    Fatty acids — definition, classification, na   10.1
+  49.1     8  7.1.4    Mutarotation                                   7.1
+  45.4    48  8.4.4    Fatty acids — activation                       17.1,17.2,17.3
+  44.3    21  8.4.2    Complex lipids — phospholipids and phospholi   10.4,21.3
+  42.0    10  7.2.2    Sugar acids                                    7.1
+  40.8    10  7.2.3    Sugar alcohols                                 7.1
+  40.4    49  8.2.3    Complex lipids — Glycoacylglycerols (introdu   10.2
+  40.1    43  6.1.2    High-energy (macroergic) compounds — the con   13.3
+  38.7   111  8.3      Lipid biosynthesis — Fatty acids: subcellula   21.1,21.2,21.3,21.4
+  35.7     6  7.6      Sugar interconversions — introduction (three   14.2
+  33.9    19  8.1      Definition and classification                  10.1
+  32.9    26  7.8.1    Formation of ethanol, lactate, or acetyl-CoA   14.3
+  32.6    35  7.8      Glycolysis — introduction and the preparator   14.1
+
+sample vocabulary that fired, for the top 6:
+   7.1.1     aldehyd, asymmetric carbon, carbonyl, configuration, d- , hydroxyl group, isomer, keton
+   7.6.1     aldehyd, carbonyl, epimer, hydroxyl group, isomer
+   2.1.3     acyl, amide, anhydrid, azide, ester, halide, ninhydrin, reduction of the
+   7.2.1     ester, glycosidic bond, hydroxyl group
+   7.2.6     acetal, anomer, configuration, glycosidic bond, hemiacetal, hydroxyl group
+   7.1.2     aldehyd, asymmetric carbon, carbonyl, chiral, configuration, epimer, fischer, isomer
+
+OK: wrote lehninger_only_scope.tsv, cz_organic_load.json

@@ -1,0 +1,33 @@
+leh_section	scope	pages	page_a_print	page_a_print_end	page_b	page_b_end	title
+2.1	brief	10	44	53	254	288	2.1 Weak Interactions in Aqueous Systems
+2.3	brief	6	59	64	313	334	2.3 Buffering against pH Changes in Biological Systems
+4.5	brief	7	136	142	581	598	4.5 Determination of Protein and Biomolecular Structures
+5.2	brief	5	164	168	681	695	5.2 Complementary Interactions between Proteins and Ligands: The Immune System and Immunoglobulins
+5.3	brief	5	168	172	696	708	5.3 Protein Interactions Modulated by Chemical Energy: Actin, Myosin, and Molecular Motors
+8.4	brief	3	294	296	1123	1131	8.4 Other Functions of Nucleotides
+9.1	full	16	301	316	1154	1201	9.1 Studying Genes and Their Products
+9.2	full	10	317	326	1202	1236	9.2 Exploring Protein Function on the Scale of Cells or Whole Organisms
+9.3	brief	9	326	334	1237	1266	9.3 Genomics and the Human Story
+12.1	brief	4	408	411	1519	1527	12.1 General Features of Signal Transduction
+12.2	brief	17	412	428	1528	1580	12.2 G Protein–Coupled Receptors and Second Messengers
+12.3	brief	4	429	432	1581	1593	12.3 GPCRs in Vision, Olfaction, and Gustation
+12.4	brief	6	433	438	1594	1610	12.4 Receptor Tyrosine Kinases
+12.5	brief	5	438	442	1611	1622	12.5 Multivalent Adaptor Proteins and Membrane Rafts
+12.6	brief	4	442	445	1623	1632	12.6 Gated Ion Channels
+12.8	brief	5	446	450	1638	1653	12.8 Regulation of the Cell Cycle by Protein Kinases
+12.9	brief	6	451	456	1654	1671	12.9 Oncogenes, Tumor Suppressor Genes, and Programmed Cell Death
+14.5	depth-layer-ASK	8	539	546	1962	1987	14.5 Coordinated Regulation of Glycolysis and Gluconeogenesis
+15.1	depth-layer-ASK	2	557	558	2030	2035	15.1 The Structure and Function of Glycogen
+15.3	depth-layer-ASK	7	565	571	2056	2073	15.3 Coordinated Regulation of Glycogen Breakdown and Synthesis
+19.4	depth-layer-ASK	3	689	691	2458	2466	19.4 Mitochondria in Thermogenesis, Steroid Synthesis, and Apoptosis
+19.5	depth-layer-ASK	5	692	696	2467	2480	19.5 Mitochondrial Genes: Their Origin and the Effects of Mutations
+22.2	full	12	805	816	2829	2862	22.2 Biosynthesis of Amino Acids
+23.4	brief	9	867	875	3030	3060	23.4 Obesity and the Regulation of Body Mass
+23.5	brief	6	875	880	3061	3074	23.5 Diabetes Mellitus
+24.2	full	9	890	898	3115	3141	24.2 DNA Supercoiling
+24.3	full	13	898	910	3142	3178	24.3 The Structure of Chromosomes
+25.2	full	11	930	940	3251	3280	25.2 DNA Repair
+25.3	full	17	940	956	3281	3324	25.3 DNA Recombination
+26.3	brief	8	988	995	3429	3450	26.3 RNA-Dependent Synthesis of RNA and DNA
+26.4	brief	6	996	1001	3451	3469	26.4 Catalytic RNAs and the RNA World Hypothesis
+28.3	depth-layer-ASK	18	1075	1092	3710	3759	28.3 Regulation of Gene Expression in Eukaryotes

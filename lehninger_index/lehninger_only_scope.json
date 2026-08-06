@@ -1,0 +1,322 @@
+[
+ {
+  "leh_section": "2.1",
+  "title": "2.1 Weak Interactions in Aqueous Systems",
+  "scope": "brief",
+  "page_a_print": 44,
+  "page_a_print_end": 53,
+  "page_b": 254,
+  "page_b_end": 288,
+  "pages": 10
+ },
+ {
+  "leh_section": "2.3",
+  "title": "2.3 Buffering against pH Changes in Biological Systems",
+  "scope": "brief",
+  "page_a_print": 59,
+  "page_a_print_end": 64,
+  "page_b": 313,
+  "page_b_end": 334,
+  "pages": 6
+ },
+ {
+  "leh_section": "4.5",
+  "title": "4.5 Determination of Protein and Biomolecular Structures",
+  "scope": "brief",
+  "page_a_print": 136,
+  "page_a_print_end": 142,
+  "page_b": 581,
+  "page_b_end": 598,
+  "pages": 7
+ },
+ {
+  "leh_section": "5.2",
+  "title": "5.2 Complementary Interactions between Proteins and Ligands: The Immune System and Immunoglobulins",
+  "scope": "brief",
+  "page_a_print": 164,
+  "page_a_print_end": 168,
+  "page_b": 681,
+  "page_b_end": 695,
+  "pages": 5
+ },
+ {
+  "leh_section": "5.3",
+  "title": "5.3 Protein Interactions Modulated by Chemical Energy: Actin, Myosin, and Molecular Motors",
+  "scope": "brief",
+  "page_a_print": 168,
+  "page_a_print_end": 172,
+  "page_b": 696,
+  "page_b_end": 708,
+  "pages": 5
+ },
+ {
+  "leh_section": "8.4",
+  "title": "8.4 Other Functions of Nucleotides",
+  "scope": "brief",
+  "page_a_print": 294,
+  "page_a_print_end": 296,
+  "page_b": 1123,
+  "page_b_end": 1131,
+  "pages": 3
+ },
+ {
+  "leh_section": "9.1",
+  "title": "9.1 Studying Genes and Their Products",
+  "scope": "full",
+  "page_a_print": 301,
+  "page_a_print_end": 316,
+  "page_b": 1154,
+  "page_b_end": 1201,
+  "pages": 16
+ },
+ {
+  "leh_section": "9.2",
+  "title": "9.2 Exploring Protein Function on the Scale of Cells or Whole Organisms",
+  "scope": "full",
+  "page_a_print": 317,
+  "page_a_print_end": 326,
+  "page_b": 1202,
+  "page_b_end": 1236,
+  "pages": 10
+ },
+ {
+  "leh_section": "9.3",
+  "title": "9.3 Genomics and the Human Story",
+  "scope": "brief",
+  "page_a_print": 326,
+  "page_a_print_end": 334,
+  "page_b": 1237,
+  "page_b_end": 1266,
+  "pages": 9
+ },
+ {
+  "leh_section": "12.1",
+  "title": "12.1 General Features of Signal Transduction",
+  "scope": "brief",
+  "page_a_print": 408,
+  "page_a_print_end": 411,
+  "page_b": 1519,
+  "page_b_end": 1527,
+  "pages": 4
+ },
+ {
+  "leh_section": "12.2",
+  "title": "12.2 G Protein–Coupled Receptors and Second Messengers",
+  "scope": "brief",
+  "page_a_print": 412,
+  "page_a_print_end": 428,
+  "page_b": 1528,
+  "page_b_end": 1580,
+  "pages": 17
+ },
+ {
+  "leh_section": "12.3",
+  "title": "12.3 GPCRs in Vision, Olfaction, and Gustation",
+  "scope": "brief",
+  "page_a_print": 429,
+  "page_a_print_end": 432,
+  "page_b": 1581,
+  "page_b_end": 1593,
+  "pages": 4
+ },
+ {
+  "leh_section": "12.4",
+  "title": "12.4 Receptor Tyrosine Kinases",
+  "scope": "brief",
+  "page_a_print": 433,
+  "page_a_print_end": 438,
+  "page_b": 1594,
+  "page_b_end": 1610,
+  "pages": 6
+ },
+ {
+  "leh_section": "12.5",
+  "title": "12.5 Multivalent Adaptor Proteins and Membrane Rafts",
+  "scope": "brief",
+  "page_a_print": 438,
+  "page_a_print_end": 442,
+  "page_b": 1611,
+  "page_b_end": 1622,
+  "pages": 5
+ },
+ {
+  "leh_section": "12.6",
+  "title": "12.6 Gated Ion Channels",
+  "scope": "brief",
+  "page_a_print": 442,
+  "page_a_print_end": 445,
+  "page_b": 1623,
+  "page_b_end": 1632,
+  "pages": 4
+ },
+ {
+  "leh_section": "12.8",
+  "title": "12.8 Regulation of the Cell Cycle by Protein Kinases",
+  "scope": "brief",
+  "page_a_print": 446,
+  "page_a_print_end": 450,
+  "page_b": 1638,
+  "page_b_end": 1653,
+  "pages": 5
+ },
+ {
+  "leh_section": "12.9",
+  "title": "12.9 Oncogenes, Tumor Suppressor Genes, and Programmed Cell Death",
+  "scope": "brief",
+  "page_a_print": 451,
+  "page_a_print_end": 456,
+  "page_b": 1654,
+  "page_b_end": 1671,
+  "pages": 6
+ },
+ {
+  "leh_section": "14.5",
+  "title": "14.5 Coordinated Regulation of Glycolysis and Gluconeogenesis",
+  "scope": "depth-layer-ASK",
+  "page_a_print": 539,
+  "page_a_print_end": 546,
+  "page_b": 1962,
+  "page_b_end": 1987,
+  "pages": 8
+ },
+ {
+  "leh_section": "15.1",
+  "title": "15.1 The Structure and Function of Glycogen",
+  "scope": "depth-layer-ASK",
+  "page_a_print": 557,
+  "page_a_print_end": 558,
+  "page_b": 2030,
+  "page_b_end": 2035,
+  "pages": 2
+ },
+ {
+  "leh_section": "15.3",
+  "title": "15.3 Coordinated Regulation of Glycogen Breakdown and Synthesis",
+  "scope": "depth-layer-ASK",
+  "page_a_print": 565,
+  "page_a_print_end": 571,
+  "page_b": 2056,
+  "page_b_end": 2073,
+  "pages": 7
+ },
+ {
+  "leh_section": "19.4",
+  "title": "19.4 Mitochondria in Thermogenesis, Steroid Synthesis, and Apoptosis",
+  "scope": "depth-layer-ASK",
+  "page_a_print": 689,
+  "page_a_print_end": 691,
+  "page_b": 2458,
+  "page_b_end": 2466,
+  "pages": 3
+ },
+ {
+  "leh_section": "19.5",
+  "title": "19.5 Mitochondrial Genes: Their Origin and the Effects of Mutations",
+  "scope": "depth-layer-ASK",
+  "page_a_print": 692,
+  "page_a_print_end": 696,
+  "page_b": 2467,
+  "page_b_end": 2480,
+  "pages": 5
+ },
+ {
+  "leh_section": "22.2",
+  "title": "22.2 Biosynthesis of Amino Acids",
+  "scope": "full",
+  "page_a_print": 805,
+  "page_a_print_end": 816,
+  "page_b": 2829,
+  "page_b_end": 2862,
+  "pages": 12
+ },
+ {
+  "leh_section": "23.4",
+  "title": "23.4 Obesity and the Regulation of Body Mass",
+  "scope": "brief",
+  "page_a_print": 867,
+  "page_a_print_end": 875,
+  "page_b": 3030,
+  "page_b_end": 3060,
+  "pages": 9
+ },
+ {
+  "leh_section": "23.5",
+  "title": "23.5 Diabetes Mellitus",
+  "scope": "brief",
+  "page_a_print": 875,
+  "page_a_print_end": 880,
+  "page_b": 3061,
+  "page_b_end": 3074,
+  "pages": 6
+ },
+ {
+  "leh_section": "24.2",
+  "title": "24.2 DNA Supercoiling",
+  "scope": "full",
+  "page_a_print": 890,
+  "page_a_print_end": 898,
+  "page_b": 3115,
+  "page_b_end": 3141,
+  "pages": 9
+ },
+ {
+  "leh_section": "24.3",
+  "title": "24.3 The Structure of Chromosomes",
+  "scope": "full",
+  "page_a_print": 898,
+  "page_a_print_end": 910,
+  "page_b": 3142,
+  "page_b_end": 3178,
+  "pages": 13
+ },
+ {
+  "leh_section": "25.2",
+  "title": "25.2 DNA Repair",
+  "scope": "full",
+  "page_a_print": 930,
+  "page_a_print_end": 940,
+  "page_b": 3251,
+  "page_b_end": 3280,
+  "pages": 11
+ },
+ {
+  "leh_section": "25.3",
+  "title": "25.3 DNA Recombination",
+  "scope": "full",
+  "page_a_print": 940,
+  "page_a_print_end": 956,
+  "page_b": 3281,
+  "page_b_end": 3324,
+  "pages": 17
+ },
+ {
+  "leh_section": "26.3",
+  "title": "26.3 RNA-Dependent Synthesis of RNA and DNA",
+  "scope": "brief",
+  "page_a_print": 988,
+  "page_a_print_end": 995,
+  "page_b": 3429,
+  "page_b_end": 3450,
+  "pages": 8
+ },
+ {
+  "leh_section": "26.4",
+  "title": "26.4 Catalytic RNAs and the RNA World Hypothesis",
+  "scope": "brief",
+  "page_a_print": 996,
+  "page_a_print_end": 1001,
+  "page_b": 3451,
+  "page_b_end": 3469,
+  "pages": 6
+ },
+ {
+  "leh_section": "28.3",
+  "title": "28.3 Regulation of Gene Expression in Eukaryotes",
+  "scope": "depth-layer-ASK",
+  "page_a_print": 1075,
+  "page_a_print_end": 1092,
+  "page_b": 3710,
+  "page_b_end": 3759,
+  "pages": 18
+ }
+]

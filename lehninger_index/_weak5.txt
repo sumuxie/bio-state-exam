@@ -1,0 +1,75 @@
+==============================================================================
+1-6  ch1 §1.6  pp.[18, 19, 20]
+  EN: Origin and evolution of life
+  CZ: Vznik a vývoj života
+  CN: 生命的起源与演化
+  cnNote: {"topic": "一", "title": "序论", "status": "mapped"}
+  terms (2):
+     cz='kreacionismus'              en='creationism'
+     cz='inteligentní design'        en='intelligent design'
+  points (2):
+     [] The textbook divides explanations of the origin of life into three groups, of which group (a) is: life arose as the result of a supernatural intervent
+     [] Groups (b) and (c) continue on the following pages, which are not in the extracted page set — treat the remaining classification as to be confirmed fr
+==============================================================================
+2-1-3  ch2 §2.1.3  pp.[24, 25]
+  EN: Chemical reactions of amino acids
+  CZ: Chemické reakce aminokyselin
+  CN: 氨基酸的化学反应
+  cnNote: {"topic": "四", "title": "氨基酸", "status": "mapped"}
+  terms (3):
+     cz='ninhydrinová reakce'        en='ninhydrin reaction'
+     cz='α-aminoalkohol'             en='α-amino alcohol'
+     cz='chránění aminoskupin'       en='protection of amino groups'
+  points (3):
+     [reakce karboxylové skupiny] CARBOXYL GROUPS can form amides (see ch. 2.1.4), esters, acyl halides and azides; these reactions are used in peptide synthesis. Further, the –COOH gr
+     [acylace aminoskupiny] The α-AMINO GROUP can be acylated by the action of acyl halides or anhydrides, which is used for PROTECTING amino groups.
+     [ninhydrinová reakce] One of the most characteristic reactions of the α-amino group is the NINHYDRIN REACTION. On heating a solution of an amino acid with ninhydrin an inte
+==============================================================================
+2-2-6  ch2 §2.2.6  pp.[37, 38, 39, 40]
+  EN: Properties of proteins
+  CZ: Vlastnosti proteinů
+  CN: 蛋白质的性质
+  cnNote: {"topic": "七", "title": "结构与功能关系", "status": "partial"}
+  terms (5):
+     cz='Tyndallův jev'              en='Tyndall effect'
+     cz='homodisperzní systém'       en='homodisperse system'
+     cz='sedimentační koeficient'    en='sedimentation coefficient'
+     cz='Svedbergova rovnice'        en='Svedberg equation'
+     cz='gelová (permeační) chromatografie' en='gel (permeation) chromatography'
+  points (7):
+     [koloidní vlastnosti] In view of their high relative molecular mass, protein molecules in solution are COMPARABLE WITH THE PARTICLES OF INORGANIC COLLOIDS, and therefore th
+     [homodisperzní systémy] Unlike those POLYDISPERSE systems, however, protein solutions are HOMODISPERSE systems, by which they RESEMBLE TRUE SOLUTIONS.
+     [rozmezí Mr] The relative molecular mass (Mr) of proteins ranges from 10⁴ TO 10⁶, and IN VIRUSES UP TO 10⁷. This fact means that classical methods cannot be used f
+     [metody stanovení Mr] Several types of physico-chemical method are used to determine the Mr of a protein: ULTRACENTRIFUGATION ANALYSIS; CHROMATOGRAPHY using so-called molec
+     [sedimentace] In SEDIMENTATION methods the protein solution is exposed to centrifugal force in an ultracentrifuge. Protein molecules, being heavier than water, sink
+     [svedberg] Here x = distance from the centre of rotation; s = SEDIMENTATION COEFFICIENT, whose value is given in SVEDBERG units (S), where 1 SVEDBERG = 10⁻¹³ SEC
+     [Svedbergova rovnice] Although the sedimentation coefficient INCREASES with Mr, it is NOT A DIRECT PROPORTIONALITY. The value of Mr can be calculated using the SVEDBERG EQU
+==============================================================================
+7-2-1  ch7 §7.2.1  pp.[152]
+  EN: Sugar esters
+  CZ: Cukerné estery
+  CN: 糖酯
+  cnNote: {"topic": "二", "title": "糖类 (笔记 pp.5-10, read at topic-overview level: monosaccharide structure/stereochemistry, oligo/polysaccharides, glycoconjugates all confirmed present — not yet cross-checked point-by-point against this CZ subsection)", "status": "mapped"}
+  terms (4):
+     cz='cukerný ester'              en='sugar ester'
+     cz='fosforečný ester cukru'     en='sugar phosphate ester'
+     cz='5-fosforibosyl-1-bisfosfát (PRPP)' en='5-phosphoribosyl-1-bisphosphate (PRPP)'
+     cz='heparin, chondroitinsulfát' en='heparin, chondroitin sulfate'
+  points (4):
+     [esterifikace OH skupin; vícesytná kyselina → ion] The hydroxyl groups of monosaccharides can be esterified. Crucially, forming the ester bond with a POLYBASIC (polyprotic) acid converts the electroneu
+     [fosforečné estery = nejvýznamnější; cukry metabolizovány téměř výhradně v této formě] Biochemically the most important sugar esters are PHOSPHATE esters: sugars are metabolized almost EXCLUSIVELY in the form of phosphate esters (forward
+     [fosforečné estery = reaktivní intermediát pro O-/N-glykosidovou vazbu; PRPP] Phosphate esters of sugars also represent a reactive intermediate for forming O- and N-GLYCOSIDIC bonds. Example: 5-phosphoribosyl-1-bisphosphate (5-f
+     [sírové estery v polysacharidech (heparin, chondroitinsulfát)] In polysaccharide molecules (heteroglycans), a different ester type occurs: one arising from esterification of a sugar's hydroxyl group with SULFURIC 
+==============================================================================
+8-5-1  ch8 §8.5.1  pp.[198]
+  EN: Chemical composition
+  CZ: Chemické složení
+  CN: 化学组成
+  cnNote: {"topic": "三", "title": "脂质 (笔记 pp.11-16, read at topic-overview level: phospho-/sphingo-/glyco-lipids and membrane composition confirmed present in the subtopic list — not yet cross-checked point-by-point against this CZ subsection)", "status": "mapped"}
+  terms (2):
+     cz='poměr protein:lipid'        en='protein:lipid ratio'
+     cz='glykoprotein / glykolipid (membránový)' en='membrane glycoprotein / glycolipid'
+  points (3):
+     [membrány = proteiny + lipidy] Biological membranes are composed of PROTEINS and LIPIDS.
+     [poměr protein:lipid = 1:4 až 3:1] The relative representation of proteins and lipids varies substantially by membrane origin/function; the protein:lipid WEIGHT RATIO ranges from 1:4 to
+     [sacharidy vždy jako glykoproteiny/glykolipidy, 0,5-10 % hmotnosti] Carbohydrates are always present in membranes, either as GLYCOPROTEINS or GLYCOLIPIDS, and represent 0.5-10% of membrane mass.

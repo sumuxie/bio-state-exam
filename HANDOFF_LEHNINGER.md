@@ -20,12 +20,22 @@ revision tool the user studies from every day.
 4. **`pro`'s headline feature is the integration card** — one entity (e.g. tryptophan), all its
    properties gathered from wherever they are scattered. (§4)
 5. **No orbitals, no resonance structures.** Every chemical idea must land on something the
-   reader can see or measure at a bench. The user has almost no organic chemistry. (§5)
+   reader can see or measure at a bench. The user has almost no organic chemistry — and has
+   since said the Czech course leans *harder* on organic chemistry than they can follow:
+   *"捷克这边比较注重生物化学里有机化学的内容，而我几乎对这块一窍不通."* §5a measures where that
+   load actually sits (chapters 7 and 8, plus §2.1.3) and names the two sections where
+   Lehninger offers no help at all. (§5, §5a)
 
 **Where the work stands.** §9 steps 1–3 are done — the Lehninger index, the A↔B page map and
 the master table are in `lehninger_index/` (read its `README.md`). §8's three open decisions
 were put to the user and answered on 2026-08-06; two of them overturned assumptions this file
-used to make. **Next up: §9 steps 4–6.**
+used to make. The scope of the Lehninger-only material was ruled on the same day (§9b).
+**Next up: §9 steps 4–6.**
+
+**What to ask the user before writing content**, in priority order: (a) the six regulation
+sections in §9b that were deliberately left un-ruled; (b) any classmate report of a real exam
+question — §3 makes these outrank everything in this file, and one has already overturned a
+plan once.
 
 ---
 
@@ -219,6 +229,41 @@ see, measure, or meet the consequence at a bench?
 | aromaticity = a delocalised π system satisfying 4n+2 | a benzene ring is **flat** and its electrons are smeared over the whole ring. Three consequences: it absorbs UV (so 280 nm measures protein), it is flat (so it slides between DNA bases), it carries no charge (so it avoids water and hides inside the protein) |
 | the cis–trans isomerisation energetics of the prolyl peptide bond | proline's side chain loops back onto its own backbone and **locks** it, so a chain cannot run straight through — which is why proline turns up at corners |
 
+### 5a. Where the organic chemistry actually is — measured 2026-08-06
+
+The user, on why this rule exists at all: **"捷克这边比较注重生物化学里有机化学的内容，而我几乎
+对这块一窍不通."** That is a statement about the *source*, not just a personal preference, and it
+is checkable. Counting organic-chemistry vocabulary per 1000 words of each Czech section's own
+text (`lehninger_index/cz_organic_load.json`, keyword proxy — treat as a map, not a verdict):
+
+| per 1k | Czech § | what it is |
+|---|---|---|
+| 130 | 7.1.1 | Aldoses, ketoses |
+| 103 | 7.6.1 | Epimerization and isomerization |
+| **96** | **2.1.3** | **Chemical reactions of amino acids** |
+| 91 | 7.2.1 | Sugar esters |
+| 86 | 7.2.6 | Glycosides |
+| 81 | 7.1.2 | Deriving aldoses and ketoses |
+| 76 | 8.4.1 | Simple lipids |
+| 69 | 7.1.3 | Hemiacetal/hemiketal forms, anomers, Haworth |
+
+**The load is not spread evenly — it is concentrated in chapter 7 (sugars) and chapter 8
+(lipids), plus §2.1.3.** That is where §5's rule does the most work, and where writing content
+without it will simply fail to land.
+
+**And the two hardest are the two Lehninger cannot rescue.** §6 now records that ninhydrin,
+sedimentation coefficient, colloid and Tyndall are all absent from Lehninger 8. So §2.1.3
+(ninhydrin, acyl halides, azides, amino-group protection) and §2.2.6 (colloid behaviour,
+ultracentrifugation, the Svedberg equation) are simultaneously the user's weakest ground *and*
+unsupported by the depth source. Do not quietly skip them and do not quietly invent them —
+they need the §5 treatment written from scratch, marked as not-from-Lehninger, and they are
+the right place to spend disproportionate care.
+
+The sugar-stereochemistry block is a different case: Lehninger §7.1 does cover Fischer
+projections, Haworth forms, anomers and mutarotation, but the Czech book spends **more** pages
+on it than Lehninger does (depth ratio 0.6, the lowest in the whole queue). So for chapter 7,
+Lehninger is a *clarifier*, not a source of additional depth.
+
 ---
 
 ## 6. What Lehninger does and does not contain — measured, not remembered
@@ -235,15 +280,37 @@ Searched in B on 2026-08-06. Present, and far beyond the Czech book:
 | hydrophobic core / interior | 13 pages | ch4 folding sections |
 | proline in β turns, **with the reason** | found | B p.506 — *"peptide bonds involving the imino nitrogen of proline readily assume the cis configuration… particularly amenable to a tight turn"* |
 
-**Absent from the entire book:**
+**Absent from the entire book.** All re-confirmed 2026-08-06 with the section bounds fixed, so
+Glossary and Index hits no longer masquerade as coverage — use `lehninger_index/scripts/locate.py`,
+which reports those separately as `(outside chapters)`:
 
-| | |
-|---|---|
-| `Beer-Lambert` | **0 hits** |
-| `molar extinction coefficient` / `molar absorption coefficient` | **0 hits** |
+| | | why it matters |
+|---|---|---|
+| `Beer-Lambert`, `Beer's law` | **0** | the A→concentration step |
+| `molar extinction coefficient` / `molar absorption coefficient` | **0** | same |
+| `ninhydrin` | **0** | Czech §2.1.3's headline reaction |
+| `Merrifield`, solid-phase peptide synthesis | **0** | Czech §2.1.3's protecting-group chemistry |
+| `sedimentation coefficient`, `colloid` | **0** | Czech §2.2.6's whole method set |
+| `Tyndall` | index only | same |
+| `Svedberg` | 1 in-chapter hit (ribosome sizes) | not the Svedberg *equation* |
+| `creationism`, `intelligent design` | **0** | Czech §1.6 frames origin-of-life around them |
 
 So Lehninger says Trp absorbs at 280 nm but never closes the loop to *how you turn an
 absorbance into a concentration*. That practical last step is genuinely missing from the source.
+
+**Two Czech sections are stranded by this**, and it is not a search artefact — see §5a. §2.1.3
+(amino-acid derivatization chemistry) and §2.2.6 (colloid behaviour, ultracentrifugation, the
+Svedberg equation) have essentially no Lehninger counterpart, because Lehninger 8 answers the
+same questions with a later generation of methods: size-exclusion chromatography (15 pages,
+§3.3), SDS-PAGE and mass spectrometry (45 pages, §3.4). The *question* "how do you measure a
+protein's Mr" is shared; only the answers differ by era. When writing §2.2.6, teach the Czech
+book's answer because that is what the exam is based on, and add the modern one as context —
+marked as not-from-either-book.
+
+§1.6 is a third, milder case: the science is in Lehninger and deeper (§1.5 Evolutionary
+Foundations has Miller and prebiotic chemistry; §26.4 has the RNA world), but the Czech book's
+framing — three groups of explanation, one of which is supernatural intervention — is its own.
+Report the framing as the Czech book's, do not adopt it and do not argue with it.
 
 **The user has taken this off the critical path** — *"后期什么Beer–Lambert law我可以另外再整理，
 这个没关系"*. Do not spend effort on it now. If such content is ever added, mark it as
@@ -358,17 +425,48 @@ The genuinely thin places, top of the queue: §5.1 oxygen-binding proteins (17×
 acid chemistry (16×), §6.4 examples of enzymatic reactions (11×), §11.3 membrane transport
 (9.5×), §21.1 fatty acid and eicosanoid biosynthesis (9.1×), §19.1 respiratory chain (7.5×).
 
-### 9b. What the Czech book points at nothing for
+### 9b. What the Czech book points at nothing for — and the user's ruling on it
 
-32 of Lehninger's 117 sections are claimed by no Czech section (256 printed pages, 26 %). Most
-of it is one coherent block — **all of chapter 12 bar one section (signal transduction, GPCRs,
-receptor tyrosine kinases, oncogenes)**, plus chapter 9 (DNA technologies, CRISPR, genomics),
-§5.2–5.3 (immunoglobulins, molecular motors), §24.2–24.3 (supercoiling, chromosome structure),
-§25.2–25.3 (DNA repair and recombination), §23.4–23.5 (obesity, diabetes) and §22.2 (amino acid
-biosynthesis). Whether any of that is examinable is exactly the kind of question a classmate
-report settles and inference does not — **do not quietly decide it either way.** Note the
-Chinese notes do have a 氨基酸生物合成 topic (二十六) with no Czech counterpart, which is weak
-evidence that §22.2 at least is in play.
+32 of Lehninger's 117 sections are claimed by no Czech section (256 printed pages, 26 %). The
+user ruled on these on 2026-08-06. The full table with page numbers is
+`lehninger_index/lehninger_only_scope.tsv`; the ruling in short:
+
+**Work these properly** (7 sections, 88 printed pages) — *"主要需要的"*:
+
+| § | A pages | |
+|---|---|---|
+| 9.1 | 301–316 | Studying Genes and Their Products (cloning, restriction enzymes, vectors, PCR, libraries) |
+| 9.2 | 317–326 | Exploring Protein Function (this is where **CRISPR** lives) |
+| 22.2 | 805–816 | Biosynthesis of Amino Acids |
+| 24.2 | 890–898 | DNA Supercoiling |
+| 24.3 | 898–910 | The Structure of Chromosomes |
+| 25.2 | 930–940 | DNA Repair |
+| 25.3 | 940–956 | DNA Recombination |
+
+§9.3 Genomics (A pp.326–334) is explicitly **brief** — *"基因组学可以简单讲"*.
+
+**One-line mention only** (19 sections, 125 pages) — *"其他的最简单一笔带过就行"*. This includes
+the whole of chapter 12 (signal transduction, GPCRs, receptor tyrosine kinases, oncogenes),
+§5.2–5.3, §23.4–23.5, §26.3–26.4, §2.1, §2.3, §4.5, §8.4.
+
+**Six sections were pulled out of that ruling and still need a decision** (43 pages). They came
+up as "unclaimed" but they are **not new subject matter** — they are the regulation layer of a
+pathway the Czech book already teaches, so "brief mention" is probably the wrong bucket and
+applying it silently would have thrown away real depth material:
+
+| § | A pages | it regulates something Czech § already covers |
+|---|---|---|
+| 14.5 | 539–546 | Coordinated Regulation of Glycolysis and Gluconeogenesis — Czech 7.8/7.9 |
+| 15.1 | 557–558 | The Structure and Function of Glycogen — Czech 7.4.1 |
+| 15.3 | 565–571 | Coordinated Regulation of Glycogen Breakdown and Synthesis — Czech 7.11.2/7.12 |
+| 19.4 | 689–691 | Mitochondria in Thermogenesis, Steroid Synthesis, Apoptosis — Czech 6.2.4 |
+| 19.5 | 692–696 | Mitochondrial Genes — Czech 6.2.4 |
+| 28.3 | 1075–1092 | Regulation of Gene Expression in Eukaryotes — Czech 4.2.4 does the bacterial operons |
+
+**Ask about these six specifically.** Do not fold them into either bucket by default.
+
+Note the Chinese notes do have a 氨基酸生物合成 topic (二十六) with no Czech counterpart —
+consistent with §22.2 being ruled in.
 
 ---
 

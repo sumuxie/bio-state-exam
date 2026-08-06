@@ -1,0 +1,54 @@
+Do the five weakest Czech sections have their CONTENT in Lehninger, even though
+none of their glossary TERMS appear? Searched in B; (outside chapters) = Glossary/Index,
+which is not evidence of coverage.
+
+============================================================================
+1.6 Origin and evolution of life
+  creationism                NOT FOUND
+  intelligent design         NOT FOUND
+  origin of life               4p 26.4 A pp.996-1001 (2) ; 26.2 A pp.972-988 (1)
+  RNA world                   24p 26.4 A pp.996-1001 (16) ; 1.5 A pp.30-36 (4)
+  prebiotic                   12p 26.4 A pp.996-1001 (5) ; 1.5 A pp.30-36 (4)
+  Miller                       8p 1.5 A pp.30-36 (6) ; 20.3 A pp.716-719 (1)
+  abiotic                      6p 1.5 A pp.30-36 (4)
+  LUCA                        82p 23.3 A pp.859-867 (20) ; 15.3 A pp.565-571 (16)
+  last universal               3p 22.1 A pp.795-804 (1)
+
+============================================================================
+2.1.3 Chemical reactions of amino acids
+  ninhydrin                  NOT FOUND
+  solid-phase                  2p 7.5 A pp.258-259 (2)
+  Merrifield                 NOT FOUND
+  protecting group             1p 8.3 A pp.278-293 (1)
+  peptide synthesis           13p 27.2 A pp.1015-1040 (4) ; 27.1 A pp.1006-1015 (2)
+  fluorescamine              NOT FOUND
+  dansyl                       4p 3.4 A pp.91-100 (3)
+
+============================================================================
+2.2.6 Properties of proteins
+  Svedberg                     3p 27.2 A pp.1015-1040 (1)
+  sedimentation coefficient  NOT FOUND
+  ultracentrifug               4p 17.1 A pp.603-606 (1) ; 21.4 A pp.772-789 (1)
+  Tyndall                    only outside chapters (1 occ)
+  colloid                    NOT FOUND
+  size-exclusion              15p 3.3 A pp.83-90 (6) ; 7.5 A pp.258-259 (1)
+  gel filtration               1p 3.3 A pp.83-90 (1)
+  SDS-PAGE                   only outside chapters (1 occ)
+  mass spectrometry           45p 3.4 A pp.91-100 (9) ; 10.4 A pp.361-363 (7)
+
+============================================================================
+7.2.1 Sugar esters
+  sugar phosphate              6p 14.6 A pp.546-551 (3) ; 15.2 A pp.558-564 (2)
+  phosphoribosyl              18p 22.4 A pp.824-837 (11) ; 22.2 A pp.805-816 (3)
+  PRPP                        20p 22.4 A pp.824-837 (13) ; 22.2 A pp.805-816 (9)
+  sulfate ester                3p 7.2 A pp.241-246 (1) ; 7.3 A pp.247-253 (1)
+  chondroitin sulfate         15p 7.3 A pp.247-253 (8) ; 7.2 A pp.241-246 (3)
+  glucose 6-phosphate        128p 14.6 A pp.546-551 (26) ; 15.2 A pp.558-564 (16)
+
+============================================================================
+8.5.1 Chemical composition of membranes
+  protein-to-lipid           NOT FOUND
+  lipid ratio                NOT FOUND
+  composition of membranes     2p 11.1 A pp.367-376 (1) ; 21.3 A pp.764-771 (1)
+  glycolipid                  33p 10.2 A pp.346-353 (8) ; 7.3 A pp.247-253 (6)
+  membrane protein           114p 11.1 A pp.367-376 (36) ; 11.2 A pp.377-384 (19)
