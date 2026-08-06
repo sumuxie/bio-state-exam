@@ -91,6 +91,12 @@ that made it work and is worth reading before attempting rank 9.
 > Together these are a much stronger topic-view demonstration than the earlier
 > single-Czech-node joins.
 >
+> **One thing that was NOT plumbing got built on 2026-08-06: `lehNotes` (§9f)**, after the user
+> asked whether anything was being added to the *Czech* book. Nothing was, by design — but the
+> warnings about where the Czech book is wrong, incomplete or simply different were all sitting
+> in Lehninger nodes the reader might never open, and the exam is on the Czech book. Czech nodes
+> can now carry a rare, colour-coded pointer at the Lehninger correction. Five exist.
+>
 > **What is left is content, not plumbing.** Now 8 of 61 topicKeys join more than one source,
 > from seven Lehninger nodes and one card. Every further node makes the topic view worth more;
 > nothing more needs building first. §9a's depth queue (61 writable primaries, 7 done, 54 to
@@ -563,6 +569,9 @@ Additive; nothing existing breaks.
   chapter: 7, section: "7.8",   // stays BOOK-LOCAL -- ch7 means different things in each book,
   pages: [163, 164],            // so these must never be compared across books
   topicKey: "glycolysis",       // NEW. The join key. Nodes about the same thing share it.
+  lehNotes: [ ... ],            // NEW (2026-08-06), CZECH nodes only, optional and RARE.
+                                // Points at the Lehninger node that corrects or completes
+                                // this section, without importing its content. See section 9f.
   ...
 }
 ```
@@ -894,6 +903,76 @@ the *substantive* Czech section points at it only as a secondary. The rule "pref
 does not protect against it. **Before writing any node, list the Czech nodes its key actually
 holds and check they are the ones teaching the subject** — a two-minute check that would have
 caught this and will catch the next one.
+
+### 9f. `lehNotes` — cross-book warnings ON the Czech node, added 2026-08-06
+
+**The problem, raised by the user.** Six Lehninger nodes in, they asked a question that had a
+sharper answer than expected: *"你主要是添加了额外的一本书？捷克语的书里面有没有添加内容？"* The
+honest answer was that the depth layer had grown by seven nodes while the Czech nodes had
+received **four one-word `topicKey` edits and not one word of content**. That is the intended
+architecture (§3: scope from Czech, depth from Lehninger) and the Czech nodes must NOT be
+padded with Lehninger material — each carries a `coverageNote` claiming fidelity to specific
+Czech textbook pages, and blurring that would destroy the ability to tell which book said what.
+
+**But it exposed a real hole.** By §3 the exam is on the *Czech* book, so the Czech section is
+what gets revised — and every warning about where the Czech book is wrong, incomplete or simply
+different was sitting in a Lehninger node the reader might never open. Two clear cases had
+already been found in §21.1 alone, and one in §17.2.
+
+**The fix, chosen by the user over auditing the whole Czech layer or continuing to add nodes:**
+a new optional field on a Czech node that points AT the Lehninger correction without importing
+it.
+
+```js
+lehNotes: [
+  { kind: "conflict" | "gap" | "cz-stronger",
+    node: "L-21-1-1",          // must resolve to a real topic id
+    en: "...", cn: "..." }
+]
+```
+
+| kind | means | colour |
+|---|---|---|
+| `conflict` | the books disagree, or Lehninger qualifies the Czech claim — answering from the Czech section alone risks a **wrong** answer | red |
+| `gap` | the Czech book omits something load-bearing | amber |
+| `cz-stronger` | the Czech book is the **better** source here; a simpler formula in Lehninger is not a contradiction to worry about | accent |
+
+**Rendered by `app.js` at the top of the study pane, above the Same-topic strip**, in a
+bordered block with a `→ L-…` button that jumps to the Lehninger node. CSS lives in
+`biochemie_pro/index.html`'s `<style>` block with the other pro-only rules.
+
+**⚠️ Keep these RARE.** This is not "there is more in Lehninger" — the Same-topic strip already
+says that for every joined key, and a warning that appears on every node is a warning nobody
+reads. The bar is: *would revising from this Czech node alone mislead you in an exam?* Five
+notes on four nodes met it:
+
+| node | kind | what |
+|---|---|---|
+| `8-3-1` | conflict | elongase placed in the mitochondrial matrix; Lehninger's *more active elongation system* is in the smooth ER (A p.753) |
+| `8-3-1` | conflict | β-oxidation listed as an acetyl-CoA source for synthesis; Lehninger calls it *not a significant source* in animals (A p.751) |
+| `8-3-4` | conflict | repeats the mitochondrial-elongase placement |
+| `8-4-4-1` | gap | **carnitine is never mentioned anywhere in the Czech account** — the entire rate-limiting gate of fatty acid oxidation is absent (A p.613) |
+| `1-5` | cz-stronger | Czech gives `G = U + pV − TS` plus chemical potential, activity and local equilibrium; Lehninger §1.3 gives only `G = H − TS` (A p.21) |
+
+**Each note embeds a short verbatim Lehninger phrase**, which is why four of the five verify
+**OK** in `verify_citations.py` instead of landing as UNCHECKED — the quote acts as the probe.
+Note the tension with §13g's warning: quotation marks in a field carrying a citation are
+dangerous when the quoted text is *yours*, and useful when it is genuinely the book's. Quote the
+book, never yourself.
+
+**Validation, in both places, with negative tests.** `tools/validate-data.js` and
+`step5_check.py` both now check every note for both languages, a `kind` in the closed set, and a
+`node` that **resolves to a real topic id** — a dangling target still renders, just without its
+link, silently losing the reader's route to the correction, which is the one failure this
+feature exists to prevent. `step5_check.py` proves all three fire.
+
+**Also added while doing this, and worth knowing independently: `step5_check.py` now
+syntax-checks `app.js`.** Nothing ever had, on a machine with no `node`; and unlike a data
+error, a broken `app.js` **white-screens the entire site**, which CI would not catch either
+because its `validate` job only loads `data/`. One wrinkle: `esprima` predates Unicode property
+escapes, so the two `/\p{Script=Latin}/u` literals in the bionic-reading code are legal modern
+JavaScript it cannot parse. They are stubbed before parsing so everything else is still checked,
+and if a future edit changes them the check **fails loudly** rather than passing silently.
 
 No `node`/`deno`/`bun` on this machine. **PyMuPDF (`fitz`), `esprima` and PIL are installed in
 Python 3.12.** The console is cp1252 — **printing extracted PDF text to stdout crashes with

@@ -20,6 +20,33 @@ try:
 except Exception as e:
     p("SYNTAX ERROR in validate-data.js:", e); log.close(); print("FAILED"); sys.exit(1)
 
+# --- 1b. does the APP parse? ---
+# Added 2026-08-06 with the lehNotes feature (HANDOFF_LEHNINGER.md 9f). Nothing had ever
+# syntax-checked app.js on this machine, and unlike a data error a broken app.js white-screens
+# the whole site -- CI's validate job only loads data/, so it would not catch it either.
+#
+# esprima predates Unicode property escapes, so the two `\p{Script=Latin}` literals in the
+# bionic-reading code are legal modern JavaScript that it cannot parse. They are stubbed out
+# before parsing rather than the check being abandoned: everything ELSE still gets checked,
+# which is the whole point. If a future edit adds another such literal this will fail loudly
+# with "missing" rather than passing silently -- deliberately, so the stub list stays honest.
+_B = chr(92)
+APP_STUBS = [("/" + _B + "p{Script=Latin}/u", "/x/"),
+             ("/" + _B + "p{Script=Latin}+/gu", "/x/g")]
+asrc = io.open(os.path.join(ROOT, "biochemie_pro", "app.js"), encoding="utf-8").read()
+_stub = asrc
+for _a, _b in APP_STUBS:
+    if _a not in _stub:
+        p("app.js: expected literal %r is gone -- update APP_STUBS in step5_check.py" % _a)
+        log.close(); print("FAILED"); sys.exit(1)
+    _stub = _stub.replace(_a, _b)
+try:
+    esprima.parseScript(_stub)
+    p("biochemie_pro/app.js parses as JavaScript: OK (%d lines, %d literals stubbed)"
+      % (len(asrc.splitlines()), len(APP_STUBS)))
+except Exception as e:
+    p("SYNTAX ERROR in app.js:", e); log.close(); print("FAILED"); sys.exit(1)
+
 # --- 2. re-implement its checks against the real data ---
 def lit(node):
     t = node.type
@@ -65,6 +92,7 @@ REQUIRED_SECTION = ["id","chapter","section","czTitle","enTitle","cnTitle","cove
 REQUIRED_ENTITY  = ["id","enTitle","cnTitle","topicKey","summary"]
 KINDS = ["section","entity"]
 BOOKS = ["cz", "lehninger"]
+LEH_NOTE_KINDS = ["conflict", "gap", "cz-stronger"]   # must match tools/validate-data.js
 TAG = re.compile(r'<script\s+src="data/([^"]+\.js)"\s*>')
 
 def validate(app):
@@ -117,6 +145,23 @@ def validate(app):
         o = t.get("oral")
         if o and (not o.get("model_en") or not o.get("checklist")):
             problems.append(f'{t["id"]}: bad oral block')
+
+    # Cross-book warnings (HANDOFF_LEHNINGER.md 9f). Mirrors validate-data.js. Runs in its
+    # own pass because it needs every id collected first: a note pointing at a node that does
+    # not exist renders without its link, silently losing the reader's route to the
+    # correction -- which is the one thing this feature exists to prevent.
+    by_id = {t.get("id"): t for t in T}
+    for t in T:
+        for i, n in enumerate(t.get("lehNotes") or []):
+            where = f'{t["id"]}: lehNotes[{i}] '
+            if not n.get("en") or not n.get("cn"):
+                problems.append(where + "missing a language")
+            if n.get("kind") not in LEH_NOTE_KINDS:
+                problems.append(where + f'bad kind {n.get("kind")!r}')
+            if not n.get("node"):
+                problems.append(where + "missing node")
+            elif n["node"] not in by_id:
+                problems.append(where + f'points at unknown node {n["node"]}')
 
     secs = [t for t in T if t.get("kind") != "entity"]
     for name, pool in (("book", secs), ("topicKey", T)):
@@ -223,6 +268,32 @@ for k in by:
     allg += [x for x in range(pg[0], pg[-1] + 1) if x not in by[k]]
 p(f"  cz node with a page removed: gap check reports {allg} -> "
   f"{'still bites' if allg else 'WENT QUIET (bug)'}")
+
+# lehNotes: the dangling-target check is the one worth proving, because a note pointing at a
+# nonexistent node still RENDERS -- just without its link -- so the failure is invisible on
+# screen. Take the real notes and break each field in turn.
+ALL = list(T)
+for f in sorted(glob.glob(os.path.join(ROOT, "biochemie_pro", "data", "leh_*.js"))):
+    ALL.extend(parse_nodes(io.open(f, encoding="utf-8").read()))
+ids = {t.get("id") for t in ALL}
+real = [(t["id"], n) for t in ALL for n in (t.get("lehNotes") or [])]
+p(f"  lehNotes present in the data: {len(real)} on "
+  f"{len({i for i, _ in real})} nodes -> {'testable' if real else 'NONE (nothing to test)'}")
+assert real, "no lehNotes to test with"
+bad_target = [1 for _, n in [(i, dict(n, node="L-99-9-9")) for i, n in real] if n["node"] not in ids]
+bad_kind = [1 for _, n in [(i, dict(n, kind="note")) for i, n in real] if n["kind"] not in LEH_NOTE_KINDS]
+bad_lang = [1 for _, n in [(i, dict(n, cn="")) for i, n in real] if not n["cn"]]
+p(f"  lehNote pointing at a missing node: {len(bad_target)}/{len(real)} caught -> "
+  f"{'FIRES' if len(bad_target) == len(real) else 'DOES NOT FIRE (bug)'}")
+p(f"  lehNote with an unknown kind:       {len(bad_kind)}/{len(real)} caught -> "
+  f"{'FIRES' if len(bad_kind) == len(real) else 'DOES NOT FIRE (bug)'}")
+p(f"  lehNote missing the cn half:        {len(bad_lang)}/{len(real)} caught -> "
+  f"{'FIRES' if len(bad_lang) == len(real) else 'DOES NOT FIRE (bug)'}")
+assert len(bad_target) == len(bad_kind) == len(bad_lang) == len(real)
+# and the real ones must all point somewhere that exists
+dangling = [(i, n.get("node")) for i, n in real if n.get("node") not in ids]
+p(f"  every real lehNote target resolves: {'yes' if not dangling else 'NO -> ' + str(dangling)}")
+assert not dangling
 
 p("")
 p("RESULT:", "all checks pass" if ok else "VALIDATION FAILED")

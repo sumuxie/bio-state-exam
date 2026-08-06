@@ -47,6 +47,11 @@ function requiredFor(t) {
 }
 const BOOKS = ['cz', 'lehninger'];
 
+/* Kinds of cross-book warning a Czech node may carry. Closed set: app.js colours each one
+   differently, and an unrecognised value would render as the neutral default, quietly
+   demoting a genuine conflict to a note nobody looks at twice. */
+const LEH_NOTE_KINDS = ['conflict', 'gap', 'cz-stronger'];
+
 /* The data files an app actually ships, taken from its index.html rather than
    hardcoded. A file sitting in data/ that no <script> tag loads is dead, and a
    tag pointing at a missing file breaks the site -- both used to pass silently
@@ -92,6 +97,9 @@ function validate(app) {
   const T = loadApp(app, wiring.files);
   if (!T.length) problems.push('no topics loaded');
 
+  const byId = {};
+  T.forEach((t) => { byId[t.id] = t; });
+
   T.forEach((t) => {
     requiredFor(t).forEach((k) => { if (!t[k]) problems.push(t.id + ': missing ' + k); });
     if (t.kind !== undefined && KINDS.indexOf(t.kind) === -1) {
@@ -127,6 +135,22 @@ function validate(app) {
     if (t.oral && (!t.oral.model_en || !Array.isArray(t.oral.checklist) || !t.oral.checklist.length)) {
       problems.push(t.id + ': bad oral block');
     }
+
+    /* Cross-book warnings (HANDOFF_LEHNINGER.md section 9f). A note whose `node` points at
+       nothing renders without its link and silently loses the reader's way back to the
+       correction -- exactly the failure this feature exists to prevent -- so the target is
+       checked to exist. `kind` is closed because app.js styles on it and an unknown value
+       would fall through to the neutral default, quietly downgrading a real conflict. */
+    (t.lehNotes || []).forEach((n, i) => {
+      const where = t.id + ': lehNotes[' + i + '] ';
+      if (!n.en || !n.cn) problems.push(where + 'missing a language');
+      if (LEH_NOTE_KINDS.indexOf(n.kind) === -1) {
+        problems.push(where + 'kind must be one of ' + LEH_NOTE_KINDS.join('/')
+          + ', got ' + JSON.stringify(n.kind));
+      }
+      if (!n.node) problems.push(where + 'missing node (which Lehninger node carries the detail)');
+      else if (!byId[n.node]) problems.push(where + 'points at unknown node ' + n.node);
+    });
   });
 
   /* All-or-nothing on the two new fields. A half-migrated app -- some nodes

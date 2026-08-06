@@ -105,6 +105,36 @@
   }
   .same-topic button:hover{ border-color:#7c3aed; color:var(--fg); }
 
+  /* Cross-book warnings on a Czech node. Louder than the Same-topic strip on purpose:
+     these mark places where revising from the Czech section alone would mislead. */
+  .leh-notes{
+    margin:0 0 1rem; padding:.65rem .8rem; border-radius:.4rem;
+    background:var(--bg-sink); border:1px solid #b45309; border-left-width:4px;
+  }
+  .leh-notes h3{
+    margin:0 0 .5rem; font-size:.74rem; letter-spacing:.05em;
+    text-transform:uppercase; color:#f59e0b; font-weight:700;
+  }
+  .leh-notes ul{ list-style:none; margin:0; padding:0; display:grid; gap:.6rem; }
+  .leh-notes li{ padding-left:.6rem; border-left:2px solid var(--line); }
+  .leh-notes li.ln-conflict{ border-left-color:#ef4444; }
+  .leh-notes li.ln-gap{ border-left-color:#f59e0b; }
+  .leh-notes li.ln-cz{ border-left-color:var(--accent); }
+  .ln-kind{
+    display:inline-block; margin-bottom:.25rem;
+    font-size:.68rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+  }
+  li.ln-conflict .ln-kind{ color:#ef4444; }
+  li.ln-gap .ln-kind{ color:#f59e0b; }
+  li.ln-cz .ln-kind{ color:var(--accent); }
+  .ln-kind .muted{ font-weight:400; letter-spacing:0; text-transform:none; }
+  .ln-body{ font-size:.92rem; }
+  .ln-link{
+    margin-top:.35rem; cursor:pointer; padding:.15rem .5rem; border-radius:.3rem;
+    font-size:.76rem; background:var(--bg-raise); border:1px solid #b45309; color:#f59e0b;
+  }
+  .ln-link:hover{ background:#b45309; color:#fff; }
+
   .chain .ch-src{
     display:inline-block; margin-left:.4rem; padding:0 .35em;
     font-size:.7em; border-radius:.25em;

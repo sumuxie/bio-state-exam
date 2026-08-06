@@ -170,6 +170,45 @@
             </div>`;
   }
 
+  /* Cross-book warnings, rendered ON THE CZECH NODE because that is where the risk sits:
+     the exam is on the Czech book, so a Czech section is what gets revised, and the
+     Lehninger node carrying the correction may never be opened. Three kinds:
+
+       conflict     the two books disagree, or Lehninger qualifies the Czech claim --
+                    answering from the Czech section alone risks a wrong answer
+       gap          the Czech book omits something load-bearing (e.g. carnitine)
+       cz-stronger  the Czech book is the better source here, so seeing a simpler
+                    formula in Lehninger is not a contradiction to worry about
+
+     Deliberately RARE. This is not "there is more in Lehninger" -- the Same-topic strip
+     already says that for every joined key. A warning that appears on every node is a
+     warning nobody reads. See HANDOFF_LEHNINGER.md section 9f. */
+  const LEH_NOTE_KIND = {
+    conflict:      { cls: 'ln-conflict', en: 'Books disagree',      cn: '两书说法不同' },
+    gap:           { cls: 'ln-gap',      en: 'Missing here',        cn: '捷克书未涉及' },
+    'cz-stronger': { cls: 'ln-cz',       en: 'Czech is fuller here', cn: '此处捷克书更完整' }
+  };
+
+  function lehNotesHtml(t) {
+    const notes = t.lehNotes || [];
+    if (!notes.length) return '';
+    const items = notes.map((n) => {
+      const k = LEH_NOTE_KIND[n.kind] || LEH_NOTE_KIND.conflict;
+      const target = n.node && TOPICS.some((x) => x.id === n.node);
+      return `<li class="${k.cls}">
+                <span class="ln-kind">${esc(k.en)} <span class="muted">${esc(k.cn)}</span></span>
+                <div class="ln-body">${bi(n.en, n.cn)}</div>
+                ${target
+                  ? `<button class="link-btn ln-link" data-id="${esc(n.node)}">→ ${esc(n.node)}</button>`
+                  : ''}
+              </li>`;
+    }).join('');
+    return `<div class="leh-notes">
+              <h3>⚠ Check against Lehninger <span class="muted">对照 Lehninger</span></h3>
+              <ul>${items}</ul>
+            </div>`;
+  }
+
   /* ----------------------------------------------------------- persistence */
   const store = {
     get(key, fallback) {
@@ -667,6 +706,8 @@
           <p class="th-cn">${esc(t.cnTitle)} ${speakBtn(t.cnTitle, 'zh-CN')}</p>
         </div>
 
+        ${lehNotesHtml(t)}
+
         ${sameTopicHtml(t)}
 
         ${t.coverageNote ? `<p class="cov-note">${esc(t.coverageNote)}</p>` : ''}
@@ -750,7 +791,7 @@
       renderSidebar();
     });
 
-    body.querySelectorAll('.same-topic-link').forEach((b) => {
+    body.querySelectorAll('.same-topic-link, .ln-link').forEach((b) => {
       b.addEventListener('click', () => {
         state.topicId = b.dataset.id;
         renderStudy();
