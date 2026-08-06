@@ -32,7 +32,7 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — seven Lehninger nodes now exist.** `L-3-4-1` in
+**§9 step 6 is under way — eight Lehninger nodes now exist.** `L-3-4-1` in
 `biochemie_pro/data/leh_ch3.js` (§13) joins Czech node `2-2-1` through
 `topicKey: "protein-primary-structure"` — the Czech book says *why* an amino acid sequence
 matters, Lehninger §3.4 says *how* one is determined. `L-11-3-1` in
@@ -54,7 +54,16 @@ under-reporting `verify_citations.py`**, now fixed. **`L-21-1-1` in
 `biochemie_pro/data/leh_ch21.js` (§13g) joins all nine `8-3-*` Czech nodes** through
 `topicKey: "fatty-acid-biosynthesis"` — rank 5, the highest ratio in the writable set, and
 **the §5a organic-chemistry topic, which turned out to be writable**; §13g records the method
-that made it work and is worth reading before attempting rank 9.
+that made it work and is worth reading before attempting rank 9. **`L-5-1-1` in
+`biochemie_pro/data/leh_ch5.js` (§13j, added 2026-08-07) joins Czech node `6-3-1`** through a
+**new** `topicKey: "oxygen-binding-proteins"` — rank 1 of the entire depth queue, ratio 17, the
+thinnest place in the whole book, and unwritable until this session because §9c's own rule gave
+it no key at all (Czech 6.3's primary Lehninger mapping is 22.3, not 5.1). Resolved the way §9e
+resolved β-oxidation: the user chose to move the data. `6-3-1` — the one row of Table 6.4 that
+is haemoglobin — moved out of `amino-acid-derived-molecules` into the new key; `L-22-3-1`'s
+`coverageNote` (§13i) is updated to match. §13j also adds the session's one `lehNotes` entry, on
+Czech `7-8-3`, a `gap`: that node names 2,3-bisphosphoglycerate 31 times as glycolysis's
+phosphoglycerate-mutase cofactor and never once as haemoglobin's regulator.
 
 > **⛔ Before writing a second node, read §13b.** `app.js` **never reads `book` or `topicKey`**
 > — it filters on `chapter` alone against a hardcoded 1–10 map of *Czech* chapter names. So
@@ -95,13 +104,23 @@ that made it work and is worth reading before attempting rank 9.
 > asked whether anything was being added to the *Czech* book. Nothing was, by design — but the
 > warnings about where the Czech book is wrong, incomplete or simply different were all sitting
 > in Lehninger nodes the reader might never open, and the exam is on the Czech book. Czech nodes
-> can now carry a rare, colour-coded pointer at the Lehninger correction. Five exist.
+> can now carry a rare, colour-coded pointer at the Lehninger correction. Six exist, on five
+> nodes, after §13j added the BPG gap note.
 >
-> **What is left is content, not plumbing.** Now 8 of 61 topicKeys join more than one source,
-> from seven Lehninger nodes and one card. Every further node makes the topic view worth more;
-> nothing more needs building first. §9a's depth queue (61 writable primaries, 7 done, 54 to
-> go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is
-> the other open thread.
+> **Updated 2026-08-07: the topicKey-naming question §9c raised and never resolved is resolved.**
+> The user answered both open questions from the "what to ask" list at once (§2b: revises from
+> **both** layers, Czech primary; the topicKey question: **re-key per the §9e precedent**, not
+> reuse or rename). That immediately unblocked rank 1 — see `L-5-1-1` above — and the same fix
+> now applies mechanically to the other nine secondaries §9c listed; §9c's table is updated.
+>
+> **What is left is content, not plumbing.** Now 62 `topicKey`s exist (one more than before —
+> `oxygen-binding-proteins`) and 9 of them join more than one source, from eight Lehninger nodes
+> and one card. Every further node makes the topic view worth more; nothing more needs building
+> first. §9a's depth queue (61 writable primaries — 62 now that rank 1 has its own key — 8 done,
+> 54 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is the
+> other open thread. **§2c below is now also worth reading**: while scoping `L-5-1-1` a
+> pre-existing data error surfaced in `2-2-6` that §6a flagged in a prior session and nobody has
+> fixed yet — see §2c.
 
 **⚠️ Before writing or reusing any `A p.N` citation, read §16.** Three of six citations in the
 first integration card were wrong — the quotes were right, the page numbers were not, one by 21
@@ -130,19 +149,28 @@ things up in Lehninger without opening a 1.1 GB PDF.
    phosphorylation, §28.3 into transcription/operons). Nothing to ask. Read §9b, not this line.
 2. **Any classmate report of a real exam question.** §3 makes these outrank everything in this
    file, and one has already overturned a plan once.
-2b. **⭐ Which nodes does the user actually revise from — the Czech ones, or the Lehninger ones?**
-   Asked 2026-08-06, **not yet answered**, and it decides the next phase. If they are revising
-   from the Czech sections, effort should go into hardening that layer (see 2c) and into more
-   `lehNotes` (§9f). If they have started reading the Lehninger nodes directly, then continuing
-   down §9c's depth queue is the right call. Do not guess this one — it is a five-second
-   question with a large consequence.
-2c. **Has the Czech layer ever been audited?** The 207 Czech nodes were written in an earlier
-   phase and **nobody has checked them since**; this phase has only read a dozen or so of them
-   while writing depth nodes. The exam is on that book (§3). Three concrete sub-questions, all
-   open: is the coverage actually complete, are there enough quiz/oral items to practise from,
-   and should the many `cnNote: status: "pending"` entries be mapped to the Chinese notes?
-   The user was offered this as an option on 2026-08-06 and chose `lehNotes` (§9f) first, so
-   this is deferred rather than declined.
+2b. ~~**⭐ Which nodes does the user actually revise from?**~~ → **answered 2026-08-07: both
+   layers, Czech primary.** So effort splits two ways rather than picking one: hardening the
+   Czech layer (2c) and more `lehNotes` (§9f) matter because that is the primary revision
+   surface, but continuing down §9c's depth queue also matters because the Lehninger nodes are
+   genuinely read too. Neither track is now "the wrong one to work on."
+2c. **Has the Czech layer ever been audited? Still open — and now has a first concrete finding.**
+   The 207 Czech nodes were written in an earlier phase and **nobody has checked them since**;
+   this phase has only read a dozen or so of them while writing depth nodes. The exam is on that
+   book (§3), and 2b just confirmed it is the *primary* revision surface, which raises this
+   question's priority rather than lowering it. Three sub-questions remain open: is the coverage
+   actually complete, are there enough quiz/oral items to practise from, and should the many
+   `cnNote: status: "pending"` entries be mapped to the Chinese notes? **One concrete instance
+   surfaced 2026-08-07 while scoping `L-5-1-1`, unrelated to that node's own content**: §6a
+   (written in an earlier session) already flagged that node `2-2-6`'s `cnNote` wrongly points
+   at Chinese-notes topic 七 (pp.37–40, myoglobin/haemoglobin/sickle cell — which is what
+   `L-5-1-1` deepens) when `2-2-6`'s actual subject, protein properties (Sephadex, SDS-PAGE,
+   Svedberg units), belongs to topic 八 (pp.41–45). §6a said this would be fixed "during §9 step
+   4, which touches all 207 nodes anyway" — step 4 (adding `book`/`topicKey`) came and went and
+   the fix was never made; `2-2-6` still says topic 七 and topic 八 never appears anywhere in
+   the data. Left unfixed here because it needs the notes' own p.41 heading, which this session
+   did not open — flagging it is not the same as guessing it. If the Czech layer has one
+   unaudited error like this sitting in the open, that is itself an argument for auditing it.
 2d. **Are §9f's five `lehNotes` right in tone and length?** They are the template for every
    later one, and the user has not seen them rendered yet. Worth confirming before writing more.
 3. ~~Which topic to start with~~ → answered 2026-08-06: the first integration card, on
@@ -772,11 +800,12 @@ cz 6.3), §8.3 nucleic acid chemistry (16, cz 4.1.5), §6.4 examples of enzymati
 (11, cz 3.6). Czech §6.3 maps to `22.3,5.1`: §22.3 took the key
 (`amino-acid-derived-molecules`), §5.1 got nothing.
 
-The fix is cheap — for a secondary section, use the key of the Czech section that points at it,
-so the depth node lands on the topic it actually deepens. But it makes the key *name* misleading
-(a myoglobin/haemoglobin node filed under `amino-acid-derived-molecules`), and §9c's own caveat
-already allows renaming a `topicKey` later. **Decide the naming before writing any of the top
-three**, and until then prefer a primary — the first node (§13) deliberately did.
+**Rank 1 is resolved — see `L-5-1-1`, §13j, 2026-08-07.** The user answered the naming question
+this paragraph raises: **re-key per the §9e precedent** (move the data, create a genuinely new
+key), not reuse a misleading existing key and not rename one. `oxygen-binding-proteins` was
+created, Czech `6-3-1` moved into it out of `amino-acid-derived-molecules`, and `L-5-1-1` was
+written against it. The other nine secondaries below still need the same fix applied
+one at a time — see the note after the table.
 
 **So that "prefer a primary" is actionable, here are the ones that are** — computed 2026-08-06
 from `depth_queue.tsv` × `topickey_assignment.json`. Every row below needs **no decision**: the
@@ -784,6 +813,7 @@ key already exists and the node joins the topic view the moment it is written.
 
 | rank | Lehninger § | ratio | `topicKey` to use | Czech nodes waiting |
 |---|---|---|---|---|
+| 1 | 5.1 Reversible Binding of a Protein to a Ligand: Oxygen-Binding Proteins | 17.0 | `oxygen-binding-proteins` (new, re-keyed 2026-08-07) | ✅ **done — `L-5-1-1`** |
 | 4 | 11.3 Solute Transport across Membranes | 9.5 | `membrane-transport` | ✅ **done — `L-11-3-1`** |
 | 5 | 21.1 Biosynthesis of Fatty Acids and Eicosanoids | 9.1 | `fatty-acid-biosynthesis` | ✅ **done — `L-21-1-1`** |
 | 6 | 19.1 The Mitochondrial Respiratory Chain | 7.5 | `respiratory-chain` | ✅ **done — `L-19-1-1`** |
@@ -795,8 +825,14 @@ key already exists and the node joins the topic view the moment it is written.
 | 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | 1 |
 | 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | 2 |
 
-Ranks 1, 2, 3, 8, 10, 11, 13, 15, 16, 19 are the secondaries — blocked on the naming decision
-above. **Four of the ten writable primaries are now done: rank 14 (`L-3-4-1`), rank 4
+Ranks 2, 3, 8, 10, 11, 13, 15, 16, 19 are still secondaries with no key. Rank 1 was the tenth
+and is now done (`L-5-1-1`, §13j) — the naming question that blocked all ten is answered, so the
+remaining nine take the identical mechanical fix rank 1 just did: create a new key, move the
+Czech node(s) that actually teach the subject into it, leave a `manual_note` in both
+`topickey_assignment.json` and `topickey_by_node.json` (§9e's format), and run §9e's two-minute
+check first, because — as rank 9's β-oxidation case showed — the section that is a Czech node's
+*primary* is not always the section that *teaches* the subject. **Four of the ten writable
+primaries are now done: rank 14 (`L-3-4-1`), rank 4
 (`L-11-3-1`, §13d), rank 6 (`L-19-1-1`, §13e) and rank 12 (`L-1-3-1`, §13f), all 2026-08-06.**
 `L-11-3-1` covers all of §11.3 (A pp.385-403) and joins all 3 waiting Czech nodes
 (`8-5-3-1/2/3`); `L-19-1-1` covers all of §19.1 (A pp.660-674) and joins all 5 waiting Czech
@@ -814,13 +850,12 @@ Rank 20 is probably the best next pick of the three — most waiting nodes, no �
 opens the molecular-biology half of the book, which the depth layer has not touched at all yet
 (everything so far is metabolism, membranes or bioenergetics).
 
-**Worth raising with the user before continuing much further:** the single thinnest place in the
-whole queue is **rank 1, §5.1 Oxygen-Binding Proteins at ratio 17** — myoglobin, haemoglobin,
-cooperativity, the Bohr effect — and Czech `6-3-1` is sitting there wanting exactly that node
-(§13i). It is blocked only by the topicKey naming question §9c raised and never resolved. §9e
-has now established both the precedent and the mechanism for re-keying, so that question is
-cheaper to answer than it was, and answering it unblocks ranks 1, 2, 3, 8, 10, 11, 13, 15, 16
-and 19 at once — ten sections, including the three highest ratios in the book.
+**Raised with the user 2026-08-07 and answered: re-key per §9e, one section at a time.** The
+single thinnest place in the whole queue, rank 1 §5.1 Oxygen-Binding Proteins at ratio 17, is
+now written (`L-5-1-1`, §13j). The same question still gates ranks 2, 3, 8, 10, 11, 13, 15, 16
+and 19 — nine sections, including the two next-highest ratios in the book (§8.3 nucleic acid
+chemistry at 16, §6.4 examples of enzymatic reactions at 11) — but it no longer needs asking
+again: apply the identical fix rank 1 just received.
 
 **⚠️ Before writing any of them, do §9e's two-minute check:** list the Czech nodes the intended
 `topicKey` actually holds and confirm they are the ones teaching the subject. Rank 9 looked
@@ -1591,6 +1626,94 @@ twice, porphyrias and the antioxidant/HO-isozyme material; A p.820 D-amino acids
 `biochemie_pro` now reports **215 topics (207 cz, 7 lehninger, 1 entity), 61 topicKeys**; audit
 **64 OK, 0 ELSEWHERE, 27 UNCHECKED**, invariant 91 = 64 + 0 + 27. **8 of 61 topicKeys now join
 more than one source.**
+
+### 13j. The eighth node — `L-5-1-1`, §5.1 Oxygen-Binding Proteins (2026-08-07)
+
+**`biochemie_pro/data/leh_ch5.js`, one node, `id: "L-5-1-1"`,
+`topicKey: "oxygen-binding-proteins"`.** Rank 1 of `depth_queue.tsv`, ratio 17.0 — the single
+thinnest place in the entire queue, and the one §9c flagged but could not resolve on its own.
+Covers all of §5.1 end to end (A pp.148–164, every subheading plus Box 5-1) and joins Czech
+`6-3-1`, the one row of Table 6.4 that is haemoglobin: function transport of O2, prosthetic
+group heme Fe2+, valence change none.
+
+**This node could not be written until a `topicKey` question was answered first, and it took
+two decisions from the user to get there, asked together in the same turn.** §9c's own rule
+gives a Lehninger section a key only if some Czech section's *primary* mapping points at it;
+Czech 6.3 maps to `22.3,5.1`, so §22.3 took the key (`amino-acid-derived-molecules`, written as
+`L-22-3-1`, §13i) and §5.1 — ratio 17, rank 1 — got nothing. §9c raised this in the same session
+`L-22-3-1` was written and left it unresolved, along with two other things: whether the user
+revises from the Czech nodes or the Lehninger ones (§2b), and — once §9e set the precedent — how
+to apply it to the nine remaining secondaries. Both were put to the user at once at the start of
+this session; the two answers were **"both layers, Czech primary"** and **"re-key per §9e"**,
+and they turned out to point at the same node: the topic that is thinnest by page-ratio (Lehninger
+§5.1) is also thin on the Czech side (`6-3-1` gives haemoglobin one table row), so it is exactly
+where a Czech-primary reader benefits most from a Lehninger node existing at all.
+
+**The §9e check, done first.** Before touching any data, the Czech nodes actually teaching
+oxygen-binding content were located by keyword sweep across all 207 nodes (haemoglobin,
+myoglobin, cooperativity, allosteric, 2,3-BPG and related terms), not assumed from
+`topickey_assignment.json` alone. Two near-misses, both checked and both correctly left alone:
+`2-2-4` (protein tertiary/quaternary structure) names myoglobin and haemoglobin only as examples
+of alpha-helix-dominated globular proteins — a one-sentence mention, not a natural join, and it
+stays on `protein-tertiary-quaternary`. `7-8-3` (glycolysis) names 2,3-bisphosphoglycerate 31
+times — but every occurrence is phosphoglycerate mutase's regenerating "coenzyme" in one
+glycolytic step; the molecule's role as haemoglobin's oxygen-affinity regulator appears nowhere
+in it. That is not a mapping error — `7-8-3` correctly stays on `glycolysis` — but it is exactly
+the shape of gap §9f's `lehNotes` exist for, so it became this session's one `lehNotes` entry
+rather than a re-key.
+
+**The re-key itself, following §9e's format exactly.** `6-3-1` moved from
+`amino-acid-derived-molecules` to a new key `oxygen-binding-proteins` in both
+`biochemie_pro/data/ch6.js` and both topickey JSON files, each edit carrying a `manual_note`
+recording why and warning that `step4_topickeys.py` would silently revert it (same warning as
+§9e's, same reason: the generator rebuilds from `master_map.tsv`, which is unchanged). `6-3-2`
+and `6-3-3` (heme biosynthesis and porphyrin degradation) stay on `amino-acid-derived-molecules`
+— §13i had already established those two, not `6-3-1`, are what `L-22-3-1` genuinely deepens.
+`L-22-3-1`'s own `coverageNote` is updated to say so: it now joins two Czech nodes, not three,
+and the paragraph explaining why is kept rather than deleted, because the sequence — flagged as
+a gap, then filled two sessions later — is itself the demonstration that §9c's "topicKey may be
+corrected later" caveat works in practice.
+
+**What the node adds, once the constraint changes.** Czech `6-3-1`'s valence-change column
+records a fact (haemoglobin: none) without explaining why it could not be otherwise. Lehninger
+§5.1 supplies the reason first — Fe3+ does not bind oxygen at all, so the entire heme-in-a-globin
+architecture exists to prevent that one oxidation state — and everything else follows from it:
+the quantitative language of binding (Kd, P50) via myoglobin; a clean demonstration that a
+protein is not a passive container for its prosthetic group, via the distal His and the
+20,000-fold-to-40-fold carbon monoxide numbers; the T/R mechanism and Perutz's proposed chain of
+events from one puckered porphyrin to a subunit interface; why a single binding site
+mathematically cannot give a sigmoid curve, with the actual lung and tissue partial pressures
+(13.3 and 4 kPa); the Hill coefficient and the trap in it (a measure of interaction, not a site
+count, and always less than the true number); both cooperativity models with the book's own
+admission that they are hard to distinguish experimentally; the Bohr effect down to the named
+residue (His146) and the named salt bridge; 2,3-BPG's binding site, its altitude-adaptation
+numbers, and fetal haemoglobin's weaker BPG affinity; and sickle cell anaemia's physical
+mechanism — picking up from where Czech `2-2-1` already gives the Glu6Val substitution, not
+repeating it. None of `6-3-1`'s own content is contradicted; its one table row is expanded, not
+corrected, so no `lehNotes` entry was needed on the Czech side for this join (unlike the BPG gap
+in `7-8-3`, which is a different Czech node entirely).
+
+**Citation process.** Content was read from B's text layer end to end
+(`_B_text.pkl`, pages 619–680). Every A page number was resolved by **direct search in A's own
+OCR text**, never taken from `lehninger_toc.tsv` or from prose, per §16 — a purpose-built script
+searched each intended quotation and figure/table/box label against A pp.144–170 individually,
+with the earliest in-range page kept where a label appeared more than once. Two OCR traps bit
+during this pass, both already named in principle by §13d/§16b but worth recording as fresh
+instances: figure labels **FIGURE 5-3**, **FIGURE 5-16** and **FIGURE 5-17** could not be found
+by either exact or OCR-tolerant search anywhere in A's text layer, so none of the three is cited
+by label in this node — the material they illustrate is cited by content page instead; and **A's
+OCR breaks subscripts**, rendering O2 as a zero-space-two and the Hill coefficient nH as `n8`, so
+five probe phrases containing either symbol came back as false misses on the first pass before
+being traced to this and confirmed present verbatim once the subscript was removed from the
+probe. `verify_citations.py` afterward found this node's own citations **19 machine-verified OK,
+0 ELSEWHERE, 1 UNCHECKED** (`points[2]`, on the globin family, carries no figure label or long
+quotable phrase; hand-verified against A p.149 directly). The `lehNotes` entry on `7-8-3` is a
+20th citation and verifies OK.
+
+`biochemie_pro` now reports **216 topics (207 cz, 8 lehninger, 1 entity), 62 topicKeys**;
+citation audit **90 OK, 0 ELSEWHERE, 29 UNCHECKED**, invariant 120 = 90 + 0 + 29 + 1 SKIP. **9 of
+62 topicKeys now join more than one source.** `step5_check.py` reports all checks passing,
+including its `lehNotes` negative tests against the now-six-note, five-node set.
 
 ---
 

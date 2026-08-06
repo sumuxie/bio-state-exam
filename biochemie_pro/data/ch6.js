@@ -1386,7 +1386,7 @@ window.BIOCHEM.topics.push(
 {
   id: "6-3-1",
   book: "cz",
-  topicKey: "amino-acid-derived-molecules",
+  topicKey: "oxygen-binding-proteins",
   chapter: 6,
   section: "6.3",
   czTitle: "Porfyrinové proteiny — struktura a mnohostrannost (Tab. 6.4)",

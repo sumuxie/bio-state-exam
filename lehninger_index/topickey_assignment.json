@@ -595,11 +595,23 @@
     "page_a": "816-824",
     "enTitle": "Porphyrin proteins — structure and biological versatility (Table 6.4)",
     "nodes": [
-      "6-3-1",
       "6-3-2",
       "6-3-3"
     ],
-    "cz_pages": "146-147"
+    "cz_pages": "146-147",
+    "manual_note": "Split 2026-08-07: 6-3-1 moved to oxygen-binding-proteins. Czech 6.3 maps to '22.3,5.1'; 22.3 took the key as the primary and 5.1 got none, but 6-3-1 is the porphyrin-PROTEIN table whose hemoglobin row is what Lehninger 5.1 spends 17 pages on. 6-3-2 (heme biosynthesis) and 6-3-3 (porphyrin degradation) are the genuine 22.3 matches and stay here — HANDOFF_LEHNINGER.md 13i had already flagged that L-22-3-1 deepens those two squarely and 6-3-1 only at its edges."
+  },
+  "6|6.3-oxygen-binding": {
+    "topicKey": "oxygen-binding-proteins",
+    "primary": "5.1",
+    "primary_title": "5.1 Reversible Binding of a Protein to a Ligand: Oxygen-Binding Proteins",
+    "page_a": "148-164",
+    "enTitle": "Porphyrin proteins — the hemoglobin row (oxygen binding)",
+    "nodes": [
+      "6-3-1"
+    ],
+    "cz_pages": "146",
+    "manual_note": "Added 2026-08-07 by hand, see HANDOFF_LEHNINGER.md 9e and 13j. step4_topickeys.py would NOT regenerate this: 5.1 is only the SECOND entry of Czech 6.3's leh_sections, so the generator gives it no key at all. This is the 9c 'third case' (a depth-queue section that is a secondary everywhere), resolved by the 9e precedent of moving the data rather than bending the node. Rank 1 of depth_queue.tsv, ratio 17."
   },
   "7|7.1": {
     "topicKey": "monosaccharides",
