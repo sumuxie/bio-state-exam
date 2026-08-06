@@ -49,8 +49,16 @@ matters, Lehninger §3.4 says *how* one is determined.
 > chapter list from the data instead of a literal `[1..10]`, and shows a book separator in the
 > sidebar plus a book pill in the study pane. `L-3-4-1` files under *Lehninger 8 / Ch. 3* and a
 > `chapter > 10` node renders. Both new UI elements are suppressed when only one book has nodes,
-> so `biochemie_basic` is visually unchanged. **The topic view — `topicKey` grouping both books
-> side by side, the actual feature `pro` exists for (§4) — is still not built.**
+> so `biochemie_basic` is visually unchanged.
+>
+> **✅ Also done 2026-08-06 (commit `37ec106`): the entity-card schema and the first card.**
+> `E-tryptophan` is written and live, the validator has a separate required-field list for
+> `kind: "entity"`, and `app.js` renders cards in their own sidebar group. See §12.
+>
+> **⛔ Still not built: the topic view** — `topicKey` grouping both books side by side, the
+> actual feature `pro` exists for (§4). The data is ready for it: `amino-acids` already joins
+> `E-tryptophan`, `2-1-1` and `2-1-2`; `protein-primary-structure` joins `L-3-4-1` and `2-2-1`.
+> Nothing in the UI surfaces those groupings yet. **This is now the top remaining item.**
 
 **Working locally — read §14 before assuming the remote is the source of truth.** Since the
 2026-08-06 scan-exposure fix the working copy and the remote deliberately hold different things:
@@ -769,15 +777,22 @@ silently lies) and **§9b** (crop-and-upscale a scan region to read printed numb
 
 ---
 
-## 12. The tryptophan integration card — research done, **nothing written yet**
+## 12. The tryptophan integration card — **written 2026-08-06**, dossier kept below
 
-**Status, stated plainly: the source material is located and extracted; no node exists, and the
-schema for entity cards is still undecided.** This section is the dossier so the next session
-can write rather than re-search. It is the first integration card by the user's own choice
-(2026-08-06), taken before batch-producing depth-queue topics because it exposes the card shape
-early (§4).
+**Status: the card is written and validates** — `E-tryptophan` in
+`biochemie_pro/data/entity_cards.js`, commit `37ec106`. `biochemie_pro` now reports 209 topics
+(207 cz, 1 lehninger, 1 entity). §12a's schema question is settled and implemented; §12b's
+dossier is preserved below because it is the evidence behind every claim in the card and the
+template for the next entity.
 
-### 12a. The one thing to decide first
+**What the card contains**, so the next one has a shape to copy: three `chains` — a new
+entity-card-only field, an ordered causal run where each step carries its source page and ends
+on something observable, per §5 — plus four `points`, two `beyondPoints` for what neither book
+supplies, five `terms`, three quiz items and a full oral model. The chains are: indole ring →
+Nanodrop reading; half-polar → membrane interface anchor; most expensive amino acid → regulated
+twice over a 700-fold range.
+
+### 12a. The schema decision — **taken and implemented 2026-08-06**
 
 §7 proposes `kind: "entity"` with a `topicKey` but no `chapter`/`pages`, since an entity card is
 not anchored to one place in either book. **That is a proposal, not a decision, and it collides
@@ -789,20 +804,30 @@ with the validator**: `REQUIRED` currently includes `chapter`, `section`, `czTit
 - `REQUIRED` becomes conditional on `kind` — entity cards require `topicKey` + `summary` +
   `points` and are exempt from `chapter`/`section`/`pages`/`coverage`.
 
-**The second is right**, and it is a small change to the validator (`kind === 'entity'` takes a
-different required list, and the page-gap loop already skips anything that is not `book: "cz"`).
-Do this before writing the card, not after — otherwise CI goes red on the first entity node and
-the temptation will be to fake a `chapter` to make it quiet.
+**The second was chosen and is now live.** `tools/validate-data.js` splits `REQUIRED` into
+`REQUIRED_SECTION` and `REQUIRED_ENTITY` (`id`, `enTitle`, `cnTitle`, `topicKey`, `summary`), and
+additionally **forbids** an entity card from carrying `chapter`, `pages` or `book` — a card that
+claims a chapter is lying about being unanchored and would land in a book view it does not belong
+to. Because an entity card has no single source book, the all-or-nothing `book` check now runs
+over section nodes only; `topicKey` is still required on every node, cards included.
 
 The first option is worse than it looks: the check is `if (!t[k])`, a **falsy** test, so
 `chapter: 0` fails too. A synthetic chapter would have to be a real non-zero number that
 collides with an actual chapter — there is no neutral sentinel value available.
 
-Both facts confirmed by measurement 2026-08-06: `kind:` appears **0 times** anywhere in
-`biochemie_pro/data/`, and `entity` appears **0 times** in `biochemie_pro/app.js`. So no entity
-node exists yet and nothing renders one — `app.js` needs an entity view before a card counts as
-done, not just a validator change. Check what Study/Flashcard/Oral do with a node that has no
-`chapter` before assuming it degrades gracefully.
+`app.js` gained the entity view at the same time, because a card that validates but renders
+nowhere is not done: entity cards get their own sidebar group (rendered **last** — they are the
+synthesis and read better after the sections they draw on), the study pane drops
+`section`/`coverage`/`pages` for them, and `enTitle` is promoted to `<h1>` since there is no
+`czTitle` to head the block. Flashcards, Quiz and Oral needed no change — they read `terms`,
+`quiz` and `oral`, none of which are chapter-dependent.
+
+**A trap this exposed, worth remembering for any future tooling:**
+`lehninger_index/scripts/step5_check.py` detected nodes by the key set `{id, chapter, section}` —
+exactly the three fields an entity card deliberately lacks. It reported 208 topics while a
+browser would load 209, silently skipping the card and every check on it. Any script that walks
+the data *by shape*, rather than by loading `window.BIOCHEM.topics`, has to know about both node
+kinds.
 
 ### 12b. The dossier — every fact located, with the page to open in A
 
