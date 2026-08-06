@@ -129,8 +129,22 @@ things up in Lehninger without opening a 1.1 GB PDF.
    and develop normally* — §14.5/15.1/15.3 into glycolysis/glycogen, §19.4/19.5 into oxidative
    phosphorylation, §28.3 into transcription/operons). Nothing to ask. Read §9b, not this line.
 2. **Any classmate report of a real exam question.** §3 makes these outrank everything in this
-   file, and one has already overturned a plan once. **This is now the only genuinely open
-   question in this list.**
+   file, and one has already overturned a plan once.
+2b. **⭐ Which nodes does the user actually revise from — the Czech ones, or the Lehninger ones?**
+   Asked 2026-08-06, **not yet answered**, and it decides the next phase. If they are revising
+   from the Czech sections, effort should go into hardening that layer (see 2c) and into more
+   `lehNotes` (§9f). If they have started reading the Lehninger nodes directly, then continuing
+   down §9c's depth queue is the right call. Do not guess this one — it is a five-second
+   question with a large consequence.
+2c. **Has the Czech layer ever been audited?** The 207 Czech nodes were written in an earlier
+   phase and **nobody has checked them since**; this phase has only read a dozen or so of them
+   while writing depth nodes. The exam is on that book (§3). Three concrete sub-questions, all
+   open: is the coverage actually complete, are there enough quiz/oral items to practise from,
+   and should the many `cnNote: status: "pending"` entries be mapped to the Chinese notes?
+   The user was offered this as an option on 2026-08-06 and chose `lehNotes` (§9f) first, so
+   this is deferred rather than declined.
+2d. **Are §9f's five `lehNotes` right in tone and length?** They are the template for every
+   later one, and the user has not seen them rendered yet. Worth confirming before writing more.
 3. ~~Which topic to start with~~ → answered 2026-08-06: the first integration card, on
    tryptophan. **Superseded the same day, by the user: *"先尝试最简单的一个小节"* — start with
    the simplest ordinary section instead.** That is why §13's `L-3-4-1` is a depth node and not
