@@ -70,9 +70,16 @@ matters, Lehninger §3.4 says *how* one is determined.
 
 **⚠️ Before writing or reusing any `A p.N` citation, read §16.** Three of six citations in the
 first integration card were wrong — the quotes were right, the page numbers were not, one by 21
-pages. `python lehninger_index/scripts/verify_citations.py` checks them all; run it after
-writing any node. This blocks the figure work in §15, because a wrong page crops the wrong
-figure and nothing downstream notices.
+pages. `python lehninger_index/scripts/verify_citations.py` checks them; run it after writing
+any node.
+
+**Updated 2026-08-06 (`a0a825c`): that checker was itself only reading half the data** — the
+`src` field of entity cards, never the inline prose where a section node writes its citations.
+So all six of `L-3-4-1`'s were skipped while the report said `OK 6 | ELSEWHERE 0`. Fixed; the
+audit now covers 20 citations, and L-3-4-1's six all verify. **§16c also re-measured the two
+things §15 was waiting on and both are sound**: the `−36` offset is constant, and 688 of 713
+anchors land exactly. **So the figure work in §15 is no longer blocked on citation trust** —
+what it still needs is caption-vs-cross-reference disambiguation (§16c), not a new page map.
 
 **Working locally — read §14 before assuming the remote is the source of truth.** Since the
 2026-08-06 scan-exposure fix the working copy and the remote deliberately hold different things:
@@ -82,12 +89,13 @@ things up in Lehninger without opening a 1.1 GB PDF.
 
 **What to ask the user before writing content**, in priority order:
 
-1. **The six regulation sections in §9b that were deliberately left un-ruled** (§14.5, 15.1,
-   15.3, 19.4, 19.5, 28.3, 43 pages). They are not new topics; they are the regulation layer of
-   pathways the Czech book already teaches, so neither the "work properly" nor the "one line"
-   bucket obviously fits.
+1. ~~**The six regulation sections in §9b left un-ruled**~~ → **already answered, 2026-08-06.**
+   This item was stale: §9b's own text records the ruling (*merge into the corresponding topic
+   and develop normally* — §14.5/15.1/15.3 into glycolysis/glycogen, §19.4/19.5 into oxidative
+   phosphorylation, §28.3 into transcription/operons). Nothing to ask. Read §9b, not this line.
 2. **Any classmate report of a real exam question.** §3 makes these outrank everything in this
-   file, and one has already overturned a plan once.
+   file, and one has already overturned a plan once. **This is now the only genuinely open
+   question in this list.**
 3. ~~Which topic to start with~~ → answered 2026-08-06: the first integration card, on
    tryptophan. **Superseded the same day, by the user: *"先尝试最简单的一个小节"* — start with
    the simplest ordinary section instead.** That is why §13's `L-3-4-1` is a depth node and not
@@ -112,9 +120,11 @@ backwards. §3 and §6 have been rewritten; if you are working from a cached cop
 
 ## 0. Current state — the site is live and current; the open problem is exposure, not deploys
 
-`main` = `3ac38e6` (2026-08-06), pushed. Working tree is clean apart from the untracked
+`main` = `a0a825c` (2026-08-06), pushed. Working tree is clean apart from the untracked
 `extracted_*/` and `verify_crops/` evidence folders — **which are no longer harmless; see the
-exposure section below.**
+exposure section below** — plus `extract_chapters.py`, `ocr_full_chapters.py` and `ocr_run.log`,
+three leftovers from the original Czech OCR extraction that have never been tracked and are
+unrelated to the Lehninger work.
 
 | | |
 |---|---|
@@ -716,6 +726,29 @@ so the depth node lands on the topic it actually deepens. But it makes the key *
 already allows renaming a `topicKey` later. **Decide the naming before writing any of the top
 three**, and until then prefer a primary — the first node (§13) deliberately did.
 
+**So that "prefer a primary" is actionable, here are the ones that are** — computed 2026-08-06
+from `depth_queue.tsv` × `topickey_assignment.json`. Every row below needs **no decision**: the
+key already exists and the node joins the topic view the moment it is written.
+
+| rank | Lehninger § | ratio | `topicKey` to use | Czech nodes waiting |
+|---|---|---|---|---|
+| 4 | 11.3 Solute Transport across Membranes | 9.5 | `membrane-transport` | 3 |
+| 5 | 21.1 Biosynthesis of Fatty Acids and Eicosanoids | 9.1 | `fatty-acid-biosynthesis` | 9 |
+| 6 | 19.1 The Mitochondrial Respiratory Chain | 7.5 | `respiratory-chain` | 5 |
+| 7 | 23.2 Tissue-Specific Metabolism | 7.3 | `tissue-specific-metabolism` | 1 |
+| 9 | 17.2 Oxidation of Fatty Acids | 6.5 | `fatty-acid-oxidation` | 2 |
+| 12 | 1.3 Physical Foundations | 5.0 | `bioenergetics-basics` | 2 |
+| 14 | 3.4 Primary Structure | 5.0 | `protein-primary-structure` | ✅ **done — `L-3-4-1`** |
+| 17 | 22.3 Molecules Derived from Amino Acids | 4.5 | `amino-acid-derived-molecules` | 3 |
+| 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | 1 |
+| 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | 2 |
+
+Ranks 1, 2, 3, 8, 10, 11, 13, 15, 16, 19 are the secondaries — blocked on the naming decision
+above. **Rank 4 (§11.3, membrane transport) is the highest-ratio section that is writable today**,
+and its 3 waiting Czech nodes make it a better topic-view demonstration than rank 7's single one.
+Note §5a's warning applies to ranks 5 and 9 (both land in the Czech lipid chapter, where the
+organic-chemistry load is highest and §5's rule does the most work).
+
 Czech sections that share a Lehninger section share a key, which is the intended grouping: all
 twelve sugar sections join on `monosaccharides`, the five kinetics sections on
 `enzyme-kinetics`. 33 of the 61 keys are used by exactly one Czech section.
@@ -1140,8 +1173,14 @@ pushed, exactly like the page scans in §14a. So:
   prose. For cropping this is fatal rather than annoying: a wrong page silently crops the wrong
   figure and nothing downstream notices. **The robust method is to search A's own OCR for the
   caption** (`FIGURE 11-15` is found on printed 376 that way, with a usable rect), which is
-  self-verifying and needs neither the anchors file nor the dossier. §13c separately found
-  `FIGURE 3-24` recorded at A p.104 when the figure is near A p.92 — anchors can be wrong too.
+  self-verifying and needs neither the anchors file nor the dossier.
+- **But the anchors are not the weak link — §16c measured them, 688 of 713 land exactly.** This
+  bullet used to end "anchors can be wrong too", implying the file is unreliable; it is not, and
+  the offset is constant. The real failure mode is narrower and worth coding against: **an anchor
+  cannot tell a caption from a cross-reference**, which is precisely what went wrong with
+  `FIGURE 3-24` (recorded 104; the figure is on 92; the label legitimately appears on both).
+  176 of 713 labels appear on more than one page. **Prefer the earliest occurrence inside the
+  chapter's own page range**, then confirm the crop looks like a figure.
 - **A's OCR mangles Greek letters, ligatures and line-break hyphens** — see §16b for all four
   traps. A caption search that does not handle them returns a silent zero.
 - **Caption search does not always hit.** Measured 2026-08-06: `FIGURE 3-28` and `FIGURE 11-15`
@@ -1203,8 +1242,60 @@ Three verdicts, and the middle one is the whole point:
   `A p.71–79, §3.1` with no quotation. Reported honestly rather than passed silently; these
   still need a human.
 
-Current state: **11 citations — 6 machine-verified OK, 0 ELSEWHERE, 5 UNCHECKED**, and those
-five were checked by hand and all hold.
+Current state: **20 citations — 12 machine-verified OK, 0 ELSEWHERE, 7 UNCHECKED**, and the
+unchecked ones were checked by hand and all hold.
+
+**⚠️ That count was 11 until 2026-08-06, because the checker was only reading half the data —
+fixed in `a0a825c`, and the failure is worth understanding before trusting any similar tool.**
+Citations occur in two shapes. `E-tryptophan` puts them in a dedicated `chains[].steps[].src`
+field; `L-3-4-1` writes them inline in its own prose (`coverageNote`, `points[].en` — *"the
+fragmentation table (Table 3-6, A p.92)…"*). The collection loop read only `src`, **despite its
+own comment saying citations live in prose too** — the comment described the intent, the code
+implemented half of it. So every citation in the only Lehninger node that exists was skipped,
+while the report printed a confident `found 11 citations` and a clean `OK 6 | ELSEWHERE 0`.
+
+> **A checker that silently covers part of its input is worse than no checker**, because the
+> clean run gets quoted as evidence — §16 was written on the strength of exactly that run.
+
+It now walks every string field of every node for an inline `A p.N` and names the field in the
+report (`A p.94  points[7].en`), so a finding says which line to edit. The Chinese half of a
+bilingual pair writes *"A 第 94 页"*, which the `A p.N` regex does not match, so an en/cn pair
+yields one row rather than two — no dedupe needed, but do not "fix" that by matching the Chinese
+form without adding one.
+
+**All six of `L-3-4-1`'s citations came back OK** once they were actually checked (Table 3-6 →
+A p.92, Fig. 3-28 → A p.94, Fig. 3-29 → A p.95, each confirmed against A's own text layer). So
+this was a hole in the tooling, not a second round of §16's content errors.
+
+### 16c. The −36 offset and the anchor file — both re-measured 2026-08-06, both sound
+
+§15a told the next person to distrust `lehninger_AB_anchors.json` and resolve every figure page
+by searching A directly. That caution was reasonable but the underlying worry is now measured
+and does not hold up — which matters, because it was one of the things blocking §15.
+
+| what was checked | how | result |
+|---|---|---|
+| the **−36 offset** | read the folio number printed on A's own pages | of 717 pages where a folio was legible, **554 agree exactly** with `printed = pdf page − 36`; the rest are scattered OCR misreads (`−1020`, `−943`, `−76` — figure numbers and data, not folios), **no competing offset drew more than 3 votes** |
+| the **713 anchors** | search A's text for each anchor's own label near its claimed page | **688 land exactly on the claimed page.** 22 labels not found within ±8 pages, 3 off by −2/+1/+4 |
+
+So the anchors are ~99 % accurate where they resolve at all, and the offset is genuinely
+constant. **`FIGURE 3-24` — the one §13c caught — is still wrong**, and its failure mode is now
+named: the label appears on printed **92, 104, 105 and 844**, the anchor recorded 104, and the
+figure itself is on 92 (3-25 is on 92, 3-26 and 3-27 on 93). **The anchors do not distinguish a
+caption from a cross-reference.** In the first sweep 176 of 713 labels appeared on more than one
+page, so this is the failure to guard against — not drift, not a bad offset. When cropping,
+prefer the *earliest* occurrence within the chapter's own page range.
+
+**⚠️ The one trap that actually bit, twice, in one session: 0-based vs 1-based.**
+`printed = pdf page − 36` is written for the **1-based page number a PDF viewer shows**.
+PyMuPDF's `doc[i]` is **0-based**, so in code the rule is `printed = doc_index − 35`.
+`verify_citations.py` gets this right (`doc[printed + 36 - 1]`). A probe written during this
+session used `doc[i]` with `−36`, and reported two of `L-3-4-1`'s three citations as off by one
+— **three false errors, nearly written into this file as real ones.** Both statements of the
+rule are correct; only one of them is correct *for your index*. State which you mean.
+
+`lehninger_index/_A_text.pkl` (5.3 MB, ~17 s to build, gitignored like `_B_text.pkl`) now caches
+A's de-ligatured text, so any of the above re-runs in seconds.
 
 ### 16b. Four OCR realities the checker had to learn
 
