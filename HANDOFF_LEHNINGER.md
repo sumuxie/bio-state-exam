@@ -52,11 +52,34 @@ tree clean. Chapters 9 and 10 are committed, merged, and deployed.
 | local, same content | `file:///C:/Users/Admin/Downloads/bio-state-exam/biochemie_basic/index.html` |
 | **where you work** | `biochemie_pro/` — https://sumuxie.github.io/bio-state-exam/biochemie_pro/ |
 
-**Known flake:** the Pages deploy for `807eb90` failed with `Timeout reached, aborting!` inside
-`actions/deploy-pages@v4`. The `validate` job passed, the artifact staged and uploaded fine —
-it is a Pages-side timeout, not a repo problem, and the previous deploy was also unusually slow
-(7.5 min). The live site keeps serving the last good deployment, so nothing is broken. Any push
-to `main` retriggers it. If it times out repeatedly, that is worth investigating; once is noise.
+### Known pending item — a cosmetic deploy optimisation has not landed
+
+**The site is fully functional. This is performance only; do not let it block content work.**
+
+The last deployment that actually reached production is `c9f9eb2`, and it contains everything
+that matters: chapters 9–10, `biochemie_basic/`, `biochemie_pro/`, `PESB/`.
+
+What has not landed is a change narrowing the Pages artifact. The deploy job used to upload the
+repository root, which meant shipping `extracted_raw/` — roughly 117 MB of textbook page scans
+kept as an evidence trail — to serve a 9 MB site, and deploys were taking 7.5 minutes. The job
+now stages only `index.html` and the three app directories into `_site`. That change is
+committed but its deploys have not succeeded:
+
+- `807eb90` — `validate` passed, `Stage only the site files` and `Upload site` both passed,
+  then `actions/deploy-pages@v4` failed with **`Timeout reached, aborting!`**. So the artifact
+  was built and uploaded correctly; the failure is on the Pages side.
+- `3cba8e0` — ran `in_progress` for over six minutes, then the unauthenticated GitHub API rate
+  limit (60 requests/hour) cut off the polling. Outcome unknown at the time of writing.
+
+**How to tell which artifact is live, without the API:** request
+`https://sumuxie.github.io/bio-state-exam/HANDOFF.md`. A **200** means the old repo-root
+artifact is still being served; a **404** means `_site` has taken effect. As of writing: 200,
+i.e. still the old one.
+
+If it keeps timing out, the thing to question is whether Pages is struggling with the large
+repository checkout rather than the artifact — `actions/checkout@v4` still pulls all 117 MB
+before the staging step runs, so the narrowing helped the upload but not the checkout. Adding
+`with: { sparse-checkout: ... }` to the deploy job's checkout would address that. Not urgent.
 
 Outstanding content debt, unchanged: **chapter 7 has never been verified against the scans**
 (42 nodes, images already in `extracted_full_ch7/`). Chapters 7 and 8 also still lack their
