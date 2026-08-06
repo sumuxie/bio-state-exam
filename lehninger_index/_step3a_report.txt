@@ -1,0 +1,27 @@
+  ch1.js:   6 nodes
+  ch2.js:  10 nodes
+  ch3.js:   9 nodes
+  ch4.js:  18 nodes
+  ch5.js:  10 nodes
+  ch6.js:  19 nodes
+  ch7.js:  42 nodes
+  ch8.js:  40 nodes
+  ch9.js:  27 nodes
+ ch10.js:  26 nodes
+total nodes: 207
+book pages covered: 8 - 228  gaps: []
+glossary terms: 1010  points: 1466
+
+=== the skeleton: 113 Czech sections across 10 chapters ===
+  ch 1:   6 sections,   6 nodes, pp.8-20 (13 pages),  39 glossary terms
+  ch 2:  10 sections,  10 nodes, pp.21-40 (20 pages),  58 glossary terms
+  ch 3:   9 sections,   9 nodes, pp.41-65 (25 pages),  58 glossary terms
+  ch 4:  14 sections,  18 nodes, pp.66-114 (49 pages), 135 glossary terms
+  ch 5:   5 sections,  10 nodes, pp.115-129 (15 pages),  58 glossary terms
+  ch 6:   9 sections,  19 nodes, pp.130-147 (18 pages),  98 glossary terms
+  ch 7:  29 sections,  42 nodes, pp.148-175 (28 pages), 186 glossary terms
+  ch 8:  14 sections,  40 nodes, pp.176-201 (26 pages), 175 glossary terms
+  ch 9:  10 sections,  27 nodes, pp.202-217 (16 pages), 107 glossary terms
+  ch10:   7 sections,  26 nodes, pp.218-228 (11 pages),  94 glossary terms
+
+OK: wrote cz_nodes.json and cz_skeleton.json

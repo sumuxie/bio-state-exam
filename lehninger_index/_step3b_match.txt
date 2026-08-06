@@ -1,0 +1,613 @@
+Lehninger body pages inside numbered sections: 3054 across 117 sections
+searchable terms: 893  located in Lehninger: 531
+
+=== signal 1: Czech chapter -> Lehninger chapters (aggregated over every term) ===
+  CZ ch 1 ( 19 terms) -> L13(1.00), L1(0.97), L12(0.63), L18(0.62), L23(0.58), L6(0.51), L14(0.50), L19(0.50)
+          shortlist: [13, 1, 12, 18, 23, 6, 14, 19, 16, 26, 25, 3, 22, 9, 4, 20, 28, 11, 15, 21, 27, 17, 2]
+  CZ ch 2 ( 31 terms) -> L4(1.00), L3(0.48), L27(0.25), L11(0.21), L28(0.19), L7(0.19), L12(0.18), L5(0.17)
+          shortlist: [4, 3, 27, 11, 28, 7, 12, 5]
+  CZ ch 3 ( 41 terms) -> L6(1.00), L18(0.41), L16(0.39), L17(0.39), L13(0.28), L22(0.24), L24(0.23), L14(0.19)
+          shortlist: [6, 18, 16, 17, 13, 22, 24, 14, 26, 21]
+  CZ ch 4 ( 86 terms) -> L26(1.00), L28(0.79), L25(0.63), L27(0.58), L8(0.25), L9(0.22), L22(0.21), L24(0.10)
+          shortlist: [26, 28, 25, 27, 8, 9, 22]
+  CZ ch 5 ( 36 terms) -> L18(1.00), L22(0.28), L16(0.28), L17(0.20), L14(0.14), L6(0.13), L20(0.07), L13(0.06)
+          shortlist: [18, 22, 16, 17]
+  CZ ch 6 ( 60 terms) -> L16(1.00), L19(0.57), L17(0.34), L14(0.32), L18(0.29), L20(0.28), L13(0.24), L22(0.20)
+          shortlist: [16, 19, 17, 14, 18, 20, 13, 22, 21]
+  CZ ch 7 ( 96 terms) -> L7(1.00), L15(0.79), L14(0.70), L20(0.36), L16(0.20), L23(0.17), L18(0.17), L12(0.16)
+          shortlist: [7, 15, 14, 20, 16, 23, 18, 12]
+  CZ ch 8 ( 96 terms) -> L21(1.00), L10(0.65), L17(0.48), L11(0.20), L23(0.16), L12(0.08), L19(0.07), L20(0.05)
+          shortlist: [21, 10, 17, 11, 23]
+  CZ ch 9 ( 50 terms) -> L20(1.00), L22(0.22), L16(0.11), L18(0.11), L14(0.09), L17(0.07), L11(0.06), L21(0.05)
+          shortlist: [20, 22]
+  CZ ch10 ( 58 terms) -> L21(1.00), L17(0.73), L23(0.71), L10(0.63), L12(0.61), L14(0.42), L28(0.41), L16(0.25)
+          shortlist: [21, 17, 23, 10, 12, 14, 28, 16, 18, 7, 20, 13]
+
+Lehninger headings available for title matching: 838
+
+=== proposed Lehninger section for each Czech section ===
+m = top score / runner-up.  ! = needs a human look (m<1.25, or fewer than 3 terms located)
+
+--- Czech chapter 1 ---
+  ! 1.1      pp.8-9    What is biochemistry?                      -> 6.1    A pp.177-179   m=1.2
+  ! 1.2      pp.10-11   Living and non-living                      -> 4.5    A pp.136-142   m=1.22
+  ! 1.3      pp.11-16   Building blocks of living matter: from mol -> 1.1    A pp.2-9     m=1.91
+    1.4      pp.16-17   Nutrition and metabolism                   -> 18.3   A pp.640-654   m=1.29
+    1.5      pp.17-18   Energy and life                            -> 1.3    A pp.18-27    m=1.42
+  ! 1.6      pp.18-20   Origin and evolution of life               -> 26.4   A pp.996-1001  m=2.14
+--- Czech chapter 2 ---
+    2.1.1    pp.21-23   Structure and occurrence of amino acids    -> 3.1    A pp.71-79    m=3.62
+  ! 2.1.2    pp.23-24   Physico-chemical properties of amino acids -> 3.3    A pp.83-90    m=1.02
+  ! 2.1.3    pp.24-25   Chemical reactions of amino acids          -> 3.1    A pp.71-79    m=1.0
+    2.1.4    pp.26-26   Formation of the peptide bond              -> 4.1    A pp.108-110   m=1.47
+  ! 2.2.1    pp.26-27   Amino acid sequence (primary structure)    -> 3.4    A pp.91-100   m=2.22
+  ! 2.2.2    pp.27-33   Principles of conformation                 -> 4.1    A pp.108-110   m=1.07
+    2.2.3    pp.33-34   Conformation of proteins — the levels of s -> 4.3    A pp.116-129   m=1.41
+    2.2.4    pp.34-35   Types of construction of the protein molec -> 4.3    A pp.116-129   m=1.81
+    2.2.5    pp.36-37   Simple and conjugated proteins             -> 3.2    A pp.79-83    m=1.48
+  ! 2.2.6    pp.37-40   Properties of proteins                     -> 3.2    A pp.79-83    m=1.0
+--- Czech chapter 3 ---
+    3.1      pp.41-42   Classification and nomenclature of enzymes -> 6.1    A pp.177-179   m=1.65
+    3.2      pp.42-54   Structure of the enzyme molecule; Coenzyme -> 16.1   A pp.575-578   m=1.31
+  ! 3.3.1    pp.54-57   Enzyme reaction kinetics; the Michaelis–Me -> 6.2    A pp.179-188   m=1.28
+  ! 3.3.2    pp.57-58   Two-substrate reactions                    -> 6.3    A pp.188-203   m=2.06
+  ! 3.3.3    pp.58-58   Measurement of enzyme activity             -> 16.2   A pp.578-589   m=1.22
+    3.4      pp.58-59   Influence of pH and temperature on enzyme  -> 6.3    A pp.188-203   m=3.33
+    3.5      pp.59-61   Inhibition of enzyme reactions             -> 6.3    A pp.188-203   m=1.79
+  ! 3.6      pp.61-62   Mechanism of enzyme action                 -> 6.2    A pp.179-188   m=1.19
+    3.7      pp.62-65   Regulatory enzymes; allosteric enzymes     -> 6.5    A pp.213-223   m=6.51
+--- Czech chapter 4 ---
+    4.1      pp.66-67   Nucleic acids are the basic molecules of h -> 8.1    A pp.263-269   m=1.42
+  ! 4.1.1.1  pp.67-70   Biosynthesis of nucleotides; biosynthesis  -> 22.4   A pp.824-837   m=2.22
+    4.1.1.2  pp.70-72   Biosynthesis of pyrimidine nucleotides     -> 22.4   A pp.824-837   m=2.22
+    4.1.2    pp.72-75   Structure of nucleic acids                 -> 8.2    A pp.269-278   m=1.35
+    4.1.3    pp.76-84   DNA structure and biosynthesis explain the -> 25.1   A pp.914-930   m=1.92
+  ! 4.1.4    pp.85-91   DNA is transcribed into RNA — types and pr -> 26.2   A pp.972-988   m=1.06
+  ! 4.1.5    pp.91-92   Degradation of nucleic acids               -> 9.1    A pp.301-316   m=1.06
+  ! 4.2.1    pp.92-94   The gene sequence determines the order of  -> 28.3   A pp.1075-1092  m=1.18
+    4.2.2    pp.94-95   Protein synthesis takes place in ribosomes -> 27.2   A pp.1015-1040  m=4.03
+    4.2.3    pp.95-102  Phases of protein synthesis (I): amino aci -> 27.2   A pp.1015-1040  m=6.16
+  ! 4.2.4    pp.102-108  Regulation of protein synthesis (I): the l -> 28.1   A pp.1055-1065  m=1.12
+  ! 4.3.1    pp.108-110  Non-covalent interactions and folding of t -> 27.2   A pp.1015-1040  m=2.44
+    4.3.2    pp.110-111  Post-translational modification of the pol -> 27.3   A pp.1040-1050  m=5.07
+    4.3.3    pp.111-114  Covalent modification of amino acid side c -> 22.3   A pp.816-824   m=2.12
+--- Czech chapter 5 ---
+  ! 5.1      pp.115-118  Proteolytic cleavage of proteins           -> 18.1   A pp.627-634   m=1.22
+  ! 5.2      pp.118-118  Degradation of amino acids                 -> 18.3   A pp.640-654   m=1.72
+    5.2.1    pp.118-122  Metabolic reactions at the amino acid α-ca -> 18.1   A pp.627-634   m=1.62
+    5.2.2    pp.123-125  Ammonia detoxification, the urea (ornithin -> 18.2   A pp.634-640   m=1.5
+    5.2.3    pp.125-129  Degradation of the carbon skeleton and mut -> 18.3   A pp.640-654   m=2.07
+--- Czech chapter 6 ---
+    6.1      pp.130-130  Principles of bioenergetics                -> 13.1   A pp.466-471   m=2.42
+  ! 6.1.1    pp.131-131  Exergonic and endergonic reactions         -> 14.5   A pp.539-546   m=1.15
+    6.1.2    pp.131-133  High-energy (macroergic) compounds — the c -> 13.3   A pp.478-488   m=1.61
+  ! 6.1.3    pp.133-134  Catabolic and anabolic processes           -> 16.3   A pp.590-592   m=1.29
+    6.2.1    pp.134-135  Oxidation-reduction processes              -> 13.4   A pp.488-496   m=2.49
+    6.2.2    pp.136-140  The citrate cycle — introduction, cycle ov -> 16.2   A pp.578-589   m=1.49
+    6.2.3    pp.140-141  The glyoxylate cycle                       -> 20.6   A pp.732-739   m=3.81
+    6.2.4    pp.141-146  The respiratory chain and aerobic phosphor -> 19.1   A pp.660-674   m=3.15
+    6.3      pp.146-147  Porphyrin proteins — structure and biologi -> 22.3   A pp.816-824   m=1.89
+--- Czech chapter 7 ---
+  ! 7.1      pp.148-148  Monosaccharides                            -> 7.2    A pp.241-246   m=1.11
+    7.1.1    pp.148-148  Aldoses, ketoses                           -> 7.1    A pp.230-241   m=1.79
+    7.1.2    pp.148-150  Deriving aldoses and ketoses — the aldose  -> 7.1    A pp.230-241   m=7.9
+  ! 7.1.3    pp.149-152  Hemiacetal/hemiketal forms — formation, an -> 7.1    A pp.230-241   m=8.97
+  ! 7.1.4    pp.151-151  Mutarotation                               -> 7.1    A pp.230-241   m=inf
+  ! 7.2.1    pp.152-152  Sugar esters                               -> 7.4    A pp.254-258   m=1.17
+  ! 7.2.2    pp.152-153  Sugar acids                                -> 7.2    A pp.241-246   m=1.22
+  ! 7.2.3    pp.153-153  Sugar alcohols                             -> 12.2   A pp.412-428   m=1.02
+  ! 7.2.4    pp.153-153  Amino sugars                               -> 7.1    A pp.230-241   m=1.47
+    7.2.5    pp.153-153  Deoxy sugars                               -> 7.1    A pp.230-241   m=inf
+  ! 7.2.6    pp.153-154  Glycosides                                 -> 7.1    A pp.230-241   m=inf
+  ! 7.3      pp.154-155  Oligosaccharides — definitions and non-red -> 7.1    A pp.230-241   m=1.09
+  ! 7.4      pp.155-155  Polysaccharides                            -> 7.2    A pp.241-246   m=8.58
+    7.4.1    pp.156-157  Homopolysaccharides -- A. Storage polysacc -> 7.2    A pp.241-246   m=2.89
+  ! 7.4.2    pp.157-158  Heteropolysaccharides (glycosaminoglycans, -> 7.2    A pp.241-246   m=1.24
+  ! 7.5      pp.158-160  Oligosaccharides bound to proteins         -> 7.1    A pp.230-241   m=1.22
+  ! 7.6      pp.159-159  Sugar interconversions — introduction (thr -> 16.2   A pp.578-589   m=1.22
+  ! 7.6.1    pp.160-160  Epimerization and isomerization            -> 14.2   A pp.522-525   m=1.66
+  ! 7.6.2    pp.160-161  Oxidation and decarboxylation of glucose   -> 7.1    A pp.230-241   m=1.22
+    7.6.3    pp.161-161  Transfer of three-carbon or two-carbon fra -> 20.4   A pp.719-727   m=1.46
+    7.7      pp.162-163  Two routes to pentose phosphates — the oxi -> 14.6   A pp.546-551   m=5.28
+    7.8      pp.164-167  Glycolysis — introduction and the preparat -> 14.1   A pp.511-521   m=1.29
+  ! 7.8.1    pp.167-169  Formation of ethanol, lactate, or acetyl-C -> 16.1   A pp.575-578   m=1.05
+  ! 7.9      pp.169-170  Gluconeogenesis, glucose resynthesis — byp -> 14.4   A pp.533-538   m=1.17
+  ! 7.9.1    pp.170-170  Gluconeogenesis from amino acids           -> 18.3   A pp.640-654   m=2.35
+  ! 7.10     pp.170-172  Enzymatic cleavage of glycosides and oligo -> 14.2   A pp.522-525   m=1.22
+    7.11.1   pp.172-173  Hydrolytic cleavage — alpha- and beta-amyl -> 14.2   A pp.522-525   m=5.48
+  ! 7.11.2   pp.173-174  Phosphorolysis of starch and glycogen — ge -> 15.3   A pp.565-571   m=1.13
+    7.12     pp.174-175  Biosynthesis of polysaccharides — glycogen -> 15.3   A pp.565-571   m=2.7
+--- Czech chapter 8 ---
+  ! 8.1      pp.176-176  Definition and classification              -> 21.2   A pp.760-763   m=1.7
+  ! 8.2.1    pp.177-178  Fatty acids — definition, classification,  -> 10.1   A pp.340-346   m=1.12
+    8.2.2    pp.178-179  Simple lipids — Neutral acylglycerols      -> 10.1   A pp.340-346   m=1.3
+    8.2.3    pp.179-182  Complex lipids — Glycoacylglycerols (intro -> 10.2   A pp.346-353   m=1.55
+    8.2.4    pp.182-187  Derived lipids — terpenes (isoprenoids): c -> 21.4   A pp.772-789   m=1.7
+    8.3      pp.187-193  Lipid biosynthesis — Fatty acids: subcellu -> 21.1   A pp.745-760   m=1.29
+    8.4.1    pp.193-193  Simple lipids                              -> 10.1   A pp.340-346   m=1.35
+  ! 8.4.2    pp.193-194  Complex lipids — phospholipids and phospho -> 21.3   A pp.764-771   m=1.06
+  ! 8.4.3    pp.194-194  Derived lipids                             -> 21.4   A pp.772-789   m=1.47
+    8.4.4    pp.194-197  Fatty acids — activation                   -> 17.2   A pp.607-618   m=1.41
+  ! 8.5      pp.197-198  Biological membranes (introduction)        -> 10.3   A pp.353-360   m=1.46
+  ! 8.5.1    pp.198-198  Chemical composition                       -> 11.1   A pp.367-376   m=inf
+    8.5.2    pp.198-200  Structure — the lipid bilayer              -> 11.1   A pp.367-376   m=4.69
+    8.5.3    pp.200-201  Membrane transport — passive transport, si -> 11.3   A pp.385-403   m=6.26
+--- Czech chapter 9 ---
+  9        pp.202-202  Photoautotrophy — the five metabolisms spe  NO PROPOSAL
+  ! 9.1      pp.202-204  Basic processes of photosynthesis — the ge -> 20.4   A pp.719-727   m=1.15
+  ! 9.1.1    pp.204-206  The three categories of photosynthetic pig -> 20.2   A pp.708-716   m=1.15
+  ! 9.1.2    pp.206-206  Other components of the thylakoid membrane -> 20.2   A pp.708-716   m=3.47
+    9.1.3    pp.206-209  The reaction centre, and the legend to Obr -> 20.2   A pp.708-716   m=3.71
+    9.1.4    pp.209-212  Photosynthetic CO₂ fixation — why 'dark ph -> 20.5   A pp.727-732   m=1.62
+    9.2      pp.212-213  Photorespiration — three enzymes, three co -> 20.5   A pp.727-732   m=3.89
+    9.3      pp.212-214  C-4 plants — the Hatch–Slack cycle         -> 20.5   A pp.727-732   m=2.22
+    9.4      pp.214-216  Fixation of atmospheric nitrogen — nitroge -> 22.1   A pp.795-804   m=7.58
+  ! 9.5      pp.216-217  Secondary plant metabolites                -> 22.3   A pp.816-824   m=1.25
+--- Czech chapter 10 ---
+  ! 10.1     pp.218-219  Intermediary metabolism — catabolism, anab -> 17.2   A pp.607-618   m=1.11
+  ! 10.1.1   pp.219-219  Carbohydrate metabolism — degradation      -> 14.5   A pp.539-546   m=1.18
+    10.1.2   pp.220-220  Lipid metabolism — degradation and ketone  -> 17.3   A pp.618-620   m=1.4
+  ! 10.1.3   pp.220-220  The relation of carbohydrate and lipid met -> 20.6   A pp.732-739   m=1.22
+  ! 10.1.4   pp.220-221  The citrate cycle and respiratory chain —  -> 16.3   A pp.590-592   m=1.92
+  ! 10.2     pp.221-222  Regulatory mechanisms — why, and at what l -> 28.3   A pp.1075-1092  m=1.06
+    10.3     pp.222-228  Hormones — definition, the gland hierarchy -> 23.1   A pp.842-848   m=1.63
+
+confident: 54 of 113   needs a look: 58   no proposal: 1
+
+=== the ones needing a look, with their evidence ===
+
+  ch1 1.1 -- What is biochemistry?
+      4/5 terms located; chapter shortlist [1, 2, 3, 4, 6, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28]; best heading: None
+       0.550  6.1    6.1 An Introduction to Enzymes                     A pp.177-179
+              biochemistryx3, molecular biologyx1
+       0.457  4.5    4.5 Determination of Protein and Biomolecular Stru A pp.136-142
+              biochemistryx6
+       0.317  13.2   13.2 Chemical Logic and Common Biochemical Reactio A pp.472-478
+              biochemistryx5
+
+  ch1 1.2 -- Living and non-living
+      2/6 terms located; chapter shortlist [1, 2, 3, 4, 6, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28]; best heading: Cells Are the Structural and Functional Units of All Living Organisms
+       0.550  4.5    4.5 Determination of Protein and Biomolecular Stru A pp.136-142
+              chiralityx1
+       0.450  1.1    1.1 Cellular Foundations                           A pp.2-9
+       0.397  26.4   26.4 Catalytic RNAs and the RNA World Hypothesis   A pp.996-1001
+              reproductionx1
+
+  ch1 1.3 -- Building blocks of living matter: from molecule to cell
+      2/5 terms located; chapter shortlist [1, 2, 3, 4, 6, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28]; best heading: The Cell Cycle Has Four Stages
+       0.877  1.1    1.1 Cellular Foundations                           A pp.2-9
+              in vitrox6, in vivox2
+       0.459  13.3   13.3 Phosphoryl Group Transfers and ATP            A pp.478-488
+              in vivox1
+       0.459  9.2    9.2 Exploring Protein Function on the Scale of Cel A pp.317-326
+              in vivox1
+
+  ch1 1.6 -- Origin and evolution of life
+      0/2 terms located; chapter shortlist [1, 2, 3, 4, 6, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28]; best heading: Ribozymes Provide Clues to the Origin of Life in an RNA World
+       0.450  26.4   26.4 Catalytic RNAs and the RNA World Hypothesis   A pp.996-1001
+       0.210  20.3   20.3 Evolution of a Universal Mechanism for ATP Sy A pp.716-719
+       0.150  1.1    1.1 Cellular Foundations                           A pp.2-9
+
+  ch2 2.1.2 -- Physico-chemical properties of amino acids
+      4/5 terms located; chapter shortlist [3, 4, 5, 7, 11, 12, 27, 28]; best heading: Some Proteins Contain Chemical Groups Other Than Amino Acids
+       0.550  3.3    3.3 Working with Proteins                          A pp.83-90
+              electrophoresisx21, ion-exchange chromatographyx4, isoelectric pointx4
+       0.541  3.1    3.1 Amino Acids                                    A pp.71-79
+              isoelectric pointx4, asymmetric carbonx2
+       0.450  3.2    3.2 Peptides and Proteins                          A pp.79-83
+
+  ch2 2.1.3 -- Chemical reactions of amino acids
+      0/3 terms located; chapter shortlist [3, 4, 5, 7, 11, 12, 27, 28]; best heading: 3.1 Amino Acids
+       0.450  3.1    3.1 Amino Acids                                    A pp.71-79
+       0.450  3.2    3.2 Peptides and Proteins                          A pp.79-83
+       0.135  4.1    4.1 Overview of Protein Structure                  A pp.108-110
+
+  ch2 2.2.1 -- Amino acid sequence (primary structure)
+      1/3 terms located; chapter shortlist [3, 4, 5, 7, 11, 12, 27, 28]; best heading: The Function of a Protein Depends on Its Amino Acid Sequence
+       1.000  3.4    3.4 The Structure of Proteins: Primary Structure   A pp.91-100
+              primary structurex13
+       0.450  4.4    4.4 Protein Denaturation and Folding               A pp.129-136
+       0.375  4.2    4.2 Protein Secondary Structure                    A pp.111-116
+
+  ch2 2.2.2 -- Principles of conformation
+      3/5 terms located; chapter shortlist [3, 4, 5, 7, 11, 12, 27, 28]; best heading: The β Conformation Organizes Polypeptide Chains into Sheets
+       0.925  4.1    4.1 Overview of Protein Structure                  A pp.108-110
+              conformationx28, hydrophobic effectx5
+       0.865  4.2    4.2 Protein Secondary Structure                    A pp.111-116
+              conformationx33, hydrophobic effectx1
+       0.361  4.4    4.4 Protein Denaturation and Folding               A pp.129-136
+              conformationx30, hydrophobic effectx2
+
+  ch2 2.2.6 -- Properties of proteins
+      0/5 terms located; chapter shortlist [3, 4, 5, 7, 11, 12, 27, 28]; best heading: 3.2 Peptides and Proteins
+       0.450  3.2    3.2 Peptides and Proteins                          A pp.79-83
+       0.450  3.3    3.3 Working with Proteins                          A pp.83-90
+       0.450  3.4    3.4 The Structure of Proteins: Primary Structure   A pp.91-100
+
+  ch3 3.3.1 -- Enzyme reaction kinetics; the Michaelis–Menten equation
+      2/7 terms located; chapter shortlist [6, 13, 14, 16, 17, 18, 21, 22, 24, 26]; best heading: Michaelis-Menten Kinetics Can Be Analyzed Quantitatively
+       0.598  6.2    6.2 How Enzymes Work                               A pp.179-188
+              catalysisx44, activation energyx24
+       0.468  6.3    6.3 Enzyme Kinetics as an Approach to Understandin A pp.188-203
+              catalysisx3
+       0.180  6.5    6.5 Regulatory Enzymes                             A pp.213-223
+              catalysisx3
+
+  ch3 3.3.2 -- Two-substrate reactions
+      2/4 terms located; chapter shortlist [6, 13, 14, 16, 17, 18, 21, 22, 24, 26]; best heading: Hexokinase Undergoes Induced Fit on Substrate Binding
+       0.925  6.3    6.3 Enzyme Kinetics as an Approach to Understandin A pp.188-203
+              ternary complexx6
+       0.450  6.4    6.4 Examples of Enzymatic Reactions                A pp.203-213
+       0.321  6.2    6.2 How Enzymes Work                               A pp.179-188
+
+  ch3 3.3.3 -- Measurement of enzyme activity
+      2/5 terms located; chapter shortlist [6, 13, 14, 16, 17, 18, 21, 22, 24, 26]; best heading: Enzyme Activity Depends on pH
+       0.550  16.2   16.2 Reactions of the Citric Acid Cycle            A pp.578-589
+              unit ux1
+       0.450  6.3    6.3 Enzyme Kinetics as an Approach to Understandin A pp.188-203
+       0.270  13.5   13.5 Regulation of Metabolic Pathways              A pp.497-503
+
+  ch3 3.6 -- Mechanism of enzyme action
+      5/7 terms located; chapter shortlist [6, 13, 14, 16, 17, 18, 21, 22, 24, 26]; best heading: Enzyme Activity Depends on pH
+       0.775  6.2    6.2 How Enzymes Work                               A pp.179-188
+              general acid-base catalysisx7, covalent catalysisx5
+       0.652  6.4    6.4 Examples of Enzymatic Reactions                A pp.203-213
+              general acid-base catalysisx3, induced fitx2, covalent catalysisx2
+       0.450  6.3    6.3 Enzyme Kinetics as an Approach to Understandin A pp.188-203
+
+  ch4 4.1.1.1 -- Biosynthesis of nucleotides; biosynthesis of purine nucleoti
+      2/5 terms located; chapter shortlist [8, 9, 22, 25, 26, 27, 28]; best heading: 8.4 Other Functions of Nucleotides
+       1.000  22.4   22.4 Biosynthesis and Degradation of Nucleotides   A pp.824-837
+              adenylosuccinatex3, xanthylatex1
+       0.450  8.4    8.4 Other Functions of Nucleotides                 A pp.294-296
+       0.180  22.2   22.2 Biosynthesis of Amino Acids                   A pp.805-816
+
+  ch4 4.1.4 -- DNA is transcribed into RNA — types and properties of RNA
+      11/17 terms located; chapter shortlist [8, 9, 22, 25, 26, 27, 28]; best heading: Both Introns and Exons Are Transcribed from DNA into RNA
+       0.585  26.2   26.2 RNA Processing                                A pp.972-988
+              primary transcriptx19, transcriptionx23, ribosomal rnax4, small nuclear rnax1
+       0.550  26.1   26.1 DNA-Dependent Synthesis of RNA                A pp.961-972
+              transcriptionx105, promoterx73, rna polymerase holoenzymex9, transcription bubblex5
+       0.371  28.3   28.3 Regulation of Gene Expression in Eukaryotes   A pp.1075-1092
+              transcriptionx148, promoterx39, messenger rnax1
+
+  ch4 4.1.5 -- Degradation of nucleic acids
+      5/6 terms located; chapter shortlist [8, 9, 22, 25, 26, 27, 28]; best heading: Nucleotides and Nucleic Acids Have Characteristic Bases and Pentoses
+       0.550  9.1    9.1 Studying Genes and Their Products              A pp.301-316
+              endonucleasex36, nucleasex39, exonucleasex3
+       0.519  26.2   26.2 RNA Processing                                A pp.972-988
+              nucleasex45, endonucleasex20, exonucleasex9
+       0.460  8.1    8.1 Some Basic Definitions and Conventions         A pp.263-269
+              nucleasex1
+
+  ch4 4.2.1 -- The gene sequence determines the order of amino acids in pro
+      7/8 terms located; chapter shortlist [8, 9, 22, 25, 26, 27, 28]; best heading: 22.2 Biosynthesis of Amino Acids
+       0.655  28.3   28.3 Regulation of Gene Expression in Eukaryotes   A pp.1075-1092
+              transcriptionx148, translationx42
+       0.557  28.1   28.1 The Proteins and RNAs of Gene Regulation      A pp.1055-1065
+              transcriptionx59, translationx4
+       0.469  27.2   27.2 Protein Synthesis                             A pp.1015-1040
+              anticodonx21, translationx28, selenocysteinex9, termination codonsx4
+
+  ch4 4.2.4 -- Regulation of protein synthesis (I): the lactose and tryptop
+      11/20 terms located; chapter shortlist [8, 9, 22, 25, 26, 27, 28]; best heading: 27.2 Protein Synthesis
+       0.615  28.1   28.1 The Proteins and RNAs of Gene Regulation      A pp.1055-1065
+              repressorx54, promoterx51, operonx35, operatorx22
+       0.550  26.2   26.2 RNA Processing                                A pp.972-988
+              intronx107, splicingx81, spliceosomex46, rna polymerasex7
+       0.534  28.2   28.2 Regulation of Gene Expression in Bacteria     A pp.1065-1074
+              operonx50, repressorx44, attenuatorx9, promoterx14
+
+  ch4 4.3.1 -- Non-covalent interactions and folding of the polypeptide cha
+      2/6 terms located; chapter shortlist [8, 9, 22, 25, 26, 27, 28]; best heading: Stage 5: Newly Synthesized Polypeptide Chains Undergo Folding and Processing
+       1.000  27.2   27.2 Protein Synthesis                             A pp.1015-1040
+              chaperoninx4, chaperonex3
+       0.410  28.3   28.3 Regulation of Gene Expression in Eukaryotes   A pp.1075-1092
+              chaperonex3
+       0.339  27.3   27.3 Protein Targeting and Degradation             A pp.1040-1050
+              chaperonex3
+
+  ch5 5.1 -- Proteolytic cleavage of proteins
+      3/8 terms located; chapter shortlist [16, 17, 18, 22]; best heading: Transcription Factors Turn on the Synthesis of Proteins for Lipid Catabolism
+       0.550  18.1   18.1 Metabolic Fates of Amino Groups               A pp.627-634
+              zymogenx9, proteasex3, trypsin inhibitorx1
+       0.450  17.2   17.2 Oxidation of Fatty Acids                      A pp.607-618
+
+  ch5 5.2 -- Degradation of amino acids
+      2/4 terms located; chapter shortlist [16, 17, 18, 22]; best heading: 22.2 Biosynthesis of Amino Acids
+       0.775  18.3   18.3 Pathways of Amino Acid Degradation            A pp.640-654
+              amino acid degradationx5
+       0.450  22.2   22.2 Biosynthesis of Amino Acids                   A pp.805-816
+       0.225  22.3   22.3 Molecules Derived from Amino Acids            A pp.816-824
+
+  ch6 6.1.1 -- Exergonic and endergonic reactions
+      4/4 terms located; chapter shortlist [13, 14, 16, 17, 18, 19, 20, 21, 22]; best heading: The Citric Acid Cycle Is Also Regulated at Three Exergonic Steps
+       0.550  14.5   14.5 Coordinated Regulation of Glycolysis and Gluc A pp.539-546
+              hexokinasex45
+       0.480  14.4   14.4 Gluconeogenesis                               A pp.533-538
+              hexokinasex3, exergonic reactionx2
+       0.450  16.4   16.4 Regulation of the Citric Acid Cycle           A pp.593-596
+
+  ch6 6.1.3 -- Catabolic and anabolic processes
+      2/4 terms located; chapter shortlist [13, 14, 16, 17, 18, 19, 20, 21, 22]; best heading: The Citric Acid Cycle Serves in Both Catabolic and Anabolic Processes
+       0.712  16.3   16.3 The Hub of Intermediary Metabolism            A pp.590-592
+              anabolismx2, catabolismx1
+       0.550  18.3   18.3 Pathways of Amino Acid Degradation            A pp.640-654
+              catabolismx17
+       0.368  13.3   13.3 Phosphoryl Group Transfers and ATP            A pp.478-488
+              catabolismx8, anabolismx2
+
+  ch7 7.1 -- Monosaccharides
+      4/5 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 7.1 Monosaccharides and Disaccharides
+       0.550  7.2    7.2 Polysaccharides                                A pp.241-246
+              polysaccharidex45, cellulosex30, glycoproteinx1, carbohydratex1
+       0.495  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+              carbohydratex5, polysaccharidex4, glycoproteinx2
+       0.291  20.6   20.6 Biosynthesis of Starch, Sucrose, and Cellulos A pp.732-739
+              cellulosex40, carbohydratex4, polysaccharidex1
+
+  ch7 7.1.3 -- Hemiacetal/hemiketal forms — formation, anomers, Haworth for
+      2/6 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: None
+       0.550  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+              hemiacetalx12, hemiketalx6
+       0.061  14.1   14.1 Glycolysis                                    A pp.511-521
+              hemiacetalx2
+
+  ch7 7.1.4 -- Mutarotation
+      1/2 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: None
+       0.550  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+              mutarotationx4
+
+  ch7 7.2.1 -- Sugar esters
+      0/4 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 7.4 Carbohydrates as Informational Molecules: The Sugar Code
+       0.450  7.4    7.4 Carbohydrates as Informational Molecules: The  A pp.254-258
+       0.386  15.2   15.2 Breakdown and Synthesis of Glycogen           A pp.558-564
+
+  ch7 7.2.2 -- Sugar acids
+      4/5 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: Six Amino Acids Are Degraded to Pyruvate
+       0.550  7.2    7.2 Polysaccharides                                A pp.241-246
+              uronic acidx11
+       0.450  18.3   18.3 Pathways of Amino Acid Degradation            A pp.640-654
+       0.377  15.2   15.2 Breakdown and Synthesis of Glycogen           A pp.558-564
+              ascorbic acidx1
+
+  ch7 7.2.3 -- Sugar alcohols
+      1/5 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 7.4 Carbohydrates as Informational Molecules: The Sugar Code
+       0.550  12.2   12.2 G Protein–Coupled Receptors and Second Messen A pp.412-428
+              inositolx9
+       0.540  12.4   12.4 Receptor Tyrosine Kinases                     A pp.433-438
+              inositolx5
+       0.450  7.4    7.4 Carbohydrates as Informational Molecules: The  A pp.254-258
+
+  ch7 7.2.4 -- Amino sugars
+      2/4 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 18.3 Pathways of Amino Acid Degradation
+       0.807  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+              amino sugarx2, neuraminic acidx2
+       0.550  7.4    7.4 Carbohydrates as Informational Molecules: The  A pp.254-258
+              neuraminic acidx3
+       0.450  18.3   18.3 Pathways of Amino Acid Degradation            A pp.640-654
+
+  ch7 7.2.6 -- Glycosides
+      2/5 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: None
+       0.550  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+              glycosidex3, o-glycosidic bondx1
+
+  ch7 7.3 -- Oligosaccharides — definitions and non-reducing oligosacchar
+      5/10 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: Sugars That Are, or Can Form, Aldehydes Are Reducing Sugars
+       0.841  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+              lactosex28, maltosex10, sucrosex12, oligosaccharidex5
+       0.771  7.3    7.3 Glycoconjugates: Proteoglycans, Glycoproteins, A pp.247-253
+              oligosaccharidex38
+       0.550  20.6   20.6 Biosynthesis of Starch, Sucrose, and Cellulos A pp.732-739
+              sucrosex63
+
+  ch7 7.4 -- Polysaccharides
+      2/5 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 7.2 Polysaccharides
+       1.000  7.2    7.2 Polysaccharides                                A pp.241-246
+              polysaccharidex45, uronic acidx11
+       0.117  14.2   14.2 Feeder Pathways for Glycolysis                A pp.522-525
+              polysaccharidex4
+       0.110  7.3    7.3 Glycoconjugates: Proteoglycans, Glycoproteins, A pp.247-253
+              polysaccharidex13, uronic acidx1
+
+  ch7 7.4.2 -- Heteropolysaccharides (glycosaminoglycans, hyaluronic acid, 
+      4/5 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: Glycosaminoglycans Are Heteropolysaccharides of the Extracellular Matrix
+       0.685  7.2    7.2 Polysaccharides                                A pp.241-246
+              glycosaminoglycanx12, heparinx5, proteoglycanx2, hyaluronic acidx1
+       0.550  7.3    7.3 Glycoconjugates: Proteoglycans, Glycoproteins, A pp.247-253
+              proteoglycanx35, glycosaminoglycanx19, heparinx4
+       0.068  7.5    7.5 Working with Carbohydrates                     A pp.258-259
+              glycosaminoglycanx3
+
+  ch7 7.5 -- Oligosaccharides bound to proteins
+      2/5 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: Glycoproteins Have Covalently Attached Oligosaccharides
+       0.550  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+              o-glycosidic bondx1
+       0.450  7.3    7.3 Glycoconjugates: Proteoglycans, Glycoproteins, A pp.247-253
+       0.450  12.2   12.2 G Protein–Coupled Receptors and Second Messen A pp.412-428
+
+  ch7 7.6 -- Sugar interconversions — introduction (three reaction types)
+      3/3 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 7.4 Carbohydrates as Informational Molecules: The Sugar Code
+       0.550  16.2   16.2 Reactions of the Citric Acid Cycle            A pp.578-589
+              oxidative decarboxylationx9
+       0.450  7.4    7.4 Carbohydrates as Informational Molecules: The  A pp.254-258
+       0.386  15.2   15.2 Breakdown and Synthesis of Glycogen           A pp.558-564
+
+  ch7 7.6.1 -- Epimerization and isomerization
+      2/3 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: None
+       0.550  14.2   14.2 Feeder Pathways for Glycolysis                A pp.522-525
+              epimerizationx1
+       0.331  18.3   18.3 Pathways of Amino Acid Degradation            A pp.640-654
+              epimerizationx1
+       0.261  14.1   14.1 Glycolysis                                    A pp.511-521
+              isomerizationx1
+
+  ch7 7.6.2 -- Oxidation and decarboxylation of glucose
+      1/5 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 14.6 Pentose Phosphate Pathway of Glucose Oxidation
+       0.550  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+              glucuronatex2
+       0.450  14.6   14.6 Pentose Phosphate Pathway of Glucose Oxidatio A pp.546-551
+       0.417  7.2    7.2 Polysaccharides                                A pp.241-246
+              glucuronatex1
+
+  ch7 7.8.1 -- Formation of ethanol, lactate, or acetyl-CoA — ethanol and l
+      9/10 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 16.1 Production of Acetyl-CoA (Activated Acetate)
+       0.892  16.1   16.1 Production of Acetyl-CoA (Activated Acetate)  A pp.575-578
+              dihydrolipoyl transacetylasex5, pyruvate dehydrogenase complexx5, dihydrolipoyl dehydrogenasex4, pyruvate decarboxylasex2
+       0.850  14.3   14.3 Fates of Pyruvate                             A pp.525-532
+              lactatex24, pyruvate decarboxylasex8, acetaldehydex5, alcohol dehydrogenasex3
+       0.326  18.3   18.3 Pathways of Amino Acid Degradation            A pp.640-654
+              lactatex3, pyruvate dehydrogenase complexx2, lactate dehydrogenasex1
+
+  ch7 7.9 -- Gluconeogenesis, glucose resynthesis — bypassing glycolysis'
+      4/6 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: 14.5 Coordinated Regulation of Glycolysis and Gluconeogenesis
+       0.743  14.4   14.4 Gluconeogenesis                               A pp.533-538
+              gluconeogenesisx41, oxaloacetatex26, pyruvate carboxylasex9, cori cyclex1
+       0.635  14.5   14.5 Coordinated Regulation of Glycolysis and Gluc A pp.539-546
+              gluconeogenesisx24, pyruvate carboxylasex5, oxaloacetatex4
+       0.426  20.6   20.6 Biosynthesis of Starch, Sucrose, and Cellulos A pp.732-739
+              oxaloacetatex9, gluconeogenesisx7
+
+  ch7 7.9.1 -- Gluconeogenesis from amino acids
+      2/3 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: Some Amino Acids Can Contribute to Gluconeogenesis, Others to Ketone Body Formation
+       1.000  18.3   18.3 Pathways of Amino Acid Degradation            A pp.640-654
+              alaninex49, glucogenic amino acidx2
+       0.425  18.1   18.1 Metabolic Fates of Amino Groups               A pp.627-634
+              alaninex18
+       0.336  14.4   14.4 Gluconeogenesis                               A pp.533-538
+              alaninex7, glucogenic amino acidx3
+
+  ch7 7.10 -- Enzymatic cleavage of glycosides and oligosaccharides — glyc
+      4/11 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: Glycoproteins Have Covalently Attached Oligosaccharides
+       0.550  14.2   14.2 Feeder Pathways for Glycolysis                A pp.522-525
+              lactosex44, galactokinasex2
+       0.450  7.3    7.3 Glycoconjugates: Proteoglycans, Glycoproteins, A pp.247-253
+       0.360  18.2   18.2 Nitrogen Excretion and the Urea Cycle         A pp.634-640
+
+  ch7 7.11.2 -- Phosphorolysis of starch and glycogen — general mechanism
+      2/6 terms located; chapter shortlist [7, 12, 14, 15, 16, 18, 20, 23]; best heading: Endogenous Glycogen and Starch Are Degraded by Phosphorolysis
+       0.604  15.3   15.3 Coordinated Regulation of Glycogen Breakdown  A pp.565-571
+              phosphorylasex72
+       0.533  14.2   14.2 Feeder Pathways for Glycolysis                A pp.522-525
+              phosphorolysisx5, phosphorylasex2
+       0.244  15.2   15.2 Breakdown and Synthesis of Glycogen           A pp.558-564
+              phosphorylasex19, phosphorolysisx3
+
+  ch8 8.1 -- Definition and classification
+      2/8 terms located; chapter shortlist [10, 11, 17, 21, 23]; best heading: None
+       0.550  21.2   21.2 Biosynthesis of Triacylglycerols              A pp.760-763
+              acylglycerolx65
+       0.324  17.1   17.1 Digestion, Mobilization, and Transport of Fat A pp.603-606
+              acylglycerolx36
+       0.312  10.1   10.1 Storage Lipids                                A pp.340-346
+              acylglycerolx31
+
+  ch8 8.2.1 -- Fatty acids — definition, classification, natural occurrence
+      9/12 terms located; chapter shortlist [10, 11, 17, 21, 23]; best heading: 17.2 Oxidation of Fatty Acids
+       0.910  10.1   10.1 Storage Lipids                                A pp.340-346
+              fatty acidx79, saturated fatty acidx20, oleic acidx5, polyunsaturated fatty acidx3
+       0.810  21.1   21.1 Biosynthesis of Fatty Acids and Eicosanoids   A pp.745-760
+              fatty acidx110, saturated fatty acidx20, desaturasex8, polyunsaturated fatty acidx5
+       0.726  17.2   17.2 Oxidation of Fatty Acids                      A pp.607-618
+              fatty acidx100, saturated fatty acidx13, oleic acidx2, polyunsaturated fatty acidx2
+
+  ch8 8.4.2 -- Complex lipids — phospholipids and phospholipases
+      7/11 terms located; chapter shortlist [10, 11, 17, 21, 23]; best heading: 10.1 Storage Lipids
+       0.981  21.3   21.3 Biosynthesis of Membrane Phospholipids        A pp.764-771
+              phosphatidylcholinex21, sphingosinex5, ceramidex3, phospholipase a2x2
+       0.925  10.2   10.2 Structural Lipids in Membranes                A pp.346-353
+              ceramidex9, phospholipasex10, sphingosinex8, phosphatidylcholinex7
+       0.594  10.4   10.4 Working with Lipids                           A pp.361-363
+              phospholipasex4, phosphatidylcholinex2, phospholipase cx1
+
+  ch8 8.4.3 -- Derived lipids
+      1/2 terms located; chapter shortlist [10, 11, 17, 21, 23]; best heading: 10.1 Storage Lipids
+       0.775  21.4   21.4 Cholesterol, Steroids, and Isoprenoids: Biosy A pp.772-789
+              bile acidx13
+       0.528  10.4   10.4 Working with Lipids                           A pp.361-363
+              bile acidx1
+       0.450  10.1   10.1 Storage Lipids                                A pp.340-346
+
+  ch8 8.5 -- Biological membranes (introduction)
+      1/2 terms located; chapter shortlist [10, 11, 17, 21, 23]; best heading: Bilayer Architecture Underlies the Structure and Function of Biological Membranes
+       0.657  10.3   10.3 Lipids as Signals, Cofactors, and Pigments    A pp.353-360
+              cell membranex1
+       0.450  11.1   11.1 The Composition and Architecture of Membranes A pp.367-376
+       0.188  10.2   10.2 Structural Lipids in Membranes                A pp.346-353
+
+  ch8 8.5.1 -- Chemical composition
+      0/2 terms located; chapter shortlist [10, 11, 17, 21, 23]; best heading: 11.1 The Composition and Architecture of Membranes
+       0.450  11.1   11.1 The Composition and Architecture of Membranes A pp.367-376
+
+  ch9 9.1 -- Basic processes of photosynthesis — the general equation, th
+      5/12 terms located; chapter shortlist [20, 22]; best heading: Chlorophylls Absorb Light Energy for Photosynthesis
+       0.774  20.4   20.4 CO[2]-Assimilation Reactions                  A pp.719-727
+              chloroplastx33, stromax21, thylakoidx4
+       0.674  20.1   20.1 Light Absorption                              A pp.701-707
+              thylakoidx12, chloroplastx12, stromax3
+       0.550  20.3   20.3 Evolution of a Universal Mechanism for ATP Sy A pp.716-719
+              chloroplastx26, thylakoidx12, thylakoid lumenx4, stromax5
+
+  ch9 9.1.1 -- The three categories of photosynthetic pigment
+      9/15 terms located; chapter shortlist [20, 22]; best heading: Photosynthetic Bacteria Have Two Types of Reaction Center
+       0.630  20.2   20.2 Photochemical Reaction Centers                A pp.708-716
+              chlorophyllx21, carotenoidx3
+       0.550  20.1   20.1 Light Absorption                              A pp.701-707
+              chlorophyllx45, accessory pigmentx8, carotenoidx5, phycobilinx1
+       0.168  22.3   22.3 Molecules Derived from Amino Acids            A pp.816-824
+              porphyrinx18, tetrapyrrolex1
+
+  ch9 9.1.2 -- Other components of the thylakoid membranes
+      2/4 terms located; chapter shortlist [20, 22]; best heading: None
+       0.550  20.2   20.2 Photochemical Reaction Centers                A pp.708-716
+              plastocyaninx10
+       0.159  20.3   20.3 Evolution of a Universal Mechanism for ATP Sy A pp.716-719
+              plastocyaninx2
+
+  ch9 9.5 -- Secondary plant metabolites
+      1/3 terms located; chapter shortlist [20, 22]; best heading: Aromatic Amino Acids Are Precursors of Many Plant Substances
+       0.450  22.3   22.3 Molecules Derived from Amino Acids            A pp.816-824
+       0.360  20.6   20.6 Biosynthesis of Starch, Sucrose, and Cellulos A pp.732-739
+
+  ch10 10.1 -- Intermediary metabolism — catabolism, anabolism and the four
+      9/15 terms located; chapter shortlist [7, 10, 12, 13, 14, 16, 17, 18, 20, 21, 23, 28]; best heading: AMPK Coordinates Catabolism and Anabolism in Response to Metabolic Stress
+       0.683  17.2   17.2 Oxidation of Fatty Acids                      A pp.607-618
+              acetyl-coax50, -oxidationx15, catabolismx7
+       0.615  16.3   16.3 The Hub of Intermediary Metabolism            A pp.590-592
+              acetyl-coax6, intermediary metabolismx2, anabolismx2, catabolismx1
+       0.536  23.4   23.4 Obesity and the Regulation of Body Mass       A pp.867-875
+              catabolismx5, acetyl-coax3, anabolismx1
+
+  ch10 10.1.1 -- Carbohydrate metabolism — degradation
+      5/7 terms located; chapter shortlist [7, 10, 12, 13, 14, 16, 17, 18, 20, 21, 23, 28]; best heading: Xylulose 5-Phosphate Is a Key Regulator of Carbohydrate and Fat Metabolism
+       0.649  14.5   14.5 Coordinated Regulation of Glycolysis and Gluc A pp.539-546
+              gluconeogenesisx24, phosphoenolpyruvatex2
+       0.550  14.4   14.4 Gluconeogenesis                               A pp.533-538
+              gluconeogenesisx41, phosphoenolpyruvatex13
+       0.257  7.4    7.4 Carbohydrates as Informational Molecules: The  A pp.254-258
+
+  ch10 10.1.3 -- The relation of carbohydrate and lipid metabolism — why fats
+      1/2 terms located; chapter shortlist [7, 10, 12, 13, 14, 16, 17, 18, 20, 21, 23, 28]; best heading: Sugars That Are, or Can Form, Aldehydes Are Reducing Sugars
+       0.550  20.6   20.6 Biosynthesis of Starch, Sucrose, and Cellulos A pp.732-739
+              glyoxylate cyclex11
+       0.450  17.1   17.1 Digestion, Mobilization, and Transport of Fat A pp.603-606
+       0.450  7.1    7.1 Monosaccharides and Disaccharides              A pp.230-241
+
+  ch10 10.1.4 -- The citrate cycle and respiratory chain — energetics and bio
+      1/4 terms located; chapter shortlist [7, 10, 12, 13, 14, 16, 17, 18, 20, 21, 23, 28]; best heading: The Cell Cycle Has Four Stages
+       0.865  16.3   16.3 The Hub of Intermediary Metabolism            A pp.590-592
+              amphibolic pathwayx1
+       0.450  16.2   16.2 Reactions of the Citric Acid Cycle            A pp.578-589
+       0.450  12.8   12.8 Regulation of the Cell Cycle by Protein Kinas A pp.446-450
+
+  ch10 10.2 -- Regulatory mechanisms — why, and at what levels
+      12/17 terms located; chapter shortlist [7, 10, 12, 13, 14, 16, 17, 18, 20, 21, 23, 28]; best heading: Regulatory Proteins Have Discrete DNA-Binding Domains
+       0.962  28.3   28.3 Regulation of Gene Expression in Eukaryotes   A pp.1075-1092
+              regulationx57, repressionx7
+       0.911  28.1   28.1 The Proteins and RNAs of Gene Regulation      A pp.1055-1065
+              regulationx38, repressionx5, inductionx2
+       0.550  28.2   28.2 Regulation of Gene Expression in Bacteria     A pp.1065-1074
+              regulationx34, inductionx7, repressionx4
+
+  ch9 9 -- Photoautotrophy — the five metabolisms specific to autotroph
+      2/3 terms located; chapter shortlist [20, 22]; best heading: None

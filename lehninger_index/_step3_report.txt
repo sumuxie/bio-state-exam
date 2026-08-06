@@ -1,0 +1,106 @@
+mapping covers all 113 Czech sections; every target is a real Lehninger section
+
+=== cross-check against the independent automatic matcher ===
+agrees on 74 of 113 Czech sections (65%); disagrees on 38
+of the disagreements, 15 had a confident automatic proposal (margin >= 1.25) -- those are the ones worth re-reading:
+   ch1 1.4      Nutrition and metabolism                     hand=1.3,13.1       auto=18.3 (m=1.29)
+   ch1 1.6      Origin and evolution of life                 hand=1.5            auto=26.4 (m=2.14)
+   ch2 2.1.4    Formation of the peptide bond                hand=3.2            auto=4.1 (m=1.47)
+   ch3 3.2      Structure of the enzyme molecule; Coenzymes  hand=6.1,6.2,13.4   auto=16.1 (m=1.31)
+   ch3 3.3.1    Enzyme reaction kinetics; the Michaelis–Ment hand=6.3            auto=6.2 (m=1.28)
+   ch4 4.3.1    Non-covalent interactions and folding of the hand=4.4            auto=27.2 (m=2.44)
+   ch4 4.3.3    Covalent modification of amino acid side cha hand=27.3,6.5       auto=22.3 (m=2.12)
+   ch5 5.2      Degradation of amino acids                   hand=18.1           auto=18.3 (m=1.72)
+   ch6 6.1.3    Catabolic and anabolic processes             hand=13.2,13.5      auto=16.3 (m=1.29)
+   ch7 7.6.3    Transfer of three-carbon or two-carbon fragm hand=14.6           auto=20.4 (m=1.46)
+   ch7 7.12     Biosynthesis of polysaccharides — glycogen s hand=15.2,20.6      auto=15.3 (m=2.7)
+   ch8 8.1      Definition and classification                hand=10.1           auto=21.2 (m=1.7)
+   ch8 8.4.1    Simple lipids                                hand=17.1           auto=10.1 (m=1.35)
+   ch8 8.5      Biological membranes (introduction)          hand=11.1           auto=10.3 (m=1.46)
+   ch9 9.1.4    Photosynthetic CO₂ fixation — why 'dark phas hand=20.4           auto=20.5 (m=1.62)
+
+=== chapter rollup: where the Czech book is thin ===
+CZ ch   pages  nodes  LEH pp  ratio  Lehninger chapters
+1          17      6      40    2.4  1,13
+2          27     10      68    2.5  2,3,4
+3          33      9      60    1.8  6,13
+4          60     18     189    3.1  1,4,6,8,22,24,25,26,27,28
+5          18     10      41    2.3  18,27
+6          24     19     125    5.2  5,13,16,19,20,22
+7          54     42      97    1.8  7,14,15,18,20
+8          38     40     128    3.4  10,11,17,21
+9          25     27      72    2.9  20,21,22
+10         16     26      89    5.6  6,12,13,14,15,16,17,23
+
+=== depth queue: Czech sections ranked by how much more Lehninger has to say ===
+ratio = Lehninger printed pages / Czech pages, for that section's own mapping.
+
+ ratio  CZ          pages  title                                        Lehninger
+  21.0  7.9.1         170  Gluconeogenesis from amino acids             14.4,18.3
+  18.0  8.4.3         194  Derived lipids                               21.4
+  18.0  10.1.1        219  Carbohydrate metabolism — degradation        14.1,15.2
+  16.0  3.3.3          58  Measurement of enzyme activity               6.3
+  15.0  4.1.5       91-92  Degradation of nucleic acids                 22.4,8.3
+  15.0  10.1.2        220  Lipid metabolism — degradation and ketone    17.2,17.3
+  14.0  10.1.3        220  The relation of carbohydrate and lipid met   23.2,16.3
+  13.5  9.5       216-217  Secondary plant metabolites                  21.4,22.3
+  13.0  4.2.2       94-95  Protein synthesis takes place in ribosomes   27.2
+  13.0  6.3       146-147  Porphyrin proteins — structure and biologi   22.3,5.1
+  12.0  7.1           148  Monosaccharides                              7.1
+  12.0  7.1.1         148  Aldoses, ketoses                             7.1
+  12.0  7.1.4         151  Mutarotation                                 7.1
+  12.0  7.2.1         152  Sugar esters                                 7.1
+  12.0  7.2.3         153  Sugar alcohols                               7.1
+  12.0  7.2.4         153  Amino sugars                                 7.1
+  12.0  7.2.5         153  Deoxy sugars                                 7.1
+  10.5  3.6         61-62  Mechanism of enzyme action                   6.2,6.4
+  10.0  8.5.1         198  Chemical composition                         11.1
+   9.5  2.2.5       36-37  Simple and conjugated proteins               3.2,4.3
+   9.5  8.5.3     200-201  Membrane transport — passive transport, si   11.3
+   9.0  9.1.2         206  Other components of the thylakoid membrane   20.2
+   9.0  10.1      218-219  Intermediary metabolism — catabolism, anab   13.2,23.2
+   9.0  10.2      221-222  Regulatory mechanisms — why, and at what l   13.5,6.5
+   8.0  1.4         16-17  Nutrition and metabolism                     1.3,13.1
+   8.0  1.5         17-18  Energy and life                              1.3,13.1
+   8.0  3.3.2       57-58  Two-substrate reactions                      6.3
+   8.0  3.4         58-59  Influence of pH and temperature on enzyme    6.3
+   8.0  5.2           118  Degradation of amino acids                   18.1
+   7.5  7.12      174-175  Biosynthesis of polysaccharides — glycogen   15.2,20.6
+
+=== Lehninger sections nothing in the Czech book points at (32 of 117) ===
+  2.1    A pp.44-53    2.1 Weak Interactions in Aqueous Systems
+  2.3    A pp.59-64    2.3 Buffering against pH Changes in Biological Systems
+  4.5    A pp.136-142   4.5 Determination of Protein and Biomolecular Structures
+  5.2    A pp.164-168   5.2 Complementary Interactions between Proteins and Ligands: The Immune System and Immunoglobulins
+  5.3    A pp.168-172   5.3 Protein Interactions Modulated by Chemical Energy: Actin, Myosin, and Molecular Motors
+  8.4    A pp.294-296   8.4 Other Functions of Nucleotides
+  9.1    A pp.301-316   9.1 Studying Genes and Their Products
+  9.2    A pp.317-326   9.2 Exploring Protein Function on the Scale of Cells or Whole Organisms
+  9.3    A pp.326-334   9.3 Genomics and the Human Story
+  12.1   A pp.408-411   12.1 General Features of Signal Transduction
+  12.2   A pp.412-428   12.2 G Protein–Coupled Receptors and Second Messengers
+  12.3   A pp.429-432   12.3 GPCRs in Vision, Olfaction, and Gustation
+  12.4   A pp.433-438   12.4 Receptor Tyrosine Kinases
+  12.5   A pp.438-442   12.5 Multivalent Adaptor Proteins and Membrane Rafts
+  12.6   A pp.442-445   12.6 Gated Ion Channels
+  12.8   A pp.446-450   12.8 Regulation of the Cell Cycle by Protein Kinases
+  12.9   A pp.451-456   12.9 Oncogenes, Tumor Suppressor Genes, and Programmed Cell Death
+  14.5   A pp.539-546   14.5 Coordinated Regulation of Glycolysis and Gluconeogenesis
+  15.1   A pp.557-558   15.1 The Structure and Function of Glycogen
+  15.3   A pp.565-571   15.3 Coordinated Regulation of Glycogen Breakdown and Synthesis
+  19.4   A pp.689-691   19.4 Mitochondria in Thermogenesis, Steroid Synthesis, and Apoptosis
+  19.5   A pp.692-696   19.5 Mitochondrial Genes: Their Origin and the Effects of Mutations
+  22.2   A pp.805-816   22.2 Biosynthesis of Amino Acids
+  23.4   A pp.867-875   23.4 Obesity and the Regulation of Body Mass
+  23.5   A pp.875-880   23.5 Diabetes Mellitus
+  24.2   A pp.890-898   24.2 DNA Supercoiling
+  24.3   A pp.898-910   24.3 The Structure of Chromosomes
+  25.2   A pp.930-940   25.2 DNA Repair
+  25.3   A pp.940-956   25.3 DNA Recombination
+  26.3   A pp.988-995   26.3 RNA-Dependent Synthesis of RNA and DNA
+  26.4   A pp.996-1001  26.4 Catalytic RNAs and the RNA World Hypothesis
+  28.3   A pp.1075-1092  28.3 Regulation of Gene Expression in Eukaryotes
+
+in scope: 756 of 1012 Lehninger printed pages (74%), 85 of 117 sections
+
+OK: wrote master_map.tsv / master_map.json

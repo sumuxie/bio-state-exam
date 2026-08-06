@@ -1,0 +1,86 @@
+rank	leh_section	ratio	leh_pages	cz_pages_allocated	page_a_print	page_a_print_end	page_b	page_b_end	cz_sections	title
+1	5.1	17.0	17	1.0	148	164	619	680	6.3	5.1 Reversible Binding of a Protein to a Ligand: Oxygen-Binding Proteins
+2	8.3	16.0	16	1.0	278	293	1078	1122	4.1.5	8.3 Nucleic Acid Chemistry
+3	6.4	11.0	11	1.0	203	213	823	852	3.6	6.4 Examples of Enzymatic Reactions
+4	11.3	9.5	19	2.0	385	403	1432	1495	8.5.3	11.3 Solute Transport across Membranes
+5	21.1	9.1	16	1.8	745	760	2649	2696	8.3	21.1 Biosynthesis of Fatty Acids and Eicosanoids
+6	19.1	7.5	15	2.0	660	674	2368	2407	6.2.4	19.1 The Mitochondrial Respiratory Chain
+7	23.2	7.3	11	1.5	848	858	2967	3005	10.1,10.1.3	23.2 Tissue-Specific Metabolism
+8	16.2	7.2	12	1.7	578	589	2103	2133	6.2.2	16.2 Reactions of the Citric Acid Cycle
+9	17.2	6.5	12	1.8	607	618	2198	2240	8.4.4,10.1.2	17.2 Oxidation of Fatty Acids
+10	19.2	6.0	12	2.0	675	686	2408	2447	6.2.4	19.2 ATP Synthesis
+11	11.2	5.3	8	1.5	377	384	1403	1431	8.5.2	11.2 Membrane Dynamics
+12	1.3	5.0	10	2.0	18	27	154	188	1.4,1.5	1.3 Physical Foundations
+13	2.2	5.0	5	1.0	54	58	289	312	2.1.2	2.2 Ionization of Water, Weak Acids, and Weak Bases
+14	3.4	5.0	10	2.0	91	100	416	450	2.2.1	3.4 The Structure of Proteins: Primary Structure
+15	8.2	5.0	10	2.0	269	278	1047	1077	4.1.2	8.2 Nucleic Acid Structure
+16	26.2	4.9	17	3.5	972	988	3382	3428	4.1.4	26.2 RNA Processing
+17	22.3	4.5	9	2.0	816	824	2863	2883	6.3,9.5	22.3 Molecules Derived from Amino Acids
+18	3.3	4.0	8	2.0	83	90	393	415	2.2.6	3.3 Working with Proteins
+19	23.3	3.9	9	2.3	859	867	3006	3029	10.3	23.3 Hormonal Regulation of Fuel Metabolism
+20	25.1	3.8	17	4.5	914	930	3200	3250	4.1.3	25.1 DNA Replication
+21	13.3	3.7	11	3.0	478	488	1754	1787	6.1.2	13.3 Phosphoryl Group Transfers and ATP
+22	13.2	3.5	7	2.0	472	478	1728	1753	6.1.3,10.1	13.2 Chemical Logic and Common Biochemical Reactions
+23	13.5	3.5	7	2.0	497	503	1821	1837	6.1.3,10.2	13.5 Regulation of Metabolic Pathways
+24	26.1	3.4	12	3.5	961	972	3346	3381	4.1.4	26.1 DNA-Dependent Synthesis of RNA
+25	27.1	3.3	10	3.0	1006	1015	3491	3519	4.2.1	27.1 The Genetic Code
+26	7.4	3.3	5	1.5	254	258	993	1006	7.5	7.4 Carbohydrates as Informational Molecules: The Sugar Code
+27	22.1	3.3	10	3.0	795	804	2794	2828	9.4	22.1 Overview of Nitrogen Metabolism
+28	28.1	3.1	11	3.5	1055	1065	3643	3677	4.2.4	28.1 The Proteins and RNAs of Gene Regulation
+29	1.2	3.0	9	3.0	10	18	128	153	1.3	1.2 Chemical Foundations
+30	1.4	3.0	3	1.0	28	30	189	199	4.1	1.4 Genetic Foundations
+31	10.4	3.0	3	1.0	361	363	1343	1354	8.4.2	10.4 Working with Lipids
+32	20.2	3.0	9	3.0	708	716	2520	2546	9.1.2,9.1.3	20.2 Photochemical Reaction Centers
+33	23.1	3.0	7	2.3	842	848	2945	2966	10.3	23.1 Hormone Structure and Action
+34	28.2	2.9	10	3.5	1065	1074	3678	3709	4.2.4	28.2 Regulation of Gene Expression in Bacteria
+35	21.3	2.9	8	2.8	764	771	2714	2733	8.3,8.4.2	21.3 Biosynthesis of Membrane Phospholipids
+36	4.3	2.8	14	5.0	116	129	515	553	2.2.3,2.2.4,2.2.5	4.3 Protein Tertiary and Quaternary Structures
+37	7.3	2.8	7	2.5	247	253	969	992	7.4.2,7.5	7.3 Glycoconjugates: Proteoglycans, Glycoproteins, and Glycolipids
+38	18.3	2.7	15	5.5	640	654	2309	2344	5.2.3,7.9.1	18.3 Pathways of Amino Acid Degradation
+39	20.6	2.7	8	3.0	732	739	2603	2626	6.2.3,7.12	20.6 Biosynthesis of Starch, Sucrose, and Cellulose
+40	14.3	2.7	8	3.0	525	532	1920	1945	7.8.1	14.3 Fates of Pyruvate
+41	10.3	2.7	8	3.0	353	360	1322	1342	8.2.4	10.3 Lipids as Signals, Cofactors, and Pigments
+42	21.4	2.7	18	6.8	772	789	2734	2774	8.2.4,8.3,8.4.3,9.5	21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesis, Regulation, and Transport
+43	27.2	2.6	26	10.0	1015	1040	3520	3593	4.2.2,4.2.3	27.2 Protein Synthesis
+44	3.2	2.5	5	2.0	79	83	380	392	2.1.4,2.2.5	3.2 Peptides and Proteins
+45	16.1	2.4	4	1.7	575	578	2091	2102	6.2.2	16.1 Production of Acetyl-CoA (Activated Acetate)
+46	16.4	2.4	4	1.7	593	596	2143	2156	6.2.2	16.4 Regulation of the Citric Acid Cycle
+47	14.1	2.4	11	4.5	511	521	1871	1906	7.8,10.1.1	14.1 Glycolysis
+48	14.4	2.4	6	2.5	533	538	1946	1961	7.9,7.9.1	14.4 Gluconeogenesis
+49	1.5	2.3	7	3.0	30	36	200	224	1.6	1.5 Evolutionary Foundations
+50	8.1	2.3	7	3.0	263	269	1028	1046	4.1,4.1.2	8.1 Some Basic Definitions and Conventions
+51	18.2	2.3	7	3.0	634	640	2290	2308	5.2.2	18.2 Nitrogen Excretion and the Urea Cycle
+52	21.2	2.3	4	1.8	760	763	2697	2713	8.3	21.2 Biosynthesis of Triacylglycerols
+53	11.1	2.2	10	4.5	367	376	1370	1402	8.5,8.5.1,8.5.2	11.1 The Composition and Architecture of Membranes
+54	20.4	2.2	9	4.0	719	727	2560	2583	9.1.4	20.4 CO[2]-Assimilation Reactions
+55	19.3	2.0	4	2.0	686	689	2448	2457	6.2.4	19.3 Regulation of Oxidative Phosphorylation
+56	15.2	2.0	7	3.5	558	564	2036	2055	7.11.2,7.12,10.1.1	15.2 Breakdown and Synthesis of Glycogen
+57	10.2	2.0	8	4.0	346	353	1299	1321	8.2.3	10.2 Structural Lipids in Membranes
+58	20.3	2.0	4	2.0	716	719	2547	2559	9.1.3	20.3 Evolution of a Universal Mechanism for ATP Synthesis
+59	6.2	1.9	10	5.3	179	188	737	770	3.2,3.6	6.2 How Enzymes Work
+60	22.4	1.8	14	8.0	824	837	2884	2927	4.1.1.1,4.1.1.2,4.1.5	22.4 Biosynthesis and Degradation of Nucleotides
+61	27.3	1.8	11	6.0	1040	1050	3594	3620	4.3.2,4.3.3,5.1	27.3 Protein Targeting and Degradation
+62	4.2	1.7	6	3.5	111	116	493	514	2.2.2	4.2 Protein Secondary Structure
+63	17.1	1.7	4	2.3	603	606	2183	2197	8.4.1,8.4.4	17.1 Digestion, Mobilization, and Transport of Fats
+64	4.4	1.6	8	5.0	129	136	554	580	2.2.6,4.3.1	4.4 Protein Denaturation and Folding
+65	6.5	1.6	11	7.0	213	223	853	886	3.7,4.3.3,10.2	6.5 Regulatory Enzymes
+66	17.3	1.6	3	1.8	618	620	2241	2249	8.4.4,10.1.2	17.3 Ketone Bodies
+67	13.1	1.5	6	4.0	466	471	1705	1727	1.4,1.5,6.1,6.1.1	13.1 Bioenergetics and Thermodynamics
+68	3.1	1.5	9	6.0	71	79	361	379	2.1.1,2.1.2,2.1.3	3.1 Amino Acids
+69	7.2	1.5	6	4.0	241	246	952	968	7.4,7.4.1,7.4.2	7.2 Polysaccharides
+70	20.5	1.5	6	4.0	727	732	2584	2602	9.2,9.3	20.5 Photorespiration and the C[4] and CAM Pathways
+71	13.4	1.4	9	6.3	488	496	1788	1820	3.2,6.2.1	13.4 Biological Oxidation-Reduction Reactions
+72	10.1	1.4	7	5.0	340	346	1287	1298	8.1,8.2.1,8.2.2	10.1 Storage Lipids
+73	6.3	1.3	16	12.0	188	203	771	822	3.3.1,3.3.2,3.3.3,3.4,3.5	6.3 Enzyme Kinetics as an Approach to Understanding Mechanism
+74	24.1	1.3	6	4.5	885	890	3098	3114	4.1.3	24.1 Chromosomal Elements
+75	7.5	1.3	2	1.5	258	259	1007	1010	7.10	7.5 Working with Carbohydrates
+76	14.6	1.2	6	5.0	546	551	1988	2005	7.6.2,7.6.3,7.7	14.6 Pentose Phosphate Pathway of Glucose Oxidation
+77	16.3	1.2	3	2.5	590	592	2134	2142	10.1.3,10.1.4	16.3 The Hub of Intermediary Metabolism
+78	1.1	1.1	8	7.0	2	9	104	127	1.1,1.2,1.3	1.1 Cellular Foundations
+79	18.1	1.0	8	8.0	627	634	2266	2289	5.1,5.2,5.2.1	18.1 Metabolic Fates of Amino Groups
+80	20.1	1.0	7	7.0	701	707	2498	2519	9,9.1,9.1.1	20.1 Light Absorption
+81	4.1	0.9	3	3.5	108	110	479	492	2.2.2	4.1 Overview of Protein Structure
+82	14.2	0.7	4	5.5	522	525	1907	1919	7.6,7.6.1,7.10,7.11.1	14.2 Feeder Pathways for Glycolysis
+83	7.1	0.6	12	20.0	230	241	913	951	7.1,7.1.1,7.1.2,7.1.3,7.1.4,7.2.1,7.2.2,7.2.3,7.2.4,7.2.5,7.2.6,7.3	7.1 Monosaccharides and Disaccharides
+84	6.1	0.5	3	6.3	177	179	730	736	3.1,3.2	6.1 An Introduction to Enzymes
+85	12.7	0.4	1	2.3	446	446	1633	1637	10.3	12.7 Regulation of Transcription by Nuclear Hormone Receptors

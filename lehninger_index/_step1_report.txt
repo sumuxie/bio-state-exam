@@ -1,0 +1,40 @@
+source: B = LehningerPrinciplesofBiochemistry8thedDavidLNel.pdf
+B pages: 4893  outline entries: 879
+levels: {"1": 11, "2": 45, "3": 174, "4": 649}
+non-monotonic page jumps: 0
+
+=== 28 chapters, as located in B ===
+ ch      page_b   span  sec  sub  title
+  1     99-250     152    5   37  The Foundations of Biochemistry
+  2    251-357     107    3   20  Water, The Solvent of Life
+  3    358-474     117    4   22  Amino Acids, Peptides, and Proteins
+  4    475-614     140    5   29  The Three-Dimensional Structure of Proteins
+  5    615-726     112    3   24  Protein Function
+  6    727-908     182    5   31  Enzymes
+  7    909-1024    116    5   19  Carbohydrates and Glycobiology
+  8   1025-1149    125    4   22  Nucleotides and Nucleic Acids
+  9   1150-1283    134    3   21  DNA-Based Information Technologies
+ 10   1284-1366     83    4   30  Lipids
+ 11   1367-1514    148    3   28  Biological Membranes and Transport
+ 12   1515-1699    185    9   33  Biochemical Signaling
+ 13   1700-1865    166    5   27  Introduction to Metabolism
+ 14   1866-2026    161    6   28  Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway
+ 15   2027-2084     58    3   13  The Metabolism of Glycogen in Animals
+ 16   2085-2178     94    4   16  The Citric Acid Cycle
+ 17   2179-2260     82    3   18  Fatty Acid Catabolism
+ 18   2261-2362    102    3   23  Amino Acid Oxidation and the Production of Urea
+ 19   2363-2493    131    5   30  Oxidative Phosphorylation
+ 20   2494-2645    152    6   29  Photosynthesis and Carbohydrate Synthesis in Plants
+ 21   2646-2789    144    4   34  Lipid Biosynthesis
+ 22   2790-2940    151    4   33  Biosynthesis of Amino Acids, Nucleotides, and Related Molecules
+ 23   2941-3093    153    5   33  Hormonal Regulation and Integration of Mammalian Metabolism
+ 24   3094-3195    102    3   16  Genes and Chromosomes
+ 25   3196-3341    146    3   21  DNA Metabolism
+ 26   3342-3483    142    4   29  RNA Metabolism
+ 27   3484-3636    153    3   22  Protein Metabolism
+ 28   3637-3772    136    3   33  Regulation of Gene Expression
+    total B pages inside chapters: 3674
+chapters with zero numbered sections: []
+subheadings not under any numbered section: 0
+
+OK: wrote lehninger_B_toc.json / .tsv, 879 entries, 28 chapters

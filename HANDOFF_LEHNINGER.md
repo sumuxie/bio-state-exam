@@ -22,9 +22,10 @@ revision tool the user studies from every day.
 5. **No orbitals, no resonance structures.** Every chemical idea must land on something the
    reader can see or measure at a bench. The user has almost no organic chemistry. (§5)
 
-**First actions**, all read-only, safe to start immediately: §9 steps 1–3.
-
-**Ask before deciding:** §8.
+**Where the work stands.** §9 steps 1–3 are done — the Lehninger index, the A↔B page map and
+the master table are in `lehninger_index/` (read its `README.md`). §8's three open decisions
+were put to the user and answered on 2026-08-06; two of them overturned assumptions this file
+used to make. **Next up: §9 steps 4–6.**
 
 ---
 
@@ -284,30 +285,52 @@ replacement metric is **topic coverage**: for each exam topic, is there a node d
 
 ---
 
-## 8. Open decisions — do not settle these alone
+## 8. Decisions — settled by the user 2026-08-06, do not reopen
 
-1. **Is the exam question list the 27 Chinese-notes topics, or something else?** Still
-   unconfirmed, and it is the skeleton — everything in §4 hangs off it. Ask the user; if there
-   is no official list, the 27 topics are the closest available and should be adopted explicitly
-   as the working skeleton rather than by default.
-2. **What language is the exam conducted in?** Decides whether Czech anchor terms matter.
-3. **How deep is "deep enough"** for a topic? Suggest deciding this on two or three topics
-   concretely before scaling.
+All three were put to the user and answered. The answers are recorded here because two of
+them contradict what earlier drafts of this file assumed.
+
+**1. The skeleton is the Czech textbook's own chapter/section TOC** — *not* the 27
+Chinese-notes topics, which this file previously nominated as the fallback. So the unit of
+work is the Czech section: 113 of them, already carrying all 207 nodes. This is consistent
+with §3 ("Czech book sets scope") and removes the awkwardness of a skeleton whose priorities
+are Chinese rather than Czech. The 27-topic list keeps exactly the role §3 gives it — a
+comprehension aid, reachable through each node's existing `cnNote` — and nothing else.
+
+**2. The exam is conducted in English.** So `cz` stays what §2 of `HANDOFF.md` says it is: a
+short anchor term, never a sentence, never a thing to be spoken. All production effort goes to
+`model_en` and the Oral checklist. No Czech-language oral models. This retires the worry that
+a large Czech-language back-fill might be owed.
+
+**3. Depth: work the high-ratio topics, all of them.** The user chose to take on the whole
+high-ratio set rather than pilot one. `lehninger_index/depth_queue.tsv` is that ranking,
+computed rather than guessed — see §9a for what the number means and, importantly, what it
+does not mean.
+
+Still genuinely open, and worth asking whenever the chance arises: **more classmate reports of
+real exam questions.** §3 makes these outrank everything else here, and one of them has
+already overturned a plan once.
 
 ---
 
 ## 9. Concrete first steps
 
-Steps 1–3 are read-only and can start immediately.
+**Steps 1–3 are DONE (2026-08-06).** Everything they produced is in `lehninger_index/`, which
+has its own `README.md` listing each file and the facts established. Read that before redoing
+any of this. Steps 4–6 are the remaining work.
 
-1. **Export B's 879-entry outline** as a structured TOC: chapter / section / sub-heading / page
-   in B. Nearly free — the structure is already in the PDF.
-2. **Build the A↔B page correspondence** by text matching, so any section resolves to "page in A
-   to look at the figure, page in B to extract clean text from".
-3. **Overlay the exam scope** → the master table: `topic × Czech §  × Lehninger ch/section ×
-   page in A × page in B`. Start from the table already in `HANDOFF.md` §11; do not re-derive it.
+1. ~~Export B's 879-entry outline~~ → `lehninger_index/lehninger_toc.tsv`. **B's outline is not
+   shaped the way this section assumed:** level 1 holds the three *Parts*, and chapters 2–28
+   sit at level 2. Reading level 1 as "chapter" yields 11 chapters, not 28.
+2. ~~Build the A↔B correspondence~~ → done, and verified: 113 of 114 numbered section headings
+   land within ±3 pages of prediction, 79 % exactly. **A's printed page = A's pdf page − 36.**
+   Note A's text layer is OCR of a scan (`dehy:Jrogenase`), so never string-match against A —
+   search B, then convert. `scripts/locate.py` does this for any phrase.
+3. ~~Overlay the exam scope~~ → `lehninger_index/master_map.tsv`, one row per Czech section,
+   113 rows, on the skeleton settled in §8.
 4. **Add `book: "cz"` and `topicKey` to the 207 existing nodes.** Mechanical. Do this in
-   `biochemie_pro/` only.
+   `biochemie_pro/` only. `master_map.tsv` already carries the Czech section, its node ids and
+   its Lehninger targets on one row, so `topicKey` can be assigned from it rather than invented.
 5. **Fix the validator** to scope the page-gap check to `book === "cz"` (§7).
 6. **Then, and only then**, write content — one topic at a time, no deadline. The user has
    explicitly removed time pressure: *"如果难也没关系慢慢做就好，不需要你一天一夜一个session就做完"*.
@@ -315,6 +338,37 @@ Steps 1–3 are read-only and can start immediately.
 Do the first integration card early, on a well-understood entity — tryptophan is a good choice
 because §6 shows the source material is all there. It will expose the shape faster than
 designing it in the abstract.
+
+### 9a. What `depth_queue.tsv` measures — and what it does not
+
+`ratio` = Lehninger printed pages ÷ Czech pages spent on the same material, per Lehninger
+section. It ranks where Lehninger has more to say. **It is a relative ranking, not a page
+budget**, for two reasons that are easy to forget and that both inflate it:
+
+- Czech section page ranges **overlap** (7.1.3 is pp.149–152, 7.1.4 is p.151), so the section
+  page counts sum to 312 over a 221-page book. A ratio is comparable to another ratio; it is
+  not "n pages owed".
+- A naive per-Czech-section version of this table is actively misleading and was thrown away:
+  twelve Czech sections point at Lehninger §7.1, and crediting each with all 12 of its pages
+  made "Sugar esters, 1 page → 12 pages" look like a 12× gap. Allocating fractionally shows
+  the truth — §7.1 scores **0.6**, i.e. the Czech book already spends *more* on monosaccharides
+  than Lehninger does. Same failure mode as the frequency table in `HANDOFF.md`'s mistake list.
+
+The genuinely thin places, top of the queue: §5.1 oxygen-binding proteins (17×), §8.3 nucleic
+acid chemistry (16×), §6.4 examples of enzymatic reactions (11×), §11.3 membrane transport
+(9.5×), §21.1 fatty acid and eicosanoid biosynthesis (9.1×), §19.1 respiratory chain (7.5×).
+
+### 9b. What the Czech book points at nothing for
+
+32 of Lehninger's 117 sections are claimed by no Czech section (256 printed pages, 26 %). Most
+of it is one coherent block — **all of chapter 12 bar one section (signal transduction, GPCRs,
+receptor tyrosine kinases, oncogenes)**, plus chapter 9 (DNA technologies, CRISPR, genomics),
+§5.2–5.3 (immunoglobulins, molecular motors), §24.2–24.3 (supercoiling, chromosome structure),
+§25.2–25.3 (DNA repair and recombination), §23.4–23.5 (obesity, diabetes) and §22.2 (amino acid
+biosynthesis). Whether any of that is examinable is exactly the kind of question a classmate
+report settles and inference does not — **do not quietly decide it either way.** Note the
+Chinese notes do have a 氨基酸生物合成 topic (二十六) with no Czech counterpart, which is weak
+evidence that §22.2 at least is in play.
 
 ---
 

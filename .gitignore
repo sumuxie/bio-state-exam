@@ -6,3 +6,6 @@ extracted_raw/*.png
 node_modules/
 dist/
 .DS_Store
+
+# Lehninger full-text search cache (5.7 MB of book text) - never commit
+lehninger_index/_B_text.pkl

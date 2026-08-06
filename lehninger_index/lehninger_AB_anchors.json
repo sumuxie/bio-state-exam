@@ -1,0 +1,6422 @@
+{
+ "anchors": [
+  {
+   "label": "FIGURE 1-1",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 1,
+   "page_a_pdf": 38,
+   "page_a_print": 2,
+   "page_b": 105
+  },
+  {
+   "label": "FIGURE 1-2",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 2,
+   "page_a_pdf": 39,
+   "page_a_print": 3,
+   "page_b": 108
+  },
+  {
+   "label": "FIGURE 1-4",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 4,
+   "page_a_pdf": 40,
+   "page_a_print": 4,
+   "page_b": 112
+  },
+  {
+   "label": "FIGURE 1-5",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 5,
+   "page_a_pdf": 41,
+   "page_a_print": 5,
+   "page_b": 113
+  },
+  {
+   "label": "FIGURE 1-6",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 6,
+   "page_a_pdf": 43,
+   "page_a_print": 7,
+   "page_b": 117
+  },
+  {
+   "label": "FIGURE 1-9",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 9,
+   "page_a_pdf": 44,
+   "page_a_print": 8,
+   "page_b": 123
+  },
+  {
+   "label": "FIGURE 1-10",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 10,
+   "page_a_pdf": 45,
+   "page_a_print": 9,
+   "page_b": 126
+  },
+  {
+   "label": "FIGURE 1-11",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 11,
+   "page_a_pdf": 46,
+   "page_a_print": 10,
+   "page_b": 129
+  },
+  {
+   "label": "FIGURE 1-13",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 13,
+   "page_a_pdf": 47,
+   "page_a_print": 11,
+   "page_b": 131
+  },
+  {
+   "label": "FIGURE 1-14",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 14,
+   "page_a_pdf": 48,
+   "page_a_print": 12,
+   "page_b": 132
+  },
+  {
+   "label": "BOX 1-1",
+   "kind": "BOX",
+   "ch": 1,
+   "num": 1,
+   "page_a_pdf": 49,
+   "page_a_print": 13,
+   "page_b": 134
+  },
+  {
+   "label": "TABLE 1-1",
+   "kind": "TABLE",
+   "ch": 1,
+   "num": 1,
+   "page_a_pdf": 50,
+   "page_a_print": 14,
+   "page_b": 137
+  },
+  {
+   "label": "FIGURE 1-18",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 18,
+   "page_a_pdf": 51,
+   "page_a_print": 15,
+   "page_b": 142
+  },
+  {
+   "label": "FIGURE 1-20",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 20,
+   "page_a_pdf": 52,
+   "page_a_print": 16,
+   "page_b": 144
+  },
+  {
+   "label": "BOX 1-2",
+   "kind": "BOX",
+   "ch": 1,
+   "num": 2,
+   "page_a_pdf": 53,
+   "page_a_print": 17,
+   "page_b": 144
+  },
+  {
+   "label": "FIGURE 1-23",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 23,
+   "page_a_pdf": 54,
+   "page_a_print": 18,
+   "page_b": 152
+  },
+  {
+   "label": "BOX 1-3",
+   "kind": "BOX",
+   "ch": 1,
+   "num": 3,
+   "page_a_pdf": 56,
+   "page_a_print": 20,
+   "page_b": 164
+  },
+  {
+   "label": "FIGURE 1-26",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 26,
+   "page_a_pdf": 60,
+   "page_a_print": 24,
+   "page_b": 169
+  },
+  {
+   "label": "FIGURE 1-28",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 28,
+   "page_a_pdf": 62,
+   "page_a_print": 26,
+   "page_b": 185
+  },
+  {
+   "label": "FIGURE 1-29",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 29,
+   "page_a_pdf": 64,
+   "page_a_print": 28,
+   "page_b": 190
+  },
+  {
+   "label": "FIGURE 1-31",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 31,
+   "page_a_pdf": 65,
+   "page_a_print": 29,
+   "page_b": 197
+  },
+  {
+   "label": "FIGURE 1-32",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 32,
+   "page_a_pdf": 67,
+   "page_a_print": 31,
+   "page_b": 202
+  },
+  {
+   "label": "FIGURE 1-34",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 34,
+   "page_a_pdf": 68,
+   "page_a_print": 32,
+   "page_b": 207
+  },
+  {
+   "label": "FIGURE 1-36",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 36,
+   "page_a_pdf": 69,
+   "page_a_print": 33,
+   "page_b": 214
+  },
+  {
+   "label": "FIGURE 1-37",
+   "kind": "FIGURE",
+   "ch": 1,
+   "num": 37,
+   "page_a_pdf": 71,
+   "page_a_print": 35,
+   "page_b": 219
+  },
+  {
+   "label": "FIGURE 2-1",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 1,
+   "page_a_pdf": 80,
+   "page_a_print": 44,
+   "page_b": 255
+  },
+  {
+   "label": "FIGURE 2-4",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 4,
+   "page_a_pdf": 81,
+   "page_a_print": 45,
+   "page_b": 262
+  },
+  {
+   "label": "TABLE 2-1",
+   "kind": "TABLE",
+   "ch": 2,
+   "num": 1,
+   "page_a_pdf": 82,
+   "page_a_print": 46,
+   "page_b": 264
+  },
+  {
+   "label": "TABLE 2-2",
+   "kind": "TABLE",
+   "ch": 2,
+   "num": 2,
+   "page_a_pdf": 83,
+   "page_a_print": 47,
+   "page_b": 267
+  },
+  {
+   "label": "FIGURE 2-7",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 7,
+   "page_a_pdf": 84,
+   "page_a_print": 48,
+   "page_b": 270
+  },
+  {
+   "label": "TABLE 2-4",
+   "kind": "TABLE",
+   "ch": 2,
+   "num": 4,
+   "page_a_pdf": 85,
+   "page_a_print": 49,
+   "page_b": 275
+  },
+  {
+   "label": "FIGURE 2-9",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 9,
+   "page_a_pdf": 86,
+   "page_a_print": 50,
+   "page_b": 278
+  },
+  {
+   "label": "FIGURE 2-11",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 11,
+   "page_a_pdf": 87,
+   "page_a_print": 51,
+   "page_b": 281
+  },
+  {
+   "label": "FIGURE 2-12",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 12,
+   "page_a_pdf": 88,
+   "page_a_print": 52,
+   "page_b": 283
+  },
+  {
+   "label": "FIGURE 2-13",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 13,
+   "page_a_pdf": 90,
+   "page_a_print": 54,
+   "page_b": 291
+  },
+  {
+   "label": "TABLE 2-5",
+   "kind": "TABLE",
+   "ch": 2,
+   "num": 5,
+   "page_a_pdf": 91,
+   "page_a_print": 55,
+   "page_b": 298
+  },
+  {
+   "label": "FIGURE 2-14",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 14,
+   "page_a_pdf": 92,
+   "page_a_print": 56,
+   "page_b": 301
+  },
+  {
+   "label": "FIGURE 2-15",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 15,
+   "page_a_pdf": 93,
+   "page_a_print": 57,
+   "page_b": 305
+  },
+  {
+   "label": "FIGURE 2-17",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 17,
+   "page_a_pdf": 94,
+   "page_a_print": 58,
+   "page_b": 310
+  },
+  {
+   "label": "FIGURE 2-16",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 16,
+   "page_a_pdf": 95,
+   "page_a_print": 59,
+   "page_b": 314
+  },
+  {
+   "label": "FIGURE 2-18",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 18,
+   "page_a_pdf": 96,
+   "page_a_print": 60,
+   "page_b": 315
+  },
+  {
+   "label": "FIGURE 2-19",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 19,
+   "page_a_pdf": 97,
+   "page_a_print": 61,
+   "page_b": 319
+  },
+  {
+   "label": "FIGURE 2-20",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 20,
+   "page_a_pdf": 98,
+   "page_a_print": 62,
+   "page_b": 327
+  },
+  {
+   "label": "FIGURE 2-21",
+   "kind": "FIGURE",
+   "ch": 2,
+   "num": 21,
+   "page_a_pdf": 99,
+   "page_a_print": 63,
+   "page_b": 331
+  },
+  {
+   "label": "FIGURE 3-4",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 4,
+   "page_a_pdf": 108,
+   "page_a_print": 72,
+   "page_b": 365
+  },
+  {
+   "label": "TABLE 3-1",
+   "kind": "TABLE",
+   "ch": 3,
+   "num": 1,
+   "page_a_pdf": 109,
+   "page_a_print": 73,
+   "page_b": 368
+  },
+  {
+   "label": "FIGURE 3-5",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 5,
+   "page_a_pdf": 110,
+   "page_a_print": 74,
+   "page_b": 368
+  },
+  {
+   "label": "FIGURE 3-6",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 6,
+   "page_a_pdf": 111,
+   "page_a_print": 75,
+   "page_b": 369
+  },
+  {
+   "label": "FIGURE 3-7",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 7,
+   "page_a_pdf": 112,
+   "page_a_print": 76,
+   "page_b": 371
+  },
+  {
+   "label": "FIGURE 3-8",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 8,
+   "page_a_pdf": 113,
+   "page_a_print": 77,
+   "page_b": 372
+  },
+  {
+   "label": "FIGURE 3-11",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 11,
+   "page_a_pdf": 114,
+   "page_a_print": 78,
+   "page_b": 377
+  },
+  {
+   "label": "FIGURE 3-15",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 15,
+   "page_a_pdf": 117,
+   "page_a_print": 81,
+   "page_b": 384
+  },
+  {
+   "label": "FIGURE 3-16",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 16,
+   "page_a_pdf": 120,
+   "page_a_print": 84,
+   "page_b": 396
+  },
+  {
+   "label": "FIGURE 3-17",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 17,
+   "page_a_pdf": 121,
+   "page_a_print": 85,
+   "page_b": 400
+  },
+  {
+   "label": "TABLE 3-5",
+   "kind": "TABLE",
+   "ch": 3,
+   "num": 5,
+   "page_a_pdf": 122,
+   "page_a_print": 86,
+   "page_b": 402
+  },
+  {
+   "label": "FIGURE 3-18",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 18,
+   "page_a_pdf": 123,
+   "page_a_print": 87,
+   "page_b": 405
+  },
+  {
+   "label": "FIGURE 3-19",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 19,
+   "page_a_pdf": 124,
+   "page_a_print": 88,
+   "page_b": 407
+  },
+  {
+   "label": "FIGURE 3-21",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 21,
+   "page_a_pdf": 125,
+   "page_a_print": 89,
+   "page_b": 411
+  },
+  {
+   "label": "FIGURE 3-23",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 23,
+   "page_a_pdf": 127,
+   "page_a_print": 91,
+   "page_b": 417
+  },
+  {
+   "label": "TABLE 3-6",
+   "kind": "TABLE",
+   "ch": 3,
+   "num": 6,
+   "page_a_pdf": 128,
+   "page_a_print": 92,
+   "page_b": 425
+  },
+  {
+   "label": "FIGURE 3-27",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 27,
+   "page_a_pdf": 129,
+   "page_a_print": 93,
+   "page_b": 426
+  },
+  {
+   "label": "FIGURE 3-28",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 28,
+   "page_a_pdf": 130,
+   "page_a_print": 94,
+   "page_b": 429
+  },
+  {
+   "label": "FIGURE 3-29",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 29,
+   "page_a_pdf": 131,
+   "page_a_print": 95,
+   "page_b": 431
+  },
+  {
+   "label": "BOX 3-2",
+   "kind": "BOX",
+   "ch": 3,
+   "num": 2,
+   "page_a_pdf": 132,
+   "page_a_print": 96,
+   "page_b": 439
+  },
+  {
+   "label": "FIGURE 3-31",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 31,
+   "page_a_pdf": 135,
+   "page_a_print": 99,
+   "page_b": 445
+  },
+  {
+   "label": "FIGURE 3-33",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 33,
+   "page_a_pdf": 136,
+   "page_a_print": 100,
+   "page_b": 449
+  },
+  {
+   "label": "FIGURE 3-24",
+   "kind": "FIGURE",
+   "ch": 3,
+   "num": 24,
+   "page_a_pdf": 140,
+   "page_a_print": 104,
+   "page_b": 473
+  },
+  {
+   "label": "FIGURE 4-1",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 1,
+   "page_a_pdf": 143,
+   "page_a_print": 107,
+   "page_b": 476
+  },
+  {
+   "label": "FIGURE 4-2",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 2,
+   "page_a_pdf": 146,
+   "page_a_print": 110,
+   "page_b": 488
+  },
+  {
+   "label": "TABLE 4-1",
+   "kind": "TABLE",
+   "ch": 4,
+   "num": 1,
+   "page_a_pdf": 147,
+   "page_a_print": 111,
+   "page_b": 496
+  },
+  {
+   "label": "FIGURE 4-4",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 4,
+   "page_a_pdf": 149,
+   "page_a_print": 113,
+   "page_b": 502
+  },
+  {
+   "label": "FIGURE 4-6",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 6,
+   "page_a_pdf": 150,
+   "page_a_print": 114,
+   "page_b": 507
+  },
+  {
+   "label": "FIGURE 4-8",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 8,
+   "page_a_pdf": 151,
+   "page_a_print": 115,
+   "page_b": 510
+  },
+  {
+   "label": "FIGURE 4-9",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 9,
+   "page_a_pdf": 152,
+   "page_a_print": 116,
+   "page_b": 512
+  },
+  {
+   "label": "FIGURE 4-10",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 10,
+   "page_a_pdf": 153,
+   "page_a_print": 117,
+   "page_b": 518
+  },
+  {
+   "label": "BOX 4-2",
+   "kind": "BOX",
+   "ch": 4,
+   "num": 2,
+   "page_a_pdf": 155,
+   "page_a_print": 119,
+   "page_b": 522
+  },
+  {
+   "label": "FIGURE 4-12",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 12,
+   "page_a_pdf": 156,
+   "page_a_print": 120,
+   "page_b": 526
+  },
+  {
+   "label": "FIGURE 4-14",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 14,
+   "page_a_pdf": 157,
+   "page_a_print": 121,
+   "page_b": 530
+  },
+  {
+   "label": "FIGURE 4-15",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 15,
+   "page_a_pdf": 158,
+   "page_a_print": 122,
+   "page_b": 533
+  },
+  {
+   "label": "FIGURE 4-16",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 16,
+   "page_a_pdf": 159,
+   "page_a_print": 123,
+   "page_b": 537
+  },
+  {
+   "label": "FIGURE 4-18",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 18,
+   "page_a_pdf": 160,
+   "page_a_print": 124,
+   "page_b": 540
+  },
+  {
+   "label": "FIGURE 4-21",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 21,
+   "page_a_pdf": 161,
+   "page_a_print": 125,
+   "page_b": 546
+  },
+  {
+   "label": "FIGURE 4-22",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 22,
+   "page_a_pdf": 164,
+   "page_a_print": 128,
+   "page_b": 550
+  },
+  {
+   "label": "FIGURE 4-23",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 23,
+   "page_a_pdf": 165,
+   "page_a_print": 129,
+   "page_b": 555
+  },
+  {
+   "label": "FIGURE 4-25",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 25,
+   "page_a_pdf": 166,
+   "page_a_print": 130,
+   "page_b": 561
+  },
+  {
+   "label": "FIGURE 4-26",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 26,
+   "page_a_pdf": 167,
+   "page_a_print": 131,
+   "page_b": 564
+  },
+  {
+   "label": "FIGURE 4-28",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 28,
+   "page_a_pdf": 168,
+   "page_a_print": 132,
+   "page_b": 569
+  },
+  {
+   "label": "FIGURE 4-29",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 29,
+   "page_a_pdf": 169,
+   "page_a_print": 133,
+   "page_b": 572
+  },
+  {
+   "label": "BOX 4-5",
+   "kind": "BOX",
+   "ch": 4,
+   "num": 5,
+   "page_a_pdf": 172,
+   "page_a_print": 136,
+   "page_b": 581
+  },
+  {
+   "label": "FIGURE 4-31",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 31,
+   "page_a_pdf": 173,
+   "page_a_print": 137,
+   "page_b": 591
+  },
+  {
+   "label": "FIGURE 4-33",
+   "kind": "FIGURE",
+   "ch": 4,
+   "num": 33,
+   "page_a_pdf": 177,
+   "page_a_print": 141,
+   "page_b": 596
+  },
+  {
+   "label": "FIGURE 5-1",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 1,
+   "page_a_pdf": 184,
+   "page_a_print": 148,
+   "page_b": 620
+  },
+  {
+   "label": "FIGURE 5-4",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 4,
+   "page_a_pdf": 186,
+   "page_a_print": 150,
+   "page_b": 630
+  },
+  {
+   "label": "TABLE 5-1",
+   "kind": "TABLE",
+   "ch": 5,
+   "num": 1,
+   "page_a_pdf": 187,
+   "page_a_print": 151,
+   "page_b": 632
+  },
+  {
+   "label": "FIGURE 5-6",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 6,
+   "page_a_pdf": 189,
+   "page_a_print": 153,
+   "page_b": 643
+  },
+  {
+   "label": "FIGURE 5-7",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 7,
+   "page_a_pdf": 190,
+   "page_a_print": 154,
+   "page_b": 644
+  },
+  {
+   "label": "FIGURE 5-9",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 9,
+   "page_a_pdf": 191,
+   "page_a_print": 155,
+   "page_b": 648
+  },
+  {
+   "label": "FIGURE 5-12",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 12,
+   "page_a_pdf": 192,
+   "page_a_print": 156,
+   "page_b": 650
+  },
+  {
+   "label": "BOX 5-1",
+   "kind": "BOX",
+   "ch": 5,
+   "num": 1,
+   "page_a_pdf": 193,
+   "page_a_print": 157,
+   "page_b": 653
+  },
+  {
+   "label": "FIGURE 5-13",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 13,
+   "page_a_pdf": 194,
+   "page_a_print": 158,
+   "page_b": 661
+  },
+  {
+   "label": "FIGURE 5-14",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 14,
+   "page_a_pdf": 196,
+   "page_a_print": 160,
+   "page_b": 663
+  },
+  {
+   "label": "FIGURE 5-15",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 15,
+   "page_a_pdf": 197,
+   "page_a_print": 161,
+   "page_b": 667
+  },
+  {
+   "label": "FIGURE 5-19",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 19,
+   "page_a_pdf": 199,
+   "page_a_print": 163,
+   "page_b": 677
+  },
+  {
+   "label": "FIGURE 5-21",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 21,
+   "page_a_pdf": 202,
+   "page_a_print": 166,
+   "page_b": 687
+  },
+  {
+   "label": "FIGURE 5-24",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 24,
+   "page_a_pdf": 203,
+   "page_a_print": 167,
+   "page_b": 692
+  },
+  {
+   "label": "FIGURE 5-25",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 25,
+   "page_a_pdf": 204,
+   "page_a_print": 168,
+   "page_b": 694
+  },
+  {
+   "label": "FIGURE 5-26",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 26,
+   "page_a_pdf": 205,
+   "page_a_print": 169,
+   "page_b": 698
+  },
+  {
+   "label": "FIGURE 5-27",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 27,
+   "page_a_pdf": 206,
+   "page_a_print": 170,
+   "page_b": 700
+  },
+  {
+   "label": "FIGURE 5-28",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 28,
+   "page_a_pdf": 207,
+   "page_a_print": 171,
+   "page_b": 703
+  },
+  {
+   "label": "FIGURE 5-30",
+   "kind": "FIGURE",
+   "ch": 5,
+   "num": 30,
+   "page_a_pdf": 208,
+   "page_a_print": 172,
+   "page_b": 707
+  },
+  {
+   "label": "TABLE 6-2",
+   "kind": "TABLE",
+   "ch": 6,
+   "num": 2,
+   "page_a_pdf": 214,
+   "page_a_print": 178,
+   "page_b": 733
+  },
+  {
+   "label": "TABLE 6-3",
+   "kind": "TABLE",
+   "ch": 6,
+   "num": 3,
+   "page_a_pdf": 215,
+   "page_a_print": 179,
+   "page_b": 735
+  },
+  {
+   "label": "FIGURE 6-2",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 2,
+   "page_a_pdf": 216,
+   "page_a_print": 180,
+   "page_b": 741
+  },
+  {
+   "label": "FIGURE 6-3",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 3,
+   "page_a_pdf": 217,
+   "page_a_print": 181,
+   "page_b": 742
+  },
+  {
+   "label": "TABLE 6-5",
+   "kind": "TABLE",
+   "ch": 6,
+   "num": 5,
+   "page_a_pdf": 218,
+   "page_a_print": 182,
+   "page_b": 749
+  },
+  {
+   "label": "FIGURE 6-4",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 4,
+   "page_a_pdf": 219,
+   "page_a_print": 183,
+   "page_b": 752
+  },
+  {
+   "label": "FIGURE 6-5",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 5,
+   "page_a_pdf": 220,
+   "page_a_print": 184,
+   "page_b": 757
+  },
+  {
+   "label": "FIGURE 6-7",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 7,
+   "page_a_pdf": 222,
+   "page_a_print": 186,
+   "page_b": 761
+  },
+  {
+   "label": "FIGURE 6-9",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 9,
+   "page_a_pdf": 223,
+   "page_a_print": 187,
+   "page_b": 768
+  },
+  {
+   "label": "FIGURE 6-10",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 10,
+   "page_a_pdf": 224,
+   "page_a_print": 188,
+   "page_b": 772
+  },
+  {
+   "label": "FIGURE 6-12",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 12,
+   "page_a_pdf": 225,
+   "page_a_print": 189,
+   "page_b": 776
+  },
+  {
+   "label": "FIGURE 6-14",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 14,
+   "page_a_pdf": 227,
+   "page_a_print": 191,
+   "page_b": 785
+  },
+  {
+   "label": "TABLE 6-6",
+   "kind": "TABLE",
+   "ch": 6,
+   "num": 6,
+   "page_a_pdf": 228,
+   "page_a_print": 192,
+   "page_b": 786
+  },
+  {
+   "label": "TABLE 6-8",
+   "kind": "TABLE",
+   "ch": 6,
+   "num": 8,
+   "page_a_pdf": 229,
+   "page_a_print": 193,
+   "page_b": 790
+  },
+  {
+   "label": "FIGURE 6-15",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 15,
+   "page_a_pdf": 230,
+   "page_a_print": 194,
+   "page_b": 795
+  },
+  {
+   "label": "FIGURE 6-18",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 18,
+   "page_a_pdf": 232,
+   "page_a_print": 196,
+   "page_b": 801
+  },
+  {
+   "label": "FIGURE 6-19",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 19,
+   "page_a_pdf": 233,
+   "page_a_print": 197,
+   "page_b": 805
+  },
+  {
+   "label": "FIGURE 6-20",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 20,
+   "page_a_pdf": 234,
+   "page_a_print": 198,
+   "page_b": 809
+  },
+  {
+   "label": "TABLE 6-9",
+   "kind": "TABLE",
+   "ch": 6,
+   "num": 9,
+   "page_a_pdf": 235,
+   "page_a_print": 199,
+   "page_b": 812
+  },
+  {
+   "label": "BOX 6-1",
+   "kind": "BOX",
+   "ch": 6,
+   "num": 1,
+   "page_a_pdf": 236,
+   "page_a_print": 200,
+   "page_b": 816
+  },
+  {
+   "label": "FIGURE 6-23",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 23,
+   "page_a_pdf": 239,
+   "page_a_print": 203,
+   "page_b": 820
+  },
+  {
+   "label": "FIGURE 6-27",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 27,
+   "page_a_pdf": 240,
+   "page_a_print": 204,
+   "page_b": 834
+  },
+  {
+   "label": "FIGURE 6-28",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 28,
+   "page_a_pdf": 244,
+   "page_a_print": 208,
+   "page_b": 838
+  },
+  {
+   "label": "FIGURE 6-29",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 29,
+   "page_a_pdf": 245,
+   "page_a_print": 209,
+   "page_b": 840
+  },
+  {
+   "label": "FIGURE 6-31",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 31,
+   "page_a_pdf": 247,
+   "page_a_print": 211,
+   "page_b": 846
+  },
+  {
+   "label": "FIGURE 6-33",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 33,
+   "page_a_pdf": 248,
+   "page_a_print": 212,
+   "page_b": 850
+  },
+  {
+   "label": "FIGURE 6-34",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 34,
+   "page_a_pdf": 249,
+   "page_a_print": 213,
+   "page_b": 851
+  },
+  {
+   "label": "FIGURE 6-36",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 36,
+   "page_a_pdf": 250,
+   "page_a_print": 214,
+   "page_b": 858
+  },
+  {
+   "label": "FIGURE 6-38",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 38,
+   "page_a_pdf": 253,
+   "page_a_print": 217,
+   "page_b": 864
+  },
+  {
+   "label": "FIGURE 6-40",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 40,
+   "page_a_pdf": 254,
+   "page_a_print": 218,
+   "page_b": 869
+  },
+  {
+   "label": "FIGURE 6-41",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 41,
+   "page_a_pdf": 255,
+   "page_a_print": 219,
+   "page_b": 873
+  },
+  {
+   "label": "FIGURE 6-42",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 42,
+   "page_a_pdf": 256,
+   "page_a_print": 220,
+   "page_b": 875
+  },
+  {
+   "label": "FIGURE 6-44",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 44,
+   "page_a_pdf": 257,
+   "page_a_print": 221,
+   "page_b": 880
+  },
+  {
+   "label": "FIGURE 6-45",
+   "kind": "FIGURE",
+   "ch": 6,
+   "num": 45,
+   "page_a_pdf": 259,
+   "page_a_print": 223,
+   "page_b": 884
+  },
+  {
+   "label": "BOX 7-1",
+   "kind": "BOX",
+   "ch": 7,
+   "num": 1,
+   "page_a_pdf": 266,
+   "page_a_print": 230,
+   "page_b": 914
+  },
+  {
+   "label": "FIGURE 7-3",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 3,
+   "page_a_pdf": 268,
+   "page_a_print": 232,
+   "page_b": 923
+  },
+  {
+   "label": "FIGURE 7-4",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 4,
+   "page_a_pdf": 269,
+   "page_a_print": 233,
+   "page_b": 923
+  },
+  {
+   "label": "FIGURE 7-7",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 7,
+   "page_a_pdf": 270,
+   "page_a_print": 234,
+   "page_b": 933
+  },
+  {
+   "label": "FIGURE 7-9",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 9,
+   "page_a_pdf": 272,
+   "page_a_print": 236,
+   "page_b": 936
+  },
+  {
+   "label": "FIGURE 7-10",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 10,
+   "page_a_pdf": 273,
+   "page_a_print": 237,
+   "page_b": 948
+  },
+  {
+   "label": "FIGURE 7-11",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 11,
+   "page_a_pdf": 276,
+   "page_a_print": 240,
+   "page_b": 948
+  },
+  {
+   "label": "FIGURE 7-13",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 13,
+   "page_a_pdf": 278,
+   "page_a_print": 242,
+   "page_b": 955
+  },
+  {
+   "label": "FIGURE 7-15",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 15,
+   "page_a_pdf": 279,
+   "page_a_print": 243,
+   "page_b": 957
+  },
+  {
+   "label": "FIGURE 7-17",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 17,
+   "page_a_pdf": 280,
+   "page_a_print": 244,
+   "page_b": 960
+  },
+  {
+   "label": "FIGURE 7-18",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 18,
+   "page_a_pdf": 281,
+   "page_a_print": 245,
+   "page_b": 961
+  },
+  {
+   "label": "TABLE 7-2",
+   "kind": "TABLE",
+   "ch": 7,
+   "num": 2,
+   "page_a_pdf": 282,
+   "page_a_print": 246,
+   "page_b": 966
+  },
+  {
+   "label": "FIGURE 7-20",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 20,
+   "page_a_pdf": 283,
+   "page_a_print": 247,
+   "page_b": 970
+  },
+  {
+   "label": "FIGURE 7-22",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 22,
+   "page_a_pdf": 284,
+   "page_a_print": 248,
+   "page_b": 974
+  },
+  {
+   "label": "FIGURE 7-23",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 23,
+   "page_a_pdf": 285,
+   "page_a_print": 249,
+   "page_b": 976
+  },
+  {
+   "label": "FIGURE 7-25",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 25,
+   "page_a_pdf": 286,
+   "page_a_print": 250,
+   "page_b": 983
+  },
+  {
+   "label": "FIGURE 7-27",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 27,
+   "page_a_pdf": 288,
+   "page_a_print": 252,
+   "page_b": 986
+  },
+  {
+   "label": "FIGURE 7-28",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 28,
+   "page_a_pdf": 289,
+   "page_a_print": 253,
+   "page_b": 991
+  },
+  {
+   "label": "FIGURE 7-29",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 29,
+   "page_a_pdf": 291,
+   "page_a_print": 255,
+   "page_b": 998
+  },
+  {
+   "label": "FIGURE 7-33",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 33,
+   "page_a_pdf": 293,
+   "page_a_print": 257,
+   "page_b": 1005
+  },
+  {
+   "label": "FIGURE 7-34",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 34,
+   "page_a_pdf": 295,
+   "page_a_print": 259,
+   "page_b": 1008
+  },
+  {
+   "label": "FIGURE 7-16",
+   "kind": "FIGURE",
+   "ch": 7,
+   "num": 16,
+   "page_a_pdf": 297,
+   "page_a_print": 261,
+   "page_b": 1017
+  },
+  {
+   "label": "FIGURE 8-2",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 2,
+   "page_a_pdf": 300,
+   "page_a_print": 264,
+   "page_b": 1031
+  },
+  {
+   "label": "FIGURE 8-5",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 5,
+   "page_a_pdf": 301,
+   "page_a_print": 265,
+   "page_b": 1036
+  },
+  {
+   "label": "FIGURE 8-7",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 7,
+   "page_a_pdf": 303,
+   "page_a_print": 267,
+   "page_b": 1039
+  },
+  {
+   "label": "FIGURE 8-11",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 11,
+   "page_a_pdf": 305,
+   "page_a_print": 269,
+   "page_b": 1045
+  },
+  {
+   "label": "FIGURE 8-14",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 14,
+   "page_a_pdf": 307,
+   "page_a_print": 271,
+   "page_b": 1054
+  },
+  {
+   "label": "FIGURE 8-17",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 17,
+   "page_a_pdf": 308,
+   "page_a_print": 272,
+   "page_b": 1060
+  },
+  {
+   "label": "FIGURE 8-18",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 18,
+   "page_a_pdf": 309,
+   "page_a_print": 273,
+   "page_b": 1063
+  },
+  {
+   "label": "FIGURE 8-20",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 20,
+   "page_a_pdf": 310,
+   "page_a_print": 274,
+   "page_b": 1066
+  },
+  {
+   "label": "FIGURE 8-21",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 21,
+   "page_a_pdf": 311,
+   "page_a_print": 275,
+   "page_b": 1069
+  },
+  {
+   "label": "FIGURE 8-23",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 23,
+   "page_a_pdf": 312,
+   "page_a_print": 276,
+   "page_b": 1073
+  },
+  {
+   "label": "FIGURE 8-24",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 24,
+   "page_a_pdf": 313,
+   "page_a_print": 277,
+   "page_b": 1074
+  },
+  {
+   "label": "FIGURE 8-25",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 25,
+   "page_a_pdf": 314,
+   "page_a_print": 278,
+   "page_b": 1075
+  },
+  {
+   "label": "FIGURE 8-27",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 27,
+   "page_a_pdf": 315,
+   "page_a_print": 279,
+   "page_b": 1082
+  },
+  {
+   "label": "FIGURE 8-28",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 28,
+   "page_a_pdf": 316,
+   "page_a_print": 280,
+   "page_b": 1083
+  },
+  {
+   "label": "FIGURE 8-29",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 29,
+   "page_a_pdf": 317,
+   "page_a_print": 281,
+   "page_b": 1086
+  },
+  {
+   "label": "FIGURE 8-31",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 31,
+   "page_a_pdf": 318,
+   "page_a_print": 282,
+   "page_b": 1090
+  },
+  {
+   "label": "FIGURE 8-33",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 33,
+   "page_a_pdf": 319,
+   "page_a_print": 283,
+   "page_b": 1097
+  },
+  {
+   "label": "BOX 8-1",
+   "kind": "BOX",
+   "ch": 8,
+   "num": 1,
+   "page_a_pdf": 322,
+   "page_a_print": 286,
+   "page_b": 1099
+  },
+  {
+   "label": "FIGURE 8-34",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 34,
+   "page_a_pdf": 323,
+   "page_a_print": 287,
+   "page_b": 1107
+  },
+  {
+   "label": "FIGURE 8-35",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 35,
+   "page_a_pdf": 326,
+   "page_a_print": 290,
+   "page_b": 1111
+  },
+  {
+   "label": "FIGURE 8-38",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 38,
+   "page_a_pdf": 329,
+   "page_a_print": 293,
+   "page_b": 1120
+  },
+  {
+   "label": "FIGURE 8-40",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 40,
+   "page_a_pdf": 330,
+   "page_a_print": 294,
+   "page_b": 1125
+  },
+  {
+   "label": "FIGURE 8-42",
+   "kind": "FIGURE",
+   "ch": 8,
+   "num": 42,
+   "page_a_pdf": 332,
+   "page_a_print": 296,
+   "page_b": 1130
+  },
+  {
+   "label": "TABLE 9-1",
+   "kind": "TABLE",
+   "ch": 9,
+   "num": 1,
+   "page_a_pdf": 338,
+   "page_a_print": 302,
+   "page_b": 1157
+  },
+  {
+   "label": "TABLE 9-2",
+   "kind": "TABLE",
+   "ch": 9,
+   "num": 2,
+   "page_a_pdf": 339,
+   "page_a_print": 303,
+   "page_b": 1161
+  },
+  {
+   "label": "FIGURE 9-2",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 2,
+   "page_a_pdf": 341,
+   "page_a_print": 305,
+   "page_b": 1163
+  },
+  {
+   "label": "FIGURE 9-3",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 3,
+   "page_a_pdf": 342,
+   "page_a_print": 306,
+   "page_b": 1168
+  },
+  {
+   "label": "FIGURE 9-5",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 5,
+   "page_a_pdf": 343,
+   "page_a_print": 307,
+   "page_b": 1174
+  },
+  {
+   "label": "FIGURE 9-6",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 6,
+   "page_a_pdf": 344,
+   "page_a_print": 308,
+   "page_b": 1176
+  },
+  {
+   "label": "FIGURE 9-8",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 8,
+   "page_a_pdf": 346,
+   "page_a_print": 310,
+   "page_b": 1184
+  },
+  {
+   "label": "FIGURE 9-9",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 9,
+   "page_a_pdf": 347,
+   "page_a_print": 311,
+   "page_b": 1187
+  },
+  {
+   "label": "TABLE 9-3",
+   "kind": "TABLE",
+   "ch": 9,
+   "num": 3,
+   "page_a_pdf": 349,
+   "page_a_print": 313,
+   "page_b": 1192
+  },
+  {
+   "label": "FIGURE 9-11",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 11,
+   "page_a_pdf": 350,
+   "page_a_print": 314,
+   "page_b": 1194
+  },
+  {
+   "label": "FIGURE 9-12",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 12,
+   "page_a_pdf": 351,
+   "page_a_print": 315,
+   "page_b": 1196
+  },
+  {
+   "label": "FIGURE 9-13",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 13,
+   "page_a_pdf": 352,
+   "page_a_print": 316,
+   "page_b": 1199
+  },
+  {
+   "label": "TABLE 9-4",
+   "kind": "TABLE",
+   "ch": 9,
+   "num": 4,
+   "page_a_pdf": 353,
+   "page_a_print": 317,
+   "page_b": 1203
+  },
+  {
+   "label": "FIGURE 9-15",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 15,
+   "page_a_pdf": 354,
+   "page_a_print": 318,
+   "page_b": 1209
+  },
+  {
+   "label": "FIGURE 9-16",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 16,
+   "page_a_pdf": 355,
+   "page_a_print": 319,
+   "page_b": 1212
+  },
+  {
+   "label": "FIGURE 9-17",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 17,
+   "page_a_pdf": 356,
+   "page_a_print": 320,
+   "page_b": 1215
+  },
+  {
+   "label": "FIGURE 9-19",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 19,
+   "page_a_pdf": 357,
+   "page_a_print": 321,
+   "page_b": 1220
+  },
+  {
+   "label": "FIGURE 9-20",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 20,
+   "page_a_pdf": 358,
+   "page_a_print": 322,
+   "page_b": 1223
+  },
+  {
+   "label": "FIGURE 9-21",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 21,
+   "page_a_pdf": 359,
+   "page_a_print": 323,
+   "page_b": 1226
+  },
+  {
+   "label": "FIGURE 9-22",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 22,
+   "page_a_pdf": 360,
+   "page_a_print": 324,
+   "page_b": 1232
+  },
+  {
+   "label": "FIGURE 9-23",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 23,
+   "page_a_pdf": 362,
+   "page_a_print": 326,
+   "page_b": 1234
+  },
+  {
+   "label": "FIGURE 9-25",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 25,
+   "page_a_pdf": 363,
+   "page_a_print": 327,
+   "page_b": 1240
+  },
+  {
+   "label": "FIGURE 9-26",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 26,
+   "page_a_pdf": 365,
+   "page_a_print": 329,
+   "page_b": 1245
+  },
+  {
+   "label": "FIGURE 9-28",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 28,
+   "page_a_pdf": 366,
+   "page_a_print": 330,
+   "page_b": 1251
+  },
+  {
+   "label": "FIGURE 9-29",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 29,
+   "page_a_pdf": 367,
+   "page_a_print": 331,
+   "page_b": 1253
+  },
+  {
+   "label": "FIGURE 9-30",
+   "kind": "FIGURE",
+   "ch": 9,
+   "num": 30,
+   "page_a_pdf": 368,
+   "page_a_print": 332,
+   "page_b": 1255
+  },
+  {
+   "label": "BOX 9-2",
+   "kind": "BOX",
+   "ch": 9,
+   "num": 2,
+   "page_a_pdf": 369,
+   "page_a_print": 333,
+   "page_b": 1262
+  },
+  {
+   "label": "TABLE 10-1",
+   "kind": "TABLE",
+   "ch": 10,
+   "num": 1,
+   "page_a_pdf": 377,
+   "page_a_print": 341,
+   "page_b": 1290
+  },
+  {
+   "label": "FIGURE 10-1",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 1,
+   "page_a_pdf": 379,
+   "page_a_print": 343,
+   "page_b": 1291
+  },
+  {
+   "label": "FIGURE 10-3",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 3,
+   "page_a_pdf": 380,
+   "page_a_print": 344,
+   "page_b": 1294
+  },
+  {
+   "label": "FIGURE 10-4",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 4,
+   "page_a_pdf": 381,
+   "page_a_print": 345,
+   "page_b": 1296
+  },
+  {
+   "label": "FIGURE 10-5",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 5,
+   "page_a_pdf": 382,
+   "page_a_print": 346,
+   "page_b": 1297
+  },
+  {
+   "label": "FIGURE 10-7",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 7,
+   "page_a_pdf": 383,
+   "page_a_print": 347,
+   "page_b": 1301
+  },
+  {
+   "label": "FIGURE 10-8",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 8,
+   "page_a_pdf": 384,
+   "page_a_print": 348,
+   "page_b": 1302
+  },
+  {
+   "label": "FIGURE 10-10",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 10,
+   "page_a_pdf": 385,
+   "page_a_print": 349,
+   "page_b": 1306
+  },
+  {
+   "label": "FIGURE 10-15",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 15,
+   "page_a_pdf": 388,
+   "page_a_print": 352,
+   "page_b": 1319
+  },
+  {
+   "label": "FIGURE 10-16",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 16,
+   "page_a_pdf": 390,
+   "page_a_print": 354,
+   "page_b": 1324
+  },
+  {
+   "label": "FIGURE 10-17",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 17,
+   "page_a_pdf": 391,
+   "page_a_print": 355,
+   "page_b": 1326
+  },
+  {
+   "label": "FIGURE 10-18",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 18,
+   "page_a_pdf": 392,
+   "page_a_print": 356,
+   "page_b": 1329
+  },
+  {
+   "label": "FIGURE 10-19",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 19,
+   "page_a_pdf": 393,
+   "page_a_print": 357,
+   "page_b": 1332
+  },
+  {
+   "label": "FIGURE 10-21",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 21,
+   "page_a_pdf": 394,
+   "page_a_print": 358,
+   "page_b": 1335
+  },
+  {
+   "label": "FIGURE 10-22",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 22,
+   "page_a_pdf": 395,
+   "page_a_print": 359,
+   "page_b": 1337
+  },
+  {
+   "label": "FIGURE 10-23",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 23,
+   "page_a_pdf": 396,
+   "page_a_print": 360,
+   "page_b": 1340
+  },
+  {
+   "label": "FIGURE 10-25",
+   "kind": "FIGURE",
+   "ch": 10,
+   "num": 25,
+   "page_a_pdf": 397,
+   "page_a_print": 361,
+   "page_b": 1344
+  },
+  {
+   "label": "TABLE 10-2",
+   "kind": "TABLE",
+   "ch": 10,
+   "num": 2,
+   "page_a_pdf": 399,
+   "page_a_print": 363,
+   "page_b": 1352
+  },
+  {
+   "label": "BOX 10-1",
+   "kind": "BOX",
+   "ch": 10,
+   "num": 1,
+   "page_a_pdf": 402,
+   "page_a_print": 366,
+   "page_b": 1365
+  },
+  {
+   "label": "FIGURE 11-1",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 1,
+   "page_a_pdf": 404,
+   "page_a_print": 368,
+   "page_b": 1372
+  },
+  {
+   "label": "FIGURE 11-3",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 3,
+   "page_a_pdf": 405,
+   "page_a_print": 369,
+   "page_b": 1375
+  },
+  {
+   "label": "FIGURE 11-5",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 5,
+   "page_a_pdf": 406,
+   "page_a_print": 370,
+   "page_b": 1380
+  },
+  {
+   "label": "FIGURE 11-7",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 7,
+   "page_a_pdf": 407,
+   "page_a_print": 371,
+   "page_b": 1384
+  },
+  {
+   "label": "FIGURE 11-8",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 8,
+   "page_a_pdf": 408,
+   "page_a_print": 372,
+   "page_b": 1395
+  },
+  {
+   "label": "FIGURE 11-13",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 13,
+   "page_a_pdf": 409,
+   "page_a_print": 373,
+   "page_b": 1395
+  },
+  {
+   "label": "FIGURE 11-14",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 14,
+   "page_a_pdf": 411,
+   "page_a_print": 375,
+   "page_b": 1397
+  },
+  {
+   "label": "FIGURE 11-16",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 16,
+   "page_a_pdf": 412,
+   "page_a_print": 376,
+   "page_b": 1400
+  },
+  {
+   "label": "FIGURE 11-17",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 17,
+   "page_a_pdf": 413,
+   "page_a_print": 377,
+   "page_b": 1405
+  },
+  {
+   "label": "FIGURE 11-18",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 18,
+   "page_a_pdf": 414,
+   "page_a_print": 378,
+   "page_b": 1408
+  },
+  {
+   "label": "FIGURE 11-20",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 20,
+   "page_a_pdf": 415,
+   "page_a_print": 379,
+   "page_b": 1415
+  },
+  {
+   "label": "FIGURE 11-22",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 22,
+   "page_a_pdf": 416,
+   "page_a_print": 380,
+   "page_b": 1417
+  },
+  {
+   "label": "FIGURE 11-23",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 23,
+   "page_a_pdf": 417,
+   "page_a_print": 381,
+   "page_b": 1420
+  },
+  {
+   "label": "FIGURE 11-24",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 24,
+   "page_a_pdf": 418,
+   "page_a_print": 382,
+   "page_b": 1422
+  },
+  {
+   "label": "FIGURE 11-25",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 25,
+   "page_a_pdf": 419,
+   "page_a_print": 383,
+   "page_b": 1425
+  },
+  {
+   "label": "FIGURE 11-26",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 26,
+   "page_a_pdf": 420,
+   "page_a_print": 384,
+   "page_b": 1428
+  },
+  {
+   "label": "FIGURE 11-28",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 28,
+   "page_a_pdf": 421,
+   "page_a_print": 385,
+   "page_b": 1434
+  },
+  {
+   "label": "FIGURE 11-29",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 29,
+   "page_a_pdf": 422,
+   "page_a_print": 386,
+   "page_b": 1437
+  },
+  {
+   "label": "FIGURE 11-31",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 31,
+   "page_a_pdf": 423,
+   "page_a_print": 387,
+   "page_b": 1443
+  },
+  {
+   "label": "FIGURE 11-32",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 32,
+   "page_a_pdf": 424,
+   "page_a_print": 388,
+   "page_b": 1446
+  },
+  {
+   "label": "BOX 11-1",
+   "kind": "BOX",
+   "ch": 11,
+   "num": 1,
+   "page_a_pdf": 425,
+   "page_a_print": 389,
+   "page_b": 1450
+  },
+  {
+   "label": "FIGURE 11-36",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 36,
+   "page_a_pdf": 427,
+   "page_a_print": 391,
+   "page_b": 1456
+  },
+  {
+   "label": "FIGURE 11-37",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 37,
+   "page_a_pdf": 429,
+   "page_a_print": 393,
+   "page_b": 1463
+  },
+  {
+   "label": "FIGURE 11-39",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 39,
+   "page_a_pdf": 430,
+   "page_a_print": 394,
+   "page_b": 1467
+  },
+  {
+   "label": "FIGURE 11-40",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 40,
+   "page_a_pdf": 431,
+   "page_a_print": 395,
+   "page_b": 1469
+  },
+  {
+   "label": "FIGURE 11-42",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 42,
+   "page_a_pdf": 435,
+   "page_a_print": 399,
+   "page_b": 1479
+  },
+  {
+   "label": "FIGURE 11-44",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 44,
+   "page_a_pdf": 437,
+   "page_a_print": 401,
+   "page_b": 1489
+  },
+  {
+   "label": "FIGURE 11-45",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 45,
+   "page_a_pdf": 438,
+   "page_a_print": 402,
+   "page_b": 1491
+  },
+  {
+   "label": "FIGURE 11-19",
+   "kind": "FIGURE",
+   "ch": 11,
+   "num": 19,
+   "page_a_pdf": 440,
+   "page_a_print": 404,
+   "page_b": 1501
+  },
+  {
+   "label": "TABLE 12-1",
+   "kind": "TABLE",
+   "ch": 12,
+   "num": 1,
+   "page_a_pdf": 445,
+   "page_a_print": 409,
+   "page_b": 1523
+  },
+  {
+   "label": "TABLE 12-2",
+   "kind": "TABLE",
+   "ch": 12,
+   "num": 2,
+   "page_a_pdf": 446,
+   "page_a_print": 410,
+   "page_b": 1523
+  },
+  {
+   "label": "FIGURE 12-2",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 2,
+   "page_a_pdf": 447,
+   "page_a_print": 411,
+   "page_b": 1526
+  },
+  {
+   "label": "FIGURE 12-3",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 3,
+   "page_a_pdf": 449,
+   "page_a_print": 413,
+   "page_b": 1531
+  },
+  {
+   "label": "FIGURE 12-4",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 4,
+   "page_a_pdf": 450,
+   "page_a_print": 414,
+   "page_b": 1533
+  },
+  {
+   "label": "BOX 12-1",
+   "kind": "BOX",
+   "ch": 12,
+   "num": 1,
+   "page_a_pdf": 451,
+   "page_a_print": 415,
+   "page_b": 1539
+  },
+  {
+   "label": "FIGURE 12-7",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 7,
+   "page_a_pdf": 452,
+   "page_a_print": 416,
+   "page_b": 1545
+  },
+  {
+   "label": "FIGURE 12-8",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 8,
+   "page_a_pdf": 454,
+   "page_a_print": 418,
+   "page_b": 1547
+  },
+  {
+   "label": "FIGURE 12-10",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 10,
+   "page_a_pdf": 455,
+   "page_a_print": 419,
+   "page_b": 1549
+  },
+  {
+   "label": "FIGURE 12-12",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 12,
+   "page_a_pdf": 457,
+   "page_a_print": 421,
+   "page_b": 1562
+  },
+  {
+   "label": "FIGURE 12-14",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 14,
+   "page_a_pdf": 460,
+   "page_a_print": 424,
+   "page_b": 1567
+  },
+  {
+   "label": "FIGURE 12-16",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 16,
+   "page_a_pdf": 461,
+   "page_a_print": 425,
+   "page_b": 1572
+  },
+  {
+   "label": "TABLE 12-5",
+   "kind": "TABLE",
+   "ch": 12,
+   "num": 5,
+   "page_a_pdf": 463,
+   "page_a_print": 427,
+   "page_b": 1575
+  },
+  {
+   "label": "FIGURE 12-18",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 18,
+   "page_a_pdf": 464,
+   "page_a_print": 428,
+   "page_b": 1577
+  },
+  {
+   "label": "BOX 12-3",
+   "kind": "BOX",
+   "ch": 12,
+   "num": 3,
+   "page_a_pdf": 465,
+   "page_a_print": 429,
+   "page_b": 1583
+  },
+  {
+   "label": "FIGURE 12-20",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 20,
+   "page_a_pdf": 468,
+   "page_a_print": 432,
+   "page_b": 1592
+  },
+  {
+   "label": "FIGURE 12-21",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 21,
+   "page_a_pdf": 469,
+   "page_a_print": 433,
+   "page_b": 1595
+  },
+  {
+   "label": "FIGURE 12-22",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 22,
+   "page_a_pdf": 470,
+   "page_a_print": 434,
+   "page_b": 1600
+  },
+  {
+   "label": "FIGURE 12-24",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 24,
+   "page_a_pdf": 472,
+   "page_a_print": 436,
+   "page_b": 1603
+  },
+  {
+   "label": "FIGURE 12-25",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 25,
+   "page_a_pdf": 473,
+   "page_a_print": 437,
+   "page_b": 1604
+  },
+  {
+   "label": "FIGURE 12-27",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 27,
+   "page_a_pdf": 474,
+   "page_a_print": 438,
+   "page_b": 1608
+  },
+  {
+   "label": "FIGURE 12-28",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 28,
+   "page_a_pdf": 475,
+   "page_a_print": 439,
+   "page_b": 1614
+  },
+  {
+   "label": "FIGURE 12-30",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 30,
+   "page_a_pdf": 476,
+   "page_a_print": 440,
+   "page_b": 1618
+  },
+  {
+   "label": "FIGURE 12-31",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 31,
+   "page_a_pdf": 477,
+   "page_a_print": 441,
+   "page_b": 1619
+  },
+  {
+   "label": "FIGURE 12-32",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 32,
+   "page_a_pdf": 479,
+   "page_a_print": 443,
+   "page_b": 1625
+  },
+  {
+   "label": "FIGURE 12-33",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 33,
+   "page_a_pdf": 480,
+   "page_a_print": 444,
+   "page_b": 1629
+  },
+  {
+   "label": "FIGURE 12-34",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 34,
+   "page_a_pdf": 482,
+   "page_a_print": 446,
+   "page_b": 1634
+  },
+  {
+   "label": "FIGURE 12-36",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 36,
+   "page_a_pdf": 483,
+   "page_a_print": 447,
+   "page_b": 1642
+  },
+  {
+   "label": "FIGURE 12-38",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 38,
+   "page_a_pdf": 484,
+   "page_a_print": 448,
+   "page_b": 1646
+  },
+  {
+   "label": "FIGURE 12-39",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 39,
+   "page_a_pdf": 485,
+   "page_a_print": 449,
+   "page_b": 1648
+  },
+  {
+   "label": "FIGURE 12-40",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 40,
+   "page_a_pdf": 486,
+   "page_a_print": 450,
+   "page_b": 1651
+  },
+  {
+   "label": "BOX 12-4",
+   "kind": "BOX",
+   "ch": 12,
+   "num": 4,
+   "page_a_pdf": 487,
+   "page_a_print": 451,
+   "page_b": 1656
+  },
+  {
+   "label": "FIGURE 12-41",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 41,
+   "page_a_pdf": 490,
+   "page_a_print": 454,
+   "page_b": 1665
+  },
+  {
+   "label": "FIGURE 12-42",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 42,
+   "page_a_pdf": 492,
+   "page_a_print": 456,
+   "page_b": 1670
+  },
+  {
+   "label": "FIGURE 12-9",
+   "kind": "FIGURE",
+   "ch": 12,
+   "num": 9,
+   "page_a_pdf": 493,
+   "page_a_print": 457,
+   "page_b": 1677
+  },
+  {
+   "label": "TABLE 12-4",
+   "kind": "TABLE",
+   "ch": 12,
+   "num": 4,
+   "page_a_pdf": 494,
+   "page_a_print": 458,
+   "page_b": 1678
+  },
+  {
+   "label": "TABLE 13-2",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 2,
+   "page_a_pdf": 504,
+   "page_a_print": 468,
+   "page_b": 1713
+  },
+  {
+   "label": "TABLE 13-4",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 4,
+   "page_a_pdf": 505,
+   "page_a_print": 469,
+   "page_b": 1717
+  },
+  {
+   "label": "FIGURE 13-1",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 1,
+   "page_a_pdf": 508,
+   "page_a_print": 472,
+   "page_b": 1730
+  },
+  {
+   "label": "FIGURE 13-3",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 3,
+   "page_a_pdf": 509,
+   "page_a_print": 473,
+   "page_b": 1734
+  },
+  {
+   "label": "FIGURE 13-5",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 5,
+   "page_a_pdf": 510,
+   "page_a_print": 474,
+   "page_b": 1737
+  },
+  {
+   "label": "FIGURE 13-9",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 9,
+   "page_a_pdf": 512,
+   "page_a_print": 476,
+   "page_b": 1748
+  },
+  {
+   "label": "FIGURE 13-10",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 10,
+   "page_a_pdf": 513,
+   "page_a_print": 477,
+   "page_b": 1748
+  },
+  {
+   "label": "TABLE 13-5",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 5,
+   "page_a_pdf": 515,
+   "page_a_print": 479,
+   "page_b": 1760
+  },
+  {
+   "label": "FIGURE 13-13",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 13,
+   "page_a_pdf": 517,
+   "page_a_print": 481,
+   "page_b": 1764
+  },
+  {
+   "label": "FIGURE 13-16",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 16,
+   "page_a_pdf": 518,
+   "page_a_print": 482,
+   "page_b": 1767
+  },
+  {
+   "label": "FIGURE 13-18",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 18,
+   "page_a_pdf": 519,
+   "page_a_print": 483,
+   "page_b": 1769
+  },
+  {
+   "label": "TABLE 13-6",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 6,
+   "page_a_pdf": 520,
+   "page_a_print": 484,
+   "page_b": 1776
+  },
+  {
+   "label": "BOX 13-2",
+   "kind": "BOX",
+   "ch": 13,
+   "num": 2,
+   "page_a_pdf": 521,
+   "page_a_print": 485,
+   "page_b": 1778
+  },
+  {
+   "label": "FIGURE 13-21",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 21,
+   "page_a_pdf": 523,
+   "page_a_print": 487,
+   "page_b": 1784
+  },
+  {
+   "label": "FIGURE 13-22",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 22,
+   "page_a_pdf": 525,
+   "page_a_print": 489,
+   "page_b": 1794
+  },
+  {
+   "label": "FIGURE 13-23",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 23,
+   "page_a_pdf": 526,
+   "page_a_print": 490,
+   "page_b": 1798
+  },
+  {
+   "label": "TABLE 13-7",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 7,
+   "page_a_pdf": 527,
+   "page_a_print": 491,
+   "page_b": 1804
+  },
+  {
+   "label": "FIGURE 13-24",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 24,
+   "page_a_pdf": 529,
+   "page_a_print": 493,
+   "page_b": 1808
+  },
+  {
+   "label": "FIGURE 13-27",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 27,
+   "page_a_pdf": 531,
+   "page_a_print": 495,
+   "page_b": 1817
+  },
+  {
+   "label": "FIGURE 13-28",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 28,
+   "page_a_pdf": 533,
+   "page_a_print": 497,
+   "page_b": 1822
+  },
+  {
+   "label": "TABLE 13-8",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 8,
+   "page_a_pdf": 534,
+   "page_a_print": 498,
+   "page_b": 1826
+  },
+  {
+   "label": "TABLE 13-9",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 9,
+   "page_a_pdf": 536,
+   "page_a_print": 500,
+   "page_b": 1829
+  },
+  {
+   "label": "TABLE 13-10",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 10,
+   "page_a_pdf": 537,
+   "page_a_print": 501,
+   "page_b": 1833
+  },
+  {
+   "label": "FIGURE 13-34",
+   "kind": "FIGURE",
+   "ch": 13,
+   "num": 34,
+   "page_a_pdf": 538,
+   "page_a_print": 502,
+   "page_b": 1834
+  },
+  {
+   "label": "TABLE 13-11",
+   "kind": "TABLE",
+   "ch": 13,
+   "num": 11,
+   "page_a_pdf": 539,
+   "page_a_print": 503,
+   "page_b": 1836
+  },
+  {
+   "label": "FIGURE 14-2",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 2,
+   "page_a_pdf": 548,
+   "page_a_print": 512,
+   "page_b": 1874
+  },
+  {
+   "label": "FIGURE 14-3",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 3,
+   "page_a_pdf": 549,
+   "page_a_print": 513,
+   "page_b": 1877
+  },
+  {
+   "label": "FIGURE 14-4",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 4,
+   "page_a_pdf": 551,
+   "page_a_print": 515,
+   "page_b": 1885
+  },
+  {
+   "label": "FIGURE 14-5",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 5,
+   "page_a_pdf": 552,
+   "page_a_print": 516,
+   "page_b": 1889
+  },
+  {
+   "label": "FIGURE 14-7",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 7,
+   "page_a_pdf": 555,
+   "page_a_print": 519,
+   "page_b": 1896
+  },
+  {
+   "label": "FIGURE 14-8",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 8,
+   "page_a_pdf": 556,
+   "page_a_print": 520,
+   "page_b": 1901
+  },
+  {
+   "label": "FIGURE 14-10",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 10,
+   "page_a_pdf": 560,
+   "page_a_print": 524,
+   "page_b": 1915
+  },
+  {
+   "label": "FIGURE 14-11",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 11,
+   "page_a_pdf": 561,
+   "page_a_print": 525,
+   "page_b": 1921
+  },
+  {
+   "label": "BOX 14-1",
+   "kind": "BOX",
+   "ch": 14,
+   "num": 1,
+   "page_a_pdf": 562,
+   "page_a_print": 526,
+   "page_b": 1923
+  },
+  {
+   "label": "TABLE 14-1",
+   "kind": "TABLE",
+   "ch": 14,
+   "num": 1,
+   "page_a_pdf": 566,
+   "page_a_print": 530,
+   "page_b": 1938
+  },
+  {
+   "label": "FIGURE 14-13",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 13,
+   "page_a_pdf": 567,
+   "page_a_print": 531,
+   "page_b": 1939
+  },
+  {
+   "label": "FIGURE 14-14",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 14,
+   "page_a_pdf": 568,
+   "page_a_print": 532,
+   "page_b": 1943
+  },
+  {
+   "label": "FIGURE 14-15",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 15,
+   "page_a_pdf": 569,
+   "page_a_print": 533,
+   "page_b": 1947
+  },
+  {
+   "label": "TABLE 14-2",
+   "kind": "TABLE",
+   "ch": 14,
+   "num": 2,
+   "page_a_pdf": 570,
+   "page_a_print": 534,
+   "page_b": 1956
+  },
+  {
+   "label": "FIGURE 14-19",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 19,
+   "page_a_pdf": 572,
+   "page_a_print": 536,
+   "page_b": 1956
+  },
+  {
+   "label": "TABLE 14-3",
+   "kind": "TABLE",
+   "ch": 14,
+   "num": 3,
+   "page_a_pdf": 573,
+   "page_a_print": 537,
+   "page_b": 1957
+  },
+  {
+   "label": "TABLE 14-4",
+   "kind": "TABLE",
+   "ch": 14,
+   "num": 4,
+   "page_a_pdf": 574,
+   "page_a_print": 538,
+   "page_b": 1959
+  },
+  {
+   "label": "BOX 14-3",
+   "kind": "BOX",
+   "ch": 14,
+   "num": 3,
+   "page_a_pdf": 575,
+   "page_a_print": 539,
+   "page_b": 1964
+  },
+  {
+   "label": "FIGURE 14-22",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 22,
+   "page_a_pdf": 577,
+   "page_a_print": 541,
+   "page_b": 1971
+  },
+  {
+   "label": "FIGURE 14-23",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 23,
+   "page_a_pdf": 578,
+   "page_a_print": 542,
+   "page_b": 1972
+  },
+  {
+   "label": "FIGURE 14-25",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 25,
+   "page_a_pdf": 579,
+   "page_a_print": 543,
+   "page_b": 1976
+  },
+  {
+   "label": "FIGURE 14-26",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 26,
+   "page_a_pdf": 580,
+   "page_a_print": 544,
+   "page_b": 1979
+  },
+  {
+   "label": "TABLE 14-5",
+   "kind": "TABLE",
+   "ch": 14,
+   "num": 5,
+   "page_a_pdf": 581,
+   "page_a_print": 545,
+   "page_b": 1983
+  },
+  {
+   "label": "FIGURE 14-28",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 28,
+   "page_a_pdf": 582,
+   "page_a_print": 546,
+   "page_b": 1985
+  },
+  {
+   "label": "FIGURE 14-30",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 30,
+   "page_a_pdf": 583,
+   "page_a_print": 547,
+   "page_b": 2001
+  },
+  {
+   "label": "FIGURE 14-31",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 31,
+   "page_a_pdf": 585,
+   "page_a_print": 549,
+   "page_b": 2001
+  },
+  {
+   "label": "FIGURE 14-36",
+   "kind": "FIGURE",
+   "ch": 14,
+   "num": 36,
+   "page_a_pdf": 587,
+   "page_a_print": 551,
+   "page_b": 2003
+  },
+  {
+   "label": "FIGURE 15-1",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 1,
+   "page_a_pdf": 593,
+   "page_a_print": 557,
+   "page_b": 2032
+  },
+  {
+   "label": "FIGURE 15-3",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 3,
+   "page_a_pdf": 594,
+   "page_a_print": 558,
+   "page_b": 2037
+  },
+  {
+   "label": "FIGURE 15-4",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 4,
+   "page_a_pdf": 595,
+   "page_a_print": 559,
+   "page_b": 2039
+  },
+  {
+   "label": "FIGURE 15-6",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 6,
+   "page_a_pdf": 596,
+   "page_a_print": 560,
+   "page_b": 2041
+  },
+  {
+   "label": "FIGURE 15-8",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 8,
+   "page_a_pdf": 599,
+   "page_a_print": 563,
+   "page_b": 2051
+  },
+  {
+   "label": "FIGURE 15-10",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 10,
+   "page_a_pdf": 600,
+   "page_a_print": 564,
+   "page_b": 2054
+  },
+  {
+   "label": "FIGURE 15-12",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 12,
+   "page_a_pdf": 602,
+   "page_a_print": 566,
+   "page_b": 2060
+  },
+  {
+   "label": "FIGURE 15-14",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 14,
+   "page_a_pdf": 603,
+   "page_a_print": 567,
+   "page_b": 2063
+  },
+  {
+   "label": "FIGURE 15-15",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 15,
+   "page_a_pdf": 604,
+   "page_a_print": 568,
+   "page_b": 2064
+  },
+  {
+   "label": "FIGURE 15-18",
+   "kind": "FIGURE",
+   "ch": 15,
+   "num": 18,
+   "page_a_pdf": 606,
+   "page_a_print": 570,
+   "page_b": 2071
+  },
+  {
+   "label": "FIGURE 16-1",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 1,
+   "page_a_pdf": 611,
+   "page_a_print": 575,
+   "page_b": 2088
+  },
+  {
+   "label": "FIGURE 16-4",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 4,
+   "page_a_pdf": 612,
+   "page_a_print": 576,
+   "page_b": 2095
+  },
+  {
+   "label": "FIGURE 16-6",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 6,
+   "page_a_pdf": 613,
+   "page_a_print": 577,
+   "page_b": 2100
+  },
+  {
+   "label": "FIGURE 16-7",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 7,
+   "page_a_pdf": 615,
+   "page_a_print": 579,
+   "page_b": 2104
+  },
+  {
+   "label": "FIGURE 16-8",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 8,
+   "page_a_pdf": 617,
+   "page_a_print": 581,
+   "page_b": 2111
+  },
+  {
+   "label": "FIGURE 16-11",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 11,
+   "page_a_pdf": 619,
+   "page_a_print": 583,
+   "page_b": 2118
+  },
+  {
+   "label": "FIGURE 16-13",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 13,
+   "page_a_pdf": 622,
+   "page_a_print": 586,
+   "page_b": 2123
+  },
+  {
+   "label": "FIGURE 16-14",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 14,
+   "page_a_pdf": 623,
+   "page_a_print": 587,
+   "page_b": 2130
+  },
+  {
+   "label": "TABLE 16-1",
+   "kind": "TABLE",
+   "ch": 16,
+   "num": 1,
+   "page_a_pdf": 625,
+   "page_a_print": 589,
+   "page_b": 2131
+  },
+  {
+   "label": "TABLE 16-2",
+   "kind": "TABLE",
+   "ch": 16,
+   "num": 2,
+   "page_a_pdf": 626,
+   "page_a_print": 590,
+   "page_b": 2137
+  },
+  {
+   "label": "FIGURE 16-15",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 15,
+   "page_a_pdf": 627,
+   "page_a_print": 591,
+   "page_b": 2137
+  },
+  {
+   "label": "FIGURE 16-16",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 16,
+   "page_a_pdf": 628,
+   "page_a_print": 592,
+   "page_b": 2139
+  },
+  {
+   "label": "FIGURE 16-18",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 18,
+   "page_a_pdf": 629,
+   "page_a_print": 593,
+   "page_b": 2145
+  },
+  {
+   "label": "FIGURE 16-19",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 19,
+   "page_a_pdf": 630,
+   "page_a_print": 594,
+   "page_b": 2147
+  },
+  {
+   "label": "FIGURE 16-21",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 21,
+   "page_a_pdf": 631,
+   "page_a_print": 595,
+   "page_b": 2154
+  },
+  {
+   "label": "FIGURE 16-22",
+   "kind": "FIGURE",
+   "ch": 16,
+   "num": 22,
+   "page_a_pdf": 632,
+   "page_a_print": 596,
+   "page_b": 2155
+  },
+  {
+   "label": "FIGURE 17-3",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 3,
+   "page_a_pdf": 640,
+   "page_a_print": 604,
+   "page_b": 2189
+  },
+  {
+   "label": "FIGURE 17-5",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 5,
+   "page_a_pdf": 641,
+   "page_a_print": 605,
+   "page_b": 2193
+  },
+  {
+   "label": "FIGURE 17-6",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 6,
+   "page_a_pdf": 642,
+   "page_a_print": 606,
+   "page_b": 2195
+  },
+  {
+   "label": "FIGURE 17-9",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 9,
+   "page_a_pdf": 644,
+   "page_a_print": 608,
+   "page_b": 2206
+  },
+  {
+   "label": "BOX 17-1",
+   "kind": "BOX",
+   "ch": 17,
+   "num": 1,
+   "page_a_pdf": 645,
+   "page_a_print": 609,
+   "page_b": 2208
+  },
+  {
+   "label": "TABLE 17-1",
+   "kind": "TABLE",
+   "ch": 17,
+   "num": 1,
+   "page_a_pdf": 647,
+   "page_a_print": 611,
+   "page_b": 2212
+  },
+  {
+   "label": "FIGURE 17-11",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 11,
+   "page_a_pdf": 648,
+   "page_a_print": 612,
+   "page_b": 2218
+  },
+  {
+   "label": "FIGURE 17-13",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 13,
+   "page_a_pdf": 649,
+   "page_a_print": 613,
+   "page_b": 2229
+  },
+  {
+   "label": "FIGURE 17-14",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 14,
+   "page_a_pdf": 653,
+   "page_a_print": 617,
+   "page_b": 2234
+  },
+  {
+   "label": "FIGURE 17-12",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 12,
+   "page_a_pdf": 654,
+   "page_a_print": 618,
+   "page_b": 2239
+  },
+  {
+   "label": "FIGURE 17-16",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 16,
+   "page_a_pdf": 655,
+   "page_a_print": 619,
+   "page_b": 2244
+  },
+  {
+   "label": "FIGURE 17-18",
+   "kind": "FIGURE",
+   "ch": 17,
+   "num": 18,
+   "page_a_pdf": 656,
+   "page_a_print": 620,
+   "page_b": 2248
+  },
+  {
+   "label": "FIGURE 18-1",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 1,
+   "page_a_pdf": 662,
+   "page_a_print": 626,
+   "page_b": 2264
+  },
+  {
+   "label": "FIGURE 18-2",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 2,
+   "page_a_pdf": 663,
+   "page_a_print": 627,
+   "page_b": 2267
+  },
+  {
+   "label": "FIGURE 18-6",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 6,
+   "page_a_pdf": 666,
+   "page_a_print": 630,
+   "page_b": 2278
+  },
+  {
+   "label": "FIGURE 18-7",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 7,
+   "page_a_pdf": 667,
+   "page_a_print": 631,
+   "page_b": 2280
+  },
+  {
+   "label": "FIGURE 18-9",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 9,
+   "page_a_pdf": 668,
+   "page_a_print": 632,
+   "page_b": 2286
+  },
+  {
+   "label": "FIGURE 18-10",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 10,
+   "page_a_pdf": 671,
+   "page_a_print": 635,
+   "page_b": 2291
+  },
+  {
+   "label": "FIGURE 18-12",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 12,
+   "page_a_pdf": 672,
+   "page_a_print": 636,
+   "page_b": 2296
+  },
+  {
+   "label": "BOX 18-1",
+   "kind": "BOX",
+   "ch": 18,
+   "num": 1,
+   "page_a_pdf": 673,
+   "page_a_print": 637,
+   "page_b": 2298
+  },
+  {
+   "label": "TABLE 18-1",
+   "kind": "TABLE",
+   "ch": 18,
+   "num": 1,
+   "page_a_pdf": 674,
+   "page_a_print": 638,
+   "page_b": 2303
+  },
+  {
+   "label": "FIGURE 18-14",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 14,
+   "page_a_pdf": 675,
+   "page_a_print": 639,
+   "page_b": 2305
+  },
+  {
+   "label": "FIGURE 18-15",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 15,
+   "page_a_pdf": 676,
+   "page_a_print": 640,
+   "page_b": 2310
+  },
+  {
+   "label": "FIGURE 18-26",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 26,
+   "page_a_pdf": 678,
+   "page_a_print": 642,
+   "page_b": 2315
+  },
+  {
+   "label": "FIGURE 18-20",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 20,
+   "page_a_pdf": 680,
+   "page_a_print": 644,
+   "page_b": 2320
+  },
+  {
+   "label": "TABLE 18-2",
+   "kind": "TABLE",
+   "ch": 18,
+   "num": 2,
+   "page_a_pdf": 682,
+   "page_a_print": 646,
+   "page_b": 2322
+  },
+  {
+   "label": "FIGURE 18-23",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 23,
+   "page_a_pdf": 683,
+   "page_a_print": 647,
+   "page_b": 2326
+  },
+  {
+   "label": "FIGURE 18-22",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 22,
+   "page_a_pdf": 684,
+   "page_a_print": 648,
+   "page_b": 2327
+  },
+  {
+   "label": "FIGURE 18-25",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 25,
+   "page_a_pdf": 685,
+   "page_a_print": 649,
+   "page_b": 2331
+  },
+  {
+   "label": "FIGURE 18-29",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 29,
+   "page_a_pdf": 690,
+   "page_a_print": 654,
+   "page_b": 2342
+  },
+  {
+   "label": "FIGURE 18-28",
+   "kind": "FIGURE",
+   "ch": 18,
+   "num": 28,
+   "page_a_pdf": 693,
+   "page_a_print": 657,
+   "page_b": 2361
+  },
+  {
+   "label": "FIGURE 19-1",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 1,
+   "page_a_pdf": 695,
+   "page_a_print": 659,
+   "page_b": 2366
+  },
+  {
+   "label": "TABLE 19-1",
+   "kind": "TABLE",
+   "ch": 19,
+   "num": 1,
+   "page_a_pdf": 698,
+   "page_a_print": 662,
+   "page_b": 2371
+  },
+  {
+   "label": "FIGURE 19-4",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 4,
+   "page_a_pdf": 699,
+   "page_a_print": 663,
+   "page_b": 2375
+  },
+  {
+   "label": "TABLE 19-2",
+   "kind": "TABLE",
+   "ch": 19,
+   "num": 2,
+   "page_a_pdf": 700,
+   "page_a_print": 664,
+   "page_b": 2378
+  },
+  {
+   "label": "TABLE 19-3",
+   "kind": "TABLE",
+   "ch": 19,
+   "num": 3,
+   "page_a_pdf": 701,
+   "page_a_print": 665,
+   "page_b": 2381
+  },
+  {
+   "label": "FIGURE 19-8",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 8,
+   "page_a_pdf": 702,
+   "page_a_print": 666,
+   "page_b": 2382
+  },
+  {
+   "label": "FIGURE 19-9",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 9,
+   "page_a_pdf": 703,
+   "page_a_print": 667,
+   "page_b": 2386
+  },
+  {
+   "label": "FIGURE 19-10",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 10,
+   "page_a_pdf": 704,
+   "page_a_print": 668,
+   "page_b": 2388
+  },
+  {
+   "label": "FIGURE 19-11",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 11,
+   "page_a_pdf": 705,
+   "page_a_print": 669,
+   "page_b": 2389
+  },
+  {
+   "label": "FIGURE 19-12",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 12,
+   "page_a_pdf": 706,
+   "page_a_print": 670,
+   "page_b": 2392
+  },
+  {
+   "label": "FIGURE 19-14",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 14,
+   "page_a_pdf": 707,
+   "page_a_print": 671,
+   "page_b": 2397
+  },
+  {
+   "label": "FIGURE 19-16",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 16,
+   "page_a_pdf": 708,
+   "page_a_print": 672,
+   "page_b": 2401
+  },
+  {
+   "label": "FIGURE 19-17",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 17,
+   "page_a_pdf": 709,
+   "page_a_print": 673,
+   "page_b": 2402
+  },
+  {
+   "label": "FIGURE 19-18",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 18,
+   "page_a_pdf": 710,
+   "page_a_print": 674,
+   "page_b": 2405
+  },
+  {
+   "label": "FIGURE 19-20",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 20,
+   "page_a_pdf": 711,
+   "page_a_print": 675,
+   "page_b": 2410
+  },
+  {
+   "label": "FIGURE 19-21",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 21,
+   "page_a_pdf": 712,
+   "page_a_print": 676,
+   "page_b": 2414
+  },
+  {
+   "label": "FIGURE 19-22",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 22,
+   "page_a_pdf": 713,
+   "page_a_print": 677,
+   "page_b": 2415
+  },
+  {
+   "label": "FIGURE 19-24",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 24,
+   "page_a_pdf": 714,
+   "page_a_print": 678,
+   "page_b": 2421
+  },
+  {
+   "label": "FIGURE 19-25",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 25,
+   "page_a_pdf": 715,
+   "page_a_print": 679,
+   "page_b": 2424
+  },
+  {
+   "label": "FIGURE 19-27",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 27,
+   "page_a_pdf": 716,
+   "page_a_print": 680,
+   "page_b": 2430
+  },
+  {
+   "label": "FIGURE 19-28",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 28,
+   "page_a_pdf": 717,
+   "page_a_print": 681,
+   "page_b": 2434
+  },
+  {
+   "label": "FIGURE 19-29",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 29,
+   "page_a_pdf": 718,
+   "page_a_print": 682,
+   "page_b": 2434
+  },
+  {
+   "label": "FIGURE 19-30",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 30,
+   "page_a_pdf": 719,
+   "page_a_print": 683,
+   "page_b": 2439
+  },
+  {
+   "label": "BOX 19-1",
+   "kind": "BOX",
+   "ch": 19,
+   "num": 1,
+   "page_a_pdf": 720,
+   "page_a_print": 684,
+   "page_b": 2444
+  },
+  {
+   "label": "TABLE 19-4",
+   "kind": "TABLE",
+   "ch": 19,
+   "num": 4,
+   "page_a_pdf": 721,
+   "page_a_print": 685,
+   "page_b": 2445
+  },
+  {
+   "label": "TABLE 19-5",
+   "kind": "TABLE",
+   "ch": 19,
+   "num": 5,
+   "page_a_pdf": 722,
+   "page_a_print": 686,
+   "page_b": 2448
+  },
+  {
+   "label": "FIGURE 19-33",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 33,
+   "page_a_pdf": 723,
+   "page_a_print": 687,
+   "page_b": 2451
+  },
+  {
+   "label": "FIGURE 19-35",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 35,
+   "page_a_pdf": 725,
+   "page_a_print": 689,
+   "page_b": 2456
+  },
+  {
+   "label": "FIGURE 19-37",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 37,
+   "page_a_pdf": 726,
+   "page_a_print": 690,
+   "page_b": 2461
+  },
+  {
+   "label": "TABLE 19-6",
+   "kind": "TABLE",
+   "ch": 19,
+   "num": 6,
+   "page_a_pdf": 728,
+   "page_a_print": 692,
+   "page_b": 2469
+  },
+  {
+   "label": "FIGURE 19-41",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 41,
+   "page_a_pdf": 729,
+   "page_a_print": 693,
+   "page_b": 2471
+  },
+  {
+   "label": "FIGURE 19-42",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 42,
+   "page_a_pdf": 730,
+   "page_a_print": 694,
+   "page_b": 2474
+  },
+  {
+   "label": "FIGURE 19-43",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 43,
+   "page_a_pdf": 731,
+   "page_a_print": 695,
+   "page_b": 2476
+  },
+  {
+   "label": "FIGURE 19-44",
+   "kind": "FIGURE",
+   "ch": 19,
+   "num": 44,
+   "page_a_pdf": 732,
+   "page_a_print": 696,
+   "page_b": 2479
+  },
+  {
+   "label": "FIGURE 20-2",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 2,
+   "page_a_pdf": 737,
+   "page_a_print": 701,
+   "page_b": 2499
+  },
+  {
+   "label": "FIGURE 20-3",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 3,
+   "page_a_pdf": 738,
+   "page_a_print": 702,
+   "page_b": 2502
+  },
+  {
+   "label": "FIGURE 20-4",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 4,
+   "page_a_pdf": 739,
+   "page_a_print": 703,
+   "page_b": 2506
+  },
+  {
+   "label": "FIGURE 20-5",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 5,
+   "page_a_pdf": 740,
+   "page_a_print": 704,
+   "page_b": 2509
+  },
+  {
+   "label": "FIGURE 20-6",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 6,
+   "page_a_pdf": 741,
+   "page_a_print": 705,
+   "page_b": 2510
+  },
+  {
+   "label": "FIGURE 20-9",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 9,
+   "page_a_pdf": 742,
+   "page_a_print": 706,
+   "page_b": 2516
+  },
+  {
+   "label": "FIGURE 20-10",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 10,
+   "page_a_pdf": 743,
+   "page_a_print": 707,
+   "page_b": 2518
+  },
+  {
+   "label": "FIGURE 20-11",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 11,
+   "page_a_pdf": 744,
+   "page_a_print": 708,
+   "page_b": 2522
+  },
+  {
+   "label": "FIGURE 20-12",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 12,
+   "page_a_pdf": 745,
+   "page_a_print": 709,
+   "page_b": 2524
+  },
+  {
+   "label": "FIGURE 20-14",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 14,
+   "page_a_pdf": 746,
+   "page_a_print": 710,
+   "page_b": 2528
+  },
+  {
+   "label": "FIGURE 20-15",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 15,
+   "page_a_pdf": 747,
+   "page_a_print": 711,
+   "page_b": 2530
+  },
+  {
+   "label": "FIGURE 20-17",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 17,
+   "page_a_pdf": 748,
+   "page_a_print": 712,
+   "page_b": 2534
+  },
+  {
+   "label": "FIGURE 20-19",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 19,
+   "page_a_pdf": 750,
+   "page_a_print": 714,
+   "page_b": 2540
+  },
+  {
+   "label": "FIGURE 20-20",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 20,
+   "page_a_pdf": 751,
+   "page_a_print": 715,
+   "page_b": 2543
+  },
+  {
+   "label": "FIGURE 20-21",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 21,
+   "page_a_pdf": 752,
+   "page_a_print": 716,
+   "page_b": 2548
+  },
+  {
+   "label": "FIGURE 20-22",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 22,
+   "page_a_pdf": 753,
+   "page_a_print": 717,
+   "page_b": 2551
+  },
+  {
+   "label": "FIGURE 20-24",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 24,
+   "page_a_pdf": 754,
+   "page_a_print": 718,
+   "page_b": 2557
+  },
+  {
+   "label": "FIGURE 20-25",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 25,
+   "page_a_pdf": 755,
+   "page_a_print": 719,
+   "page_b": 2560
+  },
+  {
+   "label": "FIGURE 20-26",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 26,
+   "page_a_pdf": 756,
+   "page_a_print": 720,
+   "page_b": 2563
+  },
+  {
+   "label": "FIGURE 20-28",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 28,
+   "page_a_pdf": 757,
+   "page_a_print": 721,
+   "page_b": 2567
+  },
+  {
+   "label": "FIGURE 20-31",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 31,
+   "page_a_pdf": 758,
+   "page_a_print": 722,
+   "page_b": 2573
+  },
+  {
+   "label": "FIGURE 20-33",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 33,
+   "page_a_pdf": 761,
+   "page_a_print": 725,
+   "page_b": 2575
+  },
+  {
+   "label": "FIGURE 20-36",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 36,
+   "page_a_pdf": 762,
+   "page_a_print": 726,
+   "page_b": 2580
+  },
+  {
+   "label": "FIGURE 20-37",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 37,
+   "page_a_pdf": 763,
+   "page_a_print": 727,
+   "page_b": 2581
+  },
+  {
+   "label": "FIGURE 20-39",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 39,
+   "page_a_pdf": 764,
+   "page_a_print": 728,
+   "page_b": 2590
+  },
+  {
+   "label": "FIGURE 20-40",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 40,
+   "page_a_pdf": 765,
+   "page_a_print": 729,
+   "page_b": 2597
+  },
+  {
+   "label": "TABLE 20-1",
+   "kind": "TABLE",
+   "ch": 20,
+   "num": 1,
+   "page_a_pdf": 768,
+   "page_a_print": 732,
+   "page_b": 2600
+  },
+  {
+   "label": "FIGURE 20-41",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 41,
+   "page_a_pdf": 769,
+   "page_a_print": 733,
+   "page_b": 2606
+  },
+  {
+   "label": "FIGURE 20-42",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 42,
+   "page_a_pdf": 770,
+   "page_a_print": 734,
+   "page_b": 2610
+  },
+  {
+   "label": "FIGURE 20-45",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 45,
+   "page_a_pdf": 772,
+   "page_a_print": 736,
+   "page_b": 2615
+  },
+  {
+   "label": "FIGURE 20-47",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 47,
+   "page_a_pdf": 773,
+   "page_a_print": 737,
+   "page_b": 2620
+  },
+  {
+   "label": "FIGURE 20-48",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 48,
+   "page_a_pdf": 774,
+   "page_a_print": 738,
+   "page_b": 2623
+  },
+  {
+   "label": "FIGURE 20-49",
+   "kind": "FIGURE",
+   "ch": 20,
+   "num": 49,
+   "page_a_pdf": 775,
+   "page_a_print": 739,
+   "page_b": 2625
+  },
+  {
+   "label": "FIGURE 21-1",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 1,
+   "page_a_pdf": 781,
+   "page_a_print": 745,
+   "page_b": 2651
+  },
+  {
+   "label": "FIGURE 21-3",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 3,
+   "page_a_pdf": 782,
+   "page_a_print": 746,
+   "page_b": 2661
+  },
+  {
+   "label": "FIGURE 21-4",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 4,
+   "page_a_pdf": 783,
+   "page_a_print": 747,
+   "page_b": 2662
+  },
+  {
+   "label": "FIGURE 21-6",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 6,
+   "page_a_pdf": 784,
+   "page_a_print": 748,
+   "page_b": 2667
+  },
+  {
+   "label": "FIGURE 21-7",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 7,
+   "page_a_pdf": 786,
+   "page_a_print": 750,
+   "page_b": 2667
+  },
+  {
+   "label": "FIGURE 21-9",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 9,
+   "page_a_pdf": 787,
+   "page_a_print": 751,
+   "page_b": 2671
+  },
+  {
+   "label": "FIGURE 21-10",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 10,
+   "page_a_pdf": 788,
+   "page_a_print": 752,
+   "page_b": 2673
+  },
+  {
+   "label": "FIGURE 21-11",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 11,
+   "page_a_pdf": 789,
+   "page_a_print": 753,
+   "page_b": 2675
+  },
+  {
+   "label": "BOX 21-1",
+   "kind": "BOX",
+   "ch": 21,
+   "num": 1,
+   "page_a_pdf": 790,
+   "page_a_print": 754,
+   "page_b": 2681
+  },
+  {
+   "label": "FIGURE 21-14",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 14,
+   "page_a_pdf": 791,
+   "page_a_print": 755,
+   "page_b": 2687
+  },
+  {
+   "label": "FIGURE 21-15",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 15,
+   "page_a_pdf": 794,
+   "page_a_print": 758,
+   "page_b": 2689
+  },
+  {
+   "label": "FIGURE 21-16",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 16,
+   "page_a_pdf": 795,
+   "page_a_print": 759,
+   "page_b": 2693
+  },
+  {
+   "label": "FIGURE 21-19",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 19,
+   "page_a_pdf": 797,
+   "page_a_print": 761,
+   "page_b": 2703
+  },
+  {
+   "label": "FIGURE 21-21",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 21,
+   "page_a_pdf": 798,
+   "page_a_print": 762,
+   "page_b": 2708
+  },
+  {
+   "label": "FIGURE 21-22",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 22,
+   "page_a_pdf": 799,
+   "page_a_print": 763,
+   "page_b": 2711
+  },
+  {
+   "label": "FIGURE 21-23",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 23,
+   "page_a_pdf": 800,
+   "page_a_print": 764,
+   "page_b": 2717
+  },
+  {
+   "label": "FIGURE 21-24",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 24,
+   "page_a_pdf": 801,
+   "page_a_print": 765,
+   "page_b": 2721
+  },
+  {
+   "label": "FIGURE 21-27",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 27,
+   "page_a_pdf": 803,
+   "page_a_print": 767,
+   "page_b": 2723
+  },
+  {
+   "label": "FIGURE 21-28",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 28,
+   "page_a_pdf": 805,
+   "page_a_print": 769,
+   "page_b": 2726
+  },
+  {
+   "label": "FIGURE 21-29",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 29,
+   "page_a_pdf": 806,
+   "page_a_print": 770,
+   "page_b": 2727
+  },
+  {
+   "label": "FIGURE 21-33",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 33,
+   "page_a_pdf": 808,
+   "page_a_print": 772,
+   "page_b": 2736
+  },
+  {
+   "label": "FIGURE 21-34",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 34,
+   "page_a_pdf": 809,
+   "page_a_print": 773,
+   "page_b": 2738
+  },
+  {
+   "label": "FIGURE 21-35",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 35,
+   "page_a_pdf": 810,
+   "page_a_print": 774,
+   "page_b": 2739
+  },
+  {
+   "label": "FIGURE 21-36",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 36,
+   "page_a_pdf": 811,
+   "page_a_print": 775,
+   "page_b": 2741
+  },
+  {
+   "label": "FIGURE 21-37",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 37,
+   "page_a_pdf": 812,
+   "page_a_print": 776,
+   "page_b": 2743
+  },
+  {
+   "label": "TABLE 21-2",
+   "kind": "TABLE",
+   "ch": 21,
+   "num": 2,
+   "page_a_pdf": 813,
+   "page_a_print": 777,
+   "page_b": 2751
+  },
+  {
+   "label": "FIGURE 21-41",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 41,
+   "page_a_pdf": 816,
+   "page_a_print": 780,
+   "page_b": 2752
+  },
+  {
+   "label": "FIGURE 21-42",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 42,
+   "page_a_pdf": 817,
+   "page_a_print": 781,
+   "page_b": 2754
+  },
+  {
+   "label": "FIGURE 21-43",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 43,
+   "page_a_pdf": 818,
+   "page_a_print": 782,
+   "page_b": 2757
+  },
+  {
+   "label": "FIGURE 21-45",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 45,
+   "page_a_pdf": 819,
+   "page_a_print": 783,
+   "page_b": 2759
+  },
+  {
+   "label": "FIGURE 21-46",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 46,
+   "page_a_pdf": 820,
+   "page_a_print": 784,
+   "page_b": 2761
+  },
+  {
+   "label": "FIGURE 21-47",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 47,
+   "page_a_pdf": 821,
+   "page_a_print": 785,
+   "page_b": 2767
+  },
+  {
+   "label": "FIGURE 21-49",
+   "kind": "FIGURE",
+   "ch": 21,
+   "num": 49,
+   "page_a_pdf": 824,
+   "page_a_print": 788,
+   "page_b": 2771
+  },
+  {
+   "label": "FIGURE 22-1",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 1,
+   "page_a_pdf": 831,
+   "page_a_print": 795,
+   "page_b": 2795
+  },
+  {
+   "label": "FIGURE 22-2",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 2,
+   "page_a_pdf": 832,
+   "page_a_print": 796,
+   "page_b": 2803
+  },
+  {
+   "label": "FIGURE 22-5",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 5,
+   "page_a_pdf": 836,
+   "page_a_print": 800,
+   "page_b": 2811
+  },
+  {
+   "label": "FIGURE 22-6",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 6,
+   "page_a_pdf": 837,
+   "page_a_print": 801,
+   "page_b": 2813
+  },
+  {
+   "label": "FIGURE 22-8",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 8,
+   "page_a_pdf": 839,
+   "page_a_print": 803,
+   "page_b": 2821
+  },
+  {
+   "label": "FIGURE 22-10",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 10,
+   "page_a_pdf": 840,
+   "page_a_print": 804,
+   "page_b": 2826
+  },
+  {
+   "label": "FIGURE 22-12",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 12,
+   "page_a_pdf": 842,
+   "page_a_print": 806,
+   "page_b": 2837
+  },
+  {
+   "label": "FIGURE 22-15",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 15,
+   "page_a_pdf": 844,
+   "page_a_print": 808,
+   "page_b": 2841
+  },
+  {
+   "label": "FIGURE 22-17",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 17,
+   "page_a_pdf": 846,
+   "page_a_print": 810,
+   "page_b": 2845
+  },
+  {
+   "label": "FIGURE 22-18",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 18,
+   "page_a_pdf": 847,
+   "page_a_print": 811,
+   "page_b": 2848
+  },
+  {
+   "label": "FIGURE 22-19",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 19,
+   "page_a_pdf": 848,
+   "page_a_print": 812,
+   "page_b": 2850
+  },
+  {
+   "label": "FIGURE 22-20",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 20,
+   "page_a_pdf": 849,
+   "page_a_print": 813,
+   "page_b": 2852
+  },
+  {
+   "label": "FIGURE 22-21",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 21,
+   "page_a_pdf": 850,
+   "page_a_print": 814,
+   "page_b": 2854
+  },
+  {
+   "label": "FIGURE 22-22",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 22,
+   "page_a_pdf": 851,
+   "page_a_print": 815,
+   "page_b": 2856
+  },
+  {
+   "label": "FIGURE 22-24",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 24,
+   "page_a_pdf": 852,
+   "page_a_print": 816,
+   "page_b": 2861
+  },
+  {
+   "label": "BOX 22-2",
+   "kind": "BOX",
+   "ch": 22,
+   "num": 2,
+   "page_a_pdf": 853,
+   "page_a_print": 817,
+   "page_b": 2865
+  },
+  {
+   "label": "FIGURE 22-27",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 27,
+   "page_a_pdf": 856,
+   "page_a_print": 820,
+   "page_b": 2869
+  },
+  {
+   "label": "FIGURE 22-29",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 29,
+   "page_a_pdf": 857,
+   "page_a_print": 821,
+   "page_b": 2874
+  },
+  {
+   "label": "FIGURE 22-30",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 30,
+   "page_a_pdf": 858,
+   "page_a_print": 822,
+   "page_b": 2877
+  },
+  {
+   "label": "FIGURE 22-31",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 31,
+   "page_a_pdf": 859,
+   "page_a_print": 823,
+   "page_b": 2879
+  },
+  {
+   "label": "FIGURE 22-33",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 33,
+   "page_a_pdf": 860,
+   "page_a_print": 824,
+   "page_b": 2882
+  },
+  {
+   "label": "FIGURE 22-35",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 35,
+   "page_a_pdf": 861,
+   "page_a_print": 825,
+   "page_b": 2890
+  },
+  {
+   "label": "FIGURE 22-37",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 37,
+   "page_a_pdf": 863,
+   "page_a_print": 827,
+   "page_b": 2892
+  },
+  {
+   "label": "FIGURE 22-39",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 39,
+   "page_a_pdf": 864,
+   "page_a_print": 828,
+   "page_b": 2896
+  },
+  {
+   "label": "FIGURE 22-40",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 40,
+   "page_a_pdf": 865,
+   "page_a_print": 829,
+   "page_b": 2899
+  },
+  {
+   "label": "FIGURE 22-43",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 43,
+   "page_a_pdf": 866,
+   "page_a_print": 830,
+   "page_b": 2906
+  },
+  {
+   "label": "FIGURE 22-45",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 45,
+   "page_a_pdf": 868,
+   "page_a_print": 832,
+   "page_b": 2908
+  },
+  {
+   "label": "FIGURE 22-47",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 47,
+   "page_a_pdf": 869,
+   "page_a_print": 833,
+   "page_b": 2911
+  },
+  {
+   "label": "FIGURE 22-48",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 48,
+   "page_a_pdf": 870,
+   "page_a_print": 834,
+   "page_b": 2914
+  },
+  {
+   "label": "FIGURE 22-50",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 50,
+   "page_a_pdf": 871,
+   "page_a_print": 835,
+   "page_b": 2920
+  },
+  {
+   "label": "FIGURE 22-51",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 51,
+   "page_a_pdf": 872,
+   "page_a_print": 836,
+   "page_b": 2923
+  },
+  {
+   "label": "FIGURE 22-52",
+   "kind": "FIGURE",
+   "ch": 22,
+   "num": 52,
+   "page_a_pdf": 873,
+   "page_a_print": 837,
+   "page_b": 2925
+  },
+  {
+   "label": "FIGURE 23-1",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 1,
+   "page_a_pdf": 878,
+   "page_a_print": 842,
+   "page_b": 2947
+  },
+  {
+   "label": "TABLE 23-1",
+   "kind": "TABLE",
+   "ch": 23,
+   "num": 1,
+   "page_a_pdf": 879,
+   "page_a_print": 843,
+   "page_b": 2951
+  },
+  {
+   "label": "FIGURE 23-3",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 3,
+   "page_a_pdf": 880,
+   "page_a_print": 844,
+   "page_b": 2953
+  },
+  {
+   "label": "FIGURE 23-5",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 5,
+   "page_a_pdf": 881,
+   "page_a_print": 845,
+   "page_b": 2956
+  },
+  {
+   "label": "FIGURE 23-6",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 6,
+   "page_a_pdf": 882,
+   "page_a_print": 846,
+   "page_b": 2962
+  },
+  {
+   "label": "FIGURE 23-8",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 8,
+   "page_a_pdf": 883,
+   "page_a_print": 847,
+   "page_b": 2963
+  },
+  {
+   "label": "FIGURE 23-9",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 9,
+   "page_a_pdf": 884,
+   "page_a_print": 848,
+   "page_b": 2968
+  },
+  {
+   "label": "FIGURE 23-10",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 10,
+   "page_a_pdf": 885,
+   "page_a_print": 849,
+   "page_b": 2971
+  },
+  {
+   "label": "FIGURE 23-11",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 11,
+   "page_a_pdf": 886,
+   "page_a_print": 850,
+   "page_b": 2974
+  },
+  {
+   "label": "FIGURE 23-13",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 13,
+   "page_a_pdf": 887,
+   "page_a_print": 851,
+   "page_b": 2979
+  },
+  {
+   "label": "FIGURE 23-14",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 14,
+   "page_a_pdf": 889,
+   "page_a_print": 853,
+   "page_b": 2984
+  },
+  {
+   "label": "FIGURE 23-19",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 19,
+   "page_a_pdf": 891,
+   "page_a_print": 855,
+   "page_b": 2999
+  },
+  {
+   "label": "FIGURE 23-21",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 21,
+   "page_a_pdf": 894,
+   "page_a_print": 858,
+   "page_b": 3004
+  },
+  {
+   "label": "TABLE 23-3",
+   "kind": "TABLE",
+   "ch": 23,
+   "num": 3,
+   "page_a_pdf": 895,
+   "page_a_print": 859,
+   "page_b": 3007
+  },
+  {
+   "label": "FIGURE 23-24",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 24,
+   "page_a_pdf": 896,
+   "page_a_print": 860,
+   "page_b": 3013
+  },
+  {
+   "label": "TABLE 23-4",
+   "kind": "TABLE",
+   "ch": 23,
+   "num": 4,
+   "page_a_pdf": 898,
+   "page_a_print": 862,
+   "page_b": 3018
+  },
+  {
+   "label": "FIGURE 23-27",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 27,
+   "page_a_pdf": 900,
+   "page_a_print": 864,
+   "page_b": 3022
+  },
+  {
+   "label": "TABLE 23-6",
+   "kind": "TABLE",
+   "ch": 23,
+   "num": 6,
+   "page_a_pdf": 902,
+   "page_a_print": 866,
+   "page_b": 3025
+  },
+  {
+   "label": "FIGURE 23-29",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 29,
+   "page_a_pdf": 903,
+   "page_a_print": 867,
+   "page_b": 3032
+  },
+  {
+   "label": "FIGURE 23-31",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 31,
+   "page_a_pdf": 904,
+   "page_a_print": 868,
+   "page_b": 3036
+  },
+  {
+   "label": "FIGURE 23-32",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 32,
+   "page_a_pdf": 905,
+   "page_a_print": 869,
+   "page_b": 3037
+  },
+  {
+   "label": "FIGURE 23-34",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 34,
+   "page_a_pdf": 906,
+   "page_a_print": 870,
+   "page_b": 3042
+  },
+  {
+   "label": "FIGURE 23-35",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 35,
+   "page_a_pdf": 907,
+   "page_a_print": 871,
+   "page_b": 3046
+  },
+  {
+   "label": "FIGURE 23-37",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 37,
+   "page_a_pdf": 908,
+   "page_a_print": 872,
+   "page_b": 3049
+  },
+  {
+   "label": "FIGURE 23-39",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 39,
+   "page_a_pdf": 909,
+   "page_a_print": 873,
+   "page_b": 3052
+  },
+  {
+   "label": "FIGURE 23-40",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 40,
+   "page_a_pdf": 910,
+   "page_a_print": 874,
+   "page_b": 3055
+  },
+  {
+   "label": "BOX 23-2",
+   "kind": "BOX",
+   "ch": 23,
+   "num": 2,
+   "page_a_pdf": 911,
+   "page_a_print": 875,
+   "page_b": 3061
+  },
+  {
+   "label": "FIGURE 23-42",
+   "kind": "FIGURE",
+   "ch": 23,
+   "num": 42,
+   "page_a_pdf": 914,
+   "page_a_print": 878,
+   "page_b": 3069
+  },
+  {
+   "label": "TABLE 23-7",
+   "kind": "TABLE",
+   "ch": 23,
+   "num": 7,
+   "page_a_pdf": 915,
+   "page_a_print": 879,
+   "page_b": 3071
+  },
+  {
+   "label": "FIGURE 24-1",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 1,
+   "page_a_pdf": 921,
+   "page_a_print": 885,
+   "page_b": 3096
+  },
+  {
+   "label": "TABLE 24-1",
+   "kind": "TABLE",
+   "ch": 24,
+   "num": 1,
+   "page_a_pdf": 922,
+   "page_a_print": 886,
+   "page_b": 3103
+  },
+  {
+   "label": "TABLE 24-2",
+   "kind": "TABLE",
+   "ch": 24,
+   "num": 2,
+   "page_a_pdf": 923,
+   "page_a_print": 887,
+   "page_b": 3106
+  },
+  {
+   "label": "FIGURE 24-5",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 5,
+   "page_a_pdf": 925,
+   "page_a_print": 889,
+   "page_b": 3108
+  },
+  {
+   "label": "TABLE 24-3",
+   "kind": "TABLE",
+   "ch": 24,
+   "num": 3,
+   "page_a_pdf": 926,
+   "page_a_print": 890,
+   "page_b": 3113
+  },
+  {
+   "label": "FIGURE 24-9",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 9,
+   "page_a_pdf": 927,
+   "page_a_print": 891,
+   "page_b": 3117
+  },
+  {
+   "label": "FIGURE 24-12",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 12,
+   "page_a_pdf": 928,
+   "page_a_print": 892,
+   "page_b": 3122
+  },
+  {
+   "label": "FIGURE 24-13",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 13,
+   "page_a_pdf": 929,
+   "page_a_print": 893,
+   "page_b": 3125
+  },
+  {
+   "label": "FIGURE 24-15",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 15,
+   "page_a_pdf": 930,
+   "page_a_print": 894,
+   "page_b": 3128
+  },
+  {
+   "label": "FIGURE 24-17",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 17,
+   "page_a_pdf": 931,
+   "page_a_print": 895,
+   "page_b": 3133
+  },
+  {
+   "label": "FIGURE 24-18",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 18,
+   "page_a_pdf": 932,
+   "page_a_print": 896,
+   "page_b": 3137
+  },
+  {
+   "label": "FIGURE 24-21",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 21,
+   "page_a_pdf": 934,
+   "page_a_print": 898,
+   "page_b": 3140
+  },
+  {
+   "label": "TABLE 24-5",
+   "kind": "TABLE",
+   "ch": 24,
+   "num": 5,
+   "page_a_pdf": 935,
+   "page_a_print": 899,
+   "page_b": 3146
+  },
+  {
+   "label": "FIGURE 24-24",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 24,
+   "page_a_pdf": 936,
+   "page_a_print": 900,
+   "page_b": 3148
+  },
+  {
+   "label": "FIGURE 24-25",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 25,
+   "page_a_pdf": 937,
+   "page_a_print": 901,
+   "page_b": 3151
+  },
+  {
+   "label": "FIGURE 24-27",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 27,
+   "page_a_pdf": 938,
+   "page_a_print": 902,
+   "page_b": 3159
+  },
+  {
+   "label": "FIGURE 24-29",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 29,
+   "page_a_pdf": 939,
+   "page_a_print": 903,
+   "page_b": 3166
+  },
+  {
+   "label": "BOX 24-3",
+   "kind": "BOX",
+   "ch": 24,
+   "num": 3,
+   "page_a_pdf": 940,
+   "page_a_print": 904,
+   "page_b": 3166
+  },
+  {
+   "label": "FIGURE 24-33",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 33,
+   "page_a_pdf": 945,
+   "page_a_print": 909,
+   "page_b": 3174
+  },
+  {
+   "label": "FIGURE 24-35",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 35,
+   "page_a_pdf": 946,
+   "page_a_print": 910,
+   "page_b": 3176
+  },
+  {
+   "label": "FIGURE 24-7",
+   "kind": "FIGURE",
+   "ch": 24,
+   "num": 7,
+   "page_a_pdf": 948,
+   "page_a_print": 912,
+   "page_b": 3190
+  },
+  {
+   "label": "FIGURE 25-1",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 1,
+   "page_a_pdf": 951,
+   "page_a_print": 915,
+   "page_b": 3203
+  },
+  {
+   "label": "FIGURE 25-2",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 2,
+   "page_a_pdf": 952,
+   "page_a_print": 916,
+   "page_b": 3206
+  },
+  {
+   "label": "FIGURE 25-3",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 3,
+   "page_a_pdf": 953,
+   "page_a_print": 917,
+   "page_b": 3209
+  },
+  {
+   "label": "FIGURE 25-4",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 4,
+   "page_a_pdf": 954,
+   "page_a_print": 918,
+   "page_b": 3219
+  },
+  {
+   "label": "TABLE 25-1",
+   "kind": "TABLE",
+   "ch": 25,
+   "num": 1,
+   "page_a_pdf": 955,
+   "page_a_print": 919,
+   "page_b": 3222
+  },
+  {
+   "label": "TABLE 25-3",
+   "kind": "TABLE",
+   "ch": 25,
+   "num": 3,
+   "page_a_pdf": 958,
+   "page_a_print": 922,
+   "page_b": 3230
+  },
+  {
+   "label": "FIGURE 25-12",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 12,
+   "page_a_pdf": 960,
+   "page_a_print": 924,
+   "page_b": 3233
+  },
+  {
+   "label": "FIGURE 25-13",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 13,
+   "page_a_pdf": 961,
+   "page_a_print": 925,
+   "page_b": 3236
+  },
+  {
+   "label": "FIGURE 25-15",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 15,
+   "page_a_pdf": 962,
+   "page_a_print": 926,
+   "page_b": 3238
+  },
+  {
+   "label": "FIGURE 25-16",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 16,
+   "page_a_pdf": 963,
+   "page_a_print": 927,
+   "page_b": 3240
+  },
+  {
+   "label": "FIGURE 25-17",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 17,
+   "page_a_pdf": 964,
+   "page_a_print": 928,
+   "page_b": 3242
+  },
+  {
+   "label": "FIGURE 25-18",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 18,
+   "page_a_pdf": 965,
+   "page_a_print": 929,
+   "page_b": 3245
+  },
+  {
+   "label": "BOX 25-1",
+   "kind": "BOX",
+   "ch": 25,
+   "num": 1,
+   "page_a_pdf": 967,
+   "page_a_print": 931,
+   "page_b": 3255
+  },
+  {
+   "label": "FIGURE 25-24",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 24,
+   "page_a_pdf": 968,
+   "page_a_print": 932,
+   "page_b": 3256
+  },
+  {
+   "label": "FIGURE 25-21",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 21,
+   "page_a_pdf": 969,
+   "page_a_print": 933,
+   "page_b": 3262
+  },
+  {
+   "label": "FIGURE 25-23",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 23,
+   "page_a_pdf": 971,
+   "page_a_print": 935,
+   "page_b": 3268
+  },
+  {
+   "label": "FIGURE 25-25",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 25,
+   "page_a_pdf": 973,
+   "page_a_print": 937,
+   "page_b": 3272
+  },
+  {
+   "label": "FIGURE 25-28",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 28,
+   "page_a_pdf": 975,
+   "page_a_print": 939,
+   "page_b": 3276
+  },
+  {
+   "label": "FIGURE 25-29",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 29,
+   "page_a_pdf": 977,
+   "page_a_print": 941,
+   "page_b": 3287
+  },
+  {
+   "label": "FIGURE 25-31",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 31,
+   "page_a_pdf": 978,
+   "page_a_print": 942,
+   "page_b": 3288
+  },
+  {
+   "label": "FIGURE 25-32",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 32,
+   "page_a_pdf": 979,
+   "page_a_print": 943,
+   "page_b": 3289
+  },
+  {
+   "label": "FIGURE 25-33",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 33,
+   "page_a_pdf": 980,
+   "page_a_print": 944,
+   "page_b": 3291
+  },
+  {
+   "label": "FIGURE 25-34",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 34,
+   "page_a_pdf": 981,
+   "page_a_print": 945,
+   "page_b": 3294
+  },
+  {
+   "label": "BOX 25-2",
+   "kind": "BOX",
+   "ch": 25,
+   "num": 2,
+   "page_a_pdf": 982,
+   "page_a_print": 946,
+   "page_b": 3295
+  },
+  {
+   "label": "FIGURE 25-35",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 35,
+   "page_a_pdf": 983,
+   "page_a_print": 947,
+   "page_b": 3300
+  },
+  {
+   "label": "FIGURE 25-36",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 36,
+   "page_a_pdf": 985,
+   "page_a_print": 949,
+   "page_b": 3306
+  },
+  {
+   "label": "FIGURE 25-37",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 37,
+   "page_a_pdf": 987,
+   "page_a_print": 951,
+   "page_b": 3309
+  },
+  {
+   "label": "FIGURE 25-39",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 39,
+   "page_a_pdf": 988,
+   "page_a_print": 952,
+   "page_b": 3312
+  },
+  {
+   "label": "FIGURE 25-42",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 42,
+   "page_a_pdf": 990,
+   "page_a_print": 954,
+   "page_b": 3320
+  },
+  {
+   "label": "FIGURE 25-43",
+   "kind": "FIGURE",
+   "ch": 25,
+   "num": 43,
+   "page_a_pdf": 991,
+   "page_a_print": 955,
+   "page_b": 3322
+  },
+  {
+   "label": "FIGURE 26-3",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 3,
+   "page_a_pdf": 998,
+   "page_a_print": 962,
+   "page_b": 3350
+  },
+  {
+   "label": "BOX 26-1",
+   "kind": "BOX",
+   "ch": 26,
+   "num": 1,
+   "page_a_pdf": 999,
+   "page_a_print": 963,
+   "page_b": 3356
+  },
+  {
+   "label": "FIGURE 26-6",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 6,
+   "page_a_pdf": 1000,
+   "page_a_print": 964,
+   "page_b": 3363
+  },
+  {
+   "label": "TABLE 26-1",
+   "kind": "TABLE",
+   "ch": 26,
+   "num": 1,
+   "page_a_pdf": 1003,
+   "page_a_print": 967,
+   "page_b": 3366
+  },
+  {
+   "label": "TABLE 26-2",
+   "kind": "TABLE",
+   "ch": 26,
+   "num": 2,
+   "page_a_pdf": 1004,
+   "page_a_print": 968,
+   "page_b": 3375
+  },
+  {
+   "label": "FIGURE 26-11",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 11,
+   "page_a_pdf": 1007,
+   "page_a_print": 971,
+   "page_b": 3378
+  },
+  {
+   "label": "FIGURE 26-12",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 12,
+   "page_a_pdf": 1009,
+   "page_a_print": 973,
+   "page_b": 3384
+  },
+  {
+   "label": "FIGURE 26-13",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 13,
+   "page_a_pdf": 1010,
+   "page_a_print": 974,
+   "page_b": 3386
+  },
+  {
+   "label": "TABLE 26-3",
+   "kind": "TABLE",
+   "ch": 26,
+   "num": 3,
+   "page_a_pdf": 1011,
+   "page_a_print": 975,
+   "page_b": 3390
+  },
+  {
+   "label": "FIGURE 26-14",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 14,
+   "page_a_pdf": 1012,
+   "page_a_print": 976,
+   "page_b": 3391
+  },
+  {
+   "label": "FIGURE 26-15",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 15,
+   "page_a_pdf": 1013,
+   "page_a_print": 977,
+   "page_b": 3394
+  },
+  {
+   "label": "FIGURE 26-16",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 16,
+   "page_a_pdf": 1014,
+   "page_a_print": 978,
+   "page_b": 3397
+  },
+  {
+   "label": "FIGURE 26-17",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 17,
+   "page_a_pdf": 1015,
+   "page_a_print": 979,
+   "page_b": 3400
+  },
+  {
+   "label": "FIGURE 26-19",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 19,
+   "page_a_pdf": 1016,
+   "page_a_print": 980,
+   "page_b": 3405
+  },
+  {
+   "label": "BOX 26-2",
+   "kind": "BOX",
+   "ch": 26,
+   "num": 2,
+   "page_a_pdf": 1017,
+   "page_a_print": 981,
+   "page_b": 3407
+  },
+  {
+   "label": "FIGURE 26-22",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 22,
+   "page_a_pdf": 1019,
+   "page_a_print": 983,
+   "page_b": 3413
+  },
+  {
+   "label": "FIGURE 26-24",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 24,
+   "page_a_pdf": 1020,
+   "page_a_print": 984,
+   "page_b": 3417
+  },
+  {
+   "label": "FIGURE 26-25",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 25,
+   "page_a_pdf": 1021,
+   "page_a_print": 985,
+   "page_b": 3418
+  },
+  {
+   "label": "FIGURE 26-26",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 26,
+   "page_a_pdf": 1022,
+   "page_a_print": 986,
+   "page_b": 3422
+  },
+  {
+   "label": "FIGURE 26-28",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 28,
+   "page_a_pdf": 1023,
+   "page_a_print": 987,
+   "page_b": 3427
+  },
+  {
+   "label": "FIGURE 26-29",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 29,
+   "page_a_pdf": 1025,
+   "page_a_print": 989,
+   "page_b": 3430
+  },
+  {
+   "label": "FIGURE 26-31",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 31,
+   "page_a_pdf": 1026,
+   "page_a_print": 990,
+   "page_b": 3435
+  },
+  {
+   "label": "FIGURE 26-33",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 33,
+   "page_a_pdf": 1027,
+   "page_a_print": 991,
+   "page_b": 3439
+  },
+  {
+   "label": "FIGURE 26-34",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 34,
+   "page_a_pdf": 1028,
+   "page_a_print": 992,
+   "page_b": 3442
+  },
+  {
+   "label": "FIGURE 26-35",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 35,
+   "page_a_pdf": 1030,
+   "page_a_print": 994,
+   "page_b": 3445
+  },
+  {
+   "label": "FIGURE 26-36",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 36,
+   "page_a_pdf": 1031,
+   "page_a_print": 995,
+   "page_b": 3449
+  },
+  {
+   "label": "FIGURE 26-37",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 37,
+   "page_a_pdf": 1032,
+   "page_a_print": 996,
+   "page_b": 3452
+  },
+  {
+   "label": "FIGURE 26-38",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 38,
+   "page_a_pdf": 1033,
+   "page_a_print": 997,
+   "page_b": 3454
+  },
+  {
+   "label": "FIGURE 26-39",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 39,
+   "page_a_pdf": 1034,
+   "page_a_print": 998,
+   "page_b": 3457
+  },
+  {
+   "label": "BOX 26-4",
+   "kind": "BOX",
+   "ch": 26,
+   "num": 4,
+   "page_a_pdf": 1035,
+   "page_a_print": 999,
+   "page_b": 3462
+  },
+  {
+   "label": "FIGURE 26-41",
+   "kind": "FIGURE",
+   "ch": 26,
+   "num": 41,
+   "page_a_pdf": 1037,
+   "page_a_print": 1001,
+   "page_b": 3467
+  },
+  {
+   "label": "FIGURE 27-2",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 2,
+   "page_a_pdf": 1042,
+   "page_a_print": 1006,
+   "page_b": 3489
+  },
+  {
+   "label": "TABLE 27-1",
+   "kind": "TABLE",
+   "ch": 27,
+   "num": 1,
+   "page_a_pdf": 1043,
+   "page_a_print": 1007,
+   "page_b": 3497
+  },
+  {
+   "label": "TABLE 27-3",
+   "kind": "TABLE",
+   "ch": 27,
+   "num": 3,
+   "page_a_pdf": 1045,
+   "page_a_print": 1009,
+   "page_b": 3503
+  },
+  {
+   "label": "BOX 27-2",
+   "kind": "BOX",
+   "ch": 27,
+   "num": 2,
+   "page_a_pdf": 1046,
+   "page_a_print": 1010,
+   "page_b": 3505
+  },
+  {
+   "label": "TABLE 27-4",
+   "kind": "TABLE",
+   "ch": 27,
+   "num": 4,
+   "page_a_pdf": 1048,
+   "page_a_print": 1012,
+   "page_b": 3509
+  },
+  {
+   "label": "FIGURE 27-11",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 11,
+   "page_a_pdf": 1050,
+   "page_a_print": 1014,
+   "page_b": 3516
+  },
+  {
+   "label": "FIGURE 27-13",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 13,
+   "page_a_pdf": 1051,
+   "page_a_print": 1015,
+   "page_b": 3521
+  },
+  {
+   "label": "FIGURE 27-14",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 14,
+   "page_a_pdf": 1053,
+   "page_a_print": 1017,
+   "page_b": 3524
+  },
+  {
+   "label": "FIGURE 27-16",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 16,
+   "page_a_pdf": 1054,
+   "page_a_print": 1018,
+   "page_b": 3527
+  },
+  {
+   "label": "FIGURE 27-18",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 18,
+   "page_a_pdf": 1055,
+   "page_a_print": 1019,
+   "page_b": 3532
+  },
+  {
+   "label": "FIGURE 27-19",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 19,
+   "page_a_pdf": 1056,
+   "page_a_print": 1020,
+   "page_b": 3536
+  },
+  {
+   "label": "FIGURE 27-21",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 21,
+   "page_a_pdf": 1058,
+   "page_a_print": 1022,
+   "page_b": 3542
+  },
+  {
+   "label": "FIGURE 27-23",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 23,
+   "page_a_pdf": 1060,
+   "page_a_print": 1024,
+   "page_b": 3544
+  },
+  {
+   "label": "FIGURE 27-24",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 24,
+   "page_a_pdf": 1064,
+   "page_a_print": 1028,
+   "page_b": 3557
+  },
+  {
+   "label": "FIGURE 27-26",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 26,
+   "page_a_pdf": 1065,
+   "page_a_print": 1029,
+   "page_b": 3562
+  },
+  {
+   "label": "FIGURE 27-28",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 28,
+   "page_a_pdf": 1067,
+   "page_a_print": 1031,
+   "page_b": 3564
+  },
+  {
+   "label": "FIGURE 27-29",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 29,
+   "page_a_pdf": 1068,
+   "page_a_print": 1032,
+   "page_b": 3566
+  },
+  {
+   "label": "BOX 27-3",
+   "kind": "BOX",
+   "ch": 27,
+   "num": 3,
+   "page_a_pdf": 1069,
+   "page_a_print": 1033,
+   "page_b": 3566
+  },
+  {
+   "label": "FIGURE 27-30",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 30,
+   "page_a_pdf": 1070,
+   "page_a_print": 1034,
+   "page_b": 3571
+  },
+  {
+   "label": "FIGURE 27-31",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 31,
+   "page_a_pdf": 1071,
+   "page_a_print": 1035,
+   "page_b": 3575
+  },
+  {
+   "label": "FIGURE 27-32",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 32,
+   "page_a_pdf": 1072,
+   "page_a_print": 1036,
+   "page_b": 3578
+  },
+  {
+   "label": "FIGURE 27-33",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 33,
+   "page_a_pdf": 1073,
+   "page_a_print": 1037,
+   "page_b": 3581
+  },
+  {
+   "label": "FIGURE 27-34",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 34,
+   "page_a_pdf": 1074,
+   "page_a_print": 1038,
+   "page_b": 3584
+  },
+  {
+   "label": "FIGURE 27-36",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 36,
+   "page_a_pdf": 1075,
+   "page_a_print": 1039,
+   "page_b": 3589
+  },
+  {
+   "label": "FIGURE 27-38",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 38,
+   "page_a_pdf": 1077,
+   "page_a_print": 1041,
+   "page_b": 3598
+  },
+  {
+   "label": "FIGURE 27-39",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 39,
+   "page_a_pdf": 1079,
+   "page_a_print": 1043,
+   "page_b": 3599
+  },
+  {
+   "label": "FIGURE 27-41",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 41,
+   "page_a_pdf": 1080,
+   "page_a_print": 1044,
+   "page_b": 3603
+  },
+  {
+   "label": "FIGURE 27-42",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 42,
+   "page_a_pdf": 1081,
+   "page_a_print": 1045,
+   "page_b": 3606
+  },
+  {
+   "label": "FIGURE 27-44",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 44,
+   "page_a_pdf": 1082,
+   "page_a_print": 1046,
+   "page_b": 3608
+  },
+  {
+   "label": "FIGURE 27-46",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 46,
+   "page_a_pdf": 1083,
+   "page_a_print": 1047,
+   "page_b": 3611
+  },
+  {
+   "label": "FIGURE 27-47",
+   "kind": "FIGURE",
+   "ch": 27,
+   "num": 47,
+   "page_a_pdf": 1084,
+   "page_a_print": 1048,
+   "page_b": 3614
+  },
+  {
+   "label": "FIGURE 28-1",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 1,
+   "page_a_pdf": 1091,
+   "page_a_print": 1055,
+   "page_b": 3641
+  },
+  {
+   "label": "FIGURE 28-3",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 3,
+   "page_a_pdf": 1092,
+   "page_a_print": 1056,
+   "page_b": 3647
+  },
+  {
+   "label": "FIGURE 28-4",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 4,
+   "page_a_pdf": 1093,
+   "page_a_print": 1057,
+   "page_b": 3650
+  },
+  {
+   "label": "FIGURE 28-6",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 6,
+   "page_a_pdf": 1094,
+   "page_a_print": 1058,
+   "page_b": 3653
+  },
+  {
+   "label": "FIGURE 28-8",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 8,
+   "page_a_pdf": 1095,
+   "page_a_print": 1059,
+   "page_b": 3661
+  },
+  {
+   "label": "FIGURE 28-9",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 9,
+   "page_a_pdf": 1096,
+   "page_a_print": 1060,
+   "page_b": 3662
+  },
+  {
+   "label": "FIGURE 28-12",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 12,
+   "page_a_pdf": 1097,
+   "page_a_print": 1061,
+   "page_b": 3667
+  },
+  {
+   "label": "FIGURE 28-13",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 13,
+   "page_a_pdf": 1098,
+   "page_a_print": 1062,
+   "page_b": 3669
+  },
+  {
+   "label": "FIGURE 28-14",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 14,
+   "page_a_pdf": 1099,
+   "page_a_print": 1063,
+   "page_b": 3670
+  },
+  {
+   "label": "FIGURE 28-16",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 16,
+   "page_a_pdf": 1100,
+   "page_a_print": 1064,
+   "page_b": 3674
+  },
+  {
+   "label": "FIGURE 28-18",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 18,
+   "page_a_pdf": 1102,
+   "page_a_print": 1066,
+   "page_b": 3683
+  },
+  {
+   "label": "FIGURE 28-19",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 19,
+   "page_a_pdf": 1103,
+   "page_a_print": 1067,
+   "page_b": 3685
+  },
+  {
+   "label": "FIGURE 28-20",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 20,
+   "page_a_pdf": 1105,
+   "page_a_print": 1069,
+   "page_b": 3687
+  },
+  {
+   "label": "FIGURE 28-22",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 22,
+   "page_a_pdf": 1106,
+   "page_a_print": 1070,
+   "page_b": 3694
+  },
+  {
+   "label": "FIGURE 28-23",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 23,
+   "page_a_pdf": 1107,
+   "page_a_print": 1071,
+   "page_b": 3696
+  },
+  {
+   "label": "FIGURE 28-25",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 25,
+   "page_a_pdf": 1108,
+   "page_a_print": 1072,
+   "page_b": 3702
+  },
+  {
+   "label": "FIGURE 28-28",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 28,
+   "page_a_pdf": 1112,
+   "page_a_print": 1076,
+   "page_b": 3714
+  },
+  {
+   "label": "FIGURE 28-30",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 30,
+   "page_a_pdf": 1114,
+   "page_a_print": 1078,
+   "page_b": 3719
+  },
+  {
+   "label": "FIGURE 28-31",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 31,
+   "page_a_pdf": 1116,
+   "page_a_print": 1080,
+   "page_b": 3723
+  },
+  {
+   "label": "TABLE 28-3",
+   "kind": "TABLE",
+   "ch": 28,
+   "num": 3,
+   "page_a_pdf": 1117,
+   "page_a_print": 1081,
+   "page_b": 3727
+  },
+  {
+   "label": "FIGURE 28-33",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 33,
+   "page_a_pdf": 1118,
+   "page_a_print": 1082,
+   "page_b": 3729
+  },
+  {
+   "label": "TABLE 28-4",
+   "kind": "TABLE",
+   "ch": 28,
+   "num": 4,
+   "page_a_pdf": 1119,
+   "page_a_print": 1083,
+   "page_b": 3734
+  },
+  {
+   "label": "FIGURE 28-35",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 35,
+   "page_a_pdf": 1120,
+   "page_a_print": 1084,
+   "page_b": 3734
+  },
+  {
+   "label": "FIGURE 28-36",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 36,
+   "page_a_pdf": 1121,
+   "page_a_print": 1085,
+   "page_b": 3738
+  },
+  {
+   "label": "FIGURE 28-38",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 38,
+   "page_a_pdf": 1123,
+   "page_a_print": 1087,
+   "page_b": 3743
+  },
+  {
+   "label": "FIGURE 28-39",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 39,
+   "page_a_pdf": 1124,
+   "page_a_print": 1088,
+   "page_b": 3745
+  },
+  {
+   "label": "FIGURE 28-40",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 40,
+   "page_a_pdf": 1125,
+   "page_a_print": 1089,
+   "page_b": 3747
+  },
+  {
+   "label": "FIGURE 28-42",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 42,
+   "page_a_pdf": 1126,
+   "page_a_print": 1090,
+   "page_b": 3752
+  },
+  {
+   "label": "FIGURE 28-43",
+   "kind": "FIGURE",
+   "ch": 28,
+   "num": 43,
+   "page_a_pdf": 1127,
+   "page_a_print": 1091,
+   "page_b": 3754
+  },
+  {
+   "label": "BOX 28-1",
+   "kind": "BOX",
+   "ch": 28,
+   "num": 1,
+   "page_a_pdf": 1128,
+   "page_a_print": 1092,
+   "page_b": 3755
+  }
+ ],
+ "a_offset": -36
+}

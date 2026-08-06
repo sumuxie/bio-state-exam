@@ -1,0 +1,105 @@
+Czech section page-counts sum to 312; the book itself is 221 distinct pages (sections overlap, factor 1.41).
+So `ratio` is a RELATIVE ranking of where Lehninger has more to say, not an absolute
+page budget. Comparing two rows is valid; reading a row as 'n pages owed' is not.
+
+=== depth queue: Lehninger sections ranked by how much more they say ===
+ratio = Lehninger printed pages / Czech pages spent on the same material.
+ratio ~1 means the Czech book already covers it at comparable length.
+
+  #  ratio L sec      A pages LEHpp  CZpp  title                                                from CZ
+  1   17.0 5.1        148-164    17   1.0  5.1 Reversible Binding of a Protein to a Ligand: O   6.3
+  2   16.0 8.3        278-293    16   1.0  8.3 Nucleic Acid Chemistry                           4.1.5
+  3   11.0 6.4        203-213    11   1.0  6.4 Examples of Enzymatic Reactions                  3.6
+  4    9.5 11.3       385-403    19   2.0  11.3 Solute Transport across Membranes               8.5.3
+  5    9.1 21.1       745-760    16   1.8  21.1 Biosynthesis of Fatty Acids and Eicosanoids     8.3
+  6    7.5 19.1       660-674    15   2.0  19.1 The Mitochondrial Respiratory Chain             6.2.4
+  7    7.3 23.2       848-858    11   1.5  23.2 Tissue-Specific Metabolism                      10.1,10.1.3
+  8    7.2 16.2       578-589    12   1.7  16.2 Reactions of the Citric Acid Cycle              6.2.2
+  9    6.5 17.2       607-618    12   1.8  17.2 Oxidation of Fatty Acids                        8.4.4,10.1.2
+ 10    6.0 19.2       675-686    12   2.0  19.2 ATP Synthesis                                   6.2.4
+ 11    5.3 11.2       377-384     8   1.5  11.2 Membrane Dynamics                               8.5.2
+ 12    5.0 1.3          18-27    10   2.0  1.3 Physical Foundations                             1.4,1.5
+ 13    5.0 2.2          54-58     5   1.0  2.2 Ionization of Water, Weak Acids, and Weak Base   2.1.2
+ 14    5.0 3.4         91-100    10   2.0  3.4 The Structure of Proteins: Primary Structure     2.2.1
+ 15    5.0 8.2        269-278    10   2.0  8.2 Nucleic Acid Structure                           4.1.2
+ 16    4.9 26.2       972-988    17   3.5  26.2 RNA Processing                                  4.1.4
+ 17    4.5 22.3       816-824     9   2.0  22.3 Molecules Derived from Amino Acids              6.3,9.5
+ 18    4.0 3.3          83-90     8   2.0  3.3 Working with Proteins                            2.2.6
+ 19    3.9 23.3       859-867     9   2.3  23.3 Hormonal Regulation of Fuel Metabolism          10.3
+ 20    3.8 25.1       914-930    17   4.5  25.1 DNA Replication                                 4.1.3
+ 21    3.7 13.3       478-488    11   3.0  13.3 Phosphoryl Group Transfers and ATP              6.1.2
+ 22    3.5 13.2       472-478     7   2.0  13.2 Chemical Logic and Common Biochemical Reactio   6.1.3,10.1
+ 23    3.5 13.5       497-503     7   2.0  13.5 Regulation of Metabolic Pathways                6.1.3,10.2
+ 24    3.4 26.1       961-972    12   3.5  26.1 DNA-Dependent Synthesis of RNA                  4.1.4
+ 25    3.3 27.1     1006-1015    10   3.0  27.1 The Genetic Code                                4.2.1
+ 26    3.3 7.4        254-258     5   1.5  7.4 Carbohydrates as Informational Molecules: The    7.5
+ 27    3.3 22.1       795-804    10   3.0  22.1 Overview of Nitrogen Metabolism                 9.4
+ 28    3.1 28.1     1055-1065    11   3.5  28.1 The Proteins and RNAs of Gene Regulation        4.2.4
+ 29    3.0 1.2          10-18     9   3.0  1.2 Chemical Foundations                             1.3
+ 30    3.0 1.4          28-30     3   1.0  1.4 Genetic Foundations                              4.1
+ 31    3.0 10.4       361-363     3   1.0  10.4 Working with Lipids                             8.4.2
+ 32    3.0 20.2       708-716     9   3.0  20.2 Photochemical Reaction Centers                  9.1.2,9.1.3
+ 33    3.0 23.1       842-848     7   2.3  23.1 Hormone Structure and Action                    10.3
+ 34    2.9 28.2     1065-1074    10   3.5  28.2 Regulation of Gene Expression in Bacteria       4.2.4
+ 35    2.9 21.3       764-771     8   2.8  21.3 Biosynthesis of Membrane Phospholipids          8.3,8.4.2
+ 36    2.8 4.3        116-129    14   5.0  4.3 Protein Tertiary and Quaternary Structures       2.2.3,2.2.4,2.2.5
+ 37    2.8 7.3        247-253     7   2.5  7.3 Glycoconjugates: Proteoglycans, Glycoproteins,   7.4.2,7.5
+ 38    2.7 18.3       640-654    15   5.5  18.3 Pathways of Amino Acid Degradation              5.2.3,7.9.1
+ 39    2.7 20.6       732-739     8   3.0  20.6 Biosynthesis of Starch, Sucrose, and Cellulos   6.2.3,7.12
+ 40    2.7 14.3       525-532     8   3.0  14.3 Fates of Pyruvate                               7.8.1
+ 41    2.7 10.3       353-360     8   3.0  10.3 Lipids as Signals, Cofactors, and Pigments      8.2.4
+ 42    2.7 21.4       772-789    18   6.8  21.4 Cholesterol, Steroids, and Isoprenoids: Biosy   8.2.4,8.3,8.4.3,9.5
+ 43    2.6 27.2     1015-1040    26  10.0  27.2 Protein Synthesis                               4.2.2,4.2.3
+ 44    2.5 3.2          79-83     5   2.0  3.2 Peptides and Proteins                            2.1.4,2.2.5
+ 45    2.4 16.1       575-578     4   1.7  16.1 Production of Acetyl-CoA (Activated Acetate)    6.2.2
+ 46    2.4 16.4       593-596     4   1.7  16.4 Regulation of the Citric Acid Cycle             6.2.2
+ 47    2.4 14.1       511-521    11   4.5  14.1 Glycolysis                                      7.8,10.1.1
+ 48    2.4 14.4       533-538     6   2.5  14.4 Gluconeogenesis                                 7.9,7.9.1
+ 49    2.3 1.5          30-36     7   3.0  1.5 Evolutionary Foundations                         1.6
+ 50    2.3 8.1        263-269     7   3.0  8.1 Some Basic Definitions and Conventions           4.1,4.1.2
+ 51    2.3 18.2       634-640     7   3.0  18.2 Nitrogen Excretion and the Urea Cycle           5.2.2
+ 52    2.3 21.2       760-763     4   1.8  21.2 Biosynthesis of Triacylglycerols                8.3
+ 53    2.2 11.1       367-376    10   4.5  11.1 The Composition and Architecture of Membranes   8.5,8.5.1,8.5.2
+ 54    2.2 20.4       719-727     9   4.0  20.4 CO[2]-Assimilation Reactions                    9.1.4
+ 55    2.0 19.3       686-689     4   2.0  19.3 Regulation of Oxidative Phosphorylation         6.2.4
+ 56    2.0 15.2       558-564     7   3.5  15.2 Breakdown and Synthesis of Glycogen             7.11.2,7.12,10.1.1
+ 57    2.0 10.2       346-353     8   4.0  10.2 Structural Lipids in Membranes                  8.2.3
+ 58    2.0 20.3       716-719     4   2.0  20.3 Evolution of a Universal Mechanism for ATP Sy   9.1.3
+ 59    1.9 6.2        179-188    10   5.3  6.2 How Enzymes Work                                 3.2,3.6
+ 60    1.8 22.4       824-837    14   8.0  22.4 Biosynthesis and Degradation of Nucleotides     4.1.1.1,4.1.1.2,4.1.5
+ 61    1.8 27.3     1040-1050    11   6.0  27.3 Protein Targeting and Degradation               4.3.2,4.3.3,5.1
+ 62    1.7 4.2        111-116     6   3.5  4.2 Protein Secondary Structure                      2.2.2
+ 63    1.7 17.1       603-606     4   2.3  17.1 Digestion, Mobilization, and Transport of Fat   8.4.1,8.4.4
+ 64    1.6 4.4        129-136     8   5.0  4.4 Protein Denaturation and Folding                 2.2.6,4.3.1
+ 65    1.6 6.5        213-223    11   7.0  6.5 Regulatory Enzymes                               3.7,4.3.3,10.2
+ 66    1.6 17.3       618-620     3   1.8  17.3 Ketone Bodies                                   8.4.4,10.1.2
+ 67    1.5 13.1       466-471     6   4.0  13.1 Bioenergetics and Thermodynamics                1.4,1.5,6.1,6.1.1
+ 68    1.5 3.1          71-79     9   6.0  3.1 Amino Acids                                      2.1.1,2.1.2,2.1.3
+ 69    1.5 7.2        241-246     6   4.0  7.2 Polysaccharides                                  7.4,7.4.1,7.4.2
+ 70    1.5 20.5       727-732     6   4.0  20.5 Photorespiration and the C[4] and CAM Pathway   9.2,9.3
+ 71    1.4 13.4       488-496     9   6.3  13.4 Biological Oxidation-Reduction Reactions        3.2,6.2.1
+ 72    1.4 10.1       340-346     7   5.0  10.1 Storage Lipids                                  8.1,8.2.1,8.2.2
+ 73    1.3 6.3        188-203    16  12.0  6.3 Enzyme Kinetics as an Approach to Understandin   3.3.1,3.3.2,3.3.3,3.4,3.5
+ 74    1.3 24.1       885-890     6   4.5  24.1 Chromosomal Elements                            4.1.3
+ 75    1.3 7.5        258-259     2   1.5  7.5 Working with Carbohydrates                       7.10
+ 76    1.2 14.6       546-551     6   5.0  14.6 Pentose Phosphate Pathway of Glucose Oxidatio   7.6.2,7.6.3,7.7
+ 77    1.2 16.3       590-592     3   2.5  16.3 The Hub of Intermediary Metabolism              10.1.3,10.1.4
+ 78    1.1 1.1            2-9     8   7.0  1.1 Cellular Foundations                             1.1,1.2,1.3
+ 79    1.0 18.1       627-634     8   8.0  18.1 Metabolic Fates of Amino Groups                 5.1,5.2,5.2.1
+ 80    1.0 20.1       701-707     7   7.0  20.1 Light Absorption                                9,9.1,9.1.1
+ 81    0.9 4.1        108-110     3   3.5  4.1 Overview of Protein Structure                    2.2.2
+ 82    0.7 14.2       522-525     4   5.5  14.2 Feeder Pathways for Glycolysis                  7.6,7.6.1,7.10,7.11.1
+ 83    0.6 7.1        230-241    12  20.0  7.1 Monosaccharides and Disaccharides                7.1,7.1.1,7.1.2,7.1.3,7.1.4,7.2.1,7.2.2,7.2.3,7.2.4,7.2.5,7.2.6,7.3
+ 84    0.5 6.1        177-179     3   6.3  6.1 An Introduction to Enzymes                       3.1,3.2
+ 85    0.4 12.7       446-446     1   2.3  12.7 Regulation of Transcription by Nuclear Hormon   10.3
+
+=== the six topics the user chose, resolved to Lehninger sections ===
+topic                                  LEHpp  CZpp  ratio  read in A
+脂类的生物合成 lipid biosynthesis                46  13.2    3.5  21.1:745-760, 21.2:760-763, 21.3:764-771, 21.4:772-789
+氧化磷酸化 oxidative phosphorylation           31   6.0    5.2  19.1:660-674, 19.2:675-686, 19.3:686-689
+激素 hormones                               17   6.9    2.5  23.1:842-848, 23.3:859-867, 12.7:446-446
+核酸 nucleic acids                          85  22.0    3.9  8.1:263-269, 8.2:269-278, 8.3:278-293, 24.1:885-890, 25.1:914-930, 26.1:961-972, 26.2:972-988
+糖酵解 glycolysis                            25  10.0    2.5  14.1:511-521, 14.3:525-532, 14.4:533-538
+柠檬酸循环 citric acid cycle                   23   7.6    3.0  16.1:575-578, 16.2:578-589, 16.3:590-592, 16.4:593-596
+
+OK: wrote depth_queue.tsv / depth_queue.json

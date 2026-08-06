@@ -1,0 +1,1902 @@
+[
+ {
+  "leh_section": "5.1",
+  "title": "5.1 Reversible Binding of a Protein to a Ligand: Oxygen-Binding Proteins",
+  "page_a_print": 148,
+  "page_a_print_end": 164,
+  "page_b": 619,
+  "page_b_end": 680,
+  "leh_pages": 17,
+  "cz_pages_allocated": 1.0,
+  "ratio": 17.0,
+  "cz_sources": [
+   [
+    "6.3",
+    "Porphyrin proteins — structure and biological versatility (Table 6.4)",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "8.3",
+  "title": "8.3 Nucleic Acid Chemistry",
+  "page_a_print": 278,
+  "page_a_print_end": 293,
+  "page_b": 1078,
+  "page_b_end": 1122,
+  "leh_pages": 16,
+  "cz_pages_allocated": 1.0,
+  "ratio": 16.0,
+  "cz_sources": [
+   [
+    "4.1.5",
+    "Degradation of nucleic acids",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "6.4",
+  "title": "6.4 Examples of Enzymatic Reactions",
+  "page_a_print": 203,
+  "page_a_print_end": 213,
+  "page_b": 823,
+  "page_b_end": 852,
+  "leh_pages": 11,
+  "cz_pages_allocated": 1.0,
+  "ratio": 11.0,
+  "cz_sources": [
+   [
+    "3.6",
+    "Mechanism of enzyme action",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "11.3",
+  "title": "11.3 Solute Transport across Membranes",
+  "page_a_print": 385,
+  "page_a_print_end": 403,
+  "page_b": 1432,
+  "page_b_end": 1495,
+  "leh_pages": 19,
+  "cz_pages_allocated": 2.0,
+  "ratio": 9.5,
+  "cz_sources": [
+   [
+    "8.5.3",
+    "Membrane transport — passive transport, simple diffusion",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "21.1",
+  "title": "21.1 Biosynthesis of Fatty Acids and Eicosanoids",
+  "page_a_print": 745,
+  "page_a_print_end": 760,
+  "page_b": 2649,
+  "page_b_end": 2696,
+  "leh_pages": 16,
+  "cz_pages_allocated": 1.8,
+  "ratio": 9.1,
+  "cz_sources": [
+   [
+    "8.3",
+    "Lipid biosynthesis — Fatty acids: subcellular compartmentalization, the source of acetyl-CoA, and malonyl-CoA formation",
+    1.8
+   ]
+  ]
+ },
+ {
+  "leh_section": "19.1",
+  "title": "19.1 The Mitochondrial Respiratory Chain",
+  "page_a_print": 660,
+  "page_a_print_end": 674,
+  "page_b": 2368,
+  "page_b_end": 2407,
+  "leh_pages": 15,
+  "cz_pages_allocated": 2.0,
+  "ratio": 7.5,
+  "cz_sources": [
+   [
+    "6.2.4",
+    "The respiratory chain and aerobic phosphorylation — introduction and Complex I",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "23.2",
+  "title": "23.2 Tissue-Specific Metabolism",
+  "page_a_print": 848,
+  "page_a_print_end": 858,
+  "page_b": 2967,
+  "page_b_end": 3005,
+  "leh_pages": 11,
+  "cz_pages_allocated": 1.5,
+  "ratio": 7.3,
+  "cz_sources": [
+   [
+    "10.1",
+    "Intermediary metabolism — catabolism, anabolism and the four functions",
+    1.0
+   ],
+   [
+    "10.1.3",
+    "The relation of carbohydrate and lipid metabolism — why fats cannot make sugars",
+    0.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "16.2",
+  "title": "16.2 Reactions of the Citric Acid Cycle",
+  "page_a_print": 578,
+  "page_a_print_end": 589,
+  "page_b": 2103,
+  "page_b_end": 2133,
+  "leh_pages": 12,
+  "cz_pages_allocated": 1.7,
+  "ratio": 7.2,
+  "cz_sources": [
+   [
+    "6.2.2",
+    "The citrate cycle — introduction, cycle overview, and citrate synthase",
+    1.7
+   ]
+  ]
+ },
+ {
+  "leh_section": "17.2",
+  "title": "17.2 Oxidation of Fatty Acids",
+  "page_a_print": 607,
+  "page_a_print_end": 618,
+  "page_b": 2198,
+  "page_b_end": 2240,
+  "leh_pages": 12,
+  "cz_pages_allocated": 1.8,
+  "ratio": 6.5,
+  "cz_sources": [
+   [
+    "8.4.4",
+    "Fatty acids — activation",
+    1.3
+   ],
+   [
+    "10.1.2",
+    "Lipid metabolism — degradation and ketone bodies",
+    0.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "19.2",
+  "title": "19.2 ATP Synthesis",
+  "page_a_print": 675,
+  "page_a_print_end": 686,
+  "page_b": 2408,
+  "page_b_end": 2447,
+  "leh_pages": 12,
+  "cz_pages_allocated": 2.0,
+  "ratio": 6.0,
+  "cz_sources": [
+   [
+    "6.2.4",
+    "The respiratory chain and aerobic phosphorylation — introduction and Complex I",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "11.2",
+  "title": "11.2 Membrane Dynamics",
+  "page_a_print": 377,
+  "page_a_print_end": 384,
+  "page_b": 1403,
+  "page_b_end": 1431,
+  "leh_pages": 8,
+  "cz_pages_allocated": 1.5,
+  "ratio": 5.3,
+  "cz_sources": [
+   [
+    "8.5.2",
+    "Structure — the lipid bilayer",
+    1.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "1.3",
+  "title": "1.3 Physical Foundations",
+  "page_a_print": 18,
+  "page_a_print_end": 27,
+  "page_b": 154,
+  "page_b_end": 188,
+  "leh_pages": 10,
+  "cz_pages_allocated": 2.0,
+  "ratio": 5.0,
+  "cz_sources": [
+   [
+    "1.4",
+    "Nutrition and metabolism",
+    1.0
+   ],
+   [
+    "1.5",
+    "Energy and life",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "2.2",
+  "title": "2.2 Ionization of Water, Weak Acids, and Weak Bases",
+  "page_a_print": 54,
+  "page_a_print_end": 58,
+  "page_b": 289,
+  "page_b_end": 312,
+  "leh_pages": 5,
+  "cz_pages_allocated": 1.0,
+  "ratio": 5.0,
+  "cz_sources": [
+   [
+    "2.1.2",
+    "Physico-chemical properties of amino acids",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "3.4",
+  "title": "3.4 The Structure of Proteins: Primary Structure",
+  "page_a_print": 91,
+  "page_a_print_end": 100,
+  "page_b": 416,
+  "page_b_end": 450,
+  "leh_pages": 10,
+  "cz_pages_allocated": 2.0,
+  "ratio": 5.0,
+  "cz_sources": [
+   [
+    "2.2.1",
+    "Amino acid sequence (primary structure)",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "8.2",
+  "title": "8.2 Nucleic Acid Structure",
+  "page_a_print": 269,
+  "page_a_print_end": 278,
+  "page_b": 1047,
+  "page_b_end": 1077,
+  "leh_pages": 10,
+  "cz_pages_allocated": 2.0,
+  "ratio": 5.0,
+  "cz_sources": [
+   [
+    "4.1.2",
+    "Structure of nucleic acids",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "26.2",
+  "title": "26.2 RNA Processing",
+  "page_a_print": 972,
+  "page_a_print_end": 988,
+  "page_b": 3382,
+  "page_b_end": 3428,
+  "leh_pages": 17,
+  "cz_pages_allocated": 3.5,
+  "ratio": 4.9,
+  "cz_sources": [
+   [
+    "4.1.4",
+    "DNA is transcribed into RNA — types and properties of RNA",
+    3.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "22.3",
+  "title": "22.3 Molecules Derived from Amino Acids",
+  "page_a_print": 816,
+  "page_a_print_end": 824,
+  "page_b": 2863,
+  "page_b_end": 2883,
+  "leh_pages": 9,
+  "cz_pages_allocated": 2.0,
+  "ratio": 4.5,
+  "cz_sources": [
+   [
+    "6.3",
+    "Porphyrin proteins — structure and biological versatility (Table 6.4)",
+    1.0
+   ],
+   [
+    "9.5",
+    "Secondary plant metabolites",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "3.3",
+  "title": "3.3 Working with Proteins",
+  "page_a_print": 83,
+  "page_a_print_end": 90,
+  "page_b": 393,
+  "page_b_end": 415,
+  "leh_pages": 8,
+  "cz_pages_allocated": 2.0,
+  "ratio": 4.0,
+  "cz_sources": [
+   [
+    "2.2.6",
+    "Properties of proteins",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "23.3",
+  "title": "23.3 Hormonal Regulation of Fuel Metabolism",
+  "page_a_print": 859,
+  "page_a_print_end": 867,
+  "page_b": 3006,
+  "page_b_end": 3029,
+  "leh_pages": 9,
+  "cz_pages_allocated": 2.3,
+  "ratio": 3.9,
+  "cz_sources": [
+   [
+    "10.3",
+    "Hormones — definition, the gland hierarchy, and hormonal receptors",
+    2.3
+   ]
+  ]
+ },
+ {
+  "leh_section": "25.1",
+  "title": "25.1 DNA Replication",
+  "page_a_print": 914,
+  "page_a_print_end": 930,
+  "page_b": 3200,
+  "page_b_end": 3250,
+  "leh_pages": 17,
+  "cz_pages_allocated": 4.5,
+  "ratio": 3.8,
+  "cz_sources": [
+   [
+    "4.1.3",
+    "DNA structure and biosynthesis explain the principle of heredity — 1) DNA polymerases",
+    4.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "13.3",
+  "title": "13.3 Phosphoryl Group Transfers and ATP",
+  "page_a_print": 478,
+  "page_a_print_end": 488,
+  "page_b": 1754,
+  "page_b_end": 1787,
+  "leh_pages": 11,
+  "cz_pages_allocated": 3.0,
+  "ratio": 3.7,
+  "cz_sources": [
+   [
+    "6.1.2",
+    "High-energy (macroergic) compounds — the concept, anhydrides and phosphoamides",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "13.2",
+  "title": "13.2 Chemical Logic and Common Biochemical Reactions",
+  "page_a_print": 472,
+  "page_a_print_end": 478,
+  "page_b": 1728,
+  "page_b_end": 1753,
+  "leh_pages": 7,
+  "cz_pages_allocated": 2.0,
+  "ratio": 3.5,
+  "cz_sources": [
+   [
+    "6.1.3",
+    "Catabolic and anabolic processes",
+    1.0
+   ],
+   [
+    "10.1",
+    "Intermediary metabolism — catabolism, anabolism and the four functions",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "13.5",
+  "title": "13.5 Regulation of Metabolic Pathways",
+  "page_a_print": 497,
+  "page_a_print_end": 503,
+  "page_b": 1821,
+  "page_b_end": 1837,
+  "leh_pages": 7,
+  "cz_pages_allocated": 2.0,
+  "ratio": 3.5,
+  "cz_sources": [
+   [
+    "6.1.3",
+    "Catabolic and anabolic processes",
+    1.0
+   ],
+   [
+    "10.2",
+    "Regulatory mechanisms — why, and at what levels",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "26.1",
+  "title": "26.1 DNA-Dependent Synthesis of RNA",
+  "page_a_print": 961,
+  "page_a_print_end": 972,
+  "page_b": 3346,
+  "page_b_end": 3381,
+  "leh_pages": 12,
+  "cz_pages_allocated": 3.5,
+  "ratio": 3.4,
+  "cz_sources": [
+   [
+    "4.1.4",
+    "DNA is transcribed into RNA — types and properties of RNA",
+    3.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "27.1",
+  "title": "27.1 The Genetic Code",
+  "page_a_print": 1006,
+  "page_a_print_end": 1015,
+  "page_b": 3491,
+  "page_b_end": 3519,
+  "leh_pages": 10,
+  "cz_pages_allocated": 3.0,
+  "ratio": 3.3,
+  "cz_sources": [
+   [
+    "4.2.1",
+    "The gene sequence determines the order of amino acids in proteins",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "7.4",
+  "title": "7.4 Carbohydrates as Informational Molecules: The Sugar Code",
+  "page_a_print": 254,
+  "page_a_print_end": 258,
+  "page_b": 993,
+  "page_b_end": 1006,
+  "leh_pages": 5,
+  "cz_pages_allocated": 1.5,
+  "ratio": 3.3,
+  "cz_sources": [
+   [
+    "7.5",
+    "Oligosaccharides bound to proteins",
+    1.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "22.1",
+  "title": "22.1 Overview of Nitrogen Metabolism",
+  "page_a_print": 795,
+  "page_a_print_end": 804,
+  "page_b": 2794,
+  "page_b_end": 2828,
+  "leh_pages": 10,
+  "cz_pages_allocated": 3.0,
+  "ratio": 3.3,
+  "cz_sources": [
+   [
+    "9.4",
+    "Fixation of atmospheric nitrogen — nitrogenase",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "28.1",
+  "title": "28.1 The Proteins and RNAs of Gene Regulation",
+  "page_a_print": 1055,
+  "page_a_print_end": 1065,
+  "page_b": 3643,
+  "page_b_end": 3677,
+  "leh_pages": 11,
+  "cz_pages_allocated": 3.5,
+  "ratio": 3.1,
+  "cz_sources": [
+   [
+    "4.2.4",
+    "Regulation of protein synthesis (I): the lactose and tryptophan operons",
+    3.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "1.2",
+  "title": "1.2 Chemical Foundations",
+  "page_a_print": 10,
+  "page_a_print_end": 18,
+  "page_b": 128,
+  "page_b_end": 153,
+  "leh_pages": 9,
+  "cz_pages_allocated": 3.0,
+  "ratio": 3.0,
+  "cz_sources": [
+   [
+    "1.3",
+    "Building blocks of living matter: from molecule to cell",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "1.4",
+  "title": "1.4 Genetic Foundations",
+  "page_a_print": 28,
+  "page_a_print_end": 30,
+  "page_b": 189,
+  "page_b_end": 199,
+  "leh_pages": 3,
+  "cz_pages_allocated": 1.0,
+  "ratio": 3.0,
+  "cz_sources": [
+   [
+    "4.1",
+    "Nucleic acids are the basic molecules of heredity",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "10.4",
+  "title": "10.4 Working with Lipids",
+  "page_a_print": 361,
+  "page_a_print_end": 363,
+  "page_b": 1343,
+  "page_b_end": 1354,
+  "leh_pages": 3,
+  "cz_pages_allocated": 1.0,
+  "ratio": 3.0,
+  "cz_sources": [
+   [
+    "8.4.2",
+    "Complex lipids — phospholipids and phospholipases",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "20.2",
+  "title": "20.2 Photochemical Reaction Centers",
+  "page_a_print": 708,
+  "page_a_print_end": 716,
+  "page_b": 2520,
+  "page_b_end": 2546,
+  "leh_pages": 9,
+  "cz_pages_allocated": 3.0,
+  "ratio": 3.0,
+  "cz_sources": [
+   [
+    "9.1.2",
+    "Other components of the thylakoid membranes",
+    1.0
+   ],
+   [
+    "9.1.3",
+    "The reaction centre, and the legend to Obr. 9.5",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "23.1",
+  "title": "23.1 Hormone Structure and Action",
+  "page_a_print": 842,
+  "page_a_print_end": 848,
+  "page_b": 2945,
+  "page_b_end": 2966,
+  "leh_pages": 7,
+  "cz_pages_allocated": 2.3,
+  "ratio": 3.0,
+  "cz_sources": [
+   [
+    "10.3",
+    "Hormones — definition, the gland hierarchy, and hormonal receptors",
+    2.3
+   ]
+  ]
+ },
+ {
+  "leh_section": "28.2",
+  "title": "28.2 Regulation of Gene Expression in Bacteria",
+  "page_a_print": 1065,
+  "page_a_print_end": 1074,
+  "page_b": 3678,
+  "page_b_end": 3709,
+  "leh_pages": 10,
+  "cz_pages_allocated": 3.5,
+  "ratio": 2.9,
+  "cz_sources": [
+   [
+    "4.2.4",
+    "Regulation of protein synthesis (I): the lactose and tryptophan operons",
+    3.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "21.3",
+  "title": "21.3 Biosynthesis of Membrane Phospholipids",
+  "page_a_print": 764,
+  "page_a_print_end": 771,
+  "page_b": 2714,
+  "page_b_end": 2733,
+  "leh_pages": 8,
+  "cz_pages_allocated": 2.8,
+  "ratio": 2.9,
+  "cz_sources": [
+   [
+    "8.3",
+    "Lipid biosynthesis — Fatty acids: subcellular compartmentalization, the source of acetyl-CoA, and malonyl-CoA formation",
+    1.8
+   ],
+   [
+    "8.4.2",
+    "Complex lipids — phospholipids and phospholipases",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "4.3",
+  "title": "4.3 Protein Tertiary and Quaternary Structures",
+  "page_a_print": 116,
+  "page_a_print_end": 129,
+  "page_b": 515,
+  "page_b_end": 553,
+  "leh_pages": 14,
+  "cz_pages_allocated": 5.0,
+  "ratio": 2.8,
+  "cz_sources": [
+   [
+    "2.2.3",
+    "Conformation of proteins — the levels of structure",
+    2.0
+   ],
+   [
+    "2.2.4",
+    "Types of construction of the protein molecule",
+    2.0
+   ],
+   [
+    "2.2.5",
+    "Simple and conjugated proteins",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "7.3",
+  "title": "7.3 Glycoconjugates: Proteoglycans, Glycoproteins, and Glycolipids",
+  "page_a_print": 247,
+  "page_a_print_end": 253,
+  "page_b": 969,
+  "page_b_end": 992,
+  "leh_pages": 7,
+  "cz_pages_allocated": 2.5,
+  "ratio": 2.8,
+  "cz_sources": [
+   [
+    "7.4.2",
+    "Heteropolysaccharides (glycosaminoglycans, hyaluronic acid, chondroitin sulfates, heparin)",
+    1.0
+   ],
+   [
+    "7.5",
+    "Oligosaccharides bound to proteins",
+    1.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "18.3",
+  "title": "18.3 Pathways of Amino Acid Degradation",
+  "page_a_print": 640,
+  "page_a_print_end": 654,
+  "page_b": 2309,
+  "page_b_end": 2344,
+  "leh_pages": 15,
+  "cz_pages_allocated": 5.5,
+  "ratio": 2.7,
+  "cz_sources": [
+   [
+    "5.2.3",
+    "Degradation of the carbon skeleton and mutual interconversion of amino acids — glucogenic/ketogenic classification; 1) Conversion to acetyl-CoA via pyruvate (C3 family)",
+    5.0
+   ],
+   [
+    "7.9.1",
+    "Gluconeogenesis from amino acids",
+    0.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "20.6",
+  "title": "20.6 Biosynthesis of Starch, Sucrose, and Cellulose",
+  "page_a_print": 732,
+  "page_a_print_end": 739,
+  "page_b": 2603,
+  "page_b_end": 2626,
+  "leh_pages": 8,
+  "cz_pages_allocated": 3.0,
+  "ratio": 2.7,
+  "cz_sources": [
+   [
+    "6.2.3",
+    "The glyoxylate cycle",
+    2.0
+   ],
+   [
+    "7.12",
+    "Biosynthesis of polysaccharides — glycogen synthase and the branching enzyme",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "14.3",
+  "title": "14.3 Fates of Pyruvate",
+  "page_a_print": 525,
+  "page_a_print_end": 532,
+  "page_b": 1920,
+  "page_b_end": 1945,
+  "leh_pages": 8,
+  "cz_pages_allocated": 3.0,
+  "ratio": 2.7,
+  "cz_sources": [
+   [
+    "7.8.1",
+    "Formation of ethanol, lactate, or acetyl-CoA — ethanol and lactate",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "10.3",
+  "title": "10.3 Lipids as Signals, Cofactors, and Pigments",
+  "page_a_print": 353,
+  "page_a_print_end": 360,
+  "page_b": 1322,
+  "page_b_end": 1342,
+  "leh_pages": 8,
+  "cz_pages_allocated": 3.0,
+  "ratio": 2.7,
+  "cz_sources": [
+   [
+    "8.2.4",
+    "Derived lipids — terpenes (isoprenoids): characteristics and classification",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "21.4",
+  "title": "21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesis, Regulation, and Transport",
+  "page_a_print": 772,
+  "page_a_print_end": 789,
+  "page_b": 2734,
+  "page_b_end": 2774,
+  "leh_pages": 18,
+  "cz_pages_allocated": 6.8,
+  "ratio": 2.7,
+  "cz_sources": [
+   [
+    "8.2.4",
+    "Derived lipids — terpenes (isoprenoids): characteristics and classification",
+    3.0
+   ],
+   [
+    "8.3",
+    "Lipid biosynthesis — Fatty acids: subcellular compartmentalization, the source of acetyl-CoA, and malonyl-CoA formation",
+    1.8
+   ],
+   [
+    "8.4.3",
+    "Derived lipids",
+    1.0
+   ],
+   [
+    "9.5",
+    "Secondary plant metabolites",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "27.2",
+  "title": "27.2 Protein Synthesis",
+  "page_a_print": 1015,
+  "page_a_print_end": 1040,
+  "page_b": 3520,
+  "page_b_end": 3593,
+  "leh_pages": 26,
+  "cz_pages_allocated": 10.0,
+  "ratio": 2.6,
+  "cz_sources": [
+   [
+    "4.2.2",
+    "Protein synthesis takes place in ribosomes",
+    2.0
+   ],
+   [
+    "4.2.3",
+    "Phases of protein synthesis (I): amino acid activation, initiation and elongation",
+    8.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "3.2",
+  "title": "3.2 Peptides and Proteins",
+  "page_a_print": 79,
+  "page_a_print_end": 83,
+  "page_b": 380,
+  "page_b_end": 392,
+  "leh_pages": 5,
+  "cz_pages_allocated": 2.0,
+  "ratio": 2.5,
+  "cz_sources": [
+   [
+    "2.1.4",
+    "Formation of the peptide bond",
+    1.0
+   ],
+   [
+    "2.2.5",
+    "Simple and conjugated proteins",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "16.1",
+  "title": "16.1 Production of Acetyl-CoA (Activated Acetate)",
+  "page_a_print": 575,
+  "page_a_print_end": 578,
+  "page_b": 2091,
+  "page_b_end": 2102,
+  "leh_pages": 4,
+  "cz_pages_allocated": 1.7,
+  "ratio": 2.4,
+  "cz_sources": [
+   [
+    "6.2.2",
+    "The citrate cycle — introduction, cycle overview, and citrate synthase",
+    1.7
+   ]
+  ]
+ },
+ {
+  "leh_section": "16.4",
+  "title": "16.4 Regulation of the Citric Acid Cycle",
+  "page_a_print": 593,
+  "page_a_print_end": 596,
+  "page_b": 2143,
+  "page_b_end": 2156,
+  "leh_pages": 4,
+  "cz_pages_allocated": 1.7,
+  "ratio": 2.4,
+  "cz_sources": [
+   [
+    "6.2.2",
+    "The citrate cycle — introduction, cycle overview, and citrate synthase",
+    1.7
+   ]
+  ]
+ },
+ {
+  "leh_section": "14.1",
+  "title": "14.1 Glycolysis",
+  "page_a_print": 511,
+  "page_a_print_end": 521,
+  "page_b": 1871,
+  "page_b_end": 1906,
+  "leh_pages": 11,
+  "cz_pages_allocated": 4.5,
+  "ratio": 2.4,
+  "cz_sources": [
+   [
+    "7.8",
+    "Glycolysis — introduction and the preparatory phase (glucose to fructose-1,6-bisphosphate and its cleavage to trioses)",
+    4.0
+   ],
+   [
+    "10.1.1",
+    "Carbohydrate metabolism — degradation",
+    0.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "14.4",
+  "title": "14.4 Gluconeogenesis",
+  "page_a_print": 533,
+  "page_a_print_end": 538,
+  "page_b": 1946,
+  "page_b_end": 1961,
+  "leh_pages": 6,
+  "cz_pages_allocated": 2.5,
+  "ratio": 2.4,
+  "cz_sources": [
+   [
+    "7.9",
+    "Gluconeogenesis, glucose resynthesis — bypassing glycolysis's irreversible steps",
+    2.0
+   ],
+   [
+    "7.9.1",
+    "Gluconeogenesis from amino acids",
+    0.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "1.5",
+  "title": "1.5 Evolutionary Foundations",
+  "page_a_print": 30,
+  "page_a_print_end": 36,
+  "page_b": 200,
+  "page_b_end": 224,
+  "leh_pages": 7,
+  "cz_pages_allocated": 3.0,
+  "ratio": 2.3,
+  "cz_sources": [
+   [
+    "1.6",
+    "Origin and evolution of life",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "8.1",
+  "title": "8.1 Some Basic Definitions and Conventions",
+  "page_a_print": 263,
+  "page_a_print_end": 269,
+  "page_b": 1028,
+  "page_b_end": 1046,
+  "leh_pages": 7,
+  "cz_pages_allocated": 3.0,
+  "ratio": 2.3,
+  "cz_sources": [
+   [
+    "4.1",
+    "Nucleic acids are the basic molecules of heredity",
+    1.0
+   ],
+   [
+    "4.1.2",
+    "Structure of nucleic acids",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "18.2",
+  "title": "18.2 Nitrogen Excretion and the Urea Cycle",
+  "page_a_print": 634,
+  "page_a_print_end": 640,
+  "page_b": 2290,
+  "page_b_end": 2308,
+  "leh_pages": 7,
+  "cz_pages_allocated": 3.0,
+  "ratio": 2.3,
+  "cz_sources": [
+   [
+    "5.2.2",
+    "Ammonia detoxification, the urea (ornithine) cycle — sources and elimination of ammonia",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "21.2",
+  "title": "21.2 Biosynthesis of Triacylglycerols",
+  "page_a_print": 760,
+  "page_a_print_end": 763,
+  "page_b": 2697,
+  "page_b_end": 2713,
+  "leh_pages": 4,
+  "cz_pages_allocated": 1.8,
+  "ratio": 2.3,
+  "cz_sources": [
+   [
+    "8.3",
+    "Lipid biosynthesis — Fatty acids: subcellular compartmentalization, the source of acetyl-CoA, and malonyl-CoA formation",
+    1.8
+   ]
+  ]
+ },
+ {
+  "leh_section": "11.1",
+  "title": "11.1 The Composition and Architecture of Membranes",
+  "page_a_print": 367,
+  "page_a_print_end": 376,
+  "page_b": 1370,
+  "page_b_end": 1402,
+  "leh_pages": 10,
+  "cz_pages_allocated": 4.5,
+  "ratio": 2.2,
+  "cz_sources": [
+   [
+    "8.5",
+    "Biological membranes (introduction)",
+    2.0
+   ],
+   [
+    "8.5.1",
+    "Chemical composition",
+    1.0
+   ],
+   [
+    "8.5.2",
+    "Structure — the lipid bilayer",
+    1.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "20.4",
+  "title": "20.4 CO[2]-Assimilation Reactions",
+  "page_a_print": 719,
+  "page_a_print_end": 727,
+  "page_b": 2560,
+  "page_b_end": 2583,
+  "leh_pages": 9,
+  "cz_pages_allocated": 4.0,
+  "ratio": 2.2,
+  "cz_sources": [
+   [
+    "9.1.4",
+    "Photosynthetic CO₂ fixation — why 'dark phase' is a bad term",
+    4.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "19.3",
+  "title": "19.3 Regulation of Oxidative Phosphorylation",
+  "page_a_print": 686,
+  "page_a_print_end": 689,
+  "page_b": 2448,
+  "page_b_end": 2457,
+  "leh_pages": 4,
+  "cz_pages_allocated": 2.0,
+  "ratio": 2.0,
+  "cz_sources": [
+   [
+    "6.2.4",
+    "The respiratory chain and aerobic phosphorylation — introduction and Complex I",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "15.2",
+  "title": "15.2 Breakdown and Synthesis of Glycogen",
+  "page_a_print": 558,
+  "page_a_print_end": 564,
+  "page_b": 2036,
+  "page_b_end": 2055,
+  "leh_pages": 7,
+  "cz_pages_allocated": 3.5,
+  "ratio": 2.0,
+  "cz_sources": [
+   [
+    "7.11.2",
+    "Phosphorolysis of starch and glycogen — general mechanism",
+    2.0
+   ],
+   [
+    "7.12",
+    "Biosynthesis of polysaccharides — glycogen synthase and the branching enzyme",
+    1.0
+   ],
+   [
+    "10.1.1",
+    "Carbohydrate metabolism — degradation",
+    0.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "10.2",
+  "title": "10.2 Structural Lipids in Membranes",
+  "page_a_print": 346,
+  "page_a_print_end": 353,
+  "page_b": 1299,
+  "page_b_end": 1321,
+  "leh_pages": 8,
+  "cz_pages_allocated": 4.0,
+  "ratio": 2.0,
+  "cz_sources": [
+   [
+    "8.2.3",
+    "Complex lipids — Glycoacylglycerols (introduction)",
+    4.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "20.3",
+  "title": "20.3 Evolution of a Universal Mechanism for ATP Synthesis",
+  "page_a_print": 716,
+  "page_a_print_end": 719,
+  "page_b": 2547,
+  "page_b_end": 2559,
+  "leh_pages": 4,
+  "cz_pages_allocated": 2.0,
+  "ratio": 2.0,
+  "cz_sources": [
+   [
+    "9.1.3",
+    "The reaction centre, and the legend to Obr. 9.5",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "6.2",
+  "title": "6.2 How Enzymes Work",
+  "page_a_print": 179,
+  "page_a_print_end": 188,
+  "page_b": 737,
+  "page_b_end": 770,
+  "leh_pages": 10,
+  "cz_pages_allocated": 5.3,
+  "ratio": 1.9,
+  "cz_sources": [
+   [
+    "3.2",
+    "Structure of the enzyme molecule; Coenzymes",
+    4.3
+   ],
+   [
+    "3.6",
+    "Mechanism of enzyme action",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "22.4",
+  "title": "22.4 Biosynthesis and Degradation of Nucleotides",
+  "page_a_print": 824,
+  "page_a_print_end": 837,
+  "page_b": 2884,
+  "page_b_end": 2927,
+  "leh_pages": 14,
+  "cz_pages_allocated": 8.0,
+  "ratio": 1.8,
+  "cz_sources": [
+   [
+    "4.1.1.1",
+    "Biosynthesis of nucleotides; biosynthesis of purine nucleotides",
+    4.0
+   ],
+   [
+    "4.1.1.2",
+    "Biosynthesis of pyrimidine nucleotides",
+    3.0
+   ],
+   [
+    "4.1.5",
+    "Degradation of nucleic acids",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "27.3",
+  "title": "27.3 Protein Targeting and Degradation",
+  "page_a_print": 1040,
+  "page_a_print_end": 1050,
+  "page_b": 3594,
+  "page_b_end": 3620,
+  "leh_pages": 11,
+  "cz_pages_allocated": 6.0,
+  "ratio": 1.8,
+  "cz_sources": [
+   [
+    "4.3.2",
+    "Post-translational modification of the polypeptide chain and transport of proteins across the membrane",
+    2.0
+   ],
+   [
+    "4.3.3",
+    "Covalent modification of amino acid side chains",
+    2.0
+   ],
+   [
+    "5.1",
+    "Proteolytic cleavage of proteins",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "4.2",
+  "title": "4.2 Protein Secondary Structure",
+  "page_a_print": 111,
+  "page_a_print_end": 116,
+  "page_b": 493,
+  "page_b_end": 514,
+  "leh_pages": 6,
+  "cz_pages_allocated": 3.5,
+  "ratio": 1.7,
+  "cz_sources": [
+   [
+    "2.2.2",
+    "Principles of conformation",
+    3.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "17.1",
+  "title": "17.1 Digestion, Mobilization, and Transport of Fats",
+  "page_a_print": 603,
+  "page_a_print_end": 606,
+  "page_b": 2183,
+  "page_b_end": 2197,
+  "leh_pages": 4,
+  "cz_pages_allocated": 2.3,
+  "ratio": 1.7,
+  "cz_sources": [
+   [
+    "8.4.1",
+    "Simple lipids",
+    1.0
+   ],
+   [
+    "8.4.4",
+    "Fatty acids — activation",
+    1.3
+   ]
+  ]
+ },
+ {
+  "leh_section": "4.4",
+  "title": "4.4 Protein Denaturation and Folding",
+  "page_a_print": 129,
+  "page_a_print_end": 136,
+  "page_b": 554,
+  "page_b_end": 580,
+  "leh_pages": 8,
+  "cz_pages_allocated": 5.0,
+  "ratio": 1.6,
+  "cz_sources": [
+   [
+    "2.2.6",
+    "Properties of proteins",
+    2.0
+   ],
+   [
+    "4.3.1",
+    "Non-covalent interactions and folding of the polypeptide chain into its biologically active form",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "6.5",
+  "title": "6.5 Regulatory Enzymes",
+  "page_a_print": 213,
+  "page_a_print_end": 223,
+  "page_b": 853,
+  "page_b_end": 886,
+  "leh_pages": 11,
+  "cz_pages_allocated": 7.0,
+  "ratio": 1.6,
+  "cz_sources": [
+   [
+    "3.7",
+    "Regulatory enzymes; allosteric enzymes",
+    4.0
+   ],
+   [
+    "4.3.3",
+    "Covalent modification of amino acid side chains",
+    2.0
+   ],
+   [
+    "10.2",
+    "Regulatory mechanisms — why, and at what levels",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "17.3",
+  "title": "17.3 Ketone Bodies",
+  "page_a_print": 618,
+  "page_a_print_end": 620,
+  "page_b": 2241,
+  "page_b_end": 2249,
+  "leh_pages": 3,
+  "cz_pages_allocated": 1.8,
+  "ratio": 1.6,
+  "cz_sources": [
+   [
+    "8.4.4",
+    "Fatty acids — activation",
+    1.3
+   ],
+   [
+    "10.1.2",
+    "Lipid metabolism — degradation and ketone bodies",
+    0.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "13.1",
+  "title": "13.1 Bioenergetics and Thermodynamics",
+  "page_a_print": 466,
+  "page_a_print_end": 471,
+  "page_b": 1705,
+  "page_b_end": 1727,
+  "leh_pages": 6,
+  "cz_pages_allocated": 4.0,
+  "ratio": 1.5,
+  "cz_sources": [
+   [
+    "1.4",
+    "Nutrition and metabolism",
+    1.0
+   ],
+   [
+    "1.5",
+    "Energy and life",
+    1.0
+   ],
+   [
+    "6.1",
+    "Principles of bioenergetics",
+    1.0
+   ],
+   [
+    "6.1.1",
+    "Exergonic and endergonic reactions",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "3.1",
+  "title": "3.1 Amino Acids",
+  "page_a_print": 71,
+  "page_a_print_end": 79,
+  "page_b": 361,
+  "page_b_end": 379,
+  "leh_pages": 9,
+  "cz_pages_allocated": 6.0,
+  "ratio": 1.5,
+  "cz_sources": [
+   [
+    "2.1.1",
+    "Structure and occurrence of amino acids",
+    3.0
+   ],
+   [
+    "2.1.2",
+    "Physico-chemical properties of amino acids",
+    1.0
+   ],
+   [
+    "2.1.3",
+    "Chemical reactions of amino acids",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "7.2",
+  "title": "7.2 Polysaccharides",
+  "page_a_print": 241,
+  "page_a_print_end": 246,
+  "page_b": 952,
+  "page_b_end": 968,
+  "leh_pages": 6,
+  "cz_pages_allocated": 4.0,
+  "ratio": 1.5,
+  "cz_sources": [
+   [
+    "7.4",
+    "Polysaccharides",
+    1.0
+   ],
+   [
+    "7.4.1",
+    "Homopolysaccharides -- A. Storage polysaccharides (starch, glycogen, dextrans, inulin, mannans)",
+    2.0
+   ],
+   [
+    "7.4.2",
+    "Heteropolysaccharides (glycosaminoglycans, hyaluronic acid, chondroitin sulfates, heparin)",
+    1.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "20.5",
+  "title": "20.5 Photorespiration and the C[4] and CAM Pathways",
+  "page_a_print": 727,
+  "page_a_print_end": 732,
+  "page_b": 2584,
+  "page_b_end": 2602,
+  "leh_pages": 6,
+  "cz_pages_allocated": 4.0,
+  "ratio": 1.5,
+  "cz_sources": [
+   [
+    "9.2",
+    "Photorespiration — three enzymes, three compartments",
+    2.0
+   ],
+   [
+    "9.3",
+    "C-4 plants — the Hatch–Slack cycle",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "13.4",
+  "title": "13.4 Biological Oxidation-Reduction Reactions",
+  "page_a_print": 488,
+  "page_a_print_end": 496,
+  "page_b": 1788,
+  "page_b_end": 1820,
+  "leh_pages": 9,
+  "cz_pages_allocated": 6.3,
+  "ratio": 1.4,
+  "cz_sources": [
+   [
+    "3.2",
+    "Structure of the enzyme molecule; Coenzymes",
+    4.3
+   ],
+   [
+    "6.2.1",
+    "Oxidation-reduction processes",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "10.1",
+  "title": "10.1 Storage Lipids",
+  "page_a_print": 340,
+  "page_a_print_end": 346,
+  "page_b": 1287,
+  "page_b_end": 1298,
+  "leh_pages": 7,
+  "cz_pages_allocated": 5.0,
+  "ratio": 1.4,
+  "cz_sources": [
+   [
+    "8.1",
+    "Definition and classification",
+    1.0
+   ],
+   [
+    "8.2.1",
+    "Fatty acids — definition, classification, natural occurrence (Tab. 8.2)",
+    2.0
+   ],
+   [
+    "8.2.2",
+    "Simple lipids — Neutral acylglycerols",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "6.3",
+  "title": "6.3 Enzyme Kinetics as an Approach to Understanding Mechanism",
+  "page_a_print": 188,
+  "page_a_print_end": 203,
+  "page_b": 771,
+  "page_b_end": 822,
+  "leh_pages": 16,
+  "cz_pages_allocated": 12.0,
+  "ratio": 1.3,
+  "cz_sources": [
+   [
+    "3.3.1",
+    "Enzyme reaction kinetics; the Michaelis–Menten equation",
+    4.0
+   ],
+   [
+    "3.3.2",
+    "Two-substrate reactions",
+    2.0
+   ],
+   [
+    "3.3.3",
+    "Measurement of enzyme activity",
+    1.0
+   ],
+   [
+    "3.4",
+    "Influence of pH and temperature on enzyme reactions",
+    2.0
+   ],
+   [
+    "3.5",
+    "Inhibition of enzyme reactions",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "24.1",
+  "title": "24.1 Chromosomal Elements",
+  "page_a_print": 885,
+  "page_a_print_end": 890,
+  "page_b": 3098,
+  "page_b_end": 3114,
+  "leh_pages": 6,
+  "cz_pages_allocated": 4.5,
+  "ratio": 1.3,
+  "cz_sources": [
+   [
+    "4.1.3",
+    "DNA structure and biosynthesis explain the principle of heredity — 1) DNA polymerases",
+    4.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "7.5",
+  "title": "7.5 Working with Carbohydrates",
+  "page_a_print": 258,
+  "page_a_print_end": 259,
+  "page_b": 1007,
+  "page_b_end": 1010,
+  "leh_pages": 2,
+  "cz_pages_allocated": 1.5,
+  "ratio": 1.3,
+  "cz_sources": [
+   [
+    "7.10",
+    "Enzymatic cleavage of glycosides and oligosaccharides — glycosidases",
+    1.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "14.6",
+  "title": "14.6 Pentose Phosphate Pathway of Glucose Oxidation",
+  "page_a_print": 546,
+  "page_a_print_end": 551,
+  "page_b": 1988,
+  "page_b_end": 2005,
+  "leh_pages": 6,
+  "cz_pages_allocated": 5.0,
+  "ratio": 1.2,
+  "cz_sources": [
+   [
+    "7.6.2",
+    "Oxidation and decarboxylation of glucose",
+    2.0
+   ],
+   [
+    "7.6.3",
+    "Transfer of three-carbon or two-carbon fragments",
+    1.0
+   ],
+   [
+    "7.7",
+    "Two routes to pentose phosphates — the oxidative pentose phosphate pathway",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "16.3",
+  "title": "16.3 The Hub of Intermediary Metabolism",
+  "page_a_print": 590,
+  "page_a_print_end": 592,
+  "page_b": 2134,
+  "page_b_end": 2142,
+  "leh_pages": 3,
+  "cz_pages_allocated": 2.5,
+  "ratio": 1.2,
+  "cz_sources": [
+   [
+    "10.1.3",
+    "The relation of carbohydrate and lipid metabolism — why fats cannot make sugars",
+    0.5
+   ],
+   [
+    "10.1.4",
+    "The citrate cycle and respiratory chain — energetics and biosynthesis",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "1.1",
+  "title": "1.1 Cellular Foundations",
+  "page_a_print": 2,
+  "page_a_print_end": 9,
+  "page_b": 104,
+  "page_b_end": 127,
+  "leh_pages": 8,
+  "cz_pages_allocated": 7.0,
+  "ratio": 1.1,
+  "cz_sources": [
+   [
+    "1.1",
+    "What is biochemistry?",
+    2.0
+   ],
+   [
+    "1.2",
+    "Living and non-living",
+    2.0
+   ],
+   [
+    "1.3",
+    "Building blocks of living matter: from molecule to cell",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "18.1",
+  "title": "18.1 Metabolic Fates of Amino Groups",
+  "page_a_print": 627,
+  "page_a_print_end": 634,
+  "page_b": 2266,
+  "page_b_end": 2289,
+  "leh_pages": 8,
+  "cz_pages_allocated": 8.0,
+  "ratio": 1.0,
+  "cz_sources": [
+   [
+    "5.1",
+    "Proteolytic cleavage of proteins",
+    2.0
+   ],
+   [
+    "5.2",
+    "Degradation of amino acids",
+    1.0
+   ],
+   [
+    "5.2.1",
+    "Metabolic reactions at the amino acid α-carbon — deamination mechanisms",
+    5.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "20.1",
+  "title": "20.1 Light Absorption",
+  "page_a_print": 701,
+  "page_a_print_end": 707,
+  "page_b": 2498,
+  "page_b_end": 2519,
+  "leh_pages": 7,
+  "cz_pages_allocated": 7.0,
+  "ratio": 1.0,
+  "cz_sources": [
+   [
+    "9",
+    "Photoautotrophy — the five metabolisms specific to autotrophs",
+    1.0
+   ],
+   [
+    "9.1",
+    "Basic processes of photosynthesis — the general equation, thylakoid, chloroplast",
+    3.0
+   ],
+   [
+    "9.1.1",
+    "The three categories of photosynthetic pigment",
+    3.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "4.1",
+  "title": "4.1 Overview of Protein Structure",
+  "page_a_print": 108,
+  "page_a_print_end": 110,
+  "page_b": 479,
+  "page_b_end": 492,
+  "leh_pages": 3,
+  "cz_pages_allocated": 3.5,
+  "ratio": 0.9,
+  "cz_sources": [
+   [
+    "2.2.2",
+    "Principles of conformation",
+    3.5
+   ]
+  ]
+ },
+ {
+  "leh_section": "14.2",
+  "title": "14.2 Feeder Pathways for Glycolysis",
+  "page_a_print": 522,
+  "page_a_print_end": 525,
+  "page_b": 1907,
+  "page_b_end": 1919,
+  "leh_pages": 4,
+  "cz_pages_allocated": 5.5,
+  "ratio": 0.7,
+  "cz_sources": [
+   [
+    "7.6",
+    "Sugar interconversions — introduction (three reaction types)",
+    1.0
+   ],
+   [
+    "7.6.1",
+    "Epimerization and isomerization",
+    1.0
+   ],
+   [
+    "7.10",
+    "Enzymatic cleavage of glycosides and oligosaccharides — glycosidases",
+    1.5
+   ],
+   [
+    "7.11.1",
+    "Hydrolytic cleavage — alpha- and beta-amylases",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "7.1",
+  "title": "7.1 Monosaccharides and Disaccharides",
+  "page_a_print": 230,
+  "page_a_print_end": 241,
+  "page_b": 913,
+  "page_b_end": 951,
+  "leh_pages": 12,
+  "cz_pages_allocated": 20.0,
+  "ratio": 0.6,
+  "cz_sources": [
+   [
+    "7.1",
+    "Monosaccharides",
+    1.0
+   ],
+   [
+    "7.1.1",
+    "Aldoses, ketoses",
+    1.0
+   ],
+   [
+    "7.1.2",
+    "Deriving aldoses and ketoses — the aldose family tree (Obr. 7.1)",
+    3.0
+   ],
+   [
+    "7.1.3",
+    "Hemiacetal/hemiketal forms — formation, anomers, Haworth formulas",
+    4.0
+   ],
+   [
+    "7.1.4",
+    "Mutarotation",
+    1.0
+   ],
+   [
+    "7.2.1",
+    "Sugar esters",
+    1.0
+   ],
+   [
+    "7.2.2",
+    "Sugar acids",
+    2.0
+   ],
+   [
+    "7.2.3",
+    "Sugar alcohols",
+    1.0
+   ],
+   [
+    "7.2.4",
+    "Amino sugars",
+    1.0
+   ],
+   [
+    "7.2.5",
+    "Deoxy sugars",
+    1.0
+   ],
+   [
+    "7.2.6",
+    "Glycosides",
+    2.0
+   ],
+   [
+    "7.3",
+    "Oligosaccharides — definitions and non-reducing oligosaccharides",
+    2.0
+   ]
+  ]
+ },
+ {
+  "leh_section": "6.1",
+  "title": "6.1 An Introduction to Enzymes",
+  "page_a_print": 177,
+  "page_a_print_end": 179,
+  "page_b": 730,
+  "page_b_end": 736,
+  "leh_pages": 3,
+  "cz_pages_allocated": 6.3,
+  "ratio": 0.5,
+  "cz_sources": [
+   [
+    "3.1",
+    "Classification and nomenclature of enzymes",
+    2.0
+   ],
+   [
+    "3.2",
+    "Structure of the enzyme molecule; Coenzymes",
+    4.3
+   ]
+  ]
+ },
+ {
+  "leh_section": "12.7",
+  "title": "12.7 Regulation of Transcription by Nuclear Hormone Receptors",
+  "page_a_print": 446,
+  "page_a_print_end": 446,
+  "page_b": 1633,
+  "page_b_end": 1637,
+  "leh_pages": 1,
+  "cz_pages_allocated": 2.3,
+  "ratio": 0.4,
+  "cz_sources": [
+   [
+    "10.3",
+    "Hormones — definition, the gland hierarchy, and hormonal receptors",
+    2.3
+   ]
+  ]
+ }
+]

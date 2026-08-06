@@ -1,0 +1,263 @@
+Where each exam topic actually sits in Lehninger 8.
+Search runs on B's clean text layer; the A page comes from the step-2 anchor map.
+Pages outside every numbered section (Solutions / Glossary / 348-page Index) are
+reported as (outside chapters) and are NOT evidence of coverage.
+
+### "glyoxylate cycle"  -- 20 pages, 28 occurrences
+      13 hits  (outside chapters)
+      11 hits  20.6    20.6 Biosynthesis of Starch, Sucrose, and Cellulose      A pp.732-739
+       2 hits  16.3    16.3 The Hub of Intermediary Metabolism                  A pp.590-592
+       1 hits  14.4    14.4 Gluconeogenesis                                     A pp.533-538
+       1 hits  17.2    17.2 Oxidation of Fatty Acids                            A pp.607-618
+
+### "nitrogenase"  -- 18 pages, 59 occurrences
+      50 hits  22.1    22.1 Overview of Nitrogen Metabolism                     A pp.795-804
+       6 hits  (outside chapters)
+       1 hits  3.2     3.2 Peptides and Proteins                                A pp.79-83
+       1 hits  6.1     6.1 An Introduction to Enzymes                           A pp.177-179
+       1 hits  6.5     6.5 Regulatory Enzymes                                   A pp.213-223
+
+### "porphyrin"  -- 35 pages, 60 occurrences
+      18 hits  22.3    22.3 Molecules Derived from Amino Acids                  A pp.816-824
+      16 hits  (outside chapters)
+      12 hits  5.1     5.1 Reversible Binding of a Protein to a Ligand: Oxygen- A pp.148-164
+       5 hits  13.2    13.2 Chemical Logic and Common Biochemical Reactions     A pp.472-478
+       3 hits  19.1    19.1 The Mitochondrial Respiratory Chain                 A pp.660-674
+       1 hits  3.2     3.2 Peptides and Proteins                                A pp.79-83
+
+### "urea cycle"  -- 54 pages, 97 occurrences
+      42 hits  (outside chapters)
+      41 hits  18.2    18.2 Nitrogen Excretion and the Urea Cycle               A pp.634-640
+       5 hits  22.2    22.2 Biosynthesis of Amino Acids                         A pp.805-816
+       3 hits  22.4    22.4 Biosynthesis and Degradation of Nucleotides         A pp.824-837
+       2 hits  3.1     3.1 Amino Acids                                          A pp.71-79
+       1 hits  18.1    18.1 Metabolic Fates of Amino Groups                     A pp.627-634
+
+### "lac operon"  -- 28 pages, 52 occurrences
+      25 hits  (outside chapters)
+      15 hits  28.1    28.1 The Proteins and RNAs of Gene Regulation            A pp.1055-1065
+      12 hits  28.2    28.2 Regulation of Gene Expression in Bacteria           A pp.1065-1074
+
+### "trp operon"  -- 6 pages, 9 occurrences
+       7 hits  28.2    28.2 Regulation of Gene Expression in Bacteria           A pp.1065-1074
+       2 hits  (outside chapters)
+
+### "Michaelis-Menten"  -- 33 pages, 51 occurrences
+      24 hits  6.3     6.3 Enzyme Kinetics as an Approach to Understanding Mech A pp.188-203
+      22 hits  (outside chapters)
+       2 hits  6.5     6.5 Regulatory Enzymes                                   A pp.213-223
+       1 hits  11.3    11.3 Solute Transport across Membranes                   A pp.385-403
+       1 hits  13.5    13.5 Regulation of Metabolic Pathways                    A pp.497-503
+       1 hits  26.4    26.4 Catalytic RNAs and the RNA World Hypothesis         A pp.996-1001
+
+### "mutarotation"  -- 9 pages, 9 occurrences
+       5 hits  (outside chapters)
+       4 hits  7.1     7.1 Monosaccharides and Disaccharides                    A pp.230-241
+
+### "Haworth"  -- 15 pages, 26 occurrences
+      18 hits  7.1     7.1 Monosaccharides and Disaccharides                    A pp.230-241
+       7 hits  (outside chapters)
+       1 hits  7.2     7.2 Polysaccharides                                      A pp.241-246
+
+### "glycosaminoglycan"  -- 33 pages, 49 occurrences
+      19 hits  7.3     7.3 Glycoconjugates: Proteoglycans, Glycoproteins, and G A pp.247-253
+      15 hits  (outside chapters)
+      12 hits  7.2     7.2 Polysaccharides                                      A pp.241-246
+       3 hits  7.5     7.5 Working with Carbohydrates                           A pp.258-259
+
+### "peptidoglycan"  -- 16 pages, 29 occurrences
+       9 hits  7.2     7.2 Polysaccharides                                      A pp.241-246
+       7 hits  1.1     1.1 Cellular Foundations                                 A pp.2-9
+       7 hits  6.4     6.4 Examples of Enzymatic Reactions                      A pp.203-213
+       4 hits  (outside chapters)
+       1 hits  7.3     7.3 Glycoconjugates: Proteoglycans, Glycoproteins, and G A pp.247-253
+       1 hits  22.3    22.3 Molecules Derived from Amino Acids                  A pp.816-824
+
+### "Ramachandran"  -- 10 pages, 13 occurrences
+       7 hits  (outside chapters)
+       6 hits  4.2     4.2 Protein Secondary Structure                          A pp.111-116
+
+### "280 nm"  -- 2 pages, 4 occurrences
+       4 hits  3.1     3.1 Amino Acids                                          A pp.71-79
+
+### "260 nm"  -- 4 pages, 5 occurrences
+       3 hits  8.1     8.1 Some Basic Definitions and Conventions               A pp.263-269
+       1 hits  8.3     8.3 Nucleic Acid Chemistry                               A pp.278-293
+       1 hits  (outside chapters)
+
+### "isoelectric point"  -- 11 pages, 15 occurrences
+       7 hits  (outside chapters)
+       4 hits  3.1     3.1 Amino Acids                                          A pp.71-79
+       4 hits  3.3     3.3 Working with Proteins                                A pp.83-90
+
+### "Cori cycle"  -- 7 pages, 8 occurrences
+       3 hits  23.2    23.2 Tissue-Specific Metabolism                          A pp.848-858
+       1 hits  14.3    14.3 Fates of Pyruvate                                   A pp.525-532
+       1 hits  14.4    14.4 Gluconeogenesis                                     A pp.533-538
+       1 hits  15.2    15.2 Breakdown and Synthesis of Glycogen                 A pp.558-564
+       1 hits  18.1    18.1 Metabolic Fates of Amino Groups                     A pp.627-634
+       1 hits  (outside chapters)
+
+### "ketone bodies"  -- 39 pages, 70 occurrences
+      21 hits  (outside chapters)
+      19 hits  17.3    17.3 Ketone Bodies                                       A pp.618-620
+       8 hits  23.3    23.3 Hormonal Regulation of Fuel Metabolism              A pp.859-867
+       7 hits  23.5    23.5 Diabetes Mellitus                                   A pp.875-880
+       6 hits  23.2    23.2 Tissue-Specific Metabolism                          A pp.848-858
+       5 hits  18.3    18.3 Pathways of Amino Acid Degradation                  A pp.640-654
+
+### "eicosanoid"  -- 40 pages, 55 occurrences
+      26 hits  (outside chapters)
+      15 hits  21.1    21.1 Biosynthesis of Fatty Acids and Eicosanoids         A pp.745-760
+       9 hits  10.3    10.3 Lipids as Signals, Cofactors, and Pigments          A pp.353-360
+       2 hits  23.1    23.1 Hormone Structure and Action                        A pp.842-848
+       2 hits  23.4    23.4 Obesity and the Regulation of Body Mass             A pp.867-875
+       1 hits  13.2    13.2 Chemical Logic and Common Biochemical Reactions     A pp.472-478
+
+### "terpene"  -- 2 pages, 2 occurrences
+       2 hits  (outside chapters)
+
+### "isoprenoid"  -- 28 pages, 35 occurrences
+      15 hits  (outside chapters)
+       9 hits  21.4    21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesi A pp.772-789
+       5 hits  10.3    10.3 Lipids as Signals, Cofactors, and Pigments          A pp.353-360
+       2 hits  11.1    11.1 The Composition and Architecture of Membranes       A pp.367-376
+       2 hits  19.1    19.1 The Mitochondrial Respiratory Chain                 A pp.660-674
+       1 hits  10.4    10.4 Working with Lipids                                 A pp.361-363
+
+### "phospholipase"  -- 33 pages, 49 occurrences
+      19 hits  (outside chapters)
+      10 hits  10.2    10.2 Structural Lipids in Membranes                      A pp.346-353
+       5 hits  12.2    12.2 G Protein–Coupled Receptors and Second Messengers   A pp.412-428
+       4 hits  10.4    10.4 Working with Lipids                                 A pp.361-363
+       4 hits  21.1    21.1 Biosynthesis of Fatty Acids and Eicosanoids         A pp.745-760
+       2 hits  10.3    10.3 Lipids as Signals, Cofactors, and Pigments          A pp.353-360
+
+### "lipid bilayer"  -- 54 pages, 73 occurrences
+      29 hits  (outside chapters)
+      23 hits  11.1    11.1 The Composition and Architecture of Membranes       A pp.367-376
+      11 hits  11.3    11.3 Solute Transport across Membranes                   A pp.385-403
+       6 hits  11.2    11.2 Membrane Dynamics                                   A pp.377-384
+       2 hits  19.1    19.1 The Mitochondrial Respiratory Chain                 A pp.660-674
+       1 hits  1.1     1.1 Cellular Foundations                                 A pp.2-9
+
+### "facilitated diffusion"  -- 2 pages, 2 occurrences
+       1 hits  11.3    11.3 Solute Transport across Membranes                   A pp.385-403
+       1 hits  (outside chapters)
+
+### "second messenger"  -- 62 pages, 80 occurrences
+      29 hits  (outside chapters)
+      23 hits  12.2    12.2 G Protein–Coupled Receptors and Second Messengers   A pp.412-428
+       7 hits  12.3    12.3 GPCRs in Vision, Olfaction, and Gustation           A pp.429-432
+       4 hits  8.4     8.4 Other Functions of Nucleotides                       A pp.294-296
+       4 hits  12.6    12.6 Gated Ion Channels                                  A pp.442-445
+       2 hits  23.1    23.1 Hormone Structure and Action                        A pp.842-848
+
+### "photorespiration"  -- 16 pages, 33 occurrences
+      18 hits  (outside chapters)
+      15 hits  20.5    20.5 Photorespiration and the C[4] and CAM Pathways      A pp.727-732
+
+### "Hatch"  -- 3 pages, 3 occurrences
+       3 hits  (outside chapters)
+
+### "Slack"  -- 1 pages, 1 occurrences
+       1 hits  13.3    13.3 Phosphoryl Group Transfers and ATP                  A pp.478-488
+
+### "C4 plants"  -- 18 pages, 27 occurrences
+      14 hits  (outside chapters)
+      12 hits  20.5    20.5 Photorespiration and the C[4] and CAM Pathways      A pp.727-732
+       1 hits  20.4    20.4 CO[2]-Assimilation Reactions                        A pp.719-727
+
+### "secondary metabolite"  -- 5 pages, 5 occurrences
+       3 hits  (outside chapters)
+       1 hits  1.2     1.2 Chemical Foundations                                 A pp.10-18
+       1 hits  10.3    10.3 Lipids as Signals, Cofactors, and Pigments          A pp.353-360
+
+### "proteasome"  -- 18 pages, 24 occurrences
+       8 hits  27.3    27.3 Protein Targeting and Degradation                   A pp.1040-1050
+       7 hits  (outside chapters)
+       3 hits  12.8    12.8 Regulation of the Cell Cycle by Protein Kinases     A pp.446-450
+       2 hits  11.3    11.3 Solute Transport across Membranes                   A pp.385-403
+       2 hits  21.4    21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesi A pp.772-789
+       1 hits  1.1     1.1 Cellular Foundations                                 A pp.2-9
+
+### "signal peptide"  -- 1 pages, 1 occurrences
+       1 hits  26.2    26.2 RNA Processing                                      A pp.972-988
+
+### "chaperone"  -- 39 pages, 57 occurrences
+      20 hits  4.4     4.4 Protein Denaturation and Folding                     A pp.129-136
+      15 hits  (outside chapters)
+       4 hits  24.3    24.3 The Structure of Chromosomes                        A pp.898-910
+       3 hits  27.2    27.2 Protein Synthesis                                   A pp.1015-1040
+       3 hits  27.3    27.3 Protein Targeting and Degradation                   A pp.1040-1050
+       3 hits  28.3    28.3 Regulation of Gene Expression in Eukaryotes         A pp.1075-1092
+
+### "supercoil"  -- 62 pages, 159 occurrences
+      91 hits  24.2    24.2 DNA Supercoiling                                    A pp.890-898
+      42 hits  (outside chapters)
+      20 hits  24.3    24.3 The Structure of Chromosomes                        A pp.898-910
+       4 hits  26.1    26.1 DNA-Dependent Synthesis of RNA                      A pp.961-972
+       2 hits  25.1    25.1 DNA Replication                                     A pp.914-930
+
+### "telomere"  -- 30 pages, 60 occurrences
+      29 hits  26.3    26.3 RNA-Dependent Synthesis of RNA and DNA              A pp.988-995
+      15 hits  (outside chapters)
+       8 hits  24.1    24.1 Chromosomal Elements                                A pp.885-890
+       5 hits  9.1     9.1 Studying Genes and Their Products                    A pp.301-316
+       3 hits  9.3     9.3 Genomics and the Human Story                         A pp.326-334
+
+### "restriction endonuclease"  -- 25 pages, 48 occurrences
+      35 hits  9.1     9.1 Studying Genes and Their Products                    A pp.301-316
+      12 hits  (outside chapters)
+       1 hits  25.1    25.1 DNA Replication                                     A pp.914-930
+
+### "PCR"  -- 148 pages, 289 occurrences
+     149 hits  (outside chapters)
+      34 hits  8.3     8.3 Nucleic Acid Chemistry                               A pp.278-293
+      31 hits  9.1     9.1 Studying Genes and Their Products                    A pp.301-316
+      29 hits  12.2    12.2 G Protein–Coupled Receptors and Second Messengers   A pp.412-428
+      19 hits  12.3    12.3 GPCRs in Vision, Olfaction, and Gustation           A pp.429-432
+       9 hits  13.3    13.3 Phosphoryl Group Transfers and ATP                  A pp.478-488
+
+### "CRISPR"  -- 22 pages, 50 occurrences
+      36 hits  9.2     9.2 Exploring Protein Function on the Scale of Cells or  A pp.317-326
+      13 hits  (outside chapters)
+       1 hits  22.4    22.4 Biosynthesis and Degradation of Nucleotides         A pp.824-837
+
+### "antibody"  -- 58 pages, 101 occurrences
+      50 hits  (outside chapters)
+      21 hits  5.2     5.2 Complementary Interactions between Proteins and Liga A pp.164-168
+      13 hits  9.2     9.2 Exploring Protein Function on the Scale of Cells or  A pp.317-326
+       4 hits  25.3    25.3 DNA Recombination                                   A pp.940-956
+       3 hits  24.3    24.3 The Structure of Chromosomes                        A pp.898-910
+       2 hits  12.9    12.9 Oncogenes, Tumor Suppressor Genes, and Programmed C A pp.451-456
+
+### "myoglobin"  -- 58 pages, 102 occurrences
+      44 hits  5.1     5.1 Reversible Binding of a Protein to a Ligand: Oxygen- A pp.148-164
+      28 hits  4.3     4.3 Protein Tertiary and Quaternary Structures           A pp.116-129
+      16 hits  (outside chapters)
+       4 hits  4.5     4.5 Determination of Protein and Biomolecular Structures A pp.136-142
+       3 hits  4.4     4.4 Protein Denaturation and Folding                     A pp.129-136
+       2 hits  15.2    15.2 Breakdown and Synthesis of Glycogen                 A pp.558-564
+
+### "molecular motor"  -- 7 pages, 8 occurrences
+       3 hits  (outside chapters)
+       3 hits  5.3     5.3 Protein Interactions Modulated by Chemical Energy: A A pp.168-172
+       1 hits  11.3    11.3 Solute Transport across Membranes                   A pp.385-403
+       1 hits  20.6    20.6 Biosynthesis of Starch, Sucrose, and Cellulose      A pp.732-739
+
+### "obesity"  -- 31 pages, 45 occurrences
+      19 hits  23.4    23.4 Obesity and the Regulation of Body Mass             A pp.867-875
+       9 hits  (outside chapters)
+       7 hits  23.5    23.5 Diabetes Mellitus                                   A pp.875-880
+       5 hits  21.1    21.1 Biosynthesis of Fatty Acids and Eicosanoids         A pp.745-760
+       1 hits  4.3     4.3 Protein Tertiary and Quaternary Structures           A pp.116-129
+       1 hits  7.1     7.1 Monosaccharides and Disaccharides                    A pp.230-241
+
+### "diabetes"  -- 113 pages, 218 occurrences
+      80 hits  (outside chapters)
+      64 hits  23.5    23.5 Diabetes Mellitus                                   A pp.875-880
+      10 hits  7.1     7.1 Monosaccharides and Disaccharides                    A pp.230-241
+      10 hits  21.2    21.2 Biosynthesis of Triacylglycerols                    A pp.760-763
+       9 hits  17.3    17.3 Ketone Bodies                                       A pp.618-620
+       7 hits  19.5    19.5 Mitochondrial Genes: Their Origin and the Effects o A pp.692-696

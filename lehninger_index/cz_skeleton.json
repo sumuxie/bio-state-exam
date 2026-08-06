@@ -1,0 +1,3111 @@
+[
+ {
+  "chapter": 1,
+  "section": "1.1",
+  "enTitle": "What is biochemistry?",
+  "czTitle": "Co je biochemie?",
+  "pages": [
+   8,
+   9
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "1-1"
+  ],
+  "terms": [
+   "Kjeldahl method",
+   "biochemistry",
+   "biotechnology",
+   "molecular biology",
+   "physiological chemistry"
+  ]
+ },
+ {
+  "chapter": 1,
+  "section": "1.2",
+  "enTitle": "Living and non-living",
+  "czTitle": "Živé a neživé",
+  "pages": [
+   10,
+   11
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "1-2"
+  ],
+  "terms": [
+   "chirality",
+   "macrobiogenic (primary biogenic) elements",
+   "microbiogenic elements",
+   "oligobiogenic elements",
+   "reproduction",
+   "variable / trace elements"
+  ]
+ },
+ {
+  "chapter": 1,
+  "section": "1.3",
+  "enTitle": "Building blocks of living matter: from molecule to cell",
+  "czTitle": "Stavební kameny živé hmoty: od molekuly k buňce",
+  "pages": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16
+  ],
+  "page_count": 6,
+  "nodes": 1,
+  "node_ids": [
+   "1-3"
+  ],
+  "terms": [
+   "in silico modeling",
+   "in vitro",
+   "in vivo",
+   "reductionism",
+   "systems approach"
+  ]
+ },
+ {
+  "chapter": 1,
+  "section": "1.4",
+  "enTitle": "Nutrition and metabolism",
+  "czTitle": "Výživa a metabolismus",
+  "pages": [
+   16,
+   17
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "1-4"
+  ],
+  "terms": [
+   "anabolism",
+   "autotrophic (lithotrophic)",
+   "catabolism",
+   "chemotrophic",
+   "facultative anaerobe",
+   "heterotrophic (organotrophic)",
+   "macroergic (high-energy) compounds",
+   "metabolism",
+   "phototrophic",
+   "strict (obligate) anaerobe"
+  ]
+ },
+ {
+  "chapter": 1,
+  "section": "1.5",
+  "enTitle": "Energy and life",
+  "czTitle": "Energie a život",
+  "pages": [
+   17,
+   18
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "1-5"
+  ],
+  "terms": [
+   "Gibbs energy",
+   "activity",
+   "chemical potential",
+   "coupling of reactions",
+   "endergonic reaction",
+   "enthalpy",
+   "exergonic reaction",
+   "homeostasis",
+   "principle of local equilibrium",
+   "state quantity",
+   "stationary (steady) state"
+  ]
+ },
+ {
+  "chapter": 1,
+  "section": "1.6",
+  "enTitle": "Origin and evolution of life",
+  "czTitle": "Vznik a vývoj života",
+  "pages": [
+   18,
+   19,
+   20
+  ],
+  "page_count": 3,
+  "nodes": 1,
+  "node_ids": [
+   "1-6"
+  ],
+  "terms": [
+   "creationism",
+   "intelligent design"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.1.1",
+  "enTitle": "Structure and occurrence of amino acids",
+  "czTitle": "Struktura aminokyselin a výskyt",
+  "pages": [
+   21,
+   22,
+   23
+  ],
+  "page_count": 3,
+  "nodes": 1,
+  "node_ids": [
+   "2-1-1"
+  ],
+  "terms": [
+   "citrulline and ornithine",
+   "guanidino group",
+   "imidazole",
+   "proline",
+   "proteinogenic amino acids",
+   "side chain (R)",
+   "β-alanine"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.1.2",
+  "enTitle": "Physico-chemical properties of amino acids",
+  "czTitle": "Fyzikálně chemické vlastnosti aminokyselin",
+  "pages": [
+   23,
+   24
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "2-1-2"
+  ],
+  "terms": [
+   "L-configuration series",
+   "asymmetric carbon",
+   "electrophoresis",
+   "ion-exchange chromatography",
+   "isoelectric point (pI)"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.1.3",
+  "enTitle": "Chemical reactions of amino acids",
+  "czTitle": "Chemické reakce aminokyselin",
+  "pages": [
+   24,
+   25
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "2-1-3"
+  ],
+  "terms": [
+   "ninhydrin reaction",
+   "protection of amino groups",
+   "α-amino alcohol"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.1.4",
+  "enTitle": "Formation of the peptide bond",
+  "czTitle": "Tvorba peptidové vazby",
+  "pages": [
+   26
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "2-1-4"
+  ],
+  "terms": [
+   "C-terminal amino acid",
+   "N-terminal amino acid",
+   "oligopeptide",
+   "peptide bond",
+   "polypeptide",
+   "protein"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.2.1",
+  "enTitle": "Amino acid sequence (primary structure)",
+  "czTitle": "Sekvence aminokyselin (primární struktura)",
+  "pages": [
+   26,
+   27
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "2-2-1"
+  ],
+  "terms": [
+   "molecular pathology",
+   "primary structure",
+   "sickle cell anaemia"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.2.2",
+  "enTitle": "Principles of conformation",
+  "czTitle": "Principy konformace",
+  "pages": [
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33
+  ],
+  "page_count": 7,
+  "nodes": 1,
+  "node_ids": [
+   "2-2-2"
+  ],
+  "terms": [
+   "amide plane",
+   "cis-trans isomerism",
+   "conformation",
+   "hydrophobic effect",
+   "nonpolar core"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.2.3",
+  "enTitle": "Conformation of proteins — the levels of structure",
+  "czTitle": "Konformace proteinů",
+  "pages": [
+   33,
+   34
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "2-2-3"
+  ],
+  "terms": [
+   "domain",
+   "quaternary structure",
+   "secondary structure",
+   "supersecondary structure",
+   "tertiary structure",
+   "βαβ motif"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.2.4",
+  "enTitle": "Types of construction of the protein molecule",
+  "czTitle": "Typy stavby proteinové molekuly",
+  "pages": [
+   34,
+   35
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "2-2-4"
+  ],
+  "terms": [
+   "fibrillar (fibrous) proteins",
+   "fibrinogen → fibrin",
+   "fibroin",
+   "globular proteins",
+   "keratin",
+   "protofibril",
+   "random coil"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.2.5",
+  "enTitle": "Simple and conjugated proteins",
+  "czTitle": "Jednoduché a složené proteiny",
+  "pages": [
+   36,
+   37
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "2-2-5"
+  ],
+  "terms": [
+   "FeS proteins",
+   "N-glycosidic linkage",
+   "O-glycosidic linkage",
+   "ceruloplasmin",
+   "conjugated protein",
+   "ferritin",
+   "heme",
+   "phosvitin",
+   "proteoglycans",
+   "simple protein",
+   "transferrin"
+  ]
+ },
+ {
+  "chapter": 2,
+  "section": "2.2.6",
+  "enTitle": "Properties of proteins",
+  "czTitle": "Vlastnosti proteinů",
+  "pages": [
+   37,
+   38,
+   39,
+   40
+  ],
+  "page_count": 4,
+  "nodes": 1,
+  "node_ids": [
+   "2-2-6"
+  ],
+  "terms": [
+   "Svedberg equation",
+   "Tyndall effect",
+   "gel (permeation) chromatography",
+   "homodisperse system",
+   "sedimentation coefficient"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.1",
+  "enTitle": "Classification and nomenclature of enzymes",
+  "czTitle": "Klasifikace a názvosloví enzymů",
+  "pages": [
+   41,
+   42
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "3-1"
+  ],
+  "terms": [
+   "code number (E.C.)",
+   "hydrolases",
+   "isomerases",
+   "ligases (synthetases)",
+   "lyases (synthases)",
+   "oxidoreductases",
+   "recommended name",
+   "systematic name",
+   "transferases"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.2",
+  "enTitle": "Structure of the enzyme molecule; Coenzymes",
+  "czTitle": "Struktura molekuly enzymu; Koenzymy",
+  "pages": [
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54
+  ],
+  "page_count": 13,
+  "nodes": 1,
+  "node_ids": [
+   "3-2"
+  ],
+  "terms": [
+   "apoenzyme",
+   "biotin",
+   "coenzyme",
+   "coenzyme A",
+   "cofactor",
+   "holoenzyme",
+   "metalloenzyme",
+   "prosthetic group",
+   "pyridoxal phosphate",
+   "thiamine pyrophosphate (TPP)",
+   "vitamins"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.3.1",
+  "enTitle": "Enzyme reaction kinetics; the Michaelis–Menten equation",
+  "czTitle": "Kinetika enzymové reakce; Rovnice Michaelise a Mentenové",
+  "pages": [
+   54,
+   55,
+   56,
+   57
+  ],
+  "page_count": 4,
+  "nodes": 1,
+  "node_ids": [
+   "3-3-1"
+  ],
+  "terms": [
+   "Cornish-Bowden & Eisenthal (direct linear) plot",
+   "Lineweaver–Burk plot",
+   "Michaelis constant K_m",
+   "V_lim (limiting / maximal rate)",
+   "activation energy",
+   "catalysis",
+   "enzyme–substrate complex (EA)"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.3.2",
+  "enTitle": "Two-substrate reactions",
+  "czTitle": "Dvousubstrátové reakce",
+  "pages": [
+   57,
+   58
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "3-3-2"
+  ],
+  "terms": [
+   "ordered mechanism",
+   "ping-pong mechanism",
+   "random mechanism",
+   "ternary complex"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.3.3",
+  "enTitle": "Measurement of enzyme activity",
+  "czTitle": "Měření enzymové aktivity",
+  "pages": [
+   58
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "3-3-3"
+  ],
+  "terms": [
+   "katal",
+   "molecular activity (MA)",
+   "specific activity",
+   "unit U",
+   "zeroth-order kinetics"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.4",
+  "enTitle": "Influence of pH and temperature on enzyme reactions",
+  "czTitle": "Vliv pH a teploty na enzymové reakce",
+  "pages": [
+   58,
+   59
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "3-4"
+  ],
+  "terms": [
+   "pH optimum",
+   "temperature optimum",
+   "thermal denaturation",
+   "thermophilic bacteria"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.5",
+  "enTitle": "Inhibition of enzyme reactions",
+  "czTitle": "Inhibice enzymových reakcí",
+  "pages": [
+   59,
+   60,
+   61
+  ],
+  "page_count": 3,
+  "nodes": 1,
+  "node_ids": [
+   "3-5"
+  ],
+  "terms": [
+   "irreversible inhibition",
+   "mixed inhibition",
+   "modulators",
+   "non-competitive inhibition",
+   "reversible inhibition",
+   "uncompetitive inhibition"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.6",
+  "enTitle": "Mechanism of enzyme action",
+  "czTitle": "Mechanismus působení enzymů",
+  "pages": [
+   61,
+   62
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "3-6"
+  ],
+  "terms": [
+   "active centre",
+   "covalent catalysis",
+   "general acid-base catalysis",
+   "induced fit",
+   "proximity effect",
+   "specificity of action",
+   "substrate specificity"
+  ]
+ },
+ {
+  "chapter": 3,
+  "section": "3.7",
+  "enTitle": "Regulatory enzymes; allosteric enzymes",
+  "czTitle": "Regulační enzymy; Alosterické enzymy",
+  "pages": [
+   62,
+   63,
+   64,
+   65
+  ],
+  "page_count": 4,
+  "nodes": 1,
+  "node_ids": [
+   "3-7"
+  ],
+  "terms": [
+   "allosteric enzyme",
+   "allosteric modulator",
+   "allosteric site",
+   "covalently modulated enzymes",
+   "regulatory enzymes"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.1",
+  "enTitle": "Nucleic acids are the basic molecules of heredity",
+  "czTitle": "Nukleové kyseliny jsou základní molekuly dědičnosti",
+  "pages": [
+   66,
+   67
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "4-1"
+  ],
+  "terms": [
+   "N-glycosidic bond",
+   "adenylate (AMP)",
+   "hypoxanthine (Hyp)",
+   "lactam / lactim tautomers",
+   "nucleoside",
+   "nucleotide"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.1.1.1",
+  "enTitle": "Biosynthesis of nucleotides; biosynthesis of purine nucleotides",
+  "czTitle": "Biosyntéza nukleotidů; Biosyntéza purinových nukleotidů",
+  "pages": [
+   67,
+   68,
+   69,
+   70
+  ],
+  "page_count": 4,
+  "nodes": 1,
+  "node_ids": [
+   "4-1-1-1"
+  ],
+  "terms": [
+   "N10-formyltetrahydrofolate",
+   "PRPP (5-phosphoribosyl-1-pyrophosphate)",
+   "adenylosuccinate",
+   "inosine monophosphate (IMP, inosinate)",
+   "xanthylate (XMP)"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.1.1.2",
+  "enTitle": "Biosynthesis of pyrimidine nucleotides",
+  "czTitle": "Biosyntéza pyrimidinových nukleotidů",
+  "pages": [
+   70,
+   71,
+   72
+  ],
+  "page_count": 3,
+  "nodes": 1,
+  "node_ids": [
+   "4-1-1-2"
+  ],
+  "terms": [
+   "aspartate transcarbamoylase (ATCase)",
+   "carbamoyl phosphate",
+   "dihydroorotate",
+   "orotate (orotic acid)",
+   "ribonucleotide reductase"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.1.2",
+  "enTitle": "Structure of nucleic acids",
+  "czTitle": "Struktura nukleových kyselin",
+  "pages": [
+   72,
+   73,
+   74,
+   75
+  ],
+  "page_count": 4,
+  "nodes": 1,
+  "node_ids": [
+   "4-1-2"
+  ],
+  "terms": [
+   "A-DNA / Z-DNA",
+   "antiparallel strands",
+   "base pairing",
+   "base stacking",
+   "double helix",
+   "phosphodiester bond"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.1.3",
+  "enTitle": "DNA structure and biosynthesis explain the principle of heredity — 1) DNA polymerases",
+  "czTitle": "Struktura a biosyntéza DNA vysvětluje princip dědičnosti — 1) DNA-polymerasy",
+  "pages": [
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84
+  ],
+  "page_count": 9,
+  "nodes": 2,
+  "node_ids": [
+   "4-1-3-1",
+   "4-1-3-2"
+  ],
+  "terms": [
+   "3'→5' exonuclease (proofreading) activity",
+   "5'→3' nuclease activity (nick translation)",
+   "DNA ligase",
+   "DNA polymerase I",
+   "DNA polymerase III",
+   "DNA replication (reduplication)",
+   "Klenow fragment",
+   "Okazaki fragments",
+   "SSB (single-strand binding) protein",
+   "helicase (DnaB protein)",
+   "lagging strand",
+   "leading strand",
+   "primase",
+   "replication fork",
+   "supercoiled (superhelical) DNA",
+   "template",
+   "theta structure"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.1.4",
+  "enTitle": "DNA is transcribed into RNA — types and properties of RNA",
+  "czTitle": "DNA je přepisována do RNA — druhy a vlastnosti RNA",
+  "pages": [
+   85,
+   86,
+   87,
+   88,
+   89,
+   90,
+   91
+  ],
+  "page_count": 7,
+  "nodes": 2,
+  "node_ids": [
+   "4-1-4-1",
+   "4-1-4-2"
+  ],
+  "terms": [
+   "RNA polymerase holoenzyme",
+   "central dogma (of molecular biology)",
+   "coding (template) strand",
+   "exon / intron",
+   "heterogeneous nuclear RNA (hnRNA)",
+   "intrinsic (hairpin) terminator",
+   "messenger RNA (mRNA)",
+   "post-transcriptional processing",
+   "primary transcript",
+   "promoter",
+   "rho (ρ) factor",
+   "ribosomal RNA (rRNA)",
+   "sigma (σ) factor",
+   "small nuclear RNA (snRNA)",
+   "transcription",
+   "transcription bubble",
+   "transfer RNA (tRNA) — cloverleaf structure"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.1.5",
+  "enTitle": "Degradation of nucleic acids",
+  "czTitle": "Odbourávání nukleových kyselin",
+  "pages": [
+   91,
+   92
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "4-1-5"
+  ],
+  "terms": [
+   "endonuclease",
+   "exonuclease",
+   "nuclease (type a / type b)",
+   "nucleotidase",
+   "uric acid",
+   "β-alanine / 3-aminobutyric acid"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.2.1",
+  "enTitle": "The gene sequence determines the order of amino acids in proteins",
+  "czTitle": "Sekvence genu určuje pořadí aminokyselin v proteinech",
+  "pages": [
+   92,
+   93,
+   94
+  ],
+  "page_count": 3,
+  "nodes": 1,
+  "node_ids": [
+   "4-2-1"
+  ],
+  "terms": [
+   "anticodon",
+   "codon",
+   "degeneracy of the code",
+   "initiation codon AUG",
+   "selenocysteine",
+   "termination (stop) codons",
+   "transcription",
+   "translation"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.2.2",
+  "enTitle": "Protein synthesis takes place in ribosomes",
+  "czTitle": "Proteosyntéza probíhá v ribosomech",
+  "pages": [
+   94,
+   95
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "4-2-2"
+  ],
+  "terms": [
+   "fibroin",
+   "large subunit",
+   "polyribosome (polysome)",
+   "ribosome",
+   "sedimentation constant",
+   "small subunit"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.2.3",
+  "enTitle": "Phases of protein synthesis (I): amino acid activation, initiation and elongation",
+  "czTitle": "Fáze proteosyntézy (I): aktivace aminokyselin, iniciace a elongace",
+  "pages": [
+   95,
+   96,
+   97,
+   98,
+   99,
+   100,
+   101,
+   102
+  ],
+  "page_count": 8,
+  "nodes": 2,
+  "node_ids": [
+   "4-2-3-1",
+   "4-2-3-2"
+  ],
+  "terms": [
+   "A-site",
+   "P-site",
+   "Shine-Dalgarno sequence",
+   "aminoacyl-adenylate",
+   "aminoacyl-tRNA synthetase",
+   "eIF-4F",
+   "elongation factors",
+   "eukaryotic release factor",
+   "formylmethionine",
+   "formylmethionyl-tRNA",
+   "initiation factors",
+   "peptidyl-transferase",
+   "release factor (RF)",
+   "ribosome-releasing factor",
+   "termination (stop) codon",
+   "ternary complex",
+   "translocation"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.2.4",
+  "enTitle": "Regulation of protein synthesis (I): the lactose and tryptophan operons",
+  "czTitle": "Regulace proteosyntézy (I): operon laktosy a tryptofanu",
+  "pages": [
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108
+  ],
+  "page_count": 7,
+  "nodes": 2,
+  "node_ids": [
+   "4-2-4-1",
+   "4-2-4-2"
+  ],
+  "terms": [
+   "5' cap",
+   "AAUAA (termination signal)",
+   "RNA polymerase (holoenzyme/core)",
+   "adenylate cyclase / cAMP",
+   "attenuation",
+   "attenuator",
+   "exon",
+   "heterogeneous nuclear RNA",
+   "inducer",
+   "intron",
+   "non-histone proteins",
+   "operator",
+   "operon",
+   "poly(A) tail",
+   "proinhibitor / inhibitor of translation initiation",
+   "promoter",
+   "regulator gene",
+   "repressor",
+   "spliceosome (snRNP)",
+   "splicing"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.3.1",
+  "enTitle": "Non-covalent interactions and folding of the polypeptide chain into its biologically active form",
+  "czTitle": "Nekovalentní interakce a uspořádání peptidového řetězce do biologicky aktivní formy",
+  "pages": [
+   108,
+   109,
+   110
+  ],
+  "page_count": 3,
+  "nodes": 1,
+  "node_ids": [
+   "4-3-1"
+  ],
+  "terms": [
+   "X-Pro bond",
+   "chaperone",
+   "chaperonin (GroEL/GroES)",
+   "nascent protein",
+   "peptidylprolyl-cis,trans-isomerase (PPIase)",
+   "protein-disulfide-isomerase"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.3.2",
+  "enTitle": "Post-translational modification of the polypeptide chain and transport of proteins across the membrane",
+  "czTitle": "Posttranslační modifikace polypeptidového řetězce a přenos proteinů přes membránu",
+  "pages": [
+   110,
+   111
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "4-3-2"
+  ],
+  "terms": [
+   "C-peptide",
+   "preproprotein / proprotein",
+   "ribophorin I and II",
+   "secretory granule",
+   "signal peptidase",
+   "signal recognition particle (SRP)",
+   "signal sequence"
+  ]
+ },
+ {
+  "chapter": 4,
+  "section": "4.3.3",
+  "enTitle": "Covalent modification of amino acid side chains",
+  "czTitle": "Kovalentní modifikace bočních řetězců aminokyselin",
+  "pages": [
+   111,
+   112,
+   113,
+   114
+  ],
+  "page_count": 4,
+  "nodes": 1,
+  "node_ids": [
+   "4-3-3"
+  ],
+  "terms": [
+   "4-hydroxyproline, 5-hydroxylysine",
+   "Asn-X-Ser/Thr sequence",
+   "dolichol phosphate",
+   "glutathione",
+   "glycosyltransferase",
+   "mannose-6-phosphate",
+   "phosphoserine / phosphothreonine / phosphotyrosine",
+   "γ-carboxyglutamate",
+   "ε-N-trimethyllysine"
+  ]
+ },
+ {
+  "chapter": 5,
+  "section": "5.1",
+  "enTitle": "Proteolytic cleavage of proteins",
+  "czTitle": "Proteolytické štěpení bílkovin",
+  "pages": [
+   115,
+   116,
+   117,
+   118
+  ],
+  "page_count": 4,
+  "nodes": 1,
+  "node_ids": [
+   "5-1"
+  ],
+  "terms": [
+   "chymotrypsinogen activation cascade",
+   "endopeptidase",
+   "exopeptidase",
+   "pepsinogen to pepsin activation",
+   "protease (peptidase, proteinase)",
+   "trypsin inhibitor",
+   "trypsinogen to trypsin activation (enteropeptidase)",
+   "zymogen (proenzyme)"
+  ]
+ },
+ {
+  "chapter": 5,
+  "section": "5.2",
+  "enTitle": "Degradation of amino acids",
+  "czTitle": "Odbourávání aminokyselin",
+  "pages": [
+   118
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "5-2"
+  ],
+  "terms": [
+   "amino acid degradation (catabolism)",
+   "ammonia detoxification",
+   "degradation of the carbon skeleton",
+   "transformation at the α-carbon atom"
+  ]
+ },
+ {
+  "chapter": 5,
+  "section": "5.2.1",
+  "enTitle": "Metabolic reactions at the amino acid α-carbon — deamination mechanisms",
+  "czTitle": "Metabolické reakce na α-uhlíkovém atomu aminokyselin — deaminace",
+  "pages": [
+   118,
+   119,
+   120,
+   121,
+   122
+  ],
+  "page_count": 5,
+  "nodes": 2,
+  "node_ids": [
+   "5-2-1-1",
+   "5-2-1-2"
+  ],
+  "terms": [
+   "D-amino acid oxidase",
+   "L-amino acid oxidase",
+   "alanine aminotransferase (ALT)",
+   "aldimine (Schiff base)",
+   "aminotransferase (transaminase)",
+   "decarboxylation (biogenic amines)",
+   "dehydration deamination (serine dehydratase)",
+   "glutamate aminotransferase",
+   "glutamate dehydrogenase (GDH)",
+   "oxidative deamination",
+   "pyridoxal phosphate (PLP)",
+   "simple deamination",
+   "threonine aldolase",
+   "transamination"
+  ]
+ },
+ {
+  "chapter": 5,
+  "section": "5.2.2",
+  "enTitle": "Ammonia detoxification, the urea (ornithine) cycle — sources and elimination of ammonia",
+  "czTitle": "Detoxikace amoniaku, močovinový (ornithinový) cyklus — zdroje a eliminace amoniaku",
+  "pages": [
+   123,
+   124,
+   125
+  ],
+  "page_count": 3,
+  "nodes": 2,
+  "node_ids": [
+   "5-2-2-1",
+   "5-2-2-2"
+  ],
+  "terms": [
+   "N-acetylglutamate",
+   "ammonia",
+   "ammonotelic organisms",
+   "arginase",
+   "argininosuccinate lyase",
+   "argininosuccinate synthetase",
+   "carbamoyl phosphate synthetase",
+   "citrulline",
+   "glutamate dehydrogenase",
+   "glutamine synthetase",
+   "ornithine carbamoyltransferase",
+   "ureotelic organisms",
+   "uricotelic organisms"
+  ]
+ },
+ {
+  "chapter": 5,
+  "section": "5.2.3",
+  "enTitle": "Degradation of the carbon skeleton and mutual interconversion of amino acids — glucogenic/ketogenic classification; 1) Conversion to acetyl-CoA via pyruvate (C3 family)",
+  "czTitle": "Odbourávání uhlíkové kostry a vzájemné přeměny aminokyselin — glukogenní/ketogenní klasifikace; 1) Přeměna na acetylkoenzym A přes pyruvát (C3-rodina)",
+  "pages": [
+   125,
+   126,
+   127,
+   128,
+   129
+  ],
+  "page_count": 5,
+  "nodes": 4,
+  "node_ids": [
+   "5-2-3-1",
+   "5-2-3-2",
+   "5-2-3-3",
+   "5-2-3-4"
+  ],
+  "terms": [
+   "2-oxoadipic acid",
+   "acetoacetate",
+   "cysteine sulfinic acid",
+   "glucogenic amino acids",
+   "glutaryl-CoA",
+   "ketogenic amino acids",
+   "master amino-acid/citrate-cycle scheme (Obr. 5.6)",
+   "methylmalonyl-CoA",
+   "oxaloacetate",
+   "p-hydroxyphenylpyruvate",
+   "phenylalanine hydroxylase",
+   "phosphoenolpyruvate (PEP)",
+   "propionyl-CoA",
+   "serine dehydratase",
+   "serine hydroxymethyltransferase",
+   "succinyl-CoA",
+   "threonine aldolase",
+   "urocanate",
+   "Δ1-pyrroline-5-carboxylate"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.1",
+  "enTitle": "Principles of bioenergetics",
+  "czTitle": "Principy bioenergetiky",
+  "pages": [
+   130
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "6-1"
+  ],
+  "terms": [
+   "Gibbs energy (ΔG)",
+   "chemotroph",
+   "dynamic equilibrium (steady state)",
+   "open system",
+   "phototroph"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.1.1",
+  "enTitle": "Exergonic and endergonic reactions",
+  "czTitle": "Reakce exergonické a endergonické",
+  "pages": [
+   131
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "6-1-1"
+  ],
+  "terms": [
+   "coupled reaction",
+   "endergonic reaction",
+   "exergonic reaction",
+   "hexokinase"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.1.2",
+  "enTitle": "High-energy (macroergic) compounds — the concept, anhydrides and phosphoamides",
+  "czTitle": "Makroergické sloučeniny — pojem, anhydridy a fosfamidy",
+  "pages": [
+   131,
+   132,
+   133
+  ],
+  "page_count": 3,
+  "nodes": 2,
+  "node_ids": [
+   "6-1-2-1",
+   "6-1-2-2"
+  ],
+  "terms": [
+   "ATP as a Gibbs-energy 'quantum'",
+   "Mg²⁺ complexes of ATP/ADP",
+   "Tab. 6.1's donor/acceptor logic",
+   "anhydride bond",
+   "enol phosphate (phosphoenolpyruvate, PEP)",
+   "high-energy (macroergic) compound",
+   "phosphagen (phosphocreatine, phosphoarginine)",
+   "thioester (acetyl-CoA)"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.1.3",
+  "enTitle": "Catabolic and anabolic processes",
+  "czTitle": "Katabolické a anabolické děje",
+  "pages": [
+   133,
+   134
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "6-1-3"
+  ],
+  "terms": [
+   "acetyl-CoA as the metabolic hub",
+   "anabolism",
+   "catabolism",
+   "three-phase model of nutrient breakdown (Obr. 6.2)"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.2.1",
+  "enTitle": "Oxidation-reduction processes",
+  "czTitle": "Oxidačně redukční pochody",
+  "pages": [
+   134,
+   135
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "6-2-1-1"
+  ],
+  "terms": [
+   "Nernst(-Peterson) equation",
+   "dehydrogenation",
+   "redox potential (E⁰′)",
+   "standard hydrogen electrode (biological convention, −420 mV)",
+   "ΔG⁰′ = −nFΔE⁰′"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.2.2",
+  "enTitle": "The citrate cycle — introduction, cycle overview, and citrate synthase",
+  "czTitle": "Citrátový cyklus — úvod, přehled cyklu, citrátsynthasa",
+  "pages": [
+   136,
+   137,
+   138,
+   139,
+   140
+  ],
+  "page_count": 5,
+  "nodes": 4,
+  "node_ids": [
+   "6-2-2-1",
+   "6-2-2-2",
+   "6-2-2-3",
+   "6-2-2-4"
+  ],
+  "terms": [
+   "2-oxoglutarate (α-oxoglutarate, α-ketoglutarate)",
+   "L-malate",
+   "Tab. 6.3 and Obr. 6.3 — the cycle's enzyme/cofactor table and structural diagram",
+   "acetyl-CoA",
+   "aconitase (aconitate hydratase)",
+   "anaplerotic reactions",
+   "biotin",
+   "cis-aconitate",
+   "citrate cycle (tricarboxylic acid cycle)",
+   "citrate synthase",
+   "fumarase (fumarate hydratase)",
+   "fumarate",
+   "isocitrate",
+   "isocitrate dehydrogenase",
+   "malate dehydrogenase",
+   "mitochondrial matrix",
+   "oxaloacetate",
+   "oxalosuccinate",
+   "porphyrins (biosynthesis, ch. 6.3)",
+   "pyruvate carboxylase",
+   "succinate",
+   "succinate dehydrogenase",
+   "succinyl-CoA",
+   "succinyl-CoA synthetase"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.2.3",
+  "enTitle": "The glyoxylate cycle",
+  "czTitle": "Glyoxylátový cyklus",
+  "pages": [
+   140,
+   141
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "6-2-3"
+  ],
+  "terms": [
+   "glyoxylate",
+   "glyoxylate cycle",
+   "isocitrate lyase",
+   "malate synthase"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.2.4",
+  "enTitle": "The respiratory chain and aerobic phosphorylation — introduction and Complex I",
+  "czTitle": "Respirační řetězec a aerobní fosforylace — úvod a komplex I",
+  "pages": [
+   141,
+   142,
+   143,
+   144,
+   145,
+   146
+  ],
+  "page_count": 6,
+  "nodes": 5,
+  "node_ids": [
+   "6-2-4-1",
+   "6-2-4-2",
+   "6-2-4-3",
+   "6-2-4-4",
+   "6-2-4-5"
+  ],
+  "terms": [
+   "1/2 O2 + 2e- + 2H+ → H2O",
+   "6 H+ (Complexes I+III+IV, from NADH) vs. 4 H+ (Complexes II+III+IV, from succinate)",
+   "ATP synthase (Complex V)",
+   "F0 subunit",
+   "F1 subunit",
+   "FMN / FMNH2 (flavoprotein, FP)",
+   "Fe4S4 / Fe2S2 iron-sulfur (FeS) proteins",
+   "NADH:ubiquinone oxidoreductase (Complex I)",
+   "NADH:ubiquinone oxidoreductase (Complex I, opening definition)",
+   "conformational change of the active site (ATP binding/release)",
+   "cytochrome a, a3",
+   "cytochrome bT / cytochrome bK",
+   "cytochrome c (mobile)",
+   "cytochrome c1",
+   "cytochrome oxidase (Complex IV)",
+   "five multienzyme lipoprotein complexes (I-V)",
+   "oxide ions (O2-)",
+   "redox potential (tab. 6.2)",
+   "respiratory (electron transport) chain",
+   "succinate:ubiquinone oxidoreductase (Complex II)",
+   "the Q cycle (electron 'circulating' QH•→bT→bK→QH•)",
+   "ubiquinol:cytochrome c oxidoreductase (Complex III)",
+   "ubiquinone (Q) / ubiquinol (QH2) / semiquinone (QH•)",
+   "vectorial character (of the membrane-embedded enzyme system)",
+   "vectorial proton transfer",
+   "ΔG' and osmotic work — the connecting link",
+   "ΔG0' of ATP synthesis (+30.5 kJ/mol)"
+  ]
+ },
+ {
+  "chapter": 6,
+  "section": "6.3",
+  "enTitle": "Porphyrin proteins — structure and biological versatility (Table 6.4)",
+  "czTitle": "Porfyrinové proteiny — struktura a mnohostrannost (Tab. 6.4)",
+  "pages": [
+   146,
+   147
+  ],
+  "page_count": 2,
+  "nodes": 3,
+  "node_ids": [
+   "6-3-1",
+   "6-3-2",
+   "6-3-3"
+  ],
+  "terms": [
+   "bilin derivative / bile pigment",
+   "bilirubin",
+   "biliverdin",
+   "coproporphyrinogen III",
+   "heme (Fe2+/Fe3+ prosthetic group)",
+   "linear tetrapyrrole",
+   "methine bridge (=CH–)",
+   "porphobilinogen",
+   "porphyrin",
+   "protoporphyrin IX",
+   "pyrrole ring",
+   "stercobilin",
+   "urobilin",
+   "uroporphyrinogen III",
+   "valence change (redox activity of the metal centre)",
+   "δ-aminolevulate (δ-aminolevulinic acid, ALA)",
+   "δ-aminolevulate synthase (ALA synthase)"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.1",
+  "enTitle": "Monosaccharides",
+  "czTitle": "Monosacharidy",
+  "pages": [
+   148
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-1"
+  ],
+  "terms": [
+   "carbohydrate",
+   "cellulose",
+   "glycolipid / lipopolysaccharide",
+   "glycoprotein",
+   "polysaccharide"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.1.1",
+  "enTitle": "Aldoses, ketoses",
+  "czTitle": "Aldosy, ketosy",
+  "pages": [
+   148
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-1-1"
+  ],
+  "terms": [
+   "D-/L- configuration",
+   "monosaccharide",
+   "optical rotation (+)/(−)",
+   "tetrose, pentose, hexose, heptose",
+   "triose"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.1.2",
+  "enTitle": "Deriving aldoses and ketoses — the aldose family tree (Obr. 7.1)",
+  "czTitle": "Odvozování aldos a ketos — odvození řady aldos (obr. 7.1)",
+  "pages": [
+   148,
+   149,
+   150
+  ],
+  "page_count": 3,
+  "nodes": 2,
+  "node_ids": [
+   "7-1-2-1",
+   "7-1-2-2"
+  ],
+  "terms": [
+   "D-erythrulose",
+   "D-fructose",
+   "D-galactose",
+   "D-glucose",
+   "D-mannose",
+   "aldohexose",
+   "dihydroxyacetone",
+   "epimer",
+   "ketose"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.1.3",
+  "enTitle": "Hemiacetal/hemiketal forms — formation, anomers, Haworth formulas",
+  "czTitle": "Poloacetálové formy — vznik, anomery, Haworthovy vzorce",
+  "pages": [
+   149,
+   150,
+   151,
+   152
+  ],
+  "page_count": 4,
+  "nodes": 2,
+  "node_ids": [
+   "7-1-3-1",
+   "7-1-3-2"
+  ],
+  "terms": [
+   "Haworth formula",
+   "anomeric carbon, anomers (α/β)",
+   "hemiacetal",
+   "hemiketal",
+   "pyranose / furanose",
+   "stereo-projection (chair conformation)"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.1.4",
+  "enTitle": "Mutarotation",
+  "czTitle": "Mutarotace",
+  "pages": [
+   151
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-1-4"
+  ],
+  "terms": [
+   "mutarotation",
+   "specific optical rotation"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.2.1",
+  "enTitle": "Sugar esters",
+  "czTitle": "Cukerné estery",
+  "pages": [
+   152
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-2-1"
+  ],
+  "terms": [
+   "5-phosphoribosyl-1-bisphosphate (PRPP)",
+   "heparin, chondroitin sulfate",
+   "sugar ester",
+   "sugar phosphate ester"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.2.2",
+  "enTitle": "Sugar acids",
+  "czTitle": "Cukerné kyseliny",
+  "pages": [
+   152,
+   153
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "7-2-2"
+  ],
+  "terms": [
+   "aldonic acid",
+   "ascorbic acid (vitamin C)",
+   "dehydroascorbic acid",
+   "enediol",
+   "uronic acid"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.2.3",
+  "enTitle": "Sugar alcohols",
+  "czTitle": "Cukerné alkoholy",
+  "pages": [
+   153
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-2-3"
+  ],
+  "terms": [
+   "D-glucitol (sorbitol)",
+   "D-mannitol",
+   "alditol (sugar alcohol)",
+   "inositol",
+   "phytic acid"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.2.4",
+  "enTitle": "Amino sugars",
+  "czTitle": "Aminocukry",
+  "pages": [
+   153
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-2-4"
+  ],
+  "terms": [
+   "D-galactosamine",
+   "D-glucosamine",
+   "amino sugar",
+   "neuraminic acid"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.2.5",
+  "enTitle": "Deoxy sugars",
+  "czTitle": "Deoxycukry",
+  "pages": [
+   153
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-2-5"
+  ],
+  "terms": [
+   "L-fucose",
+   "L-rhamnose",
+   "deoxy sugar"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.2.6",
+  "enTitle": "Glycosides",
+  "czTitle": "Glykosidy",
+  "pages": [
+   153,
+   154
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "7-2-6"
+  ],
+  "terms": [
+   "N-glycosidic bond",
+   "O-glycosidic bond",
+   "aglycone",
+   "glucuronoside",
+   "glycoside"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.3",
+  "enTitle": "Oligosaccharides — definitions and non-reducing oligosaccharides",
+  "czTitle": "Oligosacharidy — definice a neredukující oligosacharidy",
+  "pages": [
+   154,
+   155
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "7-3-1",
+   "7-3-2"
+  ],
+  "terms": [
+   "cellobiose",
+   "isomaltose",
+   "lactose",
+   "maltose",
+   "non-reducing disaccharide",
+   "oligosaccharide",
+   "raffinose / stachyose",
+   "reducing disaccharide / mutarotation",
+   "sucrose",
+   "trehalose"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.4",
+  "enTitle": "Polysaccharides",
+  "czTitle": "Polysacharidy",
+  "pages": [
+   155
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-4"
+  ],
+  "terms": [
+   "D-glucosamine / D-galactosamine",
+   "heteroglycan",
+   "homoglycan",
+   "polysaccharide (glycan)",
+   "uronic acid"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.4.1",
+  "enTitle": "Homopolysaccharides -- A. Storage polysaccharides (starch, glycogen, dextrans, inulin, mannans)",
+  "czTitle": "Homopolysacharidy -- A. Zásobní polysacharidy (škrob, glykogen, dextrany, inulin, mannany)",
+  "pages": [
+   156,
+   157
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "7-4-1-1",
+   "7-4-1-2"
+  ],
+  "terms": [
+   "amylopectin",
+   "amylose",
+   "cellulose",
+   "chitin",
+   "chitobiose",
+   "dextran",
+   "glycogen",
+   "hemicelluloses / pectins / 'extension' protein",
+   "inulin",
+   "lignin",
+   "mannan"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.4.2",
+  "enTitle": "Heteropolysaccharides (glycosaminoglycans, hyaluronic acid, chondroitin sulfates, heparin)",
+  "czTitle": "Heteropolysacharidy (glykosaminglykany, kyselina hyaluronová, chondroitinsulfáty, heparin)",
+  "pages": [
+   157,
+   158
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "7-4-2"
+  ],
+  "terms": [
+   "chondroitin-6-sulfate",
+   "glycosaminoglycan (GAG)",
+   "heparin",
+   "hyaluronic acid",
+   "proteoglycan"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.5",
+  "enTitle": "Oligosaccharides bound to proteins",
+  "czTitle": "Oligosacharidy vázané na proteiny",
+  "pages": [
+   158,
+   159,
+   160
+  ],
+  "page_count": 3,
+  "nodes": 1,
+  "node_ids": [
+   "7-5"
+  ],
+  "terms": [
+   "Fuc, Gal, GalNAc, GlcNAc, Man",
+   "N-glycosidic bond (Asn)",
+   "NeuAc (N-acetylneuraminic acid, sialic acid)",
+   "O-glycosidic bond (Ser/Thr)",
+   "pentasaccharide core"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.6",
+  "enTitle": "Sugar interconversions — introduction (three reaction types)",
+  "czTitle": "Vzájemné přeměny cukrů — úvod (tři typy reakcí)",
+  "pages": [
+   159
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-6"
+  ],
+  "terms": [
+   "epimerization",
+   "isomerization (aldose⇌ketose)",
+   "oxidative decarboxylation"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.6.1",
+  "enTitle": "Epimerization and isomerization",
+  "czTitle": "Epimerace a izomerace",
+  "pages": [
+   160
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-6-1"
+  ],
+  "terms": [
+   "epimerization",
+   "isomerization",
+   "uridine diphosphate (UDP)"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.6.2",
+  "enTitle": "Oxidation and decarboxylation of glucose",
+  "czTitle": "Oxidace a dekarboxylace glukosy",
+  "pages": [
+   160,
+   161
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "7-6-2"
+  ],
+  "terms": [
+   "D-xylulose-5-phosphate",
+   "L-ascorbate (vitamin C)",
+   "L-gulonate",
+   "glucuronate",
+   "ribulose-5-phosphate"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.6.3",
+  "enTitle": "Transfer of three-carbon or two-carbon fragments",
+  "czTitle": "Přenos tříuhlíkových nebo dvouuhlíkových štěpů",
+  "pages": [
+   161
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-6-3"
+  ],
+  "terms": [
+   "aldolase",
+   "fructose-1,6-bisphosphate",
+   "transaldolase",
+   "triose phosphates (dihydroxyacetone phosphate, glyceraldehyde-3-phosphate)"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.7",
+  "enTitle": "Two routes to pentose phosphates — the oxidative pentose phosphate pathway",
+  "czTitle": "Dvě cesty k pentosafosfátům — oxidační pentosafosfátová cesta",
+  "pages": [
+   162,
+   163
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "7-7-1",
+   "7-7-2"
+  ],
+  "terms": [
+   "6-phosphogluconate",
+   "D-glucose-6-phosphate dehydrogenase",
+   "D-ribulose-5-phosphate",
+   "erythrose-4-phosphate",
+   "lactonase",
+   "oxidative pentose phosphate pathway",
+   "pentose cycle",
+   "sedoheptulose-7-phosphate",
+   "thiamine diphosphate (transketolase's coenzyme)",
+   "transaldolase",
+   "transketolase"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.8",
+  "enTitle": "Glycolysis — introduction and the preparatory phase (glucose to fructose-1,6-bisphosphate and its cleavage to trioses)",
+  "czTitle": "Glykolýza — úvod a přípravná fáze (glukosa až fruktosa-1,6-bisfosfát a jeho štěpení na triosy)",
+  "pages": [
+   164,
+   165,
+   166,
+   167
+  ],
+  "page_count": 4,
+  "nodes": 3,
+  "node_ids": [
+   "7-8-1",
+   "7-8-2",
+   "7-8-3"
+  ],
+  "terms": [
+   "1,3-bisphosphoglycerate",
+   "2,3-bisphosphoglycerate",
+   "aldolase",
+   "enolase",
+   "enzyme-substrate thioester bond",
+   "fructose-1,6-bisphosphate",
+   "glucokinase",
+   "glyceraldehyde-3-phosphate dehydrogenase (GAPDH)",
+   "glycolysis ATP balance: net +2 ATP/glucose",
+   "hexokinase",
+   "phosphoenolpyruvate (PEP)",
+   "phosphofructokinase (PFK)",
+   "phosphoglycerate kinase",
+   "phosphoglycerate mutase",
+   "pyruvate kinase",
+   "substrate-level phosphorylation",
+   "triose-phosphate isomerase"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.8.1",
+  "enTitle": "Formation of ethanol, lactate, or acetyl-CoA — ethanol and lactate",
+  "czTitle": "Tvorba ethanolu, laktátu nebo acetyl-CoA — ethanol a laktát",
+  "pages": [
+   167,
+   168,
+   169
+  ],
+  "page_count": 3,
+  "nodes": 2,
+  "node_ids": [
+   "7-8-4",
+   "7-8-5"
+  ],
+  "terms": [
+   "acetaldehyde",
+   "alcohol dehydrogenase",
+   "dihydrolipoyl dehydrogenase",
+   "dihydrolipoyl transacetylase",
+   "lactate",
+   "lactate dehydrogenase (LDH)",
+   "lipoic acid",
+   "pyruvate decarboxylase",
+   "pyruvate dehydrogenase complex",
+   "thiamine pyrophosphate / thiamine diphosphate (TPP)"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.9",
+  "enTitle": "Gluconeogenesis, glucose resynthesis — bypassing glycolysis's irreversible steps",
+  "czTitle": "Glukoneogeneze, resyntéza glukosy — obchvat ireverzibilních kroků glykolýzy",
+  "pages": [
+   169,
+   170
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "7-9"
+  ],
+  "terms": [
+   "Cori cycle (term not used by the book)",
+   "gluconeogenesis",
+   "hydrolysis replacing a reverse-kinase step (F1,6BP -> F6P, G6P -> glucose)",
+   "oxaloacetate",
+   "oxaloacetate -> phosphoenolpyruvate phosphorylation, using GTP not ATP",
+   "pyruvate carboxylase (implied by the figure's CO2~biotin/ATP labeling)"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.9.1",
+  "enTitle": "Gluconeogenesis from amino acids",
+  "czTitle": "Glukoneogenéze z aminokyselin",
+  "pages": [
+   170
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "7-9-1"
+  ],
+  "terms": [
+   "alanine",
+   "aspartic acid (aspartate)",
+   "glucogenic amino acid"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.10",
+  "enTitle": "Enzymatic cleavage of glycosides and oligosaccharides — glycosidases",
+  "czTitle": "Enzymové štěpení glykosidů a oligosacharidů — glykosidasy",
+  "pages": [
+   170,
+   171,
+   172
+  ],
+  "page_count": 3,
+  "nodes": 3,
+  "node_ids": [
+   "7-10-1",
+   "7-10-2",
+   "7-10-3"
+  ],
+  "terms": [
+   "'emulsin'",
+   "UDP-glucose-4-epimerase",
+   "aglycone",
+   "alpha-D-glucosidase / beta-D-glucosidase",
+   "galactokinase",
+   "glucosiduronate / UDP-glucuronic acid",
+   "glycosidase",
+   "glycosyltransferase",
+   "hexose-1-phosphate uridylyltransferase",
+   "lactose (biosynthesis)",
+   "uridine diphosphoglucose (UDP-Glc)"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.11.1",
+  "enTitle": "Hydrolytic cleavage — alpha- and beta-amylases",
+  "czTitle": "Hydrolytické štěpení — α- a β-amylasy",
+  "pages": [
+   172,
+   173
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "7-11-1-1",
+   "7-11-1-2"
+  ],
+  "terms": [
+   "alpha-amylase",
+   "amylase",
+   "beta-amylase",
+   "cellulase",
+   "dextrin",
+   "gamma-amylase",
+   "isomaltose (from branch points)",
+   "maltase (alpha-D-glucosidase)"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.11.2",
+  "enTitle": "Phosphorolysis of starch and glycogen — general mechanism",
+  "czTitle": "Fosforolýza škrobu a glykogenu — obecný mechanismus",
+  "pages": [
+   173,
+   174
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "7-11-2-1",
+   "7-11-2-2"
+  ],
+  "terms": [
+   "alpha-1,6-glucosidase",
+   "energy balance of phosphorolysis",
+   "non-reducing end",
+   "phosphorolysis",
+   "phosphorylase",
+   "transglycosidase"
+  ]
+ },
+ {
+  "chapter": 7,
+  "section": "7.12",
+  "enTitle": "Biosynthesis of polysaccharides — glycogen synthase and the branching enzyme",
+  "czTitle": "Biosyntéza polysacharidů — glykogensynthasa a větvící enzym",
+  "pages": [
+   174,
+   175
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "7-12-1",
+   "7-12-2"
+  ],
+  "terms": [
+   "adenylate cyclase",
+   "branching enzyme",
+   "cyclic AMP (3',5'-cAMP)",
+   "glycogen synthase",
+   "glycogen synthase (I/D forms)",
+   "phosphorylase (a/b forms)",
+   "phosphorylase kinase (b/a forms)",
+   "protein kinase",
+   "protein phosphatase (active/inactive forms)",
+   "starter molecule (protein chain)"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.1",
+  "enTitle": "Definition and classification",
+  "czTitle": "Definice a klasifikace",
+  "pages": [
+   176
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "8-1"
+  ],
+  "terms": [
+   "acylglycerol",
+   "complex lipids",
+   "derived lipids",
+   "glycoacylglycerol",
+   "lipid",
+   "phosphoacylglycerol",
+   "simple lipids",
+   "wax"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.2.1",
+  "enTitle": "Fatty acids — definition, classification, natural occurrence (Tab. 8.2)",
+  "czTitle": "Mastné kyseliny — definice, klasifikace, přirozený výskyt (tab. 8.2)",
+  "pages": [
+   177,
+   178
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "8-2-1-1",
+   "8-2-1-2"
+  ],
+  "terms": [
+   "arachidonic acid",
+   "cis/trans configuration",
+   "desaturase",
+   "elongase",
+   "essential fatty acid",
+   "fatty acid",
+   "linoleic acid",
+   "n-/ω- notation",
+   "oleic acid",
+   "polyunsaturated fatty acid",
+   "saturated fatty acid",
+   "Δ (delta) notation"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.2.2",
+  "enTitle": "Simple lipids — Neutral acylglycerols",
+  "czTitle": "Jednoduché lipidy — Neutrální acylglyceroly",
+  "pages": [
+   178,
+   179
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "8-2-2-1",
+   "8-2-2-2"
+  ],
+  "terms": [
+   "acylglycerol / glyceride",
+   "cerase",
+   "chylomicron",
+   "diacylglycerol",
+   "lanolin",
+   "lipase",
+   "monoacylglycerol",
+   "myricyl palmitate",
+   "neutral fat / neutral oil",
+   "triacylglycerol (TAG)",
+   "wax / ceride"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.2.3",
+  "enTitle": "Complex lipids — Glycoacylglycerols (introduction)",
+  "czTitle": "Složené lipidy — Glykoacylglyceroly (úvod)",
+  "pages": [
+   179,
+   180,
+   181,
+   182
+  ],
+  "page_count": 4,
+  "nodes": 4,
+  "node_ids": [
+   "8-2-3",
+   "8-2-3-2",
+   "8-2-3-3",
+   "8-2-3-4"
+  ],
+  "terms": [
+   "DGDG (digalactosyldiacylglycerol)",
+   "MGDG (monogalactosyldiacylglycerol)",
+   "SL (sulfoquinovosyldiacylglycerol)",
+   "amphipathy",
+   "ceramide (N-acylsphingosine)",
+   "cerebroside",
+   "diphosphatidylglycerol (DPG) / phosphatidylinositol (PI)",
+   "ganglioside",
+   "glycoacylglycerol",
+   "glycosphingolipid",
+   "phosphatidic acid",
+   "phosphatidylcholine (PC) / phosphatidylethanolamine (PE) / phosphatidylserine (PS)",
+   "phospholipid",
+   "sialic acid (N-acetylneuraminic acid)",
+   "sphingomyelin",
+   "sphingosine",
+   "sulfatide (sulfolipid)",
+   "thylakoid membrane"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.2.4",
+  "enTitle": "Derived lipids — terpenes (isoprenoids): characteristics and classification",
+  "czTitle": "Odvozené lipidy — terpeny (isoprenoidy): charakteristika a klasifikace",
+  "pages": [
+   182,
+   183,
+   184,
+   185,
+   186,
+   187
+  ],
+  "page_count": 6,
+  "nodes": 6,
+  "node_ids": [
+   "8-2-4-1",
+   "8-2-4-2",
+   "8-2-4-3",
+   "8-2-4-4",
+   "8-2-4-5",
+   "8-2-4-6"
+  ],
+  "terms": [
+   "7-dehydrocholesterol",
+   "beta-carotene",
+   "cardiac glycosides (saponins, steroid alkaloids)",
+   "carotenoid",
+   "carotenoprotein / chromoprotein",
+   "cholecalciferol (vitamin D3)",
+   "cholesterol",
+   "coenzyme Q (ubiquinone)",
+   "digitoxigenin",
+   "isopentenylpyrophosphate (IPP) / dimethylallylpyrophosphate (DMAPP)",
+   "isoprene",
+   "lycopene",
+   "phytol",
+   "progesterone / testosterone",
+   "retinol (vitamin A, axerophtol)",
+   "squalene",
+   "steran (perhydrocyclopentanophenanthrene)",
+   "steroid",
+   "sterol",
+   "terpene (isoprenoid)",
+   "vitamin A (retinol)",
+   "vitamin D (calciferol)",
+   "vitamin E (alpha-tocopherol)",
+   "vitamin K1 (phylloquinone) / vitamin K2 (menaquinone)",
+   "xanthophyll (zeaxanthin, astaxanthin, fucoxanthin)"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.3",
+  "enTitle": "Lipid biosynthesis — Fatty acids: subcellular compartmentalization, the source of acetyl-CoA, and malonyl-CoA formation",
+  "czTitle": "Biosyntéza lipidů — Mastné kyseliny: subcelulární lokalizace, zdroj acetyl-CoA a vznik malonyl-CoA",
+  "pages": [
+   187,
+   188,
+   189,
+   190,
+   191,
+   192,
+   193
+  ],
+  "page_count": 7,
+  "nodes": 9,
+  "node_ids": [
+   "8-3-1",
+   "8-3-2",
+   "8-3-3",
+   "8-3-4",
+   "8-3-5",
+   "8-3-6",
+   "8-3-7",
+   "8-3-8",
+   "8-3-9"
+  ],
+  "terms": [
+   "(mitochondrial) elongation",
+   "ACP (Acyl Carrier Protein)",
+   "CDP-diacylglycerol",
+   "CTP (phospholipid base activation)",
+   "HMG-CoA (beta-hydroxy-beta-methylglutaryl-CoA)",
+   "HMG-CoA reductase",
+   "NADPH(H+) as the reductant of fatty acid biosynthesis",
+   "Phases A/B/C of terpenoid biosynthesis",
+   "acetoacetyl-CoA",
+   "acetyl-CoA carboxylase",
+   "acetyltransferase",
+   "acyl-CoA",
+   "alpha,beta-enoylreductase",
+   "beta-hydroxyacyl dehydratase",
+   "beta-ketoacyl-ACP synthase",
+   "beta-ketoacylreductase",
+   "biotin",
+   "butyryl-S-ACP",
+   "desaturase system",
+   "diacylglycerol",
+   "dimethylallyl pyrophosphate (DMAPP)",
+   "diphosphatidylglycerol (cardiolipin)",
+   "elongase system",
+   "farnesyl pyrophosphate (FPP)",
+   "fatty acid dehydrogenation",
+   "geranyl pyrophosphate (GPP)",
+   "glycerol phosphate",
+   "isopentenyl pyrophosphate (IPP)",
+   "lanosterol",
+   "malonyl-CoA",
+   "malonyltransferase",
+   "mevalonic acid",
+   "mono-/digalactosyldiacylglycerol (MGDG/DGDG)",
+   "overall fatty-acid-synthesis balance",
+   "palmitate (palmitic acid)",
+   "palmitoyl-CoA",
+   "phosphatidic acid",
+   "phosphatidylinositol",
+   "phosphopantetheine",
+   "squalene",
+   "triacylglycerols (adipocytes)"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.4.1",
+  "enTitle": "Simple lipids",
+  "czTitle": "Jednoduché lipidy",
+  "pages": [
+   193
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "8-4-1"
+  ],
+  "terms": [
+   "free fatty acid",
+   "glycerol",
+   "lipase",
+   "triacylglycerol (triglyceride)"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.4.2",
+  "enTitle": "Complex lipids — phospholipids and phospholipases",
+  "czTitle": "Složené lipidy — fosfolipidy a fosfolipasy",
+  "pages": [
+   193,
+   194
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "8-4-2-1",
+   "8-4-2-2"
+  ],
+  "terms": [
+   "N-acetylneuraminidase (sialidase)",
+   "ceramidase",
+   "ceramide",
+   "phosphatidylcholine (lecithin)",
+   "phospholipase",
+   "phospholipase A1 (PLA1)",
+   "phospholipase A2 (PLA2)",
+   "phospholipase C (PLC)",
+   "phospholipase D (PLD)",
+   "sphingomyelinase",
+   "sphingosine"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.4.3",
+  "enTitle": "Derived lipids",
+  "czTitle": "Odvozené lipidy",
+  "pages": [
+   194
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "8-4-3"
+  ],
+  "terms": [
+   "bile acid",
+   "derived lipids"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.4.4",
+  "enTitle": "Fatty acids — activation",
+  "czTitle": "Mastné kyseliny — aktivace",
+  "pages": [
+   194,
+   195,
+   196,
+   197
+  ],
+  "page_count": 4,
+  "nodes": 4,
+  "node_ids": [
+   "8-4-4-1",
+   "8-4-4-2",
+   "8-4-4-3",
+   "8-4-4-4"
+  ],
+  "terms": [
+   "acetoacetate",
+   "acidosis / ketosis",
+   "activated fatty acid (acyl-CoA)",
+   "acyl-CoA dehydrogenase",
+   "acyladenylate",
+   "beta-oxidation",
+   "biotin",
+   "cis-trans isomerase",
+   "enoyl-CoA hydratase",
+   "fatty acid activation",
+   "ketone bodies",
+   "propionyl-CoA",
+   "thiokinase (acyl-CoA synthetase)",
+   "thiolase (β-ketothiolase)",
+   "α-branched / β-branched fatty acid",
+   "β-hydroxy-β-methylglutaryl-CoA (HMG-CoA)",
+   "β-hydroxyacyl-CoA dehydrogenase"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.5",
+  "enTitle": "Biological membranes (introduction)",
+  "czTitle": "Biologické membrány (úvod)",
+  "pages": [
+   197,
+   198
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "8-5"
+  ],
+  "terms": [
+   "cell membrane",
+   "subcellular organelle"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.5.1",
+  "enTitle": "Chemical composition",
+  "czTitle": "Chemické složení",
+  "pages": [
+   198
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "8-5-1"
+  ],
+  "terms": [
+   "membrane glycoprotein / glycolipid",
+   "protein:lipid ratio"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.5.2",
+  "enTitle": "Structure — the lipid bilayer",
+  "czTitle": "Struktura — lipidová dvojvrstva",
+  "pages": [
+   198,
+   199,
+   200
+  ],
+  "page_count": 3,
+  "nodes": 3,
+  "node_ids": [
+   "8-5-2-1",
+   "8-5-2-2",
+   "8-5-2-3"
+  ],
+  "terms": [
+   "dynamic (membrane) protein",
+   "flip-flop mechanism",
+   "fluid mosaic model",
+   "integral membrane protein",
+   "lipid bilayer",
+   "lipid-composition asymmetry",
+   "membrane fluidity",
+   "peripheral membrane protein",
+   "receptor protein",
+   "rotational / lateral movement",
+   "structural (membrane) protein"
+  ]
+ },
+ {
+  "chapter": 8,
+  "section": "8.5.3",
+  "enTitle": "Membrane transport — passive transport, simple diffusion",
+  "czTitle": "Membránový transport — pasivní transport, prostá difúze",
+  "pages": [
+   200,
+   201
+  ],
+  "page_count": 2,
+  "nodes": 3,
+  "node_ids": [
+   "8-5-3-1",
+   "8-5-3-2",
+   "8-5-3-3"
+  ],
+  "terms": [
+   "active transport",
+   "carrier",
+   "endocytosis / exocytosis",
+   "facilitated (mediated) diffusion",
+   "group translocation",
+   "ion channel",
+   "ionophore",
+   "passive transport",
+   "semipermeable membrane",
+   "simple diffusion",
+   "symport / antiport / uniport"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9",
+  "enTitle": "Photoautotrophy — the five metabolisms specific to autotrophs",
+  "czTitle": "Fotoautotrofie — pět specifických metabolismů",
+  "pages": [
+   202
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "9-1"
+  ],
+  "terms": [
+   "heterotroph",
+   "photoautotroph",
+   "secondary plant metabolite"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.1",
+  "enTitle": "Basic processes of photosynthesis — the general equation, thylakoid, chloroplast",
+  "czTitle": "Základní děje fotosyntézy — obecná rovnice, thylakoid, chloroplast",
+  "pages": [
+   202,
+   203,
+   204
+  ],
+  "page_count": 3,
+  "nodes": 3,
+  "node_ids": [
+   "9-2",
+   "9-3",
+   "9-4"
+  ],
+  "terms": [
+   "(CH₂O)",
+   "chloroplast",
+   "granum",
+   "oxygenic photosynthesis",
+   "photolysis of water",
+   "plant stand",
+   "primary processes",
+   "reaction centre",
+   "stroma",
+   "thylakoid",
+   "thylakoid lumen",
+   "ΔG°′ (standard free energy change, biochemical)"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.1.1",
+  "enTitle": "The three categories of photosynthetic pigment",
+  "czTitle": "Tři kategorie fotosyntetických pigmentů",
+  "pages": [
+   204,
+   205,
+   206
+  ],
+  "page_count": 3,
+  "nodes": 4,
+  "node_ids": [
+   "9-5",
+   "9-6",
+   "9-7",
+   "9-8"
+  ],
+  "terms": [
+   "absorption band",
+   "accessory pigment",
+   "bacteriochlorophyll",
+   "carotenoid",
+   "chlorophyll",
+   "complementary colour",
+   "cyanobacteria / red algae",
+   "methine bridge",
+   "phycobilin",
+   "phycocyanin",
+   "phycoerythrin",
+   "phytol",
+   "porphyrin",
+   "singlet excited state",
+   "tetrapyrrole"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.1.2",
+  "enTitle": "Other components of the thylakoid membranes",
+  "czTitle": "Další složky thylakoidních membrán",
+  "pages": [
+   206
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "9-9"
+  ],
+  "terms": [
+   "OEC (oxygen-evolving complex)",
+   "monogalactosyldiacylglycerol",
+   "plastocyanin",
+   "sulfoquinovosyldiacylglycerol"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.1.3",
+  "enTitle": "The reaction centre, and the legend to Obr. 9.5",
+  "czTitle": "Reakční centrum a legenda k obr. 9.5",
+  "pages": [
+   206,
+   207,
+   208,
+   209
+  ],
+  "page_count": 4,
+  "nodes": 5,
+  "node_ids": [
+   "9-10",
+   "9-11",
+   "9-12",
+   "9-13",
+   "9-14"
+  ],
+  "terms": [
+   "CF₀ / CF₁",
+   "P* (excited reaction-centre pigment)",
+   "Z-scheme",
+   "cyclic electron flow",
+   "cytochrome b₆/f complex",
+   "ferredoxin (Fd)",
+   "integral protein",
+   "light-harvesting antenna",
+   "linear electron flow",
+   "pheophytin (Pheo)",
+   "photooxidation",
+   "photophosphorylation",
+   "photosystem (PS)",
+   "photosystem I / II",
+   "plastoquinone",
+   "primary acceptor / donor",
+   "proton delocalisation",
+   "quantum yield",
+   "reaction centre (RC)",
+   "secondary acceptor / donor",
+   "thylakoid ATP-synthase",
+   "ΔpH (transmembrane proton gradient)"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.1.4",
+  "enTitle": "Photosynthetic CO₂ fixation — why 'dark phase' is a bad term",
+  "czTitle": "Fotosyntetická fixace CO₂ — proč „temná fáze\" je špatný termín",
+  "pages": [
+   209,
+   210,
+   211,
+   212
+  ],
+  "page_count": 4,
+  "nodes": 5,
+  "node_ids": [
+   "9-15",
+   "9-16",
+   "9-17",
+   "9-18",
+   "9-19"
+  ],
+  "terms": [
+   "'dark phase' (an unsuitable term)",
+   "1,3-bisphosphoglycerate (1,3-BPG)",
+   "3-phosphoglycerate (PG)",
+   "C-3 plants",
+   "CO₂ fixation",
+   "Calvin cycle",
+   "RubisCO (ribulosebisphosphate carboxylase/oxygenase)",
+   "endiolate (enolate) ion",
+   "epimerisation",
+   "fructose-6-phosphate (F6P)",
+   "glyceraldehyde-3-phosphate (GAP)",
+   "phosphopentose epimerase",
+   "phosphoribulokinase",
+   "ribulose-1,5-bisphosphate (RuBP)",
+   "ribulose-5-phosphate (Ru5P)",
+   "sedoheptulose-1,7-bisphosphate",
+   "summary (overall) equation",
+   "transketolase"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.2",
+  "enTitle": "Photorespiration — three enzymes, three compartments",
+  "czTitle": "Fotorespirace — tři enzymy, tři kompartmenty",
+  "pages": [
+   212,
+   213
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "9-20"
+  ],
+  "terms": [
+   "catalase",
+   "glyoxylate",
+   "peroxisome",
+   "phosphoglycolate",
+   "photorespiration"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.3",
+  "enTitle": "C-4 plants — the Hatch–Slack cycle",
+  "czTitle": "Rostliny C-4 — Hatchův-Slackův cyklus",
+  "pages": [
+   212,
+   214
+  ],
+  "page_count": 2,
+  "nodes": 2,
+  "node_ids": [
+   "9-21",
+   "9-22"
+  ],
+  "terms": [
+   "C-4 plants",
+   "Km (Michaelis constant)",
+   "PEP-carboxylase",
+   "bundle-sheath cells",
+   "carbonate dehydratase (carbonic anhydrase)",
+   "malic enzyme",
+   "mesophyll cell",
+   "oxaloacetate",
+   "pyruvate phosphate dikinase"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.4",
+  "enTitle": "Fixation of atmospheric nitrogen — nitrogenase",
+  "czTitle": "Fixace atmosférického dusíku — nitrogenasa",
+  "pages": [
+   214,
+   215,
+   216
+  ],
+  "page_count": 3,
+  "nodes": 4,
+  "node_ids": [
+   "9-23",
+   "9-24",
+   "9-25",
+   "9-26"
+  ],
+  "terms": [
+   "biogenic element",
+   "denitrification",
+   "flavodoxin",
+   "glutamate dehydrogenase",
+   "glutamine synthase (glutamine synthetase)",
+   "nitrate reductase",
+   "nitrate respiration",
+   "nitrification",
+   "nitrifying bacteria",
+   "nitrite reductase",
+   "nitrogen cycle",
+   "nitrogenase",
+   "symbiosis",
+   "transamination",
+   "urea",
+   "α-oxoglutarate (2-oxoglutarate)"
+  ]
+ },
+ {
+  "chapter": 9,
+  "section": "9.5",
+  "enTitle": "Secondary plant metabolites",
+  "czTitle": "Sekundární rostlinné metabolity",
+  "pages": [
+   216,
+   217
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "9-27"
+  ],
+  "terms": [
+   "primary metabolism",
+   "secondary metabolite",
+   "self-serving / purposeless"
+  ]
+ },
+ {
+  "chapter": 10,
+  "section": "10.1",
+  "enTitle": "Intermediary metabolism — catabolism, anabolism and the four functions",
+  "czTitle": "Intermediární metabolismus — katabolismus, anabolismus a čtyři funkce",
+  "pages": [
+   218,
+   219
+  ],
+  "page_count": 2,
+  "nodes": 5,
+  "node_ids": [
+   "10-1",
+   "10-2",
+   "10-3",
+   "10-4",
+   "10-5"
+  ],
+  "terms": [
+   "acetyl-CoA",
+   "anabolism",
+   "catabolism",
+   "compartmentation",
+   "dynamic equilibrium",
+   "intermediary metabolism",
+   "irreversible reaction",
+   "isoprenoid",
+   "metabolic hub",
+   "nodal point",
+   "oxo acid (keto acid)",
+   "pool",
+   "storage substances",
+   "turnover",
+   "β-oxidation"
+  ]
+ },
+ {
+  "chapter": 10,
+  "section": "10.1.1",
+  "enTitle": "Carbohydrate metabolism — degradation",
+  "czTitle": "Metabolismus sacharidů — odbourávání",
+  "pages": [
+   219
+  ],
+  "page_count": 1,
+  "nodes": 2,
+  "node_ids": [
+   "10-6",
+   "10-7"
+  ],
+  "terms": [
+   "gluconeogenesis",
+   "hydrolase",
+   "pentose phosphate cycle",
+   "phosphoenolpyruvate",
+   "phosphorolysis",
+   "phosphotriose",
+   "the oxaloacetate detour"
+  ]
+ },
+ {
+  "chapter": 10,
+  "section": "10.1.2",
+  "enTitle": "Lipid metabolism — degradation and ketone bodies",
+  "czTitle": "Metabolismus lipidů — odbourávání a ketolátky",
+  "pages": [
+   220
+  ],
+  "page_count": 1,
+  "nodes": 2,
+  "node_ids": [
+   "10-8",
+   "10-9"
+  ],
+  "terms": [
+   "acyl-CoA",
+   "glycerol",
+   "glycerophosphate",
+   "ketone bodies",
+   "malonyl-CoA",
+   "multienzyme complex"
+  ]
+ },
+ {
+  "chapter": 10,
+  "section": "10.1.3",
+  "enTitle": "The relation of carbohydrate and lipid metabolism — why fats cannot make sugars",
+  "czTitle": "Vztah metabolismu sacharidů a lipidů — proč z tuků nevzniknou cukry",
+  "pages": [
+   220
+  ],
+  "page_count": 1,
+  "nodes": 1,
+  "node_ids": [
+   "10-10"
+  ],
+  "terms": [
+   "cellular energy status",
+   "glyoxylate cycle"
+  ]
+ },
+ {
+  "chapter": 10,
+  "section": "10.1.4",
+  "enTitle": "The citrate cycle and respiratory chain — energetics and biosynthesis",
+  "czTitle": "Citrátový cyklus a respirační řetězec — energetika i biosyntéza",
+  "pages": [
+   220,
+   221
+  ],
+  "page_count": 2,
+  "nodes": 1,
+  "node_ids": [
+   "10-11"
+  ],
+  "terms": [
+   "aerobic phosphorylation",
+   "amphibolic pathway",
+   "macroergic compound",
+   "δ-aminolevulate"
+  ]
+ },
+ {
+  "chapter": 10,
+  "section": "10.2",
+  "enTitle": "Regulatory mechanisms — why, and at what levels",
+  "czTitle": "Regulační mechanismy — proč a na jakých úrovních",
+  "pages": [
+   221,
+   222
+  ],
+  "page_count": 2,
+  "nodes": 5,
+  "node_ids": [
+   "10-12",
+   "10-13",
+   "10-14",
+   "10-15",
+   "10-16"
+  ],
+  "terms": [
+   "allosteric control",
+   "compartment",
+   "controlling (regulatory) enzyme",
+   "controlling reaction",
+   "enzyme modification",
+   "first-order kinetics",
+   "induction",
+   "isoenzyme",
+   "levels of regulation",
+   "limiting metabolite",
+   "negative feedback (feedback control)",
+   "nervous vs hormonal regulation",
+   "phosphofructokinase",
+   "product inhibition",
+   "proenzyme (zymogen)",
+   "regulation",
+   "repression"
+  ]
+ },
+ {
+  "chapter": 10,
+  "section": "10.3",
+  "enTitle": "Hormones — definition, the gland hierarchy, and hormonal receptors",
+  "czTitle": "Hormony — definice, hierarchie žláz a hormonální receptory",
+  "pages": [
+   222,
+   223,
+   224,
+   225,
+   226,
+   227,
+   228
+  ],
+  "page_count": 7,
+  "nodes": 10,
+  "node_ids": [
+   "10-17",
+   "10-18",
+   "10-19",
+   "10-20",
+   "10-21",
+   "10-22",
+   "10-23",
+   "10-24",
+   "10-25",
+   "10-26"
+  ],
+  "terms": [
+   "ACTH (corticotropin)",
+   "ADH (vasopressin, adiuretin)",
+   "DOPA",
+   "adenylate cyclase",
+   "adrenal cortex vs medulla",
+   "aldosterone",
+   "arachidonate",
+   "aromatic A ring",
+   "catecholamine",
+   "corticoid",
+   "cortisol",
+   "cyclic AMP",
+   "cystine",
+   "diacylglycerol",
+   "epiphysis (pineal gland)",
+   "erythropoetin",
+   "estrogen",
+   "gestagen",
+   "glandotropic hormone",
+   "glycoprotein",
+   "hormone",
+   "icosanoid",
+   "inositol-1,4,5-trisphosphate (IP₃)",
+   "leukotriene",
+   "neurosecretion",
+   "nonapeptide",
+   "nuclear receptor",
+   "peripherally effective hormone",
+   "phosphodiesterase",
+   "phosphoinositidase (phospholipase C)",
+   "prohormone",
+   "prostacyclin",
+   "prostaglandin",
+   "protein kinase",
+   "protein kinase C",
+   "proteohormone",
+   "receptor tyrosine kinase",
+   "relative molecular mass (Mr)",
+   "second messenger",
+   "target cell",
+   "thromboxane",
+   "thyroglobulin",
+   "tropic vs peripherally effective hormone"
+  ]
+ }
+]

@@ -1,0 +1,46 @@
+A: 1157 distinct labels, 1560 occurrences
+B: 1193 distinct labels, 1735 occurrences
+labels present in both: 1157  A-only: 0  B-only: 36
+candidate (a,b) pairs: 3271
+monotone anchors kept: 735 (63% of shared labels)
+
+documented bridge FIGURE 19-16 -> A p.708, B p.2401: [{'label': 'FIGURE 19-16', 'kind': 'FIGURE', 'ch': 19, 'num': 16, 'page_a_pdf': 708, 'page_a_print': 672, 'page_b': 2401}]
+anchors whose chapter number goes backwards: 22 [('BOX 16-1', 'FIGURE 3-16'), ('BOX 11-2', 'BOX 4-5'), ('FIGURE 4-33', 'FIGURE 3-30'), ('BOX 12-2', 'FIGURE 5-4'), ('TABLE 28-1', 'FIGURE 6-23')]
+B-page gap between consecutive anchors: median 4  p90 8  max 38
+anchor coverage in B: from page 105 to 3755
+
+leave-one-out A-page prediction error (pdf pages): median 0.40  p90 1.00  p99 2.24  max 3.00
+
+=== chapters, with printed page numbers in A ===
+ ch    printed A   pp             B   title
+  1      2-43      42      99-250    The Foundations of Biochemistry
+  2     43-70      28     251-357    Water, The Solvent of Life
+  3     70-105     36     358-474    Amino Acids, Peptides, and Proteins
+  4    106-146     41     475-614    The Three-Dimensional Structure of Proteins
+  5    146-176     31     615-726    Protein Function
+  6    177-229     53     727-908    Enzymes
+  7    229-262     34     909-1024   Carbohydrates and Glycobiology
+  8    262-300     39    1025-1149   Nucleotides and Nucleic Acids
+  9    300-340     41    1150-1283   DNA-Based Information Technologies
+ 10    340-366     27    1284-1366   Lipids
+ 11    367-407     41    1367-1514   Biological Membranes and Transport
+ 12    407-464     58    1515-1699   Biochemical Signaling
+ 13    464-510     47    1700-1865   Introduction to Metabolism
+ 14    510-556     47    1866-2026   Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway
+ 15    556-574     19    2027-2084   The Metabolism of Glycogen in Animals
+ 16    574-601     28    2085-2178   The Citric Acid Cycle
+ 17    602-624     23    2179-2260   Fatty Acid Catabolism
+ 18    625-657     33    2261-2362   Amino Acid Oxidation and the Production of Urea
+ 19    658-700     43    2363-2493   Oxidative Phosphorylation
+ 20    700-744     45    2494-2645   Photosynthesis and Carbohydrate Synthesis in Plants
+ 21    744-793     50    2646-2789   Lipid Biosynthesis
+ 22    794-840     47    2790-2940   Biosynthesis of Amino Acids, Nucleotides, and Related Molecules
+ 23    841-884     44    2941-3093   Hormonal Regulation and Integration of Mammalian Metabolism
+ 24    885-913     29    3094-3195   Genes and Chromosomes
+ 25    913-960     48    3196-3341   DNA Metabolism
+ 26    960-1005    46    3342-3483   RNA Metabolism
+ 27   1005-1054    50    3484-3636   Protein Metabolism
+ 28   1054-1092    39    3637-3772   Regulation of Gene Expression
+total printed pages across the 28 chapters: 1109
+
+OK: wrote lehninger_AB_anchors.json, lehninger_toc.tsv, updated lehninger_B_toc.json

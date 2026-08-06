@@ -1,0 +1,14 @@
+anchors in: 735
+dropped for chapter-order violation: 22 ['BOX 16-1', 'BOX 11-2', 'FIGURE 3-30', 'BOX 12-2', 'TABLE 28-1', 'BOX 18-2', 'FIGURE 10-13', 'BOX 4-1', 'BOX 24-2', 'BOX 17-2', 'FIGURE 27-7', 'TABLE 7-1', 'TABLE 6-7', 'FIGURE 22-26', 'BOX 23-1', 'TABLE 11-1', 'BOX 15-1', 'BOX 14-2', 'FIGURE 22-16', 'TABLE 23-5', 'TABLE 25-2', 'BOX 24-1']
+anchors kept: 713
+leave-one-out error after filtering: median 0.40 p90 1.00 p99 2.24 max 3.00
+
+numbered sections to check: 117
+checked: 114   located in A within +-3 pages: 113 (99%)   not located: 1
+offset of the true page from the predicted page: {"-1": 12, "0": 90, "1": 11}
+exact hits: 79%   within +-1: 99%
+
+sections NOT located (heading text may be OCR-mangled in A, or split across a page break):
+   21.4   Cholesterol, Steroids, and Isoprenoids: Biosynthes   pred A pdf 808 / printed 772
+
+OK: map rewritten with 713 anchors

@@ -1,0 +1,880 @@
+level	kind	chapter_num	section	title	page_a_print	page_a_print_end	page_a_pdf	page_b	page_b_end
+1	frontmatter			About this Book	2	2	38	2	98
+2	frontmatter			Cover Page	2	2	38	2	2
+2	frontmatter			Halftitle Page	2	2	38	3	3
+2	frontmatter			Title Page	2	2	38	4	5
+2	frontmatter			Copyright	2	2	38	6	8
+2	frontmatter			Dedication	2	2	38	9	9
+2	frontmatter			About the Authors	2	2	38	10	13
+2	frontmatter			A Note on the Nature of Science	2	2	38	14	17
+2	frontmatter			Overview of key features	2	2	38	18	28
+2	frontmatter			Tools and Resources to Support Teaching	2	2	38	29	31
+2	frontmatter			Acknowledgments	2	2	38	32	43
+2	frontmatter			Contents in Brief	2	2	38	44	45
+2	frontmatter			Contents	2	2	38	46	98
+1	chapter	1		Chapter 1 The Foundations of Biochemistry	2	42	38	99	245
+2	section	1	1.1	1.1 Cellular Foundations	2	9	38	104	127
+3	subheading	1	1.1	Cells Are the Structural and Functional Units of All Living Organisms	2	2	38	104	105
+3	subheading	1	1.1	Cellular Dimensions Are Limited by Diffusion	2	3	38	106	108
+3	subheading	1	1.1	Organisms Belong to Three Distinct Domains of Life	3	4	39	109	110
+3	subheading	1	1.1	Organisms Differ Widely in Their Sources of Energy and Biosynthetic Precursors	4	4	40	111	111
+3	subheading	1	1.1	Bacterial and Archaeal Cells Share Common Features but Differ in Important Ways	4	6	40	112	114
+3	subheading	1	1.1	Eukaryotic Cells Have a Variety of Membranous Organelles, Which Can Be Isolated for Study	6	7	42	115	119
+3	subheading	1	1.1	The Cytoplasm Is Organized by the Cytoskeleton and Is Highly Dynamic	8	8	44	120	122
+3	subheading	1	1.1	Cells Build Supramolecular Structures	8	8	44	123	123
+3	subheading	1	1.1	In Vitro Studies May Overlook Important Interactions among Molecules	8	9	44	124	127
+2	section	1	1.2	1.2 Chemical Foundations	10	18	46	128	153
+3	subheading	1	1.2	Biomolecules Are Compounds of Carbon with a Variety of Functional Groups	10	12	46	129	132
+3	subheading	1	1.2	Cells Contain a Universal Set of Small Molecules	12	13	48	133	134
+3	subheading	1	1.2	Macromolecules Are the Major Constituents of Cells	13	14	49	135	138
+3	subheading	1	1.2	Three-Dimensional Structure Is Described by Configuration and Conformation	14	18	50	139	148
+3	subheading	1	1.2	Interactions between Biomolecules Are Stereospecific	18	18	54	149	153
+2	section	1	1.3	1.3 Physical Foundations	18	27	54	154	188
+3	subheading	1	1.3	Living Organisms Exist in a Dynamic Steady State, Never at Equilibrium with Their Surroundings	18	18	54	154	155
+3	subheading	1	1.3	Organisms Transform Energy and Matter from Their Surroundings	19	20	55	156	162
+3	subheading	1	1.3	Creating and Maintaining Order Requires Work and Energy	20	22	56	163	166
+3	subheading	1	1.3	Energy Coupling Links Reactions in Biology	22	24	58	167	170
+3	subheading	1	1.3	K[eq] and ΔG° Are Measures of a Reaction’s Tendency to Proceed Spontaneously	24	25	60	171	178
+3	subheading	1	1.3	Enzymes Promote Sequences of Chemical Reactions	25	26	61	179	184
+3	subheading	1	1.3	Metabolism Is Regulated to Achieve Balance and Economy	26	27	62	185	188
+2	section	1	1.4	1.4 Genetic Foundations	28	30	64	189	199
+3	subheading	1	1.4	Genetic Continuity Is Vested in Single DNA Molecules	28	28	64	191	192
+3	subheading	1	1.4	The Structure of DNA Allows Its Replication and Repair with Near-Perfect Fidelity	28	29	64	193	194
+3	subheading	1	1.4	The Linear Sequence in DNA Encodes Proteins with Three-Dimensional Structures	29	30	65	195	199
+2	section	1	1.5	1.5 Evolutionary Foundations	30	36	66	200	224
+3	subheading	1	1.5	Changes in the Hereditary Instructions Allow Evolution	30	31	66	200	203
+3	subheading	1	1.5	Biomolecules First Arose by Chemical Evolution	31	32	67	204	207
+3	subheading	1	1.5	RNA or Related Precursors May Have Been the First Genes and Catalysts	32	33	68	208	211
+3	subheading	1	1.5	Biological Evolution Began More Than Three and a Half Billion Years Ago	33	33	69	212	214
+3	subheading	1	1.5	The First Cell Probably Used Inorganic Fuels	33	34	69	215	216
+3	subheading	1	1.5	Eukaryotic Cells Evolved from Simpler Precursors in Several Stages	34	35	70	217	219
+3	subheading	1	1.5	Molecular Anatomy Reveals Evolutionary Relationships	35	35	71	220	220
+3	subheading	1	1.5	Functional Genomics Shows the Allocations of Genes to Specific Cellular Processes	36	36	72	221	221
+3	subheading	1	1.5	Genomic Comparisons Have Increasing Importance in Medicine	36	36	72	222	224
+2	subheading	1	1.5	Chapter Review	36	42	72	225	245
+3	subheading	1	1.5	Key Terms	36	36	72	225	225
+3	subheading	1	1.5	Problems	37	42	73	226	245
+1	subheading	1	1.5	Part I Structure and Catalysis	42	461	78	246	1688
+2	chapter	2		Chapter 2 Water, The Solvent of Life	43	70	79	251	357
+3	section	2	2.1	2.1 Weak Interactions in Aqueous Systems	44	53	80	254	288
+4	subheading	2	2.1	Hydrogen Bonding Gives Water Its Unusual Properties	44	45	80	254	259
+4	subheading	2	2.1	Water Forms Hydrogen Bonds with Polar Solutes	45	45	81	260	262
+4	subheading	2	2.1	Water Interacts Electrostatically with Charged Solutes	46	46	82	263	265
+4	subheading	2	2.1	Nonpolar Gases Are Poorly Soluble in Water	47	47	83	266	267
+4	subheading	2	2.1	Nonpolar Compounds Force Energetically Unfavorable Changes in the Structure of Water	47	48	83	268	271
+4	subheading	2	2.1	van der Waals Interactions Are Weak Interatomic Attractions	48	49	84	272	273
+4	subheading	2	2.1	Weak Interactions Are Crucial to Macromolecular Structure and Function	49	50	85	274	279
+4	subheading	2	2.1	Concentrated Solutes Produce Osmotic Pressure	51	53	87	280	288
+3	section	2	2.2	2.2 Ionization of Water, Weak Acids, and Weak Bases	54	58	90	289	312
+4	subheading	2	2.2	Pure Water Is Slightly Ionized	54	54	90	289	292
+4	subheading	2	2.2	The Ionization of Water Is Expressed by an Equilibrium Constant	54	55	90	293	296
+4	subheading	2	2.2	The pH Scale Designates the H[+] and H[−] Concentrations	55	56	91	297	302
+4	subheading	2	2.2	Weak Acids and Bases Have Characteristic Acid Dissociation Constants	56	57	92	303	304
+4	subheading	2	2.2	Titration Curves Reveal the p[Ka] of Weak Acids	57	58	93	305	312
+3	section	2	2.3	2.3 Buffering against pH Changes in Biological Systems	59	64	95	313	334
+4	subheading	2	2.3	Buffers Are Mixtures of Weak Acids and Their Conjugate Bases	59	60	95	314	315
+4	subheading	2	2.3	The Henderson-Hasselbalch Equation Relates pH, p[Ka], and Buffer Concentration	60	60	96	316	317
+4	subheading	2	2.3	Weak Acids or Bases Buffer Cells and Tissues against pH Changes	61	62	97	318	329
+4	subheading	2	2.3	Untreated Diabetes Produces Life-Threatening Acidosis	63	64	99	330	334
+3	subheading	2	2.3	Chapter Review	64	70	100	335	357
+4	subheading	2	2.3	Key Terms	64	64	100	335	335
+4	subheading	2	2.3	Problems	64	70	100	336	357
+2	chapter	3		Chapter 3 Amino Acids, Peptides, and Proteins	70	105	106	358	474
+3	section	3	3.1	3.1 Amino Acids	71	79	107	361	379
+4	subheading	3	3.1	Amino Acids Share Common Structural Features	71	72	107	361	364
+4	subheading	3	3.1	The Amino Acid Residues in Proteins Are L Stereoisomers	72	72	108	365	365
+4	subheading	3	3.1	Amino Acids Can Be Classified by R Group	72	76	108	366	370
+4	subheading	3	3.1	Uncommon Amino Acids Also Have Important Functions	76	77	112	371	372
+4	subheading	3	3.1	Amino Acids Can Act as Acids and Bases	77	78	113	373	376
+4	subheading	3	3.1	Amino Acids Differ in Their Acid-Base Properties	78	79	114	377	379
+3	section	3	3.2	3.2 Peptides and Proteins	79	83	115	380	392
+4	subheading	3	3.2	Peptides Are Chains of Amino Acids	79	80	115	380	382
+4	subheading	3	3.2	Peptides Can Be Distinguished by Their Ionization Behavior	81	81	117	383	384
+4	subheading	3	3.2	Biologically Active Peptides and Polypeptides Occur in a Vast Range of Sizes and Compositions	81	82	117	385	389
+4	subheading	3	3.2	Some Proteins Contain Chemical Groups Other Than Amino Acids	82	83	118	390	392
+3	section	3	3.3	3.3 Working with Proteins	83	90	119	393	415
+4	subheading	3	3.3	Proteins Can Be Separated and Purified	83	86	119	393	402
+4	subheading	3	3.3	Proteins Can Be Separated and Characterized by Electrophoresis	86	89	122	403	410
+4	subheading	3	3.3	Unseparated Proteins Are Detected and Quantified Based on Their Functions	89	90	125	411	415
+3	section	3	3.4	3.4 The Structure of Proteins: Primary Structure	91	100	127	416	450
+4	subheading	3	3.4	The Function of a Protein Depends on Its Amino Acid Sequence	91	91	127	417	420
+4	subheading	3	3.4	Protein Structure Is Studied Using Methods That Exploit Protein Chemistry	92	92	128	421	425
+4	subheading	3	3.4	Mass Spectrometry Provides Information on Molecular Mass, Amino Acid Sequence, and Entire Proteomes	93	95	129	426	433
+4	subheading	3	3.4	Small Peptides and Proteins Can Be Chemically Synthesized	95	96	131	434	436
+4	subheading	3	3.4	Amino Acid Sequences Provide Important Biochemical Information	96	97	132	437	441
+4	subheading	3	3.4	Protein Sequences Help Elucidate the History of Life on Earth	98	100	134	442	450
+3	subheading	3	3.4	Chapter Review	100	105	136	451	474
+4	subheading	3	3.4	Key Terms	100	100	136	451	452
+4	subheading	3	3.4	Problems	101	105	137	453	474
+2	chapter	4		Chapter 4 The Three-Dimensional Structure of Proteins	106	146	142	475	614
+3	section	4	4.1	4.1 Overview of Protein Structure	108	110	144	479	492
+4	subheading	4	4.1	A Protein’s Conformation Is Stabilized Largely by Weak Interactions	108	108	144	480	481
+4	subheading	4	4.1	Packing of Hydrophobic Amino Acids Away from Water Favors Protein Folding	108	109	144	482	483
+4	subheading	4	4.1	Polar Groups Contribute Hydrogen Bonds and Ion Pairs to Protein Folding	109	109	145	484	484
+4	subheading	4	4.1	Individual van der Waals Interactions Are Weak but Combine to Promote Folding	109	110	145	485	486
+4	subheading	4	4.1	The Peptide Bond Is Rigid and Planar	110	110	146	487	492
+3	section	4	4.2	4.2 Protein Secondary Structure	111	116	147	493	514
+4	subheading	4	4.2	The α Helix Is a Common Protein Secondary Structure	111	112	147	493	498
+4	subheading	4	4.2	Amino Acid Sequence Affects Stability of the α Helix	112	113	148	499	502
+4	subheading	4	4.2	The β Conformation Organizes Polypeptide Chains into Sheets	113	113	149	503	504
+4	subheading	4	4.2	β Turns Are Common in Proteins	114	114	150	505	507
+4	subheading	4	4.2	Common Secondary Structures Have Characteristic Dihedral Angles	114	115	150	508	510
+4	subheading	4	4.2	Common Secondary Structures Can Be Assessed by Circular Dichroism	116	116	152	511	514
+3	section	4	4.3	4.3 Protein Tertiary and Quaternary Structures	116	129	152	515	553
+4	subheading	4	4.3	Fibrous Proteins Are Adapted for a Structural Function	117	120	153	516	528
+4	subheading	4	4.3	Structural Diversity Reflects Functional Diversity in Globular Proteins	121	121	157	529	530
+4	subheading	4	4.3	Myoglobin Provided Early Clues about the Complexity of Globular Protein Structure	121	122	157	531	534
+4	subheading	4	4.3	Globular Proteins Have a Variety of Tertiary Structures	122	124	158	535	541
+4	subheading	4	4.3	Some Proteins or Protein Segments Are Intrinsically Disordered	124	125	160	542	544
+4	subheading	4	4.3	Protein Motifs Are the Basis for Protein Structural Classification	125	126	161	545	547
+4	subheading	4	4.3	Protein Quaternary Structures Range from Simple Dimers to Large Complexes	126	129	162	548	553
+3	section	4	4.4	4.4 Protein Denaturation and Folding	129	136	165	554	580
+4	subheading	4	4.4	Loss of Protein Structure Results in Loss of Function	129	129	165	556	557
+4	subheading	4	4.4	Amino Acid Sequence Determines Tertiary Structure	130	130	166	558	561
+4	subheading	4	4.4	Polypeptides Fold Rapidly by a Stepwise Process	130	131	166	562	566
+4	subheading	4	4.4	Some Proteins Undergo Assisted Folding	132	132	168	567	570
+4	subheading	4	4.4	Defects in Protein Folding Are the Molecular Basis for Many Human Genetic Disorders	133	136	169	571	580
+3	section	4	4.5	4.5 Determination of Protein and Biomolecular Structures	136	142	172	581	598
+4	subheading	4	4.5	X-ray Diffraction Produces Electron Density Maps from Protein Crystals	136	137	172	585	588
+4	subheading	4	4.5	Distances between Protein Atoms Can Be Measured by Nuclear Magnetic Resonance	137	137	173	589	591
+4	subheading	4	4.5	Thousands of Individual Molecules Are Used to Determine Structures by Cryo-Electron Microscopy	138	142	174	592	598
+3	subheading	4	4.5	Chapter Review	142	146	178	599	614
+4	subheading	4	4.5	Key Terms	142	142	178	599	599
+4	subheading	4	4.5	Problems	142	146	178	600	614
+2	chapter	5		Chapter 5 Protein Function	147	176	183	615	726
+3	section	5	5.1	5.1 Reversible Binding of a Protein to a Ligand: Oxygen-Binding Proteins	148	164	184	619	680
+4	subheading	5	5.1	Oxygen Can Bind to a Heme Prosthetic Group	148	148	184	619	622
+4	subheading	5	5.1	Globins Are a Family of Oxygen-Binding Proteins	149	149	185	623	624
+4	subheading	5	5.1	Myoglobin Has a Single Binding Site for Oxygen	149	149	185	625	625
+4	subheading	5	5.1	Protein-Ligand Interactions Can Be Described Quantitatively	149	152	185	626	636
+4	subheading	5	5.1	Protein Structure Affects How Ligands Bind	152	152	188	637	640
+4	subheading	5	5.1	Hemoglobin Transports Oxygen in Blood	153	153	189	641	641
+4	subheading	5	5.1	Hemoglobin Subunits Are Structurally Similar to Myoglobin	153	154	189	642	645
+4	subheading	5	5.1	Hemoglobin Undergoes a Structural Change on Binding Oxygen	154	155	190	646	648
+4	subheading	5	5.1	Hemoglobin Binds Oxygen Cooperatively	156	158	192	649	657
+4	subheading	5	5.1	Cooperative Ligand Binding Can Be Described Quantitatively	158	158	194	658	660
+4	subheading	5	5.1	Two Models Suggest Mechanisms for Cooperative Binding	158	160	194	661	663
+4	subheading	5	5.1	Hemoglobin Also Transports H[+] and CO[2]	160	161	196	664	668
+4	subheading	5	5.1	Oxygen Binding to Hemoglobin Is Regulated by 2,3-Bisphosphoglycerate	161	162	197	669	673
+4	subheading	5	5.1	Sickle Cell Anemia Is a Molecular Disease of Hemoglobin	162	164	198	674	680
+3	section	5	5.2	5.2 Complementary Interactions between Proteins and Ligands: The Immune System and Immunoglobulins	164	168	200	681	695
+4	subheading	5	5.2	The Immune Response Includes a Specialized Array of Cells and Proteins	164	165	200	682	684
+4	subheading	5	5.2	Antibodies Have Two Identical Antigen-Binding Sites	165	167	201	685	690
+4	subheading	5	5.2	Antibodies Bind Tightly and Specifically to Antigen	167	167	203	691	691
+4	subheading	5	5.2	The Antibody-Antigen Interaction Is the Basis for a Variety of Important Analytical Procedures	167	168	203	692	695
+3	section	5	5.3	5.3 Protein Interactions Modulated by Chemical Energy: Actin, Myosin, and Molecular Motors	168	172	204	696	708
+4	subheading	5	5.3	The Major Proteins of Muscle Are Myosin and Actin	169	170	205	697	700
+4	subheading	5	5.3	Additional Proteins Organize the Thin and Thick Filaments into Ordered Structures	170	171	206	701	703
+4	subheading	5	5.3	Myosin Thick Filaments Slide along Actin Thin Filaments	171	172	207	704	708
+3	subheading	5	5.3	Chapter Review	172	176	208	709	726
+4	subheading	5	5.3	Key Terms	172	172	208	709	709
+4	subheading	5	5.3	Problems	173	176	209	710	726
+2	chapter	6		Chapter 6 Enzymes	177	229	213	727	908
+3	section	6	6.1	6.1 An Introduction to Enzymes	177	179	213	730	736
+4	subheading	6	6.1	Most Enzymes Are Proteins	178	178	214	731	733
+4	subheading	6	6.1	Enzymes Are Classified by the Reactions They Catalyze	178	179	214	734	736
+3	section	6	6.2	6.2 How Enzymes Work	179	188	215	737	770
+4	subheading	6	6.2	Enzymes Affect Reaction Rates, Not Equilibria	180	181	216	738	744
+4	subheading	6	6.2	Reaction Rates and Equilibria Have Precise Thermodynamic Definitions	181	182	217	745	748
+4	subheading	6	6.2	A Few Principles Explain the Catalytic Power and Specificity of Enzymes	182	182	218	749	750
+4	subheading	6	6.2	Noncovalent Interactions between Enzyme and Substrate Are Optimized in the Transition State	183	186	219	751	762
+4	subheading	6	6.2	Covalent Interactions and Metal Ions Contribute to Catalysis	186	188	222	763	770
+3	section	6	6.3	6.3 Enzyme Kinetics as an Approach to Understanding Mechanism	188	203	224	771	822
+4	subheading	6	6.3	Substrate Concentration Affects the Rate of Enzyme-Catalyzed Reactions	188	189	224	771	775
+4	subheading	6	6.3	The Relationship between Substrate Concentration and Reaction Rate Can Be Expressed with the Michaelis-Menten Equation	189	190	225	776	782
+4	subheading	6	6.3	Michaelis-Menten Kinetics Can Be Analyzed Quantitatively	191	191	227	783	784
+4	subheading	6	6.3	Kinetic Parameters Are Used to Compare Enzyme Activities	191	193	227	785	792
+4	subheading	6	6.3	Many Enzymes Catalyze Reactions with Two or More Substrates	194	195	230	793	798
+4	subheading	6	6.3	Enzyme Activity Depends on pH	195	195	231	799	799
+4	subheading	6	6.3	Pre–Steady State Kinetics Can Provide Evidence for Specific Reaction Steps	196	196	232	800	802
+4	subheading	6	6.3	Enzymes Are Subject to Reversible or Irreversible Inhibition	196	203	232	803	822
+3	section	6	6.4	6.4 Examples of Enzymatic Reactions	203	213	239	823	852
+4	subheading	6	6.4	The Chymotrypsin Mechanism Involves Acylation and Deacylation of a Ser Residue	203	205	239	824	835
+4	subheading	6	6.4	An Understanding of Protease Mechanisms Leads to New Treatments for HIV Infection	206	208	242	836	839
+4	subheading	6	6.4	Hexokinase Undergoes Induced Fit on Substrate Binding	209	210	245	840	843
+4	subheading	6	6.4	The Enolase Reaction Mechanism Requires Metal Ions	210	211	246	844	845
+4	subheading	6	6.4	An Understanding of Enzyme Mechanism Produces Useful Antibiotics	211	213	247	846	852
+3	section	6	6.5	6.5 Regulatory Enzymes	213	223	249	853	886
+4	subheading	6	6.5	Allosteric Enzymes Undergo Conformational Changes in Response to Modulator Binding	213	214	249	854	857
+4	subheading	6	6.5	The Kinetic Properties of Allosteric Enzymes Diverge from Michaelis-Menten Behavior	214	216	250	858	861
+4	subheading	6	6.5	Some Enzymes Are Regulated by Reversible Covalent Modification	216	217	252	862	864
+4	subheading	6	6.5	Phosphoryl Groups Affect the Structure and Catalytic Activity of Enzymes	217	218	253	865	869
+4	subheading	6	6.5	Multiple Phosphorylations Allow Exquisite Regulatory Control	218	219	254	870	873
+4	subheading	6	6.5	Some Enzymes and Other Proteins Are Regulated by Proteolytic Cleavage of an Enzyme Precursor	220	220	256	874	875
+4	subheading	6	6.5	A Cascade of Proteolytically Activated Zymogens Leads to Blood Coagulation	220	223	256	876	884
+4	subheading	6	6.5	Some Regulatory Enzymes Use Several Regulatory Mechanisms	223	223	259	885	886
+3	subheading	6	6.5	Chapter Review	224	229	260	887	908
+4	subheading	6	6.5	Key Terms	224	224	260	887	888
+4	subheading	6	6.5	Problems	224	229	260	889	908
+2	chapter	7		Chapter 7 Carbohydrates and Glycobiology	229	262	265	909	1024
+3	section	7	7.1	7.1 Monosaccharides and Disaccharides	230	241	266	913	951
+4	subheading	7	7.1	The Two Families of Monosaccharides Are Aldoses and Ketoses	230	231	266	914	917
+4	subheading	7	7.1	Monosaccharides Have Asymmetric Centers	231	232	267	918	923
+4	subheading	7	7.1	The Common Monosaccharides Have Cyclic Structures	233	234	269	924	933
+4	subheading	7	7.1	Organisms Contain a Variety of Hexose Derivatives	235	236	271	934	936
+4	subheading	7	7.1	Sugars That Are, or Can Form, Aldehydes Are Reducing Sugars	236	241	272	937	951
+3	section	7	7.2	7.2 Polysaccharides	241	246	277	952	968
+4	subheading	7	7.2	Some Homopolysaccharides Are Storage Forms of Fuel	242	242	278	954	955
+4	subheading	7	7.2	Some Homopolysaccharides Serve Structural Roles	242	242	278	956	956
+4	subheading	7	7.2	Steric Factors and Hydrogen Bonding Influence Homopolysaccharide Folding	243	245	279	957	961
+4	subheading	7	7.2	Peptidoglycan Reinforces the Bacterial Cell Wall	245	245	281	962	962
+4	subheading	7	7.2	Glycosaminoglycans Are Heteropolysaccharides of the Extracellular Matrix	245	246	281	962	968
+3	section	7	7.3	7.3 Glycoconjugates: Proteoglycans, Glycoproteins, and Glycolipids	247	253	283	969	992
+4	subheading	7	7.3	Proteoglycans Are Glycosaminoglycan-Containing Macromolecules of the Cell Surface and Extracellular Matrix	247	251	283	971	984
+4	subheading	7	7.3	Glycoproteins Have Covalently Attached Oligosaccharides	251	252	287	985	988
+4	subheading	7	7.3	Glycolipids and Lipopolysaccharides Are Membrane Components	253	253	289	989	992
+3	section	7	7.4	7.4 Carbohydrates as Informational Molecules: The Sugar Code	254	258	290	993	1006
+4	subheading	7	7.4	Oligosaccharide Structures Are Information-Dense	254	254	290	993	993
+4	subheading	7	7.4	Lectins Are Proteins That Read the Sugar Code and Mediate Many Biological Processes	254	256	290	994	1000
+4	subheading	7	7.4	Lectin-Carbohydrate Interactions Are Highly Specific and Often Multivalent	256	258	292	1001	1006
+3	section	7	7.5	7.5 Working with Carbohydrates	258	259	294	1007	1010
+3	subheading	7	7.5	Chapter Review	260	262	296	1011	1024
+4	subheading	7	7.5	Key Terms	260	260	296	1011	1011
+4	subheading	7	7.5	Problems	260	262	296	1012	1024
+2	chapter	8		Chapter 8 Nucleotides and Nucleic Acids	263	300	299	1025	1149
+3	section	8	8.1	8.1 Some Basic Definitions and Conventions	263	269	299	1028	1046
+4	subheading	8	8.1	Nucleotides and Nucleic Acids Have Characteristic Bases and Pentoses	263	266	299	1028	1037
+4	subheading	8	8.1	Phosphodiester Bonds Link Successive Nucleotides in Nucleic Acids	266	268	302	1038	1041
+4	subheading	8	8.1	The Properties of Nucleotide Bases Affect the Three-Dimensional Structure of Nucleic Acids	268	269	304	1042	1046
+3	section	8	8.2	8.2 Nucleic Acid Structure	269	278	305	1047	1077
+4	subheading	8	8.2	DNA Is a Double Helix That Stores Genetic Information	269	272	305	1047	1057
+4	subheading	8	8.2	DNA Can Occur in Different Three-Dimensional Forms	272	272	308	1058	1060
+4	subheading	8	8.2	Certain DNA Sequences Adopt Unusual Structures	272	274	308	1061	1066
+4	subheading	8	8.2	Messenger RNAs Code for Polypeptide Chains	274	275	310	1067	1068
+4	subheading	8	8.2	Many RNAs Have More Complex Three-Dimensional Structures	275	278	311	1069	1077
+3	section	8	8.3	8.3 Nucleic Acid Chemistry	278	293	314	1078	1122
+4	subheading	8	8.3	Double-Helical DNA and RNA Can Be Denatured	278	280	314	1078	1084
+4	subheading	8	8.3	Nucleotides and Nucleic Acids Undergo Nonenzymatic Transformations	281	282	317	1085	1091
+4	subheading	8	8.3	Some Bases of DNA Are Methylated	282	282	318	1092	1092
+4	subheading	8	8.3	The Chemical Synthesis of DNA Has Been Automated	282	283	318	1093	1094
+4	subheading	8	8.3	Gene Sequences Can Be Amplified with the Polymerase Chain Reaction	283	287	319	1095	1104
+4	subheading	8	8.3	The Sequences of Long DNA Strands Can Be Determined	287	290	323	1105	1111
+4	subheading	8	8.3	DNA Sequencing Technologies Are Advancing Rapidly	290	293	326	1112	1122
+3	section	8	8.4	8.4 Other Functions of Nucleotides	294	296	330	1123	1131
+4	subheading	8	8.4	Nucleotides Carry Chemical Energy in Cells	294	294	330	1123	1124
+4	subheading	8	8.4	Adenine Nucleotides Are Components of Many Enzyme Cofactors	294	295	330	1125	1127
+4	subheading	8	8.4	Some Nucleotides Are Regulatory Molecules	295	296	331	1128	1129
+4	subheading	8	8.4	Adenine Nucleotides Also Serve as Signals	296	296	332	1130	1131
+3	subheading	8	8.4	Chapter Review	296	300	332	1132	1149
+4	subheading	8	8.4	Key Terms	296	296	332	1132	1132
+4	subheading	8	8.4	Problems	297	300	333	1133	1149
+2	chapter	9		Chapter 9 DNA-Based Information Technologies	300	339	336	1150	1283
+3	section	9	9.1	9.1 Studying Genes and Their Products	301	316	337	1154	1201
+4	subheading	9	9.1	Genes Can Be Isolated by DNA Cloning	301	302	337	1154	1155
+4	subheading	9	9.1	Restriction Endonucleases and DNA Ligases Yield Recombinant DNA	302	305	338	1156	1164
+4	subheading	9	9.1	Cloning Vectors Allow Amplification of Inserted DNA Segments	305	308	341	1165	1177
+4	subheading	9	9.1	Cloned Genes Can Be Expressed to Amplify Protein Production	308	309	344	1178	1180
+4	subheading	9	9.1	Many Different Systems Are Used to Express Recombinant Proteins	309	311	345	1181	1187
+4	subheading	9	9.1	Alteration of Cloned Genes Produces Altered Proteins	311	312	347	1188	1190
+4	subheading	9	9.1	Terminal Tags Provide Handles for Affinity Purification	313	314	349	1191	1194
+4	subheading	9	9.1	The Polymerase Chain Reaction Offers Many Options for Cloning Experiments	314	315	350	1195	1196
+4	subheading	9	9.1	DNA Libraries Are Specialized Catalogs of Genetic Information	315	316	351	1197	1201
+3	section	9	9.2	9.2 Exploring Protein Function on the Scale of Cells or Whole Organisms	317	326	353	1202	1236
+4	subheading	9	9.2	Sequence or Structural Relationships Can Suggest Protein Function	317	318	353	1204	1206
+4	subheading	9	9.2	When and Where a Protein Is Present in a Cell Can Suggest Protein Function	318	320	354	1207	1215
+4	subheading	9	9.2	Knowing What a Protein Interacts with Can Suggest Its Function	320	322	356	1216	1222
+4	subheading	9	9.2	The Effect of Deleting or Altering a Protein Can Suggest Its Function	322	324	358	1223	1230
+4	subheading	9	9.2	Many Proteins Are Still Undiscovered	324	326	360	1231	1236
+3	section	9	9.3	9.3 Genomics and the Human Story	326	334	362	1237	1266
+4	subheading	9	9.3	The Human Genome Contains Many Types of Sequences	327	329	363	1238	1244
+4	subheading	9	9.3	Genome Sequencing Informs Us about Our Humanity	329	330	365	1245	1252
+4	subheading	9	9.3	Genome Comparisons Help Locate Genes Involved in Disease	331	332	367	1253	1258
+4	subheading	9	9.3	Genome Sequences Inform Us about Our Past and Provide Opportunities for the Future	333	334	369	1259	1266
+3	subheading	9	9.3	Chapter Review	334	339	370	1267	1283
+4	subheading	9	9.3	Key Terms	334	334	370	1267	1267
+4	subheading	9	9.3	Problems	335	339	371	1268	1283
+2	chapter	10		Chapter 10 Lipids	339	366	375	1284	1366
+3	section	10	10.1	10.1 Storage Lipids	340	346	376	1287	1298
+4	subheading	10	10.1	Fatty Acids Are Hydrocarbon Derivatives	340	341	376	1287	1290
+4	subheading	10	10.1	Triacylglycerols Are Fatty Acid Esters of Glycerol	343	343	379	1291	1292
+4	subheading	10	10.1	Triacylglycerols Provide Stored Energy and Insulation	344	344	380	1293	1294
+4	subheading	10	10.1	Partial Hydrogenation of Cooking Oils Improves Their Stability but Creates Fatty Acids with Harmful Health Effects	344	345	380	1295	1296
+4	subheading	10	10.1	Waxes Serve as Energy Stores and Water Repellents	346	346	382	1297	1298
+3	section	10	10.2	10.2 Structural Lipids in Membranes	346	353	382	1299	1321
+4	subheading	10	10.2	Glycerophospholipids Are Derivatives of Phosphatidic Acid	347	348	383	1300	1302
+4	subheading	10	10.2	Some Glycerophospholipids Have Ether-Linked Fatty Acids	348	348	384	1303	1304
+4	subheading	10	10.2	Galactolipids of Plants and Ether-Linked Lipids of Archaea Are Environmental Adaptations	349	349	385	1305	1306
+4	subheading	10	10.2	Sphingolipids Are Derivatives of Sphingosine	349	350	385	1307	1310
+4	subheading	10	10.2	Sphingolipids at Cell Surfaces Are Sites of Biological Recognition	350	350	386	1311	1312
+4	subheading	10	10.2	Phospholipids and Sphingolipids Are Degraded in Lysosomes	351	352	387	1313	1317
+4	subheading	10	10.2	Sterols Have Four Fused Carbon Rings	352	353	388	1318	1321
+3	section	10	10.3	10.3 Lipids as Signals, Cofactors, and Pigments	353	360	389	1322	1342
+4	subheading	10	10.3	Phosphatidylinositols and Sphingosine Derivatives Act as Intracellular Signals	354	354	390	1323	1324
+4	subheading	10	10.3	Eicosanoids Carry Messages to Nearby Cells	354	355	390	1325	1327
+4	subheading	10	10.3	Steroid Hormones Carry Messages between Tissues	356	356	392	1328	1328
+4	subheading	10	10.3	Vascular Plants Produce Thousands of Volatile Signals	356	356	392	1329	1329
+4	subheading	10	10.3	Vitamins A and D Are Hormone Precursors	356	358	392	1330	1334
+4	subheading	10	10.3	Vitamins E and K and the Lipid Quinones Are Oxidation-Reduction Cofactors	358	359	394	1335	1337
+4	subheading	10	10.3	Dolichols Activate Sugar Precursors for Biosynthesis	359	359	395	1338	1338
+4	subheading	10	10.3	Many Natural Pigments Are Lipidic Conjugated Dienes	360	360	396	1339	1339
+4	subheading	10	10.3	Polyketides Are Natural Products with Potent Biological Activities	360	360	396	1340	1342
+3	section	10	10.4	10.4 Working with Lipids	361	363	397	1343	1354
+4	subheading	10	10.4	Lipid Extraction Requires Organic Solvents	361	361	397	1345	1345
+4	subheading	10	10.4	Adsorption Chromatography Separates Lipids of Different Polarity	362	362	398	1346	1346
+4	subheading	10	10.4	Gas Chromatography Resolves Mixtures of Volatile Lipid Derivatives	362	362	398	1347	1347
+4	subheading	10	10.4	Specific Hydrolysis Aids in Determination of Lipid Structure	362	362	398	1348	1348
+4	subheading	10	10.4	Mass Spectrometry Reveals Complete Lipid Structure	362	362	398	1349	1350
+4	subheading	10	10.4	Lipidomics Seeks to Catalog All Lipids and Their Functions	363	363	399	1351	1354
+3	subheading	10	10.4	Chapter Review	364	366	400	1355	1366
+4	subheading	10	10.4	Key Terms	364	364	400	1355	1355
+4	subheading	10	10.4	Problems	364	366	400	1356	1366
+2	chapter	11		Chapter 11 Biological Membranes and Transport	367	407	403	1367	1514
+3	section	11	11.1	11.1 The Composition and Architecture of Membranes	367	376	403	1370	1402
+4	subheading	11	11.1	The Lipid Bilayer Is Stable in Water	367	368	403	1370	1373
+4	subheading	11	11.1	Bilayer Architecture Underlies the Structure and Function of Biological Membranes	369	369	405	1374	1376
+4	subheading	11	11.1	The Endomembrane System Is Dynamic and Functionally Differentiated	369	371	405	1377	1383
+4	subheading	11	11.1	Membrane Proteins Are Receptors, Transporters, and Enzymes	371	371	407	1384	1386
+4	subheading	11	11.1	Membrane Proteins Differ in the Nature of Their Association with the Membrane Bilayer	371	372	407	1387	1391
+4	subheading	11	11.1	The Topology of an Integral Membrane Protein Can Often Be Predicted from Its Sequence	372	375	408	1392	1397
+4	subheading	11	11.1	Covalently Attached Lipids Anchor or Direct Some Membrane Proteins	375	376	411	1398	1402
+3	section	11	11.2	11.2 Membrane Dynamics	377	384	413	1403	1431
+4	subheading	11	11.2	Acyl Groups in the Bilayer Interior Are Ordered to Varying Degrees	377	377	413	1403	1405
+4	subheading	11	11.2	Transbilayer Movement of Lipids Requires Catalysis	377	378	413	1406	1409
+4	subheading	11	11.2	Lipids and Proteins Diffuse Laterally in the Bilayer	378	379	414	1410	1414
+4	subheading	11	11.2	Sphingolipids and Cholesterol Cluster Together in Membrane Rafts	379	381	415	1415	1420
+4	subheading	11	11.2	Membrane Curvature and Fusion Are Central to Many Biological Processes	382	384	418	1421	1428
+4	subheading	11	11.2	Integral Proteins of the Plasma Membrane Are Involved in Surface Adhesion, Signaling, and Other Cellular Processes	384	384	420	1429	1431
+3	section	11	11.3	11.3 Solute Transport across Membranes	385	403	421	1432	1495
+4	subheading	11	11.3	Transport May Be Passive or Active	385	385	421	1433	1434
+4	subheading	11	11.3	Transporters and Ion Channels Share Some Structural Properties but Have Different Mechanisms	385	386	421	1435	1440
+4	subheading	11	11.3	The Glucose Transporter of Erythrocytes Mediates Passive Transport	387	389	423	1441	1450
+4	subheading	11	11.3	The Chloride-Bicarbonate Exchanger Catalyzes Electroneutral Cotransport of Anions across the Plasma Membrane	389	390	425	1451	1453
+4	subheading	11	11.3	Active Transport Results in Solute Movement against a Concentration or Electrochemical Gradient	390	392	426	1454	1459
+4	subheading	11	11.3	P-Type ATPases Undergo Phosphorylation during Their Catalytic Cycles	392	394	428	1460	1467
+4	subheading	11	11.3	V-Type and F-Type ATPases Are ATP-Driven Proton Pumps	394	395	430	1468	1469
+4	subheading	11	11.3	ABC Transporters Use ATP to Drive the Active Transport of a Wide Variety of Substrates	395	398	431	1470	1476
+4	subheading	11	11.3	Ion Gradients Provide the Energy for Secondary Active Transport	398	400	434	1477	1482
+4	subheading	11	11.3	Aquaporins Form Hydrophilic Transmembrane Channels for the Passage of Water	400	400	436	1483	1485
+4	subheading	11	11.3	Ion-Selective Channels Allow Rapid Movement of Ions across Membranes	400	401	436	1486	1489
+4	subheading	11	11.3	The Structure of a K[+] Channel Reveals the Basis for Its Specificity	402	403	438	1490	1495
+3	subheading	11	11.3	Chapter Review	403	407	439	1496	1514
+4	subheading	11	11.3	Key Terms	403	403	439	1496	1497
+4	subheading	11	11.3	Problems	403	407	439	1498	1514
+2	chapter	12		Chapter 12 Biochemical Signaling	407	461	443	1515	1688
+3	section	12	12.1	12.1 General Features of Signal Transduction	408	411	444	1519	1527
+4	subheading	12	12.1	Signal-Transducing Systems Share Common Features	408	409	444	1520	1523
+4	subheading	12	12.1	The General Process of Signal Transduction in Animals Is Universal	410	411	446	1524	1527
+3	section	12	12.2	12.2 G Protein–Coupled Receptors and Second Messengers	412	428	448	1528	1580
+4	subheading	12	12.2	The β-Adrenergic Receptor System Acts through the Second Messenger cAMP	412	414	448	1529	1534
+4	subheading	12	12.2	Cyclic AMP Activates Protein Kinase A	414	416	450	1535	1544
+4	subheading	12	12.2	Several Mechanisms Cause Termination of the β-Adrenergic Response	416	417	452	1545	1546
+4	subheading	12	12.2	The β-Adrenergic Receptor Is Desensitized by Phosphorylation and by Association with Arrestin	418	419	454	1547	1550
+4	subheading	12	12.2	Cyclic AMP Acts as a Second Messenger for Many Regulatory Molecules	419	421	455	1551	1560
+4	subheading	12	12.2	G Proteins Act as Self-Limiting Switches in Many Processes	421	424	457	1561	1567
+4	subheading	12	12.2	Diacylglycerol, Inositol Trisphosphate, and Ca2+ Have Related Roles as Second Messengers	424	425	460	1568	1572
+4	subheading	12	12.2	Calcium Is a Second Messenger That Is Limited in Space and Time	426	428	462	1573	1580
+3	section	12	12.3	12.3 GPCRs in Vision, Olfaction, and Gustation	429	432	465	1581	1593
+4	subheading	12	12.3	The Vertebrate Eye Uses Classic GPCR Mechanisms	429	430	465	1581	1587
+4	subheading	12	12.3	Vertebrate Olfaction and Gustation Use Mechanisms Similar to the Visual System	431	431	467	1588	1588
+4	subheading	12	12.3	All GPCR Systems Share Universal Features	431	432	467	1589	1593
+3	section	12	12.4	12.4 Receptor Tyrosine Kinases	433	438	469	1594	1610
+4	subheading	12	12.4	Stimulation of the Insulin Receptor Initiates a Cascade of Protein Phosphorylation Reactions	433	434	469	1596	1599
+4	subheading	12	12.4	The Membrane Phospholipid PIP3 Functions at a Branch in Insulin Signaling	434	438	470	1600	1606
+4	subheading	12	12.4	Cross Talk among Signaling Systems Is Common and Complex	438	438	474	1607	1610
+3	section	12	12.5	12.5 Multivalent Adaptor Proteins and Membrane Rafts	438	442	474	1611	1622
+4	subheading	12	12.5	Protein Modules Bind Phosphorylated Tyr, Ser, or Thr Residues in Partner Proteins	439	441	475	1612	1619
+4	subheading	12	12.5	Membrane Rafts and Caveolae Segregate Signaling Proteins	441	442	477	1620	1622
+3	section	12	12.6	12.6 Gated Ion Channels	442	445	478	1623	1632
+4	subheading	12	12.6	Ion Channels Underlie Rapid Electrical Signaling in Excitable Cells	442	443	478	1623	1626
+4	subheading	12	12.6	Voltage-Gated Ion Channels Produce Neuronal Action Potentials	444	444	480	1627	1629
+4	subheading	12	12.6	Neurons Have Receptor Channels That Respond to Different Neurotransmitters	444	444	480	1630	1630
+4	subheading	12	12.6	Toxins Target Ion Channels	445	445	481	1631	1632
+3	section	12	12.7	12.7 Regulation of Transcription by Nuclear Hormone Receptors	446	446	482	1633	1637
+3	section	12	12.8	12.8 Regulation of the Cell Cycle by Protein Kinases	446	450	482	1638	1653
+4	subheading	12	12.8	The Cell Cycle Has Four Stages	446	447	482	1638	1640
+4	subheading	12	12.8	Levels of Cyclin-Dependent Protein Kinases Oscillate	447	447	483	1641	1641
+4	subheading	12	12.8	CDKs Are Regulated by Phosphorylation, Cyclin Degradation, Growth Factors, and Specific Inhibitors	447	449	483	1642	1648
+4	subheading	12	12.8	CDKs Regulate Cell Division by Phosphorylating Critical Proteins	449	450	485	1649	1653
+3	section	12	12.9	12.9 Oncogenes, Tumor Suppressor Genes, and Programmed Cell Death	451	456	487	1654	1671
+4	subheading	12	12.9	Oncogenes Are Mutant Forms of the Genes for Proteins That Regulate the Cell Cycle	451	453	487	1655	1661
+4	subheading	12	12.9	Defects in Certain Genes Remove Normal Restraints on Cell Division	453	454	489	1662	1666
+4	subheading	12	12.9	Apoptosis Is Programmed Cell Suicide	455	456	491	1667	1671
+3	subheading	12	12.9	Chapter Review	456	461	492	1672	1688
+4	subheading	12	12.9	Key Terms	456	456	492	1672	1673
+4	subheading	12	12.9	Problems	457	461	493	1674	1688
+1	subheading	12	12.9	Part II Bioenergetics and Metabolism	461	883	497	1689	3087
+2	chapter	13		Chapter 13 Introduction to Metabolism	464	510	500	1700	1865
+3	section	13	13.1	13.1 Bioenergetics and Thermodynamics	466	471	502	1705	1727
+4	subheading	13	13.1	Biological Energy Transformations Obey the Laws of Thermodynamics	466	467	502	1705	1709
+4	subheading	13	13.1	Standard Free-Energy Change Is Directly Related to the Equilibrium Constant	467	469	503	1710	1717
+4	subheading	13	13.1	Actual Free-Energy Changes Depend on Reactant and Product Concentrations	469	470	505	1718	1721
+4	subheading	13	13.1	Standard Free-Energy Changes Are Additive	470	471	506	1722	1727
+3	section	13	13.2	13.2 Chemical Logic and Common Biochemical Reactions	472	478	508	1728	1753
+4	subheading	13	13.2	Biochemical Reactions Occur in Repeating Patterns	472	477	508	1729	1749
+4	subheading	13	13.2	Biochemical and Chemical Equations Are Not Identical	477	478	513	1750	1753
+3	section	13	13.3	13.3 Phosphoryl Group Transfers and ATP	478	488	514	1754	1787
+4	subheading	13	13.3	The Free-Energy Change for ATP Hydrolysis Is Large and Negative	478	479	514	1755	1760
+4	subheading	13	13.3	Other Phosphorylated Compounds and Thioesters Also Have Large, Negative Free Energies of Hydrolysis	480	482	516	1761	1767
+4	subheading	13	13.3	ATP Provides Energy by Group Transfers, Not by Simple Hydrolysis	482	484	518	1768	1773
+4	subheading	13	13.3	ATP Donates Phosphoryl, Pyrophosphoryl, and Adenylyl Groups	484	486	520	1774	1780
+4	subheading	13	13.3	Assembly of Informational Macromolecules Requires Energy	486	486	522	1781	1782
+4	subheading	13	13.3	Transphosphorylations between Nucleotides Occur in All Cell Types	487	488	523	1783	1787
+3	section	13	13.4	13.4 Biological Oxidation-Reduction Reactions	488	496	524	1788	1820
+4	subheading	13	13.4	The Flow of Electrons Can Do Biological Work	488	488	524	1789	1789
+4	subheading	13	13.4	Oxidation-Reductions Can Be Described as Half-Reactions	488	488	524	1790	1791
+4	subheading	13	13.4	Biological Oxidations Often Involve Dehydrogenation	489	490	525	1792	1796
+4	subheading	13	13.4	Reduction Potentials Measure Affinity for Electrons	490	490	526	1797	1801
+4	subheading	13	13.4	Standard Reduction Potentials Can Be Used to Calculate Free-Energy Change	491	491	527	1802	1804
+4	subheading	13	13.4	A Few Types of Coenzymes and Proteins Serve as Universal Electron Carriers	492	494	528	1805	1811
+4	subheading	13	13.4	NAD Has Important Functions in Addition to Electron Transfer	494	495	530	1812	1815
+4	subheading	13	13.4	Flavin Nucleotides Are Tightly Bound in Flavoproteins	495	496	531	1816	1820
+3	section	13	13.5	13.5 Regulation of Metabolic Pathways	497	503	533	1821	1837
+4	subheading	13	13.5	Cells and Organisms Maintain a Dynamic Steady State	497	497	533	1822	1823
+4	subheading	13	13.5	Both the Amount and the Catalytic Activity of an Enzyme Can Be Regulated	498	500	534	1824	1830
+4	subheading	13	13.5	Reactions Far from Equilibrium in Cells Are Common Points of Regulation	500	501	536	1831	1833
+4	subheading	13	13.5	Adenine Nucleotides Play Special Roles in Metabolic Regulation	502	503	538	1834	1837
+3	subheading	13	13.5	Chapter Review	503	510	539	1838	1865
+4	subheading	13	13.5	Key Terms	503	504	539	1838	1839
+4	subheading	13	13.5	Problems	504	510	540	1840	1865
+2	chapter	14		Chapter 14 Glycolysis, Gluconeogenesis, and the Pentose Phosphate Pathway	510	556	546	1866	2026
+3	section	14	14.1	14.1 Glycolysis	511	521	547	1871	1906
+4	subheading	14	14.1	An Overview: Glycolysis Has Two Phases	512	514	548	1872	1880
+4	subheading	14	14.1	The Preparatory Phase of Glycolysis Requires ATP	514	517	550	1881	1892
+4	subheading	14	14.1	The Payoff Phase of Glycolysis Yields ATP and NADH	518	521	554	1893	1903
+4	subheading	14	14.1	The Overall Balance Sheet Shows a Net Gain of Two ATP and Two NADH Per Glucose	521	521	557	1904	1906
+3	section	14	14.2	14.2 Feeder Pathways for Glycolysis	522	525	558	1907	1919
+4	subheading	14	14.2	Endogenous Glycogen and Starch Are Degraded by Phosphorolysis	522	522	558	1908	1909
+4	subheading	14	14.2	Dietary Polysaccharides and Disaccharides Undergo Hydrolysis to Monosaccharides	523	525	559	1910	1919
+3	section	14	14.3	14.3 Fates of Pyruvate	525	532	561	1920	1945
+4	subheading	14	14.3	The Pasteur and Warburg Effects Are Due to Dependence on Glycolysis Alone for ATP Production	526	527	562	1922	1928
+4	subheading	14	14.3	Pyruvate Is the Terminal Electron Acceptor in Lactic Acid Fermentation	528	529	564	1929	1934
+4	subheading	14	14.3	Ethanol Is the Reduced Product in Ethanol Fermentation	529	531	565	1935	1939
+4	subheading	14	14.3	Fermentations Produce Some Common Foods and Industrial Chemicals	531	532	567	1940	1945
+3	section	14	14.4	14.4 Gluconeogenesis	533	538	569	1946	1961
+4	subheading	14	14.4	The First Bypass: Conversion of Pyruvate to Phosphoenolpyruvate Requires Two Exergonic Reactions	533	534	569	1950	1955
+4	subheading	14	14.4	The Second and Third Bypasses Are Simple Dephosphorylations by Phosphatases	534	534	570	1956	1956
+4	subheading	14	14.4	Gluconeogenesis Is Energetically Expensive, But Essential	537	538	573	1957	1958
+4	subheading	14	14.4	Mammals Cannot Convert Fatty Acids to Glucose; Plants and Microorganisms Can	538	538	574	1959	1961
+3	section	14	14.5	14.5 Coordinated Regulation of Glycolysis and Gluconeogenesis	539	546	575	1962	1987
+4	subheading	14	14.5	Hexokinase Isozymes Are Affected Differently by Their Product, Glucose 6-Phosphate	539	540	575	1963	1968
+4	subheading	14	14.5	Phosphofructokinase-1 and Fructose 1,6-Bisphosphatase Are Reciprocally Regulated	540	542	576	1969	1972
+4	subheading	14	14.5	Fructose 2,6-Bisphosphate Is a Potent Allosteric Regulator of PFK-1 and FBPase-1	542	543	578	1973	1976
+4	subheading	14	14.5	Xylulose 5-Phosphate Is a Key Regulator of Carbohydrate and Fat Metabolism	543	543	579	1977	1977
+4	subheading	14	14.5	The Glycolytic Enzyme Pyruvate Kinase Is Allosterically Inhibited by ATP	544	544	580	1978	1978
+4	subheading	14	14.5	Conversion of Pyruvate to Phosphoenolpyruvate Is Stimulated When Fatty Acids Are Available	544	544	580	1979	1981
+4	subheading	14	14.5	Transcriptional Regulation Changes the Number of Enzyme Molecules	545	546	581	1982	1987
+3	section	14	14.6	14.6 Pentose Phosphate Pathway of Glucose Oxidation	546	551	582	1988	2005
+4	subheading	14	14.6	The Oxidative Phase Produces NADPH and Pentose Phosphates	546	547	582	1993	1994
+4	subheading	14	14.6	The Nonoxidative Phase Recycles Pentose Phosphates to Glucose 6-Phosphate	547	547	583	1995	2001
+4	subheading	14	14.6	Glucose 6-Phosphate Is Partitioned between Glycolysis and the Pentose Phosphate Pathway	550	551	586	2002	2003
+4	subheading	14	14.6	Thiamine Deficiency Causes Beriberi and Wernicke-Korsakoff Syndrome	551	551	587	2004	2005
+3	subheading	14	14.6	Chapter Review	552	556	588	2006	2026
+4	subheading	14	14.6	Key Terms	552	552	588	2006	2006
+4	subheading	14	14.6	Problems	552	556	588	2007	2026
+2	chapter	15		Chapter 15 The Metabolism of Glycogen in Animals	556	574	592	2027	2084
+3	section	15	15.1	15.1 The Structure and Function of Glycogen	557	558	593	2030	2035
+4	subheading	15	15.1	Vertebrate Animals Require a Ready Fuel Source for Brain and Muscle	557	557	593	2030	2030
+4	subheading	15	15.1	Glycogen Granules Have Many Tiers of Branched Chains of d-Glucose	557	558	593	2031	2035
+3	section	15	15.2	15.2 Breakdown and Synthesis of Glycogen	558	564	594	2036	2055
+4	subheading	15	15.2	Glycogen Breakdown Is Catalyzed by Glycogen Phosphorylase	558	558	594	2036	2038
+4	subheading	15	15.2	Glucose 1-Phosphate Can Enter Glycolysis or, in Liver, Replenish Blood Glucose	559	561	595	2039	2045
+4	subheading	15	15.2	The Sugar Nucleotide UDP-Glucose Donates Glucose for Glycogen Synthesis	562	563	598	2046	2051
+4	subheading	15	15.2	Glycogenin Primes the Initial Sugar Residues in Glycogen	563	564	599	2052	2055
+3	section	15	15.3	15.3 Coordinated Regulation of Glycogen Breakdown and Synthesis	565	571	601	2056	2073
+4	subheading	15	15.3	Glycogen Phosphorylase Is Regulated by Hormone-Stimulated Phosphorylation and by Allosteric Effectors	565	566	601	2056	2061
+4	subheading	15	15.3	Glycogen Synthase Also Is Subject to Multiple Levels of Regulation	567	569	603	2062	2066
+4	subheading	15	15.3	Allosteric and Hormonal Signals Coordinate Carbohydrate Metabolism Globally	569	570	605	2067	2070
+4	subheading	15	15.3	Carbohydrate and Lipid Metabolism Are Integrated by Hormonal and Allosteric Mechanisms	570	571	606	2071	2073
+3	subheading	15	15.3	Chapter Review	571	574	607	2074	2084
+4	subheading	15	15.3	Key Terms	571	571	607	2074	2074
+4	subheading	15	15.3	Problems	571	574	607	2075	2084
+2	chapter	16		Chapter 16 The Citric Acid Cycle	574	601	610	2085	2178
+3	section	16	16.1	16.1 Production of Acetyl-CoA (Activated Acetate)	575	578	611	2091	2102
+4	subheading	16	16.1	Pyruvate Is Oxidized to Acetyl-CoA and CO2	576	576	612	2092	2093
+4	subheading	16	16.1	The PDH Complex Employs Three Enzymes and Five Coenzymes to Oxidize Pyruvate	576	576	612	2094	2097
+4	subheading	16	16.1	The PDH Complex Channels Its Intermediates through Five Reactions	577	578	613	2098	2102
+3	section	16	16.2	16.2 Reactions of the Citric Acid Cycle	578	589	614	2103	2133
+4	subheading	16	16.2	The Sequence of Reactions in the Citric Acid Cycle Makes Chemical Sense	579	580	615	2105	2106
+4	subheading	16	16.2	The Citric Acid Cycle Has Eight Steps	580	587	616	2107	2128
+4	subheading	16	16.2	The Energy of Oxidations in the Cycle Is Efficiently Conserved	587	589	623	2129	2133
+3	section	16	16.3	16.3 The Hub of Intermediary Metabolism	590	592	626	2134	2142
+4	subheading	16	16.3	The Citric Acid Cycle Serves in Both Catabolic and Anabolic Processes	590	590	626	2134	2134
+4	subheading	16	16.3	Anaplerotic Reactions Replenish Citric Acid Cycle Intermediates	590	590	626	2135	2136
+4	subheading	16	16.3	Biotin in Pyruvate Carboxylase Carries One-Carbon (CO2) Groups	590	592	626	2137	2142
+3	section	16	16.4	16.4 Regulation of the Citric Acid Cycle	593	596	629	2143	2156
+4	subheading	16	16.4	Production of Acetyl-CoA by the PDH Complex Is Regulated by Allosteric and Covalent Mechanisms	593	594	629	2143	2147
+4	subheading	16	16.4	The Citric Acid Cycle Is Also Regulated at Three Exergonic Steps	594	594	630	2148	2148
+4	subheading	16	16.4	Citric Acid Cycle Activity Changes in Tumors	594	595	630	2149	2152
+4	subheading	16	16.4	Certain Intermediates Are Channeled through Metabolons	595	596	631	2153	2156
+3	subheading	16	16.4	Chapter Review	596	601	632	2157	2178
+4	subheading	16	16.4	Key Terms	596	596	632	2157	2157
+4	subheading	16	16.4	Problems	597	601	633	2158	2178
+2	chapter	17		Chapter 17 Fatty Acid Catabolism	602	624	638	2179	2260
+3	section	17	17.1	17.1 Digestion, Mobilization, and Transport of Fats	603	606	639	2183	2197
+4	subheading	17	17.1	Dietary Fats Are Absorbed in the Small Intestine	603	603	639	2183	2186
+4	subheading	17	17.1	Hormones Trigger Mobilization of Stored Triacylglycerols	604	604	640	2187	2191
+4	subheading	17	17.1	Fatty Acids Are Activated and Transported into Mitochondria	605	606	641	2192	2197
+3	section	17	17.2	17.2 Oxidation of Fatty Acids	607	618	643	2198	2240
+4	subheading	17	17.2	The β Oxidation of Saturated Fatty Acids Has Four Basic Steps	607	608	643	2201	2206
+4	subheading	17	17.2	The Four β-Oxidation Steps Are Repeated to Yield Acetyl-CoA and ATP	608	610	644	2207	2210
+4	subheading	17	17.2	Acetyl-CoA Can Be Further Oxidized in the Citric Acid Cycle	610	611	646	2211	2212
+4	subheading	17	17.2	Oxidation of Unsaturated Fatty Acids Requires Two Additional Reactions	611	612	647	2213	2217
+4	subheading	17	17.2	Complete Oxidation of Odd-Number Fatty Acids Requires Three Extra Reactions	612	613	648	2218	2226
+4	subheading	17	17.2	Fatty Acid Oxidation Is Tightly Regulated	613	613	649	2227	2229
+4	subheading	17	17.2	Transcription Factors Turn on the Synthesis of Proteins for Lipid Catabolism	614	614	650	2230	2230
+4	subheading	17	17.2	Genetic Defects in Fatty Acyl–CoA Dehydrogenases Cause Serious Disease	615	615	651	2231	2232
+4	subheading	17	17.2	Peroxisomes Also Carry Out β Oxidation	616	617	652	2233	2235
+4	subheading	17	17.2	Phytanic Acid Undergoes α Oxidation in Peroxisomes	617	618	653	2236	2240
+3	section	17	17.3	17.3 Ketone Bodies	618	620	654	2241	2249
+4	subheading	17	17.3	Ketone Bodies, Formed in the Liver, Are Exported to Other Organs as Fuel	619	619	655	2242	2245
+4	subheading	17	17.3	Ketone Bodies Are Overproduced in Diabetes and during Starvation	620	620	656	2246	2249
+3	subheading	17	17.3	Chapter Review	621	624	657	2250	2260
+4	subheading	17	17.3	Key Terms	621	621	657	2250	2250
+4	subheading	17	17.3	Problems	621	624	657	2251	2260
+2	chapter	18		Chapter 18 Amino Acid Oxidation and the Production of Urea	625	657	661	2261	2362
+3	section	18	18.1	18.1 Metabolic Fates of Amino Groups	627	634	663	2266	2289
+4	subheading	18	18.1	Dietary Protein Is Enzymatically Degraded to Amino Acids	627	628	663	2268	2272
+4	subheading	18	18.1	Pyridoxal Phosphate Participates in the Transfer of α-Amino Groups to α-Ketoglutarate	629	630	665	2273	2278
+4	subheading	18	18.1	Glutamate Releases Its Amino Group as Ammonia in the Liver	630	631	666	2279	2281
+4	subheading	18	18.1	Glutamine Transports Ammonia in the Bloodstream	631	632	667	2282	2284
+4	subheading	18	18.1	Alanine Transports Ammonia from Skeletal Muscles to the Liver	632	632	668	2285	2286
+4	subheading	18	18.1	Ammonia Is Toxic to Animals	633	634	669	2287	2289
+3	section	18	18.2	18.2 Nitrogen Excretion and the Urea Cycle	634	640	670	2290	2308
+4	subheading	18	18.2	Urea Is Produced from Ammonia in Five Enzymatic Steps	635	636	671	2292	2294
+4	subheading	18	18.2	The Citric Acid and Urea Cycles Can Be Linked	636	637	672	2295	2298
+4	subheading	18	18.2	The Activity of the Urea Cycle Is Regulated at Two Levels	637	637	673	2299	2300
+4	subheading	18	18.2	Pathway Interconnections Reduce the Energetic Cost of Urea Synthesis	638	638	674	2301	2301
+4	subheading	18	18.2	Genetic Defects in the Urea Cycle Can Be Life-Threatening	638	640	674	2302	2308
+3	section	18	18.3	18.3 Pathways of Amino Acid Degradation	640	654	676	2309	2344
+4	subheading	18	18.3	Some Amino Acids Can Contribute to Gluconeogenesis, Others to Ketone Body Formation	640	640	676	2311	2311
+4	subheading	18	18.3	Several Enzyme Cofactors Play Important Roles in Amino Acid Catabolism	641	643	677	2312	2317
+4	subheading	18	18.3	Six Amino Acids Are Degraded to Pyruvate	643	646	679	2318	2324
+4	subheading	18	18.3	Seven Amino Acids Are Degraded to Acetyl-CoA	647	648	683	2325	2328
+4	subheading	18	18.3	Phenylalanine Catabolism Is Genetically Defective in Some People	648	649	684	2329	2332
+4	subheading	18	18.3	Five Amino Acids Are Converted to -Ketoglutarate	650	650	686	2333	2334
+4	subheading	18	18.3	Four Amino Acids Are Converted to Succinyl-CoA	651	652	687	2335	2337
+4	subheading	18	18.3	Branched-Chain Amino Acids Are Not Degraded in the Liver	652	653	688	2338	2339
+4	subheading	18	18.3	Asparagine and Aspartate Are Degraded to Oxaloacetate	653	654	689	2340	2344
+3	subheading	18	18.3	Chapter Review	654	657	690	2345	2362
+4	subheading	18	18.3	Key Terms	654	654	690	2345	2345
+4	subheading	18	18.3	Problems	655	657	691	2346	2362
+2	chapter	19		Chapter 19 Oxidative Phosphorylation	658	700	694	2363	2493
+3	section	19	19.1	19.1 The Mitochondrial Respiratory Chain	660	674	696	2368	2407
+4	subheading	19	19.1	Electrons Are Funneled to Universal Electron Acceptors	662	662	698	2371	2372
+4	subheading	19	19.1	Electrons Pass through a Series of Membrane-Bound Carriers	662	664	698	2373	2378
+4	subheading	19	19.1	Electron Carriers Function in Multienzyme Complexes	664	670	700	2379	2394
+4	subheading	19	19.1	Mitochondrial Complexes Associate in Respirasomes	671	671	707	2395	2397
+4	subheading	19	19.1	Other Pathways Donate Electrons to the Respiratory Chain via Ubiquinone	671	671	707	2398	2398
+4	subheading	19	19.1	The Energy of Electron Transfer Is Efficiently Conserved in a Proton Gradient	672	673	708	2399	2403
+4	subheading	19	19.1	Reactive Oxygen Species Are Generated during Oxidative Phosphorylation	674	674	710	2404	2407
+3	section	19	19.2	19.2 ATP Synthesis	675	686	711	2408	2447
+4	subheading	19	19.2	In the Chemiosmotic Model, Oxidation and Phosphorylation Are Obligately Coupled	675	677	711	2408	2415
+4	subheading	19	19.2	ATP Synthase Has Two Functional Domains, F[0] and F[1]	677	677	713	2416	2416
+4	subheading	19	19.2	ATP Is Stabilized Relative to ADP on the Surface of F[1]	677	678	713	2417	2419
+4	subheading	19	19.2	The Proton Gradient Drives the Release of ATP from the Enzyme Surface	678	678	714	2420	2421
+4	subheading	19	19.2	Each β Subunit of ATP Synthase Can Assume Three Different Conformations	678	679	714	2422	2425
+4	subheading	19	19.2	Rotational Catalysis Is Key to the Binding-Change Mechanism for ATP Synthesis	679	681	715	2426	2434
+4	subheading	19	19.2	Chemiosmotic Coupling Allows Nonintegral Stoichiometries of O[2] Consumption and ATP Synthesis	682	683	718	2435	2437
+4	subheading	19	19.2	The Proton-Motive Force Energizes Active Transport	683	683	719	2438	2440
+4	subheading	19	19.2	Shuttle Systems Indirectly Convey Cytosolic NADH into Mitochondria for Oxidation	683	686	719	2441	2447
+3	section	19	19.3	19.3 Regulation of Oxidative Phosphorylation	686	689	722	2448	2457
+4	subheading	19	19.3	Oxidative Phosphorylation Is Regulated by Cellular Energy Needs	686	686	722	2449	2449
+4	subheading	19	19.3	An Inhibitory Protein Prevents ATP Hydrolysis during Hypoxia	687	687	723	2450	2451
+4	subheading	19	19.3	Hypoxia Leads to ROS Production and Several Adaptive Responses	687	688	723	2452	2453
+4	subheading	19	19.3	ATP-Producing Pathways Are Coordinately Regulated	688	689	724	2454	2457
+3	section	19	19.4	19.4 Mitochondria in Thermogenesis, Steroid Synthesis, and Apoptosis	689	691	725	2458	2466
+4	subheading	19	19.4	Uncoupled Mitochondria in Brown Adipose Tissue Produce Heat	689	690	725	2458	2459
+4	subheading	19	19.4	Mitochondrial P-450 Monooxygenases Catalyze Steroid Hydroxylations	690	690	726	2460	2462
+4	subheading	19	19.4	Mitochondria Are Central to the Initiation of Apoptosis	690	691	726	2463	2466
+3	section	19	19.5	19.5 Mitochondrial Genes: Their Origin and the Effects of Mutations	692	696	728	2467	2480
+4	subheading	19	19.5	Mitochondria Evolved from Endosymbiotic Bacteria	692	692	728	2469	2470
+4	subheading	19	19.5	Mutations in Mitochondrial DNA Accumulate throughout the Life of the Organism	693	694	729	2471	2473
+4	subheading	19	19.5	Some Mutations in Mitochondrial Genomes Cause Disease	694	695	730	2474	2476
+4	subheading	19	19.5	A Rare Form of Diabetes Results from Defects in the Mitochondria of Pancreatic β Cells	695	696	731	2477	2480
+3	subheading	19	19.5	Chapter Review	696	700	732	2481	2493
+4	subheading	19	19.5	Key Terms	696	696	732	2481	2481
+4	subheading	19	19.5	Problems	697	700	733	2482	2493
+2	chapter	20		Chapter 20 Photosynthesis and Carbohydrate Synthesis in Plants	700	744	736	2494	2645
+3	section	20	20.1	20.1 Light Absorption	701	707	737	2498	2519
+4	subheading	20	20.1	Chloroplasts Are the Site of Light-Driven Electron Flow and Photosynthesis in Plants	701	703	737	2500	2507
+4	subheading	20	20.1	Chlorophylls Absorb Light Energy for Photosynthesis	704	705	740	2508	2512
+4	subheading	20	20.1	Chlorophylls Funnel Absorbed Energy to Reaction Centers by Exciton Transfer	706	707	742	2513	2519
+3	section	20	20.2	20.2 Photochemical Reaction Centers	708	716	744	2520	2546
+4	subheading	20	20.2	Photosynthetic Bacteria Have Two Types of Reaction Center	708	708	744	2520	2521
+4	subheading	20	20.2	In Vascular Plants, Two Reaction Centers Act in Tandem	708	711	744	2522	2531
+4	subheading	20	20.2	The Cytochrome b[6]f Complex Links Photosystems II and I, Conserving the Energy of Electron Transfer	712	712	748	2532	2534
+4	subheading	20	20.2	Cyclic Electron Transfer Allows Variation in the Ratio of ATP/NADPH Synthesized	712	713	748	2535	2536
+4	subheading	20	20.2	State Transitions Change the Distribution of LHCII between the Two Photosystems	713	714	749	2537	2540
+4	subheading	20	20.2	Water Is Split at the Oxygen-Evolving Center	714	716	750	2541	2546
+3	section	20	20.3	20.3 Evolution of a Universal Mechanism for ATP Synthesis	716	719	752	2547	2559
+4	subheading	20	20.3	A Proton Gradient Couples Electron Flow and Phosphorylation	716	716	752	2547	2547
+4	subheading	20	20.3	The Approximate Stoichiometry of Photophosphorylation Has Been Established	716	716	752	2548	2549
+4	subheading	20	20.3	The ATP Synthase Structure and Mechanism Are Nearly Universal	717	719	753	2550	2559
+3	section	20	20.4	20.4 CO[2]-Assimilation Reactions	719	727	755	2560	2583
+4	subheading	20	20.4	Carbon Dioxide Assimilation Occurs in Three Stages	720	722	756	2562	2571
+4	subheading	20	20.4	Synthesis of Each Triose Phosphate from CO[2] Requires Six NADPH and Nine ATP	722	722	758	2572	2573
+4	subheading	20	20.4	A Transport System Exports Triose Phosphates from the Chloroplast and Imports Phosphate	724	725	760	2574	2576
+4	subheading	20	20.4	Four Enzymes of the Calvin Cycle Are Indirectly Activated by Light	725	727	761	2577	2583
+3	section	20	20.5	20.5 Photorespiration and the C[4] and CAM Pathways	727	732	763	2584	2602
+4	subheading	20	20.5	Photorespiration Results from Rubisco’s Oxygenase Activity	727	728	763	2584	2586
+4	subheading	20	20.5	Phosphoglycolate Is Salvaged in a Costly Set of Reactions in C[3] Plants	728	728	764	2587	2593
+4	subheading	20	20.5	In C[4] Plants, CO[2] Fixation and Rubisco Activity Are Spatially Separated	729	730	765	2594	2598
+4	subheading	20	20.5	In CAM Plants, CO[2] Capture and Rubisco Action Are Temporally Separated	731	732	767	2599	2602
+3	section	20	20.6	20.6 Biosynthesis of Starch, Sucrose, and Cellulose	732	739	768	2603	2626
+4	subheading	20	20.6	ADP-Glucose Is the Substrate for Starch Synthesis in Plant Plastids and for Glycogen Synthesis in Bacteria	732	733	768	2603	2604
+4	subheading	20	20.6	UDP-Glucose Is the Substrate for Sucrose Synthesis in the Cytosol of Leaf Cells	733	733	769	2605	2607
+4	subheading	20	20.6	Conversion of Triose Phosphates to Sucrose and Starch Is Tightly Regulated	734	735	770	2608	2612
+4	subheading	20	20.6	The Glyoxylate Cycle and Gluconeogenesis Produce Glucose in Germinating Seeds	735	736	771	2613	2616
+4	subheading	20	20.6	Cellulose Is Synthesized by Supramolecular Structures in the Plasma Membrane	736	737	772	2617	2621
+4	subheading	20	20.6	Pools of Common Intermediates Link Pathways in Different Organelles	738	739	774	2622	2626
+3	subheading	20	20.6	Chapter Review	739	744	775	2627	2645
+4	subheading	20	20.6	Key Terms	739	740	775	2627	2628
+4	subheading	20	20.6	Problems	740	744	776	2629	2645
+2	chapter	21		Chapter 21 Lipid Biosynthesis	744	793	780	2646	2789
+3	section	21	21.1	21.1 Biosynthesis of Fatty Acids and Eicosanoids	745	760	781	2649	2696
+4	subheading	21	21.1	Malonyl-CoA Is Formed from Acetyl-CoA and Bicarbonate	745	745	781	2649	2651
+4	subheading	21	21.1	Fatty Acid Synthesis Proceeds in a Repeating Reaction Sequence	745	746	781	2652	2657
+4	subheading	21	21.1	The Mammalian Fatty Acid Synthase Has Multiple Active Sites	746	746	782	2658	2659
+4	subheading	21	21.1	Fatty Acid Synthase Receives the Acetyl and Malonyl Groups	746	747	782	2660	2663
+4	subheading	21	21.1	The Fatty Acid Synthase Reactions Are Repeated to Form Palmitate	747	750	783	2664	2668
+4	subheading	21	21.1	Fatty Acid Synthesis Is a Cytosolic Process in Most Eukaryotes but Takes Place in the Chloroplasts in Plants	750	751	786	2669	2670
+4	subheading	21	21.1	Acetate Is Shuttled out of Mitochondria as Citrate	751	752	787	2671	2673
+4	subheading	21	21.1	Fatty Acid Biosynthesis Is Tightly Regulated	752	753	788	2674	2676
+4	subheading	21	21.1	Long-Chain Saturated Fatty Acids Are Synthesized from Palmitate	753	754	789	2677	2679
+4	subheading	21	21.1	Desaturation of Fatty Acids Requires a Mixed-Function Oxidase	754	755	790	2680	2687
+4	subheading	21	21.1	Eicosanoids Are Formed from 20- and 22-Carbon Polyunsaturated Fatty Acids	756	760	792	2688	2696
+3	section	21	21.2	21.2 Biosynthesis of Triacylglycerols	760	763	796	2697	2713
+4	subheading	21	21.2	Triacylglycerols and Glycerophospholipids Are Synthesized from the Same Precursors	760	761	796	2697	2701
+4	subheading	21	21.2	Triacylglycerol Biosynthesis in Animals Is Regulated by Hormones	761	761	797	2702	2705
+4	subheading	21	21.2	Adipose Tissue Generates Glycerol 3-Phosphate by Glyceroneogenesis	762	763	798	2706	2711
+4	subheading	21	21.2	Thiazolidinediones Treat Type 2 Diabetes by Increasing Glyceroneogenesis	763	763	799	2712	2713
+3	section	21	21.3	21.3 Biosynthesis of Membrane Phospholipids	764	771	800	2714	2733
+4	subheading	21	21.3	Cells Have Two Strategies for Attaching Phospholipid Head Groups	764	764	800	2715	2717
+4	subheading	21	21.3	Pathways for Phospholipid Biosynthesis Are Interrelated	764	768	800	2718	2725
+4	subheading	21	21.3	Eukaryotic Membrane Phospholipids Are Subject to Remodeling	769	770	805	2726	2727
+4	subheading	21	21.3	Plasmalogen Synthesis Requires Formation of an Ether-Linked Fatty Alcohol	770	770	806	2728	2729
+4	subheading	21	21.3	Sphingolipid and Glycerophospholipid Synthesis Share Precursors and Some Mechanisms	771	771	807	2730	2731
+4	subheading	21	21.3	Polar Lipids Are Targeted to Specific Cellular Membranes	771	771	807	2732	2733
+3	section	21	21.4	21.4 Cholesterol, Steroids, and Isoprenoids: Biosynthesis, Regulation, and Transport	772	789	808	2734	2774
+4	subheading	21	21.4	Cholesterol Is Made from Acetyl-CoA in Four Stages	772	776	808	2734	2743
+4	subheading	21	21.4	Cholesterol Has Several Fates	776	776	812	2744	2745
+4	subheading	21	21.4	Cholesterol and Other Lipids Are Carried on Plasma Lipoproteins	776	777	812	2746	2750
+4	subheading	21	21.4	HDL Carries Out Reverse Cholesterol Transport	777	780	813	2751	2752
+4	subheading	21	21.4	Cholesteryl Esters Enter Cells by Receptor-Mediated Endocytosis	780	781	816	2753	2755
+4	subheading	21	21.4	Cholesterol Synthesis and Transport Are Regulated at Several Levels	782	783	818	2756	2759
+4	subheading	21	21.4	Dysregulation of Cholesterol Metabolism Can Lead to Cardiovascular Disease	784	785	820	2760	2766
+4	subheading	21	21.4	Reverse Cholesterol Transport by HDL Counters Plaque Formation and Atherosclerosis	785	785	821	2767	2767
+4	subheading	21	21.4	Steroid Hormones Are Formed by Side-Chain Cleavage and Oxidation of Cholesterol	786	788	822	2768	2771
+4	subheading	21	21.4	Intermediates in Cholesterol Biosynthesis Have Many Alternative Fates	788	789	824	2772	2774
+3	subheading	21	21.4	Chapter Review	789	793	825	2775	2789
+4	subheading	21	21.4	Key Terms	789	789	825	2775	2776
+4	subheading	21	21.4	Problems	790	793	826	2777	2789
+2	chapter	22		Chapter 22 Biosynthesis of Amino Acids, Nucleotides, and Related Molecules	794	840	830	2790	2940
+3	section	22	22.1	22.1 Overview of Nitrogen Metabolism	795	804	831	2794	2828
+4	subheading	22	22.1	A Global Nitrogen Cycling Network Maintains a Pool of Biologically Available Nitrogen	795	796	831	2794	2803
+4	subheading	22	22.1	Nitrogen Is Fixed by Enzymes of the Nitrogenase Complex	796	801	832	2804	2814
+4	subheading	22	22.1	Ammonia Is Incorporated into Biomolecules through Glutamate and Glutamine	802	802	838	2815	2818
+4	subheading	22	22.1	Glutamine Synthetase Is a Primary Regulatory Point in Nitrogen Metabolism	802	803	838	2819	2823
+4	subheading	22	22.1	Several Classes of Reactions Play Special Roles in the Biosynthesis of Amino Acids and Nucleotides	804	804	840	2824	2828
+3	section	22	22.2	22.2 Biosynthesis of Amino Acids	805	816	841	2829	2862
+4	subheading	22	22.2	Organisms Vary Greatly in Their Ability to Synthesize the 20 Common Amino Acids	805	805	841	2831	2832
+4	subheading	22	22.2	α-Ketoglutarate Gives Rise to Glutamate, Glutamine, Proline, and Arginine	805	806	841	2833	2836
+4	subheading	22	22.2	Serine, Glycine, and Cysteine Are Derived from 3-Phosphoglycerate	806	808	842	2837	2841
+4	subheading	22	22.2	Three Nonessential and Six Essential Amino Acids Are Synthesized from Oxaloacetate and Pyruvate	808	810	844	2842	2845
+4	subheading	22	22.2	Chorismate Is a Key Intermediate in the Synthesis of Tryptophan, Phenylalanine, and Tyrosine	810	814	846	2846	2853
+4	subheading	22	22.2	Histidine Biosynthesis Uses Precursors of Purine Biosynthesis	814	815	850	2854	2856
+4	subheading	22	22.2	Amino Acid Biosynthesis Is under Allosteric Regulation	815	816	851	2857	2862
+3	section	22	22.3	22.3 Molecules Derived from Amino Acids	816	824	852	2863	2883
+4	subheading	22	22.3	Glycine Is a Precursor of Porphyrins	816	818	852	2863	2866
+4	subheading	22	22.3	Heme Degradation Has Multiple Functions	818	820	854	2867	2870
+4	subheading	22	22.3	Amino Acids Are Precursors of Creatine and Glutathione	820	821	856	2871	2874
+4	subheading	22	22.3	d-Amino Acids Are Found Primarily in Bacteria	821	821	857	2875	2875
+4	subheading	22	22.3	Aromatic Amino Acids Are Precursors of Many Plant Substances	822	822	858	2876	2877
+4	subheading	22	22.3	Biological Amines Are Products of Amino Acid Decarboxylation	822	823	858	2878	2880
+4	subheading	22	22.3	Arginine Is the Precursor for Biological Synthesis of Nitric Oxide	824	824	860	2881	2883
+3	section	22	22.4	22.4 Biosynthesis and Degradation of Nucleotides	824	837	860	2884	2927
+4	subheading	22	22.4	De Novo Purine Nucleotide Synthesis Begins with PRPP	824	825	860	2886	2890
+4	subheading	22	22.4	Purine Nucleotide Biosynthesis Is Regulated by Feedback Inhibition	826	827	862	2891	2892
+4	subheading	22	22.4	Pyrimidine Nucleotides Are Made from Aspartate, PRPP, and Carbamoyl Phosphate	827	828	863	2893	2897
+4	subheading	22	22.4	Pyrimidine Nucleotide Biosynthesis Is Regulated by Feedback Inhibition	829	829	865	2898	2898
+4	subheading	22	22.4	Nucleoside Monophosphates Are Converted to Nucleoside Triphosphates	829	829	865	2899	2900
+4	subheading	22	22.4	Ribonucleotides Are the Precursors of Deoxyribonucleotides	829	832	865	2901	2908
+4	subheading	22	22.4	Thymidylate Is Derived from dCDP and dUMP	832	833	868	2909	2911
+4	subheading	22	22.4	Degradation of Purines and Pyrimidines Produces Uric Acid and Urea, Respectively	833	834	869	2912	2915
+4	subheading	22	22.4	Purine and Pyrimidine Bases Are Recycled by Salvage Pathways	834	834	870	2916	2917
+4	subheading	22	22.4	Excess Uric Acid Causes Gout	835	835	871	2918	2920
+4	subheading	22	22.4	Many Chemotherapeutic Agents Target Enzymes in Nucleotide Biosynthetic Pathways	835	837	871	2921	2927
+3	subheading	22	22.4	Chapter Review	838	840	874	2928	2940
+4	subheading	22	22.4	Key Terms	838	838	874	2928	2928
+4	subheading	22	22.4	Problems	838	840	874	2929	2940
+2	chapter	23		Chapter 23 Hormonal Regulation and Integration of Mammalian Metabolism	841	883	877	2941	3087
+3	section	23	23.1	23.1 Hormone Structure and Action	842	848	878	2945	2966
+4	subheading	23	23.1	Hormones Act through Specific High-Affinity Cellular Receptors	842	843	878	2948	2950
+4	subheading	23	23.1	Hormones Are Chemically Diverse	843	845	879	2951	2956
+4	subheading	23	23.1	Some Hormones Are Released by a “Top-Down” Hierarchy of Neuronal and Hormonal Signals	845	846	881	2957	2961
+4	subheading	23	23.1	“Bottom-Up” Hormonal Systems Send Signals Back to the Brain and to Other Tissues	846	848	882	2962	2966
+3	section	23	23.2	23.2 Tissue-Specific Metabolism	848	858	884	2967	3005
+4	subheading	23	23.2	The Liver Processes and Distributes Nutrients	848	851	884	2968	2977
+4	subheading	23	23.2	Adipose Tissues Store and Supply Fatty Acids	851	851	887	2978	2980
+4	subheading	23	23.2	Brown and Beige Adipose Tissues Are Thermogenic	852	853	888	2981	2984
+4	subheading	23	23.2	Muscles Use ATP for Mechanical Work	853	855	889	2985	2996
+4	subheading	23	23.2	The Brain Uses Energy for Transmission of Electrical Impulses	855	855	891	2997	2999
+4	subheading	23	23.2	Blood Carries Oxygen, Metabolites, and Hormones	856	858	892	3000	3005
+3	section	23	23.3	23.3 Hormonal Regulation of Fuel Metabolism	859	867	895	3006	3029
+4	subheading	23	23.3	Insulin Counters High Blood Glucose in the Well-Fed State	859	859	895	3006	3008
+4	subheading	23	23.3	Pancreatic β Cells Secrete Insulin in Response to Changes in Blood Glucose	859	861	895	3009	3015
+4	subheading	23	23.3	Glucagon Counters Low Blood Glucose	861	862	897	3016	3019
+4	subheading	23	23.3	During Fasting and Starvation, Metabolism Shifts to Provide Fuel for the Brain	863	865	899	3020	3024
+4	subheading	23	23.3	Epinephrine Signals Impending Activity	866	866	902	3025	3025
+4	subheading	23	23.3	Cortisol Signals Stress, Including Low Blood Glucose	866	867	902	3026	3029
+3	section	23	23.4	23.4 Obesity and the Regulation of Body Mass	867	875	903	3030	3060
+4	subheading	23	23.4	Adipose Tissue Has Important Endocrine Functions	867	868	903	3031	3035
+4	subheading	23	23.4	Leptin Stimulates Production of Anorexigenic Peptide Hormones	868	869	904	3036	3037
+4	subheading	23	23.4	Leptin Triggers a Signaling Cascade That Regulates Gene Expression	869	869	905	3038	3039
+4	subheading	23	23.4	Adiponectin Acts through AMPK to Increase Insulin Sensitivity	870	870	906	3040	3041
+4	subheading	23	23.4	AMPK Coordinates Catabolism and Anabolism in Response to Metabolic Stress	870	870	906	3042	3044
+4	subheading	23	23.4	The mTORC1 Pathway Coordinates Cell Growth with the Supply of Nutrients and Energy	871	871	907	3045	3047
+4	subheading	23	23.4	Diet Regulates the Expression of Genes Central to Maintaining Body Mass	872	872	908	3048	3050
+4	subheading	23	23.4	Short-Term Eating Behavior Is Influenced by Ghrelin, PPY3–36, and Cannabinoids	873	874	909	3051	3054
+4	subheading	23	23.4	Microbial Symbionts in the Gut Influence Energy Metabolism and Adipogenesis	874	875	910	3055	3060
+3	section	23	23.5	23.5 Diabetes Mellitus	875	880	911	3061	3074
+4	subheading	23	23.5	Diabetes Mellitus Arises from Defects in Insulin Production or Action	876	876	912	3064	3065
+4	subheading	23	23.5	Carboxylic Acids (Ketone Bodies) Accumulate in the Blood of Those with Untreated Diabetes	877	877	913	3066	3066
+4	subheading	23	23.5	In Type 2 Diabetes the Tissues Become Insensitive to Insulin	877	878	913	3067	3069
+4	subheading	23	23.5	Type 2 Diabetes Is Managed with Diet, Exercise, Medication, and Surgery	878	880	914	3070	3074
+3	subheading	23	23.5	Chapter Review	880	883	916	3075	3087
+4	subheading	23	23.5	Key Terms	880	880	916	3075	3075
+4	subheading	23	23.5	Problems	880	883	916	3076	3087
+1	subheading	23	23.5	Part III Information Pathways	883	1092	919	3088	3772
+2	chapter	24		Chapter 24 Genes and Chromosomes	885	913	921	3094	3195
+3	section	24	24.1	24.1 Chromosomal Elements	885	890	921	3098	3114
+4	subheading	24	24.1	Genes Are Segments of DNA That Code for Polypeptide Chains and RNAs	885	886	921	3098	3100
+4	subheading	24	24.1	DNA Molecules Are Much Longer than the Cellular or Viral Packages That Contain Them	886	889	922	3101	3108
+4	subheading	24	24.1	Eukaryotic Genes and Chromosomes Are Very Complex	889	890	925	3109	3114
+3	section	24	24.2	24.2 DNA Supercoiling	890	898	926	3115	3141
+4	subheading	24	24.2	Most Cellular DNA Is Underwound	892	892	928	3120	3122
+4	subheading	24	24.2	DNA Underwinding Is Defined by Topological Linking Number	892	895	928	3123	3131
+4	subheading	24	24.2	Topoisomerases Catalyze Changes in the Linking Number of DNA	895	896	931	3132	3137
+4	subheading	24	24.2	DNA Compaction Requires a Special Form of Supercoiling	897	898	933	3138	3141
+3	section	24	24.3	24.3 The Structure of Chromosomes	898	910	934	3142	3178
+4	subheading	24	24.3	Chromatin Consists of DNA, Proteins, and RNA	898	899	934	3142	3144
+4	subheading	24	24.3	Histones Are Small, Basic Proteins	899	899	935	3145	3146
+4	subheading	24	24.3	Nucleosomes Are the Fundamental Organizational Units of Chromatin	900	902	936	3147	3157
+4	subheading	24	24.3	Nucleosomes Are Packed into Highly Condensed Chromosome Structures	902	906	938	3158	3169
+4	subheading	24	24.3	Condensed Chromosome Structures Are Maintained by SMC Proteins	906	908	942	3170	3173
+4	subheading	24	24.3	Bacterial DNA Is Also Highly Organized	909	910	945	3174	3178
+3	subheading	24	24.3	Chapter Review	910	913	946	3179	3195
+4	subheading	24	24.3	Key Terms	910	910	946	3179	3179
+4	subheading	24	24.3	Problems	911	913	947	3180	3195
+2	chapter	25		Chapter 25 DNA Metabolism	913	960	949	3196	3341
+3	section	25	25.1	25.1 DNA Replication	914	930	950	3200	3250
+4	subheading	25	25.1	DNA Replication Follows a Set of Fundamental Rules	914	916	950	3200	3205
+4	subheading	25	25.1	DNA Is Degraded by Nucleases	916	916	952	3206	3206
+4	subheading	25	25.1	DNA Is Synthesized by DNA Polymerases	916	917	952	3207	3211
+4	subheading	25	25.1	Replication Is Very Accurate	917	918	953	3212	3215
+4	subheading	25	25.1	E. coli Has at Least Five DNA Polymerases	918	919	954	3216	3221
+4	subheading	25	25.1	DNA Replication Requires Many Enzymes and Protein Factors	919	919	955	3222	3222
+4	subheading	25	25.1	Replication of the E. coli Chromosome Proceeds in Stages	919	928	955	3223	3242
+4	subheading	25	25.1	Replication in Eukaryotic Cells Is Similar but More Complex	928	929	964	3243	3247
+4	subheading	25	25.1	Viral DNA Polymerases Provide Targets for Antiviral Therapy	930	930	966	3248	3250
+3	section	25	25.2	25.2 DNA Repair	930	940	966	3251	3280
+4	subheading	25	25.2	Mutations Are Linked to Cancer	930	931	966	3251	3253
+4	subheading	25	25.2	All Cells Have Multiple DNA Repair Systems	931	938	967	3254	3274
+4	subheading	25	25.2	The Interaction of Replication Forks with DNA Damage Can Lead to Error-Prone Translesion DNA Synthesis	938	940	974	3275	3280
+3	section	25	25.3	25.3 DNA Recombination	940	956	976	3281	3324
+4	subheading	25	25.3	Bacterial Homologous Recombination Is a DNA Repair Function	940	943	976	3282	3289
+4	subheading	25	25.3	Eukaryotic Homologous Recombination Is Required for Proper Chromosome Segregation during Meiosis	944	948	980	3290	3302
+4	subheading	25	25.3	Some Double-Strand Breaks Are Repaired by Nonhomologous End Joining	948	949	984	3303	3306
+4	subheading	25	25.3	Site-Specific Recombination Results in Precise DNA Rearrangements	950	952	986	3307	3312
+4	subheading	25	25.3	Transposable Genetic Elements Move from One Location to Another	952	953	988	3313	3317
+4	subheading	25	25.3	Immunoglobulin Genes Assemble by Recombination	954	956	990	3318	3324
+3	subheading	25	25.3	Chapter Review	956	960	992	3325	3341
+4	subheading	25	25.3	Key Terms	956	956	992	3325	3326
+4	subheading	25	25.3	Problems	956	960	992	3327	3341
+2	chapter	26		Chapter 26 RNA Metabolism	960	1005	996	3342	3483
+3	section	26	26.1	26.1 DNA-Dependent Synthesis of RNA	961	972	997	3346	3381
+4	subheading	26	26.1	RNA Is Synthesized by RNA Polymerases	961	962	997	3346	3352
+4	subheading	26	26.1	RNA Synthesis Begins at Promoters	962	964	998	3353	3361
+4	subheading	26	26.1	Transcription Is Regulated at Several Levels	964	964	1000	3362	3363
+4	subheading	26	26.1	Specific Sequences Signal Termination of RNA Synthesis	965	966	1001	3364	3365
+4	subheading	26	26.1	Eukaryotic Cells Have Three Kinds of Nuclear RNA Polymerases	967	967	1003	3366	3367
+4	subheading	26	26.1	RNA Polymerase II Requires Many Other Protein Factors for Its Activity	967	968	1003	3368	3375
+4	subheading	26	26.1	RNA Polymerases Are Drug Targets	969	972	1005	3376	3381
+3	section	26	26.2	26.2 RNA Processing	972	988	1008	3382	3428
+4	subheading	26	26.2	Eukaryotic mRNAs Are Capped at the 5′ End	974	974	1010	3386	3387
+4	subheading	26	26.2	Both Introns and Exons Are Transcribed from DNA into RNA	974	974	1010	3388	3388
+4	subheading	26	26.2	RNA Catalyzes the Splicing of Introns	975	977	1011	3389	3393
+4	subheading	26	26.2	In Eukaryotes the Spliceosome Carries out Nuclear pre-mRNA Splicing	977	979	1013	3394	3401
+4	subheading	26	26.2	Proteins Catalyze Splicing of tRNAs	979	979	1015	3402	3402
+4	subheading	26	26.2	Eukaryotic mRNAs Have a Distinctive 3′ End Structure	979	980	1015	3402	3405
+4	subheading	26	26.2	A Gene Can Give Rise to Multiple Products by Differential RNA Processing	980	982	1016	3406	3411
+4	subheading	26	26.2	Ribosomal RNAs and tRNAs Also Undergo Processing	983	985	1019	3412	3418
+4	subheading	26	26.2	Special-Function RNAs Undergo Several Types of Processing	985	986	1021	3419	3421
+4	subheading	26	26.2	Cellular mRNAs Are Degraded at Different Rates	986	988	1022	3422	3428
+3	section	26	26.3	26.3 RNA-Dependent Synthesis of RNA and DNA	988	995	1024	3429	3450
+4	subheading	26	26.3	Reverse Transcriptase Produces DNA from Viral RNA	988	990	1024	3429	3434
+4	subheading	26	26.3	Some Retroviruses Cause Cancer and AIDS	990	990	1026	3435	3437
+4	subheading	26	26.3	Many Transposons, Retroviruses, and Introns May Have a Common Evolutionary Origin	991	992	1027	3438	3441
+4	subheading	26	26.3	Telomerase Is a Specialized Reverse Transcriptase	992	994	1028	3442	3446
+4	subheading	26	26.3	Some RNAs Are Replicated by RNA-Dependent RNA Polymerase	994	994	1030	3447	3447
+4	subheading	26	26.3	RNA-Dependent RNA Polymerases Share a Common Structural Fold	995	995	1031	3448	3450
+3	section	26	26.4	26.4 Catalytic RNAs and the RNA World Hypothesis	996	1001	1032	3451	3469
+4	subheading	26	26.4	Ribozymes Share Features with Protein Enzymes	996	997	1032	3451	3454
+4	subheading	26	26.4	Ribozymes Participate in a Variety of Biological Processes	997	998	1033	3455	3457
+4	subheading	26	26.4	Ribozymes Provide Clues to the Origin of Life in an RNA World	998	1001	1034	3458	3469
+3	subheading	26	26.4	Chapter Review	1002	1005	1038	3470	3483
+4	subheading	26	26.4	Key Terms	1002	1002	1038	3470	3470
+4	subheading	26	26.4	Problems	1002	1005	1038	3471	3483
+2	chapter	27		Chapter 27 Protein Metabolism	1005	1054	1041	3484	3636
+3	section	27	27.1	27.1 The Genetic Code	1006	1015	1042	3491	3519
+4	subheading	27	27.1	The Genetic Code Was Cracked Using Artificial mRNA Templates	1006	1010	1042	3491	3505
+4	subheading	27	27.1	Wobble Allows Some tRNAs to Recognize More than One Codon	1010	1012	1046	3506	3510
+4	subheading	27	27.1	The Genetic Code Is Mutation-Resistant	1013	1013	1049	3511	3511
+4	subheading	27	27.1	Translational Frameshifting Affects How the Code Is Read	1013	1013	1049	3512	3513
+4	subheading	27	27.1	Some mRNAs Are Edited before Translation	1013	1015	1049	3514	3519
+3	section	27	27.2	27.2 Protein Synthesis	1015	1040	1051	3520	3593
+4	subheading	27	27.2	The Ribosome Is a Complex Supramolecular Machine	1016	1018	1052	3522	3529
+4	subheading	27	27.2	Transfer RNAs Have Characteristic Structural Features	1019	1019	1055	3530	3532
+4	subheading	27	27.2	Stage 1: Aminoacyl-tRNA Synthetases Attach the Correct Amino Acids to Their tRNAs	1019	1026	1055	3533	3550
+4	subheading	27	27.2	Stage 2: A Specific Amino Acid Initiates Protein Synthesis	1026	1029	1062	3551	3561
+4	subheading	27	27.2	Stage 3: Peptide Bonds Are Formed in the Elongation Stage	1029	1034	1065	3562	3572
+4	subheading	27	27.2	Stage 4: Termination of Polypeptide Synthesis Requires a Special Signal	1034	1036	1070	3573	3578
+4	subheading	27	27.2	Stage 5: Newly Synthesized Polypeptide Chains Undergo Folding and Processing	1036	1038	1072	3579	3586
+4	subheading	27	27.2	Protein Synthesis Is Inhibited by Many Antibiotics and Toxins	1039	1040	1075	3587	3593
+3	section	27	27.3	27.3 Protein Targeting and Degradation	1040	1050	1076	3594	3620
+4	subheading	27	27.3	Posttranslational Modification of Many Eukaryotic Proteins Begins in the Endoplasmic Reticulum	1040	1041	1076	3595	3597
+4	subheading	27	27.3	Glycosylation Plays a Key Role in Protein Targeting	1041	1044	1077	3598	3603
+4	subheading	27	27.3	Signal Sequences for Nuclear Transport Are Not Cleaved	1044	1045	1080	3604	3606
+4	subheading	27	27.3	Bacteria Also Use Signal Sequences for Protein Targeting	1046	1046	1082	3607	3608
+4	subheading	27	27.3	Cells Import Proteins by Receptor-Mediated Endocytosis	1046	1047	1082	3609	3611
+4	subheading	27	27.3	Protein Degradation Is Mediated by Specialized Systems in All Cells	1047	1050	1083	3612	3620
+3	subheading	27	27.3	Chapter Review	1050	1054	1086	3621	3636
+4	subheading	27	27.3	Key Terms	1050	1050	1086	3621	3621
+4	subheading	27	27.3	Problems	1050	1054	1086	3622	3636
+2	chapter	28		Chapter 28 Regulation of Gene Expression	1054	1092	1090	3637	3772
+3	section	28	28.1	28.1 The Proteins and RNAs of Gene Regulation	1055	1065	1091	3643	3677
+4	subheading	28	28.1	RNA Polymerase Binds to DNA at Promoters	1055	1056	1091	3643	3645
+4	subheading	28	28.1	Transcription Initiation Is Regulated by Proteins and RNAs	1056	1058	1092	3646	3652
+4	subheading	28	28.1	Many Bacterial Genes Are Clustered and Regulated in Operons	1058	1058	1094	3653	3655
+4	subheading	28	28.1	The lac Operon Is Subject to Negative Regulation	1058	1059	1094	3656	3660
+4	subheading	28	28.1	Regulatory Proteins Have Discrete DNA-Binding Domains	1059	1063	1095	3661	3670
+4	subheading	28	28.1	Regulatory Proteins Also Have Protein-Protein Interaction Domains	1063	1065	1099	3671	3677
+3	section	28	28.2	28.2 Regulation of Gene Expression in Bacteria	1065	1074	1101	3678	3709
+4	subheading	28	28.2	The lac Operon Undergoes Positive Regulation	1065	1066	1101	3679	3683
+4	subheading	28	28.2	Many Genes for Amino Acid Biosynthetic Enzymes Are Regulated by Transcription Attenuation	1066	1069	1102	3684	3688
+4	subheading	28	28.2	Induction of the SOS Response Requires Destruction of Repressor Proteins	1069	1070	1105	3689	3691
+4	subheading	28	28.2	Synthesis of Ribosomal Proteins Is Coordinated with rRNA Synthesis	1070	1071	1106	3692	3696
+4	subheading	28	28.2	The Function of Some mRNAs Is Regulated by Small RNAs in Cis or in Trans	1071	1072	1107	3697	3703
+4	subheading	28	28.2	Some Genes Are Regulated by Genetic Recombination	1073	1074	1109	3704	3709
+3	section	28	28.3	28.3 Regulation of Gene Expression in Eukaryotes	1075	1092	1111	3710	3759
+4	subheading	28	28.3	Transcriptionally Active Chromatin Is Structurally Distinct from Inactive Chromatin	1075	1076	1111	3711	3715
+4	subheading	28	28.3	Most Eukaryotic Promoters Are Positively Regulated	1077	1077	1113	3716	3717
+4	subheading	28	28.3	DNA-Binding Activators and Coactivators Facilitate Assembly of the Basal Transcription Factors	1078	1080	1114	3718	3723
+4	subheading	28	28.3	The Genes of Galactose Metabolism in Yeast Are Subject to Both Positive and Negative Regulation	1080	1081	1116	3724	3727
+4	subheading	28	28.3	Transcription Activators Have a Modular Structure	1082	1082	1118	3728	3730
+4	subheading	28	28.3	Eukaryotic Gene Expression Can Be Regulated by Intercellular and Intracellular Signals	1082	1084	1118	3731	3735
+4	subheading	28	28.3	Regulation Can Result from Phosphorylation of Nuclear Transcription Factors	1084	1084	1120	3736	3736
+4	subheading	28	28.3	Many Eukaryotic mRNAs Are Subject to Translational Repression	1084	1085	1120	3736	3738
+4	subheading	28	28.3	Posttranscriptional Gene Silencing Is Mediated by RNA Interference	1085	1086	1121	3739	3740
+4	subheading	28	28.3	RNA-Mediated Regulation of Gene Expression Takes Many Forms in Eukaryotes	1086	1086	1122	3741	3741
+4	subheading	28	28.3	Development Is Controlled by Cascades of Regulatory Proteins	1087	1089	1123	3742	3749
+4	subheading	28	28.3	Stem Cells Have Developmental Potential That Can Be Controlled	1090	1092	1126	3750	3759
+3	subheading	28	28.3	Chapter Review	1092	1092	1128	3760	3772
+4	subheading	28	28.3	Key Terms	1092	1092	1128	3760	3761
+4	subheading	28	28.3	Problems	1092	1092	1128	3762	3772
+1	subheading	28	28.3	Note	1092	1092	1128	3773	3774
+1	subheading	28	28.3	Abbreviated Solutions to Problems	1092	1092	1128	3775	3914
+1	subheading	28	28.3	Glossary	1092	1092	1128	3915	4025
+1	subheading	28	28.3	Index	1092	1092	1128	4026	4373
+1	subheading	28	28.3	Resources	1092	1092	1128	4374	4380
+1	subheading	28	28.3	Back Cover	1092	1092	1128	4381	4893
