@@ -19,3 +19,4 @@ __pycache__/
 
 # Lehninger full-text search cache (5.7 MB of book text) - never commit
 lehninger_index/_B_text.pkl
+lehninger_index/_A_text.pkl

@@ -153,28 +153,68 @@ for app in ("biochemie_pro",):
     for f in re.findall(r'<script src="data/([^"]+\.js)"', html):
         files.append((app, f))
 
+# Citations come in two shapes and BOTH must be walked. An entity card puts them in a
+# dedicated `chains[].steps[].src` field; a section node writes them inline in its own prose
+# ("...the fragmentation table (Table 3-6, A p.92) is worth knowing..."). Until 2026-08-06
+# this loop read only the first shape, so every citation in `L-3-4-1` -- the only Lehninger
+# node that exists -- was silently unchecked while the report said it had found them all.
+# A checker that quietly covers half the data is worse than no checker, because the clean
+# run gets quoted as evidence.
+
+def walk_strings(obj, path=""):
+    """Every string in a node, with a dotted path, so a finding can name its field."""
+    if isinstance(obj, str):
+        yield path, obj
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            for r in walk_strings(v, "%s[%d]" % (path, i)): yield r
+    elif isinstance(obj, dict):
+        for k, v in obj.items():
+            for r in walk_strings(v, (path + "." + k) if path else k): yield r
+
+# How much text around an inline "A p.92" counts as its source context. A figure or table
+# label is what makes a citation checkable, and it sits just BEFORE the page number
+# ("Fig. 3-28, A p.94"), so the window has to reach back far enough to catch it.
+CTX_BACK, CTX_FWD = 90, 15
+
 rows = []
 for app, f in files:
     for n in nodes(io.open(os.path.join(ROOT, app, "data", f), encoding="utf-8").read()):
-        # citations live in chains[].steps[].src, and in points[]/beyondPoints[] prose
         for ch in (n.get("chains") or []):
             for st in (ch.get("steps") or []):
                 if st.get("src"):
-                    rows.append((n["id"], f, st["src"], st.get("en") or ""))
+                    rows.append((n["id"], f, st["src"], st.get("en") or "", "chains.src"))
+        # inline prose -- the Chinese half writes "A 第 92 页", which CITE does not match,
+        # so an en/cn pair yields one row, not two. No dedupe needed.
+        seen = set()
+        for path, s in walk_strings(n):
+            if path.startswith("chains"): continue
+            for m in CITE.finditer(s):
+                ctx = s[max(0, m.start() - CTX_BACK): m.end() + CTX_FWD]
+                key = (m.group(0), path.split("[")[0])
+                if key in seen: continue
+                seen.add(key)
+                rows.append((n["id"], f, ctx.strip(), s, path))
 
-p("found %d citations carrying a source string" % len(rows))
+p("found %d citations -- %d in a `src` field, %d written inline in prose"
+  % (len(rows), sum(1 for r in rows if r[4] == "chains.src"),
+     sum(1 for r in rows if r[4] != "chains.src")))
 p("")
 
 n_ok = n_else = n_unchecked = 0
-for nid, f, src, text in rows:
+for nid, f, src, text, path in rows:
     rng = cited_range(src)
+    # An inline citation's `src` is a window of surrounding prose, too long to print. Show
+    # the citation and the field it sits in -- that is what someone has to go and edit.
+    m = CITE.search(src or "")
+    label = ("%s  %s" % (m.group(0), path)) if (m and path != "chains.src") else src
     if not rng:
-        p("SKIP      %-14s %-28s (no A page in citation)" % (nid, src)); continue
+        p("SKIP      %-14s %-28s (no A page in citation)" % (nid, label)); continue
     lo, hi = rng
     pr = probes(text, src)
     if not pr:
         n_unchecked += 1
-        p("UNCHECKED %-14s %-28s no searchable phrase -- verify by hand" % (nid, src))
+        p("UNCHECKED %-14s %-28s no searchable phrase -- verify by hand" % (nid, label))
         continue
     verdict = None
     for phrase, kind in pr:
@@ -187,16 +227,16 @@ for nid, f, src, text in rows:
     if verdict is None:
         n_unchecked += 1
         p("UNCHECKED %-14s %-28s probe not found even +-%d pages: %r"
-          % (nid, src, SEARCH_PAD, str(pr[0][0])[:60]))
+          % (nid, label, SEARCH_PAD, str(pr[0][0])[:60]))
         continue
     tag, phrase, kind, where = verdict
     if tag == "OK":
         n_ok += 1
-        p("OK        %-14s %-28s %s found on %s" % (nid, src, kind, where))
+        p("OK        %-14s %-28s %s found on %s" % (nid, label, kind, where))
     else:
         n_else += 1
         p("ELSEWHERE %-14s %-28s %s is actually on %s  <-- FIX THE CITATION"
-          % (nid, src, kind, where))
+          % (nid, label, kind, where))
         p("             probe: %r" % str(phrase)[:80])
 
 p("")

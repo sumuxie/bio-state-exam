@@ -2,8 +2,15 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 12 citations carrying a source string
+found 20 citations -- 12 in a `src` field, 8 written inline in prose
 
+OK        L-3-4-1        A p.92  coverageNote         label found on [92]
+OK        L-3-4-1        A p.92  coverageNote         label found on [92]
+OK        L-3-4-1        A p.92  coverageNote         label found on [92]
+UNCHECKED L-3-4-1        A pp.96-100  coverageNote    no searchable phrase -- verify by hand
+OK        L-3-4-1        A p.92  points[5].en         label found on [92]
+OK        L-3-4-1        A p.94  points[7].en         label found on [94]
+OK        L-3-4-1        A p.95  points[8].en         label found on [95]
 UNCHECKED E-tryptophan   A p.71–79, §3.1              no searchable phrase -- verify by hand
 UNCHECKED E-tryptophan   A p.116–129, §4.3            no searchable phrase -- verify by hand
 OK        E-tryptophan   A p.75, §3.1                 quote found on [75]
@@ -16,5 +23,6 @@ UNCHECKED E-tryptophan   A p.810–812, §22.2           no searchable phrase --
 UNCHECKED E-tryptophan   A p.1067–1069, §28.2         no searchable phrase -- verify by hand
 OK        E-tryptophan   A p.1068, §28.2              quote(split) found on [1068]
 SKIP      E-tryptophan   CZ §4.2.4                    (no A page in citation)
+UNCHECKED E-tryptophan   A p.375–376  quiz[2].answer_en no searchable phrase -- verify by hand
 
-OK 6 | ELSEWHERE 0 | UNCHECKED 5
+OK 12 | ELSEWHERE 0 | UNCHECKED 7
