@@ -32,7 +32,7 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — six Lehninger nodes now exist.** `L-3-4-1` in
+**§9 step 6 is under way — seven Lehninger nodes now exist.** `L-3-4-1` in
 `biochemie_pro/data/leh_ch3.js` (§13) joins Czech node `2-2-1` through
 `topicKey: "protein-primary-structure"` — the Czech book says *why* an amino acid sequence
 matters, Lehninger §3.4 says *how* one is determined. `L-11-3-1` in
@@ -82,7 +82,7 @@ that made it work and is worth reading before attempting rank 9.
 > card) and `protein-primary-structure` (Czech `2-2-1` + Lehninger `L-3-4-1`). **Everything
 > §13b listed is now done.**
 >
-> **Updated 2026-08-06: seven joins now, not two.** `L-11-3-1` (§13d) joins `membrane-transport`
+> **Updated 2026-08-06: eight joins now, not two.** `L-11-3-1` (§13d) joins `membrane-transport`
 > to all three `8-5-3-*` Czech nodes, `L-19-1-1` (§13e) joins `respiratory-chain` to all
 > five `6-2-4-*` Czech nodes, `L-1-3-1` (§13f) joins `bioenergetics-basics` to both `1-4` and
 > `1-5`, and `L-21-1-1` (§13g) joins `fatty-acid-biosynthesis` to all **nine** `8-3-*` Czech
@@ -91,10 +91,10 @@ that made it work and is worth reading before attempting rank 9.
 > Together these are a much stronger topic-view demonstration than the earlier
 > single-Czech-node joins.
 >
-> **What is left is content, not plumbing.** Only 7 of 61 topicKeys join more than one source,
-> because only six Lehninger nodes and one card exist. Every further node makes the topic view
-> worth more; nothing more needs building first. §9a's depth queue (61 writable primaries, 6
-> done, 55 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is
+> **What is left is content, not plumbing.** Now 8 of 61 topicKeys join more than one source,
+> from seven Lehninger nodes and one card. Every further node makes the topic view worth more;
+> nothing more needs building first. §9a's depth queue (61 writable primaries, 7 done, 54 to
+> go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is
 > the other open thread.
 
 **⚠️ Before writing or reusing any `A p.N` citation, read §16.** Three of six citations in the
@@ -768,7 +768,7 @@ key already exists and the node joins the topic view the moment it is written.
 | 9 | 17.2 Oxidation of Fatty Acids | 6.5 | `fatty-acid-oxidation` | ✅ **done — `L-17-2-1`** |
 | 12 | 1.3 Physical Foundations | 5.0 | `bioenergetics-basics` | ✅ **done — `L-1-3-1`** |
 | 14 | 3.4 Primary Structure | 5.0 | `protein-primary-structure` | ✅ **done — `L-3-4-1`** |
-| 17 | 22.3 Molecules Derived from Amino Acids | 4.5 | `amino-acid-derived-molecules` | 3 |
+| 17 | 22.3 Molecules Derived from Amino Acids | 4.5 | `amino-acid-derived-molecules` | ✅ **done — `L-22-3-1`** |
 | 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | 1 |
 | 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | 2 |
 
@@ -780,14 +780,24 @@ above. **Four of the ten writable primaries are now done: rank 14 (`L-3-4-1`), r
 nodes (`6-2-4-1..5`) — the topic view's largest join yet; `L-1-3-1` covers all of §1.3 (A
 pp.18-27) and joins both `1-4` and `1-5`.
 
-**Four writable primaries remain in this table.** Ranks 5 and 9 are both done (`L-21-1-1` §13g,
+**Three writable primaries remain in this table.** Rank 17 is done (`L-22-3-1`, §13i), and its
+§9e check **passed** — the first time it has, which is what makes the check credible rather than
+merely cautious. Ranks 5 and 9 are both done (`L-21-1-1` §13g,
 `L-17-2-1` §13h) and **§5a's organic-chemistry warning turned out to be manageable in both** —
 §13g records the approach and §13h confirms it holds. Treat the §5a flag as "write it this way",
-not "avoid". What is left: **rank 7** (§23.2 tissue-specific metabolism, 1 waiting) and **rank
-18** (§3.3 working with proteins, 1 waiting) are the quickest; **rank 17** (§22.3 molecules
-derived from amino acids, 3 waiting) and **rank 20** (§25.1 DNA replication, 2 waiting) are
-mid-sized. Rank 17 is probably the best next pick — it has the most waiting nodes of the four
-and no §5a flag.
+not "avoid". What is left: **rank 7** (§23.2 tissue-specific metabolism, 1 waiting), **rank 18**
+(§3.3 working with proteins, 1 waiting) and **rank 20** (§25.1 DNA replication, 2 waiting).
+Rank 20 is probably the best next pick of the three — most waiting nodes, no §5a flag, and it
+opens the molecular-biology half of the book, which the depth layer has not touched at all yet
+(everything so far is metabolism, membranes or bioenergetics).
+
+**Worth raising with the user before continuing much further:** the single thinnest place in the
+whole queue is **rank 1, §5.1 Oxygen-Binding Proteins at ratio 17** — myoglobin, haemoglobin,
+cooperativity, the Bohr effect — and Czech `6-3-1` is sitting there wanting exactly that node
+(§13i). It is blocked only by the topicKey naming question §9c raised and never resolved. §9e
+has now established both the precedent and the mechanism for re-keying, so that question is
+cheaper to answer than it was, and answering it unblocks ranks 1, 2, 3, 8, 10, 11, 13, 15, 16
+and 19 at once — ten sections, including the three highest ratios in the book.
 
 **⚠️ Before writing any of them, do §9e's two-minute check:** list the Czech nodes the intended
 `topicKey` actually holds and confirm they are the ones teaching the subject. Rank 9 looked
@@ -1436,6 +1446,59 @@ propionic acidemia; A pp.616-617 for MCAD and TFP). `biochemie_pro` now reports 
 (207 cz, 6 lehninger, 1 entity), 61 topicKeys**; audit **57 OK, 0 ELSEWHERE, 22 UNCHECKED**,
 invariant 79 = 57 + 0 + 22.
 
+### 13i. The seventh node — `L-22-3-1`, §22.3 Molecules Derived from Amino Acids (2026-08-06)
+
+**`biochemie_pro/data/leh_ch22.js`, one node, `id: "L-22-3-1"`,
+`topicKey: "amino-acid-derived-molecules"`.** Rank 17, ratio 4.5, covering all of §22.3
+(A pp.816–824, seven subheadings) and joining Czech `6-3-1`, `6-3-2`, `6-3-3`.
+
+**§9e's check was run first and PASSED — the first time it has.** Worth recording, because the
+check only earns its place if it sometimes says "go ahead". The key holds three Czech nodes and
+two of them (`6-3-2` heme biosynthesis, `6-3-3` porphyrin degradation) are direct matches for
+this section's first two subheadings, so no re-keying was needed. **One honest qualification
+went into `coverageNote` rather than being glossed:** `6-3-1` is about what porphyrin *proteins*
+are, whose real depth partner is **§5.1 Oxygen-Binding Proteins — rank 1 of the entire queue at
+ratio 17, still blocked as a topicKey secondary**. So this node deepens two of its three Czech
+nodes squarely and the third only at its edges, and the node `6-3-1` actually wants does not
+exist yet.
+
+**What it adds.** The Czech nodes give three tidy outlines; Lehninger keeps them and hangs
+medicine on them. The branch the Czech account omits: animals build δ-aminolevulinate from
+**glycine + succinyl-CoA**, while plants, algae and most bacteria build it from **glutamate via
+glutamyl-tRNA** — a tRNA appearing inside a small-molecule pathway, memorable precisely because
+it looks misplaced. Then the clinical layer, entirely absent from Czech §6.3: the **porphyrias**
+(acute intermittent, suspected in George III; the ferrochelatase deficiency where accumulated
+protoporphyrin turns light into free-radical skin damage, treated with an afamelanotide
+implant; and the uroporphyrinogen I form behind the vampire legends), **jaundice** with its
+newborn phototherapy, and the genuine surprise that **heme degradation is not disposal** — the
+CO released is a vasodilator, and bilirubin is the most abundant antioxidant in mammalian
+tissue, so jaundice toxicity may simply be bilirubin exceeding available albumin. It then covers
+four subjects Czech §6.3 never reaches: creatine and glutathione, D-amino acids as a bacterial
+drug target, plant products from aromatic amino acids, the biological amines, and nitric oxide.
+
+**A fourth interlock.** Glutathione peroxidase with its **selenocysteine** is the same enzyme
+`L-19-1-1` named in the respiratory chain's ROS defence, met here from the synthetic side; and
+heme synthesis consuming **succinyl-CoA** ties back to the citric acid cycle. Counting `L-17-2-1`'s
+two, the depth layer now has four cross-references between its own nodes.
+
+**The TOC drift is now a pattern, not an accident — treat `lehninger_toc.tsv` as a finding aid,
+never as a citable source.** §13h found it displaced by an interleaved Box; here it is off by
+one to two pages *throughout the section*: 'Glycine Is a Precursor' listed at 816 is on **817**,
+'Creatine and Glutathione' at 820 is on **819**, 'Aromatic Amino Acids' at 822 is on **820**,
+'Biological Amines' at 822 is on **821**, 'Arginine Is the Precursor' at 824 is on **822**.
+Every location was re-derived by direct case-sensitive search. A second, subtler wrinkle found
+here: **several figures sit one to three pages AFTER the text discussing them** (Fig. 22-31 is
+on 823 while the amine text is on 821; Fig. 22-33 on 824 while the NO text is on 822), so a
+figure citation and a content citation for the same subject can legitimately differ by pages —
+do not "correct" one to match the other.
+
+Citations: 12 total, **7 machine-verified OK, 0 ELSEWHERE**, 5 UNCHECKED and all five
+hand-verified (A p.817 heme oxygenase/ferritin/CO; A p.818 jaundice/albumin/urobilin; A p.819
+twice, porphyrias and the antioxidant/HO-isozyme material; A p.820 D-amino acids).
+`biochemie_pro` now reports **215 topics (207 cz, 7 lehninger, 1 entity), 61 topicKeys**; audit
+**64 OK, 0 ELSEWHERE, 27 UNCHECKED**, invariant 91 = 64 + 0 + 27. **8 of 61 topicKeys now join
+more than one source.**
+
 ---
 
 ## 14. Working locally — the local copy is the real one
@@ -1653,8 +1716,8 @@ Three verdicts, and the middle one is the whole point:
   `A p.71–79, §3.1` with no quotation. Reported honestly rather than passed silently; these
   still need a human.
 
-Current state (2026-08-06, six Lehninger nodes + one card): **79 citations — 57
-machine-verified OK, 0 ELSEWHERE, 22 UNCHECKED**, and the unchecked ones were checked by hand
+Current state (2026-08-06, seven Lehninger nodes + one card): **91 citations — 64
+machine-verified OK, 0 ELSEWHERE, 27 UNCHECKED**, and the unchecked ones were checked by hand
 and all hold. (Was 20 citations when only `L-3-4-1` and `E-tryptophan` existed.)
 
 **⚠️ This tool has now silently under-reported twice, in two different ways. Both are fixed, and
@@ -1674,8 +1737,8 @@ actually in the data, and nothing said so.** So count them independently before 
 clean run. The invariant that actually holds is **grep count == OK + ELSEWHERE + UNCHECKED**:
 
 ```bash
-grep -oE "A pp?\.[0-9]" biochemie_pro/data/*.js | wc -l   # 79
-grep "^OK .* | ELSEWHERE" lehninger_index/_citation_audit.txt   # OK 57 | ELSEWHERE 0 | UNCHECKED 22
+grep -oE "A pp?\.[0-9]" biochemie_pro/data/*.js | wc -l   # 91
+grep "^OK .* | ELSEWHERE" lehninger_index/_citation_audit.txt   # OK 64 | ELSEWHERE 0 | UNCHECKED 27
 ```
 
 **Do not compare against the report's own `found N citations` line** — it read 56 against a grep
