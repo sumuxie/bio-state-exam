@@ -46,13 +46,18 @@ search index for `locate.py` and nothing else reads it. Delete it freely; it reb
   arbitrated from this book.
 - **Lehninger says "isoprenoid", never "terpene"** (0 in-chapter hits). Czech §8.2.4's
   "terpeny (isoprenoidy)" maps to §21.4.
-- **§6's documented absences re-confirmed, and five more found:** `Beer-Lambert`, `Beer's law`,
-  `molar extinction coefficient`, `molar absorption coefficient`, **`ninhydrin`**, `Merrifield`,
-  **`sedimentation coefficient`**, `colloid`, `creationism` / `intelligent design` — 0 hits each.
-  `Tyndall` appears in the index only. This strands Czech §2.1.3 and §2.2.6; see
-  `HANDOFF_LEHNINGER.md` §5a and §6.
-- **`locate.py` reports Glossary/Index hits separately as `(outside chapters)`.** It has to:
-  the back matter is 460 pages of a 1252-page file, and before the section upper bound was
+- **`locate.py` de-ligatures before searching, as of 2026-08-06 — this matters, read it before
+  trusting an older "0 hits" claim.** B's text layer renders `ff`/`fi`/`fl`/`ffi`/`ffl` as single
+  Unicode glyphs on 66 % of its 4893 pages, so a plain substring search on "coefficient" (or
+  any word containing those letter pairs) silently missed every hit on an affected page. Found
+  when `molar extinction coefficient` — reported absent — turned out to be defined in Box 3-1,
+  four sentences after the Trp 280 nm passage. `Merrifield` and `sedimentation coefficient` were
+  wrongly called absent for the same reason. Detail and the measured blast radius (14 of the
+  895 glossary terms used in matching had a wrong hit count, mostly undercounts not zero-flips)
+  are in `_ligature_impact.txt`. `ninhydrin` and `colloid` are still genuinely 0 hits after the
+  fix — see `HANDOFF_LEHNINGER.md` §6.
+- **`locate.py` also reports Glossary/Index hits separately as `(outside chapters)`.** It has
+  to: the back matter is 460 pages of a 1252-page file, and before the section upper bound was
   added, every single query appeared to have a large hit in §28.3.
 
 ## Known limitations

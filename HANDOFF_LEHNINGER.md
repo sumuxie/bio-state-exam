@@ -43,9 +43,11 @@ work is judgement, and the pieces that need a human are listed below rather than
    bucket obviously fits.
 2. **Any classmate report of a real exam question.** §3 makes these outrank everything in this
    file, and one has already overturned a plan once.
-3. **Which topic to start with.** The user has chosen to work the whole high-ratio set (§8), but
-   not an order. §9a's queue is the natural one; the first integration card (tryptophan, §4) is
-   the natural alternative because it exposes the card shape early.
+3. ~~Which topic to start with~~ → **answered 2026-08-06: the first integration card, on
+   tryptophan**, before batch-producing depth-queue topics. §4's reasoning for tryptophan
+   stands (§6 already confirms the source material — aromaticity, 280 nm, hydrophobic core —
+   is all there). This is now in progress; see §12 for the schema decision and where the work
+   stands.
 
 ---
 
@@ -297,11 +299,12 @@ text (`lehninger_index/cz_organic_load.json`, keyword proxy — treat as a map, 
 (lipids), plus §2.1.3.** That is where §5's rule does the most work, and where writing content
 without it will simply fail to land.
 
-**The two hardest are the two Lehninger cannot rescue — but the Chinese notes can.** §6 records
-that ninhydrin, sedimentation coefficient, colloid and Tyndall are all absent from Lehninger 8,
-so §2.1.3 and §2.2.6 are the user's weakest ground *and* unsupported by the designated depth
-source. They are **not** unsupported overall: the handwritten Chinese notes were read on
-2026-08-06 (§6a) and cover both, in places more fully than the Czech book does.
+**The two hardest are the two Lehninger cannot fully rescue — but the Chinese notes can.**
+§6 records that `ninhydrin` and `colloid` are genuinely absent from Lehninger 8 even after a
+search bug was fixed (§6, read that fix note first — an earlier version of this claim
+over-reached). So §2.1.3 and §2.2.6 are the user's weakest ground *and* thinly supported by the
+designated depth source. They are **not** unsupported overall: the handwritten Chinese notes
+were read on 2026-08-06 (§6a) and cover both, in places more fully than the Czech book does.
 
 **This is the one narrow, principled exception to §3's "notes are never depth."** §3 demotes
 the notes because their *scope* encodes Chinese curriculum priorities — that argument is about
@@ -331,31 +334,43 @@ Searched in B on 2026-08-06. Present, and far beyond the Czech book:
 | hydrophobic core / interior | 13 pages | ch4 folding sections |
 | proline in β turns, **with the reason** | found | B p.506 — *"peptide bonds involving the imino nitrogen of proline readily assume the cis configuration… particularly amenable to a tight turn"* |
 
-**Absent from the entire book.** All re-confirmed 2026-08-06 with the section bounds fixed, so
-Glossary and Index hits no longer masquerade as coverage — use `lehninger_index/scripts/locate.py`,
-which reports those separately as `(outside chapters)`:
+**A search bug corrupted this table earlier today — corrected 2026-08-06, read this before
+trusting any "0 hits" claim from a session before this one.** B's text layer renders `ff`,
+`fi`, `fl`, `ffi`, `ffl` as single Unicode ligature glyphs (U+FB00–FB04) on **66 % of its 4893
+pages** — the text literally reads "coeﬀicient", not "coefficient". A plain substring search
+silently fails on every affected page, no error, just a false "not found". This was caught
+while reading B p.370 for the tryptophan card: **Box 3-1, titled "METHODS: Absorption of Light
+by Molecules: The Lambert-Beer Law," sits four sentences after the Trp-280 nm passage** —
+directly contradicting what this table said an hour earlier. `locate.py` now de-ligatures
+before every search (self-heals the existing pickle cache too), but anything computed by an
+earlier run — including `master_map.tsv`'s auto-matcher cross-check — used the buggy version.
+Measured impact: of the 895 glossary terms used to build `master_map.tsv`'s cross-check, 36
+(4 %) contain a ligature-risk substring and 14 actually changed count after the fix — most are
+undercounts (e.g. `induced fit` 5→23 hits), not zero-flips, so the 65 % agreement figure is
+approximately right but not exact; do not quote it to more precision than that. Full detail in
+`lehninger_index/_ligature_impact.txt`.
 
-| | | why it matters |
+**What is actually present, corrected:**
+
+| term | now | where |
 |---|---|---|
-| `Beer-Lambert`, `Beer's law` | **0** | the A→concentration step |
-| `molar extinction coefficient` / `molar absorption coefficient` | **0** | same |
-| `ninhydrin` | **0** | Czech §2.1.3's headline reaction |
-| `Merrifield`, solid-phase peptide synthesis | **0** | Czech §2.1.3's protecting-group chemistry |
-| `sedimentation coefficient`, `colloid` | **0** | Czech §2.2.6's whole method set |
-| `Tyndall` | index only | same |
-| `Svedberg` | 1 in-chapter hit (ribosome sizes) | not the Svedberg *equation* |
-| `creationism`, `intelligent design` | **0** | Czech §1.6 frames origin-of-life around them |
+| `Lambert-Beer law` (the book's own word order — not "Beer-Lambert") | **present**, Box 3-1 | B p.369–370 = **A p.75–76, still inside §3.1 Amino Acids**, right after the Trp 280 nm passage |
+| `molar extinction coefficient` | **present**, 5 pages | defined in the same box: *"ε is the molar extinction coefficient (in units of liters per mole-centimeter)"* |
+| `Merrifield` | **present**, 4 pages | **A p.91–100, §3.4** — solid-phase peptide synthesis, not amino-acid protecting-group chemistry |
+| `sedimentation coefficient` | **present**, but only for ribosomes | **A p.1006–1040, §27.2** — bacterial ribosome 30S/50S/70S, not a method for protein Mr |
 
-So Lehninger says Trp absorbs at 280 nm but never closes the loop to *how you turn an
-absorbance into a concentration*. That practical last step is genuinely missing from the source.
+**So the earlier claim was simply wrong: Lehninger *does* close the A→concentration loop, in a
+boxed methods section right where the Trp/Tyr 280 nm passage is.** The tryptophan integration
+card (§12) uses it. §6a's "Lehninger cannot rescue these" framing needs one correction and one
+nuance, not a retraction:
 
-**Two Czech sections are stranded by this**, and it is not a search artefact — see §5a. §2.1.3
-(amino-acid derivatization chemistry) and §2.2.6 (colloid behaviour, ultracentrifugation, the
-Svedberg equation) have essentially no Lehninger counterpart, because Lehninger 8 answers the
-same questions with a later generation of methods: size-exclusion chromatography (15 pages,
-§3.3), SDS-PAGE and mass spectrometry (45 pages, §3.4). The *question* "how do you measure a
-protein's Mr" is shared; only the answers differ by era. Teach the Czech book's answer, because
-that is what the exam is based on; the modern one is context.
+- **§2.1.3's ninhydrin/protecting-group chemistry is still unsupported** — `ninhydrin` remains
+  a genuine **0** hits after the fix, and Merrifield's solid-phase method is a different topic
+  (whole-peptide synthesis, not single-amino-acid derivatization). §2.1.3 still needs the notes.
+- **§2.2.6's colloid framing is still unsupported** (`colloid` remains **0**), but its
+  ultracentrifugation half is not as clean a gap as stated: Lehninger uses sedimentation
+  coefficients, just for ribosome subunit sizes (27.2), not as a protein-Mr method. Worth a
+  one-line aside in the content, not a claim that the concept is absent.
 
 ### 6a. What the Chinese notes actually contain — pages 1–46 READ, 2026-08-06
 
@@ -574,7 +589,10 @@ applying it silently would have thrown away real depth material:
 | 19.5 | 692–696 | Mitochondrial Genes — Czech 6.2.4 |
 | 28.3 | 1075–1092 | Regulation of Gene Expression in Eukaryotes — Czech 4.2.4 does the bacterial operons |
 
-**Ask about these six specifically.** Do not fold them into either bucket by default.
+**Ruling, 2026-08-06: merge into the corresponding topic and develop normally** — not a
+one-line mention. §14.5/15.1/15.3 fold into the glycolysis/glycogen topics; §19.4/19.5 fold
+into oxidative phosphorylation; §28.3 folds into the transcription/operon topic. Treat them as
+ordinary depth material for a topic already in scope, not as a separate decision each time.
 
 Note the Chinese notes do have a 氨基酸生物合成 topic (二十六) with no Czech counterpart —
 consistent with §22.2 being ruled in.

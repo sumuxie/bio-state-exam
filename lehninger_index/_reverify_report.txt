@@ -1,0 +1,31 @@
+=== ligature scope: how many of B's 4893 pages are affected ===
+pages containing at least one ligature glyph: 3237 of 4893 (66%)
+-> every substring search run before this fix was silently blind on any word
+   containing fi/fl/ff/ffi/ffl on an affected page. That is not a rare edge case.
+
+=== every 'absent' claim re-checked against the NORMALIZED text ===
+term                               OLD (buggy)   NEW (fixed)   first hit
+Beer-Lambert law                             0             0   
+Lambert-Beer law (the book's actual word order)             4             4   B p.50
+Beer's law                                   0             0   
+molar extinction coefficient                 0             5   B p.370  <-- WAS WRONG
+molar absorption coefficient                 0             0   
+ninhydrin reaction                           0             0   
+Merrifield solid-phase synthesis             0             4   B p.435  <-- WAS WRONG
+sedimentation coefficient                    0             4   B p.3522  <-- WAS WRONG
+colloid                                      0             0   
+Tyndall effect                               1             1   B p.4661
+Svedberg                                     3             3   B p.3523
+creationism                                  0             0   
+intelligent design                           0             0   
+
+=== full context for the ones that flipped ===
+
+--- "molar extinction coefficient" first appears B p.370 ---
+   incident light, I is the intensity of the transmitted light, the ratio I/I0 (the inverse of the ratio in the equation) is the transmittance, ε is the molar extinction coefficient (in units of liters per mole-centimeter), c is the concentration of the absorbing species (in moles per liter), and l is the path length of the light-absorbing sample (in centimeters). The Lambert-Beer law assumes that th
+
+--- "Merrifield solid-phase synthesis" first appears B p.435 ---
+   434 The major breakthrough in this technology was provided by R. Bruce Merrifield in 1962. His innovation was to synthesize a peptide while keeping one end attached to a solid support. The support is an insoluble polymer (resin) contained within a column, similar to that used for chromatographic procedures. The peptide
+
+--- "sedimentation coefficient" first appears B p.3522 ---
+   e cell. Bacterial ribosomes contain about 65% rRNA and 35% protein; they have a diameter of about 18 nm and are composed of two unequal subunits with sedimentation coefficients of 30S and 50S and a combined sedimentation coefficient of 70S. Both subunits contain dozens of ribosomal proteins (r-proteins) and at least one large rRNA (Table 27-6).

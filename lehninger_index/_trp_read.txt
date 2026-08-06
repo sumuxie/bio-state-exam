@@ -1,0 +1,354 @@
+
+================================================================================
+3.1 Amino Acids -- aromaticity / UV absorption
+================================================================================
+
+--- B p.366 (1729 chars) ---
+365 stereochemical series. Cells are able to speciﬁcally synthesize the L isomers of amino acids
+because the active sites of enzymes are asymmetric, causing the reactions they catalyze to be
+stereospeciﬁc. Amino Acids Can Be Classified by R Group Knowledge of the chemical properties of the
+common amino acids is central to an understanding of biochemistry. The topic can be simpliﬁed by
+grouping the amino acids into ﬁve main classes based on the properties of their R groups (Table
+3-1), particularly their polarity, or tendency to interact with water at biological pH (near pH
+7.0). The polarity of the R groups varies widely, from nonpolar and hydrophobic (water-insoluble) to
+highly polar and hydrophilic (water-soluble). A few amino acids — especially glycine, histidine, and
+cysteine — are somewhat difﬁcult to characterize or do not ﬁt perfectly in any one group. They are
+assigned to particular groupings based on considered judgments rather than absolutes. TABLE 3-1
+Properties and Conventions Associated with the Common Amino Acids Found in Proteins pKa values Amino
+acid Abbreviation/symbol Mr pK1 (—COOH) pK2 (—NH+ 3 ) pKR (R group) pI Hydro inde Nonpolar,
+aliphatic R groups Glycine Gly G 75 2.34 9.60 5.97 Alanine Ala A 89 2.34 9.69 6.01 Proline Pro P 115
+1.99 10.96 6.48 Valine Val V 117 2.32 9.62 5.97 Leucine Leu L 131 2.36 9.60 5.98 Isoleucine Ile I
+131 2.36 9.68 6.02 Methionine Met M 149 2.28 9.21 5.74 Aromatic R groups Phenylalanine Phe F 165
+1.83 9.13 5.48 Tyrosine Tyr Y 181 2.20 9.11 10.07 5.66 Tryptophan Trp W 204 2.38 9.39 5.89 Polar,
+uncharged R groups Serine Ser S 105 2.21 9.15 5.68 Threonine Thr T 119 2.11 9.62 5.87 Cysteine Cys C
+121 1.96 10.28 8.18 5.07 Asparagine Asn N 132 2.02 8.80 5.41 a e
+
+--- B p.367 (2166 chars) ---
+366 Glutamine Gln Q 146 2.17 9.13 5.65 Positively charged R groups Lysine Lys K 146 2.18 8.95 10.53
+9.74 Histidine His H 155 1.82 9.17 6.00 7.59 Arginine Arg R 174 2.17 9.04 12.48 10.76 Negatively
+charged R groups Aspartate Asp D 133 1.88 9.60 3.65 2.77 Glutamate Glu E 147 2.19 9.67 4.25 3.22 Mr
+values reflect the structures as shown in Figure 3-5. The elements of water (Mr 18) are deleted when
+the amino acid is incorporated into a polypeptide. A scale combining hydrophobicity and
+hydrophilicity of R groups. The values reflect the free energy (ΔG) of transfer of the amino acid
+side chain from a hydrophobic env favorable (ΔG < 0; negative value in the index) for charged or
+polar amino acid side chains, and it is unfavorable (ΔG > 0; positive value in the index) for amino
+acids wit chains. See Chapter 11. Source: Data from J. Kyte and R. F. Doolittle, J. Mol. Biol.
+157:105, 1982. The first value in each row is the average occurrence in more than 1,150 proteins.
+Source: Data from R. F. Doolittle, in Prediction of Protein Structure and the Principles of Pr p.
+599, Plenum Press, 1989. The second and third values are, respectively, from the complete proteomes
+of nine mesophilic bacterial species and seven thermophilic bacte commonly encountered temperatures,
+whereas thermophiles grow at elevated temperatures up to and beyond the boiling point of water. The
+decline in glutamine occurre tendency of this amino acid to deaminate at high temperatures. Source:
+Data from A. C. Singer and D. A. Hickey, Gene 317:39, 2003. As originally composed, the hydropathy
+index takes into account the frequency with which an amino acid residue appears on the surface of a
+protein. As proline oƞen ap lower score than its chain of methylene groups would suggest. Cysteine
+is generally classified as polar, despite having a positive hydropathy index. This reflects the
+ability of the sulfhydryl group to act as a weak acid and to form a wea nitrogen. The structures of
+the 20 common amino acids are shown in Figure 3-5, and some of their properties are listed in Table
+3-1. Within each class there are gradations of polarity, size, and shape of the R groups. a b c d e
+
+--- B p.368 (1617 chars) ---
+367 FIGURE 3-5 The 20 common amino acids of proteins. The structural formulas show the state of
+ionization that would predominate at pH 7.0. The unshaded portions are those that are common to all
+the amino acids; the shaded portions are the R groups. Although the R group of histidine is shown
+uncharged, its pKa (see Table 3-1) is such that a small but significant fraction of these groups are
+positively charged at pH 7.0. The protonated form of histidine is shown above the graph in Figure
+3-12b. Nonpolar, Aliphatic R Groups The R groups in this class of amino acids are nonpolar and
+hydrophobic. The side chains of alanine, valine, leucine, and isoleucine tend to cluster together
+within proteins, stabilizing protein structure through the hydrophobic effect. Glycine has the
+simplest structure. Although it is most easily grouped with the nonpolar amino acids, its very small
+side chain makes no real contribution to interactions driven by the hydrophobic effect. Methionine,
+one of the two sulfur-containing amino acids, has a slightly nonpolar thioether group in its side
+chain. Proline has an aliphatic side chain with a distinctive cyclic structure. The secondary amino
+(imino) group of proline residues is held in a rigid conformation that reduces the structural
+ﬂexibility of polypeptide regions containing proline. Aromatic R Groups Phenylalanine, tyrosine, and
+tryptophan, with their aromatic side chains, are relatively nonpolar (hydrophobic). All can
+contribute to the hydrophobic effect. The hydroxyl group of tyrosine can form hydrogen bonds, and it
+is an important functional group in some enzymes.
+
+--- B p.369 (1119 chars) ---
+368 Tyrosine and tryptophan are signiﬁcantly more polar than phenylalanine because of the tyrosine
+hydroxyl group and the nitrogen of the tryptophan indole ring. Tryptophan and tyrosine, and to a
+much lesser extent phenylalanine, absorb ultraviolet light (Fig. 3- 6; see also Box 3-1). This
+accounts for the characteristic strong absorbance of light by most proteins at a wavelength of 280
+nm, a property exploited by researchers in the characterization of proteins. FIGURE 3-6 Absorption
+of ultraviolet light by aromatic amino acids. Comparison of the light absorption spectra of the
+aromatic amino acids tryptophan, tyrosine, and phenylalanine at pH 6.0. The amino acids are present
+in equimolar amounts (10−3 M) under identical conditions. The measured absorbance of tryptophan is
+more than four times that of tyrosine at a wavelength of 280 nm. Note that the maximum light
+absorption for both tryptophan and tyrosine occurs near 280 nm. Light absorption by phenylalanine
+generally contributes little to the spectroscopic properties of proteins. BOX 3-1 METHODS Absorption
+of Light by Molecules: The Lambert-Beer Law
+
+--- B p.370 (2874 chars) ---
+369 A wide range of biomolecules absorb light at characteristic wavelengths, just as tryptophan
+absorbs light at 280 nm (see Fig. 3-6). Measurement of light absorption by a spectrophotometer is
+used to detect and identify molecules and to measure their concentration in solution. The fraction
+of the incident light absorbed by a solution at a given wavelength is related to the thickness of
+the absorbing layer (path length) and the concentration of the absorbing species (Fig. 1). These two
+relationships are combined into the Lambert-Beer law, log = εcl where I0 is the intensity of the
+incident light, I is the intensity of the transmitted light, the ratio I/I0 (the inverse of the
+ratio in the equation) is the transmittance, ε is the molar extinction coeﬀicient (in units of
+liters per mole-centimeter), c is the concentration of the absorbing species (in moles per liter),
+and l is the path length of the light-absorbing sample (in centimeters). The Lambert-Beer law
+assumes that the incident light is parallel and monochromatic (of a single wavelength) and that the
+solvent and solute molecules are randomly oriented. The expression log (I0/I) is called the
+absorbance, designated A. FIGURE 1 The principal components of a spectrophotometer. A light source
+emits light along a broad spectrum, then the monochromator selects and transmits light of a
+particular wavelength. The monochromatic light passes through the sample in a cuvette of path length
+l. The absorbance of the sample, log (I0/I), is proportional to the concentration of the absorbing
+species. The transmitted light is measured by a detector. It is important to note that each
+successive millimeter of path length of absorbing solution in a 1.0 cm cell absorbs not a constant
+amount but a constant fraction of the light that is incident upon it. However, with an absorbing
+layer of fixed path length, the absorbance, A, is directly proportional to the concentration of the
+absorbing solute. The molar extinction coeﬀicient varies with the nature of the absorbing compound,
+the solvent, and the wavelength, and also with pH if the light-absorbing species is in equilibrium
+with an ionization state that has diﬀerent absorbance properties. Polar, Uncharged R Groups The R
+groups of these amino acids are more soluble in water, or more hydrophilic, than those of the
+nonpolar amino acids because they contain functional groups that form hydrogen bonds with water.
+This class of amino acids includes serine, threonine, cysteine, asparagine, and glutamine. The
+polarity of serine and threonine is contributed by their hydroxyl groups, and the polarity of
+asparagine and glutamine is contributed by their amide groups. Cysteine is an outlier here because
+its polarity, contributed by its sulfhydryl group, is quite modest. Cysteine is a weak acid and can
+make weak hydrogen bonds with oxygen or nitrogen. I0 I
+
+================================================================================
+11.1 Membrane architecture -- hydropathy / interfacial residues
+================================================================================
+
+--- B p.1391 (1093 chars) ---
+1390 FIGURE 11-11 Bacteriorhodopsin, a membrane-spanning protein. The single polypeptide chain folds
+into seven hydrophobic α helices, each of which traverses the lipid bilayer roughly perpendicular to
+the plane of the membrane. The seven transmembrane helices are clustered, and the space around and
+between them is filled with the acyl chains of membrane lipids. The light-absorbing pigment retinal
+(see Fig. 10-20) is buried deep within the membrane in contact with several of the helical segments
+(not shown). The helices are colored to correspond with the hydropathy plot in Figure 11- 13. [Data
+from PDB ID 2AT9, K. Mitsuoka et al., J. Mol. Biol. 286:861, 1999.] Many membrane proteins co-
+crystalize with phospholipid molecules, which are presumed to be positioned in the native membranes
+as they are in the protein crystals. Many of these phospholipid molecules lie on the protein
+surface, their head groups interacting with polar amino acid residues at the inner and outer
+membrane–water interfaces and their side chains associated with nonpolar residues. Other
+phospholipids are found
+
+--- B p.1392 (900 chars) ---
+1391 at the interfaces between monomers of multisubunit membrane proteins, where they form a “grease
+seal” (Fig. 11-12). FIGURE 11-12 Lipid annuli associated with an integral protein. The crystal
+structure of sheep aquaporin, a transmembrane water channel, includes a shell of phospholipids
+positioned with their head groups (blue) at the expected positions on the inner and outer membrane
+surfaces and their hydrophobic acyl chains (gold) intimately associated with the surface of the
+protein exposed to the bilayer. The lipid forms a “grease seal” around the protein, which is
+depicted by a dark blue surface representation. [Data from PDB ID 2B6O, T. Gonen et al., Nature
+438:633, 2005.] The Topology of an Integral Membrane Protein Can Oƞen Be Predicted from Its Sequence
+Determination of the location of a membrane protein relative to the bilayer — that is, its topology
+— is generally much more
+
+--- B p.1396 (1183 chars) ---
+1395 Not all integral proteins are composed of transmembrane α helices. Another structural motif
+common in bacterial and mitochondrial membrane proteins is the β barrel (see Fig. 4- 16b), in which
+20 or more transmembrane segments form β sheets that line a cylinder (Fig. 11-14). The same factors
+that favor α helix formation in the hydrophobic interior of a lipid bilayer also stabilize β
+barrels: when no water molecules are available to hydrogen-bond with the carbonyl oxygen and
+nitrogen of the peptide bond, maximal intrachain hydrogen bonding gives the most stable
+conformation. Planar β sheets do not maximize these interactions and are generally not found in the
+membrane interior; β barrels allow all possible hydrogen bonds and are common among membrane
+proteins. Porins, proteins that allow certain polar solutes to cross the outer membrane of gram-
+negative bacteria such as E. coli, have many-stranded β barrels lining the polar transmembrane
+passage. The outer membranes of mitochondria and chloroplasts also contain a variety of β barrels,
+as do the outer membranes of the modern bacteria descended from those believed to have evolved to
+mitochondria and chloroplasts.
+
+--- B p.1397 (1731 chars) ---
+1396 FIGURE 11-14 Polytopic integral proteins with β-barrel structure. Three proteins of the E. coli
+outer membrane are shown, viewed in the plane of the membrane. FepA, involved in iron uptake, has 22
+membrane-spanning β strands. Outer membrane phospholipase A, or OmpLA, is a 12-stranded β barrel
+that exists as a dimer in the membrane. Maltoporin, a maltose transporter, is a trimer; each monomer
+consists of 16 β strands. [Data from FepA, PDB ID 1FEP, S. K. Buchanan et al., Nat. Struct. Biol.
+6:56, 1999; OmpLA, PDB ID 1QD5, H. J. Snijder et al., Nature 401:717, 1999; maltoporin, PDB ID 1MAL,
+T. Schirmer et al., Science 267:512, 1995.] A polypeptide is more extended in the β conformation
+than in an α helix; just seven to nine residues of β conformation are needed to span a membrane.
+Recall that in the β conformation, alternating side chains project above and below the sheet (see
+Fig. 4-5). In β strands of membrane proteins, every second residue in the membrane-spanning segment
+is hydrophobic and interacts with the lipid bilayer; aromatic side chains are commonly found at the
+lipid-protein interface. The other residues may or may not be hydrophilic. A further remarkable
+feature of many transmembrane proteins of known structure is the presence of Tyr and Trp residues at
+the interface between lipid and water (Fig. 11-15). The side chains of these residues seem to serve
+as membrane interface anchors, able to interact simultaneously with the central lipid phase and the
+aqueous phases on either side of the membrane. Another generalization about amino acid location
+relative to the bilayer is described by the positive-inside rule: the positively charged Lys and Arg
+residues in the extramembrane loop of membrane
+
+--- B p.1398 (1377 chars) ---
+1397 proteins occur more commonly on the cytoplasmic face of plasma membranes. FIGURE 11-15 Tyr and
+Trp residues of integral proteins clustering at the water-lipid interface. The detailed structures
+of these five integral proteins are known from crystallographic studies. The K+ channel is from the
+bacterium Streptomyces lividans (see Fig. 11-45); maltoporin, OmpLA, OmpX, and phosphoporin E are
+proteins of the outer membrane of E. coli. Residues of Tyr and Trp are found predominantly where the
+nonpolar region of acyl chains meets the polar head-group region. Charged residues (Lys, Arg, Glu,
+Asp) are found almost exclusively in the aqueous phases. [Data from K+ channel, PDB ID 1BL8, D. A.
+Doyle et al., Science 280:69, 1998; maltoporin, PDB ID 1AF6, Y. F. Wang et al., J. Mol. Biol.
+272:56, 1997; OmpLA, PDB ID 1QD5, H. J. Snijder et al., Nature 401:717, 1999; OmpX, PDB ID 1QJ9, J.
+Vogt and G. E. Schulz, Structure 7:1301, 1999; phosphoporin E, PDB ID 1PHO, S. W. Cowan et al.,
+Nature 358:727, 1992.] Covalently Attached Lipids Anchor or Direct Some Membrane Proteins Some
+membrane proteins are covalently linked to one or more lipids, which may be of several types: long-
+chain fatty acids, isoprenoids, sterols, or glycosylated derivatives of phosphatidylinositol (GPIs;
+Fig. 11-16). The attached lipid provides a hydrophobic anchor that inserts into the lipid bilayer
+
+================================================================================
+22.2 Biosynthesis -- chorismate / tryptophan pathway
+================================================================================
+
+--- B p.2829 (497 chars) ---
+2828 22.2 Biosynthesis of Amino Acids All amino acids are derived from intermediates in glycolysis,
+the citric acid cycle, or the pentose phosphate pathway (Fig. 22-11). Nitrogen enters these
+biosynthetic pathways by way of glutamate and glutamine. Some pathways are simple, others are not.
+Ten of the amino acids are just one or several steps removed from the common metabolite from which
+they are derived. The biosynthetic pathways for others, such as the aromatic amino acids, are more
+complex.
+
+--- B p.2846 (701 chars) ---
+2845 two carbons of pyruvate (in the form of hydroxyethyl thiamine pyrophosphate; see Fig. 14-13b)
+with another molecule of pyruvate (the valine path) or with α-ketobutyrate (the isoleucine path).
+The α-ketobutyrate is derived from threonine in a reaction that requires pyridoxal phosphate. An
+intermediate in the valine pathway, α-ketoisovalerate, is the starting point for a four-step branch
+pathway leading to leucine. Chorismate Is a Key Intermediate in the Synthesis of Tryptophan,
+Phenylalanine, and Tyrosine The three amino acid side chains that contain aromatic rings,
+tryptophan, phenylalanine, and tyrosine, present a special chemical problem for biosynthesis.
+Aromatic rings are not readily
+
+--- B p.2847 (763 chars) ---
+2846 available in the environment, even though the benzene ring is very stable. The branched pathway
+to tryptophan, phenylalanine, and tyrosine, occurring in bacteria, fungi, and plants, is the main
+biological route of aromatic ring formation. It proceeds through ring closure of an aliphatic
+precursor followed by stepwise addition of double bonds. The ﬁrst four steps produce shikimate, a
+seven-carbon molecule derived from erythrose 4-phosphate and phosphoenolpyruvate (Fig. 22-18).
+Shikimate is converted to chorismate in three steps that include the addition of three more carbons
+from another molecule of phosphoenolpyruvate. Chorismate is the ﬁrst branch point of the pathway,
+with one branch leading to tryptophan, the other to phenylalanine and tyrosine.
+
+--- B p.2848 (875 chars) ---
+2847 FIGURE 22-18 Biosynthesis of chorismate, an intermediate in the synthesis of aromatic amino
+acids in bacteria and plants. All carbons are derived from either erythrose 4-phosphate (light
+purple) or phosphoenolpyruvate (light red). Note that the NAD+ required as a cofactor in step is
+released unchanged; it may be transiently reduced to NADH during the reaction, with formation of an
+oxidized reaction intermediate. Step is competitively inhibited by glyphosate (–COO—CH2—NH—CH2—PO2−
+3 ), the active ingredient in the widely used herbicide Roundup. The herbicide is relatively
+nontoxic to mammals, which lack this biosynthetic pathway. The intermediates quinate and shikimate
+are named aƞer the plants in which they have been found to accumulate. In the tryptophan branch
+(Fig. 22-19), chorismate is converted to anthranilate in a reaction in which glutamine donates the
+
+--- B p.2849 (576 chars) ---
+2848 nitrogen that will become part of the indole ring. Anthranilate then condenses with PRPP. The
+indole ring of tryptophan is derived from the ring carbons and amino group of anthranilate plus two
+carbons derived from PRPP. The ﬁnal reaction in the sequence is catalyzed by tryptophan synthase.
+This enzyme has an α2β2 subunit structure and can be dissociated into two α subunits and a β2 unit
+that catalyze different parts of the overall reaction: Indole-3-glycerol phosphate −−−−→ α subunit
+indole + glyceraldehyde 3-phos Indole + serine −−−−−→ β2 subunit tryptophan + H2O
+
+================================================================================
+28.2 trp operon attenuation
+================================================================================
+
+--- B p.3678 (1417 chars) ---
+3677 28.2 Regulation of Gene Expression in Bacteria As in many other areas of biochemical
+investigation, the study of the regulation of gene expression advanced earlier and faster in
+bacteria than in other experimental organisms. The examples of bacterial gene regulation presented
+here are chosen from among scores of well-studied systems, partly for their historical signiﬁcance,
+but primarily because they provide a good overview of the range of regulatory mechanisms in
+bacteria. Many of the principles of bacterial gene regulation are also relevant to understanding
+gene expression in eukaryotic cells. We begin by examining the lactose and tryptophan operons; each
+system has regulatory proteins, but the overall mechanisms of regulation are very different. This is
+followed by a short discussion of the SOS response in E. coli, illustrating how genes scattered
+throughout the genome can be coordinately regulated. We then describe two bacterial systems of quite
+different types, illustrating the diversity of gene regulatory mechanisms: regulation of ribosomal
+protein synthesis at the level of translation, with many of the regulatory proteins binding to RNA
+(rather than DNA), and regulation of the process of “phase variation” in Salmonella, which results
+from genetic recombination. Finally, we examine some additional examples of posttranscriptional
+regulation in which the RNA modulates its own function.
+
+--- B p.3684 (1216 chars) ---
+3683 Many Genes for Amino Acid Biosynthetic Enzymes Are Regulated by Transcription Attenuation The
+20 common amino acids are required in large amounts for protein synthesis, and E. coli can
+synthesize all of them. The genes for the enzymes needed to synthesize a given amino acid are
+generally clustered in an operon and are expressed whenever existing supplies of that amino acid are
+inadequate for cellular requirements. When the amino acid is abundant, the biosynthetic enzymes are
+not needed and the operon is repressed. The E. coli tryptophan (trp) operon (Fig. 28-19) includes
+ﬁve genes for the enzymes required to convert chorismate to tryptophan (see Fig. 22-19). Note that
+two of the enzymes catalyze more than one step in the pathway. The mRNA from the trp operon has a
+half-life of only about 3 min, allowing the cell to respond rapidly to changing needs for this amino
+acid. The Trp repressor is a homodimer. When tryptophan is abundant, it binds to the Trp repressor,
+causing a conformational change that permits the repressor to bind to the trp operator and inhibit
+expression of the trp operon. The trp operator site overlaps the promoter, so binding of the
+repressor blocks binding of RNA polymerase.
+
+--- B p.3685 (1043 chars) ---
+3684 FIGURE 28-19 The trp operon. This operon is regulated by two mechanisms: when tryptophan levels
+are high, (1) the repressor (upper leƞ) binds to its operator and (2) transcription of trp mRNA is
+attenuated (see Fig. 28-20). The biosynthesis of tryptophan by the enzymes encoded in the trp operon
+is diagrammed at the bottom. Once again, this simple on/off circuit mediated by a repressor is not
+the entire regulatory story. Different cellular concentrations of tryptophan can vary the rate of
+synthesis of the biosynthetic enzymes over a 700-fold range. Once repression is li×ed and
+transcription begins, the rate of transcription is ﬁne-tuned to cellular tryptophan requirements by
+a second regulatory process, called transcription attenuation, in which transcription is initiated
+normally but is abruptly halted before the operon genes are transcribed. The frequency with which
+transcription is attenuated is regulated by the availability of tryptophan and relies on the very
+close coupling of transcription and translation in bacteria.
+
+--- B p.3686 (788 chars) ---
+3685 The trp operon attenuation mechanism uses signals encoded in four sequences within a 162
+nucleotide leader region at the 5' end of the mRNA, preceding the initiation codon of the ﬁrst gene
+(Fig. 28-20a). The leader contains a region known as the attenuator, made up of sequences 3 and 4.
+These sequences base-pair to form a G ≡C-rich stem-and-loop structure closely followed by a series
+of U residues. The attenuator structure acts as a transcription terminator (Fig. 28- 20b; see also
+Fig. 26-7a). Sequence 2 is an alternative complement for sequence 3 (Fig. 28-20c). If sequences 2
+and 3 base-pair, the attenuator structure cannot form and transcription continues into the trp
+biosynthetic genes; the loop formed by the pairing of sequences 2 and 3 does not obstruct
+transcription.
+
+================================================================================
+18.3 amino acid degradation -- tryptophan
+================================================================================
+
+--- B p.2311 (1619 chars) ---
+2310 once, reﬂecting different fates for different parts of their carbon skeletons. Rather than
+examining every step of every pathway in amino acid catabolism, we single out for special discussion
+some enzymatic reactions that are particularly noteworthy for their mechanisms or their medical
+signiﬁcance. Some Amino Acids Can Contribute to Gluconeogenesis, Others to Ketone Body Formation The
+seven amino acids that are degraded entirely or in part to acetoacetyl-CoA and/or acetyl-CoA —
+phenylalanine, tyrosine, isoleucine, leucine, tryptophan, threonine, and lysine — can yield ketone
+bodies in the liver, where acetoacetyl-CoA is converted to acetoacetate and then to acetone and
+β-hydroxybutyrate (see Fig. 17- 16). These are the ketogenic amino acids (Fig. 18-15). Their ability
+to form ketone bodies is particularly evident in uncontrolled diabetes mellitus, in which the liver
+produces large amounts of ketone bodies from both fatty acids and the ketogenic amino acids. Ketone
+bodies may also be metabolized in the brain as fuel in place of glucose in cases during starvation.
+The amino acids that are degraded to pyruvate, α-ketoglutarate, succinyl-CoA, fumarate, and/or
+oxaloacetate can be converted to glucose and glycogen by pathways described in Chapter 14. They are
+the glucogenic amino acids. The division between ketogenic and glucogenic amino acids is not sharp;
+ﬁve amino acids — tryptophan, phenylalanine, tyrosine, threonine, and isoleucine — are both
+ketogenic and glucogenic. All amino acids except for lysine and leucine can make some contribution
+to gluconeogenesis. Catabolism of amino acids is
+
+--- B p.2319 (877 chars) ---
+2318 pyruvate. Cysteine is converted to pyruvate in two steps; one removes the sulfur atom, the
+other is a transamination. Serine is converted to pyruvate by serine dehydratase. Both the
+β-hydroxyl and the α-amino groups of serine are removed in this single pyridoxal phosphate–
+dependent reaction (Fig. 18-20a). FIGURE 18-19 Catabolic pathways for alanine, tryptophan, cysteine,
+serine, glycine, and threonine. Carbon atoms here and in subsequent figures are color-coded as
+necessary to trace their fates. The fate of the indole group of tryptophan is shown in Figure 18-21.
+Details of most of the reactions involving serine and glycine are shown in Figure 18-20. Several
+pathways for cysteine degradation lead to pyruvate. The pathway for threonine degradation shown here
+accounts for only about a third of threonine catabolism (for the alternative pathway, see Fig. 18-
+27).
+
+--- B p.2320 (1145 chars) ---
+2319 MECHANISM FIGURE 18-20 Interplay of the pyridoxal phosphate and tetrahydrofolate cofactors in
+serine and glycine metabolism. The first step in each of these reactions (not shown) involves the
+formation of a covalent imine linkage between enzyme-bound PLP and the substrate amino acid — serine
+in (a), glycine in (b) and (c). (a) A PLP-catalyzed elimination of water in the serine dehydratase
+reaction (step ) begins the pathway to pyruvate. (b) In the serine hydroxymethyltransferase
+reaction, a PLP-stabilized carbanion (product of step ) is a key intermediate in the reversible
+transfer of the methylene group (as—CH2—OH) from N 5,N 10- methylenetetrahydrofolate to form serine.
+(c) The glycine cleavage enzyme is a multienzyme complex, with components P, H, T, and L. The
+overall reaction, which is reversible, converts glycine to CO2 and NH+ 4 , with the second glycine
+carbon taken up by tetrahydrofolate to form N 5,N 10-methylenetetrahydrofolate. Pyridoxal phosphate
+activates the α carbon of amino acids at critical stages in all these reactions, and
+tetrahydrofolate carries a one-carbon unit in two of them (see Figs 18-6, 18-17).

@@ -9,13 +9,27 @@ B_PDF = os.path.join(LEH, r"LehningerPrinciplesofBiochemistry8thedDavidLNel.pdf"
 OUT = r"C:\Users\Admin\Downloads\bio-state-exam\lehninger_index"
 CACHE = os.path.join(OUT, "_B_text.pkl")
 
+# B's PDF text layer renders ff/fi/fl/ffi/ffl as single Unicode ligature glyphs (U+FB00-FB04)
+# on 66% of pages. A plain substring search for "coefficient" or "efficient" never matches on
+# those pages -- silently, with no error -- because the text there literally reads "coeﬀicient".
+# Found 2026-08-06 while reading B p.370 for the tryptophan card: "molar extinction coefficient"
+# had been reported as 0 hits in the whole book, which was wrong -- it is in Box 3-1, four
+# sentences after the Trp 280 nm passage. Normalize before indexing, not after, so every
+# consumer of B_TEXT gets the fix for free.
+_LIG = {"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl"}
+def _delig(t):
+    for k, v in _LIG.items():
+        t = t.replace(k, v)
+    return t
+
 if os.path.exists(CACHE):
     B_TEXT = pickle.load(open(CACHE, "rb"))
 else:
     d = fitz.open(B_PDF)
-    B_TEXT = [" ".join(d[i].get_text().split()) for i in range(d.page_count)]
+    B_TEXT = [_delig(" ".join(d[i].get_text().split())) for i in range(d.page_count)]
     d.close()
     pickle.dump(B_TEXT, open(CACHE, "wb"))
+B_TEXT = [_delig(t) for t in B_TEXT]   # also fixes any pre-existing (pre-fix) cache on disk
 
 toc = json.load(io.open(os.path.join(OUT, "lehninger_B_toc.json"), encoding="utf-8"))
 SECS = [r for r in toc["entries"] if r["kind"] == "section"]

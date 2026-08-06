@@ -1,0 +1,57 @@
+glossary terms used for matching: 895 total, 36 contain ff/fi/fl (4%)
+
+sample of at-risk terms:
+   ammonia detoxification
+   cis trans configuration
+   co fixation
+   cyclic electron flow
+   cysteine sulfinic acid
+   d- l- configuration
+   denitrification
+   enzyme modification
+   facilitated diffusion
+   fibrillar proteins
+   fibrinogen fibrin
+   fibroin
+   first-order kinetics
+   five multienzyme lipoprotein complexes
+   flavodoxin
+   flip-flop mechanism
+   fluid mosaic model
+   hydrophobic effect
+   induced fit
+   l-configuration series
+   linear electron flow
+   membrane fluidity
+   nitrification
+   peripherally effective hormone
+   protein-disulfide-isomerase
+   protofibril
+   proximity effect
+   raffinose stachyose
+   sedimentation coefficient
+   simple diffusion
+   specific activity
+   specific optical rotation
+   specificity of action
+   substrate specificity
+   tropic vs peripherally effective hormone
+   tyndall effect
+
+of the 36 at-risk terms: 14 have a DIFFERENT hit count after the fix, 22 unchanged
+
+terms whose hit count changed (old -> new):
+      5 ->   23   induced fit
+      0 ->   10   cyclic electron flow
+      3 ->   12   specific activity
+      3 ->   11   substrate specificity
+      2 ->    7   denitrification
+      2 ->    7   fluid mosaic model
+      3 ->    8   nitrification
+      3 ->    7   fibroin
+      0 ->    4   sedimentation coefficient
+      1 ->    4   membrane fluidity
+     40 ->   42   hydrophobic effect
+      1 ->    2   enzyme modification
+      1 ->    2   flavodoxin
+      6 ->    7   simple diffusion
