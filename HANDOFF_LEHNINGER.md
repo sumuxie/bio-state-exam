@@ -251,13 +251,18 @@ text (`lehninger_index/cz_organic_load.json`, keyword proxy — treat as a map, 
 (lipids), plus §2.1.3.** That is where §5's rule does the most work, and where writing content
 without it will simply fail to land.
 
-**And the two hardest are the two Lehninger cannot rescue.** §6 now records that ninhydrin,
-sedimentation coefficient, colloid and Tyndall are all absent from Lehninger 8. So §2.1.3
-(ninhydrin, acyl halides, azides, amino-group protection) and §2.2.6 (colloid behaviour,
-ultracentrifugation, the Svedberg equation) are simultaneously the user's weakest ground *and*
-unsupported by the depth source. Do not quietly skip them and do not quietly invent them —
-they need the §5 treatment written from scratch, marked as not-from-Lehninger, and they are
-the right place to spend disproportionate care.
+**The two hardest are the two Lehninger cannot rescue — but the Chinese notes can.** §6 records
+that ninhydrin, sedimentation coefficient, colloid and Tyndall are all absent from Lehninger 8,
+so §2.1.3 and §2.2.6 are the user's weakest ground *and* unsupported by the designated depth
+source. They are **not** unsupported overall: the handwritten Chinese notes were read on
+2026-08-06 (§6a) and cover both, in places more fully than the Czech book does.
+
+**This is the one narrow, principled exception to §3's "notes are never depth."** §3 demotes
+the notes because their *scope* encodes Chinese curriculum priorities — that argument is about
+which topics exist, and it still stands. It says nothing about a topic the Czech book already
+puts in scope and Lehninger simply does not treat. For those, the notes are the only depth
+source in the building. Use them there, cite the note page, and do not generalise the exception
+past the sections §6a names.
 
 The sugar-stereochemistry block is a different case: Lehninger §7.1 does cover Fischer
 projections, Haworth forms, anomers and mutarotation, but the Czech book spends **more** pages
@@ -303,14 +308,66 @@ absorbance into a concentration*. That practical last step is genuinely missing 
 Svedberg equation) have essentially no Lehninger counterpart, because Lehninger 8 answers the
 same questions with a later generation of methods: size-exclusion chromatography (15 pages,
 §3.3), SDS-PAGE and mass spectrometry (45 pages, §3.4). The *question* "how do you measure a
-protein's Mr" is shared; only the answers differ by era. When writing §2.2.6, teach the Czech
-book's answer because that is what the exam is based on, and add the modern one as context —
-marked as not-from-either-book.
+protein's Mr" is shared; only the answers differ by era. Teach the Czech book's answer, because
+that is what the exam is based on; the modern one is context.
 
-§1.6 is a third, milder case: the science is in Lehninger and deeper (§1.5 Evolutionary
-Foundations has Miller and prebiotic chemistry; §26.4 has the RNA world), but the Czech book's
-framing — three groups of explanation, one of which is supernatural intervention — is its own.
-Report the framing as the Czech book's, do not adopt it and do not argue with it.
+### 6a. What the Chinese notes actually contain — pages 1–46 READ, 2026-08-06
+
+Two agents rendered and visually read notebook pages 1–46 (handwritten, no text layer). This
+replaces guesswork for the five Czech sections whose glossary terms appear nowhere in
+Lehninger, and it upgrades `HANDOFF.md` §11's "title-match only" rows for topics 一 and 四–八
+to actually-read. **Verified topic → page map:**
+
+| topic | pages | | topic | pages |
+|---|---|---|---|---|
+| 一 序论 | 1–4 | | 五 蛋白质的共价结构 | 23–27 |
+| 二 糖类 | 5–10 | | 六 蛋白质的三维结构 | 29–35 |
+| 三 脂质 | 11–16 | | 七 蛋白质结构与功能的关系 | 37–40 |
+| 四 氨基酸 | 17–22 | | 八 蛋白质的分离、纯化、表征 | 41–45 |
+
+Pages **28, 36 and 46 are blank.** The old §11 row "四–八 starts p.17" is now resolved to these
+five separate ranges.
+
+**§2.1.3 Chemical reactions of amino acids — the notes are the source, and they are better
+than the Czech book.** Note pp.21–22 carry the ninhydrin reaction with its full mechanism and,
+crucially for §5, its *observable*: **570 nm purple, and proline/hydroxyproline give yellow
+instead.** Also DNFB/Sanger → yellow DNP-aa, PITC/Edman → PTH, the Van Slyke nitrous-acid
+method (measure the N₂ evolved), and formol titration with the pKa₂ shift 9.6 → 7 drawn as a
+titration curve. Side-chain colour reactions are on p.19 (坂口/Arg, Pauly/His, 米伦/Tyr,
+乙醛酸/Trp). **Still missing from every source: amino-group protection by acylation, and
+azides.** Those two Czech points have no support anywhere — flag them, do not invent them.
+
+**§2.2.6 Properties of proteins — the notes cover nearly the whole section.** Note pp.41–43
+(topic 八) have the colloid framing (protein particles 1–100 nm, double layer + hydration
+shell), the Tyndall effect, ultracentrifugation, **the sedimentation coefficient with 1 S =
+10⁻¹³ s**, and the Svedberg-type equation written as `Mr = RTS / (D(1−ρV))`. Also gel filtration
+on Sephadex and SDS-PAGE. Two mismatches worth carrying into the content: the notes give the
+Mr range as **6×10³–1×10⁶** where the Czech book says **10⁴–10⁶, up to 10⁷ in viruses**; and the
+notes never write the name *Svedberg*, only the unit S.
+
+**§1.6 Origin of life** — notes p.1 has it, and like Lehninger it is purely chemical evolution:
+Miller 1953, the RNA world (*"RNA既是第一个基因又是第一个催化剂"*), endosymbiosis. **Neither the
+notes nor Lehninger contain creationism or intelligent design.** The Czech book's framing —
+three groups of explanation, one of which is supernatural intervention — is its own. Report it
+as the Czech book's, do not adopt it and do not argue with it.
+
+**§7.2.1 Sugar esters** — split sources, and they complement rather than overlap. The notes
+name 成酯 → "Pi酯" and 硫酸酯 only generically on p.7 (no G6P, no PRPP anywhere in the sugar
+topic), but p.9 draws the sulfated glycosaminoglycans properly — heparin with its OSO₃⁻ groups,
+chondroitin/keratan sulfate, and hyaluronate flagged as the only non-sulfated one. Lehninger
+supplies the phosphate-ester half instead: PRPP across 20 pages (§22.4) and glucose 6-phosphate
+across 128.
+
+**§8.5.1 Chemical composition of membranes** — **the protein:lipid ratio is absent from the
+notes**, and the lipid topic has no membrane-composition heading at all; membrane facts are
+scattered as "CM中含量高" annotations on individual phospholipids (pp.14–15). Lehninger §11.1 is
+the source here. The notes do add p.16's 细胞膜的不对称性 (six points, glycoproteins and
+glycolipids always on the outer face) and 流动镶嵌模型 / 脂筏模型.
+
+**One error found in the existing app data:** node `2-2-6`'s `cnNote` points at topic 七
+(结构与功能关系). Topic 七 is pp.37–40 and is myoglobin/haemoglobin/sickle cell. The material
+that node is about is topic **八**, pp.41–45. Fix this during §9 step 4, which touches all 207
+nodes anyway.
 
 **The user has taken this off the critical path** — *"后期什么Beer–Lambert law我可以另外再整理，
 这个没关系"*. Do not spend effort on it now. If such content is ever added, mark it as

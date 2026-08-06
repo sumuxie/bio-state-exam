@@ -858,6 +858,12 @@ chapter 6 could NOT confidently pair and correctly left `status: "pending"`: §6
 (glyoxylate cycle — no notes topic found covering it) and all three §6.3 porphyrin-protein
 nodes (十二's actual content was never verified by reading it — see below).
 
+**Pages 1–46 have now been read page by page** (2026-08-06, two agents rendering at 150 dpi and
+re-cropping to 300–500 dpi where the handwriting was tight). Those rows below are marked
+**read** and carry what is actually on the page. Everything from p.47 on is still at the
+confidence level its own row states. **Pages 28, 36 and 46 are blank** — the notebook leaves a
+gap between topics, so a blank page is not a scanning failure.
+
 **Chinese notes (`生物化学笔记.pdf`, 230 handwritten pages, pre-split into 16 volumes of 15
 pages each in `生物化学笔记_分卷/`, page footers preserve true page numbers)** — mapping
 confirmed so far. Rows marked "mapped" have actually been read and used by a chapter; rows
@@ -867,10 +873,14 @@ actually reading the pages before upgrading a node's `cnNote.status` past `"part
 
 | Notes topic | Title | Pages | Likely textbook match | Status |
 |---|---|---|---|---|
-| 一 | 序论 | — | ch.1 | mapped |
-| 二 | 糖类 | pp.5–10 | ch.7 Sacharidy §7.1–7.6ish | mapped (page range read + subtopic list confirmed 2026-08-05: monosaccharide stereochem/mutarotation, oligo/polysaccharide structure incl. starch/glycogen/cellulose/chitin/peptidoglycan, glycoconjugates incl. N-/O-glycoproteins/proteoglycans/GAGs/ABO sugars, bacterial LPS/teichoic acid — NOT yet cross-checked point-by-point against individual CZ subsections) |
-| 三 | 脂质 | pp.11–16 | ch.8 Lipidy | mapped (page range read + subtopic list confirmed 2026-08-05: FA nomenclature/eicosanoids, lipid peroxidation, triglycerides, phospho-/sphingo-/glyco-lipids, sterols, membrane asymmetry, lipoprotein classes — NOT yet cross-checked point-by-point against individual CZ subsections) |
-| 四–八 | 氨基酸 / 蛋白质结构 | starts p.17 (start page confirmed 2026-08-05) | ch.2 | mapped |
+| 一 | 序论 | pp.1–4 | ch.1 | mapped (pages **read** 2026-08-06: p.1 生命的属性/细胞/生命的起源 incl. Miller 1953 + RNA世界 + 生化发展史, p.2 生命元素/非共价力, pp.3–4 水、依数性、渗透、pH/pKa/缓冲. No creationism or intelligent design anywhere — CZ §1.6's three-groups framing is the Czech book's own) |
+| 二 | 糖类 | pp.5–10 | ch.7 Sacharidy §7.1–7.6ish | mapped, **read** 2026-08-06 (p.5 存在/命名/分类, p.6 结构异构体·变旋·Fehling/Benedict, p.7 还原·成脎·**成酯（Pi酯、硫酸酯）**·成苷·Molisch/Bial/Seliwanoff, p.8 寡糖+多糖 incl. 肽聚糖, p.9 脂多糖·磷壁酸·**糖胺聚糖**（透明质酸/硫酸角质素/硫酸软骨素/肝素，结构画全）, p.10 蛋白聚糖·糖蛋白·ABO 血型). **CZ §7.2.1 的对应只是笼统的「Pi酯」，没有 G6P、没有 PRPP** — 磷酸酯那半边要靠 Lehninger §22.4 |
+| 三 | 脂质 | pp.11–16 | ch.8 Lipidy | mapped, **read** 2026-08-06 (p.11 分类+脂肪酸, p.12 必需脂肪酸·前列腺素·油脂皂化值/碘值, p.13 脂质过氧化, p.14 甘油磷脂+磷脂酶 A1/A2/B/C/D, p.15 鞘磷脂·糖脂·萜类固醇·脂蛋白, p.16 脂类提取·固醇·**细胞膜的不对称性**·流动镶嵌模型/脂筏模型). **没有「膜的化学组成」这一节，也没有蛋白质:脂质比例** — CZ §8.5.1 要靠 Lehninger §11.1 |
+| 四 | 氨基酸 | pp.17–22 | ch.2 §2.1.x | mapped (**read** 2026-08-06. p.21–22 is the 化学反应 block: 茚三酮 with mechanism + **570 nm 紫色**, Pro/Hyp 亮黄色; DNFB/Sanger; PITC/Edman; Van Slyke 亚硝酸; 甲醛滴定 pKa₂ 9.6→7. p.19 side-chain colour reactions. This is the source for CZ §2.1.3 — Lehninger has **no** ninhydrin at all) |
+| 五 | 蛋白质的共价结构 | pp.23–27 | ch.2 §2.2.1, ch.4 §4.2.1 | mapped (**read** 2026-08-06: 肽键共振, 双缩脲, 一级结构测定 N/C 端法, CNBr, 生物质谱/串联质谱, 片段重叠法) |
+| 六 | 蛋白质的三维结构 | pp.29–35 | ch.2 §2.2.2–2.2.4 | mapped (**read** 2026-08-06: 二面角 φ/ψ, α-helix, β-sheet, β-turn, collagen, 超二级结构, 结构域, 折叠, Levinthal, PDI/HSP70/HSP60, 四级结构) |
+| 七 | 蛋白质结构与功能的关系 | pp.37–40 | ch.2 (no direct CZ section) | mapped (**read** 2026-08-06: 同源pro, 镰刀形贫血, 肌红/血红蛋白, O₂ 结合曲线, T/R 态, 2,3-BPG, Bohr 效应. **Note:** node `2-2-6` currently cites this topic and should cite 八 instead) |
+| 八 | 蛋白质的分离、纯化、表征 | pp.41–45 | ch.2 §2.2.6 | mapped (**read** 2026-08-06. pp.41–43 是 CZ §2.2.6 的对应: 胶体性质 1–100 nm, 丁达尔效应, 超速离心, **沉降系数 1 S = 10⁻¹³ 秒**, `Mr = RTS/(D(1−ρV))`, 凝胶过滤 Sephadex, SDS-PAGE. Mr 范围写 6×10³–1×10⁶，CZ 书写 10⁴–10⁶（病毒 10⁷）— 两者不一致，写内容时注明) |
 | 九–十一 | 酶 (general/kinetics/mechanism) | pp.47–76 | ch.3 | mapped |
 | 十二 | 维生素和辅酶 | p.77 | ch.6 §6.3 porphyrin proteins, OR ch.3 coenzymes | title-match only, still unconfirmed after ch.6 — actually read pp.77-82ish and settle this |
 | 十三–十六 | 核酸 (general/structure/physicochem/methods) | pp.83–98 | ch.4 | mapped |
