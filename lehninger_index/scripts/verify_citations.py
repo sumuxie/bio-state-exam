@@ -184,14 +184,27 @@ for app, f in files:
             for st in (ch.get("steps") or []):
                 if st.get("src"):
                     rows.append((n["id"], f, st["src"], st.get("en") or "", "chains.src"))
-        # inline prose -- the Chinese half writes "A 第 92 页", which CITE does not match,
-        # so an en/cn pair yields one row, not two. No dedupe needed.
+        # inline prose. The dedupe exists because an en/cn pair can carry the SAME citation
+        # twice ("...(Fig. 3-28, A p.94)" in `en`, "...(Fig. 3-28，A 第 94 页)" in `cn`) and
+        # only one of them needs checking.
+        #
+        # 2026-08-06: the key used to be `path.split("[")[0]`, which throws the index away, so
+        # every element of an array field collapsed into one bucket -- `points[1]` and
+        # `points[4]` both keyed as "points". Any node citing the same page from two different
+        # points therefore had the second one SILENTLY DROPPED, never checked, and never
+        # reported as skipped. Found writing `L-1-3-1`, which cites A p.24 twice (Worked
+        # Example 1-1 and Fig. 1-26), A p.25 twice and A p.26 twice: 9 citations in the file,
+        # 6 rows in the audit, no warning. This is the same failure shape as the `chains`-only
+        # bug in a0a825c and section 16a's rule applies unchanged -- a checker that quietly
+        # covers part of its input is worse than no checker, because the clean run gets quoted
+        # as evidence. Keeping the index (`points[4]`) while still dropping the final field
+        # name preserves the original en/cn intent exactly and stops the over-collapse.
         seen = set()
         for path, s in walk_strings(n):
             if path.startswith("chains"): continue
             for m in CITE.finditer(s):
                 ctx = s[max(0, m.start() - CTX_BACK): m.end() + CTX_FWD]
-                key = (m.group(0), path.split("[")[0])
+                key = (m.group(0), path.rsplit(".", 1)[0])
                 if key in seen: continue
                 seen.add(key)
                 rows.append((n["id"], f, ctx.strip(), s, path))

@@ -32,10 +32,25 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 has started. The first Lehninger node is written and validates: `L-3-4-1` in
-`biochemie_pro/data/leh_ch3.js` (§13).** It joins Czech node `2-2-1` through
+**§9 step 6 is under way — four Lehninger nodes now exist.** `L-3-4-1` in
+`biochemie_pro/data/leh_ch3.js` (§13) joins Czech node `2-2-1` through
 `topicKey: "protein-primary-structure"` — the Czech book says *why* an amino acid sequence
-matters, Lehninger §3.4 says *how* one is determined.
+matters, Lehninger §3.4 says *how* one is determined. `L-11-3-1` in
+`biochemie_pro/data/leh_ch11.js` (§13d) joins all three `8-5-3-*` Czech nodes through
+`topicKey: "membrane-transport"` — rank 4 of `depth_queue.tsv`. **`L-19-1-1` in
+`biochemie_pro/data/leh_ch19.js` (§13e, added 2026-08-06) joins all five `6-2-4-*` Czech
+nodes** through `topicKey: "respiratory-chain"` — rank 6, and the largest join yet (5 Czech
+nodes at once). Unlike the other two topics, 6.2.4 was already a *deep* Czech section (it names
+Complexes I–V and the Q cycle), so this node's whole approach was different: find what a
+well-developed Czech account still leaves unnamed (the evidence for the carrier order, the
+inhibitor/uncoupler pharmacology, respirasomes, ROS) rather than re-deriving mechanisms already
+covered well. **`L-1-3-1` in `biochemie_pro/data/leh_ch1.js` (§13f, added 2026-08-06) joins
+Czech nodes `1-4` and `1-5`** through `topicKey: "bioenergetics-basics"` — rank 12, and the
+first node where **Lehninger is the weaker source on the topic's own theory**: the Czech book
+gives the fuller thermodynamics (G = U + pV − TS, chemical potential, activity, local
+equilibrium) and what it lacks is *numbers*. §13f explains how that changed the selection rule,
+and records two tooling problems it exposed — a **wrong anchor** and a **silently
+under-reporting `verify_citations.py`**, now fixed.
 
 > **⛔ Before writing a second node, read §13b.** `app.js` **never reads `book` or `topicKey`**
 > — it filters on `chapter` alone against a hardcoded 1–10 map of *Czech* chapter names. So
@@ -63,10 +78,17 @@ matters, Lehninger §3.4 says *how* one is determined.
 > card) and `protein-primary-structure` (Czech `2-2-1` + Lehninger `L-3-4-1`). **Everything
 > §13b listed is now done.**
 >
-> **What is left is content, not plumbing.** Only 2 of 61 topicKeys join more than one source,
-> because only one Lehninger node and one card exist. Every further node makes the topic view
-> worth more; nothing more needs building first. §9a's depth queue and §9b's `full`-scope list
-> are the work. §15 (figures) is the other open thread.
+> **Updated 2026-08-06: five joins now, not two.** `L-11-3-1` (§13d) joins `membrane-transport`
+> to all three `8-5-3-*` Czech nodes, `L-19-1-1` (§13e) joins `respiratory-chain` to all
+> five `6-2-4-*` Czech nodes — the largest join yet — and `L-1-3-1` (§13f) joins
+> `bioenergetics-basics` to both `1-4` and `1-5`. Together these are a much stronger topic-view
+> demonstration than the earlier single-Czech-node joins.
+>
+> **What is left is content, not plumbing.** Only 5 of 61 topicKeys join more than one source,
+> because only four Lehninger nodes and one card exist. Every further node makes the topic view
+> worth more; nothing more needs building first. §9a's depth queue (61 writable primaries, 4
+> done, 57 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is
+> the other open thread.
 
 **⚠️ Before writing or reusing any `A p.N` citation, read §16.** Three of six citations in the
 first integration card were wrong — the quotes were right, the page numbers were not, one by 21
@@ -732,22 +754,42 @@ key already exists and the node joins the topic view the moment it is written.
 
 | rank | Lehninger § | ratio | `topicKey` to use | Czech nodes waiting |
 |---|---|---|---|---|
-| 4 | 11.3 Solute Transport across Membranes | 9.5 | `membrane-transport` | 3 |
+| 4 | 11.3 Solute Transport across Membranes | 9.5 | `membrane-transport` | ✅ **done — `L-11-3-1`** |
 | 5 | 21.1 Biosynthesis of Fatty Acids and Eicosanoids | 9.1 | `fatty-acid-biosynthesis` | 9 |
-| 6 | 19.1 The Mitochondrial Respiratory Chain | 7.5 | `respiratory-chain` | 5 |
+| 6 | 19.1 The Mitochondrial Respiratory Chain | 7.5 | `respiratory-chain` | ✅ **done — `L-19-1-1`** |
 | 7 | 23.2 Tissue-Specific Metabolism | 7.3 | `tissue-specific-metabolism` | 1 |
 | 9 | 17.2 Oxidation of Fatty Acids | 6.5 | `fatty-acid-oxidation` | 2 |
-| 12 | 1.3 Physical Foundations | 5.0 | `bioenergetics-basics` | 2 |
+| 12 | 1.3 Physical Foundations | 5.0 | `bioenergetics-basics` | ✅ **done — `L-1-3-1`** |
 | 14 | 3.4 Primary Structure | 5.0 | `protein-primary-structure` | ✅ **done — `L-3-4-1`** |
 | 17 | 22.3 Molecules Derived from Amino Acids | 4.5 | `amino-acid-derived-molecules` | 3 |
 | 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | 1 |
 | 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | 2 |
 
 Ranks 1, 2, 3, 8, 10, 11, 13, 15, 16, 19 are the secondaries — blocked on the naming decision
-above. **Rank 4 (§11.3, membrane transport) is the highest-ratio section that is writable today**,
-and its 3 waiting Czech nodes make it a better topic-view demonstration than rank 7's single one.
-Note §5a's warning applies to ranks 5 and 9 (both land in the Czech lipid chapter, where the
-organic-chemistry load is highest and §5's rule does the most work).
+above. **Four of the ten writable primaries are now done: rank 14 (`L-3-4-1`), rank 4
+(`L-11-3-1`, §13d), rank 6 (`L-19-1-1`, §13e) and rank 12 (`L-1-3-1`, §13f), all 2026-08-06.**
+`L-11-3-1` covers all of §11.3 (A pp.385-403) and joins all 3 waiting Czech nodes
+(`8-5-3-1/2/3`); `L-19-1-1` covers all of §19.1 (A pp.660-674) and joins all 5 waiting Czech
+nodes (`6-2-4-1..5`) — the topic view's largest join yet; `L-1-3-1` covers all of §1.3 (A
+pp.18-27) and joins both `1-4` and `1-5`.
+
+**Six writable primaries remain in this table**, and the ordering advice has shifted with
+experience. Rank 5 (§21.1, fatty acid biosynthesis, 9 waiting Czech nodes) is still the highest
+ratio left, but §5a's organic-chemistry warning applies to it and to rank 9 — both land in the
+Czech lipid chapter, where §5's rule does the most work. The remaining picks, easiest first:
+**rank 7** (§23.2 tissue-specific metabolism, 1 waiting) and **rank 18** (§3.3 working with
+proteins, 1 waiting) are the quickest; **rank 17** (§22.3 molecules derived from amino acids,
+3 waiting) and **rank 20** (§25.1 DNA replication, 2 waiting) are mid-sized; **rank 9** (§17.2
+fatty acid oxidation, 2 waiting) is §5a-flagged but now pairs naturally with `L-19-1-1`'s ETF
+point, which already names the link from β-oxidation into the respiratory chain.
+
+**One lesson from `L-1-3-1` that changes how to pick, not just what to pick (§13f):** the ratio
+is computed from page counts and cannot see whether the Czech section is thin on *theory* or
+thin on *numbers*. §1.3 scored 5.0, yet the Czech nodes turned out to be the more rigorous
+source on the formal thermodynamics — what they lacked was every measured value. Read the Czech
+nodes first and decide what kind of gap you are filling before writing; if Lehninger is the
+weaker source on some part of the topic, say so in the node rather than restating Czech material
+as though it were new.
 
 Czech sections that share a Lehninger section share a key, which is the intended grouping: all
 twelve sugar sections join on `monosaccharides`, the five kinetics sections on
@@ -1025,6 +1067,196 @@ p.104 / B p.473, but the figure is on B p.420** (≈ A p.92); the entry has almo
 matched a later cross-reference. Spot-check an anchor against the surrounding text before
 citing it.
 
+### 13d. The second Lehninger node — `L-11-3-1`, §11.3 Solute Transport across Membranes (2026-08-06)
+
+**`biochemie_pro/data/leh_ch11.js`, one node, `id: "L-11-3-1"`, `topicKey: "membrane-transport"`.**
+Rank 4 of `depth_queue.tsv` (ratio 9.5), the highest-ratio *writable-today* section at the time
+(§9c). Unlike `L-3-4-1`, which covered half of a 10-page section, this node covers **all of
+§11.3 end to end** (A pp.385–403, all nine subheadings, `pages: [385..403]`) and joins **all
+three** waiting Czech nodes at once (`8-5-3-1` simple diffusion, `8-5-3-2` facilitated diffusion,
+`8-5-3-3` active transport) — the topic view's second real multi-source join, and the first
+three-way join on the Lehninger side.
+
+**What it adds that the three Czech nodes structurally cannot.** The Czech nodes describe every
+carrier and pump anonymously — "a carrier protein," "an ATPase pump," "an ion channel" — because
+the Czech textbook page (200–201) never names one. This node names them and gives real numbers:
+GLUT1 (Kt ≈ 6 mM, 12-helix alternating-access mechanism), the chloride-bicarbonate exchanger as
+a real antiport example, the Na+K+ ATPase (3 Na+ out / 2 K+ in per ATP, ~25% of resting human
+energy budget) as the molecule behind "primary active transport," the Na+-glucose symporter with
+a worked thermodynamic example (~6,000-fold theoretical concentrating power) behind "secondary
+active transport," and aquaporins as the named molecule behind the Czech node's own Obr. 8.3
+route B ("water through a micropore in an integral protein"). ABC transporters and CFTR/cystic
+fibrosis have **no Czech counterpart at all** — pure addition, not overlap.
+
+**Citation process, and a bug it caught in the checker's own input, not its logic.** Content was
+read from B's text layer end to end (`_B_text.pkl`, all pages 1432–1495), and A page numbers for
+each subsection were taken from `lehninger_toc.tsv`'s own subheading rows (the step-1 TOC
+extraction, itself the book's own printed page numbers) rather than re-derived — that table is
+already the authoritative source `depth_queue.tsv` itself is built from. Individual figure/table
+citations were cross-checked against the measured anchors in `lehninger_AB_anchors.json`.
+Running `verify_citations.py` after a first draft found **4 ELSEWHERE results, all with the same
+cause**: the coverageNote listed anchors as `FIGURE 11-28=A p.385, 11-29=A p.386, ...`, dropping
+the `FIGURE`/`BOX` keyword after the first item, so the checker's backward-context search
+grabbed the wrong label for several page numbers (all four resolved to whichever label came
+first in that 90-character lookback window, not the one actually adjacent to each page number).
+**Repeating the label keyword on every item, not just the first, fixed all four in one edit** —
+worth remembering before writing another dense inline anchor list. A fifth citation
+(`Box 11-2` for CFTR) came back genuinely `ELSEWHERE`: the string "Box 11-2" as a *label* only
+occurs in A as an in-text cross-reference on p.396 ("...active transporter (Box 11-2)."), one
+page before the box's own content (confirmed by hand: "A Defective Ion Channel in Cystic
+Fibrosis" heading and the F508del/ivacaftor material are on A p.397–398) — the exact
+cross-reference-vs-caption trap §16c already named for figures, now also seen on a Box. Widening
+the citation to `A pp.396-398` (true anyway, matching the toc's own 395–398 subheading range)
+resolved it correctly rather than moving the citation to the wrong page the checker suggested.
+**Final state: 27 OK, 0 ELSEWHERE, 11 UNCHECKED** app-wide (up from the 20/12/0/7 baseline in
+§16a). Two of this node's own UNCHECKED items (`FIGURE 11-31`, `FIGURE 11-45`) are checker
+artifacts, not errors — A's OCR renders a stray space before the hyphen ("FIGURE 11 -31"), which
+the existing de-ligature/de-hyphenation normalization does not catch; both were hand-verified
+directly against the PDF and are correct as cited.
+
+Both `step5_check.py` and `verify_citations.py` were run after every edit, per §16a's own rule
+("run it after writing any node"); the wiring (`index.html`'s `<script src="data/leh_ch11.js">`,
+placed after `leh_ch3.js` and before `entity_cards.js`) was added and re-validated by the same
+pass. `biochemie_pro` now reports **210 topics (207 cz, 2 lehninger, 1 entity), 61 topicKeys**.
+
+### 13e. The third Lehninger node — `L-19-1-1`, §19.1 The Mitochondrial Respiratory Chain (2026-08-06)
+
+**`biochemie_pro/data/leh_ch19.js`, one node, `id: "L-19-1-1"`, `topicKey: "respiratory-chain"`.**
+Rank 6 of `depth_queue.tsv` (ratio 7.5), chosen over rank 5 (§21.1, fatty acid biosynthesis,
+ratio 9.1) specifically to dodge §5a's organic-chemistry warning, which applies to rank 5 and
+rank 9 but not this one. Covers all of §19.1 (A pp.660-674, all seven subheadings) and joins
+**all five** waiting Czech nodes at once (`6-2-4-1..5`) — the largest join so far, and the
+topic view's fourth multi-source pair (after `amino-acids`, `protein-primary-structure`,
+`membrane-transport`).
+
+**A genuinely different case: the Czech section here was already deep, not thin.** §11.3's and
+§3.4's Czech counterparts were each a page or two of definitions with no named molecules;
+6.2.4 is five full nodes that already name Complexes I-V, walk through the Q cycle with its own
+proton bookkeeping, and give ATP-synthase's binding-change mechanism. Padding that with a
+Lehninger re-explanation of the same mechanisms would have been the exact mistake §9a's ratio
+metric exists to catch (crediting a topic with depth it does not lack). So this node was scoped
+differently: read all of §19.1 first, then kept only what the five existing Czech nodes state as
+fact without naming the underlying molecule, method, evidence, or number. That turned out to be
+most of the section anyway -- mitochondrial architecture (porins, the inner membrane's own
+impermeability to protons, matrix contents), the NAD(P)+ dehydrogenase catalogue explaining
+*where* the electrons Complexes I/II receive actually originate, the THREE independent
+experiments that established the carrier order (reduction potential, re-oxidation kinetics,
+inhibitor mapping -- Table 19-2, Fig. 19-6), the full inhibitor/uncoupler pharmacology table
+(Table 19-4: rotenone, antimycin A, cyanide, oligomycin, DNP, atractyloside), respirasome
+supercomplexes (entirely absent from the Czech account), the three OTHER pathways that feed
+electrons into the same chain via Q (ETF from fatty-acid oxidation, the glycerol-3-phosphate
+shuttle, dihydroorotate dehydrogenase from pyrimidine synthesis -- a genuine cross-topic link),
+the actual free-energy numbers (-220 kJ/mol NADH-to-O2, ~190 kJ/mol conserved in the proton
+gradient, Worked Example 19-1), and reactive oxygen species with their defense cascade
+(superoxide dismutase, glutathione peroxidase/reductase) -- also entirely absent from the Czech
+account. It deliberately stops exactly where Complex V/ATP synthase begins (Lehninger's own
+section 19.2), both because 19.2 is a separate, still-secondary `depth_queue.tsv` row and
+because Czech node `6-2-4-5` already covers that mechanism well.
+
+**A second, more general citation-checker lesson, past the "repeat the label prefix" fix from
+§13d.** A first draft packed all thirteen of this range's figure/table anchors into one dense
+coverageNote sentence (`TABLE 19-1 = A p.662; FIGURE 19-4 = A p.663; ...`), this time *with* the
+label prefix repeated on every item, exactly as §13d's fix prescribed. `verify_citations.py`
+still returned false `ELSEWHERE` results, and the pattern of its raw output was strange enough
+to be worth recording: the same citation text (`A p.662`) appeared as FIVE separate audit rows,
+while several citations in between (`A p.664`, `A p.672-674`) never appeared at all. Cause,
+found by re-running the checker's own parsing logic in isolation: its per-citation **context
+window is 90 characters back + 15 forward**, and when list items sit roughly 20-25 characters
+apart, that window spans three to five neighbouring items at once. The checker then re-searches
+*within that window* for a figure/table label to display and to verify against — and because it
+takes the **first (leftmost) match**, not the nearest one, a citation's printed row can end up
+showing a completely different neighbour's label and page number. Repeating the prefix (§13d's
+fix) stops the checker from silently falling through to a wrong label with no prefix; it does
+**not** stop it from mismatching between two correctly-prefixed labels that are simply too close
+together. **The real rule: keep at least ~100 characters of unrelated prose between any two `A
+p.N` citations anywhere in a node — including between a citation and a bare figure mention with
+no page number of its own** (this bit twice more, at smaller scale, inside two `points` entries,
+once a stray `(Fig. 19-8)` mentioned without a page sat 50-odd characters before an unrelated
+`(Table 19-4, A p.667)` and got matched to it instead). The eventual fix was to drop the dense
+coverageNote list entirely — a citation is now written inline in the `points` array, next to the
+actual content it supports, each one naturally isolated by a paragraph of surrounding prose, the
+same pattern `L-3-4-1` and `L-11-3-1`'s later citations already used. **Final state: 34 OK, 0
+ELSEWHERE, 12 UNCHECKED** app-wide.
+
+Both `step5_check.py` and `verify_citations.py` were run after every edit; the wiring
+(`index.html`'s `<script src="data/leh_ch19.js">`, after `leh_ch11.js` and before
+`entity_cards.js`) was added and re-validated by the same pass. `biochemie_pro` now reports
+**211 topics (207 cz, 3 lehninger, 1 entity), 61 topicKeys**.
+
+### 13f. The fourth node — `L-1-3-1`, §1.3 Physical Foundations (2026-08-06), and two tooling fixes it forced
+
+**`biochemie_pro/data/leh_ch1.js`, one node, `id: "L-1-3-1"`, `topicKey: "bioenergetics-basics"`.**
+Rank 12 of `depth_queue.tsv` (ratio 5.0), covering all of §1.3 (A pp.18–27, all seven
+subheadings) and joining both waiting Czech nodes, `1-4` (*Výživa a metabolismus*) and `1-5`
+(*Energie a život*).
+
+**⚠️ The most important thing in this entry is not the node. It is that the ratio metric pointed
+the wrong way, and §9a says it can.** §11.3 and §3.4 were genuinely thin on the Czech side.
+§1.3 is not: Czech node `1-5` gives `G = U + pV − TS` — the fuller form, with `H = U + pV`
+derived — where Lehninger §1.3 gives only `G = H − TS`, and `1-5` goes on to chemical potential,
+activity, the **principle of local equilibrium**, the primed pH-7 standard state and
+non-equilibrium thermodynamics, **none of which appear in Lehninger §1.3 at all**. On the formal
+thermodynamics the Czech book is the better source, and a node written on the assumption
+"ratio 5.0 means Lehninger has five times more to say" would have padded it with a worse
+re-explanation of material already covered better — the exact failure §9a's own frequency-table
+analogy warns about.
+
+What the Czech nodes actually lack is **numbers and observables**. They state
+`ΔG° = −RT ln K` without a single measured value; they define the stationary state without ever
+measuring how far from equilibrium a cell sits; and they justify reaction coupling by arithmetic
+(`ΔG₁ + ΔG₂ < 0`) without the **shared-intermediate** mechanism that makes coupling physically
+possible — a condition that is necessary but *not sufficient*, and the one place this node
+genuinely corrects rather than supplements the Czech account. So the selection rule became:
+keep only what turns an existing Czech assertion into something measured or mechanistic. The
+node's centrepiece is Worked Example 1-1 — equilibrium constant ≈ 2 × 10⁵ M against a
+cellular mass-action ratio ≈ 5 × 10⁻⁴ M, **about nine orders of magnitude apart** — which
+supplies at one stroke the missing evidence for three separate Czech claims. It also carries the
+two ATP corrections (ATP works because the cell holds it far from equilibrium, not because its
+bonds are exotic; and it is *phosphoryl group transfer*, not hydrolysis, that drives coupled
+reactions), and the ΔG‡-vs-ΔG separation with the caption's explicit "activation energy is not
+related to free-energy change". `coverageNote` states the Czech-is-stronger finding outright
+rather than hiding it.
+
+**Tooling fix 1 — a wrong anchor, and §15a's stated remedy for wrong anchors is itself wrong.**
+`lehninger_AB_anchors.json` records `BOX 1-3` at A p.20. The box actually begins on **A p.22**
+(running to 23); p.20 carries only the cross-reference *"(see Box 1-3, Case 2)"*. `FIGURE 1-26`
+has the same shape — cross-referenced on 22, captioned on 24. This is §16c's
+caption-vs-cross-reference trap, but note carefully: **§15a tells you to "prefer the earliest
+occurrence inside the chapter's own page range", and that heuristic picks the WRONG page in both
+cases here**, because the cross-reference comes *first*. That advice is safe for `FIGURE 3-24`
+(where the stray hit was later) and unsafe in general. **The reliable test is letter case:**
+Lehninger sets captions in full caps (`BOX 1-3`, `FIGURE 1-26`) and cross-references in ordinary
+case (`Box 1-3`, `Fig. 1-26`). A case-sensitive search separates them cleanly, and that is how
+every label in this node was resolved. Worth applying when §15 finally crops figures, since a
+wrong page there silently crops the wrong image.
+
+**Tooling fix 2 — `verify_citations.py` was silently auditing only ⅔ of this node's citations.**
+The file contained 9 `A p.N` citations; the audit printed 6 rows, with **no warning that three
+had been dropped**. Cause: the dedupe key was `(citation, path.split("[")[0])`, which throws the
+array index away, so `points[1]` and `points[4]` both keyed as `"points"` — meaning **any node
+citing the same page from two different points had the second silently discarded**. `L-1-3-1`
+cites A p.24 twice (Worked Example 1-1 and Fig. 1-26), A p.25 twice and A p.26 twice, so three
+citations were never checked at all. This is the **same failure shape as the `chains`-only bug
+in `a0a825c`**, and §16a's rule applies unchanged: *a checker that quietly covers part of its
+input is worse than no checker, because the clean run gets quoted as evidence.* Fixed by keying
+on `path.rsplit(".", 1)[0]` — keeping the index (`points[4]`) while still dropping the final
+field name, which preserves the original en/cn de-duplication intent exactly. After the fix all
+9 appear; the two recovered figure citations both verify **OK**. **Re-running the fixed checker
+against the three earlier nodes produced no new rows at all**, so `L-3-4-1`, `L-11-3-1` and
+`L-19-1-1`'s earlier clean verdicts stand — they happened to cite each page only once per field.
+
+**Four citations here are `UNCHECKED` by design, not by omission**, and all four were verified by
+hand against A: `verify_citations.py`'s label regex recognises `FIGURE`, `TABLE` and `Box` but
+**not `Worked Example`**, so all three Worked Example citations are structurally unverifiable by
+the tool (1-1 confirmed on A p.24; 1-2 and 1-3 both on A p.25). The fourth, the feedback-
+inhibition citation on A p.27, is real but the phrase is split across an OCR line break
+(`"Such feedback \ninhibition keeps…"`), so a naive substring test misses it — the same
+hyphenation/whitespace class of problem §16b catalogues. Teaching the regex about
+`Worked Example` is an easy future improvement.
+
+`biochemie_pro` now reports **212 topics (207 cz, 4 lehninger, 1 entity), 61 topicKeys**;
+citation audit **39 OK, 0 ELSEWHERE, 16 UNCHECKED**.
+
 ---
 
 ## 14. Working locally — the local copy is the real one
@@ -1242,8 +1474,46 @@ Three verdicts, and the middle one is the whole point:
   `A p.71–79, §3.1` with no quotation. Reported honestly rather than passed silently; these
   still need a human.
 
-Current state: **20 citations — 12 machine-verified OK, 0 ELSEWHERE, 7 UNCHECKED**, and the
-unchecked ones were checked by hand and all hold.
+Current state (2026-08-06, four Lehninger nodes + one card): **55 citations — 39
+machine-verified OK, 0 ELSEWHERE, 16 UNCHECKED**, and the unchecked ones were checked by hand
+and all hold. (Was 20 citations when only `L-3-4-1` and `E-tryptophan` existed.)
+
+**⚠️ This tool has now silently under-reported twice, in two different ways. Both are fixed, and
+the pattern is worth recognising before trusting any run.**
+
+1. **`a0a825c` — it read only `chains[].src`,** never the inline prose where a section node
+   writes its citations, so every citation in the only Lehninger node then existing was skipped
+   while the report printed a confident clean run. See the paragraph below.
+2. **§13f (2026-08-06) — its dedupe key discarded the array index.** `path.split("[")[0]` mapped
+   `points[1]` and `points[4]` both to `"points"`, so **a node citing the same page from two
+   different points had the second one silently dropped**. `L-1-3-1` wrote 9 citations and the
+   audit printed 6, with no warning. Fixed to `path.rsplit(".", 1)[0]`, which keeps the index
+   while still collapsing an `en`/`cn` pair as originally intended.
+
+**Both bugs shared one signature: the printed total was smaller than the number of citations
+actually in the data, and nothing said so.** So count them independently before believing any
+clean run. The invariant that actually holds is **grep count == OK + ELSEWHERE + UNCHECKED**:
+
+```bash
+grep -oE "A pp?\.[0-9]" biochemie_pro/data/*.js | wc -l   # 55
+grep "^OK .* | ELSEWHERE" lehninger_index/_citation_audit.txt   # OK 39 | ELSEWHERE 0 | UNCHECKED 16
+```
+
+**Do not compare against the report's own `found N citations` line** — it read 56 against a grep
+of 55 the first time this was tried, which looks exactly like the bug it is meant to detect. The
+discrepancy is benign: that line also counts `chains[].src` entries carrying no `A p.N` at all
+(here one, `CZ §4.2.4`), which are then reported as `SKIP`. The three verdict counts exclude
+them and are the number to check. One further caveat, so a future mismatch is not misdiagnosed:
+grep counts an `en`/`cn` pair twice while the checker de-duplicates it to one row, which happens
+not to bite today only because the Chinese halves write the page as `A 第 94 页`, a form the grep
+pattern does not match.
+
+**Known structural gaps, reported honestly rather than fixed silently:** the label regex
+recognises `FIGURE`, `TABLE` and `Box` but **not `Worked Example`**, so any Worked Example
+citation is `UNCHECKED` by construction (three such in `L-1-3-1`); and a probe phrase split
+across an OCR line break will not match, which is why `L-1-3-1`'s feedback-inhibition citation
+reads UNCHECKED though the text is verbatim on the cited page. Teaching the regex about
+`Worked Example` is an easy improvement whenever this is next touched.
 
 **⚠️ That count was 11 until 2026-08-06, because the checker was only reading half the data —
 fixed in `a0a825c`, and the failure is worth understanding before trusting any similar tool.**
