@@ -3,16 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRO -- Biochemie — Státní zkouška · 生化国考复习</title>
+<title>Biochemie PRO — Státní zkouška · 生化国考复习</title>
 <link rel="stylesheet" href="style.css">
+<!-- PRO-only badge. Kept inline rather than in style.css so that file stays
+     byte-identical to biochemie_basic's copy and a diff of the two apps keeps
+     showing only real differences. -->
+<style>
+  .brand-tag{
+    display:inline-block; margin-left:.4em; padding:.05em .4em;
+    font-size:.62em; font-weight:700; letter-spacing:.08em; vertical-align:.18em;
+    border-radius:.3em; background:#b45309; color:#fff;
+  }
+</style>
 </head>
 <body>
 
 <header class="topbar">
   <button id="menu-toggle" class="icon-btn" aria-label="Toggle topic list">☰</button>
   <div class="brand">
-    <strong>Biochemie</strong>
-    <span class="brand-sub">Základní kurz · 生化国考复习</span>
+    <strong>Biochemie <span class="brand-tag">PRO</span></strong>
+    <span class="brand-sub">Czech textbook + Lehninger 8 · 生化国考复习</span>
   </div>
 
   <nav class="modes" role="tablist">
