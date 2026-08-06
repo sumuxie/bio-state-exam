@@ -1,5 +1,13 @@
 # Handoff — extending this project
 
+> **A second handoff file now exists: `HANDOFF_LEHNINGER.md`.** It covers the next phase —
+> bringing Lehninger 8 in as the teacher-designated review syllabus — and it carries three
+> things this file does not: the measured facts about the three Lehninger PDFs, the strategy
+> decided for using them, and the user's 2026-08-06 directive to **freeze the current site as
+> `biochemie_basic` and do all further work on a copy called `biochemie_pro`**. Read it before
+> touching anything. It also records that **chapters 9 and 10 are finished but uncommitted** in
+> this working tree — do not `git clean` or `git reset --hard` until that is resolved.
+
 Read this before touching `data/`, `app.js`, `style.css`, or `.github/workflows/pages.yml`.
 Written for whoever (human or another Claude session) picks this project up cold — to add
 chapters, add a second textbook, or extend the pronunciation/bionic-reading/flashcard
@@ -90,15 +98,99 @@ this file itself committed and current — that is the entire point of it existi
     "β-ketokinasa," which contradicts its own drawn (non-phosphate, non-ATP) chemistry —
     standard "thiolase" was used instead, flagged; Tab. 8.1 misspells "ethanolamin" as
     "etnanolamin"; p.179 prints cetyl alcohol as "C₁₁" (should be C16).
-- **Chapter 8 content is done (see above); chapters 9–10 not started at all**: 9 Fotosyntéza
-  (pp.202–217, photosynthesis), 10 Vzájemné vztahy v intermediárním metabolismu a regulační
-  mechanismy, incl. §10.3 Hormony (pp.218–228, metabolic integration + hormones). Page ranges
-  confirmed directly against the book's own TOC (pp.4–6) on 2026-08-05 — see §11 for the
-  Chinese notes' page ranges. No page images extracted yet for these two chapters, no wiring
-  done in `index.html`/`app.js`/`pages.yml` yet. This is roughly 35 more pages across 2
-  chapters (plus the independent-verification passes still owed on BOTH chapters 7 and 8) —
-  budget a full session-worth of work for verification alone before assuming the book is
-  "done" even once 9–10's content exists.
+- **Chapter 9 (Fotosyntéza a další biosyntetické pochody fotoautotrofů, pp.202–217): CONTENT
+  IS COMPLETE (27 nodes, `9-1` through `9-27`).** Written 2026-08-06. All 16 pages covered
+  with no gaps (checked programmatically), balanced-bracket and required-key checks clean.
+  Page images at `extracted_full_ch9/page_202.png` … `page_217.png`.
+  - **Drafted WITHOUT agents** — every page was read directly and the nodes written in one
+    pass, because this session was operating under an instruction not to dispatch subagents.
+    That is a real difference from chapters 4–8 and it matters for the verification pass: no
+    agent ever produced an independent structural self-report to cross-check against, so
+    the *only* record of what is on each page is the `coverageNote` fields themselves. If
+    you verify this chapter, verify against the scans, not against these notes.
+  - **Four book-internal / book-vs-standard discrepancies were found and are flagged in the
+    content rather than silently corrected** (see §8 for why): (a) node `9-20` — the book
+    calls the third photorespiration enzyme *glykolátoxygenasa* (oxyGENase) in both its text
+    and its Obr. 9.7 label, yet the reaction it draws is `glycolate + O₂ → glyoxylate +
+    H₂O₂` with catalase mopping up, which is oxiDASE chemistry (standard name: glycolate
+    oxidase); (b) node `9-21` — the book dates the Hatch & Slack C-4 discovery to **1970**,
+    where standard references give 1966 for the original publication; (c) node `9-23` — the
+    book's nitrogenase stoichiometry is 6 e⁻ / 6 ATP / no H₂ by-product, internally
+    consistent with its own "1 ATP per electron transferred" statement but different from
+    the modern N₂ + 8H⁺ + 8e⁻ + 16 ATP → 2NH₃ + H₂; (d) node `9-25` — the denitrification
+    products are printed as (N₂O, N₂, **N₂H₂**), and diimide is not a recognised
+    denitrification product. (a) and (c) are the two worth a second look during verification.
+  - Two content points come from figures only and are *not* in the running text — worth
+    checking first if a verifier flags them as unsupported: Obr. 9.8's carbonate dehydratase
+    step (CO₂ → HCO₃⁻ before PEP-carboxylase) and its labelling of the decarboxylating malate
+    dehydrogenase as the "jablečný enzym" (malic enzyme). Both are in node `9-22`.
+  - `cnNote` for the whole chapter points at the Chinese notes' unnumbered 光合作用 topic,
+    pp.197–203, with `status: "partial"` — that page range is still title-match-only per §11
+    and has never actually been read. Node `9-27` (secondary metabolites) is `"pending"`:
+    the notes have no topic covering it.
+- **Chapter 10 (Vzájemné vztahy v intermediárním metabolismu a regulační mechanismy, incl.
+  §10.3 Hormony, pp.218–228): CONTENT IS COMPLETE (26 nodes, `10-1` through `10-26`).**
+  Written 2026-08-06, same single-pass no-agent method as chapter 9. All 11 pages covered
+  with no gaps. Page images at `extracted_full_ch10/page_218.png` … `page_228.png`.
+  - This is the **last chapter of the book** — p.228 ends with the icosanoid structures and
+    the literature list follows outside the page range. Nothing remains to draft.
+  - Structurally the chapter is three unequal parts and the node ids follow that: `10-1`…
+    `10-11` are §10.1 (intermediary metabolism: the three-phase catabolism/anabolism schemes,
+    the acetyl-CoA pool, carbohydrate/lipid/citrate-cycle interrelations), `10-12`…`10-16`
+    are §10.2 (the eight regulatory mechanisms), `10-17`…`10-26` are §10.3 Hormony — which is
+    half the chapter, including two nodes (`10-21`, `10-22`) that transcribe all 27 rows of
+    Tab. 10.1 with all four columns.
+  - **Watch out for two different four-part divisions in §10.3** that do NOT correspond one
+    to one: four *mechanisms of hormone action* (adenylate cyclase, phosphoinositide,
+    receptor tyrosine kinase, nuclear steroid/thyroid) and four *chemical classes* (steroid,
+    amino-acid-derived, peptide/protein, icosanoid). The book announces "4 hlavní mechanismy"
+    but never numbers them; the enumeration in node `10-18` is inferred from the text and is
+    labelled as such. A verifier should not treat that inference as the book's own wording.
+  - Book-internal items flagged rather than corrected: Obr. 10.1's caption is printed
+    "Aceyl-CoA" (typo for Acetyl-CoA, confirmed by zoomed re-read, node `10-5`); the
+    serotonin row of Tab. 10.1 has its ORGAN cell blank in the book (node `10-21`); the
+    ketone-body sentence on p.220 names only acetoacetate and acetone, omitting
+    β-hydroxybutyrate and compressing the acetone step (node `10-8`); the fatty-acid
+    activation cost is given as "1 ATP", literally true but understating it since the
+    reaction goes to AMP + PPᵢ (node `10-8`).
+- **Wiring for BOTH chapters 9 and 10 is already done** (2026-08-06) in all three places §3
+  step 2 lists: `index.html` has the two `<script>` tags, `app.js` has both new
+  `CHAPTER_TITLES` entries and both `[1 … 10]` chapter-list literals updated, and
+  `pages.yml`'s `validate` job requires both data files. Do not redo this.
+- **Verification status after 2026-08-06 — read this before claiming any chapter is audited.**
+  A PARTIAL verification pass was run this session, by hand, without agents. What it actually
+  covered, precisely:
+  - **Chapters 9 and 10: every quantitative and attribution claim was re-read against the
+    scans**, by cropping the relevant passage out of the page PNG and upscaling it ~2× so the
+    digits are unambiguous (script pattern in §9). Eleven items were checked and **all eleven
+    matched the book exactly**: ΔG°′ = +2 867 kJ·mol⁻¹ (p.203); plastocyanin Mr 1–2 × 10⁴ /
+    ~597 nm / E°′ 370 mV / Cu²⁺ (p.206); antenna ratio "Chl celkový : Chl v RC = cca 200"
+    (p.207); E°′ O₂/H₂O = 820 mV and NADP⁺/NADPH = −320 mV plus the functional definitions of
+    PS I and PS II (p.208); "V r. 1970 M. Hatch a C. Slack" (p.212); the nitrogenase scheme's
+    6 e⁻ / 6 ATP / 6 H⁺ / 2 NH₃ and "1 ATP pro každý přenesený elektron" (p.215); "70 kg ATP"
+    per 24 h and the mmol/l order of magnitude (p.219); the citrate-cycle tally 1 FADH₂
+    (succinate→fumarate) + 3 NADH (isocitrate, α-oxoglutarate, malate) + 1 GTP (p.220); and
+    every Mr value in the peptide/protein hormone paragraph (p.228). **The two flags in nodes
+    `9-21` and `9-23` are therefore confirmed as accurate reports of what the book prints,
+    not as transcription errors.**
+  - **What this did NOT cover for chapters 9 and 10**: the prose, the summaries, the quiz
+    explanations and the oral models were not re-read line by line by a second reader. A real
+    step-8 pass is still owed on those. Treat the numbers as verified and the prose as not.
+  - **Chapter 8: two of the previously-flagged items were re-checked and both confirmed.**
+    p.196's β-oxidation scheme really does label the thiolytic-cleavage enzyme
+    "β-ketokinasa" (step D), which contradicts its own non-phosphate chemistry — the earlier
+    session's flag stands. p.191's mevalonate scheme really does annotate the first
+    condensation with "+ CO₂" above the arrow and "via malonyl-SCoA" below it, releasing
+    CoASH — so the discrepancy is real and can now be stated precisely: **the figure is
+    internally coherent (it depicts the malonyl-CoA route) but it is not the thiolase-
+    catalysed Claisen condensation that standard references give for acetoacetyl-CoA
+    formation in the mevalonate pathway.** That is a substantive difference, not a typo, and
+    it remains the most interesting open question in chapter 8. p.188's Mn²⁺-vs-Mg²⁺ item was
+    NOT re-checked.
+  - **Chapter 7: still entirely unverified. Nothing in it has been checked by a second
+    reader against the scans.** This is now the single largest outstanding item in the
+    project and it has been outstanding since the chapter was drafted. 42 nodes, 28 pages,
+    images already sitting in `extracted_full_ch7/`. Start here.
 - **New Chinese-notes pairing found this session (2026-08-05): topics 二 and 三 are now
   located.** Previously "not yet pinned down to exact pages" in the table below. A search
   agent confirmed by reading the actual note pages: **二 糖类 (carbohydrates) = true pages
@@ -219,12 +311,14 @@ this file itself committed and current — that is the entire point of it existi
 ## 1. What this is
 
 A static (no build step, no backend) exam trainer: `index.html` + `style.css` + `app.js`,
-content-free by design. All subject matter lives in `data/ch1.js` … `data/ch5.js`, each of
-which pushes plain objects ("topic nodes") onto a shared array, `window.BIOCHEM.topics`.
+content-free by design. All subject matter lives in `data/ch1.js` … `data/ch10.js` (all ten
+now exist — the book's main text is content-complete), each of which pushes plain objects
+("topic nodes") onto a shared array, `window.BIOCHEM.topics`. As of 2026-08-06 that array
+holds **207 topics covering book pages 8–228 with no gaps anywhere**.
 `app.js` reads that array and renders four modes — Study, Flashcards, Quiz, Oral — entirely
 generically. **Nothing about a specific chapter or textbook is hardcoded in `app.js` except
-the chapter-title lookup and one `[1, 2, 3, 4, 5]` chapter-list literal that appears twice**
-(see §3) — everything else falls out of whatever's in the data files.
+the chapter-title lookup and one `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` chapter-list literal that
+appears twice** (see §3) — everything else falls out of whatever's in the data files.
 
 Live site: https://sumuxie.github.io/bio-state-exam/ (deploys from `main` only — see §7).
 
@@ -296,7 +390,12 @@ studying English. Concretely:
 - In the UI, this means English-first, Czech-demoted-to-a-small-reference-tag. See §5a — do
   not build a new UI surface that puts Czech text in the most prominent visual slot.
 
-## 3. Adding chapter 6 (or 7, 8, 9, 10...) to the Czech textbook
+## 3. Adding a chapter to the Czech textbook
+
+> **This book is finished.** Chapters 1–10 all exist as of 2026-08-06 and the main text ends
+> at p.228. Keep this section because it is the proven pipeline and a second textbook (§4)
+> would follow it — but do not go looking for a chapter 11 to apply it to.
+
 
 **You cannot calibrate a new chapter without the actual page images.** This whole project's
 value proposition is "checked against the real book," not "plausible-sounding biochemistry."
@@ -327,7 +426,9 @@ multi-agent version; do the same for 6–10):
    exists so validation/rendering don't silently no-op while you draft):
    - `index.html` — add `<script src="data/chN.js"></script>` after the previous chapter's.
    - `app.js` — add chapter N to `CHAPTER_TITLES` (~line 13), and append `N` to **both**
-     `[1, 2, 3, 4, 5]` literals (`fillScopeSelect` and `renderSidebar`). Missing either spot
+     `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` literals (`fillScopeSelect` and `renderSidebar`).
+     There is now a one-command check that all four wiring points agree — see §9a; run it
+     instead of eyeballing, because missing either spot
      means the chapter's topics exist in data but don't appear in the sidebar or scope
      dropdowns — an easy, silent bug, and the exact kind of thing a browser smoke test with
      a REAL server (not the file:// preview — see §9) will catch and a glance at the JS
@@ -345,6 +446,19 @@ multi-agent version; do the same for 6–10):
    you can catch content split across a boundary between two agents — this happened twice in
    ch4, zero times in ch5, it's not predictable), and anything it flagged as ambiguous or a
    book-internal inconsistency.
+
+   **Chapters 9 and 10 were drafted WITHOUT agents** (2026-08-06), reading every page directly
+   and writing the nodes in one pass, because that session was operating under an instruction
+   not to dispatch subagents. It works, and it has two real advantages worth knowing about:
+   there are no page-boundary seams to reconcile (step 5 became a no-op) and no id collisions
+   to renumber (the chapter-8 problem), because one reader holds the whole chapter's numbering
+   in view. The cost is wall-clock — 27 pages read serially — and, more importantly, **the
+   loss of the independent structural self-report**: with agents you get a second description
+   of what is on each page to cross-check the merged content against, and drafting solo you
+   do not. That is precisely why the `coverageNote` fields in chapters 9 and 10 were written
+   unusually specifically (naming which figure labels were read off the scan versus which came
+   from running text). If you verify those chapters, verify against the scans, never against
+   those notes.
 
 4. **Merge**: concatenate the scratch files' array contents into `data/chN.js` with the
    standard header/footer (copy the pattern from any existing `data/ch*.js`). Do this via a
@@ -650,6 +764,64 @@ No test framework is wired up. Verification happens by scripting the Browser too
   bounds, no duplicate ids, full page-range coverage with no gaps) since no `node` binary is
   available in this environment to just run the CI script directly.
 
+### 9a. Validate the data WITHOUT a browser — `esprima` is installed (found 2026-08-06)
+
+There is no `node`, `deno` or `bun` on this machine (checked), but **Python's `esprima`
+package IS installed**, and it is a real JavaScript parser. That turns out to be strictly
+better than the browser route for validating `data/ch*.js`, and it should be the first thing
+you reach for:
+
+```python
+import esprima, io
+tree = esprima.parseScript(io.open('data/ch9.js', encoding='utf-8').read())
+```
+
+Walk the AST for `CallExpression`s whose callee property is `push`, convert each
+`ObjectExpression` argument into a Python dict (`Literal` → value, `ArrayExpression` → list,
+`ObjectExpression` → dict), and you have every topic node as data, offline, in about 40 lines.
+Then assert everything the CI validator asserts, plus whatever else you want. A full run over
+all ten chapters takes a couple of seconds.
+
+Why this beats the browser check:
+
+- **It catches syntax errors precisely.** A naive brace/bracket balance count does NOT work —
+  braces and brackets inside string literals (`"(a)"`, `"[1,2]"`, `"§10.2"`) throw the count
+  off, and chapter 9 happened to balance by pure coincidence while chapter 10 did not, even
+  though both files were perfectly valid. Do not use a counting heuristic; parse.
+- It needs no server, no browser tool, and no manual clicking, so it can't be fooled by the
+  stale-DOM problem described above.
+- It can check things the CI script does not: that every `points[]` entry has both `en` and
+  `cn`, that every `terms[]` entry has all four of `en`/`cn`/`def_en`/`def_cn`, that every
+  `short` quiz has a non-empty `accept` list, that every `oral` has a `model_en` and a
+  `checklist`, and that page coverage has no gaps *within* a chapter as well as against the
+  TOC range.
+- **Also verify the wiring the same way**, by parsing `app.js`/`index.html`/`pages.yml` with
+  regex and asserting that the set of chapters on disk equals the set in `CHAPTER_TITLES`,
+  in BOTH `[1 … 10]` literals, in the `<script>` tags, and in the `validate` job. This is the
+  check that would have caught the silent-missing-chapter bug §3 step 2 warns about, and it
+  takes one command.
+
+The browser is still the right tool for the things that are genuinely visual — the bionic
+`innerText` parity check (§6a), viewport overflow, listener counting. Use it for those and
+use `esprima` for the data.
+
+### 9b. Verifying numbers against a scan — crop and upscale
+
+When you need to check a printed figure (a molecular mass, a redox potential, a stoichiometric
+coefficient), do not squint at the full page. Crop the passage and upscale it, then read that:
+
+```python
+from PIL import Image
+im = Image.open('extracted_full_ch10/page_228.png'); W, H = im.size
+c = im.crop((int(0.08*W), int(0.35*H), int(0.95*W), int(0.63*H)))
+c.resize((c.width*2, c.height*2), Image.LANCZOS).save('verify_crops/v_228.png')
+```
+
+At 250 dpi a ~2× upscale makes digits unambiguous that are genuinely ambiguous at full-page
+scale — which matters, because the numbers are exactly what a reader will be marked on and
+exactly what is easiest to mis-transcribe. This is how the eleven numeric claims of chapters
+9 and 10 were verified (see §0). `verify_crops/` is a scratch directory; don't commit it.
+
 ## 10. Legacy files — safe to ignore, not yet cleaned up
 
 `Biochemistry_Chapters_1_3_Detailed.md`, `Biochemistry_Master_Guide_CN_EN.md`, and the entire
@@ -664,15 +836,20 @@ tree tidier — not part of the chapter-4/5 or bionic-reading work.
 
 ## 11. Open items and the Chinese-notes map, as of this handoff
 
-**Chapters 7–10**: not started. Page ranges (confirm against the book's own TOC pages 4–6
-before trusting this table, since it's hand-transcribed and could have a typo):
+**Chapters 7–10: CONTENT NOW COMPLETE** (all four drafted; 7 and 8 in earlier sessions,
+9 and 10 on 2026-08-06). Page ranges, all confirmed against the book's own TOC pages 4–6 and
+all covered with no gaps:
 
-| Ch | Title | Pages |
-|---|---|---|
-| 7 | Sacharidy | 148–175 |
-| 8 | Lipidy | 176–201 |
-| 9 | Fotosyntéza a další biosyntetické pochody fotoautotrofů | 202–217 |
-| 10 | Vzájemné vztahy v intermediárním metabolismu a regulační mechanismy (incl. 10.3 Hormony) | 218–228 |
+| Ch | Title | Pages | Nodes | Content | Independently verified? |
+|---|---|---|---|---|---|
+| 7 | Sacharidy | 148–175 | 42 | done | **NO — nothing checked** |
+| 8 | Lipidy | 176–201 | 40 | done | partial — 2 flagged items re-checked 2026-08-06 |
+| 9 | Fotosyntéza a další biosyntetické pochody fotoautotrofů | 202–217 | 27 | done | partial — all quantitative claims re-read |
+| 10 | Vzájemné vztahy v intermediárním metabolismu a regulační mechanismy (incl. 10.3 Hormony) | 218–228 | 26 | done | partial — all quantitative claims re-read |
+
+The book's main text ends at p.228; what follows is the literature list, deliberately outside
+every chapter's page range. **There is no eleventh chapter to draft. The only work left on
+this textbook is verification.**
 
 **Chapter 6 is done** (Bioenergetika, pp.130–147, 19 nodes). Its drafting agents mostly
 self-served their `cnNote` pairings straight from this table after being told to read this

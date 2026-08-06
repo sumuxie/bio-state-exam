@@ -18,7 +18,9 @@
     5: { cz: 'Další metabolismus proteinů a vzájemné přeměny aminokyselin', en: 'Further protein metabolism and amino acid interconversions', cn: '蛋白质代谢续篇与氨基酸互变' },
     6: { cz: 'Bioenergetika', en: 'Bioenergetics', cn: '生物能学' },
     7: { cz: 'Sacharidy', en: 'Carbohydrates', cn: '糖类' },
-    8: { cz: 'Lipidy', en: 'Lipids', cn: '脂质' }
+    8: { cz: 'Lipidy', en: 'Lipids', cn: '脂质' },
+    9: { cz: 'Fotosyntéza a další biosyntetické pochody fotoautotrofů', en: 'Photosynthesis and other biosynthetic processes of photoautotrophs', cn: '光合作用与光合自养生物的其他生物合成过程' },
+    10: { cz: 'Vzájemné vztahy v intermediárním metabolismu a regulační mechanismy', en: 'Interrelationships in intermediary metabolism and regulatory mechanisms', cn: '中间代谢的相互关系与调节机制' }
   };
 
   /* ----------------------------------------------------------- persistence */
@@ -255,7 +257,7 @@
 
   function fillScopeSelect(sel, allLabel) {
     let html = `<option value="all">${esc(allLabel)}</option>`;
-    [1, 2, 3, 4, 5, 6, 7, 8].forEach((ch) => {
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach((ch) => {
       const list = TOPICS.filter((t) => t.chapter === ch);
       if (!list.length) return;
       html += `<optgroup label="${esc('Ch. ' + ch + ' — ' + CHAPTER_TITLES[ch].en)}">`;
@@ -307,7 +309,7 @@
     const needle = state.filter.trim().toLowerCase();
     let html = '';
 
-    [1, 2, 3, 4, 5, 6, 7, 8].forEach((ch) => {
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach((ch) => {
       const list = TOPICS.filter((t) => t.chapter === ch && topicMatches(t, needle));
       if (!list.length) return;
       const info = CHAPTER_TITLES[ch];
