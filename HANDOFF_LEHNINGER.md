@@ -62,11 +62,12 @@ backwards. §3 and §6 have been rewritten; if you are working from a cached cop
 
 ---
 
-## 0. Current state — everything is committed and live
+## 0. Current state — everything is committed; **not** everything is live
 
-Nothing is left dangling. `main` = `585664c` (2026-08-06), pushed, working tree clean apart
-from the long-standing untracked `extracted_*/` evidence folders. Chapters 9 and 10 are
-committed, merged, and deployed.
+Nothing is left dangling in git. `main` = `585664c` (2026-08-06), pushed, working tree clean
+apart from the long-standing untracked `extracted_*/` evidence folders. But the live site is
+**not** current — see the deploy section immediately below, and do not read the URLs in this
+table as showing today's work.
 
 | | |
 |---|---|
@@ -74,35 +75,68 @@ committed, merged, and deployed.
 | local, same content | `file:///C:/Users/Admin/Downloads/bio-state-exam/biochemie_basic/index.html` |
 | **where you work** | `biochemie_pro/` — https://sumuxie.github.io/bio-state-exam/biochemie_pro/ |
 
-### Known pending item — a cosmetic deploy optimisation has not landed
+### Deploys have been failing for five consecutive runs — no longer cosmetic
 
-**The site is fully functional. This is performance only; do not let it block content work.**
+**This needs the user; it cannot be fixed from a shell.** Earlier versions of this section
+called it a flake and said "once is noise". It is now five in a row, so that call has expired.
 
-The last deployment that actually reached production is `c9f9eb2`, and it contains everything
-that matters: chapters 9–10, `biochemie_basic/`, `biochemie_pro/`, `PESB/`.
+Measured 2026-08-06 via the unauthenticated Actions API:
 
-What has not landed is a change narrowing the Pages artifact. The deploy job used to upload the
-repository root, which meant shipping `extracted_raw/` — roughly 117 MB of textbook page scans
-kept as an evidence trail — to serve a 9 MB site, and deploys were taking 7.5 minutes. The job
-now stages only `index.html` and the three app directories into `_site`. That change is
-committed but its deploys have not succeeded:
+| commit | `validate` | `deploy` |
+|---|---|---|
+| 3cba8e0 | ✅ | `deploy-pages@v4` failed after **603 s** |
+| 3c74aba | ✅ | failed after **606 s** |
+| 0b0d079 | ✅ | failed after **602 s** |
+| e6241f9 | ✅ | failed after **601 s** |
+| 585664c | ✅ | cancelled (superseded) |
 
-- `807eb90` — `validate` passed, `Stage only the site files` and `Upload site` both passed,
-  then `actions/deploy-pages@v4` failed with **`Timeout reached, aborting!`**. So the artifact
-  was built and uploaded correctly; the failure is on the Pages side.
-- `3cba8e0` — ran `in_progress` for over six minutes, then the unauthenticated GitHub API rate
-  limit (60 requests/hour) cut off the polling. Outcome unknown at the time of writing.
+**`validate` has passed every single time** — the data and the validator are not the problem.
+The failing step is always `actions/deploy-pages@v4`, and ~601 s is that action's own default
+10-minute timeout, i.e. the artifact uploads fine and then Pages never reports the deployment
+as succeeded. **The last deployment that actually reached production is `c9f9eb2`.**
+
+Two hypotheses were tested and both are dead — do not spend time re-testing them:
+
+- *"Pages is serving the branch, not the artifact."* No. `lehninger_index/README.md` (added
+  today) returns **404**, and the live `biochemie_pro/data/ch1.js` contains **zero** occurrences
+  of `topicKey`. The site is serving a stale Actions artifact. `HANDOFF.md` returns 200 only
+  because the last *successful* artifact was the old repo-root one.
+- *"The `github-pages` environment has a wait timer or a required reviewer."* No. Its only
+  protection rule is a `branch_policy`, which the deploy satisfies — the job runs for ten
+  minutes rather than sitting blocked.
+
+Note the failures begin exactly at `807eb90`, the commit that introduced the `_site` staging.
+That correlation is suspicious but the obvious reading does not hold up: the *previous*
+artifact was ~117 MB and deployed in 7.5 minutes, and the new one is ~9 MB, so "the artifact is
+too slow to process" would predict the opposite. Raising the action's `timeout` input was
+considered and rejected for the same reason — it treats a symptom the evidence does not support.
+
+**What actually helps, and only the user can do it:** open the repository on GitHub and check
+**Settings → Pages** (is the source still "GitHub Actions"?) and the **Actions** tab for the
+full `deploy-pages` log, which says more than the API exposes unauthenticated. A stuck
+server-side deployment usually clears by re-running the job from that page.
+
+**User impact so far: none, and this is why it has not been treated as an emergency.**
+`git diff c9f9eb2..HEAD -- biochemie_basic` is **empty** — the tool the user studies from every
+day is byte-identical to what is live, so the stale deployment costs them nothing yet. What is
+*not* live is everything in `biochemie_pro` since then, including `book`/`topicKey`. No UI reads
+those yet, so nothing looks broken.
+
+**That changes the moment the first Lehninger content node is written.** At that point the
+stale deployment starts hiding real work, and this stops being deferrable.
 
 **How to tell which artifact is live, without the API:** request
 `https://sumuxie.github.io/bio-state-exam/HANDOFF.md`. A **200** means the old repo-root
-artifact is still being served; a **404** means `_site` has taken effect. Checked again
-2026-08-06 after the step 4/5 push: still **200**, and `biochemie_pro/` also returns 200 — so
-the site is serving fine, from the old wide artifact. Unchanged, still cosmetic.
+artifact is still being served; a **404** means `_site` has taken effect. As of 2026-08-06,
+after the step 4/5 push: still 200.
 
-If it keeps timing out, the thing to question is whether Pages is struggling with the large
-repository checkout rather than the artifact — `actions/checkout@v4` still pulls all 117 MB
-before the staging step runs, so the narrowing helped the upload but not the checkout. Adding
-`with: { sparse-checkout: ... }` to the deploy job's checkout would address that. Not urgent.
+For the record, what the `_site` change was for: the deploy job used to upload the repository
+root, which shipped `extracted_raw/` — roughly 117 MB of page scans kept as the content's
+evidence trail — to serve a 9 MB site. It now stages only `index.html` and the three app
+directories. `actions/checkout@v4` still pulls the full 117 MB before staging, so if the
+timeout ever turns out to be checkout-related rather than Pages-side, `sparse-checkout` on the
+deploy job is the lever. The evidence does not currently point there — checkout is not the step
+that fails.
 
 Outstanding content debt, unchanged: **chapter 7 has never been verified against the scans**
 (42 nodes, images already in `extracted_full_ch7/`). Chapters 7 and 8 also still lack their
