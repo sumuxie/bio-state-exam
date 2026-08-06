@@ -897,13 +897,13 @@ actually reading the pages before upgrading a node's `cnNote.status` past `"part
 | 二十七 | 核苷酸的降解及核苷酸代谢 | ~p.180 (title match only, not read) | ch.4 §4.1.1.1/.2, §4.1.5 | title-match only, used by ch.4 as "partial" |
 | *(unnumbered)* | 抗生素 Antibiotics | p.181 | no CZ match found | unmatched |
 | *(unnumbered)* | 激素 Hormones | p.183 | ch.10 §10.3 Hormony — strong title match | not yet consumed |
-| *(unnumbered)* | 光合作用 Photosynthesis | pp.197–203 | ch.9 Fotosyntéza — strong title match, not yet consumed |
-| *(unnumbered)* | DNA重组 / 转座子 Recombination/transposons | pp.205–210 | no CZ ch.1–10 match found |
-| *(unnumbered)* | DNA的复制 Replication | pp.211–212 | ch.4 §4.1.3 (mapped, no numeral exists — cite pages, not a number) |
-| *(unnumbered)* | DNA转录产生mRNA Transcription | pp.212–217 | ch.4 §4.1.4/§4.2.4 (mapped, no numeral) |
-| *(unnumbered)* | RNA的复制/反转录病毒 | pp.219–221 | no CZ ch.1–10 match found |
-| *(unnumbered)* | mRNA翻译产生蛋白质 Translation | p.223–224 | ch.4 §4.2.1–4.2.3, §4.3.2 partially (mapped, no numeral) |
-| p.225–230 | English reading-comprehension notes | — | not biochemistry, ignore |
+| *(unnumbered)* | 光合作用 Photosynthesis | pp.197–203 | ch.9 Fotosyntéza | title-match only — strong match, used by ch.9 as `"partial"`; these pages have NOT been read (the 2026-08-06 read covered pp.1–46 only) |
+| *(unnumbered)* | DNA重组 / 转座子 Recombination/transposons | pp.205–210 | no CZ ch.1–10 match found | unmatched |
+| *(unnumbered)* | DNA的复制 Replication | pp.211–212 | ch.4 §4.1.3 | mapped — no numeral exists, so cite the pages, not a number |
+| *(unnumbered)* | DNA转录产生mRNA Transcription | pp.212–217 | ch.4 §4.1.4/§4.2.4 | mapped — no numeral |
+| *(unnumbered)* | RNA的复制/反转录病毒 | pp.219–221 | no CZ ch.1–10 match found | unmatched |
+| *(unnumbered)* | mRNA翻译产生蛋白质 Translation | pp.223–224 | ch.4 §4.2.1–4.2.3, §4.3.2 partially | mapped — no numeral |
+| *(unnumbered)* | English reading-comprehension notes | pp.225–230 | — | not biochemistry, ignore |
 
 The numbered list (一–二十七) is the core 27-topic oral-exam syllabus; everything from p.181
 on is titled but carries no Chinese-numeral header at all — treat that as a genuine,

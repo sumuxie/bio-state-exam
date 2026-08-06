@@ -42,9 +42,12 @@ search index for `locate.py` and nothing else reads it. Delete it freely; it reb
   Leave-one-out error on the anchors themselves: median 0.40 pages, p99 2.24, max 3.
 - **The glyoxylate cycle is in §20.6 in the 8th edition** (A pp.735–736, "…in Germinating
   Seeds"), not in chapter 16. This is the pairing Czech §6.2.3 has had as `"pending"`.
-- **Lehninger never names Hatch or Slack.** Czech node `9-21`'s flagged 1970 date cannot be
-  arbitrated from this book.
-- **Lehninger says "isoprenoid", never "terpene"** (0 in-chapter hits). Czech §8.2.4's
+- **Lehninger never names Hatch or Slack.** Re-checked after the ligature fix: the only
+  capitalised occurrence in the whole book is a reviewer surname, "Hatcher-Skeers", in the front
+  matter; the rest are the ordinary English words *hatch* and *slack*. So Czech node `9-21`'s
+  flagged 1970 C-4 date cannot be arbitrated from this book.
+- **Lehninger says "isoprenoid", never "terpene"** — re-checked after the fix: `terpene` and
+  `terpenoid` have **0** in-chapter hits, `isoprenoid` has 28 pages. Czech §8.2.4's
   "terpeny (isoprenoidy)" maps to §21.4.
 - **`locate.py` de-ligatures before searching, as of 2026-08-06 — this matters, read it before
   trusting an older "0 hits" claim.** B's text layer renders `ff`/`fi`/`fl`/`ffi`/`ffl` as single
@@ -54,8 +57,14 @@ search index for `locate.py` and nothing else reads it. Delete it freely; it reb
   four sentences after the Trp 280 nm passage. `Merrifield` and `sedimentation coefficient` were
   wrongly called absent for the same reason. Detail and the measured blast radius (14 of the
   895 glossary terms used in matching had a wrong hit count, mostly undercounts not zero-flips)
-  are in `_ligature_impact.txt`. `ninhydrin` and `colloid` are still genuinely 0 hits after the
-  fix — see `HANDOFF_LEHNINGER.md` §6.
+  are in `_ligature_impact.txt`. **Every other absence claim in this file was re-checked with
+  the fix in place and survived**: `ninhydrin`, `colloid`, `creationism`, `intelligent design`,
+  `molar absorption coefficient`, `terpene` — all still 0. See `HANDOFF_LEHNINGER.md` §6.
+- **`scripts/audit_handoff.py` checks the handoff files for structural damage** — truncated
+  paragraphs, malformed table rows, duplicate headings, non-monotonic section numbering. It is
+  code-fence and inline-code aware, so `claude/**` in backticks is not read as unclosed bold.
+  Run it after any large in-place edit; a session on 2026-08-06 left a paragraph cut mid-word
+  and seven malformed table rows behind, none of which were visible when skimming the file.
 - **`locate.py` also reports Glossary/Index hits separately as `(outside chapters)`.** It has
   to: the back matter is 460 pages of a 1252-page file, and before the section upper bound was
   added, every single query appeared to have a large hit in §28.3.
