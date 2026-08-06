@@ -32,8 +32,24 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**Next up: §9 step 6 — writing content.** Everything mechanical is finished; from here on the
-work is judgement, and the pieces that need a human are listed below rather than buried.
+**§9 step 6 has started. The first Lehninger node is written and validates: `L-3-4-1` in
+`biochemie_pro/data/leh_ch3.js` (§13).** It joins Czech node `2-2-1` through
+`topicKey: "protein-primary-structure"` — the Czech book says *why* an amino acid sequence
+matters, Lehninger §3.4 says *how* one is determined.
+
+> **⛔ Before writing a second node, read §13b.** `app.js` **never reads `book` or `topicKey`**
+> — it filters on `chapter` alone against a hardcoded 1–10 map of *Czech* chapter names. So
+> `L-3-4-1` currently renders under "Ch. 3 — **Enzymes**", and any node with `chapter > 10`
+> (§22.2, §24–25, ch9 — everything `full`-scope in §9b) **would not render at all**. There is
+> also no topic view, so the two-books-side-by-side feature `pro` exists for (§4) does not yet
+> exist in the UI. **This — not the entity-card schema — is what has actually been blocking
+> the integration.** §12a filed it as an entity-card problem; it applies to every Lehninger node.
+
+**Working locally — read §14 before assuming the remote is the source of truth.** Since the
+2026-08-06 scan-exposure fix the working copy and the remote deliberately hold different things:
+~500 MB of textbook page scans are local-only *by design*. §14a is the table of what lives
+where, §14b runs the apps, §14c checks the data with no `node` on this machine, §14d looks
+things up in Lehninger without opening a 1.1 GB PDF.
 
 **What to ask the user before writing content**, in priority order:
 
@@ -43,11 +59,12 @@ work is judgement, and the pieces that need a human are listed below rather than
    bucket obviously fits.
 2. **Any classmate report of a real exam question.** §3 makes these outrank everything in this
    file, and one has already overturned a plan once.
-3. ~~Which topic to start with~~ → **answered 2026-08-06: the first integration card, on
-   tryptophan**, before batch-producing depth-queue topics. **§12 is the research dossier —
-   every fact located with the A page to open. Nothing is written yet, and §12a is a schema
-   decision that has to be made before the first entity node exists**, because the validator
-   will reject a node with no `chapter`.
+3. ~~Which topic to start with~~ → answered 2026-08-06: the first integration card, on
+   tryptophan. **Superseded the same day, by the user: *"先尝试最简单的一个小节"* — start with
+   the simplest ordinary section instead.** That is why §13's `L-3-4-1` is a depth node and not
+   the entity card. The tryptophan card is not cancelled, only re-ordered: it needs both the
+   §12a schema decision *and* the §13b UI work first, and §12 remains the finished dossier for
+   it — every fact located, with the A page to open, nothing written yet.
 
 ---
 
@@ -648,6 +665,28 @@ sitting there. Only invent a new key for a Lehninger section no Czech node point
 `full`-scope ones in §9b are exactly that case (ch9, §22.2, §24.2–24.3, §25.2–25.3), and they
 have no key yet.
 
+**There is a third case this rule does not cover, found 2026-08-06 — read it before picking a
+topic off `depth_queue.tsv`.** The key is built from the **primary** (first) entry of
+`master_map`'s `leh_sections`, so a Lehninger section that a Czech section points at only as its
+**second** mapping gets no key, even though it is not unclaimed. Measured over the depth queue:
+
+| | |
+|---|---|
+| top-20 depth-queue sections that are a primary (key exists, joins automatically) | **10** |
+| top-20 that are only a secondary (no key — a naive new key would **not** join) | **10** |
+| all 85 rows: primaries | 61 |
+
+**Ranks 1, 2 and 3 are all in the second group** — §5.1 oxygen-binding proteins (ratio 17,
+cz 6.3), §8.3 nucleic acid chemistry (16, cz 4.1.5), §6.4 examples of enzymatic reactions
+(11, cz 3.6). Czech §6.3 maps to `22.3,5.1`: §22.3 took the key
+(`amino-acid-derived-molecules`), §5.1 got nothing.
+
+The fix is cheap — for a secondary section, use the key of the Czech section that points at it,
+so the depth node lands on the topic it actually deepens. But it makes the key *name* misleading
+(a myoglobin/haemoglobin node filed under `amino-acid-derived-molecules`), and §9c's own caveat
+already allows renaming a `topicKey` later. **Decide the naming before writing any of the top
+three**, and until then prefer a primary — the first node (§13) deliberately did.
+
 Czech sections that share a Lehninger section share a key, which is the intended grouping: all
 twelve sugar sections join on `monosaccharides`, the five kinetics sections on
 `enzyme-kinetics`. 33 of the 61 keys are used by exactly one Czech section.
@@ -815,3 +854,196 @@ bench consequence attached; keep it that way.
 - **Trp fluorescence** — `tryptophan fluorescence` is **0** hits in Lehninger 8 (checked after
   the ligature fix). A real and commonly examined property of Trp, absent from the source.
   Same treatment: outside-the-book, marked.
+
+---
+
+## 13. The first Lehninger node exists — and it exposed the real blocker
+
+**Written 2026-08-06: `biochemie_pro/data/leh_ch3.js`, one node, `id: "L-3-4-1"`.** Validates
+clean (208 topics = 207 cz + 1 lehninger; `biochemie_basic` untouched at 207/0; all of
+`step5_check.py`'s negative tests still fire). Wired into `index.html` as its own `<script>` tag,
+which the validator's index-vs-disk check requires.
+
+### 13a. Why this section, and what "integration" looks like when it works
+
+Czech §2.2.1 *Sekvence aminokyselin* is 2 pages, **4 points, 3 terms, no oral** — one of the
+thinnest nodes in the book — and it explains only **why** a sequence matters (4 reasons, ending
+in sickle-cell). It never says how anyone **obtains** one. Lehninger §3.4 is that missing half,
+at ratio 5.0. Zero overlap, pure complement. It was also chosen because §3.4 **is a primary**
+(§9c), so `topicKey: "protein-primary-structure"` joins the two with no rule change:
+
+```
+2-2-1     book=cz          chapter=2  section=2.2.1   <-- why sequence matters
+L-3-4-1   book=lehninger   chapter=3  section=3.4     <-- how it is determined
+                    ^ same topicKey: protein-primary-structure
+```
+
+Three-way, and this is the payoff worth aiming at: the Chinese notes (pp.21–22, §6a) give the
+**colours** — DNFB/Sanger → yellow DNP-aa, PITC/Edman → PTH — Lehninger gives the modern
+MS methods, the Czech book gives the exam framing. None of the three is redundant.
+
+### 13b. ⛔ `app.js` cannot display two books — this is the actual gate, not the entity schema
+
+**`app.js` never reads `book` or `topicKey`. Not once.** §9d taught the *validator* about two
+books; nobody taught the UI. Three sites filter on `chapter` alone:
+
+```js
+254: if (scope.startsWith('ch:')) return String(topic.chapter) === scope.slice(3);
+261: const list = TOPICS.filter((t) => t.chapter === ch);
+313: const list = TOPICS.filter((t) => t.chapter === ch && topicMatches(t, needle));
+```
+
+and `CHAPTER_TITLES` is a hardcoded 1–10 map of **Czech** chapter names, iterated as a literal
+`[1,2,…,10]` array in `fillScopeSelect`. Consequences, both real today:
+
+- `L-3-4-1` has `chapter: 3`, so it renders under **"Ch. 3 — Enzymes"**, the Czech chapter 3,
+  next to the enzyme-kinetics nodes. The node's own content displays fine; its *placement* is
+  wrong. This is precisely the collision §7 predicted when it made `chapter` book-local.
+- **A node with `chapter > 10` would not render at all** — the loop never reaches it, and
+  `CHAPTER_TITLES[22].en` would throw. That silently rules out §22.2, §24–25, ch9 and every
+  other `full`-scope section in §9b.
+- **There is no topic view.** The feature that shows both books side by side under one
+  `topicKey` — the thing `pro` exists for (§4) — does not exist in the UI at all.
+
+**§12a framed "renders nowhere" as an entity-card problem. It is not: it applies to every
+Lehninger node.** The entity-card schema question is real but downstream of this one.
+
+**So the honest order of work is:**
+
+1. Teach `app.js` about `book`: make the three chapter filters key on `book + chapter`, and
+   make `CHAPTER_TITLES` two-level (per book) with Lehninger's own chapter names. Until this
+   lands, every Lehninger node is misfiled.
+2. Build the topic view (group by `topicKey`, both books side by side). This is the feature,
+   and `L-3-4-1` + `2-2-1` is now a real two-book pair to build it against.
+3. Then the entity-card schema (§12a) and the tryptophan card (§12).
+
+### 13c. Two schema decisions taken while writing, flagged rather than buried
+
+- **`czTitle` on a Lehninger node.** The validator requires it, and Lehninger has no Czech
+  heading. Rather than invent Czech (which §2 of `HANDOFF.md` forbids) or duplicate the English,
+  it carries **the Czech section heading this node adds depth to** — here
+  *"Sekvence aminokyselin (primární struktura)"*. That is honest (it is a real heading from the
+  real book) and useful (§5a demotes `cz` to a small reference tag, so it reads as "this
+  deepens that"). `coverageNote` says so explicitly. If a better convention is chosen later,
+  this is the node to change.
+- **What `coverage: "full"` means for a Lehninger node.** `HANDOFF.md` §2 defines it as "every
+  page read from an actual scan image", which does not transfer: B has a real digital text
+  layer, so reading it is *better* than a scan read, but the **figures are images in A and were
+  not read** — only their captions, which are in the text layer. The node is marked `"full"`
+  with `coverageNote` stating exactly that, plus the fact that it covers only A pp.91–95 of
+  §3.4 and claims nothing about pp.96–100. **`HANDOFF.md` §2's definition of `coverage` needs a
+  Lehninger clause**; this node is the precedent, not a licence to skip the question.
+
+A useful side note for citing pages: A page numbers came from the **measured** anchors in
+`lehninger_AB_anchors.json` (TABLE 3-6 → A p.92, FIGURE 3-28 → A p.94, FIGURE 3-29 → A p.95),
+not from interpolation. One anchor in that file is wrong — **`FIGURE 3-24` is recorded at A
+p.104 / B p.473, but the figure is on B p.420** (≈ A p.92); the entry has almost certainly
+matched a later cross-reference. Spot-check an anchor against the surrounding text before
+citing it.
+
+---
+
+## 14. Working locally — the local copy is the real one
+
+Added 2026-08-06, at the user's request: *"注重于本地操作"*. Since the scan-exposure fix, the
+working copy and the remote deliberately hold **different things**, and that split is now a
+design decision rather than an accident. Read this before assuming the remote is the source of
+truth.
+
+### 14a. What is local-only, and why
+
+| | on disk | tracked by git / on GitHub |
+|---|---|---|
+| the three apps (`biochemie_basic`, `biochemie_pro`, `PESB`) | ✅ | ✅ |
+| `lehninger_index/` (TOC, A↔B map, master table, scripts) | ✅ | ✅ |
+| `extracted_raw/` — 84 page scans + `ch1_3_summary.txt` | ✅ **117 MB** | ❌ removed 2026-08-06 |
+| `extracted_full_ch*/`, `extracted_toc/` — 229 files | ✅ **341 MB** | ❌ ignored |
+| `verify_crops/` — 16 files | ✅ **48 MB** | ❌ ignored |
+| `lehninger_index/_B_text.pkl` — full-text search cache | ✅ 5.7 MB | ❌ ignored |
+| the three source PDFs | ✅ | ❌ `*.pdf` ignored |
+
+**Nothing was deleted to achieve this.** `git rm --cached` only stops git tracking a file; the
+bytes stay in the working copy. So the evidence trail — every page scan the content was written
+against — is fully intact locally and is simply not published any more. **If you clone this repo
+fresh on another machine, you get the apps and the index but none of the scans.** That is
+intended; re-extract them from the PDFs if they are ever needed elsewhere.
+
+### 14b. Running the apps locally
+
+The apps are static — no build step, no backend, no `npm install`. Two ways in:
+
+**Just reading:** double-click, or open directly.
+
+```
+file:///C:/Users/Admin/Downloads/bio-state-exam/biochemie_basic/index.html
+file:///C:/Users/Admin/Downloads/bio-state-exam/biochemie_pro/index.html
+```
+
+**Testing a change you just made — use a real server instead.** `HANDOFF.md` §9 records why:
+the `file://` preview does not reliably re-execute scripts on repeat navigation to the same URL,
+so `window.BIOCHEM.topics` can look correct while the rendered sidebar is still a stale DOM from
+hours earlier, with no error and no visible signal that anything is wrong.
+
+```bash
+cd C:/Users/Admin/Downloads/bio-state-exam
+python -m http.server 8000
+# then http://localhost:8000/biochemie_pro/
+```
+
+This is also closer to how GitHub Pages actually serves the site.
+
+### 14c. Checking the data before pushing — there is no `node` on this machine
+
+CI runs `node tools/validate-data.js biochemie_basic biochemie_pro`, and `deploy` is
+`needs: validate`, so a break there silently stops the site updating. **You cannot run that
+locally — `node`, `deno` and `bun` are all absent (checked).** Use the Python equivalent, which
+parses the validator with `esprima` to catch syntax errors and re-implements its checks against
+the real data:
+
+```bash
+python "C:/Users/Admin/Downloads/bio-state-exam/lehninger_index/scripts/step5_check.py"
+cat  "C:/Users/Admin/Downloads/bio-state-exam/lehninger_index/_step5_report.txt"
+```
+
+A clean run currently prints `ok biochemie_basic: 207 topics` and
+`ok biochemie_pro: 208 topics (207 cz, 1 lehninger)`. It also runs negative tests, because a
+check that never fails is not a check.
+
+### 14d. Looking things up in Lehninger without opening a 1.1 GB PDF
+
+`lehninger_index/scripts/locate.py` takes a phrase, searches **B**'s clean text layer, and
+reports which Lehninger section it sits in plus the **printed page in A** to actually open.
+
+```python
+exec(open(r"C:\Users\Admin\Downloads\bio-state-exam\lehninger_index\scripts\locate.py",
+          encoding="utf-8").read().split("if __name__")[0])
+r = find("lipid raft")
+```
+
+Three things it handles that a naive search does not, each of which cost a wrong answer first:
+
+- **Ligatures.** B renders `ff/fi/fl/ffi/ffl` as single glyphs on 66 % of pages, and `ft` as
+  U+00D7 or U+019E on 19 %. A plain substring search silently returns "absent" for content that
+  is plainly there. `locate.py` de-ligatures before indexing; **do not trust any "0 hits" claim
+  from before 2026-08-06.**
+- **Back matter.** Glossary and Index are 460 pages of a 1252-page file. Hits there are reported
+  separately as `(outside chapters)` and are not evidence of coverage.
+- **The A page.** B's page numbers are ebook-reflow artefacts and useless on paper.
+  `page_a_print` is the number printed in the real book. The rule is
+  `printed page = A's pdf page − 36`.
+
+First run rebuilds `_B_text.pkl` (~60 s, 5.7 MB); after that it is instant. Delete the cache
+freely — it is gitignored and rebuilds itself.
+
+### 14e. Day-to-day git, given the split
+
+The user does not operate git personally (§11) — commit, merge to `main` and push directly.
+Two things to keep in mind now that local ≠ remote:
+
+- **Never `git add -A` without looking.** It is safe *today* because `.gitignore` covers every
+  scan folder with globs, but that safety is one new unmatched folder away from lapsing. Run
+  `git status --short` and read it.
+- **`.gitignore` does not retroactively untrack anything.** That is the exact mistake that
+  published the scans in the first place: the rule `extracted_raw/*.png` was written *after* the
+  files were committed, so it never applied to them and everyone assumed it had. For an
+  already-tracked file you need `git rm --cached`.
