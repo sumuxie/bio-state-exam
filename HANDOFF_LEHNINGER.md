@@ -26,16 +26,26 @@ revision tool the user studies from every day.
    load actually sits (chapters 7 and 8, plus §2.1.3) and names the two sections where
    Lehninger offers no help at all. (§5, §5a)
 
-**Where the work stands.** §9 steps 1–3 are done — the Lehninger index, the A↔B page map and
-the master table are in `lehninger_index/` (read its `README.md`). §8's three open decisions
-were put to the user and answered on 2026-08-06; two of them overturned assumptions this file
-used to make. The scope of the Lehninger-only material was ruled on the same day (§9b).
-**Next up: §9 steps 4–6.**
+**Where the work stands.** **§9 steps 1–5 are all done.** The Lehninger index, the A↔B page map
+and the master table are in `lehninger_index/` (read its `README.md`); all 207 nodes now carry
+`book` and `topicKey` (§9c); the validator understands two books (§9d). §8's three open
+decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
+make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**What to ask the user before writing content**, in priority order: (a) the six regulation
-sections in §9b that were deliberately left un-ruled; (b) any classmate report of a real exam
-question — §3 makes these outrank everything in this file, and one has already overturned a
-plan once.
+**Next up: §9 step 6 — writing content.** Everything mechanical is finished; from here on the
+work is judgement, and the pieces that need a human are listed below rather than buried.
+
+**What to ask the user before writing content**, in priority order:
+
+1. **The six regulation sections in §9b that were deliberately left un-ruled** (§14.5, 15.1,
+   15.3, 19.4, 19.5, 28.3, 43 pages). They are not new topics; they are the regulation layer of
+   pathways the Czech book already teaches, so neither the "work properly" nor the "one line"
+   bucket obviously fits.
+2. **Any classmate report of a real exam question.** §3 makes these outrank everything in this
+   file, and one has already overturned a plan once.
+3. **Which topic to start with.** The user has chosen to work the whole high-ratio set (§8), but
+   not an order. §9a's queue is the natural one; the first integration card (tryptophan, §4) is
+   the natural alternative because it exposes the card shape early.
 
 ---
 
@@ -54,8 +64,9 @@ backwards. §3 and §6 have been rewritten; if you are working from a cached cop
 
 ## 0. Current state — everything is committed and live
 
-Nothing is left dangling. `main` = `807eb90`, all three branches synced with origin, working
-tree clean. Chapters 9 and 10 are committed, merged, and deployed.
+Nothing is left dangling. `main` = `585664c` (2026-08-06), pushed, working tree clean apart
+from the long-standing untracked `extracted_*/` evidence folders. Chapters 9 and 10 are
+committed, merged, and deployed.
 
 | | |
 |---|---|
@@ -84,8 +95,9 @@ committed but its deploys have not succeeded:
 
 **How to tell which artifact is live, without the API:** request
 `https://sumuxie.github.io/bio-state-exam/HANDOFF.md`. A **200** means the old repo-root
-artifact is still being served; a **404** means `_site` has taken effect. As of writing: 200,
-i.e. still the old one.
+artifact is still being served; a **404** means `_site` has taken effect. Checked again
+2026-08-06 after the step 4/5 push: still **200**, and `biochemie_pro/` also returns 200 — so
+the site is serving fine, from the old wide artifact. Unchanged, still cosmetic.
 
 If it keeps timing out, the thing to question is whether Pages is struggling with the large
 repository checkout rather than the artifact — `actions/checkout@v4` still pulls all 117 MB
@@ -398,14 +410,21 @@ side, while the existing book view stays for linear reading.
 Integration cards need their own shape — probably `kind: "entity"` with `topicKey` but no
 `chapter`/`pages`, since they are not anchored to one place in either book.
 
-### The quality metric changes, and `tools/validate-data.js` must follow
+### The quality metric changes, and `tools/validate-data.js` must follow — **DONE**
 
-For the Czech book the bar was **full page coverage with no gaps**, and the validator enforces
+For the Czech book the bar was **full page coverage with no gaps**, and the validator enforced
 it per chapter. For Lehninger that check is actively wrong — gaps are the intended outcome.
+Left as-is, every Lehninger node would have failed CI and someone would have "fixed" it by
+padding coverage, which is the opposite of the plan.
 
-**Make the page-gap check apply only to `book === "cz"`.** Left as-is, every Lehninger node will
-fail CI and someone will "fix" it by padding coverage, which is the opposite of the plan. The
-replacement metric is **topic coverage**: for each exam topic, is there a node deep enough?
+**This landed on 2026-08-06 — see §9d for exactly what the validator now does.** The schema
+above is also live: all 207 nodes carry `book: "cz"` and a `topicKey` (§9c).
+
+Still outstanding, and it is a design question rather than a code change: the replacement
+metric is **topic coverage** — for each exam topic, is there a node deep enough? Nothing
+measures that yet. `lehninger_index/depth_queue.tsv` ranks where depth is *owed*; it does not
+check whether it has been *delivered*. Wire that up once enough Lehninger nodes exist for the
+answer to be non-trivial.
 
 ---
 
@@ -452,12 +471,13 @@ any of this. Steps 4–6 are the remaining work.
    search B, then convert. `scripts/locate.py` does this for any phrase.
 3. ~~Overlay the exam scope~~ → `lehninger_index/master_map.tsv`, one row per Czech section,
    113 rows, on the skeleton settled in §8.
-4. **Add `book: "cz"` and `topicKey` to the 207 existing nodes.** Mechanical. Do this in
-   `biochemie_pro/` only. `master_map.tsv` already carries the Czech section, its node ids and
-   its Lehninger targets on one row, so `topicKey` can be assigned from it rather than invented.
-5. **Fix the validator** to scope the page-gap check to `book === "cz"` (§7).
-6. **Then, and only then**, write content — one topic at a time, no deadline. The user has
-   explicitly removed time pressure: *"如果难也没关系慢慢做就好，不需要你一天一夜一个session就做完"*.
+4. ~~Add `book: "cz"` and `topicKey` to the 207 existing nodes~~ → **done.** 414 pure
+   insertions in `biochemie_pro/` only; `biochemie_basic` untouched. See §9c for how
+   `topicKey` was chosen — you need that before writing any Lehninger node.
+5. ~~Fix the validator~~ → **done**, plus two checks it turned out to be missing. See §9d.
+6. **Write content — this is where the work now is.** One topic at a time, no deadline. The
+   user has explicitly removed time pressure: *"如果难也没关系慢慢做就好，不需要你一天一夜一个
+   session就做完"*.
 
 Do the first integration card early, on a well-understood entity — tryptophan is a good choice
 because §6 shows the source material is all there. It will expose the shape faster than
@@ -526,6 +546,59 @@ Note the Chinese notes do have a 氨基酸生物合成 topic (二十六) with no
 consistent with §22.2 being ruled in.
 
 ---
+
+### 9c. How `topicKey` was chosen — read before writing a Lehninger node
+
+**`topicKey` is a slug for the *primary Lehninger section*** that the node's Czech section maps
+to (the first entry in `master_map.tsv`'s `leh_sections`). 61 distinct keys over 113 Czech
+sections and all 207 nodes; the full table is `lehninger_index/topickey_assignment.json`.
+
+The reason it keys on Lehninger and not on the Czech numbering: a Lehninger node will be
+written *against a Lehninger section*, so keying on that section makes the join happen by
+itself. Keying on Czech §7.8 instead would mean every future Lehninger node needed someone to
+remember which Czech section it belonged to — a step that gets skipped, and a topic view that
+silently shows one book only.
+
+**So when you write a Lehninger node, its `topicKey` is not a judgement call.** Look up the
+Lehninger section you are writing from in `topickey_assignment.json` and use the key already
+sitting there. Only invent a new key for a Lehninger section no Czech node points at — the
+`full`-scope ones in §9b are exactly that case (ch9, §22.2, §24.2–24.3, §25.2–25.3), and they
+have no key yet.
+
+Czech sections that share a Lehninger section share a key, which is the intended grouping: all
+twelve sugar sections join on `monosaccharides`, the five kinetics sections on
+`enzyme-kinetics`. 33 of the 61 keys are used by exactly one Czech section.
+
+**Caveat that travels with it:** topicKey inherits the Czech→Lehninger mapping, and that
+mapping is proposed, not verified (65 % agreement with an independent matcher — `README` in
+`lehninger_index/`). A wrong mapping produces a wrongly-grouped topic, not a broken app.
+`topicKey` is not an `id`; unlike `id` it may be corrected later.
+
+### 9d. What the validator now enforces
+
+`tools/validate-data.js`, rewritten 2026-08-06:
+
+- **The page-gap check applies only to `book === "cz"`**, and a node with no `book` counts as
+  `cz` — so `biochemie_basic` keeps precisely the check it had. Lehninger gaps are the intended
+  outcome (§4); enforcing coverage there would push someone to pad the data until the check
+  went quiet, which is the opposite of the plan.
+- **Everything that groups by chapter now groups by book *and* chapter**, because `chapter` is
+  book-local (§7). Merging the two numbering spaces would union two unrelated page ranges.
+- **`book` and `topicKey` are all-or-nothing within an app.** A half-migrated app is exactly the
+  state where a topic view silently drops whatever was missed and still looks right on screen.
+- **The data files are read from `index.html`'s `<script>` tags and cross-checked against
+  `data/` on disk.** A file nobody loads, or a tag pointing at nothing, both used to pass
+  silently against the old hardcoded `ch1..ch10` loop. This is the check that would have caught
+  the wiring mistakes `HANDOFF.md` §3 step 2 warns about.
+
+**There is still no `node` on this machine, so it cannot be run locally.** It was parsed with
+`esprima` and its logic re-implemented against the real data
+(`lehninger_index/scripts/step5_check.py`); both apps come out clean. That script also runs
+negative tests, because a check that never fails is not a check — and the first version of one
+of those tests was itself wrong: it deleted a page that a neighbouring Czech node also covered,
+so no gap appeared and the test "passed" without proving anything. **Czech sections overlap**
+(§7.1.3 is pp.149–152, §7.1.4 is p.151); anything that reasons about page ownership has to
+account for that. It now searches for a uniquely-owned interior page instead.
 
 ## 10. Reproducing the measurements
 
