@@ -27,9 +27,11 @@ jobs:
 
       - name: Check the topic data parses and is well formed
         run: |
-          node -e "
+          for APP in biochemie_basic biochemie_pro; do
+          echo "=== $APP ==="
+          APP=$APP node -e "
           global.window = {};
-          require('./data/ch1.js'); require('./data/ch2.js'); require('./data/ch3.js'); require('./data/ch4.js'); require('./data/ch5.js'); require('./data/ch6.js'); require('./data/ch7.js'); require('./data/ch8.js'); require('./data/ch9.js'); require('./data/ch10.js');
+          for (let i = 1; i <= 10; i++) require('./' + process.env.APP + '/data/ch' + i + '.js');
           const T = window.BIOCHEM.topics;
           if (!T.length) throw new Error('no topics loaded');
           const problems = [];
@@ -56,6 +58,7 @@ jobs:
           const qs = T.reduce((n, t) => n + (t.quiz || []).length, 0);
           console.log('ok: ' + T.length + ' topics, ' + terms + ' terms, ' + qs + ' questions');
           "
+          done
 
   # The github-pages environment only permits deployments from the default
   # branch, which is also the behaviour we want: feature branches must not
