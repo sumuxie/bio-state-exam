@@ -1,6 +1,6 @@
 # START HERE — the Lehninger phase
 
-**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 192 KB ≈ 48k
+**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 196 KB ≈ 49k
 tokens and reading it triggers a compaction before you have done any work. That file is now an
 **archive you grep into**, one section at a time, using the index at the bottom of this page.
 `HANDOFF.md` (69 KB, the Czech app) is the same: grep, never read whole. Both sizes are
@@ -161,30 +161,48 @@ version of the decision:
   the pH-rate profile in Fig. 6-26 on A p.205, hexokinase closing over glucose, penicillin as a
   drug that works because of a mechanism.
 
-### Next pick: no free queue picks remain — choose between two
+## ✅ Rank 8 (§16.2) is decided too — `citric-acid-cycle`, four Czech nodes moved (2026-08-07)
+
+**`L-16-2-1` will take a NEW key `citric-acid-cycle`; `6-2-2-1/2/3` were moved into it and
+`6-2-2-4` to the existing `intermediary-metabolism-hub`, leaving `acetyl-coa-production` empty by
+design.** Archive **§9h** has the evidence. Unlike §9g this DID cost hand edits — ⚠️ **four of
+them, and `step4_topickeys.py` would silently revert all four**; both `topickey_*.json` carry a
+`manual_note`.
+
+Why: Czech §6.2.2 maps to `16.1,16.2,16.4`, so the key came from the primary §16.1 and was named
+`acetyl-coa-production` — then held four nodes **none of which teaches acetyl-CoA production**,
+while the node that does (`7-8-5`, the PDH complex) sits correctly under `fates-of-pyruvate`. That
+is rank 1's failure mode and rank 9's at once. `7-8-5` was deliberately **not** moved, so a future
+§16.1 node (rank 45) should reuse `fates-of-pyruvate` per §9g rather than revive the empty key.
+
+Already measured, so the writing session need not re-derive: **§16.2 = A pp.578–589**, verified at
+both ends; both first subheadings are on A p.580; the first subheading **cannot be probed in
+full** (use a fragment); and the Czech coverage of the cycle is already **strong**, so this node
+should be narrower than §6.4's — the depth is in the chemical logic, the prochirality of citrate,
+and the modern regulation material, not in re-listing the eight steps.
+
+### Next pick: `L-16-2-1` is decided and unwritten — or the entity cards
 
 `lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
 the Czech book. Top 20, with the 13 done ones struck through:
 
 ~~1 §5.1~~ · ~~2 §8.3~~ · ~~3 §6.4~~ · ~~4 §11.3~~ · ~~5 §21.1~~ ·
 ~~6 §19.1~~ · ~~7 §23.2~~ ·
-8 §16.2 · ~~9 §17.2~~ · 10 §19.2 · 11 §11.2 · ~~12 §1.3~~ · 13 §2.2 · ~~14 §3.4~~ · 15 §8.2 ·
+**8 §16.2 ← decided (§9h), unwritten** · ~~9 §17.2~~ · 10 §19.2 · 11 §11.2 · ~~12 §1.3~~ ·
+13 §2.2 · ~~14 §3.4~~ · 15 §8.2 ·
 16 §26.2 · ~~17 §22.3~~ · ~~18 §3.3~~ · 19 §23.3 · ~~20 §25.1~~
 
-**The first seven ranks are now all written, and every one of the eight that remain needs a
-`topicKey` decision before a word can go on the page.** So the next move is again a choice, not
-a queue pop:
+**The first eight ranks are now written or decided; the seven after them still need a `topicKey`
+decision before a word can go on the page.** So:
 
-1. **Take a remaining rank and make its `topicKey` decision.** The highest ratio left is
-   **rank 8 (§16.2, reactions of the citric acid cycle, ratio 7.2)**; §13m added a THIRD
-   possible outcome to the §9e check and §9g a fourth, on top of the two failure modes below:
-   the key's Czech node
-   may be a thin-but-legitimate partner while the real material sits *scattered* across pathway
-   nodes that must **keep** their own keys. In that case re-key nothing — the multi-source keys are
-   working joins and breaking one to tidy another is a bad trade — and cross-reference by hand
-   inside the node instead. **§9g adds a fourth outcome**: when the Czech section maps to two
-   Lehninger sections that deepen the *same* node, the primary's key already fits, so reuse it and
-   change nothing.
+1. **Write `L-16-2-1` — rank 8, ratio 7.2, decision taken in §9h and the section already scoped.**
+   The Czech coverage of the cycle is strong, so keep the node narrow. If you would rather take an
+   undecided rank, the highest left is **rank 10 (§19.2 ATP Synthesis, ratio 6.0)**, and the §9e
+   check now has four possible outcomes: the two failure modes below, plus **§13m's third** — the
+   key's Czech node is a thin-but-legitimate partner while the real material sits *scattered*
+   across pathway nodes that must **keep** their own keys, so re-key nothing and cross-reference by
+   hand — plus **§9g's fourth**, where the Czech section maps to two Lehninger sections that deepen
+   the *same* node, so the primary's key already fits and nothing changes at all.
 2. **The entity cards** — archive §4, §12. This is `pro`'s *headline feature* and it still has
    exactly one card. §12 already contains a finished tryptophan dossier that nothing has been built
    from. Of the three, this is the one the user named as the point of the app.
@@ -321,6 +339,7 @@ Search for the `## N.` or `### Na.` heading, read that section only.
 | 9d | what the validator enforces now |
 | 9e | **the two-minute check** and the first `topicKey` correction |
 | 9g | **rank 3 (§6.4) decided** — reuse the primary's key, re-key nothing; plus §6.4's verified page range, subheadings, SUMMARY and the four things the Czech layer lacks |
+| 9h | **rank 8 (§16.2) decided** — a new key `citric-acid-cycle`, four Czech nodes moved, `acetyl-coa-production` emptied; plus §16.2's verified page range and what the Czech nodes already cover |
 | 9f | `lehNotes` — the format, the bar, the six that exist |
 | 12 | the tryptophan entity card — a finished dossier, nothing written yet |
 | 13–13o | one per Lehninger node, then two method sections. `13j` (`L-5-1-1`) is the best template for how to *write* a node; `13l` (`L-25-1-1`) for how to *verify* one — page ranges, B-to-A drift, OCR traps; `13m` (`L-23-2-1`) for the two checker bugs that inflated every audit before 2026-08-07; **`13o` for clearing the citation backlog to zero and the three probe constraints that silently drop a quote** |

@@ -557,7 +557,7 @@ window.BIOCHEM.topics.push(
 {
   id: "6-2-2-1",
   book: "cz",
-  topicKey: "acetyl-coa-production",
+  topicKey: "citric-acid-cycle",
   chapter: 6,
   section: "6.2.2",
   czTitle: "Citrátový cyklus — úvod, přehled cyklu, citrátsynthasa",
@@ -643,7 +643,7 @@ window.BIOCHEM.topics.push(
 {
   id: "6-2-2-2",
   book: "cz",
-  topicKey: "acetyl-coa-production",
+  topicKey: "citric-acid-cycle",
   chapter: 6,
   section: "6.2.2",
   czTitle: "Citrátový cyklus — izomerace a dvě oxidační dekarboxylace (citrát → isocitrát → 2-oxoglutarát → sukcinyl-CoA)",
@@ -723,7 +723,7 @@ window.BIOCHEM.topics.push(
 {
   id: "6-2-2-3",
   book: "cz",
-  topicKey: "acetyl-coa-production",
+  topicKey: "citric-acid-cycle",
   chapter: 6,
   section: "6.2.2",
   czTitle: "Citrátový cyklus — substrátová fosforylace a regenerace oxalacetátu, souhrnná rovnice a energetická bilance",
@@ -812,7 +812,7 @@ window.BIOCHEM.topics.push(
 {
   id: "6-2-2-4",
   book: "cz",
-  topicKey: "acetyl-coa-production",
+  topicKey: "intermediary-metabolism-hub",
   chapter: 6,
   section: "6.2.2",
   czTitle: "Citrátový cyklus — vztah k biosyntetickým pochodům a anaplerotické reakce",

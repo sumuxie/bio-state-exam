@@ -1224,6 +1224,62 @@ nodes, which is the feature working, not a clash.
   clears §9f's bar — would revising from `3-6` alone mislead in an exam? — is a judgement to make
   with the section open, not now.
 
+### 9h. Rank 8 (§16.2) — the `topicKey` decision: a new key `citric-acid-cycle`, and four Czech nodes moved (2026-08-07)
+
+**The decision: `L-16-2-1` is to be written with `topicKey: "citric-acid-cycle"`, a key created
+for it. Czech `6-2-2-1`, `6-2-2-2` and `6-2-2-3` were moved into it; `6-2-2-4` was moved to the
+existing `intermediary-metabolism-hub`; `acetyl-coa-production` is now EMPTY by design.** This is
+rank 1's remedy applied a second time, and unlike §9g it does cost hand edits — ⚠️ **all four are
+hand edits that `step4_topickeys.py` would silently revert**, and both `topickey_*.json` files
+carry a `manual_note` saying so.
+
+**The §9e check found rank 1's failure mode and rank 9's at the same time, which is new.** Czech
+§6.2.2 maps to `16.1,16.2,16.4`, so the generator built the key from the primary §16.1 and named
+it `acetyl-coa-production`. That key then held four nodes, and **not one of them teaches acetyl-CoA
+production** — all four are titled "The citrate cycle — …". Meanwhile the Czech book *does* teach
+§16.1's material perfectly well, in `7-8-5`, the pyruvate dehydrogenase complex on p.168, which
+sits under `fates-of-pyruvate` alongside `7-8-4`. So the key was misdescribing everything it held
+while the thing it was named for lived somewhere else, correctly keyed.
+
+**The split was made by subject, following §9e's precedent** (where `8-4-4-1` stayed on
+`fat-mobilization` while `8-4-4-2/3/4` moved). The match is unusually clean — Lehninger's
+subheadings and the Czech nodes line up one for one:
+
+| Lehninger | its subheadings | Czech node now under it |
+|---|---|---|
+| **§16.2** Reactions of the Citric Acid Cycle | the sequence makes chemical sense; the cycle has eight steps; the energy of oxidations is efficiently conserved | `6-2-2-1` (overview, citrate synthase), `6-2-2-2` (isomerisation, the two oxidative decarboxylations), `6-2-2-3` (substrate-level phosphorylation, oxaloacetate regeneration, the ATP balance) |
+| **§16.3** The Hub of Intermediary Metabolism | catabolic and anabolic roles; anaplerotic reactions replenish intermediates; **biotin in pyruvate carboxylase** | `6-2-2-4` (biosynthetic role, anaplerotic reactions, **pyruvate carboxylase with biotin**) — joins `10-11`, which was already there |
+
+**`7-8-5` was NOT moved, and that is deliberate** (§13m's rule). `fates-of-pyruvate` is an accurate
+key holding two nodes that belong together, and breaking it to fill an empty key would be exactly
+the bad trade §13m warns about. **The consequence for rank 45 (§16.1, ratio 2.4): reuse
+`fates-of-pyruvate` per the §9g pattern rather than reviving `acetyl-coa-production`.** The empty
+key is left in the assignment file with a `manual_note` explaining why, in the same spirit as
+`nucleic-acid-chemistry` (§2e).
+
+**Net effect on the counts: none.** One key created, one emptied — the app data still carries 63
+distinct `topicKey`s, and the emptied key simply stops appearing.
+
+#### Measured for the writing session
+
+- **§16.2 = A pp.578–589**, B pp.2103–2133. The TOC calls the A range `interpolated` and it is
+  **correct at both ends**: SUMMARY 16.1 and the §16.2 heading are both on A p.578, SUMMARY 16.2
+  is on A p.589, and §16.3 opens on A p.590.
+- **Both of the first two subheadings are on A p.580**, not 579–580 as the TOC allocates.
+- ⚠️ **The first subheading cannot be probed in full.** "the sequence of reactions in the citric
+  acid cycle" and the words chemical sense are each found on A p.580, but the whole subheading as
+  written is not — something between them is mangled in A's OCR. Probe with a fragment. The word
+  SUMMARY, by contrast, is intact throughout chapter 16, so the `sum ma ry` break recorded in §13p
+  really is per-page noise rather than a convention.
+- **What the Czech nodes already have, so the depth node does not restate it**: all nine steps with
+  EC numbers and cofactors from Tab. 6.3, citrate synthase as a regulatory enzyme, aconitase's
+  dehydration-rehydration, the two oxidative decarboxylations, succinyl-CoA synthetase making GTP,
+  covalently bound FAD in succinate dehydrogenase, and the 12 ATP per acetyl-CoA / 38 ATP per
+  glucose bookkeeping. The Czech coverage here is **strong**, so expect this node to be narrower
+  than §6.4's — the depth is in the chemical logic of why the sequence is what it is, the
+  stereochemical point about citrate being prochiral, and the modern regulation and metabolon
+  material, not in the step list.
+
 ---
 
 ## 11. Working with this user
