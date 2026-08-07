@@ -1789,7 +1789,7 @@ bench consequence attached; keep it that way.
   the ligature fix). A real and commonly examined property of Trp, absent from the source.
   Same treatment: outside-the-book, marked.
 
-### 12e. The second card — `E-histidine` (2026-08-07), and how to pick the next entity
+### 12e. The second and third cards — `E-histidine` and `E-cysteine` (2026-08-07/08), and how to pick the next entity
 
 **Written and validating.** `E-histidine` in `entity_cards.js`, `topicKey: "amino-acids"` — the
 same key as `E-tryptophan`, so the entity group now joins Czech `2-1-1`/`2-1-2`/`2-1-3`, the depth
@@ -1843,10 +1843,74 @@ structural fact, not a survey.** `glucose` and `phosphorylation` top the table a
 fits, because neither reduces to a single generating property; a card on either would be a summary
 of half the book. **`heme` is the strongest untouched candidate** (22 chapters, and it does reduce
 to one fact: a porphyrin ring holding an iron) with chains running O₂ binding → electron transfer →
-catalysis → degradation to bilirubin and jaundice. **`cysteine` is the strongest remaining amino
-acid**: thiol → disulfide → the oxidising extracellular versus reducing cytosolic environment →
-why secreted proteins carry disulfides and cytosolic ones do not → insulin's own chains → DTT and
-non-reduced SDS-PAGE on the bench → Fe-S clusters → glutathione.
+catalysis → degradation to bilirubin and jaundice. ~~`cysteine` is the strongest remaining amino
+acid~~ — **written 2026-08-08, see §12f.**
+
+### 12f. The third card — `E-cysteine` (2026-08-08), and the amino-acid set is now closed
+
+**Written and validating.** `E-cysteine` in `entity_cards.js`, `topicKey: "amino-acids"` again.
+`biochemie_pro` reports **230 topics (207 cz, 20 lehninger, 3 entity)**; **24 citation rows, ALL OK
+ON THE FIRST RUN** — the pre-test method's cleanest result yet — audit at 458 OK / 0 ELSEWHERE /
+0 UNCHECKED.
+
+**The generating fact is a third KIND of special**, which is what makes the three cards a set
+rather than three of a kind. Trp is special **optically** (a flat conjugated ring → 280 nm → the
+Nanodrop); His is special **electrostatically** (a pKₐ at 6.0 → catalysis and the Bohr effect); Cys
+is special **covalently** — it is *the only side chain that forms an actual covalent bond with
+another side chain*. That framing is written into `points[3]` of the cysteine card as the takeaway:
+asked why an amino acid matters, decide first which of the three kinds of special it is.
+
+⚠️ **The card opens by rejecting the obvious answer, and this is worth copying.** Lehninger files
+cysteine with the polar uncharged R groups and then immediately demotes it — *"cysteine is an
+outlier here because its polarity"* is *"contributed by its sulfhydryl group, is quite modest"*
+(A p.76). So the textbook's own classification is a red herring; the card says so in step 1 rather
+than reciting the class. Four chains follow:
+
+1. **reactivity not polarity → cystine → a covalent staple** (§3.1, §3.4). Ends on insulin, two
+   chains that *"are joined by disulfide cross-linkages"* and nothing else (A p.92) — which neither
+   Czech `10-25` nor `L-23-3-1` mentions, though both teach insulin.
+2. **covalent means you must break it deliberately** (§3.4). Sanger had to break insulin before
+   sequencing it; performic acid or DTT, then cap the freed thiols because *"Carboxymethylation by
+   iodoacetate serves this purpose"* (A p.93). Ends on reduced-versus-non-reduced SDS-PAGE.
+3. **forming the RIGHT pairs is hard** (§4.4). Anfinsen, then protein disulfide isomerase, whose
+   job is *"the interchange, or shuffling, of disulfide bonds"* (A p.133). **The observable is the
+   enzyme itself** — evolution does not maintain a shuffling enzyme unless mispairing is frequent.
+4. **the UNpaired thiol is the cell's reducing power, and it ends in a hospital** (§14.6).
+   glutathione → NADPH → pentose phosphate → G6PD → favism (*"erythrocytes begin to lyse 24 to 48
+   hours after ingestion of the beans"*, A p.548) → and the deficiency persists in 400 million
+   people because *"The parasite is very sensitive to oxidative damage"* (A p.548). **The best
+   chain ending written so far**: one sulfhydryl group to a selection pressure in human populations.
+
+⚠️ **A misquote was caught by reading, not by the checker — the citation row was OK.** The CN half
+of one chain step had a stray duplicated word inside a book quote (*covalently linked cystine
+dimeric amino acid*). `verify_citations.py` passed the row because the **EN** half carried the
+correct quote and an OK from any probe satisfies the row. **The checker verifies that a page
+supports a citation; it does not verify that every quoted span is quoted accurately.**
+
+The cheap guard, which found 0 further cases across all of `data/` and should be run before any
+commit that adds quotes — it groups every typographic-quoted span by its opening and reports any
+group whose members are not identical, which is exactly the shape a copy-paste slip makes:
+
+```python
+import io, re, glob, collections
+spans = collections.defaultdict(set)
+for f in glob.glob('biochemie_pro/data/*.js'):
+    for q in re.findall(r'“([^“”]{18,140})”', io.open(f, encoding='utf-8').read()):
+        spans[q[:40]].add(q)
+for k, v in spans.items():
+    if len(v) > 1:
+        print('DIVERGENT:', k, *sorted(v), sep='
+    ')
+```
+
+**Two `beyondPoints`, both honest absences** rather than guesses: the compartment rule (oxidising
+ER/extracellular versus reducing cytosol, the standard reason secreted proteins carry disulfides)
+is **not** in any passage read for this card, so no page is cited for it; and how a disulfide
+*pattern* is determined experimentally — peptide-mapping before and after reduction — is likewise
+absent from the pages read.
+
+**After this card the amino-acid trio is closed.** The next entity should come from a different
+family; on the measurement above that is **`heme`**.
 
 ---
 
