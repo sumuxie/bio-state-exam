@@ -1,11 +1,11 @@
 ==============================================================================
-HANDOFF_LEHNINGER.md  (2792 lines)
+HANDOFF_LEHNINGER.md  (2852 lines)
 ==============================================================================
   L187   UNBALANCED ** across paragraph
           ...1. ~~**The six regulation sections in §9b left un-ruled**~~ → **alread
   L1027  PARAGRAPH TRUNCATED (no terminal punctuation)
           ...- `10-9` → `fatty-acid-biosynthesis`, where a node about synthesis belongs
-  L2666  SUBSECTION ORDER 16: ['a', 'c', 'b'] not alphabetical
+  L2726  SUBSECTION ORDER 16: ['a', 'c', 'b'] not alphabetical
 
 ==============================================================================
 HANDOFF.md  (913 lines)
@@ -20,7 +20,7 @@ lehninger_index/README.md  (87 lines)
 ==============================================================================
 STALENESS (live data vs what the handoffs claim)
 ==============================================================================
-  live: 221 topics, 13 lehninger, 63 topicKeys, 13 joining both books
+  live: 222 topics, 14 lehninger, 63 topicKeys, 14 joining both books
   clean
 
 TOTAL: 3

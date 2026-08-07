@@ -44,8 +44,8 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — thirteen Lehninger nodes now exist, the depth queue's ready-to-write
-primaries are EXHAUSTED, and the citation backlog is CLEARED: 260 OK / 0 ELSEWHERE / 0 UNCHECKED
+**§9 step 6 is under way — fourteen Lehninger nodes now exist, the depth queue's ready-to-write
+primaries are EXHAUSTED, and the citation backlog is CLEARED: 278 OK / 0 ELSEWHERE / 0 UNCHECKED
 (§13o).** Every `A p.N` in the app data now self-verifies on every run. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
@@ -2460,6 +2460,66 @@ consequence, a lowered pKa.
 their own keys: `3-2` (metal-ion roles), `5-1` (the four protease classes in Tab. 5.1, and the
 chymotrypsinogen cascade), `6-1-1` (hexokinase as energetic coupling), `7-8-1` and `7-8-3`
 (hexokinase and enolase as glycolytic steps). Each is named inside the point that touches it.
+
+### 13q. The fourteenth node — `L-16-2-1`, §16.2 Reactions of the Citric Acid Cycle (2026-08-07): what to write when the Czech chapter is already strong
+
+Rank 8, ratio 7.2. A pp.578–589, B pp.2103–2133, in a new `biochemie_pro/data/leh_ch16.js`,
+joining Czech `6-2-2-1`, `6-2-2-2` and `6-2-2-3` through `citric-acid-cycle`, the key created for
+it by the §9h decision. **Read §9h before this section** — the node could not be written at all
+until four Czech nodes were re-keyed by hand.
+
+**The interesting problem here was the opposite of every previous node's: the Czech coverage is
+already very good.** Tab. 6.3 lists all nine steps with EC numbers and cofactors, Obr. 6.3 is a
+full structural roadmap, and the three nodes walk every enzyme. A depth node that re-listed the
+eight steps would have been pure padding — the failure mode §4 warns about. So the node was
+written to supply only what a step list structurally cannot, and that turned out to be four
+things, which is a template worth reusing whenever the Czech side is strong:
+
+1. **The argument for the pathway's shape.** Acetate cannot be oxidised directly, because
+   decarboxylating a two-carbon acid gives methane and almost nothing can oxidise methane; what
+   enzymes handle is a methylene next to a carbonyl; therefore step 1 exists to attach the
+   unreactive methyl group to something. Then the general rule: every step is either an oxidation
+   or the preparation for the next one. A student who knows this stops memorising an arbitrary
+   order.
+2. **The thermodynamic thread**, which explains three separate facts at once: oxaloacetate is
+   catalytic and micromolar; citrate synthase must therefore be strongly exergonic, and is,
+   through the hydrolysis of an enzyme-bound citroyl-CoA; and malate dehydrogenase's badly
+   unfavourable equilibrium runs anyway because citrate synthase removes its product.
+3. **Mechanism and regulation the list omits**: citrate synthase's ordered binding as a device
+   against wasting acetyl-CoA; aconitase moonlighting as iron regulatory protein 1 when it loses
+   its iron-sulfur cluster (Box 16-1); two isocitrate dehydrogenases, NAD for the cycle and NADP
+   for reductive biosynthesis; the phosphohistidyl intermediate and the two isozymes of
+   succinyl-CoA synthetase; and **malonate**, which appears **nowhere in the Czech layer** even
+   though `3-5` teaches competitive inhibition — the classic case of one small analogue stopping
+   an entire pathway.
+4. **Two things that are examinable and absent from the Czech book entirely**: the prochirality of
+   citrate, with the 1940s carbon-14 controversy and Ogston's 1948 three-point-attachment
+   resolution (Box 16-2) — which is the worked case for the sentence `3-6` states abstractly about
+   distinguishing two identical substituents on a non-chiral carbon — and the fact that the two
+   carbons leaving as CO2 in a turn are not the two that entered, because succinate and fumarate
+   are symmetric.
+
+**One `lehNote`, kind `conflict`, on `6-2-2-3` — the tenth in the data, and the first purely
+numerical disagreement between the two books.** Czech `6-2-2-3` gives about 3 ATP per NADH and 2
+per FADH2, hence 12 per acetyl-CoA and **38 per glucose** as 8 + 6 + 24. Lehninger uses the
+measured non-integer stoichiometries, about 2.5 and 1.5, and reports **30 to 32 per glucose**
+(TABLE 16-1, A p.589), the range coming from which shuttle carries cytosolic NADH into the matrix.
+Neither book is careless — the difference is the P/O convention, not the biochemistry. **The note
+says explicitly to answer 38 in this course** and to be able to explain the discrepancy, which is
+the honest advice: this is a case where the depth layer must not be allowed to make the student
+contradict their own examiner.
+
+**Citations: 19 rows. 16 were OK on the first run and the 3 UNCHECKED were closed in the same
+commit**, per the standing rule. Two of the three were in the `coverageNote` and one was a point
+with no quotable phrase; the fix for the third followed §13m's rule — the forward pointer to §16.3
+now names the section instead of citing a page in a section this node did not read. Whole-project
+audit: **278 OK / 0 ELSEWHERE / 0 UNCHECKED**.
+
+**A `cnNote` was deliberately NOT written, and the reason is worth recording** because the first
+draft got it wrong. The draft invented `topic: "十四"` for the citrate cycle. All three Czech
+partner nodes carry **no** `cnNote`, and the Chinese notes were never opened for this node — so the
+number was a guess, which is exactly what §2c forbids: *flagging a gap is not the same as guessing
+it*. The field was removed and the omission explained in the `coverageNote` instead.
 
 ---
 
