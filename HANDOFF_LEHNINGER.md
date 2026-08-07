@@ -44,7 +44,15 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — nine Lehninger nodes now exist.** `L-8-3-1` in `biochemie_pro/data/leh_ch8.js` (§13k, completed 2026-08-07) covers nucleic acid chemistry with no Czech partner node; it joins the new topicKey `nucleic-acid-chemistry` treating Lehninger §8.3 as full-scope depth material (like the §9b listings). `L-3-4-1` in
+**§9 step 6 is under way — ten Lehninger nodes now exist.** `L-25-1-1` in
+`biochemie_pro/data/leh_ch25.js` (§13l, added 2026-08-07) covers §25.1 DNA replication and joins
+Czech `4-1-3-1` and `4-1-3-2` through the pre-existing `topicKey: "dna-replication"` — the first
+node whose §9e check passed with **no data change of any kind**, and the first into the
+molecular-biology half of the book. **Read §13l before writing the next node:** this section's
+`interpolated` A page range was wrong at its start by a whole page, and ten of 54 candidate
+quotes turned out to be on a different A page than B's layout implied, which together make the
+rule *never scale a B page into an A page — search A*. `L-8-3-1` in
+`biochemie_pro/data/leh_ch8.js` (§13k, completed 2026-08-07) covers nucleic acid chemistry with no Czech partner node; it joins the new topicKey `nucleic-acid-chemistry` treating Lehninger §8.3 as full-scope depth material (like the §9b listings). `L-3-4-1` in
 `biochemie_pro/data/leh_ch3.js` (§13) joins Czech node `2-2-1` through
 `topicKey: "protein-primary-structure"` — the Czech book says *why* an amino acid sequence
 matters, Lehninger §3.4 says *how* one is determined. `L-11-3-1` in
@@ -886,16 +894,19 @@ primaries are now done: rank 14 (`L-3-4-1`), rank 4
 nodes (`6-2-4-1..5`) — the topic view's largest join yet; `L-1-3-1` covers all of §1.3 (A
 pp.18-27) and joins both `1-4` and `1-5`.
 
-**Three writable primaries remain in this table.** Rank 17 is done (`L-22-3-1`, §13i), and its
+**Two writable primaries remain in this table.** Rank 17 is done (`L-22-3-1`, §13i), and its
 §9e check **passed** — the first time it has, which is what makes the check credible rather than
 merely cautious. Ranks 5 and 9 are both done (`L-21-1-1` §13g,
 `L-17-2-1` §13h) and **§5a's organic-chemistry warning turned out to be manageable in both** —
 §13g records the approach and §13h confirms it holds. Treat the §5a flag as "write it this way",
-not "avoid". What is left: **rank 7** (§23.2 tissue-specific metabolism, 1 waiting), **rank 18**
-(§3.3 working with proteins, 1 waiting) and **rank 20** (§25.1 DNA replication, 2 waiting).
-Rank 20 is probably the best next pick of the three — most waiting nodes, no §5a flag, and it
-opens the molecular-biology half of the book, which the depth layer has not touched at all yet
-(everything so far is metabolism, membranes or bioenergetics).
+not "avoid". **Rank 20 (§25.1 DNA replication) is done** (`L-25-1-1`, §13l, 2026-08-07): its §9e
+check passed outright — `dna-replication` already held exactly the two Czech nodes that teach the
+subject, so it needed no data change at all — and it opened the molecular-biology half of the
+book, which the depth layer had not touched. **§13l is the one to read before the next node**, for
+two reasons that generalise: this section's `interpolated` A range was wrong at its start by a
+page, and ten of 54 candidate quotes proved to be on a different A page than B's layout implied.
+What is left: **rank 7** (§23.2 tissue-specific metabolism, 1 waiting) and **rank 18** (§3.3
+working with proteins, 1 waiting).
 
 **Raised with the user 2026-08-07 and answered: re-key per §9e, one section at a time.** The
 single thinnest place in the whole queue, rank 1 §5.1 Oxygen-Binding Proteins at ratio 17, is
@@ -1851,6 +1862,126 @@ statement that §8.4 is *out of scope*; §8.4 = A pp.294–296 confirmed directl
 `biochemie_pro` now reports **217 topics (207 cz, 9 lehninger, 1 entity), 63 topicKeys**, with
 **9 of them joining more than one source** — unchanged by this node, deliberately, since
 `nucleic-acid-chemistry` joins exactly one. `step5_check.py`: all checks pass.
+
+### 13l. The tenth node — `L-25-1-1`, §25.1 DNA Replication (2026-08-07): the first §9e check that cost nothing, and the first node whose page range was *wrong in the index*
+
+Rank 20, ratio 3.8, A pp.915–930, B pp.3200–3250, in
+`biochemie_pro/data/leh_ch25.js`, joining Czech `4-1-3-1` and `4-1-3-2` through the
+**pre-existing** `topicKey: "dna-replication"`. This is the first node into the
+molecular-biology half of the book; everything before it was metabolism, membranes or
+bioenergetics.
+
+**The §9e two-minute check passed outright, and this is the first time it has cost nothing.**
+`dna-replication` already existed and already held exactly `4-1-3-1` and `4-1-3-2` — which are
+precisely the two Czech nodes that teach the subject. No key created, no node moved, no
+`manual_note` needed in either `topickey_*.json`. Rank 17 passed the check too but only after
+inspection; here the mapping was simply right. **Two of the eleven writable primaries have now
+needed surgery (ranks 1 and 9) and two have not (ranks 17 and 20) — the check is worth its two
+minutes, but it is not a foregone conclusion that it fails.**
+
+**⚠️ `lehninger_B_toc.json`'s A range for this section is wrong at its start, and the error is
+of a kind the file cannot flag.** The entry gives `page_a_print: 914` with
+`a_confidence: "interpolated"`. A p.914 is the **chapter 25 opener** — chapter title, the
+three-section contents list, and the chapter's introductory prose. §25.1's own first sentence,
+*"Long before the structure of DNA was known"*, is on **A p.915**. The node therefore claims
+pp.915–930 and the queue's 17-page span is really 16. Worth generalising: **an `interpolated`
+A range can be off at either end by a whole page, and the cheapest way to find out is to search
+A for the section's first subheading before writing anything.**
+
+**B's page breaks do not line up with A's, and this bit me ten times in one pass.** Of 54
+candidate quotes checked before writing, **ten sat on a different A page than B's layout
+implied — every one off by exactly one.** All ten were corrected before being written down.
+This is now a rule rather than an anecdote: **never derive an A page by scaling a B page.
+Search A.** The measured landmark map for this section (subheadings, all 18 figures, all 4
+tables) is reproducible with the probe script pattern in §16a.
+
+**Four new OCR traps in A, all the same family as §13j's subscript trap — the checker or the
+search reporting its own limitation as a finding.** Each can make a *correct* citation look
+wrong:
+
+| what A's OCR does | consequence |
+|---|---|
+| `Klenow` → `kienow` (lower-case L read as I) | the sentence naming the Klenow fragment is verbatim on p.920, yet a probe containing "Klenow" returns **nothing in the entire book** |
+| directional arrows → unmapped replacement character | no quote containing `5′→3′` can ever match |
+| roman `III` → `ill` (also `polC` → `po!c`, `dnaE` → `dnoe`) | `DNA polymerase III` is not a safe probe string |
+| primes gain a stray space: `3′-hydroxyl` → `3' -hydroxyl` | defeated the first probe of the two-metal-ion sentence |
+
+Every verbatim quote in this node was consequently chosen to contain **no prime, no arrow, no
+subscript and no roman numeral**, and each was confirmed present on its cited page *before*
+being written. Result: **46 citations, 46 OK, 0 ELSEWHERE, 0 UNCHECKED** — the first node with
+no hand-check backlog at all.
+
+**A fifth bug in `verify_citations.py`, and it is the apostrophe bug again in a new disguise
+(§16a).** The guard `(?<![A-Za-z])` was added so a possessive `'s` could not open a quote. But a
+possessive can follow a **digit** — `Table 25-1's 250 to 1,000 nucleotides per second` — and `1`
+is not in `[A-Za-z]`, so that apostrophe was accepted as an opening delimiter. The regex then ran
+from it to the next quote character in the field, which was the **opening mark of a real book
+quote**, consuming it: the manufactured probe was `"s 250 to 1,000 nucleotides per second for
+polymerase III, and the statement that"` and the genuine quote it ate —
+`“The rate of movement of the replication fork in eukaryotes”`, verbatim on A p.928 — never
+became a probe at all. Two correct citations were reported ELSEWHERE as a result. Fixed to
+`(?<![A-Za-z0-9])`. Measured across the whole data set: **159 OK → 161, 32 UNCHECKED → 30,
+ELSEWHERE 0 either way, nothing downgraded.** The same bug was already firing on **two older
+nodes** without changing their verdict but fabricating their reason: `L-11-3-1` and `L-19-1-1`
+read `probe not found even ±40 pages: 's helical-wheel diagram, fig. 11-38'` and
+`'s complex i structure, fig. 19-10'` — text assembled out of the node author's own prose after
+`Fig. 11-38's` and `Fig. 19-10's`. Both now read `no searchable phrase — verify by hand`, which
+is what was actually true. **§13k's lesson holds and should now be treated as settled law: an
+ELSEWHERE is a hypothesis. Both of this node's were the checker's fault, not the data's.**
+
+**What the node is for, given that the Czech pair is genuinely good.** `4-1-3-1` and `4-1-3-2`
+between them already have the polymerase I mechanism, both nuclease activities, nick translation,
+the Klenow split, helicase/SSB/ligase with the full three-step ligase mechanism, the theta
+structure, leading and lagging strands, Okazaki fragments and the replisome. **None of that is
+restated.** The four things this node adds:
+
+1. **The evidence, not the assertions.** Czech states semiconservative / single origin /
+   bidirectional as bare facts. Meselson–Stahl 1957; Cairns's tritium autoradiographs (the source
+   of the θ figure Czech prints); and — the good one — **Inman's denaturation mapping**, because a
+   loop in a photograph *cannot* show a fixed start point, a circle having no landmarks. That
+   needed a second experiment and Czech does not mention it.
+2. **The fidelity budget as arithmetic.** Czech says "second proofreader" and stops. Lehninger
+   gives three multiplying layers: base selection using **base-pair geometry**, not only hydrogen
+   bonds (10⁴–10⁵) × proofreading, which works by a **kinetic pause**, is **not** the reverse
+   reaction and costs **three high-energy bonds** (10²–10³) × mismatch repair = the observed
+   10⁹–10¹⁰, i.e. one error per 1,000–10,000 copies of the whole chromosome.
+3. **Two entire phases Czech does not contain** — initiation at `oriC` (the DnaA wrap introducing
+   a *positive supercoil* whose torsional strain, not any enzyme, melts the DUE; two DnaB hexamers
+   loaded back to back, which is where bidirectionality actually comes from; the Hda and
+   Dam/SeqA once-per-cycle timers) and termination (the directional Ter–Tus trap, and catenanes,
+   which no amount of synthesis can resolve because each circle is covalently closed).
+4. **Eukaryotic replication**, absent from Czech entirely, justified by its own arithmetic: a fork
+   twenty times slower means one origin would take >500 h per chromosome, hence 30,000–50,000
+   origins, hence licensing.
+
+**One `lehNote`, kind `conflict`, on `4-1-3-1` — the seventh in the data.** Czech states E. coli
+has **three** DNA polymerases and that an in vivo function is known **only** for polymerase III.
+Table 25-1 gives **five**; IV (`dinB`) and V (`umuC`) were identified in 1999, are translesion and
+mutagenic, are the only two of the five with **no** proofreading exonuclease, and have
+processivities of 1 and 6–8 against polymerase III's ≥500,000. Lehninger also assigns an in vivo
+role to all five. A student answering "three" states something the current textbook contradicts —
+that is §9f's bar. **Nothing else in the section met it**, deliberately: the other differences are
+gaps this node fills and the topic view already surfaces, and a warning on every node is a warning
+nobody reads.
+
+**Two book-vs-book differences left unflagged and stated inside the points instead**, because a
+reader who has both is not misled: Czech attributes the primer to RNA polymerase *and* primase
+jointly where Lehninger says DnaG primase working with DnaB; and Czech's replisome has "probably
+two polymerase III holoenzyme complexes" where Lehninger describes **one** holoenzyme carrying up
+to **three** core sets. Czech is also explicitly named as **the better source for the ligase
+mechanism**, which it gives in three steps and Lehninger compresses.
+
+**One thing deliberately not resolved (rule: do not force a plausible answer).** A p.926 says the
+replisome adds *"1,000 to 2,000 nucleotides to each strand (leading and lagging)"* and **gives no
+time unit**. Table 25-1's 250–1,000 nucleotides/s and the eukaryotic fork being one-twentieth as
+fast both imply *per second*, but the sentence does not say so — so the node cites the table and
+the comparison and does not put a unit into the book's mouth.
+
+`biochemie_pro` now reports **218 topics (207 cz, 10 lehninger, 1 entity), 63 topicKeys** — the
+key count is **unchanged**, which is the point of a check that passes: `dna-replication` now joins
+3 nodes across 2 books instead of 2 across 1, so the count of keys joining more than one source
+rises from 9 to **10**. 7 lehNotes on 6 nodes. `step5_check.py`: all checks pass, negative tests
+included.
 
 ---
 

@@ -2,9 +2,10 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 145 citations -- 12 in a `src` field, 133 written inline in prose
+found 192 citations -- 12 in a `src` field, 180 written inline in prose
 
 UNCHECKED 1-5            A p.21  lehNotes[0].en       no searchable phrase -- verify by hand
+OK        4-1-3-1        A p.919  lehNotes[0].en      label found on [919]
 OK        7-8-3          A p.161  lehNotes[0].en      quote found on [161]
 OK        8-3-1          A p.753  lehNotes[0].en      quote found on [753]
 OK        8-3-1          A p.751  lehNotes[1].en      quote found on [751]
@@ -86,7 +87,7 @@ OK        L-11-3-1       A p.391  coverageNote        label found on [391]
 OK        L-11-3-1       A p.393  coverageNote        label found on [393]
 OK        L-11-3-1       A p.394  coverageNote        label found on [394]
 OK        L-11-3-1       A p.395  coverageNote        label found on [395]
-UNCHECKED L-11-3-1       A pp.403-407  coverageNote   probe not found even +-40 pages: 's helical-wheel diagram, fig. 11-38'
+UNCHECKED L-11-3-1       A pp.403-407  coverageNote   no searchable phrase -- verify by hand
 UNCHECKED L-11-3-1       A p.387  points[3].en        probe not found even +-40 pages: 'figure 11-31'
 OK        L-11-3-1       A p.388  points[4].en        label found on [388]
 OK        L-11-3-1       A p.394  points[9].en        label found on [394]
@@ -104,7 +105,7 @@ OK        L-17-2-1       A p.616  points[7].en        label found on [616]
 UNCHECKED L-17-2-1       A pp.616-617  points[8].en   no searchable phrase -- verify by hand
 OK        L-17-2-1       A p.617  points[9].en        label found on [617]
 OK        L-17-2-1       A p.618  points[10].en       label found on [618]
-UNCHECKED L-19-1-1       A pp.675-686  coverageNote   probe not found even +-40 pages: 's complex i structure, fig. 19-10'
+UNCHECKED L-19-1-1       A pp.675-686  coverageNote   no searchable phrase -- verify by hand
 OK        L-19-1-1       A p.662  points[1].en        label found on [662]
 OK        L-19-1-1       A p.664  points[3].en        label found on [664]
 OK        L-19-1-1       A p.665  points[4].en        label found on [665]
@@ -137,6 +138,52 @@ UNCHECKED L-22-3-1       A p.820  points[8].en        no searchable phrase -- ve
 OK        L-22-3-1       A p.822  points[9].en        label found on [822]
 OK        L-22-3-1       A p.823  points[10].en       label found on [823]
 OK        L-22-3-1       A p.824  points[11].en       label found on [824]
+OK        L-25-1-1       A p.914  coverageNote        quote found on [914]
+OK        L-25-1-1       A p.915  coverageNote        quote found on [915]
+OK        L-25-1-1       A p.920  coverageNote        quote found on [920]
+OK        L-25-1-1       A p.926  coverageNote        quote found on [926]
+OK        L-25-1-1       A p.928  coverageNote        quote found on [928]
+OK        L-25-1-1       A pp.915-916  points[0].en   quote found on [915]
+OK        L-25-1-1       A p.915  points[0].en        quote found on [915]
+OK        L-25-1-1       A p.916  points[0].en        quote found on [916]
+OK        L-25-1-1       A p.917  points[1].en        label found on [917]
+OK        L-25-1-1       A p.918  points[2].en        label found on [918]
+OK        L-25-1-1       A p.917  points[2].en        quote found on [917]
+OK        L-25-1-1       A p.917  points[3].en        quote found on [917]
+OK        L-25-1-1       A p.917  points[3].en        quote found on [917]
+OK        L-25-1-1       A p.917  points[3].en        quote found on [917]
+OK        L-25-1-1       A p.917  points[3].en        quote found on [917]
+OK        L-25-1-1       A p.920  points[3].en        quote found on [920]
+OK        L-25-1-1       A pp.917-919  points[4].en   quote found on [917]
+OK        L-25-1-1       A p.916  points[4].en        quote found on [916]
+OK        L-25-1-1       A p.917  points[4].en        quote found on [917]
+OK        L-25-1-1       A p.918  points[4].en        quote found on [918]
+OK        L-25-1-1       A p.919  points[4].en        quote found on [919]
+OK        L-25-1-1       A p.919  points[4].en        quote found on [919]
+OK        L-25-1-1       A p.919  points[5].en        quote found on [919]
+OK        L-25-1-1       A p.916  points[5].en        quote found on [916]
+OK        L-25-1-1       A p.919  points[6].en        label found on [919]
+OK        L-25-1-1       A p.920  points[7].en        label found on [920]
+OK        L-25-1-1       A p.920  points[7].en        label found on [920]
+OK        L-25-1-1       A p.922  points[8].en        label found on [922]
+OK        L-25-1-1       A p.922  points[8].en        label found on [922]
+OK        L-25-1-1       A pp.923-924  points[9].en   quote found on [923]
+OK        L-25-1-1       A p.923  points[9].en        quote found on [923]
+OK        L-25-1-1       A p.924  points[9].en        quote found on [924]
+OK        L-25-1-1       A pp.924-926  points[10].en  quote found on [924]
+OK        L-25-1-1       A p.924  points[10].en       quote found on [924]
+OK        L-25-1-1       A p.926  points[10].en       label found on [926]
+OK        L-25-1-1       A p.916  points[10].en       label found on [916]
+OK        L-25-1-1       A p.928  points[10].en       quote found on [928]
+OK        L-25-1-1       A p.927  points[11].en       label found on [927]
+OK        L-25-1-1       A p.927  points[11].en       label found on [927]
+OK        L-25-1-1       A pp.928-929  points[12].en  label found on [929]
+OK        L-25-1-1       A pp.928-929  points[12].en  label found on [929]
+OK        L-25-1-1       A p.928  points[12].en       quote found on [928]
+OK        L-25-1-1       A pp.929-930  points[13].en  quote found on [929]
+OK        L-25-1-1       A p.929  points[13].en       quote found on [929]
+OK        L-25-1-1       A p.930  points[13].en       quote found on [930]
+OK        L-25-1-1       A p.917  points[13].en       quote found on [917]
 UNCHECKED E-tryptophan   A p.71–79, §3.1              no searchable phrase -- verify by hand
 UNCHECKED E-tryptophan   A p.116–129, §4.3            no searchable phrase -- verify by hand
 OK        E-tryptophan   A p.75, §3.1                 quote found on [75]
@@ -151,4 +198,4 @@ OK        E-tryptophan   A p.1068, §28.2              quote(split) found on [10
 SKIP      E-tryptophan   CZ §4.2.4                    (no A page in citation)
 UNCHECKED E-tryptophan   A p.375–376  quiz[2].answer_en no searchable phrase -- verify by hand
 
-OK 114 | ELSEWHERE 0 | UNCHECKED 30
+OK 161 | ELSEWHERE 0 | UNCHECKED 30

@@ -123,7 +123,25 @@ def cited_range(src):
 # rows, text that is nowhere in Lehninger because the checker wrote it, not the book.
 # Requiring a non-letter before the opening mark keeps the real single-quoted citations and
 # drops the possessives.
-QUOTED = re.compile(r"(?<![A-Za-z])['\u2018\u2019\u201c\u201d\"]([^'\u2018\u2019\u201c\u201d\"]{18,140})['\u2018\u2019\u201c\u201d\"]")
+#
+# 2026-08-07, writing L-25-1-1: the guard has to exclude DIGITS too. A possessive can follow a
+# figure or table number -- "Table 25-1's 250 to 1,000 nucleotides per second" -- and `1` is not
+# in [A-Za-z], so that apostrophe was accepted as an OPENING delimiter. The regex then ran from
+# it to the next quote character in the field, which was the opening mark of a real book quote,
+# consuming that mark: the manufactured probe was "s 250 to 1,000 nucleotides per second for
+# polymerase III, and the statement that", and the genuine quote it ate --
+# "The rate of movement of the replication fork in eukaryotes", verbatim on A p.919+9 -- never
+# became a probe at all. Two correct A p.928 citations were reported as unverifiable as a
+# result. Same failure shape as the letter-apostrophe case above and the same fix: an opening
+# quote is preceded by start-of-string, whitespace or an opening bracket, never by an
+# alphanumeric. Measured over the whole data set: 159 OK -> 161 OK, 32 UNCHECKED -> 30,
+# ELSEWHERE 0 either way, nothing downgraded. The same bug was already firing on two OLDER
+# nodes, where it did not change the verdict but did fabricate the reason: L-11-3-1 and
+# L-19-1-1 were reported as "probe not found even +-40 pages: 's helical-wheel diagram, fig.
+# 11-38'" and "'s complex i structure, fig. 19-10'" -- text the checker had assembled out of
+# the node author's prose after "Fig. 11-38's" and "Fig. 19-10's". Both now read
+# "no searchable phrase -- verify by hand", which is what was actually true.
+QUOTED = re.compile(r"(?<![A-Za-z0-9])['\u2018\u2019\u201c\u201d\"]([^'\u2018\u2019\u201c\u201d\"]{18,140})['\u2018\u2019\u201c\u201d\"]")
 FIGREF = re.compile(r"\b(FIGURE|Fig\.|TABLE|Tab\.|Box)\s*(\d{1,2}[-–]\d{1,3})", re.I)
 
 def probes(text, src):

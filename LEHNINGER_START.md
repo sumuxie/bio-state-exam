@@ -30,29 +30,37 @@ everything in either handoff.**
 
 ---
 
-## ✅ `L-8-3-1` is finished and verified (2026-08-07)
+## ✅ `L-25-1-1` is finished and verified (2026-08-07)
 
-Rank 2 of the depth queue, §8.3 Nucleic Acid Chemistry — written, wired, **every citation
-verified**, validator clean, documented in archive §13k. Nothing is outstanding on it.
+Rank 20 of the depth queue, §25.1 DNA Replication — written, wired, **46 citations, 46 OK, 0
+ELSEWHERE, 0 UNCHECKED**, validator clean, documented in archive §13l. Nothing is outstanding on
+it. It is the first node with no hand-check backlog at all, the first whose §9e check passed with
+**no data change of any kind**, and the first into the molecular-biology half of the book.
 
-**It is worth knowing what it cost, because the same trap is waiting for the next node.** Three
-bugs in `verify_citations.py` surfaced while finishing it, all of one family — *the checker
-reporting its own limitation as a finding*:
+**Three things it learned that apply directly to the next node:**
 
-- a weak probe could short-circuit a strong one, which made it demand a "fix" to a **correct**
-  citation (BOX 8-1's title lives inside the box graphic, so the only occurrences of the string
-  "Box 8-1" in A are the three cross-references *to* it);
-- apostrophes were parsed as quote delimiters, so the regex spanned `'s` to `'s` and manufactured
-  probes out of the node author's own prose;
-- in a long multi-citation field, one quote was offered to every citation in it, condemning two
-  that it said nothing about.
+- **Never scale a B page into an A page — search A.** Of 54 candidate quotes checked before
+  writing, **ten were on a different A page than B's layout implied**, every one off by exactly
+  one. All ten were caught before being written down.
+- **An `interpolated` A range in `lehninger_B_toc.json` can be wrong at either end.** This one
+  said the section starts on A p.914; p.914 is the *chapter opener*, and §25.1's first sentence is
+  on p.915. Search A for the section's first subheading before writing anything.
+- **Four more OCR traps in A**, all able to make a *correct* citation look wrong: `Klenow` reads as
+  `kienow` (so the word Klenow is not in the book's text layer at all), arrows vanish into an
+  unmapped replacement character, roman `III` reads as `ill`, and primes gain a stray space
+  (`3' -hydroxyl`). **Choose quotes containing no prime, no arrow, no subscript and no roman
+  numeral.**
 
-All three are fixed and commented in the script. The audit went **107 OK / 1 ELSEWHERE / 37
-UNCHECKED → 114 OK / 0 ELSEWHERE / 30 UNCHECKED**, with nothing downgraded.
+**A fifth `verify_citations.py` bug surfaced and is fixed** — the apostrophe bug again, in a new
+disguise. The guard stopped a possessive after a *letter* but not after a *digit*, so
+`Table 25-1's …` opened a quote and swallowed the opening mark of a real one, condemning two
+correct citations. Now `(?<![A-Za-z0-9])`. Audit **159 OK / 0 ELSEWHERE / 32 UNCHECKED → 161 OK /
+0 ELSEWHERE / 30 UNCHECKED**, nothing downgraded; it also replaced two fabricated probes in
+`L-11-3-1` and `L-19-1-1` with an honest "no searchable phrase".
 
-**The lesson to carry: an `ELSEWHERE` verdict is a hypothesis, not a verdict.** Open the page
-before you edit a citation. Two of the three "errors" this checker reported on this node were the
-checker's, not the data's.
+**The lesson to carry, now confirmed twice: an `ELSEWHERE` verdict is a hypothesis, not a
+verdict.** Open the page before you edit a citation. Both of this node's ELSEWHEREs were the
+checker's fault, as were two of the three on the node before it.
 
 ---
 
@@ -61,28 +69,33 @@ checker's, not the data's.
 | | |
 |---|---|
 | Czech layer | 207 nodes, ch1–10, complete. **Never audited** — see "what to ask" below |
-| Lehninger depth layer | **9 nodes**: `L-1-3-1` `L-3-4-1` `L-5-1-1` `L-8-3-1` `L-11-3-1` `L-17-2-1` `L-19-1-1` `L-21-1-1` `L-22-3-1` |
-| `topicKey`s | **63** distinct over **217** nodes (207 cz + 9 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 9 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `membrane-transport` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain`. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only |
+| Lehninger depth layer | **10 nodes**: `L-1-3-1` `L-3-4-1` `L-5-1-1` `L-8-3-1` `L-11-3-1` `L-17-2-1` `L-19-1-1` `L-21-1-1` `L-22-3-1` `L-25-1-1` |
+| `topicKey`s | **63** distinct over **218** nodes (207 cz + 10 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 10 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `dna-replication` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `membrane-transport` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain`. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only |
 | Entity cards | 1 (`E-tryptophan`). The headline feature, still barely started — archive §4, §12 |
 | UI | Done. Two books render, sidebar **By book / By topic** toggle, "Same topic" strip, `lehNotes` blocks. Nothing more needs building |
 | Live site | https://sumuxie.github.io/bio-state-exam/biochemie_pro/ |
 
 **The remaining work is content, not plumbing.**
 
-### Next pick: rank 20, §25.1 DNA Replication
+### Next pick: rank 7, §23.2 Tissue-Specific Metabolism
 
 `lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
-the Czech book. Top 20, with the 9 done ones struck through:
+the Czech book. Top 20, with the 10 done ones struck through:
 
 ~~1 §5.1~~ · ~~2 §8.3~~ · 3 §6.4 · ~~4 §11.3~~ · ~~5 §21.1~~ · ~~6 §19.1~~ · 7 §23.2 ·
 8 §16.2 · ~~9 §17.2~~ · 10 §19.2 · 11 §11.2 · ~~12 §1.3~~ · 13 §2.2 · ~~14 §3.4~~ · 15 §8.2 ·
-16 §26.2 · ~~17 §22.3~~ · 18 §3.3 · 19 §23.3 · 20 §25.1
+16 §26.2 · ~~17 §22.3~~ · 18 §3.3 · 19 §23.3 · ~~20 §25.1~~
 
-**Rank 20 (§25.1 DNA Replication) is the recommended next node**: its `topicKey`
-(`dna-replication`) already exists and already holds 2 waiting Czech nodes, so it joins the topic
-view with no data surgery; it carries no organic-chemistry hazard; and it continues straight on
-from the nucleic-acid ground `L-8-3-1` just covered. Rank 7 (§23.2) and rank 18 (§3.3) are the
-only other ready-to-write primaries.
+**Only two ready-to-write primaries are left, and rank 7 is the recommended one**: §23.2
+Tissue-Specific Metabolism, ratio 7.3, A pp.848–858, `topicKey: "tissue-specific-metabolism"`,
+1 waiting Czech node (`10-10`, "the relation of carbohydrate and lipid metabolism — why fats
+cannot make sugar"). It has nearly double rank 18's ratio, and metabolic integration across
+tissues is core oral-exam material that nothing written so far touches.
+
+**Rank 18 (§3.3 Working with Proteins, ratio 4.0, A pp.83–90) is the other**, and it has a
+different kind of argument for it: its single waiting Czech node is **`2-2-6` — the node carrying
+the known unfixed `cnNote` error** described under "what to ask" below. Writing rank 18 would be
+the natural moment to fix that error, since it means reading `2-2-6` closely anyway.
 
 Every other rank above needs a `topicKey` decision first — see the two failure modes below.
 
@@ -147,7 +160,7 @@ Czech book's ch8 (lipids). Unrelated. Never compare `chapter` or `pages` across 
    the template (archive §13j explains its choices). State plainly in `coverageNote` **what the
    Czech node already has**, so nothing is presented as new when it is not.
 5. **Add `lehNotes` on the Czech side** only where revising from the Czech node alone would
-   *mislead in an exam* — `conflict`, `gap` or `cz-stronger`. Six exist. **Keep them rare**; a
+   *mislead in an exam* — `conflict`, `gap` or `cz-stronger`. Seven exist, on six nodes. **Keep them rare**; a
    warning on every node is a warning nobody reads. Quote the book, never yourself. Archive §9f.
 6. **Wire the file into `biochemie_pro/index.html`'s script tags.** The validator checks that
    `index.html` and `data/` agree, so a file nobody loads is a failure, not a silent pass.
@@ -175,8 +188,9 @@ Czech book's ch8 (lipids). Unrelated. Never compare `chapter` or `pages` across 
    node `2-2-6`'s `cnNote` points at Chinese-notes topic 七 (pp.37–40, myoglobin/haemoglobin) when
    its actual subject — protein properties, Sephadex, SDS-PAGE — is topic 八 (pp.41–45). Flagged in
    two earlier sessions, fixed in neither. Archive §2c, §6a.
-3. **Are the six `lehNotes` right in tone and length?** They are the template for every later one
-   and the user has not seen them rendered.
+3. **Are the seven `lehNotes` right in tone and length?** They are the template for every later
+   one and the user has not seen them rendered. The newest is the only one that corrects a plain
+   factual count: `4-1-3-1` says E. coli has three DNA polymerases, Lehninger says five.
 
 ---
 
@@ -201,6 +215,6 @@ Search for the `## N.` or `### Na.` heading, read that section only.
 | 9e | **the two-minute check** and the first `topicKey` correction |
 | 9f | `lehNotes` — the format, the bar, the six that exist |
 | 12 | the tryptophan entity card — a finished dossier, nothing written yet |
-| 13–13j | one section per Lehninger node written. `13j` (`L-5-1-1`) is the best template |
+| 13–13l | one section per Lehninger node written. `13j` (`L-5-1-1`) is the best template for how to *write* a node; `13l` (`L-25-1-1`) for how to *verify* one — page ranges, B-to-A drift, the OCR traps |
 | 14 | working locally: what is local-only, how to run and check with no `node` |
 | 15, 16, 16c | figures; **citation verification**; caption-vs-cross-reference ambiguity |
