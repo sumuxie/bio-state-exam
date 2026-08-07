@@ -1280,6 +1280,55 @@ distinct `topicKey`s, and the emptied key simply stops appearing.
   stereochemical point about citrate being prochiral, and the modern regulation and metabolon
   material, not in the step list.
 
+### 9i. Rank 10 (§19.2) — the `topicKey` decision: reuse `respiratory-chain`, change nothing (2026-08-07)
+
+**The decision: `L-19-2-1` takes `topicKey: "respiratory-chain"`, joining the five Czech nodes
+`6-2-4-1` … `6-2-4-5` and sitting alongside `L-19-1-1`, which is already there. Nothing is
+created, nothing moves, no `manual_note` is needed.** This is the §9g pattern for the second time,
+and it is even cleaner than §6.4's, because the key **already joins both books**.
+
+**The §9e check.** Czech §6.2.4 maps to `19.1,19.2,19.3`; the primary §19.1 created
+`respiratory-chain`. So §19.2 has no key of its own — the standard secondary case. But the key
+holds the nodes that teach §19.2's subject, because the Czech book treats the chain and ATP
+synthase as **one section**: `6-2-4-5` is titled *Complex V (ATP synthase) and the mechanism of
+aerobic phosphorylation* and gives the F1 and Fo subunit composition, the proton flow with the
+gradient, and — this is the important part — the claim that **ATP stays bound at the active site
+until protons passing through Fo change that site's conformation and release it**. That is Boyer's
+binding-change idea, stated correctly. So there is no misdescription to fix and no scattered
+material to gather.
+
+**Splitting `6-2-4-5` into a new `atp-synthesis` key was considered and rejected.** It would have
+been the §9e/§9h move — split a Czech section by subject — but the two situations differ in the
+way that matters: there, the key *misdescribed* the nodes it held; here it describes them well,
+because Complex V is part of the same apparatus in the Czech book's own framing. Splitting would
+also make the "Same topic" strip **less** useful, not more: a reader on `6-2-4-5` currently sees
+both depth nodes, the chain and the synthase, which is the correct pairing for a chemiosmotic
+answer. §13m's rule applies — do not break a working join to tidy a name.
+
+#### Measured for the writing session, plus a correction to the index
+
+- ⚠️ **§19.2 = A pp.674–686, not 675–686 — the TOC is wrong at the START by one page.** The §19.2
+  heading is physically on A p.674, below SUMMARY 19.1 on the same page, and SUMMARY 19.2 is on
+  A p.686 with §19.3 opening further down. B pp.2408–2447. This is the second interpolated range
+  found wrong at its start, after §25.1 in §13l.
+- ⚠️ **A p.674's OCR is unusually bad** — the page contains `gi.emiosmotic`, `jeleterious`,
+  `1nderstanding`, `3ynthesis` and `fl.ow` in a single screen. **Do not build probes from that
+  page**; cite it only where a figure label or a later page carries the same claim.
+- ⚠️ **A third variant of the broken SUMMARY heading.** §13p recorded `sum ma ry 6.4` on A p.213;
+  p.674 reads `summa ry 19. 1` — the break falls in a different place AND the section number
+  itself is split. Treat the whole heading as unprobeable and locate a SUMMARY by the words that
+  follow it.
+- **What `6-2-4-5` already has, so the node does not restate it**: Complex V as a phosphorylation
+  rather than an oxidoreduction complex, protons moving *with* the gradient back into the matrix,
+  the F1 composition (α3β3 plus δ, γ, ε) and Fo (a plus b2), the +30.5 kJ/mol figure, the
+  binding-change claim, and the 6 H+ → about 3 ATP / 4 H+ → about 2 ATP bookkeeping.
+- **Where the depth is likely to be**, from the subheading list and a first pass: the chemiosmotic
+  model as a testable hypothesis rather than a diagram; rotational catalysis and the fact that the
+  rotation was **watched directly**; the three β-subunit conformations from the crystal structure;
+  the c-ring stoichiometry and why H+/ATP need not be an integer; uncouplers; and the two NADH
+  **shuttles**, which are what make the ATP total a range rather than a number — the direct
+  continuation of the `lehNote` written on `6-2-2-3` in §13q.
+
 ---
 
 ## 11. Working with this user

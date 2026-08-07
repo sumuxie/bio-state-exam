@@ -1,6 +1,6 @@
 # START HERE — the Lehninger phase
 
-**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 201 KB ≈ 49k
+**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 205 KB ≈ 49k
 tokens and reading it triggers a compaction before you have done any work. That file is now an
 **archive you grep into**, one section at a time, using the index at the bottom of this page.
 `HANDOFF.md` (69 KB, the Czech app) is the same: grep, never read whole. Both sizes are
@@ -183,7 +183,22 @@ full** (use a fragment); and the Czech coverage of the cycle is already **strong
 should be narrower than §6.4's — the depth is in the chemical logic, the prochirality of citrate,
 and the modern regulation material, not in re-listing the eight steps.
 
-### Next pick: no decided-and-unwritten rank remains — choose between two
+## ✅ Rank 10 (§19.2) is decided — reuse `respiratory-chain`, change nothing (2026-08-07)
+
+**`L-19-2-1` takes `topicKey: "respiratory-chain"` and joins Czech `6-2-4-1` … `6-2-4-5`, sitting
+alongside `L-19-1-1` which is already there. Nothing created, nothing moved, no `manual_note`.**
+The §9g pattern a second time, and cleaner — the key already joins both books. Archive **§9i**.
+Splitting `6-2-4-5` off into an `atp-synthesis` key was considered and rejected: unlike §9h's case
+the key describes its nodes well, and a reader on `6-2-4-5` currently sees **both** depth nodes,
+which is the right pairing for a chemiosmotic answer.
+
+⚠️ **Two measured warnings for whoever writes it.** §19.2 is **A pp.674–686, NOT the 675–686 the
+TOC gives** — the heading sits on p.674 below SUMMARY 19.1, the second interpolated range caught
+wrong at its start after §25.1. And **A p.674's OCR is unusually bad** (`gi.emiosmotic`,
+`jeleterious`, `1nderstanding`, `3ynthesis`, `fl.ow` on one page) — do not build probes from it.
+A third SUMMARY-break variant lives there too: `summa ry 19. 1`, with the section number split.
+
+### Next pick: `L-19-2-1` is decided and unwritten — or the entity cards
 
 `lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
 the Czech book. Top 20, with the 13 done ones struck through:
@@ -197,9 +212,11 @@ the Czech book. Top 20, with the 13 done ones struck through:
 **The first nine ranks are all written; every one of the seven that remain needs a `topicKey`
 decision before a word can go on the page.** So:
 
-1. **Take a remaining rank and make its `topicKey` decision.** The highest ratio left is
-   **rank 10 (§19.2 ATP Synthesis, ratio 6.0)**, whose key `respiratory-chain` already holds five
-   Czech nodes AND `L-19-1-1`, so it may well be a §9g-style no-change decision. The §9e
+1. **Write `L-19-2-1` — rank 10, ratio 6.0, decision taken in §9i and the range corrected.**
+   `6-2-4-5` already has the binding-change idea, so the depth is the evidence: rotation watched
+   directly, the three β conformations, the c-ring stoichiometry, uncouplers, and the two NADH
+   shuttles that make the ATP total a range. If you would rather take an undecided rank, the
+   highest left is **rank 11 (§11.2 Membrane Dynamics, ratio 5.3)**. The §9e
    check now has four possible outcomes: the two failure modes below, plus **§13m's third** — the
    key's Czech node is a thin-but-legitimate partner while the real material sits *scattered*
    across pathway nodes that must **keep** their own keys, so re-key nothing and cross-reference by
@@ -342,6 +359,7 @@ Search for the `## N.` or `### Na.` heading, read that section only.
 | 9e | **the two-minute check** and the first `topicKey` correction |
 | 9g | **rank 3 (§6.4) decided** — reuse the primary's key, re-key nothing; plus §6.4's verified page range, subheadings, SUMMARY and the four things the Czech layer lacks |
 | 9h | **rank 8 (§16.2) decided** — a new key `citric-acid-cycle`, four Czech nodes moved, `acetyl-coa-production` emptied; plus §16.2's verified page range and what the Czech nodes already cover |
+| 9i | **rank 10 (§19.2) decided** — reuse `respiratory-chain`; plus the corrected page range and A p.674's bad OCR |
 | 13q | **`L-16-2-1`** — what a strong Czech chapter leaves out: the chemical argument, the thermodynamic thread, and the ATP-total conflict |
 | 9f | `lehNotes` — the format, the bar, the six that exist |
 | 12 | the tryptophan entity card — a finished dossier, nothing written yet |
