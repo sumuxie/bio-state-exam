@@ -616,10 +616,11 @@ Czech book's ch8 (lipids). Unrelated. Never compare `chapter` or `pages` across 
    already overturned a plan.
 2. **Has the Czech layer ever been audited?** Still open, and it is the *primary* revision surface
    (the user confirmed on 2026-08-07 that they revise from both layers, Czech first). 207 nodes
-   written in an earlier phase, unchecked since. **One error is sitting in the open right now**:
-   node `2-2-6`'s `cnNote` points at Chinese-notes topic 七 (pp.37–40, myoglobin/haemoglobin) when
-   its actual subject — protein properties, Sephadex, SDS-PAGE — is topic 八 (pp.41–45). Flagged in
-   two earlier sessions, fixed in neither. Archive §2c, §6a.
+   written in an earlier phase, unchecked since. ~~One error is sitting in the open right now:
+   node `2-2-6`'s `cnNote`.~~ **That one is CLOSED** — `2-2-6` now reads `topic: "八"`,
+   `status: "mapped"`, verified against the notes' own p.41 heading (§13n). It was the only known
+   error, and it was found by accident rather than by an audit, which is the actual point: **nobody
+   has ever looked systematically.** Archive §2c, §6a.
 3. **Are the fourteen `lehNotes` right in tone and length?** They are the template for every later
    one and the user has not seen them rendered. Two are worth looking at first: `4-1-3-1`, the
    only one correcting a plain factual count (Czech says three DNA polymerases, Lehninger says
