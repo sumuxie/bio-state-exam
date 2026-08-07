@@ -44,16 +44,17 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — eighteen Lehninger nodes now exist, the depth queue's ready-to-write
-primaries are EXHAUSTED, and the citation backlog is CLEARED: 340 OK / 0 ELSEWHERE / 0 UNCHECKED
+**§9 step 6 is under way — nineteen Lehninger nodes now exist, the depth queue's ready-to-write
+primaries are EXHAUSTED, and the citation backlog is CLEARED: 352 OK / 0 ELSEWHERE / 0 UNCHECKED
 (§13o).** Every `A p.N` in the app data now self-verifies on every run. **The most recent node is
-`L-8-2-1` (rank 15, §8.2 nucleic acid structure), decided in §9l and written in §13u**, preceded
-by `L-2-2-1` (rank 13, §9k/§13t). Both resolved by reusing the primary's key and changing no data.
-**Read §13u's first section before writing the next node.** It proves §13t's pre-test method with a
-number: of 54 candidate quotes tested against A *before* the prose was written, **21 were on a
-different page than B's layout implied — every one off by exactly one, all in the same
-direction.** Written first and audited afterwards, that would have been 21 ELSEWHERE rows. Never
-predict an A page from B; test the quote. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
+`L-26-2-1` (rank 16, §26.2 RNA processing), decided in §9m and written in §13v**, preceded by
+`L-8-2-1` (rank 15, §9l/§13u) and `L-2-2-1` (rank 13, §9k/§13t). All three resolved by reusing the
+primary's key and changing no data. **Read §9m's last two bullets before writing the next node**:
+a book quote containing a prime mark (`2'`, `3'`, `5'`) breaks `verify_citations.py`'s own quote
+regex when wrapped whole in its delimiters — paraphrase instead and quote a short prime-free
+phrase — and a `coverageNote` fix that quotes book text with double quotes inside a
+double-quoted JS string silently breaks the parse. **Run `esprima.parseScript()` on the file
+immediately after any such edit, before running the citation checker.** `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
 decision first (§9c, §9e), and §13m added a third possible outcome to that check. **The first of
@@ -906,13 +907,14 @@ key already exists and the node joins the topic view the moment it is written.
 | 11 | 11.2 Membrane Dynamics | 5.3 | `membrane-architecture` — **not a primary**, added to this table by the §9j decision | ✅ **done — `L-11-2-1`** |
 | 13 | 2.2 Ionization of Water, Weak Acids, and Weak Bases | 5.0 | `amino-acids` — **not a primary**, added to this table by the §9k decision | ✅ **done — `L-2-2-1`** |
 | 15 | 8.2 Nucleic Acid Structure | 5.0 | `nucleotides` — **not a primary**, added to this table by the §9l decision | ✅ **done — `L-8-2-1`** |
+| 16 | 26.2 RNA Processing | 4.9 | `transcription` — **not a primary**, added to this table by the §9m decision | ✅ **done — `L-26-2-1`** |
 
-**Ranks 16 and 19 are the only secondaries still without a key.** Five of the seven that
-were in that group have since left it by the §9g route — the Czech section's *primary* key was
-found to fit the secondary section too, so nothing was created and nothing moved: rank 3 (§6.4,
-§9g), rank 10 (§19.2, §9i), rank 11 (§11.2, §9j), rank 13 (§2.2, §9k) and rank 15 (§8.2, §9l).
-The odd one out, rank 8 (§16.2, §9h), is the only case so far that needed the opposite: a new key
-**and** four Czech nodes moved, because the inherited key described none of them. **Rank 2 (§8.3) left that
+**Rank 19 is the only secondary still without a key.** Six of the seven that were in that group
+have since left it by the §9g route — the Czech section's *primary* key was found to fit the
+secondary section too, so nothing was created and nothing moved: rank 3 (§6.4, §9g), rank 10
+(§19.2, §9i), rank 11 (§11.2, §9j), rank 13 (§2.2, §9k), rank 15 (§8.2, §9l) and rank 16 (§26.2,
+§9m). The odd one out, rank 8 (§16.2, §9h), is the only case so far that needed the opposite: a
+new key **and** four Czech nodes moved, because the inherited key described none of them. **Rank 2 (§8.3) left that
 group on 2026-08-07 without receiving the §9e treatment** — its key `nucleic-acid-chemistry` exists
 now, but with **no Czech nodes under it**, because the §9e sweep found the Czech book does not
 teach §8.3's material anywhere (2e has the evidence and the user's ruling). Rank 1 was the tenth
@@ -1533,6 +1535,69 @@ promote crystallisation dehydrate DNA, so most short DNA crystallises in the A f
 while short **Z-DNA tracts have been found in both bacteria and eukaryotes** and may act *"in
 regulating the expression of some genes or in genetic recombination"*. The one with demonstrated
 cellular occurrence is Z, not A.
+
+### 9m. Rank 16 (§26.2) — the `topicKey` decision: reuse `transcription`, change nothing (2026-08-07)
+
+**The decision: `L-26-2-1` took `topicKey: "transcription"`, joining Czech `4-1-4-1` and
+`4-1-4-2`. Nothing created, nothing moved, no `manual_note`.** Sixth instance of the §9g pattern;
+topicKey count stayed at 63. Node in §13v.
+
+**The §9e check.** Czech §4.1.4 maps to `26.1,26.2`; the primary §26.1 took `transcription`, which
+holds `4-1-4-1` and `4-1-4-2`, both substantive (RNA types, then the full transcription mechanism —
+holoenzyme, promoter, elongation, termination). `4-1-4-2` already names bacterial rRNA
+post-transcriptional processing by ribonuclease, so the key is not blind to processing entirely.
+
+**This check was harder than usual, for a reason worth recording.** A completely separate Czech
+node, `4-2-4-2` (key `gene-regulation-proteins`, title literally *"eukaryotic genes, the mRNA cap
+and splicing"*), already teaches a substantial slice of §26.2's own material — cap-0/1/2, the
+AAUAA/poly(A) mechanism, the GU...AG spliceosome — worked through the ovalbumin gene. On the
+surface this looks exactly like rank 9's failure mode: the naive key (`transcription`) is thin on
+processing while the substantive processing content sits under an unrelated-sounding key.
+
+**It is not rank 9's shape, and the reason generalises.** `4-2-4-2`'s own title and its position in
+the Czech curriculum (paired with `4-2-4-1`'s lac/trp operons, both mapping primarily to Lehninger
+§28.1, *The Proteins and RNAs of Gene Regulation*) are about **eukaryotic gene regulation**, not
+RNA processing as a subject in its own right. Capping and splicing appear in it as necessary
+scaffolding on the way to the node's real content — hormonal/cAMP control, selective mRNA
+transport, intron retention as a regulatory strategy. Rank 9's fix was to move nodes whose *own*
+subject was β-oxidation out from under a key that misdescribed them. Moving `4-2-4-2` would do the
+opposite: misfile genuine gene-regulation content under a processing-only key. **This is §13m's
+third outcome** — a Czech node correctly keyed to its own subject, with material relevant to the
+depth node's topic sitting inside it as a means to a different end. Cross-referenced by name in the
+`coverageNote`, not re-keyed.
+
+**No future collision.** §26.1 — the section that owns the key — sits well down the queue (Czech
+§4.1.4 already allocates it 6 pages against a 12-page Lehninger section, ratio 2.0). If ever
+written it lands on the same key, joining a third node.
+
+#### Measured for §26.2's writing session
+
+- **§26.2 = A pp.972–988**, correct at both ends: the heading and opening sentence are on A p.972,
+  immediately after §26.1's rifampin/α-amanitin material, and SUMMARY 26.2 sits on A p.988 with
+  §26.3 opening on the same page.
+- **Every one of the nine subheading positions was located by direct text search, not trusted from
+  the TOC or scaled from B** — §13u's rule, applied a second time on an unrelated section, and it
+  caught the same failure shape again: two of the nine were off by exactly one page from the TOC's
+  own figures (*Proteins Catalyze Splicing of tRNAs* and *Eukaryotic mRNAs Have a Distinctive 3′
+  End Structure*, both TOC-listed at 979, both actually on 980).
+- **A citation bug found and fixed while writing this node, not by the checker's own logic but by
+  a straightforward parse failure**: a prose sentence quoted verbatim from A contained internal
+  prime marks (`2'`, `5'`, `3'`), and wrapping the whole sentence in the single-quote delimiters
+  `verify_citations.py` uses for book quotes breaks its `QUOTED` regex — the regex excludes *any*
+  of the quote-mark characters from inside a match, so an internal prime terminates the match early
+  and the citation loses its own probe. This is the **exact trap §9g's node (`L-6-4-1`) already
+  named** — *"Choose quotes with no prime, no arrow, no subscript and no roman numeral"* — now
+  confirmed a second time, on a different node, for a different reason (that warning was about
+  OCR corrupting a probe; this is about the probe extractor's own quote-delimiter regex). **Fix:
+  never quote a sentence containing a prime mark verbatim; paraphrase it and quote a short adjacent
+  phrase without one instead.**
+- **A second, unrelated bug in the SAME edit pass**: `coverageNote` is a JS string delimited by
+  double quotes, and the fix text quoted two book sentences using double quotes *inside* that
+  string, which terminates the string literal early and breaks the parse. `esprima.parseScript()`
+  on the file, run before `verify_citations.py`, catches this immediately — **always parse-check
+  after editing a `coverageNote` or any field that quotes book text, before running the citation
+  checker**, because a broken parse makes every downstream check meaningless in a way that looks
+  like an unrelated failure.
 
 ---
 
@@ -3018,6 +3083,57 @@ phrase, or sentence that is spelled identically"* forward or backward, with ROTA
 as the examples) is borrowed whole into the node, because the distinction that actually gets
 tested — a mirror repeat is symmetric but **not self-complementary**, and therefore cannot form a
 hairpin or cruciform — only makes sense once the literal meaning is in place.
+
+### 13v. The nineteenth node — `L-26-2-1`, §26.2 RNA Processing (2026-08-07): RNA as its own enzyme, a drug built on one exon, and two citation-checker bugs found by a broken parse rather than a wrong page
+
+**Rank 16, ratio 4.9, decided in §9m and written the same session.** In a new
+`biochemie_pro/data/leh_ch26.js`, wired into `index.html`; **12 citation rows, all OK** after two
+fixes described below. Audit after the write: **352 OK / 0 ELSEWHERE / 0 UNCHECKED**.
+`step5_check.py`: `RESULT: all checks pass`, 227 topics, **63 topicKeys — unchanged**. It carries
+the **fourteenth `lehNote`**, a `gap` on `4-2-4-2` — the GU...AG "necessary and sufficient" claim
+§9m already covers.
+
+**What made this node worth writing.** Two Czech nodes touch this subject and both stop short:
+`4-1-4-2` names bacterial rRNA processing in one sentence and says nothing about eukaryotic
+processing; `4-2-4-2` names capping, polyadenylation and splicing as three steps but frames them
+only as background to gene regulation, and its own claim that GU and AG are "necessary and
+sufficient" to define a splice site overstates what the chemistry requires. The node supplies:
+
+- **RNA as its own catalyst.** Group I and II introns self-splice with no protein enzyme at all,
+  discovered by Thomas Cech in 1982 transcribing a *Tetrahymena* rRNA gene in vitro with purified
+  *bacterial* RNA polymerase — no *Tetrahymena* protein present — and the RNA spliced itself out
+  correctly anyway. The spliceosome, despite needing dozens of proteins, uses a nearly identical
+  RNA-based catalytic core, evidence it evolved *from* a ribozyme.
+- **The actual chemistry**, correcting `4-2-4-2`: two transesterifications, the real nucleophile a
+  branch-point adenosine *inside* the intron, not the GU/AG boundary — and about 1% of human
+  introns use a minor spliceosome with AU...AC boundaries instead, so "necessary" was too strong to
+  begin with.
+- **Alternative splicing as a major phenomenon** (>95% of human genes) rather than Czech's one
+  clause, anchored to nusinersen — an antisense drug that corrects one skipped exon in SMN2 and is
+  now an approved treatment for a disease once uniformly fatal in infancy.
+- **tRNA processing, mRNA half-life, and miRNA biogenesis** — none of which Czech touches at all.
+  The CCA-adding enzyme needing no template is the single cleanest bench fact in the node: *"not
+  dependent on a DNA or RNA template — the template is the binding site of the enzyme"* itself.
+
+#### ⚠️ Two bugs found while writing this node, neither about a wrong page
+
+Both are documented in full in §9m; the short version, because the next node will hit at least one
+of them again:
+
+1. **A book quote containing a prime mark (`2'`, `3'`, `5'`) breaks `verify_citations.py`'s own
+   `QUOTED` regex** when wrapped in the checker's single-quote delimiters, because the regex
+   excludes *every* quote-mark character from inside a match, prime included. The citation silently
+   loses its own probe and piggybacks on a neighbour's, which the checker correctly flags as
+   `UNCHECKED` rather than a false `OK` — but the fix is to never quote a prime-bearing sentence
+   whole; paraphrase it and lift a short adjacent phrase without a prime instead. This is §9g's
+   already-documented warning (*"Choose quotes with no prime..."*) confirmed a second time, for a
+   different underlying reason.
+2. **Double quotes inside a `coverageNote` that is itself a double-quoted JS string terminate the
+   string early**, which is not a citation-checker problem at all — it is a parse failure, and
+   `verify_citations.py` reports nothing about it because it never reaches that file. Caught only
+   because `esprima.parseScript()` was run on the file first. **The rule going forward: run a parse
+   check immediately after editing any field that quotes book text, before running the citation
+   checker** — a broken parse fails silently downstream in a way that looks unrelated.
 
 ---
 

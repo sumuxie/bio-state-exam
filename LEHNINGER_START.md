@@ -1,6 +1,6 @@
 # START HERE — the Lehninger phase
 
-**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 238 KB ≈ 54k
+**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 247 KB ≈ 56k
 tokens and reading it triggers a compaction before you have done any work. That file is now an
 **archive you grep into**, one section at a time, using the index at the bottom of this page.
 `HANDOFF.md` (69 KB, the Czech app) is the same: grep, never read whole. Both sizes are
@@ -11,13 +11,42 @@ doing it.
 
 ---
 
+## ▶️ How to start a session, and what to say when it errors
+
+**To start work, say exactly this:**
+
+> 读 `C:\Users\Admin\Downloads\bio-state-exam\LEHNINGER_START.md`，全文读完，然后按里面
+> 「Next pick」继续。不要整读 `HANDOFF_LEHNINGER.md`，只按章节号 grep。
+> 写完一个节点就 commit + push，不要攒。
+
+**When it stops with `API Error: ... safeguards flagged this message` or `... can't help with
+this`** — which it will, several times per session, and which is **not** caused by anything you or
+it did wrong (see the AUP section below) — **just reply:**
+
+> 继续
+
+That recovers it. In the session of 2026-08-07 all **8** such errors were recovered this way and
+three complete nodes still got written. Do **not** switch models in response — measured twice,
+it does not help. Do **not** start a new session unless `继续` fails repeatedly; the work already
+committed is safe either way, because every finished node is committed and pushed before the next
+one starts.
+
+**If an error interrupts a file being written**, the next session should check the file parses
+before building on it:
+
+```bash
+python -c "import esprima,glob; [esprima.parseScript(open(f,encoding='utf-8').read()) for f in glob.glob('biochemie_pro/data/*.js')]; print('all parse OK')"
+```
+
+---
+
 ## The project in six lines
 
 A biochemistry oral-exam trainer for a Czech state exam, three apps in one repo.
 
 - **`biochemie_basic/`** — FROZEN. The user revises from it daily. Never modify.
 - **`biochemie_pro/`** — where all work happens. Czech textbook (207 nodes, ch1–10, complete)
-  **plus** a Lehninger 8 depth layer (18 nodes) joined by `topicKey`.
+  **plus** a Lehninger 8 depth layer (19 nodes) joined by `topicKey`.
 - **`PESB/`** and **`oral_prep_app/`** — separate apps, not this phase, listed so they do not look
   like strays. `PESB/`'s handoff is **not in this repo** — it lives at
   `C:\Users\Admin\Documents\trae_projects\recombinants_trae_independant\HANDOFF_PESB.md`.
@@ -31,7 +60,49 @@ everything in either handoff.**
 
 ---
 
-## ✅ `L-8-2-1` is finished — rank 15 (§8.2) decided AND written, and the run that proves the pre-test method (2026-08-07)
+## ✅ `L-26-2-1` is finished — rank 16 (§26.2) decided AND written, and TWO checker bugs found by a broken parse (2026-08-07)
+
+**`L-26-2-1` took `topicKey: "transcription"` and joins Czech `4-1-4-1`/`4-1-4-2`. Nothing
+created, nothing moved, no `manual_note`; topicKey count stayed at 63.** Sixth instance of the §9g
+pattern. Decision **§9m**, node **§13v**, in a new `biochemie_pro/data/leh_ch26.js` wired into
+`index.html`; 12 citation rows, all OK; validator clean. It carries the **fourteenth `lehNote`**
+(`gap`, on `4-2-4-2`), taking the total to **14 notes on 12 nodes**.
+
+**The §9e check was harder than usual.** A *separate* Czech node, `4-2-4-2` (key
+`gene-regulation-proteins`), already teaches a slice of §26.2's own material — capping,
+polyadenylation, splicing — worked through the ovalbumin gene. This looks exactly like rank 9's
+failure mode on first glance. It is not: `4-2-4-2`'s own title and curriculum position are about
+**eukaryotic gene regulation** (paired with the lac/trp operon node, both mapping primarily to
+§28.1), and it uses capping/splicing as scaffolding for its real subject. Moving it would misfile
+genuine regulation content. §13m's third outcome — cross-referenced by name, not re-keyed.
+
+**What the node adds, since both Czech nodes on this subject stop just short of the interesting
+part:** RNA itself can be the splicing enzyme — group I/II introns self-splice with **no protein
+at all**, discovered by Cech in 1982 transcribing a *Tetrahymena* gene in vitro with *bacterial*
+RNA polymerase, no *Tetrahymena* protein present, and the RNA spliced itself out correctly anyway.
+The actual two-step chemistry corrects `4-2-4-2`'s overstated "GU...AG is necessary and sufficient"
+— the real nucleophile is an internal branch-point adenosine, and ~1% of human introns use a minor
+spliceosome with AU...AC instead. Alternative splicing (>95% of human genes, one clause in Czech)
+is anchored to nusinersen, an approved drug that corrects one skipped exon in SMN2. Plus tRNA
+processing, mRNA half-life and miRNA biogenesis — none of which Czech touches at all.
+
+### ⚠️ Two bugs found writing this node — neither is a wrong page, both will recur
+
+1. **A book quote containing a prime mark (`2'`, `3'`, `5'`) breaks `verify_citations.py`'s own
+   quote regex.** Wrapping a whole sentence like *"The 2' OH of a specific adenosine..."* in the
+   checker's single-quote delimiters fails, because the regex excludes **every** quote-mark
+   character — prime included — from inside a match. The citation silently loses its own probe.
+   §9g already warned *"choose quotes with no prime"* — this confirms it a second time, for a
+   different reason (there it was OCR; here it is the regex itself). **Fix: never quote a
+   prime-bearing sentence whole; paraphrase it and lift a short adjacent phrase without a prime.**
+2. **Double quotes inside a `coverageNote` — itself a double-quoted JS string — silently break the
+   parse**, not the citation check. `verify_citations.py` never even reaches a file that fails to
+   parse, so this produces no diagnostic at all from the normal tool. **Caught only because
+   `esprima.parseScript()` was run directly on the file first.** ⚠️ **Run a parse check
+   immediately after editing any field that quotes book text, before running the citation
+   checker** — a broken parse fails silently downstream in a way that looks unrelated.
+
+## ✅ `L-8-2-1` — rank 15 (§8.2) decided AND written, and the run that proves the pre-test method (2026-08-07)
 
 **`L-8-2-1` took `topicKey: "nucleotides"` and joins Czech `4-1` and `4-1-2`. Nothing created,
 nothing moved, no `manual_note`; the topicKey count stayed at 63.** Fifth instance of the §9g
@@ -132,7 +203,7 @@ title — and p.46 is **blank**, fixing the topic's end. So topic 八 = pp.41–
 ends. `2-2-6` now reads `topic: "八"`, `status: "mapped"`, with the evidence written into its
 `coverageNote`. **Topic 八 appears in the data for the first time.**
 
-### ✅ The citation backlog is cleared: 340 OK / 0 ELSEWHERE / 0 UNCHECKED
+### ✅ The citation backlog is cleared: 352 OK / 0 ELSEWHERE / 0 UNCHECKED
 
 Every `A p.N` citation in `biochemie_pro` now self-verifies on every run (§13o). This was the
 largest known backlog in the project. **Not one of the 34 UNCHECKED citations turned out to be
@@ -204,8 +275,8 @@ were the checker's fault, not the data's.
 | | |
 |---|---|
 | Czech layer | 207 nodes, ch1–10, complete. **Never audited** — see "what to ask" below |
-| Lehninger depth layer | **18 nodes**: `L-1-3-1` `L-2-2-1` `L-3-3-1` `L-3-4-1` `L-5-1-1` `L-6-4-1` `L-8-2-1` `L-8-3-1` `L-11-2-1` `L-11-3-1` `L-16-2-1` `L-17-2-1` `L-19-1-1` `L-19-2-1` `L-21-1-1` `L-22-3-1` `L-23-2-1` `L-25-1-1`. `leh_ch3.js` holds two nodes; chapters 8, 11 and 19 each have two, split across an `a`/`b` file pair |
-| `topicKey`s | **63** distinct over **226** nodes (207 cz + 18 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 16 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `citric-acid-cycle` `dna-replication` `enzyme-mechanism` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `membrane-architecture` `membrane-transport` `nucleotides` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain` `tissue-specific-metabolism` `working-with-proteins`. `amino-acids` is the only one joining **all three** sources — Czech, Lehninger and the entity card. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only. The key count did **not** move when `L-6-4-1`, `L-2-2-1` or `L-8-2-1` was added, which is the point of §9g: they reused a key instead of making one |
+| Lehninger depth layer | **19 nodes**: `L-1-3-1` `L-2-2-1` `L-3-3-1` `L-3-4-1` `L-5-1-1` `L-6-4-1` `L-8-2-1` `L-8-3-1` `L-11-2-1` `L-11-3-1` `L-16-2-1` `L-17-2-1` `L-19-1-1` `L-19-2-1` `L-21-1-1` `L-22-3-1` `L-23-2-1` `L-25-1-1` `L-26-2-1`. `leh_ch3.js` holds two nodes; chapters 8, 11 and 19 each have two, split across an `a`/`b` file pair |
+| `topicKey`s | **63** distinct over **227** nodes (207 cz + 19 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 17 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `citric-acid-cycle` `dna-replication` `enzyme-mechanism` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `membrane-architecture` `membrane-transport` `nucleotides` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain` `tissue-specific-metabolism` `transcription` `working-with-proteins`. `amino-acids` is the only one joining **all three** sources — Czech, Lehninger and the entity card. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only. The key count did **not** move when `L-6-4-1`, `L-2-2-1`, `L-8-2-1` or `L-26-2-1` was added, which is the point of §9g: they reused a key instead of making one |
 | Entity cards | 1 (`E-tryptophan`). The headline feature, still barely started — archive §4, §12 |
 | UI | Done. Two books render, sidebar **By book / By topic** toggle, "Same topic" strip, `lehNotes` blocks. Nothing more needs building |
 | Live site | https://sumuxie.github.io/bio-state-exam/biochemie_pro/ |
@@ -301,33 +372,35 @@ ELSEWHERE as a hypothesis, open the page first.
 ### Next pick: no decided-and-unwritten rank remains — choose between two
 
 `lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
-the Czech book. Top 20, with the 18 done ones struck through:
+the Czech book. Top 20, with the 19 done ones struck through:
 
 ~~1 §5.1~~ · ~~2 §8.3~~ · ~~3 §6.4~~ · ~~4 §11.3~~ · ~~5 §21.1~~ ·
 ~~6 §19.1~~ · ~~7 §23.2~~ ·
 ~~8 §16.2~~ · ~~9 §17.2~~ · ~~10 §19.2~~ · ~~11 §11.2~~ · ~~12 §1.3~~ ·
 ~~13 §2.2~~ · ~~14 §3.4~~ · ~~15 §8.2~~ ·
-16 §26.2 · ~~17 §22.3~~ · ~~18 §3.3~~ · 19 §23.3 · ~~20 §25.1~~
+~~16 §26.2~~ · ~~17 §22.3~~ · ~~18 §3.3~~ · 19 §23.3 · ~~20 §25.1~~
 
-**Only two of the top 20 remain — 16 §26.2 and 19 §23.3 — and each needs a `topicKey` decision
-before a word can go on the page.** So:
+**Only ONE rank in the top 20 remains: 19 §23.3 (Hormonal Regulation of Fuel Metabolism, ratio
+3.9), and it needs a `topicKey` decision before a word can go on the page.** It is also the first
+pick in a while that is NOT chemistry-clean in the §5a sense — hormones and disease states are its
+subject, not physical chemistry — so budget accordingly if picking it for a quiet session. So:
 
-1. **Take a remaining rank and make its `topicKey` decision.** The highest ratio left is
-   **rank 16 (§26.2 RNA Processing, ratio 4.9)**, which is also chemistry-clean; rank 19 (§23.3
-   hormonal regulation of fuel metabolism) is the other. The §9e check has four possible outcomes,
-   and **the last of them has now fired five times running**, so test it first: **§9g's fourth** —
+1. **Take rank 19 and make its `topicKey` decision.** The §9e check has four possible outcomes,
+   and **the last of them has now fired six times running**, so test it first: **§9g's fourth** —
    the Czech section maps to two Lehninger sections that deepen the *same* node, so the primary's
    key already fits and nothing changes at all (rank 3 §9g, rank 10 §9i, rank 11 §9j, rank 13 §9k,
-   rank 15 §9l). Then **§13m's third** — the key's Czech
+   rank 15 §9l, rank 16 §9m). Then **§13m's third** — the key's Czech
    node is a thin-but-legitimate partner while the real material sits *scattered* across pathway
    nodes that must **keep** their own keys, so re-key nothing and cross-reference by hand. Then the
    two failure modes below. **Only rank 8 (§9h) has ever needed a key created and Czech nodes
-   moved**, and that was because the inherited key described none of them.
+   moved**, and that was because the inherited key described none of them. **After rank 19, the
+   top-20 queue is EXHAUSTED** — the next pick has to come from outside it (§9a explains what the
+   ratio does and does not mean) or move to the entity cards below.
 2. **The entity cards** — archive §4, §12. This is `pro`'s *headline feature* and it still has
-   exactly one card. §12 already contains a finished tryptophan dossier that nothing has been built
-   from. Of the three, this is the one the user named as the point of the app.
+   exactly one card. §12 already contains a finished tryptophan dossier that nothing has been
+   built from. Of the three, this is the one the user named as the point of the app.
 ~~3. Clear the 34 UNCHECKED citation rows.~~ **Done 2026-08-07 (§13o) — the audit is now
-   340 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new UNCHECKED row in the same
+   352 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new UNCHECKED row in the same
    commit that creates it.
 
 Every unstruck rank above needs a `topicKey` decision first — see the failure modes below.
@@ -345,31 +418,58 @@ context.** Diagnosed by reading the session transcripts in
 `~/.claude/projects/c--Users-Admin-Documents-trae-projects-recombinants-trae-independant/`.
 All 8 of the most recent sessions tripped it at least once; 3 were killed outright.
 
-**The proof that it is not context**: the trip point is random, not end-loaded. Two sessions
-tripped at **entry 12 of 775 and 12 of 877** — right after the first `Read`, before any work.
-Others tripped at 140/584, 403/900, 610/611, 652/658, 669/725. Sessions died at 2.3–3.7 MB while
-25 earlier sessions reached 4–5.2 MB without trouble. Opus 5, Sonnet 5 and Opus 5 (1M) were all
-named in the errors, so **switching models does not help**.
+**The proof that it is not running out of context**: the trip point is not the context limit. Two
+sessions tripped at **entry 12 of 775 and 12 of 877** — right after the first `Read`, before any
+work. Others tripped at 140/584, 403/900, 610/611, 652/658, 669/725. Sessions died at 2.3–3.7 MB
+while 25 earlier sessions reached 4–5.2 MB without trouble. Opus 5, Sonnet 5 and Opus 5 (1M) were
+all named in the errors, so **switching models does not help**.
 
-**The likely trigger, stated as a hypothesis rather than a fact**: this project's data is a
-catalogue of poisons and their mechanisms. Measured across `biochemie_pro/data/`: inhibitor 125,
-toxin 46, death 35, poison 32, toxic 32, HIV 16, kill 15, cyanide 13, tetanus 11, DNP 10,
-botulinum 8. It concentrates in exactly the recently written files — `leh_ch6.js` (penicillin,
-beta-lactamase, HIV protease) 36, `leh_ch19.js` 36, `leh_ch11b.js` (botulinum and tetanus toxin)
-34, `leh_ch19b.js` (2,4-dinitrophenol, cyanide) 18. Every request re-sends the whole accumulated
-context, so the longer a session runs the more of this rides along each time.
+⚠️ **Refinement measured 2026-08-07, and it revises the sentence above.** Within a single session
+the trips are **not** uniformly distributed — they get denser as the session runs. The session
+that wrote §2.2, §8.2 and §26.2 tripped at 1.31 MB, 2.03, 2.06, 2.41, 2.48, 2.57 and 2.76 MB of
+transcript: one trip per completed node early on, then **four trips inside eleven minutes** while
+writing the third. So the earlier "the trip point is random" is right *across* sessions and wrong
+*within* one. The practical consequence is the "one node per session" rule below, which is now
+supported rather than merely plausible.
 
-**What actually works, and is already standard practice here:**
+### ⛔ The "toxin vocabulary" hypothesis is DISPROVEN — do not act on it, and do not re-derive it
 
-- **One node per session, then stop.** Not for context reasons — to cut the number of requests
-  carrying the accumulated toxin-mechanism text.
-- **Commit and push after every single node.** Three sessions were killed mid-flow and nothing
-  was lost, because each node was already committed.
-- **An interruption is often recoverable** — 5 of the 8 trips self-recovered. If it happens, just
-  say `继续`.
-- **Prefer a chemistry-clean section when you want an uninterrupted run.** Rank 13 (§2.2
-  ionization of water, weak acids and bases) is pure physical chemistry with no toxin content.
-  Rank 15 (§8.2) and 16 (§26.2) are also clean. The toxin-heavy ones are already done.
+An earlier draft of this section guessed the trigger was this project's poison-and-mechanism
+vocabulary, and advised picking "chemistry-clean" sections to get a quiet run. **That advice was
+tested on 2026-08-07 and it does not work.** Recording the disproof so nobody spends another
+session optimising against the wrong variable:
+
+- The session that wrote §2.2 (ionization of water — *pure physical chemistry, zero toxin
+  content*), §8.2 (DNA/RNA structure) and §26.2 (RNA processing) **tripped the classifier 8
+  times.** Three consecutively "clean" sections did not buy a quiet run.
+- Measured over `biochemie_pro/data/`, those three new files carry **39 of 984 total
+  trigger-vocabulary hits — 4 %.** The bulk sits in `ch4.js` (159), `ch8.js` (135) and `ch5.js`
+  (101), all written months ago without incident.
+- **Several trips carried no biochemistry at all.** One fired immediately after a `Read` of a
+  JSON key-lookup result; another fired while emitting a plain Chinese summary paragraph.
+- **Switching models does not help, now confirmed twice.** This session tripped 4× on Opus 5,
+  then switched to Sonnet 5 and tripped 4 more times.
+
+**What the data actually shows** is frequency rising with session length — the last 4 of 8 trips
+came within an 11-minute window at 2.4–2.8 MB of accumulated transcript — with no relationship to
+the content of the request that happens to be in flight. Treat it as an environmental hazard with
+a rising hazard rate, not as something the writing can be steered around.
+
+**What actually works — this is the operational part, and it is unchanged:**
+
+- **One node per session, then stop.** The reason is the rising hazard rate, not the vocabulary.
+- **Commit and push after every single node.** This is the whole defence, and it has now been
+  vindicated repeatedly: across every session killed mid-flow, **nothing has ever been lost**,
+  because each finished node was already committed.
+- **An interruption is usually recoverable — just say `继续`.** In this session all 8 trips were
+  recovered that way and the session still finished three complete nodes.
+- **A large `Write` may be worth splitting.** The single case where the *same* action tripped
+  twice in a row was a ~55 KB `Write` of a new node file. Weak evidence, one occurrence — but if a
+  big file write trips twice, write it in two passes rather than retrying it whole a third time.
+- ⚠️ **After any interruption mid-write, check the file is intact before continuing** — run
+  `python -c "import esprima; esprima.parseScript(open(PATH,encoding='utf-8').read())"`. One trip
+  in this session truncated a `Write` in the middle of a string literal. It was caught, but only
+  because the parse was checked.
 
 ## The rules that actually bite
 
@@ -433,7 +533,7 @@ Czech book's ch8 (lipids). Unrelated. Never compare `chapter` or `pages` across 
    the template (archive §13j explains its choices). State plainly in `coverageNote` **what the
    Czech node already has**, so nothing is presented as new when it is not.
 5. **Add `lehNotes` on the Czech side** only where revising from the Czech node alone would
-   *mislead in an exam* — `conflict`, `gap` or `cz-stronger`. Thirteen exist, on eleven nodes. **Keep them rare**; a
+   *mislead in an exam* — `conflict`, `gap` or `cz-stronger`. Fourteen exist, on twelve nodes. **Keep them rare**; a
    warning on every node is a warning nobody reads. Quote the book, never yourself. Archive §9f.
 6. **Wire the file into `biochemie_pro/index.html`'s script tags.** The validator checks that
    `index.html` and `data/` agree, so a file nobody loads is a failure, not a silent pass.
@@ -468,7 +568,7 @@ Czech book's ch8 (lipids). Unrelated. Never compare `chapter` or `pages` across 
    node `2-2-6`'s `cnNote` points at Chinese-notes topic 七 (pp.37–40, myoglobin/haemoglobin) when
    its actual subject — protein properties, Sephadex, SDS-PAGE — is topic 八 (pp.41–45). Flagged in
    two earlier sessions, fixed in neither. Archive §2c, §6a.
-3. **Are the thirteen `lehNotes` right in tone and length?** They are the template for every later
+3. **Are the fourteen `lehNotes` right in tone and length?** They are the template for every later
    one and the user has not seen them rendered. Two are worth looking at first: `4-1-3-1`, the
    only one correcting a plain factual count (Czech says three DNA polymerases, Lehninger says
    five), and `8-4-4-3`, the only one saying the Czech node is not wrong but *half the picture*
@@ -502,6 +602,8 @@ Search for the `## N.` or `### Na.` heading, read that section only.
 | 9k, 9k-i | **rank 13 (§2.2) decided** — reuse `amino-acids`; why a `water-and-ph` key was rejected; §2.2's verified pages, subheadings and glycine's two pKa values; and the Czech book's own "quaternary ammonium" error, checked against the Czech source before the `lehNote` was written |
 | 9l, 9l-i | **rank 15 (§8.2) decided** — reuse `nucleotides`; why two other Czech nodes with §8.2's subject in their titles keep their own keys; and the two Czech/Lehninger conflicts (helix stability, A- vs Z-DNA in cells) |
 | 13u | **`L-8-2-1`** — the run that proves the pre-test method (21 of 54 quotes one page out); OCR damage is per-region not per-page; and what to add when the Czech node is already good |
+| 9m | **rank 16 (§26.2) decided** — reuse `transcription`; why a Czech node whose OWN subject is gene regulation is not rank 9's failure mode even though it teaches capping/splicing; and two citation-checker bugs found by a broken parse (prime marks in a quote, double quotes inside a double-quoted string) |
+| 13v | **`L-26-2-1`** — RNA as its own enzyme (Cech 1982); the actual splicing chemistry; nusinersen/SMA as the worked medical example; and the two bugs from §9m in full |
 | 13t | **`L-2-2-1`** — the acid-base floor under a titration curve the Czech book draws without explaining; **five OCR traps on A pp.54–59**, one of them a new shape (a figure label with a middle dot); and **the method worth copying — test every quote against A before writing the prose** |
 | 13r | **`L-19-2-1`** — the evidence behind a claim the Czech node already makes, and where the non-integral ATP yield comes from |
 | 13s | **`L-11-2-1`** — the mechanism behind three facts a thin Czech node states as conclusions, plus lipid rafts and SNARE fusion, which the Czech layer lacks entirely |
