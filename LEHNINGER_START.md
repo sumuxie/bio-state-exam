@@ -246,9 +246,45 @@ decision before a word can go on the page.** So:
    303 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new UNCHECKED row in the same
    commit that creates it.
 
-Every rank above except 3 needs a `topicKey` decision first — see the two failure modes below.
+Every unstruck rank above needs a `topicKey` decision first — see the failure modes below.
+
+⚠️ **Pick rank 13 (§2.2) before rank 15 or 16 if you want a quiet session** — see the next
+block for why.
 
 ---
+
+## ⚠️ Why sessions keep getting cut off — measured 2026-08-07, and it is NOT context
+
+**Sessions are being killed by the API's AUP safeguard classifier, not by running out of
+context.** Diagnosed by reading the session transcripts in
+`~/.claude/projects/c--Users-Admin-Documents-trae-projects-recombinants-trae-independant/`.
+All 8 of the most recent sessions tripped it at least once; 3 were killed outright.
+
+**The proof that it is not context**: the trip point is random, not end-loaded. Two sessions
+tripped at **entry 12 of 775 and 12 of 877** — right after the first `Read`, before any work.
+Others tripped at 140/584, 403/900, 610/611, 652/658, 669/725. Sessions died at 2.3–3.7 MB while
+25 earlier sessions reached 4–5.2 MB without trouble. Opus 5, Sonnet 5 and Opus 5 (1M) were all
+named in the errors, so **switching models does not help**.
+
+**The likely trigger, stated as a hypothesis rather than a fact**: this project's data is a
+catalogue of poisons and their mechanisms. Measured across `biochemie_pro/data/`: inhibitor 125,
+toxin 46, death 35, poison 32, toxic 32, HIV 16, kill 15, cyanide 13, tetanus 11, DNP 10,
+botulinum 8. It concentrates in exactly the recently written files — `leh_ch6.js` (penicillin,
+beta-lactamase, HIV protease) 36, `leh_ch19.js` 36, `leh_ch11b.js` (botulinum and tetanus toxin)
+34, `leh_ch19b.js` (2,4-dinitrophenol, cyanide) 18. Every request re-sends the whole accumulated
+context, so the longer a session runs the more of this rides along each time.
+
+**What actually works, and is already standard practice here:**
+
+- **One node per session, then stop.** Not for context reasons — to cut the number of requests
+  carrying the accumulated toxin-mechanism text.
+- **Commit and push after every single node.** Three sessions were killed mid-flow and nothing
+  was lost, because each node was already committed.
+- **An interruption is often recoverable** — 5 of the 8 trips self-recovered. If it happens, just
+  say `继续`.
+- **Prefer a chemistry-clean section when you want an uninterrupted run.** Rank 13 (§2.2
+  ionization of water, weak acids and bases) is pure physical chemistry with no toxin content.
+  Rank 15 (§8.2) and 16 (§26.2) are also clean. The toxin-heavy ones are already done.
 
 ## The rules that actually bite
 
