@@ -44,8 +44,9 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — twelve Lehninger nodes now exist, and the depth queue's ready-to-write
-primaries are now EXHAUSTED.** `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
+**§9 step 6 is under way — twelve Lehninger nodes now exist, the depth queue's ready-to-write
+primaries are EXHAUSTED, and the citation backlog is CLEARED: 243 OK / 0 ELSEWHERE / 0 UNCHECKED
+(§13o).** Every `A p.N` in the app data now self-verifies on every run. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
 decision first (§9c, §9e), and §13m added a third possible outcome to that check. `L-23-2-1` in
@@ -2164,6 +2165,64 @@ miss, name the phrase without quotation marks.** Fixed, and the reason is writte
 `biochemie_pro` now reports **220 topics (207 cz, 12 lehninger, 1 entity), 63 topicKeys**, with
 **12 joining more than one source**. 8 lehNotes on 7 nodes. `step5_check.py`: all checks pass.
 Citation audit **209 OK / 0 ELSEWHERE / 34 UNCHECKED**; this node's own citations are all clean.
+
+### 13o. The citation backlog is cleared — 34 UNCHECKED → 0 (2026-08-07)
+
+**Every `A p.N` citation in `biochemie_pro` now self-verifies: 243 OK / 0 ELSEWHERE / 0
+UNCHECKED.** This was the largest known backlog in the project and it had never been worked
+through; §13m had just made it visible for the first time by fixing the two bugs that were
+inflating every audit.
+
+**Method, and it is repeatable.** `scripts/verify_citations.py` reports a row UNCHECKED when it
+can find no phrase to search on — that is a gap in *verifiability*, not evidence of an error. For
+each row: read the cited A page, pick a short verbatim phrase that actually supports the claim,
+and work it into the node's own prose as a quote. The row then self-verifies on every future run.
+A helper that proposes candidates (score verbatim sentences from the cited pages by word overlap
+with the node's claim) made this tractable; the scoring is crude but the top-5 list contained a
+usable quote almost every time.
+
+**Not one of the 34 citations turned out to be wrong.** Two places where the book's wording beat
+the node's paraphrase were adopted while passing through — propionic acidemia symptoms *manifest*
+in the first few days of life rather than *appear*, and the porphyrias accumulate specifically
+*porphyrin* precursors.
+
+#### ⚠️ Three probe constraints that silently drop a quote
+
+All three were found by adding quotes that looked right and watching the row stay UNCHECKED with
+`no searchable phrase` — which reads as though no quote had been added at all. **When a quote you
+just added does not clear its row, check these before anything else:**
+
+| constraint | what happens if you break it |
+|---|---|
+| **18–140 characters** between the quote marks | Three quotes of 157–158 chars were silently not adopted. Keep quotes well under 140. |
+| **at least 4 words** | The entity card quoted `'membrane interface anchors'` — 3 words — so it was never a probe. |
+| **no unquoted-phrase documentation** | Quoting a phrase *in order to record that A's OCR cannot find it* makes the checker adopt an unfindable probe (§13n). Name such phrases without quote marks. |
+
+#### Two more checker fixes, one of them a regression I had just caused
+
+**(3) Spaced figure labels.** A's OCR frequently puts a space *before* the hyphen in a label, so
+the page reads `figure 11 -31` while the probe built from the citation reads `figure 11-31`. The
+label never matched and the row was reported `probe not found even ±40 pages` **about a citation
+that was perfectly correct** — this alone accounted for four of `L-11-3-1`'s five open rows.
+`norm()` now collapses whitespace around a hyphen **between digits**, on both sides of the
+comparison, so it is symmetric and cannot make a wrong page match a right one.
+
+**(4) Label order — a regression from §13m's own fix.** Section nodes write the label *before* the
+page (`Fig. 3-28, A p.94`), which is why §13m's nearest-label fix cuts the window at the citation.
+**The entity card writes it *after*** (`A p.75, Fig. 3-6`), so cutting left nothing and two
+`E-tryptophan` rows silently became `no searchable phrase`. `probes()` now falls back to the first
+label *following* the citation when none precedes it. **The lesson is general: a change made to
+stop over-matching can quietly under-match somewhere with a different house style.** Both
+conventions are now supported; neither file needed editing.
+
+**Running totals across the day.** `189 OK / 2 ELSEWHERE / 33 UNCHECKED` (inflated, two bugs live)
+→ `186 / 0 / 34` after §13m's fixes → **`243 / 0 / 0`**. The OK count rose by 57 while the
+UNCHECKED count went to zero, and nothing was ever downgraded.
+
+**What this does and does not mean.** It means every citation has been checked against the page it
+names, by machine, and will be re-checked on every future run. It does **not** mean the prose
+around each citation is right — the quote proves the page, not the paraphrase. And `coverage:
+"full"` still over-claims on Lehninger nodes, because figures were never read as images (§15a).
 
 ---
 

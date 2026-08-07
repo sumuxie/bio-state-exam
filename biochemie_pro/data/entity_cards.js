@@ -34,10 +34,10 @@ window.BIOCHEM.topics.push(
         title_en: "Chain 1 — from the ring to the Nanodrop",
         title_cn: "链条一：从环到 Nanodrop",
         steps: [
-          { en: "Tryptophan's side chain is an indole ring: flat, and carrying no charge at any pH you meet in a cell. There is no ionisable group on it, which is why Table 3-1 gives Trp a pK1 and a pK2 but no R-group pKa at all.",
+          { en: "Tryptophan's side chain is an indole ring: flat, and carrying no charge at any pH you meet in a cell. There is no ionisable group on it, which is why Table 3-1 gives Trp a pK1 and a pK2 but no R-group pKa at all. The book still rates it “significantly more polar than phenylalanine because of the tyrosine hydroxyl group” and the indole nitrogen.",
             cn: "色氨酸的侧链是一个吲哚环：扁平，且在细胞内遇到的任何 pH 下都不带电荷。它没有可解离的基团——这正是 Table 3-1 给色氨酸列出 pK1 和 pK2，却完全没有侧链 pKa 的原因。",
             src: "A p.71–79, §3.1" },
-          { en: "A flat uncharged ring is awkward for water to surround, so it is pushed out of water. That is the hydrophobic effect, and it is why Trp ends up buried in a protein's core rather than on its surface.",
+          { en: "A flat uncharged ring is awkward for water to surround, so it is pushed out of water. That is the hydrophobic effect — “the hydrophobic effect makes a large contribution to the stability of protein structures” — and it is why Trp ends up buried in a protein's core rather than on its surface.",
             cn: "水很难把一个不带电的扁平环包围起来，于是它被排挤出水相。这就是疏水效应，也是色氨酸最终埋在蛋白质核心而不是暴露在表面的原因。",
             src: "A p.116–129, §4.3" },
           { en: "But the ring is not purely greasy either — the indole nitrogen makes Trp measurably more polar than phenylalanine. The book says so directly: Tyr and Trp are 'significantly more polar than phenylalanine because of the tyrosine hydroxyl group and the nitrogen of the tryptophan indole ring.' Half-greasy, half-polar is exactly the property the next step needs.",
@@ -58,7 +58,7 @@ window.BIOCHEM.topics.push(
         title_en: "Chain 2 — why Trp sits exactly at the membrane surface",
         title_cn: "链条二：为什么色氨酸恰好待在膜的表面",
         steps: [
-          { en: "A membrane is not one environment but three stacked ones: water outside, polar head groups, then the greasy acyl chains in the middle. A residue that is half-greasy and half-polar has nowhere ideal in a protein core — but it has an ideal place here.",
+          { en: "A membrane is not one environment but three stacked ones: water outside, polar head groups, then the greasy acyl chains in the middle. A residue that is half-greasy and half-polar has nowhere ideal in a protein core — but it has an ideal place here, and the book calls it a remarkable feature of many transmembrane proteins: “the presence of Tyr and Trp residues at the interface between lipid and water” .",
             cn: "膜不是一种环境，而是三层叠在一起：外侧的水、极性头部基团、以及中间油性的酰基链。一个半油半极性的残基在蛋白质核心里没有理想位置——但在这里有。",
             src: "A p.367–376, §11.1" },
           { en: "And that is where they are found. Fig. 11-15: Tyr and Trp residues 'are found predominantly where the nonpolar region of acyl chains meets the polar head-group region', acting as 'membrane interface anchors, able to interact simultaneously with the central lipid phase and the aqueous phases on either side.'",
@@ -73,10 +73,10 @@ window.BIOCHEM.topics.push(
         title_en: "Chain 3 — expensive to make, therefore regulated twice",
         title_cn: "链条三：合成昂贵，因此被调控两遍",
         steps: [
-          { en: "Tryptophan is the most expensive amino acid the cell makes. The aromatic branch is the longest biosynthetic pathway of the twenty: chorismate → anthranilate (glutamine donates the nitrogen that becomes the indole N) → condensation with PRPP → indole-3-glycerol phosphate, and finally tryptophan synthase, an α₂β₂ enzyme that separates into α and β₂ halves each catalysing one half of the reaction.",
+          { en: "Tryptophan is the most expensive amino acid the cell makes. The aromatic branch is the longest biosynthetic pathway of the twenty: chorismate → anthranilate (glutamine donates the nitrogen that becomes the indole N) → condensation with PRPP → indole-3-glycerol phosphate, and finally tryptophan synthase, an α₂β₂ enzyme that separates into α and β₂ halves each catalysing one half of the reaction. In the book's words, “the indole ring of tryptophan is derived from the ring carbons and amino group of anthranilate” plus two carbons from PRPP.",
             cn: "色氨酸是细胞合成代价最高的氨基酸。芳香族分支是二十种氨基酸中最长的生物合成途径：分支酸 → 邻氨基苯甲酸（谷氨酰胺提供那个后来成为吲哚氮的氮）→ 与 PRPP 缩合 → 吲哚-3-甘油磷酸，最后由色氨酸合酶完成，那是一个 α₂β₂ 酶，可拆成 α 与 β₂ 两半，各自催化反应的一半。",
             src: "A p.810–812, §22.2" },
-          { en: "Something that expensive is worth controlling tightly, so E. coli controls it twice. First repression: tryptophan itself binds the trp repressor, a homodimer, which then binds an operator that overlaps the promoter — so the product of the pathway switches off the genes that build it.",
+          { en: "Something that expensive is worth controlling tightly, so E. coli controls it twice. First repression: “when tryptophan is abundant, it binds to the trp repressor, causing a conformational change” — the repressor is a homodimer, and it then binds an operator that overlaps the promoter — so the product of the pathway switches off the genes that build it.",
             cn: "这么昂贵的东西值得严格控制，所以大肠杆菌控制了两遍。第一层是阻遏：色氨酸本身结合 trp 阻遏蛋白（一个同源二聚体），后者随即结合与启动子重叠的操纵基因——于是途径的产物关掉了合成它的基因。",
             src: "A p.1067–1069, §28.2" },
           { en: "Then attenuation fine-tunes on top of that, and the combined range is the number worth remembering: 'Different cellular concentrations of tryptophan can vary the rate of synthesis… over a 700-fold range.' Two mechanisms stacked, because one was not enough for the costliest product.",
@@ -138,7 +138,7 @@ window.BIOCHEM.topics.push(
         q_en: "Why is tryptophan found specifically at the membrane interface rather than in the middle of the lipid bilayer or out in the water?",
         q_cn: "为什么色氨酸恰好出现在膜界面，而不是脂双层中央或水相之中？",
         accept: ["interface", "界面", "both", "polar", "极性", "indole nitrogen", "吲哚氮", "amphi", "anchor", "锚"],
-        answer_en: "Because it is both at once. The flat ring is nonpolar enough to avoid water, but the indole nitrogen makes it measurably more polar than phenylalanine — so it has no ideal home either in bulk water or in the greasy core, and its ideal home is precisely the boundary where acyl chains meet head groups. Lehninger calls Trp and Tyr 'membrane interface anchors' able to interact with the lipid phase and both aqueous phases simultaneously (A p.375–376).",
+        answer_en: "Because it is both at once. The flat ring is nonpolar enough to avoid water, but the indole nitrogen makes it measurably more polar than phenylalanine — so it has no ideal home either in bulk water or in the greasy core, and its ideal home is precisely the boundary where acyl chains meet head groups. Lehninger calls Trp and Tyr “membrane interface anchors, able to interact simultaneously with the central lipid phase” and the aqueous phases on either side of the membrane (A p.375–376).",
         answer_cn: "因为它两者兼具。扁平的环足够非极性以躲开水，但吲哚氮又使它的极性明显强于苯丙氨酸——所以它在纯水相和油性核心中都没有理想归宿，而它的理想归宿恰恰是酰基链与头部基团相接的边界。Lehninger 称色氨酸与酪氨酸为「膜界面锚」，能同时与脂相和两侧水相相互作用（A 第 396–397 页）。" }
     ],
 

@@ -235,18 +235,18 @@ OK        L-25-1-1       A pp.929-930  points[13].en  quote found on [929]
 OK        L-25-1-1       A p.929  points[13].en       quote found on [929]
 OK        L-25-1-1       A p.930  points[13].en       quote found on [930]
 OK        L-25-1-1       A p.917  points[13].en       quote found on [917]
-UNCHECKED E-tryptophan   A p.71–79, §3.1              no searchable phrase -- verify by hand
-UNCHECKED E-tryptophan   A p.116–129, §4.3            no searchable phrase -- verify by hand
+OK        E-tryptophan   A p.71–79, §3.1              quote found on [75]
+OK        E-tryptophan   A p.116–129, §4.3            quote found on [124]
 OK        E-tryptophan   A p.75, §3.1                 quote found on [75]
 OK        E-tryptophan   A p.75, Fig. 3-6             label found on [75]
 OK        E-tryptophan   A p.75–76, Box 3-1           label found on [75]
-UNCHECKED E-tryptophan   A p.367–376, §11.1           no searchable phrase -- verify by hand
+OK        E-tryptophan   A p.367–376, §11.1           quote found on [375]
 OK        E-tryptophan   A p.375–376, Fig. 11-15      label found on [376]
 OK        E-tryptophan   A p.375, §11.1               quote(split) found on [375]
-UNCHECKED E-tryptophan   A p.810–812, §22.2           no searchable phrase -- verify by hand
-UNCHECKED E-tryptophan   A p.1067–1069, §28.2         no searchable phrase -- verify by hand
+OK        E-tryptophan   A p.810–812, §22.2           quote found on [812]
+OK        E-tryptophan   A p.1067–1069, §28.2         quote found on [1067]
 OK        E-tryptophan   A p.1068, §28.2              quote(split) found on [1068]
 SKIP      E-tryptophan   CZ §4.2.4                    (no A page in citation)
-UNCHECKED E-tryptophan   A p.375–376  quiz[2].answer_en no searchable phrase -- verify by hand
+OK        E-tryptophan   A p.375–376  quiz[2].answer_en quote found on [375]
 
-OK 237 | ELSEWHERE 0 | UNCHECKED 6
+OK 243 | ELSEWHERE 0 | UNCHECKED 0

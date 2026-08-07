@@ -1,11 +1,11 @@
 ==============================================================================
-HANDOFF_LEHNINGER.md  (2496 lines)
+HANDOFF_LEHNINGER.md  (2555 lines)
 ==============================================================================
-  L182   UNBALANCED ** across paragraph
+  L183   UNBALANCED ** across paragraph
           ...1. ~~**The six regulation sections in §9b left un-ruled**~~ → **alread
-  L1017  PARAGRAPH TRUNCATED (no terminal punctuation)
+  L1018  PARAGRAPH TRUNCATED (no terminal punctuation)
           ...- `10-9` → `fatty-acid-biosynthesis`, where a node about synthesis belongs
-  L2370  SUBSECTION ORDER 16: ['a', 'c', 'b'] not alphabetical
+  L2429  SUBSECTION ORDER 16: ['a', 'c', 'b'] not alphabetical
 
 ==============================================================================
 HANDOFF.md  (913 lines)

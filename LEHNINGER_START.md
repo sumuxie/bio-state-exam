@@ -49,30 +49,47 @@ title — and p.46 is **blank**, fixing the topic's end. So topic 八 = pp.41–
 ends. `2-2-6` now reads `topic: "八"`, `status: "mapped"`, with the evidence written into its
 `coverageNote`. **Topic 八 appears in the data for the first time.**
 
-### ⚠️ Read this before you quote any audit number
+### ✅ The citation backlog is cleared: 243 OK / 0 ELSEWHERE / 0 UNCHECKED
 
-**Two bugs in `verify_citations.py` were inflating EVERY audit ever run, and both are now fixed
-(§13m).** Any `OK` total written in either handoff before 2026-08-07 is too high. Re-run the
-script; do not compare against a recorded figure.
+Every `A p.N` citation in `biochemie_pro` now self-verifies on every run (§13o). This was the
+largest known backlog in the project. **Not one of the 34 UNCHECKED citations turned out to be
+wrong** — they were gaps in *verifiability*, not errors. Each was closed by reading the cited page
+and working a short verbatim quote into the node's own prose.
+
+**Keep it at zero.** `verify_citations.py` must end `0 elsewhere, 0 unchecked`. If a new node
+adds an UNCHECKED row, close it in the same commit rather than banking it.
+
+⚠️ **Three probe constraints that silently drop a quote** — check these first when a quote you
+just added does not clear its row, because the message you get back is `no searchable phrase`,
+which reads as though you had added nothing:
+
+- **18–140 characters** between the quote marks. Three quotes of 157–158 chars were silently
+  ignored.
+- **at least 4 words**. `'membrane interface anchors'` is 3, so it never became a probe.
+- **never quote a phrase in order to say A cannot find it** — the checker adopts it as an
+  unfindable probe and condemns the surrounding citations. Name such phrases without quote marks.
+
+### ⚠️ Any audit number written before 2026-08-07 is inflated
+
+**Four bugs in `verify_citations.py` were fixed that day**, two of which had been distorting every
+audit ever run. Re-run the script; never compare against a recorded figure.
 
 - **`cited_range()` re-searched the context window** and took the *first* citation in it, not the
   one the row was about — so a row for `A pp.930-940` was silently re-ranged to a nearby
   `A p.919`, found a probe there, and **printed as OK**. It did not drop the citation, it
-  **confirmed the wrong one**. 15 rows were affected.
+  **confirmed the wrong one**. 15 rows affected.
 - **`probes()` took the first figure label in the window**, not the nearest one *before* the
-  citation. In a field listing anchors in series (`FIGURE 11-32 = A p.388; BOX 11-1 = A p.389; …`)
-  it grabbed the wrong label and **condemned seven correct citations** in `L-11-3-1`.
+  citation, and **condemned seven correct citations** in `L-11-3-1`.
+- **Spaced figure labels.** A's OCR writes `figure 11 -31`, so a probe built as `figure 11-31`
+  never matched — four more correct citations reported as unverifiable. `norm()` now collapses
+  whitespace around a hyphen between digits.
+- **Label order**, which was a regression from the second fix: section nodes write
+  `Fig. 3-28, A p.94` (label first), the entity card writes `A p.75, Fig. 3-6` (label last).
+  Cutting the window at the citation broke the second convention. Both are supported now.
+  **A change made to stop over-matching quietly under-matched somewhere with a different house
+  style** — worth remembering before the next "obvious" tightening.
 
-The OK count went **down** across the fix and that is the improvement — the checker stopped lying.
-A third bug, the apostrophe guard failing after a *digit* (`Table 25-1's …`), was fixed the same
-day. Current: **209 OK / 0 ELSEWHERE / 34 UNCHECKED**.
-
-**Those 34 UNCHECKED rows are the biggest concrete backlog in the project and are now visible for
-the first time**: `E-tryptophan` 8, `L-22-3-1` 5, `L-11-3-1` 5, `L-17-2-1` 4, `L-1-3-1` 4, and a
-scattering of ones and twos. None is known to be wrong; each needs a human to open the page and
-add a verbatim quote so it self-verifies.
-
-### Five things the last three nodes learned
+### Five things the recent nodes learned
 
 - **Never scale a B page into an A page — search A.** In §25.1, ten of 54 candidate quotes were on
   a different A page than B's layout implied, every one off by exactly one.
@@ -133,8 +150,9 @@ described below before a word can be written. So the next move is a choice, not 
 2. **The entity cards** — archive §4, §12. This is `pro`'s *headline feature* and it still has
    exactly one card. §12 already contains a finished tryptophan dossier that nothing has been built
    from. Of the three, this is the one the user named as the point of the app.
-3. **Clear the 34 UNCHECKED citation rows**, listed above. Mechanical, needs no decisions, and it
-   is the only item that shrinks a known backlog rather than adding to one.
+~~3. Clear the 34 UNCHECKED citation rows.~~ **Done 2026-08-07 (§13o) — the audit is now
+   243 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new UNCHECKED row in the same
+   commit that creates it.
 
 Every other rank above needs a `topicKey` decision first — see the two failure modes below.
 
@@ -263,6 +281,6 @@ Search for the `## N.` or `### Na.` heading, read that section only.
 | 9e | **the two-minute check** and the first `topicKey` correction |
 | 9f | `lehNotes` — the format, the bar, the six that exist |
 | 12 | the tryptophan entity card — a finished dossier, nothing written yet |
-| 13–13m | one section per Lehninger node written. `13j` (`L-5-1-1`) is the best template for how to *write* a node; `13l` (`L-25-1-1`) for how to *verify* one — page ranges, B-to-A drift, the OCR traps; **`13m` (`L-23-2-1`) for the two checker bugs that inflated every audit before 2026-08-07** |
+| 13–13o | one per Lehninger node, then two method sections. `13j` (`L-5-1-1`) is the best template for how to *write* a node; `13l` (`L-25-1-1`) for how to *verify* one — page ranges, B-to-A drift, OCR traps; `13m` (`L-23-2-1`) for the two checker bugs that inflated every audit before 2026-08-07; **`13o` for clearing the citation backlog to zero and the three probe constraints that silently drop a quote** |
 | 14 | working locally: what is local-only, how to run and check with no `node` |
 | 15, 16, 16c | figures; **citation verification**; caption-vs-cross-reference ambiguity |
