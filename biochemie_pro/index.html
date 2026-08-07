@@ -247,6 +247,7 @@
         <h2>Question bank <span class="muted">题库</span></h2>
         <div class="controls">
           <select id="quiz-scope"></select>
+          <button id="quiz-src" class="btn-ghost" title="Which questions to draw from">core</button>
           <button id="quiz-start" class="btn-primary">Start</button>
         </div>
       </div>
@@ -254,6 +255,7 @@
       <div id="quiz-intro" class="empty-state">
         <p>Pick a scope and press <strong>Start</strong>.</p>
         <p class="muted">Multiple-choice is graded automatically. Written answers are checked against key terms and always reveal the model answer.</p>
+        <p class="muted" id="quiz-src-note"></p>
       </div>
 
       <div id="quiz-stage" hidden>

@@ -231,7 +231,8 @@
     scores:  store.get('scores', {}),     // topicId -> {correct,total}
     topicId: null,
     filter:  '',
-    nav:     store.get('nav', 'book')     // 'book' = linear reading order, 'topic' = by topicKey
+    nav:     store.get('nav', 'book'),    // 'book' = linear reading order, 'topic' = by topicKey
+    qsrc:    store.get('qsrc', 'core')    // 'core' | 'bank' | 'terms' -- see allQuestions()
   };
 
   /* ---------------------------------------------------------------- helpers */
@@ -429,9 +430,121 @@
     return out;
   }
 
+  /* ------------------------------------------------------------- questions
+     Three sources, cycled by one control in the Quiz tab (ported from PESB,
+     HANDOFF_from_PESB_biochemie.md A6/A7):
+
+       core   — `quiz`, hand-written per node. Always on.
+       bank   — `bank`, hand-written extras. NO node carries one yet, so this
+                level ships inert and simply equals `core` until data exists.
+       terms  — generated at run time from the `terms` arrays.
+
+     The generated set is deliberately NOT written into the data files. It
+     would add ~1,200 items of boilerplate no human would edit, and it would
+     go stale the moment a definition was reworded. Generating on load costs
+     nothing and cannot drift. */
+  const QSRC = ['core', 'bank', 'terms'];
+
   function allQuestions() {
     const out = [];
-    TOPICS.forEach((t) => (t.quiz || []).forEach((q) => out.push({ topic: t, q: q })));
+    const level = QSRC.indexOf(state.qsrc);
+    TOPICS.forEach((t) => {
+      (t.quiz || []).forEach((q) => out.push({ topic: t, q: q, core: true }));
+      if (level >= 1) (t.bank || []).forEach((q) => out.push({ topic: t, q: q, core: false }));
+    });
+    if (level >= 2) out.push.apply(out, termQuestions());
+    return out;
+  }
+
+  function bankCount() {
+    return TOPICS.reduce((n, t) => n + ((t.bank && t.bank.length) || 0), 0);
+  }
+
+  /* One multiple-choice question per glossary term, alternating direction by
+     index so the drill does not become a single mechanical pattern: even
+     terms ask term -> definition, odd ones definition -> term.
+
+     TWO DEPARTURES FROM PESB'S VERSION, both forced by this app's data model
+     and both silent failures if skipped:
+
+     1. Distractors are drawn from the same BOOK AND CHAPTER, not chapter
+        alone. `chapter` here is book-local -- Czech ch7 is sugars, Lehninger
+        ch7 is something else entirely (HANDOFF_LEHNINGER.md section 6) -- so
+        bucketing on chapter alone would mix two unrelated subjects into one
+        distractor pool and make the question easier than it looks.
+     2. Entity cards have NO `chapter` and NO `section` by design (section
+        12a). They get their own bucket keyed on `entity`, and the rationale
+        line falls back to `enTitle` instead of printing `undefined`.
+
+     A distractor from a different chapter is usually rejectable on topic
+     alone, so the question would stop testing anything. Terms whose
+     definition collides with the answer are skipped rather than used, or the
+     question would have two defensible answers. */
+  let termQuestionCache = null;
+
+  function qBucket(t) {
+    return isEntity(t) ? 'entity' : bookOf(t) + ':' + t.chapter;
+  }
+
+  function whereFrom(t) {
+    return isEntity(t) ? t.enTitle : (t.section || '') + ' ' + (t.enTitle || '');
+  }
+  function whereFromCn(t) {
+    return isEntity(t) ? (t.cnTitle || t.enTitle) : (t.section || '') + ' ' + (t.cnTitle || '');
+  }
+
+  function termQuestions() {
+    if (termQuestionCache) return termQuestionCache;
+    const byBucket = {};
+    allCards().forEach((r) => {
+      const k = qBucket(r.topic);
+      (byBucket[k] = byBucket[k] || []).push(r);
+    });
+
+    const out = [];
+    Object.keys(byBucket).forEach((k) => {
+      const pool = byBucket[k];
+      pool.forEach((r, i) => {
+        const term = r.term;
+        if (!term.en || !term.cn || !term.def_en || !term.def_cn) return;
+
+        // Three distractors spread across the pool rather than taken from the
+        // neighbours, which would cluster them all inside one topic.
+        const others = [];
+        for (let m = 1; others.length < 3 && m < pool.length; m++) {
+          const cand = pool[(i + m * 7 + 1) % pool.length];
+          if (cand === r) continue;
+          if (!cand.term.en || !cand.term.def_en) continue;
+          if (cand.term.def_en === term.def_en || cand.term.en === term.en) continue;
+          if (others.some((o) => o.term.en === cand.term.en)) continue;
+          others.push(cand);
+        }
+        if (others.length < 3) return;      // too small a pool to ask fairly
+
+        const toDef = i % 2 === 0;
+        const right = toDef ? term.def_en : term.en;
+        const wrong = others.map((o) => (toDef ? o.term.def_en : o.term.en));
+        const opts = shuffle([right].concat(wrong));
+
+        out.push({
+          topic: r.topic,
+          core: false,
+          generated: true,
+          q: {
+            type: 'mcq',
+            q_en: toDef ? `Which definition matches “${term.en}”?`
+                        : `Which term does this describe? “${term.def_en}”`,
+            q_cn: toDef ? `以下哪一条定义对应「${term.cn}」？`
+                        : `下面这段描述的是哪一个术语？「${term.def_cn}」`,
+            options: opts,
+            answer: opts.indexOf(right),
+            why_en: `${term.en} — ${term.def_en} (${whereFrom(r.topic)})`,
+            why_cn: `${term.cn}——${term.def_cn}（${whereFromCn(r.topic)}）`
+          }
+        });
+      });
+    });
+    termQuestionCache = out;
     return out;
   }
 
@@ -869,6 +982,27 @@
   }
 
   /* ------------------------------------------------------------------ quiz */
+  /* The label states the count each level reaches, so an inert level is
+     visibly inert rather than looking broken. `bank` shows "no extras yet"
+     until the first `bank` array is written. */
+  function renderQuizSrc() {
+    const btn = $('#quiz-src');
+    if (!btn) return;
+    const core = TOPICS.reduce((n, t) => n + ((t.quiz && t.quiz.length) || 0), 0);
+    const bank = bankCount();
+    const gen  = termQuestions().length;
+    const label = { core: 'core', bank: 'core + bank', terms: 'core + bank + terms' }[state.qsrc];
+    btn.textContent = label;
+    const note = $('#quiz-src-note');
+    if (!note) return;
+    note.innerHTML =
+      `Source: <strong>${esc(label)}</strong> — `
+      + `core ${core}`
+      + (bank ? ` · bank ${bank}` : ` · bank <em>no extras written yet</em>`)
+      + ` · generated from glossary ${gen}`
+      + `. Tap the source button to cycle.`;
+  }
+
   let quizItems = [], quizIndex = 0, quizCorrect = 0, quizAnswered = false, quizWrong = [];
 
   function startQuiz() {
@@ -1117,6 +1251,18 @@
 
     $('#stat-terms').textContent = allCards().length;
     $('#stat-questions').textContent = allQuestions().length;
+
+    /* Quiz source cycling (A6) + the generated term drill (A7). The button
+       reports what each level actually yields, because "bank" is inert today
+       -- no node carries a `bank` array -- and a control that silently does
+       nothing reads as a bug. */
+    renderQuizSrc();
+    $('#quiz-src').addEventListener('click', () => {
+      state.qsrc = QSRC[(QSRC.indexOf(state.qsrc) + 1) % QSRC.length];
+      store.set('qsrc', state.qsrc);
+      renderQuizSrc();
+      $('#stat-questions').textContent = allQuestions().length;
+    });
 
     renderSidebar();
     renderStudy();
