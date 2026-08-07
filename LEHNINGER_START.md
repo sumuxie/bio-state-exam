@@ -470,6 +470,39 @@ the Czech book. **All twenty of the top 20 are now written:**
 ~~13 §2.2~~ · ~~14 §3.4~~ · ~~15 §8.2~~ ·
 ~~16 §26.2~~ · ~~17 §22.3~~ · ~~18 §3.3~~ · ~~19 §23.3~~ · ~~20 §25.1~~
 
+### ✅ PHOTOSYNTHESIS IS **NOT** A GAP — an earlier draft of this block said it was, and was wrong
+
+**Measured 2026-08-08, correcting a claim written into this file the day before.** Czech chapter 9
+is photosynthesis, end to end: **27 nodes**, `9-1` through `9-27`, covering photoautotrophy,
+thylakoid structure, all three pigment classes, chlorophyll absorption spectra, the reaction
+centre and antenna, the photosystem and oriented charge separation, cyclic versus linear flow and
+the Z-scheme, proton transport and ATP synthase, CO₂ fixation, RubisCO, the Calvin cycle,
+photorespiration, C-4 / Hatch–Slack, and on into nitrogen fixation and nitrate reduction. Five
+topicKeys already exist for it (`photosynthetic-pigments`, `photochemical-reaction-centers`,
+`co2-assimilation`, `photorespiration-c4-cam`, `starch-sucrose-biosynthesis`).
+
+**Where the wrong claim came from, because the failure mode will recur.** §3 records that a
+classmate was examined on photosynthesis *and that the Chinese notes omit it* — the observation
+that established the rule *notes are a comprehension aid, never scope*. A session read that as
+"the app is missing photosynthesis" and promoted four Lehninger §20.x sections to top priority.
+**It is the NOTES that omit photosynthesis, not the Czech book and not the app.** Before calling
+anything a coverage gap, grep the Czech layer for it — that is one command and it settles the
+question.
+
+Lehninger depth on §20.x remains a legitimate *optional* pick, at the ordinary priority its ratio
+gives it. It is not urgent and it is not a risk to the exam.
+
+### 🏁 Next pick: the top-20 queue is EXHAUSTED — the entity cards are now the obvious choice
+
+`lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
+the Czech book. **All twenty of the top 20 are now written:**
+
+~~1 §5.1~~ · ~~2 §8.3~~ · ~~3 §6.4~~ · ~~4 §11.3~~ · ~~5 §21.1~~ ·
+~~6 §19.1~~ · ~~7 §23.2~~ ·
+~~8 §16.2~~ · ~~9 §17.2~~ · ~~10 §19.2~~ · ~~11 §11.2~~ · ~~12 §1.3~~ ·
+~~13 §2.2~~ · ~~14 §3.4~~ · ~~15 §8.2~~ ·
+~~16 §26.2~~ · ~~17 §22.3~~ · ~~18 §3.3~~ · ~~19 §23.3~~ · ~~20 §25.1~~
+
 ### ⚠️⚠️ PHOTOSYNTHESIS IS THE HIGHEST-PRIORITY UNWRITTEN CONTENT — and the ratio hides it
 
 **This is the only place in the whole project where a REAL EXAM QUESTION is on record**, and it
