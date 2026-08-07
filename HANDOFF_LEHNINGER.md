@@ -44,8 +44,8 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — fourteen Lehninger nodes now exist, the depth queue's ready-to-write
-primaries are EXHAUSTED, and the citation backlog is CLEARED: 278 OK / 0 ELSEWHERE / 0 UNCHECKED
+**§9 step 6 is under way — fifteen Lehninger nodes now exist, the depth queue's ready-to-write
+primaries are EXHAUSTED, and the citation backlog is CLEARED: 294 OK / 0 ELSEWHERE / 0 UNCHECKED
 (§13o).** Every `A p.N` in the app data now self-verifies on every run. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
@@ -2569,6 +2569,65 @@ draft got it wrong. The draft invented `topic: "十四"` for the citrate cycle. 
 partner nodes carry **no** `cnNote`, and the Chinese notes were never opened for this node — so the
 number was a guess, which is exactly what §2c forbids: *flagging a gap is not the same as guessing
 it*. The field was removed and the omission explained in the `coverageNote` instead.
+
+### 13r. The fifteenth node — `L-19-2-1`, §19.2 ATP Synthesis (2026-08-07): writing the evidence for a claim the Czech node already makes
+
+Rank 10, ratio 6.0. A pp.674–686, B pp.2408–2447, in **`biochemie_pro/data/leh_ch19b.js`** —
+chapter 19's **second** file, because `leh_ch19.js` already holds `L-19-1-1` and was left
+untouched. Both carry `respiratory-chain` and join the same five Czech nodes; §9i has the
+decision, which cost no data change.
+
+**The shape of the problem, and it is a third distinct one.** §6.4's Czech partner was thin on
+evidence; §16.2's was strong on content but silent on argument. Here Czech `6-2-4-5` states the
+*mechanism itself correctly* — ATP forms at the F1 site, stays bound, and is released when protons
+through Fo change that site's conformation. That is Boyer's binding-change model, and a depth node
+that explained it again would add nothing. So this node was written as **the evidence for a
+sentence the reader already has**, which turns out to be the most satisfying kind of depth
+available:
+
+- **Obligate coupling**, shown by the direction nobody expects: oligomycin binds the *synthase*,
+  touches no electron carrier, and stops *respiration*.
+- **The artificial-gradient experiment** — mitochondria moved from pH 9 to pH 7 with valinomycin
+  make ATP with no oxidisable substrate anywhere. As close to decisive as bioenergetics gets.
+- **Racker's stripping and reconstitution**, which separates Fo the channel from F1 the head and
+  plug.
+- **The heavy-oxygen exchange**: phosphate comes back with three or four labelled atoms, so ATP is
+  made and unmade repeatedly while bound, and the equilibrium constant on the enzyme is about 2.4
+  against about 100,000 in free solution.
+- **The number behind the claim**: ATP is bound with a dissociation constant of a picomolar or
+  below and ADP at around ten micromolar — about 40 kJ/mol of binding energy, which pays for the
+  bond. So the gradient is spent on **release**, and the reaction-coordinate diagram is unlike a
+  normal enzyme's.
+- **The rotation was watched**, not inferred: a fluorescent actin filament on the γ subunit,
+  turning in discrete 120° jumps at an efficiency close to 100%.
+
+**Where it earns its place in the balance sheet.** The last third of the section closes a loop
+opened two nodes earlier. §13q's `lehNote` on `6-2-2-3` says Lehninger's glucose total is 30–32
+rather than 38 but does not say *why* the number resists being an integer. §19.2 gives three
+independent reasons: the protons needed per revolution equal the number of **c subunits**, which
+is 8 in cattle and 10 in yeast; **one proton in four** is spent on the phosphate translocase and
+the adenine nucleotide exchange rather than on synthesis; and cytosolic NADH enters at Complex I
+or at ubiquinone depending on **which shuttle** the tissue uses, which is exactly the "3 or 5 ATP"
+row in `L-16-2-1`'s TABLE 16-1 citation. The three nodes now form a chain, and each names the
+others.
+
+**No new `lehNote`, deliberately.** `6-2-4-5`'s proton arithmetic (6 H+ → about 3 ATP) differs from
+Lehninger's (10 out, 4 in → 2.5), but that is the same disagreement already flagged on `6-2-2-3`,
+and §9f's bar is that a warning appearing everywhere is a warning nobody reads. The point in this
+node names `6-2-4-5`'s numbers directly and points at the existing note instead.
+
+**Citations: 19 rows, 17 OK on the first run, 2 UNCHECKED closed in the same commit.** Both were in
+the `coverageNote`, at the two pages that are *about* pagination rather than content — A p.674,
+whose OCR is bad, and the wrong TOC range. The first instinct was to reword them so they stopped
+being citations at all; that would have been gaming the checker. **A direct search showed A p.674's
+OCR is bad only in patches — its opening question is perfectly clean**, so both rows were closed
+with real quotes. Whole-project audit: **294 OK / 0 ELSEWHERE / 0 UNCHECKED**.
+
+**One §5 note.** The section explains uncoupler chemistry using resonance stabilisation of the
+anion, which is precisely what §5 forbids. The point rewrites it as a physical property that can
+be stated without orbitals: the molecule is hydrophobic enough to cross the membrane in *both* its
+protonated and its charged form, so it shuttles protons back and forth. Nothing is lost, and the
+DNP-as-slimming-drug fact makes it stick.
 
 ---
 
