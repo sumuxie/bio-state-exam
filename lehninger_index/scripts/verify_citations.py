@@ -144,10 +144,26 @@ def cited_range(src):
 QUOTED = re.compile(r"(?<![A-Za-z0-9])['\u2018\u2019\u201c\u201d\"]([^'\u2018\u2019\u201c\u201d\"]{18,140})['\u2018\u2019\u201c\u201d\"]")
 FIGREF = re.compile(r"\b(FIGURE|Fig\.|TABLE|Tab\.|Box)\s*(\d{1,2}[-–]\d{1,3})", re.I)
 
-def probes(text, src):
+def probes(text, src, cite=None):
     out = []
-    # a figure/table/box label named in the citation itself is the strongest probe
-    m = FIGREF.search(src or "")
+    # A figure/table/box label named next to the citation is the strongest probe -- but it must
+    # be the LABEL NEAREST BEFORE the page number, not the first one in the window.
+    #
+    # 2026-08-07: FIGREF.search took the first match in the +-90-char window, which is wrong
+    # whenever a field lists several citations in a row. L-11-3-1's coverageNote lists measured
+    # anchors as "FIGURE 11-31 = A p.387; FIGURE 11-32 = A p.388; BOX 11-1 = A p.389; ...", so
+    # the window for `A p.389` reaches back over two earlier labels and the search returned
+    # FIGURE 11-31 -- producing "actually on [386] <-- FIX THE CITATION" about a citation whose
+    # real label, BOX 11-1, is exactly where it says it is. Seven correct citations were
+    # condemned this way. Cutting the window at the citation and taking the last label before it
+    # is what "the label that belongs to this citation" actually means.
+    head = src or ""
+    at = head.rfind(cite) if cite else -1
+    if at < 0:
+        mm = CITE.search(head)
+        at = mm.start() if mm else len(head)
+    labels = list(FIGREF.finditer(head[:at]))
+    m = labels[-1] if labels else None
     if m:
         kind = m.group(1).lower().rstrip('.')
         kind = {"fig": "figure", "tab": "table"}.get(kind, kind)
@@ -208,13 +224,27 @@ def walk_strings(obj, path=""):
 # ("Fig. 3-28, A p.94"), so the window has to reach back far enough to catch it.
 CTX_BACK, CTX_FWD = 90, 15
 
+# Each row carries the EXACT citation string it is about (`cite`), not just the context window.
+#
+# 2026-08-07, found writing L-23-2-1: without it, `cited_range()` and the printed label both
+# re-ran CITE.search over the +-90-char context window and took the FIRST citation in it, which
+# is not necessarily the one the row was created for. A field ending
+# "...(A p.919), taught in section 25.2 (A pp.930-940) and not in this node" therefore produced a
+# row for `A pp.930-940` that was silently re-ranged to 919, found a probe there, and PRINTED AS
+# "OK  A p.919" -- a second, duplicate-looking OK line, while the 930-940 citation itself was
+# never checked and never reported as skipped. That is strictly worse than the earlier
+# coverage-loss bugs (the chains-only bug, and the array-index bug): those dropped a citation,
+# this one CONFIRMS THE WRONG ONE and hides the drop behind a clean verdict. The context window
+# is still the right input for the FIGREF label probe -- a figure label sits just before its page
+# number, and the window is centred on the correct match -- so only the range and the label move
+# to `cite`.
 rows = []
 for app, f in files:
     for n in nodes(io.open(os.path.join(ROOT, app, "data", f), encoding="utf-8").read()):
         for ch in (n.get("chains") or []):
             for st in (ch.get("steps") or []):
                 if st.get("src"):
-                    rows.append((n["id"], f, st["src"], st.get("en") or "", "chains.src"))
+                    rows.append((n["id"], f, st["src"], st.get("en") or "", "chains.src", None))
         # inline prose. The dedupe exists because an en/cn pair can carry the SAME citation
         # twice ("...(Fig. 3-28, A p.94)" in `en`, "...(Fig. 3-28，A 第 94 页)" in `cn`) and
         # only one of them needs checking.
@@ -238,7 +268,7 @@ for app, f in files:
                 key = (m.group(0), path.rsplit(".", 1)[0])
                 if key in seen: continue
                 seen.add(key)
-                rows.append((n["id"], f, ctx.strip(), s, path))
+                rows.append((n["id"], f, ctx.strip(), s, path, m.group(0)))
 
 p("found %d citations -- %d in a `src` field, %d written inline in prose"
   % (len(rows), sum(1 for r in rows if r[4] == "chains.src"),
@@ -258,16 +288,17 @@ p("")
 # a DIFFERENT citation in the same field. Demoted to UNCHECKED, never to OK -- the page
 # genuinely was not verified, and saying so is the honest outcome.
 results = []
-for nid, f, src, text, path in rows:
-    rng = cited_range(src)
+for nid, f, src, text, path, cite in rows:
+    # `cite` is the exact citation this row was created for; fall back to searching `src` only
+    # for `chains.src` rows, where src IS the citation rather than a context window.
+    rng = cited_range(cite) if cite else cited_range(src)
     # An inline citation's `src` is a window of surrounding prose, too long to print. Show
     # the citation and the field it sits in -- that is what someone has to go and edit.
-    m = CITE.search(src or "")
-    label = ("%s  %s" % (m.group(0), path)) if (m and path != "chains.src") else src
+    label = ("%s  %s" % (cite, path)) if (cite and path != "chains.src") else src
     if not rng:
         results.append(("SKIP", nid, label, path, None, None, None, None)); continue
     lo, hi = rng
-    pr = probes(text, src)
+    pr = probes(text, src, cite)
     if not pr:
         results.append(("UNCHECKED", nid, label, path, None, None, None,
                         "no searchable phrase -- verify by hand"))

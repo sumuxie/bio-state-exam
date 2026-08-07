@@ -44,7 +44,14 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — ten Lehninger nodes now exist.** `L-25-1-1` in
+**§9 step 6 is under way — eleven Lehninger nodes now exist.** `L-23-2-1` in
+`biochemie_pro/data/leh_ch23.js` (§13m, added 2026-08-07) covers §23.2 tissue-specific metabolism
+— the organ axis the Czech book never uses — and joins Czech `10-10`. **§13m is the most
+important one to read of the whole 13-series**, because it fixed two bugs in
+`verify_citations.py` that had been inflating every audit ever run: one made the checker verify a
+DIFFERENT citation than the row was about and report OK, the other condemned seven correct
+citations in `L-11-3-1`. Any audit total quoted in this file from before 2026-08-07 is inflated —
+re-run rather than compare. `L-25-1-1` in
 `biochemie_pro/data/leh_ch25.js` (§13l, added 2026-08-07) covers §25.1 DNA replication and joins
 Czech `4-1-3-1` and `4-1-3-2` through the pre-existing `topicKey: "dna-replication"` — the first
 node whose §9e check passed with **no data change of any kind**, and the first into the
@@ -905,8 +912,12 @@ subject, so it needed no data change at all — and it opened the molecular-biol
 book, which the depth layer had not touched. **§13l is the one to read before the next node**, for
 two reasons that generalise: this section's `interpolated` A range was wrong at its start by a
 page, and ten of 54 candidate quotes proved to be on a different A page than B's layout implied.
-What is left: **rank 7** (§23.2 tissue-specific metabolism, 1 waiting) and **rank 18** (§3.3
-working with proteins, 1 waiting).
+**Rank 7 (§23.2 tissue-specific metabolism) is done** (`L-23-2-1`, §13m, 2026-08-07); its §9e
+check produced a third outcome — no Czech node teaches metabolism by organ at all, while the
+material is scattered across pathway nodes that must KEEP their own keys — and the reasoning for
+not re-keying them is in §13m. What is left in this table: **rank 18** (§3.3 working with
+proteins, 1 waiting), whose single Czech node `2-2-6` is the one carrying the unfixed `cnNote`
+error in §2c/§6a, so writing it is the natural moment to fix that.
 
 **Raised with the user 2026-08-07 and answered: re-key per §9e, one section at a time.** The
 single thinnest place in the whole queue, rank 1 §5.1 Oxygen-Binding Proteins at ratio 17, is
@@ -1983,6 +1994,101 @@ key count is **unchanged**, which is the point of a check that passes: `dna-repl
 rises from 9 to **10**. 7 lehNotes on 6 nodes. `step5_check.py`: all checks pass, negative tests
 included.
 
+### 13m. The eleventh node — `L-23-2-1`, §23.2 Tissue-Specific Metabolism (2026-08-07): a third §9e outcome, and two checker bugs that were inflating every audit
+
+Rank 7, ratio 7.3 — the highest remaining ratio among ready-to-write primaries. A pp.848–859,
+B pp.2967–3005, in `biochemie_pro/data/leh_ch23.js`, joining Czech `10-10` through the
+pre-existing `topicKey: "tissue-specific-metabolism"`.
+
+**The §9e check produced a THIRD outcome, and the decision needs to be on the record because it
+looks like a fail and is not.** The key holds exactly one Czech node, `10-10` — a SINGLE
+PARAGRAPH on p.220, "why fats cannot make sugars". That is neither rank 9's way (a substantive
+Czech node hiding under another key) nor rank 2's way (nothing teaches it at all). It is:
+
+- **No Czech node teaches metabolism BY ORGAN**, because the Czech book never uses that axis.
+  Chapter 10 goes pathway logic → regulation → hormones; an organ appears only as an aside.
+- **But the material §23.2 deepens is in the book, scattered** across nodes correctly keyed to
+  their own pathways: the Cori cycle in `7-9` (`gluconeogenesis`), ketone bodies in `8-4-4-3`
+  (`fatty-acid-oxidation`), fat mobilisation in `8-4-4-1`, adipose as depot in `8-2-2-1`.
+- **Moving any of them was rejected**, and this is the reusable part of the reasoning: those
+  nodes teach their own pathways and are keyed correctly, and `fatty-acid-oxidation` already
+  joins both books (it carries `L-17-2-1`). **Re-keying would break a working join to improve a
+  cosmetic one.** The cross-referencing the topicKey cannot do is done by hand in the points,
+  each of which names the Czech node it stands next to.
+
+**The TOC range was wrong at its END this time** — the entry says `page_a_print_end` 858, but
+SUMMARY 23.2 is on A p.859. Taken with §13l, where the same file was wrong at the START of
+§25.1: **treat an `interpolated` range as unreliable at BOTH ends, and search A for the
+section's first subheading AND its SUMMARY before setting `pages`.**
+
+**One `lehNote`, kind `gap`, on `8-4-4-3` — the eighth in the data.** The Czech node gives the
+ketone-body chemistry completely and correctly but frames it *exclusively* as pathology:
+overproduction, acidosis, ketosis, coma, death. §23.2 gives the other half — ketone bodies are a
+normal exported fuel, the only lipid-derived fuel that crosses the blood-brain barrier, supplying
+up to a third of the heart's energy and 60–70 % of the brain's in prolonged fasting. A student
+holding only the Czech framing answers "a pathological product of uncontrolled diabetes" and
+misses the mechanism that keeps a starving brain alive. Clears §9f's bar; nothing else in the
+section did.
+
+#### ⚠️ Two bugs in `verify_citations.py` that were inflating EVERY audit ever run
+
+Both are the documented family — *the checker quietly covering less than it claims* — and the
+second is the worst instance so far, because it does not drop a citation, it **confirms the wrong
+one**.
+
+**(1) `cited_range()` and the printed label re-searched the context window.** A row is created
+for a specific `CITE` match, but the range and label were then recomputed with
+`CITE.search(ctx)` over the ±90-character window, which returns the **first** citation in it, not
+the one the row is about. A field ending `...(A p.919), taught in section 25.2 (A pp.930-940) and
+not in this node` therefore produced a row for `A pp.930-940` that was silently re-ranged to 919,
+found a probe there, and **printed as a second `OK  A p.919` line** — while `A pp.930-940` was
+never checked and never reported as skipped. Fixed by carrying the exact citation string on the
+row (`cite`) and using it for the range and the label; the window is still the right input for
+the label probe, since it is centred on the correct match.
+
+**(2) `probes()` took the FIRST figure label in the window, not the nearest one before the
+citation.** Wrong whenever a field lists citations in series. `L-11-3-1`'s coverageNote lists
+measured anchors as `FIGURE 11-31 = A p.387; FIGURE 11-32 = A p.388; BOX 11-1 = A p.389; …`, so
+the window for `A p.389` reaches back over two earlier labels and returned `FIGURE 11-31`,
+condemning a correct citation with `actually on [386] <-- FIX THE CITATION`. **Seven correct
+citations in one node were condemned this way.** Fixed by cutting the window at the citation and
+taking the last label before it.
+
+**The measured effect, and it goes the honest direction.** Before: `189 OK / 2 ELSEWHERE /
+33 UNCHECKED`. Immediately after fix (1): `174 OK / 9 ELSEWHERE / 41 UNCHECKED` — **15 rows had
+been verified against the wrong citation**, and 7 of the newly visible ELSEWHEREs were bug (2).
+After fix (2): `184 OK / 1 ELSEWHERE / 39 UNCHECKED`. After correcting this node's own four real
+citation problems: **`186 OK / 0 ELSEWHERE / 34 UNCHECKED`.**
+
+**The number of OK rows went DOWN and that is the improvement.** Any audit figure quoted in this
+file from before 2026-08-07 was inflated; §13k's and §13l's totals were measured with bug (1)
+live. Do not compare against them, re-run instead. The 34 UNCHECKED are all pre-existing and now
+honestly reported: `E-tryptophan` 8, `L-22-3-1` 5, `L-11-3-1` 5, `L-17-2-1` 4, `L-1-3-1` 4,
+`L-8-3-1` 2, `L-21-1-1` 2, and one each on `L-5-1-1`, `L-3-4-1`, `L-19-1-1`, `1-5`. **That is the
+biggest concrete backlog in the project and it is now visible for the first time.**
+
+**A rule this node adopted and the next one should keep: do not cite pages in a section you have
+not read.** Four rows here were forward-pointers to §23.3 and §23.4 whose ranges came from the
+interpolated TOC — exactly the source just shown to be wrong twice. They now name the section and
+omit the pages. The same edit was applied retroactively to `L-25-1-1`'s pointer to §25.2.
+
+**`scripts/audit_handoff.py` now checks the handoffs for STALENESS as well as formatting**, added
+in the same session and for the same reason as the two checker fixes: the failure that actually
+costs a session time is a number that WAS true and no longer is. Two had rotted by this node —
+`LEHNINGER_START.md` understated this archive's size by 15 %, weakening the one warning that
+stops a session reading 42k tokens of it, and §14c had frozen `208 topics (207 cz, 1 lehninger)`
+into the text as what a clean run "currently prints", eleven nodes out of date. The audit now
+recomputes the live topic / lehninger / topicKey / multi-source counts from the app data, compares
+them against the current-state block in `LEHNINGER_START.md`, re-measures both handoff file sizes,
+and flags any count frozen as what a run "currently prints". Per-node counts inside §13a–§13m are
+deliberately NOT checked — they are history. Negative-tested: perturbing three figures and one
+size makes it fire four findings; restoring them returns it to clean. **Run it LAST, after the doc
+edits, and expect `TOTAL: 3`** — three cosmetic pre-existing findings that predate this work.
+
+`biochemie_pro` now reports **219 topics (207 cz, 11 lehninger, 1 entity), 63 topicKeys**, with
+**11 joining more than one source**. 8 lehNotes on 7 nodes. `step5_check.py`: all checks pass.
+This node's own citations: **all clean, 0 ELSEWHERE, 0 UNCHECKED.**
+
 ---
 
 ## 14. Working locally — the local copy is the real one
@@ -2047,9 +2153,13 @@ python "C:/Users/Admin/Downloads/bio-state-exam/lehninger_index/scripts/step5_ch
 cat  "C:/Users/Admin/Downloads/bio-state-exam/lehninger_index/_step5_report.txt"
 ```
 
-A clean run currently prints `ok biochemie_basic: 207 topics` and
-`ok biochemie_pro: 208 topics (207 cz, 1 lehninger)`. It also runs negative tests, because a
-check that never fails is not a check.
+A clean run must end `RESULT: all checks pass`. It also runs negative tests, because a
+check that never fails is not a check. **The topic counts it prints move with every node, so
+they are deliberately NOT quoted here** — an earlier version of this paragraph froze
+`208 topics (207 cz, 1 lehninger)` into the text and was eleven nodes out of date within a
+day, which reads as a failure when it is not. For the current figures see the `Start here`
+block at the top of this file, or just run the script; `scripts/audit_handoff.py` now
+cross-checks those figures against the live data and fails if they drift.
 
 ### 14d. Looking things up in Lehninger without opening a 1.1 GB PDF
 

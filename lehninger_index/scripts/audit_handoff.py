@@ -95,6 +95,90 @@ for fn in FILES:
     total += len(issues)
     p("")
 
+# ---------------------------------------------------------------------------------------
+# STALENESS. Added 2026-08-07. The formatting checks above cannot see the failure that
+# actually costs a session time: a number in the handoff that WAS true and no longer is.
+# Two had rotted by the eleventh node -- LEHNINGER_START.md understated the archive's size by
+# 15%, weakening the one warning that stops a session reading 42k tokens of it, and section 14c
+# froze "208 topics (207 cz, 1 lehninger)" into the text as what a clean run "currently prints",
+# eleven nodes out of date. A reader who trusts either wastes a turn. So: recompute the live
+# figures and report any current-state claim that disagrees.
+p("=" * 78); p("STALENESS (live data vs what the handoffs claim)"); p("=" * 78)
+stale = 0
+
+start = io.open(os.path.join(ROOT, "LEHNINGER_START.md"), encoding="utf-8").read()
+for fn, pat in (("HANDOFF_LEHNINGER.md", r"it is (\d+) KB"),
+                ("HANDOFF.md", r"`HANDOFF\.md` \((\d+) KB")):
+    real = os.path.getsize(os.path.join(ROOT, fn)) // 1024
+    m = re.search(pat, start)
+    if not m:
+        p("  SIZE CLAIM MISSING for %s -- the do-not-read warning may have been dropped" % fn)
+        stale += 1
+    elif abs(int(m.group(1)) - real) > 5:
+        p("  SIZE STALE   %s: handoff says %s KB, actually %d KB" % (fn, m.group(1), real))
+        stale += 1
+
+# Only the CURRENT-STATE block at the top of LEHNINGER_START.md is checked. The per-node
+# sections 13a..13m record counts as they were when each node was written; that is history.
+try:
+    import sys
+    sys.path.insert(0, os.path.join(ROOT, "lehninger_index", "scripts"))
+    from step5_check import parse_nodes
+    html = io.open(os.path.join(ROOT, "biochemie_pro", "index.html"), encoding="utf-8").read()
+    T = []
+    for f in re.findall(r'<script src="data/([^"]+\.js)"', html):
+        T.extend(parse_nodes(io.open(os.path.join(ROOT, "biochemie_pro", "data", f),
+                                     encoding="utf-8").read()))
+    keys = {}
+    for t in T:
+        k = t.get("topicKey")
+        if k:
+            keys.setdefault(k, set()).add(t.get("book")
+                                          or ("entity" if t.get("kind") == "entity" else "cz"))
+    live = {"topics": len(T),
+            "lehninger": sum(1 for t in T if t.get("book") == "lehninger"),
+            "topicKeys": len(keys),
+            "multi": sum(1 for v in keys.values() if len(v) > 1)}
+    p("  live: %d topics, %d lehninger, %d topicKeys, %d joining both books"
+      % (live["topics"], live["lehninger"], live["topicKeys"], live["multi"]))
+    head = start.split("## The rules that actually bite")[0]
+    for pat, key in ((r"over \*\*(\d+)\*\* nodes", "topics"),
+                     (r"\+ (\d+) lehninger", "lehninger"),
+                     (r"\*\*(\d+)\*\* distinct", "topicKeys"),
+                     (r"Exactly (\d+) keys join", "multi")):
+        m = re.search(pat, head)
+        if not m:
+            p("  COUNT MISSING  LEHNINGER_START.md no longer states %s" % key); stale += 1
+        elif int(m.group(1)) != live[key]:
+            p("  COUNT STALE    LEHNINGER_START.md says %s=%s, live is %d"
+              % (key, m.group(1), live[key])); stale += 1
+    if "| Lehninger depth layer |" in head:
+        row = head.split("| Lehninger depth layer |")[1].split("|")[0]
+        listed = len(re.findall(r"`L-\d+-\d+-\d+`", row))
+        if listed != live["lehninger"]:
+            p("  LIST STALE     depth-layer row lists %d node ids, live is %d"
+              % (listed, live["lehninger"])); stale += 1
+except Exception as e:
+    p("  could not recompute live counts: %s" % e); stale += 1
+
+# A frozen count is "currently prints ... <N> topics". Prose that merely DISCUSSES the
+# anti-pattern -- as the comment above and section 13m both do -- says "currently prints" with no
+# count after it. Requiring an actual topic count in the span is what separates the two; without
+# it this check fired three times on the very text explaining why it exists, which is the same
+# reporting-its-own-limitation failure the citation checker kept producing.
+for fn in ("HANDOFF_LEHNINGER.md", "LEHNINGER_START.md"):
+    txt = io.open(os.path.join(ROOT, fn), encoding="utf-8").read()
+    for m in re.finditer(r"currently (?:prints|reports)[^.]{0,120}", txt):
+        if not re.search(r"\d+\s+topics", m.group(0)):
+            continue
+        p("  PRESENT TENSE  %s: %s" % (fn, m.group(0)[:96]))
+        p("                 counts move with every node -- point at where to look, do not freeze")
+        stale += 1
+
+if not stale: p("  clean")
+p("")
+total += stale
+
 p(f"TOTAL: {total}")
 out.close()
 print("done", total)
