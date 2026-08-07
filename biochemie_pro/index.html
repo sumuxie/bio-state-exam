@@ -166,9 +166,38 @@
     </div>
     <button id="bionic-toggle" class="icon-btn" aria-label="Toggle bionic reading"
       title="Bionic reading: bolds the leading letters of each word so your eye can skip ahead — a scanning aid, not a treatment">🧬</button>
+    <button id="voice-toggle" class="icon-btn" aria-label="Reading voice settings"
+      title="Reading voice — pick the voice and speed">🔈</button>
     <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">◐</button>
   </div>
 </header>
+
+<!-- Voice settings. Synthesised speech quality varies enormously between the
+     voices installed on a device, and the browser's default is usually the
+     worst one present, so the reader needs to be able to choose and hear. -->
+<div id="voice-panel" class="voice-panel" hidden>
+  <div class="vp-row">
+    <label for="voice-en">English voice</label>
+    <select id="voice-en"></select>
+    <button class="btn-ghost vp-test" data-lang="en-US">Test</button>
+  </div>
+  <div class="vp-row">
+    <label for="voice-zh">中文语音</label>
+    <select id="voice-zh"></select>
+    <button class="btn-ghost vp-test" data-lang="zh-CN">试听</button>
+  </div>
+  <div class="vp-row">
+    <label for="voice-rate">Speed <span class="muted">语速</span></label>
+    <input id="voice-rate" type="range" min="0.6" max="1.4" step="0.02">
+    <span id="voice-rate-val" class="muted"></span>
+  </div>
+  <p class="vp-note muted">
+    Synthesised by your browser, not a recording. Voices marked
+    <em>Natural</em> / <em>Neural</em> / <em>Online</em> sound closest to a
+    person; the list is sorted best-first.
+    <span lang="zh">这是浏览器合成的语音，不是真人录音。名字里带 Natural / Neural / Online 的最接近真人，列表已按推荐顺序排好。</span>
+  </p>
+</div>
 
 <div class="layout">
 

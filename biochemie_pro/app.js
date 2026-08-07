@@ -232,7 +232,9 @@
     topicId: null,
     filter:  '',
     nav:     store.get('nav', 'book'),    // 'book' = linear reading order, 'topic' = by topicKey
-    qsrc:    store.get('qsrc', 'core')    // 'core' | 'bank' | 'terms' -- see allQuestions()
+    qsrc:    store.get('qsrc', 'core'),   // 'core' | 'bank' | 'terms' -- see allQuestions()
+    voice:   store.get('voice', {}),      // 'en' | 'zh' | 'cs' -> chosen voiceURI
+    rate:    store.get('rate', 0.94)      // playback speed, shared by both languages
   };
 
   /* ---------------------------------------------------------------- helpers */
@@ -264,13 +266,114 @@
   const speechAvailable = typeof window !== 'undefined' && 'speechSynthesis' in window;
   let activeSayBtn = null;
 
-  function pickVoice(lang) {
-    const voices = window.speechSynthesis.getVoices();
-    if (!voices.length) return null;
+  /* Voice QUALITY, not just voice availability.
+     The old version took the first voice whose language matched, which on a
+     typical Windows machine is the legacy SAPI voice ("Microsoft David") --
+     the flat robotic one -- while the far better neural voices sit further
+     down the same list. Same story on Android. Ranking the list first is the
+     single biggest audible improvement available here, and it costs nothing.
+
+     There is a ceiling and it is worth stating plainly: this is the browser's
+     own synthesiser. A genuinely human voice would need either recorded audio
+     (230 nodes x 2 languages -- not feasible) or a cloud TTS service, and a
+     cloud key cannot be used here because the repo is public and the site is
+     static, so there is no backend to hide a key in. Ranking + letting the
+     reader choose is the whole of what is achievable. */
+  const VOICE_GOOD = /natural|neural|online|premium|enhanced|siri|google/i;
+  const VOICE_POOR = /espeak|compact|david|zira|mark|huihui|kangkang|yaoyao/i;
+
+  function voiceScore(v, lang) {
+    let s = 0;
+    if (v.lang === lang) s += 40;                       // exact locale
+    else if (v.lang && v.lang.toLowerCase().startsWith(lang.split('-')[0].toLowerCase())) s += 20;
+    if (VOICE_GOOD.test(v.name)) s += 30;               // neural / natural family
+    if (VOICE_POOR.test(v.name)) s -= 25;               // legacy SAPI, espeak
+    if (!v.localService) s += 5;                        // server voices are usually the better ones
+    return s;
+  }
+
+  function voicesFor(lang) {
+    const voices = (window.speechSynthesis.getVoices() || []);
     const short = lang.split('-')[0].toLowerCase();
-    return voices.find((v) => v.lang === lang) ||
-           voices.find((v) => v.lang && v.lang.toLowerCase().startsWith(short)) ||
-           null;
+    return voices
+      .filter((v) => v.lang && v.lang.toLowerCase().startsWith(short))
+      .sort((a, b) => voiceScore(b, lang) - voiceScore(a, lang));
+  }
+
+  function pickVoice(lang) {
+    const list = voicesFor(lang);
+    if (!list.length) return null;
+    // An explicit choice always wins over the ranking -- the ranking is a
+    // guess about which name sounds best, and the reader can hear.
+    const chosen = state.voice[lang.split('-')[0].toLowerCase()];
+    if (chosen) {
+      const hit = list.find((v) => v.voiceURI === chosen || v.name === chosen);
+      if (hit) return hit;
+    }
+    return list[0];
+  }
+
+  /* The picker. Two selects and a speed slider, filled from the ranked list
+     so the recommended voice is already at the top and preselected. The
+     device decides what is available -- on Windows Edge the Natural voices
+     are present, on Chrome/Windows often only the legacy ones -- so the panel
+     says what it found rather than pretending the choice is the same
+     everywhere. */
+  function labelVoice(v) {
+    const tag = VOICE_GOOD.test(v.name) ? ' ★' : '';
+    return `${v.name} (${v.lang})${tag}`;
+  }
+
+  function fillVoicePickers() {
+    if (!speechAvailable) return;
+    [['en', 'en-US', '#voice-en'], ['zh', 'zh-CN', '#voice-zh']].forEach(([short, lang, sel]) => {
+      const el = $(sel);
+      if (!el) return;
+      const list = voicesFor(lang);
+      if (!list.length) {
+        el.innerHTML = `<option value="">no ${short} voice installed on this device</option>`;
+        el.disabled = true;
+        return;
+      }
+      el.disabled = false;
+      const cur = state.voice[short];
+      el.innerHTML = list.map((v) =>
+        `<option value="${esc(v.voiceURI)}"${(v.voiceURI === cur) ? ' selected' : ''}>${esc(labelVoice(v))}</option>`
+      ).join('');
+      if (!cur) el.value = list[0].voiceURI;      // show what is actually being used
+    });
+    const r = $('#voice-rate');
+    if (r) { r.value = state.rate; $('#voice-rate-val').textContent = Number(state.rate).toFixed(2) + '×'; }
+  }
+
+  const VOICE_SAMPLE = {
+    'en-US': 'Histidine is the only amino acid whose side chain titrates near pH seven.',
+    'zh-CN': '组氨酸是唯一一个侧链在中性附近解离的氨基酸。'
+  };
+
+  function wireVoicePanel() {
+    const panel = $('#voice-panel'), toggle = $('#voice-toggle');
+    if (!panel || !toggle) return;
+    toggle.addEventListener('click', () => {
+      panel.hidden = !panel.hidden;
+      if (!panel.hidden) fillVoicePickers();
+    });
+    [['en', '#voice-en'], ['zh', '#voice-zh']].forEach(([short, sel]) => {
+      const el = $(sel);
+      if (!el) return;
+      el.addEventListener('change', () => {
+        state.voice[short] = el.value;
+        store.set('voice', state.voice);
+      });
+    });
+    $$('.vp-test').forEach((b) =>
+      b.addEventListener('click', () => speak(VOICE_SAMPLE[b.dataset.lang], b.dataset.lang, null)));
+    const r = $('#voice-rate');
+    if (r) r.addEventListener('input', () => {
+      state.rate = parseFloat(r.value);
+      store.set('rate', state.rate);
+      $('#voice-rate-val').textContent = state.rate.toFixed(2) + '×';
+    });
   }
 
   // Chrome silently cuts off a single very long utterance after a few
@@ -299,7 +402,9 @@
     chunks.forEach((chunk, i) => {
       const u = new SpeechSynthesisUtterance(chunk);
       u.lang = lang;
-      u.rate = lang.startsWith('zh') ? 1.0 : 0.94;
+      // Chinese is read a touch faster than English at the same nominal rate,
+      // so the stored rate is the English one and Chinese gets a small bump.
+      u.rate = (lang.startsWith('zh') ? 1.06 : 1) * state.rate;
       const v = pickVoice(lang);
       if (v) u.voice = v;
       if (i === 0) u.onstart = () => { if (btn) { btn.classList.add('speaking'); activeSayBtn = btn; } };
@@ -840,6 +945,7 @@
         html += `<li>
                    <span class="ch-en">${esc(s.en)}${s.src ? `<span class="ch-src">${esc(s.src)}</span>` : ''}</span>
                    <span class="ch-cn">${esc(s.cn || '')}</span>
+                   ${speakPairBtn(s.en, s.cn)}
                  </li>`;
       });
       html += `</ol></section>`;
@@ -847,8 +953,11 @@
 
     if (t.points && t.points.length) {
       html += `<section class="block"><h2>Point by point <span class="muted">逐条要点</span></h2><ol class="points">`;
+      // A read button per point. `cz` deliberately gets none: it is a short
+      // anchor term, not a sentence, and the exam is in English
+      // (HANDOFF_LEHNINGER.md section 8, decision 2).
       t.points.forEach((p) => {
-        html += `<li>${p.cz ? `<span class="cz-anchor">${esc(p.cz)}</span>` : ''}${bi(p.en, p.cn)}</li>`;
+        html += `<li>${p.cz ? `<span class="cz-anchor">${esc(p.cz)}</span>` : ''}${bi(p.en, p.cn)} ${speakPairBtn(p.en, p.cn)}</li>`;
       });
       html += `</ol></section>`;
     }
@@ -1239,10 +1348,19 @@
     $('#bionic-toggle').classList.toggle('active', state.bionic);
 
     // Voices load asynchronously in Chrome; warm the cache so the first
-    // click on a speaker icon already has a matching voice to pick from.
+    // click on a speaker icon already has a matching voice to pick from,
+    // and refill the picker once the real list arrives.
     if (speechAvailable) {
       window.speechSynthesis.getVoices();
-      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+        fillVoicePickers();
+      };
+      fillVoicePickers();
+      wireVoicePanel();
+    } else {
+      const vt = $('#voice-toggle');
+      if (vt) vt.hidden = true;
     }
 
     fillScopeSelect($('#card-scope'), 'All chapters');

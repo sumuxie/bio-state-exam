@@ -475,3 +475,50 @@ body.bionic-on .q-text, body.bionic-on .oral-q, body.bionic-on .model-answer {
   .lang-toggle button { padding: 0.28rem 0.3rem; font-size: 0.66rem; }
   .topbar-right { gap: 0.2rem; }
 }
+
+/* ---------------------------------------------------------- voice settings
+   Synthesised-speech quality is decided almost entirely by WHICH installed
+   voice is used, and the browser default is usually the worst one present.
+   This panel exists so the reader can pick and hear the difference. */
+.voice-panel {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-raise);
+  border-bottom: 1px solid var(--line);
+}
+.vp-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.vp-row label {
+  min-width: 8.5rem;
+  font-size: 0.82rem;
+}
+.vp-row select {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 0.3rem 0.4rem;
+  background: var(--bg);
+  color: inherit;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.vp-row select:disabled { opacity: 0.55; }
+.vp-row input[type="range"] { flex: 1 1 12rem; }
+.vp-test { white-space: nowrap; }
+.vp-note {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+.vp-note [lang="zh"] { display: block; margin-top: 0.15rem; }
+
+@media (max-width: 640px) {
+  .vp-row label { min-width: 100%; }
+}
