@@ -522,3 +522,46 @@ body.bionic-on .q-text, body.bionic-on .oral-q, body.bionic-on .model-answer {
 @media (max-width: 640px) {
   .vp-row label { min-width: 100%; }
 }
+
+/* --------------------------------------------------- coverage note (folded)
+   Sits directly above the summary. The Chinese line stays visible; the full
+   English record folds away, because a Lehninger node's note runs to several
+   thousand characters and it was reading as a wall of text. */
+/* Overrides the earlier .cov-note block: that one styled a bare <p>, this one
+   wraps a visible Chinese line plus a folded English <details>, so the box
+   chrome moves inward onto the two children. */
+.cov-note {
+  background: none;
+  border-left: 3px solid var(--warn);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.5rem 0.85rem;
+  margin: 0 0 1.5rem;
+}
+.cov-note .cov-cn {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--fg-dim, inherit);
+  opacity: 0.92;
+}
+details.cov-en > summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  opacity: 0.75;
+  list-style: none;
+  padding: 0.2rem 0;
+}
+details.cov-en > summary::-webkit-details-marker { display: none; }
+details.cov-en > summary::before { content: '▸ '; }
+details.cov-en[open] > summary::before { content: '▾ '; }
+details.cov-en > summary:hover { opacity: 1; }
+details.cov-en > p {
+  margin: 0.35rem 0 0;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  background: var(--bg-sink);
+  border-left: 2px solid var(--line);
+  border-radius: 0 6px 6px 0;
+  opacity: 0.9;
+}

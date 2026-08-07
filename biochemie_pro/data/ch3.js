@@ -732,6 +732,7 @@ window.BIOCHEM.topics.push(
   pages: [61, 62],
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans. The urease rate-enhancement factor was re-read from the p.61 image: the book states 10¹⁴-fold, an exponent the raw OCR dropped entirely (it rendered it as '10krát', i.e. 10-fold).",
+  coverageNoteCn: "两页均已与扫描件核对。脆酶的速率提升倍数是从第 61 页的图片重新读出的：教材写的是 10¹⁴ 倍，而原始 OCR 把这个指数整个丢掉了（识别成「10krát」，即 10 倍）。",
   cnNote: { topic: "十一", title: "酶的作用机理及酶的调节——作用机理 (笔记 pp.63–76)", status: "mapped" },
   lehNotes: [
     { kind: "conflict", node: "L-6-4-1",

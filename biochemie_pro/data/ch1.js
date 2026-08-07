@@ -19,6 +19,7 @@ window.BIOCHEM.topics.push(
   pages: [8, 9],
   coverage: "partial",
   coverageNote: "p.8 verified against scan; p.9 (Tab. 1.1 milestones) not in the extracted page set.",
+  coverageNoteCn: "第 8 页已与扫描件核对；第 9 页（表 1.1 里程碑）不在提取到的页面集里，故本节点不包含它。",
   cnNote: { topic: "一", title: "序论", status: "mapped" },
   summary: {
     en: "Biochemistry studies the substances occurring in organisms, the processes by which those substances enter or are formed in organisms, how they react with each other and with the environment, and the methods used to identify, characterise and measure them. It therefore sits simultaneously among the biological sciences (it studies living nature) and the chemical disciplines (it deals with chemical transformations).",

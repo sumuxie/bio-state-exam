@@ -699,6 +699,36 @@
     document.documentElement.setAttribute('data-theme', state.theme);
   }
 
+  /* The coverage note sits directly above the summary and used to render as
+     one unbroken English paragraph — 227 nodes carry one, median 592
+     characters for a Czech node and 3,543 for a Lehninger one. That is a wall
+     of English in the first thing you look at.
+
+     Two changes, per Ruojin: the Chinese is always visible, and the long
+     English is folded away behind a toggle rather than removed. `coverageNote`
+     stays the full English record (it is the provenance of the node — which
+     pages were read, what the book actually says versus what was inferred),
+     and `coverageNoteCn` carries the substance a reader needs in Chinese.
+     Where the Chinese is not written yet the English still shows, collapsed,
+     so nothing is hidden and the gap is visible rather than silent. */
+  function coverageNoteHtml(t) {
+    if (!t.coverageNote && !t.coverageNoteCn) return '';
+    const cn = t.coverageNoteCn;
+    const showCn = state.lang !== 'en' && cn;
+    const showEn = state.lang !== 'cn';
+    let out = '<div class="cov-note">';
+    if (showCn) {
+      out += `<p class="cov-cn">${esc(cn)} ${speakBtn(cn, 'zh-CN')}</p>`;
+    }
+    if (showEn && t.coverageNote) {
+      out += `<details class="cov-en"${cn ? '' : ' '}>
+                <summary>Coverage note <span class="muted">覆盖范围说明${cn ? '（英文原文）' : '（尚无中文）'}</span></summary>
+                <p>${esc(t.coverageNote)} ${speakBtn(t.coverageNote, 'en-US')}</p>
+              </details>`;
+    }
+    return out + '</div>';
+  }
+
   function applyLang() {
     $$('#lang-toggle button').forEach((b) =>
       b.classList.toggle('active', b.dataset.lang === state.lang));
@@ -928,7 +958,7 @@
 
         ${sameTopicHtml(t)}
 
-        ${t.coverageNote ? `<p class="cov-note">${esc(t.coverageNote)}</p>` : ''}
+        ${coverageNoteHtml(t)}
 
         <section class="block">
           <h2>Summary <span class="muted">概要</span> ${speakPairBtn(t.summary && t.summary.en, t.summary && t.summary.cn)}</h2>
