@@ -1,6 +1,6 @@
 # START HERE — the Lehninger phase
 
-**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 247 KB ≈ 56k
+**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 259 KB ≈ 59k
 tokens and reading it triggers a compaction before you have done any work. That file is now an
 **archive you grep into**, one section at a time, using the index at the bottom of this page.
 `HANDOFF.md` (69 KB, the Czech app) is the same: grep, never read whole. Both sizes are
@@ -59,6 +59,61 @@ to the notes would have skipped it. **A classmate's report of a real exam questi
 everything in either handoff.**
 
 ---
+
+## 🏁 `L-23-3-1` is finished — rank 19 (§23.3), and with it the TOP-20 QUEUE IS EXHAUSTED (2026-08-07)
+
+**`L-23-3-1` took `topicKey: "hormone-structure-and-action"` and joins the ten Czech nodes
+`10-17`…`10-26`. Nothing created, nothing moved, no `manual_note`; topicKey count stayed at 63.**
+Seventh instance of the §9g pattern. Decision **§9n**, node **§13w**, in a new
+`biochemie_pro/data/leh_ch23b.js` wired into `index.html`; 34 citation rows, all OK; validator
+clean. It carries the **fifteenth `lehNote`** (`gap`, on `7-12-2`), taking the total to **15 notes
+on 13 nodes**. This was the last unwritten rank in the top 20 — see the Next pick block below for
+what replaces it.
+
+**Why it was worth writing.** Czech §10.3 teaches, thoroughly and correctly, *how* a hormone
+signals — receptors, cAMP, IP₃/DAG, tyrosine kinases, the nuclear steroid route — and never once
+says what that machinery is **for**. Measured across the whole Czech layer: `obesity` 0 hits,
+`leptin` 0 hits, `glycaemia` 0 hits, and `diabetes` appears **only** as a cause of acetyl-CoA
+flooding. This node supplies the physiological question those ten nodes are the answer to.
+
+**The idea the node is built around, and it is genuinely good exam material:** the pancreatic β
+cell has **no glucose receptor** — it measures glucose by *metabolising* it. GLUT2 → glucokinase →
+glycolytic flux → ATP → the ATP-gated K⁺ channel closes → the membrane depolarises → Ca²⁺ enters →
+insulin is released. **The sensor IS glycolysis.** The step to drill is that *closing* a K⁺ channel
+depolarises, because the open channel was what held the membrane negative. And the mechanism is
+proved real rather than diagrammatic by the fact that **that one channel is both a drug target and
+a disease gene** — sulfonylureas close it on purpose, mutations jamming it open cause neonatal
+diabetes, mutations jamming it shut cause hypoglycaemia severe enough to warrant removing part of
+the pancreas (A p.862).
+
+**The `lehNote` corrects a live exam trap.** `7-12-2` draws the whole glycogen cascade but writes
+`adrenalin/glukagon` as one undifferentiated pair, naming **no target organ**. Lehninger: of
+glucagon, *"Although its primary target is the liver"* (A p.862). Glucagon reaches adipose tissue
+but **not skeletal muscle**; epinephrine does. A student revising from `7-12-2` alone answers that
+glucagon mobilises muscle glycogen — wrong twice, since muscle has no glucagon receptors and muscle
+glycogen could not raise blood glucose anyway, lacking glucose 6-phosphatase.
+
+### ✅ The pre-test method, third run: 70 quotes tested, ZERO page errors
+
+§13u made "test the quote before writing the prose" a rule after 21 of 54 came back one page out.
+Third application: **70 candidates, 64 resolved on exactly one page, 6 failed — and all six were
+OCR damage, not wrong pages**, each replaceable by a fragment of the same sentence on the same
+page. **No page was wrong, because every page was searched rather than predicted.** Treat this as
+the default, not an optimisation. Also reconfirmed: **OCR damage is per-REGION, not per-page.**
+
+⚠️ **An interpolated TOC range can also be RIGHT — check it, do not assume it is wrong.** §23.3's
+`interpolated` range (A pp.859–867) held at **both** ends, after the three checks before it each
+found an error. The rule is that such a range is *unreliable*, not *wrong*.
+
+⚠️ **28 UNCHECKED rows on the first citation run, all mechanical, all closed in one pass.** A quote
+only becomes a probe if it sits **within 90 characters before its own citation** (`CTX_BACK`).
+Three shapes cause it, and §13w gives the fix for each: a short CZ anchor tag carrying a page
+number (drop the citation — the CZ half is a tag, the `en` half already cites it); a `def_en` or
+`why_en` that paraphrased where it could have quoted (lift the book's wording verbatim into the
+spot already next to the citation); and a `coverageNote` list of anchors (wrap each subheading
+title in quotes — a subheading *is* verbatim page text and makes a free probe). **Use typographic
+`“ ”`, never ASCII `"`, inside a double-quoted JS string** — that is §9m's second bug avoided by
+construction instead of discovered by a broken parse.
 
 ## ✅ `L-26-2-1` is finished — rank 16 (§26.2) decided AND written, and TWO checker bugs found by a broken parse (2026-08-07)
 
@@ -275,8 +330,8 @@ were the checker's fault, not the data's.
 | | |
 |---|---|
 | Czech layer | 207 nodes, ch1–10, complete. **Never audited** — see "what to ask" below |
-| Lehninger depth layer | **19 nodes**: `L-1-3-1` `L-2-2-1` `L-3-3-1` `L-3-4-1` `L-5-1-1` `L-6-4-1` `L-8-2-1` `L-8-3-1` `L-11-2-1` `L-11-3-1` `L-16-2-1` `L-17-2-1` `L-19-1-1` `L-19-2-1` `L-21-1-1` `L-22-3-1` `L-23-2-1` `L-25-1-1` `L-26-2-1`. `leh_ch3.js` holds two nodes; chapters 8, 11 and 19 each have two, split across an `a`/`b` file pair |
-| `topicKey`s | **63** distinct over **227** nodes (207 cz + 19 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 17 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `citric-acid-cycle` `dna-replication` `enzyme-mechanism` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `membrane-architecture` `membrane-transport` `nucleotides` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain` `tissue-specific-metabolism` `transcription` `working-with-proteins`. `amino-acids` is the only one joining **all three** sources — Czech, Lehninger and the entity card. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only. The key count did **not** move when `L-6-4-1`, `L-2-2-1`, `L-8-2-1` or `L-26-2-1` was added, which is the point of §9g: they reused a key instead of making one |
+| Lehninger depth layer | **20 nodes**: `L-1-3-1` `L-2-2-1` `L-3-3-1` `L-3-4-1` `L-5-1-1` `L-6-4-1` `L-8-2-1` `L-8-3-1` `L-11-2-1` `L-11-3-1` `L-16-2-1` `L-17-2-1` `L-19-1-1` `L-19-2-1` `L-21-1-1` `L-22-3-1` `L-23-2-1` `L-23-3-1` `L-25-1-1` `L-26-2-1`. `leh_ch3.js` holds two nodes; chapters 8, 11, 19 and 23 each have two, split across an `a`/`b` file pair |
+| `topicKey`s | **63** distinct over **228** nodes (207 cz + 20 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 18 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `citric-acid-cycle` `dna-replication` `enzyme-mechanism` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `hormone-structure-and-action` `membrane-architecture` `membrane-transport` `nucleotides` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain` `tissue-specific-metabolism` `transcription` `working-with-proteins`. `amino-acids` is the only one joining **all three** sources — Czech, Lehninger and the entity card. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only. The key count did **not** move when `L-6-4-1`, `L-2-2-1`, `L-8-2-1`, `L-26-2-1` or `L-23-3-1` was added, which is the point of §9g: they reused a key instead of making one |
 | Entity cards | 1 (`E-tryptophan`). The headline feature, still barely started — archive §4, §12 |
 | UI | Done. Two books render, sidebar **By book / By topic** toggle, "Same topic" strip, `lehNotes` blocks. Nothing more needs building |
 | Live site | https://sumuxie.github.io/bio-state-exam/biochemie_pro/ |
@@ -369,45 +424,42 @@ just happens to sit on p.383). Fixed by giving each figure its own explicit page
 rather than leaving two labels before one citation. Confirms §13m's warning is still live: treat
 ELSEWHERE as a hypothesis, open the page first.
 
-### Next pick: no decided-and-unwritten rank remains — choose between two
+### 🏁 Next pick: the top-20 queue is EXHAUSTED — the entity cards are now the obvious choice
 
 `lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
-the Czech book. Top 20, with the 19 done ones struck through:
+the Czech book. **All twenty of the top 20 are now written:**
 
 ~~1 §5.1~~ · ~~2 §8.3~~ · ~~3 §6.4~~ · ~~4 §11.3~~ · ~~5 §21.1~~ ·
 ~~6 §19.1~~ · ~~7 §23.2~~ ·
 ~~8 §16.2~~ · ~~9 §17.2~~ · ~~10 §19.2~~ · ~~11 §11.2~~ · ~~12 §1.3~~ ·
 ~~13 §2.2~~ · ~~14 §3.4~~ · ~~15 §8.2~~ ·
-~~16 §26.2~~ · ~~17 §22.3~~ · ~~18 §3.3~~ · 19 §23.3 · ~~20 §25.1~~
+~~16 §26.2~~ · ~~17 §22.3~~ · ~~18 §3.3~~ · ~~19 §23.3~~ · ~~20 §25.1~~
 
-**Only ONE rank in the top 20 remains: 19 §23.3 (Hormonal Regulation of Fuel Metabolism, ratio
-3.9), and it needs a `topicKey` decision before a word can go on the page.** It is also the first
-pick in a while that is NOT chemistry-clean in the §5a sense — hormones and disease states are its
-subject, not physical chemistry — so budget accordingly if picking it for a quiet session. So:
+So the next session picks between two, and **the first is the one the user named as the point of
+the app**:
 
-1. **Take rank 19 and make its `topicKey` decision.** The §9e check has four possible outcomes,
-   and **the last of them has now fired six times running**, so test it first: **§9g's fourth** —
-   the Czech section maps to two Lehninger sections that deepen the *same* node, so the primary's
-   key already fits and nothing changes at all (rank 3 §9g, rank 10 §9i, rank 11 §9j, rank 13 §9k,
-   rank 15 §9l, rank 16 §9m). Then **§13m's third** — the key's Czech
-   node is a thin-but-legitimate partner while the real material sits *scattered* across pathway
-   nodes that must **keep** their own keys, so re-key nothing and cross-reference by hand. Then the
-   two failure modes below. **Only rank 8 (§9h) has ever needed a key created and Czech nodes
-   moved**, and that was because the inherited key described none of them. **After rank 19, the
-   top-20 queue is EXHAUSTED** — the next pick has to come from outside it (§9a explains what the
-   ratio does and does not mean) or move to the entity cards below.
-2. **The entity cards** — archive §4, §12. This is `pro`'s *headline feature* and it still has
-   exactly one card. §12 already contains a finished tryptophan dossier that nothing has been
-   built from. Of the three, this is the one the user named as the point of the app.
-~~3. Clear the 34 UNCHECKED citation rows.~~ **Done 2026-08-07 (§13o) — the audit is now
-   352 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new UNCHECKED row in the same
-   commit that creates it.
+1. **The entity cards** — archive §4, §12. This is `pro`'s *headline feature* and it still has
+   **exactly one card** (`E-tryptophan`). §12 already contains a finished tryptophan dossier that
+   nothing has been built from, so there is real work sitting ready that needs no new reading.
+   **Recommended.**
+2. **A depth node from outside the top 20.** `depth_queue.tsv` continues past rank 20 (rank 33 is
+   §23.1 *Hormone Structure and Action*, ratio 3.0, which would land on the same
+   `hormone-structure-and-action` key `L-23-3-1` just joined). ⚠️ **Read §9a first** — it explains
+   what the ratio does and does not mean, and below rank 20 the ratio is weak enough that it should
+   not be followed blindly. A classmate's report of a real exam question outranks it entirely.
 
-Every unstruck rank above needs a `topicKey` decision first — see the failure modes below.
+Either way the `topicKey` decision comes first for any depth node — see the failure modes below.
+**The §9g outcome (reuse the primary's key, change nothing) has now fired SEVEN times running**:
+rank 3 §9g, rank 10 §9i, rank 11 §9j, rank 13 §9k, rank 15 §9l, rank 16 §9m, rank 19 §9n. **Only
+rank 8 (§9h) has ever needed a key created and Czech nodes moved**, and that was because the
+inherited key described none of them. Test §9g first, then §13m's third outcome, then the two
+failure modes.
 
-⚠️ **Rank 15 (§8.2) and rank 16 (§26.2) are both chemistry-clean picks** — see the next block
-for why that matters. Rank 13 (§2.2) was the third such pick and ran without a single
-interruption, which is weak but real evidence for the hypothesis there.
+~~3. Clear the 34 UNCHECKED citation rows.~~ **Done 2026-08-07 (§13o) — and kept at zero since;
+the audit now stands at 408 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new
+UNCHECKED row in the same commit that creates it. §13w records the three mechanical shapes that
+produce an UNCHECKED row and the cheap fix for each — worth reading before writing a node, because
+it turned a 28-row first run into a zero-row second run in one pass.
 
 ---
 
@@ -603,6 +655,8 @@ Search for the `## N.` or `### Na.` heading, read that section only.
 | 9l, 9l-i | **rank 15 (§8.2) decided** — reuse `nucleotides`; why two other Czech nodes with §8.2's subject in their titles keep their own keys; and the two Czech/Lehninger conflicts (helix stability, A- vs Z-DNA in cells) |
 | 13u | **`L-8-2-1`** — the run that proves the pre-test method (21 of 54 quotes one page out); OCR damage is per-region not per-page; and what to add when the Czech node is already good |
 | 9m | **rank 16 (§26.2) decided** — reuse `transcription`; why a Czech node whose OWN subject is gene regulation is not rank 9's failure mode even though it teaches capping/splicing; and two citation-checker bugs found by a broken parse (prime marks in a quote, double quotes inside a double-quoted string) |
+| 9n | **rank 19 (§23.3) decided** — reuse `hormone-structure-and-action`; the measured proof that no Czech node teaches fuel-metabolism regulation (obesity/leptin/glycaemia all 0 hits); and the verified page range, where an `interpolated` TOC range turned out CORRECT at both ends |
+| 13w | **`L-23-3-1`** — the β cell that measures glucose by metabolising it; why closing a K⁺ channel depolarises; the channel as drug target and disease gene; the pre-test method's third run (70 quotes, zero page errors); and **the three mechanical shapes that produce an UNCHECKED row, with the fix for each** |
 | 13v | **`L-26-2-1`** — RNA as its own enzyme (Cech 1982); the actual splicing chemistry; nusinersen/SMA as the worked medical example; and the two bugs from §9m in full |
 | 13t | **`L-2-2-1`** — the acid-base floor under a titration curve the Czech book draws without explaining; **five OCR traps on A pp.54–59**, one of them a new shape (a figure label with a middle dot); and **the method worth copying — test every quote against A before writing the prose** |
 | 13r | **`L-19-2-1`** — the evidence behind a claim the Czech node already makes, and where the non-integral ATP yield comes from |

@@ -1600,8 +1600,7 @@ written it lands on the same key, joining a third node.
   like an unrelated failure.
 
 ### 9n. Rank 19 (§23.3) — the `topicKey` decision: reuse `hormone-structure-and-action`, change
-nothing (2026-08-07, IN PROGRESS — checkpointed mid-session so nothing is lost if this session
-also trips the AUP classifier before the node itself is written)
+nothing (2026-08-07 — decided, and the node `L-23-3-1` written the same session; see §13w)
 
 **The decision: `L-23-3-1` will take `topicKey: "hormone-structure-and-action"`, joining the same
 ten Czech nodes the key already holds, `10-17`…`10-26` (Czech §10.3). Nothing created, nothing
@@ -1641,21 +1640,17 @@ checked: whether Czech names diabetes/obesity/leptin anywhere** — do this befo
 since §23.3 (per the B TOC) covers insulin action, glucagon/fasting, diabetes, and obesity/leptin,
 and the Czech gap map (§9b) should be consulted for whether any of these were already ruled on.
 
-**Page range — TOC says B pp.3006–3029 / A pp.859–867, `a_confidence: "interpolated"` at BOTH
-ends. Not yet verified by direct search in A — do that before citing anything**, per §13u/§13v's
-rule that an interpolated range has now been wrong at the start twice and the end once. The B TOC's
-first subheading is *"Insulin Counters High Blood Glucose in the Well-Fed State"* at B p.3006. Note
-`L-23-2-1` already claims A p.859 for SUMMARY 23.2, sharing that page with §23.3's presumed start —
-resolve which page §23.3's own heading actually opens on before setting `pages`.
-
-**Next step for whoever picks this up (this session or the next one): read B pp.3006–3029 in full,
-verify the A page range at both ends by direct search, then write the node in
-`biochemie_pro/data/leh_ch23b.js`** (chapter 23's second file, alongside `leh_ch23.js`'s
-`L-23-2-1`, following the a/b split pattern used for chapters 8, 11 and 19), wire it into
-`index.html`, run the three validators, and commit. Only the topicKey decision above is settled;
-the node itself is not yet written.
+**Page range — verified: §23.3 = A pp.859–867, and the interpolated TOC range is CORRECT at both
+ends this time.** This is worth recording precisely because the three checks before it each found
+an error: `lehninger_B_toc.json` gives `page_a_print` 859 and `page_a_print_end` 867 with
+`a_confidence: "interpolated"`, and both hold. The heading and opening sentence are on A p.859,
+sharing that page with SUMMARY 23.2 (which `L-23-2-1` claims for that summary only); SUMMARY 23.3
+spans A pp.866–867 and §23.4 opens on p.867. **So the rule is that an interpolated range is
+UNRELIABLE, not WRONG** — it must be checked every time, and sometimes it survives the check.
+All six subheadings were located by direct search: 859, 860, 862, 863, 864, 865.
 
 ---
+
 
 ## 11. Working with this user
 
@@ -3190,6 +3185,101 @@ of them again:
    because `esprima.parseScript()` was run on the file first. **The rule going forward: run a parse
    check immediately after editing any field that quotes book text, before running the citation
    checker** — a broken parse fails silently downstream in a way that looks unrelated.
+
+---
+
+### 13w. `L-23-3-1` — the hormone chapter finally gets its physiological question, and the cell
+that measures sugar by burning it (2026-08-07)
+
+**Rank 19, §23.3 Hormonal Regulation of Fuel Metabolism, ratio 3.9 — the LAST unwritten rank in
+the top 20.** Written into a new `biochemie_pro/data/leh_ch23b.js` (chapter 23's second file;
+`leh_ch23.js` was left untouched, the a/b split already used for chapters 8, 11 and 19), wired
+into `index.html`. **34 citation rows, all OK; the audit closed at 408 OK / 0 ELSEWHERE /
+0 UNCHECKED**, so the zero backlog §13o established is intact. Validator ends `RESULT: all checks
+pass`. Decision in §9n. The node carries the **fifteenth `lehNote`**, a `gap` on `7-12-2`, taking
+the total to **15 notes on 13 nodes**.
+
+**Why it was worth writing, in one sentence:** Czech §10.3 teaches, thoroughly and correctly, *how*
+a hormone signals — receptors, cAMP, IP₃/DAG, tyrosine kinases, the nuclear steroid route — and
+never once says what that machinery is *for*. This node supplies the question those ten nodes are
+the answer to: hold blood glucose near 4.5 mM, minute by minute, whether the subject has just eaten
+or has not eaten for six weeks.
+
+**Measured, so nobody re-derives it:** across the whole Czech layer, `obesity` 0 hits, `leptin` 0
+hits, `glycaemia` 0 hits, and `diabetes` appears **only** as a cause of acetyl-CoA flooding, in
+`10-8` and `8-4-4-3`. No Czech node states the set point, none contains the well-fed / fasted /
+starving framework, none says what insulin switches on enzyme by enzyme — and above all **none
+explains how insulin SECRETION is regulated.** The β-cell glucose sensor is absent from the Czech
+layer entirely.
+
+**The one idea the node is built around**, and the one an examiner can be walked through: the
+pancreatic β cell has **no glucose receptor**. It measures glucose by *metabolising* it. GLUT2 →
+glucokinase → glycolytic flux → ATP → ATP-gated K⁺ channel closes → membrane depolarises →
+voltage-gated Ca²⁺ channels open → insulin exocytosis. **The sensor IS glycolysis.** The
+counterintuitive step worth drilling is that *closing* a K⁺ channel depolarises, because the open
+channel is what held the membrane negative. And the feedback closes on the same reaction it opened
+on — falling glucose is read as *"a diminished flux through the glucokinase reaction"* (A p.861).
+The mechanism is then proved real rather than diagrammatic by the fact that **that one channel is
+both a drug target and a disease gene**: sulfonylureas close it deliberately; mutations jamming it
+open cause neonatal diabetes; mutations jamming it shut cause hypoglycaemia severe enough that
+part of the pancreas may be removed (A p.862). This is §5's organic-chemistry rule satisfied at no
+cost — every step is a measurable, bench- or bedside-visible event.
+
+**The `lehNote`, and why it clears §9f's bar.** `7-12-2` (`glycogen-metabolism`) draws the entire
+epinephrine/glucagon → cAMP → protein kinase → phosphorylase-kinase cascade at diagram level, and
+writes `adrenalin/glukagon` as **a single undifferentiated pair with no target organ named**.
+Lehninger is explicit that their reach differs: *"Although its primary target is the liver"*
+(A p.862), and Table 23-4 is titled *"Production and Release of Glucose by the Liver"* (A p.863).
+Glucagon reaches adipose tissue but **not skeletal muscle**; epinephrine does. A student revising
+from `7-12-2` alone answers that glucagon mobilises muscle glycogen — **wrong twice over**, since
+muscle carries no glucagon receptors and muscle glycogen could not raise blood glucose anyway,
+lacking glucose 6-phosphatase. Nothing else in the section met the bar; the rest are gaps this node
+fills, not errors the Czech book makes.
+
+#### The pre-test method, third run, and the number that matters
+
+§13t proposed testing every candidate quote against A before writing prose; §13u turned it into a
+rule after 21 of 54 quotes came back one page out. **Third application: 70 candidates tested, 64
+resolved on exactly one page, 6 failed — and all six failures were OCR damage, not wrong pages**,
+each replaceable by a neighbouring fragment on the very same page. **Zero page errors, because
+every page was searched rather than predicted.** That is the whole difference from §8.2's run, and
+it should now be treated as the default rather than an optimisation.
+
+The six OCR-damaged spans, named without quotation marks per §13o's rule so the checker cannot
+adopt them as unfindable probes: the words sulfonylurea drugs; the phrase activating TAG breakdown;
+the clause epinephrine stimulates glucagon secretion; the span four identical SUR1 subunits; the
+phrase a tumor on the pituitary gland; and the clause is not metabolized but is eliminated in the
+breath. In every case a fragment of the same sentence resolved on the expected page, confirming
+§13u's finding that **OCR damage is per-region, not per-page.**
+
+⚠️ **Two label pages are ambiguous and are therefore deliberately UNCITED anywhere in the node:**
+`FIGURE 23-24` resolves on both A p.860 and A p.861, and `FIGURE 23-27` on both A p.864 and
+A p.865 — the caption-versus-cross-reference ambiguity of §16c. Their material is cited by verbatim
+quote on its own page instead. Every figure that *is* cited was given its own explicit page rather
+than left in a run of labels, which is §13s's failure shape: Tab. 23-3 = A p.859; Fig. 23-22 =
+A p.860; Fig. 23-23 = A p.861; Fig. 23-25 = A p.862; Fig. 23-26 = A p.863; Fig. 23-28 = A p.866.
+
+#### ⚠️ A new UNCHECKED shape, and the cheap fix — 28 rows on the first run
+
+The first citation run returned **0 ELSEWHERE but 28 UNCHECKED**, which looks alarming and was
+entirely mechanical. `CTX_BACK` is 90 characters: **a quote only becomes a probe if it sits within
+90 characters BEFORE its own citation.** Three shapes produced the 28:
+
+1. **Short CZ anchor tags carrying a page number** — `points[N].cz` is a few Czech words plus
+   `(A p.864)`, with no room for a quote. **Fix: drop the citation from the CZ tag entirely.** Per
+   §11 the CZ half is a short anchor tag only, and the page is already cited in the `en` half, so
+   the row should never have existed. Seven rows closed this way.
+2. **`terms[].def_en` and `quiz[].why_en` that paraphrased instead of quoting.** The sentence next
+   to the citation said the right thing in the node's own words. **Fix: lift the book's phrasing
+   verbatim into the position already adjacent to the citation** — no new claim, just quote marks
+   around what was already there. Thirteen rows.
+3. **A `coverageNote` list of measured anchors** — `Subheading Name = A p.863` with no quote.
+   **Fix: wrap each subheading title in typographic quotes.** A subheading title *is* verbatim page
+   text, so it makes an excellent probe at zero cost. Eight rows.
+
+**Use typographic quotes `“ ”`, never ASCII `"`, inside any double-quoted JS string** — this is
+§9m's second bug avoided by construction rather than discovered by a broken parse. The whole
+28-row backlog closed in one pass and the file parsed on the first attempt afterwards.
 
 ---
 
