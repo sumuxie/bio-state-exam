@@ -44,7 +44,11 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — eleven Lehninger nodes now exist.** `L-23-2-1` in
+**§9 step 6 is under way — twelve Lehninger nodes now exist, and the depth queue's ready-to-write
+primaries are now EXHAUSTED.** `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
+and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
+were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
+decision first (§9c, §9e), and §13m added a third possible outcome to that check. `L-23-2-1` in
 `biochemie_pro/data/leh_ch23.js` (§13m, added 2026-08-07) covers §23.2 tissue-specific metabolism
 — the organ axis the Czech book never uses — and joins Czech `10-10`. **§13m is the most
 important one to read of the whole 13-series**, because it fixed two bugs in
@@ -912,12 +916,20 @@ subject, so it needed no data change at all — and it opened the molecular-biol
 book, which the depth layer had not touched. **§13l is the one to read before the next node**, for
 two reasons that generalise: this section's `interpolated` A range was wrong at its start by a
 page, and ten of 54 candidate quotes proved to be on a different A page than B's layout implied.
-**Rank 7 (§23.2 tissue-specific metabolism) is done** (`L-23-2-1`, §13m, 2026-08-07); its §9e
+**Ranks 7 and 18 are both done, and this table is now EMPTY of ready-to-write primaries.**
+`L-3-3-1` (§13n) took rank 18 (§3.3 working with proteins) and, as predicted here, that was the
+natural moment to fix `2-2-6`'s `cnNote` — done, with the notes pages actually opened and read as
+images rather than guessed. Rank 7 (§23.2 tissue-specific metabolism) is done too (`L-23-2-1`,
+§13m, 2026-08-07); its §9e
 check produced a third outcome — no Czech node teaches metabolism by organ at all, while the
 material is scattered across pathway nodes that must KEEP their own keys — and the reasoning for
-not re-keying them is in §13m. What is left in this table: **rank 18** (§3.3 working with
-proteins, 1 waiting), whose single Czech node `2-2-6` is the one carrying the unfixed `cnNote`
-error in §2c/§6a, so writing it is the natural moment to fix that.
+not re-keying them is in §13m.
+
+**What is left is no longer a queue pick.** Every remaining rank above needs the `topicKey`
+decision described below, and the two standing alternatives are (a) the **entity cards** — `pro`'s
+headline feature, still one card, with a finished tryptophan dossier sitting unused in §12 — and
+(b) **auditing the Czech layer**, whose one known error has just been closed but which has never
+been checked as a whole. See the `Start here` block for the current recommendation.
 
 **Raised with the user 2026-08-07 and answered: re-key per §9e, one section at a time.** The
 single thinnest place in the whole queue, rank 1 §5.1 Oxygen-Binding Proteins at ratio 17, is
@@ -2088,6 +2100,70 @@ edits, and expect `TOTAL: 3`** — three cosmetic pre-existing findings that pre
 `biochemie_pro` now reports **219 topics (207 cz, 11 lehninger, 1 entity), 63 topicKeys**, with
 **11 joining more than one source**. 8 lehNotes on 7 nodes. `step5_check.py`: all checks pass.
 This node's own citations: **all clean, 0 ELSEWHERE, 0 UNCHECKED.**
+
+### 13n. The twelfth node — `L-3-3-1`, §3.3 Working with Proteins (2026-08-07): the last free pick, and the `2-2-6` cnNote error finally fixed with evidence
+
+Rank 18, ratio 4.0, A pp.83–90, B pp.393–415. **Appended to the existing
+`biochemie_pro/data/leh_ch3.js`, which is now the first Lehninger data file carrying two nodes**
+(`L-3-3-1` §3.3 and `L-3-4-1` §3.4). No `index.html` change was needed. The pairing is real, not
+filing convenience: §3.3 ends by cutting a spot out of a two-dimensional gel and identifying it by
+mass spectrometry, which is exactly where §3.4 begins.
+
+**§9e check passed** — `working-with-proteins` holds exactly `2-2-6`, which is genuinely the node
+teaching the subject. No key created, no node moved.
+
+**The TOC's interpolated range was CORRECT this time, at both ends.** Recorded deliberately next
+to §13l (wrong at the start of §25.1) and §13m (wrong at the end of §23.2): **an interpolated
+range is *unreliable*, not *wrong*.** It must be checked; it must not be assumed bad. Checking
+cost two minutes.
+
+**The two books point the same toolbox at different questions, which is why they do not
+overlap.** Czech `2-2-6` spends almost all its length on *determining Mr* — sedimentation, the
+Svedberg unit, the Svedberg equation — and merely *names* gel/permeation chromatography and
+electrophoresis. §3.3 picks up exactly those two named-but-undeveloped methods and asks the other
+question: how do you get one protein out of a cell, and how do you know when you have. The node's
+centre of gravity is the purification table read as arithmetic (purification factor 1,500, yield
+45 %, and *why specific activity rises while total activity falls*) and the mechanism of SDS.
+
+**No `lehNote`, and the decision is recorded because there was a real candidate.** Czech lists
+electrophoresis among the Mr methods without qualification; Lehninger shows mobility is Z/f, so it
+answers to shape as well as size, and that SDS rescues it only by pinning both terms — and that
+SDS separates *subunits*, so an SDS gel gives subunit mass while Czech's ultracentrifuge weighs
+the intact native particle. That is a classic exam question (why do gel filtration and SDS-PAGE
+disagree?). It is a **point flagged as a trap**, not a lehNote, because Czech states nothing
+false: it is incomplete, not wrong, and §9f's bar is *would mislead*. Eight lehNotes exist and the
+two preceding nodes added one each; a third in a row on a weaker case starts diluting them, which
+is the failure §9f names. A future session that disagrees has the reasoning in the coverageNote.
+
+#### ✅ The `2-2-6` cnNote error is fixed — flagged by §6a, deferred by §2c, closed here
+
+§6a found it, §2c deferred it **on principle**: *"it needs the notes' own p.41 heading, which this
+session did not open — flagging it is not the same as guessing it."* That was the right call and
+the fix simply required doing the work. **The notes were opened.** They have no text layer, so
+pages were rendered from `生物化学笔记_分卷/生物化学笔记_03_p031-045.pdf` and read as images:
+
+- **notes p.41** carries a highlighted heading reading **八 蛋白质的分离、纯化、表征** (topic 8,
+  separation / purification / characterisation of proteins), and its first item is
+  **① 蛋白质的性质** — literally `2-2-6`'s own title, *Vlastnosti proteinů*;
+- **notes p.46** was rendered and is **blank**, which fixes the topic's end.
+
+So topic 八 = pp.41–45, exactly as §6a predicted, now **measured at both ends instead of
+inferred**. `2-2-6`'s `cnNote` changed from `topic: "七"` (myoglobin/haemoglobin/sickle cell,
+pp.37–40 — which is what `L-5-1-1` deepens, and which is why two nodes were pointing at one notes
+topic) to `topic: "八"` with the verified title and page range, `status` `partial` → `mapped`. The
+evidence is written into the node's own `coverageNote` so it never has to be re-derived. **Topic 八
+now appears in the data for the first time.**
+
+**One self-inflicted checker trap worth knowing before writing the next coverageNote.** The first
+run reported two UNCHECKED rows on this node. Cause: the coverageNote *quoted* the phrase
+`conferring on each protein a similar charge-to-mass ratio` in order to record that A's OCR
+**cannot** find it — and `verify_citations.py` treats any quoted span as a probe, so it adopted an
+unfindable probe and reported the surrounding citations as unverifiable. **When documenting an OCR
+miss, name the phrase without quotation marks.** Fixed, and the reason is written into the node.
+
+`biochemie_pro` now reports **220 topics (207 cz, 12 lehninger, 1 entity), 63 topicKeys**, with
+**12 joining more than one source**. 8 lehNotes on 7 nodes. `step5_check.py`: all checks pass.
+Citation audit **209 OK / 0 ELSEWHERE / 34 UNCHECKED**; this node's own citations are all clean.
 
 ---
 

@@ -866,8 +866,8 @@ window.BIOCHEM.topics.push(
   cnTitle: "蛋白质的性质",
   pages: [37, 38, 39, 40],
   coverage: "partial",
-  coverageNote: "p. 37 verified against the scan (incl. the Svedberg equation and all numeric values). pp. 38–40 — continuation, including denaturation — are not in the extracted page set.",
-  cnNote: { topic: "七", title: "结构与功能关系", status: "partial" },
+  coverageNote: "p. 37 verified against the scan (incl. the Svedberg equation and all numeric values). pp. 38–40 — continuation, including denaturation — are not in the extracted page set. CNNOTE CORRECTED 2026-08-07 (HANDOFF_LEHNINGER.md §6a, §2c, §13n): it pointed at Chinese-notes topic 七, which is myoglobin/haemoglobin/sickle cell on notes pp.37–40 and is what L-5-1-1 deepens. Two earlier sessions flagged this and neither fixed it, deliberately — §2c recorded that the fix 'needs the notes' own p.41 heading, which this session did not open', and guessing was refused. The page was opened this time. Notes p.41 carries a highlighted heading reading 八 蛋白质的分离、纯化、表征 (topic 8, separation, purification and characterisation of proteins), and its first item is ① 蛋白质的性质 — literally this node's title, Vlastnosti proteinů. Notes p.46 was rendered and is BLANK, which fixes the topic's end, so topic 八 = pp.41–45 exactly as §6a predicted. The mapping is now measured at both ends rather than inferred.",
+  cnNote: { topic: "八", title: "蛋白质的分离、纯化、表征（笔记 pp.41–45；p.41 的标题与首项「蛋白质的性质」于 2026-08-07 直接读图核实，p.46 为空白页，确定该主题的结束）", status: "mapped" },
   summary: {
     en: "The physico-chemical properties of proteins are conditioned partly by their chemical composition and partly by their relative molecular mass. Globular proteins are generally soluble in aqueous salt solutions.",
     cn: "蛋白质的物理化学性质一方面取决于其化学组成，另一方面取决于其相对分子质量。球状蛋白一般可溶于水性盐溶液。"
