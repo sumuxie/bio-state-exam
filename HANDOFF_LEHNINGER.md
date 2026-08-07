@@ -1789,6 +1789,65 @@ bench consequence attached; keep it that way.
   the ligature fix). A real and commonly examined property of Trp, absent from the source.
   Same treatment: outside-the-book, marked.
 
+### 12e. The second card — `E-histidine` (2026-08-07), and how to pick the next entity
+
+**Written and validating.** `E-histidine` in `entity_cards.js`, `topicKey: "amino-acids"` — the
+same key as `E-tryptophan`, so the entity group now joins Czech `2-1-1`/`2-1-2`/`2-1-3`, the depth
+node `L-2-2-1` and two cards. `biochemie_pro` reports **229 topics (207 cz, 20 lehninger, 2
+entity)**; **34 citation rows, all OK**, audit at 434 OK / 0 ELSEWHERE / 0 UNCHECKED.
+
+**The generating fact is sharper than tryptophan's**, which is why this was the right second card:
+the imidazole pKa of **6.0** makes histidine *"the only common amino acid having an ionizable side
+chain with pKa near neutrality"* (A p.76), so at pH 7 both forms are present at once and one
+residue can give a proton and take one back. Four chains come out of that single number, and
+**three of them land on a depth node that already exists** — which is the join the topicKey cannot
+make and the card does by hand:
+
+1. **pKa 6.0 → general acid-base catalysis → chymotrypsin's catalytic triad** (§6.4, `L-6-4-1`).
+   The best step is that the protein does not merely *use* the pKa, it *tunes* it: compressing the
+   His57–Asp102 hydrogen bond raises His57's pKa from ~7 to >12. Ends on an observable — the
+   bell-shaped pH-rate profile, where the left-hand limb *is* histidine losing its proton.
+2. **imidazole nitrogen → coordinates haem iron → proximal and distal His** (§5.1, `L-5-1-1`).
+   Ends on the book's own conclusion, that the selectivity *"helps prevent poisoning by the CO that
+   is generated in small amounts from metabolism"* (A p.152).
+3. **the same pKa → Bohr effect** (§5.1 again). Blood swings pH 7.6 → 7.2, which only an imidazole
+   notices; His146 protonates, ion-pairs Asp94, stabilises the T state, oxygen is released exactly
+   where metabolism acidified the tissue. **The pKa is the sensor** — no signal needed.
+4. **six His in a row → nickel column** (§9.1). The bench payoff, and the same coordination
+   chemistry as chain 2 used deliberately.
+
+Plus `points` on histamine and cimetidine (§22.3, `L-22-3-1`) and two `beyondPoints`: histidine's
+pI is *not printed* for histidine in the passages read (derive it as (6.0 + 9.2)/2 ≈ 7.6 rather
+than quoting from memory), and **how a His-tagged protein is actually eluted** — competing the tag
+off with free imidazole — is not in §9.1 either.
+
+#### How to choose the next entity, with the measurement that decides it
+
+Scatter across Lehninger is the criterion, because gathering what is already in one place is worth
+nothing. Measured 2026-08-07 with `locate.py` — occurrences / pages / chapters:
+
+| candidate | occ | pages | chapters |
+|---|---|---|---|
+| glucose | 1880 | 612 | 17 |
+| phosphorylation | 597 | 365 | 18 |
+| heme | 315 | 189 | 22 |
+| glutamate | 245 | 119 | 13 |
+| glycine | 185 | 84 | 14 |
+| tyrosine | 102 | 68 | 9 |
+| disulfide | 98 | 57 | 9 |
+| histidine | 86 | 52 | 10 |
+| cysteine | 75 | 42 | 9 |
+
+⚠️ **But scatter alone is not the criterion — the card must produce CAUSAL CHAINS from one
+structural fact, not a survey.** `glucose` and `phosphorylation` top the table and are the *worst*
+fits, because neither reduces to a single generating property; a card on either would be a summary
+of half the book. **`heme` is the strongest untouched candidate** (22 chapters, and it does reduce
+to one fact: a porphyrin ring holding an iron) with chains running O₂ binding → electron transfer →
+catalysis → degradation to bilirubin and jaundice. **`cysteine` is the strongest remaining amino
+acid**: thiol → disulfide → the oxidising extracellular versus reducing cytosolic environment →
+why secreted proteins carry disulfides and cytosolic ones do not → insulin's own chains → DTT and
+non-reduced SDS-PAGE on the bench → Fe-S clusters → glutathione.
+
 ---
 
 ## 13. The first Lehninger node exists — and it exposed the real blocker

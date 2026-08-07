@@ -1,6 +1,6 @@
 # START HERE — the Lehninger phase
 
-**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 259 KB ≈ 59k
+**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 263 KB ≈ 60k
 tokens and reading it triggers a compaction before you have done any work. That file is now an
 **archive you grep into**, one section at a time, using the index at the bottom of this page.
 `HANDOFF.md` (69 KB, the Czech app) is the same: grep, never read whole. Both sizes are
@@ -46,7 +46,8 @@ A biochemistry oral-exam trainer for a Czech state exam, three apps in one repo.
 
 - **`biochemie_basic/`** — FROZEN. The user revises from it daily. Never modify.
 - **`biochemie_pro/`** — where all work happens. Czech textbook (207 nodes, ch1–10, complete)
-  **plus** a Lehninger 8 depth layer (19 nodes) joined by `topicKey`.
+  **plus** a Lehninger 8 depth layer (20 nodes) joined by `topicKey`, **plus** 2 integration cards
+  (`E-tryptophan`, `E-histidine`) — the headline feature, archive §4 and §12.
 - **`PESB/`** and **`oral_prep_app/`** — separate apps, not this phase, listed so they do not look
   like strays. `PESB/`'s handoff is **not in this repo** — it lives at
   `C:\Users\Admin\Documents\trae_projects\recombinants_trae_independant\HANDOFF_PESB.md`.
@@ -331,8 +332,8 @@ were the checker's fault, not the data's.
 |---|---|
 | Czech layer | 207 nodes, ch1–10, complete. **Never audited** — see "what to ask" below |
 | Lehninger depth layer | **20 nodes**: `L-1-3-1` `L-2-2-1` `L-3-3-1` `L-3-4-1` `L-5-1-1` `L-6-4-1` `L-8-2-1` `L-8-3-1` `L-11-2-1` `L-11-3-1` `L-16-2-1` `L-17-2-1` `L-19-1-1` `L-19-2-1` `L-21-1-1` `L-22-3-1` `L-23-2-1` `L-23-3-1` `L-25-1-1` `L-26-2-1`. `leh_ch3.js` holds two nodes; chapters 8, 11, 19 and 23 each have two, split across an `a`/`b` file pair |
-| `topicKey`s | **63** distinct over **228** nodes (207 cz + 20 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 18 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `citric-acid-cycle` `dna-replication` `enzyme-mechanism` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `hormone-structure-and-action` `membrane-architecture` `membrane-transport` `nucleotides` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain` `tissue-specific-metabolism` `transcription` `working-with-proteins`. `amino-acids` is the only one joining **all three** sources — Czech, Lehninger and the entity card. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only. The key count did **not** move when `L-6-4-1`, `L-2-2-1`, `L-8-2-1`, `L-26-2-1` or `L-23-3-1` was added, which is the point of §9g: they reused a key instead of making one |
-| Entity cards | 1 (`E-tryptophan`). The headline feature, still barely started — archive §4, §12 |
+| `topicKey`s | **63** distinct over **229** nodes (207 cz + 20 lehninger + 2 entity), counted from the app data 2026-08-07. **Exactly 18 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `citric-acid-cycle` `dna-replication` `enzyme-mechanism` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `hormone-structure-and-action` `membrane-architecture` `membrane-transport` `nucleotides` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain` `tissue-specific-metabolism` `transcription` `working-with-proteins`. `amino-acids` is the only one joining **all three** sources — Czech, Lehninger and both entity cards. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only. The key count did **not** move when `L-6-4-1`, `L-2-2-1`, `L-8-2-1`, `L-26-2-1` or `L-23-3-1` was added, which is the point of §9g: they reused a key instead of making one |
+| Entity cards | **2**: `E-tryptophan`, `E-histidine`. The headline feature — archive §4, §12, and §12e for how to pick the next entity (the measurement says `heme` or `cysteine`) |
 | UI | Done. Two books render, sidebar **By book / By topic** toggle, "Same topic" strip, `lehNotes` blocks. Nothing more needs building |
 | Live site | https://sumuxie.github.io/bio-state-exam/biochemie_pro/ |
 
