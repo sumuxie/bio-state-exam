@@ -404,7 +404,7 @@ window.BIOCHEM.topics.push(
   cnNote: { topic: "一", title: "序论", status: "mapped" },
   lehNotes: [
     { kind: "cz-stronger", node: "L-1-3-1",
-      en: "Do not read the Lehninger formula as a correction of this one. This node gives G = U + pV - TS, the fuller statement, with enthalpy H = U + pV as a derived quantity; Lehninger 1.3 gives only G = H - TS (A p.21) and never introduces chemical potential, activity, the principle of local equilibrium or the primed pH-7 standard state, all of which are here. On the formal thermodynamics the Czech book is the better source. What Lehninger adds is numbers, not theory.",
+      en: "Do not read the Lehninger formula as a correction of this one. This node gives G = U + pV - TS, the fuller statement, with enthalpy H = U + pV as a derived quantity; Lehninger 1.3, where Gibbs is credited with showing that “the free energy, G, of any closed system can be defined in terms of three quantities” , gives only G = H - TS (A p.21) and never introduces chemical potential, activity, the principle of local equilibrium or the primed pH-7 standard state, all of which are here. On the formal thermodynamics the Czech book is the better source. What Lehninger adds is numbers, not theory.",
       cn: "不要把 Lehninger 的公式当作对这里的更正。本节点给出的是 G = U + pV − TS 这一更完整的表述，并把焓 H = U + pV 作为导出量；Lehninger 1.3 只给出 G = H − TS（A 第21页），且从未引入化学势、活度、局域平衡原理或加撇的 pH 7 标准态，而这些本节点都有。在形式化热力学上，捷克教材是更强的来源。Lehninger 补充的是数字，不是理论。" },
   ],
   summary: {

@@ -50,6 +50,14 @@ def norm(t):
     t = t.replace("β", " beta ").replace("α", " alpha ")
     t = " ".join(t.split())
     t = re.sub(r"(\w)- (\w)", r"\1\2", t)      # rejoin OCR line-break hyphenation
+    # A's OCR frequently puts a space BEFORE the hyphen in a figure or table label, so the page
+    # reads "figure 11 -31" and "figure 11 -45" while the probe built from the citation reads
+    # "figure 11-31". The label then never matches and the row is reported UNCHECKED with
+    # "probe not found even +-40 pages" -- about a citation that is perfectly correct. Found
+    # 2026-08-07 on L-11-3-1, where it accounted for four of that node's five open rows.
+    # Collapsing whitespace around a hyphen BETWEEN DIGITS is applied to both sides of the
+    # comparison, so it is symmetric and cannot make a wrong page match a right one.
+    t = re.sub(r"(\d)\s*-\s*(\d)", r"\1-\2", t)
     return t.lower()
 
 doc = fitz.open(A_PDF)
@@ -164,6 +172,14 @@ def probes(text, src, cite=None):
         at = mm.start() if mm else len(head)
     labels = list(FIGREF.finditer(head[:at]))
     m = labels[-1] if labels else None
+    if m is None:
+        # Section nodes write the label BEFORE the page ("Fig. 3-28, A p.94"), which is what the
+        # cut above is for. The ENTITY CARD writes it AFTER ("A p.75, Fig. 3-6"), so cutting at
+        # the citation leaves nothing and the row reports "no searchable phrase". Falling back to
+        # the first label following the citation covers both conventions. Without this, the
+        # nearest-label fix silently cost E-tryptophan two rows -- a reminder that a change made
+        # to stop over-matching can quietly under-match somewhere with a different house style.
+        m = FIGREF.search(head[at:])
     if m:
         kind = m.group(1).lower().rstrip('.')
         kind = {"fig": "figure", "tab": "table"}.get(kind, kind)
