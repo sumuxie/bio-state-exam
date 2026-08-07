@@ -16,8 +16,86 @@ doing it.
 **To start work, say exactly this:**
 
 > 读 `C:\Users\Admin\Downloads\bio-state-exam\LEHNINGER_START.md`，全文读完，然后按里面
-> 「Next pick」继续。不要整读 `HANDOFF_LEHNINGER.md`，只按章节号 grep。
-> 写完一个节点就 commit + push，不要攒。
+> 「▶️ 当前阶段」那一节继续。不要整读 `HANDOFF_LEHNINGER.md`，只按章节号 grep。
+> 写完一批就 commit + push，不要攒。
+
+---
+
+## ▶️ 当前阶段 — mustKnow 内容铺设 (2026-08-08)
+
+**The phase changed on 2026-08-08 and this block, not the "Next pick" block further
+down, is the current instruction.** The Lehninger depth queue and the entity cards are
+both at a natural stopping point; the work now is a comprehension layer over the nodes
+that already exist.
+
+### The priority call that was made, and why — do not silently reopen it
+
+Ruojin asked for a recommendation because too many things were half-open. The decision:
+**stop feature work, do not sweep-translate the coverage notes, put everything into
+content that answers an exam question.** The reasoning, so it can be judged rather than
+inherited:
+
+- **The features that mattered already shipped** — reading voice, 1,226 generated term
+  questions, folded coverage note. Highlighting / notes / filters are comfort, and do not
+  change whether she passes.
+- **`coverageNote` Chinese is low value.** It records *which page the text came from*. It
+  never appears in an exam answer. Folding it (done) fixed the real complaint. Add Chinese
+  opportunistically when touching a node; do not run it as a project.
+- **The Czech layer's coverage is already complete** (ch1–10). So the gap is not coverage,
+  it is the layer that makes those nodes revisable — and Ruojin named which parts she
+  wants: 追根溯源 (`trace`) and 考点总结 (`takeaway`).
+
+### What to do next, concretely
+
+**`mustKnow` — 42 of 230 nodes done, all of Czech ch7. Next is ch8 (lipids), then the
+remaining chapters, then `trace`.** Measured 2026-08-08, nodes still without one:
+
+| ch | 1 | 2 | 3 | 4 | 5 | 6 | **8** | 9 | 10 | leh | entity |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| nodes | 6 | 10 | 9 | 18 | 10 | 19 | **40** | 27 | 26 | 20 | 3 |
+
+**ch8 (lipids, 40 nodes) is next** — it is the other chapter §5a measures as heavy on
+organic chemistry, and the one Ruojin has least foundation for. ch9 is photosynthesis
+(27 nodes) and is well worth doing, since a classmate was examined on it.
+
+The rule that keeps the field worth having, and it is easy to get wrong: **`mustKnow` is
+NOT a summary of the node. It is what you would still want in your head after forgetting
+the node. If it can be reconstructed from the title, it was not worth writing.** It is
+bilingual (`{ en, cn }`), renders at the very top above the warnings, and every line must
+land on a consequence rather than on chemistry for its own sake (§5, non-negotiable).
+
+Worked examples to copy the register from, all in `data/ch7.js`:
+
+- `7-4-1-2` — change α(1→4) to β(1→4) and the chain straightens instead of coiling, so
+  strands lie flat and hydrogen-bond into sheets; that one bond geometry decides both that
+  cellulose is a fibre and that we cannot digest it.
+- `7-8-4` — fermentation is not about making ethanol or lactate, those are waste; it
+  exists to regenerate NAD⁺, without which glycolysis stops dead.
+- `7-11-2-1` — inside a cell the bond is broken with phosphate, not water, so the product
+  leaves already phosphorylated: it cannot escape the cell, and the ATP that
+  phosphorylating it would have cost is saved.
+
+**How to write a batch.** Read the node summaries with `parse_nodes` (do NOT regex the
+data files), write the lines, then insert them with a script **written to a file and run
+by path** — a heredoc eats backslashes in this environment and will silently corrupt a
+regex. A working inserter is in the scratchpad pattern used on 2026-08-08: match each
+node's `id:` line, then insert before that node's `summary: {` line at the same indent,
+and assert every id was found. ~14 nodes per batch, then parse-check, then commit.
+
+### ⛔ BLOCKED ON RUOJIN — the site root redirects away from all of this
+
+`index.html` at the repo root runs `location.replace('biochemie_basic/index.html')`, so
+opening the site normally lands on the **frozen** app. **Everything built recently lives in
+`biochemie_pro` and is invisible from the default URL** — the voice panel, the term drill,
+`mustKnow`, the folded coverage note, all 20 Lehninger nodes and all 3 entity cards.
+This is why she reported not being able to find `mustKnow` at all.
+
+The working URL is **https://sumuxie.github.io/bio-state-exam/biochemie_pro/**.
+
+**Three options were put to her and none is chosen yet** — redirect to `pro`; keep `basic`
+and bookmark `pro`; or replace the redirect with a two-link chooser. **Do not change the
+redirect without her answer**: it decides what she opens every day, and `biochemie_basic`
+is frozen precisely because she revises from it.
 
 **When it stops with `API Error: ... safeguards flagged this message` or `... can't help with
 this`** — which it will, several times per session, and which is **not** caused by anything you or
@@ -48,6 +126,8 @@ A biochemistry oral-exam trainer for a Czech state exam, three apps in one repo.
 - **`biochemie_pro/`** — where all work happens. Czech textbook (207 nodes, ch1–10, complete)
   **plus** a Lehninger 8 depth layer (20 nodes) joined by `topicKey`, **plus** 3 integration cards
   (`E-tryptophan`, `E-histidine`, `E-cysteine`) — the headline feature, archive §4 and §12.
+  ⚠️ **The site root redirects to `biochemie_basic`, so none of this is visible from the
+  default URL** — see the BLOCKED note in the current-phase section above.
 - **`PESB/`** and **`oral_prep_app/`** — separate apps, not this phase, listed so they do not look
   like strays. `PESB/`'s handoff is **not in this repo** — it lives at
   `C:\Users\Admin\Documents\trae_projects\recombinants_trae_independant\HANDOFF_PESB.md`.
@@ -60,6 +140,49 @@ to the notes would have skipped it. **A classmate's report of a real exam questi
 everything in either handoff.**
 
 ---
+
+## 🛠️ App work done 2026-08-08 — what shipped, what is parked, and the traps found
+
+Source plan: `HANDOFF_from_PESB_biochemie.md` (in the *other* repo,
+`recombinants_trae_independant/`). Its §1 and §7 figures are **stale** — it records 215
+nodes and 1,010 term cards; live is 230 and 1,233. Its method is sound; three of its
+specific claims are not.
+
+**Shipped** (`a38d55b`, `9069ca7`, `6150d4f`, `22f24be` and the ch7 batch):
+
+| | |
+|---|---|
+| A7 term drill | **1,226 questions generated** from the existing glossary at load time, taking the bank from 704 to 1,930. Not written into the data files, so it cannot go stale when a definition is reworded |
+| A6 quiz source | `core → core+bank → core+bank+terms`, cycled by one button. `bank` is inert (no node has one) and the control **says so** rather than doing nothing silently |
+| Reading voice | Voices now **ranked** rather than first-match — that was the whole complaint. Picker per language, ★ on natural/neural voices, Test button, speed slider, all persisted. Read buttons added to `points` and to entity-card chain steps, which had none |
+| Coverage note | Chinese line visible, long English folded behind a toggle; `coverageNoteCn` is a new optional field, 4 written |
+| `mustKnow` | New field + render, 42 nodes (all of ch7) |
+
+**Parked deliberately, not forgotten:** text-selection highlighting, the 只看必背 filter,
+notes + IndexedDB, the Terms-tab drill. All are comfort features. See the priority call in
+the current-phase block.
+
+### Three traps in the port plan — each fails silently, none throws
+
+1. **`chapter` is book-local.** PESB buckets quiz distractors by chapter; Czech ch7 is
+   sugars and Lehninger ch7 is not. Copying that mixes two subjects into one distractor
+   pool and makes questions easier in a way nothing on screen shows. Fixed by bucketing on
+   **book+chapter**, with entity cards in their own bucket.
+2. **Entity cards have no `chapter` and no `section`.** Ported render code that assumes
+   they exist prints `undefined`. Guard on `kind` first.
+3. ⚠️ **`cardKey` differs between the two apps and this one is still live.** biochem uses
+   `topic.id + '::' + (term.cz || term.en)`; PESB uses `term.en`. **Most Czech terms have a
+   `cz`, so porting A5 verbatim would give the same card two different keys and split its
+   Leitner box across two tabs.** §8 of that handoff warns about shared Leitner state but
+   names the wrong mechanism. **Always reuse biochem's existing `cardKey`.**
+
+Two further corrections to that document, both measured: its `notes` probe is a **false
+positive** — the 4 hits are `lehNotes`, the Lehninger annotations, so biochem has *no*
+user-notes machinery and A4 is build-from-scratch, not Medium; and the Cyrillic defect it
+reports in `ch1.js` is **not** the only one — `leh_ch19b.js` has `держ` inside a Chinese
+sentence, and the frozen app has 8 Cyrillic characters too. Nothing in CI catches this;
+`.github/workflows/pages.yml` runs `node tools/validate-data.js` and gates the deploy, so
+that file is the **only** place a mixed-language scanner would actually run.
 
 ## 🧬 `E-cysteine` is written — the third integration card, and the amino-acid trio is CLOSED (2026-08-08)
 
