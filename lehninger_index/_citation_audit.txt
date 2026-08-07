@@ -47,13 +47,13 @@ OK        L-3-3-1        A p.90  points[10].en        quote found on [90]
 OK        L-3-4-1        A p.92  coverageNote         label found on [92]
 OK        L-3-4-1        A p.94  coverageNote         label found on [94]
 OK        L-3-4-1        A p.95  coverageNote         label found on [95]
-UNCHECKED L-3-4-1        A pp.96-100  coverageNote    no searchable phrase -- verify by hand
+OK        L-3-4-1        A pp.96-100  coverageNote    quote found on [96]
 OK        L-3-4-1        A p.92  points[5].en         label found on [92]
 OK        L-3-4-1        A p.94  points[7].en         label found on [94]
 OK        L-3-4-1        A p.95  points[8].en         label found on [95]
 OK        L-5-1-1        A p.148  points[0].en        label found on [148]
 OK        L-5-1-1        A p.149  points[1].en        label found on [149]
-UNCHECKED L-5-1-1        A p.149  points[2].en        no searchable phrase -- verify by hand
+OK        L-5-1-1        A p.149  points[2].en        quote found on [149]
 OK        L-5-1-1        A p.151  points[3].en        label found on [151]
 OK        L-5-1-1        A p.150  points[4].en        label found on [150]
 OK        L-5-1-1        A p.153  points[5].en        label found on [153]
@@ -76,13 +76,11 @@ OK        L-5-1-1        A p.163  points[17].en       quote found on [163]
 OK        L-8-3-1        A p.283  coverageNote        label found on [283]
 OK        L-8-3-1        A p.286  coverageNote        label found on [286]
 OK        L-8-3-1        A p.288  coverageNote        quote found on [288]
-UNCHECKED L-8-3-1        A pp.293-296  coverageNote   no probe of its own -- the only quote in this field
-             already proved another citation in it (found on [288]). Verify by hand.
+OK        L-8-3-1        A pp.293-296  coverageNote   quote found on [294]
 OK        L-8-3-1        A p.279  points[0].en        label found on [279]
 OK        L-8-3-1        A p.279  points[1].en        quote found on [279]
 OK        L-8-3-1        A p.279  points[2].en        label found on [279]
-UNCHECKED L-8-3-1        A p.280  points[2].en        no probe of its own -- the only quote in this field
-             already proved another citation in it (found on [279]). Verify by hand.
+OK        L-8-3-1        A p.280  points[2].en        quote found on [280]
 OK        L-8-3-1        A p.280  points[3].en        label found on [280]
 OK        L-8-3-1        A p.280  points[4].en        quote found on [280]
 OK        L-8-3-1        A p.280-281  points[5].en    quote found on [280]
@@ -144,9 +142,9 @@ OK        L-21-1-1       A p.746  points[2].en        label found on [746]
 OK        L-21-1-1       A p.749  points[3].en        label found on [749]
 OK        L-21-1-1       A p.750  points[4].en        quote found on [750]
 OK        L-21-1-1       A p.751  points[5].en        label found on [751]
-UNCHECKED L-21-1-1       A pp.751-752  points[6].en   no searchable phrase -- verify by hand
+OK        L-21-1-1       A pp.751-752  points[6].en   quote found on [751]
 OK        L-21-1-1       A p.753  points[7].en        label found on [753]
-UNCHECKED L-21-1-1       A p.753  points[8].en        no searchable phrase -- verify by hand
+OK        L-21-1-1       A p.753  points[8].en        quote found on [753]
 OK        L-21-1-1       A p.754  points[9].en        label found on [754]
 OK        L-21-1-1       A p.755  points[10].en       label found on [755]
 OK        L-21-1-1       A p.758  points[11].en       label found on [758]
@@ -154,12 +152,12 @@ OK        L-21-1-1       A p.759  points[12].en       label found on [759]
 OK        L-22-3-1       A p.817  points[0].en        label found on [817]
 OK        L-22-3-1       A p.818  points[1].en        label found on [818]
 OK        L-22-3-1       A p.819  points[2].en        quote found on [819]
-UNCHECKED L-22-3-1       A p.817  points[3].en        no searchable phrase -- verify by hand
+OK        L-22-3-1       A p.817  points[3].en        quote found on [817]
 OK        L-22-3-1       A p.820  points[4].en        label found on [820]
-UNCHECKED L-22-3-1       A p.818  points[5].en        no searchable phrase -- verify by hand
+OK        L-22-3-1       A p.818  points[5].en        quote found on [818]
 OK        L-22-3-1       A p.819  points[6].en        quote found on [819]
 OK        L-22-3-1       A p.821  points[7].en        label found on [821]
-UNCHECKED L-22-3-1       A p.820  points[8].en        no searchable phrase -- verify by hand
+OK        L-22-3-1       A p.820  points[8].en        quote found on [820]
 OK        L-22-3-1       A p.822  points[9].en        label found on [822]
 OK        L-22-3-1       A p.823  points[10].en       label found on [823]
 OK        L-22-3-1       A p.824  points[11].en       label found on [824]
@@ -251,4 +249,4 @@ OK        E-tryptophan   A p.1068, §28.2              quote(split) found on [10
 SKIP      E-tryptophan   CZ §4.2.4                    (no A page in citation)
 UNCHECKED E-tryptophan   A p.375–376  quiz[2].answer_en no searchable phrase -- verify by hand
 
-OK 219 | ELSEWHERE 0 | UNCHECKED 24
+OK 228 | ELSEWHERE 0 | UNCHECKED 15
