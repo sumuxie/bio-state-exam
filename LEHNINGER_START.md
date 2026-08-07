@@ -1,6 +1,6 @@
 # START HERE — the Lehninger phase
 
-**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 174 KB ≈ 44k
+**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 186 KB ≈ 47k
 tokens and reading it triggers a compaction before you have done any work. That file is now an
 **archive you grep into**, one section at a time, using the index at the bottom of this page.
 `HANDOFF.md` (69 KB, the Czech app) is the same: grep, never read whole. Both sizes are
@@ -103,10 +103,12 @@ audit ever run. Re-run the script; never compare against a recorded figure.
   treats any quoted span as a probe, so quoting a phrase in order to say it *cannot* be found
   makes the checker adopt an unfindable probe and condemn the surrounding citations. Cost two
   UNCHECKED rows on `L-3-3-1`'s first run.
-- **Four OCR traps in A**: `Klenow` reads as `kienow` (the word is not in A's text layer at all),
-  arrows vanish into an unmapped replacement character, roman `III` reads as `ill`, and primes gain
-  a stray space (`3' -hydroxyl`). **Choose quotes with no prime, no arrow, no subscript and no
-  roman numeral.**
+- **Five OCR traps in A**: `Klenow` reads as `kienow` (the word is not in A's text layer at all),
+  arrows vanish into an unmapped replacement character, roman `III` reads as `ill`, primes gain
+  a stray space (`3' -hydroxyl`), and **the word SUMMARY can break apart** — A p.213 reads
+  `sum ma ry 6.4`, so a probe for that word plus the section number scores 0 hits on the page
+  that carries it (§9g). **Choose quotes with no prime, no arrow, no subscript and no roman
+  numeral, and locate a SUMMARY by its section title rather than by the word.**
 
 **The lesson, now confirmed three times: an `ELSEWHERE` verdict is a hypothesis, not a verdict.**
 Open the page before you edit a citation. Nine of the eleven ELSEWHEREs seen across these nodes
@@ -127,26 +129,57 @@ were the checker's fault, not the data's.
 
 **The remaining work is content, not plumbing.**
 
-### Next pick: no free queue picks remain — choose between three
+## ✅ Rank 3 (§6.4) is decided — write it next, no decision left in the way (2026-08-07)
+
+**`L-6-4-1` takes `topicKey: "enzyme-mechanism"` and joins Czech `3-6`. Nothing is re-keyed,
+nothing is created, no `manual_note` is needed — so `step4_topickeys.py` cannot revert it.**
+Full reasoning and the measured scope are in archive **§9g**; the short version:
+
+- §6.4 is a *secondary* mapping of Czech §3.6 (`6.2,6.4`), so §9c's look-up returns no key. Rank
+  1's fix — create a key, move the node — does **not** apply, because the key that already exists
+  is accurate: `3-6` is literally *Mechanismus působení enzymů*, "Mechanism of enzyme action".
+- The §9e check passes cleanly. `enzyme-mechanism` holds exactly one node, `3-6`, and it is
+  substantive rather than a stub — and it teaches covalent catalysis *through chymotrypsin*,
+  which is §6.4's own first subheading.
+- The worked examples are scattered exactly as in §13m, and by that ruling **none of those nodes
+  move**: `3-2` has the metal-ion roles, `5-1` the serine proteases and the chymotrypsinogen
+  cascade, `6-1-1` hexokinase as energetic coupling, `7-8-1` and `7-8-3` hexokinase and enolase
+  as glycolytic steps. Cross-reference them by hand inside the node.
+- Already measured, so do not re-derive: **§6.4 = A pp. 203–213, B pp. 823–852**, verified at
+  both ends; the five subheadings and the A page each starts on; SUMMARY 6.4 verbatim; and the
+  fact that the Czech layer has **0 hits** for transition state, penicillin, HIV protease and
+  lysozyme, so those are genuine gaps. **Lysozyme is not in §6.4 of the 8th edition** — that is
+  an earlier edition's line-up.
+- ⚠️ **§5's organic-chemistry rule bites harder here than anywhere yet** (acyl-enzyme, oxyanion
+  hole, tetrahedral intermediates). Anchor every idea on something bench-visible: burst kinetics,
+  the pH-rate profile in Fig. 6-26 on A p.205, hexokinase closing over glucose, penicillin as a
+  drug that works because of a mechanism.
+
+### Next pick: rank 3 is decided and unwritten — or choose between three
 
 `lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
 the Czech book. Top 20, with the 12 done ones struck through:
 
-~~1 §5.1~~ · ~~2 §8.3~~ · 3 §6.4 · ~~4 §11.3~~ · ~~5 §21.1~~ · ~~6 §19.1~~ · ~~7 §23.2~~ ·
+~~1 §5.1~~ · ~~2 §8.3~~ · **3 §6.4 ← decided, unwritten** · ~~4 §11.3~~ · ~~5 §21.1~~ ·
+~~6 §19.1~~ · ~~7 §23.2~~ ·
 8 §16.2 · ~~9 §17.2~~ · 10 §19.2 · 11 §11.2 · ~~12 §1.3~~ · 13 §2.2 · ~~14 §3.4~~ · 15 §8.2 ·
 16 §26.2 · ~~17 §22.3~~ · ~~18 §3.3~~ · 19 §23.3 · ~~20 §25.1~~
 
-**Every rank that could be written without a `topicKey` decision has now been written.** The
-struck-through entries above are the twelve done; each of the nine that remain needs the decision
-described below before a word can be written. So the next move is a choice, not a queue pop:
+**Every rank that could be written without a `topicKey` decision has been written, and rank 3's
+decision is now made (§9g) — so there is one queue pop available again.** The struck-through
+entries are the twelve done; the eight after rank 3 still need their decision before a word can
+be written:
 
-1. **Take a remaining rank and make the `topicKey` decision.** Highest ratios left are **rank 3
-   (§6.4, examples of enzymatic reactions, ratio 11)** and **rank 8 (§16.2)**. §13m added a THIRD
+1. **Write `L-6-4-1` — rank 3, ratio 11, the decision is already taken and the section already
+   scoped (§9g).** This is the shortest path to a thirteenth node. If you would rather take an
+   undecided rank instead, the highest left is **rank 8 (§16.2)**, and §13m added a THIRD
    possible outcome to the §9e check, on top of the two failure modes below: the key's Czech node
    may be a thin-but-legitimate partner while the real material sits *scattered* across pathway
    nodes that must **keep** their own keys. In that case re-key nothing — the multi-source keys are
    working joins and breaking one to tidy another is a bad trade — and cross-reference by hand
-   inside the node instead.
+   inside the node instead. **§9g adds a fourth outcome**: when the Czech section maps to two
+   Lehninger sections that deepen the *same* node, the primary's key already fits, so reuse it and
+   change nothing.
 2. **The entity cards** — archive §4, §12. This is `pro`'s *headline feature* and it still has
    exactly one card. §12 already contains a finished tryptophan dossier that nothing has been built
    from. Of the three, this is the one the user named as the point of the app.
@@ -154,7 +187,7 @@ described below before a word can be written. So the next move is a choice, not 
    243 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new UNCHECKED row in the same
    commit that creates it.
 
-Every other rank above needs a `topicKey` decision first — see the two failure modes below.
+Every rank above except 3 needs a `topicKey` decision first — see the two failure modes below.
 
 ---
 
@@ -209,6 +242,9 @@ Czech book's ch8 (lipids). Unrelated. Never compare `chapter` or `pages` across 
    - **rank 2's way** — the Czech node holding the mapping did not teach the subject at all, and no
      other node did either. Fix: there is nothing to join, so write it Lehninger-only with an empty
      `nodes: []`. Archive §2e.
+   - **rank 3's way** — the check passes and the answer is to change nothing, because the Czech
+     section maps to two Lehninger sections that deepen the same node, so the primary's key already
+     fits the one you are writing. Archive §9g.
 
    **⚠️ `step4_topickeys.py` regenerates these files from `master_map.tsv` and would silently
    revert every hand edit.** That is what the `manual_note` fields are defending against.
@@ -279,6 +315,7 @@ Search for the `## N.` or `### Na.` heading, read that section only.
 | 9c | **how `topicKey` was chosen** + the table of ready-to-write ranks |
 | 9d | what the validator enforces now |
 | 9e | **the two-minute check** and the first `topicKey` correction |
+| 9g | **rank 3 (§6.4) decided** — reuse the primary's key, re-key nothing; plus §6.4's verified page range, subheadings, SUMMARY and the four things the Czech layer lacks |
 | 9f | `lehNotes` — the format, the bar, the six that exist |
 | 12 | the tryptophan entity card — a finished dossier, nothing written yet |
 | 13–13o | one per Lehninger node, then two method sections. `13j` (`L-5-1-1`) is the best template for how to *write* a node; `13l` (`L-25-1-1`) for how to *verify* one — page ranges, B-to-A drift, OCR traps; `13m` (`L-23-2-1`) for the two checker bugs that inflated every audit before 2026-08-07; **`13o` for clearing the citation backlog to zero and the three probe constraints that silently drop a quote** |

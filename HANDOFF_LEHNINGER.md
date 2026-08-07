@@ -49,7 +49,10 @@ primaries are EXHAUSTED, and the citation backlog is CLEARED: 243 OK / 0 ELSEWHE
 (§13o).** Every `A p.N` in the app data now self-verifies on every run. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
-decision first (§9c, §9e), and §13m added a third possible outcome to that check. `L-23-2-1` in
+decision first (§9c, §9e), and §13m added a third possible outcome to that check. **The first of
+those decisions has been taken: rank 3, §6.4 Examples of Enzymatic Reactions, reuses
+`enzyme-mechanism` and re-keys nothing — decided and scoped in §9g, not yet written.**
+`L-23-2-1` in
 `biochemie_pro/data/leh_ch23.js` (§13m, added 2026-08-07) covers §23.2 tissue-specific metabolism
 — the organ axis the Czech book never uses — and joins Czech `10-10`. **§13m is the most
 important one to read of the whole 13-series**, because it fixed two bugs in
@@ -862,7 +865,8 @@ topic off `depth_queue.tsv`.** The key is built from the **primary** (first) ent
 **Ranks 1, 2 and 3 are all in the second group** — §5.1 oxygen-binding proteins (ratio 17,
 cz 6.3), §8.3 nucleic acid chemistry (16, cz 4.1.5), §6.4 examples of enzymatic reactions
 (11, cz 3.6). Czech §6.3 maps to `22.3,5.1`: §22.3 took the key
-(`amino-acid-derived-molecules`), §5.1 got nothing.
+(`amino-acid-derived-molecules`), §5.1 got nothing. **All three are now resolved, by three
+different routes — rank 1 §13j, rank 2 §2e, rank 3 §9g.**
 
 **Rank 1 is resolved — see `L-5-1-1`, §13j, 2026-08-07.** The user answered the naming question
 this paragraph raises: **re-key per the §9e precedent** (move the data, create a genuinely new
@@ -889,7 +893,10 @@ key already exists and the node joins the topic view the moment it is written.
 | 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | 1 |
 | 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | 2 |
 
-Ranks 3, 8, 10, 11, 13, 15, 16, 19 are still secondaries with no key. **Rank 2 (§8.3) left that
+Ranks 8, 10, 11, 13, 15, 16, 19 are still secondaries with no key. **Rank 3 (§6.4) left that
+group on 2026-08-07 by a third route, and the cheapest one yet: its Czech section's primary key
+`enzyme-mechanism` was found to fit §6.4 as well, so nothing was created and nothing moved
+(§9g).** **Rank 2 (§8.3) left that
 group on 2026-08-07 without receiving the §9e treatment** — its key `nucleic-acid-chemistry` exists
 now, but with **no Czech nodes under it**, because the §9e sweep found the Czech book does not
 teach §8.3's material anywhere (2e has the evidence and the user's ruling). Rank 1 was the tenth
@@ -1118,6 +1125,102 @@ out = io.open(dst, 'w', encoding='utf-8')
 
 See also `HANDOFF.md` **§9a** (validate `data/ch*.js` with `esprima`, and why brace counting
 silently lies) and **§9b** (crop-and-upscale a scan region to read printed numbers reliably).
+
+### 9g. Rank 3 (§6.4) — the `topicKey` decision: reuse `enzyme-mechanism`, re-key nothing (2026-08-07)
+
+**The decision: `L-6-4-1` is to be written with `topicKey: "enzyme-mechanism"`, joining Czech
+`3-6`. No new key is created, no Czech node moves, and no `manual_note` is needed — so
+`step4_topickeys.py` cannot revert this one.** Of the nine ranks still needing a decision, this
+is the only one so far that costs no hand edit to the generated files.
+
+**Why it is a decision at all.** §9c: `topicKey` is a slug for the **primary** (first) Lehninger
+section of a Czech section's mapping. Czech §3.6 maps to `6.2,6.4`; §6.2 took the key
+`enzyme-mechanism`, and §6.4 — rank 3, ratio 11, the highest remaining in the queue — got
+nothing. Looking §6.4 up in `topickey_assignment.json` therefore returns no key, which is exactly
+the "secondary" case §9c warns about.
+
+**The rank 1 precedent was considered and does not apply.** For §5.1 the user chose to create a
+new key and move the Czech node, because the key that held it (`amino-acid-derived-molecules`)
+**misdescribed** it — an oxygen-binding node filed under amino-acid derivatives. Here the
+existing key describes its node exactly: Czech `3-6` is titled *Mechanismus působení enzymů*,
+"Mechanism of enzyme action". Creating `enzymatic-reaction-examples` and moving `3-6` into it
+would leave `enzyme-mechanism` empty and misfile the one node that is genuinely about enzyme
+mechanism; creating it and leaving `3-6` where it is would throw away a real join. **Reusing the
+primary's key is the right move when the primary's key already fits the same Czech node — which
+is the case whenever both mapped sections deepen one node's material rather than two.**
+
+**The §9e two-minute check, run against the app data (not the index files):**
+
+| | |
+|---|---|
+| nodes under `enzyme-mechanism` | exactly one, Czech `3-6` |
+| is it a stub? | **no** — 12 points, 7 terms, 5 quiz items, a full oral answer |
+| does it teach §6.4's subject? | **yes**, and it names §6.4's own first example: covalent catalysis is taught *through chymotrypsin*, acetyl-enzyme and all |
+| rank 9's failure mode (substantive nodes hiding under another key)? | no |
+| rank 2's failure mode (nothing teaches it)? | no |
+
+**It is 13m's third outcome for the worked examples only, and the same ruling applies.** The four
+examples §6.4 works through are all in the Czech book, but as *pathway steps and drug classes*,
+in nodes correctly keyed to their own subjects:
+
+| Czech node | its key | what it holds that §6.4 deepens |
+|---|---|---|
+| `3-2` | `enzymes-introduction` | metalloenzymes; Mn²⁺ named for hexokinase; the three roles of a metal ion, one of which is "part of the active centre" — the enolase subheading's whole subject |
+| `5-1` | `protein-targeting-and-degradation` | serine proteases as a mechanism class, Tab. 5.1, the chymotrypsinogen → π/δ/α cascade |
+| `6-1-1` | `bioenergetics-and-thermodynamics` | the hexokinase reaction as *the* worked example of energetic coupling |
+| `7-8-1`, `7-8-3` | `glycolysis` | hexokinase/glucokinase and the enolase dehydration, as glycolytic steps |
+
+**Move none of them.** Each teaches its own subject and is keyed correctly, and `glycolysis` is a
+working join. Cross-reference by hand inside `L-6-4-1`, naming the Czech node each point stands
+next to, exactly as `L-23-2-1` does.
+
+**No future collision.** §6.2 "How Enzymes Work" — the section that owns the key — sits at
+**rank 59 of 85, ratio 1.9**, because Czech §3.2 and §3.6 already allocate it 5.3 pages. It is
+unlikely ever to be written; if it is, it lands on the same key and the topic view holds three
+nodes, which is the feature working, not a clash.
+
+#### Measured for the writing session, so it is not re-derived
+
+- **§6.4 = A pp. 203–213, B pp. 823–852.** The TOC calls the A range `interpolated`, but it is
+  **correct at both ends** this time: the §6.4 heading is physically on A p.203, immediately
+  below SUMMARY 6.3 on the same page, and SUMMARY 6.4 is on A p.213, with §6.5 opening further
+  down that same page. Checked per §13l's rule, first subheading and SUMMARY both.
+- ⚠️ **A fifth OCR trap in A, new here: the word SUMMARY can break apart.** A p.213 reads
+  `sum ma ry 6.4 examples of enzymatic reactions`, so a probe for the word summary followed by
+  the section number finds **0 hits on the very page that carries it**. Pages 188 and 223 render
+  the equivalent headings intact, so this is per-page OCR noise rather than a convention.
+  **Locate a SUMMARY by its section title, never by the word itself.**
+- **The five subheadings, with the A page each actually starts on** — measured, and the TOC's
+  per-subheading allocation drifts at the end: chymotrypsin p.204; HIV protease p.208; hexokinase
+  induced fit p.209; enolase metal ions p.210; antibiotics p.210, where the TOC says 211.
+- **SUMMARY 6.4 in full**, four bullets, verbatim from A p.213 — this is both the section's scope
+  and four ready-made citation probes: chymotrypsin is a serine protease with a well-understood
+  mechanism, featuring general acid-base catalysis, covalent catalysis, and transition-state
+  stabilization; hexokinase provides an excellent example of induced fit as a means of using
+  substrate binding energy; the enolase reaction proceeds via metal ion catalysis; understanding
+  enzyme mechanism allows for the development of drugs to inhibit enzyme action.
+- **Lysozyme is NOT in §6.4 of the 8th edition.** The subheadings are chymotrypsin, HIV protease,
+  hexokinase, enolase, antibiotics. Anyone who remembers a lysozyme mechanism here is remembering
+  an earlier edition — the reason the subheadings were listed from `lehninger_B_toc.json` rather
+  than recalled.
+- **What the Czech layer does not have at all**, counted over every file in
+  `biochemie_pro/data/`: `transition state` 0 hits, penicillin 0, HIV protease 0, lysozyme 0 in
+  either spelling. The transition-state framing, the HIV-protease subheading and the β-lactam
+  subheading are therefore genuine gaps, not restatements.
+
+#### Two things to watch while writing it
+
+- **This is the most mechanism-heavy section taken from the queue so far**, and §5's rule bites
+  hardest here: acyl-enzyme intermediates, the oxyanion hole, tetrahedral intermediates,
+  transition-state stabilisation. Write it from the bench-visible end — chymotrypsin's burst
+  kinetics, the bell-shaped pH-rate profile in Fig. 6-26 on A p.205, hexokinase physically
+  closing around glucose, penicillin being a drug that works *because* of a mechanism.
+- **One `lehNote` candidate, undecided until the section is read end to end.** `3-6` closes by
+  deriving inhibition from induced fit: only a true substrate has affinity enough to force the
+  conformational change, so molecules that bind without evoking it act as inhibitors. Lehninger's
+  frame is complementarity to the **transition state**, not to the substrate. Whether that gap
+  clears §9f's bar — would revising from `3-6` alone mislead in an exam? — is a judgement to make
+  with the section open, not now.
 
 ---
 
