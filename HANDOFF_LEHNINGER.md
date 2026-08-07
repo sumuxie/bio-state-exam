@@ -1,5 +1,17 @@
 # Handoff — the Lehninger phase
 
+> # ⛔ STOP — do not read this file top to bottom.
+>
+> **It is 145 KB ≈ 36k tokens.** Reading it whole burns a session's context before any work
+> happens, and that has now cost two sessions. **Read [`LEHNINGER_START.md`](LEHNINGER_START.md)
+> instead** — it is ~10 KB, holds the current state and the next action, and ends with a grep index
+> for this file.
+>
+> **This file is the archive**, not the entry point. It is worth keeping in full: it records
+> measured quantities that are expensive to re-derive (the ligature bug, the A-page offset, what
+> Lehninger provably does and does not contain, every ruling the user has given, and the mistakes
+> already made). Grep it by section heading, read that section, move on.
+
 ## ⚡ Start here (60 seconds)
 
 **The project.** A biochemistry oral-exam trainer for a Czech state exam. A finished app covers
@@ -32,7 +44,7 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — eight Lehninger nodes now exist.** `L-3-4-1` in
+**§9 step 6 is under way — nine Lehninger nodes now exist.** `L-8-3-1` in `biochemie_pro/data/leh_ch8.js` (§13k, completed 2026-08-07) covers nucleic acid chemistry with no Czech partner node; it joins the new topicKey `nucleic-acid-chemistry` treating Lehninger §8.3 as full-scope depth material (like the §9b listings). `L-3-4-1` in
 `biochemie_pro/data/leh_ch3.js` (§13) joins Czech node `2-2-1` through
 `topicKey: "protein-primary-structure"` — the Czech book says *why* an amino acid sequence
 matters, Lehninger §3.4 says *how* one is determined. `L-11-3-1` in
@@ -113,10 +125,10 @@ phosphoglycerate-mutase cofactor and never once as haemoglobin's regulator.
 > reuse or rename). That immediately unblocked rank 1 — see `L-5-1-1` above — and the same fix
 > now applies mechanically to the other nine secondaries §9c listed; §9c's table is updated.
 >
-> **What is left is content, not plumbing.** Now 62 `topicKey`s exist (one more than before —
-> `oxygen-binding-proteins`) and 9 of them join more than one source, from eight Lehninger nodes
+> **What is left is content, not plumbing.** Now 63 `topicKey`s exist (two more than before —
+> `oxygen-binding-proteins` and `nucleic-acid-chemistry`) and 10 of them join more than one source, from nine Lehninger nodes
 > and one card. Every further node makes the topic view worth more; nothing more needs building
-> first. §9a's depth queue (61 writable primaries — 62 now that rank 1 has its own key — 8 done,
+> first. §9a's depth queue (61 writable primaries — 63 now that ranks 1 and 2 have their own keys — 9 done,
 > 54 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is the
 > other open thread. **§2c below is now also worth reading**: while scoping `L-5-1-1` a
 > pre-existing data error surfaced in `2-2-6` that §6a flagged in a prior session and nobody has
@@ -173,6 +185,33 @@ things up in Lehninger without opening a 1.1 GB PDF.
    unaudited error like this sitting in the open, that is itself an argument for auditing it.
 2d. **Are §9f's five `lehNotes` right in tone and length?** They are the template for every
    later one, and the user has not seen them rendered yet. Worth confirming before writing more.
+2e. **⚠️ Rank 2 (§8.3 Nucleic Acid Chemistry, ratio 16) differs from rank 1 — no §9e fix available.**
+   Rank 1's problem: Czech node `6-3-1` existed but was mapped as secondary (22.3, not 5.1). Solution:
+   create new key `oxygen-binding-proteins`, move the node, write `L-5-1-1`. Rank 2's problem: Czech
+   material is **absent**. `§9e's two-minute check (sweep2.py, 2026-08-07)` found: **methylation of
+   DNA** — NO CZECH NODE; **chemical synthesis** — NO CZECH NODE; **PCR** — NO CZECH NODE;
+   **sequencing** — 6 false positives (hormone structure, amino acids, photosynthesis, etc.), zero
+   genuine coverage. The section's core content (DNA denaturation, nonenzymatic damage, synthesis,
+   PCR, sequencing methodology) does not exist in the Czech book. The only meaningful match is
+   `4-1-2` (nucleic acid structure), which teaches double helix / complementarity, not §8.3's
+   chemistry-of-change territory. **→ ANSWERED by the user 2026-08-07: write `L-8-3-1` as
+   Lehninger-only content**, accepting that it has no Czech depth partner. So §8.3 is treated like
+   §9b's `full`-scope sections rather than like a depth node: a **new key
+   `nucleic-acid-chemistry`** was added to `topickey_assignment.json` under `"8|8.3"` with
+   `nodes: []` and a `manual_note` (no Czech node exists to move, so unlike §9e's precedent nothing
+   was moved and `topickey_by_node.json` is unchanged). **`L-8-3-1` was then written the same day**
+   in `biochemie_pro/data/leh_ch8.js` and wired into `index.html`, covering A pp.278–293 =
+   B pp.1078–1122: denaturation and melting, nonenzymatic transformations (deamination,
+   depurination, UV photoproducts, oxidative damage), base methylation, automated chemical
+   synthesis, PCR, and sequencing (Sanger through next-gen). **✅ Completed 2026-08-07:** all
+   citations verified by `step5_check.py`, file validates, `model_en` answer for oral question
+   written and integrated, checklist all 15 items, all three checklist systems (points + terms +
+   quiz + oral) complete and verified. The general lesson this rank adds to §9c's "third case":** a secondary mapping can
+   fail in two different ways — rank 1's way, where the Czech node exists and teaches the subject
+   but lost the key to a competing primary (fix: move it, §9e), and rank 2's way, where the Czech
+   node holding the mapping does not teach the subject at all and no other node does either (fix:
+   there is nothing to join, so write it Lehninger-only). Run the §9e sweep to tell them apart
+   before assuming the re-key applies.
 3. ~~Which topic to start with~~ → answered 2026-08-06: the first integration card, on
    tryptophan. **Superseded the same day, by the user: *"先尝试最简单的一个小节"* — start with
    the simplest ordinary section instead.** That is why §13's `L-3-4-1` is a depth node and not
@@ -825,7 +864,10 @@ key already exists and the node joins the topic view the moment it is written.
 | 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | 1 |
 | 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | 2 |
 
-Ranks 2, 3, 8, 10, 11, 13, 15, 16, 19 are still secondaries with no key. Rank 1 was the tenth
+Ranks 3, 8, 10, 11, 13, 15, 16, 19 are still secondaries with no key. **Rank 2 (§8.3) left that
+group on 2026-08-07 without receiving the §9e treatment** — its key `nucleic-acid-chemistry` exists
+now, but with **no Czech nodes under it**, because the §9e sweep found the Czech book does not
+teach §8.3's material anywhere (2e has the evidence and the user's ruling). Rank 1 was the tenth
 and is now done (`L-5-1-1`, §13j) — the naming question that blocked all ten is answered, so the
 remaining nine take the identical mechanical fix rank 1 just did: create a new key, move the
 Czech node(s) that actually teach the subject into it, leave a `manual_note` in both
