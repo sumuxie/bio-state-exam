@@ -1599,6 +1599,62 @@ written it lands on the same key, joining a third node.
   checker**, because a broken parse makes every downstream check meaningless in a way that looks
   like an unrelated failure.
 
+### 9n. Rank 19 (§23.3) — the `topicKey` decision: reuse `hormone-structure-and-action`, change
+nothing (2026-08-07, IN PROGRESS — checkpointed mid-session so nothing is lost if this session
+also trips the AUP classifier before the node itself is written)
+
+**The decision: `L-23-3-1` will take `topicKey: "hormone-structure-and-action"`, joining the same
+ten Czech nodes the key already holds, `10-17`…`10-26` (Czech §10.3). Nothing created, nothing
+moved, no `manual_note` expected.** Seventh instance of the §9g pattern. `depth_queue.tsv` names
+Czech `10.3` as §23.3's source row, and `topickey_assignment.json`'s `10|10.3` entry already gives
+that same Czech section the key `hormone-structure-and-action` with **primary** `23.1` — so §23.3
+is a second Lehninger section deepening the node the primary already owns, exactly like rank 3
+(§9g), rank 10 (§9i), rank 11 (§9j), rank 13 (§9k), rank 15 (§9l) and rank 16 (§9m) before it.
+
+**The §9e check, and why this is §13m's third outcome rather than rank 9's.** The ten Czech nodes
+under this key (`10-17` hormone definition/gland hierarchy/receptor specificity, `10-18` the
+adenylate cyclase/cAMP cascade, `10-19` the phosphoinositide/IP₃/DAG cascade, `10-20` receptor
+tyrosine kinases and the nuclear steroid mechanism, `10-21`/`10-22` the four-chemical-class table,
+`10-23`–`10-26` steroid/amino-acid-derived/peptide-protein/icosanoid hormones in turn) teach hormone
+**signalling mechanisms and structural classification** — legitimate general theory that insulin
+and glucagon are worked examples of (`10-18` and `10-20` already name both). **None of the ten
+teaches fuel-metabolism regulation itself** — measured by grep, insulin/glucagon appear only as
+classification examples (`10-18` ×6, `10-20` ×6, `10-22` ×14, `10-25` ×16 hits, none in a
+fasting/feeding or organ-integration context). That is not rank 9's shape (no substantive node is
+hiding under the wrong key) and not rank 2's (a genuine, if general-theory, partner exists). It
+matches `L-23-2-1`'s own precedent exactly — see that node's `coverageNote`, which already flags
+*"this node stops where §23.3 begins… the hormonal regulation of fuel metabolism is §23.3, which
+was NOT read"* and separately notes that the Czech hormone material (`10-17`..`10-26`) maps to
+§23.1 and is left untouched by that node.
+
+**Where the real pathway-level material sits, scattered, to cross-reference by hand (none of these
+move or re-key):** `7-12-2` (key `glycogen-metabolism`, Czech pp.174–175) already gives the full
+epinephrine/glucagon → cAMP → protein kinase → phosphorylase-kinase/glycogen-synthase cascade in
+diagram-level detail, reciprocal control of glycogen synthase (I⇌D) vs phosphorylase (b⇌a) — this
+is the same cascade §23.3 will discuss but at the single-pathway level, not the whole-body
+insulin-vs-glucagon integration across liver/muscle/adipose/brain that is §23.3's actual subject.
+`L-23-2-1` (`tissue-specific-metabolism`) already covers each organ's normal fuel logic and named
+where hormones act without explaining the hormonal switch itself. Czech `10-12`..`10-16`
+(`metabolic-regulation`, §13.5) covers regulation in the abstract (Michaelis kinetics, allosteric
+feedback, isoenzymes) with no insulin/glucagon content at all, confirmed by grep. **Not yet
+checked: whether Czech names diabetes/obesity/leptin anywhere** — do this before writing the node,
+since §23.3 (per the B TOC) covers insulin action, glucagon/fasting, diabetes, and obesity/leptin,
+and the Czech gap map (§9b) should be consulted for whether any of these were already ruled on.
+
+**Page range — TOC says B pp.3006–3029 / A pp.859–867, `a_confidence: "interpolated"` at BOTH
+ends. Not yet verified by direct search in A — do that before citing anything**, per §13u/§13v's
+rule that an interpolated range has now been wrong at the start twice and the end once. The B TOC's
+first subheading is *"Insulin Counters High Blood Glucose in the Well-Fed State"* at B p.3006. Note
+`L-23-2-1` already claims A p.859 for SUMMARY 23.2, sharing that page with §23.3's presumed start —
+resolve which page §23.3's own heading actually opens on before setting `pages`.
+
+**Next step for whoever picks this up (this session or the next one): read B pp.3006–3029 in full,
+verify the A page range at both ends by direct search, then write the node in
+`biochemie_pro/data/leh_ch23b.js`** (chapter 23's second file, alongside `leh_ch23.js`'s
+`L-23-2-1`, following the a/b split pattern used for chapters 8, 11 and 19), wire it into
+`index.html`, run the three validators, and commit. Only the topicKey decision above is settled;
+the node itself is not yet written.
+
 ---
 
 ## 11. Working with this user
