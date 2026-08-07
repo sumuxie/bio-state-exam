@@ -435,18 +435,58 @@ the Czech book. **All twenty of the top 20 are now written:**
 ~~13 §2.2~~ · ~~14 §3.4~~ · ~~15 §8.2~~ ·
 ~~16 §26.2~~ · ~~17 §22.3~~ · ~~18 §3.3~~ · ~~19 §23.3~~ · ~~20 §25.1~~
 
-So the next session picks between two, and **the first is the one the user named as the point of
-the app**:
+### ⚠️⚠️ PHOTOSYNTHESIS IS THE HIGHEST-PRIORITY UNWRITTEN CONTENT — and the ratio hides it
 
-1. **The entity cards** — archive §4, §12. This is `pro`'s *headline feature* and it still has
-   **exactly one card** (`E-tryptophan`). §12 already contains a finished tryptophan dossier that
-   nothing has been built from, so there is real work sitting ready that needs no new reading.
-   **Recommended.**
-2. **A depth node from outside the top 20.** `depth_queue.tsv` continues past rank 20 (rank 33 is
-   §23.1 *Hormone Structure and Action*, ratio 3.0, which would land on the same
-   `hormone-structure-and-action` key `L-23-3-1` just joined). ⚠️ **Read §9a first** — it explains
-   what the ratio does and does not mean, and below rank 20 the ratio is weak enough that it should
-   not be followed blindly. A classmate's report of a real exam question outranks it entirely.
+**This is the only place in the whole project where a REAL EXAM QUESTION is on record**, and it
+should outrank the queue order for any content decision. §3 records that **a classmate was examined
+on photosynthesis**, and that the Chinese notes omit it entirely — the observation that established
+the "notes are a comprehension aid, never scope" rule in the first place.
+
+**Not one photosynthesis section has been written.** All four sit below rank 20 and are therefore
+invisible to anyone reading the top-20 list: **§20.2** Photochemical Reaction Centers (rank 32),
+**§20.3** Evolution of a Universal Mechanism for ATP Synthesis (rank 58), **§20.4** CO₂-Assimilation
+Reactions (rank 54), **§20.6** Biosynthesis of Starch, Sucrose, and Cellulose (rank 39). Their
+ratios (2.0–3.0) are unremarkable, which is exactly the point: **the ratio measures depth
+differential, not exam importance, and here the two disagree.**
+
+### 🏁 Next pick: the top-20 queue is EXHAUSTED — three live options
+
+So the next session picks between three:
+
+1. **Photosynthesis (§20.2 / §20.4 first).** The only option backed by evidence of a real exam
+   question. See the block immediately above.
+2. **The entity cards** — archive §4, §12. This is `pro`'s *headline feature*. §12 contains a
+   finished tryptophan dossier that was the template for `E-tryptophan`; a second card
+   (`E-histidine`) followed on 2026-08-07, see §12e. This is the thing **the user themselves named
+   as the point of the app**.
+3. **A depth node from outside the top 20.** ⚠️ **Read §9a first, and read the ratio bands below**
+   before picking one, because most of what remains is worth less than it looks.
+
+#### What is actually left, measured 2026-08-07 — the queue is smaller than 65
+
+`depth_queue.tsv` holds 85 sections; 20 are written, so 65 remain **on paper**. By ratio band:
+**13 at ≥3.0, 25 at 2.0–3.0, 12 at 1.5–2.0, 10 at 1.0–1.5, and 5 BELOW 1.0** — that last group
+being sections where **Lehninger says no more than the Czech book already does.** Writing anything
+under ~1.5 adds nothing, so the real pool is **about 38**, not 65.
+
+Those 38 fall into three groups, and only one is worth much:
+
+- **Core metabolism the Czech book already covers well** — §14.1 glycolysis, §14.4 gluconeogenesis,
+  §16.1 acetyl-CoA, §16.4 citric-acid-cycle regulation, §15.2 glycogen, §19.3 oxidative
+  phosphorylation regulation. Czech-level coverage already exists; Lehninger only deepens it.
+  **Lowest marginal value for an exam that follows the Czech syllabus.**
+- **Whole subjects the Czech book genuinely lacks** — §27.1 the genetic code, §27.2 protein
+  synthesis, §28.1/§28.2 gene regulation, §18.2 the urea cycle, §18.3 amino acid degradation, and
+  **the photosynthesis group above**. **This is where the real gaps are.**
+- **Introductory material** — §1.2, §1.4, §1.5, §3.2, §8.1. Skip.
+
+⚠️ **`depth_queue.tsv`'s ratio is NOT an importance score, and this trips people up.** It is
+Lehninger pages ÷ Czech pages allocated — that is, *how much more Lehninger says*. A high ratio can
+mean the Czech book is thin on something important, **or** that it is thin because the department
+does not examine it, and **the number cannot tell those apart.** §9a says this; it is repeated here
+because a session presented the top-20 list as a to-do queue and the user reasonably read the
+remaining ranks as outstanding work. What sets importance is a classmate's report of a real exam
+question, then the Czech book's own scope.
 
 Either way the `topicKey` decision comes first for any depth node — see the failure modes below.
 **The §9g outcome (reuse the primary's key, change nothing) has now fired SEVEN times running**:
