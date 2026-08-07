@@ -110,7 +110,20 @@ def cited_range(src):
 
 # A phrase worth searching on: a quoted span if there is one, else the longest run of
 # ordinary words. Anything shorter than 4 words is too weak to prove a page.
-QUOTED = re.compile(r"['\u2018\u2019\u201c\u201d]([^'\u2018\u2019\u201c\u201d]{18,140})['\u2018\u2019\u201c\u201d]")
+# An opening quote mark is preceded by start-of-string, whitespace, or an opening bracket.
+# A POSSESSIVE OR CONTRACTION apostrophe is preceded by a letter -- that is the whole
+# difference, and the `(?<![A-Za-z])` below is what encodes it.
+#
+# Why it is needed: single quotes ARE used as genuine book-quote delimiters in this data
+# (leh_ch8.js's coverageNote quotes 'A Potent Weapon in Forensic Medicine' that way), so
+# they cannot simply be dropped -- measured 2026-08-07, dropping them cost 12 real
+# verifications, turning 108 OK into 96. But an unguarded apostrophe class also lets the
+# regex span from one `'s` to the next and manufacture a "quote" out of the node author's
+# own prose: probes like "'s unclaimed sections, per the user'" appeared on four L-8-3-1
+# rows, text that is nowhere in Lehninger because the checker wrote it, not the book.
+# Requiring a non-letter before the opening mark keeps the real single-quoted citations and
+# drops the possessives.
+QUOTED = re.compile(r"(?<![A-Za-z])['\u2018\u2019\u201c\u201d\"]([^'\u2018\u2019\u201c\u201d\"]{18,140})['\u2018\u2019\u201c\u201d\"]")
 FIGREF = re.compile(r"\b(FIGURE|Fig\.|TABLE|Tab\.|Box)\s*(\d{1,2}[-–]\d{1,3})", re.I)
 
 def probes(text, src):
@@ -214,7 +227,19 @@ p("found %d citations -- %d in a `src` field, %d written inline in prose"
      sum(1 for r in rows if r[4] != "chains.src")))
 p("")
 
-n_ok = n_else = n_unchecked = 0
+# TWO PASSES. A quote probe is searched across the WHOLE field, while the label probe uses
+# only the +-CTX window around the citation. That is deliberate -- a quote often sits a
+# sentence away from its page number -- but it means a field carrying SEVERAL citations
+# offers every one of them the same set of quotes, so one quote can be attributed to a
+# citation it says nothing about. On a long `coverageNote` that fabricates findings:
+# L-8-3-1's note quotes 'A Potent Weapon in Forensic Medicine' once, to prove Box 8-1 sits on
+# A p.288, and the checker then re-used that same quote against the note's two OTHER
+# citations (the CODIS table on p.289, section 8.4 on pp.294-296), reporting both as
+# "actually on [288] <-- FIX THE CITATION" when neither citation is about the box at all.
+# So: pass 1 computes every verdict, pass 2 demotes any ELSEWHERE whose probe already proved
+# a DIFFERENT citation in the same field. Demoted to UNCHECKED, never to OK -- the page
+# genuinely was not verified, and saying so is the honest outcome.
+results = []
 for nid, f, src, text, path in rows:
     rng = cited_range(src)
     # An inline citation's `src` is a window of surrounding prose, too long to print. Show
@@ -222,27 +247,60 @@ for nid, f, src, text, path in rows:
     m = CITE.search(src or "")
     label = ("%s  %s" % (m.group(0), path)) if (m and path != "chains.src") else src
     if not rng:
-        p("SKIP      %-14s %-28s (no A page in citation)" % (nid, label)); continue
+        results.append(("SKIP", nid, label, path, None, None, None, None)); continue
     lo, hi = rng
     pr = probes(text, src)
     if not pr:
-        n_unchecked += 1
-        p("UNCHECKED %-14s %-28s no searchable phrase -- verify by hand" % (nid, label))
+        results.append(("UNCHECKED", nid, label, path, None, None, None,
+                        "no searchable phrase -- verify by hand"))
         continue
+    # Try EVERY probe before settling for ELSEWHERE. The loop used to break on the first
+    # probe that resolved anywhere, which let a weak probe short-circuit a strong one --
+    # the same class of bug as the ellipsis case above, where the checker reported its own
+    # limitation as a finding. The case that exposed it (L-8-3-1, 2026-08-07): a citation
+    # to BOX 8-1 on A p.288. The box's own title is inside the box GRAPHIC and is absent
+    # from A's text layer, so the string "Box 8-1" occurs only in the three CROSS-REFERENCES
+    # to it ("see Box 8-1") on pp.286, 328 and 334. The label probe therefore reported
+    # "actually on [286, 328] <-- FIX THE CITATION" about a citation that was correct, while
+    # a verbatim quote from the box body sitting later in the same probe list would have
+    # confirmed p.288. A cross-reference says where the book POINTS at a box, never where
+    # the box IS. So: an OK from any probe outranks an ELSEWHERE from any other, and
+    # ELSEWHERE now means "no probe at all landed inside the cited range".
     verdict = None
     for phrase, kind in pr:
         inside = find_in(phrase, lo, hi)
         if inside:
             verdict = ("OK", phrase, kind, inside); break
-        wide = find_in(phrase, max(1, lo - SEARCH_PAD), hi + SEARCH_PAD)
-        if wide:
-            verdict = ("ELSEWHERE", phrase, kind, wide); break
+        if verdict is None:
+            wide = find_in(phrase, max(1, lo - SEARCH_PAD), hi + SEARCH_PAD)
+            if wide:
+                verdict = ("ELSEWHERE", phrase, kind, wide)
     if verdict is None:
-        n_unchecked += 1
-        p("UNCHECKED %-14s %-28s probe not found even +-%d pages: %r"
-          % (nid, label, SEARCH_PAD, str(pr[0][0])[:60]))
+        results.append(("UNCHECKED", nid, label, path, None, None, None,
+                        "probe not found even +-%d pages: %r"
+                        % (SEARCH_PAD, str(pr[0][0])[:60])))
         continue
     tag, phrase, kind, where = verdict
+    results.append((tag, nid, label, path, phrase, kind, where, None))
+
+# ---- pass 2: drop the cross-attributed ELSEWHEREs described above, then print
+field_of = lambda path: (path or "").rsplit(".", 1)[0]
+proved = set((r[1], field_of(r[3]), str(r[4])) for r in results if r[0] == "OK")
+
+n_ok = n_else = n_unchecked = 0
+for tag, nid, label, path, phrase, kind, where, why in results:
+    if tag == "SKIP":
+        p("SKIP      %-14s %-28s (no A page in citation)" % (nid, label)); continue
+    if tag == "ELSEWHERE" and (nid, field_of(path), str(phrase)) in proved:
+        n_unchecked += 1
+        p("UNCHECKED %-14s %-28s no probe of its own -- the only quote in this field"
+          % (nid, label))
+        p("             already proved another citation in it (found on %s). Verify by hand."
+          % where)
+        continue
+    if tag == "UNCHECKED":
+        n_unchecked += 1
+        p("UNCHECKED %-14s %-28s %s" % (nid, label, why)); continue
     if tag == "OK":
         n_ok += 1
         p("OK        %-14s %-28s %s found on %s" % (nid, label, kind, where))

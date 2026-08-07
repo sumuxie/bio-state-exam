@@ -126,8 +126,13 @@ phosphoglycerate-mutase cofactor and never once as haemoglobin's regulator.
 > now applies mechanically to the other nine secondaries §9c listed; §9c's table is updated.
 >
 > **What is left is content, not plumbing.** Now 63 `topicKey`s exist (two more than before —
-> `oxygen-binding-proteins` and `nucleic-acid-chemistry`) and 10 of them join more than one source, from nine Lehninger nodes
-> and one card. Every further node makes the topic view worth more; nothing more needs building
+> `oxygen-binding-proteins` and `nucleic-acid-chemistry`) and **exactly 9** of them join more than
+> one source — counted from the app data 2026-08-07, not inferred: `amino-acid-derived-molecules`
+> `amino-acids` `bioenergetics-basics` `fatty-acid-biosynthesis` `fatty-acid-oxidation`
+> `membrane-transport` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain`.
+> **Adding a Lehninger node does not automatically add a join**: `nucleic-acid-chemistry` is the
+> counter-example, deliberately joining one source only (§13k), so the join count did NOT rise with
+> the ninth node. Every further node makes the topic view worth more; nothing more needs building
 > first. §9a's depth queue (61 writable primaries — 63 now that ranks 1 and 2 have their own keys — 9 done,
 > 54 to go — see §9c's table) and §9b's `full`-scope list are the work. §15 (figures) is the
 > other open thread. **§2c below is now also worth reading**: while scoping `L-5-1-1` a
@@ -1756,6 +1761,96 @@ quotable phrase; hand-verified against A p.149 directly). The `lehNotes` entry o
 citation audit **90 OK, 0 ELSEWHERE, 29 UNCHECKED**, invariant 120 = 90 + 0 + 29 + 1 SKIP. **9 of
 62 topicKeys now join more than one source.** `step5_check.py` reports all checks passing,
 including its `lehNotes` negative tests against the now-six-note, five-node set.
+
+### 13k. The ninth node — `L-8-3-1`, §8.3 Nucleic Acid Chemistry (2026-08-07): the first Lehninger-only depth node, and three checker bugs it exposed
+
+**Rank 2 of the depth queue, ratio 16 — the second-thinnest place in the book, and the first node
+with no Czech partner at all.** §2e has the evidence and the user's ruling; the short version is
+that the §9e sweep found the Czech book teaches **none** of §8.3's subject matter — DNA
+methylation, chemical synthesis and PCR return *no Czech node whatsoever*, and every apparent
+"sequencing" hit is a false positive about protein or gene sequencing. Czech §4.1.5, which holds
+the mapping, is about the **enzymatic degradation** of nucleic acids to uric acid and β-alanine —
+a different subject, not a thinner treatment of the same one. So unlike rank 1 there was nothing
+to move: the key `nucleic-acid-chemistry` exists with `nodes: []`, and this node stands alone.
+
+**This is the distinction to carry forward, because §9c's "third case" only described half of it.**
+A Lehninger section that is a *secondary* mapping can fail in two ways, and they need opposite
+fixes:
+
+| | the Czech node holding the mapping | fix |
+|---|---|---|
+| **rank 1's shape** | exists and genuinely teaches the subject, but lost the key to a competing primary | move the node (§9e), key joins two sources |
+| **rank 2's shape** | does not teach the subject, and no other node does either | nothing to join — write it Lehninger-only, `nodes: []` |
+
+Run the sweep before assuming which one you have.
+
+**⚠️ A trap in `topickey_assignment.json` that cost a revert, 2026-08-07 — read before adding any
+key.** Every id in that file is **`<czech chapter>|<czech section>`**, *not* the Lehninger section
+the key points at. So filing Lehninger §8.3 under `"8|8.3"` looks obviously right and is
+destructive: **`8|8.3` already belongs to CZECH §8.3, lipid biosynthesis, which holds nine nodes
+(`8-3-1`…`8-3-9`) under `fatty-acid-biosynthesis`.** Writing there silently overwrote all nine.
+Nothing downstream complained — the app data carries `topicKey` inline, so `step5_check.py` still
+passed and the topic view still rendered correctly; only the index that *future* sessions and
+`step4_topickeys.py` read was wrong. It was caught by reading `git diff` before committing, which
+is the only reason it did not ship. **A Lehninger section that no Czech section points at is filed
+under a `leh|` prefix instead** (`leh|8.3`), which cannot collide with the Czech numbering, with
+`nodes: []` and `cz_pages: null` by design. The general rule: **that file is indexed by the Czech
+book, so it has no natural slot for Lehninger-only material — give it a prefixed one, and diff
+before you commit.**
+
+**Content**: A pp.278–293 = B pp.1078–1122, all six subheadings plus Worked Examples 8-1/8-2 and
+Box 8-1 — denaturation and melting, the nonenzymatic transformations (deamination, depurination,
+UV photoproducts, oxidative damage), base methylation, automated chemical synthesis, PCR, and
+sequencing from Sanger through Illumina reversible-terminator and PacBio SMRT.
+
+**⚠️ The §5a organic-chemistry rule bites hardest here of any node so far**, because the
+phosphoramidite cycle is pure synthetic chemistry. It was handled the §13g way — the cycle is
+described by its **observable** (the coloured DMT group followed spectrophotometrically to count
+how many chains actually extended) rather than as a reaction mechanism.
+
+**Three separate `verify_citations.py` bugs surfaced while finishing this node, all of the same
+family: the checker reporting its own limitation as a finding.** All three are fixed, and the
+comments in the script record each case. This matters beyond this node — every count the checker
+printed before 2026-08-07 was affected:
+
+1. **First-probe short-circuit.** The verdict loop `break`ed on the first probe that resolved
+   *anywhere*, so a weak probe could pre-empt a strong one. **BOX 8-1's own title lives inside the
+   box graphic and is not in A's text layer**, so the string "Box 8-1" occurs only in the three
+   *cross-references* to it (A pp.286, 328, 334); the label probe therefore reported
+   `<-- FIX THE CITATION` against a citation to p.288 that was **correct**. A cross-reference says
+   where the book *points at* a box, never where the box *is*. Now an OK from any probe outranks an
+   ELSEWHERE from any other. This is the §16c caption-vs-cross-reference problem, and this is its
+   fix.
+2. **Apostrophes parsed as quote delimiters.** `QUOTED` treated `'` as an opening mark, so on
+   English prose it spanned from one `'s` to the next and *manufactured* probes out of the node
+   author's own words — `"'s unclaimed sections, per the user'"` was being searched for in
+   Lehninger, where it will never appear. **Do not fix this by dropping single quotes**: measured
+   here, that costs 12 real verifications (108 OK → 96), because single quotes *are* used as
+   genuine book-quote delimiters elsewhere in the data. The discriminator is what precedes the
+   mark — an opening quote follows a space or bracket, a possessive follows a letter.
+3. **Cross-attributed quotes in multi-citation fields.** Quote probes are searched across the
+   whole field while label probes use only the ±90-char window. On a long `coverageNote` carrying
+   six citations, one quote gets offered to all six: the single quote proving Box 8-1 sits on
+   p.288 was re-used to condemn the note's citations to p.289 and pp.294–296, neither of which is
+   about the box. Now a second pass demotes any ELSEWHERE whose probe already proved a *different*
+   citation in the same field — **demoted to UNCHECKED, never to OK**, because the page really was
+   not verified and saying so is the honest outcome.
+
+**Net effect on the audit: 107 OK / 1 ELSEWHERE / 37 UNCHECKED → 114 OK / 0 ELSEWHERE / 30
+UNCHECKED.** Nothing was downgraded from OK; the gain is real verification, not a relaxed test.
+
+**Every one of this node's citations is now verified.** Four rows that the checker could not probe
+were hand-checked against A and all four were correct, then given a verbatim quote so they
+self-verify from now on: the hypochromic passage (p.279), `“All known DNA methylases use
+S-adenosylmethionine as a methyl group donor”` (p.283 — the plain search missed it only because
+A's OCR hyphenates it across a line break), the 5-methylcytidine figure (p.283), and the Illumina
+reversible-terminator method (p.291). The one remaining UNCHECKED row is the `coverageNote`'s
+statement that §8.4 is *out of scope*; §8.4 = A pp.294–296 confirmed directly from
+`lehninger_toc.tsv`.
+
+`biochemie_pro` now reports **217 topics (207 cz, 9 lehninger, 1 entity), 63 topicKeys**, with
+**9 of them joining more than one source** — unchanged by this node, deliberately, since
+`nucleic-acid-chemistry` joins exactly one. `step5_check.py`: all checks pass.
 
 ---
 

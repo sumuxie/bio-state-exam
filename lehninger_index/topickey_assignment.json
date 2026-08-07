@@ -1359,5 +1359,15 @@
     ],
     "cz_pages": "195-197",
     "manual_note": "Added 2026-08-06 by hand, see HANDOFF_LEHNINGER.md 9e. step4_topickeys.py would NOT regenerate this."
+  },
+  "leh|8.3": {
+    "topicKey": "nucleic-acid-chemistry",
+    "primary": "8.3",
+    "primary_title": "8.3 Nucleic Acid Chemistry",
+    "page_a": "278-293",
+    "enTitle": "Denaturation, nonenzymatic transformations, methylation, chemical synthesis, PCR, sequencing",
+    "nodes": [],
+    "cz_pages": null,
+    "manual_note": "LEHNINGER-ONLY KEY, created 2026-08-07 for L-8-3-1 (HANDOFF_LEHNINGER.md 13k, 2e). NOTE THE KEY PREFIX: every other id in this file is `<czech chapter>|<czech section>`, so Lehninger 8.3 CANNOT be filed as `8|8.3` -- that id already belongs to CZECH 8.3, lipid biosynthesis, which holds nine nodes under fatty-acid-biosynthesis. Writing it there overwrites them; that mistake was made and reverted on 2026-08-07. `leh|` marks a Lehninger section that no Czech section points at, so it cannot collide. `nodes` is empty and `cz_pages` is null BY DESIGN: the Czech book teaches none of this section's subject, so this key joins exactly one source. step4_topickeys.py regenerates from master_map.tsv and would drop this entry -- re-add it by hand if that is ever re-run."
   }
 }

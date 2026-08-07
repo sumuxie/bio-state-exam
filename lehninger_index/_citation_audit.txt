@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 120 citations -- 12 in a `src` field, 108 written inline in prose
+found 145 citations -- 12 in a `src` field, 133 written inline in prose
 
 UNCHECKED 1-5            A p.21  lehNotes[0].en       no searchable phrase -- verify by hand
 OK        7-8-3          A p.161  lehNotes[0].en      quote found on [161]
@@ -48,6 +48,32 @@ OK        L-5-1-1        A p.161  points[14].en       label found on [161]
 OK        L-5-1-1        A p.161  points[15].en       quote found on [161]
 OK        L-5-1-1        A p.162  points[16].en       quote found on [162]
 OK        L-5-1-1        A p.163  points[17].en       quote found on [163]
+OK        L-8-3-1        A p.283  coverageNote        label found on [283]
+OK        L-8-3-1        A p.286  coverageNote        label found on [286]
+OK        L-8-3-1        A p.288  coverageNote        quote found on [288]
+UNCHECKED L-8-3-1        A pp.293-296  coverageNote   no probe of its own -- the only quote in this field
+             already proved another citation in it (found on [288]). Verify by hand.
+OK        L-8-3-1        A p.279  points[0].en        label found on [279]
+OK        L-8-3-1        A p.279  points[1].en        quote found on [279]
+OK        L-8-3-1        A p.279  points[2].en        label found on [279]
+OK        L-8-3-1        A p.279  points[2].en        label found on [279]
+OK        L-8-3-1        A p.280  points[3].en        label found on [280]
+OK        L-8-3-1        A p.280  points[4].en        quote found on [280]
+OK        L-8-3-1        A p.280-281  points[5].en    quote found on [280]
+OK        L-8-3-1        A p.281  points[6].en        label found on [281]
+OK        L-8-3-1        A p.281-282  points[7].en    label found on [282]
+OK        L-8-3-1        A p.282  points[8].en        label found on [282]
+OK        L-8-3-1        A p.283  points[9].en        quote found on [283]
+OK        L-8-3-1        A p.283  points[10].en       quote found on [283]
+OK        L-8-3-1        A p.283  points[11].en       quote found on [283]
+OK        L-8-3-1        A p.283-284  points[12].en   label found on [284]
+OK        L-8-3-1        A p.283  points[13].en       label found on [283]
+OK        L-8-3-1        A p.285-286  points[14].en   quote found on [285]
+OK        L-8-3-1        A p.288  points[15].en       quote found on [288]
+OK        L-8-3-1        A p.286-287  points[16].en   label found on [287]
+OK        L-8-3-1        A p.290  points[17].en       label found on [290]
+OK        L-8-3-1        A p.290-293  points[18].en   quote found on [291]
+OK        L-8-3-1        A p.293  points[19].en       label found on [293]
 OK        L-11-3-1       A p.385  coverageNote        label found on [385]
 OK        L-11-3-1       A p.385  coverageNote        label found on [385]
 OK        L-11-3-1       A p.385  coverageNote        label found on [385]
@@ -60,7 +86,7 @@ OK        L-11-3-1       A p.391  coverageNote        label found on [391]
 OK        L-11-3-1       A p.393  coverageNote        label found on [393]
 OK        L-11-3-1       A p.394  coverageNote        label found on [394]
 OK        L-11-3-1       A p.395  coverageNote        label found on [395]
-UNCHECKED L-11-3-1       A pp.403-407  coverageNote   probe not found even +-40 pages: 's own entry in lehninger_toc.tsv (the step-1 table of conten'
+UNCHECKED L-11-3-1       A pp.403-407  coverageNote   probe not found even +-40 pages: 's helical-wheel diagram, fig. 11-38'
 UNCHECKED L-11-3-1       A p.387  points[3].en        probe not found even +-40 pages: 'figure 11-31'
 OK        L-11-3-1       A p.388  points[4].en        label found on [388]
 OK        L-11-3-1       A p.394  points[9].en        label found on [394]
@@ -78,7 +104,7 @@ OK        L-17-2-1       A p.616  points[7].en        label found on [616]
 UNCHECKED L-17-2-1       A pp.616-617  points[8].en   no searchable phrase -- verify by hand
 OK        L-17-2-1       A p.617  points[9].en        label found on [617]
 OK        L-17-2-1       A p.618  points[10].en       label found on [618]
-UNCHECKED L-19-1-1       A pp.675-686  coverageNote   probe not found even +-40 pages: 's label instead of the citation'
+UNCHECKED L-19-1-1       A pp.675-686  coverageNote   probe not found even +-40 pages: 's complex i structure, fig. 19-10'
 OK        L-19-1-1       A p.662  points[1].en        label found on [662]
 OK        L-19-1-1       A p.664  points[3].en        label found on [664]
 OK        L-19-1-1       A p.665  points[4].en        label found on [665]
@@ -125,4 +151,4 @@ OK        E-tryptophan   A p.1068, §28.2              quote(split) found on [10
 SKIP      E-tryptophan   CZ §4.2.4                    (no A page in citation)
 UNCHECKED E-tryptophan   A p.375–376  quiz[2].answer_en no searchable phrase -- verify by hand
 
-OK 90 | ELSEWHERE 0 | UNCHECKED 29
+OK 114 | ELSEWHERE 0 | UNCHECKED 30
