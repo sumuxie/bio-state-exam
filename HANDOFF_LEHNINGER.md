@@ -44,9 +44,15 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — sixteen Lehninger nodes now exist, the depth queue's ready-to-write
-primaries are EXHAUSTED, and the citation backlog is CLEARED: 303 OK / 0 ELSEWHERE / 0 UNCHECKED
-(§13o).** Every `A p.N` in the app data now self-verifies on every run. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
+**§9 step 6 is under way — seventeen Lehninger nodes now exist, the depth queue's ready-to-write
+primaries are EXHAUSTED, and the citation backlog is CLEARED: 321 OK / 0 ELSEWHERE / 0 UNCHECKED
+(§13o).** Every `A p.N` in the app data now self-verifies on every run. **The most recent node is
+`L-2-2-1` (rank 13, §2.2 ionization of water), decided in §9k and written in §13t** — the fourth
+`topicKey` decision to resolve by reusing the primary's key and changing no data, and the node
+that supplies the acid-base floor under Czech `2-1-2`'s titration curve. **Read §13t's last
+section before writing the next node**: testing every candidate quote against A *before* writing
+the prose, using `verify_citations.py`'s own `norm()`, produced the cleanest citation run yet and
+is worth making standard. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
 decision first (§9c, §9e), and §13m added a third possible outcome to that check. **The first of
@@ -894,11 +900,17 @@ key already exists and the node joins the topic view the moment it is written.
 | 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | ✅ **done — `L-3-3-1`** |
 | 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | ✅ **done — `L-25-1-1`** |
 | 3 | 6.4 Examples of Enzymatic Reactions | 11.0 | `enzyme-mechanism` — **not a primary**, added to this table by the §9g decision | ✅ **done — `L-6-4-1`** |
+| 8 | 16.2 Reactions of the Citric Acid Cycle | 7.2 | `citric-acid-cycle` — **not a primary**, key CREATED and four Czech nodes moved by the §9h decision | ✅ **done — `L-16-2-1`** |
+| 10 | 19.2 ATP Synthesis | 5.5 | `respiratory-chain` — **not a primary**, added to this table by the §9i decision | ✅ **done — `L-19-2-1`** |
+| 11 | 11.2 Membrane Dynamics | 5.3 | `membrane-architecture` — **not a primary**, added to this table by the §9j decision | ✅ **done — `L-11-2-1`** |
+| 13 | 2.2 Ionization of Water, Weak Acids, and Weak Bases | 5.0 | `amino-acids` — **not a primary**, added to this table by the §9k decision | ✅ **done — `L-2-2-1`** |
 
-Ranks 8, 10, 11, 13, 15, 16, 19 are still secondaries with no key. **Rank 3 (§6.4) left that
-group on 2026-08-07 by a third route, and the cheapest one yet: its Czech section's primary key
-`enzyme-mechanism` was found to fit §6.4 as well, so nothing was created and nothing moved
-(§9g).** **Rank 2 (§8.3) left that
+**Ranks 15, 16 and 19 are the only secondaries still without a key.** Four of the seven that
+were in that group have since left it by the §9g route — the Czech section's *primary* key was
+found to fit the secondary section too, so nothing was created and nothing moved: rank 3 (§6.4,
+§9g), rank 10 (§19.2, §9i), rank 11 (§11.2, §9j) and rank 13 (§2.2, §9k). The fifth, rank 8
+(§16.2, §9h), is the one case so far that needed the opposite: a new key **and** four Czech
+nodes moved, because the inherited key described none of them. **Rank 2 (§8.3) left that
 group on 2026-08-07 without receiving the §9e treatment** — its key `nucleic-acid-chemistry` exists
 now, but with **no Czech nodes under it**, because the §9e sweep found the Czech book does not
 teach §8.3's material anywhere (2e has the evidence and the user's ruling). Rank 1 was the tenth
@@ -1360,6 +1372,88 @@ node has real content to add even though no re-keying is needed to house it.
   A p.385.
 - `chapter` for this node is Lehninger's 11; `leh_ch11.js` already holds `L-11-3-1` (§11.3), so
   this is chapter 11's **second** file — follow the `leh_ch19b.js` naming precedent from §13r.
+
+### 9k. Rank 13 (§2.2) — the `topicKey` decision: reuse `amino-acids`, change nothing (2026-08-07)
+
+**The decision: `L-2-2-1` took `topicKey: "amino-acids"`, joining Czech `2-1-1`, `2-1-2` and
+`2-1-3`. Nothing created, nothing moved, no `manual_note` — so `step4_topickeys.py` cannot revert
+it.** Fourth instance of the §9g pattern, and the topicKey count stayed at 63 across the write,
+which is the check that it really was a reuse. Node in §13t.
+
+**The §9e check, and why it passes.** Czech §2.1.2 maps to `3.1,2.2` and is the **only Czech
+section in the entire book that points at any section of Lehninger's chapter 2** — so §2.2 has no
+key of its own, the classic secondary case. The primary §3.1 took `amino-acids`, which holds
+`2-1-1`, `2-1-2` and `2-1-3` (plus the `E-tryptophan` card). `2-1-2` is titled *Fyzikálně chemické
+vlastnosti aminokyselin* and its whole first half is the acid-base behaviour of amino acids: the
+cation/anion switch with pH, glycine's titration curve in its Obr. 2.1, the two inflexion points
+at the pK of the carboxyl and of the amino group, `pI = (pK₁ + pK₂)/2`, and differing pI values as
+the basis of ion-exchange chromatography and electrophoresis. It is substantive, not a stub —
+8 points, 5 terms, 4 quiz items, a full oral answer. **Both mapped Lehninger sections deepen that
+one node**, which is exactly §9g's condition for reusing the primary's key.
+
+**The two failure modes were checked and neither is present.**
+
+| | |
+|---|---|
+| rank 9's mode — substantive Czech nodes hiding under another key | **no.** Measured over every file in `biochemie_pro/data/`: the Czech word `pufr` scores **0 hits**, `Henderson` 0, `Hasselbalch` 0, `Kw` 0. The Czech book has **no section on water anywhere** — its ch1 runs cells → biomolecules → nutrition → energy → origin of life, and its ch2 opens directly at amino acids. There is nothing to move because nothing else teaches it |
+| rank 2's mode — nothing teaches it, so write it Lehninger-only | **no.** `2-1-2` genuinely teaches the titration curve and the isoelectric point. There is a real join to make |
+
+**Creating a `water-and-ph` key was considered and rejected.** It would describe the node better
+than `amino-acids` does, but it would join **nothing** — no Czech node teaches water — and the
+node would sit alone in the By-topic view, invisible from the one Czech node whose material it
+actually completes. That is the trade §9g already ruled on: reusing the primary's key beats
+throwing away a real join. The reader who needs Kw and pKa is precisely the reader on `2-1-2`
+trying to work out where `pI = (pK₁ + pK₂)/2` comes from.
+
+**No future collision.** §3.1 Amino Acids — the section that owns the key — sits at **rank 68 of
+86, ratio 1.5**, because Czech §2.1.1–2.1.3 already allocate it 6 pages. It is unlikely ever to be
+written; if it is, it lands on the same key and the topic holds two Lehninger nodes beside three
+Czech ones, which is `respiratory-chain`'s arrangement and the feature working, not a clash.
+
+⚠️ **A scope constraint that shapes the node, and is easy to miss.** The Henderson–Hasselbalch
+equation is **not in §2.2** — it is a subheading of **§2.3**, which §9b records the user ruling a
+**one-line mention only**, along with §2.1. So the node covers water ionization → Kw → the pH
+scale → Ka/pKa → titration curves, and stops. Buffers as a subject, the bicarbonate system and
+Henderson–Hasselbalch are named and deliberately not developed.
+
+#### Measured for §2.2's writing session — pages, subheadings, and the two glycine numbers
+
+- **§2.2 body = A pp.54–58; SUMMARY 2.2 is on A p.59**, one page past where `lehninger_toc.tsv`
+  ends the section, with §2.3 opening lower on that same page. Checked at both ends per §13l.
+  This is the fourth interpolated range to be caught off at one end.
+- **The five subheadings, with the A page each starts on**: Pure Water Is Slightly Ionized p.54;
+  The Ionization of Water Is Expressed by an Equilibrium Constant p.54–55; The pH Scale p.55;
+  Weak Acids and Bases Have Characteristic Acid Dissociation Constants p.57; Titration Curves
+  Reveal the pKa of Weak Acids p.58.
+- **Glycine is in Fig. 2-15 on A p.57**, listed among the diprotic acids: carboxyl
+  Ka = 4.57 × 10⁻³ M, pKa 2.34; amino Ka = 2.51 × 10⁻¹⁰ M, pKa 9.60. **Those are the two numbers
+  Czech `2-1-2`'s own formula asks for and never supplies**, giving glycine pI = 5.97. The same
+  figure carries acetic acid 4.76, ammonium 9.25, dihydrogen phosphate 6.86, carbonic acid 3.77,
+  bicarbonate 10.2 and monohydrogen phosphate 12.4.
+- **Cross-source corroboration, from §6a rather than newly read:** the Chinese notes have no water
+  or pH topic at all, but note pp.21–22 inside topic 四 carry a formol titration drawn as a
+  titration curve with a pKa shift from **9.6**, matching A p.57's glycine amino value.
+
+### 9k-i. The `lehNote` this decision produced — the Czech book's own terminology error
+
+`2-1-2` says that at high pH *"se deprotonizuje **kvartérní amoniová skupina**"* — the quaternary
+ammonium group is deprotonated. **This was checked against the Czech source itself**
+(`extracted_full_ch1_3/full_text_ch1_3.txt`, the §2.1.2 body) before writing anything, precisely
+because the node's `en` field is a translation and the error could have been introduced there. It
+was not: the wording is the book's.
+
+It is wrong, and cleanly so. A quaternary ammonium ion carries four substituents on nitrogen and
+**no hydrogen at all**, so it has no proton to lose and cannot be deprotonated by definition. What
+deprotonates at high pH is the protonated α-amino group, −NH₃⁺, a **primary** ammonium ion.
+Lehninger names it plainly in the same breath as the carboxyl: Fig. 2-15 (A p.57) labels glycine's
+two groups *carboxyl* and *amino*, and §2.3 opens on "The protonated amino and carboxyl groups of
+amino acids" (A p.59).
+
+**This clears §9f's bar** — *would revising from this Czech node alone mislead you in an exam?* —
+because saying "quaternary ammonium" out loud in an oral is a chemistry error an examiner can
+pick up, and nothing inside the Czech node signals it. It is the **eleventh** `lehNote`, `kind:
+"conflict"`, and the first one that corrects a **terminology** error rather than a fact or a
+placement. Both of its citations verify OK.
 
 ---
 
@@ -2710,6 +2804,80 @@ audit: **303 OK / 0 ELSEWHERE / 0 UNCHECKED**.
 **No new `lehNote`.** Nothing in this section actually *contradicts* the three Czech nodes it
 deepens — it explains them. The bar in §9f is disagreement or a load-bearing gap, not "more detail
 exists", and §11.2 clears neither.
+
+### 13t. The seventeenth node — `L-2-2-1`, §2.2 Ionization of Water, Weak Acids, and Weak Bases (2026-08-07): the floor under a curve the Czech book draws without explaining
+
+**Rank 13, ratio 5.0, decided in §9k and written the same session.** In a new
+`biochemie_pro/data/leh_ch2.js`, wired into `index.html`; **16 citation rows, all OK**, three of
+them only after the `coverageNote`'s citations were given verbatim quotes in the same commit that
+created them, per the §13o rule. Audit after the write: **321 OK / 0 ELSEWHERE / 0 UNCHECKED**.
+`step5_check.py`: `RESULT: all checks pass`, 225 topics, **63 topicKeys — unchanged**, which is
+the proof that the key was reused rather than created.
+
+**What made this node worth writing, in one sentence.** Czech `2-1-2` draws glycine's titration
+curve and reads three points off it, but the Czech book has no section on water anywhere, so it
+never says what pH measures, where a pK comes from, or why the curve has the shape it has. This
+section is that missing floor, and it is unusual in the queue for being almost entirely
+*prerequisite* rather than *extension*.
+
+**The four things it supplies that the Czech layer does not have at all:**
+
+- **pH 7 is a measured consequence, not a convention.** Kw = 1.0 × 10⁻¹⁴ M² comes from folding
+  water's own 55.5 M into an equilibrium constant of 1.8 × 10⁻¹⁶ M that was obtained by
+  *conductivity measurement on pure water*. Neutral therefore means 10⁻⁷ M of each ion. Lehninger
+  is explicit that the 7 "is derived from the absolute value of the ion product of water".
+- **Proton hopping** (Fig. 2-13, A p.54) — charge crosses a long distance while no particle does,
+  which is why acid-base reactions in water are exceptionally fast. This is the §5-compliant
+  version of a mechanism: nothing about orbitals, everything about a measurable rate.
+- **Glycine's two pKa values, 2.34 and 9.60** (Fig. 2-15, A p.57) → pI = 5.97. The Czech node
+  gives the formula and no numbers; this gives the numbers the formula needs.
+- **The pK points and the pI are opposite kinds of point on the same curve** — flattest/maximum
+  buffering at a pK, steepest/minimum buffering at the pI. Czech `2-1-2` names both in one
+  sentence without distinguishing them, which is the exam error this node is really aimed at.
+  **Written and flagged in the node as an inference**, because §2.2 never discusses pI (that is
+  §3.1); what it supplies is midpoint-equals-pKa plus the marked buffering regions, and the
+  contrast follows from setting those beside the Czech sentence.
+
+It also carries the **eleventh `lehNote`**, a `conflict` on `2-1-2` — the "quaternary ammonium"
+terminology error, verified against the Czech source before being written. See §9k-i.
+
+#### ⚠️ Five OCR traps in A on pp.54–59, all newly measured here
+
+The first one is a **new shape** and the one most likely to bite again.
+
+- **A figure label can OCR with a MIDDLE DOT instead of a hyphen.** A p.58 reads `FIGURE 2· 16`,
+  so a probe built as `figure 2-16` scores **0 hits on the page that carries it** and matches
+  p.59 instead — a false ELSEWHERE. `norm()` collapses whitespace around a *hyphen* between
+  digits (§13m's fix) but a middle dot never reaches that rule. Safe because the checker takes
+  **an OK from any probe over an ELSEWHERE from any other**, so a verified quote in the same
+  field rescues the row — which is exactly what happened. **Do not rely on a figure label alone
+  when the citation is to A p.58.**
+- **`[H+]` renders as `[W]` and `[OH−]` as `[OW]`** throughout pp.54–59. Never build a probe
+  containing a bracketed concentration.
+- **The middle dot also appears inside ordinary words** on p.54: `reversible · onization`. So the
+  sentence "reversible ionization is crucial to the role of water in cellular function" is
+  verbatim on the page and unfindable.
+- **A whole subheading is missing from A's body text layer.** "The Ionization of Water Is
+  Expressed by an Equilibrium Constant" appears **only in the front-matter Contents**, along with
+  ~150 words around it (the activities paragraph, and the "two of every 10⁹ molecules" figure).
+  A p.55 is the shortest page in the range at 3,421 characters. Locate that subheading by the
+  surrounding derivation, never by its own text.
+- **`Brønsted` OCRs as `Bnzinsted`** on A p.57; `where` breaks to `w here` in Fig. 2-15's caption;
+  `Glycine, carboxyl` breaks to `Glycine, ca rboxyl`.
+
+#### The method that made this the cleanest citation run yet
+
+**Every quote was tested against A before being written into the node**, using a throwaway script
+that imports the *same* `norm()` and the same `printed = pdf − 36` arithmetic as
+`verify_citations.py`. 46 candidate phrases were tried, each with the A page it was supposed to
+prove; 40 passed on exactly the intended page, 6 failed and were discarded — and every one of the
+six failures turned out to be one of the OCR traps above rather than a wrong page. Writing then
+used only quotes already known to verify.
+
+**This is worth making standard.** It inverts the usual loop: instead of writing the node, running
+the audit and chasing ELSEWHERE rows back into the book, the page evidence is settled first and
+the prose is built on top of it. The result was 13 of 16 rows OK on the first run, with the other
+three being `coverageNote` citations that simply had no quote yet.
 
 ---
 

@@ -124,6 +124,12 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans.",
   cnNote: { topic: "四", title: "氨基酸", status: "mapped" },
+  lehNotes: [
+    { kind: "conflict",
+      node: "L-2-2-1",
+      en: "TERMINOLOGY: the Czech book says that at high pH “the QUATERNARY ammonium group is deprotonated” (kvartérní amoniová skupina). Lehninger's figure of conjugate acid-base pairs (Fig. 2-15, A p.57) treats glycine as a diprotic acid whose two ionizable groups are the carboxyl, pKa 2.34, and the AMINO group, Ka = 2.51 x 10^-10 M, pKa 9.60 — and section 2.3 opens by calling them “The protonated amino and carboxyl groups of amino acids” (A p.59). What loses a proton at high pH is the protonated alpha-amino group, -NH3+, a PRIMARY ammonium ion. A quaternary ammonium ion carries four substituents on nitrogen and no hydrogen at all, so it has no proton to lose and cannot be deprotonated by definition. Say protonated amino group in the exam.",
+      cn: "术语问题：捷克教材说在高 pH 下「季铵基团被去质子化」（kvartérní amoniová skupina）。Lehninger 那张共轭酸碱对的图（Fig. 2-15，A p.57）把甘氨酸当作二元酸处理，其两个可电离基团是羧基（pKa 2.34）和氨基（Ka = 2.51 x 10^-10 M，pKa 9.60）——而 2.3 节开篇即称之为「氨基酸上被质子化的氨基和羧基」（A p.59）。在高 pH 下失去质子的是被质子化的 α-氨基，即 -NH3+，属于伯铵离子。季铵离子的氮上带有四个取代基、完全没有氢，因此根本没有质子可失，按定义就无法被去质子化。口试时请说「被质子化的氨基」。" }
+  ],
   summary: {
     en: "Knowledge of the acid-base properties of amino acids is very important both for understanding the properties of proteins and for analysing amino acids themselves. From the ionic character of amino acids follows the dependence of their structure on pH.",
     cn: "了解氨基酸的酸碱性质，对于认识蛋白质的性质以及分析氨基酸本身都非常重要。由氨基酸的离子特性可推知其结构对 pH 的依赖性。"
