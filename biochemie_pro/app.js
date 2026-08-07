@@ -711,6 +711,25 @@
      and `coverageNoteCn` carries the substance a reader needs in Chinese.
      Where the Chinese is not written yet the English still shows, collapsed,
      so nothing is hidden and the gap is visible rather than silent. */
+  /* mustKnow — one or two sentences, always visible, at the very top of the
+     node. The rule that keeps it useful: it is not a summary of the node, it
+     is what you would still want in your head after forgetting the node. If
+     it could be reconstructed from the title it is not worth writing.
+
+     Sits ABOVE the lehNotes and the coverage note deliberately: those are
+     warnings and provenance, this is the content. Ported in spirit from PESB
+     (mustKnow 常驻显示), but bilingual here, because this app is EN-primary
+     with CN carrying the same substance (HANDOFF_LEHNINGER.md §11). */
+  function mustKnowHtml(t) {
+    const m = t.mustKnow;
+    if (!m || (!m.en && !m.cn)) return '';
+    return `<div class="must-know">
+              <span class="mk-label">必背 <span class="muted">Must know</span></span>
+              ${bi(m.en, m.cn)}
+              ${speakPairBtn(m.en, m.cn)}
+            </div>`;
+  }
+
   function coverageNoteHtml(t) {
     if (!t.coverageNote && !t.coverageNoteCn) return '';
     const cn = t.coverageNoteCn;
@@ -953,6 +972,8 @@
             : `<h1 class="th-en">${esc(t.enTitle)} ${speakBtn(t.enTitle, 'en-US')}</h1>`}
           <p class="th-cn">${esc(t.cnTitle)} ${speakBtn(t.cnTitle, 'zh-CN')}</p>
         </div>
+
+        ${mustKnowHtml(t)}
 
         ${lehNotesHtml(t)}
 
