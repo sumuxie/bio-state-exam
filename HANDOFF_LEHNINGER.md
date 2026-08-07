@@ -44,15 +44,16 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — seventeen Lehninger nodes now exist, the depth queue's ready-to-write
-primaries are EXHAUSTED, and the citation backlog is CLEARED: 321 OK / 0 ELSEWHERE / 0 UNCHECKED
+**§9 step 6 is under way — eighteen Lehninger nodes now exist, the depth queue's ready-to-write
+primaries are EXHAUSTED, and the citation backlog is CLEARED: 340 OK / 0 ELSEWHERE / 0 UNCHECKED
 (§13o).** Every `A p.N` in the app data now self-verifies on every run. **The most recent node is
-`L-2-2-1` (rank 13, §2.2 ionization of water), decided in §9k and written in §13t** — the fourth
-`topicKey` decision to resolve by reusing the primary's key and changing no data, and the node
-that supplies the acid-base floor under Czech `2-1-2`'s titration curve. **Read §13t's last
-section before writing the next node**: testing every candidate quote against A *before* writing
-the prose, using `verify_citations.py`'s own `norm()`, produced the cleanest citation run yet and
-is worth making standard. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
+`L-8-2-1` (rank 15, §8.2 nucleic acid structure), decided in §9l and written in §13u**, preceded
+by `L-2-2-1` (rank 13, §9k/§13t). Both resolved by reusing the primary's key and changing no data.
+**Read §13u's first section before writing the next node.** It proves §13t's pre-test method with a
+number: of 54 candidate quotes tested against A *before* the prose was written, **21 were on a
+different page than B's layout implied — every one off by exactly one, all in the same
+direction.** Written first and audited afterwards, that would have been 21 ELSEWHERE rows. Never
+predict an A page from B; test the quote. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
 decision first (§9c, §9e), and §13m added a third possible outcome to that check. **The first of
@@ -904,13 +905,14 @@ key already exists and the node joins the topic view the moment it is written.
 | 10 | 19.2 ATP Synthesis | 5.5 | `respiratory-chain` — **not a primary**, added to this table by the §9i decision | ✅ **done — `L-19-2-1`** |
 | 11 | 11.2 Membrane Dynamics | 5.3 | `membrane-architecture` — **not a primary**, added to this table by the §9j decision | ✅ **done — `L-11-2-1`** |
 | 13 | 2.2 Ionization of Water, Weak Acids, and Weak Bases | 5.0 | `amino-acids` — **not a primary**, added to this table by the §9k decision | ✅ **done — `L-2-2-1`** |
+| 15 | 8.2 Nucleic Acid Structure | 5.0 | `nucleotides` — **not a primary**, added to this table by the §9l decision | ✅ **done — `L-8-2-1`** |
 
-**Ranks 15, 16 and 19 are the only secondaries still without a key.** Four of the seven that
+**Ranks 16 and 19 are the only secondaries still without a key.** Five of the seven that
 were in that group have since left it by the §9g route — the Czech section's *primary* key was
 found to fit the secondary section too, so nothing was created and nothing moved: rank 3 (§6.4,
-§9g), rank 10 (§19.2, §9i), rank 11 (§11.2, §9j) and rank 13 (§2.2, §9k). The fifth, rank 8
-(§16.2, §9h), is the one case so far that needed the opposite: a new key **and** four Czech
-nodes moved, because the inherited key described none of them. **Rank 2 (§8.3) left that
+§9g), rank 10 (§19.2, §9i), rank 11 (§11.2, §9j), rank 13 (§2.2, §9k) and rank 15 (§8.2, §9l).
+The odd one out, rank 8 (§16.2, §9h), is the only case so far that needed the opposite: a new key
+**and** four Czech nodes moved, because the inherited key described none of them. **Rank 2 (§8.3) left that
 group on 2026-08-07 without receiving the §9e treatment** — its key `nucleic-acid-chemistry` exists
 now, but with **no Czech nodes under it**, because the §9e sweep found the Czech book does not
 teach §8.3's material anywhere (2e has the evidence and the user's ruling). Rank 1 was the tenth
@@ -1454,6 +1456,83 @@ because saying "quaternary ammonium" out loud in an oral is a chemistry error an
 pick up, and nothing inside the Czech node signals it. It is the **eleventh** `lehNote`, `kind:
 "conflict"`, and the first one that corrects a **terminology** error rather than a fact or a
 placement. Both of its citations verify OK.
+
+### 9l. Rank 15 (§8.2) — the `topicKey` decision: reuse `nucleotides`, change nothing (2026-08-07)
+
+**The decision: `L-8-2-1` took `topicKey: "nucleotides"`, joining Czech `4-1` and `4-1-2`. Nothing
+created, nothing moved, no `manual_note`.** Fifth instance of the §9g pattern; the topicKey count
+stayed at 63 across the write. Node in §13u.
+
+**The §9e check.** Czech §4.1.2 maps to `8.1,8.2`; the primary §8.1 took `nucleotides`, which holds
+`4-1` and `4-1-2`. `4-1-2` is titled *Struktura nukleových kyselin* — **literally §8.2's own
+title** — and is substantive rather than a stub: 8 points, 6 terms, covering the phosphodiester
+backbone, the double helix with its grooves, base pairing with the C1′–C1′ distance and glycosidic
+angle, complementarity, antiparallel strands, stacking, and the A and Z forms. Both mapped
+Lehninger sections deepen that one node, which is §9g's condition exactly.
+
+**Neither failure mode is present**, but the check was NOT routine here and the reason is worth
+recording: **two other Czech nodes have §8.2's subject matter in their own titles** —
+`4-1-3-1`/`4-1-3-2` ("DNA structure and biosynthesis…", key `dna-replication`) and `4-1-4-1`
+("…types and properties of RNA", key `transcription`). Either could have been rank 9's shape. On
+inspection neither is:
+
+| node | what it actually holds | verdict |
+|---|---|---|
+| `4-1-4-1` | mRNA, hnRNA, exons/introns, rRNA sizes with sedimentation coefficients, the tRNA cloverleaf, snRNA | **keep `transcription`** — its subject *is* transcription and its primary is §26.1. This is §13m's third outcome: cross-reference by hand, re-key nothing |
+| `4-1-3-1/2` | DNA polymerases and the mechanism of replication | **keep `dna-replication`** — already joined to `L-25-1-1` |
+
+So the RNA half of §8.2 is handled by cross-reference, and the node adds only what is *structural*
+about RNA (monocistronic vs polycistronic, the triplet-length floor, A-form-only helices, G·U
+pairing, hairpins, ribozymes) rather than re-teaching the RNA types `4-1-4-1` already lists.
+
+**Creating `nucleic-acid-structure` was considered and rejected** on two grounds: `nucleotides`
+does not *misdescribe* `4-1-2` (nucleic acid structure is what nucleotides build), which is rank
+1's test; and a key of that name would sit confusingly beside the existing
+`nucleic-acid-chemistry`, which §8.3 created and which is Lehninger-only.
+
+**No future collision.** §8.1 — the section that owns the key — is **rank 50 of 86, ratio 2.3**.
+If it is ever written it lands on the same key, giving the topic two Lehninger nodes beside two
+Czech ones.
+
+#### Measured for §8.2's writing session
+
+- **§8.2 = A pp.269–278**, correct at both ends: the heading is on A p.269 below SUMMARY 8.1, and
+  §8.3 opens on A p.278. ⚠️ But **SUMMARY 8.2 is on A p.277**, not on the last page of the range —
+  locate it by "Many lines of evidence show that DNA bears genetic information".
+- **The numbers Czech `4-1-2` omits, all from Fig. 8-17's table on A p.273** — A/B/Z: right,
+  right, **left**-handed; diameter ≈26/20/18 Å (so **A is the fat one and Z the thin one**, which
+  is the opposite of what "more slender" suggests to most readers); 11/10.5/12 bp per turn; rise
+  2.6/3.4/3.7 Å; base tilt 20°/6°/7°. Plus 10.5 bp per turn in solution against the historical
+  fibre figure of 10 (A p.271).
+- **Two conflicts with the Czech node, both resolved in Lehninger's favour** — see §9l-i.
+
+### 9l-i. Two `lehNotes` on `4-1-2`, and the user's standing instruction behind them
+
+The user's instruction on 2026-08-07 was explicit: *"如果捷克语版本有出入可以标记一下，主要针对
+英语版本为准"* — where the Czech book diverges, flag it, and treat the English (Lehninger) as
+authoritative. §8.2 produced two divergences that clear §9f's bar, taking the count to **13 notes
+on 11 nodes**.
+
+**1. `conflict` — what stabilises the double helix.** `4-1-2` says the helix "is partly stabilised
+by HYDROGEN BONDS between bases of the two different strands", listing stacking and electrostatics
+afterwards as further contributions. Lehninger inverts the ranking in one sentence: *"the hydrogen
+bonds do not contribute significantly to the stability of the structure"* (A p.271). They supply
+**complementarity** — which base pairs with which. Stability comes *"primarily [from] metal
+cations, which shield the negative charges of backbone phosphates"* plus base stacking.
+
+⚠️ **Why this particular error is so durable, and worth saying out loud in the node:** counting
+hydrogen bonds (three for G≡C against two for A═T) predicts *exactly the same* observation that
+settles the question — that GC-rich DNA is more stable. The naive explanation and the correct one
+agree on the data and differ on the mechanism, so nothing in ordinary revision ever exposes it.
+
+**2. `conflict` — A-DNA and Z-DNA in cells, where the Czech node is wrong in *both* directions.**
+It presents the B→A conversion at 75 % relative water content as something DNA does, and dismisses
+Z-DNA as having a function "not yet known". Lehninger reverses both: *"Whether A-DNA occurs in
+cells is uncertain"* (A p.273) — and there is a methodological reason, since the reagents used to
+promote crystallisation dehydrate DNA, so most short DNA crystallises in the A form regardless —
+while short **Z-DNA tracts have been found in both bacteria and eukaryotes** and may act *"in
+regulating the expression of some genes or in genetic recombination"*. The one with demonstrated
+cellular occurrence is Z, not A.
 
 ---
 
@@ -2878,6 +2957,67 @@ used only quotes already known to verify.
 the audit and chasing ELSEWHERE rows back into the book, the page evidence is settled first and
 the prose is built on top of it. The result was 13 of 16 rows OK on the first run, with the other
 three being `coverageNote` citations that simply had no quote yet.
+
+### 13u. The eighteenth node — `L-8-2-1`, §8.2 Nucleic Acid Structure (2026-08-07): the section that proves the pre-test method, and two conflicts where the Czech book is simply wrong
+
+**Rank 15, ratio 5.0, decided in §9l and written the same session.** In a new
+`biochemie_pro/data/leh_ch8b.js` (chapter 8's SECOND file — `leh_ch8.js` holds `L-8-3-1` and was
+left untouched), wired into `index.html`; **17 citation rows, all OK**. Audit after the write:
+**340 OK / 0 ELSEWHERE / 0 UNCHECKED**. `step5_check.py`: `RESULT: all checks pass`, 226 topics,
+**63 topicKeys — unchanged**.
+
+#### 🔬 §13t's pre-test method, run on a section where it mattered — 21 of 54 quotes were on the wrong page
+
+This is the run that turns §13t's suggestion into a rule. 54 candidate quotes were tested against
+A before a word of prose was written, each tagged with the page it was *supposed* to prove.
+**Thirty-one landed where expected. Twenty-one did not — and every single one of the 21 was off by
+exactly one page, always in the same direction, always one page EARLIER than predicted.** Two were
+not found at all, both OCR breakage.
+
+The cause is §13l's rule, seen in its purest form yet: the pages had been predicted by **scaling
+from B's layout**, and B's pagination drifts against A's by roughly one page across this section.
+Had the node been written first and audited afterwards, it would have produced **21 ELSEWHERE rows
+on citations that were each one page out** — the exact failure mode §13l describes, at a scale
+that would have taken hours to chase back through the book.
+
+**The rule, stated plainly: never predict an A page from B's layout, not even approximately, and
+not even when the drift has been consistent so far. Test the quote.** The test costs one script
+run; the alternative costs an audit cycle per citation.
+
+A second, smaller finding from the same run: **OCR damage is per-REGION, not per-page.** A p.278's
+figure-caption region fractures words with plain spaces (*variety* and *phenylalanine* both break),
+which `norm()` cannot rejoin because it only handles hyphenated breaks — but the running body text
+on that same page is clean and quotes from it verify fine. Do not write off a page; write off a
+region.
+
+#### What the node adds, given how much Czech `4-1-2` already has
+
+`4-1-2` is one of the better Czech nodes and already carries the helix, the base pairs with the
+C1′–C1′ distance, complementarity, antiparallelism, stacking and the existence of A- and Z-DNA. So
+the node deliberately supplies only four things:
+
+- **The evidence trail**, which the Czech layer states as a premise: Miescher's nuclein (1869),
+  the Avery–MacLeod–McCarty transformation, Hershey–Chase (1952), Chargaff's rules, and the
+  Franklin/Wilkins x-ray pattern with its two periodicities. The point of framing it this way is
+  that it makes the double helix **a deduction under two constraints** rather than an assertion.
+- **The numbers** — 10.5 bp per turn in solution against the fibre's 10, and Fig. 8-17's full
+  A/B/Z comparison table (§9l has the figures).
+- **Two corrections**, the substance of §9l-i.
+- **Two whole subheadings with no Czech counterpart at all**: sequence-dependent structures (bends
+  at runs of four or more adenosines, palindromes vs mirror repeats, hairpins and cruciforms,
+  Hoogsteen pairing, triplex and G-tetraplex DNA) and RNA structure (monocistronic vs
+  polycistronic, A-form-only duplexes, G·U pairing, hairpins, ribozymes).
+
+**One cross-link worth noticing between nodes.** The triplex point records that the cytosine in a
+C≡G·C⁺ triplet has its pKa shifted from 4.2 to above 7.5 by the structure around it — which is
+exactly the phenomenon `L-2-2-1` (§13t) treats in the abstract. That is the depth layer starting
+to reference itself, which is what the `topicKey` architecture was for.
+
+**A note on the palindrome definition:** Lehninger's own wording (*"A palindrome is a word,
+phrase, or sentence that is spelled identically"* forward or backward, with ROTATOR and NURSES RUN
+as the examples) is borrowed whole into the node, because the distinction that actually gets
+tested — a mirror repeat is symmetric but **not self-complementary**, and therefore cannot form a
+hairpin or cruciform — only makes sense once the literal meaning is in place.
 
 ---
 
