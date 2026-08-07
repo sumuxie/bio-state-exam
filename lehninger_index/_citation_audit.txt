@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 295 citations -- 12 in a `src` field, 283 written inline in prose
+found 304 citations -- 12 in a `src` field, 292 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        3-6            A pp.209-210  lehNotes[0].en quote found on [209]
@@ -135,6 +135,15 @@ OK        L-11-3-1       A p.394  points[9].en        label found on [394]
 OK        L-11-3-1       A pp.396-398  points[11].en  label found on [396]
 OK        L-11-3-1       A p.400  points[14].en       label found on [400]
 OK        L-11-3-1       A pp.402-403  points[15].en  label found on [402]
+OK        L-11-2-1       A p.377  points[0].en        label found on [377]
+OK        L-11-2-1       A pp.377-378  points[1].en   quote found on [378]
+OK        L-11-2-1       A p.378  points[2].en        quote found on [378]
+OK        L-11-2-1       A p.379  points[3].en        label found on [379]
+OK        L-11-2-1       A pp.379-380  points[4].en   label found on [380]
+OK        L-11-2-1       A pp.380-381  points[5].en   label found on [380]
+OK        L-11-2-1       A pp.381-382  points[6].en   label found on [381]
+OK        L-11-2-1       A p.382  points[7].en        label found on [382]
+OK        L-11-2-1       A pp.382-384  points[8].en   label found on [384]
 OK        L-16-2-1       A p.580  coverageNote        quote found on [580]
 OK        L-16-2-1       A p.580  points[0].en        quote found on [580]
 OK        L-16-2-1       A pp.580  points[1].en       quote found on [580]
@@ -300,4 +309,4 @@ OK        E-tryptophan   A p.1068, §28.2              quote(split) found on [10
 SKIP      E-tryptophan   CZ §4.2.4                    (no A page in citation)
 OK        E-tryptophan   A p.375–376  quiz[2].answer_en quote found on [375]
 
-OK 294 | ELSEWHERE 0 | UNCHECKED 0
+OK 303 | ELSEWHERE 0 | UNCHECKED 0

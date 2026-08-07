@@ -44,8 +44,8 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — fifteen Lehninger nodes now exist, the depth queue's ready-to-write
-primaries are EXHAUSTED, and the citation backlog is CLEARED: 294 OK / 0 ELSEWHERE / 0 UNCHECKED
+**§9 step 6 is under way — sixteen Lehninger nodes now exist, the depth queue's ready-to-write
+primaries are EXHAUSTED, and the citation backlog is CLEARED: 303 OK / 0 ELSEWHERE / 0 UNCHECKED
 (§13o).** Every `A p.N` in the app data now self-verifies on every run. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
@@ -2660,6 +2660,56 @@ anion, which is precisely what §5 forbids. The point rewrites it as a physical 
 be stated without orbitals: the molecule is hydrophobic enough to cross the membrane in *both* its
 protonated and its charged form, so it shuttles protons back and forth. Nothing is lost, and the
 DNP-as-slimming-drug fact makes it stick.
+
+### 13s. The sixteenth node — `L-11-2-1`, §11.2 Membrane Dynamics (2026-08-07): the mechanism behind three facts a thin node states as conclusions, plus two subjects the Czech layer lacks entirely
+
+Rank 11, ratio 5.3. A pp.377–384, B pp.1403–1431, in **`biochemie_pro/data/leh_ch11b.js`** —
+chapter 11's second file, alongside `leh_ch11.js`'s `L-11-3-1`, following the `leh_ch19b.js` naming
+precedent from §13r. Joins Czech `8-5`, `8-5-1`, `8-5-2-1`, `8-5-2-2`, `8-5-2-3` through the
+pre-existing `membrane-architecture` key; §9j has the decision, which cost no data change.
+
+**A fourth shape for "what to write when the Czech partner is thin."** `8-5-2-1` states three
+things as bare conclusions, in a handful of words each: fluidity depends on the lipids present,
+the two leaflets differ in composition, and flip-flop is rare, for reasons the book calls unclear.
+`8-5-2-2` adds that proteins move laterally and rotationally but not by flip-flop. None of that is
+wrong, and none of it is explained. This node supplies the physical mechanism behind each claim
+rather than restating it:
+
+- **Fluidity** is not one property but a spectrum between a liquid-ordered and a liquid-disordered
+  state, tuned by chain length, unsaturation and cholesterol — and cholesterol's own effect runs in
+  **opposite directions** depending on its neighbour, ordering unsaturated phospholipids while
+  fluidising sphingolipid-rich regions.
+- **Flip-flop is rare because of a stated thermodynamic reason** — dragging a charged head group
+  through the hydrophobic core costs a large positive free-energy change — and where it is needed
+  anyway (asymmetric ER biogenesis, keeping phosphatidylserine off the outer leaflet), the cell pays
+  a dedicated ATP-consuming enzyme: flippases, floppases, scramblases. The Czech node's "biological
+  significance unclear" for flip-flop is answered directly: exposing phosphatidylserine on the
+  outer face **is an apoptotic signal**, read by macrophages carrying its receptor.
+- **Lateral movement is measured, not asserted**: FRAP times how fast a bleached patch refills
+  (up to 1 μm/s), and single-particle tracking then complicates the picture with hop diffusion —
+  lipids corralled by a fence of cytoskeleton-tethered protein, the same spectrin-anchored proteins
+  Czech `8-5-3` already names as transporters.
+
+**Two subjects the Czech layer has nothing on at all**: lipid rafts (with the structural reason
+short transmembrane helices are excluded and long ones included) and caveolin-driven membrane
+curvature; and the SNARE fusion machinery, with its five-step requirement for two membranes to
+merge without leaking, and the fact that botulinum and tetanus toxins are precise specifically
+*because* the target they cleave — the SNARE/SNAP25 complex — is a single, well-defined molecular
+zipper.
+
+**Citations: 20 rows. 19 OK on the first run; one `ELSEWHERE` closed in the same commit,
+and it is worth reading because it is the exact §13m failure mode recurring live.** The point on
+membrane curvature named two figures together — `FIGURE 11-24, FIGURE 11-25, A p.382` — and the
+checker matched the **last label before the citation**, `FIGURE 11-25`, whose own caption sits on
+A p.383, and reported the citation wrong. **Both figures' content is genuinely on p.382**; only the
+second figure's own label happens to print a page later. Confirmed by direct search before touching
+anything, per §13m/§13n's rule: *ELSEWHERE is a hypothesis, not a verdict.* Fixed by giving each
+figure its own explicit page in the prose so no two labels sit before one citation. Whole-project
+audit: **303 OK / 0 ELSEWHERE / 0 UNCHECKED**.
+
+**No new `lehNote`.** Nothing in this section actually *contradicts* the three Czech nodes it
+deepens — it explains them. The bar in §9f is disagreement or a load-bearing gap, not "more detail
+exists", and §11.2 clears neither.
 
 ---
 
