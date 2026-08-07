@@ -2,9 +2,10 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 244 citations -- 12 in a `src` field, 232 written inline in prose
+found 261 citations -- 12 in a `src` field, 249 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
+OK        3-6            A pp.209-210  lehNotes[0].en quote found on [209]
 OK        4-1-3-1        A p.919  lehNotes[0].en      label found on [919]
 OK        7-8-3          A p.161  lehNotes[0].en      quote found on [161]
 OK        8-3-1          A p.753  lehNotes[0].en      quote found on [753]
@@ -73,6 +74,22 @@ OK        L-5-1-1        A p.161  points[14].en       label found on [161]
 OK        L-5-1-1        A p.161  points[15].en       quote found on [161]
 OK        L-5-1-1        A p.162  points[16].en       quote found on [162]
 OK        L-5-1-1        A p.163  points[17].en       label found on [163]
+OK        L-6-4-1        A pp.206-207  coverageNote   label found on [207]
+OK        L-6-4-1        A p.203  points[0].en        quote found on [203]
+OK        L-6-4-1        A p.204  points[1].en        quote found on [204]
+OK        L-6-4-1        A pp.204-205  points[2].en   label found on [205]
+OK        L-6-4-1        A p.205  points[3].en        label found on [205]
+OK        L-6-4-1        A pp.205  points[4].en       quote found on [205]
+OK        L-6-4-1        A p.208  points[5].en        quote found on [208]
+OK        L-6-4-1        A p.207  points[6].en        quote found on [207]
+OK        L-6-4-1        A p.208  points[7].en        quote found on [208]
+OK        L-6-4-1        A p.209  points[8].en        label found on [209]
+OK        L-6-4-1        A pp.209-210  points[9].en   label found on [210]
+OK        L-6-4-1        A pp.209-210  points[10].en  quote found on [209]
+OK        L-6-4-1        A p.210  points[11].en       quote found on [210]
+OK        L-6-4-1        A pp.210-211  points[12].en  label found on [211]
+OK        L-6-4-1        A pp.211-212  points[13].en  label found on [212]
+OK        L-6-4-1        A pp.211  points[14].en      quote found on [211]
 OK        L-8-3-1        A p.283  coverageNote        label found on [283]
 OK        L-8-3-1        A p.286  coverageNote        label found on [286]
 OK        L-8-3-1        A p.288  coverageNote        quote found on [288]
@@ -249,4 +266,4 @@ OK        E-tryptophan   A p.1068, §28.2              quote(split) found on [10
 SKIP      E-tryptophan   CZ §4.2.4                    (no A page in citation)
 OK        E-tryptophan   A p.375–376  quiz[2].answer_en quote found on [375]
 
-OK 243 | ELSEWHERE 0 | UNCHECKED 0
+OK 260 | ELSEWHERE 0 | UNCHECKED 0

@@ -3,17 +3,17 @@ biochemie_pro/app.js parses as JavaScript: OK (1205 lines, 2 literals stubbed)
 
 simulating the validator's logic against the real data:
 ok biochemie_basic: 207 topics (207 cz, 0 lehninger, 0 entity), cz book pages 8-228, 0 topicKeys, 1010 terms, 603 questions
-ok biochemie_pro: 220 topics (207 cz, 12 lehninger, 1 entity), cz book pages 8-228, 63 topicKeys, 1162 terms, 661 questions
+ok biochemie_pro: 221 topics (207 cz, 13 lehninger, 1 entity), cz book pages 8-228, 63 topicKeys, 1171 terms, 666 questions
 
 negative tests -- a check that never fails is not a check:
   half-migrated app (one node missing `book`): got=206, len=207 -> FIRES
   lehninger nodes with wildly gappy pages: gap check reports 0 gaps -> correctly ignored
   (test page chosen by search: p.9, held only by node 1-1)
   cz node with a page removed: gap check reports [9] -> still bites
-  lehNotes present in the data: 8 on 7 nodes -> testable
-  lehNote pointing at a missing node: 8/8 caught -> FIRES
-  lehNote with an unknown kind:       8/8 caught -> FIRES
-  lehNote missing the cn half:        8/8 caught -> FIRES
+  lehNotes present in the data: 9 on 8 nodes -> testable
+  lehNote pointing at a missing node: 9/9 caught -> FIRES
+  lehNote with an unknown kind:       9/9 caught -> FIRES
+  lehNote missing the cn half:        9/9 caught -> FIRES
   every real lehNote target resolves: yes
 
 RESULT: all checks pass

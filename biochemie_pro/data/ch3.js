@@ -733,6 +733,11 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans. The urease rate-enhancement factor was re-read from the p.61 image: the book states 10¹⁴-fold, an exponent the raw OCR dropped entirely (it rendered it as '10krát', i.e. 10-fold).",
   cnNote: { topic: "十一", title: "酶的作用机理及酶的调节——作用机理 (笔记 pp.63–76)", status: "mapped" },
+  lehNotes: [
+    { kind: "conflict", node: "L-6-4-1",
+      en: "The last point of this section — that only a TRUE SUBSTRATE has affinity enough to force the conformational change, and that molecules which bind without evoking it act as INHIBITORS — is disproved by the classic hexokinase experiment. Lehninger 6.4 (A pp.209-210): xylose, one carbon shorter than glucose, binds hexokinase in a position where it CANNOT be phosphorylated, yet the “binding of xylose is sufficient to induce a change in hexokinase” to its active conformation, and the enzyme is then tricked into phosphorylating water — so the rate of ATP hydrolysis goes UP, not down. A non-substrate can induce the change, and the result is a faster side reaction, not inhibition. Lehninger draws the opposite conclusion from the same enzyme: “specificity is observed not in the formation of the ES complex” but in the relative rates of the catalytic steps that follow.",
+      cn: "本节最后一点——只有真正的底物才有足够亲和力迫使构象改变，而能结合却不引发构象变化的分子起抑制剂作用——被经典的己糖激酶实验证伪。Lehninger 6.4（A pp.209-210）：木糖比葡萄糖少一个碳，它结合到己糖激酶上的位置使其无法被磷酸化，但其结合足以诱导出活性构象，该酶随即被「骗」去磷酸化水——于是 ATP 水解速率是升高而不是降低。非底物也能诱导构象变化，而结果是一个更快的副反应，不是抑制。Lehninger 从同一个酶得出相反的结论：特异性并不体现在 ES 复合物的形成上，而体现在其后各催化步骤的相对速率上。" }
+  ],
   summary: {
     en: "Only PART of the enzyme molecule is responsible for its catalytic ability — the so-called ACTIVE CENTRE. It is that part in which the contact between enzyme and substrate is realised and where the groups responsible for the actual catalysis of the chemical reaction are located.",
     cn: "只有酶分子的一部分负责其催化能力——即所谓的活性中心。它是酶与底物之间实现接触的部位，也是负责化学反应实际催化过程的基团所在之处。"

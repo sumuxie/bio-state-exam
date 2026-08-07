@@ -1,6 +1,6 @@
 # START HERE — the Lehninger phase
 
-**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 186 KB ≈ 47k
+**Read this file in full. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 192 KB ≈ 48k
 tokens and reading it triggers a compaction before you have done any work. That file is now an
 **archive you grep into**, one section at a time, using the index at the bottom of this page.
 `HANDOFF.md` (69 KB, the Czech app) is the same: grep, never read whole. Both sizes are
@@ -17,7 +17,7 @@ A biochemistry oral-exam trainer for a Czech state exam, three apps in one repo.
 
 - **`biochemie_basic/`** — FROZEN. The user revises from it daily. Never modify.
 - **`biochemie_pro/`** — where all work happens. Czech textbook (207 nodes, ch1–10, complete)
-  **plus** a Lehninger 8 depth layer (12 nodes) joined by `topicKey`.
+  **plus** a Lehninger 8 depth layer (13 nodes) joined by `topicKey`.
 - **`PESB/`** and **`oral_prep_app/`** — separate apps, not this phase, listed so they do not look
   like strays. `PESB/`'s handoff is **not in this repo** — it lives at
   `C:\Users\Admin\Documents\trae_projects\recombinants_trae_independant\HANDOFF_PESB.md`.
@@ -31,12 +31,15 @@ everything in either handoff.**
 
 ---
 
-## ✅ `L-3-3-1` is finished — and the depth queue's free picks are now exhausted (2026-08-07)
+## ✅ `L-6-4-1` is finished — the first node that needed a `topicKey` decision and cost no data change (2026-08-07)
 
-Rank 18, §3.3 Working with Proteins — written, wired (it went into the **existing** `leh_ch3.js`,
-now the first Lehninger file with two nodes, so `index.html` needed no change), 0 ELSEWHERE and
-0 UNCHECKED on its own citations, validator clean, archive §13n. `L-23-2-1` (rank 7, §13m) and
-`L-25-1-1` (rank 20, §13l) were written in the same session and are equally clean.
+Rank 3, §6.4 Examples of Enzymatic Reactions, ratio 11 — the highest ratio in the whole queue that
+was still unwritten. Decided in §9g, written in §13p, in a new `biochemie_pro/data/leh_ch6.js`
+wired into `index.html`; 16 citation rows, all OK on the first run; validator clean. It carries the
+**ninth `lehNote`**, a `conflict` on `3-6`: the hexokinase xylose experiment disproves that node's
+closing claim that only a true substrate can force the conformational change. `L-3-3-1` (rank 18,
+§13n), `L-23-2-1` (rank 7, §13m) and `L-25-1-1` (rank 20, §13l) came just before it and are equally
+clean.
 
 ### ✅ The `2-2-6` cnNote error is closed
 
@@ -49,7 +52,7 @@ title — and p.46 is **blank**, fixing the topic's end. So topic 八 = pp.41–
 ends. `2-2-6` now reads `topic: "八"`, `status: "mapped"`, with the evidence written into its
 `coverageNote`. **Topic 八 appears in the data for the first time.**
 
-### ✅ The citation backlog is cleared: 243 OK / 0 ELSEWHERE / 0 UNCHECKED
+### ✅ The citation backlog is cleared: 260 OK / 0 ELSEWHERE / 0 UNCHECKED
 
 Every `A p.N` citation in `biochemie_pro` now self-verifies on every run (§13o). This was the
 largest known backlog in the project. **Not one of the 34 UNCHECKED citations turned out to be
@@ -121,19 +124,22 @@ were the checker's fault, not the data's.
 | | |
 |---|---|
 | Czech layer | 207 nodes, ch1–10, complete. **Never audited** — see "what to ask" below |
-| Lehninger depth layer | **12 nodes**: `L-1-3-1` `L-3-3-1` `L-3-4-1` `L-5-1-1` `L-8-3-1` `L-11-3-1` `L-17-2-1` `L-19-1-1` `L-21-1-1` `L-22-3-1` `L-23-2-1` `L-25-1-1`. `leh_ch3.js` holds two of them |
-| `topicKey`s | **63** distinct over **220** nodes (207 cz + 12 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 12 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `dna-replication` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `membrane-transport` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain` `tissue-specific-metabolism` `working-with-proteins`. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only |
+| Lehninger depth layer | **13 nodes**: `L-1-3-1` `L-3-3-1` `L-3-4-1` `L-5-1-1` `L-6-4-1` `L-8-3-1` `L-11-3-1` `L-17-2-1` `L-19-1-1` `L-21-1-1` `L-22-3-1` `L-23-2-1` `L-25-1-1`. `leh_ch3.js` holds two of them |
+| `topicKey`s | **63** distinct over **221** nodes (207 cz + 13 lehninger + 1 entity), counted from the app data 2026-08-07. **Exactly 13 keys join more than one source**, which is the whole point of `pro`: `amino-acid-derived-molecules` `amino-acids` `bioenergetics-basics` `dna-replication` `enzyme-mechanism` `fatty-acid-biosynthesis` `fatty-acid-oxidation` `membrane-transport` `oxygen-binding-proteins` `protein-primary-structure` `respiratory-chain` `tissue-specific-metabolism` `working-with-proteins`. `nucleic-acid-chemistry` is deliberately **not** among them — `L-8-3-1` is Lehninger-only. The key count did **not** move when `L-6-4-1` was added, which is the point of §9g: it reused a key instead of making one |
 | Entity cards | 1 (`E-tryptophan`). The headline feature, still barely started — archive §4, §12 |
 | UI | Done. Two books render, sidebar **By book / By topic** toggle, "Same topic" strip, `lehNotes` blocks. Nothing more needs building |
 | Live site | https://sumuxie.github.io/bio-state-exam/biochemie_pro/ |
 
 **The remaining work is content, not plumbing.**
 
-## ✅ Rank 3 (§6.4) is decided — write it next, no decision left in the way (2026-08-07)
+## ✅ Rank 3 (§6.4) is decided AND written — `L-6-4-1` (2026-08-07)
 
-**`L-6-4-1` takes `topicKey: "enzyme-mechanism"` and joins Czech `3-6`. Nothing is re-keyed,
-nothing is created, no `manual_note` is needed — so `step4_topickeys.py` cannot revert it.**
-Full reasoning and the measured scope are in archive **§9g**; the short version:
+**`L-6-4-1` took `topicKey: "enzyme-mechanism"` and joins Czech `3-6`. Nothing was re-keyed,
+nothing created, no `manual_note` needed — so `step4_topickeys.py` cannot revert it.** The node
+is in `biochemie_pro/data/leh_ch6.js`, wired into `index.html`, 16 citation rows all OK, and it
+carries the **ninth `lehNote`** — a `conflict` on `3-6`, because the xylose experiment disproves
+that node's closing claim. Decision in archive **§9g**, the node itself in **§13p**; the short
+version of the decision:
 
 - §6.4 is a *secondary* mapping of Czech §3.6 (`6.2,6.4`), so §9c's look-up returns no key. Rank
   1's fix — create a key, move the node — does **not** apply, because the key that already exists
@@ -155,25 +161,24 @@ Full reasoning and the measured scope are in archive **§9g**; the short version
   the pH-rate profile in Fig. 6-26 on A p.205, hexokinase closing over glucose, penicillin as a
   drug that works because of a mechanism.
 
-### Next pick: rank 3 is decided and unwritten — or choose between three
+### Next pick: no free queue picks remain — choose between two
 
 `lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
-the Czech book. Top 20, with the 12 done ones struck through:
+the Czech book. Top 20, with the 13 done ones struck through:
 
-~~1 §5.1~~ · ~~2 §8.3~~ · **3 §6.4 ← decided, unwritten** · ~~4 §11.3~~ · ~~5 §21.1~~ ·
+~~1 §5.1~~ · ~~2 §8.3~~ · ~~3 §6.4~~ · ~~4 §11.3~~ · ~~5 §21.1~~ ·
 ~~6 §19.1~~ · ~~7 §23.2~~ ·
 8 §16.2 · ~~9 §17.2~~ · 10 §19.2 · 11 §11.2 · ~~12 §1.3~~ · 13 §2.2 · ~~14 §3.4~~ · 15 §8.2 ·
 16 §26.2 · ~~17 §22.3~~ · ~~18 §3.3~~ · 19 §23.3 · ~~20 §25.1~~
 
-**Every rank that could be written without a `topicKey` decision has been written, and rank 3's
-decision is now made (§9g) — so there is one queue pop available again.** The struck-through
-entries are the twelve done; the eight after rank 3 still need their decision before a word can
-be written:
+**The first seven ranks are now all written, and every one of the eight that remain needs a
+`topicKey` decision before a word can go on the page.** So the next move is again a choice, not
+a queue pop:
 
-1. **Write `L-6-4-1` — rank 3, ratio 11, the decision is already taken and the section already
-   scoped (§9g).** This is the shortest path to a thirteenth node. If you would rather take an
-   undecided rank instead, the highest left is **rank 8 (§16.2)**, and §13m added a THIRD
-   possible outcome to the §9e check, on top of the two failure modes below: the key's Czech node
+1. **Take a remaining rank and make its `topicKey` decision.** The highest ratio left is
+   **rank 8 (§16.2, reactions of the citric acid cycle, ratio 7.2)**; §13m added a THIRD
+   possible outcome to the §9e check and §9g a fourth, on top of the two failure modes below:
+   the key's Czech node
    may be a thin-but-legitimate partner while the real material sits *scattered* across pathway
    nodes that must **keep** their own keys. In that case re-key nothing — the multi-source keys are
    working joins and breaking one to tidy another is a bad trade — and cross-reference by hand
@@ -184,7 +189,7 @@ be written:
    exactly one card. §12 already contains a finished tryptophan dossier that nothing has been built
    from. Of the three, this is the one the user named as the point of the app.
 ~~3. Clear the 34 UNCHECKED citation rows.~~ **Done 2026-08-07 (§13o) — the audit is now
-   243 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new UNCHECKED row in the same
+   260 OK / 0 ELSEWHERE / 0 UNCHECKED.** Keep it there: close any new UNCHECKED row in the same
    commit that creates it.
 
 Every rank above except 3 needs a `topicKey` decision first — see the two failure modes below.
@@ -253,7 +258,7 @@ Czech book's ch8 (lipids). Unrelated. Never compare `chapter` or `pages` across 
    the template (archive §13j explains its choices). State plainly in `coverageNote` **what the
    Czech node already has**, so nothing is presented as new when it is not.
 5. **Add `lehNotes` on the Czech side** only where revising from the Czech node alone would
-   *mislead in an exam* — `conflict`, `gap` or `cz-stronger`. Eight exist, on seven nodes. **Keep them rare**; a
+   *mislead in an exam* — `conflict`, `gap` or `cz-stronger`. Nine exist, on eight nodes. **Keep them rare**; a
    warning on every node is a warning nobody reads. Quote the book, never yourself. Archive §9f.
 6. **Wire the file into `biochemie_pro/index.html`'s script tags.** The validator checks that
    `index.html` and `data/` agree, so a file nobody loads is a failure, not a silent pass.
@@ -288,7 +293,7 @@ Czech book's ch8 (lipids). Unrelated. Never compare `chapter` or `pages` across 
    node `2-2-6`'s `cnNote` points at Chinese-notes topic 七 (pp.37–40, myoglobin/haemoglobin) when
    its actual subject — protein properties, Sephadex, SDS-PAGE — is topic 八 (pp.41–45). Flagged in
    two earlier sessions, fixed in neither. Archive §2c, §6a.
-3. **Are the eight `lehNotes` right in tone and length?** They are the template for every later
+3. **Are the nine `lehNotes` right in tone and length?** They are the template for every later
    one and the user has not seen them rendered. Two are worth looking at first: `4-1-3-1`, the
    only one correcting a plain factual count (Czech says three DNA polymerases, Lehninger says
    five), and `8-4-4-3`, the only one saying the Czech node is not wrong but *half the picture*

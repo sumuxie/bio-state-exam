@@ -44,14 +44,15 @@ and the master table are in `lehninger_index/` (read its `README.md`); all 207 n
 decisions were answered on 2026-08-06, two of them overturning assumptions this file used to
 make, and the scope of the Lehninger-only material was ruled the same day (§9b).
 
-**§9 step 6 is under way — twelve Lehninger nodes now exist, the depth queue's ready-to-write
-primaries are EXHAUSTED, and the citation backlog is CLEARED: 243 OK / 0 ELSEWHERE / 0 UNCHECKED
+**§9 step 6 is under way — thirteen Lehninger nodes now exist, the depth queue's ready-to-write
+primaries are EXHAUSTED, and the citation backlog is CLEARED: 260 OK / 0 ELSEWHERE / 0 UNCHECKED
 (§13o).** Every `A p.N` in the app data now self-verifies on every run. `L-3-3-1` (§13n, added 2026-08-07) took rank 18, the last of them,
 and also closed the `2-2-6` `cnNote` error that §6a flagged and §2c deferred — the Chinese notes
 were finally opened and topic 八 verified at both ends. Every remaining rank needs a `topicKey`
 decision first (§9c, §9e), and §13m added a third possible outcome to that check. **The first of
-those decisions has been taken: rank 3, §6.4 Examples of Enzymatic Reactions, reuses
-`enzyme-mechanism` and re-keys nothing — decided and scoped in §9g, not yet written.**
+those decisions has been taken AND written: rank 3, §6.4 Examples of Enzymatic Reactions, reuses
+`enzyme-mechanism` and re-keys nothing — decision in §9g, node `L-6-4-1` in §13p, the highest
+ratio in the whole queue and the first node to clear its citation audit on the first run.**
 `L-23-2-1` in
 `biochemie_pro/data/leh_ch23.js` (§13m, added 2026-08-07) covers §23.2 tissue-specific metabolism
 — the organ axis the Czech book never uses — and joins Czech `10-10`. **§13m is the most
@@ -885,13 +886,14 @@ key already exists and the node joins the topic view the moment it is written.
 | 4 | 11.3 Solute Transport across Membranes | 9.5 | `membrane-transport` | ✅ **done — `L-11-3-1`** |
 | 5 | 21.1 Biosynthesis of Fatty Acids and Eicosanoids | 9.1 | `fatty-acid-biosynthesis` | ✅ **done — `L-21-1-1`** |
 | 6 | 19.1 The Mitochondrial Respiratory Chain | 7.5 | `respiratory-chain` | ✅ **done — `L-19-1-1`** |
-| 7 | 23.2 Tissue-Specific Metabolism | 7.3 | `tissue-specific-metabolism` | 1 |
+| 7 | 23.2 Tissue-Specific Metabolism | 7.3 | `tissue-specific-metabolism` | ✅ **done — `L-23-2-1`** |
 | 9 | 17.2 Oxidation of Fatty Acids | 6.5 | `fatty-acid-oxidation` | ✅ **done — `L-17-2-1`** |
 | 12 | 1.3 Physical Foundations | 5.0 | `bioenergetics-basics` | ✅ **done — `L-1-3-1`** |
 | 14 | 3.4 Primary Structure | 5.0 | `protein-primary-structure` | ✅ **done — `L-3-4-1`** |
 | 17 | 22.3 Molecules Derived from Amino Acids | 4.5 | `amino-acid-derived-molecules` | ✅ **done — `L-22-3-1`** |
-| 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | 1 |
-| 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | 2 |
+| 18 | 3.3 Working with Proteins | 4.0 | `working-with-proteins` | ✅ **done — `L-3-3-1`** |
+| 20 | 25.1 DNA Replication | 3.8 | `dna-replication` | ✅ **done — `L-25-1-1`** |
+| 3 | 6.4 Examples of Enzymatic Reactions | 11.0 | `enzyme-mechanism` — **not a primary**, added to this table by the §9g decision | ✅ **done — `L-6-4-1`** |
 
 Ranks 8, 10, 11, 13, 15, 16, 19 are still secondaries with no key. **Rank 3 (§6.4) left that
 group on 2026-08-07 by a third route, and the cheapest one yet: its Czech section's primary key
@@ -1128,8 +1130,8 @@ silently lies) and **§9b** (crop-and-upscale a scan region to read printed numb
 
 ### 9g. Rank 3 (§6.4) — the `topicKey` decision: reuse `enzyme-mechanism`, re-key nothing (2026-08-07)
 
-**The decision: `L-6-4-1` is to be written with `topicKey: "enzyme-mechanism"`, joining Czech
-`3-6`. No new key is created, no Czech node moves, and no `manual_note` is needed — so
+**The decision: `L-6-4-1` was written with `topicKey: "enzyme-mechanism"`, joining Czech
+`3-6` — see §13p for the node itself. No new key is created, no Czech node moves, and no `manual_note` is needed — so
 `step4_topickeys.py` cannot revert this one.** Of the nine ranks still needing a decision, this
 is the only one so far that costs no hand edit to the generated files.
 
@@ -2326,6 +2328,82 @@ UNCHECKED count went to zero, and nothing was ever downgraded.
 names, by machine, and will be re-checked on every future run. It does **not** mean the prose
 around each citation is right — the quote proves the page, not the paraphrase. And `coverage:
 "full"` still over-claims on Lehninger nodes, because figures were never read as images (§15a).
+
+### 13p. The thirteenth node — `L-6-4-1`, §6.4 Examples of Enzymatic Reactions (2026-08-07): the first node that needed a `topicKey` decision and still cost no data change
+
+Rank 3, ratio 11 — the highest ratio in the entire queue that was still unwritten, and the first
+of the nine "needs a decision" ranks to be taken. A pp.203–213, B pp.823–852, in a new
+`biochemie_pro/data/leh_ch6.js`, wired into `index.html`, joining Czech `3-6` through the
+**pre-existing** `topicKey: "enzyme-mechanism"`. The decision that made it writable is §9g; this
+section is about the node.
+
+**The §9e check passed with no data change of any kind — the third node to manage that**, after
+`L-25-1-1` and `L-3-3-1`. Nothing was re-keyed, no key was created, and no `manual_note` was
+added, so unlike the §9e and §13j precedents this node is immune to `step4_topickeys.py`.
+
+**What the node actually adds, in one sentence: the experiments.** Czech `3-6` is a good node —
+active centre, both kinds of specificity, proximity effect, covalent catalysis *already worked
+through chymotrypsin*, general acid-base catalysis with the four residue groups, induced fit. What
+it gives are conclusions. §6.4 gives the evidence for each, and that is the whole shape of this
+node:
+
+| Czech `3-6` asserts | §6.4 supplies |
+|---|---|
+| covalent catalysis via a transiently modified enzyme | the 1954 Hartley–Kilby burst — just under one molecule of p-nitrophenol per enzyme molecule, then a slower steady rate |
+| histidine and serine are reactive active-centre residues | the catalytic triad Ser195–His57–Asp102, and His57's pKa rising from about 7 to above 12 on substrate binding |
+| general acid-base catalysis happens | the bell-shaped pH curve split into kcat and 1/Km halves, each assigned to a named ionisation |
+| induced fit: the enzyme adapts to the substrate | hexokinase closing on glucose, and the oxyanion hole showing that the fit that matters is to the **transition state** |
+| only a true substrate can force the change | **the xylose experiment, which disproves it** — see the `lehNote` below |
+
+**One `lehNote`, kind `conflict`, on `3-6` — the ninth in the data, and the first to contradict a
+piece of *reasoning* rather than a number.** `3-6` closes by deriving inhibition from induced fit:
+only a true substrate has affinity enough to force the conformational change, therefore molecules
+that bind without evoking it act as inhibitors. Lehninger's classic hexokinase experiment
+(A pp.209–210) is the counter-example: xylose, one carbon shorter than glucose, binds where it
+cannot be phosphorylated, induces the active conformation anyway, and the enzyme is then tricked
+into phosphorylating water — so ATP hydrolysis speeds **up**. The Czech corollary is a reasonable
+inference that a named experiment happens to refute, which is exactly §9f's bar: a student holding
+only the Czech framing gives a confidently wrong answer.
+
+**The page range was correct at both ends, for once** — §13l and §13m each found an
+`interpolated` TOC range wrong at one end, so this was checked the same way and held: the §6.4
+heading is physically on A p.203 immediately below SUMMARY 6.3, and SUMMARY 6.4 is on A p.213 with
+§6.5 opening further down the same page. The **per-subheading** allocation in the same TOC file is
+NOT reliable — it puts the antibiotics subheading on A p.211 when it is on p.210.
+
+**Citations: 16 rows, all OK on the first run, no ELSEWHERE and no UNCHECKED.** That is a first,
+and it is not luck — every quote was chosen from a phrase already verified by direct search in A
+*before* the prose was written, and every figure label was located the same way. The whole-project
+audit stands at **260 OK / 0 ELSEWHERE / 0 UNCHECKED**, up 17 rows with the backlog still at zero.
+
+**Four OCR realities met here, three of them new**, all recorded in the node's own `coverageNote`
+so the next reader does not mistake them for bad citations:
+
+- **A flattens exponents.** The billionfold rate enhancement of chymotrypsin and the millionfold
+  glucose-over-water preference of hexokinase both read as bare three-digit numbers in A's text
+  layer. Neither is quoted anywhere in the node; both are given in words.
+- **The word SUMMARY can break apart** — A p.213 reads `sum ma ry 6.4`, so searching for the word
+  scores zero on the page that carries it, while pp.188 and 223 render the same heading intact.
+  Locate a SUMMARY by its section title.
+- **`Ile16` returns no match in A at all**, so that residue is named in prose only and never
+  inside a quote.
+- **A line-breaks `low-barrier hydrogen bond` and uses an en dash in `enzyme–transition state
+  complementarity`**, so neither can be a probe. Both ideas are described without quotation marks,
+  per §13n's rule.
+
+**§5's organic-chemistry rule was the real writing constraint, and the section survived it.** This
+is the most mechanism-heavy material taken from the queue so far. Every idea is anchored on
+something bench-visible: a coloured product appearing in a burst; a bell-shaped curve with two
+shoulders that belong to two different residues; a U-shaped protein pinching shut; a sugar that
+tricks an enzyme into phosphorylating water; a drug that jams a bacterial enzyme so the cell
+bursts. No orbitals, no resonance structures, and the one place where electron density had to be
+mentioned — enolase's carboxyl making the C-2 proton removable — lands immediately on a measurable
+consequence, a lowered pKa.
+
+**Cross-references done by hand, per §13m**, because the worked examples live in nodes that keep
+their own keys: `3-2` (metal-ion roles), `5-1` (the four protease classes in Tab. 5.1, and the
+chymotrypsinogen cascade), `6-1-1` (hexokinase as energetic coupling), `7-8-1` and `7-8-3`
+(hexokinase and enolase as glycolytic steps). Each is named inside the point that touches it.
 
 ---
 
