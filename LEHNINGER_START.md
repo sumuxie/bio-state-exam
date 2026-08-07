@@ -200,23 +200,36 @@ wrong at its start after §25.1. And **A p.674's OCR is unusually bad** (`gi.emi
 `jeleterious`, `1nderstanding`, `3ynthesis`, `fl.ow` on one page) — do not build probes from it.
 A third SUMMARY-break variant lives there too: `summa ry 19. 1`, with the section number split.
 
-### Next pick: no decided-and-unwritten rank remains — choose between two
+## ✅ Rank 11 (§11.2) is decided — reuse `membrane-architecture`, change nothing (2026-08-07)
+
+**`L-11-2-1` takes `topicKey: "membrane-architecture"` and joins Czech `8-5`, `8-5-1`, `8-5-2-1`,
+`8-5-2-2`, `8-5-2-3`.** Third instance of the §9g pattern: `8-5-2-1` already lists fluidity and
+flip-flop, `8-5-2-2` already lists lateral/rotational protein movement — §11.2's first three
+subheadings, named almost word for word inside a node titled "structure". Archive **§9j**. What is
+genuinely new: lipid rafts and membrane curvature/fusion have no Czech counterpart at all.
+
+§11.2 = A pp.377–384, verified correct at both ends. `chapter` 11; `leh_ch11.js` already holds
+`L-11-3-1`, so this is chapter 11's second file — name it `leh_ch11b.js` per the `leh_ch19b.js`
+precedent.
+
+### Next pick: `L-11-2-1` is decided and unwritten — or the entity cards
 
 `lehninger_index/depth_queue.tsv` ranks Lehninger sections by how much more Lehninger says than
 the Czech book. Top 20, with the 15 done ones struck through:
 
 ~~1 §5.1~~ · ~~2 §8.3~~ · ~~3 §6.4~~ · ~~4 §11.3~~ · ~~5 §21.1~~ ·
 ~~6 §19.1~~ · ~~7 §23.2~~ ·
-~~8 §16.2~~ · ~~9 §17.2~~ · ~~10 §19.2~~ · 11 §11.2 · ~~12 §1.3~~ ·
+~~8 §16.2~~ · ~~9 §17.2~~ · ~~10 §19.2~~ · **11 §11.2 ← decided (§9j), unwritten** · ~~12 §1.3~~ ·
 13 §2.2 · ~~14 §3.4~~ · 15 §8.2 ·
 16 §26.2 · ~~17 §22.3~~ · ~~18 §3.3~~ · 19 §23.3 · ~~20 §25.1~~
 
 **The first nine ranks are all written; every one of the seven that remain needs a `topicKey`
 decision before a word can go on the page.** So:
 
-1. **Take a remaining rank and make its `topicKey` decision.** The highest ratio left is
-   **rank 11 (§11.2 Membrane Dynamics, ratio 5.3)**, whose key `membrane-transport` already
-   carries `L-11-3-1`, so it may be another §9g-style no-change decision. The §9e
+1. **Write `L-11-2-1` — rank 11, ratio 5.3, decision taken in §9j and the range verified.**
+   The depth is lipid rafts and membrane curvature/fusion, which the Czech layer has nothing on.
+   If you would rather take an undecided rank, the highest left is **rank 13 (§2.2 Ionization of
+   Water, ratio 5.0)**. The §9e
    check now has four possible outcomes: the two failure modes below, plus **§13m's third** — the
    key's Czech node is a thin-but-legitimate partner while the real material sits *scattered*
    across pathway nodes that must **keep** their own keys, so re-key nothing and cross-reference by
@@ -359,6 +372,7 @@ Search for the `## N.` or `### Na.` heading, read that section only.
 | 9e | **the two-minute check** and the first `topicKey` correction |
 | 9g | **rank 3 (§6.4) decided** — reuse the primary's key, re-key nothing; plus §6.4's verified page range, subheadings, SUMMARY and the four things the Czech layer lacks |
 | 9h | **rank 8 (§16.2) decided** — a new key `citric-acid-cycle`, four Czech nodes moved, `acetyl-coa-production` emptied; plus §16.2's verified page range and what the Czech nodes already cover |
+| 9j | **rank 11 (§11.2) decided** — reuse `membrane-architecture`; what fluidity and flip-flop already teach vs. the new material (rafts, fusion) |
 | 9i | **rank 10 (§19.2) decided** — reuse `respiratory-chain`; plus the corrected page range and A p.674's bad OCR |
 | 13r | **`L-19-2-1`** — the evidence behind a claim the Czech node already makes, and where the non-integral ATP yield comes from |
 | 13q | **`L-16-2-1`** — what a strong Czech chapter leaves out: the chemical argument, the thermodynamic thread, and the ATP-total conflict |

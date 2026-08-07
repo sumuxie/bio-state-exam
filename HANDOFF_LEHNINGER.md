@@ -1329,6 +1329,38 @@ answer. §13m's rule applies — do not break a working join to tidy a name.
   **shuttles**, which are what make the ATP total a range rather than a number — the direct
   continuation of the `lehNote` written on `6-2-2-3` in §13q.
 
+### 9j. Rank 11 (§11.2) — the `topicKey` decision: reuse `membrane-architecture`, change nothing (2026-08-07)
+
+**The decision: `L-11-2-1` takes `topicKey: "membrane-architecture"`, joining Czech `8-5`, `8-5-1`,
+`8-5-2-1`, `8-5-2-2` and `8-5-2-3`. Nothing is created, nothing moves, no `manual_note`.** Third
+instance of the §9g pattern.
+
+**The §9e check, and why it passes cleanly.** Czech §8.5.2 maps to `11.1,11.2`; the primary §11.1
+created `membrane-architecture`. §11.2's own subheadings are, in order: acyl-chain order (i.e.
+FLUIDITY), transbilayer movement (FLIP-FLOP), lateral diffusion of lipids and proteins, lipid
+rafts, membrane curvature and fusion, and surface adhesion. Look at what `8-5-2-1` already lists
+as its own points: `fluidita — určena mastnými kyselinami, sfingosiny, cholesterolem` and
+`překlopný mechanismus (flip-flop) — biologický význam nejasný`. Look at `8-5-2-2`:
+`pohyb proteinů: rotační, stranový; NE překlopný`. **Those are §11.2's first three subheadings,
+named almost word for word**, sitting a few lines deep inside a node whose title says "structure".
+This is not rank 9's shape (substantive material scattered elsewhere) or rank 2's (nothing teaches
+it) or §9h's (the key misdescribes everything it holds) — it is §9g's and §9i's shape exactly: a
+Czech section that maps to two Lehninger sections deepening the *same* material, so the primary's
+key already fits the secondary too.
+
+**What is genuinely new**, so the depth node is not padding: lipid RAFTS (§11.2's fourth
+subheading) have no Czech counterpart at all, and neither does membrane curvature and fusion. The
+node has real content to add even though no re-keying is needed to house it.
+
+#### Measured for the writing session, and the file to create
+
+- **§11.2 = A pp.377–384**, B pp.1403–1431 region (check against `lehninger_toc.tsv`'s B range
+  directly when writing). The interpolated range is **correct at both ends** this time: the §11.2
+  heading and SUMMARY 11.1 share A p.377, and SUMMARY 11.2 is on A p.384 with §11.3 opening on
+  A p.385.
+- `chapter` for this node is Lehninger's 11; `leh_ch11.js` already holds `L-11-3-1` (§11.3), so
+  this is chapter 11's **second** file — follow the `leh_ch19b.js` naming precedent from §13r.
+
 ---
 
 ## 11. Working with this user
