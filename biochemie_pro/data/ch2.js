@@ -20,6 +20,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "pp. 21 and 23 verified against scans; p. 22 (Tab. 2.1, the table of the 20 amino acids, and the rare amino acids) is not in the extracted page set.",
   cnNote: { topic: "四", title: "氨基酸", status: "mapped" },
+  mustKnow: { en: "Every one of the 20 carries the same –COOH/–NH₂ backbone, so everything that tells one amino acid from another, and everything a protein can do, lives in the side chain R — which is why the four-group sort (nonpolar / polar / negative / positive) is the one classification you keep using. And 20 is a genetic-code fact, not a chemical one: over 150 other amino acids exist in cells and never enter a protein, because nothing codes for them.", cn: "20 种氨基酸的主链（–COOH 与 –NH₂）完全一样，所以区分它们的、以及蛋白质能做什么的全部信息，都在侧链 R 上——这就是为什么「非极性／极性／带负电／带正电」这个四分法是你以后一直要用的分类。而「20」是遗传密码的事实，不是化学的事实：细胞里还有 150 多种氨基酸，它们永远进不了蛋白质，因为没有密码子对应它们。" },
   summary: {
     en: "Amino acids are organic substances containing a carboxyl and an amino group. A whole range of them occurs in living organisms, but a small group of 20 holds a special position: they are the basic components of proteins, and they are also the starting substances for the formation of all types of nitrogen compounds important to the organism.",
     cn: "氨基酸是含有羧基和氨基的有机物。生物体内存在一系列这类物质，但其中一小组（20 种）占据特殊地位：它们是蛋白质的基本组成成分，同时也是机体形成各类重要含氮化合物的起始物质。"
@@ -130,6 +131,7 @@ window.BIOCHEM.topics.push(
       en: "TERMINOLOGY: the Czech book says that at high pH “the QUATERNARY ammonium group is deprotonated” (kvartérní amoniová skupina). Lehninger's figure of conjugate acid-base pairs (Fig. 2-15, A p.57) treats glycine as a diprotic acid whose two ionizable groups are the carboxyl, pKa 2.34, and the AMINO group, Ka = 2.51 x 10^-10 M, pKa 9.60 — and section 2.3 opens by calling them “The protonated amino and carboxyl groups of amino acids” (A p.59). What loses a proton at high pH is the protonated alpha-amino group, -NH3+, a PRIMARY ammonium ion. A quaternary ammonium ion carries four substituents on nitrogen and no hydrogen at all, so it has no proton to lose and cannot be deprotonated by definition. Say protonated amino group in the exam.",
       cn: "术语问题：捷克教材说在高 pH 下「季铵基团被去质子化」（kvartérní amoniová skupina）。Lehninger 那张共轭酸碱对的图（Fig. 2-15，A p.57）把甘氨酸当作二元酸处理，其两个可电离基团是羧基（pKa 2.34）和氨基（Ka = 2.51 x 10^-10 M，pKa 9.60）——而 2.3 节开篇即称之为「氨基酸上被质子化的氨基和羧基」（A p.59）。在高 pH 下失去质子的是被质子化的 α-氨基，即 -NH3+，属于伯铵离子。季铵离子的氮上带有四个取代基、完全没有氢，因此根本没有质子可失，按定义就无法被去质子化。口试时请说「被质子化的氨基」。" }
   ],
+  mustKnow: { en: "Charge is a function of pH, and at the isoelectric point the net charge is zero — that single number is why ion-exchange chromatography and electrophoresis can separate amino acids and proteins at all, because at its own pI a molecule stops moving in a field. Separately: of the 20, only Trp, Tyr and Phe absorb in the UV, which is why A₂₈₀ reads protein concentration in seconds without consuming the sample.", cn: "电荷是 pH 的函数，而在等电点 pI 上净电荷为零——就这一个数字，解释了离子交换层析和电泳为什么能分离氨基酸与蛋白质：在自己的 pI 上，分子在电场里就不动了。另一件事：20 种里只有 Trp、Tyr、Phe 吸收紫外，所以 A₂₈₀ 能在几秒内读出蛋白质浓度，而且不消耗样品。" },
   summary: {
     en: "Knowledge of the acid-base properties of amino acids is very important both for understanding the properties of proteins and for analysing amino acids themselves. From the ionic character of amino acids follows the dependence of their structure on pH.",
     cn: "了解氨基酸的酸碱性质，对于认识蛋白质的性质以及分析氨基酸本身都非常重要。由氨基酸的离子特性可推知其结构对 pH 的依赖性。"
@@ -222,6 +224,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "p. 24 verified against the scan; p. 25 (continuation, incl. Obr. 2.2 ninhydrin scheme and side-chain reactions such as the Sanger reaction) is not in the extracted page set.",
   cnNote: { topic: "四", title: "氨基酸", status: "mapped" },
+  mustKnow: { en: "Ninhydrin turns an amino acid blue-violet and proline yellow, so a colourless spot on a chromatogram becomes visible and proline identifies itself by colour alone. The other idea worth keeping is protection: to build a peptide in a chosen order you first block the amino group, because leaving both ends free gives a random polymer rather than a sequence.", cn: "茚三酮把氨基酸显成蓝紫色、把脯氨酸显成黄色，所以层析板上本来无色的斑点变得可见，而脯氨酸单凭颜色就把自己认了出来。另一个值得留下的概念是「保护」：要按指定顺序接出一条肽，必须先把氨基封住——两端都不管，得到的是随机聚合物，不是序列。" },
   summary: {
     en: "The chemical reactions of amino acids involve on the one hand the basic functional groups (–COOH and –NH₂), and on the other hand the side chains of the amino acids.",
     cn: "氨基酸的化学反应一方面涉及基本官能团（–COOH 与 –NH₂），另一方面涉及氨基酸的侧链。"
@@ -287,6 +290,7 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Page verified against the extracted scan.",
   cnNote: { topic: "五", title: "蛋白质一级结构", status: "mapped" },
+  mustKnow: { en: "Because each residue joins through one –NH₂ and one –COOH, the chain is unbranched and its two ends are chemically different — so a sequence has a direction, is always written N-terminus first, and Ala-Gly is not the same molecule as Gly-Ala. The size names (oligopeptide up to 10, polypeptide above 10, protein above 100) are conventions, not chemistry.", cn: "因为每个残基是靠一个 –NH₂ 和一个 –COOH 接上去的，链不分支，而且两端在化学上不同——所以序列是**有方向**的，永远从 N 端开始写，Ala-Gly 和 Gly-Ala 不是同一个分子。而「寡肽 ≤10、多肽 >10、蛋白质 >100」只是约定，不是化学。" },
   summary: {
     en: "In proteins the carboxyl group of one amino acid is joined to the α-amino group of the next amino acid by a PEPTIDE BOND (amide bond). Formation of a dipeptide from two amino acids is accompanied by the loss of a molecule of water.",
     cn: "在蛋白质中，一个氨基酸的羧基通过肽键（酰胺键）与下一个氨基酸的 α-氨基相连。由两个氨基酸形成二肽的过程伴随着一分子水的失去。"
@@ -371,6 +375,7 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans.",
   cnNote: { topic: "五", title: "蛋白质一级结构", status: "mapped" },
+  mustKnow: { en: "The sequence is the whole bridge between DNA and the folded shape, which is why changing one residue can be a disease: in sickle cell anaemia exactly one position changes — Glu to Val at position 6 of the haemoglobin β-chain — and the protein behaves differently. Sequence similarity is evidence of common ancestry, not of similar function.", cn: "序列是从 DNA 通往折叠形状的整座桥，所以改掉一个残基就可能是一种病：镰刀型细胞贫血正是只改了一个位置——血红蛋白 β 链第 6 位的 Glu 换成 Val——蛋白质的行为就变了。另外，序列相似是**共同祖先**的证据，而不是功能相似的证据。" },
   summary: {
     en: "To characterise a peptide chain it is not enough to know the kind and number of amino acid residues that form it and that can be released by hydrolysis — it is necessary to know their ORDER. The order of amino acids covalently bound in a peptide chain, the amino acid sequence, is designated the PRIMARY STRUCTURE.",
     cn: "要表征一条肽链，仅知道构成它、并可经水解释放出来的氨基酸残基的种类和数目是不够的——还必须知道它们的顺序。肽链中共价结合的氨基酸的顺序，即氨基酸序列，被称为一级结构。"
@@ -451,6 +456,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "IMPORTANT GAP: only pp. 27 and 33 are in the extracted page set. Peptide-bond stereochemistry (p.27) and the hydrophobic effect (p.33) below are verified. pp. 28–32 — which carry the α-helix, β-structure, collagen helix and the other stabilising interactions — were NOT extracted; that block is marked separately below as unverified standard-course content.",
   cnNote: { topic: "六", title: "蛋白质三维结构", status: "mapped" },
+  mustKnow: { en: "The peptide bond cannot rotate, so the backbone is not a floppy string but a row of flat rigid plates hinged only at the α-carbons; the chain has far fewer shapes open to it than its length suggests, and that is what makes folding possible at all — the cis form turns up essentially only next to proline. And the hydrophobic effect is driven by water, not by attraction between the chains: burying the nonpolar side chains releases the water that was held in order around them, so the protein ends up with a nonpolar core and the smallest surface it can manage.", cn: "肽键不能旋转，所以主链不是一根软绳，而是一排平的硬板、只在 α 碳处有铰链；链能采取的构象数远少于它的长度所暗示的，而正因如此，折叠才是可能的——cis 构型基本只出现在脯氨酸旁边。另外，疏水效应的推动力是**水**，不是链之间的吸引：把非极性侧链埋起来，就放掉了原本被排列整齐地围在它们周围的水，于是蛋白质最终形成一个非极性核心，并把表面缩到最小。" },
   summary: {
     en: "A characteristic property of proteins is their very precisely defined spatial arrangement. A randomly arranged or extended peptide chain mostly shows no biological activity; the function of a protein is entirely dependent on its CONFORMATION, which is essentially the spatial arrangement of the atoms of the peptide chain.",
     cn: "蛋白质的一个特征性性质是其空间排布极其精确地被规定。随机排布或被拉伸的肽链通常不表现出生物活性；蛋白质的功能完全取决于其构象，而构象本质上就是肽链原子的空间排布。"
@@ -556,6 +562,7 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans.",
   cnNote: { topic: "六", title: "蛋白质三维结构", status: "mapped" },
+  mustKnow: { en: "Secondary and tertiary are separated by distance along the sequence — residues that are neighbours in the chain versus residues far apart in it — not by the kind of interaction involved. That is the definition, and it is the one people misstate. Note also that this textbook counts the placement of disulfide bridges as part of the PRIMARY structure, which not every book does.", cn: "二级与三级结构的分界是**在序列上的距离**——链上彼此相邻的残基，对 链上相隔很远的残基——而不是相互作用的类型。这才是定义，也正是最常被说错的一点。另外注意：本教材把二硫键的位置算进**一级结构**，这一点并非每本书都一致。" },
   summary: {
     en: "In describing the three-dimensional arrangement of proteins FOUR LEVELS are distinguished. Later studies of conformation, function and evolution proved the importance of two further levels of organisation: supersecondary structure and domains.",
     cn: "在描述蛋白质的三维排布时区分四个层次。后来对构象、功能与演化的研究证明还有两个组织层次同样重要：超二级结构与结构域。"
@@ -661,6 +668,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "p. 34 verified against the scan; p. 35 (continuation of the globular-protein section) is not in the extracted page set.",
   cnNote: { topic: "六", title: "蛋白质三维结构", status: "mapped" },
+  mustKnow: { en: "Fibrous versus globular is a division of labour, not a taxonomy: extended chains cross-linked into fibres carry mechanical load, folded globules do the chemistry — and the two are convertible, which is what blood clotting is (soluble globular fibrinogen turning into fibrin). You can meet this outside a book: wetting and heating a hair breaks the hydrogen bonds holding keratin in its α-helix, and the hair stretches to twice its length.", cn: "「纤维状 vs 球状」是分工，不是分类学：伸展并交联成纤维的链承担机械负荷，折叠成球的链做化学——而且两者可以互相转化，血液凝固就是这么一回事（可溶的球状纤维蛋白原变成纤维蛋白）。这件事你在书本外就能碰到：把头发弄湿加热，维持角蛋白 α 螺旋的氢键被打开，头发就能被拉长到原来的两倍。" },
   summary: {
     en: "According to the overall arrangement of the peptide chains, two main types of protein can be distinguished: FIBRILLAR (fibrous) and GLOBULAR. In fibrillar proteins the chains are more or less extended and join mutually by cross-links into macroscopic fibres; in globular proteins the basic chain is folded into a globule.",
     cn: "按肽链的总体排布，可区分两类主要蛋白质：纤维状（丝状）与球状。在纤维状蛋白中，肽链或多或少被拉伸，通过横向交联相互连接成宏观纤维；在球状蛋白中，基本肽链被折叠成球体。"
@@ -762,6 +770,7 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans. The phosvitin figure was re-read from the p.36 image and confirmed as 10² phosphate residues per chain, an exponent the raw OCR rendered as an unreadable '10*'.",
   cnNote: { topic: "七", title: "结构与功能关系", status: "partial" },
+  mustKnow: { en: "Reverse the naming: the SIMPLE proteins are the exception — almost every protein carries a non-peptide component, and that component is usually where the function sits (heme carries the O₂, Zn²⁺ does the catalysis in carboxypeptidase, the sugar on the surface is what a blood group is). Phosphate is the one component that goes on and comes off again, which is why kinases can be used as switches for the cell cycle and for signalling.", cn: "把命名反过来看：**「简单蛋白质」才是例外**——几乎每个蛋白质都带着非肽的组分，而功能通常就落在那个组分上（血红素带 O₂、羧肽酶靠 Zn²⁺ 催化、表面的糖就是血型）。磷酸是唯一一个能装上去又卸下来的组分，所以激酶才能当作开关，用来控制细胞周期和信号传导。" },
   summary: {
     en: "Proteins are sometimes divided into SIMPLE and CONJUGATED: simple proteins yield only amino acids on hydrolysis, i.e. they contain only the peptide component; conjugated proteins contain further components besides amino acids. According to current ideas, non-peptide components are a regular part of the vast majority of proteins — so-called simple proteins are rather the EXCEPTION.",
     cn: "蛋白质有时被分为简单蛋白质与结合蛋白质：简单蛋白质水解后只产生氨基酸，即只含肽组分；结合蛋白质除氨基酸外还含有其他组分。按当前的看法，非肽组分是绝大多数蛋白质的常规组成部分——所谓简单蛋白质反倒是例外。"
@@ -874,6 +883,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "p. 37 verified against the scan (incl. the Svedberg equation and all numeric values). pp. 38–40 — continuation, including denaturation — are not in the extracted page set. CNNOTE CORRECTED 2026-08-07 (HANDOFF_LEHNINGER.md §6a, §2c, §13n): it pointed at Chinese-notes topic 七, which is myoglobin/haemoglobin/sickle cell on notes pp.37–40 and is what L-5-1-1 deepens. Two earlier sessions flagged this and neither fixed it, deliberately — §2c recorded that the fix 'needs the notes' own p.41 heading, which this session did not open', and guessing was refused. The page was opened this time. Notes p.41 carries a highlighted heading reading 八 蛋白质的分离、纯化、表征 (topic 8, separation, purification and characterisation of proteins), and its first item is ① 蛋白质的性质 — literally this node's title, Vlastnosti proteinů. Notes p.46 was rendered and is BLANK, which fixes the topic's end, so topic 八 = pp.41–45 exactly as §6a predicted. The mapping is now measured at both ends rather than inferred.",
   cnNote: { topic: "八", title: "蛋白质的分离、纯化、表征（笔记 pp.41–45；p.41 的标题与首项「蛋白质的性质」于 2026-08-07 直接读图核实，p.46 为空白页，确定该主题的结束）", status: "mapped" },
+  mustKnow: { en: "Proteins run from 10⁴ to 10⁶, too large for the classical ways of measuring a molecular mass, so Mr has to be read off something that scales with size instead — how fast it sinks (ultracentrifuge), how it threads a molecular sieve (gel chromatography), how it moves in a field. The trap: the sedimentation coefficient S rises with mass but is NOT proportional to it, which is why a 30S and a 50S subunit make a 70S ribosome rather than an 80S one.", cn: "蛋白质的 Mr 从 10⁴ 到 10⁶，太大了，经典的分子量测定方法用不上，所以只能改去读某个随大小变化的量——沉降有多快（超速离心）、穿过分子筛有多难（凝胶层析）、在电场里怎么跑。陷阱在这里：沉降系数 S 随质量增大，但**不是正比**，所以 30S 加 50S 得到的是 70S 核糖体，而不是 80S。" },
   summary: {
     en: "The physico-chemical properties of proteins are conditioned partly by their chemical composition and partly by their relative molecular mass. Globular proteins are generally soluble in aqueous salt solutions.",
     cn: "蛋白质的物理化学性质一方面取决于其化学组成，另一方面取决于其相对分子质量。球状蛋白一般可溶于水性盐溶液。"
