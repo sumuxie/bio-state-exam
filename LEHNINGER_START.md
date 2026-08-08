@@ -179,6 +179,24 @@ a glycosidic bond. One keystone term beats three shallow ones.
 `numbers` row because the node states no figure worth memorising. **Never pad it with a number you
 have not read off the page** — that is the §16 rule applied to a new field.
 
+⚠️ **An author `display` rule silently defeats the `hidden` attribute.** `hidden` is only a
+UA-level `display: none`, so *any* rule that sets `display` outranks it and the element can never
+be hidden — with no error anywhere, and with the JS looking completely correct. This was live:
+`.voice-panel { display: grid }` meant the reading-voice panel was **permanently open from the
+day it was built**, and neither the 🔈 button nor a close button could shut it. Fixed globally
+with `[hidden] { display: none !important; }` near the top of `style.css`. **Keep the
+`!important`** — six other elements (`card-stage`, `card-empty`, `quiz-stage`, `quiz-intro`,
+`quiz-result`, `q-next`) are toggled the same way and are safe today only because none of them
+happens to carry a `display` rule yet.
+
+⚠️ **Backticks inside `git commit -m "…"` are command substitution.** In this environment a
+double-quoted `-m` message runs everything in backticks as a shell command and **substitutes the
+empty result**, so every `` `identifier` `` silently vanishes from the message. Commit `73139fe`
+lost every technical term this way and reads as *"The attribute is only a UA-level , so any
+author rule that sets silently outranks it"*. It is the same family as the heredoc-eats-
+backslashes hazard already recorded here: **the command succeeded, it just did not do what it
+said.** Write commit messages without backticks, or use a quoted heredoc.
+
 ⚠️ **`esprima` cannot parse `biochemie_pro/app.js` and never could.** It dies on line 466's
 `/\p{Script=Latin}/u`, which the Python port cannot compile; `HEAD` fails identically, so the
 data-file parse check in this file has never covered `app.js`. **After editing `app.js`, run
