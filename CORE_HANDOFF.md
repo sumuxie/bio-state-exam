@@ -5,7 +5,7 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 | 你要做什么 | 打开 | 现状 |
 |---|---|---|
 | app 功能 | `CORE1_APP.md` | 7 个里做了 4 个 |
-| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **117 个 section 做了 20 个，而且做偏了** |
+| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **117 个 section 做了 21 个**（§9.1 刚补上，前 20 个做偏了） |
 | 结构式 | `CORE3_STRUCTURES.md` | 25 个，目标量级两三百 |
 
 优先级：**CORE2 > CORE3 > CORE1**。CORE2 里有 Ruojin 亲自圈定却一个都没做的 7 个 section；

@@ -13,7 +13,8 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 | depth queue | **85** | Czech 书有对应内容，但 Lehninger 讲得更多 | `lehninger_index/depth_queue.tsv` |
 | Lehninger-only | **32** | Czech 书**完全没有**对应内容 | `lehninger_index/lehninger_only_scope.tsv` |
 
-**已写 20 个 L- 节点 = depth queue 的第 1 名到第 20 名，精确吻合，一个不多一个不少。**
+**已写 21 个 L- 节点。** 其中 20 个 = depth queue 的第 1 名到第 20 名，精确吻合，一个不多一个不少；
+第 21 个是 **`L-9-1-1`（§9.1）**，2026-08-08 补的，是**第一个来自 Lehninger-only 清单的节点**。
 
 ---
 
@@ -29,9 +30,11 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 
 **其他已完成的层：**
 
-- `mustKnow` **230/230，零缺口**（本 session 实测）。207 Czech + 20 Lehninger + 3 entity 全有。
+- `mustKnow` **231/231，零缺口**（本 session 实测）。207 Czech + 21 Lehninger + 3 entity 全有。
 - 3 张 entity 卡：`E-tryptophan` `E-histidine` `E-cysteine`。下一张的测量结论是 `heme`。
-- `topicKey` 63 个，**18 个跨书连接**——这是 pro 存在的意义。
+- `topicKey` **64** 个，**18 个跨书连接**——这是 pro 存在的意义。第 64 个是
+  `recombinant-dna-technology`（`L-9-1-1` 用），**故意是单书 key**：Lehninger-only 的节点没有
+  Czech 节点可连，这是预期行为不是缺陷，后续每个 Lehninger-only 节点都会这样。
 - UI 全部完成：两本书都能渲染、侧栏「分书 / 按主题」切换、「同主题」条、`lehNotes` 块。
   **不需要再建任何东西。**
 - 引用 458 条全 OK，0 ELSEWHERE，0 UNCHECKED。**保持在零**。
@@ -45,16 +48,16 @@ takeaway）· `skipIt` 0（在找到替代 RECAP 的证据来源之前禁止写�
 
 ---
 
-## ⛔ 没做的：Ruojin 亲自圈定的 13 个，一个都没做
+## ⛔ 没做的：Ruojin 亲自圈定的 13 个，做了 1 个
 
-32 个 Lehninger-only section **全部为零**。她在 2026-08-06 对这 32 个逐一裁决过，裁决记在旧
-archive 的 §9b。其中 13 个是明确要做的：
+32 个 Lehninger-only section 里**已做 1 个（§9.1），还剩 31 个**。她在 2026-08-06 对这 32 个
+逐一裁决过，裁决记在旧 archive 的 §9b。其中 13 个是明确要做的：
 
 ### 「主要需要的」7 个（88 印刷页）
 
 | § | A 页码 | 内容 | Czech 层是否已有 |
 |---|---|---|---|
-| **9.1** | 301–316 | 克隆、restriction enzyme、vector、**PCR**、library | ❌ **完全没有** |
+| ~~9.1~~ | 301–316 | 克隆、restriction enzyme、vector、**PCR**、library | ✅ **已做 `L-9-1-1`** |
 | **9.2** | 317–326 | 蛋白功能研究，**CRISPR 在这里** | ❌ **完全没有** |
 | 22.2 | 805–816 | 氨基酸的生物合成 | 仅 `10-2` 出现过一次标题词 |
 | 24.2 | 890–898 | DNA supercoiling | `4-1-3-1` 有涉及 |
@@ -62,14 +65,14 @@ archive 的 §9b。其中 13 个是明确要做的：
 | 25.2 | 930–940 | DNA repair | `4-1-3-1` 有涉及 |
 | 25.3 | 940–956 | DNA recombination | `4-1-2` `4-1-3-1/2` 有涉及 |
 
-**§9.1 和 §9.2 是彻底的空白，本 session 用原始文件 grep 验证过**：Czech 的 10 个数据文件里
+**§9.1 和 §9.2 曾是彻底的空白，本 session 用原始文件 grep 验证过**：Czech 的 10 个数据文件里
 `CRISPR` `Cas9` `PCR` `klonov` `restrikč` `plasmid` `plazmid` `knihovn` `sekvenov` **全部 0 次
-命中**。（ch10 那 10 处 `Sanger` 是胰岛素测序史 Sanger 1953，与分子生物学方法无关。）整个项目
-里 CRISPR 只出现 1 次、PCR 24 次，全在 `leh_ch8.js` 一个文件里，是 L-8-3-1「核酸化学」顺带
-提到的，不构成 §9.1/§9.2 的覆盖。
+命中**。（ch10 那 10 处 `Sanger` 是胰岛素测序史 Sanger 1953，与分子生物学方法无关。）建 `L-9-1-1`
+之前，整个项目里 CRISPR 只出现 1 次、PCR 24 次，全在 `leh_ch8.js` 一个文件里，是 L-8-3-1
+「核酸化学」顺带提到的，不构成 §9.1/§9.2 的覆盖。
 
-**这两个是最高优先级。** 中文笔记有「氨基酸生物合成」（二十六）而 Czech 书没有，与 §22.2 被
-判入是一致的。
+**§9.1 已补（`L-9-1-1`），所以现在的最高优先级是 §9.2 CRISPR。** 注意 §9.1 节点**刻意没有**
+写测序和 CRISPR：这一版把它们放在第 8 章和 §9.2，在 §9.1 正文里 grep 为零，不要混进来。
 
 ### 「merge 进对应 topic 正常展开」6 个（43 页）
 
@@ -113,13 +116,26 @@ archive 的 §9b。其中 13 个是明确要做的：
 
 ## 建议的下一步
 
-1. **§9.2 CRISPR** 和 **§9.1 克隆/PCR/vector/library**——Czech 书零覆盖，她点名要，考试上是
-   真空白。两个各 1 个节点起步。
-2. **§15.3 和 §19.5**——全项目零命中，且属于「merge 进已有 topic」，成本低。
-3. §22.2 氨基酸生物合成，中文笔记有对应专题。
-4. §24.2 / 24.3 / 25.2 / 25.3——Czech 层已有骨架，这里加的是深度，优先级低于上面三档。
+1. ✅ ~~§9.1 克隆/PCR/vector/library~~ —— 已做，`L-9-1-1`。
+2. **§9.2 CRISPR**——现在的最高优先级。Czech 书零覆盖，她点名要，考试上是真空白。
+   A 书 pp.317–326，B 书 pdf pp.1202–1236。可直接照 `leh_ch9.js` 的写法加一个 `L-9-2-1`，
+   `topicKey` 复用 `recombinant-dna-technology` 还是另起一个，写之前先看它内容偏向哪边。
+3. **§15.3 和 §19.5**——全项目零命中，且属于「merge 进已有 topic」，成本低。
+4. §22.2 氨基酸生物合成，中文笔记有对应专题。
+5. §24.2 / 24.3 / 25.2 / 25.3——Czech 层已有骨架，这里加的是深度，优先级低于上面几档。
 
-**Lehninger 那 20 个节点目前都没有 `trace`，这是深度节点上唯一还开着的层。**
+**Lehninger 那 21 个节点目前都没有 `trace`，这是深度节点上唯一还开着的层。**
+
+## 写一个 Lehninger-only 节点的现成模板
+
+`biochemie_pro/data/leh_ch9.js` 是**第一个 Lehninger-only 节点**，照抄它的结构最省事。两个约定
+是它确立的，后续节点请沿用：`czTitle` 以 **`Žádná —`**（捷克语「无」）开头，表示 Czech 书没有
+对应小节；`cnNote.status` 用 **`pending`**，并在 `title` 里**诚实写明为什么没核对**——中文笔记
+是 230 页无文字层的手写扫描件，无法自动检索。
+
+字段规模参考（21 个 Lehninger 节点实测）：`points` 7–20、`terms` 6–15、`quiz` 3–6、`oral` 1、
+`mustKnow` 1。新建数据文件后**别忘了在 `biochemie_pro/index.html` 里加 `<script>` 标签**，
+按章节号排在正确位置——漏了它，节点在磁盘上存在但 app 里根本不加载，而且不报任何错。
 
 ## 写一个 depth 节点前必读
 
