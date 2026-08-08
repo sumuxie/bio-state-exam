@@ -730,6 +730,50 @@
             </div>`;
   }
 
+  /* trace — 追根溯源, asked for in these words: 「这是啥，从哪来，到哪去，家里几口人，
+     人均几亩地，这种追根溯源，免得我看见就一头雾水」. One entry per opaque term the node
+     uses without introducing, so a reader who freezes at the word has somewhere to go.
+
+     Ported from pesbexplain's traceTable(), with three deliberate differences:
+       - it is an ARRAY on the node, not a field inside an explain item, because this app
+         has no explain layer and a node can strand more than one term;
+       - each entry is folded behind its own <details>, because the second half of the
+         same request was 「默认折叠起来，想深挖的时候有，不想看的时候不占地方」;
+       - rows are Chinese prose with technical terms left in English. trace is a
+         comprehension aid (HANDOFF_LEHNINGER.md §3: the Chinese is never scope or depth),
+         so a bilingual pair would double the writing cost for no exam value.
+
+     Every row is individually optional. Do NOT pad `numbers` with a figure you have not
+     read off the page — an absent row is correct, an invented number is not. */
+  const TRACE_ROWS = [
+    ['what',    '这是啥',       'What it is'],
+    ['from',    '从哪来',       'Where it came from'],
+    ['to',      '到哪去',       'Where it leads'],
+    ['family',  '家里几口人',   'What else is in its family'],
+    ['numbers', '人均几亩地',   'The numbers, if any matter']
+  ];
+
+  function traceHtml(t) {
+    const list = t.trace;
+    if (!Array.isArray(list) || !list.length) return '';
+    const cards = list.map(tr => {
+      const rows = TRACE_ROWS
+        .filter(([k]) => tr[k])
+        .map(([k, cn, en]) => `<tr>
+               <th><span class="tr-cn">${cn}</span><span class="tr-en">${esc(en)}</span></th>
+               <td><p>${esc(tr[k])} ${speakBtn(tr[k], 'zh-CN')}</p></td>
+             </tr>`)
+        .join('');
+      if (!rows) return '';
+      return `<details class="trace-card">
+                <summary>追根溯源 <b>${esc(tr.term || '')}</b>
+                  <span class="muted">这是啥 · 从哪来 · 到哪去</span></summary>
+                <table class="trace"><tbody>${rows}</tbody></table>
+              </details>`;
+    }).join('');
+    return cards;
+  }
+
   function coverageNoteHtml(t) {
     if (!t.coverageNote && !t.coverageNoteCn) return '';
     const cn = t.coverageNoteCn;
@@ -974,6 +1018,8 @@
         </div>
 
         ${mustKnowHtml(t)}
+
+        ${traceHtml(t)}
 
         ${lehNotesHtml(t)}
 

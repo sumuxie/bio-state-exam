@@ -590,3 +590,36 @@ details.cov-en > p {
 .must-know .t-cn { font-size: 0.94rem; line-height: 1.7; }
 .must-know .t-en { font-weight: 600; }
 .must-know .t-cn { margin-top: 0.3rem; opacity: 0.95; }
+
+/* trace — 追根溯源. Folded by default so it costs no space until wanted. */
+.trace-card {
+  margin: 0 0 0.9rem;
+  padding: 0 0 0 0.9rem;
+  border-left: 3px dashed var(--line-soft);
+}
+.trace-card > summary {
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--fg-dim);
+  padding: 0.25rem 0;
+}
+.trace-card > summary b { color: var(--accent); font-weight: 650; }
+.trace-card > summary .muted { font-size: 0.72rem; margin-left: 0.4rem; }
+.trace-card[open] > summary { margin-bottom: 0.2rem; }
+
+.trace { width: 100%; border-collapse: collapse; margin: 0.3rem 0 0.5rem; }
+.trace th {
+  text-align: left; vertical-align: top; white-space: nowrap;
+  padding: 0.45rem 0.8rem 0.45rem 0; width: 1%;
+  border-top: 1px solid var(--line-soft);
+}
+.trace td { padding: 0.45rem 0; border-top: 1px solid var(--line-soft); }
+.trace tr:first-child th, .trace tr:first-child td { border-top: none; }
+.tr-cn { display: block; color: var(--accent); font-weight: 650; font-size: 0.88rem; }
+.tr-en { display: block; color: var(--fg-dim); font-size: 0.68rem; font-family: var(--mono); }
+.trace td p { margin: 0; line-height: 1.8; font-size: 0.93rem; }
+@media (max-width: 620px) {
+  .trace, .trace tbody, .trace tr, .trace th, .trace td { display: block; width: auto; }
+  .trace td { padding-top: 0.15rem; }
+  .trace th { border-top: 1px solid var(--line-soft); padding-bottom: 0.1rem; }
+}
