@@ -5,7 +5,7 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 | 你要做什么 | 打开 | 现状 |
 |---|---|---|
 | app 功能 | `CORE1_APP.md` | 7 个里做了 4 个 |
-| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **117 个 section 做了 27 个**；**Ruojin 圈定的 7 个已全部做完** ✅ |
+| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **117 个 section 做了 28 个**；**Ruojin 圈定的 7 个已全部做完** ✅，「merge 进已有 topic」6 个里做完最大的 §28.3 |
 | 结构式 | `CORE3_STRUCTURES.md` | 25 个，目标量级两三百 |
 
 ⚠️ **优先级需要 Ruojin 重新拍板。** 之前的排序是 **CORE2 > CORE3 > CORE1**，理由是 CORE2 里有
@@ -13,9 +13,11 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 
 现在三条线的候选下一步，**成本与收益差别很大**：
 
-- **CORE2**：还剩「merge 进已有 topic」6 个（§15.3 和 §19.5 全项目零命中，成本最低）和
-  「一笔带过」19 个。**都是她说过要做但优先级更低的**，不再是「亲自圈定的缺口」。
-  另有一件：Lehninger 那 27 个节点**全都没有 `trace`**，这是深度层唯一还开着的一层。
+- **CORE2**：「merge 进已有 topic」那 6 个已**逐格重测过**，真缺口只有 3 个，其中**最大的
+  §28.3（17 页）已完成**，还剩 **§19.5（5 页）和 §14.5（8 页）**；另有「一笔带过」19 个。
+  **都是她说过要做但优先级更低的**，不再是「亲自圈定的缺口」。
+  另有两笔债：Lehninger 那 28 个节点**全都没有 `trace`**（深度层唯一还开着的一层）；
+  最早四个 Lehninger-only 节点的引用**至今不在检查器的 571 条里**。
 - **CORE3**：**分母仍然不存在**——没人写过「总共要画多少个」的清单，而且**可见性问题还没修**
   （从首页进去走不到结构式，需要她在三个选项里拍板）。**这条线卡在决策上，不是卡在工作量上。**
 - **CORE1**：剩 3 个舒适性功能，不影响考试。A4（笔记+图片）是唯一能损坏已有用户数据的。
@@ -85,8 +87,8 @@ mustKnow、topicKey），以及 `biochemie_pro/data/` 里每个文件**是否都
 当前基线：`TOTAL: 3`，全部在 `HANDOFF_LEHNINGER.md` 里（一处不闭合的 `**`、一处截断段落、
 一处小节乱序），**是旧文件的历史遗留，不是你弄的**。CORE 四个文件和 staleness 都是 clean。
 
-实测（2026-08-08，写完 `L-24-3-1` 之后）：parse 全部 **35** 个数据文件 **1.9 秒**通过；
-`step5_check` exit 0；`verify_citations` **485 ok / 0 elsewhere / 0 unchecked**；
+实测（2026-08-09，写完 `L-28-3-1` 之后）：parse 全部 **38** 个数据文件通过；
+`step5_check` exit 0，238 topics；`verify_citations` **571 ok / 0 elsewhere / 0 unchecked**；
 `check_structures` 25 个结构 0 失败；`check_links` 7 条 0 dead。全套跑完 **15 秒以内**，
 **没有任何卡住、超时或 loop 的迹象**。
 
@@ -136,7 +138,7 @@ from step5_check import parse_nodes
 | 目录 | 角色 | storage 前缀 |
 |---|---|---|
 | `biochemie_basic/` | **冻结**，她实际在看的那个 | `bio.` |
-| `biochemie_pro/` | 主力训练器，230 节点 | `biopro.` |
+| `biochemie_pro/` | 主力训练器，**238 节点** | `biopro.` |
 | `biochemie_struct/` | 结构式 | `biostruct.` |
 
 线上：`https://sumuxie.github.io/bio-state-exam/biochemie_pro/`
