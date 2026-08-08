@@ -74,11 +74,14 @@ jobs:
       #     not a side effect of adding a deploy assertion.
       - name: Every app directory made it into the artifact
         run: |
-          NOT_PUBLISHED="oral_prep_app"
+          # _site is the staging directory built one step earlier and it also
+          # matches */index.html, so without excluding it this loop looks for
+          # _site/_site/index.html and fails the deploy. It did exactly that.
+          NOT_PUBLISHED="oral_prep_app _site"
           missing=0
           for d in */index.html; do
             app="${d%/index.html}"
-            case " $NOT_PUBLISHED " in *" $app "*) echo "skipped on purpose: $app"; continue;; esac
+            case " $NOT_PUBLISHED " in *" $app "*) echo "skipped: $app"; continue;; esac
             if [ ! -f "_site/$app/index.html" ]; then
               echo "NOT DEPLOYED: $app -- add it to the cp line above"
               missing=1
