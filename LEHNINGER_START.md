@@ -95,25 +95,36 @@ answers an exam question.** The reasoning, so it can be judged rather than inher
   the layer that makes those nodes revisable. Ruojin named which parts she wants: 追根溯源
   (`trace`) and 考点总结 (`takeaway`).
 
-### `mustKnow` — 109 of 230 nodes done (2026-08-08). Next pick not yet chosen.
+### `mustKnow` — 119 of 230 nodes done (2026-08-08). Next pick: see below.
 
 Regenerate this table rather than trusting it; the one-liner is under "Measuring" below.
 
 | ch | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | leh | entity |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | nodes | 6 | 10 | 9 | 18 | 10 | 19 | 42 | 40 | 27 | 26 | 20 | 3 |
-| `mustKnow` | – | – | – | – | – | – | ✅42 | ✅40 | ✅27 | – | – | – |
+| `mustKnow` | – | ✅10 | – | – | – | – | ✅42 | ✅40 | ✅27 | – | – | – |
 
 **ch7 (sugars) and ch8 (lipids) are done** — the two chapters the archive's §5a measures as
 heaviest on organic chemistry, and the ones Ruojin has least foundation for. **ch9 (photosynthesis,
 27 nodes) is now done too**, because it is the one subject on record as having actually been
 examined — a classmate was asked on it. Written and pushed in two batches, `648a427` (9-1..9-14,
-light reactions) and `c5db670` (9-15..9-27, carbon fixation + nitrogen).
+light reactions) and `c5db670` (9-15..9-27, carbon fixation + nitrogen). **ch2 (amino acids and
+proteins, 10 nodes) is done**, `67bf636`.
 
-**No evidence-based next pick has been made yet.** ch1–6 and ch10 are all still at zero. Do not
-silently default to "next chapter number" — the ch7→ch8→ch9 order so far was each time justified
-by a specific measurement (organic load, or a real exam question), and the next pick should be
-too before writing starts.
+**Every pick has to be argued from a measurement — do not default to "next chapter number".**
+The rule that has held four times: rank the remaining chapters by organic-chemistry load per
+1000 words, and let a real exam question override it. Aggregating
+`lehninger_index/cz_organic_load.json` by chapter gives, for the chapters still at zero:
+
+| ch | 6 | 5 | 3 | 10 | 4 | 1 |
+|---|---|---|---|---|---|---|
+| org hits / 1k | 12.7 | 12.0 | 8.6 | 8.1 | 7.4 | 2.2 |
+| nodes | 19 | 10 | 9 | 26 | 18 | 6 |
+
+ch2 was chosen on that ranking (13.9, then the highest) **and** because it holds §2.1.3 at 96
+hits/1k — the third-heaviest section in the whole book, which §5a names as her weakest ground.
+**By the same rule the next pick is ch6 (12.7), then ch5 (12.0)** — but re-run the aggregation
+first, and if a classmate has reported a real exam question since, that outranks it.
 
 The rule that keeps the field worth having, and it is easy to get wrong: **`mustKnow` is NOT a
 summary of the node. It is what you would still want in your head after forgetting the node. If
