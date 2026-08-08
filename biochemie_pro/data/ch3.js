@@ -20,6 +20,7 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans.",
   cnNote: { topic: "九", title: "酶通论——酶的分类与命名 (笔记 pp.47–52)", status: "mapped" },
+  mustKnow: { en: "The six classes sort by the kind of chemistry, not by which molecule is involved — oxidoreductases move electrons, transferases move a group from one molecule to another, hydrolases break a bond with water, and so on. Once you know which of the six an enzyme belongs to, you already know the shape of its systematic name (donor:acceptor-oxidoreductase, for instance) without having memorised it.", cn: "六大类是按化学反应的**类型**分的，不是按牵涉了哪个分子——氧化还原酶搬电子，转移酶把一个基团从一个分子挪到另一个分子，水解酶靠水打断一个键，等等。只要知道一个酶属于六类里的哪一类，你就已经知道它系统命名的形状（比如『供体:受体-氧化还原酶』），不需要死记硬背。" },
   summary: {
     en: "Enzymes are proteins specialised for the catalysis of reactions occurring in living organisms. They are remarkable biomacromolecules with high specificity of action and high catalytic efficiency. Enzymes are divided into SIX MAIN CLASSES according to the reaction they catalyse.",
     cn: "酶是专门用于催化生物体内所进行反应的蛋白质。它们是作用特异性高、催化效率高的非凡生物大分子。酶按其所催化的反应被分为六大类。"
@@ -123,6 +124,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "pp. 42, 43 and 54 verified against the scans — this includes the full Tab. 3.1, which was re-read from the image and corrected against the OCR. pp. 44–53, covering the detailed structures of the individual coenzymes, are not in the extracted page set.",
   cnNote: { topic: "九", title: "酶通论——酶分子结构与辅酶 (笔记 pp.47–52)", status: "mapped" },
+  mustKnow: { en: "A cofactor being thermally stable while the protein part is not is not a side fact — it is why you can boil away an enzyme's activity and still recover the cofactor unchanged, and why a coenzyme can be reused by many different apoenzymes. And most coenzymes are built from vitamins for a reason: the cell cannot synthesise that particular piece of chemistry itself, so it has to import it ready-made.", cn: "辅因子耐热而蛋白质部分不耐热，这不是一个无关紧要的细节——正因如此，你可以把一个酶的活性煮没了，辅因子却原封不动地被回收；也正因如此，同一个辅酶才能被许多不同的脱辅基酶反复使用。而大多数辅酶是由维生素造出来的，这也是有原因的：细胞自己合成不出那一小段特定的化学结构，只能现成地『进口』它。" },
   summary: {
     en: "All enzymes known until recently were of protein nature; research of the last twenty years or so shows that some other types of macromolecule can also have a certain catalytic ability, though so far only the case of one ribonucleic acid is described. The molecule of some enzymes is formed only by a polypeptide chain or chains; the active form of others contains in addition a non-protein component, the COFACTOR.",
     cn: "直到不久前所知的全部酶都是蛋白质性质的；近约二十年的研究表明，某些其他类型的大分子也可能具有一定的催化能力，不过迄今只描述了一种核糖核酸的情形。某些酶的分子仅由一条或多条多肽链构成；另一些酶的活性形式还含有非蛋白质组分，即辅因子。"
@@ -241,6 +243,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "pp. 54 and 57 verified against the scans — including the Lineweaver–Burk form, which the book writes with V_lim and [A]. pp. 55–56, carrying the derivation of the Michaelis–Menten equation itself and the definition of K_m, are not in the extracted page set; the derivation given below is standard course material and should be checked against those pages.",
   cnNote: { topic: "十", title: "酶促反应动力学——米氏方程 (笔记 pp.53–62)", status: "mapped" },
+  mustKnow: { en: "An enzyme reaction is not one step but two — fast, reversible binding, then a slower, irreversible chemical step — and it is the SECOND step, not the binding, that actually limits how fast the whole reaction can go. That is why V_max (this book's V_lim) saturates: past a certain substrate concentration, every enzyme molecule is already busy, and adding more substrate cannot speed anything up further.", cn: "一个酶反应不是一步，而是两步——先是快速、可逆的结合，然后是较慢、不可逆的化学转化——真正限制整个反应能跑多快的，是**第二步**，不是结合本身。这也是为什么 V_max（本书写作 V_lim）会出现饱和：底物浓度过了某个点之后，每一个酶分子都已经在忙了，再加底物也快不了。" },
   summary: {
     en: "From the functional standpoint enzymes can be defined as catalysts of the chemical reactions occurring in organisms. For a substance A to be converted into a product X, the molecules of A must overcome an ENERGY BARRIER — they must be supplied with so-called ACTIVATION ENERGY.",
     cn: "从功能角度看，酶可定义为生物体内所进行化学反应的催化剂。为使物质 A 转变为产物 X，A 的分子必须越过一道能垒——必须获得所谓的活化能。"
@@ -346,6 +349,7 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans, including the reaction schemes.",
   cnNote: { topic: "十", title: "酶促反应动力学——双底物反应 (笔记 pp.53–62)", status: "mapped" },
+  mustKnow: { en: "A two-substrate reaction only needs a ternary complex if the enzyme actually has to hold both substrates at once to make them react. Ping-pong mechanisms exist precisely because some enzymes do not need that — they can process one substrate, get chemically modified in the act, then use that modification to process the second substrate without ever holding both at the same time. Nicotinamide coenzymes are the standard example, because kinetically they simply behave like a second substrate.", cn: "一个双底物反应只有在酶真的必须同时抓住两个底物才能让它们反应时，才需要三元复合物。乒乓机制之所以存在，正是因为有些酶不需要这样——它可以先处理一个底物，在这个过程中自己被化学修饰一下，然后用这个修饰去处理第二个底物，全程从没同时抓住过两个底物。烟酰胺辅酶就是标准例子，因为从动力学上看它就是表现得像第二个底物。" },
   summary: {
     en: "The Michaelis–Menten equation holds for reactions in which a SINGLE substrate is converted. When two substrates take part in the reaction the situation is more complicated. In principle TWO MECHANISMS of two-substrate reactions are possible.",
     cn: "米氏方程适用于只有单一底物发生转变的反应。当有两种底物参与反应时情况更为复杂。原则上双底物反应有两种可能的机制。"
@@ -430,6 +434,7 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Page verified against the extracted scan.",
   cnNote: { topic: "十", title: "酶促反应动力学——酶活性测定 (笔记 pp.53–62)", status: "mapped" },
+  mustKnow: { en: "You can only weigh an enzyme in grams if it is pure and its molecular mass is known — almost never true in practice — so activity, not mass, is what actually gets measured: how much substrate a sample converts per minute. And that measurement only means anything at saturating substrate concentration, where the rate depends purely on how much enzyme is present, not on how much substrate is left to feed it.", cn: "只有在酶是纯品、分子量已知的情况下，才能用克来称量它——实际操作里几乎从不成立——所以真正被测量的是**活性**，而不是质量：一份样品每分钟能转化多少底物。而这个测量只有在底物浓度达到饱和时才有意义，这时反应速率纯粹取决于有多少酶存在，而不取决于还剩多少底物可以喂给它。" },
   summary: {
     en: "The quantity of an enzyme can be expressed in grams or moles as with other substances, but only when working with a PURE enzyme whose molecular mass is known. Because often NEITHER of these assumptions is fulfilled, it is more usual to express the quantity of enzyme by its ACTIVITY.",
     cn: "酶的量可以像其他物质一样以克或摩尔表示，但仅限于处理分子质量已知的纯酶时。由于这两个前提常常都不满足，更常见的做法是用酶的活性来表示其数量。"
@@ -529,6 +534,7 @@ window.BIOCHEM.topics.push(
   coverage: "full",
   coverageNote: "Both pages verified against the extracted scans.",
   cnNote: { topic: "十", title: "酶促反应动力学——pH与温度的影响 (笔记 pp.53–62)", status: "mapped" },
+  mustKnow: { en: "An enzyme's pH optimum need not match the pH it actually experiences inside the cell — and that mismatch is not a flaw, it is one of the cell's own regulatory knobs, since shifting local pH is a cheap way to turn a pathway up or down. Temperature works the same way from two opposing directions: raising it speeds the reaction, but past a critical point it starts unfolding the enzyme — so the observed 'optimum' is really just wherever those two opposite trends cross, not a fixed biological constant.", cn: "一个酶的 pH 最适值不需要和它在细胞里实际遇到的 pH 一致——这个『不匹配』不是缺陷，反而是细胞自己的一个调控旋钮，因为改变局部 pH 是一种廉价的、把某条通路调高或调低的办法。温度的道理类似，只是来自两个相反的方向：升温会加快反应，但过了一个临界点就开始把酶解折叠——所以观察到的『最适温度』只是这两股相反趋势的交叉点，不是一个固定不变的生物学常数。" },
   summary: {
     en: "The activity of most enzymes depends on the concentration of H⁺ in the environment. For most enzymes this dependence has the shape of a CURVE WITH A MAXIMUM; the pH value corresponding to the highest activity is called the pH OPTIMUM.",
     cn: "多数酶的活性取决于环境中 H⁺ 的浓度。对多数酶而言，这一依赖关系呈现为带有极大值的曲线；对应最高活性的 pH 值称为 pH 最适值。"
@@ -624,6 +630,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "pp. 59 and 61 verified against the scans. p. 60, which carries the detailed treatment of COMPETITIVE and uncompetitive inhibition, is not in the extracted page set — the competitive/uncompetitive characteristics below are standard course material and are marked as such.",
   cnNote: { topic: "十", title: "酶促反应动力学——抑制作用 (笔记 pp.53–62)", status: "mapped" },
+  mustKnow: { en: "Whether the Michaelis-Menten equation still applies to an inhibited reaction comes down to one question: is the concentration of active enzyme actually changing? Irreversible inhibitors destroy active enzyme outright, so the equation breaks; reversible inhibitors just shift the equilibrium between bound and free enzyme, so it still holds — which is exactly why reversible inhibition, not irreversible, is what shows up as a clean shift in K_m or V_max on a kinetic plot.", cn: "米氏方程还适不适用于一个被抑制的反应，归结为一个问题：有活性的酶的浓度是不是真的在变？不可逆抑制剂会把有活性的酶彻底破坏掉，所以方程不再成立；可逆抑制剂只是改变了『结合态』和『游离态』酶之间的平衡，所以方程依然成立——这也正是为什么在动力学图上表现为 K_m 或 V_max 干净移动的是可逆抑制，而不是不可逆抑制。" },
   summary: {
     en: "Substances which influence the rate of an enzyme reaction by interacting with the catalyst are called MODULATORS. Those which increase the rate are ACTIVATORS, those which decrease it are INHIBITORS. The discussion deals only with inhibitors, which occur in practice much more often, but all the data hold for activators as well, only in the opposite sense.",
     cn: "通过与催化剂相互作用而影响酶反应速率的物质称为调节物。使速率提高的是激活剂，使速率降低的是抑制剂。以下只讨论抑制剂（它们在实践中出现得频繁得多），但所有内容对激活剂同样成立，只是意义相反。"
@@ -739,6 +746,7 @@ window.BIOCHEM.topics.push(
       en: "The last point of this section — that only a TRUE SUBSTRATE has affinity enough to force the conformational change, and that molecules which bind without evoking it act as INHIBITORS — is disproved by the classic hexokinase experiment. Lehninger 6.4 (A pp.209-210): xylose, one carbon shorter than glucose, binds hexokinase in a position where it CANNOT be phosphorylated, yet the “binding of xylose is sufficient to induce a change in hexokinase” to its active conformation, and the enzyme is then tricked into phosphorylating water — so the rate of ATP hydrolysis goes UP, not down. A non-substrate can induce the change, and the result is a faster side reaction, not inhibition. Lehninger draws the opposite conclusion from the same enzyme: “specificity is observed not in the formation of the ES complex” but in the relative rates of the catalytic steps that follow.",
       cn: "本节最后一点——只有真正的底物才有足够亲和力迫使构象改变，而能结合却不引发构象变化的分子起抑制剂作用——被经典的己糖激酶实验证伪。Lehninger 6.4（A pp.209-210）：木糖比葡萄糖少一个碳，它结合到己糖激酶上的位置使其无法被磷酸化，但其结合足以诱导出活性构象，该酶随即被「骗」去磷酸化水——于是 ATP 水解速率是升高而不是降低。非底物也能诱导构象变化，而结果是一个更快的副反应，不是抑制。Lehninger 从同一个酶得出相反的结论：特异性并不体现在 ES 复合物的形成上，而体现在其后各催化步骤的相对速率上。" }
   ],
+  mustKnow: { en: "The active site is a small region built from amino acids that can sit far apart in the sequence but end up next to each other once the chain folds — so an enzyme's specificity is a property of its three-dimensional shape, not of the sequence read in order. And 'lock and key' is the wrong picture: in induced fit, binding itself distorts both enzyme and substrate toward the transition state, which is exactly why only a true substrate — one that can force that distortion — gets turned into product, while a look-alike that merely binds just sits there as an inhibitor.", cn: "活性中心是一小片区域，由在序列上可能相隔很远、但折叠之后挨在一起的氨基酸组成——所以一个酶的特异性是它三维形状的属性，不是按顺序读出来的序列属性。而『锁和钥匙』这个比喻是错的：在诱导契合里，结合本身就会把酶和底物一起往过渡态的方向扭曲——这正是为什么只有真正的底物（能够引发这种扭曲的分子）才会被转化成产物，而一个只会结合、却引发不了这种扭曲的『相似分子』，就只能作为抑制剂待在那里。" },
   summary: {
     en: "Only PART of the enzyme molecule is responsible for its catalytic ability — the so-called ACTIVE CENTRE. It is that part in which the contact between enzyme and substrate is realised and where the groups responsible for the actual catalysis of the chemical reaction are located.",
     cn: "只有酶分子的一部分负责其催化能力——即所谓的活性中心。它是酶与底物之间实现接触的部位，也是负责化学反应实际催化过程的基团所在之处。"
@@ -856,6 +864,7 @@ window.BIOCHEM.topics.push(
   coverage: "partial",
   coverageNote: "p. 62 verified against the scan, covering the definition of regulatory enzymes and the opening of 3.7.1. pp. 63–65, which continue the allosteric enzymes and cover the covalently modulated enzymes, are not in the extracted page set.",
   cnNote: { topic: "十一", title: "酶的作用机理及酶的调节——调节酶 (笔记 pp.63–76)", status: "mapped" },
+  mustKnow: { en: "An allosteric enzyme is controlled from a site that is not the active site at all, by a metabolite that is often the very END PRODUCT of the pathway the enzyme starts — so the last molecule in a chain reaches all the way back to switch off the first step. That feedback loop is the whole point: it lets a pathway sense its own output and throttle itself without needing any signal from outside the pathway.", cn: "别构酶是被一个根本不在活性中心上的位点控制的，而控制它的代谢物往往正是它自己所启动的那条通路的**终产物**——于是通路里的最后一个分子，能一路反馈回去，关掉第一步。这个反馈环正是整件事的意义所在：它让一条通路能感知自己的产出、自行调节油门，而不需要来自通路之外的任何信号。" },
   summary: {
     en: "All enzymes have properties that can be used to influence their activity in the cell — activity is affected by the pH of the environment, the concentration of substrate or coenzyme, the presence of an inhibitor or activator, and so on. There exist, however, enzymes with SPECIFIC PROPERTIES that PREDESTINE THEM FOR A REGULATORY ROLE in metabolism.",
     cn: "所有酶都具有可被用来影响其细胞内活性的性质——活性受环境 pH、底物或辅酶浓度、抑制剂或激活剂的存在等因素影响。然而，存在一些具有特殊性质的酶，这些性质使它们注定在代谢中承担调节作用。"
