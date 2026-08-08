@@ -591,6 +591,50 @@ details.cov-en > p {
 .must-know .t-en { font-weight: 600; }
 .must-know .t-cn { margin-top: 0.3rem; opacity: 0.95; }
 
+/* ---------------------------------------------------------------- marking
+   Two palettes, not one with opacity. A translucent wash that reads well on
+   the dark theme is invisible under light text, so each theme gets its own. */
+:root {
+  --hl-y: rgba(255, 213, 74, 0.16);  --hl-y-edge: #ffd54a;
+  --hl-g: rgba(126, 231, 135, 0.15); --hl-g-edge: #7ee787;
+  --hl-b: rgba(121, 192, 255, 0.15); --hl-b-edge: #79c0ff;
+  --hl-p: rgba(255, 158, 205, 0.15); --hl-p-edge: #ff9ecd;
+}
+:root[data-theme="light"] {
+  --hl-y: #fff3b0; --hl-y-edge: #e6b800;
+  --hl-g: #d6f5da; --hl-g-edge: #2da44e;
+  --hl-b: #daeeff; --hl-b-edge: #0969da;
+  --hl-p: #ffe0ef; --hl-p-edge: #d63384;
+}
+li.hl-y, .term.hl-y { background: var(--hl-y); border-left: 4px solid var(--hl-y-edge); }
+li.hl-g, .term.hl-g { background: var(--hl-g); border-left: 4px solid var(--hl-g-edge); }
+li.hl-b, .term.hl-b { background: var(--hl-b); border-left: 4px solid var(--hl-b-edge); }
+li.hl-p, .term.hl-p { background: var(--hl-p); border-left: 4px solid var(--hl-p-edge); }
+li[class*="hl-"], .term[class*="hl-"] {
+  padding: 0.5rem 0.7rem; margin-left: -0.2rem; border-radius: 0 6px 6px 0;
+}
+
+.mark-wrap { display: inline-flex; align-items: center; gap: 0.25rem; vertical-align: baseline; }
+.mark-btn {
+  background: none; border: 0; cursor: pointer; padding: 0 0.1rem;
+  font-size: 0.95rem; line-height: 1; opacity: 0.45; transition: transform .12s, opacity .12s;
+}
+.mark-btn:hover { opacity: 1; transform: scale(1.18); }
+.mark-btn.on { opacity: 1; }
+.pen-btn {
+  width: 0.6rem; height: 0.6rem; border-radius: 50%;
+  border: 1px solid var(--line); cursor: pointer; padding: 0;
+}
+.pen-btn[hidden] { display: none; }
+
+.pen-row { display: inline-flex; gap: 0.25rem; align-items: center; margin-right: 0.4rem; }
+.pen-swatch {
+  width: 0.85rem; height: 0.85rem; border-radius: 50%;
+  border: 2px solid transparent; cursor: pointer; padding: 0; opacity: 0.55;
+}
+.pen-swatch:hover { opacity: 1; }
+.pen-swatch.active { opacity: 1; border-color: var(--fg); }
+
 /* trace — 追根溯源. Folded by default so it costs no space until wanted. */
 .trace-card {
   margin: 0 0 0.9rem;

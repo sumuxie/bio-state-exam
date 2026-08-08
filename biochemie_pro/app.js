@@ -234,12 +234,106 @@
     nav:     store.get('nav', 'book'),    // 'book' = linear reading order, 'topic' = by topicKey
     qsrc:    store.get('qsrc', 'core'),   // 'core' | 'bank' | 'terms' -- see allQuestions()
     voice:   store.get('voice', {}),      // 'en' | 'zh' | 'cs' -> chosen voiceURI
-    rate:    store.get('rate', 0.94)      // playback speed, shared by both languages
+    rate:    store.get('rate', 0.94),     // playback speed, shared by both languages
+    marks:   store.get('marks', {}),      // markKey -> pen colour id; see MARKING below
+    pen:     store.get('pen', 'y')        // which colour a NEW star gets
   };
 
   /* ---------------------------------------------------------------- helpers */
   const $  = (sel) => document.querySelector(sel);
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+  /* ------------------------------------------------------------- MARKING
+     Highlighting, ported from pesbexplain. Two decisions there were reached by
+     trying the alternative first, so they are inherited rather than re-derived:
+
+     - It is BINARY with a colour attached, not tri-state. The earlier
+       to-memorise / known / skip lost two states that cost a click each and
+       earned nothing: "known" is what the Leitner boxes already record, and
+       "skip" went unused.
+     - The highlight is a FULL BACKGROUND WASH, not a thin left rule. A
+       highlighter you have to hunt for is not doing its job. The readability
+       cost is real and is what the (parked) 只看必背 filter answers.
+
+     KEY SCHEME, and it differs from PESB on purpose. PESB keys everything by
+     index. Here a TERM is keyed by the app's existing cardKey() instead, so a
+     mark survives the glossary being reordered and so the parked Terms drill
+     can filter on marks without a second key for the same card. That is trap 3
+     in LEHNINGER_START.md applied before it can bite rather than after.
+     Points have no stable identifier at all, so they stay index-based
+     ('<id>:p3', '<id>:g1') and a reordered points list will shift their marks.
+     Accepted, because the data files are append-mostly and a misplaced tick is
+     cheap — unlike a misfiled note, which is why notes will need an anchor. */
+  const PENS = [
+    { id: 'y', hex: '#ffd54a', en: 'Yellow', cn: '黄' },
+    { id: 'g', hex: '#7ee787', en: 'Green',  cn: '绿' },
+    { id: 'b', hex: '#79c0ff', en: 'Blue',   cn: '蓝' },
+    { id: 'p', hex: '#ff9ecd', en: 'Pink',   cn: '粉' }
+  ];
+  const PEN_IDS = PENS.map((p) => p.id);
+  const penHex  = (id) => (PENS.find((x) => x.id === id) || PENS[0]).hex;
+
+  const markOf = (key) => state.marks[key] || '';
+
+  function toggleMark(key) {
+    if (state.marks[key]) delete state.marks[key];
+    else state.marks[key] = state.pen;
+    store.set('marks', state.marks);
+    return state.marks[key] || '';
+  }
+
+  function cyclePen(key) {
+    const cur = state.marks[key];
+    if (!cur) return '';
+    state.marks[key] = PEN_IDS[(PEN_IDS.indexOf(cur) + 1) % PEN_IDS.length];
+    store.set('marks', state.marks);
+    return state.marks[key];
+  }
+
+  /* Two unambiguous buttons rather than one control whose meaning depends on
+     the current pen: the star collects, the dot recolours what is collected. */
+  function markBtn(key) {
+    const m = markOf(key);
+    return `<span class="mark-wrap">
+              <button type="button" class="mark-btn${m ? ' on' : ''}" data-mark="${esc(key)}"
+                title="Collect · 收录" aria-label="Collect">${m ? '⭐' : '☆'}</button>
+              <button type="button" class="pen-btn" data-pen-for="${esc(key)}" ${m ? '' : 'hidden'}
+                title="Change highlighter colour · 换颜色"
+                style="background:${m ? penHex(m) : 'transparent'}" aria-label="Colour"></button>
+            </span>`;
+  }
+
+  function applyMarkClass(el, colour) {
+    if (!el) return;
+    el.className = el.className.replace(/\bhl-[ygbp]\b/g, '').replace(/\s+/g, ' ').trim();
+    if (colour) el.className += ' hl-' + colour;
+  }
+
+  function wireMarks(root) {
+    if (!root) return;
+    root.querySelectorAll('.mark-btn:not([data-wired])').forEach((btn) => {
+      btn.dataset.wired = '1';
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); e.stopPropagation();
+        const colour = toggleMark(btn.dataset.mark);
+        btn.classList.toggle('on', !!colour);
+        btn.textContent = colour ? '⭐' : '☆';
+        const dot = btn.parentNode.querySelector('.pen-btn');
+        if (dot) { dot.hidden = !colour; dot.style.background = colour ? penHex(colour) : 'transparent'; }
+        applyMarkClass(btn.closest('[data-markable]'), colour);
+      });
+    });
+    root.querySelectorAll('.pen-btn:not([data-wired])').forEach((btn) => {
+      btn.dataset.wired = '1';
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); e.stopPropagation();
+        const colour = cyclePen(btn.dataset.penFor);
+        if (!colour) return;
+        btn.style.background = penHex(colour);
+        applyMarkClass(btn.closest('[data-markable]'), colour);
+      });
+    });
+  }
 
   function esc(s) {
     return String(s == null ? '' : s)
@@ -802,6 +896,25 @@
       b.classList.toggle('active', b.dataset.nav === state.nav));
   }
 
+  /* The pen row only chooses the colour for the NEXT star. It deliberately does
+     not repaint anything already collected — that is what the dot beside each
+     mark is for, so a colour is never changed by accident in bulk. */
+  function renderPenRow() {
+    const row = $('#pen-row');
+    if (!row) return;
+    row.innerHTML = PENS.map((p) => `
+      <button type="button" class="pen-swatch${p.id === state.pen ? ' active' : ''}"
+        data-pen="${p.id}" style="background:${p.hex}"
+        title="${p.en} · ${p.cn}" aria-label="${p.en}"></button>`).join('');
+    row.querySelectorAll('.pen-swatch').forEach((b) => {
+      b.addEventListener('click', () => {
+        state.pen = b.dataset.pen;
+        store.set('pen', state.pen);
+        renderPenRow();
+      });
+    });
+  }
+
   function setMode(mode) {
     $$('.mode-btn').forEach((b) => b.classList.toggle('active', b.dataset.mode === mode));
     $$('.panel').forEach((p) => p.classList.toggle('active', p.id === 'panel-' + mode));
@@ -1053,8 +1166,9 @@
       // A read button per point. `cz` deliberately gets none: it is a short
       // anchor term, not a sentence, and the exam is in English
       // (HANDOFF_LEHNINGER.md section 8, decision 2).
-      t.points.forEach((p) => {
-        html += `<li>${p.cz ? `<span class="cz-anchor">${esc(p.cz)}</span>` : ''}${bi(p.en, p.cn)} ${speakPairBtn(p.en, p.cn)}</li>`;
+      t.points.forEach((p, i) => {
+        const k = t.id + ':p' + i, m = markOf(k);
+        html += `<li data-markable class="${m ? 'hl-' + m : ''}">${p.cz ? `<span class="cz-anchor">${esc(p.cz)}</span>` : ''}${bi(p.en, p.cn)} ${speakPairBtn(p.en, p.cn)} ${markBtn(k)}</li>`;
       });
       html += `</ol></section>`;
     }
@@ -1066,7 +1180,10 @@
                  <p class="gap-warn">These pages were missing from the extraction, so the following is standard
                     course material rather than text read off this textbook. Check it against the printed pages.</p>
                  <ol class="points">`;
-      t.gapPoints.forEach((p) => { html += `<li>${bi(p.en, p.cn)}</li>`; });
+      t.gapPoints.forEach((p, i) => {
+        const k = t.id + ':g' + i, m = markOf(k);
+        html += `<li data-markable class="${m ? 'hl-' + m : ''}">${bi(p.en, p.cn)} ${markBtn(k)}</li>`;
+      });
       html += `</ol></section>`;
     }
 
@@ -1074,8 +1191,11 @@
       html += `<section class="block"><h2>Glossary <span class="muted">术语表</span></h2>
                <div class="term-grid">`;
       t.terms.forEach((term) => {
-        html += `<div class="term">
-                   <div class="term-en">${esc(term.en || '')} ${speakBtn(term.en, 'en-US')}</div>
+        // cardKey, not an index — see MARKING. Keeps the mark aligned with the
+        // Leitner card and stable if the glossary is reordered.
+        const k = cardKey(t, term), m = markOf(k);
+        html += `<div class="term${m ? ' hl-' + m : ''}" data-markable>
+                   <div class="term-en">${esc(term.en || '')} ${speakBtn(term.en, 'en-US')} ${markBtn(k)}</div>
                    <div class="term-cn">${esc(term.cn || '')} ${speakBtn(term.cn, 'zh-CN')}</div>
                    ${term.cz ? `<div><span class="cz-anchor">${esc(term.cz)}</span> ${speakBtn(term.cz, 'cs-CZ')}</div>` : ''}
                    <div class="term-def">${bi(term.def_en, term.def_cn)}</div>
@@ -1092,6 +1212,7 @@
              </section></article>`;
 
     body.innerHTML = html;
+    wireMarks(body);
 
     body.querySelector('[data-act="quiz"]').addEventListener('click', () => {
       $('#quiz-scope').value = t.id;
@@ -1440,6 +1561,7 @@
     applyTheme();
     applyLang();
     applyNav();
+    renderPenRow();
 
     document.body.classList.toggle('bionic-on', state.bionic);
     $('#bionic-toggle').classList.toggle('active', state.bionic);
