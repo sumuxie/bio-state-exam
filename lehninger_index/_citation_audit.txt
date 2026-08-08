@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 541 citations -- 49 in a `src` field, 492 written inline in prose
+found 572 citations -- 49 in a `src` field, 523 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -482,6 +482,37 @@ OK        L-26-2-1       A p.980  points[3].en        quote found on [980]
 OK        L-26-2-1       A p.985  points[4].en        quote found on [985]
 OK        L-26-2-1       A p.987  points[5].en        quote found on [987]
 OK        L-26-2-1       A pp.985-986  points[6].en   quote found on [985]
+OK        L-28-3-1       A p.1075  coverageNote       label found on [1075]
+OK        L-28-3-1       A p.1081  coverageNote       label found on [1081]
+OK        L-28-3-1       A p.1083  coverageNote       label found on [1083]
+OK        L-28-3-1       A pp.1092-1093  coverageNote label found on [1092]
+OK        L-28-3-1       A p.1093  coverageNote       quote found on [1093]
+OK        L-28-3-1       A p.1075  points[0].en       quote found on [1075]
+OK        L-28-3-1       A p.1075  points[1].en       quote found on [1075]
+OK        L-28-3-1       A p.1075  points[2].en       label found on [1075]
+OK        L-28-3-1       A p.1076  points[2].en       label found on [1076]
+OK        L-28-3-1       A p.1076  points[3].en       quote found on [1076]
+OK        L-28-3-1       A p.1077  points[3].en       quote found on [1077]
+OK        L-28-3-1       A p.1077  points[4].en       quote found on [1077]
+OK        L-28-3-1       A p.1077  points[5].en       quote found on [1077]
+OK        L-28-3-1       A p.1078  points[6].en       quote found on [1078]
+OK        L-28-3-1       A p.1079  points[7].en       quote found on [1079]
+OK        L-28-3-1       A p.1080  points[7].en       quote found on [1080]
+OK        L-28-3-1       A p.1081  points[8].en       label found on [1081]
+OK        L-28-3-1       A p.1081  points[9].en       quote found on [1081]
+OK        L-28-3-1       A p.1082  points[9].en       quote found on [1082]
+OK        L-28-3-1       A p.1083  points[10].en      quote found on [1083]
+OK        L-28-3-1       A p.1084  points[11].en      quote found on [1084]
+OK        L-28-3-1       A p.1085  points[12].en      quote found on [1085]
+OK        L-28-3-1       A p.1085  points[13].en      quote found on [1085]
+OK        L-28-3-1       A p.1086  points[13].en      quote found on [1086]
+OK        L-28-3-1       A p.1087  points[14].en      quote found on [1087]
+OK        L-28-3-1       A p.1088  points[14].en      quote found on [1088]
+OK        L-28-3-1       A p.1089  points[15].en      quote found on [1089]
+OK        L-28-3-1       A p.1090  points[15].en      quote found on [1090]
+OK        L-28-3-1       A p.1091  points[15].en      quote found on [1091]
+OK        L-28-3-1       A p.1092  points[15].en      quote found on [1092]
+OK        L-28-3-1       A p.1093  points[15].en      quote found on [1093]
 OK        E-tryptophan   A p.71–79, §3.1              quote found on [75]
 OK        E-tryptophan   A p.116–129, §4.3            quote found on [124]
 OK        E-tryptophan   A p.75, §3.1                 quote found on [75]
@@ -546,4 +577,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 540 | ELSEWHERE 0 | UNCHECKED 0
+OK 571 | ELSEWHERE 0 | UNCHECKED 0
