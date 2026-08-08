@@ -5,7 +5,8 @@
 import io, os, re
 
 ROOT = r"C:\Users\Admin\Downloads\bio-state-exam"
-FILES = ["HANDOFF_LEHNINGER.md", "HANDOFF.md", "lehninger_index/README.md"]
+FILES = ["HANDOFF_LEHNINGER.md", "HANDOFF.md", "lehninger_index/README.md",
+         "CORE_HANDOFF.md", "CORE1_APP.md", "CORE2_LEHNINGER.md", "CORE3_STRUCTURES.md"]
 out = io.open(os.path.join(ROOT, "lehninger_index", "_audit.txt"), "w", encoding="utf-8")
 def p(*a): out.write(" ".join(str(x) for x in a) + "\n")
 
@@ -174,6 +175,65 @@ for fn in ("HANDOFF_LEHNINGER.md", "LEHNINGER_START.md"):
         p("  PRESENT TENSE  %s: %s" % (fn, m.group(0)[:96]))
         p("                 counts move with every node -- point at where to look, do not freeze")
         stale += 1
+
+# The four CORE_* files, added 2026-08-08. Until now this checker watched only the files
+# CORE_HANDOFF.md tells every session NOT to read, and ignored the four it tells them to read
+# instead -- so the staleness guard was pointed at the archive while the live entry point drifted
+# unchecked. That is exactly backwards. `live` was computed above; reuse it.
+#
+# Only counts that MUST track the data are checked. CORE2's prose deliberately contains historical
+# numbers ("前 20 个", "第 64-67 个"), so the patterns below are anchored to the current-state
+# sentences and nothing else.
+CORE_COUNTS = [
+    ("CORE_HANDOFF.md",   r"117 个 section 做了 (\d+) 个",      "lehninger"),
+    ("CORE2_LEHNINGER.md", r"\*\*已写 (\d+) 个 L- 节点",          "lehninger"),
+    ("CORE2_LEHNINGER.md", r"`mustKnow` \*\*(\d+)/\d+，零缺口",   "topics"),
+    ("CORE2_LEHNINGER.md", r"`topicKey` \*\*(\d+)\*\* 个",        "topicKeys"),
+]
+try:
+    for fn, pat, key in CORE_COUNTS:
+        txt = io.open(os.path.join(ROOT, fn), encoding="utf-8").read()
+        m = re.search(pat, txt)
+        if not m:
+            p("  COUNT MISSING  %s no longer states %s (pattern %r)" % (fn, key, pat))
+            stale += 1
+        elif int(m.group(1)) != live[key]:
+            p("  COUNT STALE    %s says %s=%s, live is %d"
+              % (fn, key, m.group(1), live[key]))
+            stale += 1
+except NameError:
+    p("  CORE counts not checked -- live figures unavailable"); stale += 1
+
+# CORE_HANDOFF.md is the entry point, so the thing that must never rot is its own claim about
+# how big the files it forbids are. A session that reads "302 KB" and skips the archive is
+# behaving correctly; one that reads an understated number may decide to open it.
+core = io.open(os.path.join(ROOT, "CORE_HANDOFF.md"), encoding="utf-8").read()
+for fn, pat in (("HANDOFF_LEHNINGER.md", r"`HANDOFF_LEHNINGER\.md` (\d+) KB"),
+                ("HANDOFF.md", r"`HANDOFF\.md` (\d+) KB")):
+    real = os.path.getsize(os.path.join(ROOT, fn)) // 1024
+    m = re.search(pat, core)
+    if not m:
+        p("  SIZE CLAIM MISSING in CORE_HANDOFF.md for %s" % fn); stale += 1
+    elif abs(int(m.group(1)) - real) > 5:
+        p("  SIZE STALE   CORE_HANDOFF.md says %s is %s KB, actually %d KB"
+          % (fn, m.group(1), real)); stale += 1
+
+# Every data file on disk must have a <script> tag, or the node exists and silently never loads.
+# This is the trap CORE2 warns about in prose; warning about it is not the same as catching it.
+try:
+    import glob as _glob
+    html_src = io.open(os.path.join(ROOT, "biochemie_pro", "index.html"), encoding="utf-8").read()
+    tagged = set(re.findall(r'<script src="data/([^"]+\.js)"', html_src))
+    on_disk = {os.path.basename(f)
+               for f in _glob.glob(os.path.join(ROOT, "biochemie_pro", "data", "*.js"))}
+    for miss in sorted(on_disk - tagged):
+        p("  NOT LOADED     biochemie_pro/data/%s has no <script> tag in index.html" % miss)
+        stale += 1
+    for ghost in sorted(tagged - on_disk):
+        p("  MISSING FILE   index.html loads data/%s, which is not on disk" % ghost)
+        stale += 1
+except Exception as e:
+    p("  could not cross-check index.html against data/: %s" % e); stale += 1
 
 if not stale: p("  clean")
 p("")

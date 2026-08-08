@@ -1,12 +1,23 @@
-# START HERE
+# START HERE — ⛔ SUPERSEDED, 2026-08-08
 
-**Read this file, then start work. Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 301 KB
-≈ 69k tokens and reading it burns the whole session. It is an archive you **grep by section
-number**; the index is at the bottom of this page. `HANDOFF.md` (68 KB, the Czech app) is the
-same: grep, never read whole. Both sizes are re-checked by `audit_handoff.py`.
+> # This is no longer the entry point. Open [`CORE_HANDOFF.md`](CORE_HANDOFF.md).
+>
+> The work was split into three tracks with a file each — `CORE1_APP.md`, `CORE2_LEHNINGER.md`,
+> `CORE3_STRUCTURES.md` — and `CORE_HANDOFF.md` routes between them. **Read only the one track
+> you are working on.** This file predates that split; everything below it that is still true
+> has been carried across, and where the two disagree, **CORE wins**.
+>
+> It is kept because its per-node history and its archive index are not duplicated anywhere else.
+> **Grep it, do not read it.** The title above says START HERE only because renaming the file
+> would break the links pointing at it.
 
-**Corpus.** The layers run over **230** nodes (207 Czech + 20 lehninger + 3 entity), grouped
-under **63** distinct `topicKey` values. Exactly 18 keys join both books — that join is what
+**Do NOT read `HANDOFF_LEHNINGER.md` in full** — it is 302 KB ≈ 69k tokens and reading it burns
+the whole session. It is an archive you **grep by section number**; the index is at the bottom of
+this page. `HANDOFF.md` (68 KB, the Czech app) is the same: grep, never read whole. Both sizes
+are re-checked by `audit_handoff.py`.
+
+**Corpus.** The layers run over **235** nodes (207 Czech + 25 lehninger + 3 entity), grouped
+under **68** distinct `topicKey` values. Exactly 18 keys join both books — that join is what
 `biochemie_pro` exists to show. `audit_handoff.py` re-checks these four numbers against the live
 data, so it complains if they drift.
 
