@@ -103,14 +103,14 @@ answers an exam question.** The reasoning, so it can be judged rather than inher
   the layer that makes those nodes revisable. Ruojin named which parts she wants: 追根溯源
   (`trace`) and 考点总结 (`takeaway`).
 
-### `mustKnow` — 183 of 230 nodes done (2026-08-08). Next pick: ch4 (7.4).
+### `mustKnow` — 201 of 230 nodes done (2026-08-08). Next pick: ch1 (2.2) — last Czech chapter.
 
 Regenerate this table rather than trusting it; the one-liner is under "Measuring" below.
 
 | ch | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | leh | entity |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | nodes | 6 | 10 | 9 | 18 | 10 | 19 | 42 | 40 | 27 | 26 | 20 | 3 |
-| `mustKnow` | – | ✅10 | ✅9 | – | ✅10 | ✅19 | ✅42 | ✅40 | ✅27 | ✅26 | – | – |
+| `mustKnow` | – | ✅10 | ✅9 | ✅18 | ✅10 | ✅19 | ✅42 | ✅40 | ✅27 | ✅26 | – | – |
 
 **ch7 (sugars) and ch8 (lipids) are done** — the two chapters the archive's §5a measures as
 heaviest on organic chemistry, and the ones Ruojin has least foundation for. **ch9 (photosynthesis,
@@ -120,24 +120,20 @@ light reactions) and `c5db670` (9-15..9-27, carbon fixation + nitrogen). **ch2 (
 proteins, 10 nodes) is done**, `67bf636`. **ch6 (bioenergetics, 19 nodes) is done**, `1f5c106`
 (6-1..6-2-2-4) then `43d1aca` (6-2-3..6-3-3, completes the chapter). **ch5 (protein metabolism
 and amino acid interconversion, 10 nodes) is done**, `85a2c9e`. **ch3 (enzymes, 9 nodes) is
-done**, `8fc4d04`. **ch10 (intermediary metabolism and regulation, 26 nodes) is now done too**,
-`29be2c0` (10-1..10-13) then `bae01aa` (10-14..10-26, completes the chapter).
+done**, `8fc4d04`. **ch10 (intermediary metabolism and regulation, 26 nodes) is done**, `29be2c0`
+(10-1..10-13) then `bae01aa` (10-14..10-26, completes the chapter). **ch4 (nucleic acids and
+protein synthesis, 18 nodes) is now done too**, `63c1779` (4-1..4-1-5) then `a4a1e22`
+(4-2-1..4-3-3, completes the chapter).
 
 **Every pick has to be argued from a measurement — do not default to "next chapter number".**
-The rule that has held eight times: rank the remaining chapters by organic-chemistry load per
-1000 words, and let a real exam question override it. Aggregating
-`lehninger_index/cz_organic_load.json` by chapter gives, for the chapters still at zero:
-
-| ch | 4 | 1 |
-|---|---|---|
-| org hits / 1k | 7.4 | 2.2 |
-| nodes | 18 | 6 |
-
-**By this rule the next pick is ch4 (7.4), then ch1 (2.2, by far the lowest of all ten
-chapters) last** — but re-run the aggregation first, and if a classmate has reported a real exam
-question since, that outranks it. Once ch4 and ch1 are done, all 207 Czech nodes will have
-`mustKnow`, and the only remaining gap will be the 20 Lehninger depth nodes and the 3 entity
-cards.
+The rule that has held nine times: rank the remaining chapters by organic-chemistry load per
+1000 words, and let a real exam question override it. Only ch1 remains of the Czech layer
+(6 nodes, 2.2 hits/1k — by a wide margin the lowest of all ten chapters), so **ch1 is next by
+elimination as much as by the ranking.** Once it is done, all 207 Czech nodes will carry
+`mustKnow`, and only the 20 Lehninger depth nodes and 3 entity cards will remain — at which point
+this whole priority call should be revisited with Ruojin rather than silently extended to them.
+Re-run the aggregation first if picking anything other than ch1, and if a classmate has reported a
+real exam question since, that outranks it.
 
 The rule that keeps the field worth having, and it is easy to get wrong: **`mustKnow` is NOT a
 summary of the node. It is what you would still want in your head after forgetting the node. If
