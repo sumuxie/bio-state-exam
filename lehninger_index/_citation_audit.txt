@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 487 citations -- 49 in a `src` field, 438 written inline in prose
+found 486 citations -- 49 in a `src` field, 437 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -344,12 +344,10 @@ OK        L-23-3-1       A p.862  quiz[1].why_en      quote found on [862]
 OK        L-23-3-1       A p.863  quiz[1].why_en      label found on [863]
 OK        L-23-3-1       A p.866  quiz[2].answer_en   quote found on [866]
 OK        L-24-3-1       A pp.902-905  coverageNote   label found on [902]
-UNCHECKED L-24-3-1       A p.906  coverageNote        probe not found even +-40 pages: 'box 24-2'
-ELSEWHERE L-24-3-1       A p.907  coverageNote        label is actually on [904]  <-- FIX THE CITATION
-             probe: 'box 24-3'
-UNCHECKED L-24-3-1       A p.910  coverageNote        no searchable phrase -- verify by hand
-UNCHECKED L-24-3-1       A p.908  coverageNote        no searchable phrase -- verify by hand
-UNCHECKED L-24-3-1       A p.898  points[0].en        no searchable phrase -- verify by hand
+OK        L-24-3-1       A p.906  coverageNote        quote found on [906]
+OK        L-24-3-1       A pp.904-907  coverageNote   label found on [904]
+OK        L-24-3-1       A p.910  coverageNote        label found on [910]
+OK        L-24-3-1       A p.898  points[0].en        quote found on [898]
 OK        L-24-3-1       A p.899  points[0].en        label found on [899]
 OK        L-24-3-1       A p.899  points[1].en        quote found on [899]
 OK        L-24-3-1       A p.900  points[2].en        label found on [900]
@@ -360,16 +358,14 @@ OK        L-24-3-1       A p.902  points[4].en        label found on [902]
 OK        L-24-3-1       A p.901  points[5].en        quote found on [901]
 OK        L-24-3-1       A p.902  points[5].en        quote found on [902]
 OK        L-24-3-1       A p.904  points[6].en        quote found on [904]
-UNCHECKED L-24-3-1       A p.905  points[6].en        no probe of its own -- the only quote in this field
-             already proved another citation in it (found on [904]). Verify by hand.
+OK        L-24-3-1       A p.905  points[6].en        quote found on [905]
 OK        L-24-3-1       A p.902  points[7].en        quote found on [902]
 OK        L-24-3-1       A p.906  points[8].en        quote found on [906]
 OK        L-24-3-1       A p.903  points[9].en        quote found on [903]
 OK        L-24-3-1       A p.903  points[10].en       quote found on [903]
 OK        L-24-3-1       A p.907  points[10].en       quote found on [907]
 OK        L-24-3-1       A p.904  points[10].en       quote found on [904]
-UNCHECKED L-24-3-1       A p.905  points[10].en       no probe of its own -- the only quote in this field
-             already proved another citation in it (found on [903]). Verify by hand.
+OK        L-24-3-1       A p.905  points[10].en       quote found on [905]
 OK        L-24-3-1       A p.908  points[11].en       quote found on [908]
 OK        L-24-3-1       A p.909  points[11].en       quote found on [909]
 OK        L-24-3-1       A p.909  points[12].en       quote found on [909]
@@ -495,7 +491,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 479 | ELSEWHERE 1 | UNCHECKED 6
-
-ELSEWHERE means the quote is real but the page number is wrong. Fix the citation,
-not the quote. Three such errors were found the first time this ran (2026-08-06).
+OK 485 | ELSEWHERE 0 | UNCHECKED 0
