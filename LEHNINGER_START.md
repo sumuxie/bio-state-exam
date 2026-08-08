@@ -147,6 +147,29 @@ because its reasoning is still the record of why the questions existed.
   comprehension aid and never scope or depth (§3), so bilingual rows would double the cost for
   no exam value. This is the one place the app deliberately breaks its EN-primary convention.
 
+### `trace` rollout — driven by what Ruojin has actually studied (2026-08-08)
+
+She named what she has covered, and **that list is now the priority order**, ahead of the
+organic-load rule that drove `mustKnow`. Her verdict on the first cards: **开头的先看懂卡我觉得
+特别好** — so lead each chapter with them rather than sprinkling them.
+
+| 她学过的 | ch | nodes | `trace` |
+|---|---|---|---|
+| 氨基酸 · 蛋白质（共价结构 / 三维结构 / 分离纯化表征） | ch2 | 10 | ✅ 4 |
+| 酶（通论 / 动力学 / 作用机理和调节）· 维生素和辅酶（在 `3-2`） | ch3 | 9 | ✅ 3 |
+| 核酸结构 · 物理化学性质 | ch4 | 18 | — **next** |
+| 生物能学 · TCA（`6-2-2-*`） | ch6 | 19 | — |
+| 代谢总论 | ch10 | 26 | — |
+| EMP 糖酵解（`7-8-*`） | ch7 | 42 | 1 (`7-1-3-1`) |
+
+⚠️ **`研究方法` is a real gap and is NOT in the Czech book.** She listed it among what she has
+studied; `ch4`'s 18 nodes contain no methods section at all, and the reason is that **she studied
+it from her Chinese notes**, not from the Czech textbook. Recorded rather than acted on, per her
+instruction (*你先标记 后续可以加点内容*). Judgement, for whoever picks this up: §3 says the Czech
+book sets scope and the notes never do, so this is **low priority** — but "not in the Czech book"
+means "the department does not teach it as a section", not "it cannot be asked". **A classmate's
+report of a real exam question would overturn this immediately.**
+
 **Which term earns a table.** The one a reader freezes at, and preferably the one the rest of the
 node depends on. `7-1-3-1` got `hemiacetal` because closing the ring is what makes C-1 a new
 asymmetric carbon → which is where α/β anomers come from → and substituting its OH is what makes
