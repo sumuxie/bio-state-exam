@@ -25,11 +25,31 @@ times per session, and which is **not** caused by anything you or it did wrong �
 
 > 继续
 
-That recovers it; 8 such errors were recovered that way in one session that still finished three
-nodes. **Do not switch models** — measured twice, it does not help. The cause is an environmental
-classifier with a hazard rate that rises with session length, not this project's vocabulary (that
-hypothesis was tested and disproven — archive has the measurements). The operational answer is
-**commit and push after every batch**, which is why nothing has ever been lost to it.
+That recovers it. The operational answer is **commit and push after every batch**, which is why
+nothing has ever been lost to it — ch7, ch8 and ch9 were all written across sessions that tripped
+repeatedly, and every finished batch survived.
+
+**Do not spend session time diagnosing this, and above all do not dump transcripts to investigate
+it.** Measured 2026-08-08 across the recent transcripts:
+
+- **The two kinds are different.** `model_refusal_fallback` switches model and retries by itself —
+  you may not even notice. `model_refusal_no_fallback` is the hard stop that needs `继续`. The
+  hard stop is the large majority.
+- **Model-switching is not a lever you control.** The harness already auto-switches (Fable 5 →
+  Opus 5 observed repeatedly). All three models trip. An earlier version of this file said "do not
+  switch models"; that is moot rather than wrong — nothing is being asked of you either way.
+- ⚠️ **Investigating the trips re-triggers them.** Reading old transcripts pulls the previous
+  refusal text back into context, and sessions that did this tripped again immediately afterwards.
+  Two separate sessions burned most of their window this way and produced no content. **The
+  cause is not diagnosable from inside a session; stop and write nodes instead.**
+- ⚠️ **Do not trust per-session trip counts, including any quoted in the archive.** Resumed or
+  forked sessions each get their own `.jsonl` carrying a *copy* of the shared history, so one trip
+  appears in four transcripts. Four "independent sessions" that each first-tripped at entry 282
+  turned out to be one conversation, verified by hashing the first prompt. Any earlier count here
+  or in the archive is inflated by roughly that factor. A scan that counts the string
+  `safeguards flagged` is also counting its own diagnostic output — filter on the harness's
+  `type=system, subtype=model_refusal_*` records instead. Same failure as the `check_strings.py`
+  bug: the scan ran, it just was not scanning what it claimed to be.
 
 ⚠️ **After any interruption mid-write, check the file parses before building on it** — one trip
 truncated a `Write` inside a string literal:
