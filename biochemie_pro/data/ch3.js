@@ -649,6 +649,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "pp. 59 and 61 verified against the scans. p. 60, which carries the detailed treatment of COMPETITIVE and uncompetitive inhibition, is not in the extracted page set — the competitive/uncompetitive characteristics below are standard course material and are marked as such.",
   cnNote: { topic: "十", title: "酶促反应动力学——抑制作用 (笔记 pp.53–62)", status: "mapped" },
   mustKnow: { en: "Whether the Michaelis-Menten equation still applies to an inhibited reaction comes down to one question: is the concentration of active enzyme actually changing? Irreversible inhibitors destroy active enzyme outright, so the equation breaks; reversible inhibitors just shift the equilibrium between bound and free enzyme, so it still holds — which is exactly why reversible inhibition, not irreversible, is what shows up as a clean shift in K_m or V_max on a kinetic plot.", cn: "米氏方程还适不适用于一个被抑制的反应，归结为一个问题：有活性的酶的浓度是不是真的在变？不可逆抑制剂会把有活性的酶彻底破坏掉，所以方程不再成立；可逆抑制剂只是改变了『结合态』和『游离态』酶之间的平衡，所以方程依然成立——这也正是为什么在动力学图上表现为 K_m 或 V_max 干净移动的是可逆抑制，而不是不可逆抑制。" },
+  trace: [
+    {
+      term: "reversible / irreversible inhibition 可逆与不可逆抑制",
+      what: "两类抑制的分界，不在「结合得牢不牢」这种模糊感觉上，而在一个能一句话判定的问题上：**有活性的酶，数量是不是真的变少了？**",
+      from: "为什么这么问就能分开？不可逆抑制剂多半是**共价地**结死在酶上，把功能基团直接改掉——那个酶就废了，从此不在场，等于被从队伍里除名。可逆抑制剂只靠弱相互作用贴一下，贴得上也掉得下来，来回换个不停——所以任何时刻它只是让酶在「结合态」和「游离态」之间有个平衡，酶一个都没少。",
+      to: "这一条直接决定**米氏方程还能不能用**，而这正是考点。不可逆抑制下，有活性的酶越来越少，方程的前提塌了，不成立；可逆抑制下酶的总量没变，方程照样成立。所以反过来：**在动力学图上能看到 K_m 或 V_max 干净地平移的，一定是可逆抑制**。看见干净的位移，类别就已经确定了。",
+      family: "可逆抑制按动力学表现还能再分：competitive（竞争性）、non-competitive（非竞争性——教材特别指出它们多半作用在活性中心**以外**的功能基团上）、mixed（混合型）、uncompetitive（反竞争性）。两类抑制各有各的用处：不可逆抑制被拿来研究酶的结构，某些化学战剂的作用机制正属于此类；可逆抑制则是中间代谢调控的重要手段，也是许多药物起效的基础。"
+    }
+  ],
   summary: {
     en: "Substances which influence the rate of an enzyme reaction by interacting with the catalyst are called MODULATORS. Those which increase the rate are ACTIVATORS, those which decrease it are INHIBITORS. The discussion deals only with inhibitors, which occur in practice much more often, but all the data hold for activators as well, only in the opposite sense.",
     cn: "通过与催化剂相互作用而影响酶反应速率的物质称为调节物。使速率提高的是激活剂，使速率降低的是抑制剂。以下只讨论抑制剂（它们在实践中出现得频繁得多），但所有内容对激活剂同样成立，只是意义相反。"
@@ -765,6 +774,15 @@ window.BIOCHEM.topics.push(
       cn: "本节最后一点——只有真正的底物才有足够亲和力迫使构象改变，而能结合却不引发构象变化的分子起抑制剂作用——被经典的己糖激酶实验证伪。Lehninger 6.4（A pp.209-210）：木糖比葡萄糖少一个碳，它结合到己糖激酶上的位置使其无法被磷酸化，但其结合足以诱导出活性构象，该酶随即被「骗」去磷酸化水——于是 ATP 水解速率是升高而不是降低。非底物也能诱导构象变化，而结果是一个更快的副反应，不是抑制。Lehninger 从同一个酶得出相反的结论：特异性并不体现在 ES 复合物的形成上，而体现在其后各催化步骤的相对速率上。" }
   ],
   mustKnow: { en: "The active site is a small region built from amino acids that can sit far apart in the sequence but end up next to each other once the chain folds — so an enzyme's specificity is a property of its three-dimensional shape, not of the sequence read in order. And 'lock and key' is the wrong picture: in induced fit, binding itself distorts both enzyme and substrate toward the transition state, which is exactly why only a true substrate — one that can force that distortion — gets turned into product, while a look-alike that merely binds just sits there as an inhibitor.", cn: "活性中心是一小片区域，由在序列上可能相隔很远、但折叠之后挨在一起的氨基酸组成——所以一个酶的特异性是它三维形状的属性，不是按顺序读出来的序列属性。而『锁和钥匙』这个比喻是错的：在诱导契合里，结合本身就会把酶和底物一起往过渡态的方向扭曲——这正是为什么只有真正的底物（能够引发这种扭曲的分子）才会被转化成产物，而一个只会结合、却引发不了这种扭曲的『相似分子』，就只能作为抑制剂待在那里。" },
+  trace: [
+    {
+      term: "induced fit 诱导契合",
+      what: "底物结合到酶上的那一刻，**两边都会变形**——酶被撑开或夹紧，底物也被扭了一下。不是两块预先做好的拼图咔哒一声对上就完事。",
+      from: "你多半先学过「锁和钥匙」。教材直接说那个比喻是错的，而它错在哪里才是关键：锁和钥匙暗示双方形状固定、严丝合缝就够了——可这只解释了酶为什么**抓得住**特定的底物，完全没有解释酶为什么能让反应**跑得快**。而加速才是酶存在的理由。一个只会精准结合的口袋，是个容器，不是个催化剂。",
+      to: "诱导契合给出的答案是：**结合这个动作本身，就把酶和底物一起往过渡态的方向扭**——而越过渡态越容易反应，这一扭就是催化的核心。它还顺手解释了一个现象：有些分子长得和底物很像，结合上去却只能当抑制剂杵在那儿。原因是它们**引发不了那个扭曲**——抓得住，但推不动。",
+      family: "活性中心还有一个容易被略过的性质：它在三级结构里只是一小片区域，而组成它的那些氨基酸**在序列上可能隔得很远**，是折叠之后才凑到一块的。所以酶的特异性是它三维形状的属性，光把一级序列读一遍是看不出来的。教材点名活性中心常见的活泼侧链有 histidine、serine、tyrosine。"
+    }
+  ],
   summary: {
     en: "Only PART of the enzyme molecule is responsible for its catalytic ability — the so-called ACTIVE CENTRE. It is that part in which the contact between enzyme and substrate is realised and where the groups responsible for the actual catalysis of the chemical reaction are located.",
     cn: "只有酶分子的一部分负责其催化能力——即所谓的活性中心。它是酶与底物之间实现接触的部位，也是负责化学反应实际催化过程的基团所在之处。"
