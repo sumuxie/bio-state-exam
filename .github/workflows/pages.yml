@@ -52,12 +52,40 @@ jobs:
       # trail for the content, since the source PDF is copyrighted and never
       # committed. Uploading the repo root shipped all of it to Pages on every
       # deploy, which is why a deploy took over seven minutes for a 9 MB site.
+      # ⚠️ This list is a WHITELIST. A new app is invisible until it is added
+      # here — it deploys "successfully" and every URL under it 404s, which is
+      # exactly what happened to biochemie_struct on its first push. If you add
+      # a directory to the repo, add it here in the same commit.
       - name: Stage only the site files
         run: |
           mkdir -p _site
           cp index.html _site/
-          cp -r biochemie_basic biochemie_pro PESB _site/
+          cp -r biochemie_basic biochemie_pro biochemie_struct PESB _site/
           echo "artifact contents:"; du -sh _site/*; du -sh _site
+
+      # Assert the whitelist above actually covers every app in the repo, so
+      # the next one cannot be silently left out. A directory counts as an app
+      # if it has an index.html.
+      # Anything deliberately not published goes here, with its reason. An app
+      # left out silently is indistinguishable from one forgotten, which is the
+      # bug this whole step exists to prevent.
+      #   oral_prep_app -- English oral-exam practice, unrelated to the
+      #     biochemistry site and never published. Publishing is Ruojin's call,
+      #     not a side effect of adding a deploy assertion.
+      - name: Every app directory made it into the artifact
+        run: |
+          NOT_PUBLISHED="oral_prep_app"
+          missing=0
+          for d in */index.html; do
+            app="${d%/index.html}"
+            case " $NOT_PUBLISHED " in *" $app "*) echo "skipped on purpose: $app"; continue;; esac
+            if [ ! -f "_site/$app/index.html" ]; then
+              echo "NOT DEPLOYED: $app -- add it to the cp line above"
+              missing=1
+            fi
+          done
+          [ "$missing" = "0" ] || exit 1
+          echo "every app is either deployed or listed as deliberately unpublished"
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
