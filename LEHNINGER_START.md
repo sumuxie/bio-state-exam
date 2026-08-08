@@ -95,34 +95,35 @@ answers an exam question.** The reasoning, so it can be judged rather than inher
   the layer that makes those nodes revisable. Ruojin named which parts she wants: 追根溯源
   (`trace`) and 考点总结 (`takeaway`).
 
-### `mustKnow` — 138 of 230 nodes done (2026-08-08). Next pick: ch5 (12.0).
+### `mustKnow` — 148 of 230 nodes done (2026-08-08). Next pick: ch3 (8.6).
 
 Regenerate this table rather than trusting it; the one-liner is under "Measuring" below.
 
 | ch | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | leh | entity |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | nodes | 6 | 10 | 9 | 18 | 10 | 19 | 42 | 40 | 27 | 26 | 20 | 3 |
-| `mustKnow` | – | ✅10 | – | – | – | ✅19 | ✅42 | ✅40 | ✅27 | – | – | – |
+| `mustKnow` | – | ✅10 | – | – | ✅10 | ✅19 | ✅42 | ✅40 | ✅27 | – | – | – |
 
 **ch7 (sugars) and ch8 (lipids) are done** — the two chapters the archive's §5a measures as
 heaviest on organic chemistry, and the ones Ruojin has least foundation for. **ch9 (photosynthesis,
 27 nodes) is now done too**, because it is the one subject on record as having actually been
 examined — a classmate was asked on it. Written and pushed in two batches, `648a427` (9-1..9-14,
 light reactions) and `c5db670` (9-15..9-27, carbon fixation + nitrogen). **ch2 (amino acids and
-proteins, 10 nodes) is done**, `67bf636`. **ch6 (bioenergetics, 19 nodes) is now done too**,
-`1f5c106` (6-1..6-2-2-4) then `43d1aca` (6-2-3..6-3-3, completes the chapter).
+proteins, 10 nodes) is done**, `67bf636`. **ch6 (bioenergetics, 19 nodes) is done**, `1f5c106`
+(6-1..6-2-2-4) then `43d1aca` (6-2-3..6-3-3, completes the chapter). **ch5 (protein metabolism
+and amino acid interconversion, 10 nodes) is now done too**, `85a2c9e`.
 
 **Every pick has to be argued from a measurement — do not default to "next chapter number".**
-The rule that has held five times: rank the remaining chapters by organic-chemistry load per
+The rule that has held six times: rank the remaining chapters by organic-chemistry load per
 1000 words, and let a real exam question override it. Aggregating
 `lehninger_index/cz_organic_load.json` by chapter gives, for the chapters still at zero:
 
-| ch | 5 | 3 | 10 | 4 | 1 |
-|---|---|---|---|---|---|
-| org hits / 1k | 12.0 | 8.6 | 8.1 | 7.4 | 2.2 |
-| nodes | 10 | 9 | 26 | 18 | 6 |
+| ch | 3 | 10 | 4 | 1 |
+|---|---|---|---|---|
+| org hits / 1k | 8.6 | 8.1 | 7.4 | 2.2 |
+| nodes | 9 | 26 | 18 | 6 |
 
-**By this rule the next pick is ch5 (12.0), then ch3 (8.6)** — but re-run the aggregation first,
+**By this rule the next pick is ch3 (8.6), then ch10 (8.1)** — but re-run the aggregation first,
 and if a classmate has reported a real exam question since, that outranks it.
 
 The rule that keeps the field worth having, and it is easy to get wrong: **`mustKnow` is NOT a
