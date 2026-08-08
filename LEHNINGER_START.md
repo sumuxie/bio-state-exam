@@ -103,37 +103,23 @@ answers an exam question.** The reasoning, so it can be judged rather than inher
   the layer that makes those nodes revisable. Ruojin named which parts she wants: 追根溯源
   (`trace`) and 考点总结 (`takeaway`).
 
-### `mustKnow` — 201 of 230 nodes done (2026-08-08). Next pick: ch1 (2.2) — last Czech chapter.
+### `mustKnow` — 207 of 230 nodes done (2026-08-08). **The Czech layer is complete.**
 
-Regenerate this table rather than trusting it; the one-liner is under "Measuring" below.
+### ⛔ STOP — do not silently extend `mustKnow` to Lehninger nodes or entity cards
 
-| ch | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | leh | entity |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| nodes | 6 | 10 | 9 | 18 | 10 | 19 | 42 | 40 | 27 | 26 | 20 | 3 |
-| `mustKnow` | – | ✅10 | ✅9 | ✅18 | ✅10 | ✅19 | ✅42 | ✅40 | ✅27 | ✅26 | – | – |
+All 207 Czech nodes (ch1–10) now carry `mustKnow`. That was the whole scope of the priority call
+made 2026-08-08 above ("put everything into content that answers an exam question" — the Czech
+book, because "the Czech layer sets scope"). **The only things left without `mustKnow` are the 20
+Lehninger depth nodes and the 3 entity cards, and extending to them was never decided — it was
+explicitly deferred to this point.** Ask Ruojin before writing a single one:
 
-**ch7 (sugars) and ch8 (lipids) are done** — the two chapters the archive's §5a measures as
-heaviest on organic chemistry, and the ones Ruojin has least foundation for. **ch9 (photosynthesis,
-27 nodes) is now done too**, because it is the one subject on record as having actually been
-examined — a classmate was asked on it. Written and pushed in two batches, `648a427` (9-1..9-14,
-light reactions) and `c5db670` (9-15..9-27, carbon fixation + nitrogen). **ch2 (amino acids and
-proteins, 10 nodes) is done**, `67bf636`. **ch6 (bioenergetics, 19 nodes) is done**, `1f5c106`
-(6-1..6-2-2-4) then `43d1aca` (6-2-3..6-3-3, completes the chapter). **ch5 (protein metabolism
-and amino acid interconversion, 10 nodes) is done**, `85a2c9e`. **ch3 (enzymes, 9 nodes) is
-done**, `8fc4d04`. **ch10 (intermediary metabolism and regulation, 26 nodes) is done**, `29be2c0`
-(10-1..10-13) then `bae01aa` (10-14..10-26, completes the chapter). **ch4 (nucleic acids and
-protein synthesis, 18 nodes) is now done too**, `63c1779` (4-1..4-1-5) then `a4a1e22`
-(4-2-1..4-3-3, completes the chapter).
-
-**Every pick has to be argued from a measurement — do not default to "next chapter number".**
-The rule that has held nine times: rank the remaining chapters by organic-chemistry load per
-1000 words, and let a real exam question override it. Only ch1 remains of the Czech layer
-(6 nodes, 2.2 hits/1k — by a wide margin the lowest of all ten chapters), so **ch1 is next by
-elimination as much as by the ranking.** Once it is done, all 207 Czech nodes will carry
-`mustKnow`, and only the 20 Lehninger depth nodes and 3 entity cards will remain — at which point
-this whole priority call should be revisited with Ruojin rather than silently extended to them.
-Re-run the aggregation first if picking anything other than ch1, and if a classmate has reported a
-real exam question since, that outranks it.
+1. Does she want `mustKnow` on the Lehninger depth nodes and entity cards too, or is depth-layer
+   content already dense enough (it already carries `coverageNote`, `lehNotes`, full `summary`)?
+2. If yes, is the register the same ("what you'd still want after forgetting the node") or does a
+   depth node — which exists specifically to add beyond the Czech book — need something different?
+3. Is `mustKnow` even the next priority now, or does the app need something else more — `trace`
+   (追根溯源) and `takeaway` (考点总结) were the two things she named wanting, back when this
+   priority call was made, and only `mustKnow` was started.
 
 The rule that keeps the field worth having, and it is easy to get wrong: **`mustKnow` is NOT a
 summary of the node. It is what you would still want in your head after forgetting the node. If
