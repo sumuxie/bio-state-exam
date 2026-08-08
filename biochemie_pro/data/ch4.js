@@ -110,6 +110,16 @@ window.BIOCHEM.topics.push(
   coverageNote: "p.67's closing lines (the section 4.1.1 heading and its one-sentence overview) plus pp.68-70 (through the top of p.70, where Obr. 4.4 concludes) verified in full against the scans, including the enzyme names boxed in Obr. 4.3 and the reaction scheme of Obr. 4.4.",
   cnNote: { topic: null, title: "核苷酸的降解及核苷酸代谢 (笔记「二十七」？仅凭标题推测，未直接核对页码)", status: "partial" },
   mustKnow: { en: "The purine ring is not built as a free molecule and then attached to sugar — it is built ONE PIECE AT A TIME directly on the ribose-phosphate scaffold, PRPP, across eleven reactions, so there is never a moment when a free purine base exists on its own. And the four nitrogens come from exactly three sources — aspartate, glycine, and glutamine's amide group used twice — worth knowing as a count, not a list to memorise atom by atom.", cn: "嘌呤环不是先造成一个游离分子、再接到糖上——它是**一块一块地**直接在核糖磷酸骨架（PRPP）上盖起来的，一共十一步反应，所以从来没有哪一个瞬间存在一个游离的嘌呤碱基。而这四个氮原子恰好来自三个来源——天冬氨酸、甘氨酸，以及被用了两次的谷氨酰胺酰胺基——这值得当作一个**数目**记住，而不是逐个原子去背的清单。" },
+  trace: [
+    {
+      term: "PRPP 5-磷酸核糖-1-焦磷酸",
+      what: "一个被活化过的核糖磷酸。你可以把它想成**一块已经打好、还上了胶的地基**——嘌呤环不是别处造好搬过来的，是直接在这块地基上一块砖一块砖盖起来的。",
+      from: "这里有个反直觉的地方，而且它是这一节最该记住的一句：**嘌呤碱基从来没有以游离状态存在过**。整整十一步反应，环全程是在 PRPP 这个糖-磷酸骨架上就地搭建的，所以你在任何一个瞬间去看，都找不到一个单独漂着的嘌呤碱基。这和「先做零件再组装」的直觉正好相反。",
+      to: "那四个氮从哪来？答案是**三个来源**——记这个「数」，比一个原子一个原子背清单管用得多。aspartic acid 出一个 N；glycine 出一个 N（顺带还贡献两个碳，整个 N-C-C 单元一起进来）；glutamine 的酰胺基出两个——也就是同一个来源被用了两次。考到「嘌呤环的氮来自哪里」，先答三个来源，再展开。",
+      family: "顺着这条路往下，IMP 是那个共同的分叉点：往一边走，aspartate 与 IMP 缩合生成 adenylosuccinate，再脱掉 fumarate 得到 AMP——注意这一步用的是 GTP 而不是 ATP；往另一边走则经 XMP 去往 GMP。一个有意思的细节：搭六元环时那个碳以碳酸氢根的形式进来，而这一步**既不需要 biotin 也不需要 ATP**，在羧化反应里很少见。",
+      numbers: "十一步反应盖起一个嘌呤环；四个氮原子来自三个来源（Asp 一个、Gly 一个、Gln 酰胺基两个）。"
+    }
+  ],
   summary: {
     en: "Purine and pyrimidine nucleotides are biosynthesised DE NOVO from simple precursors, which are progressively incorporated into the purine and pyrimidine rings (the opening line of 4.1.1). For purines, all FOUR nitrogen atoms of the ring come from aspartic acid, glycine and the amide groups of glutamine; the ring is built up, one piece at a time, directly on a ribose-phosphate scaffold, through ELEVEN enzyme-catalysed reactions ending in inosine monophosphate (IMP), which is then converted onward to AMP and GMP.",
     cn: "嘌呤和嘧啶核苷酸都是从简单前体经从头合成途径生物合成的，这些前体被逐步整合进嘌呤环和嘧啶环本身（4.1.1 节开篇语）。对嘌呤而言，环上全部四个氮原子分别来自天冬氨酸、甘氨酸和谷氨酰胺的酰胺基；嘌呤环是直接在核糖磷酸骨架上、通过十一步酶促反应逐步搭建而成，最终生成次黄嘌呤核苷酸 (IMP)，再由 IMP 进一步转化为 AMP 与 GMP。"
@@ -296,6 +306,15 @@ window.BIOCHEM.topics.push(
       cn: "细胞中的 A-DNA 与 Z-DNA——本节点把一个说过了头，把另一个说轻了。它把相对含水量 75% 时的 B 到 A 转变呈现为 DNA 就是会这么做，又把 Z-DNA 打发为「生物学功能尚不清楚」。Lehninger 在这两点上的立场都相反。关于 A 型：「A-DNA 是否在细胞中出现尚不确定」（A p.273），而且有方法学上的理由需要谨慎——用于促进 DNA 结晶的试剂往往使其脱水，所以大多数短 DNA 都以 A 型结晶，无论那是不是它在细胞中的状态。关于 Z 型：在细菌和真核生物中都已发现短的 Z-DNA 区段，并且它们可能在「调控某些基因的表达或遗传重组」中发挥尚未明确的作用。所以真正被证实存在于细胞中的是 Z-DNA。" }
   ],
   mustKnow: { en: "Base pairing is not symmetric in strength: G-C holds three hydrogen bonds, A-T only two, so a stretch of DNA rich in G-C is measurably harder to pull apart than one rich in A-T — the same rule later explains why a hairpin terminator needs to be G+C-rich to actually stop RNA polymerase. And DNA is not one fixed shape: B-DNA is the physiological form, but the SAME molecule can widen into A-DNA when water is scarce, or twist left-handed into Z-DNA at certain sequences — so 'the double helix' names a family of related structures, not a single geometry.", cn: "碱基配对的强度并不对称：G-C 有三个氢键，A-T 只有两个，所以富含 G-C 的一段 DNA 在测量上就是比富含 A-T 的更难拉开——这条规则后面还会再出现，解释为什么发夹式终止子必须富含 G-C 才能真的让 RNA 聚合酶停下来。而且 DNA 不是一种固定不变的形状：B-DNA 是生理条件下的形式，但**同一个**分子在缺水时能变宽成 A-DNA，或者在特定序列处扭成左手螺旋的 Z-DNA——所以『双螺旋』说的是一整个家族的相关结构，不是单一的几何形状。" },
+  trace: [
+    {
+      term: "phosphodiester bond 磷酸二酯键",
+      what: "名字拆开就明白了：一个磷酸，两头各连出一个酯键，所以叫「二酯」。它一头接在前一个糖的 3′ 碳上，另一头接在下一个糖的 5′ 碳上。DNA 和 RNA 的整条骨架，就是靠这个键一节一节串起来的。",
+      from: "为什么要特意强调「二」？因为磷酸身上有三个能成酯的位置。在一个单独的核苷酸里只用掉一个（磷酸接在糖上），那是单酯；而要把两个核苷连成链，就得用掉两个，于是成了二酯。这个名字不是在形容结构多复杂，它只是在**数用掉了几个接口**。",
+      to: "这个结构直接带来一个后果：**核酸是有方向的**。一条链的一头留着空的 5′ 磷酸，另一头留着空的 3′ 羟基，两头长得不一样，所以写序列必须先说清楚从哪头写起。教材给的约定是：5′ 端写在左边，3′ 端写在右边。所以你看到 ACG，它的意思是 5′-ACG-3′，不是三个随便排的字母。后面复制、转录、翻译里所有「往哪个方向走」的说法，源头都在这里。",
+      family: "两条链之间还有一条规矩叫 antiparallel（反向平行）——它们方向正好相反。再加上碱基只能 A-T、G-C 地配，于是一条链的序列就把另一条完全定死了：两条链**互补，但不相同**，这两个词别混。除了氢键，撑住双螺旋的还有 base stacking（碱基堆积），也就是那些环彼此叠在一起产生的作用。"
+    }
+  ],
   summary: {
     en: "Nucleic acid macromolecules are chains of nucleosides joined by PHOSPHODIESTER bonds, normally 3′-5′ (2′-5′ is also possible in RNA). DNA's two strands are COMPLEMENTARY and ANTIPARALLEL, twisted into a right-handed DOUBLE HELIX held together by base-specific HYDROGEN BONDING (A·T = 2 bonds, G·C = 3 bonds) plus base STACKING and electrostatic interactions with metal ions. This helix is not one fixed shape: physiological B-DNA can convert to the wider, flatter A-DNA at reduced water content, and short specific sequences can even form the left-handed Z-DNA.",
     cn: "核酸大分子是由核苷通过磷酸二酯键连接而成的链，通常为 3′-5′ 连接（RNA 中也可能出现 2′-5′ 连接）。DNA 的两条链彼此互补、方向相反（反平行），盘绕成右手双螺旋，通过碱基特异性的氢键（A·T = 2 个氢键，G·C = 3 个氢键）以及碱基堆积和与金属离子的静电作用而维持稳定。这一螺旋结构并非一成不变：在水含量降低时，生理状态下的 B-DNA 可转变为更宽更扁平的 A-DNA，某些特定的短序列甚至可以形成左手的 Z-DNA。"
@@ -1268,6 +1287,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "All four pages verified directly against the scans, including Obr. 4.46 (lac gene map), Obr. 4.47 (lac operon expression, inducer absent/present), Obr. 4.48 (trp operon genetic map with pathway enzymes) and Obr. 4.49 (trp attenuation model, high/low tryptophan). This node's regulation content starts partway down p.102, below the termination material covered in node 4-2-3-2. p.105 is shared with node 4-2-4-2: the attenuation figure and its caption close out this node, and the paragraphs beneath them on the same page open the next.",
   cnNote: { topic: null, title: "DNA转录产生mRNA——转录的调节控制 (笔记无编号，见 pp.212–217)", status: "mapped" },
   mustKnow: { en: "The lac repressor and its inducer form a molecular switch built from just two states: bound to the operator, transcription is off; displaced by an inducer, transcription runs — and because the inducer is often the enzyme's own substrate, the system reads directly as 'make the enzyme only when there is something to use it on.' Attenuation is a completely different kind of control living in the same operon logic: instead of a protein blocking DNA, a translating ribosome's own position on the leader mRNA decides, in real time, whether tryptophan is scarce enough to justify finishing the transcript.", cn: "乳糖阻遏蛋白和它的诱导物组成了一个只有两种状态的分子开关：结合在操纵基因上时，转录关闭；被诱导物顶替下来后，转录开始运行——而且因为诱导物往往就是那个酶自己的底物，这套系统读出来就是『只有在有东西可用的时候才制造这个酶』。衰减作用是活在同一套操纵子逻辑里、却完全不同类型的控制：不是靠一个蛋白质挡住 DNA，而是靠正在翻译前导 mRNA 的核糖体自己所处的位置，实时决定色氨酸是否稀缺到值得把这段转录物做完。" },
+  trace: [
+    {
+      term: "operon 操纵子",
+      what: "一串**挨在一起、被当成一个整体来开关的基因**，它们编码的蛋白通常服务于同一件事。教材用的例子是大肠杆菌的 lac 操纵子。",
+      from: "细菌为什么要这么组织？因为这些酶要用就得一起用。分解乳糖需要好几个酶接力，缺任何一个整条路都走不通——那与其一个一个单独调控，不如把它们排在一起、共用一个开关。省事，而且不会出现「造了一半」这种既费料又没用的局面。",
+      to: "开关由四个零件组成，把各自的角色对上号就不会乱：regulator gene（调节基因）负责生产 repressor（阻遏蛋白）；repressor 去结合 operator（操纵基因），一坐上去就挡住转录；promoter（启动子）则是 RNA 聚合酶落脚的地方。关键在于 **repressor 自己也是被管着的**——inducer（诱导物）能把它从 operator 上顶下来，转录随即开始；corepressor（辅阻遏物）则相反，让它抓得更牢。",
+      family: "lac 和 trp 是**逻辑正好相反的一对**，这也是最容易混的地方。lac 的诱导物往往就是那个酶自己的底物，所以整套系统读出来是「有东西可吃，才值得造酶」——**平时关着，有需求才开**。trp 走的是 corepressor 那条路：产物色氨酸一多就把开关按死，读出来是「够用了，别造了」——**平时开着，够了才关**。记住这两句话的方向，比记零件名字有用。"
+    }
+  ],
   summary: {
     en: "Regulation of protein synthesis happens mainly at the level of transcription, either by NEGATIVE regulation (repression), which slows transcription of DNA to mRNA, or by POSITIVE regulation (stimulation), which speeds it up — both ensuring the cell neither wastes resources making unneeded protein nor runs short of a needed one. The classic explanatory model is Jacob and Monod's account of enzyme induction, worked out from the lactose (lac) operon of E. coli and partly confirmed experimentally; a second, complementary mechanism, attenuation, is illustrated by the tryptophan (trp) operon, where premature termination of transcription is controlled by the translating ribosome itself.",
     cn: "蛋白质合成的调节主要发生在转录水平，既可以是负调节（阻遏），即减缓DNA向mRNA的转录，也可以是正调节（刺激），即加速转录——两者都确保细胞既不会无谓地合成不需要的蛋白质，也不会缺乏所需要的蛋白质。经典的解释模型是Jacob和Monod提出的酶诱导机制，该机制由E. coli的乳糖（lac）操纵子研究得出，并已部分得到实验证实；另一种互补的机制——衰减（attenuation）——则以色氨酸（trp）操纵子为例，其转录的提前终止由正在翻译的核糖体本身所控制。"
