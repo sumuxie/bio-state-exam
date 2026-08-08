@@ -452,6 +452,15 @@
       panel.hidden = !panel.hidden;
       if (!panel.hidden) fillVoicePickers();
     });
+    // A close button inside the panel. The 🔈 in the top bar already toggles it,
+    // but once the panel is open that button is easy to lose track of, and the
+    // panel is tall — so it needs a way out from where you are looking.
+    const close = $('#voice-close');
+    if (close) close.addEventListener('click', () => { panel.hidden = true; });
+    // Escape closes it too, for the same reason.
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !panel.hidden) panel.hidden = true;
+    });
     [['en', '#voice-en'], ['zh', '#voice-zh']].forEach(([short, sel]) => {
       const el = $(sel);
       if (!el) return;

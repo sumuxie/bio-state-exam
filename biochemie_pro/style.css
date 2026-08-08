@@ -480,6 +480,18 @@ body.bionic-on .q-text, body.bionic-on .oral-q, body.bionic-on .model-answer {
    Synthesised-speech quality is decided almost entirely by WHICH installed
    voice is used, and the browser default is usually the worst one present.
    This panel exists so the reader can pick and hear the difference. */
+/* Panel header with a close button, and the long note folded away. The panel
+   being tall was the complaint; the explanatory paragraph was most of it. */
+.vp-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.vp-title { font-size: 0.9rem; font-weight: 650; }
+.vp-close {
+  background: none; border: 0; cursor: pointer; color: var(--fg-dim);
+  font-size: 1.35rem; line-height: 1; padding: 0 0.3rem; border-radius: 6px;
+}
+.vp-close:hover { color: var(--fg); background: var(--bg-raise); }
+.vp-note-fold > summary { cursor: pointer; font-size: 0.78rem; padding: 0.15rem 0; }
+.vp-note-fold .vp-note { margin-top: 0.4rem; }
+
 .voice-panel {
   position: sticky;
   top: 0;

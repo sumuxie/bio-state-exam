@@ -179,6 +179,10 @@
      voices installed on a device, and the browser's default is usually the
      worst one present, so the reader needs to be able to choose and hear. -->
 <div id="voice-panel" class="voice-panel" hidden>
+  <div class="vp-head">
+    <span class="vp-title">🔈 Reading voice <span class="muted">朗读语音</span></span>
+    <button id="voice-close" class="vp-close" aria-label="Close · 收起" title="Close · 收起">×</button>
+  </div>
   <div class="vp-row">
     <label for="voice-en">English voice</label>
     <select id="voice-en"></select>
@@ -194,12 +198,17 @@
     <input id="voice-rate" type="range" min="0.6" max="1.4" step="0.02">
     <span id="voice-rate-val" class="muted"></span>
   </div>
-  <p class="vp-note muted">
-    Synthesised by your browser, not a recording. Voices marked
-    <em>Natural</em> / <em>Neural</em> / <em>Online</em> sound closest to a
-    person; the list is sorted best-first.
-    <span lang="zh">这是浏览器合成的语音，不是真人录音。名字里带 Natural / Neural / Online 的最接近真人，列表已按推荐顺序排好。</span>
-  </p>
+  <!-- Folded: it is read once and then only takes space. The panel's height was
+       the complaint, and this paragraph was most of it. -->
+  <details class="vp-note-fold">
+    <summary class="muted">Why do the voices sound like this? <span lang="zh">语音为什么是这样的？</span></summary>
+    <p class="vp-note muted">
+      Synthesised by your browser, not a recording. Voices marked
+      <em>Natural</em> / <em>Neural</em> / <em>Online</em> sound closest to a
+      person; the list is sorted best-first.
+      <span lang="zh">这是浏览器合成的语音，不是真人录音。名字里带 Natural / Neural / Online 的最接近真人，列表已按推荐顺序排好。</span>
+    </p>
+  </details>
 </div>
 
 <div class="layout">
