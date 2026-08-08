@@ -121,7 +121,49 @@ answers an exam question.** The reasoning, so it can be judged rather than inher
 
 ### `mustKnow` — 207 of 230 nodes done (2026-08-08). **The Czech layer is complete.**
 
-### ⛔ STOP — do not silently extend `mustKnow` to Lehninger nodes or entity cards
+### ✅ ANSWERED 2026-08-08 — the three questions below are settled, do not re-ask
+
+Ruojin was asked and answered. **This supersedes the STOP block that follows**, which is kept
+because its reasoning is still the record of why the questions existed.
+
+1. **Next is `trace` (追根溯源)** — not `takeaway`, not finishing `mustKnow` first.
+2. **Yes, the 20 Lehninger nodes and 3 entity cards do get `mustKnow`, in the same register.**
+   23 nodes, still to write. This closes the field at 230/230 when done.
+3. **`biochemie_basic` stays frozen** — the remaining Cyrillic word in its `ch1.js` L26
+   (`родители`, node `1-1`) is left alone deliberately. `biochemie_pro`'s two copies of that
+   defect were fixed in `0771f49`; a sweep of both apps now returns exactly that one hit.
+
+**`trace` is built and one table is live** (`873631e`): render code in `app.js`
+(`TRACE_ROWS` + `traceHtml`, called straight after `mustKnowHtml`), styles in `style.css`
+(`.trace-card`, `.trace`), and the first table on `7-1-3-1`. Ported from `pesbexplain`'s
+`traceTable()` with three differences, all deliberate and all explained in the comment above
+`TRACE_ROWS` — read that before writing more:
+
+- **`trace` is an ARRAY on the node**, not a field inside an `explain` item. This app has no
+  `explain` layer, and one node can strand more than one opaque term.
+- **Each entry is folded behind its own `<details>`**, because the request's second half was
+  *「默认折叠起来，想深挖的时候有，不想看的时候不占地方」*.
+- **Rows are Chinese prose with technical terms in English, not `{en, cn}` pairs.** `trace` is a
+  comprehension aid and never scope or depth (§3), so bilingual rows would double the cost for
+  no exam value. This is the one place the app deliberately breaks its EN-primary convention.
+
+**Which term earns a table.** The one a reader freezes at, and preferably the one the rest of the
+node depends on. `7-1-3-1` got `hemiacetal` because closing the ring is what makes C-1 a new
+asymmetric carbon → which is where α/β anomers come from → and substituting its OH is what makes
+a glycosidic bond. One keystone term beats three shallow ones.
+
+⚠️ **Rows are individually optional and `numbers` is usually the one to omit.** `7-1-3-1` has no
+`numbers` row because the node states no figure worth memorising. **Never pad it with a number you
+have not read off the page** — that is the §16 rule applied to a new field.
+
+⚠️ **`esprima` cannot parse `biochemie_pro/app.js` and never could.** It dies on line 466's
+`/\p{Script=Latin}/u`, which the Python port cannot compile; `HEAD` fails identically, so the
+data-file parse check in this file has never covered `app.js`. **After editing `app.js`, run
+`python <path-to>/pesbexplain/tools/jsbalance.py biochemie_pro/app.js`, calibrated on a
+known-good copy first**, then serve the app and confirm 200s. Do not read an esprima failure on
+`app.js` as damage you caused.
+
+### ⛔ The original STOP block — kept for its reasoning, now answered above
 
 All 207 Czech nodes (ch1–10) now carry `mustKnow`. That was the whole scope of the priority call
 made 2026-08-08 above ("put everything into content that answers an exam question" — the Czech
