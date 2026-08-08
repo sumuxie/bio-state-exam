@@ -125,6 +125,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "pp. 42, 43 and 54 verified against the scans — this includes the full Tab. 3.1, which was re-read from the image and corrected against the OCR. pp. 44–53, covering the detailed structures of the individual coenzymes, are not in the extracted page set.",
   cnNote: { topic: "九", title: "酶通论——酶分子结构与辅酶 (笔记 pp.47–52)", status: "mapped" },
   mustKnow: { en: "A cofactor being thermally stable while the protein part is not is not a side fact — it is why you can boil away an enzyme's activity and still recover the cofactor unchanged, and why a coenzyme can be reused by many different apoenzymes. And most coenzymes are built from vitamins for a reason: the cell cannot synthesise that particular piece of chemistry itself, so it has to import it ready-made.", cn: "辅因子耐热而蛋白质部分不耐热，这不是一个无关紧要的细节——正因如此，你可以把一个酶的活性煮没了，辅因子却原封不动地被回收；也正因如此，同一个辅酶才能被许多不同的脱辅基酶反复使用。而大多数辅酶是由维生素造出来的，这也是有原因的：细胞自己合成不出那一小段特定的化学结构，只能现成地『进口』它。" },
+  trace: [
+    {
+      term: "cofactor / coenzyme 辅因子 / 辅酶",
+      what: "酶要干活，光有蛋白质常常不够，还需要一个非蛋白的搭档，这类搭档统称 cofactor（辅因子）。它分两类：金属离子，或者有机小分子——而**只有有机的那一类才叫 coenzyme（辅酶）**。所以 coenzyme 是 cofactor 的子集，不是同义词。这一节有五个词在说同一件事的不同侧面，混淆几乎都出在这里。",
+      from: "co- 就是搭档的意思。五个词各管一个侧面：带着搭档、能真正催化的完整复合物叫 holoenzyme（全酶）；把搭档拿掉后剩下的那部分蛋白叫 apoenzyme（脱辅基酶蛋白）；如果搭档结合得特别牢、根本拿不下来，就另给一个名字叫 prosthetic group（辅基）。所以 holoenzyme = apoenzyme + cofactor，这是这一节唯一需要记住的等式。",
+      to: "节点里那条「辅因子耐热、蛋白质部分不耐热」不是闲笔——它正是你可以把酶煮到失活、而辅因子原样回收的原因，也是为什么一个 coenzyme 能被反复使用。再往下一步就接到你学过的「维生素和辅酶」：很多 coenzyme 就是维生素改造来的，节点里点名的 TPP、coenzyme A、pyridoxal phosphate 都是这条线上的。维生素之所以必须从食物拿，是因为人做不出这些骨架。",
+      family: "以金属离子当 cofactor 的酶叫 metalloenzyme（金属酶），节点给了 Zn²⁺（alcohol dehydrogenase）和 Mg²⁺（phosphatase）等例子。金属在酶里只有三种当法：本身是活性中心的一部分、当把底物架到酶上的桥、或者当电子的中转站。被问到金属做什么，从这三个里挑。"
+    }
+  ],
   summary: {
     en: "All enzymes known until recently were of protein nature; research of the last twenty years or so shows that some other types of macromolecule can also have a certain catalytic ability, though so far only the case of one ribonucleic acid is described. The molecule of some enzymes is formed only by a polypeptide chain or chains; the active form of others contains in addition a non-protein component, the COFACTOR.",
     cn: "直到不久前所知的全部酶都是蛋白质性质的；近约二十年的研究表明，某些其他类型的大分子也可能具有一定的催化能力，不过迄今只描述了一种核糖核酸的情形。某些酶的分子仅由一条或多条多肽链构成；另一些酶的活性形式还含有非蛋白质组分，即辅因子。"
@@ -244,6 +253,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "pp. 54 and 57 verified against the scans — including the Lineweaver–Burk form, which the book writes with V_lim and [A]. pp. 55–56, carrying the derivation of the Michaelis–Menten equation itself and the definition of K_m, are not in the extracted page set; the derivation given below is standard course material and should be checked against those pages.",
   cnNote: { topic: "十", title: "酶促反应动力学——米氏方程 (笔记 pp.53–62)", status: "mapped" },
   mustKnow: { en: "An enzyme reaction is not one step but two — fast, reversible binding, then a slower, irreversible chemical step — and it is the SECOND step, not the binding, that actually limits how fast the whole reaction can go. That is why V_max (this book's V_lim) saturates: past a certain substrate concentration, every enzyme molecule is already busy, and adding more substrate cannot speed anything up further.", cn: "一个酶反应不是一步，而是两步——先是快速、可逆的结合，然后是较慢、不可逆的化学转化——真正限制整个反应能跑多快的，是**第二步**，不是结合本身。这也是为什么 V_max（本书写作 V_lim）会出现饱和：底物浓度过了某个点之后，每一个酶分子都已经在忙了，再加底物也快不了。" },
+  trace: [
+    {
+      term: "K_m Michaelis 常数",
+      what: "一个**浓度**值，单位是浓度，不是速度——这是最容易错的一点。它的定义只有一句：反应速度达到最大速度一半时，底物的浓度。",
+      from: "它是从两步机制里推出来的，而不是凑出来的经验值。节点说得很清楚：底物先和酶快速、可逆地结合成 enzyme–substrate complex（EA），这一步快；然后才发生真正的化学变化，这一步慢。K_m 把这两步的快慢综合成了一个数。",
+      to: "K_m 小，意味着很低的底物浓度就够让酶跑到半速，也就是这个酶抓底物抓得紧。这是你比较两个酶、或者比较同一个酶对两种不同底物时，唯一能直接拿来用的量。口试里问「哪个酶对这个底物更合适」，答案就从 K_m 走。",
+      family: "配套的另一个参数是 V_lim（最大速度）。因为原始曲线是条越来越平的双曲线、直接读参数不准，所以要把数据变换成直线来读：节点给了 Lineweaver–Burk 双倒数作图，以及 Cornish-Bowden & Eisenthal 的直接线性作图。它们不是不同的理论，只是同一组数据的不同画法。"
+    }
+  ],
   summary: {
     en: "From the functional standpoint enzymes can be defined as catalysts of the chemical reactions occurring in organisms. For a substance A to be converted into a product X, the molecules of A must overcome an ENERGY BARRIER — they must be supplied with so-called ACTIVATION ENERGY.",
     cn: "从功能角度看，酶可定义为生物体内所进行化学反应的催化剂。为使物质 A 转变为产物 X，A 的分子必须越过一道能垒——必须获得所谓的活化能。"
@@ -865,6 +883,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "p. 62 verified against the scan, covering the definition of regulatory enzymes and the opening of 3.7.1. pp. 63–65, which continue the allosteric enzymes and cover the covalently modulated enzymes, are not in the extracted page set.",
   cnNote: { topic: "十一", title: "酶的作用机理及酶的调节——调节酶 (笔记 pp.63–76)", status: "mapped" },
   mustKnow: { en: "An allosteric enzyme is controlled from a site that is not the active site at all, by a metabolite that is often the very END PRODUCT of the pathway the enzyme starts — so the last molecule in a chain reaches all the way back to switch off the first step. That feedback loop is the whole point: it lets a pathway sense its own output and throttle itself without needing any signal from outside the pathway.", cn: "别构酶是被一个根本不在活性中心上的位点控制的，而控制它的代谢物往往正是它自己所启动的那条通路的**终产物**——于是通路里的最后一个分子，能一路反馈回去，关掉第一步。这个反馈环正是整件事的意义所在：它让一条通路能感知自己的产出、自行调节油门，而不需要来自通路之外的任何信号。" },
+  trace: [
+    {
+      term: "allosteric 别构",
+      what: "这个词拆开就懂：allo- 是「另外的」，-steric 是「位置、空间」。所以 allosteric enzyme 就是**从另一个位置被控制的酶**——调控分子结合的地方根本不是活性中心，而是另一处专门的 allosteric site（别构位点）。名字讲的是位置，不是机理。",
+      from: "为什么需要这么一套？因为细胞不能等产物堆满了才停手。节点给的定义是：别构酶的活性由**非共价**地结合一个特定代谢物来调节——非共价意味着结合得上也放得开，所以这是一个能随时收放的开关，而不是一次性的改造。",
+      to: "关键在节点那条用大写强调的话：别构调节物往往就是这条代谢链的**终产物**。链是 A → B → C → D，而催化第一步的正是这个别构酶，于是 D 攒多了就回头把第一步关小——这就是 feedback inhibition（反馈抑制）。一条通路自己管住自己的产量，不需要任何外部指令。",
+      family: "调控酶有两大类，别构酶只是其一；另一类是 covalently modulated enzymes（共价修饰调节酶），靠在酶上共价地加上或去掉一个基团来切换。区别正好对应上面那句：别构是非共价、可逆、快；共价修饰要靠另外的酶来加和去。"
+    }
+  ],
   summary: {
     en: "All enzymes have properties that can be used to influence their activity in the cell — activity is affected by the pH of the environment, the concentration of substrate or coenzyme, the presence of an inhibitor or activator, and so on. There exist, however, enzymes with SPECIFIC PROPERTIES that PREDESTINE THEM FOR A REGULATORY ROLE in metabolism.",
     cn: "所有酶都具有可被用来影响其细胞内活性的性质——活性受环境 pH、底物或辅酶浓度、抑制剂或激活剂的存在等因素影响。然而，存在一些具有特殊性质的酶，这些性质使它们注定在代谢中承担调节作用。"
