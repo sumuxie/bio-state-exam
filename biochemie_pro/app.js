@@ -1062,10 +1062,45 @@
     wireTopicItems();
   }
 
+  /* ------------------------------------------------------------ deep links
+     The URL hash names the topic: #/t/7-1-3-1. Two reasons it exists.
+
+     Practically, a node can now be bookmarked and reopened, which it could not
+     be before — every reload landed on the default view.
+
+     Structurally, it is what lets a SECOND app link into this one. The
+     structure-formula app is deliberately separate (its own directory, its own
+     storage prefix) so that a half-built renderer can never blank the app
+     Ruojin actually revises from. Separate apps can only be joined by URL, and
+     there was no URL to join to.
+
+     ⚠️ There is no sync tooling between the apps, so an id that changes here
+     breaks an inbound link silently — the visitor lands on the default view
+     with no error. Any cross-link must be covered by a checker that asserts
+     both directions resolve. */
+  function topicFromHash() {
+    const m = (location.hash || '').match(/^#\/t\/(.+)$/);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+
+  function applyHash() {
+    const id = topicFromHash();
+    if (!id) return false;
+    if (!TOPICS.some((t) => t.id === id)) return false;   // stale link: ignore, do not throw
+    state.topicId = id;
+    setMode('study');
+    renderStudy();
+    renderSidebar();
+    return true;
+  }
+
   function wireTopicItems() {
     $$('.topic-item').forEach((btn) => {
       btn.addEventListener('click', () => {
         state.topicId = btn.dataset.id;
+        // replaceState, not a hash assignment: writing location.hash would fire
+        // hashchange and re-render the node that was just rendered.
+        history.replaceState(null, '', '#/t/' + encodeURIComponent(state.topicId));
         setMode('study');
         renderStudy();
         renderSidebar();
@@ -1571,6 +1606,10 @@
     applyLang();
     applyNav();
     renderPenRow();
+    // Deep link on load, and on back/forward. applyHash() returns false for an
+    // unknown id, so a stale inbound link degrades to the default view rather
+    // than throwing — see the note above topicFromHash().
+    window.addEventListener('hashchange', applyHash);
 
     document.body.classList.toggle('bionic-on', state.bionic);
     $('#bionic-toggle').classList.toggle('active', state.bionic);
@@ -1612,6 +1651,7 @@
 
     renderSidebar();
     renderStudy();
+    applyHash();          // an inbound #/t/<id> overrides the default view
 
     $$('.mode-btn').forEach((b) => b.addEventListener('click', () => setMode(b.dataset.mode)));
 
