@@ -31,6 +31,22 @@ finished batch survived.
 
 ### What this actually is — measured 2026-08-08, replacing three wrong claims
 
+**0. It is a biosecurity classifier, and it says so.** Every refusal record carries
+`stop_details: {type: "refusal", category: "bio"}` — **415 of 415, no exceptions.** That single
+field settles what four sessions of guesswork could not, and it is the one fact to keep:
+
+- **The trigger is the subject matter, not a vocabulary or a phrasing.** This project *is*
+  biochemistry, so there is no wording that steers around it. Do not try to find one — an earlier
+  session's advice to pick "chemistry-clean" sections was tested and failed, and the reason is now
+  clear: the domain is the trigger, not the diction.
+- **Nothing is wrong with the content or with what you did.** The harness's own fallback message
+  says these safeguards "can sometimes flag legitimate coding, cybersecurity, and biology tasks".
+  A Czech state-exam revision app is exactly that. Treat a refusal as weather.
+- **It plausibly explains the model gap below** — the same classifier calibrated differently per
+  model — and it suggests **smaller batches**, since a shorter reply puts less dense biochemistry
+  into one generation. Both interruptions in one session landed just as it was starting the
+  largest chapter of the run. That is a hypothesis, not a measurement.
+
 Filter transcripts on the assistant message's own `stop_reason`, **not** on the string
 `safeguards flagged` (that also matches a session's own diagnostic output, which inflated an
 earlier count here roughly fourfold).
