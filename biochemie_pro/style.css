@@ -4,6 +4,20 @@
    generous line-height, a measure that caps around 70ch, CJK-aware fonts.
    ========================================================================= */
 
+/* The `hidden` attribute is only a UA-level `display: none`, so ANY author
+   rule that sets `display` silently beats it and the element can never be
+   hidden. That is not hypothetical: `.voice-panel { display: grid }` did
+   exactly this, so the reading-voice panel was permanently open and neither
+   the 🔈 button nor its close button could shut it — the JS was setting
+   `hidden` correctly the whole time and the CSS was overruling it.
+
+   Six other elements are toggled by `hidden` (card-stage, card-empty,
+   quiz-stage, quiz-intro, quiz-result, q-next) and are only safe today
+   because none of them happens to carry a `display` rule yet. This one line
+   inoculates all of them. Keep `!important`: without it the bug returns the
+   moment someone adds a `display` to any of those classes. */
+[hidden] { display: none !important; }
+
 :root {
   --bg:        #0e1117;
   --bg-raise:  #161b22;
