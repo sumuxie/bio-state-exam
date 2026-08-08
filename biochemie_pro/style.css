@@ -654,6 +654,12 @@ li[class*="hl-"], .term[class*="hl-"] {
 .pen-btn[hidden] { display: none; }
 
 .pen-row { display: inline-flex; gap: 0.25rem; align-items: center; margin-right: 0.4rem; }
+#struct-link {
+  text-decoration: none; font-size: 1.05rem; line-height: 1;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 0.28rem 0.45rem; margin-right: 0.15rem;
+}
+#struct-link:hover { border-color: var(--accent); }
 .pen-swatch {
   width: 0.85rem; height: 0.85rem; border-radius: 50%;
   border: 2px solid transparent; cursor: pointer; padding: 0; opacity: 0.55;
