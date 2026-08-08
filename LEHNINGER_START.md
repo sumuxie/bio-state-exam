@@ -153,14 +153,31 @@ She named what she has covered, and **that list is now the priority order**, ahe
 organic-load rule that drove `mustKnow`. Her verdict on the first cards: **开头的先看懂卡我觉得
 特别好** — so lead each chapter with them rather than sprinkling them.
 
-| 她学过的 | ch | nodes | `trace` |
-|---|---|---|---|
-| 氨基酸 · 蛋白质（共价结构 / 三维结构 / 分离纯化表征） | ch2 | 10 | ✅ 4 |
-| 酶（通论 / 动力学 / 作用机理和调节）· 维生素和辅酶（在 `3-2`） | ch3 | 9 | ✅ 3 |
-| 核酸结构 · 物理化学性质 | ch4 | 18 | — **next** |
-| 生物能学 · TCA（`6-2-2-*`） | ch6 | 19 | — |
-| 代谢总论 | ch10 | 26 | — |
-| EMP 糖酵解（`7-8-*`） | ch7 | 42 | 1 (`7-1-3-1`) |
+**State at 2026-08-08 — 28 cards. Every chapter she named now has coverage.** Regenerate rather
+than trust this; the one-liner is the same `parse_nodes` walk used for `mustKnow`.
+
+| ch | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| nodes | 6 | 10 | 9 | 18 | 10 | 19 | 42 | 40 | 27 | 26 |
+| `trace` | 2 | **7** | **5** | 4 | – | **6** | 1 | – | – | 3 |
+
+**She chose densifying the chapters she is reading over covering new ones**, so ch5, ch8 and
+ch9 are deliberately still at zero. ch7 is the thinnest relative to its size and is worth its own
+batch rather than being folded into another, because §5a measures it as the heaviest
+organic-chemistry load in the book (33.0 per 1k) and each card there costs more to write.
+
+**The register was corrected once and the corrected version is the standard.** The first drafts
+were accurate academic prose and she rejected them: *PESB 就是它还会解释一下为什么会有这个东西,
+就是像科普一样, 有温度, 把我当傻子来教*. Every card written since answers a why-question **out
+loud** before saying what the thing is — 为什么会长出两个意思？因为它出生得晚 · 一个测氮的法子
+凭什么这么重要？· 细胞为什么需要这么一套？因为它不能等到产物堆成山了才想起来关火. All ten
+pre-existing cards were rewritten to match in `75a8867`; do not reintroduce the flat style.
+
+**The highest-yield card type, found by doing it:** the term where **the textbook explicitly
+contradicts a picture she was already taught**. `6-1-2-1` (high-energy means an unstable
+molecule, not a strong bond), `3-6` (lock-and-key is wrong, and *why* it is wrong — it explains
+gripping and says nothing about speed), `6-2-4-5` (the proton gradient does not build the bond,
+it pays to release the finished ATP). Look for these first in a new chapter.
 
 ⚠️ **`研究方法` is a real gap and is NOT in the Czech book.** She listed it among what she has
 studied; `ch4`'s 18 nodes contain no methods section at all, and the reason is that **she studied
