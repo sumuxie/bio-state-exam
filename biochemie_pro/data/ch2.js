@@ -300,6 +300,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "Page verified against the extracted scan.",
   cnNote: { topic: "五", title: "蛋白质一级结构", status: "mapped" },
   mustKnow: { en: "Because each residue joins through one –NH₂ and one –COOH, the chain is unbranched and its two ends are chemically different — so a sequence has a direction, is always written N-terminus first, and Ala-Gly is not the same molecule as Gly-Ala. The size names (oligopeptide up to 10, polypeptide above 10, protein above 100) are conventions, not chemistry.", cn: "因为每个残基是靠一个 –NH₂ 和一个 –COOH 接上去的，链不分支，而且两端在化学上不同——所以序列是**有方向**的，永远从 N 端开始写，Ala-Gly 和 Gly-Ala 不是同一个分子。而「寡肽 ≤10、多肽 >10、蛋白质 >100」只是约定，不是化学。" },
+  trace: [
+    {
+      term: "N-terminal / C-terminal N 端与 C 端",
+      what: "一条肽链的两头。一头留着没用掉的 –NH₂，叫 N 端；另一头留着没用掉的 –COOH，叫 C 端。**两头在化学上是不一样的**，这一点看着琐碎，后果却很大。",
+      from: "为什么会有两个不同的头？因为每个氨基酸是拿自己的 –COOH 去接下一个的 –NH₂，一个接一个串下去。串到最后，队首那位的 –NH₂ 没人要，队尾那位的 –COOH 也没人要，就各自空在那里。也正因为每个残基只有这两个接口，**链不会分叉**——蛋白质永远是一条线，不是一棵树。",
+      to: "两头不同，就意味着序列**有方向**，于是写法必须先定规矩。教材给的约定是：**从 N 端开始写**。所以 Ala-Gly 和 Gly-Ala 是两个不同的分子，不是同一个东西的两种写法——这一点在读任何序列时都成立，也是后面讲蛋白质合成方向时的前提。",
+      family: "顺带说一个容易被当成硬知识背的东西：「寡肽 ≤10、多肽 >10、蛋白质 >100」这套按长度的叫法**只是约定，不是化学**。没有哪一条化学性质在第 10 个或第 100 个残基处突然改变，所以不必纠结边界。另外，肽链可以拆成两部分看：规律重复的**主链**，和挂在上面千变万化的**侧链**——蛋白质之间的差别全在后者。"
+    }
+  ],
   summary: {
     en: "In proteins the carboxyl group of one amino acid is joined to the α-amino group of the next amino acid by a PEPTIDE BOND (amide bond). Formation of a dipeptide from two amino acids is accompanied by the loss of a molecule of water.",
     cn: "在蛋白质中，一个氨基酸的羧基通过肽键（酰胺键）与下一个氨基酸的 α-氨基相连。由两个氨基酸形成二肽的过程伴随着一分子水的失去。"
@@ -696,6 +705,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "p. 34 verified against the scan; p. 35 (continuation of the globular-protein section) is not in the extracted page set.",
   cnNote: { topic: "六", title: "蛋白质三维结构", status: "mapped" },
   mustKnow: { en: "Fibrous versus globular is a division of labour, not a taxonomy: extended chains cross-linked into fibres carry mechanical load, folded globules do the chemistry — and the two are convertible, which is what blood clotting is (soluble globular fibrinogen turning into fibrin). You can meet this outside a book: wetting and heating a hair breaks the hydrogen bonds holding keratin in its α-helix, and the hair stretches to twice its length.", cn: "「纤维状 vs 球状」是分工，不是分类学：伸展并交联成纤维的链承担机械负荷，折叠成球的链做化学——而且两者可以互相转化，血液凝固就是这么一回事（可溶的球状纤维蛋白原变成纤维蛋白）。这件事你在书本外就能碰到：把头发弄湿加热，维持角蛋白 α 螺旋的氢键被打开，头发就能被拉长到原来的两倍。" },
+  trace: [
+    {
+      term: "fibrillar / globular 纤维状与球状蛋白",
+      what: "这不是一套分类学标签，而是**分工**：链伸展开、彼此交联成纤维的，去承担机械负荷；链折叠成一个球的，去干化学活。形状不同，是因为要干的事不同。",
+      from: "为什么形状能决定分工？想想两者各自的形态就明白了。伸展并交联起来的链能沿着一个方向抗拉，像绳子——所以皮肤、毛发、羽毛、鳞片都是这类（教材点名 keratin 是脊椎动物体表的基础蛋白）。而折成球的链，表面才能兜出一个口袋，把底物请进来——酶必须是球状的，道理就在这儿。",
+      to: "关键是**两者可以互相转化**，这不是理论上的可能，而是你身上正在发生的事：血液凝固就是可溶的球状**纤维蛋白原**变成不溶的纤维状**纤维蛋白**。所以「球状」「纤维状」说的是当下的状态，不是这个分子的身份证。",
+      family: "还有一个不用进实验室就能验证的例子，教材专门写了：把头发弄湿加热，维持角蛋白 α 螺旋的**氢键被打开**，头发就能被拉长到原来的**两倍**。烫头发这件事的化学基础就在这里——你每次这么做，都是在亲手改变一个蛋白质的二级结构。"
+    }
+  ],
   summary: {
     en: "According to the overall arrangement of the peptide chains, two main types of protein can be distinguished: FIBRILLAR (fibrous) and GLOBULAR. In fibrillar proteins the chains are more or less extended and join mutually by cross-links into macroscopic fibres; in globular proteins the basic chain is folded into a globule.",
     cn: "按肽链的总体排布，可区分两类主要蛋白质：纤维状（丝状）与球状。在纤维状蛋白中，肽链或多或少被拉伸，通过横向交联相互连接成宏观纤维；在球状蛋白中，基本肽链被折叠成球体。"
@@ -798,6 +816,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "Both pages verified against the extracted scans. The phosvitin figure was re-read from the p.36 image and confirmed as 10² phosphate residues per chain, an exponent the raw OCR rendered as an unreadable '10*'.",
   cnNote: { topic: "七", title: "结构与功能关系", status: "partial" },
   mustKnow: { en: "Reverse the naming: the SIMPLE proteins are the exception — almost every protein carries a non-peptide component, and that component is usually where the function sits (heme carries the O₂, Zn²⁺ does the catalysis in carboxypeptidase, the sugar on the surface is what a blood group is). Phosphate is the one component that goes on and comes off again, which is why kinases can be used as switches for the cell cycle and for signalling.", cn: "把命名反过来看：**「简单蛋白质」才是例外**——几乎每个蛋白质都带着非肽的组分，而功能通常就落在那个组分上（血红素带 O₂、羧肽酶靠 Zn²⁺ 催化、表面的糖就是血型）。磷酸是唯一一个能装上去又卸下来的组分，所以激酶才能当作开关，用来控制细胞周期和信号传导。" },
+  trace: [
+    {
+      term: "conjugated protein 结合蛋白",
+      what: "带着**非肽组分**的蛋白质——糖、磷酸、金属离子、血红素等等。与之相对的叫 simple protein（简单蛋白质），只有肽链、别无他物。",
+      from: "这里有个值得把命名反过来看的地方：听名字像是「简单」是常态、「结合」是特例，**其实恰恰相反——几乎每个蛋白质都带着点非肽的东西，简单蛋白质才是例外**。而且更要紧的是：**功能往往就落在那个非肽组分上**。血红素负责带 O₂，羧肽酶靠 Zn²⁺ 催化，细胞表面那些糖决定了你的血型。把非肽部分当成附属品，是这一节最容易犯的错。",
+      to: "在这一堆组分里，**磷酸是特别的那一个：只有它能装上去、又卸下来**。别的组分基本是长在那儿不动的，而磷酸可以被激酶加上、被磷酸酶去掉——所以它才能当开关用。细胞周期、信号传导这些需要「开一下再关掉」的场合，用的都是磷酸化。往后看到「某某蛋白被磷酸化」，想的应该是开关被拨了一下，不是它多了个零件。",
+      family: "糖接上去的方式分两种，接口不同：**N-**糖苷键接在天冬酰胺上，**O-**糖苷键接在丝氨酸或苏氨酸的羟基上——血型物质和黏液的糖蛋白走的是后一条。相关的还有 proteoglycan（蛋白聚糖，结缔组织的成分）；胶原蛋白也算糖蛋白，它的糖接在羟脯氨酸或羟赖氨酸上。"
+    }
+  ],
   summary: {
     en: "Proteins are sometimes divided into SIMPLE and CONJUGATED: simple proteins yield only amino acids on hydrolysis, i.e. they contain only the peptide component; conjugated proteins contain further components besides amino acids. According to current ideas, non-peptide components are a regular part of the vast majority of proteins — so-called simple proteins are rather the EXCEPTION.",
     cn: "蛋白质有时被分为简单蛋白质与结合蛋白质：简单蛋白质水解后只产生氨基酸，即只含肽组分；结合蛋白质除氨基酸外还含有其他组分。按当前的看法，非肽组分是绝大多数蛋白质的常规组成部分——所谓简单蛋白质反倒是例外。"
