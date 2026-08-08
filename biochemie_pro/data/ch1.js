@@ -22,6 +22,22 @@ window.BIOCHEM.topics.push(
   coverageNoteCn: "第 8 页已与扫描件核对；第 9 页（表 1.1 里程碑）不在提取到的页面集里，故本节点不包含它。",
   cnNote: { topic: "一", title: "序论", status: "mapped" },
   mustKnow: { en: "Biochemistry could only exist once chemistry itself got good enough to handle living matter's complexity — the Kjeldahl method for nitrogen (1883) is the book's own example of the enabling tool, so the field's founding date tracks an instrument, not an idea. And 'molecular biology' names two different things depending on who says it: broadly, all of biochemistry studied at the molecular level; narrowly, today, essentially molecular genetics — worth keeping straight since the book uses the wide sense.", cn: "生物化学能够出现，前提是化学本身变得足够强大，能够处理生命物质的复杂性——教材自己举的例子是1883年测氮的凯氏定氮法：这门学科的诞生日期，追根溯源是跟着一件工具走的，不是跟着一个想法走的。而『分子生物学』这个词，说的人不同、意思也不同：广义上它就是在分子层面研究的整个生物化学；今天的狭义用法则基本等同于分子遗传学——值得分清楚，因为教材用的是广义。" },
+  trace: [
+    {
+      term: "molecular biology 分子生物学",
+      what: "一个**含义不固定**的词，这是它让人犯迷糊的全部原因。广义上，它就是「在分子层面进行的整个生物化学」——那样的话它和生物化学几乎是一回事；而今天大多数人嘴里的狭义用法，基本等同于 molecular genetics（分子遗传学），也就是专讲核酸、复制、转录、翻译的那一块。",
+      from: "两个意思并存，是因为这个词出现得晚。生物化学在 19 世纪最后二十五年就已经立住了，它的两个「父母」是有机化学和生理学，所以早期干脆叫 physiological chemistry（生理化学）。等到分子层面的手段成熟、核酸那条线爆发之后，才有了「分子生物学」这个说法，于是它一边被当成整个学科的新名字，一边又被当成其中一个分支的名字。",
+      to: "**这本教材用的是广义**，所以在这门课上看到它，按「分子层面的生物化学」来理解和作答，不要缩小成分子遗传学。这是这一节唯一一个会直接影响答题的分辨点。",
+      family: "同一族里还有 physiological chemistry（这门学科的旧称，现在基本不用了）和 biotechnology（生物技术，指把这些认识拿去做事，是应用侧而不是认识侧）。三个词描述的是同一片领域的不同时期和不同侧面。"
+    },
+    {
+      term: "Kjeldahl method 凯氏定氮法",
+      what: "一个 1883 年建立的、测定样品里氮含量的分析方法。教材把它当作生物化学得以诞生的标志性例子。",
+      from: "为什么一个测氮的方法配得上这个位置？因为蛋白质里含氮，测得准氮就等于能定量蛋白质。而在此之前，普通化学和分析手段还处理不了生命物质那种「高度组织化、化学上极其复杂」的样品——想研究也无从下手。",
+      to: "这里有一个值得记住的规律，而且它在这门课里会反复出现：**这门学科的每一次跃进都跟着工具走，不是跟着想法走**。19 世纪末靠的是凯氏定氮法这类分析方法；20 世纪下半叶的迅猛发展靠的是另一批物理化学方法——光谱学、色谱、X 射线结构分析、电子显微镜。被问到「生物化学为什么这么晚才独立」，答案就在这条线上。",
+      numbers: "1883 年凯氏定氮法建立；19 世纪最后二十五年生物化学成为独立学科，是「大」化学学科里最后成立的一个；1906 年第一本以生物化学命名的期刊《Biochemische Zeitschrift》创刊，是它真正兴起的标志年份。"
+    }
+  ],
   summary: {
     en: "Biochemistry studies the substances occurring in organisms, the processes by which those substances enter or are formed in organisms, how they react with each other and with the environment, and the methods used to identify, characterise and measure them. It therefore sits simultaneously among the biological sciences (it studies living nature) and the chemical disciplines (it deals with chemical transformations).",
     cn: "生物化学研究生物体内存在的物质、这些物质进入或在体内生成的过程、它们彼此之间以及与环境之间的反应，还包括鉴定、表征和测定这些物质与过程的方法。因此它既属于生物科学（研究生命自然），又属于化学学科（研究化学转变）。"
