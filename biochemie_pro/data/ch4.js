@@ -513,6 +513,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "All five pages read directly from the scans, with the Okazaki-fragment size figures (10³ residues on p.81; 1,000-2,000 nucleotides on p.83) zoomed and cross-checked for consistency. p.80 is shared with node 4-1-3-1 (see its coverage note) — only the material from the bold subheading '2) Helikasy, vazebné proteiny a DNA-ligasy' onward is used here.",
   cnNote: { topic: null, title: "DNA的复制 (笔记无编号，见 pp.211–212，属于27个主题之外的补充内容)", status: "mapped" },
   mustKnow: { en: "All known DNA polymerases can only extend a chain 5' to 3', and that one restriction is why replication cannot simply run the same way on both strands: one new strand grows continuously in the direction the fork is opening (leading), and the other has to be built backwards in short pieces (lagging, via Okazaki fragments) because it too has no choice but to go 5' to 3'. Ligase's whole job description follows from what it CANNOT do — join two separate single strands — which is why it only ever seals a nick where the DNA is already double-helical on both sides.", cn: "所有已知的DNA聚合酶都只能从5'往3'方向延伸链，而正是这一条限制，决定了复制不可能在两条链上用同一种方式进行：一条新链沿着复制叉打开的方向连续生长（前导链），另一条则必须反过来、一小段一小段地造（后随链，靠冈崎片段），因为它也别无选择、只能5'到3'走。连接酶的整个工作描述，其实是由它**做不到**的事定义的——它没法把两条独立的单链接起来——这也是为什么它永远只能封住两侧都已经是双螺旋的那种缺口。" },
+  trace: [
+    {
+      term: "lagging strand / Okazaki fragments 后随链与冈崎片段",
+      what: "复制时两条新链的造法**不一样**：一条顺着复制叉打开的方向连续地长（leading strand，前导链），另一条只能倒着来、一小段一小段地造（lagging strand，后随链），那些小段就是 Okazaki fragments。",
+      from: "为什么要搞得这么别扭？根子上只有一条限制：**所有已知的 DNA 聚合酶都只能从 5′ 往 3′ 方向延伸**，没有例外。而双链是反向平行的，两条模板的方向相反。于是复制叉往前开的时候，一条模板正好让新链顺着方向长；另一条模板的方向反了，新链只能背着复制叉长——那就只好等叉子开出一段、再回头补一段。**不是酶笨，是它只会朝一个方向走，而模板有两个方向。**",
+      to: "一段一段造完，就得有人把它们缝起来，这就是 DNA ligase（连接酶）的活。这里有个很值得记的细节：**连接酶的职能其实是由它做不到的事定义的**——它没办法把两条独立的单链接到一起，只能封住那种两侧都已经是双螺旋的缺口。所以它永远是收尾的，不可能用来起头。",
+      family: "同一个复制叉上还有几个分工明确的角色：helicase（解旋酶，大肠杆菌里是 DnaB 蛋白）负责把双螺旋拉开；SSB（单链结合蛋白）负责把拉开的单链撑住、不让它自己合回去；primase（引物酶）负责起头，因为聚合酶只会延长、不会从零开始。整个过程是**半保留复制**——每条新的双链都由一条老链和一条新链组成。"
+    }
+  ],
   summary: {
     en: "Unwinding the double helix and joining the resulting fragments requires a further cast of proteins beyond the polymerases: HELICASES, single-strand BINDING PROTEINS, and DNA LIGASE. Their combined action, together with primase-made RNA primers, lets replication proceed as a SEMICONSERVATIVE, SEMIDISCONTINUOUS process at the REPLICATION FORK, with one new strand (LEADING) made continuously and the other (LAGGING) built from OKAZAKI FRAGMENTS.",
     cn: "解开双螺旋并把由此产生的片段连接起来，需要除聚合酶外的另一组蛋白质：解旋酶、单链结合蛋白，以及DNA连接酶。它们的协同作用，加上引发酶合成的RNA引物，使复制得以在复制叉处以半保留、半不连续的方式进行——一条新链（先导链）连续合成，另一条（滞后链）则由冈崎片段构成。"
