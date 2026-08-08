@@ -25,31 +25,46 @@ times per session, and which is **not** caused by anything you or it did wrong �
 
 > 继续
 
-That recovers it. The operational answer is **commit and push after every batch**, which is why
-nothing has ever been lost to it — ch7, ch8 and ch9 were all written across sessions that tripped
-repeatedly, and every finished batch survived.
+That recovers it. **Commit and push after every batch** is the whole defence and it has never
+failed — ch7, ch8 and ch9 were each written across sessions that tripped repeatedly, and every
+finished batch survived.
 
-**Do not spend session time diagnosing this, and above all do not dump transcripts to investigate
-it.** Measured 2026-08-08 across the recent transcripts:
+### What this actually is — measured 2026-08-08, replacing three wrong claims
 
-- **The two kinds are different.** `model_refusal_fallback` switches model and retries by itself —
-  you may not even notice. `model_refusal_no_fallback` is the hard stop that needs `继续`. The
-  hard stop is the large majority.
-- **Model-switching is not a lever you control.** The harness already auto-switches (Fable 5 →
-  Opus 5 observed repeatedly). All three models trip. An earlier version of this file said "do not
-  switch models"; that is moot rather than wrong — nothing is being asked of you either way.
-- ⚠️ **Investigating the trips re-triggers them.** Reading old transcripts pulls the previous
-  refusal text back into context, and sessions that did this tripped again immediately afterwards.
-  Two separate sessions burned most of their window this way and produced no content. **The
-  cause is not diagnosable from inside a session; stop and write nodes instead.**
-- ⚠️ **Do not trust per-session trip counts, including any quoted in the archive.** Resumed or
-  forked sessions each get their own `.jsonl` carrying a *copy* of the shared history, so one trip
-  appears in four transcripts. Four "independent sessions" that each first-tripped at entry 282
-  turned out to be one conversation, verified by hashing the first prompt. Any earlier count here
-  or in the archive is inflated by roughly that factor. A scan that counts the string
-  `safeguards flagged` is also counting its own diagnostic output — filter on the harness's
-  `type=system, subtype=model_refusal_*` records instead. Same failure as the `check_strings.py`
-  bug: the scan ran, it just was not scanning what it claimed to be.
+Filter transcripts on the assistant message's own `stop_reason`, **not** on the string
+`safeguards flagged` (that also matches a session's own diagnostic output, which inflated an
+earlier count here roughly fourfold).
+
+**1. ⚠️ Prefer Opus 5. Avoid Sonnet 5.** This reverses the old advice, which read *"do not switch
+models — measured twice, it does not help."* Refusals per assistant turn, over five sessions:
+
+| model | turns | refusals | rate |
+|---|---|---|---|
+| **Sonnet 5** | 199 | 20 | **10.1 %** |
+| Opus 5 | 597 | 18 | 3.0 % |
+| Haiku 4.5 | 138 | 0 | 0 % |
+
+Sonnet 5 refuses at roughly 3.4× Opus 5 on this workload. A session that switched *to* Sonnet
+then stalled outright. (Haiku's 0/138 is one session and too small to lean on; the
+Sonnet-vs-Opus gap is not.)
+
+**2. The two symptoms are one mechanism.** A reply that stops dead mid-sentence and a reply
+replaced wholesale by an error are both `stop_reason: refusal`. The classifier fires before the
+first token (empty content) or partway through the stream (partial content, cut mid-word).
+**Do not diagnose them as separate problems** — a session spent its remaining window doing
+exactly that.
+
+**3. It is not context size, and not session length.** No `max_tokens` appears anywhere in the
+recent transcripts. The largest session measured — 515 entries, 264 tool calls, including a
+38k-token read — took **zero** refusals, while sessions of 143–181 entries took 6–11. The old
+claim that the hazard rate rises with session length is not supported.
+
+**Retracted, and worth recording as a method error:** a previous edit of this file claimed
+*"investigating the trips re-triggers them."* That rested on 27 of 27 refusals occurring in a
+context mentioning the safeguard — which is **contamination, not causation**: line 23 above
+quotes the error string, so every session carries it from its first Read onward and the
+condition is always true. Checking only the *first* refusal in each session, the preceding
+entries contain no such wording in any of them. The correlation was an artefact of the test.
 
 ⚠️ **After any interruption mid-write, check the file parses before building on it** — one trip
 truncated a `Write` inside a string literal:
