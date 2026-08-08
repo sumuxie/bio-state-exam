@@ -36,10 +36,10 @@ that is the entire defence and nothing has ever been lost.
 
 | Layer | Done | Left |
 |---|---|---|
-| `mustKnow` (Czech ch1–10) | **207 / 207 ✅** | — |
-| `mustKnow` (Lehninger + entity) | 0 / 23 | **23** — approved, not started |
+| `mustKnow` | **230 / 230 ✅ closed** | — |
 | `trace` 追根溯源 | 34 cards | open-ended; see below |
-| Structures (amino acids) | 7 / 20 drawn | 13, then ~50 more molecules |
+| Structures — amino acids | **20 / 20 drawn ✅** | — |
+| Structures — everything else | 0 | sugars, nucleotides, coenzymes, lipids, pathway intermediates |
 | App features | 6 shipped | 3 parked |
 
 **`trace` by chapter** (nodes → cards): ch1 6→2 · ch2 10→7 · ch3 9→5 · ch4 18→4 · **ch5 10→0** ·
@@ -55,19 +55,18 @@ reading voices · folded coverage note · highlighting with four pens · URL dee
 
 ## Next
 
-1. **Draw the remaining 13 amino acids** in `biochemie_struct`, then sugars / nucleotides /
-   coenzymes / lipids. **Blocked on one answer:** does the exam require *drawing* structures or
-   only *recognising* them? If drawing, sugars need hand-laid Haworth projections and cost far
-   more.
+1. **Draw the next structure group** in `biochemie_struct`. Amino acids are done (20/20).
+   Ruojin has settled the open question — **draw everything, sugars included**; she already has
+   the sugars memorised, so Haworth layout is no longer a blocker. Suggested order: sugars →
+   nucleotides/bases → coenzymes (ATP, NAD⁺, FAD, CoA, TPP, PLP) → lipids → pathway intermediates.
 2. **More `trace`**, in the chapters she is reading.
-3. **`mustKnow` for the 23 Lehninger/entity nodes** — approved, same register.
 
 **No new Lehninger depth nodes are needed.** All 20 exist and the depth queue's top 20 are done.
 The archive used to say five high-value subjects remained (genetic code, protein synthesis, gene
 regulation, urea cycle, amino acid degradation); **measured 2026-08-08, the Czech book covers all
 five** — `4-2-1`…`4-2-4-2` and the whole of ch5. Correction is in the archive next to the original
-claim. What the 20 existing nodes lack is not more nodes but the **layers**: 0 of 20 carry
-`mustKnow`, 0 carry `trace`.
+claim. The 20 existing nodes now all carry `mustKnow`; none carries `trace` yet, and that is the
+only layer still open on the depth nodes.
 
 ⚠️ **Grep the Czech layer before believing any coverage claim**, including ones in the handoffs.
 This has now produced a wrong answer twice — photosynthesis, then these five.
