@@ -36,17 +36,25 @@ Filter transcripts on the assistant message's own `stop_reason`, **not** on the 
 earlier count here roughly fourfold).
 
 **1. ⚠️ Prefer Opus 5. Avoid Sonnet 5.** This reverses the old advice, which read *"do not switch
-models — measured twice, it does not help."* Refusals per assistant turn, over five sessions:
+models — measured twice, it does not help."* Refusals per assistant turn, over **24 distinct
+conversations**:
 
 | model | turns | refusals | rate |
 |---|---|---|---|
-| **Sonnet 5** | 199 | 20 | **10.1 %** |
-| Opus 5 | 597 | 18 | 3.0 % |
-| Haiku 4.5 | 138 | 0 | 0 % |
+| **Sonnet 5** | 855 | 54 | **6.3 %** |
+| Opus 5 | 4781 | 67 | 1.4 % |
+| Haiku 4.5 | 307 | 0 | 0.0 % |
 
-Sonnet 5 refuses at roughly 3.4× Opus 5 on this workload. A session that switched *to* Sonnet
-then stalled outright. (Haiku's 0/138 is one session and too small to lean on; the
-Sonnet-vs-Opus gap is not.)
+⚠️ **Deduplicate before computing this — 69 of 93 transcripts were forks.** A resumed or forked
+session writes a fresh `.jsonl` containing a copy of the shared history, so the same turns are
+counted many times over. Group by a hash of the first user prompt and keep the longest transcript
+per group. Two earlier attempts at this table, both recorded in this file and both wrong, skipped
+that step: they reported Sonnet at 10.1 % and Opus at 3.0 %, off in *both* directions at once.
+
+**The direction is solid, the magnitude is not.** Model choice here is not random — Sonnet turns
+are drawn disproportionately from sessions that were already going badly, because switching is
+something you do *in response to* trouble. Read this as "Opus is the safe default and Sonnet is a
+bad thing to switch to under stress", not as a calibrated 4.5×.
 
 **2. The two symptoms are one mechanism.** A reply that stops dead mid-sentence and a reply
 replaced wholesale by an error are both `stop_reason: refusal`. The classifier fires before the
