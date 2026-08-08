@@ -27,6 +27,36 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 
 ---
 
+## 新 session 的开场指令（复制这段）
+
+```
+读 C:\Users\Admin\Downloads\bio-state-exam\CORE_HANDOFF.md，全文读完（只有 8 KB，别跳）。
+然后只读你要做的那一条主线对应的那一个 CORE 文件，其余三个不要读。
+不要整读 HANDOFF_LEHNINGER.md / HANDOFF.md / LEHNINGER_START.md，只按章节号 grep。
+开工前跑 CORE_HANDOFF「每次开工前跑这三条」那套检查；收工前再跑一次 audit_handoff.py。
+写完一批立刻 commit + push。被打断就回「继续」，接着做之前先跑一次 parse 检查。
+
+这次做：<在这里填一行>
+```
+
+**最后那行填什么**——三条线各自的下一步：
+
+| 想做哪条 | 填这一行 |
+|---|---|
+| CORE2 内容（默认） | `CORE2 的 §19.5（Mitochondrial Genes，A pp.692–696）。动手前先 grep Czech 层复核覆盖，页码逐句在 A 的 OCR 里测。` |
+| CORE2 内容（下一个） | `CORE2 的 §14.5（糖酵解/糖异生的协同调控，A pp.539–546）。Czech 有通路但 F2,6BP/PFK-2 零命中。` |
+| CORE2 补债 | `给 L-9-1-1 / L-9-2-1 / L-22-2-1 / L-24-2-1 补行内 (A p.N) 引用，让它们进入 verify_citations 的协议。` |
+| CORE3 结构式 | `CORE3：先修可见性（三个选项里选最轻的那个，需要 Ruojin 拍板），再把结构清单的分母定下来。` |
+| CORE1 app | `CORE1 的 A3（只看必背 filter）。A4 放最后，它是唯一能损坏已有用户数据的。` |
+
+⚠️ **不管填哪一行，都别跳过「动手前先 grep」这一步。** CORE2 里那两张表的覆盖判断
+**已经被推翻过五次**，全部是「没查就填」。
+
+⚠️ **`§19.5` 和 `§14.5` 属于「merge 进已有 topic」桶**，所以 `topicKey` 要**并进 Czech 已有的
+key、不要新起**，`czTitle` 也**不用** `Žádná —`——照抄 `leh_ch28.js`（`L-28-3-1`）的写法。
+
+---
+
 ## 不要读旧的三个 handoff
 
 `HANDOFF_LEHNINGER.md` 302 KB / 4261 行 ≈ 69k tokens，`HANDOFF.md` 68 KB，
