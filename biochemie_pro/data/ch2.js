@@ -132,6 +132,15 @@ window.BIOCHEM.topics.push(
       cn: "术语问题：捷克教材说在高 pH 下「季铵基团被去质子化」（kvartérní amoniová skupina）。Lehninger 那张共轭酸碱对的图（Fig. 2-15，A p.57）把甘氨酸当作二元酸处理，其两个可电离基团是羧基（pKa 2.34）和氨基（Ka = 2.51 x 10^-10 M，pKa 9.60）——而 2.3 节开篇即称之为「氨基酸上被质子化的氨基和羧基」（A p.59）。在高 pH 下失去质子的是被质子化的 α-氨基，即 -NH3+，属于伯铵离子。季铵离子的氮上带有四个取代基、完全没有氢，因此根本没有质子可失，按定义就无法被去质子化。口试时请说「被质子化的氨基」。" }
   ],
   mustKnow: { en: "Charge is a function of pH, and at the isoelectric point the net charge is zero — that single number is why ion-exchange chromatography and electrophoresis can separate amino acids and proteins at all, because at its own pI a molecule stops moving in a field. Separately: of the 20, only Trp, Tyr and Phe absorb in the UV, which is why A₂₈₀ reads protein concentration in seconds without consuming the sample.", cn: "电荷是 pH 的函数，而在等电点 pI 上净电荷为零——就这一个数字，解释了离子交换层析和电泳为什么能分离氨基酸与蛋白质：在自己的 pI 上，分子在电场里就不动了。另一件事：20 种里只有 Trp、Tyr、Phe 吸收紫外，所以 A₂₈₀ 能在几秒内读出蛋白质浓度，而且不消耗样品。" },
+  trace: [
+    {
+      term: "pI 等电点",
+      what: "一个 **pH 值**，不是电荷值——这是最容易读错的地方。它的定义只有一句：当环境 pH 正好等于这个数时，氨基酸（或蛋白质）的净电荷为零。",
+      from: "氨基酸身上同时挂着一个能给出质子的 -COOH 和一个能接受质子的 -NH₂，所以它带什么电完全由周围的 pH 说了算。节点讲得很直白：低 pH 下羧基的解离被压住、变回质子化形式，整个分子表现为**阳离子**；高 pH 下反过来，成为阴离子。把 pH 从低往高扫，净电荷必然从正走到负，中间必然经过零——经过零的那一点就是 pI。",
+      to: "这一个数就是**分离纯化的全部理论依据**。ion-exchange chromatography（离子交换层析）和 electrophoresis（电泳）之所以能把不同的氨基酸和蛋白质分开，靠的就是在同一个 pH 下它们带的电荷不同、因而移动方式不同。你学的「蛋白质分离纯化表征」，地基就在这里。",
+      family: "同一条滴定曲线上还有两个拐点，分别对应 -COOH 和 -NH₂ 各自的 pK。如果侧链上还有可解离的基团，它也一起参与，所以那些氨基酸的 pI 必须把侧链算进去，不能只用两个 pK 求平均。"
+    }
+  ],
   summary: {
     en: "Knowledge of the acid-base properties of amino acids is very important both for understanding the properties of proteins and for analysing amino acids themselves. From the ionic character of amino acids follows the dependence of their structure on pH.",
     cn: "了解氨基酸的酸碱性质，对于认识蛋白质的性质以及分析氨基酸本身都非常重要。由氨基酸的离子特性可推知其结构对 pH 的依赖性。"
@@ -457,6 +466,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "IMPORTANT GAP: only pp. 27 and 33 are in the extracted page set. Peptide-bond stereochemistry (p.27) and the hydrophobic effect (p.33) below are verified. pp. 28–32 — which carry the α-helix, β-structure, collagen helix and the other stabilising interactions — were NOT extracted; that block is marked separately below as unverified standard-course content.",
   cnNote: { topic: "六", title: "蛋白质三维结构", status: "mapped" },
   mustKnow: { en: "The peptide bond cannot rotate, so the backbone is not a floppy string but a row of flat rigid plates hinged only at the α-carbons; the chain has far fewer shapes open to it than its length suggests, and that is what makes folding possible at all — the cis form turns up essentially only next to proline. And the hydrophobic effect is driven by water, not by attraction between the chains: burying the nonpolar side chains releases the water that was held in order around them, so the protein ends up with a nonpolar core and the smallest surface it can manage.", cn: "肽键不能旋转，所以主链不是一根软绳，而是一排平的硬板、只在 α 碳处有铰链；链能采取的构象数远少于它的长度所暗示的，而正因如此，折叠才是可能的——cis 构型基本只出现在脯氨酸旁边。另外，疏水效应的推动力是**水**，不是链之间的吸引：把非极性侧链埋起来，就放掉了原本被排列整齐地围在它们周围的水，于是蛋白质最终形成一个非极性核心，并把表面缩到最小。" },
+  trace: [
+    {
+      term: "amide plane 酰胺平面",
+      what: "肽键周围那几个原子被锁死在**同一个平面**里，这个平面就叫 amide plane。结果是整条主链根本不是一根软绳，而是一排硬板，只在 α-碳的位置才能转动。",
+      from: "凭什么说它锁死？靠一个能测的数：节点给出肽键里 C–N 的键长是 1.32 Å，而这个值**落在单键和双键之间**。也就是说这根键有一部分双键的性质，而双键是不能自由旋转的。所以不需要任何理论，光凭键长就能推出这个平面转不了。",
+      to: "后果是蛋白质能采取的形状**远远少于**链长所暗示的数量——这正是折叠问题有解、而不是天文数字般无望的原因。同一件事还带来 cis-trans 异构的问题，而节点给了结论：球状蛋白里 trans 型压倒性占优。",
+      family: "塑造构象的另一股力是 hydrophobic effect（疏水效应）。注意节点强调的是它的本质是**熵增**，而不是通俗说法里的「油怕水」。它有两个具体表现：分子倾向于取表面积最小的形状；非极性侧链往里躲、聚成 nonpolar core（疏水核心）。"
+    }
+  ],
   summary: {
     en: "A characteristic property of proteins is their very precisely defined spatial arrangement. A randomly arranged or extended peptide chain mostly shows no biological activity; the function of a protein is entirely dependent on its CONFORMATION, which is essentially the spatial arrangement of the atoms of the peptide chain.",
     cn: "蛋白质的一个特征性性质是其空间排布极其精确地被规定。随机排布或被拉伸的肽链通常不表现出生物活性；蛋白质的功能完全取决于其构象，而构象本质上就是肽链原子的空间排布。"
@@ -563,6 +581,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "Both pages verified against the extracted scans.",
   cnNote: { topic: "六", title: "蛋白质三维结构", status: "mapped" },
   mustKnow: { en: "Secondary and tertiary are separated by distance along the sequence — residues that are neighbours in the chain versus residues far apart in it — not by the kind of interaction involved. That is the definition, and it is the one people misstate. Note also that this textbook counts the placement of disulfide bridges as part of the PRIMARY structure, which not every book does.", cn: "二级与三级结构的分界是**在序列上的距离**——链上彼此相邻的残基，对 链上相隔很远的残基——而不是相互作用的类型。这才是定义，也正是最常被说错的一点。另外注意：本教材把二硫键的位置算进**一级结构**，这一点并非每本书都一致。" },
+  trace: [
+    {
+      term: "secondary / tertiary 二级与三级结构",
+      what: "这两个词的分界线**不是作用力的种类，而是残基在序列上的距离**。二级结构说的是在链上彼此靠近的残基如何在空间里排列；三级结构说的是在链上离得很远的残基如何在空间里凑到一起。",
+      from: "会错，是因为直觉总往作用力上想——以为二级归氢键管、三级归别的键管。节点把这条路明确堵死了：判据是距离，不是键的种类。记住这一点，这一节剩下的词就自己归位了。",
+      to: "有了这把尺子，后面几个词各就各位：supersecondary structure（超二级结构）是几段二级结构反复出现的固定搭配，例如 βαβ motif；domain（结构域）是能独立折叠成型的一整块；而 quaternary structure（四级结构）必须有**不止一条肽链**才谈得上——只有一条链的蛋白没有四级结构。",
+      family: "还有一条容易被略过：这本教材把**二硫键的位置**也算进一级结构，不只是氨基酸顺序。各家教材在这一点上并不一致，考试按这本答。另外，四级结构里亚基之间的接触面往往直接决定生物活性，节点举的例子是抗体。"
+    }
+  ],
   summary: {
     en: "In describing the three-dimensional arrangement of proteins FOUR LEVELS are distinguished. Later studies of conformation, function and evolution proved the importance of two further levels of organisation: supersecondary structure and domains.",
     cn: "在描述蛋白质的三维排布时区分四个层次。后来对构象、功能与演化的研究证明还有两个组织层次同样重要：超二级结构与结构域。"
@@ -884,6 +911,16 @@ window.BIOCHEM.topics.push(
   coverageNote: "p. 37 verified against the scan (incl. the Svedberg equation and all numeric values). pp. 38–40 — continuation, including denaturation — are not in the extracted page set. CNNOTE CORRECTED 2026-08-07 (HANDOFF_LEHNINGER.md §6a, §2c, §13n): it pointed at Chinese-notes topic 七, which is myoglobin/haemoglobin/sickle cell on notes pp.37–40 and is what L-5-1-1 deepens. Two earlier sessions flagged this and neither fixed it, deliberately — §2c recorded that the fix 'needs the notes' own p.41 heading, which this session did not open', and guessing was refused. The page was opened this time. Notes p.41 carries a highlighted heading reading 八 蛋白质的分离、纯化、表征 (topic 8, separation, purification and characterisation of proteins), and its first item is ① 蛋白质的性质 — literally this node's title, Vlastnosti proteinů. Notes p.46 was rendered and is BLANK, which fixes the topic's end, so topic 八 = pp.41–45 exactly as §6a predicted. The mapping is now measured at both ends rather than inferred.",
   cnNote: { topic: "八", title: "蛋白质的分离、纯化、表征（笔记 pp.41–45；p.41 的标题与首项「蛋白质的性质」于 2026-08-07 直接读图核实，p.46 为空白页，确定该主题的结束）", status: "mapped" },
   mustKnow: { en: "Proteins run from 10⁴ to 10⁶, too large for the classical ways of measuring a molecular mass, so Mr has to be read off something that scales with size instead — how fast it sinks (ultracentrifuge), how it threads a molecular sieve (gel chromatography), how it moves in a field. The trap: the sedimentation coefficient S rises with mass but is NOT proportional to it, which is why a 30S and a 50S subunit make a 70S ribosome rather than an 80S one.", cn: "蛋白质的 Mr 从 10⁴ 到 10⁶，太大了，经典的分子量测定方法用不上，所以只能改去读某个随大小变化的量——沉降有多快（超速离心）、穿过分子筛有多难（凝胶层析）、在电场里怎么跑。陷阱在这里：沉降系数 S 随质量增大，但**不是正比**，所以 30S 加 50S 得到的是 70S 核糖体，而不是 80S。" },
+  trace: [
+    {
+      term: "sedimentation coefficient S 沉降系数",
+      what: "它描述的是一个分子在超速离心机里**沉得多快**，单位是时间（Svedberg）。它**不是分子量**，也不能当分子量用——这是这一节最经典的误解。",
+      from: "为什么要绕这个弯？因为蛋白质太大了：节点给的范围是 Mr 从 10⁴ 到 10⁶，病毒还能到 10⁷，classical 的分子量测定方法在这个量级上根本用不了。所以只能改测一个**随分子大小变化**的可观测量，再从它反推回去。沉降速度就是这样一个量。",
+      to: "沉得快慢不只由质量决定，还取决于分子的形状和密度，所以 S 值**不能相加**。核糖体是最好记的反例：50S 的大亚基加 30S 的小亚基，装起来是 70S，不是 80S。看到这类数字时先想一句「这是沉降系数不是质量」，就不会算错。",
+      family: "测 Mr 还有另一条路：gel (permeation) chromatography（凝胶过滤层析），按分子在凝胶孔道里绕的路长短来分。此外蛋白质溶液带有胶体性质（例如 Tyndall effect），但它是 homodisperse（均一分散）的——大小整齐划一，这一点让它比普通胶体更接近真溶液。",
+      numbers: "蛋白质 Mr 的范围是 10⁴–10⁶，病毒可达 10⁷。这个跨度就是为什么必须换一套测量思路。"
+    }
+  ],
   summary: {
     en: "The physico-chemical properties of proteins are conditioned partly by their chemical composition and partly by their relative molecular mass. Globular proteins are generally soluble in aqueous salt solutions.",
     cn: "蛋白质的物理化学性质一方面取决于其化学组成，另一方面取决于其相对分子质量。球状蛋白一般可溶于水性盐溶液。"
