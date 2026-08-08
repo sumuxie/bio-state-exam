@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 572 citations -- 49 in a `src` field, 523 written inline in prose
+found 599 citations -- 49 in a `src` field, 550 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -235,6 +235,33 @@ OK        L-19-2-1       A p.682  points[10].en       quote found on [682]
 OK        L-19-2-1       A p.683  points[11].en       label found on [683]
 OK        L-19-2-1       A pp.684  points[12].en      quote found on [684]
 OK        L-19-2-1       A pp.684-685  points[13].en  label found on [684]
+OK        L-19-5-1       A p.692  coverageNote        label found on [692]
+OK        L-19-5-1       A p.693  coverageNote        label found on [693]
+OK        L-19-5-1       A p.694  coverageNote        label found on [694]
+OK        L-19-5-1       A p.695  coverageNote        label found on [695]
+OK        L-19-5-1       A p.696  coverageNote        label found on [696]
+OK        L-19-5-1       A p.692  points[0].en        quote found on [692]
+OK        L-19-5-1       A p.692  points[1].en        label found on [692]
+OK        L-19-5-1       A p.692  points[2].en        quote found on [692]
+OK        L-19-5-1       A p.693  points[2].en        quote found on [693]
+OK        L-19-5-1       A p.693  points[3].en        quote found on [693]
+OK        L-19-5-1       A p.693  points[4].en        label found on [693]
+OK        L-19-5-1       A p.693  points[5].en        quote found on [693]
+OK        L-19-5-1       A p.694  points[5].en        quote found on [694]
+OK        L-19-5-1       A p.694  points[6].en        quote found on [694]
+OK        L-19-5-1       A p.694  points[7].en        quote found on [694]
+OK        L-19-5-1       A p.694  points[8].en        label found on [694]
+OK        L-19-5-1       A p.694  points[9].en        quote found on [694]
+OK        L-19-5-1       A p.695  points[9].en        quote found on [695]
+OK        L-19-5-1       A p.695  points[10].en       quote found on [695]
+OK        L-19-5-1       A p.693  points[11].en       label found on [693]
+OK        L-19-5-1       A p.695  points[11].en       quote found on [695]
+OK        L-19-5-1       A p.695  points[12].en       quote found on [695]
+OK        L-19-5-1       A p.695  points[13].en       quote found on [695]
+OK        L-19-5-1       A p.695  points[14].en       quote found on [695]
+OK        L-19-5-1       A p.695  points[15].en       quote found on [695]
+OK        L-19-5-1       A p.696  points[15].en       label found on [696]
+OK        L-19-5-1       A p.696  points[16].en       quote found on [696]
 OK        L-21-1-1       A p.745  points[0].en        label found on [745]
 OK        L-21-1-1       A p.746  points[1].en        label found on [746]
 OK        L-21-1-1       A p.746  points[2].en        label found on [746]
@@ -577,4 +604,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 571 | ELSEWHERE 0 | UNCHECKED 0
+OK 598 | ELSEWHERE 0 | UNCHECKED 0

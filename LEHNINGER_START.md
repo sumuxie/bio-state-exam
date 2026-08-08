@@ -16,7 +16,7 @@ the whole session. It is an archive you **grep by section number**; the index is
 this page. `HANDOFF.md` (68 KB, the Czech app) is the same: grep, never read whole. Both sizes
 are re-checked by `audit_handoff.py`.
 
-**Corpus.** The layers run over **238** nodes (207 Czech + 28 lehninger + 3 entity), grouped
+**Corpus.** The layers run over **239** nodes (207 Czech + 29 lehninger + 3 entity), grouped
 under **70** distinct `topicKey` values. Exactly 19 keys join both books — that join is what
 `biochemie_pro` exists to show. `audit_handoff.py` re-checks these four numbers against the live
 data, so it complains if they drift.
