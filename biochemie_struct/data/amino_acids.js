@@ -41,9 +41,13 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
   items: [
     /* ---- nonpolar, aliphatic ---- */
     { key: "gly", cn: "甘氨酸", en: "Glycine",       tlc: "Gly", olc: "G", cls: "nonpolar",
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }],
+             bonds: [[0,1],[1,2],[2,3,2],[2,4]] },
       smiles: "NCC(=O)O",                 formula: "C2H5NO2",    cid: 750,
       note: { cn: "唯一没有不对称碳的氨基酸——侧链就是一个 H，所以它不旋光，也没有 L/D 之分。侧链最小，是转角处常见的那一个。" } },
     { key: "ala", cn: "丙氨酸", en: "Alanine",       tlc: "Ala", olc: "A", cls: "nonpolar",
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }],
+             bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5]] },
       smiles: "C[C@@H](N)C(=O)O",         formula: "C3H7NO2",    cid: 5950 },
     { key: "val", cn: "缬氨酸", en: "Valine",        tlc: "Val", olc: "V", cls: "nonpolar",
       smiles: "CC(C)[C@@H](N)C(=O)O",     formula: "C5H11NO2",   cid: 6287, essential: true },
@@ -60,6 +64,8 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
       note: { cn: "含硫，但和半胱氨酸不同——它的硫在链中间（硫醚），不能形成二硫键。翻译起始密码子 AUG 编码的就是它。" } },
     /* ---- aromatic ---- */
     { key: "phe", cn: "苯丙氨酸", en: "Phenylalanine", tlc: "Phe", olc: "F", cls: "aromatic",
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "C", x: 0.87, y: 2.5 }, { el: "C", x: 1.73, y: 3.0 }, { el: "C", x: 1.73, y: 4.0 }, { el: "C", x: 0.87, y: 4.5 }, { el: "C", x: 0.00, y: 4.0 }, { el: "C", x: 0.00, y: 3.0 }],
+             bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6],[6,7,2],[7,8],[8,9,2],[9,10],[10,11,2],[11,6] ] },
       smiles: "N[C@@H](Cc1ccccc1)C(=O)O", formula: "C9H11NO2",   cid: 6140, essential: true },
     { key: "tyr", cn: "酪氨酸", en: "Tyrosine",      tlc: "Tyr", olc: "Y", cls: "aromatic",
       smiles: "N[C@@H](Cc1ccc(O)cc1)C(=O)O", formula: "C9H11NO3", cid: 6057,
@@ -69,11 +75,15 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
       note: { cn: "最大的一个侧链，吲哚环。蛋白质在 280 nm 的吸收主要来自它和酪氨酸——这就是你能用紫外测蛋白浓度的原因。" } },
     /* ---- polar, uncharged ---- */
     { key: "ser", cn: "丝氨酸", en: "Serine",        tlc: "Ser", olc: "S", cls: "polar",
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "O", x: 1.73, y: 2.0, h: 1 }],
+             bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6]] },
       smiles: "N[C@@H](CO)C(=O)O",        formula: "C3H7NO3",    cid: 5951,
       note: { cn: "侧链羟基能被磷酸化，也是丝氨酸蛋白酶活性中心里那个亲核基团。" } },
     { key: "thr", cn: "苏氨酸", en: "Threonine",     tlc: "Thr", olc: "T", cls: "polar",
       smiles: "C[C@@H](O)[C@@H](N)C(=O)O", formula: "C4H9NO3",   cid: 6288, essential: true },
     { key: "cys", cn: "半胱氨酸", en: "Cysteine",    tlc: "Cys", olc: "C", cls: "polar",
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "S", x: 1.73, y: 2.0, h: 1 }],
+             bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6]] },
       smiles: "N[C@@H](CS)C(=O)O",        formula: "C3H7NO2S",   cid: 5862,
       note: { cn: "两个半胱氨酸的 -SH 氧化后连成二硫键——蛋白质里唯一的共价交联，也是这本教材把二硫键位置算进一级结构的原因（见 2-2-3）。" } },
     { key: "asn", cn: "天冬酰胺", en: "Asparagine",  tlc: "Asn", olc: "N", cls: "polar",
@@ -84,6 +94,8 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
       note: { cn: "它的酰胺氮是细胞里主要的氮供体——嘌呤环四个氮里有两个来自这里（见 4-1-1-1）。" } },
     /* ---- acidic ---- */
     { key: "asp", cn: "天冬氨酸", en: "Aspartate",   tlc: "Asp", olc: "D", cls: "acidic",
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "C", x: 1.73, y: 2.0 }, { el: "O", x: 1.73, y: 3.0 }, { el: "O", x: 2.60, y: 1.5, h: 1 }],
+             bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6],[6,7,2],[6,8]] },
       smiles: "N[C@@H](CC(=O)O)C(=O)O",   formula: "C4H7NO4",    cid: 5960,
       note: { cn: "嘌呤环的第四个氮来自它（见 4-1-1-1）；糖异生绕过丙酮酸那一步也经过它的产物草酰乙酸。" } },
     { key: "glu", cn: "谷氨酸", en: "Glutamate",     tlc: "Glu", olc: "E", cls: "acidic",
@@ -91,6 +103,8 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
       note: { cn: "氨基酸代谢的枢纽：转氨作用几乎都把氨基交给 α-酮戊二酸变成它，再由它统一处理。" } },
     /* ---- basic ---- */
     { key: "lys", cn: "赖氨酸", en: "Lysine",        tlc: "Lys", olc: "K", cls: "basic",
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "C", x: 1.73, y: 2.0 }, { el: "C", x: 0.87, y: 2.5 }, { el: "C", x: 1.73, y: 3.0 }, { el: "N", x: 0.87, y: 3.5, h: 2 }],
+             bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6],[6,7],[7,8],[8,9]] },
       smiles: "NCCCC[C@@H](N)C(=O)O",     formula: "C6H14N2O2",  cid: 5962, essential: true },
     { key: "arg", cn: "精氨酸", en: "Arginine",      tlc: "Arg", olc: "R", cls: "basic",
       smiles: "NC(=N)NCCC[C@@H](N)C(=O)O", formula: "C6H14N4O2", cid: 6322,

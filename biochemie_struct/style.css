@@ -112,6 +112,36 @@ code { font-family: var(--mono); font-size: 0.85em; }
   border-radius: 4px; padding: 0 0.25rem; font-size: 0.7rem;
 }
 
+/* Drawn structures. Everything inherits from CSS variables rather than being
+   baked light or dark, so one drawing serves both themes. */
+.draw {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 5.5rem; margin-bottom: 0.6rem;
+  overflow-x: auto;
+}
+.mol { max-width: 100%; height: auto; }
+.mol .bonds line {
+  stroke: var(--fg);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.mol .el {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-anchor: middle;
+  dominant-baseline: central;
+  fill: var(--fg);
+}
+/* Heteroatom colouring, the usual convention. Kept subtle: it should help you
+   find the nitrogen, not turn the page into a colour chart. */
+.mol .el-N { fill: #4c8dff; }
+.mol .el-O { fill: #ef5350; }
+.mol .el-S { fill: #d29922; }
+.mol .hsub { font-size: 9px; baseline-shift: -2px; fill: var(--fg-dim); }
+:root[data-theme="light"] .mol .el-N { fill: #0b5cd5; }
+:root[data-theme="light"] .mol .el-O { fill: #c62828; }
+:root[data-theme="light"] .mol .el-S { fill: #8a6100; }
+
 /* The empty slot is deliberately visible. A page that looks finished while
    the structures are missing would misrepresent its own state. */
 .slot {

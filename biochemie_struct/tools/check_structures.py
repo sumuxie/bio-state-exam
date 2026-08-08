@@ -86,11 +86,98 @@ def heavy_from_formula(f):
     return counts
 
 
+def heavy_from_mol(block):
+    """Count heavy atoms in a drawn `mol` graph, and return its bonds.
+
+    The graph is a SECOND, independently authored encoding of the same
+    molecule. Making it agree with the SMILES is the only real verification
+    available here: a hand-drawn structure cannot otherwise be checked by
+    anything, because a wrong ring renders just as cleanly as a right one.
+    """
+    atoms = re.findall(r'\{\s*el:\s*"([A-Za-z]+)"', block)
+    counts = {}
+    for el in atoms:
+        if el != "H":
+            counts[el] = counts.get(el, 0) + 1
+    bonds = [
+        [int(x) for x in re.findall(r"-?\d+", b)[:3]]
+        for b in re.findall(r"\[\s*\d+\s*,\s*\d+(?:\s*,\s*\d+)?\s*\]", block)
+    ]
+    return counts, len(atoms), bonds
+
+
+def rings_in_smiles(smi):
+    """Number of rings, from SMILES ring-closure digits.
+
+    Each ring closure is written as the same digit twice, so the count is
+    half the digit occurrences. Digits inside [brackets] are charges or
+    isotopes, never ring bonds, so bracket contents are skipped.
+    """
+    digits = 0
+    i = 0
+    while i < len(smi):
+        if smi[i] == "[":
+            i = smi.index("]", i) + 1
+            continue
+        if smi[i] == "%":               # %10 and above, two-digit label
+            digits += 1
+            i += 3
+            continue
+        if smi[i].isdigit():
+            digits += 1
+        i += 1
+    assert digits % 2 == 0, "odd number of ring-closure digits in %s" % smi
+    return digits // 2
+
+
+def check_graph(key, natoms, bonds, expect_bonds=None):
+    """Structural integrity of the drawing itself."""
+    problems = []
+    # Bond COUNT, checked against the SMILES. Without this a ring drawn open
+    # passes everything else: the atom count is unchanged and the molecule is
+    # still connected, just as a chain. Found by injecting exactly that error
+    # into phenylalanine and watching this script report a clean pass.
+    # For a connected graph, bonds = atoms - 1 + rings.
+    if expect_bonds is not None and len(bonds) != expect_bonds:
+        problems.append("has %d bonds, SMILES implies %d — a ring drawn open, "
+                        "or a bond missing/extra" % (len(bonds), expect_bonds))
+    seen = set()
+    for b in bonds:
+        i, j = b[0], b[1]
+        if i >= natoms or j >= natoms:
+            problems.append("bond [%d,%d] references an atom that does not exist" % (i, j))
+            continue
+        if i == j:
+            problems.append("bond [%d,%d] joins an atom to itself" % (i, j))
+        pair = (min(i, j), max(i, j))
+        if pair in seen:
+            problems.append("bond %s is drawn twice" % (list(pair),))
+        seen.add(pair)
+    # connectivity: a molecule drawn in two disconnected pieces is a mistake
+    if natoms and not problems:
+        adj = {}
+        for b in bonds:
+            adj.setdefault(b[0], []).append(b[1])
+            adj.setdefault(b[1], []).append(b[0])
+        stack, seenn = [0], {0}
+        while stack:
+            n = stack.pop()
+            for m in adj.get(n, []):
+                if m not in seenn:
+                    seenn.add(m)
+                    stack.append(m)
+        if len(seenn) != natoms:
+            problems.append("drawing is in %d disconnected pieces (%d of %d atoms reachable)"
+                            % (2, len(seenn), natoms))
+    return problems
+
+
 def main():
     files = sorted(glob.glob(os.path.join(DATA, "*.js")))
     assert files, "no data files found in %s" % DATA
 
     total = fails = 0
+    drawn = 0
     for path in files:
         # Always name the input. An earlier scanner in this project reported
         # "clean" five times for one hard-coded file; any per-file checker
@@ -98,28 +185,64 @@ def main():
         print("=== %s" % os.path.basename(path))
         src = io.open(path, encoding="utf-8").read()
 
-        entries = re.findall(
-            r'key:\s*"([^"]+)".*?smiles:\s*"([^"]+)".*?formula:\s*"([^"]+)".*?cid:\s*(\d+)',
-            src, re.S)
-        assert entries, "no structures parsed out of %s" % os.path.basename(path)
+        # split into per-entry blocks so an optional `mol` stays with its own key
+        blocks = re.split(r'(?=\{ key: ")', src)
+        entries = 0
 
-        for key, smi, formula, cid in entries:
+        for blk in blocks:
+            m = re.search(r'key:\s*"([^"]+)"', blk)
+            if not m:
+                continue
+            sm = re.search(r'smiles:\s*"([^"]+)"', blk)
+            fm = re.search(r'formula:\s*"([^"]+)"', blk)
+            if not (sm and fm):
+                continue
+            key, smi, formula = m.group(1), sm.group(1), fm.group(1)
+            entries += 1
             total += 1
+
             got = heavy_from_smiles(smi)
             want = heavy_from_formula(formula)
             if got != want:
                 fails += 1
-                print("  FAIL %-6s smiles=%-34s formula=%-12s" % (key, smi, formula))
+                print("  FAIL %-6s SMILES vs formula" % key)
                 print("       from SMILES  %s" % got)
                 print("       from formula %s" % want)
-        print("  %d structures checked" % len(entries))
+
+            # Anchor on the bonds array rather than on a closing brace: the mol
+            # block contains nested {} for every atom, so a lazy match to the
+            # next "}" stops in the wrong place. An earlier version of this
+            # regex silently matched nothing and the script cheerfully reported
+            # "0 of them drawn" for seven drawn molecules — which is only
+            # visible because the count is printed. Print your counts.
+            mb = re.search(r'mol:\s*\{(.*?bonds:\s*\[.*?\])\s*\}', blk, re.S)
+            if mb:
+                drawn += 1
+                mol_counts, natoms, bonds = heavy_from_mol(mb.group(1))
+                # the load-bearing check: the drawing and the SMILES are two
+                # independent encodings and must describe the same molecule
+                if mol_counts != want:
+                    fails += 1
+                    print("  FAIL %-6s DRAWING vs formula" % key)
+                    print("       from drawing %s" % mol_counts)
+                    print("       from formula %s" % want)
+                heavy = sum(want.values())
+                expect_bonds = heavy - 1 + rings_in_smiles(smi)
+                for p in check_graph(key, natoms, bonds, expect_bonds):
+                    fails += 1
+                    print("  FAIL %-6s %s" % (key, p))
+
+        assert entries, "no structures parsed out of %s" % os.path.basename(path)
+        print("  %d structures checked, %d of them drawn" % (entries, drawn))
 
     print()
-    print("heavy-atom check: %d structures, %d mismatched" % (total, fails))
-    print("NOT checked: hydrogen count, stereochemistry, identity against PubChem")
+    print("checked %d structures (%d drawn), %d failures" % (total, drawn, fails))
+    print("covered    : heavy atoms agree across formula / SMILES / drawing;")
+    print("             drawings are connected, with no self- or duplicate bonds")
+    print("NOT covered: hydrogen count, STEREOCHEMISTRY, identity against PubChem")
     if fails:
         sys.exit(1)
-    print("RESULT: all structures pass the heavy-atom check")
+    print("RESULT: all structures pass")
 
 
 if __name__ == "__main__":
