@@ -4057,6 +4057,25 @@ genuinely lacks**: §27.1 the genetic code, §27.2 protein synthesis, §28.1/§2
 §19.3) is already covered at Czech level; introductory material (§1.2, §1.4, §1.5, §3.2, §8.1) is
 a skip.
 
+> ⚠️ **CORRECTION, measured 2026-08-08 — the paragraph above is wrong, and wrong in exactly the
+> way the photosynthesis note below warns about.** Every one of those five "subjects the Czech
+> book genuinely lacks" is in fact covered by the Czech layer. Grepped node by node:
+>
+> | claimed missing | actually in the Czech book |
+> |---|---|
+> | §27.1 the genetic code | `4-2-1` the gene sequence determines the order of amino acids |
+> | §27.2 protein synthesis | `4-2-2` ribosomes · `4-2-3-1` activation/initiation · `4-2-3-2` termination |
+> | §28.1/§28.2 gene regulation | `4-2-4-1` lac and trp operons · `4-2-4-2` eukaryotic genes, mRNA cap |
+> | §18.2 the urea cycle | `5-2-2-1` and `5-2-2-2`, titled "the urea (ornithine) cycle" |
+> | §18.3 amino acid degradation | **the whole of ch5** — `5-2`, `5-2-1-1/2`, `5-2-3-1`…`5-2-3-4` |
+>
+> So the remaining depth pool has **no high-value group left**, not the five that paragraph
+> promised. Anyone acting on it would have written five depth nodes for material the app already
+> has. The check that settles it is one command — grep the Czech layer — and it is the same
+> command the photosynthesis note below tells you to run. **Run it before believing any coverage
+> claim in this file, including this correction.**
+
+
 ⚠️ **`depth_queue.tsv`'s ratio is NOT an importance score.** It is Lehninger pages ÷ Czech pages —
 *how much more Lehninger says*. A high ratio can mean the Czech book is thin on something
 important, **or** thin because the department does not examine it, and the number cannot tell

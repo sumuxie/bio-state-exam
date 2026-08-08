@@ -62,6 +62,16 @@ reading voices · folded coverage note · highlighting with four pens · URL dee
 2. **More `trace`**, in the chapters she is reading.
 3. **`mustKnow` for the 23 Lehninger/entity nodes** — approved, same register.
 
+**No new Lehninger depth nodes are needed.** All 20 exist and the depth queue's top 20 are done.
+The archive used to say five high-value subjects remained (genetic code, protein synthesis, gene
+regulation, urea cycle, amino acid degradation); **measured 2026-08-08, the Czech book covers all
+five** — `4-2-1`…`4-2-4-2` and the whole of ch5. Correction is in the archive next to the original
+claim. What the 20 existing nodes lack is not more nodes but the **layers**: 0 of 20 carry
+`mustKnow`, 0 carry `trace`.
+
+⚠️ **Grep the Czech layer before believing any coverage claim**, including ones in the handoffs.
+This has now produced a wrong answer twice — photosynthesis, then these five.
+
 ---
 
 ## The rules that actually bite

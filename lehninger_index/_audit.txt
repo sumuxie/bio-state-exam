@@ -1,5 +1,5 @@
 ==============================================================================
-HANDOFF_LEHNINGER.md  (4243 lines)
+HANDOFF_LEHNINGER.md  (4262 lines)
 ==============================================================================
   L195   UNBALANCED ** across paragraph
           ...1. ~~**The six regulation sections in §9b left un-ruled**~~ → **alread
