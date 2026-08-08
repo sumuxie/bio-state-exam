@@ -514,6 +514,16 @@ window.BIOCHEM.topics.push(
   coverageNote: "Full text of '7.1.4 Mutarotace' on page 151 read directly; all three specific-rotation values (+112°, +18.4°, and the equilibrium +52.7°) individually re-verified by a zoomed crop of the relevant sentences.",
   cnNote: { topic: "二", title: "糖类 (笔记 pp.5-10, read at topic-overview level: monosaccharide structure/stereochemistry, oligo/polysaccharides, glycoconjugates all confirmed present — not yet cross-checked point-by-point against this CZ subsection)", status: "mapped" },
   mustKnow: { en: "Dissolve either anomer and the optical rotation drifts to one fixed value, because α and β interconvert through the open-chain form. That drift is mutarotation — something you can actually watch on a polarimeter.", cn: "把任何一种异头物溶进水里，旋光度都会漂移到同一个固定值，因为 α 与 β 经由开链形式互相转化。这个漂移就是变旋——它是你在旋光仪上真的能看到的现象。" },
+  trace: [
+    {
+      term: "mutarotation 变旋",
+      what: "把纯的 α-葡萄糖（或者纯的 β-）溶进水里，拿旋光仪一直测，会看到读数**自己慢慢往一个方向漂**，最后停在某个固定值不动了。这个漂移过程就叫变旋。",
+      from: "为什么会漂？因为 α 和 β 在水里会互相转化，而转化走的路很关键：**它们不是直接翻过去的，而是先开环退回直链形式，再重新闭环**——重新闭的时候可能闭成 α，也可能闭成 β。所以你一开始放的是哪一种纯品都无所谓，泡久了都会变成同一个平衡混合物。",
+      to: "**这是你在仪器上真能看见的证据**，证明前一节讲的开环闭环不是纸上推演。α 的比旋光度是 +112°，β 是 +18.4°，两者最后都漂到同一个数 +52.7°——一个现象同时验证了三件事：糖在水里确实是环状的、确实存在两种异头物、以及确实有一个开链中间体在中间当中转站。而且从这个平衡值还能反推出平衡时 α 和 β 各占多少。",
+      family: "会变旋，等价于「这个糖还留着一个游离的半缩醛羟基、环还能打开」。所以变旋和还原性其实是同一件事的两种表现——后面讲还原糖时用的是同一条判据。反过来，像蔗糖那样两头都被糖苷键封死的，既不变旋也没有还原性。",
+      numbers: "α-D-葡萄糖 **+112°**，β-D-葡萄糖 **+18.4°**，平衡值 **+52.7°**。"
+    }
+  ],
   summary: {
     en: "The anomeric forms of D-glucose (α-D-glucose and β-D-glucose) readily interconvert in solution via the acyclic form. The α and β forms differ in their physical constants, above all in their optical rotation; the mutual conversion between α and β forms of a sugar is therefore accompanied by a change in optical rotation. The specific optical rotation of the α- and β-anomers of D-glucose is +112° and +18.4° respectively. If crystalline samples of EITHER pure anomer are dissolved in water, the specific optical rotation of the resulting solution changes over time until it reaches, in BOTH cases, the same equilibrium value of +52.7°. This change is called MUTAROTATION: the resulting equilibrium specific-rotation value corresponds to the rotation of the equilibrium mixture of α- and β-anomers, which contains only a very small amount of the acyclic form.",
     cn: "D-葡萄糖的异头物形式（α-D-葡萄糖和β-D-葡萄糖）在溶液中容易通过无环形式相互转化。α和β形式在物理常数上有所不同，尤其是旋光度；因此糖的α和β形式之间的相互转化伴随着旋光度的变化。D-葡萄糖的α和β异头物的比旋光度分别为+112°和+18.4°。若将任一纯异头物的结晶样品溶于水中，所得溶液的比旋光度会随时间变化，最终在两种情况下都达到相同的平衡值+52.7°。这种变化称为变旋现象：最终的平衡比旋光度值对应于α和β异头物平衡混合物的旋光度，该混合物中只含有极少量的无环形式。"
@@ -1149,6 +1159,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "The 'b) redukující oligosacharidy' subsection of p.155 read in full and verified against the scan: cellobiosa, maltosa (with its structural diagram, labelled '1' and '4' ring positions), isomaltosa, and laktosa (with its own structural diagram). The preceding 'a) neredukující oligosacharidy' subsection (sacharosa, trehalosa, raffinosa) belongs to node 7-3-1; the '7.4 Polysacharidy' heading that follows laktosa further down the same page belongs to node 7-4.",
   cnNote: { topic: "二", title: "糖类 (笔记 pp.5-10, read at topic-overview level: monosaccharide structure/stereochemistry, oligo/polysaccharides, glycoconjugates all confirmed present — not yet cross-checked point-by-point against this CZ subsection)", status: "mapped" },
   mustKnow: { en: "All four keep one free hemiacetal hydroxyl, so they still open, still mutarotate and still reduce. Maltose is the α(1→4) repeat of starch and cellobiose the β(1→4) repeat of cellulose — the same two glucoses, a different bond, a completely different fate.", cn: "这四个都还留着一个游离的半缩醛羟基，所以它们仍然能开环、仍然变旋、仍然有还原性。麦芽糖是淀粉的 α(1→4) 重复单元，纤维二糖是纤维素的 β(1→4) 重复单元——同样是两个葡萄糖，键不同，命运完全不同。" },
+  trace: [
+    {
+      term: "reducing sugar 还原糖",
+      what: "这个名字第一次看总让人犯迷糊：是糖自己被还原了吗？**不是——它是还原剂，是它去还原别人**，自己反而被氧化。判据只有一条：分子里还留着一个**游离的半缩醛羟基**。",
+      from: "为什么这一条就说了算？回到半缩醛那张卡：糖在水里是闭成环的半缩醛。只要那个半缩醛羟基还空着、没被别人占用，**环就随时能打开**，露出里面的醛基。而醛基是个现成的还原剂，碰上 Fehling、Tollens 这类试剂就把对方还原了。所以「有没有还原性」这个问题，翻译过来就是「**环还能不能打开**」——同一件事，两种问法。",
+      to: "于是判断一个双糖有没有还原性，只要看**两个糖是怎么牵手的**：如果那个糖苷键正好把双方的半缩醛羟基都用掉了（蔗糖就是这样），两头封死、环打不开，就既不还原也不变旋；只要还剩一个空着，它就照样还原、照样变旋。教材这一节列的麦芽糖、纤维二糖、异麦芽糖、乳糖，全属于后者。",
+      family: "这里有个对照特别值得记，因为它把「结构决定命运」讲得极干脆：**麦芽糖和纤维二糖都是「两个葡萄糖」，差别只在一个键的构型**——麦芽糖是 α(1→4)，是淀粉的重复单元；纤维二糖是 β(1→4)，是纤维素的重复单元。同样的原料，键一翻，一个是你的饭，一个你消化不了。乳糖则是半乳糖 β(1→4) 接葡萄糖，是所有哺乳动物乳汁里最重要的糖。"
+    }
+  ],
   summary: {
     en: "This node covers the book's 'b) redukující oligosacharidy' list, all four of which keep one free hemiacetal hydroxyl (the property defined in node 7-3-1) and therefore mutarotate and can form glycosides. CELLOBIOSA (4-O-beta-D-glukopyranosyl-D-glukopyranosa) is the basic repeating disaccharide of cellulose (forward link to ch. 7.4.1). MALTOSA (4-O-alpha-D-glukopyranosyl-D-glukopyranosa, 'sladový cukr'/malt sugar) arises from the breakdown of starch. ISOMALTOSA (6-O-alpha-D-glukopyranosyl-D-glukopyranosa) is likewise obtained from starch hydrolysate, but specifically from the points where the linear starch chain branches — i.e. it is the disaccharide fingerprint of an alpha(1→6) branch point (forward link to amylopectin, ch. 7.4.1). LAKTOSA (4-O-beta-D-galaktopyranosyl-D-glukopyranosa, 'mléčný cukr'/milk sugar) is the most important sugar in the milk of all mammals.",
     cn: "本节点覆盖教材「b) 还原性寡糖」清单，这四种二糖都保留一个游离的半缩醛羟基（定义见节点7-3-1），因而都会变旋、也都能形成糖苷。纤维二糖（4-O-β-D-吡喃葡萄糖基-D-吡喃葡萄糖）是纤维素的基本重复二糖单位（与第7.4.1节相呼应）。麦芽糖（4-O-α-D-吡喃葡萄糖基-D-吡喃葡萄糖，「麦芽糖」）产生于淀粉的分解。异麦芽糖（6-O-α-D-吡喃葡萄糖基-D-吡喃葡萄糖）同样得自淀粉水解产物，但specifically来自线性淀粉链发生分支的那些位点——也就是说，它正是α(1→6)分支点在二糖层面的「指纹」（与第7.4.1节支链淀粉相呼应）。乳糖（4-O-β-D-吡喃半乳糖基-D-吡喃葡萄糖，「乳糖」）是所有哺乳动物乳汁中最重要的糖。"
@@ -1707,6 +1726,15 @@ window.BIOCHEM.topics.push(
   coverageNote: "The full text of '7.6.1 Epimerace a izomerace' on page 160 (below Obr. 7.12) read directly -- both worked examples of epimerization and both worked examples of isomerization. Worth flagging: the book's two isomerization examples are given at different levels of detail -- 'glukosa ⇌ fruktosa' is stated for plain (non-phosphorylated) glucose/fructose, while the second example, 'glyceraldehyd-3-fosfát ⇌ dihydroxyacetonfosfát', is given in its phosphorylated form. This is transcribed exactly as printed rather than silently normalizing the first example to the phosphorylated glucose-6-phosphate/fructose-6-phosphate pair a reader might expect from the analogous glycolysis reaction -- the book itself is simply terser about the first example.",
   cnNote: { topic: "二", title: "糖类 (笔记 pp.5-10, read at topic-overview level: monosaccharide structure/stereochemistry, oligo/polysaccharides, glycoconjugates all confirmed present — not yet cross-checked point-by-point against this CZ subsection)", status: "mapped" },
   mustKnow: { en: "Epimerisation changes the configuration at one carbon; isomerisation moves the carbonyl between C-1 and C-2. Note what glucose ⇌ galactose actually needs: it does not happen to the free sugar, it happens on the UDP-sugar.", cn: "差向异构改变**一个**碳的构型；异构化则把羰基在 C-1 与 C-2 之间挪动。请留意葡萄糖 ⇌ 半乳糖真正需要什么：**它不发生在游离糖上，而发生在 UDP-糖上。**" },
+  trace: [
+    {
+      term: "epimer / anomer / enantiomer 三个「异构体」",
+      what: "epimerization（差向异构）指的是**只改变一个碳上的构型**——某一个羟基换个朝向，别的原封不动。",
+      from: "这一族词长得太像，混淆基本都出在这儿，干脆一次分清楚，按「有几个碳不一样」排：**enantiomer（对映体）**是镜像关系，所有手性碳**全部**相反；**epimer（差向异构体）**只有**一个**碳不同；而 **anomer（异头物）**是 epimer 的一个**特例**——那个唯一不同的碳，恰好是闭环时新生出来的 anomeric carbon。所以 α/β-葡萄糖既是 anomer 也是 epimer，但反过来说不成立：不是所有 epimer 都是 anomer。记「全部 / 一个 / 一个且是那个特定的碳」这三档就够了。",
+      to: "教材点出一处很容易被略过、但很能说明问题的地方：**葡萄糖 ⇌ 半乳糖这个差向异构，不发生在游离的糖身上，而发生在 UDP-糖上**。也就是说细胞不是抓着一个葡萄糖直接把某个羟基翻过来，而是先把它挂到 UDP 上、在那儿改。这解释了为什么后面讲多糖合成时 UDP-糖到处都是——**它不只是「活化了的糖」，还是做这类改造的操作台**。",
+      family: "和差向异构并列的另一种改造叫 isomerization（异构化），干的是另一件事：把羰基从一个碳挪到隔壁去，于是醛糖变酮糖——教材给的例子是葡萄糖 ⇌ 果糖。一个改构型、一个搬官能团，别混。另一个差向异构的例子是核酮糖-5-磷酸 ⇌ 木酮糖-5-磷酸，它属于磷酸戊糖途径。"
+    }
+  ],
   summary: {
     en: "The book illustrates EPIMERIZATION with two examples: the interconversion glukosa ⇌ galaktosa (for which the book names uridindifosfát, uridine diphosphate/UDP, as the 'coenzyme') and the interconversion ribulosa-5-fosfát ⇌ xylulosa-5-fosfát. It illustrates ISOMERIZATION -- defined here as the shift of the carbonyl group to an adjacent carbon atom -- with two examples: glukosa ⇌ fruktosa (given by the book in its plain, non-phosphorylated form), and glyceraldehyd-3-fosfát ⇌ dihydroxyacetonfosfát (given in phosphorylated form).",
     cn: "教材用两个实例说明差向异构化：葡萄糖⇌半乳糖的相互转化（教材指出其「辅酶」为尿苷二磷酸，UDP）以及核酮糖-5-磷酸⇌木酮糖-5-磷酸的相互转化。教材用两个实例说明异构化——在此定义为羰基向相邻碳原子的转移：葡萄糖⇌果糖（教材以未磷酸化的普通形式给出）以及3-磷酸甘油醛⇌磷酸二羟丙酮（以磷酸化形式给出）。"
