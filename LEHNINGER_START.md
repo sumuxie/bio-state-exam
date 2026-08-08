@@ -310,6 +310,52 @@ subject with a real exam question on record.
 
 ---
 
+## 🛠️ App features — what shipped, what is parked, and the traps
+
+**Restored 2026-08-08 after being cut by accident.** This section and the three traps below were
+deleted in `3741d31` while shortening this file. That was a mistake: the traps are the only record
+of three defects that **fail silently and throw nothing**, and they are exactly what app work
+needs. Recovered from `3741d31^`. **When shortening this file again, a section whose content
+exists nowhere else is not a candidate for cutting.**
+
+Source plan: `HANDOFF_from_PESB_biochemie.md` (in the *other* repo,
+`recombinants_trae_independant/`). Its §1 and §7 figures are **stale** — it records 215 nodes and
+1,010 term cards. Its method is sound; three of its specific claims are not.
+
+**Shipped:** A7 term drill (1,226 questions generated from the glossary at load time, bank 704 →
+1,930, not written into the data files so it cannot go stale) · A6 quiz source cycling
+`core → core+bank → core+bank+terms`, where `bank` is inert and the control **says so** rather
+than silently doing nothing · reading voice with **ranked** rather than first-match voices, per
+language picker, ★ on neural voices, test button, speed slider, all persisted · coverage note with
+the Chinese visible and the long English folded · `mustKnow` (now all 207 Czech nodes) · `trace`
+(render layer plus the first table, `873631e`).
+
+**Parked, not forgotten:** text-selection highlighting · the 只看必背 filter · notes + IndexedDB ·
+the Terms-tab card drill. All four are comfort features, which is why content came first.
+
+### Three traps in the port plan — each fails silently, none throws
+
+1. **`chapter` is book-local.** PESB buckets quiz distractors by chapter; Czech ch7 is sugars and
+   Lehninger ch7 is not. Copying that mixes two subjects into one distractor pool and makes
+   questions easier in a way nothing on screen shows. Already fixed by bucketing on
+   **book+chapter**, with entity cards in their own bucket — do not undo it.
+2. **Entity cards have no `chapter` and no `section`.** Ported render code that assumes they exist
+   prints `undefined`. **Guard on `kind` first.**
+3. ⚠️ **`cardKey` differs between the two apps, and this one is still live.** biochem uses
+   `topic.id + '::' + (term.cz || term.en)`; PESB uses `term.en`. **Most Czech terms have a `cz`,
+   so porting the Terms drill verbatim would give one card two different keys and split its
+   Leitner box across two tabs.** The port plan's §8 warns about shared Leitner state but names
+   the wrong mechanism. **Always reuse biochem's existing `cardKey`.**
+
+Two further corrections to that document, both measured: its `notes` probe is a **false
+positive** — the 4 hits are `lehNotes`, the Lehninger annotations, so biochem has *no* user-notes
+machinery and that item is build-from-scratch, not a port; and the Cyrillic defect it reports was
+never the only one. Nothing in CI catches mixed-language fields —
+`.github/workflows/pages.yml` runs `node tools/validate-data.js` and gates the deploy, so that
+file is the **only** place such a scanner would actually run.
+
+---
+
 ## The rules that actually bite
 
 **1. No orbitals, no resonance structures.** The user: *"我的有机化学几乎说是没有根基…一定不要讲
