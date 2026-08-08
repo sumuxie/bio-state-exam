@@ -60,19 +60,25 @@ answers an exam question.** The reasoning, so it can be judged rather than inher
   the layer that makes those nodes revisable. Ruojin named which parts she wants: 追根溯源
   (`trace`) and 考点总结 (`takeaway`).
 
-### `mustKnow` — 82 of 230 nodes done. Next is ch9.
+### `mustKnow` — 109 of 230 nodes done (2026-08-08). Next pick not yet chosen.
 
 Regenerate this table rather than trusting it; the one-liner is under "Measuring" below.
 
 | ch | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | leh | entity |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | nodes | 6 | 10 | 9 | 18 | 10 | 19 | 42 | 40 | 27 | 26 | 20 | 3 |
-| `mustKnow` | – | – | – | – | – | – | ✅42 | ✅40 | **next** | – | – | – |
+| `mustKnow` | – | – | – | – | – | – | ✅42 | ✅40 | ✅27 | – | – | – |
 
 **ch7 (sugars) and ch8 (lipids) are done** — the two chapters the archive's §5a measures as
-heaviest on organic chemistry, and the ones Ruojin has least foundation for. **ch9 is
-photosynthesis (27 nodes) and is the next pick**, because it is the one subject on record as
-having actually been examined — a classmate was asked on it.
+heaviest on organic chemistry, and the ones Ruojin has least foundation for. **ch9 (photosynthesis,
+27 nodes) is now done too**, because it is the one subject on record as having actually been
+examined — a classmate was asked on it. Written and pushed in two batches, `648a427` (9-1..9-14,
+light reactions) and `c5db670` (9-15..9-27, carbon fixation + nitrogen).
+
+**No evidence-based next pick has been made yet.** ch1–6 and ch10 are all still at zero. Do not
+silently default to "next chapter number" — the ch7→ch8→ch9 order so far was each time justified
+by a specific measurement (organic load, or a real exam question), and the next pick should be
+too before writing starts.
 
 The rule that keeps the field worth having, and it is easy to get wrong: **`mustKnow` is NOT a
 summary of the node. It is what you would still want in your head after forgetting the node. If
