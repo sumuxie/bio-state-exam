@@ -13,9 +13,10 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 | depth queue | **85** | Czech 书有对应内容，但 Lehninger 讲得更多 | `lehninger_index/depth_queue.tsv` |
 | Lehninger-only | **32** | Czech 书**完全没有**对应内容 | `lehninger_index/lehninger_only_scope.tsv` |
 
-**已写 23 个 L- 节点。** 其中 20 个 = depth queue 的第 1 名到第 20 名，精确吻合，一个不多一个不少；
-另外 3 个来自 Lehninger-only 清单，2026-08-08 补的：**`L-9-1-1`（§9.1，克隆/PCR/vector）**、
-**`L-9-2-1`（§9.2，CRISPR）**、**`L-22-2-1`（§22.2，氨基酸生物合成）**。
+**已写 24 个 L- 节点。** 其中 20 个 = depth queue 的第 1 名到第 20 名，精确吻合，一个不多一个不少；
+另外 4 个来自 Lehninger-only 清单，2026-08-08 补的：**`L-9-1-1`（§9.1，克隆/PCR/vector）**、
+**`L-9-2-1`（§9.2，CRISPR）**、**`L-22-2-1`（§22.2，氨基酸生物合成）**、
+**`L-24-2-1`（§24.2，DNA supercoiling）**。
 
 ---
 
@@ -31,14 +32,16 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 
 **其他已完成的层：**
 
-- `mustKnow` **233/233，零缺口**（本 session 实测）。207 Czech + 23 Lehninger + 3 entity 全有。
+- `mustKnow` **234/234，零缺口**（本 session 实测）。207 Czech + 24 Lehninger + 3 entity 全有。
 - 3 张 entity 卡：`E-tryptophan` `E-histidine` `E-cysteine`。下一张的测量结论是 `heme`。
-- `topicKey` **66** 个，**18 个跨书连接**——这是 pro 存在的意义。第 64–66 个是
+- `topicKey` **67** 个，**18 个跨书连接**——这是 pro 存在的意义。第 64–67 个是
   `recombinant-dna-technology`（`L-9-1-1`）、`exploring-protein-function`（`L-9-2-1`）、
-  `amino-acid-biosynthesis`（`L-22-2-1`），**都故意是单书 key**：Lehninger-only 的节点没有
-  Czech 节点可连，这是预期行为不是缺陷，后续每个 Lehninger-only 节点都会这样。注意
-  `amino-acid-biosynthesis` 和已有的 `amino-acids`（结构/性质）、`amino-acid-degradation`
-  （降解，ch5）是三个不同的 key——正向合成、结构、反向降解，故意分开，不要合并。
+  `amino-acid-biosynthesis`（`L-22-2-1`）、`dna-supercoiling`（`L-24-2-1`），**都故意是单书
+  key**：Lehninger-only 的节点没有 Czech 节点可连，这是预期行为不是缺陷，后续每个
+  Lehninger-only 节点都会这样。注意 `amino-acid-biosynthesis` 和已有的 `amino-acids`
+  （结构/性质）、`amino-acid-degradation`（降解，ch5）是三个不同的 key；`dna-supercoiling`
+  同理没有并进已有的 `dna-replication`（那个 key 是复制叉机制——聚合酶/解旋酶/连接酶，
+  超螺旋是拓扑与压缩，虽然拓扑异构酶两边都要用到，但主题不同，故意分开。
 - UI 全部完成：两本书都能渲染、侧栏「分书 / 按主题」切换、「同主题」条、`lehNotes` 块。
   **不需要再建任何东西。**
 - 引用 458 条全 OK，0 ELSEWHERE，0 UNCHECKED（本 session 重跑 `verify_citations.py` 复核过，
@@ -59,10 +62,10 @@ takeaway）· `skipIt` 0（在找到替代 RECAP 的证据来源之前禁止写�
 
 ---
 
-## ⛔ 没做的：Ruojin 亲自圈定的 13 个，做了 3 个
+## ⛔ 没做的：Ruojin 亲自圈定的 13 个，做了 4 个
 
-32 个 Lehninger-only section 里**已做 3 个（§9.1、§9.2、§22.2），还剩 29 个**。她在 2026-08-06
-对这 32 个逐一裁决过，裁决记在旧 archive 的 §9b。其中 13 个是明确要做的：
+32 个 Lehninger-only section 里**已做 4 个（§9.1、§9.2、§22.2、§24.2），还剩 28 个**。她在
+2026-08-06 对这 32 个逐一裁决过，裁决记在旧 archive 的 §9b。其中 13 个是明确要做的：
 
 ### 「主要需要的」7 个（88 印刷页）
 
@@ -71,10 +74,16 @@ takeaway）· `skipIt` 0（在找到替代 RECAP 的证据来源之前禁止写�
 | ~~9.1~~ | 301–316 | 克隆、restriction enzyme、vector、**PCR**、library | ✅ **已做 `L-9-1-1`** |
 | ~~9.2~~ | 317–326 | 蛋白功能研究，**CRISPR 在这里** | ✅ **已做 `L-9-2-1`** |
 | ~~22.2~~ | 805–816 | 氨基酸的生物合成 | ✅ **已做 `L-22-2-1`** |
-| 24.2 | 890–898 | DNA supercoiling | `4-1-3-1` 有涉及 |
+| ~~24.2~~ | 890–898 | DNA supercoiling | ✅ **已做 `L-24-2-1`** |
 | 24.3 | 898–910 | 染色质与染色体结构 | `4-1-4-1` 有涉及 |
 | 25.2 | 930–940 | DNA repair | `4-1-3-1` 有涉及 |
 | 25.3 | 940–956 | DNA recombination | `4-1-2` `4-1-3-1/2` 有涉及 |
+
+**§24.2 也核实过**：Czech 节点 `4-1-3-1` 只有一条术语级别的定义——「环状DNA进一步自身扭曲的
+形式」一句话——没有 linking number、没有拓扑异构酶机制、没有超螺旋密度公式，`L-24-2-1` 写
+之前已确认这就是 Czech 层的全部内容。`topicKey` 故意新起 `dna-supercoiling`，没有并进
+`4-1-3-1` 自己的 `dna-replication` key，因为超螺旋/拓扑和复制叉机制是两个不同的主题
+（详见上面「已经做过」那节的说明）。
 
 **§9.1 和 §9.2 曾是彻底的空白，本 session 用原始文件 grep 验证过**：Czech 的 10 个数据文件里
 `CRISPR` `Cas9` `PCR` `klonov` `restrikč` `plasmid` `plazmid` `knihovn` `sekvenov` **全部 0 次
@@ -138,28 +147,34 @@ takeaway）· `skipIt` 0（在找到替代 RECAP 的证据来源之前禁止写�
    是两个不同的问题）。
 3. ✅ ~~§22.2 氨基酸生物合成~~ —— 已做，`L-22-2-1`，`topicKey: amino-acid-biosynthesis`
    （新起的，故意不合并进已有的 `amino-acids` 或 `amino-acid-degradation`）。
-4. **§24.2 / 24.3 / 25.2 / 25.3**——现在的最高优先级，「主要需要的」7 个里剩下全部 4 个，
-   都在 DNA 这一组，Czech 层已有骨架可以对照着深化。
-5. **§15.3 和 §19.5**——全项目零命中，且属于「merge 进已有 topic」，成本低，可以穿插着做。
+4. ✅ ~~§24.2 DNA supercoiling~~ —— 已做，`L-24-2-1`，`topicKey: dna-supercoiling`（新起的，
+   故意不合并进 `4-1-3-1` 的 `dna-replication`）。文件 `leh_ch24.js`，第 24 章的第一个节点。
+5. **§24.3 染色质与染色体结构**——现在的最高优先级，和 §24.2 同属 Lehninger 第 24 章，按
+   a/b 惯例应该写进 `leh_ch24b.js`。「主要需要的」7 个里还剩 3 个（24.3、25.2、25.3）。
+6. **§15.3 和 §19.5**——全项目零命中，且属于「merge 进已有 topic」，成本低，可以穿插着做。
 
-**Lehninger 那 23 个节点目前都没有 `trace`，这是深度节点上唯一还开着的层。**
+**Lehninger 那 24 个节点目前都没有 `trace`，这是深度节点上唯一还开着的层。**
 
 ## 写一个 Lehninger-only 节点的现成模板
 
-`biochemie_pro/data/leh_ch9.js`（§9.1）、`leh_ch9b.js`（§9.2）、`leh_ch22b.js`（§22.2）是头
-三个 Lehninger-only 节点，照抄它们的结构最省事。两个约定由它们确立，后续节点请沿用：
-`czTitle` 以 **`Žádná —`**（捷克语「无」）开头，表示 Czech 书没有对应小节；`cnNote.status`
-用 **`pending`**，并在 `title` 里**诚实写明为什么没核对**——中文笔记是 230 页无文字层的
-手写扫描件，无法自动检索。
+`biochemie_pro/data/leh_ch9.js`（§9.1）、`leh_ch9b.js`（§9.2）、`leh_ch22b.js`（§22.2）、
+`leh_ch24.js`（§24.2）是头四个 Lehninger-only 节点，照抄它们的结构最省事。两个约定由它们
+确立，后续节点请沿用：`czTitle` 以 **`Žádná —`**（捷克语「无」）开头，表示 Czech 书没有
+对应小节；`cnNote.status` 用 **`pending`**，并在 `title` 里**诚实写明为什么没核对**——
+中文笔记是 230 页无文字层的手写扫描件，无法自动检索。
 
-字段规模参考（23 个 Lehninger 节点实测）：`points` 7–20、`terms` 6–16、`quiz` 3–6、`oral` 1、
+字段规模参考（24 个 Lehninger 节点实测）：`points` 7–20、`terms` 6–16、`quiz` 3–6、`oral` 1、
 `mustKnow` 1。新建数据文件后**别忘了在 `biochemie_pro/index.html` 里加 `<script>` 标签**，
 按章节号排在正确位置——漏了它，节点在磁盘上存在但 app 里根本不加载，而且不报任何错。
 
-⚠️ **写超长节点时留意生成长度。** `leh_ch9b.js` 第一次写的时候在 `points` 数组中间被硬生生
-截断（JS 语法没闭合），下一个 session 里被发现并续写补完；`leh_ch22b.js` 吸取了这个教训，
-写完立刻单独 parse check 一次再往下做，一次性写完没再出问题。**写完任何大文件后，先跑一次
-esprima parse check，再继续做别的事**——不要假设 Write 成功就等于内容完整。
+⚠️ **写超长节点时留意生成长度，这条规矩已经验证过两次。** `leh_ch9b.js` 在 `points` 数组
+中间被截断过一次；`leh_ch22b.js` 一次写完、立刻 parse check，没再出问题；但 `leh_ch24.js`
+又在 `oral.model_en` 里断了一次——而且**修复过程本身**也在续写文件里连续断了两次（每次都是
+句子写到一半戛然而止），说明这不是某一次的运气问题，是这个环境对**单次输出长度**的硬限制，
+和写的是不是完整节点无关。**处置方法**：写完任何大文件（或续写任何大段文字）后，先跑一次
+esprima parse check 或者干脆读一遍文件结尾几行，确认句子是完整的、括号引号都闭合了，再继续
+做别的事——不要假设 Write 成功、或者续写没报错，就等于内容完整。断在哪就在哪接着写，用
+Python 精确拼接（字符串开头结尾先断言匹配再拼），比手动数缩进省事得多。
 
 ## 写一个 depth 节点前必读
 
