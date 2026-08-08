@@ -39,7 +39,7 @@ that is the entire defence and nothing has ever been lost.
 | `mustKnow` | **230 / 230 ✅ closed** | — |
 | `trace` 追根溯源 | 34 cards | open-ended; see below |
 | Structures — amino acids | **20 / 20 drawn ✅** | — |
-| Structures — everything else | 0 | sugars, nucleotides, coenzymes, lipids, pathway intermediates |
+| Structures — sugars | **5 drawn** (Fischer + Haworth) | more sugars, then nucleotides / coenzymes / lipids |
 | App features | 6 shipped | 3 parked |
 
 **`trace` by chapter** (nodes → cards): ch1 6→2 · ch2 10→7 · ch3 9→5 · ch4 18→4 · **ch5 10→0** ·

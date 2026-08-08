@@ -130,6 +130,47 @@ def rings_in_smiles(smi):
     return digits // 2
 
 
+def check_haworth(key, mol_block, hw_block):
+    """Assert each named ring carbon's substituent sits on the declared side.
+
+    The declaration comes from the Fischer projection by the standard rule
+    (right in Fischer -> down in Haworth), so this catches a drawing that
+    contradicts the sugar it claims to be — the single most likely error in
+    this group, and one that would be memorised straight off the screen.
+    """
+    atoms = re.findall(r'\{([^}]*)\}', mol_block)
+    parsed = []
+    for a in atoms:
+        el = re.search(r'el:\s*"([A-Za-z]+)"', a)
+        y = re.search(r'y:\s*(-?[\d.]+)', a)
+        n = re.search(r'n:\s*"([A-Za-z0-9]+)"', a)
+        parsed.append({"el": el.group(1) if el else "?",
+                       "y": float(y.group(1)) if y else 0.0,
+                       "n": n.group(1) if n else None})
+    bonds = [[int(x) for x in re.findall(r"-?\d+", b)[:2]]
+             for b in re.findall(r"\[\s*\d+\s*,\s*\d+(?:\s*,\s*\d+)?\s*\]", mol_block)]
+    named = {a["n"]: i for i, a in enumerate(parsed) if a["n"]}
+
+    problems = []
+    for want in re.findall(r'(\w+):\s*"(up|down)"', hw_block):
+        cname, side = want
+        if cname not in named:
+            problems.append("haworth names %s but no atom is called that" % cname)
+            continue
+        i = named[cname]
+        # neighbours that are NOT ring atoms (ring atoms all carry a name)
+        subs = [j for b in bonds for j in b if i in b and j != i and not parsed[j]["n"]]
+        if not subs:
+            problems.append("%s has no substituent to check" % cname)
+            continue
+        j = subs[0]
+        drawn = "up" if parsed[j]["y"] > parsed[i]["y"] else "down"
+        if drawn != side:
+            problems.append("%s substituent is drawn %s but declared %s"
+                            % (cname, drawn, side))
+    return problems
+
+
 def check_graph(key, natoms, bonds, expect_bonds=None):
     """Structural integrity of the drawing itself."""
     problems = []
@@ -178,12 +219,14 @@ def main():
 
     total = fails = 0
     drawn = 0
+    checked_hw = 0
     for path in files:
         # Always name the input. An earlier scanner in this project reported
         # "clean" five times for one hard-coded file; any per-file checker
         # must print what it actually opened.
         print("=== %s" % os.path.basename(path))
         src = io.open(path, encoding="utf-8").read()
+        drawn_here = 0
 
         # split into per-entry blocks so an optional `mol` stays with its own key
         blocks = re.split(r'(?=\{ key: ")', src)
@@ -218,6 +261,7 @@ def main():
             mb = re.search(r'mol:\s*\{(.*?bonds:\s*\[.*?\])\s*\}', blk, re.S)
             if mb:
                 drawn += 1
+                drawn_here += 1
                 mol_counts, natoms, bonds = heavy_from_mol(mb.group(1))
                 # the load-bearing check: the drawing and the SMILES are two
                 # independent encodings and must describe the same molecule
@@ -230,15 +274,30 @@ def main():
                 expect_bonds = heavy - 1 + rings_in_smiles(smi)
                 for p in check_graph(key, natoms, bonds, expect_bonds):
                     fails += 1
-                    print("  FAIL %-6s %s" % (key, p))
+                    print("  FAIL %-9s %s" % (key, p))
+
+                # Haworth orientation. For a sugar this IS the content - which
+                # way each OH points is the difference between glucose and
+                # galactose, and between alpha and beta. The entry declares the
+                # expected side per ring carbon and this asserts the drawing
+                # agrees, so the most error-prone part is checked rather than
+                # trusted.
+                hw = re.search(r'haworth:\s*\{([^}]*)\}', blk)
+                if hw:
+                    checked_hw += 1
+                    for p in check_haworth(key, mb.group(1), hw.group(1)):
+                        fails += 1
+                        print("  FAIL %-9s %s" % (key, p))
 
         assert entries, "no structures parsed out of %s" % os.path.basename(path)
-        print("  %d structures checked, %d of them drawn" % (entries, drawn))
+        print("  %d structures checked, %d of them drawn" % (entries, drawn_here))
 
     print()
-    print("checked %d structures (%d drawn), %d failures" % (total, drawn, fails))
+    print("checked %d structures (%d drawn, %d Haworth-asserted), %d failures"
+          % (total, drawn, checked_hw, fails))
     print("covered    : heavy atoms agree across formula / SMILES / drawing;")
-    print("             drawings are connected, with no self- or duplicate bonds")
+    print("             drawings are connected, no self/duplicate bonds, bond count matches;")
+    print("             declared Haworth orientations match the drawn coordinates")
     print("NOT covered: hydrogen count, STEREOCHEMISTRY, identity against PubChem")
     if fails:
         sys.exit(1)

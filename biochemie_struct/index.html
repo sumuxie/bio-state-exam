@@ -28,14 +28,18 @@
        which part has been machine-checked and which has not. -->
   <p class="caveat">
     <b>关于可靠性</b>：每个结构都带 SMILES、分子式和 PubChem CID，
-    <code>tools/check_structures.py</code> 会核对重原子数（C/N/O/S）——写错一个碳会直接报错。
-    <b>但立体化学没有被机器验证</b>：L/D 构型靠人写，检查器看不出来。
-    画的都是中性未解离形式；生理 pH 下实际是两性离子。
+    <code>tools/check_structures.py</code> 核对三件事：重原子数（分子式 / SMILES / 图三方一致）、
+    键数（能抓出「环被画开」）、以及糖的 <b>Haworth 上下朝向</b>——每个 -OH 朝哪边都是声明过、
+    并被断言过的，画反了会直接报错。
+    <b>仍然没有被机器验证的是 SMILES 里的立体标记</b>：L/D、R/S 靠人写，检查器看不出来。
+    氨基酸画的是中性未解离形式；生理 pH 下实际是两性离子。糖这一组没有记 PubChem CID，
+    因为没有真的去查过——本项目规定参考数据绝不凭记忆写。
   </p>
   <div id="app"></div>
 </main>
 
 <script src="data/amino_acids.js"></script>
+<script src="data/sugars.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
