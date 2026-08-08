@@ -5,11 +5,11 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 | 你要做什么 | 打开 | 现状 |
 |---|---|---|
 | app 功能 | `CORE1_APP.md` | 7 个里做了 4 个 |
-| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **117 个 section 做了 25 个**（§9.1/§9.2/§22.2/§24.2/§24.3 是补的，前 20 个做偏了） |
+| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **117 个 section 做了 26 个**（§9.1/§9.2/§22.2/§24.2/§24.3/§25.2 是补的，前 20 个做偏了） |
 | 结构式 | `CORE3_STRUCTURES.md` | 25 个，目标量级两三百 |
 
-优先级：**CORE2 > CORE3 > CORE1**。CORE2 里 Ruojin 亲自圈定的 7 个 section 还剩 2 个没做；
-CORE1 剩下的三个都是舒适性功能，不影响考试。
+优先级：**CORE2 > CORE3 > CORE1**。CORE2 里 Ruojin 亲自圈定的 7 个 section **只剩 §25.3
+（DNA recombination）一个**；CORE1 剩下的三个都是舒适性功能，不影响考试。
 
 ---
 

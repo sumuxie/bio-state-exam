@@ -13,10 +13,11 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 | depth queue | **85** | Czech 书有对应内容，但 Lehninger 讲得更多 | `lehninger_index/depth_queue.tsv` |
 | Lehninger-only | **32** | Czech 书**完全没有**对应内容 | `lehninger_index/lehninger_only_scope.tsv` |
 
-**已写 25 个 L- 节点。** 其中 20 个 = depth queue 的第 1 名到第 20 名，精确吻合，一个不多一个不少；
-另外 5 个来自 Lehninger-only 清单，2026-08-08 补的：**`L-9-1-1`（§9.1，克隆/PCR/vector）**、
+**已写 26 个 L- 节点。** 其中 20 个 = depth queue 的第 1 名到第 20 名，精确吻合，一个不多一个不少；
+另外 6 个来自 Lehninger-only 清单，2026-08-08 补的：**`L-9-1-1`（§9.1，克隆/PCR/vector）**、
 **`L-9-2-1`（§9.2，CRISPR）**、**`L-22-2-1`（§22.2，氨基酸生物合成）**、
-**`L-24-2-1`（§24.2，DNA supercoiling）**、**`L-24-3-1`（§24.3，染色体结构）**。
+**`L-24-2-1`（§24.2，DNA supercoiling）**、**`L-24-3-1`（§24.3，染色体结构）**、
+**`L-25-2-1`（§25.2，DNA repair）**。
 
 ---
 
@@ -32,12 +33,16 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 
 **其他已完成的层：**
 
-- `mustKnow` **235/235，零缺口**（2026-08-08 实测）。207 Czech + 25 Lehninger + 3 entity 全有。
+- `mustKnow` **236/236，零缺口**（2026-08-08 实测）。207 Czech + 26 Lehninger + 3 entity 全有。
 - 3 张 entity 卡：`E-tryptophan` `E-histidine` `E-cysteine`。下一张的测量结论是 `heme`。
-- `topicKey` **68** 个，**18 个跨书连接**（实测：68 个 key 里有 18 个同时含两本书的节点）——
-  这是 pro 存在的意义。第 68 个是 `chromosome-structure`（`L-24-3-1`），同样是单书 key，
-  故意**不**并进 `dna-supercoiling`：24.2 是 DNA 拓扑，24.3 是包装它的蛋白构架，
-  两者的联系写在 `L-24-3-1` 的 points 4 和 12 里，而不是靠合并 key 来表达。第 64–67 个是
+- `topicKey` **69** 个，**18 个跨书连接**（实测：69 个 key 里有 18 个同时含两本书的节点）——
+  这是 pro 存在的意义。第 69 个是 `dna-repair`（`L-25-2-1`），第 68 个是
+  `chromosome-structure`（`L-24-3-1`），都是单书 key。`chromosome-structure` 故意**不**并进
+  `dna-supercoiling`：24.2 是 DNA 拓扑，24.3 是包装它的蛋白构架，两者的联系写在 `L-24-3-1`
+  的 points 4 和 12 里，而不是靠合并 key 来表达。`dna-repair` 故意**不**并进 `dna-replication`：
+  合成过程中的校对和事后对损伤的修复是**两件事、两套酶**，从 `4-1-3-1` 点「同主题」的读者
+  想看的是复制叉，不是糖基化酶；真正重叠的那一处（聚合酶 I 在切除后填补缺口）写在
+  `L-25-2-1` 的 points 里。第 64–67 个是
   `recombinant-dna-technology`（`L-9-1-1`）、`exploring-protein-function`（`L-9-2-1`）、
   `amino-acid-biosynthesis`（`L-22-2-1`）、`dna-supercoiling`（`L-24-2-1`），**都故意是单书
   key**：Lehninger-only 的节点没有 Czech 节点可连，这是预期行为不是缺陷，后续每个
@@ -84,18 +89,21 @@ takeaway）· `skipIt` 0（在找到替代 RECAP 的证据来源之前禁止写�
 | ~~22.2~~ | 805–816 | 氨基酸的生物合成 | ✅ **已做 `L-22-2-1`** |
 | ~~24.2~~ | 890–898 | DNA supercoiling | ✅ **已做 `L-24-2-1`** |
 | ~~24.3~~ | 898–910 | 染色质与染色体结构 | ✅ **已做 `L-24-3-1`** |
-| 25.2 | 930–940 | DNA repair | `4-1-3-1` 有涉及 ⚠️ **未复核** |
-| 25.3 | 940–956 | DNA recombination | `4-1-2` `4-1-3-1/2` 有涉及 ⚠️ **未复核** |
+| ~~25.2~~ | 930–940 | DNA repair | ✅ **已做 `L-25-2-1`** |
+| **25.3** | 940–956 | DNA recombination | ⚠️ **实测：Czech 层只有一句** |
 
-⚠️ **这张表的「Czech 层是否已有」一列曾经写错过，2026-08-08 抓到。** 它原本把 §24.3 的对应
-节点写成 `4-1-4-1`「有涉及」。**`4-1-4-1` 讲的是转录和 RNA 的种类，`topicKey` 就是
-`transcription`**，与染色体结构无关；它与本主题唯一的接触是 point[6] 里关于 cRNA「存在于
-染色质中」的一句顺带话。写 `L-24-3-1` 前 grep 了全部十个 Czech 数据文件：`nukleozom`/
-`nucleosom` **0**、`centromer` **0**、`heterochromatin` **0**、`euchromatin` **0**、
-`chromozom` **0**；7 处 `histon` 里有 3 处是 `4-2-4-2` 的「非组蛋白型调节蛋白」（真核基因调控
-的推测模型），1 处是上面那句 cRNA，还有 1 处是中文「编码一组蛋白质」的分词误命中。**Czech 层
-对染色体结构的覆盖实际是零，不是「有涉及」。** 剩下 25.2 / 25.3 那两行同样**没有复核过**，
-动手前先按 CORE_HANDOFF 的规矩 grep 一遍——这条已经打脸三次了。
+### ⚠️ 这一列曾经连错三次，全部在 2026-08-08 一天内抓到
+
+**它原来写的东西不可信，已经逐格重测过。** 三处错误都出自同一次未经验证的填写：
+
+| § | 原来写的 | 实测 |
+|---|---|---|
+| 24.3 | `4-1-4-1` 有涉及 | ❌ `4-1-4-1` 讲的是**转录和 RNA 种类**（`topicKey: transcription`）。`nukleozom`/`nucleosom`/`centromer`/`heterochromatin`/`euchromatin`/`chromozom` **全部 0 命中**。覆盖为**零** |
+| 25.2 | `4-1-3-1` 有涉及 | ❌ `oprav` 0、`reparac` 0、`fotolyas` 0、`glykosylas` 0、`AP-endonukleas` 0、`xeroderma` 0。17 处 `excis` 里**16 处**是 RNA 引物切除／内含子剪接／胰岛素 C 肽切除。唯一的 `SOS` 命中是 **"LYSO`SOS`MES"** 里的子串 |
+| 25.3 | `4-1-2` `4-1-3-1/2` 有涉及 | ❌ `rekombinac` 0、`Holliday` 0、`RecA` 0、`RecBCD` 0、`transpozon`/`transposon` 0。Czech 层**只有一句**：`4-1-3-2` 的连接酶条目说它「在真核生物遗传重组中拼接 DNA 链」 |
+
+**教训不是「这张表有三个笔误」，而是「整列都是没查就填的，所以整列都不能信」。** 25.3 这一
+格现在写的是实测结果；如果将来有人给这张表加行，**加的时候就 grep，不要留给下一个 session**。
 
 **§24.2 也核实过**：Czech 节点 `4-1-3-1` 只有一条术语级别的定义——「环状DNA进一步自身扭曲的
 形式」一句话——没有 linking number、没有拓扑异构酶机制、没有超螺旋密度公式，`L-24-2-1` 写
@@ -115,12 +123,15 @@ takeaway）· `skipIt` 0（在找到替代 RECAP 的证据来源之前禁止写�
 染色体结构的覆盖是**零**：核小体、着丝粒、异染色质、常染色质、染色体这些词一个都没有。
 `L-24-3-1` 因此是从零开始写的，13 points / 16 terms / 4 quiz / 1 oral，A pp.898–910。
 
-**「主要需要的」7 个里做完了 5 个，只剩 §25.2（DNA repair，A 930–940）和 §25.3
-（DNA recombination，A 940–956）——这两个就是现在的最高优先级。** 两者同属 Lehninger 第 25 章，
-而第 25 章已经有 `L-25-1-1`（DNA 复制，depth 层）占着 `leh_ch25.js`，所以按 a/b 惯例，
-25.2 应该进 `leh_ch25b.js`、25.3 进 `leh_ch25c.js`（或按内容量合并成一个）。
-⚠️ **动手前必须先 grep Czech 层复核**「`4-1-3-1` 有涉及 repair」「`4-1-2`/`4-1-3-1/2` 有涉及
-recombination」这两句——它们和已经被推翻的那句 `4-1-4-1` 出自同一张表、同一次未经验证的填写。
+**§25.2 也核实过**，结果同样推翻了表里原来写的（见上表）。`L-25-2-1` 从零写起，
+15 points / 15 terms / 4 quiz / 1 oral，A pp.930–940，**27 条引用全部过检**。
+
+**「主要需要的」7 个里做完了 6 个，只剩 §25.3（DNA recombination，A pp.940–956，17 页）
+——这是现在唯一的最高优先级。** 它同属 Lehninger 第 25 章；`leh_ch25.js` 被 `L-25-1-1`
+占着、`leh_ch25b.js` 被 `L-25-2-1` 占着，所以按惯例进 **`leh_ch25c.js`**。
+Czech 层已实测：**只有一句**（`4-1-3-2` 的连接酶条目提到「在真核生物遗传重组中拼接 DNA 链」），
+所以同样是从零开始。§25.2 已经在 points 里三次指向 25.3——重组修复是双链断裂的出路、
+RecA 是 pol V 的组分、BRCA2 装载 Rad51——**写 25.3 时把这三条接上，不要重讲。**
 
 ### 「merge 进对应 topic 正常展开」6 个（43 页）
 
@@ -158,8 +169,9 @@ recombination」这两句——它们和已经被推翻的那句 `4-1-4-1` 出�
 `4-2-3-2` 蛋白质合成 · `4-2-4-1`/`4-2-4-2` 基因调控 · `5-2-2-1`/`5-2-2-2` 尿素循环 · 整个 ch5
 氨基酸降解。光合作用同理，ch9 的 27 个节点全是光合，不是缺口。
 
-⚠️ **相信任何覆盖率结论之前，先 grep Czech 层。这条已经打脸过三次**——第三次就是本文件上面
-那张表里的 §24.3 → `4-1-4-1`，写在 CORE2 自己身上。
+⚠️ **相信任何覆盖率结论之前，先 grep Czech 层。这条已经打脸过五次**——最后三次都写在 CORE2
+自己身上（§24.3 → `4-1-4-1`、§25.2 → `4-1-3-1`、§25.3 → `4-1-2`/`4-1-3-1/2`），全部在
+2026-08-08 一天内被推翻。见上面那张三行的对照表。
 
 ---
 
@@ -176,23 +188,27 @@ recombination」这两句——它们和已经被推翻的那句 `4-1-4-1` 出�
 5. ✅ ~~§24.3 染色质与染色体结构~~ —— 已做，`L-24-3-1`，`topicKey: chromosome-structure`
    （新起的，故意不合并进 §24.2 的 `dna-supercoiling`）。文件 `leh_ch24b.js`。
    **它也是第一个 27 条引用全部通过 `verify_citations.py` 的 Lehninger-only 节点。**
-6. **§25.2 DNA repair 和 §25.3 DNA recombination**——现在的最高优先级，「主要需要的」7 个里
-   就剩这两个。同属第 25 章，`leh_ch25.js` 已被 `L-25-1-1` 占用，所以走 `leh_ch25b.js` /
-   `leh_ch25c.js`。**动手前先 grep Czech 层复核那两行「有涉及」**。
-7. **§15.3 和 §19.5**——全项目零命中，且属于「merge 进已有 topic」，成本低，可以穿插着做。
+6. ✅ ~~§25.2 DNA repair~~ —— 已做，`L-25-2-1`，`topicKey: dna-repair`（新起的，故意不合并进
+   `dna-replication`）。文件 `leh_ch25b.js`，27 条引用全部过检。
+7. **§25.3 DNA recombination（A pp.940–956）——现在唯一的最高优先级。** 「主要需要的」7 个
+   就剩它一个。文件走 `leh_ch25c.js`。Czech 层已实测只有一句，从零写起。
+   **`L-25-2-1` 已经三次把线头指向它**（重组修复是双链断裂的唯一准确出路 · RecA 是 pol V 的
+   组分 · BRCA2 把 Rad51 装载到双链断裂处）——**接上这三条，不要重讲。**
+8. **§15.3 和 §19.5**——全项目零命中，且属于「merge 进已有 topic」，成本低，可以穿插着做。
 
-**Lehninger 那 25 个节点目前都没有 `trace`，这是深度节点上唯一还开着的层。**
+**Lehninger 那 26 个节点目前都没有 `trace`，这是深度节点上唯一还开着的层。**
 
 ## 写一个 Lehninger-only 节点的现成模板
 
 `biochemie_pro/data/leh_ch9.js`（§9.1）、`leh_ch9b.js`（§9.2）、`leh_ch22b.js`（§22.2）、
-`leh_ch24.js`（§24.2）、`leh_ch24b.js`（§24.3）是头五个 Lehninger-only 节点。
-**照抄 `leh_ch24b.js` 最省事**——它是唯一一个引用格式完全过检的。两个约定由它们
+`leh_ch24.js`（§24.2）、`leh_ch24b.js`（§24.3）、`leh_ch25b.js`（§25.2）是头六个
+Lehninger-only 节点。**照抄 `leh_ch24b.js` 或 `leh_ch25b.js` 最省事**——只有这两个的引用
+格式是完全过检的。两个约定由它们
 确立，后续节点请沿用：`czTitle` 以 **`Žádná —`**（捷克语「无」）开头，表示 Czech 书没有
 对应小节；`cnNote.status` 用 **`pending`**，并在 `title` 里**诚实写明为什么没核对**——
 中文笔记是 230 页无文字层的手写扫描件，无法自动检索。
 
-字段规模参考（25 个 Lehninger 节点实测）：`points` 7–20、`terms` 6–16、`quiz` 3–6、`oral` 1、
+字段规模参考（26 个 Lehninger 节点实测）：`points` 7–20、`terms` 6–16、`quiz` 3–6、`oral` 1、
 `mustKnow` 1。新建数据文件后**别忘了在 `biochemie_pro/index.html` 里加 `<script>` 标签**，
 按章节号排在正确位置——漏了它，节点在磁盘上存在但 app 里根本不加载，而且不报任何错。
 

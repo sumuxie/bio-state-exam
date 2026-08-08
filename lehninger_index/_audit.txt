@@ -28,7 +28,7 @@ CORE1_APP.md  (97 lines)
   clean
 
 ==============================================================================
-CORE2_LEHNINGER.md  (236 lines)
+CORE2_LEHNINGER.md  (252 lines)
 ==============================================================================
   clean
 
@@ -41,12 +41,6 @@ CORE3_STRUCTURES.md  (99 lines)
 STALENESS (live data vs what the handoffs claim)
 ==============================================================================
   live: 236 topics, 26 lehninger, 69 topicKeys, 18 joining both books
-  COUNT STALE    LEHNINGER_START.md says topics=235, live is 236
-  COUNT STALE    LEHNINGER_START.md says lehninger=25, live is 26
-  COUNT STALE    LEHNINGER_START.md says topicKeys=68, live is 69
-  COUNT STALE    CORE_HANDOFF.md says lehninger=25, live is 26
-  COUNT STALE    CORE2_LEHNINGER.md says lehninger=25, live is 26
-  COUNT STALE    CORE2_LEHNINGER.md says topics=235, live is 236
-  COUNT STALE    CORE2_LEHNINGER.md says topicKeys=68, live is 69
+  clean
 
-TOTAL: 10
+TOTAL: 3
