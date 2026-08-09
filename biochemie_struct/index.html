@@ -38,8 +38,19 @@
   <div id="app"></div>
 </main>
 
+<!-- Every file in data/ must be listed here. A data file that exists on disk but has no
+     <script> tag loads nothing and reports no error — the same trap biochemie_pro has,
+     where audit_handoff.py now checks for it. Order here is the order of the sections
+     on the page. -->
 <script src="data/amino_acids.js"></script>
 <script src="data/sugars.js"></script>
+<script src="data/sugars_more.js"></script>
+<script src="data/nucleotides.js"></script>
+<script src="data/coenzymes.js"></script>
+<script src="data/lipids.js"></script>
+<script src="data/metabolites.js"></script>
+<script src="data/porphyrins.js"></script>
+<script src="data/amino_acid_derived.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

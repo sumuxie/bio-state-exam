@@ -120,12 +120,55 @@
       '<g class="bonds">' + parts.join('') + '</g>' + labels + '</svg>';
   }
 
+  /* Sub-headings inside a group. These five are the amino-acid side-chain classes;
+     every other group brings its own, so this table is a set of TRANSLATIONS, not a
+     whitelist — see the fallback in groupHtml.
+
+     ⚠️ It used to be a whitelist, and that was a silent bug worth remembering. groupHtml
+     rendered `Object.keys(CLS)` and nothing else, while sugars.js classifies its entries
+     as aldose / furanose / pyranose — none of which are in this table. The result: the
+     sugars section printed its heading and the count "5/5" and then NOTHING underneath.
+     Five structures existed on disk, passed check_structures.py, and were invisible in the
+     browser. Same family as the missing-<script>-tag trap in biochemie_pro: the data
+     checkers verify DATA, and neither of them can see that a page renders nothing. */
   var CLS = {
     nonpolar: { cn: '非极性', en: 'Nonpolar' },
     aromatic: { cn: '芳香族', en: 'Aromatic' },
     polar:    { cn: '极性不带电', en: 'Polar, uncharged' },
     acidic:   { cn: '酸性', en: 'Acidic' },
-    basic:    { cn: '碱性', en: 'Basic' }
+    basic:    { cn: '碱性', en: 'Basic' },
+
+    aldose:       { cn: '醛糖', en: 'Aldose' },
+    ketose:       { cn: '酮糖', en: 'Ketose' },
+    furanose:     { cn: '呋喃糖（五元环）', en: 'Furanose' },
+    pyranose:     { cn: '吡喃糖（六元环）', en: 'Pyranose' },
+    aminosugar:   { cn: '氨基糖与糖酸', en: 'Amino sugars and sugar acids' },
+    disaccharide: { cn: '双糖', en: 'Disaccharides' },
+
+    base:       { cn: '碱基', en: 'Bases' },
+    nucleoside: { cn: '核苷', en: 'Nucleosides' },
+    nucleotide: { cn: '核苷酸', en: 'Nucleotides' },
+
+    redox:      { cn: '氧化还原辅酶', en: 'Redox coenzymes' },
+    transfer:   { cn: '基团转移辅酶', en: 'Group-transfer coenzymes' },
+    vitamin:    { cn: '维生素', en: 'Vitamins' },
+
+    fattyacid:  { cn: '脂肪酸', en: 'Fatty acids' },
+    glyceride:  { cn: '甘油酯与甘油磷脂', en: 'Glycerides and glycerophospholipids' },
+    sphingo:    { cn: '鞘脂', en: 'Sphingolipids' },
+    sterol:     { cn: '固醇与类固醇', en: 'Sterols and steroids' },
+    eicosanoid: { cn: '类二十烷酸', en: 'Eicosanoids' },
+    isoprenoid: { cn: '异戊二烯类与脂溶性维生素', en: 'Isoprenoids and fat-soluble vitamins' },
+
+    glycolysis: { cn: '糖酵解与糖异生', en: 'Glycolysis and gluconeogenesis' },
+    tca:        { cn: '柠檬酸循环', en: 'Citric acid cycle' },
+    ppp:        { cn: '磷酸戊糖途径与 Calvin', en: 'Pentose phosphate and Calvin' },
+    lipidmeta:  { cn: '脂代谢中间物', en: 'Lipid metabolism intermediates' },
+    ureacycle:  { cn: '尿素循环', en: 'Urea cycle' },
+    energy:     { cn: '高能磷酸与其他', en: 'High-energy phosphates and others' },
+
+    porphyrin:  { cn: '卟啉与胆色素', en: 'Porphyrins and bile pigments' },
+    amine:      { cn: '氨基酸衍生的胺类与激素', en: 'Amines and hormones from amino acids' }
   };
 
   function matches(it, q) {
@@ -169,14 +212,37 @@
         ' <span class="muted">' + esc(l.topic) + '</span></a>';
     }).join('');
 
+    /* Render in CLS order first, then everything CLS does not know about. The second
+       loop is the fix for the silent-drop bug described at CLS: an item must never
+       disappear just because nobody added a translation for its class. An unknown class
+       is shown under its own raw name, and an item with no class at all lands in 其他,
+       so a new group renders correctly before anyone touches this table. */
     var body = '';
+    var placed = [];
     Object.keys(CLS).forEach(function (c) {
       var sub = items.filter(function (it) { return it.cls === c; });
       if (!sub.length) return;
+      sub.forEach(function (it) { placed.push(it); });
       body += '<h3 class="cls">' + esc(CLS[c].cn) +
         ' <span class="muted">' + esc(CLS[c].en) + ' · ' + sub.length + '</span></h3>' +
         '<div class="grid">' + sub.map(itemHtml).join('') + '</div>';
     });
+    var left = items.filter(function (it) { return placed.indexOf(it) < 0; });
+    if (left.length) {
+      var byCls = {};
+      left.forEach(function (it) {
+        var k = it.cls || '__none__';
+        (byCls[k] = byCls[k] || []).push(it);
+      });
+      Object.keys(byCls).forEach(function (k) {
+        var sub = byCls[k];
+        var label = k === '__none__' ? '其他' : k;
+        body += '<h3 class="cls">' + esc(label) +
+          ' <span class="muted">' + (k === '__none__' ? 'Other' : 'unclassified') +
+          ' · ' + sub.length + '</span></h3>' +
+          '<div class="grid">' + sub.map(itemHtml).join('') + '</div>';
+      });
+    }
 
     return '<section class="group">' +
       '<h2>' + esc(g.cnTitle) + ' <span class="muted">' + esc(g.enTitle) +

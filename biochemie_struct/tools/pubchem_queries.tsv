@@ -1,0 +1,161 @@
+# key<TAB>PubChem 查询名  —— 只列「用 English 名直接查会查错」的行。
+#
+# 两类必须覆盖，其余行用 structure_candidates.tsv 的 English 名直接查：
+#
+# 1) 酸的阴离子。PubChem 上 "pyruvate" 返回的是 CID 107735，带 -1 电荷的阴离子
+#    （SDF 里有 M  CHG 行）。而本 app 已有的约定是「中性、未解离型」（见 amino_acids.js
+#    的抬头）。所以酸一律查中性名。fetch 脚本会对任何带电的记录报警，所以漏掉一个
+#    不会静默通过。
+#
+# 2) MANUAL —— PubChem 上没有单一化合物与之对应的条目：重复单元、分支点、
+#    「某个辅酶被还原掉的那个环」、骨架。这些不 fetch，留给人画，fetch 脚本会把它们
+#    单独列出来而不是假装成功。
+#
+d-glyceraldehyd	D-glyceraldehyde
+dihydroxyaceton	1,3-dihydroxyacetone
+d-erythrose	D-erythrose
+d-ribose-open	aldehydo-D-ribose
+b-ribf	beta-D-ribofuranose
+b-drib	2-deoxy-D-ribose
+d-ribulose	D-ribulose
+d-xylulose	D-xylulose
+glc-open	aldehydo-D-glucose
+a-glcp	alpha-D-glucopyranose
+b-glcp	beta-D-glucopyranose
+d-galactose-open	aldehydo-D-galactose
+b-galp	beta-D-galactopyranose
+d-mannose-open	aldehydo-D-mannose
+a-manp	alpha-D-mannopyranose
+d-fructose-open	keto-D-fructose
+b-fruf	beta-D-fructofuranose
+glucosamine	D-glucosamine
+glcnac	N-acetyl-D-glucosamine
+murnac	N-acetylmuramic acid
+neu5ac	N-acetylneuraminic acid
+d-glucuronate	D-glucuronic acid
+d-gluconate	D-gluconic acid
+sorbitol	D-sorbitol
+amylose-unit	MANUAL
+amylopectin-branch	MANUAL
+glycogen-branch	MANUAL
+cellulose-unit	MANUAL
+chitin-unit	MANUAL
+uric-acid	uric acid
+deoxythymidine	thymidine
+amp	adenosine 5'-monophosphate
+adp	adenosine 5'-diphosphate
+atp	adenosine 5'-triphosphate
+camp	cyclic AMP
+gmp	guanosine 5'-monophosphate
+gtp	guanosine 5'-triphosphate
+cgmp	cyclic GMP
+ump	uridine 5'-monophosphate
+utp	uridine 5'-triphosphate
+ctp	cytidine 5'-triphosphate
+dtmp	thymidine 5'-monophosphate
+dinucleotide-link	MANUAL
+nad	NAD
+nadh-ring	MANUAL
+nadp	NADP
+fad	FAD
+fadh2-ring	MANUAL
+fmn	flavin mononucleotide
+coa	coenzyme A
+acetyl-coa	acetyl-CoA
+thiamine	thiamine
+tpp	thiamine pyrophosphate
+plp	pyridoxal 5'-phosphate
+folate	folic acid
+thf	tetrahydrofolic acid
+lipoate	lipoic acid
+ubiquinone	ubiquinone-10
+sam	S-adenosylmethionine
+cobalamin	cyanocobalamin
+ascorbate	ascorbic acid
+palmitate	palmitic acid
+stearate	stearic acid
+oleate	oleic acid
+linoleate	linoleic acid
+linolenate	alpha-linolenic acid
+arachidonate	arachidonic acid
+triacylglycerol	tripalmitin
+phosphatidate	1,2-dipalmitoyl-sn-glycero-3-phosphate
+pc	1,2-dipalmitoyl-sn-glycero-3-phosphocholine
+pe	1,2-dipalmitoyl-sn-glycero-3-phosphoethanolamine
+ps	1,2-dipalmitoyl-sn-glycero-3-phosphoserine
+pi	MANUAL
+cardiolipin	MANUAL
+cerebroside	MANUAL
+ganglioside	MANUAL
+cholesteryl-ester	cholesteryl palmitate
+cholate	cholic acid
+vitamin-d3	cholecalciferol
+pge2	prostaglandin E2
+txa2	thromboxane A2
+ltb4	leukotriene B4
+pgi2	prostacyclin
+isoprene	isoprene
+retinal	retinal
+tocopherol	alpha-tocopherol
+vitamin-k	phylloquinone
+g6p	D-glucose 6-phosphate
+g1p	D-glucose 1-phosphate
+f6p	D-fructose 6-phosphate
+f16bp	D-fructose 1,6-bisphosphate
+f26bp	D-fructose 2,6-bisphosphate
+dhap	dihydroxyacetone phosphate
+gap	D-glyceraldehyde 3-phosphate
+bpg13	1,3-bisphosphoglyceric acid
+pg3	3-phosphoglyceric acid
+pg2	2-phosphoglyceric acid
+pep	phosphoenolpyruvic acid
+pyruvate	pyruvic acid
+lactate	L-lactic acid
+bpg23	2,3-bisphosphoglyceric acid
+udp-glucose	UDP-glucose
+citrate	citric acid
+cis-aconitate	cis-aconitic acid
+isocitrate	isocitric acid
+akg	alpha-ketoglutaric acid
+succinyl-coa	succinyl-CoA
+succinate	succinic acid
+fumarate	fumaric acid
+malate	L-malic acid
+oxaloacetate	oxaloacetic acid
+glyoxylate	glyoxylic acid
+pgluconate6	6-phosphogluconic acid
+ru5p	D-ribulose 5-phosphate
+r5p	D-ribose 5-phosphate
+s7p	sedoheptulose 7-phosphate
+e4p	D-erythrose 4-phosphate
+rubp	D-ribulose 1,5-bisphosphate
+acyl-coa	palmitoyl-CoA
+enoyl-coa	MANUAL
+hydroxyacyl-coa	MANUAL
+ketoacyl-coa	MANUAL
+malonyl-coa	malonyl-CoA
+carnitine	L-carnitine
+acetoacetate	acetoacetic acid
+hydroxybutyrate	3-hydroxybutyric acid
+hmg-coa	3-hydroxy-3-methylglutaryl-CoA
+mevalonate	mevalonic acid
+carbamoyl-p	carbamoyl phosphate
+ornithine	L-ornithine
+citrulline	L-citrulline
+argininosuccinate	argininosuccinic acid
+glycerol3p	sn-glycerol 3-phosphate
+prpp	phosphoribosyl pyrophosphate
+phosphocreatine	phosphocreatine
+porphine	porphine
+protoporphyrin-ix	protoporphyrin IX
+heme-b	heme B
+chlorophyll-a	chlorophyll a
+epinephrine	L-epinephrine
+norepinephrine	L-norepinephrine
+serotonin	serotonin
+gaba	gamma-aminobutyric acid
+thyroxine	L-thyroxine
+nitric-oxide	nitric oxide
+d-xylose	aldehydo-D-xylose
+isomaltose	isomaltose
+sphingomyelin	N-palmitoyl-D-erythro-sphingosylphosphorylcholine
