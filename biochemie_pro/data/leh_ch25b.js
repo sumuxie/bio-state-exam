@@ -65,6 +65,16 @@ window.BIOCHEM.topics.push(
       title: "未核对——中文笔记是 230 页无文字层的手写扫描件（见 生物化学笔记_分卷/README.md），无法自动检索；错配修复、碱基切除修复与 SOS 反应是否出现在笔记中，需人工翻阅后再填",
       status: "pending"
     },
+    trace: [
+      {
+        term: "链识别 strand discrimination——错配修复真正难的地方，不是「发现错误」",
+        what: "在一个 G–T 错配处，**两个碱基都是完全正常的 DNA 碱基**。**没有任何化学特征把其中哪一个标为「错的那个」。** 而这绝不是学术问题：**修复错了那一条，就把一个复制错误变成了亲本序列上的永久突变**。所以错配修复的核心难点**不是发现错误，而是判断两条链里哪一条是新的**。E. coli 的解法是一个**计时器**：这些错配**几乎总是**按**旧的（模板）链**上的信息来纠正，而系统靠**模板 DNA 上带有的甲基标记**把它与新链区分开。",
+        from: "加标记的酶是 **Dam 甲基化酶**，它甲基化每个 **(5′)GATC** 序列中腺嘌呤的 **N⁶** 位——**和 25.1 节里给复制起始计时的是同一个酶**，在这里被用于**第二个**目的。而诀窍全在**时间**上：复制叉刚经过之后，有一个**几秒到几分钟**的短暂窗口，此时**模板链已被甲基化，而新合成的链还没有**。**这种短暂的半甲基化状态本身，就是那个链识别信号。** 书里给出的双向对照实验把这套逻辑坐实了：如果一个 GATC 处**两条链都已甲基化**，**几乎没有**错配会被修复；如果**两条都没有**甲基化，修复会发生，但**对哪条链没有偏好**。**所以修复是一场与 Dam 甲基化酶抢时间的赛跑——细胞必须赶在「哪条链是新的」这条证据消失之前，把错配改过来。**",
+        to: "考试里两处。第一，被问「**错配修复怎么知道该改哪一条链**」——⚠️ **别答「它认得出错的那个碱基」，那正是这题的陷阱**（两个碱基都是正常碱基）；答「靠**半甲基化**：Dam 甲基化酶给 GATC 加标记有**延迟**，复制刚过时模板链已甲基化、新链还没有，**这个短暂的不对称就是信号**」，再补上那个双向对照实验就很完整了。第二，被问「**修复贵不贵**」——**答很贵，并且给出理由**：错配与那个半甲基化的 GATC 之间可以相距**多达 1,000 bp 甚至更多**，要把这么长一段新链**降解再重新合成**，需要在活化脱氧核苷酸前体上投入巨大资源，**而这一切只为修复一个错配的碱基**。书里自己那句评语最该记住：**这再一次凸显了基因组完整性对细胞的重要性。**",
+        family: "先把这一层在**精确度预算**里的位置放准：它是**第三层**，排在**碱基选择**和**校对**之后，把 E. coli 复制的总体保真度**再提高 100 到 1,000 倍**。机制上这是**一个用「滑动」解决的搜索问题**，蛋白按顺序上场：**MutS** 沿 DNA 扫描、遇错配形成钳状复合体（**结合除 C–C 之外的所有错配碱基对**）→ **MutL** 与 MutS 结合，**MutSL 复合体沿 DNA 滑动**去搜寻一个半甲基化 GATC → **MutH** 结合到 MutL 上，它**带位点特异性内切核酸酶活性但保持无活性**，直到复合体遇上半甲基化 GATC，才**切开未甲基化的那条链**（切在 G 的 5′ 侧），**把那条链标记为待替换的** → 解旋酶 II (UvrD)、SSB 加一种外切核酸酶把新链从切口降解到错配之外 → **聚合酶 III 填补缺口、连接酶封口**。⚠️ **真核生物保留了 MutS 和 MutL，却没有 MutH**，而**书本身公开表示不确定真核细胞是怎么识别链的**——**这一点照书说，不要自己补一个机制上去。**",
+        numbers: "错配修复把复制的总体保真度**再提高 100 到 1,000 倍**。标记序列是 **(5′)GATC**，甲基化位点是腺嘌呤的 **N⁶** 位，加标记的酶是 **Dam 甲基化酶**。半甲基化窗口是**几秒到几分钟**。错配与那个 GATC 可相距**多达 1,000 bp 甚至更多**。降解方向决定用哪个酶：需 **3′→5′** 时用外切核酸酶 **I、X 或 VII**；需 **5′→3′** 时用 **VII 或 RecJ**。再记一组更大的背景数字，它给整节定调：一个典型哺乳动物细胞的基因组 DNA **在 24 小时内积累数以千计的损伤**，然而因为有修复，**其中不到千分之一会变成突变**——**细胞并不是在阻止损伤发生，而是在容忍海量损伤、并在事后把它们几乎全部纠正过来。**"
+      }
+    ],
     mustKnow: {
       en: "Every repair system in this section rests on one structural fact, and if you can state it you can reconstruct the rest: DNA is double-stranded and the two strands carry the same information. A damaged protein cannot be repaired — there is no second copy of its sequence in the molecule — so the cell degrades it and makes another from the gene. A damaged DNA strand can be repaired exactly, because the undamaged complementary strand is a template for what the lost information was. That is why repair systems cut damage OUT rather than trying to fix it in place, and it is also why the one situation the section treats as a crisis is the situation where the second strand is missing or damaged too — at which point the cell's only remaining options are to copy from a homologous chromosome, or to guess.",
       cn: "本节里每一套修复系统都建立在**同一个结构事实**上，而只要你能把这句话说出来，其余的都能自己推出来：**DNA 是双链的，而两条链携带同一份信息。** 一个受损的蛋白质**无法被修复**——分子内部没有第二份它自己序列的拷贝——所以细胞把它降解掉，再照基因重造一个。而一条受损的 DNA 链**可以被精确修复**，因为**未受损的互补链就是「丢失的信息原本是什么」的模板**。这正是为什么各种修复系统都是把损伤**切除**、而不是试图就地修好它；这也正是为什么本节唯一当作**危机**来处理的情形，恰恰是**第二条链也缺失或也受损**的那一种——到那一步，细胞就只剩两个选择：**从同源染色体上抄**，或者**猜**。"

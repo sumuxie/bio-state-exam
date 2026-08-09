@@ -43,6 +43,16 @@ window.BIOCHEM.topics.push(
       title: "未核对——中文笔记是 230 页无文字层的手写扫描件（见 生物化学笔记_分卷/README.md），无法自动检索；分子生物学方法（克隆／PCR／载体）是否出现在笔记中，需人工翻阅后再填",
       status: "pending"
     },
+    trace: [
+      {
+        term: "restriction endonuclease 限制性内切酶——它先是防御装置，然后才成为工具",
+        what: "**Werner Arber** 在 **1960 年代初**发现，这个酶在细菌里的生物学功能是**识别并切开外源 DNA**——比如入侵病毒的 DNA，这样的 DNA 就被称为「**受到限制的 (restricted)**」。随之而来的显然追问是：**细胞自己的染色体上也有同样的序列，为什么没被切掉？** 答案是宿主自己那份序列被一个专一的 **DNA 甲基化酶甲基化**了，而**甲基化会阻止切割**。核酸酶与它配套的甲基化酶合称 **restriction-modification system**。**所以，让这个酶在实验室里如此好用的那份专一性，本来是细菌免疫系统的副产品。**",
+        from: "让**克隆**得以成立的，是这个酶身上**两个巧合叠在一起**：**识别序列是回文的**（通常 **4–6 bp**），而且**很多酶是错位切开的**——每一端留下 **2–4 个未配对的单链核苷酸**，这就是 **sticky ends（黏性末端）**。**回文 ＋ 错位**合起来的后果正是全部关键：**同一个酶切出来的每一个片段，末端都是同一段单链**，因此**任意两个这样的片段都能互相退火配对——目的基因和载体也不例外**。另一些酶则在相对的磷酸二酯键上把两条链**齐平**切断，留下 **blunt ends（平末端）**。实际后果**立刻就来了，而且是会考的**：平末端的连接**效率低于**互补黏性末端，因为黏性末端之间的碱基配对能在 ligase 工作时**把两段拽在一起**；而带有**不同、不互补**黏性末端的片段**基本上根本连不上**——**EcoRI 切出的片段接不上 BamHI 切出的片段**。**这就是为什么目的基因和载体必须用同一个酶来切。**",
+        to: "考试里三处。第一，被问「**克隆为什么能成立**」——从**回文 ＋ 错位切**讲起，落到「同一个酶切出的片段末端相同，所以彼此能配对」。第二，**三型里只有一型好用**，这一条经常单独考：**I 型和 III 型**是庞大的多亚基复合物、**同时**带内切酶和甲基化酶活性，用起来很别扭；**II 型**（**Hamilton Smith 于 1970 年**首次分离）更简单、**不需要 ATP**，而且——**这是决定性的性质**——它水解切开的是**识别序列本身内部**的特定磷酸二酯键，**所以你确切知道切口落在哪里**。第三，**命名规则**看着随意其实不是，值得花一分钟：**种名三字母缩写 ＋（有时）一个菌株字母 ＋ 罗马数字**表示这是从该物种分离出的第几个酶。所以 **BamHI ＝ 从 *Bacillus amyloliquefaciens* 的 H 菌株中鉴定出的第一个 (I) 限制性内切酶**。",
+        family: "两个到处都会遇到的**工程学便利**，要和本卡一起记：**①** 如今要克隆的片段多半是用 **PCR** 生成的，而**精心设计引物可以加上染色体里原本没有的 DNA**——引物带一段**不与模板退火的 5′ 延伸**，里面含有一个酶切位点，它**照样被复制进产物**；随后在这些**新造出来的位点**上切开扩增产物，就能**按需造出黏性末端**。**②** 为桥接两个待连接末端而插入的短合成 DNA 片段叫 **linker（接头）**；带有**多个不同识别序列**的 linker 就是 **multiple cloning site (MCS，多克隆位点)**——**正是它让现代载体可以反复使用**，因为它给你一份「在哪儿下刀」的菜单，于是同一个骨架能接纳许多不同的插入片段。⚠️ 还有一个**值得并排记住的对照**：**CRISPR 同样是细菌的抗噬菌体防御被改造成了工具**（见 `L-9-2-1`）。**「细菌免疫系统」是分子生物学工具箱反复回去取货的同一个抽屉。**",
+        numbers: "识别序列通常长 **4–6 bp**，且是**回文**的；错位切开在每一端留下 **2–4 个**未配对的单链核苷酸。时间线与人：**Werner Arber，1960 年代初**发现其防御功能；**Hamilton Smith，1970 年**首次分离 II 型；随后 **Daniel Nathans** 用它们来绘制和分析基因与基因组，证明了这类酶的价值。如今已从不同细菌物种中发现**数千种** II 型酶，识别 **100 多种**不同序列。**II 型不需要 ATP。** 另外记一笔：保护宿主的那个**甲基化，与后来在真核基因调控里起作用的是同一套化学**。"
+      }
+    ],
     mustKnow: {
       en: "Cloning works because of one lucky fact about restriction endonucleases: they cut PALINDROMIC sequences, and many cut them OFF-CENTRE. So every fragment produced by a given enzyme ends in the same short single strand, and any two such fragments will therefore anneal to each other — the gene and the vector included. Everything else in this section is bookkeeping around that. The second idea is just as important and is easy to miss: transformation is very inefficient, so you never FIND the cell that took up your DNA. You arrange conditions in which only that cell can live.",
       cn: "克隆之所以成立，靠的是 restriction endonuclease 的一个巧合：它们识别的是**回文序列**，而且很多是**错位切开**的。于是同一个酶切出来的每一个片段，末端都是同一段单链——因此任意两个这样的片段都能互相退火配对，**目的基因和载体也不例外**。这一节其余的内容都是围绕这件事的记账。第二个同样重要、却很容易被忽略的想法是：转化的效率极低，所以你从来不是去**找**那个吸收了 DNA 的细胞——你是**布置出一个只有它能活下来的环境**。"
