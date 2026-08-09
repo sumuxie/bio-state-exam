@@ -30,7 +30,7 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 | 画了 | key | 中文 | English | Czech | Leh | 备注 |
 |---|---|---|---|---|---|---|
 | ✅ | `gly` | 甘氨酸 | glycine | 107 | 42 |  |
-| ✅ | `ala` | 丙氨酸 | alanine | 89 | 26 |  |
+| ✅ | `ala` | 丙氨酸 | alanine | 89 | 37 |  |
 | ✅ | `val` | 缬氨酸 | valine | 24 | 10 |  |
 | ✅ | `leu` | 亮氨酸 | leucine | 37 | 12 |  |
 | ✅ | `ile` | 异亮氨酸 | isoleucine | 34 | 31 |  |
@@ -60,22 +60,22 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 |---|---|---|---|---|---|---|
 | ✅ | `d-glyceraldehyd` | D-甘油醛 | D-glyceraldehyde | 181 | 2 | 计数主要来自 glyceraldehyde 3-phosphate（另有 `gap` 一行），自由态甘油醛本身少见 |
 | ✅ | `dihydroxyaceton` | 二羟丙酮 | dihydroxyacetone | 69 | 0 | 计数主要来自 dihydroxyacetone phosphate（另有 `dhap` 一行） |
-| ✅ | `d-erythrose` | D-赤藓糖 | D-erythrose | 25 | 7 |  |
+| ✅ | `d-erythrose` | D-赤藓糖（开链） | D-erythrose, open chain | 25 | 7 |  |
 | ✅ | `d-ribose-open` | D-核糖（开链） | D-ribose, open chain | 132 | 23 | 探针已排除 `ribosom-`（原本被核糖体抬高约 146 次） |
 | ✅ | `b-ribf` | β-D-呋喃核糖 | beta-D-ribofuranose | 0 | 0 | **0 命中是词形问题，不是缺口** — 母体 `d-ribose-open` 有 132/23 次命中；要不要画这一形式，取决于要不要单独教这个形式，**不要按 0 命中删**。 |
 | ✅ | `b-drib` | β-D-2-脱氧核糖 | beta-D-2-deoxyribose | 10 | 8 |  |
-| ✅ | `d-ribulose` | D-核酮糖 | D-ribulose | 106 | 0 |  |
-| ✅ | `d-xylose` | D-木糖 | D-xylose | 18 | 11 |  |
-| ✅ | `d-xylulose` | D-木酮糖 | D-xylulose | 86 | 0 |  |
+| ✅ | `d-ribulose` | D-核酮糖（开链） | D-ribulose, open chain | 106 | 0 |  |
+| ✅ | `d-xylose` | D-木糖（开链） | D-xylose, open chain | 18 | 11 |  |
+| ✅ | `d-xylulose` | D-木酮糖（开链） | D-xylulose, open chain | 86 | 36 |  |
 | ✅ | `l-arabinose` | L-阿拉伯糖 | L-arabinose | 10 | 0 |  |
-| ✅ | `glc-open` | D-葡萄糖（开链） | D-glucose, open chain | 784 | 334 |  |
+| ✅ | `glc-open` | D-葡萄糖（开链） | D-glucose, open chain | 784 | 507 |  |
 | ✅ | `a-glcp` | α-D-吡喃葡萄糖 | alpha-D-glucopyranose | 46 | 0 |  |
 | ✅ | `b-glcp` | β-D-吡喃葡萄糖 | beta-D-glucopyranose | 46 | 0 |  |
 | ✅ | `d-galactose-open` | D-半乳糖（开链） | D-galactose, open chain | 220 | 13 |  |
 | ✅ | `b-galp` | β-D-吡喃半乳糖 | beta-D-galactopyranose | 2 | 0 |  |
 | ✅ | `d-mannose-open` | D-甘露糖（开链） | D-mannose, open chain | 94 | 1 |  |
 | ✅ | `a-manp` | α-D-吡喃甘露糖 | alpha-D-mannopyranose | 0 | 0 | **0 命中是词形问题，不是缺口** — 母体 `d-mannose-open` 有 94/1 次命中；要不要画这一形式，取决于要不要单独教这个形式，**不要按 0 命中删**。 |
-| ✅ | `d-fructose-open` | D-果糖（开链） | D-fructose, open chain | 199 | 17 |  |
+| ✅ | `d-fructose-open` | D-果糖（开链） | D-fructose, open chain | 199 | 160 |  |
 | ✅ | `b-fruf` | β-D-呋喃果糖 | beta-D-fructofuranose | 5 | 0 |  |
 | ✅ | `glucosamine` | 葡糖胺 | D-glucosamine | 56 | 0 |  |
 | ✅ | `glcnac` | N-乙酰葡糖胺 | N-acetylglucosamine (GlcNAc) | 58 | 0 |  |
@@ -91,7 +91,7 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 | ✅ | `isomaltose` | 异麦芽糖 | isomaltose (alpha-1,6) | 27 | 0 |  |
 |  | `amylose-unit` | 直链淀粉重复单元 | amylose repeat unit (alpha-1,4) | 35 | 0 |  |
 |  | `amylopectin-branch` | 支链淀粉分支点 | amylopectin branch point (alpha-1,6) | 55 | 0 |  |
-|  | `glycogen-branch` | 糖原分支点 | glycogen branch point | 223 | 72 | 命中的是「糖原」这个词，不等于教材画过分支点结构 |
+|  | `glycogen-branch` | 糖原分支点 | glycogen branch point | 223 | 87 | 命中的是「糖原」这个词，不等于教材画过分支点结构 |
 |  | `cellulose-unit` | 纤维素重复单元 | cellulose repeat unit (beta-1,4) | 99 | 1 |  |
 |  | `chitin-unit` | 几丁质重复单元 | chitin repeat unit | 36 | 2 |  |
 | ✅ | `a-ribf` | α-D-呋喃核糖 | alpha-D-ribofuranose | 0 | 0 | **0 命中是词形问题，不是缺口** — 母体 `d-ribose-open` 有 132/23 次命中；要不要画这一形式，取决于要不要单独教这个形式，**不要按 0 命中删**。 |
@@ -104,9 +104,10 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 | ✅ | `a-galp` | α-D-吡喃半乳糖 | alpha-D-galactopyranose | 2 | 0 |  |
 | ✅ | `b-manp` | β-D-吡喃甘露糖 | beta-D-mannopyranose | 0 | 0 | **0 命中是词形问题，不是缺口** — 母体 `d-mannose-open` 有 94/1 次命中；要不要画这一形式，取决于要不要单独教这个形式，**不要按 0 命中删**。 |
 | ✅ | `a-fruf` | α-D-呋喃果糖 | alpha-D-fructofuranose | 5 | 0 |  |
-| ✅ | `b-frup` | β-D-吡喃果糖 | beta-D-fructopyranose | 0 | 0 | **0 命中是词形问题，不是缺口** — 母体 `d-fructose-open` 有 199/17 次命中；要不要画这一形式，取决于要不要单独教这个形式，**不要按 0 命中删**。 |
+| ✅ | `b-frup` | β-D-吡喃果糖 | beta-D-fructopyranose | 0 | 0 | **0 命中是词形问题，不是缺口** — 母体 `d-fructose-open` 有 199/160 次命中；要不要画这一形式，取决于要不要单独教这个形式，**不要按 0 命中删**。 |
+| ✅ | `ribulf` | D-呋喃核酮糖 | D-ribulofuranose | 0 | 0 | **0 命中是词形问题，不是缺口** — 母体 `d-ribulose` 有 106/0 次命中；要不要画这一形式，取决于要不要单独教这个形式，**不要按 0 命中删**。 |
 
-**糖 sugars：47 个，已画 42，未画 5；其中两层都 0 命中的有 2 个。**
+**糖 sugars：48 个，已画 43，未画 5；其中两层都 0 命中的有 2 个。**
 
 ---
 
@@ -128,10 +129,10 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 | ✅ | `uridine` | 尿苷 | uridine | 21 | 0 |  |
 | ✅ | `deoxythymidine` | 脱氧胸苷 | deoxythymidine | 1 | 6 |  |
 | ✅ | `deoxyadenosine` | 脱氧腺苷 | deoxyadenosine | 2 | 0 |  |
-| ✅ | `amp` | AMP | adenosine 5'-monophosphate | 305 | 60 |  |
-| ✅ | `adp` | ADP | adenosine 5'-diphosphate | 313 | 129 |  |
-| ✅ | `atp` | ATP | adenosine 5'-triphosphate | 1515 | 1176 | `ATP` 会匹配到 ATPase/ATP synthase，计数被抬高 |
-| ✅ | `camp` | 环化 AMP | cyclic AMP (cAMP) | 80 | 56 |  |
+| ✅ | `amp` | AMP | adenosine 5'-monophosphate | 305 | 118 |  |
+| ✅ | `adp` | ADP | adenosine 5'-diphosphate | 313 | 150 |  |
+| ✅ | `atp` | ATP | adenosine 5'-triphosphate | 1515 | 1296 | `ATP` 会匹配到 ATPase/ATP synthase，计数被抬高 |
+| ✅ | `camp` | 环化 AMP | cyclic AMP (cAMP) | 80 | 109 |  |
 | ✅ | `gmp` | GMP | guanosine 5'-monophosphate | 30 | 4 |  |
 | ✅ | `gtp` | GTP | guanosine 5'-triphosphate | 186 | 27 |  |
 | ✅ | `cgmp` | 环化 GMP | cyclic GMP (cGMP) | 0 | 0 | **两层都 0 命中——考虑删** |
@@ -149,15 +150,15 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 
 | 画了 | key | 中文 | English | Czech | Leh | 备注 |
 |---|---|---|---|---|---|---|
-| ✅ | `nad` | NAD⁺ | nicotinamide adenine dinucleotide (NAD+) | 1321 | 352 | `NAD` 会匹配到 NADH/NADP，计数被抬高 |
-|  | `nadh-ring` | NADH（还原的烟酰胺环） | NADH, the reduced nicotinamide ring | 427 | 157 |  |
-| ✅ | `nadp` | NADP⁺ | NADP+ | 550 | 115 |  |
+| ✅ | `nad` | NAD⁺ | nicotinamide adenine dinucleotide (NAD+) | 1321 | 372 | `NAD` 会匹配到 NADH/NADP，计数被抬高 |
+|  | `nadh-ring` | NADH（还原的烟酰胺环） | NADH, the reduced nicotinamide ring | 427 | 159 |  |
+| ✅ | `nadp` | NADP⁺ | NADP+ | 550 | 131 |  |
 | ✅ | `fad` | FAD | flavin adenine dinucleotide (FAD) | 232 | 63 | `FAD` 会匹配到 FADH₂，计数被抬高 |
 |  | `fadh2-ring` | FADH₂（还原的异咯嗪环） | FADH2, the reduced isoalloxazine ring | 102 | 23 |  |
 | ✅ | `fmn` | FMN | flavin mononucleotide (FMN) | 77 | 11 |  |
 | ✅ | `riboflavin` | 核黄素（B₂） | riboflavin (vitamin B2) | 3 | 0 |  |
-| ✅ | `coa` | 辅酶 A | coenzyme A (CoA-SH) | 1410 | 315 | `CoA` 会匹配到所有 acyl-CoA，计数被抬高 |
-| ✅ | `acetyl-coa` | 乙酰辅酶 A | acetyl-CoA | 496 | 120 | 同时属于辅酶组与代谢中间物组，只画一次 |
+| ✅ | `coa` | 辅酶 A | coenzyme A (CoA-SH) | 1410 | 389 | `CoA` 会匹配到所有 acyl-CoA，计数被抬高 |
+| ✅ | `acetyl-coa` | 乙酰辅酶 A | acetyl-CoA | 496 | 194 | 同时属于辅酶组与代谢中间物组，只画一次 |
 | ✅ | `thiamine` | 硫胺素（B₁） | thiamine (vitamin B1) | 38 | 1 |  |
 | ✅ | `tpp` | 焦磷酸硫胺素 | thiamine pyrophosphate (TPP) | 107 | 19 |  |
 | ✅ | `plp` | 磷酸吡哆醛 | pyridoxal 5'-phosphate (PLP) | 82 | 34 |  |
@@ -224,22 +225,22 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 
 | 画了 | key | 中文 | English | Czech | Leh | 备注 |
 |---|---|---|---|---|---|---|
-| ✅ | `g6p` | 葡萄糖-6-磷酸 | glucose 6-phosphate | 7 | 25 |  |
+| ✅ | `g6p` | 葡萄糖-6-磷酸 | glucose 6-phosphate | 7 | 64 |  |
 | ✅ | `g1p` | 葡萄糖-1-磷酸 | glucose 1-phosphate | 5 | 2 |  |
-| ✅ | `f6p` | 果糖-6-磷酸 | fructose 6-phosphate | 6 | 0 |  |
-| ✅ | `f16bp` | 果糖-1,6-二磷酸 | fructose 1,6-bisphosphate | 6 | 0 |  |
-| ✅ | `f26bp` | 果糖-2,6-二磷酸 | fructose 2,6-bisphosphate | 0 | 14 |  |
+| ✅ | `f6p` | 果糖-6-磷酸 | fructose 6-phosphate | 6 | 46 |  |
+| ✅ | `f16bp` | 果糖-1,6-二磷酸 | fructose 1,6-bisphosphate | 6 | 31 |  |
+| ✅ | `f26bp` | 果糖-2,6-二磷酸 | fructose 2,6-bisphosphate | 0 | 78 |  |
 | ✅ | `dhap` | 磷酸二羟丙酮 | dihydroxyacetone phosphate | 25 | 0 |  |
 | ✅ | `gap` | 甘油醛-3-磷酸 | glyceraldehyde 3-phosphate | 18 | 1 |  |
 | ✅ | `bpg13` | 1,3-二磷酸甘油酸 | 1,3-bisphosphoglycerate | 31 | 0 |  |
 | ✅ | `pg3` | 3-磷酸甘油酸 | 3-phosphoglycerate | 54 | 8 |  |
 | ✅ | `pg2` | 2-磷酸甘油酸 | 2-phosphoglycerate | 24 | 3 |  |
-| ✅ | `pep` | 磷酸烯醇丙酮酸 | phosphoenolpyruvate (PEP) | 86 | 10 |  |
-| ✅ | `pyruvate` | 丙酮酸 | pyruvate | 447 | 49 |  |
-| ✅ | `lactate` | 乳酸 | lactate | 108 | 19 |  |
+| ✅ | `pep` | 磷酸烯醇丙酮酸 | phosphoenolpyruvate (PEP) | 86 | 13 |  |
+| ✅ | `pyruvate` | 丙酮酸 | pyruvate | 447 | 148 |  |
+| ✅ | `lactate` | 乳酸 | lactate | 108 | 23 |  |
 | ✅ | `bpg23` | 2,3-二磷酸甘油酸 | 2,3-bisphosphoglycerate | 18 | 12 |  |
 | ✅ | `udp-glucose` | UDP-葡萄糖 | UDP-glucose | 36 | 0 |  |
-| ✅ | `citrate` | 柠檬酸 | citrate | 334 | 91 |  |
+| ✅ | `citrate` | 柠檬酸 | citrate | 334 | 133 |  |
 | ✅ | `cis-aconitate` | 顺乌头酸 | cis-aconitate | 25 | 1 |  |
 | ✅ | `isocitrate` | 异柠檬酸 | isocitrate | 87 | 17 |  |
 | ✅ | `akg` | α-酮戊二酸 | alpha-ketoglutarate | 23 | 27 |  |
@@ -247,7 +248,7 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 | ✅ | `succinate` | 琥珀酸 | succinate | 97 | 45 |  |
 | ✅ | `fumarate` | 延胡索酸（富马酸） | fumarate | 123 | 11 |  |
 | ✅ | `malate` | 苹果酸 | malate | 135 | 31 |  |
-| ✅ | `oxaloacetate` | 草酰乙酸 | oxaloacetate | 205 | 49 |  |
+| ✅ | `oxaloacetate` | 草酰乙酸 | oxaloacetate | 205 | 63 |  |
 | ✅ | `glyoxylate` | 乙醛酸 | glyoxylate | 66 | 0 |  |
 | ✅ | `pgluconate6` | 6-磷酸葡糖酸 | 6-phosphogluconate | 38 | 0 |  |
 | ✅ | `ru5p` | 核酮糖-5-磷酸 | ribulose 5-phosphate | 14 | 0 |  |
@@ -273,7 +274,7 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 | ✅ | `urea` | 尿素 | urea | 103 | 15 |  |
 | ✅ | `glycerol3p` | 甘油-3-磷酸 | glycerol 3-phosphate | 0 | 5 |  |
 | ✅ | `prpp` | PRPP | 5-phosphoribosyl 1-pyrophosphate | 65 | 16 |  |
-| ✅ | `creatine` | 肌酸 | creatine | 3 | 21 |  |
+| ✅ | `creatine` | 肌酸 | creatine | 3 | 23 |  |
 | ✅ | `phosphocreatine` | 磷酸肌酸 | phosphocreatine | 15 | 21 |  |
 
 **代谢中间物 metabolic intermediates：51 个，已画 48，未画 3；其中两层都 0 命中的有 0 个。**
@@ -299,7 +300,7 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 
 | 画了 | key | 中文 | English | Czech | Leh | 备注 |
 |---|---|---|---|---|---|---|
-| ✅ | `epinephrine` | 肾上腺素 | epinephrine (adrenaline) | 61 | 58 |  |
+| ✅ | `epinephrine` | 肾上腺素 | epinephrine (adrenaline) | 61 | 61 |  |
 | ✅ | `norepinephrine` | 去甲肾上腺素 | norepinephrine | 22 | 5 |  |
 | ✅ | `dopamine` | 多巴胺 | dopamine | 20 | 3 |  |
 | ✅ | `serotonin` | 血清素 | serotonin (5-HT) | 20 | 4 |  |
@@ -318,21 +319,21 @@ grep 到的次数（**英文名 + 捷克语词干，大小写不敏感；中文�
 | 组 | 提案数 | 已画 | 未画 | 两层 0 命中 |
 |---|---|---|---|---|
 | 氨基酸 amino acids | 20 | 20 | 0 | 0 |
-| 糖 sugars | 47 | 42 | 5 | 2 |
+| 糖 sugars | 48 | 43 | 5 | 2 |
 | 核苷酸与碱基 nucleotides and bases | 26 | 25 | 1 | 1 |
 | 辅酶与维生素 coenzymes and vitamins | 21 | 19 | 2 | 0 |
 | 脂类 lipids | 36 | 32 | 4 | 0 |
 | 代谢中间物 metabolic intermediates | 51 | 48 | 3 | 0 |
 | 卟啉与色素 porphyrins and pigments | 6 | 6 | 0 | 0 |
 | 氨基酸衍生物 amino-acid-derived molecules | 9 | 9 | 0 | 0 |
-| **合计** | **216** | **201** | **15** | **3** |
+| **合计** | **217** | **202** | **15** | **3** |
 
-**所以现在的进度是 201 / 216 = 93%**——但请注意这个分母是**提案**。
-把 3 个两层都 0 命中的删掉，分母就变成 213，进度变成 94%。
+**所以现在的进度是 202 / 217 = 93%**——但请注意这个分母是**提案**。
+把 3 个两层都 0 命中的删掉，分母就变成 214，进度变成 94%。
 **在你过一遍之前，这两个数都不要往外说。**
 
 ⚠️ **旧 CORE3 里那张「粗估 180–220」的表是推出来的，不是数出来的。** 本清单是逐条列出来
-并逐条 grep 过的，合计 216——**与那个量级一致，但这一份可以核对，那一份不能**。
+并逐条 grep 过的，合计 217——**与那个量级一致，但这一份可以核对，那一份不能**。
 
 ## 下一步怎么用这份清单
 
@@ -357,8 +358,8 @@ Leh 列只作参考。**带 ⚠️ 的行说明计数被词形抬高过，别只
 
 | # | key | 中文 | English | Czech | Leh | 组 |
 |---|---|---|---|---|---|---|
-| 1 | `nadh-ring` | NADH（还原的烟酰胺环） | NADH, the reduced nicotinamide ring | 427 | 157 | 辅酶与维生素 coenzymes and vitamins |
-| 2 | `glycogen-branch` ⚠️ | 糖原分支点 | glycogen branch point | 223 | 72 | 糖 sugars |
+| 1 | `nadh-ring` | NADH（还原的烟酰胺环） | NADH, the reduced nicotinamide ring | 427 | 159 | 辅酶与维生素 coenzymes and vitamins |
+| 2 | `glycogen-branch` ⚠️ | 糖原分支点 | glycogen branch point | 223 | 87 | 糖 sugars |
 | 3 | `fadh2-ring` | FADH₂（还原的异咯嗪环） | FADH2, the reduced isoalloxazine ring | 102 | 23 | 辅酶与维生素 coenzymes and vitamins |
 | 4 | `cellulose-unit` | 纤维素重复单元 | cellulose repeat unit (beta-1,4) | 99 | 1 | 糖 sugars |
 | 5 | `amylopectin-branch` | 支链淀粉分支点 | amylopectin branch point (alpha-1,6) | 55 | 0 | 糖 sugars |

@@ -165,3 +165,14 @@ code { font-family: var(--mono); font-size: 0.85em; }
   #q { width: 7rem; }
   .wrap { padding: 1rem 0.8rem 3rem; }
 }
+
+/* Collapsed SMILES. A stereochemically explicit SMILES can be 285 characters of
+   [C@@H]; left inline it dominates the card and reads as corrupted text. It is also
+   the one field this project does not verify (see the comment in app.js), so it sits
+   behind a disclosure with the caveat on the summary line. `overflow-wrap: anywhere`
+   is required: these strings have no spaces and would otherwise push the card wide. */
+.smiles { margin-top: 0.5rem; }
+.smiles > summary { cursor: pointer; font-size: 0.75rem; color: var(--fg-dim); }
+.smiles > summary::marker { color: var(--fg-dim); }
+.smiles > code { display: block; margin-top: 0.35rem; overflow-wrap: anywhere;
+                 line-height: 1.5; color: var(--fg-dim); }

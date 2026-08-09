@@ -5,13 +5,13 @@
 # 中文探针可以写，但计数时会被丢掉——中文没有词边界，见脚本里的注释。
 sugar	d-glyceraldehyd	D-甘油醛	D-glyceraldehyde	glyceraldehyde|glyceraldehyd|甘油醛
 sugar	dihydroxyaceton	二羟丙酮	dihydroxyacetone	dihydroxyacetone|dihydroxyaceton|二羟丙酮
-sugar	d-erythrose	D-赤藓糖	D-erythrose	erythrose|erythros|赤藓糖
+sugar	d-erythrose	D-赤藓糖（开链）	D-erythrose, open chain	erythrose|erythros|赤藓糖
 sugar	d-ribose-open	D-核糖（开链）	D-ribose, open chain	ribose|ribos(?![oó])|核糖
 sugar	b-ribf	β-D-呋喃核糖	beta-D-ribofuranose	ribofuranose|ribofuranos
 sugar	b-drib	β-D-2-脱氧核糖	beta-D-2-deoxyribose	deoxyribose|deoxyribos|脱氧核糖
-sugar	d-ribulose	D-核酮糖	D-ribulose	ribulose|ribulos|核酮糖
-sugar	d-xylose	D-木糖	D-xylose	xylose|xylos|木糖
-sugar	d-xylulose	D-木酮糖	D-xylulose	xylulose|xylulos|木酮糖
+sugar	d-ribulose	D-核酮糖（开链）	D-ribulose, open chain	ribulose|ribulos|核酮糖
+sugar	d-xylose	D-木糖（开链）	D-xylose, open chain	xylose|xylos|木糖
+sugar	d-xylulose	D-木酮糖（开链）	D-xylulose, open chain	xylulose|xylulos|木酮糖
 sugar	l-arabinose	L-阿拉伯糖	L-arabinose	arabinose|arabinos|阿拉伯糖
 sugar	glc-open	D-葡萄糖（开链）	D-glucose, open chain	glucose|glukos|葡萄糖
 sugar	a-glcp	α-D-吡喃葡萄糖	alpha-D-glucopyranose	glucopyranose|glukopyranos
@@ -50,6 +50,7 @@ sugar	a-galp	α-D-吡喃半乳糖	alpha-D-galactopyranose	galactopyranose|galakt
 sugar	b-manp	β-D-吡喃甘露糖	beta-D-mannopyranose	mannopyranose|manopyranos
 sugar	a-fruf	α-D-呋喃果糖	alpha-D-fructofuranose	fructofuranose|fruktofuranos
 sugar	b-frup	β-D-吡喃果糖	beta-D-fructopyranose	fructopyranose|fruktopyranos
+sugar	ribulf	D-呋喃核酮糖	D-ribulofuranose	ribulofuranose|ribulofuranos
 nucl	adenine	腺嘌呤	adenine	adenine|adenin|腺嘌呤
 nucl	guanine	鸟嘌呤	guanine	guanine|guanin|鸟嘌呤
 nucl	cytosine	胞嘧啶	cytosine	cytosine|cytosin|胞嘧啶

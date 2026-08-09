@@ -192,11 +192,31 @@
       (it.mol
         ? '<div class="draw">' + molSvg(it.mol) + '</div>'
         : '<div class="slot">结构式待绘制 <span class="muted">not drawn yet</span></div>') +
+      /* SMILES is COLLAPSED, and that is a deliberate change rather than tidying.
+         Two reasons, and the second one matters more.
+
+         (1) It reads as an error. A stereochemically explicit SMILES is a wall of
+         [C@@H] and [C@H] -- cobalamin's is 285 characters -- and on a study card
+         that looks like corrupted text rather than data. Ruojin read it as exactly
+         that: "C@@H 出现了这种一眼就是错误的东西".
+
+         (2) It is the LEAST verified field on the card, displayed as if it were the
+         most important. check_structures.py says so in its own output: heavy-atom
+         composition is checked across formula, SMILES and drawing, but hydrogen
+         count and STEREOCHEMISTRY are not, and the @/@@ tags are precisely the
+         stereochemistry. Putting the one unverified field behind a disclosure, with
+         the caveat written on the summary line, is more honest than printing it
+         first and hoping the reader remembers the limitation.
+
+         The formula and the CID stay visible: the CID is the audit trail a reader
+         can actually follow to check the molecule. */
       '<dl class="meta">' +
-        '<dt>SMILES</dt><dd><code>' + esc(it.smiles) + '</code></dd>' +
         '<dt>分子式</dt><dd><code>' + esc(it.formula) + '</code></dd>' +
         '<dt>PubChem</dt><dd><code>CID ' + esc(it.cid) + '</code></dd>' +
       '</dl>' +
+      '<details class="smiles"><summary>SMILES <span class="muted">机器可读式；' +
+        '其中的 @ / @@ 是立体化学标记，而立体化学是本项目<b>唯一没有核对过</b>的一层</span></summary>' +
+        '<code>' + esc(it.smiles) + '</code></details>' +
       (n ? '<p class="note">' + esc(n) + '</p>' : '') +
       '</article>';
   }

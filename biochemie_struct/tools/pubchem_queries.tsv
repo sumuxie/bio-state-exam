@@ -98,7 +98,7 @@ isoprene	isoprene
 retinal	retinal
 tocopherol	alpha-tocopherol
 vitamin-k	phylloquinone
-g6p	D-glucose 6-phosphate
+g6p	alpha-D-glucose 6-phosphate
 g1p	D-glucose 1-phosphate
 f6p	D-fructose 6-phosphate
 f16bp	D-fructose 1,6-bisphosphate
@@ -170,3 +170,4 @@ a-galp	alpha-D-galactopyranose
 b-manp	beta-D-mannopyranose
 a-fruf	alpha-D-fructofuranose
 b-frup	beta-D-fructopyranose
+ribulf	D-ribulofuranose

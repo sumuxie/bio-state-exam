@@ -160,6 +160,7 @@ PARENT = {
     "a-galp": "d-galactose-open", "b-galp": "d-galactose-open",
     "b-manp": "d-mannose-open",
     "a-fruf": "d-fructose-open", "b-frup": "d-fructose-open",
+    "ribulf": "d-ribulose",
 }
 
 tot_done = tot_all = tot_zero = 0

@@ -14706,9 +14706,9 @@
   ],
   "charge": 0,
   "cid": 94176,
-  "cn": "D-赤藓糖",
+  "cn": "D-赤藓糖（开链）",
   "connected": true,
-  "en": "D-erythrose",
+  "en": "D-erythrose, open chain",
   "fetched": "2026-08-09",
   "formula": "C4H8O4",
   "group": "sugar",
@@ -15776,13 +15776,16 @@
     1
    ]
   ],
+  "charge": 0,
   "cid": 151261,
-  "cn": "D-核酮糖",
-  "en": "D-ribulose",
+  "cn": "D-核酮糖（开链）",
+  "connected": true,
+  "en": "D-ribulose, open chain",
   "fetched": "2026-08-09",
   "formula": "C5H10O5",
   "group": "sugar",
   "key": "d-ribulose",
+  "notes": [],
   "query": "D-ribulose",
   "smiles": "C([C@H]([C@H](C(=O)CO)O)O)O",
   "source": "PubChem PUG REST, 2026-08-09",
@@ -15898,13 +15901,16 @@
     1
    ]
   ],
+  "charge": 0,
   "cid": 644160,
-  "cn": "D-木糖",
-  "en": "D-xylose",
+  "cn": "D-木糖（开链）",
+  "connected": true,
+  "en": "D-xylose, open chain",
   "fetched": "2026-08-09",
   "formula": "C5H10O5",
   "group": "sugar",
   "key": "d-xylose",
+  "notes": [],
   "query": "aldehydo-D-xylose",
   "smiles": "C([C@H]([C@@H]([C@H](C=O)O)O)O)O",
   "source": "PubChem PUG REST, 2026-08-09",
@@ -16022,9 +16028,9 @@
   ],
   "charge": 0,
   "cid": 5289590,
-  "cn": "D-木酮糖",
+  "cn": "D-木酮糖（开链）",
   "connected": true,
-  "en": "D-xylulose",
+  "en": "D-xylulose, open chain",
   "fetched": "2026-08-09",
   "formula": "C5H10O5",
   "group": "sugar",
@@ -20070,104 +20076,104 @@
    {
     "el": "P",
     "h": 0,
-    "x": 3.403,
-    "y": -0.25
-   },
-   {
-    "el": "O",
-    "h": 1,
-    "x": 6.8671,
-    "y": -1.25
-   },
-   {
-    "el": "O",
-    "h": 1,
-    "x": 7.7331,
-    "y": 1.25
-   },
-   {
-    "el": "O",
-    "h": 1,
-    "x": 6.001,
-    "y": 1.25
+    "x": 2.866,
+    "y": 1.845
    },
    {
     "el": "O",
     "h": 0,
-    "x": 4.269,
-    "y": 0.25
+    "x": 5.4641,
+    "y": 0.345
    },
    {
     "el": "O",
     "h": 1,
-    "x": 8.5991,
-    "y": -1.25
+    "x": 3.7321,
+    "y": -1.655
+   },
+   {
+    "el": "O",
+    "h": 1,
+    "x": 5.4641,
+    "y": -2.655
+   },
+   {
+    "el": "O",
+    "h": 1,
+    "x": 7.1962,
+    "y": -1.655
+   },
+   {
+    "el": "O",
+    "h": 1,
+    "x": 7.1962,
+    "y": 0.345
    },
    {
     "el": "O",
     "h": 0,
-    "x": 10.3312,
-    "y": -0.25
+    "x": 3.7321,
+    "y": 1.345
    },
    {
     "el": "O",
     "h": 1,
-    "x": 2.5369,
-    "y": -0.75
+    "x": 2.0,
+    "y": 2.345
    },
    {
     "el": "O",
     "h": 1,
-    "x": 2.903,
-    "y": 0.616
+    "x": 3.366,
+    "y": 2.711
    },
    {
     "el": "O",
     "h": 0,
-    "x": 3.903,
-    "y": -1.116
+    "x": 2.366,
+    "y": 0.979
    },
    {
     "el": "C",
     "h": 1,
-    "x": 6.8671,
-    "y": -0.25
+    "x": 4.5981,
+    "y": -1.155
    },
    {
     "el": "C",
     "h": 1,
-    "x": 7.7331,
-    "y": 0.25
+    "x": 5.4641,
+    "y": -1.655
    },
    {
     "el": "C",
     "h": 1,
-    "x": 6.001,
-    "y": 0.25
+    "x": 4.5981,
+    "y": -0.155
    },
    {
     "el": "C",
     "h": 1,
-    "x": 8.5991,
-    "y": -0.25
+    "x": 6.3301,
+    "y": -1.155
+   },
+   {
+    "el": "C",
+    "h": 1,
+    "x": 6.3301,
+    "y": -0.155
    },
    {
     "el": "C",
     "h": 2,
-    "x": 5.135,
-    "y": -0.25
-   },
-   {
-    "el": "C",
-    "h": 1,
-    "x": 9.4651,
-    "y": 0.25
+    "x": 3.7321,
+    "y": 0.345
    }
   ],
   "bonds": [
    [
     0,
-    4,
+    6,
     1
    ],
    [
@@ -20186,34 +20192,39 @@
     2
    ],
    [
-    10,
     1,
-    1
-   ],
-   [
-    11,
-    2,
-    1
-   ],
-   [
     12,
-    3,
     1
    ],
    [
-    4,
+    1,
     14,
     1
    ],
    [
+    10,
+    2,
+    1
+   ],
+   [
+    11,
+    3,
+    1
+   ],
+   [
     13,
+    4,
+    1
+   ],
+   [
+    14,
     5,
     1
    ],
    [
     6,
     15,
-    2
+    1
    ],
    [
     10,
@@ -20232,26 +20243,29 @@
    ],
    [
     12,
-    14,
-    1
-   ],
-   [
-    13,
     15,
+    1
+   ],
+   [
+    13,
+    14,
     1
    ]
   ],
-  "cid": 439958,
+  "charge": 0,
+  "cid": 439284,
   "cn": "葡萄糖-6-磷酸",
+  "connected": true,
   "en": "glucose 6-phosphate",
   "fetched": "2026-08-09",
   "formula": "C6H13O9P",
   "group": "metab",
   "key": "g6p",
-  "query": "D-glucose 6-phosphate",
-  "smiles": "C([C@H]([C@H]([C@@H]([C@H](C=O)O)O)O)O)OP(=O)(O)O",
+  "notes": [],
+  "query": "alpha-D-glucose 6-phosphate",
+  "smiles": "C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)O)O)O)OP(=O)(O)O",
   "source": "PubChem PUG REST, 2026-08-09",
-  "title": "Glucose-6-Phosphate"
+  "title": "alpha-D-Glucose 6-phosphate"
  },
  "gaba": {
   "atoms": [
@@ -35464,6 +35478,136 @@
   "smiles": "CC1=CC2=C(C=C1C)N(C3=NC(=O)NC(=O)C3=N2)C[C@@H]([C@@H]([C@@H](CO)O)O)O",
   "source": "PubChem PUG REST, 2026-08-09",
   "title": "Riboflavin"
+ },
+ "ribulf": {
+  "atoms": [
+   {
+    "el": "O",
+    "h": 0,
+    "x": 5.0298,
+    "y": 0.1816
+   },
+   {
+    "el": "O",
+    "h": 1,
+    "x": 3.633,
+    "y": 1.5784
+   },
+   {
+    "el": "O",
+    "h": 1,
+    "x": 2.4608,
+    "y": 0.4907
+   },
+   {
+    "el": "O",
+    "h": 1,
+    "x": 3.133,
+    "y": -1.5784
+   },
+   {
+    "el": "O",
+    "h": 1,
+    "x": 5.8031,
+    "y": 1.4739
+   },
+   {
+    "el": "C",
+    "h": 0,
+    "x": 4.2208,
+    "y": 0.7694
+   },
+   {
+    "el": "C",
+    "h": 1,
+    "x": 3.4118,
+    "y": 0.1816
+   },
+   {
+    "el": "C",
+    "h": 1,
+    "x": 3.7208,
+    "y": -0.7694
+   },
+   {
+    "el": "C",
+    "h": 2,
+    "x": 4.7208,
+    "y": -0.7694
+   },
+   {
+    "el": "C",
+    "h": 2,
+    "x": 4.8086,
+    "y": 1.5784
+   }
+  ],
+  "bonds": [
+   [
+    0,
+    5,
+    1
+   ],
+   [
+    0,
+    8,
+    1
+   ],
+   [
+    1,
+    5,
+    1
+   ],
+   [
+    6,
+    2,
+    1
+   ],
+   [
+    7,
+    3,
+    1
+   ],
+   [
+    4,
+    9,
+    1
+   ],
+   [
+    5,
+    6,
+    1
+   ],
+   [
+    5,
+    9,
+    1
+   ],
+   [
+    6,
+    7,
+    1
+   ],
+   [
+    7,
+    8,
+    1
+   ]
+  ],
+  "charge": 0,
+  "cid": 439203,
+  "cn": "D-呋喃核酮糖",
+  "connected": true,
+  "en": "D-ribulofuranose",
+  "fetched": "2026-08-09",
+  "formula": "C5H10O5",
+  "group": "sugar",
+  "key": "ribulf",
+  "notes": [],
+  "query": "D-ribulofuranose",
+  "smiles": "C1[C@H]([C@H](C(O1)(CO)O)O)O",
+  "source": "PubChem PUG REST, 2026-08-09",
+  "title": "(3R,4R)-2-(hydroxymethyl)tetrahydrofuran-2,3,4-triol"
  },
  "ru5p": {
   "atoms": [

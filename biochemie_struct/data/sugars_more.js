@@ -28,7 +28,7 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
     { app: "pro", topic: "7-1", label: "糖类的分类" },
     { app: "pro", topic: "7-4-1-1", label: "储存多糖" }
   ],
-  note: { cn: "前五个（葡萄糖开链/α/β、核糖、脱氧核糖）在上面那一组里，它们是手画的、带 Haworth 断言。这一组是从 PubChem 取来的：每一条都带 CID 和取回日期，画的是 PubChem 自己的 2D 描绘。⚠️ 因此这一组没有 Haworth 断言——PubChem 画的是环，不是 Haworth 投影，环上取代基的朝向在这一组里是「未被机器核对」的。" },
+  note: { cn: "前五个（葡萄糖开链/α/β、核糖、脱氧核糖）在上面那一组里，它们是手画的、带 Haworth 断言。这一组是从 PubChem 取来的：每一条都带 CID 和取回日期，画的是 PubChem 自己的 2D 描绘。⚠️ 因此这一组没有 Haworth 断言——PubChem 画的是环，不是 Haworth 投影，环上取代基的朝向在这一组里是「未被机器核对」的。　｜　为什么有几个糖只有开链、没有画成环？分三种情况，别混在一起：（1）成不了环——丙糖（甘油醛、二羟丙酮，以及它们的磷酸酯 GAP、DHAP、甘油-3-磷酸）。成环靠的是链上后面某个羟基去进攻羰基碳：五元的呋喃糖需要 C4 上的 -OH，六元的吡喃糖需要 C5 上的 -OH。三个碳两个都没有，所以它们根本没有环式——这是化学，不是漏画。（2）开链是一对里的一半——葡萄糖、半乳糖、甘露糖、果糖、核糖、脱氧核糖、木糖、阿拉伯糖：开链（Fischer）和 α/β 环式（Haworth）都画了，配成一套看。（3）PubChem 上没有对应的环式条目——赤藓糖和木酮糖的呋喃型查不到，所以只画了开链，本项目的规矩是查不到就不写，不凭记忆补。核酮糖的呋喃型查得到，已经画了。" },
   items: [
     { key: "cellobiose", cn: "纤维二糖", en: "cellobiose", cls: "disaccharide",
       mol: { atoms: [{ el: "O", x: 4.330, y: 3.000 }, { el: "O", x: 2.598, y: 3.000 }, { el: "O", x: 3.464, y: 5.500 }, { el: "O", x: 6.062, y: 4.000, h: 1 }, { el: "O", x: 4.330, y: 1.000, h: 1 }, { el: "O", x: 2.598, y: 0.000, h: 1 }, { el: "O", x: 0.866, y: 1.000, h: 1 }, { el: "O", x: 6.062, y: 6.000, h: 1 }, { el: "O", x: 4.330, y: 7.000, h: 1 }, { el: "O", x: 1.732, y: 4.500, h: 1 }, { el: "O", x: 0.000, y: 2.500, h: 1 }, { el: "C", x: 4.330, y: 4.000, h: 1 }, { el: "C", x: 5.196, y: 4.500, h: 1 }, { el: "C", x: 3.464, y: 2.500, h: 1 }, { el: "C", x: 3.464, y: 4.500, h: 1 }, { el: "C", x: 3.464, y: 1.500, h: 1 }, { el: "C", x: 2.598, y: 1.000, h: 1 }, { el: "C", x: 1.732, y: 1.500, h: 1 }, { el: "C", x: 5.196, y: 5.500, h: 1 }, { el: "C", x: 1.732, y: 2.500, h: 1 }, { el: "C", x: 4.330, y: 6.000, h: 1 }, { el: "C", x: 2.598, y: 4.000, h: 2 }, { el: "C", x: 0.866, y: 3.000, h: 2 }],
@@ -95,12 +95,12 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
              bonds: [[6,0], [7,1], [8,2], [3,9], [4,10,2], [5,11], [6,7], [6,8], [7,9], [8,10], [10,11]] },
       smiles: "C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O", formula: "C6H12O6", cid: 5984,
       note: { cn: "PubChem CID 5984，2026-08-09 取回。" } },
-    { key: "d-ribulose", cn: "D-核酮糖", en: "D-ribulose", cls: "ketose",
+    { key: "d-ribulose", cn: "D-核酮糖（开链）", en: "D-ribulose, open chain", cls: "ketose",
       mol: { atoms: [{ el: "O", x: 3.464, y: 2.500, h: 1 }, { el: "O", x: 2.598, y: 0.000, h: 1 }, { el: "O", x: 5.196, y: 1.500, h: 1 }, { el: "O", x: 1.732, y: 2.500 }, { el: "O", x: 0.000, y: 1.500, h: 1 }, { el: "C", x: 3.464, y: 1.500, h: 1 }, { el: "C", x: 2.598, y: 1.000, h: 1 }, { el: "C", x: 4.330, y: 1.000, h: 2 }, { el: "C", x: 1.732, y: 1.500 }, { el: "C", x: 0.866, y: 1.000, h: 2 }],
              bonds: [[5,0], [6,1], [2,7], [3,8,2], [4,9], [5,6], [5,7], [6,8], [8,9]] },
       smiles: "C([C@H]([C@H](C(=O)CO)O)O)O", formula: "C5H10O5", cid: 151261,
       note: { cn: "PubChem CID 151261，2026-08-09 取回。" } },
-    { key: "d-xylulose", cn: "D-木酮糖", en: "D-xylulose", cls: "ketose",
+    { key: "d-xylulose", cn: "D-木酮糖（开链）", en: "D-xylulose, open chain", cls: "ketose",
       mol: { atoms: [{ el: "O", x: 3.464, y: 2.500, h: 1 }, { el: "O", x: 2.598, y: 0.000, h: 1 }, { el: "O", x: 5.196, y: 1.500, h: 1 }, { el: "O", x: 1.732, y: 2.500 }, { el: "O", x: 0.000, y: 1.500, h: 1 }, { el: "C", x: 3.464, y: 1.500, h: 1 }, { el: "C", x: 2.598, y: 1.000, h: 1 }, { el: "C", x: 4.330, y: 1.000, h: 2 }, { el: "C", x: 1.732, y: 1.500 }, { el: "C", x: 0.866, y: 1.000, h: 2 }],
              bonds: [[5,0], [6,1], [2,7], [3,8,2], [4,9], [5,6], [5,7], [6,8], [8,9]] },
       smiles: "C([C@H]([C@@H](C(=O)CO)O)O)O", formula: "C5H10O5", cid: 5289590,
@@ -175,7 +175,7 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
              bonds: [[0,8], [0,9], [5,1], [6,2], [7,3], [8,4], [5,6], [5,7], [6,8], [7,9]] },
       smiles: "C1[C@H]([C@@H]([C@H]([C@@H](O1)O)O)O)O", formula: "C5H10O5", cid: 125409,
       note: { cn: "PubChem CID 125409，2026-08-09 取回。" } },
-    { key: "d-erythrose", cn: "D-赤藓糖", en: "D-erythrose", cls: "aldose",
+    { key: "d-erythrose", cn: "D-赤藓糖（开链）", en: "D-erythrose, open chain", cls: "aldose",
       mol: { atoms: [{ el: "O", x: 1.732, y: 0.000, h: 1 }, { el: "O", x: 2.598, y: 2.500, h: 1 }, { el: "O", x: 0.000, y: 1.000, h: 1 }, { el: "O", x: 4.330, y: 1.500 }, { el: "C", x: 1.732, y: 1.000, h: 1 }, { el: "C", x: 2.598, y: 1.500, h: 1 }, { el: "C", x: 0.866, y: 1.500, h: 2 }, { el: "C", x: 3.464, y: 1.000, h: 1 }],
              bonds: [[4,0], [5,1], [2,6], [3,7,2], [4,5], [4,6], [5,7]] },
       smiles: "C([C@H]([C@H](C=O)O)O)O", formula: "C4H8O4", cid: 94176,
@@ -200,7 +200,7 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
              bonds: [[5,0], [6,1], [7,2], [3,8], [4,9,2], [5,6], [5,7], [6,8], [7,9]] },
       smiles: "C([C@H]([C@H]([C@H](C=O)O)O)O)O", formula: "C5H10O5", cid: 5311110,
       note: { cn: "PubChem CID 5311110，2026-08-09 取回。" } },
-    { key: "d-xylose", cn: "D-木糖", en: "D-xylose", cls: "aldose",
+    { key: "d-xylose", cn: "D-木糖（开链）", en: "D-xylose, open chain", cls: "aldose",
       mol: { atoms: [{ el: "O", x: 2.598, y: 0.000, h: 1 }, { el: "O", x: 3.464, y: 2.500, h: 1 }, { el: "O", x: 1.732, y: 2.500, h: 1 }, { el: "O", x: 5.196, y: 1.500, h: 1 }, { el: "O", x: 0.000, y: 1.500 }, { el: "C", x: 2.598, y: 1.000, h: 1 }, { el: "C", x: 3.464, y: 1.500, h: 1 }, { el: "C", x: 1.732, y: 1.500, h: 1 }, { el: "C", x: 4.330, y: 1.000, h: 2 }, { el: "C", x: 0.866, y: 1.000, h: 1 }],
              bonds: [[5,0], [6,1], [7,2], [3,8], [4,9,2], [5,6], [5,7], [6,8], [7,9]] },
       smiles: "C([C@H]([C@@H]([C@H](C=O)O)O)O)O", formula: "C5H10O5", cid: 644160,
@@ -214,7 +214,12 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
       mol: { atoms: [{ el: "O", x: 2.598, y: 0.500 }, { el: "O", x: 0.000, y: 2.000, h: 1 }, { el: "O", x: 1.732, y: 3.000, h: 1 }, { el: "O", x: 0.000, y: 0.000, h: 1 }, { el: "O", x: 3.464, y: 2.000, h: 1 }, { el: "C", x: 0.866, y: 1.500, h: 1 }, { el: "C", x: 1.732, y: 2.000, h: 1 }, { el: "C", x: 0.866, y: 0.500, h: 1 }, { el: "C", x: 2.598, y: 1.500, h: 1 }, { el: "C", x: 1.732, y: 0.000, h: 2 }],
              bonds: [[0,8], [0,9], [5,1], [6,2], [7,3], [4,8], [5,6], [5,7], [6,8], [7,9]] },
       smiles: "C1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O", formula: "C5H10O5", cid: 439195,
-      note: { cn: "PubChem CID 439195，2026-08-09 取回。" } }
+      note: { cn: "PubChem CID 439195，2026-08-09 取回。" } },
+    { key: "ribulf", cn: "D-呋喃核酮糖", en: "D-ribulofuranose", cls: "aldose",
+      mol: { atoms: [{ el: "O", x: 2.569, y: 1.760 }, { el: "O", x: 1.172, y: 3.157, h: 1 }, { el: "O", x: 0.000, y: 2.069, h: 1 }, { el: "O", x: 0.672, y: 0.000, h: 1 }, { el: "O", x: 3.342, y: 3.052, h: 1 }, { el: "C", x: 1.760, y: 2.348 }, { el: "C", x: 0.951, y: 1.760, h: 1 }, { el: "C", x: 1.260, y: 0.809, h: 1 }, { el: "C", x: 2.260, y: 0.809, h: 2 }, { el: "C", x: 2.348, y: 3.157, h: 2 }],
+             bonds: [[0,5], [0,8], [1,5], [6,2], [7,3], [4,9], [5,6], [5,9], [6,7], [7,8]] },
+      smiles: "C1[C@H]([C@H](C(O1)(CO)O)O)O", formula: "C5H10O5", cid: 439203,
+      note: { cn: "PubChem CID 439203，2026-08-09 取回。" } }
   ]
 }
 ]);
