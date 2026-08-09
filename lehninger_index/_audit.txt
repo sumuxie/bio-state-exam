@@ -18,7 +18,7 @@ lehninger_index/README.md  (87 lines)
   clean
 
 ==============================================================================
-CORE_HANDOFF.md  (187 lines)
+CORE_HANDOFF.md  (188 lines)
 ==============================================================================
   clean
 
@@ -28,7 +28,7 @@ CORE1_APP.md  (97 lines)
   clean
 
 ==============================================================================
-CORE2_LEHNINGER.md  (307 lines)
+CORE2_LEHNINGER.md  (310 lines)
 ==============================================================================
   clean
 
@@ -40,7 +40,7 @@ CORE3_STRUCTURES.md  (200 lines)
 ==============================================================================
 STALENESS (live data vs what the handoffs claim)
 ==============================================================================
-  live: 239 topics, 29 lehninger, 70 topicKeys, 19 joining both books
+  live: 240 topics, 30 lehninger, 70 topicKeys, 20 joining both books
   clean
 
 TOTAL: 3

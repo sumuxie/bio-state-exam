@@ -5,7 +5,7 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 | 你要做什么 | 打开 | 现状 |
 |---|---|---|
 | app 功能 | `CORE1_APP.md` | 7 个里做了 4 个 |
-| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **117 个 section 做了 29 个**；**Ruojin 圈定的 7 个已全部做完** ✅，「merge 进已有 topic」的真缺口做完 §28.3 和 §19.5，只剩 §14.5 |
+| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **117 个 section 做了 30 个**；**Ruojin 圈定的 7 个已全部做完** ✅，**「merge 进已有 topic」的三个真缺口（§28.3 · §19.5 · §14.5）也全部做完** ✅ |
 | 结构式 | `CORE3_STRUCTURES.md` | **201 / 216**（清单已定稿，Ruojin 说全要，并追加了糖的 α/β 配齐；176 个从 PubChem 取回并逐条断言，还差 15 个只能手画） |
 
 ⚠️ **优先级需要 Ruojin 重新拍板。** 之前的排序是 **CORE2 > CORE3 > CORE1**，理由是 CORE2 里有
@@ -13,11 +13,12 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 
 现在三条线的候选下一步，**成本与收益差别很大**：
 
-- **CORE2**：「merge 进已有 topic」那 6 个已**逐格重测过**，真缺口只有 3 个，其中
-  **§28.3（17 页）和 §19.5（5 页）已完成**，**只剩 §14.5（8 页）**；另有「一笔带过」19 个。
+- **CORE2**：「merge 进已有 topic」那 6 个已**逐格重测过**，真缺口只有 3 个，**§28.3（17 页）、
+  §19.5（5 页）、§14.5（8 页）现在全部完成**。**这一桶空了。** 剩下的是「一笔带过」19 个、
+  给 30 个 Lehninger 节点补 `trace`、以及给最早四个节点补行内引用。
   **都是她说过要做但优先级更低的**，不再是「亲自圈定的缺口」。
-  另有两笔债：Lehninger 那 29 个节点**全都没有 `trace`**（深度层唯一还开着的一层）；
-  最早四个 Lehninger-only 节点的引用**至今不在检查器的 598 条里**。
+  另有两笔债：Lehninger 那 30 个节点**全都没有 `trace`**（深度层唯一还开着的一层）；
+  最早四个 Lehninger-only 节点的引用**至今不在检查器的 624 条里**。
 - **CORE3**：**分母定稿了**（Ruojin 2026-08-09：「我看了清单了没关系都做」，205 全要），
   **201 个已画**。其中 176 个是 2026-08-09 从 **PubChem 取回来的**，不是手画的——CID、分子式、
   SMILES、2D 坐标全带出处和日期，每条过五项断言。**还差 15 个**，是重复单元/分支点/还原型环
@@ -49,8 +50,8 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 
 | 想做哪条 | 填这一行 |
 |---|---|
-| CORE2 内容（默认） | `CORE2 的 §14.5（糖酵解/糖异生的协同调控，A pp.539–546）。Czech 有通路但 F2,6BP/PFK-2 零命中。动手前先 grep Czech 层复核覆盖，页码逐句在 A 的 OCR 里测。topicKey 并进 glycolysis，不要新起。` |
-| CORE2 内容（做完 §14.5 之后） | `CORE2 的补债那一条，或者「一笔带过」19 个里挑最靠前的。「merge 进已有 topic」桶到 §14.5 就空了。` |
+| CORE2 补债（推荐） | `给 30 个 Lehninger 节点补 trace——深度层唯一还开着的一层。先照 Czech 层已有的 34 张卡的写法定格式。` |
+| CORE2 内容 | `「一笔带过」19 个里挑最靠前的（整个 ch12 信号转导/GPCR/RTK/癌基因是最大的一块）。她的原话是「其他的最简单一笔带过就行」。` |
 | CORE2 补债 | `给 L-9-1-1 / L-9-2-1 / L-22-2-1 / L-24-2-1 补行内 (A p.N) 引用，让它们进入 verify_citations 的协议。` |
 | CORE3 结构式 | `CORE3：先修可见性（三个选项里选最轻的那个，需要 Ruojin 拍板），再把结构清单的分母定下来。` |
 | CORE1 app | `CORE1 的 A3（只看必背 filter）。A4 放最后，它是唯一能损坏已有用户数据的。` |
@@ -58,11 +59,11 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 ⚠️ **不管填哪一行，都别跳过「动手前先 grep」这一步。** CORE2 里那两张表的覆盖判断
 **已经被推翻过五次**，全部是「没查就填」。
 
-⚠️ **`§14.5` 属于「merge 进已有 topic」桶**，所以 `topicKey` 要**并进 Czech 已有的
-key、不要新起**，`czTitle` 也**不用** `Žádná —`——照抄 `leh_ch28.js`（`L-28-3-1`）或
-`leh_ch19c.js`（`L-19-5-1`）的写法。⚠️ **并进已有 key 之后，key 数和「跨书连接数」可能
-一个都不涨**（`L-19-5-1` 并进 `respiratory-chain` 就是如此，因为那个 key 本来就已经跨书）——
-**这是正常的，不是做错了。**
+⚠️ **「merge 进已有 topic」这一桶已经空了**（§28.3 · §19.5 · §14.5 全做完）。将来如果还有
+节点要并进已有 key：`topicKey` **并进、不要新起**，`czTitle` 也**不用** `Žádná —`——照抄
+`leh_ch28.js` / `leh_ch19c.js` / `leh_ch14.js`。⚠️ **并进之后跨书连接数「可能涨、也可能不涨」**：
+`L-19-5-1` 并进 `respiratory-chain` 时**一点没涨**（那个 key 本来就跨书），而 `L-14-5-1`
+并进 `glycolysis` 时**从 19 涨到 20**（那个 key 此前是 Czech 单书的）。**两种都正常。**
 
 ---
 
@@ -126,8 +127,8 @@ mustKnow、topicKey），以及 `biochemie_pro/data/` 里每个文件**是否都
 当前基线：`TOTAL: 3`，全部在 `HANDOFF_LEHNINGER.md` 里（一处不闭合的 `**`、一处截断段落、
 一处小节乱序），**是旧文件的历史遗留，不是你弄的**。CORE 四个文件和 staleness 都是 clean。
 
-实测（2026-08-09，写完 `L-19-5-1` 之后）：parse 全部 **39** 个数据文件通过；
-`step5_check` exit 0，239 topics；`verify_citations` **598 ok / 0 elsewhere / 0 unchecked**；
+实测（2026-08-09，写完 `L-14-5-1` 之后）：parse 全部 **40** 个数据文件通过；
+`step5_check` exit 0，240 topics；`verify_citations` **624 ok / 0 elsewhere / 0 unchecked**；
 `check_structures` 25 个结构 0 失败；`check_links` 7 条 0 dead。全套跑完 **15 秒以内**，
 **没有任何卡住、超时或 loop 的迹象**。
 
@@ -177,7 +178,7 @@ from step5_check import parse_nodes
 | 目录 | 角色 | storage 前缀 |
 |---|---|---|
 | `biochemie_basic/` | **冻结**，她实际在看的那个 | `bio.` |
-| `biochemie_pro/` | 主力训练器，**239 节点** | `biopro.` |
+| `biochemie_pro/` | 主力训练器，**240 节点** | `biopro.` |
 | `biochemie_struct/` | 结构式 | `biostruct.` |
 
 线上：`https://sumuxie.github.io/bio-state-exam/biochemie_pro/`
