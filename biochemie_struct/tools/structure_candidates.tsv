@@ -1,0 +1,190 @@
+# 结构式候选清单 —— STRUCTURE_LIST.md 的输入。
+# 一行一个候选：group<TAB>key<TAB>中文<TAB>English<TAB>grep 探针（| 分隔，regex）
+# 20 个氨基酸不在这里，它们写在 build_structure_list.py 里（已全部画完，不会再变）。
+# 改这个文件之后重跑 build_structure_list.py，STRUCTURE_LIST.md 会重新生成。
+# 中文探针可以写，但计数时会被丢掉——中文没有词边界，见脚本里的注释。
+sugar	d-glyceraldehyd	D-甘油醛	D-glyceraldehyde	glyceraldehyde|glyceraldehyd|甘油醛
+sugar	dihydroxyaceton	二羟丙酮	dihydroxyacetone	dihydroxyacetone|dihydroxyaceton|二羟丙酮
+sugar	d-erythrose	D-赤藓糖	D-erythrose	erythrose|erythros|赤藓糖
+sugar	d-ribose-open	D-核糖（开链）	D-ribose, open chain	ribose|ribos(?![oó])|核糖
+sugar	b-ribf	β-D-呋喃核糖	beta-D-ribofuranose	ribofuranose|ribofuranos
+sugar	b-drib	β-D-2-脱氧核糖	beta-D-2-deoxyribose	deoxyribose|deoxyribos|脱氧核糖
+sugar	d-ribulose	D-核酮糖	D-ribulose	ribulose|ribulos|核酮糖
+sugar	d-xylose	D-木糖	D-xylose	xylose|xylos|木糖
+sugar	d-xylulose	D-木酮糖	D-xylulose	xylulose|xylulos|木酮糖
+sugar	l-arabinose	L-阿拉伯糖	L-arabinose	arabinose|arabinos|阿拉伯糖
+sugar	glc-open	D-葡萄糖（开链）	D-glucose, open chain	glucose|glukos|葡萄糖
+sugar	a-glcp	α-D-吡喃葡萄糖	alpha-D-glucopyranose	glucopyranose|glukopyranos
+sugar	b-glcp	β-D-吡喃葡萄糖	beta-D-glucopyranose	glucopyranose|glukopyranos
+sugar	d-galactose-open	D-半乳糖（开链）	D-galactose, open chain	galactose|galaktos|半乳糖
+sugar	b-galp	β-D-吡喃半乳糖	beta-D-galactopyranose	galactopyranose|galaktopyranos
+sugar	d-mannose-open	D-甘露糖（开链）	D-mannose, open chain	mannose|manos|甘露糖
+sugar	a-manp	α-D-吡喃甘露糖	alpha-D-mannopyranose	mannopyranose|manopyranos
+sugar	d-fructose-open	D-果糖（开链）	D-fructose, open chain	fructose|fruktos|果糖
+sugar	b-fruf	β-D-呋喃果糖	beta-D-fructofuranose	fructofuranose|fruktofuranos
+sugar	glucosamine	葡糖胺	D-glucosamine	glucosamine|glukosamin|葡糖胺
+sugar	glcnac	N-乙酰葡糖胺	N-acetylglucosamine (GlcNAc)	acetylglucosamine|acetylglukosamin|GlcNAc|乙酰葡糖胺
+sugar	murnac	N-乙酰胞壁酸	N-acetylmuramic acid (MurNAc)	muramic|muramov|MurNAc|胞壁酸
+sugar	neu5ac	N-乙酰神经氨酸（唾液酸）	N-acetylneuraminic acid (sialic acid)	neuraminic|sialic|sialov|唾液酸|神经氨酸
+sugar	d-glucuronate	D-葡糖醛酸	D-glucuronic acid	glucuronic|glukuronov|葡糖醛酸
+sugar	d-gluconate	D-葡糖酸	D-gluconic acid	gluconic|glukonov|葡糖酸
+sugar	sorbitol	山梨醇	sorbitol (glucitol)	sorbitol|glucitol|山梨醇
+sugar	maltose	麦芽糖	maltose	maltose|maltos|麦芽糖
+sugar	lactose	乳糖	lactose	lactose|laktos|乳糖
+sugar	sucrose	蔗糖	sucrose	sucrose|sacharos|蔗糖
+sugar	cellobiose	纤维二糖	cellobiose	cellobiose|celobios|纤维二糖
+sugar	isomaltose	异麦芽糖	isomaltose (alpha-1,6)	isomaltose|isomaltos|异麦芽糖
+sugar	amylose-unit	直链淀粉重复单元	amylose repeat unit (alpha-1,4)	amylose|amylos|直链淀粉
+sugar	amylopectin-branch	支链淀粉分支点	amylopectin branch point (alpha-1,6)	amylopectin|amylopektin|支链淀粉
+sugar	glycogen-branch	糖原分支点	glycogen branch point	glycogen|glykogen|糖原
+sugar	cellulose-unit	纤维素重复单元	cellulose repeat unit (beta-1,4)	cellulose|celulos|纤维素
+sugar	chitin-unit	几丁质重复单元	chitin repeat unit	chitin|几丁质
+nucl	adenine	腺嘌呤	adenine	adenine|adenin|腺嘌呤
+nucl	guanine	鸟嘌呤	guanine	guanine|guanin|鸟嘌呤
+nucl	cytosine	胞嘧啶	cytosine	cytosine|cytosin|胞嘧啶
+nucl	thymine	胸腺嘧啶	thymine	thymine|thymin|胸腺嘧啶
+nucl	uracil	尿嘧啶	uracil	uracil|尿嘧啶
+nucl	hypoxanthine	次黄嘌呤	hypoxanthine	hypoxanthine|hypoxanthin|次黄嘌呤
+nucl	xanthine	黄嘌呤	xanthine	xanthine|xanthin|黄嘌呤
+nucl	uric-acid	尿酸	uric acid	uric acid|močov|尿酸
+nucl	adenosine	腺苷	adenosine	adenosine|adenosin|腺苷
+nucl	guanosine	鸟苷	guanosine	guanosine|guanosin|鸟苷
+nucl	cytidine	胞苷	cytidine	cytidine|cytidin|胞苷
+nucl	uridine	尿苷	uridine	uridine|uridin|尿苷
+nucl	deoxythymidine	脱氧胸苷	deoxythymidine	thymidine|thymidin|胸苷
+nucl	deoxyadenosine	脱氧腺苷	deoxyadenosine	deoxyadenosine|deoxyadenosin|脱氧腺苷
+nucl	amp	AMP	adenosine 5'-monophosphate	AMP|腺苷酸
+nucl	adp	ADP	adenosine 5'-diphosphate	ADP
+nucl	atp	ATP	adenosine 5'-triphosphate	ATP
+nucl	camp	环化 AMP	cyclic AMP (cAMP)	cAMP|cyklick.{0,3}AMP|环化 AMP|环腺苷酸
+nucl	gmp	GMP	guanosine 5'-monophosphate	GMP
+nucl	gtp	GTP	guanosine 5'-triphosphate	GTP
+nucl	cgmp	环化 GMP	cyclic GMP (cGMP)	cGMP
+nucl	ump	UMP	uridine 5'-monophosphate	UMP
+nucl	utp	UTP	uridine 5'-triphosphate	UTP
+nucl	ctp	CTP	cytidine 5'-triphosphate	CTP
+nucl	dtmp	dTMP	thymidine 5'-monophosphate	dTMP|TMP
+nucl	dinucleotide-link	3'→5' 磷酸二酯键	3'-5' phosphodiester link	phosphodiester|fosfodiester|磷酸二酯
+coenz	nad	NAD⁺	nicotinamide adenine dinucleotide (NAD+)	NAD|nikotinamid|烟酰胺腺嘌呤
+coenz	nadh-ring	NADH（还原的烟酰胺环）	NADH, the reduced nicotinamide ring	NADH
+coenz	nadp	NADP⁺	NADP+	NADP
+coenz	fad	FAD	flavin adenine dinucleotide (FAD)	FAD|flavin
+coenz	fadh2-ring	FADH₂（还原的异咯嗪环）	FADH2, the reduced isoalloxazine ring	FADH|isoalloxazine|isoalloxazin
+coenz	fmn	FMN	flavin mononucleotide (FMN)	FMN
+coenz	riboflavin	核黄素（B₂）	riboflavin (vitamin B2)	riboflavin|核黄素
+coenz	coa	辅酶 A	coenzyme A (CoA-SH)	coenzyme A|koenzym A|CoA|辅酶 A
+coenz	acetyl-coa	乙酰辅酶 A	acetyl-CoA	acetyl-CoA|acetylkoenzym|乙酰辅酶
+coenz	thiamine	硫胺素（B₁）	thiamine (vitamin B1)	thiamine|thiamin|硫胺
+coenz	tpp	焦磷酸硫胺素	thiamine pyrophosphate (TPP)	pyrophosphate|thiamindifosf|TPP|焦磷酸硫胺
+coenz	plp	磷酸吡哆醛	pyridoxal 5'-phosphate (PLP)	pyridoxal|pyridoxal|PLP|吡哆醛
+coenz	biotin	生物素	biotin	biotin|生物素
+coenz	folate	叶酸	folate	folate|folov|folát|叶酸
+coenz	thf	四氢叶酸	tetrahydrofolate (THF)	tetrahydrofolate|tetrahydrofol|THF|四氢叶酸
+coenz	lipoate	硫辛酸	lipoic acid	lipoic|lipoov|硫辛酸
+coenz	ubiquinone	泛醌（辅酶 Q）	ubiquinone (coenzyme Q)	ubiquinone|ubichinon|泛醌|辅酶 Q
+coenz	sam	S-腺苷甲硫氨酸	S-adenosylmethionine (SAM)	adenosylmethionine|adenosylmethionin|腺苷甲硫氨酸
+coenz	cobalamin	钴胺素（B₁₂）	cobalamin (vitamin B12)	cobalamin|kobalamin|B12|钴胺
+coenz	ascorbate	抗坏血酸（维生素 C）	ascorbate (vitamin C)	ascorb|askorb|抗坏血酸
+coenz	glutathione	谷胱甘肽	glutathione (GSH)	glutathione|glutathion|谷胱甘肽
+lipid	palmitate	软脂酸（棕榈酸）	palmitic acid (16:0)	palmit|软脂酸|棕榈酸
+lipid	stearate	硬脂酸	stearic acid (18:0)	stear|硬脂酸
+lipid	oleate	油酸	oleic acid (18:1)	oleic|olejov|油酸
+lipid	linoleate	亚油酸	linoleic acid (18:2)	linoleic|linolov|亚油酸
+lipid	linolenate	亚麻酸	alpha-linolenic acid (18:3)	linolenic|linolenov|亚麻酸
+lipid	arachidonate	花生四烯酸	arachidonic acid (20:4)	arachidon|花生四烯
+lipid	glycerol	甘油	glycerol	glycerol|glycerin|甘油
+lipid	triacylglycerol	三酰甘油	triacylglycerol	triacylglycerol|triacylglycer|三酰甘油|甘油三酯
+lipid	phosphatidate	磷脂酸	phosphatidic acid	phosphatidic|fosfatidov|磷脂酸
+lipid	pc	磷脂酰胆碱（卵磷脂）	phosphatidylcholine (lecithin)	phosphatidylcholine|fosfatidylcholin|lecit|磷脂酰胆碱|卵磷脂
+lipid	pe	磷脂酰乙醇胺	phosphatidylethanolamine	phosphatidylethanolamine|fosfatidylethanolamin|磷脂酰乙醇胺
+lipid	ps	磷脂酰丝氨酸	phosphatidylserine	phosphatidylserine|fosfatidylserin|磷脂酰丝氨酸
+lipid	pi	磷脂酰肌醇	phosphatidylinositol	phosphatidylinositol|fosfatidylinositol|磷脂酰肌醇
+lipid	cardiolipin	心磷脂	cardiolipin	cardiolipin|kardiolipin|心磷脂
+lipid	sphingosine	鞘氨醇	sphingosine	sphingosine|sfingosin|鞘氨醇
+lipid	ceramide	神经酰胺	ceramide	ceramide|ceramid|神经酰胺
+lipid	sphingomyelin	鞘磷脂	sphingomyelin	sphingomyelin|sfingomyelin|鞘磷脂
+lipid	cerebroside	脑苷脂	galactocerebroside	cerebroside|cerebrosid|脑苷脂
+lipid	ganglioside	神经节苷脂	ganglioside GM1	ganglioside|gangliosid|神经节苷脂
+lipid	cholesterol	胆固醇	cholesterol	cholesterol|胆固醇
+lipid	cholesteryl-ester	胆固醇酯	cholesteryl ester	cholesteryl|cholesterylester|胆固醇酯
+lipid	cholate	胆酸	cholic acid (bile acid)	cholic|cholov|žlučov|胆酸|胆汁酸
+lipid	testosterone	睾酮	testosterone	testosterone|testosteron|睾酮
+lipid	estradiol	雌二醇	estradiol	estradiol|雌二醇
+lipid	progesterone	孕酮	progesterone	progesterone|progesteron|孕酮
+lipid	cortisol	皮质醇	cortisol	cortisol|kortizol|皮质醇
+lipid	aldosterone	醛固酮	aldosterone	aldosterone|aldosteron|醛固酮
+lipid	vitamin-d3	维生素 D₃	cholecalciferol (vitamin D3)	cholecalciferol|kalciferol|vitamin D|维生素 D
+lipid	pge2	前列腺素 E₂	prostaglandin E2	prostaglandin|prostaglandin|前列腺素
+lipid	txa2	血栓素 A₂	thromboxane A2	thromboxane|tromboxan|血栓素
+lipid	ltb4	白三烯 B₄	leukotriene B4	leukotriene|leukotrien|白三烯
+lipid	pgi2	前列环素 I₂	prostacyclin I2	prostacyclin|prostacyklin|前列环素
+lipid	isoprene	异戊二烯	isoprene unit	isoprene|isopren|异戊二烯
+lipid	retinal	视黄醛（维生素 A）	retinal (vitamin A)	retinal|retinol|vitamin A|视黄
+lipid	tocopherol	生育酚（维生素 E）	alpha-tocopherol (vitamin E)	tocopherol|tokoferol|vitamin E|生育酚
+lipid	vitamin-k	维生素 K	phylloquinone (vitamin K)	phylloquinone|vitamin K|维生素 K
+metab	g6p	葡萄糖-6-磷酸	glucose 6-phosphate	glucose 6-phosphate|glukosa-6-fosf|glukosa 6-fosf|葡萄糖-6-磷酸
+metab	g1p	葡萄糖-1-磷酸	glucose 1-phosphate	glucose 1-phosphate|glukosa-1-fosf|葡萄糖-1-磷酸
+metab	f6p	果糖-6-磷酸	fructose 6-phosphate	fructose 6-phosphate|fruktosa-6-fosf|果糖-6-磷酸
+metab	f16bp	果糖-1,6-二磷酸	fructose 1,6-bisphosphate	fructose 1,6|fruktosa-1,6|果糖-1,6
+metab	f26bp	果糖-2,6-二磷酸	fructose 2,6-bisphosphate	fructose 2,6|fruktosa-2,6|果糖-2,6
+metab	dhap	磷酸二羟丙酮	dihydroxyacetone phosphate	dihydroxyacetone phosphate|dihydroxyacetonfosf|磷酸二羟丙酮
+metab	gap	甘油醛-3-磷酸	glyceraldehyde 3-phosphate	glyceraldehyde 3-phosphate|glyceraldehyd-3-fosf|甘油醛-3-磷酸
+metab	bpg13	1,3-二磷酸甘油酸	1,3-bisphosphoglycerate	1,3-bisphosphoglycerate|1,3-difosfoglycer|1,3-二磷酸甘油酸
+metab	pg3	3-磷酸甘油酸	3-phosphoglycerate	3-phosphoglycerate|3-fosfoglycer|3-磷酸甘油酸
+metab	pg2	2-磷酸甘油酸	2-phosphoglycerate	2-phosphoglycerate|2-fosfoglycer|2-磷酸甘油酸
+metab	pep	磷酸烯醇丙酮酸	phosphoenolpyruvate (PEP)	phosphoenolpyruvate|fosfoenolpyruv|磷酸烯醇丙酮酸
+metab	pyruvate	丙酮酸	pyruvate	pyruvate|pyruv|丙酮酸
+metab	lactate	乳酸	lactate	lactate|laktát|mléčn|乳酸
+metab	bpg23	2,3-二磷酸甘油酸	2,3-bisphosphoglycerate	2,3-bisphosphoglycerate|2,3-difosfoglycer|2,3-BPG|2,3-二磷酸甘油酸
+metab	udp-glucose	UDP-葡萄糖	UDP-glucose	UDP-glucose|UDP-glukos|UDP-葡萄糖
+metab	citrate	柠檬酸	citrate	citrate|citrát|柠檬酸
+metab	cis-aconitate	顺乌头酸	cis-aconitate	aconitate|akonit|乌头酸
+metab	isocitrate	异柠檬酸	isocitrate	isocitrate|isocitrát|异柠檬酸
+metab	akg	α-酮戊二酸	alpha-ketoglutarate	ketoglutarate|ketoglutar|酮戊二酸
+metab	succinyl-coa	琥珀酰辅酶 A	succinyl-CoA	succinyl|sukcinyl|琥珀酰辅酶
+metab	succinate	琥珀酸	succinate	succinate|sukcinát|琥珀酸
+metab	fumarate	延胡索酸（富马酸）	fumarate	fumarate|fumar|延胡索酸|富马酸
+metab	malate	苹果酸	malate	malate|malát|jablečn|苹果酸
+metab	oxaloacetate	草酰乙酸	oxaloacetate	oxaloacetate|oxalacetát|草酰乙酸
+metab	glyoxylate	乙醛酸	glyoxylate	glyoxylate|glyoxylát|乙醛酸
+metab	pgluconate6	6-磷酸葡糖酸	6-phosphogluconate	phosphogluconate|fosfoglukon|磷酸葡糖酸
+metab	ru5p	核酮糖-5-磷酸	ribulose 5-phosphate	ribulose 5-phosphate|ribulosa-5-fosf|核酮糖-5-磷酸
+metab	r5p	核糖-5-磷酸	ribose 5-phosphate	ribose 5-phosphate|ribosa-5-fosf|核糖-5-磷酸
+metab	s7p	景天庚酮糖-7-磷酸	sedoheptulose 7-phosphate	sedoheptulose|sedoheptulos|景天庚酮糖
+metab	e4p	赤藓糖-4-磷酸	erythrose 4-phosphate	erythrose 4-phosphate|erythrosa-4-fosf|赤藓糖-4-磷酸
+metab	rubp	核酮糖-1,5-二磷酸	ribulose 1,5-bisphosphate (RuBP)	ribulose 1,5|ribulosa-1,5|RuBP|核酮糖-1,5
+metab	acyl-coa	脂酰辅酶 A	fatty acyl-CoA	acyl-CoA|acylkoenzym|脂酰辅酶
+metab	enoyl-coa	烯脂酰辅酶 A	trans-enoyl-CoA	enoyl|enoyl|烯脂酰
+metab	hydroxyacyl-coa	3-羟脂酰辅酶 A	3-hydroxyacyl-CoA	hydroxyacyl|hydroxyacyl|羟脂酰
+metab	ketoacyl-coa	3-酮脂酰辅酶 A	3-ketoacyl-CoA	ketoacyl|ketoacyl|酮脂酰
+metab	malonyl-coa	丙二酸单酰辅酶 A	malonyl-CoA	malonyl|malonyl|丙二酸单酰
+metab	carnitine	肉碱	carnitine	carnitine|karnitin|肉碱
+metab	acetoacetate	乙酰乙酸	acetoacetate	acetoacetate|acetoacetát|乙酰乙酸
+metab	hydroxybutyrate	β-羟丁酸	beta-hydroxybutyrate	hydroxybutyrate|hydroxybutyrát|羟丁酸
+metab	acetone	丙酮	acetone	acetone|aceton|丙酮
+metab	hmg-coa	HMG-CoA	beta-hydroxy-beta-methylglutaryl-CoA	HMG-CoA|hydroxymethylglutaryl|甲基戊二酸单酰
+metab	mevalonate	甲羟戊酸	mevalonate	mevalonate|mevalon|甲羟戊酸
+metab	carbamoyl-p	氨甲酰磷酸	carbamoyl phosphate	carbamoyl phosphate|karbamoylfosf|氨甲酰磷酸
+metab	ornithine	鸟氨酸	ornithine	ornithine|ornitin|鸟氨酸
+metab	citrulline	瓜氨酸	citrulline	citrulline|citrulin|瓜氨酸
+metab	argininosuccinate	精氨琥珀酸	argininosuccinate	argininosuccinate|argininosukcin|精氨琥珀酸
+metab	urea	尿素	urea	urea|močovin|尿素
+metab	glycerol3p	甘油-3-磷酸	glycerol 3-phosphate	glycerol 3-phosphate|glycerol-3-fosf|甘油-3-磷酸
+metab	prpp	PRPP	5-phosphoribosyl 1-pyrophosphate	PRPP|fosforibosyl|phosphoribosyl|磷酸核糖焦磷酸
+metab	creatine	肌酸	creatine	creatine|kreatin|肌酸
+metab	phosphocreatine	磷酸肌酸	phosphocreatine	phosphocreatine|kreatinfosf|fosfokreatin|磷酸肌酸
+porph	porphine	卟吩骨架	porphine skeleton	porphin|porfin|卟吩
+porph	protoporphyrin-ix	原卟啉 IX	protoporphyrin IX	protoporphyrin|protoporfyrin|原卟啉
+porph	heme-b	血红素 b	heme b	heme|血红素
+porph	chlorophyll-a	叶绿素 a	chlorophyll a	chlorophyll|chlorofyl|叶绿素
+porph	bilirubin	胆红素	bilirubin	bilirubin|胆红素
+porph	biliverdin	胆绿素	biliverdin	biliverdin|胆绿素
+aader	epinephrine	肾上腺素	epinephrine (adrenaline)	epinephrine|adrenalin|肾上腺素
+aader	norepinephrine	去甲肾上腺素	norepinephrine	norepinephrine|noradrenalin|去甲肾上腺素
+aader	dopamine	多巴胺	dopamine	dopamine|dopamin|多巴胺
+aader	serotonin	血清素	serotonin (5-HT)	serotonin|血清素|五羟色胺
+aader	melatonin	褪黑素	melatonin	melatonin|褪黑
+aader	histamine	组胺	histamine	histamine|histamin|组胺
+aader	gaba	γ-氨基丁酸	gamma-aminobutyrate (GABA)	GABA|aminobutyr|氨基丁酸
+aader	thyroxine	甲状腺素 T₄	thyroxine (T4)	thyroxine|thyroxin|tyroxin|甲状腺素
+aader	nitric-oxide	一氧化氮	nitric oxide (NO)	nitric oxide|oxid dusnat|一氧化氮
