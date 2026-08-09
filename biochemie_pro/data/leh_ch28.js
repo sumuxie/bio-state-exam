@@ -60,6 +60,16 @@ window.BIOCHEM.topics.push(
       title: "未核对——中文笔记是 230 页无文字层的手写扫描件（见 生物化学笔记_分卷/README.md），无法自动检索；增强子、Mediator、组合控制与 RNAi 是否出现在笔记中，需人工翻阅后再填",
       status: "pending"
     },
+    trace: [
+      {
+        term: "transcriptional ground state 转录基态",
+        what: "指**在没有任何调控序列的情况下**，启动子和转录机器**在体内**的固有活性——说白了就是**「一个基因默认是开着的还是关着的」**。这个默认值**在细菌和真核里是反的**：**细菌默认是「开」**，**真核默认是「关」**。",
+        from: "**为什么要专门造这么一个词？** 因为不给这个反转起个名字，就说不清楚**为什么操纵子模型搬不到真核生物**。在细菌里，RNA 聚合酶基本上**能够到每一个启动子**，没人拦它就会转录——**所以有信息量的调控事件是「阻遏物把它关掉」**，这就是 lac 和 trp 操纵子被当作**负调控**来教的原因。而在真核里，**染色质把 DNA 缠起来了**，强启动子在体内**没有调控蛋白就是不活跃的**，**几乎每个基因都要被激活才转录**——**所以主导的是正调控**。其余一切都从这个倒置推出来：**染色质重塑必须排在转录因子前面**（因为染色质正是「默认关」的原因），**正调控占主导**（因为去阻遏两万个本来就沉默的基因既冗余又昂贵）。",
+        to: "考试里这是**开场白**级别的一句话。被问到「真核基因调控与细菌有什么不同」或者「为什么操纵子模型不能直接搬过来」，**先定义转录基态，再说细菌是开、真核是关**，后面所有细节都挂在这句话上。**不要一上来就背增强子和转录因子**——那是结论，这才是前提。",
+        family: "顺着它往下的一串：**染色质**（默认关的物理原因）→ **染色质重塑复合体**（把它打开的机器）→ **增强子 / UAS**（激活蛋白结合的调控序列，**可以远在数千碱基对之外、可以在基因内部、而且与方向无关**——这三点全都打破操纵子直觉）→ **Mediator**（把激活蛋白和 RNA 聚合酶 II 接起来的共激活复合体）。对照组是捷克教材已经教过的 **lac / trp 操纵子**。",
+        numbers: "人有约 **20,000** 个基因——如果全部靠负调控，**每个细胞就得随时合成所有阻遏物**，这是「正调控为什么占主导」的效率论据。多细胞生物中**一个基因平均有六个调控位点**，十几个也常见——**特异性来自组合，而不是来自任何单个位点**。"
+      }
+    ],
     mustKnow: {
       en: "One sentence organises this entire section, and it is a contrast with the operon the Czech book already taught you. In bacteria the transcriptional ground state is ON: RNA polymerase can reach essentially every promoter and will transcribe at some level unless a repressor stops it, which is why the lac and trp operons are taught as negative control. In eukaryotes the ground state is OFF: strong promoters are inactive in vivo without regulatory proteins, and almost every gene requires activation to be transcribed. Everything else follows from that inversion. Chromatin is why the default is off, so chromatin remodelling comes first and transcription factors second. Positive control dominates, because repressing 20,000 already-silent genes would be redundant and ruinously expensive. And control is combinatorial — six or more sites per gene — because that is how a limited set of proteins can specify a very large genome without binding in the wrong place.",
       cn: "有**一句话**统摄整节，而它恰好是与你在捷克教材里已经学过的**操纵子**的对照。在**细菌**中，**转录的基态是「开」**：RNA 聚合酶基本上能够到每一个启动子，并会以某种水平转录下去，**除非有阻遏物拦住它**——这正是 lac 和 trp 操纵子被当作**负调控**来讲的原因。在**真核**中，**基态是「关」**：强启动子在体内**没有调控蛋白就是不活跃的**，而且**几乎每一个基因都需要被激活才能被转录**。其余一切都从这个**倒置**推出来。**染色质**是「默认关闭」的原因，所以**染色质重塑排在前、转录因子排在后**。**正调控占主导**，因为去阻遏两万个**本来就已经沉默**的基因既冗余又昂贵得离谱。而调控是**组合式的**——每个基因**六个以上**位点——因为这是**用有限的一套蛋白去指定一个极大基因组、同时又不结合到错误位置**的办法。"
