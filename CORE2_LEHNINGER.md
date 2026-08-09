@@ -13,15 +13,22 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 | depth queue | **85** | Czech 书有对应内容，但 Lehninger 讲得更多 | `lehninger_index/depth_queue.tsv` |
 | Lehninger-only | **32** | Czech 书**完全没有**对应内容 | `lehninger_index/lehninger_only_scope.tsv` |
 
-**已写 30 个 L- 节点。** 其中 20 个 = depth queue 的第 1 名到第 20 名，精确吻合，一个不多一个不少；
-7 个来自 Lehninger-only 清单，2026-08-08 补的；另有 3 个来自「merge 进已有 topic」桶
-（`L-28-3-1` = §28.3，`L-19-5-1` = §19.5，`L-14-5-1` = §14.5，**这一桶到此全部做完**），
-**它们不在上面那两份清单的任何一份里**——
-「merge」桶是 Ruojin 2026-08-06 裁决里的第三个桶，见下面那张重测过的六行表。
-Lehninger-only 的 7 个是：**`L-9-1-1`（§9.1，克隆/PCR/vector）**、
+**已写 30 个 L- 节点，全部落在上面那 117 个 section 的 scope 之内**（2026-08-09 用两份 tsv
+逐个核对过，两份清单零重叠）：**20 个来自 depth queue，正好是 rank 第 1 到第 20，一个不多一个
+不少**；**10 个来自 Lehninger-only 清单**。
+
+⚠️ **更正一处本 session 自己写错的说法。** 之前这里写「merge 进已有 topic 那 3 个不在两份清单
+的任何一份里」——**是错的**。`§28.3`、`§19.5`、`§14.5` **都在 `lehninger_only_scope.tsv` 里**。
+「merge 桶」不是第三份清单，**它是 Ruojin 2026-08-06 在这 32 个 Lehninger-only section 内部
+做的分类**：她把其中 13 个圈出来，7 个划进「主要需要的」、6 个划进「merge 进对应 topic」。
+所以那 10 个 = **她圈定的 7 个 + merge 桶里实测确认的 3 个真缺口**。
+**Lehninger-only 还剩 22 个，其中 19 个是她说「一笔带过就行」的。**
+
+Lehninger-only 已做的 10 个里，「主要需要的」那 7 个是：**`L-9-1-1`（§9.1，克隆/PCR/vector）**、
 **`L-9-2-1`（§9.2，CRISPR）**、**`L-22-2-1`（§22.2，氨基酸生物合成）**、
 **`L-24-2-1`（§24.2，DNA supercoiling）**、**`L-24-3-1`（§24.3，染色体结构）**、
-**`L-25-2-1`（§25.2，DNA repair）**、**`L-25-3-1`（§25.3，DNA recombination）**。
+**`L-25-2-1`（§25.2，DNA repair）**、**`L-25-3-1`（§25.3，DNA recombination）**；
+merge 桶的 3 个是 **`L-28-3-1`（§28.3）**、**`L-19-5-1`（§19.5）**、**`L-14-5-1`（§14.5）**。
 
 ---
 
