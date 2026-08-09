@@ -182,7 +182,12 @@
     var n = it.note && it.note.cn;
     return '<article class="card">' +
       '<header class="card-head">' +
-        '<span class="names"><b>' + esc(it.cn) + '</b> ' + esc(it.en) + '</span>' +
+        // English is the MAIN title and Chinese the subtitle (Ruojin, 2026-08-09):
+        // the exam is taken in English, so the English name is what has to be
+        // recognised on sight. `.names b` is the large face and the rest of
+        // `.names` is small and dim, so swapping the order does the styling too.
+        '<span class="names"><b>' + esc(it.en) + '</b> ' +
+          '<span class="cn-sub">' + esc(it.cn) + '</span></span>' +
         '<span class="codes">' + esc(it.tlc) + ' · ' + esc(it.olc) +
           (it.essential ? ' <span class="ess" title="必需氨基酸 · essential">必需</span>' : '') +
         '</span>' +
@@ -243,8 +248,8 @@
       var sub = items.filter(function (it) { return it.cls === c; });
       if (!sub.length) return;
       sub.forEach(function (it) { placed.push(it); });
-      body += '<h3 class="cls">' + esc(CLS[c].cn) +
-        ' <span class="muted">' + esc(CLS[c].en) + ' · ' + sub.length + '</span></h3>' +
+      body += '<h3 class="cls">' + esc(CLS[c].en) +
+        ' <span class="muted">' + esc(CLS[c].cn) + ' · ' + sub.length + '</span></h3>' +
         '<div class="grid">' + sub.map(itemHtml).join('') + '</div>';
     });
     var left = items.filter(function (it) { return placed.indexOf(it) < 0; });
@@ -256,16 +261,16 @@
       });
       Object.keys(byCls).forEach(function (k) {
         var sub = byCls[k];
-        var label = k === '__none__' ? '其他' : k;
+        var label = k === '__none__' ? 'Other' : k;
         body += '<h3 class="cls">' + esc(label) +
-          ' <span class="muted">' + (k === '__none__' ? 'Other' : 'unclassified') +
+          ' <span class="muted">' + (k === '__none__' ? '其他' : 'unclassified') +
           ' · ' + sub.length + '</span></h3>' +
           '<div class="grid">' + sub.map(itemHtml).join('') + '</div>';
       });
     }
 
     return '<section class="group">' +
-      '<h2>' + esc(g.cnTitle) + ' <span class="muted">' + esc(g.enTitle) +
+      '<h2>' + esc(g.enTitle) + ' <span class="muted">' + esc(g.cnTitle) +
         ' · ' + items.length + '/' + g.items.length + '</span></h2>' +
       (g.note && g.note.cn ? '<p class="gnote">' + esc(g.note.cn) + '</p>' : '') +
       (links ? '<nav class="sees">对应节点：' + links + '</nav>' : '') +
