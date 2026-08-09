@@ -39,6 +39,17 @@ sugar	amylopectin-branch	支链淀粉分支点	amylopectin branch point (alpha-1
 sugar	glycogen-branch	糖原分支点	glycogen branch point	glycogen|glykogen|糖原
 sugar	cellulose-unit	纤维素重复单元	cellulose repeat unit (beta-1,4)	cellulose|celulos|纤维素
 sugar	chitin-unit	几丁质重复单元	chitin repeat unit	chitin|几丁质
+sugar	a-ribf	α-D-呋喃核糖	alpha-D-ribofuranose	ribofuranose|ribofuranos
+sugar	drib-open	2-脱氧-D-核糖（开链）	2-deoxy-D-ribose, open chain	deoxyribose|deoxyribos|脱氧核糖
+sugar	a-dribf	2-脱氧-α-D-呋喃核糖	alpha-D-2-deoxyribofuranose	deoxyribofuranose|deoxyribofuranos
+sugar	a-xylp	α-D-吡喃木糖	alpha-D-xylopyranose	xylopyranose|xylopyranos
+sugar	b-xylp	β-D-吡喃木糖	beta-D-xylopyranose	xylopyranose|xylopyranos
+sugar	a-arap	α-L-吡喃阿拉伯糖	alpha-L-arabinopyranose	arabinopyranose|arabinopyranos
+sugar	b-arap	β-L-吡喃阿拉伯糖	beta-L-arabinopyranose	arabinopyranose|arabinopyranos
+sugar	a-galp	α-D-吡喃半乳糖	alpha-D-galactopyranose	galactopyranose|galaktopyranos
+sugar	b-manp	β-D-吡喃甘露糖	beta-D-mannopyranose	mannopyranose|manopyranos
+sugar	a-fruf	α-D-呋喃果糖	alpha-D-fructofuranose	fructofuranose|fruktofuranos
+sugar	b-frup	β-D-吡喃果糖	beta-D-fructopyranose	fructopyranose|fruktopyranos
 nucl	adenine	腺嘌呤	adenine	adenine|adenin|腺嘌呤
 nucl	guanine	鸟嘌呤	guanine	guanine|guanin|鸟嘌呤
 nucl	cytosine	胞嘧啶	cytosine	cytosine|cytosin|胞嘧啶

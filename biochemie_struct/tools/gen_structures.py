@@ -40,8 +40,9 @@ CLS_RULES = {
         (["glucosamine", "glcnac", "murnac", "neu5ac", "d-glucuronate", "d-gluconate",
           "sorbitol"], "aminosugar"),
         (["dihydroxyaceton", "d-ribulose", "d-xylulose", "d-fructose-open"], "ketose"),
-        (["b-fruf", "b-ribf"], "furanose"),
-        (["a-glcp", "b-glcp", "b-galp", "a-manp"], "pyranose"),
+        (["b-fruf", "b-ribf", "a-ribf", "a-dribf", "a-fruf"], "furanose"),
+        (["a-glcp", "b-glcp", "b-galp", "a-manp", "a-galp", "b-manp",
+          "a-xylp", "b-xylp", "a-arap", "b-arap", "b-frup"], "pyranose"),
     ],
     "nucl": [
         (["adenine", "guanine", "cytosine", "thymine", "uracil", "hypoxanthine",

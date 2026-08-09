@@ -149,6 +149,17 @@ PARENT = {
     "b-galp": "d-galactose-open", "a-manp": "d-mannose-open", "b-fruf": "d-fructose-open",
     "porphine": "protoporphyrin-ix", "cholesteryl-ester": "cholesterol",
     "nadh-ring": "nad", "fadh2-ring": "fad",
+    # 2026-08-09: Ruojin asked why some sugars only had the open chain -- the answer was
+    # that the candidate list simply listed fewer forms, not that anything had been ruled
+    # out. Each sugar now carries open chain + alpha + beta. Every one of those anomer rows
+    # scores 0/0 for the same reason b-ribf always did: textbooks write "galactose", never
+    # "alpha-D-galactopyranose". They are forms of a parent, not gaps.
+    "a-ribf": "d-ribose-open", "a-dribf": "b-drib",
+    "a-xylp": "d-xylose", "b-xylp": "d-xylose",
+    "a-arap": "l-arabinose", "b-arap": "l-arabinose",
+    "a-galp": "d-galactose-open", "b-galp": "d-galactose-open",
+    "b-manp": "d-mannose-open",
+    "a-fruf": "d-fructose-open", "b-frup": "d-fructose-open",
 }
 
 tot_done = tot_all = tot_zero = 0

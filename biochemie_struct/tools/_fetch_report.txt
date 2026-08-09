@@ -1,19 +1,16 @@
-loaded 160 cached compounds
-PubChem fetch, 2026-08-09. candidates 185, already cached 160
+loaded 170 cached compounds
+PubChem fetch, 2026-08-09. candidates 196, already cached 170
 
-ok    d-erythrose          D-erythrose                              CID 94176     C4H8O4          8 atoms  7 bonds
-ok    d-xylulose           D-xylulose                               CID 5289590   C5H10O5        10 atoms  9 bonds
-ok    isomaltose           isomaltose                               CID 439193    C12H22O11      23 atoms 24 bonds
-ok    thiamine             thiamine                                 CID 1130      C12H17N4OS+    18 atoms 19 bonds  [exception]
-        net charge +1 ACCEPTED: the thiazolium ring carries a real permanent +1; that charge is why C2 forms the ylide
-ok    cobalamin            cyanocobalamin                           CID 166596686 C63H88CoN14O14P 93 atoms 98 bonds  [exception]
-        disconnected drawing ACCEPTED: Co is a separate fragment in PubChem's connection table (coordination, not covalent)
-ok    phosphatidate        1,2-dipalmitoyl-sn-glycero-3-phosphate   CID 3099      C35H69O8P      44 atoms 43 bonds
-ok    sphingomyelin        N-palmitoyl-D-erythro-sphingosylphosphor CID 9939941   C39H79N2O6P    48 atoms 47 bonds
-ok    heme-b               heme B                                   CID 4973      C34H32FeN4O4   43 atoms 46 bonds  [exception]
-        disconnected drawing ACCEPTED: Fe is a separate fragment in PubChem's connection table (coordination, not covalent)
-ok    chlorophyll-a        chlorophyll a                            CID 12085802  C55H72MgN4O5   65 atoms 69 bonds  [exception]
-        disconnected drawing ACCEPTED: Mg is a separate fragment in PubChem's connection table (coordination, not covalent)
-ok    dopamine             dopamine                                 CID 681       C8H11NO2       11 atoms 11 bonds
+ok    a-ribf               alpha-D-ribofuranose                     CID 445894    C5H10O5        10 atoms 10 bonds
+ok    drib-open            2-deoxy-D-ribose                         CID 5460005   C5H10O4         9 atoms  8 bonds
+ok    a-dribf              alpha-D-2-deoxyribofuranose              CID 11908474  C5H10O4         9 atoms  9 bonds
+ok    a-xylp               alpha-D-xylopyranose                     CID 6027      C5H10O5        10 atoms 10 bonds
+ok    b-xylp               beta-D-xylopyranose                      CID 125409    C5H10O5        10 atoms 10 bonds
+ok    a-arap               alpha-L-arabinopyranose                  CID 439731    C5H10O5        10 atoms 10 bonds
+ok    b-arap               beta-L-arabinopyranose                   CID 439764    C5H10O5        10 atoms 10 bonds
+ok    a-galp               alpha-D-galactopyranose                  CID 439357    C6H12O6        12 atoms 12 bonds
+ok    b-manp               beta-D-mannopyranose                     CID 439680    C6H12O6        12 atoms 12 bonds
+ok    a-fruf               alpha-D-fructofuranose                   CID 11105942  C6H12O6        12 atoms 12 bonds
+ok    b-frup               beta-D-fructopyranose                    CID 24310     C6H12O6        12 atoms 12 bonds
 
-fetched ok 10 | failed 0 | already cached 0 | MANUAL (no single PubChem compound) 0
+fetched ok 11 | failed 0 | already cached 0 | MANUAL (no single PubChem compound) 0

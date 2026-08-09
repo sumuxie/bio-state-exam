@@ -30,8 +30,14 @@ Ruojin's call」）· 在根页面加一个结构式直达链接 · 给冻结的
 
 ## ✅ 这些已经做过
 
-**190 / 205 个结构，全部通过检查器**（2026-08-09 实测：190 checked / 187 drawn /
+**201 / 216 个结构，全部通过检查器**（2026-08-09 实测：201 checked / 198 drawn /
 4 Haworth-asserted / **0 failures**）。还差的 15 个见下面的 MANUAL 一节。
+
+⚠️ **分母从 205 变成 216，是 Ruojin 追加的**：她问「为啥糖有几个开链，你就画完整的呗」。
+原因不是有意取舍，是**候选清单本身只列了那几种形式**。现在每个糖都配齐**开链 + α + β**——
+补了 11 个（α-呋喃核糖、脱氧核糖开链与 α-呋喃型、α/β-吡喃木糖、α/β-吡喃阿拉伯糖、
+α-吡喃半乳糖、β-吡喃甘露糖、α-呋喃果糖、β-吡喃果糖）。**这些行在教材里都是 0 命中**
+（教材写 galactose，不写 alpha-D-galactopyranose），已按「母体的某一形式」标注，不是缺口。
 
 ### 2026-08-09：改成从 PubChem 取，不再手画
 
@@ -73,7 +79,7 @@ CID、分子式、isomeric SMILES、**以及 PubChem 自己的 2D 坐标**，每
 |---|---|---|
 | `data/amino_acids.js` | **20** | 手画，带 CID |
 | `data/sugars.js` | **5** | 手画，**带 Haworth 断言**——不要覆盖 |
-| `data/sugars_more.js` | **26** | PubChem |
+| `data/sugars_more.js` | **37** | PubChem（每个糖开链 + α + β 配齐） |
 | `data/nucleotides.js` | **25** | PubChem |
 | `data/coenzymes.js` | **19** | PubChem |
 | `data/lipids.js` | **32** | PubChem |
