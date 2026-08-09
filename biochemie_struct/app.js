@@ -178,6 +178,128 @@
       .some(function (v) { return String(v || '').toLowerCase().indexOf(q) >= 0; });
   }
 
+  // ---------------------------------------------------------- pronunciation
+  /* TWO SOURCES, AND THE BUTTON SAYS WHICH ONE YOU ARE ABOUT TO HEAR.
+     Ruojin asked for 真人发音 -- a real human voice, not the speechSynthesis
+     the other three apps use. Real recordings exist, but only for part of
+     this list, and the split is not random. Measured 2026-08-09 against
+     en.wiktionary over the 202 structure names: 61 have an English human
+     recording, the rest have none. The 61 are the ordinary-English names --
+     the amino acids, the bases, cholesterol, urea. Every systematic name
+     (alpha-D-glucopyranose, 3-phosphoglycerate, acetyl-CoA) has nothing,
+     because no dictionary has an entry for it.
+
+     So the hard words -- exactly the ones worth checking -- are the ones with
+     no human recording, and a real-audio-only feature would be silent
+     precisely where it is needed. Hence the fallback to synthesis, and hence
+     the two different icons: 🔊 is a recorded person, 🔈 is the browser
+     talking. Conflating them would misrepresent 🔈 as a pronunciation
+     authority, which it is not.
+
+     Note this is a WEAKER claim than biochemie_pro's comment nearby, which
+     says recorded audio is "not feasible". That is true for pro -- it speaks
+     whole sentences in two languages. Here the unit is a single word, so a
+     third of them can be real. */
+  var PRON = (function () {
+    var m = {}, p = (window.STRUCT && window.STRUCT.pronunciations) || null;
+    if (p && p.items) {
+      p.items.forEach(function (r) {
+        if (!r.file) return;
+        (r.keys || []).forEach(function (k) { m[k] = r; });
+      });
+    }
+    return m;
+  })();
+
+  var BYKEY = (function () {
+    var m = {};
+    GROUPS.forEach(function (g) {
+      (g.items || []).forEach(function (it) { if (it.key) m[it.key] = it; });
+    });
+    return m;
+  })();
+
+  var speechAvailable = typeof window !== 'undefined' && 'speechSynthesis' in window;
+  var audioEl = null;
+
+  // Same ranking idea as biochemie_pro: the first en-* voice Windows offers is
+  // usually the legacy SAPI one, with the neural voices further down the list.
+  var VOICE_GOOD = /natural|neural|online|premium|enhanced|siri|google/i;
+  var VOICE_POOR = /espeak|compact|david|zira|mark/i;
+
+  function pickEnVoice() {
+    if (!speechAvailable) return null;
+    var vs = (window.speechSynthesis.getVoices() || []).filter(function (v) {
+      return v.lang && v.lang.toLowerCase().indexOf('en') === 0;
+    });
+    if (!vs.length) return null;
+    return vs.sort(function (a, b) { return score(b) - score(a); })[0];
+    function score(v) {
+      var s = 0;
+      if (/^en-US/i.test(v.lang)) s += 10;
+      if (VOICE_GOOD.test(v.name)) s += 30;
+      if (VOICE_POOR.test(v.name)) s -= 25;
+      return s;
+    }
+  }
+
+  function speak(text) {
+    if (!speechAvailable) return;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = 0.85;                       // chemical names need the extra room
+    var v = pickEnVoice();
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }
+
+  function playKey(key) {
+    var it = BYKEY[key];
+    if (!it) return;
+    if (speechAvailable) window.speechSynthesis.cancel();
+    if (audioEl) { try { audioEl.pause(); } catch (e) {} audioEl = null; }
+    var rec = PRON[key];
+    if (rec) {
+      audioEl = new Audio('audio/' + rec.file);
+      // A missing or undecodable file must not just click and do nothing --
+      // fall through to synthesis so the button always answers.
+      audioEl.play().catch(function () { speak(it.en); });
+      return;
+    }
+    speak(it.en);
+  }
+
+  function sayBtnHtml(it) {
+    var rec = PRON[it.key];
+    if (rec) {
+      return ' <button class="say say-real" data-say="' + esc(it.key) + '" ' +
+        'title="真人录音 · human recording — ' + esc(rec.artist) + ' · ' + esc(rec.license) + '" ' +
+        'aria-label="Play human recording of ' + esc(it.en) + '">🔊</button>';
+    }
+    if (!speechAvailable) return '';
+    return ' <button class="say say-tts" data-say="' + esc(it.key) + '" ' +
+      'title="合成音 · browser synthesis — 这个名字没有真人录音" ' +
+      'aria-label="Speak ' + esc(it.en) + '">🔈</button>';
+  }
+
+  /* Attribution is not optional. These are other people’s recordings under CC
+     licences, so every one is credited with its author, licence and source. */
+  function creditsHtml() {
+    var p = (window.STRUCT && window.STRUCT.pronunciations) || null;
+    if (!p || !p.items || !p.items.length) return '';
+    var rows = p.items.filter(function (r) { return r.file; }).map(function (r) {
+      return '<li><b>' + esc(r.term) + '</b> — ' + esc(r.artist) +
+        ' · ' + esc(r.license) +
+        ' · <a href="' + esc(r.page) + '" rel="noopener">Wiktionary</a></li>';
+    }).join('');
+    return '<details class="credits"><summary>真人发音的出处与署名 · ' +
+      'Pronunciation credits (' + p.items.length + ' recordings, retrieved ' +
+      esc(p.retrieved) + ')</summary>' +
+      '<p class="muted">🔊 = 真人录音，来自 Wiktionary / Wikimedia Commons，' +
+      '按其 CC 许可署名如下。🔈 = 浏览器合成音，用于没有真人录音的名字' +
+      '（系统命名的化合物字典里查不到）。</p><ul>' + rows + '</ul></details>';
+  }
+
   function itemHtml(it) {
     var n = it.note && it.note.cn;
     return '<article class="card">' +
@@ -186,7 +308,7 @@
         // the exam is taken in English, so the English name is what has to be
         // recognised on sight. `.names b` is the large face and the rest of
         // `.names` is small and dim, so swapping the order does the styling too.
-        '<span class="names"><b>' + esc(it.en) + '</b> ' +
+        '<span class="names"><b>' + esc(it.en) + '</b>' + sayBtnHtml(it) + ' ' +
           '<span class="cn-sub">' + esc(it.cn) + '</span></span>' +
         '<span class="codes">' + esc(it.tlc) + ' · ' + esc(it.olc) +
           (it.essential ? ' <span class="ess" title="必需氨基酸 · essential">必需</span>' : '') +
@@ -280,8 +402,9 @@
 
   function render() {
     var html = GROUPS.map(groupHtml).join('');
-    $('#app').innerHTML = html ||
-      '<p class="empty">没有匹配的结构 <span class="muted">no match</span></p>';
+    $('#app').innerHTML = (html ||
+      '<p class="empty">没有匹配的结构 <span class="muted">no match</span></p>') +
+      creditsHtml();
   }
 
   function applyTheme() {
@@ -307,6 +430,22 @@
       state.q = e.target.value.trim();
       render();
     });
+
+    // Delegated, because render() replaces the whole subtree on every
+    // keystroke -- per-button listeners would be re-bound constantly.
+    $('#app').addEventListener('click', function (e) {
+      var btn = e.target.closest && e.target.closest('[data-say]');
+      if (btn) playKey(btn.getAttribute('data-say'));
+    });
+
+    // Chrome populates the voice list asynchronously; without this the first
+    // click of a session can get the wrong voice or none at all.
+    if (speechAvailable) {
+      window.speechSynthesis.getVoices();
+      window.speechSynthesis.onvoiceschanged = function () {
+        window.speechSynthesis.getVoices();
+      };
+    }
   }
 
   if (document.readyState === 'loading') {

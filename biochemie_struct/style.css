@@ -110,6 +110,24 @@ code { font-family: var(--mono); font-size: 0.85em; }
    noticeably smaller than Latin at the same px, so the subtitle is nudged back
    up -- without this it renders as an afterthought rather than a second line. */
 .cn-sub { font-size: 0.95rem; }
+
+/* Pronunciation. Two icons on purpose: 🔊 is a recorded human, 🔈 is browser
+   synthesis. They are deliberately NOT styled the same -- the real recording
+   is the authoritative one and should look it. See the comment in app.js. */
+.say {
+  background: none; border: 0; cursor: pointer; padding: 0 0.15rem;
+  font-size: 0.9rem; line-height: 1; opacity: 0.75; vertical-align: baseline;
+}
+.say:hover { opacity: 1; }
+.say:focus-visible { outline: 2px solid var(--accent, currentColor); border-radius: 3px; }
+.say-tts { opacity: 0.4; }                 /* quieter: it is only a synthesiser */
+.say-tts:hover { opacity: 0.8; }
+
+.credits { margin: 2rem 0 1rem; font-size: 0.82rem; color: var(--fg-dim); }
+.credits summary { cursor: pointer; }
+.credits ul { margin: 0.5rem 0 0; padding-left: 1.1rem; columns: 2; }
+.credits li { margin: 0.15rem 0; break-inside: avoid; }
+@media (max-width: 640px) { .credits ul { columns: 1; } }
 .codes { font-family: var(--mono); font-size: 0.78rem; color: var(--fg-dim); white-space: nowrap; }
 .ess {
   color: var(--warn); border: 1px solid var(--warn);

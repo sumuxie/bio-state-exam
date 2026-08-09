@@ -143,6 +143,7 @@ python lehninger_index/scripts/step5_check.py                    # 数据 + sche
 python lehninger_index/scripts/verify_citations.py               # 每条 A 页码
 python lehninger_index/scripts/audit_handoff.py                  # 这四个 CORE 文件本身
 cd biochemie_struct && python tools/check_structures.py && python tools/check_links.py
+python tools/check_pronunciations.py            # 真人录音：manifest↔磁盘、署名、只收英文
 ```
 
 **收工前再跑一次 `audit_handoff.py`。** 2026-08-08 起它会检查这四个 CORE 文件：格式（截断的

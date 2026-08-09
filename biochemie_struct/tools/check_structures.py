@@ -213,9 +213,20 @@ def check_graph(key, natoms, bonds, expect_bonds=None):
     return problems
 
 
+# data/*.js files that legitimately contain no structures, and so must be
+# skipped rather than scanned. Keep this list as short as it can possibly be:
+# every file NOT named here still has to yield at least one entry, enforced by
+# `assert entries` further down. That assertion is the reason a drifting or
+# unwired data file fails loudly instead of scanning clean at zero -- do not
+# weaken it by adding files here to make a run go green.
+NON_STRUCTURE_DATA = {"pronunciations.js"}
+
+
 def main():
     files = sorted(glob.glob(os.path.join(DATA, "*.js")))
     assert files, "no data files found in %s" % DATA
+    files = [f for f in files if os.path.basename(f) not in NON_STRUCTURE_DATA]
+    assert files, "every data file was excluded -- NON_STRUCTURE_DATA is too broad"
 
     total = fails = 0
     drawn = 0

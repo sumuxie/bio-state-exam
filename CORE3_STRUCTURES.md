@@ -120,6 +120,53 @@ SMILES / 图）、键数（抓得出「环被画开」）、图连通无自环�
 
 ---
 
+## 🔊 发音：真人录音 + 合成音兜底（2026-08-10）
+
+Ruojin 要的是**真人发音**，不是另外三个 app 用的 `speechSynthesis`。做法和**为什么只能是混合**：
+
+**先测了覆盖率，再决定的。** 拿 202 个结构名去 en.wiktionary 批量查（`prop=images`，
+40 个一批），**61 个有英文真人录音，其余没有**。而且缺的不是随机的：
+
+| 有真人录音 | 没有 |
+|---|---|
+| 20 个氨基酸、碱基、核苷、激素、cholesterol、urea、citrate、lactate——**普通英语里本来就有的词** | `alpha-D-glucopyranose`、`3-phosphoglycerate`、`acetyl-CoA`、`adenosine 5'-triphosphate`、**所有糖的环式、所有磷酸化中间物** |
+
+**所以「只用真人录音」这个方案会在最需要的地方是哑的**——系统命名的化合物字典里根本没有条目。
+因此：**有真人录音就放真人（🔊），没有就用合成音（🔈），而且两个图标故意不一样**，
+`.say-tts` 还调暗了。**不要把两者混成一个图标**——那等于把合成音冒充成发音权威。
+
+⚠️ **`biochemie_pro/app.js` 里那段注释说真人录音「not feasible」，那句话对 pro 是对的**
+（它要念整句、两种语言），**对 struct 不成立**（单个词，且三分之一查得到）。别照搬那个结论。
+
+| 文件 | 作用 |
+|---|---|
+| `tools/fetch_pronunciations.py` | 取录音 + 出处，写 `data/pronunciations.js` 和 `audio/` |
+| `tools/check_pronunciations.py` | 断言 manifest 与磁盘一致、署名齐全、**只收英文** |
+| `data/pronunciations.js` | 生成物，**不要手改**；每条带 author / license / 源页 / 取回日期 |
+
+⚠️ **最要紧的那条断言是「语言」。** en.wiktionary 的词条页**同时挂着所有拼写相同的语言的录音**
+——`glucose` 页面上法语和葡萄牙语录音就在英语旁边。**音频字节本身完全看不出是哪种语言**，
+文件名是唯一信号，所以按**白名单**收（`En-*` 或 `LL-Q1860 (eng)`），**不匹配一律不要**——
+宁可少收几个，也不能把一段法语录音当成英语发音发出去。这条在 fetch 和 check 两边**各断言一次**。
+
+⚠️ **`upload.wikimedia.org` 对这台机器限流很凶**：下几个就 429，退避几分钟也照样 429。
+所以 `fetch_pronunciations.py` **把下载失败记成 pending 而不是直接崩**，并且**可续跑**
+（已存在的文件跳过）。**没下全不是错误状态**——manifest 里只会有真正落盘的那些，
+其余的走合成音。想续下就再跑一次，限流厉害时加大间隔：
+`PRON_DELAY=8 python tools/fetch_pronunciations.py`。
+
+⚠️ **署名是有法律义务的**：这些是别人按 CC 许可发布的录音。页面底部的
+「真人发音的出处与署名」`<details>` 块**不是装饰**，`check_pronunciations.py` 会断言
+每条都有 author / license / 源页。**孤儿文件（磁盘上有、manifest 里没有）会被判失败**，
+因为那等于用了别人的录音却没署名。
+
+⚠️ **`data/pronunciations.js` 不是结构数据**，所以 `check_structures.py` 里有一个
+`NON_STRUCTURE_DATA` 白名单把它排除掉。**那个名单要尽量短**——不在名单里的每个数据文件
+都必须至少解析出一个结构（`assert entries`），这条断言正是「文件改了形状却扫出 0 条还报 clean」
+的防线，**别为了让检查变绿而往名单里加文件**。
+
+---
+
 ## ✅ 分母现在有了：`STRUCTURE_LIST.md`
 
 **2026-08-09：清单已经写出来了，205 行，逐条列出 key + 中英文名。** 文件在
