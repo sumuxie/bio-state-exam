@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 625 citations -- 49 in a `src` field, 576 written inline in prose
+found 626 citations -- 49 in a `src` field, 577 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -48,6 +48,7 @@ OK        L-2-2-1        A p.57  quiz[2].why_en       label found on [57]
 OK        L-3-3-1        A p.83  coverageNote         quote found on [83]
 OK        L-3-3-1        A p.90  coverageNote         quote found on [90]
 OK        L-3-3-1        A pp.86-87  coverageNote     label found on [86, 87]
+OK        L-3-3-1        A p.87  trace[0].numbers     label found on [87]
 OK        L-3-3-1        A p.83  points[0].en         quote found on [83]
 OK        L-3-3-1        A pp.84  points[1].en        quote found on [84]
 OK        L-3-3-1        A p.86  points[1].en         quote found on [86]
@@ -630,4 +631,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 624 | ELSEWHERE 0 | UNCHECKED 0
+OK 625 | ELSEWHERE 0 | UNCHECKED 0
