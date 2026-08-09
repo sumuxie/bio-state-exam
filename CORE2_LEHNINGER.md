@@ -223,7 +223,7 @@ takeaway）· `skipIt` 0（在找到替代 RECAP 的证据来源之前禁止写�
    故意不合并进 `dna-repair`）。文件 `leh_ch25c.js`，28 条引用全部过检。
    **「主要需要的」7 个到此全部完成。**
 8. ✅ ~~§19.5 线粒体基因~~ —— 已做，`L-19-5-1`（2026-08-09），文件 `leh_ch19c.js`，
-   17 points / 17 terms / 4 quiz / 1 oral，A pp.692–696，**27 条引用全部过检**。
+   17 points / 18 terms / 4 quiz / 1 oral，A pp.692–696，**27 条引用全部过检**。
    `topicKey` **并进** `respiratory-chain`（不新起），所以 key 数和跨书连接数**都没变**。
    动手前重新 grep 过 Czech 层，零命中成立。**「merge 进已有 topic」的真缺口只剩 §14.5。**
 
