@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 655 citations -- 49 in a `src` field, 606 written inline in prose
+found 659 citations -- 49 in a `src` field, 610 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -162,6 +162,8 @@ OK        L-8-2-1        A p.275  points[8].en        quote found on [275]
 OK        L-8-2-1        A p.276  points[9].en        quote found on [276]
 OK        L-8-2-1        A p.277  points[9].en        quote found on [277]
 OK        L-8-4-1        A p.296  summary.en          quote found on [296]
+OK        L-9-3-1        A p.336  mustKnow.en         quote found on [336]
+OK        L-9-3-1        A p.336  summary.en          quote found on [336]
 OK        L-11-3-1       A p.385  coverageNote        label found on [385]
 OK        L-11-3-1       A p.386  coverageNote        label found on [386]
 OK        L-11-3-1       A p.387  coverageNote        label found on [387]
@@ -415,6 +417,8 @@ OK        L-23-3-1       A p.861  quiz[0].why_en      quote found on [861]
 OK        L-23-3-1       A p.862  quiz[1].why_en      quote found on [862]
 OK        L-23-3-1       A p.863  quiz[1].why_en      label found on [863]
 OK        L-23-3-1       A p.866  quiz[2].answer_en   quote found on [866]
+OK        L-23-4-1       A p.875  summary.en          quote found on [875]
+OK        L-23-5-1       A p.879  summary.en          quote found on [879]
 OK        L-24-2-1       A p.891  points[0].en        quote found on [891]
 OK        L-24-2-1       A p.892  points[0].en        quote found on [892]
 OK        L-24-2-1       A p.892  points[1].en        quote found on [892]
@@ -660,4 +664,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 654 | ELSEWHERE 0 | UNCHECKED 0
+OK 658 | ELSEWHERE 0 | UNCHECKED 0
