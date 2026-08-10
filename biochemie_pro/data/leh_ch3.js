@@ -204,6 +204,16 @@ window.BIOCHEM.topics.push(
     coverage: "full",
     coverageNote: "Read from Lehninger 8 section 3.4, B-copy text layer pp.416-433, covering A printed pp.91-95. The A page numbers are taken from MEASURED figure/table anchors (TABLE 3-6 = A p.92, FIGURE 3-28 = A p.94, FIGURE 3-29 = A p.95), not interpolated. LIMITS, stated so nothing is over-claimed: (1) the figures themselves were not read as images, only their captions, which are part of the text layer -- so the reaction schemes drawn in Fig. 3-25, 3-26 and 3-27 are described here only as far as the surrounding prose describes them; (2) this node covers only the first half of section 3.4. The rest is NOT covered and is not claimed: chemical peptide synthesis, where “the technology for chemical peptide synthesis has been automated” , then what sequences tell you and molecular evolution (A pp.96-100). czTitle is the CZECH section this node adds depth to, not a Lehninger heading -- Lehninger has no Czech title.",
     cnNote: { topic: "四", title: "氨基酸（笔记 pp.21–22 有 DNFB/Sanger→黄色 DNP-氨基酸、PITC/Edman→PTH 的反应与颜色）；一级结构本身在 topic 五 蛋白质的共价结构 pp.23–27。笔记给的是颜色和试剂，Lehninger 给的是现代质谱方法，两边互补而不重叠", status: "mapped" },
+    trace: [
+      {
+        term: "Leu 与 Ile：质谱唯一读不出的那一处——而它源于化学，不是仪器",
+        what: "串联质谱能把一段肽的序列直接读出来，**唯一的不确定性只有一处**：**「唯一的不确定性涉及亮氨酸和异亮氨酸，它们质量相同。」** 两者是**结构异构体**——原子组成完全一样，只是连法不同——**所以任何质量测量都无法把它们分开**。**其余全部可以确定。** ⚠️ 这一条之所以是好考点，正因为它**不是仪器精度不够，再好的质谱也一样分不开**：**它是化学本身的后果。**",
+        from: "还有一条配套的方法学要点，是这套读数**为什么可信**：断裂通常**同时产生 b 组和 y 组离子**，所以**从一组读出的序列可以用另一组核对**——**这正是提高结果可信度的做法**，也是「一台机器给的序列凭什么信得过」的答案。而在用到这些之前，**整节的定位要先摆正**：**今天的序列「大多是从基因组数据库的 DNA 序列间接推导出来的」**，所谓「直接测序」指的**才是质谱**。⚠️ **所以如果考官问「怎么得到一个蛋白的序列」，第一答案是去查基因**——经典的 Edman 降解和片段化路线**仍然值得知道，但它的价值在于解释那些数据库凭什么可信，而不是作为你会去用的方法**。",
+        to: "考试里两处，而且很容易一起问。第一，**直接考「质谱测序有什么局限」**——答 **Leu/Ile 因质量相同而无法区分**，并**点明原因是结构异构体、属于化学而非仪器**（只说「有误差」是答不到点上的）。第二，被问「**怎么测一个蛋白的序列**」——**先答「查基因组数据库」**，再说明**什么时候才真的需要动蛋白本身**：**找出合成后被切掉了哪一段、哪些残基带修饰、胶上那个点究竟是哪个蛋白**——**这三件事基因序列都答不了**，这也正是蛋白质化学方法今天仍然存在的理由。",
+        family: "把这一节的方法按「今天还用不用」分两堆最省事。**仍在用的**：**质谱**（ESI 读质量、串联 MS 读序列，b/y 双组互校）。**主要用于理解而非动手的**：**Edman 降解**、**先断二硫键**（否则片段还是被拴在一起）、**在可预测的位点切开**（那张片段化表——胰蛋白酶、CNBr 等各自切在哪）、**标记氨基末端**。历史上的第一例值得记一句：**第一个被测定的蛋白序列是牛胰岛素，由 Frederick Sanger 完成**。⚠️ 注意这个 **Sanger 和 DNA 测序的 Sanger 是同一个人、但是两件事**——`L-8-3-1` 里的 Sanger 测序说的是 DNA。",
+        numbers: "**Leu 和 Ile 质量相同**（结构异构体），是**唯一**分不开的一对；**其余残基全部可确定**。断裂同时给出 **b 组**和 **y 组**两套离子，**互为校验**。今天的蛋白序列**大多**来自**基因组数据库的 DNA 序列间接推导**，质谱是**直接测序**的那一条路。历史第一例：**牛胰岛素**，**Frederick Sanger**。"
+      }
+    ],
     mustKnow: {
       en: "Nobody obtains a protein sequence by protein chemistry any more — it is read off the gene in a database, and \"direct sequencing\" means mass spectrometry. The classical Edman and fragmentation route is worth knowing as the reason those databases can be trusted, not as a method anyone would now use.",
       cn: "现在没有人再用蛋白质化学的办法去测序列了——序列是从数据库里的**基因**上读出来的，而所谓「直接测序」指的是质谱。经典的 Edman 降解和片段化路线仍然值得知道，但它的价值在于**解释那些数据库凭什么可信**，而不是作为你会去用的方法。"
