@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 644 citations -- 49 in a `src` field, 595 written inline in prose
+found 649 citations -- 49 in a `src` field, 600 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -191,6 +191,11 @@ OK        L-12-1-1       A p.410-411  points[3].en    quote found on [410]
 OK        L-12-1-1       A p.411  points[4].en        label found on [411]
 OK        L-12-1-1       A p.410-411  points[5].en    label found on [410, 411]
 OK        L-12-1-1       A p.411  points[6].en        quote found on [411]
+OK        L-12-3-1       A p.432  summary.en          quote found on [432]
+OK        L-12-5-1       A p.439  summary.en          quote found on [439]
+OK        L-12-6-1       A p.445  summary.en          quote found on [445]
+OK        L-12-8-1       A p.450  summary.en          quote found on [450]
+OK        L-12-9-1       A p.456  summary.en          quote found on [456]
 OK        L-14-5-1       A pp.539-540  coverageNote   label found on [539, 540]
 OK        L-14-5-1       A p.539  coverageNote        label found on [539]
 OK        L-14-5-1       A p.541  coverageNote        label found on [541]
@@ -649,4 +654,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 643 | ELSEWHERE 0 | UNCHECKED 0
+OK 648 | ELSEWHERE 0 | UNCHECKED 0

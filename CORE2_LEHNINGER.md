@@ -13,7 +13,7 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 | depth queue | **85** | Czech 书有对应内容，但 Lehninger 讲得更多 | `lehninger_index/depth_queue.tsv` |
 | Lehninger-only | **32** | Czech 书**完全没有**对应内容 | `lehninger_index/lehninger_only_scope.tsv` |
 
-**已写 31 个 L- 节点，全部落在上面那 117 个 section 的 scope 之内**（2026-08-09 用两份 tsv
+**已写 36 个 L- 节点（31 个深度 + 5 个浅），全部落在上面那 117 个 section 的 scope 之内**（2026-08-09 用两份 tsv
 逐个核对过，两份清单零重叠）：**20 个来自 depth queue，正好是 rank 第 1 到第 20，一个不多一个
 不少**；**10 个来自 Lehninger-only 清单**。
 
@@ -22,7 +22,7 @@ Lehninger 8th ed. 进入 scope 的是 **117 个 numbered section**，拆成两�
 「merge 桶」不是第三份清单，**它是 Ruojin 2026-08-06 在这 32 个 Lehninger-only section 内部
 做的分类**：她把其中 13 个圈出来，7 个划进「主要需要的」、6 个划进「merge 进对应 topic」。
 所以那 10 个 = **她圈定的 7 个 + merge 桶里实测确认的 3 个真缺口**。
-**Lehninger-only 还剩 21 个，其中 18 个是她说「一笔带过就行」的**（§12.1 已于 2026-08-10 写成 `L-12-1-1`）。
+**Lehninger-only 还剩 16 个，其中 13 个是她说「一笔带过就行」的**（ch12 的 §12.1/12.3/12.5/12.6/12.8/12.9 已于 2026-08-10 写完；**§12.2、§12.4 实测 Czech 已覆盖，不写**）。
 
 Lehninger-only 已做的 10 个里，「主要需要的」那 7 个是：**`L-9-1-1`（§9.1，克隆/PCR/vector）**、
 **`L-9-2-1`（§9.2，CRISPR）**、**`L-22-2-1`（§22.2，氨基酸生物合成）**、
@@ -44,9 +44,9 @@ merge 桶的 3 个是 **`L-28-3-1`（§28.3）**、**`L-19-5-1`（§19.5）**、
 
 **其他已完成的层：**
 
-- `mustKnow` **241/241，零缺口**（2026-08-10 实测）。207 Czech + 31 Lehninger + 3 entity 全有。
+- `mustKnow` **246/246，零缺口**（2026-08-10 实测）。207 Czech + 36 Lehninger + 3 entity 全有。
 - 3 张 entity 卡：`E-tryptophan` `E-histidine` `E-cysteine`。下一张的测量结论是 `heme`。
-- `topicKey` **70** 个，**20 个跨书连接**（实测：70 个 key 里有 20 个同时含两本书的节点）。
+- `topicKey` **72** 个，**20 个跨书连接**（2026-08-10：ch12 那批新起 2 个单书 key——`cell-cycle-control`、`oncogenes-and-apoptosis`；另外 3 个并进已有的**本来就跨书**的 key，所以跨书数没动）（实测：70 个 key 里有 20 个同时含两本书的节点）。
   ⚠️ **同样是「并进已有 key」，对计数的影响可以完全不同，这一点值得记住。**
   `L-14-5-1`（§14.5）并进 `glycolysis`，而那个 key 此前**只有 Czech 节点**（`7-8-1/2/3` 加
   `10-6`/`10-7`），所以它**产生了第 20 个跨书连接**。而 `L-19-5-1`（§19.5）并进
