@@ -32,12 +32,38 @@ archive.
 > 读 `C:\Users\Admin\Downloads\bio-state-exam\LEHNINGER_START.md`，全文读完，然后按「当前状态」
 > 那一节继续。不要整读 `HANDOFF_LEHNINGER.md`，只按章节号 grep。写完一批就 commit + push。
 
-**Sessions get cut off by a biosecurity classifier.** Every refusal record carries
-`category: "bio"` — 415 of 415, no exceptions. **The trigger is the subject matter**, so no
-wording avoids it and it is not worth investigating; two sessions burned their whole window
-trying. Reply `继续` and carry on. **Prefer Opus 5, avoid Sonnet 5** (measured: 6.3 % vs 1.4 %
-of turns refused, over 24 deduplicated conversations). **Commit and push after every batch** —
-that is the entire defence and nothing has ever been lost.
+**Sessions get cut off by a biosecurity classifier.** Confirmed 2026-08-10 against the
+transcripts themselves: **510 refusal records, `apiRefusalCategory: "bio"`, 510 of 510, no
+exceptions.** They live in `~/.claude/projects/*/*.jsonl` as
+`{"type":"system","subtype":"model_refusal_no_fallback"|"model_refusal_fallback"}` — **not in
+this repo, which is why an earlier search concluded there was no evidence.** Output-length
+truncation is a different and much rarer thing: `stop_reason:"max_tokens"` occurs **5** times in
+the whole history against **1031** refusals. **The trigger is the subject matter** — refusals ran
+188/133/128 per day on 2026-08-06/07/08 and fell to 6 and 14 on 08-09/10 as the work moved to the
+textbook app — **so no wording avoids it.** Reply `继续` and carry on.
+
+⚠️ **Model choice changes whether a refusal is survivable, and this reverses the old advice.**
+A refusal is retried on a *higher* tier, and the only fallback path in the data is
+**`claude-fable-5 → claude-opus-5`**. If you are already on Opus there is nothing above it, so
+every refusal is a hard stop:
+
+| originalModel | refused | auto-rescued | hard stop | hard/turn |
+|---|---:|---:|---:|---:|
+| `claude-opus-5` | 209 | **0** | 209 | 0.75 % |
+| `claude-sonnet-5` | 173 | **0** | 173 | 2.75 % |
+| `claude-opus-5[1m]` | 42 | **0** | 42 | — |
+| `claude-fable-5` | 86 | **75** | 11 | — |
+
+**Prefer Fable 5.** 75 of its 86 refusals (87 %) were rescued and the turn continued; **0 of the
+382 refusals originating on Opus or Sonnet were.** Watched live on 2026-08-10: five hard stops on
+`opus-5[1m]` between 18:35 and 19:13, then a refusal at 19:29 on `fable-5` that fell back to Opus
+and finished normally. ⚠️ **Two limits.** This does not reduce refusals, only makes most of them
+recoverable — 13 % of Fable 5's still stop hard. And **Fable 5's refusal *rate* is unmeasurable
+here**: assistant turns are not tagged with that model id, so the `hard/turn` cell is blank on
+purpose. The old advice ("prefer Opus, avoid Sonnet", 6.3 % vs 1.4 %) had the Opus-vs-Sonnet
+direction right but the magnitudes wrong, and it ignored recoverability entirely.
+
+**Commit and push after every batch** — that is still the defence that has never lost anything.
 
 ⚠️ After any mid-write interruption, check the file parses before building on it.
 
