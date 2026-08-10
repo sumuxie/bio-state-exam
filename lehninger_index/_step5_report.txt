@@ -3,7 +3,7 @@ biochemie_pro/app.js parses as JavaScript: OK (1737 lines, 2 literals stubbed)
 
 simulating the validator's logic against the real data:
 ok biochemie_basic: 207 topics (207 cz, 0 lehninger, 0 entity), cz book pages 8-228, 0 topicKeys, 1010 terms, 603 questions
-ok biochemie_pro: 257 topics (207 cz, 47 lehninger, 3 entity), cz book pages 8-228, 78 topicKeys, 1391 terms, 748 questions
+ok biochemie_pro: 258 topics (207 cz, 48 lehninger, 3 entity), cz book pages 8-228, 78 topicKeys, 1405 terms, 752 questions
 
 negative tests -- a check that never fails is not a check:
   half-migrated app (one node missing `book`): got=206, len=207 -> FIRES
