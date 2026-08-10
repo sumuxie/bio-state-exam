@@ -40,14 +40,14 @@ CORE3_STRUCTURES.md  (267 lines)
 ==============================================================================
 STALENESS (live data vs what the handoffs claim)
 ==============================================================================
-  live: 255 topics, 45 lehninger, 77 topicKeys, 21 joining both books
-  COUNT STALE    LEHNINGER_START.md says topics=246, live is 255
-  COUNT STALE    LEHNINGER_START.md says lehninger=36, live is 45
-  COUNT STALE    LEHNINGER_START.md says topicKeys=72, live is 77
+  live: 257 topics, 47 lehninger, 78 topicKeys, 21 joining both books
+  COUNT STALE    LEHNINGER_START.md says topics=246, live is 257
+  COUNT STALE    LEHNINGER_START.md says lehninger=36, live is 47
+  COUNT STALE    LEHNINGER_START.md says topicKeys=72, live is 78
   COUNT STALE    LEHNINGER_START.md says multi=20, live is 21
-  COUNT STALE    CORE_HANDOFF.md says lehninger=36, live is 45
-  COUNT STALE    CORE2_LEHNINGER.md says lehninger=36, live is 45
-  COUNT STALE    CORE2_LEHNINGER.md says topics=246, live is 255
-  COUNT STALE    CORE2_LEHNINGER.md says topicKeys=72, live is 77
+  COUNT STALE    CORE_HANDOFF.md says lehninger=36, live is 47
+  COUNT STALE    CORE2_LEHNINGER.md says lehninger=36, live is 47
+  COUNT STALE    CORE2_LEHNINGER.md says topics=246, live is 257
+  COUNT STALE    CORE2_LEHNINGER.md says topicKeys=72, live is 78
 
 TOTAL: 11
