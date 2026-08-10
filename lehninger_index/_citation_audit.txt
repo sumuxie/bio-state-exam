@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 649 citations -- 49 in a `src` field, 600 written inline in prose
+found 652 citations -- 49 in a `src` field, 603 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -45,6 +45,8 @@ OK        L-2-2-1        A p.59  points[7].en         label found on [59]
 OK        L-2-2-1        A p.59  points[8].en         quote found on [59]
 OK        L-2-2-1        A p.56  points[9].en         label found on [56]
 OK        L-2-2-1        A p.57  quiz[2].why_en       label found on [57]
+OK        L-2-1-1        A p.53  summary.en           quote found on [53]
+OK        L-2-3-1        A p.64  summary.en           quote found on [64]
 OK        L-3-3-1        A p.83  coverageNote         quote found on [83]
 OK        L-3-3-1        A p.90  coverageNote         quote found on [90]
 OK        L-3-3-1        A pp.86-87  coverageNote     label found on [86, 87]
@@ -76,6 +78,7 @@ OK        L-3-4-1        A pp.96-100  coverageNote    quote found on [96]
 OK        L-3-4-1        A p.92  points[5].en         label found on [92]
 OK        L-3-4-1        A p.94  points[7].en         label found on [94]
 OK        L-3-4-1        A p.95  points[8].en         label found on [95]
+OK        L-4-5-1        A p.142  summary.en          quote found on [142]
 OK        L-5-1-1        A p.148  points[0].en        label found on [148]
 OK        L-5-1-1        A p.149  points[1].en        label found on [149]
 OK        L-5-1-1        A p.149  points[2].en        quote found on [149]
@@ -654,4 +657,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 648 | ELSEWHERE 0 | UNCHECKED 0
+OK 651 | ELSEWHERE 0 | UNCHECKED 0
