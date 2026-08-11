@@ -2,7 +2,7 @@
    Real human pronunciation recordings from en.wiktionary / Wikimedia Commons.
    Every entry carries its source URL, author and licence: these are other
    people's recordings and the attribution travels with them.
-   Coverage is PARTIAL (6 of 202 lookup terms). Names with no recording fall
+   Coverage is PARTIAL (12 of 217 lookup terms). Names with no recording fall
    back to speech synthesis in app.js, which labels itself as synthetic. */
 window.STRUCT = window.STRUCT || {};
 window.STRUCT.pronunciations = {
@@ -105,6 +105,102 @@ window.STRUCT.pronunciations = {
    "retrieved": "2026-08-10",
    "file": "asparagine.wav",
    "bytes": 123692
+  },
+  {
+   "term": "bilirubin",
+   "keys": [
+    "bilirubin"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-bilirubin.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/LL-Q1860_%28eng%29-Vealhurl-bilirubin.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/bilirubin",
+   "retrieved": "2026-08-10",
+   "file": "bilirubin.wav",
+   "bytes": 115244
+  },
+  {
+   "term": "carnitine",
+   "keys": [
+    "carnitine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-carnitine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/LL-Q1860_%28eng%29-Vealhurl-carnitine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/carnitine",
+   "retrieved": "2026-08-10",
+   "file": "carnitine.wav",
+   "bytes": 110124
+  },
+  {
+   "term": "ceramide",
+   "keys": [
+    "ceramide"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-ceramide.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/LL-Q1860_%28eng%29-Vealhurl-ceramide.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/ceramide",
+   "retrieved": "2026-08-10",
+   "file": "ceramide.wav",
+   "bytes": 120620
+  },
+  {
+   "term": "cholesterol",
+   "keys": [
+    "cholesterol"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-cholesterol.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/LL-Q1860_%28eng%29-Vealhurl-cholesterol.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/cholesterol",
+   "retrieved": "2026-08-10",
+   "file": "cholesterol.wav",
+   "bytes": 117548
+  },
+  {
+   "term": "citrate",
+   "keys": [
+    "citrate"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-citrate.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/LL-Q1860_%28eng%29-Vealhurl-citrate.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/citrate",
+   "retrieved": "2026-08-10",
+   "file": "citrate.wav",
+   "bytes": 109356
+  },
+  {
+   "term": "cortisol",
+   "keys": [
+    "cortisol"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-cortisol.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/LL-Q1860_%28eng%29-Vealhurl-cortisol.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/cortisol",
+   "retrieved": "2026-08-10",
+   "file": "cortisol.wav",
+   "bytes": 101164
   }
  ]
 };
