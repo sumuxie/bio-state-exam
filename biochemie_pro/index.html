@@ -162,6 +162,11 @@
     <!-- Which colour a NEW star gets. Existing marks keep theirs; the small dot
          next to a collected item recolours that one item. -->
     <div class="pen-row" id="pen-row" title="Highlighter colour · 荧光笔颜色"></div>
+    <!-- 只看必背. Hides every collectable line that carries no star, and says how
+         many it hid. Titles, mustKnow, 追根溯源 and Summary are never hidden:
+         they are not collectable, and mustKnow is by design always visible. -->
+    <button id="only-marked-toggle" class="icon-btn" aria-label="Show only collected items"
+      title="只看必背 — 只显示打了 ⭐ 的条目，每节标明隐藏了几条。标题 / 必背 / 追根溯源 / 概要不受影响">⭐</button>
     <!-- The other half of the pair. Structures live in their own app so a
          half-built renderer can never blank this one; the only join is a URL. -->
     <a id="struct-link" href="../biochemie_struct/index.html" title="结构式 · Structures">🧪</a>

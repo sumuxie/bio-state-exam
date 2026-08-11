@@ -236,7 +236,8 @@
     voice:   store.get('voice', {}),      // 'en' | 'zh' | 'cs' -> chosen voiceURI
     rate:    store.get('rate', 0.94),     // playback speed, shared by both languages
     marks:   store.get('marks', {}),      // markKey -> pen colour id; see MARKING below
-    pen:     store.get('pen', 'y')        // which colour a NEW star gets
+    pen:     store.get('pen', 'y'),       // which colour a NEW star gets
+    onlyMarked: store.get('onlyMarked', false)  // 只看必背; see ONLY-MARKED below
   };
 
   /* ---------------------------------------------------------------- helpers */
@@ -321,6 +322,10 @@
         const dot = btn.parentNode.querySelector('.pen-btn');
         if (dot) { dot.hidden = !colour; dot.style.background = colour ? penHex(colour) : 'transparent'; }
         applyMarkClass(btn.closest('[data-markable]'), colour);
+        // Un-starring while 只看必背 is on makes the line vanish under the cursor.
+        // That is the honest behaviour, but the per-section counts have to move
+        // with it or the header claims a number the page no longer shows.
+        refreshOnlyMarked();
       });
     });
     root.querySelectorAll('.pen-btn:not([data-wired])').forEach((btn) => {
@@ -332,6 +337,70 @@
         btn.style.background = penHex(colour);
         applyMarkClass(btn.closest('[data-markable]'), colour);
       });
+    });
+  }
+
+  /* ---------------------------------------------------------- ONLY-MARKED
+     只看必背. The highlighter washes a whole line in colour, which is what makes
+     a mark findable and also what makes a marked-up page tiring to read; this
+     filter is the other half of that trade (see MARKING above).
+
+     It hides collectable lines that carry no star. It does NOT hide mustKnow,
+     追根溯源, the titles or the Summary -- none of those is collectable, and
+     mustKnow is by design always visible. So the filter can never empty a topic
+     of the thing the topic is FOR.
+
+     Visibility is driven off the same `hl-*` class that applyMarkClass already
+     maintains, deliberately: one source of truth, so a star toggled at runtime
+     cannot leave the filter showing something stale. The counts are the part
+     that needs recomputing, and refreshOnlyMarked() is called wherever a star
+     changes or a topic re-renders.
+
+     A section whose items are ALL hidden keeps its heading and reports the
+     count rather than disappearing. A heading that silently vanishes reads as
+     "this section does not exist", which is exactly the wrong thing to tell
+     someone revising from it. */
+  function markCountOf(t) {
+    let n = 0;
+    (t.points || []).forEach((_p, i) => { if (state.marks[t.id + ':p' + i]) n++; });
+    (t.gapPoints || []).forEach((_p, i) => { if (state.marks[t.id + ':g' + i]) n++; });
+    (t.terms || []).forEach((term) => { if (state.marks[cardKey(t, term)]) n++; });
+    return n;
+  }
+
+  const isMarkedEl = (el) => /\bhl-[ygbp]\b/.test(el.className);
+
+  function refreshOnlyMarked() {
+    document.body.classList.toggle('only-marked', state.onlyMarked);
+    const btn = $('#only-marked-toggle');
+    if (btn) {
+      btn.classList.toggle('active', state.onlyMarked);
+      btn.setAttribute('aria-pressed', state.onlyMarked ? 'true' : 'false');
+    }
+
+    const root = $('#study-body');
+    if (!root) return;
+    Array.from(root.querySelectorAll('.block')).forEach((sec) => {
+      const items = Array.from(sec.querySelectorAll('[data-markable]'));
+      if (!items.length) return;
+      const hidden = items.filter((el) => !isMarkedEl(el)).length;
+
+      let badge = sec.querySelector('.hidden-count');
+      if (!badge) {
+        const h2 = sec.querySelector('h2');
+        if (!h2) return;
+        badge = document.createElement('span');
+        badge.className = 'hidden-count';
+        h2.appendChild(badge);
+      }
+      const show = state.onlyMarked && hidden > 0;
+      badge.textContent = show
+        ? (hidden === items.length
+            ? `all ${hidden} hidden · ${hidden} 条全部隐藏`
+            : `${hidden} hidden · 隐藏 ${hidden} 条`)
+        : '';
+      badge.hidden = !show;
+      sec.classList.toggle('all-hidden', state.onlyMarked && hidden === items.length);
     });
   }
 
@@ -1027,9 +1096,14 @@
         list.forEach((t) => {
           const done = state.studied.has(t.id);
           const label = state.lang === 'cn' ? t.cnTitle : t.enTitle;
+          // ⭐ count: how much of this topic survives 只看必背. Shown always, not
+          // only while the filter is on, because its real job is to answer
+          // "where did I actually collect anything" before you turn it on.
+          const mk = markCountOf(t);
           html += `<button class="topic-item${t.id === state.topicId ? ' current' : ''}" data-id="${esc(t.id)}">
                      <span class="ti-sec">${esc(t.section)}</span>
                      <span class="ti-title">${esc(label)}</span>
+                     ${mk ? `<span class="ti-marks" title="${mk} collected · 已收录 ${mk} 条">⭐${mk}</span>` : ''}
                      ${done ? '<span class="ti-done">✓</span>' : ''}
                    </button>`;
         });
@@ -1257,6 +1331,7 @@
 
     body.innerHTML = html;
     wireMarks(body);
+    refreshOnlyMarked();
 
     body.querySelector('[data-act="quiz"]').addEventListener('click', () => {
       $('#quiz-scope').value = t.id;
@@ -1613,6 +1688,9 @@
 
     document.body.classList.toggle('bionic-on', state.bionic);
     $('#bionic-toggle').classList.toggle('active', state.bionic);
+    // Restores 只看必背 across a reload. Must run before the first render so the
+    // page never flashes the unfiltered body.
+    refreshOnlyMarked();
 
     // Voices load asynchronously in Chrome; warm the cache so the first
     // click on a speaker icon already has a matching voice to pick from,
@@ -1685,6 +1763,15 @@
       document.body.classList.toggle('bionic-on', state.bionic);
       $('#bionic-toggle').classList.toggle('active', state.bionic);
       bionicRefresh();
+    });
+
+    $('#only-marked-toggle').addEventListener('click', () => {
+      state.onlyMarked = !state.onlyMarked;
+      store.set('onlyMarked', state.onlyMarked);
+      refreshOnlyMarked();
+      // The sidebar ⭐ counts do not change here, but the filter is the reason
+      // to look at them, so redraw to bring them back into view.
+      renderSidebar();
     });
 
     $('#search').addEventListener('input', (e) => {

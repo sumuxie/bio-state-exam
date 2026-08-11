@@ -654,6 +654,31 @@ li[class*="hl-"], .term[class*="hl-"] {
 .pen-btn[hidden] { display: none; }
 
 .pen-row { display: inline-flex; gap: 0.25rem; align-items: center; margin-right: 0.4rem; }
+
+/* ------------------------------------------------------------- 只看必背
+   Hides every collectable line that carries NO highlighter class. Driven off
+   the same hl-* classes applyMarkClass maintains, so there is one source of
+   truth and a star toggled at runtime cannot leave a stale row on screen.
+
+   `!important` is deliberate and must stay: .term-grid children are grid items
+   and li are list-items, and an author display rule beats a plain `display:
+   none`. That exact trap kept the voice panel permanently open once already. */
+body.only-marked [data-markable]:not([class*="hl-"]) { display: none !important; }
+
+/* A section with nothing left keeps its heading and says so. A heading that
+   silently disappears reads as "this section does not exist", which is the
+   wrong thing to tell someone revising from it. */
+.block.all-hidden > :not(h2) { display: none; }
+.block.all-hidden { opacity: 0.55; }
+
+.hidden-count {
+  margin-left: 0.5rem; padding: 0.08rem 0.4rem; border-radius: 999px;
+  background: var(--accent-dim); color: #fff;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.02em;
+  vertical-align: middle; white-space: nowrap;
+}
+
+.ti-marks { color: var(--accent); font-size: 0.7rem; white-space: nowrap; }
 #struct-link {
   text-decoration: none; font-size: 1.05rem; line-height: 1;
   border: 1px solid var(--line); border-radius: var(--radius);
