@@ -1,24 +1,9 @@
-loaded 182 cached compounds
-PubChem fetch, 2026-08-11. candidates 197, already cached 182
+loaded 196 cached compounds
+PubChem fetch, 2026-08-11. candidates 197, already cached 196
 
-ok    pi                   1,2-dioleoyl-sn-glycero-3-phospho-(1'-my CID 5771759   C45H83O13P     59 atoms 59 bonds  [exception]
-        磷脂酰肌醇是一类分子，这里取的是二油酰型
-        PubChem 上没有二棕榈酰型，所以酰基链与同组的 PA/PC/PE/PS（都是二棕榈酰）不同；比较这五个时只看头基
-ok    cardiolipin          tetralinoleoyl cardiolipin               CID 5283539   C81H142O17P2   100 atoms 99 bonds  [exception]
-        心磷脂是一类分子，这里取的是四亚油酰型
-        用通名 cardiolipin 查 PubChem 返回的是 −1 阴离子，本 app 画中性型，故改查具名种
-ok    cerebroside          galactosylceramide                       CID 52949283  C43H83NO8      52 atoms 52 bonds  [exception]
-        取的是半乳糖脑苷脂 galactosylceramide
-ok    ganglioside          ganglioside GM1                          CID 9963963   C73H131N3O31   107 atoms 111 bonds  [exception]
-        取的是 GM1
-ok    enoyl-coa            trans-hexadec-2-enoyl-CoA                CID 25271599  C37H64N7O17P3S 65 atoms 67 bonds  [exception]
-        这里画 C16（反式-2-十六碳烯酰-CoA），与 acyl-CoA 的链长一致
-        链长不是这个中间物的一部分，β-氧化对任意长链走同一步
-ok    hydroxyacyl-coa      3-hydroxyhexadecanoyl-CoA                CID 3082414   C37H66N7O18P3S 66 atoms 68 bonds  [exception]
-        这里画 C16（3-羟基十六碳酰-CoA），与 acyl-CoA 的链长一致
-        链长不是这个中间物的一部分
-ok    ketoacyl-coa         3-oxohexadecanoyl-CoA                    CID 169621    C37H64N7O18P3S 66 atoms 68 bonds  [exception]
-        这里画 C16（3-氧代十六碳酰-CoA），与 acyl-CoA 的链长一致
-        链长不是这个中间物的一部分
+ok    nadh-ring            NADH                                     CID 439153    C21H29N7O14P2  44 atoms 48 bonds
+        画的是完整的 NADH，不是只截取烟酰胺环
+        还原发生在烟酰胺环 C4 上：它收下一个氢负离子 H⁻
+        但与 nad 那张并排比分子式会多出 2 个 H（C21H27N7O14P2 → C21H29N7O14P2）——一个是 C4 收下的，另一个补在磷酸上，因为吡啶环那个正电荷没了；PubChem 两条都按中性型存，所以差的是 2 不是 1
 
-fetched ok 7 | failed 0 | already cached 0 | MANUAL (no single PubChem compound) 0
+fetched ok 1 | failed 0 | already cached 0 | MANUAL (no single PubChem compound) 0

@@ -35,11 +35,11 @@ neu5ac	N-acetylneuraminic acid
 d-glucuronate	D-glucuronic acid
 d-gluconate	D-gluconic acid
 sorbitol	D-sorbitol
-amylose-unit	MANUAL
-amylopectin-branch	MANUAL
-glycogen-branch	MANUAL
-cellulose-unit	MANUAL
-chitin-unit	MANUAL
+amylose-unit	maltose
+amylopectin-branch	panose
+glycogen-branch	panose
+cellulose-unit	cellobiose
+chitin-unit	N,N'-diacetylchitobiose
 uric-acid	uric acid
 deoxythymidine	thymidine
 amp	adenosine 5'-monophosphate
@@ -53,12 +53,12 @@ ump	uridine 5'-monophosphate
 utp	uridine 5'-triphosphate
 ctp	cytidine 5'-triphosphate
 dtmp	thymidine 5'-monophosphate
-dinucleotide-link	MANUAL
+dinucleotide-link	cytidylyl-3'-5'-guanosine
 nad	NAD
-nadh-ring	MANUAL
+nadh-ring	NADH
 nadp	NADP
 fad	FAD
-fadh2-ring	MANUAL
+fadh2-ring	FADH2
 fmn	flavin mononucleotide
 coa	coenzyme A
 acetyl-coa	acetyl-CoA

@@ -34,11 +34,11 @@ sugar	lactose	乳糖	lactose	lactose|laktos|乳糖
 sugar	sucrose	蔗糖	sucrose	sucrose|sacharos|蔗糖
 sugar	cellobiose	纤维二糖	cellobiose	cellobiose|celobios|纤维二糖
 sugar	isomaltose	异麦芽糖	isomaltose (alpha-1,6)	isomaltose|isomaltos|异麦芽糖
-sugar	amylose-unit	直链淀粉重复单元	amylose repeat unit (alpha-1,4)	amylose|amylos|直链淀粉
-sugar	amylopectin-branch	支链淀粉分支点	amylopectin branch point (alpha-1,6)	amylopectin|amylopektin|支链淀粉
-sugar	glycogen-branch	糖原分支点	glycogen branch point	glycogen|glykogen|糖原
-sugar	cellulose-unit	纤维素重复单元	cellulose repeat unit (beta-1,4)	cellulose|celulos|纤维素
-sugar	chitin-unit	几丁质重复单元	chitin repeat unit	chitin|几丁质
+sugar	amylose-unit	直链淀粉重复单元（麦芽糖）	amylose repeat unit (alpha-1,4), drawn as maltose	amylose|amylos|直链淀粉
+sugar	amylopectin-branch	支链淀粉分支点（潘糖）	amylopectin branch point (alpha-1,6), drawn as panose	amylopectin|amylopektin|支链淀粉
+sugar	glycogen-branch	糖原分支点（潘糖）	glycogen branch point, drawn as panose	glycogen|glykogen|糖原
+sugar	cellulose-unit	纤维素重复单元（纤维二糖）	cellulose repeat unit (beta-1,4), drawn as cellobiose	cellulose|celulos|纤维素
+sugar	chitin-unit	几丁质重复单元（几丁二糖）	chitin repeat unit, drawn as N,N'-diacetylchitobiose	chitin|几丁质
 sugar	a-ribf	α-D-呋喃核糖	alpha-D-ribofuranose	ribofuranose|ribofuranos
 sugar	drib-open	2-脱氧-D-核糖（开链）	2-deoxy-D-ribose, open chain	deoxyribose|deoxyribos|脱氧核糖
 sugar	a-dribf	2-脱氧-α-D-呋喃核糖	alpha-D-2-deoxyribofuranose	deoxyribofuranose|deoxyribofuranos
@@ -76,12 +76,12 @@ nucl	ump	UMP	uridine 5'-monophosphate	UMP
 nucl	utp	UTP	uridine 5'-triphosphate	UTP
 nucl	ctp	CTP	cytidine 5'-triphosphate	CTP
 nucl	dtmp	dTMP	thymidine 5'-monophosphate	dTMP|TMP
-nucl	dinucleotide-link	3'→5' 磷酸二酯键	3'-5' phosphodiester link	phosphodiester|fosfodiester|磷酸二酯
+nucl	dinucleotide-link	3'→5' 磷酸二酯键（CpG 二核苷酸）	3'-5' phosphodiester link, drawn as cytidylyl-3'-5'-guanosine	phosphodiester|fosfodiester|磷酸二酯
 coenz	nad	NAD⁺	nicotinamide adenine dinucleotide (NAD+)	NAD|nikotinamid|烟酰胺腺嘌呤
-coenz	nadh-ring	NADH（还原的烟酰胺环）	NADH, the reduced nicotinamide ring	NADH
+coenz	nadh-ring	NADH（还原型）	NADH, the reduced form	NADH
 coenz	nadp	NADP⁺	NADP+	NADP
 coenz	fad	FAD	flavin adenine dinucleotide (FAD)	FAD|flavin
-coenz	fadh2-ring	FADH₂（还原的异咯嗪环）	FADH2, the reduced isoalloxazine ring	FADH|isoalloxazine|isoalloxazin
+coenz	fadh2-ring	FADH₂（还原型）	FADH2, the reduced form	FADH|isoalloxazine|isoalloxazin
 coenz	fmn	FMN	flavin mononucleotide (FMN)	FMN
 coenz	riboflavin	核黄素（B₂）	riboflavin (vitamin B2)	riboflavin|核黄素
 coenz	coa	辅酶 A	coenzyme A (CoA-SH)	coenzyme A|koenzym A|CoA|辅酶 A
