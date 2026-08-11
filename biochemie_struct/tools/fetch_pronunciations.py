@@ -57,7 +57,18 @@ def get(url):
     # backoffs per file turns a 61-file run into hours while still failing.
     # Failing fast to `pending` and re-running later gets more files per unit
     # of wall-clock, because the script is resumable. Override with PRON_TRIES.
+    # MEASURED 2026-08-11, and it corrects the paragraph above. The 429s carry
+    # `Retry-After: 600` -- the penalty is TEN MINUTES, not seconds. So:
+    #   - re-running straight away gets exactly ZERO new files (observed: 6 on
+    #     the first run, 0 on an immediate second run), which is what the
+    #     "re-run later, it is resumable" reasoning above assumed would work;
+    #   - PRON_DELAY=8 cannot help either, and the old summary line recommended
+    #     it. 8 seconds against a 600-second penalty.
+    # Default behaviour is unchanged (fail fast to `pending`). Set PRON_MAX_WAIT
+    # to a number of seconds >= the server's Retry-After to let one unattended
+    # run sit out the penalty and finish the job.
     tries = int(os.environ.get("PRON_TRIES", "3"))
+    max_wait = float(os.environ.get("PRON_MAX_WAIT", "0"))
     delay = 4
     for attempt in range(tries):
         try:
@@ -65,6 +76,18 @@ def get(url):
                 return r.read()
         except urllib.error.HTTPError as e:
             if e.code == 429 and attempt < tries - 1:
+                # The server states the penalty; obey it when allowed to, rather
+                # than guessing a backoff that is two orders of magnitude short.
+                ra = 0.0
+                try:
+                    ra = float(e.headers.get("Retry-After") or 0)
+                except ValueError:
+                    ra = 0.0
+                if ra and ra <= max_wait:
+                    print("      429, Retry-After %ds -- waiting it out" % int(ra))
+                    time.sleep(ra + 2); continue
+                if ra and not max_wait:
+                    raise            # fail fast, but the caller now reports `ra`
                 time.sleep(delay); delay = min(delay * 2, 30); continue
             raise
         except Exception:
@@ -204,8 +227,16 @@ def main():
         try:
             blob = get(r["src_url"].split("?")[0])
         except Exception as ex:
+            # Print the STATUS CODE and Retry-After, not just the class name.
+            # "HTTPError" alone sent two sessions chasing the wrong cause: it
+            # reads as a network problem, when it is a 429 with a stated
+            # ten-minute penalty.
+            why = type(ex).__name__
+            if isinstance(ex, urllib.error.HTTPError):
+                ra = ex.headers.get("Retry-After")
+                why = "HTTP %s%s" % (ex.code, (", Retry-After %ss" % ra) if ra else "")
             pending.append(r["term"]); records.remove(r)
-            print("  ! %-30s pending (%s)" % (local, type(ex).__name__))
+            print("  ! %-30s pending (%s)" % (local, why))
             time.sleep(DOWNLOAD_DELAY)
             continue
         assert len(blob) > 512, "%s: downloaded %d bytes, that is not audio" % (local, len(blob))
@@ -248,9 +279,13 @@ def main():
     if skipped:
         print("SKIPPED (%d): %s" % (len(skipped), skipped[:5]))
     if pending:
-        print("PENDING (%d) -- rate-limited, RE-RUN THIS SCRIPT to finish them:" % len(pending))
+        print("PENDING (%d) -- upload.wikimedia.org 429'd these:" % len(pending))
         print("   " + ", ".join(pending))
-        print("   (tip: PRON_DELAY=8 python tools/fetch_pronunciations.py)")
+        print("   The 429 carries Retry-After: 600. The penalty is TEN MINUTES,")
+        print("   so re-running now gets zero, and PRON_DELAY cannot bridge it.")
+        print("   Either wait >10 min and re-run, or let one run sit it out:")
+        print("     PRON_MAX_WAIT=900 python tools/fetch_pronunciations.py")
+        print("   (that run is long and mostly idle -- it sleeps out each penalty)")
     print("wrote                : %s" % MANIFEST)
     print("audio dir            : %s" % AUDIO)
 
