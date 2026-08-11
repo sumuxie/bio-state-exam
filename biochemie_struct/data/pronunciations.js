@@ -2,7 +2,7 @@
    Real human pronunciation recordings from en.wiktionary / Wikimedia Commons.
    Every entry carries its source URL, author and licence: these are other
    people's recordings and the attribution travels with them.
-   Coverage is PARTIAL (12 of 217 lookup terms). Names with no recording fall
+   Coverage is PARTIAL (59 of 217 lookup terms). Names with no recording fall
    back to speech synthesis in app.js, which labels itself as synthetic. */
 window.STRUCT = window.STRUCT || {};
 window.STRUCT.pronunciations = {
@@ -201,6 +201,758 @@ window.STRUCT.pronunciations = {
    "retrieved": "2026-08-10",
    "file": "cortisol.wav",
    "bytes": 101164
+  },
+  {
+   "term": "creatine",
+   "keys": [
+    "creatine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-creatine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/LL-Q1860_%28eng%29-Vealhurl-creatine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/creatine",
+   "retrieved": "2026-08-10",
+   "file": "creatine.wav",
+   "bytes": 112428
+  },
+  {
+   "term": "cysteine",
+   "keys": [
+    "cys"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-cysteine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/LL-Q1860_%28eng%29-Vealhurl-cysteine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/cysteine",
+   "retrieved": "2026-08-10",
+   "file": "cysteine.wav",
+   "bytes": 108076
+  },
+  {
+   "term": "cytidine",
+   "keys": [
+    "cytidine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-cytidine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/LL-Q1860_%28eng%29-Tesco250-cytidine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/cytidine",
+   "retrieved": "2026-08-10",
+   "file": "cytidine.wav",
+   "bytes": 112172
+  },
+  {
+   "term": "cytosine",
+   "keys": [
+    "cytosine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-cytosine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/LL-Q1860_%28eng%29-Tesco250-cytosine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/cytosine",
+   "retrieved": "2026-08-10",
+   "file": "cytosine.wav",
+   "bytes": 103980
+  },
+  {
+   "term": "dihydroxyacetone",
+   "keys": [
+    "dihydroxyaceton"
+   ],
+   "file_title": "File:En-dihydroxyacetone.oga",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/En-dihydroxyacetone.oga?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "En-* prefix",
+   "artist": "Sometime-science-editor ( talk )",
+   "license": "Public domain",
+   "license_url": "",
+   "page": "https://en.wiktionary.org/wiki/dihydroxyacetone",
+   "retrieved": "2026-08-10",
+   "file": "dihydroxyacetone.oga",
+   "bytes": 29540
+  },
+  {
+   "term": "dopamine",
+   "keys": [
+    "dopamine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Back ache-dopamine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/LL-Q1860_%28eng%29-Back_ache-dopamine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Back ache Recorder: Back ache",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/dopamine",
+   "retrieved": "2026-08-10",
+   "file": "dopamine.wav",
+   "bytes": 109356
+  },
+  {
+   "term": "epinephrine",
+   "keys": [
+    "epinephrine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Qwertygiy-epinephrine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/LL-Q1860_%28eng%29-Qwertygiy-epinephrine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Qwertygiy Recorder: Qwertygiy",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://en.wiktionary.org/wiki/epinephrine",
+   "retrieved": "2026-08-10",
+   "file": "epinephrine.wav",
+   "bytes": 102444
+  },
+  {
+   "term": "estradiol",
+   "keys": [
+    "estradiol"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-NaomiAmethyst-estradiol.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/LL-Q1860_%28eng%29-NaomiAmethyst-estradiol.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: NaomiAmethyst Recorder: NaomiAmethyst",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/estradiol",
+   "retrieved": "2026-08-10",
+   "file": "estradiol.wav",
+   "bytes": 154156
+  },
+  {
+   "term": "glutamate",
+   "keys": [
+    "glu"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Flame, not lame-glutamate.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/8/83/LL-Q1860_%28eng%29-Flame%2C_not_lame-glutamate.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Flame, not lame Recorder: Flame",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://en.wiktionary.org/wiki/glutamate",
+   "retrieved": "2026-08-10",
+   "file": "glutamate.wav",
+   "bytes": 111916
+  },
+  {
+   "term": "glutamine",
+   "keys": [
+    "gln"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-glutamine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/LL-Q1860_%28eng%29-Tesco250-glutamine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/glutamine",
+   "retrieved": "2026-08-10",
+   "file": "glutamine.wav",
+   "bytes": 114988
+  },
+  {
+   "term": "glutathione",
+   "keys": [
+    "glutathione"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-glutathione.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/LL-Q1860_%28eng%29-Vealhurl-glutathione.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/glutathione",
+   "retrieved": "2026-08-10",
+   "file": "glutathione.wav",
+   "bytes": 159276
+  },
+  {
+   "term": "glycerol",
+   "keys": [
+    "glycerol"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Qwertygiy-glycerol.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/LL-Q1860_%28eng%29-Qwertygiy-glycerol.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Qwertygiy Recorder: Qwertygiy",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://en.wiktionary.org/wiki/glycerol",
+   "retrieved": "2026-08-10",
+   "file": "glycerol.wav",
+   "bytes": 102188
+  },
+  {
+   "term": "glycine",
+   "keys": [
+    "gly"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-glycine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/LL-Q1860_%28eng%29-Tesco250-glycine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/glycine",
+   "retrieved": "2026-08-10",
+   "file": "glycine.wav",
+   "bytes": 110124
+  },
+  {
+   "term": "guanosine",
+   "keys": [
+    "guanosine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-guanosine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/LL-Q1860_%28eng%29-Tesco250-guanosine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/guanosine",
+   "retrieved": "2026-08-10",
+   "file": "guanosine.wav",
+   "bytes": 109100
+  },
+  {
+   "term": "histamine",
+   "keys": [
+    "histamine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-histamine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/LL-Q1860_%28eng%29-Vealhurl-histamine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/histamine",
+   "retrieved": "2026-08-10",
+   "file": "histamine.wav",
+   "bytes": 117548
+  },
+  {
+   "term": "histidine",
+   "keys": [
+    "his"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-histidine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/LL-Q1860_%28eng%29-Tesco250-histidine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/histidine",
+   "retrieved": "2026-08-10",
+   "file": "histidine.wav",
+   "bytes": 111660
+  },
+  {
+   "term": "isoleucine",
+   "keys": [
+    "ile"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-isoleucine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/LL-Q1860_%28eng%29-Tesco250-isoleucine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/isoleucine",
+   "retrieved": "2026-08-10",
+   "file": "isoleucine.wav",
+   "bytes": 132908
+  },
+  {
+   "term": "lactate",
+   "keys": [
+    "lactate"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-lactate1.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/LL-Q1860_%28eng%29-Vealhurl-lactate1.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/lactate",
+   "retrieved": "2026-08-10",
+   "file": "lactate.wav",
+   "bytes": 117548
+  },
+  {
+   "term": "lactose",
+   "keys": [
+    "lactose"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-lactose.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/LL-Q1860_%28eng%29-Vealhurl-lactose.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/lactose",
+   "retrieved": "2026-08-10",
+   "file": "lactose.wav",
+   "bytes": 133932
+  },
+  {
+   "term": "leucine",
+   "keys": [
+    "leu"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-leucine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/LL-Q1860_%28eng%29-Vealhurl-leucine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/leucine",
+   "retrieved": "2026-08-10",
+   "file": "leucine.wav",
+   "bytes": 116524
+  },
+  {
+   "term": "lysine",
+   "keys": [
+    "lys"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-lysine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/LL-Q1860_%28eng%29-Tesco250-lysine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/lysine",
+   "retrieved": "2026-08-10",
+   "file": "lysine.wav",
+   "bytes": 107564
+  },
+  {
+   "term": "maltose",
+   "keys": [
+    "maltose"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-maltose.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/LL-Q1860_%28eng%29-Vealhurl-maltose.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/maltose",
+   "retrieved": "2026-08-10",
+   "file": "maltose.wav",
+   "bytes": 117548
+  },
+  {
+   "term": "melatonin",
+   "keys": [
+    "melatonin"
+   ],
+   "file_title": "File:En-melatonin.oga",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/En-melatonin.oga?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "En-* prefix",
+   "artist": "Sometime-science-editor ( talk )",
+   "license": "Public domain",
+   "license_url": "",
+   "page": "https://en.wiktionary.org/wiki/melatonin",
+   "retrieved": "2026-08-10",
+   "file": "melatonin.oga",
+   "bytes": 14479
+  },
+  {
+   "term": "methionine",
+   "keys": [
+    "met"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-methionine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/LL-Q1860_%28eng%29-Vealhurl-methionine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/methionine",
+   "retrieved": "2026-08-10",
+   "file": "methionine.wav",
+   "bytes": 138796
+  },
+  {
+   "term": "norepinephrine",
+   "keys": [
+    "norepinephrine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-norepinephrine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/LL-Q1860_%28eng%29-Vealhurl-norepinephrine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/norepinephrine",
+   "retrieved": "2026-08-10",
+   "file": "norepinephrine.wav",
+   "bytes": 166700
+  },
+  {
+   "term": "oleic acid",
+   "keys": [
+    "oleate"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-oleic acid.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/LL-Q1860_%28eng%29-Vealhurl-oleic_acid.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/oleic_acid",
+   "retrieved": "2026-08-10",
+   "file": "oleic_acid.wav",
+   "bytes": 131884
+  },
+  {
+   "term": "phenylalanine",
+   "keys": [
+    "phe"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-phenylalanine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/LL-Q1860_%28eng%29-Vealhurl-phenylalanine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/phenylalanine",
+   "retrieved": "2026-08-10",
+   "file": "phenylalanine.wav",
+   "bytes": 132396
+  },
+  {
+   "term": "progesterone",
+   "keys": [
+    "progesterone"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Flame, not lame-progesterone.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/LL-Q1860_%28eng%29-Flame%2C_not_lame-progesterone.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Flame, not lame Recorder: Flame, not lame",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://en.wiktionary.org/wiki/progesterone",
+   "retrieved": "2026-08-10",
+   "file": "progesterone.wav",
+   "bytes": 141612
+  },
+  {
+   "term": "proline",
+   "keys": [
+    "pro"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-proline.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/LL-Q1860_%28eng%29-Tesco250-proline.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/proline",
+   "retrieved": "2026-08-10",
+   "file": "proline.wav",
+   "bytes": 99372
+  },
+  {
+   "term": "retinal",
+   "keys": [
+    "retinal"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-retinal.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/LL-Q1860_%28eng%29-Vealhurl-retinal.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/retinal",
+   "retrieved": "2026-08-10",
+   "file": "retinal.wav",
+   "bytes": 97580
+  },
+  {
+   "term": "riboflavin",
+   "keys": [
+    "riboflavin"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-riboflavin.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/LL-Q1860_%28eng%29-Vealhurl-riboflavin.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/riboflavin",
+   "retrieved": "2026-08-10",
+   "file": "riboflavin.wav",
+   "bytes": 150572
+  },
+  {
+   "term": "serine",
+   "keys": [
+    "ser"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-serine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/LL-Q1860_%28eng%29-Tesco250-serine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/serine",
+   "retrieved": "2026-08-10",
+   "file": "serine.wav",
+   "bytes": 103212
+  },
+  {
+   "term": "serotonin",
+   "keys": [
+    "serotonin"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Back ache-serotonin.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/LL-Q1860_%28eng%29-Back_ache-serotonin.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Back ache Recorder: Back ache",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/serotonin",
+   "retrieved": "2026-08-10",
+   "file": "serotonin.wav",
+   "bytes": 125740
+  },
+  {
+   "term": "sucrose",
+   "keys": [
+    "sucrose"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-sucrose.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/LL-Q1860_%28eng%29-Vealhurl-sucrose.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/sucrose",
+   "retrieved": "2026-08-10",
+   "file": "sucrose.wav",
+   "bytes": 109356
+  },
+  {
+   "term": "testosterone",
+   "keys": [
+    "testosterone"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-testosterone.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/LL-Q1860_%28eng%29-Vealhurl-testosterone.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/testosterone",
+   "retrieved": "2026-08-10",
+   "file": "testosterone.wav",
+   "bytes": 142124
+  },
+  {
+   "term": "thiamine",
+   "keys": [
+    "thiamine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-NaomiAmethyst-thiamine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/LL-Q1860_%28eng%29-NaomiAmethyst-thiamine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: NaomiAmethyst Recorder: NaomiAmethyst",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/thiamine",
+   "retrieved": "2026-08-10",
+   "file": "thiamine.wav",
+   "bytes": 99884
+  },
+  {
+   "term": "threonine",
+   "keys": [
+    "thr"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-threonine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/LL-Q1860_%28eng%29-Tesco250-threonine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/threonine",
+   "retrieved": "2026-08-10",
+   "file": "threonine.wav",
+   "bytes": 111148
+  },
+  {
+   "term": "thymine",
+   "keys": [
+    "thymine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-thymine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/LL-Q1860_%28eng%29-Tesco250-thymine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/thymine",
+   "retrieved": "2026-08-10",
+   "file": "thymine.wav",
+   "bytes": 88620
+  },
+  {
+   "term": "thyroxine",
+   "keys": [
+    "thyroxine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Naomi Persephone Amethyst (NaomiAmethyst)-thyroxine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/LL-Q1860_%28eng%29-Naomi_Persephone_Amethyst_%28NaomiAmethyst%29-thyroxine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Naomi Persephone Amethyst Recorder: NaomiAmethyst",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/thyroxine",
+   "retrieved": "2026-08-10",
+   "file": "thyroxine.wav",
+   "bytes": 117292
+  },
+  {
+   "term": "tryptophan",
+   "keys": [
+    "trp"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-tryptophan.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/LL-Q1860_%28eng%29-Tesco250-tryptophan.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/tryptophan",
+   "retrieved": "2026-08-10",
+   "file": "tryptophan.wav",
+   "bytes": 122156
+  },
+  {
+   "term": "tyrosine",
+   "keys": [
+    "tyr"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Neøn-tyrosine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/LL-Q1860_%28eng%29-Ne%C3%B8n-tyrosine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Neøn Recorder: Neøn",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://en.wiktionary.org/wiki/tyrosine",
+   "retrieved": "2026-08-10",
+   "file": "tyrosine.wav",
+   "bytes": 126764
+  },
+  {
+   "term": "uracil",
+   "keys": [
+    "uracil"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-uracil.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/LL-Q1860_%28eng%29-Tesco250-uracil.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/uracil",
+   "retrieved": "2026-08-10",
+   "file": "uracil.wav",
+   "bytes": 96364
+  },
+  {
+   "term": "urea",
+   "keys": [
+    "urea"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-urea.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/LL-Q1860_%28eng%29-Vealhurl-urea.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/urea",
+   "retrieved": "2026-08-10",
+   "file": "urea.wav",
+   "bytes": 100140
+  },
+  {
+   "term": "uric acid",
+   "keys": [
+    "uric-acid"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Vealhurl-uric acid.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/LL-Q1860_%28eng%29-Vealhurl-uric_acid.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Vealhurl Recorder: Vealhurl",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://en.wiktionary.org/wiki/uric_acid",
+   "retrieved": "2026-08-10",
+   "file": "uric_acid.wav",
+   "bytes": 119084
+  },
+  {
+   "term": "uridine",
+   "keys": [
+    "uridine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-uridine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/LL-Q1860_%28eng%29-Tesco250-uridine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/uridine",
+   "retrieved": "2026-08-10",
+   "file": "uridine.wav",
+   "bytes": 92780
+  },
+  {
+   "term": "valine",
+   "keys": [
+    "val"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Tesco250-valine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/LL-Q1860_%28eng%29-Tesco250-valine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Tesco250 Recorder: Tesco250",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://en.wiktionary.org/wiki/valine",
+   "retrieved": "2026-08-10",
+   "file": "valine.wav",
+   "bytes": 102700
+  },
+  {
+   "term": "xanthine",
+   "keys": [
+    "xanthine"
+   ],
+   "file_title": "File:LL-Q1860 (eng)-Flame, not lame-xanthine.wav",
+   "src_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/LL-Q1860_%28eng%29-Flame%2C_not_lame-xanthine.wav?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "matched_by": "LL-Q1860 (eng)",
+   "artist": "Speaker: Flame, not lame Recorder: Flame, not lame",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://en.wiktionary.org/wiki/xanthine",
+   "retrieved": "2026-08-10",
+   "file": "xanthine.wav",
+   "bytes": 120364
   }
  ]
 };
