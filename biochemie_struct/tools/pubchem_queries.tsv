@@ -83,10 +83,10 @@ phosphatidate	1,2-dipalmitoyl-sn-glycero-3-phosphate
 pc	1,2-dipalmitoyl-sn-glycero-3-phosphocholine
 pe	1,2-dipalmitoyl-sn-glycero-3-phosphoethanolamine
 ps	1,2-dipalmitoyl-sn-glycero-3-phosphoserine
-pi	MANUAL
-cardiolipin	MANUAL
-cerebroside	MANUAL
-ganglioside	MANUAL
+pi	1,2-dioleoyl-sn-glycero-3-phospho-(1'-myo-inositol)
+cardiolipin	tetralinoleoyl cardiolipin
+cerebroside	galactosylceramide
+ganglioside	ganglioside GM1
 cholesteryl-ester	cholesteryl palmitate
 cholate	cholic acid
 vitamin-d3	cholecalciferol
@@ -130,9 +130,9 @@ s7p	sedoheptulose 7-phosphate
 e4p	D-erythrose 4-phosphate
 rubp	D-ribulose 1,5-bisphosphate
 acyl-coa	palmitoyl-CoA
-enoyl-coa	MANUAL
-hydroxyacyl-coa	MANUAL
-ketoacyl-coa	MANUAL
+enoyl-coa	trans-hexadec-2-enoyl-CoA
+hydroxyacyl-coa	3-hydroxyhexadecanoyl-CoA
+ketoacyl-coa	3-oxohexadecanoyl-CoA
 malonyl-coa	malonyl-CoA
 carnitine	L-carnitine
 acetoacetate	acetoacetic acid

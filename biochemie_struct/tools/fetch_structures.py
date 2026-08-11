@@ -79,6 +79,26 @@ EXCEPTIONS = {
     "thiamine":      {"charge": 1, "reason": "the thiazolium ring carries a real permanent +1; that charge is why C2 forms the ylide"},
 }
 
+# A row whose name is a CLASS or a GENERIC formula, drawn using one specific member.
+# Without this the card shows a C16 molecule labelled "3-ketoacyl-CoA" and the reader
+# memorises the chain length as part of the definition -- CORE3 flags exactly that.
+# Keyed by structure key, appended to that entry's notes; keys absent here are untouched,
+# so re-running the generator cannot alter any existing entry.
+EXTRA_NOTES = {
+    "enoyl-coa":       ["这里画 C16（反式-2-十六碳烯酰-CoA），与 acyl-CoA 的链长一致",
+                        "链长不是这个中间物的一部分，β-氧化对任意长链走同一步"],
+    "hydroxyacyl-coa": ["这里画 C16（3-羟基十六碳酰-CoA），与 acyl-CoA 的链长一致",
+                        "链长不是这个中间物的一部分"],
+    "ketoacyl-coa":    ["这里画 C16（3-氧代十六碳酰-CoA），与 acyl-CoA 的链长一致",
+                        "链长不是这个中间物的一部分"],
+    "pi":              ["磷脂酰肌醇是一类分子，这里取的是二油酰型",
+                        "PubChem 上没有二棕榈酰型，所以酰基链与同组的 PA/PC/PE/PS（都是二棕榈酰）不同；比较这五个时只看头基"],
+    "cardiolipin":     ["心磷脂是一类分子，这里取的是四亚油酰型",
+                        "用通名 cardiolipin 查 PubChem 返回的是 −1 阴离子，本 app 画中性型，故改查具名种"],
+    "cerebroside":     ["取的是半乳糖脑苷脂 galactosylceramide"],
+    "ganglioside":     ["取的是 GM1"],
+}
+
 def heavy_from_smiles(smi):
     counts, i = {}, 0
     while i < len(smi):
@@ -248,7 +268,7 @@ def main():
             time.sleep(PAUSE)
             atoms, bonds, charge = parse_sdf(sdf)
 
-            problems, notes = [], []
+            problems, notes = [], list(EXTRA_NOTES.get(key, []))
             hs, hf = heavy_from_smiles(smiles), heavy_from_formula(formula)
             if hs != hf:
                 problems.append("SMILES heavy atoms %s != formula %s" % (hs, hf))
@@ -312,7 +332,7 @@ def main():
             ok.append(key)
             p("ok    %-20s %-40s CID %-9s %-14s %2d atoms %2d bonds%s"
               % (key, q[:40], cid, formula, len(atoms), len(bonds),
-                 "  [exception]" if notes else ""))
+                 "  [exception]" if key in EXCEPTIONS else ""))
             for nt in notes:
                 p("        %s" % nt)
         except urllib.error.HTTPError as e:
