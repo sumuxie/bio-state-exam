@@ -5,8 +5,12 @@
 import io, os, re
 
 ROOT = r"C:\Users\Admin\Downloads\bio-state-exam"
+# This list is hard-coded, so a new handoff file is NOT audited until it is added
+# here -- CORE2_DEPTH_RUN.md scored 0 hits on its first audit run, meaning nothing
+# would have caught it rotting. Add every new handoff file to this list.
 FILES = ["HANDOFF_LEHNINGER.md", "HANDOFF.md", "lehninger_index/README.md",
-         "CORE_HANDOFF.md", "CORE1_APP.md", "CORE2_LEHNINGER.md", "CORE3_STRUCTURES.md"]
+         "CORE_HANDOFF.md", "CORE1_APP.md", "CORE2_LEHNINGER.md", "CORE3_STRUCTURES.md",
+         "CORE2_DEPTH_RUN.md"]
 out = io.open(os.path.join(ROOT, "lehninger_index", "_audit.txt"), "w", encoding="utf-8")
 def p(*a): out.write(" ".join(str(x) for x in a) + "\n")
 

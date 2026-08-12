@@ -5,7 +5,8 @@ Ruojin 定的三条主线。**每条有自己的文件，只读你要做的那�
 | 你要做什么 | 打开 | 现状 |
 |---|---|---|
 | app 功能 | `CORE1_APP.md` | 7 个里做了 **5** 个（2026-08-11 加了 A3 只看必背 filter，**未在浏览器验证**） |
-| Lehninger 额外内容 | `CORE2_LEHNINGER.md` | **内容 52 / 117 section**（36 深 + 16 浅）；**层：深度节点全满**；**Lehninger-only 清单已清空**；**depth queue 开工（Ruojin 选了光合作用组）** |
+| **Lehninger depth（要写节点就走这条）** | **`CORE2_DEPTH_RUN.md`** ⬅️ **新入口，134 行**。⚠️ **不要再照 `CORE2_LEHNINGER.md` 的老流程开工**——2026-08-12 实测，depth「一跑就断」的机制是准备阶段先把教材/archive 灌进上下文，新流程用 `prep_depth.py` 把这一步搬到脚本里 |
+| Lehninger 背景资料（按需 grep，不要整读） | `CORE2_LEHNINGER.md` | **内容 52 / 117 section**（36 深 + 16 浅）；**层：深度节点全满**；**Lehninger-only 清单已清空**；**depth queue 开工（Ruojin 选了光合作用组）** |
 | 结构式 | `CORE3_STRUCTURES.md` | ✅ **217 / 217 收官**（2026-08-11；最后 15 个全部从 PubChem 取回，一个都没手画） |
 
 ## 进度：先分清「内容」和「层」，这是两个轴
