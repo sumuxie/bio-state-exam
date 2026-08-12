@@ -28,7 +28,7 @@ CORE1_APP.md  (105 lines)
   clean
 
 ==============================================================================
-CORE2_LEHNINGER.md  (484 lines)
+CORE2_LEHNINGER.md  (499 lines)
 ==============================================================================
   clean
 
@@ -45,7 +45,7 @@ CORE2_DEPTH_RUN.md  (134 lines)
 ==============================================================================
 STALENESS (live data vs what the handoffs claim)
 ==============================================================================
-  live: 263 topics, 53 lehninger, 78 topicKeys, 26 joining both books
+  live: 270 topics, 60 lehninger, 78 topicKeys, 31 joining both books
   clean
 
 TOTAL: 3
