@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 844 citations -- 49 in a `src` field, 795 written inline in prose
+found 868 citations -- 49 in a `src` field, 819 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -752,6 +752,30 @@ OK        L-26-2-1       A p.980  points[3].en        quote found on [980]
 OK        L-26-2-1       A p.985  points[4].en        quote found on [985]
 OK        L-26-2-1       A p.987  points[5].en        quote found on [987]
 OK        L-26-2-1       A pp.985-986  points[6].en   quote found on [985]
+OK        L-26-1-1       A p.962  coverageNote        quote found on [962]
+OK        L-26-1-1       A p.965  coverageNote        quote found on [965]
+OK        L-26-1-1       A p.962  points[0].en        quote found on [962]
+OK        L-26-1-1       A p.961  points[0].en        quote found on [961]
+OK        L-26-1-1       A p.961  points[1].en        quote found on [961]
+OK        L-26-1-1       A p.962  points[1].en        quote found on [962]
+OK        L-26-1-1       A p.963  points[2].en        quote found on [963]
+OK        L-26-1-1       A p.961  points[3].en        quote found on [961]
+OK        L-26-1-1       A p.962  points[3].en        quote found on [962]
+OK        L-26-1-1       A p.963  points[4].en        quote found on [963]
+OK        L-26-1-1       A p.965  points[4].en        quote found on [965]
+OK        L-26-1-1       A p.964  points[5].en        quote found on [964]
+OK        L-26-1-1       A p.966  points[5].en        quote found on [966]
+OK        L-26-1-1       A p.967  points[6].en        quote found on [967]
+OK        L-26-1-1       A p.967  points[7].en        quote found on [967]
+OK        L-26-1-1       A p.968  points[7].en        quote found on [968]
+OK        L-26-1-1       A p.968  points[8].en        quote found on [968]
+OK        L-26-1-1       A p.969  points[8].en        quote found on [969]
+OK        L-26-1-1       A p.968  points[9].en        quote found on [968]
+OK        L-26-1-1       A p.969  points[9].en        quote found on [969]
+OK        L-26-1-1       A p.971  points[9].en        quote found on [971]
+OK        L-26-1-1       A p.971  points[10].en       quote found on [971]
+OK        L-26-1-1       A p.972  points[10].en       quote found on [972]
+OK        L-26-1-1       A p.960  points[11].en       quote found on [960]
 OK        L-26-3-1       A p.995  summary.en          quote found on [995]
 OK        L-26-4-1       A p.1001  summary.en         quote found on [1001]
 OK        L-28-3-1       A p.1075  coverageNote       label found on [1075]
@@ -849,4 +873,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 843 | ELSEWHERE 0 | UNCHECKED 0
+OK 867 | ELSEWHERE 0 | UNCHECKED 0
