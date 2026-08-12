@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 903 citations -- 49 in a `src` field, 854 written inline in prose
+found 923 citations -- 49 in a `src` field, 874 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -530,6 +530,26 @@ OK        L-22-2-1       A p.812  points[8].en        quote found on [812]
 OK        L-22-2-1       A p.814  points[9].en        quote found on [814]
 OK        L-22-2-1       A p.814  points[10].en       quote found on [814]
 OK        L-22-2-1       A p.816  points[10].en       quote found on [816]
+OK        L-22-1-1       A p.798  coverageNote        quote found on [798]
+OK        L-22-1-1       A p.795  points[0].en        quote found on [795]
+OK        L-22-1-1       A p.796  points[1].en        quote found on [796]
+OK        L-22-1-1       A p.799  points[1].en        quote found on [799]
+OK        L-22-1-1       A p.796  points[2].en        quote found on [796]
+OK        L-22-1-1       A p.797  points[3].en        quote found on [797]
+OK        L-22-1-1       A p.800  points[3].en        quote found on [800]
+OK        L-22-1-1       A p.801  points[3].en        quote found on [801]
+OK        L-22-1-1       A p.797  points[4].en        quote found on [797]
+OK        L-22-1-1       A p.800  points[4].en        quote found on [800]
+OK        L-22-1-1       A p.800  points[5].en        quote found on [800]
+OK        L-22-1-1       A p.801  points[6].en        quote found on [801]
+OK        L-22-1-1       A p.802  points[6].en        quote found on [802]
+OK        L-22-1-1       A p.801  points[7].en        quote found on [801]
+OK        L-22-1-1       A p.802  points[7].en        quote found on [802]
+OK        L-22-1-1       A p.802  points[8].en        quote found on [802]
+OK        L-22-1-1       A p.803  points[8].en        quote found on [803]
+OK        L-22-1-1       A p.803  points[9].en        quote found on [803]
+OK        L-22-1-1       A p.804  points[9].en        quote found on [804]
+OK        L-22-1-1       A p.804  points[10].en       quote found on [804]
 OK        L-23-2-1       A p.859  coverageNote        quote found on [859]
 OK        L-23-2-1       A pp.854-857  coverageNote   label found on [854]
 OK        L-23-2-1       A p.848  points[0].en        quote found on [848]
@@ -908,4 +928,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 902 | ELSEWHERE 0 | UNCHECKED 0
+OK 922 | ELSEWHERE 0 | UNCHECKED 0
