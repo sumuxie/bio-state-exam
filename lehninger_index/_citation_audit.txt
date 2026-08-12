@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 890 citations -- 49 in a `src` field, 841 written inline in prose
+found 903 citations -- 49 in a `src` field, 854 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -119,6 +119,19 @@ OK        L-6-4-1        A p.210  points[11].en       quote found on [210]
 OK        L-6-4-1        A pp.210-211  points[12].en  label found on [211]
 OK        L-6-4-1        A pp.211-212  points[13].en  label found on [212]
 OK        L-6-4-1        A pp.211  points[14].en      quote found on [211]
+OK        L-7-4-1        A p.254  points[0].en        quote found on [254]
+OK        L-7-4-1        A p.254  points[1].en        quote found on [254]
+OK        L-7-4-1        A p.254  points[2].en        quote found on [254]
+OK        L-7-4-1        A p.254  points[3].en        quote found on [254]
+OK        L-7-4-1        A p.254  points[4].en        quote found on [254]
+OK        L-7-4-1        A p.255  points[4].en        quote found on [255]
+OK        L-7-4-1        A p.255  points[5].en        quote found on [255]
+OK        L-7-4-1        A p.255  points[6].en        quote found on [255]
+OK        L-7-4-1        A p.256  points[6].en        quote found on [256]
+OK        L-7-4-1        A p.256  points[7].en        quote found on [256]
+OK        L-7-4-1        A p.257  points[7].en        quote found on [257]
+OK        L-7-4-1        A p.256  points[8].en        quote found on [256]
+OK        L-7-4-1        A p.257  points[8].en        quote found on [257]
 OK        L-8-3-1        A p.283  coverageNote        label found on [283]
 OK        L-8-3-1        A p.286  coverageNote        label found on [286]
 OK        L-8-3-1        A p.288  coverageNote        quote found on [288]
@@ -895,4 +908,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 889 | ELSEWHERE 0 | UNCHECKED 0
+OK 902 | ELSEWHERE 0 | UNCHECKED 0
