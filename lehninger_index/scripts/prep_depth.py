@@ -32,6 +32,7 @@
 # USAGE
 #     python lehninger_index/scripts/prep_depth.py 20.2
 #     python lehninger_index/scripts/prep_depth.py 20.2 --terms "S-state,Mn4CaO5,exciton"
+#     python lehninger_index/scripts/prep_depth.py 20.2 --force   # section already has a node
 #
 # OUTPUT
 #     lehninger_index/dossiers/_dossier_<section>.md
@@ -256,6 +257,7 @@ def main():
     section = args[0]
 
     extra_terms = []
+    force = "--force" in sys.argv
     global TOTAL_CAP, PER_PAGE_CAP
     for i, a in enumerate(sys.argv):
         if a == "--terms" and i + 1 < len(sys.argv):
@@ -269,6 +271,20 @@ def main():
     row = next((r for r in rows if r["leh_section"] == section), None)
     assert row, ("section %s is not in depth_queue.tsv. Sections present include: %s"
                  % (section, ", ".join(r["leh_section"] for r in rows[:12])))
+
+    # ---- existence check -- MEASURED 2026-08-12: a dossier was generated (and
+    # its "next session's opening instruction" acted on) for 20.2, which already
+    # had a fully-written, committed, pushed node from 08-10. Nothing downstream
+    # of this script checks that, so it burned a session finding it out by hand.
+    # Cheap here, before the PDF is even opened.
+    nodes = czech_nodes()
+    existing = [n for n in nodes if n.get("book") == "lehninger" and n.get("section") == section]
+    if existing and not force:
+        raise AssertionError(
+            "section %s already has %d lehninger node(s): %s -- generating a "
+            "dossier for it would repeat 08-12's mistake. If the node is wrong "
+            "or incomplete and genuinely needs redoing, rerun with --force."
+            % (section, len(existing), ", ".join(n["id"] for n in existing)))
 
     p_start, p_end = int(row["page_a_print"]), int(row["page_a_print_end"])
     print("section %s -> A printed pages %d-%d" % (section, p_start, p_end))
@@ -299,7 +315,8 @@ def main():
           % (len(all_quotes), len(quotes), PER_PAGE_CAP, TOTAL_CAP))
 
     # ---- what the Czech layer already covers ---------------------------------
-    nodes = czech_nodes()
+    # `nodes` was already parsed above for the existence check; reused here so
+    # the file set is only walked once.
     probes = list(extra_terms)
     if not probes:
         # crude but honest default: content words out of the section title
