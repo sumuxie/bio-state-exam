@@ -73,7 +73,7 @@ direction right but the magnitudes wrong, and it ignored recoverability entirely
 
 | Layer | Done | Left |
 |---|---|---|
-| `mustKnow` | **230 / 230 ✅ closed** | — |
+| `mustKnow` | **270 / 270 ✅ closed** (230/230 when this table was written; re-measured 2026-08-12) | — |
 | `trace` 追根溯源 | 34 cards | open-ended; see below |
 | Structures — amino acids | **20 / 20 drawn ✅** | — |
 | Structures — sugars | **5 drawn** (Fischer + Haworth) | more sugars, then nucleotides / coenzymes / lipids |
@@ -98,12 +98,15 @@ reading voices · folded coverage note · highlighting with four pens · URL dee
    nucleotides/bases → coenzymes (ATP, NAD⁺, FAD, CoA, TPP, PLP) → lipids → pathway intermediates.
 2. **More `trace`**, in the chapters she is reading.
 
-**No new Lehninger depth nodes are needed.** All 20 exist and the depth queue's top 20 are done.
+⚠️ **The two sentences that used to stand here are dead — they said "all 20 depth nodes exist,
+the queue's top 20 are done, none carries `trace` yet". Measured 2026-08-12: there are 60
+Lehninger nodes (44 deep + 16 brief), the depth queue's top 28 are done (33 of 85 in total), and
+all 44 deep nodes carry `trace`.** For live progress read `CORE_HANDOFF.md`, never this file.
 The archive used to say five high-value subjects remained (genetic code, protein synthesis, gene
 regulation, urea cycle, amino acid degradation); **measured 2026-08-08, the Czech book covers all
 five** — `4-2-1`…`4-2-4-2` and the whole of ch5. Correction is in the archive next to the original
-claim. The 20 existing nodes now all carry `mustKnow`; none carries `trace` yet, and that is the
-only layer still open on the depth nodes.
+claim. That correction still stands: `L-27-1-1` (§27.1) was later written over `4-2-1` as a
+**depth layer on covered material**, which is a different thing from filling a gap.
 
 ⚠️ **Grep the Czech layer before believing any coverage claim**, including ones in the handoffs.
 This has now produced a wrong answer twice — photosynthesis, then these five.
@@ -154,7 +157,7 @@ This has now produced a wrong answer twice — photosynthesis, then these five.
 | Directory | Role | Storage prefix |
 |---|---|---|
 | `biochemie_basic/` | **frozen**, she revises from it | `bio.` |
-| `biochemie_pro/` | active trainer, 230 nodes | `biopro.` |
+| `biochemie_pro/` | active trainer, 270 nodes (2026-08-12) | `biopro.` |
 | `biochemie_struct/` | structure formulas | `biostruct.` |
 
 Live: **https://sumuxie.github.io/bio-state-exam/biochemie_pro/**

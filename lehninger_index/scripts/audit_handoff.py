@@ -2,7 +2,7 @@
 # checked per-line, and markdown prose is hard-wrapped -- a bold span or a sentence legitimately
 # crosses a line break. Check per PARAGRAPH instead, which is the unit that can actually be
 # truncated.
-import io, os, re
+import csv, io, os, re
 
 ROOT = r"C:\Users\Admin\Downloads\bio-state-exam"
 # This list is hard-coded, so a new handoff file is NOT audited until it is added
@@ -144,8 +144,32 @@ try:
             "lehninger": sum(1 for t in T if t.get("book") == "lehninger"),
             "topicKeys": len(keys),
             "multi": sum(1 for v in keys.values() if len(v) > 1)}
+    # Queue progress, added 2026-08-12. The four counts above were synced after the 8-node batch
+    # and the handoffs still said "25 of 85 depth-queue sections done, 60 left" -- live was 33
+    # and 52. Nothing caught it because nothing looked. This is the number a session reads to
+    # decide what to write next, so it is the expensive one to get wrong. Deep-vs-brief is keyed
+    # on `points`, which is the actual specification of a brief node (summary + mustKnow only),
+    # NOT on whether its topicKey is shared with the Czech book -- those two splits both give
+    # 44/16 today and are DIFFERENT SETS, which is exactly how a wrong check would pass.
+    lsec = set(t.get("section") for t in T if t.get("book") == "lehninger")
+    def _sections(name):
+        path = os.path.join(ROOT, "lehninger_index", name)
+        return [r["leh_section"]
+                for r in csv.DictReader(io.open(path, encoding="utf-8"), delimiter="\t")]
+    dq, only = _sections("depth_queue.tsv"), _sections("lehninger_only_scope.tsv")
+    live["dqDone"] = sum(1 for s in dq if s in lsec)
+    live["dqLeft"] = len(dq) - live["dqDone"]
+    live["onlyDone"] = sum(1 for s in only if s in lsec)
+    live["deep"] = sum(1 for t in T if t.get("book") == "lehninger" and t.get("points"))
+    live["brief"] = live["lehninger"] - live["deep"]
     p("  live: %d topics, %d lehninger, %d topicKeys, %d joining both books"
       % (live["topics"], live["lehninger"], live["topicKeys"], live["multi"]))
+    p("  live: depth queue %d/%d done (%d left), lehninger-only %d/%d done, %d deep + %d brief"
+      % (live["dqDone"], len(dq), live["dqLeft"], live["onlyDone"], len(only),
+         live["deep"], live["brief"]))
+    if live["dqDone"] + live["onlyDone"] != live["lehninger"]:
+        p("  SCOPE LEAK   %d lehninger nodes but %d + %d accounted for by the two tsvs"
+          % (live["lehninger"], live["dqDone"], live["onlyDone"])); stale += 1
     head = start.split("## The rules that actually bite")[0]
     for pat, key in ((r"over \*\*(\d+)\*\* nodes", "topics"),
                      (r"\+ (\d+) lehninger", "lehninger"),
@@ -193,6 +217,17 @@ CORE_COUNTS = [
     ("CORE2_LEHNINGER.md", r"\*\*已写 (\d+) 个 L- 节点",          "lehninger"),
     ("CORE2_LEHNINGER.md", r"`mustKnow` \*\*(\d+)/\d+，零缺口",   "topics"),
     ("CORE2_LEHNINGER.md", r"`topicKey` \*\*(\d+)\*\* 个",        "topicKeys"),
+    # queue progress, added 2026-08-12 -- see the comment next to live["dqDone"]
+    ("CORE_HANDOFF.md",    r"`depth_queue\.tsv` \| 85 \| \*\*(\d+)\*\*",        "dqDone"),
+    ("CORE_HANDOFF.md",    r"`lehninger_only_scope\.tsv` \| 32 \| \*\*(\d+)\*\*", "onlyDone"),
+    ("CORE_HANDOFF.md",    r"之后还剩 \*\*(\d+) 个\*\*",                        "dqLeft"),
+    ("CORE_HANDOFF.md",    r"depth queue 还剩 (\d+) 个",                        "dqLeft"),
+    ("CORE_HANDOFF.md",    r"117 section\*\*（(\d+) 深",                        "deep"),
+    ("CORE_HANDOFF.md",    r"（\d+ 深 \+ (\d+) 浅）",                           "brief"),
+    ("CORE2_LEHNINGER.md", r"\*\*(\d+) 个来自 depth queue\*\*",                 "dqDone"),
+    ("CORE2_LEHNINGER.md", r"## depth queue 剩下的 (\d+) 个",                   "dqLeft"),
+    ("CORE2_LEHNINGER.md", r"\*\*已写 \d+ 个 L- 节点（(\d+) 个深度",            "deep"),
+    ("CORE2_LEHNINGER.md", r"（\d+ 个深度 \+ (\d+) 个浅）",                     "brief"),
 ]
 try:
     for fn, pat, key in CORE_COUNTS:
