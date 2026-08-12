@@ -2,7 +2,7 @@ Citation audit: every `A p.N` in the app data, checked against what that page of
 actually contains. printed page = pdf page - 36.
 A's text layer is OCR, so it is de-ligatured and de-hyphenated before matching.
 
-found 829 citations -- 49 in a `src` field, 780 written inline in prose
+found 844 citations -- 49 in a `src` field, 795 written inline in prose
 
 OK        1-5            A p.21  lehNotes[0].en       quote found on [21]
 OK        2-1-2          A p.57  lehNotes[0].en       label found on [57]
@@ -263,6 +263,21 @@ OK        L-13-2-1       A p.476  points[7].en        quote found on [476]
 OK        L-13-2-1       A p.477  points[7].en        quote found on [477]
 OK        L-13-2-1       A p.477  points[8].en        quote found on [477]
 OK        L-13-2-1       A p.478  points[9].en        quote found on [478]
+OK        L-13-5-1       A p.497  points[0].en        quote found on [497]
+OK        L-13-5-1       A p.498  points[0].en        quote found on [498]
+OK        L-13-5-1       A p.498  points[1].en        quote found on [498]
+OK        L-13-5-1       A p.501  points[1].en        quote found on [501]
+OK        L-13-5-1       A p.498  points[2].en        quote found on [498]
+OK        L-13-5-1       A p.499  points[2].en        quote found on [499]
+OK        L-13-5-1       A p.499  points[3].en        quote found on [499]
+OK        L-13-5-1       A p.500  points[4].en        quote found on [500]
+OK        L-13-5-1       A p.500  points[5].en        quote found on [500]
+OK        L-13-5-1       A p.501  points[6].en        quote found on [501]
+OK        L-13-5-1       A p.501  points[7].en        quote found on [501]
+OK        L-13-5-1       A p.501  points[8].en        quote found on [501]
+OK        L-13-5-1       A p.502  points[8].en        quote found on [502]
+OK        L-13-5-1       A p.502  points[9].en        quote found on [502]
+OK        L-13-5-1       A p.503  points[9].en        quote found on [503]
 OK        L-14-5-1       A pp.539-540  coverageNote   label found on [539, 540]
 OK        L-14-5-1       A p.539  coverageNote        label found on [539]
 OK        L-14-5-1       A p.541  coverageNote        label found on [541]
@@ -834,4 +849,4 @@ OK        E-cysteine     A p.76  quiz[0].why_en       quote found on [76]
 OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
-OK 828 | ELSEWHERE 0 | UNCHECKED 0
+OK 843 | ELSEWHERE 0 | UNCHECKED 0
