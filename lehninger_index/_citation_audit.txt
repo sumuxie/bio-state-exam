@@ -1024,7 +1024,3 @@ OK        E-cysteine     A p.547  quiz[2].answer_en   quote found on [547]
 OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
 
 OK 1017 | ELSEWHERE 0 | UNCHECKED 0
-
-OK        E-cysteine     A p.548  quiz[2].answer_en   quote found on [548]
-
-OK 1016 | ELSEWHERE 0 | UNCHECKED 1
