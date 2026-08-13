@@ -154,12 +154,47 @@ Left alone deliberately: five low-severity `mustKnow` embellishments (`8-2-2-2` 
 evaporate", `8-2-4-4` naming estrogen where the node gives progesterone and testosterone,
 `8-3-7`'s "30+", `8-2-1-2`, `8-4-2-2`), and every book oddity the nodes already flag.
 
+### Round two — all 207 Czech nodes read (2026-08-14)
+
+The nine agents that died on the session limit were re-dispatched once it reset, and seven came
+back covering chapters 1–7, 9 and 10. Node-by-node findings are in `_audit/`; the summary that
+matters:
+
+**The chapter-8 defect does not repeat.** 167 further nodes read, and not one `mustKnow`
+describes a different node's subject. Chapter 8 was a one-off.
+
+**But the quieter class is everywhere, and no automated pass can see it** — the always-visible
+`mustKnow` asserting something the node's own `points` deny. It scores *well* on word overlap
+precisely because the claim is on-topic. Ten more were fixed, each verified by reading first:
+`3-2` (metal ion's third role given as an electron relay, not stabilising the structure),
+`4-2-4-1` (the trp leader "never translated", generalised, while three other fields require the
+ribosome that translates it), `4-1-5` (nucleosidase written in Chinese with the characters for
+nucleotidase), the four `committed step` → 限速 translations, `6-2-2-3` (927 characters of
+Chinese mojibake, so the 38-vs-30 ATP warning reached no Chinese reader), `7-6-3` (transketolase
+for transaldolase), `7-11-1-2` ("not at glucose", denied by its own next point), `7-12-2` (the
+two-tier cascade collapsed into one kinase — its own MCQ distractor), `9-18` (step counts stated
+as molecule counts: it is 3 ATP + 2 NADPH per CO2), `10-21` (cortisol given a "sustained" the
+table does not print).
+
+**Two agent claims were overturned by reading**, which is the reason for the rule about not
+forwarding them: 17-of-20 misplaced in chapter 8 was 10, and the option-numbering defect is
+real but inverted — Lehninger files number options from 1 in prose, chapters 9 and 10 from 0,
+and the app renders A–D for both. ~150 references, left alone and recorded.
+
+**And the validator caught a bug of mine**: the `10-21` repair put a double quote inside a
+double-quoted JS string, silently dropping all 26 nodes of chapter 10. Topics fell 253 → 227
+and the only symptom was a bank key "pointing at an unknown node". Re-run
+`tools/check-in-browser.html` after every data edit, not after a batch.
+
 ### What is still owed
 
-- **167 Czech nodes and 60 Lehninger nodes have had no reading pass.** Nine audit agents were
-  dispatched for the Czech chapters and all nine died instantly on an account session limit,
-  having read nothing. Re-dispatch them: `AUDIT_SPEC.md` is the entire brief, one agent per
-  chapter range, output to `_audit/<range>.md`.
+- **The Lehninger layer — 60 nodes, about four times the text per node — has had no reading
+  pass**, nor have the 3 entity cards. That is the next range, and it will be slower per node
+  than anything done so far. `AUDIT_SPEC.md` is the entire brief.
+- **Findings deliberately not repaired** are listed at the end of `_audit/README.md` so they are
+  not mistaken for clean: the option-numbering split, `gapPoints` leaking into
+  `terms`/`quiz`/`oral` past the warning badge `app.js` puts on `gapPoints` itself, `6-2-3`'s
+  unhedged claim, and four items that cannot be settled without a page scan.
 - **Chapters 7 and 8 have still never been verified against the page images** by a second
   reader — the oldest open item in the project (HANDOFF.md §0). This audit checked internal
   consistency only; it cannot tell you whether a node matches the book. `extracted_full_ch7/`
