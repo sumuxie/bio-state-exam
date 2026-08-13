@@ -228,6 +228,37 @@ correct in the source and it is invisible unless you actually switch chapters an
 test caught it on the first run. `app.js` now tracks `noteCurrentKey` — the chapter the textarea
 is *showing* — separately from the select's value.
 
+## 6b. Two smaller features, added after the first round of use
+
+**An × on each wrong-answer entry.** The labelled Remove button was already there, but nothing
+in the UI said what it removed, and "delete" on a question is an alarming thing to click when
+you cannot tell whether the question is gone for good. Both controls now carry the same
+tooltip — the entry leaves the book, the question stays in the bank and can be asked again —
+and the smoke test asserts the promise rather than trusting the wording: it compares the
+question count before and after removing an entry.
+
+**A starred read-aloud card drill** (`⭐🔊 星标朗读`, one button in the Cards tab). Only the terms
+carrying a ⭐, each spoken as it appears, Chinese still behind the tap. One button rather than
+three toggles, because that is one way of working rather than three settings to combine.
+
+Two decisions inside it are load-bearing:
+
+- **The Leitner box-5 exclusion is lifted in this mode.** Ordinarily a card that reached the top
+  box has been learned and drops out of rotation. But a star is the reader saying *keep showing
+  me this*, so filtering on mastery would empty the deck of precisely the words they marked.
+- **Only the front of the card is spoken.** Reading the definition aloud would hand over the
+  answer that the tap exists to reveal.
+
+Stars are made in the Study view, on a glossary entry, and the mark key is `cardKey()` — the
+same key the Leitner box uses — so a starred term and its flashcard are the same object. An
+empty starred deck says that, and says where stars come from, instead of showing the "everything
+mastered" message that belongs to a finished ordinary deck.
+
+Note for anyone extending the smoke test: **the Study landing view carries no glossary at all**,
+so a topic has to be opened before any ⭐ exists in the DOM. The first version of the starred
+test reported "not exercised" instead of failing, which is the right behaviour for a missing
+control and the wrong conclusion to draw from it — it walks the sidebar now.
+
 ## 7. How it was checked, with no `node` on this machine
 
 CI still runs `tools/validate-data.js` and stays authoritative; it now also validates the bank
