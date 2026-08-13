@@ -155,6 +155,8 @@
     <button class="mode-btn active" data-mode="study"  role="tab">📖 <span>Study</span></button>
     <button class="mode-btn"        data-mode="cards"  role="tab">🃏 <span>Cards</span></button>
     <button class="mode-btn"        data-mode="quiz"   role="tab">✏️ <span>Quiz</span></button>
+    <button class="mode-btn"        data-mode="wrong"  role="tab">❌ <span>错题本</span><span class="mode-count" id="wrong-count" hidden></span></button>
+    <button class="mode-btn"        data-mode="notes"  role="tab">📝 <span>笔记</span><span class="mode-count is-note" id="note-count" hidden></span></button>
     <button class="mode-btn"        data-mode="oral"   role="tab">🎙 <span>Oral</span></button>
   </nav>
 
@@ -319,6 +321,88 @@
       <div id="quiz-result" hidden class="result-card"></div>
     </section>
 
+    <!-- ============ WRONG-ANSWER BOOK 错题本 ============ -->
+    <section id="panel-wrong" class="panel">
+      <div class="panel-head">
+        <h2>Wrong-answer book <span class="muted">错题本</span></h2>
+        <div class="controls">
+          <select id="wrong-scope"></select>
+          <button id="wrong-drill" class="btn-primary">Drill these <span class="muted">只练错题</span></button>
+          <button id="wrong-clear" class="btn-ghost">Clear <span class="muted">清空</span></button>
+        </div>
+      </div>
+      <div id="wrong-body"></div>
+    </section>
+
+    <!-- ============ NOTES 笔记本 ============ -->
+    <section id="panel-notes" class="panel">
+      <div class="panel-head">
+        <h2>Notebook <span class="muted">笔记本</span></h2>
+        <div class="controls">
+          <select id="note-chapter"></select>
+          <button id="note-export" class="btn-ghost">Export all <span class="muted">导出全部</span></button>
+          <label for="note-import" class="btn-ghost note-import-label">Import <span class="muted">导入</span></label>
+          <input type="file" id="note-import" accept=".md,.markdown,.txt" hidden>
+        </div>
+      </div>
+
+      <!-- The warning is permanent, not dismissible. Notes written over a term and
+           then lost to a cleared browser is the one failure this feature can have,
+           and the export button is the answer to it. -->
+      <p class="note-warn">
+        Notes live in <strong>this browser only</strong> — clearing site data deletes them.
+        Export to a file when you have written something you would mind losing.
+        <span lang="zh">笔记只存在<strong>这个浏览器</strong>里，清除网站数据就没了。写了舍不得丢的内容，记得导出成文件。</span>
+      </p>
+
+      <div class="note-editor">
+        <textarea id="note-body" spellcheck="false"
+          placeholder="Write anything here — it saves as you type.&#10;在这里随便写，输入时自动保存。"></textarea>
+        <div class="note-foot">
+          <span id="note-status" class="note-status"></span>
+          <span id="note-stats" class="muted"></span>
+        </div>
+      </div>
+
+      <div id="note-index" class="note-index"></div>
+    </section>
+
+    <!-- ============ NOTEBOOK 笔记本 ============ -->
+    <section id="panel-notes" class="panel">
+      <div class="panel-head">
+        <h2>Notebook <span class="muted">笔记本</span></h2>
+        <div class="controls">
+          <select id="note-chapter"></select>
+          <button id="note-export" class="btn-ghost">⬇ Export · 导出</button>
+          <label class="note-import-label btn-ghost" for="note-import">⬆ Import · 导入
+            <input type="file" id="note-import" accept=".md,text/markdown,text/plain" hidden>
+          </label>
+        </div>
+      </div>
+
+      <p class="note-warn">
+        <strong>Saved only in this browser.</strong> There is no account and no server behind
+        this — clearing browser data, switching devices, or a private window loses these for
+        good. Every other thing this app remembers (progress, flashcard boxes, the wrong-answer
+        book) can rebuild itself from use; a note cannot. <strong>Export</strong> downloads one
+        plain-Markdown file with every chapter's note, readable with no app at all — keep it
+        somewhere safe. <strong>Import</strong> reads it back and merges: a chapter that already
+        has a note gets the imported text appended below a dated rule, never overwritten.
+        <span lang="zh">笔记只存在这一个浏览器里——没有账号也没有服务器，清浏览器数据、换设备、或用隐私窗口都会把它们永久丢掉。这个 app 记的其他东西（学习进度、抽认卡分箱、错题本）都能从使用中重新生成，笔记不能。<strong>导出</strong>会把每一章的笔记打包成一个纯 Markdown 文件下载下来，不装这个 app 也能打开，请保存好。<strong>导入</strong>读回来是合并：某一章已经有笔记的话，导入的内容会追加在一条带日期的分隔线下面，绝不会覆盖。</span>
+      </p>
+
+      <div class="note-editor">
+        <textarea id="note-body" spellcheck="false"
+          placeholder="Write here… 在这里写…"></textarea>
+        <div class="note-foot">
+          <span class="note-status" id="note-status"></span>
+          <span class="muted" id="note-stats"></span>
+        </div>
+      </div>
+
+      <div class="note-index" id="note-index"></div>
+    </section>
+
     <!-- ============ ORAL ============ -->
     <section id="panel-oral" class="panel">
       <div class="panel-head">
@@ -398,6 +482,21 @@
 <script src="data/leh_ch28.js"></script>
 <script src="data/leh_ch28b.js"></script>
 <script src="data/entity_cards.js"></script>
+<!-- The bank layer: extra questions attached to a node by id rather than
+     written inside it, so the page-verified ch*.js files stay closed. Load
+     order does not matter (app.js merges the registry after all data files
+     are in), but a file with no tag here is loaded by nobody — that is the
+     one failure mode this layer has, and tools/validate-data.js fails on it.
+     See BANK_SPEC.md. -->
+<script src="data/bank_ch1_3.js"></script>
+<script src="data/bank_ch4_5.js"></script>
+<script src="data/bank_ch6.js"></script>
+<script src="data/bank_ch7a.js"></script>
+<script src="data/bank_ch7b.js"></script>
+<script src="data/bank_ch8a.js"></script>
+<script src="data/bank_ch8b.js"></script>
+<script src="data/bank_ch9.js"></script>
+<script src="data/bank_ch10.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

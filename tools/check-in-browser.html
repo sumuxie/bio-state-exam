@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>checking…</title>
+<!--
+  A browser-runnable twin of tools/validate-data.js.
+
+  WHY IT EXISTS: CI runs the node validator, but this project has repeatedly
+  been worked on from a Windows box with no `node` binary at all (HANDOFF.md
+  §3 step 7 and §9 both say so). That left "start a server and click around"
+  as the only local check, which catches a crash and misses every silent data
+  problem — an orphan bank key, an option index that annotates nothing.
+
+  USE:
+      python -m http.server 8137          # from the repo root
+      then open  http://localhost:8137/tools/check-in-browser.html?app=biochemie_pro
+      headless:  msedge --headless=new --dump-dom "http://localhost:8137/tools/check-in-browser.html?app=biochemie_pro"
+                 and grep the dumped DOM for RESULT.
+
+  It reads the app's own index.html for the data-file list rather than keeping
+  a second list here, for the same reason the node validator does: a data file
+  no <script> tag loads is dead, and a tag pointing at nothing breaks the site.
+
+  It is NOT a replacement for the node validator — CI stays authoritative.
+  Keep the two in step: a check added there should be added here.
+-->
+<style>
+  body { font: 14px ui-monospace, Menlo, monospace; background: #0e1117; color: #e6edf3; padding: 1.5rem; }
+  h1 { font-size: 1rem; }
+  .ok { color: #3fb950; } .fail { color: #f85149; } .note { color: #8b96a5; }
+  pre { white-space: pre-wrap; line-height: 1.6; }
+</style>
+</head>
+<body>
+<h1 id="head">checking…</h1>
+<pre id="out"></pre>
+<script>
+(function () {
+  const app = new URLSearchParams(location.search).get('app') || 'biochemie_pro';
+  const problems = [];
+  const notes = [];
+
+  function done() {
+    const T = (window.BIOCHEM && window.BIOCHEM.topics) || [];
+    const BANK = (window.BIOCHEM && window.BIOCHEM.bank) || {};
+    const byId = {};
+    T.forEach((t) => { byId[t.id] = t; });
+
+    const REQUIRED_SECTION = ['id', 'chapter', 'section', 'czTitle', 'enTitle', 'cnTitle', 'coverage', 'summary'];
+    const REQUIRED_ENTITY  = ['id', 'enTitle', 'cnTitle', 'topicKey', 'summary'];
+
+    function checkQuestion(q, where) {
+      if (!q.q_en || !q.q_cn) problems.push(where + ' missing a language');
+      if (q.type === 'mcq') {
+        if (!Array.isArray(q.options) || typeof q.answer !== 'number'
+            || q.answer < 0 || q.answer >= q.options.length) {
+          problems.push(where + ' bad mcq answer index');
+          return;
+        }
+        if (!q.why_en || !q.why_cn) problems.push(where + ' mcq missing why_en/why_cn');
+        const n = q.options.length;
+        Object.keys(q.optionRefs || {}).forEach((k) => {
+          const i = Number(k);
+          if (!Number.isInteger(i) || i < 0 || i >= n) problems.push(where + ' optionRefs key "' + k + '" is not an option index');
+          else if (i === q.answer) problems.push(where + ' optionRefs annotates the correct option (' + i + ')');
+          if (!byId[q.optionRefs[k]]) problems.push(where + ' optionRefs[' + k + '] points at unknown node ' + q.optionRefs[k]);
+        });
+        Object.keys(q.optionNotes || {}).forEach((k) => {
+          const i = Number(k);
+          if (!Number.isInteger(i) || i < 0 || i >= n) problems.push(where + ' optionNotes key "' + k + '" is not an option index');
+          else if (i === q.answer) problems.push(where + ' optionNotes annotates the correct option (' + i + ')');
+          const note = q.optionNotes[k];
+          if (!note || !note.en || !note.cn) problems.push(where + ' optionNotes[' + k + '] missing a language');
+        });
+        // Not a failure — BANK_SPEC.md allows filler — but worth counting, since
+        // a question whose every distractor is filler teaches nothing extra.
+        let annotated = 0;
+        for (let i = 0; i < n; i++) {
+          if (i === q.answer) continue;
+          if ((q.optionRefs || {})[i] || (q.optionNotes || {})[i]) annotated++;
+        }
+        if (annotated === 0) notes.push(where + ' no wrong option is annotated');
+      } else if (!q.answer_en || !Array.isArray(q.accept) || !q.accept.length) {
+        problems.push(where + ' written question missing model answer or key terms');
+      }
+    }
+
+    T.forEach((t) => {
+      (t.kind === 'entity' ? REQUIRED_ENTITY : REQUIRED_SECTION)
+        .forEach((k) => { if (!t[k]) problems.push(t.id + ': missing ' + k); });
+      if (!t.summary || !t.summary.en || !t.summary.cn) problems.push(t.id + ': summary missing a language');
+      (t.quiz || []).forEach((q, i) => checkQuestion(q, t.id + ': quiz[' + i + ']'));
+    });
+
+    const ids = T.map((t) => t.id);
+    ids.filter((v, i) => ids.indexOf(v) !== i)
+       .filter((v, i, a) => a.indexOf(v) === i)
+       .forEach((d) => problems.push('duplicate id ' + d));
+
+    let bankItems = 0, bankMcq = 0, bankShort = 0;
+    Object.keys(BANK).forEach((id) => {
+      if (!byId[id]) { problems.push('bank: key ' + id + ' matches no topic node'); return; }
+      const arr = BANK[id];
+      if (!Array.isArray(arr) || !arr.length) { problems.push('bank: ' + id + ' is not a non-empty array'); return; }
+      arr.forEach((q, i) => {
+        bankItems++;
+        if (q.type === 'mcq') bankMcq++; else bankShort++;
+        checkQuestion(q, 'bank ' + id + '[' + i + ']');
+      });
+    });
+
+    const core = T.reduce((n, t) => n + ((t.quiz && t.quiz.length) || 0), 0);
+    const cov = {};
+    Object.keys(BANK).forEach((id) => { if (byId[id]) cov[id] = true; });
+    const czNodes = T.filter((t) => t.kind !== 'entity' && (t.book || 'cz') === 'cz');
+    const czCovered = czNodes.filter((t) => cov[t.id]).length;
+
+    const head = document.getElementById('head');
+    const out = document.getElementById('out');
+    const summary = [
+      'app: ' + app,
+      'topics: ' + T.length,
+      'core questions: ' + core,
+      'bank questions: ' + bankItems + '  (' + bankMcq + ' mcq, ' + bankShort + ' short) on '
+        + Object.keys(cov).length + ' nodes',
+      'cz nodes with bank coverage: ' + czCovered + ' / ' + czNodes.length,
+      'unannotated mcqs (no wrong option carries a ref or note): ' + notes.length
+    ].join('\n');
+
+    head.textContent = 'RESULT ' + (problems.length ? 'FAIL ' + problems.length : 'OK') + ' — ' + app;
+    head.className = problems.length ? 'fail' : 'ok';
+    document.title = 'RESULT ' + (problems.length ? 'FAIL ' + problems.length : 'OK');
+    out.innerHTML = '<span class="note">' + summary + '</span>\n\n'
+      + (problems.length ? problems.join('\n') : 'no problems\n')
+      + (notes.length ? '\n\n<span class="note">— unannotated (not a failure):\n' + notes.join('\n') + '</span>' : '');
+  }
+
+  /* The script tags are injected AFTER the page has loaded, so `--dump-dom`
+     (which prints at the load event) needs `--virtual-time-budget` to hold the
+     dump until they have run. Two things were tried instead and are recorded
+     here so nobody spends the afternoon on them again:
+
+       - A synchronous XHR plus `document.write`, so the scripts would block
+         the load event and no budget flag would be needed. The page then never
+         completed at all.
+       - Blaming the volume of data. It is not that: the interaction smoke test
+         loads the same files through the real app and dumps in seconds. What
+         actually produced empty dumps was a previous headless process still
+         holding the same `--user-data-dir`; a second launch attaches to it and
+         exits immediately. Kill stray browsers before re-running. */
+  fetch('../' + app + '/index.html')
+    .then((r) => r.text())
+    .then((html) => {
+      const files = [];
+      const re = /<script\s+src="data\/([^"]+\.js)"\s*>/g;
+      let m;
+      while ((m = re.exec(html)) !== null) files.push(m[1]);
+      if (!files.length) throw new Error('no data <script> tags found in ' + app + '/index.html');
+
+      // Sequential, in the page's own order: a data file may depend on the
+      // namespace an earlier one created, exactly as in the real app.
+      return files.reduce((chain, f) => chain.then(() => new Promise((res, rej) => {
+        const s = document.createElement('script');
+        s.src = '../' + app + '/data/' + f;
+        s.onload = res;
+        s.onerror = () => rej(new Error('failed to load data/' + f));
+        document.head.appendChild(s);
+      })), Promise.resolve());
+    })
+    .then(done)
+    .catch((e) => {
+      document.getElementById('head').textContent = 'RESULT FAIL — ' + e.message;
+      document.getElementById('head').className = 'fail';
+      document.title = 'RESULT FAIL';
+    });
+})();
+</script>
+</body>
+</html>

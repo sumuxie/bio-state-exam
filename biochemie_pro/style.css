@@ -724,3 +724,158 @@ body.only-marked [data-markable]:not([class*="hl-"]) { display: none !important;
   .trace td { padding-top: 0.15rem; }
   .trace th { border-top: 1px solid var(--line-soft); padding-bottom: 0.1rem; }
 }
+
+/* =========================================================================
+   Option hooks + the wrong-answer book (错题本)
+   ------------------------------------------------------------------------
+   `display: flex` is used freely here, but NEVER on an element whose direct
+   child is a raw text run — bionic reading injects <b> into those and a flex
+   parent blockifies it, snapping a word onto two lines (HANDOFF.md §6a). Every
+   flex container below holds only element children.
+   ========================================================================= */
+
+.opt-hooks { margin-top: 0.75rem; padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.hooks-label { font-size: 0.75rem; color: var(--fg-mute); margin-bottom: 0.45rem; }
+.hook { display: flex; gap: 0.55rem; align-items: baseline; margin-top: 0.45rem; }
+.hook-body { min-width: 0; }
+.hook-note { font-size: 0.82rem; margin-top: 0.1rem; }
+.hook-note .t-en { max-width: 62ch; }
+.hook-note .t-cn { color: var(--fg-mute); }
+.hook-link + .hook-note { margin-top: 0.2rem; }
+/* "this option is filler" — deliberately quieter than a real hook, so a panel
+   full of them reads as an absence rather than as content worth chasing. */
+.hook-none { font-size: 0.8rem; color: var(--fg-dim); }
+.hook-none .t-en, .hook-none .t-cn { color: var(--fg-dim); max-width: 62ch; }
+.hook-link {
+  font-family: inherit; font-size: 0.82rem; text-align: left;
+  display: flex; gap: 0.45rem; align-items: baseline; flex-wrap: wrap;
+}
+.hook-sec { font-family: var(--mono); font-size: 0.75rem; color: var(--fg-dim); flex: 0 0 auto; }
+.hook-link .t-en, .hook-link .t-cn { max-width: 56ch; }
+.hook-link .t-cn { color: var(--fg-mute); margin-top: 0; }
+
+.warn { color: var(--warn); }
+
+.wb-added {
+  margin-top: 0.7rem; font-size: 0.78rem; color: var(--fg-dim);
+  border-top: 1px dashed var(--line); padding-top: 0.5rem;
+}
+.q-result-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+
+/* ------------------------------------------------------------- wrongbook */
+.wb-summary { font-size: 0.8rem; color: var(--fg-mute); margin-bottom: 0.9rem; }
+.wb-stale {
+  font-size: 0.82rem; color: var(--warn); margin-bottom: 1rem;
+  border: 1px solid var(--warn); border-radius: var(--radius); padding: 0.7rem 0.9rem;
+}
+.wb-stale button { margin-left: 0.5rem; }
+.wb-group {
+  font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--fg-dim); margin: 1.6rem 0 0.6rem; padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--line);
+}
+.wb-entry {
+  background: var(--bg-raise); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.15rem; margin-bottom: 0.9rem;
+}
+.wb-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem; }
+.wb-meta { margin-left: auto; font-size: 0.72rem; color: var(--fg-dim); font-family: var(--mono); }
+.wb-meta-ok { color: var(--good); margin-left: 0.5rem; }
+.wb-date { margin-left: 0.5rem; opacity: 0.7; }
+.wb-q { font-size: 0.95rem; margin-bottom: 0.8rem; }
+.wb-q .t-cn { font-size: 0.92rem; }
+
+.wb-opts { display: flex; flex-direction: column; gap: 0.45rem; }
+.wb-opt {
+  display: flex; gap: 0.55rem; align-items: baseline;
+  border: 1px solid var(--line); border-left-width: 3px; border-radius: var(--radius);
+  padding: 0.55rem 0.7rem; background: var(--bg-sink);
+}
+/* The answer and the option you actually picked are the two the eye needs
+   first; everything else is context for them. */
+.wb-opt.is-answer { border-color: var(--good); background: color-mix(in srgb, var(--good) 8%, transparent); }
+.wb-opt.is-pick   { border-color: var(--bad);  background: color-mix(in srgb, var(--bad) 8%, transparent); }
+.wb-opt-body { min-width: 0; flex: 1; }
+.wb-opt-text { font-size: 0.88rem; max-width: 70ch; }
+.wb-tag {
+  display: inline-block; margin-left: 0.5rem; padding: 0 0.4em;
+  font-size: 0.66rem; letter-spacing: 0.04em; border-radius: 0.25em;
+  border: 1px solid var(--line); color: var(--fg-dim); white-space: nowrap;
+}
+.wb-tag.ok  { border-color: var(--good); color: var(--good); }
+.wb-tag.bad { border-color: var(--bad);  color: var(--bad); }
+.wb-opt .hook-note, .wb-opt .hook-none, .wb-opt .hook-link { margin-top: 0.35rem; }
+
+.wb-why, .wb-typed {
+  margin-top: 0.85rem; background: var(--bg-sink); border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0; padding: 0.75rem 0.9rem;
+  font-size: 0.86rem; line-height: 1.7; max-width: 78ch;
+}
+.wb-typed { border-left-color: var(--fg-dim); font-family: var(--mono); font-size: 0.8rem; }
+.wb-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+
+/* The count on the ❌ tab. Hidden when zero rather than showing a "0", so an
+   empty book is silent. */
+.mode-count {
+  display: inline-block; margin-left: 0.25em; padding: 0 0.35em;
+  font-size: 0.68rem; font-weight: 700; border-radius: 0.6em;
+  background: var(--bad); color: #fff; vertical-align: 0.1em;
+}
+
+@media (max-width: 620px) {
+  .wb-meta { margin-left: 0; width: 100%; }
+  .wb-opt { padding: 0.5rem 0.55rem; }
+}
+
+/* ------------------------------------------------------------- notebook 笔记本 */
+.note-warn {
+  font-size: 0.8rem; line-height: 1.7; color: var(--fg-mute);
+  border: 1px solid var(--warn); border-left-width: 3px; border-radius: var(--radius);
+  padding: 0.65rem 0.9rem; margin-bottom: 1rem; max-width: 78ch;
+}
+.note-warn strong { color: var(--warn); }
+.note-warn span[lang="zh"] { display: block; margin-top: 0.25rem; }
+
+.note-import-label { cursor: pointer; display: inline-block; }
+
+.note-editor {
+  background: var(--bg-raise); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 0.5rem 0.5rem 0.35rem;
+}
+#note-body {
+  width: 100%; min-height: 46vh; resize: vertical;
+  background: transparent; border: 0; outline: none;
+  color: var(--fg); font-family: var(--sans); font-size: 0.95rem; line-height: 1.85;
+  padding: 0.6rem 0.7rem;
+}
+#note-body::placeholder { color: var(--fg-dim); }
+.note-foot {
+  display: flex; align-items: baseline; gap: 0.75rem;
+  padding: 0.35rem 0.7rem 0.2rem; border-top: 1px solid var(--line-soft);
+  font-size: 0.74rem; font-family: var(--mono);
+}
+.note-status { color: var(--fg-dim); }
+.note-status.ok { color: var(--good); }
+.note-foot .muted { margin-left: auto; }
+
+.note-index { margin-top: 1.5rem; }
+.note-index h3 {
+  font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--fg-dim); margin-bottom: 0.5rem;
+}
+.note-list { list-style: none; margin: 0; padding: 0; }
+.note-list li {
+  display: flex; align-items: baseline; gap: 0.6rem;
+  padding: 0.45rem 0; border-bottom: 1px solid var(--line-soft);
+}
+.note-peek { font-size: 0.8rem; color: var(--fg-dim); flex: 1; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.note-size { font-family: var(--mono); font-size: 0.72rem; color: var(--fg-dim); }
+/* The notebook badge is a count of chapters written in, not a warning — so it
+   must not borrow the wrong-answer book's red. */
+.mode-count.is-note { background: var(--accent-dim); }
+
+@media (max-width: 620px) {
+  #note-body { min-height: 40vh; }
+  .note-peek { display: none; }
+}

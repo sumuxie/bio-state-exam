@@ -21,6 +21,15 @@ this file itself committed and current — that is the entire point of it existi
 
 ## 0. Current state as of this handoff (updated 2026-08-06)
 
+> **2026-08-13, `biochemie_pro` only — see §12 before touching its `app.js`, `index.html` or
+> `data/`.** Three things are new: a `bank` question layer that attaches extra questions to a
+> node by id from separate `data/bank_*.js` files (rules in `BANK_SPEC.md`), per-option
+> annotations (`optionRefs`/`optionNotes`) that say what each wrong option is really about,
+> and a persistent wrong-answer book (❌ tab). Two headless-browser tools now exist in
+> `tools/` because this machine still has no `node`. §12e records what the drafting pass
+> found and did NOT fix — chapter 8's `mustKnow` fields are misaligned and that is the most
+> visible wrong text in the app.
+
 - **Chapters 1–6 done and live on `main`**: 1 General principles, 2 Amino acids/proteins,
   3 Enzymes, 4 Nucleic acids/protein synthesis, 5 Further protein metabolism/amino acid
   interconversions, 6 Bioenergetika (bioenergetics, incl. the citric acid cycle and the
@@ -910,3 +919,136 @@ on is titled but carries no Chinese-numeral header at all — treat that as a ge
 permanent feature of the source (the student's own appendix), not a gap to fill by inventing
 a "二十八". No dedicated post-translational-modification topic exists anywhere in the notes
 (checked exhaustively for ch.4 §4.3.x) — leave that `cnNote.status` as `"pending"`.
+
+## 12. The bank layer and the wrong-answer book (added 2026-08-13, `biochemie_pro` only)
+
+Two features and three tools, all in `biochemie_pro`. `biochemie_basic` is untouched and
+stays that way — it is the frozen copy (§0).
+
+### 12a. `bank` — a second question layer that never reopens a verified file
+
+`app.js` has cycled three question sources for a while (`core` / `bank` / `terms`), but no
+node carried a `bank` array, so that middle level shipped inert. It is live now, and the
+questions do NOT live inside the nodes:
+
+```js
+// data/bank_ch7a.js
+window.BIOCHEM.bank = window.BIOCHEM.bank || {};
+Object.assign(window.BIOCHEM.bank, { '7-8-1': [ {…}, {…} ], … });
+```
+
+`app.js` merges that registry onto the matching topic (`t.bank`) at load. **Why by id
+instead of inside the node**: every `data/ch*.js` was calibrated page by page against the
+scans, and appending several hundred questions into those files means editing verified
+content for a reason that has nothing to do with verification. A bank file is additive, it
+can be deleted without leaving a mark, and a whole chapter's extras can be reviewed as one
+diff. The cost is one new failure mode — a key that matches no node — which is invisible at
+run time, so it is reported in the Quiz tab AND fails `tools/validate-data.js`.
+
+As of 2026-08-13 the layer holds **638 questions (432 mcq + 206 short) across all 207 Czech
+nodes**, written by nine agents working one chapter-range each, against the 797 `core`
+questions already there. Every wrong option in all 432 is annotated (see 12b) — that was the
+brief, and it is what makes the layer worth more than its count.
+
+The rules for writing them are in **`BANK_SPEC.md`**, and the load-bearing one is: *a bank
+question may only restate what its node already says*. The node's `points`, `summary`,
+`mustKnow`, `terms` and `coverageNote` are the entire fact universe. Nobody re-reads a bank
+question against the book, so a fact imported from general knowledge would sit in the app
+looking exactly as verified as everything around it.
+
+`gapPoints` is deliberately NOT in that universe — it is flagged in the data as standard
+course material that was never read from this book. One consequence, raised by the agent
+that wrote chapters 1–3 and still open: `3-3-1`, `3-5`, `3-7` and `2-2-2` carry a lot of
+their substance in `gapPoints` (the Michaelis–Menten derivation, the inhibition types), so
+those nodes support fewer bank questions than their size suggests. Whether bank questions
+may draw on `gapPoints` is a decision for Ruojin, not a default to quietly change.
+
+### 12b. `optionRefs` / `optionNotes` — the wrong options carry the teaching
+
+Ported from `pesbpro` (its `app.js` had it; this app did not). Both are keyed by option
+index and annotate WRONG options only:
+
+- `optionRefs: { 0: '7-7-1' }` — this option describes something the course teaches
+  elsewhere; renders as a button that jumps to that node.
+- `optionNotes: { 1: { en, cn } }` — this option encodes a real misconception; name it
+  (which two things are swapped, which direction is reversed, which condition was dropped).
+
+An option with neither renders as "nothing in the course corresponds to this one", which is
+honest and also marks the question as weak. **The 800 pre-existing `core` questions carry no
+annotations**, so answering an old question wrong shows that message for every distractor —
+not a bug, just the layer that has not been written yet. Annotating `core` is the obvious
+next content job if it is wanted.
+
+### 12c. The wrong-answer book (❌ tab, `state.wrong`, `biopro.wrong`)
+
+Every missed question is stored whole — the question object, which option was picked or what
+was typed, how many times it has been missed, and how many times it has been answered
+correctly since. **Stored whole, not as a pointer**, because generated term-drill questions
+have no stable identity, their options are shuffled at generation time so a stored index
+would mean nothing later, and a stored copy survives an edit to the data file behind it.
+
+`ok` counts CONSECUTIVE correct answers and any wrong answer resets it; at `WRONG_CLEAR = 2`
+the entry leaves the book. One correct answer is what a lucky guess looks like too. Note the
+shape this gives: a drill asks each entry once, so the countdown can only be completed in a
+second sitting — that is intended, and the first version of the smoke test failed because it
+assumed otherwise.
+
+### 12d. Two tools, because this machine has no `node`
+
+CI runs `tools/validate-data.js` and stays authoritative. Locally there has never been a
+`node` binary (§3 step 7, §9), which left "click around and see" as the only local check.
+Both new tools drive a real browser instead, headless:
+
+```
+python -m http.server 8137
+msedge --headless=new --virtual-time-budget=30000 --dump-dom \
+  "http://localhost:8137/tools/check-in-browser.html?app=biochemie_pro"     # data
+msedge --headless=new --dump-dom \
+  "http://localhost:8137/tools/smoke-wrongbook.html?app=biochemie_pro"      # interaction
+```
+
+- `tools/check-in-browser.html` — a twin of the node validator: required keys, duplicate ids,
+  mcq answer indices, every `optionRefs` target resolving, every bank key matching a node. It
+  reads the app's own `index.html` for the file list, so an untagged data file shows up.
+- `tools/smoke-wrongbook.html` — drives the real app in a same-origin iframe and clicks
+  through quiz → wrong answer → book → drill → countdown → removal, asserting on the DOM and
+  on `localStorage`.
+
+**Kill stray headless browsers between runs.** A second launch against a `--user-data-dir`
+that a previous (possibly hung) process still holds attaches to that instance and exits
+immediately, producing a zero-byte dump. That looks exactly like "the page is broken" or
+"the data got too big", and it cost an hour of chasing the wrong cause here — the fix is
+`taskkill //F //IM msedge.exe` and a fresh profile directory, not a change to the page.
+
+Two more mechanics worth knowing before editing either, both learned the hard way:
+**`--dump-dom` prints at the outer load event**, so a test deferred by even one `rAF` is
+dumped before it runs — the smoke test therefore runs synchronously inside the iframe's load
+handler. And **`--virtual-time-budget` hangs on the app page** (the speech-synthesis handlers
+keep the queue from draining), so it is used only on the data validator, which loads no
+`app.js`. `check-in-browser.html` does need it, since it injects its script tags after a
+fetch and they would otherwise not have run by dump time.
+
+### 12e. What was found while writing the questions, and is NOT fixed
+
+The drafting agents read every node closely, which is the most thorough pass this content has
+had since it was written. Two findings stand out:
+
+1. **`mustKnow` in chapter 8 is systematically misaligned.** `8-5` (biological membranes)
+   carries bile-acid and gallbladder text; `8-3-4` (the 8-acetyl-CoA balance) carries "Step IV
+   dehydration"; `8-3-5` (phosphatidic acid) carries "Step V reduces the double bond" — the
+   whole `8-3-3` step sequence has slid. Some also assert facts no node in the chapter
+   contains (a carnitine shuttle the chapter's own `lehNotes` says never appears in the Czech
+   text; ATP-dependent flippases where `8-5-2-1` says flip-flop's significance is undefined).
+   A word-overlap scan of all 207 nodes puts 15 of the 17 worst offenders in chapter 8
+   (chapter mean 0.48 against 0.74–0.78 for chapters 5, 6, 9, 10), and three were confirmed by
+   reading. **The scan has false positives** — `2-1-3` and `7-2-3` score low purely on
+   vocabulary and are correct — so it locates the problem, it does not license a bulk edit.
+   `mustKnow` is always visible in the UI, so this is the highest-visibility wrong text in the
+   app. The page images are still in `extracted_full_ch8/`; fixing it means rewriting those
+   ~20 lines against the scans, not paraphrasing what is there.
+2. **Chapter 7 and 8 nodes where the book itself does not close.** `8-3-8` gives GPP + IPP as
+   producing both the C15 FPP and the C20 GGPP; `8-5-3-1` defines simple diffusion as needing
+   no membrane protein and then lists protein channels as one of its routes; `7-4-2`'s general
+   GAG rule (acetylated amino sugar, 1→4) does not fit its own heparin entry. No bank question
+   is built on any of them — they are flagged for the verification pass chapters 7 and 8 have
+   still never had (§0).

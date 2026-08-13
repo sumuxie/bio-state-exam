@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>checking…</title>
+<!--
+  Interaction smoke test: the quiz -> wrong-answer book path, and the notebook.
+
+  WHY IT EXISTS: there is no `node` and no browser-driver tool in the
+  environment this project is worked on from, so the only way to prove that a
+  click actually does what the code says is to drive the real app from a page
+  in the same origin and read the result out of the DOM. The data validator
+  (tools/check-in-browser.html) cannot see any of this: every bug it misses
+  here is a wiring bug — a listener never attached, a render that throws, a
+  localStorage key written under a different name.
+
+  USE:
+      python -m http.server 8137          # from the repo root
+      msedge --headless=new --virtual-time-budget=30000 \
+        --dump-dom "http://localhost:8137/tools/smoke-app.html?app=biochemie_pro"
+      then grep the dumped DOM for RESULT.
+
+  It clears `biopro.*` localStorage for this origin before running. Do not
+  point it at an origin whose progress you care about.
+-->
+<style>
+  body { font: 14px ui-monospace, Menlo, monospace; background: #0e1117; color: #e6edf3; padding: 1.5rem; }
+  iframe { width: 1200px; height: 900px; border: 1px solid #262d38; opacity: 0.35; }
+  .ok { color: #3fb950; } .fail { color: #f85149; } .note { color: #8b96a5; }
+  pre { white-space: pre-wrap; line-height: 1.7; }
+</style>
+</head>
+<body>
+<h1 id="head">checking…</h1>
+<pre id="out"></pre>
+<iframe id="app"></iframe>
+<script>
+(function () {
+  const app = new URLSearchParams(location.search).get('app') || 'biochemie_pro';
+  const lines = [];
+  let failed = 0;
+
+  function check(name, cond, detail) {
+    if (!cond) failed++;
+    lines.push((cond ? 'PASS  ' : 'FAIL  ') + name + (detail ? '   ' + detail : ''));
+  }
+  function note(s) { lines.push('      ' + s); }
+
+  function finish(err) {
+    if (err) { failed++; lines.push('FAIL  threw: ' + (err && err.message ? err.message : err)); }
+    const head = document.getElementById('head');
+    head.textContent = 'RESULT ' + (failed ? 'FAIL ' + failed : 'OK') + ' — ' + app;
+    head.className = failed ? 'fail' : 'ok';
+    document.title = 'RESULT ' + (failed ? 'FAIL ' + failed : 'OK');
+    document.getElementById('out').textContent = lines.join('\n');
+  }
+
+  // Everything the app persists lives under this prefix; clearing it makes the
+  // run independent of whatever state the last run left behind.
+  Object.keys(localStorage).filter((k) => k.indexOf('biopro.') === 0)
+    .forEach((k) => localStorage.removeItem(k));
+
+  const frame = document.getElementById('app');
+  frame.src = '../' + app + '/index.html';
+
+  /* Runs SYNCHRONOUSLY inside the iframe's load handler, and that is load-
+     bearing for the headless run: `--dump-dom` prints the DOM at the outer
+     window's load event, which fires only after the iframe has loaded, so a
+     test deferred by even one rAF or timeout would be dumped before it ran.
+     Deferring it also hung the browser outright -- with a virtual-time budget
+     the speech-synthesis handlers the app installs keep the queue from ever
+     draining, so the dump never arrived at all. */
+  frame.addEventListener('load', () => {
+    try { run(frame.contentDocument, frame.contentWindow); } catch (e) { finish(e); }
+  });
+
+  function run(d, w) {
+    const $ = (s) => d.querySelector(s);
+    const $$ = (s) => Array.from(d.querySelectorAll(s));
+
+    check('app rendered a sidebar', $$('.topic-item').length > 0, $$('.topic-item').length + ' topics');
+    check('wrongbook tab exists', !!d.querySelector('.mode-btn[data-mode="wrong"]'));
+    check('wrongbook panel exists', !!$('#panel-wrong'));
+    check('wrongbook badge starts hidden', $('#wrong-count') && $('#wrong-count').hidden);
+
+    // ---- empty state
+    d.querySelector('.mode-btn[data-mode="wrong"]').click();
+    check('empty wrongbook says so', /错题本是空的|Nothing here yet/.test($('#wrong-body').textContent));
+
+    // ---- answer questions wrong until we have two entries
+    d.querySelector('.mode-btn[data-mode="quiz"]').click();
+    $('#quiz-scope').value = 'all';
+    $('#quiz-start').click();
+    check('quiz started', !$('#quiz-stage').hidden);
+
+    // Keep going until there is at least one WRONG MCQ as well as two wrong
+    // answers overall. The question order is shuffled, so a run can otherwise
+    // draw two written questions and leave every option-rendering assertion
+    // below untested — which looked like three failures rather than like
+    // missing coverage.
+    let asked = 0, wrongDone = 0, wrongMcq = 0, hooksSeen = 0, fillerOnly = 0;
+    while ((wrongDone < 2 || wrongMcq < 1) && asked < 40) {
+      asked++;
+      const opts = $$('#qcard .option');
+      if (!opts.length) {                     // a written question
+        if ($('#short-check')) {
+          // Submitting nothing matches no key term, so this is a wrong answer
+          // and must be counted: it lands in the book like any other.
+          $('#short-check').click();
+          const sfb = $('#feedback');
+          if (sfb && sfb.classList.contains('bad')) wrongDone++;
+        }
+        const next = $('#q-next');
+        if (next) next.click(); else break;
+        continue;
+      }
+      // Pick an option, prefer one that is not the answer. The answer index is
+      // not exposed, so this clicks the first one and reads the verdict back
+      // off the feedback element.
+      opts[0].click();
+      const fb = $('#feedback');
+      const wasWrong = fb && fb.classList.contains('bad');
+      if (wasWrong) {
+        wrongDone++; wrongMcq++;
+        if (fb.querySelector('.opt-hooks')) hooksSeen++;
+        if (fb.querySelector('.opt-hooks') && !fb.querySelector('.hook-note, .hook-link')) fillerOnly++;
+        check('wrong answer says it was filed', /错题本|wrong-answer book/.test(fb.textContent));
+      }
+      const next = $('#q-next');
+      if (next) next.click(); else break;
+    }
+    check('produced at least one wrong answer', wrongDone > 0, 'after ' + asked + ' questions');
+    note('option-hook panels rendered on ' + hooksSeen + ' of ' + wrongDone
+       + ' wrong answers (' + fillerOnly + ' were all-filler)');
+
+    // ---- persistence
+    const stored = JSON.parse(localStorage.getItem('biopro.wrong') || '{}');
+    const keys = Object.keys(stored);
+    check('entries persisted to localStorage', keys.length === wrongDone, keys.length + ' stored');
+    const first = stored[keys[0]];
+    check('entry carries the question, not a pointer', !!(first && first.q && (first.q.q_en || first.q.q_cn)));
+    // An mcq entry must remember the option; a written one remembers the text,
+    // which is legitimately empty when nothing was typed — so the two types are
+    // asserted separately rather than with one `chose || typed` test that a
+    // blank written answer fails for no good reason.
+    const mcqEntry = keys.map((k) => stored[k]).filter((e) => e.q.type === 'mcq')[0];
+    const shortEntry = keys.map((k) => stored[k]).filter((e) => e.q.type !== 'mcq')[0];
+    if (mcqEntry) check('mcq entry records which option was picked', typeof mcqEntry.chose === 'number');
+    else note('no mcq entry in this run — option recording not exercised');
+    if (shortEntry) check('written entry records what was typed', typeof shortEntry.typed === 'string');
+    check('badge shows the count', $('#wrong-count').textContent === String(keys.length),
+          'badge "' + $('#wrong-count').textContent + '"');
+
+    // ---- the book itself
+    d.querySelector('.mode-btn[data-mode="wrong"]').click();
+    const entries = $$('#wrong-body .wb-entry');
+    check('book lists every entry', entries.length === keys.length, entries.length + ' rendered');
+    check('correct option is marked', $$('#wrong-body .wb-opt.is-answer').length >= 1);
+    check('the option you picked is marked', $$('#wrong-body .wb-opt.is-pick').length >= 1);
+    check('wrong options carry an annotation or an explicit "nothing here"',
+          $$('#wrong-body .wb-opt .hook-note, #wrong-body .wb-opt .hook-link, #wrong-body .wb-opt .hook-none').length >= 1);
+
+    // ---- drill
+    $('#wrong-drill').click();
+    check('drill opens the quiz', d.querySelector('#panel-quiz').classList.contains('active'));
+    check('drill asks only the missed questions',
+          ($('#quiz-count').textContent || '').trim().endsWith('/ ' + keys.length),
+          'counter "' + ($('#quiz-count').textContent || '').trim() + '"');
+
+    /* ---- getting one right counts it down, twice removes it.
+       The answer index is not reachable from outside the app's IIFE, but the
+       wrongbook stores the whole question object -- answer included -- so the
+       right option can be found by matching the option TEXT against
+       q.options[q.answer]. Reading it back out of localStorage also proves the
+       stored copy is complete enough to re-ask the question, which is the
+       reason it is stored whole rather than as a pointer. */
+    function answerCurrentCorrectly() {
+      const book = JSON.parse(localStorage.getItem('biopro.wrong') || '{}');
+      const opts = $$('#qcard .option');
+      if (!opts.length) {
+        // A written question: it is graded on key terms, and the stored entry
+        // carries the accept list, so typing those is the correct answer.
+        const ta = $('#short-input');
+        if (!ta) return false;
+        const qtext = ($('.q-text') || {}).textContent || '';
+        const e = Object.keys(book).map((k) => book[k])
+          .filter((x) => x.q.accept && qtext.indexOf((x.q.q_en || '').slice(0, 30)) !== -1)[0];
+        if (!e) return false;
+        ta.value = e.q.accept.join(' ');
+        $('#short-check').click();
+        const fb = $('#feedback');
+        return !!(fb && fb.classList.contains('ok'));
+      }
+      const texts = opts.map((o) => o.querySelector('.opt-text').textContent.trim());
+      const hit = Object.keys(book).map((k) => book[k]).filter((e) => {
+        const o = (e.q && e.q.options) || [];
+        return o.length === texts.length && o.every((t, i) => texts.indexOf(String(t).trim()) !== -1);
+      })[0];
+      if (!hit) return false;
+      const want = String(hit.q.options[hit.q.answer]).trim();
+      const idx = texts.indexOf(want);
+      if (idx === -1) return false;
+      opts[idx].click();
+      const fb = $('#feedback');
+      return !!(fb && fb.classList.contains('ok'));
+    }
+
+    const before = JSON.parse(localStorage.getItem('biopro.wrong') || '{}');
+    const beforeN = Object.keys(before).length;
+    const got = answerCurrentCorrectly();
+    check('the stored copy is enough to re-ask and grade the question', got);
+    if (got) {
+      const after = JSON.parse(localStorage.getItem('biopro.wrong') || '{}');
+      const counted = Object.keys(after).some((k) => after[k].ok >= 1);
+      check('a correct answer counts the entry down (ok >= 1)', counted,
+            'entries ' + beforeN + ' -> ' + Object.keys(after).length);
+
+      /* Second correct answer: it has to come from a SECOND pass. A drill asks
+         each entry once, so the countdown can never reach WRONG_CLEAR inside
+         one run -- which is the intended shape (two sittings, not two clicks),
+         and the first version of this test failed for exactly that reason
+         rather than because anything was broken. Here the second pass is the
+         single-entry "try it again" button in the book. */
+      const target = Object.keys(after).filter((k) => after[k].ok >= 1)[0];
+      d.querySelector('.mode-btn[data-mode="wrong"]').click();
+      const entryEl = Array.from(d.querySelectorAll('#wrong-body .wb-entry'))
+        .filter((el) => el.dataset.key === target)[0];
+      check('the counted-down entry is still listed', !!entryEl);
+      if (entryEl) {
+        entryEl.querySelector('.wb-drill-one').click();
+        const again = answerCurrentCorrectly();
+        const final = JSON.parse(localStorage.getItem('biopro.wrong') || '{}');
+        check('a second correct answer removes it from the book', again && !final[target],
+              'entries left: ' + Object.keys(final).length);
+      }
+    } else {
+      note('could not force a correct answer in the drill — countdown not exercised');
+    }
+
+    // ---- clearing
+    d.querySelector('.mode-btn[data-mode="wrong"]').click();
+    const forget = $('#wrong-body .wb-forget');
+    if (forget) {
+      const n0 = Object.keys(JSON.parse(localStorage.getItem('biopro.wrong') || '{}')).length;
+      forget.click();
+      const n1 = Object.keys(JSON.parse(localStorage.getItem('biopro.wrong') || '{}')).length;
+      check('Remove drops exactly one entry', n1 === n0 - 1, n0 + ' -> ' + n1);
+    } else {
+      note('nothing left to remove — Remove button not exercised');
+    }
+
+    /* ---- notebook. Saving is debounced by 400 ms while typing, which a
+       synchronous test cannot wait for — but `blur` forces the save, and that
+       is also the path a real reader takes every time they switch chapter, so
+       testing it is not a workaround. */
+    d.querySelector('.mode-btn[data-mode="notes"]').click();
+    const sel = $('#note-chapter');
+    check('notebook has a chapter for every chapter that exists', sel && sel.options.length >= 11,
+          sel ? sel.options.length + ' chapters' : 'no select');
+    check('notebook starts empty', $('#note-body').value === '');
+
+    const firstKey = sel.value;
+    const typed = 'smoke test note ' + $$('.topic-item').length;
+    $('#note-body').value = typed;
+    $('#note-body').dispatchEvent(new Event('input', { bubbles: true }));
+    $('#note-body').dispatchEvent(new Event('blur', { bubbles: true }));
+    const saved = JSON.parse(localStorage.getItem('biopro.notes') || '{}');
+    check('typing a note persists it', saved[firstKey] === typed, 'key ' + firstKey);
+    check('the notebook badge counts written chapters', $('#note-count').textContent === '1',
+          'badge "' + $('#note-count').textContent + '"');
+    check('the written chapter is listed in the index', /smoke test note/.test($('#note-index').textContent));
+
+    // Switching chapter must not carry the text across, and must bring it back.
+    sel.selectedIndex = (sel.selectedIndex + 1) % sel.options.length;
+    sel.dispatchEvent(new Event('change', { bubbles: true }));
+    check('a different chapter is a different page', $('#note-body').value === '');
+    sel.value = firstKey;
+    sel.dispatchEvent(new Event('change', { bubbles: true }));
+    check('coming back restores the note', $('#note-body').value === typed);
+
+    // Emptying a note removes the key rather than storing "" forever.
+    $('#note-body').value = '';
+    $('#note-body').dispatchEvent(new Event('blur', { bubbles: true }));
+    const after = JSON.parse(localStorage.getItem('biopro.notes') || '{}');
+    check('clearing a note drops it from storage', !(firstKey in after));
+
+    finish();
+  }
+})();
+</script>
+</body>
+</html>

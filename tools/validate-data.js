@@ -88,13 +88,61 @@ function loadApp(app, files) {
   if (!global.window.BIOCHEM || !Array.isArray(global.window.BIOCHEM.topics)) {
     throw new Error(app + ': window.BIOCHEM.topics was never created');
   }
-  return global.window.BIOCHEM.topics;
+  return { topics: global.window.BIOCHEM.topics, bank: global.window.BIOCHEM.bank || {} };
+}
+
+/* One question item, wherever it came from -- a node's own `quiz` array or the
+   `bank` layer. Split out of validate() when bank arrived, because the two
+   sources must be held to exactly the same bar: a bank item is asked in the
+   same quiz, in the same UI, and a reader cannot tell them apart. */
+function checkQuestion(q, where, byId, problems) {
+  if (!q.q_en || !q.q_cn) problems.push(where + ' missing a language');
+  if (q.type === 'mcq') {
+    if (!Array.isArray(q.options) || typeof q.answer !== 'number'
+        || q.answer < 0 || q.answer >= q.options.length) {
+      problems.push(where + ' bad mcq answer index');
+      return;                                   // index checks below would be meaningless
+    }
+    if (!q.why_en || !q.why_cn) problems.push(where + ' mcq missing why_en/why_cn');
+
+    /* optionRefs / optionNotes annotate the WRONG options: what each one is
+       really about, and where in the course to go and read it. Both are keyed
+       by option index, and both fail silently when the key is wrong -- the
+       annotation simply never renders and the question looks unannotated. So
+       every key is checked to be a real index, and every ref to be a real node. */
+    const n = q.options.length;
+    Object.keys(q.optionRefs || {}).forEach((k) => {
+      const i = Number(k);
+      if (!Number.isInteger(i) || i < 0 || i >= n) {
+        problems.push(where + ' optionRefs key ' + JSON.stringify(k) + ' is not an option index');
+      } else if (i === q.answer) {
+        problems.push(where + ' optionRefs annotates the correct option (' + i + ')');
+      }
+      if (!byId[q.optionRefs[k]]) {
+        problems.push(where + ' optionRefs[' + k + '] points at unknown node ' + q.optionRefs[k]);
+      }
+    });
+    Object.keys(q.optionNotes || {}).forEach((k) => {
+      const i = Number(k);
+      if (!Number.isInteger(i) || i < 0 || i >= n) {
+        problems.push(where + ' optionNotes key ' + JSON.stringify(k) + ' is not an option index');
+      } else if (i === q.answer) {
+        problems.push(where + ' optionNotes annotates the correct option (' + i + ')');
+      }
+      const note = q.optionNotes[k];
+      if (!note || !note.en || !note.cn) problems.push(where + ' optionNotes[' + k + '] missing a language');
+    });
+  } else if (!q.answer_en || !Array.isArray(q.accept) || !q.accept.length) {
+    problems.push(where + ' written question missing model answer or key terms');
+  }
 }
 
 function validate(app) {
   const wiring = dataFiles(app);
   const problems = wiring.problems.slice();
-  const T = loadApp(app, wiring.files);
+  const loaded = loadApp(app, wiring.files);
+  const T = loaded.topics;
+  const BANK = loaded.bank;
   if (!T.length) problems.push('no topics loaded');
 
   const byId = {};
@@ -121,17 +169,7 @@ function validate(app) {
     (t.terms || []).forEach((m, i) => {
       if (!m.en || !m.cn || !m.def_en || !m.def_cn) problems.push(t.id + ': terms[' + i + '] incomplete');
     });
-    (t.quiz || []).forEach((q, i) => {
-      if (!q.q_en || !q.q_cn) problems.push(t.id + ': quiz[' + i + '] missing a language');
-      if (q.type === 'mcq') {
-        if (!Array.isArray(q.options) || typeof q.answer !== 'number'
-            || q.answer < 0 || q.answer >= q.options.length) {
-          problems.push(t.id + ': quiz[' + i + '] bad mcq answer index');
-        }
-      } else if (!q.answer_en || !Array.isArray(q.accept) || !q.accept.length) {
-        problems.push(t.id + ': quiz[' + i + '] written question missing model answer or key terms');
-      }
-    });
+    (t.quiz || []).forEach((q, i) => checkQuestion(q, t.id + ': quiz[' + i + ']', byId, problems));
     if (t.oral && (!t.oral.model_en || !Array.isArray(t.oral.checklist) || !t.oral.checklist.length)) {
       problems.push(t.id + ': bad oral block');
     }
@@ -150,6 +188,32 @@ function validate(app) {
       }
       if (!n.node) problems.push(where + 'missing node (which Lehninger node carries the detail)');
       else if (!byId[n.node]) problems.push(where + 'points at unknown node ' + n.node);
+    });
+  });
+
+  /* The bank layer (BANK_SPEC.md). Questions attached to a node by id from
+     data/bank_*.js instead of written inside it, so the page-verified ch*.js
+     files are never reopened to append a question.
+
+     A key that matches no node is the failure this arrangement invites and it
+     is invisible at run time: the file loads, the questions attach to nothing,
+     the count in the Quiz tab is simply lower than the author expected. app.js
+     surfaces orphans in the UI; here they are an outright failure, because CI
+     is the place to catch a typo before it ships. */
+  let bankItems = 0;
+  Object.keys(BANK).forEach((id) => {
+    if (!byId[id]) {
+      problems.push('bank: key ' + id + ' matches no topic node');
+      return;
+    }
+    const arr = BANK[id];
+    if (!Array.isArray(arr) || !arr.length) {
+      problems.push('bank: ' + id + ' is not a non-empty array');
+      return;
+    }
+    arr.forEach((q, i) => {
+      bankItems++;
+      checkQuestion(q, 'bank ' + id + '[' + i + ']', byId, problems);
     });
   });
 
@@ -221,7 +285,8 @@ function validate(app) {
     + (entityCards.length ? ', ' + entityCards.length + ' entity cards' : '') + ')'
     + ', cz book pages ' + Math.min.apply(null, allPages) + '-' + Math.max.apply(null, allPages)
     + ', ' + Object.keys(keys).length + ' topicKeys'
-    + ', ' + terms + ' terms, ' + qs + ' questions');
+    + ', ' + terms + ' terms, ' + qs + ' core questions'
+    + (bankItems ? ' + ' + bankItems + ' bank on ' + Object.keys(BANK).length + ' nodes' : ''));
   return true;
 }
 

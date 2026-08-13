@@ -10,6 +10,33 @@
 
   const TOPICS = (window.BIOCHEM && window.BIOCHEM.topics) || [];
 
+  /* ------------------------------------------------------------- bank layer
+     The second question source. Bank items live in their own `data/bank_*.js`
+     files and attach to a node BY ID rather than being written inside it, so
+     the calibrated `ch*.js` files -- each verified page by page against the
+     book scans -- are never reopened just to append a question. A bank file is
+     additive and can be deleted without leaving a mark on verified content.
+     See BANK_SPEC.md.
+
+     A key that matches no node is the failure mode this arrangement invites,
+     and it is silent: the questions load, attach to nothing, and never appear.
+     So orphans are collected here and reported in the Quiz tab rather than
+     only in the console, per the project's no-silent-failure rule. */
+  const BANK_ORPHANS = [];
+  (function attachBank() {
+    const bank = (window.BIOCHEM && window.BIOCHEM.bank) || {};
+    const byId = {};
+    TOPICS.forEach((t) => { byId[t.id] = t; });
+    Object.keys(bank).forEach((id) => {
+      const t = byId[id];
+      if (!t) { BANK_ORPHANS.push(id); return; }
+      t.bank = (t.bank || []).concat(bank[id]);
+    });
+    if (BANK_ORPHANS.length) {
+      console.warn('bank: no topic node for id(s): ' + BANK_ORPHANS.join(', '));
+    }
+  })();
+
   /* Chapter numbering is BOOK-LOCAL: chapter 3 is Enzymy in the Czech textbook and
      Amino Acids, Peptides, and Proteins in Lehninger. Keying this map on the number
      alone filed every Lehninger node under a Czech chapter name, and any node with
@@ -232,13 +259,30 @@
     topicId: null,
     filter:  '',
     nav:     store.get('nav', 'book'),    // 'book' = linear reading order, 'topic' = by topicKey
-    qsrc:    store.get('qsrc', 'core'),   // 'core' | 'bank' | 'terms' -- see allQuestions()
+    qsrc:    store.get('qsrc', 'bank'),   // 'core' | 'bank' | 'terms' -- see allQuestions()
     voice:   store.get('voice', {}),      // 'en' | 'zh' | 'cs' -> chosen voiceURI
     rate:    store.get('rate', 0.94),     // playback speed, shared by both languages
     marks:   store.get('marks', {}),      // markKey -> pen colour id; see MARKING below
     pen:     store.get('pen', 'y'),       // which colour a NEW star gets
-    onlyMarked: store.get('onlyMarked', false)  // 只看必背; see ONLY-MARKED below
+    onlyMarked: store.get('onlyMarked', false), // 只看必背; see ONLY-MARKED below
+    wrong:   store.get('wrong', {}),      // wrongKey -> entry; see WRONGBOOK below
+    notes:   store.get('notes', {})       // "book:chapter" -> the reader's own text
   };
+
+  /* The `bank` level was empty for months, so every browser that used this app
+     before the bank files landed has 'core' sitting in localStorage -- not as a
+     preference between core and bank, but as the only thing there was to store.
+     Left alone, that stale value hides all 638 bank questions behind a button
+     nobody has a reason to press, and the Quiz tab goes on reporting the old
+     count as though nothing had been added. It did exactly that, and it read as
+     the new questions not having loaded.
+
+     So promote it once, and record that the promotion happened -- a later
+     deliberate switch back to `core` is then a real choice and survives. */
+  if (!store.get('qsrcPromoted', false)) {
+    if (state.qsrc === 'core') { state.qsrc = 'bank'; store.set('qsrc', state.qsrc); }
+    store.set('qsrcPromoted', true);
+  }
 
   /* ---------------------------------------------------------------- helpers */
   const $  = (sel) => document.querySelector(sel);
@@ -712,8 +756,9 @@
      HANDOFF_from_PESB_biochemie.md A6/A7):
 
        core   — `quiz`, hand-written per node. Always on.
-       bank   — `bank`, hand-written extras. NO node carries one yet, so this
-                level ships inert and simply equals `core` until data exists.
+       bank   — `bank`, hand-written extras, attached by id from
+                `data/bank_*.js` rather than written inside the node. See the
+                bank layer at the top of this file and BANK_SPEC.md.
        terms  — generated at run time from the `terms` arrays.
 
      The generated set is deliberately NOT written into the data files. It
@@ -997,6 +1042,8 @@
     $$('.mode-btn').forEach((b) => b.classList.toggle('active', b.dataset.mode === mode));
     $$('.panel').forEach((p) => p.classList.toggle('active', p.id === 'panel-' + mode));
     if (mode === 'cards') renderCard();
+    if (mode === 'wrong') renderWrongbook();
+    if (mode === 'notes') renderNotes();
     if (mode === 'oral' && !$('#oral-stage').innerHTML.trim()) nextOral();
     closeSidebarOnMobile();
   }
@@ -1446,14 +1493,26 @@
       + `core ${core}`
       + (bank ? ` · bank ${bank}` : ` · bank <em>no extras written yet</em>`)
       + ` · generated from glossary ${gen}`
-      + `. Tap the source button to cycle.`;
+      + `. Tap the source button to cycle.`
+      + (BANK_ORPHANS.length
+          ? ` <span class="warn">⚠ ${BANK_ORPHANS.length} bank key(s) match no topic and are not being`
+            + ` asked: ${esc(BANK_ORPHANS.join(', '))}</span>`
+          : '');
   }
 
   let quizItems = [], quizIndex = 0, quizCorrect = 0, quizAnswered = false, quizWrong = [];
+  let quizIsDrill = false;   // a wrong-answer drill must not overwrite a topic's best score
 
-  function startQuiz() {
+  /* `items` is the wrong-answer drill handing in its own list. The click
+     handler passes an Event, so the argument is type-checked rather than
+     truth-checked -- an Event is truthy and would have silently emptied the
+     quiz. */
+  function startQuiz(items) {
     const scope = $('#quiz-scope').value;
-    quizItems = shuffle(allQuestions().filter((item) => inScope(item.topic, scope)));
+    quizIsDrill = Array.isArray(items);
+    quizItems = quizIsDrill
+      ? shuffle(items.slice())
+      : shuffle(allQuestions().filter((item) => inScope(item.topic, scope)));
     quizIndex = 0; quizCorrect = 0; quizWrong = [];
     $('#quiz-intro').hidden = true;
     $('#quiz-result').hidden = true;
@@ -1510,12 +1569,160 @@
     $('#q-next').textContent = quizIndex + 1 >= quizItems.length ? 'See results →' : 'Next →';
   }
 
+  /* ------------------------------------------------------- OPTION HOOKS
+     Ported from pesbpro. Wrong options are not all filler, and they fail in
+     two different ways. `optionRefs` handles the ones that name a concept the
+     course teaches in another node: the distractor becomes a link to go and
+     revise it. `optionNotes` handles the ones that encode a real misconception
+     -- two things swapped, a direction reversed, a condition dropped -- where
+     the useful thing is to name the confusion, so it carries bilingual prose
+     instead of a pointer. An option can have both, or neither.
+
+     Neither is not a bug: some distractors correspond to nothing worth
+     chasing, and saying so marks the question as one that wants rewriting
+     rather than annotating. BANK_SPEC.md asks new questions to keep those to
+     at most one per item. */
+
+  // Same language rule as bi(), but emitting spans: these sit inside a
+  // <button>, where block-level children would be invalid HTML.
+  function hookTitle(t) {
+    let s = '';
+    if (state.lang !== 'cn') s += `<span class="t-en">${esc(t.enTitle || '')}</span>`;
+    if (state.lang !== 'en') s += `<span class="t-cn">${esc(t.cnTitle || t.enTitle || '')}</span>`;
+    return s;
+  }
+
+  // Entity cards carry no section number by design, so the mono prefix falls
+  // back to the book tag rather than printing "undefined".
+  function hookSec(t) {
+    return isEntity(t) ? 'CARD' : (t.section || BOOK_TITLES[bookOf(t)].short);
+  }
+
+  const HOOK_FILLER = {
+    en: 'Nothing in the course corresponds to this one.',
+    cn: '课程里没有对应的内容，这是个凑数选项。'
+  };
+  const HOOK_NONE = {
+    en: 'None of the wrong options here corresponds to anything the course teaches, '
+      + 'so there is nothing to go and revise.',
+    cn: '这道题的错误选项都不对应课程里的任何内容，没有需要回头复习的东西。'
+  };
+
+  function hookLinkHtml(t) {
+    return `<button class="link-btn hook-link" data-id="${esc(t.id)}">
+              <span class="hook-sec">${esc(hookSec(t))}</span>${hookTitle(t)}
+            </button>`;
+  }
+
+  function optionHooks(q, generated) {
+    // Term-drill questions are generated and their distractors are other
+    // glossary entries picked mechanically, so there is no authored intent to
+    // report and the panel is suppressed.
+    //
+    // Everything else ALWAYS gets a panel, including questions where every
+    // distractor is filler. "There is nothing here to chase" is a real answer
+    // to "what were the other options about" -- and showing nothing made the
+    // feature look broken, because the questions you get right are
+    // disproportionately the ones whose distractors are obvious filler.
+    if (generated || q.type !== 'mcq') return '';
+    const refs = q.optionRefs || {};
+    const notes = q.optionNotes || {};
+    const rows = (q.options || [])
+      .map((opt, i) => ({ i: i, key: String.fromCharCode(65 + i),
+                          t: topicById(refs[i]), note: notes[i] }))
+      .filter((r) => r.i !== q.answer);
+    if (!rows.length) return '';
+
+    const body = rows.some((r) => r.t || r.note)
+      ? rows.map((r) => `<div class="hook">
+            <span class="opt-key">${r.key}</span>
+            <div class="hook-body">
+              ${r.t ? hookLinkHtml(r.t) : ''}
+              ${r.note ? `<div class="hook-note">${bi(r.note.en, r.note.cn)}</div>` : ''}
+              ${!r.t && !r.note ? `<div class="hook-none">${bi(HOOK_FILLER.en, HOOK_FILLER.cn)}</div>` : ''}
+            </div>
+          </div>`).join('')
+      : `<div class="hook-none">${bi(HOOK_NONE.en, HOOK_NONE.cn)}</div>`;
+
+    return `<div class="opt-hooks">
+      <div class="hooks-label">About the other options · 其他选项讲的是什么</div>
+      ${body}
+    </div>`;
+  }
+
+  // Following a hook must not cost you the quiz: setMode only toggles panel
+  // visibility, and quizItems/quizIndex live outside the DOM, so switching back
+  // to Quiz returns to this same question with its answer still revealed.
+  function wireHookLinks(root) {
+    root.querySelectorAll('.hook-link').forEach((b) =>
+      b.addEventListener('click', () => {
+        state.topicId = b.dataset.id;
+        setMode('study'); renderStudy(); renderSidebar();
+      }));
+  }
+
+  /* ---------------------------------------------------------- WRONGBOOK 错题本
+     A question you got wrong is worth more than the score it cost you, and a
+     score is all the app used to keep: `quizWrong` lived for one quiz run and
+     died with it.
+
+     What is stored is the whole question object, not a pointer to it. Three
+     reasons: generated term questions have no stable identity to point at,
+     their options are shuffled at generation time so a stored index would mean
+     nothing later, and a stored copy keeps the entry renderable even if the
+     data file behind it is edited. The cost is that an entry can go stale
+     against a rewritten node -- acceptable, because the entry still carries a
+     complete, self-consistent record of what was asked and what was answered.
+
+     `ok` counts CONSECUTIVE later correct answers and any wrong answer resets
+     it to zero. At WRONG_CLEAR the entry leaves the book: getting it right
+     once is what a lucky guess looks like too. */
+  const WRONG_CLEAR = 2;
+
+  function today() { return new Date().toISOString().slice(0, 10); }
+
+  function wrongKey(topic, q) {
+    return topic.id + '::' + (q.q_en || q.q_cn || '');
+  }
+
+  function wrongCount() { return Object.keys(state.wrong).length; }
+
+  function recordWrong(topic, q, generated, chose, typed) {
+    const k = wrongKey(topic, q);
+    const prev = state.wrong[k];
+    state.wrong[k] = {
+      topicId: topic.id,
+      q: q,
+      gen: !!generated,
+      chose: typeof chose === 'number' ? chose : null,
+      typed: typed || '',
+      n: (prev ? prev.n : 0) + 1,          // times wrong, all time
+      ok: 0,                                // consecutive correct since
+      first: prev ? prev.first : today(),
+      last: today()
+    };
+    store.set('wrong', state.wrong);
+    renderWrongBadge();
+  }
+
+  function recordRight(topic, q) {
+    const k = wrongKey(topic, q);
+    const e = state.wrong[k];
+    if (!e) return;
+    e.ok = (e.ok || 0) + 1;
+    e.last = today();
+    if (e.ok >= WRONG_CLEAR) delete state.wrong[k];
+    store.set('wrong', state.wrong);
+    renderWrongBadge();
+  }
+
   function answerMcq(choice) {
     if (quizAnswered) return;
     quizAnswered = true;
-    const { topic, q } = quizItems[quizIndex];
+    const { topic, q, generated } = quizItems[quizIndex];
     const ok = choice === q.answer;
-    if (ok) quizCorrect++; else quizWrong.push({ topic, q });
+    if (ok) quizCorrect++; else quizWrong.push({ topic, q, generated });
+    if (ok) recordRight(topic, q); else recordWrong(topic, q, generated, choice, '');
 
     $$('#qcard .option').forEach((btn) => {
       const i = parseInt(btn.dataset.i, 10);
@@ -1527,7 +1734,10 @@
     const fb = $('#feedback');
     fb.hidden = false;
     fb.className = 'feedback ' + (ok ? 'ok' : 'bad');
-    fb.innerHTML = `<strong>${ok ? '✓ Correct' : '✕ Not quite'}</strong>${bi(q.why_en, q.why_cn)}`;
+    fb.innerHTML = `<strong>${ok ? '✓ Correct' : '✕ Not quite'}</strong>${bi(q.why_en, q.why_cn)}`
+                 + optionHooks(q, generated)
+                 + (ok ? '' : `<div class="wb-added">✕ Added to the wrong-answer book · 已加入错题本</div>`);
+    wireHookLinks(fb);
     $('#quiz-score').textContent = `${quizCorrect} correct`;
     revealNext();
     wireSayButtons($('#qcard'));
@@ -1537,12 +1747,14 @@
   function answerShort() {
     if (quizAnswered) return;
     quizAnswered = true;
-    const { topic, q } = quizItems[quizIndex];
-    const typed = ($('#short-input').value || '').toLowerCase();
+    const { topic, q, generated } = quizItems[quizIndex];
+    const raw = $('#short-input').value || '';
+    const typed = raw.toLowerCase();
     const keys = q.accept || [];
     const hit = keys.filter((k) => typed.includes(String(k).toLowerCase()));
     const ok = keys.length ? hit.length >= Math.ceil(keys.length / 2) : false;
-    if (ok) quizCorrect++; else quizWrong.push({ topic, q });
+    if (ok) quizCorrect++; else quizWrong.push({ topic, q, generated });
+    if (ok) recordRight(topic, q); else recordWrong(topic, q, generated, null, raw.trim());
 
     const fb = $('#feedback');
     fb.hidden = false;
@@ -1552,7 +1764,8 @@
        <p class="kw-line">Matched ${hit.length} of ${keys.length} key terms:
          ${keys.map((k) => `<span class="kw${hit.includes(k) ? ' kw-hit' : ''}">${esc(k)}</span>`).join('')}</p>
        <div class="model-answer"><span class="ma-label">Model answer · 参考答案 ${speakPairBtn(q.answer_en, q.answer_cn)}</span>
-         ${bi(q.answer_en, q.answer_cn)}</div>`;
+         ${bi(q.answer_en, q.answer_cn)}</div>`
+      + (ok ? '' : `<div class="wb-added">△ Added to the wrong-answer book · 已加入错题本</div>`);
     $('#quiz-score').textContent = `${quizCorrect} correct`;
     revealNext();
     wireSayButtons($('#qcard'));
@@ -1565,7 +1778,7 @@
     const pct = total ? Math.round((quizCorrect / total) * 100) : 0;
 
     const scope = $('#quiz-scope').value;
-    if (!scope.startsWith('ch:') && scope !== 'all') {
+    if (!quizIsDrill && !scope.startsWith('ch:') && scope !== 'all') {
       const prev = state.scores[scope];
       if (!prev || quizCorrect > prev.correct) {
         state.scores[scope] = { correct: quizCorrect, total: total };
@@ -1573,23 +1786,36 @@
       }
     }
 
+    const missed = quizWrong.slice();     // captured before "Run it again" clears it
     let html = `<h2>${pct}% <span class="muted">${quizCorrect} / ${total}</span></h2>`;
-    if (quizWrong.length) {
+    if (missed.length) {
       html += `<h3>Worth another look <span class="muted">需再复习</span></h3><ul class="review-list">`;
-      quizWrong.forEach(({ topic, q }) => {
-        html += `<li><button class="link-btn" data-id="${esc(topic.id)}">${esc(topic.section)}</button>
-                 ${esc(q.q_en)}</li>`;
+      missed.forEach(({ topic, q }) => {
+        html += `<li><button class="link-btn" data-id="${esc(topic.id)}">${esc(hookSec(topic))}</button>
+                 ${esc(q.q_en || q.q_cn)}</li>`;
       });
-      html += `</ul>`;
+      html += `</ul>
+        <p class="muted">All ${missed.length} are in the wrong-answer book, with what each wrong
+        option was really about. 这 ${missed.length} 题已进错题本，错项对应的知识点也一并记下了。</p>`;
     } else if (total) {
       html += `<p>Clean sweep — every question correct. 全对。</p>`;
     }
-    html += `<button class="btn-primary" id="quiz-again">Run it again</button>`;
+    html += `<div class="q-result-actions">
+      <button class="btn-primary" id="quiz-again">Run it again</button>`;
+    if (missed.length) {
+      html += `<button class="btn-ghost" id="quiz-drill-missed">Drill just these ${missed.length} · 只练这几题</button>
+               <button class="btn-ghost" id="quiz-to-wrongbook">Open the wrong-answer book · 打开错题本</button>`;
+    }
+    html += `</div>`;
 
     const box = $('#quiz-result');
     box.innerHTML = html;
     box.hidden = false;
-    $('#quiz-again').addEventListener('click', startQuiz);
+    $('#quiz-again').addEventListener('click', () => startQuiz());
+    if (missed.length) {
+      $('#quiz-drill-missed').addEventListener('click', () => startQuiz(missed));
+      $('#quiz-to-wrongbook').addEventListener('click', () => { setMode('wrong'); renderWrongbook(); });
+    }
     box.querySelectorAll('.link-btn').forEach((b) =>
       b.addEventListener('click', () => {
         state.topicId = b.dataset.id;
@@ -1597,6 +1823,352 @@
       }));
     renderSidebar();
     bionicRefresh();
+  }
+
+  /* ------------------------------------------------------- wrongbook 错题本 view
+     The quiz already tells you, once, what each wrong option was about. This
+     panel is that same explanation kept -- one place where every question you
+     have missed sits with its options laid out, the one you picked marked, the
+     right one marked, and every wrong option carrying the knowledge it stands
+     for. Getting a question right in a later drill counts it down; two in a row
+     and it leaves.
+
+     Entries whose node no longer exists are counted and offered for clearing
+     rather than dropped on sight: a node id disappearing means the data changed
+     under the stored entry, and that is worth seeing, not hiding. */
+
+  function wrongRows() {
+    return Object.keys(state.wrong).map((k) => ({
+      key: k, e: state.wrong[k], topic: topicById(state.wrong[k].topicId)
+    }));
+  }
+
+  function renderWrongBadge() {
+    const el = $('#wrong-count');
+    if (!el) return;
+    const n = wrongCount();
+    el.textContent = n ? String(n) : '';
+    el.hidden = !n;
+  }
+
+  function wrongOptionList(q, chose) {
+    const refs = q.optionRefs || {};
+    const notes = q.optionNotes || {};
+    return (q.options || []).map((opt, i) => {
+      const isAnswer = i === q.answer;
+      const isPick = i === chose;
+      const t = topicById(refs[i]);
+      const note = notes[i];
+      let ann = '';
+      if (!isAnswer) {
+        ann = (note ? `<div class="hook-note">${bi(note.en, note.cn)}</div>` : '')
+            + (t ? hookLinkHtml(t) : '')
+            + (!note && !t ? `<div class="hook-none">${bi(HOOK_FILLER.en, HOOK_FILLER.cn)}</div>` : '');
+      }
+      return `<div class="wb-opt${isAnswer ? ' is-answer' : ''}${isPick && !isAnswer ? ' is-pick' : ''}">
+                <span class="opt-key">${String.fromCharCode(65 + i)}</span>
+                <div class="wb-opt-body">
+                  <div class="wb-opt-text">${esc(opt)}
+                    ${isAnswer ? '<span class="wb-tag ok">correct · 正确答案</span>' : ''}
+                    ${isPick && !isAnswer ? '<span class="wb-tag bad">you picked · 你选的</span>' : ''}</div>
+                  ${ann}
+                </div>
+              </div>`;
+    }).join('');
+  }
+
+  function wrongEntryHtml(row) {
+    const { key, e, topic } = row;
+    const q = e.q;
+    const graded = e.ok >= 1 ? `<span class="wb-meta-ok">${e.ok} / ${WRONG_CLEAR} right since · 已连对</span>` : '';
+    const body = q.type === 'mcq'
+      ? `<div class="wb-opts">${wrongOptionList(q, e.chose)}</div>
+         <div class="wb-why"><span class="ma-label">Why · 为什么</span>${bi(q.why_en, q.why_cn)}</div>`
+      : `${e.typed ? `<div class="wb-typed"><span class="ma-label">What you wrote · 你写的</span>${esc(e.typed)}</div>` : ''}
+         <p class="kw-line">Key terms · 关键词：
+           ${(q.accept || []).map((k) => `<span class="kw">${esc(k)}</span>`).join('')}</p>
+         <div class="model-answer"><span class="ma-label">Model answer · 参考答案</span>${bi(q.answer_en, q.answer_cn)}</div>`;
+
+    return `<article class="wb-entry" data-key="${esc(key)}">
+      <div class="wb-head">
+        <button class="link-btn wb-jump" data-id="${esc(topic.id)}">
+          <span class="hook-sec">${esc(hookSec(topic))}</span>${hookTitle(topic)}
+        </button>
+        <span class="wb-meta">wrong ${e.n}× · 错 ${e.n} 次 ${graded}<span class="wb-date">${esc(e.last)}</span></span>
+      </div>
+      <div class="wb-q">${bi(q.q_en, q.q_cn)} ${speakPairBtn(q.q_en, q.q_cn)}</div>
+      ${body}
+      <div class="wb-actions">
+        <button class="btn-ghost wb-drill-one">Try it again · 再做一次</button>
+        <button class="btn-ghost wb-forget">Remove · 移出错题本</button>
+      </div>
+    </article>`;
+  }
+
+  function renderWrongbook() {
+    const scope = $('#wrong-scope') ? $('#wrong-scope').value : 'all';
+    const all = wrongRows();
+    const stale = all.filter((r) => !r.topic);
+    const rows = all.filter((r) => r.topic && inScope(r.topic, scope));
+
+    const box = $('#wrong-body');
+    if (!box) return;
+
+    if (!all.length) {
+      box.innerHTML = `<div class="empty-state">
+        <p>Nothing here yet. 错题本是空的。</p>
+        <p class="muted">Every question you miss in the Quiz tab lands here automatically, together with
+        what each wrong option was really about. Answer one correctly ${WRONG_CLEAR} times in a row and it leaves.
+        <br>Quiz 里答错的题会自动进来，连同每个错误选项对应的知识点。之后连续答对 ${WRONG_CLEAR} 次就自动移出。</p>
+      </div>`;
+      renderWrongBadge();
+      return;
+    }
+
+    // Book order, then chapter, then the book's own section order; within a
+    // section the one missed most often first, because that is the one to fix.
+    const bookRank = { cz: 0, lehninger: 1 };
+    rows.sort((a, b) => {
+      const ea = isEntity(a.topic), eb = isEntity(b.topic);
+      if (ea !== eb) return ea ? 1 : -1;
+      const ba = bookRank[bookOf(a.topic)] || 0, bb = bookRank[bookOf(b.topic)] || 0;
+      if (ba !== bb) return ba - bb;
+      if (a.topic.chapter !== b.topic.chapter) return (a.topic.chapter || 0) - (b.topic.chapter || 0);
+      if (a.topic.id !== b.topic.id) return String(a.topic.id).localeCompare(String(b.topic.id));
+      return b.e.n - a.e.n;
+    });
+
+    let html = `<p class="wb-summary">${rows.length} in view · 本视图 ${rows.length} 题`
+      + (rows.length !== all.length ? ` <span class="muted">(${all.length} in the book · 全本 ${all.length})</span>` : '')
+      + `</p>`;
+
+    if (stale.length) {
+      html += `<div class="wb-stale">${stale.length} entr${stale.length === 1 ? 'y' : 'ies'} point at a
+        topic that no longer exists — the data changed under them.
+        <span lang="zh">${stale.length} 条错题指向的节点已不存在（数据改过）。</span>
+        <button class="btn-ghost" id="wb-drop-stale">Drop them · 清掉</button></div>`;
+    }
+
+    let lastGroup = null;
+    rows.forEach((r) => {
+      const g = isEntity(r.topic) ? 'entity' : bookOf(r.topic) + ':' + r.topic.chapter;
+      if (g !== lastGroup) {
+        lastGroup = g;
+        const label = isEntity(r.topic)
+          ? 'Integration cards · 整合卡'
+          : BOOK_TITLES[bookOf(r.topic)].short + ' · Ch. ' + r.topic.chapter + ' — '
+            + (state.lang === 'cn' ? chapterInfo(bookOf(r.topic), r.topic.chapter).cn
+                                   : chapterInfo(bookOf(r.topic), r.topic.chapter).en);
+        html += `<h3 class="wb-group">${esc(label)}</h3>`;
+      }
+      html += wrongEntryHtml(r);
+    });
+
+    box.innerHTML = html;
+
+    box.querySelectorAll('.wb-entry').forEach((el) => {
+      const key = el.dataset.key;
+      const row = rows.filter((r) => r.key === key)[0];
+      el.querySelector('.wb-jump').addEventListener('click', () => {
+        state.topicId = row.topic.id;
+        setMode('study'); renderStudy(); renderSidebar();
+      });
+      el.querySelector('.wb-drill-one').addEventListener('click', () => {
+        setMode('quiz');
+        startQuiz([{ topic: row.topic, q: row.e.q, generated: row.e.gen }]);
+      });
+      el.querySelector('.wb-forget').addEventListener('click', () => {
+        delete state.wrong[key];
+        store.set('wrong', state.wrong);
+        renderWrongbook(); renderWrongBadge();
+      });
+    });
+    wireHookLinks(box);
+
+    const dropStale = $('#wb-drop-stale');
+    if (dropStale) dropStale.addEventListener('click', () => {
+      stale.forEach((r) => { delete state.wrong[r.key]; });
+      store.set('wrong', state.wrong);
+      renderWrongbook(); renderWrongBadge();
+    });
+
+    renderWrongBadge();
+    wireSayButtons(box);
+    bionicRefresh();
+  }
+
+  /* --------------------------------------------------------- notebook 笔记本
+     One free-text note per chapter, saved as you type. Deliberately NOT one
+     note per topic node: 270 tiny boxes is a filing system, and what a reader
+     actually wants while revising a chapter is one page they can keep adding
+     to. The chapter is also the unit the exam draws on.
+
+     Notes are the only thing in this app the reader cannot regenerate — every
+     other piece of localStorage (progress, Leitner boxes, the wrong-answer
+     book) rebuilds itself from use. So this is the one feature that gets an
+     export button and a permanent warning rather than a dismissible one, and
+     the export format is plain Markdown that reads fine with no app at all. */
+
+  const NOTE_HEAD = '# Biochemie PRO — notebook · 笔记本';
+
+  function noteKeys() {
+    const out = [];
+    booksPresent().forEach((book) => {
+      chaptersOf(book).forEach((ch) => out.push(book + ':' + ch));
+    });
+    if (entityCards().length) out.push('entity');
+    return out;
+  }
+
+  function noteLabel(key) {
+    if (key === 'entity') return 'Integration cards · 整合卡';
+    const i = key.lastIndexOf(':');
+    const book = key.slice(0, i), ch = Number(key.slice(i + 1));
+    const info = chapterInfo(book, ch);
+    return BOOK_TITLES[book].short + ' · Ch. ' + ch + ' — '
+         + (state.lang === 'cn' ? info.cn : info.en);
+  }
+
+  function noteText(key) { return state.notes[key] || ''; }
+  function notesWritten() { return noteKeys().filter((k) => noteText(k).trim()).length; }
+
+  function renderNoteBadge() {
+    const el = $('#note-count');
+    if (!el) return;
+    const n = notesWritten();
+    el.textContent = n ? String(n) : '';
+    el.hidden = !n;
+  }
+
+  let noteSaveTimer = null;
+
+  /* Which chapter the textarea is currently SHOWING. Not the same thing as the
+     select's value, and the difference is a data-corrupting bug: the change
+     handler saves the old text before loading the new chapter, but by the time
+     it runs the select already reads the NEW key — so saving against
+     `select.value` filed the previous chapter's note under the chapter being
+     opened, and then loaded it straight back. Found by the smoke test, not by
+     reading the code. */
+  let noteCurrentKey = null;
+
+  function noteStatus(msg, cls) {
+    const el = $('#note-status');
+    if (!el) return;
+    el.textContent = msg;
+    el.className = 'note-status' + (cls ? ' ' + cls : '');
+  }
+
+  function saveNoteNow() {
+    const key = noteCurrentKey || $('#note-chapter').value;
+    const val = $('#note-body').value;
+    if (val.trim()) state.notes[key] = val; else delete state.notes[key];
+    store.set('notes', state.notes);
+    const t = new Date();
+    noteStatus('saved ' + String(t.getHours()).padStart(2, '0') + ':'
+             + String(t.getMinutes()).padStart(2, '0') + ' · 已保存', 'ok');
+    renderNoteBadge();
+    renderNoteIndex();
+  }
+
+  function noteStats() {
+    const v = $('#note-body').value;
+    const chars = v.length;
+    const lines = v.trim() ? v.trim().split(/\n/).length : 0;
+    $('#note-stats').textContent = chars ? chars + ' chars · ' + lines + ' lines' : '';
+  }
+
+  function renderNoteIndex() {
+    const box = $('#note-index');
+    if (!box) return;
+    const written = noteKeys().filter((k) => noteText(k).trim());
+    if (!written.length) { box.innerHTML = ''; return; }
+    box.innerHTML = '<h3>Chapters with notes <span class="muted">已有笔记</span></h3>'
+      + '<ul class="note-list">' + written.map((k) => {
+          const txt = noteText(k).trim();
+          const first = txt.split('\n')[0].slice(0, 70);
+          return `<li><button class="link-btn note-jump" data-key="${esc(k)}">${esc(noteLabel(k))}</button>
+                  <span class="note-peek">${esc(first)}${txt.length > 70 ? '…' : ''}</span>
+                  <span class="note-size">${txt.length}</span></li>`;
+        }).join('') + '</ul>';
+    box.querySelectorAll('.note-jump').forEach((b) =>
+      b.addEventListener('click', () => {
+        $('#note-chapter').value = b.dataset.key;
+        loadNote();
+        $('#note-body').focus();
+      }));
+  }
+
+  function loadNote() {
+    const key = $('#note-chapter').value;
+    noteCurrentKey = key;
+    $('#note-body').value = noteText(key);
+    noteStats();
+    noteStatus(noteText(key) ? '' : 'empty · 还没写', '');
+    store.set('noteLast', key);
+  }
+
+  function renderNotes() {
+    const sel = $('#note-chapter');
+    if (!sel) return;
+    if (!sel.options.length) {
+      sel.innerHTML = noteKeys().map((k) =>
+        `<option value="${esc(k)}">${esc(noteLabel(k))}</option>`).join('');
+      const last = store.get('noteLast', null);
+      if (last && noteKeys().indexOf(last) !== -1) sel.value = last;
+      loadNote();
+    }
+    renderNoteIndex();
+    renderNoteBadge();
+  }
+
+  /* Markdown, not JSON: the export is meant to be readable and editable in any
+     editor, and to survive this app being gone. It round-trips because the
+     chapter key sits in the heading in brackets. */
+  function exportNotes() {
+    const written = noteKeys().filter((k) => noteText(k).trim());
+    if (!written.length) { alert('Nothing to export yet. 还没有笔记可导出。'); return; }
+    const stamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
+    const body = NOTE_HEAD + '\n\n<!-- exported ' + stamp + ' -->\n\n'
+      + written.map((k) => '## [' + k + '] ' + noteLabel(k) + '\n\n' + noteText(k).trim() + '\n').join('\n');
+    const blob = new Blob([body], { type: 'text/markdown;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'biochemie-notes-' + new Date().toISOString().slice(0, 10) + '.md';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+
+  /* Import MERGES and never silently overwrites: a chapter that already has a
+     note gets the imported text appended under a dated rule, because the whole
+     point of the feature is that these are the words the reader cannot get
+     back. Losing them to a well-meaning import would be the same bug as
+     losing them to a cleared browser. */
+  function importNotes(text) {
+    const parts = text.split(/^## \[([^\]]+)\][^\n]*\n/m);
+    let added = 0, merged = 0;
+    for (let i = 1; i < parts.length; i += 2) {
+      const key = parts[i].trim();
+      const val = (parts[i + 1] || '').trim();
+      if (!val) continue;
+      if (noteKeys().indexOf(key) === -1) continue;      // a chapter this app does not have
+      if (noteText(key).trim()) {
+        state.notes[key] = noteText(key).trimEnd() + '\n\n---\nimported '
+          + new Date().toISOString().slice(0, 10) + '\n\n' + val;
+        merged++;
+      } else {
+        state.notes[key] = val;
+        added++;
+      }
+    }
+    if (!added && !merged) { alert('No notes found in that file. 文件里没有找到笔记。'); return; }
+    store.set('notes', state.notes);
+    loadNote();
+    renderNoteIndex();
+    renderNoteBadge();
+    alert(added + ' chapter(s) filled, ' + merged + ' merged into existing notes.\n'
+        + '新建 ' + added + ' 章，合并 ' + merged + ' 章。');
   }
 
   /* ------------------------------------------------------------------ oral */
@@ -1711,14 +2283,16 @@
     fillScopeSelect($('#card-scope'), 'All chapters');
     fillScopeSelect($('#quiz-scope'), 'All chapters');
     fillScopeSelect($('#oral-scope'), 'All chapters');
+    fillScopeSelect($('#wrong-scope'), 'All chapters');
 
     $('#stat-terms').textContent = allCards().length;
     $('#stat-questions').textContent = allQuestions().length;
 
     /* Quiz source cycling (A6) + the generated term drill (A7). The button
-       reports what each level actually yields, because "bank" is inert today
-       -- no node carries a `bank` array -- and a control that silently does
-       nothing reads as a bug. */
+       reports what each level actually yields, so a level that happens to be
+       empty reads as empty rather than as a broken control -- and any bank key
+       that matches no node is named there too, since an unasked question is
+       otherwise invisible. */
     renderQuizSrc();
     $('#quiz-src').addEventListener('click', () => {
       state.qsrc = QSRC[(QSRC.indexOf(state.qsrc) + 1) % QSRC.length];
@@ -1804,8 +2378,55 @@
     });
 
     // Quiz + oral
-    $('#quiz-start').addEventListener('click', startQuiz);
+    $('#quiz-start').addEventListener('click', () => startQuiz());
     $('#oral-next').addEventListener('click', nextOral);
+
+    // Notebook. Saving is debounced while typing, and forced on blur and on
+    // page hide -- a phone that backgrounds the tab must not eat the last
+    // sentence someone typed.
+    renderNoteBadge();
+    $('#note-chapter').addEventListener('change', () => { saveNoteNow(); loadNote(); });
+    $('#note-body').addEventListener('input', () => {
+      noteStats();
+      noteStatus('saving… · 保存中', '');
+      clearTimeout(noteSaveTimer);
+      noteSaveTimer = setTimeout(saveNoteNow, 400);
+    });
+    $('#note-body').addEventListener('blur', () => { clearTimeout(noteSaveTimer); saveNoteNow(); });
+    window.addEventListener('pagehide', () => {
+      if ($('#note-body') && $('#note-body').value !== undefined) { clearTimeout(noteSaveTimer); saveNoteNow(); }
+    });
+    $('#note-export').addEventListener('click', exportNotes);
+    $('#note-import').addEventListener('change', (e) => {
+      const f = e.target.files && e.target.files[0];
+      if (!f) return;
+      const r = new FileReader();
+      r.onload = () => importNotes(String(r.result || ''));
+      r.readAsText(f);
+      e.target.value = '';
+    });
+
+    // Wrong-answer book
+    renderWrongBadge();
+    $('#wrong-scope').addEventListener('change', renderWrongbook);
+    $('#wrong-drill').addEventListener('click', () => {
+      const scope = $('#wrong-scope').value;
+      const items = wrongRows()
+        .filter((r) => r.topic && inScope(r.topic, scope))
+        .map((r) => ({ topic: r.topic, q: r.e.q, generated: r.e.gen }));
+      if (!items.length) return;
+      setMode('quiz');
+      startQuiz(items);
+    });
+    $('#wrong-clear').addEventListener('click', () => {
+      const scope = $('#wrong-scope').value;
+      const rows = wrongRows().filter((r) => !r.topic || inScope(r.topic, scope));
+      if (!rows.length) return;
+      if (!confirm(`Remove ${rows.length} question(s) from the wrong-answer book?\n从错题本移出 ${rows.length} 题？`)) return;
+      rows.forEach((r) => { delete state.wrong[r.key]; });
+      store.set('wrong', state.wrong);
+      renderWrongbook(); renderWrongBadge();
+    });
 
     // Keyboard: space flips a card, 1/2 grade it.
     document.addEventListener('keydown', (e) => {
