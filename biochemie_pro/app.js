@@ -264,6 +264,7 @@
     rate:    store.get('rate', 0.94),     // playback speed, shared by both languages
     marks:   store.get('marks', {}),      // markKey -> pen colour id; see MARKING below
     pen:     store.get('pen', 'y'),       // which colour a NEW star gets
+    cardStarred: store.get('cardStarred', false), // ⭐🔊 drill; see STARRED DRILL below
     onlyMarked: store.get('onlyMarked', false), // 只看必背; see ONLY-MARKED below
     wrong:   store.get('wrong', {}),      // wrongKey -> entry; see WRONGBOOK below
     notes:   store.get('notes', {})       // "book:chapter" -> the reader's own text
@@ -1416,9 +1417,48 @@
 
   function boxOf(c) { return state.boxes[cardKey(c.topic, c.term)] || 1; }
 
+  /* ------------------------------------------------------- STARRED DRILL 星标朗读
+     One button, one way of working: only the terms carrying a ⭐, each read aloud
+     as it appears, Chinese still behind the tap.
+
+     Two departures from the ordinary deck, both deliberate:
+
+     - The Leitner box-5 exclusion is LIFTED here. Normally a card that has
+       reached the top box has been learned and drops out of rotation, but a star
+       is the reader saying "keep showing me this" — mastery is not the criterion
+       they are using, so filtering on it would empty the deck of exactly the
+       words they marked.
+     - The English is spoken automatically. That is the point of the mode (the
+       exam is oral and heard, not read), and it is safe from the browsers'
+       autoplay rules because every card after the first is reached by clicking
+       "Got it" or "Missed", and the first by clicking into the tab. */
+  function starredOnly() { return state.cardStarred; }
+
+  // The button says how many cards the mode would give you, because a starred
+  // deck can legitimately be empty and a button that just turns blue would not
+  // explain a suddenly empty stage.
+  function renderStarredBtn() {
+    const btn = $('#card-starred');
+    if (!btn) return;
+    const n = allCards().filter(isStarred).length;
+    btn.classList.toggle('on', state.cardStarred);
+    btn.innerHTML = '⭐🔊 <span>星标朗读</span>'
+      + (n ? ` <span class="muted">${n}</span>` : ' <span class="muted">0</span>');
+    btn.title = state.cardStarred
+      ? 'Showing only starred terms, read aloud. Tap the card for the Chinese. · 只抽标了星的词，自动朗读，点卡片才出中文'
+      : 'Drill only the terms you starred, each read aloud · 只练你标星的词，每个自动朗读';
+  }
+
+  function isStarred(c) { return !!markOf(cardKey(c.topic, c.term)); }
+
+  function cardPool(scope) {
+    const all = allCards().filter((c) => inScope(c.topic, scope));
+    return starredOnly() ? all.filter(isStarred) : all;
+  }
+
   function buildQueue() {
     const scope = $('#card-scope').value;
-    const pool = allCards().filter((c) => inScope(c.topic, scope) && boxOf(c) < 5);
+    const pool = cardPool(scope).filter((c) => starredOnly() || boxOf(c) < 5);
     // Lowest Leitner box first, shuffled within each box.
     const byBox = [1, 2, 3, 4].map((b) => shuffle(pool.filter((c) => boxOf(c) === b)));
     cardQueue = [].concat.apply([], byBox);
@@ -1427,7 +1467,7 @@
 
   function renderLeitner() {
     const scope = $('#card-scope').value;
-    const pool = allCards().filter((c) => inScope(c.topic, scope));
+    const pool = cardPool(scope);
     let html = '';
     for (let b = 1; b <= 5; b++) {
       const n = pool.filter((c) => boxOf(c) === b).length;
@@ -1445,7 +1485,22 @@
     const has = !!currentCard;
     $('#card-stage').hidden = !has;
     $('#card-empty').hidden = has;
-    if (!has) return;
+    if (!has) {
+      // An empty starred deck means "you have not starred anything here", which
+      // needs different words from "you have mastered everything here" — and it
+      // needs to say where the stars are made, since nothing in this tab makes one.
+      const p = $('#card-empty p');
+      const again = $('#card-restudy');
+      if (starredOnly()) {
+        if (p) p.innerHTML = '⭐ No starred terms in this scope yet.<br>'
+          + '<span lang="zh">这个范围里还没有标星的词。在 Study 里点术语旁边的 ⭐ 就能加入。</span>';
+        if (again) again.hidden = true;
+      } else {
+        if (p) p.textContent = '🎉 Every card in this scope has reached the top box.';
+        if (again) again.hidden = false;
+      }
+      return;
+    }
 
     const { topic, term } = currentCard;
     $('#flashcard').classList.remove('flipped');
@@ -1456,10 +1511,19 @@
     $('#fc-cz-ref').innerHTML = term.cz ? `<span class="cz-anchor">${esc(term.cz)}</span> ${speakBtn(term.cz, 'cs-CZ')}` : '';
     $('#fc-cn').innerHTML = `${esc(term.cn || '')} ${speakBtn(term.cn, 'zh-CN')}`;
     $('#fc-def').innerHTML = bi(term.def_en, term.def_cn);
-    $('#card-counter').textContent = `${cardQueue.length} more in this round`;
+    $('#card-counter').textContent = `${cardQueue.length} more in this round`
+      + (starredOnly() ? ' · ⭐ 星标' : '');
 
     wireSayButtons($('#flashcard'));
     bionicRefresh();
+
+    // Speak the word, not the definition: the front of the card is what the mode
+    // is drilling, and hearing the back read out would give away the answer the
+    // tap is meant to reveal.
+    if (starredOnly()) {
+      const word = term.en || term.cz || '';
+      if (word) speak(word, term.en ? 'en-US' : 'cs-CZ');
+    }
   }
 
   function gradeCard(good) {
@@ -1895,12 +1959,13 @@
           <span class="hook-sec">${esc(hookSec(topic))}</span>${hookTitle(topic)}
         </button>
         <span class="wb-meta">wrong ${e.n}× · 错 ${e.n} 次 ${graded}<span class="wb-date">${esc(e.last)}</span></span>
+        <button class="wb-x" title="Remove from this book. The question stays in the question bank and can come up again. · 从错题本移除。题目本身还在题库里，以后照样会抽到。">×</button>
       </div>
       <div class="wb-q">${bi(q.q_en, q.q_cn)} ${speakPairBtn(q.q_en, q.q_cn)}</div>
       ${body}
       <div class="wb-actions">
         <button class="btn-ghost wb-drill-one">Try it again · 再做一次</button>
-        <button class="btn-ghost wb-forget">Remove · 移出错题本</button>
+        <button class="btn-ghost wb-forget">Remove from the book · 移出错题本</button>
       </div>
     </article>`;
   }
@@ -1977,11 +2042,17 @@
         setMode('quiz');
         startQuiz([{ topic: row.topic, q: row.e.q, generated: row.e.gen }]);
       });
-      el.querySelector('.wb-forget').addEventListener('click', () => {
+      // Two ways to do the same thing on purpose: the × for someone clearing a
+      // list quickly, the labelled button for someone who wants to be sure what
+      // it does. Neither touches the question itself — it stays in the bank and
+      // can be asked again, which is what the titles say.
+      const forget = () => {
         delete state.wrong[key];
         store.set('wrong', state.wrong);
         renderWrongbook(); renderWrongBadge();
-      });
+      };
+      el.querySelector('.wb-forget').addEventListener('click', forget);
+      el.querySelector('.wb-x').addEventListener('click', forget);
     });
     wireHookLinks(box);
 
@@ -2364,6 +2435,13 @@
     $('#card-hit').addEventListener('click', () => gradeCard(true));
     $('#card-miss').addEventListener('click', () => gradeCard(false));
     $('#card-scope').addEventListener('change', () => { buildQueue(); renderCard(); });
+    renderStarredBtn();
+    $('#card-starred').addEventListener('click', () => {
+      state.cardStarred = !state.cardStarred;
+      store.set('cardStarred', state.cardStarred);
+      renderStarredBtn();
+      buildQueue(); renderCard();
+    });
     $('#card-reset').addEventListener('click', () => {
       if (!confirm('Reset flashcard progress for every card?')) return;
       state.boxes = {}; store.set('boxes', state.boxes);

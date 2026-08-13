@@ -879,3 +879,20 @@ body.only-marked [data-markable]:not([class*="hl-"]) { display: none !important;
   #note-body { min-height: 40vh; }
   .note-peek { display: none; }
 }
+
+/* The × on a wrong-answer entry. Quiet until hovered: it removes an entry from
+   the book, never the question from the bank, so it should not read as danger. */
+.wb-x {
+  flex: 0 0 auto; cursor: pointer; line-height: 1;
+  background: transparent; border: 1px solid var(--line); border-radius: 50%;
+  color: var(--fg-dim); font-size: 0.95rem; width: 1.55rem; height: 1.55rem;
+}
+.wb-x:hover { border-color: var(--bad); color: var(--bad); }
+
+/* Toggle-on state for a text button (the starred drill). The icon buttons in the
+   topbar have their own .active rule; this is the equivalent for .btn-ghost. */
+.btn-ghost.on {
+  border-color: var(--accent); color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.btn-ghost.on .muted { color: var(--accent); opacity: 0.8; }

@@ -257,6 +257,10 @@
         <h2>Flashcards <span class="muted">抽认卡</span></h2>
         <div class="controls">
           <select id="card-scope"></select>
+          <!-- The starred drill. Deliberately one button rather than two toggles:
+               "only my starred words, read aloud, Chinese hidden until I tap" is a
+               single way of working, not three settings to combine. -->
+          <button id="card-starred" class="btn-ghost">⭐🔊 <span>星标朗读</span></button>
           <button id="card-reset" class="btn-ghost">Reset</button>
         </div>
       </div>
