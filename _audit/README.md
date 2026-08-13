@@ -39,7 +39,7 @@ across every chapter, not concentrated in one.**
 | ch7b | 21 | agent (`ch7b.md`) | 20 findings, 4 clean. Three high, all in `mustKnow`: `7-6-3` named transketolase where the node's enzyme is transaldolase moving a *three*-carbon residue; `7-11-1-2` said digestion stops "not at glucose" where the node's own next point has maltase producing glucose; `7-12-2` collapsed the two-tier cascade into one kinase — which is literally its own MCQ distractor. |
 | ch9 | 27 | agent (`ch9.md`) | 9 findings, 20 clean. No WRONG-NODE. `9-18`'s oral model closed by converting the node's *step* counts into *molecule* counts: "two ATP per turn, one NADPH", where one carboxylation gives two 3-phosphoglycerates, so it is 3 ATP + 2 NADPH per CO2. |
 | ch10 | 26 | agent (`ch10.md`) | 8 findings, 13 clean. No WRONG-NODE. `10-21` gave cortisol "sustained stress" where the node records that only adrenalin's "short-term" is the table's own word. |
-| ch4_5 | 28 | agent () | 12 findings, 16 clean. No WRONG-NODE. One high, and new:   says the trp leader is never translated into peptide *and generalises it*, while , the  and  all require a ribosome translating that leader peptide — which IS the attenuation mechanism. Also: the Chinese renders **nucleosidase** with the characters for **nucleotidase**, the same word the previous point uses for a different enzyme; and English *committed step* is translated 限速 (rate-limiting) in four places. |
+| ch4_5 | 28 | agent (`ch4_5.md`) | 12 findings, 16 clean. No WRONG-NODE. One high, and new: `4-2-4-1` `points[6]` says the trp leader is never translated into peptide *and generalises it*, while `points[7]`, the `mustKnow` and `quiz[3]` all require a ribosome translating that leader peptide — which IS the attenuation mechanism. Also: the Chinese renders **nucleosidase** with the characters for **nucleotidase**, the same word the previous point uses for a different enzyme; and English *committed step* is translated 限速 (rate-limiting) in four places. |
 
 ## What the two automated passes cannot see
 
@@ -74,10 +74,26 @@ edit, not just after a batch of them.
 
 ## Not done
 
-Chapters 1–7, 9, 10 (167 nodes) and the Lehninger layer (60 nodes) have had no reading pass.
-Nine agents were dispatched for the Czech chapters on 2026-08-13 and all nine died immediately
-on an account session limit, having read nothing. Re-dispatch them; the prompts are one per
-chapter range, and `AUDIT_SPEC.md` is the whole brief.
+**All 207 Czech nodes have now been read.** The Lehninger layer — **60 nodes, and about four
+times the text per node** — has not, and neither have the 3 entity cards. That is the next
+range; expect it to be slower per node than anything above.
+
+Findings NOT repaired, listed so they are not mistaken for clean:
+
+- **Option numbering, ~150 references.** Lehninger files number options from 1 in prose
+  ("Option 2" = the second option), chapters 9 and 10 number from 0 ("Option 3" = the fourth),
+  and `app.js` renders A–D for both. So the Lehninger reader translates, and the ch9/ch10 reader
+  lands one option early. A scripted fix needs per-file convention detection, which is why it is
+  recorded rather than done.
+- **gapPoints leaking into `terms`/`quiz`/`oral`** in `3-3-1`, `3-5` and `2-2-4`. `app.js` renders
+  `gapPoints` behind a "verify against the book" badge that those fields do not carry, so the
+  same sentence is warned in one place and silent in another.
+- `6-2-3` still states flat, in `mustKnow` and in a quiz stem, what the node twice records the
+  book never says (its quiz *answer* and oral model are correctly hedged).
+- `4-1-3-1`'s Pol II / Pol III nuclease ambiguity; `7-7-2`'s pentose-cycle accounting (needs
+  p.163); `4-1-4-1` vs `4-1-4-2` rRNA sizes (needs p.86); `9-8`'s biliprotein absorption clash,
+  where the quiz answers with the figure and the oral with the prose.
+- ~20 English adverbs stranded inside Chinese prose, and `6-2-4-2`'s `辅factor`.
 
 Separately and unchanged: **chapters 7 and 8 have never been verified against the page images**
 by a second reader (HANDOFF §0). This audit does not touch that. `extracted_full_ch7/` and
