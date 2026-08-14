@@ -893,6 +893,11 @@ window.BIOCHEM.topics.push(
       q_cn: "在教材的类异戊二烯分类链中，倍半萜对应的化合物和碳原子数是什么？",
       options: ["Geranyl-PP, C10", "Farnesyl-PP, C15", "Digeranyl-PP, C20", "Squalene, C30"],
       answer: 1,
+      optionNotes: {
+        0: { en: "Geranyl-PP is C10, the monoterpenes — one step earlier in the chain, assembled from IPP plus DMAPP. Adding one more IPP to it is what gives the sesquiterpenes.", cn: "Geranyl-PP 是 C10，属 monoterpene——在这条链上早一步，由 IPP 加 DMAPP 拼成。再往它上面加一个 IPP，得到的才是 sesquiterpene。" },
+        2: { en: "Digeranyl-PP is C20, the diterpenes — one step later, made by adding yet another IPP unit to farnesyl-PP. Phytol, the alcohol behind so many lipophilic vitamin tails, is a diterpene.", cn: "Digeranyl-PP 是 C20，属 diterpene——在这条链上晚一步，由 farnesyl-PP 再加一个 IPP 而来。Phytol——许多亲脂性维生素尾巴的来源——就是一种 diterpene。" },
+        3: { en: "Squalene is C30, the triterpenes, and it is formed from TWO farnesyl-PP units rather than being one of them. It is the precursor from which the whole steroid family follows.", cn: "Squalene 是 C30，属 triterpene，而且是由两个 farnesyl-PP 拼成的，本身并不是其中之一。整个 steroid 家族都由它衍生而来。" }
+      },
       why_en: "Geranyl-PP (C10) plus another IPP unit gives farnesyl-PP (C15), which the book labels sesquiterpenes; geranyl-PP itself is C10/monoterpenes, digeranyl-PP is C20/diterpenes, and squalene is C30/triterpenes.",
       why_cn: "牛儿基焦磷酸（C10）再加一个IPP单位生成法尼基焦磷酸（C15），教材将其标为倍半萜；牛儿基焦磷酸本身为C10/单萜，双牛儿基焦磷酸为C20/二萜，角鲨烯为C30/三萜。"
     },
@@ -901,12 +906,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to the book, which alcohol is responsible for vitamin K1's lipophilic character, and what other compounds share biochemically related hydrophobic chains?",
       q_cn: "根据教材，哪种醇赋予维生素K1亲脂特性，还有哪些化合物具有生化上相关的疏水链？",
       options: [
-        "Cholesterol; shared with bile acids and sex hormones",
+        "Cholesterol; shared with the bile acids and the sex hormones",
         "Phytol; shared with vitamin K2, vitamin E, and coenzyme Q",
-        "Squalene; shared with steroids only",
-        "Retinol; shared with carotenoids only"
+        "Squalene; shared with steroids and with steran",
+        "Retinol; shared with the carotenoids and xanthophylls"
       ],
       answer: 1,
+      optionRefs: { 0: "8-2-4-4", 2: "8-2-4-3", 3: "8-2-4-2" },
+      optionNotes: {
+        0: { en: "A real relationship, but the wrong kind of one: cholesterol is a sterol and the primary metabolic precursor of the bile acids and the sex hormones. That is a ring-system story, not a lipophilic-side-chain one.", cn: "这是一段真实存在的关系，但性质不对：cholesterol 是 sterol，是胆汁酸和性激素的主要代谢前体。那讲的是环系的来源，不是亲脂性侧链的来源。" },
+        2: { en: "Squalene is the C30 triterpene from which the steroids come — a precursor of a fused ring system, not of a hydrophobic tail hung on a vitamin's ring.", cn: "Squalene 是 C30 的 triterpene，是 steroid 的来源——它是稠合环系的前体，不是挂在维生素环上的疏水尾巴的来源。" },
+        3: { en: "Retinol is itself one of the terpenoid vitamins, and it is precisely the one whose side chain does NOT come from phytol: the book flags it as the exception, its precursor being the tetraterpene carotene.", cn: "Retinol 本身就是 terpenoid 类维生素之一，而且恰恰是侧链不来自 phytol 的那一个：教材专门把它标为例外，它的前体是 tetraterpene carotene。" }
+      },
       why_en: "The book states phytol (a diterpene alcohol, part of chlorophyll a/b) is responsible for vitamin K1's lipophilic character, and that biochemically phytol-derived hydrophobic chains are also found in vitamin K2, vitamin E, and coenzyme Q.",
       why_cn: "教材指出植醇（一种二萜醇，叶绿素a/b的组成部分）赋予维生素K1亲脂特性，并且由植醇衍生的疏水链在生化上也存在于维生素K2、维生素E和辅酶Q中。"
     },
@@ -971,6 +982,12 @@ window.BIOCHEM.topics.push(
       q_cn: "维生素E、辅酶Q和维生素K1/K2的疏水侧链在生化上都源自同一种化合物，但维生素A并非如此。维生素A的前体是什么？",
       options: ["Phytol, same as the others", "The tetraterpene carotene", "Squalene", "Cholesterol"],
       answer: 1,
+      optionRefs: { 2: "8-2-4-3", 3: "8-2-4-4" },
+      optionNotes: {
+        0: { en: "This is the origin the other three share: vitamin K1 and K2, vitamin E and coenzyme Q all carry phytol-derived chains. Vitamin A is exactly the exception the book stops to flag.", cn: "这是另外三者共有的来源：vitamin K1、K2、vitamin E 和 coenzyme Q 带的都是由 phytol 衍生的链。Vitamin A 正是教材特意停下来标注的那个例外。" },
+        2: { en: "Squalene is the C30 triterpene leading to the steroids; nothing in this group of vitamins takes its tail from it, and it belongs to the ring-system branch of the classification.", cn: "Squalene 是通向 steroid 的 C30 triterpene；这一组维生素里没有谁的尾巴来自它，它属于分类中环系那一支。" },
+        3: { en: "Cholesterol is a sterol, and the precursor it serves as is for bile acids, sex hormones and, in some organisms, vitamin D — not for retinol, whose ring plus polyene chain comes from carotene.", cn: "Cholesterol 是 sterol，它作为前体通向的是胆汁酸、性激素，以及在某些生物中的 vitamin D——不是 retinol；retinol 的环加多烯链来自 carotene。" }
+      },
       why_en: "The book explicitly states that although vitamin A (retinol) structurally belongs with the phytol-derived terpenoid vitamins, its precursor is not phytol but the tetraterpene carotene.",
       why_cn: "教材明确指出，尽管维生素A（视黄醇）在结构上属于源自植醇的萜类维生素家族，但其前体并非植醇，而是四萜类的胡萝卜素。"
     },
@@ -1033,6 +1050,12 @@ window.BIOCHEM.topics.push(
       q_cn: "角鲨烯——类固醇的三萜前体——由多少个法尼基焦磷酸单元构成，其碳原子数是多少？",
       options: ["One farnesyl-PP unit, C15", "Two farnesyl-PP units, C30", "Two digeranyl-PP units, C40", "Three geranyl-PP units, C30"],
       answer: 1,
+      optionRefs: { 0: "8-2-4-1", 2: "8-2-4-6" },
+      optionNotes: {
+        0: { en: "One farnesyl-PP is C15, the sesquiterpenes; it takes two of them to reach squalene. Halving the count halves the carbons and lands one rung lower on the classification ladder.", cn: "一个 farnesyl-PP 是 C15，属 sesquiterpene；要两个才够拼成 squalene。数目减半，碳数也减半，在分类的阶梯上就掉了一级。" },
+        2: { en: "Two digeranyl-PP units do combine, but they give C40 — phytoene, the tetraterpene, which is where the carotenoids begin. The carbon count in this option is right for phytoene, not for squalene.", cn: "两个 digeranyl-PP 确实会结合，但给出的是 C40——phytoene，属 tetraterpene，也就是 carotenoid 的起点。这个选项里的碳数对的是 phytoene，不是 squalene。" },
+        3: { en: "The carbon count happens to come out right, but the chain is not built that way. Units are added five carbons at a time as IPP, so C30 is reached as two C15 farnesyl-PP and never as three C10 geranyl-PP.", cn: "碳数碰巧算对了，但这条链不是这样搭起来的。单元是以 IPP 每次五个碳地加上去的，所以 C30 是由两个 C15 的 farnesyl-PP 得到，绝不是由三个 C10 的 geranyl-PP。" }
+      },
       why_en: "Per the classification chain given earlier in this section, two farnesyl-PP (C15 each) units combine to give squalene, C30, the triterpene precursor of steroids — not digeranyl-PP (which instead dimerizes to give the C40 tetraterpene phytoene).",
       why_cn: "根据本节前面给出的分类链，两个法尼基焦磷酸（各C15）单元结合生成角鲨烯，C30，即类固醇的三萜前体——而不是双牛儿基焦磷酸（后者二聚生成C40四萜八氢番茄红素）。"
     },
@@ -1101,12 +1124,17 @@ window.BIOCHEM.topics.push(
       q_en: "What two structural features define the class of steroids called 'sterols' according to the book?",
       q_cn: "根据教材，定义“固醇”这一类固醇亚类的两个结构特征是什么？",
       options: [
-        "A ketone at C3 and a double bond at C4-C5",
+        "A ketone at C3 together with a double bond between C4 and C5",
         "An 8-10 carbon hydrocarbon chain at position 17 and a hydroxyl group at position 3",
-        "A lactone ring at C17 and a hydroxyl at C3",
-        "Complete ring saturation and no side chain at all"
+        "An unsaturated lactone ring at position 17 together with a hydroxyl group at position 3",
+        "Complete saturation of all four rings and no side chain at position 17"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "That is the pattern of progesterone and testosterone — a 3-keto group with a Δ4 double bond — which is exactly how those two hormones differ from cholesterol's 3β-OH and Δ5.", cn: "那是 progesterone 和 testosterone 的式样——3 位酮基加 Δ4 双键——这正是这两个激素与 cholesterol 的 3β-OH、Δ5 的区别所在。" },
+        2: { en: "That is digitoxigenin, the cardenolide aglycone: a 3β-hydroxy steroid carrying an unsaturated lactone ring at C17 in place of a hydrocarbon side chain. The hydroxyl half is right, the C17 half is not.", cn: "那是 digitoxigenin，即 cardenolide 型的苷元：一个 3β-羟基 steroid，C17 上带的是不饱和内酯环，而不是烃基侧链。羟基那一半说对了，C17 那一半没有。" },
+        3: { en: "The side chain is half the definition, so removing it removes the class. Steroid diversity in fact runs the other way: differing degrees of desaturation plus oxygen-containing groups at various positions of the steran skeleton.", cn: "侧链是定义的一半，去掉它这一类就不存在了。Steroid 的多样性其实来自相反的方向：不同程度的去饱和，加上 steran 骨架各个位置上的含氧官能团。" }
+      },
       why_en: "The book states that an 8-10 carbon hydrocarbon chain at position 17 together with a hydroxyl group at position 3 is the characteristic mark of sterols, of which cholesterol is the most important animal example.",
       why_cn: "教材指出，17位的8-10碳烃链加上3位的羟基是固醇的特征标志，胆固醇是动物界最重要的代表。"
     },
@@ -1114,8 +1142,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the book, cholesterol's proportion of total membrane lipids can range from 0% up to what maximum, depending on membrane type?",
       q_cn: "根据教材，胆固醇占膜脂总量的比例依膜类型不同，最高可达多少？",
-      options: ["10%", "25%", "40%", "60%"],
+      options: [
+        "5%",
+        "25%",
+        "40%",
+        "up to 60%"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Too low for the top of the range. The book's figure runs from 0 up to 40% of total membrane lipids depending on the type of membrane — and it is the upper end that makes cholesterol a major structural component rather than a trace one.", cn: "作为范围的上限太低了。教材给的是随膜的类型从 0 到 40% 的总膜脂——正是这个上限使 cholesterol 成为主要的结构组分，而不是痕量成分。" },
+        1: { en: "The upper end of the range is 40, not 25. The point of quoting a range at all is that some membranes carry no cholesterol whatever while others are close to half cholesterol by lipid content.", cn: "范围的上限是 40，不是 25。之所以要给一个范围，是因为有的膜完全不含 cholesterol，有的则接近脂类含量的一半。" },
+        3: { en: "Above the book's figure. Because the steroid skeleton is relatively inflexible, even the 40% maximum already contributes very significantly to the rigidity of the membrane.", cn: "超过了教材给的数。由于 steroid 骨架相对不易弯折，即便是 40% 这个上限，也已经对膜的刚性有非常显著的贡献了。" }
+      },
       why_en: "The book states cholesterol's share of total membrane lipids ranges from 0 to 40% depending on the type of membrane.",
       why_cn: "教材指出，胆固醇占膜脂总量的比例依膜类型不同，从0%到40%不等。"
     },
@@ -1177,12 +1215,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does the book count vitamin D among the 'steroid substances' even though vitamin D compounds are not steroids in structure?",
       q_cn: "尽管维生素D化合物在结构上并非类固醇，教材为何仍将其归入“类固醇物质”之列？",
       options: [
-        "Because vitamin D binds to the same receptors as cholesterol",
+        "Because vitamin D travels through the blood on the same lipoproteins as cholesterol esters",
         "Because vitamin D compounds arise from steroid precursors, via a UV-driven ring-opening reaction",
-        "Because vitamin D is synthesized in the same organ as cholesterol",
-        "Because the book classifies all fat-soluble vitamins as steroids by convention"
+        "Because vitamin D is made in the same organ as cholesterol, out of the same acetyl-CoA pool",
+        "Because the book counts every fat-soluble vitamin among the steroids as a matter of convention, vitamins A, E and K included"
       ],
       answer: 1,
+      optionRefs: { 0: "8-2-4-4", 3: "8-2-4-2" },
+      optionNotes: {
+        0: { en: "Cholesterol's esters do take part in lipid transport across membranes and through the bloodstream, so the fact is real — but transport is not what the classification rests on. It rests on where the molecule comes from.", cn: "Cholesterol 的酯确实参与脂类跨膜和经血流的转运，所以这个说法本身没错——但分类依据的不是转运，而是这个分子的来源。" },
+        2: { en: "The book names no organ at all in this passage. What it names is a precursor, 7-dehydrocholesterol, and a reaction: UV light opening ring B between carbons 9 and 10, followed by a double-bond rearrangement.", cn: "教材在这一段里根本没有提到任何器官。它提到的是一个前体 7-dehydrocholesterol，和一个反应：紫外线在 C9 与 C10 之间打开 B 环，随后双键重排。" },
+        3: { en: "Vitamins A, E and K are grouped with the terpenoids, by way of their isoprenoid side chains. Vitamin D is singled out for a different reason entirely: it is the one whose precursor is itself a steroid.", cn: "Vitamin A、E、K 是按其 isoprenoid 侧链归入 terpenoid 的。Vitamin D 被单独拎出来，理由完全不同：它是唯一前体本身就是 steroid 的那一个。" }
+      },
       why_en: "The book explicitly says vitamin D compounds are often counted among steroid substances despite lacking a steroid structure themselves, because they arise from steroid precursors — specifically via UV opening ring B between C9 and C10 with a double-bond rearrangement.",
       why_cn: "教材明确指出，尽管维生素D化合物本身并不具有类固醇结构，但常被归入类固醇物质之列，因为它们由类固醇前体转化而来——具体机制是紫外线使B环在C9与C10之间打开并伴随双键重排。"
     },
@@ -1254,12 +1298,17 @@ window.BIOCHEM.topics.push(
       q_en: "What structural feature distinguishes xanthophylls from carotenes within the carotenoid group?",
       q_cn: "在类胡萝卜素这一大类中，叶黄素与胡萝卜素在结构上的区别是什么？",
       options: [
-        "Xanthophylls are pure hydrocarbons; carotenes contain oxygen groups",
+        "Xanthophylls are the pure hydrocarbons, while it is the carotenes that bear the oxygen-containing groups — hydroxyl, epoxide, carbonyl, carboxyl or saccharide residues",
         "Xanthophylls contain oxygen-bearing groups (hydroxyl, epoxide, carbonyl, carboxyl, or saccharide residues); carotenes are pure hydrocarbons",
-        "Xanthophylls have no conjugated double bonds; carotenes do",
-        "There is no structural distinction, only a difference in plant source"
+        "Xanthophylls have no conjugated double bonds and so are colourless, while the carotenes carry between 3 and 11 of them",
+        "There is no structural distinction, only a difference in which plant each is obtained from and at what wavelength it absorbs"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The two halves are swapped. Carotenes are the pure hydrocarbons; xanthophylls are the carotene derivatives that carry the oxygen-containing groups, and adding such a group shifts the absorption maximum toward longer wavelengths.", cn: "两半调换了。Carotene 才是纯烃；xanthophyll 是带含氧基团的 carotene 衍生物，而加上这样一个基团会使吸收峰向长波方向移动。" },
+        2: { en: "The conjugated system — 3 to 11 double bonds — is what makes all carotenoids strikingly coloured, from yellowish tints to red-brown. Xanthophylls are pigments too: zeaxanthin is yellow, astaxanthin blue-green, fucoxanthin brown-red.", cn: "共轭体系（3 到 11 个双键）正是让所有 carotenoid 颜色鲜明的原因，从淡黄一直到红棕。Xanthophyll 同样是色素：zeaxanthin 是黄的，astaxanthin 是蓝绿的，fucoxanthin 是棕红的。" },
+        3: { en: "The distinction is chemical, and it has a visible consequence: an added oxygen group moves the absorption maximum to longer wavelengths, which is to say it changes the colour. The plant source follows from the chemistry, not the other way round.", cn: "这个区分是化学上的，而且有看得见的后果：多一个含氧基团就把吸收峰推向长波，也就是改变颜色。植物来源是化学性质带来的结果，而不是反过来。" }
+      },
       why_en: "The book defines carotenes as pure hydrocarbons and xanthophylls as carotene derivatives bearing oxygen-containing functional groups (hydroxyl, epoxide, carbonyl, carboxyl, or saccharide residues), which also shifts their absorption maximum to longer wavelengths.",
       why_cn: "教材将胡萝卜素定义为纯烃类，将叶黄素定义为带含氧官能团（羟基、环氧基、羰基、羧基或糖基）的胡萝卜素衍生物，这也使其吸收峰向长波方向移动。"
     },
@@ -1268,12 +1317,17 @@ window.BIOCHEM.topics.push(
       q_en: "The enzyme-controlled symmetric cleavage of beta-carotene produces how many molecules of retinol, and why is this reaction 'symmetric'?",
       q_cn: "β-胡萝卜素经酶控制的对称裂解生成多少分子视黄醇？为何该反应称为“对称”？",
       options: [
-        "One retinol molecule, because only one half of beta-carotene is retinol-active",
+        "One retinol molecule, because only the half carrying the intact ring is retinol-active",
         "Two retinol molecules, because beta-carotene is cleaved at its central bond into two identical halves",
-        "Four retinol molecules, one from each ring system",
-        "Retinol is not produced from beta-carotene at all"
+        "Four retinol molecules, one from each of the two rings and each of the two chain halves",
+        "None at all; retinol reaches animals only in the diet, since ingested beta-carotene is either excreted unchanged or stored away in fat tissue"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Both halves are structurally identical, and that is exactly what 'symmetric' means here: the molecule is cut at its centre and each half becomes a retinol, so the yield is two.", cn: "两半在结构上完全相同，这正是这里所说的「对称」：分子从中间切开，每一半都成为一个 retinol，所以产量是两个。" },
+        2: { en: "Two, not four. The cleavage is a single cut at the central bond, so each ring stays attached to its own half of the polyene chain rather than being separated from it.", cn: "是两个，不是四个。裂解只是在中央的键上切一刀，所以每个环都还连在自己那半条多烯链上，并没有被分开。" },
+        3: { en: "Ingested beta-carotene is indeed partly excreted unchanged and partly stored in fat and nervous tissue — but the book calls that store a provitamin-A reserve, precisely because this cleavage can turn it into retinol when it is needed.", cn: "摄入的 beta-carotene 确实一部分原样排出、一部分储存在脂肪和神经组织里——但教材把这个储备称为 provitamin A 的储备，正因为需要时这个裂解可以把它变成 retinol。" }
+      },
       why_en: "The book's diagram shows beta-carotene undergoing oxidative cleavage at its central double bond to give two (2x) molecules of retinol — 'symmetric' because beta-carotene's two halves are structurally identical.",
       why_cn: "教材图示显示β-胡萝卜素在其中央双键处经氧化裂解生成两（2×）分子视黄醇——之所以称“对称”，是因为β-胡萝卜素的两半结构完全相同。"
     },
