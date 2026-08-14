@@ -32,8 +32,8 @@
    reading whole genomes and comparing them — three different questions,
    which is the same reasoning that kept 9.1 and 9.2 apart.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-9-3-1",
     book: "lehninger",

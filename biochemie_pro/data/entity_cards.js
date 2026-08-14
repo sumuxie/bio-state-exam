@@ -120,22 +120,33 @@ window.BIOCHEM.topics.push(
         options: [
           "Its side-chain carboxyl group ionises near pH 2.4 / 侧链羧基在 pH 2.4 附近解离",
           "Its indole ring is flat and conjugated, so it absorbs UV / 吲哚环扁平且共轭，因而吸收紫外光",
-          "It is the largest amino acid by molecular weight / 它是分子量最大的氨基酸",
-          "It carries a positive charge at physiological pH / 它在生理 pH 下带正电荷"
+          "It is the largest of the twenty by molecular mass, Mr 204 / 它是二十种中分子量最大的，Mr 204",
+          "It carries a positive charge at physiological pH, as histidine does / 它在生理 pH 下带正电荷，与组氨酸一样"
         ],
         answer: 1,
+        optionRefs: { 3: "E-histidine" },
+        optionNotes: {
+          0: { en: "2.38 is pK1, the α-carboxyl every amino acid has, not a side-chain value. The card's generating fact is the opposite one: tryptophan has NO R-group pKa at all, which is why Table 3-1 leaves that column empty for it — and an unionisable side chain is exactly what leaves the ring free to do optics instead of acid-base chemistry.", cn: "2.38 是 pK1，即每个氨基酸都有的 α-羧基，不是侧链的数值。这张卡片的生成事实恰恰相反：tryptophan 根本**没有**侧链 pKa，所以 Table 3-1 那一栏对它是空的——而侧链不解离，正是让这个环腾出手来做光学而不是酸碱化学的原因。" },
+          2: { en: "True and irrelevant, which makes it the more tempting: Mr 204 does make tryptophan the largest of the twenty. But A280 is not a mass measurement — the Lambert-Beer law A = εcl turns absorbance into concentration through the molar extinction coefficient, and ε comes from the conjugated ring, not from the residue's bulk.", cn: "既真实又不相干，这才更容易上当：Mr 204 确实让 tryptophan 成为二十种中最大的。但 A280 不是质量测量——Lambert-Beer 定律 A = εcl 是通过 molar extinction coefficient 把吸光度换成浓度的，而 ε 来自共轭环，不来自残基的体积。" },
+          3: { en: "The indole nitrogen carries no charge — it is what makes tryptophan measurably more polar than phenylalanine and so a membrane interface anchor, but it never ionises. The residue that is part-protonated at pH 7 is histidine, and that is the whole subject of its own card.", cn: "吲哚上的氮不带电荷——它使 tryptophan 的极性明显高于 phenylalanine，因而成为 membrane interface anchor，但它从不解离。在 pH 7 下部分质子化的那个残基是 histidine，那正是组氨酸那张卡片的全部主题。" }
+        },
         why_en: "The absorbance at 280 nm comes from the conjugated flat indole ring. Trp has no ionisable R group at all, which is why Table 3-1 lists no R-group pKa for it.",
         why_cn: "280 nm 处的吸收来自共轭的扁平吲哚环。色氨酸完全没有可解离的侧链基团——这正是 Table 3-1 没有为它列出侧链 pKa 的原因。" },
       { type: "mcq",
         q_en: "At 280 nm, how does tryptophan's absorbance compare with tyrosine's?",
         q_cn: "在 280 nm 处，色氨酸的吸光度与酪氨酸相比如何？",
         options: [
-          "About the same / 大致相同",
-          "Roughly half / 约为一半",
+          "About the same as tyrosine's / 与酪氨酸大致相同",
+          "Roughly half of tyrosine's / 约为酪氨酸的一半",
           "More than four times greater / 超过四倍",
-          "Tyrosine does not absorb at 280 nm at all / 酪氨酸在 280 nm 完全不吸收"
+          "Tyrosine does not absorb there at all / 酪氨酸在该处完全不吸收"
         ],
         answer: 2,
+        optionNotes: {
+          0: { en: "If the two were equal, Trp content would not dominate a protein's A280 and a Trp-free protein would read just like any other. Fig. 3-6 puts them far apart, and that gap is the whole reason A280 works as a quick concentration assay at all.", cn: "如果两者相当，蛋白 A280 就不会由 Trp 含量主导，不含 Trp 的蛋白读数也会与别的没什么两样。Fig. 3-6 把两者拉得很开，而正是这个差距，才让 A280 成为一个可用的快速定量方法。" },
+          1: { en: "This has the ratio the wrong way round as well as the wrong size — tryptophan is the larger absorber, not the smaller. Fig. 3-6 gives Trp more than four times Tyr's measured absorbance at 280 nm.", cn: "这句话不但把倍数说小了，还把方向弄反了——吸收更强的是 tryptophan，不是它更弱。Fig. 3-6 给出的是 280 nm 处 Trp 的实测吸光度是 Tyr 的四倍以上。" },
+          3: { en: "Tyrosine absorbs at 280 nm perfectly well; it is simply outclassed by more than fourfold. Both residues contribute, which is why a protein's extinction coefficient depends on its Trp AND Tyr content and why only a protein with neither is hard to quantify this way.", cn: "tyrosine 在 280 nm 吸收得好好的，只是被强出四倍以上而已。两种残基都有贡献，所以一个蛋白的消光系数取决于它的 Trp **与** Tyr 含量，也所以只有两者都没有的蛋白才难以用这个办法定量。" }
+        },
         why_en: "Fig. 3-6: Trp's measured absorbance is more than four times that of Tyr at 280 nm. That ratio is why Trp dominates a protein's A280 and why Trp-free proteins are hard to quantify this way.",
         why_cn: "Fig. 3-6：在 280 nm 处色氨酸的实测吸光度是酪氨酸的四倍以上。这个比值正是色氨酸主导蛋白质 A280 的原因，也是不含色氨酸的蛋白难以用此法定量的原因。" },
       { type: "short",
@@ -323,24 +334,36 @@ window.BIOCHEM.topics.push(
         q_en: "Why is histidine, rather than any other amino acid, the residue most often found doing acid-base catalysis in enzyme active sites?",
         q_cn: "为什么在酶的活性中心里执行酸碱催化的，最常是组氨酸而不是其他任何氨基酸？",
         options: [
-          "Its side chain is the most nucleophilic of the twenty / 它的侧链是二十种中亲核性最强的",
+          "Its imidazole side chain is the most nucleophilic of the twenty, so it attacks the substrate itself / 它的咪唑侧链在二十种中亲核性最强，因而由它自己进攻底物",
           "Its side-chain pKa is 6.0, so at pH 7 both the protonated and unprotonated forms are present / 它的侧链 pKa 为 6.0，故在 pH 7 下质子化与非质子化两种形式同时存在",
-          "It is the only amino acid with an aromatic ring / 它是唯一带芳香环的氨基酸",
-          "It carries a full positive charge at all physiological pH values / 它在所有生理 pH 下都带完整正电荷"
+          "It is the only amino acid carrying an aromatic ring, which is what makes it reactive / 它是唯一带芳香环的氨基酸，正是这一点使它具有反应性",
+          "It carries a full positive charge at every physiological pH, so a proton is always ready / 它在任何生理 pH 下都带完整正电荷，故随时备有一个质子"
         ],
         answer: 1,
+        optionRefs: { 0: "E-cysteine" },
+        optionNotes: {
+          0: { en: "The nucleophile in a serine protease is the serine, not the histidine — the whole function of the Ser195–His57–Asp102 triad is to make a serine hydroxyl usable as a nucleophile, which it cannot be alone because its pKa is far too high. Histidine's job in that network is to move the proton. For a side chain that really is reactive as a nucleophile, see the cysteine card.", cn: "丝氨酸蛋白酶里的亲核体是 serine，不是 histidine——Ser195–His57–Asp102 三联体的全部功能，就是把一个丝氨酸羟基变成可用的亲核体，而它单独做不到，因为 pKa 太高。histidine 在这个网络里的工作是**搬质子**。真正以亲核性见长的侧链，见 cysteine 那张卡片。" },
+          2: { en: "It is not the only one — phenylalanine, tyrosine and tryptophan are aromatic too — and aromaticity by itself buys no catalysis: tryptophan's flat conjugated ring gives it UV absorbance and nothing acid-base at all. What matters here is the imidazole's pKa, not the fact that it is a ring.", cn: "它不是唯一的——phenylalanine、tyrosine 和 tryptophan 同样是芳香族——而且芳香性本身买不到催化能力：tryptophan 那个扁平共轭环给它的是紫外吸收，与酸碱毫无关系。这里要紧的是咪唑的 pKa，不是它是个环。" },
+          3: { en: "Being permanently protonated is exactly what would disqualify it. A residue locked in one form can give a proton away once and then has no way to take one back; catalysis needs both moves in succession. That is why the pKa has to sit near the working pH rather than far below it.", cn: "永远处于质子化状态，恰恰会取消它的资格。锁死在一种形式上的残基，给出一个质子之后就再没有办法收回来；而催化需要这两步接连发生。这正是 pKa 必须落在工作 pH 附近、而不是远低于它的原因。" }
+        },
         why_en: "Lehninger states the uniqueness directly: “As the only common amino acid having an ionizable side chain with pKa near neutrality”, histidine “may be positively charged (protonated form) or uncharged at pH 7.0” (A p.76). Because both forms coexist at physiological pH, one residue can donate a proton at one step and accept one at the next — which is exactly what His57 does in chymotrypsin. Option 3 is false anyway: Phe, Tyr and Trp are aromatic too.",
         why_cn: "Lehninger 直接给出了这个唯一性论断：“As the only common amino acid having an ionizable side chain with pKa near neutrality”，组氨酸“may be positively charged (protonated form) or uncharged at pH 7.0”（A 第76页）。因为两种形式在生理 pH 下**共存**，同一个残基才能在这一步给出质子、在下一步收回质子——这正是 His57 在胰凝乳蛋白酶中所做的。选项 3 本身也是错的：苯丙氨酸、酪氨酸、色氨酸同样是芳香族。" },
       { type: "mcq",
         q_en: "The distal His raises myoglobin's affinity for O₂ about 500-fold but does not help CO binding at all. Why does that selectivity matter physiologically?",
         q_cn: "远端组氨酸把肌红蛋白对 O₂ 的亲和力提高约 500 倍，却对 CO 结合毫无帮助。这种选择性在生理上为何重要？",
         options: [
-          "It makes myoglobin release oxygen faster in working muscle / 它使肌红蛋白在做功肌肉中更快释放氧",
+          "It makes myoglobin release its oxygen faster in working muscle, which is what an oxygen store has to do if it is to be of any use at all / 它使肌红蛋白在做功的肌肉中更快释放氧，而一个氧储库若要有任何用处，正需要做到这一点",
           "It narrows free haem's ~20,000-fold preference for CO down to ~40-fold, so endogenously produced CO does not permanently block the site / 它把游离血红素对 CO 约 20,000 倍的偏好压缩到约 40 倍，使内源产生的 CO 不会永久占据该位点",
-          "It allows the iron to stay in the Fe³⁺ state / 它使铁得以保持在 Fe³⁺ 状态",
-          "It is what produces the Bohr effect / 它正是产生 Bohr 效应的原因"
+          "It holds the haem iron in the Fe³⁺ state, which is the only oxidation state able to bind a diatomic gas reversibly / 它把血红素铁保持在 Fe³⁺ 状态，而只有这个氧化态才能可逆地结合双原子气体",
+          "It is what produces the Bohr effect, so that oxygen is unloaded exactly where the pH has fallen / 它正是产生 Bohr 效应的原因，使氧恰好在 pH 下降处被卸下"
         ],
         answer: 1,
+        optionRefs: { 0: "E-cysteine" },
+        optionNotes: {
+          0: { en: "Raising affinity 500-fold makes myoglobin hold oxygen more tightly, not release it faster — and holding it is the point, since myoglobin is a store rather than a carrier. Unloading on demand is haemoglobin's job, and it is done by the Bohr effect and by the T-state ion pairs, not by the distal His.", cn: "把亲和力提高 500 倍，是让肌红蛋白把氧抓得**更紧**，而不是放得更快——而抓紧正是要点，因为肌红蛋白是储库不是运输者。按需卸氧是血红蛋白的工作，靠的是 Bohr 效应和 T 态的离子对，不是远端 His。" },
+          2: { en: "The iron must be Fe²⁺, not Fe³⁺, for oxygen to bind at all — and the distal His does not touch the iron in any case. The residue that occupies a coordination bond of the haem iron is the PROXIMAL His, His93 (F8); the distal His64 (E7) sits on the far side and reaches only the bound gas. For a side chain that does bolt a cofactor on covalently, see the cysteine card and the c-type cytochromes.", cn: "铁必须是 Fe²⁺ 而不是 Fe³⁺，氧才可能结合——何况远端 His 根本不接触铁。占据血红素铁一个配位键的是**近端** His，即 His93 (F8)；远端的 His64 (E7) 在另一侧，只够得着结合上去的那个气体分子。至于真正把辅因子共价拴上去的侧链，见 cysteine 卡片与 c 型细胞色素。" },
+          3: { en: "A third histidine, and a different protein. The Bohr effect runs through His146 (HC3) of the haemoglobin β subunit, which is protonated as the pH falls and forms an ion pair stabilising the low-affinity T state. Myoglobin has no such subunit and no cooperativity to modulate.", cn: "这是第三个 histidine，而且在另一个蛋白上。Bohr 效应走的是血红蛋白 β 亚基上的 His146 (HC3)，pH 下降时它被质子化，形成离子对稳定低亲和力的 T 态。肌红蛋白既没有这样的亚基，也没有可供调节的协同性。" }
+        },
         why_en: "The Fe–O₂ complex is polar and can accept a hydrogen bond from the imidazole of His E7; the Fe–CO complex cannot, so only oxygen is helped. Affinity “is thus selectively increased by a factor of about 500” (A p.152), collapsing free haem's ~20,000-fold CO preference to roughly 40-fold in myoglobin. Since metabolism generates CO continuously, this selectivity is what stops your own by-product from occupying the site. Option 4 is a different histidine entirely — His146 of the β subunit.",
         why_cn: "Fe–O₂ 复合物是极性的，能接受来自 His E7 咪唑基的氢键；Fe–CO 复合物不能，所以**只有氧得到帮助**。亲和力“is thus selectively increased by a factor of about 500”（A 第152页），使游离血红素约 20,000 倍的 CO 偏好在肌红蛋白中塌缩到约 40 倍。由于代谢**持续**产生 CO，正是这种选择性阻止了你自己的副产物占据该位点。选项 4 说的是**完全另一个**组氨酸——β 亚基上的 His146。" },
       { type: "short",
@@ -520,12 +543,17 @@ window.BIOCHEM.topics.push(
         q_en: "What makes cysteine's side chain different in KIND from the other nineteen?",
         q_cn: "半胱氨酸的侧链在**种类**上与其余十九种有何不同？",
         options: [
-          "It is the most polar of the uncharged side chains / 它是不带电侧链中极性最强的",
+          "It is the most polar of the uncharged side chains, which is why it is grouped with them / 它是不带电侧链中极性最强的，正因如此才与它们归为一类",
           "It is the only side chain that can form a covalent bond with another side chain / 它是唯一能与另一个侧链形成共价键的侧链",
           "It is the only side chain containing an atom other than C, H, O and N / 它是唯一含有碳氢氧氮以外原子的侧链",
-          "It carries a negative charge at physiological pH / 它在生理 pH 下带负电荷"
+          "It carries a negative charge at physiological pH, as aspartate and glutamate do / 它在生理 pH 下带负电荷，与天冬氨酸和谷氨酸一样"
         ],
         answer: 1,
+        optionNotes: {
+          0: { en: "Lehninger files cysteine with the polar uncharged group and then immediately takes the polarity back: cysteine is an outlier there because the polarity contributed by its sulfhydryl group is quite modest. Nor does the polarity survive use — once two cysteines are oxidised to cystine the linked residues become strongly hydrophobic.", cn: "Lehninger 把 cysteine 归进极性不带电那一组，随即又把这份极性收了回去：cysteine 在那里是个异类，因为它的巯基所贡献的极性相当有限。而且这点极性也经不起使用——两个 cysteine 一旦被氧化成 cystine，相连的残基就变得强疏水了。" },
+          2: { en: "Methionine also contains sulfur, so cysteine is not the only one — and a thioether does none of this chemistry. Uniqueness lies in what the free —SH can do: be oxidised to a covalent link with a second cysteine, coordinate iron in an Fe-S centre, or, as glutathione, act as the cell's principal reducing agent.", cn: "methionine 同样含硫，所以 cysteine 并不是唯一的——而且硫醚做不了这些化学。独特之处在于游离 —SH 能做什么：被氧化成与另一个 cysteine 的共价连接、在 Fe-S 中心里配位铁，或者以 glutathione 的形式充当细胞主要的还原剂。" },
+          3: { en: "The thiol is not an acid of that strength; cysteine is not listed among the negatively charged side chains at all, which is the group aspartate and glutamate belong to. Its reactivity is redox chemistry, not charge — the sulfur gives up electrons rather than a proton.", cn: "巯基没有那么强的酸性；cysteine 根本不在带负电侧链那一组里，而 aspartate 与 glutamate 才属于那一组。它的反应性来自氧化还原化学，不是电荷——硫交出的是电子，不是质子。" }
+        },
         why_en: "Lehninger explicitly downgrades its polarity — “cysteine is an outlier here because its polarity” is “contributed by its sulfhydryl group, is quite modest” (A p.76). What is unique is the chemistry: “Cysteine is readily oxidized to form a covalently linked dimeric amino acid called cystine” (A p.76), and disulfides are the only covalent side-chain-to-side-chain links in proteins. Option 3 is wrong because methionine also contains sulfur.",
         why_cn: "Lehninger 明确**降低**了它在极性上的分量——“cysteine is an outlier here because its polarity”，其极性“contributed by its sulfhydryl group, is quite modest”（A 第76页）。真正独特的是**化学**：“Cysteine is readily oxidized to form a covalently linked dimeric amino acid called cystine”（A 第76页），而二硫键是蛋白质中**唯一**的侧链对侧链共价连接。选项 3 错在甲硫氨酸同样含硫。" },
       { type: "mcq",

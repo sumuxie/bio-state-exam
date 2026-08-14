@@ -31,8 +31,8 @@
    substring count is worthless here, it scored `Ras` at 607 because
    Czech enzyme names end in -rasa.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-12-3-1",
     book: "lehninger",

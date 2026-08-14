@@ -53,8 +53,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which enzyme class catalyses bond formation with SIMULTANEOUS HYDROLYSIS of a macroergic compound such as ATP?",
       q_cn: "哪一类酶在催化键形成的同时伴随 ATP 等高能化合物的水解？",
-      options: ["Lyases (class 4)", "Transferases (class 2)", "Ligases / synthetases (class 6)", "Isomerases (class 5)"],
+      options: ["Hydrolases (class 3)", "Transferases (class 2)", "Ligases / synthetases (class 6)", "Lyases, otherwise called synthases (class 4)"],
       answer: 2,
+      optionRefs: { 1: "6-1-2-1" },
+      optionNotes: {
+        0: { en: "Class 3 does the opposite of what the question describes: it BREAKS a bond with water rather than forming one, and no nucleoside triphosphate is involved anywhere. Its subclasses are formed by the type of hydrolysed bond, and because these are among the longest-known enzymes, many of them still carry their original non-systematic names.", cn: "第 3 类做的正好是题干的反面：它是**用水断键**而不是成键，全程也不涉及任何核苷三磷酸。它按所水解键的类型分亚类；又因为这批酶是人类认识最早的一批，其中许多至今沿用原来的非系统名。" },
+        1: { en: "Class 2 moves a group from a donor to an acceptor, and ATP genuinely does appear in its example — hexose + ATP → hexose-phosphate + ADP, catalysed by ATP:hexose-phosphotransferase, that is hexokinase. But there ATP is the DONOR of the group transferred; in class 6 it is a macroergic compound hydrolysed to pay for joining two other molecules.", cn: "第 2 类是把一个基团从供体搬到受体，而它的例子里 ATP 确实出场了——hexose + ATP → hexose-phosphate + ADP，由 ATP:hexose-phosphotransferase（即己糖激酶）催化。但在那里 ATP 是被转移基团的**供体**；在第 6 类里，它是被水解掉、用来支付另外两个分子成键代价的高能化合物。" },
+        3: { en: "This is the trap the whole section is built around. Lyases are class 4 and their alternative name is SYNTHASES, which sounds like the answer but is not it: they cleave bonds non-hydrolytically and non-oxidatively, often forming a double bond, or add to one — and they do it WITHOUT hydrolysing a nucleoside triphosphate. Synthase is not synthetase.", cn: "这正是整节要设的那个陷阱。裂合酶是第 4 类，别名 **SYNTHASE（合酶）**，听着像答案但不是：它们以非水解、非氧化的方式断键（常常同时生成一个双键），或者反过来对双键加成——而且**不伴随**核苷三磷酸的水解。synthase 不等于 synthetase。" }
+      },
       why_en: "Class 6, the ligases or synthetases. Do not confuse them with class 4, the LYASES, whose alternative name is SYNTHASES — lyases work WITHOUT hydrolysis of a nucleoside triphosphate. Synthase ≠ synthetase.",
       why_cn: "第 6 类，连接酶或合成酶。不要与第 4 类裂合酶混淆，后者的别名是「合酶」——裂合酶不伴随核苷三磷酸的水解。合酶 ≠ 合成酶。"
     },
@@ -63,12 +69,18 @@ window.BIOCHEM.topics.push(
       q_en: "In E.C. 1.1.1.27 for lactate dehydrogenase, what does the THIRD number denote?",
       q_cn: "在乳酸脱氢酶的 E.C. 1.1.1.27 中，第三个数字表示什么？",
       options: [
-        "The main class of enzymes",
+        "The main class of enzymes — here, the oxidoreductases",
         "The subclass — oxidation of a primary alcoholic group",
         "The type of hydrogen acceptor — here, nicotinamide coenzymes",
-        "The serial number within the sub-subgroup"
+        "The serial number of the concrete enzyme in its sub-subgroup"
       ],
       answer: 2,
+      optionRefs: { 0: "3-2" },
+      optionNotes: {
+        0: { en: "Right description, wrong position: this is the FIRST number, and for E.C. 1.1.1.27 it is indeed 1, the oxidoreductases — the class that transfers electrons or hydrogen, or reacts with oxygen. The skill this question tests is reading the four numbers in order, so the position matters as much as the content.", cn: "描述是对的，位置错了：这是**第一个**数字，而对 E.C. 1.1.1.27 来说它确实是 1，即氧化还原酶——转移电子或氢、或与氧反应的那一类。这道题考的就是**按顺序**读这四个数字，所以位置和内容一样重要。" },
+        1: { en: "Also right in itself and also one position early: this is the SECOND number, the subclass, and oxidation of a primary alcoholic group is exactly what it says for lactate dehydrogenase. The third number then narrows it further, to which acceptor takes the hydrogen away.", cn: "本身同样没说错，同样早了一位：这是**第二个**数字，即亚类，而「伯醇基的氧化」对乳酸脱氢酶来说正是它的含义。第三个数字再往下缩一层，指明是谁把氢接走。" },
+        3: { en: "This is the FOURTH number, and it is the only one of the four carrying no chemical meaning at all — it is a bare serial number identifying the concrete enzyme inside the sub-subgroup, here 27. The code as a whole exists to identify an enzyme unambiguously, alongside its systematic and its recommended name.", cn: "这是**第四个**数字，也是四个里唯一不带任何化学含义的一个——它只是次亚类内部用来标定这个具体酶的流水号，这里是 27。整个编号存在的目的，是与系统名、推荐名一起把一个酶无歧义地标定下来。" }
+      },
       why_en: "First = main class; second = subclass (oxidation of a primary alcoholic group); third = type of hydrogen acceptor (an enzyme cooperating with nicotinamide coenzymes); fourth = serial number in the sub-subgroup.",
       why_cn: "第一个 = 大类；第二个 = 亚类（伯醇基的氧化）；第三个 = 氢受体类型（与烟酰胺辅酶协同的酶）；第四个 = 该酶在次亚类中的序号。"
     },
@@ -79,10 +91,16 @@ window.BIOCHEM.topics.push(
       options: [
         "Sumner, 1926, urease",
         "Sumner, 1930, trypsin",
-        "Michaelis, 1913, pepsin",
-        "Northrop, 1926, chymotrypsin"
+        "Sumner, 1930, pepsin",
+        "Michaelis, 1926, chymotrypsin"
       ],
       answer: 0,
+      optionRefs: { 3: "3-3-1" },
+      optionNotes: {
+        1: { en: "The right person, the wrong decade and the wrong enzyme. What Sumner obtained in 1926 was urease; trypsin, pepsin and chymotrypsin all followed in the THIRTIES, once the first case had shown it could be done.", cn: "人对了，年代和酶都错了。Sumner 在 1926 年拿到的是脲酶；胰蛋白酶、胃蛋白酶、胰凝乳蛋白酶都是**三十年代**的事——第一个先例做成之后，才轮到它们。" },
+        2: { en: "Pepsin is likewise one of the three that came in the thirties. The reason 1926 is the landmark is not the enzyme itself but the demonstration: it was the first proof that an enzyme could be obtained as a pure crystalline substance at all.", cn: "胃蛋白酶同样属于三十年代那三个。1926 年之所以是里程碑，重点不在这个酶本身，而在它证明了一件事：酶是**可以**被拿到纯结晶状态的。" },
+        3: { en: "Michaelis's name belongs to the kinetics of enzyme reactions — the Michaelis constant K_m and the Michaelis–Menten equation — not to the isolation of crystalline enzymes. Chymotrypsin, meanwhile, is a thirties enzyme, and it returns later as the textbook's example of covalent catalysis.", cn: "Michaelis 这个名字属于酶反应**动力学**——Michaelis 常数 K_m 和 Michaelis–Menten 方程——与结晶酶的分离无关。而胰凝乳蛋白酶是三十年代的酶，它后面还会作为教材讲共价催化的例子回来。" }
+      },
       why_en: "Urease, isolated by Sumner in 1926. Trypsin, pepsin and chymotrypsin followed in the thirties.",
       why_cn: "脲酶，由 Sumner 于 1926 年分离。胰蛋白酶、胃蛋白酶和胰凝乳蛋白酶在三十年代相继获得。"
     },
@@ -176,6 +194,12 @@ window.BIOCHEM.topics.push(
         "Pyridoxal phosphate — pyridoxin (B₆)"
       ],
       answer: 1,
+      optionRefs: { 2: "6-1-2-2", 3: "5-2-1-2" },
+      optionNotes: {
+        0: { en: "TPP is in Tab. 3.1, but on a different row: the group it transfers is an ALDEHYDE, and its vitamin is thiamin. Reading the table as three columns — coenzyme, group transferred, vitamin — is what this question is checking, and each row has to be kept whole.", cn: "TPP 确实在表 3.1 里，但在另一行：它转移的是**醛基**，对应的维生素是硫胺素。这道题考的就是把表按三栏读——辅酶、所转移的基团、维生素——每一行必须整行记住。" },
+        2: { en: "Coenzyme A transfers an ACYL group, and its vitamin is pantothenic acid. Note the row directly under it in the table: lipoamide also transfers acyl, together with H, and it is one of the two entries with no corresponding vitamin at all, the other being coenzyme Q.", cn: "辅酶 A 转移的是**酰基**，对应的维生素是泛酸。注意表里紧挨着它下面那一行：lipoamide 也转移酰基（还带 H），而且它是表中仅有的两个「没有对应维生素」的条目之一，另一个是辅酶 Q。" },
+        3: { en: "Pyridoxal phosphate transfers the –NH₂ group, and its vitamin is pyridoxin (B₆). That single row is the whole basis of transamination, which is where this coenzyme does its work in amino acid metabolism.", cn: "磷酸吡哆醛转移的是 **–NH₂** 基，对应的维生素是吡哆醇 (B₆)。就这一行，构成了转氨作用的全部基础——这个辅酶在氨基酸代谢里干的正是这件事。" }
+      },
       why_en: "From Tab. 3.1: biotin transfers CO₂ and corresponds to vitamin biotin (H). TPP transfers an aldehyde (thiamin), coenzyme A an acyl (pantothenic acid), pyridoxal phosphate the –NH₂ group (B₆).",
       why_cn: "据表 3.1：生物素转移 CO₂，对应维生素生物素 (H)。TPP 转移醛基（硫胺素），辅酶 A 转移酰基（泛酸），磷酸吡哆醛转移 –NH₂ 基（B₆）。"
     },
@@ -184,12 +208,18 @@ window.BIOCHEM.topics.push(
       q_en: "What distinguishes a PROSTHETIC GROUP from other coenzymes?",
       q_cn: "辅基与其他辅酶的区别是什么？",
       options: [
-        "It is a metal ion rather than an organic molecule",
+        "It is a metal ion rather than an organic molecule, and so is not a coenzyme at all",
         "It is bound to the apoenzyme very strongly; weakly bound coenzymes behave kinetically as substrates",
-        "It is thermally labile whereas other coenzymes are stable",
-        "It is synthesised de novo and not derived from a vitamin"
+        "It is thermally labile, whereas the other coenzymes survive the heating that destroys the protein part",
+        "It is synthesised by the cell itself and is not derived from a vitamin taken in with food"
       ],
       answer: 1,
+      optionRefs: { 0: "2-2-5" },
+      optionNotes: {
+        0: { en: "A cofactor can indeed be either a metal ion or an organic molecule — but only the organic one is called a coenzyme, so a metal ion never enters this comparison in the first place. The metal case has its own name: an enzyme carrying a metal ion as cofactor is a METALLOENZYME.", cn: "辅因子确实可以是金属离子，也可以是有机分子——但**只有有机的那一种才叫 coenzyme**，所以金属离子根本不进入这个比较。金属那一路另有名字：以金属离子为辅因子的酶叫 METALLOENZYME（金属酶）。" },
+        2: { en: "Thermal stability does not separate coenzymes from one another; it separates the cofactor from the protein. The book's rule is general — cofactors are thermally stable, the protein part of the enzyme molecule is not — which is exactly why boiling an enzyme leaves the cofactor intact and recoverable.", cn: "热稳定性区分的不是辅酶之间，而是**辅因子和蛋白质**。教材那条规律是通用的——辅因子耐热，酶分子的蛋白质部分不耐热——这也正是把酶煮一煮、辅因子还完好无损可以回收的原因。" },
+        3: { en: "This runs against the general rule rather than defining an exception to it: coenzymes are mostly molecules corresponding in structure to VITAMINS or their derivatives, and a vitamin is by definition something the organism cannot make and must be supplied with in food. It is true of prosthetic groups and loosely bound coenzymes alike.", cn: "这不是在给规律定例外，而是把规律说反了：辅酶大多是结构上对应于**维生素**或其衍生物的分子，而维生素按定义就是机体自己造不出来、必须随食物摄入的东西。这一点对辅基和松散结合的辅酶同样成立。" }
+      },
       why_en: "Strength of binding is the criterion. A very strongly bound coenzyme is a prosthetic group; one bound by weak interactions acts, kinetically, as a substrate of the enzyme.",
       why_cn: "判据是结合的牢固程度。结合非常牢固的辅酶即辅基；以弱相互作用结合的辅酶在动力学上表现为酶的底物。"
     },
@@ -201,9 +231,15 @@ window.BIOCHEM.topics.push(
         "Both the cofactor and the protein part are thermally stable",
         "The cofactor is thermally stable, the protein part is not",
         "The protein part is thermally stable, the cofactor is not",
-        "Neither is thermally stable"
+        "Neither the cofactor nor the protein part is thermally stable"
       ],
       answer: 1,
+      optionRefs: { 2: "3-4" },
+      optionNotes: {
+        0: { en: "The cofactor half is right and the protein half is wrong, and it is the asymmetry that makes the rule useful: heat the holoenzyme and the protein part goes while the cofactor survives, which is precisely how the two are separated in practice.", cn: "辅因子那一半说对了，蛋白质那一半错了；而这条规律的用处恰恰在于这种**不对称**：把全酶加热，蛋白质部分完蛋而辅因子存活——实际操作中就是靠这一点把两者分开的。" },
+        2: { en: "The rule the wrong way round. Nothing in this course treats the protein part as heat-resistant — quite the reverse: most enzymes are inactivated around 55–60 °C, and above a critical temperature the thermal denaturation of the protein catalyst takes over and the reaction rate begins to fall.", cn: "把规律整个反过来了。本课程从没把蛋白质部分当作耐热的——恰恰相反：多数酶在 55–60 °C 附近失活，超过临界温度后，蛋白质催化剂的热变性占了上风，反应速度开始下降。" },
+        3: { en: "If neither half survived heating, there would be no separation to exploit and no reason for the book to state the rule at all. The point of stating it is that one half does survive: the cofactor, which can then be recovered and reused by a different apoenzyme.", cn: "如果两半都扛不住加热，就没有什么可利用的分离，教材也没必要专门写这条规律。写它的意义正在于**有一半扛得住**：辅因子活下来，还能被回收、被另一个脱辅基酶蛋白重新用上。" }
+      },
       why_en: "The textbook states it as a general rule: cofactors of enzymes are thermally stable, whereas the protein part of the enzyme molecule is not. This is exploited practically in separating them.",
       why_cn: "教材把它作为一般规律：酶的辅因子是热稳定的，而酶分子的蛋白质部分不是。这在实际分离中被加以利用。"
     },
@@ -298,6 +334,12 @@ window.BIOCHEM.topics.push(
       q_cn: "在本教材所印的 Lineweaver–Burk 方程中，直线的斜率是：",
       options: ["1 / V_lim", "K_m / V_lim", "V_lim / K_m", "−1 / K_m"],
       answer: 1,
+      optionRefs: { 0: "L-6-3-1", 2: "L-6-3-1", 3: "L-6-3-1" },
+      optionNotes: {
+        0: { en: "This is the other constant in the same equation, but the INTERCEPT rather than the slope: equation (7) reads 1/v = (K_m/V_lim)·(1/[A]) + 1/V_lim, so 1/V_lim is the constant term, the value 1/v takes when 1/[A] is zero.", cn: "这是同一个方程里的另一个常数，但它是**截距**不是斜率：方程 (7) 为 1/v = (K_m/V_lim)·(1/[A]) + 1/V_lim，所以 1/V_lim 是常数项，也就是 1/[A] 为零时 1/v 的取值。" },
+        2: { en: "The slope turned upside down, and inverting it reverses what a steep line means. With the true slope K_m/V_lim, a steep line signals a LARGE K_m — a high substrate concentration needed to reach half of V_lim, and therefore weak binding of A by the enzyme.", cn: "把斜率倒过来了，而一倒过来，「线很陡」的含义就反了。按真正的斜率 K_m/V_lim，线陡意味着 **K_m 大**——需要很高的底物浓度才能达到 V_lim 的一半，也就是酶抓 A 抓得不紧。" },
+        3: { en: "The minus sign is the giveaway: nothing in equation (7) produces one, since both of its constants are positive quotients of K_m and V_lim. Where the book does put a negative value on an axis is the Cornish-Bowden and Eisenthal direct linear plot, which carries −K_m on the [A] axis.", cn: "破绽在那个负号：方程 (7) 里产生不出负号，因为它的两个常数都是 K_m 与 V_lim 的正商。教材里真正把负值放到坐标轴上的地方，是 Cornish-Bowden 与 Eisenthal 的直接线性作图——那里 [A] 轴上标的是 −K_m。" }
+      },
       why_en: "Equation (7) reads 1/v = (K_m/V_lim)·(1/[A]) + 1/V_lim, so the slope is K_m/V_lim and the intercept on the 1/v axis is 1/V_lim. Note the book writes V_lim, not V_max, and uses [A] for the substrate.",
       why_cn: "方程 (7) 为 1/v = (K_m/V_lim)·(1/[A]) + 1/V_lim，故斜率为 K_m/V_lim，1/v 轴截距为 1/V_lim。注意本书写作 V_lim 而非 V_max，并以 [A] 表示底物。"
     },
@@ -306,12 +348,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why can organisms not use heating to accelerate their reactions?",
       q_cn: "生物体为什么不能用加热来加速其反应？",
       options: [
-        "Because heating would change the equilibrium constant unfavourably",
+        "Because heat does not lower barriers",
         "Because they are mostly thermolabile",
-        "Because heat cannot lower the activation energy",
-        "Because heating excites molecules along a different reaction coordinate"
+        "Because heating shifts the equilibrium the wrong way",
+        "Because heating excites a different reaction coordinate"
       ],
       answer: 1,
+      optionRefs: { 2: "L-1-3-1" },
+      optionNotes: {
+        0: { en: "True as a statement, but it is not the objection. Lowering the activation energy is what the CATALYST does, by joining the reactants temporarily so the reaction runs by another mechanism. Heating was never supposed to lower the barrier — it raises the energy of the reactant molecules so more of them can cross it, and that route is closed to organisms for a quite different reason.", cn: "这句话本身没错，但它不是这里的反对理由。**降低活化能是催化剂**干的事：它暂时和反应物结合，让反应改走另一条机理。加热本来就不负责降低能垒——它是抬高反应物分子的能量，让更多分子越得过去；而这条路对生物体不通，是出于完全另一个原因。" },
+        2: { en: "The objection here is not thermodynamic at all. It is worth noting the parallel fact about catalysis: a catalyst does not touch the equilibrium either — what it changes is the route and its activation energy, and therefore only the rate at which equilibrium is reached.", cn: "这里的反对理由和热力学根本无关。顺带记住催化那边的对应事实：**催化剂同样不改变平衡**——它改变的是路线和活化能，因而只改变到达平衡的**快慢**。" },
+        3: { en: "That belongs to the third route on the book's list, not the first: molecules may be EXCITED BY ELECTROMAGNETIC RADIATION, and the reaction then usually proceeds along a different reaction coordinate. Heating is route one, catalysis route two, radiation route three.", cn: "那属于教材列出的**第三**条路，不是第一条：分子可以被**电磁辐射（光）激发**，此后反应通常沿另一条反应坐标进行。加热是第一条，催化是第二条，辐射是第三条。" }
+      },
       why_en: "Heating does raise the energy of reactant molecules and their ability to cross the barrier, but organisms are mostly thermolabile, so this route is closed to them — which is precisely why catalysis matters.",
       why_cn: "加热确实能提高反应物分子的能量及其越过能垒的能力，但生物体大多是热不稳定的，故此路不通——这正是催化之所以重要的原因。"
     },
@@ -323,9 +371,15 @@ window.BIOCHEM.topics.push(
         "Slow reversible formation of EA, then fast irreversible breakdown",
         "Fast reversible formation of EA, then slower irreversible breakdown",
         "Fast irreversible formation of EA, then fast reversible breakdown",
-        "A single concerted step with no intermediate"
+        "A single concerted step in which no EA intermediate is formed at all"
       ],
       answer: 1,
+      optionRefs: { 2: "L-6-3-1", 3: "L-6-3-1" },
+      optionNotes: {
+        0: { en: "The two speeds are swapped. Binding is the FAST step — E and A are held together only by weak interactions — and the chemical conversion that follows is the slower one. That ordering is why V_lim exists: past saturation every enzyme molecule is already carrying an A, and the second step sets the ceiling.", cn: "两步的快慢调了个个儿。结合是**快**的那一步——E 和 A 之间只靠弱相互作用维系——随后真正的化学转变才是慢的那一步。正是这个次序造就了 V_lim：饱和之后每个酶分子手上都已经有一个 A，速度上限由第二步决定。" },
+        2: { en: "Both reversibilities are wrong, and they matter in opposite directions. EA forms REVERSIBLY, precisely because it rests on weak interactions and can fall apart again; the breakdown of EA into E and the product X is the IRREVERSIBLE step. The book writes the whole scheme as E + A ⇌ EA → E + X.", cn: "两处可逆性都错了，而且错的方向相反。EA 的形成是**可逆**的，正因为它只靠弱相互作用维系、随时可以散掉；EA 分解成 E 和产物 X 才是**不可逆**的那一步。教材把整个式子写作 E + A ⇌ EA → E + X。" },
+        3: { en: "The two-step scheme is not an assumption the book makes for convenience — it is a finding. It emerged from experimental observation of how the rate of an enzyme reaction depends on substrate concentration, and it applies to EVEN THE SIMPLEST enzyme reaction.", cn: "两步机制不是教材为方便而作的假设——它是**观测出来的结论**，来自对酶反应速度如何随底物浓度变化的实验观察，而且**连最简单的**酶反应也是两步。" }
+      },
       why_en: "First the substrate A joins the enzyme E to give EA — fast, reversible, weak interactions. Then the actual chemical conversion occurs and EA breaks down to E and product X — slower and irreversible.",
       why_cn: "首先底物 A 与酶 E 结合生成 EA——快速、可逆、由弱相互作用维系。随后发生真正的化学转变，EA 分解为 E 和产物 X——较慢且不可逆。"
     },
@@ -392,12 +446,17 @@ window.BIOCHEM.topics.push(
       q_en: "The defining feature of the ping-pong mechanism is that:",
       q_cn: "乒乓机制的决定性特征是：",
       options: [
-        "Both substrates bind simultaneously in a strict order",
+        "Both substrates are bound to the enzyme at the same time, in a ternary complex whose order of binding is strictly determined",
         "No ternary complex arises; a modified enzyme E′ is formed and the first product leaves before the second substrate binds",
-        "The enzyme is permanently inactivated after one cycle",
-        "The two substrates bind in random order to form EAB"
+        "The enzyme is modified during the reaction and is not regenerated, so it works through exactly one cycle",
+        "The two substrates bind in whatever order they arrive, forming the ternary complex EAB before anything reacts"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "This is the ORDERED variant of the ternary-complex mechanism — the book's mechanism (a), not (b). It is a real mechanism and a real distinction to know, but everything in it turns on both substrates being bound at once, which is exactly what ping-pong never does.", cn: "这是三元复合物机制里的**有序型**——教材的机制 (a)，不是 (b)。它确实存在，这个区分也确实要记，但它的一切都建立在「两个底物同时结合」上，而这恰恰是乒乓机制从不做的事。" },
+        2: { en: "The enzyme is modified, but only transiently. E′ goes on to react with the second substrate B, a second binary complex E′B forms, the second product Y is released and THE ENZYME IS REGENERATED. Something spent after a single cycle would be a reagent, not a catalyst.", cn: "酶确实被修饰了，但只是暂时的。E′ 接着与第二个底物 B 反应，生成第二个二元复合物 E′B，放出第二个产物 Y，然后**酶得以再生**。一转就报废的东西是反应物，不是催化剂。" },
+        3: { en: "This is the RANDOM variant, the other half of the same ternary-complex mechanism (a): the complex EAB still forms with both substrates on the enzyme together, and the only thing left free is the order in which they arrive.", cn: "这是**无序型**，同一个三元复合物机制 (a) 的另一半：EAB 复合物照样形成，两个底物照样同时待在酶上，唯一自由的只是它们到达的先后顺序。" }
+      },
       why_en: "In ping-pong no ternary complex forms at all. The enzyme reacts with A, releases the first product X and becomes the modified enzyme E′, which then reacts with B to release Y and regenerate the enzyme.",
       why_cn: "在乒乓机制中根本不形成三元复合物。酶与 A 反应，释放第一个产物 X 并成为修饰酶 E′，后者再与 B 反应释放 Y 并使酶再生。"
     },
@@ -406,12 +465,18 @@ window.BIOCHEM.topics.push(
       q_en: "Nicotinamide coenzymes make an enzyme reaction two-substrate because:",
       q_cn: "烟酰胺辅酶之所以使酶反应成为双底物反应，是因为：",
       options: [
-        "They are bound as prosthetic groups",
+        "They are bound to the apoenzyme so strongly that they count as prosthetic groups rather than free coenzymes",
         "They are needed in stoichiometric amount and kinetically have the character of a substrate",
-        "They are metal ions acting as bridges",
-        "They are thermally stable"
+        "They are metal ions serving as bridges that bind the substrate to the enzyme molecule",
+        "They are thermally stable, unlike the protein part of the enzyme molecule"
       ],
       answer: 1,
+      optionRefs: { 0: "3-2", 2: "3-2", 3: "3-2" },
+      optionNotes: {
+        0: { en: "This is the opposite case, and it is the contrast the whole point rests on: a coenzyme bound VERY STRONGLY is a prosthetic group, and precisely because it stays put it does not behave as a second substrate. A nicotinamide coenzyme is held by weak interactions instead, so it comes and goes like one.", cn: "这是相反的情形，而整个论点正是靠这个对照成立的：结合得**非常牢**的辅酶叫辅基，也正因为它不走，它不会表现成第二个底物。烟酰胺辅酶靠的是弱相互作用，所以它像底物一样来了又走。" },
+        2: { en: "A metal ion is a cofactor but never a coenzyme — only the organic cofactors are coenzymes. Serving as a bridge for binding the substrate is nevertheless one of the three real roles a metal ion plays in an enzyme, along with forming part of the active centre and stabilising the spatial structure. Nicotinamide coenzymes are organic dinucleotides.", cn: "金属离子是辅因子，但绝不是辅酶——只有有机的那类辅因子才叫辅酶。不过「当桥把底物架到酶上」确实是金属离子在酶分子里的三种作用之一，另两种是构成活性中心的一部分、以及**稳定酶分子的空间结构**。烟酰胺辅酶是有机的二核苷酸。" },
+        3: { en: "True, and true of cofactors as a class — the standing rule is that cofactors are thermally stable while the protein part of the enzyme molecule is not. But heat stability says nothing about how much of the coenzyme the reaction consumes, and it is the stoichiometry that makes the reaction two-substrate.", cn: "这话没错，而且对整类辅因子都成立——通行规律就是辅因子耐热、酶分子的蛋白质部分不耐热。但耐热与否，说明不了反应要消耗多少辅酶；而使反应成为双底物反应的，正是这个**化学计量**。" }
+      },
       why_en: "Unlike a tightly bound prosthetic group, a nicotinamide coenzyme is required in stoichiometric quantity and behaves kinetically as a substrate — so the reaction has two substrates.",
       why_cn: "与紧密结合的辅基不同，烟酰胺辅酶以化学计量的量被需要，在动力学上表现为底物——因此该反应有两种底物。"
     },
@@ -484,6 +549,11 @@ window.BIOCHEM.topics.push(
         "1 μmol of substrate per second"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "This is the KATAL, the SI unit of enzyme activity, and it is a real definition — just not this one. Keep the conversion with it: 1 kat = 6·10⁷ U, a number large enough to show how far apart the two units sit in practical terms.", cn: "这是 **katal**，酶活性的国际单位制单位；它是个真定义，只是不是这道题问的那个。换算要和它一起记：1 kat = 6·10⁷ U——这个数字之大，正好说明两个单位在实际使用上差得有多远。" },
+        2: { en: "Right time, wrong amount by a factor of a thousand. The U is defined on the MICROMOLE, and it comes with its standard conditions attached: the measurement is made at the enzyme's pH optimum and at 25 °C.", cn: "时间对了，量差了一千倍。U 是按**微摩尔**定义的，而且它自带标准条件：测定要在该酶的 pH 最适值、25 °C 下进行。" },
+        3: { en: "Right amount, wrong time — and mixing the two time bases is the standard way this is lost. The U is per MINUTE; only the katal is per second. Getting them the wrong way round moves the answer by a factor of sixty.", cn: "量对了，时间错了——把两个时间基准混在一起，正是这道题最常见的丢分方式。U 是**每分钟**，只有 katal 才是每秒。两者对调，答案就差了六十倍。" }
+      },
       why_en: "U = 1 μmol per minute at the enzyme's pH optimum and 25 °C. The katal is the SI unit — 1 mol per second — and 1 kat = 6·10⁷ U.",
       why_cn: "U = 在酶的 pH 最适值与 25 °C 下每分钟 1 μmol。开特是国际单位制单位——每秒 1 mol——且 1 kat = 6·10⁷ U。"
     },
@@ -492,12 +562,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why must an activity assay be run at SATURATING substrate concentration?",
       q_cn: "为什么活性测定必须在饱和底物浓度下进行？",
       options: [
-        "So the reaction is first order in substrate",
+        "So the reaction runs with first-order kinetics, in which the rate rises in step with the substrate concentration",
         "So the reaction runs with zeroth-order kinetics, making the rate proportional to enzyme concentration",
-        "So that K_m can be measured simultaneously",
-        "So the enzyme is protected from thermal denaturation"
+        "So that the value of K_m for the substrate can be read off the same measurement",
+        "So the enzyme is protected from thermal denaturation at the 25 °C of the standard assay"
       ],
       answer: 1,
+      optionRefs: { 0: "L-6-3-1", 3: "3-4" },
+      optionNotes: {
+        0: { en: "First-order kinetics is what you get at the OTHER end of the range, where [A] is far below K_m — and that is precisely the condition to avoid. There the measured rate reports how much substrate happens to be left, not how much enzyme is present, so the assay would be measuring the wrong thing.", cn: "一级动力学出现在范围的**另一头**，即 [A] 远低于 K_m 的时候——而那正是要避开的条件。在那里，测到的速度反映的是**还剩多少底物**，而不是**有多少酶**，测定也就测错了对象。" },
+        2: { en: "K_m has to be known IN ADVANCE, not extracted from the assay. The book lists it among the things one must know before setting the measurement up, precisely so that a saturating concentration can be chosen; the same list includes the pH optimum and the influence of temperature.", cn: "K_m 必须**事先**知道，不是从这次测定里顺便得出的。教材把它列在「开测之前必须掌握」的清单里，正是为了据此选一个饱和浓度；同一份清单上还有 pH 最适值和温度的影响。" },
+        3: { en: "The standard conditions do fix the temperature — the U is defined at 25 °C, alongside the enzyme's pH optimum — but substrate concentration has nothing to do with protecting the protein. Thermal denaturation is a separate story, taking over only above a critical temperature.", cn: "标准条件确实把温度定死了——U 就是在 25 °C、该酶 pH 最适值下定义的——但底物浓度和保护蛋白质毫无关系。热变性是另一回事，只有超过临界温度之后才会占上风。" }
+      },
       why_en: "At saturation the reaction is zeroth order with respect to substrate, so the measured rate depends only on how much ENZYME is present — which is exactly what an activity assay is trying to measure.",
       why_cn: "在饱和时反应对底物为零级，因此所测速率只取决于酶的量——而这正是活性测定所要测量的对象。"
     },
@@ -506,12 +582,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which quantity measures the PURITY of an enzyme preparation?",
       q_cn: "哪一个量用于衡量酶制剂的纯度？",
       options: [
-        "Molecular activity (U per enzyme molecule per minute)",
+        "Molecular activity, the old turnover number (MA)",
         "Specific activity (U/mg protein)",
-        "Concentration (U/ml)",
-        "The katal value"
+        "Enzyme concentration, activity per ml (U/ml)",
+        "The activity in katals"
       ],
       answer: 1,
+      optionRefs: { 0: "L-6-3-1" },
+      optionNotes: {
+        0: { en: "Molecular activity, formerly the turnover number, is the number of substrate molecules converted by ONE enzyme molecule in one minute. It measures the catalytic ability of the enzyme itself and is completely unaffected by how much inert protein sits alongside it — so it cannot report purity.", cn: "分子活性（旧称 turnover number）是**一个**酶分子在一分钟内转化的底物分子数。它衡量的是酶本身的催化能力，旁边混着多少无关蛋白对它毫无影响——所以它反映不了纯度。" },
+        2: { en: "Activity per unit volume is simply the CONCENTRATION of the enzyme. Dilute the preparation with buffer and this number falls while the purity is unchanged; that is exactly why purity has to be referred to the amount of protein instead of to the volume.", cn: "单位体积的活性只是酶的**浓度**。拿缓冲液把制剂稀释一下，这个数就掉下来，纯度却纹丝不动；这正是为什么纯度必须相对于**蛋白质的量**来算，而不是相对于体积。" },
+        3: { en: "The katal is a UNIT in which activity is expressed, not a measure of anything by itself — the SI unit, the amount of enzyme converting 1 mol of substrate per second, with 1 kat = 6·10⁷ U. Concentration and specific activity alike could be quoted in katals.", cn: "katal 只是**表达**活性用的单位，本身不度量任何东西——它是国际单位制单位，指每秒转化 1 mol 底物所需的酶量，1 kat = 6·10⁷ U。浓度也好、比活性也好，都可以换算成 katal 来写。" }
+      },
       why_en: "Specific activity, U per mg of protein, is the measure of PURITY. Molecular activity — the old turnover number — measures the CATALYTIC ABILITY of the enzyme itself, and U/ml is simply concentration.",
       why_cn: "比活性（每毫克蛋白质的 U 数）是纯度的量度。分子活性——旧称转换数——衡量的是酶本身的催化能力，而 U/ml 只是浓度。"
     },
@@ -578,12 +660,17 @@ window.BIOCHEM.topics.push(
       q_en: "At what temperature are most enzymes inactivated, and what is the exception?",
       q_cn: "多数酶在什么温度下失活？例外是什么？",
       options: [
-        "Around 40–45 °C; exceptions from fungi active at 60 °C",
+        "Around 40–45 °C, with exceptions mostly from thermophilic bacteria that are active even at 60 °C",
         "Around 55–60 °C; exceptions mostly from thermophilic bacteria active even at 85 °C",
-        "Around 70–75 °C; exceptions from plants active at 95 °C",
-        "Around 100 °C; no exceptions"
+        "Around 70–75 °C, with exceptions mostly from thermophilic bacteria active even at 95 °C",
+        "Around 100 °C, the boiling point of water, with no exceptions among known enzymes"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Both numbers are too low. 40–45 °C is barely above body temperature, and enzymes plainly go on working there — the figure to fix for inactivation is 55–60 °C, with the thermophile exception reaching all the way to 85 °C.", cn: "两个数都偏低。40–45 °C 只比体温高一点，酶在那里显然还在正常工作——失活要记的数是 55–60 °C，而嗜热菌那个例外一直能顶到 85 °C。" },
+        2: { en: "Both numbers are too high, and the second one especially: 95 °C is above where the book puts even the exceptional enzymes, which reach 85 °C. Note that the exception is correctly attributed — it really is thermophilic bacteria — so only the figures are wrong.", cn: "两个数都偏高，尤其是第二个：95 °C 已经超过教材给那些例外酶的上限（85 °C）。注意例外的归属其实是对的——确实来自嗜热细菌——错的只是数字。" },
+        3: { en: "Look at what this option quietly denies. The exceptions are the more interesting half of the fact, and they are exactly why enzymes from thermophilic bacteria are worth having at all. Below the critical temperature the rate is still rising, about twofold per 10 °C; the fall only begins once thermal denaturation prevails.", cn: "留意这个选项悄悄否掉了什么。**例外**才是这条事实里更有意思的一半，也正是嗜热细菌来源的酶值得拥有的理由。在临界温度以下速度还在往上走，每 10 °C 约翻一倍；只有当热变性占了上风，速度才开始下降。" }
+      },
       why_en: "Most enzymes are inactivated around 55–60 °C; enzymes mostly from thermophilic bacteria remain active even at 85 °C.",
       why_cn: "多数酶在 55–60 °C 左右失活；多来自嗜热细菌的酶即使在 85 °C 下仍有活性。"
     },
@@ -592,12 +679,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does the temperature optimum depend on the arrangement of the experiment?",
       q_cn: "为什么温度最适值取决于实验的设置方式？",
       options: [
-        "Because the pH optimum shifts with temperature",
+        "Because the pH optimum of the enzyme shifts as the temperature is raised, so the activity measured at any given temperature depends on which pH the assay happened to be buffered at",
         "Because it is the resultant of two opposing processes — rate increase with temperature and thermal denaturation — whose relative weight depends on e.g. how long the enzyme is held at that temperature",
-        "Because the substrate concentration changes with temperature",
-        "Because enzyme concentration cannot be held constant"
+        "Because the substrate concentration falls away as the temperature is raised, so the reaction slips out of the saturating range and the rate that is measured stops reporting how much enzyme is present",
+        "Because the concentration of active enzyme cannot be held constant while the temperature is varied, so every point on the curve is measured on a slightly different amount of catalyst"
       ],
       answer: 1,
+      optionRefs: { 2: "3-3-3" },
+      optionNotes: {
+        0: { en: "The pH optimum is real and it is a separate control on activity, arising from the acid-base character of the enzyme molecule and above all of the active centre — the book adds that pH may also affect the dissociation of the substrate. But it is not what makes the temperature optimum move; the two opposing temperature processes are.", cn: "pH 最适值确实存在，也确实是另一条控制活性的途径，其根源是酶分子（尤其是活性中心）的酸碱特性——教材还补充说 pH 也可能影响底物的解离。但让温度最适值挪动的不是它，而是那两个方向相反的**温度**过程。" },
+        2: { en: "Nothing in this explanation involves substrate concentration. The two processes meeting at the optimum are both temperature effects: the rate rising by about a factor of two per 10 °C, and the thermal denaturation of the protein catalyst that prevails above a critical value.", cn: "这个解释里根本没有底物浓度的事。在最适点相遇的两个过程都是**温度**效应：一个是速度每升高 10 °C 约翻一倍，另一个是超过临界值后占上风的蛋白质催化剂热变性。" },
+        3: { en: "Enzyme concentration is precisely the thing an experimenter can hold constant. What varies between one arrangement and another is how LONG the enzyme is kept at the temperature, because denaturation accumulates with exposure — which is why the optimum is not a fixed physical constant of the enzyme.", cn: "酶浓度恰恰是实验者**能**固定住的量。不同实验安排之间真正变的是酶在那个温度下**待了多久**，因为变性随暴露时间累积——这正是温度最适值不是酶的固定物理常数的原因。" }
+      },
       why_en: "The optimum is not a fixed physical constant of the enzyme; it is where the acceleration of the reaction and the thermal denaturation of the catalyst balance, so it shifts with the experimental conditions.",
       why_cn: "最适值并不是酶的固定物理常数；它是反应加速与催化剂热变性两者相平衡之处，因此会随实验条件而移动。"
     },
@@ -607,6 +700,11 @@ window.BIOCHEM.topics.push(
       q_cn: "温度每升高 10 °C，多数反应的速率增加多少？",
       options: ["About 1.2-fold", "About twofold", "About tenfold", "About 100-fold"],
       answer: 1,
+      optionNotes: {
+        0: { en: "Too small to matter, and the figure is worth carrying precisely because it IS large enough to matter: about a doubling for every 10 °C, and it holds for most chemical reactions, not only enzyme ones.", cn: "小到没有意义，而这个数值之所以值得记，恰恰因为它**大到有意义**：每升高 10 °C 约翻一倍，而且它对多数化学反应都成立，不只是酶反应。" },
+        2: { en: "Far too large. If a tenfold gain were on offer for every 10 °C, the thermal denaturation that sets in above the critical value would struggle to reverse the trend — yet it does reverse it, and that reversal is what produces a temperature optimum at all.", cn: "太大了。如果每 10 °C 真能涨十倍，那么超过临界值后开始的热变性就很难把趋势扳回来——可它确实扳回来了，而正是这一逆转造就了温度最适值。" },
+        3: { en: "Larger still, and out of scale for a general rule about the temperature dependence of reaction rates. The single number to carry is a factor of about two per 10 °C, valid up to the critical temperature and no further.", cn: "更大了，作为「反应速度随温度变化」的一条通则完全不成比例。要记的就一个数：每 10 °C 约 2 倍，且只在临界温度以下有效。" }
+      },
       why_en: "Approximately twofold — until the critical temperature is exceeded and thermal denaturation of the protein catalyst takes over.",
       why_cn: "约增加一倍——直到超过临界温度、蛋白质催化剂的热变性占据上风为止。"
     },
@@ -691,12 +789,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does the Michaelis–Menten equation NOT hold for irreversible inhibition?",
       q_cn: "为什么米氏方程不适用于不可逆抑制？",
       options: [
-        "Because the substrate concentration falls too rapidly",
+        "Because the substrate concentration falls too rapidly during the measurement",
         "Because the concentration of the ACTIVE FORM of the enzyme changes",
-        "Because the reaction becomes zeroth order",
-        "Because the inhibitor binds to the EA complex only"
+        "Because the reaction becomes zeroth order in the inhibitor as well",
+        "Because the inhibitor binds only to the enzyme–substrate complex EA"
       ],
       answer: 1,
+      optionRefs: { 2: "3-3-3", 3: "L-6-3-1" },
+      optionNotes: {
+        0: { en: "Substrate depletion is a worry in any kinetic run and is handled by measuring initial rates; it is not what singles out irreversible inhibition. What breaks the treatment here is on the enzyme's side: the inhibitor binds firmly, usually covalently, modifies the functional groups and inactivates the molecule for good.", cn: "底物被消耗在任何动力学实验里都要防，办法是测**初速度**；这不是不可逆抑制的特殊之处。这里真正让方程失效的问题出在**酶**这一侧：抑制剂牢固地、通常共价地结合上去，改掉功能基团，把那个分子永久废掉。" },
+        2: { en: "Zeroth-order kinetics is a real condition but a desirable one, and it is arranged on purpose: an activity assay is run at saturating substrate concentration precisely so the rate reports how much enzyme is present. It is a feature of a good measurement, not a reason a model fails.", cn: "零级动力学确实存在，但它是**想要**的条件，而且是刻意安排的：活性测定就是在饱和底物浓度下做的，为的就是让速度反映酶的量。它是一次好测定的特征，不是模型失效的理由。" },
+        3: { en: "Binding only to the EA complex is the definition of UNCOMPETITIVE inhibition — and that is a REVERSIBLE type, to which the Michaelis–Menten equation does apply. On the graph it shows as both K_m and V_max falling, so the lines stay parallel to the uninhibited one.", cn: "只结合 EA 复合物，那是**反竞争性（antikompetitivní）抑制**的定义——而它属于**可逆**类型，米氏方程对它是适用的。图上的表现是 K_m 和 V_max 一起下降，所以直线与无抑制时保持平行。" }
+      },
       why_en: "The irreversible inhibitor binds firmly, usually covalently, and inactivates enzyme molecules permanently, so the amount of active enzyme is not constant during the measurement — one of the assumptions of the MM treatment.",
       why_cn: "不可逆抑制剂牢固地（通常以共价方式）结合并永久地使酶分子失活，因此在测定过程中活性酶的量并非恒定——而这正是米氏处理的前提之一。"
     },
@@ -711,6 +815,12 @@ window.BIOCHEM.topics.push(
         "Both K_m and V_max increase"
       ],
       answer: 1,
+      optionRefs: { 0: "L-6-3-1", 2: "L-6-3-1" },
+      optionNotes: {
+        0: { en: "This is COMPETITIVE inhibition. There the inhibitor is usually structurally similar to the substrate and binds the FREE enzyme at the active centre, forming EI only — which is why the inhibition can be overcome simply by raising the substrate concentration, and why only the apparent K_m moves.", cn: "这是**竞争性**抑制。那里的抑制剂通常结构上与底物相似，结合到**游离酶**的活性中心上，只形成 EI——所以只要提高底物浓度就能把抑制压过去，也所以动的只是表观 K_m。" },
+        2: { en: "This is UNCOMPETITIVE (antikompetitivní) inhibition, the third type in Obr. 3.6: the inhibitor binds ONLY to the enzyme–substrate complex EA, forming EAI. Because both constants fall by the same factor, its line on a Lineweaver–Burk plot runs parallel to the uninhibited one.", cn: "这是**反竞争性（antikompetitivní）**抑制，图 3.6 里的第三种：抑制剂**只**结合酶–底物复合物 EA，形成 EAI。由于两个常数按同一因子下降，它在 Lineweaver–Burk 图上的直线与无抑制那条**平行**。" },
+        3: { en: "None of the three types in Obr. 3.6 behaves this way, and one half of it cannot happen at all: an inhibitor is by definition a modulator that DECREASES the reaction rate, so no type of inhibition raises V_max. A substance that raised it would be an activator.", cn: "图 3.6 里三种类型没有一种是这样的，而且其中一半根本不可能发生：抑制剂按定义就是**降低**反应速度的调节物，所以没有哪种抑制会抬高 V_max。能抬高它的那种东西叫激活剂。" }
+      },
       why_en: "Non-competitive: V_max falls, K_m unchanged (the inhibitor acts outside the active centre). Competitive: K_m rises, V_max unchanged. Uncompetitive: both fall.",
       why_cn: "非竞争性：V_max 下降，K_m 不变（抑制剂作用于活性中心之外）。竞争性：K_m 上升，V_max 不变。反竞争性：两者都下降。"
     },
@@ -719,12 +829,18 @@ window.BIOCHEM.topics.push(
       q_en: "What distinguishes MIXED inhibition from non-competitive inhibition?",
       q_cn: "混合型抑制与非竞争性抑制的区别是什么？",
       options: [
-        "The inhibitor binds covalently in mixed inhibition",
+        "The inhibitor binds covalently in mixed inhibition, whereas in non-competitive it binds only weakly",
         "The inhibitor's interaction with E and with EA is not the same, i.e. K_i ≠ K_i′",
-        "Mixed inhibition raises V_max",
-        "Mixed inhibition cannot be described by the MM equation"
+        "Mixed inhibition raises V_max instead of lowering it",
+        "Mixed inhibition cannot be described by the Michaelis–Menten equation"
       ],
       answer: 1,
+      optionRefs: { 0: "L-6-3-1" },
+      optionNotes: {
+        0: { en: "Covalent binding is the mark of IRREVERSIBLE inhibition, which sits outside this whole family. Mixed inhibition is one of the reversible types, and every reversible inhibitor binds by weak interactions — that is the property the reversible classification is built on.", cn: "共价结合是**不可逆**抑制的标志，而不可逆抑制根本不在这一族里。混合型属于可逆类型，而所有可逆抑制剂都靠**弱相互作用**结合——可逆这一整套分类正是建立在这条性质上的。" },
+        2: { en: "No reversible inhibitor raises V_max; an inhibitor by definition lowers the rate. And the book's framing is that everything said about non-competitive inhibition holds for mixed inhibition too — non-competitive lowers V_max, so mixed does the same.", cn: "没有哪种可逆抑制剂会抬高 V_max；抑制剂按定义就是降低速度的。而且教材的说法是：对非竞争性抑制所说的一切对混合型同样成立——非竞争性会**降低** V_max，混合型也一样。" },
+        3: { en: "The Michaelis–Menten equation CAN be applied to reversible inhibitors as a class, and that is exactly what makes the kinetic classification possible in the first place. It fails only for irreversible inhibition, and for one specific reason: there the concentration of the active form of the enzyme changes.", cn: "米氏方程对整类**可逆**抑制剂**是**适用的——正因为适用，才可能按动力学把它们分类。它只在**不可逆**抑制那里失效，而且理由很具体：那里有活性的酶的浓度在变。" }
+      },
       why_en: "Mixed inhibition is the GENERAL case of non-competitive inhibition — everything said about non-competitive inhibition holds, except that the inhibitor binds E and EA with different affinities, so K_i ≠ K_i′.",
       why_cn: "混合型抑制是非竞争性抑制的一般情形——对非竞争性抑制所说的一切都成立，只是抑制剂与 E 和 EA 的结合亲和力不同，故 K_i ≠ K_i′。"
     },
@@ -815,12 +931,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to the induced-fit theory, why does the EA complex break down to give product?",
       q_cn: "按诱导契合理论，EA 复合物为什么会分解生成产物？",
       options: [
-        "Because the substrate is covalently modified",
+        "Because the substrate is covalently modified during binding, and the modified form can no longer be held in the active centre",
         "Because the conformational change makes EA thermodynamically unstable, with a strong tendency to return to the stable conformation",
-        "Because the active centre is too small to hold it",
-        "Because the pH of the active centre shifts"
+        "Because the active centre is too small to hold the complex once the substrate has been drawn fully into the limited space inside it",
+        "Because the pH inside the active centre shifts as the substrate binds, and the complex is no longer stable at that pH"
       ],
       answer: 1,
+      optionRefs: { 0: "L-6-4-1", 3: "3-4" },
+      optionNotes: {
+        0: { en: "Covalent modification does happen in some enzymes, but to the ENZYME rather than the substrate, and it is a separate catalytic idea: covalent catalysis, in which a very reactive, unstable covalently modified enzyme forms and breaks down rapidly. The book's example is the acetylated enzyme in the chymotrypsin reaction.", cn: "共价修饰在某些酶里确实发生，但被修饰的是**酶**不是底物，而且那是另一条催化思路：covalent catalysis（共价催化）——先生成一个非常活泼、不稳定的共价修饰酶，它再迅速分解。教材举的例子是胰凝乳蛋白酶反应中那个乙酰化的酶。" },
+        2: { en: "Small size is a genuine feature of the active centre, and the limited space matters — but for the opposite purpose. That is the proximity effect: inside that confined space the substrates are not only concentrated but correctly oriented, which explains how the reaction is ACCELERATED, not why the complex falls apart.", cn: "活性中心确实小，而且这个有限空间确实要紧——但作用正好相反。那是 proximity effect（邻近效应）：在这个狭小空间里，底物不仅被浓集，还被正确定向，它解释的是反应为什么**被加速**，不是复合物为什么散架。" },
+        3: { en: "Groups in the active centre do act as donor or acceptor of H⁺ — that is general acid-base catalysis, and the groups named are –COOH (Asp, Glu), –NH₂ (Lys), –OH (Tyr) and imidazole (His). It is another of the catalytic mechanisms in this section, not the induced-fit account of why EA breaks down.", cn: "活性中心里的基团确实会充当 H⁺ 的供体或受体——那是 general acid-base catalysis（普通酸碱催化），点名的基团是 –COOH（Asp、Glu）、–NH₂（Lys）、–OH（Tyr）和 imidazole（His）。那是本节里另一种催化机制，不是诱导契合对「EA 为什么分解」的解释。" }
+      },
       why_en: "The enzyme adapts its conformation to the substrate; the adapted complex is thermodynamically unstable and strongly tends to return to the stable conformation, so it breaks down with formation of product. The substrate is also deformed, further accelerating the reaction.",
       why_cn: "酶把构象调整到与底物相适应；这一适应后的复合物在热力学上不稳定，强烈倾向于回复到稳定构象，因而分解生成产物。底物同时也发生形变，进一步加速反应。"
     },
@@ -829,12 +951,18 @@ window.BIOCHEM.topics.push(
       q_en: "How does induced fit explain the action of some inhibitors?",
       q_cn: "诱导契合如何解释某些抑制剂的作用？",
       options: [
-        "They covalently modify the active centre",
+        "They covalently modify the groups of the active centre",
         "They bind to the enzyme but cannot evoke the conformational change",
-        "They lower the pH of the active centre",
-        "They compete for the cofactor rather than the substrate"
+        "They lower the pH inside the active centre so the catalytic groups cannot act",
+        "They compete for the cofactor rather than for the substrate binding site"
       ],
       answer: 1,
+      optionRefs: { 0: "3-5", 2: "3-4", 3: "3-5" },
+      optionNotes: {
+        0: { en: "That is irreversible inhibition — the inhibitor binds very firmly, mostly covalently, modifies the functional groups and thereby inactivates the enzyme. A real mechanism, but not one induced fit is needed to explain. Induced fit accounts for inhibitors that bind perfectly well and simply fail to trigger anything.", cn: "那是**不可逆抑制**——抑制剂结合得极牢、多半是共价的，改掉功能基团，从而使酶失活。机制是真的，但它不需要诱导契合来解释。诱导契合解释的是另一种抑制剂：结合得好好的，却什么也没触发。" },
+        2: { en: "The pH dependence of enzymes is real and rests on the acid-base character of the enzyme molecule, especially of the active centre — but that is a property of the environment the enzyme sits in, not a way one molecule inhibits another.", cn: "酶的 pH 依赖性确实存在，其根源是酶分子（尤其是活性中心）的酸碱特性——但那是酶所处**环境**的性质，不是一个分子抑制另一个分子的方式。" },
+        3: { en: "Competing for the cofactor is not a mechanism the course describes. Reversible inhibitors are classified by which FORM of the enzyme the inhibitor interacts with — the free enzyme E, giving EI, or the enzyme–substrate complex EA, giving EAI — and that is the axis to think along.", cn: "「和辅因子竞争」不是本课程描述过的机制。可逆抑制剂的分类依据是抑制剂结合的是酶的哪一种**形式**——游离酶 E（生成 EI），还是酶–底物复合物 EA（生成 EAI）——要沿着这条轴去想。" }
+      },
       why_en: "Only a true substrate has sufficient affinity to force the conformational change. Some molecules bind but cannot evoke it — and such substances act as inhibitors. This is a neat, frequently examined consequence of the theory.",
       why_cn: "只有真正的底物具有足够的亲和力迫使构象改变。某些分子虽能结合却无法引发这种改变——这类物质便起抑制剂作用。这是该理论一个巧妙且常被考查的推论。"
     },
@@ -843,12 +971,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which amino acid side-chain groups are named as participating in general acid-base catalysis?",
       q_cn: "教材点名哪些氨基酸侧链基团参与普通酸碱催化？",
       options: [
-        "–SH (Cys), –CH₃ (Ala), phenyl (Phe)",
+        "–SH (Cys), –CH₃ (Ala), phenyl (Phe), indole (Trp)",
         "–COOH (Asp, Glu), –NH₂ (Lys), –OH (Tyr), imidazole (His)",
-        "guanidino (Arg), indole (Trp), thioether (Met)",
-        "amide (Asn, Gln) only"
+        "guanidino (Arg), indole (Trp), thioether (Met), phenyl (Phe)",
+        "amide (Asn, Gln) and hydroxyl (Ser, Thr) only"
       ],
       answer: 1,
+      optionRefs: { 0: "2-1-1", 2: "2-1-1", 3: "2-1-1" },
+      optionNotes: {
+        0: { en: "Two of these cannot donate or accept a proton at all: the methyl of alanine and the phenyl ring of phenylalanine are pure hydrocarbon, which is exactly what puts both in nonpolar group 1. Cysteine's –SH is polar, but the book's acid-base list names four groups and –SH is not among them.", cn: "这里有两个根本不能给出或接受质子：丙氨酸的甲基和苯丙氨酸的苯环都是纯烃基，这也正是它们同属非极性第 1 组的原因。半胱氨酸的 –SH 确实是极性的，但教材的酸碱基团名单只有四个，–SH 不在其中。" },
+        2: { en: "Arginine's guanidino group is genuine — it is what carries arginine's positive charge and places it in group 4 — but none of these four appears on the book's list. That list has exactly four entries: –COOH (Asp, Glu), –NH₂ (Lys), –OH (Tyr) and imidazole (His).", cn: "精氨酸的胍基是真的——它带着精氨酸的正电荷，也是它归入第 4 组的原因——但这四个基团没有一个在教材那份名单上。那份名单恰好四条：–COOH（Asp、Glu）、–NH₂（Lys）、–OH（Tyr）、imidazole（His）。" },
+        3: { en: "Serine really is named among the reactive side groups often localised in an active centre, along with histidine and tyrosine — but that is a different list, and being on it does not put serine on the acid-base one. The –OH the book names for acid-base catalysis is tyrosine's, and the amide side chains of asparagine and glutamine appear on neither list.", cn: "丝氨酸确实被点名为活性中心常见的活泼侧链之一，与组氨酸、酪氨酸并列——但那是**另一份**名单，上了那份并不等于上了酸碱这份。教材在酸碱催化里点名的那个 –OH 是**酪氨酸**的；而天冬酰胺和谷氨酰胺的酰胺侧链，两份名单上都没有。" }
+      },
       why_en: "These four are named explicitly, being able to act as donor or acceptor of H⁺. Note histidine's imidazole appears here AND in the list of reactive residues typically found in the active centre.",
       why_cn: "这四类基团被明确点名，因为它们能充当 H⁺ 的供体或受体。注意组氨酸的咪唑既出现在这里，也出现在活性中心常见反应性残基的名单中。"
     },
@@ -938,11 +1072,17 @@ window.BIOCHEM.topics.push(
       q_cn: "两类高度特化的调节酶是什么？",
       options: [
         "Allosteric and covalently modulated enzymes",
-        "Metalloenzymes and hemoenzymes",
-        "Constitutive and inducible enzymes",
-        "Oxidoreductases and ligases"
+        "Metalloenzymes and the hemoproteins that act as enzymes",
+        "Constitutive enzymes and those induced by a substrate",
+        "Oxidoreductases and hydrolases"
       ],
       answer: 0,
+      optionRefs: { 1: "2-2-5", 2: "4-2-4-1", 3: "3-1" },
+      optionNotes: {
+        1: { en: "Both groups are defined by what an enzyme CONTAINS — a metal ion as cofactor, or an Fe–porphyrin complex, the heme — and neither says anything about a regulatory role. The book is careful here: the activity of ALL enzymes can be influenced by pH, by substrate and coenzyme concentration and by inhibitors or activators; only two classes have properties predestining them for regulation.", cn: "这两组的定义依据都是酶**含有什么**——金属离子辅因子，或者铁–卟啉配合物（血红素）——都跟调节作用无关。教材在这里说得很小心：**所有**酶的活性都会受 pH、底物与辅酶浓度、抑制剂或激活剂的影响；但只有两类酶具备注定其承担调节角色的性质。" },
+        2: { en: "Controlling whether an enzyme gets MADE at all is genuine regulation and an important one — but it acts on protein synthesis, and the course treats it separately, with the lactose and tryptophan operons. This section is about enzymes whose activity is modulated once the molecule is already there.", cn: "控制一个酶**造不造**当然是调节，而且很重要——但它作用在蛋白质合成这一层，课程把它单独放在乳糖操纵子和色氨酸操纵子那里讲。本节讲的是分子**已经在场**之后，活性如何被调节。" },
+        3: { en: "These are two of the six main classes of the E.C. system, which sorts enzymes by the kind of reaction they catalyse — oxidoreductases (class 1) move electrons or hydrogen, hydrolases (class 3) break a bond with water. That classification is orthogonal to regulation: a regulatory enzyme still belongs to one of the six.", cn: "这是 E.C. 六大类中的两类，而那套分类是按**催化什么反应**来分的——氧化还原酶（第 1 类）搬电子或氢，水解酶（第 3 类）用水断键。这套分类与调节无关：调节酶照样属于六大类中的某一类。" }
+      },
       why_en: "Although the activity of ALL enzymes can be influenced by pH, substrate and coenzyme concentration and by inhibitors or activators, only these two classes have properties that predestine them for a regulatory role.",
       why_cn: "尽管所有酶的活性都可受 pH、底物与辅酶浓度以及抑制剂或激活剂的影响，但只有这两类酶具备注定其承担调节作用的性质。"
     },
@@ -951,12 +1091,18 @@ window.BIOCHEM.topics.push(
       q_en: "An allosteric enzyme's activity is modulated by:",
       q_cn: "别构酶的活性通过什么方式被调节？",
       options: [
-        "Covalent modification of the active centre",
+        "Covalent modification of a group in the active centre itself",
         "Non-covalent interaction with a specific metabolite at a special allosteric site",
-        "Irreversible binding of a heavy metal ion",
-        "Proteolytic cleavage of a proenzyme"
+        "Irreversible binding of a heavy metal ion to the SH groups the enzyme needs for its activity",
+        "Proteolytic cleavage converting an inactive proenzyme into the active enzyme"
       ],
       answer: 1,
+      optionRefs: { 2: "3-5", 3: "5-1" },
+      optionNotes: {
+        0: { en: "Covalent modification is what defines the OTHER class of regulatory enzymes, the covalently modulated ones. Two things are wrong here at once: the allosteric interaction is NON-covalent, which is what makes it reversible and quick, and it happens at the allosteric site, a special place distinct from the active centre.", cn: "共价修饰定义的是**另一类**调节酶，即共价修饰调节酶。这里同时错了两处：别构相互作用是**非共价**的——正因如此它才可逆、才快——而且它发生在 allosteric site，一个与活性中心不同的专门位置。" },
+        2: { en: "Heavy metal ions acting on SH-enzymes is the book's own example, but of NON-COMPETITIVE INHIBITION: groups outside the active centre that are nevertheless necessary for preserving catalytic activity. Inhibition and allosteric modulation both act away from the active centre, but a modulator is a specific metabolite binding non-covalently and reversibly.", cn: "重金属离子作用于 SH-酶，这确实是教材自己的例子，但那是**非竞争性抑制**的例子：作用在活性中心**以外**、却又是维持催化活性所必需的那些功能基团上。抑制和别构调节都发生在活性中心之外，但调节物是一个以非共价、可逆方式结合的**特定代谢物**。" },
+        3: { en: "Limited proteolysis converting an inactive proenzyme into the active enzyme belongs to the covalently modulated class — the other kind of regulatory enzyme. And note the asymmetry: a cut cannot be undone, whereas an allosteric modulator binds and lets go, which is what makes it a knob rather than a switch thrown once.", cn: "有限水解把无活性的酶原变成活性酶，属于**共价修饰调节酶**那一类，也就是另一种调节酶。注意这里的不对称：切一刀是回不去的，而别构调节物结合上去还能放开——所以它是个可以来回拧的旋钮，不是一次性扳下的开关。" }
+      },
       why_en: "The interaction is NON-COVALENT and occurs at a special place distinct from the active centre — the allosteric site. Covalent modification defines the OTHER class of regulatory enzymes.",
       why_cn: "这种相互作用是非共价的，发生在不同于活性中心的特殊部位——别构部位。共价修饰定义的是另一类调节酶。"
     },

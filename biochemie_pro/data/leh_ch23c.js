@@ -55,8 +55,8 @@
    subject to manufacture a cross-book link. The link is made in prose
    instead, by naming those two Czech nodes in the summary.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-23-4-1",
     book: "lehninger",

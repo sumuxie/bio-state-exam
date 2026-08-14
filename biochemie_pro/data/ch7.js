@@ -50,8 +50,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "According to the book's opening framing of chapter 7, which single organic compound is identified as the most abundant in the biosphere?",
       q_cn: "根据第7章开篇的论述，教材指出生物圈中含量最丰富的单一有机化合物是什么？",
-      options: ["D-glucose", "Glycogen", "Cellulose", "Starch"],
+      options: [
+        "D-glucose",
+        "Amylopectin",
+        "Cellulose",
+        "Glycogen"
+      ],
       answer: 2,
+      optionRefs: { 1: "7-4-1-1", 3: "7-4-1-1" },
+      optionNotes: {
+        0: { en: "D-glucose is named in role (a) as the primary compound organisms use to obtain energy, released when starch and glycogen are mobilized. That makes it the most important monosaccharide, not the most abundant organic compound — the abundance record belongs to a polymer.", cn: "D-glucose 在功能 (a) 里被点名为生物取能所用的首要化合物，由淀粉和糖原动员时释放。这让它成为最重要的单糖，而不是含量最丰富的有机化合物——丰度冠军属于一种聚合物。" },
+        1: { en: "Amylopectin is the branched glucan of plant starch, an α(1→4) main chain with α(1→6) branches. It belongs to role (a), energy storage, which is the role the book contrasts with the structural one when it names the biosphere's most abundant compound.", cn: "Amylopectin 是植物淀粉里那条带分支的葡聚糖，α(1→4) 主链加 α(1→6) 分支。它属于功能 (a) 能量储存，而教材点出生物圈最丰富化合物时，对照的正是这一功能与结构功能之别。" },
+        3: { en: "Glycogen is the animal counterpart of starch, stored chiefly in liver and muscle and mobilized to D-glucose. Role (a) again: readily mobilized storage, the opposite of the structural role that earns cellulose its place.", cn: "Glycogen 是淀粉在动物中的对应物，主要储于肝和肌肉，动员后释放 D-glucose。仍是功能 (a)：可迅速动员的储备，与纤维素凭以取胜的结构功能正好相反。" }
+      },
       why_en: "The book states that cellulose, the main component of plant cell walls, is the most abundant organic compound in the biosphere. D-glucose is named as the primary energy-yielding compound released from starch/glycogen, not as the most abundant compound itself; glycogen and starch are the storage polysaccharides, a distinct role from cellulose's structural one.",
       why_cn: "教材指出，作为植物细胞壁主要成分的纤维素是生物圈中含量最丰富的有机化合物。D-葡萄糖只是淀粉/糖原释放出的主要供能化合物，而非最丰富的化合物本身；糖原和淀粉是储能多糖，功能上不同于纤维素的结构作用。"
     },
@@ -60,12 +71,18 @@ window.BIOCHEM.topics.push(
       q_en: "Per role (b) in the book's four-part framing of carbohydrate function, why does the conformational flexibility of the ribose/deoxyribose ring matter?",
       q_cn: "根据教材四项功能中的(b)项，为什么核糖/脱氧核糖环的构象灵活性很重要？",
       options: [
-        "It allows starch and glycogen to be rapidly mobilized for energy",
+        "It allows starch in plants and glycogen in animals to be very readily mobilized",
         "It is important for the storage and expression of genetic information in DNA and RNA",
-        "It enables cellulose to form rigid plant cell walls",
-        "It allows glycoproteins to be recognized on the cell surface"
+        "It lets cellulose build the plant cell wall, the most abundant organic structure on Earth",
+        "It lets the carbohydrate part of glycoproteins be read in recognition mechanisms"
       ],
       answer: 1,
+      optionRefs: { 0: "7-4-1-1", 2: "7-4-1-2", 3: "7-5" },
+      optionNotes: {
+        0: { en: "That is role (a), energy storage, and it is a property of the polysaccharide chain rather than of a single sugar ring — starch and glycogen are mobilized to yield D-glucose. Ring flexibility is not what the book invokes there.", cn: "这是功能 (a) 能量储存，而且靠的是多糖链的性质，不是单个糖环——淀粉和糖原被动员后释放 D-glucose。教材在那里根本没有搬出糖环的柔性。" },
+        2: { en: "That is role (c), the structural/supportive function: polysaccharides build bacterial and plant cell walls and the exoskeleton of insects and crustaceans. Rigidity there comes from chain packing, and the pentoses of role (b) are not involved.", cn: "这是功能 (c) 支持／结构功能：多糖构成细菌和植物的细胞壁，以及昆虫和甲壳类的外骨骼。那里的刚性来自链的堆积，与功能 (b) 的戊糖无关。" },
+        3: { en: "That is role (d), recognition: the carbohydrate portions of glycoproteins, on cell and subcellular-particle surfaces or on secreted proteins, are what recognition mechanisms read. The sugars involved are not the nucleic-acid pentoses.", cn: "这是功能 (d) 识别：糖蛋白的糖链部分——位于细胞和亚细胞颗粒表面，或在分泌蛋白上——才是识别机制读取的对象。涉及的糖并不是核酸里那两种戊糖。" }
+      },
       why_en: "The book explicitly ties the conformational flexibility of the sugar ring in D-ribose/2-deoxy-D-ribose to the storage and expression of genetic information, since these pentoses form part of the DNA/RNA backbone. The other options describe roles (a), (c), and (d) respectively, not (b).",
       why_cn: "教材明确指出，D-核糖/2-脱氧-D-核糖糖环的构象灵活性与遗传信息的储存和表达有关，因为这些戊糖构成了DNA/RNA的骨架。其余选项分别描述的是功能(a)、(c)、(d)，并非(b)。"
     },
@@ -133,11 +150,17 @@ window.BIOCHEM.topics.push(
       q_cn: "单糖的通式是什么？甘油醛和二羟丙酮是什么的例子？",
       options: [
         "(CH₂O)ₙ; they are the smallest monosaccharides (n=3), called trioses",
-        "(C₆H₁₂O₆); they are the most common hexoses",
-        "(CH₂O)ₙ; they are pentoses found in nucleic acids",
-        "(C₂H₄O₂); they are disaccharides"
+        "(C₆H₁₂O₆); they are the smallest monosaccharides (n=3), called trioses",
+        "(CH₂O)ₙ; they are the pentoses of the DNA and RNA backbone (n=5)",
+        "(CH₂O)ₙ; they are the two smallest aldoses (n=3), called aldotrioses"
       ],
       answer: 0,
+      optionRefs: { 2: "7-1", 3: "7-1-2-2" },
+      optionNotes: {
+        1: { en: "The classification is right and the formula is wrong. C₆H₁₂O₆ is one particular member of the series — the general formula (CH₂O)ₙ evaluated at n=6, a hexose. Glyceraldehyde and dihydroxyacetone are n=3, so C₃H₆O₃.", cn: "分类对了，公式错了。C₆H₁₂O₆ 只是该系列中的一个具体成员——通式 (CH₂O)ₙ 取 n=6，即己糖。甘油醛和二羟丙酮是 n=3，所以是 C₃H₆O₃。" },
+        2: { en: "The pentoses of the nucleic-acid backbone are D-ribose and 2-deoxy-D-ribose, n=5, and they belong to role (b) in the chapter opening. Glyceraldehyde and dihydroxyacetone are two carbons shorter.", cn: "核酸骨架里的戊糖是 D-ribose 和 2-deoxy-D-ribose，n=5，属于本章开篇的功能 (b)。甘油醛和二羟丙酮比它们少两个碳。" },
+        3: { en: "Only one of the two is an aldose. Glyceraldehyde carries an aldehyde group; dihydroxyacetone carries a ketone at C-2 and is the parent of the whole ketose series — that split is the entire aldose/ketose classification.", cn: "两者之中只有一个是醛糖。甘油醛带醛基；二羟丙酮在 C-2 上带酮基，是整个酮糖系列的原型——这一分野就是醛糖／酮糖分类的全部内容。" }
+      },
       why_en: "The book gives (CH₂O)ₙ as the general formula for monosaccharides and identifies glyceraldehyde/dihydroxyacetone as the smallest monosaccharides (n=3), called trioses — not hexoses, pentoses, or disaccharides.",
       why_cn: "教材给出单糖的通式为(CH₂O)ₙ，并指出甘油醛和二羟丙酮是最小的单糖（n=3），称为丙糖——而不是己糖、戊糖或二糖。"
     },
@@ -152,6 +175,12 @@ window.BIOCHEM.topics.push(
         "An average taken across all asymmetric carbons in the molecule"
       ],
       answer: 2,
+      optionRefs: { 1: "7-1-2-1" },
+      optionNotes: {
+        0: { en: "The carbonyl carbon is not asymmetric at all — it carries a double bond to oxygen and so has only three substituents. In glyceraldehyde the one asymmetric carbon is the neighbouring C-2, and its hydroxyl pointing right is what defines the D-series.", cn: "羰基碳根本不是不对称碳——它与氧成双键，只有三个取代基。甘油醛中唯一的不对称碳是相邻的 C-2，它的羟基指向右侧，这才定义了 D 系。" },
+        1: { en: "This is the right rule read from the wrong end. The stereocentre nearest the carbonyl is C-2 in an aldohexose, and that one is what tells D-glucose from D-mannose — an epimeric difference, not a D/L one.", cn: "规则对，但读错了方向。离羰基最近的手性中心在醛己糖里是 C-2，而它区分的是 D-glucose 与 D-mannose——那是差向异构的差别，不是 D／L 的差别。" },
+        3: { en: "The label is read off one designated carbon, not averaged. An aldohexose has four asymmetric carbons and 2⁴ = 16 stereoisomers; averaging would give no way to split those 16 into the 8 D-forms and 8 L-forms the book draws.", cn: "标记是从一个指定碳原子上读出来的，不是取平均。醛己糖有四个不对称碳、2⁴ = 16 种立体异构体；取平均就没法把这 16 个分成教材画出的 8 个 D 型和 8 个 L 型。" }
+      },
       why_en: "The book explicitly states that for sugars with more than one asymmetric carbon, the D-/L- symbols refer to the configuration of the asymmetric carbon farthest from the aldehyde or ketone group — not the carbonyl carbon itself (which isn't asymmetric), not the nearest stereocenter, and not an average.",
       why_cn: "教材明确指出，对于含有一个以上不对称碳原子的糖，D-/L-符号指的是离醛基或酮基最远的那个不对称碳原子的构型——而不是羰基碳本身（它并非不对称碳）、也不是最近的手性中心，更不是所有手性中心的平均值。"
     },
@@ -219,6 +248,12 @@ window.BIOCHEM.topics.push(
       q_cn: "醛己糖共存在多少种立体异构体？其中属于D系的有多少种？",
       options: ["8 total, 4 in the D-series", "16 total, 8 in the D-series", "4 total, 2 in the D-series", "32 total, 16 in the D-series"],
       answer: 1,
+      optionRefs: { 0: "7-1-1" },
+      optionNotes: {
+        0: { en: "8 total with 4 in the D-series is the aldoPENTOSE count: three asymmetric carbons, 2³ = 8, the four D-forms being D-ribose, D-arabinose, D-xylose and D-lyxose.", cn: "总数 8、D 系 4 是醛戊糖的数目：三个不对称碳，2³ = 8，四个 D 型分别是 D-ribose、D-arabinose、D-xylose 和 D-lyxose。" },
+        2: { en: "4 total with 2 in the D-series is the aldoTETROSE count: two asymmetric carbons, 2² = 4, namely D-erythrose and D-threose plus their two L partners.", cn: "总数 4、D 系 2 是醛丁糖的数目：两个不对称碳，2² = 4，即 D-erythrose 和 D-threose 加上对应的两个 L 型。" },
+        3: { en: "32 would require five asymmetric carbons. An aldohexose has four: C-1 is the aldehyde carbon and C-6 the terminal CH₂OH, and neither of those is a stereocentre.", cn: "32 需要五个不对称碳。醛己糖只有四个：C-1 是醛基碳，C-6 是末端 CH₂OH，这两个都不是手性中心。" }
+      },
       why_en: "Aldohexoses have 4 asymmetric carbons, giving 2⁴=16 total stereoisomers, half (8) in the D-series and half in the L-series — matching Obr. 7.1's eight named D-aldohexoses.",
       why_cn: "醛己糖有4个不对称碳原子，共给出2⁴=16种立体异构体，其中一半（8种）属于D系，另一半属于L系——与图7.1中列出的八种D-醛己糖一致。"
     },
@@ -228,11 +263,17 @@ window.BIOCHEM.topics.push(
       q_cn: "D-葡萄糖、D-甘露糖和D-半乳糖是三种最常见的醛己糖。根据教材，D-葡萄糖分别与另外两者有何不同？",
       options: [
         "It differs from D-mannose at C-2 and from D-galactose at C-4",
-        "It differs from D-mannose at C-4 and from D-galactose at C-2",
-        "It differs from both at C-1, the anomeric carbon",
-        "It differs from both at C-6, the terminal carbon"
+        "It differs from D-mannose at C-4 and D-galactose at C-2",
+        "It differs from both at C-1, the anomeric carbon created on ring closure",
+        "It differs from both at C-5, the carbon that fixes the D-series label"
       ],
       answer: 0,
+      optionRefs: { 2: "7-1-3-1", 3: "7-1-1" },
+      optionNotes: {
+        1: { en: "The two carbons are swapped. Mannose is the C-2 epimer and galactose the C-4 epimer, both readable straight off the Fischer columns of Obr. 7.1 — mannose differs at the stereocentre next to the carbonyl, galactose at the one next to C-5.", cn: "两个碳位置对调了。Mannose 是 C-2 差向异构体，galactose 是 C-4 差向异构体，两者都能直接从图 7.1 的 Fischer 竖列读出来——mannose 差在紧邻羰基的手性中心，galactose 差在紧邻 C-5 的那个。" },
+        2: { en: "C-1 is the aldehyde carbon and is not a stereocentre in the open chain at all. It becomes asymmetric only when the ring closes, and the two forms it then gives are anomers (α and β), not epimers.", cn: "C-1 是醛基碳，在开链中根本不是手性中心。它只有在成环时才变成不对称碳，而它随后给出的两种形式叫异头物（α 和 β），不是差向异构体。" },
+        3: { en: "C-5 is the asymmetric carbon farthest from the carbonyl, so it is the one that fixes D versus L. All three sugars are D-sugars precisely because they share its configuration; if it differed they would not be epimers but members of the opposite series.", cn: "C-5 是离羰基最远的不对称碳，因此它决定 D 还是 L。这三个糖都是 D 糖，恰恰因为它们在这个碳上构型相同；若它不同，它们就不是差向异构体，而是分属相反的系列。" }
+      },
       why_en: "The book states D-glucose differs from D-mannose only in configuration at C-2, and from D-galactose only in configuration at C-4 — the reverse pairing (option B) swaps these, and options C/D name carbons not involved in this particular set of epimeric relationships.",
       why_cn: "教材指出，D-葡萄糖仅在C-2构型上与D-甘露糖不同，仅在C-4构型上与D-半乳糖不同——选项B把两者对调了，选项C、D提到的碳原子与这组差向异构关系无关。"
     },
@@ -297,12 +338,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why do ketotetroses have only 2 stereoisomers while aldotetroses have 4, even though both are derived by extending a triose's chain by one carbon?",
       q_cn: "为什么酮丁糖只有2种立体异构体，而醛丁糖有4种，尽管两者都是通过将丙糖链延长一个碳原子而得到的？",
       options: [
-        "Because ketotetroses are unstable and half of them decompose",
+        "Because a carbonyl sitting at C-2 rather than at C-1 puts a plane of symmetry through the tetrose, and a molecule with such a plane loses half of the stereoisomers the 2ⁿ rule would predict",
         "Because dihydroxyacetone, the ketose series' starting triose, is optically inactive (no asymmetric carbon), so the resulting ketotetrose has only one asymmetric carbon instead of two",
-        "Because the book only lists the D-series for ketotetroses, ignoring the L-series",
-        "Because ketotetroses have five carbons, not four"
+        "Because Obr. 7.2 traces only the D-branch of the ketose tree, so D-erythrulose is drawn but the matching L-series stereoisomers are simply left out of the total the book quotes",
+        "Because a ketose carries one carbon more than the aldose it is named alongside, so what the book calls a ketotetrose really has five carbons and sits one row lower in the family tree"
       ],
       answer: 1,
+      optionRefs: { 0: "7-1-2-1" },
+      optionNotes: {
+        0: { en: "The 2ⁿ rule counts asymmetric carbons, and nothing is being cancelled here. Dihydroxyacetone's C-2 is symmetric because it carries two identical CH₂OH arms, which is why it has no stereocentre to begin with — the ketotetrose simply never acquires a second one.", cn: "2ⁿ 规则数的是不对称碳，这里没有任何东西被抵消。二羟丙酮的 C-2 之所以对称，是因为它两边挂着两条相同的 CH₂OH——所以它一开始就没有手性中心，酮丁糖也就从来没有获得第二个。" },
+        2: { en: "The L-series is counted, not omitted: the book names both D-erythrulose and L-erythrulose as the two ketotetrose stereoisomers. The figure does draw only the D-branch, exactly as Obr. 7.1 does for the aldoses, but the totals quoted are totals.", cn: "L 系是被计入的，不是被略去：教材明确把 D-erythrulose 和 L-erythrulose 两者列为酮丁糖的两个立体异构体。图确实只画 D 支，跟图 7.1 对醛糖的处理一样，但引用的数目是总数。" },
+        3: { en: "A ketotetrose and an aldotetrose both have four carbons — the name counts carbons, not stereocentres. What differs is where the carbonyl sits: at C-1 in the aldose, at C-2 in the ketose, and that one shift costs the ketose a stereocentre.", cn: "酮丁糖和醛丁糖都是四个碳——名称数的是碳，不是手性中心。不同的是羰基的位置：醛糖在 C-1，酮糖在 C-2，正是这一位移让酮糖少了一个手性中心。" }
+      },
       why_en: "Glyceraldehyde (the aldose parent triose) already has one asymmetric carbon, so extending its chain gives an aldotetrose with 2 asymmetric carbons (4 stereoisomers). Dihydroxyacetone (the ketose parent triose) has NO asymmetric carbon, so extending its chain gives a ketotetrose with only 1 asymmetric carbon (2 stereoisomers) — not decomposition, not an omitted L-series, not a carbon-count error.",
       why_cn: "甘油醛（醛糖系列的丙糖原型）本身就有一个不对称碳原子，因此延长其链得到的醛丁糖有2个不对称碳原子（4种立体异构体）。二羟丙酮（酮糖系列的丙糖原型）没有不对称碳原子，因此延长其链得到的酮丁糖只有1个不对称碳原子（2种立体异构体）——并非分解、并非省略了L系、也不是碳原子数有误。"
     },
@@ -312,6 +359,11 @@ window.BIOCHEM.topics.push(
       q_cn: "在教材的酮糖系谱（图7.2）中，D-果糖是由哪种酮戊糖衍生而来的？",
       options: ["D-xylulose", "D-ribulose", "D-erythrulose directly", "D-sorbose"],
       answer: 1,
+      optionNotes: {
+        0: { en: "D-xylulose is the other ketopentose on the same level of the tree, and it is the branch that does not lead to fructose: it gives D-sorbose and D-tagatose.", cn: "D-xylulose 是同一层上的另一个酮戊糖，正是不通向果糖的那一支：它给出 D-sorbose 和 D-tagatose。" },
+        2: { en: "D-erythrulose is the ketotetrose, one level higher. It reaches fructose only indirectly, by first giving the two ketopentoses D-ribulose and D-xylulose.", cn: "D-erythrulose 是酮丁糖，高一层。它只能间接抵达果糖：先给出 D-ribulose 和 D-xylulose 这两个酮戊糖。" },
+        3: { en: "D-sorbose is a ketohexose itself, a sibling of fructose rather than a precursor of it — and it comes down the other branch, from D-xylulose.", cn: "D-sorbose 本身就是酮己糖，是果糖的同辈而非前体——而且它来自另一支，出自 D-xylulose。" }
+      },
       why_en: "Obr. 7.2 branches D-ribulose into D-psicose and D-fructose, while D-xylulose branches into D-sorbose and D-tagatose. D-erythrulose is a ketotetrose, one step earlier than the ketopentoses, so it does not branch directly into a ketohexose.",
       why_cn: "图7.2中，D-核酮糖分支出D-阿洛酮糖和D-果糖，而D-木酮糖分支出D-山梨糖和D-塔格糖。D-赤藓酮糖是酮丁糖，比酮戊糖早一步，并不直接分支出酮己糖。"
     },
@@ -388,12 +440,18 @@ window.BIOCHEM.topics.push(
       q_en: "In furanose-ring D-fructose, the α/β anomeric designation refers to the configuration at which carbon, and why is that carbon different from the aldose case?",
       q_cn: "在呋喃糖环的D-果糖中，α/β异头物标记指的是哪个碳原子的构型？为什么这个碳原子与醛糖的情况不同？",
       options: [
-        "C-1, exactly as in aldoses, because all sugars use the same anomeric carbon",
+        "C-1, exactly as in aldoses, because ring closure always turns the first carbon of the chain into the new asymmetric centre, whatever sugar it belongs to",
         "C-2, because fructose's original carbonyl (ketone) group — and hence the new stereocenter formed on cyclization — is located at C-2, not C-1",
-        "C-5, because that is the carbon whose hydroxyl attacks the carbonyl",
-        "C-6, the terminal carbon bearing CH₂OH"
+        "C-5, because the new asymmetric centre appears at the hydroxyl-bearing carbon that attacks the carbonyl and closes the ring",
+        "C-6, because in a Haworth formula it is the terminal CH₂OH drawn above or below the ring plane that fixes α or β"
       ],
       answer: 1,
+      optionRefs: { 2: "7-1-1" },
+      optionNotes: {
+        0: { en: "In fructose there is no carbonyl at C-1 to convert — C-1 is a CH₂OH. The new asymmetric centre appears at whichever carbon carried the carbonyl in the open chain, which is C-1 in an aldose like glucose and C-2 in fructose.", cn: "果糖的 C-1 上没有羰基可供转化——C-1 是一个 CH₂OH。新的不对称中心出现在开链中带羰基的那个碳上：在 glucose 这类醛糖是 C-1，在果糖是 C-2。" },
+        2: { en: "C-5 donates the attacking hydroxyl in both cases — glucose closing to a pyranose and fructose to a furanose — but it keeps the configuration it already had. It is the asymmetric carbon farthest from the carbonyl, so what it fixes is D versus L, not α versus β.", cn: "两种情况下都是 C-5 提供发起进攻的羟基——glucose 闭成吡喃糖，果糖闭成呋喃糖——但它保持原有构型不变。它是离羰基最远的不对称碳，所以它决定的是 D 与 L，而不是 α 与 β。" },
+        3: { en: "That is the D/L convention, not the α/β one. In converting to a Haworth formula the primary-alcohol group is drawn above the ring for the D-series and below it for the L-series; α and β are read at the anomeric carbon instead.", cn: "这是 D／L 的约定，不是 α／β 的。转成 Haworth 式时，伯醇基在 D 系画在环上方、L 系画在下方；而 α 和 β 要到异头碳上去读。" }
+      },
       why_en: "The book explicitly states that for the furanose ring, α and β refer to the configuration of the hydroxyl at C-2 — because fructose is a ketose whose carbonyl sits at C-2 in the open chain, so cyclization creates the new (anomeric) stereocenter there rather than at C-1 as in aldoses like glucose.",
       why_cn: "教材明确指出，对于呋喃糖环，α和β指的是C-2上羟基的构型——因为果糖是酮糖，其羰基在开链形式中位于C-2，因此环化产生的新（异头）立体中心也在C-2，而不像葡萄糖等醛糖那样在C-1。"
     },
@@ -402,12 +460,17 @@ window.BIOCHEM.topics.push(
       q_en: "Per the book, in which contexts does D-fructose adopt the furanose ring, versus preferring the pyranose ring?",
       q_cn: "根据教材，D-果糖在哪些情况下采取呋喃糖环形式？在什么情况下优先采取吡喃糖环？",
       options: [
-        "Furanose always, regardless of context; pyranose never occurs for fructose",
+        "Furanose in every setting, free or bound, since the five-membered ring is the only one a ketose can close and the six-membered pyranose ring is reserved for aldoses such as glucose",
         "Furanose in oligosaccharides (e.g. sucrose), polysaccharides (e.g. inulin), and some phosphate esters; free D-fructose preferentially forms the pyranose ring instead",
-        "Pyranose only when bound in nucleic acids; furanose only in the free state",
-        "The book does not distinguish between contexts for fructose's ring form"
+        "Pyranose whenever fructose is bound, as in sucrose and in inulin; furanose only for the free sugar in solution and for a few of its phosphate esters",
+        "Furanose only when bound in nucleic acids, the way D-ribose and 2-deoxy-D-ribose are; in every other setting D-fructose closes the six-membered pyranose ring"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Ring size is not decided by aldose versus ketose. Free D-fructose, a ketose, prefers the six-membered pyranose ring, and free D-ribose, an aldose, occurs predominantly as a pyranose while it is a furanose inside nucleic acids.", cn: "环的大小不由醛糖还是酮糖决定。游离的 D-fructose 是酮糖，却偏好六元的吡喃糖环；游离的 D-ribose 是醛糖，主要以吡喃糖形式存在，而在核酸中却是呋喃糖。" },
+        2: { en: "The two contexts are the right way round in the book and swapped here. Sucrose and inulin are precisely where fructose appears as a furanose; it is the free sugar that preferentially closes the larger pyranose ring.", cn: "两种场合在教材中的归属正好与此相反。Sucrose 和 inulin 恰恰是果糖以呋喃糖形式出现的地方；偏好闭成较大吡喃糖环的，是游离的糖。" },
+        3: { en: "That statement is true of the pentoses, not of fructose. D-ribose and 2-deoxy-D-ribose form furanose rings when bound in nucleic acids; fructose's furanose settings are sucrose, inulin and some phosphate esters.", cn: "这句话对戊糖成立，对果糖不成立。D-ribose 和 2-deoxy-D-ribose 在核酸中结合时形成呋喃糖环；果糖的呋喃糖场合则是 sucrose、inulin 和一些磷酸酯。" }
+      },
       why_en: "The book states the furanose form of D-fructose occurs specifically in oligosaccharides like sucrose, polysaccharides like inulin, and some phosphate esters, while free D-fructose preferentially forms the six-membered pyranose ring — the reverse of options A, C, and the non-answer D.",
       why_cn: "教材指出，D-果糖的呋喃糖形式specifically存在于蔗糖等低聚糖、菊粉等多糖以及某些磷酸酯中，而游离的D-果糖则优先形成六元吡喃环——这与选项A、C及未作区分的选项D相反。"
     },
@@ -469,12 +532,17 @@ window.BIOCHEM.topics.push(
       q_en: "Obr. 7.5(a) shows α-D-glucopyranose in four successive representations. Which sequence matches the book's own order?",
       q_cn: "图7.5(a)以四种连续的表示法展示了α-D-吡喃葡萄糖。以下哪个顺序与教材的排列一致？",
       options: [
-        "Haworth projection → chair conformation → Fischer projection → acyclic form",
+        "Haworth projection → stereo-projection (chair conformation) → cyclic Fischer projection → acyclic form of glucose (Fischer)",
         "Acyclic form (Fischer) → cyclic Fischer projection → Haworth projection → stereo-projection (chair conformation)",
-        "Chair conformation → acyclic form → Haworth projection → cyclic Fischer projection",
-        "Cyclic Fischer projection → acyclic form → chair conformation → Haworth projection"
+        "Cyclic Fischer projection → acyclic form (Fischer) → stereo-projection (chair conformation) → Haworth projection",
+        "Acyclic form (Fischer) → Haworth projection → cyclic Fischer projection → chair conformation"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "This is the book's order run backwards. The panel is built to be read as a derivation — it opens on the open chain and closes the ring, ending on the three-dimensional chair, and reversing it makes the chair the starting point.", cn: "这是把教材的顺序倒着走。这一组图是当作推导来读的——从开链起手，闭环，最后落在三维的椅式上；倒过来就把椅式当成了起点。" },
+        2: { en: "The acyclic form cannot come second: the cyclic Fischer projection is what you get FROM it, once the vertical bracket joining C-1 and C-5 through the ring oxygen is drawn. It is a product of the open chain, not a precursor.", cn: "开链形式不可能排在第二位：环状 Fischer 投影正是从它得来的——画上那条经环氧连接 C-1 和 C-5 的竖括号之后。它是开链的产物，不是前身。" },
+        3: { en: "Only the two middle panels are swapped, and they are the point of the figure: the cyclic Fischer projection is the intermediate step that closes the chain into a ring before the Haworth perspective view is drawn from it.", cn: "只是中间两幅对调了，而它们恰恰是这幅图的要点：环状 Fischer 投影是把链闭成环的中间一步，Haworth 透视图是从它再画出来的。" }
+      },
       why_en: "The book's own figure runs left to right: acyclic form of glucose (Fischer) → cyclic Fischer projection (with the vertical O-bracket) → Haworth projection → stereo-projection in the chair conformation, all depicting the same molecule, α-D-glucopyranose.",
       why_cn: "教材图示从左到右依次为：葡萄糖的无环式（费歇尔式）→环状费歇尔投影式（带竖直O括号线）→哈沃斯投影式→椅式构象的立体投影，四者描绘的是同一个分子——α-D-吡喃葡萄糖。"
     },
@@ -545,12 +613,17 @@ window.BIOCHEM.topics.push(
       q_en: "If you dissolve pure crystalline β-D-glucose in water, what happens to the solution's specific optical rotation over time, and why?",
       q_cn: "如果将纯的β-D-葡萄糖结晶溶于水中，随着时间推移，溶液的比旋光度会如何变化？为什么？",
       options: [
-        "It stays fixed at +18.4° indefinitely, since β-D-glucose cannot convert to any other form in solution",
+        "It stays fixed at +18.4° indefinitely, because a crystalline anomer keeps its ring closed once dissolved and the acyclic form needed to interconvert the two is absent from the solution",
         "It drifts upward over time toward an equilibrium value of +52.7°, as β-D-glucose interconverts with α-D-glucose via the acyclic form until the equilibrium anomer mixture is reached",
-        "It drops to 0°, since mutarotation eliminates all optical activity",
-        "It immediately jumps to +112°, the α-anomer's rotation"
+        "It falls over time toward the equilibrium value of +52.7°, since β-D-glucose is the higher-rotating anomer and mutarotation always brings a solution down to the mixture",
+        "It rises over time to +112°, the rotation of α-D-glucose, because the acyclic intermediate converts essentially all of the β form into the more stable α form"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The acyclic form is not absent — it is the intermediate through which α and β interconvert, and the book says the equilibrium mixture contains a very small amount of it. Its presence is precisely what makes mutarotation happen.", cn: "开链形式并非不存在——它正是 α 与 β 相互转化所经的中间体，教材说平衡混合物中含有极少量的它。它的存在恰恰就是变旋现象发生的原因。" },
+        2: { en: "The direction is reversed. β-D-glucose rotates +18.4°, which is BELOW the equilibrium +52.7°, so its rotation rises. It is α-D-glucose, at +112°, whose rotation falls to that same value.", cn: "方向反了。β-D-glucose 的旋光是 +18.4°，低于平衡值 +52.7°，所以它的旋光是上升的。旋光下降到同一数值的，是 +112° 的 α-D-glucose。" },
+        3: { en: "Equilibrium is a mixture, not a conversion run to completion. Both anomers are present at the end, which is why the final value +52.7° lies between the two pure constants +18.4° and +112° rather than at either of them.", cn: "平衡是一个混合物，不是反应跑到底。终点时两种异头物都存在，这正是最终值 +52.7° 落在 +18.4° 与 +112° 这两个纯品常数之间、而不落在其中任何一个上的原因。" }
+      },
       why_en: "The book states that dissolving a crystalline sample of either pure anomer causes the rotation to change over time until it reaches the same equilibrium value, +52.7°, in both cases — starting from β-D-glucose (+18.4°), the rotation drifts upward toward +52.7° as the α/β/acyclic equilibrium establishes itself, not staying fixed, not dropping to zero, and not jumping straight to the α value.",
       why_cn: "教材指出，溶解任一纯异头物的结晶样品都会使旋光度随时间变化，最终在两种情况下都达到相同的平衡值+52.7°——从β-D-葡萄糖（+18.4°）开始，随着α/β/无环平衡的建立，旋光度会向+52.7°方向漂移，而不是保持不变、降为零，或直接跳到α异头物的数值。"
     },
@@ -559,12 +632,17 @@ window.BIOCHEM.topics.push(
       q_en: "What does the book say the equilibrium specific rotation of +52.7° actually corresponds to?",
       q_cn: "教材指出，平衡比旋光度+52.7°实际上对应的是什么？",
       options: [
-        "Pure α-D-glucose only",
-        "Pure β-D-glucose only",
+        "The rotation of pure α-D-glucose, the anomer whose own constant of +112° is reached once mutarotation has run to completion",
+        "The rotation of pure β-D-glucose, whose +18.4° is the value both crystalline anomers settle at in water",
         "The rotation of the equilibrium mixture of α- and β-anomers, which contains only a very small amount of the acyclic form",
-        "The rotation of pure acyclic (open-chain) D-glucose"
+        "The rotation of the acyclic open-chain form, the intermediate through which the two anomers interconvert"
       ],
       answer: 2,
+      optionNotes: {
+        0: { en: "+112° is α-D-glucose's own physical constant, and it is where that anomer STARTS, not where it ends. Dissolve pure α-D-glucose and mutarotation carries the reading down from +112° to +52.7°.", cn: "+112° 是 α-D-glucose 自己的物理常数，而且是这个异头物的起点，不是终点。把纯 α-D-glucose 溶解，变旋会把读数从 +112° 带下来到 +52.7°。" },
+        1: { en: "+18.4° is β-D-glucose's own constant and the starting point for that anomer. Both anomers do converge on one value, but it is +52.7°, which lies between the two pure constants rather than at either end.", cn: "+18.4° 是 β-D-glucose 自己的常数，也是这个异头物的起点。两种异头物确实收敛到同一个值，但那个值是 +52.7°，落在两个纯品常数之间，而不在任一端。" },
+        3: { en: "The acyclic form is present only in a very small amount at equilibrium, and the book gives no rotation value for it. +52.7° is the rotation of the mixture as a whole, dominated by the two ring forms.", cn: "开链形式在平衡时只占极小的量，教材也没有给出它的旋光值。+52.7° 是整个混合物的旋光，主要由两种环状形式决定。" }
+      },
       why_en: "The book explicitly defines the equilibrium value as corresponding to the rotation of the equilibrium mixture of α- and β-anomers, containing only a very small amount of the acyclic form — not any single pure form.",
       why_cn: "教材明确指出，该平衡值对应于α和β异头物平衡混合物的旋光度，该混合物中只含有极少量的无环形式——而不是任何单一的纯形式。"
     },
@@ -628,12 +706,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does esterifying a sugar's hydroxyl group with a polybasic acid (rather than a monobasic one) matter functionally, per the book?",
       q_cn: "根据教材，为什么用多元酸（而非一元酸）酯化糖的羟基在功能上很重要？",
       options: [
-        "It has no functional consequence — all sugar esters behave identically",
+        "It has no functional consequence, since a sugar ester behaves the same whichever acid formed it",
         "It converts the electroneutral sugar molecule into an ion, which affects its behaviour in the cellular environment",
-        "It makes the sugar molecule optically inactive",
-        "It prevents the sugar from being metabolized at all"
+        "It makes the sugar molecule optically inactive by destroying the anomeric centre it esterifies",
+        "It blocks the sugar from being metabolized further, which is why phosphate esters accumulate in the cell rather than entering a pathway"
       ],
       answer: 1,
+      optionRefs: { 2: "7-1-3-1", 3: "7-8-1" },
+      optionNotes: {
+        0: { en: "The book draws the monobasic/polybasic distinction precisely because it does have a consequence. An ester of a monobasic acid leaves the sugar electroneutral; one of a polybasic acid — phosphoric or sulfuric — turns it into an ion.", cn: "教材之所以要区分一元酸与多元酸，正是因为这件事有后果。一元酸成酯后糖仍是电中性；多元酸——磷酸或硫酸——成酯则把它变成离子。" },
+        2: { en: "Esterification happens at an ordinary hydroxyl group and does not touch the anomeric centre or any of the sugar's asymmetric carbons, so optical activity is untouched. What the reaction changes is charge.", cn: "酯化发生在普通羟基上，既不碰异头中心，也不碰糖的任何不对称碳，所以旋光性毫无变化。这个反应改变的是电荷。" },
+        3: { en: "The opposite is the case: the book says sugars are metabolized almost exclusively in the form of phosphate esters, which is why nearly every pathway begins by phosphorylating the sugar at the cost of an ATP.", cn: "情况恰恰相反：教材说糖几乎完全以磷酸酯的形式被代谢，这也是为什么几乎每条途径的第一步都是耗一个 ATP 把糖磷酸化。" }
+      },
       why_en: "The book states that binding a polybasic acid changes the electroneutral sugar molecule into an ion, which influences its behaviour in the cell environment — the opposite of 'no consequence,' and unrelated to optical activity or a metabolic block (phosphate esters are in fact the dominant metabolized form).",
       why_cn: "教材指出，与多元酸结合会使原本电中性的糖分子转变为离子，从而影响其在细胞环境中的行为——这与「无功能影响」相反，也与旋光性或代谢阻断无关（事实上磷酸酯正是糖被代谢的主要形式）。"
     },
@@ -643,11 +727,17 @@ window.BIOCHEM.topics.push(
       q_cn: "教材赋予糖磷酸酯哪两种生物化学功能？",
       options: [
         "They are the almost-exclusive metabolized form of sugars, and a reactive intermediate for forming O-/N-glycosidic bonds (e.g. PRPP in nucleotide synthesis)",
-        "They form the structural backbone of cellulose and chitin",
-        "They are exclusively used to form sulfate esters in heparin",
-        "They serve only as a storage form with no further reactivity"
+        "They are the structural backbone of cellulose and chitin, whose long chains are held together by phosphate ester bridges between neighbouring sugar units",
+        "They are used exclusively to build the sulfuric-acid esters found in heteroglycans such as heparin and chondroitin sulfate, and have no other role",
+        "They are a storage form only, holding sugars unreactive until a phosphatase releases them again, and they take no part in forming O- or N-glycosidic bonds at all"
       ],
       answer: 0,
+      optionRefs: { 1: "7-4-1-2", 2: "7-4-2" },
+      optionNotes: {
+        1: { en: "Cellulose and chitin are held together by glycosidic bonds between the sugar units themselves, not by phosphate bridges. They belong to the structural polysaccharides, a different section entirely.", cn: "纤维素和几丁质靠的是糖单元之间的糖苷键，不是磷酸桥。它们属于结构多糖，完全是另一节的内容。" },
+        2: { en: "Sulfuric-acid esters are the OTHER ester type the book lists, occurring in heteroglycans such as heparin and chondroitin sulfate. They are a separate entry, not something the phosphate esters are for.", cn: "硫酸酯是教材列出的另一类酯，出现在肝素、硫酸软骨素这类杂多糖中。它们是独立的一条，不是磷酸酯的用途。" },
+        3: { en: "This denies the second of the two roles. A sugar phosphate is a REACTIVE intermediate for O- and N-glycosidic bond formation — PRPP in nucleotide synthesis is the book's own example of exactly that.", cn: "这否掉了两项作用中的第二项。糖磷酸是形成 O- 和 N-糖苷键的活性中间体——核苷酸合成中的 PRPP 正是教材自己举的例子。" }
+      },
       why_en: "The book names two roles for phosphate esters: sugars are metabolized almost exclusively in this form, and phosphate esters serve as reactive intermediates for O-/N-glycosidic bond formation, exemplified by PRPP in nucleotide synthesis. Cellulose/chitin are not ester-linked structural polymers in this sense, sulfate esters are a separate (sulfuric-acid) ester type found in heteroglycans, and 'storage with no reactivity' contradicts the PRPP intermediate role.",
       why_cn: "教材为磷酸酯赋予了两种功能：糖几乎完全以此形式被代谢，且磷酸酯作为形成O-/N-糖苷键的反应性中间体，PRPP在核苷酸合成中的作用即为例证。纤维素/几丁质并非这种意义上的酯连接结构聚合物；硫酸酯是杂聚糖中另一种（硫酸）酯类型；「仅作储存、无反应性」与PRPP中间体的作用相矛盾。"
     },
@@ -716,10 +806,16 @@ window.BIOCHEM.topics.push(
       options: [
         "Aldonic acids come from oxidizing the carbonyl (aldehyde) group; uronic acids come from oxidizing the terminal primary alcohol group",
         "Aldonic acids come from oxidizing the terminal primary alcohol group; uronic acids come from oxidizing the carbonyl group",
-        "Aldonic and uronic acids are simply two different names for the same compound",
-        "Aldonic acids are reduced forms; uronic acids are oxidized forms of aldonic acids"
+        "Aldonic and uronic acids are two names for the same compound, differing only in which end of the chain you number from",
+        "Aldonic acids are the reduced forms of uronic acids, obtained by hydrogenating the terminal carboxyl group back to a primary alcohol group"
       ],
       answer: 0,
+      optionRefs: { 3: "7-2-3" },
+      optionNotes: {
+        1: { en: "The two ends are swapped. Oxidising the carbonyl — the aldehyde at C-1 — gives the aldonic acid; oxidising the terminal primary alcohol at the far end gives the uronic acid.", cn: "两端对调了。氧化羰基——C-1 上的醛基——得到 aldonic acid；氧化另一端的末端伯醇基，得到 uronic acid。" },
+        2: { en: "They are two different compounds from the same parent aldose, oxidised at opposite ends, and they even behave differently: the aldonic acid appears first as a lactone, from which the free acid is released by hydrolysis.", cn: "它们是同一母体醛糖在两端分别被氧化得到的两种不同化合物，行为也不同：aldonic acid 先以内酯形式出现，游离酸要靠水解才释放出来。" },
+        3: { en: "Neither is a reduction product of the other — both are oxidation products, just at different carbons. Reducing a sugar's carbonyl gives something else entirely, an alditol such as D-glucitol.", cn: "两者谁也不是谁的还原产物——它们都是氧化产物，只是氧化的碳不同。还原糖的羰基得到的完全是另一类东西：alditol，例如 D-glucitol。" }
+      },
       why_en: "The book distinguishes them by which end of the aldose is oxidized: the carbonyl (aldehyde) group for aldonic acids, versus the terminal primary alcohol group for uronic acids — the reverse pairing, identity claim, and reduced/oxidized relationship in the other options are not what the book states.",
       why_cn: "教材根据醛糖哪一端被氧化来区分二者：醛糖酸对应羰基（醛基）被氧化，糖醛酸对应末端伯醇基被氧化——其余选项中的对调配对、「同一化合物」说法及「还原/氧化关系」均非教材所述。"
     },
@@ -728,12 +824,17 @@ window.BIOCHEM.topics.push(
       q_en: "Why does ascorbic acid act as a strong reducing agent, per the book?",
       q_cn: "根据教材，为什么抗坏血酸具有强还原性？",
       options: [
-        "Because it is the lactone of a uronic acid",
+        "Because it is the lactone of a uronic acid, and the lactone ring of a uronic acid always makes it a powerful reducing agent",
         "Because it contains an enediol grouping — two hydroxyl groups on one double bond — and all enediols act strongly reducing",
-        "Because it is found predominantly in plants",
-        "Because it converts directly into 2-oxo-L-gulonic acid"
+        "Because it is found predominantly in plants, whose reducing cellular conditions keep it in its active vitamin form",
+        "Because it converts directly into 2-oxo-L-gulonic acid, and it is that ring-opening conversion which releases the reducing electrons"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Ascorbic acid is indeed a lactone, but of 2-oxo-L-gulonic acid, not of a uronic acid. And the book attributes the reducing power to the enediol grouping, not to the lactone ring.", cn: "抗坏血酸确实是内酯，但是 2-oxo-L-gulonic acid 的内酯，不是 uronic acid 的内酯。而且教材把还原性归给烯二醇基团，不是内酯环。" },
+        2: { en: "Plant tissue is where ascorbic acid is found, not why it reduces. The book gives a structural reason and generalises it to the whole class: all enediols act strongly reducing.", cn: "植物组织是抗坏血酸的所在，不是它还原的原因。教材给的是结构上的理由，并推广到整个类别：所有烯二醇都强烈地起还原作用。" },
+        3: { en: "2-oxo-L-gulonic acid is the acid whose lactone ascorbic acid IS, not a product of oxidising it. What ascorbic acid turns into on losing hydrogen is dehydroascorbic acid.", cn: "2-oxo-L-gulonic acid 是抗坏血酸作为内酯所对应的那个酸，不是氧化它得到的产物。抗坏血酸失去氢之后变成的是脱氢抗坏血酸。" }
+      },
       why_en: "The book explicitly attributes ascorbic acid's strong reducing action to its enediol grouping, stating that all enediols act strongly reducing — not its plant origin, not being a uronic-acid lactone (it's actually the lactone of 2-oxo-L-gulonic acid, an aldonic-type acid), and the 2-oxo-L-gulonic acid relationship describes what it's a lactone OF, not a further conversion.",
       why_cn: "教材明确将抗坏血酸的强还原性归因于其烯二醇基团，并指出所有烯二醇都具有强还原性——而非其植物来源，也不是因为它是糖醛酸内酯（它实际上是2-氧代-L-古洛糖酸的内酯，属于醛糖酸类），2-氧代-L-古洛糖酸只是描述其内酯来源关系，而非进一步转化。"
     },
@@ -800,8 +901,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the older (historical) name for D-glucitol, and which monosaccharide does the book name as its most direct precursor by reduction?",
       q_cn: "D-葡萄糖醇的旧称是什么？教材指出哪种单糖是其最直接的还原前体？",
-      options: ["Mannitol; from D-mannose", "Sorbitol; from D-glucose", "Xylitol; from D-xylose", "Ribitol; from D-ribose"],
+      options: [
+        "D-mannitol; from D-mannose",
+        "Sorbitol; from D-glucose",
+        "Inositol; from D-glucose",
+        "Ribitol; from D-ribose"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Mannitol is a real alditol on this list, but it is D-mannose's reduction product and the book gives it a separate entry from D-glucitol.", cn: "Mannitol 确实是这张表上的一个真实糖醇，但它是 D-mannose 的还原产物，教材把它与 D-glucitol 分开列条。" },
+        2: { en: "The precursor half is right and the name is wrong. Inositol is on the same list of sugar alcohols but is not a reduction product of any chain sugar — it is a cyclohexane derivative, found in phospholipids and as phytic acid.", cn: "前体那一半对了，名字错了。Inositol 在同一张糖醇表上，但它不是任何链状糖的还原产物——它是环己烷衍生物，见于磷脂，也以植酸形式存在。" },
+        3: { en: "Ribitol is one of the three further sugar alcohols the book names, alongside glycerol and inositol. It is not another name for D-glucitol.", cn: "Ribitol 是教材另外点名的三种糖醇之一，与甘油和肌醇并列。它不是 D-glucitol 的别名。" }
+      },
       why_en: "The book states reducing D-glucose gives D-glucitol, whose older name is sorbitol. Mannitol is the separate alditol from D-mannose; xylitol and ribitol are not named in this section as D-glucitol's precursor/synonym.",
       why_cn: "教材指出，还原D-葡萄糖得到D-葡萄糖醇，其旧称为山梨醇。甘露糖醇是由D-甘露糖得到的另一种糖醇；木糖醇和核糖醇在本节中并未被指为D-葡萄糖醇的前体/别名。"
     },
@@ -810,12 +921,18 @@ window.BIOCHEM.topics.push(
       q_en: "Inositol is described in the book as occurring in which two natural contexts?",
       q_cn: "教材描述肌醇存在于哪两种自然情形中？",
       options: [
-        "As a component of DNA and RNA",
+        "As a component of DNA and RNA, and as the phosphate esters of their backbone",
         "As a component of phospholipids, and as phytic acid (its hexaphosphate ester)",
-        "As a component of chitin and heparin",
-        "As a component of hemoglobin and myoglobin"
+        "As a component of chitin, and as heparin, the sulfuric-acid ester of a heteroglycan",
+        "As a component of hemoglobin, and as phytic acid, its hexaphosphate ester"
       ],
       answer: 1,
+      optionRefs: { 0: "7-2-5", 2: "7-2-4" },
+      optionNotes: {
+        0: { en: "The sugars of the DNA and RNA backbone are the pentoses D-ribose and 2-deoxy-D-ribose, not a six-membered carbocyclic alcohol. Inositol is not a nucleic-acid component.", cn: "DNA 与 RNA 骨架里的糖是 D-ribose 和 2-deoxy-D-ribose 这两种戊糖，不是六元碳环的醇。Inositol 不是核酸的组分。" },
+        2: { en: "Chitin is built from N-acetyl-D-glucosamine, an amino sugar, and heparin is a heteroglycan carrying sulfuric-acid esters. Neither one involves inositol.", cn: "几丁质由氨基糖 N-acetyl-D-glucosamine 构成，肝素是带硫酸酯的杂多糖。两者都与 inositol 无关。" },
+        3: { en: "The phytic-acid half is right — phytic acid really is inositol hexaphosphate — but hemoglobin and myoglobin are heme proteins, and the book names phospholipids as inositol's other setting.", cn: "植酸那一半是对的——植酸确实就是肌醇六磷酸——但血红蛋白和肌红蛋白是血红素蛋白，而教材给 inositol 的另一个去处是磷脂。" }
+      },
       why_en: "The book states inositol, a cyclohexane derivative, occurs as a component of phospholipids and also as phytic acid, the hexaphosphate ester of inositol — the other options describe unrelated biomolecules not mentioned in this section.",
       why_cn: "教材指出，肌醇（一种环己烷衍生物）作为磷脂的组分存在，也以植酸（肌醇的六磷酸酯）的形式存在——其余选项描述的是本节未提及的、与此无关的生物分子。"
     },
@@ -885,11 +1002,17 @@ window.BIOCHEM.topics.push(
       q_cn: "教材指出哪三种氨基糖具有重要的生物化学意义？D-葡萄糖胺的正式命名是什么？",
       options: [
         "D-glucosamine (2-deoxy-2-amino-D-glucose), D-galactosamine (2-deoxy-2-amino-D-galactose), and neuraminic acid",
-        "D-glucosamine, D-mannosamine, and D-galactosamine only",
-        "N-acetylneuraminic acid, chitin, and heparin",
-        "D-glucosamine, L-fucose, and L-rhamnose"
+        "D-glucosamine (2-deoxy-2-amino-D-glucose), D-mannosamine, and D-galactosamine (2-deoxy-2-amino-D-galactose)",
+        "N-acetyl-D-glucosamine, N-acetyl-D-galactosamine (both bound in glycoproteins and glycolipids), and N-acetylneuraminic acid",
+        "D-glucosamine (2-deoxy-2-amino-D-glucose), L-fucose (6-deoxy-L-galactose), and L-rhamnose"
       ],
       answer: 0,
+      optionRefs: { 3: "7-2-5" },
+      optionNotes: {
+        1: { en: "D-mannosamine appears in this section only as the sugar half of the aldol condensation that formally gives neuraminic acid. It is not itself one of the three the book names.", cn: "D-mannosamine 在本节只作为那个形式上给出神经氨酸的羟醛缩合反应中的糖的一半出现。它本身不在教材点名的三者之列。" },
+        2: { en: "These are the N-acetyl DERIVATIVES, which is how the amino group is almost always found in the cell — the question asks for the amino sugars themselves, and the book lists neuraminic acid under its own name.", cn: "这些是 N-乙酰衍生物，也确实是氨基在细胞里几乎总有的样子——但题目问的是氨基糖本身，教材列的是神经氨酸自己的名字。" },
+        3: { en: "L-fucose and L-rhamnose are deoxy sugars, 6-deoxy-L-galactose and 6-deoxy-L-mannose: a hydroxyl replaced by hydrogen, not by an amino group. That is the next section, not this one.", cn: "L-fucose 和 L-rhamnose 是脱氧糖，即 6-deoxy-L-galactose 和 6-deoxy-L-mannose：羟基被氢取代，不是被氨基取代。那是下一节的内容。" }
+      },
       why_en: "The book names exactly these three: D-glucosamine (2-deoxy-2-amino-D-glucose), D-galactosamine (2-deoxy-2-amino-D-galactose), and neuraminic acid. D-mannosamine appears only as a precursor of neuraminic acid, not as one of the three named amino sugars itself; chitin/heparin are polysaccharides, not amino sugars; L-fucose/L-rhamnose are deoxy sugars (next section), not amino sugars.",
       why_cn: "教材恰好指出了这三种：D-葡萄糖胺（2-脱氧-2-氨基-D-葡萄糖）、D-半乳糖胺（2-脱氧-2-氨基-D-半乳糖）和神经氨酸。D-甘露糖胺只是作为神经氨酸的前体出现，并非三种命名氨基糖之一；几丁质/肝素是多糖，不是氨基糖；L-岩藻糖/L-鼠李糖是脱氧糖（下一节内容），不是氨基糖。"
     },
@@ -899,11 +1022,17 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，神经氨酸的结构在形式上对应于什么？它在体内是否以游离形式存在？",
       options: [
         "The aldol condensation product of pyruvic acid and D-mannosamine; it never occurs free — only its N-acetyl/N-glycolyl derivatives matter biologically",
-        "The direct acetylation product of D-glucosamine; it occurs abundantly free in blood plasma",
-        "A simple oxidation product of D-galactosamine; it occurs free in chitin",
-        "The reduction product of D-fructose; it occurs free in phospholipids"
+        "The direct acetylation product of D-glucosamine; it occurs abundantly free in blood plasma, where its N-glycolyl derivative is by contrast rare",
+        "A simple oxidation product of D-galactosamine; it occurs free in chitin, whose long chains its N-acetyl derivative terminates at both ends",
+        "The aldol condensation product of pyruvic acid and D-glucosamine; it occurs free in membrane glycolipids, blood-group substances and many glycoproteins"
       ],
       answer: 0,
+      optionRefs: { 2: "7-4-1-2" },
+      optionNotes: {
+        1: { en: "Acetylation is what happens TO neuraminic acid's amino group afterwards, not how the molecule is built — and the book states flatly that it does not occur in free form anywhere.", cn: "乙酰化是事后发生在神经氨酸氨基上的事，不是这个分子的构建方式——而且教材明确说它在任何地方都不以游离形式存在。" },
+        2: { en: "Chitin is a polysaccharide of N-acetyl-D-glucosamine, not of neuraminic acid, and neuraminic acid is not an oxidation product at all — its formal parentage is an aldol condensation.", cn: "几丁质是 N-acetyl-D-glucosamine 的多糖，不是神经氨酸的，而且神经氨酸根本不是氧化产物——它形式上的来源是一个羟醛缩合。" },
+        3: { en: "The sugar half is D-mannosamine, not D-glucosamine — and the occurrence clause is exactly what the book contradicts: neuraminic acid does not occur free, only its N-acetyl or N-glycolyl derivatives do.", cn: "糖的那一半是 D-mannosamine，不是 D-glucosamine——而后半句正好是教材要否定的：神经氨酸不以游离形式存在，只有它的 N-乙酰或 N-羟乙酰衍生物存在。" }
+      },
       why_en: "The book states neuraminic acid's structure formally corresponds to the aldol condensation of pyruvic acid and D-mannosamine, and explicitly says it does not occur in free form — only its N-acetyl or N-glycolyl derivatives are the biologically important species, found in membrane glycolipids, blood-group substances, and glycoproteins.",
       why_cn: "教材指出，神经氨酸的结构在形式上对应于丙酮酸与D-甘露糖胺的羟醛缩合产物，并明确指出它不以游离形式存在——只有其N-乙酰基或N-羟乙酰基衍生物才是具有生物学意义的物种，存在于膜糖脂、血型物质和糖蛋白中。"
     },
@@ -965,8 +1094,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which deoxy sugar does the book identify as a component of DNA?",
       q_cn: "教材指出哪种脱氧糖是DNA的组分？",
-      options: ["L-fucose", "L-rhamnose", "2-deoxy-D-ribose", "D-glucosamine"],
+      options: [
+        "L-fucose",
+        "L-rhamnose",
+        "2-deoxy-D-ribose",
+        "N-acetyl-D-glucosamine"
+      ],
       answer: 2,
+      optionRefs: { 3: "7-2-4" },
+      optionNotes: {
+        0: { en: "L-fucose is 6-deoxy-L-galactose — a deoxy sugar, but the book places it in milk oligosaccharides and glycoproteins, not in a nucleic acid.", cn: "L-fucose 是 6-deoxy-L-galactose——确实是脱氧糖，但教材把它放在乳寡糖和糖蛋白里，不在核酸中。" },
+        1: { en: "L-rhamnose is 6-deoxy-L-mannose, the other 6-deoxyhexose in this section, and the book places it in glycosides.", cn: "L-rhamnose 是 6-deoxy-L-mannose，本节另一个 6-脱氧己糖，教材把它放在糖苷里。" },
+        3: { en: "This is an amino sugar, not a deoxy sugar: its C-2 hydroxyl is replaced by an acetylated amino group rather than by hydrogen, and it is the unit chitin is built from.", cn: "这是氨基糖，不是脱氧糖：它 C-2 上的羟基被乙酰化的氨基取代，而不是被氢取代，而且它是构成几丁质的单元。" }
+      },
       why_en: "The book names 2-deoxy-D-ribose specifically as a component of DNA; L-fucose and L-rhamnose are the two 6-deoxyhexose examples given for a different context (milk oligosaccharides/glycoproteins and glycosides respectively), and D-glucosamine is an amino sugar, not a deoxy sugar.",
       why_cn: "教材specifically指出2-脱氧-D-核糖是DNA的组分；L-岩藻糖和L-鼠李糖是书中举出的两个6-脱氧己糖例子，分别用于不同情境（乳低聚糖/糖蛋白，以及糖苷），而D-葡萄糖胺是氨基糖，不是脱氧糖。"
     },
@@ -976,11 +1116,16 @@ window.BIOCHEM.topics.push(
       q_cn: "L-岩藻糖和L-鼠李糖都是6-脱氧己糖。根据教材，二者各自的母体糖和典型存在位置是什么？",
       options: [
         "L-fucose = 6-deoxy-L-galactose, found in milk oligosaccharides/glycoproteins; L-rhamnose = 6-deoxy-L-mannose, found in glycosides",
-        "L-fucose = 6-deoxy-L-mannose, found in glycosides; L-rhamnose = 6-deoxy-L-galactose, found in milk oligosaccharides",
-        "Both are 6-deoxy-L-glucose, found exclusively in DNA",
-        "L-fucose = 6-deoxy-D-glucose; L-rhamnose = 6-deoxy-D-galactose"
+        "L-fucose = 6-deoxy-L-mannose, found in glycosides; L-rhamnose = 6-deoxy-L-galactose, found in milk oligosaccharides and in glycoproteins",
+        "Both are 6-deoxy-L-glucose; L-fucose occurs in glycosides and L-rhamnose in milk oligosaccharides",
+        "L-fucose = 6-deoxy-D-galactose, found in glycosides; L-rhamnose = 6-deoxy-D-mannose, found in milk oligosaccharides"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Both halves are swapped. Fucose is the galactose-derived one and belongs to milk oligosaccharides and glycoproteins; rhamnose is the mannose-derived one and belongs to glycosides.", cn: "两半都对调了。Fucose 是从半乳糖来的那个，归属乳寡糖和糖蛋白；rhamnose 是从甘露糖来的那个，归属糖苷。" },
+        2: { en: "They are not the same sugar. Their parents are two different aldohexoses — L-galactose for fucose, L-mannose for rhamnose — and 6-deoxy-L-glucose is not named anywhere in this section.", cn: "两者不是同一个糖。它们的母体是两种不同的醛己糖——fucose 来自 L-galactose，rhamnose 来自 L-mannose——而 6-deoxy-L-glucose 在本节根本没有出现过。" },
+        3: { en: "The series is wrong: both are L-sugars, which is why the book writes L-fucose and L-rhamnose. The two occurrences have been swapped on top of that.", cn: "系列错了：两者都是 L 糖，这正是教材写作 L-fucose 和 L-rhamnose 的原因。除此之外，两处出现的场合也被对调了。" }
+      },
       why_en: "The book pairs L-fucose with 6-deoxy-L-galactose (found in milk oligosaccharides and glycoproteins) and L-rhamnose with 6-deoxy-L-mannose (found in glycosides) — option B swaps the pairing, and options C/D misname the parent sugars/series.",
       why_cn: "教材将L-岩藻糖与6-脱氧-L-半乳糖（存在于乳低聚糖和糖蛋白中）配对，将L-鼠李糖与6-脱氧-L-甘露糖（存在于糖苷中）配对——选项B调换了配对关系，选项C、D则错误命名了母体糖/系别。"
     },
@@ -1045,6 +1190,12 @@ window.BIOCHEM.topics.push(
       q_cn: "RNA和DNA中的N-糖苷键属于哪种构型？",
       options: ["α", "β", "Neither — it is not a stereocenter", "It varies randomly by nucleotide"],
       answer: 1,
+      optionRefs: { 2: "7-1-3-1" },
+      optionNotes: {
+        0: { en: "α is the other anomer — the one shown beside β in the methyl-D-glukosid example of Obr. 7.7. For the N-glycosidic bond of RNA and DNA the book fixes the configuration as β.", cn: "α 是另一个异头物——图 7.7 中 methyl-D-glukosid 例子里与 β 并列画出的那个。对 RNA 和 DNA 的 N-糖苷键，教材把构型定为 β。" },
+        2: { en: "The anomeric carbon is a stereocentre — it is precisely the new asymmetric carbon created when the ring closes, and its two possible configurations are what α and β name.", cn: "异头碳就是手性中心——它正是闭环时新生成的那个不对称碳，而它两种可能的构型就是 α 和 β 所命名的东西。" },
+        3: { en: "A single, defined configuration is the whole point of the statement: the book says the N-glycosidic bond in these naturally occurring substances has β-configuration, without exception.", cn: "这句话的要点恰恰是构型唯一而确定：教材说这些天然存在物质中的 N-糖苷键都是 β 构型，没有例外。" }
+      },
       why_en: "The book states explicitly that the N-glycosidic bond in these naturally occurring substances (RNA, DNA) has β-configuration.",
       why_cn: "教材明确指出，这些天然物质（RNA、DNA）中的N-糖苷键为β构型。"
     },
@@ -1112,12 +1263,18 @@ window.BIOCHEM.topics.push(
       q_en: "What structural feature determines whether a disaccharide is reducing or non-reducing?",
       q_cn: "决定一个二糖是还原性还是非还原性的结构特征是什么？",
       options: [
-        "Whether the disaccharide is built from two identical monosaccharides",
+        "Whether the disaccharide is built from two identical monosaccharide units, as trehalose is, or from two different ones, as sucrose is",
         "Whether the glycosidic bond uses the hemiacetal hydroxyl of both monosaccharide units (non-reducing) or leaves one hemiacetal hydroxyl free (reducing)",
-        "Whether the disaccharide contains D-glucose or D-galactose",
-        "Whether the disaccharide is found in plants or animals"
+        "Whether the disaccharide contains a D-glucose unit, whose aldehyde group is able to reduce, or a D-fructose unit, whose ketone group is not able to do so",
+        "Whether the disaccharide comes from the plant kingdom, like sucrose and raffinose, or from an animal source, like lactose"
       ],
       answer: 1,
+      optionRefs: { 0: "7-3-2", 3: "7-3-2" },
+      optionNotes: {
+        0: { en: "Trehalose is built from two identical D-glucopyranosyl units and is non-reducing; maltose is also two glucoses and IS reducing. Which units they are does not decide it — which hydroxyls the bond consumes does.", cn: "海藻糖由两个相同的 D-glucopyranosyl 单元构成，是非还原性的；麦芽糖同样是两个葡萄糖，却是还原性的。是哪两个单元决定不了这件事——决定它的是这个键用掉了哪些羟基。" },
+        2: { en: "The identity of the sugars is not the criterion. Sucrose contains D-glucose and is non-reducing, because the bond consumes that glucose's own hemiacetal hydroxyl along with fructose's.", cn: "糖的身份不是判据。蔗糖含有 D-glucose，却是非还原性的，因为这个键把该葡萄糖自己的半缩醛羟基连同果糖的一起用掉了。" },
+        3: { en: "Source is irrelevant. Sucrose and trehalose are both plant sugars and both non-reducing, while maltose, which also comes from plant starch, is reducing.", cn: "来源无关紧要。蔗糖和海藻糖都是植物来源，都是非还原性的；而同样来自植物淀粉的麦芽糖却是还原性的。" }
+      },
       why_en: "If the O-glycosidic bond consumes the hemiacetal hydroxyl of BOTH units, no free hemiacetal hydroxyl remains and the disaccharide is non-reducing, cannot mutarotate, and cannot form glycosides (sucrose). If one hemiacetal hydroxyl survives, the disaccharide is reducing, mutarotates, and can form glycosides (maltose). The other options are not the book's criterion.",
       why_cn: "如果O-糖苷键消耗了两个单位各自的半缩醛羟基，就不再有游离的半缩醛羟基，该二糖为非还原性，不能变旋，也不能形成糖苷（如蔗糖）。如果保留一个半缩醛羟基，则该二糖为还原性，会变旋，也能形成糖苷（如麦芽糖）。其余选项都不是教材给出的判断标准。"
     },
@@ -1191,12 +1348,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which reducing disaccharide is specifically produced from the branch points of the linear starch chain, and what does that reveal about its glycosidic bond?",
       q_cn: "哪种还原性二糖specifically产生于线性淀粉链的分支点？这揭示了其糖苷键的什么特点？",
       options: [
-        "Maltose, with an alpha(1→4) bond, from the main chain",
+        "Maltose, with an alpha(1→4) bond, from the unbranched stretches of the starch chain",
         "Isomaltose, with an alpha(1→6) bond, matching amylopectin's branch-point linkage",
-        "Cellobiose, with a beta(1→4) bond, from cellulose",
-        "Lactose, with a beta(1→4) bond, from milk"
+        "Cellobiose, with a beta(1→4) bond, from the repeat unit of cellulose",
+        "Lactose, with a beta(1→4) bond, from the milk sugar of all mammals"
       ],
       answer: 1,
+      optionRefs: { 2: "7-4-1-2" },
+      optionNotes: {
+        0: { en: "Maltose does come from starch breakdown, but from the alpha(1→4) main chain rather than from a branch point — it is the malt sugar, and the branch-point disaccharide is its 1→6 isomer.", cn: "麦芽糖确实来自淀粉降解，但来自 alpha(1→4) 主链，而不是分支点——它是麦芽糖（sladový cukr），而分支点上的二糖是它的 1→6 异构体。" },
+        2: { en: "Cellobiose is the basic repeating component of cellulose, joined beta(1→4). It has nothing to do with starch, and cellulose has no branch points of this kind.", cn: "纤维二糖是纤维素的基本重复单元，以 beta(1→4) 相连。它与淀粉无关，纤维素也没有这类分支点。" },
+        3: { en: "Lactose is the milk sugar, 4-O-beta-D-galactopyranosyl-D-glucopyranose — a different parent entirely, and it is not obtained from a starch hydrolysate at all.", cn: "乳糖是乳糖（mléčný cukr），即 4-O-beta-D-galactopyranosyl-D-glucopyranosa——母体完全不同，而且它根本不是从淀粉水解液中得到的。" }
+      },
       why_en: "Isomaltose (6-O-alpha-D-glucopyranosyl-D-glucopyranose) is obtained from starch hydrolysate specifically at the points where the linear chain branches — i.e. its alpha(1→6) bond is the disaccharide signature of an amylopectin branch point, distinguishing it from maltose's alpha(1→4) main-chain bond.",
       why_cn: "异麦芽糖（6-O-α-D-吡喃葡萄糖基-D-吡喃葡萄糖）得自淀粉水解产物中链发生分支的位点——也就是说，其α(1→6)键正是支链淀粉分支点在二糖层面的标志，区别于麦芽糖主链上的α(1→4)键。"
     },
@@ -1264,11 +1427,17 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材对多糖的结构分类，同多糖与杂多糖的区别是什么？",
       options: [
         "A homoglycan contains only one type of monosaccharide unit; a heteroglycan contains two or more types",
-        "A homoglycan is always a storage polysaccharide; a heteroglycan is always structural",
-        "A homoglycan contains only D-glucose; a heteroglycan contains only D-mannose",
-        "A homoglycan is unbranched; a heteroglycan is always branched"
+        "A homoglycan is always a storage polysaccharide; a heteroglycan is always a structural one",
+        "A homoglycan is built only from D-glucose; a heteroglycan is built only from D-mannose units",
+        "A homoglycan is an unbranched chain, while a heteroglycan always carries branch points along its main chain"
       ],
       answer: 0,
+      optionRefs: { 1: "7-4-1-1", 3: "7-4-1-1" },
+      optionNotes: {
+        1: { en: "Function is the book's SECOND, independent classification, deliberately kept apart from the structural one. Glycogen is a homoglycan used for storage and cellulose a homoglycan used for structure — same structural class, opposite functions.", cn: "功能是教材的第二套分类，独立于结构分类，被有意分开。糖原是用于储存的同多糖，纤维素是用于结构的同多糖——结构类别相同，功能相反。" },
+        2: { en: "Homoglycans are often named after whichever single residue they happen to contain: glucans from D-glucose, mannans from D-mannose. Both of those are homoglycans, so this splits one class into two.", cn: "同多糖常常直接按它所含的那一种残基命名：D-glucose 的叫 glucan，D-mannose 的叫 mannan。这两者都是同多糖，所以这个选项把一个类别劈成了两个。" },
+        3: { en: "Branching is one of the three axes polysaccharides differ on, alongside residue identity and chain length, and it varies inside the homoglycans themselves: amylose is unbranched, amylopectin is branched, and both are glucans.", cn: "分支程度是多糖相互区别的三条轴之一，与残基种类和链长并列，而且它在同多糖内部就有变化：直链淀粉不分支，支链淀粉分支，两者都是 glucan。" }
+      },
       why_en: "The book defines homoglycans as containing only one type of monosaccharide unit and heteroglycans as containing two or more types. Function (storage/structural) is an entirely separate, independent classification; the other options misstate or over-narrow the definition.",
       why_cn: "教材将同多糖定义为只含一种单糖单位，杂多糖含两种或以上单糖单位。功能分类（储存/结构）是完全独立的另一套标准；其余选项都错误地缩窄或混淆了定义。"
     },
@@ -1278,6 +1447,12 @@ window.BIOCHEM.topics.push(
       q_cn: "除D-葡萄糖外，教材明确提到哪种单糖会以两种立体化学形式（两个系列）同时出现在天然多糖单位中？",
       options: ["D- and L-galactose", "D- and L-mannose", "D- and L-xylose", "D- and L-glucosamine"],
       answer: 0,
+      optionRefs: { 2: "7-4-1-2", 3: "7-2-4" },
+      optionNotes: {
+        1: { en: "D-mannose is on the book's list, but only in the D-form. It is the residue that gives the mannans, the homoglycans of yeasts, bacteria and plants.", cn: "D-mannose 在教材的名单上，但只有 D 型。它是构成 mannan 的残基——酵母、细菌和植物中的同多糖。" },
+        2: { en: "D-xylose is named once, in the D-form. It turns up again as the D-xylans of the hemicelluloses, the accessory substances that bind cellulose fibrils together in wood.", cn: "D-xylose 只被点名一次，且是 D 型。它后面还会出现，即半纤维素中的 D-xylan——木材中把纤维素微纤维捆在一起的辅助物质。" },
+        3: { en: "D-glucosamine is not on that list at all. It belongs to the separate list of monosaccharide DERIVATIVES recovered after hydrolysis, together with D-galactosamine and the uronic acids.", cn: "D-glucosamine 根本不在那张名单上。它属于另一张单子——水解后回收到的单糖衍生物，与 D-galactosamine 和糖醛酸同列。" }
+      },
       why_en: "The book lists 'D-mannosy, D- a L-galaktosy, D-xylosy a D-arabinosy' as common polysaccharide monosaccharide units -- galactose is the one named in both its D- and L- forms; mannose, xylose, and arabinose are each named only once (implicitly D-, per the book's own text).",
       why_cn: "教材列出的常见多糖单糖单位为「D-甘露糖、D-及L-半乳糖、D-木糖和D-阿拉伯糖」——半乳糖是唯一同时以D系和L系两种形式被提及的；甘露糖、木糖和阿拉伯糖在教材原文中都只提到一次（隐含为D系）。"
     },
@@ -1347,11 +1522,16 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，糖原与支链淀粉的分支频率相比如何？",
       options: [
         "Glycogen branches much more often (every 8th-10th residue) than amylopectin (every 12th)",
-        "Glycogen branches less often than amylopectin",
-        "Both branch at exactly the same frequency",
-        "Neither glycogen nor amylopectin is branched"
+        "Glycogen branches less often (every 12th residue) than amylopectin (every 8th-10th)",
+        "Both branch at exactly the same frequency, roughly every 12th D-glucose residue of the main chain",
+        "Neither is branched; both are unbranched α(1→4) chains like amylose"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "The two figures are swapped. Every 12th residue is amylopectin's number and every 8th to 10th is glycogen's, which is exactly why the book calls glycogen much MORE branched than amylopectin.", cn: "两个数字对调了。每 12 个残基是支链淀粉的数字，每 8 到 10 个是糖原的，这正是教材说糖原比支链淀粉分支多得多的原因。" },
+        2: { en: "They are close but not equal, and the book makes that gap the point of the comparison: amylopectin roughly every 12th residue, glycogen roughly every 8th to 10th.", cn: "两者接近但不相等，而教材正是把这个差距当成比较的要点：支链淀粉约每 12 个残基一个分支，糖原约每 8 到 10 个。" },
+        3: { en: "Amylopectin is branched by definition — an α(1→4) main chain with α(1→6) side branches — and glycogen resembles it. The unbranched α(1→4) component of starch is the other one, amylose.", cn: "支链淀粉按定义就是分支的——α(1→4) 主链加 α(1→6) 侧链分支——而糖原与它相似。淀粉中不分支的 α(1→4) 组分是另一个，即直链淀粉。" }
+      },
       why_en: "The book states glycogen's structure resembles amylopectin's but is much more branched, with branch points roughly every 8th-10th D-glucose residue, versus roughly every 12th residue in amylopectin.",
       why_cn: "教材指出，糖原的结构与支链淀粉相似，但分支程度高得多，约每8到10个D-葡萄糖残基出现一个分支点，而支链淀粉约每12个残基才有一个。"
     },
@@ -1362,10 +1542,15 @@ window.BIOCHEM.topics.push(
       options: [
         "Amylopectin gives red-violet; amylose gives blue",
         "Amylopectin gives blue; amylose gives red-violet",
-        "Both give the same blue color",
-        "Neither reacts with iodine"
+        "Both give the same blue color with an iodine solution",
+        "Neither of the two reacts with iodine at all"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "The two colours are swapped. Amylose, the unbranched component, is the one that gives blue; amylopectin, the branched one, gives red-violet.", cn: "两种颜色对调了。直链淀粉——不分支的那个组分——才是显蓝色的；支链淀粉是分支的那个，显红紫色。" },
+        2: { en: "The blue belongs to amylose alone, and the book ties it to a specific structure: hydrated micelles with the chain coiled into a helix inside them, which is what the unbranched chain can form.", cn: "蓝色只属于直链淀粉，而教材把它系于一个具体结构：水合胶束，链在其中卷成螺旋——这是不分支的链才能形成的。" },
+        3: { en: "Both react, and that is the point: the iodine colour is the book's own distinguishing test between the two glucans that make up starch.", cn: "两者都反应，而这正是要点：碘显色是教材用来区分构成淀粉的这两种葡聚糖的判别试验。" }
+      },
       why_en: "The book states amylose's hydrated micelles give a blue color with iodine, while amylopectin's micelles give a red-violet color -- a direct, book-stated distinguishing test between the two starch components.",
       why_cn: "教材指出，直链淀粉的水合胶束遇碘呈蓝色，而支链淀粉的胶束遇碘呈红紫色——这是教材给出的区分这两种淀粉组分的直接方法。"
     },
@@ -1434,11 +1619,17 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，纤维素糖苷键的哪一结构特点使其能够形成很长且平直的链？",
       options: [
         "The β-glycosidic arrangement, unlike an α-glycosidic one",
-        "The presence of branch points every 12 residues",
-        "Its high relative molecular weight alone",
-        "The absence of any hydrogen bonding between residues"
+        "The α(1→6) branch point every 12th residue",
+        "Its very high relative molecular weight, taken on its own",
+        "The absence of any hydrogen bonding between neighbouring residues"
       ],
       answer: 0,
+      optionRefs: { 1: "7-4-1-1", 2: "7-4-1-1" },
+      optionNotes: {
+        1: { en: "Cellulose is unbranched. Branch points every twelfth residue are amylopectin's signature, and branching is precisely what prevents the long straight runs a fibre needs.", cn: "纤维素不分支。每 12 个残基一个分支点是支链淀粉的特征，而分支恰恰妨碍了纤维所需要的那种长而直的链段。" },
+        2: { en: "Size alone settles nothing. Amylose reaches 500,000 and liver glycogen about 16 million, and neither forms a straight fibril — it is the geometry of the bond that does.", cn: "光靠分子量说明不了任何问题。直链淀粉可达 500,000，肝糖原约 1600 万，两者都不形成挺直的微纤维——起作用的是键的几何。" },
+        3: { en: "Hydrogen bonding is present and it helps: the book describes the ring oxygen bonding to the C-3 hydroxyl of the following residue, which is part of what holds the chain straight.", cn: "氢键是存在的，而且起帮助作用：教材写到环上的氧与下一个残基 C-3 上的羟基成氢键，这正是把链固定成直的原因之一。" }
+      },
       why_en: "The book states explicitly that cellulose's β-glycosidic arrangement, unlike an α-glycosidic one, allows the formation of very long straight chains -- unlike starch's branched or helical α-linked structures. Cellulose is unbranched (ruling out option B), and the book actually DOES describe a hydrogen bond (C-3 OH to ring oxygen) stabilizing the straight conformation (ruling out D).",
       why_cn: "教材明确指出，纤维素的β-糖苷排列方式与α-糖苷排列不同，能够形成很长的平直链——不同于淀粉那种分支或螺旋形的α-连接结构。纤维素是不分支的（排除选项B），而且教材确实描述了稳定该平直构象的氢键（C-3羟基与环氧原子之间），排除选项D。"
     },
@@ -1448,11 +1639,16 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材本身的描述，木质素是多糖吗？",
       options: [
         "No -- the book states it is made of polymerized aromatic alcohols",
-        "Yes -- it is a heteroglycan of D-xylose and D-galacturonic acid",
-        "Yes -- it is chemically identical to hemicellulose",
-        "The book does not specify lignin's chemical nature"
+        "Yes -- it is a heteroglycan of D-xylose and D-galacturonic acid units",
+        "Yes -- it is chemically identical to the hemicelluloses of wood",
+        "The book does not specify lignin's chemical nature anywhere"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Those are the two carbohydrates named right beside lignin in the same paragraph: hemicelluloses are mostly D-xylans and pectins are polymers of D-galacturonic acid. Lignin is neither of them.", cn: "这两样正是同一段里紧挨着木质素被点名的两种糖类：半纤维素主要是 D-xylan，果胶是 D-galacturonic acid 的聚合物。木质素两者都不是。" },
+        2: { en: "Hemicelluloses are genuinely carbohydrate, mostly β(1→4)-linked D-xylans, and their job is binding cellulose fibrils together. Lignin sits next to them in wood but is a different kind of molecule.", cn: "半纤维素确实是糖类，主要是 β(1→4) 连接的 D-xylan，作用是把纤维素微纤维捆在一起。木质素在木材中与它们相邻，却是另一类分子。" },
+        3: { en: "The book does specify it, and unusually plainly: polymerized aromatic alcohols. That single phrase is what settles that lignin, despite the company it keeps, is not a carbohydrate.", cn: "教材说明了，而且异常直白：聚合的芳香醇。就是这一句话确定了木质素虽与糖类为邻，本身并不是糖类。" }
+      },
       why_en: "Even though lignin is introduced in the same paragraph as cellulose's accessory binding substances, the book explicitly states it is made of polymerized aromatic alcohols -- it is not a carbohydrate at all, unlike the hemicelluloses and pectins mentioned alongside it.",
       why_cn: "尽管木质素是在与纤维素结合性辅助物质相同的段落中被介绍的，但教材明确指出它由聚合的芳香醇构成——它根本不是糖类，这与同段提到的半纤维素和果胶不同。"
     },
@@ -1520,8 +1716,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "At which position of the acetylated amino sugar does the uronic-acid residue typically attach within a glycosaminoglycan's repeating disaccharide, per the book?",
       q_cn: "根据教材，在糖胺聚糖的重复二糖单位中，糖醛酸残基通常连接在乙酰化氨基糖的哪个位置？",
-      options: ["Position 2", "Position 3", "Position 4", "Position 6"],
+      options: [
+        "Position 2, the carbon that already carries the acetylated amino group",
+        "Position 3",
+        "Position 4, which is where one disaccharide unit joins on to the next",
+        "C-6"
+      ],
       answer: 1,
+      optionRefs: { 0: "7-2-4" },
+      optionNotes: {
+        0: { en: "Position 2 is where the amino group itself sits: in D-glucosamine and D-galactosamine the C-2 hydroxyl has been replaced by an amino group, and it is that amino group which carries the acetyl.", cn: "2 位正是氨基本身所在的位置：在 D-glucosamine 和 D-galactosamine 中，C-2 上的羟基已被氨基取代，而带乙酰基的正是这个氨基。" },
+        2: { en: "1→4 is the bond the book uses for joining one disaccharide unit to the next along the linear macromolecule, not the bond inside the unit. Heparin is drawn as the exception: there an α(1→4) bond sits INSIDE the unit.", cn: "1→4 是教材用来把一个二糖单元连到下一个、构成线性大分子的键，不是单元内部的键。肝素被画成例外：那里的 α(1→4) 键处在单元内部。" },
+        3: { en: "C-6 is a sulfation site rather than a linkage site: chondroitin-6-sulfate carries its sulfate ester at the C-6 hydroxyl, and heparin's amino sugar is N-sulfo-D-glucosamine-6-sulfate.", cn: "C-6 是磺化位点而不是连接位点：chondroitin-6-sulfate 的硫酸酯就挂在 C-6 羟基上，而肝素的氨基糖是 N-sulfo-D-glucosamine-6-sulfate。" }
+      },
       why_en: "The book states the uronic-acid residue is glycosidically bonded to the acetylated amino sugar predominantly at position 3, with the resulting disaccharide units then joined 1→4 into the linear macromolecule.",
       why_cn: "教材指出，糖醛酸残基主要在3号位与乙酰化氨基糖以糖苷键相连，随后这些二糖单位再以1→4键连接成线性大分子。"
     },
@@ -1530,12 +1737,17 @@ window.BIOCHEM.topics.push(
       q_en: "What is heparin's anticoagulant mechanism, per the book?",
       q_cn: "根据教材，肝素的抗凝机制是什么？",
       options: [
-        "It directly degrades fibrinogen",
+        "It degrades fibrinogen directly, leaving thrombin with no substrate to convert",
         "It inhibits the conversion of prothrombin to thrombin, and inhibits thrombin's action on fibrinogen",
-        "It binds calcium ions required for clotting",
-        "It activates plasmin to dissolve existing clots"
+        "It binds the calcium ions that several steps of the clotting cascade require, stopping it upstream",
+        "It activates plasmin, the enzyme that dissolves the fibrin of clots which have already formed in a vessel"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The book's mechanism is inhibition at two points, not destruction of a substrate — and heparin is a polysaccharide, not a protease. Fibrinogen is what thrombin acts ON, and it is thrombin's action that heparin blocks.", cn: "教材给的机制是在两处进行抑制，不是把底物降解掉——而且肝素是多糖，不是蛋白酶。纤维蛋白原是凝血酶作用的对象，而肝素阻断的正是凝血酶的这一作用。" },
+        2: { en: "Calcium appears nowhere in the book's account of heparin. The two steps it names are the prothrombin-to-thrombin conversion and thrombin's action on fibrinogen.", cn: "钙在教材关于肝素的叙述中根本没有出现。教材点名的两步是凝血酶原转变为凝血酶，以及凝血酶对纤维蛋白原的作用。" },
+        3: { en: "That is fibrinolysis — dissolving a clot that already exists. Heparin's stated effect is anticoagulant: it prevents the clot from forming in the first place.", cn: "那是纤溶——溶解已经形成的血栓。教材写明肝素的作用是抗凝：它从一开始就阻止血栓形成。" }
+      },
       why_en: "The book states heparin prevents blood clotting specifically by inhibiting the conversion of prothrombin to thrombin AND thrombin's subsequent action on fibrinogen -- not by degrading fibrinogen directly, chelating calcium, or activating plasmin (none of which the book mentions).",
       why_cn: "教材指出，肝素通过抑制凝血酶原向凝血酶的转化，以及抑制凝血酶随后对纤维蛋白原的作用，来阻止血液凝固——而不是直接降解纤维蛋白原、螯合钙离子或激活纤溶酶（教材均未提及这些机制）。"
     },
@@ -1605,10 +1817,15 @@ window.BIOCHEM.topics.push(
       options: [
         "Three D-mannosyl residues and two N-acetyl-D-glucosaminyl residues",
         "Two D-mannosyl residues and three N-acetyl-D-glucosaminyl residues",
-        "Five N-acetylneuraminic acid residues",
-        "Three D-galactosyl residues and two fucosyl residues"
+        "Five N-acetylneuraminic acid residues carrying their glycerol-like tails",
+        "Three D-galactosyl residues and two β-L-fucosyl residues"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "The two counts are swapped. It is three mannoses and two N-acetylglucosamines — the pair of GlcNAc sits nearest the asparagine, and the three Man branch outward from them in both trees of Obr. 7.11.", cn: "两个数字对调了。是三个甘露糖、两个 N-乙酰葡糖胺——那对 GlcNAc 紧挨着天冬酰胺，三个 Man 从它们向外分支，图 7.11 的两种树都如此。" },
+        2: { en: "NeuAc is a terminating sugar on the finished trees, the one Obr. 7.12 marks out by its extra glycerol-like three-carbon tail. It caps the branches rather than forming the core.", cn: "NeuAc 是完成的糖链树末端的糖，图 7.12 用它多出的那条类甘油三碳尾把它标出来。它封住分支的末端，不构成核心。" },
+        3: { en: "Galactose and fucose do appear in the complex-type tree — Gal inside the NeuAc-Gal-GlcNAc branches, and a fucose on the core — but they are among the ADDITIONAL residues attached to the core, not the core itself.", cn: "半乳糖和岩藻糖确实出现在复合型糖链树上——Gal 在 NeuAc-Gal-GlcNAc 分支里，一个岩藻糖挂在核心上——但它们属于附加在核心上的残基，不是核心本身。" }
+      },
       why_en: "The book explicitly states the common core contains three D-mannosyl residues and two N-acetyl-D-glucosaminyl residues, as shown in Obr. 7.11's mannose-type and complex-type trees, both built over the same GlcNAc-GlcNAc-Man(3x) core.",
       why_cn: "教材明确指出，共同核心包含三个D-甘露糖基残基和两个N-乙酰-D-葡萄糖胺基残基，如图7.11中甘露糖型和复杂型两种树状结构所示，二者都建立在相同的GlcNAc-GlcNAc-Man(3个)核心之上。"
     },
@@ -1616,8 +1833,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which two amino acid side chains carry O-glycosidically bound oligosaccharide chains, per the book?",
       q_cn: "根据教材，哪两种氨基酸的侧链会携带O-糖苷连接的寡糖链？",
-      options: ["Serine and threonine", "Asparagine and glutamine", "Serine and asparagine", "Threonine and lysine"],
+      options: [
+        "Serine and threonine",
+        "Asparagine and glutamine",
+        "Serine and asparagine",
+        "Asparagine only"
+      ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Asparagine is the N-glycosidic partner, bonding through its amide nitrogen, and glutamine is not named anywhere in this section.", cn: "天冬酰胺是 N-糖苷那一边的搭档，通过它的酰胺氮成键；而谷氨酰胺在本节根本没有被提到。" },
+        2: { en: "One from each bond type. Serine takes an O-glycosidic chain through its hydroxyl; asparagine takes an N-glycosidic one through its amide nitrogen — the question asks for the O-glycosidic pair.", cn: "两种键各取一个。丝氨酸通过羟基接 O-糖苷链，天冬酰胺通过酰胺氮接 N-糖苷链——题目问的是 O-糖苷的那一对。" },
+        3: { en: "Asparagine is the N-glycosidic case, and it is the one whose chains all share the pentasaccharide core. An O-glycosidic bond needs a hydroxyl, which asparagine's side chain does not have.", cn: "天冬酰胺是 N-糖苷的那种情形，也正是所有糖链共用五糖核心的那一种。O-糖苷键需要一个羟基，而天冬酰胺的侧链没有。" }
+      },
       why_en: "The book states oligosaccharide chains are bound to the hydroxyl group of serine OR threonine via an O-glycosidic bond -- asparagine instead carries N-glycosidically bound chains via its amide nitrogen.",
       why_cn: "教材指出，寡糖链通过O-糖苷键连接在丝氨酸或苏氨酸的羟基上——而天冬酰胺则通过其酰胺氮原子携带N-糖苷连接的寡糖链。"
     },
@@ -1686,6 +1913,12 @@ window.BIOCHEM.topics.push(
         "None of the three types change carbon count"
       ],
       answer: 1,
+      optionRefs: { 0: "7-6-1", 2: "7-6-3", 3: "7-6-2" },
+      optionNotes: {
+        0: { en: "Type 1 explicitly leaves the carbon count alone: epimerisation moves a hydroxyl at one carbon, isomerisation moves the carbonyl to the neighbouring carbon. Neither adds or removes anything.", cn: "第一类明确不改变碳数：差向异构化挪动某个碳上的羟基，异构化把羰基挪到相邻的碳上。两者都不增不减。" },
+        2: { en: "Type 3 conserves total carbon across the pair of molecules: a fragment leaves a ketose and joins an aldose, so nothing is lost as CO₂ — the chains are only redistributed.", cn: "第三类在两个分子之间守恒总碳数：一个片段离开酮糖、接到醛糖上，没有任何碳以 CO₂ 形式丢失——只是链长重新分配。" },
+        3: { en: "One of the three does change it, and that is exactly what the question is after: Type 2, dehydrogenation to a β-oxo acid followed by decarboxylation, which is how a hexose becomes a pentose.", cn: "三类中确实有一类会改变碳数，而这正是题目要问的：第二类，先脱氢生成 β-氧代酸，再脱羧——己糖就是这样变成戊糖的。" }
+      },
       why_en: "Type 2 (oxidative degradation) is specifically described as: dehydrogenation to a β-oxo acid, then decarboxylation, converting hexoses to pentoses by removing one carbon. Type 1 explicitly preserves carbon count; type 3 conserves the TOTAL carbon count across both molecules involved but does change each individual molecule's own count.",
       why_cn: "类型2（氧化降解）具体描述为：先脱氢生成β-氧代酸，再脱羧，通过去除一个碳原子将己糖转化为戊糖。类型1明确碳原子数目不变；类型3则是两个参与分子的碳原子总数守恒，但每个分子各自的碳原子数目会发生变化。"
     },
@@ -1757,8 +1990,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What 'coenzyme' does the book name for the glucose ⇌ galactose epimerization reaction?",
       q_cn: "教材指出葡萄糖⇌半乳糖差向异构化反应的「辅酶」是什么？",
-      options: ["NAD+", "Uridine diphosphate (UDP)", "NADP+", "Coenzyme A"],
+      options: [
+        "NAD+",
+        "Uridine diphosphate (UDP)",
+        "NADP+",
+        "Thiamine diphosphate (TPP)"
+      ],
       answer: 1,
+      optionRefs: { 0: "7-6-2", 2: "7-7-1", 3: "7-8-5" },
+      optionNotes: {
+        0: { en: "NAD+ is a redox coenzyme, and epimerisation is no net oxidation — a hydroxyl only changes which side it points. The book does use NAD+ in this chapter, for the C-3 dehydrogenation of L-gulonate.", cn: "NAD+ 是氧化还原辅酶，而差向异构化并没有净氧化——只是一个羟基换了朝向。教材在本章确实用到 NAD+，是在 L-gulonate 的 C-3 脱氢那一步。" },
+        2: { en: "Same objection, and NADP+ has its own address in this chapter: it is the acceptor for glucose-6-phosphate dehydrogenase in the oxidative branch of the pentose phosphate pathway.", cn: "同样的反驳，而且 NADP+ 在本章有它自己的位置：它是磷酸戊糖途径氧化支中 glucose-6-phosphate dehydrogenase 的受体。" },
+        3: { en: "Thiamine diphosphate belongs much further down the chapter, as one of the cofactors of the pyruvate dehydrogenase complex. Nothing in an epimerisation calls for it.", cn: "焦磷酸硫胺素属于本章更靠后的部分，是丙酮酸脱氢酶复合体的辅因子之一。差向异构化用不到它。" }
+      },
       why_en: "The book states 'koenzymem je uridindifosfát' (the coenzyme is uridine diphosphate) directly alongside the glucose⇌galactose example -- not any of the redox coenzymes used elsewhere in this chapter's oxidation reactions.",
       why_cn: "教材在葡萄糖⇌半乳糖实例旁直接指出「辅酶为尿苷二磷酸」——而不是本章氧化反应中使用的其他氧化还原辅酶。"
     },
@@ -1768,11 +2012,17 @@ window.BIOCHEM.topics.push(
       q_cn: "在本节中，教材如何定义异构化以区别于差向异构化？",
       options: [
         "Isomerization is the shift of the carbonyl group to an adjacent carbon (aldose⇌ketose); epimerization is a change of hydroxyl position at one carbon without moving the carbonyl",
-        "Isomerization always adds a phosphate group; epimerization never does",
-        "Isomerization changes the total carbon count; epimerization does not",
-        "They are defined identically by the book"
+        "Isomerization always adds a phosphate group to the sugar, which is why the book gives its examples in phosphorylated form; epimerization never does, and its examples are free sugars",
+        "Isomerization changes the total carbon count of the sugar while epimerization leaves it unchanged, which is what separates the two reaction types",
+        "They are defined identically, and the book uses the two words interchangeably for any change in configuration"
       ],
       answer: 0,
+      optionRefs: { 2: "7-6" },
+      optionNotes: {
+        1: { en: "Phosphorylation is incidental to which examples were picked. The book gives glucose ⇌ fructose unphosphorylated and glyceraldehyde-3-phosphate ⇌ dihydroxyacetone phosphate phosphorylated — both isomerisations — while ribulose-5-phosphate ⇌ xylulose-5-phosphate is a phosphorylated EPIMERISATION.", cn: "磷酸化只是所选例子的偶然特征。教材给的 glucose ⇌ fructose 没有磷酸，glyceraldehyde-3-phosphate ⇌ dihydroxyacetone phosphate 有磷酸——两者都是异构化；而 ribulose-5-phosphate ⇌ xylulose-5-phosphate 则是带磷酸的差向异构化。" },
+        2: { en: "Neither one changes the carbon count — that shared property is precisely what makes them a single type in the book's three-way scheme. The type that shortens the chain is the oxidative degradation of one carbon.", cn: "两者都不改变碳数——正是这个共同性质使它们在教材的三分法里合为一类。会缩短碳链的是另一类：单个碳原子的氧化降解。" },
+        3: { en: "They are two separate definitions on the same page: epimerisation moves a hydroxyl at one carbon, isomerisation moves the carbonyl to the neighbouring carbon. The second changes which functional group the sugar has.", cn: "它们是同一页上两条分开的定义：差向异构化挪动某个碳上的羟基，异构化把羰基挪到相邻的碳。后者改变的是糖带有哪种官能团。" }
+      },
       why_en: "The book defines epimerization as a change of steric arrangement (hydroxyl position) at one carbon, and isomerization specifically as the shift of the carbonyl group to a neighboring carbon atom (aldose⇌ketose) -- a distinct mechanism. Neither reaction changes total carbon count (ruling out C), and phosphorylation is incidental to the specific examples chosen, not part of either definition (ruling out B).",
       why_cn: "教材将差向异构化定义为一个碳原子上立体构型（羟基位置）的改变，而将异构化specifically定义为羰基向相邻碳原子的转移（醛糖⇌酮糖）——这是不同的机制。两种反应都不改变碳原子总数（排除C），磷酸化只是所选具体实例的偶然特征，并非定义的一部分（排除B）。"
     },
@@ -1843,9 +2093,14 @@ window.BIOCHEM.topics.push(
         "6-phosphogluconolactone",
         "The 6-phosphate ester of 3-oxogluconate",
         "Glucuronate",
-        "3-keto-L-gulonate"
+        "3-keto-L-gulonate, the C-3 dehydrogenation product"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "6-phosphogluconolactone comes one step earlier, before the dehydrogenation. It is a cyclic ester rather than a β-oxo acid, and what it does is hydrolyse readily to 6-phosphogluconate.", cn: "6-phosphogluconolactone 早一步出现，在脱氢之前。它是环状酯而不是 β-氧代酸，它做的事是很容易水解成 6-phosphogluconate。" },
+        2: { en: "Glucuronate belongs to the other branch entirely, the C-6 oxidation, and it is not decarboxylated at all — its job is to bind undesirable or foreign substances and carry them out in the urine.", cn: "Glucuronate 完全属于另一支，即 C-6 氧化，而且它根本不脱羧——它的活是结合体内不需要的或外来的物质，随尿排出。" },
+        3: { en: "3-keto-L-gulonate genuinely IS a β-oxo acid that decarboxylates readily — but it sits in the C-6 branch, and its decarboxylation gives L-xylulose, not ribulose-5-phosphate.", cn: "3-keto-L-gulonate 确实是容易脱羧的 β-氧代酸——但它位于 C-6 那一支，脱羧得到的是 L-xylulose，不是 ribulose-5-phosphate。" }
+      },
       why_en: "The book states ribulose-5-phosphate arises via an intermediate that is the 6-phosphate ester of 3-oxogluconate, which as a β-oxo acid decarboxylates readily. 6-Phosphogluconolactone is an earlier intermediate (before dehydrogenation); glucuronate and 3-keto-L-gulonate belong to the separate C-6-oxidation branch.",
       why_cn: "教材指出，核酮糖-5-磷酸通过一个中间体产生，该中间体是3-氧代葡萄糖酸的6-磷酸酯，作为β-氧代酸很容易脱羧。6-磷酸葡萄糖酸内酯是更早的中间体（脱氢之前）；葡萄糖醛酸盐和3-酮-L-古洛糖酸则属于另一条C-6氧化支路。"
     },
@@ -1854,12 +2109,17 @@ window.BIOCHEM.topics.push(
       q_en: "From L-gulonate, which two fates does the book's pathway figure show?",
       q_cn: "根据教材的途径图，L-古洛糖酸有哪两种去路？",
       options: [
-        "Conversion to glucuronate, or direct excretion in urine",
+        "Conversion back to glucuronate, or direct excretion of the intact acid in urine",
         "Ascorbate biosynthesis (via L-gulonolactone), or C-3 dehydrogenation/decarboxylation toward L-xylulose",
-        "Direct phosphorylation to D-xylulose-5-phosphate, or conversion back to glucose-6-phosphate",
-        "Reduction to xylitol, or oxidation back to glucuronate"
+        "Direct phosphorylation to D-xylulose-5-phosphate, or isomerisation back to glucose-6-phosphate for the oxidative branch",
+        "Reduction to xylitol, or a further oxidation back to glucuronate at C-1"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "That runs the arrow backwards: glucuronate is L-gulonate's precursor, reduced at its aldehyde group with NADPH as hydrogen donor. And it is glucuronate, not gulonate, that carries foreign substances into the urine.", cn: "这把箭头掉了个方向：glucuronate 是 L-gulonate 的前体，其醛基由 NADPH 作供氢体还原而来。而且把外来物质带进尿里的是 glucuronate，不是 gulonate。" },
+        2: { en: "Xylitol and D-xylulose come between L-xylulose and D-xylulose-5-phosphate, so the phosphorylation is several steps further along — and no step in this figure returns to glucose-6-phosphate.", cn: "Xylitol 和 D-xylulose 夹在 L-xylulose 与 D-xylulose-5-phosphate 之间，所以磷酸化还在好几步之后——而且这张图里没有任何一步回到 glucose-6-phosphate。" },
+        3: { en: "Xylitol is downstream of L-xylulose, not of L-gulonate: the sequence runs L-xylulose to xylitol to D-xylulose. Going back up to glucuronate would also mean re-oxidising the aldehyde that was just reduced.", cn: "Xylitol 在 L-xylulose 的下游，不在 L-gulonate 的下游：顺序是 L-xylulose → xylitol → D-xylulose。而回到 glucuronate 还意味着把刚刚还原的醛基再氧化回去。" }
+      },
       why_en: "The figure shows L-gulonate branching two ways: down to L-gulonolactone and then L-ascorbate, or via NAD+-dependent C-3 dehydrogenation to the β-oxo acid 3-keto-L-gulonate, which decarboxylates to L-xylulose. The other options either skip intermediate steps or misattribute reactions shown elsewhere in the figure.",
       why_cn: "图中显示L-古洛糖酸有两条支路：向下经L-古洛糖酸内酯生成L-抗坏血酸；或经NAD+依赖性C-3脱氢生成β-氧代酸3-酮-L-古洛糖酸，后者脱羧生成L-木酮糖。其余选项要么跳过了中间步骤，要么把图中其他反应张冠李戴。"
     },
@@ -1924,11 +2184,17 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材的图，醛缩酶裂解果糖-1,6-二磷酸生成哪两种产物？",
       options: [
         "Dihydroxyacetone phosphate and glyceraldehyde-3-phosphate",
-        "Ribulose-5-phosphate and xylulose-5-phosphate",
+        "Ribulose-5-phosphate and xylulose-5-phosphate, the epimeric pair",
         "Glucose-6-phosphate and fructose-6-phosphate",
         "6-phosphogluconate and CO2"
       ],
       answer: 0,
+      optionRefs: { 1: "7-6-1", 2: "7-8-1", 3: "7-6-2" },
+      optionNotes: {
+        1: { en: "That pair is linked by an epimerisation, ribulose-5-phosphate to xylulose-5-phosphate — one molecule with one hydroxyl moved. Nothing is cleaved and no second molecule appears.", cn: "这一对由差向异构化相连：ribulose-5-phosphate 变成 xylulose-5-phosphate——同一个分子，挪动一个羟基。没有任何断裂，也不会多出第二个分子。" },
+        2: { en: "Glucose-6-phosphate to fructose-6-phosphate is an isomerisation, aldose to ketose, and both sides are hexoses — the carbon skeleton is never split.", cn: "Glucose-6-phosphate 到 fructose-6-phosphate 是异构化，醛糖变酮糖，两边都是己糖——碳骨架自始至终没有被切开。" },
+        3: { en: "6-phosphogluconate and CO₂ belong to the oxidative degradation of glucose, the chain-shortening type of interconversion. Aldolase performs no oxidation and loses no carbon.", cn: "6-phosphogluconate 和 CO₂ 属于葡萄糖的氧化降解，即缩短碳链的那一类相互转化。醛缩酶不进行任何氧化，也不丢失任何碳。" }
+      },
       why_en: "The book's figure shows aldolase cleaving fructose-1,6-bisphosphate into dihydroxyacetone phosphate and glyceraldehyde-3-phosphate -- the other pairs listed belong to different reactions covered elsewhere in this chapter (epimerization and C-1/C-6 glucose oxidation).",
       why_cn: "教材的图显示醛缩酶将果糖-1,6-二磷酸裂解为磷酸二羟丙酮和3-磷酸甘油醛——其余选项中列出的产物对属于本章其他反应（差向异构化及葡萄糖C-1/C-6氧化）。"
     },
@@ -1938,11 +2204,17 @@ window.BIOCHEM.topics.push(
       q_cn: "教材指出醛缩酶与转醛醇酶之间的关键区别是什么？",
       options: [
         "Aldolase only interconverts a hexose with two trioses; transaldolase transfers a dihydroxyacetone residue onto other aldoses more generally, and needs no coenzyme",
-        "Aldolase needs NADPH as coenzyme; transaldolase needs NAD+",
-        "Aldolase works only on pentoses; transaldolase works only on hexoses",
-        "There is no difference -- they catalyze the identical reaction"
+        "Aldolase needs NADPH as its coenzyme and transaldolase needs NAD+, so each of the two fragment transfers is accompanied by an oxidation of the donor sugar as it is cleaved",
+        "Aldolase works only on pentoses while transaldolase works only on hexoses, so the two enzymes never act on the same sugar",
+        "There is no difference -- they catalyze the identical reaction, and the book uses the two names interchangeably"
       ],
       answer: 0,
+      optionRefs: { 1: "7-6" },
+      optionNotes: {
+        1: { en: "Neither enzyme is given a coenzyme here — the book says outright that transaldolase has NO coenzyme — and nothing is oxidised in either reaction. Fragment transfer reshuffles chain length with no redox step anywhere.", cn: "这里两个酶都没有被指派辅酶——教材直说 transaldolase 没有辅酶——而且两个反应里都没有氧化。片段转移只是重新分配链长，全程没有氧化还原。" },
+        2: { en: "The chain lengths are the wrong way round for aldolase, which the book confines to the hexose and two trioses. And transaldolase is the LESS restricted of the two, transferring onto other aldoses generally.", cn: "对醛缩酶来说链长说反了，教材把它限定在己糖与两个丙糖之间。而 transaldolase 才是两者中限制更少的那个，可以转移到别的醛糖上。" },
+        3: { en: "They differ on both of the counts the book names: aldolase is restricted to the hexose/triose interconversion, while transaldolase transfers a dihydroxyacetone residue onto other aldoses.", cn: "教材点出的两条上它们都不同：醛缩酶被限定在己糖／丙糖的互变，而 transaldolase 把一个二羟丙酮残基转移到别的醛糖上。" }
+      },
       why_en: "The book states aldolase 'poskytuje jen triosy z hexosy a obráceně' (only provides trioses from a hexose and vice versa), while transaldolase transfers a dihydroxyacetone residue onto other aldoses and explicitly has no coenzyme -- neither enzyme is described as using NADPH/NAD+ in this section, ruling out option B.",
       why_cn: "教材指出醛缩酶「只能由己糖生成丙糖，反之亦然」，而转醛醇酶则将二羟丙酮残基转移到其他醛糖上，且明确不需要辅酶——本节中两种酶均未被描述为使用NADPH/NAD+，因此排除选项B。"
     },
@@ -2010,6 +2282,12 @@ window.BIOCHEM.topics.push(
       q_cn: "在氧化磷酸戊糖途径中，两步氧化反应（葡萄糖-6-磷酸脱氢和6-磷酸葡糖酸氧化脱羧）的电子受体是什么？",
       options: ["NAD+", "NADP+", "FAD", "CoA-SH"],
       answer: 1,
+      optionRefs: { 0: "7-8-2", 2: "7-8-5", 3: "7-8-5" },
+      optionNotes: {
+        0: { en: "NAD+ is the acceptor for glycolysis's single oxidation, at glyceraldehyde-3-phosphate dehydrogenase. The whole point of this branch is that it makes NADPH instead — reducing power for biosynthesis, not for ATP.", cn: "NAD+ 是糖酵解中唯一那次氧化的受体，在甘油醛-3-磷酸脱氢酶那一步。而这一支的要点恰恰在于它生成的是 NADPH——供生物合成用的还原力，不是用来造 ATP 的。" },
+        2: { en: "FAD plays no part in this pathway. It appears in this chapter only among the cofactors of the pyruvate dehydrogenase complex.", cn: "FAD 在这条途径里没有任何角色。它在本章只出现在丙酮酸脱氢酶复合体的辅因子当中。" },
+        3: { en: "Coenzyme A carries acyl groups, not electrons — it has no hydride to accept. It enters this chapter at the pyruvate dehydrogenase complex, where it takes up the acetyl group.", cn: "辅酶 A 运载的是酰基，不是电子——它没有可接受的氢负离子。它在本章出现在丙酮酸脱氢酶复合体那里，接过乙酰基。" }
+      },
       why_en: "The book states explicitly: 'Akceptorem elektronu je u obou oxidací NADP+' — NADP+ is the acceptor for both oxidations, which is exactly why this branch nets 2 NADPH (not NADH) per glucose-6-phosphate.",
       why_cn: "教材明确指出：「两步氧化的电子受体都是NADP+」——正因如此，该支路每分子葡萄糖-6-磷酸净生成2分子NADPH（而非NADH）。"
     },
@@ -2020,10 +2298,16 @@ window.BIOCHEM.topics.push(
       options: [
         "6-phosphogluconate, then a lactone",
         "A lactone, then 6-phosphogluconate",
-        "Ribose-5-phosphate, then a lactone",
+        "Ribose-5-phosphate, then CO2",
         "Fructose-6-phosphate, then 6-phosphogluconate"
       ],
       answer: 1,
+      optionRefs: { 3: "7-7-2" },
+      optionNotes: {
+        0: { en: "The two are in the wrong order. The dehydrogenase makes the cyclic lactone first; lactonase then hydrolyses it open to give 6-phosphogluconate.", cn: "两者顺序反了。脱氢酶先生成环状内酯；随后由 lactonase 把它水解开，得到 6-phosphogluconate。" },
+        2: { en: "Ribose-5-phosphate is the pathway's END product, made by isomerising ribulose-5-phosphate, so it cannot lie on the way TO ribulose-5-phosphate. CO₂ is released, but at the decarboxylation after 6-phosphogluconate.", cn: "Ribose-5-phosphate 是这条途径的终产物，由 ribulose-5-phosphate 异构化而来，因此不可能位于通往 ribulose-5-phosphate 的路上。CO₂ 确实放出，但是在 6-phosphogluconate 之后的脱羧步。" },
+        3: { en: "Fructose-6-phosphate is a glycolytic intermediate and appears nowhere in the oxidative branch. It enters the pentose phosphate story only through the non-oxidative route, as the donor of transferred fragments.", cn: "Fructose-6-phosphate 是糖酵解的中间物，在氧化支中根本不出现。它只通过非氧化途径进入磷酸戊糖的故事，充当被转移片段的供体。" }
+      },
       why_en: "The order is: glucose-6-phosphate -> (G6P dehydrogenase) -> lactone -> (lactonase, hydrolysis) -> 6-phosphogluconate -> (unnamed enzyme, oxidative decarboxylation) -> ribulose-5-phosphate. Option A reverses the two intermediates.",
       why_cn: "顺序为：葡萄糖-6-磷酸->（G6P脱氢酶）->内酯->（内酯酶，水解）->6-磷酸葡糖酸->（教材未命名的酶，氧化脱羧）->核酮糖-5-磷酸。选项A把两个中间产物顺序颠倒了。"
     },
@@ -2094,10 +2378,16 @@ window.BIOCHEM.topics.push(
       options: [
         "From ribose-5-phosphate to xylulose-5-phosphate, by transaldolase",
         "From fructose-6-phosphate to glyceraldehyde-3-phosphate, by transketolase",
-        "From sedoheptulose-7-phosphate to erythrose-4-phosphate, by transaldolase",
+        "From sedoheptulose-7-phosphate onto erythrose-4-phosphate, by a transaldolase",
         "From glucose-6-phosphate to ribulose-5-phosphate, by an unnamed enzyme"
       ],
       answer: 1,
+      optionRefs: { 3: "7-7-1" },
+      optionNotes: {
+        0: { en: "Both of those are already pentose phosphates, and the book links them by epimerisation and isomerisation rather than by a fragment transfer. Xylulose-5-phosphate is in fact the first step's PRODUCT, not a donor.", cn: "这两个都已经是戊糖磷酸，教材用差向异构化和异构化把它们联系起来，不是靠片段转移。而 xylulose-5-phosphate 其实是第一步的产物，不是供体。" },
+        2: { en: "Both molecules belong to this route but to later steps: erythrose-4-phosphate is MADE by the first transketolase reaction and then accepts a three-carbon fragment from a second fructose-6-phosphate, which is what produces sedoheptulose-7-phosphate.", cn: "两个分子都属于这条路线，但属于后面的步骤：erythrose-4-phosphate 是第一次转酮醇酶反应生成的，随后从第二个 fructose-6-phosphate 接受一个三碳片段，由此才生成 sedoheptulose-7-phosphate。" },
+        3: { en: "That is the oxidative branch's decarboxylation, the very step the book leaves unnamed — and it produces NADPH, which is exactly what this non-oxidative route does not do.", cn: "那是氧化支的脱羧步，正是教材没有给出酶名的那一步——而且它产生 NADPH，恰恰是这条非氧化途径不做的事。" }
+      },
       why_en: "The book states the non-oxidative route 'začíná přenosem dvouuhlíkového štěpu z fruktosa-6-fosfátu na glyceraldehyd-3-fosfát' via a transketolase reaction, giving xylulose-5-phosphate and erythrose-4-phosphate. The other options either name the wrong enzyme or the wrong substrate pair for this specific first step.",
       why_cn: "教材指出非氧化途径「始于将二碳片段从果糖-6-磷酸转移到甘油醛-3-磷酸」，这是一个转酮醇酶反应，生成木酮糖-5-磷酸和赤藓糖-4-磷酸。其余选项在这一具体的第一步上，酶或底物对都不正确。"
       },
@@ -2105,8 +2395,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "According to the book's 'pentose cycle' stoichiometry, how many times must glucose-6-phosphate be oxidized, and how many NADPH does each oxidation yield, to obtain 6 molecules of ribose-5-phosphate?",
       q_cn: "根据教材「戊糖循环」的化学计量，要获得6分子核糖-5-磷酸，葡萄糖-6-磷酸必须氧化多少次？每次氧化产生多少分子NADPH？",
-      options: ["3 times, 4 NADPH each", "6 times, 2 NADPH each", "12 times, 1 NADPH each", "2 times, 6 NADPH each"],
+      options: [
+        "3 times, 4 NADPH each",
+        "6 times, 2 NADPH each",
+        "12 times, 1 NADPH each",
+        "2 times, 6 NADPH"
+      ],
       answer: 1,
+      optionRefs: { 0: "7-7-1" },
+      optionNotes: {
+        0: { en: "The product is right — 3 × 4 is 12 NADPH — but the per-turn figure is fixed at 2, because NADP+ is the acceptor at BOTH oxidations of the oxidative branch and there are only two of them.", cn: "乘积对了——3 × 4 是 12 个 NADPH——但每一轮的数目固定为 2，因为氧化支的两次氧化都以 NADP+ 为受体，而且总共只有两次。" },
+        2: { en: "Same total again, but one NADPH per oxidation contradicts the branch's two NADP+-reducing steps — and twelve turns would deliver twelve pentoses, not the six the question asks for.", cn: "总数还是那个，但每次氧化只出 1 个 NADPH 与该支的两个还原 NADP+ 的步骤矛盾——而且转十二轮会给出十二个戊糖，不是题目要的六个。" },
+        3: { en: "The total comes out at 12 once more, and the same objection applies: each turn of the oxidative branch is worth exactly 2 NADPH, so six turns are needed to reach six ribose-5-phosphate.", cn: "总数又是 12，反驳也一样：氧化支每转一轮正好值 2 个 NADPH，所以要拿到六个 ribose-5-phosphate 就得转六轮。" }
+      },
       why_en: "The book states: 'Oxidace glukosa-6-fosfátu musí proběhnout šestkrát, vždy za vzniku dvou molekul NADPH, aby se získalo 6 molekul ribosa-5-fosfátu' — 6 oxidations x 2 NADPH each = 12 NADPH total per (net) glucose-6-phosphate, matching the earlier statement of 12 NADPH/glucose-6-phosphate.",
       why_cn: "教材指出：「葡萄糖-6-磷酸的氧化必须进行六次，每次都生成两分子NADPH，才能获得6分子核糖-5-磷酸」——6次氧化x每次2分子NADPH=共12分子NADPH，与前文「每分子葡萄糖-6-磷酸产生12分子NADPH」的说法一致。"
     },
@@ -2186,12 +2487,17 @@ window.BIOCHEM.topics.push(
       q_en: "Which single reaction of glycolysis's preparatory phase is described as practically irreversible and therefore rate-limiting for the whole pathway?",
       q_cn: "糖酵解准备阶段中，哪一个反应被描述为实际上不可逆、因而是整个途径的限速步骤？",
       options: [
-        "Hexokinase: glucose -> glucose-6-phosphate",
+        "Hexokinase: glucose -> glucose-6-phosphate, using ATP",
         "Phosphofructokinase: fructose-6-phosphate -> fructose-1,6-bisphosphate",
-        "Aldolase: fructose-1,6-bisphosphate -> two trioses",
-        "Triose-phosphate isomerase: DHAP <-> glyceraldehyde-3-phosphate"
+        "Aldolase: fructose-1,6-bisphosphate -> two triose phosphates",
+        "Triose-phosphate isomerase: DHAP <-> glyceraldehyde-3-phosphate, via an enol"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The hexokinase step also spends an ATP, but the book singles out only the phosphofructokinase reaction as practically irreversible and rate-limiting. Hexokinase's own counterpart is glucokinase, the glucose-specific liver enzyme.", cn: "己糖激酶那一步同样耗掉一个 ATP，但教材只把磷酸果糖激酶的反应挑出来称为实际不可逆且限速。己糖激酶自己的对手是葡萄糖激酶，肝里那个只作用于葡萄糖的酶。" },
+        2: { en: "Aldolase's equilibrium actually favours the uncleaved hexose, 89% against 11% trioses. It is pulled forward only because the trioses are consumed downstream, which is not the same thing as being irreversible.", cn: "醛缩酶的平衡其实偏向未裂解的己糖，89% 对 11% 的丙糖。它之所以向前走，只是因为丙糖在下游被不断消耗——这与不可逆不是一回事。" },
+        3: { en: "This one is explicitly an equilibrium, and the book even gives its position: 96% DHAP against 4% glyceraldehyde-3-phosphate, interconverting through a shared enol form.", cn: "这一步明确就是一个平衡，教材连平衡位置都给了：96% 的 DHAP 对 4% 的甘油醛-3-磷酸，通过共用的烯醇式互变。" }
+      },
       why_en: "The book states the phosphofructokinase reaction 'je prakticky ireverzibilní' and that this makes it the rate-limiting reaction for the whole glycolytic process, additionally regulated allosterically by ATP/ADP — none of the other three reactions are described this way.",
       why_cn: "教材指出磷酸果糖激酶反应「实际上不可逆」，并因此成为整个糖酵解过程的限速反应，此外还受ATP/ADP的别构调节——其余三个反应均未被如此描述。"
     },
@@ -2199,8 +2505,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "At equilibrium, what fraction of the aldolase reaction's mixture (fructose-1,6-bisphosphate vs. the two trioses) is the uncleaved hexose bisphosphate, per the book?",
       q_cn: "根据教材，醛缩酶反应（果糖-1,6-二磷酸与两种丙糖之间）在平衡时，未裂解的己糖二磷酸占混合物的比例是多少？",
-      options: ["11%", "30%", "89%", "96%"],
+      options: [
+        "11%, the two trioses combined",
+        "96%",
+        "89%",
+        "0%"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "11% is the other side of this very equilibrium — the two trioses taken together. The question asks for the uncleaved hexose bisphosphate, which is the remaining 89%.", cn: "11% 是同一个平衡的另一边——两个丙糖加在一起。题目问的是未裂解的己糖二磷酸，也就是剩下的 89%。" },
+        1: { en: "96% belongs to a different equilibrium one step later: the triose-phosphate isomerase equilibrium, where 96% is dihydroxyacetone phosphate and 4% glyceraldehyde-3-phosphate.", cn: "96% 属于晚一步的另一个平衡：丙糖磷酸异构酶的平衡，其中 96% 是二羟丙酮磷酸，4% 是甘油醛-3-磷酸。" },
+        3: { en: "The aldolase reaction does not run to completion. Its equilibrium favours the hexose, and the reaction is pulled forward only because the trioses are continuously removed by the reactions after it.", cn: "醛缩酶的反应并不跑到底。它的平衡偏向己糖，反应之所以向前，只是因为丙糖被后续反应不断带走。" }
+      },
       why_en: "The book states 'V rovnovážném stavu je 89% hexosy a 11% obou trios' — 89% is the uncleaved hexose bisphosphate, only 11% combined trioses; 30% refers to the separate G6P/F6P isomerase equilibrium, and 96% refers to the separate DHAP/G3P isomerase equilibrium.",
       why_cn: "教材指出「平衡状态下为89%己糖和11%两种丙糖」——89%为未裂解的己糖二磷酸，仅11%为两种丙糖合计；30%指的是另一个G6P/F6P异构酶平衡，96%指的是另一个二羟丙酮磷酸/甘油醛-3-磷酸异构酶平衡。"
     },
@@ -2278,12 +2594,17 @@ window.BIOCHEM.topics.push(
       q_en: "What is cleaved by inorganic phosphate in the GAPDH mechanism, and what is directly released as a result?",
       q_cn: "在GAPDH的反应机理中，无机磷酸裂解的是什么？由此直接释放出什么产物？",
       options: [
-        "The C-C bond of the triose, releasing two 2-carbon fragments",
+        "The C-C bond of the triose, releasing two two-carbon fragments to the enzyme",
         "The energy-rich enzyme-substrate thioester bond, releasing 1,3-bisphosphoglycerate and regenerating the free enzyme",
-        "The phosphoester bond at C-3, releasing free phosphate and glyceraldehyde",
-        "The NAD+/NADH bond, releasing free nicotinamide"
+        "The phosphoester bond at C-3, releasing free inorganic phosphate and regenerating the unoxidised glyceraldehyde-3-phosphate",
+        "The bond holding NADH to the enzyme, releasing free nicotinamide and the oxidised acid"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Nothing is cut carbon-from-carbon here — the triose stays three carbons long the whole way through. This step is an oxidation, and the only bond broken is the one holding the acyl group to the enzyme.", cn: "这里没有任何碳碳断裂——丙糖自始至终都是三个碳。这一步是氧化，唯一被打断的键是把酰基拴在酶上的那个。" },
+        2: { en: "The C-3 phosphate is never touched: it is still there in the product, 1,3-bisphosphoglycerate. The attacking phosphate is a separate inorganic one, and it adds a SECOND phosphate, at C-1.", cn: "C-3 上的磷酸自始至终没被动过：它在产物 1,3-bisphosphoglycerate 里还在。发起进攻的是另一个无机磷酸，而且它加上的是第二个磷酸，在 C-1 上。" },
+        3: { en: "NAD+ picks up hydrogen in the preceding step and leaves as NADH; it is never covalently bonded to the enzyme. The energy-rich bond is the thioester to the enzyme's own HS-group.", cn: "NAD+ 在前一步接过氢，然后以 NADH 离开；它从未与酶共价结合。那个富能的键是与酶自身 HS 基团形成的硫酯键。" }
+      },
       why_en: "The book states the energy-rich thioester bond formed during the dehydrogenation step 'se štěpí fosforolyticky' (is cleaved phosphorolytically), regenerating the enzyme and yielding 1,3-bisphosphoglycerate as the product — none of the other bonds listed are the ones acted on here.",
       why_cn: "教材指出，脱氢步骤中形成的富能硫酯键「被磷酸解裂开」，使酶再生，并生成产物1,3-二磷酸甘油酸——其余选项所列的化学键都不是此处被作用的对象。"
     },
@@ -2291,8 +2612,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What does the book call the mechanism by which phosphoglycerate kinase generates ATP from 1,3-bisphosphoglycerate and ADP?",
       q_cn: "教材将磷酸甘油酸激酶利用1,3-二磷酸甘油酸和ADP生成ATP的机制称为什么？",
-      options: ["Oxidative phosphorylation", "Chemiosmotic coupling", "Substrate-level phosphorylation", "Allosteric phosphorylation"],
+      options: [
+        "Oxidative phosphorylation",
+        "Chemiosmotic coupling",
+        "Substrate-level phosphorylation",
+        "Allosteric phosphorylation by NAD+"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Oxidative phosphorylation is the respiratory chain's mechanism, driven by electron transport rather than by handing a phosphate off a single high-energy metabolic intermediate.", cn: "氧化磷酸化是呼吸链的机制，由电子传递驱动，而不是把磷酸从某一个高能代谢中间物上直接交出去。" },
+        1: { en: "Chemiosmotic coupling is how that respiratory-chain ATP is actually made. Nothing here involves a membrane or a proton gradient — the phosphate passes straight from the substrate to ADP.", cn: "化学渗透偶联是呼吸链的 ATP 真正的生成方式。这里既不涉及膜也不涉及质子梯度——磷酸直接从底物交到 ADP 上。" },
+        3: { en: "The dehydrogenase before this step is indeed allosteric, activated by NAD+, but that is regulation of an enzyme rather than the name of an ATP-forming mechanism. The kinase is what makes the ATP.", cn: "这一步之前的脱氢酶确实是变构酶，由 NAD+ 激活，但那是对某个酶的调节，不是某种生成 ATP 机制的名称。造出 ATP 的是激酶。" }
+      },
       why_en: "The book states explicitly: 'Popisovanému způsobu vzniku ATP říkáme \"substrátová fosforylace\"' — this way of generating ATP is called substrate-level phosphorylation, distinct from the chemiosmotic/oxidative phosphorylation mechanism of the respiratory chain (ch. 6).",
       why_cn: "教材明确指出：「这种生成ATP的方式我们称为'底物水平磷酸化'」——不同于呼吸链（第6章）的化学渗透/氧化磷酸化机制。"
     },
@@ -2364,8 +2695,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the book's ATP balance table, what is the NET ATP yield of glycolysis per molecule of glucose (to pyruvate, before considering pyruvate's further fate)?",
       q_cn: "根据教材的ATP平衡表，糖酵解每分子葡萄糖（到丙酮酸为止，暂不考虑丙酮酸的后续命运）的净ATP产量是多少？",
-      options: ["0 (breaks even)", "+2 ATP", "+4 ATP", "-2 ATP"],
+      options: [
+        "0 ATP",
+        "+2 ATP",
+        "+4 ATP",
+        "-2 ATP, the two spent phosphorylating the hexoses"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Breaking even would mean the two ATP invested exactly cancelled everything earned. The table's four entries are -1, -1, +2 and +2, which does not cancel — it leaves a gain.", cn: "收支相抵意味着投入的两个 ATP 正好抵消掉全部收益。而表上的四项是 -1、-1、+2、+2，并不相抵——还剩下净得。" },
+        2: { en: "+4 is the GROSS figure: the two substrate-level phosphorylation steps each run twice per glucose, since one glucose gives two trioses. The two ATP spent at the start still have to come off.", cn: "+4 是毛收入：两个底物水平磷酸化步骤每分子葡萄糖各跑两次，因为一个葡萄糖给出两个丙糖。开头花掉的两个 ATP 还没扣。" },
+        3: { en: "-2 is the investment half on its own, spent at the hexokinase and phosphofructokinase steps, counted before either substrate-level phosphorylation has paid anything back.", cn: "-2 只是投入的那一半，花在己糖激酶和磷酸果糖激酶两步上，是在两个底物水平磷酸化尚未偿还任何东西之前算的账。" }
+      },
       why_en: "The table sums to -1 -1 +2 +2 = +2 net ATP per glucose ('zisk +2'). The +4 ATP figure is the GROSS production (from the two substrate-level phosphorylation steps run twice each) before subtracting the 2 ATP invested early in the pathway.",
       why_cn: "表格合计为-1-1+2+2=净得+2 ATP每分子葡萄糖（「zisk +2」）。+4 ATP是两个底物水平磷酸化步骤（各运行两次）产生的总量，尚未扣除途径前期投入的2 ATP。"
     },
@@ -2373,8 +2714,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What does phosphoglycerate mutase use as its regenerating cofactor to convert 3-phosphoglycerate to 2-phosphoglycerate?",
       q_cn: "磷酸甘油酸变位酶用什么作为可再生的辅因子，将3-磷酸甘油酸转化为2-磷酸甘油酸？",
-      options: ["ATP", "2,3-bisphosphoglycerate", "NAD+", "Thiamine diphosphate"],
+      options: [
+        "ATP",
+        "2,3-bisphosphoglycerate",
+        "NAD+",
+        "Thiamine diphosphate (TPP)"
+      ],
       answer: 1,
+      optionRefs: { 2: "7-8-2", 3: "7-8-5" },
+      optionNotes: {
+        0: { en: "No ATP is spent or made at this step. The phosphate that moves comes off the enzyme-bound cofactor and is replaced on it — the mutase only relocates a phosphate from C-3 to C-2.", cn: "这一步既不耗也不产 ATP。移动的那个磷酸来自与酶结合的辅因子，之后又被补回去——变位酶只是把一个磷酸从 C-3 挪到 C-2。" },
+        2: { en: "Nothing is oxidised here: the carbon skeleton and its oxidation state come through unchanged. Glycolysis's one and only NAD+ step is the glyceraldehyde-3-phosphate dehydrogenase reaction.", cn: "这里没有任何氧化：碳骨架和它的氧化态原样通过。糖酵解里唯一用到 NAD+ 的一步是甘油醛-3-磷酸脱氢酶的反应。" },
+        3: { en: "Thiamine diphosphate is the prosthetic group of pyruvate decarboxylase and a cofactor of the pyruvate dehydrogenase complex — both of them act on pyruvate, at the far end of the pathway.", cn: "焦磷酸硫胺素是丙酮酸脱羧酶的辅基，也是丙酮酸脱氢酶复合体的辅因子——两者作用的都是丙酮酸，位于这条途径的另一端。" }
+      },
       why_en: "The book calls 2,3-bisphosphoglycerate the 'koenzym' of this reaction: it donates a phosphate to the incoming 3-phosphoglycerate (making a new 2,3-BPG that stays on the enzyme) while itself being released, dephosphorylated, as 2-phosphoglycerate.",
       why_cn: "教材将2,3-二磷酸甘油酸称为此反应的「辅酶」：它将一个磷酸基团供给新进入的3-磷酸甘油酸（生成留在酶上的新2,3-二磷酸甘油酸），而其自身则去磷酸化后作为2-磷酸甘油酸被释放。"
     },
@@ -2441,8 +2793,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the prosthetic group of pyruvate decarboxylase, the enzyme that converts pyruvate to acetaldehyde in alcoholic fermentation?",
       q_cn: "丙酮酸脱羧酶（在酒精发酵中将丙酮酸转化为乙醛的酶）的辅基是什么？",
-      options: ["FAD", "Thiamine diphosphate", "Lipoic acid", "Biotin"],
+      options: [
+        "FAD",
+        "Thiamine diphosphate",
+        "Lipoic acid",
+        "Biotin, the CO2 carrier"
+      ],
       answer: 1,
+      optionRefs: { 0: "7-8-5", 2: "7-8-5", 3: "7-9" },
+      optionNotes: {
+        0: { en: "FAD does appear in this chapter, but downstream: it reoxidises dihydrolipoic acid inside the pyruvate dehydrogenase complex, and its redox potential is unusually negative so it can pass hydrogen on to NAD+.", cn: "FAD 在本章确实出现，但在下游：它在丙酮酸脱氢酶复合体内部把二氢硫辛酸重新氧化，而且它的氧化还原电位异常负，因而能把氢继续传给 NAD+。" },
+        2: { en: "Lipoic acid is a cofactor of the pyruvate dehydrogenase complex, where it accepts the hydroxyethyl group from TPP and turns it into an acetyl group on a thioester bond. It is not what this enzyme carries.", cn: "硫辛酸是丙酮酸脱氢酶复合体的辅因子，在那里它从 TPP 接过羟乙基，并把它转成硫酯键上的乙酰基。它不是这个酶所携带的东西。" },
+        3: { en: "Biotin carries CO₂ in order to ADD a carboxyl group — the book uses it in gluconeogenesis, carboxylating pyruvate to oxaloacetate. Here CO₂ is being removed, not attached.", cn: "生物素携带 CO₂ 是为了加上一个羧基——教材用它的地方是糖异生，把丙酮酸羧化成草酰乙酸。而这里是要脱去 CO₂，不是接上。" }
+      },
       why_en: "The book states 'Prostetickou skupinou enzymu je thiamindifosfát' for pyruvate decarboxylase. FAD, lipoic acid, and biotin all appear elsewhere in the chapter (respectively in the PDH complex regeneration step, the PDH complex, and gluconeogenesis) but not as this enzyme's prosthetic group.",
       why_cn: "教材指出丙酮酸脱羧酶「辅基为焦磷酸硫胺素」。FAD、硫辛酸和生物素虽都在本章其他地方出现（分别用于PDH复合体的再生步骤、PDH复合体本身、以及糖异生），但都不是此酶的辅基。"
     },
@@ -2451,12 +2814,18 @@ window.BIOCHEM.topics.push(
       q_en: "Besides fermenting microorganisms, in what specific physiological situation does the book say lactate dehydrogenase becomes important in higher organisms?",
       q_cn: "除发酵微生物外，教材指出乳酸脱氢酶在高等生物的什么具体生理情况下变得重要？",
       options: [
-        "During REM sleep",
+        "In yeast, where oxygen is absent",
         "In intensively working muscle under oxygen deficiency",
-        "During fasting in the liver",
-        "In resting neurons"
+        "During fasting, in the liver resynthesising glucose",
+        "In the mitochondrion, where pyruvate is fully oxidised to CO2 and water"
       ],
       answer: 1,
+      optionRefs: { 2: "7-9", 3: "7-8-5" },
+      optionNotes: {
+        0: { en: "Yeast is the ethanol case, not the lactate one: pyruvate decarboxylase gives acetaldehyde and alcohol dehydrogenase reduces that to ethanol. Both routes regenerate NAD+, but by different enzymes.", cn: "酵母走的是乙醇那条路，不是乳酸那条：丙酮酸脱羧酶给出乙醛，醇脱氢酶把它还原成乙醇。两条路都再生 NAD+，但用的酶不同。" },
+        2: { en: "The liver's role in this chapter runs the other way: it takes up the lactate that muscle exports and resynthesises glucose from it, because muscle lacks the gluconeogenesis enzymes.", cn: "肝在本章的角色方向相反：它接收肌肉输出的乳酸，并由此重新合成葡萄糖，因为肌肉缺少糖异生的酶。" },
+        3: { en: "Full oxidation inside the mitochondrion is pyruvate's third fate, by way of acetyl-CoA — and it requires oxygen. Lactate is what pyruvate becomes precisely when oxygen is short.", cn: "在线粒体内被完全氧化是丙酮酸的第三种去向，途经乙酰辅酶 A——而且它需要氧。乳酸恰恰是缺氧时丙酮酸的去向。" }
+      },
       why_en: "The book states the pyruvate-to-lactate reaction 'dochází i v buňkách vyšších organismů za nedostatku kyslíku, jako např. v intenzivně pracujícím svalu' — intensively working muscle under oxygen deficiency, not the other listed situations.",
       why_cn: "教材指出丙酮酸转化为乳酸的反应「也发生在高等生物细胞供氧不足的情况下，例如剧烈活动的肌肉中」——而非其余选项所列的情况。"
     },
@@ -2525,11 +2894,17 @@ window.BIOCHEM.topics.push(
       q_cn: "列出教材提到参与丙酮酸脱氢酶复合体反应（包括硫辛酸再生）的辅因子。",
       options: [
         "Thiamine diphosphate, lipoic acid, coenzyme A, FAD, NAD+",
-        "Biotin, thiamine diphosphate, NADP+",
-        "Pyridoxal phosphate, lipoic acid, FMN",
-        "Coenzyme A, NAD+, and no others"
+        "Biotin, thiamine diphosphate, NADP+, and lipoic acid",
+        "Pyridoxal phosphate, lipoic acid, FMN, coenzyme A, and NADP+",
+        "Coenzyme A and NAD+, and no others in the list"
       ],
       answer: 0,
+      optionRefs: { 1: "7-9" },
+      optionNotes: {
+        1: { en: "Thiamine diphosphate and lipoic acid are genuinely on the list, but biotin belongs to gluconeogenesis, where it carries CO₂ onto pyruvate — and the acceptor here is NAD+, not NADP+.", cn: "焦磷酸硫胺素和硫辛酸确实在名单上，但生物素属于糖异生，在那里它把 CO₂ 带到丙酮酸上——而且这里的受体是 NAD+，不是 NADP+。" },
+        2: { en: "Pyridoxal phosphate is not named here at all, and the flavin is FAD rather than FMN — the book specifies FAD in the step that regenerates lipoic acid from its dihydro form.", cn: "磷酸吡哆醛在这里根本没有被提到，而黄素是 FAD 不是 FMN——教材在把二氢硫辛酸再生为硫辛酸的那一步明确写的是 FAD。" },
+        3: { en: "Both of those are on the list, but the list is longer: thiamine diphosphate binds the decarboxylated two-carbon unit, lipoic acid receives it, and FAD works between lipoic acid and NAD+.", cn: "这两个确实在名单上，但名单更长：焦磷酸硫胺素结合脱羧后的二碳单元，硫辛酸接过它，而 FAD 在硫辛酸与 NAD+ 之间工作。" }
+      },
       why_en: "The book lists: 'Jako kofaktory se při tomto ději účastní thiamindifosfát, lipoová kyselina a koenzym A. V regeneraci lipoové kyseliny pak dále participují FAD a konečně NAD+' — thiamine diphosphate, lipoic acid, CoA, plus FAD and NAD+ for lipoic acid regeneration. Biotin (used in gluconeogenesis, node 7-9) and pyridoxal phosphate are not part of this list.",
       why_cn: "教材列出：「作为辅因子参与此过程的有焦磷酸硫胺素、硫辛酸和辅酶A。硫辛酸的再生过程中还有FAD、最终还有NAD+参与」——即焦磷酸硫胺素、硫辛酸、CoA，加上用于硫辛酸再生的FAD和NAD+。生物素（用于糖异生，见节点7-9）和磷酸吡哆醛不在此列。"
     },
@@ -2537,8 +2912,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which enzyme component of the pyruvate dehydrogenase complex forms the structural core of the assembled complex, per Obr. II?",
       q_cn: "根据图II，丙酮酸脱氢酶复合体的哪个酶组分构成组装复合体的结构核心？",
-      options: ["Pyruvate dehydrogenase", "Dihydrolipoyl transacetylase", "Dihydrolipoyl dehydrogenase", "Lactate dehydrogenase"],
+      options: [
+        "Pyruvate dehydrogenase",
+        "Dihydrolipoyl transacetylase",
+        "Dihydrolipoyl dehydrogenase",
+        "Pyruvate decarboxylase, the TPP enzyme"
+      ],
       answer: 1,
+      optionRefs: { 3: "7-8-4" },
+      optionNotes: {
+        0: { en: "Pyruvate dehydrogenase is the component that decarboxylates pyruvate and forms hydroxyethyl-TPP, and Obr. II shows it as α₂β₂ dimers arranged AROUND the core rather than forming it.", cn: "丙酮酸脱氢酶是给丙酮酸脱羧、生成羟乙基-TPP 的那个组分，图 II 把它画成排布在核心周围的 α₂β₂ 二聚体，而不是核心本身。" },
+        2: { en: "Dihydrolipoyl dehydrogenase is the flavoprotein that reoxidises dihydrolipoic acid and passes the hydrogen on to NAD+. Obr. II places it around the core as well.", cn: "二氢硫辛酰脱氢酶是那个把二氢硫辛酸重新氧化、并把氢继续传给 NAD+ 的黄素蛋白。图 II 同样把它放在核心周围。" },
+        3: { en: "Pyruvate decarboxylase belongs to alcoholic fermentation, where it makes acetaldehyde and CO₂. It is not a component of this complex, even though it too uses thiamine diphosphate.", cn: "丙酮酸脱羧酶属于酒精发酵，在那里它生成乙醛和 CO₂。它不是这个复合体的组分，尽管它同样用焦磷酸硫胺素。" }
+      },
       why_en: "Obr. II (a) shows dihydrolipoyl-transacetylasa as the large central core, with (b) pyruvate dehydrogenase (as alpha2-beta2 dimers) and (c) dihydrolipoyl dehydrogenase arranged around it. Lactate dehydrogenase is unrelated to this complex.",
       why_cn: "图II（a）显示二氢硫辛酰转乙酰基酶构成较大的中心核心，（b）丙酮酸脱氢酶（以α2β2二聚体形式）和（c）二氢硫辛酰脱氢酶排列在其周围。乳酸脱氢酶与该复合体无关。"
     },
@@ -2609,12 +2995,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why can't gluconeogenesis simply run all of glycolysis in reverse, per the book's own explanation on p.169?",
       q_cn: "根据教材第169页的解释，为什么糖异生不能简单地将整个糖酵解逆向运行？",
       options: [
-        "Because glycolysis uses NAD+ and gluconeogenesis needs NADP+",
+        "Because glycolysis uses NAD+ throughout while gluconeogenesis requires NADP+ instead",
         "Because pyruvate kinase's reaction (PEP + ADP -> pyruvate + ATP) is practically irreversible",
-        "Because pyruvate cannot leave the mitochondrion",
-        "Because glucose-6-phosphate cannot be dephosphorylated under any conditions"
+        "Because pyruvate cannot leave the mitochondrion once it has entered it",
+        "Because glucose-6-phosphate cannot be dephosphorylated under any conditions the cell can reach"
       ],
       answer: 1,
+      optionRefs: { 2: "7-8-5", 3: "L-14-4-1" },
+      optionNotes: {
+        0: { en: "The cofactor does not switch. From phosphoenolpyruvate onward the book has gluconeogenesis running as a straightforward reversal of glycolysis, over the same steps with the same NAD+.", cn: "辅因子并不换。从磷酸烯醇丙酮酸往后，教材让糖异生就照着糖酵解直接倒着走，步骤相同，用的还是 NAD+。" },
+        2: { en: "Pyruvate's entry into mitochondria belongs to the acetyl-CoA fate, not to this problem. The obstacle the book names is thermodynamic and sits at the pyruvate kinase step.", cn: "丙酮酸进入线粒体属于乙酰辅酶 A 那条去向，与这个问题无关。教材点出的障碍是热力学上的，位于丙酮酸激酶那一步。" },
+        3: { en: "Glucose-6-phosphate IS dephosphorylated, right at the end of gluconeogenesis — by hydrolysis, releasing inorganic phosphate instead of regenerating ATP. That is one of the bypasses, not an obstacle to them.", cn: "Glucose-6-phosphate 是会被去磷酸化的，就在糖异生的最后——通过水解，放出无机磷酸而不是再生 ATP。这是绕行方案之一，不是绕行的障碍。" }
+      },
       why_en: "The book states the equilibrium of some glycolytic reactions is shifted against the desired products, 'Týká se to hlavně pyruvátkinasy' — mainly concerning pyruvate kinase, whose formation of pyruvate and ATP from PEP and ADP is practically irreversible, forcing a detour via oxaloacetate.",
       why_cn: "教材指出，某些糖酵解反应的平衡偏向不利于所需产物的方向，「主要涉及丙酮酸激酶」——其由PEP和ADP生成丙酮酸和ATP的反应实际上不可逆，因而必须绕道经过草酰乙酸。"
     },
@@ -2629,6 +3021,12 @@ window.BIOCHEM.topics.push(
         "CTP; because oxaloacetate is membrane-bound"
       ],
       answer: 1,
+      optionRefs: { 2: "7-6-1" },
+      optionNotes: {
+        0: { en: "Both halves are wrong. The book says GTP is used in this case instead of ATP, and the reason it gives is that formation of the enol form is facilitated — nothing to do with molecular weight.", cn: "两半都错。教材说这里用的是 GTP 而不是 ATP，而它给的理由是烯醇式的形成变得容易——与分子量毫无关系。" },
+        2: { en: "Oxaloacetate carries no phosphate before this step, so nothing is pre-phosphorylated. And UTP is not named here; the uridine nucleotide this chapter does use is UDP, as the coenzyme of the glucose to galactose epimerisation.", cn: "草酰乙酸在这一步之前不带任何磷酸，所以谈不上预先磷酸化。而且这里没有出现 UTP；本章确实用到的尿苷核苷酸是 UDP，作为 glucose 到 galactose 差向异构化的辅酶。" },
+        3: { en: "Oxaloacetate is a soluble intermediate, not membrane-bound, and CTP plays no part in this reaction. The book's reason is the ease of forming the enol form.", cn: "草酰乙酸是可溶的中间物，不与膜结合，而 CTP 在这个反应里没有任何角色。教材给的理由是烯醇式容易形成。" }
+      },
       why_en: "The book states 'K fosforylaci se používá v tomto případě GTP místo ATP' and explains oxaloacetate 'se fosforyluje mnohem snadněji, neboť je usnadněna tvorba enolformy' — GTP is used, and the ease comes from facilitated enol-form formation, not molecular weight or pre-existing phosphorylation.",
       why_cn: "教材指出「在这种情况下使用GTP而非ATP进行磷酸化」，并解释草酰乙酸「磷酸化容易得多，因为烯醇式的形成更容易」——用的是GTP，容易的原因在于烯醇式易于形成，而非分子量或已预先磷酸化。"
     },
@@ -2643,6 +3041,12 @@ window.BIOCHEM.topics.push(
         "Muscle lactate is chemically different from liver lactate"
       ],
       answer: 1,
+      optionRefs: { 2: "L-14-4-1" },
+      optionNotes: {
+        0: { en: "Muscle certainly has lactate dehydrogenase — it is the enzyme that produced the lactate in the first place, and muscle can also oxidise that lactate further once oxygen returns.", cn: "肌肉当然有乳酸脱氢酶——正是这个酶最初生成了乳酸，而且氧气回来后肌肉还能把乳酸进一步氧化掉。" },
+        2: { en: "The book gives a much blunter reason: the main gluconeogenesis enzymes are missing from muscle altogether. No transport problem across the mitochondrial membrane is mentioned anywhere.", cn: "教材给的理由直白得多：肌肉里干脆就没有糖异生的主要酶。书中任何地方都没有提到跨线粒体膜的运输问题。" },
+        3: { en: "Lactate is one single compound. The muscle's lactate travels in the bloodstream to the liver and is resynthesised to glucose there, which only works because it is the very same molecule.", cn: "乳酸就是一种化合物。肌肉的乳酸经血流到肝，在那里被重新合成为葡萄糖——这之所以行得通，正因为它就是同一个分子。" }
+      },
       why_en: "The book states plainly that the main gluconeogenesis enzymes are missing in muscle ('Hlavní enzymy glukoneogeneze ve svalu chybějí'), so muscle cannot resynthesize glucose from its own lactate even aerobically, though it can oxidize that lactate further; the liver, which does have those enzymes, does the resynthesis instead, via the bloodstream.",
       why_cn: "教材明确指出，肌肉缺乏糖异生的主要酶系（「主要的糖异生酶在肌肉中是缺失的」），因此即使有氧存在，肌肉也无法用自身的乳酸重新合成葡萄糖，尽管它可以进一步氧化该乳酸；具备这些酶的肝脏则通过血液循环代为完成再合成。"
     },
@@ -2707,8 +3111,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per §7.9.1, which two categories of catabolic product allow an amino acid to be converted into glucose?",
       q_cn: "根据7.9.1节，氨基酸分解代谢产生哪两类产物才能使其转化为葡萄糖？",
-      options: ["A four-carbon dicarboxylic acid, or pyruvate", "Acetyl-CoA, or a ketone body", "Only pyruvate, and only via alanine", "A three-carbon dicarboxylic acid, or lactate"],
+      options: [
+        "A four-carbon dicarboxylic acid, or pyruvate",
+        "Acetyl-CoA, or any of the ketone bodies",
+        "Only pyruvate, and only by way of alanine",
+        "A three-carbon dicarboxylic acid, or lactate directly"
+      ],
       answer: 0,
+      optionRefs: { 1: "L-14-4-1", 3: "7-9" },
+      optionNotes: {
+        1: { en: "Acetyl-CoA is the entry point to the citrate cycle, not to glucose. The book's condition is a four-carbon dicarboxylic acid or pyruvate, and that condition is exactly what separates the glucogenic amino acids from the rest.", cn: "乙酰辅酶 A 是进入柠檬酸循环的入口，不是通往葡萄糖的。教材的条件是四碳二羧酸或丙酮酸，而这个条件恰恰把生糖氨基酸与其余氨基酸分开。" },
+        2: { en: "Alanine is only the book's EXAMPLE of the pyruvate route. Aspartic acid is the example given for the other route, the one supplying a four-carbon dicarboxylic acid.", cn: "丙氨酸只是教材为丙酮酸那条路举的例子。另一条路——提供四碳二羧酸的那条——教材举的例子是天冬氨酸。" },
+        3: { en: "The dicarboxylic acids that work are the four-carbon citrate-cycle intermediates, which convert to oxaloacetate. Lactate does feed gluconeogenesis, but through pyruvate, and it is not an amino-acid breakdown product.", cn: "起作用的二羧酸是柠檬酸循环里的四碳中间物，它们可以转成草酰乙酸。乳酸确实能供给糖异生，但要经过丙酮酸，而且它不是氨基酸分解的产物。" }
+      },
       why_en: "The book states amino acids can become glucose provided their breakdown supplies a four-carbon dicarboxylic acid (e.g. from aspartate) or pyruvate (e.g. from alanine) -- not acetyl-CoA/ketone bodies (which cannot support net gluconeogenesis) and not exclusively alanine.",
       why_cn: "教材指出，氨基酸能否转化为葡萄糖，取决于其分解是否能提供四碳二羧酸（如天冬氨酸提供）或丙酮酸（如丙氨酸提供）——而不是乙酰辅酶A或酮体（它们不能支持净糖异生），也不是仅限于丙氨酸。"
     },
@@ -2774,11 +3189,16 @@ window.BIOCHEM.topics.push(
       q_cn: "教材指出糖苷酶对哪些特征高度特异？对哪个特征特异性很低？",
       options: [
         "Highly specific to the bound sugar and bond type; poorly specific to the aglycone",
-        "Highly specific to the aglycone; poorly specific to the sugar and bond type",
-        "Equally specific to sugar, bond type, and aglycone",
-        "Highly specific only to the pH of the reaction, not to any structural feature"
+        "Highly specific to the aglycone; poorly specific to the sugar and the bond type",
+        "Equally specific to the sugar, the bond type and the aglycone alike",
+        "Highly specific only to the pH of the reaction, and not to any structural feature at all"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "The exact reverse of what the book says. It is the aglycone the enzyme is careless about, which is why one glycosidase will strip the same sugar off many different non-sugar partners.", cn: "与教材所说正好相反。酶不在乎的恰恰是配基，这正是同一个糖苷酶能从许多不同的非糖搭档上剥下同一种糖的原因。" },
+        2: { en: "The two specificities are deliberately unequal, and the naming convention shows it: these enzymes are named by sugar and anomeric configuration — α-D-glucosidase, β-D-galactosidase — never by aglycone.", cn: "两种专一性有意是不对等的，命名习惯就说明了这点：这些酶按糖和异头构型命名——α-D-glucosidase、β-D-galactosidase——从不按配基命名。" },
+        3: { en: "The specificity the book describes is structural: which sugar is bound, and whether the glycosidic bond is α or β. Nothing about pH is said here at all.", cn: "教材描述的专一性是结构上的：结合的是哪种糖，以及糖苷键是 α 还是 β。这里根本没有提到 pH。" }
+      },
       why_en: "The book states glycosidases are highly specific to the bound sugar and the type of glycosidic bond, but show little specificity toward the aglycone (the non-sugar part) -- exactly the reverse of option B, and not the uniform/pH-based claims in C/D.",
       why_cn: "教材指出糖苷酶对所结合的糖及糖苷键类型高度特异，但对配基（非糖部分）特异性很低——与选项B正好相反，也不是选项C、D所说的均等特异性或依赖pH。"
     },
@@ -2787,12 +3207,17 @@ window.BIOCHEM.topics.push(
       q_en: "Regarding 'Emulsin', which statement matches the book exactly?",
       q_cn: "关于「乳化素（Emulsin）」，哪一项与教材描述完全一致？",
       options: [
-        "A single pure enzyme, alpha-D-glucosidase, from sweet almonds",
+        "A single pure enzyme, alpha-D-glucosidase, from the sweet almonds the book names",
         "A mixture of glycosidases dominated by beta-D-glucosidase, with alpha-D-glucosidase completely absent, from (per the book) sweet almonds",
-        "A mixture dominated by alpha-D-glucosidase, from bitter almonds",
-        "A single pure beta-D-galactosidase from malt"
+        "A mixture of various glycosidases dominated by alpha-D-glucosidase, with beta-D-glucosidase completely absent, obtained from bitter almonds",
+        "A single pure beta-D-galactosidase from malt, one of the longest-known enzymes of all"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Emulsin is not one enzyme but a mixture — and α-D-glucosidase is precisely the activity it completely lacks. What predominates in it is β-D-glucosidase.", cn: "Emulsin 不是单一的酶，而是一种混合物——而且 α-D-glucosidase 恰恰是它完全没有的那个活性。在其中占优势的是 β-D-glucosidase。" },
+        2: { en: "The two glucosidases are swapped and the source is changed. The book has β-D-glucosidase predominating and α-D-glucosidase entirely absent, from sweet almonds as literally printed.", cn: "两个葡萄糖苷酶对调了，来源也改了。教材写的是 β-D-glucosidase 占优势、α-D-glucosidase 完全没有，来自照字面印出的甜杏仁。" },
+        3: { en: "Emulsin is a mixture rather than a pure enzyme, and the sugar is glucose, not galactose. The book does call it one of the longest-known enzymes of all — but that is emulsin, not a malt preparation.", cn: "Emulsin 是混合物而不是纯酶，而且糖是葡萄糖不是半乳糖。教材确实称它为最早为人所知的酶之一——但说的是 emulsin，不是什么麦芽制剂。" }
+      },
       why_en: "The book explicitly describes Emulsin as a mixture of various glycosidases in which beta-D-glucosidase predominates and alpha-D-glucosidase is completely absent, sourced 'ze sladkych mandli' (from sweet almonds, as literally printed) -- not a single pure enzyme, and not dominated by alpha-D-glucosidase.",
       why_cn: "教材明确将乳化素描述为多种糖苷酶的混合物，其中β-D-葡萄糖苷酶占优势、完全不含α-D-葡萄糖苷酶，来源为「甜杏仁」（教材原文如此）——而非单一纯酶，也不是以α-D-葡萄糖苷酶为主。"
     },
@@ -2862,10 +3287,15 @@ window.BIOCHEM.topics.push(
       options: [
         "GDP for mannose; CMP for sialic acids",
         "UDP for mannose; GDP for sialic acids",
-        "CMP for mannose; UDP for sialic acids",
-        "ADP for mannose; UDP for sialic acids"
+        "CMP for mannose and UDP for sialic acids",
+        "ATP for mannose; UDP for the rest"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "UDP is the usual activating group — the general case, not the exception. Mannose and the sialic acids are exactly the two the book pulls out of that general rule, so neither of them uses UDP.", cn: "UDP 是通常的活化基团——是一般情形，不是例外。甘露糖和唾液酸恰恰是教材从这条通则里挑出来的两个，所以两者都不用 UDP。" },
+        2: { en: "Both exceptions are swapped: CMP is the sialic-acid one and GDP the mannose one. UDP is the default that neither of these two sugars uses.", cn: "两个例外对调了：CMP 是唾液酸那个，GDP 是甘露糖那个。UDP 是默认选项，而这两种糖恰恰都不用它。" },
+        3: { en: "ATP acts one stage earlier, phosphorylating glucose to glucose-6-phosphate on the road to UDP-Glc. It is not itself the group that is carried into the transfer step.", cn: "ATP 作用在更早的一步，把葡萄糖磷酸化成 glucose-6-phosphate，走向 UDP-Glc。它本身不是被带进转移步骤的那个基团。" }
+      },
       why_en: "The book states the activating group is usually UDP, but specifically GDP for mannose and CMP (cytidine monophosphate) for sialic acids -- the other pairings scramble these exceptions.",
       why_cn: "教材指出活化基团通常是UDP，但甘露糖specifically用GDP，唾液酸用CMP（胞苷一磷酸）——其余选项把这两个例外搞乱了。"
     },
@@ -2876,10 +3306,15 @@ window.BIOCHEM.topics.push(
       options: [
         "Glucose -> (kinase, ATP) -> glucose-6-phosphate -> glucose-1-phosphate -> (+UTP) -> UDP-Glc",
         "Glucose -> glucose-1-phosphate -> glucose-6-phosphate -> (+ATP) -> UDP-Glc",
-        "Glucose -> (+UTP directly) -> UDP-Glc, no phosphorylated intermediate",
-        "Glucose -> (kinase, ATP) -> glucose-6-phosphate -> (+GTP) -> UDP-Glc"
+        "Glucose -> (+UTP directly) -> UDP-Glc, with no phosphorylated intermediate at all",
+        "Glucose -> (kinase, ATP) -> glucose-6-phosphate -> (+GTP) -> UDP-Glc, releasing pyrophosphate"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "The two phosphate positions are in the wrong order and the nucleotide is wrong. The kinase puts the phosphate on C-6 first, the rearrangement to C-1 comes second, and it is UTP that makes the UDP-sugar.", cn: "两个磷酸位置的顺序反了，核苷酸也错了。激酶先把磷酸装在 C-6 上，重排到 C-1 是第二步，而生成 UDP-糖的是 UTP。" },
+        2: { en: "There has to be a phosphorylated intermediate: it is glucose-1-phosphate that reacts with UTP, releasing pyrophosphate. Free glucose is not reactive enough to be activated directly.", cn: "必须有一个磷酸化的中间物：与 UTP 反应的是 glucose-1-phosphate，同时放出焦磷酸。游离葡萄糖的反应性不足以被直接活化。" },
+        3: { en: "GTP does activate one sugar in this section — mannose, giving GDP-mannose. Making UDP-Glc needs UTP, and the substrate it reacts with is glucose-1-phosphate rather than glucose-6-phosphate.", cn: "GTP 在本节确实活化一种糖——甘露糖，给出 GDP-mannose。而制造 UDP-Glc 需要 UTP，与之反应的底物是 glucose-1-phosphate 而不是 glucose-6-phosphate。" }
+      },
       why_en: "The book's mechanism runs: glucose + ATP (kinase) -> glucose-6-phosphate -> rearranges to glucose-1-phosphate -> reacts with UTP -> UDP-Glc. The other options reverse the phosphate intermediates, skip them, or substitute the wrong nucleotide triphosphate.",
       why_cn: "教材机制为：葡萄糖+ATP（激酶）→葡萄糖-6-磷酸→重排为葡萄糖-1-磷酸→与UTP反应→UDP-Glc。其余选项颠倒了磷酸中间产物顺序、跳过了中间产物，或用错了核苷三磷酸。"
     },
@@ -2946,6 +3381,11 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，UDP-葡萄糖-4-差向异构酶反应达到平衡时，葡萄糖：半乳糖的比例是多少？",
       options: ["1:1", "1:3", "3:1", "1:10"],
       answer: 1,
+      optionNotes: {
+        0: { en: "An even split would mean the epimerase has no preference between the two configurations at C-4, but the book gives a definite equilibrium position, and it lies away from glucose.", cn: "各占一半意味着这个差向异构酶对 C-4 上两种构型没有偏好，但教材给出了一个明确的平衡位置，而且它偏离葡萄糖那一侧。" },
+        2: { en: "The ratio is inverted. It is galactose that predominates at this equilibrium, three to one over glucose — which is why the epimerase is a practical route INTO UDP-galactose.", cn: "比例倒过来了。在这个平衡里占优的是半乳糖，对葡萄糖是三比一——这也正是这个差向异构酶能成为通往 UDP-galactose 的实用路径的原因。" },
+        3: { en: "The direction is right but the magnitude is not: the book's figure is 1:3, a modest preference, not a tenfold one.", cn: "方向对了，幅度不对：教材给的数字是 1:3，只是温和的偏好，不是十倍。" }
+      },
       why_en: "The book states the equilibrium settles at a glucose:galactose ratio of 1:3, favoring galactose over glucose at this particular equilibrium step -- not the reverse ratio or an even split.",
       why_cn: "教材指出该平衡最终稳定在葡萄糖：半乳糖=1:3，即在这一平衡步骤中半乳糖比葡萄糖更多——而非相反比例或均等分配。"
     },
@@ -3014,11 +3454,16 @@ window.BIOCHEM.topics.push(
       q_cn: "α-淀粉酶与β-淀粉酶在切割方式上有何不同？它们为何分别命名为α和β？",
       options: [
         "Alpha-amylase is an endoglycosidase (cuts within the chain) releasing alpha-maltose; beta-amylase is an exoglycosidase (cuts from the ends) releasing beta-maltose",
-        "Alpha-amylase cuts from the ends releasing beta-maltose; beta-amylase cuts within the chain releasing alpha-maltose",
-        "Both cut within the chain; they differ only in which organism produces them",
-        "Alpha-amylase only degrades glycogen; beta-amylase only degrades starch"
+        "Alpha-amylase cuts maltose from the ends of the chain releasing beta-maltose; beta-amylase is the endoglycosidase, cutting within the chain and releasing alpha-maltose",
+        "Both cut within the chain as endoglycosidases, and they differ only in which organism produces them, saliva and pancreas against the plant kingdom",
+        "Alpha-amylase only degrades glycogen while beta-amylase only degrades starch, and each releases maltose in its own anomeric form"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Both halves are swapped. Alpha-amylase is the endoglycosidase that cuts within the chain, and its name comes from the alpha-maltose it ultimately releases; beta-amylase works in from the ends and releases beta-maltose.", cn: "两半都对调了。α-淀粉酶是在链内部切的内切糖苷酶，它的名字来自它最终释放的 α-麦芽糖；β-淀粉酶从链端往里啃，释放 β-麦芽糖。" },
+        2: { en: "Their sources really do differ — alpha in saliva, pancreas and malt, beta predominantly in the plant kingdom — but that is not what endo and exo refer to, and only alpha-amylase cuts within the chain.", cn: "它们的来源确实不同——α 在唾液、胰腺和麦芽中，β 主要在植物界——但内切与外切说的不是这件事，而且只有 α-淀粉酶在链内部切。" },
+        3: { en: "Both act on starch AND glycogen; the book introduces the amylases as cleaving amylose, amylopectin and glycogen alike, down to maltose. The alpha/beta naming comes from the anomeric form of the maltose released.", cn: "两者对淀粉和糖原都起作用；教材介绍淀粉酶时说的是它们同样切开直链淀粉、支链淀粉和糖原，直到麦芽糖。α／β 的命名来自释放出的麦芽糖的异头形式。" }
+      },
       why_en: "The book defines alpha-amylase as an endoglycosidase releasing maltose in the alpha-form, and beta-amylase as an exoglycosidase releasing maltose in the beta-form -- exactly the naming logic in option A; the other options invert or misstate this.",
       why_cn: "教材将α-淀粉酶定义为释放α构型麦芽糖的内切糖苷酶，将β-淀粉酶定义为释放β构型麦芽糖的外切糖苷酶——与选项A的命名逻辑一致；其余选项颠倒或错误陈述了这一点。"
     },
@@ -3084,12 +3529,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which digestive amylase can break glycogen down completely by itself, and why?",
       q_cn: "哪种消化性淀粉酶能单独将糖原完全分解？为什么？",
       options: [
-        "Alpha-amylase, because it is an endoglycosidase",
-        "Beta-amylase, because it hydrolyzes amylose completely",
+        "Alpha-amylase, because as an endoglycosidase it cuts anywhere in the chain",
+        "Beta-amylase, because it hydrolyzes amylose practically completely",
         "Gamma-amylase, because it hydrolyzes both 1-4 and 1-6 bonds",
         "Cellulase, because it works on any polysaccharide"
       ],
       answer: 2,
+      optionRefs: { 0: "7-11-1-1", 1: "7-11-1-1" },
+      optionNotes: {
+        0: { en: "Alpha-amylase does cut within the chain, but it does not attack branch points. On amylopectin and glycogen it therefore leaves the residual unsplit branched structures behind alongside the maltose.", cn: "α-淀粉酶确实在链内部切，但它不攻击分支点。因此在支链淀粉和糖原上，它除了麦芽糖之外还会留下未被切开的残余分支结构。" },
+        1: { en: "Beta-amylase does hydrolyse amylose practically completely — but amylose is unbranched. On a branched substrate its cleavage stops before every branch point, leaving a high-molecular-weight dextrin.", cn: "β-淀粉酶确实几乎完全水解直链淀粉——但直链淀粉不分支。在分支的底物上，它的切割在每个分支点之前就停下，留下高分子量的糊精。" },
+        3: { en: "Cellulase acts on cellulose only, and the book places it mainly in microorganisms, rare in animals. It has no action on glycogen's alpha bonds at all.", cn: "纤维素酶只作用于纤维素，教材说它主要存在于微生物中，动物体内罕见。它对糖原的 α 键完全没有作用。" }
+      },
       why_en: "The book states gamma-amylase hydrolyzes both alpha-1,4 and alpha-1,6 bonds in glycogen, which is why -- unlike alpha- or beta-amylase, which both leave branch-point residues untouched -- it can degrade glycogen completely on its own. Cellulase acts only on cellulose, not glycogen.",
       why_cn: "教材指出γ-淀粉酶能同时水解糖原中的α-1,4键和α-1,6键，这也是为什么——不同于α-或β-淀粉酶（二者都不能处理分支点残基）——它能单独将糖原完全分解。纤维素酶只作用于纤维素，而非糖原。"
     },
@@ -3158,6 +3609,12 @@ window.BIOCHEM.topics.push(
         "Digestive breakdown only occurs for starch; intracellular breakdown only occurs for glycogen"
       ],
       answer: 0,
+      optionRefs: { 2: "L-15-2-1" },
+      optionNotes: {
+        1: { en: "Exactly reversed. Phosphorolysis is the intracellular route; the digestive tract works by hydrolysis, using the amylases and glycosidases.", cn: "正好反了。磷酸解是细胞内的路线；消化道靠的是水解，用的是淀粉酶和糖苷酶。" },
+        2: { en: "The mechanisms genuinely differ, not just the enzymes: one transfers the glucose residue onto water, the other onto inorganic phosphate, and only the second gives a product that arrives already phosphorylated.", cn: "机制本身就不同，不只是酶不同：一个把葡萄糖残基转移到水上，另一个转移到无机磷酸上，而只有后者给出的产物一出来就已经是磷酸化的。" },
+        3: { en: "Both polymers are handled by both routes depending on where they are. The book applies intracellular phosphorolysis to starch in plant cells AND to glycogen in muscle and liver.", cn: "两种聚合物按所在位置的不同，两条路线都会用上。教材把细胞内的磷酸解既用于植物细胞里的淀粉，也用于肌肉和肝里的糖原。" }
+      },
       why_en: "The book explicitly contrasts digestive-tract hydrolysis with intracellular phosphorolysis -- both starch (in plant cells) and glycogen (in muscle/liver) are broken down intracellularly by phosphorolysis, not by the hydrolytic route used in digestion.",
       why_cn: "教材明确将消化道内的水解与细胞内的磷酸解相对比——无论是植物细胞中的淀粉还是肌肉/肝脏中的糖原，细胞内都是通过磷酸解（而非消化中所用的水解途径）分解的。"
     },
@@ -3232,12 +3689,18 @@ window.BIOCHEM.topics.push(
       q_en: "Where does phosphorylase-mediated glycogen breakdown stop, and what removes the remaining branch-point residue?",
       q_cn: "磷酸化酶介导的糖原降解在何处停止？剩余的分支点残基由什么去除？",
       options: [
-        "It stops at the branch point itself; alpha-amylase removes the last residue",
+        "It stops at the branch point itself, and alpha-amylase then removes the last residue hydrolytically",
         "It stops 4 residues before the branch point; after transglycosidase relocates a 3-residue block, alpha-1,6-glucosidase hydrolytically removes the last single residue",
-        "It stops 4 residues before the branch point; phosphorylase itself eventually removes the last residue phosphorolytically",
-        "Phosphorylase degrades straight through branch points with no separate debranching step needed"
+        "It stops 4 residues before the branch point; after a pause, phosphorylase itself removes the remaining residues one at a time, phosphorolytically, including the 1->6-linked one",
+        "Phosphorylase degrades straight through the branch points, so no separate debranching step is needed at all"
       ],
       answer: 1,
+      optionRefs: { 0: "7-11-1-1", 3: "L-15-2-1" },
+      optionNotes: {
+        0: { en: "Phosphorylase stops four residues short of the branch point, not at it — and alpha-amylase is a digestive enzyme, not part of intracellular glycogen breakdown at all.", cn: "磷酸化酶停在离分支点还有四个残基的地方，不是停在分支点上——而且 α-淀粉酶是消化酶，根本不参与细胞内的糖原分解。" },
+        2: { en: "The stopping point is right and the finish is wrong. The last 1→6-linked residue is removed HYDROLYTICALLY by alpha-1,6-glucosidase, which is exactly why complete glycogen breakdown yields about 10% free glucose alongside the glucose-1-phosphate.", cn: "停止的位置对了，收尾错了。最后那个 1→6 连接的残基是由 α-1,6-glucosidase 水解掉的，这正是糖原完全分解除了 glucose-1-phosphate 之外还产生约 10% 游离葡萄糖的原因。" },
+        3: { en: "If it did, neither debranching enzyme would be needed and the only product would be glucose-1-phosphate. The book requires both a transglycosidase and alpha-1,6-glucosidase to get past each branch.", cn: "如果真能这样，两个脱支酶都不需要了，唯一的产物就会是 glucose-1-phosphate。而教材要求转糖苷酶和 α-1,6-glucosidase 两者配合，才能越过每一个分支。" }
+      },
       why_en: "The book describes phosphorylase stopping 4 residues before a branch point, transglycosidase then moving a 3-residue block to another chain via a new alpha-1,4 bond, and the single remaining 1,6-linked residue being removed hydrolytically by alpha-1,6-glucosidase -- not by phosphorylase or alpha-amylase, and not straight through.",
       why_cn: "教材描述磷酸化酶在离分支点4个残基处停止，转糖苷酶随后把3个残基组成的片段通过新α-1,4键转移到另一条链上，剩下的单个1,6连接残基由α-1,6-葡萄糖苷酶以水解方式去除——而不是磷酸化酶或α-淀粉酶所为，也不是直接穿过分支点。"
     },
@@ -3306,6 +3769,12 @@ window.BIOCHEM.topics.push(
         "Glucose from ATP-glucose, onto C-3 of the terminal residue"
       ],
       answer: 1,
+      optionRefs: { 0: "7-10-2", 2: "7-11-2-1", 3: "7-10-2" },
+      optionNotes: {
+        0: { en: "Both the sugar and the position are wrong. Glycogen is a glucose polymer extended at C-4; UDP-galactose is the donor in the book's other worked example, the biosynthesis of lactose.", cn: "糖和位置都错了。糖原是葡萄糖的聚合物，在 C-4 上延长；UDP-galactose 是教材另一个例题——乳糖生物合成——里的供体。" },
+        2: { en: "Glucose-1-phosphate is what phosphorolysis RELEASES when glycogen is broken down. Synthesis does not simply run that backwards — the glucose has to be activated as UDP-Glc first.", cn: "Glucose-1-phosphate 是糖原分解时磷酸解释放出来的东西。合成并不是把那一步倒着走——葡萄糖必须先被活化成 UDP-Glc。" },
+        3: { en: "The activated form is a nucleoside-diphosphate sugar, UDP-Glc; ATP's role comes one step earlier, phosphorylating glucose. And the chain grows at C-4, which is what makes the alpha(1->4) main chain.", cn: "活化形式是核苷二磷酸糖，即 UDP-Glc；ATP 的角色早一步，是把葡萄糖磷酸化。而链是在 C-4 上生长的，这才形成 alpha(1→4) 主链。" }
+      },
       why_en: "The book states glycogen synthase transfers glucose from UDP-Glc onto the C-4 hydroxyl group of the terminal residue of the growing glycogen molecule -- not galactose, not glucose-1-phosphate directly, and not from an ATP-activated form.",
       why_cn: "教材指出糖原合酶把葡萄糖从UDP-Glc转移到正在生长的糖原分子末端残基的C-4羟基上——而不是半乳糖、不是直接转移葡萄糖-1-磷酸，也不是来自ATP活化形式。"
     },
@@ -3381,12 +3850,18 @@ window.BIOCHEM.topics.push(
       q_en: "What effect does the same protein kinase have on glycogen synthase versus on phosphorylase kinase?",
       q_cn: "同一个蛋白激酶对糖原合酶和对磷酸化酶激酶分别有什么作用？",
       options: [
-        "It activates both by phosphorylation",
+        "It activates both of them by phosphorylation, so the two run together",
         "It phosphorylates and INACTIVATES glycogen synthase (I->D), while phosphorylating and ACTIVATING phosphorylase kinase (b->a)",
-        "It phosphorylates and activates glycogen synthase, while dephosphorylating and inactivating phosphorylase kinase",
-        "It has no effect on either; only phosphatases act on these enzymes"
+        "It phosphorylates and ACTIVATES glycogen synthase (D->I), while dephosphorylating and INACTIVATING phosphorylase kinase (a->b)",
+        "It has no effect on either of them; only the protein phosphatases act on these two enzymes"
       ],
       answer: 1,
+      optionRefs: { 0: "L-15-3-1" },
+      optionNotes: {
+        0: { en: "If one kinase activated both, synthesis and breakdown would run at the same time — a futile cycle. The book's point is the opposite: the same covalent modification gives opposite outcomes on the two targets.", cn: "如果一个激酶把两者都激活，合成与分解就会同时进行——一个无效循环。教材的要点正相反：同一种共价修饰在两个靶点上给出相反的结果。" },
+        2: { en: "Both halves are inverted, and the second half is impossible for a kinase besides: protein kinase ADDS phosphate, it does not take it off. Removal is the protein phosphatases' job.", cn: "两半都倒过来了，而且后半句对一个激酶来说根本不可能：蛋白激酶是加磷酸的，不会把它摘掉。摘除是蛋白磷酸酶的活。" },
+        3: { en: "Protein kinase is precisely the enzyme cAMP activates, and it acts on both targets. The phosphatases come afterwards, reversing its work on all three phosphorylated enzymes.", cn: "蛋白激酶恰恰是 cAMP 所激活的那个酶，而且它对两个靶点都起作用。磷酸酶在后面出场，把它在三个被磷酸化的酶上做的事逆转回去。" }
+      },
       why_en: "The book states the same protein kinase inactivates glycogen synthase by phosphorylation (I to D) while activating phosphorylase kinase by phosphorylation (b to a) -- opposite outcomes for the same type of covalent modification on two different targets, not uniform activation, reversed roles, or no effect.",
       why_cn: "教材指出，同一个蛋白激酶通过磷酸化使糖原合酶失活（I→D），同时通过磷酸化使磷酸化酶激酶激活（b→a）——同样的共价修饰对两个不同靶点产生相反的效果，而不是统一激活、角色颠倒或无作用。"
     },
@@ -3395,12 +3870,18 @@ window.BIOCHEM.topics.push(
       q_en: "What is the correct activation sequence that ultimately produces active phosphorylase (form a)?",
       q_cn: "最终产生活性磷酸化酶（a形式）的正确激活顺序是什么？",
       options: [
-        "cAMP directly phosphorylates phosphorylase",
-        "Protein kinase directly phosphorylates phosphorylase",
+        "cAMP directly phosphorylates phosphorylase, converting b to a without any kinase in between",
+        "Protein kinase directly phosphorylates phosphorylase, converting it from b to the much more active a form",
         "cAMP activates protein kinase, which phosphorylates/activates phosphorylase kinase (b->a), which then phosphorylates phosphorylase (b->a)",
-        "Glycogen synthase D directly converts to phosphorylase a"
+        "Phosphorylase kinase is activated allosterically by cAMP and then phosphorylates both phosphorylase and glycogen synthase in a single tier"
       ],
       answer: 2,
+      optionRefs: { 1: "L-15-3-1" },
+      optionNotes: {
+        0: { en: "cAMP is a second messenger, not a phosphate donor — it activates protein kinase, and ATP supplies the phosphate. Two enzymes stand between cAMP and phosphorylase.", cn: "cAMP 是第二信使，不是磷酸供体——它激活蛋白激酶，磷酸由 ATP 提供。cAMP 与磷酸化酶之间隔着两个酶。" },
+        1: { en: "This is the one-tier short-circuit the cascade does NOT take. Protein kinase phosphorylates phosphorylase KINASE, and it is that enzyme which then phosphorylates phosphorylase itself.", cn: "这正是这条级联所不走的一级捷径。蛋白激酶磷酸化的是磷酸化酶激酶，再由后者去磷酸化磷酸化酶本身。" },
+        3: { en: "cAMP acts on protein kinase, not on phosphorylase kinase, and phosphorylase kinase's only target here is phosphorylase. Glycogen synthase is inactivated on a separate branch, directly by protein kinase.", cn: "cAMP 作用的是蛋白激酶，不是磷酸化酶激酶，而磷酸化酶激酶在这里唯一的靶点就是磷酸化酶。糖原合酶是在另一条分支上、由蛋白激酶直接使其失活的。" }
+      },
       why_en: "The cascade is two-tiered: cAMP activates protein kinase, which activates phosphorylase kinase (b to a) by phosphorylation, and it is this active phosphorylase kinase that then phosphorylates phosphorylase itself (b to a) -- protein kinase does not act on phosphorylase directly, and glycogen synthase and phosphorylase are separate branches of the cascade, not interconverting with each other.",
       why_cn: "该级联是两级的：cAMP激活蛋白激酶，蛋白激酶通过磷酸化激活磷酸化酶激酶（b→a），正是这个活性的磷酸化酶激酶再磷酸化磷酸化酶本身（b→a）——蛋白激酶并不直接作用于磷酸化酶，糖原合酶与磷酸化酶是该级联中彼此独立的两条分支，并不相互转化。"
     },

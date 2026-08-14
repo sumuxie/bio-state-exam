@@ -46,8 +46,8 @@
      5.3 starts a NEW single-book key `motor-proteins`. There is nothing
          in the Czech layer to join. Expected for a Lehninger-only topic.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-5-2-1",
     book: "lehninger",

@@ -98,6 +98,34 @@
        .filter((v, i, a) => a.indexOf(v) === i)
        .forEach((d) => problems.push('duplicate id ' + d));
 
+    /* A file that loads and contributes NOTHING. Found 2026-08-14: nine files
+       registered their nodes on `window.PRO.topics` instead of
+       `window.BIOCHEM.topics`, so 17 nodes sat in the repo, tagged in
+       index.html, parsing cleanly, serving 200 — and invisible in the app since
+       the day each was written.
+
+       Every check that existed asked a different question. "Is the tagged file
+       present" — yes. "Are the loaded topics well-formed" — yes, vacuously.
+       Nothing asked whether loading a file made any difference, which is the one
+       question that catches a wrong namespace. It is asked here by loading the
+       files one at a time and watching the count. */
+    (function contributionCheck() {
+      // A bank file legitimately adds no topics — it attaches questions to
+      // existing nodes through BIOCHEM.bank, and its own contribution is
+      // checked by the orphan-key test above. Every other data file exists to
+      // add topics, so adding none means it wrote somewhere nobody reads.
+      (window.__CHECK_CONTRIB__ || []).forEach((row) => {
+        const isBank = /^bank_/.test(row.file);
+        if (!isBank && row.added === 0) {
+          problems.push('data/' + row.file + ' loaded but added no topics — '
+            + 'wrong namespace, or an empty push');
+        }
+        if (isBank && row.added !== 0) {
+          problems.push('data/' + row.file + ' is a bank file but added topics');
+        }
+      });
+    })();
+
     let bankItems = 0, bankMcq = 0, bankShort = 0;
     Object.keys(BANK).forEach((id) => {
       if (!byId[id]) { problems.push('bank: key ' + id + ' matches no topic node'); return; }
@@ -159,11 +187,16 @@
       if (!files.length) throw new Error('no data <script> tags found in ' + app + '/index.html');
 
       // Sequential, in the page's own order: a data file may depend on the
-      // namespace an earlier one created, exactly as in the real app.
+      // namespace an earlier one created, exactly as in the real app. The topic
+      // count is recorded either side of every file so a file that loads without
+      // contributing anything can be named — see contributionCheck.
+      window.__CHECK_CONTRIB__ = [];
+      const count = () => ((window.BIOCHEM && window.BIOCHEM.topics) || []).length;
       return files.reduce((chain, f) => chain.then(() => new Promise((res, rej) => {
+        const before = count();
         const s = document.createElement('script');
         s.src = '../' + app + '/data/' + f;
-        s.onload = res;
+        s.onload = () => { window.__CHECK_CONTRIB__.push({ file: f, added: count() - before }); res(); };
         s.onerror = () => rej(new Error('failed to load data/' + f));
         document.head.appendChild(s);
       })), Promise.resolve());

@@ -286,7 +286,7 @@ window.BIOCHEM.topics.push(
       q_cn: "D-氨基酸氧化酶与L-氨基酸氧化酶的关键功能差异是什么？",
       options: [
         "D-amino acid oxidase is mainly detoxifying; L-amino acid oxidase has low catalytic efficiency, making the oxidase route minor overall",
-        "Both are highly efficient flavoproteins, which makes the oxidase route the dominant one ahead of glutamate dehydrogenase",
+        "Both are highly efficient flavoproteins, which is what makes the oxidase route the dominant one, ahead of glutamate dehydrogenase itself",
         "D-amino acid oxidase carries NAD+ as its coenzyme while L-amino acid oxidase carries NADP+, and that is the whole difference",
         "L-amino acid oxidase deaminates histidine to urocanic acid, while D-amino acid oxidase handles serine and threonine"
       ],
@@ -362,12 +362,18 @@ window.BIOCHEM.topics.push(
       q_en: "In the resting PLP-enzyme complex, how is the coenzyme bound, and what happens the instant an amino acid substrate arrives?",
       q_cn: "在静息状态的PLP-酶复合物中，辅酶是如何结合的？氨基酸底物一旦进入会立即发生什么？",
       options: [
-        "PLP floats free in the active site until the substrate arrives, with no covalent bond ever forming",
+        "PLP floats free in the active site until the substrate arrives, and no covalent bond forms at any stage, the amino acid simply stacking against the pyridine ring of it",
         "PLP is bound as an aldimine to a lysine residue's ε-amino group; the incoming amino acid's own α-amino group displaces the lysine, forming a new external aldimine",
-        "PLP is bound only by hydrogen bonds, and the amino acid simply sits alongside it without reacting",
-        "The amino acid binds to PLP's phosphate group, not to its aldehyde carbon"
+        "PLP is held only by hydrogen bonds, and the arriving amino acid binds the lysine residue rather than displacing it from the coenzyme it is attached to",
+        "The amino acid binds PLP's phosphate group rather than its aldehyde carbon, so no Schiff base forms and the lysine residue stays where it was"
       ],
       answer: 1,
+      optionRefs: { 0: "L-18-1-1" },
+      optionNotes: {
+        0: { en: "It is covalent at rest and covalent in catalysis: an internal aldimine to the lysine first, then an external aldimine to the substrate. None of the PLP chemistry works without that Schiff base.", cn: "静息时是共价的，催化时也是共价的：先是与赖氨酸形成的分子内醛亚胺，再换成与底物形成的分子外醛亚胺。没有这个席夫碱，PLP 的化学一步也走不了。" },
+        2: { en: "Ionic bonds do hold PLP as well, but the link to the lysine is a covalent aldimine, and it is the amino acid's own α-amino group that displaces that lysine.", cn: "离子键确实也参与固定 PLP，但与赖氨酸之间的是共价醛亚胺，而把这个赖氨酸顶开的正是氨基酸自己的 α-氨基。" },
+        3: { en: "The bond that matters is the imine to PLP's aldehyde carbon. It is that conjugated system, ending at the protonated pyridine nitrogen, that works as the electron sink.", cn: "起作用的是与 PLP 醛基碳形成的亚胺键。正是这条一直连到质子化吡啶氮的共轭体系，充当了电子阱。" }
+      },
       why_en: "At rest PLP is held partly by ionic bonds and partly COVALENTLY, as an aldimine (Schiff base) to a LYSINE residue's ε-amino group. The incoming amino acid's α-amino group DISPLACES that lysine, forming a new, EXTERNAL aldimine — this is reaction 1 in Obr. 5.3, the first step shared by every downstream pathway (2a/2b/2c).",
       why_cn: "静息状态下PLP部分通过离子键、部分通过共价键，以醛亚胺（席夫碱）形式结合在一个赖氨酸残基的ε-氨基上。进入的氨基酸通过自身的α-氨基取代该赖氨酸，形成新的分子外醛亚胺——这就是图5.3中的反应1，是之后所有分支途径（2a/2b/2c）共享的第一步。"
     },
@@ -384,12 +390,17 @@ window.BIOCHEM.topics.push(
       q_en: "Decarboxylation of cysteine and aspartate (reaction 2b in Obr. 5.3) produces which two compounds, and what is significant about them?",
       q_cn: "半胱氨酸和天冬氨酸的脱羧反应（图5.3反应2b）生成哪两种化合物？它们有什么重要意义？",
       options: [
-        "Histamine and GABA, both neurotransmitters",
+        "Histamine and GABA, both biogenic amines of the brain",
         "Cysteamine and β-alanine, both components of coenzyme A",
-        "Serotonin and dopamine, both catecholamine-family signalling molecules",
+        "Serotonin and dopamine, both catecholamine signalling molecules",
         "Putrescine and cadaverine, both foul-smelling polyamines"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Both are decarboxylation products too, so the reaction type is right — but the example the book names here is cysteine giving cysteamine and aspartate giving β-alanine.", cn: "这两个同样是脱羧产物，所以反应类型没错——但教材在这里点名的例子是半胱氨酸生成半胱胺、天冬氨酸生成 β-丙氨酸。" },
+        2: { en: "These are amines, but not the pair the book names for cysteine and aspartate, and neither of them is a building block of coenzyme A.", cn: "这两个确实是胺，但不是教材为半胱氨酸和天冬氨酸点名的那一对，而且它们都不是辅酶 A 的组成部件。" },
+        3: { en: "Diamines of that sort are decarboxylation products as well; the point of the book's example is the opposite of waste — both of its products are built into coenzyme A.", cn: "那类二胺同样是脱羧产物；但教材举这个例子的用意恰恰不是「废物」——它举的两个产物都被装进了辅酶 A。" }
+      },
       why_en: "The book gives this SPECIFIC example: decarboxylation of cysteine yields CYSTEAMINE, and of aspartate yields β-ALANINE — and explicitly notes both are COMPONENTS OF COENZYME A, illustrating that decarboxylation products are 'significant for synthetic reactions,' not just waste biogenic amines.",
       why_cn: "教材给出的正是这一具体例子：半胱氨酸脱羧生成半胱胺，天冬氨酸脱羧生成β-丙氨酸——并明确指出二者都是辅酶A的组成成分，说明脱羧产物「对合成反应具有重要意义」，而不仅仅是废弃的生物胺。"
     },
@@ -460,8 +471,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Why does the poor water-solubility of uric acid make it the ideal excretory nitrogen form for birds and reptiles, rather than a drawback?",
       q_cn: "为什么尿酸溶解度差这一点，对鸟类和爬行类来说反而是理想的排氮方式，而不是缺点？",
-      options: ["It allows uric acid to dissolve deep into egg fluids without harming the embryo", "It lets uric acid be stored/excreted as solid crystals with almost no water and no toxic dissolved concentration inside the closed egg", "It makes uric acid diffuse rapidly through the eggshell like ammonia does through gills", "It has nothing to do with the egg — it is simply cheaper to synthesise than urea"],
+      options: [
+        "It lets uric acid dissolve slowly into the egg fluids, so the embryo never meets more than a harmless concentration of it at any one time",
+        "It lets uric acid be stored/excreted as solid crystals with almost no water and no toxic dissolved concentration inside the closed egg",
+        "It lets uric acid diffuse out through the shell as fast as ammonia diffuses through the gills of an aquatic animal into the water around it",
+        "It has nothing to do with the egg: urate is simply the cheapest of the three nitrogen forms to make, cheaper even than urea"
+      ],
       answer: 1,
+      optionRefs: { 2: "L-18-2-1" },
+      optionNotes: {
+        0: { en: "Dissolving is exactly what urate does not do. It comes out as a suspension of crystals, so no dissolved concentration builds up inside the closed system of the egg at all.", cn: "溶解恰恰是尿酸不会做的事。它是以晶体悬浮液的形式析出的，所以在蛋这个封闭系统里根本不会积起什么溶解浓度。" },
+        2: { en: "Diffusion into surrounding water through gills is the ammonotelic strategy, and it needs a large volume of water outside. An egg is a closed system with nowhere for a dissolved waste to go.", cn: "经鳃向周围水中扩散是排氨型的做法，它需要外面有大量的水。蛋是个封闭系统，溶解的废物无处可去。" },
+        3: { en: "Urate costs the most of the three to synthesise, not the least. The free option is excreting ammonia directly, and urea sits in between, costing ATP but needing far less water.", cn: "三者之中尿酸的合成代价最高，不是最低。不花钱的那个是直接排氨，尿素居中——要花 ATP，但需要的水少得多。" }
+      },
       why_en: "Because the embryo develops inside a CLOSED system (the egg) with no way to flush away a dissolved toxin, urate's poor solubility is turned into an advantage: it precipitates as a solid crystal suspension, so nitrogen waste can accumulate in the egg without ever reaching a toxic dissolved concentration. This is the opposite logic from ammonotelic and ureotelic excretion, which both rely on a LIQUID carrier (water/urine).",
       why_cn: "由于胚胎是在蛋这一封闭系统内发育，无法把溶解的毒物排出体外，尿酸溶解度差这一点反而成了优势：它以固态晶体悬浮液的形式沉淀出来，使氮废物得以在蛋内积累而不会达到有毒的溶解浓度。这与排氨型和排尿素型排泄依赖液态载体（水/尿液）的逻辑正好相反。"
     },
@@ -469,8 +491,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which reaction correctly represents how most organisms recapture free ammonia onto a carbon skeleton, and what is its energy source?",
       q_cn: "下列哪一个反应正确代表了大多数生物如何把游离氨重新固定到碳骨架上？其能量来源是什么？",
-      options: ["glutamát + NH₄⁺ + ATP ⇌ glutamin + ADP + Pᵢ, powered by ATP hydrolysis", "NH₃ + 2-oxoglutarát + NADPH + H⁺ ⇌ Glu + NADP⁺ + H₂O, powered by NADPH oxidation", "NH₃ + pyruvát + NADH ⇌ alanin + NAD⁺ + H₂O, powered by NADH oxidation", "NH₄⁺ + CO₂ + 2 ATP → karbamoylfosfát + 2 ADP + Pᵢ, powered by ATP hydrolysis"],
+      options: [
+        "glutamát + NH₄⁺ + ATP ⇌ glutamin + ADP + Pᵢ, powered by hydrolysis of one ATP molecule",
+        "NH₃ + 2-oxoglutarát + NADPH + H⁺ ⇌ Glu + NADP⁺ + H₂O, powered by NADPH oxidation",
+        "NH₃ + pyruvát + NADH + H⁺ ⇌ alanin + NAD⁺ + H₂O, powered by NADH oxidation",
+        "NH₄⁺ + CO₂ + 2 ATP → karbamoylfosfát + 2 ADP + Pᵢ, powered by ATP hydrolysis"
+      ],
       answer: 1,
+      optionRefs: { 0: "L-18-1-1", 3: "L-18-2-1" },
+      optionNotes: {
+        0: { en: "That is glutamine synthetase, which the book gives only a limited role in regulating blood ammonia. It also costs ATP, whereas the main recapture route is driven by NADPH.", cn: "那是谷氨酰胺合成酶，教材只给它一个在调节血氨上有限的角色。它还要花 ATP，而主要的回收途径靠的是 NADPH。" },
+        2: { en: "Alanine is made by transamination from pyruvate, not by reductive amination with free ammonia, and the reductant of the recapture reaction is NADPH rather than NADH.", cn: "丙氨酸是由丙酮酸经转氨作用生成的，不是用游离氨做还原氨基化；而且回收反应的还原剂是 NADPH，不是 NADH。" },
+        3: { en: "That is carbamoyl phosphate synthetase, the first and strongly endergonic step of the urea cycle proper — disposal of ammonia, not recapture of it onto a carbon skeleton.", cn: "那是氨甲酰磷酸合成酶，是尿素循环本身的第一步、强吸能的一步——那是把氨处理掉，不是把它重新装回碳骨架上。" }
+      },
       why_en: "Glutamate dehydrogenase is the MAIN recapture route, reductively aminating 2-oxoglutarate using NADPH (not NADH) as the reductant. Option A describes glutamine synthetase, which the book explicitly calls only a LIMITED/supporting role; option D is carbamoyl phosphate synthesis, a later, committed step of the urea cycle proper, not ammonia recapture.",
       why_cn: "谷氨酸脱氢酶是氨重新捕获的主要途径，利用NADPH（而非NADH）作还原剂，将2-氧戊二酸还原氨基化。选项A描述的是谷氨酰胺合成酶，教材明确指出它只起有限的辅助作用；选项D是氨甲酰磷酸的合成，是尿素循环本身后续的限速步骤，并非氨的重新捕获。"
     },
@@ -533,8 +566,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Where does the SECOND nitrogen atom of urea come from, and at what point does it enter the cycle?",
       q_cn: "尿素的第二个氮原子来自哪里？它在循环的哪一步进入？",
-      options: ["From a second molecule of NH₄⁺, added directly to citrulline", "From aspartate, which condenses with citrulline to form argininosuccinate", "From glutamine's amide group, added to arginine", "From carbamoyl phosphate, which donates both nitrogens"],
+      options: [
+        "From a second molecule of NH₄⁺, added directly to citrulline in the cytoplasm",
+        "From aspartate, which condenses with citrulline to form argininosuccinate",
+        "From glutamine's amide group, transferred onto arginine by a synthetase",
+        "From carbamoyl phosphate, which donates both of urea's nitrogen atoms"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The only NH₄⁺ entering the cycle goes into carbamoyl phosphate, in the mitochondrial matrix, and that is what supplies urea's first nitrogen.", cn: "进入这个循环的 NH₄⁺ 只有一处，就是在线粒体基质里做成氨甲酰磷酸的那一份，它提供的是尿素的第一个氮。" },
+        2: { en: "Glutamine carries nitrogen elsewhere in metabolism; in this cycle the donor at the argininosuccinate step is aspartate, itself regenerated from oxaloacetate by aspartate transaminase.", cn: "谷氨酰胺在代谢的别处确实运氮；但在这个循环里，精氨基琥珀酸那一步的供体是天冬氨酸，而它自己再由草酰乙酸经天冬氨酸转氨酶补回来。" },
+        3: { en: "Carbamoyl phosphate carries one nitrogen only. The second arrives later, with aspartate, once citrulline has already left the mitochondria for the cytoplasm.", cn: "氨甲酰磷酸只带一个氮。第二个是后来随天冬氨酸进来的，那时瓜氨酸已经离开线粒体到了细胞质。" }
+      },
       why_en: "Carbamoyl phosphate supplies urea's FIRST nitrogen (from NH₄⁺). The SECOND comes from ASPARTATE, which condenses with citrulline (catalysed by argininosuccinate synthetase) to form argininosuccinate — aspartate's own nitrogen ends up in the arginine, and then the urea, produced downstream.",
       why_cn: "氨甲酰磷酸提供了尿素的第一个氮原子（来自NH₄⁺）。第二个氮原子来自天冬氨酸，它与瓜氨酸缩合（由精氨基琥珀酸合成酶催化）生成精氨基琥珀酸——天冬氨酸自身的氮原子最终进入精氨酸，再进入下游生成的尿素。"
     },
@@ -542,8 +585,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "The urea cycle is said to cost 4 ATP-equivalents per mole of urea, yet the balanced overall equation shows only 3 ATP. How is this reconciled?",
       q_cn: "尿素循环据称每摩尔尿素消耗4个ATP当量，但配平的总方程式中只出现3个ATP。这该如何解释？",
-      options: ["The 4th ATP is a rounding error and should be ignored", "One of the 3 ATP is converted to AMP + PPᵢ rather than ADP + Pᵢ, and regenerating ATP from AMP costs 2 further phosphorylations, so that single ATP is energetically equivalent to 2", "The 4th ATP is spent on transporting ornithine and citrulline across the mitochondrial membrane", "Arginase itself consumes 1 additional ATP not shown in the equation"],
+      options: [
+        "The 4th ATP-equivalent is a rounding error in the textbook and should be ignored, since the real cost of the cycle is exactly the 3 ATP molecules written into the balanced equation itself",
+        "One of the 3 ATP is converted to AMP + PPᵢ rather than ADP + Pᵢ, and regenerating ATP from AMP costs 2 further phosphorylations, so that single ATP is energetically equivalent to 2",
+        "The 4th ATP-equivalent is spent on carrying ornithine into the mitochondria and citrulline back out again, transport that the balanced equation never shows",
+        "Arginase consumes one further ATP that the equation does not show, which is what lets it split arginine into urea and ornithine and close the cycle"
+      ],
       answer: 1,
+      optionRefs: { 2: "L-18-2-1" },
+      optionNotes: {
+        0: { en: "It is a real cost, not a rounding error, and the book insists on the point: counting only the 3 ATP written down understates what the cycle actually spends per mole of urea.", cn: "那是实打实的开销，不是四舍五入的误差，而且教材特意强调：只数方程式里写出来的 3 个 ATP，会低估这个循环每摩尔尿素的真实花费。" },
+        2: { en: "Ornithine and citrulline do cross the mitochondrial membrane every turn, and the cycle is unusual for being split between two compartments — but that transport is not where the missing equivalent comes from.", cn: "鸟氨酸和瓜氨酸确实每一圈都要穿过线粒体膜，这个循环也确实少见地被劈在两个区室里——但少掉的那个当量不是从这里来的。" },
+        3: { en: "Arginase is a hydrolase: it splits arginine into urea and ornithine using water and spends nothing. The extra equivalent belongs to argininosuccinate synthetase.", cn: "精氨酸酶是水解酶：它用水把精氨酸拆成尿素和鸟氨酸，一分不花。多出来的那个当量属于精氨基琥珀酸合成酶。" }
+      },
       why_en: "Carbamoyl phosphate synthesis spends 2 ATP → 2 ADP (a normal 1-phosphate step each). Argininosuccinate synthetase spends 1 ATP but releases AMP + PPᵢ instead of ADP + Pᵢ — and because AMP needs TWO phosphorylation steps to become ATP again (AMP→ADP→ATP), that one molecule is energetically equivalent to 2 ATP. So 2 + 2 = 4 ATP-equivalents overall, even though only 3 ATP molecules appear in the written equation.",
       why_cn: "氨甲酰磷酸合成消耗2个ATP变为2个ADP（每次都是正常的单磷酸化步骤）。精氨基琥珀酸合成酶消耗1个ATP，但释放的是AMP + PPᵢ而非ADP + Pᵢ——由于AMP需要经过两次磷酸化才能变回ATP（AMP→ADP→ATP），这一个分子在能量上相当于2个ATP。所以总计2+2=4个ATP当量，尽管方程式里直接写出的ATP分子只有3个。"
     },
@@ -613,8 +667,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which final product defines the 'glucogenic' classification of an amino acid, per this book's opening definition?",
       q_cn: "按本教材开篇的定义，「生糖」氨基酸是以哪种终产物来界定的？",
-      options: ["Acetyl-CoA", "Pyruvate", "Oxaloacetate", "2-oxoglutarate"],
+      options: [
+        "Acetyl-CoA",
+        "Pyruvate",
+        "Citrate",
+        "2-oxoglutarate"
+      ],
       answer: 1,
+      optionRefs: { 3: "5-2-3-3" },
+      optionNotes: {
+        0: { en: "Acetyl-CoA is the other half of the same definition: an amino acid degraded to acetyl-CoA is ketogenic, because acetyl-CoA cannot be run backwards into glucose.", cn: "乙酰辅酶 A 是同一条定义的另一半：碳骨架降解成乙酰辅酶 A 的氨基酸是生酮的，因为乙酰辅酶 A 回不到葡萄糖。" },
+        2: { en: "Citrate is where acetyl-CoA enters the cycle, not the end point of an amino acid's skeleton; the book's headline definition of glucogenic names pyruvate.", cn: "柠檬酸是乙酰辅酶 A 进入循环的地方，不是氨基酸碳骨架的终点；教材那条总定义里写的是丙酮酸。" },
+        3: { en: "2-oxoglutarate is family 3's entry point, reached by Arg, His, Glu, Gln and Pro through glutamate — one of the seven entry points, not the definition itself.", cn: "2-氧戊二酸是第三族的入口，Arg、His、Glu、Gln、Pro 经谷氨酸汇到那里——它是七个入口之一，不是定义本身。" }
+      },
       why_en: "The book's opening two-way split defines glucogenic amino acids by a final product of PYRUVATE (feeding gluconeogenesis/glycogen in a starved organism); ketogenic amino acids are defined by a final product of acetyl-CoA. The five-family breakdown that follows then refines this into specific TCA entry points, but the book's own headline definition names pyruvate.",
       why_cn: "教材开篇的二分法用「终产物为丙酮酸」来定义生糖氨基酸（在饥饿机体中可驱动糖异生/糖原合成）；生酮氨基酸则以「终产物为乙酰辅酶A」来定义。随后的五族划分把这一定义细化为具体的TCA循环入口，但教材自己给出的总定义用的是丙酮酸。"
     },
@@ -624,6 +689,12 @@ window.BIOCHEM.topics.push(
       q_cn: "把教材开篇分类段落与其自身的通路图（第二族及图5.6）对照后可以发现，哪种氨基酸在开篇「纯生酮」举例清单中被遗漏了？",
       options: ["Leucine", "Lysine", "Isoleucine", "Tryptophan"],
       answer: 1,
+      optionRefs: { 2: "L-18-3-1" },
+      optionNotes: {
+        0: { en: "Leucine is the one the paragraph does name as purely ketogenic, so it is not the omission — it is the standard against which the omission is measured.", cn: "亮氨酸恰恰是那段话点名为纯生酮的那一个，所以它不是被漏掉的那个——它是衡量「漏掉了谁」的标准。" },
+        2: { en: "Isoleucine is named in the opening paragraph, but as BOTH glucogenic and ketogenic: its branched skeleton splits into an acetyl-CoA fragment and a propionyl-CoA fragment.", cn: "异亮氨酸开篇段落里点了名，但归的是「既生糖又生酮」：它的支链骨架会裂成一个乙酰辅酶 A 片段和一个丙酰辅酶 A 片段。" },
+        3: { en: "Tryptophan is named too, and also as dual: family 1's own diagram shows it feeding alanine and then pyruvate as a secondary route alongside the glutaryl-CoA route.", cn: "色氨酸也点了名，同样归为两栖：第一族的图上画着它作为次要路线经丙氨酸走到丙酮酸，与戊二酰辅酶 A 那条主路并行。" }
+      },
       why_en: "The opening paragraph names only Leu as purely ketogenic, without mentioning lysine at all in that sentence. But the family-2 diagram and Obr. 5.6 both trace lysine's carbon skeleton only as far as glutaryl-CoA → acetoacetyl-CoA → acetyl-CoA, with no glucogenic branch drawn — exactly the criterion used to call leucine 'purely' ketogenic. The diagrams, being more complete, should be trusted over the opening paragraph's illustrative 'e.g.' list.",
       why_cn: "开篇段落只点名Leu为纯生酮氨基酸，那句话完全没有提到赖氨酸。但第二族的通路图和总结图5.6都显示赖氨酸的碳骨架只通向戊二酰辅酶A→乙酰乙酰辅酶A→乙酰辅酶A，没有画出任何生糖支路——这正是判定亮氨酸「纯」生酮的同一标准。图示更为完整，应以图示为准，而非开篇那个仅作举例的「例如」清单。"
     },
@@ -683,8 +754,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the mechanistic reason tyrosine (and phenylalanine) is classified as BOTH glucogenic and ketogenic?",
       q_cn: "酪氨酸（和苯丙氨酸）被归类为既生糖又生酮的机制原因是什么？",
-      options: ["Tyrosine is first converted to alanine, then separately to leucine", "Tyrosine's degradation pathway hydrolytically splits into two separate end-products: fumaric acid (glucogenic) and acetoacetate (ketogenic)", "Tyrosine can be directly converted to glucose without any intermediate", "Tyrosine has two side chains, one metabolised by each pathway independently from the start"],
+      options: [
+        "Tyrosine is first converted to alanine, which is glucogenic, and then separately to leucine, which is ketogenic",
+        "Tyrosine's degradation pathway hydrolytically splits into two separate end-products: fumaric acid (glucogenic) and acetoacetate (ketogenic)",
+        "Tyrosine can be converted directly into glucose with no intermediate at all, and separately into acetoacetate as a ketone body precursor of its own",
+        "Tyrosine has two side chains, each metabolised by its own pathway independently of the other from the very first step onward"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Neither conversion happens. Tyrosine is transaminated to p-hydroxyphenylpyruvate and stays on one pathway until its last step splits it into fumaric acid and acetoacetate.", cn: "这两步转化都不存在。酪氨酸转氨生成对羟苯丙酮酸后，一直走在同一条通路上，直到最后一步才裂成延胡索酸和乙酰乙酸。" },
+        2: { en: "Nothing here is converted straight into glucose. Fumaric acid is a citrate-cycle intermediate, and it is the gluconeogenic route onward from there that makes this half of the pathway glucogenic.", cn: "这里没有什么东西是直接变成葡萄糖的。延胡索酸是柠檬酸循环的中间产物，正是从它再往下走的糖异生路线，才让这半条通路成为生糖的。" },
+        3: { en: "Tyrosine has one side chain. What is dual here is the ending of the pathway, which cleaves hydrolytically into two different products at the same step.", cn: "酪氨酸只有一条侧链。这里「两栖」的是通路的末端——同一步水解裂解，同时给出两种不同的产物。" }
+      },
       why_en: "The book traces one continuous pathway — transamination to p-hydroxyphenylpyruvate, oxidative decarboxylation, then a series of reactions ending in hydrolytic cleavage — that splits at its very last step into fumaric acid AND acetoacetate simultaneously. Fumarate is a citrate-cycle (glucogenic) intermediate; acetoacetate is ketogenic. One pathway, two products, is the mechanism — not two independent side chains.",
       why_cn: "教材描述的是同一条连续通路——转氨生成对羟苯丙酮酸，氧化脱羧，再经一系列反应，最终水解裂解——在其最后一步同时分裂生成延胡索酸和乙酰乙酸。延胡索酸是柠檬酸循环（生糖）中间体，乙酰乙酸是生酮的。「一条通路、两种产物」才是机制所在，而不是两条从一开始就独立的支路。"
     },
@@ -700,8 +781,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which intermediate is shared by both tryptophan's and lysine's degradation pathways, according to the diagram?",
       q_cn: "根据图示，色氨酸和赖氨酸的降解途径共同经过哪个中间体？",
-      options: ["p-hydroxyphenylpyruvate", "Glutaryl-CoA", "Methylmalonyl-CoA", "2-oxoglutarate"],
+      options: [
+        "p-hydroxyphenylpyruvate",
+        "Glutaryl-CoA",
+        "Methylmalonyl-CoA",
+        "Urocanate"
+      ],
       answer: 1,
+      optionRefs: { 3: "5-2-3-3" },
+      optionNotes: {
+        0: { en: "That is tyrosine's transamination product, on the phenylalanine and tyrosine branch of this same family — not a point tryptophan and lysine have in common.", cn: "那是酪氨酸的转氨产物，属于本族里苯丙氨酸-酪氨酸那一支——不是色氨酸和赖氨酸的交汇点。" },
+        2: { en: "Methylmalonyl-CoA belongs to family 4, the succinyl-CoA route taken by methionine, isoleucine, threonine and valine.", cn: "甲基丙二酰辅酶 A 属于第四族，也就是甲硫氨酸、异亮氨酸、苏氨酸和缬氨酸走的琥珀酰辅酶 A 那条路。" },
+        3: { en: "Urocanate is histidine's deamination product, on its way to glutamic acid and then 2-oxoglutarate — a different family altogether.", cn: "尿刊酸是组氨酸脱氨的产物，接下来走向谷氨酸再到 2-氧戊二酸——完全是另一族的事。" }
+      },
       why_en: "Both tryptophan (via a long decarboxylation/oxidation/hydrolysis/deamination sequence) and lysine (via 2-oxoadipic acid, from either of two alternative pathways) converge on glutaryl-CoA, which is then processed onward (dehydrogenation, decarboxylation, water addition) to the family's shared final product, acetoacetyl-CoA.",
       why_cn: "色氨酸（经过一段较长的脱羧/氧化/水解/脱氨序列）和赖氨酸（经2-氧己二酸，由两条可替代途径中的任一条）都汇聚到戊二酰辅酶A，随后再经进一步加工（脱氢、脱羧、加水）生成本族共同的最终产物——乙酰乙酰辅酶A。"
     }
@@ -753,8 +845,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which amino acids converge on 2-oxoglutarate as their citrate-cycle entry point (family 3)?",
       q_cn: "哪些氨基酸以2-氧戊二酸作为其进入柠檬酸循环的入口（第三族）？",
-      options: ["Methionine, isoleucine, valine", "Aspartate, asparagine", "Arginine, histidine, glutamate, glutamine, proline", "Alanine, serine, glycine, threonine, cysteine"],
+      options: [
+        "Methionine, isoleucine, threonine, valine",
+        "Aspartate and asparagine, the smallest family",
+        "Arginine, histidine, glutamate, glutamine, proline",
+        "Alanine, serine, glycine, threonine, cysteine, cystine"
+      ],
       answer: 2,
+      optionRefs: { 1: "5-2-3-4" },
+      optionNotes: {
+        0: { en: "That is family 4, whose skeletons end at succinyl-CoA by way of methylmalonyl-CoA; Obr. 5.6 puts threonine in that box alongside methionine, isoleucine and valine.", cn: "那是第四族，碳骨架经甲基丙二酰辅酶 A 走到琥珀酰辅酶 A；Obr. 5.6 把苏氨酸和甲硫氨酸、异亮氨酸、缬氨酸放在同一个框里。" },
+        1: { en: "That is family 5, the smallest of the five, feeding oxaloacetate directly — aspartate sits right beside oxaloacetate in the citrate cycle.", cn: "那是第五族，五族中最小的一族，直接汇入草酰乙酸——天冬氨酸在柠檬酸循环里就紧挨着草酰乙酸。" },
+        3: { en: "That is family 1, the C3 family, which funnels through pyruvate and on to acetyl-CoA, with cystine reaching pyruvate by way of cysteine.", cn: "那是第一族，即 C3 族，经丙酮酸再到乙酰辅酶 A；胱氨酸是经半胱氨酸走到丙酮酸的。" }
+      },
       why_en: "Family 3 (the C5 family) is Arg, His, Glu, Gln, Pro, all converging on glutamate and then 2-oxoglutarate. The other options are family 4 (succinyl-CoA), family 5 (oxaloacetate), and family 1 (pyruvate) respectively.",
       why_cn: "第三族（C5族）是精氨酸、组氨酸、谷氨酸、谷氨酰胺、脯氨酸，全部汇聚到谷氨酸再到2-氧戊二酸。其余选项分别是第四族（琥珀酰辅酶A）、第五族（草酰乙酸）和第一族（丙酮酸）。"
     },
@@ -762,8 +865,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "A sentence on p.128 states the proline/arginine-derived glutamate semialdehyde degrades 'to acetoacetyl-CoA.' Why should this specific clause be treated with suspicion rather than taken at face value?",
       q_cn: "第128页有一句话说脯氨酸/精氨酸来源的谷氨酸半醛降解「生成乙酰乙酰辅酶A」。为什么这句话应该被谨慎对待，而不能直接采信？",
-      options: ["Because acetoacetyl-CoA does not exist as a metabolite in this book", "Because it contradicts the section's own heading (2-oxoglutarate family), the diagram on the same page (semialdehyde → glutamate → 2-oxoglutarate), and standard biochemistry, all of which agree with each other", "Because the book never mentions glutamate anywhere else", "Because proline is not actually degraded in this book at all"],
+      options: [
+        "Because acetoacetyl-CoA appears nowhere else in this book at all, so the clause cannot be cross-checked against anything whatever and has to be set aside as unverifiable rather than as contradicted by the page itself",
+        "Because it contradicts the section's own heading (2-oxoglutarate family), the diagram on the same page (semialdehyde → glutamate → 2-oxoglutarate), and standard biochemistry, all of which agree with each other",
+        "Because the book never names glutamate anywhere else in this family, so the semialdehyde has no other stated fate and the sentence has to be accepted exactly as printed",
+        "Because proline is not really degraded along this route at all: the diagram has arginine alone reaching the semialdehyde, with proline entering the cycle somewhere else entirely"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Acetoacetyl-CoA is a real metabolite in this book — it is family 2's own end product, reached from glutaryl-CoA by tryptophan and lysine. The trouble is not that it is unknown but that it belongs to the wrong family here.", cn: "乙酰乙酰辅酶 A 在本书里是真实存在的代谢物——它正是第二族的终产物，色氨酸和赖氨酸经戊二酰辅酶 A 到达它。问题不在于它没出现过，而在于它出现在了错的族里。" },
+        2: { en: "Glutamate is named repeatedly on that same page: histidine reaches glutamic acid through urocanate, glutamine joins at the same box, and glutamate is the immediate precursor of 2-oxoglutarate.", cn: "谷氨酸在同一页上被反复提到：组氨酸经尿刊酸走到谷氨酸，谷氨酰胺直接汇入同一个框，而谷氨酸正是 2-氧戊二酸的直接前体。" },
+        3: { en: "Proline is degraded here in detail: proline dehydrogenase oxidises it to Δ1-pyrroline-5-carboxylic acid, which stands in equilibrium with the very semialdehyde the sentence is about.", cn: "脯氨酸在这里讲得很细：脯氨酸脱氢酶把它氧化成 Δ1-吡咯啉-5-羧酸，而后者正与这句话所说的那个半醛处于平衡。" }
+      },
       why_en: "Three independent, mutually consistent sources on the very same page — the section heading, the diagram directly below the sentence, and general biochemical knowledge of glutamate-γ-semialdehyde dehydrogenase — all say the semialdehyde becomes glutamate, not acetoacetyl-CoA. When one sentence disagrees with everything else around it, including the book's own figure, the figure and the heading are the more reliable read.",
       why_cn: "同一页上有三处独立且相互一致的来源——节标题、该句正下方的图示，以及关于谷氨酸γ-半醛脱氢酶的一般生物化学知识——都指出这个半醛会变成谷氨酸，而不是乙酰乙酰辅酶A。当一句话与周围包括教材自己图示在内的一切都不一致时，图示和标题才是更可靠的依据。"
     },
@@ -820,8 +933,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "According to this page, which TWO amino acids convert directly to oxaloacetate?",
       q_cn: "根据本页内容，哪两种氨基酸直接转化为草酰乙酸？",
-      options: ["Glutamate and glutamine", "Aspartate and asparagine", "Alanine and glycine", "Methionine and valine"],
+      options: [
+        "Glutamate and glutamine only",
+        "Aspartate and asparagine",
+        "Alanine and glycine",
+        "Methionine and valine"
+      ],
       answer: 1,
+      optionRefs: { 0: "5-2-3-3", 3: "5-2-3-3" },
+      optionNotes: {
+        0: { en: "Those two belong to family 3: they meet at glutamate and enter the cycle as 2-oxoglutarate, not as oxaloacetate.", cn: "这两个属于第三族：它们在谷氨酸处汇合，以 2-氧戊二酸的身份进入循环，而不是草酰乙酸。" },
+        2: { en: "Alanine and glycine belong to family 1, the C3 family that reaches pyruvate; glycine gets there by way of serine.", cn: "丙氨酸和甘氨酸属于第一族，即走到丙酮酸的 C3 族；甘氨酸是经丝氨酸过去的。" },
+        3: { en: "Methionine and valine belong to family 4, which ends at succinyl-CoA by way of methylmalonyl-CoA.", cn: "甲硫氨酸和缬氨酸属于第四族，经甲基丙二酰辅酶 A 终止于琥珀酰辅酶 A。" }
+      },
       why_en: "The book states explicitly that only two amino acids convert to oxaloacetate: aspartic acid and asparagine — the smallest and most direct of the five families, since aspartate sits immediately adjacent to oxaloacetate in the citrate cycle.",
       why_cn: "教材明确指出只有两种氨基酸转化为草酰乙酸：天冬氨酸和天冬酰胺——这是五族中最小、最直接的一族，因为天冬氨酸在柠檬酸循环中就紧邻草酰乙酸。"
     },
@@ -829,8 +953,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Obr. 5.6 places lysine in exactly one box, feeding acetoacetyl-CoA, and nowhere else. What does this imply about lysine's classification that the book's own p.125 example list does not state outright?",
       q_cn: "图5.6把赖氨酸只放在唯一一个方框中（通向乙酰乙酰辅酶A），再无其他出现。这对赖氨酸的分类意味着什么，而这是教材第125页的举例清单没有明确说出的？",
-      options: ["Lysine is exclusively glucogenic", "Lysine is purely ketogenic, with no glucogenic outlet, just like leucine", "Lysine cannot be degraded at all", "Lysine feeds directly into the citrate cycle without any acyl-CoA intermediate"],
+      options: [
+        "Lysine is exclusively glucogenic, with no ketogenic outlet at all",
+        "Lysine is purely ketogenic, with no glucogenic outlet, just like leucine",
+        "Lysine cannot be degraded at all, which is why it appears just once",
+        "Lysine feeds directly into the citrate cycle without any acyl-CoA intermediate"
+      ],
       answer: 1,
+      optionRefs: { 0: "L-18-3-1", 2: "5-2-3-2" },
+      optionNotes: {
+        0: { en: "That is the classification inverted. The single box lysine occupies is the acetoacetyl-CoA box, and acetoacetyl-CoA is precisely the ketogenic destination.", cn: "这是把分类倒过来了。赖氨酸占的那唯一一个框是乙酰乙酰辅酶 A 框，而乙酰乙酰辅酶 A 恰恰就是生酮的去处。" },
+        2: { en: "It is degraded, by two alternative routes down to 2-oxoadipic acid, both converging on glutaryl-CoA. Appearing in one box means one destination, not none.", cn: "它当然会被降解——有两条可选路线走到 2-氧己二酸，最后都汇到戊二酰辅酶 A。只出现在一个框里，意思是只有一个去处，不是没有去处。" },
+        3: { en: "Acetoacetyl-CoA is itself an acyl-CoA, and it is exactly the intermediate lysine reaches by way of glutaryl-CoA before going on to acetyl-CoA.", cn: "乙酰乙酰辅酶 A 本身就是一种酰基辅酶 A，而它正是赖氨酸经戊二酰辅酶 A 到达、再往下走向乙酰辅酶 A 的那个中间产物。" }
+      },
       why_en: "Since lysine appears in no box representing a citrate-cycle/glucogenic entry point (fumarate, oxaloacetate, 2-oxoglutarate, succinyl-CoA), and its only route is to acetoacetyl-CoA — the same criterion the book uses to call leucine 'purely' ketogenic — lysine belongs in that same purely-ketogenic category by the diagram's own logic, even though the opening paragraph's illustrative example list never named it.",
       why_cn: "由于赖氨酸没有出现在任何代表柠檬酸循环/生糖入口的方框中（延胡索酸、草酰乙酸、2-氧戊二酸、琥珀酰辅酶A），它唯一的路线是通向乙酰乙酰辅酶A——这正是教材用来判定亮氨酸为「纯」生酮氨基酸的同一标准——因此按图示自身的逻辑，赖氨酸也应属于同一个纯生酮类别，尽管开篇段落举例说明时从未点出它的名字。"
     },

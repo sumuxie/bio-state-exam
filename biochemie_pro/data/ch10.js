@@ -64,12 +64,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which of the four listed functions of metabolism explicitly includes DEGRADATION as a function in its own right?",
       q_cn: "所列代谢四项功能中，哪一项明确把**降解**当作一项独立的功能？",
       options: [
-        "(a) obtaining chemical energy from nutrients or solar radiation",
-        "(b) converting exogenous substances into building units",
-        "(c) synthesizing macromolecules from precursors",
+        "(a) obtaining chemical energy from nutrient molecules or from solar radiation",
+        "(b) converting exogenous substances into building units of the cell's own macromolecules",
+        "(c) synthesizing proteins, nucleic acids and lipids from these precursors",
         "(d) synthesizing and degrading the molecules needed for the cell's specific functions"
       ],
       answer: 3,
+      optionRefs: { 0: "6-1", 1: "10-2", 2: "10-2" },
+      optionNotes: {
+        0: { en: "Degradation appears in (a) only as a means to an end — nutrient molecules are broken down because that is how the chemical energy comes out. The item is about acquiring energy, and the mention of solar radiation is there to keep the definition valid for the photoautotrophs as well.", cn: "在第(a)项里，降解只是达成目的的手段——分解营养分子，是因为化学能只能这样取出来。这一项讲的是**获取能量**，其中提到太阳辐射，是为了让这个定义对光合自养生物同样成立。" },
+        1: { en: "Purely constructive: it makes the parts. This is the first phase of biosynthesis, where small precursors — from the last phase of catabolism or taken straight from the environment as water, carbon dioxide and ammonia — are worked up into building units. Nothing is taken apart here.", cn: "纯建造性质：它负责**做出零件**。这是生物合成的第一阶段，把小的前体——来自分解代谢的最后阶段，或直接从环境取得的水、二氧化碳与氨——加工成建筑单元。这里没有任何东西被拆开。" },
+        2: { en: "Also purely constructive: it assembles the parts. Items (b) and (c) are the two halves of the same construction job — first make the building units, then join them into the cell's own macromolecules — and neither of them mentions breaking anything down.", cn: "同样是纯建造性质：它负责**把零件装起来**。第(b)与第(c)项是同一件建造工作的两半——先做出建筑单元，再把它们连成细胞自己的大分子——两者都没有提到拆解任何东西。" }
+      },
       why_en: "Item (d) is the only one that names degradation alongside synthesis. Item (a) uses degradation only as a means to energy; (b) and (c) are purely constructive. (d) is about turnover of functional molecules.",
       why_cn: "第(d)项是唯一把降解与合成并列点名的一项。第(a)项只把降解当作获取能量的手段；(b)与(c)纯属建造性质。(d)讲的是功能性分子的周转。"
     },
@@ -142,6 +148,12 @@ window.BIOCHEM.topics.push(
         "CO₂ and water"
       ],
       answer: 1,
+      optionRefs: { 0: "7-8-3", 2: "6-2-2-1", 3: "6-2-4-1" },
+      optionNotes: {
+        0: { en: "Pyruvate is a way station for only some of them. Saccharides and glycerol do pass through it on their way to acetyl-CoA, but fatty acids reach acetyl-CoA by β-oxidation without ever becoming pyruvate, and most amino acids likewise arrive by other routes.", cn: "pyruvate 只是其中一部分的中转站。糖类和甘油确实要经它才到 acetyl-CoA，但脂肪酸经 β-oxidation 直接到 acetyl-CoA，从来不变成 pyruvate；大多数氨基酸也走别的路线到达。" },
+        2: { en: "Citrate belongs to the THIRD phase, not the second. It is formed in the first step of the citrate cycle, when acetyl-CoA binds to oxaloacetate — that is, after the convergence has already happened, on the way to oxidizing the acetyl residue to carbon dioxide.", cn: "citrate 属于**第三**阶段，不是第二阶段。它是在 citrate cycle 第一步由 acetyl-CoA 与 oxaloacetate 结合而生成的——也就是说，汇聚早已完成，此时正走在把乙酰基氧化成二氧化碳的路上。" },
+        3: { en: "That is the endpoint of the third phase, where the products of the second phase are oxidized all the way. The catabolic funnel has two narrow points, not one: acetyl-CoA in the middle and CO₂ + H₂O at the bottom, and the question asks about the middle one.", cn: "那是第三阶段的终点，第二阶段的产物在那里被彻底氧化。分解代谢这个漏斗有**两个**收口，不是一个：中间是 acetyl-CoA，底部是 CO₂ 与水，而题目问的是中间那个。" }
+      },
       why_en: "All three converge on acetyl-CoA: saccharides and glycerol via pyruvate, fatty acids via β-oxidation, most amino acids likewise. Pyruvate is a way station for only some of them; CO₂ and water are the third phase, not the second.",
       why_cn: "三者都汇聚到乙酰CoA：糖类与甘油经丙酮酸，脂肪酸经β-氧化，大多数氨基酸亦然。丙酮酸只是其中一部分的中转站；CO₂与水属于第三阶段而非第二阶段。"
     },
@@ -215,10 +227,16 @@ window.BIOCHEM.topics.push(
       options: [
         "It reduces the number of enzymes the cell must encode",
         "It allows them to be regulated independently",
-        "It allows both to produce ATP",
-        "It removes the need for compartmentation"
+        "It allows both directions to produce ATP",
+        "It makes compartmentation unnecessary"
       ],
       answer: 1,
+      optionRefs: { 2: "6-1-3", 3: "10-16" },
+      optionNotes: {
+        0: { en: "The cost runs the other way. Two separate routes between the same precursor and the same product need more enzymes than one reversible route would, not fewer — the irreversible steps have to be bypassed by different chemistry in each direction. The cell pays that price to buy independent control.", cn: "代价是反方向的。在同一前体与同一产物之间设两条独立路线，需要的酶比一条可逆路线**更多**，不是更少——不可逆的步骤在两个方向上都得用另一套化学绕过去。细胞付这笔钱，买的是独立调控。" },
+        2: { en: "This is exactly the asymmetry the book gives as the REASON the two routes must differ: catabolic processes produce ATP, anabolic reactions require energy and consume ATP in their course. A pathway optimised to release energy cannot simply be run backwards to store it.", cn: "这正是教材用来说明两条路线**必须**不同的那个不对称：分解代谢过程产生 ATP，合成代谢反应则需要能量、在进行中消耗 ATP。一条为放能而优化的途径，不可能倒过来跑就用来储能。" },
+        3: { en: "Compartmentation is the second separation, running in parallel with the first, not something the first makes redundant. The book presents localisation of catabolic and anabolic reactions in different parts of the eukaryotic cell as serving the same purpose — letting both run at once and independently.", cn: "区室化是**第二种**分隔，与第一种平行存在，而不是被第一种取消掉的东西。教材把分解代谢与合成代谢反应定位在真核细胞的不同部位，说成是服务于同一个目的——让两者同时进行、又彼此独立。" }
+      },
       why_en: "The book states this directly: the fact that these pathways are separate has the advantage that they can be regulated independently. Separateness costs the cell extra enzymes rather than saving them, and compartmentation is presented as a second, parallel separation with the same goal, not as something made unnecessary.",
       why_cn: "教材直接指出：这些途径彼此分离这一事实带来的好处是它们可以被独立调节。分离让细胞多花酶而非省酶；区室化则被呈现为目标相同的第二种平行分离，而不是被它取消的东西。"
     },
@@ -286,12 +304,18 @@ window.BIOCHEM.topics.push(
       q_en: "What does the book say defines a metabolic 'pool'?",
       q_cn: "教材认为是什么定义了一个代谢「库」？",
       options: [
-        "A high absolute concentration of the metabolite",
+        "A high absolute concentration of the metabolite, held steadily well above the mmol/l range at which most other cellular metabolites sit",
         "The ability to maintain the metabolite's level at the desired level, even though its concentration may be low and its turnover rapid",
-        "Storage of the metabolite in a dedicated organelle",
-        "A metabolite that no other pathway can consume"
+        "Storage of the metabolite in a dedicated organelle from which it can be mobilized whenever the cell needs it",
+        "A metabolite that no other pathway is able to draw on, so that nothing else can pull its level down"
       ],
       answer: 1,
+      optionRefs: { 2: "10-16", 3: "10-5" },
+      optionNotes: {
+        0: { en: "The book denies this in so many words: it need not be a matter of a high concentration. Concentrations may be of the order of mmol/l while the turnover is very rapid — about 70 kg of ATP produced in 24 hours is the illustration, and that is a small standing amount cycled thousands of times a day.", cn: "教材用原话否认了这一点：未必意味着高浓度。浓度可能只有 mmol/l 量级，而周转极快——每 24 小时产生约 70 公斤 ATP 就是那个例证，那是一个很小的存量，一天里被循环了几千遍。" },
+        2: { en: "A pool is defined by a rate, not by a place. The key metabolites the book names — acetyl-CoA, pyruvate, α-ketoglutarate, NADH, NADPH, ATP — are not held in dedicated organelles; what matters is the ability to hold their level where it is wanted while they are constantly being made and consumed.", cn: "pool 是由**速率**而不是由**位置**定义的。教材点名的那几个关键代谢物——acetyl-CoA、pyruvate、α-ketoglutarate、NADH、NADPH、ATP——都不是存放在专门细胞器里的；要紧的是在它们不断被生成又被消耗的同时，把水平维持在所需之处。" },
+        3: { en: "Exactly backwards: being drawn on by several pathways is what makes a metabolite a nodal point in the first place. Acetyl-CoA is the model pool precisely because three routes feed it and three draw on it, and it is that traffic the regulation has to hold steady.", cn: "正好反了：被多条途径取用，恰恰是一个代谢物成为「节点」的前提。acetyl-CoA 之所以是 pool 的典范，正因为有三条路进、三条路出，而调节要稳住的就是这股流量。" }
+      },
       why_en: "The book says explicitly that it need not be a matter of a high concentration; what is important is the ability to maintain the level where it is wanted. Concentrations may be of the order of mmol/l while turnover is very rapid — the 70 kg of ATP per 24 hours illustrates exactly this.",
       why_cn: "教材明确指出未必意味着高浓度；要紧的是把水平维持在所需之处的能力。浓度可能只有mmol/l量级，而周转极快——每24小时70公斤ATP正是这一点的例证。"
     },
@@ -355,12 +379,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which arrow is conspicuously ABSENT from Obr. 10.1, and what does its absence explain?",
       q_cn: "图10.1中**明显缺少**哪一条箭头？这一缺失解释了什么？",
       options: [
-        "Acetyl-CoA → citrate cycle; it explains why fats cannot be oxidized",
+        "Acetyl-CoA → the citrate cycle; it explains why fats cannot be oxidized for energy at all",
         "Acetyl-CoA → pyruvate; it explains why animals cannot make saccharides from fats",
         "Amino acids → acetyl-CoA; it explains why proteins are not an energy source",
         "Acetyl-CoA → isoprenoids; it explains why steroids come only from the diet"
       ],
       answer: 1,
+      optionRefs: { 0: "6-2-2-1", 2: "5-2-3-1", 3: "8-3-7" },
+      optionNotes: {
+        0: { en: "That arrow is present, and it is the figure's one catabolic exit: acetyl-CoA to the citrate cycle and the respiratory chain. It is the route taken when the cell's energy demands are high, and it is how a fat is oxidized to carbon dioxide and water in the first place.", cn: "那条箭头是**有**的，而且是图中唯一的分解代谢出口：acetyl-CoA 通向 citrate cycle 与呼吸链。细胞能量需求高时走的就是它，脂肪被氧化成二氧化碳和水，靠的也正是它。" },
+        2: { en: "Present as well — it is one of the three inputs, Proteiny → Aminokyseliny → Acetyl-CoA. Proteins are an energy source, and the second phase of catabolism sends most amino acids to the same hub that sugars and fats reach.", cn: "这条同样存在——它是三个输入之一：Proteiny → Aminokyseliny → Acetyl-CoA。蛋白质**是**能量来源，分解代谢的第二阶段把大多数氨基酸送到与糖和脂肪相同的那个枢纽。" },
+        3: { en: "Present too, as one of the two anabolic exits alongside lipids. The isoprenoid branch is what carries acetyl carbon into the steroids, and steroid hormones are built in the body from that route — cholesterol and the terpenoids are not diet-only.", cn: "这条也在，是与脂类并列的两条合成代谢出口之一。isoprenoid 分支正是把乙酰基上的碳带进 steroid 的那条路，体内的甾体激素就是由此建造的——胆固醇和萜类并非只能从食物获得。" }
+      },
       why_en: "There is no return arrow from acetyl-CoA to pyruvate. §10.1.3 makes the consequence explicit: the animal organism cannot convert acetyl-CoA into pyruvate, the starting compound for saccharide synthesis, and therefore cannot form saccharides from fats. All the other arrows listed are present in the figure.",
       why_cn: "从乙酰CoA回到丙酮酸没有返回箭头。§10.1.3明确指出其后果：动物机体无法把乙酰CoA转变为丙酮酸（糖合成的起始化合物），因而无法由脂肪生成糖。所列其他箭头在图中都存在。"
     },
@@ -427,12 +457,18 @@ window.BIOCHEM.topics.push(
       q_en: "What does the book say happens to the NADPH generated by the pentose phosphate cycle?",
       q_cn: "教材说磷酸戊糖循环所产生的NADPH会怎样？",
       options: [
-        "It is oxidized in the respiratory chain to make ATP",
+        "It is oxidized in the respiratory chain, so that this route yields ATP just as glycolysis does",
         "It is NOT oxidized in the respiratory chain but is used for synthetic reactions",
-        "It is converted to NADH by a transhydrogenase",
-        "It is exported to the mitochondrion for the citrate cycle"
+        "It is converted into NADH by a transhydrogenase before being oxidized",
+        "It is exported into the mitochondrion to feed the citrate cycle there"
       ],
       answer: 1,
+      optionRefs: { 0: "6-2-4-1", 2: "6-2-1-1", 3: "6-2-2-1" },
+      optionNotes: {
+        0: { en: "This would make the pentose phosphate route a second, redundant way of making ATP. The book says the opposite in the same sentence: the NADPH arising here is not oxidized in the respiratory chain. The route's purpose is pentoses for nucleic acid synthesis and reducing power reserved for biosynthesis.", cn: "这样一来，pentose phosphate 路线就成了第二条多余的产 ATP 途径。教材在同一句里说的正相反：这里产生的 NADPH **不**在呼吸链中被氧化。这条路线的用途是为核酸合成提供戊糖，以及提供专留给生物合成的还原力。" },
+        2: { en: "That would erase the whole point of having two nicotinamide coenzymes. Their functional segregation is stated repeatedly in this chapter — NADH for the respiratory chain, NADPH for biosynthesis — and it is one of the three differences the book gives between fatty acid synthesis and degradation.", cn: "那就把「为什么要有两种烟酰胺辅酶」这件事整个抹掉了。它们的功能分工在本章反复出现——NADH 走呼吸链，NADPH 走生物合成——而且它正是教材给出的脂肪酸合成与分解三点差异之一。" },
+        3: { en: "The citrate cycle reduces NAD⁺, not NADP⁺, and it is a supplier of reduced coenzymes rather than a consumer of them. NADPH stays where it is made and is spent on synthetic reactions in the same compartment.", cn: "citrate cycle 还原的是 NAD⁺ 而不是 NADP⁺，而且它是还原型辅酶的**供应方**，不是消费方。NADPH 留在生成它的地方，就在同一个区室里被合成反应花掉。" }
+      },
       why_en: "The book states explicitly that the NADPH arising at the same time is not oxidized in the respiratory chain but is used for synthetic reactions. This is what distinguishes the pentose phosphate route from glycolysis: it supplies pentoses and biosynthetic reducing power, not ATP.",
       why_cn: "教材明确指出，同时产生的NADPH不在呼吸链中被氧化，而是用于合成反应。这正是磷酸戊糖路线区别于糖酵解之处：它提供戊糖与用于生物合成的还原力，而非ATP。"
     },
@@ -509,10 +545,16 @@ window.BIOCHEM.topics.push(
       options: [
         "By running pyruvate kinase in reverse at high ATP concentrations",
         "By a detour: carboxylation of pyruvate to oxaloacetate",
-        "By a hydrolase that removes the phosphate",
-        "By reduction of pyruvate to lactate first"
+        "By a hydrolase that hydrolyses the phosphate off",
+        "By first reducing the pyruvate all the way to lactate"
       ],
       answer: 1,
+      optionRefs: { 0: "7-8-3", 2: "7-9", 3: "7-8-4" },
+      optionNotes: {
+        0: { en: "That step is called irreversible precisely because it cannot be run backwards, whatever the ATP concentration. The book says the problem is ONLY this conversion, and that it is solved by a detour (oklika) rather than by reversal — which is the concrete case of §10.1's claim that the two directions take different routes.", cn: "这一步之所以被称为不可逆，正是因为无论 ATP 浓度多高它都无法倒着走。教材说困难**只有**这一处转变，而且是靠一条绕道（oklika）解决的，不是靠逆转——这正是§10.1「两个方向走不同路线」这一论断的具体案例。" },
+        2: { en: "The hydrolases mentioned in the same paragraph handle the OTHER two irreversible steps — the two hexose phosphorylations, undone by glucose-6-phosphatase and fructose-1,6-bisphosphatase. There is no phosphate on pyruvate to remove in the first place.", cn: "同一段里提到的水解酶处理的是**另外**两个不可逆步骤——两次己糖磷酸化，由 glucose-6-phosphatase 与 fructose-1,6-bisphosphatase 反向撤销。而 pyruvate 身上根本没有磷酸可拆。" },
+        3: { en: "Lactate is where the carbon comes FROM, not a step on the way up: gluconeogenesis in the animal organism uses as its carbon source the lactic acid that arose by anaerobic glycolysis. Reducing pyruvate again would simply send the carbon back to the start.", cn: "lactate 是碳的**来处**，不是往上走的中间一步：动物机体的糖异生以厌氧糖酵解产生的乳酸作为碳源。再把 pyruvate 还原一次，只是把碳送回起点而已。" }
+      },
       why_en: "The book says the conversion proceeds by a detour (oklika), carboxylating pyruvate to oxaloacetate. The hydrolases mentioned in the same paragraph handle the OTHER two irreversible steps, the hexose phosphorylations, not this one.",
       why_cn: "教材说这一转变通过一条绕道(oklika)进行，即把丙酮酸羧化为草酰乙酸。同一段中提到的水解酶处理的是**另外**两个不可逆步骤（己糖的磷酸化），而不是这一步。"
     },
@@ -579,12 +621,18 @@ window.BIOCHEM.topics.push(
       q_en: "In β-oxidation, which chemical step does the book associate with FADH₂ and which with NADH?",
       q_cn: "在β-氧化中，教材把FADH₂与NADH分别与哪一步化学反应相联系？",
       options: [
-        "FADH₂ from the oxidation of the hydroxy acid; NADH from the oxidation to an unsaturated acid",
+        "FADH₂ from the oxidation of the hydroxy acid to an oxo acid; NADH from the oxidation of that acid to an unsaturated fatty acid",
         "FADH₂ from the oxidation of the acid to an unsaturated fatty acid; NADH from the oxidation of the hydroxy acid to an oxo acid",
-        "Both from the thiolytic cleavage step",
-        "FADH₂ from the activation step; NADH from the cleavage step"
+        "Both arise together at the thiolytic cleavage step, in which the two-carbon unit is finally released as acetyl-CoA",
+        "FADH₂ from the activation of the fatty acid to its acyl-CoA; NADH from the thiolytic cleavage giving acetyl-CoA"
       ],
       answer: 1,
+      optionRefs: { 0: "8-4-4-2", 2: "8-4-4-2", 3: "8-4-4-1" },
+      optionNotes: {
+        0: { en: "The two coenzymes are swapped. This is exactly the error the book's two parentheses exist to prevent, which is why it bothers to state which chemical step produces which — 1 FADH₂ from the oxidation to an unsaturated fatty acid, 1 NADH from the oxidation of the hydroxy acid to an oxo acid.", cn: "两个辅酶被对调了。这正是教材那两处括注要防的错误，也是它特意指明哪一步化学对应哪一个辅酶的原因——1 个 FADH₂ 来自氧化为不饱和脂肪酸，1 个 NADH 来自羟基酸氧化为酮酸。" },
+        2: { en: "The thiolytic cleavage is the step that releases the two-carbon unit; it is not a dehydrogenation and so reduces no coenzyme at all. Both reduced coenzymes come from the two oxidation steps that precede it in each round.", cn: "硫解裂解是把二碳单元放出来的那一步；它不是脱氢反应，因此根本不还原任何辅酶。两个还原型辅酶都来自每一轮中位于它之前的那两步氧化。" },
+        3: { en: "Activation is where an ATP is spent, not where a coenzyme is reduced: the fatty acid must first be activated to its acyl-CoA before degradation can begin. Both the FADH₂ and the NADH arise later, in the two oxidation steps of the round itself.", cn: "活化那一步花掉的是一个 ATP，不是还原辅酶的地方：脂肪酸必须先被活化成 acyl-CoA，分解才能开始。FADH₂ 与 NADH 都产生在更晚的位置，即这一轮本身的两步氧化中。" }
+      },
       why_en: "The book gives the two parentheses explicitly: 1 FADH₂ from oxidation of the acid to an unsaturated fatty acid, and 1 NADH from oxidation of the hydroxy acid to an oxo acid. Swapping them is the classic error, which is why the book bothers to state which is which.",
       why_cn: "教材明确给出这两个括注：1个FADH₂来自酸氧化为不饱和脂肪酸，1个NADH来自羟基酸氧化为酮酸。把二者弄反是经典错误，这正是教材特意指明各自对应的原因。"
     },
@@ -656,8 +704,14 @@ window.BIOCHEM.topics.push(
         "Synthesis removes two carbons at a time whereas degradation adds them"
       ],
       answer: 3,
-      why_en: "The three differences are carboxylation to malonyl-CoA, NADPH versus NADH, and the compartment/multienzyme-complex separation. Option 3 has the directions backwards anyway — synthesis ADDS two-carbon units and degradation REMOVES them.",
-      why_cn: "三点差异是：羧化为丙二酰CoA、NADPH对NADH，以及区室/多酶复合体的分隔。选项3本身方向也弄反了——合成是**添加**二碳单元，分解是**移除**它们。"
+      optionRefs: { 0: "8-3-1", 1: "8-3-3", 2: "8-3-2" },
+      optionNotes: {
+        0: { en: "This IS the first of the three. Synthesis opens by activating the inactive methyl group of the acetyl through carboxylation to malonyl-CoA, and degradation has no counterpart to that step at all — which is precisely what makes it a difference rather than a shared feature.", cn: "这**就是**三点差异中的第一点。合成的开场是把乙酰基上那个无活性的甲基通过羧化活化成 malonyl-CoA，而分解方向根本没有对应的步骤——正因如此它才算差异，而不是共同点。" },
+        1: { en: "This is the second. The hydrogen donor for synthesis is NADPH whereas oxidation produces NADH — the same functional segregation of the two nicotinamide coenzymes that makes the pentose phosphate route a supplier of biosynthetic reducing power rather than of ATP.", cn: "这是第二点。合成的供氢体是 NADPH，而氧化产生的是 NADH——正是这两种烟酰胺辅酶的功能分工，使 pentose phosphate 路线成为生物合成还原力的供应者而不是 ATP 的供应者。" },
+        2: { en: "This is the third, and it is really two claims at once: a different compartment, and a different architecture. Degradation is mitochondrial; synthesis runs in the cytoplasm on a multienzyme complex that keeps every intermediate bound and releases only the finished C16 and C18 acyl-CoA.", cn: "这是第三点，而且它其实同时是两个论断：不同的区室，加上不同的结构。分解在线粒体中进行；合成在细胞质中于一个多酶复合体上运行，所有中间体都保持结合状态，只有做完的 C16 与 C18 acyl-CoA 才被放出来。" }
+      },
+      why_en: "The three differences are carboxylation to malonyl-CoA, NADPH versus NADH, and the compartment/multienzyme-complex separation. Option D has the directions backwards anyway — synthesis ADDS two-carbon units and degradation REMOVES them.",
+      why_cn: "三点差异是：羧化为丙二酰CoA、NADPH对NADH，以及区室/多酶复合体的分隔。选项D本身方向也弄反了——合成是**添加**二碳单元，分解是**移除**它们。"
     },
     {
       type: "short",
@@ -721,12 +775,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why can the animal organism not make saccharides from fats?",
       q_cn: "动物机体为何不能由脂肪制造糖？",
       options: [
-        "Because fatty acid degradation does not reach acetyl-CoA",
+        "Because the β-oxidation of fatty acids never gets as far as acetyl-CoA in the first place",
         "Because it cannot convert acetyl-CoA into pyruvate, the starting compound for saccharide synthesis",
-        "Because the citrate cycle consumes all the acetyl-CoA",
-        "Because glycerol cannot be phosphorylated"
+        "Because the citrate cycle consumes every molecule of acetyl-CoA before any of it can be diverted elsewhere",
+        "Because the glycerol released from a fat can be neither oxidized nor phosphorylated"
       ],
       answer: 1,
+      optionRefs: { 0: "8-4-4-2", 2: "6-2-2-1", 3: "10-8" },
+      optionNotes: {
+        0: { en: "Fatty acid degradation certainly does reach acetyl-CoA — that is the premise the whole relationship rests on. Both saccharides and lipids are degraded to acetyl-CoA, and the difficulty is what happens after that, not before.", cn: "脂肪酸的降解当然抵达 acetyl-CoA——整个关系正建立在这个前提上。糖类与脂类都被降解到 acetyl-CoA，困难在于**之后**发生什么，而不是之前。" },
+        2: { en: "It does not consume all of it: when the cell's energy demands are LOW, acetyl-CoA goes above all into the synthesis of fatty acids and fats. The branch point is real and both branches are used — which is why an excess of either sugar or fat ends up stored as fat.", cn: "它并没有消耗掉全部：当细胞能量需求**低**时，acetyl-CoA 主要走向脂肪酸与脂肪的合成。这个分叉是真实的，两条路都在用——这也正是糖或脂肪只要过量就都会以脂肪形式储存的原因。" },
+        3: { en: "Glycerol is the one part of a fat that does reach sugar metabolism: it can be oxidized to the triose glyceraldehyde and, in phosphorylated form, joins saccharide metabolism directly. What is stuck is the acyl carbon, which is the great majority of a fat's mass.", cn: "甘油恰恰是脂肪中**能够**进入糖代谢的那一部分：它可被氧化为丙糖 glyceraldehyde，并以磷酸化形式直接并入糖代谢。被卡住的是酰基上的碳，而那才是脂肪质量的绝大部分。" }
+      },
       why_en: "The book's stated reason is the missing acetyl-CoA → pyruvate conversion. Fatty acid degradation certainly does reach acetyl-CoA (that is the premise), and glycerol certainly can be phosphorylated and does join sugar metabolism — it is the acyl carbon that is stuck.",
       why_cn: "教材给出的理由是缺少「乙酰CoA→丙酮酸」这一转变。脂肪酸降解当然抵达乙酰CoA（那正是前提），甘油也确实能被磷酸化并并入糖代谢——被卡住的是酰基上的碳。"
     },
@@ -797,12 +857,18 @@ window.BIOCHEM.topics.push(
       q_en: "In one turn of the citrate cycle, which conversions give the 3 NADH?",
       q_cn: "在柠檬酸循环的一轮中，哪些转变产生那3个NADH？",
       options: [
-        "Citrate, succinate and fumarate",
+        "Citrate, succinyl-CoA and oxaloacetate",
         "Isocitrate, α-oxoglutarate and malate",
         "Succinate, fumarate and malate",
         "Acetyl-CoA, citrate and isocitrate"
       ],
       answer: 1,
+      optionRefs: { 0: "6-2-2-3", 2: "6-2-4-2", 3: "6-2-2-1" },
+      optionNotes: {
+        0: { en: "None of these three is an NADH step. Citrate is only isomerized to isocitrate; succinyl-CoA is where the cycle's one macroergic compound, GTP, is made; and oxaloacetate is the acceptor that binds acetyl-CoA to start the turn, not a substrate that gets oxidized.", cn: "这三个没有一个是 NADH 步骤。citrate 只是被异构化成 isocitrate；succinyl-CoA 是循环中唯一那个高能化合物 GTP 生成的位置；而 oxaloacetate 是结合 acetyl-CoA、开启一轮的受体，不是被氧化的底物。" },
+        2: { en: "Malate belongs, but succinate is the FAD step — the single FADH₂ of the turn comes from the dehydrogenation of succinate to fumarate — and fumarate is only hydrated to malate, with no oxidation at all. One right out of three.", cn: "malate 是对的，但 succinate 是那个 FAD 步骤——一轮中唯一的 FADH₂ 来自 succinate 脱氢生成 fumarate——而 fumarate 只是被水合成 malate，完全没有氧化。三个里对一个。" },
+        3: { en: "These are the cycle's opening moves, not its oxidations: acetyl-CoA binds oxaloacetate to give citrate, and citrate is then isomerized to isocitrate. Only from isocitrate onwards does the first of the two oxidative decarboxylations begin.", cn: "这几个是循环的开场动作，不是它的氧化步骤：acetyl-CoA 与 oxaloacetate 结合生成 citrate，citrate 再被异构成 isocitrate。要到 isocitrate 之后，两次氧化脱羧中的第一次才开始。" }
+      },
       why_en: "The book names them explicitly: the 3 NADH come from the oxidative conversions of isocitrate, α-oxoglutarate and malate. The single FADH₂ comes from the dehydrogenation of succinate to fumarate — succinate is therefore the FAD step, not an NAD one.",
       why_cn: "教材明确点名：3个NADH来自异柠檬酸、α-酮戊二酸与苹果酸的氧化转变。唯一的FADH₂来自琥珀酸脱氢为延胡索酸——因此琥珀酸对应的是FAD那一步，而非NAD。"
     },
@@ -867,12 +933,18 @@ window.BIOCHEM.topics.push(
       q_en: "What TWO problems does the book say would arise from uncontrolled coexistence of enzyme reactions?",
       q_cn: "教材说酶反应在不受控的共存状态下会产生哪**两个**问题？",
       options: [
-        "Reactions would be too slow, and substrates would be exhausted",
+        "Reactions would run far too slowly, and the substrates they depend on would be exhausted far too early",
         "Reactions would run uselessly, and the effects of some enzyme systems would mutually interfere",
-        "Enzymes would denature, and products would accumulate",
-        "Compartments would mix, and membranes would fail"
+        "Enzymes would denature at their own working temperature, and their products would accumulate",
+        "The cell's compartments would mix, and the membranes separating them would fail"
       ],
       answer: 1,
+      optionRefs: { 2: "3-4", 3: "8-5-2-1" },
+      optionNotes: {
+        0: { en: "Speed is not the complaint. Uncontrolled enzyme reactions would run too FAST and in the wrong places — that is the waste half of the problem. Substrate exhaustion is a consequence of running uselessly, not one of the two failure modes the book names.", cn: "抱怨的不是速度。不受控的酶反应会跑得**太快**、而且跑在不该跑的地方——那才是问题里「浪费」的那一半。底物耗尽是徒劳运行的**后果**，而不是教材点名的两种失效模式之一。" },
+        2: { en: "Denaturation is a matter of pH and temperature, treated elsewhere as a physical limit on enzyme activity rather than as a regulatory problem. Regulation exists because reactions that all work perfectly well would still conflict with one another.", cn: "变性是 pH 与温度的问题，在别处作为酶活性的物理限制来处理，而不是作为调控问题。调控之所以存在，是因为**即使每个反应都工作得好好的**，它们之间仍会彼此冲突。" },
+        3: { en: "Membranes and compartments are part of the ANSWER, not part of the problem. Compartmentation is one of the mechanisms §10.2 offers, and it works precisely because synthetic and degradative reactions that share intermediates can then run separately.", cn: "膜与区室属于**答案**的一部分，不属于问题的一部分。区室化是§10.2 提出的机制之一，它之所以有效，正是因为共有中间体的合成与降解反应因此可以分开进行。" }
+      },
       why_en: "The book names exactly these two: useless running (waste) and mutual interference between enzyme systems (conflict). It concludes that a high degree of organization is possible only under consistent regulation.",
       why_cn: "教材点名的正是这两项：徒劳地运行（浪费）以及酶系统之间的彼此干扰（冲突）。其结论是：高度的组织化只有在一贯调节之下才可能。"
     },
@@ -939,12 +1011,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does substrate-concentration regulation stop working at high substrate concentrations, and why does the book say it still matters?",
       q_cn: "为何底物浓度调节在高底物浓度下失效？教材又为何说它依然重要？",
       options: [
-        "Because the substrate inhibits the enzyme; but inhibitors are removed in vivo",
+        "Because at that point the substrate itself begins to inhibit the enzyme; but in vivo such inhibitors are being continuously removed again",
         "Because the enzyme leaves the first-order region and saturates; but in vivo the assumptions for this type of regulation are fulfilled",
-        "Because the enzyme is degraded; but it is resynthesized in vivo",
-        "Because the product accumulates; but it is removed in vivo"
+        "Because the enzyme is degraded at high substrate load; but in vivo it is continuously resynthesized by induction",
+        "Because the product accumulates and inhibits the enzyme; but in vivo that product is continuously drawn off"
       ],
       answer: 1,
+      optionRefs: { 0: "3-5", 2: "4-2-4-1", 3: "10-14" },
+      optionNotes: {
+        0: { en: "Substrate inhibition is a real phenomenon but not the one at work here. What ends the substrate's grip on the rate is saturation: past the first-order region the enzyme is working flat out and further substrate changes nothing, whether or not it also inhibits.", cn: "底物抑制确实存在，但这里起作用的不是它。终结「底物决定速率」的是**饱和**：越过一级动力学区之后，酶已经开足马力，再加底物什么也不会改变——无论它是否同时具有抑制作用。" },
+        2: { en: "Changing the AMOUNT of enzyme is the chapter's second regulatory mechanism, by induction or repression of its biosynthesis, and it is a different lever entirely — slower, but it sets the ceiling. Substrate-level regulation changes the rate of the enzyme that is already there.", cn: "改变酶的**数量**是本章的第二种调节机制，通过对其生物合成的诱导或阻遏实现，那是完全另一根杠杆——慢一些，但它决定上限。底物水平的调节改变的是**已经在场**的那个酶的速率。" },
+        3: { en: "Product inhibition is a mechanism the book does list — on accumulation of the product the enzyme reaction slows down — but it is a separate self-limiting loop, not the reason the substrate dependence gives out. Saturation happens even when the product is removed as fast as it appears.", cn: "产物抑制确实是教材列出的一种机制——产物积累时酶反应减慢——但那是另一个自限回路，不是「底物依赖失效」的原因。哪怕产物一生成就被立刻移走，饱和照样会发生。" }
+      },
       why_en: "The dependence of rate on substrate holds only in the first-order, linear region; at high substrate the enzyme is saturated and further substrate changes nothing. The book then says in vivo conditions do satisfy the assumptions — i.e. cellular substrate levels sit in the responsive region.",
       why_cn: "速率对底物的依赖只在一级动力学的线性区成立；高底物时酶已饱和，再加底物毫无作用。教材随后指出体内条件确实满足这些前提——即细胞内的底物水平正处于响应灵敏区。"
     },
@@ -1013,12 +1091,18 @@ window.BIOCHEM.topics.push(
       q_en: "What structurally distinguishes allosteric regulation from ordinary competitive inhibition?",
       q_cn: "从结构上看，别构调节与普通竞争性抑制的区别何在？",
       options: [
-        "The allosteric effector binds into the active site more tightly",
+        "The allosteric effector binds into the active site itself, only far more tightly than the substrate does",
         "The allosteric effector binds to a site OTHER than the active site and works by changing the enzyme's conformation",
-        "Allosteric regulation requires covalent modification of the enzyme",
-        "Allosteric regulation only inhibits, never activates"
+        "Allosteric regulation requires a covalent modification of the enzyme protein, most often an enzymatic phosphorylation",
+        "Allosteric regulation can only slow an enzyme down and never speed it up, whatever the effector"
       ],
       answer: 1,
+      optionRefs: { 0: "3-5", 2: "10-16", 3: "3-7" },
+      optionNotes: {
+        0: { en: "Binding into the active site — however tightly — is what ordinary inhibition does, and it forces the inhibitor to resemble the substrate. The whole value of allostery is that the effector site is elsewhere, so a chemically unrelated end product can regulate an enzyme acting on something quite different.", cn: "结合到活性位点上——无论多紧——那是普通抑制作用做的事，而且它要求抑制剂在化学上像底物。别构作用的全部价值恰在于效应物位点在别处，于是一个化学上毫不相干的终产物，才能去调节一个作用于完全不同分子的酶。" },
+        2: { en: "That is enzyme modification, a separate mechanism in the same section: an enzyme is switched between more and less active forms by an enzymatically catalysed chemical change, most often phosphorylation. Allostery changes nothing covalently — the effector binds, the conformation shifts, and the effector can leave again.", cn: "那是**酶修饰**，同一节里另一种机制：靠一次酶催化的化学改变，把酶在活性较高与较低的形式之间切换，最常见的是磷酸化。别构作用不涉及任何共价改变——效应物结合、构象改变，效应物还能再离开。" },
+        3: { en: "The book's term is allosteric activation AND inhibition, and it names both in the same breath. That two-way capability is part of why it is called one of the most effective mechanisms of metabolic regulation, in explicit contrast to the substrate-concentration mechanism it calls not very effective.", cn: "教材用的说法是别构**激活与抑制**，两者在同一句里被点名。这种双向能力，正是它被称为最有效的代谢调节机制之一的原因之一——与它明确称为「不太有效」的底物浓度机制形成对照。" }
+      },
       why_en: "The book's definition is precisely this: the metabolite does not bind into the active site but to another site of the enzyme protein, and the effect occurs by a change of conformation. That separation is what lets a chemically unrelated end product regulate the enzyme. Note also that allosteric control covers both activation AND inhibition.",
       why_cn: "教材的定义正是如此：该代谢物不结合到活性位点，而是结合到酶蛋白的另一位点，其效应通过构象改变实现。正是这种分离使化学上不相干的终产物得以调节该酶。另请注意别构调控既包括激活**也**包括抑制。"
     },
@@ -1085,12 +1169,18 @@ window.BIOCHEM.topics.push(
       q_en: "Besides being allosterically controlled, how else can an enzyme act as a controlling enzyme?",
       q_cn: "除了受别构调控之外，一个酶还可以通过什么方式充当调控酶？",
       options: [
-        "By having an unusually high Km",
+        "By having a Km so high that the enzyme never saturates inside the cell",
         "By catalysing a practically irreversible reaction, e.g. a strongly exergonic one",
-        "By existing as several isoenzymes",
-        "By being localized in a separate compartment"
+        "By existing in the cell as several isoenzymes with different properties",
+        "By being localized in a compartment of its own, separate from the rest of the pathway"
       ],
       answer: 1,
+      optionRefs: { 0: "3-3-1", 2: "3-7", 3: "10-16" },
+      optionNotes: {
+        0: { en: "A high Km makes an enzyme responsive to substrate, not controlling: it keeps the enzyme in the first-order region where the rate follows the substrate concentration. That is the chapter's FIRST and explicitly least effective mechanism, the one it calls simple though not very effective.", cn: "高 Km 让一个酶对底物**敏感**，而不是让它成为调控者：它把酶留在一级动力学区，速率随底物浓度走。那是本章的**第一种**机制，也是它明确评价为「简单但不太有效」的那一种。" },
+        2: { en: "Isoenzymes are a separate regulatory principle, listed later in §10.2 and then handed off to kap. 3.7.3 without further development. The book adds nothing about them here, and being a controlling enzyme is not one of the things it says they do.", cn: "同工酶是另一条独立的调节原理，在§10.2 后面被列出，随即交给 kap. 3.7.3 而不再展开。教材在这里对它们没有补充任何内容，「充当调控酶」也不在它所说的它们的作用之列。" },
+        3: { en: "Compartmentation is likewise a separate mechanism of the same list, and it works on whole pathways rather than on one enzyme's status — its stated purpose is letting synthetic and degradative reactions that share intermediates run separately and in a controlled way.", cn: "区室化同样是同一张清单上另一种独立的机制，而且它作用于**整条途径**，而不是某一个酶的身份——它被写明的用途，是让共有中间体的合成与降解反应分开、并在受控状态下进行。" }
+      },
       why_en: "The book widens the definition exactly this way, and gives phosphofructokinase as the example. Isoenzymes and compartmentation are separate regulatory mechanisms listed later in §10.2, not ways of being a controlling enzyme.",
       why_cn: "教材正是以这种方式拓宽定义的，并举磷酸果糖激酶为例。同工酶与区室化是§10.2后文另行列出的调节机制，而非成为调控酶的途径。"
     },
@@ -1159,12 +1249,18 @@ window.BIOCHEM.topics.push(
       q_en: "What problem does the book say compartmentation solves?",
       q_cn: "教材说区室化解决了什么问题？",
       options: [
-        "It concentrates enzymes so that reaction rates increase",
+        "It concentrates the enzymes into very small volumes, so that the rates of all the reactions they catalyse increase accordingly with it",
         "It allows synthetic and degradative reactions that have partly the same intermediates to run separately and in a controlled way",
-        "It prevents enzymes from being phosphorylated",
-        "It removes the need for allosteric control"
+        "It keeps the enzymes out of reach of the kinases that would otherwise phosphorylate them and switch them off",
+        "It removes any need for allosteric control, since pathways kept apart cannot interfere with one another anyway"
       ],
       answer: 1,
+      optionRefs: { 2: "10-18", 3: "10-14" },
+      optionNotes: {
+        0: { en: "Concentration is not the purpose the book gives. What it names is the transport step: substrates and products must be moved, mostly in a CONTROLLED way, across the membranes separating the compartments — so compartmentation adds a control point rather than simply speeding things up.", cn: "教材给出的目的不是浓缩。它点名的是**转运**这一步：底物与产物必须跨越分隔各区室的膜、而且多半是以**受控**方式被搬运——所以区室化增加的是一个控制点，而不只是把反应加快。" },
+        2: { en: "Phosphorylation is the chapter's most common form of enzyme modification and one of the mechanisms it recommends, not something to be shielded from; the hormone cascades of §10.3 all terminate in exactly that. Compartmentation separates opposed pathways, not enzymes from their regulators.", cn: "磷酸化是本章最常见的酶修饰形式，也是它推荐的机制之一，不是需要被挡开的东西；§10.3 里那些激素级联的终点正是它。区室化分隔的是**彼此相反的途径**，不是把酶与调节它的东西隔开。" },
+        3: { en: "The two work together rather than replacing each other. Allosteric control is called one of the most effective mechanisms of metabolic regulation, and it acts on a single controlling enzyme inside a pathway; compartmentation acts between pathways. Fatty acid synthesis versus β-oxidation needs both.", cn: "两者是配合，不是互相取代。别构调控被称为最有效的代谢调节机制之一，它作用于一条途径**内部**的某个调控酶；区室化作用于途径**之间**。脂肪酸合成与 β-oxidation 这一对，两者都需要。" }
+      },
       why_en: "The book states this purpose explicitly. Sharing intermediates is exactly the difficulty: without physical separation, a synthetic and a degradative pathway drawing on the same intermediate would interfere — the second failure mode named at the start of §10.2.",
       why_cn: "教材明确指出了这一目的。共有中间体正是难点所在：若无物理分隔，一条合成途径与一条降解途径取用同一中间体就会彼此干扰——这正是§10.2开篇点出的第二种失效模式。"
     },
@@ -1234,12 +1330,18 @@ window.BIOCHEM.topics.push(
       q_en: "In the hypophysis–adrenal cortex regulatory circuit, where does the inhibition arrow from cortisol point?",
       q_cn: "在垂体—肾上腺皮质调节回路中，来自皮质醇的抑制箭头指向何处？",
       options: [
-        "To the adrenal cortex only",
-        "To the hypophysis only",
+        "Back only to the adrenal cortex that produced it",
+        "To the hypophysis only, and no further up",
         "To BOTH the hypophysis and the diencephalon",
-        "To the target tissues"
+        "Down to the target tissues themselves"
       ],
       answer: 2,
+      optionRefs: { 0: "10-21", 1: "10-22", 3: "10-20" },
+      optionNotes: {
+        0: { en: "A gland cannot regulate itself by inhibiting itself in the diagram — cortisol is drawn leaving the adrenal cortex, and the feedback arrow goes UP, to the levels that command it. Inhibiting its own source would be a loop with no controller in it.", cn: "在图里，一个腺体不可能靠抑制自己来调节自己——cortisol 被画成**离开**肾上腺皮质，而反馈箭头是**向上**指向指挥它的那些层级的。抑制自己的来源，那是一个没有控制者的回路。" },
+        1: { en: "One level up, and the figure shows two. The hypophysis is the middle level, and the arrow reaching it is only half of the feedback — ACTH, the glandotropic hormone made there, is itself commanded by the neurosecretion of the diencephalon above it.", cn: "只往上一层，而图上画的是两层。垂体是中间那一层，指向它的箭头只是反馈的一半——在那里生成的促腺激素 ACTH，本身还受上一层间脑神经分泌物的指挥。" },
+        3: { en: "The tissues are where cortisol ACTS, at the bottom of the chain — that is the forward arrow, not the feedback one. Inhibition has to travel back against the direction of the cascade if it is to shut the production down.", cn: "组织是 cortisol **发挥作用**的地方，位于链条最底端——那是正向箭头，不是反馈箭头。抑制若要关掉产量，就必须逆着级联的方向往回走。" }
+      },
       why_en: "The diagram runs the inhibition arrow back from the peripherally effective hormone to both the hypophysis and the diencephalon — two levels above it. Feedback at only one level would be a weaker circuit and is not what the figure shows.",
       why_cn: "图中的抑制箭头从外周有效激素同时回指垂体与间脑——即其上方的两个层级。只在一个层级上反馈会构成较弱的回路，而这并非该图所示。"
     },
@@ -1308,12 +1410,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which residues does the cyclic-AMP-activated protein kinase phosphorylate?",
       q_cn: "由环化AMP激活的蛋白激酶磷酸化哪些残基？",
       options: [
-        "Tyrosine residues",
+        "Tyrosine residues only",
         "Serine and threonine residues",
         "Histidine and aspartate residues",
         "Lysine and arginine residues"
       ],
       answer: 1,
+      optionRefs: { 0: "10-20" },
+      optionNotes: {
+        0: { en: "Tyrosine phosphorylation belongs to a different mechanism of hormone action: insulin and a number of growth factors stimulate the tyrosine kinase activity of their own receptors, which autophosphorylate their tyrosine residues. The residue is what tells the two apart.", cn: "酪氨酸的磷酸化属于另一种激素作用机制：insulin 与若干生长因子激活的是**它们自己受体**的酪氨酸激酶活性，受体自身的酪氨酸残基被自磷酸化。残基种类正是区分这两者的标志。" },
+        2: { en: "Neither residue is named anywhere in this chapter's account of hormone action. Where the book does specify residues it gives only two sets — serine and threonine for the cyclic AMP kinase and for protein kinase C, tyrosine for the receptor kinases.", cn: "本章讲激素作用时，任何地方都没有点名这两种残基。教材凡是指明残基的地方只给出两组——环化 AMP 激酶与 protein kinase C 对应丝氨酸与苏氨酸，受体激酶对应酪氨酸。" },
+        3: { en: "Lysine and arginine are basic residues carrying a positive charge; they are not phosphorylation targets here. Adding a phosphate to a hydroxyl is what these kinases do, which is why the substrates are the hydroxy amino acids.", cn: "赖氨酸与精氨酸是带正电的碱性残基，在这里不是磷酸化的对象。这些激酶做的是往**羟基**上加一个磷酸，所以底物才是带羟基的那几种氨基酸。" }
+      },
       why_en: "The book states that the kinase phosphorylates serine and threonine residues of target proteins. Tyrosine phosphorylation belongs to a different mechanism — the insulin/growth factor receptor tyrosine kinases (node 10-20).",
       why_cn: "教材指出该激酶磷酸化靶蛋白上的丝氨酸与苏氨酸残基。酪氨酸的磷酸化属于另一种机制——胰岛素/生长因子的受体酪氨酸激酶（节点10-20）。"
     },
@@ -1382,14 +1490,20 @@ window.BIOCHEM.topics.push(
       q_en: "What are the two products of phospholipase C acting on phosphatidylinositol-4,5-bisphosphate, and what does each do?",
       q_cn: "磷脂酶C作用于磷脂酰肌醇-4,5-二磷酸产生哪两种产物？各自做什么？",
       options: [
-        "Cyclic AMP, which activates protein kinase A; and AMP, which is inert",
+        "Cyclic AMP, which activates a protein kinase; and AMP, which is the inert product of its hydrolysis",
         "Inositol trisphosphate, which opens Ca²⁺ channels; and diacylglycerol, which activates protein kinase C",
-        "Arachidonate, which becomes prostaglandins; and stearate, which is stored",
-        "Inositol trisphosphate, which activates protein kinase C; and diacylglycerol, which opens Ca²⁺ channels"
+        "Arachidonate, which goes on to become the prostaglandins; and stearate, which is simply stored away",
+        "Inositol trisphosphate, which activates protein kinase C; and diacylglycerol, which opens the Ca²⁺ channels"
       ],
       answer: 1,
-      why_en: "The figure annotates each product with its action: inositol-1,4,5-trisphosphate → opening of Ca²⁺ channels, diacylglycerol → activation of protein kinase C. Option 3 has the two swapped, which is the standard error.",
-      why_cn: "图中为每个产物标注了其作用：肌醇-1,4,5-三磷酸→打开Ca²⁺通道，二酰甘油→激活蛋白激酶C。选项3把二者弄反了，这是常见错误。"
+      optionRefs: { 0: "10-18", 2: "10-26" },
+      optionNotes: {
+        0: { en: "That is the other cascade, and its shape is different: adenylate cyclase makes ONE messenger from ATP, and phosphodiesterase then hydrolyses it to AMP. Having two products that both carry the signal is exactly what distinguishes the phosphoinositide route from the cyclic AMP one.", cn: "那是另一条级联，而且形状不同：adenylate cyclase 从 ATP 生成**一个**信使，随后 phosphodiesterase 把它水解成 AMP。而**两个产物都在传递信号**，恰恰是磷酸肌醇路线区别于环化 AMP 路线之处。" },
+        2: { en: "These are the two fatty acyl chains of the substrate, not the products of the cleavage — the figure labels them as usually arachidonate and usually stearate on phosphatidylinositol itself. Phospholipase C cuts the head group off; the acyl chains stay on the diacylglycerol.", cn: "这两个是**底物**上的两条脂酰链，不是切割的产物——图上把它们标注在 phosphatidylinositol 本身上，写作「通常是 arachidonate」和「通常是 stearate」。phospholipase C 切掉的是头部基团；脂酰链留在 diacylglycerol 上。" },
+        3: { en: "The two products are swapped. Which goes where follows from solubility: the inositol phosphate is water-soluble and diffuses into the cytosol, where the calcium channels are, while diacylglycerol is a lipid and stays in the membrane, so protein kinase C has to come to it.", cn: "两个产物被对调了。谁去哪里，是由溶解性决定的：肌醇磷酸是水溶性的，扩散进胞质——钙通道在那里；而 diacylglycerol 是脂类，留在膜上，所以只能由 protein kinase C 过来找它。" }
+      },
+      why_en: "The figure annotates each product with its action: inositol-1,4,5-trisphosphate → opening of Ca²⁺ channels, diacylglycerol → activation of protein kinase C. Option D has the two swapped, which is the standard error.",
+      why_cn: "图中为每个产物标注了其作用：肌醇-1,4,5-三磷酸→打开Ca²⁺通道，二酰甘油→激活蛋白激酶C。选项D把二者弄反了，这是常见错误。"
     },
     {
       type: "short",
@@ -1457,14 +1571,20 @@ window.BIOCHEM.topics.push(
       q_en: "How does the steroid/thyroid hormone mechanism differ fundamentally from the other three?",
       q_cn: "类固醇/甲状腺激素的机制与其他三种有何根本不同？",
       options: [
-        "It uses a second messenger instead of a receptor",
+        "It works through a second messenger instead of through a receptor of its own, so that no receptor protein is involved anywhere in the whole process",
         "The hormone enters the cell, its receptor carries it into the nucleus and binds DNA, so the output is new protein rather than modified protein",
-        "It phosphorylates tyrosine rather than serine and threonine",
-        "It acts only on surrounding cells rather than through the blood"
+        "The receptor itself phosphorylates tyrosine residues rather than the serine and threonine that the surface cascades use",
+        "The hormone acts only on the cells immediately around it rather than travelling to its target through the blood"
       ],
       answer: 1,
-      why_en: "Steroid and thyroid hormones penetrate into the cell, bind receptors that are DNA-binding proteins, are transported into the nucleus and bind specific DNA sites, activating parts of the gene. Option 2 describes the receptor tyrosine kinase mechanism, which is a different one of the four.",
-      why_cn: "类固醇与甲状腺激素穿透进入细胞，结合能够结合DNA的受体蛋白，被运送进核并结合DNA的特定位点，激活基因的某些部分。选项2描述的是受体酪氨酸激酶机制，那是四种中的另一种。"
+      optionRefs: { 0: "10-18", 2: "10-24", 3: "10-17" },
+      optionNotes: {
+        0: { en: "It has the pairing inverted twice over. The steroid mechanism does have a receptor — one the book describes as a protein capable of binding DNA — and what it lacks is a second messenger. It is the surface cascades that generate one, and they have receptors too.", cn: "这句话把配对反了两遍。类固醇机制**有**受体——教材把它描述为一种能结合 DNA 的蛋白——它缺的是**第二信使**。产生第二信使的是那些表面级联，而且它们同样有受体。" },
+        2: { en: "That is the receptor tyrosine kinase mechanism, the one insulin and the growth factors use: the receptor phosphorylates its own tyrosine residues and thereby becomes more active towards its targets. Its output is still modified protein, and it never enters the nucleus.", cn: "那是受体酪氨酸激酶机制，insulin 与生长因子走的就是它：受体磷酸化自己的酪氨酸残基，从而对靶蛋白更有活性。它的产出仍然是**被修饰的蛋白**，而且它从不进入细胞核。" },
+        3: { en: "Acting on surrounding cells is written into the definition of a hormone itself — hormones either are secreted into the blood circulation or act on surrounding cells — so it separates no mechanism from any other. Steroids do travel in the blood, and specificity comes from which cells carry the receptor.", cn: "「作用于周围细胞」本来就写在激素的定义里——激素或者被分泌进血液循环，或者作用于周围细胞——所以它区分不了任何一种机制。类固醇确实经血液运输，而特异性来自哪些细胞携带受体。" }
+      },
+      why_en: "Steroid and thyroid hormones penetrate into the cell, bind receptors that are DNA-binding proteins, are transported into the nucleus and bind specific DNA sites, activating parts of the gene. Option C describes the receptor tyrosine kinase mechanism, which is a different one of the four.",
+      why_cn: "类固醇与甲状腺激素穿透进入细胞，结合能够结合DNA的受体蛋白，被运送进核并结合DNA的特定位点，激活基因的某些部分。选项C描述的是受体酪氨酸激酶机制，那是四种中的另一种。"
     },
     {
       type: "short",
@@ -1534,12 +1654,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which two hormones in Tab. 10.1 come from the same gland but from different tissues and different chemical classes?",
       q_cn: "表10.1中，哪两种激素来自同一腺体但取自不同组织、且属于不同化学类别？",
       options: [
-        "Progesterone and estradiol",
+        "Progesterone (ovary, corpus luteum) and estradiol (ovary, follicles), both steroids",
         "Cortisol (adrenal cortex, steroid) and adrenalin (adrenal medulla, amino-acid derivative)",
-        "Thyroxin and thyrocalcitonin",
-        "Melatonin and serotonin"
+        "Thyroxin (thyroid, amino-acid derivative) and thyrocalcitonin (thyroid, peptide)",
+        "Melatonin (epiphysis) and serotonin (organ column left blank), both amino-acid derivatives"
       ],
       answer: 1,
+      optionRefs: { 0: "10-23", 2: "10-22", 3: "10-24" },
+      optionNotes: {
+        0: { en: "Same gland and different tissue, but the same chemical class: both are ovarian steroids, listed in the same block of the table. Structurally they are close enough that estradiol has to be told apart from progesterone by its aromatic A ring alone.", cn: "同一腺体、不同组织，但**化学类别相同**：两者都是卵巢的类固醇，列在表中同一块里。结构上它们近到只能靠 estradiol 那个芳香 A 环来把它与 progesterone 分开。" },
+        2: { en: "Both come from the thyroid, and the two do fall in different blocks of the table — thyroxin among the amino-acid derivatives, thyrocalcitonin among the peptides. What is missing is the tissue split: the table gives the same organ cell for both, with no cortex-and-medulla division.", cn: "两者都来自甲状腺，而且确实分处表中不同的块——thyroxin 在氨基酸衍生物那块，thyrocalcitonin 在肽类那块。缺的是**组织**上的分野：表中给两者的器官栏是同一个，没有皮质与髓质那样的划分。" },
+        3: { en: "Different glands and the same class. Melatonin is listed from the epiphysis and serotonin has its organ cell left blank in the book, but both sit in the amino-acid-derived block — melatonin arising from tryptophan.", cn: "不同腺体，相同类别。melatonin 列的是 epiphysis，serotonin 的器官栏在书中是空着的，但两者都在氨基酸衍生物那一块里——melatonin 由 tryptophan 生成。" }
+      },
       why_en: "The table places cortisol in the adrenal cortex among the steroids and adrenalin in the adrenal medulla among the amino-acid derivatives. Both are stress hormones, but the table specifies adrenalin for SHORT-TERM stress. Progesterone and estradiol are both ovarian steroids; thyroxin and thyrocalcitonin are both thyroid but fall in different table blocks.",
       why_cn: "表中把皮质醇列在肾上腺皮质、归入类固醇，把肾上腺素列在肾上腺髓质、归入氨基酸衍生物。二者都是应激激素，但表中指明肾上腺素针对**短期**应激。孕酮与雌二醇同为卵巢类固醇；甲状腺素与降钙素同属甲状腺，但分处不同表块。"
     },
@@ -1614,9 +1740,15 @@ window.BIOCHEM.topics.push(
         "TSH (thyreotropin)",
         "ACTH (corticotropin)",
         "STH (somatotropin)",
-        "MSH (melanotropin)"
+        "HCG (chorionic gonadotropins)"
       ],
       answer: 1,
+      optionRefs: { 0: "10-24", 2: "10-25", 3: "10-17" },
+      optionNotes: {
+        0: { en: "TSH is a glandotropic hormone, but of the wrong circuit: the table gives its effect as stimulation of the thyroid gland. Put it in the three-level scheme and the peripherally effective hormone at the bottom would be thyroxin, not cortisol.", cn: "TSH 确实是促腺激素，但属于**另一条**回路：表中给它的作用是刺激甲状腺。把它放进三层图式里，底端那个外周有效激素就会是 thyroxin，而不是 cortisol。" },
+        2: { en: "Somatotropin is adenohypophyseal like ACTH, but it is not tropic at all — the table gives it as growth hormone and anabolic agent, acting on the tissues directly. A glandotropic hormone is defined by having another gland as its target.", cn: "somatotropin 和 ACTH 一样出自腺垂体，但它根本不是促腺性的——表中把它写作生长激素与合成代谢剂，直接作用于组织。促腺激素的定义，是以**另一个腺体**为靶。" },
+        3: { en: "The chorionic gonadotropins are listed from the placenta, not from the hypophysis, so they cannot be the middle level of a circuit whose middle level is the hypophysis by definition. Their listed effect is development and release of the ovum and protection of the corpus luteum.", cn: "绒毛膜促性腺激素在表中列的来源是胎盘而不是垂体，所以它不可能充当那条回路的中间层——那条回路的中间层按定义就是垂体。表中给它的作用是卵的发育与释放、以及保护黄体。" }
+      },
       why_en: "ACTH is listed as adenohypophyseal with the effect 'stimulation of the adrenal cortex', which is exactly the middle step of the three-level circuit in node 10-17: diencephalon → hypophysis (ACTH) → adrenal cortex (cortisol) → tissues. TSH is the corresponding tropic hormone for the thyroid, not the adrenal cortex.",
       why_cn: "ACTH被列为腺垂体来源、作用为「刺激肾上腺皮质」，这正是节点10-17三层回路的中间一步：间脑→垂体(ACTH)→肾上腺皮质(皮质醇)→组织。TSH是对应甲状腺的促激素，而非肾上腺皮质。"
     },
@@ -1687,12 +1819,18 @@ window.BIOCHEM.topics.push(
       q_en: "What structural feature makes estradiol immediately distinguishable from testosterone and progesterone?",
       q_cn: "什么结构特征使雌二醇能与睾酮、孕酮一眼区分开？",
       options: [
-        "It has an aldehyde group at C18",
+        "It carries an aldehyde group at C18, drawn in the figure as the HC=O group",
         "Its A ring is aromatic, carrying a phenolic OH, and it has lost the C19 methyl group",
-        "It has a C21 side chain with a CH₂OH ketone",
-        "It lacks the four-ring steroid skeleton entirely"
+        "It carries the C21 side chain with its CH₂OH ketone, exactly as all three corticoids do",
+        "It has lost the four-ring steroid skeleton entirely and is no longer a steran"
       ],
       answer: 1,
+      optionRefs: { 0: "10-21", 2: "10-21", 3: "8-2-4-3" },
+      optionNotes: {
+        0: { en: "The C18 aldehyde is aldosterone's signature, and it is the one decoration that separates it from corticosterone and cortisol on the same skeleton. It maps straight onto the function Tab. 10.1 gives aldosterone: mineral management and the retention of Na⁺ and water.", cn: "C18 上的醛基是 aldosterone 的标志，也是在同一骨架上把它与 corticosterone、cortisol 分开的那个装饰。它直接对应 Tab. 10.1 给 aldosterone 的功能：矿物质管理与 Na⁺ 和水的滞留。" },
+        2: { en: "That side chain is what all three corticoids share, not what tells any steroid apart: aldosterone, corticosterone and cortisol are drawn on one skeleton with a 4-en-3-one A ring and a C21 side chain bearing a CH₂OH ketone. Estradiol has no such chain at all.", cn: "那条侧链是三种 corticoid 的**共同点**，而不是区分任何甾体的标志：aldosterone、corticosterone 与 cortisol 画在同一副骨架上，带 4-en-3-one 的 A 环和一条带 CH₂OH 酮的 C21 侧链。estradiol 根本没有这样的侧链。" },
+        3: { en: "Estradiol is still a steroid — that is why it appears in the steroid block of Tab. 10.1 and among the sex hormones here. All four rings are intact; only the A ring has been aromatised, which is a change of bonding within that ring, not a loss of the skeleton.", cn: "estradiol 仍然是 steroid——所以它才出现在 Tab. 10.1 的类固醇块里、也出现在这里的性激素中。四个环都完好；只是 A 环被芳构化了，那是环内成键方式的改变，不是骨架的丢失。" }
+      },
       why_en: "The aromatic A ring with its phenolic hydroxyl, and the loss of the C19 angular methyl that aromatisation requires, are estradiol's signature. The C18 aldehyde belongs to aldosterone; the C21 side chain with CH₂OH belongs to the corticoids.",
       why_cn: "带酚羟基的芳香A环，以及芳构化所必需的C19角甲基的丢失，是雌二醇的标志。C18醛基属于醛固酮；带CH₂OH的C21侧链属于皮质类固醇。"
     },
@@ -1762,12 +1900,18 @@ window.BIOCHEM.topics.push(
       q_en: "What is the relationship between thyroxin and 3,5,3′-triiodothyronine?",
       q_cn: "甲状腺素与3,5,3′-三碘甲状腺原氨酸之间是什么关系？",
       options: [
-        "They are two unrelated thyroid hormones",
+        "They are two entirely unrelated thyroid hormones, built from different amino acids and acting on quite different target tissues",
         "Thyroxin is a prohormone; the active hormone is 3,5,3′-triiodothyronine, of the same structure but with one iodine atom fewer",
-        "Triiodothyronine is the storage form and thyroxin the active one",
-        "Triiodothyronine is made in the adrenal medulla, thyroxin in the thyroid"
+        "Triiodothyronine is the storage form held in thyroglobulin, and thyroxin is the active hormone released from it",
+        "Triiodothyronine is made in the adrenal medulla and thyroxin in the thyroid gland, both from the same amino acid"
       ],
       answer: 1,
+      optionRefs: { 0: "10-21", 3: "10-21" },
+      optionNotes: {
+        0: { en: "They have the same structure — the book says so outright — and differ by exactly one iodine atom. Both are derived from tyrosine, and both belong to the same block of Tab. 10.1, whose entry for thyroxin is increase of basal metabolism and development.", cn: "它们**结构相同**——教材原话如此——差别恰好是一个碘原子。两者都由 tyrosine 衍生而来，也同属 Tab. 10.1 的同一块，其中 thyroxin 那一行写的是提高基础代谢与发育。" },
+        2: { en: "The two roles are exchanged. Thyroglobulin is not a store of triiodothyronine but the protein inside which tyrosine residues are iodinated in the first place; the hormone is released by cleaving that protein, and what the gland then secretes chiefly is the inactive four-iodine form.", cn: "两个角色被对调了。thyroglobulin 不是 triiodothyronine 的储库，而是**碘化本身发生其中**的那个蛋白——酪氨酸残基就在它里面被碘化；激素靠切开这个蛋白才释放出来，而腺体随后主要分泌的是无活性的四碘形式。" },
+        3: { en: "The adrenal medulla makes the catecholamines — adrenalin and noradrenalin — which are tyrosine-derived like the thyroid hormones but stop at a quite different structure and act through a surface cascade rather than through the nucleus. Both thyroid hormones come from the thyroid.", cn: "肾上腺髓质产的是 catecholamine——adrenalin 与 noradrenalin——它们和甲状腺激素一样源自 tyrosine，但停在完全不同的结构上，而且通过表面级联而非细胞核起作用。两种甲状腺激素都来自甲状腺。" }
+      },
       why_en: "The book states this explicitly: thyroxin is a prohormone, the active hormone is 3,5,3′-triiodothyronine, which has the same structure as thyroxine but contains one iodine atom fewer. So the gland's main secretion is the inactive form and activation is a deiodination.",
       why_cn: "教材明确指出：甲状腺素是激素原，活性激素是3,5,3′-三碘甲状腺原氨酸，其结构与甲状腺素相同但少含一个碘原子。因此腺体主要分泌的是无活性形式，激活即为脱碘。"
     },
@@ -1839,12 +1983,18 @@ window.BIOCHEM.topics.push(
       q_en: "How do oxytocin and vasopressin differ structurally, and why is that instructive?",
       q_cn: "催产素与血管加压素在结构上有何不同？这为何具有启发性？",
       options: [
-        "They differ by a single disulfide bridge; this shows disulfides determine function",
+        "They differ in a single disulfide bridge, and that one bond is what gives each of the two its own distinct function",
         "They are both nonapeptides differing at only two positions, yet have entirely different functions — showing specificity lies in the receptor",
-        "Vasopressin is twice the size of oxytocin; size determines the target tissue",
-        "They differ only in their glycosylation"
+        "Vasopressin is roughly twice the size of oxytocin, and it is that plain difference in bulk that decides which of the tissues each one acts on",
+        "They differ only in their glycosylation: one carries a carbohydrate chain that the other lacks entirely"
       ],
       answer: 1,
+      optionRefs: { 2: "10-22", 3: "7-5" },
+      optionNotes: {
+        0: { en: "Both molecules carry the same disulfide, and it does the same job in each: the cystine bridge between the two cysteine residues is what closes the nine-residue ring at all. A feature the two share cannot be what makes their functions differ.", cn: "两个分子带的是**同一个**二硫键，而且在各自体内做同一件事：两个 cysteine 之间的 cystine 桥，正是把九残基环闭合起来的东西。两者共有的特征，不可能是造成功能差异的原因。" },
+        2: { en: "They are the same size — both are nonapeptides, nine residues each, and Tab. 10.1 lists them from the same posterior lobe. The whole point of the pair is that two substitutions in an otherwise identical molecule give uterine contraction on one hand and water retention on the other.", cn: "它们大小相同——都是 nonapeptide，各九个残基，而且 Tab. 10.1 把它们列在同一个神经垂体后叶下。这一对的全部要点在于：在其余完全相同的分子上换掉两个位置，一边得到子宫收缩，另一边得到水的滞留。" },
+        3: { en: "Neither is a glycoprotein. The book reserves that description for the larger protein hormones — folitropin, lutropin and erythropoetin are the ones it names as glycoproteins — and a nine-residue cyclic peptide is at the opposite end of the size continuum from them.", cn: "两者都不是 glycoprotein。教材把这个说法留给更大的蛋白类激素——它点名为 glycoprotein 的是 folitropin、lutropin 与 erythropoetin——而一个九残基的环状肽，处在这条大小连续谱的另一端。" }
+      },
       why_en: "Both are nine-residue rings closed by a cystine disulfide, and their sequences differ at exactly two positions. Despite that, Tab. 10.1 assigns them completely different actions. The lesson is the one §10.3 stated earlier: specificity resides in which cells carry which receptor.",
       why_cn: "二者都是由胱氨酸二硫键闭合的九残基环，序列恰好只在两个位置上不同。尽管如此，表10.1仍赋予它们完全不同的作用。其中的教益正是§10.3早先所述：特异性在于哪些细胞携带哪种受体。"
     },
@@ -1915,12 +2065,18 @@ window.BIOCHEM.topics.push(
       q_en: "What structurally separates the leukotrienes from the other three icosanoid families?",
       q_cn: "从结构上看，白三烯与其他三个二十烷酸家族的区别何在？",
       options: [
-        "Leukotrienes contain 20 carbons whereas the others contain 18",
+        "Leukotrienes contain 20 carbon atoms, whereas prostaglandins, prostacyclins and thromboxanes contain only 18 of them each",
         "Leukotrienes retain the open fatty acid chain, whereas prostaglandins, prostacyclins and thromboxanes all bear a ring",
-        "Leukotrienes are derived from stearate rather than arachidonate",
-        "Leukotrienes are peptides whereas the others are lipids"
+        "Leukotrienes are derived from stearate, whereas the other three families all come from arachidonate instead",
+        "Leukotrienes are peptides, whereas prostaglandins, prostacyclins and thromboxanes are all lipids"
       ],
       answer: 1,
+      optionRefs: { 0: "10-20", 2: "8-2-1-1", 3: "10-25" },
+      optionNotes: {
+        0: { en: "All four families contain twenty carbons — that is what the class name means, from Greek 'eikosi' = twenty, and it is why the book defines the group by carbon count rather than by function. A 20-carbon count cannot separate one branch from the other.", cn: "四个家族**都**含二十个碳——这正是类名的意思，来自希腊语 eikosi = 二十，也是教材按碳数而不是按功能来定义这一类的原因。二十这个数目，区分不了任何一个分支。" },
+        2: { en: "All of them come from arachidonate: panel (a) draws it in the middle as the common precursor, with one arrow up to the leukotrienes and a two-way split down to the prostaglandins and thromboxanes. Stearate appears in this chapter only as the other acyl chain of phosphatidylinositol.", cn: "它们**全都**来自 arachidonate：图 (a) 把它画在中间作为共同前体，一条箭头向上通往 leukotriene，向下则分成两支通往 prostaglandin 与 thromboxane。stearate 在本章只出现过一次，是 phosphatidylinositol 上的另一条脂酰链。" },
+        3: { en: "The icosanoids are the fourth chemical class of hormones and the peptide and protein hormones are the third — two separate blocks of Tab. 10.1. Leukotriene B₄ is drawn as an open fatty acid chain with conjugated double bonds and hydroxyls, which is a lipid and nothing like a peptide.", cn: "icosanoid 是激素的第四个化学类别，而肽类与蛋白类激素是第三类——是 Tab. 10.1 中两个分开的块。leukotriene B₄ 被画成一条带共轭双键与羟基的开链脂肪酸，那是脂类，跟肽毫不相干。" }
+      },
       why_en: "The branch diagram sends arachidonate one way to the leukotrienes and the other way to the prostaglandins and thromboxanes, and the drawn structures show why: leukotriene B₄ is an open chain with conjugated double bonds and hydroxyls, whereas the prostanoids have cyclised. All four families contain 20 carbons and all come from arachidonate.",
       why_cn: "分支图把花生四烯酸一路引向白三烯、另一路引向前列腺素与血栓素，而所画结构显示了原因：白三烯B₄是带共轭双键与羟基的开链，而前列腺烷类已经成环。四个家族都含20个碳，也都来自花生四烯酸。"
     },

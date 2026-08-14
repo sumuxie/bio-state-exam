@@ -54,6 +54,12 @@ window.BIOCHEM.topics.push(
       q_cn: "「蛋白质氨基酸在 α 碳上带有游离未取代氨基」这一规则的例外是哪种氨基酸？",
       options: ["Glycine", "Cysteine", "Proline", "Histidine"],
       answer: 2,
+      optionRefs: { 0: "2-1-2", 3: "3-6" },
+      optionNotes: {
+        0: { en: "Glycine is an exception, but to a different rule: because its R is only a hydrogen it is the one proteinogenic amino acid with no asymmetric carbon, so it is not optically active and is the single amino acid of proteins that stands outside the L-configuration series. Its α-amino group is free and unsubstituted like everyone else's.", cn: "甘氨酸确实是个例外，但例外的是另一条规则：它的 R 只是一个氢，所以它是唯一不含不对称碳的蛋白质氨基酸，没有旋光活性，也是蛋白质中唯一不属于 L-configuration series 的那一个。它 α 碳上的氨基和其他氨基酸一样，是游离且未被取代的。" },
+        1: { en: "Cysteine's peculiarity is entirely in the side chain — the –SH group that puts it in the polar group 2, and which the book names together with tyrosine as the most polar of that group. Nothing about its α-amino group differs from the other nineteen.", cn: "半胱氨酸的特殊之处完全在侧链上——那个 –SH 把它归入极性的第 2 组，教材还把它和酪氨酸一起点名为该组中极性最强的两个。它 α 碳上的氨基和其余十九个没有任何区别。" },
+        3: { en: "Histidine belongs to group 4, the positively charged side chains, on account of its weakly basic imidazole residue — the same imidazole that later turns up among the groups doing general acid-base catalysis in an active centre. That is a side-chain property; the α-amino group is unsubstituted.", cn: "组氨酸因侧链上那个弱碱性的 imidazole 而归入第 4 组，即带正电荷的一组——后面讲活性中心的 general acid-base catalysis 时，出现的也正是这个咪唑基。那是侧链的性质；它 α 碳上的氨基并没有被取代。" }
+      },
       why_en: "Proline is the sole exception — its nitrogen is part of a ring and is therefore substituted. (Glycine is the exception for a different rule: it is the one with no asymmetric carbon.)",
       why_cn: "脯氨酸是唯一的例外——其氮原子是环的一部分，因而是被取代的。（甘氨酸是另一条规则的例外：它是唯一不含不对称碳的氨基酸。）"
     },
@@ -63,11 +69,17 @@ window.BIOCHEM.topics.push(
       q_cn: "在本教材的分类中，哪些氨基酸构成非极性侧链组？",
       options: [
         "Ala, Leu, Ile, Val, Pro, Phe, Trp, Met",
-        "Ser, Thr, Tyr, Asn, Gln, Cys",
-        "Glu, Asp, Lys, Arg, His",
-        "Gly, Ala, Ser, Cys"
+        "Ser, Thr, Tyr, Asn, Gln, Cys, Gly, Ala",
+        "Glu, Asp, Lys, Arg, His, Ser, Thr, Cys",
+        "Gly, Ala, Ser, Cys, Pro, Thr, Val, Asn"
       ],
       answer: 0,
+      optionRefs: { 3: "2-2-4" },
+      optionNotes: {
+        1: { en: "This is group 2, the POLAR side chains, sorted by what they carry: an –OH (threonine, serine, tyrosine), an amide group (asparagine, glutamine) or an –SH (cysteine). Glycine is tacked on here, and the book says outright that glycine is very difficult to place in this classification at all; alanine genuinely is aliphatic and belongs in group 1.", cn: "这是第 2 组，即 POLAR 侧链，按侧链带什么分：带 –OH 的（苏氨酸、丝氨酸、酪氨酸）、带酰胺基的（天冬酰胺、谷氨酰胺）、带 –SH 的（半胱氨酸）。甘氨酸是硬塞进来的——教材明说甘氨酸在这个分类里非常难归位；丙氨酸则确实是脂肪族，属于第 1 组。" },
+        2: { en: "This merges the two charged groups — negatively charged glutamic and aspartic acid, which carry a second carboxyl, and positively charged lysine, arginine and histidine — and then adds three polar residues. Charge, not polarity, is the criterion that defines groups 3 and 4.", cn: "这是把两个带电组合在了一起——带负电的谷氨酸和天冬氨酸（侧链上多一个羧基），以及带正电的赖氨酸、精氨酸、组氨酸——再加了三个极性残基。第 3、4 组的判据是电荷，不是极性。" },
+        3: { en: "This is a sort by SIZE of side chain rather than by polarity. It is not a useless list — a high content of small residues, glycine, alanine and serine, is exactly what lets fibroin pack its planar β-antiparallel sheets regularly — but it cuts across the four-group polarity classification.", cn: "这是按侧链**大小**排的，不是按极性。这份名单并非没有用——正是甘氨酸、丙氨酸、丝氨酸这些小残基含量高，才让 fibroin 的 β-antiparallel 平面片层能规整地堆叠——但它和这里的四组极性分类是两把不同的尺子。" }
+      },
       why_en: "Five aliphatic (alanine, leucine, isoleucine, valine, proline), two aromatic (phenylalanine, tryptophan), one sulfur-containing (methionine) — eight in total.",
       why_cn: "五种脂肪族（丙氨酸、亮氨酸、异亮氨酸、缬氨酸、脯氨酸）、两种芳香族（苯丙氨酸、色氨酸）、一种含硫（甲硫氨酸）——共八种。"
     },
@@ -75,8 +87,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which amino acid does the textbook say is very difficult to place in the polarity classification?",
       q_cn: "教材说哪种氨基酸很难归入极性分类？",
-      options: ["Methionine", "Glycine", "Tyrosine", "Arginine"],
+      options: ["Proline", "Glycine", "Cysteine", "Tyrosine"],
       answer: 1,
+      optionRefs: { 0: "2-1-3", 2: "2-2-3", 3: "2-1-2" },
+      optionNotes: {
+        0: { en: "Proline is the odd one out, but under a different rule — it is the one amino acid of the twenty without a free unsubstituted amino group on the α-carbon, which is why ninhydrin turns it yellow instead of blue-violet. In the polarity sort it is placed without any difficulty, among the five aliphatic nonpolar side chains.", cn: "脯氨酸确实是那个另类，但另类的是另一条规则——二十个里只有它在 α 碳上没有游离未取代的氨基，所以茚三酮把它显成黄色而不是蓝紫色。在极性分类里它归位毫无困难：属于五个脂肪族非极性侧链之一。" },
+        2: { en: "Cysteine sits firmly in group 2 by way of its –SH group, and the book goes further — it names cysteine and tyrosine as the most polar of that whole group. Its own peculiarity is elsewhere: the –SH groups of two cysteines form the disulfide bridges that this textbook counts as part of the PRIMARY structure.", cn: "半胱氨酸凭 –SH 稳稳地待在第 2 组，教材还更进一步，把半胱氨酸和酪氨酸点名为整组中极性最强的两个。它真正的特殊之处在别处：两个半胱氨酸的 –SH 形成 disulfide bridges，而本教材把二硫键的位置算进**一级结构**。" },
+        3: { en: "Tyrosine is also group 2, through the –OH on its ring, and is named with cysteine as the most polar of the group. What makes it remarkable is a different property altogether — it is one of the three residues that absorb in the UV, which is what makes the A₂₈₀ reading of protein concentration possible.", cn: "酪氨酸同样属于第 2 组，靠的是环上的 –OH，并与半胱氨酸一起被点名为该组中极性最强的。它真正值得注意的是另一件事——它是三个在紫外区有吸收的残基之一，A₂₈₀ 测蛋白浓度就是靠它。" }
+      },
       why_en: "Glycine's side chain is just a hydrogen, so it fits neither the nonpolar nor the polar group comfortably. The textbook says so explicitly when listing group 2.",
       why_cn: "甘氨酸的侧链只是一个氢原子，因此既不适合归入非极性组，也不适合归入极性组。教材在列举第 2 组时明确指出了这一点。"
     },
@@ -167,8 +185,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which two amino acids commonly occurring in proteins contain TWO asymmetric carbons?",
       q_cn: "蛋白质中常见的哪两种氨基酸含有两个不对称碳原子？",
-      options: ["Serine and cysteine", "Threonine and isoleucine", "Tyrosine and tryptophan", "Leucine and valine"],
+      options: ["Cysteine and methionine", "Threonine and isoleucine", "Phenylalanine and tyrosine", "Leucine and isoleucine"],
       answer: 1,
+      optionRefs: { 0: "2-1-1" },
+      optionNotes: {
+        0: { en: "The two sulfur-containing amino acids, and a pair the book does keep together — but for a different reason: methionine is the sulfur member of nonpolar group 1, cysteine the –SH member of polar group 2. Each carries exactly one asymmetric carbon, like every proteinogenic amino acid except glycine and the two named here.", cn: "两个含硫氨基酸，教材确实常把它们放在一起讲，但理由不同：甲硫氨酸是非极性第 1 组里含硫的那一个，半胱氨酸是极性第 2 组里带 –SH 的那一个。它们各自只有一个不对称碳——除了甘氨酸和本题答案里那两个，蛋白质氨基酸都是如此。" },
+        2: { en: "Two of the three residues that absorb in the UV, which is what the A₂₈₀ protein assay rests on; that is their claim to being singled out, not their stereochemistry. Each has a single asymmetric carbon, and both belong to the L-configuration series like all the rest.", cn: "这是三个在紫外区有吸收的残基中的两个——A₂₈₀ 测蛋白浓度靠的就是它们；它们被单独拎出来讲是因为这个，而不是因为立体化学。它们各有一个不对称碳，也和其余所有氨基酸一样属于 L-configuration series。" },
+        3: { en: "A deliberate near-miss: isoleucine really is one of the two, but leucine is not. The two differ only in where the branch sits on the side chain, and that displaced branch is precisely the second asymmetric centre isoleucine has and leucine lacks.", cn: "这是刻意设的近似项：异亮氨酸确实是其中之一，亮氨酸不是。两者的差别只在侧链上支链的位置，而正是这个挪了位的支链构成了异亮氨酸多出来、亮氨酸没有的第二个不对称中心。" }
+      },
       why_en: "Glycine has none; all the others have exactly one, except threonine and isoleucine, which each have two.",
       why_cn: "甘氨酸没有；其余都恰好含一个，唯苏氨酸和异亮氨酸各含两个。"
     },
@@ -183,6 +207,12 @@ window.BIOCHEM.topics.push(
         "Aspartate and glutamate"
       ],
       answer: 2,
+      optionRefs: { 1: "2-2-3", 3: "2-1-1" },
+      optionNotes: {
+        0: { en: "Half right, and that is what makes it tempting: phenylalanine is the third of the three amino acids that absorb significantly in the UV. But the 280 nm reading is taken on tyrosine and tryptophan residues, and histidine contributes nothing here — none of the twenty absorbs in the visible region at all.", cn: "对了一半，所以才诱人：苯丙氨酸确实是紫外区有显著吸收的三个氨基酸中的第三个。但 280 nm 读的是酪氨酸和色氨酸残基，组氨酸在这里没有贡献——二十个氨基酸没有一个在可见光区有吸收。" },
+        1: { en: "Cysteine does have an absorbance worth remembering, but in its oxidised paired form: cystine absorbs weakly, and at 240 nm rather than 280. Methionine, the other sulfur amino acid, contributes nothing to either reading.", cn: "半胱氨酸确实有一个值得记住的吸收，但那是在它氧化成对之后：胱氨酸的吸收很弱，而且在 240 nm 而不是 280 nm。另一个含硫氨基酸甲硫氨酸对这两个波长都没有贡献。" },
+        3: { en: "These are the group-3 side chains, the two that carry a second carboxyl. They are what makes an amino acid's pI low and so what ion-exchange chromatography and electrophoresis separate on — a charge property, measured in a field, not by a spectrophotometer.", cn: "这是第 3 组的侧链，即多带一个羧基的那两个。它们决定的是氨基酸的 pI 偏低，也正是离子交换层析和电泳赖以分离的依据——那是电荷性质，靠电场量，不靠分光光度计。" }
+      },
       why_en: "Three amino acids absorb significantly in the UV — tyrosine, tryptophan and phenylalanine — but it is the tyrosine and tryptophan residues that the 280 nm method relies on. Cystine absorbs weakly at 240 nm.",
       why_cn: "三种氨基酸在紫外区有显著吸收——酪氨酸、色氨酸和苯丙氨酸——但 280 nm 方法依赖的是酪氨酸和色氨酸残基。胱氨酸在 240 nm 处有弱吸收。"
     },
@@ -190,8 +220,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "At LOW pH, an amino acid behaves as:",
       q_cn: "在低 pH 下，氨基酸表现为：",
-      options: ["An anion", "A cation", "A neutral molecule with no charge anywhere", "A radical"],
+      options: ["An anion", "A cation", "A zwitterion", "A free radical"],
       answer: 1,
+      optionRefs: { 0: "L-2-2-1", 2: "L-2-2-1" },
+      optionNotes: {
+        0: { en: "That is the behaviour at HIGH pH, the mirror image of this question: the ammonium group loses its proton and the molecule carries net negative charge. Reading the titration curve from low pH to high pH, the net charge runs from positive through zero to negative.", cn: "那是**高** pH 下的行为，正好是本题的镜像：铵基失去质子，分子带净负电荷。把滴定曲线从低 pH 往高 pH 读，净电荷是从正、经零、走到负的。" },
+        2: { en: "A zwitterion carries both charges at once and they cancel, so the net charge is zero — that is the state at the isoelectric point, the pH corresponding to half the consumption of titration agent, not at low pH. At low pH the carboxyl dissociation is suppressed and only the positive charge is left.", cn: "两性离子身上正负电荷同时存在并互相抵消，净电荷为零——那是**等电点**处的状态，即对应滴定试剂消耗量一半的那个 pH，不是低 pH 下的状态。低 pH 下羧基解离被压制，只剩下正电荷。" },
+        3: { en: "Nothing in the acid-base behaviour of amino acids produces radicals. The entire pH dependence is proton transfer at the –COOH and –NH₂ groups, and it is exactly that which the titration curve of glycine in Obr. 2.1 records, with one inflexion for each pK.", cn: "氨基酸的酸碱行为里不会产生自由基。整个 pH 依赖性就是 –COOH 和 –NH₂ 上的质子转移，图 2.1 里甘氨酸的滴定曲线记录的正是这件事，每个 pK 对应一个拐点。" }
+      },
       why_en: "At low pH the dissociation of the carboxyl is suppressed and it becomes protonated, so the molecule carries net positive charge — a cation. At high pH the ammonium group is deprotonated and it becomes an anion.",
       why_cn: "在低 pH 下羧基解离受抑并质子化，分子带净正电荷，即阳离子。在高 pH 下铵基去质子化，成为阴离子。"
     },
@@ -254,12 +290,18 @@ window.BIOCHEM.topics.push(
       q_en: "In the ninhydrin reaction, why does proline give a different colour from the other amino acids?",
       q_cn: "在茚三酮反应中，脯氨酸为什么与其他氨基酸呈现不同的颜色？",
       options: [
-        "It has no carboxyl group",
+        "Its carboxyl group has been reduced to an α-amino alcohol, so no colour develops",
         "Its –NH₂ group is substituted, so it gives yellow instead of blue-violet",
-        "It contains sulfur, which quenches the colour",
-        "It is the only D-amino acid in proteins"
+        "Its side chain contains sulfur, which diverts the reaction to a yellow product",
+        "It belongs to the D-configuration series, unlike the other nineteen"
       ],
       answer: 1,
+      optionRefs: { 2: "2-1-1", 3: "2-1-2" },
+      optionNotes: {
+        0: { en: "The –COOH group of an amino acid can indeed be reduced, and the product is an α-amino alcohol — but that is a separate reaction of the carboxyl group, run deliberately, not something proline arrives with. Ninhydrin is the characteristic reaction of the α-AMINO group, and proline's carboxyl is entirely ordinary.", cn: "氨基酸的 –COOH 确实可以被还原，产物是 α-amino alcohol——但那是羧基的另一个反应，是特意去做的，不是脯氨酸本来就带着的状态。茚三酮反应针对的是 α-**氨基**，而脯氨酸的羧基完全正常。" },
+        2: { en: "Proline's ring is built from carbon and its own α-nitrogen; there is no sulfur in it. Sulfur appears in exactly two of the twenty — methionine, the sulfur member of nonpolar group 1, and cysteine, the –SH member of polar group 2 — and neither of them changes the ninhydrin colour.", cn: "脯氨酸的环由碳和它自己的 α-氮构成，里面没有硫。二十个氨基酸里含硫的恰好只有两个——非极性第 1 组里的甲硫氨酸和极性第 2 组里带 –SH 的半胱氨酸——而这两个都不会改变茚三酮的显色。" },
+        3: { en: "All the amino acids found in proteins, glycine excepted, belong to the L-configuration series. D-amino acids do exist, but among the 150-plus that never enter a protein — the book's example is D-glutamic acid in bacterial cell walls.", cn: "蛋白质中的氨基酸除甘氨酸外全部属于 L-configuration series。D 型氨基酸确实存在，但存在于那 150 多个从不进入蛋白质的氨基酸里——教材举的例子是细菌细胞壁中的 D-谷氨酸。" }
+      },
       why_en: "The blue-violet product forms with a FREE –NH₂ group. Proline's nitrogen is part of a ring and hence substituted, so it gives a yellow product instead — the same structural peculiarity noted in section 2.1.1.",
       why_cn: "蓝紫色产物由游离的 –NH₂ 基生成。脯氨酸的氮是环的一部分、因而是被取代的，所以生成黄色产物——这与 2.1.1 节指出的结构特点是同一件事。"
     },
@@ -340,6 +382,11 @@ window.BIOCHEM.topics.push(
         "More than 500 amino acid residues"
       ],
       answer: 2,
+      optionNotes: {
+        0: { en: "This is a real threshold in the book, but the other one: not more than 10 residues is an OLIGOPEPTIDE, more than 10 a POLYPEPTIDE. Both numbers, 10 and 100, are conventions of naming rather than chemistry — nothing about the chain changes at either residue.", cn: "这确实是教材里的一条界限，但是另一条：不超过 10 个残基叫 OLIGOPEPTIDE，超过 10 个叫 POLYPEPTIDE。10 和 100 这两个数都只是命名上的约定，不是化学——在第 10 个或第 100 个残基处，链本身没有任何变化。" },
+        1: { en: "The book names no threshold at 50; its scale has exactly two marks on it, at 10 and at 100. Choosing a number that sounds reasonable is the standard way this question is lost, because all four options are equally plausible-sounding.", cn: "教材没有在 50 处设过界限；它这把尺子上只有两个刻度：10 和 100。挑一个听起来合理的数字，正是这道题最常见的失分方式——因为四个选项听起来都同样合理。" },
+        3: { en: "Any chain of more than 500 residues is of course a protein, but by satisfying the real threshold of 100, not by meeting a separate one at 500. A definition has to name the lowest number that qualifies, and here that number is 100.", cn: "超过 500 个残基的链当然是蛋白质，但那是因为它满足了 100 这条真正的界限，而不是因为在 500 处另有一条。定义必须给出满足条件的**最低**数字，而这里那个数字是 100。" }
+      },
       why_en: "The textbook's thresholds are explicit: not more than 10 = oligopeptide; more than 10 = polypeptide; more than 100 residues = protein.",
       why_cn: "教材给出的界限很明确：不超过 10 个为寡肽；多于 10 个为多肽；超过 100 个残基则为蛋白质。"
     },
@@ -350,10 +397,16 @@ window.BIOCHEM.topics.push(
       options: [
         "Begin at the free carboxyl end, end at the free amino end",
         "Begin at the free amino end, end at the free carboxyl end",
-        "Begin at whichever end carries the larger side chain",
-        "There is no fixed convention"
+        "Begin at whichever end carries the bulkier side chain, then read on",
+        "Begin at either end, as long as the direction chosen is stated"
       ],
       answer: 1,
+      optionRefs: { 0: "4-2-1" },
+      optionNotes: {
+        0: { en: "The convention read backwards — and this is the one wrong answer that does real damage, because the two ends of the chain are chemically different, so a sequence read the wrong way round names a different molecule. Ala-Gly and Gly-Ala are not two spellings of one thing.", cn: "把约定反过来读——这也是四个错项里真正有杀伤力的一个，因为肽链的两端在化学上并不相同，方向读反了，指的就是另一个分子。Ala-Gly 和 Gly-Ala 不是同一个东西的两种写法。" },
+        2: { en: "Side-chain size has nothing to do with it. What fixes the direction is how the chain is built: each residue offers its –COOH to the next residue's –NH₂, so exactly one free –NH₂ survives at one end and one free –COOH at the other, and those two ends are what the convention names.", cn: "侧链大小与此无关。定死方向的是链的搭建方式：每个残基把自己的 –COOH 交给下一个残基的 –NH₂，于是一端恰好剩下一个游离 –NH₂、另一端剩下一个游离 –COOH——约定指的就是这两个末端。" },
+        3: { en: "The point of having a convention is precisely that the direction never has to be stated: everyone writes N-terminus first, so a bare string of residues is already unambiguous. If the direction had to be declared each time, the notation would not be doing its job.", cn: "有约定的意义恰恰就在于方向不必每次声明：所有人都从 N 端起写，所以光一串残基本身就已经没有歧义了。如果每次都得注明方向，这套写法就等于没起作用。" }
+      },
       why_en: "The sequence starts with the N-terminal amino acid (free amino group) and ends with the C-terminal amino acid (free carboxyl group).",
       why_cn: "序列由 N 端氨基酸（带游离氨基）开始，到 C 端氨基酸（带游离羧基）结束。"
     },
@@ -418,9 +471,15 @@ window.BIOCHEM.topics.push(
         "Valine at position 6 of the α-chain replaced by glutamic acid",
         "Glutamic acid at position 6 of the β-chain replaced by valine",
         "Lysine at position 6 of the β-chain replaced by glutamine",
-        "Deletion of residue 6 in both chains"
+        "Loss of the glutamic acid at position 6 from both β-chains of haemoglobin"
       ],
       answer: 1,
+      optionRefs: { 0: "L-5-1-1", 3: "L-5-1-1" },
+      optionNotes: {
+        0: { en: "Both halves are wrong, and each in an examinable way: the chain is β, not α, and the direction is reversed — glutamic acid is the NORMAL residue and valine the mutant one. Getting the direction backwards is the commonest way this question is failed.", cn: "两半都错了，而且各错在一个会被考的点上：链是 β 不是 α；方向也反了——谷氨酸是**正常**残基，缬氨酸才是突变的那个。方向搞反是这道题最常见的失分方式。" },
+        2: { en: "The position is right and the chain is right, but neither residue is the one involved. The book names this single exchange with full precision because that precision is the point: molecular pathology means one identified residue at one identified position.", cn: "位置对、链也对，但这两个残基都不是当事人。教材把这一次取代的每个细节都写死，正是因为精确本身就是重点：molecular pathology 讲的就是某一个确定位置上的某一个确定残基。" },
+        3: { en: "It is a substitution, not a deletion — one residue exchanged for another, with the chain the same length as before. That is precisely why it is the textbook's example of molecular pathology: the smallest possible change to a sequence still produces abnormal function and serious disease.", cn: "这是取代，不是缺失——一个残基换成另一个，链长和原来一样。这恰恰是教材拿它当 molecular pathology 例子的原因：对序列所能做的最小改动，照样造成功能异常和严重疾病。" }
+      },
       why_en: "The textbook is specific: glutamic acid in position 6 of the β-chain of haemoglobin is replaced by valine. Note the direction — Glu is the normal residue, Val the mutant.",
       why_cn: "教材说得很具体：血红蛋白 β 链第 6 位的谷氨酸被缬氨酸取代。注意方向——谷氨酸是正常残基，缬氨酸是突变残基。"
     },
@@ -429,12 +488,18 @@ window.BIOCHEM.topics.push(
       q_en: "The textbook says two proteins are similar in amino acid sequence only if:",
       q_cn: "教材说，两种蛋白质的氨基酸序列相似，仅当：",
       options: [
-        "They catalyse the same reaction",
+        "They have the same function",
         "They occur in the same organism",
         "They have a common ancestor",
         "They have the same molecular mass"
       ],
       answer: 2,
+      optionRefs: { 0: "3-6", 1: "4-2-1", 3: "2-2-6" },
+      optionNotes: {
+        0: { en: "This inverts the chain of reasoning the node sets out. Sequence determines the three-dimensional structure, and that structure conditions the biological function — the arrow runs that way, and never back. Two enzymes can do the same chemistry from unrelated sequences; specificity is a property of the folded shape.", cn: "这把本节铺的那条推理链倒过来了。序列决定三维结构，三维结构再决定生物学功能——箭头是这个方向，而且不往回走。两个酶完全可以从毫不相干的序列出发做同一种化学反应；特异性是折叠后那个形状的性质。" },
+        1: { en: "Sharing an organism means sharing a genome, not sharing an ancestral protein. The whole value of sequence comparison is the opposite: it reaches ACROSS organisms and reconstructs descent between them, which is why the book calls sequence a record of evolutionary history.", cn: "同处一个生物体只说明共用一个基因组，不说明共有一个祖先蛋白。序列比较的价值恰恰相反：它是**跨**生物体去重建亲缘关系的，这也正是教材说序列记录着演化史的意思。" },
+        3: { en: "Molecular mass is the subject of section 2.2.6 and is read off sedimentation, gel chromatography or electromigration — none of which looks at the order of residues. Two proteins of identical Mr need not share a single residue in a single position.", cn: "分子量是 2.2.6 节的题目，靠沉降、凝胶层析或电泳迁移来测——这些方法没有一个看得见残基的顺序。两个 Mr 完全相同的蛋白，可能没有任何一个位置上的残基是一样的。" }
+      },
       why_en: "Sequence similarity is treated as evidence of common descent — that is why sequence reveals evolutionary history.",
       why_cn: "序列相似性被视为共同起源的证据——这正是序列能揭示演化史的原因。"
     },
@@ -514,12 +579,18 @@ window.BIOCHEM.topics.push(
       q_en: "The C–N bond length in the peptide bond is 1.32 Å. What does this value tell us?",
       q_cn: "肽键中 C–N 键长为 1.32 Å。这个数值说明了什么？",
       options: [
-        "It is a pure single bond, so free rotation is possible",
-        "It is a pure double bond, so the chain is completely rigid",
+        "It is close to a pure single C–N bond (1.49 Å), so rotation about the peptide bond is free and the backbone stays flexible",
+        "It is close to a pure double C=N bond (1.27 Å), so the chain is held rigid not only at the peptide bond but at the α-carbons too",
         "It lies between single (1.49 Å) and double (1.27 Å), so the bond has partial double-bond character and cannot rotate freely",
-        "It is longer than a single bond, indicating unusual weakness"
+        "It is shorter than both a single and a double C–N bond, so the peptide bond is unusually strong and resists hydrolysis"
       ],
       answer: 2,
+      optionRefs: { 1: "2-2-3", 3: "2-1-4" },
+      optionNotes: {
+        0: { en: "1.49 Å is one of the two reference values the book gives, but the measured 1.32 Å is well short of it, and that shortening is exactly the signal of partial double-bond character. If rotation here really were free there would be no amide plane, no cis-trans isomerism, and no reason for a chain to have a limited set of shapes.", cn: "1.49 Å 确实是教材给的两个参照值之一，但实测的 1.32 Å 比它短得多，而**变短**正是部分双键性质的信号。如果这个键真能自由旋转，就不会有 amide plane，不会有顺反异构，一条链也就没有理由只有有限的几种形状。" },
+        1: { en: "1.27 Å is the other reference value, and 1.32 Å does not reach it either. More importantly, rigidity never extends to the α-carbons: those are precisely the hinges the chain still turns on, which is why the backbone is a row of flat plates rather than one solid rod, and why folding is possible at all.", cn: "1.27 Å 是另一个参照值，而 1.32 Å 也没到那个数。更要紧的是，刚性从来不会延伸到 α-碳上：那几个点恰恰是链仍然能转的铰链，所以主链是一排平板而不是一根整棍——折叠之所以可能，正在于此。" },
+        3: { en: "1.32 Å lies between the two reference lengths, not below both of them: the book gives 1.49 Å for the single bond and 1.27 Å for the double bond. And what the intermediate value buys is restricted rotation, not chemical inertness — the peptide bond is an amide bond, formed with loss of water and hydrolysed back again.", cn: "1.32 Å 落在两个参照值**之间**，不是比两个都短：教材给的单键是 1.49 Å、双键是 1.27 Å。而这个居中的键长换来的是旋转受限，不是化学惰性——肽键就是酰胺键，脱一分子水形成，也能水解回去。" }
+      },
       why_en: "The intermediate length reflects partial delocalisation of the carbonyl π-electrons and the nitrogen lone pair. The bond therefore cannot rotate freely, which produces the amide plane and cis-trans isomerism.",
       why_cn: "居中的键长反映了羰基 π 电子与氮孤对电子的部分离域。因此该键不能自由旋转，从而产生酰胺平面与顺反异构。"
     },
@@ -528,12 +599,18 @@ window.BIOCHEM.topics.push(
       q_en: "In globular proteins, the cis form of the peptide bond occurs practically only:",
       q_cn: "在球状蛋白中，肽键的顺式形式实际上只出现在：",
       options: [
-        "At the N-terminus",
+        "At the N-terminal residue of the chain",
         "In the neighbourhood of a proline residue",
-        "Between two cysteine residues",
-        "In the hydrophobic core"
+        "Wherever two cysteine residues form a bridge",
+        "Throughout the nonpolar core of the globule"
       ],
       answer: 1,
+      optionRefs: { 0: "2-1-4", 2: "2-2-3" },
+      optionNotes: {
+        0: { en: "The ends of a chain have no special claim on cis or trans: the amide plane, and the isomerism that comes with it, are a property of every peptide bond along the backbone. What the N-terminus really defines is the direction in which a sequence is written down.", cn: "链的末端在顺反上并没有什么特权：amide plane 以及随之而来的异构现象，是主链上**每一个**肽键的性质。N 端真正定义的是序列的书写方向。" },
+        2: { en: "A disulfide bridge is a covalent link between two side chains and does not touch the peptide bond at all — so it cannot decide anything about that bond's configuration. Note also that this textbook counts the placement of disulfide bridges as part of the PRIMARY structure.", cn: "二硫键是两条**侧链**之间的共价连接，根本不涉及肽键本身——所以它决定不了肽键的构型。另外要记住：本教材把二硫键的位置算进**一级结构**。" },
+        3: { en: "The nonpolar core is the second manifestation of the hydrophobic effect: nonpolar side chains interacting mutually so the molecule presents the smallest surface it can. That is again a story about side chains, whereas cis-trans isomerism belongs to the backbone.", cn: "疏水核心是疏水效应的第二种表现：非极性**侧链**彼此相互作用，使分子把表面积缩到最小。那讲的还是侧链的事，而顺反异构属于主链。" }
+      },
       why_en: "Trans unambiguously predominates in globular proteins; the cis form is practically restricted to the neighbourhood of a proline residue.",
       why_cn: "反式在球状蛋白中明确占优；顺式形式实际上仅限于脯氨酸残基的邻近位置。"
     },
@@ -542,12 +619,18 @@ window.BIOCHEM.topics.push(
       q_en: "What is the thermodynamic essence of the hydrophobic effect, according to the textbook?",
       q_cn: "按教材，疏水效应的热力学本质是什么？",
       options: [
-        "A decrease of enthalpy from new hydrogen bonds between nonpolar chains",
+        "A decrease of enthalpy as new hydrogen bonds form directly between the nonpolar side chains buried in the core",
         "An increase of entropy from disrupting the ordered arrangement of water around hydrophobic particles",
-        "A decrease of entropy as the chain becomes more ordered",
-        "An increase of enthalpy from van der Waals contacts in the core"
+        "A decrease of entropy as the peptide chain gives up freedom and collapses into an ordered globule",
+        "An increase of enthalpy from the van der Waals contacts made between side chains inside the nonpolar core"
       ],
       answer: 1,
+      optionRefs: { 0: "4-3-1", 2: "4-3-1", 3: "2-2-4" },
+      optionNotes: {
+        0: { en: "Nonpolar side chains have nothing to hydrogen-bond with — having no such groups is what makes them nonpolar in the first place. And the sign is wrong twice: the effect is entropic rather than enthalpic, and the entropy that increases belongs to the water, not to the protein.", cn: "非极性侧链没有东西可以形成氢键——正因为不带这类基团，它们才叫非极性。而且符号错了两处：这个效应是熵驱动而非焓驱动的，并且增加的那份熵属于**水**，不属于蛋白质。" },
+        2: { en: "The protein's own entropy does fall as the chain folds, and this option describes that correctly — but it is the price paid, not the driving force. The book puts the essence in the water: disrupting the regular arrangement of water molecules around hydrophobic particles is what increases entropy overall.", cn: "链折叠时蛋白质自身的熵确实在下降，这个选项这部分说得没错——但那是**代价**，不是驱动力。教材把本质放在水身上：打乱疏水颗粒周围水分子的规则排布，才是整体熵增的来源。" },
+        3: { en: "Van der Waals forces really are on the list of interactions holding a globular chain in position, alongside disulfide bonds, ionic interactions and hydrogen bonds. But the book defines the hydrophobic effect separately from all of them, and defines it by an entropy increase in the surrounding water.", cn: "范德华力确实在教材列出的、把球状蛋白链固定住的那批相互作用里，与二硫键、离子相互作用和氢键并列。但教材是把疏水效应和它们**分开**定义的，而且定义的依据是周围水的熵增。" }
+      },
       why_en: "This is a classic exam trap. The driving force is ENTROPIC and belongs to the WATER, not to the protein: releasing the ordered water shell around hydrophobic groups increases entropy.",
       why_cn: "这是典型的考试陷阱。驱动力是熵驱动的，而且属于水而非蛋白质：释放疏水基团周围的有序水壳使熵增加。"
     },
@@ -626,12 +709,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to THIS textbook, primary structure is given by:",
       q_cn: "按本教材，一级结构由什么决定？",
       options: [
-        "The amino acid sequence only",
+        "The order of the amino acid residues, and nothing else",
         "The amino acid sequence and the placement of disulfide bridges",
-        "The sequence plus all hydrogen bonds",
-        "The sequence plus the arrangement of subunits"
+        "The sequence together with every hydrogen bond stabilising the chain",
+        "The sequence together with the arrangement of the subunits"
       ],
       answer: 1,
+      optionRefs: { 2: "2-2-2", 3: "L-5-1-1" },
+      optionNotes: {
+        0: { en: "This is the definition most other textbooks give, and it is the one to resist here: THIS book states the primary structure as the sequence AND the placement of the disulfide bridges. The disagreement is real, so in the exam answer according to this book.", cn: "这是大多数其他教材给的定义，而在这里恰恰要顶住它：**本**教材把一级结构定义为序列**加上**二硫桥的位置。各家教材在这一点上确实不统一，所以考试按这本书答。" },
+        2: { en: "Hydrogen bonds are what hold the periodic secondary structures together — the α-helix, the β-structure and the collagen helix all rest on them — and no textbook counts them at the primary level. The disulfide bridge is different because it is covalent, part of the chain's own bonding pattern.", cn: "氢键维系的是那些周期性的二级结构——α-helix、β-structure、collagen helix 全靠它——没有任何教材把氢键算进一级结构。二硫桥不一样，它是**共价**的，属于肽链自身的成键方式。" },
+        3: { en: "The arrangement of the subunits is the QUATERNARY structure, and it is spoken of only for proteins built from more than one peptide chain. Before answering any question of this kind, count the chains: a single-chain protein has no quaternary structure at all.", cn: "亚基的排布属于**四级结构**，而且只有由一条以上肽链构成的蛋白质才谈得上。碰到这类题先数链数：单链蛋白根本没有四级结构。" }
+      },
       why_en: "This textbook explicitly includes the placement of disulfide bridges in the primary structure. Many other textbooks leave them out, so answer according to THIS book in the exam.",
       why_cn: "本教材明确把二硫桥的位置纳入一级结构。许多其他教材不包括它，因此考试时请按本书作答。"
     },
@@ -640,12 +729,18 @@ window.BIOCHEM.topics.push(
       q_en: "What distinguishes secondary from tertiary structure?",
       q_cn: "二级结构与三级结构的区别是什么？",
       options: [
-        "Secondary is covalent, tertiary is non-covalent",
+        "Secondary is held together by covalent bonds, whereas tertiary depends only on non-covalent interactions",
         "Secondary concerns residues close together in the linear sequence, tertiary residues far apart",
-        "Secondary applies to one chain, tertiary to several chains",
-        "Secondary is periodic, tertiary is always random coil"
+        "Secondary describes a single peptide chain, tertiary the arrangement of several chains",
+        "Secondary is always periodic and regular, whereas tertiary is always random coil"
       ],
       answer: 1,
+      optionRefs: { 2: "L-5-1-1", 3: "2-2-4" },
+      optionNotes: {
+        0: { en: "This is the misconception the section is built to head off: the instinct is to sort the levels by which kind of bond holds them, but the criterion is DISTANCE ALONG THE SEQUENCE. Both levels draw on the same repertoire of weak interactions, and the one covalent link, the disulfide bridge, this book assigns to the primary level anyway.", cn: "这正是本节要挡掉的那个误解：直觉总想按「靠什么键连起来」给各级结构分家，但判据其实是**在序列上离多远**。两级用的是同一批弱相互作用；而唯一那个共价连接——二硫桥——本教材还把它算进一级结构。" },
+        2: { en: "That is the boundary between tertiary and QUATERNARY structure, not between secondary and tertiary. Quaternary structure is spoken of only for proteins of more than one chain, and it describes the arrangement of the subunits and the character of their contact.", cn: "那是**三级与四级**之间的界线，不是二级与三级之间的。四级结构只有在蛋白质由一条以上肽链构成时才谈得上，讲的是亚基的排布以及它们接触的性质。" },
+        3: { en: "Regularity is a genuine feature of secondary structure — some arrangements repeat and form the periodic structures — but it is not the criterion, and tertiary structure is certainly not random coil. Random coil is the name for the irregular stretches that alternate with α- and β-type sections inside a globule.", cn: "规律性确实是二级结构的一个真实特征——有些排布会规则地重复，构成周期性结构——但它不是**判据**，而且三级结构绝不是无规卷曲。random coil 指的是球状分子内部与 α、β 型片段交替出现的那些无规则区段。" }
+      },
       why_en: "The criterion is distance ALONG THE SEQUENCE: secondary structure is the spatial arrangement of residues close together in the linear sequence, tertiary of residues far apart. The textbook adds that this boundary is sometimes hard to define.",
       why_cn: "判据是沿序列的距离：二级结构是线性序列中彼此靠近的残基的空间排布，三级结构则是相距较远的残基的排布。教材还补充说这一界限有时难以界定。"
     },
@@ -655,6 +750,12 @@ window.BIOCHEM.topics.push(
       q_cn: "结构域的大小范围是多少？",
       options: ["10–50 residues", "50–100 residues", "100–400 residues", "400–1000 residues"],
       answer: 2,
+      optionRefs: { 1: "2-1-4" },
+      optionNotes: {
+        0: { en: "Far too small for a compact globular region. This is the scale of a single element of secondary structure, or of a supersecondary motif — the βαβ unit, the αα unit, the β-meander — which are clusters of such elements, not domains.", cn: "对一个紧密球状区域来说太小了。这是**单个**二级结构单元的尺度，或者超二级基序的尺度——βαβ 单元、αα 单元、β-meander 都属于这一类，它们是二级结构片段的簇，不是结构域。" },
+        1: { en: "Just below the book's range, and the near miss is worth noticing: 100 residues is also the threshold above which a peptide chain is called a protein at all. A domain therefore begins where a protein begins, which is a useful way to remember the lower bound.", cn: "刚好落在教材范围之下，而这个「差一点」值得留意：100 个残基同时也是一条肽链能被称为**蛋白质**的门槛。也就是说，结构域的下限恰好和蛋白质的下限重合——这是记住下界的好办法。" },
+        3: { en: "Above the book's range: 400 residues is the upper bound, not the lower one. A chain much longer than that is more likely to be carrying SEVERAL domains, joined by the flexible segments that are part of the definition, than one oversized domain.", cn: "超出了教材给的范围：400 是**上**限，不是下限。比这长得多的链，更可能是带着**若干个**结构域，中间由定义里那种柔性片段连接，而不是一个特大号的结构域。" }
+      },
       why_en: "Domains are compact globular regions connected by a flexible segment of the chain, ranging from 100 to 400 amino acid residues.",
       why_cn: "结构域是由链的柔性片段相连的紧密球状区域，大小为 100 至 400 个氨基酸残基。"
     },
@@ -744,8 +845,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which protein does the textbook give as containing essentially NO α-helical structure?",
       q_cn: "教材举出哪种蛋白质基本上不含 α-螺旋结构？",
-      options: ["Myoglobin", "Haemoglobin", "Chymotrypsin", "Keratin"],
+      options: ["Haemoglobin", "Ceruloplasmin", "Chymotrypsin", "Keratin"],
       answer: 2,
+      optionRefs: { 0: "L-5-1-1", 1: "2-2-5" },
+      optionNotes: {
+        0: { en: "One of the two proteins the book names on the OTHER side of this contrast: in myoglobin and haemoglobin the α-helix is the main structural motif. The proportion of α-helix differs from protein to protein, and these two mark the top of the range.", cn: "这是教材在这个对照里放在**另一边**的两个蛋白之一：在肌红蛋白和血红蛋白中，α-螺旋是主要的结构基序。α-螺旋所占比例因蛋白而异，而这两个正是这个范围的上端。" },
+        1: { en: "Ceruloplasmin appears in this chapter for a quite different reason — it is the blood serum protein that transports copper ions — and the book never characterises its secondary structure at all. The counter-example it does name, the protein with essentially no α-helix, is chymotrypsin.", cn: "铜蓝蛋白在本章出现是出于完全不同的理由——它是血清中运输铜离子的蛋白——教材从未描述过它的二级结构。教材真正点名的那个反例，即基本不含 α-螺旋的蛋白，是胰凝乳蛋白酶。" },
+        3: { en: "Keratin is the opposite case, and the one worth keeping straight: the basic secondary structure of mammalian keratin IS the α-helix, and two pairs of those helices twist together into the left-handed four-stranded cable the book calls the protofibril.", cn: "角蛋白是反过来的例子，也是最该分清的一个：哺乳动物角蛋白的基本二级结构**就是** α-螺旋，而且两对这样的螺旋会绞成教材所说的那根左手四股「缆绳」——protofibril。" }
+      },
       why_en: "Myoglobin and haemoglobin are the examples where α-helix is the MAIN structural motif; chymotrypsin is the counter-example containing essentially none.",
       why_cn: "肌红蛋白和血红蛋白是 α-螺旋作为主要结构基序的例子；胰凝乳蛋白酶则是基本不含 α-螺旋的反例。"
     },
@@ -754,12 +861,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why can a wetted, heated hair be stretched to double its length?",
       q_cn: "为什么润湿并加热后的头发可以被拉伸至两倍长度？",
       options: [
-        "The disulfide bridges are reduced",
+        "The disulfide bridges holding the four-stranded protofibril together are reduced, and the cable loosens",
         "The hydrogen bonds of the α-helix are released, and the chains can then form a β-parallel structure",
-        "The peptide bonds hydrolyse",
-        "The protofibril unwinds into single amino acids"
+        "The peptide bonds of the main chain hydrolyse, and the shortened chains slide past one another",
+        "The four-stranded protofibril unwinds completely into its individual amino acids"
       ],
       answer: 1,
+      optionRefs: { 0: "2-2-3", 2: "2-1-4", 3: "2-2-2" },
+      optionNotes: {
+        0: { en: "Disulfide bridges are covalent, and wetting and heating does not reduce them. The book is specific about what is released: the HYDROGEN BONDS of the α-helix. The protofibril is real — two pairs of parallel helices twisted into a left-handed four-stranded cable — but it is the helix inside it that gives way.", cn: "二硫桥是共价的，润湿加热并不会把它还原。教材写得很明确，被打开的是 α-螺旋的**氢键**。protofibril 确实存在——两对平行螺旋绞成的左手四股缆绳——但让步的是缆绳里面的那个螺旋。" },
+        2: { en: "If the peptide bonds hydrolysed, the chain would be destroyed rather than stretched, and the hair could not hold its new length. Nothing covalent breaks here: the change happens entirely at the level of secondary structure, α-helix out and β-parallel in.", cn: "如果肽键真的水解了，链是被破坏而不是被拉长，头发也就保持不住新的长度。这里没有任何共价键断裂：变化完全发生在二级结构这一层——α-螺旋退场，β-平行结构接手。" },
+        3: { en: "Nothing is broken down to amino acids; the chains stay whole and simply adopt a different secondary structure. That is exactly what makes the change usable — in the stretched form the chains can form a β-parallel structure and FIX it, so the new length holds.", cn: "没有任何东西被降解成氨基酸；链是完整的，只是换了一种二级结构。这也正是这个变化之所以有用的原因——在被拉伸的形态下，肽链能形成 β-平行结构并把它**固定**下来，新长度才保得住。" }
+      },
       why_en: "Wetting and heating releases the hydrogen bonds holding the α-helix. In the stretched form the peptide chains can form and fix a β-parallel structure — this is the α → β transition of keratin.",
       why_cn: "润湿加热会释放维持 α-螺旋的氢键。在被拉伸的形态下，肽链可形成并固定 β-平行结构——这就是角蛋白的 α → β 转变。"
     },
@@ -768,12 +881,18 @@ window.BIOCHEM.topics.push(
       q_en: "Fibroin's regular β-antiparallel arrangement is made possible by:",
       q_cn: "丝心蛋白规则的 β-反平行排布之所以可能，是因为：",
       options: [
-        "A high content of aromatic amino acids",
+        "A high content of the aromatic amino acids phenylalanine, tryptophan and tyrosine",
         "A high content of small amino acid residues — glycine, alanine, serine",
-        "Extensive disulfide cross-linking",
-        "A high proline content"
+        "Extensive disulfide cross-linking between neighbouring peptide chains",
+        "A high proline content, one residue in every three along the chain"
       ],
       answer: 1,
+      optionRefs: { 0: "2-1-1", 2: "2-2-3", 3: "2-2-2" },
+      optionNotes: {
+        0: { en: "Aromatic rings are bulky, and bulk is precisely what a regular stack of planar sheets cannot accommodate — the book names the opposite property, a high content of SMALL residues. Phenylalanine and tryptophan are the two aromatic members of nonpolar group 1; tyrosine sits in polar group 2.", cn: "芳香环体积大，而规整堆叠的平面片层最容不下的就是体积——教材点名的是**相反**的性质：小残基含量高。苯丙氨酸和色氨酸是非极性第 1 组里的两个芳香族成员，酪氨酸则在极性第 2 组。" },
+        2: { en: "Cross-linking is a real feature of fibrous proteins as a class — extended chains joined by cross-links into macroscopic fibres is the definition — but it is not the reason the book gives for fibroin's regular β-antiparallel arrangement. That reason is the SIZE of the side chains.", cn: "交联确实是纤维状蛋白这一类的共同特征——伸展的链靠交联连成宏观纤维，这就是它的定义——但教材给出的、丝心蛋白 β-反平行排布之所以规整的理由不是它，而是侧链的**大小**。" },
+        3: { en: "One residue in every three is the requirement of the COLLAGEN helix, and the residue in question there is glycine, not proline — proline often occupies the X position of the Gly-X-Y repeat. Fibroin is a different fibrous protein with a different structural reason.", cn: "「每三个残基一个」是 **collagen** 螺旋的要求，而且那里要求的是**甘氨酸**不是脯氨酸——脯氨酸常出现在 Gly-X-Y 重复的 X 位。丝心蛋白是另一种纤维状蛋白，结构上的理由也不同。" }
+      },
       why_en: "Small side chains (Gly, Ala, Ser) let the planar sheets stack regularly. Contrast keratin, which is α-helical, and collagen, which needs glycine at every third position for a different reason.",
       why_cn: "小侧链（甘氨酸、丙氨酸、丝氨酸）使平面片层能够规则堆叠。可与角蛋白（α-螺旋型）以及胶原（因另一种原因需要每第三位为甘氨酸）作对比。"
     },
@@ -865,9 +984,15 @@ window.BIOCHEM.topics.push(
         "The hydroxyl group of serine",
         "The hydroxyl group of threonine",
         "The amide nitrogen of asparagine",
-        "The imidazole of histidine"
+        "The hydroxyl group of hydroxyproline"
       ],
       answer: 2,
+      optionRefs: { 3: "2-2-2" },
+      optionNotes: {
+        0: { en: "This is the O-GLYCOSIDIC route, the other half of the pair the section sets up, and the mnemonic is in the letters: O for the hydroxyl oxygen of serine or threonine, N for the amide nitrogen of asparagine. The O-glycosidic glycoproteins are the blood group substances and the mucins.", cn: "这是 **O**-糖苷键那条路，也就是本节配对讲的另一半，而记法就藏在字母里：O 对应丝氨酸或苏氨酸羟基上的氧，N 对应天冬酰胺的酰胺氮。走 O-糖苷键的糖蛋白是血型物质和黏蛋白。" },
+        1: { en: "Threonine is the second of the two hydroxyl-bearing partners in the O-glycosidic route, alongside serine — so this is the same wrong half of the pair. Both belong to the polar group 2 side chains carrying an –OH.", cn: "苏氨酸是 O-糖苷键那条路上带羟基的两个搭档中的第二个（另一个是丝氨酸）——所以这和上一个错在同一半。两者都属于带 –OH 的极性第 2 组侧链。" },
+        3: { en: "Hydroxyproline really is an attachment point in this section, but for COLLAGEN, which carries D-galactose, or a disaccharide of D-galactose and D-glucose, bound predominantly to hydroxyproline or hydroxylysine. That is a third case, separate from the N- and O-glycosidic oligosaccharide chains.", cn: "羟脯氨酸在本节里确实是一个连接位点，但那是 **collagen** 的情形：胶原上接的是 D-半乳糖，或者由 D-半乳糖和 D-葡萄糖组成的双糖，主要连在羟脯氨酸或羟赖氨酸上。那是第三种情况，和 N-、O-糖苷键的寡糖链都不同。" }
+      },
       why_en: "N-glycosidic = via the amide nitrogen of asparagine (typical of blood serum glycoproteins). O-glycosidic = via the hydroxyl of serine or threonine (blood group substances, mucins).",
       why_cn: "N-糖苷键 = 经由天冬酰胺的酰胺氮（血清糖蛋白的典型方式）。O-糖苷键 = 经由丝氨酸或苏氨酸的羟基（血型物质、黏蛋白）。"
     },
@@ -875,8 +1000,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which metal ion does carboxypeptidase contain?",
       q_cn: "羧肽酶含有哪种金属离子？",
-      options: ["Mn²⁺", "Zn²⁺", "Mo", "Cu²⁺"],
+      options: ["Mn²⁺", "Zn²⁺", "Cu²⁺", "Mg²⁺"],
       answer: 1,
+      optionRefs: { 0: "3-2", 2: "3-2", 3: "3-2" },
+      optionNotes: {
+        0: { en: "Mn²⁺ belongs to the same three-enzyme set, but to the wrong member of it: carboxypeptidase Zn²⁺, PYRUVATE DECARBOXYLASE Mn²⁺, xanthine oxidase molybdenum. Manganese also appears once more in the course, as the metal of hexokinase in the metalloenzyme list.", cn: "Mn²⁺ 属于同一组三个酶，但配错了对象：羧肽酶是 Zn²⁺，**丙酮酸脱羧酶**才是 Mn²⁺，黄嘌呤氧化酶是钼。锰在课程里还出现过一次，是金属酶名单中己糖激酶的金属。" },
+        2: { en: "Copper is named twice in this course, neither time for carboxypeptidase: as the metal of tyrosinase in the metalloenzyme list, and as the ion that ceruloplasmin transports in blood serum. Storage and transport of a metal is a different job from doing catalysis with it.", cn: "铜在本课程里被点名过两次，但都不是羧肽酶：一次是金属酶名单里酪氨酸酶的金属，一次是铜蓝蛋白在血清中转运的离子。**储存和转运**一种金属，和**拿它做催化**是两回事。" },
+        3: { en: "Mg²⁺ is on the metalloenzyme list too, as the metal of phosphatase. Reading that list as a whole is the point: Zn²⁺ alcohol dehydrogenase, Mg²⁺ phosphatase, Mn²⁺ hexokinase, Fe²⁺/Fe³⁺ cytochromes, Cu²⁺ tyrosinase, K⁺ pyruvate kinase, Na⁺ ATPase.", cn: "Mg²⁺ 也在金属酶名单上，是磷酸酶的金属。这份名单要整体记：Zn²⁺ 醇脱氢酶、Mg²⁺ 磷酸酶、Mn²⁺ 己糖激酶、Fe²⁺/Fe³⁺ 细胞色素、Cu²⁺ 酪氨酸酶、K⁺ 丙酮酸激酶、Na⁺ ATP 酶。" }
+      },
       why_en: "Carboxypeptidase — Zn²⁺; pyruvate decarboxylase — Mn²⁺; xanthine oxidase — molybdenum. These three go together as a set in the textbook.",
       why_cn: "羧肽酶——Zn²⁺；丙酮酸脱羧酶——Mn²⁺；黄嘌呤氧化酶——钼。教材中这三者是成组出现的。"
     },
@@ -884,8 +1015,13 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Ferritin can contain ferric ions up to what proportion of its mass?",
       q_cn: "铁蛋白所含铁离子最高可达其质量的多少？",
-      options: ["3 %", "10 %", "30 %", "60 %"],
+      options: ["15 %", "10 %", "30 %", "60 %"],
       answer: 2,
+      optionNotes: {
+        0: { en: "Below the book's figure. The number to fix is 30 per cent of ferritin's mass as ferric ions, and it comes with a second number, Mr = 46 000 — together they say how extreme a depot protein ferritin is, holding almost a third of its own weight as iron and releasing it when needed.", cn: "低于教材给的数字。要记死的是 30%——铁离子占铁蛋白质量的比例，而它还配着第二个数字 Mr = 46 000。两个数放在一起才说明铁蛋白作为储存蛋白有多极端：几乎三分之一的自身重量是铁，需要时再放出来。" },
+        1: { en: "Also below the figure. Do not let it blur with the other depot protein of this section: phosvitin, the phosphoprotein of egg yolk, carries about 100 phosphate residues per peptide chain at Mr = 35 000. Two depot proteins, two different quantities stored.", cn: "同样低于那个数字。别把它和本节另一个储存蛋白搞混：卵黄的磷蛋白 phosvitin，Mr = 35 000，每条肽链带约 100 个磷酸残基。两个储存蛋白，存的是两种不同的东西。" },
+        3: { en: "Above the book's figure. Ferritin is where iron is STORED; the proteins that MOVE it are different ones — transferrin binds Fe³⁺ in blood plasma with high affinity, and ceruloplasmin does the same job for copper in serum.", cn: "高于教材给的数字。铁蛋白是**储存**铁的地方；负责**搬运**的是另外的蛋白——转铁蛋白在血浆中以高亲和力结合 Fe³⁺，铜蓝蛋白在血清中对铜做同样的事。" }
+      },
       why_en: "Ferritin, Mr = 46 000, can contain ferric ions up to 30 % of its mass, released when needed. Transferrin is the transport protein, ceruloplasmin transports copper.",
       why_cn: "铁蛋白（Mr = 46 000）所含铁离子可达其质量的 30%，需要时释放。转铁蛋白是转运蛋白，铜蓝蛋白转运铜。"
     },
@@ -979,6 +1115,12 @@ window.BIOCHEM.topics.push(
         "10⁴ to 10⁸, in viruses up to 10⁹"
       ],
       answer: 1,
+      optionRefs: { 0: "L-3-3-1" },
+      optionNotes: {
+        0: { en: "Two orders of magnitude too low at every point. An Mr of 10² is a small molecule, not a protein — and the whole reason the book quotes this range is that it puts proteins BEYOND the reach of the classical methods of molecular mass determination, which is not true of anything at 10².", cn: "每一处都低了两个数量级。Mr 为 10² 的是小分子，不是蛋白质——而教材之所以要给出这个范围，正是因为它把蛋白质推到了经典分子量测定方法**够不着**的地方，而 10² 量级的东西完全够得着。" },
+        2: { en: "One order of magnitude low throughout, and that makes it the near miss that is easiest to accept. The book's three figures are 10⁴ at the bottom, 10⁶ at the top, and 10⁷ in viruses; getting the exponents right matters because the size is what forces the indirect methods.", cn: "整体低了一个数量级，所以它是最容易被接受的那个近似项。教材给的三个数是：下限 10⁴、上限 10⁶、病毒 10⁷。指数必须记准，因为正是这个尺度逼得人只能用间接方法。" },
+        3: { en: "The lower bound is right, but both upper bounds are two orders too high. Note the internal logic of the correct pair: the virus figure sits ONE order above the protein maximum, not three — 10⁶ for proteins, 10⁷ in viruses.", cn: "下限对了，但两个上限都高了两个数量级。留意正确那一组内部的逻辑：病毒的数字比蛋白质的上限高**一个**数量级，不是三个——蛋白质 10⁶，病毒 10⁷。" }
+      },
       why_en: "Proteins run from 10⁴ to 10⁶; in viruses Mr reaches 10⁷. This is precisely why classical methods of molecular mass determination cannot be used.",
       why_cn: "蛋白质为 10⁴ 至 10⁶；在病毒中 Mr 可达 10⁷。正因如此才不能使用经典的分子质量测定方法。"
     },
@@ -988,6 +1130,12 @@ window.BIOCHEM.topics.push(
       q_cn: "1 斯维德贝格等于：",
       options: ["10⁻⁶ s", "10⁻⁹ s", "10⁻¹³ s", "10⁻¹⁵ s"],
       answer: 2,
+      optionRefs: { 1: "L-3-3-1" },
+      optionNotes: {
+        0: { en: "Not the value, but the unit is worth stopping on: a svedberg is a TIME, because s is a sedimentation coefficient and not a mass. That is the single most useful thing to fix here — it is why 30S and 50S subunits assemble into a 70S ribosome rather than an 80S one.", cn: "不是这个数值，但单位本身值得停一下：svedberg 是**时间**单位，因为 s 是沉降系数，不是质量。这是这里最该记死的一件事——30S 和 50S 的亚基装出来是 70S 核糖体而不是 80S，原因就在这儿。" },
+        1: { en: "Also not the value. And even with the right number in hand, s alone does not give Mr: the coefficient increases with Mr but NOT in direct proportion, which is exactly why the Svedberg equation, Mr = R·T·s / [D·(1 − v̄·ρ)], has to be used.", cn: "同样不是那个数值。而且就算数字记对了，光有 s 也得不出 Mr：沉降系数随 Mr 增大，但**不成正比**——正因如此才必须动用斯维德贝格方程 Mr = R·T·s / [D·(1 − v̄·ρ)]。" },
+        3: { en: "Two orders out from the value to fix, 10⁻¹³ s. The coefficient enters the course through the sedimentation rate law dx/dt = s · ω² · x, where x is the distance from the centre of rotation and ω the angular velocity.", cn: "比要记的那个数 10⁻¹³ s 差了两个数量级。这个系数在课程里是通过沉降速率式 dx/dt = s · ω² · x 出现的，其中 x 是距旋转中心的距离，ω 是角速度。" }
+      },
       why_en: "1 svedberg = 10⁻¹³ second. Note also that although s increases with Mr, the relationship is NOT a direct proportionality — hence the need for the Svedberg equation.",
       why_cn: "1 斯维德贝格 = 10⁻¹³ 秒。另请注意，尽管 s 随 Mr 增大，但两者并非正比关系——因此才需要斯维德贝格方程。"
     },
@@ -996,12 +1144,18 @@ window.BIOCHEM.topics.push(
       q_en: "In what way do protein solutions DIFFER from ordinary colloidal solutions?",
       q_cn: "蛋白质溶液与普通胶体溶液的区别何在？",
       options: [
-        "They show no Tyndall effect",
-        "They cannot form gels",
+        "They show no Tyndall effect, however concentrated the solution is made",
+        "They cannot form gels and do not coagulate under any conditions",
         "They are homodisperse rather than polydisperse, so they resemble true solutions",
-        "They contain no particles comparable in size to colloids"
+        "They contain no particles comparable in size to the particles of an inorganic colloid"
       ],
       answer: 2,
+      optionRefs: { 3: "L-3-3-1" },
+      optionNotes: {
+        0: { en: "The Tyndall effect is one of the properties protein solutions SHARE with colloidal solutions, not one that separates them — and it is there for the same reason, the high relative molecular mass that makes protein molecules comparable with colloidal particles.", cn: "丁达尔效应是蛋白质溶液与胶体溶液**共有**的性质之一，不是把两者区分开的性质——而且它出现的原因也一样：相对分子质量高，使蛋白质分子在尺度上可与胶体粒子相比。" },
+        1: { en: "Gel formation is shared too, and so is coagulation. The book lists exactly three properties held in common — the Tyndall effect, gel formation and coagulation — so the difference has to be looked for somewhere other than in that list.", cn: "凝胶形成同样是共有的，凝聚也是。教材列出的共有性质恰好三条——丁达尔效应、凝胶形成、凝聚——所以区别只能到这份名单**之外**去找。" },
+        3: { en: "Size is exactly what they DO have in common: protein molecules in solution are comparable with the particles of inorganic colloids, which is why the colloidal properties show up at all. The real difference is dispersity — colloids polydisperse, protein solutions homodisperse.", cn: "尺寸恰恰是它们**共有**的那一点：溶液中的蛋白质分子在大小上可与无机胶体粒子相比，胶体性质才会出现。真正的区别在分散度——胶体是多分散的，蛋白质溶液是均一分散的。" }
+      },
       why_en: "They SHARE the Tyndall effect, gel formation and coagulation with colloids. The difference is dispersity: colloids are polydisperse, protein solutions homodisperse, which makes them resemble true solutions.",
       why_cn: "它们与胶体共有丁达尔效应、凝胶形成和凝聚等性质。区别在于分散度：胶体是多分散的，而蛋白质溶液是均分散的，因而类似真溶液。"
     },

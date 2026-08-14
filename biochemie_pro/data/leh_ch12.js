@@ -35,8 +35,8 @@
    So what is missing from the Czech layer is not the cascades; it is
    the vocabulary that says what all the cascades have in common.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-12-1-1",
     book: "lehninger",

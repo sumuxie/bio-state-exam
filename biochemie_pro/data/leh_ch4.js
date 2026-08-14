@@ -37,8 +37,8 @@
    "how you determine its structure" is the same question one step on.
    The key is already cross-book, so neither count moves.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-4-5-1",
     book: "lehninger",

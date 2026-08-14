@@ -33,8 +33,8 @@
    the nucleotide itself. Both are named in the summary so a reader
    crossing over is sent to them by name rather than by merge.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-8-4-1",
     book: "lehninger",

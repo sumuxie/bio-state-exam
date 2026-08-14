@@ -51,12 +51,18 @@ window.BIOCHEM.topics.push(
       q_en: "Per the book's opening list, which TWO processes together are named as 'the basis of photosynthesis'?",
       q_cn: "根据教材开篇的列表，哪两个过程被合称为「光合作用的基础」？",
       options: [
-        "Assimilation of atmospheric nitrogen and reduction of nitrates",
+        "Assimilation of atmospheric nitrogen together with the reduction of nitrates, nitrites and sulfates",
         "Photosynthetic assimilation of CO₂ and photochemical decomposition of water with formation of O₂",
-        "Biosynthesis of aromatic amino acids and formation of secondary metabolites",
-        "Reduction of sulfates and biosynthesis of cysteine"
+        "Biosynthesis of aromatic amino acids and formation of the secondary plant metabolites",
+        "Reduction of sulfates and biosynthesis of cysteine, together with uptake of mineral substances"
       ],
       answer: 1,
+      optionRefs: { 0: "9-23", 2: "9-27" },
+      optionNotes: {
+        0: { en: "These are items 2 and 3 of the same five-item list, glued together. Item 2 is developed in §9.4, where the book corrects its own opening list: only bacteria fix atmospheric nitrogen, and plants must take nitrogen up as ammonia or nitrate. Neither item is called the basis of photosynthesis.", cn: "这是同一张五项列表里的第2项和第3项被拼在一起。第2项在§9.4展开，教材在那里纠正了自己开篇的说法：只有 bacteria 能固定大气氮，植物必须以氨或硝酸盐的形式摄取氮。这两项都没有被称作光合作用的基础。" },
+        2: { en: "Items 4 and 5 of the list. Aromatic amino acid biosynthesis is handed off entirely to kap. 5.3.4 rather than developed here, and the secondary plant metabolites close the chapter as §9.5. Both are autotroph specialities; neither is the pairing the book singles out.", cn: "这是列表的第4项和第5项。芳香族氨基酸的生物合成被整个交给 kap. 5.3.4，本章不再展开；secondary plant metabolites 则作为§9.5收尾。两者都是自养生物的专长，但都不是教材单独挑出来的那一对。" },
+        3: { en: "Item 3 again, this time paired with the mineral uptake that appears in the definition of autotrophy. Sulfate reduction and cysteine biosynthesis are named in the opening list and then never returned to anywhere in this chapter.", cn: "又是第3项，这次配上了自养定义里出现的矿物质摄取。硫酸盐还原与 cysteine 的生物合成在开篇列表中被点名后，本章再没有回到过它们。" }
+      },
       why_en: "Item 1 of the book's five-item list pairs CO₂ assimilation with water photolysis and O₂ evolution, and calls that pairing the basis of photosynthesis. The other four items are autotroph-specific metabolisms but are not given that label.",
       why_cn: "教材五项列表中的第1项把CO₂同化与水的光解、氧气释放配成一组，并称这一组合为光合作用的基础。其余四项虽同属自养生物特有的代谢，但未被冠以该称谓。"
     },
@@ -126,12 +132,18 @@ window.BIOCHEM.topics.push(
       q_en: "In the general scheme H₂D + CO₂ → (CH₂O) + D, what varies between photosynthesizing organisms?",
       q_cn: "在通式 H₂D + CO₂ → (CH₂O) + D 中，不同光合生物之间变化的是什么？",
       options: [
-        "The acceptor A, which may be CO₂, NO₃⁻ or SO₄²⁻",
-        "Neither; both donor and acceptor are fixed",
+        "The acceptor A — CO₂ in higher plants, NO₃⁻ or SO₄²⁻ in some bacteria — while the donor is always water",
+        "Neither one: donor and acceptor are both fixed, and only the saccharide product varies between organisms",
         "The donor H₂D — water in oxygenic photosynthesis, H₂S in some bacteria — while the acceptor is always CO₂",
-        "The saccharide product, which may be a triose, hexose or pentose"
+        "The saccharide product (CH₂O) — a triose in some organisms, a hexose in others — while H₂D and CO₂ are fixed"
       ],
       answer: 2,
+      optionRefs: { 0: "9-25", 3: "9-19" },
+      optionNotes: {
+        0: { en: "This is the answer with the two roles exchanged. Nitrate does serve as an electron acceptor in the biosphere, but in denitrification, where NO₃⁻ replaces oxygen at the end of an anaerobic respiratory chain — not in photosynthesis, where the book says the acceptor is carbon dioxide for every photosynthesizing organism without exception.", cn: "这是把答案里的两个角色对调。硝酸盐在生物圈中确实充当电子受体，但那是在 denitrification 里——厌氧呼吸链末端由 NO₃⁻ 取代氧——而不是在光合作用里。教材说，对一切光合生物无一例外，受体都是二氧化碳。" },
+        1: { en: "If both were fixed the general scheme H₂D + A would not need two symbols at all. The book writes the donor as H₂D precisely because it varies: water gives oxygenic photosynthesis, H₂S gives elemental sulfur as by-product instead of oxygen.", cn: "如果两者都固定，通式 H₂D + A 根本不需要两个符号。教材把供体写成 H₂D 正是因为它会变：以水为供体得到 oxygenic photosynthesis，以 H₂S 为供体则副产物是单质硫而不是氧。" },
+        3: { en: "(CH₂O) is the book's shorthand for 'a saccharide' in a summary equation — a formula unit, not a real molecule that could be a triose or a hexose. The actual net product of the fixation reactions is fructose-6-phosphate, and that is settled downstream in the Calvin cycle, not in this general scheme.", cn: "(CH₂O) 只是教材在总式里代表「一个糖」的速记——一个化学式单位，而不是可以是丙糖或己糖的真实分子。固定反应真正的净产物是 fructose-6-phosphate，那是在 Calvin cycle 下游定下来的，不在这条通式里。" }
+      },
       why_en: "The book says explicitly that for ALL photosynthesizing organisms the acceptor of electrons (A) is carbon dioxide. What differs is the donor: water gives oxygenic photosynthesis, H₂S gives H₂S + CO₂ → (CH₂O) + S with elemental sulfur as by-product.",
       why_cn: "教材明确指出，对一切光合生物而言电子受体(A)都是二氧化碳。差异在于供体：以水为供体即产氧光合作用；以H₂S为供体则得 H₂S + CO₂ → (CH₂O) + S，副产物为单质硫。"
     },
@@ -196,12 +208,17 @@ window.BIOCHEM.topics.push(
       q_en: "Why does the book insist on writing 12 H₂O + 6 CO₂ → C₆H₁₂O₆ + 6 O₂ + 6 H₂O instead of cancelling the water on both sides?",
       q_cn: "教材为何坚持写成 12 H₂O + 6 CO₂ → C₆H₁₂O₆ + 6 O₂ + 6 H₂O，而不把两侧的水约去？",
       options: [
-        "Because the cancelled version is not correctly balanced",
-        "Because 6 of the 12 waters are consumed as solvent rather than as substrate",
+        "Because the cancelled form 6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂ does not balance, whereas the long form does",
+        "Because 6 of the 12 water molecules serve only as solvent, while just the other 6 are the ones split photochemically",
         "To emphasise that the 6 released O₂ molecules originate from the water molecules and not from the carbon dioxide",
-        "Because the ΔG°′ value only applies to the uncancelled form"
+        "Because ΔG°′ = +2867 kJ·mol⁻¹ holds only for the uncancelled form and changes once the water is cancelled"
       ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Both forms balance perfectly — that is exactly the difficulty. The cancelled version is arithmetically identical and the book still refuses it; the objection is pedagogical, not stoichiometric, and the book says so in as many words.", cn: "两种写法都配平得好好的——难点恰恰在这里。约简后的写法在算术上完全等价，教材却仍然拒绝它；反对的理由是教学上的，不是配平上的，教材原文就是这样讲的。" },
+        1: { en: "All twelve waters are substrate, not solvent. Two water molecules must be photochemically split for every O₂ evolved, so twelve waters are exactly what six O₂ requires — and the six on the product side are what the splitting itself puts back.", cn: "十二个水分子全部是底物，没有一个是溶剂。每释放一个 O₂ 就必须光化学裂解两个水分子，所以六个 O₂ 恰好需要十二个水——而产物侧那六个，正是裂解过程本身重新生成的。" },
+        3: { en: "ΔG°′ = +2867 kJ·mol⁻¹ belongs to the reaction, not to a way of writing it; cancelling six waters on both sides changes nothing thermodynamically. The positive sign records only that the equation is written in the endergonic, synthetic direction.", cn: "ΔG°′ = +2867 kJ·mol⁻¹ 属于这个反应本身，而不属于某一种写法；两侧各约去六个水，在热力学上什么也没改变。正号只记录一件事：方程是按吸能的合成方向写的。" }
+      },
       why_en: "The book gives this reason in so many words. Both forms balance and both have the same ΔG°′; the uncancelled form is preferred purely because it makes the origin of the oxygen visible — two waters split per O₂ evolved.",
       why_cn: "教材原文就是这样说的。两种写法都配平、ΔG°′也相同；之所以偏好未约简的形式，纯粹是因为它把氧的来源显示了出来——每释放一个O₂须分解两个水分子。"
     },
@@ -265,12 +282,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which part of photosynthesis does the book describe as immediately dependent on light?",
       q_cn: "教材把光合作用的哪一部分描述为直接依赖光的？",
       options: [
-        "CO₂ fixation in the stroma",
+        "Only CO₂ fixation in the stroma, which halts the moment the illumination stops",
         "Only the primary processes, which end with charge separation in the reaction centre",
-        "The whole of electron and proton transport including water photolysis",
-        "Photorespiration and nitrogen metabolism"
+        "The whole complex of electron and proton transport, including the photolysis of water",
+        "Photorespiration and nitrogen metabolism, which run only while the leaf is illuminated"
       ],
       answer: 1,
+      optionRefs: { 0: "9-15", 2: "9-14", 3: "9-20" },
+      optionNotes: {
+        0: { en: "CO₂ fixation is the book's own example of what is NOT immediately dependent on light: it contains no photochemical step and runs in light or dark alike, for as long as the NADPH and ATP already made hold out. That is why §9.1.4 rejects the term 'dark phase' from both directions at once.", cn: "CO₂ 固定正是教材举出的「不直接依赖光」的例子：它不含光化学步骤，在光下和黑暗中一样进行，只要已经制造出来的 NADPH 与 ATP 还够用。这也正是§9.1.4 从两个方向同时否定「暗相」这个说法的原因。" },
+        2: { en: "This block is the biochemistry of photosynthesis, at 10⁻¹⁰ to 10⁻² s — downstream of the light-dependent step, not identical with it. Its first stable products are NADPH and ATP, in which the photon energy has already been converted and stored.", cn: "这一整块属于光合作用的 biochemistry，时间尺度 10⁻¹⁰ 到 10⁻² 秒——它在依赖光的那一步的下游，而不等同于那一步。它最先得到的稳定产物是 NADPH 和 ATP，光子能量到那时已经转化并储存起来了。" },
+        3: { en: "Both sit in the 10⁻³ to 10² s biochemistry window, several orders of magnitude away from the primary processes. Nitrogen metabolism in particular is not tied to illumination at all: nitrite reduction in roots is coupled to respiration, and only in leaves does it draw on photosynthetic ferredoxin.", cn: "两者都落在 10⁻³ 到 10² 秒的 biochemistry 窗口里，与初级过程差了好几个数量级。氮代谢尤其与光照无关：根中的亚硝酸盐还原与呼吸作用相偶联，只有在叶片中它才取用光合来的 ferredoxin。" }
+      },
       why_en: "The book says explicitly that only the primary processes — the 10⁻¹⁵ to 10⁻⁸ s events ending with charge separation — are immediately dependent on light. This is the same claim it uses later to argue that calling CO₂ fixation the 'dark phase' is misleading (§9.1.4).",
       why_cn: "教材明确指出，只有初级过程——即以电荷分离为终点的10⁻¹⁵至10⁻⁸秒事件——是直接依赖光的。它在后文用同一论断说明把CO₂固定称作「暗相」是有误导性的（§9.1.4）。"
     },
@@ -336,14 +359,20 @@ window.BIOCHEM.topics.push(
       q_en: "What is the structural difference the book uses to separate chlorophylls from phycobilins?",
       q_cn: "教材用什么结构差异把叶绿素与藻胆素区分开？",
       options: [
-        "Chlorophylls contain Fe, phycobilins contain Mg",
+        "Chlorophylls carry a central Fe ion, as haem does in haemoglobin; phycobilins carry the central Mg ion instead",
         "Chlorophylls are closed porphyrin macrocycles; phycobilins have an OPEN tetrapyrrole chain, like the bile pigments",
-        "Chlorophylls are isoprenoids; phycobilins are tetrapyrroles",
-        "Chlorophylls have a phytol tail; phycobilins have a carotenoid tail"
+        "Chlorophylls are isoprenoids built from isoprene units; phycobilins are the tetrapyrroles, closely related to the steroids",
+        "Chlorophylls carry a phytol tail of 20 carbon atoms; phycobilins carry a β-carotene tail of the same length"
       ],
       answer: 1,
-      why_en: "The book defines phycobilins precisely by the open tetrapyrrole chain and compares them to biliverdin, bilirubin and stercobilin. Chlorophylls, being porphyrins (kap. 6.3), are closed macrocycles. Option 0 has the metals the wrong way round (chlorophyll has Mg, haem has Fe) and option 2 confuses carotenoids with chlorophylls.",
-      why_cn: "教材正是以开链四吡咯来界定藻胆素，并将其比作胆绿素、胆红素与粪胆素。叶绿素作为卟啉（第6.3节）则是闭合大环。选项0把金属弄反了（叶绿素含Mg、血红素含Fe），选项2把类胡萝卜素与叶绿素混为一谈。"
+      optionRefs: { 0: "9-6", 3: "9-6" },
+      optionNotes: {
+        0: { en: "The two metals are the right pair but the wrong way round: chlorophyll is the porphyrin with central Mg, and it is haem — of haemoglobin and the cytochromes — that carries the Fe. Phycobilins are not metalloporphyrins at all; their macrocycle is broken open.", cn: "两种金属配对是对的，但位置弄反了：chlorophyll 才是带中心 Mg 的 porphyrin，而带 Fe 的是 haem——血红蛋白与细胞色素里的那个。phycobilins 根本不是金属卟啉，它们的大环是断开的。" },
+        2: { en: "The isoprenoid class is the third category of pigment, the carotenoids (kap. 8.2.4), and it is the carotenoids that the book calls related to the steroids through their shared isoprene units. Phycobilins are indeed tetrapyrroles, but so are the chlorophylls — which is why that half cannot be the distinguishing feature.", cn: "isoprenoid 那一类指的是第三类色素 carotenoids（kap. 8.2.4），教材说通过共有的 isoprene 单元与 steroids 有亲缘关系的也正是 carotenoids。phycobilins 确实是 tetrapyrrole，但 chlorophylls 也是——所以这半句根本不能作为区分特征。" },
+        3: { en: "The phytol half is right: the chlorophyll molecule carries a 20-carbon phytyl alcohol, itself an isoprenoid, and that tail is what holds the pigment in the thylakoid membrane. The other half is invented — a phycobilin is an open tetrapyrrole chain and carries no carotenoid tail.", cn: "phytol 那一半是对的：chlorophyll 分子带一个 20 碳的 phytyl 醇，它本身就是 isoprenoid，这条尾巴把色素固定在类囊体膜里。另一半是编出来的——phycobilin 是一条开链 tetrapyrrole，不带什么 carotenoid 尾巴。" }
+      },
+      why_en: "The book defines phycobilins precisely by the open tetrapyrrole chain and compares them to biliverdin, bilirubin and stercobilin. Chlorophylls, being porphyrins (kap. 6.3), are closed macrocycles. Option A has the metals the wrong way round (chlorophyll has Mg, haem has Fe) and option C confuses carotenoids with chlorophylls.",
+      why_cn: "教材正是以开链四吡咯来界定藻胆素，并将其比作胆绿素、胆红素与粪胆素。叶绿素作为卟啉（第6.3节）则是闭合大环。选项A把金属弄反了（叶绿素含Mg、血红素含Fe），选项C把类胡萝卜素与叶绿素混为一谈。"
     },
     {
       type: "short",
@@ -408,11 +437,17 @@ window.BIOCHEM.topics.push(
       q_cn: "教材依据什么证据提出「只有叶绿素a才是光合作用中真正的能量转换者」这一论断？",
       options: [
         "Its absorption maximum lies furthest into the red of all the pigments",
-        "It is the only pigment that carries a phytol tail",
+        "It is the only chlorophyll that carries the 20-carbon phytol tail",
         "Its universal distribution among organisms with oxygenic photosynthesis",
-        "It is the only chlorophyll containing magnesium"
+        "It is the only chlorophyll whose porphyrin ring holds a central magnesium ion"
       ],
       answer: 2,
+      optionRefs: { 0: "9-11", 1: "9-5" },
+      optionNotes: {
+        0: { en: "Absorption maxima are how reaction-centre pigments get their NAMES — P₈₇₀, P₆₈₀, P₇₀₀ — not how the book argues for chlorophyll a's privileged role. Chlorophyll a and chlorophyll b in fact have strikingly similar spectra in both shape and band position.", cn: "吸收峰的位置是反应中心色素**取名**的依据——P₈₇₀、P₆₈₀、P₇₀₀——而不是教材论证 chlorophyll a 特殊地位的依据。事实上 chlorophyll a 和 chlorophyll b 的光谱在带形和带位上都惊人地相似。" },
+        1: { en: "The phytyl residue is not a distinguishing mark: besides the porphyrin, the chlorophyll molecule contains an alcohol, most often phytol, and this holds for the chlorophylls generally. It is a membrane anchor, not the reason one of them does the photochemistry.", cn: "phytyl 残基不是区分标志：除 porphyrin 之外，chlorophyll 分子还含一个醇，最常见的就是 phytol，各种 chlorophyll 普遍如此。它是把色素锚在膜里的东西，不是其中某一个负责光化学的理由。" },
+        3: { en: "Every chlorophyll is a porphyrin with central Mg — that is what makes it a chlorophyll rather than a haem. It cannot separate chlorophyll a from chlorophyll b, which differ by a single substituent on ring II and nothing else.", cn: "每一种 chlorophyll 都是带中心 Mg 的 porphyrin——正是这一点使它成为 chlorophyll 而不是 haem。这条区分不了 chlorophyll a 和 chlorophyll b，二者的差别只在 ring II 上的一个取代基，别无其他。" }
+      },
       why_en: "The argument in the text runs from universality: chlorophyll a is found in every organism with oxygenic photosynthesis (bacteriochlorophyll, structurally different, belongs to the anoxygenic ones), and this universal presence is what led to the view that it alone performs the primary photochemical act.",
       why_cn: "文中的论证以普遍性为出发点：叶绿素a存在于每一种产氧光合生物中（结构不同的细菌叶绿素属于不产氧的那一类），正是这种普遍存在导出了「唯有它执行初级光化学作用」的观点。"
     },
@@ -477,12 +512,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does the book say the 415–440 nm absorption band of chlorophyll is not significant for photosynthesis?",
       q_cn: "教材为何说叶绿素415–440 nm的吸收带对光合作用不重要？",
       options: [
-        "Because sunlight contains almost no light at those wavelengths",
+        "Because sunlight delivers almost nothing at those wavelengths, so the accessory pigments have to cover that part of the spectrum instead",
         "Because it excites electrons into the 2nd singlet excited state, whose lifetime is too short to start the subsequent redox reactions",
-        "Because only accessory pigments, not chlorophyll a, absorb there",
-        "Because those photons carry too little energy to drive charge separation"
+        "Because only the carotenoids and the phycobilins absorb in that region, and they merely pass their excitation on to chlorophyll a",
+        "Because those photons carry too little energy to raise the electron into the 1st singlet state that the redox chemistry needs"
       ],
       answer: 1,
+      optionRefs: { 0: "9-8", 2: "9-8" },
+      optionNotes: {
+        0: { en: "Photon supply is not the objection. Obr. 9.4 plots the pigments against the envelope of the solar spectrum over the whole 400–700 nm range, and the sun delivers strongly across the blue; the accessory pigments are there to fill the yellow-green gap in the middle, not the blue end.", cn: "问题不出在光子供应上。Obr. 9.4 把各色素画在 400–700 nm 整个太阳光谱包络之下，太阳在蓝光区输出很强；accessory pigments 存在是为了补中间黄绿区那个缺口，而不是补蓝端。" },
+        2: { en: "The 415–440 nm band belongs to the chlorophylls themselves — Obr. 9.3 shows it for both chlorophyll a and chlorophyll b. What the accessory pigments cover is the middle of the visible range: phycobilins between roughly 500 and 650 nm, carotenoids in the yellow-green.", cn: "415–440 nm 这条带就是 chlorophyll 自己的——Obr. 9.3 里 chlorophyll a 与 chlorophyll b 都有。accessory pigments 补的是可见光的中段：phycobilins 大致在 500–650 nm，carotenoids 在黄绿区。" },
+        3: { en: "This has the energetics inverted. Blue photons are the MORE energetic ones — that is precisely why they lift the electron past the usable 1st singlet state into the 2nd. The useful band is the red one, 640–700 nm, whose photons carry less energy and reach exactly the right state.", cn: "这把能量关系弄反了。蓝光光子能量**更高**——正因为如此，它把电子越过可用的第1单线态送进了第2单线态。真正有用的是 640–700 nm 的红光带，那里的光子能量更低，恰好落在正确的态上。" }
+      },
       why_en: "The reason is excited-state lifetime, not photon supply or photon energy. Blue photons are the MORE energetic ones; the problem is that they put the electron in the 2nd singlet state, which decays before the redox chemistry can be started. Only the 1st singlet state, reached by red 640–700 nm light, is usable.",
       why_cn: "理由是激发态寿命，而非光子供应或光子能量。蓝光光子能量**更高**；问题在于它们把电子送入第2单线态，该态在氧化还原化学得以启动之前就已衰变。只有由640–700 nm红光达到的第1单线态才可用。"
     },
@@ -548,12 +589,18 @@ window.BIOCHEM.topics.push(
       q_en: "What is the functional role of the accessory pigments?",
       q_cn: "辅助色素的功能作用是什么？",
       options: [
-        "They perform the primary photochemical act in parallel with chlorophyll a, doubling the yield",
+        "They perform the primary photochemical act alongside the reaction-centre chlorophyll a, which is what raises the overall quantum yield of the system",
         "They capture light quanta and transfer the excitation energy to chlorophyll a in the reaction centre, broadening the effective spectrum",
-        "They protect chlorophyll a from photooxidation and take no part in energy capture",
-        "They anchor chlorophyll a in the thylakoid membrane"
+        "They shield the reaction-centre chlorophyll a from photooxidation and themselves take no part in capturing light quanta",
+        "They anchor the chlorophyll a molecules inside the thylakoid membrane by means of their long hydrophobic tails"
       ],
       answer: 1,
+      optionRefs: { 0: "9-11", 2: "9-11", 3: "9-6" },
+      optionNotes: {
+        0: { en: "The primary photochemical act is the one thing accessory pigments never do. Only the reaction-centre chlorophylls are capable of photooxidation, and only because of their microenvironment in the pigment-protein complex; the high quantum yield comes from that step outcompeting fluorescence and heat, not from a second set of pigments doing it too.", cn: "初级光化学作用恰恰是 accessory pigments 从不做的那件事。只有反应中心的 chlorophyll 具备 photooxidation 的能力，而且只因为它们在色素蛋白复合体中的微环境；高 quantum yield 来自这一步压过了荧光与产热，而不是来自第二套色素也在做同样的事。" },
+        2: { en: "Energy capture is exactly what they are for — the book defines the class functionally as capturing quanta and passing the excitation on. The half that is right is that they are never oxidized themselves; in the antennae no charge separation occurs at all.", cn: "捕光正是它们的本职——教材就是按功能来定义这一类的：捕获量子并把激发传下去。说对的那一半是它们自身从不被氧化；在天线系统中根本不发生电荷分离。" },
+        3: { en: "Anchoring is done by the pigment's own tail, not by other pigments: the chlorophyll molecule carries a 20-carbon phytyl residue, itself an isoprenoid, and that hydrophobic tail is what holds it in the thylakoid membrane.", cn: "锚定靠的是色素自己的尾巴，不是别的色素：chlorophyll 分子带一个 20 碳的 phytyl 残基，它本身是 isoprenoid，正是这条疏水尾巴把它固定在类囊体膜里。" }
+      },
       why_en: "The book is explicit that they have ONLY an auxiliary function: capture quanta, pass the excitation energy on to reaction-centre chlorophyll a. They complement and broaden the spectrum of photosynthetically effective radiation; they never perform the primary photochemical act themselves.",
       why_cn: "教材明确指出它们**只有**辅助功能：捕获量子，把激发能传给反应中心的叶绿素a。它们补充并拓宽光合有效辐射的光谱；自身从不执行初级光化学作用。"
     },
@@ -618,12 +665,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which component of thylakoid electron transport has NO counterpart in the inner mitochondrial membrane?",
       q_cn: "类囊体电子传递中的哪个组分在线粒体内膜中**没有**对应物？",
       options: [
-        "Cytochromes",
-        "Fe-S proteins",
-        "Quinones",
+        "Cytochromes of the b and f type",
+        "Fe-S proteins of the ferredoxin type",
+        "Quinones in the oxidized or reduced form",
         "Plastocyanin, a blue Cu²⁺ protein"
       ],
       answer: 3,
+      optionRefs: { 0: "9-14", 1: "9-23", 2: "9-10" },
+      optionNotes: {
+        0: { en: "Cytochromes are named in the very list of carriers the book calls analogous to those of the inner mitochondrial membrane (kap. 6.2.4). The thylakoid version is assembled differently — as the cytochrome b₆/f complex — but the carrier type itself is shared with the respiratory chain.", cn: "cytochromes 正出现在教材称为与线粒体内膜相类似的那张载体清单里（kap. 6.2.4）。类囊体版本的组装方式不同——叫 cytochrome b₆/f complex——但载体类型本身是与呼吸链共有的。" },
+        1: { en: "Fe-S proteins appear on the same shared list, and the chapter goes on using them everywhere: FeS in Obr. 9.5, ferredoxin accepting electrons from PS I, and Fe-S proteins of the ferredoxin type inside nitrogenase. Nothing about them is peculiar to the thylakoid.", cn: "Fe-S proteins 也在那张共有清单上，而且本章一路都在用它们：Obr. 9.5 里的 FeS、从 PS I 接电子的 ferredoxin、以及 nitrogenase 内部 ferredoxin 型的 Fe-S proteins。它们身上没有任何东西是类囊体独有的。" },
+        2: { en: "Quinones head the shared list too. The thylakoid's plastoquinone, written Q_A, Q_B and Q/QH₂ in Obr. 9.5, is the mobile hydrophobic carrier that physically moves protons across the membrane — the exact functional counterpart of the mitochondrial quinone.", cn: "quinones 同样列在共有清单的最前面。类囊体的 plastoquinone，在 Obr. 9.5 中写作 Q_A、Q_B 与 Q/QH₂，是把质子真正搬过膜的可移动疏水载体——正是线粒体醌的功能对应物。" }
+      },
       why_en: "Quinones, cytochromes, Fe-S proteins and flavoproteins are explicitly described as analogous to those of the inner mitochondrial membrane (kap. 6.2.4). Plastocyanin is listed as something organisms with oxygenic photosynthesis have IN ADDITION — a copper protein with a broad maximum near 597 nm and E°′ = 370 mV.",
       why_cn: "醌类、细胞色素、Fe-S蛋白和黄素蛋白都被明确描述为与线粒体内膜中的相类似（第6.2.4节）。质体蓝素则被列为产氧光合生物**额外**拥有的东西——一种铜蛋白，宽吸收峰近597 nm，E°′ = 370 mV。"
     },
@@ -695,10 +748,16 @@ window.BIOCHEM.topics.push(
       options: [
         "Chlorophyll without its phytol tail",
         "Chlorophyll without the Mg ion",
-        "A plastoquinone in its reduced form",
+        "Plastoquinone, reduced form",
         "A protein with non-haem-bound Fe atoms"
       ],
       answer: 1,
+      optionRefs: { 0: "9-6", 2: "9-14", 3: "9-9" },
+      optionNotes: {
+        0: { en: "Removing the phytol gives chlorophyllide, not pheophytin. The phytyl residue is the 20-carbon isoprenoid alcohol that anchors the pigment in the membrane; it has nothing to do with the photochemistry, which the porphyrin head always carries.", cn: "去掉 phytol 得到的是 chlorophyllide，不是 pheophytin。phytyl 残基是那个 20 碳的 isoprenoid 醇，作用是把色素锚在膜里；它与光化学无关，光化学始终由 porphyrin 头部承担。" },
+        2: { en: "That is Q/QH₂ in the same legend — plastoquinone, the mobile hydrophobic carrier drawn as Q_A and Q_B on the PS II acceptor side. It is what performs the real transfer of protons across the membrane, together with the cytochrome b₆/f complex.", cn: "那是同一张图注里的 Q/QH₂——plastoquinone，在 PS II 受体侧画作 Q_A 与 Q_B 的可移动疏水载体。它与 cytochrome b₆/f complex 一起，完成质子真正的跨膜转运。" },
+        3: { en: "That is FeS in the same legend, the protein with non-haem-bound iron. The book keeps the two abbreviations a line apart in the legend to Obr. 9.5, which is exactly why they are worth telling apart.", cn: "那是同一张图注里的 FeS，即含非血红素结合铁的蛋白。教材在 Obr. 9.5 的图注里把这两个缩写排在相邻的行上，这正是值得把它们分清的原因。" }
+      },
       why_en: "The legend to Obr. 9.5 defines Pheo as 'feofytin (chlorofyl bez iontu Mg)' — chlorophyll without the Mg ion. Losing the phytol tail would give chlorophyllide, not pheophytin; the Fe-containing protein is FeS.",
       why_cn: "图9.5的图注把Pheo定义为「feofytin（不含Mg离子的叶绿素）」。失去植醇尾得到的是脱植基叶绿素，而非去镁叶绿素；含铁的蛋白是FeS。"
     },
@@ -766,12 +825,18 @@ window.BIOCHEM.topics.push(
       q_en: "What makes the chlorophyll molecules of the reaction centre different from the ~200-fold excess of antenna chlorophylls?",
       q_cn: "反应中心的叶绿素分子与约200倍过量的天线叶绿素有何不同？",
       options: [
-        "They have a chemically different porphyrin ring",
-        "They absorb at a wavelength no antenna pigment can reach",
+        "Their porphyrin ring carries a chemically different substituent from the antenna chlorophylls, which is what makes them photooxidizable",
+        "They absorb at a longer wavelength than any antenna pigment can reach, which is why they are named P₆₈₀ and P₇₀₀",
         "Their microenvironment in the pigment-protein complex makes them capable of photooxidation — of giving up an electron",
-        "They lack the phytol tail and are therefore free in the stroma"
+        "They lack the phytol tail and therefore float free in the stroma rather than being held inside the membrane"
       ],
       answer: 2,
+      optionRefs: { 0: "9-5", 1: "9-10", 3: "9-6" },
+      optionNotes: {
+        0: { en: "Chemically the reaction-centre chlorophylls are ordinary chlorophyll — the book is explicit that the peculiarity lies in the protein context, not in the molecule. A single differing substituent on ring II is what separates chlorophyll a from chlorophyll b, and that difference makes neither of them photooxidizable on its own.", cn: "从化学上说，反应中心的 chlorophyll 就是普通的 chlorophyll——教材明确指出特殊之处在于蛋白质环境，而不在分子本身。ring II 上一个取代基之差区分的是 chlorophyll a 与 chlorophyll b，而这个差别本身并不能让谁具备 photooxidation 的能力。" },
+        1: { en: "The naming is right but the causation is backwards: P₆₈₀ and P₇₀₀ are named after their absorption maxima because oxidation of P CHANGES its spectrum, which is how the maximum gets measured in the first place. The wavelength is a label put on afterwards, not the property that makes them special.", cn: "命名说对了，但因果反了：P₆₈₀ 与 P₇₀₀ 按吸收峰命名，是因为 P 被氧化会**改变**它的光谱，这才使那个峰得以被测出来。波长是事后贴上的标签，不是使它们特殊的那个性质。" },
+        3: { en: "Both halves fail. The chlorophyll molecule carries its phytyl residue whether it sits in a reaction centre or in an antenna, and photosystems are integral pigment-protein complexes penetrating the bilayer — being loose in the stroma would destroy the oriented charge separation that is the whole point.", cn: "两半都不成立。无论位于反应中心还是天线，chlorophyll 分子都带着自己的 phytyl 残基；而 photosystem 是贯穿双层膜的整合型色素蛋白复合体——若真散在 stroma 里，那种跨膜定向的电荷分离——也就是全部意义所在——就没有了。" }
+      },
       why_en: "The book says the peculiarity lies in the microenvironment inside the pigment-protein complex, which makes them capable of photooxidation. Antenna chlorophylls are chemically the same molecule; they are simply never oxidized and only pass energy on.",
       why_cn: "教材指出其特殊之处在于色素蛋白复合体内部的微环境，正是它使这些分子具备光氧化能力。天线叶绿素在化学上是同一种分子；只是它们从不被氧化，仅传递能量。"
     },
@@ -839,12 +904,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to the book, what is the PRIMARY donor of electrons in a photosystem?",
       q_cn: "根据教材，光系统中的**初级**电子供体是什么？",
       options: [
-        "The water molecule at the OEC",
+        "The water molecule split at the OEC",
         "The pigment P in the reaction centre itself",
-        "D₂, the preceding member of the electron transport chain",
-        "Plastocyanin"
+        "D₂, the preceding member of the transport chain",
+        "Plastocyanin, the blue copper carrier"
       ],
       answer: 1,
+      optionRefs: { 0: "9-9", 2: "9-12", 3: "9-9" },
+      optionNotes: {
+        0: { en: "Water is the INITIAL donor of the whole chain, which is a different notion. The book fits the entire sequence from water up to NADP⁺ into the A₁/A₂/D₂ notation; 'primary' in that notation is a position within one photosystem, not the start of the chain.", cn: "水是整条链的**初始**供体，那是另一个概念。教材把从水一直到 NADP⁺ 的完整序列都装进 A₁/A₂/D₂ 这套记号里；「primary」在这套记号里指的是某一个 photosystem 内部的位置，而不是整条链的起点。" },
+        2: { en: "D₂ is the SECONDARY donor — the book puts the correction in a parenthesis that is easy to lose. D₂ refills the electron gap in P⁺ by the reaction D₂ + P⁺ → D₂⁺ + P; getting this the wrong way round makes the whole A/D notation incoherent.", cn: "D₂ 是**次级**供体——教材把这个更正放在一个很容易被漏掉的括注里。D₂ 通过反应 D₂ + P⁺ → D₂⁺ + P 来填补 P⁺ 上的电子空缺；把这一点弄反，整套 A/D 记号就前后不通了。" },
+        3: { en: "Plastocyanin is one concrete secondary donor, the blue Cu²⁺ protein with E°′ = 370 mV that carries electrons from the cytochrome b₆f complex to PS I. Naming it answers 'which molecule', not 'which position in the scheme'.", cn: "plastocyanin 是一个具体的次级供体，就是那个 E°′ = 370 mV 的蓝色 Cu²⁺ 蛋白，把电子从 cytochrome b₆f complex 送到 PS I。说出它，回答的是「哪个分子」，而不是「图式里的哪个位置」。" }
+      },
       why_en: "The book states this in a parenthesis: the primary donor of electrons is the pigment P in the RC. D₂ is the SECONDARY donor, which refills the gap in P⁺. Water is the initial donor of the whole chain, which is a different notion from the primary donor of a photosystem.",
       why_cn: "教材在括注中指明：初级电子供体是反应中心中的色素P。D₂是**次级**供体，用来填补P⁺上的空缺。水是整条链的初始供体，这与某个光系统的初级供体是不同的概念。"
     },
@@ -914,10 +985,16 @@ window.BIOCHEM.topics.push(
       options: [
         "PS I",
         "PS II",
-        "Both, alternately",
-        "Neither; water is oxidized by the OEC independently of any photosystem"
+        "Both, in alternation",
+        "Neither — the OEC"
       ],
       answer: 1,
+      optionRefs: { 0: "9-10", 2: "9-14", 3: "9-9" },
+      optionNotes: {
+        0: { en: "PS I is defined by the other two jobs: it transfers electrons to NADP⁺, and it is the one that takes part in cyclic electron flow between ferredoxin and the plastoquinones. The numbering is historical, not sequential — PS II acts first in the linear chain.", cn: "PS I 是由另外两件事来定义的：它把电子交给 NADP⁺，而且它是参与 ferredoxin 与 plastoquinone 之间循环电子流的那一个。编号是历史沿革，不是顺序——在线性链中先动作的是 PS II。" },
+        2: { en: "Two photosystems in series means linear electron flow, not alternation: each does its own job once and the electron passes from one to the other, which is why the scheme is drawn as a lying letter Z. Alternation would make the two photosystems interchangeable, and then their functional definitions would be empty.", cn: "两个 photosystem 串联意味着 linear electron flow，而不是交替：各做各的一件事，电子从一个传到另一个，这正是图式画成横躺的 Z 字的原因。若真是交替，两个 photosystem 就可以互换，它们按功能给出的定义也就没有内容了。" },
+        3: { en: "The OEC is not independent of the photosystems — it is the specific set of non-pigmented proteins that belongs to PS II, drawn as part of it in Obr. 9.5. Photolysis of water takes place at the inner surface of the thylakoid, on the lumen face of PS II itself.", cn: "OEC 并不独立于 photosystem——它就是属于 PS II 的那套非色素蛋白，在 Obr. 9.5 中被画成 PS II 的一部分。水的光解发生在类囊体的内表面，也就是 PS II 朝向 lumen 的那一面。" }
+      },
       why_en: "PS II is defined functionally as the water-photooxidizing photosystem that reduces plastoquinone. PS I is the one that reduces NADP⁺ and takes part in cyclic flow between Fd and Q. The OEC is part of PS II, not independent of it.",
       why_cn: "PSII在功能上被定义为光氧化水并还原质体醌的光系统。PSI则是还原NADP⁺、并参与Fd与Q之间循环流的那一个。OEC是PSII的组成部分，并非独立于它。"
     },
@@ -986,12 +1063,18 @@ window.BIOCHEM.topics.push(
       q_en: "In what direction do protons move across the thylakoid membrane during the photosynthetic redox reactions, and how does that compare with mitochondria?",
       q_cn: "在光合氧化还原反应中，质子跨类囊体膜的移动方向如何？与线粒体相比又如何？",
       options: [
-        "From inside out, the same direction as in mitochondria",
+        "From inside outwards, the same direction as in the mitochondria",
         "From outside inwards — the reverse of the mitochondrial direction",
-        "From inside out, the reverse of the mitochondrial direction",
-        "Protons do not cross; only electrons do"
+        "Only apparently: they are consumed on one side and released on the other",
+        "They do not cross at all; only electrons move through the membrane"
       ],
       answer: 1,
+      optionRefs: { 0: "9-9", 3: "9-13" },
+      optionNotes: {
+        0: { en: "That is the mitochondrial direction, kept unchanged. The book's point is that the thylakoid is the mirror image: protons go inwards, and consistently the ATP-synthase knobs protrude on the OUTER surface and let protons back out from inside. Both reversals go together.", cn: "那是线粒体的方向，原封不动照搬。教材的要点是类囊体恰好是镜像：质子向内走，与之一致，ATP-synthase 的头部朝**外**表面凸出，让质子由内向外回流。两个反转是配套的。" },
+        2: { en: "This is the book's own distinction, applied to the wrong half. Apparent transfer is protons consumed at NADP⁺ reduction on one side and released by water photolysis on the other; REAL transfer, carried out by the hydrophobic plastoquinones with the cytochrome b₆/f complex, is what physically moves them across. Both happen.", cn: "这是教材自己作出的区分，只是安在了错误的一半上。「表观」转运指的是一侧在还原 NADP⁺ 时消耗质子、另一侧在水的光解中释放质子；而由疏水的 plastoquinone 连同 cytochrome b₆/f complex 完成的**真正**转运，才是把质子实际搬过去的那个。两者都在发生。" },
+        3: { en: "If nothing crossed, there would be no ΔpH and no ATP. On illumination the H⁺ concentration rises throughout the whole inner space of the thylakoid — the book stresses the protons are delocalised there — while it falls at the outer surface, and that difference is what the ATP-synthase spends.", cn: "如果什么都不过膜，就不会有 ΔpH，也不会有 ATP。光照下类囊体整个内腔的 H⁺ 浓度上升——教材强调质子在那里是 delocalised 的——而外表面的浓度下降，正是这个差值被 ATP-synthase 消耗掉。" }
+      },
       why_en: "The book states that the orientation of thylakoid membranes is reversed: in the photosynthetic redox reactions protons move from outside INWARDS into the thylakoids. Consistently, the ATP-synthase knobs protrude on the outer surface and let protons out from inside.",
       why_cn: "教材指出类囊体膜的取向是相反的：在光合氧化还原反应中，质子从外**向内**进入类囊体。与之一致，ATP合酶的头部朝外表面凸出，并让质子由内向外通过。"
     },
@@ -1055,12 +1138,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does the book reject the term 'light-independent photosynthetic reaction' for CO₂ fixation?",
       q_cn: "教材为何否定用「不依赖光的光合反应」来称呼CO₂固定？",
       options: [
-        "Because CO₂ fixation contains a genuinely photochemical step",
+        "Because CO₂ fixation contains a genuinely photochemical step of its own in the chloroplast stroma",
         "Because the process only runs as long as NADPH and ATP made by the light reactions last",
-        "Because it occurs only at night in most plants",
-        "Because RubisCO is directly activated by photons"
+        "Because in most plants it runs only at night, when the stomata can safely be opened",
+        "Because RubisCO in the stroma is directly activated by the photons the pigments absorb"
       ],
       answer: 1,
+      optionRefs: { 0: "9-11", 2: "9-22", 3: "9-17" },
+      optionNotes: {
+        0: { en: "CO₂ fixation contains no photochemical step at all, and the book grants this. Strictly speaking only one reaction in the whole of photosynthesis is light-driven — P →(hv) P* in the reaction centre. The objection to 'light-independent' is about supply, not about photochemistry.", cn: "CO₂ 固定根本不含光化学步骤，教材也承认这一点。严格说来，整个光合作用中只有一个反应由光驱动——反应中心里的 P →(hv) P*。反对「不依赖光」这个说法，针对的是供给，不是光化学。" },
+        2: { en: "Keeping the stomata almost shut against water loss is the C-4 strategy, and it works by PEP-carboxylase's lower Km for CO₂, not by moving fixation into the night. In C-4 plants the Calvin cycle still runs — in the bundle-sheath cells, fed by malate.", cn: "把气孔几乎关严以减少失水，那是 C-4 的策略，靠的是 PEP-carboxylase 对 CO₂ 更低的 Km，而不是把固定挪到夜里。在 C-4 植物中 Calvin cycle 照样运行——在维管束鞘细胞里，由 malate 供料。" },
+        3: { en: "RubisCO's activation is chemical, not optical: each of its eight active sites converts RuBP into the reactive endiolate ion, which is what binds CO₂. Nothing in the enzyme absorbs photons — the pigments do that, several steps upstream and in a different structure.", cn: "RubisCO 的活化是化学性的，不是光学性的：它八个活性位点各自把 RuBP 转成反应性的 endiolate 离子，由后者结合 CO₂。这个酶身上没有任何东西吸收光子——吸光的是色素，在上游好几步、而且在另一种结构里。" }
+      },
       why_en: "The book's argument is about supply, not about photochemistry. CO₂ fixation contains no photochemical step, but it runs in light or dark only for as long as the NADPH and ATP produced by the photosystems hold out — so calling it light-independent is misleading.",
       why_cn: "教材的论证针对的是供给，而非光化学本身。CO₂固定并不包含光化学步骤，但它能在光下或黑暗中进行，仅限于光系统所产生的NADPH与ATP尚未耗尽之时——因此称其「不依赖光」有误导性。"
     },
@@ -1122,12 +1211,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to the book, what happens to the GREATER PART of photosynthetically fixed carbon?",
       q_cn: "根据教材，被光合固定的碳中**更大的一部分**去了哪里？",
       options: [
-        "It is stored as starch and cellulose",
+        "It is laid down as starch and then as cellulose in the cell wall, which the book gives as the goal of CO₂ fixation, only a small remainder reaching the central metabolic pathways",
         "It is transported into the central metabolic pathways (e.g. the citrate cycle) and used for biosyntheses of amino acids, proteins, lipids, nucleotides, pigments and secondary metabolites",
-        "It is re-released as CO₂ by photorespiration",
-        "It is exported to the roots as sucrose"
+        "It is released again as CO₂ by photorespiration, which draws on the same substrate RuBP through the oxygenase activity of RubisCO and so consumes the greater part of what was just fixed",
+        "It is carried through fructose-6-phosphate and glucose-6-phosphate to glucose, exported to the roots, and there oxidized again by the respiratory chain to cover the plant's own energy needs"
       ],
       answer: 1,
+      optionRefs: { 0: "9-19", 2: "9-20", 3: "9-19" },
+      optionNotes: {
+        0: { en: "This is the second of the two incorrect interpretations the book names and then refutes: that CO₂ fixation is limited to this one metabolic activity. Hexose, then cellulose or starch, is a real destination but not the main one — the book says the goal is not ONLY that.", cn: "这正是教材点名并随即驳倒的两个错误理解中的第二个：以为 CO₂ 固定只限于这一项代谢活动。己糖、进而纤维素或淀粉，确实是一个真实去向，但不是主要的那个——教材说目标**不只是**它。" },
+        2: { en: "Photorespiration is real and does compete for RuBP, but the book will not say it takes the greater part: it calls the sequence apparently useless, hedges its two possible functions, and says outright that the reasons are not yet entirely clear. The greater part of the fixed carbon goes forward, not back.", cn: "photorespiration 确实存在，也确实在争夺 RuBP，但教材不会说它拿走了更大的一部分：它把这一序列称作看似无用，对两种可能功能都留了余地，并直说原因尚不完全清楚。被固定的碳中更大的一部分是往前走的，不是退回去的。" },
+        3: { en: "The route is right as far as it goes — F6P is the cycle's net yield and passes through G6P to glucose and cellulose — but the destination is wrong. The book sends the greater part into the central metabolic pathways as a source of energy AND carbon for biosynthesis, not out to be burnt.", cn: "这条路线在前半段是对的——F6P 是循环的净产物，经 G6P 走向葡萄糖和纤维素——但终点错了。教材说更大的一部分进入中心代谢途径，既作能源**也**作生物合成的碳源，而不是被送出去烧掉。" }
+      },
       why_en: "The book states explicitly that the goal of CO₂ fixation is not only hexose and then cellulose or starch synthesis; the greater part goes into the central metabolic pathways and supplies energy and carbon for the whole range of biosyntheses it then lists.",
       why_cn: "教材明确指出CO₂固定的目标不只是合成己糖以及随后的纤维素或淀粉；更大的一部分进入中心代谢途径，为随后所列的各类生物合成提供能量与碳。"
     },
@@ -1196,14 +1291,20 @@ window.BIOCHEM.topics.push(
       q_en: "What is the immediate product of RubisCO's carboxylation of RuBP?",
       q_cn: "RubisCO对RuBP进行羧化的直接产物是什么？",
       options: [
-        "One molecule of glyceraldehyde-3-phosphate",
+        "One molecule of glyceraldehyde-3-phosphate, formed directly at one of the enzyme's eight active sites in the stroma",
         "A six-carbon intermediate (a β-oxo acid) which rapidly hydrolyses to TWO molecules of 3-phosphoglycerate",
-        "One molecule of 3-phosphoglycerate and one of phosphoglycolate",
-        "Fructose-6-phosphate"
+        "One molecule of 3-phosphoglycerate together with one molecule of the two-carbon phosphoglycolate",
+        "One molecule of fructose-6-phosphate, which is the net yield the whole cycle produces"
       ],
       answer: 1,
-      why_en: "RuBP is first converted to the reactive endiolate, which binds CO₂ giving a six-carbon intermediate (drawn as a β-oxo acid); that hydrolyses very rapidly into two molecules of 3-phosphoglycerate. Option 2 is the OXYGENASE reaction of the same enzyme (§9.2, photorespiration), not the carboxylase one.",
-      why_cn: "RuBP先被转变为反应性的烯二醇，后者结合CO₂生成六碳中间体（画作β-氧代酸）；该中间体极迅速地水解为两分子3-磷酸甘油酸。选项2是同一酶的**加氧酶**反应（§9.2光呼吸），而非羧化酶反应。"
+      optionRefs: { 0: "9-18", 2: "9-20", 3: "9-19" },
+      optionNotes: {
+        0: { en: "GAP arrives two steps later and by different chemistry: 3-phosphoglycerate is first phosphorylated by phosphoglycerate kinase at the cost of ATP, then reduced by glyceraldehyde phosphate dehydrogenase at the cost of NADPH. RubisCO neither phosphorylates nor reduces anything.", cn: "GAP 要晚两步、并且靠另一套化学才出现：3-phosphoglycerate 先由 phosphoglycerate kinase 耗 ATP 磷酸化，再由 glyceraldehyde phosphate dehydrogenase 耗 NADPH 还原。RubisCO 既不磷酸化也不还原任何东西。" },
+        2: { en: "That is the same enzyme's OXYGENASE reaction, the one that opens photorespiration: RuBP is oxygenated and breaks down into 3-phosphoglycerate and phosphoglycolate. Both activities live in RubisCO and compete for the same substrate — which is where the double-barrelled name comes from.", cn: "那是同一个酶的 **oxygenase** 反应，也就是开启 photorespiration 的那一步：RuBP 被加氧，裂解为 3-phosphoglycerate 与 phosphoglycolate。两种活性都在 RubisCO 身上，争夺同一个底物——那个双名字就是这么来的。" },
+        3: { en: "F6P is where the whole cycle ends up, not where one carboxylation ends up. It is the net yield after the sugar rearrangements, and it goes on via glucose-6-phosphate to glucose, cellulose and the general metabolic pathways.", cn: "F6P 是**整个循环**的落点，不是**一次羧化**的落点。它是糖重排完成之后的净产物，接下来经 glucose-6-phosphate 走向葡萄糖、纤维素以及各条通用代谢途径。" }
+      },
+      why_en: "RuBP is first converted to the reactive endiolate, which binds CO₂ giving a six-carbon intermediate (drawn as a β-oxo acid); that hydrolyses very rapidly into two molecules of 3-phosphoglycerate. Option C is the OXYGENASE reaction of the same enzyme (§9.2, photorespiration), not the carboxylase one.",
+      why_cn: "RuBP先被转变为反应性的烯二醇，后者结合CO₂生成六碳中间体（画作β-氧代酸）；该中间体极迅速地水解为两分子3-磷酸甘油酸。选项C是同一酶的**加氧酶**反应（§9.2光呼吸），而非羧化酶反应。"
     },
     {
       type: "short",
@@ -1269,12 +1370,18 @@ window.BIOCHEM.topics.push(
       q_en: "The conversion PG → 1,3-BPG → GAP in the Calvin cycle is described by the book as already known from which pathway?",
       q_cn: "教材说卡尔文循环中 PG → 1,3-BPG → GAP 的转换在哪条途径中已经出现过？",
       options: [
-        "The citrate cycle",
+        "The citrate cycle, where it runs in the very same direction",
         "Glycolysis, but running there in the opposite direction",
-        "The urea cycle",
-        "β-oxidation of fatty acids"
+        "The urea cycle, where NADPH takes the place of NADH",
+        "β-oxidation of fatty acids, running in reverse there"
       ],
       answer: 1,
+      optionRefs: { 0: "9-16", 2: "9-26" },
+      optionNotes: {
+        0: { en: "The citrate cycle appears in this chapter as a DESTINATION, not as a source of steps: it is the book's example of the central metabolic pathways into which the greater part of the fixed carbon is transported. It contains no PG → 1,3-BPG → GAP segment at all.", cn: "citrate cycle 在本章里是作为**去处**出现的，不是步骤的来源：它是教材举的那个例子，说明被固定的碳中更大的一部分被送进哪些中心代谢途径。它里面根本没有 PG → 1,3-BPG → GAP 这一段。" },
+        2: { en: "Urea enters this chapter only in Obr. 9.9, as the excretory nitrogen compound H₂NCONH₂ that plants and microbes break back down to NH₃ — a nitrogen-cycle station, not a phosphoglycerate pathway. Nothing in it phosphorylates or reduces a three-carbon acid.", cn: "urea 进入本章只有一处，即 Obr. 9.9 中作为排泄性含氮化合物 H₂NCONH₂，由植物与微生物分解回 NH₃——那是氮循环上的一站，不是磷酸甘油酸的通路。它里面没有任何一步在磷酸化或还原三碳酸。" },
+        3: { en: "The two enzymes the book names for this segment are phosphoglycerate kinase and glyceraldehyde phosphate dehydrogenase, and it points to glycolysis by name. Neither enzyme belongs to fatty acid breakdown, and neither substrate here is an acyl compound.", cn: "教材为这一段点名的两个酶是 phosphoglycerate kinase 与 glyceraldehyde phosphate dehydrogenase，并且直接点了 glycolysis 的名。这两个酶都不属于脂肪酸分解，这里的底物也都不是酰基化合物。" }
+      },
       why_en: "The book says the process involves phosphoglycerate kinase and glyceraldehyde phosphate dehydrogenase and is known from glycolysis, where however it runs in the opposite direction. The Calvin cycle uses NADPH where glycolysis produces NADH.",
       why_cn: "教材指出该过程涉及磷酸甘油酸激酶与磷酸甘油醛脱氢酶，且在糖酵解中已经出现过，只不过在那里方向相反。卡尔文循环使用NADPH，而糖酵解产生NADH。"
     },
@@ -1342,12 +1449,18 @@ window.BIOCHEM.topics.push(
       q_en: "In Obr. 9.6, which two enzymes appear TWICE, at two different points of the cycle?",
       q_cn: "在图9.6中，哪两个酶在循环的两个不同位点**各出现两次**？",
       options: [
-        "Phosphoribulokinase and phosphoglycerate kinase",
+        "Phosphoribulokinase (1) and phosphoglycerate kinase (3)",
         "Aldolase (steps 6 and 9) and transketolase (steps 8 and 11)",
-        "Fructose bisphosphatase and sedoheptulose bisphosphatase",
-        "Triose phosphate isomerase and phosphopentose epimerase"
+        "Fructose bisphosphatase (7) and sedoheptulose bisphosphatase (10)",
+        "Triose phosphate isomerase (5) and phosphopentose epimerase (12)"
       ],
       answer: 1,
+      optionRefs: { 0: "9-18", 3: "9-18" },
+      optionNotes: {
+        0: { en: "Both are ATP-consuming kinases and each appears exactly once. Step 1, phosphoribulokinase, regenerates ribulose-1,5-bisphosphate and closes the cycle; step 3, phosphoglycerate kinase, makes 1,3-bisphosphoglycerate. Those are the cycle's two ATP-consuming steps, which is a different fact from appearing twice.", cn: "两者都是耗 ATP 的激酶，而且各只出现一次。第1步 phosphoribulokinase 再生 ribulose-1,5-bisphosphate、闭合循环；第3步 phosphoglycerate kinase 生成 1,3-bisphosphoglycerate。它们是循环中两个**耗 ATP 的步骤**——这与「出现两次」是两回事。" },
+        2: { en: "These are two different enzymes acting on two different substrates, one at step 7 and one at step 10, each appearing once. What they do share is being the cycle's two hydrolytic bisphosphatase steps, which release Pᵢ and make the regenerative arm run one way only.", cn: "这是作用于两种不同底物的两个不同的酶，一个在第7步、一个在第10步，各出现一次。它们真正共有的是：同为循环中两个水解型 bisphosphatase 步骤，释放 Pᵢ，使再生臂只能单向运行。" },
+        3: { en: "Also one appearance each. Step 5 interconverts glyceraldehyde-3-phosphate and dihydroxyacetone phosphate; step 12 converts xylulose-5-phosphate to ribulose-5-phosphate. Step 12 does share a destination with step 13, ribose phosphate isomerase — but that is two enzymes converging, not one enzyme used twice.", cn: "同样各出现一次。第5步在 glyceraldehyde-3-phosphate 与 dihydroxyacetone phosphate 之间互转；第12步把 xylulose-5-phosphate 转成 ribulose-5-phosphate。第12步确实与第13步 ribose phosphate isomerase 共有一个终点——但那是两个酶汇合，而不是一个酶被用了两次。" }
+      },
       why_en: "Aldolase catalyses both the condensation to fructose-1,6-bisphosphate (6) and the condensation to sedoheptulose-1,7-bisphosphate (9); transketolase acts both at step 8 (giving erythrose-4-P and xylulose-5-P) and step 11 (giving ribose-5-P and xylulose-5-P). The two bisphosphatases are different enzymes acting on different substrates.",
       why_cn: "醛缩酶既催化生成果糖-1,6-二磷酸的缩合(6)，也催化生成景天庚酮糖-1,7-二磷酸的缩合(9)；转酮酶既作用于步骤8（生成赤藓糖-4-P与木酮糖-5-P），也作用于步骤11（生成核糖-5-P与木酮糖-5-P）。两个二磷酸酶则是作用于不同底物的不同酶。"
     },
@@ -1419,12 +1532,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why is photorespiration described as COMPETITIVE with respect to the Calvin cycle?",
       q_cn: "为何说光呼吸相对于卡尔文循环是**竞争性**的？",
       options: [
-        "Because it consumes the ATP the Calvin cycle needs",
+        "Because it drains the ATP that the Calvin cycle needs for its two kinase steps",
         "Because it uses the same substrate, RuBP, via the oxygenase activity of the same enzyme",
-        "Because it occupies the same compartment, the chloroplast stroma",
-        "Because it consumes the NADPH the Calvin cycle needs"
+        "Because it occupies the same compartment as the Calvin cycle, namely the chloroplast stroma",
+        "Because it consumes the NADPH that the Calvin cycle needs for its reduction step"
       ],
       answer: 1,
+      optionRefs: { 0: "9-19", 3: "9-18" },
+      optionNotes: {
+        0: { en: "ATP is spent in photorespiration, but by glycerate kinase in the cytosol, at the far end of the pathway — and that is a cost, not the reason the book calls the two processes competitive. Competition here is for a molecule both enzymes bind, not for a shared currency.", cn: "photorespiration 里确实花掉 ATP，但那是在通路末端由细胞质中的 glycerate kinase 花的——那是代价，不是教材称两个过程为「竞争性」的理由。这里的竞争是争夺两个酶都要结合的那个分子，不是争夺共用的能量货币。" },
+        2: { en: "True, and not the reason. Photorespiration does begin in the stroma, but it cannot be completed there — it needs the peroxisome and the mitochondrion as well, which makes shared compartment a weak claim. The book's reason is substrate: both activities want RuBP.", cn: "这句话是真的，但不是理由。photorespiration 确实始于 stroma，却无法在那里完成——它还需要 peroxisome 和 mitochondrion，所以「共用区室」这个说法本身就站不住。教材给的理由是底物：两种活性都要 RuBP。" },
+        3: { en: "The reducing power spent in photorespiration is NADH, and it is spent in the peroxisome, where hydroxypyruvate reductase converts hydroxypyruvate to glycerate. The Calvin cycle's single reduction step uses NADPH in the stroma — a different coenzyme in a different compartment.", cn: "photorespiration 里花掉的还原力是 NADH，而且花在 peroxisome 里，由 hydroxypyruvate reductase 把 hydroxypyruvate 转成 glycerate。Calvin cycle 那唯一的还原步骤用的是 stroma 中的 NADPH——不同的辅酶，不同的区室。" }
+      },
       why_en: "The book's reason is substrate competition: photorespiration uses RuBP, the same substrate the carboxylation uses, and the two activities belong to the same enzyme — hence the full name carboxylase/oxygenase. Compartment sharing is true but is not the reason given.",
       why_cn: "教材给出的理由是底物竞争：光呼吸使用RuBP，与羧化反应所用的是同一底物，而且两种活性属于同一个酶——这正是全名「羧化酶/加氧酶」的由来。共用区室虽属实，但并非教材给出的理由。"
     },
@@ -1494,12 +1613,18 @@ window.BIOCHEM.topics.push(
       options: [
         "Ribulose-1,5-bisphosphate; 3-phosphoglycerate",
         "Phosphoenolpyruvate; oxaloacetate",
-        "Pyruvate; malate",
-        "Oxaloacetate; aspartate"
+        "Pyruvate; phosphoenolpyruvate",
+        "Oxaloacetate; malate or aspartate"
       ],
       answer: 1,
-      why_en: "PEP-carboxylase carboxylates phosphoenolpyruvate to oxaloacetate. Oxaloacetate is then either transaminated to aspartate or reduced to malate by NADPH-dependent malate dehydrogenase. Option 0 is the C-3 (Calvin) route.",
-      why_cn: "PEP羧化酶把磷酸烯醇丙酮酸羧化为草酰乙酸。草酰乙酸随后或经转氨生成天冬氨酸，或由NADPH依赖的苹果酸脱氢酶还原为苹果酸。选项0是C-3（卡尔文）路线。"
+      optionRefs: { 0: "9-17", 3: "9-22" },
+      optionNotes: {
+        0: { en: "That is the C-3 route: RuBP is the acceptor, RubisCO the enzyme, and two molecules of 3-phosphoglycerate the first stable product. C-4 plants run it too — but in the bundle-sheath cells, one cell layer further in, after the CO₂ has been delivered to them.", cn: "那是 C-3 路线：RuBP 是受体，RubisCO 是酶，两分子 3-phosphoglycerate 是第一个稳定产物。C-4 植物也在跑它——只不过是在维管束鞘细胞里，再往内一层，等 CO₂ 被送到那里之后。" },
+        2: { en: "This is the closing step of the same cycle, not its entry: pyruvate is phosphorylated by pyruvate phosphate dikinase at the cost of ATP, which regenerates the primary acceptor PEP. Pyruvate is where the carrier ends up after it has put the CO₂ back down.", cn: "这是同一个循环的收尾步骤，不是入口：pyruvate 由 pyruvate phosphate dikinase 耗 ATP 磷酸化，从而再生初级受体 PEP。pyruvate 是载体把 CO₂ 卸下之后所处的位置。" },
+        3: { en: "Oxaloacetate is the immediate PRODUCT, so this option is one step late. From it the carbon goes on in two ways — transamination to aspartate, or reduction by NADPH-dependent malate dehydrogenase to malate — and malate is what actually shuttles inward to the bundle-sheath cells.", cn: "oxaloacetate 是**直接产物**，所以这个选项晚了一步。碳从它出发有两条去路——转氨生成 aspartate，或由 NADPH 依赖的 malate dehydrogenase 还原为 malate——而真正向内穿梭到维管束鞘细胞的是 malate。" }
+      },
+      why_en: "PEP-carboxylase carboxylates phosphoenolpyruvate to oxaloacetate. Oxaloacetate is then either transaminated to aspartate or reduced to malate by NADPH-dependent malate dehydrogenase. Option A is the C-3 (Calvin) route.",
+      why_cn: "PEP羧化酶把磷酸烯醇丙酮酸羧化为草酰乙酸。草酰乙酸随后或经转氨生成天冬氨酸，或由NADPH依赖的苹果酸脱氢酶还原为苹果酸。选项A是C-3（卡尔文）路线。"
     },
     {
       type: "short",
@@ -1567,12 +1692,18 @@ window.BIOCHEM.topics.push(
       q_en: "What is the primary functional advantage of the C-4 mechanism, according to the book?",
       q_cn: "根据教材，C-4机制的首要功能优势是什么？",
       options: [
-        "It replaces the Calvin cycle with a more efficient one",
+        "It replaces the Calvin cycle with a route that fixes CO₂ about twice as fast under high solar radiation and high temperature",
         "It concentrates CO₂ for RuBP carboxylase, allowing stomata to stay nearly closed and limiting water loss",
-        "It avoids the need for NADPH",
-        "It allows CO₂ fixation to occur at night"
+        "It avoids the need for NADPH, since PEP-carboxylase carboxylates without any reduction step",
+        "It moves CO₂ fixation into the night, when the stomata can be opened without heavy water loss"
       ],
       answer: 1,
+      optionRefs: { 0: "9-17", 2: "9-21" },
+      optionNotes: {
+        0: { en: "The doubled rate is the book's own figure, but the conclusion drawn from it is wrong: C-4 plants do not replace the Calvin cycle, they feed it. Their bundle-sheath cells fix CO₂ by the C-3 mechanism, engaging RuBP carboxylase and the full Calvin cycle.", cn: "「快约一倍」是教材自己给的数字，但由它推出的结论错了：C-4 植物不是取代 Calvin cycle，而是给它供料。它们的维管束鞘细胞按 C-3 机制固定 CO₂，动用的正是 RuBP carboxylase 和完整的 Calvin cycle。" },
+        2: { en: "The C-4 route uses NADPH in both directions: malate dehydrogenase spends it reducing oxaloacetate to malate in the mesophyll cell, and the malic enzyme regenerates it as it decarboxylates malate in the bundle-sheath cell. Nothing about C-4 avoids the coenzyme.", cn: "C-4 路线两头都用 NADPH：在叶肉细胞里 malate dehydrogenase 花掉它把 oxaloacetate 还原成 malate，在维管束鞘细胞里 malic enzyme 又在给 malate 脱羧的同时把它再生出来。C-4 没有任何一处绕开这个辅酶。" },
+        3: { en: "The C-4 separation is a separation in SPACE, not in time: mesophyll cells fix by the C-4 mechanism, bundle-sheath cells by the C-3 mechanism, and malate carries the carbon between the two layers. Nothing in this section moves the fixation into the dark.", cn: "C-4 的分隔是**空间上**的分隔，不是时间上的：叶肉细胞按 C-4 机制固定，维管束鞘细胞按 C-3 机制固定，malate 在两层之间搬运碳。本节没有任何地方把固定挪到黑暗中去。" }
+      },
       why_en: "The book says the C-4 mechanism effectively CONCENTRATES CO₂ for RuBP carboxylase in the Calvin cycle. The enabling fact is PEP-carboxylase's lower Km for CO₂, which lets the stomata stay open only minimally and prevents enormous water evaporation. C-4 does not replace the Calvin cycle — bundle-sheath cells run it.",
       why_cn: "教材指出C-4机制实际上是为卡尔文循环中的RuBP羧化酶**浓缩**CO₂。使之成为可能的事实是PEP羧化酶对CO₂的Km较低，这让气孔只需微微张开，避免大量水分蒸发。C-4并不取代卡尔文循环——维管束鞘细胞正在运行它。"
     },
@@ -1642,12 +1773,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which organisms can fix atmospheric nitrogen?",
       q_cn: "哪些生物能固定大气氮？",
       options: [
-        "All photosynthetic organisms, including higher plants",
+        "All photosynthesizing organisms, from the cyanobacteria right up to the higher plants",
         "Only bacteria — including some in symbiosis with plants, and some cyanobacteria",
-        "Higher plants and algae, but not animals",
-        "Only leguminous plants"
+        "Higher plants and algae, but neither animals nor the soil bacteria",
+        "Only leguminous plants, which do it in symbiosis with soil bacteria"
       ],
       answer: 1,
+      optionRefs: { 0: "9-1", 2: "9-25" },
+      optionNotes: {
+        0: { en: "This is the chapter's own opening list taken at face value, and §9.4 is where the book corrects it: nitrogen assimilation was named there among the plant specialities, but the ability actually belongs to bacteria. Photosynthesis is not what qualifies an organism to fix N₂.", cn: "这是把本章开篇那张列表照字面接受，而§9.4 正是教材自我更正的地方：那里把氮的同化列进了植物的专长，但这项能力实际上属于 bacteria。会光合并不是能固定 N₂ 的资格。" },
+        2: { en: "Exactly inverted. Higher plants and algae are grouped WITH animals as the organisms that lack the ability and must take nitrogen up as ammonia, as nitrate, or bound in organic molecules; soil bacteria are the ones that do the chemistry, in both directions of the nitrogen cycle.", cn: "正好反了。高等植物与藻类是和动物**归在一起**的，属于不具备这项能力、必须以氨、硝酸盐或有机分子结合态摄取氮的那一类；真正做这套化学的是土壤 bacteria，而且氮循环的两个方向它们都做。" },
+        3: { en: "The symbiosis is real, the attribution is not. Bacteria living in symbiosis with plants fix the nitrogen; the legume benefits from the partner without acquiring the ability itself. Free-living aerobic and anaerobic bacteria and some cyanobacteria do the same job with no plant at all.", cn: "共生是真的，归属搞错了。固定氮的是与植物共生的 bacteria；豆科植物从伙伴那里受益，自己并没有获得这项能力。独立生活的需氧与厌氧 bacteria、以及一些 cyanobacteria，在完全没有植物的情况下也在做同样的事。" }
+      },
       why_en: "The book is explicit: only bacteria can fix atmospheric nitrogen. Plants — higher plants AND algae — and animals lack this ability and must take nitrogen up as ammonia, nitrate, or in organic molecules. Legumes benefit from symbiotic bacteria; the plant itself does not fix N₂.",
       why_cn: "教材明确指出：只有细菌能固定大气氮。植物——高等植物**与**藻类——以及动物都缺乏这种能力，必须以氨、硝酸盐或有机分子形式摄取氮。豆科植物受益于共生细菌；植物本身并不固定N₂。"
     },
@@ -1721,8 +1858,14 @@ window.BIOCHEM.topics.push(
         "L-glutamine + ATP + H₂O"
       ],
       answer: 1,
-      why_en: "The book writes L-glutamate + NH₄⁺ + ATP → L-glutamine + AMP + 2Pᵢ. The ATP is cleaved at the α–β position, spending two high-energy-bond equivalents, which is what pushes the reaction to completion. Option 2 is the glutamate dehydrogenase reaction.",
-      why_cn: "教材写作 L-谷氨酸 + NH₄⁺ + ATP → L-谷氨酰胺 + AMP + 2Pᵢ。ATP在α–β位断裂，消耗两个高能键当量，正是这一点把反应推向完全。选项2是谷氨酸脱氢酶的反应。"
+      optionRefs: { 2: "9-26" },
+      optionNotes: {
+        0: { en: "This is the ordinary kinase-style cleavage, and it is exactly what the book does NOT write. Splitting ATP to ADP and one phosphate would spend a single high-energy-bond equivalent and leave the reaction reversible; the α–β cleavage to AMP and two phosphates spends two and is what drives it to completion.", cn: "这是普通激酶式的断裂，而教材写的恰恰**不是**这个。把 ATP 切成 ADP 加一个磷酸只花掉一个高能键当量，反应仍可逆；切在 α–β 位、给出 AMP 加两个磷酸则花掉两个，正是这一点把反应推到底。" },
+        2: { en: "Those are the products of the other ammonia-fixing enzyme, glutamate dehydrogenase, which the book writes as a reversible reaction: α-oxoglutarate + NADPH + H⁺ + NH₄⁺ ⇌ glutamate + NADP⁺ + H₂O. Two enzymes fix ammonia in the chloroplast, and everything downstream of them is transamination.", cn: "那是另一个固氨酶 glutamate dehydrogenase 的产物，教材把它写成可逆反应：α-oxoglutarate + NADPH + H⁺ + NH₄⁺ ⇌ glutamate + NADP⁺ + H₂O。叶绿体里固定氨的酶有两个，它们下游的一切都是转氨作用。" },
+        3: { en: "ATP is on the substrate side of this equation, not the product side — it is what pays for attaching the second ammonia onto glutamate. Writing it as a product would make the step yield energy instead of costing it, which is the opposite of what glutamine synthase does.", cn: "在这个方程里 ATP 在**底物**一侧，不在产物一侧——它是把第二个氨接到 glutamate 上所付的代价。把它写成产物，这一步就变成产能而不是耗能，与 glutamine synthase 实际所做的正好相反。" }
+      },
+      why_en: "The book writes L-glutamate + NH₄⁺ + ATP → L-glutamine + AMP + 2Pᵢ. The ATP is cleaved at the α–β position, spending two high-energy-bond equivalents, which is what pushes the reaction to completion. Option C is the glutamate dehydrogenase reaction.",
+      why_cn: "教材写作 L-谷氨酸 + NH₄⁺ + ATP → L-谷氨酰胺 + AMP + 2Pᵢ。ATP在α–β位断裂，消耗两个高能键当量，正是这一点把反应推向完全。选项C是谷氨酸脱氢酶的反应。"
     },
     {
       type: "short",
@@ -1788,12 +1931,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why is denitrification also called 'nitrate respiration'?",
       q_cn: "为何反硝化又被称为「硝酸盐呼吸」？",
       options: [
-        "Because it releases CO₂ like ordinary respiration",
+        "Because it releases CO₂ in just the way ordinary mitochondrial respiration does, only without consuming oxygen",
         "Because under anaerobic conditions NO₃⁻ effectively replaces oxygen as the terminal electron acceptor",
-        "Because it occurs in mitochondria",
-        "Because it consumes O₂ as well as NO₃⁻"
+        "Because it runs on the inner mitochondrial membrane, the same seat as the respiratory chain",
+        "Because it consumes O₂ alongside NO₃⁻, the way photorespiration consumes oxygen in the light"
       ],
       answer: 1,
+      optionRefs: { 2: "9-9", 3: "9-20" },
+      optionNotes: {
+        0: { en: "The name borrows the word respiration for the electron acceptor, not for the carbon. What the process consumes is NADH, and the equation the book writes runs from nitrate and NADH to nitrogen gases, NAD⁺ and water — there is no carbon dioxide anywhere in it.", cn: "这个名字借「呼吸」二字指的是电子受体，不是碳。这个过程消耗的是 NADH，教材写的方程从硝酸盐和 NADH 走向氮的气态产物、NAD⁺ 与水——里面根本没有二氧化碳。" },
+        2: { en: "Denitrification is done by soil bacteria, which have no mitochondria at all. The inner mitochondrial membrane is the seat of the respiratory chain of chapter 6; even the plant enzyme of this section, nitrate reductase, sits in the cell cytoplasm rather than in an organelle.", cn: "反硝化由土壤 bacteria 完成，而它们根本没有线粒体。线粒体内膜是第6章呼吸链的所在地；就连本节里那个植物的酶 nitrate reductase，也位于细胞质而不是某个细胞器中。" },
+        3: { en: "Oxygen is precisely what is absent. The whole point of the name is that nitrate steps in for O₂ under anaerobic conditions; if oxygen were available the bacteria would use it and the chain would end there instead.", cn: "氧恰恰是缺席的那一个。这个名字的全部要点就在于：厌氧条件下由硝酸盐顶替 O₂；若有氧可用，细菌就会用氧，电子链也就在那里收尾了。" }
+      },
       why_en: "The book's reason is exactly this: NO₃⁻ under anaerobic conditions effectively replaces oxygen. The bacteria run an electron transport chain ending on nitrate instead of on O₂, which is why the process consumes NADH.",
       why_cn: "教材给出的理由正是如此：在厌氧条件下NO₃⁻实际上取代了氧。细菌运行的电子传递链以硝酸盐而非O₂为终点，这也是该过程消耗NADH的原因。"
     },
@@ -1863,11 +2012,17 @@ window.BIOCHEM.topics.push(
       q_cn: "叶片中亚硝酸盐还原的还原力由什么提供？根中又由什么提供？",
       options: [
         "Photosynthesis (ferredoxin) in the leaf; a process coupled with respiration in the root",
-        "Respiration in both",
-        "Photosynthesis in both, ferredoxin being transported to the root",
-        "NADPH from the pentose phosphate pathway in both"
+        "A process coupled with respiration in both organs, in the leaf just as in the root",
+        "Photosynthesis in both, the reduced ferredoxin being transported from the leaf down to the root",
+        "NADPH from the pentose phosphate cycle in the leaf; NADH from glycolysis in the root"
       ],
       answer: 0,
+      optionRefs: { 2: "9-10", 3: "9-18" },
+      optionNotes: {
+        1: { en: "Half right, and the wrong half matters. Respiration is what the book invokes for the roots — 'evidently a process coupled with respiration'. In the leaf it names photosynthesis as the source of the reducing agent, and the scheme shows water split by photosystems 1 and 2 feeding reduced ferredoxin straight into nitrite reductase.", cn: "对了一半，而错的那一半正是关键。教材为**根**援引的才是呼吸作用——「显然是与呼吸相偶联的过程」。在**叶**里它点名的还原剂来源是光合作用，图式画的是光系统 1 与 2 裂解水，生成的还原型 ferredoxin 直接送进 nitrite reductase。" },
+        2: { en: "Ferredoxin is not a transportable supply. It is the Fe-S carrier that accepts electrons from PS I inside the thylakoid membrane system; a root has no photosystems to reduce it. That is exactly why the root has to raise its reducing power from respiration instead.", cn: "ferredoxin 不是可以运输的补给品。它是在类囊体膜系统内部从 PS I 接受电子的 Fe-S 载体；根里没有 photosystem 能把它还原。这正是根不得不改从呼吸作用中取得还原力的原因。" },
+        3: { en: "The pentose phosphate cycle enters this chapter only as the source of the rearrangement chemistry the Calvin cycle reuses (kap. 7.7), not as the reductant for nitrite. The step needs a strong reducing agent of LOW redox potential, and the book names ferredoxin as what meets that requirement in the leaf.", cn: "pentose phosphate cycle 在本章出现，只是作为 Calvin cycle 复用的那套重排化学的来源（kap. 7.7），并不是亚硝酸盐还原的还原剂。这一步需要**低氧化还原电位**的强还原剂，教材点名在叶片中满足这一要求的是 ferredoxin。" }
+      },
       why_en: "The book states that nitrite reduction occurs in both photosynthesizing and non-photosynthesizing parts. In the roots it is evidently coupled with respiration; in the leaves the source of the reducing agent ferredoxin is photosynthesis. The step needs a strong, low-potential reductant either way.",
       why_cn: "教材指出亚硝酸盐还原在光合与非光合部位都会发生。在根中它显然与呼吸作用相偶联；在叶片中还原剂铁氧还蛋白的来源是光合作用。无论哪种情形，该步骤都需要强的低电位还原剂。"
     },
@@ -1933,12 +2088,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why, according to the book, do plants have a much greater range of secondary metabolites than animals?",
       q_cn: "根据教材，植物的次生代谢物种类为何远多于动物？",
       options: [
-        "Because plants have larger genomes",
+        "Because plants carry much larger genomes and can therefore encode far more of the anabolic pathways that lead to such substances as these",
         "Because plants cannot migrate away from an unfavourable environment, so chemical protective and defensive mechanisms arose instead",
-        "Because plants have no immune system",
-        "Because photosynthesis produces surplus carbon that must be disposed of"
+        "Because plants have no immune system of their own and must answer every attack with a chemical prepared in advance",
+        "Because photosynthesis leaves a surplus of fixed carbon which has to be disposed of into anabolic side-pathways"
       ],
       answer: 1,
+      optionRefs: { 3: "9-16" },
+      optionNotes: {
+        0: { en: "Genome size is nowhere in the book's argument, and it would not explain anything: in their basic processes plant and animal metabolic pathways do not differ fundamentally — citrate cycle, glycolysis, respiratory chain, protein and nucleic acid biosynthesis are shared. What differs is a set of extra, mostly anabolic pathways, and the book explains them by ecology.", cn: "基因组大小根本不在教材的论证里，而且它什么也解释不了：在基本过程上，植物与动物的代谢途径并无根本差异——citrate cycle、glycolysis、呼吸链、蛋白质与核酸的生物合成都是共有的。差别在于一批额外的、多为合成方向的途径，而教材是用生态学来解释它们的。" },
+        2: { en: "Close to the right shape but not the book's premise. The premise it states is immobility — the plant cannot leave an unfavourable environment — and the answer to that is chemistry. Nothing in §9.5 compares plant and animal defence systems or mentions immunity at all.", cn: "形状很接近，但不是教材的前提。它明确给出的前提是**不能移动**——植物无法离开不利的环境——而对此的回答是化学。§9.5 里没有任何地方比较植物与动物的防御系统，也完全没有提到免疫。" },
+        3: { en: "The fixed carbon has no surplus to dispose of: the greater part of it is transported into the central metabolic pathways and used as a source of energy and carbon for biosyntheses. And the book explicitly denies that secondary metabolite biosynthesis is self-serving — evolutionarily it is doing a job.", cn: "被固定的碳没有什么多余需要处理：其中更大的一部分被送进中心代谢途径，作为能量与碳源用于各类生物合成。而且教材明确否认次生代谢物的生物合成是「自我目的」的——从演化上看，它是在干活的。" }
+      },
       why_en: "The book gives this reason explicitly: plants do not have the ability to migrate away from an unfavourable environment, and therefore a number of protective and defensive mechanisms on a chemical basis arose. Immobility is the premise; chemistry is the answer to it.",
       why_cn: "教材明确给出这一理由：植物不具备从不利环境中迁走的能力，因此产生了一系列建立在化学基础上的保护与防御机制。不能移动是前提；化学是对它的回应。"
     },

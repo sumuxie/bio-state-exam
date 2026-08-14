@@ -59,8 +59,8 @@
           reader who followed the ribozyme thread out of L-26-2-1 should
           land. Already cross-book, so neither count moves.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-26-3-1",
     book: "lehninger",

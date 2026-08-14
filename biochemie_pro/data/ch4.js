@@ -177,7 +177,12 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the key chemical difference between how AMP and GMP are each made from IMP?",
       q_cn: "AMP 和 GMP 分别由 IMP 生成的关键化学差异是什么？",
-      options: ["AMP formation uses GTP as energy source and releases fumarate; GMP formation uses NAD⁺ then ATP and introduces glutamine's amide nitrogen", "AMP formation uses ATP as its energy source and releases CO₂; GMP formation uses NADPH then GTP and introduces aspartate's amino nitrogen", "AMP formation condenses glycine with IMP and releases water; GMP formation condenses aspartate with XMP and releases fumarate", "AMP and GMP are both formed from IMP by successive kinase steps, with two ATP spent and no new atoms added to the purine ring"],
+      options: [
+        "AMP formation uses GTP as energy source and releases fumarate; GMP formation uses NAD⁺ then ATP and introduces glutamine's amide nitrogen",
+        "AMP formation uses ATP as its energy source and releases CO₂; GMP formation uses NADPH and then GTP, and introduces aspartate's amino nitrogen instead",
+        "AMP formation condenses glycine with IMP and releases water; GMP formation condenses aspartate with XMP and releases fumarate",
+        "AMP and GMP are both formed from IMP by successive kinase steps, with two ATP spent and no new atoms added to the purine ring"
+      ],
       answer: 0,
       optionRefs: { 3: "L-22-4-1" },
       optionNotes: {
@@ -277,8 +282,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the crucial structural difference between how the purine and the pyrimidine rings are built?",
       q_cn: "嘌呤环与嘧啶环的搭建方式之间存在什么关键的结构性差异？",
-      options: ["Purines are built complete and then attached to PRPP; pyrimidines are built piece by piece on PRPP", "Pyrimidines are built essentially complete (through orotate) BEFORE attaching to PRPP; purines are built piece by piece directly ON the ribose-phosphate scaffold", "Both are built complete before attaching to PRPP", "Neither pathway uses PRPP"],
+      options: [
+        "Purines are built essentially complete (through inosinate) BEFORE attaching to PRPP; pyrimidines are built piece by piece directly ON the ribose-phosphate scaffold",
+        "Pyrimidines are built essentially complete (through orotate) BEFORE attaching to PRPP; purines are built piece by piece directly ON the ribose-phosphate scaffold",
+        "Both rings are built piece by piece directly ON the ribose-phosphate scaffold of PRPP, the purine ring by way of inosinate and the pyrimidine ring by way of orotate",
+        "Neither ring is built on PRPP: both are completed as free bases and only afterwards joined to ribose 5-phosphate at the level of the nucleoside monophosphate"
+      ],
       answer: 1,
+      optionRefs: { 0: "4-1-1-1", 2: "L-22-4-1", 3: "4-1-1-1" },
+      optionNotes: {
+        0: { en: "This is the true contrast with the two series swapped. Inosinate really is the purine end point, but it is reached in eleven steps that all run on PRPP, so no free purine ring ever exists to be attached.", cn: "这是把两条途径对调后的说法。次黄苷酸确实是嘌呤途径的终点，但它是在 PRPP 上经十一步反应生成的，所以根本不存在一个游离的嘌呤环等着被接上去。" },
+        2: { en: "Half right: purines are indeed assembled a few atoms at a time on PRPP. Pyrimidines are not — the ring is closed as dihydroorotate and dehydrogenated to orotate before PRPP is ever involved.", cn: "对了一半：嘌呤确实是在 PRPP 上一次几个原子地搭起来的。嘧啶不是——环先闭合成二氢乳清酸、再脱氢成乳清酸，之后 PRPP 才登场。" },
+        3: { en: "Both pathways use PRPP: the purine route starts from it, and orotate reacts with it through orotate phosphoribosyltransferase to give orotidylate. A free base is never the biosynthetic intermediate in either series.", cn: "两条途径都要用 PRPP：嘌呤途径就是从它开始的，乳清酸则经乳清酸磷酸核糖转移酶与它反应生成乳清苷酸。两条途径都不会以游离碱基作为生物合成的中间产物。" }
+      },
       why_en: "This is the key contrast: the purine ring is assembled atom-by-atom directly on PRPP (eleven steps ending in IMP), whereas the pyrimidine ring is essentially finished, as orotate, before it ever reacts with PRPP to become orotidylate.",
       why_cn: "这是两者的关键差异：嘌呤环是直接在 PRPP 上一个原子一个原子搭建起来的（十一步生成 IMP），而嘧啶环则是在与 PRPP 反应生成乳清苷酸之前，就已经作为乳清酸基本合成完毕。"
     },
@@ -286,8 +302,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "How is thymine actually produced for use in DNA, according to the book?",
       q_cn: "根据教材，胸腺嘧啶在 DNA 中是通过什么方式实际生成的？",
-      options: ["Free thymine base is synthesised de novo and then attached to deoxyribose", "As dTMP, by methylation of dUMP using N5,N10-methylenetetrahydrofolate", "By amination of dUTP", "By decarboxylation of dCMP"],
+      options: [
+        "Free thymine base is synthesised de novo and then attached to deoxyribose",
+        "As dTMP, by methylation of dUMP using N5,N10-methylenetetrahydrofolate",
+        "As dTMP, by amination of dUMP at C4 with the amide nitrogen of glutamine",
+        "As dTMP, by decarboxylation of the orotidylate deoxyribonucleotide"
+      ],
       answer: 1,
+      optionRefs: { 0: "L-22-4-1" },
+      optionNotes: {
+        0: { en: "Neither pyrimidine route ever makes a free base for attachment: the ring reaches the sugar as orotate reacting with PRPP, and thymine is not synthesised as a base of its own at all.", cn: "嘧啶合成从来不会先造出游离碱基再接到糖上：环是以乳清酸的形式与 PRPP 反应而上糖的，而胸腺嘧啶根本不是作为一个独立的碱基被合成的。" },
+        2: { en: "Amination at C4 with the amide nitrogen of glutamine is real chemistry, but it belongs to UTP becoming CTP, by cytidylate synthetase; thymine differs from uracil by a methyl group, not an amino group.", cn: "用谷氨酰胺的酰胺氮在 C4 上引入氨基确有其事，但那是 UTP 变成 CTP 的一步，由胞苷酸合成酶催化；胸腺嘧啶与尿嘧啶的差别是一个甲基，不是氨基。" },
+        3: { en: "Decarboxylation of orotidylate is the last step of the de novo pyrimidine route and it produces uridylate; it acts on the ribonucleotide and introduces no methyl group.", cn: "乳清苷酸脱羧是嘧啶从头合成途径的最后一步，产物是尿苷酸；它作用于核糖核苷酸，也不引入任何甲基。" }
+      },
       why_en: "The book is explicit that thymine is NOT synthesised as a pyrimidine derivative in its own right — it is formed directly as deoxythymidylate (dTMP) by methylating deoxyuridylate (dUMP), with N5,N10-methylenetetrahydrofolate as methyl donor.",
       why_cn: "教材明确指出，胸腺嘧啶并非作为独立的嘧啶衍生物被合成——而是直接以脱氧胸苷酸 (dTMP) 的形式，通过甲基化脱氧尿苷酸 (dUMP) 而生成，甲基供体为 N5,N10-亚甲基四氢叶酸。"
     },
@@ -376,8 +403,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "How many hydrogen bonds form in a G-C pair versus an A-T pair, and why does this matter?",
       q_cn: "G-C 碱基对与 A-T 碱基对分别形成多少个氢键？这为什么重要？",
-      options: ["2 for G-C, 3 for A-T — no functional consequence", "3 for G-C, 2 for A-T — this specificity underlies accurate DNA replication", "3 for both pairs", "G and C cannot hydrogen-bond directly"],
+      options: [
+        "2 for G-C, 3 for A-T — this specificity underlies accurate DNA replication",
+        "3 for G-C, 2 for A-T — this specificity underlies accurate DNA replication",
+        "3 for both pairs — which is why G-C-rich and A-T-rich DNA melt equally readily",
+        "2 for both pairs — the third G-C bond forms only in the A conformation"
+      ],
       answer: 1,
+      optionRefs: { 2: "4-1-4-2" },
+      optionNotes: {
+        0: { en: "The two counts are swapped. Guanine-cytosine holds three hydrogen bonds and adenine-thymine two; the rest of the sentence is the book's own point about replication accuracy.", cn: "两个数目写反了。鸟嘌呤-胞嘧啶是三个氢键，腺嘌呤-胸腺嘧啶是两个；这句话的后半段倒是教材关于复制准确性的原话。" },
+        2: { en: "Base pairing is not symmetric in strength. G-C holds three hydrogen bonds against A-T's two, which is exactly why a G+C-rich stretch is harder to pull apart — the same rule that later makes a hairpin terminator work.", cn: "碱基配对的强度并不对称。G-C 是三个氢键，A-T 只有两个，正因如此富含 G+C 的区段更难被拉开——后面终止子发夹能起作用靠的就是同一条规则。" },
+        3: { en: "Two is the A-T count, not a count shared by both pairs, and it does not depend on conformation: A-DNA, B-DNA and Z-DNA all pair the same bases with the same hydrogen bonds.", cn: "两个氢键是 A-T 的数目，不是两对共有的，而且这个数目与构象无关：A-DNA、B-DNA 和 Z-DNA 里同样的碱基、同样的氢键数目。" }
+      },
       why_en: "Guanine-cytosine forms THREE hydrogen bonds, adenine-thymine forms TWO. The book stresses that this base-pairing specificity is essential for the accuracy of DNA replication — get the count backwards and you have the wrong pair entirely.",
       why_cn: "鸟嘌呤-胞嘧啶形成三个氢键，腺嘌呤-胸腺嘧啶形成两个。教材强调这种碱基配对的特异性对 DNA 复制的准确性至关重要——如果把数目记反，配对关系就完全错了。"
     },
@@ -385,8 +423,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What happens to DNA's conformation when relative water content drops to about 75%?",
       q_cn: "当相对含水量降至约 75% 时，DNA 的构象会发生什么变化？",
-      options: ["It denatures irreversibly", "B-DNA converts to A-DNA — a wider, flatter right-handed helix with a deep major groove and very shallow minor groove", "It converts to Z-DNA", "Nothing — DNA conformation is water-independent"],
+      options: [
+        "The two strands separate irreversibly — losing water removes the hydrophobic drive behind base stacking",
+        "B-DNA converts to A-DNA — a wider, flatter right-handed helix with a deep major groove and very shallow minor groove",
+        "B-DNA converts to Z-DNA — a left-handed helix with a deep minor groove and a major groove that is barely distinguishable",
+        "Nothing changes — under physiological conditions DNA exists almost exclusively as B-DNA whatever the water content"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Reduced water content changes the conformation; it does not denature the helix. Stacking is indeed stabilised hydrophobically, but 75% relative water is given as the trigger for the B-to-A transition, not for strand separation.", cn: "含水量降低改变的是构象，而不是让双螺旋变性。碱基堆积确实靠疏水作用稳定，但教材把相对含水量 75% 写成 B 型转 A 型的条件，不是链分离的条件。" },
+        2: { en: "The groove description is Z-DNA's own and is correct, but Z-DNA is not produced by drying: it appears only in certain sequences such as d(CGCATGCG), and its biological function is not yet known.", cn: "对沟的描述确实是 Z-DNA 的，本身没错，但 Z-DNA 不是脱水造成的：它只出现在 d(CGCATGCG) 这类特定序列上，其生物学功能尚不清楚。" },
+        3: { en: "Almost exclusively B-DNA describes the physiological case, and that qualification is exactly what fails here: double-stranded DNA has a considerably variable conformation, and 75% relative water is the stated condition for the A form.", cn: "「几乎完全是 B-DNA」说的是生理条件下的情形，而这里坏就坏在这个前提：双链 DNA 的构象相当可变，教材明确把相对含水量 75% 列为 A 型出现的条件。" }
+      },
       why_en: "At reduced water content (about 75% relative), B-DNA converts to the A conformation. A-DNA is wider and flatter than B-DNA, with a deep major groove and a very shallow minor groove. Z-DNA is a DIFFERENT, left-handed, sequence-specific conformation, not a simple consequence of dehydration.",
       why_cn: "在相对含水量降低（约 75%）时，B-DNA 转变为 A 构象。A-DNA 比 B-DNA 更宽更扁平，具有深的主沟和非常浅的次沟。Z-DNA 则是另一种不同的、左手的、序列特异的构象，并非单纯脱水的结果。"
     },
@@ -394,8 +442,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which statement about Z-DNA is correct, according to the book?",
       q_cn: "根据教材，关于 Z-DNA 的哪一说法是正确的？",
-      options: ["It is right-handed and stabilises telomeres", "It is left-handed, occurs only in certain DNA stretches (e.g. d(CGCATGCG)), and its biological function is not yet known", "It has a shallow minor groove and no major groove at all", "It is the dominant physiological form of DNA"],
+      options: [
+        "It is right-handed, forms only at a reduced relative water content of about 75%, and its biological function is not yet known",
+        "It is left-handed, occurs only in certain DNA stretches (e.g. d(CGCATGCG)), and its biological function is not yet known",
+        "It has a deep major groove and a very shallow minor groove, and forms from sequences such as d(CGCATGCG) at low water content",
+        "It is the conformation in which DNA exists almost exclusively under physiological conditions, and it is right-handed"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Right-handed, and triggered by about 75% relative water, describes A-DNA. Z-DNA is left-handed and sequence-dependent; only the closing clause about the unknown function belongs to it.", cn: "右手螺旋、由相对含水量约 75% 触发，说的是 A-DNA。Z-DNA 是左手螺旋、依赖序列；只有最后那句「功能尚不清楚」才是它的。" },
+        2: { en: "A deep major groove with a very shallow minor groove is A-DNA. Z-DNA has it the other way round: a deep MINOR groove, with a major groove barely distinguishable.", cn: "深主沟配上很浅的次沟，这是 A-DNA。Z-DNA 正好相反：次沟很深，主沟几乎难以分辨。" },
+        3: { en: "Under physiological conditions DNA is almost exclusively B-DNA, the right-handed form of Obr. 4.8. Z-DNA occurs only in certain stretches and is never the general physiological state.", cn: "生理条件下 DNA 几乎完全是 B-DNA，也就是 Obr. 4.8 里那个右手螺旋。Z-DNA 只出现在特定区段，从来不是普遍的生理状态。" }
+      },
       why_en: "Z-DNA is a LEFT-handed helix formed by sequences such as d(CGCATGCG); it occurs only in specific DNA segments and its biological function is explicitly described as not yet known. Under physiological conditions DNA is almost exclusively B-DNA.",
       why_cn: "Z-DNA 是由类似 d(CGCATGCG) 这样的序列形成的左手螺旋；它只出现在特定的 DNA 区段，其生物学功能被明确指出尚不清楚。在生理条件下，DNA 几乎完全以 B-DNA 形式存在。"
     },
@@ -476,12 +534,17 @@ window.BIOCHEM.topics.push(
       q_en: "DNA polymerase I has TWO distinct exonuclease/nuclease activities. What distinguishes the 5′→3′ activity from the 3′→5′ activity?",
       q_cn: "DNA聚合酶I具有两种不同的外切/核酸酶活性。5′→3′活性与3′→5′活性的区别是什么？",
       options: [
-        "The 5′→3′ activity proofreads single mismatched bases one at a time; the 3′→5′ activity removes whole RNA primers",
+        "The 5′→3′ activity trims single mismatched bases from the 3′-OH end one link at a time, while the 3′→5′ activity cleaves within the helix and removes whole RNA primers at a nick",
         "The 5′→3′ activity cleaves within the double-helical region and removes up to 10 nucleotides at a nick (nick translation); the 3′→5′ activity is the proofreading function",
-        "The 5′→3′ activity requires Mg²⁺ while the 3′→5′ activity does not",
-        "The 5′→3′ activity belongs only to DNA polymerase III; the 3′→5′ activity belongs only to DNA polymerase I"
+        "The 5′→3′ activity requires Mg²⁺ ions and a free 3′-OH end, while the 3′→5′ activity needs neither and is the one activity missing from the Klenow fragment",
+        "The 5′→3′ activity belongs only to DNA polymerase III, while the 3′→5′ proofreading activity is unique to DNA polymerase I and absent from polymerases II and III"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Exactly the two activities the other way round. Trimming one mismatched base at a time from the 3′-OH end is the 3′→5′ proofreading exonuclease; removing RNA primers is the 5′→3′ nuclease, which cuts inside the chain.", cn: "两种活性正好对调了。从 3′-OH 端一次切掉一个错配碱基的是 3′→5′ 校对外切酶；去除 RNA 引物的是 5′→3′ 核酸酶，它在链内部切割。" },
+        2: { en: "Both activities need Mg²⁺, and the fragment story runs the other way: limited proteolysis leaves the entire 5′→3′ nuclease on the small fragment, so it is that activity, not the proofreading one, that Klenow lacks.", cn: "两种活性都需要 Mg²⁺，而片段的事实正好相反：有限蛋白水解把整个 5′→3′ 核酸酶活性留在小片段上，所以 Klenow 缺的是这一个，不是校对活性。" },
+        3: { en: "DNA polymerase III carries the same 3′→5′ proofreading exonuclease as polymerase I, so that activity is not unique to either. It is the 5′→3′ nuclease that is restricted — polymerase II is the one the book says lacks it.", cn: "DNA 聚合酶 III 与聚合酶 I 一样具备 3′→5′ 校对外切活性，所以那并非某一种酶独有。真正受限的是 5′→3′ 核酸酶——教材说缺这一活性的是聚合酶 II。" }
+      },
       why_en: "The 5′→3′ nuclease cleaves WITHIN the chain at a nick and removes UP TO 10 NUCLEOTIDES at once — this is nick translation, used for primer removal and repair. The SEPARATE 3′→5′ exonuclease is the proofreading function, shared with DNA polymerase III. Both need Mg²⁺; the activities are not split between polymerases I and III as in option D.",
       why_cn: "5′→3′核酸酶在链内部的缺口处切割，一次可切除多达10个核苷酸——这就是缺口平移，用于引物去除和修复。另一个独立的3′→5′外切核酸酶活性是校对功能，DNA聚合酶III也具备这一活性。两种活性都需要Mg²⁺；并非像选项D所说分别专属于聚合酶I和III。"
     },
@@ -489,8 +552,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which DNA polymerase has a demonstrated IN VIVO role as the cell's main replicase, synthesising most new DNA?",
       q_cn: "哪一种DNA聚合酶已被证实在体内担任细胞的主要复制酶，负责合成大部分新DNA？",
-      options: ["DNA polymerase I", "DNA polymerase II", "DNA polymerase III", "Primase"],
+      options: [
+        "DNA polymerase I",
+        "DNA polymerase II",
+        "DNA polymerase III",
+        "The Klenow fragment"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Polymerase I was discovered first and gives the enzyme family its name, but in vivo its job is limited to removing the RNA primers and filling the gaps that leaves.", cn: "聚合酶 I 是最早被发现、并给这一酶类命名的那一个，但在体内它的活儿仅限于去除 RNA 引物并填补由此留下的缺口。" },
+        1: { en: "Polymerase II has the same two activities as polymerase I apart from the 5′→3′ nuclease, and this book gives it no established in vivo function at all.", cn: "聚合酶 II 除了没有 5′→3′ 核酸酶活性外，其余两种活性与聚合酶 I 相同，而本教材没有给它任何确定的体内功能。" },
+        3: { en: "The Klenow fragment is not a polymerase of its own: it is the large proteolytic fragment of polymerase I (MW 67,000), carrying the polymerase and 3′→5′ exonuclease activities but not the 5′→3′ nuclease.", cn: "Klenow 片段并不是一种独立的聚合酶：它是聚合酶 I 的大蛋白水解片段（分子质量 67,000），带有聚合酶活性和 3′→5′ 外切活性，但没有 5′→3′ 核酸酶活性。" }
+      },
       why_en: "Only DNA polymerase III has a known in vivo function, acting as DNA REPLICASE and synthesising the bulk of new DNA. DNA polymerase I's job is limited to removing RNA primers and filling the resulting gaps; DNA polymerase II shares pol I's two enzymatic activities but lacks the 5′→3′ nuclease, and this text gives it no established in vivo role.",
       why_cn: "只有DNA聚合酶III具有已知的体内功能，作为DNA复制酶合成绝大部分新DNA。DNA聚合酶I的职责仅限于去除RNA引物并填补由此产生的缺口；DNA聚合酶II具有与聚合酶I相同的两种酶活性，但缺乏5′→3′核酸酶活性，本教材并未说明它有确定的体内作用。"
     },
@@ -507,12 +580,17 @@ window.BIOCHEM.topics.push(
       q_en: "Limited proteolysis splits DNA polymerase I into two fragments. What does the LARGE (Klenow) fragment retain?",
       q_cn: "有限蛋白水解将DNA聚合酶I切成两个片段。大片段（Klenow片段）保留了哪些活性？",
       options: [
-        "Only the 5′→3′ nuclease activity",
+        "Only the 5′→3′ nick-translation nuclease activity",
         "The 3′→5′ exonuclease and the polymerase activity",
-        "Only the polymerase activity, with both exonuclease activities lost",
-        "All three activities, identical to the intact enzyme"
+        "Only the polymerase activity, both nucleases being lost",
+        "All three activities, as in the intact enzyme"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "That is the small fragment (MW 36,000), which carries the entire 5′→3′ nuclease. Klenow is the large fragment (MW 67,000), defined precisely by not having that activity.", cn: "那是小片段（分子质量 36,000），它带走了全部 5′→3′ 核酸酶活性。Klenow 是大片段（分子质量 67,000），其定义恰恰就是没有这一活性。" },
+        2: { en: "The 3′→5′ exonuclease stays with the polymerase on the large fragment — that is why Klenow still proofreads. Only the 5′→3′ nuclease is separated off onto the small fragment.", cn: "3′→5′ 外切活性与聚合酶活性一起留在大片段上——所以 Klenow 仍然会校对。被分出去到小片段上的只有 5′→3′ 核酸酶。" },
+        3: { en: "Then the split would carry no information. The large fragment is defined by what it lacks, the 5′→3′ nuclease, which is why it can neither do nick translation nor remove primers.", cn: "那样切开就没有意义了。大片段的定义正是它缺了 5′→3′ 核酸酶，因此它既不能做缺口平移，也不能去除引物。" }
+      },
       why_en: "The small fragment (MW 36,000) carries the entire 5′→3′ nuclease activity. The large, or Klenow, fragment (MW 67,000) carries the 3′→5′ exonuclease AND the polymerase activity — which is why the Klenow fragment is used in the lab when nick translation's degradative activity is unwanted.",
       why_cn: "小片段（分子质量36,000）携带全部5′→3′核酸酶活性。大片段，即Klenow片段（分子质量67,000），携带3′→5′外切核酸酶活性和聚合酶活性——这正是当不希望出现缺口平移的降解活性时，实验室常用Klenow片段的原因。"
     }
@@ -587,12 +665,17 @@ window.BIOCHEM.topics.push(
       q_en: "What energy source does DNA ligase use, and how does this differ between bacteria and eukaryotes?",
       q_cn: "DNA连接酶使用什么能量来源？细菌与真核生物之间有何不同？",
       options: [
-        "Both use ATP exclusively",
+        "Both use ATP exclusively; the reaction is exergonic, so no adenylyl donor is needed",
         "Bacterial ligases characteristically use NAD⁺; eukaryotic ligases use ATP instead",
-        "Both use GTP exclusively",
+        "Bacterial ligases characteristically use GTP; eukaryotic ligases use ATP instead",
         "Bacterial ligases use pyrophosphate directly, with no nucleotide cofactor"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The reaction is endergonic, which is exactly why an adenylyl donor is needed at all. And the book names NAD⁺ as the characteristic bacterial donor, ATP being used instead in eukaryotes.", cn: "这个反应是吸能的，正因如此才需要一个腺苷酰基供体。而教材明确把 NAD⁺ 列为细菌特有的供体，真核生物则改用 ATP。" },
+        2: { en: "GTP appears nowhere in the ligase mechanism. The donors that form the covalent enzyme-AMP intermediate are ATP and NAD⁺, releasing pyrophosphate or nicotinamide-ribose-phosphate respectively.", cn: "连接酶的机制里根本没有 GTP。形成共价 enzyme-AMP 中间物的供体是 ATP 和 NAD⁺，分别放出焦磷酸或烟酰胺-核糖-磷酸。" },
+        3: { en: "Pyrophosphate is a product of the first step, not the energy source: the enzyme reacts with ATP or NAD⁺ to form the E-AMP intermediate and releases pyrophosphate in doing so.", cn: "焦磷酸是第一步的产物，不是能量来源：酶与 ATP 或 NAD⁺ 反应生成 E-AMP 中间物，正是在这一步放出焦磷酸的。" }
+      },
       why_en: "The reaction is endergonic, and the book gives NAD⁺ as the bacterial cofactor, with ATP used 'instead' in eukaryotic DNA ligases (per the Obr. 4.20 legend) — a detail worth memorising since many English textbooks present ATP as the universal ligase cofactor.",
       why_cn: "该反应是吸能反应，教材指出细菌中使用的辅助因子是NAD⁺（图4.20图注指出真核DNA连接酶则「改用」ATP）——这一细节值得记住，因为许多英文教材把ATP当作通用的连接酶辅因子来讲。"
     },
@@ -601,12 +684,17 @@ window.BIOCHEM.topics.push(
       q_en: "Why must the lagging strand be synthesised as discontinuous Okazaki fragments rather than continuously like the leading strand?",
       q_cn: "为什么滞后链必须以不连续的冈崎片段方式合成，而不能像先导链那样连续合成？",
       options: [
-        "Because DNA polymerase III cannot bind the lagging-strand template continuously",
+        "Because DNA polymerase III cannot stay bound to the lagging-strand template, so the holoenzyme has to be reloaded onto a fresh primer made by the primosome after every fragment",
         "Because all known DNA polymerases extend chains only 5′→3′, and this direction runs opposite to the movement of the replication fork on the lagging-strand template",
-        "Because the lagging-strand template is chemically different from the leading-strand template",
-        "Because Okazaki fragments are an artefact of the extraction method, not a biological reality"
+        "Because the lagging-strand template is chemically different from the leading-strand template, being coated with SSB protein while the leading-strand template is left bare",
+        "Because Okazaki fragments are an artefact of labelling with 3H-thymidine, and the lagging strand is in fact built continuously just as the leading strand is"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "This is the consequence, not the cause. The holoenzyme does relocate to a fresh primer after each fragment, but only because 5′→3′ synthesis on that template runs away from the fork to begin with.", cn: "这是结果，不是原因。全酶确实在每个片段完成后转到新的引物上，但那是因为在该模板上 5′→3′ 合成本来就是背离复制叉的方向。" },
+        2: { en: "The two templates are the same chemistry — they are the two strands of one double helix. SSB does coat separated single strands, but behind the helicase on both sides, and it is not what makes replication semidiscontinuous.", cn: "两条模板的化学组成是一样的——它们本来就是同一段双螺旋的两条链。SSB 确实包裹分开的单链，但两侧都包，它并不是半不连续复制的成因。" },
+        3: { en: "Okazaki fragments are real intermediates of about 1,000–2,000 nucleotides, each started from its own RNA primer and later sealed by DNA ligase; 3H-thymidine autoradiography is how replicating DNA was visualised, not how the fragments were invented.", cn: "冈崎片段是真实的中间产物，长约 1,000–2,000 个核苷酸，各自由自己的 RNA 引物起始，最后由 DNA 连接酶封口；3H-胸苷放射自显影只是观察复制中 DNA 的手段，并不是把片段「造」出来的原因。" }
+      },
       why_en: "All known DNA polymerases can only extend 5′→3′. On the leading-strand template that direction happens to match the direction the fork is moving, so synthesis is continuous. On the lagging-strand template, 5′→3′ synthesis runs AWAY from the fork, so the strand must be built backward in short, repeatedly re-primed pieces — the Okazaki fragments — as semidiscontinuous replication.",
       why_cn: "所有已知的DNA聚合酶都只能沿5′→3′方向延伸。在先导链模板上，这个方向恰好与复制叉移动的方向一致，因此合成是连续的。而在滞后链模板上，5′→3′方向的合成是「背离」复制叉的，因此该链只能以短片段、反复重新引发的方式反向构建——即冈崎片段——这就是半不连续复制。"
     },
@@ -623,12 +711,17 @@ window.BIOCHEM.topics.push(
       q_en: "What does the 'theta structure' seen by autoradiography and electron microscopy of replicating E. coli DNA demonstrate?",
       q_cn: "通过放射自显影和电子显微镜观察到的正在复制的大肠杆菌DNA「θ结构」说明了什么？",
       options: [
-        "That E. coli DNA is linear and replicates from both ends inward",
+        "That the E. coli chromosome is linear and replicates inward from both of its free ends, the loop marking where the two forks will meet",
         "That the circular E. coli chromosome replicates with an internal replication loop (eye), visible as a shape resembling the Greek letter θ",
-        "That E. coli DNA exists only as Okazaki fragments with no continuous strand",
-        "That replication in E. coli requires no origin and can start anywhere"
+        "That the E. coli chromosome is cut into Okazaki fragments during replication, the loop being the gap left where a fragment has not yet been ligated",
+        "That replication of the E. coli chromosome needs no fixed origin, the loop opening wherever the double helix happens to be unwound by helicase"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Gene maps and electron micrographs show the bacterial chromosome is circular, and a linear molecule could not give the theta outline at all: theta is a closed circle with an internal loop.", cn: "基因图谱和电子显微照片都表明细菌染色体是环状的，而线性分子根本给不出 θ 那个轮廓：θ 是一个带内部环的闭合圆圈。" },
+        2: { en: "Okazaki fragments are short pieces of the newly made lagging strand, not breaks in the chromosome. The loop is the replication eye, the stretch already unwound and being copied by the two forks.", cn: "冈崎片段是新合成的滞后链上的短片段，不是染色体上的断口。那个环是复制眼，即已经解开、正在被两个复制叉复制的一段。" },
+        3: { en: "The E. coli chromosome replicates bidirectionally from a single origin — that is what produces one eye growing in both directions, rather than eyes appearing at random along the circle.", cn: "大肠杆菌染色体是从单一起点双向复制的——正因如此才会出现一个向两侧生长的复制眼，而不是沿环随机冒出的多个眼。" }
+      },
       why_en: "The theta structure is a closed circle (the E. coli chromosome) with an internal loop — the replication eye — created by the two replication forks moving apart from a single origin; its resemblance to θ gives it its name.",
       why_cn: "θ结构是一个闭合圆圈（大肠杆菌染色体），带有一个内部环——即复制眼——由两个复制叉从单一起点向外移动而形成；因其形似希腊字母θ而得名。"
     }
@@ -692,12 +785,18 @@ window.BIOCHEM.topics.push(
       q_en: "In the central dogma as extended by Crick, what do the DASHED arrows in Obr. 4.26 represent?",
       q_cn: "在Crick扩展的中心法则中，图4.26中的虚线箭头代表什么？",
       options: [
-        "Errors in transcription that are normally corrected",
+        "Errors of transcription and replication that the cell normally corrects, drawn dashed because they carry no information of their own",
         "Special, non-universal transfers: RNA-directed RNA polymerase (some viruses/plants) and RNA-directed DNA polymerase = reverse transcriptase (some RNA viruses)",
-        "The degradation pathways of RNA and DNA",
-        "The universal, general pathway found in all cells"
+        "The degradation of RNA and DNA back to nucleotides by nucleases, drawn dashed because it returns material rather than information to the cycle",
+        "The general transfers present in every cell, namely replication of DNA, transcription of DNA into RNA and translation of RNA into protein, with the special cases drawn solid"
       ],
       answer: 1,
+      optionRefs: { 2: "4-1-5" },
+      optionNotes: {
+        0: { en: "Nothing in Obr. 4.26 is about error correction. The scheme asks which transfers of sequence information are possible: solid arrows for the general ones, dashed for the special ones.", cn: "Obr. 4.26 与纠错毫无关系。这张图问的是哪些序列信息的传递是可能的：实线是通用的传递，虚线是特殊的传递。" },
+        2: { en: "Degradation does not appear in the central dogma at all — the scheme tracks the flow of sequence information, not the turnover of the molecules that carry it.", cn: "降解根本不出现在中心法则里——这张图追踪的是序列信息的流向，不是承载信息的分子本身的周转。" },
+        3: { en: "That is what the SOLID arrows mark. The dashed ones are the transfers restricted to particular organisms, and one further arrow, DNA specifying protein directly, has never been demonstrated at all.", cn: "那是实线箭头标的东西。虚线标的是只见于特定生物的传递；此外还有一支箭头——DNA 直接指定蛋白质——从未被证实过。" }
+      },
       why_en: "Solid arrows mark the GENERAL transfers (replication, transcription, translation). Dashed arrows mark SPECIAL transfers found only in particular organisms: RNA-directed RNA polymerase in some viruses and plants, and RNA-directed DNA polymerase, i.e. reverse transcriptase, in some RNA viruses. A DNA directly specifying protein has never been demonstrated.",
       why_cn: "实线箭头标示的是通用传递途径（复制、转录、翻译）。虚线箭头标示的是仅见于特定生物的特殊传递：某些病毒和植物中的RNA指导RNA聚合酶，以及某些RNA病毒中的RNA指导DNA聚合酶，即逆转录酶。DNA直接指定蛋白质的情形从未被证实。"
     },
@@ -709,9 +808,14 @@ window.BIOCHEM.topics.push(
         "5S rRNA, about 120 nucleotides",
         "16S rRNA, about 1700 nucleotides",
         "23S rRNA, about 3700 nucleotides",
-        "tRNA, about 75 nucleotides"
+        "tRNA, the smallest, about 75 nucleotides"
       ],
       answer: 2,
+      optionNotes: {
+        0: { en: "5S is the smallest of the three prokaryotic rRNAs, about 120 nucleotides and roughly 3.6×10¹ kDa — the other end of Tab. 4.2 from the one asked for.", cn: "5S 是原核三种 rRNA 中最小的，约 120 个核苷酸、约 3.6×10¹ kDa——正是 Tab. 4.2 里与所问相反的那一端。" },
+        1: { en: "16S is the intermediate species, about 1700 nucleotides and 0.5×10³ kDa. It is the one to check the exponent on, since the table gives mass in kDa and not in Da.", cn: "16S 是居中的那一种，约 1700 个核苷酸、0.5×10³ kDa。指数要在它身上核对清楚，因为表里给的质量单位是 kDa，不是 Da。" },
+        3: { en: "tRNA is not an rRNA at all: it is the smallest RNA class, sedimenting at 4S, and its job is to ferry activated amino acids rather than to build the ribosome.", cn: "tRNA 根本不是 rRNA：它是最小的一类 RNA，沉降系数 4S，任务是运送活化氨基酸，而不是构成核糖体。" }
+      },
       why_en: "23S rRNA is the largest of the three prokaryotic rRNAs, at about 1.2×10³ kDa and roughly 3700 nucleotides — do not misread the exponent as 10⁶ or 10⁹; the table gives mass in kDa, not Da. 16S is intermediate (~1700 nt) and 5S is the smallest rRNA (~120 nt); tRNA, at 4S, is smaller still (~75 nt).",
       why_cn: "23S rRNA是原核生物三种rRNA中最大的一种，约1.2×10³ kDa，约3700个核苷酸——注意不要把指数误读成10⁶或10⁹；表中质量单位是kDa，不是Da。16S居中（约1700个核苷酸），5S是rRNA中最小的（约120个核苷酸）；tRNA为4S，比5S还要小（约75个核苷酸）。"
     },
@@ -728,12 +832,17 @@ window.BIOCHEM.topics.push(
       q_en: "What feature is shared by ALL tRNA molecules regardless of which amino acid they carry?",
       q_cn: "无论携带哪种氨基酸，所有tRNA分子都具有的共同特征是什么？",
       options: [
-        "An identical anticodon triplet",
+        "An identical anticodon triplet in the middle of the anticodon loop",
         "The same 3'-terminal sequence …pCpCpA, the amino-acid acceptor site",
-        "An identical molecular weight",
-        "The same variable-arm length"
+        "An identical molecular weight, since every tRNA sediments at the same 4S",
+        "The same variable arm, of constant length in every cloverleaf"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The anticodon triplet is precisely what makes tRNAs differ — it has to pair with the codon of that tRNA's own amino acid. What every tRNA shares is the 3′ end, not the anticodon.", cn: "反密码子三联体恰恰是各种 tRNA 彼此不同的地方——它必须与自己那个氨基酸的密码子配对。所有 tRNA 共有的是 3′ 端，不是反密码子。" },
+        2: { en: "4S is a sedimentation coefficient, not a molecular weight; it marks tRNA as the smallest RNA class rather than pinning every tRNA to one identical mass.", cn: "4S 是沉降系数，不是分子量；它说明 tRNA 是最小的一类 RNA，并不等于每个 tRNA 的质量都完全一样。" },
+        3: { en: "The variable arm is named for varying: the cloverleaf has three constant arms plus one smaller, variable loop, so its length is one of the things that differs between tRNAs.", cn: "可变臂之所以叫可变，就是因为它会变：三叶草结构是三个恒定臂加一个较小的可变环，所以它的长度正是不同 tRNA 之间的差异之一。" }
+      },
       why_en: "Every tRNA ends in the same 3'-terminal sequence, …pCpCpA — this is the acceptor stem where the amino acid is attached. The anticodon triplet, by contrast, is exactly what makes different tRNAs different, since it must pair with the codon for that tRNA's specific amino acid.",
       why_cn: "每一种tRNA的3′端序列都相同，为…pCpCpA——这是氨基酸附着的受体茎。相反，反密码子三联体正是不同tRNA彼此区别的关键，因为它必须与该tRNA特定氨基酸所对应的密码子配对。"
     }
@@ -799,12 +908,17 @@ window.BIOCHEM.topics.push(
       q_en: "What happens to the σ subunit of E. coli RNA polymerase once transcription has been initiated?",
       q_cn: "大肠杆菌RNA聚合酶的σ亚基在转录起始后会发生什么变化？",
       options: [
-        "It remains permanently bound and is required for elongation too",
-        "It is degraded by the transcription bubble",
+        "It stays permanently bound to the core enzyme and is required for elongation and for termination as well",
+        "It is degraded as soon as the transcription bubble opens, so a fresh σ has to be made for each initiation",
         "It dissociates from the core enzyme (α2ββ') and can bind a different core enzyme to initiate elsewhere",
-        "It becomes part of the finished RNA transcript"
+        "It stays on the promoter it recognised, protecting that stretch of DNA from cleavage by DNase I"
       ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Sigma leaves as soon as synthesis has started, and the core enzyme α2ββ′ alone catalyses the polymerisation. Elongation and termination are among the holoenzyme's four functions, but the core carries them out.", cn: "合成一开始 σ 就离开了，聚合反应由核心酶 α2ββ′ 单独催化。延伸和终止确实属于全酶的四项功能，但执行的是核心酶。" },
+        1: { en: "Nothing degrades sigma. It comes off intact and is reused — that is the whole point of putting promoter recognition on a detachable subunit rather than on the catalytic core.", cn: "没有什么东西降解 σ。它是完整地脱下来、可以重复使用的——把启动子识别功能放在一个可拆卸亚基上而不是催化核心上，图的就是这个。" },
+        3: { en: "The tight holoenzyme-promoter complex does protect the bound DNA from DNase I, but that happens before initiation; once synthesis starts sigma comes off and can be used at another promoter.", cn: "全酶与启动子形成的紧密复合物确实能保护那段 DNA 不被 DNase I 切开，但那是起始之前的事；合成一旦开始，σ 就脱落，可以到另一个启动子上再用。" }
+      },
       why_en: "Once RNA synthesis starts, the σ subunit (σ factor) dissociates from the α2ββ' core enzyme, which alone catalyses elongation. Free σ is then free to bind another core enzyme and form a new initiation complex at another promoter — sigma is reusable, not consumed.",
       why_cn: "一旦RNA合成开始，σ亚基（σ因子）便从α2ββ′核心酶上解离，核心酶单独催化延伸反应。游离的σ随后可以结合另一个核心酶，在另一个启动子处形成新的起始复合物——σ因子是可重复使用的，而非被消耗掉。"
     },
@@ -813,12 +927,17 @@ window.BIOCHEM.topics.push(
       q_en: "What distinguishes rho (ρ)-dependent transcription termination from the intrinsic (hairpin) termination mechanism?",
       q_cn: "ρ依赖型转录终止与内在（发夹）终止机制有何区别？",
       options: [
-        "Rho-dependent termination needs no special DNA or RNA sequence at all",
+        "Rho-dependent termination needs no special sequence at all: protein ρ simply unwinds the RNA-DNA helix wherever it catches up with the polymerase, whereas intrinsic termination depends on a G+C-rich hairpin that ends in oligo(U) and on nothing else",
         "Intrinsic termination relies on a stable G+C-rich hairpin ending in oligo(U), which is sufficient on its own; rho-dependent termination instead requires protein ρ, which unwinds RNA-DNA/RNA-RNA helix using NTPs, plus its own recognition sequence",
-        "Rho-dependent termination only occurs in eukaryotes",
-        "Intrinsic termination requires ATP hydrolysis by RNA polymerase itself"
+        "Rho-dependent termination occurs only in eukaryotes, where protein ρ unwinds the RNA-DNA helix at the cost of NTPs, while prokaryotes stop transcription entirely by means of the G+C-rich hairpin ending in oligo(U)",
+        "Intrinsic termination requires ATP hydrolysis by RNA polymerase itself to melt the G+C-rich hairpin, whereas rho-dependent termination is spontaneous once protein ρ has found its recognition sequence upstream"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "ρ-dependent sites do have their own recognition sequences, upstream of the termination site and apparently mostly on the nascent RNA; what the book says is that their properties are not yet fully characterised.", cn: "ρ 依赖型位点是有自己的识别序列的，位于终止位点上游，而且看来主要在新生 RNA 上；教材说的只是这类位点的性质尚未完全阐明。" },
+        2: { en: "Both mechanisms described here are E. coli's. ρ is a bacterial protein, and the hairpin terminators it stands in for are bacterial sequences too.", cn: "这里讲的两套机制都是大肠杆菌的。ρ 是细菌蛋白，它所替代的发夹终止子也同样是细菌的序列。" },
+        3: { en: "The energy runs the other way. Intrinsic termination is spontaneous — the hairpin's stability plus the weak oligo(U) pairing do the work — while it is ρ that consumes NTPs to unwind the helix.", cn: "能量的方向弄反了。内在终止是自发的——靠发夹的稳定性加上寡聚(U) 的弱配对——消耗 NTP 去解链的是 ρ。" }
+      },
       why_en: "Intrinsic terminators are self-sufficient: a G+C-rich palindrome forms an RNA hairpin ending in several U residues, and the hairpin's stability plus the weak oligo(U)-template pairing spontaneously stop the polymerase. Where these sequences are absent, termination instead needs protein ρ (rho factor), an NTP-consuming enzyme that unwinds the RNA-DNA/RNA-RNA helix, plus its own upstream recognition sequence (mostly on the nascent RNA).",
       why_cn: "内在终止子是自给自足的：富含G+C的回文序列形成以若干U残基收尾的RNA发夹，其稳定性加上寡聚(U)与模板之间的弱配对，能使聚合酶自发停止。若不存在这类序列，则终止需要借助ρ蛋白（rho因子）——一种消耗NTP、解开RNA-DNA/RNA-RNA双螺旋的酶，此外还需要其自身位于上游的识别序列（主要位于新生RNA上）。"
     },
@@ -841,6 +960,12 @@ window.BIOCHEM.topics.push(
         "Reverse transcriptase, in the cytoplasm"
       ],
       answer: 1,
+      optionRefs: { 3: "4-1-4-1" },
+      optionNotes: {
+        0: { en: "Polymerase I sits in the nucleolus and makes the rRNA precursors — the right compartment for rRNA, the wrong one for mRNA.", cn: "聚合酶 I 位于核仁，合成的是 rRNA 前体——对 rRNA 来说位置没错，对 mRNA 来说就错了。" },
+        2: { en: "Polymerase III is in the nucleoplasm as well, but what it makes is mostly the tRNA and 5S rRNA precursors.", cn: "聚合酶 III 同样在核质中，但它合成的主要是 tRNA 和 5S rRNA 的前体。" },
+        3: { en: "Reverse transcriptase is an RNA-directed DNA polymerase from certain RNA viruses, one of the special transfers of the central dogma; it makes DNA, not mRNA.", cn: "逆转录酶是某些 RNA 病毒的 RNA 指导 DNA 聚合酶，属于中心法则里的特殊传递；它做出来的是 DNA，不是 mRNA。" }
+      },
       why_en: "RNA polymerase II, located in the nucleoplasm, synthesises mRNA precursors. RNA polymerase I, in the nucleolus, makes rRNA precursors; RNA polymerase III, also in the nucleoplasm, makes mostly tRNA and 5S rRNA precursors.",
       why_cn: "RNA聚合酶II位于核质，合成mRNA前体。RNA聚合酶I位于核仁，合成rRNA前体；RNA聚合酶III同样位于核质，主要合成tRNA和5S rRNA前体。"
     }
@@ -904,12 +1029,17 @@ window.BIOCHEM.topics.push(
       q_en: "What is the fundamental difference between an exonuclease and an endonuclease?",
       q_cn: "外切核酸酶与内切核酸酶的根本区别是什么？",
       options: [
-        "Exonucleases act on RNA only, endonucleases on DNA only",
+        "Exonucleases act on RNA only and endonucleases on DNA only, hence the names ribonuclease and deoxyribonuclease",
         "Exonucleases remove terminal nucleotides one at a time; endonucleases cleave ester bonds within the chain",
-        "Exonucleases require ATP; endonucleases do not",
-        "There is no difference — the terms are synonyms"
+        "Exonucleases cleave the sugar 3′-OH/phosphate bond; endonucleases cleave the 5′-OH/phosphate bond",
+        "Exonucleases work at pH 7-8 and endonucleases at pH 5, the alkaline and the acid form of one activity"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "DNA versus RNA is a separate axis: a nuclease is called a deoxyribonuclease or a ribonuclease according to which it cleaves, and either kind can be an exo- or an endonuclease.", cn: "DNA 还是 RNA 是另一个独立的维度：核酸酶按切的是哪一种而分别叫脱氧核糖核酸酶或核糖核酸酶，而这两类都可以是外切酶或内切酶。" },
+        2: { en: "That is the type a versus type b distinction, which decides whether the product is a nucleoside-5'-phosphate or a nucleoside-3'-phosphate; it says nothing about where in the chain the cut falls.", cn: "那是 a 型与 b 型的区分，决定产物是核苷-5′-磷酸还是核苷-3′-磷酸；它跟切在链的什么位置毫无关系。" },
+        3: { en: "The alkaline (pH optimum 7-8) and acid (pH optimum 5) forms belong to the nucleotidases, the phosphatases that act one step later on the nucleotides the nucleases have released.", cn: "碱性（最适 pH 7-8）与酸性（最适 pH 5）两种形式属于核苷酸酶，也就是在核酸酶放出核苷酸之后再作用一步的那些磷酸酶。" }
+      },
       why_en: "Exonucleases work from the END of the chain, removing one nucleotide at a time; endonucleases cut ester bonds AT INTERNAL positions within the chain. Either kind can, in principle, act on DNA or RNA — the DNA/RNA distinction is a separate axis (deoxyribonuclease vs ribonuclease).",
       why_cn: "外切核酸酶从链的末端起作用，每次切除一个核苷酸；内切核酸酶则在链的内部位点切割酯键。原则上两者都可以作用于DNA或RNA——DNA/RNA的区分是另一个独立的维度（脱氧核糖核酸酶 vs 核糖核酸酶）。"
     },
@@ -919,11 +1049,16 @@ window.BIOCHEM.topics.push(
       q_cn: "a型和b型核酸酶在产物上有何区别？",
       options: [
         "Type a yields nucleoside-5'-phosphates (cleaving the sugar's 3'-OH/phosphate bond); type b yields nucleoside-3'-phosphates (cleaving the sugar's 5'-OH/phosphate bond)",
-        "Type a acts only on RNA; type b acts only on DNA",
-        "Type a requires Mg2+; type b requires Mn2+",
-        "There is no difference in products, only in optimal pH"
+        "Type a acts only on RNA and type b only on DNA, so the two labels are simply another way of saying ribonuclease and deoxyribonuclease, both giving nucleoside-5'-phosphates",
+        "Type a requires Mg2+ and type b requires Mn2+, the biogenic metal ions that form ionic bonds with the fully ionised phosphate groups of the backbone",
+        "There is no difference in the products, only in the pH optimum: the alkaline form works at pH 7-8 and the acid form at pH 5, both giving nucleoside-5'-phosphates"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Deoxyribonuclease versus ribonuclease is a separate axis from type a versus type b, and the two types are defined by which bond they cut, so they cannot both give the same product.", cn: "脱氧核糖核酸酶与核糖核酸酶之分，跟 a 型与 b 型之分是两个不同的维度；而 a、b 两型的定义就是切哪一个键，所以它们不可能给出同一种产物。" },
+        2: { en: "Mg2+ and Mn2+ do bind the ionised phosphates of the double helix, but that is a structural point about DNA and has nothing to do with how the two nuclease types are told apart.", cn: "Mg2+ 和 Mn2+ 确实会与双螺旋上已电离的磷酸结合，但那是关于 DNA 结构的说法，跟区分这两型核酸酶毫无关系。" },
+        3: { en: "The alkaline and acid pH optima belong to the nucleotidases, one step further down the pathway. Type a and type b differ in their products, which is exactly the point of the two names.", cn: "碱性与酸性两个最适 pH 属于核苷酸酶，是再往下一步的事。a 型与 b 型的差别正在于产物，这两个名字要的就是这个区别。" }
+      },
       why_en: "Type a nucleases cleave the bond between the sugar's 3'-OH and phosphoric acid, yielding nucleoside-5'-phosphates. Type b nucleases cleave the bond between the sugar's 5'-OH and phosphoric acid, yielding nucleoside-3'-phosphates. Which bond is cut determines where the phosphate ends up on the product.",
       why_cn: "a型核酸酶切割糖的3′-OH与磷酸之间的键，生成核苷-5′-磷酸。b型核酸酶切割糖的5′-OH与磷酸之间的键，生成核苷-3′-磷酸。被切割的是哪个键，决定了磷酸最终留在产物的哪一端。"
     },
@@ -938,14 +1073,19 @@ window.BIOCHEM.topics.push(
     {
       type: "mcq",
       q_en: "Once nucleosidase releases the free purine and pyrimidine bases, which statement about their FURTHER degradation is correct?",
-      q_cn: "核苷酸酶释放出游离的嘌呤和嘧啶碱基之后，关于它们进一步降解的哪一说法是正确的？",
+      q_cn: "**核苷酶**（nucleosidase）释放出游离的嘌呤和嘧啶碱基之后，关于它们进一步降解的哪一说法是正确的？",
       options: [
-        "Both classes converge on the same end product, urea",
+        "Both classes converge on urea: purines by way of uric acid, pyrimidines by way of β-alanine and 3-aminobutyric acid, releasing NH3 and CO2",
         "Purine bases are degraded (in mammals) via uric acid to urea; uracil yields β-alanine and thymine yields 3-aminobutyric acid, each with NH3 and CO2",
-        "Purine bases are excreted unchanged; only pyrimidines are degraded",
-        "Pentose-phosphate released alongside the bases is degraded by the same purine/pyrimidine pathway"
+        "Purine bases are excreted unchanged as uric acid; only the pyrimidines go further, uracil to β-alanine and thymine to 3-aminobutyric acid, with NH3 and CO2",
+        "The pentose-phosphate released alongside the bases is degraded on the same routes, giving β-alanine from uracil and CO2 and H2O from the sugar"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Only the purines end at urea, and in mammals by way of uric acid. The pyrimidines stop at β-alanine or 3-aminobutyric acid, so the two classes never converge on one product.", cn: "只有嘌呤最终走到尿素，而且在哺乳动物中要经过尿酸。嘧啶止步于 β-丙氨酸或 3-氨基丁酸，所以两类碱基根本不会汇合到同一个终产物上。" },
+        2: { en: "Uric acid is an intermediate here, not the excretion form: the book takes mammalian purine degradation all the way down to urea. Uric acid's poor solubility is what makes it crystallise out in gout.", cn: "在这里尿酸是中间产物，不是排泄形式：教材把哺乳动物的嘌呤降解一直写到尿素。尿酸溶解度差，这才是它在痛风中析出结晶的原因。" },
+        3: { en: "The pentose-phosphate is not degraded as part of nucleic acid metabolism at all — the book says explicitly that it is fed into carbohydrate metabolism instead.", cn: "戊糖-磷酸根本不在核酸代谢里被降解——教材明确说它是被送进糖代谢去处理的。" }
+      },
       why_en: "Purine and pyrimidine bases follow ENTIRELY SEPARATE routes. Purines go via uric acid to urea in mammals (uric acid is the metabolite behind gout). Pyrimidines split further by base: uracil to β-alanine, thymine to 3-aminobutyric acid, both releasing NH3 and CO2. The pentose-phosphate released earlier is not part of either route — it feeds into carbohydrate metabolism instead.",
       why_cn: "嘌呤和嘧啶碱基走的是完全独立的降解路线。哺乳动物体内嘌呤经尿酸降解为尿素（尿酸正是导致痛风的代谢物）。嘧啶则按碱基种类分别降解：尿嘧啶生成β-丙氨酸，胸腺嘧啶生成3-氨基丁酸，二者都释放NH3和CO2。之前释放的戊糖-磷酸不属于这两条路线中的任何一条——它被送入糖代谢处理。"
     }
@@ -1010,8 +1150,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "The triplet nature of the genetic code follows most directly from which fact?",
       q_cn: "遗传密码采用三联体的直接原因是什么？",
-      options: ["Only 4 nucleotide types exist in RNA", "20 amino acids cannot be specified by singlets (4) or doublets (16), but 4³ = 64 triplets are enough, with room to spare", "Ribosomes can only physically read three nucleotides at a time", "DNA is double-stranded"],
+      options: [
+        "Only four nucleotide types exist in RNA, so the code has to group them in threes to keep the reading frame fixed",
+        "20 amino acids cannot be specified by singlets (4) or doublets (16), but 4³ = 64 triplets are enough, with room to spare",
+        "The ribosome can only physically hold three nucleotides at a time in the A-site, so the reading step is three long",
+        "Codon AUG has to serve as the initiation codon as well as an internal methionine codon, which only a group of three can do"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Four nucleotide types is the starting fact, but on its own it fixes nothing. The argument in the book is arithmetic: 4 singlets and 16 doublets are both fewer than 20, while 4³ = 64 is more than enough.", cn: "RNA 只有四种核苷酸是出发点，但它本身并不能定下什么。教材的论证是算数：单核苷酸给 4 种、二联体给 16 种，都不到 20；而 4³ = 64 绰绰有余。" },
+        2: { en: "The size of the A-site is not the reason given anywhere. The book counts: singlets give 4 codes, doublets 16, triplets 64, and only the last of these covers twenty amino acids.", cn: "教材从没有拿 A 位点的大小当理由。它算的是数目：单核苷酸 4 种、二联体 16 种、三联体 64 种，只有最后一个装得下二十种氨基酸。" },
+        3: { en: "AUG doing double duty is real, but it is a consequence of the code rather than the reason for its triplet size, and it does not change how many nucleotides one codon needs.", cn: "AUG 身兼两职确有其事，但那是密码的后果，不是它必须用三联体的理由，它也不改变一个密码子需要几个核苷酸。" }
+      },
       why_en: "Single nucleotides give only 4 codes and doublets only 16 — both too few for 20 amino acids. Triplets give 4³ = 64 combinations, MORE than enough, which is exactly why the code turns out to be DEGENERATE (several triplets per amino acid).",
       why_cn: "单核苷酸只能给出4种编码，二联体只能给出16种——对20种氨基酸都不够。三联体给出 4³ = 64 种组合，绰绰有余，这正是密码简并（一个氨基酸对应多个三联体）的原因。"
     },
@@ -1019,8 +1169,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which statement about UGA is correct according to this textbook?",
       q_cn: "根据本教材，关于UGA哪一说法正确？",
-      options: ["UGA always codes tryptophan", "UGA is always a termination codon, without exception", "UGA is normally a termination codon, but in the presence of the SECIS mRNA element it is read as the codon for selenocysteine", "UGA is the universal initiation codon"],
+      options: [
+        "UGA is read as selenocysteine in every organism, which is the one place where the genetic code is not universal",
+        "UGA is always a termination codon, without any exception, and the SECIS element instead marks the point at which translation begins",
+        "UGA is normally a termination codon, but in the presence of the SECIS mRNA element it is read as the codon for selenocysteine",
+        "UGA is the initiation codon in every organism, while AUG codes only the internal methionine residues of a chain"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Selenocysteine is read from UGA only where the SECIS element is present in that mRNA; without it the same triplet stops the chain. The context-dependence is the whole point of the exception.", cn: "只有当那条 mRNA 上带有 SECIS 元件时，UGA 才被读作硒代半胱氨酸；没有它，同一个三联体就是终止信号。这个「看上下文」正是该例外的要点。" },
+        1: { en: "The book records exactly one exception, and this is it: with a SECIS element in the mRNA, UGA is read as the codon for selenocysteine instead of ending the chain.", cn: "教材只记了一个例外，就是这一个：mRNA 上有 SECIS 元件时，UGA 被读作硒代半胱氨酸的密码子，而不是终止肽链。" },
+        3: { en: "AUG is the initiation codon, and it codes internal methionine residues as well. UGA codes no amino acid at all except in the SECIS case.", cn: "起始密码子是 AUG，它同时也编码链内部的甲硫氨酸残基。除 SECIS 那种情况外，UGA 根本不编码任何氨基酸。" }
+      },
       why_en: "Tab. 4.3 marks UGA as TK (a termination codon) with a footnote: in the presence of the specific SECIS sequence in mRNA it is instead interpreted as the codon for SELENOCYSTEINE. AUG, NOT UGA, is the initiation codon.",
       why_cn: "表4.3将UGA标为TK（终止密码子），并附注：在mRNA中存在特定的SECIS序列时，它被解读为硒代半胱氨酸的密码子。起始密码子是AUG，而不是UGA。"
     },
@@ -1098,8 +1258,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "The E. coli ribosome has a sedimentation constant of 70S, made from a 30S and a 50S subunit. What does this 70S (not 80S) illustrate?",
       q_cn: "E. coli核糖体的沉降系数为70S，由30S和50S亚基组成。这个70S（而非80S）说明了什么？",
-      options: ["A simple arithmetic error in the book", "Sedimentation constants (S) depend on shape and density as well as mass, so they are NOT simply additive", "The two subunits overlap physically, losing mass", "70S is only true for eukaryotic ribosomes"],
+      options: [
+        "A simple arithmetic error in the book, since a 30S and a 50S subunit must together sediment at 80S in the centrifuge",
+        "Sedimentation constants (S) depend on shape and density as well as mass, so they are NOT simply additive",
+        "The two subunits overlap physically when they associate, so the assembled particle loses part of its mass",
+        "70S applies to eukaryotic ribosomes, which are built from a 40S and a 60S subunit of their own"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Not an error but the behaviour of the measurement itself: S is a sedimentation coefficient, and it reflects shape and density along with mass, so two subunits do not simply add.", cn: "这不是笔误，而是这个量本身的性质：S 是沉降系数，它同时反映形状、密度和质量，所以两个亚基的数值不会简单相加。" },
+        2: { en: "No mass is lost on association. The E. coli ribosome is about 2 700 kDa and 20 nm across; what changes on assembly is the shape and density of the particle, and with them its S value.", cn: "结合时并不会损失质量。大肠杆菌核糖体约 2 700 kDa、直径约 20 nm；装配时改变的是颗粒的形状和密度，随之改变的是它的 S 值。" },
+        3: { en: "Eukaryotic ribosomes are 80S, from 40S and 60S subunits — and those numbers do not add up either. The 70S from 30S plus 50S is the prokaryotic case.", cn: "真核核糖体是 80S，由 40S 和 60S 亚基组成——这两个数字同样不是加出来的。30S 加 50S 得 70S 说的是原核。" }
+      },
       why_en: "S values reflect the hydrodynamic behaviour of a particle (shape, density, mass) during centrifugation, not just its mass — so combining a 30S and a 50S subunit does NOT sum to 80S. This is a classic exam trap.",
       why_cn: "S值反映颗粒在离心中的流体力学行为（形状、密度、质量），而不仅仅是质量——因此30S亚基与50S亚基结合并不等于80S。这是一个经典的考试易错点。"
     },
@@ -1107,8 +1277,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the functional significance of ribosome proteins besides their structural role?",
       q_cn: "核糖体蛋白质除结构作用外还有什么功能意义？",
-      options: ["They have no function beyond providing shape", "Many act directly as enzymes or as factors participating in protein synthesis", "They only bind rRNA and have no catalytic role", "They exist solely to protect rRNA from degradation"],
+      options: [
+        "They have no function beyond holding the rRNA of both subunits in the right shape",
+        "Many act directly as enzymes or as factors participating in protein synthesis",
+        "They only bind the rRNA and the mRNA, and carry no catalytic role at all",
+        "They exist mainly to protect the rRNA from the ribonucleases of the cytoplasm"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The book says the opposite in as many words: a number of the ribosomal proteins are enzymes or factors taking direct part in protein synthesis.", cn: "教材原话正好相反：核糖体蛋白中有若干是直接参与蛋白质合成的酶或因子。" },
+        2: { en: "Catalysis is exactly what some of them do — the peptidyl-transferase activity that forms every peptide bond sits in the large subunit.", cn: "催化恰恰是其中一些蛋白干的活——形成每一个肽键的肽基转移酶活性就在大亚基上。" },
+        3: { en: "Protection from nucleases is nowhere given as their role. What the book stresses is that many of them work as enzymes or as factors in the synthesis itself.", cn: "教材从没把「保护 rRNA 不被核酸酶降解」当作它们的职能。它强调的是其中许多本身就是合成过程里的酶或因子。" }
+      },
       why_en: "The book explicitly states a number of ribosomal proteins are ENZYMES or FACTORS directly participating in protein synthesis (e.g. peptidyl-transferase activity is carried by the large subunit) — not merely scaffolding.",
       why_cn: "教材明确指出，许多核糖体蛋白质是直接参与蛋白质合成的酶或因子（例如肽基转移酶活性即由大亚基承担）——而不仅仅是支架。"
     },
@@ -1184,9 +1364,20 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Why must aminoacyl-tRNA be delivered to the ribosome as a ternary complex with EF-Tu and GTP, rather than binding the A-site alone?",
       q_cn: "为什么氨基酰-tRNA必须以EF-Tu和GTP组成的三元复合物形式被递送到核糖体，而不是单独结合A位点？",
-      options: ["Free aminoacyl-tRNA is chemically unstable and hydrolyses spontaneously", "In vivo, aminoacyl-tRNA alone binds the A-site only very weakly; EF-Tu-GTP greatly strengthens the binding", "The ribosome cannot physically accommodate tRNA without EF-Tu attached", "EF-Tu supplies the energy for peptide bond formation itself"],
+      options: [
+        "Free aminoacyl-tRNA is chemically unstable, and its ester bond to the CCA end hydrolyses spontaneously in the cytosol",
+        "In vivo, aminoacyl-tRNA alone binds the A-site only very weakly; EF-Tu-GTP greatly strengthens the binding",
+        "The ribosome cannot accommodate a tRNA in the A-site at all unless EF-Tu stays bound to it throughout",
+        "EF-Tu supplies, through its GTP, the energy that peptidyl-transferase uses to form the peptide bond"
+      ],
       options_note: null,
       answer: 1,
+      optionRefs: { 3: "L-27-2-1" },
+      optionNotes: {
+        0: { en: "The ester bond to the CCA end is not the problem the ternary complex solves. The book's stated reason is binding strength: aminoacyl-tRNA on its own binds the A-site only very weakly in vivo.", cn: "三元复合物要解决的并不是 CCA 端那个酯键的问题。教材给的理由是结合力：在体内，单独的氨基酰-tRNA 与 A 位点结合得非常弱。" },
+        2: { en: "EF-Tu leaves as soon as GTP is hydrolysed on correct codon-anticodon pairing, and the tRNA stays in the A-site without it. EF-Tu is a delivery factor, not part of the site.", cn: "密码子-反密码子正确配对、GTP 一被水解，EF-Tu 就离开了，而 tRNA 没有它照样留在 A 位点。EF-Tu 是递送因子，不是位点的组成部分。" },
+        3: { en: "The energy for the peptide bond comes from activation, where ATP made the aminoacyl-tRNA in the first place. EF-Tu's GTP is spent on delivery and on checking the codon-anticodon pair.", cn: "肽键的能量来自活化那一步——是 ATP 先把氨基酸做成了氨基酰-tRNA。EF-Tu 那个 GTP 花在递送和核对密码子-反密码子配对上。" }
+      },
       why_en: "The book states explicitly that under in vivo conditions aminoacyl-tRNA ALONE binds the A-site very weakly; EF-Tu and GTP strengthen this binding, so all aminoacyl-tRNAs occur as the ternary complex EF-Tu-GTP-aminoacyl-tRNA. GTP hydrolysis happens upon correct codon-anticodon pairing — it is a delivery/proofreading step, NOT the peptide-bond-forming step itself.",
       why_cn: "教材明确指出，在体内条件下，单独的氨基酰-tRNA与A位点的结合非常弱；EF-Tu与GTP增强了这种结合，因此所有氨基酰-tRNA都以三元复合物EF-Tu-GTP-氨基酰-tRNA的形式存在。GTP水解发生在密码子-反密码子正确配对之后——这是一个递送/校对步骤，而非肽键形成本身。"
     },
@@ -1194,8 +1385,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the special feature of the initiator formyl-Met-tRNA^fMet's binding to the ribosome, compared with every other aminoacyl-tRNA during elongation?",
       q_cn: "与延伸阶段其他氨基酰-tRNA相比，起始甲酰蛋氨酰-tRNA^fMet与核糖体的结合有什么特殊之处？",
-      options: ["It binds the A-site instead of the P-site", "It is the ONE tRNA-ribosome binding not strictly governed by codon-anticodon pairing, even though that interaction also contributes", "It does not require any initiation factor", "It binds without consuming GTP"],
+      options: [
+        "It binds the A-site rather than the P-site, and is carried across to the P-site by EF-G before the very first elongation cycle begins",
+        "It is the ONE tRNA-ribosome binding not strictly governed by codon-anticodon pairing, even though that interaction also contributes",
+        "It reaches the ribosome without any initiation factor at all, pairing with the AUG codon on the 30S subunit unaided",
+        "It is the one aminoacyl-tRNA delivered by EF-Tu rather than by an initiation factor, which is what marks it out"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "It goes straight into the P-site of the 30S subunit as part of the IF-2 complex, which is precisely why the finished 70S initiation complex starts out with an empty A-site.", cn: "它是作为 IF-2 复合物的一部分直接进入 30S 亚基 P 位点的，正因如此，装配好的 70S 起始复合物一开始 A 位点是空的。" },
+        2: { en: "It arrives as the IF-2 complex with GTP, and IF-3 with IF-1 has already had to split the leftover inactive 70S ribosome first — initiation is the most factor-heavy of the four stages.", cn: "它是随 IF-2 与 GTP 一起到的，而在此之前 IF-3 还要在 IF-1 协助下把上一轮剩下的失活 70S 核糖体拆开——起始是四个阶段中用因子最多的一个。" },
+        3: { en: "EF-Tu delivers the aminoacyl-tRNAs of elongation, as the ternary complex EF-Tu·GTP·aminoacyl-tRNA. The initiator arrives with IF-2 and GTP and goes to the P-site instead.", cn: "EF-Tu 递送的是延伸阶段的氨基酰-tRNA，形式是三元复合物 EF-Tu·GTP·氨基酰-tRNA。起始 tRNA 是随 IF-2 和 GTP 来的，而且进的是 P 位点。" }
+      },
       why_en: "The book singles this out: recognition of the initiator formyl-Met-tRNA by the ribosome is the ONE tRNA-ribosome binding that is not strictly controlled by codon-anticodon pairing, although that interaction still plays a part. It binds directly to the P-site of the 30S subunit as part of the IF-2-GTP complex.",
       why_cn: "教材特别指出：核糖体对起始甲酰蛋氨酰-tRNA的识别，是唯一不严格受密码子-反密码子配对支配的tRNA-核糖体结合，尽管该相互作用仍起一定作用。它作为IF-2-GTP复合物的一部分直接结合到30S亚基的P位点。"
     },
@@ -1203,8 +1404,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Immediately after transpeptidation but before translocation, where are the peptidyl-tRNA and the uncharged tRNA located?",
       q_cn: "转肽反应结束后、移位发生之前，肽酰-tRNA与未负载的tRNA分别位于何处？",
-      options: ["Peptidyl-tRNA in P-site, uncharged tRNA in A-site", "Peptidyl-tRNA in A-site, uncharged tRNA in P-site", "Both in the A-site", "Both released from the ribosome"],
+      options: [
+        "Peptidyl-tRNA in P-site, uncharged tRNA in A-site",
+        "Peptidyl-tRNA in A-site, uncharged tRNA in P-site",
+        "Peptidyl-tRNA and uncharged tRNA both in the A-site",
+        "Both tRNAs already released from the ribosome"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "That is the arrangement AFTER translocation, not before it. Transpeptidation leaves the growing chain on the A-site tRNA, and EF-G then moves it across to the P-site.", cn: "那是移位之后的排布，不是之前。转肽把增长中的肽链留在 A 位点的 tRNA 上，随后由 EF-G 把它挪到 P 位点。" },
+        2: { en: "The A-site holds one tRNA. What transpeptidation moves is the peptide, not the tRNAs: the extended peptidyl-tRNA is in the A-site and the uncharged one is still sitting in the P-site.", cn: "A 位点只容得下一个 tRNA。转肽移动的是肽链而不是 tRNA：延长后的肽酰-tRNA 在 A 位点，空载的那个仍留在 P 位点。" },
+        3: { en: "The uncharged tRNA does leave, but only at translocation and by way of the E-site; the peptidyl-tRNA stays on the ribosome until the chain is finished at a stop codon.", cn: "空载的 tRNA 确实会离开，但那要等到移位、而且是经 E 位点出去的；肽酰-tRNA 则一直留在核糖体上，直到遇到终止密码子。" }
+      },
       why_en: "Transpeptidation transfers the growing chain FROM the P-site tRNA ONTO the A-site aminoacyl-tRNA. So right after the peptide bond forms, the extended peptidyl-tRNA sits in the A-SITE, and the now-uncharged tRNA is left behind in the P-SITE — translocation then moves them on, to P and out via the E-site respectively.",
       why_cn: "转肽反应将增长中的肽链从P位点的tRNA转移到A位点的氨基酰-tRNA上。因此肽键形成后，延长的肽酰-tRNA立即位于A位点，而现在空载（unloaded）的tRNA则留在P位点——随后移位将它们分别移至P位点和经E位点离开。"
     },
@@ -1276,8 +1487,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What happens chemically when a release factor binds a stop codon in the A-site?",
       q_cn: "当释放因子结合到A位点的终止密码子上时，发生了什么化学反应？",
-      options: ["The peptidyl group is transferred to a new aminoacyl-tRNA", "The peptidyl group is transferred to a molecule of water, releasing the free polypeptide", "The mRNA is cleaved at the stop codon", "The A-site is permanently blocked and the ribosome is degraded"],
+      options: [
+        "The peptidyl group is transferred to a new aminoacyl-tRNA waiting in the A-site as usual",
+        "The peptidyl group is transferred to a molecule of water, releasing the free polypeptide",
+        "The mRNA is cleaved at the stop codon, releasing the polypeptide still attached to its tRNA",
+        "The A-site is blocked for good and the ribosome is degraded together with its mRNA"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "That is the ordinary elongation cycle. A stop codon can pair with no aminoacyl-tRNA at all, so the A-site stays empty and the release factor occupies it instead.", cn: "那是普通的延伸循环。终止密码子根本没有任何氨基酰-tRNA 能与之配对，所以 A 位点是空的，占住它的是释放因子。" },
+        2: { en: "The mRNA is not cut anywhere. The peptidyl-transferase reaction simply takes water as its acceptor, and the finished chain comes off as a free carboxylate.", cn: "mRNA 并没有被切开。肽基转移酶只是把受体换成了水，完成的肽链以游离羧酸根的形式脱下来。" },
+        3: { en: "The ribosome is recycled, not destroyed: RRF, with EF-G and the energy of GTP hydrolysis, takes it off the mRNA and splits it back into 30S and 50S for the next round.", cn: "核糖体是被回收而不是被降解的：RRF 与 EF-G 一起、靠 GTP 水解的能量，把它从 mRNA 上取下来，再拆回 30S 和 50S 以备下一轮。" }
+      },
       why_en: "Because no aminoacyl-tRNA can occupy a stop codon, the release factor redirects peptidyl-transferase to use WATER as the acceptor instead of an amino acid — releasing the finished polypeptide as a free carboxylate (obr. 4.45).",
       why_cn: "由于没有任何氨基酰-tRNA能够占据终止密码子，释放因子使肽基转移酶改用水作为受体，而不是氨基酸——从而以游离羧酸根的形式释放完成的多肽（图4.45）。"
     },
@@ -1285,8 +1506,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which factor cannot bind the ribosome at the same time as RF-1 or RF-2?",
       q_cn: "哪个因子不能与RF-1或RF-2同时结合核糖体？",
-      options: ["IF-3", "EF-Tu", "EF-G", "Peptidyl-transferase"],
+      options: [
+        "IF-3",
+        "EF-Tu",
+        "EF-G",
+        "RRF"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "IF-3 belongs to initiation: with IF-1 it splits the leftover inactive 70S ribosome before a new chain starts, and it is long gone by the time a stop codon reaches the A-site.", cn: "IF-3 属于起始阶段：它与 IF-1 一起在新链开始前把上一轮剩下的失活 70S 核糖体拆开，等终止密码子进入 A 位点时它早就不在了。" },
+        1: { en: "EF-Tu delivers aminoacyl-tRNAs to the A-site during elongation. It is EF-G, the translocation factor, that cannot sit on the ribosome together with RF-1 or RF-2.", cn: "EF-Tu 在延伸阶段把氨基酰-tRNA 送进 A 位点。真正不能与 RF-1 或 RF-2 同时结合核糖体的，是移位因子 EF-G。" },
+        3: { en: "RRF acts after the chain has already been released, working with EF-G and GTP to take the ribosome off the mRNA and split it into subunits — later than the release factors, not in competition with them.", cn: "RRF 是在肽链已经释放之后才出场的，它与 EF-G 和 GTP 一起把核糖体从 mRNA 上卸下并拆成亚基——比释放因子晚一步，并不与它们竞争。" }
+      },
       why_en: "The book states explicitly that neither RF-1 nor RF-2 can bind the ribosome simultaneously with EF-G — their actions are mutually exclusive, keeping elongation-type and termination-type ribosome states from being confused.",
       why_cn: "教材明确指出，RF-1和RF-2都不能与EF-G同时结合核糖体——二者的作用互斥，从而避免延伸型与终止型的核糖体状态发生混淆。"
     },
@@ -1369,8 +1600,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "In the ABSENCE of lactose (no inducer), what state is the lac operon in, and why?",
       q_cn: "在没有乳糖（无诱导物）的情况下，lac操纵子处于什么状态？为什么？",
-      options: ["Actively transcribed, because RNA-polymerase binds the operator directly", "Repressed, because the lac repressor is bound to the operator and blocks RNA-polymerase", "Repressed, because the promoter is physically deleted", "Actively transcribed, because the repressor requires lactose to fold correctly"],
+      options: [
+        "Actively transcribed, because RNA-polymerase binds operator gene O and reads straight through",
+        "Repressed, because the lac repressor is bound to the operator and blocks RNA-polymerase",
+        "Repressed, because operator O1 overlaps the promoter and leaves it permanently unavailable",
+        "Actively transcribed, because the repressor requires lactose to fold correctly"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "RNA-polymerase binds the promoter, gene P; the operator, gene O, is the repressor's site. With no inducer around the repressor is sitting there and the polymerase cannot move along.", cn: "RNA 聚合酶结合的是启动子（P 基因）；操纵基因 O 是阻遏物的位点。没有诱导物时阻遏物就待在那儿，聚合酶前进不了。" },
+        2: { en: "O1 does overlap the lac promoter, and there are two pseudo-operators O2 and O3 inside lacZ besides — but nothing is deleted. The block is a protein bound to DNA, and it lifts the moment inducer appears.", cn: "O1 确实与 lac 启动子重叠，lacZ 内部还另有两个假操纵基因 O2 和 O3——但并没有什么被删掉。挡路的是结合在 DNA 上的蛋白，诱导物一来它就撤了。" },
+        3: { en: "Folding is not what the inducer does. It binds the finished repressor and blocks the repressor's own binding to DNA, which is what makes operator, repressor and inducer work as a molecular switch.", cn: "诱导物做的不是帮忙折叠。它结合已经做好的阻遏物，阻断阻遏物与 DNA 的结合——操纵基因、阻遏物、诱导物三者因此才成为一个分子开关。" }
+      },
       why_en: "Without inducer, the repressor (product of gene I) binds operator gene O and physically blocks transcription of the structural genes Z, Y, A (obr. 4.47a). Only when an inducer (e.g. a lactose derivative) binds the repressor does it dissociate from the operator.",
       why_cn: "在没有诱导物的情况下，阻遏物（I基因的产物）结合操纵基因O，物理性地阻断结构基因Z、Y、A的转录（图4.47a）。只有当诱导物（例如乳糖的衍生物）结合阻遏物后，阻遏物才会从操纵基因上解离。"
     },
@@ -1378,8 +1619,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "In trp-operon attenuation, what happens when tryptophan (and charged tRNA^Trp) is SCARCE?",
       q_cn: "在trp操纵子的衰减机制中，当色氨酸（及带电荷的tRNA^Trp）不足时会发生什么？",
-      options: ["The ribosome races ahead of RNA-polymerase and terminates transcription early", "The ribosome stalls at tandem Trp codons, allowing the 2-3 antiterminator hairpin to form, which prevents the 3-4 terminator hairpin, so transcription continues", "The repressor is degraded, permanently activating the operon", "RNA-polymerase detaches from DNA and the operon is silenced"],
+      options: [
+        "The ribosome races ahead of RNA-polymerase and settles in region 2, so hairpin 3-4 can form as a terminator and transcription stops after only the leader has been made",
+        "The ribosome stalls at tandem Trp codons, allowing the 2-3 antiterminator hairpin to form, which prevents the 3-4 terminator hairpin, so transcription continues",
+        "The trp repressor is degraded for want of its corepressor, so the operon stays switched on and the attenuator is bypassed altogether",
+        "RNA-polymerase detaches at the attenuator once the leader is made, so only the 162-nucleotide leader sequence ever gets transcribed"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "That is the high-tryptophan case with its trigger reversed. A ribosome sitting in region 2 blocks hairpin 2-3, hairpin 3-4 forms as terminator and transcription stops — the opposite of what scarcity does.", cn: "这是色氨酸充足时的情形，只是把触发条件写反了。核糖体停在区段 2 会挡住发夹 2-3，于是发夹 3-4 形成终止子、转录停止——正好与缺乏时相反。" },
+        2: { en: "Nothing is degraded, and attenuation is not repressor business at all: what decides it is where the ribosome translating the leader peptide has come to a halt.", cn: "没有什么被降解，而且衰减根本不归阻遏物管：决定它的是那个正在翻译前导肽的核糖体停在了哪里。" },
+        3: { en: "That is what happens when tryptophan is plentiful. When it is scarce the antiterminator 2-3 forms, terminator 3-4 cannot, and RNA-polymerase reads straight past the attenuator into the structural genes.", cn: "那是色氨酸充足时发生的事。缺乏时形成的是抗终止子 2-3，终止子 3-4 就形不成，RNA 聚合酶径直越过衰减子进入结构基因。" }
+      },
       why_en: "Under low tryptophan, the ribosome stalls at the tandem Trp codons in region 1 because it lacks charged tRNA^Trp. This lets hairpin 2-3 (the ANTITERMINATOR) form, which blocks hairpin 3-4 (the TERMINATOR) from forming, so RNA-polymerase reads through and keeps transcribing the structural genes — exactly when the cell needs to keep making tryptophan.",
       why_cn: "在色氨酸不足时，核糖体因缺乏带电荷的色氨酰-tRNA^Trp而在区段1的串联Trp密码子处停滞。这使发夹结构2-3（抗终止子）得以形成，从而阻止发夹结构3-4（终止子）的形成，于是RNA聚合酶得以通读并继续转录结构基因——这正是细胞需要继续合成色氨酸的时候。"
     },
@@ -1476,8 +1727,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What structurally distinguishes cap-1 from cap-0?",
       q_cn: "从结构上看，帽子-1与帽子-0有何区别？",
-      options: ["Cap-1 lacks the 7-methylguanosine residue entirely", "Cap-1 has additional 2'-OH ribose methylation on the leading nucleoside of the transcript; cap-0 is unmodified beyond the guanosine cap itself", "Cap-1 is found only in prokaryotes", "Cap-1 has a poly(A) tail attached directly to it"],
+      options: [
+        "Cap-1 lacks the 7-methylguanosine residue altogether, the 5'-5' triphosphate bridge running straight to the first transcribed nucleoside instead",
+        "Cap-1 has additional 2'-OH ribose methylation on the leading nucleoside of the transcript; cap-0 is unmodified beyond the guanosine cap itself",
+        "Cap-1 is found only in prokaryotes, where the ribose 2'-OH of the leading nucleoside is methylated in place of the guanosine itself",
+        "Cap-1 carries a poly(A) tail of 20-250 nucleotides attached directly to the guanosine through the same unusual 5'-5' bridge"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "All three cap types keep the 7-methylguanosine and its unusual 5'-5' triphosphate bridge; what grades them is how far the 2'-OH methylation of the ribose has been taken.", cn: "三种帽子都保留 7-甲基鸟苷及其特殊的 5'-5' 三磷酸桥；把它们分级的是核糖 2'-OH 甲基化做到了第几个核苷。" },
+        2: { en: "The cap is a eukaryotic structure throughout. Cap-1, with the leading nucleoside's ribose methylated as well, is described as typical of multicellular organisms.", cn: "帽子结构自始至终都是真核的东西。Cap-1（前导核苷的核糖也被甲基化）被教材描述为多细胞生物的典型形式。" },
+        3: { en: "The poly(A) tail sits at the far end of the message: it is added at the 3' end by poly(A)-polymerase after the transcript has been cut near the AAUAA signal.", cn: "poly(A) 尾在信息的另一端：它是在转录本于 AAUAA 信号附近被切开之后，由 poly(A) 聚合酶加在 3' 端的。" }
+      },
       why_en: "All three cap types share the 7-methylguanosine linked by a 5'-5' triphosphate bridge. Cap-0 stops there (typical of unicellular organisms); cap-1 ADDITIONALLY methylates the 2'-OH of the ribose on the FIRST transcribed nucleoside (typical of multicellular organisms); cap-2 methylates the first TWO nucleosides that way.",
       why_cn: "三种帽子类型都具有通过5'-5'三磷酸桥连接的7-甲基鸟苷。帽子-0仅止于此（单细胞生物常见）；帽子-1还在第一个被转录的核苷的核糖2'-OH处被甲基化（多细胞生物常见）；帽子-2则是前两个核苷都如此甲基化。"
     },
@@ -1485,8 +1746,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "In poly(A) tail formation, what is the role of the AAUAA sequence?",
       q_cn: "在poly(A)尾的形成过程中，AAUAA序列起什么作用？",
-      options: ["It is directly copied into the poly(A) tail itself", "It marks the site 15-25 nucleotides upstream of where the transcript is cleaved before poly(A)-polymerase acts", "It is the promoter for poly(A)-polymerase transcription", "It prevents polyadenylation when present"],
+      options: [
+        "It is copied straight into the poly(A) tail, which is why every tail starts with the same five nucleotides",
+        "It marks the site 15-25 nucleotides upstream of where the transcript is cleaved before poly(A)-polymerase acts",
+        "It is the promoter at which poly(A)-polymerase binds the transcript before it starts building the tail from ATP",
+        "It prevents polyadenylation wherever it occurs, which is why mutating it lets the tail be added"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Nothing of AAUAA ends up in the tail. Poly(A)-polymerase builds the tail from ATP, so it is pure adenine, and AAUAA only marks where the transcript is to be cut.", cn: "AAUAA 一点也不会进到尾巴里。poly(A) 聚合酶是用 ATP 造尾的，所以尾巴全是腺苷酸；AAUAA 只是标出转录本该在哪里被切开。" },
+        2: { en: "Poly(A)-polymerase transcribes nothing and needs no promoter: it simply adds adenines from ATP onto the new 3' end that cleavage has just created.", cn: "poly(A) 聚合酶不转录任何东西，也不需要启动子：它只是把 ATP 上的腺苷酸接到切割刚造出来的那个新 3' 端上。" },
+        3: { en: "It works the other way round: mutating AAUAA blocks cleavage and polyadenylation. The sequence is what permits the tail, not what prevents it.", cn: "实际正相反：让 AAUAA 突变会阻断切割和多聚腺苷酸化。这段序列是允许加尾的条件，不是阻止加尾的东西。" }
+      },
       why_en: "AAUAA is a highly conserved pentanucleotide; the primary transcript is cleaved 15-25 nucleotides DOWNSTREAM of it (mutations in AAUAA block cleavage and polyadenylation), and only then does poly(A)-polymerase build the 20-250-nucleotide poly(A) tail from ATP at the new 3' end.",
       why_cn: "AAUAA是一段高度保守的五核苷酸序列；初级转录产物在其下游15-25个核苷酸处被切割（AAUAA的突变会阻断切割与多聚腺苷酸化），随后poly(A)聚合酶才利用ATP在新形成的3'端合成20-250个核苷酸的poly(A)尾。"
     },
@@ -1503,12 +1774,17 @@ window.BIOCHEM.topics.push(
       q_en: "What TWO sequence elements are necessary and sufficient to define a splice site, and what recognises them?",
       q_cn: "定义剪接位点所必需且充分的两个序列元件是什么？由什么来识别它们？",
       options: [
-        "A TATA box and a poly(A) signal, recognised by RNA polymerase II",
+        "A TATA box at the intron's 5' edge and a poly(A) signal at its 3' edge, both recognised by the RNA-polymerase that made the transcript in the nucleus",
         "An invariant GU at the intron's 5' edge and an equally invariant AG at its 3' edge, recognised by the snRNP-based spliceosome (50-60S)",
-        "The 7-methylguanosine cap and the AAUAA signal, recognised by poly(A)-polymerase",
-        "A Shine-Dalgarno sequence, recognised by the small ribosomal subunit"
+        "The 7-methylguanosine cap and the AAUAA pentanucleotide, recognised by poly(A)-polymerase as it trims the primary transcript",
+        "A Shine-Dalgarno sequence at the start of the message, recognised by the small subunit of the eukaryotic ribosome"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Neither element has anything to do with splicing. What defines the site is the invariant GU at the intron's 5' edge and the invariant AG at its 3' edge, and the book calls those two necessary and sufficient.", cn: "这两个元件跟剪接毫无关系。定义剪接位点的是内含子 5' 端恒定的 GU 和 3' 端恒定的 AG，教材说这两者既必要又充分。" },
+        2: { en: "Cap and AAUAA are the other two hnRNA modifications — capping and polyadenylation — and in the ovalbumin example both are already done before the introns are spliced out.", cn: "帽子和 AAUAA 属于 hnRNA 的另外两项加工——加帽与加 poly(A) 尾；在卵清蛋白那个例子里，这两步都在剪掉内含子之前就完成了。" },
+        3: { en: "Shine-Dalgarno pairing belongs to prokaryotic translation initiation. Eukaryotic mRNA has no such element at all — the cap and the scanning 40S subunit locate the start instead.", cn: "Shine-Dalgarno 配对属于原核的翻译起始。真核 mRNA 根本没有这种元件——找起始点靠的是帽子和沿 mRNA 扫描的 40S 亚基。" }
+      },
       why_en: "The book states GU at the intron's 5' edge and invariant AG at its 3' edge are necessary and sufficient to define the splice site; splicing itself is carried out by small nuclear ribonucleoproteins (snRNP) acting as a 50-60S particle called the spliceosome. The cap/AAUAA/Shine-Dalgarno elements belong to entirely different steps (capping, polyadenylation, and prokaryotic translation initiation respectively).",
       why_cn: "教材指出，内含子5′端保守的GU序列与3′端恒定的AG序列，是定义剪接位点的必要且充分条件；剪接本身由小核核糖核蛋白（snRNP）以50-60S颗粒——即剪接体——的形式完成。帽子/AAUAA/Shine-Dalgarno等元件分别属于完全不同的步骤（加帽、多聚腺苷酸化，以及原核翻译起始）。"
     },
@@ -1583,12 +1859,17 @@ window.BIOCHEM.topics.push(
       q_en: "According to this section, what is true of the relationship between a protein's biologically active conformation and its lowest-energy conformation?",
       q_cn: "根据本节内容，蛋白质的生物活性构象与其能量最低构象之间是什么关系？",
       options: [
-        "They are always identical, because folding is thermodynamically driven",
+        "They are always identical, since the amino acid sequence alone fixes the arrangement",
         "For many proteins they are NOT the same, and folding of the nascent chain is a guided process",
         "The biologically active conformation is always of higher energy and inherently unstable",
-        "Only chaperonins, never chaperones, can resolve this difference"
+        "Only the chaperonins, never the chaperones, can bridge the difference, and only in prokaryotic cells"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "That does hold for some proteins, mostly small ones, which pass spontaneously into a conformation that is also the lowest in energy. The book's point is that many others do not.", cn: "对一部分蛋白（多是小分子的）确实如此，它们自发进入的构象同时也是能量最低的构象。教材要说的是：还有许多蛋白并非如此。" },
+        2: { en: "The active conformation is not called inherently unstable, only not always the energetic minimum; chaperones stabilise partially folded intermediates and also help repair wrongly folded chains.", cn: "教材没有说活性构象本身不稳定，只说它不一定是能量最低的那个；分子伴侣稳定的是部分折叠的中间体，还参与修复折叠错误的链。" },
+        3: { en: "Both systems fold proteins, and both are evolutionarily conserved across eukaryotic and prokaryotic cells; Hsp70 and GroEL/GroES are two routes to the same native state.", cn: "两套系统都做折叠，而且在真核与原核细胞中都保守存在；Hsp70 与 GroEL/GroES 只是通往同一个天然态的两条路。" }
+      },
       why_en: "For SOME (mostly small) proteins the two conformations do coincide and folding is spontaneous. But the book stresses that for MANY OTHER proteins they are NOT the same — which is exactly why a guided, chaperone-assisted folding process exists, and why misfolding is linked to serious neurological disease.",
       why_cn: "对某些（多为小分子）蛋白质而言，两种构象确实一致，折叠是自发的。但教材强调，对许多其他蛋白质而言二者并不相同——这正是需要分子伴侣引导折叠过程的原因，也是错误折叠与严重神经系统疾病相关联的原因。"
     },
@@ -1597,12 +1878,17 @@ window.BIOCHEM.topics.push(
       q_en: "What distinguishes the GroEL/GroES chaperonin system from the Hsp70 chaperone system shown in Obr. 4.52?",
       q_cn: "图 4.52 中 GroEL/GroES 伴侣素系统与 Hsp70 分子伴侣系统的区别是什么？",
       options: [
-        "The Hsp70 system encloses the substrate inside a folding chamber capped by GroES",
-        "The GroEL/GroES system binds the nascent chain directly at the ribosome exit tunnel",
+        "The Hsp70 system encloses the substrate in a barrel-shaped folding chamber capped by GroES, releasing the native protein once ADP and Pᵢ have left the complex again",
+        "The GroEL/GroES system binds the nascent chain as it emerges from the ribosome and lets it go on hydrolysing its bound ATP to ADP",
         "GroEL, capped by GroES on ATP binding, forms an enclosed chaperonin chamber in which folding occurs, ending in release of ADP + Pᵢ and the native protein",
-        "Neither system requires ATP"
+        "Neither system requires ATP: both simply bind partially folded intermediates and hold them until they settle into the native state"
       ],
       answer: 2,
+      optionNotes: {
+        0: { en: "The chamber is GroEL's, not Hsp70's. Hsp70-ATP binds the nascent chain as it comes out of the ribosome and never encloses it in anything.", cn: "那个腔室是 GroEL 的，不是 Hsp70 的。Hsp70-ATP 是在新生链从核糖体出来时抓住它，从不把它关进什么腔里。" },
+        1: { en: "That is the Hsp70 route. GroEL takes the protein into its barrel and is then capped by GroES; it does not work at the ribosome exit at all.", cn: "那是 Hsp70 的路子。GroEL 是把蛋白收进自己的桶里、再由 GroES 加盖；它根本不在核糖体出口处工作。" },
+        3: { en: "Both consume ATP. Hsp70 releases Pᵢ to give the partially folded intermediate and then spends ATP to release the native protein; GroEL/GroES releases ADP + Pᵢ together with GroES.", cn: "两套系统都消耗 ATP。Hsp70 放出 Pᵢ 得到部分折叠的中间体，再耗掉 ATP 放出天然蛋白；GroEL/GroES 则连同 GroES 一起放出 ADP + Pᵢ。" }
+      },
       why_en: "Obr. 4.52 shows two separate systems: (a) Hsp70-ATP binds the nascent chain as it emerges from the ribosome; (b) GroEL, capped by GroES upon ATP binding, forms an enclosed chaperonin chamber in which folding proceeds, ending with release of ADP + Pᵢ and the native protein. Both consume ATP, but only the GroEL/GroES system is an enclosed chamber.",
       why_cn: "图 4.52 显示两套独立系统：(a) Hsp70-ATP 在新生肽链从核糖体释出时与之结合；(b) GroEL 结合 ATP 后由 GroES 加帽，形成一个封闭的伴侣素折叠腔，折叠在其中进行，最终释放 ADP + Pᵢ 及天然蛋白质。两者都消耗 ATP，但只有 GroEL/GroES 系统构成封闭腔室。"
     },
@@ -1619,12 +1905,17 @@ window.BIOCHEM.topics.push(
       q_en: "In Obr. 4.54, what is the correct order of correction of a poorly-folded intermediate?",
       q_cn: "在图 4.54 中，对错误折叠中间体进行校正的正确顺序是什么？",
       options: [
-        "PPIase acts first to fix proline geometry, then protein-disulfide-isomerase re-pairs the cysteines",
+        "PPIase acts first to set the proline geometry (poorly folded to Pro-trans), and protein-disulfide-isomerase then re-pairs the mispaired cysteine residues",
         "Protein-disulfide-isomerase re-pairs the disulfide bonds first (poorly folded → Pro-cis), then PPIase converts the chain to the native Pro-trans form",
-        "Both enzymes act simultaneously and independently, with no defined order",
-        "Only protein-disulfide-isomerase is needed; PPIase acts solely on fully unfolded chains"
+        "Both enzymes act at once and independently of each other, so the poorly folded intermediate never passes through a Pro-cis state",
+        "Only protein-disulfide-isomerase is needed here, PPIase acting solely on chains that no chaperone has yet folded at all"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The numbering in Obr. 4.54 runs the other way: disulfide exchange is step 1 and reaches the Pro-cis intermediate, PPIase is step 2 and gives the native Pro-trans protein.", cn: "Obr. 4.54 的编号正相反：二硫键交换是第 1 步，得到 Pro-cis 中间体；PPIase 是第 2 步，给出天然的 Pro-trans 蛋白。" },
+        2: { en: "The figure numbers the two steps, and the state between them is exactly the Pro-cis intermediate — so the order is defined, not simultaneous.", cn: "图上给这两步编了号，而它们之间的状态正是 Pro-cis 中间体——所以顺序是确定的，不是同时进行。" },
+        3: { en: "PPIase is step 2 of this very correction, acting on an intermediate that is already partly folded. All X-Pro bonds are made trans at synthesis, and PPIase is what interconverts them afterwards.", cn: "PPIase 正是这套校正里的第 2 步，作用对象是已经部分折叠的中间体。所有 X-Pro 键在合成时都是反式的，之后由 PPIase 来做顺反互变。" }
+      },
       why_en: "Obr. 4.54 numbers the steps: (1) protein-disulfid-isomerase exchanges disulfide bonds among the poorly-folded chain's cysteine residues to reach the Pro(cis) intermediate; (2) PPIase then isomerises the proline bond to give the native Pro(trans) protein.",
       why_cn: "图 4.54 对步骤进行了编号：(1) 蛋白质二硫键异构酶在错误折叠肽链的半胱氨酸残基间交换二硫键，形成 Pro(cis) 中间体；(2) 随后 PPIase 将脯氨酸肽键异构化，得到天然的 Pro(trans) 蛋白质。"
     }
@@ -1686,8 +1977,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "The hydrophobic middle portion of a signal sequence pairs with which ER membrane proteins to open the translocation pore?",
       q_cn: "信号序列疏水的中段与哪些内质网膜蛋白配对，从而打开转运孔道？",
-      options: ["Ribophorin I and II", "GroEL and GroES", "Signal peptidase and the SRP receptor", "Chaperonin and Hsp70"],
+      options: [
+        "Ribophorin I and II",
+        "GroEL and GroES",
+        "Signal peptidase and SRP",
+        "Chaperonin and Hsp70"
+      ],
       answer: 0,
+      optionRefs: { 1: "4-3-1", 3: "4-3-1" },
+      optionNotes: {
+        1: { en: "GroEL and GroES are the chaperonin folding chamber of the previous section; they fold proteins and have nothing to do with the ER translocation pore.", cn: "GroEL 与 GroES 是上一节那个伴侣素折叠腔；它们干的是折叠，与内质网转运孔道无关。" },
+        2: { en: "Signal peptidase cuts the signal sequence off once it appears in the ER lumen, and SRP escorts the ribosome to its receptor — neither one forms the pore.", cn: "信号肽酶是在信号序列露进内质网腔后把它切掉，SRP 是把核糖体带到受体上——两者都不构成孔道。" },
+        3: { en: "Chaperonin and Hsp70 belong to the folding system too. The pore is opened by a β-sheet between the signal sequence's hydrophobic core and the ribophorins.", cn: "伴侣素和 Hsp70 同样属于折叠系统。打开孔道的是信号序列疏水核心与核糖蛋白之间形成的 β-折叠。" }
+      },
       why_en: "The hydrophobic core forms a β-sheet with the adjacent RIBOPHORINS I and II, and this non-covalent interaction is what forces the pore open. GroEL/GroES and Hsp70 belong to the separate chaperone-folding system of 4.3.1; the SRP receptor only docks the ribosome, it does not form the pore.",
       why_cn: "疏水核心与相邻的核糖蛋白 I 和 II 形成 β-折叠结构，正是这种非共价相互作用迫使孔道打开。GroEL/GroES 与 Hsp70 属于 4.3.1 节中另一套分子伴侣折叠系统；SRP 受体只负责对接核糖体，并不参与孔道的形成。"
     },
@@ -1696,12 +1998,17 @@ window.BIOCHEM.topics.push(
       q_en: "In the maturation of insulin, which statement is correct?",
       q_cn: "关于胰岛素的成熟过程，以下哪项陈述是正确的？",
       options: [
-        "The B chain forms the C-terminal part of proinsulin, and the A chain the N-terminal part",
+        "The B chain forms the C-terminal part of proinsulin and the A chain the N-terminal part, the two being joined by the C-peptide",
         "The A chain forms the C-terminal part of proinsulin and the B chain the N-terminal part, joined by the C-peptide",
-        "Preproinsulin and proinsulin are the same molecule",
-        "Mature insulin's A and B chains are held together only by non-covalent interactions"
+        "Preproinsulin and proinsulin are the same molecule, the C-peptide being what tells insulin apart from both of them",
+        "Mature insulin's A and B chains are held together only by non-covalent interactions once the C-peptide has gone"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The two chains are the other way round: in proinsulin the A chain is C-terminal and the B chain N-terminal, with the C-peptide lying between them.", cn: "两条链的位置反了：在胰岛素原里，A 链在 C 端、B 链在 N 端，C 肽夹在中间。" },
+        2: { en: "They differ by the 23-residue N-terminal signal sequence: removing that turns preproinsulin into proinsulin, and only excising the C-peptide afterwards gives insulin.", cn: "两者差的是 N 端那段 23 个残基的信号序列：切掉它，前胰岛素原就成了胰岛素原；之后再切掉 C 肽，才得到胰岛素。" },
+        3: { en: "Once the C-peptide is cut out there is no backbone left between A and B at all — three disulfide bonds are what hold the mature hormone together.", cn: "C 肽一被切走，A 链和 B 链之间就再没有主链相连了——把成熟激素拴在一起的是三个二硫键。" }
+      },
       why_en: "In proinsulin the A chain is C-terminal and the B chain N-terminal, connected by the C-peptide. Preproinsulin differs from proinsulin by an extra 23-residue N-terminal SIGNAL sequence, removed first; the C-peptide is excised second, by a trypsin-like enzyme plus a carboxypeptidase, leaving mature insulin with its A and B chains held by THREE DISULFIDE BONDS, not non-covalent interactions.",
       why_cn: "在胰岛素原中，A 链位于 C 端，B 链位于 N 端，二者由 C 肽相连。前胰岛素原与胰岛素原的区别在于多出一段 23 个残基的 N 端信号序列，该序列首先被切除；随后 C 肽被一种类胰蛋白酶及一种羧肽酶切除，留下由三个二硫键（而非非共价相互作用）连接 A、B 两链的成熟胰岛素。"
     },
@@ -1718,12 +2025,17 @@ window.BIOCHEM.topics.push(
       q_en: "Which pair of enzymes carries out the selective proteolytic conversion of proinsulin to insulin?",
       q_cn: "哪一对酶完成了胰岛素原到胰岛素的选择性蛋白水解转变？",
       options: [
-        "Only a trypsin-like enzyme is needed",
+        "Only a trypsin-like enzyme is needed, since it cleaves the C-peptide out together with the two basic residues that attached it to the chain",
         "A trypsin-like enzyme cleaves off the C-peptide, and a carboxypeptidase removes the remaining dipeptide of two basic residues",
-        "Only a carboxypeptidase is needed",
-        "Signal peptidase completes both steps"
+        "Only a carboxypeptidase is needed, working in from the C-terminal end until the whole of the C-peptide has been removed",
+        "Signal peptidase completes both steps, cleaving the signal sequence and the C-peptide in one pass through the Golgi"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "It takes at least two: the trypsin-like enzyme excises the C-peptide, and a carboxypeptidase then removes the dipeptide of two basic amino acids it was attached by.", cn: "至少要两种酶：类胰蛋白酶把 C 肽切下来，再由羧肽酶去掉当初连接 C 肽的那个由两个碱性氨基酸组成的二肽。" },
+        2: { en: "The carboxypeptidase does the second, tidying step. It is an enzyme of trypsin-like specificity that makes the cut actually releasing the C-peptide.", cn: "羧肽酶做的是第二步的收尾工作。真正把 C 肽切下来的，是一种具类胰蛋白酶特异性的酶。" },
+        3: { en: "Signal peptidase acts earlier and elsewhere: it removes the 23-residue signal sequence at the ER membrane, turning preproinsulin into proinsulin.", cn: "信号肽酶的作用时间和地点都更早：它在内质网膜上切掉那段 23 个残基的信号序列，把前胰岛素原变成胰岛素原。" }
+      },
       why_en: "The book specifies AT LEAST TWO enzymes: one with trypsin-like specificity that excises the C-peptide, and a carboxypeptidase that then removes a dipeptide of two basic amino acids left over from the C-peptide's attachment. Signal peptidase's job is earlier and different — it removes the signal sequence, not the C-peptide.",
       why_cn: "教材指出至少需要两种酶：一种具有类胰蛋白酶特异性的酶切除 C 肽，随后一种羧肽酶去除由两个碱性氨基酸组成、原本连接 C 肽的二肽残余。信号肽酶的作用发生在更早阶段且性质不同——它切除的是信号序列，而不是 C 肽。"
     }
@@ -1788,8 +2100,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which tripeptide sequence marks an asparagine residue for N-linked glycosylation, and which residue is excluded from the X position?",
       q_cn: "哪一个三肽序列标记天冬酰胺残基进行 N-连接糖基化？X 位置排除的是哪种残基？",
-      options: ["Ser-X-Thr, X ≠ glycine", "Asn-X-Ser (or Thr), X ≠ proline", "Asn-Pro-Ser, with no exclusions", "Cys-X-Cys, X ≠ serine"],
+      options: [
+        "Ser-X-Thr, X ≠ glycine",
+        "Asn-X-Ser (or Thr), X ≠ proline",
+        "Asn-Pro-Ser or Asn-Pro-Thr, no exclusions",
+        "Cys-X-Cys, X ≠ serine"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The residue that carries the sugar is asparagine, through an N-glycosidic bond to its amide group; serine and threonine take sugars through O-glycosidic bonds instead.", cn: "接糖的残基是天冬酰胺，靠的是与其酰胺基形成的 N-糖苷键；丝氨酸和苏氨酸接糖走的是 O-糖苷键。" },
+        2: { en: "Proline is exactly the residue excluded from the X position, so Asn-Pro-Ser is the one version of the motif that does not work.", cn: "脯氨酸恰恰是 X 位上被排除的那一个，所以 Asn-Pro-Ser 正好是这个基序里唯一不成立的写法。" },
+        3: { en: "Cysteine's role in this section is the disulfide bond, not glycosylation; no sugar is attached to a protein through a thiol group.", cn: "半胱氨酸在本节里的角色是二硫键，不是糖基化；没有哪种糖是通过巯基接到蛋白上的。" }
+      },
       why_en: "The consensus is Asn-X-Ser (or Thr), where X may be any amino acid EXCEPT PROLINE. Getting the identity of X wrong, or forgetting the proline exclusion, is the classic trap on this topic.",
       why_cn: "识别序列为 Asn-X-Ser（或 Thr），其中 X 可为除脯氨酸外的任意氨基酸。记错 X 的身份，或忘记排除脯氨酸，是这个知识点上最常见的失分点。"
     },
@@ -1798,12 +2120,17 @@ window.BIOCHEM.topics.push(
       q_en: "A glycoprotein's mannose residue gets phosphorylated at position 6 in the Golgi. What is the functional consequence?",
       q_cn: "糖蛋白的甘露糖残基在高尔基体中第 6 位被磷酸化，其功能后果是什么？",
       options: [
-        "It is degraded immediately within the ER",
+        "It is degraded straight away inside the ER, before its sugar chain can be trimmed at all",
         "It is diverted away from the normal secretory pathway and sent to the lysosomes",
-        "It becomes resistant to all glycosidases",
-        "It gains an additional N-glycosidic bond"
+        "It becomes resistant to the glucosidases and mannosidases that trim the chain",
+        "It gains a second N-glycosidic bond to another asparagine of the same chain"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Trimming and phosphorylation both happen after the ER, in the Golgi, and neither destroys the protein: the phosphate is an address label that sends it to the lysosome.", cn: "修剪和磷酸化都发生在内质网之后的高尔基体里，而且两者都不会毁掉这个蛋白：那个磷酸是一张把它送去溶酶体的地址标签。" },
+        2: { en: "The glucosidases and mannosidases have already done their trimming in the Golgi before this point; the phosphate is a delivery address, not armour.", cn: "葡萄糖苷酶和甘露糖苷酶在此之前已经在高尔基体里修剪完了；那个磷酸是投递地址，不是护甲。" },
+        3: { en: "The N-glycosidic bond was made once, en bloc, when the oligosaccharide core came off dolicholphosphate. What position 6 of a mannose gains is a phosphate, not a bond to protein.", cn: "N-糖苷键只形成过一次，是寡糖核心从多萜醇磷酸上整体转移过来时形成的。甘露糖 6 位上多出来的是一个磷酸，不是与蛋白的新键。" }
+      },
       why_en: "Mannose-6-phosphate formation in the Golgi is the tag that redirects a glycoprotein away from the default secretory route and INTO the lysosomes, distinguishing lysosomal glycoproteins from ordinary secreted ones, which instead keep terminal sialic acid.",
       why_cn: "在高尔基体中生成甘露糖-6-磷酸是一种标签，它使糖蛋白偏离默认的分泌途径而被导向溶酶体，从而将溶酶体糖蛋白与保留末端唾液酸的普通分泌型糖蛋白区分开来。"
     },
@@ -1813,6 +2140,11 @@ window.BIOCHEM.topics.push(
       q_cn: "胶原蛋白中脯氨酸和赖氨酸残基的羟基化需要下列哪一项以外的全部条件？",
       options: ["Fe²⁺", "L-ascorbic acid (vitamin C)", "2-oxoglutarate", "Vitamin K"],
       answer: 3,
+      optionNotes: {
+        0: { en: "Fe²⁺ is one of the four requirements listed for collagen hydroxylation, alongside oxygen, 2-oxoglutarate and ascorbic acid.", cn: "Fe²⁺ 是教材为胶原羟基化列出的四项要求之一，另外三项是氧、2-氧戊二酸和抗坏血酸。" },
+        1: { en: "L-ascorbic acid is required by all three of the hydroxylases sitting in the ER cisternae, together with oxygen, 2-oxoglutarate and Fe²⁺.", cn: "内质网池里那三种羟化酶都需要 L-抗坏血酸，同时还需要氧、2-氧戊二酸和 Fe²⁺。" },
+        2: { en: "2-oxoglutarate is required and is decarboxylated during the reaction; one oxygen atom from the carboxyl group it releases ends up in the new hydroxyl.", cn: "2-氧戊二酸是必需的，而且在反应中被脱羧；它放出的羧基上有一个氧原子会进到新生成的羟基里。" }
+      },
       why_en: "Collagen hydroxylation needs oxygen, 2-oxoglutarate, L-ascorbic acid and Fe²⁺. VITAMIN K belongs to a completely different modification — it is required by the carboxylase that makes γ-carboxyglutamate in clotting-related plasma glycoproteins. Do not mix up the two vitamin-dependent modifications.",
       why_cn: "胶原蛋白的羟基化需要氧、2-氧戊二酸、L-抗坏血酸和 Fe²⁺。维生素 K 属于完全不同的另一种修饰——它是使凝血相关血浆糖蛋白生成 γ-羧基谷氨酸的羧化酶所必需的。不要把这两种依赖维生素的修饰混淆。"
     },
@@ -1830,11 +2162,16 @@ window.BIOCHEM.topics.push(
       q_cn: "ε-N-三甲基赖氨酸与 ε-N-甲基赖氨酸（图 4.56）的区别是什么？",
       options: [
         "Trimethyllysine has three methyl groups on the ε-amino nitrogen, methyllysine has only one",
-        "Trimethyllysine forms on arginine, not lysine",
-        "Trimethyllysine is an O-methylester, methyllysine is an N-methyl derivative",
-        "They are the same molecule under different names"
+        "Trimethyllysine forms on the guanidino group of arginine, not on a lysine side chain",
+        "Trimethyllysine is an O-methylester of glutamate, methyllysine an N-methyl derivative of lysine",
+        "They are the same molecule under two names, the prefix noting only where the methyl sits"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Arginine is methylated as well, but that gives a methylarginine. Both names here are lysine derivatives, modified on the very same ε-amino nitrogen.", cn: "精氨酸确实也会被甲基化，但那得到的是甲基精氨酸。这里的两个名字都是赖氨酸的衍生物，改的是同一个 ε-氨基氮。" },
+        2: { en: "The O-methylester modification belongs to the carboxyl groups of glutamate and aspartate — 4-methylglutamate is the book's example. Lysine is methylated on nitrogen.", cn: "O-甲酯这种修饰属于谷氨酸和天冬氨酸的羧基——教材举的例子是 4-甲基谷氨酸。赖氨酸被甲基化的是氮。" },
+        3: { en: "They differ by the number of methyl groups added in succession: one for methyllysine, two for dimethyllysine, three for trimethyllysine.", cn: "两者的差别在于依次加上去的甲基数目：甲基赖氨酸一个、二甲基赖氨酸两个、三甲基赖氨酸三个。" }
+      },
       why_en: "Both are the SAME lysine side chain modified at the SAME ε-amino group, differing only in the NUMBER of methyl groups added: one (methyllysine), two (dimethyllysine) or three (trimethyllysine, a permanently charged quaternary nitrogen). Do not confuse this with the SEPARATE O-methylester modification of glutamate/aspartate carboxyls, shown alongside it as 4-methylglutamate.",
       why_cn: "两者都是同一个赖氨酸侧链在同一个 ε-氨基上被修饰的产物，区别仅在于所加甲基的数目——一个（甲基赖氨酸）、两个（二甲基赖氨酸）或三个（三甲基赖氨酸，形成永久带正电的季铵氮）。切勿将其与图中同时给出的、谷氨酸/天冬氨酸羧基上另一种独立的 O-甲酯修饰（4-甲基谷氨酸）混淆。"
     }

@@ -50,8 +50,8 @@
          deepens a key that is already cross-book. Key count and
          cross-book count therefore do not move for 2.3.
    ============================================================ */
-window.PRO = window.PRO || {};
-window.PRO.topics = (window.PRO.topics || []).concat([
+window.BIOCHEM = window.BIOCHEM || { topics: [] };
+window.BIOCHEM.topics = (window.BIOCHEM.topics || []).concat([
   {
     id: "L-2-1-1",
     book: "lehninger",
