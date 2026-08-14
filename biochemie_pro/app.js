@@ -371,6 +371,11 @@
         // That is the honest behaviour, but the per-section counts have to move
         // with it or the header claims a number the page no longer shows.
         refreshOnlyMarked();
+        // The sidebar carries a ⭐N per section, so it is stale the moment a star
+        // is added or removed. Redrawing 253 buttons on a click is cheap next to
+        // a count that lies.
+        renderSidebar();
+        renderStarredBtn();
       });
     });
     root.querySelectorAll('.pen-btn:not([data-wired])').forEach((btn) => {
@@ -1072,9 +1077,14 @@
     const lead = (opts && opts.showSource)
       ? `<span class="ti-src ${sourceTag(t).cls}">${esc(sourceTag(t).text)}</span>`
       : `<span class="ti-sec">${esc(isEntity(t) ? '◆' : t.section)}</span>`;
+    // How many lines in this section the reader has starred. Shown on the bar
+    // itself so the sidebar answers "where did I put my marks" without opening
+    // every section to look — which is the only way to find them otherwise.
+    const stars = markCountOf(t);
     return `<button class="topic-item${t.id === state.topicId ? ' current' : ''}" data-id="${esc(t.id)}">
               ${lead}
               <span class="ti-title">${esc(label)}</span>
+              ${stars ? `<span class="ti-stars" title="${stars} starred here · 本节标了 ${stars} 条">⭐${stars}</span>` : ''}
               ${done ? '<span class="ti-done">✓</span>' : ''}
             </button>`;
   }

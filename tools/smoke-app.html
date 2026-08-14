@@ -79,6 +79,19 @@
     const $$ = (s) => Array.from(d.querySelectorAll(s));
 
     check('app rendered a sidebar', $$('.topic-item').length > 0, $$('.topic-item').length + ' topics');
+
+    /* Every mode tab must be ON SCREEN, not merely in the DOM. The notebook tab
+       was present and reported missing, because six labelled buttons plus the
+       controls on the right overflowed a nowrap topbar and the last tabs left
+       the viewport. "It exists in the markup" is not the property that matters. */
+    $$('.mode-btn').forEach((b) => {
+      const r = b.getBoundingClientRect();
+      const vw = frame.contentWindow.innerWidth;
+      check('tab "' + (b.dataset.mode) + '" is inside the viewport',
+            r.left >= -1 && r.right <= vw + 1 && r.width > 0,
+            Math.round(r.left) + '–' + Math.round(r.right) + ' of ' + vw);
+    });
+
     check('wrongbook tab exists', !!d.querySelector('.mode-btn[data-mode="wrong"]'));
     check('wrongbook panel exists', !!$('#panel-wrong'));
     check('wrongbook badge starts hidden', $('#wrong-count') && $('#wrong-count').hidden);

@@ -21,3 +21,7 @@ __pycache__/
 lehninger_index/_B_text.pkl
 lehninger_index/_A_text.pkl
 lehninger_index/dossiers/
+
+# Offline single-file builds (tools/build-offline.py). Build artefacts, ~8 MB each;
+# regenerate rather than commit.
+*_offline.html

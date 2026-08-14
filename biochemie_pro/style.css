@@ -448,7 +448,9 @@ body.bionic-on .q-text, body.bionic-on .oral-q, body.bionic-on .model-answer {
 @media (max-width: 900px) {
   #menu-toggle { display: block; }
   .brand-sub { display: none; }
-  .mode-btn span { display: none; }
+  /* ...but not the count badge: on a phone it is the only thing telling you the
+     wrong-answer book has anything in it. */
+  .mode-btn span:not(.mode-count) { display: none; }
   .topbar { gap: 0.4rem; padding: 0 0.5rem; }
   .modes { gap: 0.15rem; }
   .mode-btn { padding: 0.4rem 0.5rem; }
@@ -896,3 +898,32 @@ body.only-marked [data-markable]:not([class*="hl-"]) { display: none !important;
   background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 .btn-ghost.on .muted { color: var(--accent); opacity: 0.8; }
+
+/* ------------------------------------------------- topbar overflow, 2026-08-14
+   The mode row grew from four buttons to six (错题本, 笔记). The labels only hid
+   below 900px, so between roughly 900 and 1200px the six labelled buttons plus
+   the seven controls on the right no longer fit — and because .topbar is a
+   nowrap flex row with no overflow rule, the last tabs simply left the screen.
+   The reader's report was "my notepad still isn't there"; it was there, one
+   position past the right edge.
+
+   Two guards, because either alone can be defeated by a long enough label:
+   drop the text earlier, and let the row scroll if it still does not fit. */
+@media (max-width: 1200px) {
+  .mode-btn span:not(.mode-count) { display: none; }
+}
+.modes {
+  flex: 0 1 auto; min-width: 0;
+  overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+}
+.modes::-webkit-scrollbar { display: none; }
+.brand { flex: 0 1 auto; overflow: hidden; }
+
+/* Starred-count badge on a sidebar bar. Sits just before the ✓ so a section that
+   is both studied and starred reads left to right as "N starred, done". */
+.ti-stars {
+  flex: 0 0 auto; font-size: 0.68rem; color: var(--fg-dim);
+  background: var(--bg-sink); border: 1px solid var(--line); border-radius: 4px;
+  padding: 0 0.25rem; white-space: nowrap;
+}
+.topic-item.current .ti-stars { border-color: var(--accent); color: var(--accent); }
