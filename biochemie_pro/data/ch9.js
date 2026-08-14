@@ -19,7 +19,7 @@ window.BIOCHEM.topics.push(
   book: "cz",
   topicKey: "photosynthetic-pigments",
   chapter: 9,
-  section: "9.",
+  section: "9.1",
   czTitle: "Fotoautotrofie — pět specifických metabolismů",
   enTitle: "Photoautotrophy — the five metabolisms specific to autotrophs",
   cnTitle: "光合自养——自养生物特有的五类代谢",

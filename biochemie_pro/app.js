@@ -414,6 +414,7 @@
     let n = 0;
     (t.points || []).forEach((_p, i) => { if (state.marks[t.id + ':p' + i]) n++; });
     (t.gapPoints || []).forEach((_p, i) => { if (state.marks[t.id + ':g' + i]) n++; });
+    (t.beyondPoints || []).forEach((_p, i) => { if (state.marks[t.id + ':b' + i]) n++; });
     (t.terms || []).forEach((term) => { if (state.marks[cardKey(t, term)]) n++; });
     return n;
   }
@@ -1363,6 +1364,26 @@
       html += `</ol></section>`;
     }
 
+    /* `beyondPoints` — entity-card-only, per HANDOFF_LEHNINGER.md section 12d: a claim that
+       is true and commonly examined but absent from both books, flagged rather than passed
+       off as sourced. Written 2026-08 on three cards (6 items) but never given a render path
+       until now — the data existed, nothing showed it. Modelled on gapPoints' warning block
+       (same "flagged, verify" visual language) since the two are the same category of claim
+       for different reasons: gapPoints is missing-from-the-scan, this is missing-from-either-book. */
+    if (t.beyondPoints && t.beyondPoints.length) {
+      html += `<section class="block block-gap">
+                 <h2>Beyond either book <span class="muted">两本书之外</span>
+                     <span class="badge badge-gap">not in the source material</span></h2>
+                 <p class="gap-warn">Real and commonly examined, but neither book covers it — flagged rather
+                    than left looking sourced. Verify before relying on it in an exam answer.</p>
+                 <ol class="points">`;
+      t.beyondPoints.forEach((p, i) => {
+        const k = t.id + ':b' + i, m = markOf(k);
+        html += `<li data-markable class="${m ? 'hl-' + m : ''}">${bi(p.en, p.cn)} ${speakPairBtn(p.en, p.cn)} ${markBtn(k)}</li>`;
+      });
+      html += `</ol></section>`;
+    }
+
     if (t.terms && t.terms.length) {
       html += `<section class="block"><h2>Glossary <span class="muted">术语表</span></h2>
                <div class="term-grid">`;
@@ -1609,9 +1630,20 @@
      a digit-only guard stops matching the moment that conversion lands, the
      question rejoins the shuffle, and the letter then points at whatever landed
      there. Fixing the text without widening this regex would have made those
-     questions worse than before. */
+     questions worse than before.
+
+     Also matches "Options 2, 3 and 4" (plural — the old singular-only pattern
+     required whitespace or a digit directly after "Option", so the trailing
+     "s" broke the match) and "选项D" / "选项 1 和 2" (Chinese half of why, same
+     positional-reference problem, no English guard ever saw it). Measured
+     2026-08-14: 6 questions were shuffled anyway because of this gap, so the
+     stored answer/optionRefs/optionNotes no longer matched what why_en/why_cn
+     said "Option 3" meant. Both patterns only need to find ONE reference in
+     the text to disqualify the question from shuffling, not parse every one
+     it contains. */
   function positionReferenced(q) {
-    return /Option\s*[0-9A-D]\b/i.test(String(q.why_en || '') + String(q.why_cn || ''));
+    var text = String(q.why_en || '') + String(q.why_cn || '');
+    return /Options?\s*[0-9A-D]\b/i.test(text) || /选项\s*[0-9A-Da-d]/.test(text);
   }
 
   function permuteMcq(item) {
