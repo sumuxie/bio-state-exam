@@ -1788,6 +1788,12 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，脂肪酸作为脂质生物合成底物时的「活化」形式是什么？",
       options: ["Free fatty acid anion", "Bound to coenzyme A (acyl-CoA)", "Bound to ACP only", "Phosphorylated at the carboxyl group"],
       answer: 1,
+      optionRefs: { 2: "8-3-2" },
+      optionNotes: {
+        0: { en: "The free acid is exactly what the synthases do not act on. The book states the general principle first: anabolic enzymes work on activated forms of their starting compounds, never on the free compounds themselves.", cn: "游离酸恰恰是这些 synthase 不作用的对象。教材先给出一条总原则：合成代谢的酶作用于起始物的活化形式，从不作用于游离的化合物本身。" },
+        2: { en: "ACP does bind acyl groups through a thioester bond, but that happens inside the fatty-acid synthase complex while the chain is being built. Once released, the finished acid is re-activated with coenzyme A instead.", cn: "ACP 确实通过硫酯键结合酰基，但那发生在 fatty-acid synthase 复合体内部、链正在搭建的时候。一旦释放出来，做好的酸改用 coenzyme A 重新活化。" },
+        3: { en: "Phosphorylation is glycerol's activation, not the fatty acid's: glycerol enters this pathway as glycerol phosphate, itself an indirect product of glycolysis on a carbohydrate-rich diet.", cn: "磷酸化是 glycerol 的活化方式，不是脂肪酸的：glycerol 以 glycerol phosphate 的形式进入这条通路，而它在高碳水饮食下是 glycolysis 的间接产物。" }
+      },
       why_en: "The book states fatty acids are used in lipid biosynthesis in their active form, bound to coenzyme A.",
       why_cn: "教材指出脂肪酸在脂质生物合成中以其活化形式使用，即与辅酶A结合。"
     },
@@ -1797,6 +1803,12 @@ window.BIOCHEM.topics.push(
       q_cn: "教材将什么确定为进一步脂质生物合成途径的第一个天然、同时也是关键的中间体？",
       options: ["Diacylglycerol", "Phosphatidic acid", "CDP-diacylglycerol", "Triacylglycerol"],
       answer: 1,
+      optionRefs: { 0: "8-3-6", 2: "8-3-6", 3: "8-3-6" },
+      optionNotes: {
+        0: { en: "Diacylglycerol comes one step later, by dephosphorylation of phosphatidic acid, and it opens only one of the two branches — the one leading to triglycerides, PE, PC and the galactolipids.", cn: "Diacylglycerol 要晚一步，由 phosphatidic acid 去磷酸而来，而且它只打开两条分支中的一条——通向 triglyceride、PE、PC 和 galactolipid 的那条。" },
+        2: { en: "CDP-diacylglycerol is the other branch's activated intermediate, made from phosphatidic acid plus CTP. It sits downstream of the key intermediate rather than being it.", cn: "CDP-diacylglycerol 是另一条分支的活化中间体，由 phosphatidic acid 加 CTP 生成。它位于那个关键中间体的下游，本身并不是它。" },
+        3: { en: "Triacylglycerol is an end product, not a branch point: diacylglycerol takes on a third acyl-CoA and the pathway stops there. Nothing further branches off it.", cn: "Triacylglycerol 是终产物，不是分支点：diacylglycerol 再接一个 acyl-CoA，通路就到此为止，不再从它分出别的支线。" }
+      },
       why_en: "The book explicitly names phosphatidic acid (formed by two successive acylations of glycerol phosphate) as this key branch-point intermediate.",
       why_cn: "教材明确指出磷脂酸（由磷酸甘油经两次连续酰化生成）是这一关键分支点中间体。"
     },
@@ -1864,8 +1876,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which reaction converts phosphatidic acid into the activated intermediate used to build phosphatidylglycerol, cardiolipin, and phosphatidylinositol?",
       q_cn: "哪一个反应将磷脂酸转化为用于构建磷脂酰甘油、心磷脂和磷脂酰肌醇的活化中间体？",
-      options: ["Dephosphorylation to diacylglycerol", "Reaction with CTP to form CDP-diacylglycerol", "Reaction with UDP-galactose", "Reaction with serine"],
+      options: [
+        "Dephosphorylation by a phosphatase to diacylglycerol",
+        "Reaction with CTP to form CDP-diacylglycerol",
+        "Galactosylation with UDP-galactose",
+        "Base exchange with free serine"
+      ],
       answer: 1,
+      optionRefs: { 2: "8-2-3" },
+      optionNotes: {
+        0: { en: "This is the other branch of the same fork. Dephosphorylation gives diacylglycerol, and from there come the triglycerides, phosphatidylethanolamine, phosphatidylcholine and the galactolipids — but not cardiolipin or phosphatidylinositol.", cn: "这是同一个分叉的另一条分支。去磷酸得到 diacylglycerol，由它再生成 triglyceride、phosphatidylethanolamine、phosphatidylcholine 和 galactolipid——但生不出 cardiolipin 和 phosphatidylinositol。" },
+        2: { en: "UDP-galactose acts on diacylglycerol, not on phosphatidic acid, and it acts twice in succession — first giving MGDG, then DGDG, the galactolipids of the plant thylakoid membrane.", cn: "UDP-galactose 作用的是 diacylglycerol，不是 phosphatidic acid，而且连续作用两次——先给出 MGDG，再给出 DGDG，也就是植物 thylakoid 膜的 galactolipid。" },
+        3: { en: "Free serine exchanges head groups with phosphatidylcholine, releasing choline, to give phosphatidylserine. That is a base exchange on a finished phospholipid, not an activation of the branch-point intermediate.", cn: "游离的 serine 与 phosphatidylcholine 交换头基、放出 choline，生成 phosphatidylserine。那是在一个已完成的 phospholipid 上做碱基交换，不是把分支点中间体活化。" }
+      },
       why_en: "The book's diagram shows phosphatidic acid + CTP (releasing PPi) forming CDP-diacylglycerol, which is the shared branch point for phosphatidylglycerol/cardiolipin and phosphatidylinositol.",
       why_cn: "教材插图显示磷脂酸+CTP（释放PPi）生成CDP-二酰甘油，它是磷脂酰甘油/心磷脂与磷脂酰肌醇共同的分支点。"
     },
@@ -1875,6 +1898,11 @@ window.BIOCHEM.topics.push(
       q_cn: "教材插图如何展示磷脂酰丝氨酸的生成？",
       options: ["Directly from diacylglycerol + CDP-serine", "From phosphatidylcholine + serine, releasing choline", "From CDP-diacylglycerol + serine, releasing CMP", "From phosphatidylethanolamine + serine, releasing ethanolamine"],
       answer: 1,
+      optionNotes: {
+        0: { en: "No CDP-serine appears anywhere in the diagram. CDP-ethanolamine and CDP-choline do, and each of those reacts with diacylglycerol, releasing CMP, to give PE and PC respectively.", cn: "图里从头到尾没有出现 CDP-serine。出现的是 CDP-ethanolamine 和 CDP-choline，它们各自与 diacylglycerol 反应、放出 CMP，分别生成 PE 和 PC。" },
+        2: { en: "CDP-diacylglycerol does react with two partners, releasing CMP each time — L-α-glycerolphosphate, giving phosphatidylglycerol, and myo-inositol, giving phosphatidylinositol. Serine is not one of them.", cn: "CDP-diacylglycerol 确实与两个搭档反应、每次放出 CMP——与 L-α-glycerolphosphate 生成 phosphatidylglycerol，与 myo-inositol 生成 phosphatidylinositol。Serine 不在其中。" },
+        3: { en: "The exchange the diagram draws starts from phosphatidylcholine and releases choline. Phosphatidylethanolamine is made by its own route, from diacylglycerol plus CDP-ethanolamine, and the diagram runs no arrow back out of it.", cn: "图上画的那个交换是从 phosphatidylcholine 出发、放出 choline 的。Phosphatidylethanolamine 有自己的路线，由 diacylglycerol 加 CDP-ethanolamine 生成，图上没有从它再引出的箭头。" }
+      },
       why_en: "The diagram shows a base-exchange arrow from phosphatidylcholine, reacting with free serine and releasing choline, to give phosphatidylserine — not a CDP-serine route.",
       why_cn: "插图显示的是从磷脂酰胆碱出发的碱基交换箭头：与游离丝氨酸反应并释放胆碱，生成磷脂酰丝氨酸——而非经由CDP-丝氨酸的途径。"
     },
@@ -1944,6 +1972,12 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材自己的评估，萜类/胆固醇生物合成的哪一阶段在许多情况下仍未被生物化学阐明？",
       options: ["Phase A", "Phase B", "Phase C", "All three equally"],
       answer: 2,
+      optionRefs: { 1: "8-3-8" },
+      optionNotes: {
+        0: { en: "Phase A, acetyl-CoA to mevalonate, is the one the book calls very well researched — three reactions with every intermediate named, ending at HMG-CoA reductase.", cn: "A 相（acetyl-CoA 到 mevalonate）正是教材说研究得非常透彻的那一相——三个反应，每个中间体都有名字，止于 HMG-CoA reductase。" },
+        1: { en: "Phase B's basic characteristics are known: mevalonate is activated by three kinases to IPP, and the C5 units are then condensed up to squalene and to phytoene.", cn: "B 相的基本轮廓是清楚的：mevalonate 由三个 kinase 活化成 IPP，然后这些 C5 单元逐步缩合，直到 squalene 和 phytoene。" },
+        3: { en: "The book grades the three differently, and that grading is the whole point of the sentence: A very well researched, B known in outline, C in a good number of cases still unexplored.", cn: "教材对三相的评价是不同的，而这个区别正是那句话的要点：A 研究得非常透彻，B 知道大致轮廓，C 在相当多的情形下仍未被研究清楚。" }
+      },
       why_en: "The book states Phase A is very well researched, Phase B's basics are known, but Phase C is, in a good number of cases, still biochemically unexplored.",
       why_cn: "教材指出A阶段研究得非常透彻，B阶段的基本特征已知，但C阶段在相当多的情况下目前仍未被生物化学阐明。"
     },
@@ -1951,8 +1985,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "How does the book's own diagram describe the first condensation of the mevalonate pathway (2 acetyl-CoA -> acetoacetyl-CoA), and how does this compare to the mechanism given in standard biochemistry references?",
       q_cn: "教材自己的插图如何描述甲羟戊酸途径的第一次缩合（2乙酰辅酶A->乙酰乙酰辅酶A）？这与标准生物化学参考资料所给出的机制相比如何？",
-      options: ["Simple thiolase condensation, releasing only CoASH — matching standard references", "Via malonyl-CoA with CO2 release — NOT matching the simple thiolase mechanism standard references give for this step", "Via an ATP-dependent kinase, matching standard references", "Via a NADPH-dependent reduction, matching standard references"],
+      options: [
+        "Simple thiolase condensation releasing only CoASH, which is exactly what standard references give for this step and what the book's own diagram prints",
+        "Via malonyl-CoA with CO2 release — NOT matching the simple thiolase mechanism standard references give for this step",
+        "Via an ATP-dependent kinase releasing ADP and Pi, and standard references give the same mechanism here",
+        "Via an NADPH-dependent reduction releasing NADP+, in agreement with what standard references give"
+      ],
       answer: 1,
+      optionRefs: { 2: "8-3-8" },
+      optionNotes: {
+        0: { en: "The first half describes what standard references give; the second half is where it fails. The book's diagram does NOT print that — it labels the step via malonyl-SCoA and shows CO2 leaving, and the disagreement between the two is what this question is about.", cn: "前半句说的是标准教科书的写法；后半句才是错的地方。教材的图并不是那么画的——它把这一步标为经由 malonyl-SCoA，并画出 CO2 离开，而两者之间的分歧正是这道题要问的。" },
+        2: { en: "No kinase and no ATP appear at this step in either account. ATP does enter the terpenoid pathway, but later, at the start of Phase B, where three successive kinases activate mevalonic acid.", cn: "无论按哪一种说法，这一步都没有 kinase、也没有 ATP。ATP 确实会进入 terpenoid 通路，但要晚到 B 相开头——那里有三个连续的 kinase 活化 mevalonic acid。" },
+        3: { en: "NADPH is used in this pathway, but two steps further on: HMG-CoA reductase spends 2 NADPH(H+) converting HMG-CoA into mevalonic acid, which is the end of Phase A.", cn: "NADPH 在这条通路里确实要用，但是在再往后两步：HMG-CoA reductase 消耗 2 NADPH(H+) 把 HMG-CoA 变成 mevalonic acid，那是 A 相的终点。" }
+      },
       why_en: "The book's diagram explicitly labels this condensation 'via malonyl-SCoA' with CO2 released, which departs from the simple thiolase-catalyzed condensation (no CO2, no malonyl-CoA) given for this exact step in standard biochemistry references — a discrepancy this node flags rather than silently correcting.",
       why_cn: "教材插图明确将此缩合标注为「经由丙二酰辅酶A」并释放CO2，这与标准生物化学参考资料对这一确切步骤给出的简单硫解酶催化缩合（不涉及CO2，也不经丙二酰辅酶A）不同——本节点如实标注这一差异，而非默默更正。"
     },
@@ -2024,6 +2069,12 @@ window.BIOCHEM.topics.push(
       q_cn: "3-磷酸-5-焦磷酸甲羟戊酸转化为异戊烯基焦磷酸时，失去哪两个小分子？",
       options: ["ADP and H2O", "Pi and CO2", "Two Pi", "CO2 and NADP+"],
       answer: 1,
+      optionRefs: { 3: "8-3-7" },
+      optionNotes: {
+        0: { en: "ADP leaves at the three kinase steps immediately before this one, where mevalonic acid takes on its phosphate and its pyrophosphate at the cost of 3 ATP — not at the decarboxylation itself.", cn: "ADP 是在紧接着前面的三个 kinase 步骤中离开的——mevalonic acid 消耗 3 ATP 装上磷酸和焦磷酸——而不是在这个脱羧步骤上。" },
+        2: { en: "One of the two phosphate groups stays. The product is isopentenyl PYROPHOSPHATE, so the pyrophosphate is retained and it is the C3 phosphate that goes, alongside the CO2.", cn: "两个磷酸基团里有一个留下了。产物是 isopentenyl PYROPHOSPHATE，所以焦磷酸保留，走掉的是 C3 上的磷酸，连同 CO2 一起。" },
+        3: { en: "NADP+ belongs to Phase A, where HMG-CoA reductase spends 2 NADPH(H+) to make mevalonic acid. By the time this step is reached, the reductions are already behind.", cn: "NADP+ 属于 A 相——那里 HMG-CoA reductase 消耗 2 NADPH(H+) 生成 mevalonic acid。走到这一步时，还原步骤早已过去。" }
+      },
       why_en: "The book's diagram shows this compound losing both Pi and CO2 in a decarboxylation step to give isopentenyl pyrophosphate.",
       why_cn: "教材插图显示该化合物在脱羧步骤中同时失去Pi和CO2，生成异戊烯基焦磷酸。"
     },
@@ -2031,8 +2082,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which condensation in this pathway is labeled 'head-to-head' rather than 'head-to-tail'?",
       q_cn: "此途径中哪一次缩合被标注为「头对头」而非「头对尾」？",
-      options: ["IPP + DMAPP -> GPP", "GPP + IPP -> FPP", "FPP + FPP -> squalene", "GPP + IPP -> GGPP"],
+      options: [
+        "IPP + DMAPP -> GPP",
+        "GPP + IPP -> FPP",
+        "FPP + FPP -> squalene",
+        "IPP -> DMAPP, by isomerase"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Head-to-tail, and the book labels it so. This is the pathway's first condensation, joining the two C5 units into the C10 monoterpene precursor geranyl pyrophosphate.", cn: "这是头对尾的，教材也是这样标的。这是本通路的第一次缩合，把两个 C5 单元接成 C10 的 monoterpene 前体 geranyl pyrophosphate。" },
+        1: { en: "Head-to-tail as well: one more C5 unit is added onto geranyl-PP to reach the C15 sesquiterpene precursor. Only the last step of this branch changes orientation.", cn: "同样是头对尾：再往 geranyl-PP 上加一个 C5 单元，得到 C15 的 sesquiterpene 前体。这条分支上只有最后一步改变了取向。" },
+        3: { en: "Not a condensation at all. IPP and DMAPP are structural isomers interconverted by an isomerase, so no new carbon-carbon bond forms and neither orientation label applies to it.", cn: "这根本不是缩合。IPP 和 DMAPP 是结构异构体，由一个 isomerase 互相转换，没有新的碳-碳键生成，所以两种取向的标签对它都不适用。" }
+      },
       why_en: "The book explicitly labels IPP+DMAPP->GPP, GPP+IPP->FPP, and GPP+IPP->GGPP as 'kondenzace hlavou k ocasu' (head-to-tail), while FPP+FPP->squalene and, separately, GGPP+GGPP->phytoene are both labeled 'kondenzace hlavou k hlavě' (head-to-head).",
       why_cn: "教材明确将IPP+DMAPP->GPP、GPP+IPP->FPP以及GPP+IPP->GGPP标注为「头对尾缩合」，而FPP+FPP->角鲨烯以及另一独立分支的GGPP+GGPP->八氢番茄红素均标注为「头对头缩合」。"
     },
@@ -2095,12 +2156,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to the book, what converts squalene into the cyclic sterol lanosterol?",
       q_cn: "根据教材，角鲨烯是经什么途径转化为环状固醇羊毛甾醇的？",
       options: [
-        "Directly, by HMG-CoA reductase",
+        "Directly, in a single step catalysed by HMG-CoA reductase",
         "Squalene monooxygenase forms 2,3-squalene epoxide, then a cyclase forms lanosterol",
-        "A single decarboxylation step",
-        "Three successive ATP-dependent kinases"
+        "A single decarboxylation, of the kind that made IPP earlier",
+        "Three successive ATP-dependent kinases, the same three that activated mevalonic acid in Phase B"
       ],
       answer: 1,
+      optionRefs: { 0: "8-3-7", 2: "8-3-8", 3: "8-3-8" },
+      optionNotes: {
+        0: { en: "HMG-CoA reductase acts far upstream, in Phase A, turning HMG-CoA into mevalonic acid with 2 NADPH. It is worth naming because it is the pathway's key regulatory enzyme, but it never touches squalene.", cn: "HMG-CoA reductase 作用在上游很远的地方，在 A 相，用 2 NADPH 把 HMG-CoA 变成 mevalonic acid。它值得记住是因为它是本通路的关键调控酶，但它从不碰 squalene。" },
+        2: { en: "Decarboxylation belongs to Phase B, where 3-phospho-5-pyrophosphomevalonic acid loses Pi and CO2 to give IPP. Squalene's conversion is an oxidation followed by a cyclisation, and neither loses carbon.", cn: "脱羧属于 B 相——那里 3-phospho-5-pyrophosphomevalonic acid 脱去 Pi 和 CO2 生成 IPP。Squalene 的转化是先氧化再环化，两步都不掉碳。" },
+        3: { en: "Those kinases belong to the start of Phase B, activating mevalonic acid at the cost of 3 ATP. What is characteristic of Phase C is cyclisation — into rings of three to nine members — together with oxidations.", cn: "那三个 kinase 属于 B 相的开头，消耗 3 ATP 活化 mevalonic acid。C 相的特征动作是环化——形成三元到九元的环——以及氧化。" }
+      },
       why_en: "The book states squalene is converted by squalene monooxygenase to 2,3-squalene epoxide, and then by a cyclase to lanosterol — a two-enzyme sequence, not a single direct step, and not the kinases used earlier in Phase B.",
       why_cn: "教材指出，角鲨烯经角鲨烯单加氧酶转化为2,3-角鲨烯环氧化物，再经环化酶转化为羊毛甾醇——这是一个两步酶促过程，而非单一直接步骤，也不是B阶段早先使用的激酶。"
     },
