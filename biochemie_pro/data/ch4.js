@@ -50,6 +50,11 @@ window.BIOCHEM.topics.push(
       q_cn: "下列哪一对正确匹配了碱基与其 N-糖苷键起始的原子？",
       options: ["Adenine — N1", "Cytosine — N9", "Guanine — N9", "Uracil — N9"],
       answer: 2,
+      optionNotes: {
+        0: { en: "Adenine is a purine, and purines attach from N9 — N1 is where the PYRIMIDINES attach, so this pair has the right base with the pyrimidine atom.", cn: "Adenine 是嘌呤，嘌呤从 N9 连出去；N1 是嘧啶那一侧的连接原子——这一对碱基没错，原子却拿的是嘧啶的。" },
+        1: { en: "Cytosine is a pyrimidine, so its N-glycosidic bond starts at N1, not N9. Obr. 4.2 draws cytidine with exactly that bond.", cn: "Cytosine 是嘧啶，N-糖苷键从 N1 起始，不是 N9。Obr. 4.2 里 cytidine 画的就是这根键。" },
+        3: { en: "Uracil is a pyrimidine as well, so it too bonds from N1; N9 exists on the purine ring system only.", cn: "Uracil 同样是嘧啶，也从 N1 成键；N9 这个位置只存在于嘌呤环系上。" }
+      },
       why_en: "Purine bases (adenine, guanine) form the N-glycosidic bond from atom N9. Pyrimidine bases (cytosine, uracil, thymine) form it from atom N1 — so guanine-N9 is the only correct pairing here.",
       why_cn: "嘌呤碱基（腺嘌呤、鸟嘌呤）从 N9 原子形成 N-糖苷键；嘧啶碱基（胞嘧啶、尿嘧啶、胸腺嘧啶）从 N1 原子形成——因此鸟嘌呤–N9 是此处唯一正确的配对。"
     },
@@ -57,8 +62,13 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the key difference in BASE content between DNA and RNA?",
       q_cn: "DNA 与 RNA 在碱基组成上的关键区别是什么？",
-      options: ["DNA contains only purines, RNA only pyrimidines", "Uracil occurs practically only in RNA, thymine predominantly in DNA", "DNA has no cytosine", "RNA never contains guanine"],
+      options: ["Purine bases occur only in DNA, pyrimidine bases only in RNA", "Uracil occurs practically only in RNA, thymine predominantly in DNA", "Thymine occurs practically only in RNA, uracil predominantly in DNA", "The base content is identical; only the pentose differs between them"],
       answer: 1,
+      optionNotes: {
+        0: { en: "Both classes occur in both nucleic acids: adenine and guanine are purines and appear in DNA and RNA alike, and the pyrimidine cytosine does the same. The DNA/RNA base rule is about thymine versus uracil, not purine versus pyrimidine.", cn: "两类碱基在 DNA 和 RNA 里都有：adenine、guanine 是嘌呤，两边都出现，嘧啶里的 cytosine 也一样。DNA 与 RNA 的碱基规则讲的是 thymine 对 uracil，不是嘌呤对嘧啶。" },
+        2: { en: "The right pair of bases, the wrong way round: uracil is the RNA-restricted base and thymine the DNA one.", cn: "碱基挑对了，方向反了：uracil 才是几乎只出现在 RNA 里的那个，thymine 属于 DNA。" },
+        3: { en: "The pentose difference is real — 2-deoxy-D-ribose against D-ribose — but the book gives it as only the FIRST of two differences; the base content differs as well.", cn: "戊糖差别确实存在（2-deoxy-D-ribose 对 D-ribose），但书上把它列为两个差别中的第一个；碱基组成同样不同。" }
+      },
       why_en: "The book states this explicitly as the second point of difference, besides the pentose: uracil is found practically only in ribonucleic acids, and thymine predominantly in deoxyribonucleic acids.",
       why_cn: "教材明确指出这是（除戊糖外的）第二个区别点：尿嘧啶实际上只存在于核糖核酸中，而胸腺嘧啶主要存在于脱氧核糖核酸中。"
     },
@@ -68,6 +78,12 @@ window.BIOCHEM.topics.push(
       q_cn: "在表 4.1 的脱氧核糖核苷酸一行中，哪个碱基对应脱氧胸苷酸 (dTMP)？",
       options: ["Uracil", "Cytosine", "Thymine", "Hypoxanthine"],
       answer: 2,
+      optionNotes: {
+        0: { en: "Uracil sits in the RIBOnucleotide row of Tab. 4.1, pairing with uridine and uridylate (UMP); it is exactly the base that does not appear in the deoxyribonucleotide series.", cn: "Uracil 在 Tab. 4.1 的核糖核苷酸那一行，对应 uridine 和 uridylate (UMP)；它恰恰是脱氧核糖核苷酸系列里不出现的那个碱基。" },
+        1: { en: "Cytosine does appear in the deoxyribonucleotide row, but it pairs with deoxycytidine and deoxycytidylate (dCMP), one row along from dTMP.", cn: "Cytosine 确实在脱氧核糖核苷酸这一行里，但它配的是 deoxycytidine 和 dCMP，跟 dTMP 差一格。" },
+        3: { en: "Hypoxanthine is a MINOR base and appears nowhere in Tab. 4.1; its nucleotide IMP is the first purine nucleotide formed de novo.", cn: "Hypoxanthine 属于稀有碱基 (minor base)，Tab. 4.1 里根本没有它；它的核苷酸 IMP 是从头合成中出现的第一个嘌呤核苷酸。" }
+      },
+      optionRefs: { 3: "4-1-1-1" },
       why_en: "The deoxyribonucleotide series in Tab. 4.1 lists adenine, guanine, THYMINE and cytosine — not uracil, which belongs only to the ribonucleotide (RNA) series.",
       why_cn: "表 4.1 的脱氧核糖核苷酸系列列出的是腺嘌呤、鸟嘌呤、胸腺嘧啶和胞嘧啶——不包括尿嘧啶，后者只属于核糖核苷酸（RNA）系列。"
     },
@@ -146,8 +162,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "The unusual step that adds carbon 6 to the purine ring (forming CAIR) is remarkable because it requires:",
       q_cn: "为嘌呤环加入第 6 位碳（生成 CAIR）的这一步之所以不寻常，是因为它：",
-      options: ["Biotin as cofactor", "Neither biotin nor an energy source, despite reacting with hydrogencarbonate", "Two molecules of ATP", "NADPH as reducing power"],
+      options: ["Biotin as its carboxyl carrier, in the usual manner of other carboxylation steps", "Neither biotin nor an energy source, despite reacting with hydrogencarbonate", "Two molecules of ATP, spent as in the earlier glutamine-dependent steps", "NAD⁺ as an oxidising cofactor, as in the later step from IMP to XMP"],
       answer: 1,
+      optionRefs: { 0: "L-22-4-1" },
+      optionNotes: {
+        0: { en: "This is precisely what the book flags as absent. The step looks like a carboxylation and would normally want biotin, and its not needing biotin is the reason it is called unusual at all.", cn: "书上标出来的正是这一点的缺席。这一步看着像羧化反应，按常理该用 biotin，而它偏偏不需要 biotin，才被称为不寻常。" },
+        2: { en: "ATP is spent at the glycine condensation, at the second glutamine step and at the imidazole ring closure — but not here, where no energy source is used at all.", cn: "ATP 花在甘氨酸缩合、第二次谷氨酰胺供氮和咪唑环闭环上；这一步不花，根本没有能量来源参与。" },
+        3: { en: "NAD⁺ does appear in this pathway, but later and in the other branch: it dehydrogenates IMP to xanthylate (XMP) on the way to GMP.", cn: "NAD⁺ 在本通路里确实出现，但在更后面、而且是另一条分支：它把 IMP 脱氢成 XMP，走向 GMP。" }
+      },
       why_en: "The book flags this step specifically: although the ring is extended by a carbon reacting as hydrogencarbonate, the reaction needs NEITHER biotin NOR an energy source — unusual for a carboxylation-type step. Its unfavourable equilibrium is instead pulled forward by coupling to later exergonic reactions in the pathway.",
       why_cn: "教材特别指出这一步的特殊性：尽管该碳以碳酸氢根形式参与反应使环得以延伸，这一反应既不需要生物素也不需要能量来源——对于一个类似羧化的步骤而言这并不寻常。其不利的平衡靠与通路后续放能反应的偶联来推动。"
     },
@@ -155,8 +177,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the key chemical difference between how AMP and GMP are each made from IMP?",
       q_cn: "AMP 和 GMP 分别由 IMP 生成的关键化学差异是什么？",
-      options: ["AMP formation uses GTP as energy source and releases fumarate; GMP formation uses NAD⁺ then ATP and introduces glutamine's amide nitrogen", "Both use ATP and release CO2", "AMP requires glycine; GMP requires aspartate", "GMP is made directly by phosphorylation of IMP with no other atoms added"],
+      options: ["AMP formation uses GTP as energy source and releases fumarate; GMP formation uses NAD⁺ then ATP and introduces glutamine's amide nitrogen", "AMP formation uses ATP as its energy source and releases CO₂; GMP formation uses NADPH then GTP and introduces aspartate's amino nitrogen", "AMP formation condenses glycine with IMP and releases water; GMP formation condenses aspartate with XMP and releases fumarate", "AMP and GMP are both formed from IMP by successive kinase steps, with two ATP spent and no new atoms added to the purine ring"],
       answer: 0,
+      optionRefs: { 3: "L-22-4-1" },
+      optionNotes: {
+        1: { en: "Every cofactor here is displaced by one: it is GTP that drives the AMP branch and ATP the GMP branch, NAD⁺ not NADPH that oxidises IMP, and the nitrogen entering GMP comes from glutamine's amide, not from aspartate.", cn: "这里每一个辅因子都错了位：驱动 AMP 分支的是 GTP，GMP 分支才用 ATP；氧化 IMP 的是 NAD⁺ 不是 NADPH；进入 GMP 的氮来自 glutamine 的酰胺基，不是 aspartate。" },
+        2: { en: "Glycine and aspartate both do enter purine synthesis, but earlier, while the ring is still being built on PRPP; neither is used to convert IMP into GMP.", cn: "glycine 和 aspartate 确实都参与嘌呤合成，但那是更早的阶段、环还长在 PRPP 上的时候；IMP 变成 GMP 用不到它们。" },
+        3: { en: "Kinases do act twice with two ATP, but on the finished monophosphate to make the triphosphate (NMP to NDP to NTP) — that is a separate later step, not the IMP branch point.", cn: "激酶确实作用两次、耗两个 ATP，但那是把做好的一磷酸变成三磷酸（NMP→NDP→NTP），是后面另一步，不是 IMP 的分叉点。" }
+      },
       why_en: "IMP to AMP: condensation with aspartate is powered by GTP, and adenylosuccinate lyase then releases fumarate. IMP to GMP: IMP is first dehydrogenated with NAD⁺ to XMP, and the C2 oxygen of XMP is then replaced by glutamine's amide nitrogen at the cost of ATP.",
       why_cn: "IMP → AMP：与天冬氨酸的缩合由 GTP 供能，随后腺苷酸琥珀酸裂解酶释放延胡索酸。IMP → GMP：IMP 先由 NAD⁺ 脱氢生成 XMP，再由谷氨酰胺酰胺基取代 XMP 第 2 位碳上的氧，消耗 ATP。"
     },
@@ -234,8 +262,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Where do the TWO nitrogen atoms of the pyrimidine ring come from?",
       q_cn: "嘧啶环的两个氮原子来自哪里？",
-      options: ["Both from glutamine's amide group", "Carbamoyl phosphate and aspartate", "Glycine and aspartate", "Both from CO2"],
+      options: ["Both from the amide group of glutamine", "Carbamoyl phosphate and aspartate", "Glycine and aspartate, as in the purine ring", "Both from hydrogencarbonate"],
       answer: 1,
+      optionRefs: { 2: "4-1-1-1" },
+      optionNotes: {
+        0: { en: "Glutamine's amide nitrogen supplies only ONE of the two, and even that indirectly: it goes into carbamoyl phosphate first. The second nitrogen is aspartate's.", cn: "glutamine 的酰胺氮只提供两个中的一个，而且还是间接的——它先进到 carbamoyl phosphate 里。第二个氮来自 aspartate。" },
+        2: { en: "Those are two of the THREE nitrogen sources of the PURINE ring. Pyrimidines need only two nitrogens, and use carbamoyl phosphate where purines use glycine.", cn: "这是嘌呤环三个氮来源里的两个。嘧啶只需要两个氮，而且用 carbamoyl phosphate 顶了嘌呤那边 glycine 的位置。" },
+        3: { en: "Hydrogencarbonate supplies the CARBON of carbamoyl phosphate, not a nitrogen — the same trap as reading HCO₃⁻ as a nitrogen donor in the purine pathway.", cn: "hydrogencarbonate 提供的是 carbamoyl phosphate 的碳，不是氮——跟在嘌呤通路里把 HCO₃⁻ 当成供氮体是同一个坑。" }
+      },
       why_en: "Carbamoyl phosphate supplies one nitrogen (itself built from HCO3- and glutamine's amide N), and aspartate supplies the other when it condenses with carbamoyl phosphate. Compare with purines, which need FOUR nitrogens from three sources.",
       why_cn: "氨甲酰磷酸提供一个氮原子（它本身由 HCO3- 和谷氨酰胺酰胺氮构成），天冬氨酸在与氨甲酰磷酸缩合时提供另一个。相比之下，嘌呤环需要来自三个来源的四个氮原子。"
     },

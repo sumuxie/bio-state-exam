@@ -52,6 +52,11 @@ window.BIOCHEM.topics.push(
       q_cn: "下列哪一项对酶与其反应机制类别的配对是正确的？",
       options: ["Pepsin — cysteine protease", "Papain — aspartate protease", "Trypsin — serine protease", "Carboxypeptidase — serine protease"],
       answer: 2,
+      optionNotes: {
+        0: { en: "Pepsin is the book's ASPARTATE protease, paired with rennin; the cysteine class is papain plus the lysosomal cathepsins.", cn: "Pepsin 是书上归入 aspartate protease 的那一个，和 rennin 一类；cysteine 那一类是 papain 和溶酶体的 cathepsins。" },
+        1: { en: "Papain is the textbook CYSTEINE protease, with the cathepsins — which is why Tab. 5.1 gives it the same specificity column as kathepsin B.", cn: "Papain 正是最典型的 cysteine protease，和 cathepsins 同类——这也是 Tab. 5.1 里它与 kathepsin B 特异性一栏完全相同的原因。" },
+        3: { en: "Carboxypeptidase is a METALLOPROTEASE, with collagenase, and it is an exopeptidase too — so it differs from trypsin on both classification axes at once.", cn: "Carboxypeptidase 是 metalloprotease，和 collagenase 同类，而且它还是 exopeptidase——所以它和 trypsin 在两条分类轴上都不一样。" }
+      },
       why_en: "Trypsin, α-chymotrypsin, elastase and the coagulation factors are SERINE proteases. Pepsin (with rennin) is an ASPARTATE protease, not cysteine. Papain (with lysosomal cathepsins) is a CYSTEINE protease, not aspartate. Carboxypeptidase (with collagenase) is a METALLOPROTEASE, not serine — so only the trypsin pairing is correct.",
       why_cn: "胰蛋白酶、α-糜蛋白酶、弹性蛋白酶和凝血因子都是丝氨酸蛋白酶。胃蛋白酶（与凝乳酶一起）是天冬氨酸蛋白酶，不是半胱氨酸蛋白酶。木瓜蛋白酶（与溶酶体组织蛋白酶一起）是半胱氨酸蛋白酶，不是天冬氨酸蛋白酶。羧肽酶（与胶原酶一起）是金属蛋白酶，不是丝氨酸蛋白酶——因此只有胰蛋白酶这一配对正确。"
     },
@@ -59,8 +64,13 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per Tab. 5.1, what distinguishes pepsin's cleavage notation from trypsin's or chymotrypsin's?",
       q_cn: "根据表5.1，胃蛋白酶的切割位点标注与胰蛋白酶或糜蛋白酶的有何不同？",
-      options: ["Pepsin has no defined specificity at all", "Pepsin cleaves on BOTH sides of its target residue (Phe/Tyr), while trypsin and chymotrypsin each cleave on only ONE side of theirs", "Pepsin only cleaves at the protein's N-terminus", "There is no difference; all three use identical notation"],
+      options: ["Pepsin cleaves only at one fixed site, -Leu-↓Glu-, while trypsin and chymotrypsin each recognise a whole class of residues", "Pepsin cleaves on BOTH sides of its target residue (Phe/Tyr), while trypsin and chymotrypsin each cleave on only ONE side of theirs", "Pepsin trims one terminal residue at a time like an exopeptidase, while trypsin and chymotrypsin cut only in the middle of the chain", "Pepsin and chymotrypsin share one identical specificity column in the table, and only trypsin's notation stands apart from them"],
       answer: 1,
+      optionNotes: {
+        0: { en: "-Leu-↓Glu- is a real pepsin site in Tab. 5.1, but only an extra one: the notation's whole point is the pair of arrows flanking Phe/Tyr. The word ONLY is what makes this false.", cn: "-Leu-↓Glu- 确实是 Tab. 5.1 里 pepsin 的一个位点，但只是附加的一个：这套标注真正要说的是 Phe/Tyr 两侧各一个箭头。错就错在「只」字。" },
+        2: { en: "Trimming one terminal residue at a time is what EXOpeptidases do — carboxypeptidase and aminopeptidase in the same table. Pepsin is an endopeptidase, like trypsin and chymotrypsin.", cn: "一次从末端切下一个残基是 exopeptidase 的做法——同一张表里的 carboxypeptidase 和 aminopeptidase。Pepsin 和 trypsin、chymotrypsin 一样，都是 endopeptidase。" },
+        3: { en: "Two enzymes in Tab. 5.1 do share an identical specificity column, but they are kathepsin B and papain — both cysteine proteases, which is the reason for the match.", cn: "Tab. 5.1 里确实有两个酶的特异性一栏完全相同，但那是 kathepsin B 和 papain——两者都是 cysteine protease，这正是它们一致的原因。" }
+      },
       why_en: "The table marks pepsin as -X-↓Phe-↓X- and -X-↓Tyr-↓X-, with an arrow on BOTH sides of the aromatic residue, meaning it can cut on either side. Trypsin (-Arg-↓X-, -Lys-↓X-) and chymotrypsin (-Phe-↓X- etc.) each carry only ONE arrow, always immediately AFTER their target residue.",
       why_cn: "表格将胃蛋白酶标注为-X-↓Phe-↓X-和-X-↓Tyr-↓X-，芳香族残基两侧都有箭头，说明它可以在任一侧切割。胰蛋白酶（-Arg-↓X-、-Lys-↓X-）和糜蛋白酶（-Phe-↓X-等）则各自只有一个箭头，且总是紧跟在目标残基之后。"
     },
@@ -76,8 +86,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "In Obr. 5.2, what happens to BOTH π-chymotrypsin and δ-chymotrypsin after they are first formed from chymotrypsinogen?",
       q_cn: "在图5.2中，π-糜蛋白酶和δ-糜蛋白酶由糜蛋白酶原生成之后，二者接下来会发生什么？",
-      options: ["They are both degraded and play no further role", "Chymotrypsin itself converts both of them onward into the same final form, α-chymotrypsin, each releasing a small peptide", "Only π-chymotrypsin is converted further; δ-chymotrypsin is already the final active form", "They combine with each other to form α-chymotrypsin"],
+      options: ["Both are bound by the pancreatic trypsin inhibitor, which stops any further conversion in the gut contents", "Chymotrypsin itself converts both of them onward into the same final form, α-chymotrypsin, each releasing a small peptide", "Only π-chymotrypsin is converted onward to α-chymotrypsin; δ-chymotrypsin is already the final active form of the enzyme", "The two forms combine with each other, and the 15-amino-acid activation peptide rejoins them as α-chymotrypsin, the active enzyme"],
       answer: 1,
+      optionRefs: { 0: "5-1" },
+      optionNotes: {
+        0: { en: "The trypsin inhibitor secreted by the pancreas binds TRYPSIN — protecting it from autocatalytic breakdown and keeping chymotrypsinogen and procarboxypeptidase from activating too early. It does not act on π- or δ-chymotrypsin.", cn: "胰腺分泌的 trypsin inhibitor 结合的是 trypsin——既保护它不被自催化分解，又防止 chymotrypsinogen 和 procarboxypeptidase 过早激活。它并不作用于 π- 或 δ-chymotrypsin。" },
+        2: { en: "δ-chymotrypsin is not an endpoint either: chymotrypsin converts BOTH π and δ onward to α. Two routes out of chymotrypsinogen, one final product.", cn: "δ-chymotrypsin 也不是终点：chymotrypsin 把 π 和 δ 都继续转成 α。从 chymotrypsinogen 出发有两条路线，终产物只有一个。" },
+        3: { en: "The 15-amino-acid polypeptide is what is RELEASED when chymotrypsinogen becomes δ-chymotrypsin; activation peptides are cut out and discarded, never re-attached, and the two forms do not fuse.", cn: "那个 15 个氨基酸的多肽是 chymotrypsinogen 变成 δ-chymotrypsin 时被释放出去的；激活肽只会被切掉丢弃，不会再接回来，两种形式也不会互相结合。" }
+      },
       why_en: "Both π-chymotrypsin (releasing the Ser-Arg AND Thr-Asn dipeptides on its way to α) and δ-chymotrypsin (releasing Thr-Asn alone) are further converted by CHYMOTRYPSIN itself into the same final, fully active α-chymotrypsin — two different activation routes converging on one product.",
       why_cn: "π-糜蛋白酶（转化为α形式时同时释放Ser-Arg和Thr-Asn两个二肽）和δ-糜蛋白酶（转化为α形式时只释放Thr-Asn）都由糜蛋白酶本身进一步转化为同一个最终具有完全活性的α-糜蛋白酶——两条不同的激活路线最终汇合于同一产物。"
     }
@@ -137,12 +153,18 @@ window.BIOCHEM.topics.push(
       q_en: "What are the THREE phases of amino acid degradation, in the order the book gives them?",
       q_cn: "教材给出的氨基酸分解代谢的三个阶段，按顺序是什么？",
       options: [
-        "Carbon-skeleton oxidation, then transamination, then ammonia detoxification",
+        "Degradation of the carbon skeleton, then transformation at the α-carbon, then detoxification of ammonia",
         "Transformation at the α-carbon atom, then detoxification of ammonia, then degradation of the carbon skeleton",
-        "Ammonia detoxification, then carbon-skeleton degradation, then α-carbon transformation",
-        "Deamination, then transamination, then decarboxylation, with no further steps"
+        "Detoxification of ammonia, then degradation of the carbon skeleton, then transformation at the α-carbon atom",
+        "Transamination, then decarboxylation of the resulting 2-oxo acid, then excretion of the carbon skeleton as urea"
       ],
       answer: 1,
+      optionRefs: { 3: "5-2-2-2" },
+      optionNotes: {
+        0: { en: "The three names are right, the order is not: nothing can be done with the carbon skeleton until the amino group has been taken off it.", cn: "三个名称都对，顺序不对：氨基不先脱掉，碳骨架那一步根本无从谈起。" },
+        2: { en: "This starts with phase 2. There is no ammonia to detoxify until phase 1 has released it, so detoxification cannot come first.", cn: "这是从第二阶段开始排的。第一阶段还没把氨放出来，就没有氨可解毒，所以解毒不可能排在最前面。" },
+        3: { en: "Transamination and decarboxylation are two branches of the SAME phase-1 chemistry at the α-carbon, not successive phases; and urea carries away nitrogen, never the carbon skeleton, which is oxidised in the citrate cycle.", cn: "Transamination 和 decarboxylation 是同一个第一阶段里 α-碳化学的两条分支，不是先后两个阶段；而且 urea 带走的是氮，从来不是碳骨架——碳骨架是在 citrate cycle 里被氧化掉的。" }
+      },
       why_en: "The book lists exactly three phases in this order: (1) transformation at the α-C atom, (2) detoxification of ammonia, (3) degradation of the carbon skeleton — the amino group must come off FIRST before the nitrogen can be detoxified or the remaining skeleton oxidised.",
       why_cn: "教材按此顺序列出恰好三个阶段：（1）α-碳原子上的转化；（2）氨的解毒；（3）碳骨架的降解——必须先脱去氨基，之后才能对氮进行解毒或氧化剩余的骨架。"
     },
@@ -158,8 +180,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "In mammals, where does amino acid catabolism mainly take place?",
       q_cn: "在哺乳动物中，氨基酸的分解代谢主要发生在哪里？",
-      options: ["Skeletal muscle, exclusively", "The liver, with a smaller contribution from the kidneys", "Adipose tissue", "The small intestine mucosa"],
+      options: ["Skeletal muscle, with a smaller contribution from the liver", "The liver, with a smaller contribution from the kidneys", "Adipose tissue, with the kidneys as the other site", "The intestinal mucosa, where the free amino acids are absorbed"],
       answer: 1,
+      optionRefs: { 3: "5-1" },
+      optionNotes: {
+        0: { en: "The two organs are the right kind of answer but the wrong way round in importance — and the book does not name skeletal muscle as a catabolic site at all.", cn: "器官的类型对了，但主次颠倒了——而且教材根本没有把骨骼肌列为分解代谢的部位。" },
+        2: { en: "The kidneys are correctly the minor site, but the major one is the liver; adipose tissue is not named as a site of amino-acid catabolism.", cn: "肾脏确实是次要部位，但主要部位是肝脏；脂肪组织并未被列为氨基酸分解代谢的场所。" },
+        3: { en: "The intestinal mucosa is where dipeptidases finish digestion and amino acids enter the bloodstream (5.1) — absorption, not catabolism.", cn: "肠黏膜是 dipeptidase 完成消化、氨基酸进入血液的地方（5.1 节）——那是吸收，不是分解代谢。" }
+      },
       why_en: "The book states amino acid catabolism in mammals runs mainly in the LIVER, to a small extent also in the KIDNEYS — muscle, adipose tissue and the intestinal mucosa are not given as catabolic sites here.",
       why_cn: "教材指出，哺乳动物中氨基酸的分解代谢主要发生在肝脏，肾脏中也有少量发生——肌肉、脂肪组织和肠黏膜在此处并未被列为分解代谢部位。"
     }
@@ -218,8 +246,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which enzyme does the book explicitly call one of the 'nodal reactions' of amino acid metabolism?",
       q_cn: "教材明确将哪一种酶称为氨基酸代谢的「枢纽反应」之一？",
-      options: ["Serine dehydratase", "Glutamate dehydrogenase", "D-amino acid oxidase", "L-amino acid oxidase"],
+      options: ["Glutamate aminotransferase", "Glutamate dehydrogenase", "D-amino acid oxidase", "L-amino acid oxidase"],
       answer: 1,
+      optionRefs: { 0: "5-2-1-2" },
+      optionNotes: {
+        0: { en: "One word apart, and it is the word that matters. Glutamate AMINOtransferase collects amino groups ONTO 2-oxoglutarate to make glutamate; it moves nitrogen but never removes it. The dehydrogenase is what takes the nitrogen off again.", cn: "只差一个词，而差的正是关键的那个词。Glutamate aminotransferase 是把氨基收集到 2-oxoglutarate 上生成 glutamate，只搬运氮，从不除去氮；把氮再脱下来的是 dehydrogenase。" },
+        2: { en: "A flavoprotein whose job the book calls mainly detoxifying — D-amino acids are not standard protein building blocks. A side road, not a hub.", cn: "这是一个黄素蛋白，教材说它的作用主要是解毒——D-氨基酸并不是标准的蛋白质组成单位。它是支路，不是枢纽。" },
+        3: { en: "Also a flavoprotein, and the book states its catalytic efficiency is LOW, which is exactly why the oxidase route is minor next to glutamate dehydrogenase.", cn: "同样是黄素蛋白，而教材明确说它的催化效率很低——这正是氧化酶这条路线相对 glutamate dehydrogenase 只能算次要途径的原因。" }
+      },
       why_en: "GLUTAMATE DEHYDROGENASE (E.C. 1.4.1.2), interconverting glutamate and 2-oxoglutarate with release of NH4+, is singled out by name as a nodal reaction — by far the most significant oxidative deamination, not a minor or detox-only pathway like the oxidases.",
       why_cn: "谷氨酸脱氢酶（E.C. 1.4.1.2）催化谷氨酸与2-氧戊二酸之间的互变并释放NH4+，被教材专门点名为枢纽反应——它是迄今最重要的氧化脱氨反应，而非像氧化酶那样只是次要或纯解毒性质的途径。"
     },
@@ -227,8 +261,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What allosterically ACTIVATES the oxidative deamination reaction catalysed by NAD(P)+-dependent dehydrogenases such as glutamate dehydrogenase?",
       q_cn: "什么会别构激活由NAD(P)+依赖的脱氢酶（如谷氨酸脱氢酶）催化的氧化脱氨反应？",
-      options: ["ATP and GTP", "ADP and GDP", "NAD+ and NADP+ themselves", "Ca2+ and Mg2+"],
+      options: ["ATP and GTP", "ADP and GDP", "NAD+ and NADP+", "Free NH4+"],
       answer: 1,
+      optionRefs: { 3: "5-2-2-1" },
+      optionNotes: {
+        0: { en: "The exact inverse: ATP and GTP are the allosteric INHIBITORS. A cell already rich in ATP has no reason to burn amino acids for energy.", cn: "正好相反：ATP 和 GTP 是别构抑制剂。细胞里 ATP 已经很充足时，没有理由再去烧氨基酸取能。" },
+        2: { en: "NAD+ and NADP+ are the coenzymes of the reaction, its substrates in the oxidative direction — a substrate is not an allosteric effector.", cn: "NAD+ 和 NADP+ 是这个反应的辅酶，在氧化方向上是底物——底物不等于别构效应物。" },
+        3: { en: "NH4+ is the product of the reaction, and the substrate of its reverse, reductive amination back onto 2-oxoglutarate; the book names no allosteric role for it.", cn: "NH4+ 是这个反应的产物，同时也是其逆反应（还原氨化回到 2-oxoglutarate）的底物；教材没有给它任何别构作用。" }
+      },
       why_en: "The book states ATP and GTP are ALLOSTERIC INHIBITORS of this reaction, while ADP and GDP act as ACTIVATORS — a classic energy-charge signal: when the cell is low on ATP/GTP (high ADP/GDP), oxidising amino acids for energy is favoured.",
       why_cn: "教材指出ATP和GTP是该反应的别构抑制剂，而ADP和GDP则起激活作用——这是典型的能荷信号：当细胞ATP/GTP不足（ADP/GDP偏高）时，氧化氨基酸以获取能量的反应被促进。"
     },
@@ -246,11 +286,17 @@ window.BIOCHEM.topics.push(
       q_cn: "D-氨基酸氧化酶与L-氨基酸氧化酶的关键功能差异是什么？",
       options: [
         "D-amino acid oxidase is mainly detoxifying; L-amino acid oxidase has low catalytic efficiency, making the oxidase route minor overall",
-        "Both are highly efficient and are the dominant deamination route in the body",
-        "D-amino acid oxidase requires NAD+; L-amino acid oxidase requires no cofactor at all",
-        "L-amino acid oxidase is the enzyme responsible for the histidine-to-urocanic-acid reaction"
+        "Both are highly efficient flavoproteins, which makes the oxidase route the dominant one ahead of glutamate dehydrogenase",
+        "D-amino acid oxidase carries NAD+ as its coenzyme while L-amino acid oxidase carries NADP+, and that is the whole difference",
+        "L-amino acid oxidase deaminates histidine to urocanic acid, while D-amino acid oxidase handles serine and threonine"
       ],
       answer: 0,
+      optionRefs: { 1: "5-2-1-1", 2: "5-2-1-2" },
+      optionNotes: {
+        1: { en: "Flavoproteins they are, efficient they are not: the book gives L-amino acid oxidase LOW catalytic efficiency, and the dominant route is glutamate dehydrogenase's NAD(P)+-dependent oxidative deamination.", cn: "黄素蛋白没错，高效则不然：教材说 L-amino acid oxidase 的催化效率很低，真正占主导的是 glutamate dehydrogenase 那条 NAD(P)+ 依赖的氧化脱氨路线。" },
+        2: { en: "NAD+ and NADP+ belong to the DEHYDROGENASES that catalyse oxidative deamination. Both oxidases are flavoproteins, so the nicotinamide coenzymes are not what separates them.", cn: "NAD+ 和 NADP+ 属于催化氧化脱氨的 dehydrogenase。两种 oxidase 都是黄素蛋白，所以烟酰胺辅酶并不是区分它们的地方。" },
+        3: { en: "Neither reaction is an oxidase reaction. Histidine goes to urocanic acid by SIMPLE deamination — which does release free NH4+ — and serine and threonine are deaminated by a dehydratase, by loss of water, also releasing NH4+.", cn: "这两个反应都不是 oxidase 催化的。Histidine 变成 urocanic acid 走的是简单脱氨——它确实放出游离 NH4+；serine 和 threonine 则由 dehydratase 脱水脱氨，同样放出 NH4+。" }
+      },
       why_en: "Both are FLAVOPROTEINS. D-amino acid oxidase (E.C. 1.4.3.3) mainly detoxifies D-amino acids (not standard protein building blocks); L-amino acid oxidase (E.C. 1.4.3.2) has LOW catalytic efficiency, so this oxidase route is minor compared with glutamate dehydrogenase's dehydrogenase-based oxidative deamination.",
       why_cn: "两者都是黄素蛋白。D-氨基酸氧化酶（E.C. 1.4.3.3）主要对D-氨基酸（非标准蛋白质组成成分）起解毒作用；L-氨基酸氧化酶（E.C. 1.4.3.2）催化效率很低，因此相对于谷氨酸脱氢酶所代表的脱氢酶型氧化脱氨而言，氧化酶这条途径是次要的。"
     }

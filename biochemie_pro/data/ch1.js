@@ -67,9 +67,15 @@ window.BIOCHEM.topics.push(
         "Organic chemistry and physiology",
         "Physical chemistry and genetics",
         "Analytical chemistry and microbiology",
-        "Biophysics and cytology"
+        "Biophysics and molecular biology"
       ],
       answer: 0,
+      optionRefs: { 1: "4-1" },
+      optionNotes: {
+        1: { en: "Physical chemistry supplied instruments, not ancestry: spectroscopy, chromatography, X-ray structure analysis and electron microscopy arrive much later and drive the 20th-century expansion. Genetics enters biochemistry only through the narrow, modern sense of molecular biology.", cn: "物理化学给的是仪器，不是血统：光谱学、色谱、X 射线结构分析和电子显微镜都出现得晚得多，推动的是 20 世纪的扩张。遗传学进入生物化学，靠的只是「分子生物学」今天那个狭义的用法。" },
+        2: { en: "Analytical chemistry supplied the enabling method rather than the descent — the Kjeldahl nitrogen determination of 1883 is the textbook's example of the analysis that made living matter tractable. Microbiology is nowhere named among the field's origins.", cn: "分析化学提供的是使这门学科成为可能的方法，而不是它的出身——1883 年的凯氏定氮法正是教材举的那个让生命物质变得可分析的例子。微生物学则根本没有被列入本学科的来源。" },
+        3: { en: "Both are relatives, not ancestors: biophysics occupies a similar borderline position and is today very close to biochemistry because of the instrumental methods, while molecular biology in the broad sense is a part of biochemistry rather than a parent of it.", cn: "这两个都是亲戚，不是祖先：生物物理学处在类似的交叉位置，因仪器方法而与生物化学非常接近；而分子生物学在广义上是生物化学的一部分，不是它的父母。" }
+      },
       why_en: "The chemical parent is organic chemistry (originally the chemistry of natural substances); the biological parent is physiology — which is why the field was first called physiological chemistry.",
       why_cn: "化学一侧的来源是有机化学（最初即天然产物化学），生物学一侧是生理学——这正是该领域最初被称为「生理化学」的原因。"
     },
@@ -78,12 +84,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which method does the textbook name as having had decisive importance for the emergence of biochemistry?",
       q_cn: "教材点名哪一种方法对生物化学的产生具有决定性意义？",
       options: [
-        "X-ray structure analysis",
+        "X-ray structure analysis of protein macromolecules",
         "The Kjeldahl method for nitrogen determination (1883)",
-        "Paper chromatography",
-        "Electron microscopy"
+        "Chromatographic separation of complex biological mixtures",
+        "Electron microscopy of the cell and its organelles"
       ],
       answer: 1,
+      optionRefs: { 2: "2-1-2", 3: "1-3" },
+      optionNotes: {
+        0: { en: "X-ray structure analysis belongs to the physico-chemical methods behind the explosive growth of the second half of the 20th century, not to the birth of the field in the 19th.", cn: "X 射线结构分析属于推动 20 世纪下半叶迅猛发展的物理化学方法，而不属于 19 世纪这门学科诞生的阶段。" },
+        2: { en: "Chromatography is one of the same 20th-century physico-chemical methods; in this course it appears as the way amino acids and proteins are separated by their differing pI values.", cn: "色谱同属 20 世纪那批物理化学方法；在这门课里它出现的场合，是利用 pI 值差异分离氨基酸和蛋白质。" },
+        3: { en: "Electron microscopy also belongs to the later, instrumental wave; what it shows the course is the organelles of the prokaryotic and eukaryotic cell, not the analysis of composition.", cn: "电子显微镜同样属于后来那波仪器革命；它在本课程里呈现的是原核与真核细胞的细胞器，而不是成分分析。" }
+      },
       why_en: "The Kjeldahl nitrogen determination (1883) is given as the example of an analytical advance that made analysis of living matter feasible. Spectroscopy, chromatography, X-ray analysis and EM come later, driving the 20th-century expansion.",
       why_cn: "教材以 1883 年的凯氏定氮法为例，说明使分析生命物质成为可能的分析方法进步。光谱、色谱、X 射线分析与电镜属于更晚的阶段，推动的是 20 世纪的扩张。"
     },
@@ -162,9 +174,14 @@ window.BIOCHEM.topics.push(
         "H, O, C, N, P, S",
         "H, O, C, N, P",
         "C, H, O, N, Ca, Fe",
-        "H, O, C, N, S, Cl"
+        "H, O, C, N"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "This is the familiar CHNOPS mnemonic, and it is exactly the trap here: sulfur sits in the oligobiogenic group (0.05–1 % of mass) together with Ca, Mg, Na, K, Fe and Cl.", cn: "这就是熟悉的 CHNOPS 口诀，而它恰恰是这里的陷阱：硫属于寡量生源元素组（占质量 0.05–1%），与 Ca、Mg、Na、K、Fe、Cl 同组。" },
+        2: { en: "Calcium and iron are oligobiogenic, not macrobiogenic; the group boundary is quantitative — about 1 % of mass and above for the macrobiogenic five, 0.05–1 % for the oligobiogenic seven.", cn: "钙和铁属于寡量生源元素，不属于常量生源元素；组间界线是定量的——常量五元素约占质量 1% 及以上，寡量七元素占 0.05–1%。" },
+        3: { en: "Phosphorus is missing. It is macrobiogenic on the same footing as H, O, C and N, present in all organisms at around 1 % of mass and above.", cn: "这里漏掉了磷。磷与 H、O、C、N 同样是常量生源元素，在所有生物体中占质量约 1% 及以上。" }
+      },
       why_en: "Careful — this textbook puts sulfur in the OLIGOBIOGENIC group (Ca, Mg, S, Na, K, Fe, Cl), not with the macrobiogenic five. Do not answer with the usual CHNOPS mnemonic here.",
       why_cn: "注意——本教材把硫归入寡量生源元素组（Ca、Mg、S、Na、K、Fe、Cl），不在常量五元素之内。此处不要用通行的 CHNOPS 口诀作答。"
     },
@@ -173,12 +190,18 @@ window.BIOCHEM.topics.push(
       q_en: "In what chemical form does carbon characteristically occur in living matter, as opposed to inanimate nature?",
       q_cn: "与无生命自然界相比，碳在生命物质中的特征存在形式是什么？",
       options: [
-        "Oxidised, as carbonates and CO₂",
-        "As elemental graphite and diamond",
+        "Oxidised (as carbonates and CO₂) and energy-poor",
+        "Elemental, in the form of graphite and diamond",
         "Formally reduced (hydrogenated) and energy-rich",
-        "As cyanide and isocyanide complexes"
+        "As cyanide and isocyanide complexes of metals"
       ],
       answer: 2,
+      optionRefs: { 0: "1-4" },
+      optionNotes: {
+        0: { en: "That is precisely the form carbon takes in INANIMATE nature, and the contrast the section is drawing; the same compounds turn up later as the basic inorganic substrates, substances low in chemically usable energy.", cn: "这恰恰是碳在**无生命**自然界中的形式，也正是本节要作的对照；同样这些化合物后面会作为基本无机底物出现，属于化学可利用能量很低的物质。" },
+        1: { en: "The section never contrasts life with elemental carbon. Its contrast is one of oxidation state — reduced and energy-rich inside living matter, oxidised and spent outside it.", cn: "本节从未拿单质碳来作对照。它的对照是氧化态之别——生命物质里是还原态、富能的，生命之外则是氧化态、能量已耗尽的。" },
+        3: { en: "Nothing in the section describes carbon this way. Besides being reduced, the other feature it singles out for the carbon compounds of living matter is chirality: unlike laboratory-made analogues they are mostly optically active.", cn: "本节没有任何地方这样描述碳。除了还原态之外，它为生命物质中的碳化合物专门点出的另一特征是手性：与实验室制备的类似物不同，它们大多具有旋光活性。" }
+      },
       why_en: "In inanimate nature carbon is mostly oxidised (carbonates, CO₂). Living matter is characterised by formally reduced, hydrogenated, energy-rich carbon — the energy is recoverable simply by burning it to water and CO₂.",
       why_cn: "在无生命自然界中碳多为氧化态（碳酸盐、CO₂）。生命物质的特征是形式上还原的、加氢的、富能的碳——其能量只需燃烧生成水和 CO₂ 即可回收。"
     },
@@ -186,8 +209,13 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which two abundant crustal elements are conspicuously LOW in living matter?",
       q_cn: "哪两种在地壳中丰富的元素在生命物质中含量明显偏低？",
-      options: ["Fe and Ca", "Si and Al", "Na and Cl", "K and Mg"],
+      options: ["Fe and Ca", "Si and Al", "Na and Cl", "C and H"],
       answer: 1,
+      optionNotes: {
+        0: { en: "Both are invariable elements present in all organisms — Fe oligobiogenic, Ca oligobiogenic at 1.5 % of body mass against 3.4 % of the crust. That gap is nothing like the one silicon shows.", cn: "两者都是存在于所有生物体中的恒定元素——Fe 属寡量生源元素，Ca 也是，占人体质量 1.5%，地壳为 3.4%。这个差距和硅所显示的完全不是一个量级。" },
+        2: { en: "Sodium and chlorine are oligobiogenic, in the 0.05–1 % band, and nothing in Tab. 1.2 marks them as crustal elements that living matter avoids.", cn: "钠和氯属于寡量生源元素，处在 0.05–1% 这一档，表 1.2 里也没有把它们标为生命物质所回避的地壳元素。" },
+        3: { en: "These run the other way: carbon is 18.5 % of the body against 0.1 % of the crust, a 185-fold enrichment, and hydrogen 10 % against 0.9 %.", cn: "这两个的方向正相反：碳占人体 18.5%、地壳 0.1%，富集 185 倍；氢是 10% 对 0.9%。" }
+      },
       why_en: "Silicon and aluminium are among the commonest elements on Earth, yet their representation in living matter is strikingly low.",
       why_cn: "硅和铝属于地球上最常见的元素，但它们在生命物质中的占比却明显偏低。"
     },
@@ -196,12 +224,17 @@ window.BIOCHEM.topics.push(
       q_en: "Hydrogen is 10 % of the human body by MASS but 62.8 % by ATOMIC per cent. What does this illustrate?",
       q_cn: "氢占人体质量的 10%，却占 62.8 个原子百分比。这说明了什么？",
       options: [
-        "That mass per cent is the more reliable measure for living matter",
+        "That mass per cent is the more reliable way to compare the composition of a living body with that of the crust",
         "That the trend towards light elements stands out even more sharply in atomic per cent than in mass per cent",
-        "That hydrogen is a variable trace element",
-        "That the human body is chemically identical to the Earth's crust"
+        "That hydrogen belongs among the variable trace elements, which are significant only in some species",
+        "That the human body and the Earth's crust contain the same elements in the same proportions by mass"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Tab. 1.2 gives both scales precisely because neither alone is enough; the atomic per cent column is the one that makes the light-element trend visible, so it is the more revealing here, not the less.", cn: "表 1.2 同时给出两种标度，正是因为单看哪一种都不够；恰恰是原子百分比那一列让轻元素的趋势显现出来，所以在这里它是更能说明问题的一种，而不是更差的一种。" },
+        2: { en: "Hydrogen is macrobiogenic — one of H, O, C, N, P, present in all organisms at about 1 % of mass and above. The variable elements are B, Si, V, Br, Li, As, Se, Ti and Al.", cn: "氢属于常量生源元素——H、O、C、N、P 之一，存在于所有生物体中，占质量约 1% 及以上。可变元素是 B、Si、V、Br、Li、As、Se、Ti、Al。" },
+        3: { en: "The elements are indeed the same — living matter contains none that inanimate nature lacks — but the proportions are not: carbon is enriched 185-fold and silicon depleted from 25.7 % to under 0.001 %.", cn: "元素确实是同一批——生命物质里没有任何一种是非生命自然界所没有的——但比例并不相同：碳富集了 185 倍，硅则从 25.7% 降到不足 0.001%。" }
+      },
       why_en: "This is exactly the textbook's point: living matter is conspicuous for a high concentration of light elements, and the trend emerges even more strongly when one compares atomic per cent instead of mass per cent — a light atom contributes little mass but counts fully as one atom.",
       why_cn: "这正是教材的论点：生命物质以轻元素浓度高为显著特征，而若比较原子百分比而非质量百分比，这一趋势会更加突出——轻原子贡献的质量很小，但在计数上算作完整的一个原子。"
     },
@@ -276,8 +309,13 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which approach does the textbook say biochemistry as a whole mostly expresses?",
       q_cn: "教材说生物化学作为整体主要体现的是哪种方法？",
-      options: ["The systems approach", "Reductionism", "Pure in vivo observation", "In silico modeling"],
+      options: ["The systems approach", "Reductionism", "In vivo observation", "In silico modeling"],
       answer: 1,
+      optionNotes: {
+        0: { en: "That is the approach the organism arguably deserves — it exists only as a whole and in interaction with its surroundings — but the textbook says that in practice biochemistry does the opposite and isolates.", cn: "严格说来生物体理应用这种方法来研究——它只作为整体、并在与环境的相互作用中存在——但教材说，实际上生物化学做的恰恰相反：它把对象隔离开来。" },
+        2: { en: "In vivo observation is the correction that in vitro results have to be confronted with, not the approach the field as a whole expresses.", cn: "体内观察是体外结果必须拿去对照的那一步校正，而不是这门学科整体所体现的方法。" },
+        3: { en: "In silico modeling is named as a technique of growing importance in contemporary biochemistry, not as the methodological stance the field takes towards living systems.", cn: "in silico 建模被点名为当代生物化学中重要性日增的技术手段，而不是这门学科面对生命系统时所采取的方法论立场。" }
+      },
       why_en: "Biochemistry is (at least for now) rather an expression of the reductionist approach — isolating aspects and studying them separately — which is precisely why in vitro results must be confronted with in vivo observation.",
       why_cn: "生物化学（至少目前）更多体现还原论方法——把各方面隔离、分别研究——这正是体外结果必须与体内观察相对照的原因。"
     },
@@ -358,8 +396,13 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "An organism that uses CO₂ as its carbon source and light as its energy source is classified as:",
       q_cn: "以 CO₂ 为碳源、以光为能源的生物属于：",
-      options: ["Chemoorganotrophic", "Photoorganotrophic", "Photolithotrophic", "Chemolithotrophic"],
+      options: ["Chemoorganotrophic", "Photoorganotrophic", "Photolithotrophic", "Heterotrophic"],
       answer: 2,
+      optionNotes: {
+        0: { en: "CHEMO- would mean the energy came from oxidising substrates and ORGANO- that the carbon came from organic compounds; that is the group of bacteria, fungi, protists and animals.", cn: "CHEMO- 意味着能量来自底物氧化，ORGANO- 意味着碳来自有机化合物；那是细菌、真菌、原生动物和动物所属的那一组。" },
+        1: { en: "The energy axis is right but the carbon axis is wrong: photoorganotrophs take carbon from organic compounds — purple non-sulfur bacteria and autotrophic protists such as Euglena.", cn: "能源那一轴对了，碳源那一轴错了：光能有机营养型的碳来自有机化合物——紫色非硫细菌，以及像裸藻这样的自养原生动物。" },
+        3: { en: "Heterotrophic (organotrophic) is the opposite half of the carbon axis: consumers of the organic compounds the autotrophs create. An organism living on CO₂ is autotrophic, i.e. lithotrophic.", cn: "异养（有机营养）是碳源轴上相反的那一半：靠自养生物制造的有机化合物为生的消费者。以 CO₂ 为生的生物是自养的，也就是无机营养的。" }
+      },
       why_en: "LITHO- denotes the CO₂ carbon source, PHOTO- the light energy source. Examples given: green and purple sulfur bacteria, algae, cyanobacteria, green plants.",
       why_cn: "LITHO- 表示碳源为 CO₂，PHOTO- 表示能源为光。教材所举例子：绿硫细菌与紫硫细菌、藻类、蓝细菌、绿色植物。"
     },
@@ -367,8 +410,13 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Sulfur, iron and nitrifying bacteria are examples of which nutritional type?",
       q_cn: "硫细菌、铁细菌和硝化细菌属于哪种营养类型？",
-      options: ["Chemolithotrophic", "Photolithotrophic", "Chemoorganotrophic", "Photoorganotrophic"],
+      options: ["Chemolithotrophic", "Phototrophic", "Chemoorganotrophic", "Photoorganotrophic"],
       answer: 0,
+      optionNotes: {
+        1: { en: "PHOTO- names the energy source, and these bacteria do not take energy from light: they oxidise inorganic substrates. Phototrophs are the ones that use light radiation in photosynthesis.", cn: "PHOTO- 指的是能源，而这些细菌的能量并不来自光：它们氧化无机底物。光养生物才是在光合作用中利用光辐射的那一类。" },
+        2: { en: "The energy axis is right — they are chemotrophs — but ORGANO- would mean they live on organic substrates, which is the group of bacteria, fungi, protists and animals.", cn: "能源轴对了——它们确实是化养型——但 ORGANO- 意味着以有机底物为生，那是细菌、真菌、原生动物和动物那一组。" },
+        3: { en: "Both halves are wrong here. Photoorganotrophs are the purple non-sulfur bacteria and autotrophic protists such as Euglena: light for energy, organic compounds for carbon.", cn: "这一项两半都错了。光能有机营养型是紫色非硫细菌和像裸藻这样的自养原生动物：能量取自光，碳取自有机化合物。" }
+      },
       why_en: "They obtain energy by oxidising inorganic substrates (CHEMO-) and use CO₂ as carbon source (LITHO-).",
       why_cn: "它们通过氧化无机底物获得能量（CHEMO-），并以 CO₂ 为碳源（LITHO-）。"
     },
@@ -377,12 +425,17 @@ window.BIOCHEM.topics.push(
       q_en: "Why is the division of compounds into substrates, intermediates and waste products described as relative?",
       q_cn: "为什么把化合物划分为底物、中间产物和废物被描述为相对的？",
       options: [
-        "Because analytical methods cannot distinguish them",
+        "Because analytical methods cannot tell a nutrient from an intermediate inside a living cell",
         "Because the same substance may be a product in anabolism and a substrate in catabolism",
-        "Because they interconvert spontaneously without enzymes",
-        "Because only inorganic compounds are true substrates"
+        "Because they interconvert spontaneously, without the catalysts most reactions need",
+        "Because only the inorganic substances water, CO₂, ammonia and salts are substrates"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The relativity is conceptual, not analytical: it depends on which direction of metabolism you look from, and no measurement would settle it either way.", cn: "这里的相对性是概念上的，不是分析上的：它取决于你从代谢的哪个方向去看，任何测量都不能替你决定。" },
+        2: { en: "Most biochemical reactions proceed only in the presence of catalysts, and these are as a rule enzymes, i.e. specialised proteins. Spontaneous interconversion is not why the labels shift.", cn: "多数生化反应只有在催化剂存在时才进行，而催化剂通常是酶，即特化的蛋白质。标签之所以会互换，并不是因为它们能自发互变。" },
+        3: { en: "Water, CO₂, ammonia and salts are the BASIC substrates — inorganic and generally low in chemically usable energy — but nutrients taken in as organic compounds are substrates just as much.", cn: "水、CO₂、氨和盐类是**基本**底物——无机、且总体上化学可利用能量很低——但以有机化合物形式摄入的养分同样是底物。" }
+      },
       why_en: "The textbook says the division is relative to a certain degree: from the standpoint of synthetic reactions (anabolism) a substance is a product, while from the standpoint of degradative processes (catabolism) the same substance is a substrate.",
       why_cn: "教材说这一划分在一定程度上是相对的：从合成反应（合成代谢）角度看某物质是产物，而从分解过程（分解代谢）角度看同一物质是底物。"
     },
@@ -469,12 +522,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does biochemistry use ΔG°′ with a prime rather than the ordinary ΔG°?",
       q_cn: "为什么生物化学使用带撇的 ΔG°′ 而不是普通的 ΔG°？",
       options: [
-        "Because biochemical reactions occur at constant volume",
+        "Because biochemical reactions run at constant volume rather than at constant pressure and temperature",
         "Because the standard state is redefined so that hydrogen-ion activity corresponds to pH 7",
-        "Because enthalpy replaces internal energy",
-        "Because activities are replaced by concentrations"
+        "Because the enthalpy H = U + pV replaces the internal energy in the definition of G",
+        "Because activities are replaced by concentrations in sufficiently dilute solutions"
       ],
       answer: 1,
+      optionRefs: { 0: "L-1-3-1" },
+      optionNotes: {
+        0: { en: "The direction is reversed: constant pressure and temperature are precisely the conditions the section assumes for biochemical reactions, and the ΔG < 0 criterion is stated for them.", cn: "这里方向反了：恒压恒温恰恰是本节为生化反应设定的条件，ΔG < 0 这个判据也正是在这个前提下给出的。" },
+        2: { en: "H = U + pV is a real definition from this section — and because volume work is usually negligible H practically coincides with U — but it has nothing to do with the prime.", cn: "H = U + pV 确实是本节给出的定义——而且由于体积功通常可以忽略，H 实际上与 U 重合——但它和那一撇毫无关系。" },
+        3: { en: "That swap belongs to the chemical potential: it is a linear function of concentration in ideally behaving, very dilute solutions and of activity in real ones. The prime marks the pH, not the concentration scale.", cn: "这种替换讲的是化学势：在理想行为的极稀溶液中它是浓度的线性函数，在实际溶液中则是活度的线性函数。那一撇标记的是 pH，不是浓度标度。" }
+      },
       why_en: "The general thermodynamic standard state takes unit activity for ALL components, including H⁺, which is unsuitable given physiological hydrogen-ion activities. Biochemistry therefore fixes H⁺ activity at pH 7, other components at unit activity, and marks the quantities with a prime.",
       why_cn: "一般热力学标准态取所有组分（包括 H⁺）活度为 1，考虑到生理条件下的氢离子活度，这并不合适。因此生物化学固定 H⁺ 活度对应 pH 7，其余组分活度为 1，并在符号上加一撇。"
     },
@@ -483,12 +542,18 @@ window.BIOCHEM.topics.push(
       q_en: "What does knowledge of ΔG tell you about a reaction?",
       q_cn: "知道 ΔG 能告诉你关于一个反应的什么信息？",
       options: [
-        "Both whether it can proceed spontaneously and how fast",
-        "Only how fast it will proceed",
+        "Both whether it can proceed spontaneously and at what rate",
+        "Only how fast it proceeds, not whether it is possible",
         "Only whether it can proceed spontaneously, not its rate",
         "Only its equilibrium constant, not its direction"
       ],
       answer: 2,
+      optionRefs: { 0: "L-1-3-1", 1: "3-6" },
+      optionNotes: {
+        0: { en: "This is the conflation the section warns against. G is a thermodynamic potential, like potential energy in mechanics: it decides possibility only, and the rate is settled by the concrete mechanism.", cn: "这正是本节要提醒你别犯的混淆。G 是热力学势，就像力学里的势能：它只决定可能性，速率由具体机制决定。" },
+        1: { en: "Exactly backwards. Rate is what ΔG never tells you; possibility is what it always tells you — which is why a catalyst can speed a reaction up without changing its ΔG.", cn: "正好说反了。速率恰恰是 ΔG 从不告诉你的，可能性才是它一定告诉你的——这也正是催化剂能加快反应却改变不了它的 ΔG 的原因。" },
+        3: { en: "ΔG° and K are indeed linked, by ΔG° = −RT ln K, since the total ΔG is zero at equilibrium. But the sign of ΔG is exactly what decides the direction, so 'not its direction' is wrong.", cn: "ΔG° 与 K 确实由 ΔG° = −RT ln K 联系起来，因为平衡时总 ΔG 为零。但 ΔG 的正负恰恰决定方向，所以「不能给出方向」这句是错的。" }
+      },
       why_en: "Gibbs energy is a thermodynamic potential, analogous to potential energy in mechanics: it decides possibility, but gives no information about rate, for which the concrete mechanism is decisive. This is exactly why catalysis matters.",
       why_cn: "吉布斯能是热力学势，类比于力学中的势能：它决定可能性，但不提供关于速率的信息，速率取决于具体机制。这正是催化之所以重要的原因。"
     },
@@ -497,12 +562,18 @@ window.BIOCHEM.topics.push(
       q_en: "A stationary state differs from an equilibrium state in that:",
       q_cn: "稳态与平衡态的区别在于：",
       options: [
-        "Its parameters change continuously with time",
+        "Its parameters keep changing with time instead of staying constant",
         "It can be realised also in open systems, with exchange of matter",
-        "It requires an isolated system",
-        "It has zero entropy production by definition"
+        "It can only be realised in an isolated system at equilibrium",
+        "It requires the total entropy of the system to keep falling"
       ],
       answer: 1,
+      optionRefs: { 2: "L-1-3-1" },
+      optionNotes: {
+        0: { en: "Both states have parameters independent of time — that is what makes them look alike. For living systems this holds only over a limited interval; the overall development is non-stationary: ageing, death.", cn: "两种状态的参数都不随时间变化——它们看起来相像正是因为这一点。对活系统而言，这只在有限时间区间内成立；其总体发展是非稳态的：衰老、死亡。" },
+        2: { en: "That describes the ideal system of classical thermodynamics, which exists neither in living nor in inanimate nature; the principle of local equilibrium is what lets the classical relations be used anyway.", cn: "这描述的是经典热力学里的理想系统，而这种系统在生命和非生命自然界中都不存在；正是局域平衡原理让经典关系式仍然可用。" },
+        3: { en: "The second law runs the other way: spontaneous processes are those in which the total entropy of system plus surroundings GROWS. The section defines the stationary state by time-independence, not by entropy.", cn: "第二定律的方向正相反：自发过程是系统与环境的总熵**增加**的过程。本节界定稳态用的是「参数不随时间变化」，不是熵。" }
+      },
       why_en: "Both have time-independent parameters, and equilibrium is a special case of the stationary state. The distinguishing feature is that a stationary state is achievable in OPEN systems, i.e. with exchange of matter with the surroundings.",
       why_cn: "两者的参数都不随时间变化，平衡态是稳态的特例。区别在于稳态可在开放系统中实现，即允许与环境交换物质。"
     },
@@ -573,11 +644,16 @@ window.BIOCHEM.topics.push(
       q_cn: "在教材的分类中，创世论与智能设计属于生命起源解释的哪一组？",
       options: [
         "Group (a) — supernatural intervention or forces inaccessible to science",
-        "Group (b) — chemical evolution in the primordial ocean",
-        "Group (c) — panspermia from extraterrestrial sources",
-        "They are not classified in the textbook"
+        "Group (a), except that intelligent design forms its own group",
+        "Group (b), the second of the three groups of explanations the textbook gives",
+        "Group (c), the last of the three groups the textbook distinguishes"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Group (a) covers both at once: life as the result of a supernatural intervention (creationism) OR through the action of forces inaccessible to direct scientific investigation (intelligent design).", cn: "(a) 组一次涵盖了两者：生命作为超自然干预的结果（创世论），**或**由无法直接进行科学研究的力量作用而产生（智能设计）。" },
+        2: { en: "The textbook does divide the explanations into three groups, but groups (b) and (c) continue on pages that are not in the extracted page set — so this course cannot say what they contain, only that creationism and intelligent design are explicitly in (a).", cn: "教材确实把解释分成三组，但 (b)、(c) 两组接在没有被提取到的页面上——所以这门课说不出它们的内容，只能确定创世论和智能设计明确属于 (a) 组。" },
+        3: { en: "Same problem as group (b): its content is outside the material this node was calibrated against. What is verified is that group (a) is the one holding creationism and intelligent design.", cn: "与 (b) 组同样的问题：它的内容不在本节点据以校对的材料范围内。已核实的是：创世论与智能设计所在的是 (a) 组。" }
+      },
       why_en: "Group (a) covers both: life as the result of a supernatural intervention (creationism) or through the action of forces inaccessible to direct scientific investigation (intelligent design).",
       why_cn: "(a) 组同时涵盖两者：生命作为超自然干预的结果（创世论），或由无法直接进行科学研究的力量作用而产生（智能设计）。"
     }

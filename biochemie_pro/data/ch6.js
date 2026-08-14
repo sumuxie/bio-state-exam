@@ -46,12 +46,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does the book insist on calling the living organism's apparent equilibrium with its surroundings a 'dynamic equilibrium' or 'steady state' rather than a true equilibrium?",
       q_cn: "为什么教材坚持将生物体与环境之间看似的平衡称为「动态平衡」或「稳态」，而不是真正的平衡？",
       options: [
-        "Because living organisms do not actually exchange any matter or energy with their surroundings",
-        "Because the laws of thermodynamics do not apply to living matter",
+        "Because it is a closed system that exchanges heat but no matter with its surroundings, so the order it maintains is paid for by increasing its own internal disorder rather than the environment's",
+        "Because the basic laws of thermodynamics were derived for isolated systems and are suspended in living matter, so equilibrium there needs its own biological definition",
         "Because it is an open system, kept far from the static equilibrium of an isolated system in classical thermodynamics by continuous exchange of matter and energy with the environment",
-        "Because temperature and pressure inside a cell fluctuate constantly over a wide range"
+        "Because temperature, pressure and ion concentration inside the cell swing over a wide range, and a system whose variables never settle can only be called dynamic rather than truly equilibrated"
       ],
       answer: 2,
+      optionRefs: { 1: "1-5" },
+      optionNotes: {
+        0: { en: "Both halves are reversed: the book calls the organism an OPEN system that covers its needs at the expense of the surroundings, and in doing so increases the ENVIRONMENT's disorder, not its own.", cn: "两处都反了：教材把生物体定义为开放系统，靠环境来满足自己的物质和能量需要，并且提高的是环境的无序度，而不是自身的。" },
+        1: { en: "The book says the opposite in the same sentence: the basic laws of thermodynamics apply to living matter without exception, and it cross-references ch. 1.5 for them.", cn: "教材在同一句里说的正好相反：热力学基本定律对生命物质同样毫无例外地适用，并把读者指回第 1.5 节。" },
+        3: { en: "The reversal that matters here: the energetic apparatus of living systems cannot tolerate large differences of pressure, temperature or ion concentration — that intolerance is exactly why work is done under constant conditions.", cn: "这里的关键在于方向反了：生命系统的能量装置恰恰承受不了大的压力、温度或离子浓度差异——正因为受不了，做功才只能在恒定条件下进行。" }
+      },
       why_en: "The book frames the organism as an OPEN system whose apparent equilibrium is dynamic/steady-state, sharply distinct from the static equilibrium of an ISOLATED system in classical equilibrium thermodynamics — maintained only by constant exchange of information, matter and energy with the surroundings. The basic laws of thermodynamics still apply fully (ch. 1.5), so option B is wrong; option A contradicts the very premise of an open system; the book's actual point is the opposite of option D — biological systems can ONLY do work under near-constant conditions.",
       why_cn: "教材将生物体定位为开放系统，其看似的平衡是动态的/稳态的，与经典平衡态热力学中孤立系统的静态平衡有本质区别——仅靠与环境持续交换信息、物质与能量来维持。热力学基本定律仍完全适用（第1.5节），故选项B错误；选项A与开放系统的前提本身矛盾；教材的实际论点与选项D相反——生物系统只能在近乎恒定的条件下做功。"
     },
@@ -61,11 +67,17 @@ window.BIOCHEM.topics.push(
       q_cn: "为什么教材specifically指出Gibbs自由能（ΔG）是描述生命系统能量变化的合适状态函数？",
       options: [
         "Because living systems' energetic apparatus cannot tolerate large gradients of pressure, temperature or ion concentration, so they can only perform work under constant temperature, pressure and similar constant conditions",
-        "Because Gibbs energy is the only thermodynamic quantity that can be measured experimentally",
-        "Because ATP is chemically identical to Gibbs energy itself",
-        "Because living systems exist at absolute zero temperature, where only ΔG is defined"
+        "Because Gibbs energy is the only thermodynamic quantity that can be measured directly inside an intact cell, whereas the other state variables can only be obtained from isolated systems held at true equilibrium in a calorimeter",
+        "Because ATP hydrolysis is the cell's only source of Gibbs energy, so the state variable and the carrier molecule that distributes that energy around the cell amount to one and the same quantity",
+        "Because living systems hold their interior at a temperature far below that of their surroundings, and Gibbs energy is the one state variable that stays defined across such a standing temperature gradient"
       ],
       answer: 0,
+      optionRefs: { 2: "6-1-2-2" },
+      optionNotes: {
+        1: { en: "The book's reason is not measurability but conditions: work can only be done at constant temperature and pressure, which is where Gibbs energy is the natural state variable.", cn: "教材给的理由不是「能不能测」，而是条件：做功只能在恒温恒压下进行，而这正是 Gibbs energy 作为状态函数适用的场合。" },
+        2: { en: "ATP is one FORM in which Gibbs energy is distributed around the cell — a carrier with its own hydrolysis value of −30.5 kJ·mol⁻¹ — not the thermodynamic quantity itself.", cn: "ATP 只是 Gibbs energy 在细胞内被分发的一种形式——一个自身水解值为 −30.5 kJ·mol⁻¹ 的载体——它不等于那个热力学量本身。" },
+        3: { en: "Reversed again: the point is that the cell cannot sustain a large temperature difference at all, so it works under near-constant conditions rather than across a gradient.", cn: "还是反了：要点是细胞根本撑不住大的温度差，所以它是在近乎恒定的条件下做功，而不是跨着一个温度梯度做功。" }
+      },
       why_en: "The book states this as a 'crucial peculiarity': the energetic apparatus of living systems cannot bear larger differences of pressure, temperature or ion concentration, so it can only do work at constant temperature, pressure and other constant conditions — exactly the conditions under which Gibbs energy is the natural state variable. The other three options are not claims the book makes at all.",
       why_cn: "教材将此称为一个「关键特点」：生命系统的能量装置无法承受较大的压力、温度或离子浓度差异，因而只能在恒定温度、恒定压力等恒定条件下做功——这恰恰是Gibbs自由能作为自然状态函数所适用的条件。其余三个选项都不是教材提出的论点。"
     },
@@ -141,12 +153,18 @@ window.BIOCHEM.topics.push(
       q_en: "In the book's worked example, what is the ΔG⁰′ of the coupled reaction glucose + ATP ⇌ glucose-6-phosphate + ADP, and how is it obtained?",
       q_cn: "在教材给出的示例中，偶联反应葡萄糖+ATP⇌葡萄糖-6-磷酸+ADP的ΔG⁰′是多少？它是如何得出的？",
       options: [
-        "−30.5 kJ·mol⁻¹, simply copied from ATP hydrolysis alone, ignoring the glucose phosphorylation step",
-        "+13.8 kJ·mol⁻¹, simply copied from the glucose phosphorylation step alone",
-        "−44.3 kJ·mol⁻¹, the product (not sum) of the two steps' ΔG⁰′ values",
+        "−30.5 kJ·mol⁻¹, the value of ATP hydrolysis on its own, the coupled pair simply inheriting the sign and size of its exergonic half",
+        "+13.8 kJ·mol⁻¹, the value of the glucose phosphorylation step on its own, which would leave the coupled reaction endergonic and unable to run",
+        "−44.3 kJ·mol⁻¹, the product rather than the sum of the two steps' ΔG⁰′ values, taking coupling to multiply energies",
         "−16.7 kJ·mol⁻¹, the sum of the endergonic phosphorylation's +13.8 kJ·mol⁻¹ and the exergonic ATP hydrolysis's −30.5 kJ·mol⁻¹"
       ],
       answer: 3,
+      optionRefs: { 0: "6-1-2-2", 1: "6-1-2-2" },
+      optionNotes: {
+        0: { en: "−30.5 kJ·mol⁻¹ is what Tab. 6.1 gives for ATP hydrolysis by itself; the coupled reaction takes the SUM of both steps, so half of that value is spent paying for the phosphorylation.", cn: "−30.5 kJ·mol⁻¹ 是表 6.1 给 ATP 单独水解的数值；偶联反应取的是两步之和，其中一部分被用来支付葡萄糖磷酸化的开销。" },
+        1: { en: "+13.8 kJ·mol⁻¹ is the endergonic half alone — the same number Tab. 6.1 lists as glucose-6-phosphate's hydrolysis energy. On its own that reaction will not run; the coupling is what makes the total negative.", cn: "+13.8 kJ·mol⁻¹ 只是吸能的那一半——也正是表 6.1 中 glucose-6-phosphate 水解能量的同一个数字。单独进行时这个反应不会发生，是偶联把总和变成了负值。" },
+        2: { en: "The total ΔG⁰′ of a series of reactions is the SUM of its steps: the book's arithmetic is 13.8 + (−30.5) = −16.7. Combining the two values any other way gives a number the book never derives.", cn: "一串反应的总 ΔG⁰′ 等于各步之和：教材的算式是 13.8 + (−30.5) = −16.7。用别的方式把这两个数拼起来，得到的都是教材从未推出过的数字。" }
+      },
       why_en: "Because the total ΔG⁰′ of a reaction sequence is the SUM of its steps' individual ΔG⁰′ values, 13.8 + (-30.5) = -16.7 kJ·mol⁻¹. Options A and B each ignore one of the two steps; option C wrongly multiplies rather than sums the two values.",
       why_cn: "由于一系列反应的总ΔG⁰′等于各步骤ΔG⁰′之和，13.8+(-30.5)=-16.7 kJ·mol⁻¹。选项A和B都各自忽略了其中一步；选项C错误地把两个数值相乘而非相加。"
     },
@@ -155,12 +173,18 @@ window.BIOCHEM.topics.push(
       q_en: "How does the book define ΔG⁰′ of a chemical reaction?",
       q_cn: "教材如何定义化学反应的ΔG⁰′？",
       options: [
-        "The total heat released by the reaction at any temperature and pressure",
+        "The total heat released by the reaction when it is carried out under isothermal-isobaric conditions, that is at constant temperature and constant pressure",
         "The maximum work the reaction could theoretically perform, carried out under isothermal-isobaric (constant temperature and pressure) conditions",
-        "The rate at which the reaction proceeds under cellular conditions",
-        "The number of ATP molecules consumed or produced by the reaction"
+        "The rate at which the reaction approaches its equilibrium once the enzyme catalysing it is present at a saturating concentration",
+        "The number of ATP molecules the reaction consumes or produces, each one counted at the −30.5 kJ·mol⁻¹ Tab. 6.1 gives for ATP hydrolysis"
       ],
       answer: 1,
+      optionRefs: { 0: "6-1", 2: "3-3-1", 3: "6-1-2-2" },
+      optionNotes: {
+        0: { en: "Work, not heat. Heat enters this chapter only at the far end of the energy-flow scheme, as the UNUSED energy that every process finally dissipates into.", cn: "是功，不是热。热在本章只出现在能流图的末端，作为一切过程最后耗散掉的「未被利用的能量」。" },
+        2: { en: "ΔG⁰′ says nothing about how fast a reaction goes — a strongly exergonic reaction can be immeasurably slow without its enzyme. Speed is the subject of enzyme kinetics.", cn: "ΔG⁰′ 完全不涉及反应有多快——放能很强的反应没有酶也可以慢到测不出来。快慢是酶动力学的题目。" },
+        3: { en: "ATP is one particular macroergic carrier whose hydrolysis happens to be −30.5 kJ·mol⁻¹, which the book calls a kind of energy quantum; ΔG⁰′ itself is defined for any reaction, ATP or no ATP.", cn: "ATP 只是一种具体的高能载体，其水解恰好是 −30.5 kJ·mol⁻¹，教材称之为能量的「量子」；而 ΔG⁰′ 对任何反应都有定义，跟有没有 ATP 无关。" }
+      },
       why_en: "The book explicitly states ΔG⁰′ of a chemical reaction means the maximal work that can theoretically be performed if the process is carried out isothermally and isobarically — not heat, not rate, and not an ATP count (ATP is just one specific example of a macroergic carrier, covered in the next section).",
       why_cn: "教材明确指出，化学反应的ΔG⁰′是指若该过程在等温等压条件下进行，理论上能够做的最大功——不是热量，不是速率，也不是ATP分子数（ATP只是下一节中讨论的一种具体的高能载体）。"
     },
@@ -238,12 +262,18 @@ window.BIOCHEM.topics.push(
       q_en: "What structural explanation does the book give for why polyphosphate compounds like ATP are 'macroergic'?",
       q_cn: "教材从结构上如何解释ATP这类多磷酸化合物为什么是「高能」的？",
       options: [
-        "Phosphorus forms unusually strong double bonds with oxygen, which store extra energy",
+        "Because phosphorus readily forms unusually strong double bonds with oxygen, and the energy stored in those bonds is what is released when a phosphoanhydride bond is hydrolysed and the molecule relaxes",
         "Phosphorus resists forming double bonds and its bond to oxygen is semipolar, while negative charges accumulate on the oxygens — the resulting electrostatic repulsion between like charges destabilises the molecule",
-        "The purine ring of adenine is inherently unstable and releases energy when hydrolysed",
-        "ATP's ribose sugar spontaneously converts to deoxyribose, releasing energy"
+        "Because the purine base and the ribose are held in a strained conformation by the polyphosphate chain, so hydrolysing the terminal phosphate releases the ring system to relax into the more stable form it had been locked out of",
+        "Because the negative charges along the polyphosphate chain are neutralised by complexation with Mg²⁺ ions, and the energy of that complex is released together with the terminal phosphate group"
       ],
       answer: 1,
+      optionRefs: { 2: "6-1-2-2" },
+      optionNotes: {
+        0: { en: "Exactly reversed: the book's premise is that phosphorus does NOT readily form double bonds and that its bond to oxygen is semipolar. High-energy never means a strong bond here — it means an unstable molecule that cleavage stabilises.", cn: "正好说反了：教材的前提是磷原子不容易形成双键，且 P–O 键是半极性的。这里的「高能」从来不是指键很强，而是指分子不稳定，断键反而使它稳定下来。" },
+        2: { en: "Relaxing into a more stable form it was locked out of is a real mechanism in this chapter — but it belongs to phosphoenolpyruvate, whose phosphate blocks tautomerisation to the keto form, not to ATP's adenine and ribose.", cn: "「松弛回到原本被锁住的更稳定形式」在本章确实是一个真实机制——但那是 phosphoenolpyruvate 的事，它的磷酸基阻止分子变成酮式，与 ATP 的腺嘌呤和核糖无关。" },
+        3: { en: "ATP and ADP really do form Mg²⁺ complexes in the cell, but the book lists that as a separate property. The macroergicity comes from the mutual repulsion of the like charges — neutralising them is the opposite of the mechanism.", cn: "ATP 和 ADP 在细胞内确实会与 Mg²⁺ 形成络合物，但教材是把这条当作另一项性质列出的。高能性来自同种电荷之间的互斥——把电荷中和掉恰恰与这个机制相反。" }
+      },
       why_en: "The book explains 'macroergicity' of polyphosphates structurally: phosphorus does not readily form double bonds and its P-O bond is semipolar, while negative charge accumulates on the oxygen atoms, producing electrostatic repulsion between like charges that destabilises the molecule. The other options describe mechanisms the book does not give — it never claims unusually strong P=O double bonds, an unstable purine ring, or a ribose-to-deoxyribose conversion.",
       why_cn: "教材从结构上解释了多磷酸「高能性」的原因：磷原子不易形成双键，P-O键为半极性，同时负电荷聚集在氧原子上，产生同种电荷间的静电斥力使分子失稳。其余选项描述的机制教材均未提及——它从未声称P=O存在异常强的双键、嘌呤环本身不稳定，或核糖会转变为脱氧核糖。"
     },
@@ -252,12 +282,17 @@ window.BIOCHEM.topics.push(
       q_en: "Phosphagens are a subtype of macroergic phosphoamide compound. Which pairing of phosphagen and organism group, plus its stabilising mechanism, is correct per the book?",
       q_cn: "磷酸原是磷酰胺类高能化合物的一个亚型。根据教材，下列哪一项对磷酸原与其对应生物类群及稳定化机制的配对是正确的？",
       options: [
-        "Phosphoarginine in vertebrates; stabilised by a double bond between phosphorus and nitrogen",
-        "Phosphocreatine in invertebrates; stabilised by a full negative charge on phosphorus",
-        "Both phosphocreatine and phosphoarginine occur equally in all animals, with no taxonomic distinction",
+        "Phosphoarginine in vertebrates and phosphocreatine in invertebrates; in both, a partial negative charge on phosphorus prevents mesomerism (resonance)",
+        "Phosphocreatine in vertebrates and phosphoarginine in invertebrates; in both, a double bond between phosphorus and nitrogen locks the phosphate in place",
+        "Phosphocreatine and phosphoarginine occur side by side in all animals; in both, it is the anhydride bond to oxygen that carries the stored energy",
         "Phosphocreatine in vertebrates and phosphoarginine in invertebrates; in both, a partial positive charge on phosphorus prevents mesomerism (resonance)"
       ],
       answer: 3,
+      optionNotes: {
+        0: { en: "Two things flipped at once: the book gives phosphocreatine to vertebrates and phosphoarginine to invertebrates, and the charge on phosphorus that blocks mesomerism is partial POSITIVE.", cn: "一次翻了两处：教材把 phosphocreatine 归给脊椎动物、phosphoarginine 归给无脊椎动物；而阻止共振的是磷原子上的部分正电荷。" },
+        1: { en: "The taxonomic pairing is right, the mechanism is not: it is a partial positive charge on phosphorus that prevents mesomerism, and the book's general point is that phosphorus resists forming double bonds.", cn: "生物类群配对是对的，机制不对：阻止共振的是磷原子上的部分正电荷；而且教材总的说法正是磷原子不倾向于形成双键。" },
+        2: { en: "The book states the taxonomic split explicitly rather than leaving it out, and phosphagens are type-2 PHOSPHOAMIDES with the phosphate on nitrogen — the anhydride bond to oxygen is type 1, ATP and acetylphosphate.", cn: "教材明确写出了这个类群区分，并没有含糊带过；而且 phosphagen 属于第 2 类 phosphoamide，磷酸接在氮上——接在氧上的酸酐键是第 1 类，即 ATP 和 acetylphosphate。" }
+      },
       why_en: "The book specifically names phosphocreatine as the vertebrate phosphagen and phosphoarginine as the invertebrate one, and explains that in this compound type a partial positive charge on the phosphorus atom is what prevents mesomerism — not a P=N double bond and not a full negative charge, and the taxonomic split is explicit, not absent.",
       why_cn: "教材specifically指出，脊椎动物中的磷酸原是磷酸肌酸，无脊椎动物中的是磷酸精氨酸，并说明在这类化合物中，正是磷原子上的部分正电荷阻止了共振——而不是P=N双键，也不是完全的负电荷；而且教材明确区分了这两个类群，并非「无区分」。"
     },
@@ -325,11 +360,17 @@ window.BIOCHEM.topics.push(
       q_cn: "为什么磷酸烯醇丙酮酸（PEP）的水解ΔG⁰′异常大（负值）？",
       options: [
         "Because its ester phosphate bond prevents the molecule from tautomerising to the more stable keto form, so hydrolysis releases both the bond energy and the blocked tautomerisation energy",
-        "Because PEP contains a sulfur atom that blocks resonance, like a thioester",
-        "Because PEP has more dissociable protons than ATP at pH 7",
-        "Because PEP's phosphate is bound to a nitrogen atom rather than an oxygen atom"
+        "Because the sulfur atom in its ester bond blocks the resonance delocalisation an ordinary O-ester enjoys, so the bond retains more of its free energy right up until the moment it is hydrolysed",
+        "Because PEP carries more dissociable protons at pH 7 than ATP and ADP do, and every extra proton adds to the free energy released when its phosphate group is cleaved",
+        "Because PEP's phosphate is bound to a nitrogen atom rather than to oxygen, and a partial positive charge on the phosphorus prevents the molecule from stabilising by mesomerism"
       ],
       answer: 0,
+      optionRefs: { 2: "6-1-2-1", 3: "6-1-2-1" },
+      optionNotes: {
+        1: { en: "That is the type-4 thioester mechanism, which belongs to the acyl derivatives of coenzyme A. PEP contains no sulfur at all; its phosphate is an oxygen ester.", cn: "那是第 4 类 thioester 的机制，属于 coenzyme A 的酰基衍生物。PEP 根本不含硫，它的磷酸是氧酯。" },
+        2: { en: "The proton counts the book gives — four for ATP and three for ADP at pH 7 — are a property of those nucleotides, not a measure of hydrolysis energy, and no such count is given for PEP.", cn: "教材给出的可解离质子数（pH 7 时 ATP 四个、ADP 三个）是这两个核苷酸的性质，并不是水解能量的度量，教材也没有给 PEP 数过质子。" },
+        3: { en: "That is the type-2 phosphoamide mechanism of the phosphagens, phosphocreatine and phosphoarginine. PEP is a type-3 enol phosphate, with the phosphate esterified to oxygen.", cn: "那是第 2 类 phosphoamide、也就是 phosphocreatine 和 phosphoarginine 的机制。PEP 属于第 3 类 enol phosphate，磷酸酯化在氧上。" }
+      },
       why_en: "The book explains that PEP's ester phosphate bond prevents formation of the lower-energy, more stable keto form; hydrolysis releases the compound to relax into that keto form, adding that tautomerisation energy on top of ordinary phosphate-bond hydrolysis energy. PEP contains no sulfur (that mechanism belongs to thioesters, type 4), no proton-count comparison is made in the book, and PEP's phosphate is an oxygen ester, not a phosphoamide.",
       why_cn: "教材解释道，PEP酯化的磷酸键阻止了能量更低、更稳定的酮式的形成；水解后分子得以松弛为酮式，这部分互变异构能量叠加在普通磷酸键水解能量之上。PEP不含硫（那是第4类硫酯的机制），教材也没有比较质子数，且PEP的磷酸是氧酯而非磷酰胺。"
     },
@@ -344,6 +385,12 @@ window.BIOCHEM.topics.push(
         "Glucose-6-phosphate, at −13.8 kJ·mol⁻¹"
       ],
       answer: 2,
+      optionRefs: { 3: "6-1-1" },
+      optionNotes: {
+        0: { en: "ATP sits in the MIDDLE of Tab. 6.1, and that is the table's whole point: everything above it can donate a phosphate group, everything below it can only accept one. Its −30.5 kJ·mol⁻¹ is the cell's energy quantum.", cn: "ATP 位于表 6.1 的中间，而这正是整张表的用意：排在它上面的都能给出磷酸基，排在它下面的只能接受。它的 −30.5 kJ·mol⁻¹ 就是细胞的能量「量子」。" },
+        1: { en: "This is the other end of the table — its least negative entry, at the very bottom. Sitting below ATP, its organic residue can only ACCEPT a phosphate group, never donate one.", cn: "这是表格的另一端——负值最小的一项，排在最底下。位于 ATP 之下，它的有机残基只能接受磷酸基，绝不会给出。" },
+        3: { en: "−13.8 kJ·mol⁻¹ is near the bottom of the table, on the acceptor side; it is the same magnitude that appears as the +13.8 kJ·mol⁻¹ cost of phosphorylating glucose in the coupling example.", cn: "−13.8 kJ·mol⁻¹ 靠近表格底部，属于受体一侧；它和偶联例子里葡萄糖磷酸化那 +13.8 kJ·mol⁻¹ 的开销是同一个数值。" }
+      },
       why_en: "Phosphoenolpyruvate heads Tab. 6.1 at −61.9 kJ·mol⁻¹, the most negative (highest-energy) value in the table — consistent with its being singled out as an especially high-energy enol phosphate in the running text. ATP sits roughly in the middle at −30.5; glucose-6-phosphate and 1-glycerol-3-phosphate sit near the bottom, among the lowest-energy, acceptor-side compounds.",
       why_cn: "磷酸烯醇丙酮酸在表6.1中位居首位，为-61.9 kJ·mol⁻¹，是表中负值最大（能量最高）的数值——这与正文中将其点名为特别高能的烯醇磷酸酯相一致。ATP大致居中，为-30.5；葡萄糖-6-磷酸和1-甘油-3-磷酸则位于表格靠后的位置，属于能量最低、位于受体一侧的化合物。"
     },
@@ -352,12 +399,18 @@ window.BIOCHEM.topics.push(
       q_en: "What structural feature specifically explains why the thioester bond in acetyl-CoA is high-energy?",
       q_cn: "乙酰辅酶A中的硫酯键为什么是高能键？其结构原因specifically是什么？",
       options: [
-        "The sulfur atom forms an unusually strong double bond to the carbonyl carbon",
-        "The acyl group carries an extra dissociable proton compared with an O-ester",
-        "Coenzyme A itself is intrinsically radioactive, storing nuclear energy",
+        "The sulfur atom forms an unusually strong double bond to the carbonyl carbon, and hydrolysis sets that stored energy free",
+        "The acyl group is locked out of the more stable keto form until the thioester bond is finally cleaved",
+        "Coenzyme A carries a polyphosphate chain whose like charges repel one another, exactly as they do in ATP",
         "The sulfur atom prevents the mesomerism (resonance delocalisation) that is normal for an ordinary O-ester bond"
       ],
       answer: 3,
+      optionRefs: { 0: "6-1-2-1", 2: "6-1-2-1" },
+      optionNotes: {
+        0: { en: "High-energy never means a strong bond in this book; it means a molecule held in an unstable state that cleaving one bond relieves.", cn: "在本书里「高能」从来不是指键强，而是指分子被卡在不稳定状态，断掉一个键正好解除这种不稳定。" },
+        1: { en: "Blocked tautomerisation to the keto form is the type-3 enol-phosphate mechanism, the reason phosphoenolpyruvate heads Tab. 6.1 — not the reason a thioester is high-energy.", cn: "被阻断的酮式互变异构是第 3 类 enol phosphate 的机制，也是 phosphoenolpyruvate 高居表 6.1 之首的原因——不是 thioester 高能的原因。" },
+        2: { en: "Charge repulsion along a polyphosphate chain is the type-1 anhydride mechanism of ATP and ADP; the thioester bond is a C-S bond, and its energy comes from blocked resonance.", cn: "多磷酸链上的电荷互斥是 ATP、ADP 所属第 1 类酸酐的机制；thioester 是 C-S 键，能量来自共振被阻断。" }
+      },
       why_en: "The book states plainly that the sulfur atom in a thioester prevents the mesomerism that is common in O-ester bonds — without that resonance delocalisation, more free energy is retained in the bond, which is released on hydrolysis. The other three options are not mechanisms the book describes.",
       why_cn: "教材明确指出，硫酯中的硫原子阻止了O-酯键中常见的共振（离域）——由于缺少这种离域，键中保留了更多自由能，水解时得以释放。其余三个选项都不是教材描述的机制。"
     },
@@ -427,11 +480,17 @@ window.BIOCHEM.topics.push(
       q_cn: "教材给出了哪三点理由，说明分解代谢和合成代谢通过许多酶催化的小步骤逐步进行是「经济的」？",
       options: [
         "Quantized energy doses; shared metabolites replenishable from multiple sources; regulatability via distinct enzymes/compartments",
-        "Faster reaction rates; lower enzyme cost; reduced need for cofactors",
-        "Avoiding heat production; preventing entropy increase; keeping the system in true static equilibrium",
-        "Simplifying textbook diagrams; matching the citrate cycle's own step count; historical convention only"
+        "Faster overall reaction rates; fewer enzymes needed per pathway; and a smaller demand for coenzymes at each step",
+        "Energy released in one large burst; each metabolite confined to a single pathway; the same enzymes used in both directions",
+        "Avoiding heat production altogether; holding the cell at a true static equilibrium; keeping every intermediate at one fixed concentration"
       ],
       answer: 0,
+      optionRefs: { 3: "6-1" },
+      optionNotes: {
+        1: { en: "Speed and enzyme economy are not among the three reasons. The book's are: energy in doses matching single steps, metabolites shared between pathways, and regulatability.", cn: "速度和「省酶」都不在这三条理由里。教材给的是：能量按单个步骤分成小份、代谢物在多条途径之间共享、以及整个代谢可被调控。" },
+        2: { en: "Each clause is the exact negation of one of the three reasons: energy is quantized into step-sized doses, intermediates are shared between routes, and catabolism and anabolism run on different enzymes in different compartments.", cn: "三个分句正好逐条否定了那三条理由：能量被「量子化」成与单步匹配的小份、中间产物在多条路线之间共用、分解与合成代谢使用不同的酶并分处不同区室。" },
+        3: { en: "Heat is where the chapter's energy flow ENDS, not something metabolism is built to avoid, and the cell's equilibrium is explicitly dynamic or steady-state, never static.", cn: "热是本章能流图的终点，而不是代谢要设法避免的东西；而且细胞的平衡教材明说是动态的、稳态的，绝不是静态平衡。" }
+      },
       why_en: "The book explicitly lists three reasons: (a) production/consumption of Gibbs energy is effectively quantized, matching individual reaction steps; (b) metabolites can be drawn from or replenish several pathways, keeping steady-state pool concentrations from varied sources; (c) such segmented metabolism is regulatable, further aided by catabolism/anabolism using different enzymes and cell compartments. None of the other options are reasons the book gives.",
       why_cn: "教材明确列出三点理由：（a）Gibbs自由能的产生/消耗实际上是量子化的，与单个反应步骤相匹配；（b）代谢物可被多条途径抽用或补充，从不同来源维持稳态库浓度；（c）这种分割的代谢是可调控的，且分解/合成代谢使用不同的酶和细胞区室进一步助益于此。其余选项都不是教材给出的理由。"
     },
@@ -440,12 +499,17 @@ window.BIOCHEM.topics.push(
       q_en: "In Obr. 6.2's Phase II, where does glycerol (from fat breakdown) join the main hexose/pentose route toward acetyl-CoA?",
       q_cn: "在图6.2第Ⅱ阶段中，甘油（来自脂肪分解）在何处汇入通向乙酰辅酶A的己糖/戊糖主路线？",
       options: [
-        "At glyceraldehyde-3-phosphate, the first intermediate in the shared sequence",
+        "At glyceraldehyde-3-phosphate, the first intermediate of the shared hexose route",
         "At phosphoenolpyruvate (PEP), one step later than glyceraldehyde-3-phosphate",
-        "Directly at pyruvate, bypassing both glyceraldehyde-3-phosphate and PEP",
-        "Directly at acetyl-CoA, bypassing the entire shared sequence"
+        "Directly at pyruvate, the last intermediate before the acetyl-CoA hub",
+        "Directly at acetyl-CoA, the hub that the whole of Phase II converges on"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The obvious reading of the figure, and the one a zoomed re-check overturned: the connector line ends one box later, at PEP. Glyceraldehyde-3-phosphate is where the hexose and pentose route itself starts.", cn: "这是看图时最容易得出的答案，也正是放大核对后被推翻的那个：连接线终止在再往后一格的 PEP。甘油醛-3-磷酸是己糖/戊糖路线自己的起点。" },
+        2: { en: "Pyruvate closes the shared sequence, and in the figure it is the fatty acids, not glycerol, that run more directly toward that end of the route.", cn: "丙酮酸是这条共用序列的末端；图中更直接奔向这一端的是脂肪酸，不是甘油。" },
+        3: { en: "Acetyl-CoA is indeed the hub Phase II converges on, but everything reaches it through pyruvate; glycerol joins the route much earlier, at PEP.", cn: "乙酰辅酶 A 确实是第 II 阶段汇聚的枢纽，但所有支路都要经丙酮酸才到达；甘油汇入的位置要早得多，在 PEP。" }
+      },
       why_en: "The diagram's connector line for glycerol terminates at PHOSPHOENOLPYRUVATE, not at glyceraldehyde-3-phosphate — a detail easy to misjudge without zooming in, since the two boxes sit close together in the figure.",
       why_cn: "图中甘油的连接线终止于磷酸烯醇丙酮酸，而不是甘油醛-3-磷酸——由于图中这两个方框位置相邻，若不放大查看很容易判断错误。"
     },

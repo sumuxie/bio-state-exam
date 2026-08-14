@@ -61,8 +61,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the book's opening definition, what single physicochemical property is used to identify a compound as a lipid, given that lipids are too structurally/functionally diverse for an exact definition?",
       q_cn: "根据教材开篇的定义，鉴于脂质在结构和功能上过于多样而无法给出精确定义，教材用哪一项理化性质来判断某化合物是否属于脂质？",
-      options: ["Being nonpolar and near-insoluble in water but soluble in nonpolar solvents (chloroform, ethanol, ether)", "Containing a fatty acid ester bond", "Having a steroid ring system", "Being synthesized only in the liver"],
+      options: ["Being nonpolar and near-insoluble in water but soluble in nonpolar solvents (chloroform, ethanol, ether)", "Containing at least one fatty acid esterified to an alcohol, which is what Tab. 8.1 lists for the simple lipids", "Carrying the steran four-fused-ring skeleton shared by the steroids of Tab. 8.1's derived group", "Having a carbon skeleton derived from fatty acids, as the book says of the derived lipids"],
       answer: 0,
+      optionRefs: { 1: "8-2-2-1", 2: "8-2-4-3", 3: "L-10-1-1" },
+      optionNotes: {
+        1: { en: "True of the simple lipids only: acylglycerols and waxes are esters of a fatty acid with an alcohol. Tab. 8.1's derived lipids (steroids, carotenoids, lipophilic vitamins) contain no such ester, so an ester bond cannot be the general test.", cn: "这只对 simple lipids 成立：acylglycerol 和 wax 确实是脂肪酸与醇的酯。但 Tab. 8.1 的 derived lipids（steroid、carotenoid、脂溶性维生素）根本没有这种酯键，所以酯键不能作为通用判据。" },
+        2: { en: "The steran skeleton identifies one class inside the derived group, the steroids; the carotenoids and prostaglandins in that same group have no ring system at all.", cn: "steran 骨架只能认出 derived 组里的一类——steroid；同一组的 carotenoid 和 prostaglandin 根本没有环系。" },
+        3: { en: "The book says this of the derived lipids only, and only as a tendency ('often'). It is a remark about where that group's carbon comes from, not a property you can test a compound for.", cn: "这句话教材只对 derived lipids 讲，而且只说「常常」如此。它讲的是这一组的碳骨架来源，不是一个可以拿来检验化合物的性质。" }
+      },
       why_en: "The book's general definition of a lipid rests on solubility behavior — nonpolar, nearly or completely insoluble in water, but soluble in other nonpolar/organic solvents such as chloroform, ethanol, or ether — precisely because no single structural feature (like an ester bond or a ring system) covers every lipid class in Tab. 8.1.",
       why_cn: "教材对脂质的一般定义依据的是溶解性——非极性、几乎或完全不溶于水，但溶于氯仿、乙醇、乙醚等非极性/有机溶剂——因为没有任何单一结构特征（如酯键或环状骨架）能涵盖表8.1中的所有脂质类别。"
     },
@@ -72,11 +78,17 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材的三分类法，下列哪一项正确匹配了脂质结构类别与其区别特征？",
       options: [
         "Simple lipids = esters of fatty acids + alcohols only; complex lipids = the same plus one additional component; derived lipids = everything else, often fatty-acid-derived",
-        "Simple lipids = contain sialic acid; complex lipids = contain a steroid ring; derived lipids = contain phosphate",
-        "Simple lipids = only waxes; complex lipids = only acylglycerols; derived lipids = only vitamins",
-        "Simple lipids and complex lipids are functionally identical, distinguished only by molecular weight"
+        "Simple lipids = built on sphingosine; complex lipids = built on glycerol; derived lipids = built on the steran skeleton, so the backbone alcohol decides the group",
+        "Simple lipids = acylglycerols and waxes; complex lipids = prostaglandins and steroids; derived lipids = the five phosphate- or sugar-bearing subgroups",
+        "Simple lipids = the classes whose hydrolysis-product column Tab. 8.1 leaves blank; complex lipids = those yielding glycerol; derived lipids = those yielding sphingosine and sialic acid"
       ],
       answer: 0,
+      optionRefs: { 1: "8-2-3-3", 2: "8-2-4-1", 3: "L-10-2-1" },
+      optionNotes: {
+        1: { en: "Sphingosine is the backbone of three COMPLEX classes (sphingomyelins, cerebrosides, gangliosides), never of a simple lipid; and glycerol carries both simple acylglycerols and complex phosphoacylglycerols, so the backbone alcohol does not set the group.", cn: "sphingosine 是三类 complex lipid（sphingomyelin、cerebroside、ganglioside）的骨架，绝不属于 simple lipid；而 glycerol 既撑着 simple 的 acylglycerol，也撑着 complex 的 phosphoacylglycerol——所以骨架醇并不决定分类。" },
+        2: { en: "Only the first third is right. Prostaglandins and steroids are the book's examples of DERIVED lipids, and the five subgroups that carry a sugar or a phosphate are exactly what makes a lipid COMPLEX; the two groups have been swapped.", cn: "只有第一段是对的。Prostaglandin 和 steroid 恰恰是教材举的 derived lipid 例子，而带糖或带磷酸的那五个亚类正是 complex 的定义——这两组被对调了。" },
+        3: { en: "Tab. 8.1 leaves the hydrolysis column blank for the DERIVED lipids, not the simple ones; glycerol is released by both simple and complex classes, and sphingosine only by complex ones.", cn: "Tab. 8.1 留空水解产物一栏的是 derived lipids，不是 simple；glycerol 在 simple 和 complex 两类水解时都会出现，而 sphingosine 只出现在 complex 这一边。" }
+      },
       why_en: "The book defines simple lipids as esters of fatty acids and alcohols (acylglycerols, waxes), complex lipids as containing an additional component beyond that (splitting into 5 subgroups: glycoacylglycerols, phosphoacylglycerols, sphingomyelins, cerebrosides, gangliosides), and derived lipids as everything else of a lipid nature, often with a fatty-acid-derived carbon skeleton (prostaglandins, steroids, carotenoids, lipophilic vitamins).",
       why_cn: "教材将简单脂质定义为脂肪酸与醇的酯（酰基甘油、蜡），复合脂质在此基础上还含有其他组分（分为5个亚类：糖酰基甘油、磷酸酰基甘油、鞘磷脂、脑苷脂、神经节苷脂），衍生脂质则是其余所有具脂质性质的化合物，其碳骨架常来源于脂肪酸（前列腺素、类固醇、类胡萝卜素、脂溶性维生素）。"
     },
@@ -149,6 +161,12 @@ window.BIOCHEM.topics.push(
       q_cn: "根据表8.2，芥酸（kyselina eruková）有多少个碳原子和双键？其n-(ω)系列是什么？",
       options: ["22 carbons, 1 double bond, n-9", "18 carbons, 1 double bond, n-9", "22 carbons, 2 double bonds, n-6", "20 carbons, 1 double bond, n-7"],
       answer: 0,
+      optionRefs: { 1: "8-2-1-2", 3: "L-10-1-1" },
+      optionNotes: {
+        1: { en: "18:1 n-9 is oleic acid, the other n-9 entry in Tab. 8.2. Erucic acid sits in the same series but is four carbons longer, with the double bond at delta-13 rather than delta-9.", cn: "18:1 n-9 是 oleic acid，Tab. 8.2 里另一个 n-9 条目。Erucic acid 属于同一 series，但碳链长四个碳，双键在 delta-13 而不是 delta-9。" },
+        2: { en: "No 22:2 acid appears in Tab. 8.2 at all; the table's other C22 entry is klupanodonic acid (DHA), 22:6 n-3. The n-6 series in the table is linoleic, gamma-linolenic and arachidonic.", cn: "Tab. 8.2 里根本没有 22:2 这种酸；表中另一个 C22 条目是 klupanodonic acid（DHA），22:6 n-3。表里的 n-6 series 是 linoleic、gamma-linolenic 和 arachidonic。" },
+        3: { en: "The table's C20 acids are arachidic (20:0) and arachidonic (20:4 n-6), neither of them 20:1; and its only n-7 acid is palmitoleic, 16:1 delta-9.", cn: "表里的 C20 只有 arachidic (20:0) 和 arachidonic (20:4 n-6)，没有 20:1；而唯一的 n-7 是 palmitoleic，16:1 delta-9。" }
+      },
       why_en: "Tab. 8.2 lists erucic acid as 22:1 (22 carbons, 1 double bond), Δ13, series n-9 — distinguishing it from oleic acid (18:1, also n-9) and from the diunsaturated/n-6 or n-7 acids listed elsewhere in the table.",
       why_cn: "表8.2将芥酸列为22:1（22个碳原子，1个双键），Δ13，系列n-9——与油酸（18:1，同为n-9）以及表中其他二不饱和/n-6或n-7脂肪酸相区分。"
     },
@@ -156,8 +174,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which natural-occurrence pattern does the book state for the double bonds of polyunsaturated fatty acids?",
       q_cn: "对于多不饱和脂肪酸的双键，教材指出了怎样的天然分布规律？",
-      options: ["They are conjugated (directly adjacent) and clustered near the carboxyl end", "They are isolated by a CH2 group and positioned roughly symmetrically near the middle of the molecule, mostly cis", "They alternate strictly between cis and trans", "They only occur in even-numbered positions counted from the methyl end"],
+      options: ["They are conjugated, each double bond directly adjacent to the next, and clustered towards the carboxyl end", "They are isolated by a CH2 group and positioned roughly symmetrically near the middle of the molecule, mostly cis", "They alternate strictly between cis and trans along the chain, giving every polyunsaturated acid a fixed geometry", "They occur only at even-numbered positions counted from the methyl end, which is what the n-(omega) number records"],
       answer: 1,
+      optionRefs: { 0: "8-2-1-2", 2: "L-10-1-1", 3: "8-2-1-2" },
+      optionNotes: {
+        0: { en: "Isolated by a CH2 group is the exact opposite of conjugated, and the book places the double bonds near the MIDDLE of the chain. A double bond close to the carboxyl end is discussed only as the case that lowers melting point and stability the most.", cn: "「被一个 CH2 隔开」正好是 conjugated 的反面，而且教材说双键大致位于分子中部。靠近 carboxyl 端的双键，教材只在「最能降低熔点和化学稳定性」这一点上提到过。" },
+        2: { en: "The book says the double bonds are MOSTLY cis. Cis versus trans is one of its three classification criteria for a fatty acid, not a rule that the configuration alternates along the chain.", cn: "教材说双键「大多是 cis」。cis / trans 是教材给脂肪酸分类的三条标准之一，不是说构型沿碳链交替出现。" },
+        3: { en: "n- (older omega-) simply counts a double bond's position from the methyl end and is what names the series n-3, n-6, n-9. It carries no parity rule: alpha-linolenic acid is n-3, an odd position.", cn: "n-（旧称 omega-）只是从甲基端数双键的位置，用来命名 n-3、n-6、n-9 这些 series，跟奇偶无关：alpha-linolenic acid 就是 n-3，奇数位。" }
+      },
       why_en: "The book states that when 2 or more double bonds are present, they are isolated by a CH2 group and positioned more or less symmetrically near the center of the molecule, and that double bonds are mostly cis — not conjugated, not strictly alternating cis/trans, and not defined by parity from the methyl end.",
       why_cn: "教材指出，当含有2个或以上双键时，双键被CH2基团隔开，大致对称地位于分子中部，且双键大多为顺式——并非共轭、并非严格顺反交替，也不是由从甲基端计数的奇偶性决定。"
     },
@@ -226,8 +250,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which two fatty acids does the book name as essential for the mammalian diet?",
       q_cn: "教材指出哪两种脂肪酸是哺乳动物饮食中的必需脂肪酸？",
-      options: ["Linoleic acid (18:2n-6) and α-linolenic acid (18:3n-3)", "Palmitic acid (16:0) and stearic acid (18:0)", "Oleic acid (18:1n-9) and arachidonic acid (20:4n-6)", "Erucic acid (22:1n-9) and DHA (22:6n-3)"],
+      options: ["Linoleic acid (18:2n-6) and α-linolenic acid (18:3n-3)", "Palmitic acid (16:0) and gamma-linolenic acid (18:3n-6)", "Oleic acid (18:1n-9) and arachidonic acid (20:4n-6)", "Erucic acid (22:1n-9) and timnodonic acid, EPA (20:5n-3)"],
       answer: 0,
+      optionRefs: { 1: "8-3-4", 2: "L-10-3-1", 3: "8-2-1-1" },
+      optionNotes: {
+        1: { en: "Palmitic acid is the end product mammals make themselves, and gamma-linolenic acid (18:3n-6) is built from linoleic acid by the desaturase system. Being in the n-6 series does not make an acid essential; being the parent of that series does.", cn: "Palmitic acid 是哺乳动物自己合成的终产物，gamma-linolenic acid (18:3n-6) 则由 linoleic acid 经 desaturase 系统做出来。属于 n-6 series 不等于必需，必需的是这个 series 的母体酸。" },
+        2: { en: "Both are exactly what the book says mammals CAN make: oleic acid by desaturation, arachidonic acid (20:4n-6) by elongation and desaturation of linoleic acid.", cn: "这两个恰恰是教材说哺乳动物「能自己做」的：oleic acid 由去饱和得到，arachidonic acid (20:4n-6) 由 linoleic acid 经 elongase 和 desaturase 加工而来。" },
+        3: { en: "EPA (20:5n-3) is derived from alpha-linolenic acid by elongases and desaturases, and erucic acid belongs to the n-9 series, which mammals build for themselves. Neither has to come from the diet.", cn: "EPA (20:5n-3) 是由 alpha-linolenic acid 经 elongase 和 desaturase 延长脱氢而来，erucic acid 属于 n-9 series，哺乳动物自己就能造。两者都不必从食物摄取。" }
+      },
       why_en: "The book states that mammalian diet must contain linoleic acid (9,12 C18:2n-6) and α-linolenic acid (9,12,15 C18:3n-3) — these are the essential fatty acids from which mammals synthesize longer, more unsaturated fatty acids using elongases and desaturases. The other options are either saturated acids or fatty acids the book describes as synthesizable, not dietary-essential.",
       why_cn: "教材指出，哺乳动物的食物中必须含有亚油酸（9,12 C18:2n-6）和α-亚麻酸（9,12,15 C18:3n-3）——哺乳动物利用延长酶和去饱和酶由这两种必需脂肪酸合成更长、不饱和度更高的脂肪酸。其余选项要么是饱和脂肪酸，要么是教材中可自行合成而非饮食必需的脂肪酸。"
     },
@@ -235,8 +265,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the book, how does the position of a double bond relative to the carboxyl group affect a lipid's chemical stability and melting point?",
       q_cn: "根据教材，双键相对于羧基的位置如何影响脂质的化学稳定性和熔点？",
-      options: ["No effect — only the total number of double bonds matters", "The closer the double bond is to the carboxyl group, the MORE it lowers chemical stability and melting point", "The closer the double bond is to the carboxyl group, the more it RAISES chemical stability and melting point", "Position only matters for trans double bonds, not cis"],
+      options: ["No effect from position - only the total number of double bonds in the chain changes stability and melting point", "The closer the double bond is to the carboxyl group, the MORE it lowers chemical stability and melting point", "The closer the double bond is to the carboxyl group, the more it RAISES chemical stability and melting point", "Position matters only for trans double bonds; a cis double bond lowers the melting point wherever it sits"],
       answer: 1,
+      optionRefs: { 2: "L-10-1-1", 3: "8-2-1-1" },
+      optionNotes: {
+        0: { en: "The number of double bonds does matter, but the book adds position as a separate, further effect on top of it: unsaturation lowers stability and melting point, and a bond near the carboxyl lowers them more still.", cn: "双键数目确实有影响，但教材在此之外还加了一条独立的位置效应：不饱和本身降低稳定性和熔点，而靠近 carboxyl 的双键把它们降得更低。" },
+        2: { en: "The direction is reversed. It is the SATURATED fatty acids that raise chemical stability and melting point; every double bond lowers both, and the closer to the carboxyl group, the more.", cn: "方向反了。抬高化学稳定性和熔点的是 saturated fatty acid；每个双键都会把两者拉低，而且离 carboxyl 越近拉得越低。" },
+        3: { en: "Cis versus trans is one of the book's three ways of classifying a fatty acid's chain, not a condition attached to the position effect. The position rule is stated for the double bond as such.", cn: "cis / trans 是教材给脂肪酸碳链分类的三条标准之一，并不是位置效应的附加条件。位置这条规律，教材是对双键本身讲的。" }
+      },
       why_en: "The book's third structure-property bullet states explicitly that the closer a double bond sits to the carboxyl group, the more it lowers chemical stability and melting point — this is in addition to, not instead of, the general effect that any unsaturation lowers stability/melting point relative to saturated fatty acids.",
       why_cn: "教材关于结构-性质关系的第三条明确指出，双键离羧基越近，对化学稳定性和熔点的降低作用越大——这是在'任何不饱和都会比饱和脂肪酸降低稳定性/熔点'这一普遍规律之外的额外效应，而非替代它。"
     },
@@ -306,8 +342,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Why does the book classify acylglycerols as 'neutral lipids'?",
       q_cn: "教材为何将酰基甘油归类为'中性脂质'？",
-      options: ["Because they contain no ionizable functional group in the molecule", "Because they have a neutral (7) pH in solution", "Because they carry equal numbers of positive and negative charges", "Because they are chemically inert and undergo no reactions at all"],
+      options: ["Because they contain no ionizable functional group in the molecule", "Because an aqueous suspension of them has a pH of exactly 7", "Because they carry equal numbers of positive and negative charges", "Because they resist hydrolysis and are attacked by no enzyme of the body"],
       answer: 0,
+      optionRefs: { 2: "8-2-3-2", 3: "8-2-2-2" },
+      optionNotes: {
+        1: { en: "Neutral here is about charge, not about pH. The book's criterion is the absence of any ionizable group, which is also why the class divides only into neutral fats (solid) and neutral oils (liquid).", cn: "这里的 neutral 讲的是电荷，不是 pH。教材的判据是分子里没有任何可电离基团，也正因如此这一类只按室温状态分成 neutral fat（固态）和 neutral oil（液态）。" },
+        2: { en: "That describes a zwitterion. Among lipids it fits the phosphoacylglycerols, whose phosphate plus choline or ethanolamine head group carries charge of both signs; an acylglycerol carries no charge at all.", cn: "这描述的是 zwitterion。在脂质里它对应 phosphoacylglycerol——磷酸加 choline 或 ethanolamine 头基，正负电荷都有；acylglycerol 则一点电荷都没有。" },
+        3: { en: "Resistance to hydrolysis is what the book says about waxes, which lipases do not attack. Acylglycerols are hydrolysed by lipases, and hydrolysis is in fact the only reaction they undergo.", cn: "对水解稳定、脂肪酶不作用，那是教材讲 wax 的性质。Acylglycerol 会被 lipase 水解，而且水解正是它们唯一能发生的反应。" }
+      },
       why_en: "The book states that acylglycerols contain no ionizable functional group in the molecule, which is precisely why they are classed as neutral lipids (further subdivided into solid neutral fats or liquid neutral oils by room-temperature physical state) — not because of solution pH, charge balance, or total unreactivity (they do hydrolyze, via lipases).",
       why_cn: "教材指出，酰基甘油分子中不含可电离的官能团，这正是它们被归类为中性脂质的原因（再依室温下的物理状态细分为固态中性脂肪或液态中性油）——而非因为溶液pH值、电荷平衡，或完全不发生反应（它们确实可被脂肪酶水解）。"
     },
@@ -317,11 +359,17 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，下列哪一项正确列出了三酰基甘油在动物细胞中的三项功能？",
       options: [
         "Fat depot for excess dietary carbon/energy; fatty-acid transport via chylomicrons; physical protection/thermal insulation of organs",
-        "Genetic information storage; enzyme catalysis; cell signaling",
-        "Structural component of the cell wall; oxygen transport; muscle contraction",
-        "Neurotransmitter synthesis; blood clotting; immune recognition"
+        "Structural component of the lipid bilayer of membranes; recognition marker on the cell surface; precursor of steroid hormones and bile acids",
+        "Protective coat against desiccation on leaves and fruit; reinforcement of cell and organ surfaces; end metabolite",
+        "Precursor of regulatory substances and hormones; lipophilic vitamins; light-absorbing pigment of plant tissue"
       ],
       answer: 0,
+      optionRefs: { 1: "8-5-1", 2: "8-2-2-2", 3: "8-2-4-1" },
+      optionNotes: {
+        1: { en: "These are the jobs of the complex lipids and of cholesterol: phospholipids build the bilayer, glycolipids sit on the cell surface, and the sterols give rise to steroid hormones. Triacylglycerols do none of the three.", cn: "这三件事是 complex lipid 和 cholesterol 干的：phospholipid 搭双层，glycolipid 摆在细胞表面，sterol 变成 steroid hormone。Triacylglycerol 一件都不做。" },
+        2: { en: "This is the book's list of wax functions, and it depends on waxes being water-insoluble and hydrolysis-resistant. Triacylglycerols are hydrolysed by lipases and cannot serve as a surface barrier.", cn: "这是教材列的 wax 的功能，靠的是 wax 不溶于水、对水解稳定。Triacylglycerol 会被 lipase 水解，做不了表面屏障。" },
+        3: { en: "These belong to the derived lipids: prostaglandins and steroids as regulators, the lipophilic vitamins, and the carotenoids as pigments. The book counts them as lipid functions, but not as functions of triacylglycerols.", cn: "这些属于 derived lipids：prostaglandin 和 steroid 作调节物、脂溶性维生素、carotenoid 作色素。教材确实把它们算作脂质的功能，但不是 triacylglycerol 的功能。" }
+      },
       why_en: "The book names exactly three TAG functions in animal cells: (1) the fat depot in adipose tissue storing excess dietary carbon/energy, (2) transport/distribution of dietary fatty acids via chylomicron lipoprotein particles through lymph and blood, and (3) physical protection and thermal insulation of organs such as kidneys and intestines.",
       why_cn: "教材列出了三酰基甘油在动物细胞中的三项功能：(1)脂肪组织中的脂肪储备，储存食物中过量的碳/能量；(2)以乳糜微粒脂蛋白颗粒形式，通过淋巴和血液运输/分配食物中的脂肪酸；(3)为肾脏、肠道等器官提供物理保护和保温隔热。"
     },
@@ -388,8 +436,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Why are waxes indigestible for animals, per the book?",
       q_cn: "根据教材，蜡为何不能被动物消化？",
-      options: ["Because they are not attacked by lipases (though they ARE cleavable by cerases, specific plant/microbial hydrolases)", "Because they contain sialic acid, which animals cannot process", "Because their melting point is too high for enzymes to act on them", "Because they are chemically identical to cellulose"],
+      options: ["Because they are not attacked by lipases (though they ARE cleavable by cerases, specific plant/microbial hydrolases)", "Because they carry a terminal sialic acid, and no animal hydrolase can remove it before the ester is reached", "Because their melting point of 50-85 C keeps them solid at body temperature, out of reach of any enzyme", "Because they are esters of a higher alcohol rather than of glycerol, and an ester of that kind cannot be hydrolysed at all"],
       answer: 0,
+      optionRefs: { 1: "8-2-3-4", 2: "L-10-1-1", 3: "8-2-2-1" },
+      optionNotes: {
+        1: { en: "Sialic acid belongs to the gangliosides, which are complex lipids; a wax is nothing but a higher fatty acid esterified to a higher alcohol and has no sugar of any kind on it.", cn: "Sialic acid 是 ganglioside 的东西，属于 complex lipid；wax 只是高级脂肪酸与高级醇成的酯，上面根本没有任何糖。" },
+        2: { en: "The 50-85 C melting range is real and the book gives it, but it is not the reason offered for indigestibility. Cerases cleave the same solid wax, which shows the barrier is enzyme specificity, not physical state.", cn: "50-85 C 这个熔点范围教材确实给了，但它不是教材解释「不可消化」的理由。Cerase 照样能切开同样是固态的 wax，可见障碍在酶的专一性，不在物理状态。" },
+        3: { en: "The first half is right - the alcohol is a higher one such as cetyl, ceryl or myricyl alcohol, not glycerol - but the conclusion is not: cerases, the specific hydrolases of plants and microorganisms, do cleave that ester.", cn: "前半句没错——wax 里的醇是 cetyl、ceryl、myricyl 这类高级醇，不是 glycerol——但结论不对：植物和微生物特有的水解酶 cerase 就能切开这种酯。" }
+      },
       why_en: "The book states waxes are indigestible for animals specifically because lipases do not attack them; however they are cleavable by cerases, hydrolases specific to plants and microorganisms — melting point and cellulose-likeness are not the book's stated reasons.",
       why_cn: "教材指出，蜡对动物不可消化，具体原因是脂肪酶不能作用于它们；但蜡可被植物和微生物特有的水解酶——酯酶（cerases）分解。熔点或与纤维素的相似性并非教材给出的原因。"
     },
@@ -397,8 +451,14 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is beeswax, per the book's own example, and what are its two components?",
       q_cn: "根据教材给出的例子，蜂蜡是什么？它由哪两种成分组成？",
-      options: ["Myricyl palmitate — myricyl alcohol (C30) esterified with palmitic acid (C16)", "Cetyl oleate — cetyl alcohol esterified with oleic acid", "Cerotic acid esterified with cerotic alcohol", "A triacylglycerol of three palmitic acid chains"],
+      options: ["Myricyl palmitate — myricyl alcohol (C30) esterified with palmitic acid (C16)", "Cetyl palmitate - cetyl alcohol esterified with the C16 acyl group of palmitic acid", "Ceryl cerotate - ceryl alcohol (C22) esterified with cerotic or wax acid (C26)", "Tripalmitin - glycerol esterified with three chains of palmitic acid (C16)"],
       answer: 0,
+      optionRefs: { 3: "8-2-2-1" },
+      optionNotes: {
+        1: { en: "Cetyl alcohol is on the book's list of wax alcohols, so this is a plausible wax, but the book's beeswax formula CH3(CH2)28CH2-O-CO-(CH2)14CH3 begins with a C30 chain: the alcohol is myricyl, not cetyl.", cn: "Cetyl alcohol 确实在教材列的 wax 醇里，所以这是个说得通的 wax，但教材给蜂蜡的结构式 CH3(CH2)28CH2-O-CO-(CH2)14CH3 开头是 C30 链：那个醇是 myricyl，不是 cetyl。" },
+        2: { en: "Both components are on the book's lists - ceryl alcohol C22 among the alcohols, cerotic (wax) acid C26 among the acids - so the pair is a chemically sensible wax, just not the example the book names for beeswax.", cn: "两个组分都在教材的清单上——醇里有 C22 的 ceryl alcohol，酸里有 C26 的 cerotic（wax）acid——所以这个组合化学上讲得通，只是教材说蜂蜡时举的不是它。" },
+        3: { en: "Three fatty acids on a glycerol backbone is a triacylglycerol, the other simple-lipid class. A wax esterifies its fatty acid to a HIGHER alcohol, which is exactly what separates the two classes.", cn: "三条脂肪酸挂在 glycerol 上，那是 triacylglycerol，是 simple lipid 的另一类。Wax 的脂肪酸接的是高级醇——这正是两类的分界。" }
+      },
       why_en: "The book names beeswax as myricylpalmitát, with the structural formula CH3(CH2)28CH2-O-CO-(CH2)14CH3 — a C30 myricyl-alcohol chain esterified to the C16 acyl group of palmitic acid, not any of the other combinations listed.",
       why_cn: "教材将蜂蜡命名为myricylpalmitát，其结构式为CH3(CH2)28CH2-O-CO-(CH2)14CH3——即C30蜂花醇链与棕榈酸的C16酰基形成的酯，而非其他选项中的组合。"
     },
