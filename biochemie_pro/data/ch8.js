@@ -2237,10 +2237,10 @@ window.BIOCHEM.topics.push(
         "Sphingomyelin; sphingomyelinase located in the Golgi apparatus"
       ],
       answer: 1,
-      optionRefs: { 0: "8-4-3", 1: "8-4-2-1", 3: "8-4-2-2" },
+      optionRefs: { 0: "8-4-3", 2: "8-4-2-1", 3: "8-4-2-2" },
       optionNotes: {
         0: { en: "Cholesterol is a derived lipid, and what the book says about it is the opposite of storage: as a rule it is not metabolised for energy at all, and it leaves the animal body only after conversion to bile acids.", cn: "Cholesterol 属于衍生脂类，而教材关于它的说法恰恰与储存相反：它一般根本不被代谢供能，离开动物体之前还必须先转化成胆汁酸。" },
-        1: { en: "Phospholipids are complex lipids and above all membrane components rather than a store. Phospholipases do take them apart, but in the cytoplasm, not in the nucleus.", cn: "Phospholipid 属于复合脂类，首先是膜的组分，而不是储备物质。Phospholipase 确实会把它们拆开，但地点是细胞质，不是细胞核。" },
+        2: { en: "Phospholipids are complex lipids and above all membrane components rather than a store. Phospholipases do take them apart, but in the cytoplasm, not in the nucleus.", cn: "Phospholipid 属于复合脂类，首先是膜的组分，而不是储备物质。Phospholipase 确实会把它们拆开，但地点是细胞质，不是细胞核。" },
         3: { en: "Sphingomyelin is a complex lipid too, and sphingomyelinase is one of the cytoplasmic hydrolases that dismantle the sphingolipids step by step — it cleaves the ceramide-phosphate bond.", cn: "Sphingomyelin 同样属于复合脂类，而 sphingomyelinase 是逐步拆解 sphingolipid 的那批细胞质水解酶之一——它切开 ceramide 与磷酸之间的键。" }
       },
       why_en: "The book identifies triacylglycerols as the main storage substance and states their degrading enzymes, lipases, are present in the cytoplasm. Cholesterol, phospholipids, and sphingomyelin belong to other lipid classes (derived and complex lipids) discussed in later subsections.",
@@ -3477,12 +3477,17 @@ window.BIOCHEM.topics.push(
       q_en: "How does the book characterize the permeability of real biological membranes?",
       q_cn: "教材如何描述真实生物膜的通透性？",
       options: [
-        "Completely impermeable, isolating cells fully from their environment",
-        "Freely permeable to any substance",
+        "Completely impermeable, isolating the cell entirely from its environment",
+        "Freely permeable, letting any substance through in either direction",
         "Selectively (semipermeable) permeable — some substances pass freely, others cannot",
-        "Permeable only to water and completely impermeable to everything else"
+        "Permeable to water alone, and completely impermeable to everything else that meets it"
       ],
       answer: 2,
+      optionNotes: {
+        0: { en: "The book names this extreme precisely in order to reject it: no fully impermeable membrane is found in nature, and a cell sealed off that completely could exchange neither matter nor energy with its surroundings.", cn: "教材提到这个极端，正是为了否定它：自然界中不存在完全不透的膜，而一个封闭到这种程度的细胞，既无法与环境交换物质，也无法交换能量。" },
+        1: { en: "The opposite extreme, rejected in the same sentence. A membrane that let everything through would partition nothing, and selectivity is what the whole of 8.5.3 is about.", cn: "另一个极端，教材在同一句话里一并否定。什么都放行的膜等于什么也没有分隔，而整个 8.5.3 讲的就是选择性。" },
+        3: { en: "Water does cross, and the book lists it among the things that pass — but so do lipophilic substances and some ions, so water is not the only case and the second half of this option is too strong.", cn: "水确实能通过，教材也把它列在能通过的东西里——但亲脂性物质和某些离子同样能通过，所以水不是唯一的例外，这个选项的后半句说得太满了。" }
+      },
       why_en: "The book explicitly rejects both extremes (fully impermeable, fully permeable) as not found in nature, stating biological membranes are selectively permeable — semipermeable.",
       why_cn: "教材明确否定了两种极端情形（完全不通透、完全通透）在自然界中的存在，指出生物膜是选择性通透的——即半透性的。"
     },
@@ -3491,12 +3496,18 @@ window.BIOCHEM.topics.push(
       q_en: "What defines passive transport, per the book, and what are its two sub-types?",
       q_cn: "根据教材，被动转运的定义是什么？它有哪两种子类型？",
       options: [
-        "Movement against the concentration gradient, requiring ATP; sub-types are primary and secondary",
+        "Movement against the concentration gradient at the cost of ATP or another exergonic reaction; its sub-types are primary and secondary transport",
         "Movement by diffusion down the concentration gradient, without energy expenditure; sub-types are simple and facilitated diffusion",
-        "Movement only through ion channels, always requiring a carrier protein",
-        "Movement of only macromolecules via vesicles; sub-types are endocytosis and exocytosis"
+        "Movement through ion channels only, which is why it always needs a carrier protein of some kind",
+        "Movement of macromolecules in vesicles; its sub-types are endocytosis and exocytosis, by direction"
       ],
       answer: 1,
+      optionRefs: { 0: "8-5-3-3", 2: "8-5-3-2", 3: "8-5-3-3" },
+      optionNotes: {
+        0: { en: "This describes ACTIVE transport, and the pair of sub-types is right for it — primary running on ATP or another exergonic reaction, secondary on a gradient built earlier. Passive transport is defined by the absence of exactly that energy cost.", cn: "这说的是主动运输，而且它的两个亚型也配对得对——primary 靠 ATP 或别的放能反应，secondary 靠先前建立的梯度。被动运输的定义恰恰是没有这笔能量开销。" },
+        2: { en: "Ion channels and ionophores are the specialised carriers of facilitated diffusion, which is only one of passive transport's two sub-types — and the definition of passive transport turns on the gradient, not on the route.", cn: "Ion channel 和 ionophore 是 facilitated diffusion 的专门载体，而后者只是被动运输两个亚型之一——况且被动运输的定义取决于梯度，而不是取决于走哪条路。" },
+        3: { en: "Endocytosis and exocytosis classify the transport of macromolecules and whole particles by direction, and that transport proceeds by local restructuring of the membrane rather than by diffusion at all.", cn: "Endocytosis 和 exocytosis 是按方向给大分子和整个颗粒的运输分类的，而那种运输靠的是膜的局部改建，根本不是扩散。" }
+      },
       why_en: "The book defines passive transport as diffusion from higher to lower concentration without energy expenditure, and distinguishes simple diffusion (no protein involvement) from facilitated/mediated diffusion (carrier-protein involvement, covered in the next node).",
       why_cn: "教材将被动转运定义为从浓度较高处到较低处的扩散、不消耗能量，并区分了简单扩散（无蛋白质参与）和易化/介导扩散（需要载体蛋白参与，见下一节）。"
     },
@@ -3566,6 +3577,11 @@ window.BIOCHEM.topics.push(
         "Irreversibility, non-specificity, and non-saturability"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Real enzyme concepts, but not the three the book names here. The three it gives all follow from one fact: the carrier has a binding site that fits one particular type of molecule.", cn: "这些都是真实的酶学概念，但不是教材在这里点名的那三个。它给的那三个都出自同一件事：载体有一个只与某一类分子相配的结合位点。" },
+        2: { en: "These are conditions that affect a rate rather than properties of the mechanism. The three the book names are what let facilitated diffusion be described by enzyme-kinetics equations at all.", cn: "这些是影响速率的条件，不是机制本身的性质。教材点名的那三个，才是让 facilitated diffusion 能够用酶动力学方程来描述的原因。" },
+        3: { en: "Each of the three has been turned into its negation. A carrier with a specific binding site is by definition specific, and a finite number of carriers is what makes the process saturable.", cn: "这三个都被改成了各自的反面。一个带专一结合位点的载体，按定义就是专一的；而载体数目有限，正是这个过程可饱和的原因。" }
+      },
       why_en: "The book states facilitated diffusion shows specificity, saturability, and inhibitability, so the carrier behaves like an enzyme and the process can be described with enzyme-kinetics equations.",
       why_cn: "教材指出易化扩散具有特异性、可饱和性和可抑制性，因此载体的行为类似于酶，该过程可用酶动力学方程描述。"
     },
@@ -3574,12 +3590,17 @@ window.BIOCHEM.topics.push(
       q_en: "How does the book distinguish ionophores from ion channels?",
       q_cn: "教材如何区分离子载体和离子通道？",
       options: [
-        "Ionophores are membrane proteins; ion channels are non-protein substances",
+        "Ionophores are membrane proteins, while ion channels are substances of a non-protein nature",
         "Ionophores are non-protein substances; ion channels are membrane proteins",
-        "Both are exclusively non-protein substances",
-        "Both are exclusively membrane proteins, differing only in size"
+        "Both are substances of a non-protein nature",
+        "Both are membrane proteins, differing only in the size of the ion they pass"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Exactly reversed. Ionophores are the non-protein ones; the ion channels are the membrane proteins. Both are specialised ion carriers, which is why the pair is easy to swap.", cn: "正好反了。Ionophore 是非蛋白的那一类；ion channel 才是膜蛋白。两者都是专门的离子载体，所以很容易被互换。" },
+        2: { en: "Only the ionophores are. If both were non-protein, neither would belong to the integral membrane proteins that facilitated diffusion generally works through.", cn: "只有 ionophore 是。如果两者都是非蛋白的，那它们就都不属于 facilitated diffusion 一般所依靠的整合膜蛋白了。" },
+        3: { en: "Only the ion channels are, and the book draws no size distinction between the two at all. The difference it draws is one of chemical nature: protein against non-protein.", cn: "只有 ion channel 是，而且教材根本没有按大小区分这两者。它划的界线是化学本质上的：蛋白与非蛋白。" }
+      },
       why_en: "The book states specialized ion carriers are called ionophores (substances of a non-protein nature) or ion channels (membrane proteins) — the reverse pairing is incorrect.",
       why_cn: "教材指出针对离子的特化载体称为离子载体（非蛋白质性质的物质）或离子通道（膜蛋白）——反过来配对是错误的。"
     },
@@ -3646,11 +3667,16 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，初级主动转运与次级主动转运有何区别？",
       options: [
         "Primary transport uses ATP/a macroergic bond (ATPase pumps) or another exergonic reaction; secondary transport uses the energy of a previously established concentration gradient of a different substance",
-        "Primary transport never requires a membrane protein; secondary transport always does",
-        "Primary transport moves only ions; secondary transport moves only macromolecules",
-        "There is no real difference between the two"
+        "Primary transport needs no membrane protein at all, running straight through the lipid bilayer, while secondary transport is the one that works through an integral carrier protein embedded right across it",
+        "Primary transport moves ions only and secondary transport macromolecules only, which is why one needs a pump and the other a vesicle",
+        "There is no real difference; both terms describe transport against the gradient at the expense of ATP"
       ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Both kinds work through membrane proteins — an ATPase pump is a protein too. What separates them is where the energy comes from, not whether a protein is involved at all.", cn: "两者都要通过膜蛋白来完成——ATPase 泵本身就是蛋白。区分它们的是能量从哪里来，而不是有没有蛋白参与。" },
+        2: { en: "Neither restriction holds. Group translocation, a form of active transport, carries carbohydrates, amino acids, disaccharides and peptides; macromolecules move by an entirely different route, local restructuring of the membrane.", cn: "两个限制都不成立。属于主动运输的 group translocation 搬运的是糖、氨基酸、双糖和肽；而大分子走的是完全不同的路线——膜的局部改建。" },
+        3: { en: "Only primary transport spends ATP directly. Secondary transport spends a concentration gradient of some other substance that primary transport built earlier, and that is exactly what makes the pair worth distinguishing.", cn: "只有 primary 运输直接消耗 ATP。Secondary 运输消耗的是 primary 运输先前建立起来的、另一种物质的浓度梯度——这正是区分这一对概念的意义所在。" }
+      },
       why_en: "The book states primary active transport's energy requirement is usually met by ATP/macroergic-bond cleavage (ATPase pumps) or another exergonic reaction, while secondary active transport uses the energy of a concentration gradient of a different substance established earlier, e.g. by primary transport.",
       why_cn: "教材指出初级主动转运的能量需求通常由ATP/大能键水解（ATP酶泵）或其他放能反应满足，而次级主动转运利用先前（如由初级转运）建立的另一物质浓度梯度的能量。"
     },
@@ -3659,12 +3685,17 @@ window.BIOCHEM.topics.push(
       q_en: "What makes 'group translocation' distinct from ordinary active transport of a single small molecule, per the book?",
       q_cn: "根据教材，“基团转位”与普通单一小分子的主动转运有何不同？",
       options: [
-        "It only occurs for ions, never for organic molecules",
+        "It happens only for ions, never for organic molecules, which is why it needs no chemical change",
         "The carrier simultaneously carries out a chemical reaction (e.g. phosphorylation or hydrolysis) on the transported molecule, giving it an additional enzymatic activity",
-        "It requires no membrane protein at all",
-        "It always moves substances down, not against, the concentration gradient"
+        "It needs no membrane protein at all, the molecule passing straight through the bilayer as it is modified",
+        "It always moves its substrate down the concentration gradient rather than against it, and therefore costs no energy, which is what separates it from active transport of either kind"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The opposite of what the book says. The molecules it names for this route are complex organic ones — carbohydrates, amino acids, disaccharides and peptides — and the chemical change performed on them is the defining feature.", cn: "和教材说的正好相反。教材为这条路线点名的是较复杂的有机分子——糖、氨基酸、双糖和肽——而对它们施加的化学变化正是这条路线的定义性特征。" },
+        2: { en: "A carrier is required, and it is that carrier which does the chemistry: the phosphorylation or hydrolysis is an ADDITIONAL enzymatic activity of the carrier protein, so take the protein away and the mechanism goes with it.", cn: "必须有载体，而做这份化学工作的正是载体：磷酸化或水解是载体蛋白的一项额外酶活性，所以把蛋白拿掉，这套机制也就没有了。" },
+        3: { en: "Group translocation is a form of ACTIVE transport, and active transport always proceeds against the concentration gradient and always at an energy cost. Running down a gradient without energy is the definition of passive transport instead.", cn: "Group translocation 属于主动运输，而主动运输永远是逆浓度梯度进行的，也永远要付出能量代价。顺梯度、不耗能，那是被动运输的定义。" }
+      },
       why_en: "The book describes group translocation as transport of more complex organic molecules (carbohydrates, amino acids, disaccharides, peptides) where a chemical reaction such as phosphorylation or hydrolysis occurs simultaneously, meaning the carrier also has an additional enzymatic activity.",
       why_cn: "教材将基团转位描述为转运更复杂的有机分子（糖类、氨基酸、二糖、肽）时，同时发生磷酸化或水解等化学反应，即载体还具有额外的酶活性。"
     },
