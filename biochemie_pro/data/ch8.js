@@ -2619,12 +2619,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why must free fatty acids be activated before they can be catabolized or used in biosynthesis, and what does 'activation' mean chemically?",
       q_cn: "为什么游离脂肪酸在被分解或用于生物合成之前必须先被活化？“活化”在化学上指的是什么？",
       options: [
-        "To make them water-soluble by adding a phosphate group",
+        "To make them water-soluble by attaching a phosphate group to the carboxyl, as glycerol is when it enters lipid biosynthesis",
         "To convert them to a thioester form with coenzyme A so they can enter metabolic pathways",
-        "To convert them into ketone bodies for transport in blood",
-        "To attach them to albumin for transport across the mitochondrial membrane"
+        "To convert them into ketone bodies, the form in which the liver sends them out",
+        "To bind them to albumin, so that free acid never accumulates in the cell"
       ],
       answer: 1,
+      optionRefs: { 0: "8-3-5", 2: "8-4-4-3" },
+      optionNotes: {
+        0: { en: "Phosphate is glycerol's activation, not the fatty acid's — glycerol enters lipid synthesis as glycerol phosphate. And the point of activating an acid is not solubility but the reactive thioester bond it ends up carrying.", cn: "磷酸化是 glycerol 的活化方式，不是脂肪酸的——glycerol 是以 glycerol phosphate 的形式进入脂类合成的。而活化一个酸的意义也不在于溶解度，而在于它最后带上的那个高活性硫酯键。" },
+        2: { en: "Ketone bodies are made from acetyl-CoA after beta-oxidation has already run, in the liver, and only when there is a surplus. They lie downstream of activation, not in place of it.", cn: "酮体是在 beta-oxidation 已经跑完之后、由 acetyl-CoA 在肝脏生成的，而且只在有富余时才生成。它们位于活化的下游，不是活化的替代品。" },
+        3: { en: "Albumin appears nowhere in this account. The two steps the book gives are: fatty acid + ATP + CoASH → acyladenylate + PPi, then acyladenylate + CoASH → acyl-CoA + AMP.", cn: "教材这一段里从未出现过 albumin。它给的两步是：脂肪酸 + ATP + CoASH → acyladenylate + PPi，然后 acyladenylate + CoASH → acyl-CoA + AMP。" }
+      },
       why_en: "The book states free fatty acids must be activated, i.e. converted to a thioester form with coenzyme A, before their incorporation into any metabolic (anabolic or catabolic) pathway.",
       why_cn: "教材指出游离脂肪酸必须先被活化，即转化为与辅酶A结合的硫酯形式，才能进入任何（合成或分解）代谢途径。"
     },
@@ -2633,12 +2639,17 @@ window.BIOCHEM.topics.push(
       q_en: "What is released in step 1 versus step 2 of fatty acid activation, per the book's diagram?",
       q_cn: "根据教材图示，脂肪酸活化的第一步和第二步分别释放什么？",
       options: [
-        "Step 1 releases AMP; step 2 releases PPi",
+        "Step 1 releases AMP while forming the acyladenylate intermediate; step 2 releases PPi while forming the activated acyl-CoA",
         "Step 1 releases PPi (forming the acyladenylate intermediate); step 2 releases AMP (forming the activated acyl-CoA)",
-        "Both steps release ATP",
-        "Step 1 releases CoASH; step 2 releases the fatty acid unchanged"
+        "Both steps release ATP, which is regenerated from the thioester bond",
+        "Step 1 releases CoASH; step 2 releases the fatty acid unchanged, CoA acting only catalytically"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The two leaving groups are swapped. AMP cannot come off first, because AMP is precisely what stays behind in the acyladenylate — the name says so. What is cut away from ATP to form it is pyrophosphate.", cn: "两个离去基团调换了。AMP 不可能先走，因为留在 acyladenylate 里的正是 AMP——名字本身就说明了这一点。从 ATP 上切下来形成它的，是焦磷酸。" },
+        2: { en: "ATP is consumed here, not released, and it is spent once, at step 1. The energy taken from it ends up stored in the thioester bond of the finished acyl-CoA.", cn: "这里 ATP 是被消耗、不是被释放的，而且只在第 1 步消耗一次。从它取走的能量最后存进了做好的 acyl-CoA 的硫酯键里。" },
+        3: { en: "CoASH enters at both steps rather than leaving, and the fatty acid does not come out unchanged — the entire purpose of the sequence is that it leaves as a thioester, which is what activation means.", cn: "CoASH 在两步里都是进来的，不是出去的；脂肪酸也不会原样出来——整个过程的目的就是让它以硫酯的形式离开，所谓活化就是这个意思。" }
+      },
       why_en: "The book's diagram shows step 1 (fatty acid + ATP + CoASH) releasing pyrophosphate (PPi) while forming the acyladenylate intermediate, and step 2 (intermediate + CoASH, via thiokinase) releasing AMP while forming the activated acyl-CoA.",
       why_cn: "教材图示显示第一步（脂肪酸+ATP+CoASH）释放焦磷酸（PPi）并形成酰基腺苷酸中间体，第二步（中间体+CoASH，经硫激酶催化）释放AMP并形成活化的酰基辅酶A。"
     },
@@ -2706,12 +2717,18 @@ window.BIOCHEM.topics.push(
       q_en: "Where is beta-oxidation localized in eukaryotic cells, and why does the book say this location matters?",
       q_cn: "β-氧化在真核细胞中的定位在哪里？教材为何强调这一定位的重要性？",
       options: [
-        "The cytoplasm, because that is where all lipid catabolism occurs",
+        "The cytoplasm, since that is where all lipid catabolism is localised, phospholipases and lipases included",
         "The mitochondrial matrix, because it contains all 4 enzymes needed for one full degradation cycle",
-        "The peroxisome, because only peroxisomes can oxidize fatty acids",
-        "The nucleus, because gene expression must coordinate with fatty acid breakdown"
+        "The peroxisome, since the matrix lacks the dehydrogenases the first step needs",
+        "The endoplasmic reticulum, alongside the desaturase system that acts on the same chains"
       ],
       answer: 1,
+      optionRefs: { 0: "8-4-2-1", 3: "8-3-1" },
+      optionNotes: {
+        0: { en: "The first half is true of the other pathways — lipase and the four phospholipases do work in the cytoplasm — but beta-oxidation is exactly the exception the book draws that contrast against.", cn: "前半句对别的通路是成立的——lipase 和四种 phospholipase 确实在细胞质里工作——但 beta-oxidation 正是教材用来作对比的那个例外。" },
+        2: { en: "The peroxisome is not named anywhere in this chapter. The matrix is named for a positive reason: it holds all four enzymes needed to run one complete cycle.", cn: "本章从未提到 peroxisome。教材点名 matrix 是有正面理由的：完成一个完整循环所需的四个酶都在那里。" },
+        3: { en: "The endoplasmic reticulum's lipid enzymes are biosynthetic ones — the desaturase system that turns saturated chains into unsaturated ones, and which the book also credits with further elongation.", cn: "内质网上的脂类酶是合成方向的——把饱和链变成不饱和链的 desaturase 系统，教材还说它同样可以继续延长链。" }
+      },
       why_en: "The book states beta-oxidation in eukaryotic cells is localized to the mitochondrial matrix, which contains all 4 enzymes needed for one cycle of degradation (shortening the chain by 2 carbons) — contrasted with complex-lipid degradation (8.4.2), which happens in the cytoplasm.",
       why_cn: "教材指出真核细胞中的β-氧化定位于线粒体基质，基质中含有完成一轮降解循环（碳链缩短2个碳）所需的全部4种酶——这与在细胞质中进行的复合脂质降解（8.4.2节）形成对比。"
     },
@@ -2720,12 +2737,18 @@ window.BIOCHEM.topics.push(
       q_en: "Per the book's own beta-oxidation diagram, what stereochemical requirement links step A's product to step B, and step B's product to step C?",
       q_cn: "根据教材自己的β-氧化图示，步骤A的产物与步骤B之间、步骤B的产物与步骤C之间，分别存在怎样的立体化学要求？",
       options: [
-        "Step A produces only cis isomers, which step B requires; step B produces only D-isomers, which step C requires",
+        "Step A produces only cis isomers, which step B needs as its substrate; step B in turn produces only D-isomers, which step C needs as its substrate",
         "Step A produces only trans isomers, which step B requires as substrate; step B produces only L-isomers, which step C requires as substrate",
-        "There is no stereochemical requirement at any step",
-        "Step A produces a racemic mixture; steps B and C each select out one enantiomer independently"
+        "There is no stereochemical requirement at any of the four steps",
+        "Step A produces a racemic mixture, and steps B and C each select out the enantiomer they need"
       ],
       answer: 1,
+      optionRefs: { 0: "8-4-4-4" },
+      optionNotes: {
+        0: { en: "Both isomer labels are inverted. Acyl-CoA dehydrogenase gives only the TRANS double bond, and enoyl-CoA hydratase gives only the L-hydroxyacyl-CoA. Cis is the configuration natural unsaturated fatty acids arrive in, which is why they need an isomerase before they can join the cycle.", cn: "两个异构标签都反了。Acyl-CoA dehydrogenase 只给出 trans 双键，enoyl-CoA hydratase 只给出 L 型的 hydroxyacyl-CoA。Cis 是天然不饱和脂肪酸进来时的构型，正因如此它们要先经过 isomerase 才能进入这个循环。" },
+        2: { en: "The requirements are the reason the cycle runs at all: each enzyme makes exactly the isomer the next one can use, so nothing anywhere has to sort or discard the wrong form.", cn: "正是这些要求让这个循环得以运转：每个酶恰好造出下一个酶能用的那个异构体，所以整条链上没有任何地方需要挑拣或丢弃错的形式。" },
+        3: { en: "No racemic mixture arises. The specificity sits on the producing side rather than the consuming side — step A makes only trans and step B only L, so there is never a second form to select against.", cn: "根本不会出现外消旋混合物。专一性在生成的一侧，而不是在使用的一侧——A 步只造 trans，B 步只造 L，所以从来就没有第二种形式需要被排除。" }
+      },
       why_en: "The figure explicitly labels acyl-CoA dehydrogenase (A) as producing only trans isomers, and notes enoyl-CoA hydratase (B) requires trans isomers as substrate and produces only L-isomers, which β-hydroxyacyl-CoA dehydrogenase (C) in turn requires.",
       why_cn: "图中明确标注酰基辅酶A脱氢酶（A）只生成反式异构体，并注明烯酰辅酶A水合酶（B）要求反式异构体为底物、只生成L型异构体，而β-羟酰基辅酶A脱氢酶（C）又要求L型异构体为底物。"
     },
@@ -2797,12 +2820,17 @@ window.BIOCHEM.topics.push(
       q_en: "Under which conditions does the book say acetyl-CoA overproduction occurs, and why?",
       q_cn: "教材指出在哪些条件下会发生乙酰辅酶A的过量生成？原因是什么？",
       options: [
-        "Only during intense exercise, because the citric acid cycle runs too fast",
+        "Only during intense exercise, when the citric acid cycle runs faster than acetyl-CoA can be supplied to it, so the surplus has to be stored",
         "Diabetes, starvation, or a diet rich in fat, because not all the acetyl-CoA produced can be used in the citric acid cycle",
-        "Only in liver disease, because the liver cannot make HMG-CoA",
-        "Only in kidney failure, because ketone bodies cannot be filtered"
+        "Only in liver disease, when the liver can no longer condense acetyl-CoA into HMG-CoA",
+        "Only in kidney failure, when the ketone bodies already made can no longer be filtered out"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The direction is reversed. The problem is a surplus of acetyl-CoA that the citric acid cycle cannot absorb, not a cycle outrunning its supply — and the book names three conditions, not one.", cn: "方向反了。问题在于 acetyl-CoA 过剩、citric acid cycle 吃不下，而不是 cycle 跑得比供应还快——而且教材点名的是三种情况，不是一种。" },
+        2: { en: "The liver is where HMG-CoA gets made, and making it is how the surplus is dealt with rather than how it arises. Losing that capacity would not create the surplus in the first place.", cn: "HMG-CoA 正是在肝脏生成的，而生成它是处理过剩的方式，不是过剩产生的原因。失去这个能力并不会一开始就制造出过剩。" },
+        3: { en: "Filtration is not what the book discusses. What accumulating ketone bodies cause is acidosis and ketosis: blood pH falls, acetone becomes detectable on the breath, and a prolonged state leads to coma.", cn: "教材讨论的不是过滤。酮体积聚造成的是 acidosis 和 ketosis：血 pH 下降，呼气中可以闻到 acetone，长期如此会陷入昏迷。" }
+      },
       why_en: "The book names diabetes, starvation, and (conversely) a fat-rich diet as conditions leading to acetyl-CoA overproduction, specifically because not all of it can be utilized in the citric acid cycle, forcing the liver to divert the surplus toward HMG-CoA/ketone-body formation.",
       why_cn: "教材指出糖尿病、饥饿以及（相反地）高脂饮食都会导致乙酰辅酶A的过量生成，原因是并非所有乙酰辅酶A都能被柠檬酸循环利用，迫使肝脏将过剩部分转向HMG-CoA/酮体生成途径。"
     },
@@ -2812,11 +2840,17 @@ window.BIOCHEM.topics.push(
       q_cn: "教材图中显示乙酰乙酸有哪两种可能的去向？",
       options: [
         "Enzymatic reduction to β-hydroxybutyrate, or non-enzymatic decarboxylation to acetone + CO2",
-        "Direct excretion in urine, or conversion back to acetyl-CoA",
-        "Oxidation to CO2 and H2O in the citric acid cycle, or conversion to cholesterol",
-        "Conversion to HMG-CoA, or conversion to glucose via gluconeogenesis"
+        "Excretion in the urine unchanged, or conversion straight back to two acetyl-CoA",
+        "Complete oxidation to CO2 and H2O in the citric acid cycle, or conversion onward to cholesterol by way of HMG-CoA",
+        "Condensation to HMG-CoA, or reduction to β-hydroxybutyrate by a decarboxylase"
       ],
       answer: 0,
+      optionRefs: { 2: "8-3-7" },
+      optionNotes: {
+        1: { en: "Acetoacetate is itself one of the three ketone bodies, and the figure gives it two onward reactions rather than an exit. It is precisely what accumulates in the blood when these pathways run too hard.", cn: "Acetoacetate 本身就是三种酮体之一，图上给它的是两个继续往下的反应，而不是一个出口。这些通路过度运转时，在血中积聚的正是它。" },
+        2: { en: "HMG-CoA is indeed the fork toward terpenoid and steroid synthesis, but it lies UPSTREAM of acetoacetate: acetoacetate is what is left when HMG-CoA is cleaved the other way, alongside an acetyl-CoA.", cn: "HMG-CoA 确实是通向 terpenoid 和 steroid 合成的岔口，但它在 acetoacetate 的上游：当 HMG-CoA 按另一个方向裂解时，剩下的就是 acetoacetate，同时还有一个 acetyl-CoA。" },
+        3: { en: "The first half runs backwards — HMG-CoA is cleaved to give acetoacetate, not built from it. And the reduction to β-hydroxybutyrate is an addition of 2H, not decarboxylase chemistry; decarboxylation is the other branch, and it is non-enzymatic, giving acetone.", cn: "前半句方向反了——是 HMG-CoA 裂解给出 acetoacetate，不是由它搭起来。而还原成 β-hydroxybutyrate 是加 2H，不是 decarboxylase 的化学；脱羧是另一条分支，而且是非酶促的，给出 acetone。" }
+      },
       why_en: "The figure shows acetoacetate can be enzymatically reduced (using 2H) to β-hydroxybutyrate, or can instead be non-enzymatically decarboxylated to acetone plus CO2 — both are ketone bodies alongside acetoacetate itself.",
       why_cn: "图中显示乙酰乙酸可被酶促还原（消耗2H）为β-羟基丁酸，也可非酶促脱羧为丙酮和CO₂——两者与乙酰乙酸本身一样，都属于酮体。"
     },
@@ -2882,12 +2916,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why can't beta-oxidation process natural unsaturated fatty acids without extra enzymes, and which two enzymes does the book name?",
       q_cn: "为什么β-氧化不能在没有额外酶的情况下处理天然不饱和脂肪酸？教材提到了哪两种酶？",
       options: [
-        "Natural double bonds are too far from the carboxyl end; a chain-shortening enzyme is needed",
+        "Natural double bonds sit too far from the carboxyl end for the enzymes to reach; a chain-shortening enzyme has to bring them closer before the cycle can start",
         "Natural double bonds are cis, but the beta-oxidation enzymes require trans; a cis-trans isomerase and an epimerase must intervene",
-        "Natural double bonds react explosively with FAD; a reductase and a catalase are needed",
-        "Natural double bonds block CoA attachment; a thiokinase variant and a ligase are needed"
+        "Natural double bonds cannot be reduced by FAD; a separate reductase and an epimerase have to saturate them first",
+        "Natural double bonds block the attachment of CoA; a second thiokinase and a ligase have to activate the acid instead"
       ],
       answer: 1,
+      optionRefs: { 3: "8-4-4-1" },
+      optionNotes: {
+        0: { en: "Distance is not the obstacle. Ordinary beta-oxidation already shortens the chain two carbons at a time and will reach any double bond on its own; what it cannot deal with is the geometry once it gets there.", cn: "障碍不是距离。普通的 beta-oxidation 本来就每次剪掉两个碳，自己迟早会走到任何一个双键跟前；它对付不了的是走到跟前之后的几何构型。" },
+        2: { en: "FAD does act, at step A, and its job there is to CREATE a double bond, not remove one. The difficulty is that the bond already present is cis, while the hydratase at step B requires trans.", cn: "FAD 确实要出场，在 A 步，而它在那里的工作是造出一个双键，不是消掉一个。困难在于本来就存在的那个键是 cis 的，而 B 步的 hydratase 要求 trans。" },
+        3: { en: "Activation runs identically for saturated and unsaturated acids: thiokinase makes the acyl-CoA in two steps, through the acyladenylate intermediate, and nothing about a double bond interferes with it.", cn: "饱和酸和不饱和酸的活化过程完全一样：thiokinase 分两步、经由 acyladenylate 中间体生成 acyl-CoA，双键对此毫无妨碍。" }
+      },
       why_en: "The book states natural unsaturated fatty acids have cis double bonds, an unsuitable configuration for beta-oxidation enzymes (which require trans), so a cis-trans isomerase and an epimerase must intervene in the reaction sequence.",
       why_cn: "教材指出天然不饱和脂肪酸的双键为顺式构型，这对要求反式构型的β-氧化酶来说是不适合的配置，因此必须有顺反异构酶和差向异构酶介入反应序列。"
     },
@@ -2896,12 +2936,17 @@ window.BIOCHEM.topics.push(
       q_en: "How does the book distinguish α-branched from β-branched fatty acids, and which type poses no problem for beta-oxidation?",
       q_cn: "教材如何区分α-支链和β-支链脂肪酸？哪一种对β-氧化不构成问题？",
       options: [
-        "α-branched = branch on an odd carbon, problematic; β-branched = branch on an even carbon, no problem",
+        "α-branched = branch on an odd carbon, requiring a biotin-dependent carboxylation; β-branched = branch on an even carbon, presenting no obstacle to beta-oxidation",
         "α-branched = branch on an even carbon, no problem for beta-oxidation; β-branched = branch on an odd carbon, requires biotin-dependent carboxylation",
-        "Both types require the same biotin-dependent carboxylation step",
-        "α-branched refers to branch length, not position; β-branched refers to position"
+        "Both types need the same biotin-dependent carboxylation, and both end at HMG-CoA rather than acetyl-CoA",
+        "α- and β- refer to the length of the branch rather than its position, α being a methyl and β a longer chain"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Everything here is the right way round except which letter goes with which parity. α is the even-numbered carbon and gives no trouble at all; β is the odd-numbered one, and that is the case needing the carboxylation.", cn: "这个选项里除了哪个字母配哪种奇偶之外，其余都说对了。α 对应偶数碳，完全不构成障碍；β 对应奇数碳，需要羧化的正是这一种。" },
+        2: { en: "Only β-branching needs it. α-branching presents no obstacle whatever, and its final product is simply acetyl-CoA, exactly as for an unbranched chain.", cn: "只有 β 分支需要。α 分支毫无障碍，最终产物就是 acetyl-CoA，和不带分支的链完全一样。" },
+        3: { en: "The letters mark position, not size. The branch is usually just a methyl group in either case, and it sits at the end away from the carboxyl — so ordinary cycles shorten the chain until the branch arrives at the α or the β carbon.", cn: "这两个字母标的是位置，不是大小。两种情形下分支通常都只是一个甲基，而且位于远离羧基的那一端——所以普通的循环会一直剪短链，直到分支来到 α 或 β 碳上。" }
+      },
       why_en: "The book defines α-branched as branching on an even-numbered carbon (no obstacle to beta-oxidation, final product acetyl-CoA) and β-branched as branching on an odd-numbered carbon (requires biotin-dependent carboxylation to a dicarboxylic acid before degradation can continue to HMG-CoA).",
       why_cn: "教材将α-支链定义为在偶数碳上分支（对β-氧化不构成障碍，终产物为乙酰辅酶A），β-支链定义为在奇数碳上分支（需要生物素依赖的羧化生成二羧酸后，降解才能继续进行到HMG-CoA）。"
     },
