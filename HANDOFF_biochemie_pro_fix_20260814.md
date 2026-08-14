@@ -259,6 +259,84 @@ so a topic has to be opened before any ⭐ exists in the DOM. The first version 
 test reported "not exercised" instead of failing, which is the right behaviour for a missing
 control and the wrong conclusion to draw from it — it walks the sidebar now.
 
+## 6c. The question bank could be passed without reading it
+
+Measured with a character-by-character string scanner, not a regex — the first
+attempt used a regex for JS strings, which splits any option containing an apostrophe
+and invents options, so the numbers it gave were worthless. Redo it the same way if
+you check this again.
+
+| | core, 549 mcq | bank, 432 mcq |
+|---|---|---|
+| answer is the LONGEST option | **83%** (chance 25%) | **72%** |
+| score from always picking the longest | **79%** | **70%** |
+| answer position | B in **66%** | A or B in **89%**, D in 1% |
+| mean length, answer vs distractors | 121 vs 63 chars | 84 vs 51 chars |
+
+Both are artefacts of drafting: the answer is written first and the distractors are
+appended after it, and the true statement is the one that needs the qualifying clause.
+
+**Position is fixed.** `app.js` now permutes the options per quiz run and remaps
+`answer`, `optionRefs` and `optionNotes` with them. The question objects are copied,
+never mutated, so the data files stay as written and the wrong-answer book keeps
+whatever order it actually showed — re-drilling a stored entry shows the card the
+reader got wrong. Verified through the UI: sixty questions in sequence put the answer
+at A/B/C/D = 13/14/11/5, worst position 33%, and all 43 annotation panels still had
+exactly one row per wrong option, which is what proves the remap kept each note on
+the option it was written for.
+
+**One exception, and it is why this is not simply applied to everything.** Some
+explanations refer to options by number ("Option 3 invents a charge mechanism"), and
+shuffling those would point the explanation at the wrong option. They are left in
+their written order — about 5% of the bank. Those references need fixing on their own
+terms first, because there are two incompatible conventions in the data: **the
+Lehninger files count from 1** ("Option 2" is the second option), **chapters 9 and 10
+count from 0** ("Option 3" is the fourth), and the app renders A–D for both. ~150
+references. Detect the convention per file before touching them.
+
+**Length is NOT fixed and is the bigger problem.** Only rewriting distractors fixes
+it: they have to be as long and as specific as the answer. That is a content job of
+about 980 questions and it is the largest single quality item still open in the
+project. Every node written after 2026-08-14 is briefed to avoid it and to spread its
+answer positions, and the new Lehninger nodes do (2/0/3/1/2/0, 2/1/2/3/1/0, 2/0/3/1).
+
+## 6d. Lehninger depth for the topics the reader named
+
+The reader asked twice for 酶促 (enzyme kinetics) and 动态生化 (the metabolism half),
+saying the Lehninger layer had not supplemented them. Confirmed and worse than
+described: **chapters 15 and 18 had no file at all**, chapter 14 had a single node,
+and there was no enzyme-kinetics node anywhere.
+
+Landed so far:
+
+- **`L-6-3-1`, enzyme kinetics** — Km is a concentration and not a binding constant,
+  equal to Kd only when the chemical step is much slower than dissociation; kcat/Km is
+  the specificity constant and is capped by diffusion; the three reversible inhibition
+  types made distinguishable in one sentence each. Three `lehNotes` back to `3-3-1`
+  and `3-5`, including the one that matters most for an exam sat on the Czech book:
+  **its V_lim IS Vmax and its A/X are S/P**, so equation (7) is recognisable to
+  someone who revised in English.
+- **`L-22-4-1`, nucleotide metabolism** — purine synthesis built on the ribose against
+  pyrimidine synthesis building the ring first, ribonucleotide reductase, salvage, the
+  drugs.
+- **`L-14-4-1`, gluconeogenesis** — the EVIDENCE for the three bypasses rather than
+  the assertion: TABLE 14-2 measures hexokinase at −33.4, PFK-1 at −22.2 and pyruvate
+  kinase at −16.7 kJ/mol while the seven shared reactions sit between −6 and +25. It
+  also names fructose 1,6-bisphosphatase and glucose 6-phosphatase, which `7-9`
+  describes and never names, and puts glucose 6-phosphatase in the ER lumen — the
+  whole liver-versus-muscle answer.
+
+**Operational note, and it is the same lesson as 2026-08-05.** Two batches of seven
+agents were killed by an account session limit. Checking the files individually
+afterwards recovered two complete ones and one truncated mid-write; four had produced
+nothing. The truncated one was finished by hand from its own points. **Never write off
+a batch on the wrapper error message — check every target file.** Agents on this task
+are now briefed to keep the file closeable at every moment, because a complete
+one-node file beats a truncated three-node one.
+
+Still owed: lipid structure (ch10), glycogen (ch15), translation (ch27), urea cycle
+and amino-acid degradation (ch18).
+
 ## 7. How it was checked, with no `node` on this machine
 
 CI still runs `tools/validate-data.js` and stays authoritative; it now also validates the bank
