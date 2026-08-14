@@ -1408,6 +1408,11 @@ window.BIOCHEM.topics.push(
       q_cn: "哪个亚细胞区室内有负责将脂肪酸链延长至超过细胞质中18碳产物的延长酶系统？",
       options: ["Cytoplasm", "Mitochondrial matrix", "Endoplasmic reticulum", "Golgi apparatus"],
       answer: 1,
+      optionNotes: {
+        0: { en: "The cytoplasm hosts the basic pathway — the one that builds a saturated chain up to 18 carbons, palmitic acid included. The elongase only takes over beyond that point.", cn: "细胞质里放的是基础通路——把饱和链一直搭到 18 个碳（palmitic acid 也在内）的那条。Elongase 只在这之后才接手。" },
+        2: { en: "The endoplasmic reticulum carries the desaturase system, which turns saturated chains into unsaturated ones. It is easy to confuse with the elongase because the book says the ER permits further elongation as well.", cn: "内质网上带的是 desaturase 系统，把饱和链变成不饱和链。它容易和 elongase 混淆，因为教材说内质网上也可以继续延长链。" },
+        3: { en: "The Golgi is not one of the three compartments named at all. The apparatus is split across exactly three: cytoplasm, mitochondrial matrix and endoplasmic reticulum.", cn: "Golgi 根本不在被点名的三个区室之列。这套装置恰好分布在三处：细胞质、线粒体基质、内质网。" }
+      },
       why_en: "The book states the elongase system is located in the mitochondrial matrix, while the basic (≤18C) pathway runs in the cytoplasm and the desaturase system is bound to the endoplasmic reticulum.",
       why_cn: "教材指出延长酶系统位于线粒体基质，而基本（≤18碳）途径在细胞质中进行，去饱和酶系统则结合于内质网。"
     },
@@ -1415,8 +1420,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What does the book identify as the necessary 'activation' step that must precede fatty-acid-synthase condensation chemistry, and which enzyme carries it out?",
       q_cn: "教材指出，脂肪酸合酶缩合反应之前必须先发生的「活化」步骤是什么？由哪个酶催化？",
-      options: ["Phosphorylation of acetyl-CoA by a generic kinase", "Carboxylation of acetyl-CoA to malonyl-CoA by acetyl-CoA carboxylase", "Reduction of acetyl-CoA by NADPH", "Hydrolysis of acetyl-CoA's thioester bond"],
+      options: [
+        "Phosphorylation of acetyl-CoA's methyl group by an ATP-dependent kinase",
+        "Carboxylation of acetyl-CoA to malonyl-CoA by acetyl-CoA carboxylase",
+        "Reduction of acetyl-CoA's carbonyl group by NADPH",
+        "Hydrolysis of acetyl-CoA's thioester bond by a specific thiokinase"
+      ],
       answer: 1,
+      optionRefs: { 2: "8-3-3", 3: "8-3-3" },
+      optionNotes: {
+        0: { en: "ATP is indeed consumed at this step, which is what makes the option tempting — but it is spent on a carboxylation, not a phosphorylation: CO2 + acetyl-CoA + ATP → malonyl-CoA + ADP + Pi.", cn: "这一步确实消耗 ATP，这正是这个选项有迷惑性的地方——但 ATP 花在羧化上，不是磷酸化：CO2 + acetyl-CoA + ATP → malonyl-CoA + ADP + Pi。" },
+        2: { en: "NADPH is the reductant of this whole pathway, but it is spent later and twice per cycle, at steps III and V, reducing the growing acyl chain rather than activating the starter unit.", cn: "NADPH 确实是整条通路的还原剂，但它是在后面用掉的，每一轮用两次，在第 III 步和第 V 步还原正在延长的酰基链，而不是活化起始单元。" },
+        3: { en: "Thiokinase does appear in this pathway, but at the far end of it: it re-activates the finished palmitic acid to palmitoyl-CoA when the acid is to go on into further lipid biosynthesis.", cn: "Thiokinase 在这条通路里确实出现，但是在最末端：当做好的 palmitic acid 要进入后续的脂类生物合成时，由它重新活化成 palmitoyl-CoA。" }
+      },
       why_en: "The book explicitly names carboxylation of acetyl-CoA's methyl group to malonyl-CoA, catalyzed by acetyl-CoA carboxylase (ATP-dependent, requiring biotin), as the necessary precondition for biosynthesis.",
       why_cn: "教材明确指出，将乙酰辅酶A的甲基羧化为丙二酰辅酶A（由乙酰辅酶A羧化酶催化，依赖ATP并需要生物素）是生物合成的必要前提。"
     },
@@ -1481,8 +1497,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the book, which of the two loading-step (step I) enzymes participates only in the very first, initiating cycle of fatty acid synthesis, and which one acts in every subsequent cycle?",
       q_cn: "根据教材，装载步骤（第I步）的两个酶中，哪一个只参与脂肪酸合成的第一个起始循环？哪一个在此后每一轮循环中都发挥作用？",
-      options: ["Acetyltransferase only in cycle 1; malonyltransferase in every cycle", "Malonyltransferase only in cycle 1; acetyltransferase in every cycle", "Both act only in cycle 1", "Both act in every cycle equally"],
+      options: [
+        "Acetyltransferase only in cycle 1; malonyltransferase in every cycle",
+        "Malonyltransferase only in cycle 1; acetyltransferase in every later cycle",
+        "Both act only in the first, initiating cycle",
+        "Both act in every cycle, equally"
+      ],
       answer: 0,
+      optionRefs: { 2: "8-3-3", 3: "8-3-3" },
+      optionNotes: {
+        1: { en: "The two are swapped. Acetyl is the starter and is delivered once; every further two-carbon unit arrives as malonyl, which is why it is malonyltransferase that has to work in every cycle.", cn: "两个调换了。Acetyl 是起始单元，只送一次；此后每一个两碳单元都以 malonyl 的形式到来，所以每一轮都要干活的是 malonyltransferase。" },
+        2: { en: "Malonyltransferase has to act in every cycle: each round needs a fresh malonyl group loaded onto the freed central SH before the next condensation can happen at all.", cn: "Malonyltransferase 每一轮都必须动作：每一轮都要先把新的 malonyl 装到空出来的中央 SH 上，下一次缩合才可能发生。" },
+        3: { en: "Acetyltransferase acts exactly once. Of palmitate's eight acetyl units only one entered as acetyl-CoA itself; the other seven came in through malonyl-CoA and were decarboxylated on arrival.", cn: "Acetyltransferase 只动作一次。Palmitate 的八个 acetyl 单元里只有一个是以 acetyl-CoA 本身进来的；其余七个都是经 malonyl-CoA 进来、到位时再脱羧的。" }
+      },
       why_en: "The book states acetyltransferase enters the process only in this first (initiating) step; in further phases of the cycle, only malonyltransferase is activated.",
       why_cn: "教材指出乙酰基转移酶仅在这第一个（起始）步骤中参与反应；在此后各阶段的循环中，只有丙二酰基转移酶被激活。"
     },
@@ -1490,8 +1517,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Besides acetoacetyl-ACP, what two products does the book's figure show being released when malonyl-ACP and acetyl-ACP condense under beta-ketoacyl-ACP synthase?",
       q_cn: "根据教材插图，丙二酰-ACP与乙酰-ACP在β-酮脂酰-ACP合成酶催化下缩合时，除生成乙酰乙酰-ACP外，还释放出哪两种产物？",
-      options: ["H2O and ADP", "CO2 and free ACP-SH", "NADH and Pi", "CoASH and NADP+"],
+      options: [
+        "H2O and ADP",
+        "CO2 and free ACP-SH",
+        "NADPH and Pi",
+        "CoASH and NADP+ together"
+      ],
       answer: 1,
+      optionRefs: { 0: "8-3-1", 2: "8-3-3" },
+      optionNotes: {
+        0: { en: "Neither water nor a nucleotide leaves at this step. ATP was spent earlier, at the carboxylation that made malonyl-CoA, and it left as ADP + Pi there rather than here.", cn: "这一步既不脱水也不脱核苷酸。ATP 是更早消耗的，用在生成 malonyl-CoA 的羧化上，并且是在那里以 ADP + Pi 的形式离开，不是在这里。" },
+        2: { en: "NADPH is consumed in this pathway rather than produced, and not at this step: the two reductions come afterwards, at steps III and V, once the four-carbon intermediate exists.", cn: "NADPH 在这条通路里是被消耗、不是被产生的，而且不在这一步：两次还原都在其后，即第 III 步和第 V 步，等四碳中间体出现之后。" },
+        3: { en: "CoASH does leave, but one step earlier, at loading, when acetyl and malonyl are transferred onto ACP's two SH groups. NADP+ appears later still, only once the reductions have run.", cn: "CoASH 确实会离开，但要早一步，在装载时——acetyl 和 malonyl 被转移到 ACP 的两个 SH 上的时候。NADP+ 出现得更晚，要等还原步骤跑完。" }
+      },
       why_en: "The book's step-II figure shows the condensation releasing CO2 and free ACP-SH alongside the acetoacetyl-ACP product.",
       why_cn: "教材第II步插图显示，该缩合反应在生成乙酰乙酰-ACP产物的同时，还释放出CO2和游离ACP-SH。"
     },
@@ -1561,6 +1599,11 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，从第一次乙酰辅酶A与丙二酰辅酶A的缩合算起，构建16碳的软脂酰-S-ACP总共需要多少轮缩合循环？",
       options: ["Six", "Seven", "Eight", "Sixteen"],
       answer: 1,
+      optionNotes: {
+        0: { en: "Six cycles would stop the chain at fourteen carbons. The first cycle gives the four-carbon butyryl-S-ACP, and five more are needed after that — seven in all.", cn: "六轮只会把链停在十四个碳。第一轮给出四碳的 butyryl-S-ACP，之后还要再来五轮——总共七轮。" },
+        2: { en: "Eight is the number of two-carbon acetyl units in palmitate, not the number of condensations. One of those eight arrived as the acetyl starter and needed no condensation of its own.", cn: "八是 palmitate 里两碳 acetyl 单元的数目，不是缩合的次数。这八个里有一个是作为 acetyl 起始单元进来的，它自己不需要一次缩合。" },
+        3: { en: "Sixteen is palmitate's carbon count. The chain grows exactly two carbons at a time, so the number of cycles is half of that, less the starter unit that came in ready-made.", cn: "十六是 palmitate 的碳数。链每次正好长两个碳，所以轮数是它的一半，再减去那个现成进来的起始单元。" }
+      },
       why_en: "The book states the first cycle gives butyryl-S-ACP (4 carbons), and that 'five more cycles (total then seven)' are needed to reach palmitoyl-S-ACP.",
       why_cn: "教材指出第一轮循环生成丁酰-S-ACP（4个碳），此后「再经五轮循环（总计七轮）」即可得到软脂酰-S-ACP。"
     },
@@ -1568,8 +1611,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the book's own carbon accounting, how many of palmitate's eight 'acetyl units' were actually delivered to the growing chain as acetyl-CoA itself, rather than via malonyl-CoA?",
       q_cn: "根据教材自己的碳原子核算，软脂酸的八个「乙酰单位」中，有多少个是以乙酰辅酶A本身（而非经由丙二酰辅酶A）直接掺入生长链的？",
-      options: ["Zero", "One", "Four", "Eight"],
+      options: [
+        "Two",
+        "One",
+        "Four",
+        "All eight"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Two would mean the starter entered twice. It enters once, at the initiating step, and from then on every two-carbon fragment arrives as malonyl-CoA instead.", cn: "两个意味着起始单元进来了两次。它只在起始那一步进来一次，此后每个两碳片段都改以 malonyl-CoA 的形式到来。" },
+        2: { en: "Four would be a half-and-half split. The book's accounting is one and seven: one acetyl unit delivered as acetyl-CoA, seven delivered as malonyl-CoA.", cn: "四个是对半分。教材的账是一和七：一个 acetyl 单元以 acetyl-CoA 送到，七个以 malonyl-CoA 送到。" },
+        3: { en: "The intuitive answer, and the one the arithmetic contradicts. Palmitate is eight acetyl units long, but seven of them were carried in as malonyl-CoA and lost their extra carbon as CO2 on arrival.", cn: "这是直觉上的答案，也正是算式否定掉的那个。Palmitate 有八个 acetyl 单元长，但其中七个是以 malonyl-CoA 带进来的，到位时又以 CO2 的形式把多出来的那个碳丢掉了。" }
+      },
       why_en: "The book states acetyl-CoA participated in the reaction only once, in the first (initiating) step; all seven other two-carbon fragments were incorporated via malonyl-CoA.",
       why_cn: "教材指出乙酰辅酶A仅在第一个（起始）步骤中参与反应一次；其余七个二碳片段都是经由丙二酰辅酶A掺入的。"
     },
@@ -1641,8 +1694,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the book's summary equation, what is the net contribution of CO2 to the overall synthesis of one palmitate molecule from 8 acetyl-CoA?",
       q_cn: "根据教材的总结方程式，CO2对由8分子乙酰辅酶A合成1分子软脂酸这一总反应的净贡献是多少？",
-      options: ["Net consumption of 7 CO2", "Net release of 7 CO2", "Net zero (consumed and released in equal amount)", "CO2 does not appear in the equation"],
+      options: [
+        "Net consumption of 7 CO2, one per condensation",
+        "Net release of 7 CO2, one per carboxylation",
+        "Net zero (consumed and released in equal amount)",
+        "CO2 appears nowhere in the summary equation at all"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Seven CO2 are consumed, at the seven carboxylations that make malonyl-CoA — but seven are released again, one at each condensation, so the net comes out at zero. The label on the seven is also swapped here.", cn: "确实消耗了七个 CO2，用在生成 malonyl-CoA 的七次羧化上——但又放出七个，每次缩合放一个，所以净值为零。这个选项还把这七个的归属也说反了。" },
+        1: { en: "Seven CO2 are released, one per condensation — but seven were taken up first. The direction here is right and the accounting only half done, which is what makes this the most tempting wrong answer.", cn: "确实放出七个 CO2，每次缩合一个——但之前先吸收了七个。这个选项方向说对了，只是账只算了一半，这也是它最有迷惑性的地方。" },
+        3: { en: "It appears twice over, once going in and once coming out. That is exactly why it does not survive into the net summary equation, whose left-hand side lists only 8 acetyl-CoA, 7 ATP and 14 NADPH(H+).", cn: "它出现了两次，一次进、一次出。正因如此它才没有留在净的总方程里——那个方程左边只列了 8 acetyl-CoA、7 ATP 和 14 NADPH(H+)。" }
+      },
       why_en: "The diagram shows CO2 flowing in (carboxylating acetyl-CoA to malonyl-CoA) and back out (in each condensation step) in matching amounts, so its net contribution to the overall equation is zero.",
       why_cn: "图中显示CO2以等量的方式流入（将乙酰辅酶A羧化为丙二酰辅酶A）又流出（在每一次缩合步骤中），因此其对总反应式的净贡献为零。"
     },
@@ -1652,6 +1715,12 @@ window.BIOCHEM.topics.push(
       q_cn: "以下哪一项不是教材所给出的新生成的细胞质软脂酸的三种去向之一？",
       options: ["Direct use for synthesis of a simple/complex lipid in the cytoplasm", "Transfer to the mitochondrial matrix for further elongation", "Dehydrogenation to an unsaturated fatty acid", "Direct oxidation to CO2 and H2O in the cytoplasm"],
       answer: 3,
+      optionRefs: { 0: "8-3-3", 1: "8-3-1", 2: "8-3-1" },
+      optionNotes: {
+        0: { en: "This is fate 1, and it is genuine: palmitic acid used directly in the cytoplasm to build a simple or a complex lipid. To enter those pathways it is first re-activated by thiokinase to palmitoyl-CoA.", cn: "这是第一种去向，而且是真的：palmitic acid 直接在细胞质里用于合成简单或复合脂类。要进入那些通路，它先由 thiokinase 重新活化成 palmitoyl-CoA。" },
+        1: { en: "This is fate 2: transferred into the mitochondrial matrix and lengthened by one or more further two-carbon units, which is the elongase system's job.", cn: "这是第二种去向：被转移到线粒体基质，再延长一个或多个两碳单元，这正是 elongase 系统的工作。" },
+        2: { en: "This is fate 3: dehydrogenated to give an unsaturated fatty acid — the work of the desaturase system, which the book places on the endoplasmic reticulum.", cn: "这是第三种去向：脱氢生成不饱和脂肪酸——这是 desaturase 系统的工作，教材把它放在内质网上。" }
+      },
       why_en: "The book gives only direct lipid-synthesis use, mitochondrial elongation, or dehydrogenation as palmitate's fates in this passage — full oxidative catabolism (beta-oxidation onward) belongs to the later section 8.4, not to any of these three fates.",
       why_cn: "教材在此段仅给出直接用于脂质合成、线粒体延长、或脱氢这三种软脂酸去向——完整的氧化分解代谢（β-氧化及后续）属于后面的第8.4节，不属于这三种去向之一。"
     },
