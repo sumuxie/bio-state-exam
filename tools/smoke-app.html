@@ -348,6 +348,47 @@
     const after = JSON.parse(localStorage.getItem('biopro.notes') || '{}');
     check('clearing a note drops it from storage', !(firstKey in after));
 
+    /* ---- option shuffling. Runs LAST, and deliberately: it starts a fresh quiz
+       and answers sixty questions, which fills the wrong-answer book with noise
+       and would wreck every assertion above if it ran earlier.
+
+       The bank was written with the answer in position B two thirds of the time,
+       so a fresh run now permutes the options and remaps answer / optionRefs /
+       optionNotes with them. Two things are checked: the answer no longer piles
+       up in one position, and the annotations still belong to the options they
+       were written for — a remap that lost its alignment would put a hook
+       against the CORRECT option, which by construction never has one. */
+    d.querySelector('.mode-btn[data-mode="quiz"]').click();
+    $('#quiz-scope').value = 'all';
+    $('#quiz-start').click();
+    const seen = [0, 0, 0, 0];
+    let hooked = 0, hookMismatch = 0, sampled = 0;
+    for (let i = 0; i < 60; i++) {
+      const opts = $$('#qcard .option');
+      if (opts.length) {
+        opts[0].click();
+        const marked = $$('#qcard .option').map((b) => b.classList.contains('correct'));
+        const idx = marked.indexOf(true);
+        if (idx >= 0 && idx < 4) { seen[idx]++; sampled++; }
+        const panel = $('#feedback .opt-hooks');
+        if (panel) {
+          hooked++;
+          const rows = panel.querySelectorAll('.hook').length;
+          if (rows && rows !== opts.length - 1) hookMismatch++;
+        }
+      } else if ($('#short-check')) {
+        $('#short-check').click();
+      }
+      const next = $('#q-next');
+      if (!next) break;
+      next.click();
+    }
+    const worst = sampled ? Math.max.apply(null, seen) / sampled : 1;
+    check('the answer is no longer parked in one position', sampled > 20 && worst < 0.45,
+          'A/B/C/D = ' + seen.join('/') + ' over ' + sampled + ', worst ' + Math.round(worst * 100) + '%');
+    check('every annotation panel has one row per wrong option', hookMismatch === 0,
+          hooked + ' panels seen, ' + hookMismatch + ' mismatched');
+
     finish();
   }
 })();

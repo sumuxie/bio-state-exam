@@ -1567,6 +1567,67 @@
   let quizItems = [], quizIndex = 0, quizCorrect = 0, quizAnswered = false, quizWrong = [];
   let quizIsDrill = false;   // a wrong-answer drill must not overwrite a topic's best score
 
+  /* ------------------------------------------------------- OPTION SHUFFLING
+     Measured 2026-08-14 over the whole bank: the correct answer sat in
+     position B in 66% of the 549 core questions, and in A or B in 89% of the
+     432 bank questions. Answering B every time scored 66% without reading
+     anything. That is not a content problem, it is a writing habit -- the
+     answer gets drafted first and the distractors are appended after it -- and
+     it makes the drill measure the wrong thing.
+
+     So the options are permuted per quiz run, and `answer`, `optionRefs` and
+     `optionNotes` are remapped with them. The question objects are COPIED
+     rather than mutated: the data files stay as written, and the wrong-answer
+     book stores whatever order it was actually shown, so a re-drill of a stored
+     entry shows the same card the reader got wrong.
+
+     One exception, and it is why this is not simply applied to everything: some
+     explanations refer to options by number ("Option 3 invents a charge
+     mechanism"). Those questions are left in their written order, because
+     shuffling them would make the explanation point at the wrong option. There
+     are two incompatible numbering conventions in the data anyway -- the
+     Lehninger files count from 1, chapters 9 and 10 count from 0, and the app
+     renders A-D for both -- so those references want fixing on their own terms
+     before they can be shuffled. About 5% of the bank.
+
+     What this does NOT fix: the answer is also the LONGEST option in 83% of
+     core questions and 72% of bank ones, because the true statement is the one
+     that needs the qualifying clause. Only rewriting distractors fixes that. */
+  function positionReferenced(q) {
+    return /Option\s*\d/i.test(String(q.why_en || '') + String(q.why_cn || ''));
+  }
+
+  function permuteMcq(item) {
+    const q = item.q;
+    if (!q || q.type !== 'mcq' || !Array.isArray(q.options) || positionReferenced(q)) return item;
+
+    const order = shuffle(q.options.map((_, i) => i));   // order[newIndex] = oldIndex
+    const back = {};
+    order.forEach((oldI, newI) => { back[oldI] = newI; });
+
+    const remap = (obj) => {
+      if (!obj) return undefined;
+      const out = {};
+      Object.keys(obj).forEach((k) => {
+        const ni = back[Number(k)];
+        if (ni !== undefined) out[ni] = obj[k];
+      });
+      return out;
+    };
+
+    const copy = {};
+    Object.keys(q).forEach((k) => { copy[k] = q[k]; });
+    copy.options = order.map((oldI) => q.options[oldI]);
+    copy.answer = back[q.answer];
+    if (q.optionRefs) copy.optionRefs = remap(q.optionRefs);
+    if (q.optionNotes) copy.optionNotes = remap(q.optionNotes);
+
+    const out = {};
+    Object.keys(item).forEach((k) => { out[k] = item[k]; });
+    out.q = copy;
+    return out;
+  }
+
   /* `items` is the wrong-answer drill handing in its own list. The click
      handler passes an Event, so the argument is type-checked rather than
      truth-checked -- an Event is truthy and would have silently emptied the
@@ -1574,9 +1635,11 @@
   function startQuiz(items) {
     const scope = $('#quiz-scope').value;
     quizIsDrill = Array.isArray(items);
+    // A drill re-asks entries exactly as they were stored, including the option
+    // order the reader actually saw; only a fresh run permutes.
     quizItems = quizIsDrill
       ? shuffle(items.slice())
-      : shuffle(allQuestions().filter((item) => inScope(item.topic, scope)));
+      : shuffle(allQuestions().filter((item) => inScope(item.topic, scope))).map(permuteMcq);
     quizIndex = 0; quizCorrect = 0; quizWrong = [];
     $('#quiz-intro').hidden = true;
     $('#quiz-result').hidden = true;

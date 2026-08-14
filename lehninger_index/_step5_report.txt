@@ -1,5 +1,5 @@
-tools/validate-data.js parses as JavaScript: OK (231 lines)
-biochemie_pro/app.js parses as JavaScript: OK (1824 lines, 2 literals stubbed)
+tools/validate-data.js parses as JavaScript: OK (296 lines)
+biochemie_pro/app.js parses as JavaScript: OK (2586 lines, 2 literals stubbed)
 
 simulating the validator's logic against the real data:
 ok biochemie_basic: 207 topics (207 cz, 0 lehninger, 0 entity), cz book pages 8-228, 0 topicKeys, 1010 terms, 603 questions
