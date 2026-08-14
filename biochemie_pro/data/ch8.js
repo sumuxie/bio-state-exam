@@ -2237,6 +2237,12 @@ window.BIOCHEM.topics.push(
         "Sphingomyelin; sphingomyelinase located in the Golgi apparatus"
       ],
       answer: 1,
+      optionRefs: { 0: "8-4-3", 1: "8-4-2-1", 3: "8-4-2-2" },
+      optionNotes: {
+        0: { en: "Cholesterol is a derived lipid, and what the book says about it is the opposite of storage: as a rule it is not metabolised for energy at all, and it leaves the animal body only after conversion to bile acids.", cn: "Cholesterol 属于衍生脂类，而教材关于它的说法恰恰与储存相反：它一般根本不被代谢供能，离开动物体之前还必须先转化成胆汁酸。" },
+        1: { en: "Phospholipids are complex lipids and above all membrane components rather than a store. Phospholipases do take them apart, but in the cytoplasm, not in the nucleus.", cn: "Phospholipid 属于复合脂类，首先是膜的组分，而不是储备物质。Phospholipase 确实会把它们拆开，但地点是细胞质，不是细胞核。" },
+        3: { en: "Sphingomyelin is a complex lipid too, and sphingomyelinase is one of the cytoplasmic hydrolases that dismantle the sphingolipids step by step — it cleaves the ceramide-phosphate bond.", cn: "Sphingomyelin 同样属于复合脂类，而 sphingomyelinase 是逐步拆解 sphingolipid 的那批细胞质水解酶之一——它切开 ceramide 与磷酸之间的键。" }
+      },
       why_en: "The book identifies triacylglycerols as the main storage substance and states their degrading enzymes, lipases, are present in the cytoplasm. Cholesterol, phospholipids, and sphingomyelin belong to other lipid classes (derived and complex lipids) discussed in later subsections.",
       why_cn: "教材指出三酰甘油是主要的储能物质，分解它的酶——脂肪酶存在于细胞质中。胆固醇、磷脂和鞘磷脂分别属于后面小节讨论的其他脂质类别（衍生脂质和复合脂质）。"
     },
@@ -2244,8 +2250,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What bond does lipase break during triacylglycerol degradation?",
       q_cn: "脂肪酶在分解三酰甘油时断裂的是什么化学键？",
-      options: ["Glycosidic bonds", "Phosphodiester bonds", "Ester bonds between fatty acids and glycerol", "Peptide bonds"],
+      options: [
+        "Glycosidic bonds between the sugar head groups",
+        "Phosphodiester bonds flanking the phosphate",
+        "Ester bonds between fatty acids and glycerol",
+        "Amide bonds between the acyl and the amino group"
+      ],
       answer: 2,
+      optionRefs: { 0: "8-2-3", 1: "8-4-2-1", 3: "8-2-3-3" },
+      optionNotes: {
+        0: { en: "Glycosidic bonds hold the sugar head groups of the glycolipids — MGDG's galactose, a cerebroside's single sugar. A triacylglycerol carries no sugar anywhere for such a bond to exist.", cn: "糖苷键连的是 glycolipid 的糖头基——MGDG 的 galactose、cerebroside 的那一个糖。Triacylglycerol 身上根本没有糖，也就不存在这种键。" },
+        1: { en: "The bonds flanking a phosphate group are phospholipase C's and D's business, and a triacylglycerol has no phosphate for them to flank — that third position carries a fatty acid instead.", cn: "磷酸两侧的键归 phospholipase C 和 D 管，而 triacylglycerol 上根本没有磷酸——第三个位置上接的是又一个脂肪酸。" },
+        3: { en: "An amide bond between an acyl group and an amino group is what makes ceramide out of sphingosine. That is the sphingolipid pattern; the acylglycerols are held together by esters throughout.", cn: "酰基与氨基之间的酰胺键，是 sphingosine 变成 ceramide 的方式。那是 sphingolipid 的式样；acylglycerol 一族从头到尾靠的都是酯键。" }
+      },
       why_en: "The book explicitly states lipases break the ester bonds of the fatty acids and glycerol. Glycosidic and peptide bonds belong to carbohydrate and protein chemistry respectively; phosphodiester bonds are broken by phospholipases (8.4.2), not lipases.",
       why_cn: "教材明确指出脂肪酶断裂的是脂肪酸与甘油之间的酯键。糖苷键和肽键分别属于糖类和蛋白质化学；磷酸二酯键由磷脂酶（8.4.2节）断裂，而非脂肪酶。"
     },
@@ -2314,11 +2331,17 @@ window.BIOCHEM.topics.push(
       q_cn: "根据教材，复合脂质（如磷脂）的降解发生在哪里？这与脂肪酸β-氧化有何不同？",
       options: [
         "In the cytoplasm; beta-oxidation instead takes place in the mitochondrial matrix",
-        "In the mitochondrial matrix; beta-oxidation instead takes place in the cytoplasm",
-        "In the nucleus; beta-oxidation also takes place in the nucleus",
-        "In the Golgi apparatus; beta-oxidation takes place in the endoplasmic reticulum"
+        "In the mitochondrial matrix; beta-oxidation instead takes place in the cytoplasm, exactly the other way about",
+        "In the nucleus; beta-oxidation runs there as well",
+        "In the Golgi; beta-oxidation takes place in the endoplasmic reticulum"
       ],
       answer: 0,
+      optionRefs: { 1: "8-4-4-2", 3: "8-3-1" },
+      optionNotes: {
+        1: { en: "The two compartments have been swapped. The book draws the contrast the other way round: complex lipids come apart in the cytoplasm, while beta-oxidation of the released fatty acids is a mitochondrial matrix process.", cn: "两个区室调换了。教材画出的对比正好相反：复合脂类在细胞质里拆解，而释放出来的脂肪酸的 beta-oxidation 发生在线粒体基质。" },
+        2: { en: "The nucleus appears nowhere in this chapter's lipid catabolism. Two compartments are named for these two processes, and the point of naming them is that they are different from each other.", cn: "细胞核在本章的脂类分解里从未出现过。教材为这两个过程各点名了一个区室，而点名的意义就在于两者不同。" },
+        3: { en: "The endoplasmic reticulum does carry a lipid enzyme system, but a biosynthetic one: the desaturase that turns saturated chains into unsaturated ones, and which also permits further elongation.", cn: "内质网上确实有一套脂类酶系统，但那是合成方向的：把饱和链变成不饱和链的 desaturase，而且它也允许链继续延长。" }
+      },
       why_en: "The book states complex lipid degradation occurs in the cytoplasm, while 8.4.4 later specifies that beta-oxidation of fatty acids is localized to the mitochondrial matrix — the two lipid-catabolism pathways are compartmentalized differently.",
       why_cn: "教材指出复合脂质的降解发生在细胞质中，而后面8.4.4节指出脂肪酸β-氧化定位于线粒体基质——两条脂质分解代谢途径在细胞内的区室化定位不同。"
     },
@@ -2326,8 +2349,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Using the book's phosphatidylcholine figure, which two phospholipases cleave the ester bonds to the fatty acid chains (as opposed to the bonds around the phosphate group)?",
       q_cn: "根据教材磷脂酰胆碱示意图，哪两种磷脂酶断裂的是脂肪酸链的酯键（而不是磷酸基团周围的键）？",
-      options: ["Phospholipase C and D", "Phospholipase A1 and A2", "Phospholipase A1 and D", "Phospholipase A2 and C"],
+      options: [
+        "Phospholipase C and D",
+        "Phospholipase A1 and A2",
+        "Phospholipase A1 and D",
+        "Phospholipase A2 together with C"
+      ],
       answer: 1,
+      optionRefs: { 3: "8-2-3-2" },
+      optionNotes: {
+        0: { en: "C and D are the pair that cut around the phosphate: C on the glycerol side of it, D on the far side, next to the choline head group. Neither touches a fatty-acid ester.", cn: "C 和 D 是在磷酸两侧下刀的那一对：C 切磷酸靠 glycerol 的一侧，D 切另一侧、紧挨着 choline 头基。两者都不碰脂肪酸的酯键。" },
+        2: { en: "Half right. A1 does cut a fatty-acid ester, the one at sn-1; but D cuts on the far side of the phosphate, next to the head group, so it belongs to the other pair.", cn: "对了一半。A1 确实切脂肪酸的酯键，即 sn-1 位那个；但 D 切的是磷酸另一侧、靠头基的那个键，属于另一对。" },
+        3: { en: "Half right the other way about. A2 cuts the sn-2 fatty acid — drawn with a kink in the figure, since position 2 is where the unsaturated chain sits as a rule — while C cuts on the glycerol side of the phosphate.", cn: "反过来对了一半。A2 切的是 sn-2 的脂肪酸——图上画成带折的，因为按惯例 2 位接的是不饱和链——而 C 切的是磷酸靠 glycerol 那一侧。" }
+      },
       why_en: "Phospholipase A1 and A2 cleave the two fatty-acid ester bonds (sn-1 and sn-2 positions respectively); phospholipase C and D instead cleave the two bonds flanking the phosphate group, on the glycerol side and head-group side respectively.",
       why_cn: "磷脂酶A1和A2分别断裂sn-1位和sn-2位的脂肪酸酯键；磷脂酶C和D则分别断裂磷酸基团靠甘油一侧和靠头部基团一侧的键。"
     },
@@ -2402,6 +2436,11 @@ window.BIOCHEM.topics.push(
         "From the middle of the chain outward in both directions simultaneously"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The direction is reversed. The enzymes work inward from the non-reducing end, and the last sugar to go is the glucose sitting directly on the ceramide, removed by β-glucosidase.", cn: "方向反了。这些酶是从非还原端往里做的，最后离开的糖是直接连在 ceramide 上的 glucose，由 β-glucosidase 移走。" },
+        2: { en: "There is a defined order, and it matters: each enzyme exposes the site the next one needs, so a missing enzyme stops the chain at one point and lets that molecule pile up. NeuNAc sits on a branch off the GalNAc and comes off by sialidase along the way.", cn: "顺序是确定的，而且这很关键：每个酶都为下一个酶暴露出作用位点，所以缺了某个酶，链条就在那一点停住，那个分子随之堆积。NeuNAc 长在 GalNAc 的支链上，途中由 sialidase 摘掉。" },
+        3: { en: "Degradation runs from one end only. Five enzymes act in sequence along the ganglioside's sugar chain, with β-galactosidase doing duty at two different positions rather than the chain being opened in the middle.", cn: "降解只从一端进行。五个酶沿 ganglioside 的糖链依次作用，其中 β-galactosidase 在两个不同位置各干一次，而不是从链的中间打开。" }
+      },
       why_en: "The enzymes act from the terminal (non-reducing) end of the sugar chain inward, ending with β-glucosidase removing the glucose residue directly attached to ceramide, which leaves free ceramide as the final product of this stage.",
       why_cn: "各酶从糖链的末端（非还原端）向内依次作用，最后由β-葡萄糖苷酶切除直接连接神经酰胺的葡萄糖残基，从而在这一阶段留下游离的神经酰胺作为终产物。"
     },
@@ -2410,12 +2449,17 @@ window.BIOCHEM.topics.push(
       q_en: "What two products does ceramidase generate from ceramide, and what happens to each afterward per the book?",
       q_cn: "神经酰胺酶从神经酰胺中生成哪两种产物？根据教材，之后各自经历什么变化？",
       options: [
-        "Glucose and galactose; both re-enter glycolysis",
+        "Glucose and galactose, both re-entering the sugar pathways after their glycosidases have removed them from the chain",
         "Free fatty acid and sphingosine; the fatty acid undergoes beta-oxidation, sphingosine is phosphorylated and cleaved to ethanolamine-phosphate and palmitaldehyde/palmitate",
-        "Phosphocholine and ceramide; phosphocholine is excreted, ceramide re-enters membrane synthesis",
-        "NeuNAc and ceramide; NeuNAc is oxidized directly to CO2"
+        "Phosphocholine and ceramide, released by sphingomyelinase; the phosphocholine is excreted unchanged and the ceramide goes straight back into membrane synthesis without any further cleavage",
+        "NeuNAc and sphingosine; the NeuNAc is removed by a sialidase and the sphingosine oxidised directly to palmitate without any phosphorylation"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The sugars do come off, but earlier and by different enzymes: β-glucosidase, β-galactosidase and β-N-acetyl-galactosidase strip the whole chain before ceramide is reached. Ceramidase acts on what is left after that.", cn: "糖确实会脱下来，但更早，而且由别的酶来做：β-glucosidase、β-galactosidase 和 β-N-acetyl-galactosidase 先把整条糖链剥光，才轮到 ceramide。Ceramidase 处理的是剩下的那部分。" },
+        2: { en: "This is sphingomyelinase's reaction, one step upstream: it cleaves the ceramide-phosphate bond to give ceramide plus phosphocholine. Ceramidase then takes that same ceramide apart further, which is what the question asks about.", cn: "这是上一步 sphingomyelinase 的反应：它切开 ceramide 与磷酸之间的键，给出 ceramide 加 phosphocholine。随后 ceramidase 再把这个 ceramide 继续拆开——题目问的正是后者。" },
+        3: { en: "NeuNAc is removed by N-acetylneuraminidase from the branch on the GalNAc, long before ceramidase acts. And sphingosine is not oxidised directly: it is first phosphorylated by an ATP-dependent kinase, then cleaved.", cn: "NeuNAc 是由 N-acetylneuraminidase 从 GalNAc 的支链上摘掉的，远在 ceramidase 动手之前。而且 sphingosine 也不是直接被氧化的：它先由一个 ATP 依赖的 kinase 磷酸化，然后才被裂解。" }
+      },
       why_en: "The book's diagram shows ceramide + H2O, via ceramidase, yielding a free fatty acid (further degraded by beta-oxidation) and sphingosine (phosphorylated by ATP/kinase, then cleaved to ethanolamine-phosphate and palmitaldehyde, oxidized to palmitate).",
       why_cn: "教材图示显示神经酰胺加H2O，经神经酰胺酶作用，生成游离脂肪酸（进一步经β-氧化分解）和鞘氨醇（经ATP/激酶磷酸化后，裂解为磷酸乙醇胺和棕榈醛，再氧化为棕榈酸）。"
     },
@@ -2476,12 +2520,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to the book, what generally happens to terpenoids and steroids synthesized in the cells of higher organisms?",
       q_cn: "根据教材，高等生物细胞中合成的萜类和类固醇通常会发生什么？",
       options: [
-        "They are metabolized as the primary source of cellular energy",
+        "They are metabolised as one of the cell's main sources of energy and carbon",
         "They are, as a rule, not metabolized for energy/carbon and are instead excreted from the body",
-        "They are converted directly into triacylglycerols for storage",
-        "They are immediately degraded by beta-oxidation in the mitochondria"
+        "They are converted into triacylglycerols and laid down as the organism's storage fat",
+        "They are degraded by beta-oxidation in the mitochondrial matrix, exactly as the fatty acids released from storage fat are"
       ],
       answer: 1,
+      optionRefs: { 2: "8-3-5", 3: "8-4-4-2" },
+      optionNotes: {
+        0: { en: "This is the claim the book denies in so many words: as a rule these compounds are NOT metabolised or used as a source of energy or of carbon by the very organism that made them.", cn: "这正是教材明确否定的说法：一般而言，这些化合物并不被合成它们的生物体代谢，也不被用作能量或碳的来源。" },
+        2: { en: "Triacylglycerol is the storage substance, and it is built from glycerol phosphate plus acyl-CoA. Nothing in this chapter converts a terpenoid ring system into one.", cn: "储存物质是 triacylglycerol，由 glycerol phosphate 加 acyl-CoA 搭起来。本章里没有任何一步把 terpenoid 的环系变成它。" },
+        3: { en: "Beta-oxidation acts on fatty acids, and a terpenoid's fused ring system is not a fatty acid — there is no chain for it to shorten two carbons at a time. Cholesterol leaves as bile acids instead.", cn: "Beta-oxidation 作用的是脂肪酸，而 terpenoid 的稠环体系不是脂肪酸——没有链可以让它每次剪掉两个碳。Cholesterol 的去路是变成胆汁酸。" }
+      },
       why_en: "The book states these compounds are, as a rule, not metabolized/used as an energy or carbon source by the synthesizing organism and are instead excreted, with their further fate (e.g. possible use by heterotrophic bacteria) not well mapped.",
       why_cn: "教材指出这些化合物通常不会被合成它们的生物用作能量或碳来源进行代谢，而是被排出体外，其进一步去向（例如可能被异养细菌利用）尚未被充分阐明。"
     },
@@ -2490,12 +2540,18 @@ window.BIOCHEM.topics.push(
       q_en: "How is cholesterol specifically excreted from the animal body, per the book?",
       q_cn: "根据教材，胆固醇具体是如何从动物体内排出的？",
       options: [
-        "Directly, unmodified, via the kidneys",
+        "Directly and unmodified, filtered out by the kidneys",
         "After prior conversion to bile acids and their salts",
-        "After conversion to acetyl-CoA via beta-oxidation",
-        "After conversion to a ketone body (acetone)"
+        "After conversion to acetyl-CoA, by mitochondrial beta-oxidation",
+        "After conversion to the ketone body acetone"
       ],
       answer: 1,
+      optionRefs: { 2: "8-4-4-2", 3: "8-4-4-3" },
+      optionNotes: {
+        0: { en: "The book puts the qualification in explicitly: cholesterol leaves the animal body ONLY after prior conversion. Being excreted unchanged is precisely what does not happen to it.", cn: "教材把限定条件写得很清楚：cholesterol 只有在先经过转化之后才离开动物体。原样排出恰恰是不会发生的。" },
+        2: { en: "Beta-oxidation works on fatty acids, not on a fused ring system — cholesterol's steroid skeleton offers no chain for it to shorten, and its C17 side chain is only 8 to 10 carbons of branched hydrocarbon.", cn: "Beta-oxidation 处理的是脂肪酸，不是稠环体系——cholesterol 的 steroid 骨架没有可供剪短的链，它 C17 上的侧链也只有 8 到 10 个碳的支链烃。" },
+        3: { en: "The ketone bodies are made from the acetyl-CoA of fatty-acid breakdown, not from cholesterol. They are a transport form of fuel, not an excretion route for a ring system.", cn: "酮体是由脂肪酸分解得到的 acetyl-CoA 生成的，不是由 cholesterol 生成的。它们是燃料的一种运输形式，不是环系的排泄途径。" }
+      },
       why_en: "The book states cholesterol is excreted from the animal body only after prior conversion to bile acids and their salts — not directly, and not via the beta-oxidation/ketone-body pathway used for fatty acids.",
       why_cn: "教材指出胆固醇需先转化为胆汁酸及其盐，才能从动物体内排出——而不是直接排出，也不是经脂肪酸所用的β-氧化/酮体途径。"
     },
