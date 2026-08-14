@@ -1603,8 +1603,15 @@
      What this does NOT fix: the answer is also the LONGEST option in 83% of
      core questions and 72% of bank ones, because the true statement is the one
      that needs the qualifying clause. Only rewriting distractors fixes that. */
+  /* Matches a LETTER as well as a digit, and that is not cosmetic. The
+     explanations that name an option were being converted from "Option 3" to
+     the letter the reader actually sees, which is the right fix for them — but
+     a digit-only guard stops matching the moment that conversion lands, the
+     question rejoins the shuffle, and the letter then points at whatever landed
+     there. Fixing the text without widening this regex would have made those
+     questions worse than before. */
   function positionReferenced(q) {
-    return /Option\s*\d/i.test(String(q.why_en || '') + String(q.why_cn || ''));
+    return /Option\s*[0-9A-D]\b/i.test(String(q.why_en || '') + String(q.why_cn || ''));
   }
 
   function permuteMcq(item) {
