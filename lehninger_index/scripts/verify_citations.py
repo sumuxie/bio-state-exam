@@ -233,6 +233,11 @@ def walk_strings(obj, path=""):
             for r in walk_strings(v, "%s[%d]" % (path, i)): yield r
     elif isinstance(obj, dict):
         for k, v in obj.items():
+            # str(k), not k: `optionRefs` and `optionNotes` are keyed by OPTION INDEX,
+            # so their keys arrive as integers and concatenating one onto a path
+            # raised TypeError and took the whole run down. Found 2026-08-14, when
+            # the first data files using those fields reached this checker.
+            k = str(k)
             for r in walk_strings(v, (path + "." + k) if path else k): yield r
 
 # How much text around an inline "A p.92" counts as its source context. A figure or table
