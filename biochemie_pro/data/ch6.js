@@ -591,9 +591,15 @@ window.BIOCHEM.topics.push(
         "From cytochrome c to NADH, and this is exergonic",
         "From NADH to cytochrome c, and this is endergonic",
         "From NADH to cytochrome c, and this is exergonic",
-        "Electrons do not flow between these two systems at all"
+        "Electrons do not pass between these two systems"
       ],
       answer: 2,
+      optionRefs: { 0: "6-2-4-1" },
+      optionNotes: {
+        0: { en: "This is the reverse direction, and it is the endergonic one. Electrons run from the more NEGATIVE potential to the more positive, which is why the whole respiratory chain hands them along from carriers of lower potential toward rising ones, finishing at oxygen at +0.82 V.", cn: "这是反方向，而且是吸能（endergonic）的方向。电子从更负的电位流向更正的电位——整条 respiratory chain 正是按这个顺序把电子从低电位载体一路传到高电位载体，最后交给 +0.82 V 的氧。" },
+        1: { en: "The direction is right but the sign is wrong. The book states plainly that passage from the more negative toward the more positive potential is the exergonic direction; only the reverse, from positive back to negative, would be endergonic.", cn: "方向对了，但符号错了。教材说得很直接：从更负电位流向更正电位就是放能（exergonic）方向；只有反过来、从正电位回到负电位，才是吸能的。" },
+        3: { en: "Both couples are listed in Tab. 6.2 precisely so that pairs like this can be compared, and their separation of 0.58 V is a large driving force, not an absence of one — ΔG⁰′ = −nFΔE⁰′ turns exactly that difference into usable energy.", cn: "这两个 redox 对都被列进 Tab. 6.2，本来就是为了让人这样两两比较；它们相差 0.58 V，是很大的推动力，而不是没有推动力——ΔG⁰′ = −nFΔE⁰′ 正是把这个差值换算成可用能量。" }
+      },
       why_en: "Electrons spontaneously pass from the system with the more negative redox potential (here NADH/NAD⁺ at -0.32 V, the reductant) to the one with the higher, more positive potential (cytochrome c at +0.26 V, the oxidant) — and per the book, that direction, from negative to positive potential, is the exergonic one.",
       why_cn: "电子会自发地从氧化还原电位更负的体系（此处为NADH/NAD⁺，-0.32 V，还原剂）流向电位更高、更正的体系（细胞色素c，+0.26 V，氧化剂）——根据教材，从负电位到正电位的这个方向正是放能方向。"
     },
@@ -602,12 +608,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why is the standard redox potential of the hydrogen electrode given as −420 mV in biological systems, rather than the classical convention of 0 mV?",
       q_cn: "为什么在生物系统中，氢电极的标准氧化还原电位被定为−420 mV，而不是经典惯例中的0 mV？",
       options: [
-        "Because Tab. 6.2's H₂/2H⁺ row is a misprint that should read 0 mV",
+        "Because Tab. 6.2's H₂/2H⁺ row was copied from a classical E⁰ list and printed on the wrong scale, so the −420 mV is a stray value the book's running text never repeats in words anywhere, nor uses in the ΔG⁰′ discussion that follows",
         "Because the classical 0 mV convention is defined at a different reference pH than the biological (pH 7) standard state the book uses, which shifts the value to −420 mV — exactly matching Tab. 6.2's own H₂/2H⁺ row",
-        "Because hydrogen gas does not participate in biological redox reactions at all",
-        "Because ΔG⁰′ itself has a fixed zero point that forces this shift"
+        "Because hydrogen gas takes no part in biological redox reactions, so the book drops the hydrogen electrode from its scale altogether and anchors the zero point on the NADH+H⁺/NAD⁺ couple instead",
+        "Because ΔG⁰′ has a fixed zero point of its own, set at the hydrogen electrode, so the E⁰′ scale has to be displaced by −420 mV before the two parallel axes can be read against each other"
       ],
       answer: 1,
+      optionRefs: { 3: "6-1-1" },
+      optionNotes: {
+        0: { en: "Not a misprint but a deliberate convention: the running text states the shift in words as well, and the table's value agrees with it exactly. Two conventions coexist — classical E⁰ with the hydrogen electrode at 0 mV, and biological E⁰′ measured at pH 7.", cn: "这不是印错，而是有意选定的惯例：正文里也用文字说明了这个移动，表里的数值与之完全一致。两套惯例并存——经典 E⁰ 把 hydrogen electrode 定为 0 mV，生物学 E⁰′ 则在 pH 7 下测定。" },
+        2: { en: "Hydrogen-transferring couples are everywhere in biology, and H₂/2H⁺ is itself one of Tab. 6.2's fifteen rows, sitting at −0.42 V just below acetaldehyde/acetate. NADH+H⁺/NAD⁺ appears in the same table at −0.32 V as an ordinary entry, not as a zero point.", cn: "生物体里传递氢的 redox 对到处都是，H₂/2H⁺ 本身就是 Tab. 6.2 十五行中的一行，位于 −0.42 V，紧挨在 acetaldehyde/acetate 下面。NADH+H⁺/NAD⁺ 在同一张表里是 −0.32 V 的普通一行，不是什么零点。" },
+        3: { en: "This is the relation between the two axes turned upside down. E⁰′ is the axis with the fixed, conventionally defined zero; ΔG⁰′ has no starting point of its own at all, and can only be attached to DIFFERENCES of redox potential, through ΔG⁰′ = −nFΔE⁰′.", cn: "这是把两条轴的关系整个说反了。有固定零点、由惯例定义的是 E⁰′；ΔG⁰′ 自己根本没有起点，只能通过 ΔG⁰′ = −nFΔE⁰′ 挂在 redox 电位的差值上。" }
+      },
       why_en: "The book explicitly distinguishes the classical E⁰ convention (hydrogen electrode = 0 mV) from the biological E⁰′ convention (pH 7), under which the hydrogen electrode becomes −420 mV — a value that matches Tab. 6.2's own H₂/2H⁺ row exactly, confirming it is a deliberate convention, not a misprint. Hydrogen-transferring couples are common in biology (this very couple is listed in the table), and it is the E⁰′ axis, not ΔG⁰′, that has the fixed reference point.",
       why_cn: "教材明确区分了经典的E⁰惯例（氢电极=0 mV）与生物学E⁰′惯例（pH 7），在后者下氢电极变为−420 mV——这一数值恰好与表6.2自身H₂/2H⁺一行相符，说明这是刻意的惯例设定，而非印刷错误。涉氢的氧化还原对在生物学中很常见（该对本身就列在表中），而且是E⁰′轴而非ΔG⁰′轴才有固定的参考点。"
     },
@@ -622,6 +634,12 @@ window.BIOCHEM.topics.push(
         "Palmitic acid, oxidised fully to CO₂ and H₂O (−11 340 kJ·mol⁻¹)"
       ],
       answer: 3,
+      optionRefs: { 2: "6-2-2-3" },
+      optionNotes: {
+        0: { en: "The smallest of the four, and deliberately so: lactate fermentation stops at a substrate that is still highly reduced, so most of glucose's energy is left inside the lactate rather than released.", cn: "四者中最小的一个，而且理应如此：lactate fermentation 停在一个仍然高度还原的产物上，葡萄糖的能量大部分留在 lactate 里，没有释放出来。" },
+        1: { en: "Alanine's full oxidation with release of NH₃ comes to −1046 kJ·mol⁻¹ — larger than glucose's anaerobic figure but an order of magnitude short of the fatty acid, since alanine is a small three-carbon skeleton.", cn: "Alanine 完全氧化并放出 NH₃ 为 −1046 kJ·mol⁻¹——比葡萄糖的无氧数值大，但比脂肪酸小一个数量级，因为 alanine 只是个三碳的小骨架。" },
+        2: { en: "This is the aerobic glucose figure, −2870 kJ·mol⁻¹, and it is the number that comes back later as the denominator for the roughly 40% of glucose's energy the cell actually captures as its 38 ATP.", cn: "这是葡萄糖有氧氧化的数值 −2870 kJ·mol⁻¹，后面还会再出现一次：细胞实际以 38 ATP 捕获约 40% 的能量，算的就是以它为分母。" }
+      },
       why_en: "Palmitic acid's full aerobic combustion (C₁₆H₃₂O₂+23 O₂→16 CO₂+16 H₂O) has ΔG⁰′=−11,340 kJ·mol⁻¹, far more negative than glucose's anaerobic (−196.6) or aerobic (−2870) oxidation or alanine's oxidation (−1046) — consistent with palmitic acid being both a larger molecule and a much more reduced (fat-derived) substrate than the others.",
       why_cn: "棕榈酸的完全有氧燃烧（C₁₆H₃₂O₂+23 O₂→16 CO₂+16 H₂O）的ΔG⁰′=−11340 kJ·mol⁻¹，远比葡萄糖的无氧（−196.6）或有氧（−2870）氧化、以及丙氨酸的氧化（−1046）更负——这与棕榈酸既是较大分子、又是比其他底物更「还原」（脂肪来源）的底物这一事实相符。"
     },
@@ -701,8 +719,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per Tab. 6.3, which enzyme of the citrate cycle is explicitly identified as a regulatory enzyme, strongly inhibited by ATP in most organisms?",
       q_cn: "根据表6.3及正文，柠檬酸循环中哪个酶被明确指出是调节性酶，在大多数生物中被ATP强烈抑制？",
-      options: ["Citrate synthase", "Isocitrate dehydrogenase", "Succinate dehydrogenase", "Malate dehydrogenase"],
+      options: [
+        "Citrate synthase",
+        "Isocitrate dehydrogenase",
+        "Aconitase",
+        "Malate dehydrogenase"
+      ],
       answer: 0,
+      optionRefs: { 1: "6-2-2-2", 2: "6-2-2-2", 3: "6-2-2-3" },
+      optionNotes: {
+        1: { en: "Tab. 6.3 gives it EC 1.1.1.41 with NAD⁺, and it catalyses reaction ④, the cycle's first CO₂-releasing step — but the book attaches no regulatory statement to it on these pages.", cn: "Tab. 6.3 给的是 EC 1.1.1.41、辅因子 NAD⁺，催化反应 ④，也就是本 cycle 第一个放出 CO₂ 的步骤——但教材在这几页里没有把任何调控的说法安在它头上。" },
+        2: { en: "Aconitase occupies rows 2 and 3 of Tab. 6.3 with Fe²⁺ as cofactor; it only dehydrates citrate and rehydrates the double bond the other way round to give isocitrate. No redox, no regulation named.", cn: "Aconitase 占 Tab. 6.3 的第 2、3 行，辅因子是 Fe²⁺；它只是把 citrate 脱水、再换个方向把水加回双键上得到 isocitrate。既没有氧化还原，教材也没说它受调控。" },
+        3: { en: "Malate dehydrogenase (EC 1.1.1.37, NAD⁺) is reaction ⑨, the step that closes the cycle by regenerating oxaloacetate and the cycle's third NADH — again with no regulatory claim in the text.", cn: "Malate dehydrogenase（EC 1.1.1.37，NAD⁺）是反应 ⑨，靠再生 oxaloacetate 和第三个 NADH 来闭合 cycle——教材同样没有说它受调控。" }
+      },
       why_en: "The book states citrate synthase is a regulatory enzyme, strongly inhibited by ATP in most organisms and by NADH in some — this regulation is discussed right after its reaction mechanism, not attached to any of the other three enzymes on these pages.",
       why_cn: "教材指出柠檬酸合酶是调节性酶，在大多数生物中被ATP强烈抑制，在某些生物中被NADH抑制——这一调节机制紧跟在其反应机理之后讨论，并未提及本页其他三个酶具有此性质。"
     },
@@ -718,8 +747,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Why is citrate synthase's condensation of oxaloacetate with acetyl-CoA described as possible specifically because of acetyl-CoA's THIOESTER bond?",
       q_cn: "为什么柠檬酸合酶催化草酰乙酸与乙酰辅酶A的缩合反应，其可行性被特别归因于乙酰辅酶A的硫酯键？",
-      options: ["Because thioesters are unstable and hydrolyze spontaneously", "Because, unlike an ordinary O-ester bond, the thioester resists mesomeric delocalization, fixing the carbonyl's reactivity and enabling an aldol condensation", "Because thioesters contain no carbonyl group at all", "Because CoA itself acts as the catalytic base in the reaction"],
+      options: [
+        "Because thioesters are so unstable that they hydrolyse on their own, and the CoA-SH released is what attacks oxaloacetate's carbonyl carbon",
+        "Because, unlike an ordinary O-ester bond, the thioester resists mesomeric delocalization, fixing the carbonyl's reactivity and enabling an aldol condensation",
+        "Because the thioester bond delocalises its carbonyl exactly as an ordinary O-ester does, and it is oxaloacetate's own methyl group that this activates for the condensation",
+        "Because coenzyme A itself serves as the catalytic base of the reaction, and is split off only once the new bond between the two carbon skeletons has formed"
+      ],
       answer: 1,
+      optionRefs: { 0: "6-1-2-2", 2: "6-1-2-2" },
+      optionNotes: {
+        0: { en: "Instability is not the argument. The thioester is macroergic for a structural reason — sulfur blocks the mesomerism an ordinary O-ester enjoys — and CoA-SH leaves as a product of the condensation, not as the species that attacks oxaloacetate.", cn: "教材讲的不是不稳定。Thioester 之所以是 macroergic，理由是结构性的——硫原子挡住了普通 O-ester 那种 mesomerism；而 CoA-SH 是缩合反应的产物，不是去进攻 oxaloacetate 的那一方。" },
+        2: { en: "Exactly backwards, and with the partners swapped as well. Sulfur PREVENTS the delocalisation an O-ester shows, and the methyl group entering the condensation is acetyl's, while oxaloacetate contributes the carbonyl carbon.", cn: "正好说反了，而且两个反应物也调换了。硫原子是阻止 O-ester 那种离域，而参与缩合的甲基来自 acetyl，oxaloacetate 提供的是 carbonyl 的碳。" },
+        3: { en: "Coenzyme A is split off simultaneously with the condensation, as a product — Tab. 6.3 lists it as the reaction's cofactor, not as a catalytic base, and the book names no base-catalysis step here.", cn: "Coenzyme A 是在缩合的同时作为产物脱下来的——Tab. 6.3 把它列为该反应的辅因子，不是催化用的碱，教材在这里也没有提任何碱催化的步骤。" }
+      },
       why_en: "The book states the thioester group prevents the mesomerism common to O-ester bonds, which fixes acetyl-CoA's carbonyl structure and enables the aldol-type condensation with oxaloacetate's carbonyl carbon — this is the mechanistic reason given, not instability or base catalysis.",
       why_cn: "教材指出，硫酯基团不会像氧酯键那样发生常见的离域共振，这就固定了乙酰辅酶A的羰基结构，从而使其能与草酰乙酸的羰基碳发生羟醛型缩合——这是教材给出的机理原因，而非硫酯不稳定或CoA起碱催化作用。"
     },
@@ -789,8 +829,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Exactly which two reactions of the citrate cycle release CO2?",
       q_cn: "柠檬酸循环中恰好是哪两个反应释放CO2？",
-      options: ["Citrate synthase and aconitase", "Succinate dehydrogenase and fumarase", "Isocitrate dehydrogenase and 2-oxoglutarate dehydrogenase", "Malate dehydrogenase and citrate synthase"],
+      options: [
+        "Citrate synthase and aconitase, reactions ① and ②",
+        "Succinate dehydrogenase and fumarase, reactions ⑦ and ⑧ of the cycle",
+        "Isocitrate dehydrogenase and 2-oxoglutarate dehydrogenase",
+        "Malate dehydrogenase and succinyl-CoA synthetase"
+      ],
       answer: 2,
+      optionRefs: { 1: "6-2-2-3", 3: "6-2-2-3" },
+      optionNotes: {
+        0: { en: "These two are where carbon ENTERS and is rearranged: citrate synthase condenses acetyl-CoA onto oxaloacetate, and aconitase only moves a hydroxyl by dehydrating and rehydrating. Neither loses a carbon.", cn: "这两步是碳进入并被重排的地方：citrate synthase 把 acetyl-CoA 缩合到 oxaloacetate 上，aconitase 只是先脱水再加水、把羟基挪个位置。两步都不掉碳。" },
+        1: { en: "Reactions ⑦ and ⑧ are a dehydrogenation and a hydration — succinate to fumarate, then fumarate plus water to L-malate. Everything from succinyl-CoA onward is redox and hydration chemistry with no further carbon lost.", cn: "反应 ⑦ 和 ⑧ 分别是脱氢和加水——succinate 变 fumarate，再由 fumarate 加水成 L-malate。从 succinyl-CoA 往后全是氧化还原和加水，不再掉任何碳。" },
+        3: { en: "Reaction ⑨ regenerates oxaloacetate and the third NADH, and reaction ⑥ is the substrate-level phosphorylation that makes GTP; both are four-carbon-in, four-carbon-out steps.", cn: "反应 ⑨ 再生 oxaloacetate 并给出第三个 NADH，反应 ⑥ 是生成 GTP 的 substrate-level phosphorylation；两步都是四碳进、四碳出。" }
+      },
       why_en: "CO2 is released only at reaction ④ (isocitrate → 2-oxoglutarate, via the spontaneous decarboxylation of oxalosuccinate) and reaction ⑤ (2-oxoglutarate → succinyl-CoA, mechanistically identical to pyruvate's oxidative decarboxylation). No other reaction in the cycle loses carbon.",
       why_cn: "CO2仅在反应④（异柠檬酸→2-氧戊二酸，经草酰琥珀酸的自发脱羧）和反应⑤（2-氧戊二酸→琥珀酰辅酶A，机制上与丙酮酸氧化脱羧完全相同）中释放。循环中的其他反应都不发生碳损失。"
     },
@@ -806,8 +857,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Why does the book say 2-oxoglutarate's oxidative decarboxylation uses the 'same mechanism' described for pyruvate in ch. 7.8?",
       q_cn: "为什么教材说2-氧戊二酸的氧化脱羧使用的是第7.8节描述丙酮酸时「相同的机制」？",
-      options: ["Because both reactions occur in the cytoplasm, not mitochondria", "Because 2-oxoglutarate is a homolog of pyruvate — both are 2-oxo acids, differing only in chain length", "Because pyruvate is actually an intermediate of the citrate cycle itself", "Because both reactions are catalyzed by the exact same single-subunit enzyme"],
+      options: [
+        "Because both reactions run in the cytoplasm rather than in the matrix, where the rest of the cycle sits",
+        "Because 2-oxoglutarate is a homolog of pyruvate — both are 2-oxo acids, differing only in chain length",
+        "Because pyruvate is itself an intermediate of the citrate cycle, joining it directly at reaction ⑤",
+        "Because one single-subunit enzyme, listed in Tab. 6.3 with its own EC number, catalyses both reactions"
+      ],
       answer: 1,
+      optionRefs: { 0: "6-2-2-1", 2: "6-2-2-1", 3: "6-2-2-1" },
+      optionNotes: {
+        0: { en: "Both reactions do share the matrix — Obr. 6.4 places the whole cycle there, and pyruvate's oxidative decarboxylation delivers acetyl-CoA into it. But compartment is not what the book is pointing at; the shared mechanism follows from the shared 2-oxo acid chemistry.", cn: "两个反应确实都在 matrix 里——Obr. 6.4 把整个 cycle 画在那里，pyruvate 的氧化脱羧也是在那里把 acetyl-CoA 送进来的。但教材说的不是区室问题；机制相同是因为两者都是 2-oxo 酸。" },
+        2: { en: "Pyruvate is not a cycle intermediate at all. It reaches the cycle only after its own oxidative decarboxylation, and it enters as acetyl-CoA at reaction ①, not at ⑤.", cn: "Pyruvate 根本不是 cycle 的中间产物。它要先经过自己的氧化脱羧，然后以 acetyl-CoA 的形式从反应 ① 进入，而不是从 ⑤。" },
+        3: { en: "Tab. 6.3 prints reaction ⑤'s enzyme in quotation marks with no EC number at all, and lists six cofactors for it — TDP, CoA, FAD, NAD⁺, lipoic acid and Mg²⁺. That is a multi-enzyme complex, and a different one from pyruvate's.", cn: "Tab. 6.3 把反应 ⑤ 的酶名加了引号，而且完全没给 EC 号，还列了六个辅因子——TDP、CoA、FAD、NAD⁺、lipoic acid、Mg²⁺。那是个多酶复合体，而且和 pyruvate 用的不是同一个。" }
+      },
       why_en: "The book states 2-oxoglutarate is a homolog of pyruvate — both belong to the 2-oxo acid class, just with different chain lengths — which is why the same oxidative-decarboxylation mechanism (and the same six-cofactor multi-enzyme-complex machinery: TDP, CoA, FAD, NAD+, lipoic acid, Mg2+) applies to both.",
       why_cn: "教材指出2-氧戊二酸是丙酮酸的同系物——二者都属于2-氧代酸类，只是链长不同——这正是同一套氧化脱羧机制（以及同一套六种辅因子的多酶复合体机制：TDP、CoA、FAD、NAD⁺、硫辛酸、Mg²⁺）能同时适用于两者的原因。"
     }
@@ -876,8 +938,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the DIRECT product of the succinyl-CoA synthetase reaction — ATP or GTP?",
       q_cn: "琥珀酰辅酶A合成酶反应的直接产物是ATP还是GTP？",
-      options: ["ATP, directly", "GTP; its terminal phosphate can separately be transferred to ADP to form ATP", "Neither — the energy is released only as heat", "Both ATP and GTP in equal amounts"],
+      options: [
+        "ATP directly, the GDP in Tab. 6.3's cofactor column serving only to hold the enzyme together",
+        "GTP; its terminal phosphate can separately be transferred to ADP to form ATP",
+        "Neither; succinyl-CoA is hydrolysed and its energy released as heat",
+        "Both, in equal amounts, since GDP and ADP compete for the same site"
+      ],
       answer: 1,
+      optionRefs: { 0: "6-2-2-1" },
+      optionNotes: {
+        0: { en: "Tab. 6.3 lists CoA and GDP as reaction ⑥'s cofactors and the book writes the equation out in full: sukcinyl~S-CoA + Pi + GDP → sukcinát + GTP + CoA-SH. GDP is a substrate that leaves as GTP, not a structural aid.", cn: "Tab. 6.3 把反应 ⑥ 的辅因子写成 CoA 和 GDP，教材还把方程完整写出来：sukcinyl~S-CoA + Pi + GDP → sukcinát + GTP + CoA-SH。GDP 是底物，最后以 GTP 离开，不是什么结构性的帮手。" },
+        2: { en: "The book insists on the opposite: succinyl-CoA does NOT convert by simple hydrolysis, but by reaction with GDP and inorganic phosphate. That is precisely what makes this step the cycle's substrate-level phosphorylation.", cn: "教材强调的正好相反：succinyl-CoA 不是靠简单水解转化的，而是与 GDP 和无机磷酸反应。正因为如此，这一步才是本 cycle 的 substrate-level phosphorylation。" },
+        3: { en: "Only one nucleoside triphosphate is made per turn, and it is GTP. ATP appears only afterwards, through the separate, freely reversible transfer GTP + ADP ⇌ GDP + ATP.", cn: "每转一圈只生成一个 nucleoside triphosphate，而且是 GTP。ATP 只在之后出现，靠的是另一个可逆反应 GTP + ADP ⇌ GDP + ATP。" }
+      },
       why_en: "The book is explicit: sukcinyl~S-CoA + Pi + GDP → sukcinát + GTP + CoA-SH. A SEPARATE reaction, GTP + ADP ⇌ GDP + ATP, is needed to convert that GTP's terminal phosphate into ATP.",
       why_cn: "教材明确写道：琥珀酰~S-CoA+Pi+GDP→琥珀酸+GTP+CoA-SH。需要另一个独立的反应GTP+ADP⇌GDP+ATP，才能把GTP的末端磷酸转化为ATP。"
     },
@@ -893,8 +966,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "For one mole of glucose oxidized completely and aerobically, how does the book break down the maximum 38 mol ATP yield?",
       q_cn: "对于1摩尔葡萄糖的完全有氧氧化，教材如何拆分其最大38摩尔ATP产量？",
-      options: ["19 ATP from glycolysis and 19 from the citrate cycle only", "8 ATP from glycolysis + 6 ATP from pyruvate's oxidative decarboxylation + 24 ATP from the citrate cycle (2 turns)", "38 ATP entirely from the citrate cycle, with glycolysis and pyruvate decarboxylation contributing none", "12 ATP from glycolysis + 12 from pyruvate decarboxylation + 14 from the citrate cycle"],
+      options: [
+        "12 ATP from glycolysis + 12 from the two pyruvate decarboxylations + 14 from the citrate cycle's two turns",
+        "8 ATP from glycolysis + 6 ATP from pyruvate's oxidative decarboxylation + 24 ATP from the citrate cycle (2 turns)",
+        "24 ATP from glycolysis alone + 6 ATP from pyruvate's oxidative decarboxylation + 8 ATP from the citrate cycle's two turns",
+        "8 ATP from glycolysis + 6 ATP from pyruvate's oxidative decarboxylation + 12 ATP from a single turn of the citrate cycle"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Glycolysis is the smallest of the three contributions in the book's own split, not the largest, and the cycle's share is fixed at 12 ATP per turn — so 14 cannot arise from two turns however the rest is arranged.", cn: "在教材自己的拆分里，glycolysis 是三项中最小的一项，不是最大的；而 cycle 的份额被固定为每转 12 ATP——所以无论其他怎么摆，两圈也凑不出 14。" },
+        2: { en: "The three terms have been permuted. 24 is the citrate cycle's share, arrived at as 2 turns × 12 ATP; glycolysis contributes 8, and only the middle term, the 6 from pyruvate's decarboxylation, is in its right place.", cn: "三项被打乱了。24 是 citrate cycle 的份额，来自 2 圈 × 12 ATP；glycolysis 贡献的是 8；三项里只有中间那个 6（pyruvate 氧化脱羧）放对了位置。" },
+        3: { en: "The per-turn figure of 12 ATP is right, but one glucose gives TWO pyruvates and therefore two acetyl-CoA, so the cycle turns twice: 2 × 12 = 24. Counting one turn also under-counts the decarboxylation step, which likewise happens twice.", cn: "每圈 12 ATP 这个数字是对的，但一分子葡萄糖给出两个 pyruvate、因而两个 acetyl-CoA，所以 cycle 转两圈：2 × 12 = 24。只算一圈的话，氧化脱羧那一步也同样少算了一次。" }
+      },
       why_en: "The book states: 8 ATP (glykolýza) + 6 ATP (oxidační dekarboxylace pyruvátu) + 24 ATP (citrátový cyklus) = 38 total. The 24 comes from 2 turns of the cycle (one per pyruvate/acetyl-CoA) at 12 ATP each.",
       why_cn: "教材写道：8个ATP（糖酵解）+6个ATP（丙酮酸氧化脱羧）+24个ATP（柠檬酸循环）=共38个。其中24来自循环转两圈（每个丙酮酸/乙酰辅酶A各一圈），每圈12个ATP。"
     },
@@ -961,8 +1044,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the most important anaplerotic reaction the book names, and what does it require as cofactors?",
       q_cn: "教材指出的最重要的回补反应是什么？它需要哪些辅因子？",
-      options: ["Citrate synthase; requires only CoA", "Pyruvate carboxylase; requires ATP, Mn²⁺ and biotin", "Isocitrate dehydrogenase; requires NAD⁺ only", "Malate dehydrogenase; requires no cofactor"],
+      options: [
+        "Citrate synthase; requires only CoA",
+        "Pyruvate carboxylase; requires ATP, Mn²⁺ and biotin",
+        "Isocitrate dehydrogenase; requires NAD⁺ and CO₂",
+        "Malate dehydrogenase; requires NAD⁺, Mn²⁺ and biotin"
+      ],
       answer: 1,
+      optionRefs: { 0: "6-2-2-1", 2: "6-2-2-2", 3: "6-2-2-3" },
+      optionNotes: {
+        0: { en: "Citrate synthase (Tab. 6.3, EC 4.1.3.7, cofactor CoA) opens the cycle by condensing acetyl-CoA onto oxaloacetate — it CONSUMES the oxaloacetate pool rather than topping it up, which is the opposite of anaplerosis.", cn: "Citrate synthase（Tab. 6.3，EC 4.1.3.7，辅因子 CoA）把 acetyl-CoA 缩合到 oxaloacetate 上、开启 cycle——它是在消耗 oxaloacetate 池，而不是补充，正好和 anaplerosis 相反。" },
+        2: { en: "Isocitrate dehydrogenase (EC 1.1.1.41, NAD⁺) works inside the cycle and RELEASES CO₂ at reaction ④; the anaplerotic step is the one that fixes CO₂ back on, which is why it needs biotin and ATP.", cn: "Isocitrate dehydrogenase（EC 1.1.1.41，NAD⁺）在 cycle 内部工作，并且在反应 ④ 放出 CO₂；而 anaplerotic 那一步是把 CO₂ 固定回来，所以才需要 biotin 和 ATP。" },
+        3: { en: "Malate dehydrogenase (EC 1.1.1.37, NAD⁺) does make oxaloacetate, but out of malate that is already inside the cycle — it recycles the pool at reaction ⑨ instead of adding new carbon to it.", cn: "Malate dehydrogenase（EC 1.1.1.37，NAD⁺）确实生成 oxaloacetate，但用的是本来就在 cycle 里的 malate——它在反应 ⑨ 循环利用现有的池子，并没有往里添新的碳。" }
+      },
       why_en: "The book names pyruvate carboxylase's reaction (pyruvate + CO2 + ATP + H2O → oxaloacetate + ADP + Pi) as the most important anaplerotic reaction, requiring ATP, Mn²⁺ and the coenzyme biotin.",
       why_cn: "教材指出丙酮酸羧化酶所催化的反应（丙酮酸+CO2+ATP+H2O→草酰乙酸+ADP+Pi）是最重要的回补反应，需要ATP、Mn²⁺和辅酶生物素。"
     },
@@ -978,8 +1072,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which two citrate-cycle intermediates does the book name as biosynthetic precursors in this passage?",
       q_cn: "本段教材点名了哪两个柠檬酸循环中间体作为生物合成的前体？",
-      options: ["Citrate (to cholesterol) and malate (to glucose)", "2-oxoglutarate (to glutamate, via transamination) and succinyl-CoA (to porphyrins)", "Fumarate (to amino acids) and oxaloacetate (to fatty acids)", "Isocitrate (to vitamins) and succinate (to nucleotides)"],
+      options: [
+        "Citrate (to glutamate, by transamination) and oxaloacetate (to porphyrins)",
+        "2-oxoglutarate (to glutamate, via transamination) and succinyl-CoA (to porphyrins)",
+        "Succinyl-CoA (to glutamate, by transamination) and 2-oxoglutarate (to the porphyrin ring)",
+        "Malate (to glutamate, by transamination) and fumarate (to the porphyrin ring system)"
+      ],
       answer: 1,
+      optionRefs: { 2: "6-3-2", 3: "6-2-2-3" },
+      optionNotes: {
+        0: { en: "Neither is named here. The transaminated intermediate is 2-oxoglutarate, and the porphyrin precursor is succinyl-CoA; citrate and oxaloacetate stay in the cycle throughout this passage.", cn: "这两个在这一段里都没被点名。被 transamination 的中间产物是 2-oxoglutarate，porphyrin 的前体是 succinyl-CoA；citrate 和 oxaloacetate 在这一段里始终留在 cycle 内。" },
+        2: { en: "The right two intermediates with their destinations swapped: 2-oxoglutarate is the one transaminated to glutamate, and succinyl-CoA is the porphyrin precursor that ch. 6.3 picks up as the starting material for heme.", cn: "两个中间产物挑对了，但去向调换了：被 transamination 成 glutamate 的是 2-oxoglutarate，而 succinyl-CoA 才是 porphyrin 的前体——第 6.3 节正是从它开始讲 heme 的合成。" },
+        3: { en: "Neither malate nor fumarate is named as a biosynthetic exit in this passage; both simply run on inside the cycle, fumarate being hydrated to malate and malate oxidised back to oxaloacetate.", cn: "这一段里 malate 和 fumarate 都没有被列为生物合成的出口；它们只是在 cycle 内继续往下走——fumarate 加水成 malate，malate 再氧化回 oxaloacetate。" }
+      },
       why_en: "The book gives exactly two examples: 2-oxoglutarate, transaminated to glutamate, and succinyl-CoA, a precursor in porphyrin biosynthesis (ch. 6.3) — not the pairings in the other options.",
       why_cn: "教材恰好给出两个例子：2-氧戊二酸经转氨基生成谷氨酸，以及琥珀酰辅酶A作为卟啉生物合成（第6.3节）的前体——并非其他选项中的配对。"
     }
