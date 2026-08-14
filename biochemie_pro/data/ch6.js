@@ -1152,8 +1152,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "The glyoxylate cycle bypasses exactly which two reactions of the citrate cycle?",
       q_cn: "乙醛酸循环恰好绕过了柠檬酸循环中的哪两个反应？",
-      options: ["Citrate synthase and aconitase", "Isocitrate dehydrogenase and 2-oxoglutarate dehydrogenase — the cycle's two CO2-releasing steps", "Succinate dehydrogenase and fumarase", "Malate dehydrogenase and citrate synthase"],
+      options: [
+        "Citrate synthase and aconitase — the two steps that build and then isomerise citrate",
+        "Isocitrate dehydrogenase and 2-oxoglutarate dehydrogenase — the cycle's two CO2-releasing steps",
+        "Succinate dehydrogenase and fumarase — the two steps that carry the succinate co-product onward to malate",
+        "Malate dehydrogenase and citrate synthase — the two steps shared with the glyoxylate cycle"
+      ],
       answer: 1,
+      optionRefs: { 0: "6-2-2-1", 2: "6-2-2-3", 3: "6-2-2-3" },
+      optionNotes: {
+        0: { en: "Obr. 6.5 shows these two being REUSED, not bypassed: citrate synthase joins oxaloacetate to the first acetyl-CoA, and aconitase isomerises the citrate to isocitrate so that isocitrate lyase has a substrate at all.", cn: "Obr. 6.5 显示这两步是被沿用、而不是被绕过：citrate synthase 把 oxaloacetate 和第一个 acetyl-CoA 接起来，aconitase 再把 citrate 异构成 isocitrate——isocitrate lyase 这才有底物可用。" },
+        2: { en: "Also reused rather than bypassed. The succinate that isocitrate lyase splits off is handed straight to succinate dehydrogenase and then fumarase, which carry it on toward a second malate and oxaloacetate.", cn: "同样是沿用而不是绕过。Isocitrate lyase 切下来的 succinate 直接交给 succinate dehydrogenase，再交给 fumarase，一路带到第二个 malate 和 oxaloacetate。" },
+        3: { en: "Half right in a way that gives the game away: these two ARE shared with the glyoxylate cycle — malate dehydrogenase oxidises malate to oxaloacetate for both — but the question asks which steps are bypassed.", cn: "对了一半，反而露了马脚：这两步确实是和 glyoxylate cycle 共用的——malate dehydrogenase 在两条路里都把 malate 氧化成 oxaloacetate——但题目问的是哪两步被绕过。" }
+      },
       why_en: "Isocitrate lyase cleaves isocitrate directly to glyoxylate + succinate in one step, replacing BOTH of the citrate cycle's decarboxylation reactions (isocitrate dehydrogenase, reaction ④, and 2-oxoglutarate dehydrogenase, reaction ⑤) — the only two steps in the ordinary cycle that release CO2.",
       why_cn: "异柠檬酸裂解酶一步就将异柠檬酸直接裂解为乙醛酸+琥珀酸，取代了柠檬酸循环中的两个脱羧反应（异柠檬酸脱氢酶，反应④；和2-氧戊二酸脱氢酶，反应⑤）——这是普通循环中唯一释放CO2的两个步骤。"
     },
@@ -1169,8 +1180,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the net carbon outcome of ONE turn of the glyoxylate cycle, compared to one turn of the plain citrate cycle?",
       q_cn: "乙醛酸循环转一圈的净碳结果，与普通柠檬酸循环转一圈相比如何？",
-      options: ["Both are carbon-neutral: 2 carbons in, 2 out as CO2", "The glyoxylate cycle takes in 2 acetyl-CoA (4 carbons) and releases no CO2, netting one new 4-carbon oxaloacetate; the citrate cycle takes in 2 carbons (as acetyl) and releases exactly 2 as CO2, netting zero", "The glyoxylate cycle releases more CO2 than the citrate cycle", "Neither cycle changes the oxaloacetate pool at all"],
+      options: [
+        "Both are carbon-neutral: the glyoxylate cycle takes in 2 acetyl-CoA (4 carbons) and releases all 4 again as CO2, exactly as the citrate cycle takes in 2 carbons as acetyl and releases 2, so neither builds new skeleton",
+        "The glyoxylate cycle takes in 2 acetyl-CoA (4 carbons) and releases no CO2, netting one new 4-carbon oxaloacetate; the citrate cycle takes in 2 carbons (as acetyl) and releases exactly 2 as CO2, netting zero",
+        "The glyoxylate cycle releases more CO2 than the plain citrate cycle, since it takes in two acetyl-CoA per turn instead of one and decarboxylates both of them at isocitrate lyase",
+        "Neither cycle changes the oxaloacetate pool: the glyoxylate cycle's malate synthase consumes the oxaloacetate that its own malate dehydrogenase step regenerates later in the same turn"
+      ],
       answer: 1,
+      optionRefs: { 2: "6-2-2-2" },
+      optionNotes: {
+        0: { en: "The book's overall equation releases no CO2 at all: 2 acetyl-CoA + 2 NAD⁺ + FAD + 3 H2O → oxaloacetate + 2 NADH + H⁺ + FADH2 + 2 CoA-SH. Carbon-neutrality is true of the plain citrate cycle only, and it is exactly what the glyoxylate cycle exists to escape.", cn: "教材给的总方程完全不放 CO2：2 acetyl-CoA + 2 NAD⁺ + FAD + 3 H2O → oxaloacetate + 2 NADH + H⁺ + FADH2 + 2 CoA-SH。碳收支为零只适用于普通的 citrate cycle，而 glyoxylate cycle 存在的意义正是摆脱这一点。" },
+        2: { en: "Isocitrate lyase performs no decarboxylation whatever: it cleaves isocitrate straight into glyoxylate plus succinate. It sits there precisely to replace the two steps, reactions ④ and ⑤, that would otherwise have released the CO2.", cn: "Isocitrate lyase 根本不做脱羧：它直接把 isocitrate 切成 glyoxylate 和 succinate。它被放在那里，正是为了替换掉本来会放出 CO2 的那两步，也就是反应 ④ 和 ⑤。" },
+        3: { en: "Malate synthase consumes glyoxylate and a SECOND acetyl-CoA, not oxaloacetate — it makes malate out of them. The turn therefore ends with one new four-carbon oxaloacetate that was not there before, which is the whole point of the pathway.", cn: "Malate synthase 消耗的是 glyoxylate 和第二个 acetyl-CoA，不是 oxaloacetate——它用这两者生成 malate。所以转完一圈会多出一个原来没有的四碳 oxaloacetate，这正是这条通路的意义所在。" }
+      },
       why_en: "Per the overall equations: the citrate cycle's acetyl-CoA + ... → 2 CO2 + ... balances 2 carbons in against 2 out. The glyoxylate cycle's 2 acetyl-CoA + ... → oxaloacetate + ... releases no CO2 at all, so all 4 incoming carbons end up in the one new oxaloacetate — a genuine net gain, which the plain cycle can never produce in a single turn.",
       why_cn: "根据总反应式：柠檬酸循环的「乙酰辅酶A+...→2CO2+...」中，进入的2个碳与离开的2个碳（以CO2形式）相抵消。而乙醛酸循环的「2乙酰辅酶A+...→草酰乙酸+...」完全不释放CO2，因此进入的4个碳全部保留在新生成的一个草酰乙酸中——这是真正的净得，普通循环转一圈永远无法做到这一点。"
     }
@@ -1232,12 +1254,18 @@ window.BIOCHEM.topics.push(
       q_en: "Besides the citrate cycle's four dehydrogenation steps, which set of pathways does the book name as sources of reduced cofactors entering the respiratory chain?",
       q_cn: "除柠檬酸循环的四个脱氢步骤外，教材还指出了哪些途径是进入呼吸链的还原型辅因子的来源？",
       options: [
-        "Only glycolysis, regardless of whether it is running aerobically or anaerobically",
-        "Only fatty-acid β-oxidation; all other pathways feed a separate, unrelated route",
+        "Glycolysis alone, whether it is running aerobically or anaerobically, since it is the only cytosolic pathway in the list with a dehydrogenation step of its own",
+        "Fatty-acid β-oxidation alone; pyruvate's oxidative decarboxylation and glycolysis both feed a separate and unrelated route",
         "Oxidative decarboxylation of pyruvate, fatty-acid β-oxidation, and dehydrogenation of glyceraldehyde-3-phosphate when glycolysis runs aerobically",
-        "Electron carriers imported directly from chloroplasts during photosynthesis"
+        "Electron carriers imported ready-reduced from the chloroplast, together with the dehydrogenation of glyceraldehyde-3-phosphate"
       ],
       answer: 2,
+      optionRefs: { 3: "6-1" },
+      optionNotes: {
+        0: { en: "Glycolysis qualifies, but only conditionally: the book names dehydrogenation of glyceraldehyde-3-phosphate as a source specifically WHEN glycolysis is running aerobically. Dropping that condition is the error, and it is the condition that matters.", cn: "Glycolysis 算数，但是有条件的：教材点名的是 glyceraldehyde-3-phosphate 的脱氢，而且限定在 glycolysis 有氧运行的时候。把这个条件丢掉就是这里的错误，而这个条件恰恰是关键。" },
+        1: { en: "β-oxidation is one of three further sources, not the only one. Pyruvate's oxidative decarboxylation is named right alongside it, and all of these deliver their reduced cofactors into the same chain, not into a separate route.", cn: "β-oxidation 只是另外三个来源之一，不是唯一。Pyruvate 的氧化脱羧就写在它旁边，而且这些来源的还原型辅因子都进入同一条链，不存在什么另一条独立的路线。" },
+        3: { en: "Chloroplasts belong to photosynthesis in ch. 9, the phototrophs' route; nothing in the mitochondrial chain is imported from them. The glyceraldehyde-3-phosphate half of this option is right, but only under the aerobic condition.", cn: "叶绿体属于第 9 章的 photosynthesis，是 phototroph 那条路；mitochondria 的呼吸链没有任何东西是从那里进口的。选项后半句 glyceraldehyde-3-phosphate 倒是对的，但只在有氧条件下成立。" }
+      },
       why_en: "The book names three further sources besides the citrate cycle: oxidative decarboxylation of pyruvate (ch. 7.8), β-oxidation of fatty acids (ch. 8.4), and dehydrogenation of glyceraldehyde-3-phosphate specifically when glycolysis (ch. 7.8) proceeds aerobically — not glycolysis unconditionally, and not fatty-acid oxidation alone.",
       why_cn: "除柠檬酸循环外，教材还指出了另外三个来源：丙酮酸的氧化脱羧（第7.8节）、脂肪酸的β-氧化（第8.4节），以及——特别是当糖酵解（第7.8节）以有氧方式进行时——3-磷酸甘油醛的脱氢，而不是无条件地包括糖酵解，也不是只有脂肪酸氧化一项。"
     },
@@ -1246,12 +1274,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to the book's introduction to 6.2.4, what specifically gives the respiratory chain's membrane-embedded enzyme system a 'vectorial character'?",
       q_cn: "根据教材对6.2.4节的导论，究竟是什么赋予了呼吸链膜结合酶系统「矢量特性」？",
       options: [
-        "The random diffusion of NADH throughout the mitochondrial matrix",
-        "A dedicated motor protein unrelated to the membrane structure",
-        "The fact that every reaction in the chain is fully reversible with no preferred direction",
+        "The free diffusion of NADH through the mitochondrial matrix, which delivers reducing equivalents to whichever complex happens to be nearest, so that direction follows the concentration gradient",
+        "A dedicated motor protein that drags each carrier into position, independently of how the membrane itself is built",
+        "The fact that every reaction in the chain is fully reversible, so that net direction is set by how much reduced cofactor is present rather than by structure",
         "Its embedding in the biological membrane, which fixes not just reaction rate but also direction in three-dimensional space, enabling interconversion of chemical energy and osmotic work"
       ],
       answer: 3,
+      optionRefs: { 2: "6-2-1-1" },
+      optionNotes: {
+        0: { en: "NADH is indeed one of the chain's three mobile components, with ubiquinol and cytochrome c — but mobility is the opposite of what fixes direction. Direction comes from the complexes being built into the membrane at fixed positions.", cn: "NADH 确实是这条链的三个可移动组分之一（另两个是 ubiquinol 和 cytochrome c）——但可移动性恰恰不是决定方向的东西。方向来自各复合体被固定嵌在膜里的位置。" },
+        1: { en: "No motor protein appears anywhere in the book's account of the chain. What determines not just rate but also direction in three-dimensional space is that the enzyme system is built INTO the biological membrane.", cn: "教材讲呼吸链时从头到尾没有出现过什么 motor protein。既决定速率、又决定三维空间方向的，是这套酶系统被嵌进生物膜这件事本身。" },
+        2: { en: "The chain runs one way because each carrier hands its electrons to one of higher redox potential, ending at oxygen at +0.82 V. The membrane then fixes that direction in space; it does not leave it to concentrations.", cn: "这条链单向运行，是因为每个载体都把电子交给 redox 电位更高的下一个，最后交给 +0.82 V 的氧。膜进一步把这个方向固定在空间里，而不是把它交给浓度去决定。" }
+      },
       why_en: "The book states that embedding the enzyme system in the biological membrane determines, besides rate, also the direction of the catalysed reaction in three-dimensional space — i.e. gives it a vectorial character — and that this is what enables interconversion of chemical energy (ΔG') and osmotic work (H+ transport against its gradient).",
       why_cn: "教材指出，把酶系统嵌入生物膜不仅决定了反应速率，也决定了所催化反应在三维空间中的方向——即赋予其矢量特性——正是这一点使化学能（ΔG'）与渗透功（逆梯度转运H+）之间的相互转化成为可能。"
     },
@@ -1320,8 +1354,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "According to the sentence spanning the p.141/142 page break, what does Complex I's NADH-dehydrogenase contain besides FMN?",
       q_cn: "根据跨越141/142页分页处的那句话，复合物I的NADH-脱氢酶除FMN外还含有什么？",
-      options: ["Only copper ions", "A second molecule of FMN", "Further prosthetic groups of the FeS type — proteins with non-heme-bound iron and sulfur atoms", "A bound molecule of cytochrome c"],
+      options: [
+        "Copper ions, of the kind that pair with the hemes at the end of the chain",
+        "A second molecule of FMN, bound on the matrix side of the complex",
+        "Further prosthetic groups of the FeS type — proteins with non-heme-bound iron and sulfur atoms",
+        "A bound molecule of cytochrome c, held permanently against the cytosolic face of the inner membrane"
+      ],
       answer: 2,
+      optionRefs: { 0: "6-2-4-4", 3: "6-2-4-3" },
+      optionNotes: {
+        0: { en: "Copper enters only at Complex IV, where cytochromes a and a3 together with copper ions are the functional units of cytochrome oxidase. Complex I has no copper at all.", cn: "铜只在 Complex IV 出现，那里 cytochrome a、a3 加上铜离子构成 cytochrome oxidase 的功能单元。Complex I 里根本没有铜。" },
+        1: { en: "FMN appears once, in the flavoprotein NADH-dehydrogenase. What follows it is not a second flavin but an Fe4S4 cluster on the cytosolic side, then an Fe2S2 cluster on the matrix side.", cn: "FMN 只出现一次，在 flavoprotein NADH-dehydrogenase 里。跟在它后面的不是第二个 flavin，而是位于胞质侧的 Fe4S4 簇，再传给基质侧的 Fe2S2 簇。" },
+        3: { en: "Cytochrome c is a MOBILE carrier that slides along the membrane surface in the cytosolic space, between Complex III and Complex IV. It is not a component of any complex, least of all the first one.", cn: "Cytochrome c 是可移动的载体，在胞质侧沿膜面滑动，往返于 Complex III 和 Complex IV 之间。它不属于任何一个复合体，更不属于第一个。" }
+      },
       why_en: "The text explicitly names 'další prostetické skupiny typu FeS (tzv. proteiny s nehemově vázanými atomy železa a síry)' — further FeS-type prosthetic groups, i.e. proteins with non-heme-bound iron and sulfur atoms. Copper appears only later, at Complex IV; cytochrome c is a separate mobile carrier, not part of Complex I.",
       why_cn: "原文明确指出「另有非血红素结合的铁硫原子蛋白类型的辅基」——即FeS型辅基。铜离子要到复合物IV才出现；细胞色素c是另一个独立的可移动载体，并非复合物I的一部分。"
     },
@@ -1329,8 +1374,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the two 'repeating features' the book highlights at Complex I, which pair of carriers moves ELECTRONS ONLY, without accompanying protons?",
       q_cn: "根据教材在复合物I处强调的两个「重复出现的规律」，哪一对载体只传递电子、不伴随质子？",
-      options: ["FeS-proteins and cytochromes", "NAD+ and FMN", "Ubiquinone (Q) and FMN", "NADH and Q"],
+      options: [
+        "FeS-proteins and cytochromes",
+        "NAD⁺ and FMN in sequence",
+        "Ubiquinone (Q) and FMN together",
+        "NADH and the semiquinone form QH•"
+      ],
       answer: 0,
+      optionNotes: {
+        1: { en: "Both belong to the OTHER group. The book puts NAD⁺, FMN and Q together as the carriers that move a full electron-and-proton pair — better, 2 electrons and 2 protons — which is exactly the alternation the question is about.", cn: "这两个都属于另一组。教材把 NAD⁺、FMN 和 Q 归在一起，说它们运的是完整的电子加质子对（更准确地说是 2 个电子加 2 个质子）——题目问的正是这种交替。" },
+        2: { en: "Ubiquinone belongs with NAD⁺ and FMN among the paired carriers; only FeS-proteins and cytochromes move electrons on their own, and it is that alternation which makes the proton transfer vectorial.", cn: "Ubiquinone 和 NAD⁺、FMN 同属成对运输的一组；只有 FeS-proteins 和 cytochromes 单独运电子，正是这种交替使质子的转移具有方向性。" },
+        3: { en: "NADH is the reduced substrate entering at the matrix side and QH• the semiquinone leaving Complex I toward ubiquinol — both carry protons along with their electrons, so neither is electron-only.", cn: "NADH 是从基质侧进入的还原型底物，QH• 是离开 Complex I 走向 ubiquinol 的半醌——两者都是带着质子一起运电子的，都不属于只运电子那一组。" }
+      },
       why_en: "The book states carriers alternate between transporting a full electron+proton pair via NAD+, FMN or Q, and transporting ELECTRONS ONLY via FeS-proteins and cytochromes. NAD+, FMN and Q are all in the paired-transport group, not the electron-only group.",
       why_cn: "教材指出，载体在经NAD+、FMN或Q传递完整的电子+质子对，与经FeS蛋白和细胞色素只传递电子之间交替。NAD+、FMN和Q都属于「成对传递」组，而非「只传电子」组。"
     },
@@ -1346,8 +1401,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What does the book say about the relationship between Complex I and Complex II at the level of the enzyme itself?",
       q_cn: "关于复合物I与复合物II在酶本身层面的关系，教材是怎么说的？",
-      options: ["They are two names for the exact same enzyme", "Complex I activates Complex II by phosphorylation", "Complex II only operates in plants, not in mammalian mitochondria", "Complex II is stated to be identical to the succinate dehydrogenase already known from the citrate cycle, feeding the same ubiquinone pool that Complex I feeds"],
+      options: [
+        "They are two names for one enzyme, Complex II being the membrane-bound form of the NADH-dehydrogenase in Complex I",
+        "Complex I activates Complex II by phosphorylating it, which is why succinate can only be oxidised while NADH is being consumed",
+        "Complex II operates only in plants and some microorganisms; mammalian mitochondria feed the shared ubiquinone pool through Complex I alone, as Obr. 6.9 is drawn to show",
+        "Complex II is stated to be identical to the succinate dehydrogenase already known from the citrate cycle, feeding the same ubiquinone pool that Complex I feeds"
+      ],
       answer: 3,
+      optionRefs: { 1: "6-2-4-5", 2: "6-2-4-4" },
+      optionNotes: {
+        0: { en: "Two different enzymes, not two names. Complex I's core is the flavoprotein NADH-dehydrogenase with FMN and FeS groups; Complex II is a flavoprotein with FAD and two Fe2S2 groups. What they share is the ubiquinone pool they both feed.", cn: "是两个不同的酶，不是同一个酶的两个名字。Complex I 的核心是带 FMN 和 FeS 基团的 flavoprotein NADH-dehydrogenase；Complex II 是带 FAD 和两个 Fe2S2 基团的 flavoprotein。它们共有的是都在供给的那个 ubiquinone 池。" },
+        1: { en: "No phosphorylation of one complex by another appears anywhere in this chapter. Phosphorylation is Complex V's business, and what it phosphorylates is ADP, using the proton gradient the other complexes build.", cn: "本章从头到尾没有出现过一个复合体去磷酸化另一个复合体这回事。磷酸化是 Complex V 的工作，而且它磷酸化的是 ADP，用的是其他复合体建立起来的质子梯度。" },
+        2: { en: "Obr. 6.9 draws the complexes in the order II, III, I, IV, with II and I both converging on Complex III through shared Q/QH2 carriers — the figure shows the opposite of a species restriction, and none is stated anywhere.", cn: "Obr. 6.9 把复合体按 II、III、I、IV 的顺序画出来，II 和 I 都通过共用的 Q/QH2 载体汇聚到 Complex III——这张图显示的恰恰不是什么物种上的限制，教材也从没提过这种限制。" }
+      },
       why_en: "The book calls Complex II 'sukcinátdehydrogenasa známá z citrátového cyklu' — the succinate dehydrogenase already known from the citrate cycle — a flavoprotein with FAD and two Fe2S2 groups. It is a distinct enzyme from Complex I, but both feed electrons into the same mobile ubiquinone pool.",
       why_cn: "教材称复合物II为「柠檬酸循环中已知的琥珀酸脱氢酶」——一种含FAD和两个Fe2S2基团的黄素蛋白。它是与复合物I不同的独立酶，但两者都把电子输送进同一个可移动的泛醌库。"
     }
@@ -1408,8 +1474,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is Complex III's summary reaction, and which product is released alongside the reduced cytochrome c?",
       q_cn: "复合物III的总反应式是什么？除了还原型细胞色素c之外还释放了什么产物？",
-      options: ["2 QH2 + 2 cyt c(Fe3+) → 2 cyt c(Fe2+) + 2 QH• + 2 H+, releasing the semiquinone and protons", "2 QH2 + 2 cyt c(Fe3+) → 2 cyt c(Fe2+) + 2 Q + 2 H2O, releasing water", "QH2 + O2 → Q + H2O2, releasing hydrogen peroxide", "2 QH2 + O2 → 2 Q + 2 H2O directly, with no cytochrome c involved"],
+      options: [
+        "2 QH2 + 2 cyt c(Fe3+) → 2 cyt c(Fe2+) + 2 QH• + 2 H+, releasing the semiquinone and protons",
+        "2 QH2 + 2 cyt c(Fe3+) → 2 cyt c(Fe2+) + 2 Q + 2 H2O, releasing water and fully oxidised ubiquinone",
+        "2 QH• + 2 cyt c(Fe2+) → 2 cyt c(Fe3+) + 2 QH2, running the whole transfer the other way",
+        "2 QH2 + O2 → 2 Q + 2 H2O directly, with no cytochrome c taking part at any stage"
+      ],
       answer: 0,
+      optionRefs: { 1: "6-2-4-4", 3: "6-2-4-4" },
+      optionNotes: {
+        1: { en: "The oxidation stops at the SEMIQUINONE QH•, not at Q, and what leaves the complex is 2 H⁺ released into the cytosolic space, not water. Water is made at Complex IV, from oxygen.", cn: "氧化停在半醌 QH• 这一步，没有走到 Q；离开复合体的是放进胞质侧的 2 个 H⁺，不是水。水是在 Complex IV 由氧生成的。" },
+        2: { en: "The arrow is reversed. Complex III REOXIDISES the ubiquinol that Complex I or II made and REDUCES cytochrome c, which then carries the electron onward; running it this way would be the endergonic direction.", cn: "箭头反了。Complex III 是把 Complex I 或 II 生成的 ubiquinol 重新氧化，并把 cytochrome c 还原，再由它把电子带下去；按这个方向跑属于吸能方向。" },
+        3: { en: "This is Complex IV's chemistry, not Complex III's. Complex III is defined as ubiquinol:cytochrome c oxidoreductase and never touches O2; the oxygen-to-water step belongs to cytochrome oxidase at the end of the chain.", cn: "这是 Complex IV 的化学，不是 Complex III 的。Complex III 的定义是 ubiquinol:cytochrome c oxidoreductase，从不接触 O2；由氧生成水那一步属于链末端的 cytochrome oxidase。" }
+      },
       why_en: "The book gives the summary equation as 2 QH2 + 2 cyt c(Fe3+) → 2 cyt c(Fe2+) + 2 QH• + 2 H+ — ubiquinol is only oxidized to the SEMIQUINONE (QH•) at this overall step, not all the way to Q, and protons are released, not water.",
       why_cn: "教材给出的总反应式为2 QH2 + 2 cyt c(Fe3+) → 2 cyt c(Fe2+) + 2 QH• + 2 H+——泛醇在这一总反应中只被氧化到半醌（QH•），并非彻底氧化为Q，释放的是质子而非水。"
     },
@@ -1425,8 +1502,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "How many protons does the book say are released into the cytosolic space when 2 electrons (equivalent to one NADH) pass through Complex III to cytochrome c?",
       q_cn: "教材指出，当2个电子（相当于一个NADH）经复合物III传递到细胞色素c时，向胞质空间释放了多少个质子？",
-      options: ["1 proton", "2 protons", "4 protons", "6 protons"],
+      options: [
+        "1 proton",
+        "2 protons, i.e. one for each electron reaching cytochrome c",
+        "4 protons",
+        "6 protons, the figure for Complexes I, III and IV together"
+      ],
       answer: 2,
+      optionRefs: { 3: "6-2-4-4" },
+      optionNotes: {
+        0: { en: "Half of one half. One proton is what Complex III releases at each of its two cytosolic-side steps — QH2 to QH•, then QH• to Q — and there are two electrons to move, so the four accumulate.", cn: "只有一半的一半。1 个质子是 Complex III 在胞质侧两个步骤中每一步放出的量——QH2 到 QH•，再由 QH• 到 Q——而要搬的电子有两个，所以累计是 4 个。" },
+        1: { en: "This is the per-ELECTRON figure, and the book states it in exactly that form: transfer of one electron onward to cytochrome c corresponds to two protons. One NADH's worth is two electrons, hence four protons.", cn: "这是按每个电子算的数，教材原话就是这么给的：向 cytochrome c 传递 1 个电子对应 2 个质子。一个 NADH 相当于 2 个电子，所以是 4 个质子。" },
+        3: { en: "6 is the total for Complexes I, III and IV working together on one NADH — Complex III's own 4 plus Complex I's 2. Complex IV contributes none, so the extra 2 here are Complex I's, not Complex III's.", cn: "6 是 Complex I、III、IV 一起处理一个 NADH 的总数——Complex III 自己的 4 加上 Complex I 的 2。Complex IV 一个都不出，所以多出来的这 2 个是 Complex I 的，不是 Complex III 的。" }
+      },
       why_en: "The book states that transferring ONE electron to cytochrome c corresponds to 2 protons released to the cytosolic space, so 2 electrons (one NADH's worth) release 4 protons at Complex III — this is the number later added to Complex I's 2 protons to give the pathway total of 6.",
       why_cn: "教材指出，一个电子传递到细胞色素c对应向胞质空间释放2个质子，因此2个电子（相当于一个NADH的量）在复合物III处释放4个质子——这个数字后来与复合物I的2个质子相加，得到NADH途径总计6个质子。"
     }
@@ -1488,12 +1576,18 @@ window.BIOCHEM.topics.push(
       q_en: "Which statement correctly describes how Complex IV affects the mitochondrial proton distribution?",
       q_cn: "关于复合物IV如何影响线粒体质子分布，下列哪项描述是正确的？",
       options: [
-        "It pumps 4 protons per O2 across the membrane, matching Complex III",
+        "It pumps 4 protons per O2 across the membrane, exactly matching the number Complex III releases, and Obr. 6.9 draws the same arrow beneath it too",
         "It does not transport protons across the membrane, but raises matrix pH by consuming matrix protons to protonate oxide ions into water",
-        "It pumps protons in the reverse direction, from cytosol into the matrix, lowering matrix pH",
-        "It has no effect on proton or pH balance anywhere in the mitochondrion"
+        "It pumps protons the other way, from the cytosolic space back into the matrix, and so lowers matrix pH as it works",
+        "It leaves the proton distribution untouched at both faces, taking no part in the mitochondrion's pH balance at all"
       ],
       answer: 1,
+      optionRefs: { 2: "6-2-4-5" },
+      optionNotes: {
+        0: { en: "Obr. 6.9 draws cytosolic-side proton-release arrows beneath Complex III (4 H⁺) and Complex I (2 H⁺) only — none beneath Complex II and none beneath Complex IV. Those 4 protons are Complex III's alone.", cn: "Obr. 6.9 只在 Complex III（4 H⁺）和 Complex I（2 H⁺）下面画了指向胞质侧的放质子箭头——Complex II 下面没有，Complex IV 下面也没有。那 4 个质子只属于 Complex III。" },
+        2: { en: "Both the direction and the pH effect are reversed. Matrix protons are consumed here, not delivered, so matrix pH goes UP. The one complex that does move protons back into the matrix is Complex V, and it does so down the gradient.", cn: "方向和 pH 效应都说反了。这里是消耗基质里的质子，不是往里送，所以基质 pH 是升高。真正把质子送回基质的是 Complex V，而且是顺着梯度走的。" },
+        3: { en: "It does not pump, but it is not neutral either. The final step 1/2 O2 + 2 e⁻ + 2 H⁺ → H2O takes matrix protons out of solution as a substrate, and that alone raises the pH of the matrix.", cn: "它确实不泵质子，但也不是毫无影响。最后一步 1/2 O2 + 2 e⁻ + 2 H⁺ → H2O 把基质里的质子当底物消耗掉，仅此一点就足以让基质 pH 升高。" }
+      },
       why_en: "The book explicitly states Complex IV 'nepřenáší protony přes membránu' (does not transport protons across the membrane) but 'zvyšuje pH matrixu' (raises matrix pH) via protonation of oxide ions in the water-forming reaction — matrix H+ is consumed as a substrate, not pumped.",
       why_cn: "教材明确指出复合物IV「不跨膜转运质子」，但会「提高基质pH」，机制是在生成水的反应中把氧化物离子质子化——基质中的H+是作为底物被消耗，而非被泵出。"
     },
@@ -1509,8 +1603,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the explicit statement at the start of p.145, how many protons are transported when Complexes II, III and IV cooperate, starting from succinate dehydrogenase?",
       q_cn: "根据第145页开篇的明确陈述，当复合物II、III、IV从琥珀酸脱氢酶开始协同作用时，转运了多少个质子？",
-      options: ["2 protons", "8 protons", "6 protons", "4 protons"],
+      options: [
+        "1 proton",
+        "8 protons",
+        "6 protons, the figure when the chain starts from NADH at Complex I",
+        "4 protons"
+      ],
       answer: 3,
+      optionRefs: { 2: "6-2-4-2" },
+      optionNotes: {
+        0: { en: "Far too few. Complex III alone releases 4 protons for one pair of electrons, and in this combination it is the only contributor — Complex II and Complex IV each add none.", cn: "太少了。单是 Complex III 对一对电子就放出 4 个质子，而在这个组合里它是唯一的贡献者——Complex II 和 Complex IV 各自都是零。" },
+        1: { en: "Double counting. Getting to 8 would need Complex II or Complex IV to match Complex III's 4, and Obr. 6.9 draws no proton-release arrow beneath either of them.", cn: "算重了。要凑到 8，就得让 Complex II 或 Complex IV 也拿出和 Complex III 一样的 4 个，而 Obr. 6.9 在这两个下面根本没画放质子的箭头。" },
+        2: { en: "6 is the NADH route, Complexes I + III + IV: Complex III's 4 plus Complex I's own 2. Starting from succinate enters at Complex II instead, skipping Complex I and its 2 protons with it.", cn: "6 是走 NADH 那条路（Complex I + III + IV）的数：Complex III 的 4 加 Complex I 自己的 2。从 succinate 出发是从 Complex II 进入的，跳过了 Complex I，也就跳过了它那 2 个质子。" }
+      },
       why_en: "The book states that when Complexes II, III and IV are engaged 'u sukcinátdehydrogenasy pouze 4 protony' — only 4 protons — reflecting that Complex II itself contributes none, and only Complex III's 4-proton release applies (Complex IV contributes none either).",
       why_cn: "教材指出当复合物II、III、IV在琥珀酸脱氢酶处协同作用时，「只有4个质子」——这反映出复合物II本身不贡献质子，起作用的只有复合物III释放的4个质子（复合物IV同样不贡献）。"
     }
@@ -1581,8 +1686,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What fundamentally distinguishes Complex V from Complexes I through IV?",
       q_cn: "复合物V与复合物I至IV在根本上有何不同？",
-      options: ["Complex V is not an oxidoreduction complex but a phosphorylation complex, and protons move WITH the gradient (cytosol to matrix) rather than being transferred against it", "Complex V is an oxidoreduction complex like the others, just slower", "Complex V only operates in the absence of oxygen", "Complex V transports electrons but no protons at all"],
+      options: [
+        "Complex V is not an oxidoreduction complex but a phosphorylation complex, and protons move WITH the gradient (cytosol to matrix) rather than being transferred against it",
+        "Complex V is an oxidoreduction complex like the four before it, only much slower, which is why it and not the electron transfer sets the pace at which the whole chain runs",
+        "Complex V works only once oxygen runs out, taking over from Complexes I to IV the phosphorylation they carry out while oxygen is still present",
+        "Complex V transports electrons but no protons at all, taking them from Complex IV through cytochrome c and handing them on to oxygen in the matrix"
+      ],
       answer: 0,
+      optionRefs: { 3: "6-2-4-4" },
+      optionNotes: {
+        1: { en: "The book's own words are that Complex V is NOT an oxidoreduction complex but a phosphorylation one. The difference is in kind, not in speed, and no rate comparison between the complexes is made anywhere.", cn: "教材的原话是 Complex V 不是 oxidoreduction 复合体，而是 phosphorylation 复合体。区别在于性质不同，不是快慢不同，而且教材从没在各复合体之间比较过速率。" },
+        2: { en: "The proton gradient Complex V runs on is built by NADH- and succinate-linked electron transport, which needs oxygen as its final acceptor. Take the oxygen away and the gradient goes with it; there is no anaerobic hand-over.", cn: "Complex V 靠的质子梯度，是由 NADH 和 succinate 驱动的电子传递建立起来的，而这需要氧作为最终受体。把氧拿走，梯度也就没了；不存在什么缺氧时的接手。" },
+        3: { en: "Complex V moves protons and nothing else. The chain's last electrons go to oxygen at Complex IV, delivered there by mobile cytochrome c — by the time protons reach F0, the electron transfer is already finished.", cn: "Complex V 只搬质子，别的都不搬。这条链最后的电子在 Complex IV 交给氧，由可移动的 cytochrome c 送过去——质子走到 F0 的时候，电子传递早已结束。" }
+      },
       why_en: "The book explicitly states Complex V 'není oxidoredukční, ale fosforylační' (is not an oxidoreduction complex, but a phosphorylation one), and that unlike all preceding complexes, protons here move IN THE DIRECTION of the concentration gradient, from cytosol back into the matrix, coupled to ATP formation.",
       why_cn: "教材明确指出复合物V「不是氧化还原复合物，而是磷酸化复合物」，并且与前面所有复合物不同，这里的质子是顺着浓度梯度移动的，从胞质返回基质，并与ATP的生成相偶联。"
     },
@@ -1590,8 +1706,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per the book's account of the ATP-formation mechanism, what specifically triggers release of the already-formed ATP from the F1 active site?",
       q_cn: "根据教材对ATP生成机制的描述，究竟是什么触发了已生成的ATP从F1活性位点释放？",
-      options: ["A rise in matrix temperature", "The passage of protons through the F0 subunit, which changes the active site's conformation", "Direct binding of a second ADP molecule to the same site", "Hydrolysis of the ATP back to ADP and Pi"],
+      options: [
+        "A rise in matrix temperature, which loosens the α and β subunits of the F1 headpiece enough to let the ATP go",
+        "The passage of protons through the F0 subunit, which changes the active site's conformation",
+        "The binding of a second ADP molecule at the neighbouring β subunit",
+        "Hydrolysis of the ATP back to ADP and Pi, worth 30.5 kJ·mol⁻¹"
+      ],
       answer: 1,
+      optionRefs: { 0: "6-1" },
+      optionNotes: {
+        0: { en: "Nothing in the mechanism turns on temperature. Living systems cannot tolerate temperature gradients in the first place — that is exactly why Gibbs energy, defined at constant temperature and pressure, is the state variable used throughout this chapter.", cn: "这套机制和温度没有任何关系。生命系统本来就承受不了温度梯度——这正是本章自始至终用 Gibbs 自由能（定义在恒温恒压下）作为状态函数的原因。" },
+        2: { en: "The conformational change comes from proton flow through F0, not from a second substrate arriving. ADP and Pi are what the F1 site condenses into ATP; they do not displace the finished product.", cn: "构象变化来自质子穿过 F0，而不是又来了一个底物。ADP 和 Pi 是 F1 活性位点缩合成 ATP 的原料，它们并不会把做好的产物挤出去。" },
+        3: { en: "Hydrolysis would undo the work just done. The bond between ADP and phosphate is formed at the F1 site with ΔG⁰′ = +30.5 kJ·mol⁻¹, and the difficulty the mechanism solves is releasing the finished ATP, not breaking it apart again.", cn: "水解等于把刚做的功又还回去。ADP 和磷酸之间的键是在 F1 活性位点上形成的，ΔG⁰′ = +30.5 kJ·mol⁻¹；这套机制要解决的难题是把做好的 ATP 放出来，而不是再把它拆掉。" }
+      },
       why_en: "The book states that ATP formed at the F1 active site initially stays bound; it is specifically the passage of protons THROUGH F0 that changes the active site's conformation, allowing the ATP to be released so the cycle can repeat.",
       why_cn: "教材指出，在F1活性位点生成的ATP最初仍保持结合状态；正是质子经F0通过这一过程改变了活性位点的构象，才使ATP得以释放，循环得以重复。"
     },
@@ -1609,6 +1736,12 @@ window.BIOCHEM.topics.push(
       q_cn: "图6.11自身的图注列出了ATP合酶的哪些标注亚基？",
       options: ["F0, F1, α, β, γ, δ, ε, a, b2", "F0, F1, α, β, γ, c-ring only", "Only the α and β subunits, with no stalk components named", "F1, F2, F3 and a rotor ring"],
       answer: 0,
+      optionRefs: { 1: "6-2-4-4" },
+      optionNotes: {
+        1: { en: "A c-ring is a standard feature of ATP synthase drawings elsewhere, but this figure's caption names no separate c subunit at all. The F0 parts it does list are a and b2.", cn: "c 环在别处的 ATP synthase 图里是标配，但这张图的图注根本没有单独标出 c 亚基。它列出的 F0 部件只有 a 和 b2。" },
+        2: { en: "α and β are named, but so is the whole stalk: γ running up the centre of the headpiece, δ alongside it anchoring the peripheral b2 stalk, and ε sitting where γ enters the membrane.", cn: "α 和 β 确实被列出，但整根柄也被列出了：γ 从头部中央穿过，δ 在旁边把外周的 b2 柄锚住，ε 位于 γ 进入膜的那个位置。" },
+        3: { en: "There is no F2 or F3 anywhere in this complex. ATP synthase has exactly two parts — F1 as the headpiece on the matrix side and F0 embedded in the membrane — and the caption lists both.", cn: "这个复合体里根本没有 F2 或 F3。ATP synthase 只有两个部分——基质侧的头部 F1 和嵌在膜里的 F0——图注把两个都列了。" }
+      },
       why_en: "The caption reads 'Struktura ATP-synthasy (F0, F1, α, β, γ, δ, ε, a, b2 – podjednotky ATP-synthasy)' — these nine labels are exactly what the book itself names; no separate 'c' subunit or c-ring is labelled in this particular figure's caption, even though small membrane-embedded structures are visible in the F0 region of the drawing.",
       why_cn: "图注写的是「ATP合酶的结构（F0、F1、α、β、γ、δ、ε、a、b2——ATP合酶的亚基）」——这九个标签正是教材自己命名的内容；尽管图中F0区域可见一些嵌入膜内的小结构，但这张图的图注并未单独标出「c」亚基或c环。"
     }
