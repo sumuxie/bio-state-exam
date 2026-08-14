@@ -525,8 +525,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Where does the book say glycoacylglycerols are mainly found?",
       q_cn: "根据教材，糖酰基甘油主要存在于哪里？",
-      options: ["Plant membranes, specifically the thylakoid membranes of chloroplasts", "Animal cell mitochondrial membranes", "Bacterial cell walls exclusively", "Human red blood cell membranes"],
+      options: [
+        "Plant membranes, specifically the thylakoid membranes of chloroplasts",
+        "Animal cell membranes, specifically the inner membrane of the mitochondrion",
+        "Bacterial cell walls, where they take the place of the phospholipid layer",
+        "Red blood cell membranes, where they stand in for sphingomyelin"
+      ],
       answer: 0,
+      optionRefs: { 1: "6-2-4-1", 3: "8-2-3-3" },
+      optionNotes: {
+        1: { en: "The inner mitochondrial membrane is where the respiratory chain and ATP synthase sit. The thylakoid is the chloroplast's counterpart to it, and it is the thylakoid, not the mitochondrion, that these lipids build.", cn: "线粒体内膜是 respiratory chain 和 ATP synthase 所在的地方。Thylakoid 是叶绿体里与之对应的膜，而这些脂类构建的是 thylakoid，不是线粒体。" },
+        2: { en: "The book makes a positive statement about plants and names no bacterial occurrence at all. What the figure draws is a diacylglycerol with a sugar head group — galactose or sulfoquinovose — not a cell-wall polymer.", cn: "教材给的是关于植物的正面陈述，完全没有提到细菌。图上画的是一个带糖头基（galactose 或 sulfoquinovose）的 diacylglycerol，不是细胞壁的聚合物。" },
+        3: { en: "Sphingomyelin is the lipid of nerve cell membranes and brain tissue, above all the myelin sheaths of axons; neither it nor the glycoacylglycerols are placed in red cells here.", cn: "Sphingomyelin 是神经细胞膜和脑组织的脂类，尤其是轴突的髓鞘；这里既没把它、也没把 glycoacylglycerol 安在红细胞上。" }
+      },
       why_en: "The book states glycoacylglycerols are the main lipid component of plant membranes, specifically the thylakoid membranes in chloroplasts where the photosynthetic apparatus is located — not animal mitochondria, bacterial walls, or red blood cells.",
       why_cn: "教材指出，糖酰基甘油是植物膜的主要脂质成分，尤其是叶绿体中承载光合作用装置的类囊体膜——而非动物线粒体膜、细菌细胞壁或人类红细胞膜。"
     },
@@ -536,6 +547,11 @@ window.BIOCHEM.topics.push(
       q_cn: "教材命名的三种糖酰基甘油中，哪一种带有类似硫酸盐的头基？",
       options: ["SL (sulfoquinovosyldiacylglycerol), with a CH2-SO3⁻ group", "MGDG (monogalactosyldiacylglycerol)", "DGDG (digalactosyldiacylglycerol)", "None of the three — all three head groups are plain sugars"],
       answer: 0,
+      optionNotes: {
+        1: { en: "MGDG carries a single galactose — one plain sugar head group, with no sulfur anywhere in it. The figure shows it in two variants, with 16:3/18:3 and with 18:3/18:3 acyl chains.", cn: "MGDG 带一个 galactose——一个普通的糖头基，里面没有任何硫。图上给了两个变体，酰基链分别是 16:3/18:3 和 18:3/18:3。" },
+        2: { en: "DGDG carries two stacked galactose units, again plain sugars with no sulfur. The name itself counts them: mono- for one galactose, di- for two.", cn: "DGDG 带两个叠在一起的 galactose，同样是普通的糖、不含硫。名字本身就在数：mono- 是一个 galactose，di- 是两个。" },
+        3: { en: "Two of the three are indeed plain sugars, but the third is not. Sulfoquinovose is drawn with a CH2-SO3⁻ group, and that sulfonate is what makes SL the odd one out among the three.", cn: "三个里确实有两个是普通的糖，但第三个不是。Sulfoquinovose 画的时候带一个 CH2-SO3⁻ 基团，正是这个磺酸基让 SL 在三者中与众不同。" }
+      },
       why_en: "The figure draws SL with a sulfoquinovose head group written as CH2-SO3⁻ — a sulfonated sugar — distinguishing it from MGDG and DGDG, whose head groups are one and two plain galactose units respectively.",
       why_cn: "图中SL的头基为磺基喹诺糖，写作CH2-SO3⁻——一种磺化糖，区别于MGDG和DGDG（其头基分别为一个和两个普通半乳糖单位）。"
     },
@@ -602,12 +618,18 @@ window.BIOCHEM.topics.push(
       q_en: "According to the book's general phospholipid diagram, which part of the molecule is labelled the 'ionizable polar hydrophilic head', and which the 'non-ionizable nonpolar hydrophobic tail'?",
       q_cn: "根据教材的磷脂通用结构示意图，分子的哪一部分被标注为“可解离的极性亲水头部”，哪一部分被标注为“不可解离的非极性疏水尾部”？",
       options: [
-        "Head = the two fatty-acid acyl chains; tail = the phosphate + R group",
+        "Head = the two fatty-acid acyl chains; tail = the phosphate and the R group",
         "Head = the phosphate + R group; tail = the two fatty-acid acyl chains",
-        "Head = glycerol alone; tail = the phosphate group alone",
-        "Head and tail are not distinguished in this diagram"
+        "Head = glycerol on its own; tail = the phosphate group on its own",
+        "Head and tail are not distinguished anywhere in this diagram"
       ],
       answer: 1,
+      optionRefs: { 3: "8-5-2-1" },
+      optionNotes: {
+        0: { en: "Exactly reversed. The two acyl chains are the nonpolar, hydrophobic region; the polar, ionizable region is glycerol together with phosphoric acid and whatever R is attached to it.", cn: "正好反了。两条酰基链是非极性的疏水区；极性的、可电离的区域是 glycerol 加磷酸再加上接在它上面的 R。" },
+        2: { en: "Glycerol is part of the polar region, but not the whole of it, and the phosphate is polar too rather than being the tail. The tail is the two acyl chains, and only them.", cn: "Glycerol 属于极性区，但不是极性区的全部；磷酸也是极性的，不是尾巴。尾巴就是那两条酰基链，仅此而已。" },
+        3: { en: "The distinction is the whole point of the diagram. It is what the book calls amphipathy, and it is the property that lets phospholipids arrange themselves into a bilayer and form a membrane at all.", cn: "这个区分正是这张图的意义所在。教材称之为 amphipathy（两亲性），也正是这个性质让 phospholipid 能排成双层、组成膜。" }
+      },
       why_en: "The diagram's bracket labels place the 'ionizable polar hydrophilic head' under the phosphate-plus-R portion of the molecule and the 'non-ionizable nonpolar hydrophobic tail' under the two fatty-acyl chains — the reverse of option 0.",
       why_cn: "图中的括号标注将“可解离的极性亲水头部”标在磷酸+R部分之下，将“不可解离的非极性疏水尾部”标在两条脂肪酰基链之下——与选项0正相反。"
     },
@@ -616,12 +638,17 @@ window.BIOCHEM.topics.push(
       q_en: "Per the book, what accounts for most of a phospholipid's amphipathic character — the bare acylglycerol skeleton, or the R functional group?",
       q_cn: "根据教材，磷脂两亲性的主要来源是什么——是单纯的酰基甘油骨架，还是R功能基团？",
       options: [
-        "The bare acylglycerol skeleton contributes almost all of it",
+        "The bare acylglycerol skeleton contributes almost all of it, the R group only fine-tuning the head's size",
         "The R functional group contributes the main share, since groups like choline/ethanolamine/serine can carry charge at physiological pH",
-        "Both contribute exactly equally in every phospholipid",
-        "Neither contributes; amphipathy comes only from the fatty-acid chain length"
+        "Both contribute in equal measure, which is why phosphatidic acid, the parent of the whole family, is exactly as amphipathic as phosphatidylcholine",
+        "Neither contributes; amphipathy comes from the difference in length between the fatty acids at positions 1 and 2"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "The book says the opposite in so many words: the amphipathic character of the acylglycerol part on its own is very weak, and the main share comes from the functional groups hung on the phosphate.", cn: "教材的说法正好相反：单靠 acylglycerol 部分，两亲性很弱；主要的贡献来自挂在磷酸上的官能团。" },
+        2: { en: "Phosphatidic acid is the simplest phospholipid and the precursor of all the others, and what it lacks is precisely an R group on the phosphate — so it is the one member of the family where the head contributes least.", cn: "Phosphatidic acid 是最简单的 phospholipid，也是其他所有 phospholipid 的前体，而它缺的恰恰就是磷酸上的那个 R——所以在这一族里，它正是头基贡献最小的那一个。" },
+        3: { en: "Chain length is not what the book points to. It points to the electric charge that choline, ethanolamine and serine can carry at physiological pH, and says that charge matters a great deal for membrane function.", cn: "教材指向的不是链长。它指向的是 choline、ethanolamine、serine 在生理 pH 下可以带的电荷，并说这个电荷对膜功能的发挥关系重大。" }
+      },
       why_en: "The book states the amphipathic character of the acylglycerol part alone is very weak (nevýrazný); the main contribution comes from the functional groups, some of which (choline, ethanolamine, serine) can bear a charge at physiological pH.",
       why_cn: "教材指出，单纯酰基甘油部分的两亲性贡献很弱；主要贡献来自功能基团，其中一些（胆碱、乙醇胺、丝氨酸）在生理pH下可携带电荷。"
     },
@@ -686,12 +713,18 @@ window.BIOCHEM.topics.push(
       q_en: "The fatty acid in ceramide is attached to sphingosine through which functional group, given that sphingosine carries two hydroxyls?",
       q_cn: "尽管鞘氨醇含有两个羟基，神经酰胺中的脂肪酸是通过鞘氨醇的哪个官能团连接的？",
       options: [
-        "The primary (terminal) hydroxyl, via an ester bond",
-        "The secondary hydroxyl, via an ester bond",
+        "The primary terminal hydroxyl, by an ester bond",
+        "The secondary hydroxyl, by ester",
         "The amino group, via an amide bond",
-        "Neither hydroxyl nor amino group — via a glycosidic bond"
+        "By a glycosidic bond to the terminal hydroxyl"
       ],
       answer: 2,
+      optionRefs: { 3: "8-2-3-4" },
+      optionNotes: {
+        0: { en: "The primary -CH2OH is used, but later and by a different partner: phosphorylcholine is attached there by an ester bond, and that step is what turns ceramide into sphingomyelin.", cn: "那个伯位 -CH2OH 确实会被用到，但要晚一步、而且用它的是别的搭档：phosphorylcholine 通过酯键接在那里，这一步把 ceramide 变成 sphingomyelin。" },
+        1: { en: "Neither hydroxyl takes the fatty acid. Sphingosine has two of them and the book makes a point of saying so — and then says the acyl goes onto the amino group all the same.", cn: "两个羟基都不接脂肪酸。Sphingosine 确实有两个羟基，教材还特意点明这一点——然后说脂酰基照样接在氨基上。" },
+        3: { en: "A glycosidic bond to that same terminal hydroxyl is what makes a glycosphingolipid out of ceramide — a cerebroside or a ganglioside — rather than what makes the ceramide in the first place.", cn: "在同一个末端羟基上接一个糖苷键，得到的是由 ceramide 衍生的 glycosphingolipid——cerebroside 或 ganglioside——而不是 ceramide 本身的形成方式。" }
+      },
       why_en: "The book is explicit that despite sphingosine's two OH groups, the fatty acid is bound through the amino group (amide bond), forming ceramide; a phosphorylcholine group is what later goes onto the terminal OH to form sphingomyelin.",
       why_cn: "教材明确指出，尽管鞘氨醇有两个羟基，脂肪酸却是通过氨基（酰胺键）连接，形成神经酰胺；磷酸胆碱基团则是随后连接到末端羟基上以生成鞘磷脂。"
     },
@@ -759,12 +792,18 @@ window.BIOCHEM.topics.push(
       q_en: "What structurally distinguishes a ganglioside from a cerebroside, both being glycosphingolipids?",
       q_cn: "神经节苷脂和脑苷脂同属糖鞘脂，二者在结构上的区别是什么？",
       options: [
-        "Gangliosides lack any fatty acid; cerebrosides always have one",
+        "Gangliosides carry no fatty acid at all, their hydrophobic character coming from the sphingosine chain alone",
         "Gangliosides always include at least one sialic-acid residue in their oligosaccharide chain; cerebrosides contain only a single sugar (no sialic acid required)",
-        "Cerebrosides are found only in plants, gangliosides only in animals",
-        "Gangliosides contain no ceramide backbone"
+        "Cerebrosides occur only in plant membranes and gangliosides only in animal ones, though both are built on the same ceramide and carry the same long C24 fatty acids",
+        "Gangliosides are built on a glycerol backbone rather than on ceramide, which is what lets their sugar chain branch"
       ],
       answer: 1,
+      optionRefs: { 2: "8-2-3-3", 3: "8-2-3-2" },
+      optionNotes: {
+        0: { en: "Every glycosphingolipid is built on ceramide, that is on N-acylsphingosine, so the fatty acid is always present. In this group it is a long one — C24 chains make up as much as 80% of the fatty acid found.", cn: "所有 glycosphingolipid 都建在 ceramide（即 N-acylsphingosine）之上，所以脂肪酸永远都在。在这一类里它还很长——C24 链可占所含脂肪酸的 80%。" },
+        2: { en: "Both occur chiefly in the cell membranes of nerve and brain tissue, the same place the sphingomyelins do; the book draws no plant-versus-animal split anywhere in this group.", cn: "两者主要都出现在神经组织和脑组织的细胞膜里，和 sphingomyelin 是同一个地方；教材在这一类里从没划过什么植物对动物的界线。" },
+        3: { en: "The backbone is ceramide in both cases. A glycerol backbone is what the acylglycerols have — the phospho- and the glyco- kinds alike — and it is precisely what separates them from the sphingolipids.", cn: "两者的骨架都是 ceramide。以 glycerol 为骨架的是 acylglycerol 类（phospho- 和 glyco- 两种都是），而这恰恰是它们与 sphingolipid 的分界。" }
+      },
       why_en: "The book defines cerebrosides as the simplest glycosphingolipids, with just one sugar molecule, while gangliosides carry an oligosaccharide chain that always includes at least one sialic-acid (N-acetylneuraminic acid) residue.",
       why_cn: "教材将脑苷脂定义为最简单的糖鞘脂，只含一个糖分子；而神经节苷脂带有的寡糖链中总是至少包含一个唾液酸（N-乙酰神经氨酸）残基。"
     },
@@ -773,12 +812,17 @@ window.BIOCHEM.topics.push(
       q_en: "GM1 ganglioside is cited by the book as the binding target of which two bacterial toxins?",
       q_cn: "教材指出GM1神经节苷脂是哪两种细菌毒素的结合靶点？",
       options: [
-        "Diphtheria toxin and botulinum toxin",
+        "Diphtheria and botulinum toxin",
         "Tetanus toxin and cholera toxin",
         "Anthrax toxin and pertussis toxin",
         "Shiga toxin and staphylococcal enterotoxin"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Neither is named here. The book gives exactly two toxins as its GM1 example, inside a wider list of what glycolipids recognise: bacterial toxins, glycoprotein hormones, interferons and viruses.", cn: "这两个都没被点名。教材给 GM1 的例子恰好是两种毒素，放在一张更大的清单里——glycolipid 能识别的对象包括细菌毒素、糖蛋白激素、干扰素和病毒。" },
+        2: { en: "Not named either. What GM1 is there to illustrate is the general point that sugar chains projecting from the membrane surface get read by other molecules, not a survey of bacterial toxins.", cn: "同样没有被点名。GM1 在那里要说明的是一个普遍的道理：伸出膜面的糖链会被别的分子读取，而不是要给细菌毒素做个综述。" },
+        3: { en: "Also absent from the book. The same recognition role covers the glycolipids' work as antigenic chemical markers and as markers of how far a cell has differentiated.", cn: "书里同样没有。这种识别作用还包括 glycolipid 作为抗原性化学标记，以及作为细胞分化程度的标记。" }
+      },
       why_en: "The book explicitly names tetanus toxin (tetanový toxin) and cholera toxin (toxin cholery) as binding to ganglioside GM1, as an example of glycolipids' role in recognizing/interacting with bioactive compounds.",
       why_cn: "教材明确指出破伤风毒素和霍乱毒素结合于神经节苷脂GM1，以此说明糖脂在识别和结合生物活性化合物方面的作用。"
     },
