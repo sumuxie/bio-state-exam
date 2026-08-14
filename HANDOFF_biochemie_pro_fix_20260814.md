@@ -334,8 +334,43 @@ a batch on the wrapper error message — check every target file.** Agents on th
 are now briefed to keep the file closeable at every moment, because a complete
 one-node file beats a truncated three-node one.
 
-Still owed: lipid structure (ch10), glycogen (ch15), translation (ch27), urea cycle
-and amino-acid degradation (ch18).
+**All seven landed.** The Lehninger layer went from 60 nodes to **74**, and the app from
+253 topics / 797 core questions to **267 / 880**. Added after the three above:
+`L-15-2-1`/`L-15-3-1` (glycogen, chapter 15 had no file), `L-18-1-1`/`L-18-2-1`/`L-18-3-1`
+(urea cycle and amino-acid degradation, chapter 18 had no file), `L-27-2-1`
+(translation), and `L-10-1-1`/`L-10-2-1`/`L-10-2-2`/`L-10-3-1`/`L-10-4-1` (lipid
+structure, chapter 10 had no file — five Czech-only topicKeys at once).
+
+**Every one of them was briefed on the length tell and beat it.** Longest-option rates:
+ch15 0%, ch27 0%, ch18 33%, ch10 spread 0/2/1/3 across 20 items — against the existing
+bank's 83%. The ch27 agent's own check failed two of its items and it rewrote them
+rather than shipping them. Whatever else is true of agent-written content, *it does what
+the brief measures* — so measure the thing you care about and put the number in the brief.
+
+**Six Czech-layer questions are now settled by an outside source**, which is what this
+layer is for and is worth more than the extra prose:
+
+| node | the Czech layer said | Lehninger settles it |
+|---|---|---|
+| `4-2-3-1` | Shine-Dalgarno is pyrimidine-rich, on 16S rRNA | it is purine-rich, in the mRNA; the rRNA carries the complement |
+| `4-2-2`, `4-2-3-1` | implies peptidyl transferase is a protein | no protein within 18 Å; the activity is 23S rRNA |
+| ch4 "20S" | prose 20S, its own figure 30S | 30S throughout; **confirmed against the p.97 scan — the book really does print 20 S** |
+| `5-2-3-1` | purely ketogenic = Leu only | Leu **and** Lys; the Czech figure was right, the prose wrong |
+| `5-2-3-3` | succinyl-CoA family = 3 | 4, including threonine |
+| `8-3-8` | p.192 makes GGPP from GPP in one step | C10→C15→C20; and the Czech book's **own p.183 already has it right**, so it is one bad figure, not a convention |
+
+The Shine-Dalgarno one is **not closed**: p.97's lower half confirms the book discusses
+the 3′ end of 16S rRNA there, but whether it *calls that* the Shine-Dalgarno sequence
+needs the upper half of the same page. Until that is read, the `lehNote` is the correct
+treatment — it warns the reader whichever way the attribution falls, and editing the
+node's prose would breach the rule that a book's error is flagged, never silently fixed.
+
+**Two operational notes for the next batch.** An agent's final report was cut off
+mid-sentence by a safeguard filter *after* it had written its file — the work was intact,
+so read the target file before believing a failure. And `git add -A` swept two files that
+agents were still writing into a commit; because a data file with no `<script>` tag is a
+hard failure in `tools/validate-data.js`, that commit took CI down (`a0204b2`) until the
+tags were added (`1e538a3`). Commit path-scoped while agents are running.
 
 ## 7. How it was checked, with no `node` on this machine
 
