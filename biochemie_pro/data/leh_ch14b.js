@@ -219,3 +219,106 @@ window.BIOCHEM.topics.push(
         cn: "**14.4 节在自己的引言末尾留了一个前瞻指针，而这个指针值得跟到「让本节点能独立成立」为止。** 在确立了动物体内两条通路**「大体上都在胞质中进行」**之后，书得出结论：**这就必然要求「它们之间的互反与协同调控」**，详见 14.5 节（A 第 534 页）。**下面是一个从糖异生这一侧读的人所需要的最小限度**，取自那一节，不再多取。在 **PFK-1 与 FBPase-1 这一对**上，两个酶**「以协调而互反的方式被调控」**：**FBPase-1 被 AMP 强烈地别构抑制**，所以**当细胞的 ATP 供应低时，这个消耗 ATP 的葡萄糖合成就慢下来**；而**同一个 AMP 解除了 ATP 对 PFK-1 的抑制**（A 第 542 页）。**不过占主导的调节物是 fructose 2,6-bisphosphate**——**一个不是任何一条通路中间物的分子**，**没有任何流量经过它**，**所以细胞可以纯粹作为信息去升降它**。**它激活 PFK-1，同时抑制 FBPase-1**；而**承重的那个测量结果是**：在**所有底物和效应物都处于生理浓度**时，**「没有 fructose 2,6-bisphosphate，PFK-1 几乎是不活跃的」**（A 第 542 页）。**从糖异生这一侧读，就是镜像**：**F2,6BP 低的时候，糖异生才跑**；**而 glucagon 正是把它压低的那个信号**——经 **cAMP** 和**蛋白激酶 A** 磷酸化那个**双功能的 PFK-2/FBPase-2 蛋白**，**这次磷酸化「增强它的 FBPase-2 活性、抑制它的 PFK-2 活性」**（A 第 542 页）。**再加上上面已经见过的那个分叉点**——**acetyl-CoA 激活 pyruvate carboxylase**——**糖异生的开关就齐了：有脂肪可烧、能荷高、F2,6BP 低。** **完整的机制**——hexokinase 同工酶、核内隔离、双功能蛋白上的那些数字、xylulose 5-phosphate 以及转录那一层——**请去 L-14-5-1**，**那一节就是为它写的**。"
       }
     ],
+
+    quiz: [
+      { type: "mcq",
+        q_en: "Lehninger argues that gluconeogenesis cannot simply run glycolysis backwards. What is the EVIDENCE it gives, as opposed to the assertion?",
+        q_cn: "Lehninger 论证糖异生不能简单地把糖酵解倒着跑。它给出的**证据**是什么（而不只是断言）？",
+        options: [
+          "The three bypassed steps use different enzymes from the glycolytic ones",
+          "The three bypassed reactions are catalysed in separate cell compartments",
+          "TABLE 14-2 measures the cellular free-energy changes: -33.4, -22.2 and -16.7 kJ/mol",
+          "Gluconeogenesis needs six high-energy phosphates while glycolysis yields only two"
+        ],
+        answer: 2,
+        optionRefs: { 0: "7-9", 3: "7-8-1" },
+        optionNotes: {
+          0: { en: "True, and it is what the Czech book says — but it is the same assertion restated, not evidence for it. The measurement is the evidence.", cn: "这是对的，也正是捷克教材说的——但它只是把同一个断言换个说法，不是**证据**。证据是那组测量值。" },
+          1: { en: "Only one bypass is split across compartments (pyruvate carboxylase in the matrix). The other two are not, and compartments are not the argument here.", cn: "只有一个 bypass 跨了区室（pyruvate carboxylase 在线粒体基质）。另外两个并没有，而且区室也不是这里的论据。" },
+          3: { en: "That is the cost of the pathway, quoted later in this node. It explains why it is expensive, not why three steps must be bypassed.", cn: "那是这条通路的**代价**，本节点后面会引用。它解释的是为什么贵，不是为什么必须绕开三步。" }
+        },
+        why_en: "The seven shared reactions sit between -6 and +25 kJ/mol in the cell — near enough to zero to run either way. The three that are bypassed are measured at -33.4 (hexokinase), -22.2 (PFK-1) and -16.7 (pyruvate kinase): too far downhill to reverse. That measurement is why both directions can be irreversible at once, and it is exactly what the Czech book asserts without showing.",
+        why_cn: "七个共用反应在细胞内的自由能变化落在 -6 到 +25 kJ/mol 之间——离零足够近，两个方向都能跑。被绕开的三步测出来是 -33.4（hexokinase）、-22.2（PFK-1）、-16.7（pyruvate kinase）：下坡太陡，逆不回去。正是这组测量解释了为什么两个方向可以同时都不可逆，而这恰恰是捷克教材只下断言、没有给出的东西。" },
+
+      { type: "mcq",
+        q_en: "Which enzyme does Lehninger call the FIRST regulatory enzyme of the gluconeogenic pathway, and what switches it on?",
+        q_cn: "Lehninger 把哪个酶称为糖异生通路上的**第一个调节酶**？是什么把它打开？",
+        options: [
+          "Pyruvate carboxylase, activated by acetyl-CoA as a positive effector",
+          "Fructose 1,6-bisphosphatase, released from inhibition by low F2,6BP",
+          "PEP carboxykinase, activated once oxaloacetate leaves as malate",
+          "Glucose 6-phosphatase, switched on inside the endoplasmic reticulum"
+        ],
+        answer: 0,
+        optionRefs: { 1: "7-9", 3: "7-9" },
+        optionNotes: {
+          1: { en: "FBPase-1 is genuinely regulated by fructose 2,6-bisphosphate, but that is the chapter's LATER control point, in section 14.5 — not the first enzyme of the pathway.", cn: "FBPase-1 确实受 fructose 2,6-bisphosphate 调节，但那是本章**后面**的控制点（14.5 节），不是通路上的第一个酶。" },
+          2: { en: "PEP carboxykinase acts second, on the oxaloacetate that pyruvate carboxylase made. Its substrate leaving the mitochondrion as malate is transport, not activation.", cn: "PEP carboxykinase 是第二步，作用于 pyruvate carboxylase 生成的 oxaloacetate。底物以 malate 形式离开线粒体是**转运**，不是激活。" },
+          3: { en: "Glucose 6-phosphatase is the last step, not the first, and its ER location is about where the reaction happens rather than whether it is switched on.", cn: "Glucose 6-phosphatase 是**最后**一步，不是第一步；它在 ER 里这件事说的是反应发生在哪儿，不是它开没开。" }
+        },
+        why_en: "Acetyl-CoA is produced by fatty acid oxidation, so its accumulation is the cell's signal that fat is available as fuel — the moment at which making glucose from pyruvate is worth doing. That is why the pathway's first regulatory enzyme listens for it.",
+        why_cn: "acetyl-CoA 来自脂肪酸氧化，所以它的积累就是细胞收到的信号：现在有脂肪可烧——这正是值得把 pyruvate 拿去造糖的时刻。这就是为什么通路上第一个调节酶盯着的是它。" },
+
+      { type: "mcq",
+        q_en: "Why must the oxaloacetate made inside the mitochondrion leave as malate rather than as oxaloacetate itself?",
+        q_cn: "线粒体内生成的 oxaloacetate，为什么必须以 malate 的形式离开，而不是直接以 oxaloacetate 出去？",
+        options: [
+          "Malate carries the CO2 that the next reaction will need to release",
+          "Oxaloacetate would be decarboxylated by PEP carboxykinase too early",
+          "Malate is the form that pyruvate carboxylase releases from its site 2",
+          "The mitochondrial inner membrane has no transporter for oxaloacetate"
+        ],
+        answer: 3,
+        optionNotes: {
+          0: { en: "The CO2 added by pyruvate carboxylase is removed again by PEP carboxykinase, but the carrier's identity is not what carries it — the transport problem is a membrane problem.", cn: "pyruvate carboxylase 加上去的 CO2 后来又被 PEP carboxykinase 拿掉，但携带者是谁并不取决于这一点——转运问题是**膜**的问题。" },
+          1: { en: "PEP carboxykinase acts on oxaloacetate wherever the isozyme sits; the reason for the detour is that the molecule cannot cross, not that it would react early.", cn: "PEP carboxykinase 在哪个同工酶所在之处就作用于 oxaloacetate；绕道的原因是这个分子过不去，而不是怕它提前反应。" },
+          2: { en: "Pyruvate carboxylase's two sites carry biotin and the substrate; the product it releases is oxaloacetate, and the conversion to malate is a separate reaction.", cn: "pyruvate carboxylase 的两个位点承载 biotin 和底物；它放出的产物是 oxaloacetate，转成 malate 是另一个反应。" }
+        },
+        why_en: "The molecule is reduced to malate, carried out, and oxidised back to oxaloacetate in the cytosol by malate dehydrogenase. The detour also moves reducing equivalents out, which the cytosolic step later needs — which is why it looks like a pointless shuttle and is not.",
+        why_cn: "这个分子先被还原成 malate，运出去，再在胞质里由 malate dehydrogenase 氧化回 oxaloacetate。这趟绕行顺便把还原当量也带了出去，而胞质里后面那一步正需要它——所以它看着像多此一举，其实不是。" },
+
+      { type: "mcq",
+        q_en: "What does the location of glucose 6-phosphatase tell you, and which tissues therefore release free glucose into the blood?",
+        q_cn: "glucose 6-phosphatase 的定位说明了什么？因此哪些组织能把游离葡萄糖释放进血液？",
+        options: [
+          "It is cytosolic, so every tissue that stores glycogen can release glucose",
+          "It sits in the endoplasmic-reticulum lumen, and only liver, kidney and gut have it",
+          "It is bound to the outer mitochondrial membrane in liver and in muscle alike",
+          "It is a plasma-membrane enzyme, which is why the glucose appears outside"
+        ],
+        answer: 1,
+        optionRefs: { 0: "7-11-2-1" },
+        optionNotes: {
+          0: { en: "Muscle stores plenty of glycogen and still cannot release glucose, precisely because it lacks this enzyme — the classic exam contrast.", cn: "肌肉储存了大量糖原却仍然放不出葡萄糖，原因正是它没有这个酶——这是最典型的考试对比。" },
+          2: { en: "Nothing in the section places it on a mitochondrial membrane, and the liver/muscle difference would disappear if muscle had it too.", cn: "本节没有任何内容把它放在线粒体膜上；而且如果肌肉也有它，肝与肌肉的差别就不存在了。" },
+          3: { en: "The reaction happens inside a compartment and the product is then exported; a plasma-membrane enzyme is a different mechanism and not the one described.", cn: "反应发生在一个**区室内部**，产物随后被输出；质膜酶是另一套机制，不是这里描述的那一套。" }
+        },
+        why_en: "Gluconeogenesis is a liver, renal-cortex and small-intestine pathway, and the last enzyme is what makes it so. Muscle runs the pathway's earlier steps but keeps its glucose 6-phosphate, because without this enzyme it has no way to take the phosphate off.",
+        why_cn: "糖异生是肝、肾皮质和小肠上皮的通路，而决定这一点的正是最后这个酶。肌肉跑得了前面几步，却只能把 glucose 6-phosphate 留在自己体内——没有这个酶，它没办法把那个磷酸拿掉。" },
+
+      { type: "short",
+        q_en: "An examiner says: fatty acids are burned to acetyl-CoA, and acetyl-CoA enters the citric acid cycle which makes oxaloacetate, and oxaloacetate is a gluconeogenic precursor — so why does Lehninger say fatty acids cannot be turned into glucose?",
+        q_cn: "考官问：脂肪酸烧成 acetyl-CoA，acetyl-CoA 进柠檬酸循环生成 oxaloacetate，而 oxaloacetate 又是糖异生的前体——那为什么 Lehninger 说脂肪酸变不成葡萄糖？",
+        accept: ["net", "irreversible", "pyruvate dehydrogenase", "two carbons", "净", "不可逆", "丙酮酸脱氢酶"],
+        answer_en: "Because the claim is about NET conversion, and the word carries the whole argument. Most fatty acids yield only acetyl-CoA on catabolism, and acetyl-CoA cannot be a precursor of glucose because the pyruvate dehydrogenase reaction is irreversible — there is no route back from acetyl-CoA to pyruvate. Acetyl-CoA entering the cycle does condense with oxaloacetate, but for every two carbons it brings in, two leave as CO2, so no oxaloacetate is gained. Individual carbon atoms from a fatty acid can end up in glucose; no NET glucose is made. The exceptions are the odd-chain fatty acids, whose propionyl-CoA is genuinely glucogenic.",
+        answer_cn: "因为这句话说的是**净**转化，而全部论证都压在这个「净」字上。多数脂肪酸分解后只给出 acetyl-CoA，而 acetyl-CoA 当不了葡萄糖的前体，因为 pyruvate dehydrogenase 这一步不可逆——从 acetyl-CoA 没有路回到 pyruvate。acetyl-CoA 进入循环后确实与 oxaloacetate 缩合，但它每带进两个碳，就有两个碳以 CO2 形式离开，所以 oxaloacetate 并没有净增加。脂肪酸里个别碳原子确实可以出现在葡萄糖里，但**净**的葡萄糖一个也没造出来。例外是奇数碳脂肪酸，它们的 propionyl-CoA 是真正生糖的。" }
+    ],
+
+    oral: {
+      q_en: "Take me through gluconeogenesis: why the cell needs it, where it differs from glycolysis, and what it costs.",
+      q_cn: "把糖异生讲一遍：细胞为什么需要它、它与糖酵解在哪里不同、代价是多少。",
+      model_en: "Gluconeogenesis exists because some tissues need glucose whatever the diet does; the brain alone takes about a hundred and twenty grams a day, which is more than the whole body stores as glycogen. It runs in liver, renal cortex and small-intestine epithelium, from pyruvate, lactate, glycerol and most amino acids. It is not glycolysis reversed. Seven of the ten reactions are the same enzymes running backwards, because in the cell their free-energy changes sit near zero, between minus six and plus twenty-five kilojoules per mole. The other three cannot be reversed, and Lehninger measures why: hexokinase at minus thirty-three point four, phosphofructokinase-one at minus twenty-two point two, pyruvate kinase at minus sixteen point seven. Each gets a bypass. The first is the elaborate one: pyruvate carboxylase, in the mitochondrial matrix, with biotin and bicarbonate, makes oxaloacetate — and that enzyme is the pathway's first regulatory step, switched on by acetyl-CoA, which is the cell's signal that fat is available to burn. Oxaloacetate cannot cross the inner membrane, so it is reduced to malate, carried out, and oxidised back in the cytosol, which conveniently exports reducing equivalents at the same time. Then PEP carboxykinase removes the carbon dioxide that was just added and phosphorylates the product to phosphoenolpyruvate. Adding CO2 and taking it off again looks wasteful; it is the activation that makes the step go. The second and third bypasses are simple hydrolyses, by fructose one-six-bisphosphatase and by glucose six-phosphatase — and those two names matter, because the Czech textbook describes both reactions and never names either enzyme. Glucose six-phosphatase sits in the endoplasmic-reticulum lumen and only liver, kidney and intestine have it, which is exactly why muscle keeps its glucose and the liver exports it. The cost is six high-energy phosphates per glucose: four ATP, two GTP, and two NADH as well. Glycolysis releases about sixty-three kilojoules per mole and gluconeogenesis about sixteen, and both being downhill is what lets the cell run either direction without ever running them at once.",
+      checklist: [
+        "Named the demand first — about 120 g of glucose a day for the brain — and the three tissues that do it",
+        "Said seven of ten reactions are shared, and gave the free-energy argument rather than just asserting three bypasses",
+        "Quoted at least one measured value: hexokinase -33.4, PFK-1 -22.2, pyruvate kinase -16.7 kJ/mol",
+        "Pyruvate carboxylase: matrix, biotin, bicarbonate, and acetyl-CoA as the positive effector",
+        "Explained the malate detour as a transport problem, not a pointless shuttle",
+        "Named fructose 1,6-bisphosphatase and glucose 6-phosphatase — the two the Czech book never names",
+        "Placed glucose 6-phosphatase in the ER lumen and drew the liver-versus-muscle conclusion from it",
+        "Gave the cost as six high-energy phosphates (4 ATP + 2 GTP) plus 2 NADH"
+      ]
+    }
+  }
+
+);
