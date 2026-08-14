@@ -3,17 +3,19 @@ biochemie_pro/app.js parses as JavaScript: OK (2596 lines, 2 literals stubbed)
 
 simulating the validator's logic against the real data:
 ok biochemie_basic: 207 topics (207 cz, 0 lehninger, 0 entity), cz book pages 8-228, 0 topicKeys, 1010 terms, 603 questions
-ok biochemie_pro: 270 topics (207 cz, 60 lehninger, 3 entity), cz book pages 8-228, 78 topicKeys, 1509 terms, 800 questions
+FAIL biochemie_pro
+   data/leh_ch22d.js exists but no <script> tag loads it
+   data/leh_ch6b.js exists but no <script> tag loads it
 
 negative tests -- a check that never fails is not a check:
   half-migrated app (one node missing `book`): got=206, len=207 -> FIRES
   lehninger nodes with wildly gappy pages: gap check reports 0 gaps -> correctly ignored
   (test page chosen by search: p.9, held only by node 1-1)
   cz node with a page removed: gap check reports [9] -> still bites
-  lehNotes present in the data: 15 on 13 nodes -> testable
-  lehNote pointing at a missing node: 15/15 caught -> FIRES
-  lehNote with an unknown kind:       15/15 caught -> FIRES
-  lehNote missing the cn half:        15/15 caught -> FIRES
+  lehNotes present in the data: 18 on 14 nodes -> testable
+  lehNote pointing at a missing node: 18/18 caught -> FIRES
+  lehNote with an unknown kind:       18/18 caught -> FIRES
+  lehNote missing the cn half:        18/18 caught -> FIRES
   every real lehNote target resolves: yes
 
-RESULT: all checks pass
+RESULT: VALIDATION FAILED
