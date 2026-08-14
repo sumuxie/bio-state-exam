@@ -3009,12 +3009,18 @@ window.BIOCHEM.topics.push(
       q_en: "Per the book's introduction to 8.5, are biological membranes merely static boundaries between compartments?",
       q_cn: "根据教材8.5节的引言，生物膜仅仅是区室之间的静态边界吗？",
       options: [
-        "Yes, their only role is passive separation of spaces",
+        "Yes — separating the internal space from the external environment is the whole of what they do, everything else happening in the cytoplasm",
         "No — they are biochemically highly active systems responsible for selective transport, hormone binding, electrical impulse transmission, and enzyme reactions including ATP production",
-        "No — they are purely structural scaffolds with no biochemical activity at all",
-        "Yes, only the plasma membrane is active; all internal membranes are purely structural"
+        "No — they are structural scaffolds that hold the organelles in place, all the biochemistry going on in the spaces they enclose",
+        "Yes for the internal ones — only the outer cell membrane is biochemically active, while the nuclear, mitochondrial, Golgi and endoplasmic-reticulum membranes are purely structural partitions"
       ],
       answer: 1,
+      optionRefs: { 2: "6-2-4-5", 3: "6-2-4-1" },
+      optionNotes: {
+        0: { en: "This is the claim the book opens by denying. Selective transport, the binding of hormones and regulatory signals, the transmission of electrical impulses and enzyme reactions are all listed as work the membrane itself does.", cn: "这正是教材开篇就否定的说法。选择性转运、结合激素和调节信号、传导电冲动、以及酶促反应，都被列为膜本身在做的工作。" },
+        2: { en: "It is not merely that the biochemistry happens nearby: ATP production itself is a membrane process, run by complexes embedded in the inner mitochondrial membrane, and the book names it among the membrane's own functions.", cn: "问题不只是生化反应发生在旁边：ATP 的产生本身就是一个膜过程，由嵌在线粒体内膜里的复合体完成，教材把它列为膜自身的功能之一。" },
+        3: { en: "The inner mitochondrial membrane is the book's own example of a highly active INTERNAL membrane — it is the one that produces ATP, and the book uses exactly that to illustrate functional specialisation.", cn: "线粒体内膜正是教材举的那个高度活跃的内部膜的例子——产生 ATP 的就是它，教材恰恰用它来说明功能的专门化。" }
+      },
       why_en: "The book explicitly states membranes are not merely static boundaries but biochemically very active systems, listing selective transport, hormone/regulatory binding, electrical impulse transmission, enzyme reactions, and ATP production among their roles.",
       why_cn: "教材明确指出膜并非仅仅是静态边界，而是生化活性很高的系统，其功能包括选择性转运、激素/调节结合、电脉冲传递、酶促反应及ATP生成等。"
     },
@@ -3023,12 +3029,18 @@ window.BIOCHEM.topics.push(
       q_en: "What example does the book give of membrane functional specialization?",
       q_cn: "教材举了什么例子来说明膜的功能特化？",
       options: [
-        "All membranes produce equal amounts of ATP",
+        "Every membrane produces ATP, but the inner mitochondrial membrane produces the most of it",
         "Only the inner mitochondrial membrane is responsible for ATP production, and certain hormones bind only to certain membranes",
-        "The plasma membrane and nuclear membrane have identical protein compositions",
-        "Only plant cell membranes show any specialization"
+        "The plasma membrane and the nuclear membrane have identical protein compositions and differ only in their lipids, which is what specialisation means here",
+        "Only plant cell membranes show any specialisation, animal membranes all being built alike"
       ],
       answer: 1,
+      optionRefs: { 0: "6-2-4-5", 2: "8-5-1" },
+      optionNotes: {
+        0: { en: "The book's claim is exclusive, not comparative: ONLY the inner mitochondrial membrane is responsible for ATP production. Complex V sits in that membrane and in no other.", cn: "教材的说法是排他的，不是比较级的：只有线粒体内膜负责产生 ATP。Complex V 就长在那张膜上，别的膜上都没有。" },
+        2: { en: "What varies most between membranes is precisely the protein complement — the protein:lipid weight ratio alone runs all the way from 1:4 to 3:1 depending on the membrane's origin and function.", cn: "各种膜之间差别最大的恰恰是蛋白质部分——单是 protein:lipid 的重量比就随膜的来源和功能，从 1:4 一直变到 3:1。" },
+        3: { en: "Both halves of the book's statement — the shared architectural scheme and the functional specialisation on top of it — are made for all cells, with no plant-versus-animal split drawn anywhere.", cn: "教材这句话的两半——共同的基本构造方案，以及在此之上的功能专门化——都是对所有细胞讲的，从未划过植物与动物的界线。" }
+      },
       why_en: "The book states that although the basic structural scheme is shared across membranes, they differ functionally and are specialized — giving the example that only the inner mitochondrial membrane is responsible for ATP production, and that certain hormones bind only to certain membranes while others are unresponsive to them.",
       why_cn: "教材指出，尽管所有膜的基本结构方案相同，但它们在功能上有差异、是特化的——并举例说明只有线粒体内膜负责ATP生成，某些激素只与特定膜结合，而对其他膜完全不起作用。"
     },
@@ -3087,8 +3099,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What range does the book give for the protein:lipid weight ratio in biological membranes?",
       q_cn: "教材给出的生物膜中蛋白质:脂质质量比的范围是多少？",
-      options: ["Always exactly 1:1", "1:4 to 3:1, varying by membrane origin and function", "10:1 to 20:1", "Always less than 1:10"],
+      options: [
+        "Exactly 1:1 in every membrane type",
+        "1:4 to 3:1, varying by membrane origin and function",
+        "10:1 to 20:1, protein always dominating",
+        "Always below 1:10, so that lipid dominates in every membrane"
+      ],
       answer: 1,
+      optionNotes: {
+        0: { en: "A fixed value is exactly what the book denies. The ratio varies substantially with the origin and the function of the membrane, which is the reason a range is quoted rather than a number.", cn: "固定值恰恰是教材否定的东西。这个比值随膜的来源和功能有很大变化，这也正是教材给的是一个范围而不是一个数的原因。" },
+        2: { en: "The protein-rich end of the range is 3:1, not 10:1. Protein can be the larger share by a factor of three, but never by an order of magnitude.", cn: "范围里富含蛋白的那一端是 3:1，不是 10:1。蛋白确实可以是较大的一份，最多三倍，但绝到不了一个数量级。" },
+        3: { en: "The lipid-rich end of the range is 1:4, so lipid can outweigh protein fourfold and no further — and in a good many membranes it is protein that makes up the greater part.", cn: "范围里富含脂类的那一端是 1:4，所以脂类最多比蛋白多四倍，再多就没有了——而且在相当多的膜里，占大头的反而是蛋白。" }
+      },
       why_en: "The book states the protein:lipid weight ratio ranges from 1:4 to 3:1, substantially varying with the origin and function of the membrane in question.",
       why_cn: "教材指出蛋白质:脂质的质量比在1:4到3:1之间变化，因膜的来源和功能而有很大差异。"
     },
@@ -3097,12 +3119,18 @@ window.BIOCHEM.topics.push(
       q_en: "In what form is carbohydrate always found in biological membranes, and what fraction of membrane mass does it represent?",
       q_cn: "糖类在生物膜中总是以什么形式存在？占膜质量的多大比例？",
       options: [
-        "As free monosaccharides; 20-30% of mass",
+        "As free monosaccharides dissolved in the bilayer, at 20-30% of the mass",
         "As glycoproteins or glycolipids; 0.5-10% of mass",
-        "As glycogen granules; 15% of mass",
-        "As free-floating oligosaccharides; 50% of mass"
+        "As glycogen granules, at about 15% of the mass",
+        "As free oligosaccharides, at 40-50% of the mass"
       ],
       answer: 1,
+      optionRefs: { 2: "L-15-2-1" },
+      optionNotes: {
+        0: { en: "The qualification the book insists on is that membrane carbohydrate is never free: it is always bound, either as a glycoprotein or as a glycolipid. And a fifth of the mass would be far above the range quoted.", cn: "教材坚持的限定是：膜上的糖从来不是游离的，永远是结合态——不是 glycoprotein 就是 glycolipid。而占质量的五分之一也远远超出了教材给的范围。" },
+        2: { en: "Glycogen is a storage polysaccharide, kept as granules in the cytosol rather than built into a membrane; nothing in the membrane's composition is described in that form.", cn: "Glycogen 是储存性多糖，以颗粒形式待在胞浆里，而不是砌进膜里；膜的组成里没有任何东西是以那种形态描述的。" },
+        3: { en: "Half the membrane's mass as sugar would leave almost no room for the two components the book actually names, proteins and lipids — and again, the carbohydrate is never free-floating.", cn: "如果糖占了膜质量的一半，那就几乎没有地方留给教材真正点名的两个组分——蛋白质和脂类了；而且糖也从来不是游离漂浮的。" }
+      },
       why_en: "The book states membrane carbohydrate is always present either as glycoproteins or as glycolipids, and represents 0.5-10% of membrane mass.",
       why_cn: "教材指出膜中的糖类总是以糖蛋白或糖脂的形式存在，占膜质量的0.5%-10%。"
     },
@@ -3166,12 +3194,17 @@ window.BIOCHEM.topics.push(
       q_en: "What orientation do the two lipid monolayers adopt relative to each other, and what does this produce?",
       q_cn: "两个脂质单层相对彼此采取怎样的取向？这产生了什么结果？",
       options: [
-        "Head-to-head, producing two non-polar surfaces and a polar center",
+        "Head-to-head, producing two non-polar surfaces around a polar centre",
         "Tail-to-tail, producing a non-polar center and two polar surfaces",
-        "Head-to-tail (parallel), producing a uniformly polar structure",
-        "Randomly mixed, with no defined orientation"
+        "Head-to-tail, in parallel, producing a uniformly polar structure",
+        "Randomly mixed, with no defined orientation between the two"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "This is the bilayer turned inside out. It would put the polar heads in the middle and press the hydrophobic tails against the water on both sides — the opposite of what makes the arrangement hold together.", cn: "这是把双层里外翻转了。那样极性头基会挤在中间，而疏水的尾巴两侧都贴着水——正好和维持这个排列的道理相反。" },
+        2: { en: "Parallel monolayers would give no distinct interior at all, and the book measures one: a markedly non-polar centre, across a total thickness of 3.5 to 4.0 nm.", cn: "平行排列根本不会形成一个独立的内部区域，而教材恰恰量出了一个：明显非极性的中心，整体厚度 3.5 到 4.0 nm。" },
+        3: { en: "The arrangement is in fact identical in both monolayers. What differs between them is the lipid COMPOSITION — cerebrosides and gangliosides sit generally in the outer one — and the book calls that asymmetry.", cn: "两个单层的排列方式其实完全相同。它们之间不同的是脂类的组成——cerebroside 和 ganglioside 一般位于外层——教材称之为不对称性。" }
+      },
       why_en: "The book states the two monolayers are oriented 'tail to tail', producing a bilayer with a markedly non-polar center and two polar surfaces, roughly 3.5-4.0 nm thick.",
       why_cn: "教材指出两个单层以“尾对尾”方式取向，形成中央高度非极性、两侧表面为极性的双分子层，厚度约3.5-4.0 nm。"
     },
@@ -3180,12 +3213,17 @@ window.BIOCHEM.topics.push(
       q_en: "Which three factors does the book name as determining the fluidity of the lipid bilayer, and in which direction does each push fluidity?",
       q_cn: "教材提到哪三个因素决定脂质双分子层的流动性？每个因素分别朝哪个方向影响流动性？",
       options: [
-        "Protein content, membrane thickness, and pH — all decrease fluidity as they increase",
+        "Protein content, membrane thickness and pH — all of them decreasing fluidity as they rise",
         "Saturation and length of hydrocarbon chains, and cholesterol content — all DECREASE fluidity as they increase",
-        "Temperature, glycoprotein content, and membrane age — all INCREASE fluidity as they increase",
-        "Only cholesterol content matters; chain saturation and length are irrelevant"
+        "Temperature, glycoprotein content and the age of the membrane — all three of them increasing fluidity as they rise",
+        "Cholesterol content alone; chain length and saturation make no difference either way"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "None of the three is named here. What the book names are the type and length of the hydrocarbon chains — of the fatty acids and of the sphingosines — together with cholesterol.", cn: "这三个在这里都没有被点名。教材点名的是烃链的类型和长度——脂肪酸的和 sphingosine 的——外加 cholesterol。" },
+        2: { en: "Age is mentioned, but for something else entirely: it is one of the things that varies the DEGREE of lipid-composition asymmetry between the two monolayers, not the fluidity of the bilayer.", cn: "「年龄」确实被提到过，但说的是另一回事：它影响的是两个单层之间脂类组成不对称的程度，不是双层的流动性。" },
+        3: { en: "Cholesterol is one of three factors, not the only one. Greater saturation and longer chains each stiffen the bilayer in exactly the same direction cholesterol does.", cn: "Cholesterol 只是三个因素之一，不是唯一。饱和度更高、链更长，各自都在和 cholesterol 完全相同的方向上让双层变硬。" }
+      },
       why_en: "The book states fluidity is determined by the type/length of hydrocarbon chains of fatty acids, sphingosines, and cholesterol: higher saturated fatty acid content, longer chains, and higher cholesterol content all decrease bilayer fluidity.",
       why_cn: "教材指出流动性由脂肪酸、鞘氨醇和胆固醇碳氢链的类型/长度决定：饱和脂肪酸含量越高、链越长、胆固醇含量越高，双分子层流动性越低。"
     },
@@ -3250,12 +3288,17 @@ window.BIOCHEM.topics.push(
       q_en: "What distinguishes a peripheral membrane protein from an integral one, per the book?",
       q_cn: "根据教材，外周膜蛋白与整合膜蛋白有何区别？",
       options: [
-        "Peripheral proteins span the membrane; integral proteins sit only on the surface",
+        "Peripheral proteins span the membrane and are held by hydrophobic interactions with the fatty-acid tails, while integral proteins sit on the surface and touch only the polar lipid heads, coming off relatively simply",
         "Peripheral proteins interact only with the polar lipid head and bind non-covalently on the surface; integral proteins embed into the hydrophobic interior via hydrophobic interactions",
-        "There is no real difference; the terms are interchangeable",
-        "Peripheral proteins are always glycosylated; integral proteins never are"
+        "The two terms are interchangeable, since every membrane protein touches both the polar heads and the hydrophobic tails",
+        "Peripheral proteins are always glycosylated and integral ones never are, which is how Obr. 8.2 tells the two apart"
       ],
       answer: 1,
+      optionNotes: {
+        0: { en: "Every element here is right but assigned to the wrong name. It is the INTEGRAL proteins that embed in the hydrophobic interior and may span the membrane; the peripheral ones sit on the surface and can be released relatively simply.", cn: "这里每一项本身都对，只是安错了名字。嵌进疏水内部、并且可能贯穿全膜的是 integral 蛋白；peripheral 蛋白位于表面，而且相对容易被释放下来。" },
+        2: { en: "The distinction is real and Obr. 8.2 labels it four ways: IP1 an integral protein that does not span the membrane, IP2 one that does, and PPP and PPS two kinds of peripheral protein.", cn: "这个区分是实在的，Obr. 8.2 还分了四种来标：IP1 是不贯穿全膜的 integral 蛋白，IP2 是贯穿的，PPP 和 PPS 则是两类 peripheral 蛋白。" },
+        3: { en: "Glycosylation is a separate axis altogether. Obr. 8.2 gives the glycoprotein its own label, GP, with C marking its carbohydrate unit — alongside the peripheral/integral pair rather than instead of it.", cn: "糖基化完全是另一个维度。Obr. 8.2 给 glycoprotein 单列了一个标签 GP，用 C 标出它的糖单元——它和 peripheral/integral 那一对是并列的，不是替代关系。" }
+      },
       why_en: "The book defines peripheral proteins as surface-located, interacting only with the polar lipid head via non-covalent bonds to polar side chains, while integral proteins are embedded in the bilayer, held by hydrophobic interactions with the fatty-acid tails, and may or may not span the membrane.",
       why_cn: "教材将外周蛋白定义为位于表面、只与脂质极性头部相互作用、通过极性侧链以非共价方式结合；而整合蛋白嵌入双分子层，靠与脂肪酸尾部的疏水相互作用固定，可能贯穿膜也可能不贯穿。"
     },
@@ -3263,8 +3306,18 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Which type of membrane movement, found for lipids, has NOT been found for membrane proteins?",
       q_cn: "在脂质中发现的哪种膜内运动方式，尚未在膜蛋白中被发现？",
-      options: ["Rotational movement", "Lateral movement in the plane of the membrane", "The flip-flop mechanism (exchange between monolayers)", "Conformational change"],
+      options: [
+        "Rotational movement about the protein's own axis",
+        "Lateral movement within the plane of the membrane, from one region to another",
+        "The flip-flop mechanism (exchange between monolayers)",
+        "Conformational change signalled to a neighbour"
+      ],
       answer: 2,
+      optionNotes: {
+        0: { en: "Rotational movement is one of the two the book explicitly grants membrane proteins. In the fluid mosaic model all the components are in constant motion; the question is which kind of motion is missing.", cn: "旋转运动是教材明确承认膜蛋白具有的两种运动之一。在 fluid mosaic 模型里所有组分都在不停运动；题目问的是缺了哪一种。" },
+        1: { en: "Lateral movement in the plane of the membrane is the other motion proteins do have. What they cannot do is cross from one monolayer to the other, so their orientation across the membrane is permanent.", cn: "在膜平面内的侧向运动是膜蛋白确实具有的另一种运动。它们做不到的是从一个单层翻到另一个单层，所以蛋白跨膜的取向是固定不变的。" },
+        3: { en: "Conformational change is not only found in membrane proteins but treated as a significant regulatory factor: a change in one protein often signals further changes in its neighbours.", cn: "构象变化不但在膜蛋白上存在，还被当作一个重要的调控因素：一个蛋白的构象变化常常引发相邻蛋白的进一步变化。" }
+      },
       why_en: "The book states protein movement can be rotational or lateral within the membrane plane, but explicitly notes the flip-flop mechanism found for lipids has NOT been found for proteins.",
       why_cn: "教材指出蛋白质的运动可以是膜平面内的旋转或侧向运动，但明确指出脂质中发现的翻转机制在蛋白质中并未被发现。"
     },
@@ -3329,12 +3382,18 @@ window.BIOCHEM.topics.push(
       q_en: "What are the three types of dynamic membrane proteins the book says are usually present in all cell types?",
       q_cn: "教材指出所有细胞类型中通常存在的三种动态膜蛋白是什么？",
       options: [
-        "Structural, adhesive, and signaling proteins",
+        "Structural, adhesive and signalling",
         "Transport, catalytic, and receptor proteins",
         "Contractile, secretory, and storage proteins",
         "Peripheral, integral, and glycosylated proteins"
       ],
       answer: 1,
+      optionRefs: { 3: "8-5-2-2" },
+      optionNotes: {
+        0: { en: "Structural is a real category, but it is the OTHER half of the division — structural versus dynamic — and the book adds that the boundary between the two halves is not sharp.", cn: "Structural 确实是一个真实的类别，但它属于这个划分的另一半——structural 对 dynamic——而且教材还说这两半之间的界线并不清晰。" },
+        2: { en: "None of these three is named here. The dynamic types are defined by what they do at the membrane: move substances across it, catalyse reactions on it, or bind signal molecules to it.", cn: "这三个在这里一个也没有被点名。Dynamic 类型是按它们在膜上做什么来定义的：把物质运过去、在膜上催化反应、或者在膜上结合信号分子。" },
+        3: { en: "Peripheral and integral classify proteins by HOW they sit in the bilayer, not by what they do — and either kind can be structural or dynamic, which is why the two schemes are separate.", cn: "Peripheral 和 integral 是按蛋白怎样待在双层里来分类的，不是按它们做什么——而且两种都可以是 structural 或 dynamic，所以这是两套彼此独立的划分。" }
+      },
       why_en: "The book names transport proteins (movement of substances in/out of the cell), catalytic proteins (membrane-bound enzyme reactions), and receptor proteins (specific binding of hormones/toxins/transmitters, generating a signal) as the three dynamic-protein types usually present.",
       why_cn: "教材指出转运蛋白（介导物质进出细胞）、催化蛋白（介导膜结合的酶促反应）和受体蛋白（特异性结合激素/毒素/递质，产生信号）是通常存在的三种动态蛋白类型。"
     },
@@ -3343,12 +3402,18 @@ window.BIOCHEM.topics.push(
       q_en: "How does the book describe structural membrane proteins, in contrast to dynamic ones?",
       q_cn: "教材如何描述结构膜蛋白，与动态膜蛋白相对比？",
       options: [
-        "Structural proteins mediate hormone binding; dynamic proteins maintain membrane shape",
+        "Structural proteins bind the hormones, toxins and transmitters arriving at the outer surface, while the dynamic ones are elongated and fibrous, sit on the hydrophilic surface and hold the membrane's components in place like anchoring ropes",
         "Structural proteins help maintain membrane component structure/interactions, often fibrous and on the hydrophilic surface, like anchoring ropes; dynamic proteins are responsible for cellular processes at the membrane level",
-        "Structural proteins are always integral; dynamic proteins are always peripheral",
-        "There is no meaningful distinction between the two"
+        "Structural proteins are always integral and dynamic ones always peripheral, so the two divisions of membrane protein map exactly onto each other",
+        "There is no meaningful distinction, the book using the two words interchangeably"
       ],
       answer: 1,
+      optionRefs: { 2: "8-5-2-2" },
+      optionNotes: {
+        0: { en: "The two descriptions have been exchanged. Binding hormones, toxins and transmitters is the receptor proteins' work, and receptors are one of the three DYNAMIC types; the anchoring-rope image belongs to the structural ones.", cn: "两段描述互换了。结合激素、毒素和递质是 receptor 蛋白的工作，而 receptor 属于三种 dynamic 类型之一；「锚绳」这个比喻讲的是 structural 蛋白。" },
+        2: { en: "The two divisions cut across each other. The book says structural and dynamic proteins alike may be integral OR peripheral, and adds that even the structural/dynamic boundary itself is not sharp.", cn: "这两套划分是交叉的。教材说 structural 和 dynamic 蛋白都既可能是 integral 也可能是 peripheral，还补充说连 structural/dynamic 这条界线本身也不清晰。" },
+        3: { en: "The distinction is drawn explicitly, and the dynamic half is then subdivided further into transport, catalytic and receptor proteins — three types the book says are usually present in every cell type.", cn: "这个区分是明确划出来的，而且 dynamic 那一半还被进一步细分为 transport、catalytic 和 receptor 三种——教材说这三种通常在各类细胞里都有。" }
+      },
       why_en: "The book describes structural proteins as helping maintain the structure and mutual interactions of membrane components, often elongated/fibrous and located on the hydrophilic surface, functioning like anchoring ropes — contrasted with dynamic proteins, which are responsible for the cellular processes realized at the membrane level.",
       why_cn: "教材描述结构蛋白帮助维持膜组分的结构及相互作用，常呈细长纤维状、位于亲水表面，起“锚定绳索”的作用——与之相对，动态蛋白负责在膜层面实现的细胞过程。"
     },
