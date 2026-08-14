@@ -1801,8 +1801,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "How does the book define a porphyrin's basic structure?",
       q_cn: "教材如何定义卟啉的基本结构？",
-      options: ["Three pyrrole rings joined by two methine bridges", "Four pyrrole rings joined directly to each other with no bridges at all", "A single large heterocyclic ring with no bridging groups", "Four pyrrole heterocyclic rings mutually connected by four methine bridges"],
+      options: [
+        "Three pyrrole heterocyclic rings connected by two methine bridges",
+        "Four pyrrole heterocyclic rings joined directly to one another with no bridging groups at all",
+        "One large heterocyclic ring carrying four methine substituents",
+        "Four pyrrole heterocyclic rings mutually connected by four methine bridges"
+      ],
       answer: 3,
+      optionRefs: { 2: "6-3-2" },
+      optionNotes: {
+        0: { en: "The counts are fixed at four and four. It is that closed, fully conjugated macrocycle of four rings and four bridges that absorbs in the visible part of the spectrum, which is why these substances are coloured and are called pigments.", cn: "两个数目都是四：四个环、四座桥。正是这样一个闭合、完全共轭的大环，才会吸收可见光——这些物质因此是有颜色的，被称为 pigment。" },
+        1: { en: "Without the methine bridges there is no conjugated system running round the ring, and it is the rich system of conjugated double bonds that predetermines absorption in the visible and makes porphyrins pigments at all.", cn: "没有 methine 桥，环上就没有贯通的共轭体系；而正是这套丰富的共轭双键决定了它在可见区的吸收，porphyrin 才成其为色素。" },
+        2: { en: "A porphyrin is built up from four separate pyrrole heterocycles, not from one large ring. The '-nogen' intermediates of heme synthesis show the same four rings, only joined by -CH2- bridges instead of methine ones.", cn: "Porphyrin 是由四个独立的 pyrrole 杂环搭起来的，不是一个大环。Heme 合成途径上带 '-nogen' 后缀的中间体也是同样的四个环，只不过桥换成了 -CH2- 而不是 methine。" }
+      },
       why_en: "The book defines a porphyrin as 'poměrně složitý útvar, který sestává ze čtyř pyrolových heterocyklických kruhů vzájemně spojených čtyřmi methinovými můstky' — four pyrrole heterocyclic rings mutually connected by four methine bridges.",
       why_cn: "教材将卟啉定义为「由四个吡咯杂环通过四个次甲基桥相互连接而成的相对复杂结构」。"
     },
@@ -1810,8 +1821,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "Per Tab. 6.4, which TWO substances are the only ones NOT to show a valence change at their metal centre?",
       q_cn: "根据表6.4，哪两种物质是其金属中心不发生价态变化的仅有例外？",
-      options: ["Cytochrome c and cytochrome b", "Catalase and cytochrome oxidase", "Hemoglobin and chlorophyll", "The two peroxidases (plant and animal)"],
+      options: [
+        "Catalase and hemoglobin",
+        "Chlorophyll and cytochrome oxidase",
+        "Hemoglobin and chlorophyll",
+        "The two peroxidases, plant and animal"
+      ],
       answer: 2,
+      optionRefs: { 1: "6-2-4-4" },
+      optionNotes: {
+        0: { en: "Half right. Hemoglobin is one of the two, but catalase — which decomposes 2 H2O2 into 2 H2O + O2 — is marked with a valence change, exactly like the two peroxidases sitting beside it in the table.", cn: "对了一半。Hemoglobin 确实是那两个之一，但 catalase（把 2 H2O2 分解为 2 H2O + O2）在表里是标了价态变化的，和紧挨着它的两个 peroxidase 一样。" },
+        1: { en: "Half right the other way round. Chlorophyll's Mg centre does not cycle, but cytochrome oxidase certainly does: it is the terminal respiratory enzyme, its prosthetic group is heme plus Cu ions, and Tab. 6.4 marks it +.", cn: "反过来也对了一半。Chlorophyll 的 Mg 中心确实不循环，但 cytochrome oxidase 是循环的：它是末端呼吸酶，辅基是 heme 加铜离子，Tab. 6.4 给它标的是 +。" },
+        3: { en: "Both peroxidases, plant and animal alike, oxidise their substrates using H2O2 through a heme Fe2+/Fe3+ couple, so both are marked +. Seven of the table's nine entries are; only two are not.", cn: "两个 peroxidase（植物的和动物的）都是通过 heme 的 Fe2+/Fe3+ 对、用 H2O2 氧化底物，所以都标 +。表里九项中有七项如此，只有两项不是。" }
+      },
       why_en: "Tab. 6.4 marks 'Změna valence' as '–' (no change) only for hemoglobin (heme Fe2+, O2 transport) and chlorophyll (Mg-containing porphyrin, light-to-chemical energy conversion); all seven other entries are marked '+'.",
       why_cn: "表6.4中「价态变化」一栏标为「–」（无变化）的只有血红蛋白（血红素Fe2+，运输O2）和叶绿素（含Mg卟啉，光能转化为化学能）；其余七项均标为「+」。"
     },
@@ -1888,6 +1910,12 @@ window.BIOCHEM.topics.push(
         "Glycine + succinyl-CoA, catalysed by δ-aminolevulate synthase"
       ],
       answer: 3,
+      optionRefs: { 0: "6-2-2-4", 1: "6-2-2-1" },
+      optionNotes: {
+        0: { en: "Neither alanine nor oxaloacetate appears anywhere in this pathway. Transamination does connect to the citrate cycle, but at 2-oxoglutarate, which is transaminated to glutamate — a different branch off the same hub.", cn: "Alanine 和 oxaloacetate 在这条通路里都没有出现。Transamination 确实和 citrate cycle 有联系，但那是在 2-oxoglutarate 上——它被 transaminate 成 glutamate，是同一个枢纽上的另一条分支。" },
+        1: { en: "Glycine is right, but neither the partner nor the enzyme is. Citrate synthase condenses acetyl-CoA with oxaloacetate inside the citrate cycle; acetyl-CoA plays no part in porphyrin synthesis.", cn: "Glycine 挑对了，但搭档和酶都不对。Citrate synthase 是在 citrate cycle 内部把 acetyl-CoA 和 oxaloacetate 缩合起来；acetyl-CoA 在 porphyrin 合成里没有角色。" },
+        2: { en: "Succinyl-CoA is right, but the amino acid is glycine, not glutamate, and glutamate dehydrogenase belongs to amino-acid metabolism rather than to this pathway. The enzyme here is the pathway's key regulatory point.", cn: "Succinyl-CoA 挑对了，但氨基酸是 glycine 而不是 glutamate，而 glutamate dehydrogenase 属于氨基酸代谢，不属于这条通路。这里的酶是整条通路的关键调控点。" }
+      },
       why_en: "Obr. 6.12 and the running text both show δ-aminolevulate forming from glycine + succinyl-CoA (losing 2 HSCoA and 2 CO2), catalysed by δ-aminolevulate synthase — explicitly named the key regulatory point of porphyrin synthesis.",
       why_cn: "图6.12与正文都显示δ-氨基酮戊酸由甘氨酸+琥珀酰辅酶A生成（失去2个HSCoA和2个CO2），由δ-氨基酮戊酸合酶催化——该酶被明确指出是卟啉合成的关键调控点。"
     },
@@ -1904,12 +1932,18 @@ window.BIOCHEM.topics.push(
       q_en: "What structural feature distinguishes '-nogen'-suffixed porphyrin derivatives (like uroporphyrinogen and coproporphyrinogen) from derivatives like protoporphyrin and heme?",
       q_cn: "以「-原」为后缀的卟啉衍生物（如尿卟啉原和粪卟啉原）与原卟啉、血红素等衍生物在结构上有何区别？",
       options: [
-        "The '-nogen' derivatives have only 2 pyrrole rings instead of 4",
+        "The '-nogen' derivatives carry only 2 pyrrole rings instead of 4, closing into the full macrocycle only at protoporphyrin IX",
         "The '-nogen' derivatives' 4 pyrrole rings are joined by -CH2- (methylene) bridges, while the others have methine (=CH-) bridges",
-        "The '-nogen' derivatives contain no nitrogen atoms at all",
-        "There is no structural difference, only a difference in which organ produces them"
+        "The '-nogen' derivatives contain no nitrogen at all, their pyrrole nitrogens having been lost as the 4 NH3 released during the condensation",
+        "There is no structural difference at all, only a difference in which organ makes them and when they are excreted"
       ],
       answer: 1,
+      optionRefs: { 0: "6-3-1" },
+      optionNotes: {
+        0: { en: "All of them carry four pyrrole rings. Uroporphyrinogen III is already a closed macrocycle, formed by cyclisation of the linear tetrapyrrole, so the ring is complete two steps before protoporphyrin IX appears.", cn: "它们全都带四个 pyrrole 环。Uroporphyrinogen III 已经是闭合的大环了，由线性四吡咯环化而来——环在 protoporphyrin IX 出现之前两步就已经闭合。" },
+        2: { en: "The 4 NH3 lost when four porphobilinogens condense come from their H2N-CH2- side chains, not from the rings. The four ring nitrogens stay put, and they are exactly what coordinates Fe2+ at the centre in the final step to heme.", cn: "四个 porphobilinogen 缩合时脱掉的 4 个 NH3 来自它们的 H2N-CH2- 侧链，不是来自环。环上的四个氮一个也没少，最后一步生成 heme 时，正是它们在中心配位 Fe2+。" },
+        3: { en: "The difference is chemical, and it is the whole point of the naming rule: -CH2- (methylene) bridges mark the more reduced intermediates, =CH- (methine) bridges the finished porphyrins. The name tells you how far along the pathway a molecule is.", cn: "差别是化学上的，而且正是这条命名规则的意义所在：-CH2-（methylene）桥标记更还原的中间体，=CH-（methine）桥标记已完成的 porphyrin。名字本身就告诉你这个分子走到哪一步了。" }
+      },
       why_en: "The book states derivatives with the '-nogen' suffix have their 4 pyrrole rings connected by -CH2- bridges, while the rest (like protoporphyrin and heme) have methine, i.e. =CH-, bridges — the '-nogen' forms are the more reduced intermediates.",
       why_cn: "教材指出，以「-原」为后缀的衍生物，其4个吡咯环由-CH2-桥连接，而其余的（如原卟啉和血红素）则由次甲基，即=CH-桥连接——「-原」型是这条途径中更「还原」的中间产物。"
     },
@@ -1918,12 +1952,18 @@ window.BIOCHEM.topics.push(
       q_en: "Why does this content refer to the porphyrin-synthesis regulatory enzyme as 'δ-aminolevulate synthase' rather than reproducing the book's own printed '6-aminolevulátsynthasa'?",
       q_cn: "为什么本节内容将卟啉合成调控酶称为「δ-氨基酮戊酸合酶」，而不是照搬教材印刷的「6-氨基酮戊酸合酶」？",
       options: [
-        "Because '6-aminolevulátsynthasa' is simply a different, equally valid enzyme with no connection to δ-aminolevulate",
-        "Because the enzyme name was never given a number or letter in the original book at all",
+        "Because '6-aminolevulátsynthasa' names a different enzyme entirely, one with no connection to δ-aminolevulate, so the two names stand side by side on p.146 for two separate reactions of the same pathway, and only the second of them is the regulatory step Obr. 6.12 singles out at the head of the sequence",
+        "Because the book never attaches any number or Greek letter to this enzyme's name, so the δ- is supplied here from standard nomenclature rather than from anything the text itself prints",
         "Because the book's own bold-printed 'δ-aminolevulát' earlier in the same sentence, and Obr. 6.12's own gloss '(5-aminolevulát)', both confirm the precursor is δ-/5-, making the plain-text '6-' almost certainly a stray typesetting error rather than the book's real intent",
-        "Because English textbooks never use Greek letters in enzyme names"
+        "Because English-language textbooks avoid Greek letters in enzyme names by convention, so δ- is rewritten as 5- whenever such a name is carried over out of Czech"
       ],
       answer: 2,
+      optionRefs: { 1: "6-3-1" },
+      optionNotes: {
+        0: { en: "Only one enzyme is named on the page and only one regulatory point exists in the pathway. The precursor that enzyme makes is printed in bold as δ-aminolevulát in the very same sentence, which is what makes the isolated 6- look like a slip.", cn: "这一页上只出现了一个酶名，整条通路也只有一个调控点。这个酶生成的前体，就在同一句话里以粗体印作 δ-aminolevulát——正因如此，那个孤零零的 6- 才显得像是排版失误。" },
+        1: { en: "The letter is printed, and twice over: the bold precursor name uses δ-, and Obr. 6.12 glosses it as (5-aminolevulát). It is the enzyme name alone, in one plain-text instance, that carries the stray 6-.", cn: "那个字母是印出来了的，而且印了两次：粗体的前体名用的是 δ-，Obr. 6.12 又注了一句 (5-aminolevulát)。只有酶名这一处正文里，冒出了那个多余的 6-。" },
+        3: { en: "The book is Czech and uses δ- itself, in its own text and in its own figure. The problem is not translation into English but one inconsistent character inside a single Czech word on a single line.", cn: "这本书是捷克文的，它自己的正文和图里用的就是 δ-。问题不在于翻译成英文，而在于某一行的一个捷克文词里，有一个字符和别处不一致。" }
+      },
       why_en: "The book's own text is internally consistent everywhere EXCEPT this one plain-text instance: the bold precursor name and the figure's own parenthetical gloss both use δ-/'5-', so the isolated '6-' in the enzyme name is best read as a typesetting slip, not a genuine alternative naming the book intends — exactly the kind of book-internal inconsistency the honesty rules require flagging rather than silently repeating.",
       why_cn: "教材正文在除这一处普通排版文字外的所有地方都是内部一致的：加粗的前体名称和图注中的括号说明都使用「δ-/5-」，因此酶名称中孤立出现的「6-」最可能是排版失误，而非教材真正想表达的另一种命名——这正是诚实性规则要求主动标注、而非默默照搬的那类教材内部不一致之处。"
     }
@@ -1983,8 +2023,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What is the main biological source of the porphyrin degradation described here?",
       q_cn: "此处所述卟啉降解的主要生物学来源是什么？",
-      options: ["Dietary chlorophyll broken down in the gut", "Heme, above all from the hemoglobin of disintegrated erythrocytes", "Cytochrome c released from damaged mitochondria only", "Newly synthesised protoporphyrin IX that failed quality control"],
+      options: [
+        "Dietary chlorophyll, broken down in the gut and absorbed as bilin",
+        "Heme, above all from the hemoglobin of disintegrated erythrocytes",
+        "Cytochrome c, released as mitochondrial inner membranes are turned over",
+        "Newly made protoporphyrin IX that failed to take up its iron"
+      ],
       answer: 1,
+      optionRefs: { 0: "6-3-1", 3: "6-3-2" },
+      optionNotes: {
+        0: { en: "Chlorophyll is a porphyrin, and chemically it does degrade by the same three steps — oxidise a methine bridge, release the metal, open the ring. But the source the book names for the bile pigments described here is heme from red cells.", cn: "Chlorophyll 是 porphyrin，从化学上讲它也按同样三步降解——氧化一座 methine 桥、放出金属、开环。但教材为这里讲的胆色素点名的来源，是来自红细胞的 heme。" },
+        2: { en: "Cytochrome c is a heme protein and degrades analogously, as the book says the other porphyrin derivatives do. What makes hemoglobin the answer is quantity: it is the mass of disintegrated erythrocytes that supplies the bile pigments.", cn: "Cytochrome c 是含 heme 的蛋白，和教材说的其他 porphyrin 衍生物一样按类似方式降解。之所以答案是 hemoglobin，是数量问题：供给胆色素的是大量崩解的红细胞。" },
+        3: { en: "Protoporphyrin IX sits on the synthetic side of the pathway, one step before Fe2+ is inserted to give heme. It is a precursor, not a degradation substrate, and the book describes no quality-control route of this kind.", cn: "Protoporphyrin IX 位于合成这一侧，是插入 Fe2+ 生成 heme 的前一步。它是前体，不是降解的底物，教材也没有描述过这种质检式的路线。" }
+      },
       why_en: "The book states degradation is 'především hemoglobinu z rozpadlých erytrocytů' — above all the heme of hemoglobin from disintegrated (broken-down) red blood cells — as the main source of the bile pigments described.",
       why_cn: "教材指出降解「主要是来自破裂红细胞中的血红蛋白」——即血红蛋白的血红素是所述胆色素的主要来源。"
     },
@@ -2000,8 +2051,19 @@ window.BIOCHEM.topics.push(
       type: "mcq",
       q_en: "What ultimately gives urine and stool their yellow-to-brown colour, according to this section?",
       q_cn: "根据本节内容，尿液和粪便的黄色到棕色最终是由什么造成的？",
-      options: ["Stercobilin, formed by further reduction of bilirubin, together with urobilin", "Unmetabolised heme itself, excreted unchanged", "Biliverdin alone, with no further transformation", "Protoporphyrin IX released directly from the diet"],
+      options: [
+        "Stercobilin, formed by further reduction of bilirubin, together with urobilin",
+        "Heme itself, excreted unchanged once the iron has been released",
+        "Biliverdin alone, straight from the opening of the porphyrin ring, with no further reduction",
+        "Protoporphyrin IX, taken up from the diet and excreted without transformation"
+      ],
       answer: 0,
+      optionRefs: { 3: "6-3-2" },
+      optionNotes: {
+        1: { en: "Heme is not excreted intact. Degradation oxidises a methine bridge, releases the iron and then opens the ring, so what leaves is an open, linear tetrapyrrole — a bilin derivative — and never the closed macrocycle.", cn: "Heme 不会原样排出。降解先氧化一座 methine 桥、放出铁，再把环打开，所以排出的是开链的线性四吡咯——bilin 衍生物——绝不会是闭合的大环。" },
+        2: { en: "Biliverdin is one of the two bilin derivatives the book names, but it is the earlier and differently coloured one. The yellow-to-brown colour appears only after bilirubin has been reduced further, to stercobilin.", cn: "Biliverdin 是教材点名的两个 bilin 衍生物之一，但它出现得更早、颜色也不同。黄到棕的颜色要等 bilirubin 进一步还原成 stercobilin 之后才出现。" },
+        3: { en: "Protoporphyrin IX belongs to heme SYNTHESIS, one step before the iron goes in, and the book names no dietary route for it. Nothing on the synthetic side of the pathway ends up colouring urine or stool.", cn: "Protoporphyrin IX 属于 heme 的合成，位于铁插入前的一步，教材也没有给它任何来自食物的途径。合成这一侧的东西不会跑去给尿和粪便上色。" }
+      },
       why_en: "The book states that further reduction of bilirubin produces stercobilin, which together with urobilin colours urine and stool yellow to brown — heme itself and biliverdin are earlier, differently-coloured intermediates in the same degradation sequence.",
       why_cn: "教材指出，胆红素经进一步还原生成粪胆素，粪胆素与尿胆素共同使尿液和粪便呈现黄色到棕色——血红素本身和胆绿素是同一降解序列中更早期、颜色不同的中间产物。"
     }
