@@ -49,18 +49,39 @@ TERMS = """甘氨酸 丙氨酸 缬氨酸 亮氨酸 异亮氨酸 脯氨酸 苯丙
 for _t in TERMS:
     jieba.add_word(_t, freq=100000)
 
+# Whisper's stock filler over silence. Two tiers, because the single words are not
+# safe on their own: 转发 cost a real line in lecture 9 ("我刚刚发是不是就转发给你"),
+# and 关注/订阅 are ordinary words a teacher can say. A bare word only counts when
+# it keeps company with another from the same canned phrase.
 HALLUCINATION_RE = re.compile("|".join([
-    r"字幕", r"點贊", r"点赞", r"訂閱", r"订阅", r"轉發", r"转发", r"打賞", r"打赏",
-    r"明鏡", r"明镜", r"點點欄目", r"点点栏目", r"謝謝觀看", r"谢谢观看", r"感謝觀看",
-    r"感谢观看", r"关注我们", r"關注我們", r"Amara\.org", r"MING PAO", r"哔哩哔哩",
+    r"字幕", r"明鏡與點點", r"明镜与点点", r"點點欄目", r"点点栏目",
+    r"謝謝觀看", r"谢谢观看", r"感謝觀看", r"感谢观看", r"感謝收看", r"感谢收看",
+    r"Amara\.org", r"MING PAO", r"哔哩哔哩", r"嗶哩嗶哩", r"未經允許", r"未经允许",
+    r"请不吝", r"請不吝", r"下集再见", r"下次再見",
 ]), re.I)
+SOLICIT = [r"點贊", r"点赞", r"訂閱", r"订阅", r"轉發", r"转发", r"打賞", r"打赏",
+           r"关注我们", r"關注我們", r"支持明鏡", r"支持明镜"]
 
+
+def is_hallucination(text):
+    if HALLUCINATION_RE.search(text):
+        return True
+    return sum(1 for p in SOLICIT if re.search(p, text, re.I)) >= 2
+
+# Unambiguous: these can only mean an option, and rotation would make them point at
+# the wrong one. Hard block.
 POSITIONAL = [
     r"选项[一二三四1-4ABCD]", r"第[一二三四1-4]个?选项", r"[（(][ABCD][)）]",
     r"\boption\s*[ABCD1-4]\b",
     r"\bthe\s+(first|second|third|fourth|last)\s+(option|choice|answer)\b",
-    r"\b[ABCD]\s*项", r"最后一项", r"第[一二三四]项",
+    r"\b[ABCD]\s*项",
 ]
+
+# Ambiguous: 「第二项」 is the second TERM of an expression as often as it is the second
+# option — in the Lineweaver-Burk derivation it is always the former. Blocking these
+# outright rejects correct work; ignoring them lets a real one through. So they are
+# printed for a human to read, and the run continues.
+AMBIGUOUS = [r"第[一二三四]项", r"最后一项", r"前一项", r"后一项"]
 
 
 def ts(x):
@@ -127,8 +148,8 @@ def stage_cues(L):
                          "prob": sum(w["prob"] for w in grp) / len(grp)})
         start = o
 
-    dropped = [c for c in cues if HALLUCINATION_RE.search(c["text"])]
-    cues = [c for c in cues if not HALLUCINATION_RE.search(c["text"])]
+    dropped = [c for c in cues if is_hallucination(c["text"])]
+    cues = [c for c in cues if not is_hallucination(c["text"])]
     # The next cue's start is a hard ceiling: a cue can never outlast its successor.
     # Padding short cues first and clamping second (with a floor) left an overlap
     # whenever the next cue began within the floor, so the ceiling is applied last
@@ -378,6 +399,62 @@ def stage_quizin(L):
     assert after_rel <= before_rel, "answer length is no closer to the mean"
 
 
+def _rotate_positions(topics, seed):
+    qs = [q for t in topics for q in t.get("quiz", [])]
+    deck = [i % 4 for i in range(len(qs))]
+    random.Random(seed).shuffle(deck)
+    for q, target in zip(qs, deck):
+        n = len(q["options"])
+        target %= n
+        shift = (q["answer"] - target) % n
+        q["options"] = q["options"][shift:] + q["options"][:shift]
+        q["answer"] = target
+    return qs
+
+
+def stage_quizpos(L):
+    """Flatten answer positions when the length bias is already acceptable.
+
+    Writing the two constraints into the generation prompt worked from lecture 2
+    on - the answer was the strictly longest option in 15.5% of questions, below
+    the 25% chance rate - so the rewrite pass those lectures would otherwise need
+    can be skipped. Position still has to be dealt with, and that needs no
+    rewriting at all.
+    """
+    topics = _load(L.path("topics.json"))
+    zh, rel = _measure(topics, "BEFORE")
+    assert zh < 0.40, ("the answer is the longest option too often to skip the "
+                       "rewrite pass; run quizout and have it rewritten")
+    blocked, review = [], []
+    for ti, t in enumerate(topics):
+        for qi, q in enumerate(t.get("quiz", [])):
+            blob = " ".join(str(q.get(k, "")) for k in ("q_zh", "q_en", "explain_zh", "explain_en"))
+            for pat in POSITIONAL:
+                m = re.search(pat, blob, re.I)
+                if m:
+                    blocked.append(f"t{ti} q{qi} names an option by position ({m.group(0)!r})")
+                    break
+            else:
+                for pat in AMBIGUOUS:
+                    m = re.search(pat, blob, re.I)
+                    if m:
+                        review.append(f"t{ti} q{qi} {m.group(0)!r} — term of an expression, or an option?")
+                        break
+    for b in blocked:
+        print("    BLOCK  " + b)
+    if review:
+        print(f"    {len(review)} phrase(s) to read before trusting this run:")
+        for r in review:
+            print("    CHECK  " + r)
+    assert not blocked, "rotation would invalidate these explanations"
+
+    qs = _rotate_positions(topics, 20260627 + L.no)
+    _measure(topics, "AFTER ")
+    _save(L.path("topics.json"), topics, indent=1)
+    pos = Counter(q["answer"] for q in qs)
+    assert max(pos.values()) - min(pos.values()) <= 1, "answer positions still uneven"
+
+
 def stage_status(L):
     def n(pat):
         return len(glob.glob(L.path(*pat)))
@@ -391,7 +468,7 @@ def stage_status(L):
 
 STAGES = {"cues": stage_cues, "chunks": stage_chunks, "applyfix": stage_applyfix,
           "outline": stage_outline, "topics": stage_topics, "quizout": stage_quizout,
-          "quizin": stage_quizin, "status": stage_status}
+          "quizin": stage_quizin, "quizpos": stage_quizpos, "status": stage_status}
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in STAGES:

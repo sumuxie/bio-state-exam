@@ -50,14 +50,23 @@ Stages are re-runnable and each asserts on its own output. A stage that stops
 with a message has done its job; a stage that reports success having written
 nothing is the failure mode being guarded against.
 
+Then build the app over every lecture that has finished:
+
+```
+python build_app_all.py            # or: build_app_all.py 1 2 3 to pick
+```
+
+`known_errors.md` is the accumulated checklist of mishearings, handed to every
+proofreading agent. It grows with each lecture and is the main reason later
+lectures need less rework than earlier ones — it now carries the recogniser's
+habits (the true homophones for 酶, the derivation cluster, the E/一 confusion in
+equations) rather than just a word list.
+
 ## Caveat on paths
 
-`lectures.py` and `stages.py` are parameterised by lecture number and are the
-current entry points. `build_app.py` and `apply_translations.py` predate that
-refactor and still hardcode lecture 1's paths — they are committed because the
-HTML template and the translation merge logic are worth keeping, not because
-they run as-is on another lecture. Folding them into `stages.py` is the next
-change; the combined multi-lecture app has to be written anyway.
+`apply_translations.py` predates the per-lecture refactor and still hardcodes
+lecture 1's paths; it is committed for the merge logic, not because it runs as-is
+on another lecture.
 
 The scripts also assume this machine's layout (the video directories above, and
 CUDA libraries installed as pip wheels under `site-packages/nvidia`, added via

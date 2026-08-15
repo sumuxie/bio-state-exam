@@ -169,14 +169,47 @@ These go in `extra`, never into `points` — `points` records what was taught.
 
 ## State at handoff
 
-- Transcribed: lectures 1–6, lecture 7 running. Lecture 10 was uploaded late and
-  is registered but not yet transcribed; `transcribe_all.py` skips finished work,
-  so re-running picks it up.
-- Cues built: 1–6.
-- Fully finished (corrections, topics, notes, quiz, app): lecture 1 only.
-- Still to build: the combined multi-lecture app in `~/Downloads/生物化学课 视频/`
-  with a lecture selector, and per-line English subtitle translation (the cue
-  schema already carries an `en` field; `apply_translations.py` fills it).
+**All 11 lectures are transcribed and subtitled.** Every video folder already holds
+`<name>.srt`, `.txt`, `_review.txt` and, where the proofreading pass has run,
+`_corrections.txt`.
+
+| lecture | subtitles | proofread | topics / notes / quiz | in the app |
+|---|---|---|---|---|
+| 1 氨基酸·蛋白质结构·血红蛋白 | ✅ 2621 | ✅ 590 | ✅ 41 / 338 / 95 | ✅ |
+| 2 酶通论·米氏方程（上） | ✅ 1865 | ✅ 430 | ✅ 38 / 288 / 110 | ✅ |
+| 3 酶通论·米氏方程（下） | ✅ 708 | ✅ 161 | ✅ 31 / 226 / 77 | ✅ |
+| 4 米氏方程与抑制剂 | ✅ 1944 | ✅ 401 | ✅ 41 / 327 / 108 | ✅ |
+| 5 酶各论·脂溶性维生素 | ✅ 2251 | ✅ 539 | running | — |
+| 6 维生素·核酸结构 | ✅ 2456 | — | — | — |
+| 7 核酸·代谢序章 | ✅ 2374 | — | — | — |
+| 8 糖酵解途径 | ✅ 1956 | — | — | — |
+| 9 TCA·电子传递链（上） | ✅ 1856 | — | — | — |
+| 10 TCA·电子传递链（下） | ✅ 238 | — | — | — |
+| 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | — | — | — |
+
+2121 corrections applied across lectures 1–5, none rejected by the exact-quote
+verifier.
+
+The combined app is built (`build_app_all.py` + `app_template.html`) and lives at
+`~/Downloads/生物化学课 视频/生物化学课_学习台.html`. It carries a lecture picker,
+four resizable modules, dark/light themes, subtitles overlaid on the video, an
+index-everything search with per-category filters and a this-lecture / all-lectures
+scope switch, and English text-to-speech. Lectures still in progress appear in the
+picker as 处理中 and cannot be selected, so the app never implies work is finished
+when it is not.
+
+Still to do: lectures 6–11 through `chunks → applyfix → outline → topics → quizpos`,
+and per-line English subtitle translation (the cue schema already carries an `en`
+field; `apply_translations.py` fills it).
+
+### How long this actually takes
+
+Transcription is the cheap part and the only part that runs unattended: it is a
+local GPU process, ~13x realtime, no API cost, and it finished all 11 lectures in
+one run. Everything after it is agents — roughly 13 per lecture (6-7 proofreading,
+6 notes) — and those cost quota and need dispatching. A session limit stopped two
+agents mid-run once already. Budget by agent count, not by wall-clock: the stages
+are strictly sequential per lecture, so they cannot be compressed by parallelism.
 
 ## Conventions to keep
 
