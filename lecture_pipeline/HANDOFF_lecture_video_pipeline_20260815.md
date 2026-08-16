@@ -179,16 +179,26 @@ These go in `extra`, never into `points` — `points` records what was taught.
 | 2 酶通论·米氏方程（上） | ✅ 1865 | ✅ 430 | ✅ 38 / 288 / 110 | ✅ |
 | 3 酶通论·米氏方程（下） | ✅ 708 | ✅ 161 | ✅ 31 / 226 / 77 | ✅ |
 | 4 米氏方程与抑制剂 | ✅ 1944 | ✅ 401 | ✅ 41 / 327 / 108 | ✅ |
-| 5 酶各论·脂溶性维生素 | ✅ 2251 | ✅ 539 | running | — |
-| 6 维生素·核酸结构 | ✅ 2456 | — | — | — |
+| 5 酶各论·脂溶性维生素 | ✅ 2251 | ✅ 539 | ✅ 41 / 330 / 106 | ✅ |
+| 6 维生素·核酸结构 | ✅ 2456 | ✅ 598 | ✅ 42 / 351 / 118 | ✅ |
 | 7 核酸·代谢序章 | ✅ 2374 | — | — | — |
 | 8 糖酵解途径 | ✅ 1956 | — | — | — |
 | 9 TCA·电子传递链（上） | ✅ 1856 | — | — | — |
 | 10 TCA·电子传递链（下） | ✅ 238 | — | — | — |
 | 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | — | — | — |
 
-2121 corrections applied across lectures 1–5, none rejected by the exact-quote
+3258 corrections applied across lectures 1–6, none rejected by the exact-quote
 verifier.
+
+### On agent failures during quiz/notes generation
+
+Several `agent()` calls have failed mid-run with a session-limit error, always at
+the same point: after reading its inputs, right before or during the write of its
+output file. In every case so far **the file was actually written** before the
+process was torn down — the "failed" status is misleading. Always check
+`work/<N>/topics/part_*.json` for the file before assuming a re-run is needed;
+`json.load` each one and confirm it parses and its `[start, end]` tiles the range
+it was assigned. Only re-dispatch parts that are genuinely missing or broken.
 
 The combined app is built (`build_app_all.py` + `app_template.html`) and lives at
 `~/Downloads/生物化学课 视频/生物化学课_学习台.html`. It carries a lecture picker,

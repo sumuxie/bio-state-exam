@@ -143,6 +143,49 @@ only the algebra reveals the error.
 - PCR enzyme brands are systematically mangled: `Fusion` → Phusion ；`Code` → KOD ；
   `Nuclear Tide` → Nucleotide (spelled correctly elsewhere in the same passage)
 
+### Vitamins and nucleic acids (from lecture 6)
+
+- 辅酶 / 辅基 are mangled almost every time: 腐霉 / 辅煤 → 辅酶 ；腐积 / 腐肌 / 腹肌 /
+  辅机 → 辅基
+- **纯化 comes back a different way each time**: 存化 / 氛化 / 重化 / 传化 / 重画 /
+  充滑 / 春化 → 纯化
+- **柱 (层析柱) → 住** — systematic through any chromatography passage
+- 炼煤氢合素 → 链霉亲和素 ；氢和素 → 亲和素 ；氢合率 → 亲和力 ；实际核 → 试剂盒 ；
+  科技组 → 课题组 ；black me / back me → bacmid
+- vitamins: 液酸 → 叶酸 ；硫心酸 / 流心酸 → 硫辛酸 ；核肝酸 → 核苷酸 ；飘零 → 嘌呤 ；
+  密定 → 嘧啶 ；迭令 / 碟磷 → 蝶呤 ；比多醛 → 吡哆醛 ；谷氨素 → 钴胺素 ；谷元素 → 钴元素 ；
+  荷黄素 / 和黄素 → 核黄素 ；胶磷酸 → 焦磷酸 ；抗绞气病 → 抗脚气病 ；维生素贼 → 维生素C ；
+  维生素PB → 维生素PP ；增值 → 增殖 ；鑫 → 锌
+- residues and terms: 烙氨酸 → 酪氨酸 ；天竺氨酸 → 天冬氨酸 ；半国氨酸 → 半胱氨酸 ；
+  本环 → 苯环 ；氢溅 → 氢键 ；基丁质 → 几丁质 ；火性 → 活性 ；最湿 → 最适 ；
+  乳酸脱新酶 → 乳酸脱氢酶 ；非进生性 → 非竞争性 ；复用机理 → 作用机理 ；定点右边 → 定点诱变
+- **同类化合物 → 酮类化合物** and **成 / 承上 / 承载 → 乘 / 乘上 / 乘在** — both read as
+  ordinary Chinese, so only the chemistry or the algebra catches them
+- the -ase suffix fuses with the 美 → 酶 error: 磷酸美 → 磷酸酶 ；基美 → 激酶 ；
+  同工美 → 同工酶 ；美离子 → 镁离子 (this last one goes the other way)
+- 腺苷 → 腺肝 / 线杆 / 现干 (dense through the FMN / FAD / NAD structures) ；
+  比多全 / 比多纯 / 比多安 → 吡哆醛 / 吡哆醇 / 吡哆胺 ；非摩尔 → 飞摩尔 fM ；
+  为B / 维币 → 维B ；两生 → 两升 ；挂住 → 挂柱 ；小题 → 小提 (miniprep)
+- Strep-tag → strap / stripe ；his tag → 黑斯泰格 / 黑斯泰克 / heat stack ；
+  bare His → case ；镍柱 → 捏住 ；塞提瓦 / 赛提瓦 → Cytiva
+- **剪辑 → 碱基** — reads as an ordinary word (jiǎnjí), and the same passage spells
+  碱基 correctly a few lines away, so the file is inconsistent with itself
+- 核糖体 → 核囊体 / 核酸体 / 荷当级 / 荷当体 / 核档体 ；亚热 → 亚基 ；小又 → 小亚基 ；
+  荷糖 → 核糖 ；肝子 → 苷子 ；核酸酸 / 核钙酸 / 荷干 → 核苷酸
+- **氢氘交换 HDX → 刀青 / 轻刀 / 青刀** and 质朴 → 质谱 — the method name is mangled
+  every single time ；CrioEM / CryoEN → cryo-EM
+- 穹之堂 / 穷职长 → 琼脂糖 ；凝脂穷胶 → 琼脂凝胶 ；正级 / 负级 → 正极 / 负极
+  (spelled correctly one line later, so inconsistent inside one sentence)
+- 诗实验 / 试实验 → 湿实验 ；神告人 → 审稿人 ；几结构 → 解结构 ；质样 → 制样 ；
+  公益 → 共一 ；坟决 → 秘诀 ；简机 → 碱基 ；枪接 → 羟基
+- 核苷 → 核肝 / 核甘 ；核苷酸 → 核肝酸 / 核甘酸 (dense through the nucleic-acid naming)
+- MRA → mRNA (with RLA → RNA) ；贝斯 → base ；小意志 → 小抑制 (siRNA) ；脂粒 → 质粒
+- 简洁体 → 剪接体 ；施亦公 → 施一公 ；难度讲 → 拿诺奖 ；sale → Cell (journal names go
+  the way sense → Science did) ；虚论 → 绪论 ；阻蛋白 → 组蛋白 ；锁机 → 羧基
+- 本环 → 苯环 ；大钩 / 小钩 → 大沟 / 小沟 (major / minor groove) ；庞环 → 糖环 ；
+  取代机 → 取代基 ；转路 → 转录 ；拓布伊格梅 → 拓扑异构酶 ；清水 / 轻水 → 亲水
+  (the bare form, more common than the listed 清水性)
+
 ### Words that must NOT be blanket-replaced
 
 Both spellings are legitimate Chinese and only the sentence decides. A global
@@ -158,7 +201,9 @@ substitution here creates errors instead of fixing them.
 - 基酶 / 积酶 → 激酶 (kinase) ；尿酶 → 脲酶 (urease)
 - 意志 / 意志记 → 抑制 / 抑制剂 ；别勾 / 变购 → 别构 / 变构
 - 唐小姐 / 唐教杰 / 糖酵节 → 糖酵解 ；底雾 → 底物 ；匹秒 → 皮秒 (ps)
-- 钴胺素 → 谷安素 ；嘧啶 → 密定 ；vb1 → vv1 ；血黄蛋白 → 血红蛋白
+- 谷安素 → 钴胺素 ；密定 → 嘧啶 ；vv1 → vb1 ；血黄蛋白 → 血红蛋白
+  (these four were written backwards here for a while — every arrow in this file
+  runs misheard → correct, so 钴胺素 and 嘧啶 are the words to keep, never to replace)
 - 虫族体 → 重组体 (the student's own project comes up in asides)
 - names and reagents: Thommer → Sumner ；布扯 → Buchner ；HTTC → IPTG ；
   flexisan / FlexiMazam → flexizyme ；RNAs → RNase ；刀痘 → 刀豆 ；
