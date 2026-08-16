@@ -183,12 +183,24 @@ These go in `extra`, never into `points` — `points` records what was taught.
 | 6 维生素·核酸结构 | ✅ 2456 | ✅ 598 | ✅ 42 / 351 / 118 | ✅ |
 | 7 核酸·代谢序章 | ✅ 2374 | ✅ 498 | ✅ 41 / 294 / 116 | ✅ |
 | 8 糖酵解途径 | ✅ 1956 | ✅ 510 | ✅ 47 / 404 / 120 | ✅ |
-| 9 TCA·电子传递链（上） | ✅ 1856 | — | — | — |
+| 9 TCA·电子传递链（上） | ✅ 1856 | ✅ 431 | ✅ 44 / 382 / 116 | ✅ |
 | 10 TCA·电子传递链（下） | ✅ 238 | — | — | — |
 | 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | — | — | — |
 
-4266 corrections applied across lectures 1–8, none rejected by the exact-quote
+4697 corrections applied across lectures 1–9, none rejected by the exact-quote
 verifier.
+
+### The quiz-length wording that finally worked
+
+Lecture 9's content agents were told: *option length must carry no information
+about which option is correct — read that literally in both directions*, with
+both failures quoted at them (lecture 7 at 44.8%, lecture 8 at 1.7%) and an
+explicit target of **the answer being longest about a quarter of the time, same
+as chance**. Result: 29.3% zh / 27.6% en, answer +1.0 characters against the
+mean. `quizpos` accepted it and only had to flatten positions.
+
+That is the wording to reuse. "Must not be the longest" produces 1.7%; naming
+the target rate produces the target rate.
 
 ### Say "length must carry no information", not "must not be the longest"
 
@@ -267,7 +279,7 @@ scope switch, and English text-to-speech. Lectures still in progress appear in t
 picker as 处理中 and cannot be selected, so the app never implies work is finished
 when it is not.
 
-Still to do: lectures 9–11 through `chunks → applyfix → outline → topics → quizpos`,
+Still to do: lectures 10–11 through `chunks → applyfix → outline → topics → quizpos`,
 and per-line English subtitle translation (the cue schema already carries an `en`
 field; `apply_translations.py` fills it).
 
