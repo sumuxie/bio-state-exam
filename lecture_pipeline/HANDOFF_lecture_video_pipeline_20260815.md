@@ -184,11 +184,30 @@ These go in `extra`, never into `points` — `points` records what was taught.
 | 7 核酸·代谢序章 | ✅ 2374 | ✅ 498 | ✅ 41 / 294 / 116 | ✅ |
 | 8 糖酵解途径 | ✅ 1956 | ✅ 510 | ✅ 47 / 404 / 120 | ✅ |
 | 9 TCA·电子传递链（上） | ✅ 1856 | ✅ 431 | ✅ 44 / 382 / 116 | ✅ |
-| 10 TCA·电子传递链（下） | ✅ 238 | — | — | — |
+| 10 TCA·电子传递链（下） | ✅ 238 | ✅ 60 | ✅ 7 / 61 / 20 | ✅ |
 | 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | — | — | — |
 
-4697 corrections applied across lectures 1–9, none rejected by the exact-quote
+4757 corrections applied across lectures 1–10, none rejected by the exact-quote
 verifier.
+
+### Short lectures: collapse the six outline parts into one
+
+`OUTLINE_PARTS = 6` is sized for a two-hour lecture. Lecture 10 is 15 minutes, so
+it produced six 2-minute parts — smaller than a single topic, and six agents each
+writing one topic would have fragmented a continuous recap. The fix was to
+concatenate the parts into `outline_full.txt`, dropping the per-part headers and
+de-duplicating the two context paragraphs each part repeats, and give the whole
+lecture to one agent. Do the same for anything under about 40 minutes.
+
+### A later lecture can correct an earlier one — check before carding
+
+Lecture 9 states the proton-pump roster exactly backwards. Lecture 10 opens by
+recapping the same material and gets it right (I = 4, III = 4, IV = 2 per two
+electrons, II pumps none). The lecture-10 agent was told this explicitly so it
+would not card a correction the student is about to hear the teacher make on his
+own. It still carded the one place where he contradicts his own fresh roster —
+oligomycin's back-pressure said to inhibit "复合体 I、II、III" — against the
+correct version he had given minutes earlier. That is the right split.
 
 ### The quiz-length wording that finally worked
 
@@ -279,7 +298,7 @@ scope switch, and English text-to-speech. Lectures still in progress appear in t
 picker as 处理中 and cannot be selected, so the app never implies work is finished
 when it is not.
 
-Still to do: lectures 10–11 through `chunks → applyfix → outline → topics → quizpos`,
+Still to do: lecture 11 through `chunks → applyfix → outline → topics → quizpos`,
 and per-line English subtitle translation (the cue schema already carries an `en`
 field; `apply_translations.py` fills it).
 
