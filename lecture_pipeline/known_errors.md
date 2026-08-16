@@ -163,6 +163,36 @@ only the algebra reveals the error.
   ordinary Chinese, so only the chemistry or the algebra catches them
 - the -ase suffix fuses with the 美 → 酶 error: 磷酸美 → 磷酸酶 ；基美 → 激酶 ；
   同工美 → 同工酶 ；美离子 → 镁离子 (this last one goes the other way)
+- **A cluster of metal-ion cofactor names** (ATP/enzyme context): 假离子 → 钾离子 ；
+  新离子 → 锌离子 ；猛离子 → 锰离子 ；美离子 → 镁离子 ；and 酶离子 → 镁离子 is the
+  **reverse** direction of the usual 煤/媒/美/没/枚 → 酶 confusion (méi heard where
+  měi/镁 was said) — check which way the sentence needs it
+- 磷酸件 → 磷酸键 ；氨基酸 → 磷酸 (in ATP energy-level context, not every 氨基酸 is real)
+- **醛 (quán) → 全 / 泉** whenever "aldehyde" comes up bare, not just inside 比多全 →
+  吡哆醛 — 是醛吗 → 是全吗 ；缩醛 → 缩泉 ；醛基 → 泉积
+- 流 → 硫 (dense in the CoA / cysteine passage) ；络合 → 落合 / 落河 ；
+  炼煤 / 炼酶 → 链霉 (with 氢核 / 氢合 → 亲和, the fuller 链霉亲和素 variant)
+- 巴洛沙尾 → 巴洛沙韦 Baloxavir ；多冒区 → 夺帽区 (cap-snatching domain, influenza RdRp)
+- 顺繁子 → 顺反子 (cistron) ；TRA → tRNA ；rns / rnsh → RNase / RNase H (extends
+  MRA→mRNA, RLA→RNA) ；DNAs → DNase (extends RNAs→RNase) ；核当体 → 核糖体
+- 磷酸二指腱 / 二值键 / 二质件 / 二指酶 → 磷酸二酯键 / 磷酸二酯酶 — mangled almost every
+  time it is said ；超生 → 超声 (sonication) ；真和生物 → 真核生物
+- **功能 → 供能** (gōngnéng, true homophone) — "可以功能" only parses as "可以供能"
+- 眉 → 酶 (another true homophone, joins 煤/媒/梅/美/霉/没/枚)
+- Sanger → 三个 / 三个人 (spelled correctly as 桑格尔 a few lines away — inconsistent)
+- 糖源 → 糖原 (glycogen, homophone) ；隔肌 → 膈肌 (diaphragm) ；三苏丹循环 → 三羧酸循环
+- 鸡 → G (the letter, in G蛋白偶联受体/GPCR) ；藕莲 → 偶联 ；积酸 / 基酸 → 肌酸 (creatine)
+- 胰腺 → 乙酰 (acetyl) ；核酶 / 核媒 → 合酶 (ATP synthase — context-dependent: a
+  DIFFERENT passage has 合酶 → 核酶 for actual ribozymes, so check which is meant)
+- 蛋 → 氮 (FAD/FMN nitrogens) or → 碳 (ring-atom numbering) — the dàn/tàn homophone
+  goes either way depending on which element is meant; read for chemistry, not sound
+- 假计划 / 甲激化 → 甲基化 (methylation) ；假机 → 甲基 ；冒 → 帽 (mRNA capping) ；
+  压积 → 亚基 ；TRA / tna → tRNA (dropped letters, same family as MRA→mRNA) ；
+  生性 → 生信 (bioinformatics) ；顺势转染 → 瞬时转染 (transient transfection) ；
+  分滤(仿) / 本分 / 滤纺 → 酚氯仿 / 苯酚 / 氯仿 (phenol-chloroform extraction) ；
+  虚化椅子 / 绣化一定 / 虚化移定 → 溴化乙啶 (ethidium bromide, beyond 1B→EB) ；
+  T (letter) → 梯 (梯度 gradient, in CsCl gradient context) ；
+  烟线胺 → 烟酰胺 ；硫脂键 → 硫酯键 ；做工 → 做功 ；条件 → 条带 (gel context, lower confidence)
 - 腺苷 → 腺肝 / 线杆 / 现干 (dense through the FMN / FAD / NAD structures) ；
   比多全 / 比多纯 / 比多安 → 吡哆醛 / 吡哆醇 / 吡哆胺 ；非摩尔 → 飞摩尔 fM ；
   为B / 维币 → 维B ；两生 → 两升 ；挂住 → 挂柱 ；小题 → 小提 (miniprep)
@@ -244,6 +274,37 @@ its own vocabulary, and the recogniser is worse at it than at the biochemistry.
 
 GroEL / GroES / pGro7 come out as `Grow` / `P-GROW` / `p grow7` systematically.
 Leave them or fix them all — a half-converted file is worse than either.
+
+## Nucleic acids — added after lecture 7 (498 corrections)
+
+Every arrow here still reads `misheard → correct`. Hand-checked, not harvested by
+diff: an automatic pass over this same data produced pairs like `保留 → polyA` and
+was discarded.
+
+- **核苷 / 核苷酸 is the single worst offender.** 肝 → 苷 in every compound; so
+  核肝酸 / 核氨酸 / 核钙酸 / 核冰酸 → 核苷酸 ；核肝 → 核苷 ；糖干键 / 糖肝键 /
+  糖肝腱 / 糖干净 / 唐干键 / 弹杆键 → 糖苷键 ；荷塘 → 核糖
+- **mRNA appears as MRA / mra 16 times**, tRNA as TRA. Expand only where the
+  context is unambiguous.
+- 密定 / 妙密定 / 尿密定 / 凶线密定 → 嘧啶 / 尿嘧啶 / 胸腺嘧啶 ；假尿密顶 /
+  假妙密定 → 假尿嘧啶 ；飘零 / 线飘零 / 鸟飘零 → 嘌呤 / 腺嘌呤 / 鸟嘌呤
+- 剪辑 → 碱基 ；二值键 / 二值件 / 二质键 / 二质件 / 二指腱 → 二酯键 ；
+  二指酶 → 二酯酶 ；腱 → 键 ；共甲键 → 共价键 ；公家 → 共价
+- 冒 → 帽 (5′ 帽) ；mg / mgmg → m7G ；假计划 / 甲激化 / 假计 / 夹鸡 → 甲基化 / 甲基 ；
+  激化 → 基化 ；missile → methyl ；撇段 → 撇端 (5′ 端 / 3′ 端)
+- 核当体 / 荷当体 → 核糖体 ；顺繁子 → 顺反子 ；转入 → 转录 ；转入出 → 转录出 ；
+  大压积 / 小压积 → 大亚基 / 小亚基 ；集联 → 级联 ；派派 → π-π
+
+## Molecular biology bench work — added after lecture 7
+
+- 质粒 comes out as 质力 / 指力 / 智力 ；提质粒 → 体质力 ；大肠杆菌 → 大传感军 /
+  大船赶军
+- 本分 → 苯酚 ；滤纺 → 氯仿 ；TRAZO → TRIzol ；氯化色 → 氯化铯 ；T度 → 梯度 ；
+  超生 → 超声 ；上氢 → 上清 ；牛皮 → 牛脾 ；DNAs → DNase
+- 生性 → 生信 (bioinformatics), eight times ；suscov → SARS-CoV-2 ；
+  炼煤氢合素 → 链霉亲和素
+- Metals: 美 / 美- → 镁 ；猛 → 锰 ；心 / 新 → 锌 ；骨 → 钴
+- 煤 / 眉 / 腐霉 → 酶 / 辅酶 ；积酸 → 肌酸 ；蛋 → 碳 (二碳单位) ；粒子 → 离子
 
 Stretches of traditional characters (繁體) appear occasionally. That is an artefact
 of the model, not a mishearing — leave the wording alone; only convert if the same

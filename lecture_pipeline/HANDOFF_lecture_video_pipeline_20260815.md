@@ -181,14 +181,43 @@ These go in `extra`, never into `points` — `points` records what was taught.
 | 4 米氏方程与抑制剂 | ✅ 1944 | ✅ 401 | ✅ 41 / 327 / 108 | ✅ |
 | 5 酶各论·脂溶性维生素 | ✅ 2251 | ✅ 539 | ✅ 41 / 330 / 106 | ✅ |
 | 6 维生素·核酸结构 | ✅ 2456 | ✅ 598 | ✅ 42 / 351 / 118 | ✅ |
-| 7 核酸·代谢序章 | ✅ 2374 | — | — | — |
+| 7 核酸·代谢序章 | ✅ 2374 | ✅ 498 | ✅ 41 / 294 / 116 | ✅ |
 | 8 糖酵解途径 | ✅ 1956 | — | — | — |
 | 9 TCA·电子传递链（上） | ✅ 1856 | — | — | — |
 | 10 TCA·电子传递链（下） | ✅ 238 | — | — | — |
 | 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | — | — | — |
 
-3258 corrections applied across lectures 1–6, none rejected by the exact-quote
+3756 corrections applied across lectures 1–7, none rejected by the exact-quote
 verifier.
+
+### Lecture 7 needed the quiz rewrite pass — the first since lecture 1
+
+Its generated quiz came out with the correct answer as the strictly longest
+option in **44.8%** of 116 questions (English 40.5%), against 14–26% for lectures
+2–6, and the answer sat at position 0 in 96 of 116. The cause was mine: the
+content-agent prompt for lecture 7 was rewritten to fix a chunk-numbering problem
+and the two anti-bias constraints were dropped out of it along the way. Do not
+trim that prompt again.
+
+`quizpos` refused the lecture rather than silently rotating a biased set —
+`assert zh < 0.40` — which is the assertion doing its job. The fix was the full
+`quizout` → 5 rewrite agents → `quizin` route: 44.8% → **9.5%** zh, 40.5% → 8.6%
+en, mean excess length +3.5 → +0.1 characters, positions flat at [29, 29, 29, 29].
+
+Note the residual is now *below* chance (9.5% against 25%), so "never pick the
+longest" eliminates one option slightly more often than it should. That is a
+much weaker signal than what it replaced and it was left alone, but it is a real
+property of the lecture-7 bank and not a clean result.
+
+The rewrite agents were told to pad terse distractors into fully specified wrong
+claims rather than truncate correct answers, which is what keeps the questions
+worth answering. They also caught several genuinely defensible distractors —
+phenylalanine does carry a benzene ring and does absorb near 280 nm; live
+untreated S-type *Streptococcus* does kill mice; acetyl-CoA does bridge
+carbohydrate and amino-acid metabolism — and replaced them. Two marked answers
+were factually wrong and were corrected (cap-0 means zero 2′-O-methyl groups, not
+"a nucleotide at position 0"; Mg²⁺ coordinates the β/γ phosphate oxygens, not
+"hydroxyls between the phosphates").
 
 ### On agent failures during quiz/notes generation
 
@@ -208,7 +237,7 @@ scope switch, and English text-to-speech. Lectures still in progress appear in t
 picker as 处理中 and cannot be selected, so the app never implies work is finished
 when it is not.
 
-Still to do: lectures 6–11 through `chunks → applyfix → outline → topics → quizpos`,
+Still to do: lectures 8–11 through `chunks → applyfix → outline → topics → quizpos`,
 and per-line English subtitle translation (the cue schema already carries an `en`
 field; `apply_translations.py` fills it).
 
