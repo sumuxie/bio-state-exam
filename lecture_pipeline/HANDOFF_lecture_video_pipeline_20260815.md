@@ -1,7 +1,7 @@
 # HANDOFF — lecture video pipeline, 2026-08-15
 
-Built in one session. Lecture 1 is finished end to end; lectures 2–11 are in
-progress. This file is what a new session needs in order to continue without
+Built across two sessions. **All 11 lectures are complete end to end.** This file
+is what a new session needs in order to extend or rebuild the material without
 repeating the measurements.
 
 ---
@@ -185,10 +185,53 @@ These go in `extra`, never into `points` — `points` records what was taught.
 | 8 糖酵解途径 | ✅ 1956 | ✅ 510 | ✅ 47 / 404 / 120 | ✅ |
 | 9 TCA·电子传递链（上） | ✅ 1856 | ✅ 431 | ✅ 44 / 382 / 116 | ✅ |
 | 10 TCA·电子传递链（下） | ✅ 238 | ✅ 60 | ✅ 7 / 61 / 20 | ✅ |
-| 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | — | — | — |
+| 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | ✅ 646 | ✅ 51 / 449 / 135 | ✅ |
 
-4757 corrections applied across lectures 1–10, none rejected by the exact-quote
-verifier.
+**All 11 lectures are complete.** 5403 corrections applied across the course,
+none rejected by the exact-quote verifier. 424 topics tiling 1289 minutes with
+no gaps, 3450 key points, 1557 extra notes, 1146 quiz questions, all bilingual.
+
+### Final quiz-bias figures, per lecture
+
+| lecture | answer is strictly longest (zh) | route |
+|---|---|---|
+| 1 | 72.6% → 1.1% | rewrite pass |
+| 2–6 | 14.3–26.4% | as generated |
+| 7 | 44.8% → 9.5% | rewrite pass |
+| 8 | 1.7% | as generated, overshot |
+| 9 | 29.3% | as generated |
+| 10 | 25.0% | as generated |
+| 11 | 25.9% | as generated |
+
+Chance is 25%. Lectures 9–11 used the calibrated wording and needed no rewrite.
+
+### Errors the teacher makes repeatedly across lectures
+
+Worth knowing before writing notes for any future recording by the same speaker,
+because each was logged independently by proofreaders who could not see each
+other's work:
+
+- **Soluble matrix enzymes placed on the inner mitochondrial membrane** — the PDH
+  complex in lecture 9, β-oxidation in lecture 11 (twice). Of everything in these
+  pathways only succinate dehydrogenase is integral to the inner membrane, which
+  is precisely why it is the one TCA step wired straight into the respiratory
+  chain.
+- **NADPH and NADH used interchangeably** — lecture 11, including NADPH said to
+  enter mitochondria on the malate-aspartate shuttle and 「NADPH 或者叫 NADH 都可以」
+  said three times. He also sources lactate dehydrogenase's NADH from the pentose
+  phosphate pathway rather than from GAPDH.
+- **The molecule regenerated unchanged each turn of the TCA cycle named as
+  乙酰CoA** rather than 草酰乙酸 — lecture 9, in two separate stretches.
+- **Ring size confused with carbon count** — glucose, fructose and F-1,6-BP each
+  called 五碳糖 in lecture 8, logged by three different proofreaders.
+- **Compartment words used loosely** — 细胞膜 for the inner mitochondrial
+  membrane, 细胞外膜 / 细胞膜外 for the intermembrane space, 机制 for 基质 (which is
+  also a true ASR homophone, so the two failure modes overlap here).
+
+He self-corrects often, sometimes minutes later and sometimes in the same breath.
+Every content agent was told to name the time of a self-correction on the card
+rather than contradict it, and several declined to card an error for that reason.
+Keep that instruction: a note that fights the video is worse than no note.
 
 ### Short lectures: collapse the six outline parts into one
 
@@ -298,8 +341,8 @@ scope switch, and English text-to-speech. Lectures still in progress appear in t
 picker as 处理中 and cannot be selected, so the app never implies work is finished
 when it is not.
 
-Still to do: lecture 11 through `chunks → applyfix → outline → topics → quizpos`,
-and per-line English subtitle translation (the cue schema already carries an `en`
+Still to do: per-line English subtitle translation
+(the cue schema already carries an `en`
 field; `apply_translations.py` fills it).
 
 ### How long this actually takes
