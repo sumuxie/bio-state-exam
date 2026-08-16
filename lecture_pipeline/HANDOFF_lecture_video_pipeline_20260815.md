@@ -182,13 +182,43 @@ These go in `extra`, never into `points` — `points` records what was taught.
 | 5 酶各论·脂溶性维生素 | ✅ 2251 | ✅ 539 | ✅ 41 / 330 / 106 | ✅ |
 | 6 维生素·核酸结构 | ✅ 2456 | ✅ 598 | ✅ 42 / 351 / 118 | ✅ |
 | 7 核酸·代谢序章 | ✅ 2374 | ✅ 498 | ✅ 41 / 294 / 116 | ✅ |
-| 8 糖酵解途径 | ✅ 1956 | — | — | — |
+| 8 糖酵解途径 | ✅ 1956 | ✅ 510 | ✅ 47 / 404 / 120 | ✅ |
 | 9 TCA·电子传递链（上） | ✅ 1856 | — | — | — |
 | 10 TCA·电子传递链（下） | ✅ 238 | — | — | — |
 | 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | — | — | — |
 
-3756 corrections applied across lectures 1–7, none rejected by the exact-quote
+4266 corrections applied across lectures 1–8, none rejected by the exact-quote
 verifier.
+
+### Say "length must carry no information", not "must not be the longest"
+
+Putting the anti-bias constraints back into lecture 8's content-agent prompt
+worked — the bank came out at 1.7% zh / 0% en without any rewrite pass, so
+`quizpos` accepted it directly. But that overshoots in the other direction:
+chance is 25%, lectures 2–6 sit at 14–26%, and at 1.7% a student who notices can
+eliminate the longest option and turn a four-way guess into a three-way one.
+
+The wording that produced it was *"the correct option must not be the longest"*,
+which agents optimise into *never* longest. Two of the lecture-7 rewrite agents
+worked this out unprompted and deliberately left the answer marginally longest in
+about a quarter of their questions, saying a flat 0% is itself exploitable. They
+were right. Ask for **length that carries no information about correctness**, and
+say explicitly that the answer should still be the longest roughly a quarter of
+the time.
+
+Lecture 8's bank was left as generated — 1.7% is a much weaker signal than the
+44.8% it replaced, and not worth six more agents. It is recorded here so the
+number is not mistaken for a clean result.
+
+### Part files: bare array or {"topics": [...]}
+
+Lectures 1–7 were asked for a bare JSON array of topic objects; lecture 8's
+prompt asked for `{"topics": [...]}`. `stage_topics` did `topics.extend(_load(p))`,
+and extending a list with a dict iterates its **keys** — so all six parts merged
+as the single string `"topics"` and the sort died on `t["start"]`. It now accepts
+either shape and asserts on anything else. Worth keeping: the failure was loud,
+but only by luck; a dict with more keys would have merged several strings and
+still crashed somewhere less obvious.
 
 ### Lecture 7 needed the quiz rewrite pass — the first since lecture 1
 
@@ -237,7 +267,7 @@ scope switch, and English text-to-speech. Lectures still in progress appear in t
 picker as 处理中 and cannot be selected, so the app never implies work is finished
 when it is not.
 
-Still to do: lectures 8–11 through `chunks → applyfix → outline → topics → quizpos`,
+Still to do: lectures 9–11 through `chunks → applyfix → outline → topics → quizpos`,
 and per-line English subtitle translation (the cue schema already carries an `en`
 field; `apply_translations.py` fills it).
 

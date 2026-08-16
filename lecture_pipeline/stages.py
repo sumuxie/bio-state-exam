@@ -282,7 +282,16 @@ def stage_topics(L):
     end = cues[-1]["end"]
     topics = []
     for p in sorted(glob.glob(L.path("topics", "part_*.json"))):
-        topics.extend(_load(p))
+        part = _load(p)
+        # Agents have been asked for both a bare array and {"topics": [...]}
+        # across lectures. Accept either, but never anything else: extending
+        # with a dict would silently iterate its keys and merge the string
+        # "topics" as if it were a topic.
+        if isinstance(part, dict):
+            part = part["topics"]
+        assert isinstance(part, list) and all(isinstance(t, dict) for t in part), \
+            f"{p}: expected a list of topic objects, got {type(part).__name__}"
+        topics.extend(part)
     topics.sort(key=lambda t: t["start"])
     problems = []
     for i, t in enumerate(topics):
