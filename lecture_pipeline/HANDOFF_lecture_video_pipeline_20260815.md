@@ -1,6 +1,6 @@
 # HANDOFF — lecture video pipeline, 2026-08-15
 
-Built across two sessions. **All 11 lectures are complete end to end.** This file
+Built across two sessions. **All 12 lectures are complete end to end.** This file
 is what a new session needs in order to extend or rebuild the material without
 repeating the measurements.
 
@@ -8,7 +8,7 @@ repeating the measurements.
 
 ## What exists
 
-11 recordings, ordered by the `creation_time` inside each mp4 — **not** by
+12 recordings, ordered by the `creation_time` inside each mp4 — **not** by
 filesystem date, which is identical for all of them (they were copied to the disk
 in one afternoon, so the filesystem order is meaningless and would scramble the
 course sequence).
@@ -26,6 +26,7 @@ course sequence).
 | 9 | 08-08 | TCA 循环与电子传递链（上） | 112 min |
 | 10 | 08-08 | TCA 循环与电子传递链（下） | — |
 | 11 | 08-15 | 脂质的分解与合成 · 氨基酸代谢开头 | 136 min |
+| 12 | 08-17 | 尿素循环 · 核苷酸的代谢 · 光合作用 | 127 min |
 
 Lecture 1 sits in `~/Documents/VooVMeeting/2026-06-27 14.10.06.350/`; the rest in
 `~/Downloads/生物化学课 视频/`.
@@ -186,10 +187,33 @@ These go in `extra`, never into `points` — `points` records what was taught.
 | 9 TCA·电子传递链（上） | ✅ 1856 | ✅ 431 | ✅ 44 / 382 / 116 | ✅ |
 | 10 TCA·电子传递链（下） | ✅ 238 | ✅ 60 | ✅ 7 / 61 / 20 | ✅ |
 | 11 脂质代谢·氨基酸代谢开头 | ✅ 2362 | ✅ 646 | ✅ 51 / 449 / 135 | ✅ |
+| 12 尿素循环·核苷酸代谢·光合作用 | ✅ 2041 | ✅ 739 | ✅ 48 / 427 / 121 | ✅ |
 
-**All 11 lectures are complete.** 5403 corrections applied across the course,
-none rejected by the exact-quote verifier. 424 topics tiling 1289 minutes with
-no gaps, 3450 key points, 1557 extra notes, 1146 quiz questions, all bilingual.
+**All 12 lectures are complete.** 6142 corrections applied across the course,
+none rejected by the exact-quote verifier. 472 topics tiling 1416 minutes with
+no gaps, 3877 key points, 1748 extra notes, 1267 quiz questions, all bilingual.
+
+### Adding a lecture later
+
+Lecture 12 arrived three days after the other eleven were finished. The whole
+addition is: append a row to `_ROWS` in `lectures.py`, run `transcribe_all.py`
+(it skips what is already done), then `cues → chunks → proofread → applyfix →
+outline → topics → quizpos → build_app_all.py`. Nothing else needs touching.
+
+Date the row from the mp4's `creation_time`, not the file name. Lecture 12's
+file is named `20260818_...` but its `creation_time` is `2026-08-17T14:10:33Z`,
+and every one of the other eleven rows matches its own `creation_time` date
+exactly — so the file name is what is wrong, and following it would have put
+the lecture on the wrong day.
+
+**Do not start a second transcription while one is running.** A 0-byte
+background output file does not mean the process died: Python buffers stdout
+when it is not attached to a terminal, so a healthy run can look dead for
+minutes. Check the product's mtime, or a `.part` file, before concluding
+anything. Starting a duplicate cost this lecture half its speed (5.7–8.4x
+realtime against the usual 13–20x) because the two runs competed for the GPU.
+The output was not corrupted — writes go through `.part` + `os.replace`, and
+the two runs' cues were verified byte-identical — but nothing was gained.
 
 ### Final quiz-bias figures, per lecture
 

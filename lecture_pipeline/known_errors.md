@@ -306,6 +306,61 @@ was discarded.
 - Metals: 美 / 美- → 镁 ；猛 → 锰 ；心 / 新 → 锌 ；骨 → 钴
 - 煤 / 眉 / 腐霉 → 酶 / 辅酶 ；积酸 → 肌酸 ；蛋 → 碳 (二碳单位) ；粒子 → 离子
 
+## Metabolism vocabulary — added after lectures 8–12
+
+Hand-checked from the corrections actually applied, not harvested by diff.
+
+- **糖酵解 has been misheard more than fifteen ways**: 唐教解 / 唐教杰 / 唐教姐 /
+  唐娇姐 / 糖胶解 / 糖胶结 / 糖胶节 / 糖胶碱 / 糖胶体 / 糖交解 / 糖浇解 / 糖椒姐 /
+  糖尿节 / 糖尿结 / 藏胶解 / 膀胶解 / 糖酵结
+- **糖异生 → 唐医生 / 腾医生 / 糖医生 / 糖一生 / 糖益生 / 唐义生.** 唐医生 is the
+  dangerous one: it reads as an ordinary noun ("Doctor Tang") and passes unnoticed.
+- 三羧酸循环 → 三速段 / 三素酸 / 三素三 / 三酸 / 三酸酸 / 酸酸循环 / 酸素酸 /
+  三次酸 / 三段旋 / 333循环 / BCA循环 ；TC循环 → TCA循环
+- 乙酰CoA → 一线COA / 乙线COA / 遗险COA / 遗险CVA / 胰腺COA / 移险COA / 一线CVA /
+  一线思维 / 一显思维 / 单线4OA / E-COA ；CoA alone → 色微 / 色位 / 思维
+- 激酶 → 基酶 / 鸡酶 / 鸡美 / 鸡霉 / 积酶 / 基美 / 机媒 ；English `kinase` →
+  `kindness` ；己糖激酶 → 几糖鸡酶 / 几糖鸡美 / 鸡汤鸡酶
+- **粒子 → 离子** and **蹦出 / 蹦到 → 泵出 / 泵到** run through every ETC passage
+- **机制 → 基质.** A true homophone, invisible without the biology. In the
+  photosynthesis passage 基质 means the **chloroplast stroma** — do not push it
+  toward anything mitochondrial.
+- 铁硫簇 → 铁流粗 / 铁流醋 / 铁流处 / 铁和流 (簇 is rendered 醋, and the word
+  splits across line breaks) ；泛醌 → 泛昆 / 范坤 ；辅酶Q → 辅媒 / 辅眉 / 虎眉 Q
+- ATP合酶 → ATP和美 / ATP核媒 / ATP核酶 / ATP合媒 / ATP核煤 / `ATP Sensei`
+- 电势 → 电视 / 电室 ；复合体 → 符合体 ；细胞色素 → 细胞素素
+- 脂质 → 纸质 / 止滞 ；脂酰CoA → 直线COA / 直显COA ；丙二酸单酰CoA → 单线COA ；
+  肉碱 → 烂氨酸-adjacent forms ；酮体 → 同体 / 铜体 ；奇数碳 → 基数碳 / 基础碳
+- 延胡索酸 → 盐糊索 / 盐湖索 / 盐糊锁 / 盐虎索 ；富马酸 → 驸马酸 / 负码酸 / 赋马酸
+- 草酰乙酸 → 草鲜 / 草型 / 草原 / 朝鲜 / 草咸 / 曹新乙酸
+- 醛 → 全 / 泉 (醛基 → 全基, 醛缩酶 → 全缩酶, 甘油醛 → 甘油泉)
+- 顺式 → 顺势 ；烯醇 → 锡纯 / 吸纯 / 稀醇 ；变构 → 变购 / 变够 / 别过
+- **磷 is often transcribed as the digit 0** inside sugar-phosphate names:
+  `1620酸果糖` = 1,6-二磷酸果糖, `60酸果糖` = 6-磷酸果糖, `核糖-50酸` = 核糖-5-磷酸
+- Nitrogen chemistry: 氨甲酰 → 安甲显 / 安甲钳 / 氨甲鲜 / 氨甲烟 / 氨钾鲜 /
+  氨胶性 ；游离 → 游历 / 油离 / 油粒 / 尤利 / 尤里 ；谷氨酰胺 → 谷氨血氨 /
+  骨丸显胺 / 古安显安 ；天冬氨酸 → 天多 / 天动 / 天端 / 天然冬胺酸 ；
+  精氨酸 → 金氨酸 ；α-酮戊二酸 → 铜过二酸 / α通过二酸 / α-铜锅二酸
+- **嘌呤 → 飘零 / 漂磷 / 飘磷 / 黄飘龄 / 黄漂零** ；次黄嘌呤 → 次皇飘零 / 四黄飘零 /
+  赤黄飘零 ；腺嘌呤 → 线飘零 ；嘧啶 → 密定 / 密令 / 密钉 / 蜜丁
+- 核苷酸 → 核肝酸 / 核甘酸 / 核钙酸 / 核冰酸 / 荷干酸 / 额干酸 ；核苷 → 核肝 / 核杆 /
+  核根 / 和干 ；戊糖 → 物糖 ；焦磷酸 → 胶磷酸 / 胶粒酸
+- 钼 (Mo) → 墨 / 木 ；别嘌呤醇 → 别飘纯 / 别漂纯 ；痛风 → 通风 ；四氢叶酸 →
+  四氢液酸 / 四星叶酸 / 丝青叶酸 ；磺胺 → 黄胺
+- 类囊体 → 内囊体 / 领导体 ；卡尔文循环 → 开温循环 ；Rubisco → `Ruby's Comet` ；
+  核酮糖 → 合同糖 ；供体 → 共体
+- **E1 / E2 / E3 come out as bare digits** (`11121311`, `1212`, `一三`, `分为1 1 2 1`) —
+  the E is heard as 一. Same for `E3二磷酸` = 1,3-二磷酸.
+- 供能 → 功能 (very frequent, and both are real words) ；底物 → 底雾 ；基团 → 集团 /
+  鸡团 ；羧基 → 缩基 / 缩积 / 缩机 / 缩击 ；羰基 → 汤鸡 / 汤基 / 汤积 ；
+  羟基 → 枪击 / 枪机 / 枪肌 ；知识点 → 支持点 / 正确点
+
+**氨 vs 胺 is not a find-and-replace.** Both are ordinary words in this material.
+氨 is ammonia (氨基, 转氨, 脱氨, 游离氨, 氨中毒); 胺 is an amine, and it is the
+*correct* word for the product of PLP-dependent decarboxylation (组胺, GABA and
+that class). A lecture-11 proofreader was asked to convert a whole passage and
+correctly refused for the decarboxylation lines. Decide from the chemistry.
+
 Stretches of traditional characters (繁體) appear occasionally. That is an artefact
 of the model, not a mishearing — leave the wording alone; only convert if the same
 word is simplified everywhere else in the lecture.

@@ -41,6 +41,12 @@ _ROWS = [
      "20260815_脂质的分解与合成_氨基酸代谢开头.mp4", "2026-08-15",
      "脂质的分解与合成 · 氨基酸代谢开头",
      "Breakdown and synthesis of lipids; the start of amino acid metabolism"),
+    # mp4 creation_time 2026-08-17T14:10:33Z; the file name says 08-18.
+    # Dated by the recording, like every other row.
+    (12, "12_20260818_尿素循环_核苷酸的代谢",
+     "20260818_尿素循环_核苷酸的代谢.mp4", "2026-08-17",
+     "尿素循环 · 核苷酸的代谢",
+     "The urea cycle; nucleotide metabolism"),
 ]
 
 
