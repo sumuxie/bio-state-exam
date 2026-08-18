@@ -60,7 +60,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
-          cp -r biochemie_basic biochemie_pro biochemie_struct PESB _site/
+          cp -r biochemie_basic biochemie_pro biochemie_struct PESB pesbexplain _site/
           echo "artifact contents:"; du -sh _site/*; du -sh _site
 
       # Assert the whitelist above actually covers every app in the repo, so
