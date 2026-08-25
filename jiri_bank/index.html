@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIRI BANK — 老板给的三张卷子 · 国家考试题库</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button id="menu-toggle" class="icon-btn" aria-label="Toggle topic list">☰</button>
+  <div class="brand">
+    <strong>JIRI BANK</strong>
+    <span class="brand-sub">Jiri&#39;s three question sheets · 老板给的三张卷子 · 不是 exam30，不是 biochemie</span>
+  </div>
+
+  <nav class="modes" role="tablist">
+    <button class="mode-btn active" data-mode="study"  role="tab">📖 <span>Study</span></button>
+    <button class="mode-btn"        data-mode="cards"  role="tab">🃏 <span>Cards</span></button>
+    <button class="mode-btn"        data-mode="quiz"   role="tab">✏️ <span>Quiz</span></button>
+    <button class="mode-btn"        data-mode="oral"   role="tab">🎙 <span>Oral</span></button>
+    <button class="mode-btn"        data-mode="gloss"  role="tab">📔 <span>Terms</span></button>
+    <button class="mode-btn"        data-mode="sheets" role="tab">🧵 <span>Sheets</span></button>
+  </nav>
+
+  <div class="topbar-right">
+    <button id="find-toggle" class="icon-btn" aria-label="Quick find" aria-expanded="false"
+      title="快速查找：查一个名字，把课件里关于它的都拉出来，并列出长得像它的 · Ctrl/⌘+K">🔍</button>
+    <div class="pen-row" id="pen-row" title="Highlighter colour for new stars · 新收录使用的荧光笔颜色"></div>
+    <button id="only-marked" class="icon-btn" aria-label="Show only collected"
+      title="Show only what you have collected · 只看必背">⭐</button>
+    <div class="lang-toggle" id="lang-toggle">
+      <button data-lang="both" class="active">中/EN</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="cn">中文</button>
+    </div>
+    <button id="voice-toggle" class="icon-btn" aria-label="Pronunciation settings" aria-expanded="false"
+      title="Pronunciation: voice, speed, pitch, per language · 发音设置：声音、语速、音调">🎧</button>
+    <button id="bionic-toggle" class="icon-btn" aria-label="Toggle bionic reading"
+      title="Bionic reading: bolds the leading letters of each word so your eye can skip ahead — a scanning aid, not a treatment">🧬</button>
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">◐</button>
+  </div>
+</header>
+
+<!-- Pronunciation pad. Contents are rendered by app.js from the voices this
+     machine actually has, so there is nothing to hard-code here. -->
+<div id="voice-pad" class="voice-pad" hidden></div>
+
+<!-- 快速查找. A pad, not a mode: it floats over whatever panel is active and
+     never replaces it, so closing it puts you back exactly where you were.
+     Everything inside is rendered by app.js from the same topic data. -->
+<div id="find-pad" class="find-pad" hidden></div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="search-wrap">
+      <input type="search" id="search" placeholder="Search techniques, terms, 中文…" autocomplete="off">
+    </div>
+    <div class="progress-strip">
+      <div class="progress-bar"><div id="overall-progress"></div></div>
+      <span id="progress-label">0 / 0 studied</span>
+    </div>
+    <nav id="topic-list" class="topic-list"></nav>
+    <div class="sidebar-foot">
+      <span id="stat-terms">–</span> terms · <span id="stat-questions">–</span> questions
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <!-- ============ STUDY ============ -->
+    <section id="panel-study" class="panel active">
+      <div id="study-body"></div>
+    </section>
+
+    <!-- ============ FLASHCARDS ============ -->
+    <section id="panel-cards" class="panel">
+      <div class="panel-head">
+        <h2>Flashcards <span class="muted">抽认卡</span></h2>
+        <div class="controls">
+          <select id="card-scope"></select>
+          <button id="card-reset" class="btn-ghost">Reset</button>
+        </div>
+      </div>
+
+      <div class="leitner-row" id="leitner-row"></div>
+
+      <div id="card-stage">
+        <div class="flashcard" id="flashcard">
+          <div class="fc-inner">
+            <div class="fc-face fc-front">
+              <span class="fc-tag" id="fc-tag"></span>
+              <div class="fc-primary" id="fc-front-term"></div>
+              <div class="fc-hint">Click to reveal · 点击翻面</div>
+            </div>
+            <div class="fc-face fc-back">
+              <span class="fc-tag" id="fc-tag-back"></span>
+              <div class="fc-cn" id="fc-cn"></div>
+              <div class="fc-def" id="fc-def"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button id="card-miss" class="btn-bad">Missed ✕</button>
+          <button id="card-hit" class="btn-good">Got it ✓</button>
+        </div>
+        <p class="card-counter" id="card-counter"></p>
+      </div>
+
+      <div id="card-empty" class="empty-state" hidden>
+        <p>🎉 Every card in this scope has reached the top box.</p>
+        <button id="card-restudy" class="btn-ghost">Study them again</button>
+      </div>
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section id="panel-quiz" class="panel">
+      <div class="panel-head">
+        <h2>Question bank <span class="muted">题库</span></h2>
+        <div class="controls">
+          <select id="quiz-scope"></select>
+          <button id="quiz-bank-toggle" class="btn-ghost">Core only</button>
+          <button id="quiz-start" class="btn-primary">Start</button>
+        </div>
+      </div>
+
+      <div id="quiz-intro" class="empty-state">
+        <p>Pick a scope and press <strong>Start</strong>.</p>
+        <p class="muted">Multiple-choice is graded automatically. Written answers are checked against key terms and always reveal the model answer.</p>
+      </div>
+
+      <div id="quiz-stage" hidden>
+        <div class="quiz-progress">
+          <div class="progress-bar"><div id="quiz-progress-bar"></div></div>
+          <span id="quiz-count"></span>
+          <span id="quiz-score" class="score"></span>
+        </div>
+        <article class="qcard" id="qcard"></article>
+      </div>
+
+      <div id="quiz-result" hidden class="result-card"></div>
+    </section>
+
+    <!-- ============ ORAL ============ -->
+    <section id="panel-oral" class="panel">
+      <div class="panel-head">
+        <h2>Oral exam simulator <span class="muted">口试模拟</span></h2>
+        <div class="controls">
+          <select id="oral-scope"></select>
+          <button id="oral-next" class="btn-primary">New question</button>
+        </div>
+      </div>
+      <div id="oral-stage"></div>
+    </section>
+
+    <!-- ============ GLOSSARY ============ -->
+    <section id="panel-gloss" class="panel">
+      <div class="panel-head">
+        <h2>Terminology <span class="muted">专有名词</span></h2>
+        <div class="controls">
+          <input type="search" id="gloss-search" placeholder="Filter terms · 筛选术语" autocomplete="off">
+          <select id="gloss-scope"></select>
+          <select id="gloss-mark">
+            <option value="">All · 全部</option>
+            <option value="marked">⭐ Collected · 已收录</option>
+            <option value="none">☆ Not collected · 未收录</option>
+          </select>
+          <button id="gloss-view" class="btn-ghost" title="Switch between the browsable list and a card drill">🃏 Cards · 卡片</button>
+        </div>
+      </div>
+      <p class="gloss-count" id="gloss-count"></p>
+
+      <!-- card drill over whatever the filters above have selected -->
+      <div id="gloss-cards" hidden>
+        <div class="leitner-row" id="gloss-leitner"></div>
+        <div class="flashcard" id="gloss-card">
+          <div class="fc-inner">
+            <div class="fc-face fc-front">
+              <span class="fc-tag" id="gloss-fc-tag"></span>
+              <div class="fc-primary" id="gloss-fc-en"></div>
+              <div class="fc-hint">Click to reveal · 点击看中文</div>
+            </div>
+            <div class="fc-face fc-back">
+              <span class="fc-tag" id="gloss-fc-tag-back"></span>
+              <div class="fc-cn" id="gloss-fc-cn"></div>
+              <div class="fc-def" id="gloss-fc-def"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button id="gloss-miss" class="btn-bad">Missed ✕ · 不记得</button>
+          <button id="gloss-hit" class="btn-good">Got it ✓ · 记得</button>
+        </div>
+        <p class="card-counter" id="gloss-counter"></p>
+        <div id="gloss-cards-empty" class="empty-state" hidden>
+          <p>🎉 Every card in this filter has reached the top box.</p>
+          <p class="muted">这个筛选范围里的卡片都已进入最高盒子。</p>
+          <button id="gloss-restudy" class="btn-ghost">Study them again · 再刷一遍</button>
+        </div>
+      </div>
+
+      <div id="gloss-body" class="gloss-body"></div>
+    </section>
+
+    <!-- The §9 design: the unit is the QUESTION, not the node. Each card here
+         is one sheet question, answered by walking an ordered "spine" of
+         existing DEEP nodes — the only new prose is the joins between them.
+         The model answer is ASSEMBLED at render time from each node's own
+         mustKnow, never pasted in, so the "no new facts" rule is structural
+         rather than just a writing convention. -->
+    <section id="panel-sheets" class="panel">
+      <div class="panel-head">
+        <h2>Sheet questions <span class="muted">整卷题目——按考官问法组织，不是按节点</span></h2>
+        <div class="controls">
+          <input type="search" id="sheets-search" placeholder="Filter by wording · 按题面筛选" autocomplete="off">
+          <select id="sheets-weight">
+            <option value="">All weights · 全部权重</option>
+            <option value="3">x3 only</option>
+            <option value="2">x2 only</option>
+            <option value="1">x1 only</option>
+          </select>
+        </div>
+      </div>
+      <p class="gloss-count" id="sheets-count"></p>
+      <div id="sheets-body"></div>
+    </section>
+
+  </main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+
+<!-- Chapters 1 and 4 are split across two files each purely because of their
+     size; the nodes inside carry chapter: 1 / chapter: 4 as normal and the app
+     groups by that field, not by filename. -->
+<script src="data/ch1.js"></script>
+<script src="data/ch1b.js"></script>
+<script src="data/ch1c.js"></script>
+<script src="data/ch2.js"></script>
+<script src="data/ch2b.js"></script>
+<script src="data/ch3.js"></script>
+<script src="data/ch4.js"></script>
+<script src="data/ch5.js"></script>
+<script src="data/ch6.js"></script>
+<script src="data/questions.js"></script>
+<script src="data/q_s1.js"></script>
+<script src="data/q_s2.js"></script>
+<script src="data/q_s3.js"></script>
+<script src="data/q_s3b.js"></script>
+<script src="data/q_s3c.js"></script>
+<script src="data/q_s4.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
