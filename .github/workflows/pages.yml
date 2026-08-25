@@ -56,11 +56,18 @@ jobs:
       # here — it deploys "successfully" and every URL under it 404s, which is
       # exactly what happened to biochemie_struct on its first push. If you add
       # a directory to the repo, add it here in the same commit.
+      #
+      # ⚠️ And only add a directory that is actually COMMITTED. `exam30` was
+      # added to this line and to the launcher while still untracked, so on the
+      # runner the directory did not exist, `cp` failed, and the whole deploy
+      # died at this step — taking every other app down with it. A name here
+      # that exists locally but not in the repo is worse than a missing one,
+      # because it fails the build rather than 404ing one path.
       - name: Stage only the site files
         run: |
           mkdir -p _site
           cp index.html _site/
-          cp -r biochemie_basic biochemie_pro biochemie_struct PESB pesbexplain exam30 jiri_bank _site/
+          cp -r biochemie_basic biochemie_pro biochemie_struct PESB pesbexplain jiri_bank _site/
           echo "artifact contents:"; du -sh _site/*; du -sh _site
 
       # Assert the whitelist above actually covers every app in the repo, so
