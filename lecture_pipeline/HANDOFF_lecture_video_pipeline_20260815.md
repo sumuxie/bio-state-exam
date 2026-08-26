@@ -145,6 +145,21 @@ light themes, subtitles overlaid on the picture with size control, a search pane
 indexing everything (3248 entries for lecture 1) with per-category filters, and
 English text-to-speech.
 
+**Primary language.** The header carries a 正文 body EN / 中 switch, and it
+defaults to **EN** because the exam is in English. It flips which language leads
+in the topic list, the notes and extra cards, the quiz stems, options and
+explanations, the search results, the lecture picker and the timeline label —
+the other language stays underneath in small grey type. Nothing is hidden and no
+data changes: both languages are always in the DOM, the containers are flex
+columns, and `[data-primary="en"]` swaps `order` plus the type sizes. The choice
+is remembered in localStorage.
+
+**Subtitles are excluded from that switch, because there is no English to show:**
+all 22 672 cues across the twelve lectures have an empty `en` field.
+`apply_translations.py` exists and the cue schema carries the field, but the pass
+has never been run. The subtitle 中 / 双语 / EN control is a separate, older
+switch and setting it to EN yields blank lines.
+
 **Speech:** `speechSynthesis`, ranked by voice rather than hard-coded, because
 this machine has **no en-GB voice installed** — only en-US Zira/David/Mark, zh-CN,
 and a Czech Jakub. Edge supplies Sonia/Libby (en-GB neural, needs a connection);
@@ -192,6 +207,22 @@ These go in `extra`, never into `points` — `points` records what was taught.
 **All 12 lectures are complete.** 6142 corrections applied across the course,
 none rejected by the exact-quote verifier. 472 topics tiling 1416 minutes with
 no gaps, 3877 key points, 1748 extra notes, 1267 quiz questions, all bilingual.
+
+### The scratch directory is not storage
+
+Ten days after the course was finished, Windows cleared every loose file out of
+`%TEMP%\claude\...\scratchpad` — `stages.py`, `lectures.py`, the template,
+every `cues.json` and `topics.json`, and the whole of `series/`. Only empty
+directories survived. Nothing was lost that mattered, for two reasons worth
+keeping true: the scripts had been committed here, and the built app carries all
+of its data inlined.
+
+`build_app_from_data.py` is the recovery path. Pull the blob back out of a built
+app with the two-line recipe in its docstring, save it as `app_data.json`, and
+that script re-injects it into the current template. That is how the
+English-primary change was shipped without re-running any of the pipeline. The
+regular `build_app_all.py` still needs `cues.json` and `topics.json` and will not
+work until a lecture is reprocessed.
 
 ### Adding a lecture later
 

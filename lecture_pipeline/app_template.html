@@ -177,6 +177,39 @@ video{width:100%;display:block;background:#000;max-height:100%}
   border-radius:3px;padding:0 1px}
 .hit.extra{border-left:3px solid var(--warn)}
 .note{padding:10px 16px;font-size:12px;color:var(--dim)}
+
+/* ---------- primary language ----------
+   Both languages are always in the DOM; this only flips which one leads.
+   Containers become flex columns so `order` can swap them without the
+   renderer knowing anything about it. */
+.topic,.card,.pane h3,.q .qt,.hit .body{display:flex;flex-direction:column}
+.opt{display:flex;flex-direction:column;align-items:flex-start}
+.explain.show{display:flex;flex-direction:column}
+.q .qt .spk,.opt .spk{align-self:flex-start;order:9}
+
+[data-primary="en"] .topic .en{order:1;font-size:13px;color:var(--fg)}
+[data-primary="en"] .topic .zh{order:2;font-size:11px;color:var(--dim)}
+
+[data-primary="en"] .card .en{order:1;font-size:13px;color:var(--fg);
+  margin-top:0;padding-top:0;border-top:0}
+[data-primary="en"] .card .zh{order:2;font-size:12px;color:var(--dim);
+  margin-top:5px;padding-top:5px;border-top:1px dashed var(--line)}
+
+[data-primary="en"] .pane h3 .en{order:1;font-size:13.5px;color:var(--fg);font-weight:600}
+[data-primary="en"] .pane h3 .zh{order:2;font-size:11.5px;color:var(--dim);font-weight:400}
+
+[data-primary="en"] .q .qt .en{order:1;font-size:13px;color:var(--fg);margin-top:0}
+[data-primary="en"] .q .qt .zh{order:2;font-size:11.5px;color:var(--dim);margin-top:3px}
+
+[data-primary="en"] .opt .en{order:1;font-size:12.5px;color:var(--fg);margin-top:0}
+[data-primary="en"] .opt .zh{order:2;font-size:11px;color:var(--dim);margin-top:2px}
+
+[data-primary="en"] .explain .en{order:1;margin-top:0;color:var(--fg)}
+[data-primary="en"] .explain .zh{order:2;margin-top:4px;color:var(--dim)}
+
+[data-primary="en"] .hit .en{order:1;font-size:13px;color:var(--fg);line-height:1.55;margin-top:0}
+[data-primary="en"] .hit .zh{order:2;font-size:11.5px;color:var(--dim);line-height:1.45;margin-top:2px}
+[data-primary="en"] .hit .where{order:3}
 </style>
 </head>
 <body>
@@ -185,6 +218,10 @@ video{width:100%;display:block;background:#000;max-height:100%}
   <span class="sub" id="lecen"></span>
   <span class="spacer"></span>
   <input id="searchbox" type="search" autocomplete="off" placeholder="搜索…  ( / )">
+  <span class="sub">正文 body</span>
+  <div class="seg" id="primseg">
+    <button data-prim="en" class="on">EN</button><button data-prim="zh">中</button>
+  </div>
   <span class="sub">字幕</span>
   <div class="seg" id="langseg">
     <button data-lang="zh">中</button><button data-lang="both" class="on">双语</button>
@@ -266,6 +303,10 @@ const V = $('v');
 const LS = 'bioapp.';
 const store = (k,v)=>{ try{ localStorage.setItem(LS+k,v); }catch(e){} };
 const load  = (k,d)=>{ try{ const x=localStorage.getItem(LS+k); return x===null?d:x; }catch(e){ return d; } };
+/* Which language leads in topics, notes, quiz and search results.
+   Subtitles are unaffected: no cue has an English translation yet. */
+let PRIMARY = load('primary','en');
+document.documentElement.dataset.primary = PRIMARY;
 const fmt = s=>{ s=Math.max(0,s|0); const h=(s/3600)|0,m=((s%3600)/60)|0,x=s%60;
   return (h?h+':':'')+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0'); };
 const HUES=[205,152,38,275,12,96,320,178,58,240,130,20];
@@ -368,31 +409,30 @@ document.addEventListener('click',e=>{
 
 /* ---------- lecture picker ---------- */
 const sel=$('lecsel');
-DATA.lectures.forEach((x,i)=>{ const o=document.createElement('option');
-  o.value=i; o.textContent=`第${x.no}讲 · ${x.date} · ${x.title_zh}`; sel.appendChild(o); });
-DATA.pending.forEach(p=>{ const o=document.createElement('option');
-  o.disabled=true; o.textContent=`第${p.no}讲 · ${p.date} · ${p.title_zh}  —— 处理中`; sel.appendChild(o); });
+const lecName = x => PRIMARY==='en' ? `Lecture ${x.no} · ${x.date} · ${x.title_en}`
+                                    : `第${x.no}讲 · ${x.date} · ${x.title_zh}`;
+function fillPicker(){
+  const keep=sel.value; sel.innerHTML='';
+  DATA.lectures.forEach((x,i)=>{ const o=document.createElement('option');
+    o.value=i; o.textContent=lecName(x); sel.appendChild(o); });
+  DATA.pending.forEach(p=>{ const o=document.createElement('option');
+    o.disabled=true;
+    o.textContent=lecName(p)+(PRIMARY==='en'?'  —— in progress':'  —— 处理中');
+    sel.appendChild(o); });
+  if(keep!=='') sel.value=keep;
+}
+fillPicker();
 sel.onchange=e=>mount(+e.target.value);
 
 /* ---------- mount a lecture ---------- */
 function mount(i){
   li=i; L=DATA.lectures[i]; store('lecture',L.no);
   sel.value=i;
-  $('lecen').textContent=L.title_en;
+  $('lecen').textContent = PRIMARY==='en' ? L.title_zh : L.title_en;
   curTopic=-1; curCue=-1; answered={};
   V.src=encodeURI(L.video); $('vidmsg').classList.remove('show');
 
-  const tl=$('topiclist'); tl.innerHTML='';
-  $('topiccount').textContent=L.topics.length+' 段';
-  L.topics.forEach(t=>{
-    const el=document.createElement('div'); el.className='topic';
-    el.innerHTML='<div class="t"></div><div class="zh"></div><div class="en"></div>';
-    el.querySelector('.t').textContent=fmt(t.start)+' – '+fmt(t.end);
-    el.querySelector('.zh').textContent=t.title_zh;
-    el.querySelector('.en').textContent=t.title_en;
-    el.onclick=()=>seek(t.start);
-    tl.appendChild(el);
-  });
+  renderTopics();
 
   const timeline=$('timeline');
   [...timeline.querySelectorAll('.tlseg')].forEach(x=>x.remove());
@@ -400,7 +440,7 @@ function mount(i){
     const d=document.createElement('div'); d.className='tlseg';
     d.style.left=(t.start/DUR()*100)+'%'; d.style.width=((t.end-t.start)/DUR()*100)+'%';
     d.style.background='hsl('+HUES[k%HUES.length]+' 60% 45%)';
-    d.title=fmt(t.start)+'  '+t.title_zh;
+    d.title=fmt(t.start)+'  '+(PRIMARY==='en'?t.title_en:t.title_zh);
     timeline.insertBefore(d,$('playhead'));
   });
 
@@ -416,6 +456,29 @@ function mount(i){
   });
   applyLang(); buildIndex(); renderNotes(); renderQuiz(); tick();
 }
+function renderTopics(){
+  const tl=$('topiclist'); tl.innerHTML='';
+  $('topiccount').textContent = L.topics.length + (PRIMARY==='en' ? ' topics' : ' 段');
+  L.topics.forEach(t=>{
+    const el=document.createElement('div'); el.className='topic';
+    el.innerHTML='<div class="t"></div><div class="zh"></div><div class="en"></div>';
+    el.querySelector('.t').textContent=fmt(t.start)+' – '+fmt(t.end);
+    el.querySelector('.zh').textContent=t.title_zh;
+    el.querySelector('.en').textContent=t.title_en;
+    el.onclick=()=>seek(t.start);
+    tl.appendChild(el);
+  });
+}
+function setPrimary(v){
+  PRIMARY=v; store('primary',v);
+  document.documentElement.dataset.primary=v;
+  [...$('primseg').children].forEach(b=>b.classList.toggle('on',b.dataset.prim===v));
+  fillPicker(); sel.value=li;
+  $('lecen').textContent = v==='en' ? L.title_zh : L.title_en;
+  renderTopics(); renderNotes(); renderQuiz();
+  if($('searchpanel').classList.contains('show')) renderHits();
+}
+$('primseg').onclick=e=>{ const b=e.target.closest('button'); if(b) setPrimary(b.dataset.prim); };
 const DUR = ()=> L.topics.length ? L.topics[L.topics.length-1].end : 1;
 
 /* ---------- language / subtitle position ---------- */
@@ -426,6 +489,7 @@ $('posseg').onclick=e=>{ const b=e.target.closest('button'); if(!b) return;
 function syncSegs(){
   [...$('langseg').children].forEach(b=>b.classList.toggle('on',b.dataset.lang===lang));
   [...$('posseg').children].forEach(b=>b.classList.toggle('on',b.dataset.pos===subpos));
+  [...$('primseg').children].forEach(b=>b.classList.toggle('on',b.dataset.prim===PRIMARY));
 }
 function applyLang(){
   const zh=lang!=='en', en=lang!=='zh';
@@ -448,9 +512,10 @@ function renderNotes(){
   const t=L&&L.topics[curTopic];
   if(!t){ p.innerHTML='<div class="empty">播放视频，或点击左侧主题。<br>Play the video, or pick a topic.</div>'; return; }
   const head=document.createElement('div'); head.className='pane';
-  const h3=document.createElement('h3'); h3.textContent=t.title_zh;
+  const h3=document.createElement('h3');
+  const hzh=document.createElement('span'); hzh.className='zh'; hzh.textContent=t.title_zh;
   const hen=document.createElement('span'); hen.className='en'; hen.textContent=t.title_en;
-  h3.appendChild(hen);
+  h3.append(hzh,hen);
   const when=document.createElement('div'); when.className='when';
   when.textContent='▶ '+fmt(t.start)+' – '+fmt(t.end); when.onclick=()=>seek(t.start);
   head.append(h3,when); p.appendChild(head);
@@ -477,20 +542,24 @@ function renderQuiz(){
     const key=curTopic+'.'+qi;
     const c=document.createElement('div'); c.className='q';
     const qt=document.createElement('div'); qt.className='qt';
-    qt.textContent=(qi+1)+'. '+q.q_zh;
-    const qe=document.createElement('span'); qe.className='en'; qe.textContent=q.q_en;
-    qt.appendChild(qe);
+    const num=(qi+1)+'. ';
+    const qz=document.createElement('span'); qz.className='zh';
+    qz.textContent=(PRIMARY==='zh'?num:'')+q.q_zh;
+    const qe=document.createElement('span'); qe.className='en';
+    qe.textContent=(PRIMARY==='en'?num:'')+q.q_en;
+    qt.append(qz,qe);
     const qs=document.createElement('button'); qs.className='spk'; qs.textContent='🔊';
     qs.dataset.say=q.q_en; qt.appendChild(qs);
     c.appendChild(qt);
     const ex=document.createElement('div'); ex.className='explain';
-    const exz=document.createElement('div'); exz.textContent=q.explain_zh;
+    const exz=document.createElement('div'); exz.className='zh'; exz.textContent=q.explain_zh;
     const exe=document.createElement('span'); exe.className='en'; exe.textContent=q.explain_en;
     ex.append(exz,exe);
     q.options.forEach((o,oi)=>{
-      const b=document.createElement('button'); b.className='opt'; b.textContent=o.zh;
+      const b=document.createElement('button'); b.className='opt';
+      const oz=document.createElement('span'); oz.className='zh'; oz.textContent=o.zh;
       const oe=document.createElement('span'); oe.className='en'; oe.textContent=o.en;
-      b.appendChild(oe);
+      b.append(oz,oe);
       const os=document.createElement('span'); os.className='spk'; os.textContent='🔊';
       os.dataset.say=o.en; b.appendChild(os);
       b.onclick=()=>{
@@ -585,7 +654,8 @@ function renderHits(){
     shown.forEach(r=>{
       const el=document.createElement('div'); el.className='hit'+(k==='extra'?' extra':'');
       const lec=DATA.lectures[r.li];
-      const where=(scopeAll?('第'+lec.no+'讲 · '):'')+(r.ti>=0?lec.topics[r.ti].title_zh:'');
+      const where=(scopeAll?((PRIMARY==='en'?'L':'第')+lec.no+(PRIMARY==='en'?' · ':'讲 · ')):'')
+        +(r.ti>=0?(PRIMARY==='en'?lec.topics[r.ti].title_en:lec.topics[r.ti].title_zh):'');
       el.innerHTML='<div class="t">'+(scopeAll?('L'+lec.no+' '):'')+fmt(r.time)+'</div>'+
         '<div class="body"><div class="zh">'+mark(r.zh,terms)+'</div>'+
         (r.en?'<div class="en">'+mark(r.en,terms)+'</div>':'')+
@@ -630,7 +700,8 @@ function tick(){
     curTopic=ti;
     [...$('topiclist').children].forEach((el,i)=>el.classList.toggle('on',i===ti));
     [...$('timeline').querySelectorAll('.tlseg')].forEach((el,i)=>el.classList.toggle('on',i===ti));
-    $('tllabel').textContent = ti>=0 ? L.topics[ti].title_zh : '';
+    $('tllabel').textContent = ti>=0
+      ? (PRIMARY==='en' ? L.topics[ti].title_en : L.topics[ti].title_zh) : '';
     const a=$('topiclist').children[ti]; if(a) a.scrollIntoView({block:'nearest'});
     renderNotes(); renderQuiz();
   }
