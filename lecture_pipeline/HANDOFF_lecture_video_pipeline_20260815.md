@@ -145,6 +145,37 @@ light themes, subtitles overlaid on the picture with size control, a search pane
 indexing everything (3248 entries for lecture 1) with per-category filters, and
 English text-to-speech.
 
+**Integration panel.** A 综合 Integration button in the header opens a full-screen
+panel of cross-lecture material that belongs to no single lecture and has no
+timestamps: eight sections — fuel states, carbon fates, control points,
+compartments and transport, cofactors and vitamins, energy accounting, redox
+logic, and clinical/pharmacological hooks — carrying **116 cards and 164
+questions**, English-primary like everything else. A final chip pools all 164
+questions into an exam mode, shuffled with a fixed seed so a half-finished pass
+survives a reload. Answers and the chosen section persist in localStorage.
+
+The data lives in `data/integration.json`, is built from `work/integration/sec_*.json`
+by `check_integration.py --merge`, and is inlined by `build_app_all.py` when the
+file exists. The panel degrades to a "not built yet" message when it does not.
+
+Three things learned while generating it, all worth carrying forward:
+
+- **Wait for the completion signal before judging quality, not just before
+  merging.** Four of the eight sections were sitting at 70–80% longest-correct
+  when their files first appeared, and every one of them fixed itself before
+  reporting. Dispatching rewrites on the intermediate state would have thrown
+  away work that was already being corrected.
+- **Strictly-longest is not a sufficient measure.** An answer that is reliably
+  the *shortest* leaks just as badly, and a bank full of four-way ties scores 0%
+  while still being patterned. `check_integration.py` reports the answer's
+  **rank by length** across the four options; that is what should look uniform.
+  One section measured 10% strictly-longest and was perfectly balanced by rank —
+  the low number was ties, not a problem.
+- **Give concurrent agents separate scratch directories.** Two agents
+  independently reported that a sibling had overwritten a helper script of
+  theirs at the scratchpad root — same obvious filename, `check.py` and
+  `cards.py`. No output was corrupted, but only because both noticed.
+
 **Primary language.** The header carries a 正文 body EN / 中 switch, and it
 defaults to **EN** because the exam is in English. It flips which language leads
 in the topic list, the notes and extra cards, the quiz stems, options and

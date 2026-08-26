@@ -61,8 +61,22 @@ assert lectures, "no lecture has both cues.json and topics.json yet"
 src = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app_template.html")
 with open(src, encoding="utf-8") as f:
     html = f.read()
-html = html.replace("__DATA__", json.dumps({"lectures": lectures, "pending": pending},
-                                           ensure_ascii=False, separators=(",", ":")))
+payload = {"lectures": lectures, "pending": pending}
+
+# The cross-lecture integration material, if it has been built. It belongs to no
+# single lecture and has no timestamps, so it rides alongside rather than inside.
+integration = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           "data", "integration.json")
+if os.path.exists(integration):
+    with open(integration, encoding="utf-8") as f:
+        payload["integration"] = json.load(f)
+    n = payload["integration"]["sections"]
+    print(f"  integration: {len(n)} sections, "
+          f"{sum(len(x['cards']) for x in n)} cards, "
+          f"{sum(len(x['quiz']) for x in n)} questions")
+
+html = html.replace("__DATA__", json.dumps(payload, ensure_ascii=False,
+                                           separators=(",", ":")))
 with open(OUT, "w", encoding="utf-8") as f:
     f.write(html)
 

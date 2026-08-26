@@ -210,6 +210,30 @@ video{width:100%;display:block;background:#000;max-height:100%}
 [data-primary="en"] .hit .en{order:1;font-size:13px;color:var(--fg);line-height:1.55;margin-top:0}
 [data-primary="en"] .hit .zh{order:2;font-size:11.5px;color:var(--dim);line-height:1.45;margin-top:2px}
 [data-primary="en"] .hit .where{order:3}
+
+/* ---------- integration panel ---------- */
+#intpanel{position:absolute;inset:0;background:var(--bg);z-index:51;display:none;
+  flex-direction:column}
+#intpanel.show{display:flex}
+#inthead{display:flex;align-items:center;gap:12px;padding:9px 16px;background:var(--panel);
+  border-bottom:1px solid var(--line);flex:none;flex-wrap:wrap}
+#inthead .q{font-size:14px;font-weight:600}
+#inthead .n{font-size:12px;color:var(--dim)}
+#inthead .spacer{flex:1}
+#intchips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 16px;background:var(--panel);
+  border-bottom:1px solid var(--line);flex:none}
+#intbody{overflow-y:auto;flex:1;padding:14px 16px 30px}
+#intblurb{font-size:12.5px;color:var(--dim);margin:0 0 14px;max-width:70ch;line-height:1.6}
+#intblurb .zh{display:block;margin-top:3px}
+.intgrid{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+.intgrid .card{flex:1 1 420px;min-width:300px;max-width:640px;margin-bottom:0}
+.intgrid .q{flex:1 1 420px;min-width:300px;max-width:640px}
+.card .see,.q .see{display:block;font-size:10.5px;color:var(--accent);margin-top:7px;
+  font-variant-numeric:tabular-nums;opacity:.85;order:5}
+.intsub{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
+  margin:22px 0 9px;display:flex;gap:9px;align-items:baseline}
+.intsub:first-child{margin-top:0}
+[data-primary="en"] #intblurb .zh{color:var(--dim)}
 </style>
 </head>
 <body>
@@ -218,6 +242,7 @@ video{width:100%;display:block;background:#000;max-height:100%}
   <span class="sub" id="lecen"></span>
   <span class="spacer"></span>
   <input id="searchbox" type="search" autocomplete="off" placeholder="搜索…  ( / )">
+  <button class="iconbtn" id="intbtn" title="跨讲综合 / cross-lecture integration">综合 Integration</button>
   <span class="sub">正文 body</span>
   <div class="seg" id="primseg">
     <button data-prim="en" class="on">EN</button><button data-prim="zh">中</button>
@@ -244,6 +269,18 @@ video{width:100%;display:block;background:#000;max-height:100%}
 </header>
 
 <div id="body">
+  <div id="intpanel">
+    <div id="inthead">
+      <span class="q">综合 · Integration</span>
+      <span class="n" id="intn"></span>
+      <span class="spacer"></span>
+      <span class="n">Esc 关闭</span>
+      <button class="iconbtn" id="intreset">重做 Reset</button>
+      <button class="iconbtn" id="intclose">关闭 Close</button>
+    </div>
+    <div id="intchips"></div>
+    <div id="intbody"></div>
+  </div>
   <div id="searchpanel">
     <div id="searchhead">
       <span class="q" id="searchq"></span><span class="n" id="searchn"></span>
@@ -477,6 +514,7 @@ function setPrimary(v){
   $('lecen').textContent = v==='en' ? L.title_zh : L.title_en;
   renderTopics(); renderNotes(); renderQuiz();
   if($('searchpanel').classList.contains('show')) renderHits();
+  if($('intpanel').classList.contains('show')){ intChips(); intRender(); }
 }
 $('primseg').onclick=e=>{ const b=e.target.closest('button'); if(b) setPrimary(b.dataset.prim); };
 const DUR = ()=> L.topics.length ? L.topics[L.topics.length-1].end : 1;
@@ -593,6 +631,152 @@ const KIND={point:'知识点 Key points',extra:'补充 Extra',topic:'主题 Topi
 const KIND_ORDER=['point','extra','topic','quiz','cue'];
 const CUE_LIMIT=150;
 let INDEX=[], ALL_INDEX=null, filter='all', scopeAll=false, lastHits=null, lastTerms=null;
+/* ---------- integration: cross-lecture cards and exam-mode quiz ---------- */
+const INT = (DATA.integration && DATA.integration.sections) || [];
+let intSec = 0;                    /* index into INT, or -1 for exam mode */
+let intAnswered = {};              /* "sec.qi" -> true/false              */
+
+/* Deterministic shuffle, so exam mode keeps one order across reloads. */
+function seededOrder(n, seed){
+  const idx=[...Array(n).keys()];
+  let x=(seed>>>0)||1;
+  for(let i=n-1;i>0;i--){
+    x^=x<<13; x>>>=0; x^=x>>17; x^=x<<5; x>>>=0;
+    const j=x%(i+1); [idx[i],idx[j]]=[idx[j],idx[i]];
+  }
+  return idx;
+}
+
+function intChips(){
+  const box=$('intchips'); box.innerHTML='';
+  INT.forEach((sec,i)=>{
+    const b=document.createElement('button'); b.className='chip'+(i===intSec?' on':'');
+    b.innerHTML=esc(PRIMARY==='en'?sec.title_en:sec.title_zh)
+      +'<span class="c">'+sec.cards.length+'·'+sec.quiz.length+'</span>';
+    b.onclick=()=>{ intSec=i; store('intsec',i); intChips(); intRender(); };
+    box.appendChild(b);
+  });
+  const total=INT.reduce((a,s)=>a+s.quiz.length,0);
+  const b=document.createElement('button'); b.className='chip extra'+(intSec<0?' on':'');
+  b.innerHTML=(PRIMARY==='en'?'Exam mode · all questions':'考试模式 · 全部题目')
+    +'<span class="c">'+total+'</span>';
+  b.onclick=()=>{ intSec=-1; store('intsec',-1); intChips(); intRender(); };
+  box.appendChild(b);
+}
+
+function intQuizCard(q, key){
+  const c=document.createElement('div'); c.className='q';
+  const qt=document.createElement('div'); qt.className='qt';
+  const qz=document.createElement('span'); qz.className='zh'; qz.textContent=q.q_zh;
+  const qe=document.createElement('span'); qe.className='en'; qe.textContent=q.q_en;
+  qt.append(qz,qe);
+  const qs=document.createElement('button'); qs.className='spk'; qs.textContent='🔊';
+  qs.dataset.say=q.q_en; qt.appendChild(qs); c.appendChild(qt);
+  const ex=document.createElement('div'); ex.className='explain';
+  const exz=document.createElement('div'); exz.className='zh'; exz.textContent=q.explain_zh;
+  const exe=document.createElement('span'); exe.className='en'; exe.textContent=q.explain_en;
+  ex.append(exz,exe);
+  q.options.forEach((o,oi)=>{
+    const b=document.createElement('button'); b.className='opt';
+    const oz=document.createElement('span'); oz.className='zh'; oz.textContent=o.zh;
+    const oe=document.createElement('span'); oe.className='en'; oe.textContent=o.en;
+    b.append(oz,oe);
+    const os=document.createElement('span'); os.className='spk'; os.textContent='🔊';
+    os.dataset.say=o.en; b.appendChild(os);
+    b.onclick=()=>{
+      if(intAnswered[key]===undefined) intAnswered[key]=(oi===q.answer);
+      [...c.querySelectorAll('.opt')].forEach((bb,bi)=>{
+        bb.classList.toggle('good',bi===q.answer);
+        bb.classList.toggle('bad',bi===oi&&oi!==q.answer); });
+      ex.classList.add('show'); intScore();
+    };
+    c.appendChild(b);
+  });
+  c.appendChild(ex);
+  if(q.see){ const sv=document.createElement('span'); sv.className='see';
+    sv.textContent='↩ '+q.see; c.appendChild(sv); }
+  if(intAnswered[key]!==undefined){
+    [...c.querySelectorAll('.opt')].forEach((bb,bi)=>
+      bb.classList.toggle('good',bi===q.answer));
+    ex.classList.add('show');
+  }
+  return c;
+}
+
+function intScore(){
+  const total = intSec<0 ? INT.reduce((a,s)=>a+s.quiz.length,0)
+                         : (INT[intSec] ? INT[intSec].quiz.length : 0);
+  const keys = Object.keys(intAnswered).filter(k=> intSec<0 || k.startsWith(intSec+'.'));
+  const right = keys.filter(k=>intAnswered[k]).length;
+  $('intn').textContent = keys.length
+    ? (PRIMARY==='en' ? 'answered '+keys.length+'/'+total+' · correct '+right
+                      : '已答 '+keys.length+'/'+total+' · 正确 '+right)
+    : (PRIMARY==='en' ? total+' questions' : '共 '+total+' 题');
+}
+
+function intRender(){
+  const body=$('intbody'); body.innerHTML='';
+  if(!INT.length){
+    body.innerHTML='<div class="empty">尚未生成综合内容。'
+      +'<br>No integration material has been built yet.</div>';
+    return;
+  }
+
+  if(intSec<0){                                  /* exam mode: every question */
+    const pool=[];
+    INT.forEach((sec,si)=>sec.quiz.forEach((q,qi)=>pool.push({q:q,key:si+'.'+qi})));
+    const h=document.createElement('div'); h.className='intsub';
+    h.textContent=(PRIMARY==='en'
+      ? 'Mixed questions from every section, in a fixed shuffled order'
+      : '全部章节混合出题，顺序固定打乱');
+    body.appendChild(h);
+    const g=document.createElement('div'); g.className='intgrid';
+    seededOrder(pool.length, 20260827).forEach(i=>
+      g.appendChild(intQuizCard(pool[i].q, pool[i].key)));
+    body.appendChild(g);
+    intScore(); return;
+  }
+
+  const sec=INT[intSec]; if(!sec) return;
+  const bl=document.createElement('p'); bl.id='intblurb';
+  const be=document.createElement('span'); be.className='en'; be.textContent=sec.blurb_en||'';
+  const bz=document.createElement('span'); bz.className='zh'; bz.textContent=sec.blurb_zh||'';
+  bl.append(be,bz); body.appendChild(bl);
+
+  const h1=document.createElement('div'); h1.className='intsub';
+  h1.innerHTML=(PRIMARY==='en'?'Cards':'知识卡')+'<span>'+sec.cards.length+'</span>';
+  body.appendChild(h1);
+  const cg=document.createElement('div'); cg.className='intgrid';
+  sec.cards.forEach(x=>{
+    const c=document.createElement('div'); c.className='card extra';
+    if(x.tag){ const tg=document.createElement('span'); tg.className='tag';
+      tg.textContent=x.tag; c.appendChild(tg); }
+    const z=document.createElement('div'); z.className='zh'; z.textContent=x.zh;
+    const e2=document.createElement('div'); e2.className='en'; e2.textContent=x.en;
+    c.append(z,e2);
+    if(x.see){ const sv=document.createElement('span'); sv.className='see';
+      sv.textContent='↩ '+x.see; c.appendChild(sv); }
+    cg.appendChild(c);
+  });
+  body.appendChild(cg);
+
+  const h2=document.createElement('div'); h2.className='intsub';
+  h2.innerHTML=(PRIMARY==='en'?'Questions':'题目')+'<span>'+sec.quiz.length+'</span>';
+  body.appendChild(h2);
+  const qg=document.createElement('div'); qg.className='intgrid';
+  sec.quiz.forEach((q,qi)=>qg.appendChild(intQuizCard(q, intSec+'.'+qi)));
+  body.appendChild(qg);
+  intScore();
+}
+
+function openInt(){
+  intSec=+load('intsec',0);
+  $('intpanel').classList.add('show'); intChips(); intRender();
+}
+$('intbtn').onclick=openInt;
+$('intclose').onclick=()=>$('intpanel').classList.remove('show');
+$('intreset').onclick=()=>{ intAnswered={}; intRender(); };
+
 function indexOf(lec,lecIdx){
   const out=[];
   lec.topics.forEach((t,ti)=>{
@@ -736,6 +920,8 @@ window.addEventListener('mouseup',()=>dragTL=false);
 document.addEventListener('keydown',e=>{
   if(e.key==='/'&&e.target.id!=='searchbox'){ e.preventDefault(); $('searchbox').focus(); $('searchbox').select(); return; }
   if((e.key==='k'||e.key==='K')&&(e.ctrlKey||e.metaKey)){ e.preventDefault(); $('searchbox').focus(); $('searchbox').select(); return; }
+  if(e.key==='Escape'&&$('intpanel').classList.contains('show')){
+    $('intpanel').classList.remove('show'); return; }
   if(e.key==='Escape'&&$('searchpanel').classList.contains('show')){
     $('searchbox').value=''; $('searchpanel').classList.remove('show'); return; }
   if(e.target.tagName==='BUTTON'||e.target.tagName==='INPUT'||e.target.tagName==='SELECT') return;
