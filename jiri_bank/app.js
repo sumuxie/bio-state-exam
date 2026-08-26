@@ -74,6 +74,7 @@
     pen:     store.get('pen', 'y'),       // currently selected highlighter
     glossView: store.get('glossView', 'cards'),  // Terms tab: 'cards' | 'list'
     onlyMarked: false,                    // 只看必背 — deliberately not persisted
+    sheetsFigOnly: false,                 // Sheets: 只看有图的题 — a view filter, not persisted
     qsrc:    store.get('qsrc', 'core'),   // 'core' | 'bank' | 'terms' — see allQuestions
     voice:   store.get('voice', {}),      // 'en'|'zh' -> {uri, rate, pitch} — see the pronunciation pad
     topicId: null,
@@ -1110,6 +1111,9 @@
     const needle = ($('#sheets-search').value || '').trim().toLowerCase();
     const weight = $('#sheets-weight').value;
     let rows = QUESTIONS.slice();
+    // Only 8 of the 94 carry a diagram, so without a way to ask for them they
+    // are unfindable — you would have to scroll the whole list to notice one.
+    if (state.sheetsFigOnly) rows = rows.filter((q) => !!q.svg);
     if (weight) rows = rows.filter((q) => String(q.weight) === weight);
     if (needle) {
       rows = rows.filter((q) => (q.stem_en + ' ' + q.stem_cn + ' ' + q.sheets)
@@ -1122,8 +1126,10 @@
   function renderSheets() {
     const body = $('#sheets-body');
     const rows = sheetsRows();
+    const figTotal = QUESTIONS.filter((q) => q.svg).length;
     $('#sheets-count').textContent =
-      `${rows.length} of ${QUESTIONS.length} questions · 共 ${QUESTIONS.length} 题，显示 ${rows.length} 题`;
+      `${rows.length} of ${QUESTIONS.length} questions · 共 ${QUESTIONS.length} 题，显示 ${rows.length} 题`
+      + (figTotal ? ` · ${figTotal} with a diagram · ${figTotal} 题有图` : '');
 
     if (!QUESTIONS.length) {
       body.innerHTML = `<div class="empty-state">
@@ -1178,8 +1184,8 @@
              <h3>Likely follow-ups <span class="muted">追问</span></h3>
              ${(q.followups || []).map((f) => `
                <div class="sheet-followup">
-                 <div class="sf-q">${bi(f.q_en, f.q_cn)}</div>
-                 <div class="sf-a">${bi(f.a_en, f.a_cn)}</div>
+                 <div class="sf-q">${bi(f.q_en, f.q_cn)} ${speakPairBtn(f.q_en, f.q_cn)}</div>
+                 <div class="sf-a">${bi(f.a_en, f.a_cn)} ${speakPairBtn(stripTags(f.a_en), stripTags(f.a_cn))}</div>
                  ${f.node ? spineChip(f.node) : ''}
                </div>`).join('')}
            </div>`
@@ -1189,8 +1195,9 @@
         <div class="sheet-head">
           <span class="badge badge-slide">${esc(q.sheets)}</span>
           <span class="badge">x${q.weight || 1}</span>
+          ${q.svg ? '<span class="badge badge-fig" title="This question has a diagram · 这题有图">✎ 图</span>' : ''}
         </div>
-        <div class="sheet-stem">${bi(q.stem_en, q.stem_cn)}</div>
+        <div class="sheet-stem">${bi(q.stem_en, q.stem_cn)} ${speakPairBtn(q.stem_en, q.stem_cn)}</div>
 
         ${hasSpine ? `<div class="sheet-spine">
           <span class="sheet-spine-label">Spine · 追踪链</span>
@@ -1200,7 +1207,15 @@
         <div class="sheet-model">
           <h3>${hasSpine
             ? 'Assembled answer <span class="muted">拼装出的答案——事实全部来自源节点</span>'
-            : 'Answer <span class="muted">答案</span>'}</h3>
+            : 'Answer <span class="muted">答案</span>'}
+            ${/* The whole answer read aloud, which is the point in an oral:
+                  the emphasis markers are stripped first, or the synthesiser
+                  reads the asterisks out. A spine answer has no text of its
+                  own, so it is assembled here the same way it is rendered. */
+              hasSpine
+                ? speakPairBtn(stripTags(asm.en.filter((s) => !s.startsWith('__JOIN_')).join(' ')),
+                               stripTags(asm.cn.filter((s) => !s.startsWith('__JOIN_')).join(' ')))
+                : speakPairBtn(stripTags(q.answer_en), stripTags(q.answer_cn))}</h3>
           ${hasSpine
             ? `${state.lang !== 'cn' ? `<div class="t-en">${modelEn}</div>` : ''}
                ${state.lang !== 'en' ? `<div class="t-cn">${modelCn}</div>` : ''}`
@@ -3060,6 +3075,12 @@
     // list, or you would keep drilling cards the filter no longer selects.
     ['#gloss-search', '#gloss-scope', '#gloss-mark'].forEach((sel) =>
       $(sel).addEventListener('input', () => { glossCard = null; renderGlossary(); }));
+
+    $('#sheets-fig').addEventListener('click', () => {
+      state.sheetsFigOnly = !state.sheetsFigOnly;
+      $('#sheets-fig').classList.toggle('active', state.sheetsFigOnly);
+      renderSheets();
+    });
 
     ['#sheets-search', '#sheets-weight'].forEach((sel) =>
       $(sel).addEventListener('input', renderSheets));

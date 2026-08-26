@@ -1056,3 +1056,16 @@ mark.fh { background: rgba(210,153,34,0.28); color: inherit; border-radius: 2px;
   font-size: 0.76rem;
   line-height: 1.6;
 }
+
+/* Marks a sheet question that carries a diagram. Only 8 of 94 do, so without
+   a badge on the card and the matching filter in the toolbar they are
+   effectively unfindable — you would have to scroll the whole list. */
+.badge-fig {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+#sheets-fig.active {
+  background: var(--accent-dim);
+  border-color: var(--accent-dim);
+  color: #fff;
+}

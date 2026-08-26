@@ -1037,3 +1037,61 @@ examples.
 
 Obvious candidates still undrawn: DNA replication fork, PCR cycle, electron transport chain,
 Western blot workflow, chromatography modes.
+
+---
+
+# 19. Speech on the Sheets panel, and finding the diagrams — 2026-08-26
+
+Two gaps Ruojin found by using it, both of which the browser tests had passed
+straight over because they asserted that things *render*, not that they are
+*reachable*.
+
+## Speech buttons were missing from Sheets
+
+`renderSheets()` already called `wireSayButtons(body)`, so the wiring was
+there — but the markup emitted no `speakBtn()` at all, so there was nothing to
+wire and the panel was silent. Added on the stem, on the answer, and on both
+halves of every follow-up card: **566 buttons across the 94 cards**.
+
+Two details worth keeping:
+
+- The text handed to the synthesiser goes through `stripTags()` first, or it
+  reads the `**` emphasis markers out loud. Asserted in the test: 0 buttons
+  carry `**`.
+- A spine answer has no prose of its own, so its spoken text is assembled from
+  the same `mustKnow` beats the renderer walks, with the join markers filtered
+  out.
+
+**`speakBtn()` returns an empty string when `speechAvailable` is false**, which
+is the state in headless Chrome on some machines. If a future test reports zero
+buttons, check that before assuming a regression.
+
+As everywhere else in these apps: this is browser speech synthesis, not a
+recording of a person. The 🎧 pad in the top bar chooses which voice and how
+fast, per language.
+
+## The 8 diagrams were unfindable
+
+They render, but 8 of 94 cards carry one and nothing said so, so the only way
+to find them was to scroll the whole list. Three changes:
+
+- a **`✎ 图` badge** on any card that has a figure
+- a **`✎ 有图` toggle** in the toolbar, `state.sheetsFigOnly`, a view filter and
+  deliberately not persisted
+- the count line now ends `· 8 with a diagram · 8 题有图`, so the number is
+  visible without filtering
+
+Where they are: **S1 Lab 1 / S3 Lab 4** (standard curve), **S1 Bio 6 / S2 Bio 21**
+(glucose, the only question that says Draw), **S2 Lab 6** (the two gels),
+**S2 Micro 11 / S3 Micro 13** (growth curve), **S2 Bio 26** (lac operon),
+**S3 Bio 6** (Lineweaver-Burk), **S3 Bio 7** (Michaelis-Menten),
+**S1 Micro 1 / S3 Micro 1** (Gram wall).
+
+## The lesson for the next test
+
+Both bugs passed every existing check. "94 cards render with no empty answers"
+was true and useless here. A feature that exists but cannot be found is not
+shipped, so assert **reachability** — is there a badge, a filter, a count —
+alongside rendering.
+
+Verified: 13/13 in headless Chrome.
