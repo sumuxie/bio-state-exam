@@ -1,0 +1,4 @@
+# 1 of 2621 lines have mean word confidence < 0.55.
+# These are the most likely mishearings - check these, not the whole file.
+
+[00:23:24] p=0.55  suscovid他那个

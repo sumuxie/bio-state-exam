@@ -1,0 +1,5 @@
+# 3 of 1865 lines have mean word confidence < 0.55.
+
+[00:12:07] p=0.50  Levinthal's paradox
+[00:20:18] p=0.54  wild type的chaperone
+[01:38:51] p=0.43  factor然后co

@@ -1,0 +1,2 @@
+# 0 of 1956 lines have mean word confidence < 0.55.
+

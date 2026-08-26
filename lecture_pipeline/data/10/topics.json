@@ -1,0 +1,960 @@
+[
+ {
+  "start": 0,
+  "end": 140,
+  "title_zh": "电子传递链复习：电子流与质子流两条独立的账",
+  "title_en": "ETC recap: two separate ledgers, electron flow and proton flow",
+  "points": [
+   {
+    "zh": "他把电子传递链拆成两条独立的故事线来复习——先讲电子怎么流，再讲质子怎么流，抑制剂特意放到最后，说这样逻辑更顺。",
+    "en": "He recaps the chain as two separate stories: first how electrons move, then how protons move, deliberately postponing the inhibitors to the end because the logic runs more smoothly that way."
+   },
+   {
+    "zh": "电子路线的起点：NADH 和 FAD（他的原话）把电子交给铁硫簇。",
+    "en": "Start of the electron route: NADH and FAD (his wording) hand their electrons to the iron-sulfur clusters."
+   },
+   {
+    "zh": "铁硫簇经泛醌 ubiquinone (Q) 把电子传给复合体III，复合体III 再经细胞色素 c 传给复合体IV。",
+    "en": "The Fe-S clusters pass the electrons through ubiquinone (Q) to Complex III, which relays them via cytochrome c to Complex IV."
+   },
+   {
+    "zh": "复合体IV 用这些已经「失去化学能」的电子把 O2 还原成水，是全链的终点。",
+    "en": "Complex IV uses these now energy-depleted electrons to reduce O2 to water; that is the end of the chain."
+   },
+   {
+    "zh": "质子账第一项：NADH 每传 2 个电子，复合体I 泵出 4 个 H+。",
+    "en": "First line of the proton account: for every 2 electrons from NADH, Complex I pumps 4 H+."
+   },
+   {
+    "zh": "复合体III 每传 2 个电子同样泵出 4 分子 H+。",
+    "en": "Complex III likewise pumps 4 H+ per 2 electrons transferred."
+   },
+   {
+    "zh": "复合体IV 每传 2 个电子泵出 2 分子 H+；这份名单里根本没有复合体II。",
+    "en": "Complex IV pumps 2 H+ per 2 electrons; Complex II does not appear in this roster at all."
+   },
+   {
+    "zh": "他把质子泵出的目的地说成「细胞外膜／细胞质」，讲的其实是线粒体膜间隙。",
+    "en": "He names the destination of the pumped protons the \"outer cell membrane / cytoplasm\", but what he means is the mitochondrial intermembrane space."
+   },
+   {
+    "zh": "他说与 O2 结合生成水的，是「从外面进来的、已经失去化学能」的那些氢离子；同一句里他指出复合体IV 在反应的同时也泵出 2 个 H+。",
+    "en": "He says the protons that combine with O2 to make water are the spent ones coming back in from outside, and in the same breath notes correctly that Complex IV also pumps 2 H+ while doing it."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充",
+    "zh": "这一遍的名单是对的，把它当作本讲的基准数字：I 泵 4、III 泵 4（Q 循环）、IV 泵 2，复合体II 不泵。所以每个 NADH 共泵 10 H+；FADH2 从复合体II 进入、跳过复合体I，只剩 III 与 IV 的 4+2 = 6 H+。10 与 6 这两个数字就是后面 2.5 与 1.5 的全部来源。",
+    "en": "The roster he gives here is the correct one; take it as this lecture's baseline. I pumps 4, III pumps 4 (Q cycle), IV pumps 2, Complex II pumps none. That is 10 H+ per NADH; FADH2 enters at Complex II, skips Complex I, and leaves only 4+2 = 6 H+ from III and IV. Those two numbers, 10 and 6, are the entire origin of the 2.5 and 1.5 figures later."
+   },
+   {
+    "tag": "课上口误",
+    "zh": "还原 O2 用掉的「化学质子」来自**线粒体基质**，不是从膜间隙倒流回来的。每还原 1 个 O2 需要基质里的 4 个 H+（每 2 个电子 2 个）。泵出去的质子只有两条回基质的路：ATP 合酶，或解偶联剂。他那句把「被消耗的质子」和「被泵出的质子」接成了闭环，会让人误以为泵出去的质子又跑回来还原氧气。顺带一提，从基质取走质子本身也在抬高 Δp。",
+    "en": "The chemical protons consumed in reducing O2 come from the matrix, not from protons flowing back out of the intermembrane space: 4 matrix H+ per O2 (2 per 2 electrons). Pumped protons have only two routes back to the matrix, ATP synthase or an uncoupler. His sentence wires consumed and pumped protons into one loop, which suggests the pumped protons return to reduce oxygen. Note also that removing H+ from the matrix itself adds to the proton-motive force."
+   },
+   {
+    "tag": "课上说法不同",
+    "zh": "隔室命名全程要换：他说的「细胞外膜／细胞膜／细胞质」在这一段里指的都是线粒体**膜间隙**，质子是跨**内膜**被泵出去的。外膜上有 porin (VDAC)，小分子和离子随意通过，所以膜间隙的成分接近胞质——真正的屏障永远是内膜。做笔记时把这几个词直接改掉，否则后面「跨膜梯度」建在哪里会讲不通。",
+    "en": "Rename the compartments throughout: his \"outer cell membrane / cell membrane / cytoplasm\" all mean the mitochondrial intermembrane space here, and protons are pumped across the inner membrane. The outer membrane carries porin (VDAC), so small molecules and ions cross freely and the intermembrane space resembles cytosol; the real barrier is always the inner membrane. Fix the words in your notes, or the question of where the gradient sits becomes unanswerable."
+   },
+   {
+    "tag": "易混淆",
+    "zh": "供电子的是 FADH2，不是 FAD（FAD 是氧化态，收电子的一方）；而且 FADH2 的电子由**复合体II（琥珀酸脱氢酶）**直接交给泛醌，根本不经过复合体I 的铁硫簇。他那句「NADH 和 FAD 流到铁硫簇」把两条入口并成了一条。记法：呼吸链有两个电子入口，NADH→I、FADH2→II，两条在 Q 池汇合，此后共用 III→cyt c→IV。",
+    "en": "The electron donor is FADH2, not FAD (FAD is the oxidized, electron-accepting form), and FADH2 electrons go from Complex II (succinate dehydrogenase) straight into ubiquinone, never through the Fe-S clusters of Complex I. His phrasing merges two entry points into one. Remember it as two entrances: NADH to I, FADH2 to II, converging at the Q pool and sharing III, cytochrome c and IV from there on."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "按他这一遍复习给出的名单，每传递 2 个电子时各复合体泵出的 H+ 数是多少？",
+    "q_en": "In the roster he gives in this recap, how many H+ does each complex pump per 2 electrons?",
+    "options": [
+     {
+      "zh": "复合体I 泵 4 个、III 泵 4 个、IV 泵 2 个",
+      "en": "Complex I pumps 4, III pumps 4, IV pumps 2"
+     },
+     {
+      "zh": "复合体I 泵 2 个、III 泵 4 个、IV 泵 4 个",
+      "en": "Complex I pumps 2, III pumps 4, IV pumps 4"
+     },
+     {
+      "zh": "复合体I 泵 2 个、III 泵 2 个、IV 泵 4 个",
+      "en": "Complex I pumps 2, III pumps 2, IV pumps 4"
+     },
+     {
+      "zh": "复合体I 泵 4 个、II 泵 4 个、III 泵 2 个",
+      "en": "Complex I pumps 4, II pumps 4, III pumps 2"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "正确计量是 I 泵 4、III 泵 4、IV 泵 2，合计 10 H+/NADH。把复合体II 写进泵质子名单的那一项错：琥珀酸脱氢酶只把电子交给 Q，不跨膜泵质子。把 IV 写成 4 个、或把 I 写成 2 个的两项都与 Q 循环和细胞色素氧化酶的实测计量不符。",
+    "explain_en": "The correct tally is 4 from Complex I, 4 from Complex III and 2 from Complex IV, giving 10 H+ per NADH. The choice that includes Complex II is wrong: succinate dehydrogenase only feeds electrons to Q and pumps nothing. The choices giving IV four protons or I only two contradict the measured stoichiometry of the Q cycle and of cytochrome oxidase."
+   },
+   {
+    "q_zh": "复合体IV 把 O2 还原成水时，用掉的「化学质子」来自哪里？",
+    "q_en": "Where do the chemical protons consumed when Complex IV reduces O2 to water come from?",
+    "options": [
+     {
+      "zh": "来自膜间隙，泵出的质子经内膜回流",
+      "en": "From the intermembrane space, flowing back in"
+     },
+     {
+      "zh": "来自胞质，经外膜的 porin 进入",
+      "en": "From the cytosol, through the outer porins"
+     },
+     {
+      "zh": "来自细胞色素 c，随电子一起交给氧",
+      "en": "From cytochrome c, handed to O2 with electrons"
+     },
+     {
+      "zh": "来自线粒体基质，与泵出的质子分开算",
+      "en": "From the matrix, counted apart from pumped H+"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "还原氧的质子取自基质，与被泵到膜间隙的质子是两笔账，而且取走基质质子还会进一步抬高 Δp。说质子从膜间隙经内膜回流的那一项正是老师的口误：内膜对质子几乎不通透，回流只能走 ATP 合酶或解偶联剂。胞质经 porin 进入的只到膜间隙，进不了基质；细胞色素 c 只传电子，不带质子。",
+    "explain_en": "The protons that reduce oxygen are taken from the matrix, a separate account from those pumped into the intermembrane space, and removing them raises the proton-motive force further. The option routing them back from the intermembrane space is the teacher's slip: the inner membrane is nearly impermeable to protons, so the only ways back are ATP synthase or an uncoupler. Cytosolic protons crossing porins reach only the intermembrane space, and cytochrome c carries electrons alone, never protons."
+   },
+   {
+    "q_zh": "FADH2 的电子进入呼吸链走的是哪条路？",
+    "q_en": "By which route do FADH2 electrons enter the respiratory chain?",
+    "options": [
+     {
+      "zh": "经细胞色素 c，直接交给复合体IV",
+      "en": "Through cytochrome c, straight to Complex IV"
+     },
+     {
+      "zh": "经复合体III 的 Q 循环回到 I",
+      "en": "Through the Q cycle of Complex III back to I"
+     },
+     {
+      "zh": "经复合体II 直接交给泛醌，跳过 I",
+      "en": "Through Complex II straight to Q, skipping I"
+     },
+     {
+      "zh": "经复合体I 的铁硫簇，然后交给泛醌",
+      "en": "Through Complex I Fe-S clusters, then on to Q"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "FADH2 是复合体II（琥珀酸脱氢酶）的辅基，电子直接交给 Q 池，绕开复合体I，因此少泵 4 个 H+，只剩 6 个，这正是 1.5 而不是 2.5 的原因。走复合体I 铁硫簇的那一项是老师并句造成的误解；细胞色素 c 位于 III 与 IV 之间，接不了 FADH2；电子在链上单向下坡，不会从 III 的 Q 循环倒流回 I。",
+    "explain_en": "FADH2 is the prosthetic group of Complex II (succinate dehydrogenase) and delivers electrons straight into the Q pool, bypassing Complex I and therefore losing 4 pumped H+, leaving 6 — exactly why the yield is 1.5 and not 2.5. The Complex I Fe-S route comes from the teacher's merged sentence; cytochrome c sits between III and IV and cannot accept FADH2; and electrons run downhill in one direction, never back from the Q cycle of III into I."
+   }
+  ]
+ },
+ {
+  "start": 140,
+  "end": 265,
+  "title_zh": "质子泵出的能量学与 2.5 ATP 的来历",
+  "title_en": "Energetics of proton pumping and where the 2.5 ATP figure comes from",
+  "points": [
+   {
+    "zh": "他先问：每一个被泵出去的氢离子，最终能换来多少 ATP？这一段就是要把这个数算出来。",
+    "en": "He opens by asking what each pumped proton is finally worth in ATP; this stretch is his attempt to compute that number."
+   },
+   {
+    "zh": "他说 NADH 把氢离子交出来、生成 NAD+，质子往内膜外侧泵，这一步释放约 220.5 kJ/mol。",
+    "en": "He says NADH gives up its hydrogen to form NAD+ while protons are pumped to the outer face of the inner membrane, and that this releases about 220.5 kJ/mol."
+   },
+   {
+    "zh": "他强调 220 kJ/mol 在生物体内是非常高的一个能量。",
+    "en": "He stresses that 220 kJ/mol is a very large amount of energy by biological standards."
+   },
+   {
+    "zh": "另一头的账：ADP 结合磷酸生成 ATP 要吸收约 91.6 kJ，他随即换算成每个 ATP 约 30 kJ。",
+    "en": "On the spending side: making ATP from ADP and phosphate absorbs about 91.6 kJ, which he immediately restates as roughly 30 kJ per ATP."
+   },
+   {
+    "zh": "他说 ATP 合酶每转一次需要消耗约 91.6 kJ 的能量。",
+    "en": "He states that one turn of ATP synthase costs about 91.6 kJ."
+   },
+   {
+    "zh": "他明确说 ATP 合酶每转一次实际上只释放出 1 个 ATP。",
+    "en": "He explicitly says that one turn of ATP synthase actually releases only a single ATP."
+   },
+   {
+    "zh": "于是他做除法：220 除以 91.6（口头念成「220 除以 96」）≈ 2.4，落到 2.5。",
+    "en": "He then divides: 220 by 91.6 (spoken aloud as \"220 divided by 96\"), getting about 2.4, and rounds to 2.5."
+   },
+   {
+    "zh": "他当场发现幻灯片上写的 3 有点问题，改口说 1 分子 NADH 最终产生 2.5 个 ATP。",
+    "en": "He notices on the spot that the slide says 3, calls it a problem, and corrects himself to 2.5 ATP per NADH."
+   },
+   {
+    "zh": "结论落点是对的：1 NADH 对应 2.5 个 ATP（与后面提到的 1.5 配套）。",
+    "en": "The conclusion he lands on is right: one NADH corresponds to 2.5 ATP, paired with the 1.5 figure he mentions later."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上口误",
+    "zh": "「每转一次 91.6 kJ、只放 1 个 ATP」与他上一句「每个 ATP 约 30 kJ」直接冲突：91.6 ≈ 3 × 30.5，正好是**一整圈 360°（3 个 120° 步）放出 3 个 ATP** 的成本。F1 有三个 β 亚基，每个 β 走一遍构象循环（loose→tight→open）放 1 个 ATP，转一整圈自然是 3 个。他把「一圈的账」当成了「一个 ATP 的账」，除数因此大了三倍。",
+    "en": "\"91.6 kJ per turn yielding one ATP\" contradicts his own preceding \"about 30 kJ per ATP\": 91.6 is 3 x 30.5, the cost of one full 360-degree rotation (three 120-degree steps) making three ATP. F1 has three beta subunits, each releasing one ATP per loose-tight-open conformational cycle, so a full turn gives three. He treated the cost of a whole turn as the cost of a single ATP, inflating his divisor threefold."
+   },
+   {
+    "tag": "定量补充",
+    "zh": "2.5 的真正来路是**质子账，不是自由能除法**：每个 NADH 泵出 10 H+，而合成并送出 1 个 ATP 约需 4 H+ —— 约 3 个用于驱动 c 环转子（人的 c 环 8 个亚基，转一整圈 8 H+ 换 3 个 ATP，即 2.67 H+/ATP），再加约 1 个付给磷酸载体和电致性的 ATP/ADP 转位酶（把 Pi 运进、把 ATP 换出）。10 ÷ 4 = 2.5；FADH2 6 ÷ 4 = 1.5。考试要记的是这条链，不是那段除法。",
+    "en": "The real origin of 2.5 is a proton account, not a free-energy division: 10 H+ are pumped per NADH, and making one ATP and exporting it costs about 4 H+ — roughly 3 to drive the c-ring rotor (the human c8 ring gives 8 H+ per full turn for 3 ATP, i.e. 2.67 H+/ATP) plus about 1 paid to the phosphate carrier and the electrogenic ATP/ADP translocase that imports Pi and swaps ATP out. 10 divided by 4 is 2.5; for FADH2, 6 divided by 4 is 1.5. Memorise this chain, not the division."
+   },
+   {
+    "tag": "易混淆",
+    "zh": "220 kJ/mol 是 NADH + H+ + 1/2 O2 → NAD+ + H2O **整条链**的 ΔG°′（对应 ΔE°′ ≈ 1.14 V，从 NAD+/NADH 的 −0.32 V 到 O2/H2O 的 +0.82 V），不是「NADH 泵质子这一步」的能量。若按能量硬除，220 ÷ 30.5 ≈ 7，那只是热力学上限；实际只拿到 2.5，说明这台机器的效率约三分之一到一半（细胞内合成 1 个 ATP 的实际 ΔG 约 50 kJ/mol，效率比按 30.5 算的高）。P/O 比是质子计量的结果，不是能量除出来的。",
+    "en": "220 kJ/mol is the standard free-energy change for the whole chain, NADH + H+ + 1/2 O2 to NAD+ + H2O, corresponding to a span of about 1.14 V from the NAD+/NADH couple at -0.32 V to O2/H2O at +0.82 V. It is not the energy of one pumping step. Dividing energetically, 220 over 30.5 gives about 7, which is only a thermodynamic ceiling; the cell actually collects 2.5, so efficiency is roughly a third to a half (in vivo ATP synthesis costs nearer 50 kJ/mol, which raises the figure above the naive estimate). The P/O ratio falls out of proton counting, not of energy division."
+   },
+   {
+    "tag": "课上未展开",
+    "zh": "这两个数的正式名字是 P/O 比：NADH 的 P/O = 2.5，FADH2 = 1.5。老教科书写作 3 和 2，是因为当年默认整数化学计量。改成非整数恰恰是因为 c 环亚基数（不同物种 8~15 个）与 F1 的 3 个催化位点不成整数倍，再加上转运要付质子——非整数不是测量误差，而是机器结构的直接反映。",
+    "en": "The formal name for these numbers is the P/O ratio: 2.5 for NADH, 1.5 for FADH2. Older textbooks give 3 and 2 because integer stoichiometry was assumed. The switch to non-integers happened precisely because the c-ring subunit count (8 to 15 depending on species) is not an integer multiple of the three catalytic sites in F1, and because transport itself costs protons. The fractional value reflects the architecture of the machine, not sloppy measurement."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "1 分子 NADH 给出 2.5 个 ATP，最站得住的算法是哪一个？",
+    "q_en": "Which calculation actually justifies 2.5 ATP per NADH?",
+    "options": [
+     {
+      "zh": "220 kJ ÷ 每转 91.6 kJ，每转放 1 个 ATP",
+      "en": "220 kJ / 91.6 kJ per turn, one ATP a turn"
+     },
+     {
+      "zh": "泵出 10 个 H+ ÷ 每个 ATP 约 4 个 H+",
+      "en": "10 H+ pumped / about 4 H+ per ATP made"
+     },
+     {
+      "zh": "220 kJ ÷ 每个 ATP 30.5 kJ 后向下取整",
+      "en": "220 kJ / 30.5 kJ per ATP, rounded down"
+     },
+     {
+      "zh": "泵出 12 个 H+ ÷ 每个 ATP 约 5 个 H+",
+      "en": "12 H+ pumped / about 5 H+ per ATP made"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "P/O 比是质子账：每 NADH 泵 10 H+，每个 ATP 连转运约耗 4 H+，10/4 = 2.5。用 220 除以每转 91.6 kJ 的那一项就是课上的错误推导，因为一整圈放的是 3 个 ATP 而不是 1 个。用 220 除以 30.5 得到的约 7 只是热力学上限，不是实际产率。泵 12 个 H+、每个 ATP 5 个 H+ 的组合两个数都不是线粒体的实测值。",
+    "explain_en": "The P/O ratio is a proton account: 10 H+ pumped per NADH, about 4 H+ spent per ATP including transport, so 10 over 4 is 2.5. Dividing 220 kJ by 91.6 kJ per turn is the flawed derivation from the lecture, since a full turn yields three ATP rather than one. Dividing 220 by 30.5 gives about 7, a thermodynamic ceiling rather than an actual yield. The version with 12 H+ pumped and 5 H+ per ATP uses two numbers that match no measurement in mitochondria."
+   },
+   {
+    "q_zh": "91.6 kJ 这个数字在 ATP 合酶上对应的到底是什么？",
+    "q_en": "What does the figure of 91.6 kJ actually correspond to on ATP synthase?",
+    "options": [
+     {
+      "zh": "F1 每转一整圈的成本，一圈放 1 个 ATP",
+      "en": "Cost of one full turn, which yields 1 ATP"
+     },
+     {
+      "zh": "F1 每转 120° 的成本，一步放 3 个 ATP",
+      "en": "Cost of one 120 deg step, yielding 3 ATP"
+     },
+     {
+      "zh": "F1 每转一整圈的成本，一圈放 6 个 ATP",
+      "en": "Cost of one full turn, which yields 6 ATP"
+     },
+     {
+      "zh": "F1 每转一整圈的成本，一圈放 3 个 ATP",
+      "en": "Cost of one full turn, which yields 3 ATP"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "91.6 ≈ 3 × 30.5，正是一整圈 360° 生成 3 个 ATP 的成本；F1 的三个 β 亚基各走一遍构象循环，各放 1 个 ATP。说一整圈只放 1 个的那一项就是课上的口误，它与「每个 ATP 约 30 kJ」自相矛盾。说 120° 一步就放 3 个的那一项把一步和一圈颠倒了。一圈 6 个则需要六个催化位点，F1 只有三个。",
+    "explain_en": "91.6 is about 3 x 30.5, the cost of one complete 360-degree rotation producing three ATP; each of the three beta subunits of F1 runs one conformational cycle and releases one ATP. The option giving one ATP per full turn is the lecture's slip and contradicts his own 30 kJ per ATP. The option assigning three ATP to a single 120-degree step swaps step for turn. Six ATP per turn would require six catalytic sites, and F1 has three."
+   },
+   {
+    "q_zh": "FADH2 只给 1.5 个 ATP，这笔账是怎么算出来的？",
+    "q_en": "How is the 1.5 ATP yield of FADH2 arrived at?",
+    "options": [
+     {
+      "zh": "泵出 8 个 H+，除以每个 ATP 4 个 H+",
+      "en": "8 H+ pumped, divided by 4 H+ per ATP"
+     },
+     {
+      "zh": "泵出 6 个 H+，除以每个 ATP 2 个 H+",
+      "en": "6 H+ pumped, divided by 2 H+ per ATP"
+     },
+     {
+      "zh": "泵出 6 个 H+，除以每个 ATP 4 个 H+",
+      "en": "6 H+ pumped, divided by 4 H+ per ATP"
+     },
+     {
+      "zh": "泵出 10 个 H+，除以每个 ATP 4 个 H+",
+      "en": "10 H+ pumped, divided by 4 H+ per ATP"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "FADH2 从复合体II 进入，跳过复合体I，只剩 III 的 4 个加 IV 的 2 个共 6 H+，6/4 = 1.5。泵 10 个的那一项是 NADH 的数，会算出 2.5。泵 8 个的组合假定复合体II 自己也泵 2 个，但琥珀酸脱氢酶不泵质子。每个 ATP 只算 2 个 H+ 的那一项漏掉了 c 环转子和磷酸／ATP 转运的质子成本。",
+    "explain_en": "FADH2 enters at Complex II and skips Complex I, leaving 4 H+ from III plus 2 from IV, so 6 over 4 is 1.5. The version with 10 H+ is the NADH figure and would give 2.5. The version with 8 H+ assumes Complex II pumps 2 of its own, but succinate dehydrogenase pumps nothing. Charging only 2 H+ per ATP ignores both the c-ring rotor and the protons paid for phosphate and ATP transport."
+   }
+  ]
+ },
+ {
+  "start": 265,
+  "end": 393,
+  "title_zh": "电子传递链的抑制剂：鱼藤酮与氰化物",
+  "title_en": "Inhibitors of the chain: rotenone and cyanide",
+  "points": [
+   {
+    "zh": "他说电子传递链存在很多天然的抑制性产物，这是本章最后一小块内容。",
+    "en": "He introduces the last small block of the chapter: the chain has many naturally occurring inhibitors."
+   },
+   {
+    "zh": "最经典的是鱼藤酮 rotenone，古时候人们用它来毒河里的鱼。",
+    "en": "The classic example is rotenone, used in antiquity to poison fish in rivers."
+   },
+   {
+    "zh": "他说鱼藤酮「好像是一种柳树里边的提取物」。",
+    "en": "He says rotenone is \"apparently an extract from some kind of willow\"."
+   },
+   {
+    "zh": "鱼藤酮是复合体I 的抑制剂——这是他要求记住的第一个。",
+    "en": "Rotenone is an inhibitor of Complex I, the first name he asks students to remember."
+   },
+   {
+    "zh": "他明确说抑制剂的名字大多不需要记，复合体III 的抑制剂尤其不重要。",
+    "en": "He states that most inhibitor names need not be memorised, and that the Complex III inhibitor in particular is unimportant."
+   },
+   {
+    "zh": "复合体IV 的抑制剂必须记：氰化物，是一种很强的复合体IV 抑制剂。",
+    "en": "The Complex IV inhibitor must be remembered: cyanide, a very strong inhibitor of Complex IV."
+   },
+   {
+    "zh": "他说氰化物毒性机制之一，是与血红蛋白铁卟啉里的铁发生非常强力的配位，从而阻止氧气运输。",
+    "en": "He gives as one mechanism that cyanide coordinates very strongly to the iron of the heme in haemoglobin, blocking oxygen transport."
+   },
+   {
+    "zh": "机制之二是与细胞色素氧化酶（复合体IV）结合，导致电子传递被中断。",
+    "en": "The second mechanism is binding to cytochrome oxidase, Complex IV, which interrupts electron transfer."
+   },
+   {
+    "zh": "他总结：氰化物从多个角度整体抑制机体对氧气和能量的利用，因此毒性极大。",
+    "en": "He concludes that cyanide blocks the use of oxygen and energy from several angles at once, which is why it is so extremely toxic."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上口误",
+    "zh": "鱼藤酮不来自柳树。它是**豆科**藤本植物鱼藤属 *Derris*、*Lonchocarpus* 的**根**中提取的类黄酮类化合物，「鱼藤精毒鱼」这个用途他说对了。柳树皮里著名的是水杨苷 salicin（→ 水杨酸 → 阿司匹林），两者别串。作用位点是复合体I 的**泛醌结合位点**，与 piericidin A、异戊巴比妥 amytal 同一处。",
+    "en": "Rotenone does not come from willow. It is a flavonoid extracted from the roots of leguminous vines of the genera Derris and Lonchocarpus; his point about its use as a fish poison is right. Willow bark is famous for salicin, which leads to salicylic acid and aspirin — do not conflate them. Its site of action is the ubiquinone-binding site of Complex I, shared with piericidin A and amytal."
+   },
+   {
+    "tag": "课上口误",
+    "zh": "氰化物那一半讲成了 CO 的机制。CN⁻ 对**亚铁**血红蛋白 (Fe²⁺) 亲和力很低，血红蛋白不是它的主要靶点；「结合血红素铁、与 O2 竞争、阻断氧运输」是 **CO** 的经典机制。CN⁻ 高亲和结合的是 **Fe³⁺**：复合体IV 的 heme a3，以及高铁血红蛋白。他讲的复合体IV 那一条是主要且正确的机制。",
+    "en": "The haemoglobin half describes carbon monoxide, not cyanide. CN- binds ferrous haemoglobin (Fe2+) only weakly and haemoglobin is not its main target; competing with O2 at the heme iron to block oxygen transport is the classic CO mechanism. CN- binds ferric iron (Fe3+) with high affinity: heme a3 of Complex IV, and methaemoglobin. His Complex IV statement is the main and correct mechanism."
+   },
+   {
+    "tag": "课上未展开",
+    "zh": "亚硝酸钠解毒法正是建立在「CN⁻ 爱 Fe³⁺」上：人为把一部分血红蛋白氧化成**高铁血红蛋白**（Fe³⁺），用它把 CN⁻ 从复合体IV 上「抢」下来，再用硫代硫酸钠经硫氰酸酶转成毒性低得多的硫氰酸盐排出；羟钴胺 hydroxocobalamin 则直接络合 CN⁻ 成氰钴胺。能想通这条解毒链，就不会再把 CN⁻ 的靶点记成血红蛋白。",
+    "en": "The sodium nitrite antidote is built on cyanide's preference for ferric iron: part of the haemoglobin pool is deliberately oxidised to methaemoglobin (Fe3+), which pulls CN- off Complex IV; sodium thiosulfate then lets rhodanese convert it to far less toxic thiocyanate for excretion, while hydroxocobalamin simply chelates CN- to cyanocobalamin. Reconstructing this antidote chain makes it impossible to misremember haemoglobin as cyanide's target."
+   },
+   {
+    "tag": "易混淆",
+    "zh": "临床图像也能帮着分辨靶点：氰化物中毒时组织**用不了**氧，动静脉氧差缩小、静脉血鲜红、乳酸急剧升高，血氧饱和度却可以正常——这是「组织中毒性缺氧」；CO 中毒则是**运不了**氧（贫血性缺氧）。抑制剂在链上的位置还有一个经典用途：交叉点法 (crossover point)——加抑制剂后其上游组分变还原态、下游变氧化态，据此定位阻断点。",
+    "en": "The clinical picture separates the targets too. In cyanide poisoning the tissue cannot use oxygen: the arteriovenous oxygen difference narrows, venous blood stays bright red, lactate climbs steeply, yet oxygen saturation can look normal — histotoxic hypoxia. CO poisoning instead prevents oxygen delivery (anaemic hypoxia). Inhibitor positions also have a classic use, the crossover point method: after adding an inhibitor, carriers upstream become reduced and those downstream oxidised, which localises the block."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "鱼藤酮 rotenone 的来源和作用靶点分别是什么？",
+    "q_en": "What is the source of rotenone, and what does it inhibit?",
+    "options": [
+     {
+      "zh": "柳树树皮的提取物，抑制复合体I",
+      "en": "Willow bark extract; inhibits Complex I"
+     },
+     {
+      "zh": "柳树树皮的提取物，抑制复合体IV",
+      "en": "Willow bark extract; inhibits Complex IV"
+     },
+     {
+      "zh": "豆科鱼藤属的根，抑制复合体I",
+      "en": "Roots of Derris vines; inhibits Complex I"
+     },
+     {
+      "zh": "豆科鱼藤属的根，抑制复合体III",
+      "en": "Roots of Derris vines; inhibits Complex III"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "鱼藤酮来自豆科鱼藤属 *Derris* 等藤本植物的根，结合复合体I 的泛醌位点。两个写柳树的选项都错：柳树皮的著名成分是水杨苷，与鱼藤酮无关。写成抑制复合体III 的那一项也错，复合体III 的经典抑制剂是抗霉素 A，作用在 Qi 位点。",
+    "explain_en": "Rotenone comes from the roots of leguminous vines such as Derris and binds the ubiquinone site of Complex I. Both willow options are wrong: willow bark is known for salicin, which has nothing to do with rotenone. Assigning it to Complex III is also wrong, since the classic Complex III inhibitor is antimycin A acting at the Qi site."
+   },
+   {
+    "q_zh": "关于氰化物结合铁的方式，下面哪一句是对的？",
+    "q_en": "Which statement about how cyanide binds iron is correct?",
+    "options": [
+     {
+      "zh": "CN⁻ 与 O2 竞争二价铁血红蛋白的位点",
+      "en": "CN- competes with O2 at ferrous haemoglobin"
+     },
+     {
+      "zh": "CN⁻ 高亲和结合三价铁，主要靶点是复合体IV",
+      "en": "CN- binds ferric iron; its target is Complex IV"
+     },
+     {
+      "zh": "CO 高亲和结合三价铁，靶点是复合体IV",
+      "en": "CO binds ferric iron; its target is Complex IV"
+     },
+     {
+      "zh": "CN⁻ 优先结合细胞色素 c 的血红素铁",
+      "en": "CN- targets the heme c iron of cytochrome c"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "CN⁻ 高亲和结合三价铁 Fe³⁺，主要靶点是复合体IV 的 heme a3，其次是高铁血红蛋白。与 O2 竞争亚铁血红蛋白的是 CO，不是 CN⁻，这正是课上讲串的一条。说 CO 结合三价铁的那一项把两者的价态对调了。细胞色素 c 的血红素铁被共价六配位封闭，不是氰化物的高亲和位点。",
+    "explain_en": "CN- binds ferric iron with high affinity, chiefly heme a3 of Complex IV and secondarily methaemoglobin. It is CO, not cyanide, that competes with O2 at ferrous haemoglobin — precisely the mix-up made in the lecture. The option putting CO on ferric iron swaps the oxidation states. The heme iron of cytochrome c is six-coordinate and closed off, so it is not a high-affinity cyanide site."
+   },
+   {
+    "q_zh": "亚硝酸钠用于氰化物中毒解毒，原理是什么？",
+    "q_en": "On what principle does sodium nitrite work as a cyanide antidote?",
+    "options": [
+     {
+      "zh": "把高铁血红蛋白还原，让它去结合 CN⁻",
+      "en": "It reduces methaemoglobin so that it binds CN-"
+     },
+     {
+      "zh": "与 CN⁻ 直接反应生成硫氰酸盐排出",
+      "en": "It reacts with CN- to form thiocyanate salts"
+     },
+     {
+      "zh": "占住复合体IV 上的 heme a3 位点",
+      "en": "It competes for the heme a3 site of Complex IV"
+     },
+     {
+      "zh": "造出高铁血红蛋白，把 CN⁻ 抢下来",
+      "en": "It makes methaemoglobin, which pulls CN- off"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "亚硝酸钠把部分血红蛋白氧化成 Fe³⁺ 的高铁血红蛋白，利用 CN⁻ 对三价铁的高亲和把它从复合体IV 上竞争下来。方向写反成「还原高铁血红蛋白」的那一项失去了 Fe³⁺，也就失去了抢夺能力。生成硫氰酸盐是硫代硫酸钠经硫氰酸酶完成的第二步，不是亚硝酸钠。直接占据 heme a3 位点等于自己也当抑制剂，并非该药机制。",
+    "explain_en": "Sodium nitrite oxidises part of the haemoglobin pool to ferric methaemoglobin and exploits cyanide's high affinity for Fe3+ to compete it off Complex IV. The option that reduces methaemoglobin loses the ferric iron and with it the ability to compete. Conversion to thiocyanate is the second step, performed by thiosulfate via rhodanese, not by nitrite. Occupying heme a3 directly would make the drug an inhibitor itself, which is not its mechanism."
+   }
+  ]
+ },
+ {
+  "start": 393,
+  "end": 585,
+  "title_zh": "线粒体的定位、内外膜性质，以及质子为什么走 ATP 合酶",
+  "title_en": "Mitochondrial positioning, inner versus outer membrane, and why protons take the synthase",
+  "points": [
+   {
+    "zh": "他说线粒体常常停在消耗 ATP、氧化活动比较频繁的结构附近。",
+    "en": "He says mitochondria tend to sit near structures that consume ATP and where oxidative activity is frequent."
+   },
+   {
+    "zh": "他顺带提到三羧酸循环过程里也会产生一个 GTP。",
+    "en": "He notes in passing that the TCA cycle also produces one GTP."
+   },
+   {
+    "zh": "他说线粒体另一方面会停在细胞膜附近，因为细胞膜上有很多 GPCR。",
+    "en": "He adds that mitochondria also sit near the plasma membrane because it carries many GPCRs."
+   },
+   {
+    "zh": "他说 GPCR 可以天然地利用线粒体直接生成的 GTP 来进行信号传递。",
+    "en": "He claims GPCRs naturally use the GTP made directly by mitochondria for their signalling."
+   },
+   {
+    "zh": "他强调内膜和外膜差别很大：外膜约 50% 蛋白、50% 磷脂，允许质子和小分子随便通过。",
+    "en": "He stresses that the two membranes differ greatly: the outer membrane is about 50% protein and 50% phospholipid and lets protons and small molecules pass freely."
+   },
+   {
+    "zh": "内膜只有 20% 是磷脂、80% 是蛋白，质子通过性极低极低。",
+    "en": "The inner membrane is only 20% lipid and 80% protein, with extremely low proton permeability."
+   },
+   {
+    "zh": "正因为内膜几乎不透质子，才能形成跨膜质子梯度，ATP 合酶才能靠它合成 ATP。",
+    "en": "Precisely because the inner membrane barely passes protons, a transmembrane proton gradient can form and ATP synthase can use it to make ATP."
+   },
+   {
+    "zh": "学生提问：ATP 合酶那条路的势能应该比质子自由跑掉更有利，否则质子早就直接漏走了。",
+    "en": "The student asks: the ATP synthase route must be energetically more favourable than letting protons escape freely, otherwise they would simply leak away."
+   },
+   {
+    "zh": "他回答：质子从基质泵进膜间隙后，ATP 合酶像一个天然的口袋、有自己的质子通道；而「穿外膜」需要更高能量，自由扩散又是随机的，所以质子更倾向走 ATP 合酶这条更经济的路。",
+    "en": "He answers that once protons are pumped from the matrix into the intermembrane space, ATP synthase acts as a natural pocket with its own proton channel, whereas crossing the outer membrane would take more energy and free diffusion is random, so protons prefer the more economical synthase route."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上口误",
+    "zh": "「质子要穿**外膜**需要更高能量」讲反了，而且与他自己两分钟前的话冲突：外膜含 porin/VDAC，约 5 kDa 以下的分子和离子自由进出，膜间隙的离子成分基本等于胞质；真正对质子几乎不通透的是**内膜**（心磷脂含量高、蛋白密度大）。质子想绕过 ATP 合酶回基质，难在内膜，不在外膜。凡是他这一段说「从外膜流走」的地方，都应读作「跨内膜漏回基质」。",
+    "en": "\"Crossing the outer membrane costs protons more energy\" is backwards and contradicts what he said two minutes earlier: the outer membrane carries porin/VDAC, passes molecules and ions below about 5 kDa freely, and leaves the intermembrane space ionically similar to cytosol. It is the inner membrane, rich in cardiolipin and densely packed with protein, that is nearly proton-impermeable. Bypassing ATP synthase is hard at the inner membrane, not the outer one. Read every \"leaks away through the outer membrane\" in this stretch as \"leaks back across the inner membrane\"."
+   },
+   {
+    "tag": "课上未展开",
+    "zh": "学生问的其实是个好问题，但答案是**动力学而不是热力学**：所有回到基质的路都是顺着 Δp 下坡的，能量上都「划算」，区别在于阻力。纯脂双层对 H+ 的通透性极低，漏回去的通量很小；ATP 合酶提供了唯一一条低阻通道，所以绝大部分质子走那里。质子漏并非不存在——静息状态下约 20–25% 的耗氧就用于抵消基础质子漏，棕色脂肪的 UCP1 则是把这条漏路开成了受调控的通道。",
+    "en": "The student's question is a good one, but the answer is kinetic rather than thermodynamic: every route back to the matrix runs downhill along the proton-motive force, so all are energetically favourable; what differs is resistance. A pure lipid bilayer passes H+ so poorly that the leak flux is tiny, while ATP synthase offers the only low-resistance channel, so nearly all protons take it. Leak is not zero — roughly 20 to 25 percent of resting oxygen consumption offsets basal proton leak, and UCP1 in brown fat turns that leak into a regulated channel."
+   },
+   {
+    "tag": "课上口误",
+    "zh": "「GPCR 利用线粒体生成的 GTP」这条联系不存在。TCA 循环中琥珀酰-CoA 合成酶产生的 GTP 在**线粒体基质**内，主要就地由核苷二磷酸激酶 NDPK 转成 ATP，不会输出去喂质膜上的 G 蛋白；GPCR/Gα 用的是**胞质**的 GTP 池。线粒体确实会定位到高耗能位点（突触前末梢、精子中段、肌原纤维之间），但理由是**局部 ATP 需求**——这一半他说对了，错的只是后半句的因果。",
+    "en": "The link \"GPCRs use mitochondrially made GTP\" does not exist. The GTP made by succinyl-CoA synthetase in the TCA cycle stays in the matrix and is mostly converted to ATP on the spot by nucleoside diphosphate kinase; it is not exported to feed plasma-membrane G proteins, which draw on the cytosolic GTP pool. Mitochondria do position themselves at high-demand sites such as presynaptic terminals, the sperm midpiece and between myofibrils, but the reason is local ATP demand. That half of his statement is right; only the causal claim that follows is wrong."
+   },
+   {
+    "tag": "定量补充",
+    "zh": "把「跨膜梯度」量化：线粒体的质子动力势 Δp ≈ 180–200 mV，其中膜电位 Δψ 占大头（约 150–180 mV，基质侧为负），ΔpH 只有约 0.5–1 个单位（折合 30–60 mV）。所以 ATP 合酶主要是被**电位**驱动的。内膜 80% 是蛋白、并折叠成嵴 cristae，正是为了把这套机器的面密度堆到最大——这个数字不是死记的，而是功能的直接后果。",
+    "en": "Quantify the gradient: the mitochondrial proton-motive force is about 180 to 200 mV, dominated by the membrane potential (roughly 150 to 180 mV, matrix side negative), with ΔpH contributing only about 0.5 to 1 unit, equivalent to 30 to 60 mV. ATP synthase is therefore driven mainly by voltage. The 80 percent protein content of the inner membrane, folded into cristae, exists to maximise the surface density of this machinery — the number is a consequence of function rather than a fact to memorise."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "线粒体两层膜里，真正的质子渗透屏障在哪一层？",
+    "q_en": "Which of the two mitochondrial membranes is the real permeability barrier to protons?",
+    "options": [
+     {
+      "zh": "两层膜都不透质子，梯度建在膜间隙里",
+      "en": "Neither; the gradient sits across the IMS"
+     },
+     {
+      "zh": "内膜可自由透质子，梯度建在外膜两侧",
+      "en": "The inner leaks H+; gradient is on the outer"
+     },
+     {
+      "zh": "内膜；外膜有 porin，质子可自由通过",
+      "en": "The inner one; porins let H+ cross the outer"
+     },
+     {
+      "zh": "外膜；内膜靠 porin 让质子自由通过",
+      "en": "The outer one; porins let H+ cross the inner"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "porin/VDAC 在外膜上，让 5 kDa 以下的分子和离子自由通过，所以膜间隙成分接近胞质；屏障是内膜，梯度也建在内膜两侧。把 porin 安在内膜、或说内膜可自由透质子的两项都与「有梯度才能合成 ATP」直接矛盾。说梯度建在膜间隙的那一项混淆了隔室与膜：梯度是跨一层膜的浓度差，不是某个腔的属性。",
+    "explain_en": "Porin/VDAC sits in the outer membrane and passes molecules and ions below about 5 kDa, which is why the intermembrane space resembles cytosol; the barrier, and the gradient, belong to the inner membrane. Putting porins in the inner membrane, or letting the inner membrane leak protons, directly contradicts the existence of a gradient to drive ATP synthesis. Saying the gradient sits across the intermembrane space confuses a compartment with a membrane: a gradient spans a membrane, it is not a property of a space."
+   },
+   {
+    "q_zh": "三羧酸循环产生的 GTP 与质膜上的 GPCR 是什么关系？",
+    "q_en": "What is the relationship between TCA-cycle GTP and GPCRs at the plasma membrane?",
+    "options": [
+     {
+      "zh": "在膜间隙转成 cAMP，去激活 GPCR",
+      "en": "It becomes cAMP in the IMS and activates GPCRs"
+     },
+     {
+      "zh": "没有直接关系，基质里就转成了 ATP",
+      "en": "No direct link; it becomes ATP in the matrix"
+     },
+     {
+      "zh": "由复合体V 在膜间隙合成后供 GPCR",
+      "en": "Complex V makes it in the IMS for GPCRs to use"
+     },
+     {
+      "zh": "经载体输出到胞质，直接供 Gα 使用",
+      "en": "It is exported to the cytosol and used by Galpha"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "琥珀酰-CoA 合成酶产生的 GTP 留在基质，由核苷二磷酸激酶就地转成 ATP；GPCR 与 Gα 用的是胞质 GTP 池，两者没有直接供给关系。说它输出去喂 Gα 的那一项正是课上的错误联系。cAMP 由腺苷酸环化酶以 ATP 为底物在质膜内侧生成，不在膜间隙、也不以 GTP 为原料。复合体V 合成的是 ATP，且催化头朝向基质。",
+    "explain_en": "The GTP made by succinyl-CoA synthetase stays in the matrix and is converted to ATP on the spot by nucleoside diphosphate kinase, while GPCRs and Galpha draw on the cytosolic GTP pool; there is no supply relationship. The option exporting it to Galpha is exactly the false link made in the lecture. cAMP is made by adenylyl cyclase from ATP on the inner face of the plasma membrane, not in the intermembrane space and not from GTP. Complex V makes ATP, and its catalytic head faces the matrix."
+   },
+   {
+    "q_zh": "质子为什么更多地经 ATP 合酶回到基质，而不是直接漏回去？",
+    "q_en": "Why do protons return to the matrix mainly through ATP synthase rather than leaking back?",
+    "options": [
+     {
+      "zh": "脂双层几乎不漏质子，而合酶通道阻力最小",
+      "en": "The bilayer barely leaks H+; the synthase is open"
+     },
+     {
+      "zh": "穿过外膜需要更高能量，合酶更省能量",
+      "en": "Crossing the outer membrane costs more energy"
+     },
+     {
+      "zh": "合酶主动把质子逆着梯度吸进通道里",
+      "en": "The synthase drags H+ in against the gradient"
+     },
+     {
+      "zh": "合酶通道里的质子电势比脂双层更低",
+      "en": "The potential inside the synthase channel is lower"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "所有回基质的路都是顺 Δp 下坡的，差别在阻力：脂双层对 H+ 通透极低，而 ATP 合酶的 FO 提供唯一一条低阻通道，这是动力学问题不是热力学问题。说合酶通道电势更低的那一项把驱动力搞成了通道属性。外膜有 porin、根本不构成屏障，那是课上的口误。质子经 FO 是顺梯度流动，不是被主动逆梯度吸入。",
+    "explain_en": "Every route back to the matrix runs downhill along the proton-motive force; what differs is resistance. The lipid bilayer passes H+ extremely poorly while FO of ATP synthase provides the only low-resistance path, making this a kinetic rather than a thermodynamic question. Saying the channel sits at a lower potential turns the driving force into a property of the channel. The outer membrane has porins and is no barrier at all, which was the lecture's slip. Protons move down the gradient through FO; nothing drags them in against it."
+   }
+  ]
+ },
+ {
+  "start": 585,
+  "end": 715,
+  "title_zh": "解偶联剂 DNP／FCCP 与氧化磷酸化抑制剂寡霉素",
+  "title_en": "Uncouplers DNP and FCCP versus the oxidative-phosphorylation inhibitor oligomycin",
+  "points": [
+   {
+    "zh": "他把解偶联作为本章最后一点内容提出来：有两个代表试剂，DNP（2,4-二硝基苯酚）和 FCCP，机制基本一样。",
+    "en": "He raises uncoupling as the last item of the chapter: two representative reagents, DNP (2,4-dinitrophenol) and FCCP, working in essentially the same way."
+   },
+   {
+    "zh": "这类试剂能和线粒体内膜外侧的氢离子结合，把氢离子直接带回去。",
+    "en": "These reagents bind protons on the outer face of the inner membrane and carry them straight back."
+   },
+   {
+    "zh": "他先说「带到细胞质里边」，随即当场自我纠正为「带到线粒体的基质里面去」。",
+    "en": "He first says \"into the cytoplasm\" and then corrects himself on the spot to \"into the mitochondrial matrix\"."
+   },
+   {
+    "zh": "结果是绕过了 ATP 合酶：合酶获得不了质子的电势，因为电势已经被这个东西带走了，于是失去作用。",
+    "en": "The result is that ATP synthase is bypassed: it can no longer obtain the proton potential, which has been carried away, so it stops working."
+   },
+   {
+    "zh": "他强调关键特点——解偶联剂只抑制 ATP 合成，并不抑制电子传递，电子照传、质子照往膜间隙泵。",
+    "en": "He stresses the key feature: an uncoupler blocks ATP synthesis but not electron transfer; electrons keep flowing and protons keep being pumped into the intermembrane space."
+   },
+   {
+    "zh": "他提醒解偶联剂对机体毒性也很大。",
+    "en": "He warns that uncouplers are highly toxic to the body."
+   },
+   {
+    "zh": "另一类叫氧化磷酸化抑制剂，最典型的代表是寡霉素 oligomycin。",
+    "en": "The other class he names is oxidative-phosphorylation inhibitors, typified by oligomycin."
+   },
+   {
+    "zh": "寡霉素直接抑制 FO，把质子进入内膜的通道堵住，导致内膜外侧氢离子大量积累、正电荷很高。",
+    "en": "Oligomycin blocks FO directly, plugging the channel through which protons re-enter, so protons pile up on the outer face of the inner membrane and the positive charge there rises steeply."
+   },
+   {
+    "zh": "他说这种积累间接抑制了「复合体I、II、III」向外传递质子／电子的过程，并把寡霉素也称作「另外一种解偶联的方法」。",
+    "en": "He says this accumulation indirectly inhibits \"Complexes I, II and III\" in their outward transfer of protons and electrons, and calls oligomycin \"another way of uncoupling\"."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上口误",
+    "zh": "寡霉素**不是解偶联剂，方向正好相反**。解偶联剂 (DNP/FCCP) 把电子传递与磷酸化拆开：呼吸照跑甚至加快，ATP 停；寡霉素恰恰因为两者仍**偶联**着，堵住 ATP 合酶后质子梯度升高，电子传递被反压也一起停下来。经典实验就是靠这一点区分：先加寡霉素，耗氧下降；再加 DNP，耗氧立刻恢复。他自己给这一类起的名字「氧化磷酸化抑制剂」是对的，错的只是最后并进了「解偶联」。",
+    "en": "Oligomycin is not an uncoupler; it is the opposite. Uncouplers such as DNP and FCCP separate electron transfer from phosphorylation: respiration continues or even speeds up while ATP synthesis stops. Oligomycin works because the two remain coupled: plugging the synthase raises the gradient, back-pressure stalls electron transfer, and respiration falls with it. The classic experiment turns on this difference — add oligomycin and oxygen uptake drops, then add DNP and it immediately resumes. The name he gives the class, oxidative-phosphorylation inhibitor, is correct; only folding it into \"uncoupling\" is wrong."
+   },
+   {
+    "tag": "课上口误",
+    "zh": "质子回压反压的是**复合体I、III、IV**，不是「I、II、III」。复合体II（琥珀酸脱氢酶）不泵质子，只把电子交给 Q，梯度升高对它没有这一层直接作用；而被漏掉的复合体IV 恰恰是泵质子的（2 H+/2e⁻）。这与他本讲开头 4/4/2 的名单自相矛盾，以开头那一遍为准。这种现象的正式名字是**呼吸控制 respiratory control**。",
+    "en": "The back-pressure acts on Complexes I, III and IV, not \"I, II and III\". Complex II (succinate dehydrogenase) pumps no protons and merely feeds electrons to Q, so a rising gradient has no such direct effect on it, while Complex IV, which is omitted, does pump (2 H+ per 2 electrons). This contradicts his own 4/4/2 roster from the start of the lecture; take the earlier version. The phenomenon has a formal name: respiratory control."
+   },
+   {
+    "tag": "课上未展开",
+    "zh": "解偶联剂为什么能穿膜，值得记一次：DNP、FCCP 都是**脂溶性弱酸**，质子化型 (AH) 中性、可穿脂双层；在基质侧释放 H+ 后变成阴离子 (A⁻)，但负电荷高度**离域**在硝基／氰基共轭体系上，仍能穿回去。于是它像个渡船在内膜两侧来回，把质子回路短路，Δp 全部变成热。1930 年代 DNP 曾作减肥药上市，因致死性高热被禁；生理版本是棕色脂肪的 UCP1——同一件事，受调控地做。",
+    "en": "It is worth learning once why uncouplers can cross the membrane. DNP and FCCP are lipophilic weak acids: the protonated form (AH) is neutral and crosses the bilayer, and after releasing H+ on the matrix side the resulting anion still crosses because its negative charge is heavily delocalised over the nitro or cyano conjugated system. It therefore shuttles back and forth like a ferry, shorting the proton circuit and turning the whole proton-motive force into heat. DNP was sold as a diet drug in the 1930s and banned after fatal hyperthermia; the physiological version is UCP1 in brown fat, the same trick under regulation."
+   },
+   {
+    "tag": "定量补充",
+    "zh": "三类药的指纹（考试和 Seahorse 实验都按这个顺序）：① 电子传递抑制剂（鱼藤酮、抗霉素 A、氰化物）——耗氧停、Δp 塌、ATP 停；② ATP 合酶抑制剂（寡霉素）——耗氧**下降**、Δp **升高**、ATP 停；③ 解偶联剂（FCCP/DNP）——耗氧**最大**、Δp 塌、ATP 停。三者都不产 ATP，靠「耗氧」和「梯度」两个指标就能两两分开。",
+    "en": "Fingerprints of the three drug classes, in the order used both in exams and in Seahorse assays: electron-transport inhibitors (rotenone, antimycin A, cyanide) stop oxygen uptake, collapse the gradient and stop ATP; the ATP synthase inhibitor oligomycin lowers oxygen uptake, raises the gradient and stops ATP; uncouplers (FCCP, DNP) drive oxygen uptake to maximum, collapse the gradient and stop ATP. None makes ATP, and the two readouts of oxygen consumption and gradient separate all three."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "寡霉素 oligomycin 属于哪一类药，效果是什么？",
+    "q_en": "What class does oligomycin belong to, and what is its effect?",
+    "options": [
+     {
+      "zh": "解偶联剂，梯度塌陷、耗氧明显上升",
+      "en": "An uncoupler; gradient falls and O2 uptake rises"
+     },
+     {
+      "zh": "抑制复合体IV，梯度塌陷、耗氧下降",
+      "en": "Blocks Complex IV; gradient and O2 uptake fall"
+     },
+     {
+      "zh": "抑制腺苷酸转位酶，梯度与耗氧不变",
+      "en": "Blocks the ANT; gradient and O2 uptake unchanged"
+     },
+     {
+      "zh": "抑制 FO 通道，梯度升高、耗氧下降",
+      "en": "Blocks FO; gradient rises and O2 uptake falls"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "寡霉素堵住 FO 的质子通道，质子回不去、Δp 升高，反压使复合体I、III、IV 泵质子变难，耗氧随之下降——它是偶联型抑制剂。把它叫解偶联剂正是课上的错误：解偶联剂让 Δp 塌陷、耗氧上升，与它表现相反。抑制复合体IV 的是氰化物，不是寡霉素。抑制腺苷酸转位酶确实也会抑制呼吸，但那时 Δp 同样升高，说「不变」不成立。",
+    "explain_en": "Oligomycin plugs the FO proton channel, so protons cannot return, the proton-motive force rises, back-pressure makes pumping harder for Complexes I, III and IV, and oxygen uptake falls with it — a coupled inhibitor. Calling it an uncoupler is the lecture's error: uncouplers collapse the gradient and raise oxygen uptake, the opposite pattern. Cyanide, not oligomycin, blocks Complex IV. Blocking the adenine nucleotide translocase does inhibit respiration, but the gradient rises then too, so \"unchanged\" cannot be right."
+   },
+   {
+    "q_zh": "DNP 与 FCCP 让呼吸链空转、能量变成热，靠的是什么机制？",
+    "q_en": "By what mechanism do DNP and FCCP let the chain run while turning the energy into heat?",
+    "options": [
+     {
+      "zh": "抑制复合体I，让电子传递直接停下",
+      "en": "They block Complex I and stop electron flow"
+     },
+     {
+      "zh": "打开 ANT 孔道，让 ATP 直接水解",
+      "en": "They open the ANT pore so ATP is hydrolysed"
+     },
+     {
+      "zh": "作为脂溶性弱酸，带着质子穿回基质",
+      "en": "They are lipophilic weak acids ferrying H+ back"
+     },
+     {
+      "zh": "堵住 FO 通道，使质子回流完全受阻",
+      "en": "They plug FO so protons cannot flow back at all"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "DNP／FCCP 是脂溶性弱酸，中性的质子化型和离域负电荷的阴离子都能穿内膜，于是像渡船一样把质子直接送回基质，Δp 被短路，电子传递照跑甚至加快，能量全部变热。堵 FO 的是寡霉素，它使梯度升高而非短路。抑制复合体I 会让电子传递停下，与「呼吸链空转」正相反。ANT 运的是 ATP／ADP 交换，解偶联剂不通过它起作用。",
+    "explain_en": "DNP and FCCP are lipophilic weak acids whose neutral protonated form and delocalised anion both cross the inner membrane, so they ferry protons straight back to the matrix, shorting the proton-motive force while electron transfer continues or accelerates and all the energy appears as heat. Plugging FO is oligomycin, which raises the gradient rather than shorting it. Blocking Complex I stops electron flow, the opposite of a chain running freely. The ANT exchanges ATP for ADP and is not how uncouplers act."
+   },
+   {
+    "q_zh": "寡霉素造成的质子回压，会反压哪几个复合体？",
+    "q_en": "Which complexes feel the back-pressure created by oligomycin?",
+    "options": [
+     {
+      "zh": "复合体I、III、IV，因为三者都泵质子",
+      "en": "I, III and IV, since all three pump protons"
+     },
+     {
+      "zh": "只有复合体I 和 II，III、IV 不受影响",
+      "en": "Only I and II; III and IV are unaffected"
+     },
+     {
+      "zh": "复合体I、II、III，因为 II 也泵质子",
+      "en": "I, II and III, since II also pumps protons"
+     },
+     {
+      "zh": "复合体II、III、IV，因为 I 不泵质子",
+      "en": "II, III and IV, since I does not pump protons"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "泵质子的是复合体I、III、IV，Δp 升高会让这三者的泵送做功变难，电子传递随之减慢，这就是呼吸控制。把复合体II 算进来的两项都错：琥珀酸脱氢酶只把电子交给 Q，不跨膜泵质子，这也正是课上自相矛盾的地方。说复合体I 不泵质子的那一项与 4 H+/2e⁻ 的标准计量直接冲突。",
+    "explain_en": "The pumps are Complexes I, III and IV, and a rising proton-motive force makes their pumping work harder, slowing electron transfer with it — this is respiratory control. Both options that include Complex II are wrong: succinate dehydrogenase only passes electrons to Q and pumps nothing across the membrane, which is exactly where the lecture contradicted itself. The option denying that Complex I pumps conflicts with its standard stoichiometry of 4 H+ per 2 electrons."
+   }
+  ]
+ },
+ {
+  "start": 715,
+  "end": 807,
+  "title_zh": "离子载体、胞质 NADH 的 1.5／2.5、呼吸控制与考纲取舍",
+  "title_en": "Ionophores, 1.5 versus 2.5 ATP for cytosolic NADH, respiratory control, and what to skip",
+  "points": [
+   {
+    "zh": "他总结：解偶联剂与寡霉素这两种试剂发挥的机制不一样，稍微了解一下就 OK。",
+    "en": "He sums up that the two kinds of reagent work by different mechanisms and that a rough understanding is enough."
+   },
+   {
+    "zh": "剩下的离子载体型抑制剂他说不是很重要。",
+    "en": "He dismisses the remaining ionophore-type inhibitors as not very important."
+   },
+   {
+    "zh": "他回头点名：EMP 途径产生的 NADH 只能产生 1.5 或者 2.5 个 ATP，来源就是前面这套换算。",
+    "en": "He points back: NADH generated in the EMP pathway yields only 1.5 or 2.5 ATP, and this is where those numbers come from."
+   },
+   {
+    "zh": "最后的「氧化磷酸化的调控」他说也不太需要看。",
+    "en": "He says the final section on regulation of oxidative phosphorylation does not really need reading either."
+   },
+   {
+    "zh": "他给出调控的道理：机体能量越多，氧化磷酸化速度越慢，电子产生的速度也越慢，因为你不缺能量。",
+    "en": "He states the underlying logic: the more energy the body has, the slower oxidative phosphorylation runs and the slower electrons are produced, because energy is not scarce."
+   },
+   {
+    "zh": "氧气的还原、生物氧化酶这些内容他说完完全全是拓展，不用看。",
+    "en": "Oxygen reduction and the various biological oxidases he declares to be pure extension material, not to be read."
+   },
+   {
+    "zh": "「ADP 与磷酸键」那一段感兴趣可以稍微看一下，它也讨论了一点电子能量的传递。",
+    "en": "The passage on ADP and the phosphate bond may be skimmed out of interest, since it also touches on the transfer of electron energy."
+   },
+   {
+    "zh": "双加氧酶等后面的氧化内容都不需要看。",
+    "en": "The dioxygenases and other oxidation topics that follow need not be read."
+   },
+   {
+    "zh": "他宣布到此为止就是全部 TCA 循环与电子传递链的主要内容，并强调这一章引入了非常多新东西。",
+    "en": "He declares that this completes the main content on the TCA cycle and the electron transport chain, stressing how much new material the chapter introduces."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充",
+    "zh": "1.5 与 2.5 的差别不在呼吸链本身，而在**胞质 NADH 怎么进线粒体**：内膜不透 NADH，必须靠穿梭。**甘油-3-磷酸穿梭**（骨骼肌、脑）把电子交给内膜外侧的 FAD，从复合体II 那一层进 Q 池，只剩 6 H+ → **1.5**；**苹果酸-天冬氨酸穿梭**（肝、心、肾）在基质里重新生成 NADH，走复合体I，10 H+ → **2.5**。因此一分子葡萄糖的总产量写作 30 或 32 ATP，取决于用哪条穿梭。",
+    "en": "The difference between 1.5 and 2.5 lies not in the chain but in how cytosolic NADH gets into the mitochondrion, since the inner membrane does not pass NADH and a shuttle is required. The glycerol-3-phosphate shuttle (skeletal muscle, brain) hands electrons to an FAD on the outer face of the inner membrane and enters the Q pool at the level of Complex II, leaving 6 H+ and a yield of 1.5. The malate-aspartate shuttle (liver, heart, kidney) regenerates NADH inside the matrix so it enters at Complex I, giving 10 H+ and 2.5. This is why the total per glucose is written as 30 or 32 ATP depending on the shuttle."
+   },
+   {
+    "tag": "课上未展开",
+    "zh": "他说的「能量越多越慢」有正式名字：**呼吸控制 respiratory control**，限速物是 **ADP**。ADP 充足时（state 3）ATP 合酶放质子回流、Δp 下降、泵质子变容易、耗氧快；ADP 耗尽（state 4）时质子无处可去、Δp 升到极限、泵质子必须顶着更大的反压，电子传递随之减慢。所以静息耗氧其实是被 ATP 消耗速率设定的。这与寡霉素的效果同源——都是 Δp 升高造成的反压。",
+    "en": "His \"more energy, slower\" has a formal name: respiratory control, with ADP as the rate-limiting substrate. When ADP is plentiful (state 3), ATP synthase lets protons back in, the proton-motive force falls, pumping becomes easy and oxygen uptake is fast. When ADP runs out (state 4), protons have nowhere to go, the force rises to its limit, and pumping must work against greater back-pressure, so electron transfer slows. Resting oxygen consumption is therefore set by the rate of ATP consumption. The mechanism is the same one oligomycin exploits: back-pressure from a raised gradient."
+   },
+   {
+    "tag": "易混淆",
+    "zh": "离子载体虽然「不重要」，但正好用来检验你有没有真懂 Δp 的两个分量：**缬氨霉素 valinomycin** 是 K+ 载体，把 K+ 带进基质、消耗**膜电位 Δψ**，而 ΔpH 保留甚至升高；**尼日利亚菌素 nigericin** 做 K+/H+ 交换，消耗 **ΔpH**、保留 Δψ；只有**质子载体**（FCCP/DNP）才把两项一起打掉，所以只有它才是真正的完全解偶联剂。",
+    "en": "Ionophores may be \"unimportant\", but they are the perfect test of whether the two components of the proton-motive force are understood. Valinomycin is a K+ carrier that brings K+ into the matrix and dissipates the membrane potential while ΔpH is preserved or even rises. Nigericin exchanges K+ for H+, dissipating ΔpH while preserving the membrane potential. Only a protonophore such as FCCP or DNP destroys both, which is why only it is a fully effective uncoupler."
+   },
+   {
+    "tag": "课上未展开",
+    "zh": "他让跳过的「生物氧化酶」不是呼吸链的延伸，而是另一类化学：**氧化酶 oxidase** 把 O2 还原成水或过氧化氢；**加氧酶 oxygenase** 则把氧原子**装进底物**——单加氧酶（如 P450）装 1 个、另 1 个变水，双加氧酶装 2 个。呼吸链的复合体IV 属于前者。知道这条界线，跳过就是有意识的取舍，而不是留了个洞。",
+    "en": "The \"biological oxidases\" he tells you to skip are not an extension of the respiratory chain but a different chemistry. Oxidases reduce O2 to water or hydrogen peroxide, whereas oxygenases insert oxygen atoms into the substrate: monooxygenases such as P450 insert one and turn the other into water, dioxygenases insert both. Complex IV belongs to the first group. Knowing that boundary makes skipping a deliberate choice rather than a hole in the material."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "胞质 NADH 有时算 1.5、有时算 2.5，差别来自什么？",
+    "q_en": "Why is cytosolic NADH sometimes counted as 1.5 ATP and sometimes as 2.5?",
+    "options": [
+     {
+      "zh": "甘油磷酸穿梭交给 FAD，苹果酸穿梭交给 NAD",
+      "en": "G3P shuttle feeds FAD, malate shuttle feeds NAD"
+     },
+     {
+      "zh": "两条穿梭都交给 FAD，差别在转运耗的质子",
+      "en": "Both shuttles feed FAD; transport costs differ"
+     },
+     {
+      "zh": "差别在 ATP 合酶 c 环的亚基数目不同",
+      "en": "The c-ring subunit count differs between them"
+     },
+     {
+      "zh": "甘油磷酸穿梭给 NAD，苹果酸穿梭给 FAD",
+      "en": "G3P shuttle feeds NAD, malate shuttle feeds FAD"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "甘油-3-磷酸穿梭把电子交给 FAD，从 Q 池进入、跳过复合体I，只有 6 H+，得 1.5；苹果酸-天冬氨酸穿梭在基质重生 NADH，走复合体I，10 H+，得 2.5。把两条穿梭的受体对调的那一项正好把结果反过来。说两条都给 FAD 则无法解释为什么会出现两个不同数值。c 环亚基数是物种特征，同一细胞里的两条穿梭用的是同一台 ATP 合酶。",
+    "explain_en": "The glycerol-3-phosphate shuttle passes electrons to FAD, entering at the Q pool and skipping Complex I, so only 6 H+ are pumped and the yield is 1.5. The malate-aspartate shuttle regenerates NADH in the matrix, which enters at Complex I for 10 H+ and 2.5. The option that swaps the two acceptors simply inverts the result. Having both shuttles feed FAD would leave the two different values unexplained. The c-ring subunit count is a species property, and both shuttles in one cell use the same ATP synthase."
+   },
+   {
+    "q_zh": "细胞能量充足时，氧化磷酸化为什么会变慢？",
+    "q_en": "Why does oxidative phosphorylation slow down when the cell has plenty of energy?",
+    "options": [
+     {
+      "zh": "ATP 充足，质子漏增加使耗氧升高",
+      "en": "ATP is high; proton leak rises and O2 climbs"
+     },
+     {
+      "zh": "ADP 不足，Δp 升高使泵质子更困难",
+      "en": "ADP is scarce; Δp rises so pumping gets harder"
+     },
+     {
+      "zh": "ADP 不足，Δp 塌陷使电子传递加快",
+      "en": "ADP is scarce; Δp falls and electrons run fast"
+     },
+     {
+      "zh": "ATP 充足，Δp 塌陷使耗氧明显升高",
+      "en": "ATP is high; Δp falls and O2 uptake climbs"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "限速物是 ADP：ADP 耗尽时质子无处回流，Δp 升到极限，各泵必须顶着更大反压做功，电子传递随之减慢，这就是呼吸控制。说 Δp 塌陷还使电子传递加快的那一项自相矛盾——塌陷对应的是 ADP 充足或解偶联的状态。两个「耗氧升高」的选项描述的是解偶联剂或质子漏增大的情形，与「能量充足时变慢」正相反。",
+    "explain_en": "ADP is the rate-limiting substrate: when it runs out protons have no way back, the proton-motive force rises to its limit, every pump must work against greater back-pressure, and electron transfer slows — respiratory control. The option combining a collapsed gradient with faster electron flow is self-contradictory, since collapse corresponds to abundant ADP or to uncoupling. Both options with rising oxygen uptake describe uncoupling or increased leak, the opposite of slowing down when energy is plentiful."
+   },
+   {
+    "q_zh": "缬氨霉素 valinomycin 这类离子载体对质子动力势做了什么？",
+    "q_en": "What does an ionophore such as valinomycin do to the proton-motive force?",
+    "options": [
+     {
+      "zh": "携 K+ 过膜，消耗 Δψ 而保留 ΔpH",
+      "en": "Carries K+ across, spending Δψ, sparing ΔpH"
+     },
+     {
+      "zh": "携 H+ 过膜，消耗 ΔpH 而保留 Δψ",
+      "en": "Carries H+ across, spending ΔpH, sparing Δψ"
+     },
+     {
+      "zh": "堵住 FO 通道，Δψ 与 ΔpH 同时塌陷",
+      "en": "Plugs FO, so both Δψ and ΔpH collapse at once"
+     },
+     {
+      "zh": "抑制复合体III，Δψ 与 ΔpH 一起下降",
+      "en": "Blocks Complex III, so Δψ and ΔpH both fall"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "缬氨霉素是 K+ 载体，把 K+ 顺电位带进基质，消耗掉膜电位 Δψ 这一分量，ΔpH 反而可能升高。携 H+ 消耗 ΔpH 的描述属于尼日利亚菌素那类 K+/H+ 交换体。堵住 FO 的是寡霉素，效果是梯度升高而不是塌陷。抑制复合体III 会让梯度整体下降，但那是电子传递抑制剂，不是离子载体。",
+    "explain_en": "Valinomycin is a K+ carrier that brings K+ into the matrix down the electrical gradient, dissipating the membrane potential component while ΔpH may actually rise. Carrying H+ to spend ΔpH describes nigericin-type K+/H+ exchangers. Plugging FO is oligomycin, which raises the gradient rather than collapsing it. Blocking Complex III does lower the whole gradient, but that is an electron-transport inhibitor, not an ionophore."
+   }
+  ]
+ },
+ {
+  "start": 807,
+  "end": 909,
+  "title_zh": "【可跳过·非课程内容】课后交流：这一章怎么学、重点微信发",
+  "title_en": "[Skippable · not course material] Closing exchange: how to study this chapter, priorities to be sent on WeChat",
+  "points": [
+   {
+    "zh": "他确认今天的任务全部完成，问学生有没有特别疑惑的地方。",
+    "en": "He confirms that everything planned for the day is done and asks whether anything is still confusing."
+   },
+   {
+    "zh": "学生说这一章不太容易学、东西挺多挺大，不像上次听完就学会了。",
+    "en": "The student says this chapter is hard to learn and covers a lot, unlike the previous one which was understood on first hearing."
+   },
+   {
+    "zh": "他建议去 B 站之类的平台找电子传递链或 TCA 循环的讲解视频，有的讲得很好。",
+    "en": "He suggests looking for explainer videos on the electron transport chain or the TCA cycle on platforms such as Bilibili, some of which are very good."
+   },
+   {
+    "zh": "他对比说，EMP 途径那一章每一步怎么调控都可以有逻辑地记，这一章完全是新东西。",
+    "en": "He contrasts it with the EMP chapter, where each step's regulation can be memorised logically, whereas this chapter is all new material."
+   },
+   {
+    "zh": "他认为电子传递链的每一步怎么传，只能靠死记硬背。",
+    "en": "In his view the individual steps of electron transfer can only be learned by rote."
+   },
+   {
+    "zh": "学生请他照着大纲圈出要着重记的部分，他答应一会儿直接微信发过来。",
+    "en": "The student asks him to mark the priorities against the syllabus, and he agrees to send them straight over on WeChat."
+   },
+   {
+    "zh": "他说这一章确实东西太多太杂太乱，会给学生画出几个重点。",
+    "en": "He acknowledges the chapter is genuinely overloaded and messy, and promises to highlight a few key points."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上未展开",
+    "zh": "「只能死记硬背」并不完全成立：这一章有两条可推的主线。一条是**热力学**——电子按 ΔE°′ 从低到高走（NAD+/NADH −0.32 V → Q → cyt c → O2/H2O +0.82 V），载体顺序不用背，按还原电位排就行；另一条是**质子账** 4/4/2 = 10（NADH）与 0/4/2 = 6（FADH2）。抑制剂、解偶联剂、寡霉素的效果都能从这两条推出来，真正要硬记的只有几个药名和靶点。",
+    "en": "\"Rote only\" is not quite true: two derivable threads run through this chapter. One is thermodynamic — electrons move up the reduction potential scale from the NAD+/NADH couple at -0.32 V through Q and cytochrome c to O2/H2O at +0.82 V, so the order of carriers can be reconstructed rather than memorised. The other is the proton account, 4/4/2 = 10 for NADH and 0/4/2 = 6 for FADH2. The effects of inhibitors, uncouplers and oligomycin all follow from those two, leaving only a handful of drug names and targets to be learned by heart."
+   },
+   {
+    "tag": "课上未展开",
+    "zh": "他答应发的重点清单没有出现在视频里。按本讲实际讲到的内容，它至少应包含：每个复合体的电子入口与泵质子数（I 4、II 0、III 4、IV 2）、10 H+ 与 6 H+ 对应 2.5 与 1.5、ATP 合酶 FO/F1 的分工、氰化物与寡霉素的靶点、解偶联剂与抑制剂的区别、胞质 NADH 两条穿梭。",
+    "en": "The list of priorities he promises never appears in the video. Based on what this lecture actually covers, it should contain at minimum: the electron entry point and proton count of each complex (I 4, II 0, III 4, IV 2); 10 H+ and 6 H+ giving 2.5 and 1.5; the division of labour between FO and F1; the targets of cyanide and oligomycin; the difference between an uncoupler and an inhibitor; and the two shuttles for cytosolic NADH."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "对这一章的复习，他给学生的建议是什么？",
+    "q_en": "What does he advise the student to do when revising this chapter?",
+    "options": [
+     {
+      "zh": "跳过这一章，等复习 EMP 时一起记",
+      "en": "Skip this chapter and revise it with EMP later"
+     },
+     {
+      "zh": "去视频平台看讲解，重点他微信发来",
+      "en": "Watch explainer videos; key points come by WeChat"
+     },
+     {
+      "zh": "只看拓展内容里的生物氧化酶那部分",
+      "en": "Read only the biological oxidase extension part"
+     },
+     {
+      "zh": "先背下全部抑制剂名称，再回看大纲",
+      "en": "Memorise every inhibitor name, then the outline"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "他建议去 B 站之类的平台找讲得好的电子传递链／TCA 循环视频，并答应把大纲上的重点微信发给学生。他反复说过抑制剂的名字大多不用记，所以要求全背名称的那一项与他原话相反。他没有让学生跳过这一章，恰恰强调它内容最多。生物氧化酶那部分他明确归为拓展、完全不用看。",
+    "explain_en": "He recommends finding a good explainer video on the electron transport chain or the TCA cycle on a platform such as Bilibili, and promises to send the syllabus priorities over on WeChat. He repeatedly says most inhibitor names need not be memorised, so demanding all of them contradicts him. He never tells the student to skip the chapter; he stresses that it carries the most material. The biological oxidase section he explicitly classes as extension material not to be read."
+   },
+   {
+    "q_zh": "他认为这一章比 EMP 途径那一章难在哪里？",
+    "q_en": "Why does he think this chapter is harder than the EMP chapter?",
+    "options": [
+     {
+      "zh": "公式推导太多，需要大量的数学运算",
+      "en": "Too much formula derivation and hard maths work"
+     },
+     {
+      "zh": "与前面章节重复，前后特别容易混淆",
+      "en": "It repeats earlier chapters and blurs with them"
+     },
+     {
+      "zh": "每一步调控都有逻辑，只需理解不用记",
+      "en": "Every step has logic; understanding is enough"
+     },
+     {
+      "zh": "基本全是新对象，缺少可以推导的调控逻辑",
+      "en": "Almost all new objects, with little logic to infer"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "他的原话是 EMP 那一章每个步骤怎么调控都能有逻辑地记，而这一章全是新东西、只能死记硬背。「每步调控都有逻辑」描述的正是 EMP 那一章，不是本章。他从未提到数学运算，这一章的计算只有质子除法一处。他也没有说内容重复，反而强调引入了非常多新概念。",
+    "explain_en": "His words are that in the EMP chapter the regulation of each step can be learned logically, whereas this chapter is entirely new material to be memorised by rote. \"Every step has logic\" describes the EMP chapter, not this one. He never mentions mathematics, and the only arithmetic here is the proton division. Nor does he say the content is repetitive; he stresses instead how many new concepts it introduces."
+   }
+  ]
+ }
+]

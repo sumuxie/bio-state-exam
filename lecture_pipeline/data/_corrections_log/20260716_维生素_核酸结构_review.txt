@@ -1,0 +1,4 @@
+# 2 of 2456 lines have mean word confidence < 0.55.
+
+[00:17:47] p=0.44  main pro它
+[01:47:06] p=0.47  AlphaFold其实

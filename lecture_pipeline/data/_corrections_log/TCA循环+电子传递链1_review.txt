@@ -1,0 +1,3 @@
+# 1 of 1856 lines have mean word confidence < 0.55.
+
+[00:25:16] p=0.52  synthesis所以这个我们

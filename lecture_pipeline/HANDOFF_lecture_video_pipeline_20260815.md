@@ -217,12 +217,33 @@ directories survived. Nothing was lost that mattered, for two reasons worth
 keeping true: the scripts had been committed here, and the built app carries all
 of its data inlined.
 
-`build_app_from_data.py` is the recovery path. Pull the blob back out of a built
-app with the two-line recipe in its docstring, save it as `app_data.json`, and
-that script re-injects it into the current template. That is how the
-English-primary change was shipped without re-running any of the pipeline. The
-regular `build_app_all.py` still needs `cues.json` and `topics.json` and will not
-work until a lecture is reprocessed.
+**The fix is committed: `lecture_pipeline/data/`.** Every lecture's `cues.json`
+and `topics.json` was recovered out of the built app and now lives in the repo,
+~7 MB, one folder per lecture, alongside the `_corrections.txt` audit logs.
+`.gitignore` un-ignores that folder on purpose; the rules above it were written
+when these files were assumed regenerable, and they are not.
+
+`restore_work.py` copies them back where `stages.py` and `build_app_all.py`
+expect them. Running it and then rebuilding produced an app **byte-identical**
+to the one built from the extracted blob, which is what makes the recovery
+lossless rather than merely plausible.
+
+Two other routes exist. `build_app_from_data.py` re-injects a whole extracted
+blob into the current template — that is how the English-primary change shipped,
+with no pipeline run at all. And every subtitle file (`.srt`, `.txt`,
+`_corrections.txt`) still sits next to its video in `~/Downloads`, which the
+temp sweep never touched.
+
+**What is genuinely gone, and why it does not matter much:** `series/*.raw_words.json`,
+the word-level Whisper output. Re-transcribing regenerates it in about ten
+minutes a lecture — but it comes back as the RAW text, and the 6142 hand-checked
+corrections exist only in the restored `cues.json`. So **do not re-run
+`stages.py cues` on lectures 1–12**: it rebuilds cues.json from raw_words and
+would replace corrected subtitles with uncorrected ones. Also gone are the agent
+intermediates (chunks, per-chunk correction JSON, per-part topic files,
+teacher_errors), all of which had already been merged into the two files that
+survive. The per-cue `prob` field is absent too; only stage 2's `_review.txt`
+low-confidence report ever read it.
 
 ### Adding a lecture later
 

@@ -1,0 +1,3703 @@
+[
+ {
+  "start": 0,
+  "end": 62,
+  "title_zh": "开场:酶的分类(EC 编号)与专一性——老师明确要求略过的部分",
+  "title_en": "Opening: enzyme classification (EC numbers) and specificity - the part the lecturer tells you to skip",
+  "points": [
+   {
+    "zh": "开场这一段是取舍指导而不是讲课内容:老师说左边那一大段酶的分类(enzyme classification)整段不用看。",
+    "en": "This opening stretch is study triage rather than lecture content: the teacher says the whole enzyme classification block on the left can be skipped."
+   },
+   {
+    "zh": "理由是只有专门做酶学研究(enzymology)的人才需要讨论某个酶到底属于哪一大类、哪一亚类;做病毒方向的不必背。",
+    "en": "His reason: only people doing enzymology proper need to argue about which class and subclass a given enzyme falls into; virology work does not require it."
+   },
+   {
+    "zh": "他提到那个\"很拗口的命名法\":EC 编号后面跟四个数字,分别代表大类、亚类(subclass)等层级。",
+    "en": "He mentions the \"awkward\" naming system: an EC number followed by four digits standing for class, subclass and so on."
+   },
+   {
+    "zh": "酶的专一性(specificity)——立体专一性、几何专一性——老师同样说\"都不用看\",与考试关系不大。",
+    "en": "Enzyme specificity - stereospecificity and geometric specificity - is likewise dismissed as \"no need to look at it\", not closely tied to the exam."
+   },
+   {
+    "zh": "真正开始讲的是酶与底物的关系(enzyme-substrate relationship):从这里起讨论酶和底物之间如何互作。",
+    "en": "What he actually starts teaching is the enzyme-substrate relationship: from here on the topic is how enzyme and substrate interact."
+   },
+   {
+    "zh": "全课的组织线索由此确定:先讲三个结合学说,再讲酶活力如何被正确描述和测定。",
+    "en": "This sets the structure of the session: first the three binding models, then how enzyme activity is correctly described and measured."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "国家考试仍可能考六大类酶:氧化还原酶 oxidoreductase(EC 1)、转移酶 transferase(EC 2)、水解酶 hydrolase(EC 3)、裂合酶 lyase(EC 4)、异构酶 isomerase(EC 5)、连接酶/合成酶 ligase(EC 6)。2018 年新增第七类转位酶 translocase(EC 7)。",
+    "en": "A state exam may still ask the six enzyme classes: oxidoreductase (EC 1), transferase (EC 2), hydrolase (EC 3), lyase (EC 4), isomerase (EC 5), ligase (EC 6). A seventh class, translocase (EC 7), was added in 2018."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "EC 编号的四个数字是分级的:第一位是大类(反应类型),第二位是亚类(转移的基团或键的类型),第三位是亚亚类(受体或辅因子),第四位是该亚亚类内的流水号。例如己糖激酶 hexokinase 是 EC 2.7.1.1。",
+    "en": "The four digits of an EC number are hierarchical: class (reaction type), subclass (group or bond involved), sub-subclass (acceptor or cofactor) and a serial number within the sub-subclass. Hexokinase, for example, is EC 2.7.1.1."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "专一性其实分三档:绝对专一性 absolute specificity(脲酶只作用于尿素)、相对/基团专一性 relative specificity(胰蛋白酶只切 Lys/Arg 后的肽键)、立体专一性 stereospecificity(只作用于 L-氨基酸或 D-糖)。这一分类在简答题里常出现。",
+    "en": "Specificity actually comes in three grades: absolute specificity (urease acts only on urea), relative or group specificity (trypsin cleaves only after Lys/Arg) and stereospecificity (acting only on L-amino acids or D-sugars). This triad is a common short-answer item."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "EC 2.7.1.1 这个编号中,第一个数字\"2\"表示什么?",
+    "q_en": "In the EC number EC 2.7.1.1, what does the first digit \"2\" denote?",
+    "options": [
+     {
+      "zh": "酶的大类,即反应类型",
+      "en": "the main class, i.e. reaction type"
+     },
+     {
+      "zh": "酶的亚类,即转移基团",
+      "en": "the subclass, i.e. group transferred"
+     },
+     {
+      "zh": "酶的亚亚类,即受体类型",
+      "en": "the sub-subclass, i.e. acceptor type"
+     },
+     {
+      "zh": "酶在亚亚类内的流水号",
+      "en": "the serial number within the sub-subclass"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "四位数字自左向右逐级细分,第一位固定表示六大类之一,这里的 2 就是转移酶 transferase。\"转移基团\"对应的是第二位,\"受体类型\"对应第三位,\"流水号\"是最后一位。",
+    "explain_en": "The four digits subdivide from left to right; the first always names one of the main classes, and 2 is transferase. The group transferred is the second digit, the acceptor type the third, and the serial number the last."
+   },
+   {
+    "q_zh": "水解酶 hydrolase 这一大类催化的是哪种反应?",
+    "q_en": "What kind of reaction does the hydrolase class catalyse?",
+    "options": [
+     {
+      "zh": "不加水断键并生成双键",
+      "en": "cleaving a bond and forming a double bond"
+     },
+     {
+      "zh": "以电子转移完成氧化还原",
+      "en": "transferring electrons in a redox step"
+     },
+     {
+      "zh": "消耗 ATP 把两个分子连接",
+      "en": "joining two molecules at the cost of ATP"
+     },
+     {
+      "zh": "以水为受体断裂化学键",
+      "en": "cleaving a bond with water as acceptor"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "水解酶用水作为受体断键。以电子转移完成氧化还原的是氧化还原酶,消耗 ATP 连接两个分子的是连接酶 ligase,不加水断键并生成双键的是裂合酶 lyase。",
+    "explain_en": "Hydrolases cleave bonds using water as the acceptor. Electron transfer in redox belongs to oxidoreductases, ATP-driven joining of two molecules to ligases, and water-free cleavage generating a double bond to lyases."
+   }
+  ]
+ },
+ {
+  "start": 62,
+  "end": 155,
+  "title_zh": "锁钥学说与诱导契合学说:Fischer 与 Koshland",
+  "title_en": "Lock-and-key and induced fit: Fischer and Koshland",
+  "points": [
+   {
+    "zh": "最早的模型是 Fischer 提出的锁钥学说 lock-and-key model(老师课上把年份说成 1984 年)。",
+    "en": "The earliest model is Fischer's lock-and-key model (the lecture gives the year as 1984)."
+   },
+   {
+    "zh": "比喻:底物像一把钥匙插进酶这把锁里,两者是一对一的刚性匹配。",
+    "en": "The image: the substrate is a key inserted into the enzyme as a lock, the two matching one to one, rigidly."
+   },
+   {
+    "zh": "锁钥学说的致命缺陷是无法解释逆反应:有些酶既能催化 A→B,也能催化 B→A,是双向的。",
+    "en": "The fatal weakness of lock-and-key is that it cannot explain the reverse reaction: some enzymes catalyse A to B and also B to A, working in both directions."
+   },
+   {
+    "zh": "Koshland 随后提出诱导契合学说 induced fit:酶与底物天然并非 100% 匹配,可能只有 90% 匹配。",
+    "en": "Koshland then proposed induced fit: enzyme and substrate are not natively a 100% match, perhaps only 90%."
+   },
+   {
+    "zh": "只有当底物结合上去时,酶才发生构象改变,变成百分之百的匹配。",
+    "en": "Only when the substrate binds does the enzyme change conformation and become a full match."
+   },
+   {
+    "zh": "老师给出的逆反应解释:酶未结合底物时催化正向反应;正向反应完成后产物也能结合到酶上,产物结合使构象与底物结合时不同,于是可以催化逆反应。",
+    "en": "The lecture's account of reversibility: the unbound enzyme catalyses the forward reaction; once the product forms it too can bind the enzyme, giving a conformation different from the substrate-bound one, so the reverse reaction can be catalysed."
+   },
+   {
+    "zh": "老师明确说诱导契合\"可以一定程度上解释\"逆反应——是部分解释,不是完全解决。",
+    "en": "He says explicitly that induced fit explains reversibility only \"to some extent\" - a partial account, not a settled one."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上口误 · lecture misstatement",
+    "zh": "锁钥学说的年份课上说成 1984 年,实际是 1894 年由 Emil Fischer 提出;Koshland 的诱导契合学说是 1958 年。差了整整九十年,考试写错年份会丢分。",
+    "en": "The lecture dates lock-and-key to 1984; Emil Fischer actually proposed it in 1894, and Koshland's induced fit came in 1958. That is a ninety-year slip, and the wrong year loses marks on an exam."
+   },
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "酶催化反应可逆的根本原因是热力学,不是构象:酶不改变 ΔG 和平衡常数 Keq,它以相同倍数加速正、逆两个方向,反应走哪个方向由底物/产物的浓度比相对于 Keq 决定。诱导契合解释的是结合与催化的效率,不是可逆性本身。",
+    "en": "The root reason enzyme catalysis is reversible is thermodynamic, not conformational: an enzyme changes neither ΔG nor Keq, it accelerates both directions by the same factor, and which way the reaction runs depends on the substrate-to-product ratio relative to Keq. Induced fit explains binding and catalytic efficiency, not reversibility as such."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "诱导契合真正重要的推论(Pauling):酶的活性中心与过渡态 transition state 互补,而不是与底物基态互补。正因为对过渡态结合得更紧,才降低活化能 activation energy——这也是过渡态类似物是最强抑制剂的原因。",
+    "en": "The consequence of induced fit that really matters (Pauling): the active site is complementary to the transition state, not to the ground-state substrate. Binding the transition state more tightly is what lowers the activation energy - and it is why transition-state analogues are the most potent inhibitors."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "锁钥学说(lock-and-key)由 Emil Fischer 于哪一年提出?",
+    "q_en": "In which year did Emil Fischer propose the lock-and-key model?",
+    "options": [
+     {
+      "zh": "1894 年",
+      "en": "1894"
+     },
+     {
+      "zh": "1958 年",
+      "en": "1958"
+     },
+     {
+      "zh": "1984 年",
+      "en": "1984"
+     },
+     {
+      "zh": "1904 年",
+      "en": "1904"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "Fischer 于 1894 年提出锁钥学说;1958 年是 Koshland 提出诱导契合学说的年份;1984 是课堂上的口误。",
+    "explain_en": "Fischer proposed lock-and-key in 1894; 1958 is the year of Koshland's induced fit model; 1984 is the slip made in the lecture."
+   },
+   {
+    "q_zh": "锁钥学说不能解释下列哪一现象?",
+    "q_en": "Which observation can the lock-and-key model not explain?",
+    "options": [
+     {
+      "zh": "酶只作用于特定的底物",
+      "en": "an enzyme acting on one substrate only"
+     },
+     {
+      "zh": "同一个酶催化正逆两个方向",
+      "en": "one enzyme catalysing both directions"
+     },
+     {
+      "zh": "酶与底物之间的互补结合",
+      "en": "the complementary binding of substrate"
+     },
+     {
+      "zh": "酶对底物的立体专一性",
+      "en": "the stereospecificity towards substrate"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "互补结合、立体专一性、单一底物这三点正是锁钥学说提出来要说明的;它讲不通的是同一把\"锁\"如何既催化 A→B 又催化 B→A。",
+    "explain_en": "Complementary binding, stereospecificity and single-substrate action are exactly what lock-and-key was invented to explain; what it cannot handle is how one \"lock\" catalyses A to B and B to A alike."
+   },
+   {
+    "q_zh": "诱导契合学说(induced fit)的核心主张是什么?",
+    "q_en": "What is the central claim of the induced fit model?",
+    "options": [
+     {
+      "zh": "底物结合诱导酶发生构象改变",
+      "en": "substrate binding induces a conformational change"
+     },
+     {
+      "zh": "酶与底物天然完全刚性互补",
+      "en": "enzyme and substrate are rigidly complementary"
+     },
+     {
+      "zh": "酶结合前已存在多种平衡构象",
+      "en": "several conformations pre-exist before binding"
+     },
+     {
+      "zh": "底物结合不改变酶的空间构象",
+      "en": "substrate binding leaves the conformation intact"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "诱导契合强调构象改变发生在底物结合\"之后\"、由底物诱导产生。刚性互补是锁钥学说;结合前已存在多种平衡构象是构象选择学说。",
+    "explain_en": "Induced fit places the conformational change after binding, driven by the substrate. Rigid complementarity is lock-and-key, and pre-existing equilibrium conformations belong to conformational selection."
+   }
+  ]
+ },
+ {
+  "start": 155,
+  "end": 218,
+  "title_zh": "构象选择学说与酶活力概念的引入",
+  "title_en": "Conformational selection, and introducing the concept of enzyme activity",
+  "points": [
+   {
+    "zh": "目前比较前沿的说法是构象选择学说 conformational selection。",
+    "en": "The currently more cutting-edge account is conformational selection."
+   },
+   {
+    "zh": "该学说认为任何一个酶都有 open 和 close 两种状态,二者本来就同时存在。",
+    "en": "It holds that any enzyme has both an open and a closed state, and that the two coexist to begin with."
+   },
+   {
+    "zh": "酶催化何种反应,取决于底物结合到的是它的 open 状态还是 close 状态。",
+    "en": "Which reaction the enzyme catalyses depends on whether the substrate binds its open state or its closed state."
+   },
+   {
+    "zh": "老师举例:open 状态可能对应正向反应,close 状态对应逆向反应。",
+    "en": "His example: the open state may correspond to the forward reaction and the closed state to the reverse."
+   },
+   {
+    "zh": "酶实际处在构象动态 conformational dynamics 的状态,是一个持续的动态过程,而不是静止的单一结构。",
+    "en": "The enzyme actually sits in a state of conformational dynamics - an ongoing dynamic process, not one static structure."
+   },
+   {
+    "zh": "这个动态过程还会受到其他因素的影响。",
+    "en": "That dynamic process is in turn influenced by other factors."
+   },
+   {
+    "zh": "小结:锁钥、诱导契合、构象选择三个学说都是用来描述酶与底物结合关系的。",
+    "en": "Summary: lock-and-key, induced fit and conformational selection all describe the enzyme-substrate binding relationship."
+   },
+   {
+    "zh": "转入下一主题:酶的活力 enzyme activity 在广义上指酶催化某种反应进行的速率。",
+    "en": "Transition to the next topic: enzyme activity, broadly defined, is the rate at which the enzyme drives a given reaction."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "诱导契合与构象选择的分水岭是构象改变的时间点:诱导契合是\"先结合、后变形\",构象选择是\"构象先存在、底物挑一个结合\"。真实的酶往往是两者混合(先选择、再微调契合)。",
+    "en": "The dividing line between induced fit and conformational selection is when the change happens: induced fit is bind-then-change, conformational selection is the conformations pre-exist and the substrate picks one. Real enzymes usually combine both - selection first, then a fitting adjustment."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "构象选择的证据来自 NMR relaxation dispersion 和单分子 FRET:未结合底物的 apo 酶已经在低比例上采样到与结合态(holo)相同的构象,底物只是把平衡拉过去。",
+    "en": "The evidence for conformational selection comes from NMR relaxation dispersion and single-molecule FRET: the ligand-free apo enzyme already samples the holo conformation at low occupancy, and the substrate merely shifts the equilibrium towards it."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "酶活力 activity 描述的是催化速率,不是酶蛋白的量。酶蛋白量用 mg 计,活力用 U 计,二者相除才是比活力 specific activity。",
+    "en": "Enzyme activity describes a catalytic rate, not the amount of enzyme. Protein amount is in mg, activity in U, and only their quotient is specific activity."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "按构象选择学说,酶的不同构象是何时出现的?",
+    "q_en": "According to conformational selection, when do the enzyme's different conformations arise?",
+    "options": [
+     {
+      "zh": "只在蛋白变性的条件下出现",
+      "en": "they appear only under denaturing conditions"
+     },
+     {
+      "zh": "在底物结合之后被诱导产生",
+      "en": "they are induced after substrate binds"
+     },
+     {
+      "zh": "在产物释放之后才逐渐出现",
+      "en": "they appear only after product release"
+     },
+     {
+      "zh": "在底物结合之前就已经存在",
+      "en": "they already exist before substrate binds"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "构象选择的要点是 open 与 close 构象本来就在动态平衡中共存,底物\"选择\"其中一种结合。结合后才被诱导产生构象改变是诱导契合的说法。",
+    "explain_en": "The point of conformational selection is that open and closed states already coexist in dynamic equilibrium and the substrate selects one. A change induced after binding is the induced fit account."
+   },
+   {
+    "q_zh": "老师给出的酶活力(enzyme activity)的广义定义是什么?",
+    "q_en": "What broad definition of enzyme activity does the lecture give?",
+    "options": [
+     {
+      "zh": "酶催化某种反应进行的速率",
+      "en": "the rate at which the enzyme drives a reaction"
+     },
+     {
+      "zh": "酶与其底物结合的解离常数",
+      "en": "the dissociation constant for its substrate"
+     },
+     {
+      "zh": "酶所催化反应的平衡常数值",
+      "en": "the equilibrium constant of the reaction"
+     },
+     {
+      "zh": "酶蛋白在样品中的绝对含量",
+      "en": "the absolute amount of enzyme in the sample"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "活力是速率概念。蛋白含量是 mg 的问题,解离常数描述结合紧密程度,而平衡常数是反应本身的性质,酶根本不能改变它。",
+    "explain_en": "Activity is a rate. Protein content is a question of milligrams, the dissociation constant describes binding tightness, and the equilibrium constant is a property of the reaction that the enzyme cannot alter at all."
+   }
+  ]
+ },
+ {
+  "start": 218,
+  "end": 315,
+  "title_zh": "初速度、活力单位 U / kat / IU 与比活力",
+  "title_en": "Initial velocity, the activity units U / kat / IU, and specific activity",
+  "points": [
+   {
+    "zh": "描述酶催化反应的速率,一般采用初速度 initial velocity:用反应刚开始时的速率来刻画酶的活力。",
+    "en": "The rate of an enzyme-catalysed reaction is normally described by the initial velocity: activity is characterised by the rate right at the start of the reaction."
+   },
+   {
+    "zh": "教材上罗列的各种活力单位老师认为不必细看;kat 这个单位他做了这么久实验从没见过。",
+    "en": "The list of activity units in the textbook is, he says, not worth studying in detail; in all his years at the bench he has never encountered the unit kat."
+   },
+   {
+    "zh": "真正需要一点概念的是 U(国际单位):在一定时间内将一定量底物转化为产物所需要的酶(量)。",
+    "en": "The one worth a working understanding is U, the international unit: the amount of enzyme that converts a given amount of substrate to product in a given time."
+   },
+   {
+    "zh": "关键提醒:U 不是一个通用概念,在不同的酶里代表的定义完全不一样。",
+    "en": "The key caveat: U is not a universal concept - what it means differs completely from enzyme to enzyme."
+   },
+   {
+    "zh": "具体差别在于\"多少底物、在什么条件下、转化为多少产物\",每种酶的规定各不相同。",
+    "en": "The differences lie in how much substrate, under what conditions, converted to how much product - each enzyme has its own specification."
+   },
+   {
+    "zh": "实际例子:买核酸酶等试剂时瓶上标的 \"多少 U/µL\",就是它的活力单位。",
+    "en": "A practical example: when you buy a nuclease, the label reads so many U per microlitre - that is its activity unit."
+   },
+   {
+    "zh": "IU、kat 老师说在实际实验中很少见,不需要太了解。",
+    "en": "IU and kat, he says, are rarely met at the bench and do not need much attention."
+   },
+   {
+    "zh": "比活力 specific activity 就是 U 除以毫克蛋白(U/mg);老师认为这类定义是\"玩文字游戏\",意义不大。",
+    "en": "Specific activity is simply U divided by milligrams of protein (U/mg); the lecturer regards such definitions as word games of little consequence."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "标准定义要记牢:1 U = 在规定条件下每分钟转化 1 µmol 底物所需的酶量;1 kat = 每秒转化 1 mol 底物所需的酶量(SI 单位)。换算:1 U = 1/60 µmol·s⁻¹ ≈ 16.67 nkat。",
+    "en": "Worth memorising: 1 U is the amount of enzyme converting 1 µmol of substrate per minute under defined conditions; 1 kat is the amount converting 1 mol per second (the SI unit). Conversion: 1 U = 1/60 µmol per second, about 16.67 nkat."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "比活力不是文字游戏,它是酶纯度的核心指标:纯化过程中总活力(U)只会下降,而比活力(U/mg)上升,纯化倍数 purification fold = 各步比活力 / 初始比活力,回收率 yield = 各步总活力 / 初始总活力。纯化表就是这样算出来的。",
+    "en": "Specific activity is not a word game but the central measure of purity: through a purification the total activity (U) can only fall while the specific activity (U/mg) rises. Purification fold is the specific activity at a step over the starting one, and yield is total activity at a step over the starting total. That is exactly how a purification table is built."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "三个量要分清:总活力 total activity(U,与样品体积有关)、比活力 specific activity(U/mg,与纯度有关)、转换数 kcat(s⁻¹,每个活性中心每秒转化的底物分子数,与酶的量完全无关,是酶的固有性质)。",
+    "en": "Keep three quantities apart: total activity (U, depends on how much sample), specific activity (U/mg, reflects purity) and turnover number kcat (per second, molecules of substrate converted per active site per second - independent of how much enzyme there is, an intrinsic property)."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "酶活力国际单位 U 的标准定义是?",
+    "q_en": "What is the standard definition of the international unit U?",
+    "options": [
+     {
+      "zh": "每分钟转化 1 mmol 底物的酶量",
+      "en": "enzyme converting 1 mmol substrate per minute"
+     },
+     {
+      "zh": "每秒钟转化 1 µmol 底物的酶量",
+      "en": "enzyme converting 1 µmol substrate per second"
+     },
+     {
+      "zh": "每分钟转化 1 µmol 底物的酶量",
+      "en": "enzyme converting 1 µmol substrate per minute"
+     },
+     {
+      "zh": "每秒钟转化 1 mol 底物的酶量",
+      "en": "enzyme converting 1 mol substrate per second"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "U 以微摩尔每分钟为准。每秒转化 1 mol 是 kat 的定义;毫摩尔每分钟和微摩尔每秒都不是任何标准单位的定义。",
+    "explain_en": "U is defined in micromoles per minute. One mole per second is the definition of kat, while millimoles per minute and micromoles per second correspond to no standard unit."
+   },
+   {
+    "q_zh": "比活力(specific activity)的表示方式是?",
+    "q_en": "How is specific activity expressed?",
+    "options": [
+     {
+      "zh": "每分子酶每秒的底物转化数",
+      "en": "substrate molecules per enzyme per second"
+     },
+     {
+      "zh": "每毫克酶蛋白消耗的底物量",
+      "en": "substrate consumed per milligram of protein"
+     },
+     {
+      "zh": "每毫克酶蛋白的活力单位数",
+      "en": "activity units per milligram of protein"
+     },
+     {
+      "zh": "每毫升酶溶液的活力单位数",
+      "en": "activity units per millilitre of solution"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "比活力 = U/mg 蛋白,课上说得很直白。每毫升的活力是酶液的浓度,每分子每秒的转化数是 kcat,而每毫克消耗的底物量不含时间因素,不是速率。",
+    "explain_en": "Specific activity is U per mg of protein, exactly as stated in the lecture. Units per millilitre give the concentration of the enzyme solution, molecules per enzyme per second is kcat, and substrate per milligram carries no time term so it is not a rate at all."
+   },
+   {
+    "q_zh": "关于活力单位 U,课上强调的一点是?",
+    "q_en": "What point about the unit U does the lecture stress?",
+    "options": [
+     {
+      "zh": "U 这个单位只适用于核酸酶类",
+      "en": "the unit U applies only to the nucleases"
+     },
+     {
+      "zh": "所有酶的 U 定义条件完全一致",
+      "en": "the conditions defining U are identical for all"
+     },
+     {
+      "zh": "U 的数值直接等于酶的毫克数",
+      "en": "the value of U equals the enzyme mass in mg"
+     },
+     {
+      "zh": "不同酶的 U 定义条件各不相同",
+      "en": "the conditions defining U differ per enzyme"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "老师反复说 U 不是通用概念:多少底物、什么条件、转化多少产物,每种酶规定不同。U 与毫克数无关(那是比活力的分母),而核酸酶只是他举的一个标注 U/µL 的例子。",
+    "explain_en": "He repeats that U is not a universal concept: how much substrate, under which conditions, to how much product varies by enzyme. U has nothing to do with milligrams (that is the denominator of specific activity), and nucleases were merely his example of a product labelled in U/µL."
+   }
+  ]
+ },
+ {
+  "start": 315,
+  "end": 394,
+  "title_zh": "酶活测定的两种方法:固定底物量还是固定酶量",
+  "title_en": "Two ways to assay enzyme activity: fix the substrate or fix the enzyme",
+  "points": [
+   {
+    "zh": "老师特别说明这一段要讲,因为做 RdRp 一定会涉及酶活的测定。",
+    "en": "He flags this section as one he will actually teach, because anyone working on RdRp will have to measure enzyme activity."
+   },
+   {
+    "zh": "第一种方法:测定完成某一个定量反应所需的时间——例如给 10 毫克底物,测酶把它完全转化需要多久。",
+    "en": "Method one: measure the time needed to complete a fixed quantity of reaction - give 10 mg of substrate, and time how long the enzyme takes to convert it all."
+   },
+   {
+    "zh": "第二种方法:测定单位时间内一定量的酶能转化多少底物。",
+    "en": "Method two: measure how much substrate a fixed amount of enzyme converts per unit time."
+   },
+   {
+    "zh": "两种方法唯一的区别就是固定的对象不同:前者固定底物的量,后者固定酶的量。",
+    "en": "The only difference between the two is what is held fixed: the amount of substrate in the first, the amount of enzyme in the second."
+   },
+   {
+    "zh": "两种都可以做,但现在用得比较多的是第二种,理由很实际——比较好测。",
+    "en": "Both work, but the second is the one mostly used now, for a very practical reason: it is easier to measure."
+   },
+   {
+    "zh": "原因回到前面讲过的:酶不能改变化学反应的平衡(equilibrium),所以反应不会一直走到\"完全转化\"。",
+    "en": "The reason goes back to an earlier point: an enzyme cannot change the equilibrium of a chemical reaction, so the reaction never simply runs to complete conversion."
+   },
+   {
+    "zh": "他举例:10 毫克蛋白假如只有 30% 转化,\"具体什么时候转化完\"就根本无法定量,所以定量反应法难做。",
+    "en": "His example: if 10 mg of protein converts only to the extent of 30%, then \"when it finishes converting\" cannot be quantified at all, which is what makes the fixed-quantity method hard."
+   },
+   {
+    "zh": "第二种方法与前面的初速度概念相呼应:固定酶量、测单位时间的产物生成量,正是初速度的测法。",
+    "en": "The second method ties back to initial velocity: fixing the enzyme and measuring product formed per unit time is precisely how an initial velocity is obtained."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "测初速度有个实操判据:取底物消耗低于 5%(线性区)内的数据。超出线性区,底物被耗尽、产物开始抑制、逆反应变得可观,测到的就不再是 v0。",
+    "en": "There is a practical criterion for an initial velocity: take data from the linear range, below about 5% substrate consumption. Beyond it the substrate depletes, product inhibition sets in and the reverse reaction becomes appreciable, so what you measure is no longer v0."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "实验上分连续法 continuous assay(实时读数,如 NAD(P)H 在 340 nm 的吸收变化、对硝基苯酚在 405 nm 的显色)和终止法 discontinuous/stopped assay(定时取样、加酸或 EDTA 终止后再测)。RdRp 常用放射性或荧光标记的终止法。",
+    "en": "Assays split into continuous ones, read in real time (NAD(P)H absorbance at 340 nm, p-nitrophenol colour at 405 nm), and discontinuous or stopped assays, where timed aliquots are quenched with acid or EDTA and then measured. RdRp work typically uses radiolabelled or fluorescent stopped assays."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "\"酶不改变平衡\"的定量形式是 Haldane 关系式:Keq =(Vmax(正)·Km(逆))/(Vmax(逆)·Km(正))。它说明正、逆方向的动力学参数并不独立,酶把两个方向加速相同的倍数。",
+    "en": "The quantitative form of \"the enzyme does not change the equilibrium\" is the Haldane relation: Keq equals forward Vmax times reverse Km, divided by reverse Vmax times forward Km. It shows the forward and reverse kinetic parameters are not independent - the enzyme accelerates both directions by the same factor."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "目前测定酶活力更常用的做法是哪一种?",
+    "q_en": "Which approach to assaying enzyme activity is more commonly used today?",
+    "options": [
+     {
+      "zh": "固定酶量,测单位时间的产物量",
+      "en": "fix the enzyme, measure product per unit time"
+     },
+     {
+      "zh": "固定反应时间,测所需的酶蛋白量",
+      "en": "fix the time, measure the enzyme protein needed"
+     },
+     {
+      "zh": "固定产物量,测底物的起始浓度值",
+      "en": "fix the product, measure starting substrate level"
+     },
+     {
+      "zh": "固定底物量,测完全转化的时间",
+      "en": "fix the substrate, measure time to full conversion"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "课上说现在多用固定酶量、测单位时间转化量的方法,因为比较好测。固定底物量测完全转化时间是另一种可行但难定量的方法,其余两种描述不是课上给出的方案。",
+    "explain_en": "The lecture says the fixed-enzyme, product-per-time approach is now the usual one because it is easier to measure. Fixing substrate and timing complete conversion is the other, workable but hard-to-quantify option; the remaining two are not methods given in the lecture."
+   },
+   {
+    "q_zh": "为什么\"测定完全转化所需时间\"这种方法不好用?",
+    "q_en": "Why is \"time to complete conversion\" a difficult assay to use?",
+    "options": [
+     {
+      "zh": "底物浓度过低,反应速率无法被测出",
+      "en": "the substrate is too dilute for any rate to be read"
+     },
+     {
+      "zh": "酶不改变平衡,反应难以完全转化",
+      "en": "the enzyme cannot shift equilibrium to completion"
+     },
+     {
+      "zh": "酶会改变平衡,使产物过量地积累",
+      "en": "the enzyme shifts equilibrium, over-accumulating product"
+     },
+     {
+      "zh": "酶在反应中被消耗,浓度不断下降",
+      "en": "the enzyme is consumed, its concentration falling"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "酶只加快达到平衡的速度,不改变平衡位置,所以底物往往只转化一部分(老师举的 30%),\"什么时候转化完\"没有明确终点。酶是催化剂,反应中不被消耗;底物浓度是实验者自己设定的,不是这个方法的固有问题。",
+    "explain_en": "An enzyme only speeds the approach to equilibrium without moving it, so the substrate is often only partly converted (the lecture's 30%) and there is no well-defined endpoint. An enzyme is a catalyst and is not consumed, and substrate concentration is set by the experimenter, not an inherent flaw of the method."
+   }
+  ]
+ },
+ {
+  "start": 394,
+  "end": 471,
+  "title_zh": "为什么固定酶量测反应速率:酶活测定的基本思路",
+  "title_en": "Why enzyme activity is measured at fixed enzyme amount",
+  "points": [
+   {
+    "zh": "往反应体系里加酶,本身就是加进一份溶液,相当于稀释了反应体系,底物浓度随之改变。",
+    "en": "Adding enzyme means adding a volume of solution: it dilutes the reaction system and changes the substrate concentration."
+   },
+   {
+    "zh": "酶不能改变化学反应的平衡 equilibrium,所以\"把 10 mg 底物完全转化\"这个终点常常根本达不到,很难定量。",
+    "en": "An enzyme cannot change the equilibrium of a reaction, so an endpoint like \"10 mg of substrate fully converted\" often never arrives and is hard to quantify."
+   },
+   {
+    "zh": "两种测法的唯一区别:一种固定底物量、测完全转化所需时间;另一种固定酶量、测单位时间内的反应量。",
+    "en": "The only difference between the two assay designs: one fixes the substrate amount and times full conversion, the other fixes the enzyme amount and measures how much reaction happens per unit time."
+   },
+   {
+    "zh": "现在基本都用第二种:固定酶的量,直接测单位时间内酶催化的化学反应量,也就是反应速率 v,因为这个量好测。",
+    "en": "The second design is now standard: fix the enzyme amount and measure the amount of reaction catalysed per unit time, i.e. the rate v, simply because that is what can actually be measured."
+   },
+   {
+    "zh": "后面要讲的米氏方程 Michaelis-Menten equation 用的是同一个思路——固定酶量,看速率如何随底物浓度变化。",
+    "en": "The Michaelis-Menten equation to come uses exactly this logic: hold the enzyme fixed and watch how the rate changes with substrate concentration."
+   },
+   {
+    "zh": "常用的实验测定方法有分光光度法 spectrophotometry、荧光法 fluorescence、同位素测定法 isotope assay。",
+    "en": "The common laboratory methods are spectrophotometry, fluorescence assays and isotope assays."
+   },
+   {
+    "zh": "其中荧光法和同位素法现在用得最多,分光光度法知道是靠紫外吸收测的就可以。",
+    "en": "Fluorescence and isotope methods dominate in practice; for spectrophotometry it is enough to know that it reads UV absorbance."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "酶活力单位有明确定义:1 U = 在规定条件下每分钟转化 1 μmol 底物;SI 单位 katal (kat) = 每秒 1 mol。比活力 specific activity = U / mg 蛋白,是纯化过程中判断纯度的关键指标。",
+    "en": "Enzyme activity has defined units: 1 U converts 1 μmol of substrate per minute under stated conditions; the SI unit katal (kat) is 1 mol per second. Specific activity = U per mg protein, the key purity readout during purification."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "\"单位时间的反应量\"必须取初速度 initial velocity:一般要求底物消耗低于 5%,此时逆反应和产物抑制还可以忽略,速率与酶浓度成正比。",
+    "en": "The rate measured must be the initial velocity: keep substrate consumption under about 5%, where the back reaction and product inhibition are still negligible and the rate is proportional to enzyme concentration."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "酶加快反应是靠降低活化能 activation energy,同等地加快正逆两个方向;它不改变 ΔG,也不改变平衡常数 Keq,只让平衡更快达到。",
+    "en": "An enzyme accelerates a reaction by lowering the activation energy, speeding forward and reverse directions equally; it changes neither ΔG nor Keq, only how fast equilibrium is reached."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "现在测定酶活性最常用的做法是什么?",
+    "q_en": "How is enzyme activity most commonly measured today?",
+    "options": [
+     {
+      "zh": "固定酶的量,测单位时间的反应量",
+      "en": "Fix the enzyme amount, measure reaction per unit time"
+     },
+     {
+      "zh": "固定温度,测反应达到平衡的时间",
+      "en": "Fix the temperature, time the approach to equilibrium"
+     },
+     {
+      "zh": "固定产物量,测所需要的酶浓度",
+      "en": "Fix the product amount, measure the enzyme needed"
+     },
+     {
+      "zh": "固定底物量,测完全转化所需时间",
+      "en": "Fix the substrate amount, time full conversion"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "标准做法是固定酶量测单位时间的反应量,即反应速率。固定底物量测完全转化时间在原理上可行,但加酶会稀释体系、改变底物浓度,而且酶不改变平衡,\"完全转化\"常常达不到;以达平衡时间或以产物量反推酶浓度都不是酶活的定义。",
+    "explain_en": "The standard assay fixes the enzyme and measures how much reaction occurs per unit time, i.e. the rate. Timing full conversion at fixed substrate is workable in principle but adding enzyme dilutes the system and shifts the substrate concentration, and since the enzyme does not move the equilibrium, full conversion often never occurs; timing the approach to equilibrium or back-calculating enzyme from product is not what activity means."
+   },
+   {
+    "q_zh": "关于酶与反应平衡的关系,下列哪项正确?",
+    "q_en": "Which statement about enzymes and equilibrium is correct?",
+    "options": [
+     {
+      "zh": "降低活化能,同时提高平衡常数 Keq",
+      "en": "Lowers the activation energy, raises Keq as well"
+     },
+     {
+      "zh": "提供反应能量,使平衡移向产物一侧",
+      "en": "Supplies energy that shifts equilibrium to product"
+     },
+     {
+      "zh": "降低活化能,不改变平衡常数 Keq",
+      "en": "Lowers the activation energy, leaves Keq unchanged"
+     },
+     {
+      "zh": "改变自由能变 ΔG,使反应更彻底",
+      "en": "Changes ΔG so the reaction goes further to completion"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "酶只降低活化能,正逆反应同等加速,平衡常数和 ΔG 都不变,只是更快到达平衡。说酶提高 Keq、提供反应能量推动平衡移向产物、或改变 ΔG 让反应更彻底,都违反热力学。",
+    "explain_en": "An enzyme only lowers the activation energy, accelerating both directions equally; Keq and ΔG are unchanged and equilibrium is merely reached sooner. Claiming that it raises Keq, supplies energy to push the equilibrium toward product, or alters ΔG to drive the reaction further all violate thermodynamics."
+   }
+  ]
+ },
+ {
+  "start": 471,
+  "end": 534,
+  "title_zh": "分光光度法的局限与荧光法的高灵敏度",
+  "title_en": "Limits of spectrophotometry versus the sensitivity of fluorescence",
+  "points": [
+   {
+    "zh": "分光光度法 spectrophotometry 是靠测紫外吸收 UV absorbance 的变化来定量反应量的。",
+    "en": "Spectrophotometry quantifies the reaction by following a change in UV absorbance."
+   },
+   {
+    "zh": "它最大的缺点是所需体积大:要用比色皿 cuvette,一次取样最少约 1 mL。",
+    "en": "Its big drawback is volume: it needs a cuvette, and one reading takes at least about 1 mL."
+   },
+   {
+    "zh": "样品消耗量因此很大,而现在实验室常规操作只有几十到几百微升 μL,这种方法根本测不了。",
+    "en": "That consumes a lot of sample, while typical modern reactions are only tens to hundreds of microlitres, which this method cannot handle."
+   },
+   {
+    "zh": "现在用得比较多的是荧光法 fluorescence,它的特点是灵敏度非常非常高。",
+    "en": "Fluorescence assays are now much more widely used, and their defining feature is extremely high sensitivity."
+   },
+   {
+    "zh": "荧光本质上是把生物学过程放大:几皮克 pg、几纳克 ng 的产物变化就能被变成可见 visible 的信号。",
+    "en": "Fluorescence amplifies the biological process: a change of picograms to nanograms of product is turned into a visible signal."
+   },
+   {
+    "zh": "荧光信号受到的干扰一般也比较小,适合微量样品的连续监测。",
+    "en": "Fluorescence signals also suffer relatively little interference, which suits continuous monitoring of small samples."
+   },
+   {
+    "zh": "结论:实验上测酶活最常用的两类方法就是荧光法和同位素测定法。",
+    "en": "Conclusion: the two methods actually used most in the lab are fluorescence and isotope assays."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "灵敏度差距是数量级级别的:吸收法的实用下限通常在 μM 量级,荧光法可以到 nM 甚至 pM。微孔板 microplate 荧光读数每孔只需 20–100 μL,正是它替代比色皿的原因。",
+    "en": "The sensitivity gap is orders of magnitude: absorbance assays are practically limited to the micromolar range, fluorescence reaches nanomolar or even picomolar. A microplate fluorescence read needs only 20-100 μL per well, which is exactly why it displaced the cuvette."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "分光光度法的经典用法是偶联测定 coupled assay,把反应连到 NAD(P)H 上,在 340 nm 读吸收,ε = 6220 M⁻¹cm⁻¹;定量依据是 Beer-Lambert 定律 A = εcl。",
+    "en": "The classic use of spectrophotometry is the coupled assay: link the reaction to NAD(P)H and read absorbance at 340 nm, where ε = 6220 M⁻¹cm⁻¹; quantification rests on the Beer-Lambert law A = εcl."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "荧光法灵敏但不是没有陷阱:底物或产物浓度过高会出现内滤效应 inner filter effect 和自淬灭,信号不再与浓度成正比,反而低估酶活。",
+    "en": "Fluorescence is sensitive but not trap-free: at high substrate or product concentration the inner filter effect and self-quenching make the signal non-linear and the activity is underestimated."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "分光光度法测酶活的主要缺点是什么?",
+    "q_en": "What is the main drawback of the spectrophotometric enzyme assay?",
+    "options": [
+     {
+      "zh": "只适用于水解酶催化的反应",
+      "en": "It applies only to hydrolase-catalysed reactions"
+     },
+     {
+      "zh": "只能读终点,无法连续监测反应",
+      "en": "It reads endpoints only, never continuously"
+     },
+     {
+      "zh": "必须使用放射性标记的底物",
+      "en": "It requires radioactively labelled substrate"
+     },
+     {
+      "zh": "比色皿体积大,样品消耗量多",
+      "en": "Cuvettes need large volumes, consuming sample"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "比色皿一次至少要 1 mL,而现在反应体系常常只有几十到几百微升,样品消耗是它被淘汰的主要原因。分光光度法恰恰是可以连续读数的,不需要放射性标记,也不限于水解酶。",
+    "explain_en": "A cuvette needs at least about 1 mL per reading while modern reactions are tens to hundreds of microlitres, so sample consumption is what rules it out. Spectrophotometry is in fact a continuous readout, needs no radiolabel, and is not restricted to hydrolases."
+   },
+   {
+    "q_zh": "荧光法相对于吸收法的核心优势是什么?",
+    "q_en": "What is the core advantage of fluorescence over absorbance?",
+    "options": [
+     {
+      "zh": "完全不受温度和 pH 的影响",
+      "en": "Entirely insensitive to temperature and to pH"
+     },
+     {
+      "zh": "可以直接测出酶的分子量大小",
+      "en": "It reports the enzyme's molecular mass directly"
+     },
+     {
+      "zh": "灵敏度高,微量产物即可检出",
+      "en": "High sensitivity: trace product is detectable"
+     },
+     {
+      "zh": "无需任何仪器,肉眼即可判读",
+      "en": "No instrument needed; readable by naked eye"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "荧光把 pg–ng 级的产物变化放大成可见信号,灵敏度远高于吸收法。荧光仍然需要荧光计或酶标仪,荧光量子产率对温度和 pH 相当敏感,而分子量要靠 SDS-PAGE 或质谱测。",
+    "explain_en": "Fluorescence amplifies picogram-to-nanogram changes of product into a visible signal, far beyond absorbance. It still needs a fluorimeter or plate reader, quantum yield is quite sensitive to temperature and pH, and molecular mass comes from SDS-PAGE or mass spectrometry."
+   }
+  ]
+ },
+ {
+  "start": 534,
+  "end": 599,
+  "title_zh": "FRET 原理:荧光共振能量转移与猝灭基团",
+  "title_en": "The FRET principle: resonance energy transfer and quenching",
+  "points": [
+   {
+    "zh": "FRET 的全称是 fluorescence resonance energy transfer,即荧光共振能量转移。",
+    "en": "FRET stands for fluorescence resonance energy transfer."
+   },
+   {
+    "zh": "拆开看:fluorescence 荧光、resonance 共振、energy transfer 能量转移。",
+    "en": "Word by word: fluorescence, resonance, energy transfer."
+   },
+   {
+    "zh": "化学上有一类小分子能发出荧光(供体 donor),另一类小分子能把荧光猝灭(猝灭基团 quencher)。",
+    "en": "Chemistry provides small molecules that emit fluorescence (the donor) and others that quench it (the quencher)."
+   },
+   {
+    "zh": "当发光基团和猝灭基团结合、靠得很近时,发出的能量被猝灭基团接收,体系不再发荧光。",
+    "en": "When emitter and quencher are joined and close together, the energy is taken up by the quencher and the system no longer fluoresces."
+   },
+   {
+    "zh": "一旦两者远离,猝灭基团就没有办法再发挥作用,荧光随之恢复。",
+    "en": "Once the two move apart, the quencher can no longer act and fluorescence is restored."
+   },
+   {
+    "zh": "所以 FRET 读出的其实是两个基团之间的\"距离\":近则暗,远则亮。",
+    "en": "FRET therefore reports the distance between the two groups: close means dark, far means bright."
+   },
+   {
+    "zh": "任何能把这两个基团分开(或拉近)的生物学事件,都可以被转换成荧光信号。",
+    "en": "Any biological event that separates or brings together those two groups can be converted into a fluorescence signal."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "FRET 效率 E = 1/(1 + (r/R₀)⁶),对距离是六次方依赖。R₀(Förster 半径)通常 2–6 nm,有效工作范围约 1–10 nm,所以 FRET 被称作\"分子尺\"。",
+    "en": "FRET efficiency is E = 1/(1 + (r/R₀)⁶), a sixth-power distance dependence. R₀, the Förster radius, is typically 2-6 nm and the useful range is about 1-10 nm, which is why FRET is called a molecular ruler."
+   },
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "严格的 FRET 不是\"任意两个分子结合就猝灭\":必须满足供体发射光谱与受体吸收光谱重叠 spectral overlap,且跃迁偶极取向合适。实际用的暗猝灭基团 dark quencher(Dabcyl、BHQ)吸能后以热的形式释放,自身不发光。",
+    "en": "Strict FRET is not \"any two bound molecules quench each other\": the donor emission spectrum must overlap the acceptor absorption spectrum, with suitable dipole orientation. The dark quenchers actually used (Dabcyl, BHQ) release the absorbed energy as heat and emit no light of their own."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "FRET 是非辐射的共振能量转移,不是\"供体先发光、受体再吸收\";它也不同于直接接触猝灭 contact (static) quenching,后者要求两个基团形成非荧光复合物。",
+    "en": "FRET is non-radiative resonance transfer, not \"the donor emits a photon and the acceptor absorbs it\"; it also differs from contact (static) quenching, which requires the two groups to form a non-fluorescent complex."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "FRET 这个缩写的全称是什么?",
+    "q_en": "What does the abbreviation FRET stand for?",
+    "options": [
+     {
+      "zh": "荧光共振能量转移 (fluorescence resonance energy transfer)",
+      "en": "Fluorescence resonance energy transfer"
+     },
+     {
+      "zh": "荧光恢复能量滴定 (fluorescence recovery energy titration)",
+      "en": "Fluorescence recovery energy titration"
+     },
+     {
+      "zh": "荧光氧化还原发射跃迁 (fluorescence redox emission transition)",
+      "en": "Fluorescence redox emission transition"
+     },
+     {
+      "zh": "荧光团反应平衡追踪 (fluorophore reaction equilibrium tracking)",
+      "en": "Fluorophore reaction equilibrium tracking"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "F-R-E-T 分别是 fluorescence、resonance、energy、transfer,即荧光共振能量转移。写成 recovery、reaction 或 redox 的三个说法都不是这个术语;注意另有一个真实技术叫 FRAP(fluorescence recovery after photobleaching),与 FRET 不同。",
+    "explain_en": "F-R-E-T expands to fluorescence, resonance, energy, transfer. The versions built on recovery, reaction or redox are not this term; note that a real but different technique, FRAP (fluorescence recovery after photobleaching), does exist."
+   },
+   {
+    "q_zh": "决定 FRET 信号强弱的最关键因素是什么?",
+    "q_en": "What most critically determines the FRET signal?",
+    "options": [
+     {
+      "zh": "溶液中酶的总蛋白含量",
+      "en": "The total enzyme protein in the solution"
+     },
+     {
+      "zh": "底物多肽的等电点 pI",
+      "en": "The isoelectric point of the substrate"
+     },
+     {
+      "zh": "供体与受体之间的距离",
+      "en": "The distance between donor and acceptor"
+     },
+     {
+      "zh": "反应体系的绝对温度高低",
+      "en": "The absolute temperature of the system"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "能量转移效率对供体—受体距离是六次方依赖,近则猝灭、远则发光,这正是 FRET 的读出原理。温度、酶的总量和底物的等电点都不决定能量转移本身是否发生。",
+    "explain_en": "Transfer efficiency depends on the donor-acceptor distance to the sixth power: close means quenched, far means bright, and that is the readout. Temperature, total enzyme protein and the substrate's isoelectric point do not govern whether the transfer occurs."
+   }
+  ]
+ },
+ {
+  "start": 599,
+  "end": 673,
+  "title_zh": "用 FRET 底物测蛋白酶活性:A—多肽—B 的设计",
+  "title_en": "Measuring protease activity with a FRET substrate",
+  "points": [
+   {
+    "zh": "底物被设计成 A—多肽 peptide—B 的形式:A 是能发荧光的基团,B 是把荧光熄灭的猝灭基团。",
+    "en": "The substrate is built as A-peptide-B: A is the fluorescent group and B is the quencher."
+   },
+   {
+    "zh": "完整底物在溶液状态下,A 和 B 靠得很近,A 发出的荧光都被 B 熄灭,背景很低。",
+    "en": "In the intact substrate in solution A and B are close, all of A's emission is quenched by B, and the background is low."
+   },
+   {
+    "zh": "加入自己纯化的蛋白酶 protease,酶在中间的多肽上\"切一刀\"。",
+    "en": "Adding a purified protease cuts the peptide in the middle."
+   },
+   {
+    "zh": "切开之后溶液中形成游离的 A 和游离的 B,两者扩散分开。",
+    "en": "Cleavage releases free A and free B, which diffuse apart."
+   },
+   {
+    "zh": "游离的 A 重新发出荧光,B 再也不能把它熄灭,于是荧光强度上升。",
+    "en": "Free A now fluoresces and B can no longer quench it, so the fluorescence rises."
+   },
+   {
+    "zh": "检测这个荧光变化,就能测出酶的水解能力 hydrolytic activity。",
+    "en": "Following that fluorescence change gives the enzyme's hydrolytic activity."
+   },
+   {
+    "zh": "课上举的实例是测 SARS-CoV-2 的蛋白酶活性,用的就是这种 FRET 方法。",
+    "en": "The worked example given is assaying a SARS-CoV-2 protease, done exactly with this FRET design."
+   },
+   {
+    "zh": "这类基于荧光的蛋白酶测活方法在实验室里用得非常广泛。",
+    "en": "Fluorescence-based protease assays of this kind are extremely widely used."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "SARS-CoV-2 的主蛋白酶 Mpro(又称 3CLpro,nsp5)几乎绝对要求 P1 位是 Gln,在 Gln↓(Ser/Ala/Gly) 处切开;经典 FRET 底物是 Dabcyl-KTSAVLQ↓SGFRKM-Edans 一类,Edans 发光、Dabcyl 猝灭。",
+    "en": "The SARS-CoV-2 main protease Mpro (3CLpro, nsp5) almost absolutely requires Gln at P1 and cuts at Gln↓(Ser/Ala/Gly); the classic FRET substrate is of the Dabcyl-KTSAVLQ↓SGFRKM-Edans type, with Edans emitting and Dabcyl quenching."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "荧光读数是相对单位 RFU,要用完全切割的底物或产物标准品做标准曲线才能换算成 μmol/min;并且必须在初速度段、[S] 远低于 Km 时,速率才与酶浓度成正比。",
+    "en": "The readout is in relative fluorescence units; converting to μmol/min needs a standard curve from fully cleaved substrate or authentic product, and the rate is proportional to enzyme concentration only in the initial-velocity phase with [S] well below Km."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "猝灭不是把荧光基团破坏掉:切割前后 A 分子本身没变,变的只是它与 B 的距离。同理,底物浓度过高时未切割底物的吸收会造成内滤效应,使真实活性被低估。",
+    "en": "Quenching does not destroy the fluorophore: A itself is unchanged by cleavage, only its distance from B changes. Likewise, at high substrate concentration absorption by the uncleaved substrate causes an inner filter effect and underestimates the true activity."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "FRET 蛋白酶底物被切开后,荧光如何变化?",
+    "q_en": "How does fluorescence change when a FRET protease substrate is cleaved?",
+    "options": [
+     {
+      "zh": "不变,因为两个基团仍然相连",
+      "en": "It is unchanged, because the pair stays linked"
+     },
+     {
+      "zh": "先增后减,因为产物重新结合",
+      "en": "It rises then falls, as the products re-associate"
+     },
+     {
+      "zh": "增强,因为猝灭基团扩散离开",
+      "en": "It rises, because the quencher diffuses away"
+     },
+     {
+      "zh": "减弱,因为发光基团随之降解",
+      "en": "It falls, because the fluorophore is degraded"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "切开多肽后游离的发光基团与猝灭基团扩散分开,距离超出能量转移范围,荧光恢复并随时间上升。发光基团本身并没有被降解,切开后两个基团也不再相连、不会自发重新结合。",
+    "explain_en": "Cleaving the peptide lets the freed fluorophore and quencher diffuse apart beyond transfer range, so fluorescence recovers and climbs with time. The fluorophore itself is not degraded, and after cleavage the two groups are no longer linked and do not spontaneously re-associate."
+   },
+   {
+    "q_zh": "课上举例用 FRET 方法测的是哪种酶?",
+    "q_en": "Which enzyme was the lecture's FRET example?",
+    "options": [
+     {
+      "zh": "酿酒酵母的己糖激酶",
+      "en": "A yeast hexokinase enzyme"
+     },
+     {
+      "zh": "SARS-CoV-2 蛋白酶",
+      "en": "A SARS-CoV-2 protease"
+     },
+     {
+      "zh": "大肠杆菌的 DNA 聚合酶 I",
+      "en": "An E. coli DNA polymerase I"
+     },
+     {
+      "zh": "线粒体的 ATP 合酶",
+      "en": "A mitochondrial ATP synthase"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "老师用 SARS-CoV-2 蛋白酶作例子,因为 FRET 底物天然适合测\"切一刀\"的水解反应。ATP 合酶、己糖激酶和 DNA 聚合酶都不是通过切开一段带双标记的多肽来读出的。",
+    "explain_en": "The example given was a SARS-CoV-2 protease, because a FRET substrate naturally suits a hydrolytic single-cut reaction. ATP synthase, hexokinase and DNA polymerase are not read out by cleaving a doubly labelled peptide."
+   }
+  ]
+ },
+ {
+  "start": 673,
+  "end": 737,
+  "title_zh": "同位素测定法测酶活,并引出核酶",
+  "title_en": "Isotope assays of enzyme activity, leading into ribozymes",
+  "points": [
+   {
+    "zh": "另一类现在用得比较多的测酶活方法是同位素测定法 isotope assay。",
+    "en": "The other widely used activity assay is the isotope assay."
+   },
+   {
+    "zh": "它测的是同位素标记基团的转移 transfer:标记从供体分子转移到底物上。",
+    "en": "It measures the transfer of an isotopically labelled group from a donor molecule onto the substrate."
+   },
+   {
+    "zh": "最典型的应用是磷酸化 phosphorylation(激酶 kinase)和泛素化 ubiquitination 这类修饰反应。",
+    "en": "The typical applications are modification reactions such as phosphorylation by kinases and ubiquitination."
+   },
+   {
+    "zh": "同位素还常常配合成像 imaging 使用,可以做同位素成像读出。",
+    "en": "Isotopes are often combined with imaging, giving an isotopic image as the readout."
+   },
+   {
+    "zh": "荧光法和同位素测定法这两类,是实验上测酶活性用得最多的方法。",
+    "en": "Fluorescence and isotope assays are the two methods used most in practice."
+   },
+   {
+    "zh": "讲完通用测活方法后,课上专门提出一个特例:核酶 ribozyme。",
+    "en": "After the general assay methods, the lecture singles out a special case: the ribozyme."
+   },
+   {
+    "zh": "核酶的意义在于:催化活性不一定要来自蛋白质,一段 RNA 也可以发挥酶的功能。",
+    "en": "The point of ribozymes is that catalytic activity need not come from protein: a stretch of RNA can act as an enzyme."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "激酶测活的经典试剂是 [γ-³²P]ATP:只有 γ 位磷酸被转移到底物上,α、β 位留在 ADP 里,所以标在 γ 位才有信号。³²P 半衰期 14.3 天,³H(12.3 年)和 ¹⁴C(5730 年)多用于代谢标记。",
+    "en": "The classic kinase reagent is [γ-³²P]ATP: only the γ-phosphate is transferred to the substrate while α and β stay with ADP, so the label must sit on γ. ³²P has a 14.3-day half-life, while ³H (12.3 y) and ¹⁴C (5730 y) are used for metabolic labelling."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "同位素法的优点是灵敏、不依赖底物的光学性质,几乎任何转移反应都能测;缺点是多为终点法 endpoint、需要分离结合与游离的标记(滤膜、SPA),并有放射防护和废物成本,所以逐渐被 ADP-Glo、荧光偏振等非放射方法取代。",
+    "en": "Isotope assays are sensitive and independent of the substrate's optical properties, so almost any transfer reaction can be measured; they are usually endpoint assays needing separation of bound from free label (filter binding, SPA) and carry radiation-safety and waste costs, so non-radioactive formats such as ADP-Glo or fluorescence polarisation increasingly replace them."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "同位素法读的是放射性计数 cpm/dpm,反映的是被转移的标记量,必须除以标记物的比活度 specific radioactivity 才能换算成物质的量,不能直接当作浓度读数。",
+    "en": "An isotope assay reads counts (cpm/dpm), reflecting how much label was transferred; you must divide by the tracer's specific radioactivity to get moles, and the counts are not a concentration readout."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "同位素测定法最常用于哪一类反应?",
+    "q_en": "Which class of reaction do isotope assays serve best?",
+    "options": [
+     {
+      "zh": "膜蛋白在脂双层中的横向扩散",
+      "en": "Lateral diffusion of proteins in the bilayer"
+     },
+     {
+      "zh": "抗原与抗体之间的特异性结合",
+      "en": "Specific binding between antigen and antibody"
+     },
+     {
+      "zh": "蛋白质的可逆变性与复性过程",
+      "en": "Reversible denaturation and refolding of protein"
+     },
+     {
+      "zh": "磷酸化、泛素化等基团转移",
+      "en": "Group transfer: phosphorylation, ubiquitination"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "同位素法测的正是被转移的标记基团,所以最适合激酶的磷酸化和泛素化这类转移反应。抗原抗体结合、蛋白质变性复性、膜内扩散都不涉及可追踪的基团转移,分别用 ELISA/SPR、CD 或圆二色、FRAP 来测。",
+    "explain_en": "The isotope assay counts a transferred labelled group, which is exactly what kinase phosphorylation and ubiquitination provide. Antigen-antibody binding, denaturation and refolding, and diffusion in a membrane involve no traceable group transfer and are measured by ELISA/SPR, CD spectroscopy and FRAP respectively."
+   },
+   {
+    "q_zh": "激酶活性测定常用哪种放射性标记的 ATP?",
+    "q_en": "Which labelled ATP is standard for kinase assays?",
+    "options": [
+     {
+      "zh": "[β-³²P]ATP,β 位磷被转移",
+      "en": "[β-³²P]ATP; the β phosphate transfers"
+     },
+     {
+      "zh": "[γ-³²P]ATP,γ 位磷被转移",
+      "en": "[γ-³²P]ATP; the γ phosphate transfers"
+     },
+     {
+      "zh": "[α-³²P]ATP,α 位磷被转移",
+      "en": "[α-³²P]ATP; the α phosphate transfers"
+     },
+     {
+      "zh": "[³H]ATP,腺嘌呤上氢被转移",
+      "en": "[³H]ATP; a hydrogen on adenine transfers"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "激酶转移的是 ATP 末端的 γ-磷酸,所以只有标在 γ 位的 ATP 才会把放射性带到底物上;α 位和 β 位的磷酸留在 ADP 中,腺嘌呤上的氢根本不参与转移。",
+    "explain_en": "A kinase transfers the terminal γ-phosphate of ATP, so only a γ-labelled ATP carries radioactivity onto the substrate; the α and β phosphates stay in ADP, and hydrogen on the adenine is not transferred at all."
+   }
+  ]
+ },
+ {
+  "start": 737,
+  "end": 822,
+  "title_zh": "核酶的发现与酶学特性,兼谈抗体酶",
+  "title_en": "Discovery and enzymology of ribozymes, plus abzymes",
+  "points": [
+   {
+    "zh": "核酶最早发现于四膜虫 Tetrahymena 这种单细胞生物。",
+    "en": "Ribozymes were first found in the single-celled organism Tetrahymena."
+   },
+   {
+    "zh": "观察到的现象是:它的 26S rRNA 在成熟过程中,RNA 上的内含子 intron 会被剪切去除。",
+    "en": "The observation was that during maturation of its 26S rRNA, an intron in the RNA is spliced out."
+   },
+   {
+    "zh": "关键发现是这段 RNA 自己就具有把自身内含子去除的功能,不需要蛋白质酶,即自剪接 self-splicing。",
+    "en": "The key finding was that the RNA itself removes its own intron without any protein enzyme: self-splicing."
+   },
+   {
+    "zh": "因为它就是一段 RNA 却能发挥酶的活性,人们把这类分子命名为核酶 ribozyme。",
+    "en": "Because it is simply a stretch of RNA that nonetheless acts as an enzyme, such molecules were named ribozymes."
+   },
+   {
+    "zh": "核酶具有经典酶促反应的特征:它的底物也是高度专一的 substrate specificity。",
+    "en": "Ribozymes show the classic hallmarks of enzyme catalysis: their substrates are highly specific."
+   },
+   {
+    "zh": "核酶的催化同样符合米氏方程 Michaelis-Menten equation。",
+    "en": "Ribozyme catalysis likewise obeys the Michaelis-Menten equation."
+   },
+   {
+    "zh": "核酶也像正常的蛋白酶一样会被竞争性抑制 competitive inhibition,对抑制剂敏感。",
+    "en": "Ribozymes are also subject to competitive inhibition and are sensitive to inhibitors, just as protein enzymes are."
+   },
+   {
+    "zh": "抗体酶 abzyme:抗体分为恒定区和可变区 variable region,可变区由不同基因片段随机组合产生。",
+    "en": "Abzymes: antibodies have a constant and a variable region, and the variable region is generated by random combination of gene segments."
+   },
+   {
+    "zh": "随机组合中不可避免会出现某些序列恰好具有酶活性,这类抗体就叫抗体酶;课上认为这部分不太重要。",
+    "en": "Some of those random combinations inevitably happen to have catalytic activity, and such antibodies are called abzymes; the lecture treats this as a minor point."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上口误 · lecture misstatement",
+    "zh": "四膜虫 Tetrahymena thermophila 不是原核生物,而是单细胞真核生物(纤毛虫原生动物)。这一点很关键:正因为它是真核生物,它的 rRNA 前体里才有内含子需要剪接;细菌的核糖体 RNA 通常没有这种内含子。",
+    "en": "Tetrahymena thermophila is not a prokaryote but a single-celled eukaryote, a ciliate protozoan. This matters: precisely because it is eukaryotic its rRNA precursor carries an intron to be spliced, whereas bacterial ribosomal RNA generally does not."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "Thomas Cech(四膜虫 group I 内含子自剪接)与 Sidney Altman(RNase P 中真正起催化作用的是其 RNA 亚基 M1 RNA)因发现 RNA 的催化活性共获 1989 年诺贝尔化学奖。另一个重量级核酶是核糖体本身:肽键形成的肽基转移酶中心 peptidyl transferase center 完全由 23S/28S rRNA 构成。",
+    "en": "Thomas Cech (self-splicing of the Tetrahymena group I intron) and Sidney Altman (the catalytic subunit of RNase P is its M1 RNA) shared the 1989 Nobel Prize in Chemistry for discovering catalytic RNA. The other headline ribozyme is the ribosome itself: the peptidyl transferase centre that forms peptide bonds is built entirely of 23S/28S rRNA."
+   },
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "核酶并不是\"能催化任何化学反应\"。天然核酶的反应谱很窄,主要是磷酸二酯键的转酯与水解(group I/II 内含子自剪接、hammerhead 和 hairpin 核酶、RNase P),外加核糖体催化的肽键形成;催化效率一般也低于同类蛋白酶。",
+    "en": "Ribozymes do not catalyse \"any reaction\". Natural ribozymes have a narrow repertoire, essentially transesterification and hydrolysis of phosphodiester bonds (group I/II intron self-splicing, hammerhead and hairpin ribozymes, RNase P), plus peptide-bond formation by the ribosome; their rates are generally below those of comparable protein enzymes."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "抗体酶不只是碰巧出现的:实验上用过渡态类似物 transition-state analog 作为半抗原免疫,可以定向筛出结合过渡态的抗体,从而获得催化活性——这直接印证了\"酶催化的本质是稳定过渡态\"。其催化效率通常比天然酶低几个数量级。",
+    "en": "Abzymes are not only accidental: immunising with a transition-state analogue as hapten selects antibodies that bind the transition state and thereby acquire catalytic activity, a direct demonstration that catalysis works by stabilising the transition state. Their rates are usually orders of magnitude below natural enzymes."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "核酶最早是在哪种生物的哪种 RNA 中发现的?",
+    "q_en": "In which organism and RNA were ribozymes first found?",
+    "options": [
+     {
+      "zh": "四膜虫的 26S rRNA 前体",
+      "en": "The 26S rRNA precursor of Tetrahymena"
+     },
+     {
+      "zh": "酿酒酵母的 tRNA-Phe 前体",
+      "en": "The tRNA-Phe precursor of budding yeast"
+     },
+     {
+      "zh": "T4 噬菌体的 mRNA 前体",
+      "en": "The mRNA precursor of bacteriophage T4"
+     },
+     {
+      "zh": "大肠杆菌的 16S rRNA 前体",
+      "en": "The 16S rRNA precursor of E. coli"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "最早的核酶来自四膜虫 26S rRNA 前体中的内含子,它能自我剪接把自己切除。大肠杆菌 16S rRNA 前体的加工靠蛋白质核酸酶,酵母 tRNA-Phe 是经典的晶体结构材料而非自剪接例子,T4 噬菌体虽含 group I 内含子但不是核酶的首次发现。",
+    "explain_en": "The first ribozyme was the intron in the Tetrahymena 26S rRNA precursor, which excises itself by self-splicing. Processing of the E. coli 16S rRNA precursor relies on protein nucleases, yeast tRNA-Phe is famous for its crystal structure rather than self-splicing, and although phage T4 does carry group I introns it was not the original discovery."
+   },
+   {
+    "q_zh": "关于核酶的酶学性质,下列哪项正确?",
+    "q_en": "Which statement about ribozyme enzymology is correct?",
+    "options": [
+     {
+      "zh": "无底物专一性,不符合米氏方程动力学",
+      "en": "Not substrate-specific and disobeys Michaelis-Menten"
+     },
+     {
+      "zh": "有底物专一性,但不被任何抑制剂抑制",
+      "en": "Substrate-specific, yet insensitive to all inhibitors"
+     },
+     {
+      "zh": "无底物专一性,催化时需蛋白质酶辅助",
+      "en": "Not substrate-specific, needs a protein enzyme to work"
+     },
+     {
+      "zh": "有底物专一性,动力学符合米氏方程",
+      "en": "Substrate-specific and obeys Michaelis-Menten kinetics"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "核酶表现出经典酶促反应特征:底物高度专一,动力学符合米氏方程,而且会被竞争性抑制。说它不专一、不符合米氏方程,或说它不受任何抑制剂影响,都与观察相反;自剪接内含子恰恰证明它不需要蛋白质酶帮忙。",
+    "explain_en": "Ribozymes show the classic hallmarks: high substrate specificity, Michaelis-Menten kinetics, and susceptibility to competitive inhibition. Saying they lack specificity or depart from Michaelis-Menten, or that no inhibitor affects them, contradicts the observations; and self-splicing introns are the very demonstration that no protein enzyme is required."
+   },
+   {
+    "q_zh": "抗体酶 abzyme 的催化活性来自抗体的哪一部分?",
+    "q_en": "Which part of an antibody carries abzyme catalytic activity?",
+    "options": [
+     {
+      "zh": "轻链与重链之间的二硫键",
+      "en": "Disulfide bonds between the two chain types"
+     },
+     {
+      "zh": "与补体结合之后的构象变化",
+      "en": "Conformation formed after complement binding"
+     },
+     {
+      "zh": "可变区随机组合产生的序列",
+      "en": "Random combinations in the variable region"
+     },
+     {
+      "zh": "恒定区上携带的糖基化修饰",
+      "en": "Glycosylation carried on the constant region"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "可变区由基因片段随机组合而成,少数组合恰好形成了能催化反应的结合口袋,这就是抗体酶。恒定区的糖基化决定的是效应功能,链间二硫键只维持四链结构,补体结合发生在恒定区且与催化无关。",
+    "explain_en": "The variable region arises from random combination of gene segments, and a few combinations happen to form a pocket that catalyses a reaction: that is an abzyme. Constant-region glycosylation governs effector function, interchain disulfides merely hold the four chains together, and complement binds the constant region with no bearing on catalysis."
+   }
+  ]
+ },
+ {
+  "start": 822,
+  "end": 901,
+  "title_zh": "收尾抗体酶，转入米氏方程：酶促反应动力学的 v–[S] 作图",
+  "title_en": "Wrapping up abzymes, entering Michaelis-Menten: the v vs [S] plot",
+  "points": [
+   {
+    "zh": "抗体酶 abzyme 到此为止：实际上基本见不到，只是一种分类概念，不作为重点。",
+    "en": "Abzymes are wrapped up here: they are essentially never encountered in practice and amount to a classification label only, not an exam focus."
+   },
+   {
+    "zh": "本节安排：把米氏方程 Michaelis-Menten equation 的推导讲完；作图留到下次课。",
+    "en": "Plan for this session: finish the derivation of the Michaelis-Menten equation; the plotting is deferred to the next session."
+   },
+   {
+    "zh": "作图之所以留到下次，是因为要和抑制作用 inhibition 一起讲——不同类型的抑制会改变图形。",
+    "en": "Plotting is deferred because it has to be taught together with inhibition: different inhibition types change the shape of the plot."
+   },
+   {
+    "zh": "米氏方程属于酶促反应动力学 enzyme kinetics 的内容，描述速率如何随底物浓度变化。",
+    "en": "The Michaelis-Menten equation belongs to enzyme kinetics: it describes how rate changes with substrate concentration."
+   },
+   {
+    "zh": "基本实验设计：把酶加入一个反应体系，酶量保持不变，只不断改变底物浓度 [S]。",
+    "en": "Basic experimental design: add enzyme to a reaction system, keep the amount of enzyme fixed, and vary only the substrate concentration [S]."
+   },
+   {
+    "zh": "标准作图：纵坐标是反应速率 v，横坐标是底物浓度 [S]。",
+    "en": "Standard plot: reaction rate v on the y-axis, substrate concentration [S] on the x-axis."
+   },
+   {
+    "zh": "随 [S] 升高，曲线呈三段式趋势：先与 [S] 成正比上升，再增幅变缓，最后达到最大值不再上升。",
+    "en": "As [S] rises the curve shows three phases: an initial rise proportional to [S], then a flattening rise, and finally a plateau where it no longer increases."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "这条曲线在数学上是直角双曲线 rectangular hyperbola，方程 v = Vmax[S]/(Km + [S])，由 Vmax 与 Km 两个参数完全决定。",
+    "en": "Mathematically the curve is a rectangular hyperbola, v = Vmax[S]/(Km + [S]), fully specified by just two parameters, Vmax and Km."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "纵轴的 v 必须是初速度 initial velocity v0：反应刚开始、产物接近于零、底物消耗很少时的速率。否则底物耗竭和产物抑制会把曲线压低。",
+    "en": "The v on the y-axis must be the initial velocity v0, measured at the very start when product is near zero and little substrate has been consumed; otherwise substrate depletion and product inhibition distort the curve."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "v–[S] 曲线（每个点是一次独立实验的初速度）与反应进程曲线 progress curve（同一次反应中产物随时间累积）是两张完全不同的图。",
+    "en": "The v vs [S] curve, where each point is the initial velocity of a separate experiment, is a different plot from the progress curve, which follows product accumulating over time in one reaction."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "下次课要讲的作图，通常指 Lineweaver-Burk 双倒数作图（1/v 对 1/[S]）以及 Eadie-Hofstee、Hanes-Woolf 等线性化方法。",
+    "en": "The plotting promised for next time normally means the Lineweaver-Burk double-reciprocal plot (1/v against 1/[S]) plus linearisations such as Eadie-Hofstee and Hanes-Woolf."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "米氏动力学的标准曲线中，横轴和纵轴分别是什么？",
+    "q_en": "In the standard Michaelis-Menten plot, what are the x- and y-axes?",
+    "options": [
+     {
+      "zh": "横轴底物浓度，纵轴反应速率",
+      "en": "x: substrate concentration, y: reaction rate"
+     },
+     {
+      "zh": "横轴反应时间，纵轴产物浓度",
+      "en": "x: reaction time, y: product concentration"
+     },
+     {
+      "zh": "横轴酶的浓度，纵轴底物浓度",
+      "en": "x: enzyme concentration, y: substrate concentration"
+     },
+     {
+      "zh": "横轴反应速率，纵轴底物浓度",
+      "en": "x: reaction rate, y: substrate concentration"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "课上明确说纵坐标是反应速率、横坐标是底物浓度。以时间为横轴、产物为纵轴的那一项画的是反应进程曲线，不是米氏曲线；把速率放在横轴的那一项把两轴写反了。",
+    "explain_en": "The lecture states plainly that rate is on the y-axis and substrate concentration on the x-axis. Time against product describes a progress curve, not the Michaelis-Menten plot, and putting rate on the x-axis simply swaps the two axes."
+   },
+   {
+    "q_zh": "酶促反应动力学为什么要测初速度 v0？",
+    "q_en": "Why is enzyme kinetics measured as an initial velocity v0?",
+    "options": [
+     {
+      "zh": "此时酶浓度会随时间而升高",
+      "en": "the enzyme concentration rises with time"
+     },
+     {
+      "zh": "此时产物极少，逆反应可忽略",
+      "en": "product is negligible, so no back-reaction"
+     },
+     {
+      "zh": "此时酶还完全没有结合底物",
+      "en": "the enzyme has not bound any substrate yet"
+     },
+     {
+      "zh": "此时底物已经基本被消耗完",
+      "en": "the substrate has almost all been consumed"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "初速度阶段产物浓度接近零，E + P 重新结合的逆反应可以忽略，底物浓度也还等于加入值。说酶尚未结合底物则速率为零，无从测量；底物耗尽和酶浓度升高都不符合实验条件。",
+    "explain_en": "At the initial-rate stage product is close to zero, so the E + P back-reaction is negligible and [S] still equals what was added. If the enzyme had bound nothing the rate would be zero and unmeasurable, while substrate exhaustion and a rising enzyme concentration both contradict the experimental setup."
+   },
+   {
+    "q_zh": "固定酶量、逐步提高底物浓度，反应速率的整体变化趋势是？",
+    "q_en": "With enzyme fixed and substrate raised step by step, how does the rate behave overall?",
+    "options": [
+     {
+      "zh": "自始至终与底物浓度严格成正比",
+      "en": "strictly proportional to substrate throughout"
+     },
+     {
+      "zh": "自始至终与底物浓度完全无关",
+      "en": "entirely independent of substrate throughout"
+     },
+     {
+      "zh": "先与底物浓度成正比，后趋于恒定",
+      "en": "first proportional to substrate, then levelling off"
+     },
+     {
+      "zh": "先趋于恒定，后与底物浓度成正比",
+      "en": "first levelling off, then proportional to substrate"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "低底物浓度时速率与 [S] 成正比，随后增幅递减，最终酶被饱和、速率不再随 [S] 变化。始终成正比意味着速率无上限；始终无关则否定了低浓度区的线性段。",
+    "explain_en": "At low [S] the rate is proportional to [S], the increase then tapers off, and finally the enzyme saturates and the rate stops responding to [S]. Strict proportionality throughout would imply an unbounded rate, while complete independence denies the linear region at low [S]."
+   }
+  ]
+ },
+ {
+  "start": 901,
+  "end": 966,
+  "title_zh": "低底物浓度区：速率与 [S] 成正比的一级反应",
+  "title_en": "Low substrate concentration: the first-order region where v is proportional to [S]",
+  "points": [
+   {
+    "zh": "低底物浓度时，反应速率与底物浓度成正比：有多少底物就转化多少。",
+    "en": "At low substrate concentration the rate is proportional to [S]: whatever substrate is present gets turned over."
+   },
+   {
+    "zh": "课上的直观解释是此时酶的催化能力大量空闲，底物一来就被结合并转化掉。",
+    "en": "The lecture's intuitive account is that most of the enzyme's catalytic capacity sits idle, so any substrate arriving is bound and converted at once."
+   },
+   {
+    "zh": "这一段称为一级反应 first-order reaction。",
+    "en": "This stretch is called a first-order reaction."
+   },
+   {
+    "zh": "一级反应的数学形式是 y = kx，即一条过原点的直线，k 为该条件下的速率常数。",
+    "en": "A first-order reaction has the form y = kx, a straight line through the origin whose slope k is the rate constant under those conditions."
+   },
+   {
+    "zh": "所谓反应的级数，看的是速率对底物浓度的依赖次方：一级即 [S] 的一次方。",
+    "en": "The order of the reaction refers to the power of substrate concentration the rate depends on: first order means [S] to the first power."
+   },
+   {
+    "zh": "底物浓度继续升高后，速率仍然增加，但不再与 [S] 成正比，线性关系逐渐消失。",
+    "en": "As substrate is raised further the rate still increases but is no longer proportional to [S], and the linear relationship gradually disappears."
+   },
+   {
+    "zh": "这一非线性过渡区的本质，是体系在逐渐趋近于酶被底物饱和的状态。",
+    "en": "This non-linear transition region reflects the system gradually approaching saturation of the enzyme by substrate."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "一级反应区的判据是 [S] 远小于 Km，而不是酶与底物的摩尔比 1:1。典型实验中酶是 nM 级、Km 是 μM–mM 级，所以底物早已远多于酶，反应仍然是一级。",
+    "en": "The criterion for the first-order region is [S] far below Km, not a 1:1 molar ratio of enzyme to substrate. In a typical assay enzyme is nanomolar while Km is micromolar to millimolar, so substrate already far exceeds enzyme and the reaction is still first order."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "当 [S] 远小于 Km 时，米氏方程退化为 v ≈ (Vmax/Km)[S]，因此直线斜率是 Vmax/Km，对应的表观一级速率常数等于 (kcat/Km)·[E]t。",
+    "en": "When [S] is far below Km the Michaelis-Menten equation collapses to v ≈ (Vmax/Km)[S], so the slope is Vmax/Km and the apparent first-order rate constant equals (kcat/Km) times total enzyme."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "这里的一级只是对底物而言，严格说是准一级 pseudo-first-order（因为酶浓度固定）；反应速率对酶浓度在任何 [S] 下都是一级。",
+    "en": "First order here refers to substrate only, and strictly it is pseudo-first-order because enzyme is held constant; with respect to enzyme concentration the rate is first order at any [S]."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "反应速率与底物浓度成正比（一级反应区）的条件是？",
+    "q_en": "What condition puts the reaction in the first-order region, with rate proportional to [S]?",
+    "options": [
+     {
+      "zh": "底物浓度正好等于 Km",
+      "en": "substrate concentration exactly equal to Km"
+     },
+     {
+      "zh": "酶的浓度远大于 Km",
+      "en": "enzyme concentration far above Km"
+     },
+     {
+      "zh": "底物浓度远小于 Km",
+      "en": "substrate concentration far below Km"
+     },
+     {
+      "zh": "底物浓度远大于 Km",
+      "en": "substrate concentration far above Km"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "[S] 远小于 Km 时 v ≈ (Vmax/Km)[S]，成正比。[S] 远大于 Km 是饱和的零级区；[S] 等于 Km 时速率为 Vmax 的一半，正处于曲线弯曲处；酶浓度与 Km 不是同一类量，不能这样比较。",
+    "explain_en": "With [S] far below Km, v approximates (Vmax/Km)[S] and is proportional to [S]. Far above Km is the saturated zero-order region; at [S] equal to Km the rate is half Vmax, right in the bend of the curve; and enzyme concentration is not the quantity Km compares against."
+   },
+   {
+    "q_zh": "在 [S] 远小于 Km 的区间，v 对 [S] 作图的直线斜率等于？",
+    "q_en": "In the region where [S] is far below Km, what is the slope of v plotted against [S]?",
+    "options": [
+     {
+      "zh": "Vmax/Km",
+      "en": "Vmax/Km"
+     },
+     {
+      "zh": "Km/Vmax",
+      "en": "Km/Vmax"
+     },
+     {
+      "zh": "Vmax×Km",
+      "en": "Vmax×Km"
+     },
+     {
+      "zh": "Vmax−Km",
+      "en": "Vmax−Km"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "把 [S] 远小于 Km 代入 v = Vmax[S]/(Km+[S])，分母近似为 Km，得 v ≈ (Vmax/Km)[S]。Km/Vmax 是它的倒数，乘积与差值都没有动力学含义。",
+    "explain_en": "Substituting [S] far below Km into v = Vmax[S]/(Km+[S]) makes the denominator approximately Km, giving v ≈ (Vmax/Km)[S]. Km/Vmax is its reciprocal, and neither the product nor the difference has kinetic meaning."
+   },
+   {
+    "q_zh": "所谓一级反应、零级反应中的级，指的是什么？",
+    "q_en": "In the terms first-order and zero-order reaction, what does the order refer to?",
+    "options": [
+     {
+      "zh": "反应过程中出现的中间体数",
+      "en": "the number of intermediates along the pathway"
+     },
+     {
+      "zh": "速率所依赖的底物浓度次方",
+      "en": "the exponent of [S] in the rate equation"
+     },
+     {
+      "zh": "酶催化反应所经历的步骤数",
+      "en": "the number of steps in the catalysed reaction"
+     },
+     {
+      "zh": "酶结合底物所用的位点数目",
+      "en": "the number of sites the enzyme uses to bind"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "级数是速率方程中浓度项的指数：一级为 [S] 的一次方（y = kx），零级为 [S] 的零次方（y = 常数）。步骤数、结合位点数和中间体数都属于机制描述，与级数无关。",
+    "explain_en": "Order is the exponent on the concentration term in the rate law: first order is [S] to the power one (y = kx), zero order is [S] to the power zero (y = constant). Step counts, binding sites and intermediates describe mechanism, not order."
+   }
+  ]
+ },
+ {
+  "start": 966,
+  "end": 1030,
+  "title_zh": "过渡区到零级反应：底物饱和与 Vmax",
+  "title_en": "From the transition region to zero order: substrate saturation and Vmax",
+  "points": [
+   {
+    "zh": "中间过渡区：底物继续增加时速率仍上升，但增幅递减，不再是线性关系。",
+    "en": "In the intermediate region more substrate still raises the rate, but by ever smaller increments, and the relationship is no longer linear."
+   },
+   {
+    "zh": "过渡区的物理含义是酶正在被逐步占满，越来越接近饱和。",
+    "en": "Physically the transition region means the enzyme is being progressively occupied and approaching saturation."
+   },
+   {
+    "zh": "当底物浓度远远大于酶浓度、达到一定值后，反应速率达到最大值 Vmax。",
+    "en": "Once substrate concentration greatly exceeds enzyme and passes a certain level, the rate reaches its maximum, Vmax."
+   },
+   {
+    "zh": "此时无论怎样继续加底物，速率都不再增加——酶被饱和。",
+    "en": "From then on adding more substrate no longer increases the rate: the enzyme is saturated."
+   },
+   {
+    "zh": "这一段称为零级反应 zero-order reaction：速率与底物浓度无关。",
+    "en": "This stretch is the zero-order reaction: the rate is independent of substrate concentration."
+   },
+   {
+    "zh": "零级的数学形式是 y = c，即常数；相当于 [S] 的零次方，方程里已经没有 x 了。",
+    "en": "Zero order has the form y = c, a constant; it corresponds to [S] to the power zero, so the variable drops out of the equation."
+   },
+   {
+    "zh": "录音中出现的“临近对饱和了0”是口播含混，意思是接近饱和、进入零级反应。",
+    "en": "The garbled phrase in the recording about saturation and zero simply means the system nears saturation and enters zero-order kinetics."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "Vmax = kcat × [E]t。零级只是对底物而言：Vmax 本身与总酶浓度成正比，加倍酶量就把平台抬高一倍。",
+    "en": "Vmax equals kcat times total enzyme. Zero order applies to substrate only: Vmax itself is proportional to total enzyme, so doubling the enzyme doubles the plateau."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "曲线的半饱和点定义了 Km：当 [S] = Km 时 v = Vmax/2。Km 的量纲是浓度，不是速率。",
+    "en": "The half-saturation point defines Km: when [S] equals Km, v is Vmax/2. Km has units of concentration, not of rate."
+   },
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "进入饱和的判据是 [S] 远大于 Km，而不是 [S] 远大于 [E]。实践中常取 [S] ≈ 10×Km，此时速率约为 Vmax 的 91%。",
+    "en": "Saturation is set by [S] far above Km rather than [S] far above [E]. In practice one uses [S] around ten times Km, which gives roughly 91 percent of Vmax."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "双曲线只是渐近趋近 Vmax，严格说永远达不到，所以 Vmax 是外推值；直接从曲线上目测最高点会系统性低估 Vmax，这正是后面要用双倒数作图的原因。",
+    "en": "The hyperbola only approaches Vmax asymptotically and never strictly reaches it, so Vmax is an extrapolated value; reading the highest point off the curve by eye underestimates it systematically, which is exactly why double-reciprocal plots are introduced later."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "零级反应区的特征是？",
+    "q_en": "What characterises the zero-order region?",
+    "options": [
+     {
+      "zh": "速率与底物浓度成正比上升",
+      "en": "the rate rises in proportion to substrate"
+     },
+     {
+      "zh": "速率与酶的总浓度成反比",
+      "en": "the rate is inversely related to total enzyme"
+     },
+     {
+      "zh": "速率随底物浓度升高而下降",
+      "en": "the rate falls as substrate concentration rises"
+     },
+     {
+      "zh": "速率恒定，与底物浓度无关",
+      "en": "the rate is constant, independent of [S]"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "零级即 v = 常数 = Vmax，与 [S] 无关。与 [S] 成正比是低浓度的一级区；速率与总酶量是正比而非反比；底物升高使速率下降属于底物抑制，是另一种特殊现象。",
+    "explain_en": "Zero order means v equals a constant, Vmax, independent of [S]. Proportionality to [S] describes the first-order region at low substrate; rate scales with total enzyme directly rather than inversely; and a rate that falls with rising substrate is substrate inhibition, a separate special case."
+   },
+   {
+    "q_zh": "当底物浓度恰好等于 Km 时，反应速率是多少？",
+    "q_en": "What is the reaction rate when substrate concentration equals Km?",
+    "options": [
+     {
+      "zh": "Vmax 的两倍",
+      "en": "twice Vmax"
+     },
+     {
+      "zh": "Vmax 本身",
+      "en": "Vmax itself"
+     },
+     {
+      "zh": "Vmax 的十分之一",
+      "en": "one tenth of Vmax"
+     },
+     {
+      "zh": "Vmax 的一半",
+      "en": "half of Vmax"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "代入 v = Vmax[S]/(Km+[S])，当 [S] = Km 时分子分母之比为 1/2。速率不可能超过 Vmax，所以两倍不成立；等于 Vmax 需要 [S] 远大于 Km；十分之一对应 [S] 约为 Km/9。",
+    "explain_en": "Substituting [S] equal to Km into v = Vmax[S]/(Km+[S]) gives one half. The rate can never exceed Vmax, so twice is impossible; reaching Vmax requires [S] far above Km; and one tenth corresponds to [S] near Km/9."
+   },
+   {
+    "q_zh": "反应速率达到 Vmax 时，酶主要以什么形式存在？",
+    "q_en": "When the rate reaches Vmax, in what form is most of the enzyme?",
+    "options": [
+     {
+      "zh": "几乎全部是 ES 复合物",
+      "en": "almost all as the ES complex"
+     },
+     {
+      "zh": "几乎全部是游离的酶 E",
+      "en": "almost all as free enzyme E"
+     },
+     {
+      "zh": "一半 ES、一半游离酶",
+      "en": "half ES and half free enzyme"
+     },
+     {
+      "zh": "几乎全部是变性失活的酶",
+      "en": "almost all as denatured enzyme"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "饱和意味着几乎所有活性位点都被底物占据，酶几乎全部以 ES 形式存在，因此再加底物也无处可结合。游离酶占多数对应低底物浓度；ES 与游离酶各半对应 [S] = Km；高底物浓度并不会使酶变性。",
+    "explain_en": "Saturation means nearly every active site is occupied, so the enzyme exists almost entirely as ES and extra substrate has nowhere to bind. Mostly free enzyme describes low substrate; an even split of ES and free enzyme corresponds to [S] equal to Km; and high substrate does not denature the enzyme."
+   }
+  ]
+ },
+ {
+  "start": 1030,
+  "end": 1125,
+  "title_zh": "用饱和条件测 Vmax，以及经典反应式 E + S ⇌ ES → E + P",
+  "title_en": "Measuring Vmax under saturation, and the classic scheme E + S ⇌ ES → E + P",
+  "points": [
+   {
+    "zh": "测一个酶的速率时，通常刻意选第三种情况：让底物浓度远远大于酶浓度。",
+    "en": "To measure an enzyme's rate one deliberately chooses the third case: substrate concentration far greater than enzyme concentration."
+   },
+   {
+    "zh": "理由是在饱和条件下测到的是 Vmax，课上认为它最能反映这个酶的活性。",
+    "en": "The reason is that saturating conditions give Vmax, which the lecture takes as the best reflection of the enzyme's activity."
+   },
+   {
+    "zh": "推导前先约定符号：S 代表 substrate 底物，E 代表 enzyme 酶，米氏方程中一律如此。",
+    "en": "Before the derivation the symbols are fixed: S is substrate and E is enzyme throughout the Michaelis-Menten treatment."
+   },
+   {
+    "zh": "最早建立的反应式是两步：底物与酶先以一定速率结合成 ES 复合体。",
+    "en": "The earliest scheme has two steps: substrate and enzyme first combine at a certain rate to form the ES complex."
+   },
+   {
+    "zh": "ES 复合体就是酶和底物结合在一起的中间物种，课上称之为过渡态过程。",
+    "en": "The ES complex is the species in which enzyme and substrate are bound together, which the lecture calls a transition-state process."
+   },
+   {
+    "zh": "ES 又以一定速率分解，生成产物 P（product），同时把酶重新释放出来。",
+    "en": "ES then breaks down at a certain rate to give product P while releasing the enzyme again."
+   },
+   {
+    "zh": "酶被释放后可以再次进入循环，这就是经典的酶促反应过程。",
+    "en": "The released enzyme re-enters the cycle, and this is the classic enzyme-catalysed reaction scheme."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "ES 是基态的酶–底物复合物（Michaelis complex），处在能量低谷，不是过渡态。真正的过渡态写作 ES‡，处于能垒顶端；酶的催化本质是稳定 ES‡、降低活化能。",
+    "en": "ES is the ground-state enzyme-substrate complex, the Michaelis complex, sitting in an energy well; it is not the transition state. The true transition state is written ES double-dagger at the top of the barrier, and catalysis works by stabilising it and lowering the activation energy."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "Vmax 随加入的酶量而变，不能用来横向比较两种酶。描述酶本身的是 kcat = Vmax/[E]t（转换数 turnover number，单位 s⁻¹），比较催化效率则用 kcat/Km。",
+    "en": "Vmax scales with how much enzyme was added and cannot compare two enzymes. The enzyme-intrinsic constant is kcat = Vmax/[E]t, the turnover number in per-second units, and catalytic efficiency is compared by kcat/Km."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "酶活力单位：1 U = 每分钟转化 1 μmol 底物；SI 单位 katal = 每秒 1 mol。比活力 specific activity = U/mg 蛋白，用来衡量纯度。",
+    "en": "Activity units: one U converts one micromole of substrate per minute, while the SI katal is one mole per second. Specific activity, U per milligram of protein, tracks purity."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "要比较两种酶本身的催化能力，最合适的参数是？",
+    "q_en": "Which parameter best compares the intrinsic catalytic power of two enzymes?",
+    "options": [
+     {
+      "zh": "ΔG，反应自由能",
+      "en": "ΔG, the free-energy change"
+     },
+     {
+      "zh": "kcat，转换数",
+      "en": "kcat, the turnover number"
+     },
+     {
+      "zh": "Vmax，最大速率",
+      "en": "Vmax, the maximal rate"
+     },
+     {
+      "zh": "[E]t，总酶浓度",
+      "en": "[E]t, total enzyme"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "kcat = Vmax/[E]t，已经除掉了酶量，是酶分子本身每秒的转换次数。Vmax 随加入的酶量而变；总酶浓度只是实验用量；反应自由能由底物与产物决定，与催化剂无关。",
+    "explain_en": "kcat equals Vmax divided by total enzyme, so the amount of enzyme is divided out and what remains is turnovers per second per molecule. Vmax depends on how much enzyme was added, total enzyme is merely the amount used, and the free-energy change is set by substrate and product regardless of catalyst."
+   },
+   {
+    "q_zh": "在反应能量图上，ES 复合物属于什么？",
+    "q_en": "On the reaction energy diagram, what is the ES complex?",
+    "options": [
+     {
+      "zh": "酶失去活性的变性状态",
+      "en": "the denatured, inactive state of the enzyme"
+     },
+     {
+      "zh": "能量较低的基态中间物",
+      "en": "a ground-state intermediate in an energy well"
+     },
+     {
+      "zh": "能量最高的过渡态结构",
+      "en": "the highest-energy transition-state structure"
+     },
+     {
+      "zh": "反应结束时的最终产物",
+      "en": "the final product at the end of the reaction"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "ES 是能量低谷中的稳定中间物；能垒顶端的是 ES‡ 过渡态，酶正是靠稳定它来降低活化能。最终产物是 P 加游离酶；变性态与催化机制无关。",
+    "explain_en": "ES is a stable intermediate in an energy well, whereas the species at the top of the barrier is the transition state ES double-dagger, which the enzyme stabilises to lower the activation energy. The final product is P plus free enzyme, and the denatured state has nothing to do with the mechanism."
+   },
+   {
+    "q_zh": "经典反应式 E + S ⇌ ES → E + P 的最后一步同时生成什么？",
+    "q_en": "In the classic scheme E + S ⇌ ES → E + P, what does the last step release?",
+    "options": [
+     {
+      "zh": "产物和 ES 复合物",
+      "en": "the product and the ES complex"
+     },
+     {
+      "zh": "产物和游离的酶",
+      "en": "the product and the free enzyme"
+     },
+     {
+      "zh": "产物和游离底物",
+      "en": "the product and free substrate"
+     },
+     {
+      "zh": "底物和游离的酶",
+      "en": "the substrate and the free enzyme"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "ES 分解为 P 与 E，酶被释放后可再次结合底物，这是酶作为催化剂反复使用的基础。释放底物那两项描述的是 ES 逆向解离；ES 是被消耗的反应物，不会与产物一同生成。",
+    "explain_en": "ES breaks down into P and E, and the released enzyme can bind substrate again, which is why a catalyst is reusable. The options releasing substrate describe the reverse dissociation of ES, and ES is consumed in this step rather than produced alongside the product."
+   }
+  ]
+ },
+ {
+  "start": 1125,
+  "end": 1236,
+  "title_zh": "完善版反应式与四个速率常数 k1–k4，实验实测的是 k3",
+  "title_en": "The completed scheme, the four rate constants k1 to k4, and why experiments measure k3",
+  "points": [
+   {
+    "zh": "后续研究发现，有些酶可以发生逆反应：酶与产物重新结合，生成 ES 复合物。",
+    "en": "Later work found that for some enzymes the reverse step occurs: enzyme and product recombine to regenerate the ES complex."
+   },
+   {
+    "zh": "这个逆过程速率往往比较慢，但确实存在，所以有了更完善的反应式。",
+    "en": "That reverse process is usually slow but real, which is why a more complete scheme is used."
+   },
+   {
+    "zh": "完善版相比经典版只多了一步：enzyme 与 product 反向结合成 ES。",
+    "en": "The completed scheme adds exactly one step to the classic one: enzyme plus product going back to ES."
+   },
+   {
+    "zh": "整个过程是两段式：E + S ⇌ ES，以及 ES ⇌ E + P。",
+    "en": "The whole process is two-stage: E + S in equilibrium with ES, and ES in equilibrium with E + P."
+   },
+   {
+    "zh": "每一段的正逆方向各有一个反应常数 K：E + S → ES 为 K1，ES → E + S 为 K2。",
+    "en": "Each stage has a rate constant in each direction: E + S to ES is K1 and ES back to E + S is K2."
+   },
+   {
+    "zh": "同样地，ES → E + P 为 K3，E + P → ES 为 K4，于是共有 K1、K2、K3、K4 四个常数。",
+    "en": "Likewise ES to E + P is K3 and E + P back to ES is K4, giving the four constants K1, K2, K3 and K4."
+   },
+   {
+    "zh": "实验（例如荧光法）真正测到的是 K3 那一步，因为测的是中间态生成产物的速率。",
+    "en": "What experiments such as fluorescence assays actually capture is the K3 step, because they follow the rate at which the intermediate yields product."
+   },
+   {
+    "zh": "下一步的思路：以 ES 为中心，把 K1、K2、K3、K4 联系起来，从而推出米氏方程。",
+    "en": "The next move is to take ES as the pivot and link K1 to K4 together, which is how the Michaelis-Menten equation is derived."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "教材通用写法是 k1、k−1、k2（即 kcat）、k−2。课上的 K1、K2、K3、K4 依次对应 k1、k−1、k2、k−2；答题时按教材符号写，避免把 k2 与 k−1 弄反。",
+    "en": "Textbooks write k1, k minus 1, k2 (which is kcat) and k minus 2. The lecture's K1 to K4 map onto k1, k minus 1, k2 and k minus 2 in that order; use the textbook symbols in exams so k2 is not confused with k minus 1."
+   },
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "ES 回到 E + S 是解离 dissociation（非共价复合物散开），不是“水解”。只有 ES → E + P 才是真正的化学转化步。",
+    "en": "ES returning to E + S is dissociation of a non-covalent complex, not hydrolysis. Only ES going to E + P is the genuine chemical conversion step."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "因为测初速度时 [P] ≈ 0，k−2（课上的 K4）项可以忽略——这正是推导米氏方程时敢于砍掉第二步逆反应的理由。",
+    "en": "Because product is near zero when initial velocities are measured, the k minus 2 term (the lecture's K4) can be dropped, and that is precisely why the derivation is allowed to discard the reverse of the second step."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "稳态动力学只能给出 Vmax 与 Km（进而 kcat），无法单独拆出 k1 和 k−1；要分别测这两个常数需要 pre-steady-state 方法，如 stopped-flow 快速混合。此外，稳态假设 d[ES]/dt = 0 属于 Briggs–Haldane 修正，比 Michaelis 原来的快速平衡假设更普适。",
+    "en": "Steady-state kinetics yields only Vmax and Km, and hence kcat; it cannot separate k1 from k minus 1, which requires pre-steady-state methods such as stopped-flow mixing. The steady-state assumption that d[ES]/dt is zero is the Briggs-Haldane refinement, more general than Michaelis's original rapid-equilibrium assumption."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "课上的 K1、K2、K3、K4 依次对应教材中的哪组符号？",
+    "q_en": "Which textbook symbols do the lecture's K1, K2, K3 and K4 correspond to, in order?",
+    "options": [
+     {
+      "zh": "k2、k−2、k1、k−1",
+      "en": "k2, k−2, k1, k−1"
+     },
+     {
+      "zh": "k1、k−1、k2、k−2",
+      "en": "k1, k−1, k2, k−2"
+     },
+     {
+      "zh": "k−1、k1、k−2、k2",
+      "en": "k−1, k1, k−2, k2"
+     },
+     {
+      "zh": "k1、k2、k−1、k−2",
+      "en": "k1, k2, k−1, k−2"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "第一段正向是 k1、逆向是 k−1；第二段正向是 k2（即 kcat）、逆向是 k−2。其余排列都把正逆方向或两段的先后顺序打乱了。",
+    "explain_en": "The first stage runs forward with k1 and backward with k minus 1; the second runs forward with k2, that is kcat, and backward with k minus 2. The other orderings scramble either the directions or the sequence of the two stages."
+   },
+   {
+    "q_zh": "完善版反应式比最早的经典版多出的是哪一步？",
+    "q_en": "Which step does the completed scheme add to the earliest classic one?",
+    "options": [
+     {
+      "zh": "酶与产物重新结合成 ES",
+      "en": "enzyme and product recombining into ES"
+     },
+     {
+      "zh": "酶与底物结合生成 ES",
+      "en": "enzyme and substrate combining into ES"
+     },
+     {
+      "zh": "ES 解离回酶与底物",
+      "en": "ES dissociating back to enzyme and substrate"
+     },
+     {
+      "zh": "ES 分解生成酶与产物",
+      "en": "ES breaking down into enzyme and product"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "经典版已经包含 E + S ⇌ ES 的正逆两向以及 ES → E + P，新增的只有 E + P → ES 这一逆向步骤。其余三项在经典版里本来就有。",
+    "explain_en": "The classic scheme already contains both directions of E + S to ES plus ES going to E + P; the only addition is the reverse step E + P back to ES. The other three were present all along."
+   },
+   {
+    "q_zh": "用荧光法测初速度，直接反映的是哪一步的速率？",
+    "q_en": "In a fluorescence initial-rate assay, which step's rate is measured directly?",
+    "options": [
+     {
+      "zh": "酶与产物结合这一步",
+      "en": "the step where enzyme binds product"
+     },
+     {
+      "zh": "ES 生成产物这一步",
+      "en": "the step where ES gives product"
+     },
+     {
+      "zh": "酶与底物结合这一步",
+      "en": "the step where enzyme binds substrate"
+     },
+     {
+      "zh": "ES 解离回底物这一步",
+      "en": "the step where ES releases substrate"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "测的是产物的生成速率，对应课上的 K3（教材 k2/kcat）。结合与解离这两步不直接产生可测的产物信号，需要 stopped-flow 等快速动力学方法；酶与产物结合在初速度条件下可以忽略。",
+    "explain_en": "The assay follows product formation, which corresponds to the lecture's K3, the textbook k2 or kcat. Binding and dissociation generate no directly measurable product signal and need rapid-kinetics methods such as stopped-flow, while enzyme binding product is negligible under initial-rate conditions."
+   }
+  ]
+ },
+ {
+  "start": 1236,
+  "end": 1316,
+  "title_zh": "以 ES 为中心：d[ES]/dt 与四个速率常数",
+  "title_en": "Centring the derivation on ES: d[ES]/dt and the four rate constants",
+  "points": [
+   {
+    "zh": "推导以中间复合物 ES 为中心，目的是把 k1、k2、k3、k4 四个反应常数串到同一个式子里。",
+    "en": "The derivation is centred on the intermediate complex ES, so that the four rate constants k1, k2, k3 and k4 can all be tied into one equation."
+   },
+   {
+    "zh": "d[ES]/dt 是微积分的写法（高数里学过的微分），t 就是时间。",
+    "en": "d[ES]/dt is written in the language of calculus, with t standing for time."
+   },
+   {
+    "zh": "生化里方括号 [ ] 一律代表浓度，所以 [ES] 就是中间复合物的浓度。",
+    "en": "In biochemistry square brackets always denote concentration, so [ES] is the concentration of the intermediate complex."
+   },
+   {
+    "zh": "整个问题就是：ES 这个中间物的浓度随时间如何变化，由什么决定。",
+    "en": "The whole question is how the concentration of the ES intermediate changes with time, and what determines that change."
+   },
+   {
+    "zh": "答案是由那四个反应方程式共同决定 —— 生成它的反应和消耗它的反应。",
+    "en": "The answer is that it is set jointly by the four reaction steps: those that make ES and those that consume it."
+   },
+   {
+    "zh": "生成 ES 的主要途径是 E + S 经 k1 结合，也就是图上面那一条。",
+    "en": "The main route to ES is E + S combining via k1, the upper arm of the scheme."
+   },
+   {
+    "zh": "另一条生成途径是 E + P 经 k4 逆向回到 ES，也就是图下面那一条。",
+    "en": "The other route to ES is E + P running backwards via k4, the lower arm of the scheme."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "课上的编号 k1/k2/k3/k4 与多数教科书的写法对应关系要对上：k2 就是教科书的 k₋₁，k3 就是 k₂（也就是 kcat），k4 就是 k₋₂。看到不同符号不要以为是不同机制。",
+    "en": "Map the lecture's k1/k2/k3/k4 onto the textbook symbols: k2 here is k₋₁, k3 here is k₂ (i.e. kcat), and k4 here is k₋₂. Different symbols, same mechanism."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "k1 是二级速率常数 (second-order, M⁻¹s⁻¹)，因为它要乘以两个浓度；k2、k3 是一级速率常数 (first-order, s⁻¹)，只乘 [ES]。这样 k1[E][S] 与 k2[ES] 的量纲才都是 M·s⁻¹，才能相加相减。",
+    "en": "k1 is a second-order rate constant (M⁻¹s⁻¹) because it multiplies two concentrations; k2 and k3 are first-order (s⁻¹) and multiply only [ES]. That is why k1[E][S] and k2[ES] share units of M·s⁻¹ and can be added or subtracted."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "这个模型默认单底物 (single-substrate)、单一 ES 中间体。真实酶常有多个中间体（如 acyl-enzyme）或多底物机制 (ordered / ping-pong)，此时米氏形式仍可能成立，但 Km、kcat 变成复合常数。",
+    "en": "The scheme assumes a single substrate and a single ES intermediate. Real enzymes often have several intermediates (e.g. an acyl-enzyme) or multi-substrate mechanisms (ordered, ping-pong); the Michaelis-Menten form may still hold, but Km and kcat become composite constants."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "式子 d[ES]/dt 表示的是什么？",
+    "q_en": "What does the expression d[ES]/dt represent?",
+    "options": [
+     {
+      "zh": "ES 复合物分解成产物的平衡常数",
+      "en": "the equilibrium constant for ES breaking down to product"
+     },
+     {
+      "zh": "酶与底物结合所需要的活化能",
+      "en": "the activation energy required for enzyme to bind substrate"
+     },
+     {
+      "zh": "底物浓度随酶浓度增加的变化率",
+      "en": "the rate of change of substrate with rising enzyme level"
+     },
+     {
+      "zh": "ES 复合物浓度随时间的变化率",
+      "en": "the rate of change of the ES concentration with time"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "方括号代表浓度，d…/dt 代表对时间求导，所以整体就是 [ES] 的瞬时变化速率。平衡常数是浓度之比、无时间维度；活化能是能量，都不是导数。",
+    "explain_en": "Brackets mean concentration and d…/dt is a derivative with respect to time, so the whole symbol is the instantaneous rate of change of [ES]. An equilibrium constant is a ratio with no time dimension, and an activation energy is an energy; neither is a derivative."
+   },
+   {
+    "q_zh": "按课上的编号，k4 对应的是哪一步？",
+    "q_en": "In the numbering used in the lecture, which step does k4 describe?",
+    "options": [
+     {
+      "zh": "ES 分解为 E + P",
+      "en": "ES going forward to E plus P"
+     },
+     {
+      "zh": "E + P 逆向生成 ES",
+      "en": "E plus P running back to ES"
+     },
+     {
+      "zh": "E + S 结合生成 ES",
+      "en": "E and S combining to give ES"
+     },
+     {
+      "zh": "ES 分解为 E + S",
+      "en": "ES falling apart to E plus S"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "课上把 E+S→ES 定为 k1，ES→E+S 为 k2，ES→E+P 为 k3，剩下的 E+P→ES 就是 k4，也正是随后被假设忽略的那一步。",
+    "explain_en": "The lecture assigns k1 to E+S→ES, k2 to ES→E+S and k3 to ES→E+P, which leaves E+P→ES as k4 — precisely the step that is then assumed negligible."
+   },
+   {
+    "q_zh": "生化方程里的方括号 [ ] 代表什么？",
+    "q_en": "What do square brackets [ ] denote in a biochemical equation?",
+    "options": [
+     {
+      "zh": "该物种的摩尔浓度",
+      "en": "the molar concentration of that species"
+     },
+     {
+      "zh": "该步骤的速率常数",
+      "en": "the rate constant of that particular step"
+     },
+     {
+      "zh": "该酶的比活力",
+      "en": "the specific activity of that enzyme"
+     },
+     {
+      "zh": "该物种的自由能",
+      "en": "the free energy of that species"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "老师特别提醒：不加方括号只是写出物种本身（species），加了方括号才涉及浓度。速率常数用 k 表示，自由能用 G 表示，都不用方括号。",
+    "explain_en": "The lecturer flags this explicitly: without brackets a symbol names only the species; with brackets it means its concentration. Rate constants are written k and free energies G, never in brackets."
+   }
+  ]
+ },
+ {
+  "start": 1316,
+  "end": 1414,
+  "title_zh": "忽略 E + P → ES：米氏方程的前提假设（含课堂重述）",
+  "title_en": "Neglecting E + P → ES: the assumptions behind Michaelis-Menten (with an in-class repeat)",
+  "points": [
+   {
+    "zh": "下面那条 E + P 经 k4 回到 ES 的反应，一般可以直接忽略掉。",
+    "en": "The lower arm, E + P returning to ES via k4, can generally be dropped outright."
+   },
+   {
+    "zh": "第一个理由：酶再去结合产物 P 并逆行，这一步本身比较慢。",
+    "en": "First reason: the enzyme re-binding product P and running backwards is itself a slow step."
+   },
+   {
+    "zh": "第二个理由：测定酶活 (enzyme activity) 时，底物浓度远远大于酶的含量。",
+    "en": "Second reason: when enzyme activity is measured, substrate concentration is far greater than the amount of enzyme."
+   },
+   {
+    "zh": "因此在反应初期，产物 product 的积累非常非常少，逆向速率基本可以忽略。",
+    "en": "Consequently, in the early phase of the reaction very little product has accumulated, so the reverse rate is essentially negligible."
+   },
+   {
+    "zh": "老师明确指出：这就是米氏方程 (Michaelis-Menten equation) 的几个假设之一，必须记住。",
+    "en": "The lecturer states plainly that this is one of the assumptions of the Michaelis-Menten equation and must be memorised."
+   },
+   {
+    "zh": "考试情境：教授会问“米氏方程是在什么基础、什么条件下推导出来的”，要能数出几个重要假设。",
+    "en": "Exam framing: a professor will ask on what basis and under what conditions the Michaelis-Menten equation is derived, and you must be able to list the key assumptions."
+   },
+   {
+    "zh": "学生中途打断要求重复，老师重述同样两点：这一步慢，且初期 P 的量很少。",
+    "en": "A student interrupts and asks for the reason again; the lecturer repeats the same two points — that step is slow, and [P] is small early on."
+   },
+   {
+    "zh": "忽略 k4 之后，ES 的生成就只剩 E + S 一条途径，式子才写得下去。",
+    "en": "Once k4 is dropped, ES has only one route of formation, E + S, which is what makes the equation tractable."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "完整的假设清单（口试常问）：① 初速度条件，[P] ≈ 0，逆反应可忽略；② [S]₀ >> [E]t，游离底物近似等于加入的总底物；③ 只有一个 ES 中间体、单底物；④ 稳态 (steady state)，d[ES]/dt = 0（Briggs–Haldane 版本），Michaelis 原版用的是快速平衡 (rapid equilibrium)。",
+    "en": "The full checklist, a standard oral-exam question: (1) initial-velocity conditions, [P] ≈ 0, reverse reaction negligible; (2) [S]₀ >> [E]t, so free substrate ≈ total substrate added; (3) a single ES intermediate and a single substrate; (4) steady state, d[ES]/dt = 0 (the Briggs–Haldane form), whereas Michaelis's original version assumed rapid equilibrium."
+   },
+   {
+    "tag": "课上口误 · lecture misstatement",
+    "zh": "老师说“产物转过来形成这个过渡态的 ES”。ES 不是过渡态：ES 是基态的 Michaelis 复合物 (ground-state Michaelis complex)，位于能量曲线的谷底，可以积累、可以用荧光或快速动力学测到；真正的过渡态是 ES‡，位于能垒顶端，寿命约一次键振动 (~10⁻¹³ s)，浓度无法测定。酶的催化本质正是选择性地稳定 ES‡ 而不是 ES。",
+    "en": "The lecturer calls ES 'the transition state'. It is not: ES is the ground-state Michaelis complex, sitting in an energy well, able to accumulate and to be observed by fluorescence or rapid kinetics. The true transition state is ES‡, at the top of the barrier, lasting about one bond vibration (~10⁻¹³ s), with no measurable concentration. Catalysis works precisely by stabilising ES‡ preferentially over ES."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "酶不改变 ΔG，也不改变 Keq —— 它把正、逆两个方向同等加速。所以 E + P → ES 在原理上永远存在，能忽略它靠的是实验条件（初速度、产物少），不是酶只能单向工作。同理，反应可逆是热力学决定的，不是 induced fit 造成的。",
+    "en": "An enzyme changes neither ΔG nor Keq — it accelerates both directions equally. So E + P → ES always exists in principle; it is the experimental condition (initial rate, little product) that lets us ignore it, not any one-way property of the enzyme. By the same token, reversibility is thermodynamic, not a consequence of induced fit."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "“初速度”在实践中的操作定义是底物消耗小于 5–10%，此时 v 对时间的曲线仍近似直线；超过这个范围，底物耗竭和产物抑制都会让测得的 v 偏低。",
+    "en": "In practice 'initial velocity' means less than about 5–10% of substrate consumed, where the progress curve is still linear. Beyond that, substrate depletion and product inhibition both drag the measured v downwards."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "米氏方程推导时忽略 E + P → ES 这一步，主要依据是什么？",
+    "q_en": "Why is the step E + P → ES ignored when deriving the Michaelis-Menten equation?",
+    "options": [
+     {
+      "zh": "产物一旦生成就立即被彻底降解掉",
+      "en": "product is destroyed as soon as it is formed by the enzyme"
+     },
+     {
+      "zh": "反应初期产物积累很少，逆反应可忽略",
+      "en": "product is scarce early on, so the reverse step is negligible"
+     },
+     {
+      "zh": "酶只能催化正向反应，不能催化逆向",
+      "en": "enzymes can catalyse only the forward direction of a reaction"
+     },
+     {
+      "zh": "酶对产物没有任何亲和力，无法结合",
+      "en": "the enzyme has no affinity for product and cannot bind it"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "理由是实验条件而非酶的本性：初速度阶段 [P] 极低，加上这一步本身较慢。说酶只能催化正向是错的 —— 酶同等加速正逆两个方向；说酶对产物毫无亲和力也不成立，产物抑制正是靠这种结合。",
+    "explain_en": "The justification is experimental, not intrinsic: at initial velocity [P] is tiny, and that step is slow anyway. Claiming enzymes catalyse only the forward direction is wrong — they accelerate both equally; and claiming no affinity for product is also wrong, since product inhibition depends on exactly that binding."
+   },
+   {
+    "q_zh": "关于 ES 复合物，下列哪种说法正确？",
+    "q_en": "Which statement about the ES complex is correct?",
+    "options": [
+     {
+      "zh": "ES 是反应的过渡态 transition state",
+      "en": "ES is the reaction's transition state ES‡"
+     },
+     {
+      "zh": "ES 是酶变性后的 unfolded 中间体",
+      "en": "ES is a partly denatured form of the enzyme"
+     },
+     {
+      "zh": "ES 是产物释放后的 free enzyme",
+      "en": "ES is the free enzyme left after product release"
+     },
+     {
+      "zh": "ES 是基态的 Michaelis 复合物",
+      "en": "ES is the ground-state Michaelis complex"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "ES 处于能量谷底，可以积累并被检测；过渡态 ES‡ 在能垒顶端，寿命约一次键振动，无法作为一个可测浓度的物种。酶催化正是通过稳定 ES‡ 来降低活化能。",
+    "explain_en": "ES sits in an energy well, accumulates and can be detected; the transition state ES‡ sits at the top of the barrier and lasts about one bond vibration, so it is never a species with a measurable concentration. Catalysis lowers the barrier by stabilising ES‡."
+   },
+   {
+    "q_zh": "“底物浓度远远大于酶浓度”这个条件在推导中起什么作用？",
+    "q_en": "What role does the condition [S] >> [E] play in the derivation?",
+    "options": [
+     {
+      "zh": "使反应必然处于零级动力学区间",
+      "en": "it forces the reaction into the zero-order regime"
+     },
+     {
+      "zh": "使 Km 直接等于解离常数 Ks",
+      "en": "it makes Km equal to the dissociation constant Ks"
+     },
+     {
+      "zh": "使 kcat 随底物浓度升高而增大",
+      "en": "it makes kcat rise as substrate concentration rises"
+     },
+     {
+      "zh": "使 [S] 可近似取加入的总底物浓度",
+      "en": "it lets [S] be taken as the total substrate added"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "[S] >> [E]t 的作用是：被结合进 ES 的那点底物可以忽略，游离 [S] ≈ 总 [S]，同时保证初期产物很少。它并不决定动力学级数 —— 一级与零级的分界由 [S] 相对 Km 决定；Km = Ks 只在 k3 << k2 时成立；kcat 是常数，与 [S] 无关。",
+    "explain_en": "[S] >> [E]t means the substrate tied up in ES is negligible, so free [S] ≈ total [S], and it also keeps product low early on. It does not set the reaction order — the first-order/zero-order boundary depends on [S] relative to Km; Km equals Ks only when k3 << k2; and kcat is a constant, independent of [S]."
+   }
+  ]
+ },
+ {
+  "start": 1414,
+  "end": 1480,
+  "title_zh": "ES 的生成速率：k1 × [游离 E] × [S]",
+  "title_en": "The rate of ES formation: k1 × [free E] × [S]",
+  "points": [
+   {
+    "zh": "把 S + E → ES 这一步单独拆开、详细写清楚。",
+    "en": "The step S + E → ES is pulled out and written in full."
+   },
+   {
+    "zh": "ES 浓度随时间的变化（生成部分）= k1 × 游离酶浓度 × 底物浓度。",
+    "en": "The formation part of d[ES]/dt equals k1 times the free-enzyme concentration times the substrate concentration."
+   },
+   {
+    "zh": "k1 是 E + S 结合这一步的反应常数，就是图上转过来生成 ES 的那一步。",
+    "en": "k1 is the rate constant for the E + S association step, the arm that produces ES."
+   },
+   {
+    "zh": "式子里的 E 必须是游离的酶：还没有结合底物、还没有生成 ES 的那部分蛋白。",
+    "en": "The E in the expression must be free enzyme — the protein that has not yet bound substrate and has not yet formed ES."
+   },
+   {
+    "zh": "底物浓度直接乘进去；这是化学反应速率的标准写法。",
+    "en": "The substrate concentration multiplies in directly; this is the standard way a chemical rate law is written."
+   },
+   {
+    "zh": "老师用“K1 = 产物 ÷ 原料”的形式说明，把式子“扯过来”得到 ES = 游离 E × S × K1。",
+    "en": "The lecturer argues from 'K1 = product ÷ reactant', rearranging to give ES = free E × S × K1."
+   },
+   {
+    "zh": "这一条在板书上用橙色标出，代表 ES 的形成速度。",
+    "en": "This line is highlighted in orange on the board as the rate of ES formation."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "老师把 k1 当成“平衡常数 = 产物/原料”来用，写出 [ES] = k1[E][S]。严格说 k1 是速率常数 (rate constant)，正确写法是速率 v(生成) = k1[E][S]，等号左边是速率不是浓度。只有在快速平衡假设下才有浓度比值关系：Ks = k2/k1 = [E][S]/[ES]。两者结论形式相近，但一个是速率、一个是浓度，考试时不能混写。",
+    "en": "The lecturer treats k1 as an equilibrium constant ('product over reactant') and writes [ES] = k1[E][S]. Strictly, k1 is a rate constant and the correct statement is a rate: v(formation) = k1[E][S] — the left side is a velocity, not a concentration. A concentration ratio only appears under the rapid-equilibrium assumption, as Ks = k2/k1 = [E][S]/[ES]. The two look alike but one is a rate and the other a concentration; do not merge them in an exam."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "二级速率常数 k1 有物理上限：受扩散控制 (diffusion-limited)，约 10⁸–10⁹ M⁻¹s⁻¹。当酶的 kcat/Km 接近这个量级（如 carbonic anhydrase、triosephosphate isomerase）就称为“催化完美” (catalytically perfect)，每次碰撞几乎都成功。",
+    "en": "The second-order constant k1 has a physical ceiling set by diffusion, roughly 10⁸–10⁹ M⁻¹s⁻¹. Enzymes whose kcat/Km approaches this value (carbonic anhydrase, triosephosphate isomerase) are called catalytically perfect: nearly every encounter is productive."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "式中的 [S] 严格说是游离底物浓度。因为前面假设了 [S] >> [E]t，被结合进 ES 的那一小部分可以忽略，才允许用加进去的总底物浓度代替。若酶浓度与底物浓度接近（tight-binding 情形），这个近似崩溃，必须用 Morrison 方程。",
+    "en": "The [S] in the rate law is strictly the free substrate concentration. It is only because [S] >> [E]t was assumed that the small amount sequestered in ES can be ignored and total added substrate used instead. When enzyme and substrate concentrations are comparable (tight-binding), the approximation fails and the Morrison equation is needed."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "ES 的生成速率应写成下列哪一个？",
+    "q_en": "Which expression gives the rate of ES formation?",
+    "options": [
+     {
+      "zh": "k1 × [总酶 E]t × [S]",
+      "en": "k1 × [total E]t × [S]"
+     },
+     {
+      "zh": "k3 × [游离 E] × [S]",
+      "en": "k3 × [free E] × [S]"
+     },
+     {
+      "zh": "k2 × [ES] × [S]",
+      "en": "k2 × [ES] × [S]"
+     },
+     {
+      "zh": "k1 × [游离 E] × [S]",
+      "en": "k1 × [free E] × [S]"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "生成 ES 的是 E + S 结合这一步，用它自己的常数 k1，且只有游离酶能参与结合。k3 是 ES→E+P 的常数，k2[ES] 是分解项，都不描述生成。",
+    "explain_en": "ES is made by the E + S association step, so it carries that step's own constant k1, and only free enzyme can take part. k3 belongs to ES→E+P and k2[ES] is a breakdown term; neither describes formation."
+   },
+   {
+    "q_zh": "为什么速率式中必须用游离酶浓度而不是总酶浓度？",
+    "q_en": "Why must the rate law use free enzyme rather than total enzyme?",
+    "options": [
+     {
+      "zh": "只有游离酶能被荧光法检测到",
+      "en": "only free enzyme can be seen by the fluorescence assay"
+     },
+     {
+      "zh": "总酶浓度在反应中会不断下降",
+      "en": "total enzyme concentration falls as the reaction runs"
+     },
+     {
+      "zh": "已结合成 ES 的酶不能再结合底物",
+      "en": "enzyme already tied up as ES cannot bind more substrate"
+     },
+     {
+      "zh": "游离酶的 kcat 高于结合态的酶",
+      "en": "free enzyme has a higher kcat than bound enzyme does"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "活性位点已被占据的酶无法再参与结合，所以速率只正比于尚未结合的那部分。总酶浓度 [E]t 是守恒量、并不下降；kcat 是每个酶分子的常数，与是否游离无关。",
+    "explain_en": "Enzyme whose active site is already occupied cannot participate in another binding event, so the rate is proportional only to the unoccupied fraction. Total enzyme [E]t is conserved and does not fall, and kcat is a per-molecule constant unrelated to whether the enzyme is free."
+   },
+   {
+    "q_zh": "k1 属于哪一类常数？",
+    "q_en": "What kind of constant is k1?",
+    "options": [
+     {
+      "zh": "无量纲的化学平衡常数",
+      "en": "a dimensionless equilibrium constant"
+     },
+     {
+      "zh": "零级速率常数，单位 M·s⁻¹",
+      "en": "a zero-order rate constant, in M·s⁻¹"
+     },
+     {
+      "zh": "一级速率常数，单位 s⁻¹",
+      "en": "a first-order rate constant, in s⁻¹"
+     },
+     {
+      "zh": "二级速率常数，单位 M⁻¹s⁻¹",
+      "en": "a second-order rate constant, in M⁻¹s⁻¹"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "k1 要乘以 [E] 和 [S] 两个浓度才得到速率，所以是二级常数，单位 M⁻¹s⁻¹。k2、k3 只乘 [ES]，是一级常数 s⁻¹；平衡常数不带速率含义。",
+    "explain_en": "k1 must multiply two concentrations, [E] and [S], to yield a rate, so it is second-order with units M⁻¹s⁻¹. k2 and k3 multiply only [ES] and are first-order (s⁻¹); an equilibrium constant carries no rate information at all."
+   }
+  ]
+ },
+ {
+  "start": 1480,
+  "end": 1541,
+  "title_zh": "把游离酶表示出来：[E]游离 = [E]总 − [ES]",
+  "title_en": "Expressing free enzyme: [E]free = [E]total − [ES]",
+  "points": [
+   {
+    "zh": "已经确定 d[ES]/dt 等于那一串式子，接下来的问题是：游离的酶要怎么表示出来。",
+    "en": "With d[ES]/dt written out, the next problem is how to express the free enzyme term."
+   },
+   {
+    "zh": "老师提醒：前面没加方括号，只是写出这个物种；一旦要涉及浓度就得加方括号。",
+    "en": "The lecturer notes that up to here the symbols name only the species; once concentrations are involved, brackets must be added."
+   },
+   {
+    "zh": "游离酶浓度 = 总的酶浓度 − 已经生成复合物的 [ES]。",
+    "en": "Free enzyme concentration equals total enzyme concentration minus the [ES] already formed."
+   },
+   {
+    "zh": "把这个关系代进去，实际上就是把上面那个式子展开。",
+    "en": "Substituting that relation in is simply expanding the equation written above."
+   },
+   {
+    "zh": "底物浓度则不做处理：测出来是多少就是多少，认为它不变。",
+    "en": "Substrate concentration needs no such treatment: whatever is measured is used, and it is taken as unchanging."
+   },
+   {
+    "zh": "代入后生成速率写成 k1 ([E]总 − [ES]) [S]，方程里只剩 [ES] 一个未知量。",
+    "en": "After substitution the formation rate reads k1([E]total − [ES])[S], leaving [ES] as the only unknown in the equation."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "[E]t = [E] + [ES] 就是酶的质量守恒式 (enzyme conservation equation)，是整个推导中唯一用到的守恒关系。最后 Vmax = k3[E]t（即 kcat[E]t）之所以成立，正是因为饱和时全部酶都以 ES 形式存在，[E] → 0。",
+    "en": "[E]t = [E] + [ES] is the enzyme conservation equation, the only conservation relation used in the whole derivation. Vmax = k3[E]t (that is, kcat[E]t) follows from it: at saturation all the enzyme is in the ES form and [E] → 0."
+   },
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "“底物浓度测出来是多少就是多少，不会变”是近似而非恒等。只有在初速度阶段（底物消耗 <5–10%）才成立；进程曲线后段底物明显耗竭，v 会下降，这也是酶活必须取曲线起始直线段斜率的原因。",
+    "en": "'Substrate is whatever you measured and does not change' is an approximation, not an identity. It holds only at initial velocity (under about 5–10% substrate consumed); later in the progress curve substrate is visibly depleted and v falls, which is exactly why activity is read off the initial linear slope."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "[E]t 指的是活性位点的摩尔浓度，不是酶的质量浓度 mg/mL，也不一定等于蛋白摩尔浓度（寡聚酶每个亚基可能各带一个位点，部分酶分子还可能失活）。计算 kcat 必须用有功能的活性位点浓度，通常需 active-site titration 标定。",
+    "en": "[E]t means the molar concentration of active sites, not mg/mL of protein, and not necessarily the molar concentration of protein either (an oligomeric enzyme may carry one site per subunit, and some molecules may be inactive). Calculating kcat requires the concentration of functional sites, usually established by active-site titration."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "游离酶浓度应该怎样表示？",
+    "q_en": "How is the free enzyme concentration expressed?",
+    "options": [
+     {
+      "zh": "[E]总 减去 [ES]",
+      "en": "[E]total minus [ES]"
+     },
+     {
+      "zh": "[E]总 乘以 [ES]",
+      "en": "[E]total times [ES]"
+     },
+     {
+      "zh": "[ES] 减去 [E]总",
+      "en": "[ES] minus [E]total"
+     },
+     {
+      "zh": "[E]总 加上 [ES]",
+      "en": "[E]total plus [ES]"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "酶总量守恒，分成游离和已结合两部分：[E]t = [E] + [ES]，移项即得 [E] = [E]t − [ES]。相加会超出总量，相乘量纲也不对。",
+    "explain_en": "Total enzyme is conserved and split into free and bound forms: [E]t = [E] + [ES], which rearranges to [E] = [E]t − [ES]. Adding would exceed the total, and multiplying gives the wrong units."
+   },
+   {
+    "q_zh": "推导中把底物浓度视为不变，这一处理在什么条件下成立？",
+    "q_en": "Under what condition may substrate concentration be treated as constant?",
+    "options": [
+     {
+      "zh": "在整个反应进程中都始终严格成立",
+      "en": "it holds strictly through the entire reaction course"
+     },
+     {
+      "zh": "只在底物浓度远低于 Km 时成立",
+      "en": "it holds only while [S] remains far below Km"
+     },
+     {
+      "zh": "只在反应初期底物几乎未消耗时成立",
+      "en": "it holds only early on, before much S is consumed"
+     },
+     {
+      "zh": "只在酶被底物完全饱和之后才成立",
+      "en": "it holds only once the enzyme is fully saturated"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "这是初速度 (initial velocity) 条件下的近似：底物消耗很少，[S] 才可视为常数。与 [S] 和 Km 的相对大小无关，也不需要酶饱和；反应后期底物耗竭时该近似失效。",
+    "explain_en": "This is an initial-velocity approximation: only while little substrate has been consumed can [S] be held constant. It does not depend on how [S] compares with Km, nor does it require saturation, and it breaks down once substrate is depleted."
+   },
+   {
+    "q_zh": "关系式 [E]t = [E] + [ES] 在推导中扮演什么角色？",
+    "q_en": "What role does [E]t = [E] + [ES] play in the derivation?",
+    "options": [
+     {
+      "zh": "酶的质量守恒关系",
+      "en": "the enzyme conservation relation"
+     },
+     {
+      "zh": "稳态假设的数学形式",
+      "en": "the mathematical steady-state condition"
+     },
+     {
+      "zh": "快速平衡假设的表达",
+      "en": "a statement of rapid equilibrium"
+     },
+     {
+      "zh": "初速度条件的表达",
+      "en": "a statement of initial-rate conditions"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "它说明酶只以游离和结合两种形式存在、总量不变，属于守恒方程。稳态假设是 d[ES]/dt = 0，快速平衡是 k1[E][S] = k2[ES]，初速度条件是 [P] ≈ 0，三者都是另外的式子。",
+    "explain_en": "It states that enzyme exists only as free or bound forms and that the total is fixed — a conservation equation. The steady-state assumption is d[ES]/dt = 0, rapid equilibrium is k1[E][S] = k2[ES], and the initial-rate condition is [P] ≈ 0; all three are separate statements."
+   }
+  ]
+ },
+ {
+  "start": 1541,
+  "end": 1652,
+  "title_zh": "ES 的分解速率：k2[ES] + k3[ES]，负号与稳态的引入",
+  "title_en": "The rate of ES breakdown: k2[ES] + k3[ES], the minus sign, and the run-up to steady state",
+  "points": [
+   {
+    "zh": "橙色标出的那一条是 ES 的形成速度；与之相对的是 ES 的分解速度。",
+    "en": "The line marked in orange is the rate of ES formation; set against it is the rate of ES breakdown."
+   },
+   {
+    "zh": "ES 的分解有两条路：一条经 k2 分解回原料 E + S。",
+    "en": "ES breaks down by two routes: one is via k2, back to the reactants E + S."
+   },
+   {
+    "zh": "另一条经 k3 分解成产物 E + P，也就是真正生成产物的那一步。",
+    "en": "The other is via k3 to E + P, the step that actually generates product."
+   },
+   {
+    "zh": "分解回原料的速率是 k2 × [ES]，因为这是“倒过来”的那一步。",
+    "en": "Breakdown back to reactants runs at k2 × [ES], since that is the reverse arm."
+   },
+   {
+    "zh": "分解成产物的速率是 k3 × [ES]，即向右的那一步。",
+    "en": "Breakdown to product runs at k3 × [ES], the forward arm."
+   },
+   {
+    "zh": "把这两段加起来就是总的分解速度：k2[ES] + k3[ES]。",
+    "en": "Adding the two gives the total breakdown rate: k2[ES] + k3[ES]."
+   },
+   {
+    "zh": "形成速度里没有两项相加，是因为最前面已经把 E + P → ES 那一条忽略掉了。",
+    "en": "There is no second additive term in the formation rate because the E + P → ES route was dropped at the very start."
+   },
+   {
+    "zh": "分解速度前面要带负号，写成 −d[ES]/dt，因为它消耗 ES。",
+    "en": "The breakdown term carries a minus sign, written −d[ES]/dt, because it consumes ES."
+   },
+   {
+    "zh": "之所以要分别写形成和分解，是为了接下来的假设：酶促反应达到稳态时，ES 中间体的形成与分解相等。",
+    "en": "Formation and breakdown are written separately in order to set up the next assumption: at steady state the ES intermediate is formed and consumed at equal rates."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "把稳态条件写出来即可完成推导：k1([E]t − [ES])[S] = (k2 + k3)[ES]。整理得 [ES] = [E]t[S] / (Km + [S])，其中 Km = (k2 + k3)/k1；再乘 k3 得 v = k3[ES]，即 v = Vmax[S]/(Km + [S])，Vmax = k3[E]t = kcat[E]t。",
+    "en": "Writing the steady-state condition finishes the derivation: k1([E]t − [ES])[S] = (k2 + k3)[ES]. Rearranging gives [ES] = [E]t[S]/(Km + [S]) with Km = (k2 + k3)/k1; multiplying by k3 gives v = k3[ES] = Vmax[S]/(Km + [S]), where Vmax = k3[E]t = kcat[E]t."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "一级动力学与零级动力学的分界由 [S] 相对 Km 决定，不是由“底物分子数多于酶分子数”决定。[S] << Km 时 v ≈ (Vmax/Km)[S]，近似一级；[S] >> Km 时酶被饱和，v ≈ Vmax，为零级。注意 [S] >> [E]t 在整条曲线上都成立，却完全不能保证反应是零级 —— 两个不等式比较的是完全不同的量。",
+    "en": "The boundary between first-order and zero-order kinetics is set by [S] relative to Km, not by substrate molecules outnumbering enzyme molecules. When [S] << Km, v ≈ (Vmax/Km)[S] and the reaction is pseudo-first-order; when [S] >> Km the enzyme is saturated and v ≈ Vmax, which is zero-order. Note that [S] >> [E]t holds along the whole curve yet guarantees nothing about the order — the two inequalities compare entirely different quantities."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "稳态假设 (steady state, Briggs–Haldane 1925) 与快速平衡假设 (rapid equilibrium, Michaelis–Menten 1913 原版) 是两套不同前提：前者只要求 d[ES]/dt ≈ 0，得到 Km = (k2 + k3)/k1；后者额外要求 k3 << k2，此时 Km ≈ Ks = k2/k1，才可解释为解离常数、才等同于亲和力的倒数。因此“Km 越小亲和力越强”只在 k3 << k2 时严格成立。",
+    "en": "The steady-state assumption (Briggs–Haldane, 1925) and the rapid-equilibrium assumption (Michaelis and Menten's original 1913 treatment) are different premises. The first requires only d[ES]/dt ≈ 0 and yields Km = (k2 + k3)/k1; the second additionally requires k3 << k2, in which case Km ≈ Ks = k2/k1 and can be read as a dissociation constant, hence as an inverse affinity. So 'smaller Km means tighter binding' is strictly true only when k3 << k2."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "ES 的总分解速率等于下列哪一个？",
+    "q_en": "Which expression gives the total rate of ES breakdown?",
+    "options": [
+     {
+      "zh": "k1[E][S] + k3[ES]",
+      "en": "k1[E][S] + k3[ES]"
+     },
+     {
+      "zh": "k2[ES] + k3[ES]",
+      "en": "k2[ES] + k3[ES]"
+     },
+     {
+      "zh": "k2[ES] − k3[ES]",
+      "en": "k2[ES] − k3[ES]"
+     },
+     {
+      "zh": "k1[E][S] − k2[ES]",
+      "en": "k1[E][S] − k2[ES]"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "ES 有两条消耗途径：回到 E + S（k2）和前进到 E + P（k3），两者都消耗 ES，所以相加。含 k1[E][S] 的式子描述的是生成，不属于分解项。",
+    "explain_en": "ES is consumed by two routes — back to E + S via k2 and forward to E + P via k3 — and both drain ES, so they add. Any expression containing k1[E][S] describes formation, not breakdown."
+   },
+   {
+    "q_zh": "为什么 ES 的生成速率只有一项，而分解速率是两项相加？",
+    "q_en": "Why does ES formation have one term while breakdown has two added together?",
+    "options": [
+     {
+      "zh": "生成速率远小于分解速率可略",
+      "en": "formation is far slower than breakdown, so it drops"
+     },
+     {
+      "zh": "E+P→ES 一路已被假设忽略",
+      "en": "the E + P → ES route was assumed negligible"
+     },
+     {
+      "zh": "ES 的生成只能是单分子反应",
+      "en": "formation can only ever be a unimolecular step"
+     },
+     {
+      "zh": "分解两条路的速率常数相等",
+      "en": "the two breakdown constants happen to be equal"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "原本生成 ES 也有两条路（E+S 经 k1、E+P 经 k4），但 k4 那条在假设中被删掉，只剩一项；分解的 k2 和 k3 两条都保留，所以要相加。生成是双分子反应，两条分解路的常数一般也不相等。",
+    "explain_en": "ES formation also had two routes originally — E+S via k1 and E+P via k4 — but the k4 arm was assumed away, leaving one term, while both breakdown arms k2 and k3 are kept and must be summed. Formation is bimolecular, and the two breakdown constants are generally not equal."
+   },
+   {
+    "q_zh": "酶促反应从一级动力学转为零级动力学，取决于什么？",
+    "q_en": "What determines the switch from first-order to zero-order kinetics?",
+    "options": [
+     {
+      "zh": "k2 相对 k3 的大小",
+      "en": "k2 relative to k3"
+     },
+     {
+      "zh": "[P] 相对 [S] 的大小",
+      "en": "[P] relative to [S]"
+     },
+     {
+      "zh": "[S] 相对 Km 的大小",
+      "en": "[S] relative to Km"
+     },
+     {
+      "zh": "[S] 相对 [E]t 的大小",
+      "en": "[S] relative to [E]t"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "[S] << Km 时 v 随 [S] 线性上升，近似一级；[S] >> Km 时酶饱和，v ≈ Vmax，与 [S] 无关，为零级。[S] >> [E]t 在整条曲线上都成立却不改变级数；k2/k3 之比只影响 Km 能否解释为 Ks。",
+    "explain_en": "When [S] << Km, v rises linearly with [S] and the reaction is pseudo-first-order; when [S] >> Km the enzyme is saturated and v ≈ Vmax, independent of [S], i.e. zero-order. [S] >> [E]t holds along the entire curve without changing the order, and the ratio of k2 to k3 only decides whether Km can be read as Ks."
+   }
+  ]
+ },
+ {
+  "start": 1652,
+  "end": 1732,
+  "title_zh": "稳态假设：ES 的生成速率等于分解速率",
+  "title_en": "The steady-state assumption: ES forms as fast as it breaks down",
+  "points": [
+   {
+    "zh": "推导的第二个假设：酶反应达到稳态 steady state 时，中间复合物 ES 的生成速率与分解速率相等。",
+    "en": "The second assumption of the derivation: at steady state, the intermediate complex ES is formed exactly as fast as it is consumed."
+   },
+   {
+    "zh": "生成速率只有一项 k1[E][S]，因为最前面的第一个假设已经把 k4（product 回头变成 ES）那一步忽略掉了。",
+    "en": "The formation rate has only one term, k1[E][S], because the first assumption already discarded k4, the step in which product runs back to ES."
+   },
+   {
+    "zh": "分解速率是两项相加：k2[ES]（散回 E + S）加上 k3[ES]（继续生成 product），所以式子中间有一个加号。",
+    "en": "The breakdown rate is a sum of two terms, k2[ES] (back to E + S) plus k3[ES] (on to product) — hence the plus sign in that expression."
+   },
+   {
+    "zh": "分解速率写作 -d[ES]/dt，前面带负号，表示这条路径是在消耗 ES。",
+    "en": "The breakdown rate is written -d[ES]/dt, with the minus sign marking that these routes consume ES."
+   },
+   {
+    "zh": "稳态的生物学含义：[ES] 的浓度在这段时间里保持相对稳定，不随时间明显上下变化。",
+    "en": "What steady state means biologically: the concentration of ES stays essentially constant over the observation window, not rising or falling appreciably."
+   },
+   {
+    "zh": "把式①（生成速率）和式②（分解速率）令相等，就是整个米氏方程推导的出发点。",
+    "en": "Setting equation 1 (formation) equal to equation 2 (breakdown) is the starting point of the whole Michaelis-Menten derivation."
+   },
+   {
+    "zh": "老师强调：推导中间的代数式一个都不用背，只要能用嘴把这条逻辑链讲出来就算掌握。",
+    "en": "The lecturer stresses that none of the intermediate algebra needs to be memorised — being able to say the logic out loud is what counts."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "课上说\"只有酶处在 Vmax 状态时才达到稳态\"。实际上 steady state 在初速度阶段的任意 [S] 下都成立，与是否达到 Vmax 无关。正因为稳态不限于饱和条件，米氏方程才能描述整条 v–[S] 曲线，而不只是曲线的平台段。",
+    "en": "The lecture says steady state is reached only when the enzyme is running at Vmax. In fact the steady state holds at any [S] during the initial-rate phase, saturated or not. That is precisely why the Michaelis-Menten equation describes the whole v–[S] curve rather than only its plateau."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "ES 是基态的 Michaelis complex（ground-state complex），不是 transition state 过渡态，课上多次把它叫作\"中间过渡态\"。transition state 是能垒顶端的瞬时构型，寿命约 10⁻¹³ s；酶的催化本质是选择性稳定 transition state，而不是把 ES 结合得越紧越好——ES 结合过强反而形成热力学陷阱，降低催化效率。",
+    "en": "ES is the ground-state Michaelis complex, not the transition state, although the lecture repeatedly calls it one. The transition state is the fleeting configuration at the top of the barrier, lifetime around 10⁻¹³ s. Catalysis works by selectively stabilising the transition state, not by binding ES ever more tightly — over-tight ES binding creates a thermodynamic pit and lowers turnover."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "\"令生成速率 = 分解速率\"的 steady-state 处理是 Briggs 与 Haldane 在 1925 年引入的；Michaelis 与 Menten 1913 年的原始推导用的是 rapid equilibrium 快速平衡假设（k3 远小于 k2，ES 与 E+S 之间维持结合平衡）。两者得到的方程形式相同，但常数含义不同：rapid equilibrium 下 Km = k2/k1 = Kd，steady state 下 Km = (k2+k3)/k1，因此 Km ≥ Kd。",
+    "en": "Equating formation and breakdown is the steady-state treatment introduced by Briggs and Haldane in 1925; the original 1913 Michaelis-Menten derivation used the rapid-equilibrium assumption (k3 much smaller than k2, so ES stays in binding equilibrium with E + S). Both give the same algebraic form but different constants: under rapid equilibrium Km = k2/k1 = Kd, under steady state Km = (k2+k3)/k1, so Km is always greater than or equal to Kd."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "稳态假设中，ES 的分解速率由哪些项组成？",
+    "q_en": "Under the steady-state assumption, which terms make up the rate of ES breakdown?",
+    "options": [
+     {
+      "zh": "k3[ES] 单独一项",
+      "en": "k3[ES] on its own"
+     },
+     {
+      "zh": "k1[E][S] 加 k2[ES]",
+      "en": "k1[E][S] plus k2[ES]"
+     },
+     {
+      "zh": "k2[ES] 加 k3[ES]",
+      "en": "k2[ES] plus k3[ES]"
+     },
+     {
+      "zh": "k1[E][S] 单独一项",
+      "en": "k1[E][S] on its own"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "ES 有两条去路，散回 E + S（k2）和向前生成 product（k3），两条都消耗 ES，所以分解速率是两项之和。凡是出现 k1[E][S] 的写法都属于 ES 的生成项，方向相反；只写 k3[ES] 则漏掉了逆向解离这条路。",
+    "explain_en": "ES has two exits — back to E + S via k2 and forward to product via k3 — and both consume it, so the breakdown rate is their sum. The choices containing k1[E][S] describe formation, which runs the other way, and k3[ES] alone omits the dissociation route."
+   },
+   {
+    "q_zh": "酶促反应的 steady state 稳态指的是什么？",
+    "q_en": "What does the steady state of an enzyme reaction actually mean?",
+    "options": [
+     {
+      "zh": "正反应与逆反应速率相等，体系达到化学平衡",
+      "en": "Forward and reverse rates are equal, so the system is at equilibrium"
+     },
+     {
+      "zh": "底物与产物的浓度相等，反应不再向前推进",
+      "en": "Substrate and product concentrations are equal, so net turnover stops"
+     },
+     {
+      "zh": "酶全部以游离形式 E 存在，[ES] 降为零",
+      "en": "All enzyme sits in the free form E, so [ES] has fallen to zero"
+     },
+     {
+      "zh": "[ES] 的生成与分解速率相等，浓度恒定",
+      "en": "ES is made and consumed at equal rates, so [ES] stays constant"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "稳态只要求中间体的浓度不变，整体反应仍在净向前进行、底物在不断被消耗；把它说成化学平衡是最常见的混淆，平衡态下净反应速率为零，那就测不到任何 v 了。说酶全部游离或底物产物浓度相等都与稳态无关。",
+    "explain_en": "Steady state only requires the intermediate to hold constant while the overall reaction still runs forward and consumes substrate. Calling it chemical equilibrium is the classic error — at equilibrium the net rate is zero and no v could be measured. Neither all-free enzyme nor equal substrate and product concentrations is part of the definition."
+   }
+  ]
+ },
+ {
+  "start": 1732,
+  "end": 1794,
+  "title_zh": "整理式子并定义 Km =（k2 + k3）/ k1",
+  "title_en": "Rearranging the balance and defining Km = (k2 + k3)/k1",
+  "points": [
+   {
+    "zh": "两个速率式令相等后，同时消去公共项，做的是纯数学手段：把所有速率常数挪到一边，把所有酶的浓度项挪到另一边。",
+    "en": "After the two rate expressions are set equal, the common factor is cancelled and the rest is pure algebra: all the rate constants to one side, all the enzyme concentration terms to the other."
+   },
+   {
+    "zh": "米氏（Michaelis）在这里引入了一个属于他自己的反应常数 Km，令右边那一坨等于 Km。",
+    "en": "At this point Michaelis introduced a constant of his own, Km, defined as the whole cluster of rate constants on the right-hand side."
+   },
+   {
+    "zh": "Km 的定义式是 Km =（k2 + k3）/ k1。",
+    "en": "The defining expression is Km = (k2 + k3)/k1."
+   },
+   {
+    "zh": "分子上的 k2 与 k3 都是 ES 分解方向的常数：k2 是散回 E + S，k3 是向前生成 product。",
+    "en": "The two constants on top, k2 and k3, both describe ES breaking down: k2 back to E + S, k3 forward to product."
+   },
+   {
+    "zh": "分母上的 k1 是 ES 生成方向的常数。",
+    "en": "The constant underneath, k1, describes ES being formed."
+   },
+   {
+    "zh": "所以 Km 在形式上是\"分解常数之和 比上 生成常数\"，反映 ES 这个复合物散掉与形成的相对倾向，是有物理含义的，不是随手凑出来的符号。",
+    "en": "So Km is structurally the sum of the breakdown constants over the formation constant, expressing how readily the ES complex falls apart versus how readily it forms — it carries real meaning rather than being an arbitrary abbreviation."
+   },
+   {
+    "zh": "Km 越大，说明 ES 越倾向于散掉、越不容易维持。",
+    "en": "The larger Km is, the more ES tends to fall apart and the harder it is to maintain."
+   },
+   {
+    "zh": "老师再次强调：中间那一长串式子不用记，需要记住的是 Km 的定义和它是怎么来的。",
+    "en": "The lecturer repeats that the long intermediate expression need not be memorised — what must be retained is the definition of Km and where it comes from."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上口误 · lecture misstatement",
+    "zh": "课上把 k1、k2、k3 都称为\"平衡常数\"。它们是 rate constant 速率常数，不是 equilibrium constant 平衡常数。k1 是二级速率常数，单位 M⁻¹·s⁻¹；k2、k3 是一级速率常数，单位 s⁻¹。正因为量纲这样搭配，（k2 + k3）/ k1 的单位才是浓度 M——这也是 Km 能与 [S] 相加的前提。",
+    "en": "The lecture calls k1, k2 and k3 equilibrium constants. They are rate constants. k1 is second order with units M⁻¹·s⁻¹, while k2 and k3 are first order with units s⁻¹, which is exactly why (k2 + k3)/k1 comes out in units of concentration — the reason Km can legitimately be added to [S]."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "Km 还有一个不依赖任何单个 k 的操作定义：使 v = Vmax/2 的底物浓度，单位 mol/L，可以直接从 v–[S] 曲线上读出来。由此得到的记法是——Km 大表示需要更高的 [S] 才达到半饱和，即表观亲和力弱。Km 与亲和力是反比关系，考试里极易记反。",
+    "en": "Km also has an operational definition that needs no individual rate constant: it is the substrate concentration giving v = Vmax/2, in mol/L, readable straight off the v–[S] curve. Hence the rule to remember — a large Km means a higher [S] is needed for half-saturation, i.e. weaker apparent affinity. Km runs inversely to affinity, and it is very easy to invert this in an exam."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "Km 只有在 k3 远小于 k2 时才近似等于解离常数 Kd = k2/k1。当催化步 k3 与 k2 相当甚至更大时（例如接近扩散极限的高效酶），Km 明显大于 Kd，此时直接把 Km 当作结合亲和力常数会低估酶对底物的真实结合强度。",
+    "en": "Km approximates the dissociation constant Kd = k2/k1 only when k3 is much smaller than k2. When the catalytic step is comparable to or faster than dissociation, as in near-diffusion-limited enzymes, Km is clearly larger than Kd, and reading Km straight off as a binding constant understates how tightly the enzyme actually binds its substrate."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "Km 的定义式是下面哪一个？",
+    "q_en": "Which expression is the definition of Km?",
+    "options": [
+     {
+      "zh": "（k2 + k3）/ k1",
+      "en": "(k2 + k3)/k1"
+     },
+     {
+      "zh": "k1 /（k2 + k3）",
+      "en": "k1/(k2 + k3)"
+     },
+     {
+      "zh": "（k1 + k2）/ k3",
+      "en": "(k1 + k2)/k3"
+     },
+     {
+      "zh": "k3 /（k1 + k2）",
+      "en": "k3/(k1 + k2)"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "Km 是 ES 两条分解途径的速率常数之和，比上 ES 的生成速率常数，所以 k2 与 k3 在分子、k1 在分母。把 k1 放在分子上的写法是把它整个倒过来了；把 k1 与 k2 相加的写法则把生成项和分解项混在了一起，量纲也不成立。",
+    "explain_en": "Km is the sum of the rate constants for the two routes by which ES breaks down, divided by the constant for its formation, so k2 and k3 belong on top and k1 underneath. Putting k1 on top simply inverts the whole thing, and summing k1 with k2 mixes a formation term with a breakdown term, which does not even work dimensionally."
+   },
+   {
+    "q_zh": "Km 与酶对底物的表观亲和力之间是什么关系？",
+    "q_en": "How does Km relate to an enzyme's apparent affinity for its substrate?",
+    "options": [
+     {
+      "zh": "Km 与表观亲和力彼此无关",
+      "en": "The value of Km is unrelated to the apparent affinity"
+     },
+     {
+      "zh": "Km 越大，表观亲和力越弱",
+      "en": "The larger Km is, the weaker the apparent affinity"
+     },
+     {
+      "zh": "Km 越大，表观亲和力越强",
+      "en": "The larger Km is, the stronger the apparent affinity"
+     },
+     {
+      "zh": "Km 越小，表观亲和力越弱",
+      "en": "The smaller Km is, the weaker the apparent affinity"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "Km 是半饱和所需的底物浓度，需要的底物越多说明结合越松，所以是反比关系。认为 Km 越大亲和力越强，或者认为 Km 越小亲和力越弱，都是把这个反比关系记反了；说两者无关则忽略了 Km 定义中 k1 在分母上的位置。",
+    "explain_en": "Km is the substrate concentration required for half-saturation, so needing more substrate means looser binding — an inverse relationship. Saying a large Km means stronger binding, or that a small Km means weaker binding, inverts it, and calling them unrelated ignores that k1 sits in the denominator of the definition."
+   },
+   {
+    "q_zh": "Km 的量纲是什么？",
+    "q_en": "What are the units of Km?",
+    "options": [
+     {
+      "zh": "一级速率，s⁻¹",
+      "en": "first-order rate, s⁻¹"
+     },
+     {
+      "zh": "二级速率，M⁻¹·s⁻¹",
+      "en": "second-order rate, M⁻¹·s⁻¹"
+     },
+     {
+      "zh": "无量纲的纯比值",
+      "en": "a pure dimensionless ratio"
+     },
+     {
+      "zh": "浓度，mol/L",
+      "en": "concentration, mol/L"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "k2、k3 的单位是 s⁻¹，k1 的单位是 M⁻¹·s⁻¹，相除后剩下 M，所以 Km 是一个浓度。s⁻¹ 是 kcat 的单位，M⁻¹·s⁻¹ 是 kcat/Km 的单位；如果 Km 无量纲，它就不能与 [S] 相加，米氏方程的分母也就写不出来。",
+    "explain_en": "k2 and k3 carry s⁻¹ and k1 carries M⁻¹·s⁻¹, so the quotient leaves M — Km is a concentration. s⁻¹ belongs to kcat and M⁻¹·s⁻¹ to kcat/Km, and a dimensionless Km could not be added to [S], which would make the denominator of the Michaelis-Menten equation meaningless."
+   }
+  ]
+ },
+ {
+  "start": 1794,
+  "end": 1887,
+  "title_zh": "用可测的 v = k3[ES] 替换测不到的 [ES]",
+  "title_en": "Replacing the unmeasurable [ES] with the measurable rate v = k3[ES]",
+  "points": [
+   {
+    "zh": "下一步是把 k3 想办法带进含 Km 的式子里，因为实验上真正能测到的就是 k3 所对应的这一步。",
+    "en": "The next move is to work k3 into the expression containing Km, because k3 corresponds to the only step the experiment can actually see."
+   },
+   {
+    "zh": "实验测的从来不是某一个单独的速率常数，而是产物 product 生成所给出的信号或量。",
+    "en": "What an assay measures is never an individual rate constant but the amount or signal from the product being formed."
+   },
+   {
+    "zh": "反应速率的表达式是 v = k3 × [ES]：产物生成速率等于中间复合物的量乘以催化步的速率常数。",
+    "en": "The rate expression is v = k3 × [ES]: product appears at a rate set by how much intermediate complex there is, times the catalytic rate constant."
+   },
+   {
+    "zh": "体系里 [ES] 的浓度基本上无法直接测定，直接去测中间复合物这个蛋白种类的浓度是做不到的。",
+    "en": "The concentration of ES in the mixture essentially cannot be measured directly; there is no way to read off the amount of that intermediate protein species."
+   },
+   {
+    "zh": "所以反过来用可测的 v 表示 [ES]，即 [ES] = v / k3，把式中出现的 [ES] 全部替换掉。",
+    "en": "So the measurable v is turned round to express [ES] as v/k3, and every occurrence of [ES] in the equation is substituted out."
+   },
+   {
+    "zh": "替换后与前面的式子整合，就得到 v = k3 乘以一串只含 [E]、[S] 和 Km 的表达式。",
+    "en": "Merging that substitution back into the earlier expression yields v equal to k3 times a cluster containing only [E], [S] and Km."
+   },
+   {
+    "zh": "这一步的科学意义：把方程里所有不可观测的量都换成可观测的量，方程才具有实验价值。",
+    "en": "The point of this step is that every unobservable quantity is traded for an observable one, which is what makes the equation experimentally useful."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "课上说\"测不到过渡态的浓度\"。这里测不到的是 ES 这个 Michaelis complex 的浓度，它是基态复合物，原则上可以通过快速动力学（stopped-flow）间接追踪；真正的 transition state 则连原则上都无法直接测浓度，寿命只有一次键振动的量级。两者不能混为一谈。",
+    "en": "The lecture says the transition state's concentration cannot be measured. What is unmeasurable here is [ES], the ground-state Michaelis complex, which can in fact be followed indirectly by rapid kinetics such as stopped-flow. The true transition state is unmeasurable even in principle, existing for about the time of a single bond vibration. The two must not be conflated."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "式中的 k3 就是 kcat，即 turnover number 转换数，单位 s⁻¹，含义是每个酶活性位点每秒能转化多少个底物分子。当催化机制不止一个化学步时，kcat 是若干速率常数的复合量，不再等于任何单一的 k3。",
+    "en": "The k3 in this scheme is kcat, the turnover number, in s⁻¹ — how many substrate molecules one active site converts per second. When the mechanism has more than one chemical step, kcat becomes a composite of several rate constants rather than any single k3."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "由 Vmax = kcat × [E]总 可知，Vmax 随加入的酶量线性变化，因此它不是酶的固有常数；kcat 和 kcat/Km 才是与酶量无关的固有参数。kcat/Km 称为特异性常数 specificity constant，其上限受底物扩散速度限制，约为 10⁸–10⁹ M⁻¹·s⁻¹，达到这个区间的酶称为催化完美酶。",
+    "en": "Since Vmax = kcat × [E]total, Vmax scales linearly with how much enzyme was added and is therefore not an intrinsic constant; kcat and kcat/Km are the enzyme-intrinsic parameters. kcat/Km, the specificity constant, is capped by how fast substrate can diffuse in, around 10⁸–10⁹ M⁻¹·s⁻¹, and enzymes reaching that range are called catalytically perfect."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "推导中为什么要用 v = k3[ES] 把 [ES] 替换掉？",
+    "q_en": "Why is [ES] substituted out using v = k3[ES] during the derivation?",
+    "options": [
+     {
+      "zh": "[ES] 随时间线性增加，数值并不固定",
+      "en": "[ES] climbs linearly with time and so is never a fixed value"
+     },
+     {
+      "zh": "[ES] 测不到，而 v 可以直接测得",
+      "en": "[ES] cannot be measured, while v follows from product formed"
+     },
+     {
+      "zh": "[ES] 在稳态下恒等于零，必须换掉",
+      "en": "[ES] is identically zero at steady state and must be removed"
+     },
+     {
+      "zh": "k3 是三个速率常数中数值最大的一个",
+      "en": "k3 is the largest of the three rate constants in the scheme"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "整个替换的动机是把不可观测量换成可观测量：中间复合物的浓度测不到，而产物生成速率可以直接测。说 [ES] 在稳态下为零恰恰说反了，稳态的定义是 [ES] 恒定于某个非零值；说 [ES] 线性增加同样与稳态矛盾；k3 的数值大小与要不要替换无关。",
+    "explain_en": "The whole point is to trade an unobservable for an observable: the intermediate's concentration cannot be read out, whereas the rate of product formation can. Claiming [ES] is zero at steady state inverts the definition, which fixes [ES] at a constant non-zero value; claiming it climbs linearly contradicts the steady state just as badly; and how large k3 happens to be has no bearing on the substitution."
+   },
+   {
+    "q_zh": "Vmax 与 kcat 之中，哪个才是酶本身的固有常数？",
+    "q_en": "Between Vmax and kcat, which is a constant intrinsic to the enzyme itself?",
+    "options": [
+     {
+      "zh": "两者都与加入的酶量成正比",
+      "en": "Both of them scale with the amount of enzyme added"
+     },
+     {
+      "zh": "两者都与加入的酶量无关",
+      "en": "Neither of them depends on the amount of enzyme added"
+     },
+     {
+      "zh": "kcat，Vmax 与加入的酶量成正比",
+      "en": "kcat, since Vmax scales with the amount of enzyme added"
+     },
+     {
+      "zh": "Vmax，kcat 与加入的酶量成正比",
+      "en": "Vmax, since kcat scales with the amount of enzyme added"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "Vmax = kcat × [E]总，多加一倍酶 Vmax 就翻一倍，所以 Vmax 是随实验条件走的量；kcat 是每个活性位点每秒的转换数，与加了多少酶无关。认为 kcat 随酶量变化是把两者的角色对调了。",
+    "explain_en": "Vmax = kcat × [E]total, so doubling the enzyme doubles Vmax — it is a property of the assay, not the protein. kcat is turnover per active site per second and does not care how much enzyme was pipetted in. Saying kcat scales with enzyme amount swaps the roles of the two."
+   }
+  ]
+ },
+ {
+  "start": 1887,
+  "end": 1953,
+  "title_zh": "第三个假设 [S] 远大于 [E]，代入后得到米氏方程",
+  "title_en": "The third assumption, [S] far above [E], and arriving at the Michaelis-Menten equation",
+  "points": [
+   {
+    "zh": "第三个假设：测 Vmax 的条件是底物浓度远远大于酶的浓度，即 [S] >> [E]。",
+    "en": "The third assumption: Vmax is measured under conditions where substrate concentration greatly exceeds enzyme concentration, [S] >> [E]."
+   },
+   {
+    "zh": "课上给出的推论：此时理论上所有的酶都被底物饱和了。",
+    "en": "The inference drawn in the lecture: under those conditions every enzyme molecule is, in principle, saturated with substrate."
+   },
+   {
+    "zh": "于是认为总的酶浓度与结合态的 [ES] 基本相等，把式中的游离酶 [E] 换成 [ES]。",
+    "en": "Total enzyme concentration is then taken as essentially equal to [ES], and the free enzyme term [E] in the expression is replaced by [ES]."
+   },
+   {
+    "zh": "再把前面得到的 v = k3[ES] 代进去，经过这一连串替换，最终整理出米氏方程。",
+    "en": "Feeding in the earlier relation v = k3[ES] and working through this chain of substitutions finally produces the Michaelis-Menten equation."
+   },
+   {
+    "zh": "米氏方程的形式：v = Vmax × [S] /（Km + [S]）。",
+    "en": "The Michaelis-Menten equation reads v = Vmax × [S]/(Km + [S])."
+   },
+   {
+    "zh": "三个假设是环环相扣的：忽略 k4 → ES 处于稳态 → 高底物浓度下酶被饱和。",
+    "en": "The three assumptions interlock: neglect k4, put ES at steady state, then saturate the enzyme at high substrate."
+   },
+   {
+    "zh": "老师形容这个推导\"特别特别肉\"，但考的是这条逻辑链，不是代数细节。",
+    "en": "The lecturer calls the derivation extremely laborious, but insists that what gets examined is the logical chain, not the algebraic detail."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "[S] >> [E] 本身并不等于酶被饱和。饱和与否由 [S] 相对于 Km 决定：[S] >> Km 时 [ES] ≈ [E]总、v ≈ Vmax，反应对底物呈零级；[S] << Km 时 v ≈ (Vmax/Km)[S]，呈一级——此时即使底物分子数远多于酶分子数，酶也远未饱和。[S] >> [E] 在标准推导中的真正作用是保证游离底物浓度约等于加入的总底物浓度，与饱和是两回事。",
+    "en": "[S] >> [E] does not by itself mean the enzyme is saturated. Saturation is decided by [S] relative to Km: when [S] >> Km, [ES] approaches [E]total and v approaches Vmax, giving zero-order behaviour; when [S] << Km, v is approximately (Vmax/Km)[S], first order — and there the enzyme is far from saturated even though substrate molecules vastly outnumber enzyme molecules. The real job of [S] >> [E] in the standard derivation is to let free substrate be equated with total added substrate."
+   },
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "由 v = Vmax[S]/(Km + [S]) 可以直接算出：[S] = Km 时 v = 0.5 Vmax；[S] = 10 Km 时 v ≈ 0.91 Vmax；要达到 0.99 Vmax 需要 [S] = 99 Km。所以\"饱和\"只是渐近逼近，v–[S] 曲线是一条直角双曲线 rectangular hyperbola，实验上永远达不到真正的 Vmax，这也是为什么要用双倒数作图或非线性拟合来外推。",
+    "en": "Straight from v = Vmax[S]/(Km + [S]): at [S] = Km, v = 0.5 Vmax; at [S] = 10 Km, v is about 0.91 Vmax; reaching 0.99 Vmax needs [S] = 99 Km. Saturation is therefore only asymptotic — the v–[S] curve is a rectangular hyperbola and true Vmax is never attained experimentally, which is why it is extrapolated by double-reciprocal plots or non-linear fitting."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "推导中真正用到的守恒关系是 [E]总 = [E]游离 + [ES]。保留它而不做 [E]总 ≈ [ES] 的近似，可以得到普遍成立的 v = kcat[E]总[S] /（Km + [S]），其中 Vmax = kcat[E]总。课上那个\"酶全部饱和\"的近似只是这个通式在 [S] >> Km 时的极限情形。",
+    "en": "The conservation relation actually used is [E]total = [E]free + [ES]. Keeping it instead of approximating [E]total by [ES] gives the generally valid form v = kcat[E]total[S]/(Km + [S]), with Vmax = kcat[E]total. The lecture's fully-saturated approximation is just the limiting case of this general form when [S] >> Km."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "米氏方程的正确形式是哪一个？",
+    "q_en": "Which is the correct form of the Michaelis-Menten equation?",
+    "options": [
+     {
+      "zh": "v = Vmax[S] /（Km + [S]）",
+      "en": "v = Vmax[S]/(Km + [S])"
+     },
+     {
+      "zh": "v = Vmax[S] /（Km × [S]）",
+      "en": "v = Vmax[S]/(Km × [S])"
+     },
+     {
+      "zh": "v = Vmax·Km /（Km + [S]）",
+      "en": "v = Vmax·Km/(Km + [S])"
+     },
+     {
+      "zh": "v = Vmax（Km + [S]）/ [S]",
+      "en": "v = Vmax(Km + [S])/[S]"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "只有 Vmax[S]/(Km + [S]) 满足两端行为：[S] 很小时 v 与 [S] 成正比，[S] 很大时 v 趋近 Vmax，且 [S] = Km 时正好是 Vmax 的一半。分母写成 Km 与 [S] 相乘的式子在 [S] 增大时反而让 v 下降；分子换成 Km 的式子与 [S] 无关地随 [S] 增大而变小；把分式整个倒过来的式子在高底物下发散。",
+    "explain_en": "Only Vmax[S]/(Km + [S]) behaves correctly at both ends: v is proportional to [S] when substrate is scarce, approaches Vmax when substrate is abundant, and equals half of Vmax exactly at [S] = Km. Multiplying Km by [S] in the denominator makes v fall as substrate rises; putting Km in the numerator does the same; and inverting the whole fraction diverges at high substrate."
+   },
+   {
+    "q_zh": "酶促反应由一级过渡到零级，这个分界主要由什么决定？",
+    "q_en": "What sets the crossover from first-order to zero-order behaviour in an enzyme reaction?",
+    "options": [
+     {
+      "zh": "[S] 相对于 [E] 的大小",
+      "en": "the size of [S] relative to [E]"
+     },
+     {
+      "zh": "[E] 相对于 Km 的大小",
+      "en": "the size of [E] relative to Km"
+     },
+     {
+      "zh": "Vmax 相对于 kcat 的大小",
+      "en": "the size of Vmax relative to kcat"
+     },
+     {
+      "zh": "[S] 相对于 Km 的大小",
+      "en": "the size of [S] relative to Km"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "反应级数由酶被占据的程度决定，而占据程度只取决于 [S] 与 Km 的比值：[S] << Km 为一级，[S] >> Km 为零级。用 [S] 与 [E] 相比是最常见的陷阱——底物分子数远多于酶分子数在任何酶反应里几乎都成立，却完全不能说明酶是否饱和。[E] 与 Km 或 Vmax 与 kcat 的比较只反映加了多少酶。",
+    "explain_en": "Reaction order is fixed by how occupied the enzyme is, and occupancy depends only on the ratio of [S] to Km: first order when [S] << Km, zero order when [S] >> Km. Comparing [S] with [E] is the standard trap — substrate outnumbers enzyme in virtually every assay, which says nothing about saturation. Comparing [E] with Km, or Vmax with kcat, only reports how much enzyme was added."
+   },
+   {
+    "q_zh": "当底物浓度恰好等于 Km 时，反应速率 v 等于多少？",
+    "q_en": "When the substrate concentration equals Km exactly, what is the rate v?",
+    "options": [
+     {
+      "zh": "与 Vmax 完全相等",
+      "en": "exactly equal to Vmax"
+     },
+     {
+      "zh": "Vmax 的二分之一",
+      "en": "one half of Vmax"
+     },
+     {
+      "zh": "Vmax 的四分之一",
+      "en": "one quarter of Vmax"
+     },
+     {
+      "zh": "Vmax 的两倍",
+      "en": "twice the value of Vmax"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "把 [S] = Km 代入 v = Vmax[S]/(Km + [S])，分母变成 2Km，分子是 Km，正好得到 Vmax/2，这正是 Km 的操作定义。v 不可能超过 Vmax，所以两倍或相等的说法都违背方程的上界；四分之一对应的是 [S] = Km/3。",
+    "explain_en": "Substituting [S] = Km into v = Vmax[S]/(Km + [S]) makes the denominator 2Km against a numerator of Km, giving exactly Vmax/2 — this is the operational definition of Km. The rate can never exceed Vmax, so twice Vmax or equal to Vmax both violate the equation's ceiling, and a quarter of Vmax corresponds to [S] = Km/3."
+   }
+  ]
+ },
+ {
+  "start": 1953,
+  "end": 2065,
+  "title_zh": "复习段：米氏方程三个假设的回顾与考试提醒",
+  "title_en": "Review segment: recapping the three assumptions and what the exam may ask",
+  "points": [
+   {
+    "zh": "这一段不是新内容，老师带着从头回顾整条推导，反复强调考的就是那三个假设。",
+    "en": "This stretch introduces nothing new — the lecturer walks back through the whole derivation, hammering on the three assumptions as the examinable core."
+   },
+   {
+    "zh": "假设一：反应刚开始的初期，product 转回过渡态那一步（k4）速率非常小，可以忽略。",
+    "en": "First assumption: in the early phase of the reaction the step converting product back (k4) is so slow that it can be ignored."
+   },
+   {
+    "zh": "假设二：反应过程中 ES 的生成速率与降解速率相等，这才叫稳态。",
+    "en": "Second assumption: during the reaction ES is generated and degraded at equal rates — that is what steady state means."
+   },
+   {
+    "zh": "假设三：底物浓度远远大于酶浓度时反应达到最高速率，且总的酶浓度与结合态酶浓度基本相等，因为所有酶都被饱和了。",
+    "en": "Third assumption: with substrate far in excess of enzyme the reaction reaches its maximal rate, and total enzyme is taken as essentially equal to bound enzyme because every molecule is saturated."
+   },
+   {
+    "zh": "老师判断这位教授\"比较复古\"，很可能直接问米氏方程当年是怎么被推导出来的。",
+    "en": "The lecturer reckons the professor is old-school and may well ask outright how the Michaelis-Menten equation was originally derived."
+   },
+   {
+    "zh": "米氏方程被称为生物化学里非常重要的一个方程，所以推导过程本身是可能的考点。",
+    "en": "The Michaelis-Menten equation is described as one of the most important in biochemistry, which is why the derivation itself is a plausible exam question."
+   },
+   {
+    "zh": "老师给出的通过标准：只要能把这三个假设说出来就可以，中间代数不必背。",
+    "en": "The stated pass criterion: being able to state the three assumptions is enough; the intermediate algebra need not be memorised."
+   },
+   {
+    "zh": "老师承诺后面每次课开始还会再复习一遍，通过不断强化把这三个假设记牢。",
+    "en": "The lecturer promises to revisit this at the start of later sessions, drilling the three assumptions by repetition."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "忽略 k4 的严格条件是测初速度 v0，即 [P] ≈ 0，通常要求反应进行不超过底物的 5%。这也是为什么所有酶动力学数据都必须取反应进程曲线起始的直线段——一旦产物积累，逆反应和产物抑制都会让测得的速率偏低。",
+    "en": "Neglecting k4 is rigorous only under initial-rate conditions, [P] near zero, conventionally less than about 5% substrate turnover. That is why kinetic data must be taken from the initial linear portion of the progress curve — once product accumulates, both the reverse reaction and product inhibition drag the measured rate down."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "口述推导时可以用这条完整链条：v = k3[ES] → 稳态给出 k1[E][S] =（k2 + k3）[ES] → 令 Km =（k2 + k3）/ k1 → 代入守恒式 [E]总 = [E] + [ES] → 得 v = kcat[E]总[S] /（Km + [S]），其中 Vmax = kcat[E]总。五步即可完整复述，比背中间代数可靠得多。",
+    "en": "A clean chain to recite: v = k3[ES], then the steady state gives k1[E][S] = (k2 + k3)[ES], then define Km = (k2 + k3)/k1, then apply conservation [E]total = [E] + [ES], and finally v = kcat[E]total[S]/(Km + [S]) with Vmax = kcat[E]total. Five steps reproduce the whole derivation far more reliably than memorising the algebra."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "米氏方程只适用于单底物、无协同效应、初速度条件下的酶。别构酶 allosteric enzyme 的 v–[S] 曲线是 S 形 sigmoidal，需要用 Hill 方程描述，并不遵循米氏动力学；对这类酶报告 Km 是不恰当的，应报告 K0.5 与 Hill 系数。",
+    "en": "The Michaelis-Menten equation applies only to single-substrate, non-cooperative enzymes under initial-rate conditions. Allosteric enzymes give a sigmoidal v–[S] curve described by the Hill equation and do not obey Michaelis-Menten kinetics; quoting a Km for them is inappropriate, and K0.5 with a Hill coefficient should be reported instead."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "为什么推导中可以忽略 product 转回 ES 的那一步（k4）？",
+    "q_en": "Why can the step taking product back to ES (k4) be neglected in the derivation?",
+    "options": [
+     {
+      "zh": "该步的速率常数 k4 在数值上恒为零",
+      "en": "The rate constant k4 for that step is identically zero"
+     },
+     {
+      "zh": "产物一旦生成就立刻被稀释出体系",
+      "en": "Product is diluted out of the system the moment it is formed"
+     },
+     {
+      "zh": "初速度条件下产物浓度接近于零",
+      "en": "Initial-rate conditions keep product concentration near zero"
+     },
+     {
+      "zh": "产物与酶之间不存在任何结合能力",
+      "en": "The product has no measurable binding capacity for the enzyme"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "k4 这一步的速率是 k4[E][P]，反应刚开始时 [P] 几乎为零，所以整项可忽略——被忽略的是浓度而不是常数本身。说 k4 恒为零把可逆反应说死了；说产物完全不结合酶与产物抑制现象矛盾；产物在密闭体系里并不会被稀释掉。",
+    "explain_en": "The rate of that step is k4[E][P], and at the start [P] is essentially zero, so the whole term drops out — it is the concentration that vanishes, not the constant. Calling k4 identically zero would make the step irreversible by fiat, claiming the product cannot bind contradicts product inhibition, and nothing dilutes product out of a closed assay."
+   },
+   {
+    "q_zh": "下面哪一条不属于米氏方程推导的三个假设？",
+    "q_en": "Which statement is NOT one of the three assumptions behind the Michaelis-Menten derivation?",
+    "options": [
+     {
+      "zh": "酶与底物的结合过程是完全不可逆的",
+      "en": "Binding of enzyme to substrate is a completely irreversible event"
+     },
+     {
+      "zh": "产物逆转回 ES 的一步速率小到可忽略",
+      "en": "The step running product back to ES is slow enough to neglect"
+     },
+     {
+      "zh": "ES 的生成速率与分解速率彼此相等",
+      "en": "The rates of ES formation and ES breakdown are equal to each other"
+     },
+     {
+      "zh": "底物浓度远远大于体系中酶的浓度",
+      "en": "Substrate concentration greatly exceeds the enzyme concentration"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "结合不可逆恰恰与推导矛盾：k2 描述的正是 ES 散回 E + S，如果结合不可逆，Km 分子上的 k2 就不存在了。忽略产物回头、ES 生成与分解相等、底物远过量，这三条正是老师反复强调的三个假设。",
+    "explain_en": "Irreversible binding directly contradicts the derivation: k2 is precisely the dissociation of ES back to E + S, and without it the k2 term in the numerator of Km would not exist. Neglecting the reverse step from product, equating ES formation with breakdown, and having substrate in large excess are exactly the three assumptions the lecturer drills."
+   }
+  ]
+ },
+ {
+  "start": 2065,
+  "end": 2143,
+  "title_zh": "米氏方程推导的骨架：三个假设与反应式",
+  "title_en": "Backbone of the Michaelis-Menten derivation: three assumptions and the reaction scheme",
+  "points": [
+   {
+    "zh": "老师强调：考试问到推导时，能把三个假设说出来基本就够了，符号的细节可以不背。",
+    "en": "The lecturer stresses that if the exam asks about the derivation, being able to state the three assumptions is essentially enough; the symbol manipulation need not be memorised."
+   },
+   {
+    "zh": "推导的第一步是写出反应式：底物加酶 E + S 经正、逆反应生成 ES，ES 再经正、逆反应给出酶加产物 E + P。",
+    "en": "Step one is to write the scheme: E + S goes forward and back to ES, and ES goes forward and back to enzyme plus product, E + P."
+   },
+   {
+    "zh": "假设一：在反应刚开始的初期，product 转回 ES 这一步的速率非常小，可以忽略 —— 也就是只测 initial velocity。",
+    "en": "Assumption one: early in the reaction the step converting product back to ES is so slow it can be ignored — that is, only the initial velocity is measured."
+   },
+   {
+    "zh": "假设二：反应过程中 ES 的生成速率和降解速率相等，这就是 steady state 稳态假设。",
+    "en": "Assumption two: during the reaction ES is formed and broken down at equal rates — the steady-state assumption."
+   },
+   {
+    "zh": "假设三（课上的说法）：当底物浓度远远大于酶时，总的酶浓度和 ES 的浓度基本相等，因为酶都被饱和了。",
+    "en": "Assumption three as stated in class: when substrate concentration far exceeds enzyme, total enzyme concentration is essentially equal to [ES], because the enzyme is all saturated."
+   },
+   {
+    "zh": "之所以必须先把 ES 表示出来，是因为要靠 ES 才能把 substrate 和 product 连接起来。",
+    "en": "ES has to be expressed first because ES is what links substrate to product."
+   },
+   {
+    "zh": "“表示出 ES”具体就是分别写出它正向的生成速率和逆向被消灭掉的速率这两个式子。",
+    "en": "\"Expressing ES\" means writing out two rate expressions: the rate at which it is formed and the rate at which it is consumed."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "课上多次把 ES 叫作“过渡态”。ES 是 Michaelis complex，是基态 (ground state) 的中间物，可以用动力学方法测量、有确定的浓度；transition state 是能垒顶端的构型，寿命约为一次键振动 (10⁻¹³ s)，无法分离也无法测浓度。酶的催化本质是稳定 transition state，不是稳定 ES。",
+    "en": "The lecture repeatedly calls ES the \"transition state\". ES is the Michaelis complex — a ground-state intermediate with a real, measurable concentration. The transition state sits at the top of the energy barrier, lasts about one bond vibration (10⁻¹³ s), and cannot be isolated or measured. Catalysis works by stabilising the transition state, not by stabilising ES."
+   },
+   {
+    "tag": "课上口误 · lecture misstatement",
+    "zh": "假设三的标准形式是酶的质量守恒 [E]t = [E]free + [ES]，在任何底物浓度下都成立，推导里用的正是它。[S] >> [E] 的真正作用是让游离底物浓度约等于加进去的总底物浓度。而 [ES] ≈ [E]t 只有在 [S] >> Km（饱和）时才成立，不是推导的前提。",
+    "en": "The standard form of assumption three is enzyme mass conservation, [E]total = [E]free + [ES], which holds at any substrate concentration and is what the derivation actually uses. What [S] >> [E] really buys you is that free substrate ≈ the total substrate you added. [ES] ≈ [E]total holds only at saturation ([S] >> Km) and is not a premise of the derivation."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "原始的 Michaelis-Menten (1913) 推导用的是 rapid equilibrium 假设（k3 << k2，E+S 与 ES 处于快速平衡）；Briggs 和 Haldane (1925) 把它换成 steady state 假设，才得到 Km = (k2+k3)/k1。今天教科书和课上讲的都是 Briggs-Haldane 版本。",
+    "en": "The original Michaelis-Menten (1913) derivation used a rapid-equilibrium assumption (k3 << k2, so E+S and ES stay in fast equilibrium). Briggs and Haldane (1925) replaced it with the steady-state assumption, which is what yields Km = (k2+k3)/k1. Today's textbooks — and this lecture — use the Briggs-Haldane version."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "米氏方程推导中“稳态假设”的确切含义是什么？",
+    "q_en": "What exactly does the steady-state assumption in the Michaelis-Menten derivation state?",
+    "options": [
+     {
+      "zh": "底物浓度在反应过程中保持恒定",
+      "en": "Substrate concentration stays constant through the run"
+     },
+     {
+      "zh": "ES 的生成速率等于其分解速率",
+      "en": "ES is formed and broken down at equal rates"
+     },
+     {
+      "zh": "酶与底物之间达到热力学平衡",
+      "en": "Enzyme and substrate reach thermodynamic equilibrium"
+     },
+     {
+      "zh": "产物生成速率等于底物消耗速率",
+      "en": "Product appears as fast as substrate disappears"
+     }
+    ],
+    "answer": 1,
+    "explain_zh": "稳态假设针对的是中间物 ES：它的浓度在初速率阶段基本不变，因为生成与分解速率相等，由此得到 k1[E][S] = (k2+k3)[ES]。“酶与底物达到热力学平衡”是另一套前提（rapid equilibrium，原始 M-M 推导），不是稳态；底物浓度恒定和产物、底物速率相等都不是这一假设的内容。",
+    "explain_en": "The steady state refers to the intermediate ES: its concentration is essentially unchanging during the initial-velocity phase because formation and breakdown rates are equal, giving k1[E][S] = (k2+k3)[ES]. Enzyme and substrate reaching thermodynamic equilibrium is a different premise (rapid equilibrium, the original M-M derivation), not the steady state; constant substrate and equal substrate/product rates are not what this assumption says."
+   },
+   {
+    "q_zh": "推导中为什么必须先把 ES 的生成与消耗速率写出来？",
+    "q_en": "Why must the formation and consumption rates of ES be written out first in the derivation?",
+    "options": [
+     {
+      "zh": "ES 的生成是整个反应的 rate-limiting step",
+      "en": "ES formation is the rate-limiting step"
+     },
+     {
+      "zh": "ES 是能量最高的 transition state",
+      "en": "ES is the highest-energy transition state"
+     },
+     {
+      "zh": "ES 的浓度可用 spectrophotometry 测出",
+      "en": "ES concentration is directly measurable"
+     },
+     {
+      "zh": "ES 把 substrate 与 product 连接起来",
+      "en": "ES is what links substrate to product"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "反应速率写成 v = k3[ES]，唯一含中间物的量就是 [ES]，而 [ES] 实验上测不到，所以必须先把它表示出来、再用可测的 [E]t 和 [S] 换掉，这正是整个推导的目的。能量最高的是 transition state 而不是 ES；ES 的浓度通常无法直接测；多数酶的限速步是催化步 k3 而不是结合步。",
+    "explain_en": "The rate is v = k3[ES], so [ES] is the only intermediate term — and it cannot be measured experimentally. It must therefore be expressed and then eliminated in favour of the measurable [E]total and [S], which is the whole point of the derivation. The highest-energy species is the transition state, not ES; [ES] is generally not directly measurable; and for most enzymes the rate-limiting step is the catalytic step k3, not binding."
+   }
+  ]
+ },
+ {
+  "start": 2143,
+  "end": 2206,
+  "title_zh": "引入 Km 与 k3：推导的实际顺序",
+  "title_en": "Bringing in Km and k3: the actual order of the derivation",
+  "points": [
+   {
+    "zh": "老师当场纠正了自己的顺序：不是先引入 Km，而是先用假设二（稳态），让 ES 的生成速率与消除速率相等。",
+    "en": "The lecturer corrects the order on the spot: assumption two (steady state) comes first — ES formation rate is set equal to its removal rate — and only then does Km appear."
+   },
+   {
+    "zh": "引入 Km 的动机很直白：把一堆速率常数 k 用一个统一的符号打包表示出来，让式子好看。",
+    "en": "The motive for introducing Km is plainly stated: pack the several rate constants k into one unified symbol so the expression becomes tidy."
+   },
+   {
+    "zh": "稳态式整理后得到 k1[E][S] = (k2+k3)[ES]，于是定义 Km = (k2+k3)/k1，单位是浓度。",
+    "en": "Rearranging the steady-state equality gives k1[E][S] = (k2+k3)[ES], so Km is defined as (k2+k3)/k1, with units of concentration."
+   },
+   {
+    "zh": "引入 Km 之后老师说式子“还是不是很简洁”，于是接着引入“我们真实测定的 k3”，也就是催化步骤的速率常数。",
+    "en": "After Km the lecturer says the expression is still not neat enough, so k3 — \"the one we actually measure\" — is brought in: the rate constant of the catalytic step."
+   },
+   {
+    "zh": "速率方程 v = k3[ES]，其中 k3 就是 kcat，即每个酶分子每秒的 turnover number。",
+    "en": "The rate equation is v = k3[ES], where k3 is kcat, the turnover number — molecules converted per enzyme molecule per second."
+   },
+   {
+    "zh": "最后一步才用假设三，把总酶浓度代进去，消掉方程里测不到的游离酶浓度。",
+    "en": "Only at the last step is assumption three used, substituting total enzyme concentration and eliminating the unmeasurable free-enzyme term."
+   },
+   {
+    "zh": "老师的总结口诀：三步假设、两步引入（Km 与 k3），最后就得到了米氏方程。",
+    "en": "The lecturer's summary: three assumptions, two substitutions (Km and k3), and out comes the Michaelis-Menten equation."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "Km = (k2+k3)/k1，量纲是 mol/L。只有当 k3 << k2（催化远慢于解离）时 Km ≈ k2/k1 = Ks = Kd，才近似等于解离常数。一般情况下 Km 只是 apparent affinity 的指标：Km 越小，达到半数最大速率所需的底物越少，表观亲和力越高 —— 两者成反比。",
+    "en": "Km = (k2+k3)/k1, with units of mol/L. Only when k3 << k2 (catalysis much slower than dissociation) does Km ≈ k2/k1 = Ks = Kd, i.e. approximate the dissociation constant. In general Km is only an index of apparent affinity: a smaller Km means less substrate is needed to reach half-maximal velocity, so apparent affinity is higher — the two are inversely related."
+   },
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "课上把 k3 说成“我们真实测定的”。实验上直接得到的是 Vmax（而且是外推值），k3 = kcat = Vmax/[E]t，必须另外知道酶的摩尔浓度才能算出来。反过来说，如果只有粗酶提取物、不知道酶的摩尔量，就只能报 Vmax 或比活力，报不了 kcat。",
+    "en": "The lecture calls k3 \"the one we actually measure\". What the experiment gives directly is Vmax (and even that is extrapolated); k3 = kcat = Vmax/[E]total, which requires separately knowing the molar concentration of enzyme. With a crude extract of unknown molarity you can report Vmax or specific activity, but not kcat."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "kcat/Km 是 specificity constant，描述低底物浓度下酶对某个底物的催化效率，也是比较同一个酶对不同底物偏好的正确参数。它的上限受底物扩散速率限制，约 10⁸–10⁹ M⁻¹s⁻¹；达到这个上限的酶称为 catalytically perfect，如 carbonic anhydrase、triosephosphate isomerase、acetylcholinesterase。",
+    "en": "kcat/Km is the specificity constant: it describes catalytic efficiency at low substrate concentration and is the correct parameter for comparing one enzyme's preference among different substrates. Its ceiling is set by the diffusion rate of substrate, around 10⁸–10⁹ M⁻¹s⁻¹; enzymes at that ceiling are called catalytically perfect — carbonic anhydrase, triosephosphate isomerase, acetylcholinesterase."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "由稳态假设整理得到的 Km，其定义式是？",
+    "q_en": "Rearranging the steady-state assumption, how is Km defined?",
+    "options": [
+     {
+      "zh": "Km = (k1 + k2) / k3",
+      "en": "Km = (k1 + k2) / k3"
+     },
+     {
+      "zh": "Km = k1 / (k2 + k3)",
+      "en": "Km = k1 / (k2 + k3)"
+     },
+     {
+      "zh": "Km = k3 / (k1 + k2)",
+      "en": "Km = k3 / (k1 + k2)"
+     },
+     {
+      "zh": "Km = (k2 + k3) / k1",
+      "en": "Km = (k2 + k3) / k1"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "稳态给出 k1[E][S] = (k2+k3)[ES]，移项即 [E][S]/[ES] = (k2+k3)/k1 = Km。分子是 ES 消失的两条途径（解离 k2 与催化 k3），分母是生成途径 k1。把它上下颠倒写得到的是结合常数，量纲变成 1/浓度，直接就对不上 Km 是浓度的事实。",
+    "explain_en": "The steady state gives k1[E][S] = (k2+k3)[ES], so [E][S]/[ES] = (k2+k3)/k1 = Km. The numerator collects the two routes by which ES disappears (dissociation k2 and catalysis k3), the denominator the route by which it forms (k1). Inverting the ratio gives an association constant with units of 1/concentration, which contradicts the fact that Km is a concentration."
+   },
+   {
+    "q_zh": "Km 与酶对底物的亲和力之间是什么关系？",
+    "q_en": "How does Km relate to an enzyme's affinity for its substrate?",
+    "options": [
+     {
+      "zh": "Km 越小，表观亲和力越高",
+      "en": "A smaller Km means higher apparent affinity"
+     },
+     {
+      "zh": "Km 越大，表观亲和力越高",
+      "en": "A larger Km means higher apparent affinity"
+     },
+     {
+      "zh": "Km 与亲和力无关，只反映 Vmax",
+      "en": "Km says nothing of affinity, only of Vmax"
+     },
+     {
+      "zh": "Km 越小，酶的催化速率越快",
+      "en": "A smaller Km means a faster catalytic rate"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "Km 是达到 1/2 Vmax 所需的底物浓度，需要的底物越少说明结合越有效，所以 Km 与表观亲和力成反比。催化的快慢由 kcat 决定，Km 与 kcat 是两个互相独立的参数，一个小 Km 的酶完全可以催化得很慢；Km 与 Vmax 也不是同一件事。",
+    "explain_en": "Km is the substrate concentration needed to reach half of Vmax; needing less substrate means binding is more effective, so Km is inversely related to apparent affinity. How fast catalysis runs is set by kcat, an independent parameter — an enzyme with a small Km can still turn over slowly — and Km is not a restatement of Vmax."
+   }
+  ]
+ },
+ {
+  "start": 2206,
+  "end": 2266,
+  "title_zh": "米氏方程的写法：v = Vmax[S] / (Km + [S])",
+  "title_en": "Writing the Michaelis-Menten equation: v = Vmax[S] / (Km + [S])",
+  "points": [
+   {
+    "zh": "老师提出明确的底线要求：推导不会无所谓，但方程怎么写“一定一定要知道”。",
+    "en": "The lecturer sets an explicit floor: not knowing the derivation is survivable, but you absolutely must know how the equation is written."
+   },
+   {
+    "zh": "分子是 Vmax 乘以底物浓度 [S]；分母是 Km 加上底物浓度 [S]，即 v = Vmax[S]/(Km+[S])。",
+    "en": "The numerator is Vmax times substrate concentration [S]; the denominator is Km plus [S], i.e. v = Vmax[S]/(Km+[S])."
+   },
+   {
+    "zh": "v 是在某一个底物浓度下、这一时刻酶促反应的反应速率，它随 [S] 不同而不同。",
+    "en": "v is the rate of the enzyme reaction at that moment for a given substrate concentration; it differs with [S]."
+   },
+   {
+    "zh": "Vmax 是这个酶在固定条件下的最大酶活，是一个定值。",
+    "en": "Vmax is that enzyme's maximal activity under a fixed set of conditions — a constant value."
+   },
+   {
+    "zh": "Km 同样是一个固定的数值，不随实验中加多少底物而改变。",
+    "en": "Km is likewise a fixed number and does not change with how much substrate is put into the experiment."
+   },
+   {
+    "zh": "整个反应式里出现的量就只有 v、Vmax、Km、[S] 这几个，其中只有 [S] 在变。",
+    "en": "The whole expression contains only v, Vmax, Km and [S], and of these only [S] varies."
+   },
+   {
+    "zh": "老师承诺下节课开始前会再花时间强调一遍米氏方程的来历。",
+    "en": "The lecturer promises to spend time at the start of the next session re-emphasising where the equation comes from."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "定量补充 · quantitative",
+    "zh": "把 [S] = Km 代入方程：v = Vmax·Km/(Km+Km) = Vmax/2。所以 Km 的操作定义就是达到半数最大速率所需的底物浓度 —— 这是最常考的一句话，也是从图上读 Km 的方法。",
+    "en": "Substituting [S] = Km gives v = Vmax·Km/(Km+Km) = Vmax/2. Hence the operational definition: Km is the substrate concentration giving half-maximal velocity — the single most examinable sentence about it, and the way Km is read off a plot."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "反应级数直接由方程读出：[S] << Km 时分母 ≈ Km，v ≈ (Vmax/Km)[S]，对底物是一级反应；[S] >> Km 时分母 ≈ [S]，v ≈ Vmax，对底物是零级反应。分界线是 [S] 相对于 Km，与酶浓度无关 —— “底物分子数多于酶分子数”在几乎所有实验里都成立，却完全不等于饱和。",
+    "en": "Reaction order falls straight out of the equation: when [S] << Km the denominator ≈ Km and v ≈ (Vmax/Km)[S], first order in substrate; when [S] >> Km the denominator ≈ [S] and v ≈ Vmax, zero order. The boundary is [S] relative to Km, not to enzyme — substrate molecules outnumbering enzyme molecules is true in nearly every experiment yet says nothing about saturation."
+   },
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "课上说 Vmax 是“真正做实验的时候测定的数值”。严格讲 Vmax 只有在 [S] → ∞ 时才达到，实验上永远只能逼近，实际是用非线性拟合或双倒数作图外推得到的。考试中若问“Vmax 能否直接测得”，答案是不能，只能外推。",
+    "en": "The lecture calls Vmax \"the number you actually measure in the experiment\". Strictly, Vmax is reached only as [S] → ∞; experimentally you can only approach it, and the value is obtained by non-linear fitting or by extrapolation from a double-reciprocal plot. If asked whether Vmax can be measured directly, the answer is no — only extrapolated."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "Vmax 不是酶的内在常数：Vmax = kcat·[E]t，与加入的总酶浓度成正比。同一个酶多加一倍，Vmax 翻倍而 Km 完全不变。真正只属于酶本身、与用量无关的常数是 kcat 和 kcat/Km。",
+    "en": "Vmax is not an intrinsic property of the enzyme: Vmax = kcat·[E]total, proportional to how much enzyme you added. Double the enzyme and Vmax doubles while Km is untouched. The constants that belong to the enzyme itself, independent of amount used, are kcat and kcat/Km."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "当底物浓度恰好等于 Km 时，反应速率 v 等于多少？",
+    "q_en": "When substrate concentration is exactly equal to Km, what is the velocity v?",
+    "options": [
+     {
+      "zh": "Vmax 的两倍",
+      "en": "Twice Vmax"
+     },
+     {
+      "zh": "Vmax 本身",
+      "en": "Vmax itself"
+     },
+     {
+      "zh": "Vmax 的一半",
+      "en": "Half of Vmax"
+     },
+     {
+      "zh": "Vmax 的三分之一",
+      "en": "A third of Vmax"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "把 [S] = Km 代入 v = Vmax[S]/(Km+[S])，分母变成 2Km，约分后 v = Vmax/2。这正是 Km 的操作定义：半数最大速率对应的底物浓度。v 永远不可能超过 Vmax，所以“两倍”在数学上就不成立；等于 Vmax 只在 [S] 趋于无穷时才逼近。",
+    "explain_en": "Substituting [S] = Km into v = Vmax[S]/(Km+[S]) makes the denominator 2Km, and cancelling gives v = Vmax/2. This is exactly the operational definition of Km: the substrate concentration at half-maximal velocity. v can never exceed Vmax, so twice Vmax is mathematically impossible, and v equals Vmax only as [S] approaches infinity."
+   },
+   {
+    "q_zh": "把加入的酶量加倍、其他条件不变，米氏方程的参数会怎样变化？",
+    "q_en": "If the amount of enzyme is doubled and nothing else changes, how do the Michaelis-Menten parameters respond?",
+    "options": [
+     {
+      "zh": "Vmax 与 Km 都不变",
+      "en": "Neither Vmax nor Km changes"
+     },
+     {
+      "zh": "Km 加倍，Vmax 不变",
+      "en": "Km doubles, Vmax is unchanged"
+     },
+     {
+      "zh": "Vmax 加倍，Km 不变",
+      "en": "Vmax doubles, Km is unchanged"
+     },
+     {
+      "zh": "Vmax 与 Km 都加倍",
+      "en": "Both Vmax and Km double"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "Vmax = kcat[E]t，与酶的总浓度成正比，所以酶加倍则 Vmax 加倍。Km = (k2+k3)/k1 只由速率常数决定，是酶与底物这一对搭配的性质，与加了多少酶无关。正因如此，跨实验室比较酶的性能要用 kcat 和 kcat/Km，而不是 Vmax。",
+    "explain_en": "Vmax = kcat[E]total, proportional to total enzyme, so doubling the enzyme doubles Vmax. Km = (k2+k3)/k1 depends only on rate constants — a property of that enzyme-substrate pairing — and is indifferent to how much enzyme was added. This is precisely why enzymes are compared across labs by kcat and kcat/Km rather than by Vmax."
+   }
+  ]
+ },
+ {
+  "start": 2266,
+  "end": 2333,
+  "title_zh": "Vmax、Km 是定值，[S] 是唯一变量；下节课预告",
+  "title_en": "Vmax and Km are constants, [S] the only variable; preview of the next session",
+  "points": [
+   {
+    "zh": "Vmax 在某一固定条件下就是一个固定数值，因为某种酶的最大酶活在给定条件下是确定的。",
+    "en": "Vmax is a fixed number under a given set of conditions, because a particular enzyme's maximal activity is determined once conditions are fixed."
+   },
+   {
+    "zh": "Km 同样是固定数值；老师给出的理由是 ES 已经处在生成与消除相等的稳态里。",
+    "en": "Km is likewise fixed; the reason offered in class is that ES is already in the steady state where formation and removal are equal."
+   },
+   {
+    "zh": "方程里唯一的变量是底物浓度 [S]，因为实验中 [S] 是随时在变的那一个量。",
+    "en": "The only variable in the equation is [S], because substrate concentration is the quantity that changes throughout the experiment."
+   },
+   {
+    "zh": "老师因此把米氏方程类比成“y = kx 那样的一个方程，只不过长成这个样子”。",
+    "en": "On that basis the lecturer likens the equation to \"a y = kx sort of equation, just written in this shape\"."
+   },
+   {
+    "zh": "下节课的第一个内容：米氏方程的作图是怎么做的。",
+    "en": "First item next session: how the Michaelis-Menten equation is plotted."
+   },
+   {
+    "zh": "下节课的第二个内容：抑制剂 inhibitor 是怎么改变这条曲线的。",
+    "en": "Second item next session: how inhibitors change the shape of that curve."
+   },
+   {
+    "zh": "再往后会讲具体案例，例如糖苷酶 glycosidase 是怎么催化的。",
+    "en": "Later still come worked cases, for example how glycosidases carry out catalysis."
+   },
+   {
+    "zh": "老师点明整套推导之所以看着复杂，目的恰恰是把这个关系写成最简单的形式。",
+    "en": "The lecturer points out that the derivation looks elaborate precisely because its goal is to render the relationship in its simplest possible form."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "课上说法不同 · lecture states it differently",
+    "zh": "米氏方程不是 y = kx 那样的直线，而是 rectangular hyperbola（直角双曲线），以 Vmax 为水平渐近线。只有在 [S] << Km 的低浓度段它才近似为过原点、斜率 Vmax/Km 的直线。要得到真正的直线需作 Lineweaver-Burk 双倒数图：1/v = (Km/Vmax)(1/[S]) + 1/Vmax。",
+    "en": "The Michaelis-Menten equation is not a straight line like y = kx but a rectangular hyperbola with Vmax as its horizontal asymptote. Only in the low range where [S] << Km does it approximate a straight line through the origin with slope Vmax/Km. A genuinely straight line requires the Lineweaver-Burk double-reciprocal plot: 1/v = (Km/Vmax)(1/[S]) + 1/Vmax."
+   },
+   {
+    "tag": "课上口误 · lecture misstatement",
+    "zh": "课上说“Km 代表的含义是 ES 这个东西的反应速率”。Km 的量纲是浓度不是速率，它等于 (k2+k3)/k1，也等于半数最大速率时的底物浓度。Km 之所以是常数，是因为它由几个速率常数组成，与 ES 是否处于稳态无关。",
+    "en": "The lecture says \"what Km means is the reaction rate of the ES thing\". Km has units of concentration, not rate; it equals (k2+k3)/k1 and equals the substrate concentration at half-maximal velocity. Km is constant because it is built from rate constants, not because ES happens to be in a steady state."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "下节课的抑制剂内容有固定的考点表：competitive inhibitor 升高表观 Km、Vmax 不变；uncompetitive inhibitor 把表观 Km 与 Vmax 同比例降低；noncompetitive（纯粹型）降低 Vmax、Km 不变。三者在双倒数图上的交点位置各不相同，是最常见的读图题。",
+    "en": "The inhibitor material coming next session has a fixed examinable table: a competitive inhibitor raises apparent Km with Vmax unchanged; an uncompetitive inhibitor lowers apparent Km and Vmax by the same factor; a pure noncompetitive inhibitor lowers Vmax with Km unchanged. Each gives a different intersection point on the double-reciprocal plot, the classic plot-reading question."
+   },
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "糖苷酶（如 lysozyme、β-galactosidase）的机制值得先记住轮廓：都用一对羧酸残基做 general acid/base 催化。retaining 型经两次亲核取代、走共价糖基-酶中间物，端基构型保留；inverting 型一步水解、构型翻转。这正是“ES 之后还有共价中间物”的典型例子。",
+    "en": "It is worth pre-loading the outline of the glycosidase mechanism (lysozyme, β-galactosidase): both use a pair of carboxylate residues for general acid/base catalysis. Retaining enzymes go through two successive nucleophilic substitutions via a covalent glycosyl-enzyme intermediate, preserving anomeric configuration; inverting enzymes hydrolyse in a single step and invert it. This is the textbook case of a covalent intermediate lying beyond ES."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "直接以 v 对 [S] 作图，米氏方程给出的曲线是什么形状？",
+    "q_en": "Plotting v directly against [S], what shape does the Michaelis-Menten equation give?",
+    "options": [
+     {
+      "zh": "趋于 Vmax 的双曲线",
+      "en": "A hyperbola levelling off at Vmax"
+     },
+     {
+      "zh": "过原点的一条直线",
+      "en": "A straight line through the origin"
+     },
+     {
+      "zh": "对称的钟形曲线",
+      "en": "A symmetric bell-shaped curve"
+     },
+     {
+      "zh": "陡然上升的 S 形曲线",
+      "en": "A steeply rising sigmoid curve"
+     }
+    ],
+    "answer": 0,
+    "explain_zh": "v = Vmax[S]/(Km+[S]) 是 rectangular hyperbola，随 [S] 升高以 Vmax 为渐近线逐渐变平。直线只在 [S] << Km 的低端近似成立，不是整条曲线的形状；S 形曲线出现在有协同性的别构酶上，它们不服从米氏动力学；钟形曲线是酶活对 pH 或温度作图才有的形状。",
+    "explain_en": "v = Vmax[S]/(Km+[S]) is a rectangular hyperbola that flattens towards Vmax as [S] rises. A straight line is only the low-[S] approximation, not the shape of the whole curve; sigmoid curves belong to cooperative allosteric enzymes, which do not obey Michaelis-Menten kinetics; and a bell shape is what you get plotting activity against pH or temperature."
+   },
+   {
+    "q_zh": "在什么条件下酶促反应对底物近似为零级反应？",
+    "q_en": "Under what condition is an enzyme reaction approximately zero order in substrate?",
+    "options": [
+     {
+      "zh": "[S] 远小于 Km",
+      "en": "[S] far below Km"
+     },
+     {
+      "zh": "[S] 远大于 [E]",
+      "en": "[S] far above [E]"
+     },
+     {
+      "zh": "[S] 恰好等于 Km",
+      "en": "[S] exactly equal to Km"
+     },
+     {
+      "zh": "[S] 远大于 Km",
+      "en": "[S] far above Km"
+     }
+    ],
+    "answer": 3,
+    "explain_zh": "零级意味着速率不再随底物浓度变化，只有酶被底物饱和时才出现，而饱和的判据是 [S] >> Km，此时分母 ≈ [S]，v ≈ Vmax。[S] 远小于 Km 给的是一级反应；[S] 远大于 [E] 在几乎所有酶学实验里都成立，却完全不保证饱和；[S] = Km 时速率恰在 Vmax 的一半，正处在曲线弯曲最明显的地方。",
+    "explain_en": "Zero order means the rate no longer depends on substrate concentration, which happens only when the enzyme is saturated — and the criterion for saturation is [S] >> Km, where the denominator ≈ [S] and v ≈ Vmax. [S] far below Km gives first-order behaviour; [S] far above [E] holds in almost every enzyme experiment yet guarantees nothing about saturation; and at [S] = Km the rate is half-maximal, right where the curve bends most."
+   }
+  ]
+ },
+ {
+  "start": 2333,
+  "end": 2401,
+  "title_zh": "课堂收尾与复习安排（非讲授内容）",
+  "title_en": "Wrap-up and revision plan (not lecture content proper)",
+  "points": [
+   {
+    "zh": "这一段是课堂收尾的对话，不再有新的知识点：学生说“我有一点点轮廓了”，老师说自己当年学得很透彻所以能讲清楚。",
+    "en": "This stretch is closing chat rather than teaching: the student says the outline is starting to form, and the lecturer credits having learned it thoroughly himself for being able to explain it."
+   },
+   {
+    "zh": "今天讲到米氏方程为止；老师判断再讲下去效率会很低，所以到此结束。",
+    "en": "Today's session ends at the Michaelis-Menten equation; the lecturer judges that carrying on would be inefficient and stops there."
+   },
+   {
+    "zh": "下节课开头会详细回顾米氏方程到底是怎么来的：几个假设、几次代入，按顺序再走一遍。",
+    "en": "The next session will open with a detailed recap of where the equation comes from — the assumptions and the substitutions, walked through in order."
+   },
+   {
+    "zh": "老师给出的学习地形图：米氏方程之前的内容都还好，从米氏方程开始就是大量的数学推导。",
+    "en": "The lecturer's map of the terrain: everything before the Michaelis-Menten equation is manageable, and heavy mathematical derivation starts here."
+   },
+   {
+    "zh": "学生的自我评估只是“有轮廓”，说明推导需要自己动手复算一遍才能固定下来。",
+    "en": "The student's own assessment is only \"an outline\", which means the derivation needs to be re-worked by hand before it will stick."
+   }
+  ],
+  "extra": [
+   {
+    "tag": "考点延伸 · exam extension",
+    "zh": "自己复算的最短路径共六行：① E+S ⇌(k1,k2) ES →(k3) E+P；② v = k3[ES]；③ 稳态 k1[E][S] = (k2+k3)[ES]；④ 代入 [E] = [E]t − [ES]；⑤ 定义 Km = (k2+k3)/k1，解出 [ES] = [E]t[S]/(Km+[S])；⑥ 代回得 v = Vmax[S]/(Km+[S])，其中 Vmax = k3[E]t。能默写这六行，任何形式的推导题都能应付。",
+    "en": "The shortest route to re-deriving it yourself is six lines: (1) E+S ⇌(k1,k2) ES →(k3) E+P; (2) v = k3[ES]; (3) steady state, k1[E][S] = (k2+k3)[ES]; (4) substitute [E] = [E]total − [ES]; (5) define Km = (k2+k3)/k1 and solve for [ES] = [E]total[S]/(Km+[S]); (6) substitute back to get v = Vmax[S]/(Km+[S]) with Vmax = k3[E]total. Being able to write those six lines from memory covers any version of the derivation question."
+   },
+   {
+    "tag": "课上未展开 · not covered",
+    "zh": "下节课的作图法要点可以先记：Lineweaver-Burk 双倒数图横截距为 −1/Km、纵截距为 1/Vmax、斜率为 Km/Vmax。但它把低 [S] 处本就最大的实验误差进一步放大，所以现代实际做法是对双曲线直接做非线性拟合，双倒数图主要用于教学和判读抑制类型。",
+    "en": "Worth pre-loading for the plotting session: on a Lineweaver-Burk double-reciprocal plot the x-intercept is −1/Km, the y-intercept 1/Vmax and the slope Km/Vmax. Because it amplifies the already-largest errors at low [S], modern practice fits the hyperbola non-linearly, and the double-reciprocal plot survives mainly for teaching and for diagnosing inhibition type."
+   },
+   {
+    "tag": "易混淆 · common confusion",
+    "zh": "米氏动力学的适用范围有限：单底物（或其他底物过量而近似单底物）、无协同性的酶。别构酶 allosteric enzyme 给出 S 形曲线，用 Hill 方程和 K0.5 描述，不能套 Km；多底物酶还要区分 sequential 与 ping-pong 机制。考试中把 Km 用在别构酶上是常见的失分点。",
+    "en": "Michaelis-Menten kinetics has a limited domain: single-substrate enzymes (or ones made pseudo-single-substrate by saturating the others) without cooperativity. Allosteric enzymes give sigmoid curves described by the Hill equation and K0.5, not Km; multi-substrate enzymes further split into sequential and ping-pong mechanisms. Applying Km to an allosteric enzyme is a routine way to lose marks."
+   }
+  ],
+  "quiz": [
+   {
+    "q_zh": "米氏方程中 Vmax 与 kcat 的关系是？",
+    "q_en": "How are Vmax and kcat related in the Michaelis-Menten framework?",
+    "options": [
+     {
+      "zh": "kcat = Vmax × Km",
+      "en": "kcat = Vmax × Km"
+     },
+     {
+      "zh": "kcat = Vmax × [E]t",
+      "en": "kcat = Vmax × [E]total"
+     },
+     {
+      "zh": "kcat = Vmax / [E]t",
+      "en": "kcat = Vmax / [E]total"
+     },
+     {
+      "zh": "kcat = Vmax / Km",
+      "en": "kcat = Vmax / Km"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "最大速率出现在全部酶都以 ES 形式存在时，此时 v = k3[E]t，所以 Vmax = kcat[E]t，反解得 kcat = Vmax/[E]t，单位是 s⁻¹，即 turnover number。含 Km 的组合另有含义：kcat/Km 才是 specificity constant，而 Vmax/Km 不是一个标准参数。",
+    "explain_en": "Maximal velocity occurs when all enzyme is present as ES, where v = k3[E]total, so Vmax = kcat[E]total and hence kcat = Vmax/[E]total, in units of s⁻¹ — the turnover number. Combinations involving Km mean something else: kcat/Km is the specificity constant, while Vmax/Km is not a standard parameter."
+   },
+   {
+    "q_zh": "推导米氏方程时坚持“只测初速率”，主要是为了什么？",
+    "q_en": "In deriving the equation, what is the main purpose of insisting on initial velocities only?",
+    "options": [
+     {
+      "zh": "使酶的构象在反应中固定不变",
+      "en": "So the enzyme's conformation stays fixed throughout"
+     },
+     {
+      "zh": "使底物浓度远远高于酶浓度",
+      "en": "So substrate concentration far exceeds enzyme"
+     },
+     {
+      "zh": "使产物逆向生成 ES 可以忽略",
+      "en": "So the back reaction from product to ES is negligible"
+     },
+     {
+      "zh": "使酶浓度在反应中保持恒定",
+      "en": "So the enzyme concentration stays constant"
+     }
+    ],
+    "answer": 2,
+    "explain_zh": "初速率阶段产物几乎还没有积累，逆向的 E + P → ES 一项可以直接丢掉，方程才能写成不含 [P] 的简单形式；同时底物只消耗了百分之几，[S] 可以当作加入时的浓度。酶浓度守恒来自质量守恒，与是否测初速率无关；[S] >> [E] 是配液时决定的；诱导契合本来就意味着酶的构象会改变。",
+    "explain_en": "In the initial-velocity phase almost no product has accumulated, so the reverse term E + P → ES can simply be dropped, letting the equation be written without [P]; at the same time only a few percent of substrate is consumed, so [S] can be taken as the concentration added. Enzyme conservation follows from mass balance regardless of when you measure; [S] >> [E] is decided when the assay is set up; and induced fit means the enzyme's conformation does change."
+   }
+  ]
+ }
+]

@@ -1,0 +1,101 @@
+{
+ "note": "Restored from the built app after the scratch directory was cleared. cues.json here has no per-cue `prob` field: it is not carried in the app, and only stage 2's _review.txt low-confidence report ever used it.",
+ "lectures": [
+  {
+   "no": 1,
+   "date": "2026-06-27",
+   "title_zh": "氨基酸 · 蛋白质结构 · 肌红蛋白与血红蛋白",
+   "title_en": "Amino acids, protein structure, myoglobin and hemoglobin",
+   "cues": 2621,
+   "topics": 41
+  },
+  {
+   "no": 2,
+   "date": "2026-07-04",
+   "title_zh": "酶通论 · 米氏方程（上）",
+   "title_en": "Enzymes in general, and the Michaelis-Menten equation (part 1)",
+   "cues": 1865,
+   "topics": 38
+  },
+  {
+   "no": 3,
+   "date": "2026-07-04",
+   "title_zh": "酶通论 · 米氏方程（下）",
+   "title_en": "Enzymes in general, and the Michaelis-Menten equation (part 2)",
+   "cues": 708,
+   "topics": 31
+  },
+  {
+   "no": 4,
+   "date": "2026-07-08",
+   "title_zh": "米氏方程与抑制剂的推论",
+   "title_en": "The Michaelis-Menten equation and what it implies for inhibitors",
+   "cues": 1944,
+   "topics": 41
+  },
+  {
+   "no": 5,
+   "date": "2026-07-13",
+   "title_zh": "酶各论 · 脂溶性维生素",
+   "title_en": "Individual enzymes; the fat-soluble vitamins",
+   "cues": 2251,
+   "topics": 41
+  },
+  {
+   "no": 6,
+   "date": "2026-07-16",
+   "title_zh": "维生素 · 核酸结构",
+   "title_en": "Vitamins; the structure of nucleic acids",
+   "cues": 2456,
+   "topics": 42
+  },
+  {
+   "no": 7,
+   "date": "2026-07-28",
+   "title_zh": "核酸 · 代谢序章",
+   "title_en": "Nucleic acids; the prelude to metabolism",
+   "cues": 2374,
+   "topics": 41
+  },
+  {
+   "no": 8,
+   "date": "2026-08-04",
+   "title_zh": "糖酵解途径",
+   "title_en": "Glycolysis",
+   "cues": 1956,
+   "topics": 47
+  },
+  {
+   "no": 9,
+   "date": "2026-08-08",
+   "title_zh": "TCA 循环与电子传递链（上）",
+   "title_en": "The TCA cycle and the electron transport chain (part 1)",
+   "cues": 1856,
+   "topics": 44
+  },
+  {
+   "no": 10,
+   "date": "2026-08-08",
+   "title_zh": "TCA 循环与电子传递链（下）",
+   "title_en": "The TCA cycle and the electron transport chain (part 2)",
+   "cues": 238,
+   "topics": 7
+  },
+  {
+   "no": 11,
+   "date": "2026-08-15",
+   "title_zh": "脂质的分解与合成 · 氨基酸代谢开头",
+   "title_en": "Breakdown and synthesis of lipids; the start of amino acid metabolism",
+   "cues": 2362,
+   "topics": 51
+  },
+  {
+   "no": 12,
+   "date": "2026-08-17",
+   "title_zh": "尿素循环 · 核苷酸的代谢",
+   "title_en": "The urea cycle; nucleotide metabolism",
+   "cues": 2041,
+   "topics": 48
+  }
+ ]
+}
