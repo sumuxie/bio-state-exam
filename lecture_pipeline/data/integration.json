@@ -2620,16 +2620,16 @@
        "zh": "FAD 是辅酶，因为黄素是电子的载体而不是结构组分；NAD+ 是辅基，因为它被反应按化学计量整个消耗掉。"
       },
       {
-       "en": "Both count as coenzymes, because a coenzyme is defined by being organic and derived from a vitamin rather than by how tightly the enzyme holds it.",
-       "zh": "两者都算辅酶，因为辅酶的定义是「有机的、来自维生素」，而不是看酶把它抓得多紧。"
+       "en": "Both count as coenzymes, because a coenzyme is defined by being organic and derived from a vitamin rather than by how tightly the enzyme happens to hold it.",
+       "zh": "两者都算辅酶，因为辅酶的定义在于「是有机物、来自维生素」，而不在于酶到底把它抓得有多紧。"
       },
       {
        "en": "The FAD is a prosthetic group because it stays bound throughout the catalytic cycle; the NAD+ is a coenzyme because it dissociates and is recycled elsewhere.",
-       "zh": "FAD 是辅基，因为它在整个催化循环中都保持结合；NAD+ 是辅酶，因为它会解离并在别处再生。"
+       "zh": "FAD 是辅基，因为它整个催化循环都保持结合；NAD+ 是辅酶，因为它会解离并在别处再生。"
       },
       {
-       "en": "Both count as prosthetic groups, because every flavin and every nicotinamide nucleotide reaches the enzyme already bound to its apoprotein.",
-       "zh": "两者都算辅基，因为任何黄素和任何烟酰胺核苷酸到达时都已与脱辅基蛋白结合在一起。"
+       "en": "Both count as prosthetic groups, because every flavin and every nicotinamide nucleotide reaches the enzyme already bound tightly to its apoprotein.",
+       "zh": "两者都算辅基，因为任何黄素和任何烟酰胺核苷酸送到酶那里时，都已经与脱辅基蛋白结合在一起了。"
       }
      ],
      "answer": 2,
@@ -2668,8 +2668,8 @@
      "q_zh": "某考生写道：软脂酸的合成「消耗糖酵解产生的 NADH」。这句话究竟错在哪里？",
      "options": [
       {
-       "en": "Fatty acid synthase does use NADH, but it arrives by the malate–aspartate shuttle instead of directly from glycolysis, so only the stated source, not the nucleotide, is at fault.",
-       "zh": "脂肪酸合酶确实用 NADH，只是它经苹果酸-天冬氨酸穿梭而来、并非直接来自糖酵解，所以错的只是来源，核苷酸本身没写错。"
+       "en": "Fatty acid synthase does use NADH, but it arrives by way of the malate–aspartate shuttle instead of directly from glycolysis, so only the stated source, and not the nucleotide itself, is at fault.",
+       "zh": "脂肪酸合酶确实用 NADH，只是它经苹果酸-天冬氨酸穿梭而来、并非直接来自糖酵解，所以这句话里错的只是来源那一半，至于核苷酸本身则并没有写错。"
       },
       {
        "en": "Fatty acid synthase uses NADPH rather than NADH; the reductive steps draw on the pentose phosphate pathway and malic enzyme, and the two nucleotides are held at opposite redox ratios on purpose.",
@@ -2680,8 +2680,8 @@
        "zh": "脂肪酸合酶用的是 FADH2 而不是 NADH；每一轮延长中的两步还原都依赖黄素，与同样的化学在 β-氧化里反方向进行时对应的两次氧化完全一致。"
       },
       {
-       "en": "Fatty acid synthase needs no reduced nucleotide at all; the carbons arrive already reduced on malonyl-CoA, which is precisely why the preceding step consumes biotin and ATP.",
-       "zh": "脂肪酸合酶根本不需要还原型核苷酸；碳原子在丙二酰CoA 上已经处于还原态，这正是前一步要消耗生物素与 ATP 的原因。"
+       "en": "Fatty acid synthase needs no reduced nucleotide at all; the carbons arrive already reduced on malonyl-CoA, which is precisely why the preceding carboxylation consumes biotin and one ATP.",
+       "zh": "脂肪酸合酶根本不需要任何还原型核苷酸；碳原子在丙二酰CoA 上已经处于还原态，这正是前一步羧化要消耗生物素与一分子 ATP 的原因所在。"
       }
      ],
      "answer": 1,
@@ -2928,16 +2928,16 @@
      "q_zh": "奇数碳脂肪酸的氧化以丙酰CoA 收尾。哪两种辅因子把它送进 TCA 循环？其中一个缺失时会有什么堆积？",
      "options": [
       {
-       "en": "Thiamine pyrophosphate and then lipoamide; if thiamine is short, propionyl-CoA is diverted into the odd-chain lipids of nerve membranes.",
-       "zh": "先是硫胺素焦磷酸，然后是硫辛酰胺；硫胺素不足时，丙酰CoA 被转向神经膜的奇数碳脂质。"
+       "en": "Thiamine pyrophosphate and then lipoamide; if thiamine is short, propionyl-CoA is diverted into the odd-chain lipids of nerve membranes instead of entering the cycle.",
+       "zh": "先是硫胺素焦磷酸，然后是硫辛酰胺；硫胺素不足时，丙酰CoA 会被转去合成神经细胞膜里那些奇数碳的脂质，而不是进入循环。"
       },
       {
        "en": "Biotin for the carboxylation to methylmalonyl-CoA and then B12 for the mutase that rearranges it to succinyl-CoA; without B12, methylmalonic acid accumulates.",
        "zh": "先由生物素完成羧化生成甲基丙二酰CoA，再由 B12 供给变位酶将其重排为琥珀酰CoA；缺 B12 时甲基丙二酸堆积。"
       },
       {
-       "en": "Pyridoxal phosphate for a transamination and then NAD+ for an oxidation; if B6 is short, propionate accumulates and is excreted as propionylglycine.",
-       "zh": "先由磷酸吡哆醛完成转氨，再由 NAD+ 完成氧化；B6 不足时丙酸堆积并以丙酰甘氨酸排出。"
+       "en": "Pyridoxal phosphate for a transamination and then NAD+ for an oxidation; if B6 is short, propionate accumulates and is then excreted as propionylglycine.",
+       "zh": "先由磷酸吡哆醛完成转氨，再由 NAD+ 完成氧化；B6 不足时，丙酸会堆积起来并以丙酰甘氨酸的形式随尿排出体外。"
       },
       {
        "en": "Folate for the addition of a one-carbon unit and then FAD for the dehydrogenation to succinyl-CoA; without folate, methylmalonic acid accumulates in both serum and urine.",
