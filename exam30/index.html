@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国考 30 题 · 满分答案 | Biochemistry final exam — 30 topics</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <b>30 <span>题</span></b>
+    <div class="brand-txt">
+      <div class="brand-1">Biochemistry — final exam</div>
+      <div class="brand-2">口试满分答案 · 背诵版</div>
+    </div>
+  </div>
+
+  <nav class="modes" id="modes" aria-label="背诵模式">
+    <button data-mode="full"  title="全文显示 (键盘 1)">全文</button>
+    <button data-mode="cloze" title="关键词挖空，点一下显示 (键盘 2)">挖空</button>
+    <button data-mode="spine" title="只看骨架，点标题展开 (键盘 3)">骨架</button>
+  </nav>
+
+  <nav class="toggles" id="toggles" aria-label="显示层">
+    <button data-t="zh"   title="中英对照：展开 / 收起所有中文 (键盘 Z)">中译</button>
+    <button data-t="clin" title="临床/医学部分：显示 / 收起 (键盘 C)">临床</button>
+  </nav>
+
+  <div class="tools">
+    <button id="draw" title="随机抽一题 (键盘 R)">🎲 抽题</button>
+    <button id="theme" title="浅色 / 深色">◐</button>
+    <div class="prog" title="已标记『会说』的半题数">
+      <div class="prog-bar"><i id="progFill"></i></div>
+      <span id="progTxt">0 / 60</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="side">
+    <div class="side-search">
+      <input id="q" type="search" placeholder="搜索：题号 / 关键词 / enzyme…" autocomplete="off">
+    </div>
+    <nav id="list" class="list"></nav>
+    <div class="side-foot">
+      <a href="#home">📋 考试说明</a>
+      <a href="#structures">🧪 结构式</a>
+      <a href="#labs">🩸 检验值</a>
+    </div>
+  </aside>
+
+  <main id="main" class="main"></main>
+</div>
+
+<div class="timer" id="timer" hidden>
+  <span id="timerTxt">15:00</span>
+  <button id="timerToggle">▶</button>
+  <button id="timerReset">↺</button>
+  <button id="timerClose">✕</button>
+</div>
+
+<script src="data/t01.js"></script>
+<script src="data/t02.js"></script>
+<script src="data/t03.js"></script>
+<script src="data/t04.js"></script>
+<script src="data/t05.js"></script>
+<script src="data/t06.js"></script>
+<script src="data/t07.js"></script>
+<script src="data/t08.js"></script>
+<script src="data/t09.js"></script>
+<script src="data/t10.js"></script>
+<script src="data/t11.js"></script>
+<script src="data/t12.js"></script>
+<script src="data/t13.js"></script>
+<script src="data/t14.js"></script>
+<script src="data/t15.js"></script>
+<script src="data/t16.js"></script>
+<script src="data/t17.js"></script>
+<script src="data/t18.js"></script>
+<script src="data/t19.js"></script>
+<script src="data/t20.js"></script>
+<script src="data/t21.js"></script>
+<script src="data/t22.js"></script>
+<script src="data/t23.js"></script>
+<script src="data/t24.js"></script>
+<script src="data/t25.js"></script>
+<script src="data/t26.js"></script>
+<script src="data/t27.js"></script>
+<script src="data/t28.js"></script>
+<script src="data/t29.js"></script>
+<script src="data/t30.js"></script>
+<!-- Off-list topics that were really asked at the oral. -->
+<script src="data/extra.js"></script>
+<script src="data/labs.js"></script>
+<script src="data/structures.js"></script>
+<!-- Focus layer: molecular biology, proteins, microbiology/virology and
+     (secondary) chemistry, attached to each half by topic id — so the
+     t*.js answer files stay untouched. -->
+<script src="data/focus1.js"></script>
+<script src="data/focus2.js"></script>
+<script src="data/focus3.js"></script>
+<script src="data/focus_eng.js"></script>
+<script src="app.js"></script>
+<script src="speech.js"></script>
+</body>
+</html>
