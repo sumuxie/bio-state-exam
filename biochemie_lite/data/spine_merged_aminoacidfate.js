@@ -205,3 +205,195 @@ window.BIOLITE_SPINE["key:amino-group-metabolism"] = {
       def_cn: "血氨里只有 2% 的不带电 NH3 能过膜，它进细胞后重新质子化、被困在里面。在脑中，防御要花掉谷氨酸；随后铵离子在 Na-K ATPase 上与钾竞争，细胞外的钾经 NKCC1 带着两个氯进入神经元，这份氯负荷把 GABA-A 的反应扭曲成癫痫发作。铵离子持续偏高则把星形胶质细胞胀成致命的脑水肿。" }
   ]
 };
+
+/* --------------------------------------------- 骨架去哪儿了：氨基酸的降解 ---- */
+window.BIOLITE_SPINE["key:amino-acid-degradation"] = {
+  assumed: ["ATP", "ADP", "GTP", "NAD+", "NADP+", "coenzyme A", "coenzyme", "cofactor",
+            "enzyme", "amino acid", "protein", "peptide", "dipeptide", "cytosol",
+            "substrate", "liver", "kidney", "muscle", "skeletal muscle", "brain",
+            "blood", "urine", "citric acid cycle", "oxaloacetate", "pyruvate",
+            "acetyl-CoA", "acetyl group", "carboxyl group", "amino group",
+            "hydroxyl group", "carbonyl group", "side chain", "methyl group",
+            "thiol group", "methyl ester", "double bond", "oxidation", "hydrolysis",
+            "gluconeogenesis", "glucose", "glycogen", "glycolysis", "urea",
+            "urea cycle", "ammonia", "ammonium", "vitamin", "starvation",
+            "diabetes mellitus", "insulin", "mitochondria", "matrix", "carbon dioxide",
+            "transamination", "deamination", "aminotransferase", "dehydrogenase",
+            "glutamate", "glutamine", "alanine", "aspartate", "asparagine", "serine",
+            "threonine", "cysteine", "cystine", "glycine", "tyrosine", "phenylalanine",
+            "tryptophan", "histidine", "proline", "arginine", "ornithine", "lysine",
+            "leucine", "isoleucine", "valine", "methionine", "2-oxo acid",
+            "2-oxoglutarate", "alpha-ketoglutarate", "fumarate", "succinyl-CoA",
+            "urocanate", "urocanic acid", "serine dehydratase", "pyridoxal phosphate",
+            "Schiff base", "imine", "essential amino acid", "fatty acid",
+            "fatty acid oxidation", "hormone", "thyroid hormone", "neurotransmitter",
+            "dopamine", "adrenaline", "noradrenaline", "serotonin", "acetaldehyde",
+            "propionate", "benzene", "plants", "bacteria", "fungi", "gene",
+            "casein", "arthritis", "polyethylene glycol", "aspartame",
+            "protein synthesis", "newborn screening", "intellectual disability"],
+  nodeTitle_en: "The carbon skeleton: twenty routes, six destinations, one sorting rule",
+  nodeTitle_cn: "碳骨架：二十条路线、六个终点、一条分类规则",
+  title_en: "Once the nitrogen is gone, twenty skeletons collapse onto six molecules, and one piece of arithmetic sorts them all",
+  title_cn: "氮走掉之后，二十副骨架收敛到六个分子上，而把它们全部分好类的，是一笔算术",
+  steps: [
+    {
+      recall_en: "the amino group, followed in the first half of this chain all the way out to urea",
+      recall_cn: "氨基 —— 这条链的前半段，一路把它跟到了尿素、跟到了身体之外",
+      en: "The nitrogen has been collected onto glutamate, released as ammonium and excreted as urea, and what is left of an amino acid is its carbon skeleton: the carbons and hydrogens with the nitrogen gone. Each of the twenty has its own degradation route for that skeleton, and the routes look nothing alike. **Twenty degradation routes converge onto only six molecules — pyruvate, acetyl-CoA, 2-oxoglutarate, succinyl-CoA, fumarate and oxaloacetate — and all six enter the citric acid cycle.** A seventh box, acetoacetyl-CoA, is counted in some tellings; it is a road to acetyl-CoA rather than an endpoint, which is why the same material comes out as six destinations here and seven elsewhere. Six destinations is the thing to learn, not twenty pathways.",
+      cn: "氮已经被收集到谷氨酸上、以铵离子放出、最后以尿素排掉了；一个氨基酸剩下的是它的碳骨架：去掉氮之后的那些碳和氢。二十种氨基酸各有各的骨架降解路线，彼此看上去毫不相像。**这二十条降解路线只汇聚到六个分子上 —— 丙酮酸、乙酰-CoA、2-氧戊二酸、琥珀酰-CoA、延胡索酸、草酰乙酸 —— 而这六个全都进入柠檬酸循环。** 有的讲法还会数上第七个框：乙酰乙酰-CoA；它是通向乙酰-CoA 的一条路，而不是一个终点，这就是同一份材料在这里数出六个、在别处数出七个的原因。要记的是六个终点，不是二十条通路。",
+      src: "A pp.639-640, figure 18-15 · B §5.2.3, p.125",
+      see: [{ id: "L-18-1-1", en: "the first half — where the amino group went", cn: "前半段 —— 那个氨基去了哪里" }]
+    },
+    {
+      link_en: "and one general reaction puts almost every skeleton onto those routes",
+      link_cn: "而几乎每一副骨架，都是靠同一个通用反应才走上这些路线的",
+      en: "Transamination hands the carbon skeleton on as a 2-oxo acid, and a second general reaction — oxidative decarboxylation — takes the carboxyl group away as carbon dioxide while oxidising what remains. **Oxidative decarboxylation shortens the original skeleton by one carbon and joins the rest to coenzyme A, and the acyl-CoA it makes is the entry point into the routes below.** How much traffic those routes carry is worth fixing at the start: amino acid catabolism normally supplies only 10 to 15 percent of a human's energy, and the flux through it shifts with the balance between how much of an amino acid is available and how much is wanted for building things. These pathways are nowhere near as busy as glycolysis or fatty acid oxidation, and they matter most in exactly two situations — a diet high in protein, and starvation, when the body is dismantling its own protein for fuel.",
+      cn: "转氨把碳骨架以 2-氧代酸的形式交出去，接着是第二个通用反应 —— 氧化脱羧：它把羧基以二氧化碳的形式拿走，同时把剩下的部分氧化。**氧化脱羧使原来的骨架短掉一个碳，并把余下的部分接到辅酶 A 上；它生成的酰基-CoA 就是下面各条路线的入口。** 这些路线上的车流量值得一开始就钉住：氨基酸的分解代谢通常只供给人体 10% 到 15% 的能量，而流量随「某种氨基酸有多少可用」与「有多少被拿去造东西」之间的平衡而变动。它们远不像糖酵解或脂肪酸氧化那样繁忙，最要紧的恰好是两种情形 —— 高蛋白饮食，以及饥饿：那时身体正在拆自己的蛋白当燃料。",
+      src: "A pp.639-640 · B §5.2.3, p.125"
+    },
+    {
+      link_en: "now the first of the two fates: which skeletons can become glucose",
+      link_cn: "现在说两种命运里的第一种：哪些骨架能变成葡萄糖",
+      en: "Gluconeogenesis — making glucose out of smaller precursors — starts from oxaloacetate, and every intermediate of the citric acid cycle can be carried round the cycle to top the oxaloacetate pool up. **A skeleton arriving at pyruvate, 2-oxoglutarate, succinyl-CoA, fumarate or oxaloacetate can therefore be turned into glucose and into glycogen, and such amino acids are called glucogenic.** They are the large majority, and this is why feeding amino acids to a starved body drives gluconeogenesis and the laying down of glycogen instead of simply being burnt.",
+      cn: "糖异生（由更小的前体造出葡萄糖）从草酰乙酸起步，而柠檬酸循环的每一个中间物都能沿着循环走到草酰乙酸那里，把草酰乙酸池补上去。**所以，凡是能抵达丙酮酸、2-氧戊二酸、琥珀酰-CoA、延胡索酸或草酰乙酸的骨架，都能被转成葡萄糖和糖原，这样的氨基酸就叫生糖氨基酸。** 它们是绝大多数；给一个饥饿的身体补上氨基酸之所以能推动糖异生、能把糖原重新堆起来，而不只是被烧掉，原因就在这里。",
+      src: "A p.640 · B §5.2.3, p.125",
+      see: [{ id: "L-14-4-1", en: "gluconeogenesis itself, and what one glucose costs", cn: "糖异生本身，以及造一个葡萄糖要花多少" }]
+    },
+    {
+      link_en: "and the one destination that does not work that way",
+      link_cn: "而有一个终点不是这样",
+      recall_en: "the acetyl group entering the citric acid cycle, and the two carbons that leave as carbon dioxide",
+      recall_cn: "乙酰基进入柠檬酸循环，以及随后以二氧化碳形式离开的那两个碳",
+      en: "Acetyl-CoA cannot be turned into glucose, and the reason is arithmetic inside the citric acid cycle. **An acetyl group condenses with oxaloacetate on entry, two carbons leave as carbon dioxide one turn later, and the oxaloacetate is handed back unchanged, so the oxaloacetate pool has not grown.** Carbon went in and carbon came out. With no net gain in oxaloacetate there is nothing extra for gluconeogenesis to start from, and this one fact generates the whole classification that follows — worth deriving rather than memorising, because the membership lists fall out of it.",
+      cn: "乙酰-CoA 变不成葡萄糖，原因是柠檬酸循环内部的一笔算术。**乙酰基靠与草酰乙酸缩合而进入循环，一圈之后两个碳以二氧化碳的形式离开，草酰乙酸被原样交还，于是草酰乙酸池并没有变大。** 碳进去了，碳也出来了。草酰乙酸没有净增加，糖异生就没有多出来的起点可用；下面整套分类都由这一个事实生成 —— 值得去推而不是去背，因为名单是从它掉出来的。",
+      src: "A p.640"
+    },
+    {
+      link_en: "so the exceptions can be worked out before they are looked up",
+      link_cn: "于是那些例外，在查表之前就能被推出来",
+      en: "A carbon skeleton is under no obligation to stay in one piece: different fragments of one skeleton can end up at different destinations, so an amino acid can deliver part of itself to acetyl-CoA and the rest to fumarate. An amino acid therefore fails to be glucogenic only if its entire skeleton lands on acetyl-CoA or acetoacetyl-CoA. **Only leucine and lysine do that, and they are therefore the two exclusively ketogenic amino acids — every other amino acid can make some contribution to gluconeogenesis.** Seven reach acetoacetyl-CoA or acetyl-CoA in whole or in part and can therefore yield ketone bodies, which are small water-soluble fuels made out of surplus acetyl units: phenylalanine, tyrosine, isoleucine, leucine, tryptophan, threonine and lysine. Take leucine and lysine out of those seven and five are left — tryptophan, phenylalanine, tyrosine, threonine and isoleucine — each of them ketogenic and glucogenic at once, because part of its skeleton goes one way and part the other. Threonine earns its place on that dual list by turning up at acetyl-CoA and at succinyl-CoA alike, and an amino acid degraded to pyruvate is potentially ketogenic too, since pyruvate itself can be converted to acetyl-CoA.",
+      cn: "一副碳骨架没有义务保持完整：同一副骨架的不同碎片可以去往不同的终点，所以一个氨基酸完全可以把自己的一部分送到乙酰-CoA、其余送到延胡索酸。因此，一个氨基酸要做不到生糖，唯一的可能是它的整副骨架都落在乙酰-CoA 或乙酰乙酰-CoA 上。**做到这一点的只有亮氨酸和赖氨酸，它们因此是仅有的两个纯生酮氨基酸；除它们之外，每一个氨基酸都能对糖异生有所贡献。** 有七个氨基酸会全部或部分地抵达乙酰乙酰-CoA 或乙酰-CoA，因而能产出酮体（酮体是由多余的乙酰单位做成的小分子水溶性燃料）：苯丙氨酸、酪氨酸、异亮氨酸、亮氨酸、色氨酸、苏氨酸、赖氨酸。把亮氨酸和赖氨酸从这七个里去掉，剩下五个 —— 色氨酸、苯丙氨酸、酪氨酸、苏氨酸、异亮氨酸 —— 这五个既生酮又生糖，因为各自骨架的一部分走这边、另一部分走那边。苏氨酸之所以也算在这份「两栖」名单上，是因为它在乙酰-CoA 和琥珀酰-CoA 两处都出现；而被降解成丙酮酸的氨基酸同样具有潜在的生酮能力，因为丙酮酸本身可以转成乙酰-CoA。",
+      src: "A p.640, figure 18-15 · B §5.2.3, pp.125, 129"
+    },
+    {
+      link_en: "and being ketogenic shows up in a person, not only in a diagram",
+      link_cn: "而「生酮」会在一个人身上显出来，不只是画在图里",
+      en: "There are three ketone bodies: acetoacetate, which the liver makes from acetoacetyl-CoA, and acetone and beta-hydroxybutyrate, which it makes from acetoacetate. Production starts when acetyl units arrive faster than the citric acid cycle can take them, so that the cycle's capacity is exceeded and the surplus has to go somewhere. Carbohydrate is the fuel that would otherwise be burnt first, and two states leave a body unable to use it. **In uncontrolled diabetes mellitus the liver makes large amounts of ketone bodies out of fatty acids and ketogenic amino acids together, because carbohydrate cannot be used.** That is the same situation that made amino acids a fuel in the first place. The other side of it is useful rather than pathological: during starvation the brain can burn ketone bodies in place of glucose, which is what makes a ketogenic skeleton worth having.",
+      cn: "酮体有三个：乙酰乙酸，由肝脏从乙酰乙酰-CoA 做出；以及丙酮和 β-羟丁酸，由肝脏从乙酰乙酸做出。当乙酰单位到得比柠檬酸循环收得快、循环的处理容量被超过时，多出来的部分总得有个去处，酮体的生产就是这样开始的。糖类本来是最先被烧掉的那种燃料，而有两种状态会让身体用不上它。**在未受控制的糖尿病里，肝脏把脂肪酸和生酮氨基酸一起当原料，大量制造酮体，因为糖类用不上。** 这恰恰就是「氨基酸一开始成为燃料」的那同一种处境。它的另一面则是有用而非病态的：饥饿期间，脑可以烧酮体来代替葡萄糖 —— 这才是「有一副生酮骨架」值钱的地方。",
+      src: "A p.640 · B §5.2.3, p.125",
+      see: [{ id: "L-23-5-1", en: "diabetes, and why the ketone bodies are the acute danger", cn: "糖尿病，以及为什么急性的危险是酮体" },
+            { id: "L-17-2-1", en: "fatty acid oxidation, the other supplier of those acetyl units", cn: "脂肪酸氧化 —— 那些乙酰单位的另一个供应方" }]
+    },
+    {
+      link_en: "the membership of the destinations, starting at the three-carbon end",
+      link_cn: "六个终点各自的成员名单，先从三碳这一头说起",
+      en: "To pyruvate, in whole or in part, go alanine, cysteine, glycine, serine, threonine and tryptophan, and each takes a different road there. Alanine needs one transamination with 2-oxoglutarate and nothing more. Serine is dehydrated and deaminated to pyruvate in a single step by serine dehydratase, or is converted instead to glycine, an interconversion that serine hydroxymethyltransferase runs in both directions. Threonine is cut by threonine aldolase into glycine and acetaldehyde. **Cysteine gets to pyruvate by a longer road: its thiol group is oxidised to cysteine sulfinic acid, transamination gives beta-sulfinylpyruvate, and desulfuration strips the sulfinyl group off outright.** Tryptophan arrives here only as a minor sideline, by way of alanine, its main road being the ketogenic one.",
+      cn: "抵达丙酮酸（全部或部分）的是丙氨酸、半胱氨酸、甘氨酸、丝氨酸、苏氨酸、色氨酸，而每一个走的路都不一样。丙氨酸只需要与 2-氧戊二酸转氨一次，别的都不需要。丝氨酸由丝氨酸脱水酶一步脱水并脱氨成丙酮酸，或者改为转成甘氨酸 —— 甘氨酸与丝氨酸之间的这个互变由丝氨酸羟甲基转移酶双向催化。苏氨酸被苏氨酸醛缩酶裂成甘氨酸和乙醛。**半胱氨酸到丙酮酸的路更长：它的巯基先被氧化成半胱氨酸亚磺酸，转氨给出 β-亚磺酰丙酮酸，再由脱硫作用把亚磺酰基整个拿掉。** 色氨酸只以次要支线的身份出现在这里，经由丙氨酸而来，它的主路是生酮的那一条。",
+      src: "A pp.650, 655 · B §5.2.3, p.126"
+    },
+    {
+      link_en: "and the ketogenic end, where five amino acids arrive by way of acetoacetyl-CoA",
+      link_cn: "再说生酮那一头 —— 五个氨基酸经由乙酰乙酰-CoA 抵达",
+      en: "Phenylalanine, tyrosine, tryptophan, lysine and leucine all reach acetyl-CoA through acetoacetate or acetoacetyl-CoA instead of through pyruvate. Phenylalanine is hydroxylated to tyrosine by phenylalanine hydroxylase first, and that one reaction is why phenylalanine is an essential amino acid while tyrosine is not: tyrosine can always be made from phenylalanine, never the reverse. **Tyrosine is transaminated to p-hydroxyphenylpyruvate, oxidatively decarboxylated, then cleaved by water into two products at once: fumarate, which is glucogenic, and acetoacetate, which is ketogenic.** That split is the mechanism behind counting tyrosine and phenylalanine as both. Tryptophan takes the longest road of the five — decarboxylation, oxidation, hydrolysis, deamination and a second oxidative decarboxylation, all the way to glutaryl-CoA — and lysine arrives at the same glutaryl-CoA by either of two routes through 2-oxoadipate; from there both continue to acetoacetyl-CoA. Leucine, after transamination and oxidative decarboxylation, gives acetyl-CoA and acetoacetate directly, with no branch anywhere that could feed back into glucose, and lysine has no such branch either.",
+      cn: "苯丙氨酸、酪氨酸、色氨酸、赖氨酸、亮氨酸都到达乙酰-CoA，但走的是经乙酰乙酸或乙酰乙酰-CoA、而不是经丙酮酸的路。苯丙氨酸先由苯丙氨酸羟化酶羟化成酪氨酸，而正是这一个反应决定了苯丙氨酸是必需氨基酸、酪氨酸不是：酪氨酸总能由苯丙氨酸造出来，反过来则永远不行。**酪氨酸经转氨生成对羟苯丙酮酸，再氧化脱羧，最后被水裂解，一次给出两个产物：生糖的延胡索酸，和生酮的乙酰乙酸。** 这一次分岔，就是把酪氨酸和苯丙氨酸算作「两栖」的机制。色氨酸走五者中最长的一条路 —— 脱羧、氧化、水解、脱氨，再一次氧化脱羧，一路到戊二酰-CoA；赖氨酸则经两条可互替的路线、都经过 2-氧己二酸，抵达同一个戊二酰-CoA，两者再由此继续到乙酰乙酰-CoA。亮氨酸经转氨和氧化脱羧后，直接给出乙酰-CoA 和乙酰乙酸，全程没有任何一个分支能反哺回葡萄糖，赖氨酸同样没有这样的分支。",
+      src: "A pp.650, 655 · B §5.2.3, pp.126-127, 129"
+    },
+    {
+      link_en: "those three aromatic skeletons are worth more to the body than their fuel value",
+      link_cn: "那三副芳香骨架，对身体的价值远不止它们的燃料值",
+      en: "Phenylalanine, tyrosine and tryptophan are the aromatic amino acids, meaning each carries a benzene ring on its side chain, and a ring is expensive to build and worth keeping. **Tyrosine is the precursor of dopamine, noradrenaline, adrenaline and the thyroid hormones triiodothyronine and thyroxine, so a skeleton that can be burnt as fuel is also raw material for signalling.** Tryptophan supplies other ring-bearing compounds in the same way. Degrading these three is therefore never purely a matter of energy: whatever is sent down the acetoacetyl-CoA route is not available for making a hormone, and a block anywhere on the phenylalanine route shows up in both accounts at once.",
+      cn: "苯丙氨酸、酪氨酸、色氨酸是三个芳香族氨基酸，意思是它们的侧链上各带一个苯环，而一个环造起来很贵、留着很值。**酪氨酸是多巴胺、去甲肾上腺素、肾上腺素以及甲状腺激素三碘甲状腺原氨酸和甲状腺素的前体 —— 一副能被当燃料烧掉的骨架，同时也是信号分子的原料。** 色氨酸同样供应另一些带环的化合物。所以降解这三个从来不只是能量账：送进乙酰乙酰-CoA 那条路的部分，就不能再拿去做激素；而苯丙氨酸这条路上任何一处堵塞，都会在两本账上同时显形。",
+      src: "B §5.2.3, p.127"
+    },
+    {
+      link_en: "the five-carbon end, where five very unalike amino acids funnel through one molecule",
+      link_cn: "五碳这一头：五个长相毫不相干的氨基酸，挤过同一个分子",
+      recall_en: "urocanate and histidine, met in the first half of this chain as the one simple deamination mammals use",
+      recall_cn: "尿刺酸和组氨酸 —— 前半段里，哺乳动物唯一用到的那次简单脱氨",
+      en: "Arginine, histidine, glutamate, glutamine and proline all enter the citric acid cycle as 2-oxoglutarate, and the immediate precursor in every case is glutamate. Glutamine joins at glutamate directly. Histidine is deaminated to urocanate and hydrolysed onward to glutamate. Proline is a closed ring, and proline dehydrogenase opens it by oxidation to delta-1-pyrroline-5-carboxylate, which sits in equilibrium with the open-chain glutamate gamma-semialdehyde; arginine reaches that same semialdehyde by way of ornithine and one transamination. **Glutamate gamma-semialdehyde is oxidised to glutamate, and glutamate is then deaminated to 2-oxoglutarate, so five unalike skeletons enter the citric acid cycle through a single door.**",
+      cn: "精氨酸、组氨酸、谷氨酸、谷氨酰胺、脯氨酸都以 2-氧戊二酸的身份进入柠檬酸循环，而它们的直接前体无一例外都是谷氨酸。谷氨酰胺直接汇入谷氨酸。组氨酸脱氨成尿刺酸，再水解、一路降解成谷氨酸。脯氨酸是一个闭合的环，脯氨酸脱氢酶把它氧化成 Δ1-吡咯啉-5-羧酸，从而把环打开；后者与开链的谷氨酸 γ-半醛处于平衡之中。精氨酸则经由鸟氨酸再转氨一次，抵达同一个半醛。**谷氨酸 γ-半醛被氧化成谷氨酸，谷氨酸再脱氨成 2-氧戊二酸 —— 于是五副毫不相像的骨架，从同一扇门进入柠檬酸循环。**",
+      src: "A pp.650, 655 · B §5.2.3, pp.127-128",
+      see: [{ id: "L-18-2-1", en: "the urea cycle, where that ornithine comes from", cn: "尿素循环 —— 那个鸟氨酸的出处" }]
+    },
+    {
+      link_en: "and the last two destinations, one reached through a shared acyl-CoA and one reached in a single step",
+      link_cn: "最后两个终点：一个要经过共用的酰基-CoA，另一个只需一步",
+      recall_en: "aspartate, which the first half of this chain named as the second nitrogen donor of urea synthesis",
+      recall_cn: "天冬氨酸 —— 前半段里，尿素合成的第二个氮供体",
+      en: "Methionine gives up its methyl group first, and three of its four remaining carbons become the propionyl group of propionyl-CoA by way of 2-oxobutyrate; isoleucine feeds into the same propionyl-CoA, and threonine also reaches 2-oxobutyrate when it is dehydrated rather than cut in two. Propionyl-CoA is converted onward to methylmalonyl-CoA, which is the immediate precursor of succinyl-CoA. **Methionine, isoleucine, valine and threonine all converge on methylmalonyl-CoA and enter the cycle as succinyl-CoA, while only aspartate and asparagine convert directly to oxaloacetate.** Valine is the one that joins at methylmalonyl-CoA without passing through propionyl-CoA at all. Aspartate and asparagine take the shortest route of any amino acid, since aspartate sits one transamination from oxaloacetate and asparagine one hydrolysis from aspartate, and aspartate then turns up in three separate places: at oxaloacetate with asparagine, at fumarate with tyrosine and phenylalanine, and as the nitrogen donor the urea cycle regenerates from oxaloacetate. That makes the aspartate-oxaloacetate pair the busiest junction between nitrogen disposal and carbon oxidation.",
+      cn: "甲硫氨酸先交出它的甲基，余下四个碳中的三个经 2-氧丁酸成为丙酰-CoA 的丙酰基；异亮氨酸汇入同一个丙酰-CoA，苏氨酸在脱水（而不是被裂成两半）时也到达 2-氧丁酸。丙酰-CoA 再往下转化成甲基丙二酰-CoA，而甲基丙二酰-CoA 就是琥珀酰-CoA 的直接前体。**甲硫氨酸、异亮氨酸、缬氨酸、苏氨酸最终都汇聚到甲基丙二酰-CoA，并以琥珀酰-CoA 的身份进入循环；而直接转化为草酰乙酸的只有天冬氨酸和天冬酰胺两个。** 缬氨酸是唯一一个根本不经过丙酰-CoA、直接在甲基丙二酰-CoA 处汇入的。天冬氨酸和天冬酰胺走的是所有氨基酸中最短的一条：天冬氨酸离草酰乙酸只有一次转氨，天冬酰胺离天冬氨酸只有一次水解。而天冬氨酸随后在三处分别出现：与天冬酰胺一起出现在草酰乙酸，与酪氨酸、苯丙氨酸一起出现在延胡索酸，以及作为尿素循环由草酰乙酸再生出来的那个氮供体。这使「天冬氨酸-草酰乙酸」这一对成为氮的处理与碳的氧化之间最繁忙的那个路口。",
+      src: "A pp.650, 655 · B §5.2.3, pp.127-129",
+      see: [{ id: "5-2-3-4", en: "every skeleton mapped onto its entry point around the cycle", cn: "把每副骨架对到循环上的哪个入口" },
+            { id: "L-18-2-1", en: "the urea cycle, and the aspartate shunt that ties it to the cycle", cn: "尿素循环，以及把它拴在循环上的天冬氨酸支路" }]
+    },
+    {
+      link_en: "these routes lean on a small set of cofactors, and two of them do the same kind of job",
+      link_cn: "这些路线依赖一小组辅因子，其中两个干的是同一类活",
+      en: "**Tetrahydrofolate and S-adenosylmethionine both carry single carbon atoms from one molecule to another, which is what a route needs when a skeleton has one carbon too many or one too few.** Two uses have already gone past: the extra carbon of histidine is removed in a step that uses tetrahydrofolate, and methionine hands its methyl group over as S-adenosylmethionine. The third cofactor is tetrahydrobiopterin, and it is needed by phenylalanine hydroxylase, the enzyme that oxidises phenylalanine to tyrosine — which is why tyrosine is not an essential amino acid while phenylalanine is, and why a failure at that single reaction has consequences out of all proportion to its size.",
+      cn: "**四氢叶酸和 S-腺苷甲硫氨酸都负责把单个碳原子从一个分子搬到另一个分子上 —— 当一副骨架多一个碳或少一个碳时，一条路线需要的正是这个。** 上面已经出现过两个用途：组氨酸多出来的那个碳，是在一个用到四氢叶酸的步骤里被移走的；甲硫氨酸则以 S-腺苷甲硫氨酸的形式交出它的甲基。第三个辅因子是四氢生物蝶呤，苯丙氨酸羟化酶需要它 —— 后者把苯丙氨酸氧化成酪氨酸，这正是酪氨酸不是必需氨基酸、而苯丙氨酸是的原因，也是这一个反应一旦失灵、后果远远超出其体量的原因。",
+      src: "A pp.641, 644, 655",
+      beyond: true,
+      beyondNote: "The names of the three cofactors and what they are used for are on the summary page this chain reads (A p.655), and two concrete uses are on A p.650. Their actual chemistry is on A pp.641-646, which is not covered here, so nothing more about how they work is claimed."
+    },
+    {
+      link_en: "one structural fact breaks the rule that all of this happens in the liver",
+      link_cn: "有一个结构性事实，打破了「这一切都发生在肝里」这条规则",
+      recall_en: "the alanine working muscle sends to the liver, carrying nitrogen and a three-carbon skeleton together",
+      recall_cn: "工作中的肌肉送往肝脏的那个丙氨酸 —— 一趟带走一个氮和一副三碳骨架",
+      en: "The branched-chain amino acids are isoleucine, leucine and valine, named for the methyl branches on their side chains. Unlike every other amino acid, these three are degraded only outside the liver. **Muscle keeps and burns the branched-chain carbon itself while sending the nitrogen to the liver as alanine, so the two halves of one amino acid are disposed of in two different organs.** Parts of the valine and isoleucine routes run through the same reactions as fatty acid degradation, so the machinery is shared rather than duplicated, which is also why their skeletons travel as acyl-CoA intermediates rather than as free acids.",
+      cn: "支链氨基酸指的是异亮氨酸、亮氨酸和缬氨酸，名字来自它们侧链上的甲基分支。与其他所有氨基酸不同，这三个只在肝脏之外被降解。**肌肉自己留下并烧掉支链的碳，同时把氮以丙氨酸的形式送去肝脏 —— 于是同一个氨基酸的两半，是在两个不同的器官里被处理掉的。** 缬氨酸和异亮氨酸路线的一部分，走的还是与脂肪酸降解相同的那些反应，机器是共用的、不是重造一套；这也是为什么它们的骨架是以酰基-CoA 中间体的形态、而不是以游离酸的形态在走。",
+      src: "A p.655",
+      see: [{ id: "L-17-2-1", en: "the fatty acid reactions those routes borrow", cn: "这些路线借用的那套脂肪酸反应" }]
+    },
+    {
+      link_en: "and when one enzyme of these routes is missing, a pathway becomes a disease",
+      link_cn: "而这些路线上少了一个酶，一条通路就变成一种病",
+      en: "Phenylketonuria follows from a defective phenylalanine hydroxylase, and it was among the first inheritable metabolic defects ever found in humans. Recognised early enough in infancy, the intellectual disability it causes can be prevented by diet, and that diet has to supply enough phenylalanine and enough tyrosine for protein synthesis and no more — tyrosine included, because a patient who cannot hydroxylate phenylalanine can no longer make tyrosine. Natural proteins such as milk casein have to be hydrolysed first with most of the phenylalanine taken out. **The warning printed on aspartame comes from exactly this: aspartame is a dipeptide of aspartate and the methyl ester of phenylalanine, so sweetening a food with it adds phenylalanine.** Since a lifetime of perfect dietary control is hard and often leaves neurological symptoms anyway, a second treatment was approved in 2018: phenylalanine ammonia lyase, an enzyme from plants, bacteria and fungi, coupled to polyethylene glycol and injected under the skin, which degrades phenylalanine to harmless trans-cinnamic acid plus a small and non-toxic amount of ammonia. Screening newborns is worthwhile at 8 to 10 cases per 100,000.",
+      cn: "苯丙酮尿症源于苯丙氨酸羟化酶的缺陷，它是人类最早被发现的遗传性代谢缺陷之一。只要在婴儿期足够早被识别出来，它造成的智力障碍可以靠饮食预防；而这份饮食必须只提供刚够合成蛋白质用的苯丙氨酸和酪氨酸，一点不多 —— 连酪氨酸也要供给，是因为羟化不了苯丙氨酸的病人已经造不出酪氨酸了。牛奶酪蛋白之类的天然蛋白必须先水解、并把其中大部分苯丙氨酸去掉。**阿斯巴甜上印的那行警示正是从这里来的：阿斯巴甜是天冬氨酸与苯丙氨酸甲酯构成的二肽，用它增甜就等于往食物里加苯丙氨酸。** 由于终生完美执行饮食控制很难、而且往往仍留有神经系统症状，2018 年批准了第二种治疗：苯丙氨酸解氨酶 —— 一种来自植物、细菌和真菌的酶，与聚乙二醇偶联后皮下注射，把苯丙氨酸降解成无害的反式肉桂酸，外加少量、无毒的氨。新生儿筛查在每十万人 8 到 10 例的发病率下是划算的。",
+      src: "A p.650"
+    },
+    {
+      link_en: "and the same disease has a second cause, which is not in the enzyme at all",
+      link_cn: "同一种病还有第二个病因，而它根本不在那个酶身上",
+      recall_en: "tetrahydrobiopterin, the cofactor phenylalanine hydroxylase needs",
+      recall_cn: "苯丙氨酸羟化酶所需的那个辅因子：四氢生物蝶呤",
+      en: "Phenylketonuria can also come from a defect in the enzyme that regenerates tetrahydrobiopterin, leaving the hydroxylase intact but starved of its cofactor. That form is harder to treat, because the same cofactor is required to make L-dopa and 5-hydroxytryptophan — the precursors of norepinephrine and serotonin — so blocking its regeneration cuts off two neurotransmitter routes as well, and treatment has to supply those precursors in the diet along with tetrahydrobiopterin itself. **A cofactor shared between pathways means a single defect appears in all of them at once, which is the general lesson worth carrying away from this whole classification.**",
+      cn: "苯丙酮尿症还可以来自另一个缺陷：负责再生四氢生物蝶呤的那个酶坏了，羟化酶本身完好，却拿不到辅因子。这一型更难治，因为同一个辅因子还是合成 L-多巴和 5-羟色氨酸所必需的 —— 这两者分别是去甲肾上腺素和血清素的前体 —— 所以堵住它的再生，等于同时切断两条神经递质路线；因此治疗必须在补充四氢生物蝶呤之外，把这些前体也一并从饮食中给上。**一个辅因子被多条通路共用，就意味着一处缺陷会在所有这些通路上同时显形 —— 这是整套分类里最值得带走的通则。**",
+      src: "A p.650"
+    },
+    {
+      link_en: "and one more defect of the same amino acid, which matters far beyond how mild it is",
+      link_cn: "同一个氨基酸上还有一个缺陷，它的重要性远远超过它的轻微程度",
+      en: "Alkaptonuria comes from a defective homogentisate dioxygenase, further down the phenylalanine route. It is mild: large amounts of homogentisate are excreted and turn the urine black on oxidation, and affected people are prone to a form of arthritis, but there is little else. Its importance is historical. **In the early 1900s Archibald Garrod showed that alkaptonuria is inherited and traced the cause to the absence of one enzyme, which made him the first to connect an inheritable trait with an enzyme.** The line that runs from there to genes carrying the instructions for proteins starts in a pathway of amino acid degradation, with black urine.",
+      cn: "尿黑酸症源于苯丙氨酸路线更下游的尿黑酸双加氧酶缺陷。它很轻：大量尿黑酸被排出，氧化后把尿变黑；患者容易发展出一种关节炎，除此之外没有太多别的。它的重要性在历史上。**1900 年代初，Archibald Garrod 证明尿黑酸症是遗传的，并把病因追溯到某一个酶的缺失 —— 他因此成为第一个把可遗传性状与一个酶联系起来的人。** 从那里通往「基因携带蛋白质的指令」的那条线，起点是一条氨基酸降解通路，和一泡变黑的尿。",
+      src: "A p.650",
+      see: [{ id: "L-22-2-1", en: "the mirror image — building the twenty rather than taking them apart", cn: "镜像的一半 —— 造出这二十个，而不是拆掉它们" }]
+    }
+  ],
+  terms: [
+    { en: "the six destinations", cn: "六个终点",
+      def_en: "Pyruvate, acetyl-CoA, 2-oxoglutarate, succinyl-CoA, fumarate and oxaloacetate — the molecules that all twenty amino acid skeletons converge onto, every one of them a citric acid cycle intermediate or feeding straight into the cycle. Acetoacetyl-CoA is sometimes counted as a seventh, but it is a road to acetyl-CoA rather than an endpoint, so the same material is given as six here and seven elsewhere.",
+      def_cn: "丙酮酸、乙酰-CoA、2-氧戊二酸、琥珀酰-CoA、延胡索酸、草酰乙酸 —— 二十副氨基酸骨架全部汇聚到这几个分子上，它们要么本身就是柠檬酸循环的中间物，要么直接喂进循环。乙酰乙酰-CoA 有时被数作第七个，但它是通向乙酰-CoA 的一条路而不是终点，所以同一份材料在这里是六个、在别处是七个。" },
+    { en: "glucogenic", cn: "生糖氨基酸",
+      def_en: "An amino acid whose skeleton reaches pyruvate, 2-oxoglutarate, succinyl-CoA, fumarate or oxaloacetate, and can therefore be converted to glucose and to glycogen, because every citric acid cycle intermediate can be carried round to top up the oxaloacetate pool that gluconeogenesis starts from. Every amino acid except leucine and lysine makes some contribution.",
+      def_cn: "骨架能抵达丙酮酸、2-氧戊二酸、琥珀酰-CoA、延胡索酸或草酰乙酸的氨基酸，因而能被转成葡萄糖和糖原 —— 因为柠檬酸循环的任何一个中间物都能沿循环走去补上草酰乙酸池，而糖异生正是从草酰乙酸起步的。除亮氨酸和赖氨酸之外，每一个氨基酸都有所贡献。" },
+    { en: "ketogenic", cn: "生酮氨基酸",
+      def_en: "An amino acid degraded wholly or partly to acetoacetyl-CoA or acetyl-CoA, and therefore able to yield ketone bodies in the liver once the citric acid cycle's capacity for acetyl units is exceeded. Seven qualify — phenylalanine, tyrosine, isoleucine, leucine, tryptophan, threonine, lysine — of which five are glucogenic as well, leaving leucine and lysine as the only exclusively ketogenic pair.",
+      def_cn: "全部或部分被降解到乙酰乙酰-CoA 或乙酰-CoA 的氨基酸，因而在柠檬酸循环处理乙酰单位的容量被超过之后，能在肝脏产出酮体。合格的有七个 —— 苯丙氨酸、酪氨酸、异亮氨酸、亮氨酸、色氨酸、苏氨酸、赖氨酸 —— 其中五个同时也生糖，于是只剩亮氨酸和赖氨酸这一对是纯生酮的。" },
+    { en: "why acetyl-CoA cannot make glucose", cn: "乙酰-CoA 为什么造不出葡萄糖",
+      def_en: "An acetyl group condenses with oxaloacetate on entering the citric acid cycle, two carbons leave as carbon dioxide one turn later, and the oxaloacetate is handed back unchanged, so there is no net gain of oxaloacetate for gluconeogenesis to start from. This single piece of arithmetic is what makes leucine and lysine the exceptions, and the membership lists follow from it rather than having to be memorised.",
+      def_cn: "乙酰基靠与草酰乙酸缩合进入柠檬酸循环，一圈之后两个碳以二氧化碳形式离开，而草酰乙酸被原样交还，所以草酰乙酸没有净增加，糖异生也就没有多出来的起点。就是这一笔算术，使亮氨酸和赖氨酸成为例外；名单是从它推出来的，不必去背。" },
+    { en: "the five entry families", cn: "五个入口家族",
+      def_en: "One way to hold all twenty at once, by the molecule each skeleton lands on. To pyruvate: alanine, cysteine, glycine, serine, threonine, tryptophan. To acetoacetyl-CoA and acetyl-CoA: phenylalanine, tyrosine, tryptophan, lysine, leucine. To 2-oxoglutarate through glutamate: arginine, histidine, glutamate, glutamine, proline. To succinyl-CoA through methylmalonyl-CoA: methionine, isoleucine, valine, threonine. To oxaloacetate: aspartate and asparagine, and no others.",
+      def_cn: "把二十个一次握住的一种办法：按每副骨架落在哪个分子上分。到丙酮酸：丙氨酸、半胱氨酸、甘氨酸、丝氨酸、苏氨酸、色氨酸。到乙酰乙酰-CoA 与乙酰-CoA：苯丙氨酸、酪氨酸、色氨酸、赖氨酸、亮氨酸。经谷氨酸到 2-氧戊二酸：精氨酸、组氨酸、谷氨酸、谷氨酰胺、脯氨酸。经甲基丙二酰-CoA 到琥珀酰-CoA：甲硫氨酸、异亮氨酸、缬氨酸、苏氨酸。到草酰乙酸：只有天冬氨酸和天冬酰胺。" },
+    { en: "branched-chain amino acids", cn: "支链氨基酸",
+      def_en: "Isoleucine, leucine and valine, named for the methyl branches on their side chains. Alone among the twenty, they are degraded only outside the liver: muscle keeps and burns their carbon itself and sends only the nitrogen to the liver, as alanine. Parts of the valine and isoleucine routes run through the same reactions as fatty acid degradation.",
+      def_cn: "异亮氨酸、亮氨酸、缬氨酸，名字来自侧链上的甲基分支。二十个里只有这三个是在肝脏之外被降解的：肌肉自己留下并烧掉它们的碳，只把氮以丙氨酸的形式送去肝脏。缬氨酸和异亮氨酸路线的一部分，走的是与脂肪酸降解相同的那些反应。" },
+    { en: "phenylketonuria", cn: "苯丙酮尿症",
+      def_en: "A defect of phenylalanine hydroxylase, among the first inheritable metabolic defects found in humans. Managed by a diet supplying just enough phenylalanine and tyrosine and no more, which is why aspartame — a dipeptide of aspartate and the methyl ester of phenylalanine — carries a warning; and since 2018 also by PEGylated phenylalanine ammonia lyase injected under the skin. A second form is a defect in regenerating tetrahydrobiopterin, which also blocks L-dopa and 5-hydroxytryptophan synthesis.",
+      def_cn: "苯丙氨酸羟化酶的缺陷，人类最早被发现的遗传性代谢缺陷之一。靠只提供刚够用的苯丙氨酸和酪氨酸的饮食来控制 —— 阿斯巴甜（天冬氨酸与苯丙氨酸甲酯构成的二肽）上那行警示就是因此而来；2018 年起还可以皮下注射聚乙二醇偶联的苯丙氨酸解氨酶。第二型是四氢生物蝶呤再生环节的缺陷，它同时堵住 L-多巴和 5-羟色氨酸的合成。" },
+    { en: "alkaptonuria", cn: "尿黑酸症",
+      def_en: "A defect of homogentisate dioxygenase, further down the phenylalanine route. Mild in itself — black urine and a tendency to arthritis — but historically the largest thing here: Archibald Garrod traced it to the absence of one enzyme in the early 1900s and was the first to connect an inheritable trait with an enzyme.",
+      def_cn: "苯丙氨酸路线更下游的尿黑酸双加氧酶缺陷。它本身很轻 —— 尿发黑，容易得一种关节炎 —— 但在历史上是这里最大的一件事：1900 年代初 Archibald Garrod 把病因追溯到某一个酶的缺失，成为第一个把可遗传性状与一个酶联系起来的人。" }
+  ]
+};
