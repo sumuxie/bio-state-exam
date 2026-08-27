@@ -591,7 +591,12 @@
         + (state.lang === 'en' ? '' : '<span class="ch-cn">' + esc(cn) + '</span>')
         + '<span class="min-more" data-more="' + i + '">▾ 为什么</span>'
         + '</div>'
-        + '<span class="step-tools">' + sayPairBtn(s.en, s.cn) + markBtn(k) + '</span>'
+        /* Reads the claim, not the whole step. The button sits beside the one
+           sentence 极简 is showing, so reading the folded text instead was heard as
+           the wrong sentence entirely — reported as 它会念被折叠的地方. Pre-rendered
+           audio is keyed on the full text and will not match a claim, so this falls
+           back to speech synthesis until the clips are re-rendered per claim. */
+        + '<span class="step-tools">' + sayPairBtn(en, cn) + markBtn(k) + '</span>'
         /* The full step, folded. This is where a cold start is answered: the noun's
            introduction, the source, the cross-references, the caveats. */
         + '<div class="min-full" id="mf-' + i + '" hidden>'
