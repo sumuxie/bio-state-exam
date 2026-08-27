@@ -10,10 +10,15 @@ The app is `biochemie_lite/` — a merged, ultra-minimal rewrite of `biochemie_p
 ## Where the work stands
 
 ```
-44 / 78 topics merged        0 READY    24 PARTIAL    10 EMPTY
-161 spines   1016 steps   929 connectors   206 recalls   0 JS errors   0 literal ** on screen
-check-spine.py (every spine) -> no problems      check-lite-render.py -> every spined node renders
+50 / 78 topics merged        0 READY    18 PARTIAL    10 EMPTY
+167 spines   1029 steps   942 connectors   215 recalls   0 JS errors   0 literal ** on screen
+check-spine.py -> no problems      check-lite-render.py -> every spined node renders
+committed: 6c82441, b4150ac, 8a3e798 on main
 ```
+
+**biochemie_lite is committed now.** It was untracked for its whole life until this
+session; there is finally a baseline to `git checkout` back to, and a bad batch is no
+longer unrecoverable. `biochemie_pro/` and the other 82 modified files were left alone.
 
 **The open defect of the previous handoff — the 极简 wall of text — is fixed, and every
 topic that was READY is merged.** What is left is the 24 PARTIAL and 10 EMPTY topics, which
@@ -102,6 +107,25 @@ to one claim and one bold span per step — and one was a real four-node merge.
 | `spine_merged_cellcontrol.js` | motor-proteins 12 · cell-cycle-control 7 · oncogenes-and-apoptosis 8 | 27 |
 | `spine_merged_metabolicdisease.js` | obesity-and-body-mass 11 · diabetes-mellitus 10 | 21 |
 
+Then six more, off the PARTIAL list — these are the real merges, a Lehninger backbone
+with Czech nodes that had no spine of their own folded in:
+
+| file | topics | steps |
+|---|---|---|
+| `spine_merged_citricacid.js` | citric-acid-cycle 16 | 16 |
+| `spine_merged_aminoacidfate.js` | amino-group-metabolism 16 · amino-acid-degradation 16 | 32 |
+| `spine_merged_fattyacidox.js` | fatty-acid-oxidation 18 | 18 |
+| `spine_merged_nitrogen.js` | nitrogen-metabolism 17 | 17 |
+| `spine_merged_c4cam.js` | photorespiration-c4-cam 16 | 16 |
+
+**A PARTIAL topic does not need its Czech per-node spines written first.** The merged
+`key:` spine shadows every member node, so a per-node spine written on the way to a
+merge is never seen — the dead work this project has already paid for twice. Go straight
+to the merged spine, reading the Czech material with `tools/dump-node-source.py`, which
+pulls one node's pages, summary, must-know list, terms and point-by-point content out of
+the 10 MB `tools/topics.json`. That is how these six were written, and it is why the
+READY/PARTIAL distinction matters less than `merge-plan.py` makes it look.
+
 **Five of those nodes are marked 只作科普性了解 in the node list** — motor-proteins,
 cell-cycle-control, oncogenes-and-apoptosis, obesity-and-body-mass, diabetes-mellitus, plus
 rna-dependent-synthesis. That is the reader's own scope decision, so they were kept at the
@@ -147,6 +171,41 @@ If you do delegate re-marking: one agent at a time, writing per slice.
 **Never write off a batch on the wrapper error.** In the previous session three agents
 reported `failed` *after* they had written and verified their files. Always diff the target
 files before concluding anything was lost.
+
+That rule paid again this session. Five agents died at the same instant on
+`You've hit your session limit`, every one of them with "Now I'll write the file" as its
+last words — and all five files were on disk, 39–53 KB each, structurally sound. What they
+had not reached was the verification step, so the files carried 11 cold-start flags and 20
+over-length bold spans that the coordinator had to finish. **A killed agent's file is
+suspect, not lost: check it, then finish it.** The usage limit is also the whole answer to
+"why does this project keep breaking" — it is the account's limit, not anything wrong with
+the app, which was measured and found clean.
+
+One linter trap the killed batch walked into four times: an enzyme written
+`Succinate dehydrogenase, EC 1.3.99.1, is embedded…` has its first sentence split at the EC
+number, so the defining `is` falls outside the fragment the COLD check reads and the term
+counts as never introduced. Put em-dashes round the EC number, or the verb before it.
+
+---
+
+## Does merging lose content? Measure it, do not promise it
+
+The reader's own worry, and the right one: 不然我学半天发现很多内容缺失我会很头大. A merged
+topic shadows its members' per-node spines, so anything that was in one of those and is not
+in the merged chain is unreachable **in this app** — the full app still holds every point.
+
+`python tools/check-coverage.py [key:topic ...]` measures it. Two things, chosen because
+they survive translation: each shadowed step's claim is scored by how much of its
+vocabulary the merged chain kept, and every number in the source material is checked
+against the merged text. On the merges done so far, one claim scored low and reads as a
+rewording rather than a loss, and the numbers not carried are section, figure and page
+numbers. The one that looked real — 2840 against 2870 kJ per mole of glucose — is the two
+books differing, and the step cites the book it took.
+
+**Distrust the tool before the spine.** Its first version matched glossary term *names* and
+reported 55% coverage on chains that had kept the material, because the glossary writes
+辅酶A where the spines write CoA: it was measuring transliteration. That is recorded in its
+header so the mistake is not repeated by someone acting on a bad number.
 
 Give every agent its own scratchpad subdirectory. Agents share one scratchpad and a previous
 session lost drafts to another agent writing generic filenames (`p1.js`, `p2.js`).
@@ -208,12 +267,12 @@ double-claim steps. Check the arithmetic before believing something disappeared.
 
 ## Remaining topics
 
-**PARTIAL (24)** — a Czech node in the topic has no spine yet; write it, then merge.
+**PARTIAL (18)** — some member node has no spine; merge straight from the source anyway.
 Biggest: `hormone-structure-and-action` (13 nodes, 3 written), `fatty-acid-biosynthesis` (11, 1),
 `membrane-architecture` (7, 2), `photochemical-reaction-centers` (7, 1),
-`biochemical-reaction-logic` (7, 1), `co2-assimilation` (6, 1), `membrane-transport` (5, 2),
-`nitrogen-metabolism` (5, 1), `fatty-acid-oxidation` (5, 1), `amino-acid-degradation` (5, 1),
-`citric-acid-cycle` (4, 1), `photorespiration-c4-cam` (4, 1), `amino-group-metabolism` (4, 1).
+`biochemical-reaction-logic` (7, 1), `co2-assimilation` (6, 1), `membrane-transport` (5, 2).
+The metabolic core is done: citric acid cycle, both halves of amino acid fate, fatty acid
+oxidation, nitrogen metabolism and photorespiration/C4/CAM all merged this session.
 
 **EMPTY (10)** — no spine at all yet, all Czech-only. `monosaccharides` (15 nodes) and
 `polysaccharides` (4) remain the notable gap: the app still has no carbohydrate structure
