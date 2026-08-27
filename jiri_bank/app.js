@@ -75,6 +75,8 @@
     glossView: store.get('glossView', 'cards'),  // Terms tab: 'cards' | 'list'
     onlyMarked: false,                    // 只看必背 — deliberately not persisted
     sheetsFigOnly: false,                 // Sheets: 只看有图的题 — a view filter, not persisted
+    cloze:   store.get('cloze', false),   // Sheets: 挖空 — see the key-term section
+    keyMarks: store.get('keyMarks', {}),  // keyId -> '' | 'learn' | 'cram'
     qsrc:    store.get('qsrc', 'core'),   // 'core' | 'bank' | 'terms' — see allQuestions
     voice:   store.get('voice', {}),      // 'en'|'zh' -> {uri, rate, pitch} — see the pronunciation pad
     topicId: null,
@@ -409,6 +411,106 @@
     return out;
   }
 
+  // The same pair with a pronounce button on each language, which is the rule
+  // pointLi() follows: in 中/EN mode both lines are on screen, so one button
+  // that speaks "whatever is current" leaves the other language with no way
+  // to be read at all. Markers are stripped from what is spoken, not from
+  // what is shown.
+  // `kPrefix`, when given, additionally turns every **run** into a clickable
+  // key — see the 挖空 section below. Each language gets its own prefix, so an
+  // id never depends on whether the other language happens to be on screen.
+  function biSay(en, cn, kPrefix) {
+    let out = '';
+    if (state.lang !== 'cn' && en) {
+      const body = kPrefix ? clozeKeys(mdBold(en), kPrefix + ':en') : mdBold(en);
+      out += `<div class="t-en">${body} ${speakBtn(stripTags(en), 'en-US')}</div>`;
+    }
+    if (state.lang !== 'en' && cn) {
+      const body = kPrefix ? clozeKeys(mdBold(cn), kPrefix + ':cn') : mdBold(cn);
+      out += `<div class="t-cn">${body} ${speakBtn(stripTags(cn), 'zh-CN')}</div>`;
+    }
+    return out;
+  }
+
+  /* ------------------------------------------------------- key terms · 挖空
+     Every **emphasised** run in a sheet answer is already the phrase an
+     examiner is listening for, so it doubles as the cloze unit — no second
+     markup, and no re-authoring of the data. 挖空 covers them all; a click
+     uncovers one.
+
+     On top of that each key carries a mark saying what you make of it:
+
+       划线 learn — 会了。Underlined, and no longer bold: it stops shouting.
+       高亮 cram  — 还不懂，要背。Highlighter behind it, loudest thing on the card.
+
+     One click drives both, because in practice they are one motion: 盖住 →
+     自己说一遍 → 点开核对 → 再点一下说「这个我会 / 这个得背」. So with 挖空 on
+     the first click reveals, and each further click advances the mark,
+     wrapping round to unmarked-and-covered again. With 挖空 off there is
+     nothing to reveal and a click goes straight to the mark.
+
+     The id is question id + language + the run's index within that block, so
+     it is index-based like `marks` above and shifts if a sentence gains an
+     earlier **run**. Accepted for the same reason — the data files are
+     append-mostly, and a misplaced underline costs nothing. The reveal state
+     is deliberately NOT persisted: a cover that survived a reload would drop
+     the next session into the middle of the last one. */
+  const KEY_MARK_CYCLE = ['', 'learn', 'cram'];
+
+  function keyMarkOf(id) { return state.keyMarks[id] || ''; }
+
+  function nextKeyMark(id) {
+    const cur = KEY_MARK_CYCLE.indexOf(keyMarkOf(id));
+    const next = KEY_MARK_CYCLE[(cur + 1) % KEY_MARK_CYCLE.length];
+    if (next) state.keyMarks[id] = next; else delete state.keyMarks[id];
+    store.set('keyMarks', state.keyMarks);
+    return next;
+  }
+
+  function keyMarkCount(kind) {
+    return Object.keys(state.keyMarks).filter((k) => state.keyMarks[k] === kind).length;
+  }
+
+  // mdBold() is the only thing in this file that emits <strong>, so tagging
+  // its output by counting opening tags is exact and needs no HTML parsing —
+  // provided one call covers one language block, which is what the prefix
+  // convention enforces.
+  function clozeKeys(html, prefix) {
+    let i = 0;
+    return String(html).replace(/<strong>/g, () => {
+      const id = prefix + ':' + (i++);
+      const mk = keyMarkOf(id);
+      return `<strong class="k${mk ? ' mk-' + mk : ''}" data-k="${esc(id)}"`
+           + ' role="button" tabindex="0">';
+    });
+  }
+
+  function wireKeyTerms(root) {
+    if (!root) return;
+    root.querySelectorAll('.k:not([data-wired])').forEach((el) => {
+      el.dataset.wired = '1';
+      const hit = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Covered and not yet looked at: this click means "show me", and
+        // nothing else. Judging a term you cannot see is not a thing.
+        if (state.cloze && !el.classList.contains('shown')) {
+          el.classList.add('shown');
+          return;
+        }
+        const mk = nextKeyMark(el.dataset.k);
+        el.classList.remove('mk-learn', 'mk-cram');
+        if (mk) el.classList.add('mk-' + mk);
+        else if (state.cloze) el.classList.remove('shown');
+        updateKeyMarkCount();
+      };
+      el.addEventListener('click', hit);
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') hit(e);
+      });
+    });
+  }
+
   /* ---------------------------------------------------------- pronunciation
      Browser-synthesised speech (Web Speech API) — NOT a recorded human
      voice. A static site with no backend has no way to host real audio for
@@ -520,16 +622,22 @@
     });
   }
 
-  function speakBtn(text, lang) {
+  // `label` is for the one case where the button does not sit at the end of
+  // the text it reads — a heading above both language blocks — and a bare 🔊
+  // would not say which language it is about to speak.
+  function speakBtn(text, lang, label) {
     if (!speechAvailable || !text) return '';
-    return `<button type="button" class="say-btn" data-say="${esc(text)}" data-lang="${lang}"
-              aria-label="Pronounce" title="Pronounce (synthesised speech, not a recording)">🔊</button>`;
+    return `<button type="button" class="say-btn${label ? ' say-labelled' : ''}" data-say="${esc(text)}" data-lang="${lang}"
+              aria-label="Pronounce${label ? ' — ' + esc(label) : ''}"
+              title="Pronounce (synthesised speech, not a recording)"
+              >🔊${label ? `<span class="say-lang">${esc(label)}</span>` : ''}</button>`;
   }
 
-  // Speaks whichever language is currently on screen.
-  function speakPairBtn(en, cn) {
-    if (state.lang === 'cn') return speakBtn(cn || en, cn ? 'zh-CN' : 'en-US');
-    return speakBtn(en || cn, en ? 'en-US' : 'zh-CN');
+  // Both languages, each labelled, for a heading that sits above the text
+  // rather than at the end of one line of it.
+  function sayBothBtns(en, cn) {
+    return (state.lang !== 'cn' ? speakBtn(stripTags(en), 'en-US', 'EN') : '')
+         + (state.lang !== 'en' ? speakBtn(stripTags(cn), 'zh-CN', '中') : '');
   }
 
   // A click on a .say-btn must not also flip a flashcard or toggle a
@@ -1123,6 +1231,19 @@
     return rows;
   }
 
+  // The two counts sit next to the question count rather than on every card,
+  // because what you want from them is one number for the whole bank: how much
+  // is still on the 要背 pile.
+  function updateKeyMarkCount() {
+    const el = $('#sheets-marks');
+    if (!el) return;
+    const learn = keyMarkCount('learn');
+    const cram = keyMarkCount('cram');
+    el.textContent = (learn || cram)
+      ? `· ${cram} 要背 to memorise · ${learn} 会了 known`
+      : '';
+  }
+
   function renderSheets() {
     const body = $('#sheets-body');
     const rows = sheetsRows();
@@ -1130,6 +1251,8 @@
     $('#sheets-count').textContent =
       `${rows.length} of ${QUESTIONS.length} questions · 共 ${QUESTIONS.length} 题，显示 ${rows.length} 题`
       + (figTotal ? ` · ${figTotal} with a diagram · ${figTotal} 题有图` : '');
+    body.classList.toggle('cloze-on', state.cloze);
+    updateKeyMarkCount();
 
     if (!QUESTIONS.length) {
       body.innerHTML = `<div class="empty-state">
@@ -1150,14 +1273,29 @@
       // the mustKnow paragraphs either side: which sentences are pulled from
       // a source node and which are this entry's own authored connective
       // tissue is exactly the distinction §9 exists to make visible.
-      const modelEn = asm.en.map((seg) =>
-        seg.startsWith('__JOIN_EN__')
-          ? `<p class="sheet-join">${mdBold(q.joins[+seg.slice(11)].en)}</p>`
-          : paras(seg)).join('');
-      const modelCn = asm.cn.map((seg) =>
-        seg.startsWith('__JOIN_CN__')
-          ? `<p class="sheet-join">${mdBold(q.joins[+seg.slice(11)].cn)}</p>`
-          : paras(seg)).join('');
+      // clozeKeys() runs once over the whole assembled block rather than per
+      // segment, so a key's index counts from the top of the answer as it is
+      // read and does not shift when a spine node is re-segmented.
+      const modelEn = clozeKeys(hasSpine
+        ? asm.en.map((seg) => seg.startsWith('__JOIN_EN__')
+            ? `<p class="sheet-join">${mdBold(q.joins[+seg.slice(11)].en)}</p>`
+            : paras(seg)).join('')
+        : paras(q.answer_en), q.id + ':a:en');
+      const modelCn = clozeKeys(hasSpine
+        ? asm.cn.map((seg) => seg.startsWith('__JOIN_CN__')
+            ? `<p class="sheet-join">${mdBold(q.joins[+seg.slice(11)].cn)}</p>`
+            : paras(seg)).join('')
+        : paras(q.answer_cn), q.id + ':a:cn');
+
+      // What the 🔊 in the answer heading reads. A spine answer has no text of
+      // its own, so it is joined here the same way it is rendered, minus the
+      // joins — those are this entry's connective tissue, not the source.
+      const answerEn = stripTags(hasSpine
+        ? asm.en.filter((s) => !s.startsWith('__JOIN_')).join(' ')
+        : q.answer_en);
+      const answerCn = stripTags(hasSpine
+        ? asm.cn.filter((s) => !s.startsWith('__JOIN_')).join(' ')
+        : q.answer_cn);
 
       const gapsHtml = (q.gaps || []).length
         ? `<p class="sheet-gaps">⚠ Beats with no source node · 没有源节点的部分：${esc((q.gaps || []).join('; '))}</p>`
@@ -1182,10 +1320,12 @@
       const followupsHtml = (q.followups || []).length
         ? `<div class="sheet-followups">
              <h3>Likely follow-ups <span class="muted">追问</span></h3>
-             ${(q.followups || []).map((f) => `
+             ${(q.followups || []).map((f, fi) => `
                <div class="sheet-followup">
-                 <div class="sf-q">${bi(f.q_en, f.q_cn)} ${speakPairBtn(f.q_en, f.q_cn)}</div>
-                 <div class="sf-a">${bi(f.a_en, f.a_cn)} ${speakPairBtn(stripTags(f.a_en), stripTags(f.a_cn))}</div>
+                 ${/* The question is never covered — you cannot answer a
+                       prompt you cannot read — only its answer is. */''}
+                 <div class="sf-q">${biSay(f.q_en, f.q_cn)}</div>
+                 <div class="sf-a">${biSay(f.a_en, f.a_cn, q.id + ':f' + fi)}</div>
                  ${f.node ? spineChip(f.node) : ''}
                </div>`).join('')}
            </div>`
@@ -1197,7 +1337,7 @@
           <span class="badge">x${q.weight || 1}</span>
           ${q.svg ? '<span class="badge badge-fig" title="This question has a diagram · 这题有图">✎ 图</span>' : ''}
         </div>
-        <div class="sheet-stem">${bi(q.stem_en, q.stem_cn)} ${speakPairBtn(q.stem_en, q.stem_cn)}</div>
+        <div class="sheet-stem">${biSay(q.stem_en, q.stem_cn)}</div>
 
         ${hasSpine ? `<div class="sheet-spine">
           <span class="sheet-spine-label">Spine · 追踪链</span>
@@ -1208,19 +1348,13 @@
           <h3>${hasSpine
             ? 'Assembled answer <span class="muted">拼装出的答案——事实全部来自源节点</span>'
             : 'Answer <span class="muted">答案</span>'}
-            ${/* The whole answer read aloud, which is the point in an oral:
-                  the emphasis markers are stripped first, or the synthesiser
-                  reads the asterisks out. A spine answer has no text of its
-                  own, so it is assembled here the same way it is rendered. */
-              hasSpine
-                ? speakPairBtn(stripTags(asm.en.filter((s) => !s.startsWith('__JOIN_')).join(' ')),
-                               stripTags(asm.cn.filter((s) => !s.startsWith('__JOIN_')).join(' ')))
-                : speakPairBtn(stripTags(q.answer_en), stripTags(q.answer_cn))}</h3>
-          ${hasSpine
-            ? `${state.lang !== 'cn' ? `<div class="t-en">${modelEn}</div>` : ''}
-               ${state.lang !== 'en' ? `<div class="t-cn">${modelCn}</div>` : ''}`
-            : `${state.lang !== 'cn' ? `<div class="t-en">${paras(q.answer_en)}</div>` : ''}
-               ${state.lang !== 'en' ? `<div class="t-cn">${paras(q.answer_cn)}</div>` : ''}`}
+            ${/* The whole answer read aloud, which is the point in an oral.
+                  Both languages, labelled: the heading sits above both blocks,
+                  so 🔊 alone would not say which one it is about to read. */''}
+            ${state.lang !== 'cn' ? speakBtn(answerEn, 'en-US', 'EN') : ''}
+            ${state.lang !== 'en' ? speakBtn(answerCn, 'zh-CN', '中') : ''}</h3>
+          ${state.lang !== 'cn' ? `<div class="t-en">${modelEn}</div>` : ''}
+          ${state.lang !== 'en' ? `<div class="t-cn">${modelCn}</div>` : ''}
         </div>
         ${figureHtml}
         ${gapsHtml}
@@ -1235,6 +1369,7 @@
 
     wireHookLinks(body);
     wireSayButtons(body);
+    wireKeyTerms(body);
   }
 
   /* --------------------------------------------------------------- sidebar */
@@ -1335,6 +1470,11 @@
              a source node in biochemie, PESB, exam30 or the lab handbook, the answer is assembled from that node
              and carries its id so any claim can be checked. New content is written only where no source exists —
              four questions on these sheets have none anywhere in 13 MB of material.</p>
+          <p class="welcome-note"><strong>挖空 covers the key terms</strong> on the Sheets tab, the way exam30 does
+             — the emphasised phrases are already the ones an examiner listens for, so they are the ones covered.
+             Click a term to uncover it, then click again to say what you make of it: <strong>划线 = 会了</strong>,
+             <strong>高亮 = 要背</strong>. Those two stay put between sessions and are counted above the list, so
+             the 要背 pile is a number you can watch go down. 盖住 → 自己说一遍 → 点开核对 → 标记。</p>
           <p class="welcome-note">Sheet weight is not even. All eleven questions that appear on more than one
              sheet include <strong>Sheet 1</strong>, which also carries the only practical task, so Sheet 1 items
              are worked first. 卷一是三卷的交集，优先。</p>
@@ -1367,7 +1507,7 @@
         ${t.coverageNote ? `<p class="cov-note">${mdBold(t.coverageNote)}</p>` : ''}
 
         <section class="block">
-          <h2>Summary <span class="muted">概要</span> ${speakPairBtn(t.summary && t.summary.en, t.summary && t.summary.cn)}</h2>
+          <h2>Summary <span class="muted">概要</span> ${sayBothBtns(t.summary && t.summary.en, t.summary && t.summary.cn)}</h2>
           <div class="summary">${bi(t.summary && t.summary.en, t.summary && t.summary.cn)}</div>
         </section>`;
 
@@ -1866,7 +2006,7 @@
     $('#quiz-progress-bar').style.width = ((quizIndex / quizItems.length) * 100) + '%';
 
     let html = `<div class="q-meta">${esc(topic.section)} · ${esc(topic.enTitle)}</div>
-                <div class="q-text">${bi(q.q_en, q.q_cn)} ${speakPairBtn(q.q_en, q.q_cn)}</div>`;
+                <div class="q-text">${biSay(q.q_en, q.q_cn)}</div>`;
 
     if (q.type === 'mcq') {
       html += `<div class="options">`;
@@ -2026,7 +2166,7 @@
       `<strong>${ok ? '✓ Key terms covered' : '△ Some key terms missing'}</strong>
        <p class="kw-line">Matched ${hit.length} of ${keys.length} key terms:
          ${keys.map((k) => `<span class="kw${hit.includes(k) ? ' kw-hit' : ''}">${esc(k)}</span>`).join('')}</p>
-       <div class="model-answer"><span class="ma-label">Model answer · 参考答案 ${speakPairBtn(q.answer_en, q.answer_cn)}</span>
+       <div class="model-answer"><span class="ma-label">Model answer · 参考答案 ${sayBothBtns(q.answer_en, q.answer_cn)}</span>
          ${bi(q.answer_en, q.answer_cn)}</div>`;
     $('#quiz-score').textContent = `${quizCorrect} correct`;
     revealNext();
@@ -2086,7 +2226,7 @@
     $('#oral-stage').innerHTML = `
       <article class="oral">
         <div class="q-meta">${esc(t.section)} · ${esc(t.enTitle)}</div>
-        <div class="oral-q">${bi(t.oral.q_en, t.oral.q_cn)} ${speakPairBtn(t.oral.q_en, t.oral.q_cn)}</div>
+        <div class="oral-q">${biSay(t.oral.q_en, t.oral.q_cn)}</div>
 
         <div class="timer">
           <div class="timer-face" id="timer-face">02:00</div>
@@ -3075,6 +3215,18 @@
     // list, or you would keep drilling cards the filter no longer selects.
     ['#gloss-search', '#gloss-scope', '#gloss-mark'].forEach((sel) =>
       $(sel).addEventListener('input', () => { glossCard = null; renderGlossary(); }));
+
+    // 挖空 is a re-render rather than a CSS-only class flip, because turning it
+    // off has to drop every `shown` as well — otherwise the terms you had
+    // already uncovered stay uncovered when you switch it back on, and the
+    // second pass through a card is free.
+    $('#sheets-cloze').classList.toggle('active', state.cloze);
+    $('#sheets-cloze').addEventListener('click', () => {
+      state.cloze = !state.cloze;
+      store.set('cloze', state.cloze);
+      $('#sheets-cloze').classList.toggle('active', state.cloze);
+      renderSheets();
+    });
 
     $('#sheets-fig').addEventListener('click', () => {
       state.sheetsFigOnly = !state.sheetsFigOnly;

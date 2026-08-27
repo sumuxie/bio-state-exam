@@ -223,9 +223,20 @@
           </select>
           <button id="sheets-fig" class="btn-ghost"
             title="Only the questions that have a diagram · 只看有图的题">✎ 有图 · with a diagram</button>
+          <button id="sheets-cloze" class="btn-ghost"
+            title="Cover every key term; click one to uncover it · 盖住关键词，点一下揭开">▮ 挖空 · cloze</button>
         </div>
       </div>
-      <p class="gloss-count" id="sheets-count"></p>
+      <!-- The rule is one sentence long, so it is on the page rather than in a
+           tooltip nobody hovers: a key term is clicked until it says what you
+           think of it. -->
+      <p class="key-legend">
+        Click a <strong class="k">key term</strong> to cycle it ·
+        点关键词循环：<span class="lg lg-learn">划线 = 会了</span>
+        <span class="lg lg-cram">高亮 = 要背</span>
+        <span class="lg">再点一下 = 取消</span>
+      </p>
+      <p class="gloss-count"><span id="sheets-count"></span> <span id="sheets-marks" class="sheets-marks"></span></p>
       <div id="sheets-body"></div>
     </section>
 

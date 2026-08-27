@@ -188,6 +188,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .btn-primary:hover { filter: brightness(1.12); }
 .btn-ghost { background: var(--bg-raise); border-color: var(--line); color: var(--fg-mute); }
 .btn-ghost:hover { color: var(--fg); }
+/* Both toolbar toggles set .active and neither had a style for it, so 有图
+   and 挖空 looked identical on and off. Same treatment as .icon-btn.active. */
+.btn-ghost.active { background: var(--accent-dim); border-color: var(--accent-dim); color: #fff; }
 .btn-good { background: color-mix(in srgb, var(--good) 18%, transparent); border-color: var(--good); color: var(--good); }
 .btn-bad  { background: color-mix(in srgb, var(--bad) 18%, transparent);  border-color: var(--bad);  color: var(--bad); }
 .link-btn {
@@ -203,6 +206,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
   color: var(--fg-dim); font-size: 0.68rem; line-height: 1; cursor: pointer;
   vertical-align: middle;
 }
+/* A 🔊 that sits above the text rather than at the end of it carries the
+   language it will read, and widens from a circle to a pill to hold it. */
+.say-btn.say-labelled { width: auto; gap: 0.18rem; padding: 0 0.42rem 0 0.34rem; border-radius: 999px; }
+.say-lang { font-size: 0.62rem; letter-spacing: 0.02em; }
 .say-btn:hover { color: var(--accent); border-color: var(--accent); }
 .say-btn.speaking { color: var(--accent); border-color: var(--accent); animation: say-pulse 0.55s ease-in-out infinite alternate; }
 @keyframes say-pulse { from { opacity: 0.55; transform: scale(0.94); } to { opacity: 1; transform: scale(1.04); } }
@@ -1004,6 +1011,66 @@ mark.fh { background: rgba(210,153,34,0.28); color: inherit; border-radius: 2px;
   color: var(--fg-dim); font-style: italic; font-size: 0.92em;
   padding-left: 0.6rem; border-left: 2px solid var(--line);
 }
+
+/* ------------------------------------------------- key terms · 挖空 · marks
+   A key term is a <strong> the app made clickable. Three resting states, and
+   they have to be tellable apart at a glance while reading a whole card:
+
+     unmarked  bold, as authored — "this is the phrase"
+     划线 会了  underlined, weight dropped back to normal — it stops shouting
+     高亮 要背  highlighter behind it — the loudest thing on the card
+
+   Weight is what separates 会了 from unmarked, colour is what separates 要背
+   from both, so the three stay distinct in greyscale and for a reader who
+   cannot pick the yellow out of the background. */
+.k {
+  cursor: pointer; border-radius: 3px; padding: 0 0.1em;
+  transition: background 0.12s ease, box-shadow 0.12s ease;
+}
+.k:hover { box-shadow: inset 0 -2px 0 var(--accent); }
+.k:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.k.mk-learn {
+  font-weight: 400; color: var(--fg-mute);
+  text-decoration: underline; text-decoration-color: var(--good);
+  text-decoration-thickness: 2px; text-underline-offset: 3px;
+}
+.k.mk-cram {
+  background: var(--hl-y); box-shadow: inset 0 -2px 0 var(--hl-y-edge);
+  color: var(--fg); font-weight: 700;
+}
+
+/* Covered. The bar is sized by the term it hides, so the length of the blank
+   still tells you roughly how long the answer is — which is the whole reason
+   a cloze is harder than a blank line but easier than an empty page.
+   `color: transparent` rather than hiding the text keeps it selectable-free
+   but still in the layout; user-select stops a drag from revealing it. */
+#sheets-body.cloze-on .k {
+  background: var(--fg-dim); color: transparent; box-shadow: none;
+  border-radius: 3px; user-select: none;
+}
+#sheets-body.cloze-on .k.mk-cram { background: var(--hl-y-edge); }
+#sheets-body.cloze-on .k.mk-learn { background: var(--good); }
+#sheets-body.cloze-on .k.shown { color: inherit; user-select: auto; }
+#sheets-body.cloze-on .k.shown { background: none; }
+#sheets-body.cloze-on .k.shown.mk-cram {
+  background: var(--hl-y); box-shadow: inset 0 -2px 0 var(--hl-y-edge);
+}
+
+/* The rule, stated once above the list. `.k` inside it is a live sample of
+   the unmarked state rather than a description of it. */
+.key-legend {
+  font-size: 0.78rem; color: var(--fg-mute); margin: 0 0 0.5rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
+}
+.key-legend .k { cursor: default; }
+.lg { border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.45rem; }
+.lg-learn {
+  text-decoration: underline; text-decoration-color: var(--good);
+  text-decoration-thickness: 2px; text-underline-offset: 2px;
+}
+.lg-cram { background: var(--hl-y); border-color: var(--hl-y-edge); color: var(--fg); }
+.sheets-marks { color: var(--fg-dim); }
 
 .sheet-gaps {
   font-size: 0.8rem; color: var(--warn); background: var(--bg-raise);
