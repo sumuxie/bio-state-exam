@@ -11,10 +11,11 @@ The app is `biochemie_lite/` — a merged, ultra-minimal rewrite of `biochemie_p
 
 ```
 78 / 78 topics merged     0 READY    0 PARTIAL    0 EMPTY
-281 / 281 section nodes carry a thread
-195 spines   42 spine files   1220 steps   1111 connectors   253 recalls
+284 / 284 nodes carry a thread     0 content gaps against either book
+195 spines   43 spine files   1285 steps   1176 connectors   256 recalls
 0 JS errors   0 literal ** on screen
 check-spine.py -> no problems      check-lite-render.py -> every spined node renders
+check-coverage.py --by-node -> 5 flags, none of them content
 ```
 
 **The app is content-complete.** Every topic is merged and every section node is
@@ -177,6 +178,16 @@ If you do delegate re-marking: one agent at a time, writing per slice.
 reported `failed` *after* they had written and verified their files. Always diff the target
 files before concluding anything was lost.
 
+**Four times in one session.** Two agents were killed by the usage limit and two by the
+`[bio]` AUP filter, and in all four cases the files were already written and sound — one
+of them had finished everything and was cut off mid-report. Nothing was lost to any of
+the four. Diff before you conclude, every time.
+
+The `[bio]` kills sort exactly as the earlier note predicted: **agents doing merges are
+left alone (17 launched, 17 completed), agents that copy large blocks of textbook prose
+into a chain get flagged.** The gap-filling work is that second shape, because it reads
+a `--missing` dump and folds it in verbatim. Do that kind of work in the main loop.
+
 That rule paid again this session. Five agents died at the same instant on
 `You've hit your session limit`, every one of them with "Now I'll write the file" as its
 last words — and all five files were on disk, 39–53 KB each, structurally sound. What they
@@ -211,6 +222,41 @@ books differing, and the step cites the book it took.
 reported 55% coverage on chains that had kept the material, because the glossary writes
 辅酶A where the spines write CoA: it was measuring transliteration. That is recorded in its
 header so the mistake is not repeated by someone acting on a bad number.
+
+### The audit was run, and what it found is fixed
+
+`check-coverage.py --by-node` scores every node of both books against the material the
+reader actually reaches. It first reported **82 points, 49 terms and 2 mustKnow items
+across 68 nodes** that a merged chain did not carry — both books hit in the same
+proportion, about 3–4%, so this was compression pressure and not one book being
+neglected. It concentrated in the big early merges: `respiratory-chain` alone held 20,
+and `L-19-5-1` had lost 11 of its 17 points.
+
+All of it is now carried. `respiratory-chain` went 16 steps to 36, `amino-acids` 16 to
+23 (taking in the three entity nodes — histamine and cimetidine, the three histidines of
+the globins, the disulfide bridge and glutathione), `gene-regulation-proteins` 16 to 25,
+`glycogen-metabolism` 16 to 20.
+
+**Five flags remain and none of them is content**, which is worth stating precisely so
+nobody "fixes" them: four are the book talking about itself — *this diagram is the last
+content of chapter 7*, *section 7.1 carries no independent text*, *these pages are not in
+the extracted set* — which house rule 4 keeps out on purpose. The fifth is the glycolysis
+ATP table, carried in the chain as the −1, −1, +2, +2 ledger; the matcher misses it
+because that source point is almost entirely Czech compound names. Each was read before
+being dismissed.
+
+`check-coverage.py --missing key:<topic>` prints the exact uncarried points and term
+definitions in both languages with node ids and pages — that is what you hand to whoever
+fills a gap.
+
+### A `see` that lands back on itself
+
+`check-spine.py` gained a `SEE` check: a 详见 pointing at a node its own merged topic
+shadows renders the chain the reader is already reading, so the material it promises is
+not elsewhere, it is unreachable. It cannot produce a false positive — same topicKey,
+same rendered spine — which matters here, because two earlier checks were removed for
+crying wolf. It found 21. Thirteen were in one file where `see` had been used as a
+provenance note, which is what `src` is for; all are cleared.
 
 Give every agent its own scratchpad subdirectory. Agents share one scratchpad and a previous
 session lost drafts to another agent writing generic filenames (`p1.js`, `p2.js`).
