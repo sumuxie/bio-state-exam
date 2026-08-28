@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分子生物学 速通简洁版</title>
+<!-- The biochemistry app's stylesheet, by reference rather than by copy: the study
+     apps are meant to look like one thing, and a duplicated 40 KB of CSS drifts. -->
+<link rel="stylesheet" href="../biochemie_pro/style.css">
+<link rel="stylesheet" href="lite.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button id="menu-toggle" class="icon-btn" aria-label="Toggle topic list">☰</button>
+  <div class="brand">
+    <strong>分子生物学 <span class="brand-tag lite">速通</span></strong>
+    <span class="brand-sub">补缺版 · only what the other apps never taught</span>
+  </div>
+
+  <nav class="modes" id="mode-toggle" role="tablist">
+    <button class="mode-btn active" data-mode="min" role="tab">⚡ <span>极简</span></button>
+    <button class="mode-btn" data-mode="spine" role="tab">🧵 <span>主线</span></button>
+    <button class="mode-btn" data-mode="quiz" role="tab">✏️ <span>题目</span></button>
+  </nav>
+
+  <div class="topbar-right">
+    <div class="pen-row" id="pen-row" title="新星标的颜色"></div>
+    <button id="only-marked" class="icon-btn" aria-label="Only starred"
+      title="只看星标 — 只显示打了 ★ 的步骤和词">★</button>
+    <div class="lang-toggle" id="lang-toggle">
+      <button data-lang="both" class="active">中/EN</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="cn">中文</button>
+    </div>
+    <button id="voice-toggle" class="icon-btn" aria-label="Reading voice"
+      title="朗读语音 — 选语音和语速">🔈</button>
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">◐</button>
+  </div>
+</header>
+
+<!-- Voice picker. The device decides what is available, and the browser's default is
+     usually the worst voice present, so the reader has to be able to choose and hear. -->
+<div id="voice-panel" class="voice-panel" hidden>
+  <div class="vp-head">
+    <span class="vp-title">🔈 朗读语音 <span class="muted">reading voice</span></span>
+    <button id="voice-close" class="vp-close" aria-label="关闭">×</button>
+  </div>
+  <div class="vp-row">
+    <label for="voice-en">English</label>
+    <select id="voice-en"></select>
+    <button class="btn-ghost vp-test" data-lang="en-US">试听</button>
+  </div>
+  <p id="voice-en-note" class="vp-missing"></p>
+  <div class="vp-row">
+    <label for="voice-zh">中文</label>
+    <select id="voice-zh"></select>
+    <button class="btn-ghost vp-test" data-lang="zh-CN">试听</button>
+  </div>
+  <p id="voice-zh-note" class="vp-missing"></p>
+  <div class="vp-row">
+    <label for="voice-rate">语速 <span class="muted">speed</span></label>
+    <input id="voice-rate" type="range" min="0.6" max="1.4" step="0.02">
+    <span id="voice-rate-val" class="muted"></span>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="search-wrap"><input id="search" type="search" placeholder="Search 搜索…"></div>
+    <div class="progress-strip">
+      <span id="spine-count"></span>
+      <div class="progress-bar"><div id="spine-bar"></div></div>
+    </div>
+    <div class="topic-list" id="topic-list"></div>
+  </aside>
+
+  <main class="content">
+    <section id="panel-study" class="panel active"></section>
+  </main>
+</div>
+
+<!-- Node index. Hand-written from a running-footer section map measured over all
+     353 pages of the scan, NOT generated from a sibling app — this app has no full
+     version, because its source is a scanned book with no text layer. -->
+<script src="data/nodes.js"></script>
+<!-- The spine: one hand-written chain per node, transcribed from the scan. -->
+<script src="data/spine_ch6.js"></script>
+<script src="data/spine_ch8_epigenetics.js"></script>
+<script src="data/spine_ch8_ncrna.js"></script>
+<script src="data/spine_ch8_regulation.js"></script>
+<script src="data/spine_ch6_interactions.js"></script>
+<script src="data/spine_ch6_yeast.js"></script>
+<script src="data/spine_ch8_other.js"></script>
+<script src="data/spine_misc.js"></script>
+<!-- Questions. Optional: absent means the 题目 tab says so. -->
+<script src="data/questions.js"></script>
+<script src="data/questions_ch6.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
