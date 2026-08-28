@@ -141,7 +141,56 @@ def source_text(nid):
     return " ".join(out)
 
 
+def reachable_text(nid, node_topic):
+    """What the reader actually sees when they open this node: the merged chain if the
+    topic is merged, otherwise the node's own spine."""
+    tk = node_topic.get(nid)
+    sp = spines.get("key:" + tk) if tk and ("key:" + tk) in spines else spines.get(nid)
+    return merged_text(sp) if sp else ""
+
+
+def cmd_by_node(argv):
+    """Every node of both books, scored against the full app's own point-by-point content.
+
+    This is the audit the reader asked for: 按着 pro 的两本书所有节点查. For each node it
+    takes the points the full app holds and asks how many are represented in whatever
+    this app shows at that node. A node scoring low is one where opening it in the lite
+    app gives less than the full app has — which is the point of a thread, up to a
+    point, and a loss past it.
+    """
+    node_topic = {n["id"]: n.get("topicKey") for n in nodes}
+    rows = []
+    for n in nodes:
+        nid = n["id"]
+        pts = (topics.get(nid) or {}).get("points") or []
+        if not pts:
+            continue
+        text = reachable_text(nid, node_topic)
+        twords = words(text)
+        missed = []
+        for p in pts:
+            if not isinstance(p, dict):
+                continue
+            w = words(p.get("en") or "")
+            if len(w) < 5:
+                continue
+            if len(w & twords) / len(w) < 0.35:
+                missed.append((p.get("cz") or p.get("en") or "")[:70])
+        rows.append((len(missed), len(pts), nid, node_topic.get(nid), missed))
+    rows.sort(reverse=True)
+    worst = [r for r in rows if r[0]]
+    print("%d node(s) with point-by-point content; %d have at least one point that does "
+          "not appear where the reader lands" % (len(rows), len(worst)))
+    for miss, tot, nid, tk, missed in worst[:int(argv[0]) if argv else 25]:
+        print("\n%-10s %-32s %d of %d points not represented" % (nid, tk or "-", miss, tot))
+        for m in missed[:6]:
+            print("     - %s" % m)
+    return 0
+
+
 def main(argv):
+    if argv and argv[0] == "--by-node":
+        return cmd_by_node(argv[1:])
     keys = sorted(k for k in spines if k.startswith("key:"))
     if argv:
         keys = argv

@@ -167,6 +167,24 @@
 .topic-item:hover { background: var(--bg-sink); }
 .topic-item.current { color: var(--fg); font-weight: 600; }
 
+/* Subject blocks above the topic rows. 78 merged topics is a long flat list to hunt
+   through when all you know is that you want "the lipid one", so the sidebar is cut
+   into ten blocks. Sticky, because the block you are inside is the thing you lose
+   track of while scrolling. */
+.area-head {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: baseline; gap: 0.4rem;
+  padding: 0.5rem 0.75rem 0.4rem; margin-top: 0.9rem;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--accent);
+}
+.area-head:first-child { margin-top: 0; }
+.area-head .area-name { flex: 1; min-width: 0; }
+.area-head .area-count {
+  font-weight: 400; letter-spacing: 0; color: var(--fg-dim);
+}
+
 /* Topic groups, not book/chapter groups: one heading per subject, with the
    Lehninger node first inside it. */
 .tk-head {

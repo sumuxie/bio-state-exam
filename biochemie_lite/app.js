@@ -425,6 +425,68 @@
     return out;
   }
 
+  /* The sidebar is 78 rows once every topic is merged, which is a long flat list to
+     hunt through when you know only that you want "the lipid one". These are the
+     subject blocks the reader asked for. Order is a study order, not the books' —
+     foundations, then the three classes of molecule, then what is done with them.
+     Every topicKey appears exactly once; anything not listed falls through to a final
+     block, so adding a topic to nodes.js can never make it disappear from the sidebar. */
+  const AREAS = [
+    { cn: '基础', en: 'Foundations', keys: [
+      'cells-and-biomolecules', 'water-and-weak-interactions', 'bioenergetics-basics',
+      'bioenergetics-and-thermodynamics', 'atp-and-phosphoryl-transfer',
+      'biological-redox', 'biochemical-reaction-logic', 'origin-and-evolution-of-life'] },
+    { cn: '氨基酸与蛋白质', en: 'Amino acids and proteins', keys: [
+      'amino-acids', 'peptides-and-proteins', 'protein-primary-structure',
+      'protein-structure-overview', 'protein-tertiary-quaternary',
+      'protein-folding-and-denaturation', 'oxygen-binding-proteins', 'motor-proteins',
+      'working-with-proteins', 'exploring-protein-function',
+      'protein-targeting-and-degradation'] },
+    { cn: '酶', en: 'Enzymes', keys: [
+      'enzymes-introduction', 'enzyme-kinetics', 'enzyme-mechanism', 'regulatory-enzymes'] },
+    { cn: '核酸与遗传信息', en: 'Nucleic acids and genetic information', keys: [
+      'nucleotides', 'nucleic-acid-chemistry', 'dna-supercoiling', 'chromosome-structure',
+      'dna-replication', 'dna-repair', 'dna-recombination', 'transcription',
+      'rna-dependent-synthesis', 'genetic-code', 'translation', 'gene-regulation-proteins',
+      'recombinant-dna-technology', 'genomics'] },
+    { cn: '糖类', en: 'Carbohydrates', keys: [
+      'monosaccharides', 'polysaccharides', 'glycoconjugates', 'feeder-pathways-glycolysis',
+      'glycolysis', 'fates-of-pyruvate', 'gluconeogenesis', 'glycogen-metabolism',
+      'pentose-phosphate-pathway', 'starch-sucrose-biosynthesis'] },
+    { cn: '脂类与膜', en: 'Lipids and membranes', keys: [
+      'storage-lipids', 'membrane-lipids', 'lipid-signals-and-pigments',
+      'working-with-lipids', 'fat-mobilization', 'fatty-acid-oxidation',
+      'fatty-acid-biosynthesis', 'cholesterol-and-isoprenoids', 'membrane-architecture',
+      'membrane-transport'] },
+    { cn: '能量代谢', en: 'Energy metabolism', keys: [
+      'citric-acid-cycle', 'respiratory-chain', 'intermediary-metabolism-hub',
+      'metabolic-regulation'] },
+    { cn: '氮代谢', en: 'Nitrogen metabolism', keys: [
+      'amino-group-metabolism', 'urea-cycle', 'amino-acid-degradation',
+      'amino-acid-biosynthesis', 'amino-acid-derived-molecules', 'nucleotide-metabolism',
+      'nitrogen-metabolism'] },
+    { cn: '光合作用', en: 'Photosynthesis', keys: [
+      'photosynthetic-pigments', 'photochemical-reaction-centers', 'co2-assimilation',
+      'photorespiration-c4-cam'] },
+    { cn: '整合与疾病', en: 'Integration and disease', keys: [
+      'hormone-structure-and-action', 'tissue-specific-metabolism', 'obesity-and-body-mass',
+      'diabetes-mellitus', 'cell-cycle-control', 'oncogenes-and-apoptosis'] }
+  ];
+
+  function groupsByArea() {
+    const byKey = new Map();
+    groups().forEach((g) => byKey.set(g.key, g));
+    const out = [], placed = new Set();
+    AREAS.forEach((a) => {
+      const gs = a.keys.map((k) => byKey.get(k)).filter(Boolean);
+      gs.forEach((g) => placed.add(g.key));
+      if (gs.length) out.push({ area: a, gs: gs });
+    });
+    const rest = groups().filter((g) => !placed.has(g.key));
+    if (rest.length) out.push({ area: { cn: '其他', en: 'Other' }, gs: rest });
+    return out;
+  }
+
   function groupLabel(g) {
     const lead = g.members.find(hasSpine) || g.members[0];
     return titleOf(lead, state.lang === 'cn' ? 'cn' : 'en');
@@ -441,7 +503,15 @@
      merge is finished, against 281 before it. */
   function renderSidebar() {
     let html = '';
-    groups().forEach((g) => {
+    groupsByArea().forEach((block) => {
+      /* Count first, emit the heading only if something in the block survives the
+         filter — otherwise a search leaves a column of empty headings. */
+      const live = block.gs.filter((g) => g.members.some(matches));
+      if (!live.length) return;
+      html += '<div class="area-head"><span class="area-name">'
+            + esc(state.lang === 'en' ? block.area.en : block.area.cn)
+            + '</span><span class="area-count">' + live.length + '</span></div>';
+      live.forEach((g) => {
       const shown = g.members.filter(matches);
       if (!shown.length) return;
       const lead = g.members.find(isMerged);
@@ -471,6 +541,7 @@
               + '<span class="ti-title">' + mdBold(titleOf(n, state.lang === 'cn' ? 'cn' : 'en')) + '</span>'
               + (stars ? '<span class="ti-stars">★' + stars + '</span>' : '')
               + (hasSpine(n) ? '<span class="ti-done">●</span>' : '') + '</button>';
+      });
       });
     });
     $('#topic-list').innerHTML = html || '<p class="no-results">No match 没有匹配</p>';
