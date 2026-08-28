@@ -397,8 +397,8 @@ window.BIOLITE_SPINE["key:fat-mobilization"] = {
     {
       link_en: "activation happens in two steps, through an intermediate too short-lived to isolate",
       link_cn: "活化分两步走，中间经过一个短命到抓不住的中间体",
-      en: "In the first step the free fatty acid reacts with ATP and coenzyme A, and inorganic pyrophosphate leaves. **What forms is an acyl-adenylate, the fatty acid joined to AMP, and it is unstable and transient rather than a compound that accumulates and can be isolated.**",
-      cn: "第一步，游离脂肪酸与 ATP 和辅酶 A 反应，无机焦磷酸离去。**生成的是酰基腺苷酸，也就是脂肪酸接在 AMP 上；它不稳定、瞬时，并不是一个会积累起来、可以分离出来的化合物。**",
+      en: "In the first step the free fatty acid reacts with ATP and coenzyme A, inorganic pyrophosphate leaves, and the intermediate is written RCH₂CO-AMP — the acyl group of the fatty acid carried on AMP. **What forms is an acyl-adenylate, the fatty acid joined to AMP, and it is unstable and transient rather than a compound that accumulates and can be isolated.**",
+      cn: "第一步，游离脂肪酸与 ATP 和辅酶 A 反应，无机焦磷酸离去，中间体写作 RCH₂CO-AMP——脂肪酸的酰基挂在 AMP 上。**生成的是酰基腺苷酸，也就是脂肪酸接在 AMP 上；它不稳定、瞬时，并不是一个会积累起来、可以分离出来的化合物。**",
       src: "B §8.4.4, p.195"
     },
     {

@@ -345,8 +345,8 @@ window.BIOLITE_SPINE["key:hormone-structure-and-action"] = {
       link_cn: "而这四种里的第四种是慢的 —— 理由核内机制那一步已经给过了",
       recall_en: "the steroid route makes new protein instead of modifying protein that is already there",
       recall_cn: "类固醇那条路产出的是新蛋白，而不是修饰已经在场的蛋白",
-      en: "Cortisol is released by anxiety, fear, pain, haemorrhage, infection, low blood glucose and starvation. **Cortisol changes the kinds and amounts of enzymes its target cells synthesise instead of regulating enzymes that already exist, and that one difference is why steroid hormones are slow.** Insulin, glucagon and epinephrine phosphorylate enzymes that are already present and act in seconds to minutes; cortisol has to have new enzymes transcribed and translated, and acts over hours. Leaving it switched on has a price: sustained release damages muscle and bone and impairs endocrine and immune function, overproduction gives Cushing disease, and underproduction gives Addison disease.",
-      cn: "皮质醇由焦虑、恐惧、疼痛、失血、感染、低血糖和饥饿所释放。**皮质醇改变的是靶细胞合成哪些酶、合成多少，而不是去调节已经存在的酶 —— 仅这一点差别，就是类固醇激素为什么慢的原因。**胰岛素、胰高血糖素与肾上腺素磷酸化的是本来就在场的酶，作用以秒到分钟计；皮质醇必须先让新的酶被转录、再被翻译，作用以小时计。让它一直开着是有代价的：持续释放会损伤肌肉与骨骼、损害内分泌与免疫功能；产生过多是库欣病，产生不足是艾迪生病。",
+      en: "Cortisol is released by anxiety, fear, pain, haemorrhage, infection, low blood glucose and starvation. **Cortisol changes the kinds and amounts of enzymes its target cells synthesise instead of regulating enzymes that already exist, and that one difference is why steroid hormones are slow.** Insulin, glucagon and epinephrine phosphorylate enzymes that are already present and act in seconds to minutes; cortisol has to have new enzymes transcribed and translated, and acts over hours. Leaving it switched on has a price, and it is the predictable one for a hormone whose job is to break muscle protein down for gluconeogenic carbon: sustained release damages muscle and bone and impairs endocrine and immune function. A pituitary tumour driving the adrenal glands to overproduce cortisol is Cushing disease; underproduction is Addison disease, treated by giving hydrocortisone, which is only the pharmaceutical name for cortisol itself.",
+      cn: "皮质醇由焦虑、恐惧、疼痛、失血、感染、低血糖和饥饿所释放。**皮质醇改变的是靶细胞合成哪些酶、合成多少，而不是去调节已经存在的酶 —— 仅这一点差别，就是类固醇激素为什么慢的原因。**胰岛素、胰高血糖素与肾上腺素磷酸化的是本来就在场的酶，作用以秒到分钟计；皮质醇必须先让新的酶被转录、再被翻译，作用以小时计。让它一直开着是有代价的，而对一个以「分解肌肉蛋白取得生糖碳骨架」为职责的激素来说，这代价完全可以预料：持续释放会损伤肌肉与骨骼、损害内分泌与免疫功能。垂体瘤驱使肾上腺过量分泌皮质醇，就是库欣病；分泌不足则是艾迪生病，治疗办法是给予氢化可的松——那不过是皮质醇本身的药品名。",
       src: "A pp.865–866"
     },
     {
@@ -364,6 +364,42 @@ window.BIOLITE_SPINE["key:hormone-structure-and-action"] = {
       en: "**A hormone carries no instruction of its own: what it does is decided by which receptor the receiving cell carries and which enzymes that receptor can reach.** Two nonapeptides differing at two positions do unrelated jobs, and one cyclic AMP signal means different things in different tissues, for that one reason. Four mechanisms of action, four chemical classes that do not line up with them, eighteen rows of a table, and the same blood carrying every one of those hormones past every cell in the body.",
       cn: "**激素本身不携带任何指令：它做什么，由接收它的细胞带着哪一种受体、以及那个受体够得到哪些酶来决定。**两个只差两个位置的九肽干着毫不相干的活，同一个环化 AMP 信号在不同组织里意味着不同的事 —— 都出于这同一个理由。四种作用机制，四个与之并不对齐的化学分类，一张十八行的表，以及同一份血液把其中每一种激素送过身体里的每一个细胞。",
       src: "B §10.3, pp.222–228 · A pp.408–411"
+    },
+    {
+      link_en: "one habit of this whole subject will mislead you if nobody says it out loud",
+      link_cn: "这门课有一个习惯，没人点破的话会一路误导你",
+      en: "A signalling protein is typically discovered in one context and named after it, and then turns out to do something else entirely. **A signalling protein's name records the accident of who first ran into it and where, not a description of what it does** — so a name is never an argument about function, and meeting the same protein again under a different heading is normal rather than a sign that something has gone wrong. In this subject that is the rule and not the exception.",
+      cn: "一个信号蛋白通常是在某一个场景里被发现、并据此命名的，后来却发现它干的完全是另一件事。**信号蛋白的名字记录的是「当年谁在哪里先撞见它」这个偶然，而不是对它功能的描述——所以名字永远不能拿来推功能；在另一个标题下再次遇到同一个蛋白是正常的，不是哪里出了问题。**在这门课里，这是常态而非例外。",
+      src: "A p.411"
+    },
+    {
+      link_en: "and the two enzymes the breakdown cascade acts on have another hormone pushing them the other way",
+      link_cn: "而分解那套级联作用的那两个酶，还有另一个激素在把它们往反方向推",
+      recall_en: "the reciprocal pair from glycogen metabolism, so far seen only being switched toward breakdown",
+      recall_cn: "糖原代谢里那对互反的酶，之前只见过它们被推向分解的一侧",
+      en: "In the liver insulin activates glycogen synthase and inactivates glycogen phosphorylase — the same two enzymes adrenaline and glucagon push the other way through the cyclic AMP cascade. **With both directions in view the reciprocal design stops being a diagram convention and becomes a description of two physiological states**: synthase active and phosphorylase off after a meal, the reverse between meals. One pair of enzymes, two hormones, and the direction is the whole message.",
+      cn: "在肝里，胰岛素激活糖原合酶、使糖原磷酸化酶失活——正是肾上腺素和胰高血糖素通过环腺苷酸级联往反方向推的那两个酶。**两个方向同时在场时，那种互反设计就不再是作图惯例，而是对两种生理状态的描述：餐后合酶开、磷酸化酶关，两餐之间反过来。**一对酶、两个激素，而方向就是全部信息。",
+      src: "A p.859",
+      see: [
+        { id: "L-15-3-1", en: "the same two enzymes with the cascade that switches them", cn: "同样这两个酶，以及切换它们的那套级联" }
+      ]
+    },
+    {
+      link_en: "before the fasting programme, it is worth counting what there actually is to live on",
+      link_cn: "在讲饥饿程序之前，值得先数一数究竟有多少存货可以过活",
+      en: "A healthy adult carries three kinds of fuel reserve: glycogen, triacylglycerol and tissue protein. In a 70 kg man that is about 15 kg of adipose triacylglycerol against 0.23 kg of glycogen in total — roughly sixtyfold in mass and much more than that in energy. **Fat could keep a basal metabolic rate running for about three months, and a very obese adult carries enough to endure a fast of more than a year, while glycogen is exhausted within a day.** That one-day figure is why a fasting programme has to exist at all.",
+      cn: "一个健康成年人带着三类燃料储备：糖原、三酰甘油、组织蛋白。以一名 70 kg 男性计，脂肪组织三酰甘油约 15 kg，而糖原总共只有 0.23 kg——质量上差约六十倍，能量上差得更多。**脂肪足以维持基础代谢率约三个月，一个非常肥胖的成年人所存的燃料够撑一年以上的禁食，而糖原一天之内就会耗尽。**正是这个「一天」，使得那套饥饿程序不得不存在。",
+      src: "A pp.863-864, Table 23-5"
+    },
+    {
+      link_en: "and that programme has one consequence nobody guesses from the fat alone",
+      link_cn: "而那套程序有一个后果，光看脂肪是猜不出来的",
+      en: "In starvation the liver degrades the proteins most expendable in an organism that is not eating and feeds their carbon skeletons into gluconeogenesis. That drains the citric acid cycle's own intermediates, oxaloacetate among them, so entry of acetyl-CoA into the cycle is inhibited and acetyl-CoA accumulates. **Fatty acid oxidation keeps producing acetyl-CoA the cycle can no longer accept, and that — not an excess of fat by itself — is why ketone bodies rise in blood after a few days of fasting.** The flood is real, but the reason the cycle stops absorbing it is that its four-carbon acceptor has been spent making glucose.",
+      cn: "饥饿时，肝会降解自身蛋白中「对一个不再进食的机体最可有可无」的那一部分，把碳骨架送进糖异生。这会抽干三羧酸循环自己的中间产物，草酰乙酸也在其中，于是乙酰-CoA 进入循环受阻、开始堆积。**脂肪酸氧化仍在不断产出循环已无法接纳的乙酰-CoA——正是这一点、而不仅仅是「脂肪太多」，才是禁食几天后血中酮体升高的原因。**淹没是真的，但循环之所以不再吸收它，是因为它那个四碳受体已经被拿去造葡萄糖了。",
+      src: "A p.864",
+      see: [
+        { id: "8-4-4-3", en: "ketone bodies as the Czech account states them, as a conclusion", cn: "捷克书里的酮体，是作为结论陈述的" }
+      ]
     }
   ]
 };
