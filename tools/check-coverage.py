@@ -230,11 +230,51 @@ def cmd_missing(argv):
     return 0
 
 
+def cmd_thin(argv):
+    """The material a merged chain mentions but carries thinly.
+
+    `--missing` finds what is absent. This finds what is present at 35-50% word
+    overlap: named, but named so briefly that the detail behind it may be gone. It is
+    the band the coverage threshold sits in, and a threshold on a slope is a judgement
+    rather than a measurement — so this prints the source text and lets a reader
+    decide, one item at a time.
+    """
+    topic = argv[0][4:] if argv[0].startswith("key:") else argv[0]
+    node_topic = {n["id"]: n.get("topicKey") for n in nodes}
+    sp = spines.get("key:" + topic)
+    if not sp:
+        print("!! no merged spine for %s" % topic)
+        return 1
+    tw = words(merged_text(sp))
+    shown = 0
+    for nid in [n["id"] for n in nodes if node_topic.get(n["id"]) == topic]:
+        pro = topics.get(nid) or {}
+        items = [("POINT", p.get("cz") or "", p.get("en") or "", p.get("cn") or "")
+                 for p in (pro.get("points") or []) if isinstance(p, dict)]
+        items += [("TERM", t.get("cz") or t.get("en") or "", t.get("def_en") or "",
+                   t.get("def_cn") or "") for t in (pro.get("terms") or []) if isinstance(t, dict)]
+        for kind, lab, en, cn in items:
+            w = words(en)
+            if len(w) < 5:
+                continue
+            f = len(w & tw) / len(w)
+            if not (0.35 <= f < 0.5):
+                continue
+            shown += 1
+            print("\n---- %s  pages %s  [%s %d%%] %s" % (nid, pro.get("pages"), kind, f * 100, lab))
+            print("  EN: %s" % en)
+            print("  CN: %s" % cn)
+    print("\n-- %s: %d thinly-carried item(s)" % (topic, shown))
+    return 0
+
+
 def main(argv):
     if argv and argv[0] == "--by-node":
         return cmd_by_node(argv[1:])
     if argv and argv[0] == "--missing":
         return cmd_missing(argv[1:])
+    if argv and argv[0] == "--thin":
+        return cmd_thin(argv[1:])
     keys = sorted(k for k in spines if k.startswith("key:"))
     if argv:
         keys = argv
