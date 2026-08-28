@@ -261,6 +261,9 @@ window.BIOLITE_SPINE["key:photochemical-reaction-centers"] = {
   title_en: "The one place in a leaf where light stops being energy, why a plant needs two photosystems where a bacterium needs one, and the counting problems that follow",
   title_cn: "叶子里唯一让光不再是能量的那个位置、为什么细菌一个光系统就够而植物要两个，以及由此产生的几个「数目对不上」",
   terms: [
+    { en: "quantum yield", cn: "量子产额",
+      def_en: "The fraction of excitations that lead to the desired outcome. Its high value in an intact photosynthetic system shows that electron donation to the primary acceptor outcompetes the two alternative ways of losing an excitation, fluorescence and conversion into heat, which remain available and simply lose the race.",
+      def_cn: "激发中导向目标结果的那一部分所占的比例。它在完整光合系统里数值很高，这说明「把电子交给初级受体」压倒了另外两条失去激发的途径——荧光与转化为热；那两条路依然存在，只是竞争不过它。" },
     { en: "what the thylakoid membrane borrows and what it adds", cn: "类囊体膜借来的与新增的",
       def_en: "Structurally and functionally the closest relative of a thylakoid membrane is the inner mitochondrial membrane, the seat of the respiratory chain. It holds fewer phospholipids and carries glycolipids in addition — monogalactosyldiacylglycerol, digalactosyldiacylglycerol and sulfoquinovosyldiacylglycerol. Its electron and proton carriers are analogues of the mitochondrial ones: quinones, cytochromes, iron-sulfur proteins, flavoproteins, NADP oxidized or reduced. Exactly two components have no mitochondrial counterpart — plastocyanin, a blue copper protein of relative molecular mass 1 to 2 times ten thousand, broad absorption maximum near 597 nanometres, standard potential at pH 7 of 370 millivolts; and the oxygen-evolving complex, made only of non-pigmented proteins.",
       def_cn: "类囊体膜在结构和功能上最近的亲戚，是呼吸链所在的线粒体内膜。它的磷脂较少，另外带糖脂 —— 单半乳糖基二酰基甘油、双半乳糖基二酰基甘油、硫代异鼠李糖基二酰基甘油。它的电子与质子载体都是线粒体那套的类似物：醌类、细胞色素、铁硫蛋白、黄素蛋白，以及氧化态或还原态的 NADP。真正在线粒体里找不到对应物的只有两样 —— 质体蓝素 (plastocyanin)，一种蓝色含铜蛋白，相对分子质量 1 到 2 万，宽吸收峰约 597 nm，pH 7 下标准电位 370 mV；以及放氧复合体 (OEC)，它完全由非色素蛋白构成。" },
@@ -452,8 +455,7 @@ window.BIOLITE_SPINE["key:photochemical-reaction-centers"] = {
       link_cn: "还有一件事没了结：P680⁺ 还缺一个电子，而补给来源是水",
       en: "P680+ has to be given an electron back before it can absorb another photon, and the donor is water. Two obstacles stand in the way, and they are different obstacles. The first is energy: a single photon of visible light does not carry enough of it to break a bond in water, so four photons are required for the cleavage. **The second is counting: oxidising two waters to one O2 releases four electrons at once while P680+ accepts one at a time, so a device is needed turning four one-electron events into one.**",
       cn: "P680⁺ 必须先把电子补回来，才能再吸收下一个光子，而供体是水。挡在中间的有两个障碍，而且性质不同。第一个是能量：可见光的单个光子不足以打断水中的化学键，所以这次裂解需要四个光子。**第二个是数目：把两个水分子氧化成一个 O₂，一次要放出四个电子，而 P680⁺ 一次只收一个 —— 所以需要的是一台把四次单电子事件攒成一次四电子事件的装置。**",
-      src: "A pp.714–715",
-      see: [{ id: "9-9", en: "the oxygen-evolving complex, named there and left unexplained", cn: "放氧复合体 —— 那里给了名字，没有给化学" }]
+      src: "A pp.714–715"
     },
     {
       link_en: "that device is a piece of inorganic chemistry bolted to the lumen face of PS II",

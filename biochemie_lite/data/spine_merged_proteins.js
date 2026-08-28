@@ -130,11 +130,7 @@ window.BIOLITE_SPINE["key:amino-acids"] = {
       recall_cn: "与第 1 组相反：这些侧链被水吸引，而不是躲着水",
       en: "A polar group has its charge unevenly distributed, so water is attracted to it. **Group 2, the polar side chains, carries an –OH group in threonine, serine and tyrosine, an amide group in asparagine and glutamine, or an –SH group in cysteine**; group 3, the negatively charged, holds glutamic acid and aspartic acid; group 4, the positively charged, holds lysine, arginine and histidine. What makes group 3 negative is a second carboxyl group carried in the side chain itself, and what makes group 4 positive is a second amino group in lysine, a guanidino group in arginine, and in histidine a weakly basic imidazole residue, which is a five-membered ring containing two nitrogen atoms. Cysteine and tyrosine are the most polar of group 2, and glycine, whose side chain is a single hydrogen atom, is very hard to place in this sort at all.",
       cn: "极性基团的电荷分布不均匀，因而会吸引水。**第 2 组是极性侧链：或含 –OH 基（苏氨酸、丝氨酸、酪氨酸），或含酰胺基（天冬酰胺、谷氨酰胺），或含 –SH 基（半胱氨酸）；第 3 组带负电，成员是谷氨酸和天冬氨酸；第 4 组带正电，成员是赖氨酸、精氨酸和组氨酸。**使第 3 组带负电的，是侧链上自带的第二个羧基；使第 4 组带正电的，是赖氨酸的第二个氨基、精氨酸的胍基，以及组氨酸的弱碱性咪唑残基——那是一个含两个氮原子的五元环。第 2 组里极性最强的是半胱氨酸和酪氨酸；而甘氨酸的侧链只是一个氢原子，很难被放进这套分类。",
-      src: "B §2.1.1, p.21",
-      see: [
-        { id: "E-histidine", en: "histidine, the one side chain that changes charge at the pH your cells run at", cn: "组氨酸 —— 唯一一个在细胞工作 pH 上改变电荷的侧链" },
-        { id: "E-cysteine", en: "what the –SH group of cysteine goes on to do", cn: "半胱氨酸的 –SH 基后来会去做什么" }
-      ]
+      src: "B §2.1.1, p.21"
     },
     {
       link_en: "charge is one property of an amino acid. Shape is the other, and it starts at a single carbon",
@@ -232,6 +228,64 @@ window.BIOLITE_SPINE["key:amino-acids"] = {
       see: [
         { id: "L-3-3-1", en: "ion exchange, isoelectric focusing and electrophoresis worked through on a real purification", cn: "在一次真实纯化中走完离子交换、等电聚焦与电泳" },
         { id: "2-2-6", en: "the same separations applied to whole proteins, and how a protein's mass is measured", cn: "同样的分离用在完整蛋白质上，以及蛋白质的质量怎么测" }
+      ]
+    },
+    {
+      link_en: "a table of pKa values invites one more question, and the answer is a habit worth having",
+      link_cn: "一张 pKa 表还引出一个问题，而答案是一个值得养成的习惯",
+      en: "A pKa printed in a table is not a constant of nature. Like every equilibrium constant it is defined for a stated concentration and temperature, and concentrated buffers do not behave ideally. Dihydrogen phosphate is quoted both as 7.2 and as 6.86: the higher figure is an apparent pKa at 25 °C uncorrected for buffer concentration, the lower one is corrected and measured at the physiological 37 °C, which is why Lehninger uses 6.86 throughout. **If a pKa you are given differs from the one you remember, the honest answer is to ask under what conditions it was measured, not to assume one of them is wrong.** Carbonic acid carries the same discrepancy.",
+      cn: "表上印的 pKa 不是自然常数。和每一个平衡常数一样，它是在给定的浓度和温度下定义的，而浓缓冲液并不理想。磷酸二氢根既被写作 7.2 也被写作 6.86：高的那个是 25 °C 下未对缓冲液浓度作校正的表观 pKa，低的那个已作校正、并在生理的 37 °C 下测定 —— 这就是 Lehninger 全书采用 6.86 的原因。**如果给你的 pKa 和你记得的不一样，诚实的回答是反问它在什么条件下测的，而不是假定其中一个是错的。**碳酸也有同样的差异。",
+      src: "A p.59"
+    },
+    {
+      link_en: "three side chains have been named repeatedly without being followed, and they are special in three different ways",
+      link_cn: "有三条侧链一直被点到却没有被追下去，而它们「特殊」的方式各不相同",
+      en: "Tryptophan, histidine and cysteine each earn their own place, and sorting out how makes the whole set easier to hold. **A side chain can be special optically, electrostatically or covalently: tryptophan by its flat conjugated ring, histidine by a pKa near 6.0, cysteine by a thiol that forms a covalent bond.** Asked why an amino acid matters, decide first which of those three it is. Tryptophan's constants, for a question that asks flatly: Mr 204, pK1 2.38, pK2 9.39, pI 5.89, and no side-chain pKa at all — that absence is the reason it is grouped with the nonpolar ones. It is also one of only five amino acids that are both ketogenic and glucogenic, because the carbons of the indole ring leave by more than one route, and it gives the glyoxylic acid reaction, a colour reaction that the indole ring produces and the other nineteen do not.",
+      cn: "色氨酸、组氨酸、半胱氨酸各自值得单独一说，而把「怎么特殊」理清楚，整组就好记了。**侧链特殊的方式有三种：光学上、静电上、共价上——色氨酸靠它扁平的共轭环，组氨酸靠接近 6.0 的 pKa，半胱氨酸靠能形成共价键的巯基。**被问到某个氨基酸为什么重要时，先判断它属于哪一种。色氨酸的常数，供直接被问时用：Mr 204、pK1 2.38、pK2 9.39、pI 5.89，没有侧链 pKa —— 正是这个「没有」使它被归进非极性那一组。它还是仅有的五种同时生酮又生糖的氨基酸之一，因为吲哚环的碳不止一条去路；它也给出乙醛酸反应，那是吲哚环产生而其余十九种不产生的一个显色反应。",
+      src: "A p.59 · B §2.1.1, p.21"
+    },
+    {
+      link_en: "the flat ring does one more thing, and it is structural rather than analytical",
+      link_cn: "那个扁平的环还做一件事，而这件事是结构性的，不是分析上的",
+      recall_en: "the same two residues whose absorbance at 280 nm measures protein concentration",
+      recall_cn: "就是那两个在 280 nm 处的吸收被用来测蛋白浓度的残基",
+      en: "Tryptophan and tyrosine act as a membrane anchor, which is Lehninger's own term for it. **They sit at the depth where the acyl chains of a membrane meet the head groups, interacting with the lipid phase and with the water on both sides at once**, so a membrane protein is held at a particular depth rather than merely being inside the bilayer. A residue that can talk to both phases is exactly what an interface needs.",
+      cn: "色氨酸和酪氨酸充当膜锚（membrane anchor），这是 Lehninger 自己用的词。**它们待在膜上酰基链与头部基团相接的那个深度，同时与脂相和两侧的水相打交道；于是膜蛋白是被固定在一个特定深度上，而不只是「在双层里面」。**一个能同时和两相对话的残基，正是界面需要的东西。",
+      src: "A p.59"
+    },
+    {
+      link_en: "histidine's pKa near 6.0 is why it turns up wherever a proton has to move",
+      link_cn: "组氨酸的 pKa 接近 6.0，这就是它出现在一切需要搬运质子之处的原因",
+      en: "One decarboxylation turns histidine into histamine, a powerful vasodilator of animal tissues and the mediator of the allergic response, which also stimulates acid secretion in the stomach. **Cimetidine is a structural analogue of histamine that blocks its receptor and heals duodenal ulcers by shutting that acid secretion down** — an amino acid, one enzyme, a receptor and a blockbuster drug, the whole line running from one imidazole ring. The same ring appears as the catalytic triad Ser195–His57–Asp102 of chymotrypsin, where its job is to turn a serine hydroxyl into a usable nucleophile, which that hydroxyl cannot be on its own because its pKa is far too high.",
+      cn: "一步脱羧就把组氨酸变成组胺 —— 动物组织中强效的血管舒张剂、过敏反应的介质，同时还刺激胃酸分泌。**西咪替丁是组胺的结构类似物，阻断其受体、关掉胃酸分泌，从而治愈十二指肠溃疡 —— 一个氨基酸、一个酶、一个受体、一款重磅药，整条线索都出自一个咪唑环。**同一个环也出现在胰凝乳蛋白酶的催化三联体 Ser195–His57–Asp102 中，它在那里的职务是把一个丝氨酸羟基变成可用的亲核体 —— 单靠这个羟基自己做不到，因为它的 pKa 太高。",
+      src: "A p.822 · A p.59"
+    },
+    {
+      link_en: "and in the globin story three different histidines turn up, which is where the confusion lives",
+      link_cn: "而在珠蛋白的故事里出现了三个不同的组氨酸，混淆就出在这里",
+      en: "The three are told apart by what each one touches. **The proximal His — His93, also written F8 — is the residue that occupies one of the haem iron's two perpendicular coordination bonds and so anchors the haem to the protein**, while the distal His — His64, or E7 — is the one that never touches the iron at all and instead hydrogen-bonds the bound oxygen, raising O₂ affinity about 500-fold while doing nothing for CO. That is what makes the enhancement selective. His146, HC3 of the β subunit, is a third residue again — the Bohr-effect one, forming an ion pair that stabilises the T state. The same metal-coordinating chemistry is put to deliberate use in a His-tag: six or more histidines appended to a recombinant protein bind immobilised Ni²⁺ tightly enough to purify it from a crude extract in one step.",
+      cn: "这三个哪一个都可能被问到，所以要分清。**近端 His（His93 / F8）占据血红素铁两个垂直配位键之一，把血红素锚在蛋白上；远端 His（His64 / E7）从不接触铁，而是与已结合的氧形成氢键，使 O₂ 亲和力提高约 500 倍，却对 CO 毫无作用。**这正是这种增强具有选择性的原因。β 亚基上的 His146（HC3）又是第三个残基 —— 属于 Bohr 效应，形成离子对稳定 T 态。同一套金属配位化学被刻意拿来用，就是 His-tag：接在重组蛋白上的六个或更多组氨酸与固定化 Ni²⁺ 结合得足够牢，可以从粗提物里一步纯化出来。",
+      src: "A p.59",
+      see: [
+        { id: "L-5-1-1", en: "the proximal and distal histidines at work through a whole binding curve", cn: "近端与远端组氨酸在整条结合曲线上的作用" },
+        { id: "L-6-4-1", en: "the catalytic triad worked through as a mechanism", cn: "催化三联体作为一套机制被完整走一遍" }
+      ]
+    },
+    {
+      link_en: "the third of the three is special covalently, and that one bond is unlike every other side-chain contact",
+      link_cn: "三者中的第三个特殊在共价上，而那一根键与其余所有侧链接触都不同",
+      en: "Cysteine's sulfhydryl group contributes only modest polarity — the book calls cysteine an outlier on that count — but it is uniquely reactive, because it can be oxidised into a bond with a second cysteine. **A disulfide bridge is the only covalent bond formed between two side chains in a protein: it cannot be undone by buffer or detergent, and breaking it takes chemistry** — performic acid to oxidise, or DTT or β-mercaptoethanol to reduce, followed by capping the freed thiols. Getting the pairs right is a real problem rather than an automatic one, and the evidence for that is an enzyme built to fix it: protein-disulfide-isomerase shuffles the bonds until the native set is reached and clears out intermediates carrying the wrong cross-links.",
+      cn: "半胱氨酸的巯基提供的极性相当有限 —— 教材在这一点上称它为「异类」—— 但它的反应性独一无二，因为它能被氧化、与第二个半胱氨酸成键。**二硫桥是蛋白质中唯一由两条侧链之间形成的共价键：它无法被缓冲液或去污剂解开，要断它得动化学 —— 过甲酸氧化，或 DTT、β-巯基乙醇还原，随后还要把释出的巯基封端。**「配对配得对」是个真问题而不是自动发生的事，证据就是有一个酶专为此而生：蛋白二硫键异构酶不断试换，直到达成天然的那一组，并清除带错误交联的中间体。",
+      src: "A p.59"
+    },
+    {
+      link_en: "and in its reduced state the same thiol does two jobs a cell cannot do without",
+      link_cn: "而处在还原态时，同一个巯基做着两件细胞离不开的事",
+      en: "Free cysteine thiol is the cell's principal reducing agent, carried mostly as glutathione. **Glutathione is not only a defence against peroxide: acting through glutaredoxin it is a second source of reducing equivalents for ribonucleotide reductase**, so the same thiol that destroys an oxidant also supplies the electrons that turn ribonucleotides into deoxyribonucleotides. That is the committed step towards DNA. What happens when the supply fails is the commonest enzymopathy in humans: glucose-6-phosphate dehydrogenase deficiency affects some 400 million people, and without NADPH the glutathione pool cannot be held reduced, so an oxidant challenge — fava beans, 24 to 48 hours — lyses erythrocytes. It stays common because the malaria parasite is itself very sensitive to oxidative damage.",
+      cn: "游离的半胱氨酸巯基是细胞主要的还原剂，主要以谷胱甘肽的形式携带。**谷胱甘肽不只是对付过氧化物的防御：它经谷氧还蛋白起作用，是核糖核苷酸还原酶的第二个还原当量来源 —— 于是同一个销毁氧化剂的巯基，也提供了把核糖核苷酸变成脱氧核糖核苷酸的电子。**那是通向 DNA 的承诺步骤。供应一旦失灵会怎样，就是人类最常见的酶病：葡萄糖-6-磷酸脱氢酶缺乏症影响约四亿人，没有 NADPH 就无法把谷胱甘肽池维持在还原态，于是一次氧化冲击 —— 蚕豆，24 到 48 小时 —— 就使红细胞溶解。它之所以一直常见，是因为疟原虫本身对氧化损伤极为敏感。",
+      src: "A p.830 · A p.59",
+      see: [
+        { id: "L-22-3-1", en: "ribonucleotide reductase and the whole deoxyribonucleotide route", cn: "核糖核苷酸还原酶与整条脱氧核苷酸路线" }
       ]
     }
   ]

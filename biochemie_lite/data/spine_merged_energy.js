@@ -160,6 +160,22 @@ window.BIOLITE_SPINE["key:glycolysis"] = {
       en: "Pyruvate kinase, the last step, is inhibited by high ATP, by acetyl-CoA and by long-chain fatty acids, and it is activated by fructose 1,6-bisphosphate accumulating upstream, which is feed-forward control: the product of the committed step warns the last step that material is on its way. In liver, and only in liver, glucagon has protein kinase A phosphorylate this enzyme and switch it off, sparing glucose for export to the brain. Every one of those three inhibitors is a sign that the cell is already rich in fuel, so the list is one sentence: **stop making pyruvate when there is plainly enough energy about already**.",
       cn: "最后一步的丙酮酸激酶，被高浓度的 ATP、acetyl-CoA 和长链脂肪酸抑制；被上游积累起来的果糖-1,6-二磷酸激活 —— 后者是前馈控制：「作出承诺」那一步的产物提前通知最后一步「货在路上」。在肝里（而且只在肝里），胰高血糖素让蛋白激酶 A 把这个酶磷酸化并关掉，把葡萄糖省下来送去给脑。**那三个抑制剂，每一个都是「细胞燃料已经很富裕」的标志，所以整份清单其实是一句话：能量明明已经够了，就别再造丙酮酸了。**",
       src: "A p.544, §14.5, Fig. 14-26"
+    },
+    {
+      link_en: "one enzyme of the pathway has a second copy that behaves oppositely, and the trick is where it is kept",
+      link_cn: "这条通路里有一个酶还有第二份拷贝，行为相反，而窍门在于它被放在哪里",
+      recall_en: "the low-affinity liver enzyme from the control step, now with the mechanism that hides it",
+      recall_cn: "控制那一步里那个低亲和力的肝酶，现在补上把它藏起来的机制",
+      en: "Hexokinase IV, the liver enzyme, is regulated by being moved rather than by being inhibited. **A regulatory protein binds it and carries it into the nucleus when glucose is scarce, so the enzyme is sequestered away from its substrate; a rise in glucose releases it back to the cytosol.** Regulating an enzyme by changing where it is, rather than how fast it runs, is a mechanism worth recognising because nothing about the active site would ever reveal it. The general name for two forms of one activity is isozyme, and the clinical case is lactate dehydrogenase: heart and liver make different proportions of its subunits, so the ratio of the LDH1 and LDH2 forms in blood says which tissue the enzyme leaked from.",
+      cn: "肝里的己糖激酶 IV，调控方式是「被搬走」而不是「被抑制」。**葡萄糖稀缺时，一个调节蛋白结合它、把它带进细胞核，于是这个酶被隔离在底物够不着的地方；葡萄糖一升高，它又被放回胞质。**靠「改变酶在哪里」而不是「改变它跑多快」来调控，值得认出来——因为光看活性中心永远看不出这回事。同一种活性有两种形式，通名叫同工酶（isozyme）；临床上的例子是乳酸脱氢酶：心和肝造出的亚基比例不同，所以血里 LDH1 与 LDH2 的比值能说出这个酶是从哪个组织漏出来的。",
+      src: "A pp.539-546, Box 14-3"
+    },
+    {
+      link_en: "and two naming habits in the older literature will trip a reader who does not know them",
+      link_cn: "另外，旧文献里有两个命名习惯，不知道的人会被绊住",
+      en: "The same triose appears in one structural figure as 3-phosphoglyceraldehyde and in the running text as glyceraldehyde 3-phosphate — one molecule, two orders of naming the same substituent. **Hexokinase is the broad-specificity enzyme that phosphorylates many hexoses at carbon 6, which is what separates it from the liver's glucokinase**, and the bond by which the aldehyde is held to the dehydrogenase in the oxidation step is a thioester, a sulfur-carbonyl linkage that carries the energy of that oxidation. Counted per glucose the ledger is −1, −1, +2, +2, which is where the net gain of two ATP comes from.",
+      cn: "同一个丙糖，在一张结构图里写作「3-磷酸甘油醛」，在正文里写作「甘油醛-3-磷酸」——同一个分子，同一个取代基的两种命名顺序。**己糖激酶是那个特异性较宽、能把多种己糖在 6 号碳上磷酸化的酶，这正是它与肝里葡糖激酶的分别；而氧化那一步中醛基与脱氢酶之间的连接是硫酯键——一种承载着这次氧化能量的硫-羰基连接。**按每分子葡萄糖记账就是 −1、−1、+2、+2，净得两个 ATP 正是这么来的。",
+      src: "B §7.8.1-7.8.3, pp.164-167"
     }
   ],
   terms: [
@@ -319,6 +335,34 @@ window.BIOLITE_SPINE["key:glycogen-metabolism"] = {
       en: "Phosphoprotein phosphatase 1 strips the phosphoryl groups off all three enzymes the cascade phosphorylated, and its catalytic subunit is never free in the cytosol: a tissue-specific glycogen-targeting protein, GM in muscle and GL in liver, holds it on the granule beside its substrates, so specificity does not have to be built into its active site. Insulin tips the balance from the other side, by activating this phosphatase and by blocking glycogen synthase kinase 3 — a kinase phosphorylates the amino terminus of that enzyme, turning it into a fake substrate that jams its own binding site. The neatest handle is the last one: **active glycogen phosphorylase inhibits the phosphatase directly, so while breakdown is running the enzyme doing the breaking holds off the switch that would start synthesis** — an interlock against a futile cycle, built out of the parts of the pathway itself.",
       cn: "磷酸蛋白磷酸酶 1（PP1）能把级联磷酸化过的那三个酶身上的磷酰基统统摘掉；而它的催化亚基从不游离在胞质里：一个组织特异的糖原靶向蛋白（肌肉里是 GM，肝里是 GL）把它摁在颗粒上、紧挨着底物，于是特异性不必被造进活性位点。胰岛素则从另一侧压秤盘：它既激活这个磷酸酶，又封住糖原合酶激酶 3 —— 一个激酶去磷酸化那个酶的氨基末端，把那段序列变成一个假底物，恰好卡住它自己的结合位点。**最精妙的是最后一个把手：有活性的糖原磷酸化酶直接抑制这个磷酸酶 —— 分解正在进行时，那个正在拆糖原的酶亲自摁住了「启动合成」的开关；这是一个用通路自身零件搭出来的、防止无效循环的联锁装置。**",
       src: "A p.568–569, §15.3, Fig. 15-15b, Fig. 15-16"
+    },
+    {
+      link_en: "this enzyme is the textbook example of regulation, and it is worth knowing why it was chosen",
+      link_cn: "这个酶是调控的教科书例子，而它为什么被选中，值得知道",
+      en: "Glycogen phosphorylase earns the space it gets for four separate reasons, and they are four different exam topics meeting in one protein. **It was among the first allosterically regulated enzymes known, the first enzyme shown to be controlled by reversible phosphorylation**, one of the first allosteric enzymes whose active and inactive structures were both solved by x-ray crystallography, and it shows isozymes doing tissue-specific work. Carl and Gerty Cori found in the late 1930s that the skeletal-muscle enzyme exists in two interconvertible forms, the active phosphorylase a and the much less active phosphorylase b; Earl Sutherland then showed b predominates in resting muscle and that epinephrine converts it to a during vigorous activity, glucagon doing the same in liver. One naming trap comes with the history: this enzyme is so often called simply phosphorylase, because it was the first one found, that the bare word has stuck — but phosphorylase alone now names a whole class, so the full name is the safe one.",
+      cn: "糖原磷酸化酶配得上它占的篇幅，理由有四条，而这四条是四个不同的考试主题在同一个蛋白身上相遇。**它是最早为人所知的别构调节酶之一，是第一个被证明受可逆磷酸化控制的酶，是最早由 X 射线晶体学同时解出活性型与非活性型结构的别构酶之一，而且它演示了同工酶如何承担组织特异的工作。**1930 年代末 Carl 与 Gerty Cori 发现骨骼肌里这个酶以两种可互变的形式存在：有活性的磷酸化酶 a，和活性低得多的磷酸化酶 b；随后 Earl Sutherland 证明静息肌肉里以 b 为主，而剧烈活动时肾上腺素把它变成 a，肝里则由胰高血糖素做同样的事。历史还带来一个命名陷阱：因为它是第一个被发现的磷酸化酶，人们常常直接简称它 phosphorylase，这个简称就留下来了——但今天单说 phosphorylase 指的是一整类酶，所以说全名才稳妥。",
+      src: "A pp.565-566, §15.3"
+    },
+    {
+      link_en: "and the molecular detail of that conversion is short enough to hold as one sentence",
+      link_cn: "而那次转化的分子细节，短到可以当一句话记住",
+      en: "Phosphorylase b kinase transfers a phosphoryl group to Ser14 on each of the two identical subunits of phosphorylase b. **Two phosphates go on per enzyme molecule, at the cost of two ATP, and they trigger the conformational change from the T state, which is phosphorylase b, to the R state, which is phosphorylase a.** So this is the same T-to-R allosteric transition met in enzyme regulation, driven here by covalent modification instead of by a ligand — which is exactly why this enzyme sits in both stories at once. The reverse is the phosphatase's work: phosphoprotein phosphatase 1 strips those phosphoryl groups off and returns the enzyme to the less active b form, which in muscle is what happens as it returns to rest.",
+      cn: "磷酸化酶 b 激酶把一个磷酸基转移到磷酸化酶 b 两个相同亚基各自的 Ser14 上。**每个酶分子上去两个磷酸，代价是两个 ATP；它们触发从 T 态（即磷酸化酶 b）到 R 态（即磷酸化酶 a）的构象变化。**所以这就是在酶调控里见过的那次 T→R 别构转变，只是这里驱动它的是共价修饰而不是配体——这正是这个酶同时坐在两个故事里的原因。反向是磷酸酶的活：磷酸蛋白磷酸酶 1 把这些磷酸基摘掉，让酶回到活性较低的 b 型；在肌肉里，这发生在它回到静息的时候。",
+      src: "A pp.566-567, Fig. 15-11"
+    },
+    {
+      link_en: "and the cheapest way to check whether the pathway is really understood is to remove one enzyme at a time",
+      link_cn: "而检验这条通路是否真的懂了，最省事的办法是一次拿掉一个酶",
+      en: "Thirteen human glycogen storage diseases are catalogued, each naming an enzyme, an organ and a set of symptoms. Read them in pairs rather than as a list: **McArdle disease is muscle phosphorylase and Hers disease is liver phosphorylase — one enzymatic activity in two tissues giving two completely different clinical pictures**, which is the isozyme argument made by nature. Von Gierke disease is glucose 6-phosphatase itself and type Ib is the transporter that carries its substrate into the endoplasmic reticulum; the two give the same picture, which is what proves that compartmentation is real rather than a drawing convention. The others name the same enzymes this chain has already used — type 0 glycogen synthase, type III the debranching enzyme, type IV the branching enzyme, type II a lysosomal glucosidase, type VII muscle PFK-1, type XI the transporter GLUT2.",
+      cn: "人类糖原贮积病一共编目十三种，每一种都点名一个酶、一个器官和一组症状。**要成对地读，而不是当清单背：McArdle 病是肌肉磷酸化酶，Hers 病是肝磷酸化酶——同一种酶活性在两个组织里，给出两幅完全不同的临床图景，这是大自然亲手做出的同工酶论证。**von Gierke 病是葡萄糖-6-磷酸酶本身，而 Ib 型是把它的底物运进内质网的那个转运体；两者给出相同的图景，这恰恰证明区室化是真的，不是作图的惯例。其余几种点的都是这条链已经用过的酶——0 型是糖原合酶，III 型是脱支酶，IV 型是分支酶，II 型是溶酶体葡萄糖苷酶，VII 型是肌肉 PFK-1，XI 型是转运体 GLUT2。",
+      src: "A p.562, Box 15-1"
+    },
+    {
+      link_en: "one enzyme in the middle of the cascade goes by two names, and both are in circulation",
+      link_cn: "级联中间那个酶有两个名字，而且两个都在流通",
+      en: "Written end to end the cascade runs adrenaline or glucagon, then adenylate cyclase, then cyclic AMP, then the kinase that acts on phosphorylase kinase — protein kinase A, also written as the kinase of phosphorylase-kinase, which describes the job rather than naming the enzyme — and from there both branches at once, phosphorylase kinase b to a and glycogen synthase I to D. Synthesis is built the same way as breakdown is regulated: **the sugar is added by glycosyltransferases acting on monosaccharides activated as nucleoside diphosphates**, which is the general mechanism for building any polysaccharide and not a special arrangement for glycogen.",
+      cn: "把级联从头到尾写出来是：肾上腺素或胰高血糖素 → 腺苷酸环化酶 → 环腺苷酸 → 作用于磷酸化酶激酶的那个激酶——也就是蛋白激酶 A，也被写作「磷酸化酶激酶的激酶」，那是在描述它的活儿而不是给它命名——由此同时驱动两条分支：磷酸化酶激酶 b→a，以及糖原合酶 I→D。**合成的搭法与分解的调控同出一辙：糖是由糖基转移酶接上去的，底物是以核苷二磷酸形式活化的单糖——这是造任何多糖的通用机制，不是糖原专有的安排。**",
+      src: "B §7.12.1-7.12.2, pp.174-175"
     }
   ],
   terms: [
@@ -415,12 +459,26 @@ window.BIOLITE_SPINE["key:respiratory-chain"] = {
       src: "A pp.666–667"
     },
     {
+      link_en: "and the first machine's own equation names a form of ubiquinone no diagram draws",
+      link_cn: "而第一台机器自己的反应式里，出现了一种示意图从不画出的泛醌形式",
+      en: "Complex I can be designated NADH:ubiquinone oxidoreductase, and with a ubiquinone pool that is already half reduced its reaction reads NADH + H+ + 2 QH• ⇌ NAD+ + 2 QH2 — QH• being the semiquinone, the half-reduced radical form of ubiquinone, and QH2 being ubiquinol, the fully reduced form. Its core is a flavoprotein named NADH-dehydrogenase, a protein carrying the flavin nucleotide FMN as its prosthetic group. **Besides FMN the same protein carries iron-sulfur groups, whose iron is non-heme iron: bound straight to sulfur and to cysteine side chains, never inside the flat ring of a heme.**",
+      cn: "复合物 I 也可以写作 NADH:泛醌氧化还原酶；若泛醌池本来就已半还原，它的反应写作 NADH + H+ + 2 QH• ⇌ NAD+ + 2 QH2 —— 其中 QH• 是半醌，即泛醌被还原了一半的自由基形式，QH2 是泛醇，即完全还原的形式。它的核心是一个叫 NADH-脱氢酶的黄素蛋白，也就是以黄素核苷酸 FMN 作辅基的蛋白。**除 FMN 之外，这个蛋白还带着若干铁硫基团，其中的铁是非血红素铁：直接与硫原子和半胱氨酸侧链结合，而不是嵌在血红素那张扁平的环里。**",
+      src: "B §6.2.4, pp.141–142"
+    },
+    {
       link_en: "and Complex I is not the only door in — but every door opens onto the same room",
       link_cn: "而复合物 I 并不是唯一的入口 —— 但所有入口通向同一个房间",
       en: "Complex II is succinate dehydrogenase, the same enzyme already met as a step of the citric acid cycle, now seen as a second doorway; it hands electrons from succinate to the ubiquinone pool and pumps no protons at all. Three more routes deliver to the same pool: fatty acid oxidation through an electron-transferring flavoprotein, the glycerol 3-phosphate shuttle, and dihydroorotate dehydrogenase, which sits on the same face while building pyrimidine nucleotides. Ubiquinone is therefore a junction where separately taught subjects meet, and **since only the Complex I door pumps protons on the way in, what a fuel is worth in ATP is decided by which door its electrons come through**.",
       cn: "复合物 II 就是琥珀酸脱氢酶 —— 柠檬酸循环里早已认识的那个酶，如今被看作第二道门；它把电子从琥珀酸交进泛醌池，而且一个质子也不泵。另有三条路线通向同一个池子：脂肪酸氧化经电子转移黄素蛋白交货，3-磷酸甘油穿梭，以及二氢乳清酸脱氢酶（它在搭建嘧啶核苷酸时就长在这一侧面上）。**所以泛醌是一个路口，几个被分开讲授的主题在这里碰头；而由于只有复合物 I 那道门在进门时泵质子，一种燃料到底值多少 ATP，就由它的电子走哪道门决定。**",
       src: "CZ p.143, §6.2.4; A pp.668, 671–672",
       see: [{ id: "L-17-2-1", en: "fatty acid oxidation, where one set of those electrons starts", cn: "脂肪酸氧化 —— 其中一路电子的起点" }]
+    },
+    {
+      link_en: "the same complex carries one cofactor that does no electron transfer at all",
+      link_cn: "同一个复合物上还挂着一个根本不做电子传递的辅基",
+      en: "Complex II carries one more cofactor that the main electron route does not need, and that route runs succinate to FAD to three iron-sulfur centres to ubiquinone. Sitting off it is a heme b whose job is defensive — it lowers how often an electron leaks out of the complex onto O2 and makes a reactive oxygen species, a partly reduced form of oxygen that damages whatever it meets. **Mutations near that heme or near the ubiquinone site cause hereditary paraganglioma — a benign tumour of the carotid body, the organ in the neck that senses blood oxygen.** Mutations affecting the succinate-binding region are linked instead to degeneration in the central nervous system and to tumours of the adrenal medulla.",
+      cn: "复合物 II 还带着一个主电子通路并不需要的辅基；主通路走的是琥珀酸 → FAD → 三个铁硫中心 → 泛醌。坐在通路之外的是一个血红素 b，它的职责是防御性的 —— 降低电子从复合物里漏到 O2 上、生成活性氧（即部分还原的氧，遇到什么就损伤什么）的频率。**血红素 b 附近或泛醌结合位点附近的突变会引起遗传性副神经节瘤 —— 一种颈动脉体的良性肿瘤，而颈动脉体正是颈部那个感受血氧的器官。** 影响琥珀酸结合区域的突变则与中枢神经系统的退行性病变、以及肾上腺髓质的肿瘤相关。",
+      src: "A pp.671–672"
     },
     {
       link_en: "the third machine exists to solve a mismatch between two kinds of carrier",
@@ -439,6 +497,20 @@ window.BIOLITE_SPINE["key:respiratory-chain"] = {
       src: "CZ pp.144–145, §6.2.4; A pp.670, 674, figures 19-12, 19-18"
     },
     {
+      link_en: "and the small fraction that escapes has a source and a chemistry of its own",
+      link_cn: "而逃掉的那一小部分，有它自己的来源和化学",
+      en: "The electron that escapes to oxygen comes chiefly from ubisemiquinone, the half-reduced ubiquinone radical held at Complexes I and III, which can hand one electron straight to O2: O2 plus one electron gives superoxide. Superoxide is then reduced further to hydrogen peroxide and then to the hydroxyl radical, the most damaging of the three. Superoxide can also attack aconitase — a citric acid cycle enzyme built around a four-iron, four-sulfur centre — and release Fe2+, which then converts hydrogen peroxide into hydroxyl radical by the Fenton reaction. **Leakage rises when electrons enter the chain faster than they leave it for oxygen: a large proton gradient together with a high NADH to NAD+ ratio, a mitochondrion backed up.**",
+      cn: "逃逸出去的那个电子，主要来自泛半醌 —— 停在复合物 I 和 III 上的、被还原了一半的泛醌自由基；它可以把一个电子直接交给 O2：O2 加一个电子就得到超氧化物。超氧化物接着被还原成过氧化氢，再变成三者中破坏力最强的羟自由基。超氧化物还能攻击乌头酸酶 —— 柠檬酸循环里那个以四铁四硫中心为核心的酶 —— 把 Fe2+ 释放出来，后者再通过芬顿反应把过氧化氢变成羟自由基。**当电子进入呼吸链的速度快过它们流向氧的速度时，泄漏就会上升：那正是质子梯度很大、同时 NADH 与 NAD+ 之比很高的状态 —— 线粒体堵住了。**",
+      src: "A p.674, figure 19-18"
+    },
+    {
+      link_en: "and against all that the cell keeps three enzymes standing in a fixed relay",
+      link_cn: "而针对这一切，细胞备着三个酶，按固定顺序接力",
+      en: "The defence runs in a fixed order, and each enzyme hands its product to the next. Superoxide dismutase converts two superoxides plus two protons into hydrogen peroxide and O2; glutathione peroxidase then destroys that hydrogen peroxide, oxidising reduced glutathione — a small tripeptide whose cysteine thiol does the reducing — to its disulfide form GSSG; glutathione reductase regenerates the reduced form using NADPH from the pentose phosphate pathway or from nicotinamide nucleotide transhydrogenase. The same reduced glutathione also keeps protein thiol groups from being oxidised. **A low level of reactive oxygen species is not only damage: it also serves as a physiological signal of hypoxia that triggers metabolic adjustment.**",
+      cn: "防御是按固定顺序跑的，每个酶把产物交给下一个。超氧化物歧化酶把两个超氧化物加两个质子变成过氧化氢和 O2；谷胱甘肽过氧化物酶随后销毁这份过氧化氢，同时把还原型谷胱甘肽 —— 一个靠半胱氨酸巯基去还原的小三肽 —— 氧化成它的二硫形式 GSSG；谷胱甘肽还原酶再用 NADPH 把还原型再生出来，而这份 NADPH 来自磷酸戊糖途径，或来自烟酰胺核苷酸转氢酶。同样这份还原型谷胱甘肽也保护蛋白质的巯基不被氧化。**低水平的活性氧并不只是损伤：它同时充当一个生理性的缺氧信号，触发代谢上的调整 —— 所以「活性氧等于损伤」这个框架是不完整的。**",
+      src: "A p.674, figure 19-18"
+    },
+    {
       link_en: "so a gradient exists. That it is the only link to ATP synthesis took three experiments to prove",
       link_cn: "梯度是有了。但「它是通向 ATP 合成的唯一联系」，是靠三个实验证明的",
       en: "Peter Mitchell proposed that oxidation and ATP synthesis are joined by nothing but that gradient, with no shared chemical intermediate anywhere — which is why it was hard to believe. Three results settled it. Oligomycin binds the ATP synthase and touches no electron carrier, yet it stops respiration, because protons with no way back build a gradient until making it costs as much as electron transfer releases. Uncouplers do the opposite: 2,4-dinitrophenol and FCCP are weak acids soluble in the membrane charged or not, so they ferry protons back in privately, respiration races and the energy leaves as heat. And the decisive one: **mitochondria equilibrated at pH 9 and moved to pH 7 with valinomycin and no potassium made ATP, with nothing oxidised and nothing reduced** — a gradient assembled by hand was enough.",
@@ -451,6 +523,13 @@ window.BIOLITE_SPINE["key:respiratory-chain"] = {
       en: "ATP synthase has a knob in the matrix called F1 and a membrane-embedded part called Fo; strip F1 off and the vesicle leaks protons through the open pore and makes no ATP, put it back and coupling returns, so Fo is the channel and F1 is both the catalytic head and the stopper. Let purified F1 hydrolyse ATP in water made with heavy oxygen and the phosphate comes back carrying three or four labelled atoms instead of one, which can only mean the bond is broken and remade over and over while the phosphate still sits on the enzyme. Forming the bond is therefore not the hard part; **the enzyme binds finished ATP about ten million times more tightly than ADP, so the highest barrier is letting go** — and letting go is exactly what the proton gradient is spent on.",
       cn: "ATP 合酶有一个伸进基质的旋钮叫 F1，还有一段嵌在膜里的部分叫 Fo；把 F1 剥掉，囊泡就从敞开的孔道漏质子、造不出 ATP，把它装回去，偶联就恢复 —— 所以 Fo 是通道，F1 既是催化头也是塞子。让纯化的 F1 在用重氧做的水里水解 ATP，拿回来的磷酸带着三到四个被标记的氧原子，而不是一个；唯一的解释是：磷酸还停在酶上时，那根键被反复地断开又接上。**所以成键根本不是难的那一步：这个酶结合做好的 ATP 比结合 ADP 紧约一千万倍，最高的能垒是「松手」—— 而质子梯度花的正是这笔钱。**",
       src: "CZ pp.145–146, §6.2.4; A pp.677–678, figures 19-23, 19-24"
+    },
+    {
+      link_en: "and the membrane half of that enzyme is built of three parts, one of which never moves",
+      link_cn: "而这个酶埋在膜里的那一半由三个部件组成，其中一个从不移动",
+      en: "Fo is not a single piece either. Subunit a is the membrane protein holding the two half-channels a proton must pass through, and it is fixed in place; beside it a ring of c subunits turns, carrying the protons round. Two b subunits form a peripheral stalk that runs from subunit a up the outside of the enzyme and clamps the alpha-beta head, so the shaft rotates inside a head that is held still. **Without that stalk the head would simply turn with the shaft — and a motor whose stator turns together with its rotor does no work at all.**",
+      cn: "Fo 同样不是一整块。a 亚基是那个膜蛋白，质子必须经过的两条半通道就在它上面，而它是固定不动的；紧挨着它的是一圈 c 亚基组成的环，质子被这个环带着转。另有两个 b 亚基组成一根外周柄，从 a 亚基沿着酶的外侧上去，把 α β 头箍住，于是轴在一个被摁住不动的头里面转。**没有这根柄，头就会跟着轴一起转 —— 而一台定子跟着转子一起转的马达，根本做不了功。**",
+      src: "B §6.2.4, pp.145–146; A pp.679–680"
     },
     {
       link_en: "and letting go happens at one site at a time, because the head turns",
@@ -469,6 +548,13 @@ window.BIOLITE_SPINE["key:respiratory-chain"] = {
       src: "CZ pp.144–146, §6.2.4; A pp.682–686, figures 19-31, 19-32"
     },
     {
+      link_en: "and the older accounting comes with a picture saying where it thinks the protons leave",
+      link_cn: "而那套更早的算法配着一张图，图上标出了它认为质子从哪里出去",
+      en: "The older accounting can be read straight off the scheme drawn with it: proton-release arrows towards the cytosolic side appear beneath Complex III, four of them, and beneath Complex I, two — and beneath neither Complex II nor Complex IV. In that drawing only Complexes I and III feed the transmembrane proton gradient at all, which is a weaker claim than the modern one, where Complex IV pumps as well. Divide either pair and the same number falls out: six protons for three ATP, four protons for two ATP. **Two protons per ATP is what other textbooks call the P/O ratio, and it is worth carrying as an orientation figure rather than as a term used here.**",
+      cn: "那套更早的算法可以直接从与它配套的示意图上读出来：指向胞质侧的质子释放箭头画在复合物 III 下面，四个；画在复合物 I 下面，两个；而复合物 II 和复合物 IV 下面一个也没有。在那张图里，只有复合物 I 和 III 对跨膜质子梯度有贡献 —— 这比现代的说法弱，后者认为复合物 IV 也泵。把两个比例各自约一下，落出来的是同一个数：六个质子换三个 ATP，四个质子换两个 ATP。**每个 ATP 两个质子，正是别的教科书所说的「P/O 比值」；它值得当作一个方位感上的数字记住，而非这里在用的术语。**",
+      src: "B §6.2.4, pp.144–146"
+    },
+    {
       link_en: "and the same machine turns up in three compartments, which looks like a contradiction",
       link_cn: "同一台机器出现在三个区室里 —— 而这看上去像是自相矛盾",
       en: "A mitochondrion pumps protons out of the matrix with F1 facing in; a chloroplast pumps them into the space enclosed by the thylakoid, which is the flattened membrane sac inside a chloroplast, and its own catalytic head faces the other way, outward. Read as anatomy that is a reversal. Name the two faces by protons instead: the P side is the face protons are pumped to, crowded and more positive; the N side is the face they are pumped from. **In every case the catalytic head sits on the N side, protons flow P to N through the pore**, and ATP appears in the matrix, in the chloroplast stroma or in the bacterial cytosol, which are all N sides — the only thing reversed is which face happened to be called inside.",
@@ -476,12 +562,111 @@ window.BIOLITE_SPINE["key:respiratory-chain"] = {
       src: "A p.717, §20.3, figure 20-22"
     },
     {
+      link_en: "and a gradient can be spent on things that have nothing to do with ATP",
+      link_cn: "而一个梯度可以花在跟 ATP 毫无关系的事情上",
+      en: "Respiration-linked extrusion of protons is spent on more than ATP. It drives transport systems that take up a nutrient such as lactose against its own concentration gradient by symport — the nutrient rides inwards together with a returning proton. It also turns bacterial flagella, the whip-like appendages a bacterium swims with, through what can be called proton turbines: rotary motors driven directly by the transmembrane electrochemical potential rather than by ATP. Muscle, and the flagella and cilia of eukaryotes, run on ATP hydrolysis instead, which is a fundamentally different arrangement. **A gradient therefore pays for chemistry, for transport and for movement alike, and only the first of those three ever needs an ATP synthase.** Because the same arrangement is found in bacteria and in eukaryotes, it seems likely that the chemiosmotic mechanism evolved early, before eukaryotes emerged; that is a hedge and not an established fact.",
+      cn: "与呼吸相偶联的质子外排，花掉的不只是造 ATP 这一项。它还驱动转运系统：把乳糖这类营养物逆着自身浓度梯度摄入，方式是与质子同向转运（symport）—— 营养物是搭着一个回流的质子一起进来的。它还让细菌鞭毛（细菌用来游泳的那种鞭状附属结构）转起来，靠的是所谓「质子涡轮」：一种旋转马达，其驱动力直接来自跨膜电化学势，而不是 ATP。而肌肉、以及真核生物的鞭毛与纤毛，用的却是 ATP 水解 —— 这是根本不同的另一套安排。**所以一个质子梯度可以同时买下化学、转运和运动这三样，而其中只有第一样才需要 ATP 合酶。** 由于细菌和真核生物身上都有这同一套安排，化学渗透机制「似乎很可能」很早就演化出来了、早于真核生物的出现 —— 这是一句保留措辞，不是已确立的事实。",
+      src: "A p.693, figure 19-41"
+    },
+    {
+      link_en: "and none of this could have existed before one particular moment in the planet's history",
+      link_cn: "而这一切，在这颗行星历史上某个特定时刻之前根本不可能存在",
+      en: "Aerobic respiration has a date before which it could not exist. Oxygenic photosynthesis — photosynthesis that splits water and releases O2 — appeared on Earth about 2.5 billion years ago; before that the atmosphere was methane, carbon dioxide and nitrogen, the planet held essentially no molecular oxygen, and no ozone layer stood between organisms and solar ultraviolet radiation. Two consequences follow and they run in opposite directions: on the supply side water became a nearly limitless reducing agent for building organic compounds, and on the consumption side mechanisms then evolved that use O2 as the terminal electron acceptor of a highly energetic transfer. **Everything in this chain is downstream of that event — the waste product of one process became the terminal oxidant of the other.**",
+      cn: "需氧呼吸有一个「在此之前不可能存在」的时间点。产氧光合作用 —— 即劈开水、放出 O2 的那种光合作用 —— 约在 25 亿年前出现在地球上；在那之前，大气是甲烷、二氧化碳和氮气，这颗行星基本上没有分子氧，也没有臭氧层挡在生物与太阳紫外辐射之间。由此有两个方向相反的后果：在供给一侧，水成了一种近乎无限的还原剂，供建造有机化合物之用；在消耗一侧，随后演化出了把 O2 当作高能电子传递之终端受体的机制。**这条呼吸链上的一切都处在那个事件的下游 —— 一个过程的废物，变成了另一个过程的终端氧化剂。**",
+      src: "A p.717",
+      see: [{ id: "L-20-2-1", en: "the photosystem that learned to take its electrons from water", cn: "学会从水里取电子的那个光系统" }]
+    },
+    {
+      link_en: "and the same equation covers bacteria that never make any oxygen at all",
+      link_cn: "而同一个方程也涵盖那些根本不产氧的细菌",
+      en: "Not every photosynthetic bacterium splits water. Many are obligate anaerobes, which cannot tolerate O2 at all, and must use some other electron donor: green sulfur bacteria use hydrogen sulfide and deposit elemental sulfur where a plant would release O2, oxidising that sulfur onward to sulfate, while others use an organic compound such as lactate and leave pyruvate behind. Written separately these look like different reactions; written generally they are one — 2 H2D + CO2 gives (CH2O) + H2O + 2 D, in which H2D is the electron and hydrogen donor and D is its oxidised form. **Water is the hardest donor rather than the original one, adopted late: the bacteria that first developed photosynthesis most likely used hydrogen sulfide.**",
+      cn: "并非每一种光合细菌都劈水。许多是专性厌氧菌 —— 即完全不能耐受 O2 —— 因而必须用别的电子供体：绿硫细菌用硫化氢，在植物释放 O2 的地方它们析出单质硫，随后再把硫氧化成硫酸盐；另一些则用乳酸这类有机化合物，留下丙酮酸。分开写，这些像是不同的反应；写成通式，它们就是同一个 —— 2 H2D + CO2 → (CH2O) + H2O + 2 D，其中 H2D 是电子（和氢）的供体，D 是它的氧化形式。**水并非最初的供体，而是最难的那一个、后来才被采用的：最早发展出光合能力的细菌，最可能用的是硫化氢。**",
+      src: "A pp.717–718"
+    },
+    {
+      link_en: "and the same enzyme in four kinds of cell carries a claim stated harder than the one beside it",
+      link_cn: "同一个酶出现在四类细胞里，撑起一个比它旁边那个说得更硬的论断",
+      en: "How firmly a claim is stated is itself information. The structure and mechanism of ATP synthase are described as strongly conserved throughout evolution, and the enzymes of bacteria, cyanobacteria, mitochondria and chloroplasts are said to share a common evolutionary precursor and a common enzymatic mechanism — stated flatly, with no hedge. The endosymbiotic origin of chloroplasts, by contrast, is called a now widely accepted hypothesis, which is deliberately weaker. **For the enzyme there are structures, subunit compositions and a shared mechanism to compare directly; for the origin there is only a set of consistent observations.** One number belongs here too, and it is a measurement rather than a derivation: eight photons drive the production of one O2 and the making of three ATP.",
+      cn: "一个论断被说得有多硬，本身就是信息。ATP 合酶的结构和机制被描述为「在整个演化过程中被强烈地保守下来」；细菌、蓝细菌、线粒体和叶绿体的 ATP 合酶被说成「共享一个共同的演化前体和一套共同的酶学机制」—— 这是平铺直叙地断言的，没有任何保留。相比之下，叶绿体的内共生起源被称作「一个如今被广泛接受的假说」，措辞刻意更弱。**对这个酶，有结构、有亚基组成、有一套可以直接比较的共同机制；对那个起源，只有一组彼此一致的观察。** 还有一个数字也属于这里，而且它是测量值、不是推导：八个光子驱动产生一个 O2，并造出三个 ATP。",
+      src: "A pp.718–719"
+    },
+    {
       link_en: "and this whole apparatus is the one thing a second genome inside the cell encodes",
       link_cn: "而这整套装置，正是细胞里第二个基因组唯一编码的东西",
       en: "The mitochondrion is the only compartment of a human cell carrying its own DNA: a circular molecule of 16,569 base pairs with 37 genes, of which only 13 encode a protein and the other 24 encode the RNA parts of a translation apparatus belonging to the organelle alone. Against those 13, about 1,200 mitochondrial proteins are encoded in the nucleus and imported. **All 13 are subunits of the respiratory chain and the ATP synthase** — Complex II, the one respiratory complex that pumps no protons, is also the one this genome does not touch — so a mutation here has nothing else it could damage, and mitochondrial gene defects appear as failures of electron transfer and essentially nothing else.",
       cn: "线粒体是人体细胞里唯一自带 DNA 的隔室：一个 16,569 碱基对的环状分子，携带 37 个基因，其中只有 13 个编码蛋白，另外 24 个编码的是只属于这个细胞器的一套翻译装置的 RNA 部件。与这 13 个相对的是：约 1,200 个线粒体蛋白由细胞核编码、合成后被运进来。**这 13 个全是呼吸链和 ATP 合酶的亚基 —— 而复合物 II（呼吸链里唯一不泵质子的那个）恰好也是这个基因组碰不到的那个 —— 所以这里的突变没有别的东西可破坏，线粒体基因缺陷几乎只表现为电子传递的失灵。**",
-      src: "A p.692, table 19-6",
-      see: [{ id: "L-19-5-1", en: "heteroplasmy, maternal inheritance and the diseases in full", cn: "异质性、母系遗传与相关疾病的完整讨论" }]
+      src: "A p.692, table 19-6"
+    },
+    {
+      link_en: "and two genomes inside one cell are the evidence for where the organelle came from",
+      link_cn: "而「一个细胞里有两个基因组」这件事，正是这个细胞器来历的证据",
+      en: "Three facts stand behind one theory: a mitochondrion has its own DNA, its own ribosomes and its own tRNAs. Together they support the endosymbiotic origin of mitochondria — the theory that the first organisms capable of aerobic metabolism were bacteria, and that a primitive eukaryote living anaerobically by fermentation acquired oxidative phosphorylation when it took such bacteria into its cytosol and kept them. Over a long evolution many bacterial genes moved into the host nucleus, and the endosymbiont became an organelle. **Gene migration explains the ratio of 13 genes to about 1,200: the genome is small because most of it left, not because it was ever this small.** A hypothesis of that kind must be paid for with a prediction: it presumes that early free-living bacteria already carried the machinery for oxidative phosphorylation, so modern bacteria should have closely similar respiratory chains — and they do, down to F1Fo complexes in the plasma membrane of E. coli.",
+      cn: "有三个事实撑着一个理论：线粒体有自己的 DNA、自己的核糖体、自己的 tRNA。它们合起来支持线粒体的内共生起源 —— 这个理论主张：最早能进行有氧代谢的生物是细菌；而原本靠发酵过厌氧生活的原始真核生物，是在把这类细菌收进胞质并留下它们之后，才获得了氧化磷酸化。经过漫长演化，许多细菌基因迁入了宿主的细胞核，内共生体就变成了一个细胞器。**基因迁移正是「13 个基因对约 1,200 个」这个比例的解释：基因组之所以小，是因为大部分搬走了，而不是它本来就这么小。** 这样一个假说必须用一个预言来偿付：它预设早期自由生活的细菌已经带着氧化磷酸化的机器，那么现代细菌就应当有高度相似的呼吸链 —— 事实确实如此，一直到 E. coli 质膜上的 F1Fo 复合体。",
+      src: "A pp.692–693"
+    },
+    {
+      link_en: "and a genome carried in the cytoplasm is inherited in a way a nuclear one never is",
+      link_cn: "而一个待在胞质里的基因组，其遗传方式与核基因组截然不同",
+      en: "Mitochondrial inheritance is maternal for two reasons, and the second is the one usually missed. The arithmetic comes first: an egg is large and holds 100,000 to 1,000,000 mitochondria, while a sperm is much smaller and holds perhaps 100 to 1,000, so on numbers alone the paternal contribution is at most about one per cent and possibly one in ten thousand. On top of that dilution there is an active mechanism — just after fertilisation, maternal phagosomes, which are membrane vesicles that engulf and digest material inside a cell, migrate to the site of sperm entry, engulf the sperm mitochondria and degrade them. **Paternal mitochondrial DNA is not merely diluted, it is hunted down, so an affected mother can transmit to all her children and an affected father to none.** That asymmetry alone is enough to separate a mitochondrial pedigree from an autosomal or an X-linked one, before any sequencing is done.",
+      cn: "线粒体的遗传是母系的，原因有两条，而第二条通常被忽略。先说算术：卵子很大，含 10 万到 100 万个线粒体；精子小得多，大约只有 100 到 1,000 个 —— 光凭数字，父源的贡献至多约百分之一，也可能只有万分之一。在这种稀释之上还有一套主动机制 —— 受精刚发生之后，母源的吞噬体（一种在细胞内部把物质吞入并消化掉的膜性小泡）迁移到精子进入的位点，把精子的线粒体吞进去并降解掉。**父源的线粒体 DNA 不只是被稀释，而是被追杀；所以患病的母亲可以传给她所有的子女，患病的父亲一个也不传。** 光凭这一条不对称，在做任何测序之前就足以把线粒体系谱与常染色体系谱或 X 连锁系谱区分开。",
+      src: "A p.694"
+    },
+    {
+      link_en: "and a mutation in this genome exists as a proportion rather than as a yes or a no",
+      link_cn: "而这个基因组上的突变，是以一个比例存在的，不是「有」或「没有」",
+      en: "A nuclear gene comes in two copies, so a mutation is either present or absent. A cell carries hundreds or thousands of mitochondria with about five genomes each, so a mutation is present as a fraction instead. Follow how that arises: damage to one mitochondrial genome in a germ cell replicates along with the healthy ones, the progeny are distributed at random to daughter cells, mature eggs therefore end up with different proportions of defective mitochondria, and after fertilisation and many divisions the somatic cells differ in their proportion of mutant mitochondria. That state is heteroplasmy, defined against homoplasmy, in which every mitochondrial genome in every cell is the same. **Individuals with the same mutation can have symptoms of very different severity: here the dose and its distribution across tissues predict the phenotype, and the genotype does not.**",
+      cn: "一个核基因有两份拷贝，所以突变要么在、要么不在。而一个细胞带着几百到几千个线粒体，每个又有约五份基因组，于是突变是以「一个比例」的形式存在的。看它是怎么来的：生殖细胞里某一份线粒体基因组受了损，它照样与健康的一起复制，其后代在分裂中被随机分配到子细胞里，于是成熟的卵细胞各自含有不同比例的缺陷线粒体；受精之后再经过许多次分裂，体细胞在突变型线粒体的比例上也就彼此不同。这种状态叫异质性（heteroplasmy），它是相对同质性（homoplasmy）定义的 —— 后者指每个细胞里的每一份线粒体基因组都相同。**带着同一个突变的不同个体，症状的严重程度可以差得很远：在这里预测表型的是剂量及其在组织间的分布，基因型并不预测表型。**",
+      src: "A p.694, figure 19-42"
+    },
+    {
+      link_en: "and how common these diseases are, and which tissues show them, both have numbers",
+      link_cn: "这类疾病有多常见、又在哪些组织上表现出来，两者都有数字",
+      en: "About 1 in 5,000 people carry a disease-causing mutation in a mitochondrial protein that lowers the cell's capacity to make ATP, and a growing number of these diseases have been traced to genes of the mitochondrion itself, the rest lying in the nucleus — the wording is careful and worth copying. Which tissues declare themselves? Neurons, the myocytes of skeletal and of cardiac muscle, and the β cells of the pancreas are less able than other cells to tolerate lowered ATP production. **The tissue list is derivable and not arbitrary: every entry names a cell that cannot ride out a shortfall, because it works without rest or stores no fuel.**",
+      cn: "约每 5,000 人中有 1 人携带一个致病突变，它落在某个线粒体蛋白上，使细胞产生 ATP 的能力下降；而这些疾病中被追溯到线粒体自身基因的数目正在增加，其余的则落在细胞核里 —— 措辞上的这个区别很谨慎，值得照抄。哪些组织会先出声？神经元、骨骼肌与心肌的肌细胞、以及胰腺的 β 细胞，比其他细胞更不能耐受 ATP 产量的下降。**这张组织清单是推得出来的，并非随便列的：上面每一项都是一种扛不住供应短缺的细胞 —— 因为它要么不停地工作，要么储不了燃料。**",
+      src: "A pp.694–695"
+    },
+    {
+      link_en: "and one group of diseases is named after exactly the two tissues that list puts first",
+      link_cn: "而有一组疾病，名字里写的恰好就是那张清单上排在最前的两个组织",
+      en: "The mitochondrial encephalomyopathies are a group of genetic diseases affecting primarily the brain and skeletal muscle, and they are invariably inherited from the mother, because a developing embryo takes all its mitochondria from the egg. Encephalomyopathy writes the two tissues into the diagnosis itself — brain and skeletal muscle, the top two entries on the list of tissues least able to tolerate a fall in ATP — so the name of the group is a bioenergetic prediction. **Invariably is a stronger word than usually or predominantly: a pedigree in which any affected man has affected children argues against a mitochondrial gene, whatever the biochemistry shows.**",
+      cn: "线粒体脑肌病是一组主要累及脑和骨骼肌的遗传病，而且无一例外地由母亲遗传而来 —— 因为发育中的胚胎，其全部线粒体都来自卵子。「脑肌病」这个名字把两个组织直接写进了诊断里 —— 脑和骨骼肌，正是「最不能耐受 ATP 下降」那张清单上排在最前的两项 —— 所以这个病组的名字本身就是一个生物能学上的预言。**「无一例外」比「通常」或「多数情况下」都更强：一份系谱里只要有任何一个患病男性把病传给了子女，就应当反对线粒体基因的解释，不论生化上看起来多像。**",
+      src: "A p.695"
+    },
+    {
+      link_en: "and one disease breaks the habit of reading one gene as one protein",
+      link_cn: "而有一种病打破了「一个基因对应一个蛋白」的习惯读法",
+      en: "Myoclonic epilepsy with ragged-red fibers, MERRF, is caused by a mutation in the mitochondrial gene encoding a tRNA specific for lysine. Now count the damage. Of the 37 mitochondrial genes only 13 encode a protein and the rest are the translation apparatus, so a lesion in one tRNA gene does not disable one protein: it degrades production of several of the proteins whose synthesis needs mitochondrial tRNAs, an unpredictable subset of all 13 subunits at once, across several complexes. **A single point mutation in a gene that encodes no protein is therefore a maker of syndromes rather than the cause of one specific enzyme deficiency.** The phenotype is uncontrollable muscular jerking together with skeletal muscle fibres holding abnormally shaped mitochondria that sometimes contain paracrystalline structures — the ragged red fibres of the name, visible in a muscle biopsy. Other mutations in mitochondrial genes are held responsible for the progressive weakness of mitochondrial myopathy and for the enlarged, deteriorating heart muscle of hypertrophic cardiomyopathy.",
+      cn: "肌阵挛性癫痫伴破碎红纤维（MERRF）是由线粒体上那个编码赖氨酸专一 tRNA 的基因发生突变引起的。现在数一数它损坏了什么。37 个线粒体基因里只有 13 个编码蛋白，其余的是翻译装置；所以一个 tRNA 基因上的病变并不只让一个蛋白失效：它削弱的是若干种「合成时需要线粒体 tRNA」的蛋白的生产 —— 一次同时波及全部 13 个亚基中一个无法预料的子集，横跨好几个复合物。**一个落在「不编码蛋白的基因」上的单点突变，因此造出的是一个综合征，而非某一个酶的缺乏。** 它的表型是无法控制的肌肉抽动，加上骨骼肌纤维里那些形态异常、有时含有类晶体结构的线粒体 —— 这就是病名里的「破碎红纤维」，在肌肉活检里看得见。线粒体基因上的另一些突变，则被认为要为线粒体肌病的进行性无力、以及肥厚型心肌病中增大而衰变的心肌负责。",
+      src: "A p.695, figure 19-43"
+    },
+    {
+      link_en: "and knowing the inheritance rule makes one therapy possible and one assumption wrong",
+      link_cn: "而懂了那条遗传规律，就有了一项疗法，也戳破了一个想当然",
+      en: "Two corrections close the disease discussion. First, a therapy that follows from maternal inheritance: if a prospective mother is known to carry a pathogenic mitochondrial gene, mitochondrial donation can circumvent its passage to her offspring — her nuclear genes are transplanted under a microscope into an enucleated ovum from a donor with healthy mitochondria, the ovum is fertilised in vitro, and the embryo is transferred to her uterus. Such three-parent baby procedures were approved in the United Kingdom in 2015 and raise ethical issues that are being vigorously debated. **The procedure is possible only because the two genomes are physically separable, one held in the nucleus and one out in the cytoplasm.** Second, mitochondrial disease can also come from a mutation in any of the roughly 1,200 nuclear genes encoding mitochondrial proteins: a mutation in COX6B1, a nuclear-encoded protein of Complex IV, gives severe defects of brain development and thickened walls of the heart muscle, and other nuclear genes encode proteins needed to assemble the complexes at all. Mitochondrial disease therefore names which organelle fails and not which genome carries the mutation — and a donation that replaces only the mitochondria does nothing for the nuclear-gene forms.",
+      cn: "疾病部分以两处纠正收尾。第一，是母系遗传带来的一项治疗：如果已知一位准母亲携带致病的线粒体基因，线粒体置换可以绕开它向后代的传递 —— 把她的核基因在显微操作下移植进一枚来自「线粒体健康的供体」的去核卵，随后体外受精，再把胚胎植入她的子宫。这类「三亲婴儿」操作于 2015 年在英国获批，并引发了至今仍被激烈争论的伦理问题。**这个操作之所以行得通，全在于两个基因组在物理上是可分开的：一个待在细胞核里，一个待在胞质里。** 第二，线粒体病同样可以来自那约 1,200 个编码线粒体蛋白的核基因中任何一个的突变：Complex IV 里由核编码的蛋白 COX6B1 上的突变，会造成严重的脑发育缺陷和心肌壁增厚；另一些核基因编码的则是把复合物装配起来所必需的蛋白。所以「线粒体病」说的是哪个细胞器失灵，而不是突变落在哪个基因组上 —— 而只置换线粒体的那项技术，对核基因型的那些一点用也没有。",
+      src: "A pp.695–696"
+    },
+    {
+      link_en: "and in one cell type this whole bioenergetics turns into an endocrine signal",
+      link_cn: "而在某一种细胞里，这一整套生物能学变成了一个内分泌信号",
+      en: "Insulin is produced and exported by the β cells of the pancreas, and that export hinges on the ATP concentration inside them. The circuit runs in four steps: when blood glucose is high the β cell takes up glucose and oxidises it by glycolysis and the citric acid cycle, raising the ATP concentration above a threshold; above that threshold an ATP-gated K+ channel in the plasma membrane closes; the membrane depolarises, which opens voltage-gated Ca2+ channels; and the Ca2+ flowing in triggers exocytosis of the insulin granules. **In this one cell type ATP is the messenger reporting the glucose concentration rather than the currency paying for work, so a cell that cannot raise it cannot report a meal.** A β cell with a defect in any aspect of oxidative phosphorylation may therefore fail to raise the ATP concentration past the threshold, and the resulting failure of insulin release effectively produces diabetes.",
+      cn: "胰岛素由胰腺的 β 细胞产生并输出，而这份输出取决于细胞内的 ATP 浓度。这条回路分四步：血糖升高时，β 细胞摄取葡萄糖，经糖酵解和柠檬酸循环把它氧化，使 ATP 浓度升过一个阈值；一旦越过阈值，质膜上一个 ATP 门控的 K+ 通道就关闭；膜随之去极化，电压门控的 Ca2+ 通道打开；流入的 Ca2+ 触发胰岛素颗粒的胞吐。**在这一种细胞里，ATP 扮演的是「把葡萄糖浓度报告出去的信使」，而非「支付做功的货币」—— 所以一个升不起 ATP 的细胞，就是一个报不了餐的细胞。** 于是，在氧化磷酸化任何环节上有缺陷的 β 细胞，可能无法把 ATP 浓度升过那个阈值；由此造成的胰岛素释放失败，实际上就产生了糖尿病。",
+      src: "A pp.695–696, figure 19-44",
+      see: [{ id: "L-23-5-1", en: "diabetes itself, and what a failure of insulin release does to the body", cn: "糖尿病本身，以及胰岛素释放失败会给全身带来什么" }]
+    },
+    {
+      link_en: "and three unrelated lesions arrive at that one threshold",
+      link_cn: "而三种彼此无关的病变，抵达的是同一个阈值",
+      en: "Three different molecular lesions reach that same threshold. A defect in the gene for glucokinase — the hexokinase IV isozyme of the β cell — blunts the glucose sensor itself and causes the rare MODY2, maturity onset diabetes of the young. A mutation in the mitochondrial tRNA-Lys or tRNA-Leu gene instead limits expression of the electron transfer components encoded in mitochondrial DNA, and type 2 diabetes mellitus is common among people carrying such defects, although those cases are a very small fraction of all diabetes. A defect in nicotinamide nucleotide transhydrogenase, part of the mitochondrial defence against reactive oxygen species, lets that damage accumulate, which slows ATP production and blocks insulin release in its turn. **One clinical endpoint is reached by a blunted sensor, by a chain that cannot be expressed, and by a failed antioxidant defence alike.**",
+      cn: "有三种不同的分子病变抵达同一个阈值。第一，葡萄糖激酶（glucokinase）基因上的缺陷 —— 它就是 β 细胞里的 hexokinase IV 同工酶 —— 会让葡萄糖感受器本身变钝，造成罕见的 MODY2，即青少年发病的成人型糖尿病。第二，线粒体 tRNA-Lys 或 tRNA-Leu 基因上的突变，则通过限制线粒体 DNA 所编码的电子传递组分的表达来削弱 ATP 生产；2 型糖尿病在携带这类缺陷的个体中很常见 —— 尽管这类病例只占全部糖尿病中极小的一部分。第三，烟酰胺核苷酸转氢酶（线粒体抗活性氧防御的一部分）上的缺陷，会让损伤累积起来，从而减慢 ATP 生产、并进而阻断胰岛素释放。**同一个临床终点，可以由变钝的感受器抵达，也可以由表达不出来的呼吸链抵达，还可以由失守的抗氧化防御抵达。**",
+      src: "A pp.695–696"
+    },
+    {
+      link_en: "and the last two claims here are weaker than everything before them, on purpose",
+      link_cn: "而这里最后两个论断，是刻意比前面所有内容都弱的",
+      en: "Two claims at the end are deliberately weak and should be repeated at their own strength. One theory of ageing holds that the gradual accumulation of such defects is the primary cause of many symptoms of ageing, among them the progressive weakening of skeletal and heart muscle; the hedge is one theory, and the symptoms chosen are exactly the tissues that tolerate a fall in ATP worst, so the theory is internally consistent with the diseases — which is an argument for it and not evidence that ageing works this way. Damage caused by reactive oxygen species, including damage to mitochondrial DNA, may also underlie other human diseases, and there is some evidence for its involvement in Alzheimer, Parkinson and Huntington diseases and in heart failure, as well as in ageing. **Saying that mitochondrial damage causes Alzheimer disease overstates what this material establishes: the words used are may and some evidence, not causes.**",
+      cn: "结尾处有两个论断是刻意写弱的，复述时应当保持它们各自的强度。一种关于衰老的理论认为，这类缺陷的逐渐累积是衰老许多症状的主要原因，其中包括骨骼肌与心肌的进行性无力；请注意保留措辞「一种理论」，也请注意它举的症状恰好就是最扛不住 ATP 下降的那些组织 —— 这种与疾病谱的自洽是支持它的论据，而非「衰老就是这样造成的」的证据。活性氧造成的损伤（包括对线粒体 DNA 的损伤）「可能」也是另一些人类疾病的基础，并且有「一些证据」表明它参与了阿尔茨海默病、帕金森病、亨廷顿病以及心力衰竭，衰老亦然。**说「线粒体损伤导致阿尔茨海默病」就说过了头：这里用的词是「可能」和「一些证据」，而非「导致」。**",
+      src: "A pp.694, 696"
     }
   ],
   terms: [
@@ -511,7 +696,49 @@ window.BIOLITE_SPINE["key:respiratory-chain"] = {
       def_cn: "按质子浓度、而不是按解剖学给能量转换膜的两面命名：P 侧是质子被泵到的那一面，N 侧是质子被泵离开的那一面。催化头永远长在 N 侧，ATP 也永远出现在那里 —— 线粒体基质、叶绿体基质或细菌胞质 —— 所以线粒体与叶绿体之间那个看似的反转，只是命名问题。" },
     { en: "the proton-to-ATP arithmetic", cn: "质子与 ATP 的算账",
       def_en: "Ten protons are pumped per NADH (four at Complex I, four at Complex III, two at Complex IV) and four return per ATP, one of them spent on transport, which gives 2.5 ATP per NADH and 1.5 per succinate and a glucose total of 30 to 32. An older accounting gives 6 and 4 protons and 3 and 2 ATP. Neither ratio has to be a whole number, because the two halves are joined by a gradient rather than by a shared molecule.",
-      def_cn: "每个 NADH 泵出十个质子（复合物 I 四个、III 四个、IV 两个），每造一个 ATP 回来四个，其中一个花在运输上，于是每个 NADH 得 2.5 个 ATP、每个琥珀酸 1.5 个，葡萄糖总账 30 到 32。另有一套更早的算法给出 6 个和 4 个质子、3 个和 2 个 ATP。两个比值都没有必要是整数，因为两半是靠梯度、而不是靠共享分子连起来的。" }
+      def_cn: "每个 NADH 泵出十个质子（复合物 I 四个、III 四个、IV 两个），每造一个 ATP 回来四个，其中一个花在运输上，于是每个 NADH 得 2.5 个 ATP、每个琥珀酸 1.5 个，葡萄糖总账 30 到 32。另有一套更早的算法给出 6 个和 4 个质子、3 个和 2 个 ATP。两个比值都没有必要是整数，因为两半是靠梯度、而不是靠共享分子连起来的。" },
+    { en: "Fo, the membrane sector", cn: "Fo，膜内那一段",
+      def_en: "The membrane-embedded portion of ATP synthase: subunit a, which holds the two half-channels a proton crosses by, the ring of c subunits that turns beside it, and the peripheral stalk of two b subunits that clamps the catalytic head still. Proton passage through it changes the conformation of the active sites in the knob above.",
+      def_cn: "ATP 合酶嵌在膜里的那一部分：a 亚基（质子所经的两条半通道就在它上面）、紧挨着它旋转的 c 亚基环，以及由两个 b 亚基组成、把催化头箍住不动的外周柄。质子从这里通过，会改变上方旋钮里活性位点的构象。" },
+    { en: "reactive oxygen species", cn: "活性氧",
+      def_en: "Superoxide, hydrogen peroxide and the hydroxyl radical, generated mainly at Complexes I and III when a partly reduced ubisemiquinone hands an electron straight to O2. Under normal conditions 0.2 to 2 per cent of respired oxygen ends up as superoxide, which is why the defence enzymes run continuously. Not purely destructive: a low level of them is a physiological signal of hypoxia.",
+      def_cn: "超氧化物、过氧化氢和羟自由基；主要在复合物 I 和 III 处、由部分还原的泛半醌把一个电子直接交给 O2 而生成。正常情况下，呼吸消耗的氧中有 0.2% 到 2% 最终变成超氧化物 —— 这就是防御酶必须一直开着的原因。它们也不是纯粹有害的：低水平的活性氧是一个生理性的缺氧信号。" },
+    { en: "the P/O ratio", cn: "P/O 比值",
+      def_en: "Two protons per ATP, the number both accountings of the older scheme reduce to: six protons for three ATP and four protons for two ATP both divide to two. The name belongs to other textbooks rather than to the material here, and it is worth carrying as an orientation figure, not as a term to quote back.",
+      def_cn: "每个 ATP 两个质子 —— 那套更早的方案里两笔账约下来都是这个数：六个质子换三个 ATP、四个质子换两个 ATP，都是二。这个名字属于别的教科书、不属于这里的材料；它值得当作一个方位感上的数字记住，而不是当作可以引用的术语。" },
+    { en: "the general equation of photosynthesis", cn: "光合作用的通式",
+      def_en: "2 H2D + CO2 gives (CH2O) + H2O + 2 D, in which H2D is an electron and hydrogen donor and D its oxidised form. H2D may be water, hydrogen sulfide, lactate or another organic compound depending on the species, so plant and bacterial photosynthesis are one reaction with different donors — green sulfur bacteria deposit elemental sulfur where plants release O2. Water is the hardest donor, adopted late, which is why splitting it needs four photons and a manganese cluster while hydrogen sulfide needs neither.",
+      def_cn: "2 H2D + CO2 → (CH2O) + H2O + 2 D，其中 H2D 是电子（和氢）的供体，D 是它的氧化形式。H2D 可以是水、硫化氢、乳酸或另一种有机化合物，取决于物种 —— 所以植物与细菌的光合作用是同一个反应、只是供体不同：绿硫细菌析出单质硫，而植物放出 O2。水是最难的那个供体、后来才被采用 —— 这也正是为什么劈开水要四个光子和一个锰簇，而氧化硫化氢两样都不需要。" },
+    { en: "the arrival of oxygenic photosynthesis", cn: "产氧光合作用的到来",
+      def_en: "The event about 2.5 billion years ago that made aerobic respiration possible at all. Before it the atmosphere was methane, carbon dioxide and nitrogen, with essentially no molecular oxygen and no ozone layer against solar ultraviolet. Two consequences run in opposite directions: water became a nearly limitless reducing agent for biosynthesis, and mechanisms then evolved to use O2 as a terminal electron acceptor — the waste product of one process became the terminal oxidant of the other.",
+      def_cn: "约 25 亿年前的那个事件，它才使需氧呼吸成为可能。在它之前，大气是甲烷、二氧化碳和氮气，基本没有分子氧，也没有臭氧层去挡太阳紫外。由此有两个方向相反的后果：水成了一种近乎无限的还原剂供生物合成使用；而随后演化出了把 O2 当作终端电子受体的机制 —— 一个过程的废物，成了另一个过程的终端氧化剂。" },
+    { en: "the endosymbiotic origin of mitochondria", cn: "线粒体的内共生起源",
+      def_en: "The theory that mitochondria descend from aerobic bacteria taken into a primitive fermenting eukaryote, which thereby acquired oxidative phosphorylation; over evolutionary time many bacterial genes moved into the host nucleus and the endosymbiont became an organelle. Its evidence is that a mitochondrion has its own DNA, ribosomes and tRNAs; its testable prediction is that modern bacteria should have closely similar respiratory chains, which they do, down to F1Fo complexes in the plasma membrane of E. coli. The gene migration also explains why only 13 protein genes remain.",
+      def_cn: "该理论认为线粒体源自被原始的、行发酵的真核生物吞入的需氧细菌，后者由此获得了氧化磷酸化；在演化过程中许多细菌基因迁入宿主细胞核，内共生体变成了一个细胞器。它的证据是线粒体有自己的 DNA、核糖体和 tRNA；它可检验的预言是现代细菌应当有高度相似的呼吸链 —— 事实确实如此，一直到 E. coli 质膜上的 F1Fo 复合体。那次基因迁移同时也解释了为什么只剩下 13 个蛋白基因。" },
+    { en: "maternal inheritance", cn: "母系遗传",
+      def_en: "Transmission of mitochondria, and therefore of mitochondrial DNA, from the mother alone. Two mechanisms combine: an egg holds 100,000 to 1,000,000 mitochondria while a sperm holds perhaps 100 to 1,000, and on top of that dilution maternal phagosomes migrate to the site of sperm entry just after fertilisation, engulf the sperm mitochondria and degrade them. The diagnostic consequence is a pedigree in which an affected mother may transmit to all her children and an affected father to none.",
+      def_cn: "线粒体、因而线粒体 DNA，只由母亲一方传递。两套机制叠加：卵子含 10 万到 100 万个线粒体，而精子大约只有 100 到 1,000 个；在这种稀释之上，受精刚发生之后母源的吞噬体还会迁移到精子进入的位点，把精子线粒体吞入并降解。诊断上的后果是这样一种系谱：患病的母亲可能传给她所有的子女，患病的父亲一个也不传。" },
+    { en: "heteroplasmy", cn: "异质性",
+      def_en: "The state in which the mitochondrial genomes inside one cell, or one organism, are not all identical — some carry a mutation and some do not, so the mutation is present as a proportion rather than as a yes or a no. It arises because a defective mitochondrion replicates alongside normal ones and its progeny are distributed at random to daughter cells during oocyte maturation and embryonic development. It is why genotype does not predict phenotype in mitochondrial disease: the same mutation is nearly silent in one person or tissue and severe in another.",
+      def_cn: "指一个细胞内、或一个个体内的线粒体基因组并非全都相同 —— 有的带突变、有的不带，所以突变是以一个比例、而非「有／没有」的形式存在。成因是：有缺陷的线粒体与正常的一起复制，其后代在卵母细胞成熟和胚胎发育的分裂中被随机分配到子细胞里。这正是线粒体病中基因型不预测表型的原因：同一个突变，在一个人或一块组织里几乎无声，在另一个人或另一块组织里却很严重。" },
+    { en: "homoplasmy", cn: "同质性",
+      def_en: "The opposite state: every mitochondrial genome in every cell is the same. It is the term heteroplasmy is defined against, and the pair is what makes mitochondrial genetics quantitative. Note that it is not the same thing as normal — a homoplasmic mutant is uniformly affected, with no wild-type mitochondria anywhere to buffer the defect.",
+      def_cn: "相反的状态：每个细胞里的每一份线粒体基因组都相同。异质性正是相对它定义的，而这一对术语正是线粒体遗传学之所以是定量的原因。注意它不等于「正常」 —— 一个同质性的突变体是均一地受累的，全身没有任何野生型线粒体可以缓冲这个缺陷。" },
+    { en: "mitochondrial encephalomyopathies", cn: "线粒体脑肌病",
+      def_en: "A group of genetic diseases affecting primarily the brain and skeletal muscle, invariably inherited from the mother because the embryo takes all its mitochondria from the egg. The name itself encodes a bioenergetic prediction: brain and skeletal muscle are the two tissues least able to tolerate a lowered ATP supply, so a general shortfall of oxidative phosphorylation declares itself there first. MERRF, mitochondrial myopathy and hypertrophic cardiomyopathy belong to this group.",
+      def_cn: "一组主要累及脑和骨骼肌的遗传病，无一例外地由母亲遗传 —— 因为胚胎的全部线粒体都来自卵子。这个病名本身就编码了一个生物能学的预言：脑和骨骼肌正是最不能耐受 ATP 供应下降的两种组织，所以氧化磷酸化的普遍性不足会最先在它们身上表现出来。MERRF、线粒体肌病和肥厚型心肌病都属于这一组。" },
+    { en: "the mitochondrial tRNA genes", cn: "线粒体 tRNA 基因",
+      def_en: "Genes of the organelle's own translation machinery, and the clearest demonstration that a gene encoding no protein can be as pathogenic as one that does. The lysine tRNA gene is the MERRF locus; mutations in the lysine or leucine tRNA genes also weaken ATP production by limiting expression of the electron transfer components encoded in mitochondrial DNA, and type 2 diabetes mellitus is common among people carrying such defects — although those cases are a very small fraction of all diabetes.",
+      def_cn: "这个细胞器自有翻译机器的基因，也是「一个不编码蛋白的基因可以和编码蛋白的基因一样致病」的最清楚演示。赖氨酸 tRNA 基因就是 MERRF 的位点；而赖氨酸或亮氨酸 tRNA 基因上的突变，还会通过限制线粒体 DNA 所编码的电子传递组分的表达来削弱 ATP 生产，2 型糖尿病在携带这类缺陷的个体中很常见 —— 尽管这类病例只占全部糖尿病中极小的一部分。" },
+    { en: "mitochondrial donation", cn: "线粒体置换",
+      def_en: "A technique that circumvents transmission of a pathogenic mitochondrial gene: the prospective mother's nuclear genes are transplanted under a microscope into an enucleated ovum from a donor with healthy mitochondria, the ovum is fertilised in vitro, and the embryo is transferred to her uterus. Approved in the United Kingdom in 2015, and raising ethical issues still vigorously debated. It works only because the two genomes are physically separable, and it does nothing for the nuclear-gene forms of the disease.",
+      def_cn: "一项绕开致病线粒体基因传递的技术：把准母亲的核基因在显微操作下移植进一枚来自线粒体健康供体的去核卵，随后体外受精，再把胚胎植入她的子宫。2015 年在英国获批，并引发至今仍被激烈争论的伦理问题。它之所以行得通，全因为两个基因组在物理上可分开；而对核基因型的那些病，它一点用也没有。" },
+    { en: "MODY2 and glucokinase", cn: "MODY2 与葡萄糖激酶",
+      def_en: "A rare diabetes caused by defects in the gene for the hexokinase IV isozyme of the pancreatic β cell. Low activity of that enzyme prevents the ATP concentration from rising above the threshold that triggers insulin secretion. It belongs beside the mitochondrial forms because it reaches the same endpoint by a different route: here the glucose sensor is blunted, there the ATP-producing machinery is — the failing step is the same threshold.",
+      def_cn: "一种罕见的糖尿病，由胰腺 β 细胞里 hexokinase IV 同工酶的基因缺陷引起。该酶活性低下，使 ATP 浓度无法升过触发胰岛素分泌的那个阈值。它之所以与线粒体型并列，是因为它经由另一条路径抵达了相同的终点：这里是葡萄糖感受器变钝，那里是产 ATP 的机器出问题 —— 而失败的那一步是同一个阈值。" },
+    { en: "the ATP-gated K+ channel", cn: "ATP 门控的 K+ 通道",
+      def_en: "The step at which a bioenergetic quantity becomes an endocrine signal. When blood glucose is high the β cell oxidises it by glycolysis and the citric acid cycle, the ATP concentration rises above a threshold, this channel in the plasma membrane closes, the membrane depolarises, voltage-gated Ca2+ channels open, and Ca2+ influx triggers exocytosis of insulin granules. In this one cell type ATP is the messenger reporting the glucose concentration rather than the currency paying for work — which is why a defect anywhere in oxidative phosphorylation can produce diabetes.",
+      def_cn: "生物能学的量在这一步变成内分泌信号。血糖升高时，β 细胞经糖酵解和柠檬酸循环把它氧化，ATP 浓度升过阈值，质膜上的这个通道关闭，膜去极化，电压门控的 Ca2+ 通道开放，Ca2+ 内流触发胰岛素颗粒的胞吐。在这一种细胞里，ATP 是把葡萄糖浓度报告出去的信使，而非支付做功的货币 —— 这正是为什么氧化磷酸化任何环节上的缺陷都可能造成糖尿病。" }
   ]
 };
 
@@ -581,6 +808,13 @@ window.BIOLITE_SPINE["key:metabolic-regulation"] = {
       src: "CZ p.221, §10.2; A p.500, §13.5, Fig. 13-31"
     },
     {
+      link_en: "and the cheapest inhibitor of all is one the reaction manufactures itself",
+      link_cn: "而最便宜的那个抑制剂，是反应自己造出来的",
+      en: "Binding an inhibitor into the active site is an important way of regulating an enzyme reaction, and one such inhibitor costs the cell nothing at all to supply. **Inhibition can also occur by the product of the enzyme reaction, so that on accumulation of the product the enzyme reaction slows down — a primitive self-limiting loop.** Primitive is the right word: a loop of that kind can report only on the output of its own reaction, so it cannot tell an enzyme what a pathway twenty steps downstream is short of.",
+      cn: "把抑制剂结合到活性位点里去，是调节酶反应的一种重要方式；而其中有一种抑制剂，细胞供应它一分钱都不用花。**抑制也可以由酶反应的产物造成：产物一积累，酶反应就慢下来——这是一个原始的自限回路。** 「原始」这个词用得恰当：这样的回路只能反映它自己那个反应的产出，所以它没法告诉一个酶「二十步之外的下游缺什么」。",
+      src: "CZ p.221, §10.2"
+    },
+    {
       link_en: "the effective version of that handle works from a site that is not the active site",
       link_cn: "这个把手真正有效的那种用法，作用点不在活性位点上",
       en: "An allosteric effector binds an enzyme somewhere other than the active site and acts by changing the shape of the protein. That one structural fact carries the whole mechanism: because the site is separate, the effector need bear no chemical resemblance to the substrate, so the final product of a long sequence can reach back and inhibit an enzyme near the beginning of it, acting on a completely different molecule. That is negative feedback, and an early enzyme inhibited this way is called the controlling enzyme. How sharp the response becomes is measurable: **driving an enzyme from 10 to 90 per cent of maximal rate takes an 81-fold change in substrate with no cooperativity and only a 3-fold change at a Hill coefficient of 4** — three against eighty-one is the whole content of the claim that allosteric regulation is effective.",
@@ -601,6 +835,16 @@ window.BIOLITE_SPINE["key:metabolic-regulation"] = {
       cn: "细胞被分隔成许多有膜包围的区室，底物和产物必须跨过区室之间的膜被运送，而且多半是以受控的方式运送 —— 于是这个运输步骤本身就成了一个控制点。**区室化到底是为了什么？为的正是「一条合成通路和一条分解通路共用部分中间产物」的那种情形：把它们关进不同的区室，才使两者能够同时朝相反方向运转，而互不抵消。**还有一个相关的花招根本不需要膜 —— 一个酶可以靠与某个独立的调节蛋白结合、解离来开关，依赖 cyclic AMP 的那个蛋白激酶就是如此：它一直没有活性，直到 cyclic AMP 把它的催化亚基从抑制性亚基上拉开。",
       src: "CZ p.222, §10.2; A p.501, §13.5",
       see: [{ id: "L-12-1-1", en: "how an extracellular signal reaches an enzyme in the cytosol", cn: "胞外信号怎么抵达胞质里的一个酶" }]
+    },
+    {
+      link_en: "one further principle is named in the same list and left for the enzyme chapter to develop",
+      link_cn: "同一份清单上还点了一种原理，把展开留给了讲酶的那一章",
+      en: "Regulation on the principle of isoenzymes is the fifth mechanism named, and it is named without being developed at this point — the possibilities it opens are described where enzyme forms themselves are treated. **Isoenzymes are distinct protein forms catalysing one and the same reaction, so a tissue sets its own kinetics for a shared step simply by choosing which form to make.**",
+      cn: "同工酶原理的调节是这份清单上被点名的第五种机制，而它在这里只被点名、并未展开——它所打开的种种可能性，是在讲酶本身形式的地方才被描述的。**同工酶是催化同一个反应的几种不同蛋白形式，所以一个组织只要选择造哪一种形式，就为一个共用步骤定下了自己的动力学。**",
+      src: "CZ p.222, §10.2",
+      beyond: true,
+      beyondNote: "p.222 names isoenzyme regulation and refers the reader onward without saying what an isoenzyme is. The one-sentence definition given here is taken from the glossary entry and from the isoenzyme box of the glycolysis chapter, so that the mechanism is at least legible where it is named; nothing about its regulatory use is attributed to p.222.",
+      see: [{ id: "L-14-5-1", en: "isoenzymes in general, and lactate dehydrogenase as the clinical case", cn: "同工酶的一般情况，以及乳酸脱氢酶这个临床例证" }]
     },
     {
       link_en: "now the core question: out of all the enzymes in a pathway, which ones does regulation actually sit on?",

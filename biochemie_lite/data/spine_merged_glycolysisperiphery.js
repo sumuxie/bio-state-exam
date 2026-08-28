@@ -143,6 +143,15 @@ window.BIOLITE_SPINE["key:feeder-pathways-glycolysis"] = {
       ]
     },
     {
+      link_en: "that double specificity is also the whole of how these enzymes get their names",
+      link_cn: "而那重双重专一性，同时就是这些酶取名字的全部办法",
+      en: "**A glycosidase is named for the only two things it can read — which sugar sits in the bond, and whether that bond is alpha or beta — so the naming is a rule rather than a list.** The book's own examples run alpha-D-glucosidases, beta-D-glucosidases, alpha-D-galactosidases, beta-D-galactosidases and beta-D-fructofuranosidases, and the list ends in etc. because a rule of that shape cannot close: name a sugar and a configuration and the enzyme that cleaves it already has a name. Three of those families are met every day under a household name instead: alpha-D-glucosidase is maltase, beta-D-galactosidase is lactase, and beta-D-fructofuranosidase is invertase, also called sucrase, which is the enzyme that splits sucrose into glucose and fructose.",
+      cn: "**糖苷酶只按它能读到的两件事命名——键里是哪一种糖，以及那条键是 α 还是 β——所以这套命名是一条规则，不是一张清单。**教材自己给的例子是 α-D-葡萄糖苷酶、β-D-葡萄糖苷酶、α-D-半乳糖苷酶、β-D-半乳糖苷酶、β-D-呋喃果糖苷酶，末尾写「等等」，因为这种形状的规则收不了口：说出一种糖和一种构型，切它的那个酶就已经有名字了。其中三个家族在日常里另有俗名：α-D-葡萄糖苷酶就是麦芽糖酶，β-D-半乳糖苷酶就是乳糖酶，β-D-呋喃果糖苷酶就是转化酶（也叫蔗糖酶），即把蔗糖切成葡萄糖和果糖的那个酶。",
+      src: "B §7.10, p.170",
+      beyond: true,
+      beyondNote: "The naming rule and the five named families are the book's own sentence on p.170. The household names — maltase, lactase, invertase/sucrase — are not on that page; they are standard practical vocabulary added here because the exam uses them and the book's systematic names alone leave the reader unable to recognise them."
+    },
+    {
       link_en: "one glycosidase preparation is older than almost any other, and it can also run backwards",
       link_cn: "有一份糖苷酶制剂比几乎所有别的酶都古老，而且它还能倒着跑",
       en: "Emulsin, obtained from almonds, is one of the longest-known enzymes of all, and it is a mixture of various glycosidases rather than a single protein: beta-D-glucosidase predominates in it, and alpha-D-glucosidase is entirely absent. **A glycosidase transfers the sugar residue onto water, so with enough of any substance carrying a free hydroxyl present it transfers that residue onto the hydroxyl instead, synthesising a glycoside.** That synthetic direction is an atypical reaction for these enzymes.",
@@ -185,6 +194,15 @@ window.BIOLITE_SPINE["key:feeder-pathways-glycolysis"] = {
       see: [
         { id: "7-8-1", en: "where that triose-phosphate isomerisation sits in glycolysis", cn: "那个丙糖磷酸异构化在糖酵解里的位置" }
       ]
+    },
+    {
+      link_en: "those two worked cases are printed at two different levels of detail, and the difference is worth naming",
+      link_cn: "那两个实例是以两种不同的详细程度印出来的，这个差别值得点破",
+      en: "Isomerisation is worked twice on that page, and the two workings are not written to the same level of detail. Example one is given for the plain sugars, glukosa ⇌ fruktosa, with no phosphate group anywhere in it; example two is given already phosphorylated, glyceraldehyd-3-fosfát ⇌ dihydroxyacetonfosfát. **What differs is how terse the book is, not what the chemistry does: in a cell the hexose pair also runs phosphorylated, as glucose-6-phosphate ⇌ fructose-6-phosphate.**",
+      cn: "异构化在那一页上被做了两遍，而这两遍写得详细程度并不一样。实例一用的是普通的糖：glukosa ⇌ fruktosa，通篇没有磷酸基；实例二则一上来就是磷酸化的：glyceraldehyd-3-fosfát ⇌ dihydroxyacetonfosfát。**不同的是教材有多简略，而不是化学本身有什么变化：在细胞里，己糖那一对同样以磷酸化形式进行，即葡萄糖-6-磷酸 ⇌ 果糖-6-磷酸。**",
+      src: "B §7.6.1, p.160",
+      beyond: true,
+      beyondNote: "The two examples, and the two levels of detail they are printed at, are exactly as on p.160. That the cellular hexose isomerisation runs on the phosphorylated pair is not stated there; it comes from the glycolysis section of the same book, B §7.8, p.164."
     },
 
     /* -------------------------------------------------------------- 7-10-2 ---- */

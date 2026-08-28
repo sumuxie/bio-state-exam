@@ -99,8 +99,7 @@ window.BIOLITE_SPINE["key:fatty-acid-biosynthesis"] = {
     {
       en: "Fatty acids are assembled in the cytosol, while their raw material acetyl-CoA is made inside the mitochondrion, and the inner mitochondrial membrane will not let acetyl-CoA across. In a eukaryotic cell the apparatus is split three ways: the basic pathway that builds a saturated chain up to sixteen or eighteen carbons runs in the cytoplasm, an elongase system extends chains beyond that, and a desaturase system bound to the endoplasmic reticulum turns saturated chains into unsaturated ones. **Before any chemistry starts there is a transport problem, and solving it answers two more: where the reducing power comes from, and how a cell stops itself building and burning fatty acids at once.**",
       cn: "脂肪酸是在胞质里组装的，而它的原料乙酰-CoA 是在线粒体内部造出来的，线粒体内膜又不放乙酰-CoA 通过。在真核细胞里，这套装置分在三个区室：从头造出直到十六或十八个碳的饱和链的基本途径在细胞质里跑，一套延长酶系统负责把链接得更长，而结合在内质网上的一套去饱和酶系统把饱和链变成不饱和链。**在任何化学反应开始之前，先摆着一个运输问题；解开它顺带回答另外两个问题：还原力从哪里来，以及细胞怎样不让自己一边造脂肪酸一边烧脂肪酸。**",
-      src: "B §8.3, p.187 · A p.745",
-      see: [{ id: "8-3-1", en: "the three compartments in full", cn: "三个区室的完整说法" }]
+      src: "B §8.3, p.187 · A p.745"
     },
     {
       link_en: "so where does that acetyl-CoA come from in the first place",
@@ -136,19 +135,16 @@ window.BIOLITE_SPINE["key:fatty-acid-biosynthesis"] = {
     {
       link_en: "now the committed step, and the ATP spent on it looks wasted until the step after",
       link_cn: "接下来是承诺步骤——花在它上面的那个 ATP 看着像白花，直到下一步",
-      en: "Acetyl-CoA carboxylase attaches a carboxyl group to acetyl-CoA and gives malonyl-CoA, which is acetyl-CoA carrying one extra carboxyl: CO2 + acetyl-CoA + ATP -> malonyl-CoA + ADP + Pi. The enzyme needs the vitamin cofactor biotin, and the printed equation gives Mn2+ as its divalent cation where most references give Mg2+. In animals one polypeptide carries all three parts — a biotin carrier protein, a biotin carboxylase and a transcarboxylase — and the biotin rides a long flexible arm that swings the carboxyl from the first active site to the second. The reaction is irreversible and rate-limiting. **That carboxyl is put on only so that it can come off again: eliminating it at the next step is what makes the condensation favourable, so the ATP buys thermodynamics rather than carbon.**",
-      cn: "乙酰-CoA 羧化酶把一个羧基接到乙酰-CoA 上，生成丙二酰-CoA，也就是多带一个羧基的乙酰-CoA：CO2 + 乙酰-CoA + ATP -> 丙二酰-CoA + ADP + Pi。这个酶需要维生素辅因子生物素；印出来的方程式给的二价阳离子是 Mn2+，而多数参考书给的是 Mg2+。在动物体内，一条多肽同时带着三个部分——生物素载体蛋白、生物素羧化酶、转羧酶——生物素装在一条长而柔软的臂上，把羧基从第一个活性位点甩到第二个。反应不可逆，而且限速。**这个羧基装上去，只是为了能再卸下来：它在下一步被消去，正是让那次缩合变得有利的原因；所以那个 ATP 买的不是碳，买的是热力学。**",
-      src: "B §8.3, pp.187-188 · A pp.745-746",
-      see: [{ id: "8-3-1", en: "the carboxylase's cofactors and the malonyl-CoA equation", cn: "羧化酶的辅因子与丙二酰-CoA 方程式" }]
+      en: "Acetyl-CoA carboxylase attaches a carboxyl group to acetyl-CoA and gives malonyl-CoA, which is acetyl-CoA carrying one extra carboxyl: CO2 + acetyl-CoA + ATP -> malonyl-CoA + ADP + Pi. The enzyme needs the vitamin cofactor biotin, and the printed equation gives Mn2+ as its divalent cation where most references give Mg2+. In animals one polypeptide carries all three parts — a biotin carrier protein, a biotin carboxylase and a transcarboxylase — and the biotin rides a long flexible arm that swings the carboxyl from the first active site to the second. The reaction is irreversible and rate-limiting. **That carboxyl is put on only so that it can come off again: eliminating it at the next step is what makes the condensation favourable, so the ATP buys thermodynamics rather than carbon.** The running prose spells the product 'matonyl-CoA' rather than malonyl-CoA: that is almost certainly a print error, since the structural equation immediately following it unambiguously draws the malonate skeleton, and it is reported throughout here as malonyl-CoA.",
+      cn: "乙酰-CoA 羧化酶把一个羧基接到乙酰-CoA 上，生成丙二酰-CoA，也就是多带一个羧基的乙酰-CoA：CO2 + 乙酰-CoA + ATP -> 丙二酰-CoA + ADP + Pi。这个酶需要维生素辅因子生物素；印出来的方程式给的二价阳离子是 Mn2+，而多数参考书给的是 Mg2+。在动物体内，一条多肽同时带着三个部分——生物素载体蛋白、生物素羧化酶、转羧酶——生物素装在一条长而柔软的臂上，把羧基从第一个活性位点甩到第二个。反应不可逆，而且限速。**这个羧基装上去，只是为了能再卸下来：它在下一步被消去，正是让那次缩合变得有利的原因；所以那个 ATP 买的不是碳，买的是热力学。** 正文把这个产物拼成了「matonyl-CoA」而不是 malonyl-CoA：这几乎肯定是印刷错误，因为紧随其后的结构方程式明确画出了丙二酸（malonate）骨架；本主线通篇按丙二酰-CoA 处理。",
+      src: "B §8.3, pp.187-188 · A pp.745-746"
     },
     {
       link_en: "and the chemistry runs on one machine that never lets go",
       link_cn: "而这些化学反应跑在一台从不松手的机器上",
       en: "Synthesis runs on a soluble multienzyme complex whose core is an acyl carrier protein, abbreviated ACP, which binds acetate and malonate through thioester bonds. One ACP carries two different sulfhydryl groups: a peripheral one from a cysteine residue of the polypeptide, and a central one at the end of a phosphopantetheine arm — the same phosphopantetheine unit that forms part of free coenzyme A. In mammals the seven catalytic activities sit as seven domains of one large polypeptide — fatty acid synthase I — which works as a dimer of two independently operating subunits. **Because ACP belongs to the same chain as every active site it feeds, no intermediate is ever released into solution, and only the finished sixteen- and eighteen-carbon acyl-CoA leave the complex.** Bacteria and plants use separable enzymes for the same chemistry, which is why antibiotics and herbicides can be aimed at their version alone.",
       cn: "合成跑在一个可溶的多酶复合体上，它的核心是一个酰基载体蛋白，缩写为 ACP，能通过硫酯键结合乙酸和丙二酸。一个 ACP 带着两个不同的巯基：一个外周的，来自多肽链上的半胱氨酸残基；一个中心的，长在磷酸泛酰巯基乙胺臂的末端——与游离辅酶 A 里的磷酸泛酰巯基乙胺是同一个单元。在哺乳动物中，那七种催化活性是同一条大多肽上的七个结构域——脂肪酸合酶 I——它以二聚体形式工作，两个亚基各自独立运转。**由于 ACP 与它所服务的每一个活性位点都在同一条链上，中间产物从不被释放到溶液里，离开复合体的只有做完的十六碳和十八碳酰基-CoA。** 细菌和植物用可分开的一组酶干同样的活，这正是抗生素和除草剂能只瞄准它们那一版的原因。",
-      src: "B §8.3, p.188 · §10.1.2, p.220 · A pp.746-748",
-      see: [{ id: "8-3-2", en: "ACP and the phosphopantetheine arm in full", cn: "ACP 与磷酸泛酰巯基乙胺臂的完整说明" },
-            { id: "10-9", en: "why holding every intermediate matters", cn: "为什么「中间产物不放手」这件事要紧" }]
+      src: "B §8.3, p.188 · §10.1.2, p.220 · A pp.746-748"
     },
     {
       link_en: "loading first, then the one reaction that makes the chain longer",
@@ -179,8 +175,7 @@ window.BIOLITE_SPINE["key:fatty-acid-biosynthesis"] = {
       link_cn: "把碳数一遍——这个数很容易记反",
       en: "Seven condensation cycles in all build the sixteen-carbon palmitoyl-ACP. Those sixteen carbons amount to eight two-carbon acetyl units, yet acetyl-CoA itself enters the reaction directly only once, as the primer of the first round; every other two-carbon piece arrives by way of malonyl-CoA. **The primer is never carboxylated, and its methyl and carboxyl carbons end as C-16 and C-15 of palmitate, which is why the balance needs 8 acetyl-CoA but only 7 carboxylations and 7 ATP.**",
       cn: "总共七轮缩合，造出十六碳的软脂酰-ACP。这十六个碳相当于八个二碳的乙酰单位，可乙酰-CoA 本身只以自己的身份直接参加过一次反应——第一轮的引物；其余每一个二碳片段都是经丙二酰-CoA 送来的。**引物从不被羧化，它的甲基碳和羧基碳最后成了软脂酸的 C-16 和 C-15；这就是收支表要 8 个乙酰-CoA、却只要 7 次羧化和 7 个 ATP 的原因。**",
-      src: "B §8.3, p.189 · A p.749",
-      see: [{ id: "8-3-3", en: "the six numbered steps and the seven cycles in full", cn: "六个编号步骤与七轮循环的完整叙述" }]
+      src: "B §8.3, p.189 · A p.749"
     },
     {
       link_en: "and the chain stops at sixteen carbons",
@@ -196,8 +191,7 @@ window.BIOLITE_SPINE["key:fatty-acid-biosynthesis"] = {
       link_cn: "现在把整笔账写成一行",
       en: "The overall balance is 8 acetyl-CoA + 7 ATP + 14 NADPH -> palmitate + 7 ADP + 7 Pi + 14 NADP+ + 8 CoASH, run by seven enzyme activities and ACP together. Eight molecules of free coenzyme A come off: one from the priming acetyl-CoA and one from each of the seven malonyl-CoA. **CO2 goes in seven times at the carboxylase and comes out seven times at the condensation, so its net contribution is zero and not one of its carbons stays in palmitate.**",
       cn: "总平衡式是 8 乙酰-CoA + 7 ATP + 14 NADPH -> 软脂酸 + 7 ADP + 7 Pi + 14 NADP+ + 8 CoASH，由七种酶活性连同 ACP 一起完成。放出八分子游离辅酶 A：一分子来自作引物的乙酰-CoA，另外七分子分别来自七个丙二酰-CoA。**CO2 在羧化酶那里进去七次，又在缩合那里出来七次，净贡献为零，它的碳一个也没留在软脂酸里。**",
-      src: "B §8.3, p.190",
-      see: [{ id: "8-3-4", en: "the summary equation and the carbon accounting", cn: "总结方程式与碳原子核算" }]
+      src: "B §8.3, p.190"
     },
     {
       link_en: "the rate-limiting step is where control acts, and it is controlled three ways at once",
@@ -223,16 +217,14 @@ window.BIOLITE_SPINE["key:fatty-acid-biosynthesis"] = {
       link_cn: "「造」与「烧」之间有三点差异，这三点就是标准答案",
       en: "Synthesis starts from acetyl-CoA and is formally similar to degradation, and three differences separate them. First, synthesis opens with a carboxylation to malonyl-CoA, a step degradation has no counterpart to. Second, the hydrogen donor for synthesis is NADPH while oxidation produces NADH, the two nicotinamide coenzymes being kept functionally apart. Third, degradation is localised in the mitochondrion while synthesis runs in the cytoplasm on a multienzyme complex. **A complex that holds every intermediate bound and releases only the finished sixteen- and eighteen-carbon acyl-CoA cannot be run backwards, and no other pathway can intercept it halfway.**",
       cn: "合成的起点仍是乙酰-CoA，形式上与分解相似，而三点差异把它们分开。第一，合成以一次羧化开场，生成丙二酰-CoA，分解里根本没有对应的步骤。第二，合成的供氢体是 NADPH，而氧化产生 NADH，这两种烟酰胺辅酶在功能上被分隔开。第三，分解定位在线粒体，合成则在细胞质中的一个多酶复合体上进行。**一个把每个中间产物都攥在手里、只放出做完的十六碳和十八碳酰基-CoA 的复合体，既没法被倒着跑，也没法被别的途径半路截走。**",
-      src: "B §10.1.2, p.220",
-      see: [{ id: "10-9", en: "the three differences as the book lists them", cn: "教材列出的这三点差异" }]
+      src: "B §10.1.2, p.220"
     },
     {
       link_en: "so what happens to a finished palmitate",
       link_cn: "那么做好的软脂酸去哪儿",
       en: "Palmitate has three fates. It can be used as it stands in the cytoplasm to build a simple or a complex lipid; it can be elongated by further two-carbon units; or it can be dehydrogenated into an unsaturated fatty acid. Two accounts differ on where elongation happens: one puts the elongase system in the mitochondrial matrix, the other describes elongation systems in both the smooth endoplasmic reticulum and mitochondria and calls the reticulum system the more active of the two. **Elongation carries the chain on to stearate and beyond using coenzyme A rather than ACP as the carrier, and is otherwise the same chemistry as palmitate synthesis.**",
       cn: "软脂酸有三条去路：在细胞质里原样用掉，去造一种单纯或复合脂质；被再接上若干个二碳单元而延长；或者被脱氢变成不饱和脂肪酸。关于延长发生在哪里，两种说法不一致：一种把延长酶系统放在线粒体基质，另一种说光面内质网和线粒体两处都有延长系统，且内质网那套更活跃。**延长把链接到硬脂酸乃至更长，用的载体是辅酶 A 而不是 ACP，其余的化学与软脂酸合成完全相同。**",
-      src: "B §8.3, p.190 · A p.754",
-      see: [{ id: "8-3-4", en: "palmitate's three fates as listed", cn: "软脂酸三条去路的原始列举" }]
+      src: "B §8.3, p.190 · A p.754"
     },
     {
       link_en: "desaturation runs into a hard limit, and that limit is an entire nutritional fact",
@@ -268,34 +260,30 @@ window.BIOLITE_SPINE["key:fatty-acid-biosynthesis"] = {
     {
       link_en: "an acyl chain is not yet a lipid, and building one needs three activated parts",
       link_cn: "一条酰基链还不是脂质；造一个脂质要三样活化好的材料",
-      en: "Anabolic enzymes act on activated forms rather than on free compounds, and lipid synthesis needs three of them: glycerol activated as glycerol phosphate, fatty acids activated as acyl-CoA, and the organic bases of phospholipid head groups activated by CTP. Glycerol phosphate is an indirect product of glycolysis, so making a fat needs a contribution from sugar metabolism. In a fat cell, glycerol phosphate takes one acyl-CoA and then a second, releasing coenzyme A each time. **The product is phosphatidic acid — a diacylglycerol carrying a phosphate at C-3 — and it is the first natural intermediate and the branch point every later lipid comes off.**",
-      cn: "合成代谢的酶作用的是活化态而不是游离化合物，而脂质合成需要三种活化态：甘油活化成磷酸甘油，脂肪酸活化成脂酰-CoA，磷脂头部的有机碱由 CTP 活化。磷酸甘油是糖酵解的间接产物，所以造一分子脂肪必须有糖代谢的贡献。在脂肪细胞里，磷酸甘油先接一个脂酰-CoA、再接第二个，每次放出一分子辅酶 A。**产物是磷脂酸——C-3 位带一个磷酸基的二酰甘油——它是第一个天然中间体，也是后面所有脂质分岔出去的那个点。**",
-      src: "B §8.3, p.190 · §10.1.2, p.220",
-      see: [{ id: "8-3-5", en: "the activated precursors and the two acylations", cn: "活化前体与那两次酰化" }]
+      en: "Anabolic enzymes act on activated forms rather than on free compounds, and lipid synthesis needs three of them: glycerol activated as glycerol phosphate, fatty acids activated as acyl-CoA, and the organic bases of phospholipid head groups activated by CTP. Glycerol phosphate is an indirect product of glycolysis, so making a fat needs a contribution from sugar metabolism. In a fat cell, glycerol phosphate takes one acyl-CoA and then a second, releasing coenzyme A each time. **The product is phosphatidic acid — a diacylglycerol carrying a phosphate at C-3 — and it is the first natural intermediate and the branch point every later lipid comes off.** One didactic caveat: the introductory sentence promises triacylglycerol synthesis, yet the diagram on that page alone stops at phosphatidic acid, which is not yet a triacylglycerol, and the remaining dephosphorylation and third acylation are shown on the page after it.",
+      cn: "合成代谢的酶作用的是活化态而不是游离化合物，而脂质合成需要三种活化态：甘油活化成磷酸甘油，脂肪酸活化成脂酰-CoA，磷脂头部的有机碱由 CTP 活化。磷酸甘油是糖酵解的间接产物，所以造一分子脂肪必须有糖代谢的贡献。在脂肪细胞里，磷酸甘油先接一个脂酰-CoA、再接第二个，每次放出一分子辅酶 A。**产物是磷脂酸——C-3 位带一个磷酸基的二酰甘油——它是第一个天然中间体，也是后面所有脂质分岔出去的那个点。** 有一处教学提示：引言句承诺要讲三酰甘油的合成，可这一页上的插图本身只走到磷脂酸，那还不是三酰甘油；剩下的去磷酸化和第三次酰化画在下一页上。",
+      src: "B §8.3, p.190 · §10.1.2, p.220"
     },
     {
       link_en: "and phosphatidic acid takes one of two routes, which decides the product family",
       link_cn: "磷脂酸有两条去路，选哪条决定产物属于哪一族",
-      en: "Removing the phosphate gives diacylglycerol, and from there four things follow: a third acyl-CoA completes a triglyceride, CDP-ethanolamine gives phosphatidylethanolamine, CDP-choline gives phosphatidylcholine, and two successive UDP-galactose transfers give the plant membrane glycolipids monogalactosyldiacylglycerol and digalactosyldiacylglycerol. Phosphatidylcholine can also swap its head group with free serine, releasing choline, to give phosphatidylserine — a base exchange rather than a CDP-activated route. **Activating phosphatidic acid with CTP instead gives CDP-diacylglycerol, and from that come phosphatidylglycerol, cardiolipin and phosphatidylinositol — two activations, two product families.**",
-      cn: "去掉磷酸得到二酰甘油，从这里分出四条路：第三个脂酰-CoA 把三酰甘油补完；CDP-乙醇胺给出磷脂酰乙醇胺；CDP-胆碱给出磷脂酰胆碱；两次连续的 UDP-半乳糖转移给出植物膜糖脂单半乳糖基二酰甘油和双半乳糖基二酰甘油。磷脂酰胆碱还能与游离丝氨酸交换头部基团、放出胆碱，生成磷脂酰丝氨酸——这是碱基交换，不走 CDP 活化那条路。**换成用 CTP 把磷脂酸活化，得到的是 CDP-二酰甘油，由它给出磷脂酰甘油、心磷脂和磷脂酰肌醇——两种活化方式，两个产物家族。**",
-      src: "B §8.3, p.191",
-      see: [{ id: "8-3-6", en: "the full branching scheme with every byproduct", cn: "完整的分支图与每一个副产物" }]
+      en: "Removing the phosphate gives diacylglycerol, and from there four things follow: a third acyl-CoA completes a triglyceride, CDP-ethanolamine gives phosphatidylethanolamine, CDP-choline gives phosphatidylcholine, and two successive UDP-galactose transfers give the plant membrane glycolipids monogalactosyldiacylglycerol and digalactosyldiacylglycerol. Phosphatidylcholine can also swap its head group with free serine, releasing choline, to give phosphatidylserine — a base exchange rather than a CDP-activated route. **Activating phosphatidic acid with CTP instead gives CDP-diacylglycerol, and from that come phosphatidylglycerol, cardiolipin and phosphatidylinositol — two activations, two product families.** One branch is worth stating exactly as far as it goes and no farther: CDP-diacylglycerol plus myo-inositol, releasing CMP, gives phosphatidylinositol, which the diagram marks as the precursor of further products while naming none of them and detailing none of them — a genuine gap in the coverage, not filled in here with invented phosphoinositide names.",
+      cn: "去掉磷酸得到二酰甘油，从这里分出四条路：第三个脂酰-CoA 把三酰甘油补完；CDP-乙醇胺给出磷脂酰乙醇胺；CDP-胆碱给出磷脂酰胆碱；两次连续的 UDP-半乳糖转移给出植物膜糖脂单半乳糖基二酰甘油和双半乳糖基二酰甘油。磷脂酰胆碱还能与游离丝氨酸交换头部基团、放出胆碱，生成磷脂酰丝氨酸——这是碱基交换，不走 CDP 活化那条路。**换成用 CTP 把磷脂酸活化，得到的是 CDP-二酰甘油，由它给出磷脂酰甘油、心磷脂和磷脂酰肌醇——两种活化方式，两个产物家族。** 其中有一支值得严格照原样讲、不多讲一步：CDP-二酰甘油加肌醇（myo-inositol）、放出 CMP，生成磷脂酰肌醇；插图把它标为若干「后续产物」的前体，却既没有给这些产物命名，也没有给出细节——这是覆盖上的一处真实空白，此处不拿臆造的磷酸肌醇衍生物名字去填。",
+      src: "B §8.3, p.191"
     },
     {
       link_en: "the third family of lipids is built from the same acetyl-CoA, three units at a time",
       link_cn: "第三类脂质用的还是同一个乙酰-CoA，一次三个单元",
       en: "Derived lipids here means terpenoids, cholesterol among them, and their synthesis divides into three phases: A from acetyl-CoA to mevalonate, B from mevalonate to an unsaturated hydrocarbon, and C from that hydrocarbon to a functional terpenoid. Phase A joins three acetyl-CoA into the six-carbon mevalonic acid, which is 3-methyl-3,5-dihydroxyvaleric acid. Two acetyl-CoA condense to acetoacetyl-CoA — a four-carbon thioester — then a third acetyl-CoA and water give beta-hydroxy-beta-methylglutaryl-CoA, written HMG-CoA, and HMG-CoA reductase reduces that with 2 NADPH to mevalonate. The printed scheme labels the first condensation as going via malonyl-CoA with CO2 released — standard accounts instead give a simple thiolase condensation releasing only coenzyme A — and that disagreement is worth carrying rather than smoothing over. **HMG-CoA reductase is the key regulatory enzyme of the whole route, which is why it is of medical interest for lowering cholesterol and for treating atherosclerosis.**",
       cn: "这里说的衍生脂质主要指萜类，胆固醇也在其中，它们的合成分为三个阶段：A 阶段从乙酰-CoA 到甲羟戊酸，B 阶段从甲羟戊酸到不饱和烃，C 阶段从那个烃到有功能的萜类。A 阶段把三个乙酰-CoA 拼成六碳的甲羟戊酸，也就是 3-甲基-3,5-二羟基戊酸。两个乙酰-CoA 缩合成乙酰乙酰-CoA——一个四碳的硫酯——第三个乙酰-CoA 加水给出 β-羟基-β-甲基戊二酸单酰-CoA，写作 HMG-CoA；HMG-CoA 还原酶再用 2 个 NADPH 把它还原成甲羟戊酸。印出来的图把第一次缩合标成「经由丙二酰-CoA」并放出 CO2，而标准说法是一次简单的硫解酶缩合、只放出辅酶 A——这处分歧值得原样带着，而不是抹平。**HMG-CoA 还原酶是整条路线的关键调节酶，这正是它在降胆固醇与治疗动脉粥样硬化上具有医学意义的原因。**",
-      src: "B §8.3, pp.191-192, p.193",
-      see: [{ id: "8-3-7", en: "phase A reaction by reaction, and the malonyl-CoA discrepancy", cn: "A 阶段逐个反应，以及丙二酰-CoA 那处出入" }]
+      src: "B §8.3, pp.191-192, p.193"
     },
     {
       link_en: "phase B turns mevalonate into the five-carbon unit everything else is built from",
       link_cn: "B 阶段把甲羟戊酸变成那个五碳单元，后面的一切都由它搭出来",
       en: "Three kinases phosphorylate mevalonate with 3 ATP to 3-phospho-5-pyrophosphomevalonic acid, which then loses both Pi and CO2 to give isopentenyl pyrophosphate — the first activated five-carbon isoprene unit. An isomerase interconverts it with its structural isomer, named dimethylallyl pyrophosphate. **Chains then grow head-to-tail: isopentenyl plus dimethylallyl pyrophosphate give the ten-carbon geranyl pyrophosphate, and a further five-carbon unit gives the fifteen-carbon farnesyl pyrophosphate.** Two farnesyl pyrophosphate join head-to-head into squalene — thirty carbons, with a marked centre of symmetry in the drawn structure. A parallel branch reaches the twenty-carbon geranylgeranyl pyrophosphate and then, head-to-head, the forty-carbon phytoene — the entry point of the carotenoids. One printed scheme makes geranylgeranyl pyrophosphate the product of a single head-to-tail step from geranyl pyrophosphate, which cannot balance, since ten carbons plus five make fifteen and not twenty; farnesyl pyrophosphate plus one five-carbon unit is the step that balances.",
       cn: "三个激酶用 3 个 ATP 把甲羟戊酸磷酸化成 3-磷酸-5-焦磷酸甲羟戊酸，它随后同时失去 Pi 和 CO2，给出异戊烯基焦磷酸——第一个活化的五碳异戊二烯单位。一个异构酶让它与自己的结构异构体互变，那个异构体名叫二甲丙烯基焦磷酸。**接下来链按「头对尾」生长：异戊烯基焦磷酸加二甲丙烯基焦磷酸给出十碳的香叶基焦磷酸，再加一个五碳单元给出十五碳的法尼基焦磷酸。** 两个法尼基焦磷酸「头对头」拼成角鲨烯——三十个碳，画出来的结构上标着一个对称中心。另有一条平行分支走到二十碳的香叶基香叶基焦磷酸，再「头对头」得到四十碳的八氢番茄红素——类胡萝卜素家族的入口。有一张印出来的图把香叶基香叶基焦磷酸当成香叶基焦磷酸一步头尾缩合的产物，这笔账合不上：十碳加五碳是十五不是二十；能对上的那一步是法尼基焦磷酸加一个五碳单元。",
-      src: "B §8.3, p.192",
-      see: [{ id: "8-3-8", en: "phase B in full, and the carbon-balance flag", cn: "B 阶段的完整内容与那处碳数不平的标记" }]
+      src: "B §8.3, p.192"
     },
     {
       link_en: "and phase C is where a hydrocarbon becomes a working molecule",
@@ -304,8 +292,7 @@ window.BIOLITE_SPINE["key:fatty-acid-biosynthesis"] = {
       cn: "C 阶段没有单一的通用方案。它是一组由酶控制的修饰：最常见的是引入羟基、醛基、羰基或羧基的氧化反应，以及用一个或多个甲基把链缩短或延长；闭合成三到九元环也非常常见。角鲨烯这一支是完整给出的：角鲨烯单加氧酶把角鲨烯变成 2,3-角鲨烯环氧化物，一个环化酶把它变成环状固醇羊毛甾醇，再经约二十步脱除和转移甲基的反应，在动物体内把羊毛甾醇变成胆固醇。**A 阶段研究得很透，B 阶段的基本面貌已知，而 C 阶段在相当多的情况下仍未被生化阐明；所以这套讲法有把握的部分，止于它的最后一段之前。**",
       src: "B §8.3, p.193",
       openQuestion_en: "Phase C — the conversion of an unsaturated hydrocarbon into a functional terpenoid — is in a good number of cases still biochemically unexplored.",
-      openQuestion_cn: "C 阶段，即把不饱和烃转化为有功能的萜类，在相当多的情况下仍未被生物化学阐明。",
-      see: [{ id: "8-3-9", en: "phase C and the squalene-to-cholesterol sequence", cn: "C 阶段与角鲨烯到胆固醇的序列" }]
+      openQuestion_cn: "C 阶段，即把不饱和烃转化为有功能的萜类，在相当多的情况下仍未被生物化学阐明。"
     }
   ],
   terms: [
@@ -369,8 +356,14 @@ window.BIOLITE_SPINE["key:fat-mobilization"] = {
       en: "A simple lipid in storage is a triacylglycerol: one glycerol esterified with three fatty acids, and the main storage substance of an organism. Taking it apart needs one hydrolytic step and no more. **Lipases — hydrolytic enzymes present in the cytoplasm — cut the ester bonds that join the fatty acids to the glycerol, and the reaction is a plain hydrolysis of triacylglycerol with water.**",
       cn: "储存起来的单纯脂质就是三酰甘油：一个甘油与三个脂肪酸成酯，也是生物体内主要的储备物质。把它拆开只要一步水解，再无其他。**脂肪酶——存在于细胞质中的水解酶——切开把脂肪酸接在甘油上的那些酯键；这个反应就是三酰甘油加水的一次朴素水解。**",
       src: "B §8.4.1, p.193",
-      see: [{ id: "8-4-1", en: "the lipase reaction as the book gives it", cn: "教材给出的脂肪酶反应" },
-            { id: "L-10-1-1", en: "why the store is fat rather than glycogen", cn: "为什么储备是脂肪而不是糖原" }]
+      see: [{ id: "L-10-1-1", en: "why the store is fat rather than glycogen", cn: "为什么储备是脂肪而不是糖原" }]
+    },
+    {
+      link_en: "and why a triacylglycerol is the molecule worth keeping a store of",
+      link_cn: "为什么值得存起来的偏偏是三酰甘油这种分子",
+      en: "Triacylglycerols — each one glycerol carrying three fatty acids, also written triglycerides — are described as the main storage substance of organisms, the form in which reserve energy is actually held. **A fat store is a store of fatty acids locked up in ester bonds, so none of it reaches metabolism until a lipase hydrolysis has released them, and mobilization begins right there.**",
+      cn: "三酰甘油——一个甘油带三个脂肪酸，也写作甘油三酯——是生物体内主要的储备物质，是储备能量真正被保存下来的形式。**脂肪储备就是被酯键锁住的脂肪酸储备，所以在脂肪酶水解把它们放出来之前，其中没有一分能进入代谢；动员正是从这里开始。**",
+      src: "B §8.4.1, p.193"
     },
     {
       link_en: "and the two halves of that molecule go to different places",

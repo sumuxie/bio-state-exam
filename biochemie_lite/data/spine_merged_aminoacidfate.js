@@ -285,6 +285,13 @@ window.BIOLITE_SPINE["key:amino-acid-degradation"] = {
             { id: "L-17-2-1", en: "fatty acid oxidation, the other supplier of those acetyl units", cn: "脂肪酸氧化 —— 那些乙酰单位的另一个供应方" }]
     },
     {
+      link_en: "and before the membership lists, one declaration of scope that decides how to read them",
+      link_cn: "而在名单开始之前，先有一句关于范围的声明，它决定这些名单该怎么读",
+      en: "A full account of every amino acid's individual degradation is necessary for understanding fairly common metabolic disorders, their diagnosis and their therapy, and it clearly exceeds the framework of a set of lecture notes. **What follows is basic principles and schemes rather than exhaustive mechanism, so a road named here is a route to recognise and not a sequence of enzymes to recite.**",
+      cn: "把每一种氨基酸各自的降解过程讲全，对于理解相当常见的代谢疾病及其诊断与治疗是必要的，而这显然超出一份讲义的范围。**接下来给出的是基本原理与图式，不是详尽的机制；所以这里点到的一条路，是用来认出来的路线，而不是一串要背下来的酶。**",
+      src: "B §5.2.3, pp.125–126"
+    },
+    {
       link_en: "the membership of the destinations, starting at the three-carbon end",
       link_cn: "六个终点各自的成员名单，先从三碳这一头说起",
       en: "To pyruvate, in whole or in part, go alanine, cysteine, glycine, serine, threonine and tryptophan, and each takes a different road there. Alanine needs one transamination with 2-oxoglutarate and nothing more. Serine is dehydrated and deaminated to pyruvate in a single step by serine dehydratase, or is converted instead to glycine, an interconversion that serine hydroxymethyltransferase runs in both directions. Threonine is cut by threonine aldolase into glycine and acetaldehyde. **Cysteine gets to pyruvate by a longer road: its thiol group is oxidised to cysteine sulfinic acid, transamination gives beta-sulfinylpyruvate, and desulfuration strips the sulfinyl group off outright.** Tryptophan arrives here only as a minor sideline, by way of alanine, its main road being the ketogenic one.",
@@ -323,8 +330,14 @@ window.BIOLITE_SPINE["key:amino-acid-degradation"] = {
       en: "Methionine gives up its methyl group first, and three of its four remaining carbons become the propionyl group of propionyl-CoA by way of 2-oxobutyrate; isoleucine feeds into the same propionyl-CoA, and threonine also reaches 2-oxobutyrate when it is dehydrated rather than cut in two. Propionyl-CoA is converted onward to methylmalonyl-CoA, which is the immediate precursor of succinyl-CoA. **Methionine, isoleucine, valine and threonine all converge on methylmalonyl-CoA and enter the cycle as succinyl-CoA, while only aspartate and asparagine convert directly to oxaloacetate.** Valine is the one that joins at methylmalonyl-CoA without passing through propionyl-CoA at all. Aspartate and asparagine take the shortest route of any amino acid, since aspartate sits one transamination from oxaloacetate and asparagine one hydrolysis from aspartate, and aspartate then turns up in three separate places: at oxaloacetate with asparagine, at fumarate with tyrosine and phenylalanine, and as the nitrogen donor the urea cycle regenerates from oxaloacetate. That makes the aspartate-oxaloacetate pair the busiest junction between nitrogen disposal and carbon oxidation.",
       cn: "甲硫氨酸先交出它的甲基，余下四个碳中的三个经 2-氧丁酸成为丙酰-CoA 的丙酰基；异亮氨酸汇入同一个丙酰-CoA，苏氨酸在脱水（而不是被裂成两半）时也到达 2-氧丁酸。丙酰-CoA 再往下转化成甲基丙二酰-CoA，而甲基丙二酰-CoA 就是琥珀酰-CoA 的直接前体。**甲硫氨酸、异亮氨酸、缬氨酸、苏氨酸最终都汇聚到甲基丙二酰-CoA，并以琥珀酰-CoA 的身份进入循环；而直接转化为草酰乙酸的只有天冬氨酸和天冬酰胺两个。** 缬氨酸是唯一一个根本不经过丙酰-CoA、直接在甲基丙二酰-CoA 处汇入的。天冬氨酸和天冬酰胺走的是所有氨基酸中最短的一条：天冬氨酸离草酰乙酸只有一次转氨，天冬酰胺离天冬氨酸只有一次水解。而天冬氨酸随后在三处分别出现：与天冬酰胺一起出现在草酰乙酸，与酪氨酸、苯丙氨酸一起出现在延胡索酸，以及作为尿素循环由草酰乙酸再生出来的那个氮供体。这使「天冬氨酸-草酰乙酸」这一对成为氮的处理与碳的氧化之间最繁忙的那个路口。",
       src: "A pp.650, 655 · B §5.2.3, pp.127-129",
-      see: [{ id: "5-2-3-4", en: "every skeleton mapped onto its entry point around the cycle", cn: "把每副骨架对到循环上的哪个入口" },
-            { id: "L-18-2-1", en: "the urea cycle, and the aspartate shunt that ties it to the cycle", cn: "尿素循环，以及把它拴在循环上的天冬氨酸支路" }]
+      see: [{ id: "L-18-2-1", en: "the urea cycle, and the aspartate shunt that ties it to the cycle", cn: "尿素循环，以及把它拴在循环上的天冬氨酸支路" }]
+    },
+    {
+      link_en: "and one box on that family diagram has to be flagged rather than copied out",
+      link_cn: "而那张族图上有一个方框，必须标出来，不能照抄",
+      en: "Methionine's arrow on the family diagram leads straight down into a box printed '2-oxoglutarate', confirmed at three-times zoom, and that box then leads on to propionyl-CoA. **A box printed '2-oxoglutarate' under methionine is a probable mislabelling: 2-oxoglutarate is a five-carbon acid with no chemical route to a three-carbon product like propionyl-CoA.** It is also already the named end-product of the family one section above, which makes its reappearance here as a methionine intermediate structurally implausible. The standard, universally taught intermediate at exactly this position in the pathway is 2-oxobutyrate, named independently as the threonine-derived precursor of propionate, and it is a name easily mistyped as 2-oxoglutarate given the shared 2-oxo pattern. Treat methionine to 2-oxobutyrate to propionyl-CoA as the biochemically reliable reading, and treat the printed label as a probable error rather than as a fact to memorise.",
+      cn: "在那张族图上，甲硫氨酸的箭头直接向下指进一个印着「2-氧戊二酸」的方框（放大三倍核对过），该方框再指向丙酰-CoA。**甲硫氨酸下面那个印着「2-氧戊二酸」的方框，很可能是标错了：2-氧戊二酸是一个五碳酸，在化学上没有任何路径能生成丙酰-CoA 这样的三碳产物。** 而且它在上一节里已经是那一族的终产物，在这里又作为甲硫氨酸的中间体出现，结构上说不通。在通路的这个确切位置上，标准的、被普遍教授的中间体是 2-氧丁酸——它在别处被独立提到，是苏氨酸生成丙酸的前体——而「2-氧丁酸」与「2-氧戊二酸」共用「2-氧…酸」的模式，很容易被误植。请把「甲硫氨酸 → 2-氧丁酸 → 丙酰-CoA」当作生化上可靠的读法，把印出来的那个标注当作一处很可能的错误，而不是一个要背下来的事实。",
+      src: "B §5.2.3, pp.127-128"
     },
     {
       link_en: "these routes lean on a small set of cofactors, and two of them do the same kind of job",

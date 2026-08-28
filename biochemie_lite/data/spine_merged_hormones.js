@@ -295,8 +295,8 @@ window.BIOLITE_SPINE["key:hormone-structure-and-action"] = {
     {
       link_en: "and the class turns out to have no inner boundary, only a ladder of sizes",
       link_cn: "而这一类内部并没有界线，只有一道由小到大的阶梯",
-      en: "Corticotropin, ACTH, is a peptide of 39 amino acids with Mr 4 500. Insulin is a peptide of 51 amino acids with Mr 5 750, and its amino acid sequence was the very first ever determined, by Sanger in 1953. Glucagon is a peptide of 29 amino acid residues. Parathormone, at Mr 8 500, is already close to proteins. The protein hormones then run: somatotropin at Mr 21 500; thyreotropin in two subunits of Mr 10 800 and 13 000; folitropin, a glycoprotein, at Mr 34 000; lutropin, a glycoprotein, at Mr 23 000; prolactin at Mr 23 500; relaxin at Mr 12 000; erythropoetin, a glycoprotein, at Mr 34 000. **The peptide and protein hormones form one continuum from a nine-residue ring up to glycoproteins of 34 000 daltons, with no sharp line between the two, and parathormone marks the transition.**",
-      cn: "促肾上腺皮质激素 ACTH 是由 39 个氨基酸组成的肽，Mr = 4 500。胰岛素是由 51 个氨基酸组成的肽，Mr = 5 750；它的氨基酸序列是有史以来第一个被测定的（Sanger，1953 年）。胰高血糖素是由 29 个氨基酸残基组成的肽。甲状旁腺素的 Mr = 8 500，已经接近蛋白质。接下来是蛋白类激素：生长激素 Mr = 21 500；促甲状腺激素，两个亚基，Mr = 10 800 与 13 000；促卵泡素，糖蛋白，Mr = 34 000；促黄体素，糖蛋白，Mr = 23 000；催乳素 Mr = 23 500；松弛素 Mr = 12 000；促红细胞生成素，糖蛋白，Mr = 34 000。**这一类是一条连续谱：从九残基的环一直到 34 000 道尔顿的糖蛋白，「肽类」与「蛋白类」之间没有明确界线，而甲状旁腺素标出了那个过渡点。**",
+      en: "Corticotropin, ACTH, is a peptide of 39 amino acids with Mr 4 500. Insulin is a peptide of 51 amino acids with Mr 5 750, and its amino acid sequence was the very first ever determined, by Sanger in 1953. Glucagon is a peptide of 29 amino acid residues. Parathormone, at Mr 8 500, is already close to proteins. The protein hormones then run: somatotropin at Mr 21 500; thyreotropin in two subunits of Mr 10 800 and 13 000; folitropin, a glycoprotein, at Mr 34 000; lutropin, a glycoprotein, at Mr 23 000; prolactin at Mr 23 500; relaxin at Mr 12 000; erythropoetin, a glycoprotein, at Mr 34 000. **The peptide and protein hormones form one continuum from a nine-residue ring up to glycoproteins of 34 000 daltons, with no sharp line between the two, and parathormone marks the transition.** Relative molecular mass is the one measure used throughout to order the class, running from ACTH at 4 500 up to the glycoproteins at 34 000.",
+      cn: "促肾上腺皮质激素 ACTH 是由 39 个氨基酸组成的肽，Mr = 4 500。胰岛素是由 51 个氨基酸组成的肽，Mr = 5 750；它的氨基酸序列是有史以来第一个被测定的（Sanger，1953 年）。胰高血糖素是由 29 个氨基酸残基组成的肽。甲状旁腺素的 Mr = 8 500，已经接近蛋白质。接下来是蛋白类激素：生长激素 Mr = 21 500；促甲状腺激素，两个亚基，Mr = 10 800 与 13 000；促卵泡素，糖蛋白，Mr = 34 000；促黄体素，糖蛋白，Mr = 23 000；催乳素 Mr = 23 500；松弛素 Mr = 12 000；促红细胞生成素，糖蛋白，Mr = 34 000。**这一类是一条连续谱：从九残基的环一直到 34 000 道尔顿的糖蛋白，「肽类」与「蛋白类」之间没有明确界线，而甲状旁腺素标出了那个过渡点。** 全程用来给这一类排序的那个尺度，就是相对分子质量 Mr：从 ACTH 的 4 500 一路排到 34 000 的糖蛋白。",
       src: "B §10.3, p.228"
     },
     {
@@ -321,8 +321,7 @@ window.BIOLITE_SPINE["key:hormone-structure-and-action"] = {
       en: "One physiological problem uses four of these hormones at once. **Blood glucose has to be held near 4.5 mM minute by minute, and insulin, glucagon, epinephrine and cortisol answer that single demand on four different timescales.** Insulin says blood glucose is higher than it needs to be, and it moves GLUT4 glucose transporters that were already sitting in intracellular vesicles out to the plasma membrane, which is why it acts within minutes. Glucagon says blood glucose is too low, and reaches the liver and adipose tissue but not muscle, which carries no glucagon receptors at all. Epinephrine is anticipatory, released from the adrenal medulla before the work is done rather than after, and it does reach muscle.",
       cn: "有一个生理问题，一次动用了其中四种激素。**血糖必须分分秒秒被维持在 4.5 mM 左右，而胰岛素、胰高血糖素、肾上腺素与皮质醇，在四个不同的时间尺度上回应这同一个要求。**胰岛素传的话是「血糖比需要的高」，它把原本待在细胞内囊泡里的 GLUT4 葡萄糖转运体搬到质膜上 —— 这就是它能在几分钟内起效的原因。胰高血糖素传的话是「血糖太低」，它到得了肝脏和脂肪组织，却到不了肌肉，因为肌细胞根本没有胰高血糖素受体。肾上腺素是预支型的：神经信号在活儿干完之前、而不是之后，就把它从肾上腺髓质放出来 —— 而它到得了肌肉。",
       src: "A pp.859–866",
-      see: [{ id: "L-23-3-1", en: "the four hormones of fuel metabolism, enzyme by enzyme", cn: "燃料代谢的四种激素，一个酶一个酶地讲" },
-            { id: "L-23-5-1", en: "what happens when the insulin end of that system fails", cn: "这套系统在胰岛素那一端坏掉时会发生什么" }]
+      see: [{ id: "L-23-5-1", en: "what happens when the insulin end of that system fails", cn: "这套系统在胰岛素那一端坏掉时会发生什么" }]
     },
     {
       link_en: "and the deepest thing in that system is not what insulin does but how the body decides to release it",
@@ -349,6 +348,13 @@ window.BIOLITE_SPINE["key:hormone-structure-and-action"] = {
       en: "Cortisol is released by anxiety, fear, pain, haemorrhage, infection, low blood glucose and starvation. **Cortisol changes the kinds and amounts of enzymes its target cells synthesise instead of regulating enzymes that already exist, and that one difference is why steroid hormones are slow.** Insulin, glucagon and epinephrine phosphorylate enzymes that are already present and act in seconds to minutes; cortisol has to have new enzymes transcribed and translated, and acts over hours. Leaving it switched on has a price: sustained release damages muscle and bone and impairs endocrine and immune function, overproduction gives Cushing disease, and underproduction gives Addison disease.",
       cn: "皮质醇由焦虑、恐惧、疼痛、失血、感染、低血糖和饥饿所释放。**皮质醇改变的是靶细胞合成哪些酶、合成多少，而不是去调节已经存在的酶 —— 仅这一点差别，就是类固醇激素为什么慢的原因。**胰岛素、胰高血糖素与肾上腺素磷酸化的是本来就在场的酶，作用以秒到分钟计；皮质醇必须先让新的酶被转录、再被翻译，作用以小时计。让它一直开着是有代价的：持续释放会损伤肌肉与骨骼、损害内分泌与免疫功能；产生过多是库欣病，产生不足是艾迪生病。",
       src: "A pp.865–866"
+    },
+    {
+      link_en: "and starvation, the last item on that list, runs long enough that the brain has to change fuel",
+      link_cn: "而那张清单上的最后一项——饥饿——一旦拖得够久，大脑就得换燃料",
+      en: "The reason a brain burns ketone bodies and not fatty acids is a barrier rather than a preference: fatty acids do not cross the blood-brain barrier, while ketone bodies do and supplement glucose as an energy source for the brain during a long fast. **Over six weeks of starvation ketone bodies are almost unmeasurable at the start and rise sharply after two to four days, so the switch of fuel is a measurable time course and not a metaphor.** Acetone, a minor ketone body, is not metabolised at all and leaves in the breath, which is the bedside sign. The ending is worth stating plainly, because it is the counterweight to treating ketosis as pure pathology: when fat reserves are gone the degradation of essential proteins begins, and that leads to loss of heart and liver function and, in prolonged starvation, to death.",
+      cn: "大脑烧酮体而不烧脂肪酸，原因是一道屏障，而不是什么偏好：脂肪酸过不了血脑屏障，酮体过得去，并在长时间禁食中作为大脑的能量来源补充葡萄糖。**在六周饥饿的进程里，酮体在起始时几乎测不出来，两到四天后急剧上升——所以换燃料这件事是一条可测量的时间曲线，不是一个比喻。** 丙酮是一种次要的酮体，它根本不被代谢，经呼吸排出，这就是床旁可闻的那个体征。结局值得平实地说出来，因为它正是「把酮症当作纯粹病理」这种看法的配重：脂肪储备耗尽之后，必需蛋白质的降解就开始了，而这会导致心脏和肝脏功能的丧失，在长期饥饿中导致死亡。",
+      src: "A p.864 · A p.866, Fig. 23-28"
     },
     {
       link_en: "so what does the whole chapter come to?",

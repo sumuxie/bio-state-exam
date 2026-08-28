@@ -44,6 +44,20 @@ window.BIOLITE_SPINE["key:genetic-code"] = {
       src: "§4.2.1, p.92 · A p.1006"
     },
     {
+      link_en: "and before the rule itself, where in a cell that reading happens and what it costs",
+      link_cn: "而在讲这条规则本身之前，先说这场读取发生在细胞的哪里、要花什么代价",
+      en: "Protein synthesis is bound to specific subcellular structures, to enzymes and to protein factors, and the organelles participating are the nucleus, the nucleolus, the endoplasmic reticulum and above all the ribosomes, the particles on which a chain is actually assembled. **Synthesis is an endergonic process, meaning it requires an input of energy, and it is strictly regulated, so no cell reads its own code continuously or for free.**",
+      cn: "蛋白质合成与特定的亚细胞结构、与酶、与蛋白质因子绑在一起；参与其中的细胞器是细胞核、核仁、内质网，以及最主要的核糖体——肽链真正被组装出来的那种颗粒。**合成是一个耗能（endergonic）过程，也就是需要能量输入，而且它受到严格调节；所以没有哪个细胞会不停地、免费地读自己的密码。**",
+      src: "§4.2.1, p.92"
+    },
+    {
+      link_en: "and drawn across the compartments, the same path sets the two questions everything here answers",
+      link_cn: "把同一条路铺在各个区室上，它提出了下面全部内容要回答的两个问题",
+      en: "Drawn across a cell's compartments the path from gene to protein runs like this: DNA replication and RNA transcription happen in the cell nucleus, on the chromosome, by DNA polymerase and RNA polymerase; the transcript then undergoes RNA processing to become a messenger RNA, which crosses the nuclear membrane into the cytoplasm, where protein translation takes place. That scheme is also the philosophy of the central dogma of molecular biology. **For protein synthesis to proceed correctly two key questions must be answered: how the transfer of genetic information is secured, and how the energetics of peptide bond formation is secured.**",
+      cn: "把从基因到蛋白质的这条路铺在细胞的各个区室上，它是这样走的：DNA 复制与 RNA 转录发生在细胞核里、在染色体上，由 DNA 聚合酶和 RNA 聚合酶完成；转录产物随后经过 RNA 加工成为信使 RNA，穿过核膜进入细胞质，蛋白质翻译在那里进行。这张图式同时也就是分子生物学中心法则的思想。**要让蛋白质合成正确进行，必须回答两个关键问题：遗传信息的传递如何得到保证，以及形成肽键所需的能量如何得到保证。**",
+      src: "§4.2.1, pp.93–94, Obr. 4.34"
+    },
+    {
       link_en: "so how many bases make one word?",
       link_cn: "那么一个词由几个碱基组成？",
       en: "Four kinds of base taken one at a time give four combinations; taken in pairs they give sixteen. Both are fewer than twenty, so neither can name every amino acid. Taken in threes they give 4³ = 64. A group of three bases that specifies one amino acid is called a codon. **Sixty-four words have to carry twenty-one meanings — twenty amino acids and stop — so the code was forced to be redundant** before anyone had identified a single one of its words, and every later property of the code follows from that surplus.",
@@ -530,6 +544,69 @@ window.BIOLITE_SPINE["key:gene-regulation-proteins"] = {
       en: "Steroid hormones, and the thyroid and retinoid hormones that work the same way, are hydrophobic enough to diffuse straight through the plasma membrane, so they need no membrane receptor; once inside they bind intracellular receptors that are themselves transcription activators, which is the whole point — such a receptor is the activator and not a relay that eventually causes transcription. The hormone-receptor complex binds a hormone response element — a specific DNA sequence of two six-nucleotide halves, either adjacent or three nucleotides apart — as a dimer, with each half read by one subunit's pair of zinc fingers. Type I receptors, for estrogen, progesterone, androgen and cortisol, wait in the cytoplasm bound to a heat shock protein that the hormone releases, after which the receptor dimerises and goes to its site; type II receptors, such as the thyroid hormone receptor, are already on their DNA site with a corepressor holding them inactive until the hormone throws it off. A non-steroid hormone never enters the cell: its pathway raises cytosolic cyclic AMP, cyclic AMP releases the catalytic part of protein kinase A, that part enters the nucleus and attaches a phosphate to a protein called CREB, and phosphorylated CREB binds cAMP response elements near certain genes and switches them on. Control does not stop when a message is finished either — a maturing reticulocyte destroys its nucleus, leaving stored mRNAs as the only thing left to control, and when heme runs short a kinase phosphorylates an initiation factor, which is then trapped by the protein that would have recycled it, so globin synthesis stops before globin chains with no heme to fill them can precipitate. **A steroid hormone carries its own transcription factor into the nucleus with it, while a peptide hormone stays outside and sends a phosphate group up a cascade** to modify a transcription factor that was already there.",
       cn: "类固醇激素，以及以同样方式工作的甲状腺激素和类视黄醇激素，疏水到足以直接扩散穿过质膜，所以不需要膜受体；进入细胞后，它们结合的胞内受体本身就是转录激活蛋白 —— 这才是要点所在：这样一个受体就是激活蛋白，而不是一个「最终导致转录」的中继站。激素-受体复合物以二聚体形式结合一段激素响应元件（由两个六核苷酸半位点构成的特定序列），每一半由一个亚基的两个锌指读取。I 型受体（雌激素、孕激素、雄激素、皮质醇的受体）待在胞质里结合着一个热激蛋白，激素一到就把它放开，随后受体二聚化、前往自己的位点；II 型受体（例如甲状腺激素受体）本来就停在自己的 DNA 位点上，被一个共抑制因子按住不动，直到激素把它甩掉。非类固醇激素从不进入细胞：它的通路提高胞质里环腺苷酸的浓度，环腺苷酸放开蛋白激酶 A 的催化部分，后者进入细胞核给一个叫 CREB 的蛋白接上一个磷酸，被磷酸化的 CREB 随后结合某些基因附近的 cAMP 响应元件，把它们打开。而信息做好了，控制也并没有停 —— 正在成熟的网织红细胞会毁掉自己的细胞核，能控制的就只剩下储存的那些 mRNA；缺血红素时，一个激酶给一个起始因子加上磷酸，该因子随即被「本该把它回收再用」的那个蛋白困住，于是珠蛋白的合成停下，赶在没有血红素可装的珠蛋白链沉淀出来之前。**类固醇激素把自己的转录因子随身带进细胞核，而肽类激素待在外面、沿一条级联送进一个磷酸基团，去修饰一个本来就在那里的转录因子。**",
       src: "A p.1083 · A p.1084 · A p.1085 · §4.2.4, p.108"
+    },
+    {
+      link_en: "and the remodeling named a moment ago is done by four families that are not interchangeable",
+      link_cn: "而刚才提到的重塑，是由四个彼此不可互换的家族做的",
+      en: "Four ATP-dependent families do the physical work of chromatin remodeling, and they are not interchangeable. SWI/SNF ejects nucleosomes near transcription start sites, in a cycle that lets transcription factors replace them and later be replaced back, while ISWI mostly optimises nucleosome spacing for chromatin assembly and silencing. CHD — nine or ten complexes in three subfamilies — both ejects nucleosomes to activate and assembles them to repress, depending on the member. INO80 remodels for activation and for DNA repair, and its member SWR1 swaps H2A-H2B for H2AZ-H2B. **Installing a histone variant is a remodeling outcome in its own right, because H2AZ is the variant that marks actively transcribed regions.**",
+      cn: "染色质重塑的体力活由四个依赖 ATP 的家族承担，它们彼此不可互换。SWI/SNF 在转录起点附近把核小体顶掉，形成一个让转录因子替换它们、之后又被换回去的循环；ISWI 主要把核小体的间距调到最优，以利染色质的组装与沉默。CHD——九到十个复合体，分三个亚家族——既能顶掉核小体以激活，也能组装核小体以抑制，视成员而定。INO80 既为转录激活也为 DNA 修复而重塑，它的成员 SWR1 把 H2A–H2B 换成 H2AZ–H2B。**装进一个组蛋白变体本身就是一种重塑结果，因为 H2AZ 正是标记「正在被转录的区域」的那个变体。**",
+      src: "A p.1077"
+    },
+    {
+      link_en: "and if methylation is the recruiting signal, something has to be able to take a methyl group off again",
+      link_cn: "既然甲基化是招募信号，就得有东西能把甲基再摘下来",
+      en: "Two classes of enzyme remove a methyl group from a histone. LSD is the first: it converts the methylated nitrogen to an imine and hydrolyses it. JmjC-domain enzymes are the second — they hydroxylate the methyl group, which then leaves as formaldehyde, and mammalian genomes encode more than 20 of them. JmjC enzymes belong to the alpha-ketoglutarate-dependent hydroxylase family that also holds collagen prolyl hydroxylase and AlkB, and they are strongly inhibited by 2-hydroxyglutarate. **Mutant isocitrate dehydrogenase — common in human cancers — produces 2-hydroxyglutarate in quantity, so one citric acid cycle mutation disables a whole family of epigenetic erasers.**",
+      cn: "把甲基从组蛋白上摘下来的酶有两类。LSD 是第一类：它把甲基化的氮转成亚胺，再水解掉。含 JmjC 结构域的酶是第二类——它们把甲基羟化，甲基随后以甲醛的形式离去；哺乳动物基因组编码 20 多种这样的酶。JmjC 类酶属于依赖 α-酮戊二酸的羟化酶家族，这个家族还包含胶原脯氨酰羟化酶和 AlkB，而它们被 2-羟基戊二酸强烈抑制。**突变型异柠檬酸脱氢酶——在人类癌症中很常见——大量产生 2-羟基戊二酸，于是柠檬酸循环里一个酶的突变，废掉了一整个家族的表观遗传「橡皮擦」。**",
+      src: "A p.1077"
+    },
+    {
+      link_en: "and in a eukaryote the transcript itself is cut about long before it is ever translated",
+      link_cn: "而在真核细胞里，转录产物早在被翻译之前就先被大动干戈地剪过",
+      en: "The primary eukaryotic transcript is hnRNA, heterogeneous nuclear RNA, and it is much longer than the mature messenger RNA it becomes. Ribonucleases shorten it step by step by excising the introns — the non-coding stretches, which are never translated — while the exons, the coding sequence of the gene, are rejoined; the junction sequence between exon and intron is highly homologous across different eukaryotes. The chicken ovalbumin gene is the worked case: 7700 base pairs, with introns 1 to 7 alternating with exons I to VII. **Transcription gives hnRNA, the transcript is capped and polyadenylated, and only then are the introns spliced out, leaving a mature ovalbumin mRNA of 1872 nucleotides.**",
+      cn: "真核的初级转录产物是 hnRNA，即核内异质 RNA，它比它将要变成的成熟信使 RNA 长得多。核糖核酸酶把它一步步缩短，切除内含子——那些不编码、永远不会被翻译的段落——同时把外显子（也就是基因的编码序列）重新接起来；外显子与内含子交界处的序列在不同真核生物之间高度同源。鸡的卵清蛋白基因就是被讲透的那个例子：7700 个碱基对，内含子 1–7 与外显子 I–VII 交替排列。**转录先给出 hnRNA，转录产物随后加帽并被多聚腺苷酸化，再之后内含子才被剪接掉，留下一条 1872 个核苷酸的成熟卵清蛋白 mRNA。**",
+      src: "§4.2.4.2, pp.105–106, Obr. 4.51"
+    },
+    {
+      link_en: "and something has to tell the machinery where an intron begins and where it ends",
+      link_cn: "而总得有东西告诉这套机器：内含子从哪里开始、到哪里结束",
+      en: "The splice site is defined by an invariant GU at the intron's 5' edge and an equally invariant AG at its 3' edge, and both boundaries are treated as equally strict. **GU at one edge and AG at the other are necessary and sufficient to define a splice site, so the information marking an intron for removal is four bases long.** Splicing is carried out by small nuclear ribonucleoproteins, the snRNP particles, acting inside particles of sedimentation coefficient 50-60S called spliceosomes, from the word splicing; a spliceosome contains the pre-mRNA itself, snRNA, and various proteins bound to that pre-mRNA.",
+      cn: "剪接位点由内含子 5′ 端一个恒定不变的 GU 和 3′ 端一个同样恒定不变的 AG 所定义，两个边界被同等严格地对待。**一端的 GU 与另一端的 AG，是定义一个剪接位点的必要且充分条件——标记一个内含子该被切除的信息只有四个碱基长。** 剪接由小核核糖核蛋白（snRNP 颗粒）完成，它们作用于沉降系数 50–60S 的颗粒之中，这种颗粒叫剪接体（spliceosome，取自 splicing 一词）；一个剪接体里含有前体 mRNA 本身、snRNA，以及多种结合在这条前体 mRNA 上的蛋白质。",
+      src: "§4.2.4.2, pp.106–107"
+    },
+    {
+      link_en: "and a whole layer of regulation is carried by RNA that never becomes a protein at all",
+      link_cn: "还有一整层调控，是由永远不会变成蛋白的 RNA 承担的",
+      en: "In higher eukaryotes small RNAs called microRNAs, or miRNAs, silence many genes, a phenomenon first described and explained by Craig Mello and Andrew Fire. A miRNA interacts with an mRNA, often in the 3'UTR, and the result is either degradation of that mRNA or inhibition of its translation, so the gene goes quiet either way. Three natural jobs are worth naming because they are not obvious: controlling developmental timing, defending against invading RNA viruses — which matters especially in plants, since a plant has no immune system — and controlling the activity of transposons, while small RNAs may also have a still undefined role in forming heterochromatin. **Thousands of miRNAs are known in higher eukaryotes and they may affect the regulation of a third of mammalian genes, so this is a layer of control and not a curiosity.** They are transcribed as precursors about 70 nucleotides long whose internally complementary sequences fold into hairpins, and the endonucleases Drosha and Dicer cut those into duplexes of 20 to 25 nucleotides, one strand of which is transferred to the target.",
+      cn: "在高等真核生物里，一类叫 microRNA（miRNA）的小 RNA 沉默着许多基因；这个现象最先由 Craig Mello 和 Andrew Fire 描述并阐明。一条 miRNA 与一条 mRNA 相互作用，常常发生在 3′UTR 上，结果要么是这条 mRNA 被降解，要么是它的翻译被抑制——无论哪一种，这个基因都安静下来。有三项天然工作值得点名，因为它们并不显然：控制发育的时序；抵御入侵的 RNA 病毒——这在植物中尤其要紧，因为植物没有免疫系统；以及控制转座子的活性。小 RNA 可能还在异染色质的形成中扮演一个至今未定义的角色。**高等真核中已知的 miRNA 有数千种，它们可能影响三分之一哺乳动物基因的调控——所以这是一整层调控，而不是一件稀奇事。** 它们作为约 70 个核苷酸长的前体被转录，前体内部互补的序列折叠成发夹，再由内切核酸酶 Drosha 和 Dicer 切成 20 到 25 个核苷酸的双链，其中一条链被转移到靶标上。",
+      src: "A p.1085 · A p.1086"
+    },
+    {
+      link_en: "and the same machinery, handed a duplex an investigator designed, becomes first a method and then a medicine",
+      link_cn: "而同一套机器，一旦接到研究者设计的双链，先成了方法，后成了药",
+      en: "If an investigator introduces a duplex RNA corresponding to virtually any mRNA, Dicer cleaves it into small interfering RNAs, the siRNAs, which bind the target and silence it, and the process is known as RNA interference or RNAi. In plants almost any gene can be shut down this way, and nematodes — small roundworms — will ingest functional RNA, so putting the duplex in a worm's food suppresses the target. **What makes RNAi valuable as a method is stated precisely: it disrupts gene function without creating a mutant organism.** siRNAs have blocked HIV and poliovirus in cultured human cells; wider use was first stymied by delivery, since human tissues are full of nucleases that degrade RNA, but there are now more than a dozen RNAi pharmaceuticals in advanced clinical trials, for conditions from familial amyloidotic polyneuropathy to viral infections and cancer. Mammalian genomes encode more ncRNAs than coding mRNAs, so the protein-centric picture of gene regulation is becoming markedly less protein-centric.",
+      cn: "如果研究者导入一段与几乎任何 mRNA 相对应的双链 RNA，Dicer 就会把它切成小干扰 RNA（siRNA），后者结合靶标并把它沉默；这个过程叫 RNA 干扰（RNAi）。在植物里几乎任何基因都能被这样关掉；线虫——一类小型蠕虫——能摄入有功能的 RNA，所以只要把双链 RNA 放进虫子的食物里，靶基因就被抑制了。**RNAi 作为方法的价值被说得很精确：它能在不制造突变体的前提下破坏一个基因的功能。** siRNA 已在培养的人细胞里阻断过 HIV 和脊髓灰质炎病毒；更广泛的应用起初卡在递送上，因为人体组织里满是降解 RNA 的核酸酶，但如今已有十多种 RNAi 药物进入后期临床试验，适应证从家族性淀粉样多发性神经病到病毒感染和癌症。哺乳动物基因组编码的 ncRNA 比编码蛋白的 mRNA 还多，所以基因调控那幅「以蛋白为中心」的图景，正在变得明显没那么以蛋白为中心了。",
+      src: "A p.1086"
+    },
+    {
+      link_en: "and the last three ideas here all point the same way: form changes without new genes",
+      link_cn: "而这里最后三个想法都指向同一个方向：形态改变，却不需要新基因",
+      en: "The genes and mechanisms of development are highly conserved even between humans and fruit flies. Drosophila has one Hox cluster — a set of homeobox-containing genes that specify which body part forms where — while humans have four, and the genes inside them are remarkably similar from nematodes to humans, Hox genes having been part of the developmental program of multicellular eukaryotes for more than 500 million years. The products of two homeobox genes — HOXA7 in mouse and antennapedia in fruit fly — differ in only one amino acid residue, and yet humans grow no antennae. **Different outcomes come from differences in the downstream target genes that Hox genes control, so a big change in form needs no change in the Hox genes themselves.** Timing matters too: fly embryogenesis takes about a day, yet all these regulatory genes are activated in the first four hours and some mRNAs and proteins exist for only a few minutes, and many regulatory genes encode translational repressors binding the 3'UTR, because mRNAs are deposited in the egg long before they are needed.",
+      cn: "发育的基因与机制，即便在人与果蝇之间也高度保守。果蝇有一个 Hox 基因簇——一组含同源异型框的基因，规定哪个身体部件长在哪里——而人有四个；簇内的基因从线虫到人都惊人地相似，而 Hox 基因作为多细胞真核生物发育程序的一部分已有五亿年以上。两个同源异型框基因的产物——小鼠的 HOXA7 与果蝇的 antennapedia——只差一个氨基酸残基，可是人并不长触角。**不同的结果来自 Hox 基因所控制的下游靶基因的不同，所以形态上的巨大改变并不需要 Hox 基因本身发生改变。** 时间也要紧：果蝇的胚胎发生约需一天，而这些调控基因全部在头四个小时内被激活，某些 mRNA 和蛋白只存在几分钟；许多调控基因编码结合 3′UTR 的翻译阻遏物，因为 mRNA 早在被需要之前很久就已存入卵中。",
+      src: "A p.1089"
+    },
+    {
+      link_en: "and tissue regeneration turns on cells that have not yet decided what to be",
+      link_cn: "而组织再生靠的是那些还没决定要变成什么的细胞",
+      en: "The key to tissue regeneration lies in stem cells, meaning cells that retain the capacity to differentiate. The first divisions after fertilisation give a ball of totipotent cells called the morula, each of which can become any tissue or a complete organism; further division gives the blastocyst, whose outer cells form the placenta and whose inner cells form the three germ layers. Those inner cells are pluripotent — all three germ layers and many tissues, though never a complete organism — and they are the embryonic stem cells used in research, first cultured as human lines by James Thomson and colleagues in 1998. Adult stem cells are multipotent instead: haematopoietic stem cells of bone marrow give many blood cell types and bone-regenerating cells, though never liver or kidney or neuron, and they occupy a niche, a microenvironment whose signals keep the stem lineage going while letting some daughters differentiate. **Each source has a problem — adult cells are scarce and limited, embryonic cells require destroying human embryos — which is what reprogramming answered in 2007.** Skin cells, mouse first and then human, were reprogrammed to pluripotency by getting them to express four transcription factors: Oct4, Sox2, Nanog and Lin28.",
+      cn: "组织再生的关键在于干细胞，也就是仍保留分化能力的那些细胞。受精后最初几次分裂给出一团全能（totipotent）细胞，叫做桑椹胚，其中每一个都能变成任何组织、甚至一个完整个体；继续分裂给出囊胚，它的外层细胞形成胎盘，内层细胞形成三个胚层。内层这些细胞是多能（pluripotent）的——能给出全部三个胚层和许多组织，却从不形成完整个体——它们就是研究中使用的胚胎干细胞，人的细胞系最早由 James Thomson 及其同事于 1998 年培养出来。成体干细胞则是多潜能（multipotent）的：骨髓的造血干细胞能给出多种血细胞和有再生骨能力的细胞，却从不给出肝、肾或神经元；它们占据一个 niche（微环境），那里的信号一面维持干细胞谱系，一面允许部分子细胞分化。**每一种来源各有一个问题——成体细胞稀少而潜能有限，胚胎细胞需要破坏人类胚胎——而 2007 年的重编程正是对此的回答。** 皮肤细胞（先小鼠、后人）通过让它们表达四个转录因子而被重编程为多能状态：Oct4、Sox2、Nanog 和 Lin28。",
+      src: "A p.1090 · A p.1091 · A p.1092"
+    },
+    {
+      link_en: "and one box at the very end of the book shows how little it takes to change a shape",
+      link_cn: "而全书末尾的一个方框告诉你：改变一个形状，需要的东西有多少",
+      en: "Among Galapagos finches the differences between beaks trace largely to a single gene, Bmp4, whose expression level correlates with the robust beaks of ground finches — a link confirmed by expressing high Bmp4 in chicken embryos — while long slender beaks track with calmodulin expression at particular stages. **Major changes in beak shape and function come from subtle changes in the expression of two developmental regulators, so very few mutations are needed and none has to be a new gene.** The most striking demonstration of conservation is that eye development is triggered by Pax6 in both flies and mammals, and the fruit fly Pax6 gene will trigger the development of mouse eyes in a mouse.",
+      cn: "在加拉帕戈斯雀里，喙的差异在很大程度上追溯到单一一个基因 Bmp4：它的表达水平与地雀粗壮的喙相关——这一联系已通过在鸡胚中高表达 Bmp4 得到确认——而细长的喙则与特定发育阶段的钙调蛋白表达相关。**喙的形状与功能上的重大改变，来自两个发育调控基因表达上的细微变化；所以需要的突变极少，而且没有一个必须是新基因。** 保守性最惊人的演示是：眼的发育在果蝇和哺乳动物中都由 Pax6 触发，而果蝇的 Pax6 基因能在小鼠体内触发小鼠眼睛的发育。",
+      src: "A p.1092 · A p.1093"
     }
   ],
   terms: [

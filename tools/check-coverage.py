@@ -188,9 +188,53 @@ def cmd_by_node(argv):
     return 0
 
 
+def cmd_missing(argv):
+    """Print, in full, the source material a merged topic does not carry.
+
+    This is what you hand an agent that has been told to fill a gap in: the exact
+    points and term definitions the full app holds for each member node and the merged
+    chain does not represent, in both languages, with the node id and page to cite.
+    """
+    topic = argv[0][4:] if argv[0].startswith("key:") else argv[0]
+    node_topic = {n["id"]: n.get("topicKey") for n in nodes}
+    sp = spines.get("key:" + topic)
+    if not sp:
+        print("!! no merged spine for %s" % topic)
+        return 1
+    twords = words(merged_text(sp))
+    print("======== key:%s — %d steps now" % (topic, len(sp.get("steps") or [])))
+    for nid in [n["id"] for n in nodes if node_topic.get(n["id"]) == topic]:
+        pro = topics.get(nid) or {}
+        out = []
+        for p in pro.get("points") or []:
+            if not isinstance(p, dict):
+                continue
+            w = words(p.get("en") or "")
+            if len(w) >= 5 and len(w & twords) / len(w) < 0.35:
+                out.append(("POINT", p.get("cz") or "", p.get("en") or "", p.get("cn") or ""))
+        for t in pro.get("terms") or []:
+            if not isinstance(t, dict):
+                continue
+            w = words(t.get("def_en") or "")
+            if len(w) >= 5 and len(w & twords) / len(w) < 0.35:
+                out.append(("TERM", t.get("cz") or t.get("en") or "",
+                            t.get("def_en") or "", t.get("def_cn") or ""))
+        if not out:
+            continue
+        print("\n---- %s   pages %s   (%d item(s) not carried)"
+              % (nid, pro.get("pages"), len(out)))
+        for kind, label, en, cn in out:
+            print("\n  [%s] %s" % (kind, label))
+            print("    EN: %s" % en)
+            print("    CN: %s" % cn)
+    return 0
+
+
 def main(argv):
     if argv and argv[0] == "--by-node":
         return cmd_by_node(argv[1:])
+    if argv and argv[0] == "--missing":
+        return cmd_missing(argv[1:])
     keys = sorted(k for k in spines if k.startswith("key:"))
     if argv:
         keys = argv

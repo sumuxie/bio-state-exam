@@ -212,8 +212,7 @@ window.BIOLITE_SPINE["key:membrane-architecture"] = {
       recall_cn: "五步之前那些筏，现在在做事，而不只是在那儿存在着",
       en: "Attaching a phosphate to a tyrosine on a protein creates a small, distinctive, negatively charged patch that was not there before, and an SH2 domain is a protein module about a hundred residues long whose whole function is to bind such a patch. A protein carrying several binding modules at once is multivalent and can serve as an adaptor, gripping two proteins that have no affinity for each other at all and holding them close together. **A membrane raft raises the local concentration of the partners that have to meet, so proteins inside one collide far more often than being spread over a whole cell surface would allow.**",
       cn: "在蛋白的一个酪氨酸上挂一个磷酸，就造出一小块原先没有的、独特的带负电区域；而 SH2 结构域是一段约一百个残基长的蛋白模块，它的全部功能就是结合这样一块区域。同时带着好几个这种结合模块的蛋白是多价的 (multivalent)，可以充当衔接蛋白 (adaptor)：抓住两个彼此毫无亲和力的蛋白，把它们并排按在一起。**膜筏抬高了那些必须相遇的搭档的局部浓度，所以筏内的蛋白相撞的次数，远多于它们摊在整个细胞表面时所能有的次数。**",
-      src: "A pp.439–442",
-      see: [{ id: "L-12-5-1", en: "the whole assembly logic of a signalling complex", cn: "信号复合体「拼装」逻辑的完整版" }]
+      src: "A pp.439–442"
     },
     {
       link_en: "and the platform they assemble on need not be a protein at all",
@@ -224,6 +223,9 @@ window.BIOLITE_SPINE["key:membrane-architecture"] = {
     }
   ],
   terms: [
+    { en: "cell membrane", cn: "细胞膜",
+      def_en: "The structure separating a cell's internal space from its external environment. In a eukaryote the same kind of structure goes on to separate one internal space from another, so every compartment named in this chain has a boundary of this sort.",
+      def_cn: "把细胞的内部空间与外部环境隔开的那个结构。在真核细胞里，同一类结构还继续把一个内部空间与另一个内部空间隔开，所以这条主线里点到的每一个区室，都有一道这样的边界。" },
     { en: "bilayer / leaflet", cn: "双层／小叶",
       def_en: "Two lipid monolayers laid tail to tail, 3.5 to 4.0 nanometres thick, with a markedly non-polar centre and two polar surfaces. Each monolayer is a leaflet. Everything holding the structure together is non-covalent.",
       def_cn: "两个脂类单层尾对尾排在一起，厚 3.5 到 4.0 纳米，中央高度非极性、两个表面极性。每个单层叫一个小叶。维系这个结构的一切都是非共价的。" },

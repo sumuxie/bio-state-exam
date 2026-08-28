@@ -122,6 +122,13 @@ window.BIOLITE_SPINE["key:transcription"] = {
       src: "A p.969"
     },
     {
+      link_en: "and three drugs stop transcription at three different steps, which is what makes each of them a clean experiment",
+      link_cn: "有三种药分别卡在转录的三个不同步骤上——正因如此，每一种都是一次干净的实验",
+      en: "Actinomycin D inhibits elongation by RNA polymerase in both bacteria and eukaryotes: the planar portion of the molecule intercalates into double-helical DNA between successive GC base pairs, deforming the duplex so the polymerase cannot move along it, and because it works in intact cells as well as in extracts it is used to identify which cellular processes depend on ongoing RNA synthesis. Rifampin inhibits bacterial RNA synthesis specifically by preventing the promoter clearance step: it binds near the active site so the RNA product cannot extend beyond 2 to 3 nucleotides, it is a central antibiotic for tuberculosis, more than 600,000 cases of rifampin-resistant TB are reported each year, and resistance is often a mutation in the binding site at Asp516, His526 or Ser531 of the beta subunit. Alpha-amanitin is the third: produced by the death cap mushroom Amanita phalloides, it blocks Pol II and, at higher concentrations, Pol III. **Alpha-amanitin touches neither Pol I nor bacterial RNA polymerase, so exposing a eukaryotic cell to it leaves only mitochondrial transcription running and marks every new mRNA as mitochondrial.** It is highly toxic to humans, and an amount the size of a grain of rice contains a lethal dose.",
+      cn: "actinomycin D 在细菌和真核中都抑制 RNA 聚合酶的延伸：这个分子的平面部分嵌插（intercalate）进双螺旋 DNA 里连续的 GC 碱基对之间，使双螺旋变形，聚合酶便无法沿着它移动；而由于它在完整细胞里和在细胞提取物里同样有效，它被用来鉴定哪些细胞过程依赖于正在进行的 RNA 合成。rifampin 则特异地抑制细菌的 RNA 合成，办法是阻断 promoter clearance 这一步：它结合在活性位点附近，使 RNA 产物延伸不过 2 到 3 个核苷酸；它是治疗结核病的核心抗生素，每年报告的 rifampin 耐药结核病例超过 60 万，而耐药常常是 β 亚基结合位点上 Asp516、His526 或 Ser531 的突变。α-amanitin 是第三种：它由毒鹅膏（Amanita phalloides）产生，阻断 Pol II，浓度更高时还阻断 Pol III。**α-amanitin 既不碰 Pol I，也不碰细菌 RNA 聚合酶——所以把真核细胞暴露给它，还在跑的就只剩线粒体转录，新出现的 mRNA 便都是线粒体来源的。** 它对人剧毒，一粒米大小的量就含有致死剂量。",
+      src: "A p.971 · A p.972"
+    },
+    {
       link_en: "so what is done to it",
       link_cn: "那到底对它做了些什么",
       en: "A newly made RNA is rarely usable as it stands. The first transcript of a eukaryotic gene is substantially longer than the message the cell needs: the stretches cut out of it are called introns, the stretches kept and joined up are exons, and the cutting-and-joining is splicing. Three things are done to a eukaryotic messenger RNA — a cap is put on the 5' end, the introns are spliced out, and a long run of A residues is added to the 3' end. Transfer and ribosomal RNAs are processed too, by cutting rather than by splicing: ribonucleases cut them out of one longer primary transcript in a primary and then a secondary round, and a single bacterial rRNA transcript yields the mature 16S at 1,541 nucleotides, the 23S at 2,904, the 5S at 120, and several tRNAs besides, so cutting that one molecule delivers the parts of a ribosome already in the right proportions. **A eukaryotic message is always a processed product, so the length of a gene and the length of the mRNA it yields are two different numbers.**",
@@ -317,6 +324,13 @@ window.BIOLITE_SPINE["key:nucleotides"] = {
             { id: "L-28-3-1", en: "how eukaryotic genes are actually regulated", cn: "真核基因调控的完整机制" }]
     },
     {
+      link_en: "and two commoner departures from the plain duplex need no third strand at all",
+      link_cn: "另有两种更常见的「离开普通双链」，根本不需要第三条链",
+      en: "The simplest deviation is a bend: bends occur in the DNA helix wherever four or more adenosine residues appear sequentially in one strand, and six adenosines in a row produce a bend of about 18 degrees, which matters because some proteins bind bent DNA. A palindrome is a word or sentence spelled identically forward and backward — ROTATOR, or NURSES run — and in DNA it means an inverted repeat, a self-complementary sequence in one strand repeated in the opposite orientation in the paired strand. **Self-complementarity within a strand is what confers the potential to form a hairpin, which folds one strand back on itself, or a cruciform, which uses both strands of the duplex.** A mirror repeat has a symmetric sequence within each strand, but mirror repeats do not have complementary sequences within the same strand and therefore form neither, so symmetry alone is not enough.",
+      cn: "最简单的偏离是弯折：只要一条链上连续出现四个或更多腺苷残基，DNA 螺旋在那里就会弯，而连续六个腺苷产生约 18 度的弯折——这之所以要紧，是因为有些蛋白结合的正是弯折的 DNA。回文（palindrome）指正读反读拼写完全相同的词或句子——ROTATOR，或者 NURSES run——在 DNA 里它指的是反向重复：一条链上自身互补的序列，在配对链上以相反方向重复出现。**一条链内部的自身互补性，正是形成发夹或十字形的潜力所在：发夹由一条链折回自身构成，十字形则动用双链的两条链。** 镜像重复在每条链内部序列对称，但镜像重复在同一条链内并不具有互补序列，因此两者都形成不了——光有对称性是不够的。",
+      src: "A p.273 · A p.274, Figure 8-19"
+    },
+    {
       link_en: "DNA is double-stranded from the start. RNA is not, and everything below follows from that",
       link_cn: "DNA 从一开始就是双链，RNA 不是 —— 下面几条全都由此而来",
       en: "RNA is made as a single strand, so it folds back on itself wherever two nearby stretches are complementary. **That fold is a hairpin, and a hairpin is a signal: one appearing in a growing transcript is what makes RNA polymerase let go and stop transcribing.**",
@@ -379,6 +393,12 @@ window.BIOLITE_SPINE["key:nucleotides"] = {
     { en: "major groove / minor groove", cn: "主沟／次沟",
       def_en: "The two unequal channels spiralling up the outside of a double helix. The base edges face into them, so sequence can be read from outside without separating the strands, and what differs between the A, B and Z forms is largely their shape.",
       def_cn: "双螺旋外侧盘旋而上的两条宽窄不等的沟槽。碱基边缘朝向沟内，因此不必分开两条链就能从外部读出序列；A、B、Z 三种形式之间的差别，主要也就在这两条沟的形状上。" },
+    { en: "double helix", cn: "双螺旋",
+      def_en: "The typical right-handed twisted conformation taken by the two strands of DNA, B-DNA being the form found in a cell. Calling it typical is exact rather than vague: it is the shape most sequences take under cellular conditions, and the departures from it further down this chain are departures from this.",
+      def_cn: "DNA 两条链所取的、典型的右手盘绕构象，细胞里存在的形式是 B-DNA。说「典型」是精确而非含糊：它是多数序列在细胞条件下所取的形状，而本主线后面讲的那些偏离，偏离的正是它。" },
+    { en: "monocistronic / polycistronic mRNA", cn: "单顺反子／多顺反子 mRNA",
+      def_en: "An mRNA coding for one polypeptide is monocistronic; one coding for two or more different polypeptides is polycistronic. Bacteria and archaea use both, while in eukaryotes most mRNAs are monocistronic — the structural reason an operon is a bacterial arrangement rather than a universal one.",
+      def_cn: "编码一条多肽的 mRNA 是单顺反子，编码两条或更多不同多肽的是多顺反子。细菌与古菌两者兼用，而真核生物的 mRNA 大多是单顺反子——这正是操纵子属于细菌式安排、而不是普遍安排的结构性原因。" },
     { en: "A, B and Z forms", cn: "A / B / Z 型",
       def_en: "A and B are the labels Franklin's two fibre-diffraction patterns received — A from the drier fibre, B from the wetter, the switch happening near 75% relative water content. Cellular DNA is wet and is therefore B. Z is left-handed, named for the zigzag of its backbone and formed by sequences such as d(CGCATGCG). Paired RNA is always A.",
       def_cn: "A 与 B 是 Franklin 两张纤维衍射图的标号 —— A 来自较干的纤维，B 来自较湿的，转变发生在相对含水量约 75% 处。细胞里的 DNA 是湿的，所以是 B 型。Z 型是左手螺旋，名字来自骨架的锯齿形，由 d(CGCATGCG) 这类序列形成。配上对的 RNA 永远是 A 型。" },
@@ -513,6 +533,13 @@ window.BIOLITE_SPINE["key:dna-replication"] = {
       en: "A primase called DnaG lays down a 10 to 60 nucleotide RNA primer, working in physical contact with the DnaB helicase. One core polymerase then runs continuously along the leading-strand template, while the other cores cycle over and over on the looped template of the lagging strand: helicase unwinds, primase occasionally lays a primer, the loader parks a new clamp at that primer, and when a piece is finished the core drops its old clamp and grabs the new one. The RNA primer is then taken out by polymerase I, or by RNase H1, which is a nuclease that destroys RNA wherever it is paired to DNA, and polymerase I fills the gap with DNA. **What is left is a nick — two DNA ends sitting next to each other, correctly paired to the template, with no bond between them — and every one of the thousands of Okazaki fragments ends in one.**",
       cn: "一个叫 DnaG 的引物酶铺下一段 10 到 60 个核苷酸的 RNA 引物，工作时与 DnaB 解旋酶保持物理接触。随后一个核心聚合酶沿先导链模板连续跑下去，而另外的核心则在滞后链那条翻折成环的模板上一遍遍循环：解旋酶解开双链，引物酶时不时铺一段引物，装载器把一个新夹子停在那段引物上，一段做完之后核心松开旧夹子、抓住新夹子。RNA 引物随后由聚合酶 I 拆掉，或者由 RNase H1 拆掉 —— 那是一种专门降解「与 DNA 配着对的 RNA」的核酸酶 —— 再由聚合酶 I 用 DNA 把缺口填上。**剩下的是一个缺口：两个 DNA 末端已经并排、也都与模板配对正确，只是彼此之间还没有键 —— 而数以千计的冈崎片段，每一段末尾都留着这样一个缺口。**",
       src: "A p.924–926, Fig. 25-14, Fig. 25-15 · §4.1.3, p.83, Obr. 4.23, Obr. 4.24"
+    },
+    {
+      link_en: "and all of that shape can be looked at directly, which is where the evidence came from",
+      link_cn: "而这些形状都可以直接看到 —— 证据正是从那里来的",
+      en: "Circular DNA can be twisted further upon itself, and the result is a supercoil: under electron microscopy it shows up as a series of progressively more compact circular forms. The same technique caught replication in the act: electron micrographs of Drosophila DNA show a replication 'eye', an opened stretch with a fork at either end, and the single-stranded regions near those forks lie in a trans configuration. **A replication eye is a picture of the semiconservative mechanism rather than an inference: an eye with two forks is what a duplex opening from one origin in both directions must look like.**",
+      cn: "环状 DNA 可以进一步自身扭曲，结果就是超螺旋：在电子显微镜下，它表现为一系列越来越紧密的环状构象。同一种技术也当场拍到了复制：果蝇 DNA 的电镜照片显示出一个复制「眼」——一段被撑开的区域，两端各有一个复制叉——而这些叉附近的单链区域呈 trans 构型。**复制眼是半保留机制的一张照片，而不是对它的一次推断：一条双链从一个起点向两个方向打开，看上去就必然是一个带两个叉的「眼」。**",
+      src: "§4.1.3, p.78, Obr. 4.15 · §4.1.2, p.75, Obr. 4.12"
     },
     {
       link_en: "one bond left to make, and one enzyme makes it — but the reaction runs uphill",

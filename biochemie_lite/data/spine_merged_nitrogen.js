@@ -179,6 +179,13 @@ window.BIOLITE_SPINE["key:nitrogen-metabolism"] = {
       openQuestion_cn: "那个必然放出的 H₂ 在生物学上有什么用，目前并不清楚。答题时说「这两个额外的电子在机制上是必需的」，到此为止。"
     },
     {
+      link_en: "and the six-ATP scheme is worth reading off in full, because it counts differently",
+      link_cn: "那个六 ATP 的图值得整张读一遍，因为它的账是另一种算法",
+      en: "The scheme drawn with the six-electron equation makes its ATP accounting explicit: the process is ATP-dependent and probably requires 1 ATP for each transferred electron, so 6 ATP → 6 ADP + Pi is written alongside the six electrons that pass from cellular metabolism through ferredoxin and flavodoxin into the two nitrogenase proteins. **One ATP per transferred electron, rather than two per delivery cycle, is the whole of the difference between a scheme showing 6 ATP and an equation demanding 16.**",
+      cn: "与六电子方程一起画出的那张图，把 ATP 的账算得很明白：该过程依赖 ATP，很可能每传递一个电子需要 1 个 ATP，因此在那六个电子旁边写着 6 ATP → 6 ADP + Pᵢ；这六个电子从细胞代谢经铁氧还蛋白、黄素氧还蛋白，进入固氮酶的两个蛋白。**每传递一个电子算一个 ATP，而每一轮递送算两个 ATP——6 ATP 的图与 16 ATP 的方程，差别全部在这里。**",
+      src: "B §9.4, p.215"
+    },
+    {
       link_en: "for scale, put the two ways of breaking that bond side by side",
       link_cn: "为了有个尺度感，把打断那根键的两种办法放在一起比",
       en: "Industry breaks the same bond in the Haber process, at 400–500 °C and hundreds of atmospheres of pressure over a special catalyst. **A bacterium does it at ordinary temperature and 0.8 atm of nitrogen, paying in ATP instead of in heat and pressure**, and the reaction is exergonic either way — so the ATP buys passage over an activation barrier. That is the single most useful thing to be able to say about fixation: the difficulty was never in the thermodynamics.",
@@ -228,6 +235,13 @@ window.BIOLITE_SPINE["key:nitrogen-metabolism"] = {
       beyond: true,
       beyondNote: "The γ-glutamyl phosphate intermediate and the ADP + Pi products are both on A p.802–803, and the AMP + 2 Pi version is on B p.215. The argument joining them — that a phosphoryl transfer from ATP's γ-phosphate necessarily leaves ADP, while an AMP product would require an adenylate intermediate — is general nucleotide chemistry and is on neither page.",
       see: [{ id: "5-2-1-2", en: "transamination and the PLP mechanism in full", cn: "转氨作用与 PLP 机制的完整过程" }]
+    },
+    {
+      link_en: "and the AMP version deserves to be understood rather than simply set aside",
+      link_cn: "而那个走到 AMP 的写法值得弄懂，而不是随手放到一边",
+      en: "Taken as printed, the chloroplast equation runs L-glutamate + NH4+ + ATP → L-glutamine + AMP + 2 Pi, in which the ATP is cleaved at the α–β position instead of losing only its terminal phosphate. **Products of AMP and two inorganic phosphates would mean two high-energy-bond equivalents are spent, not one, which drives the step effectively to completion.** Spending two bonds to buy irreversibility is exactly the chemistry of a synthetase, so the reading is coherent on its own terms even where the observed γ-glutamyl phosphate intermediate points to ADP and Pi.",
+      cn: "照印出来的样子读，叶绿体里那条方程是 L-谷氨酸 + NH₄⁺ + ATP → L-谷氨酰胺 + AMP + 2 Pᵢ，其中 ATP 是在 α–β 位断开的，而不只是掉一个末端磷酸。**产物是 AMP 加两个无机磷酸，就意味着消耗掉的是两个高能键当量而不是一个，正是这一点把该步骤推向完全。** 花两个键去买不可逆性，恰恰就是 synthetase 这一类酶的化学，所以这种读法在它自己的框架里是自洽的——即便实际观察到的 γ-谷氨酰磷酸中间体指向的是 ADP 和 Pᵢ。",
+      src: "B §9.4, p.215"
     },
     {
       link_en: "there is a one-step way to do the same job, and it is worth knowing why it is not the main one",

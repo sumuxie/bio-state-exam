@@ -174,6 +174,9 @@ RULE6 = re.compile(r"配上对的那些|那些片段(?!叫|是)"
 def sentences(s):
     return [x for x in re.split(r"(?<=[.!?。！？])\s*", str(s or "")) if x.strip()]
 
+NODE_TOPIC = {}   # node id -> topicKey, filled in main(); used by the SEE check
+
+
 def check(nid, sp, vocab, all_nodes):
     problems = []
     steps = sp.get("steps") or []
@@ -258,6 +261,14 @@ def check(nid, sp, vocab, all_nodes):
         for r in s.get("see") or []:
             if r.get("id") not in all_nodes:
                 problems.append(("FORMAT", i, f"see points at a node that does not exist: {r.get('id')}"))
+            # A merged topic shadows its own members, so a 详见 pointing at one of them
+            # renders the very chain the reader is already reading. Not a broken link —
+            # a link that promises more and delivers the same page, which is worse,
+            # because the material it promised is genuinely unreachable. Deterministic,
+            # so this cannot cry wolf: same topicKey, same rendered spine.
+            elif nid.startswith("key:") and NODE_TOPIC.get(r.get("id")) == nid[4:]:
+                problems.append(("SEE", i, f"see points at {r.get('id')}, a node this "
+                                           f"same merged topic shadows — it lands back here"))
     return problems
 
 def main():
@@ -271,7 +282,9 @@ def main():
     if idx.exists():
         m = re.search(r"=\s*(\[.*\]);", idx.read_text(encoding="utf-8"), re.S)
         if m:
-            nodes = {n["id"] for n in json.loads(m.group(1))}
+            js = json.loads(m.group(1))
+            nodes = {n["id"] for n in js}
+            NODE_TOPIC.update({n["id"]: n.get("topicKey") for n in js})
     vocab = glossary_terms()
     print(f"{len(spines)} spine(s), vocabulary of {len(vocab)} glossary terms\n")
 
