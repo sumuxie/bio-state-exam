@@ -473,6 +473,13 @@ window.BIOLITE_SPINE["key:membrane-transport"] = {
       cn: "最复杂的膜转运搬的是大分子 —— 蛋白质、DNA —— 或者整颗的颗粒，比如膜、病毒、颗粒体；它靠的是把膜局部重新改建：大分子对应亚显微的变化，颗粒对应显微镜下看得见的变化，也就是吞取液滴的胞饮作用和吞取固体颗粒的吞噬作用。**这一类转运按方向命名：胞吞作用 (endocytosis) 把物质带向细胞内部，胞吐作用 (exocytosis) 把它带出去。**",
       src: "B §8.5.3, p.201",
       see: [{ id: "L-11-2-1", en: "the protein zipper that fuses the vesicle when it gets there", cn: "囊泡到位之后，把两张膜拉上的那条蛋白拉链" }]
+    },
+    {
+      link_en: "and the one experiment behind every claim about a single channel is worth naming, because it is what makes those numbers measurements",
+      link_cn: "关于单个通道的每一条结论背后都是同一个实验，值得点名——正是它让那些数字成为实测值",
+      en: "A micropipette is sealed onto a patch of membrane small enough to contain one channel or a few, and the current through that patch is recorded in picoamperes. **Patch-clamping reads a single channel's opening frequency, how long each opening lasts and how much current passes, which is why a channel can be described as opening and shutting rather than as conducting on average.** Two directions of bulk transport close the same subject from the other end: endocytosis carries material inward and exocytosis carries it outward, each moving whole regions of membrane rather than single molecules through a carrier.",
+      cn: "把一根微吸管封接在一小片膜上，小到只含一个或几个通道，再记录流过这片膜的电流，量级是皮安。**膜片钳读出的是单个通道开放的频率、每次开放持续多久、通过多少电流——正因如此，通道才能被描述成「一开一关」，而不是「平均导通」。**从另一端收尾的是两个方向的整体运输：胞吞把物质带进细胞，胞吐把它送出去，两者搬动的都是整片膜区域，而不是让单个分子穿过某个载体。",
+      src: "A pp.385-403 · B §8.5.3, p.201"
     }
   ],
   terms: [

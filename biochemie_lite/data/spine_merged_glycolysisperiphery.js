@@ -269,6 +269,13 @@ window.BIOLITE_SPINE["key:feeder-pathways-glycolysis"] = {
       see: [
         { id: "7-8-1", en: "glycolysis, which begins at glucose-6-phosphate", cn: "从葡萄糖-6-磷酸开始的糖酵解" }
       ]
+    },
+    {
+      link_en: "two general statements are worth pulling out of those examples, because they cover cases the examples do not",
+      link_cn: "从这些例子里值得拎出两句一般性的话，因为它们管到例子没覆盖的情形",
+      en: "Written generally, a glycosidase reaction is a beta-D-glycoside carrying an OR group at its anomeric carbon plus water, giving the free sugar with its anomeric hydroxyl restored plus the alcohol ROH — beta-D-glucosidase is the worked case. **And a sugar nucleotide is not only a donor for making glycosidic bonds: UDP-sugars also undergo epimerisation and exchange with free hexose phosphates, which is why the same activated form serves interconversion as well as construction.** The galactose route above uses both faculties in one pathway.",
+      cn: "写成一般式，糖苷酶反应就是：异头碳上带 OR 基的 β-D-糖苷加水，生成异头碳羟基复原的游离糖，外加醇 ROH——β-D-葡萄糖苷酶是那个走通的例子。**而糖核苷酸不只是形成糖苷键的供体：UDP-糖同样会发生差向异构化，也会与游离的己糖磷酸发生交换——正因如此，同一种活化形式既服务于「建造」，也服务于「互相转化」。**上面那条半乳糖路线，就在一条通路里同时用到了这两种本事。",
+      src: "B §7.10.1, p.170 · B §7.10.3, p.172"
     }
   ],
   terms: [
@@ -448,6 +455,13 @@ window.BIOLITE_SPINE["key:pentose-phosphate-pathway"] = {
       en: "Isomerise fructose-6-phosphate back to glucose-6-phosphate, and a pentose cycle closes that could in principle oxidise glucose completely. **Glucose-6-phosphate would be oxidised six times over, at 2 NADPH a turn, to give 6 ribose-5-phosphate and from them 2 glyceraldehyde-3-phosphate — 12 NADPH per glucose-6-phosphate.** Those two triose phosphates would then be broken down by glycolysis, the citric acid cycle and the respiratory chain. Organisms do not actually break glucose down this way: these routes serve the biosynthesis of the pentose phosphates that nucleic acids need, with NADPH produced alongside for fatty acid and cholesterol synthesis, or without it.",
       cn: "把果糖-6-磷酸异构化回葡萄糖-6-磷酸，一个戊糖循环就闭合了，它原则上可以把葡萄糖完全氧化掉。**葡萄糖-6-磷酸要被氧化六轮、每轮 2 个 NADPH，才能给出 6 个核糖-5-磷酸，再由它们产生 2 个 3-磷酸甘油醛——每个葡萄糖-6-磷酸合计 12 个 NADPH。**那两个丙糖磷酸随后由糖酵解、柠檬酸循环和呼吸链分解掉。生物体实际上并不这样分解葡萄糖：这些路线服务的是核酸所需磷酸戊糖的生物合成，可以顺带产出 NADPH 供脂肪酸和胆固醇合成使用，也可以不产。",
       src: "B §7.7, p.163"
+    },
+    {
+      link_en: "and having written the cycle out, the honest thing is to say what it is not for",
+      link_cn: "把这个循环写完之后，诚实的做法是说清楚它不是干什么用的",
+      en: "Glucose can be oxidised at carbon 1 or at carbon 6, and either way carbon dioxide comes off afterwards; the C-1 route is the more significant of the two. **But organisms do not actually run the full pentose cycle to break glucose down completely — the pathway exists to make the pentose phosphates nucleic acid construction needs, with NADPH generated alongside or not, according to whether the cell also needs reducing power.** Written as a closed cycle it looks like an alternative to glycolysis, and it is not one; the arithmetic that closes it is a demonstration that the carbon can be balanced, not a description of a route a cell takes.",
+      cn: "葡萄糖可以在 1 号碳上氧化，也可以在 6 号碳上氧化，两种情形随后都会脱去二氧化碳；其中 C-1 那条路更重要。**但生物体实际上并不跑完整的戊糖循环去彻底分解葡萄糖——这条通路存在，是为了造出核酸建构所需的磷酸戊糖，至于是否同时产生 NADPH，取决于细胞是否也需要还原力。**写成一个闭合循环时，它看起来像是糖酵解的替代方案，其实不是；把它闭合起来的那套算术是在证明碳可以配平，而不是在描述细胞真正走的一条路。",
+      src: "B §7.6.2, pp.160-161 · B §7.7.2, pp.162-163"
     }
   ],
   terms: [

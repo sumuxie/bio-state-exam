@@ -183,6 +183,13 @@ window.BIOLITE_SPINE["key:nucleotide-metabolism"] = {
       en: "Adenine phosphoribosyltransferase joins free adenine to PRPP, and hypoxanthine-guanine phosphoribosyltransferase does the same for guanine and hypoxanthine. A genetic lack of the second enzyme causes Lesch-Nyhan syndrome, seen almost exclusively in young boys and apparent around age 2: poor coordination, intellectual deficits, and compulsive self-destructive behaviour. **Unsalvaged bases go on to uric acid, and the PRPP that would have been spent on them piles up and drives de novo synthesis harder — so losing a recycling enzyme causes overproduction.** A neighbouring enzyme fails differently: adenosine deaminase deficiency raises cellular dATP a hundredfold, and dATP is the inhibitor that shuts ribonucleotide reductase down, so T lymphocytes end up starved of every other deoxynucleotide — a severe immunodeficiency, and one of the first targets of human gene therapy, in 1990.",
       cn: "腺嘌呤磷酸核糖转移酶把游离腺嘌呤接到 PRPP 上，次黄嘌呤-鸟嘌呤磷酸核糖转移酶（HGPRT）对鸟嘌呤和次黄嘌呤做同样的事。后一个酶的遗传性缺失导致 Lesch-Nyhan 综合征，几乎只见于男孩，约两岁时显现：协调能力差、智力缺陷，以及强迫性的自毁行为。**没被回收的碱基继续走向尿酸；同时本该被它们消耗掉的 PRPP 转而积累起来 —— PRPP 一升高就把从头合成推得更猛，所以丢掉一个回收酶造成的是嘌呤生产过剩。** 隔壁那个酶则以另一种方式出故障：腺苷脱氨酶缺乏使细胞内 dATP 升高一百倍，而 dATP 正是关停核糖核苷酸还原酶的那个抑制剂，于是 T 淋巴细胞缺乏其余每一种脱氧核苷酸 —— 这是一种严重免疫缺陷，也是 1990 年人类基因治疗最早的靶点之一。",
       src: "A p.834–835"
+    },
+    {
+      link_en: "and everything so far has produced monophosphates, which is not what a polymerase takes",
+      link_cn: "而到此为止造出来的都是单磷酸，那并不是聚合酶要的东西",
+      en: "Both routes end at a nucleoside monophosphate — AMP and GMP on the purine side, and on the pyrimidine side the ring is finished as orotate, made by dehydrogenating dihydroorotate, and only then mounted on ribose phosphate by reacting with PRPP. **Nucleic acid synthesis needs triphosphates, so kinases raise each monophosphate to the diphosphate and then to the triphosphate, spending two ATP per nucleotide before a single one of them can be polymerised.** That charge is on top of everything the ring itself cost, and it is the same two-step lift for every base.",
+      cn: "两条路线的终点都是核苷单磷酸——嘌呤那侧是 AMP 和 GMP；嘧啶那侧则是先把环造完成为乳清酸（由二氢乳清酸脱氢而来），然后才通过与 PRPP 反应装到核糖磷酸上。**合成核酸要的是三磷酸，所以激酶把每个单磷酸抬到二磷酸、再抬到三磷酸；在任何一个核苷酸能被聚合之前，每个都要先花掉两个 ATP。**这笔账是加在造环本身的花费之上的，而且对每一种碱基都是同样这两级抬升。",
+      src: "B §4.1.1.1, pp.67-70 · B §4.1.1.2, pp.70-72"
     }
   ],
   terms: [

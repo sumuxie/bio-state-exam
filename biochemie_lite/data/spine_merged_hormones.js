@@ -584,6 +584,13 @@ window.BIOLITE_SPINE["key:tissue-specific-metabolism"] = {
       src: "B §10.1.3, p.220",
       see: [{ id: "10-8", en: "where the glycerol half of a fat enters sugar metabolism", cn: "脂肪里甘油那一半从哪里进入糖代谢" },
             { id: "10-5", en: "the overview diagram whose missing arrow encodes this same claim", cn: "那张总览图 —— 它缺失的箭头编码的正是同一个论断" }]
+    },
+    {
+      link_en: "and the liver's flexibility is a measured quantity rather than an adjective",
+      link_cn: "而肝脏的「灵活性」是一个被测量过的量，不是一个形容词",
+      en: "What reaches the liver depends on the diet and on how long ago the last meal was, while what the other tissues demand varies by organ, by activity and by nutritional state — so the organ in between has to keep changing what it is equipped to do. **Liver enzymes are synthesised and degraded at 5 to 10 times the rate of the same enzymes in other tissues, and that turnover is what lets a diet change be answered within hours rather than days.** On a protein-rich diet hepatocytes make more of the enzymes of amino acid catabolism and gluconeogenesis; switch to carbohydrate and those levels start falling within hours while the enzymes of carbohydrate metabolism and fat synthesis rise. Other tissues adjust too, but none rebuilds its catalytic machinery fast enough to be the organ that changes its mind for everyone else.",
+      cn: "到达肝脏的东西取决于吃了什么、距上一餐多久，而其他组织要什么又因器官、活动和营养状态而异——夹在中间的这个器官，就只能不断改变自己「装备成能干什么」。**肝脏里的酶，合成与降解的速度是同样这些酶在别的组织里的 5 到 10 倍；正是这份周转，让一次饮食改变能在数小时而不是数天内得到回应。**高蛋白饮食时，肝细胞多造氨基酸分解代谢和糖异生的酶；换成高碳水，这些酶的水平在几小时内就开始下降，同时糖代谢与脂肪合成的酶升上来。别的组织也会调整，但没有哪个能把自己的催化机器重建得这么快，快到足以当那个「替所有人改主意」的器官。",
+      src: "A p.849"
     }
   ]
 };

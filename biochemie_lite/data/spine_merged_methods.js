@@ -766,6 +766,13 @@ window.BIOLITE_SPINE["key:recombinant-dna-technology"] = {
       cn: "逆转录酶的工作方式像 DNA 聚合酶，但它以 RNA 为模板合成 DNA —— 正是这一点，让下面三样东西能够触及细胞里的 RNA，而不只是它的基因。逆转录 PCR（RT-PCR）在第一轮用它、之后交给普通 DNA 聚合酶；由于只有活细胞在转录，它能把来自活细胞的序列和来自死组织的序列区分开。定量 PCR 做的则是计数：反应体系里加了一条报告寡核苷酸，同时带着一个荧光基团和一个淬灭基团，因此在退火到扩增片段之前是暗的；一旦退火上去，两者被分开，荧光就出现。读数是 CT，即荧光首次越过设定阈值时的循环数 —— 起始量越多的序列越早到达阈值，而无模板对照只会显示缓慢的背景漂移。cDNA 文库的做法是：从某个生物、或某些特定细胞里提取 mRNA，用逆转录酶抄成 DNA，把已知序列的寡核苷酸连到第一条链的 3' 端以引发第二条链的合成，再把双链产物克隆进载体 —— 每个宿主细胞携带一条克隆序列，数以百万计的细胞。组合基因文库在范围上正好相反：它装的是同一个基因的许多变体，做法比如用一个刻意不准确的 DNA 聚合酶去扩增某一段，使每个克隆带上一两个随机碱基改动。**cDNA 文库里不含任何未被转录过的 DNA，所以在其中找到一个基因，就意味着在那些细胞、那些条件下这个基因当时正在表达。**",
       src: "A p.314–316",
       see: [{ id: "L-9-2-1", en: "the sequencing method that replaced a cDNA library for the same question", cn: "在同一个问题上取代了 cDNA 文库的那种测序方法" }]
+    },
+    {
+      link_en: "and the first recombinant DNA was made before any of these enzymes were available, which says what a sticky end really is",
+      link_cn: "而第一个重组 DNA 是在这些酶还没有之前做出来的——这说明黏性末端到底是什么",
+      en: "Before type II restriction endonucleases were widely available, sticky ends were manufactured by two other enzymes: bacteriophage lambda exonuclease chews back the 5' ends to expose single-stranded 3' ends, and terminal transferase then adds a homopolymeric tail to each — poly(dA) on one fragment, poly(dT) on the other, and they anneal. **A sticky end is a concept, a single-stranded overhang two fragments can share, and not a property of any particular enzyme.** Peter Lobban and Dale Kaiser joined naturally occurring DNA fragments this way in 1971, and Paul Berg's laboratory used the same approach to join simian virus 40 DNA to bacteriophage lambda DNA, making the first recombinant molecule carrying segments from different species.",
+      cn: "在 II 型限制性内切酶普及之前，黏性末端是靠另外两个酶造出来的：噬菌体 λ 外切酶从 5′ 端啃回去，露出单链的 3′ 端；末端转移酶再在每个 3′ 端加上一条同聚物尾巴——一个片段加 poly(dA)、另一个加 poly(dT)，两者就能退火配对。**黏性末端是一个概念，即两个片段能够共用的一段单链突出，而不是某个特定酶的性质。**Peter Lobban 与 Dale Kaiser 在 1971 年用这个办法把天然 DNA 片段连了起来；Paul Berg 实验室用同样的思路把猿猴病毒 40 的 DNA 接到噬菌体 λ 的 DNA 上，造出了第一个携带不同物种片段的重组分子。",
+      src: "A pp.301-316"
     }
   ],
   terms: [

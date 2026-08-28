@@ -737,6 +737,16 @@ window.BIOLITE_SPINE["key:respiratory-chain"] = {
       en: "Two claims at the end are deliberately weak and should be repeated at their own strength. One theory of ageing holds that the gradual accumulation of such defects is the primary cause of many symptoms of ageing, among them the progressive weakening of skeletal and heart muscle; the hedge is one theory, and the symptoms chosen are exactly the tissues that tolerate a fall in ATP worst, so the theory is internally consistent with the diseases — which is an argument for it and not evidence that ageing works this way. Damage caused by reactive oxygen species, including damage to mitochondrial DNA, may also underlie other human diseases, and there is some evidence for its involvement in Alzheimer, Parkinson and Huntington diseases and in heart failure, as well as in ageing. **Saying that mitochondrial damage causes Alzheimer disease overstates what this material establishes: the words used are may and some evidence, not causes.**",
       cn: "结尾处有两个论断是刻意写弱的，复述时应当保持它们各自的强度。一种关于衰老的理论认为，这类缺陷的逐渐累积是衰老许多症状的主要原因，其中包括骨骼肌与心肌的进行性无力；请注意保留措辞「一种理论」，也请注意它举的症状恰好就是最扛不住 ATP 下降的那些组织 —— 这种与疾病谱的自洽是支持它的论据，而非「衰老就是这样造成的」的证据。活性氧造成的损伤（包括对线粒体 DNA 的损伤）「可能」也是另一些人类疾病的基础，并且有「一些证据」表明它参与了阿尔茨海默病、帕金森病、亨廷顿病以及心力衰竭，衰老亦然。**说「线粒体损伤导致阿尔茨海默病」就说过了头：这里用的词是「可能」和「一些证据」，而非「导致」。**",
       src: "A pp.694, 696"
+    },
+    {
+      link_en: "and one group of organisms throws the whole gradient away on purpose, which is the clearest test that the coupling is real",
+      link_cn: "有一类生物故意把整个梯度扔掉——这是对「耦合确实存在」最干净的检验",
+      en: "Plant, fungal and protist mitochondria carry an alternative respiratory pathway: a ubiquinol oxidase that hands electrons from the ubiquinone pool straight to oxygen, bypassing the proton-pumping steps of Complexes III and IV. **Because the electrons never pass cytochrome oxidase the route is cyanide-resistant, and because the pumps are bypassed the energy leaves as heat instead of ATP.** Arum lilies, philodendrons and skunk cabbage use it to warm the spadix 20 to 40 degrees above the surroundings, which evaporates the odorants that make them smell of rotting flesh and so brings in the flies and beetles that pollinate them; the eastern skunk cabbage flowers in late winter and the heat lets its spadix push up through snow. A mammal reaches the same end by a different route — there a protein short-circuits the gradient, here the electrons never build it.",
+      cn: "植物、真菌和原生生物的线粒体带着一条替代呼吸途径：一种泛醇氧化酶把电子从泛醌库直接交给氧，绕过复合物 III 和 IV 的质子泵步骤。**因为电子根本不经过细胞色素氧化酶，这条路抗氰化物；又因为泵被绕开，能量以热而不是 ATP 的形式离开。**马蹄莲、喜林芋和臭菘用它把肉穗花序加热到比环境高 20 到 40 度，从而蒸发那些让它们闻起来像腐肉的气味分子，把为它们授粉的蝇和甲虫招来；东部臭菘在冬末开花，这份热量让它的花序能直接顶穿积雪。哺乳动物用另一条路达到同样的目的——那里是一个蛋白把梯度短路，这里是电子压根没把梯度建起来。",
+      src: "A pp.684-685, Box 19-1",
+      see: [
+        { id: "L-23-2-1", en: "brown fat, where a mammal wastes the same gradient by another mechanism", cn: "棕色脂肪：哺乳动物用另一种机制浪费同一个梯度" }
+      ]
     }
   ],
   terms: [
