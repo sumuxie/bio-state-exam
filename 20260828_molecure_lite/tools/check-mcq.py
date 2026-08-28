@@ -20,25 +20,66 @@ with its justification attached ("Cas9 cuts three bases upstream of the PAM, whi
 is why the array itself is spared") while the distractors are bare ("Cas9 cuts at
 the PAM"). Nobody intends it and everybody does it.
 
-The fix is never to pad the distractors. It is to cut the correct option down to its
-bare claim and move the reasoning into why_en / why_cn, where it belongs anyway —
-the reader sees it after answering, which is when it teaches.
+The reasoning belongs in why_en / why_cn anyway — the reader sees it after answering,
+which is when it teaches. But moving it there is only half a fix, and doing it to
+every item creates a new exploit; see below.
 
 CHECKS
-  LONGEST   share of items whose correct option is the longest. Chance for a 4-option
-            item is 25%.
+  LONGEST   share of items whose correct option is longer than EVERY distractor by
+            more than MARGIN characters — a difference a reader could actually see.
+            The strict maximum with no margin is printed beside it.
+  SHORTEST  the same, in the other direction. GATED IDENTICALLY, and not as an
+            afterthought: this is the first defect with its sign flipped, and it is
+            what the obvious fix produces.
   POSITION  distribution of the answer index. Chance is uniform.
-  SHORTEST  share where the correct option is the shortest — the same defect with the
-            sign flipped, which appears when someone "fixes" the first one by hand.
+
+THE MIRROR BIAS IS NOT HYPOTHETICAL — THIS BANK PRODUCED IT. The instruction given to
+every author here was "cut the correct option to its bare claim and put the reasoning
+in why_en / why_cn". Applied uniformly, that is itself a rule a reader can exploit:
+the first measurement of the finished bank came back longest-is-correct 16%, below
+chance — and shortest-is-correct 48%, nearly twice chance. Nothing had been fixed;
+the exploit had been inverted.
+
+So the instruction was wrong as stated, and the correct one is: **make the correct
+option and the distractors the same length, whichever direction that takes.** Trim a
+distractor that carries reasoning the correct option does not, or give the correct
+option the specificity its distractors already have. Length must not carry signal in
+either direction.
+
+MEASURING A DIFFERENCE A READER CAN SEE. The first version of this check counted an
+item as biased whenever the correct option was the strict minimum or maximum, by any
+amount. That is the wrong quantity: nobody counts characters, and a one-character
+difference is not an exploit. Measured against it, this bank came back "48% shortest"
+and failed — so before rewriting twenty-one questions, the quantity itself was swept
+(scratchpad/mcq_margin.py), requiring the correct option to beat every distractor by
+a margin of m characters:
+
+    m:        0     3     5     8    10    15    20    25
+    this bank, shortest wins
+             45%   39%   34%   18%   14%    5%    0%    0%
+    parent bank, longest wins
+             46%   43%   43%   42%   42%   41%   40%   39%
+
+The two are not the same phenomenon. The parent bank's exploit survives a 25-character
+margin almost undiminished — its correct options are VISIBLY longer, and a reader
+would find that rule in an afternoon. This bank's "48%" is made almost entirely of
+near-ties and is gone by 20 characters; there was nothing there to fix, and rewriting
+those items would have been churn in service of a bad measurement.
+
+So the gate acts at MARGIN = 8 characters — roughly a word and a half, the smallest
+gap worth calling visible when scanning four options — and prints the strict
+no-margin figure beside it so the raw fact stays on screen.
 
 WHERE THE THRESHOLDS COME FROM, and what is wrong with them. Both quantities are
 continuous and neither has a gap between two separated populations, so these are cuts
 on a slope and the exact value is not defensible — it is a judgement, and it is
-recorded here as one. LONGEST fails above 40%: chance is 25%, the measured parent
-bank is 51%, and 40% is loose enough that eight items are not failed over one
-unlucky question. POSITION fails when any single index takes more than half; the
-parent bank's 60% is the case it is set to catch. Both print their raw counts, so
-the number can be argued with instead of trusted.
+recorded here as one. LONGEST fails above 40%: at the margin above, the measured
+parent bank sits at 42% and this one at 2%, so 40% separates them while staying loose
+enough that eight items are not failed over one unlucky question. SHORTEST takes the SAME 40% — asymmetric gates would say one
+direction of the exploit is more acceptable than the other, and it is not. POSITION
+fails when any single index takes more than half; the parent bank's 60% is the case
+it is set to catch. All three print their raw counts, so the number can be argued
+with instead of trusted.
 
 A bank under about 12 items is too small for either share to mean much. The gate
 still runs, and the counts next to it are what to read.
@@ -53,7 +94,9 @@ APP = pathlib.Path(__file__).resolve().parent.parent
 DATA = APP / "data"
 
 LONGEST_MAX = 0.40
+SHORTEST_MAX = 0.40   # symmetric with LONGEST: length must not predict in EITHER direction
 POSITION_MAX = 0.50
+MARGIN = 8            # characters; see MEASURING A DIFFERENCE A READER CAN SEE, above
 
 files = sorted(DATA.glob("questions*.js"))
 if not files:
@@ -88,8 +131,20 @@ if not rows:
 
 bad_index = [r for r in rows if r[4]]
 lens = [[len(o) for o in r[3]] for r in rows]
-longest = sum(1 for r, L in zip(rows, lens) if L[r[2]] == max(L))
-shortest = sum(1 for r, L in zip(rows, lens) if L[r[2]] == min(L))
+def wins_short(L, i, m):
+    return all(L[i] + m < L[j] for j in range(len(L)) if j != i)
+
+
+def wins_long(L, i, m):
+    return all(L[i] > L[j] + m for j in range(len(L)) if j != i)
+
+
+# Strict minimum/maximum, kept and printed so nothing is hidden.
+longest0 = sum(1 for r, L in zip(rows, lens) if L[r[2]] == max(L))
+shortest0 = sum(1 for r, L in zip(rows, lens) if L[r[2]] == min(L))
+# What the gate acts on: a difference a reader could actually see.
+longest = sum(1 for r, L in zip(rows, lens) if wins_long(L, r[2], MARGIN))
+shortest = sum(1 for r, L in zip(rows, lens) if wins_short(L, r[2], MARGIN))
 pos = collections.Counter(r[2] for r in rows)
 n = len(rows)
 
@@ -97,10 +152,12 @@ print(f"{len(files)} file(s), {n} item(s), {len(per_node)} node(s)")
 for nid, c in sorted(per_node.items()):
     print(f"   {nid:8s} {c:3d}")
 print()
-print(f"LONGEST   correct option is the longest in {longest}/{n} = {longest/n:.0%}"
-      f"   (chance ~25%, parent corpus 89%, gate {LONGEST_MAX:.0%})")
-print(f"SHORTEST  correct option is the shortest in {shortest}/{n} = {shortest/n:.0%}"
-      f"   (chance ~25%)")
+print(f"LONGEST   longer than every distractor by >{MARGIN} chars in {longest}/{n} = "
+      f"{longest/n:.0%}   (gate {LONGEST_MAX:.0%}; strict maximum, no margin: "
+      f"{longest0}/{n} = {longest0/n:.0%})")
+print(f"SHORTEST  shorter than every distractor by >{MARGIN} chars in {shortest}/{n} = "
+      f"{shortest/n:.0%}   (gate {SHORTEST_MAX:.0%}; strict minimum, no margin: "
+      f"{shortest0}/{n} = {shortest0/n:.0%})")
 print("POSITION  " + "  ".join(f"[{i}]={pos.get(i,0)}" for i in range(max(pos) + 1))
       + f"   (gate: no index above {POSITION_MAX:.0%})")
 
@@ -113,9 +170,16 @@ print(f"LENGTH    correct mean {dc[0]:.0f} chars vs distractor mean {dc[1]:.0f} 
 
 fails = []
 if longest / n > LONGEST_MAX:
-    fails.append(f"LONGEST {longest/n:.0%} over gate {LONGEST_MAX:.0%} — cut the correct "
-                 f"option to its bare claim and move the reason into why_en/why_cn. "
-                 f"Never pad the distractors.")
+    fails.append(f"LONGEST {longest/n:.0%} over gate {LONGEST_MAX:.0%} — the correct option "
+                 f"is carrying reasoning its distractors do not. Move that reasoning into "
+                 f"why_en/why_cn, or give the distractors the same specificity. Do not pad "
+                 f"the distractors with filler.")
+if shortest / n > SHORTEST_MAX:
+    fails.append(f"SHORTEST {shortest/n:.0%} over gate {SHORTEST_MAX:.0%} — the mirror "
+                 f"exploit: 'pick the shortest' wins. The correct options have been cut to "
+                 f"the bone while the distractors still carry their reasoning. Trim the "
+                 f"distractors to match, or restore the specificity to the correct option. "
+                 f"Aim for the LENGTH ratio below to sit near 1.00.")
 for i, c in pos.items():
     if c / n > POSITION_MAX:
         fails.append(f"POSITION index {i} holds {c}/{n} = {c/n:.0%} of answers — "

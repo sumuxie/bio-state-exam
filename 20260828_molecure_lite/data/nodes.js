@@ -150,8 +150,13 @@ window.BIOLITE_NODES = [
   "kind": "section",
   "chapter": 7,
   "section": "7.4",
-  "enTitle": "The other operons — arabinose, galactose, histidine",
-  "cnTitle": "其他操纵子——阿拉伯糖、半乳糖、组氨酸",
+  /* Titled from the transcript, not from the expectation. The brief written for the
+     OCR run guessed this section held the arabinose, galactose AND histidine operons;
+     transcribing found no histidine section at all — hisG never appears, and the
+     histidine operon gets one sentence back in §7.3.2 — while §7.4 turned out to also
+     carry LexA/SOS and two-component signal transduction, which nobody predicted. */
+  "enTitle": "The other operons — galactose, arabinose, SOS and two-component systems",
+  "cnTitle": "其他操纵子——半乳糖、阿拉伯糖、SOS 应答与二组分系统",
   "topicKey": "prokaryotic-regulation",
   "src": { "book": "现代分子生物学 第五版", "pages": "261–269" }
 },

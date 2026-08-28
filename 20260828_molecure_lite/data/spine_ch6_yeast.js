@@ -136,22 +136,7 @@ window.BIOLITE_SPINE["M-6-4"] = {
   ]
 };
 /* ===================================================================== M-6-5 */
-/* INCOMPLETE — READ THIS BEFORE STUDYING FROM IT.
-   §6.5 runs from printed page 230 to 237. These nine steps stop at 232: they cover
-   the gel retardation assay (EMSA) and phage display, and nothing after them.
-   Still missing from the printed section:
-     p.233–234  in-vitro kinase assay, γ-³²P-ATP and MBP (图 6-36, 图 6-37)
-     p.234–235  Western blotting, the five steps (图 6-38)
-     p.235–236  subcellular localisation — GFP fusion and immunofluorescence (图 6-39, 图 6-40)
-     p.236–237  GWAS, the four-step workflow and the GaKAS Ⅲ CGT/TGT haplotype (图 6-41)
-   The writing run was cut off by a session limit mid-append; the steps that ARE here
-   are complete and linter-clean, and only a dangling separator was removed to close
-   the file. The transcript for the missing pages already exists, so this is a
-   writing job and not another OCR job:
-     scratchpad/transcripts/ch6_4-5_yeast_other.md
-   The node's nodeTitle still promises Western and GWAS. Leave that promise in place
-   only until these steps are written; if this node is shipped as final, cut the
-   title back to what it actually delivers. */
+/* COMPLETE — 18 steps carrying all six techniques of §6.5, printed pages 230–237. */
 window.BIOLITE_SPINE["M-6-5"] = {
   /* The first group is the ordinary furniture of a molecular-biology sentence. The
      second group are ordinary English words that happen to be glossary entries too.
@@ -249,6 +234,75 @@ window.BIOLITE_SPINE["M-6-5"] = {
       en: "Direct affinity screening couples the target protein molecules to a solid support, incubates the library phage with the support and washes the unbound phage off; what remains has affinity for the protein being screened against. Indirect affinity screening labels the target protein with biotin, incubates it with the library phage, then spreads the mixture on a plate containing streptavidin, a protein that binds biotin, and washes the unbound phage off; the phage left on the plate are the bound ones. Bound phage are eluted, used to infect bacteria, amplified, and sent into a new round. **Several successive rounds of affinity purification are what enrich the target-binding phage, because every round starts from a population already amplified out of the previous round's survivors.**",
       cn: "直接法亲和筛选是把靶蛋白质分子耦联到固相支持物上，文库噬菌体与固相支持物温育后洗去未结合的噬菌体，剩下的就是与所筛选蛋白有亲和性的噬菌体。间接法亲和筛选是把生物素标记的靶蛋白质分子与文库噬菌体温育，再铺在含有链霉亲和素（一种能与生物素相结合的蛋白质）的平皿上，洗去未结合的噬菌体，保留在平皿上的就是结合状态的噬菌体。洗脱结合状态的噬菌体后感染细菌、扩增噬菌体，再开始新一轮筛选。**真正把结合靶蛋白的噬菌体富集起来的，是连续几次的亲和纯化，因为每一轮的起点都是上一轮幸存者扩增出来的群体。**",
       src: "现分 p.232"
+    },
+    {
+      link_en: "the next technique measures an event a cell performs on a protein after that protein already exists",
+      link_cn: "下一项技术测的，是细胞在一个蛋白质已经做出来之后，还对它施加的一个事件",
+      en: "A protein kinase — an enzyme whose reaction is to phosphorylate another protein — catalyses transfer of the γ phosphate group of ATP or GTP onto a serine, threonine or tyrosine residue of a substrate protein, and a protein phosphatase catalyses the reverse reaction; histidine, lysine, arginine, aspartate, glutamate and cysteine residues can carry reversible phosphorylation too. Cell growth and development, cycle control, gene expression, protein synthesis, nerve function and muscle contraction all depend on it, and many signal transduction systems run a phosphorylation cascade in which one kinase after another acts. Two-dimensional electrophoresis and mass spectrometry are the usual way of detecting that a substrate protein has been phosphorylated. **A cell may hold as many as a thousand protein kinases, so measuring the activity of any single one of them inside a living cell is very hard, and the measurement is made in vitro instead.**",
+      cn: "蛋白激酶催化 ATP 或 GTP 的 γ 磷酸基团转移到底物蛋白的丝氨酸、苏氨酸或酪氨酸残基上，蛋白磷酸酯酶则催化相反的去磷酸化反应；底物蛋白的组氨酸、赖氨酸、精氨酸、天冬氨酸、谷氨酸和半胱氨酸残基上也能发生可逆磷酸化。细胞的生长发育、周期调控、基因表达、蛋白质合成以及神经功能、肌肉收缩都离不开它，许多信号转导系统里还有由多个蛋白激酶接力催化的磷酸化级联反应。检测底物蛋白是否被磷酸化，一般采用双向电泳及质谱分析。**细胞内可能有多达上千个蛋白激酶，因此在活细胞里检测其中任何一个的活性都非常困难，于是这个测定被搬到体外去做。**",
+      src: "现分 p.232"
+    },
+    {
+      link_en: "and an in-vitro kinase assay puts the substrate into the gel before the reaction is ever started",
+      link_cn: "而体外激酶活性分析，是在反应开始之前就先把底物放进胶里",
+      en: "An in-vitro kinase assay has two halves: obtain the substrate protein and the protein kinase to be tested, then run a phosphorylation reaction outside any cell. Target protein is extracted straight from tissue, or induced from a prokaryotic or a eukaryotic expression system, and purified. Purified protein is loaded onto a polyacrylamide gel cast with a substrate protein spread all through it — myelin basic protein (MBP), a small protein that many kinases will phosphorylate — and the gel is then bathed in a reaction system containing γ-³²P-ATP, an ATP whose γ phosphate group carries the radioactive atom. Any loaded protein with kinase activity transfers that labelled phosphate onto the MBP lying around its own position. Protein in the gel is renatured, the gel is dried, and autoradiography is run. **A black band on the film sits where the kinase itself stopped in the gel, and in 图 6-36 lanes 1, 4 and 5 carry such a band near Mr 68,000 while lanes 2, 3 and 6 leave the film blank.**",
+      cn: "体外激酶活性分析分两步：获取底物蛋白和待检测的蛋白激酶，再在细胞之外进行蛋白质磷酸化反应。目的蛋白可以直接从组织中提取，也可以由原核或真核表达载体诱导表达，然后分离纯化。把纯化好的蛋白质加到一块预先均匀混入底物蛋白的聚丙烯酰胺凝胶中电泳——底物用的是髓鞘碱性蛋白（myelin basic protein，MBP），一种许多激酶都能使之磷酸化的小蛋白——电泳后把胶浸在含 γ-³²P–ATP 的反应体系里，这种 ATP 的 γ 位磷酸基团上带着放射性原子。凡是具有激酶活性的蛋白质，都会把这个被标记的磷酸基团转移到它自己所在位置周围的 MBP 上。之后做胶内蛋白质复性、干胶、放射自显影。**胶片上的黑带落在激酶本身停在胶上的那个位置；图 6-36 中泳道 1、4、5 在 Mr 68 000 附近出现这样的条带，泳道 2、3、6 则一片空白。**",
+      src: "现分 p.232–233（图 6-36）"
+    },
+    {
+      link_en: "and swapping one substrate for another in that same reaction turns the assay into a specificity test",
+      link_cn: "而在同一个反应里把底物换成另一个，这个实验就变成了特异性检验",
+      recall_en: "the same shape of evidence as the PⅡ lane in 图 6-34 — one lane carries a band and the rest stay blank",
+      recall_cn: "和图 6-34 里 PⅡ 那一道是同一种证据形状——一道有带，其余各道空白",
+      en: "图 6-37 places the cotton calcium-dependent protein kinase GhCDPK1 in a phosphorylation system with the cotton ethylene synthase GhACS2. A strong phosphorylated band appears only where both proteins are present, and adding EGTA — a chelator, meaning a molecule that grips calcium ions and takes them out of the solution — weakens that band. GhSUS and GhACO1, run against the same kinase, are not phosphorylated at all. **A reaction in a tube shows that GhCDPK1 phosphorylates GhACS2 when calcium is there and phosphorylates neither GhACO1 nor GhSUS; whether it does so in a living cotton cell is the question that drove the assay out of the cell in the first place.**",
+      cn: "图 6-37 把棉花钙离子依赖性蛋白激酶 GhCDPK1 与棉花乙烯合成酶 GhACS2 放在同一个蛋白质体外磷酸化体系中。只有两个蛋白同时存在的泳道才出现很强的磷酸化条带，而加入 EGTA——一种螯合剂，即能把钙离子攥住、从溶液中拿走的分子——之后条带明显减弱。用同一个激酶去做 GhSUS 和 GhACO1，则完全不被磷酸化。**在试管里跑出来的这个反应说明：有钙离子时 GhCDPK1 能磷酸化 GhACS2，而 GhACO1 与 GhSUS 都不能被它磷酸化；至于活的棉花细胞里是否真的发生这个反应，恰恰是当初把测定赶出细胞的那个问题。**",
+      src: "现分 p.233–234（图 6-37）"
+    },
+    {
+      link_en: "the assays so far all needed a labelled molecule; the next one asks only whether one particular protein is in a sample at all",
+      link_cn: "到这里为止的每个实验都需要一个被标记的分子；下一个实验只问一件事：某一个特定的蛋白质到底在不在样品里",
+      en: "Western blotting, 蛋白质免疫印迹, grew out of protein gel electrophoresis and solid-phase immunoassay at the end of the 1970s, and it decides whether a protein antigen is present in a sample. Its principle is a single property of an antibody: a protein under test binds only the labelled antibody specific for it, and that binding leaves its relative molecular mass in gel electrophoresis unaltered. The procedure has five steps: prepare the protein sample; separate the sample by SDS-PAGE; transfer the separated proteins onto a nylon or other membrane and block the membrane's unreacted sites so that antibody cannot adsorb non-specifically; use the membrane-bound protein as antigen and let it bind the matching unlabelled antibody, called the primary antibody; wash away unbound primary antibody and add a secondary antibody coupled to an enzyme or labelled with a radioisotope, then read the result by colour development or by autoradiography. **Two antibodies in series are what deliver a signal-generating enzyme onto a protein that carries no label of its own — in 图 6-38 horseradish peroxidase rides on the secondary antibody and turns colourless DAB substrate into a dark product.**",
+      cn: "蛋白质免疫印迹（Western blotting）是 20 世纪 70 年代末 80 年代初在蛋白质凝胶电泳和固相免疫测定基础上发展起来的技术，它判定的是样品中有没有某种蛋白抗原。它的原理只是抗体的一条性质：被测蛋白质只能与标记的特异性抗体相结合，而这种结合不改变该蛋白质在凝胶电泳中的相对分子质量。程序分 5 步：①蛋白质样品的制备；②SDS-PAGE 电泳分离样品；③将已分离的蛋白质转移到尼龙或其他膜上，转移后先把膜上未反应的位点封闭起来，以抑制抗体的非特异性吸附；④用固定在膜上的蛋白质作为抗原，与对应的非标记抗体（即一抗）结合；⑤洗去未结合的一抗，加入酶偶联或放射性同位素标记的二抗，再通过显色或放射自显影法检出。**一前一后两支抗体，作用是把一个能产生信号的酶送到一个自身不带任何标记的蛋白质身上——图 6-38 中，辣根过氧化物酶挂在二抗上，把无色的 DAB 底物变成深色产物。**",
+      src: "现分 p.234（图 6-38）"
+    },
+    {
+      link_en: "and whether that stripe appears at all is decided by the antibody and by how much antigen there is",
+      link_cn: "而那条杠到底出不出得来，取决于抗体本身，以及抗原有多少",
+      en: "Two factors govern success. First is the nature of the epitope, the patch of an antigen that an antibody recognises: a primary antibody must recognise a protein that gel electrophoresis has denatured and transfer has fixed onto a membrane, and it must not cross-react with anything else on that membrane, which is why Western blotting doubles as a good way of judging a new antibody's specificity. Second is the antigen concentration in the protein solution: a protein of middling relative molecular mass, around 5×10⁴, must be above 0.1 ng to be detected, and a sample below that has to be purified further before it is loaded. **A band of the expected size says a protein of that size is in the sample and reacts with that antibody; it does not say the protein is functional, and it does not say where in the cell the protein was.**",
+      cn: "影响成败的因素有两个。第一是抗原分子中可被抗体识别的表位（epitope）的性质：所选的一抗必须能识别经凝胶电泳变性、并转印固定到膜上的蛋白质，而且不能与膜上别的东西发生交叉反应——正因如此，免疫印迹同时也是评价一支新抗体特异性的好办法。第二是蛋白原液中的抗原浓度：对于中等相对分子质量（5×10⁴ 左右）的蛋白质，浓度需大于 0.1 ng 才能被检出，低于此值的样品必须先做进一步纯化再上样。**出现在预期位置的一条带，说的是样品里有这个大小的蛋白质、并且它与这支抗体起反应；它不说这个蛋白质有没有功能，也不说这个蛋白质原来待在细胞的什么地方。**",
+      src: "现分 p.234–235（图 6-38）"
+    },
+    {
+      link_en: "and where in the cell a protein sits is the question the next two methods exist to answer",
+      link_cn: "而一个蛋白质待在细胞的什么地方，正是接下来两种方法要回答的问题",
+      en: "Eukaryotes have an elaborate subcellular structure, and each organelle holds its own particular proteins, so knowing where a protein sits in a tissue and in a cell is a precondition for knowing what it does. Green fluorescent protein (GFP) is a protein of 238 amino acids with two absorption peaks — a main one at 395 nm excited by ultraviolet light and a second at 475 nm excited by blue light — and two emission peaks, at 509 nm and 540 nm, green to yellow-green. Two constructs are built from it: the GFP coding sequence fused to a target gene's promoter, giving a chimeric gene, or the GFP coding sequence joined directly to a target protein's coding sequence, giving a fusion gene. Plant tissue or animal cells then receive it by floral dip, gene gun, microinjection, callus transformation or cell transfection. **GFP driven by a target gene's own control elements appears wherever that gene is expressed, so in 图 6-39 WOX5pro::GFP marks the quiescent centre of an Arabidopsis root tip as the place WOX5 protein belongs.**",
+      cn: "真核生物具有非常复杂的亚细胞结构，每种细胞器都含有各自特定的蛋白质；所以要知道一个蛋白质干什么，先得知道它在组织中、细胞中待在哪里。绿色荧光蛋白（GFP）由 238 个氨基酸组成，有两个吸收峰——主吸收峰在 395 nm，由紫外光激发，另一个在 475 nm，由蓝光激发——发射光也有 509 nm 和 540 nm 两个峰值，呈绿色或黄绿色荧光。由它可以构建两种东西：把 GFP 编码序列与目的基因的启动子融合，得到嵌合基因；或者把 GFP 编码序列与目的蛋白的编码序列直接相连，得到融合基因。再通过花序浸染法、基因枪、显微注射法、愈伤组织转化法或细胞转染等技术转入植物组织或动物细胞。**由目的基因自己的表达调控元件驱动的构建，表达模式与该基因相同；于是荧光显微镜下 GFP 出现在哪里，目的蛋白就该在哪里——图 6-39 中，WOX5pro::GFP 亮在拟南芥根尖的静止中心。**",
+      src: "现分 p.235（图 6-39）"
+    },
+    {
+      link_en: "a fusion construct needs a transformable cell, and an antibody needs none",
+      link_cn: "融合构建需要一个可以被转化的细胞，而抗体不需要",
+      recall_en: "the primary and secondary antibody pair from the Western steps, used here on an intact cell instead of on a membrane",
+      recall_cn: "Western 那两步里的一抗与二抗，这里用在完整的细胞上，而不是用在膜上",
+      beyond: true,
+      beyondNote: "现分 p.235 describes immunofluorescence with a single fluorescently labelled antibody raised against the antigen. Splitting that into an unlabelled primary antibody and a labelled secondary antibody is the ordinary laboratory layout and is not written on that page; the printed direct version is stated first here.",
+      en: "Immunofluorescence joins the specific binding of antigen and antibody to fluorescent labelling. A fluorescently labelled antibody against one protein antigen serves as a molecular probe on cells or tissue, the antigen–antibody complex it forms carries the fluorochrome, and a fluorescence microscope then shows which cell or which part of a cell the antigen occupies; in routine practice the fluorochrome is more often carried by a secondary antibody that recognises an unlabelled primary antibody. In 图 6-40 macrophages were stimulated for 15 min with an outer membrane protein of the tuberculosis bacterium: at 0 min NF-κB, a nuclear transcription factor labelled here with FITC, ringed the nucleus from the cytoplasm, and by 15 min its signal overlapped the DAPI stain of nuclear DNA. **Immunofluorescence needs no transformation and no fusion construct, so it reads an untouched protein where that protein actually is, and one protein moving from cytoplasm into nucleus inside 15 minutes is what it makes visible.**",
+      cn: "免疫荧光技术是把免疫学方法（抗原抗体特异结合）与荧光标记技术结合起来的方法。用针对某一特异蛋白抗原的荧光标记抗体作分子探针，检测细胞或组织内的相应抗原；所形成的抗原抗体复合物上含有荧光素，于是用荧光显微镜观察标本，就能确定抗原所在的细胞或细胞的哪一部分。实际操作中，荧光素更常挂在识别非标记一抗的二抗上。图 6-40 中，用结核杆菌外膜蛋白刺激巨噬细胞 15 min：0 min 时核转录因子 NF-κB（此处用 FITC 标记）的荧光呈环状包绕在细胞核外的胞质中，15 min 后它的信号与 DAPI 标记的细胞核 DNA 重合。**免疫荧光不需要转化、也不需要融合构建，它读的是未经改动的蛋白质本来所在的位置；而 15 min 之内一个蛋白质从胞质进入细胞核，正是它让你看见的东西。**",
+      src: "现分 p.235（图 6-40）"
+    },
+    {
+      link_en: "the last technique under this heading drops the single protein altogether and starts from a whole population",
+      link_cn: "这个标题下的最后一项技术，干脆不从单个蛋白质出发，而从一整个群体出发",
+      en: "A genome-wide association study (GWAS) takes millions of single nucleotide polymorphisms (SNP) — single base positions at which individuals of one species differ — as genetic markers, and compares an experimental group against a control group across the whole genome to find the gene variation behind a complex trait. Risch put the idea forward in 1996; Hansen and colleagues made the first application in 2001, linking a bolting gene of sea beet to two marker loci; Science carried the first human GWAS in 2005 — a study of age-related macular degeneration. A typical workflow runs in four steps: build a study population as large as can be had, together with a library of the target trait; extract DNA from every sample and sequence it to obtain the population's genotypes; use a suitable statistical model to relate the sequenced SNPs to the target trait; and confirm the correlation experimentally at the end. **Every variant is scored for how strongly its frequency differs between the two groups, and the most strongly associated ones are the only variants carried into that final confirmation.**",
+      cn: "全基因组关联分析（genome-wide association study，GWAS）以全基因组中数以百万计的单核苷酸多态性（single nucleotide polymorphism，SNP，即同一物种个体之间存在差异的单个碱基位置）为分子遗传标记，在全基因组水平上做实验组与对照组的对照分析，从而发现影响复杂性状的基因变异。1996 年 Risch 最早提出这一设想；2001 年 Hansen 等最早应用它，发现控制海甜菜春化抽薹的基因与两个分子标记位点相关联；2005 年 Science 刊出第一篇人类 GWAS 论文——研究的是年龄相关性视网膜黄斑变性。典型流程分四步：①建立研究群体，选尽可能大的样本群并建立目标性状库；②提取每个样本的 DNA 测序，得到群体的基因型；③用合适的统计模型建立测序所得 SNP 与目标性状的关联性；④最后用实验确认这一相关性。**每一个变异都会被算出它在两组之间的频率差异有多大，而只有关联最强的那几个变异才会被带进最后的实验确认。**",
+      src: "现分 p.236"
+    },
+    {
+      link_en: "and one such peak can come to rest on a single base inside a named gene",
+      link_cn: "而这样一个峰，可以最终落在某个已命名基因内部的单个碱基上",
+      en: "GWAS run on cotton seed oil found the contents of palmitic acid (C16:0) and palmitoleic acid (C16:1) both associated with SNPs on chromosome 11. 图 6-41 draws two Manhattan plots — every SNP placed at its genome position against the strength of its association, with a dashed line for the significance threshold — and for both traits a cluster on chromosome 11 rises above that line. The strongest SNP lies in the first exon of the gene GaKAS Ⅲ and changes an amino acid: haplotype A reads CGT, an arginine codon, and haplotype B reads TGT, a cysteine codon, and that one substitution accompanies the difference in seed oil between cotton populations. **A GWAS hands back an association between a genotype and a trait, which is why its own last step is a separate experiment; going from a codon change to a change in an enzyme's chemistry is work the Manhattan plot has not done.**",
+      cn: "把 GWAS 用于棉花种子油，发现棕榈酸（C16:0）与棕榈油酸（C16:1）的含量高低都与棉花基因组 11 号染色体上的 SNP 相关联。图 6-41 画的是两张曼哈顿图——每个 SNP 按它在基因组上的位置作横坐标、按关联信号强度作纵坐标，虚线为显著性阈值——两个性状都在 11 号染色体上出现一簇越过虚线的点。信号最高的 SNP 位于基因 GaKAS Ⅲ 的第一个外显子上，是一个非同义突变：单体型 A 为 CGT（精氨酸密码子），单体型 B 为 TGT（半胱氨酸密码子），这一个碱基的替换伴随着棉花不同群体之间种子油分的差异。**GWAS 交还给你的是基因型与性状之间的一个关联，所以它自己的最后一步是另做一个实验；从一个密码子的改变走到一个酶的化学性质的改变，这段路曼哈顿图并没有替你走。**",
+      src: "现分 p.236–237（图 6-41）"
     }
   ]
 };
