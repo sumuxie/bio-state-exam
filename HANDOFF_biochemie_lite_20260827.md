@@ -10,11 +10,16 @@ The app is `biochemie_lite/` — a merged, ultra-minimal rewrite of `biochemie_p
 ## Where the work stands
 
 ```
-50 / 78 topics merged        0 READY    18 PARTIAL    10 EMPTY
-167 spines   1029 steps   942 connectors   215 recalls   0 JS errors   0 literal ** on screen
+78 / 78 topics merged     0 READY    0 PARTIAL    0 EMPTY
+281 / 281 section nodes carry a thread
+195 spines   42 spine files   1220 steps   1111 connectors   253 recalls
+0 JS errors   0 literal ** on screen
 check-spine.py -> no problems      check-lite-render.py -> every spined node renders
-committed: 6c82441, b4150ac, 8a3e798 on main
 ```
+
+**The app is content-complete.** Every topic is merged and every section node is
+reachable. What is left is not coverage but polish: audio, and whatever the reader
+finds while actually studying from it.
 
 **biochemie_lite is committed now.** It was untracked for its whole life until this
 session; there is finally a baseline to `git checkout` back to, and a bad batch is no
@@ -236,8 +241,20 @@ follow start to finish, not two accounts stitched together.
 
 Output: `window.BIOLITE_SPINE["key:<topicKey>"] = {...}` in a new `spine_merged_<name>.js`.
 The `key:` prefix is what makes the app treat it as merged. **Never edit a per-node spine file.**
-Aim 14–16 steps, unless the node is marked 只作科普性了解, in which case keep it short.
+**Size the chain to the material, not to a step count.** The reader settled this:
+不要缺失任何节点 — 急速简化成主线不代表同意删除任何内容. Simplifying into one thread is not
+permission to drop content. Every member node must be represented, and 15 nodes means
+about 32 steps, not 14–16. Keep a chain short only where the node itself is marked
+只作科普性了解. If you find yourself dropping a named enzyme, intermediate or number to
+hit a count, the count is wrong. Report node by node which step carries each.
 Every step needs `en`, `cn`, `src`.
+
+**Cold starts are forbidden in the main chain and allowed in 极简.** The linter's COLD
+check reads the FULL step text, which is the 主干线: there every noun is introduced in the
+same breath it is first used. The bold span 极简 shows need not re-introduce its terms.
+So a COLD flag is fixed **in that step's prose** — never by moving a definition into the
+bold span, and never by cutting the material that raised it. Say this to any agent, or
+the cheapest way to clear the flag will be to delete the sentence.
 **Bold exactly one contiguous span per `en` and per `cn`, 60–200 chars, that asserts something
 and reads correctly with everything else hidden.**
 
@@ -267,19 +284,22 @@ double-claim steps. Check the arithmetic before believing something disappeared.
 
 ## Remaining topics
 
-**PARTIAL (18)** — some member node has no spine; merge straight from the source anyway.
-Biggest: `hormone-structure-and-action` (13 nodes, 3 written), `fatty-acid-biosynthesis` (11, 1),
-`membrane-architecture` (7, 2), `photochemical-reaction-centers` (7, 1),
-`biochemical-reaction-logic` (7, 1), `co2-assimilation` (6, 1), `membrane-transport` (5, 2).
-The metabolic core is done: citric acid cycle, both halves of amino acid fate, fatty acid
-oxidation, nitrogen metabolism and photorespiration/C4/CAM all merged this session.
+**None.** 0 READY, 0 PARTIAL, 0 EMPTY, and every one of the 281 section nodes is
+reachable. `python tools/merge-plan.py` prints the live version; if it ever shows a
+number above zero again, a node has been added to `nodes.js`, not lost.
 
-**EMPTY (10)** — no spine at all yet, all Czech-only. `monosaccharides` (15 nodes) and
-`polysaccharides` (4) remain the notable gap: the app still has no carbohydrate structure
-thread. Then `photosynthetic-pigments` (8), `feeder-pathways-glycolysis` (7),
-`pentose-phosphate-pathway` (4).
+The carbohydrate structure thread that every previous handoff flagged as the notable
+gap is written: `monosaccharides` came out as 32 steps over 15 nodes.
 
-`python tools/merge-plan.py --ready` prints the live version of this list.
+What is worth doing next is no longer coverage:
+
+- **Audio.** Deferred on purpose, and now unblocked — the content is finished, so clips
+  will not go stale under the renderer. Note that 极简's read-aloud now speaks the bold
+  claim rather than the whole step, so clips have to be rendered per claim, not per step.
+- **Reading it.** Every chain has been linted and rendered, and none has been studied
+  from. The defects that matter now are the ones that only appear when someone actually
+  tries to learn from a chain — which is how the 极简 wall of text and the read-aloud bug
+  were both found.
 
 ---
 
