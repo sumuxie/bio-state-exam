@@ -102,6 +102,19 @@ files = sorted(DATA.glob("questions*.js"))
 if not files:
     sys.exit(f"NO QUESTION FILES under {DATA} — fix the path before trusting this.")
 
+# Optional filename filter, so an author working on one file can measure their own
+# contribution while other files are mid-write. The gate that matters is still the
+# WHOLE bank -- a file that is balanced on its own can still tip the pooled numbers,
+# so run it with no argument before calling the job done.
+if len(sys.argv) > 1:
+    want = set(sys.argv[1:])
+    files = [f for f in files if f.name in want]
+    if not files:
+        sys.exit(f"no question file matched {sorted(want)}; present: "
+                 + ", ".join(sorted(p.name for p in DATA.glob('questions*.js'))))
+    print(f"FILTERED to {', '.join(f.name for f in files)} — "
+          f"the pooled bank is what the gate is really for.\n")
+
 # window.BIOLITE_Q["M-6-2"] = [ {...}, {...} ];
 BLOCK = re.compile(r'BIOLITE_Q\[\s*"([^"]+)"\s*\]\s*=\s*\[(.*?)\n\];', re.S)
 ITEM = re.compile(r"\{(.*?)\n\s*\}", re.S)
