@@ -70,6 +70,13 @@ window.BIOLITE_SPINE["key:urea-cycle"] = {
       src: "B §5.2.2, p.123"
     },
     {
+      link_en: "and whatever is not re-fixed is a problem, because free ammonia is a poison",
+      link_cn: "而没被重新固定住的那一部分是个麻烦——游离的氨是毒物",
+      en: "Free ammonia that does form is considerably toxic to organisms and has to be removed rather than stored anywhere. The elimination strategy is not universal: it depends on the type of organism, and the three classes are named after the nitrogen-excretion product each of them makes. **Naming an animal by what it excretes rather than by what it eats is the useful move here, because the excretion product is what the whole pathway downstream of ammonia exists to produce.**",
+      cn: "确实生成的那部分游离氨对生物体有相当的毒性，必须被清除，而不能存在任何地方。清除的方式并非对所有生物都一样：它取决于生物的种类，而那三大类正是按各自的排氮产物命名的。**给动物分类时看的是它排出什么，而非它吃什么——这在这里才是有用的做法；因为氨下游那整条通路存在的目的，就是造出这个排泄产物。**",
+      src: "B §5.2.2, p.123"
+    },
+    {
       link_en: "whatever cannot be re-used has to leave the body, and in which chemical form depends on how much water there is",
       link_cn: "用不掉的那部分必须离开身体，而以哪种化学形式离开，取决于有多少水",
       recall_en: "the three-way split of ammonotelic, ureotelic and uricotelic animals, met at the end of the amino-group chain",
@@ -178,6 +185,13 @@ window.BIOLITE_SPINE["key:urea-cycle"] = {
       cn: "在这些酶中任何一个上有严重缺陷的婴儿，出生时看起来是正常的 —— 因为此前一直是母体循环在替他清氨 —— 随后出现高氨血症：脑水肿、嗜睡、过度换气；不治疗通常早期死亡。那个显而易见的治法是被禁止的，因为无蛋白饮食不是选项：人类造不出二十种氨基酸里的一半，必须吃进来。分成三栏比通常的两栏更有用：非必需（丙氨酸、天冬酰胺、天冬氨酸、谷氨酸、丝氨酸）；条件必需，即在生长中的儿童身上、有时在患病期间必需（精氨酸、半胱氨酸、谷氨酰胺、甘氨酸、脯氨酸、酪氨酸）；必需（组氨酸、异亮氨酸、亮氨酸、赖氨酸、甲硫氨酸、苯丙氨酸、苏氨酸、色氨酸、缬氨酸）。若缺的是 N-乙酰谷氨酸合酶，就用氨甲酰谷氨酸顶替那个激活剂；精氨酸在其中三种酶缺陷里作为补充给予，而在精氨酸酶缺陷中反过来必须从饮食里剔除 —— 那里它正是清不掉的那个底物。**管用的疗法共用同一个想法 —— 让氮搭另一个分子出去：苯甲酸与甘氨酸结合成马尿酸，苯丁酸与谷氨酰胺结合成苯乙酰谷氨酰胺，两者都随尿排出。**",
       src: "A pp.638-639",
       see: [{ id: "L-18-3-1", en: "the other half of the story — what becomes of the carbon skeleton", cn: "故事的另一半 —— 碳骨架的下场" }]
+    },
+    {
+      link_en: "and two of the enzymes handling that nitrogen are read every day in a blood test, for a reason worth knowing",
+      link_cn: "而处理这些氮的酶里，有两个每天都在血检里被读取——理由值得知道",
+      en: "Aspartate aminotransferase, also called AAT or glutamate-oxaloacetate transaminase, and alanine aminotransferase, also called ALT or glutamate-pyruvate transaminase, sit inside cells and do the transamination work. They leak out of injured cells into the blood, which is what makes them useful outside a cell altogether: their serum levels report liver damage, drug toxicity or infection. **An enzyme measured in serum is being used as a leak detector rather than as a catalyst, and creatine kinase adds a third test of exactly the same kind.**",
+      cn: "天冬氨酸氨基转移酶（AAT，又叫谷草转氨酶 GOT）与丙氨酸氨基转移酶（ALT，又叫谷丙转氨酶 GPT）待在细胞里，干的是转氨的活。它们会从受损的细胞漏进血液——这正是它们在细胞之外也有用处的原因：它们的血清水平报告肝损伤、药物毒性或感染。**在血清里测一个酶，用的是它作为「渗漏探测器」的身份，而不是作为催化剂的身份；肌酸激酶（SCK 试验）是完全同一类的第三项检查。**",
+      src: "A p.633"
     }
   ],
   terms: [

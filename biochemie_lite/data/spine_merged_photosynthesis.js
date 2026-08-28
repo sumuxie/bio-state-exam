@@ -106,6 +106,13 @@ window.BIOLITE_SPINE["key:photosynthetic-pigments"] = {
       src: "B §9.1, pp.202–203"
     },
     {
+      link_en: "and one sentence fixes what the rest of the chapter will and will not answer",
+      link_cn: "而有一句话定下了本章后面会回答什么、不会回答什么",
+      en: "Photosynthesis can be studied on several levels, and the ecological one takes as its object a porost — a whole stand or canopy of plants rather than a single leaf or chloroplast. The physical, physiological and ecological aspects are then stated plainly to lie outside these lecture notes and will not be described in more detail. **Everything that follows is therefore deliberately biochemistry only, which is worth knowing whenever the chapter seems to skip a question you expected it to answer.**",
+      cn: "光合作用可以在好几个层面上研究，而生态学层面研究的对象是 porost——整片植物群落或冠层，而不是单独一片叶子或一个叶绿体。随后教材明说：物理学、生理学与生态学方面不会在本讲义里被更详细地描述。**因此后文全部内容都是有意只讲生物化学——当本章似乎跳过了你以为它会回答的问题时，知道这一点是有用的。**",
+      src: "B §9.1, pp.203–204"
+    },
+    {
       link_en: "so what happens when the donor is water?",
       link_cn: "那供体换成水会怎样？",
       en: "Autotrophs other than the sulfur bacteria use water molecules as the donor of electrons and protons, and that is what oxygenic photosynthesis means. Two water molecules must be split photochemically to make one molecule of O2, so the basic equation is written 2 H2O + CO2 giving (CH2O) + O2 + H2O. **A water sits on each side of that arrow and could be cancelled, and it is left standing on purpose: the arithmetic survives cancelling, but the claim that the oxygen came out of water does not.**",

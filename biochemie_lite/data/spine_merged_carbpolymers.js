@@ -571,6 +571,18 @@ window.BIOLITE_SPINE["key:starch-sucrose-biosynthesis"] = {
       en: "The pathways here interconnect so completely that the useful picture is one of pools rather than of separate routes. Three pools are named: the hexose phosphates, the pentose 5-phosphates, and the triose phosphates. Within a pool the free-energy changes are small and the members re-equilibrate almost immediately, so draining one member is corrected at once — which is exactly why every regulator in this chain acts on the enzymes that move carbon between pools and between compartments, and never on the interconversions inside a pool. At the level of the whole plant the same logic gives source and sink. **A photosynthetic leaf exports sucrose into the phloem, its high sucrose content draws in water by osmosis, and the turgor pressure pushes the sap toward roots, tubers and bulbs.** In those tissues the sucrose becomes starch or fuel. And the direction reverses on a daily cycle: by day the leaf exports, and at night it lives off the starch it made and supplies the rest of the plant from that.",
       cn: "这里的各条通路彼此连通得如此彻底，以至于有用的图景是「一个个池子」，而不是「一条条独立的路线」。书上点名了三个池子：己糖磷酸、戊糖-5-磷酸、三碳糖磷酸。池子内部各成员之间的自由能变化很小，几乎立刻重新达到平衡，所以抽走其中一个成员会被马上补回来——这正是这条主线里每一个调控因子都作用在「把碳从一个池子搬到另一个池子、从一个隔间搬到另一个隔间」的酶上，而从不作用于池子内部相互转化的原因。在整株植物的层面上，同一套逻辑给出源与库。**进行光合作用的叶片把蔗糖输出到韧皮部，高蔗糖含量靠渗透把水吸进来，升高的膨压把汁液推向根、块茎和鳞茎，蔗糖在那里变成淀粉或燃料。**而这个方向每天翻转一次：白天叶片输出，夜里它靠自己白天造的淀粉过活，并由此供养植株其余部分。",
       src: "A p.738–740, figures 20-48, 20-49"
+    },
+    {
+      link_en: "and one group of organisms runs the citrate cycle backwards to the same purpose, building carbon instead of burning it",
+      link_cn: "还有一类生物把柠檬酸循环反过来用，目的相同：造碳而不是烧碳",
+      recall_en: "the cycle that oxidises an acetyl group completely to two CO2, now with its degradative phase skipped",
+      recall_cn: "那个把乙酰基彻底氧化成两个 CO2 的循环，现在把它的降解阶段整个跳过",
+      en: "Some microorganisms and plants run a modification of the citrate cycle in which the acetyl group is not degraded at all. **The degradative phase is skipped, and acetyl-CoA is used instead to synthesise four-carbon dicarboxylic acids, which then feed other biosyntheses** — so the same set of enzymes that exists to burn carbon is run as a route for building it. That is what lets a germinating seed turn stored fat into sugar, which an animal cannot do, and it is the reason a plant can live on acetyl-CoA as a carbon source rather than only as a fuel.",
+      cn: "某些微生物和植物运行的是柠檬酸循环的一种变体，其中乙酰基根本不被降解。**降解阶段被整个跳过，乙酰-CoA 转而被用来合成四碳二羧酸，后者再去供给别的生物合成** —— 于是同一套本来用于烧碳的酶，被当成造碳的路线来跑。正是这一点让萌发的种子能把储存的脂肪变成糖（动物做不到这件事），也正是植物能把乙酰-CoA 当碳源而不只是当燃料的原因。",
+      src: "B §6.2.3, pp.140-141",
+      see: [
+        { id: "L-14-4-1", en: "why an animal cannot make glucose from acetyl-CoA, and what the glyoxylate cycle changes", cn: "动物为什么不能用乙酰-CoA 造葡萄糖，以及乙醛酸循环改变了什么" }
+      ]
     }
   ],
   terms: [
