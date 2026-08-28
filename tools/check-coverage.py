@@ -73,9 +73,25 @@ def words(s):
     return set(w for w in re.findall(r"[a-z][a-z-]{4,}", norm(s)) if w not in STOP)
 
 
+WORD_NUM = {"two": "2", "three": "3", "four": "4", "five": "5", "six": "6",
+            "seven": "7", "eight": "8", "nine": "9", "ten": "10", "eleven": "11",
+            "twelve": "12", "thirteen": "13", "fourteen": "14", "fifteen": "15",
+            "sixteen": "16", "seventeen": "17", "eighteen": "18", "nineteen": "19",
+            "twenty": "20", "thirty": "30", "forty": "40", "fifty": "50",
+            "hundred": "100", "thousand": "1000"}
+
+
 def numbers(s):
-    """Numbers as the reader would quote them, with 1,000 and 1000 the same thing."""
+    """Numbers as the reader would quote them, with 1,000 and 1000 the same thing.
+
+    Small counts get spelled out in prose — a chain saying "sixteen exist" carries the
+    same fact as a source saying "16", and reporting that as a loss is a false alarm
+    that teaches the reader to ignore this tool."""
     out = set()
+    low = norm(s)
+    for w, v in WORD_NUM.items():
+        if re.search(r"\b" + w + r"\b", low):
+            out.add(v)
     for m in re.findall(r"\d[\d,\.]*", norm(s)):
         v = m.rstrip(".,").replace(",", "")
         if v and v not in {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}:

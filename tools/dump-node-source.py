@@ -60,6 +60,12 @@ if __name__ == "__main__":
     if not want:
         raise SystemExit(__doc__)
     nodes = json.loads(TOPICS.read_text(encoding="utf-8"))
+    if want[0] == "--topic":
+        # every member node of a topic, in node order, so nothing is missed by hand
+        key = want[1]
+        want = [n["id"] for n in nodes
+                if n.get("topicKey") == key and n.get("kind") != "entity"]
+        sys.stderr.write("%s: %d member node(s): %s\n" % (key, len(want), " ".join(want)))
     by_id = {n["id"]: n for n in nodes}
     sys.stdout.reconfigure(encoding="utf-8")
     for w in want:
