@@ -1087,6 +1087,62 @@ mark.fh { background: rgba(210,153,34,0.28); color: inherit; border-radius: 2px;
 .sf-a { font-size: 0.86rem; color: var(--fg-mute); margin-bottom: 0.35rem; }
 .sf-a .t-en { color: var(--fg); }
 
+/* ----------------------------------------------------------- 追问链 CHAIN
+   跟 followups 视觉上必须分开：followups 是同一层并列的探针（SIB），
+   chain 是纵向下钻。所以链用左边一条竖线把层串起来，一眼看出是「一条」。 */
+.sheet-chain {
+  margin-top: 1.1rem; padding-top: 0.9rem; border-top: 1px dashed var(--line);
+}
+.sheet-chain h3 {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--fg-dim); margin-bottom: 0.4rem;
+}
+.chain-note { font-size: 0.78rem; color: var(--fg-mute); margin-bottom: 0.6rem; }
+.chain-root {
+  font-size: 0.88rem; font-weight: 600; padding: 0.5rem 0.7rem;
+  background: var(--bg-sink); border-radius: 6px; margin-bottom: 0.7rem;
+}
+.chain-level {
+  border-left: 2px solid var(--line); padding: 0 0 0 0.85rem; margin-left: 0.3rem;
+}
+.chain-level > summary {
+  cursor: pointer; list-style: none; padding: 0.45rem 0;
+  font-weight: 600; font-size: 0.9rem;
+}
+.chain-level > summary::-webkit-details-marker { display: none; }
+.chain-level > summary .t-cn { font-weight: 400; color: var(--fg-mute); }
+.chain-level[open] { border-left-color: var(--accent-dim); }
+.cl-n {
+  display: inline-block; min-width: 2.2rem; margin-right: 0.4rem;
+  font: 600 0.72rem/1.6 var(--mono); color: var(--accent);
+}
+.cl-body { padding: 0.2rem 0 0.9rem; }
+.cl-a {
+  font-size: 0.88rem; padding: 0.5rem 0.7rem; border-radius: 6px;
+  background: var(--bg-sink); border-left: 3px solid var(--good);
+}
+.cl-why { font-size: 0.82rem; color: var(--fg-mute); margin-top: 0.5rem; }
+.cl-wrong {
+  margin-top: 0.6rem; padding: 0.5rem 0.7rem; border-radius: 6px;
+  background: var(--bg-sink); border-left: 3px solid var(--bad);
+}
+.cl-tag {
+  display: inline-block; font-size: 0.68rem; padding: 0.05rem 0.4rem;
+  border-radius: 4px; background: var(--line); color: var(--fg-mute);
+}
+.cl-tag-level { color: var(--bad); }
+.cl-tag-thin  { color: var(--warn); }
+.cl-tag-weak  { color: var(--fg-mute); }
+.cl-say { font-size: 0.86rem; margin: 0.25rem 0; }
+.cl-cost { font-size: 0.8rem; color: var(--fg-mute); }
+.cl-terms { margin: 0.6rem 0 0; padding-left: 1.1rem; }
+.cl-terms li { font-size: 0.8rem; color: var(--fg-mute); margin-bottom: 0.3rem; }
+.cl-terms li b { color: var(--fg); font-family: var(--mono); font-size: 0.76rem; }
+.cl-branch { margin-bottom: 0.6rem; }
+.chain-terminate, .chain-skip {
+  font-size: 0.8rem; color: var(--fg-mute); margin-top: 0.7rem;
+}
+
 .sheet-source {
   font-size: 0.74rem; color: var(--fg-dim); margin-top: 1rem;
   padding-top: 0.7rem; border-top: 1px dashed var(--line);

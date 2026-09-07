@@ -1331,6 +1331,53 @@
            </div>`
         : '';
 
+      /* ------------------------------------------------------------ 追问链
+         审计（state_exam/JIRIBANK_DEPTH_AUDIT.md）量出来的结果：这个 app 的
+         94 道题就是 CARD，189 条追问就是 SIB，唯一缺的是 CHAIN —— 纵向下钻
+         ≥ 5 层，每层追问上一层为什么成立。实测现有追问咬住上一条的比例只有
+         12%，紧贴兄弟层基线；真下钻是 100%。所以这里不改任何一道题，只在
+         data/chains.js 里给高权重题挂链，按 parentCard 找回来。
+
+         每层用原生 <details>：问题在 summary 上，答案要点开才出来。理由是
+         HANDOFF §6 —— 口试练的是自由提取，答案摆在眼前练的是再认。顺序必须
+         是先自己出声说、再翻开；反过来就变成跟读。
+         （说明一句：<details> 的内容在 DOM 里只是被折叠，不像 prototype 那样
+         翻面前根本不存在。对着屏幕练够用，但它不是防作弊。） */
+      const chainsFor = (window.PESB.chains || []).filter((c) => c.parentCard === q.id);
+      const chainHtml = chainsFor.map((c) => `
+        <div class="sheet-chain">
+          <h3>Follow-up chain <span class="muted">追问链 · ${esc(c.title || '')}</span></h3>
+          <p class="chain-note">咬住答案里的 <b>${esc(c.drillWord || '')}</b> 往下钻 ${c.levels.length} 层。
+             每层<b>先自己出声说完</b>，再点开对答案。</p>
+          <div class="chain-root">${biSay(c.root_en, c.root_cn)}</div>
+          ${c.levels.map((l) => `
+            <details class="chain-level">
+              <summary><span class="cl-n">${esc(l.n)}</span>${biSay(l.q_en, l.q_cn)}</summary>
+              <div class="cl-body">
+                <div class="cl-a">${biSay(l.answer_en, l.answer_cn)}</div>
+                ${l.why_cn ? `<div class="cl-why">${mdBold(l.why_cn)}</div>` : ''}
+                ${l.wrong ? `<div class="cl-wrong">
+                  <span class="cl-tag cl-tag-${esc(l.wrong.kind)}">${
+                    { level: '答错层级', thin: '答得不完整', weak: '撑不住的答法' }[l.wrong.kind] || esc(l.wrong.kind)
+                  }</span>
+                  <div class="cl-say">${biSay(l.wrong.say, '')}</div>
+                  <div class="cl-cost">${mdBold(l.wrong.belongs || '')} ${mdBold(l.wrong.cost || '')}</div>
+                </div>` : ''}
+                ${(l.terms || []).length ? `<ul class="cl-terms">${
+                  l.terms.map((t) => `<li><b>${esc(t.en)}</b> — ${mdBold(t.cn)}</li>`).join('')
+                }</ul>` : ''}
+              </div>
+            </details>`).join('')}
+          ${(c.branches || []).length ? `<details class="chain-level chain-branches">
+            <summary><span class="cl-n">旁支</span><div class="t-cn">从链上横向岔出去的问题</div></summary>
+            <div class="cl-body">${c.branches.map((b) => `
+              <div class="cl-branch">${biSay(b.q_en, b.q_cn)}<div class="cl-why">${mdBold(b.a_cn || '')}</div></div>`).join('')}
+            </div></details>` : ''}
+          ${c.terminate ? `<p class="chain-terminate"><b>收手</b> ${mdBold(c.terminate.cn)}
+             ${biSay(c.terminate.en, '')}</p>` : ''}
+          ${c.skipIt ? `<p class="chain-skip"><b>不用背</b> ${mdBold(c.skipIt)}</p>` : ''}
+        </div>`).join('');
+
       return `<article class="sheet-card">
         <div class="sheet-head">
           <span class="badge badge-slide">${esc(q.sheets)}</span>
@@ -1359,6 +1406,7 @@
         ${figureHtml}
         ${gapsHtml}
         ${followupsHtml}
+        ${chainHtml}
 
         ${(q.sourceNodes || q.spine || []).length
           ? `<p class="sheet-source">Traceable to <span class="muted">可追溯到</span>: ${
