@@ -63,6 +63,21 @@
      difference line under the drawings and by nothing else: the SVG builds its
      own label out of tspans so it can style the parts separately. Kept next to
      the drawing code so the two cannot drift apart in wording. */
+  /* H implied by an atom's bonds and its formal charge. The ionised drawings
+     derive their hydrogen counts through this rather than adding one to the
+     stored `h`, so a wrong `h` in the data cannot be carried through into the
+     ionised form as well -- it fails the consistency check below instead.
+     Cations: N and O gain a bond when protonated (lone pair -> bond), carbon
+     would lose one, hence the split. Anions lose one either way. */
+  var VALENCE = { C: 4, N: 3, O: 2, S: 2, P: 3 };
+  var LONE_PAIR = { N: 1, O: 1, S: 1, P: 1 };
+  function derivedH(el, used, q) {
+    var v = VALENCE[el];
+    if (v === undefined) return null;
+    v = q > 0 ? (LONE_PAIR[el] ? v + q : v - q) : v + q;
+    return v >= used ? v - used : null;
+  }
+
   var SUB = ['', '', '₂', '₃', '₄'];
   function atomLabel(el, h, q) {
     return el + (h ? 'H' + (h > 1 ? SUB[h] : '') : '') +
@@ -160,7 +175,7 @@
      the page, which is the one failure mode this app was split out to avoid
      (see the header). A card that says it could not ionise is visible and
      harmless; a blank app during revision is not. */
-  function zwitterion(mol) {
+  function zwitterion(mol, it) {
     var i, nbr = mol.atoms.map(function () { return []; });
     mol.bonds.forEach(function (b) {
       var o = b[2] || 1;
@@ -205,20 +220,62 @@
     var atoms = mol.atoms.map(function (a) {
       return { el: a.el, x: a.x, y: a.y, h: a.h, q: a.q };
     });
+    // bond orders summed per atom, so every ionised H below is derived
+    var used = atoms.map(function () { return 0; });
+    mol.bonds.forEach(function (b) {
+      var o = b[2] || 1;
+      used[b[0]] += o; used[b[1]] += o;
+    });
+    function ionise(k, q) {
+      var h = derivedH(atoms[k].el, used[k], q);
+      if (h === null) return atoms[k].el + ' 的键数超出它带 ' + q + ' 电时的价';
+      atoms[k] = { el: atoms[k].el, x: atoms[k].x, y: atoms[k].y, h: h, q: q };
+      return null;
+    }
+
     var nBefore = atomLabel(atoms[nIdx].el, atoms[nIdx].h, 0);
     var oBefore = atomLabel(atoms[oIdx].el, atoms[oIdx].h, 0);
-    atoms[nIdx] = { el: atoms[nIdx].el, x: atoms[nIdx].x, y: atoms[nIdx].y,
-                    h: atoms[nIdx].h + 1, q: 1 };
-    atoms[oIdx] = { el: atoms[oIdx].el, x: atoms[oIdx].x, y: atoms[oIdx].y,
-                    h: 0, q: -1 };
+    var bad = ionise(nIdx, 1) || ionise(oIdx, -1);
+    if (bad) return { err: bad };
+
+    /* THE SIDE CHAIN. Aspartate and glutamate carry a second carboxyl and
+       lysine and arginine a basic nitrogen, all of them charged at pH 7, so a
+       drawing that ionises only the alpha groups would show a net-zero molecule
+       on a card labelled -1. Which atom is declared per entry as `sc7` and
+       asserted here, rather than found by a rule: the rules that locate them
+       differ per group (carboxyl / primary amine / guanidinium) and the
+       guanidinium rule also matches histidine's imidazole, which is NOT
+       protonated at pH 7. A wrong declaration cannot pass silently -- the net
+       charge is recomputed from the finished drawing and checked against the
+       independently declared `q7` below. */
+    if (it && it.sc7) {
+      if (!(it.sc7.at >= 0 && it.sc7.at < atoms.length))
+        return { err: 'sc7 指向不存在的原子 ' + it.sc7.at };
+      if (it.sc7.at === nIdx || it.sc7.at === oIdx)
+        return { err: 'sc7 指向的是 α 位，不是侧链' };
+      bad = ionise(it.sc7.at, it.sc7.q);
+      if (bad) return { err: bad };
+    }
+
+    // Two independently authored numbers that have to agree: what the finished
+    // drawing adds up to, and what the entry declares its pH-7 charge to be.
+    var net = atoms.reduce(function (t, a) { return t + (a.q || 0); }, 0);
+    if (it && typeof it.q7 === 'number' && net !== it.q7)
+      return { err: '画出来净电荷 ' + net + '，但数据声明 q7 = ' + it.q7 };
     /* The difference is DERIVED, not written per amino acid. Proline's is
        NH → NH₂⁺ rather than NH₂ → NH₃⁺ because its N is secondary, and a
        hand-written caption would have got that one wrong. */
     return {
       mol: { atoms: atoms, bonds: mol.bonds },
+      net: net,
       diff: {
         n: { from: nBefore, to: atomLabel(atoms[nIdx].el, atoms[nIdx].h, 1) },
-        o: { from: oBefore, to: atomLabel(atoms[oIdx].el, atoms[oIdx].h, -1) }
+        o: { from: oBefore, to: atomLabel(atoms[oIdx].el, atoms[oIdx].h, -1) },
+        sc: (it && it.sc7) ? {
+          from: atomLabel(mol.atoms[it.sc7.at].el, mol.atoms[it.sc7.at].h, 0),
+          to: atomLabel(atoms[it.sc7.at].el, atoms[it.sc7.at].h, it.sc7.q),
+          q: it.sc7.q
+        } : null
       }
     };
   }
@@ -403,6 +460,20 @@
       '（系统命名的化合物字典里查不到）。</p><ul>' + rows + '</ul></details>';
   }
 
+  /* How a net charge is said in words. "碱性" and "带正电" are NOT the same
+     claim and conflating them is a real exam trap: histidine's side chain is
+     basic, yet at pH 7 it is mostly unprotonated, so histidine sits at net 0
+     next to lysine and arginine at +1. So the charge is stated per amino acid,
+     never inferred from the acidic/basic heading it sits under. */
+  function netText(n) {
+    if (n === 0) return { cls: '', sign: '0',
+      word: '两性离子 zwitterion —— 正负各一、互相抵消，分子整体不带电但内部带电' };
+    return { cls: n > 0 ? 'q-pos' : 'q-neg',
+      sign: (n > 0 ? '+' : '−') + Math.abs(n),
+      word: n > 0 ? '整体带正电 —— 侧链的正电没有被抵消掉'
+                  : '整体带负电 —— 侧链多出一个负电' };
+  }
+
   function itemHtml(it, g) {
     var n = it.note && it.note.cn;
 
@@ -410,7 +481,7 @@
        so this can never fire on a sugar or a lipid that happens to contain an
        amino-acid-like fragment -- the flag is opt-in per group, not a guess
        made from the graph. */
-    var zw = (g && g.aqueous && it.mol) ? zwitterion(it.mol) : null;
+    var zw = (g && g.aqueous && it.mol) ? zwitterion(it.mol, it) : null;
     return '<article class="card">' +
       '<header class="card-head">' +
         // English is the MAIN title and Chinese the subtitle (Ruojin, 2026-08-09):
@@ -421,6 +492,12 @@
           '<span class="cn-sub">' + esc(it.cn) + '</span></span>' +
         '<span class="codes">' + esc(it.tlc) + ' · ' + esc(it.olc) +
           (it.essential ? ' <span class="ess" title="必需氨基酸 · essential">必需</span>' : '') +
+          // The charge is put in the HEADER, beside the name, because it is
+          // what gets asked and what the acidic/basic heading does not say.
+          (zw && zw.mol
+            ? ' <span class="qbadge ' + netText(zw.net).cls + '" title="pH 7 下的净电荷">' +
+                'pH 7 · ' + netText(zw.net).sign + '</span>'
+            : '') +
         '</span>' +
       '</header>' +
       // An undrawn molecule shows an explicit empty slot rather than nothing,
@@ -441,12 +518,22 @@
                   '<br>= SMILES / CID 记的那个，被检查器核对</span></figcaption>' +
                 '</figure>' +
                 '<figure class="pane pane-aq">' + molSvg(zw.mol) +
-                  '<figcaption>水溶液中 · <b>zwitterion</b><br>' +
-                    'α-氨基 <b class="q-pos">' + esc(zw.diff.n.to) + '</b> 带 ' +
-                    '<b class="q-pos">+1</b>，α-羧基 <b class="q-neg">' +
-                    esc(zw.diff.o.to) + '</b> 带 <b class="q-neg">−1</b>' +
-                    '<span class="muted"><br>一正一负抵消 → 净电荷 0，' +
-                    '整个分子不带电但内部带电<br>= 考试要你写的那个</span>' +
+                  '<figcaption>水溶液中 · <b>pH 7</b>　<span class="muted">' +
+                    '= 考试要你写的那个</span><br>' +
+                    '<span class="qline">α-氨基 <b class="q-pos">' + esc(zw.diff.n.to) +
+                      '</b> <b class="q-pos">+1</b></span>' +
+                    '<span class="qline">α-羧基 <b class="q-neg">' + esc(zw.diff.o.to) +
+                      '</b> <b class="q-neg">−1</b></span>' +
+                    (zw.diff.sc
+                      ? '<span class="qline">侧链 <b class="' +
+                          (zw.diff.sc.q > 0 ? 'q-pos' : 'q-neg') + '">' +
+                          esc(zw.diff.sc.from) + ' → ' + esc(zw.diff.sc.to) + '</b> <b class="' +
+                          (zw.diff.sc.q > 0 ? 'q-pos' : 'q-neg') + '">' +
+                          (zw.diff.sc.q > 0 ? '+1' : '−1') + '</b></span>'
+                      : '<span class="qline muted">侧链不带电</span>') +
+                    '<span class="qsum">净电荷 <b class="' + netText(zw.net).cls + '">' +
+                      netText(zw.net).sign + '</b> <span class="muted">' +
+                      netText(zw.net).word + '</span></span>' +
                   '</figcaption>' +
                 '</figure>' +
               '</div>' +

@@ -176,6 +176,21 @@ code { font-family: var(--mono); font-size: 0.85em; }
 .q-neg { color: #ef5350; }
 :root[data-theme="light"] .q-pos { color: #0b5cd5; }
 :root[data-theme="light"] .q-neg { color: #c62828; }
+
+/* Net charge, in the card header beside the name -- the thing that gets asked,
+   and the thing the acidic/basic heading above does not answer. */
+.qbadge {
+  display: inline-block; margin-left: 0.35rem; padding: 0 0.4em;
+  border: 1px solid currentColor; border-radius: 999px;
+  font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+}
+/* Each contributing group on its own line, so +1, -1 and the side chain can be
+   read off one at a time instead of as a sentence. */
+.qline { display: block; }
+.qsum {
+  display: block; margin-top: 0.25rem; padding-top: 0.25rem;
+  border-top: 1px solid var(--line-soft);
+}
 .form { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--fg-dim); }
 .form-bad { color: #ef5350; font-weight: 600; }
 
