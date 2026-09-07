@@ -12,6 +12,12 @@
      NOT covered  hydrogen count (implicit H needs valence rules this checker
                   does not implement), and STEREOCHEMISTRY. The @/@@ tags say
                   L rather than D, and nothing here verifies that.
+   Hydrogen and bond orders ARE covered now, by tools/check_bond_orders.py, and
+   it found two drawings wrong the day it was written: arginine's guanidino group
+   labelled its double-bonded nitrogen NH2 when the bonds allow only NH, and
+   histidine's imidazole carried its NH label on a nitrogen that was already
+   double-bonded, with one ring double bond a place out. Both are fixed. Run that
+   script as well as this one; neither covers stereochemistry.
    So a structure can pass the checker and still have the wrong handedness.
    Treated as a known limitation and stated on the page itself rather than
    left for the reader to discover.
@@ -129,13 +135,13 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
              bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6],[6,7],[7,8],[8,9]] },
       smiles: "NCCCC[C@@H](N)C(=O)O",     formula: "C6H14N2O2",  cid: 5962, essential: true },
     { key: "arg", cn: "精氨酸", en: "Arginine",      tlc: "Arg", olc: "R", cls: "basic",
-      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "C", x: 1.73, y: 2.0 }, { el: "C", x: 0.87, y: 2.5 }, { el: "N", x: 1.73, y: 3.0, h: 1 }, { el: "C", x: 1.73, y: 4.0 }, { el: "N", x: 0.87, y: 4.5, h: 2 }, { el: "N", x: 2.60, y: 4.5, h: 2 }],
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "C", x: 1.73, y: 2.0 }, { el: "C", x: 0.87, y: 2.5 }, { el: "N", x: 1.73, y: 3.0, h: 1 }, { el: "C", x: 1.73, y: 4.0 }, { el: "N", x: 0.87, y: 4.5, h: 1 }, { el: "N", x: 2.60, y: 4.5, h: 2 }],
              bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6],[6,7],[7,8],[8,9],[9,10,2],[9,11]] },
       smiles: "NC(=N)NCCC[C@@H](N)C(=O)O", formula: "C6H14N4O2", cid: 6322,
       note: { cn: "胍基，碱性最强的侧链，在生理 pH 下几乎总是带正电。" } },
     { key: "his", cn: "组氨酸", en: "Histidine",     tlc: "His", olc: "H", cls: "basic",
-      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "C", x: 0.87, y: 2.5 }, { el: "N", x: 1.82, y: 2.81, h: 1 }, { el: "C", x: 1.82, y: 3.81 }, { el: "N", x: 0.87, y: 4.12 }, { el: "C", x: 0.28, y: 3.31 }],
-             bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6],[6,7],[7,8,2],[8,9],[9,10,2],[10,6]] },
+      mol: { atoms: [{ el: "N", x: 0, y: 0, h: 2 }, { el: "C", x: 0.87, y: 0.5 }, { el: "C", x: 1.73, y: 0 }, { el: "O", x: 1.73, y: -1 }, { el: "O", x: 2.60, y: 0.5, h: 1 }, { el: "C", x: 0.87, y: 1.5 }, { el: "C", x: 0.87, y: 2.5 }, { el: "N", x: 1.82, y: 2.81 }, { el: "C", x: 1.82, y: 3.81 }, { el: "N", x: 0.87, y: 4.12, h: 1 }, { el: "C", x: 0.28, y: 3.31 }],
+             bonds: [[0,1],[1,2],[2,3,2],[2,4],[1,5],[5,6],[6,7],[7,8,2],[8,9],[9,10],[10,6,2]] },
       smiles: "N[C@@H](Cc1c[nH]cn1)C(=O)O", formula: "C6H9N3O2", cid: 6274, essential: true,
       note: { cn: "咪唑环的 pK 接近生理 pH，所以它在同一个环境里既能给出质子又能接受质子——这就是为什么酶的活性中心里那么常见它（见 3-6）。" } }
   ]

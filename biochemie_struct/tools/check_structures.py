@@ -13,6 +13,10 @@ WHAT IT CHECKS
                   against the heavy atoms parsed out of `formula`.
 
 WHAT IT DOES NOT CHECK - do not report this script as "structures verified"
+    bond orders   a double bond drawn between the wrong pair of atoms changes no
+                  heavy-atom count and no bond count, so it passes everything
+                  here. check_bond_orders.py is the script that catches that,
+                  along with hydrogen counts and tautomers. Run BOTH.
     hydrogen      implicit H needs valence rules this parser does not
                   implement, so H is read from `formula` and trusted.
     stereochem    @ / @@ say L rather than D and NOTHING here verifies it.
@@ -310,6 +314,7 @@ def main():
     print("             drawings are connected, no self/duplicate bonds, bond count matches;")
     print("             declared Haworth orientations match the drawn coordinates")
     print("NOT covered: hydrogen count, STEREOCHEMISTRY, identity against PubChem")
+    print("             bond orders and tautomers -> run tools/check_bond_orders.py too")
     if fails:
         sys.exit(1)
     print("RESULT: all structures pass")

@@ -19,6 +19,23 @@ that PubChem's depiction cannot reproduce (PubChem draws a ring, not a Haworth p
 and that assertion is the only machine check on sugar stereochemistry in this project. It
 stays.
 
+TWO PASSES MUST RUN AFTER THIS ONE, and a regenerated file is wrong without them.
+PubChem's own depiction of the free bases is not the one a course draws, and no
+composition check can see it, because a tautomer has the same formula and the same
+heavy-atom graph:
+
+    python tools/normalize_kekule.py      adenine's C6 double bond goes to N1, as
+                                          in a textbook, not to C5 as in PubChem
+    python tools/fix_base_tautomers.py    adenine/guanine/cytosine get their H on
+                                          the nitrogen the sugar uses (N9, N9, N1),
+                                          derived from this app's own nucleoside
+                                          records - PubChem publishes 7H adenine
+                                          (its IUPAC name is literally
+                                          7H-purin-6-amine) and N3-H cytosine
+
+Then  python tools/check_structures.py  and  python tools/check_bond_orders.py.
+The second one fails if either pass was skipped, which is the point.
+
 Usage:  python biochemie_struct/tools/gen_structures.py
 """
 import io, os, re, sys, json, glob, collections
