@@ -122,7 +122,7 @@
       var p = px(a);
       return '<text x="' + p.x + '" y="' + p.y + '" class="el el-' + esc(a.el) + '">' +
              esc(a.el) + (a.h ? '<tspan class="hsub">H' + (a.h > 1 ? a.h : '') + '</tspan>' : '') +
-             (a.q ? '<tspan class="chg">' + (a.q > 0 ? '+' : '−') +
+             (a.q ? '<tspan class="chg" dy="-7">' + (a.q > 0 ? '+' : '−') +
                     (Math.abs(a.q) > 1 ? Math.abs(a.q) : '') + '</tspan>' : '') +
              '</text>';
     }).join('');
@@ -441,14 +441,21 @@
                   '<br>= SMILES / CID 记的那个，被检查器核对</span></figcaption>' +
                 '</figure>' +
                 '<figure class="pane pane-aq">' + molSvg(zw.mol) +
-                  '<figcaption>水溶液中 · <b>zwitterion</b> <span class="muted">' +
-                  '净电荷 0<br>= 考试要你写的那个</span></figcaption>' +
+                  '<figcaption>水溶液中 · <b>zwitterion</b><br>' +
+                    'α-氨基 <b class="q-pos">' + esc(zw.diff.n.to) + '</b> 带 ' +
+                    '<b class="q-pos">+1</b>，α-羧基 <b class="q-neg">' +
+                    esc(zw.diff.o.to) + '</b> 带 <b class="q-neg">−1</b>' +
+                    '<span class="muted"><br>一正一负抵消 → 净电荷 0，' +
+                    '整个分子不带电但内部带电<br>= 考试要你写的那个</span>' +
+                  '</figcaption>' +
                 '</figure>' +
               '</div>' +
               '<p class="diff">差别只有<b>一个质子的位置</b>：羧基 ' +
-                '<code>' + esc(zw.diff.o.from) + '</code> → <code>' + esc(zw.diff.o.to) + '</code>' +
+                '<code>' + esc(zw.diff.o.from) + '</code> → <code class="q-neg">' +
+                esc(zw.diff.o.to) + '</code>（<b class="q-neg">得负电 −1</b>，失去那个 H）' +
                 '，α-氨基 <code>' + esc(zw.diff.n.from) + '</code> → ' +
-                '<code>' + esc(zw.diff.n.to) + '</code>' +
+                '<code class="q-pos">' + esc(zw.diff.n.to) + '</code>' +
+                '（<b class="q-pos">得正电 +1</b>，接住那个 H）' +
                 '。<span class="muted">质子是从羧基搬到氨基上的，不是新加的——' +
                 '所以两者分子式相同（' + esc(it.formula) + '），互为异构体，' +
                 '骨架和所有重原子一个没动。</span></p>'

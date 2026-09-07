@@ -160,9 +160,22 @@ code { font-family: var(--mono); font-size: 0.85em; }
 .mol .el-O { fill: #ef5350; }
 .mol .el-S { fill: #d29922; }
 .mol .hsub { font-size: 9px; baseline-shift: -2px; fill: var(--fg-dim); }
-/* Formal charge, drawn as a real superscript so NH3+ cannot be misread as
-   part of the hydrogen subscript sitting next to it. */
-.mol .chg { font-size: 10px; baseline-shift: 5px; font-weight: 600; }
+/* Formal charge. Raised by a dy ATTRIBUTE on the tspan, not by baseline-shift:
+   Firefox never implemented baseline-shift for SVG text, so a charge positioned
+   with it drops onto the baseline and reads as part of the hydrogen subscript
+   beside it -- "NH3+" turning into something that looks like "NH3+" spelled
+   flat is precisely the confusion this whole card is meant to remove.
+   Bigger and bolder than the H subscript on purpose: the charge is the thing
+   that changed, so it must not be the faintest mark on the drawing. */
+.mol .chg { font-size: 12px; font-weight: 700; }
+
+/* The two charges keep the colours of the atoms that carry them -- N blue,
+   O red -- so the +1 in the caption and the + on the drawing read as the
+   same fact rather than two separate claims. */
+.q-pos { color: #4c8dff; }
+.q-neg { color: #ef5350; }
+:root[data-theme="light"] .q-pos { color: #0b5cd5; }
+:root[data-theme="light"] .q-neg { color: #c62828; }
 .form { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--fg-dim); }
 .form-bad { color: #ef5350; font-weight: 600; }
 
