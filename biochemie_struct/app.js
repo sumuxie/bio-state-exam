@@ -59,6 +59,16 @@
      other element is labelled, hydrogens are implicit. Colours come from
      currentColor and the CSS variables, so the drawing follows the theme
      instead of being baked light or dark. */
+  /* One atom rendered as text -- "NH₂", "NH₃⁺", "OH", "O⁻". Used BOTH by the
+     difference line under the drawings and by nothing else: the SVG builds its
+     own label out of tspans so it can style the parts separately. Kept next to
+     the drawing code so the two cannot drift apart in wording. */
+  var SUB = ['', '', '₂', '₃', '₄'];
+  function atomLabel(el, h, q) {
+    return el + (h ? 'H' + (h > 1 ? SUB[h] : '') : '') +
+           (q ? (q > 0 ? '⁺' : '⁻') : '');
+  }
+
   var BOND_PX = 34;          // one bond length in px
   var PAD = 16;
 
@@ -112,12 +122,105 @@
       var p = px(a);
       return '<text x="' + p.x + '" y="' + p.y + '" class="el el-' + esc(a.el) + '">' +
              esc(a.el) + (a.h ? '<tspan class="hsub">H' + (a.h > 1 ? a.h : '') + '</tspan>' : '') +
+             (a.q ? '<tspan class="chg">' + (a.q > 0 ? '+' : '−') +
+                    (Math.abs(a.q) > 1 ? Math.abs(a.q) : '') + '</tspan>' : '') +
              '</text>';
     }).join('');
 
     return '<svg class="mol" viewBox="0 0 ' + w + ' ' + h + '" width="' + w +
       '" height="' + h + '" role="img" aria-label="skeletal structure">' +
       '<g class="bonds">' + parts.join('') + '</g>' + labels + '</svg>';
+  }
+
+  /* ------------------------------------------------------- zwitterion
+     WHY THIS IS COMPUTED AND NOT STORED. Every `mol` graph is the NEUTRAL,
+     un-ionised molecule, and that is load-bearing: check_structures.py and
+     check_bond_orders.py both verify it against `smiles` and `formula`, which
+     are PubChem's neutral forms. Editing the stored graph into a zwitterion
+     would put the drawing beyond the reach of both checkers -- 20 hand-edited
+     structures nobody could verify, which is the exact failure this project
+     is built to prevent. So the stored graph stays neutral and verified, and
+     the proton is moved HERE, at render time, by a rule.
+
+     THE RULE, read off the graph, never off a remembered picture:
+       alpha-carbon      a C bonded to at least one N *and* to a carboxyl C
+       carboxyl C        a C with one double-bonded O and one single-bonded O
+                         that carries an H
+       the move          that OH oxygen loses its H and becomes O-;
+                         the alpha-N gains one and becomes NH3+ (NH2+ in proline,
+                         whose N is secondary -- the rule handles it because it
+                         counts bonds rather than assuming a primary amine)
+
+     Aspartate and glutamate have a SECOND carboxyl on the side chain and lysine
+     and arginine have side-chain nitrogens, so "find the carboxyl" and "find the
+     N" are both ambiguous on their own. Requiring the two to meet at the same
+     carbon is what disambiguates: only the alpha-carbon touches both.
+
+     It returns an ERROR STRING rather than throwing. A throw here would blank
+     the page, which is the one failure mode this app was split out to avoid
+     (see the header). A card that says it could not ionise is visible and
+     harmless; a blank app during revision is not. */
+  function zwitterion(mol) {
+    var i, nbr = mol.atoms.map(function () { return []; });
+    mol.bonds.forEach(function (b) {
+      var o = b[2] || 1;
+      nbr[b[0]].push({ at: b[1], order: o });
+      nbr[b[1]].push({ at: b[0], order: o });
+    });
+
+    function carboxylOH(c) {
+      // -> index of the -OH oxygen if atom c is a carboxyl carbon, else -1
+      if (mol.atoms[c].el !== 'C') return -1;
+      var dblO = -1, ohO = -1;
+      nbr[c].forEach(function (n) {
+        if (mol.atoms[n.at].el !== 'O') return;
+        if (n.order === 2) dblO = n.at;
+        else if (n.order === 1 && mol.atoms[n.at].h > 0) ohO = n.at;
+      });
+      return (dblO >= 0 && ohO >= 0) ? ohO : -1;
+    }
+
+    var sites = [];
+    for (i = 0; i < mol.atoms.length; i++) {
+      if (mol.atoms[i].el !== 'C') continue;
+      var ns = nbr[i].filter(function (n) { return mol.atoms[n.at].el === 'N'; });
+      var cs = nbr[i].filter(function (n) { return carboxylOH(n.at) >= 0; });
+      if (ns.length && cs.length) sites.push({ ca: i, n: ns, c: cs });
+    }
+    // Assert, do not assume. Anything other than exactly one unambiguous site
+    // means the rule does not fit this molecule, and guessing would draw an ion
+    // that does not exist.
+    if (sites.length !== 1)
+      return { err: '找不到唯一的 α-碳（命中 ' + sites.length + ' 个）' };
+    if (sites[0].n.length !== 1)
+      return { err: 'α-碳上有 ' + sites[0].n.length + ' 个氮，无法确定 α-氨基' };
+    if (sites[0].c.length !== 1)
+      return { err: 'α-碳上有 ' + sites[0].c.length + ' 个羧基' };
+
+    var nIdx = sites[0].n[0].at;
+    var oIdx = carboxylOH(sites[0].c[0].at);
+    if (!(mol.atoms[nIdx].h > 0))
+      return { err: 'α-氨基上没有可数的 H，不能画成 NH3+' };
+
+    var atoms = mol.atoms.map(function (a) {
+      return { el: a.el, x: a.x, y: a.y, h: a.h, q: a.q };
+    });
+    var nBefore = atomLabel(atoms[nIdx].el, atoms[nIdx].h, 0);
+    var oBefore = atomLabel(atoms[oIdx].el, atoms[oIdx].h, 0);
+    atoms[nIdx] = { el: atoms[nIdx].el, x: atoms[nIdx].x, y: atoms[nIdx].y,
+                    h: atoms[nIdx].h + 1, q: 1 };
+    atoms[oIdx] = { el: atoms[oIdx].el, x: atoms[oIdx].x, y: atoms[oIdx].y,
+                    h: 0, q: -1 };
+    /* The difference is DERIVED, not written per amino acid. Proline's is
+       NH → NH₂⁺ rather than NH₂ → NH₃⁺ because its N is secondary, and a
+       hand-written caption would have got that one wrong. */
+    return {
+      mol: { atoms: atoms, bonds: mol.bonds },
+      diff: {
+        n: { from: nBefore, to: atomLabel(atoms[nIdx].el, atoms[nIdx].h, 1) },
+        o: { from: oBefore, to: atomLabel(atoms[oIdx].el, atoms[oIdx].h, -1) }
+      }
+    };
   }
 
   /* Sub-headings inside a group. These five are the amino-acid side-chain classes;
@@ -300,8 +403,14 @@
       '（系统命名的化合物字典里查不到）。</p><ul>' + rows + '</ul></details>';
   }
 
-  function itemHtml(it) {
+  function itemHtml(it, g) {
     var n = it.note && it.note.cn;
+
+    /* Which form gets DRAWN. Only a group that declares `aqueous` is ionised,
+       so this can never fire on a sugar or a lipid that happens to contain an
+       amino-acid-like fragment -- the flag is opt-in per group, not a guess
+       made from the graph. */
+    var zw = (g && g.aqueous && it.mol) ? zwitterion(it.mol) : null;
     return '<article class="card">' +
       '<header class="card-head">' +
         // English is the MAIN title and Chinese the subtitle (Ruojin, 2026-08-09):
@@ -316,8 +425,39 @@
       '</header>' +
       // An undrawn molecule shows an explicit empty slot rather than nothing,
       // so the page never looks more finished than it is.
+      /* BOTH FORMS, SIDE BY SIDE, and that is the point of the card rather than
+         a layout preference. The neutral drawing is the one the checkers verify
+         against `smiles`/`formula`; the zwitterion is the one that actually
+         exists in water and the one an exam asks for. Showing only one of them
+         forces a choice between "verified" and "true", and the reader cannot
+         see that the two differ by a single proton -- which is the thing being
+         confused in the first place. So: keep both, label both, and state the
+         difference underneath, derived from the transformation itself. */
       (it.mol
-        ? '<div class="draw">' + molSvg(it.mol) + '</div>'
+        ? (zw && zw.mol
+            ? '<div class="draws">' +
+                '<figure class="pane">' + molSvg(it.mol) +
+                  '<figcaption>中性未解离型 <span class="muted">neutral, un-ionised' +
+                  '<br>= SMILES / CID 记的那个，被检查器核对</span></figcaption>' +
+                '</figure>' +
+                '<figure class="pane pane-aq">' + molSvg(zw.mol) +
+                  '<figcaption>水溶液中 · <b>zwitterion</b> <span class="muted">' +
+                  '净电荷 0<br>= 考试要你写的那个</span></figcaption>' +
+                '</figure>' +
+              '</div>' +
+              '<p class="diff">差别只有<b>一个质子的位置</b>：羧基 ' +
+                '<code>' + esc(zw.diff.o.from) + '</code> → <code>' + esc(zw.diff.o.to) + '</code>' +
+                '，α-氨基 <code>' + esc(zw.diff.n.from) + '</code> → ' +
+                '<code>' + esc(zw.diff.n.to) + '</code>' +
+                '。<span class="muted">质子是从羧基搬到氨基上的，不是新加的——' +
+                '所以两者分子式相同（' + esc(it.formula) + '），互为异构体，' +
+                '骨架和所有重原子一个没动。</span></p>'
+            : '<div class="draw">' + molSvg(it.mol) +
+                (zw && zw.err
+                  ? '<p class="form form-bad">未能画成两性离子：' + esc(zw.err) +
+                    ' <span class="muted">上图仍是中性型</span></p>'
+                  : '') +
+              '</div>')
         : '<div class="slot">结构式待绘制 <span class="muted">not drawn yet</span></div>') +
       /* SMILES is COLLAPSED, and that is a deliberate change rather than tidying.
          Two reasons, and the second one matters more.
@@ -342,7 +482,7 @@
         '<dt>PubChem</dt><dd><code>CID ' + esc(it.cid) + '</code></dd>' +
       '</dl>' +
       '<details class="smiles"><summary>SMILES <span class="muted">机器可读式；' +
-        '其中的 @ / @@ 是立体化学标记，而立体化学是本项目<b>唯一没有核对过</b>的一层</span></summary>' +
+        '记的是<b>中性型</b>（与图上的两性离子互为异构体，分子式相同，差一个质子的位置）；' + '其中的 @ / @@ 是立体化学标记，而立体化学是本项目<b>唯一没有核对过</b>的一层</span></summary>' +
         '<code>' + esc(it.smiles) + '</code></details>' +
       (n ? '<p class="note">' + esc(n) + '</p>' : '') +
       '</article>';
@@ -372,7 +512,7 @@
       sub.forEach(function (it) { placed.push(it); });
       body += '<h3 class="cls">' + esc(CLS[c].en) +
         ' <span class="muted">' + esc(CLS[c].cn) + ' · ' + sub.length + '</span></h3>' +
-        '<div class="grid">' + sub.map(itemHtml).join('') + '</div>';
+        '<div class="grid">' + sub.map(function (it) { return itemHtml(it, g); }).join('') + '</div>';
     });
     var left = items.filter(function (it) { return placed.indexOf(it) < 0; });
     if (left.length) {
@@ -387,7 +527,7 @@
         body += '<h3 class="cls">' + esc(label) +
           ' <span class="muted">' + (k === '__none__' ? '其他' : 'unclassified') +
           ' · ' + sub.length + '</span></h3>' +
-          '<div class="grid">' + sub.map(itemHtml).join('') + '</div>';
+          '<div class="grid">' + sub.map(function (it) { return itemHtml(it, g); }).join('') + '</div>';
       });
     }
 

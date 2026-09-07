@@ -33,6 +33,12 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
   id: "aa",
   cnTitle: "氨基酸",
   enTitle: "Amino acids",
+  /* Draw these in their aqueous form. app.js reads this flag and moves the
+     alpha proton at render time; the `mol` graphs below stay NEUTRAL because
+     that is the form check_structures.py and check_bond_orders.py verify them
+     against. Opt-in per group so the rule can never fire on a sugar or lipid
+     that happens to contain an amino-acid-like fragment. */
+  aqueous: true,
   /* Links back into biochemie_pro. Deep links use the #/t/<id> route added
      there; tools/check_links.py asserts each target still exists. */
   seeAlso: [
@@ -41,8 +47,8 @@ window.STRUCT.groups = (window.STRUCT.groups || []).concat([
     { app: "pro", topic: "2-1-4", label: "肽键的形成" }
   ],
   note: {
-    cn: "按侧链性质分成五组——这个分组本身就是考点，比逐个背结构有用。所有结构画的是中性、未解离的 L 型；生理 pH 下它们实际上以两性离子（zwitterion）形式存在，见 2-1-2。",
-    en: "Grouped by side-chain character, because the grouping is what gets examined. All drawn as the neutral, un-ionised L-form; at physiological pH they exist as zwitterions."
+    cn: "按侧链性质分成五组——这个分组本身就是考点，比逐个背结构有用。每张卡并排画两个形式：左边中性未解离型，右边水溶液中的两性离子（zwitterion，α-COO⁻ 加 α-NH₃⁺）。右边才是水里真实存在、考试要你写的那个；中性型在水中的平衡里只占极小一部分，见 2-1-2。⚠️ 只有 α 位被离子化了——Asp/Glu 的侧链羧基和 Lys/Arg 的侧链氮在 pH 7 下其实也带电，这里仍按未解离画，因为那要逐个按侧链 pKa 判断，还没有做。",
+    en: "Grouped by side-chain character, because the grouping is what gets examined. Drawn as the aqueous zwitterion (alpha-COO- / alpha-NH3+), which is the form exams ask for. NOTE only the alpha groups are ionised: the side chains of Asp, Glu, Lys and Arg are charged at pH 7 but are still drawn un-ionised here."
   },
   items: [
     /* ---- nonpolar, aliphatic ---- */

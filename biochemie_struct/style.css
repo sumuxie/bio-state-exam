@@ -160,6 +160,27 @@ code { font-family: var(--mono); font-size: 0.85em; }
 .mol .el-O { fill: #ef5350; }
 .mol .el-S { fill: #d29922; }
 .mol .hsub { font-size: 9px; baseline-shift: -2px; fill: var(--fg-dim); }
+/* Formal charge, drawn as a real superscript so NH3+ cannot be misread as
+   part of the hydrogen subscript sitting next to it. */
+.mol .chg { font-size: 10px; baseline-shift: 5px; font-weight: 600; }
+.form { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--fg-dim); }
+.form-bad { color: #ef5350; font-weight: 600; }
+
+/* The two forms sit side by side, and wrap to stacked on a narrow screen
+   rather than shrinking -- a squeezed structural formula is unreadable, and
+   these are meant to be compared atom by atom. */
+.draws { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: flex-start; }
+.pane {
+  margin: 0; flex: 1 1 12rem; min-width: 11rem;
+  padding: 0.5rem; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bg-raise);
+}
+/* The aqueous one is the answer, so it is the one that is marked. */
+.pane-aq { border-color: #4c8dff; }
+:root[data-theme="light"] .pane-aq { border-color: #0b5cd5; }
+.pane figcaption { margin-top: 0.4rem; font-size: 0.75rem; line-height: 1.45; }
+.diff { margin: 0.5rem 0 0; font-size: 0.8rem; line-height: 1.6; }
+.diff code { font-size: 0.85rem; padding: 0 0.2em; }
 :root[data-theme="light"] .mol .el-N { fill: #0b5cd5; }
 :root[data-theme="light"] .mol .el-O { fill: #c62828; }
 :root[data-theme="light"] .mol .el-S { fill: #8a6100; }
