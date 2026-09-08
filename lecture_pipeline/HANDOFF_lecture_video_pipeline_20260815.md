@@ -151,9 +151,12 @@ structure being drawn, which is something you go and ask for, not something that
 should sit there playing while you read.
 
 - **Text** hides the whole middle column — video, timeline, subtitle bar and
-  transcript — and gives the space to the notes, which then show key points
-  **and** the extra cards together rather than behind tabs, flowing into as many
-  columns as the width allows. The subtitle controls hide too, since they steer
+  transcript — and the docked quiz with it, since the quiz has its own view. The
+  notes take the whole width as **two side-by-side columns**, key points on the
+  left and the extra cards on the right, each scrolling independently under a
+  sticky header. Stacked, the extras sat below a screenful of points and were
+  never reached; side by side a point and the card that corrects or extends it
+  are on screen together. The subtitle controls hide too, since they steer
   something that is not on screen.
 - **Quiz** hides everything but the quiz module and pools the lecture's whole
   bank — 95 questions for lecture 1 rather than the two or three of the current

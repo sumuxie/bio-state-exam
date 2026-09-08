@@ -240,6 +240,10 @@ video{width:100%;display:block;background:#000;max-height:100%}
 [data-view="text"] #row > .grip.v{display:none}
 [data-view="text"] #c3{flex:1;width:auto!important;min-width:0}
 [data-view="text"] #tabs{display:none}
+/* The quiz has its own view now; docked here it just steals height from the notes. */
+[data-view="text"] #quiz,
+[data-view="text"] .grip.h[data-target="quiz"]{display:none}
+[data-view="text"] #panel{display:flex;flex-direction:column;overflow:hidden}
 [data-view="quiz"] #row{display:none}
 /* The subtitle controls steer something that is not on screen in these views. */
 [data-view="text"] #sublabel,[data-view="text"] #langseg,[data-view="text"] #posseg,
@@ -249,9 +253,14 @@ video{width:100%;display:block;background:#000;max-height:100%}
 .qfrom{display:block;font-size:10.5px;color:var(--accent);margin-bottom:5px;
   font-variant-numeric:tabular-nums;cursor:pointer;opacity:.85}
 .qfrom:hover{text-decoration:underline}
-[data-view="text"] .notegrid{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
-[data-view="text"] .notegrid .card{flex:1 1 380px;min-width:280px;max-width:620px;
-  margin-bottom:0}
+.notecols{display:flex;flex:1;min-height:0}
+.notecol{flex:1;min-width:0;overflow-y:auto;padding:0 14px 22px;scrollbar-width:thin}
+.notecol::-webkit-scrollbar{width:9px}
+.notecol::-webkit-scrollbar-thumb{background:var(--line);border-radius:5px}
+.notecol + .notecol{border-left:1px solid var(--line)}
+.notecol .card{margin-bottom:9px}
+.notecol .intsub{position:sticky;top:0;background:var(--bg);z-index:1;
+  margin:0 0 9px;padding:10px 0 7px}
 .playbtn{order:4;align-self:flex-start;margin-top:7px;background:transparent;
   border:1px solid var(--line);color:var(--dim);border-radius:6px;
   padding:2px 8px;font:inherit;font-size:10.5px;cursor:pointer;
@@ -613,22 +622,23 @@ function renderNotes(){
   };
 
   if(VIEW==='text'){
-    /* No middle column, so both groups fit side by side and the tabs are moot. */
-    const groups=[[PRIMARY==='en'?'Key points':'知识点', t.points||[], false],
-                  [PRIMARY==='en'?'Extra':'补充', t.extra||[], true]];
-    groups.forEach(([label,items,isExtra])=>{
+    const cols=document.createElement('div'); cols.className='notecols';
+    [[PRIMARY==='en'?'Key points':'知识点', t.points||[], false],
+     [PRIMARY==='en'?'Extra':'补充',        t.extra||[],  true]]
+    .forEach(([label,items,isExtra])=>{
+      const col=document.createElement('div'); col.className='notecol';
       const h=document.createElement('div'); h.className='intsub';
       h.innerHTML=label+'<span>'+items.length+'</span>';
-      body.appendChild(h);
+      col.appendChild(h);
       if(!items.length){
         const e=document.createElement('div'); e.className='empty';
         e.textContent=PRIMARY==='en'?'Nothing here for this stretch.':'这一段没有内容。';
-        body.appendChild(e); return;
-      }
-      const g=document.createElement('div'); g.className='notegrid';
-      items.forEach(x=>g.appendChild(card(x,isExtra)));
-      body.appendChild(g);
+        col.appendChild(e);
+      } else items.forEach(x=>col.appendChild(card(x,isExtra)));
+      cols.appendChild(col);
     });
+    p.appendChild(cols);
+    return;
   } else {
     const items = tab==='notes' ? (t.points||[]) : (t.extra||[]);
     items.forEach(x=>body.appendChild(card(x, tab==='extra')));
