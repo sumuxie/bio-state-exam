@@ -204,6 +204,30 @@ biochemistry prose is not the trigger. All three had written and self-validated
 their files first, so nothing was lost, but a session doing this work should run
 from the `bio-state-exam` directory rather than a sibling project.
 
+**Reading aids in the read view.** Two buttons, for two things the reader
+actually reported: a wall of text gives the eye nowhere to enter and no way to
+keep its place, and attention drifts with nothing pacing it.
+
+- **专注 Focus** dims every paragraph except the one in hand — kept at 0.3
+  opacity rather than hidden, so the shape of the page still says where you are
+  in it — and marks it with a rule in the margin. Space or ↓ advances, ↑ goes
+  back, clicking a paragraph selects it, Esc leaves. The current paragraph
+  scrolls to the middle of the view. An English paragraph and its Chinese
+  counterpart are one unit and light up together.
+- **朗读 Read aloud** speaks the current paragraph **sentence by sentence**,
+  highlighting each as it is spoken, then moves to the next paragraph on its
+  own. Sentence-at-a-time rather than one utterance with boundary events,
+  because `onboundary` never fires on some network voices and the highlight
+  would drift out of sync; this cannot. It turns focus mode on, uses the app's
+  own voice and speech-rate settings, and a stale chain is fenced off by a
+  sequence number so Stop or a re-render cannot leave it running.
+
+**Neither touches the text.** An earlier attempt at "easier to read" in this
+project generated a reduced version of the prose — bold words and connectives —
+and it was incomprehensible, because that text had never been written or checked
+by anyone. Presentation is the safe place to make reading easier; the words are
+not.
+
 **Integration panel.** A 综合 Integration button in the header opens a full-screen
 panel of cross-lecture material that belongs to no single lecture and has no
 timestamps: eight sections — fuel states, carbon fates, control points,

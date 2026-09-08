@@ -273,6 +273,24 @@ video{width:100%;display:block;background:#000;max-height:100%}
 .readdoc h1 .en,.readsec h2 .en{display:block}
 .readempty{max-width:70ch;margin:0 auto;padding:60px 26px;color:var(--dim);
   font-size:13px;line-height:1.7}
+
+/* ---------- reading aids ---------- */
+#readbar{position:sticky;top:0;z-index:3;display:flex;gap:8px;align-items:center;
+  background:var(--panel);border-bottom:1px solid var(--line);
+  padding:7px 16px;flex-wrap:wrap}
+#readbar .n{font-size:11.5px;color:var(--dim)}
+#readbar .spacer{flex:1}
+/* Focus: everything recedes except the unit in hand. Kept at .3 rather than
+   hidden so the shape of the page still tells you where you are in it. */
+.readdoc.focus .readsec p{opacity:.3;transition:opacity .12s}
+.readdoc.focus .readsec p.here{opacity:1}
+.readdoc.focus .readsec h2{opacity:.5}
+.readdoc.focus .readsec.hereSec h2{opacity:1}
+.readsec p.here{box-shadow:-14px 0 0 -11px var(--accent)}
+.sen{border-radius:3px;padding:0 1px}
+.sen.saying{background:color-mix(in srgb,var(--accent) 26%,transparent);
+  color:var(--fg)}
+.readdoc.focus .readsec p.here.zh{opacity:.85}
 .qfrom{display:block;font-size:10.5px;color:var(--accent);margin-bottom:5px;
   font-variant-numeric:tabular-nums;cursor:pointer;opacity:.85}
 .qfrom:hover{text-decoration:underline}
@@ -386,7 +404,16 @@ video{width:100%;display:block;background:#000;max-height:100%}
     </div>
   </div>
 
-  <div id="readpanel"></div>
+  <div id="readpanel">
+    <div id="readbar">
+      <button class="iconbtn" id="focusbtn">专注 Focus</button>
+      <button class="iconbtn" id="alongbtn">▶ 朗读 Read aloud</button>
+      <span class="n" id="readpos"></span>
+      <span class="spacer"></span>
+      <span class="n">空格 / ↓ 下一段 · Esc 退出</span>
+    </div>
+    <div id="readbody"></div>
+  </div>
 
   <div class="grip h" data-target="quiz"></div>
   <div id="quiz">
@@ -897,7 +924,8 @@ function intRender(){
 
 /* ---------- read-through ---------- */
 function renderRead(){
-  const box=$('readpanel'); box.innerHTML='';
+  const box=$('readbody'); box.innerHTML='';
+  readUnits=[]; readAt=-1; stopAlong();
   if(!L) return;
   const doc=L.read||null;
   if(!doc||!doc.length){
@@ -928,15 +956,111 @@ function renderRead(){
        against each other; the body-language switch does not reorder these
        because both are wanted here. */
     (sec.en||[]).forEach((para,i)=>{
-      const pe=document.createElement('p'); pe.textContent=para; s2.appendChild(pe);
+      const pe=document.createElement('p');
+      /* Sentences are spoken and highlighted one at a time, which is far more
+         reliable than utterance boundary events: those never fire on some
+         network voices, and this way the highlight cannot drift out of sync. */
+      splitSentences(para).forEach(t=>{
+        const sp=document.createElement('span'); sp.className='sen';
+        sp.textContent=t; pe.appendChild(sp);
+        pe.appendChild(document.createTextNode(' '));
+      });
+      s2.appendChild(pe);
       const pz=(sec.zh||[])[i];
-      if(pz){ const el=document.createElement('p'); el.className='zh';
+      let el=null;
+      if(pz){ el=document.createElement('p'); el.className='zh';
         el.textContent=pz; s2.appendChild(el); }
+      const k=readUnits.length;
+      pe.dataset.unit=k; if(el) el.dataset.unit=k;
+      pe.onclick=()=>goUnit(k);
+      readUnits.push({sec:s2, en:pe, zh:el, text:para});
     });
     d.appendChild(s2);
   });
   box.appendChild(d);
 }
+
+/* ---------- reading aids ---------- */
+let readUnits=[], readAt=-1, focusOn=false, alongOn=false, alongSeq=0;
+
+function splitSentences(t){
+  return t.split(/(?<=[.!?])(?=\s+[A-Z(“"])/)
+          .map(x=>x.trim()).filter(Boolean);
+}
+
+function goUnit(k, opts){
+  if(!readUnits.length) return;
+  k=Math.max(0,Math.min(readUnits.length-1,k));
+  readUnits.forEach(u=>{ u.en.classList.remove('here');
+    if(u.zh) u.zh.classList.remove('here'); u.sec.classList.remove('hereSec'); });
+  readAt=k;
+  const u=readUnits[k];
+  u.en.classList.add('here'); if(u.zh) u.zh.classList.add('here');
+  u.sec.classList.add('hereSec');
+  $('readpos').textContent=(PRIMARY==='en'
+    ? 'paragraph '+(k+1)+' / '+readUnits.length
+    : '第 '+(k+1)+' / '+readUnits.length+' 段');
+  if(!opts||opts.scroll!==false)
+    u.en.scrollIntoView({block:'center',behavior:'smooth'});
+}
+
+function setFocus(on){
+  focusOn=on;
+  const d=$('readbody').querySelector('.readdoc');
+  if(d) d.classList.toggle('focus',on);
+  $('focusbtn').classList.toggle('on',on);
+  if(on && readAt<0) goUnit(0);
+  if(!on){ $('readpos').textContent=''; }
+}
+
+function stopAlong(){
+  alongOn=false; alongSeq++;
+  if(SPEECH) try{ SPEECH.cancel(); }catch(e){}
+  document.querySelectorAll('.sen.saying').forEach(x=>x.classList.remove('saying'));
+  const b=$('alongbtn'); if(b){ b.textContent='▶ 朗读 Read aloud'; b.classList.remove('on'); }
+}
+
+/* Speaks the current unit sentence by sentence, then moves to the next one.
+   `seq` guards against a stale chain carrying on after Stop or a re-render. */
+function alongUnit(k, seq){
+  if(seq!==alongSeq || !alongOn || k>=readUnits.length){ if(seq===alongSeq) stopAlong(); return; }
+  goUnit(k);
+  const spans=[...readUnits[k].en.querySelectorAll('.sen')];
+  let i=0;
+  const next=()=>{
+    if(seq!==alongSeq || !alongOn) return;
+    if(i>0) spans[i-1].classList.remove('saying');
+    if(i>=spans.length){ alongUnit(k+1,seq); return; }
+    const sp=spans[i++]; sp.classList.add('saying');
+    if(!SPEECH){ setTimeout(next, 900); return; }
+    const u=new SpeechSynthesisUtterance(sp.textContent);
+    if(voice){ u.voice=voice; u.lang=voice.lang; } else u.lang='en-GB';
+    u.rate=parseFloat(load('rate','0.95'));
+    u.onend=next; u.onerror=next;
+    SPEECH.speak(u);
+  };
+  next();
+}
+
+$('focusbtn').onclick=()=>setFocus(!focusOn);
+$('alongbtn').onclick=()=>{
+  if(alongOn){ stopAlong(); return; }
+  if(!readUnits.length) return;
+  alongOn=true; alongSeq++;
+  setFocus(true);
+  $('alongbtn').textContent='⏸ 停止 Stop'; $('alongbtn').classList.add('on');
+  alongUnit(readAt<0?0:readAt, alongSeq);
+};
+
+document.addEventListener('keydown',e=>{
+  if(VIEW!=='read'||!focusOn) return;
+  if(e.target.closest('input,select,textarea,button')) return;
+  if(e.key===' '||e.key==='ArrowDown'||e.key==='PageDown'){
+    e.preventDefault(); stopAlong(); goUnit(readAt+1); }
+  else if(e.key==='ArrowUp'||e.key==='PageUp'){
+    e.preventDefault(); stopAlong(); goUnit(readAt-1); }
+  else if(e.key==='Escape'){ stopAlong(); setFocus(false); }
+});
 
 function openInt(){
   intSec=+load('intsec',0);
