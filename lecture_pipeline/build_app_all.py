@@ -62,6 +62,12 @@ for L in wanted:
     if os.path.exists(rp):
         with open(rp, encoding="utf-8") as f:
             lectures[-1]["read"] = json.load(f)
+    # The pre-read glossary, shown at the head of the read-through.
+    tp = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      "data", f"{L.no:02d}", "terms.json")
+    if os.path.exists(tp):
+        with open(tp, encoding="utf-8") as f:
+            lectures[-1]["terms"] = json.load(f)
 
 assert lectures, "no lecture has both cues.json and topics.json yet"
 

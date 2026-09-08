@@ -204,6 +204,36 @@ biochemistry prose is not the trigger. All three had written and self-validated
 their files first, so nothing was lost, but a session doing this work should run
 from the `bio-state-exam` directory rather than a sibling project.
 
+**Pre-read glossary.** At the head of the read-through: the terms this lecture
+uses *without stopping to explain them*, one or two plain sentences each, in the
+order the reader will meet them. Lecture 1 has 87.
+
+Two rules decide what goes in, and both matter. A term the lecture defines
+properly is **not** a cold start — it is the content, and glossing it makes the
+list too long to finish. And a term a biology PhD will not be stopped by is
+dropped for the same reason: the agents cut cryo-EM, urea, imidazole,
+β-mercaptoethanol and about twenty more on that ground.
+
+The ordering key is where the term is **first used**, not where it is explained.
+An agent worked this out unprompted and it is the better rule: T/R state is used
+as shorthand in the carbon-monoxide card six sections before it is taught,
+2,3-BPG is dropped into an affinity card five sections before its own section.
+The place a reader stalls is the first encounter.
+
+Built by `make_term_inputs.py <n>` → two agents → `merge_terms.py <n>` into
+`data/NN/terms.json`, inlined when present. The merge collapses duplicates
+across the halves at the earlier `first`.
+
+**The metric I proposed for "what counts as a key point" was wrong** and is
+recorded here so it is not tried again. I suggested measuring centrality —
+how many quiz explanations cite a concept, how many lectures it spans. Two
+objections, both hers: the real exam has no question bank to count, and the
+examiner's idea of a key point is *what he spent time on or works on himself*.
+Her example was flexizyme, which any textbook-centrality ranking would sink and
+which the examiner treated as central. The measurable version of her rule uses
+the transcripts we already have: minutes spent per topic, and the places he says
+「这个要记」「考试会考」 or turns to his own research.
+
 **Reading aids in the read view.** Two buttons, for two things the reader
 actually reported: a wall of text gives the eye nowhere to enter and no way to
 keep its place, and attention drifts with nothing pacing it.

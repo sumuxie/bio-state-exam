@@ -274,6 +274,25 @@ video{width:100%;display:block;background:#000;max-height:100%}
 .readempty{max-width:70ch;margin:0 auto;padding:60px 26px;color:var(--dim);
   font-size:13px;line-height:1.7}
 
+/* ---------- pre-read glossary ---------- */
+.pre{border:1px solid var(--line);border-left:3px solid var(--warn);
+  border-radius:0 10px 10px 0;padding:15px 17px;margin:0 0 34px;
+  background:var(--panel2)}
+.pre h3{margin:0 0 3px;font-size:14px}
+.pre h3 .zh{display:block;font-size:12px;color:var(--dim);font-weight:400;margin-top:2px}
+.pre .lead{margin:9px 0 0;font-size:11.5px;color:var(--dim);line-height:1.65}
+.pre .toggle{background:transparent;border:1px solid var(--line);color:var(--dim);
+  border-radius:6px;padding:2px 9px;font:inherit;font-size:11px;cursor:pointer;
+  float:right;margin-left:10px}
+.pre .toggle:hover{border-color:var(--accent);color:var(--accent)}
+.pregrid{margin:14px 0 0;display:grid;gap:11px}
+.pre.closed .pregrid{display:none}
+.pterm{font-size:12.5px;line-height:1.6}
+.pterm b{font-weight:600}
+.pterm .cn{color:var(--dim);font-weight:400}
+.pterm .g{display:block;color:var(--dim);font-size:11.5px;line-height:1.6;margin-top:2px}
+.pterm .gz{display:block;color:var(--dim);font-size:11.5px;line-height:1.6;opacity:.8}
+
 /* ---------- reading aids ---------- */
 #readbar{position:sticky;top:0;z-index:3;display:flex;gap:8px;align-items:center;
   background:var(--panel);border-bottom:1px solid var(--line);
@@ -1003,6 +1022,46 @@ function renderRead(){
     ? 'Lecture '+L.no+' · '+L.date+' · '+doc.length+' sections'
     : '第'+L.no+'讲 · '+L.date+' · '+doc.length+' 节');
   d.appendChild(meta);
+
+  /* Terms this lecture uses without stopping to explain them. Read first, so
+     that nothing in the chapter below is a cold start. Ordered by where the
+     reader first meets the word, not by where it eventually gets explained. */
+  const gl=L.terms||[];
+  if(gl.length){
+    const pre=document.createElement('div'); pre.className='pre';
+    if(load('preclosed','')==='1') pre.classList.add('closed');
+    const tg=document.createElement('button'); tg.className='toggle';
+    const setLbl=()=>tg.textContent=pre.classList.contains('closed')
+      ? (PRIMARY==='en'?'show':'展开') : (PRIMARY==='en'?'hide':'收起');
+    tg.onclick=()=>{ pre.classList.toggle('closed');
+      store('preclosed', pre.classList.contains('closed')?'1':''); setLbl(); };
+    setLbl(); pre.appendChild(tg);
+    const h=document.createElement('h3');
+    const he=document.createElement('span'); he.className='en';
+    he.textContent='Before you start · '+gl.length+' terms';
+    const hz=document.createElement('span'); hz.className='zh';
+    hz.textContent='开始之前 · '+gl.length+' 个词';
+    h.append(he,hz); pre.appendChild(h);
+    const lead=document.createElement('p'); lead.className='lead';
+    lead.textContent=PRIMARY==='en'
+      ? 'Words this chapter uses without stopping to explain them, in the order you will meet them. Read them once and the chapter stops tripping you up.'
+      : '这一讲用到、但正文里没有停下来解释的词，按你会遇到它们的顺序排。先过一遍，读正文时就不会被绊住。';
+    pre.appendChild(lead);
+    const g=document.createElement('div'); g.className='pregrid';
+    gl.forEach(t=>{
+      const el=document.createElement('div'); el.className='pterm';
+      const b=document.createElement('b'); b.textContent=t.en;
+      el.appendChild(b);
+      if(t.zh){ const c=document.createElement('span'); c.className='cn';
+        c.textContent='　'+t.zh; el.appendChild(c); }
+      const ge=document.createElement('span'); ge.className='g en';
+      ge.textContent=t.gloss_en; el.appendChild(ge);
+      if(t.gloss_zh){ const gz=document.createElement('span'); gz.className='gz zh';
+        gz.textContent=t.gloss_zh; el.appendChild(gz); }
+      g.appendChild(el);
+    });
+    pre.appendChild(g); d.appendChild(pre);
+  }
 
   doc.forEach(sec=>{
     const s2=document.createElement('section'); s2.className='readsec';
