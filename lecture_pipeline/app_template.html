@@ -338,6 +338,13 @@ video{width:100%;display:block;background:#000;max-height:100%}
   background:var(--panel);border-bottom:1px solid var(--line);
   padding:7px 16px;flex-wrap:wrap}
 #readbar .n{font-size:11.5px;color:var(--dim)}
+#readprog{flex:none;width:150px;height:6px;border-radius:3px;
+  background:var(--line);overflow:hidden}
+#readprog i{display:block;height:100%;width:0;background:var(--accent);
+  border-radius:3px;transition:width .25s}
+#readdone{font-size:11.5px;color:var(--accent);font-variant-numeric:tabular-nums}
+.readsec.done h2::after{content:'✓';color:var(--good);font-size:11px;
+  margin-left:8px;vertical-align:middle;opacity:.8}
 #readbar .spacer{flex:1}
 /* Focus: everything recedes except the unit in hand. Kept at .3 rather than
    hidden so the shape of the page still tells you where you are in it. */
@@ -517,6 +524,8 @@ video{width:100%;display:block;background:#000;max-height:100%}
     <div id="readbar">
       <button class="iconbtn" id="focusbtn">专注 Focus</button>
       <button class="iconbtn" id="alongbtn">▶ 朗读 Read aloud</button>
+      <span id="readprog"><i></i></span>
+      <span id="readdone"></span>
       <span class="n" id="readpos"></span>
       <span class="spacer"></span>
       <span class="tset">
@@ -1061,6 +1070,7 @@ function renderRead(){
     return;
   }
   const d=document.createElement('div'); d.className='readdoc';
+  setTimeout(paintProgress,0);
   const h1=document.createElement('h1');
   const he=document.createElement('span'); he.className='en'; he.textContent=L.title_en;
   const hz=document.createElement('span'); hz.className='zh'; hz.textContent=L.title_zh;
@@ -1155,8 +1165,9 @@ function renderRead(){
     pre.appendChild(g); d.appendChild(pre);
   }
 
-  doc.forEach(sec=>{
+  doc.forEach((sec,si)=>{
     const s2=document.createElement('section'); s2.className='readsec';
+    if(readDone().indexOf(si)>=0) s2.classList.add('done');
     const h2=document.createElement('h2');
     const e=document.createElement('span'); e.className='en'; e.textContent=sec.heading_en||'';
     const z=document.createElement('span'); z.className='zh'; z.textContent=sec.heading_zh||'';
@@ -1184,7 +1195,8 @@ function renderRead(){
       const k=readUnits.length;
       pe.dataset.unit=k; if(el) el.dataset.unit=k;
       pe.onclick=()=>goUnit(k);
-      readUnits.push({sec:s2, en:pe, zh:el, text:para});
+      readUnits.push({sec:s2, si:si, en:pe, zh:el, text:para,
+                      nsec:(sec.en||[]).length, ipara:i});
     });
     d.appendChild(s2);
   });
@@ -1321,18 +1333,39 @@ function splitSentences(t){
           .map(x=>x.trim()).filter(Boolean);
 }
 
+/* Sections finished, per lecture, kept across sessions. */
+function readDone(){ try{ return JSON.parse(load('read.done.'+(L?L.no:0),'[]')); }
+  catch(e){ return []; } }
+function markDone(si){
+  const d=readDone(); if(d.indexOf(si)>=0) return;
+  d.push(si); store('read.done.'+L.no, JSON.stringify(d));
+  const u=readUnits.find(x=>x.si===si); if(u) u.sec.classList.add('done');
+  paintProgress();
+}
+function paintProgress(){
+  const total=(L&&L.read)?L.read.length:0;
+  const done=readDone().length;
+  $('readprog').firstChild.style.width=(total?done/total*100:0)+'%';
+  $('readdone').textContent=total?(done+' / '+total):'';
+}
+
 function goUnit(k, opts){
   if(!readUnits.length) return;
   k=Math.max(0,Math.min(readUnits.length-1,k));
+  const was=readAt>=0?readUnits[readAt]:null;
   readUnits.forEach(u=>{ u.en.classList.remove('here');
     if(u.zh) u.zh.classList.remove('here'); u.sec.classList.remove('hereSec'); });
   readAt=k;
   const u=readUnits[k];
   u.en.classList.add('here'); if(u.zh) u.zh.classList.add('here');
   u.sec.classList.add('hereSec');
+  /* A section counts as read once its last paragraph has been reached. */
+  if(was && was.si!==u.si && was.ipara===was.nsec-1) markDone(was.si);
+  if(u.ipara===u.nsec-1 && k===readUnits.length-1) markDone(u.si);
+  const mins=Math.max(1, Math.round(u.nsec*0.6));
   $('readpos').textContent=(PRIMARY==='en'
-    ? 'paragraph '+(k+1)+' / '+readUnits.length
-    : '第 '+(k+1)+' / '+readUnits.length+' 段');
+    ? 'section '+(u.si+1)+' · paragraph '+(u.ipara+1)+' of '+u.nsec+' · ~'+mins+' min'
+    : '第 '+(u.si+1)+' 节 · 本节 '+(u.ipara+1)+' / '+u.nsec+' 段 · 约 '+mins+' 分钟');
   if(!opts||opts.scroll!==false)
     u.en.scrollIntoView({block:'center',behavior:'smooth'});
   if(k>0) bump('read');
