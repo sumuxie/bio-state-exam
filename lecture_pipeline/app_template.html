@@ -250,6 +250,29 @@ video{width:100%;display:block;background:#000;max-height:100%}
 [data-view="quiz"] #sublabel,[data-view="quiz"] #langseg,[data-view="quiz"] #posseg{display:none}
 [data-view="quiz"] #quiz{flex:1;height:auto!important}
 [data-view="quiz"] #quizbody .q{flex:1 1 400px;max-width:560px}
+[data-view="read"] #row,[data-view="read"] #quiz,
+[data-view="read"] .grip.h[data-target="quiz"]{display:none}
+[data-view="read"] #sublabel,[data-view="read"] #langseg,[data-view="read"] #posseg{display:none}
+#readpanel{display:none;flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin}
+[data-view="read"] #readpanel{display:block}
+#readpanel::-webkit-scrollbar{width:10px}
+#readpanel::-webkit-scrollbar-thumb{background:var(--line);border-radius:5px}
+.readdoc{max-width:74ch;margin:0 auto;padding:30px 26px 70px}
+.readdoc h1{font-size:20px;line-height:1.35;margin:0 0 4px}
+.readdoc h1 .zh{display:block;font-size:14px;color:var(--dim);font-weight:400;margin-top:3px}
+.readdoc .meta{font-size:11.5px;color:var(--dim);margin:0 0 26px;
+  padding-bottom:16px;border-bottom:1px solid var(--line)}
+.readsec{margin:0 0 30px}
+.readsec h2{font-size:15px;line-height:1.4;margin:0 0 10px;
+  padding-top:14px;border-top:1px solid var(--line)}
+.readsec:first-of-type h2{border-top:0;padding-top:0}
+.readsec h2 .zh{display:block;font-size:12.5px;color:var(--dim);font-weight:400;margin-top:2px}
+.readsec p{margin:0 0 11px;line-height:1.72;font-size:13.5px}
+.readsec p.zh{font-size:12.5px;color:var(--dim);line-height:1.7;margin-bottom:16px}
+[data-primary="en"] .readdoc h1 .en,[data-primary="en"] .readsec h2 .en{display:block}
+.readdoc h1 .en,.readsec h2 .en{display:block}
+.readempty{max-width:70ch;margin:0 auto;padding:60px 26px;color:var(--dim);
+  font-size:13px;line-height:1.7}
 .qfrom{display:block;font-size:10.5px;color:var(--accent);margin-bottom:5px;
   font-variant-numeric:tabular-nums;cursor:pointer;opacity:.85}
 .qfrom:hover{text-decoration:underline}
@@ -280,7 +303,7 @@ video{width:100%;display:block;background:#000;max-height:100%}
   <input id="searchbox" type="search" autocomplete="off" placeholder="搜索…  ( / )">
   <span class="sub">视图 view</span>
   <div class="seg" id="viewseg">
-    <button data-view="text" class="on">字版 Text</button><button data-view="video">视频 Video</button><button data-view="quiz">只做题 Quiz</button>
+    <button data-view="text" class="on">字版 Text</button><button data-view="video">视频 Video</button><button data-view="quiz">只做题 Quiz</button><button data-view="read">通读 Read</button>
   </div>
   <button class="iconbtn" id="intbtn" title="跨讲综合 / cross-lecture integration">综合 Integration</button>
   <span class="sub">正文 body</span>
@@ -362,6 +385,8 @@ video{width:100%;display:block;background:#000;max-height:100%}
       <div class="scroll" id="panel"></div>
     </div>
   </div>
+
+  <div id="readpanel"></div>
 
   <div class="grip h" data-target="quiz"></div>
   <div id="quiz">
@@ -537,7 +562,7 @@ function mount(i){
     el.onclick=()=>seek(c.s+0.01);
     cl.appendChild(el); return el;
   });
-  applyLang(); buildIndex(); renderNotes(); renderQuiz(); tick();
+  applyLang(); buildIndex(); renderNotes(); renderQuiz(); renderRead(); tick();
 }
 function renderTopics(){
   const tl=$('topiclist'); tl.innerHTML='';
@@ -870,6 +895,49 @@ function intRender(){
   intScore();
 }
 
+/* ---------- read-through ---------- */
+function renderRead(){
+  const box=$('readpanel'); box.innerHTML='';
+  if(!L) return;
+  const doc=L.read||null;
+  if(!doc||!doc.length){
+    box.innerHTML='<div class="readempty">'
+      +'This lecture has no integrated read-through yet. It is generated per '
+      +'lecture and merged in at build time.<br><br>'
+      +'这一讲的整合正文还没有生成。它按讲生成、构建时合并进来。</div>';
+    return;
+  }
+  const d=document.createElement('div'); d.className='readdoc';
+  const h1=document.createElement('h1');
+  const he=document.createElement('span'); he.className='en'; he.textContent=L.title_en;
+  const hz=document.createElement('span'); hz.className='zh'; hz.textContent=L.title_zh;
+  h1.append(he,hz); d.appendChild(h1);
+  const meta=document.createElement('p'); meta.className='meta';
+  meta.textContent=(PRIMARY==='en'
+    ? 'Lecture '+L.no+' · '+L.date+' · '+doc.length+' sections'
+    : '第'+L.no+'讲 · '+L.date+' · '+doc.length+' 节');
+  d.appendChild(meta);
+
+  doc.forEach(sec=>{
+    const s2=document.createElement('section'); s2.className='readsec';
+    const h2=document.createElement('h2');
+    const e=document.createElement('span'); e.className='en'; e.textContent=sec.heading_en||'';
+    const z=document.createElement('span'); z.className='zh'; z.textContent=sec.heading_zh||'';
+    h2.append(e,z); s2.appendChild(h2);
+    /* English then Chinese, paragraph for paragraph, so the two can be read
+       against each other; the body-language switch does not reorder these
+       because both are wanted here. */
+    (sec.en||[]).forEach((para,i)=>{
+      const pe=document.createElement('p'); pe.textContent=para; s2.appendChild(pe);
+      const pz=(sec.zh||[])[i];
+      if(pz){ const el=document.createElement('p'); el.className='zh';
+        el.textContent=pz; s2.appendChild(el); }
+    });
+    d.appendChild(s2);
+  });
+  box.appendChild(d);
+}
+
 function openInt(){
   intSec=+load('intsec',0);
   $('intpanel').classList.add('show'); intChips(); intRender();
@@ -983,7 +1051,7 @@ function setView(v){
   document.documentElement.dataset.view=v;
   [...$('viewseg').children].forEach(b=>b.classList.toggle('on',b.dataset.view===v));
   if(v==='text'&&!V.paused) V.pause();
-  if(typeof L!=='undefined'&&L){ renderNotes(); renderQuiz(); }
+  if(typeof L!=='undefined'&&L){ renderNotes(); renderQuiz(); renderRead(); }
 }
 $('viewseg').onclick=e=>{ const b=e.target.closest('button'); if(b) setView(b.dataset.view); };
 setView(VIEW);

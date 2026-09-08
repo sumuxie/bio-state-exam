@@ -55,6 +55,13 @@ for L in wanted:
                   "zh": c["text"], "en": c.get("en", "")} for c in cues],
         "topics": topics,
     })
+    # The integrated read-through, if this lecture has one. Optional per
+    # lecture: the app shows an explanatory placeholder where it is missing.
+    rp = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      "data", f"{L.no:02d}", "read.json")
+    if os.path.exists(rp):
+        with open(rp, encoding="utf-8") as f:
+            lectures[-1]["read"] = json.load(f)
 
 assert lectures, "no lecture has both cues.json and topics.json yet"
 

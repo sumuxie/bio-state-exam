@@ -171,6 +171,39 @@ should sit there playing while you read.
 Nothing is unloaded in Text view, only hidden, which is why the video is already
 at the right timestamp the moment a ▶ asks for it.
 
+**通读 Read — the integrated chapter.** A fourth view renders one lecture as a
+continuous document: a heading per section, an English paragraph followed by its
+Chinese counterpart, no timestamps, no play buttons, no reference to the
+recording at all. It is deliberately decoupled — a chapter to read instead of
+the video, not an index into it.
+
+What makes it worth having is what it does with the corrections. The per-topic
+cards annotate the lecture ("he said 3.4 nm, it is 0.15"); the read-through
+**writes the error out of existence**. The reader never meets it. In lecture 1
+that means 2,3-BPG is introduced through the Rapoport–Luebering shunt and never
+as a TCA intermediate, oxygen has six valence electrons, cyanide binds ferric
+iron in complex IV, myoglobin and haemoglobin are paralogs from gene duplication,
+collagen is three polyproline II helices, and the α-helix has 3.6 residues per
+turn derived in-text from 5.4 Å ÷ 1.5 Å.
+
+Built by `make_read_inputs.py <n>` → agents → `merge_read.py <n>`, into
+`data/NN/read.json`, inlined by `build_app_all.py` when present; the view shows a
+placeholder for lectures that have none. The merge refuses on a missing topic, a
+paragraph-count mismatch between the languages, or any phrase that points back at
+the recording — `the lecturer`, `as shown at`, `视频`, `课上说`, a bare timestamp.
+
+Lecture 1 came out at 41 sections, 163 paragraphs, ~16 800 English words. Agents
+consistently overran the 120–320 words-per-topic guide, landing at 300–540, and
+all three that reported gave the same reason: each topic carries three or four
+correction and addition cards, and compressing to the guide means dropping card
+content. That trade was left as they made it.
+
+**Three of the six agents were killed by the `[bio]` safeguard**, and this is a
+property of the working directory the session runs in, not of the content —
+biochemistry prose is not the trigger. All three had written and self-validated
+their files first, so nothing was lost, but a session doing this work should run
+from the `bio-state-exam` directory rather than a sibling project.
+
 **Integration panel.** A 综合 Integration button in the header opens a full-screen
 panel of cross-lecture material that belongs to no single lecture and has no
 timestamps: eight sections — fuel states, carbon fates, control points,
