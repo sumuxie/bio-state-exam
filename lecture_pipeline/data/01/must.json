@@ -1,0 +1,181 @@
+{
+ "lecture": 1,
+ "groups": [
+  {
+   "group_en": "Amino acid side chains, pKa, and quantifying protein",
+   "group_zh": "氨基酸侧链、pKa 与蛋白定量",
+   "items": [
+    {
+     "en": "In an alanine scan a hot spot is a binding free-energy loss of 1–2 kcal/mol or more.",
+     "zh": "丙氨酸扫描 alanine scanning 中，hot spot 的判定是结合自由能变化达到约 1–2 kcal/mol 以上。"
+    },
+    {
+     "en": "Side-chain pKa: Asp 3.9, Glu 4.25, His 6.0, Cys 8.3, Tyr 10.1, Lys 10.5, Arg 12.5.",
+     "zh": "侧链 pKa：Asp 3.9、Glu 4.25、His 6.0、Cys 8.3、Tyr 10.1、Lys 10.5、Arg 12.5。"
+    },
+    {
+     "en": "Histidine imidazole pKa ≈ 6.0 is the only side chain switchable at pH 7 — about 10% protonated.",
+     "zh": "His 咪唑 imidazole 侧链 pKa ≈ 6.0，是唯一在 pH 7 可切换的侧链，此时约 10% 质子化。"
+    },
+    {
+     "en": "On the Kyte–Doolittle scale methionine and cysteine score hydrophobic — sulfur does not mean polar.",
+     "zh": "在 Kyte–Doolittle 疏水性标度上 Met 和 Cys 都算 hydrophobic；「含硫所以极性」是错的。"
+    },
+    {
+     "en": "A280 is Trp plus Tyr; Phe peaks at 257 nm; ε ≈ 5500/Trp, 1490/Tyr, 125/cystine.",
+     "zh": "A280 几乎全来自 Trp 和 Tyr；Phe 峰在 257 nm。ε ≈ 每个 Trp 5500、每个 Tyr 1490、每个 cystine 125（M⁻¹cm⁻¹）。"
+    },
+    {
+     "en": "Clean protein reads OD260/OD280 ≈ 0.6–0.7; pure protein 0.57, pure DNA 1.8, pure RNA 2.0.",
+     "zh": "干净的蛋白样品 OD260/OD280 ≈ 0.6–0.7；纯蛋白 0.57，纯 DNA 1.8，纯 RNA 2.0；高于 0.8 即核酸污染。"
+    },
+    {
+     "en": "Edman degradation reads only 30–50 residues from the N-terminus, and a blocked N-terminus stops it dead.",
+     "zh": "Edman degradation 从 N 端逐个读，但只能读到 30–50 个残基；N 端被封锁（乙酰化、焦谷氨酸）则完全停止。"
+    }
+   ]
+  },
+  {
+   "group_en": "The peptide bond, the levels of structure, and the forces",
+   "group_zh": "肽键、结构层次与相互作用力",
+   "items": [
+    {
+     "en": "Peptide C–N bond 1.32 Å, about 40% double-bond character, barrier ≈ 20 kcal/mol, omega 180° trans.",
+     "zh": "肽键 C–N 长 1.32 Å，约 40% 双键性质（单键 1.49、双键 1.27）；旋转能垒约 20 kcal/mol，omega 锁在 180° trans。"
+    },
+    {
+     "en": "Four levels: primary sequence; secondary backbone conformation; tertiary one whole chain; quaternary several separate chains.",
+     "zh": "四个层次：一级是氨基酸序列；二级是主链的局部规则构象；三级是一条完整链的折叠；四级是若干条独立链的空间排列。"
+    },
+    {
+     "en": "Secondary structure uses only backbone N–H to C=O bonds; tertiary uses side chains — the reliable test.",
+     "zh": "二级结构只靠主链 N–H 与 C=O 的氢键维持，三级结构靠侧链相互作用；「主链还是侧链」是最可靠的判断标准。"
+    },
+    {
+     "en": "Multi-domain is not multi-subunit: a domain lies within one chain, a subunit is a whole chain.",
+     "zh": "多 domain 不等于多 subunit：domain 在一条链内部（仍属三级），subunit 是一整条链（才算四级）。"
+    },
+    {
+     "en": "Covalent bonds 200–450 kJ/mol; hydrogen bonds 4–20 kJ/mol; van der Waals contacts 0.4–4 kJ/mol.",
+     "zh": "共价键 200–450 kJ/mol（C–C 约 348，S–S 约 250）；氢键 4–20 kJ/mol；范德华力 0.4–4 kJ/mol。"
+    },
+    {
+     "en": "Ramachandran landmarks: right-handed α-helix (−57, −47); antiparallel β-sheet (−139, +135); left-handed helix (+57, +47), glycine only.",
+     "zh": "Ramachandran 三个坐标：右手 α-helix（−57, −47）；antiparallel β-sheet（−139, +135）；左手螺旋（+57, +47），几乎只有 Gly。"
+    }
+   ]
+  },
+  {
+   "group_en": "Secondary structure geometry and the fibrous proteins",
+   "group_zh": "二级结构几何与纤维蛋白",
+   "items": [
+    {
+     "en": "α-Helix: 3.6 residues per turn, rise 1.5 Å (0.15 nm), pitch 5.4 Å (0.54 nm), i→i+4 bonds, 3.6-13.",
+     "zh": "α-helix：每圈 3.6 个残基，每残基升 1.5 Å（0.15 nm），螺距 pitch 5.4 Å（0.54 nm）；氢键 i→i+4，闭合十三原子环，记作 3.6-13。"
+    },
+    {
+     "en": "Helix propensity: Ala > Leu > Met > Glu > Gln, down to Gly, worst Pro.",
+     "zh": "螺旋倾向 helix propensity：Ala > Leu > Met > Glu > Gln，一直到 Gly，最差的是 Pro。"
+    },
+    {
+     "en": "Proline breaks a helix: its ring nitrogen donates no backbone N–H, and phi is locked near −60°.",
+     "zh": "Pro 是 helix breaker：环上的氮没有主链 N–H 可供给，i→i+4 氢键梯子缺一档；且 phi 被锁在约 −60°。"
+    },
+    {
+     "en": "β-Turn is four residues i to i+3, C=O of i to N–H of i+3, Cα–Cα under 7 Å.",
+     "zh": "β-turn 是四个残基 i 到 i+3，i 的 C=O 与 i+3 的 N–H 成氢键，两个 Cα 相距小于 7 Å；Pro 常在 i+1，type II 的 i+2 必为 Gly。"
+    },
+    {
+     "en": "Keratin: two right-handed helices in a left-handed coiled coil. Collagen: three left-handed strands, right-handed superhelix.",
+     "zh": "角蛋白 α-keratin：两条右手螺旋缠成左手 coiled coil。胶原 collagen：三条左手链缠成右手 superhelix。手性相反，链数不同。"
+    },
+    {
+     "en": "Collagen is a strict (Gly-X-Y)n repeat; vitamin C keeps prolyl-4-hydroxylase iron as Fe(II) — without it, scurvy.",
+     "zh": "Collagen 严格重复 (Gly-X-Y)n，每三位必为 Gly；维生素 C 把 prolyl-4-hydroxylase 的铁从 Fe(III) 还原回 Fe(II)，缺乏即坏血病 scurvy。"
+    }
+   ]
+  },
+  {
+   "group_en": "Domains, folding, and stability",
+   "group_zh": "结构域、折叠与稳定性",
+   "items": [
+    {
+     "en": "A domain is 40–200 residues, folds independently when expressed alone, and is the unit of evolutionary shuffling.",
+     "zh": "Domain 典型 40–200 个残基；单独表达这段基因就能独立折叠并保留活性；它是进化上 domain shuffling 的单位。"
+    },
+    {
+     "en": "Rossmann fold: β-α-β-α-β with six parallel strands, GxGxxG fingerprint, binds NAD+ and NADP+.",
+     "zh": "Rossmann fold：β-α-β-α-β 单元，六条平行链构成 sheet 夹在螺旋中间；指纹序列 GxGxxG，结合 NAD+/NADP+。"
+    },
+    {
+     "en": "Anfinsen: RNase A, 124 residues and four disulfides, refolds to about 95% activity — sequence specifies fold.",
+     "zh": "Anfinsen 实验：RNase A 共 124 个残基、四对二硫键，变性后可自发复性到约 95% 活性；序列决定折叠。"
+    },
+    {
+     "en": "Hydrophobic effect is folding's largest single contribution, and it is entropic; native state only 20–60 kJ/mol stable.",
+     "zh": "疏水效应 hydrophobic effect 是折叠的最大单一贡献，且是熵驱动的；天然态只比变性态稳定约 20–60 kJ/mol。"
+    },
+    {
+     "en": "TM is the temperature at which half the protein has unfolded; nanoDSF reads the F350/F330 tryptophan ratio.",
+     "zh": "TM 是一半蛋白已解折叠时的温度；nanoDSF 用内源 Trp 荧光的 F350/F330 比值读取；配体结合使 TM 右移。"
+    }
+   ]
+  },
+  {
+   "group_en": "Heme and the globins",
+   "group_zh": "血红素与球蛋白",
+   "items": [
+    {
+     "en": "Homology is binary, identity is the percentage: Mb and Hb are paralogs at 15–25% identity.",
+     "zh": "Homology 是「是否同源」的二元判断，能量化的只有 sequence identity；Mb 和 Hb 是基因重复产生的 paralogs，一致性仅 15–25%。"
+    },
+    {
+     "en": "Sickle cell: beta6 Glu→Val; deoxy-HbS polymerises into fibres — polymerisation, not loss of oxygen capacity.",
+     "zh": "镰状细胞贫血：β 链第 6 位 Glu→Val；关键词是脱氧态 HbS 聚合成纤维，而不是单分子携氧量下降。"
+    },
+    {
+     "en": "Heme iron must be Fe(II), six-coordinate octahedral: four pyrrole nitrogens, fifth proximal His F8, sixth O2.",
+     "zh": "血红素铁必须是 Fe(II)，六配位八面体：四个配位给吡咯环氮，第五位给 proximal His F8，第六位给 O2。"
+    },
+    {
+     "en": "Oxidation to Fe(III) gives methaemoglobin, which carries no oxygen at all.",
+     "zh": "铁被氧化成 Fe(III) 即高铁血红蛋白 methemoglobin，完全不能携氧；由 methemoglobin reductase 还原回来。"
+    },
+    {
+     "en": "Distal His E7 never coordinates the iron; bending ligands cuts CO preference 20,000-fold to ~200-fold.",
+     "zh": "Distal His E7 不与铁配位；它强迫配体弯曲，把游离血红素上 CO/O2 约 20,000 倍的偏好降到蛋白内的约 200 倍。"
+    }
+   ]
+  },
+  {
+   "group_en": "Cooperativity, its regulators, and the standing traps",
+   "group_zh": "协同效应、调节因子与常考陷阱",
+   "items": [
+    {
+     "en": "The Hill coefficient measures cooperativity, not bound oxygens; haemoglobin's is about 2.8–3.0, not 4.",
+     "zh": "Hill coefficient nH 衡量协同程度，不是结合的氧分子数；血红蛋白实测约 2.8–3.0，不是 4。"
+    },
+    {
+     "en": "Haemoglobin P50 ≈ 26 torr, myoglobin ≈ 2.8 torr; lung 100 torr, resting tissue 40 torr.",
+     "zh": "血红蛋白 P50 ≈ 26 torr，肌红蛋白 ≈ 2.8 torr；肺泡约 100 torr（饱和度约 98%），静息组织约 40 torr（约 75%）。"
+    },
+    {
+     "en": "O2 binding pulls Fe(II) 0.4–0.6 Å into the heme plane, dragging proximal His F8 and helix F.",
+     "zh": "结合 O2 把 Fe(II) 从平面外 0.4–0.6 Å 拉回吡咯环平面，连带 proximal His F8 和 helix F 一起移动；是拉，不是踢。"
+    },
+    {
+     "en": "The two αβ dimers then rotate about 15°, breaking the α1–β2 salt bridges: T to R.",
+     "zh": "两个 αβ dimer 随之相对旋转约 15°，打断 α1–β2 界面的盐桥，从 T 态变为 R 态，剩下的口袋被打开。"
+    },
+    {
+     "en": "2,3-BPG binds one per tetramer in the central cavity, stabilising T; from glycolysis's Rapoport–Luebering shunt.",
+     "zh": "2,3-BPG 每个四聚体结合一分子，位置在中央腔而非 heme pocket，稳定 T 态；它来自糖酵解支路 Rapoport–Luebering shunt。"
+    },
+    {
+     "en": "Oxygen has six valence electrons, not seven; it is electron-hungry by an electronegativity of 3.44.",
+     "zh": "氧的价电子是六个，不是七个（七个是卤素）；它「抢电子」靠的是 3.44 的电负性。"
+    }
+   ]
+  }
+ ]
+}

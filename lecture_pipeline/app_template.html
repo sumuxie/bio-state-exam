@@ -335,6 +335,24 @@ video{width:100%;display:block;background:#000;max-height:100%}
 [data-keys="on"] .readsec{margin-bottom:16px}
 [data-keys="on"] .readsec h2{padding-top:10px}
 [data-keys="on"] .readdoc{max-width:76ch}
+
+/* 必背: the list, and nothing else on screen. */
+[data-keys="must"] .readsec,
+[data-keys="must"] .pre{display:none}
+.mustdoc{display:none}
+[data-keys="must"] .mustdoc{display:block}
+.mustgrp{margin:0 0 26px}
+.mustgrp h2{font-size:calc(var(--rf) - 1px);margin:0 0 10px;padding-bottom:6px;
+  border-bottom:1px solid var(--line);color:var(--accent);font-weight:600}
+.mustgrp h2 .zh{color:var(--dim);font-weight:400;margin-left:8px;
+  font-size:calc(var(--rf) - 3px)}
+.mustitem{padding:8px 0 8px 16px;border-left:3px solid transparent;
+  border-bottom:1px solid var(--line)}
+.mustitem:hover{border-left-color:var(--good);background:var(--panel2)}
+.mustitem .me{font-size:var(--rf);line-height:1.6;font-weight:600}
+.mustitem .mz{font-size:calc(var(--rf) - 2px);line-height:1.65;color:var(--dim);
+  margin-top:3px}
+.mustcount{font-size:11.5px;color:var(--dim);margin:0 0 22px}
 .readdoc h1{font-size:calc(var(--rf) + 6px)}
 .readsec h2{font-size:calc(var(--rf) + 1px)}
 /* Side by side fills a wide screen without lengthening the line: the width
@@ -555,7 +573,9 @@ video{width:100%;display:block;background:#000;max-height:100%}
         <button id="tspace" title="字间距">⋯</button>
         <button id="tpair" title="中英上下 / 左右">⇄</button>
       </span>
-      <button class="iconbtn" id="keysbtn" title="只看每节一句重点">只看重点</button>
+      <div class="seg" id="depthseg" title="读到多深">
+        <button data-depth="full">全文</button><button data-depth="keys">重点</button><button data-depth="must">必背</button>
+      </div>
       <span class="tset">
       </span>
       <span class="n">空格 / ↓ 下一段 · Esc 退出</span>
@@ -1230,6 +1250,39 @@ function renderRead(){
     });
     d.appendChild(s2);
   });
+  /* 必背 lives beside the chapter rather than inside it: it is a different
+     document, not a filtered view of the same paragraphs. */
+  const md=document.createElement('div'); md.className='mustdoc';
+  const must=L.must||null;
+  if(!must||!must.groups||!must.groups.length){
+    md.innerHTML='<p class="mustcount">'
+      +'This lecture has no must-memorise list yet.<br>这一讲的必背清单还没生成。</p>';
+  } else {
+    const total=must.groups.reduce((a,g)=>a+g.items.length,0);
+    const c=document.createElement('p'); c.className='mustcount';
+    c.textContent=(PRIMARY==='en'
+      ? total+' things to know by heart, in the order the lecture builds them'
+      : '共 '+total+' 条，按这一讲展开的顺序排');
+    md.appendChild(c);
+    must.groups.forEach(g=>{
+      const gr=document.createElement('div'); gr.className='mustgrp';
+      const h=document.createElement('h2');
+      h.textContent=PRIMARY==='en'?g.group_en:g.group_zh;
+      const alt=document.createElement('span'); alt.className='zh';
+      alt.textContent=PRIMARY==='en'?g.group_zh:g.group_en;
+      h.appendChild(alt); gr.appendChild(h);
+      g.items.forEach(it=>{
+        const el=document.createElement('div'); el.className='mustitem';
+        const e=document.createElement('div'); e.className='me en'; e.textContent=it.en;
+        el.appendChild(e);
+        if(it.zh){ const z=document.createElement('div'); z.className='mz zh';
+          z.textContent=it.zh; el.appendChild(z); }
+        gr.appendChild(el);
+      });
+      md.appendChild(gr);
+    });
+  }
+  d.appendChild(md);
   box.appendChild(d);
 }
 
@@ -1473,17 +1526,16 @@ $('twide').onclick =()=>cycleType('wide');
 $('tspace').onclick=()=>cycleType('space');
 $('tface').onclick =()=>cycleType('face');
 function applyKeys(){
-  const on=load('keysonly','')==='1';
-  document.documentElement.dataset.keys=on?'on':'off';
-  $('keysbtn').classList.toggle('on',on);
-  $('keysbtn').textContent=on?'看全文':'只看重点';
+  const d=load('depth','full');
+  document.documentElement.dataset.keys = d==='full' ? 'off' : d;
+  [...$('depthseg').children].forEach(b=>b.classList.toggle('on',b.dataset.depth===d));
+  /* Focus and read-along walk paragraphs; neither shorter view has any. */
+  if(d!=='full'){ stopAlong(); setFocus(false); }
 }
 applyKeys();
-$('keysbtn').onclick=()=>{
-  store('keysonly', load('keysonly','')==='1'?'':'1');
-  applyKeys();
-  /* Focus and read-along both walk paragraphs, which are not on screen now. */
-  if(document.documentElement.dataset.keys==='on'){ stopAlong(); setFocus(false); }
+$('depthseg').onclick=e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  store('depth', b.dataset.depth); applyKeys();
 };
 
 function applyPair(){

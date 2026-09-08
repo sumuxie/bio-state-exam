@@ -68,6 +68,12 @@ for L in wanted:
     if os.path.exists(tp):
         with open(tp, encoding="utf-8") as f:
             lectures[-1]["terms"] = json.load(f)
+    # The must-memorise list, the shortest of the three reading depths.
+    mp = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      "data", f"{L.no:02d}", "must.json")
+    if os.path.exists(mp):
+        with open(mp, encoding="utf-8") as f:
+            lectures[-1]["must"] = json.load(f)
 
 assert lectures, "no lecture has both cues.json and topics.json yet"
 
