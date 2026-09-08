@@ -280,18 +280,51 @@ video{width:100%;display:block;background:#000;max-height:100%}
   background:var(--panel2)}
 .pre h3{margin:0 0 3px;font-size:14px}
 .pre h3 .zh{display:block;font-size:12px;color:var(--dim);font-weight:400;margin-top:2px}
-.pre .lead{margin:9px 0 0;font-size:11.5px;color:var(--dim);line-height:1.65}
+.pre .lead{margin:9px 0 12px;font-size:11.5px;color:var(--dim);line-height:1.65}
 .pre .toggle{background:transparent;border:1px solid var(--line);color:var(--dim);
   border-radius:6px;padding:2px 9px;font:inherit;font-size:11px;cursor:pointer;
-  float:right;margin-left:10px}
+  float:right;margin-left:8px}
 .pre .toggle:hover{border-color:var(--accent);color:var(--accent)}
-.pregrid{margin:14px 0 0;display:grid;gap:11px}
-.pre.closed .pregrid{display:none}
+
+/* One card at a time. Eighty-seven glosses in a column is a wall standing in
+   front of the wall you came to read. */
+.flash{background:var(--bg);border:1px solid var(--line);border-radius:11px;
+  padding:26px 22px;min-height:150px;display:flex;flex-direction:column;
+  justify-content:center;cursor:pointer;text-align:center}
+.flash:hover{border-color:var(--accent)}
+.flash .ft{font-size:21px;font-weight:600;line-height:1.35}
+.flash .fz{font-size:14px;color:var(--dim);margin-top:5px}
+.flash .fhint{font-size:11px;color:var(--dim);margin-top:16px;opacity:.7}
+.flash .fg{font-size:14px;line-height:1.75;margin-top:16px;text-align:left}
+.flash .fgz{font-size:13px;line-height:1.75;color:var(--dim);margin-top:8px;text-align:left}
+.flashbar{display:flex;align-items:center;gap:9px;margin-top:11px}
+.flashbar .spacer{flex:1}
+.flashbar .cnt{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums}
+.pregrid{margin:16px 0 0;display:grid;gap:11px;
+  border-top:1px solid var(--line);padding-top:14px}
+.pre.listclosed .pregrid{display:none}
 .pterm{font-size:12.5px;line-height:1.6}
 .pterm b{font-weight:600}
 .pterm .cn{color:var(--dim);font-weight:400}
 .pterm .g{display:block;color:var(--dim);font-size:11.5px;line-height:1.6;margin-top:2px}
 .pterm .gz{display:block;color:var(--dim);font-size:11.5px;line-height:1.6;opacity:.8}
+
+/* ---------- reading typography ----------
+   Defaults chosen for continuous reading rather than reference-skimming:
+   bigger type, a shorter measure, and line spacing with real air in it. */
+.readdoc{--rf:16px;--rlh:1.95;--rls:0em;--rfam:inherit}
+.readdoc{max-width:var(--rw,62ch);font-family:var(--rfam)}
+.readsec p{font-size:var(--rf);line-height:var(--rlh);letter-spacing:var(--rls);
+  margin-bottom:calc(var(--rlh) * 0.55em)}
+.readsec p.zh{font-size:calc(var(--rf) - 1.5px);
+  margin-bottom:calc(var(--rlh) * 0.85em)}
+.readdoc h1{font-size:calc(var(--rf) + 6px)}
+.readsec h2{font-size:calc(var(--rf) + 1px)}
+#readbar .tset{display:flex;align-items:center;gap:4px;margin-left:6px}
+#readbar .tset button{background:transparent;border:1px solid var(--line);
+  color:var(--dim);border-radius:5px;padding:2px 7px;font:inherit;font-size:11px;
+  cursor:pointer}
+#readbar .tset button:hover{border-color:var(--accent);color:var(--accent)}
 
 /* ---------- reading aids ---------- */
 #readbar{position:sticky;top:0;z-index:3;display:flex;gap:8px;align-items:center;
@@ -479,6 +512,13 @@ video{width:100%;display:block;background:#000;max-height:100%}
       <button class="iconbtn" id="alongbtn">▶ 朗读 Read aloud</button>
       <span class="n" id="readpos"></span>
       <span class="spacer"></span>
+      <span class="tset">
+        <button id="tfont" title="字号">A</button>
+        <button id="tline" title="行距">⇕</button>
+        <button id="twide" title="栏宽">↔</button>
+        <button id="tface" title="字体">Aa</button>
+        <button id="tspace" title="字间距">⋯</button>
+      </span>
       <span class="n">空格 / ↓ 下一段 · Esc 退出</span>
     </div>
     <div id="readbody"></div>
@@ -1029,12 +1069,12 @@ function renderRead(){
   const gl=L.terms||[];
   if(gl.length){
     const pre=document.createElement('div'); pre.className='pre';
-    if(load('preclosed','')==='1') pre.classList.add('closed');
+    if(load('prelist','1')==='1') pre.classList.add('listclosed');
     const tg=document.createElement('button'); tg.className='toggle';
-    const setLbl=()=>tg.textContent=pre.classList.contains('closed')
-      ? (PRIMARY==='en'?'show':'展开') : (PRIMARY==='en'?'hide':'收起');
-    tg.onclick=()=>{ pre.classList.toggle('closed');
-      store('preclosed', pre.classList.contains('closed')?'1':''); setLbl(); };
+    const setLbl=()=>tg.textContent=pre.classList.contains('listclosed')
+      ? (PRIMARY==='en'?'full list':'全部词表') : (PRIMARY==='en'?'hide list':'收起词表');
+    tg.onclick=()=>{ pre.classList.toggle('listclosed');
+      store('prelist', pre.classList.contains('listclosed')?'1':'0'); setLbl(); };
     setLbl(); pre.appendChild(tg);
     const h=document.createElement('h3');
     const he=document.createElement('span'); he.className='en';
@@ -1044,9 +1084,53 @@ function renderRead(){
     h.append(he,hz); pre.appendChild(h);
     const lead=document.createElement('p'); lead.className='lead';
     lead.textContent=PRIMARY==='en'
-      ? 'Words this chapter uses without stopping to explain them, in the order you will meet them. Read them once and the chapter stops tripping you up.'
-      : '这一讲用到、但正文里没有停下来解释的词，按你会遇到它们的顺序排。先过一遍，读正文时就不会被绊住。';
+      ? 'Words this chapter uses without stopping to explain them, in the order you will meet them. One card at a time; the full list is behind the button.'
+      : '这一讲用到、但正文里没有停下来解释的词，按你会遇到它们的顺序排。一次一张，全部词表在按钮后面。';
     pre.appendChild(lead);
+    /* One card at a time: term on the face, gloss on the back. */
+    let fi=Math.min(gl.length-1, Math.max(0, +load('pre.i.'+L.no,'0')||0));
+    let shown=false;
+    const card=document.createElement('div'); card.className='flash';
+    const bar=document.createElement('div'); bar.className='flashbar';
+    const prev=document.createElement('button'); prev.className='iconbtn'; prev.textContent='←';
+    const next=document.createElement('button'); next.className='iconbtn'; next.textContent='→';
+    const cnt=document.createElement('span'); cnt.className='cnt';
+    const flip=document.createElement('button'); flip.className='iconbtn';
+    const say=document.createElement('button'); say.className='iconbtn'; say.textContent='🔊';
+    bar.append(prev,next,cnt);
+    const sp2=document.createElement('span'); sp2.className='spacer'; bar.appendChild(sp2);
+    bar.append(say,flip);
+
+    const paint=()=>{
+      const t=gl[fi]; card.innerHTML='';
+      const ft=document.createElement('div'); ft.className='ft'; ft.textContent=t.en;
+      card.appendChild(ft);
+      if(t.zh){ const fz=document.createElement('div'); fz.className='fz';
+        fz.textContent=t.zh; card.appendChild(fz); }
+      if(shown){
+        const g1=document.createElement('div'); g1.className='fg en';
+        g1.textContent=t.gloss_en; card.appendChild(g1);
+        if(t.gloss_zh){ const g2=document.createElement('div'); g2.className='fgz zh';
+          g2.textContent=t.gloss_zh; card.appendChild(g2); }
+      } else {
+        const h=document.createElement('div'); h.className='fhint';
+        h.textContent=PRIMARY==='en'?'click to see what it means':'点一下看它是什么';
+        card.appendChild(h);
+      }
+      cnt.textContent=(fi+1)+' / '+gl.length;
+      flip.textContent=shown?(PRIMARY==='en'?'hide':'盖住')
+                            :(PRIMARY==='en'?'show':'翻面');
+      say.dataset.say=t.en;
+      store('pre.i.'+L.no, fi);
+    };
+    const go=d=>{ fi=(fi+d+gl.length)%gl.length; shown=false; paint(); };
+    card.onclick=()=>{ shown=!shown; paint(); };
+    flip.onclick=e=>{ e.stopPropagation(); shown=!shown; paint(); };
+    prev.onclick=()=>go(-1);
+    next.onclick=()=>go(1);
+    pre.append(card,bar);
+    paint();
+
     const g=document.createElement('div'); g.className='pregrid';
     gl.forEach(t=>{
       const el=document.createElement('div'); el.className='pterm';
@@ -1282,6 +1366,36 @@ function alongUnit(k, seq){
   };
   next();
 }
+
+/* Reading comfort. Each control cycles a short list of sane values rather
+   than offering a slider, so there is nothing to fiddle with and no way to
+   land on a setting that is simply bad. */
+const TSET={
+  font:  {key:'rf',   vals:['15px','16px','17px','19px','21px'],      def:1},
+  line:  {key:'rlh',  vals:['1.7','1.95','2.2','2.5'],               def:1},
+  wide:  {key:'rw',   vals:['52ch','62ch','72ch','84ch'],            def:1},
+  space: {key:'rls',  vals:['0em','0.02em','0.05em'],                def:0},
+  face:  {key:'rfam', vals:['inherit','Georgia,\'Times New Roman\',serif',
+                            'Verdana,Tahoma,sans-serif'],            def:0}
+};
+function applyType(){
+  const d=document.documentElement;
+  Object.values(TSET).forEach(c=>{
+    const i=Math.min(c.vals.length-1, Math.max(0, +load('t.'+c.key, c.def)||0));
+    d.style.setProperty('--'+c.key, c.vals[i]);
+  });
+}
+function cycleType(name){
+  const c=TSET[name];
+  const i=(+load('t.'+c.key, c.def)||0 + 1) % c.vals.length;
+  store('t.'+c.key, i); applyType();
+}
+applyType();
+$('tfont').onclick =()=>cycleType('font');
+$('tline').onclick =()=>cycleType('line');
+$('twide').onclick =()=>cycleType('wide');
+$('tspace').onclick=()=>cycleType('space');
+$('tface').onclick =()=>cycleType('face');
 
 $('focusbtn').onclick=()=>setFocus(!focusOn);
 $('alongbtn').onclick=()=>{
