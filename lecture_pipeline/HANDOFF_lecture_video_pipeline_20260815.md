@@ -145,6 +145,29 @@ light themes, subtitles overlaid on the picture with size control, a search pane
 indexing everything (3248 entries for lecture 1) with per-category filters, and
 English text-to-speech.
 
+**Three views, and the video is opt-in.** A 视图 view switch offers 字版 Text,
+视频 Video and 只做题 Quiz, defaulting to **Text**. The video is for watching a
+structure being drawn, which is something you go and ask for, not something that
+should sit there playing while you read.
+
+- **Text** hides the whole middle column — video, timeline, subtitle bar and
+  transcript — and gives the space to the notes, which then show key points
+  **and** the extra cards together rather than behind tabs, flowing into as many
+  columns as the width allows. The subtitle controls hide too, since they steer
+  something that is not on screen.
+- **Quiz** hides everything but the quiz module and pools the lecture's whole
+  bank — 95 questions for lecture 1 rather than the two or three of the current
+  topic. Answer keys are `topic.question` in both views, so a score carries
+  across.
+- Every card and every quiz question carries a ▶ back to its topic's timestamp.
+  Clicking it switches to Video, seeks and plays; the click is a user gesture, so
+  autoplay is allowed. Plain navigation — picking a topic, following a search hit
+  — deliberately does *not* summon the video: `seek` leaves the view alone and
+  only `seekShow` changes it.
+
+Nothing is unloaded in Text view, only hidden, which is why the video is already
+at the right timestamp the moment a ▶ asks for it.
+
 **Integration panel.** A 综合 Integration button in the header opens a full-screen
 panel of cross-lecture material that belongs to no single lecture and has no
 timestamps: eight sections — fuel states, carbon fates, control points,

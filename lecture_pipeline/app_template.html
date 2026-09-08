@@ -230,6 +230,33 @@ video{width:100%;display:block;background:#000;max-height:100%}
 .intgrid .q{flex:1 1 420px;min-width:300px;max-width:640px}
 .card .see,.q .see{display:block;font-size:10.5px;color:var(--accent);margin-top:7px;
   font-variant-numeric:tabular-nums;opacity:.85;order:5}
+
+/* ---------- text-only view ----------
+   The middle column carries the video, the timeline, the subtitle bar and the
+   transcript. Hiding the whole column is what "text only" means; the notes take
+   the space it leaves. Nothing is unloaded, so the video is still there at the
+   right timestamp the moment a play button asks for it. */
+[data-view="text"] #c2,
+[data-view="text"] #row > .grip.v{display:none}
+[data-view="text"] #c3{flex:1;width:auto!important;min-width:0}
+[data-view="text"] #tabs{display:none}
+[data-view="quiz"] #row{display:none}
+/* The subtitle controls steer something that is not on screen in these views. */
+[data-view="text"] #sublabel,[data-view="text"] #langseg,[data-view="text"] #posseg,
+[data-view="quiz"] #sublabel,[data-view="quiz"] #langseg,[data-view="quiz"] #posseg{display:none}
+[data-view="quiz"] #quiz{flex:1;height:auto!important}
+[data-view="quiz"] #quizbody .q{flex:1 1 400px;max-width:560px}
+.qfrom{display:block;font-size:10.5px;color:var(--accent);margin-bottom:5px;
+  font-variant-numeric:tabular-nums;cursor:pointer;opacity:.85}
+.qfrom:hover{text-decoration:underline}
+[data-view="text"] .notegrid{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+[data-view="text"] .notegrid .card{flex:1 1 380px;min-width:280px;max-width:620px;
+  margin-bottom:0}
+.playbtn{order:4;align-self:flex-start;margin-top:7px;background:transparent;
+  border:1px solid var(--line);color:var(--dim);border-radius:6px;
+  padding:2px 8px;font:inherit;font-size:10.5px;cursor:pointer;
+  font-variant-numeric:tabular-nums}
+.playbtn:hover{border-color:var(--accent);color:var(--accent)}
 .intsub{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
   margin:22px 0 9px;display:flex;gap:9px;align-items:baseline}
 .intsub:first-child{margin-top:0}
@@ -242,12 +269,16 @@ video{width:100%;display:block;background:#000;max-height:100%}
   <span class="sub" id="lecen"></span>
   <span class="spacer"></span>
   <input id="searchbox" type="search" autocomplete="off" placeholder="搜索…  ( / )">
+  <span class="sub">视图 view</span>
+  <div class="seg" id="viewseg">
+    <button data-view="text" class="on">字版 Text</button><button data-view="video">视频 Video</button><button data-view="quiz">只做题 Quiz</button>
+  </div>
   <button class="iconbtn" id="intbtn" title="跨讲综合 / cross-lecture integration">综合 Integration</button>
   <span class="sub">正文 body</span>
   <div class="seg" id="primseg">
     <button data-prim="en" class="on">EN</button><button data-prim="zh">中</button>
   </div>
-  <span class="sub">字幕</span>
+  <span class="sub" id="sublabel">字幕</span>
   <div class="seg" id="langseg">
     <button data-lang="zh">中</button><button data-lang="both" class="on">双语</button>
     <button data-lang="en">EN</button>
@@ -344,6 +375,12 @@ const load  = (k,d)=>{ try{ const x=localStorage.getItem(LS+k); return x===null?
    Subtitles are unaffected: no cue has an English translation yet. */
 let PRIMARY = load('primary','en');
 document.documentElement.dataset.primary = PRIMARY;
+
+/* Text-only by default: the video is for looking at a structure being drawn,
+   which is a thing you go and ask for, not a thing that should sit there
+   playing while you read. `seekShow` is the asking. */
+let VIEW = load('view','text');
+document.documentElement.dataset.view = VIEW;
 const fmt = s=>{ s=Math.max(0,s|0); const h=(s/3600)|0,m=((s%3600)/60)|0,x=s%60;
   return (h?h+':':'')+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0'); };
 const HUES=[205,152,38,275,12,96,320,178,58,240,130,20];
@@ -555,32 +592,86 @@ function renderNotes(){
   const hen=document.createElement('span'); hen.className='en'; hen.textContent=t.title_en;
   h3.append(hzh,hen);
   const when=document.createElement('div'); when.className='when';
-  when.textContent='▶ '+fmt(t.start)+' – '+fmt(t.end); when.onclick=()=>seek(t.start);
+  when.textContent='▶ '+fmt(t.start)+' – '+fmt(t.end); when.onclick=()=>seekShow(t.start);
   head.append(h3,when); p.appendChild(head);
   const body=document.createElement('div'); body.className='pane'; body.style.paddingTop='0';
-  const items = tab==='notes' ? (t.points||[]) : (t.extra||[]);
-  items.forEach(x=>{
-    const c=document.createElement('div'); c.className='card'+(tab==='extra'?' extra':'');
-    if(tab==='extra'){ const tg=document.createElement('span'); tg.className='tag';
+
+  const card=(x,isExtra)=>{
+    const c=document.createElement('div'); c.className='card'+(isExtra?' extra':'');
+    if(isExtra){ const tg=document.createElement('span'); tg.className='tag';
       tg.textContent=x.tag||'课上未展开 · not covered'; c.appendChild(tg); }
     const z=document.createElement('div'); z.className='zh'; z.textContent=x.zh;
     const e2=document.createElement('div'); e2.className='en'; e2.textContent=x.en;
-    c.append(z,e2); body.appendChild(c);
-  });
-  if(!items.length) body.innerHTML='<div class="empty">这一段没有内容。</div>';
+    c.append(z,e2);
+    const pb=document.createElement('button'); pb.className='playbtn';
+    pb.textContent='▶ '+fmt(t.start);
+    pb.title=PRIMARY==='en' ? 'Play the video from this topic'
+                            : '从这个主题开始播放视频';
+    pb.onclick=ev=>{ ev.stopPropagation(); seekShow(t.start); };
+    c.appendChild(pb);
+    return c;
+  };
+
+  if(VIEW==='text'){
+    /* No middle column, so both groups fit side by side and the tabs are moot. */
+    const groups=[[PRIMARY==='en'?'Key points':'知识点', t.points||[], false],
+                  [PRIMARY==='en'?'Extra':'补充', t.extra||[], true]];
+    groups.forEach(([label,items,isExtra])=>{
+      const h=document.createElement('div'); h.className='intsub';
+      h.innerHTML=label+'<span>'+items.length+'</span>';
+      body.appendChild(h);
+      if(!items.length){
+        const e=document.createElement('div'); e.className='empty';
+        e.textContent=PRIMARY==='en'?'Nothing here for this stretch.':'这一段没有内容。';
+        body.appendChild(e); return;
+      }
+      const g=document.createElement('div'); g.className='notegrid';
+      items.forEach(x=>g.appendChild(card(x,isExtra)));
+      body.appendChild(g);
+    });
+  } else {
+    const items = tab==='notes' ? (t.points||[]) : (t.extra||[]);
+    items.forEach(x=>body.appendChild(card(x, tab==='extra')));
+    if(!items.length) body.innerHTML='<div class="empty">这一段没有内容。</div>';
+  }
   p.appendChild(body);
 }
 
 /* ---------- quiz ---------- */
 function renderQuiz(){
   const qb=$('quizbody'); qb.innerHTML='';
-  const t=L&&L.topics[curTopic];
-  if(!t||!(t.quiz||[]).length){ qb.innerHTML='<div class="empty">这一段没有题目。</div>'; updateScore(); return; }
-  t.quiz.forEach((q,qi)=>{
-    const key=curTopic+'.'+qi;
+  if(!L){ updateScore(); return; }
+
+  /* Quiz-only drills the whole lecture; the docked module stays per-topic so it
+     keeps tracking what is on screen. Keys are "topic.question" either way, so
+     a score carries across the two views. */
+  const pool=[];
+  if(VIEW==='quiz'){
+    L.topics.forEach((t,ti)=>(t.quiz||[]).forEach((q,qi)=>pool.push([q,ti,qi])));
+  } else {
+    const t=L.topics[curTopic];
+    if(t) (t.quiz||[]).forEach((q,qi)=>pool.push([q,curTopic,qi]));
+  }
+  if(!pool.length){
+    qb.innerHTML='<div class="empty">'
+      +(PRIMARY==='en'?'No questions for this stretch.':'这一段没有题目。')+'</div>';
+    updateScore(); return;
+  }
+
+  pool.forEach(([q,ti,qi],idx)=>{
+    const key=ti+'.'+qi;
     const c=document.createElement('div'); c.className='q';
+    if(VIEW==='quiz'){
+      const from=document.createElement('span'); from.className='qfrom';
+      const tp=L.topics[ti];
+      from.textContent='▶ '+fmt(tp.start)+'  '
+        +(PRIMARY==='en'?tp.title_en:tp.title_zh);
+      from.title=PRIMARY==='en'?'Play the video from this topic':'从这个主题开始播放视频';
+      from.onclick=()=>seekShow(tp.start);
+      c.appendChild(from);
+    }
     const qt=document.createElement('div'); qt.className='qt';
-    const num=(qi+1)+'. ';
+    const num=((VIEW==='quiz'?idx:qi)+1)+'. ';
     const qz=document.createElement('span'); qz.className='zh';
     qz.textContent=(PRIMARY==='zh'?num:'')+q.q_zh;
     const qe=document.createElement('span'); qe.className='en';
@@ -868,6 +959,24 @@ $('searchscope').onclick=()=>{ scopeAll=!scopeAll;
 
 /* ---------- sync ---------- */
 function seek(t){ V.currentTime=t; tick(); }
+
+/* Navigation (clicking a topic, a search hit) uses seek and leaves the view
+   alone. Only an explicit play button uses seekShow, which brings the video
+   back and starts it — the click is a user gesture, so play() is allowed. */
+function seekShow(t){
+  if(VIEW!=='video') setView('video');
+  V.currentTime=t; tick();
+  const pr=V.play(); if(pr&&pr.catch) pr.catch(()=>{});
+}
+function setView(v){
+  VIEW=v; store('view',v);
+  document.documentElement.dataset.view=v;
+  [...$('viewseg').children].forEach(b=>b.classList.toggle('on',b.dataset.view===v));
+  if(v==='text'&&!V.paused) V.pause();
+  if(typeof L!=='undefined'&&L){ renderNotes(); renderQuiz(); }
+}
+$('viewseg').onclick=e=>{ const b=e.target.closest('button'); if(b) setView(b.dataset.view); };
+setView(VIEW);
 function findCue(t){ let lo=0,hi=L.cues.length-1,r=-1;
   while(lo<=hi){ const m=(lo+hi)>>1; if(L.cues[m].s<=t){ r=m; lo=m+1; } else hi=m-1; }
   return (r>=0&&t<=L.cues[r].e+0.4)?r:-1; }
