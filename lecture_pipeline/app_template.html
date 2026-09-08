@@ -322,8 +322,11 @@ video{width:100%;display:block;background:#000;max-height:100%}
 /* The one claim the section exists to deliver. */
 .key{border-left:3px solid var(--good);background:var(--panel2);
   border-radius:0 8px 8px 0;padding:11px 14px;margin:0 0 16px}
-.key p{margin:0;font-size:calc(var(--rf) - 0.5px);line-height:1.7}
-.key p.zh{font-size:calc(var(--rf) - 2px);color:var(--dim);margin-top:5px}
+.key p{margin:0;font-size:calc(var(--rf) - 0.5px);line-height:1.7;font-weight:600}
+/* Chinese is left a step lighter: at this size a full sentence at 600 fills in
+   and gets harder to read, not easier. */
+.key p.zh{font-size:calc(var(--rf) - 2px);color:var(--dim);margin-top:5px;
+  font-weight:500}
 /* Keys-only: the takeaways are the document, the prose steps out of the way. */
 [data-keys="on"] .readsec .pair,
 [data-keys="on"] .pre{display:none}
