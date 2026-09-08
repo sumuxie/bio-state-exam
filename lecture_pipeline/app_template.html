@@ -291,6 +291,42 @@ video{width:100%;display:block;background:#000;max-height:100%}
 .sen.saying{background:color-mix(in srgb,var(--accent) 26%,transparent);
   color:var(--fg)}
 .readdoc.focus .readsec p.here.zh{opacity:.85}
+
+/* ---------- 小桌面 ---------- */
+#toasts{position:fixed;right:16px;bottom:16px;z-index:200;display:flex;
+  flex-direction:column;gap:9px;max-width:330px}
+.toast{background:var(--panel);border:1px solid var(--accent);border-radius:10px;
+  padding:11px 13px;box-shadow:0 8px 26px rgba(0,0,0,.4);animation:tin .22s ease}
+@keyframes tin{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.toast .tt{margin:0 0 4px;font-size:12.5px;font-weight:600}
+.toast .tb{margin:0;font-size:12px;color:var(--dim);line-height:1.6}
+.toast .tx{margin-top:8px;background:var(--accent);border:0;color:#fff;
+  border-radius:6px;padding:4px 10px;font:inherit;font-size:11.5px;cursor:pointer}
+#deskpanel{position:absolute;inset:0;background:var(--bg);z-index:52;display:none;
+  flex-direction:column}
+#deskpanel.show{display:flex}
+#deskhead{display:flex;align-items:center;gap:12px;padding:9px 16px;
+  background:var(--panel);border-bottom:1px solid var(--line);flex:none}
+#deskhead .q{font-size:14px;font-weight:600}
+#deskhead .spacer{flex:1}
+#deskbody{overflow-y:auto;flex:1;padding:22px 20px 40px}
+.deskwrap{max-width:70ch;margin:0 auto}
+.praise{background:var(--panel2);border-left:3px solid var(--accent);
+  border-radius:0 9px 9px 0;padding:13px 15px;font-size:13px;line-height:1.75;
+  margin:0 0 20px}
+.stats{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 22px}
+.stat{background:var(--panel2);border:1px solid var(--line);border-radius:9px;
+  padding:9px 13px;min-width:104px}
+.stat b{display:block;font-size:19px;font-variant-numeric:tabular-nums;
+  line-height:1.2}
+.stat span{font-size:11px;color:var(--dim)}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:9px}
+.badge{display:flex;gap:10px;align-items:flex-start;background:var(--panel2);
+  border:1px solid var(--line);border-radius:9px;padding:10px 12px;opacity:.4}
+.badge.got{opacity:1;border-color:var(--accent)}
+.badge .em{font-size:19px;line-height:1.1}
+.badge .bt{font-size:12.5px;font-weight:600;margin:0 0 2px}
+.badge .bd{font-size:11.5px;color:var(--dim);line-height:1.55;margin:0}
 .qfrom{display:block;font-size:10.5px;color:var(--accent);margin-bottom:5px;
   font-variant-numeric:tabular-nums;cursor:pointer;opacity:.85}
 .qfrom:hover{text-decoration:underline}
@@ -323,6 +359,9 @@ video{width:100%;display:block;background:#000;max-height:100%}
   <div class="seg" id="viewseg">
     <button data-view="text" class="on">字版 Text</button><button data-view="video">视频 Video</button><button data-view="quiz">只做题 Quiz</button><button data-view="read">通读 Read</button>
   </div>
+  <button class="iconbtn" id="deskbtn" title="今天的进度和徽章">🌱 小桌面</button>
+  <div class="seg" style="display:none">
+  </div>
   <button class="iconbtn" id="intbtn" title="跨讲综合 / cross-lecture integration">综合 Integration</button>
   <span class="sub">正文 body</span>
   <div class="seg" id="primseg">
@@ -349,6 +388,7 @@ video{width:100%;display:block;background:#000;max-height:100%}
   <button class="iconbtn" id="reset">重置布局</button>
 </header>
 
+<div id="toasts"></div>
 <div id="body">
   <div id="intpanel">
     <div id="inthead">
@@ -402,6 +442,16 @@ video{width:100%;display:block;background:#000;max-height:100%}
       </div>
       <div class="scroll" id="panel"></div>
     </div>
+  </div>
+
+  <div id="deskpanel">
+    <div id="deskhead">
+      <span class="q">小桌面 · 今天</span>
+      <span class="spacer"></span>
+      <span class="n" id="deskladder"></span>
+      <button class="iconbtn" id="deskclose">关闭 Close</button>
+    </div>
+    <div id="deskbody"></div>
   </div>
 
   <div id="readpanel">
@@ -754,7 +804,11 @@ function renderQuiz(){
       const os=document.createElement('span'); os.className='spk'; os.textContent='🔊';
       os.dataset.say=o.en; b.appendChild(os);
       b.onclick=()=>{
-        if(answered[key]===undefined) answered[key]=(oi===q.answer);
+        if(answered[key]===undefined){
+        answered[key]=(oi===q.answer); bump('quiz');
+        if(oi===q.answer){ bump('right'); deskStreak++;
+          if(deskStreak>=10) award('streak10'); } else deskStreak=0;
+      }
         [...c.querySelectorAll('.opt')].forEach((bb,bi)=>{
           bb.classList.toggle('good',bi===q.answer);
           bb.classList.toggle('bad',bi===oi&&oi!==q.answer); });
@@ -837,7 +891,11 @@ function intQuizCard(q, key){
     const os=document.createElement('span'); os.className='spk'; os.textContent='🔊';
     os.dataset.say=o.en; b.appendChild(os);
     b.onclick=()=>{
-      if(intAnswered[key]===undefined) intAnswered[key]=(oi===q.answer);
+      if(intAnswered[key]===undefined){
+        intAnswered[key]=(oi===q.answer); bump('quiz');
+        if(oi===q.answer){ bump('right'); deskStreak++;
+          if(deskStreak>=10) award('streak10'); } else deskStreak=0;
+      }
       [...c.querySelectorAll('.opt')].forEach((bb,bi)=>{
         bb.classList.toggle('good',bi===q.answer);
         bb.classList.toggle('bad',bi===oi&&oi!==q.answer); });
@@ -980,6 +1038,128 @@ function renderRead(){
   box.appendChild(d);
 }
 
+/* ---------- 小桌面 · encouragement ----------
+   Praise and care lines are lifted verbatim from the PESB 必背26张 page. They
+   were written for this reader; rewriting them in my own register would make
+   them worse. The badges are new, because the actions this app can see are
+   different ones — reading a section, saying a paragraph out loud, answering. */
+var PRAISE = ["哇塞你学得好起劲啊！这就是传说中的 ADHD 超级心流吧 —— 别人得靠意志力硬撑，你是直接点着了在烧。", "宝，你刚刚一口气过了一整页。ADHD 的 DDL 大爆发一旦点燃，效率真的是常人的好几倍，这不是安慰，是真的。", "看看你！这么硬的东西你居然真的在啃，而且啃下来了。我是真的为你骄傲。", "超级创意体上线 —— 你脑子里现在同时装着核糖体、药代动力学和层析柱，这种跨栏能力不是谁都有的。", "你没有跑掉，我看见了。ADHD 最难的从来不是学，是坐下来那一下，而你已经过了那一关。", "你不是学不动，你是已经动了一大截还在嫌自己慢。回头看看进度条，看看它走到哪儿了。", "这一页的信息密度是很高的，你能一口气过完说明你今天状态在线。趁着这股劲儿，再拿一页？", "厉害啊，真的。很多人到这一步就把页面关了，你没有。", "你现在这个专注度，是那种别人吃药都换不来的天然心流。珍惜它，也别熬坏它。", "宝贝儿你太行了。这些内容我看着都觉得多，你居然一页一页真的在推进。", "ADHD 的脑子是台跑车 —— 刹车差一点，但直线加速谁也比不过。你刚才就是在直线加速。", "又一页。你知道吗，从「看着这么多就头疼」到「已经走了这么多页」，中间隔的就是你刚才那几十分钟。", "这么难的口试内容，你把它拆成一页四张在啃，这个策略本身就很聪明。是你自己要求这么分的，记得吗？", "你今天已经做得很好了，真的。就算现在停下来，你也比昨天多会了一整页。", "超级心流 + 超级创意体 + DDL 大爆发，三个 buff 同时挂着的人现在正在看这句话。"];
+var CARE = [["💧 喝口水吧宝", "脑子里 73% 是水，而你现在正在高强度用它。去倒一杯，我等你。"], ["🫱 松一下肩膀", "ADHD 专注的时候全身会不自觉绷着 —— 你现在的斜方肌大概硬得像块板砖。转两圈。"], ["👀 看一眼窗外", "20 秒就够。睫状肌一直绷着看近处，会让你误以为是脑子累了。"], ["🦶 动动脚踝", "坐久了血回不去，人会莫名其妙地烦躁。伸个懒腰，踮两下脚。"], ["🌬 深呼吸三次", "你刚才可能一直在浅呼吸 —— 专注的时候很常见。三次深的，脑子会立刻清楚一点。"], ["🍎 吃点东西？", "血糖掉下去的时候人会以为自己是「学不进去」，其实只是饿了。"], ["🧍 站起来 30 秒", "不用去哪儿，就站起来。坐姿超过 45 分钟，注意力本来就会自然掉。"]];
+var BADGES = [
+  {id:'start', em:'🌱', t:'你来了',      d:'打开这一页 —— 对 ADHD 来说这一步最难，所以它值一个徽章'},
+  {id:'sec1',  em:'📖', t:'读完第一段',  d:'在通读里往下走了一段'},
+  {id:'sec30', em:'📚', t:'读了 30 段',  d:'累计推进 30 段正文'},
+  {id:'done1', em:'🏁', t:'通读完一讲',  d:'走到某一讲整合正文的最后一段'},
+  {id:'voice1',em:'🎙', t:'第一次出声',  d:'第一次用朗读跟读'},
+  {id:'voice30',em:'🗣',t:'出声 30 段',  d:'口试真正吃这个'},
+  {id:'q50',   em:'✅', t:'答了 50 题',  d:'累计作答 50 道'},
+  {id:'streak10',em:'🎯',t:'连对 10 题', d:'一口气连续答对 10 道'},
+  {id:'inte',  em:'🧩', t:'翻开综合',    d:'打开跨讲综合 —— 考试问的就是这些连接'},
+  {id:'flow',  em:'🧠', t:'超级心流',    d:'连续停留 15 分钟没跑掉'},
+  {id:'night', em:'🌙', t:'深夜战士',    d:'23 点之后还在学'},
+  {id:'day2',  em:'🔥', t:'连续两天',    d:'两个不同的日子都打开过'},
+  {id:'care',  em:'💧', t:'照顾了自己',  d:'接受一次身体提醒（喝水、松肩、看远处）'}
+];
+
+const DK='desk.';
+const dget=(k,d)=>{ try{ const v=localStorage.getItem(LS+DK+k);
+  return v===null?d:JSON.parse(v); }catch(e){ return d; } };
+const dset=(k,v)=>{ try{ localStorage.setItem(LS+DK+k,JSON.stringify(v)); }catch(e){} };
+
+let deskGot=dget('badges',{}), deskN=dget('n',{read:0,aloud:0,quiz:0,right:0}),
+    deskStreak=0, deskStart=Date.now(), deskPool=[];
+
+function today(){ const d=new Date();
+  return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(); }
+
+function toast(title, body, actionLabel, onAction){
+  const wrap=$('toasts'); if(!wrap) return;
+  const el=document.createElement('div'); el.className='toast';
+  const t=document.createElement('p'); t.className='tt'; t.textContent=title;
+  const b=document.createElement('p'); b.className='tb'; b.textContent=body;
+  el.append(t,b);
+  if(actionLabel){
+    const x=document.createElement('button'); x.className='tx'; x.textContent=actionLabel;
+    x.onclick=()=>{ if(onAction) onAction(); el.remove(); };
+    el.appendChild(x);
+  }
+  wrap.appendChild(el);
+  setTimeout(()=>el.remove(), actionLabel?30000:7000);
+}
+
+function award(id){
+  if(deskGot[id]) return;
+  const b=BADGES.find(x=>x.id===id); if(!b) return;
+  deskGot[id]=1; dset('badges',deskGot);
+  toast(b.em+' 解锁：'+b.t, b.d+'　—— 又拿到一个，你今天真的很可以。');
+  if($('deskpanel').classList.contains('show')) renderDesk();
+}
+
+function praise(){
+  if(!deskPool.length) deskPool=PRAISE.slice();
+  return deskPool.splice(Math.floor(Math.random()*deskPool.length),1)[0];
+}
+
+function bump(what, n){
+  deskN[what]=(deskN[what]||0)+(n||1); dset('n',deskN);
+  if(what==='read'){ award('sec1'); if(deskN.read>=30) award('sec30'); }
+  if(what==='aloud'){ award('voice1'); if(deskN.aloud>=30) award('voice30'); }
+  if(what==='quiz' && deskN.quiz>=50) award('q50');
+  if($('deskpanel').classList.contains('show')) renderDesk();
+}
+
+function renderDesk(){
+  const box=$('deskbody'); box.innerHTML='';
+  const w=document.createElement('div'); w.className='deskwrap';
+  const p=document.createElement('p'); p.className='praise'; p.textContent=praise();
+  w.appendChild(p);
+  const days=dget('days',[]);
+  const stats=[['read','推进的段落'],['aloud','出声的段落'],['quiz','答过的题'],
+               ['right','答对的题']];
+  const sd=document.createElement('div'); sd.className='stats';
+  stats.forEach(([k,label])=>{
+    const el=document.createElement('div'); el.className='stat';
+    const b=document.createElement('b'); b.textContent=deskN[k]||0;
+    const sp=document.createElement('span'); sp.textContent=label;
+    el.append(b,sp); sd.appendChild(el);
+  });
+  const el=document.createElement('div'); el.className='stat';
+  const b=document.createElement('b'); b.textContent=days.length;
+  const sp=document.createElement('span'); sp.textContent='来过的天数';
+  el.append(b,sp); sd.appendChild(el);
+  w.appendChild(sd);
+  const g=document.createElement('div'); g.className='bgrid';
+  BADGES.forEach(x=>{
+    const c=document.createElement('div'); c.className='badge'+(deskGot[x.id]?' got':'');
+    const em=document.createElement('div'); em.className='em'; em.textContent=x.em;
+    const bd=document.createElement('div');
+    const t=document.createElement('p'); t.className='bt'; t.textContent=x.t;
+    const d=document.createElement('p'); d.className='bd'; d.textContent=x.d;
+    bd.append(t,d); c.append(em,bd); g.appendChild(c);
+  });
+  w.appendChild(g); box.appendChild(w);
+  $('deskladder').textContent=Object.keys(deskGot).length+' / '+BADGES.length+' 徽章';
+}
+
+$('deskbtn').onclick=()=>{ $('deskpanel').classList.add('show'); renderDesk(); };
+$('deskclose').onclick=()=>$('deskpanel').classList.remove('show');
+
+/* Start-of-session bookkeeping. */
+(function(){
+  const days=dget('days',[]), t=today();
+  if(days.indexOf(t)<0){ days.push(t); dset('days',days); }
+  if(days.length>=2) award('day2');
+  award('start');
+  if(new Date().getHours()>=23) award('night');
+  setTimeout(()=>{ if(Date.now()-deskStart>=15*60*1000) award('flow'); }, 15*60*1000);
+  /* One body-care nudge every 25 minutes; it only counts as accepted if she
+     presses the button, which is what the 照顾了自己 badge is really for. */
+  setInterval(()=>{
+    const c=CARE[Math.floor(Math.random()*CARE.length)];
+    toast(c[0], c[1], '好，我去', ()=>award('care'));
+  }, 25*60*1000);
+})();
+
 /* ---------- reading aids ---------- */
 let readUnits=[], readAt=-1, focusOn=false, alongOn=false, alongSeq=0;
 
@@ -1002,6 +1182,8 @@ function goUnit(k, opts){
     : '第 '+(k+1)+' / '+readUnits.length+' 段');
   if(!opts||opts.scroll!==false)
     u.en.scrollIntoView({block:'center',behavior:'smooth'});
+  if(k>0) bump('read');
+  if(k===readUnits.length-1) award('done1');
 }
 
 function setFocus(on){
@@ -1031,7 +1213,7 @@ function alongUnit(k, seq){
     if(seq!==alongSeq || !alongOn) return;
     if(i>0) spans[i-1].classList.remove('saying');
     if(i>=spans.length){ alongUnit(k+1,seq); return; }
-    const sp=spans[i++]; sp.classList.add('saying');
+    const sp=spans[i++]; sp.classList.add('saying'); bump('aloud');
     if(!SPEECH){ setTimeout(next, 900); return; }
     const u=new SpeechSynthesisUtterance(sp.textContent);
     if(voice){ u.voice=voice; u.lang=voice.lang; } else u.lang='en-GB';
@@ -1066,7 +1248,7 @@ function openInt(){
   intSec=+load('intsec',0);
   $('intpanel').classList.add('show'); intChips(); intRender();
 }
-$('intbtn').onclick=openInt;
+$('intbtn').onclick=()=>{ award('inte'); openInt(); };
 $('intclose').onclick=()=>$('intpanel').classList.remove('show');
 $('intreset').onclick=()=>{ intAnswered={}; intRender(); };
 
