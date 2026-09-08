@@ -320,8 +320,9 @@ video{width:100%;display:block;background:#000;max-height:100%}
   margin-bottom:calc(var(--rlh) * 0.85em)}
 
 /* The one claim the section exists to deliver. */
-.key{border-left:3px solid var(--good);background:var(--panel2);
-  border-radius:0 8px 8px 0;padding:11px 14px;margin:0 0 16px}
+.key{border-left:5px solid var(--good);
+  background:color-mix(in srgb,var(--good) 13%,var(--panel2));
+  border-radius:0 8px 8px 0;padding:13px 16px;margin:0 0 16px}
 .key p{margin:0;font-size:calc(var(--rf) - 0.5px);line-height:1.7;font-weight:600}
 /* Chinese is left a step lighter: at this size a full sentence at 600 fills in
    and gets harder to read, not easier. */
@@ -364,14 +365,16 @@ video{width:100%;display:block;background:#000;max-height:100%}
 #readbar .spacer{flex:1}
 /* Focus: everything recedes except the unit in hand. Kept at .3 rather than
    hidden so the shape of the page still tells you where you are in it. */
-.readdoc.focus .readsec p{opacity:.3;transition:opacity .12s}
-.readdoc.focus .readsec p.here{opacity:1}
+.readdoc.focus .readsec p{opacity:.22;transition:opacity .12s}
+.readdoc.focus .readsec p.here{opacity:1;
+  background:color-mix(in srgb,var(--accent) 9%,transparent);
+  border-radius:6px}
 .readdoc.focus .readsec h2{opacity:.5}
 .readdoc.focus .readsec.hereSec h2{opacity:1}
-.readsec p.here{box-shadow:-14px 0 0 -11px var(--accent)}
+.readsec p.here{box-shadow:-16px 0 0 -12px var(--accent)}
 .sen{border-radius:3px;padding:0 1px}
-.sen.saying{background:color-mix(in srgb,var(--accent) 26%,transparent);
-  color:var(--fg)}
+.sen.saying{background:color-mix(in srgb,var(--accent) 45%,transparent);
+  color:var(--fg);box-shadow:0 2px 0 var(--accent)}
 .readdoc.focus .readsec p.here.zh{opacity:.85}
 
 /* ---------- 小桌面 ---------- */
