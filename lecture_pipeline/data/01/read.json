@@ -12,7 +12,9 @@
    "丙氨酸 Ala 的侧链就是一个甲基 methyl，是最小的、但仍然具有真实体积的侧链。严格说最小的侧链属于甘氨酸 Gly，只有一个氢；但 Gly 实际上没有侧链，这使它的主链自由度是二十种氨基酸里最大的，也让它在转角 turn 和螺旋末端扮演特殊角色。Ala 之所以适合当作替换基准，恰恰是因为它只切掉 Cβ 以外的部分，主链构象和螺旋倾向基本不变，等于「只改一件事」。换成 Gly 还会额外引入主链柔性，把侧链效应和构象效应混在一起；同理，界面上原本就是 Gly 或 Pro 的位置通常不做扫描。",
    "丙氨酸扫描 alanine scanning 解决的是一个很具体的问题：已知两个分子（比如一条多肽和一个蛋白质）能结合，但还没有解析出复合物结构 complex structure，因此不知道它们是怎么贴在一起的。把你认为处在相互作用界面 interface 上的氨基酸一个一个替换成丙氨酸，对每一个单突变体单独测定亲和力 affinity，就得到每个位点的贡献。换成 Ala 后亲和力大幅下降，说明该残基对互作是关键的；亲和力几乎不变，说明它不关键。hot spot 的常用判据是：突变为 Ala 后结合自由能变化 ΔΔG 达到约 1–2 kcal/mol 以上。经典的 hGH–受体界面研究显示，界面埋藏面积虽大，结合能却集中在少数几个 hot spot 残基上，大部分界面残基突变后几乎没有影响。做这件事的动机之一是进一步提高亲和力——先找出真正形成接触的残基，才知道该改造哪里。",
    "缬氨酸 Val、亮氨酸 Leu、异亮氨酸 Ile 是三个典型的非极性 nonpolar 氨基酸，蛋白质的疏水腔 hydrophobic core 基本上就是由它们组成的。关键限定在侧链：这三者的侧链不能形成任何氢键 hydrogen bond（主链仍然可以），侧链疏水，体积也合适，因此正好填充内部。Val 和 Ile 还是 β-branched，在 Cβ 上就分支，由此产生的空间位阻使它们不利于 α-helix、偏好 β-sheet。Ile 的侧链还含第二个手性中心，所以它和 Thr 是含两个手性碳的两种标准氨基酸。"
-  ]
+  ],
+  "key_en": "Alanine scanning replaces each interface residue with alanine — the substitution that removes the side chain past C-beta without altering backbone conformation — and a loss of 1–2 kcal/mol marks a hot spot. Valine, leucine and isoleucine build the hydrophobic core; beta-branched Val and Ile favour beta-sheet.",
+  "key_zh": "丙氨酸扫描 alanine scanning 把界面残基逐个换成 Ala，因为 Ala 只切掉 Cβ 以外的部分、不改变主链构象和螺旋倾向，等于只改一件事；换掉后 ΔΔG 达到约 1–2 kcal/mol 以上即为 hot spot。Val、Leu、Ile 构成疏水腔 hydrophobic core，其中 β-branched 的 Val 和 Ile 偏好 β-sheet 而不利于 α-helix。"
  },
  {
   "index": 1,
@@ -27,7 +29,9 @@
    "侧链上含有极性原子（例如巯基 -SH、羟基 -OH）的氨基酸被称为极性 polar 氨基酸。这个名称背后的化学定义，用丝氨酸的侧链最容易看清楚：氧夺电子的能力比碳强，所以氧那一端带更多负电荷、另一端带更多正电荷。电荷分布不均匀，这就是极性的含义。由此可推论：带羟基或带氨基的侧链都有极性，因为 O 和 N 的夺电子能力都比 C 强，而且这类氨基酸一般都能形成氢键 hydrogen bond。但要记住，实验里能直接体现出来的其实是亲水性 hydrophilicity；极性只是化学角度描述电荷分布的说法，而生物化学的许多概念本来就来自一群化学家用化学的传统思维去解释生物现象。",
    "半胱氨酸 Cys 和甲硫氨酸 Met 只是「部分极性」，这个范畴本来就没有清晰界限，但它背后的化学值得掌握。Cys 巯基的 pKa 约 8.3，远低于 Ser 羟基的约 13，因此在生理 pH 下已有可观比例以硫醇负离子 thiolate 存在；这正是 Cys 能做亲核催化、能配位 Zn2+（锌指 zinc finger）、能被氧化成二硫键 disulfide bond 的化学基础，而 Ser 需要 His 先帮忙夺走质子。相比之下，Met 的硫是硫醚 thioether：不解离、不带电，也不参与二硫键。在 Kyte–Doolittle 疏水性标度里，Met 和 Cys 其实都被归为疏水残基，Met 还常出现在疏水核心，所以把「含硫＝极性」直接背下来会出错。",
    "丝氨酸 Ser 和苏氨酸 Thr 是典型的亲水氨基酸，侧链都是单羟基取代。羟基的第一个作用是催化水解 hydrolysis：有一整类蛋白酶就叫丝氨酸蛋白酶 serine protease，靠这个羟基工作。但只有一个羟基是不够的：这类酶使用 Ser–His–Asp 催化三联体 catalytic triad，His 夺走 Ser 羟基上的质子，使其成为强亲核体去进攻被切肽键的羰基碳，Asp 则稳定质子化的 His；胰凝乳蛋白酶 chymotrypsin、胰蛋白酶 trypsin、凝血酶 thrombin 共享这同一套机制。羟基更常被考的作用是作为磷酸化 phosphorylation 位点：磷酸基团是一个磷连四个氧，其中一个氧可以被侧链的氧取代，因此 Ser 和 Thr 是最常见的磷酸化受体。真核磷酸化的第三个受体是酪氨酸 Tyr：哺乳动物磷酸化位点中大致 85–90% 是 pSer、约 10% 是 pThr、只有 1–2% 是 pTyr；但 pTyr 几乎主导受体酪氨酸激酶 RTK 的信号通路，也是绝大多数激酶抑制剂类抗肿瘤药的靶点。"
-  ]
+  ],
+  "key_en": "Polarity is uneven charge distribution across a side chain. Cysteine's thiol, pKa about 8.3, is partly ionised at physiological pH and so acts as a nucleophile and forms disulfides, whereas methionine's thioether never ionises and sits in the hydrophobic core; serine and threonine hydroxyls take most phosphate.",
+  "key_zh": "极性 polarity 说的是侧链上电荷分布不均匀。Cys 巯基的 pKa 约 8.3，生理 pH 下已有可观比例解离成 thiolate，因此能做亲核催化、配位 Zn2+、被氧化成二硫键；而 Met 的硫醚 thioether 不解离、不带电，常待在疏水核心里。Ser 和 Thr 的羟基承担了绝大多数磷酸化 phosphorylation，其中 85–90% 是 pSer。"
  },
  {
   "index": 2,
@@ -44,7 +48,9 @@
    "赖氨酸 Lys 和精氨酸 Arg 是碱性较强的一对：侧链都比较长，都带正电，都可以和带负电的 Asp 或 Glu 形成盐桥。Lys 的侧链是 4 个亚甲基 CH2 加一个末端 ε-氨基，Arg 是 3 个亚甲基加一个胍基 guanidinium。Arg 的正电荷离域在胍基的三个氮上，因此几乎在任何生理 pH 下都带电，并且能同时做双齿氢键——这就是 Arg 常出现在核酸结合面和磷酸结合口袋的原因。作为记忆规则：侧链上含氧原子的一般可以带负电，含氨基的一般带正电。",
    "组氨酸 His 是杂环氨基酸中比较特殊的一个。它有三种带电形式，习惯上也被归入碱性、带正电的一类，但真正要记住的数字是咪唑 imidazole 侧链的 pKa 约为 6.0：在 pH 7.0 时只有约 10% 的侧链被质子化，游离 His 的净电荷接近 0。真正的考点是：His 是唯一 pKa 落在生理 pH 附近的侧链，所以它既能起缓冲 buffering 作用，又能在酶活性中心充当广义酸碱催化的质子中转站，例如 Ser–His–Asp 三联体。值得背下来的侧链 pKa 是：Asp 3.9、Glu 4.25、His 6.0、Cys 8.3、Tyr 10.1、Lys 10.5、Arg 12.5。由此可直接推出：在 pH 7 时 Asp/Glu 已完全去质子而带负电，Lys/Arg 完全质子化而带正电，唯有 His 处在可切换状态——这是很多机制题的起点。",
    "脯氨酸 Pro 是带有刚性 rigidity 的氨基酸：它的侧链回接到主链上成为固定的环，不能随意摆动；这个性质在讲三级结构时还会用到。关于水解也有一点应放在这里。水解有三种方式：酸水解、碱水解、酶水解。酸水解比较彻底，但过程中会破坏一部分氨基酸本身：6 M HCl、110 °C、24 h 会完全破坏色氨酸 Trp，并把 Asn/Gln 脱酰胺成 Asp/Glu，所以氨基酸组成分析报告的是 Asx 和 Glx。碱水解能保住 Trp，却会破坏 Ser、Thr、Cys 和 Arg，还会引起消旋 racemization。酶水解条件温和、特异性强，但往往切不完全。"
-  ]
+  ],
+  "key_en": "The side-chain pKa values are Asp 3.9, Glu 4.25, His 6.0, Cys 8.3, Tyr 10.1, Lys 10.5, Arg 12.5, so at pH 7 only histidine is switchable and can shuttle protons. Acid hydrolysis destroys tryptophan and deamidates Asn and Gln, hence Asx and Glx.",
+  "key_zh": "侧链 pKa 要背下来：Asp 3.9、Glu 4.25、His 6.0、Cys 8.3、Tyr 10.1、Lys 10.5、Arg 12.5；所以 pH 7 时 Asp/Glu 带负电、Lys/Arg 带正电，唯有 His 处在可切换状态，既能缓冲又能在广义酸碱催化中充当质子中转站。酸水解会完全破坏 Trp、并把 Asn/Gln 脱酰胺，所以组成分析只能报 Asx 和 Glx。"
  },
  {
   "index": 3,
@@ -61,7 +67,9 @@
    "换算的依据是比尔-朗伯定律 Beer–Lambert law，A = ε·c·l，即吸光度 = 摩尔消光系数 × 浓度 × 光程，光程习惯取 1 cm。蛋白在 280 nm 的 ε 几乎可以直接由序列算出：ε280 ≈ 5500 ×（Trp 数）+ 1490 ×（Tyr 数）+ 125 ×（胱氨酸对数），单位 M⁻¹cm⁻¹；所以规范做法是用 ProtParam 之类的工具按序列计算 ε，而不是套一个通用系数。",
    "OD 是 optical density（光密度），指在某个特定波长下的吸光读数；实验室常说 OD600、OD450，其中最常用的是 OD600。这两种测量要分清楚：细菌的 OD600 和蛋白的 A280 不是一回事。OD600 测到的主要是整个细胞对光的散射 scattering，而不是分子吸收，因此严格说并不服从比尔-朗伯定律，读数超过约 0.6–0.8 就明显偏离线性。正确做法是稀释后测量，再乘回稀释倍数。",
    "同一套化学也是色氨酸荧光的基础：激发约 280 nm、发射约 340 nm。它的发射波长对所处的微环境极其敏感，Trp 埋在疏水核心时蓝移，暴露到水中时红移，因此这是监测蛋白去折叠和配体结合的常规手段。"
-  ]
+  ],
+  "key_en": "A280 measures protein because tryptophan and tyrosine absorb there while phenylalanine peaks at 257 nm, so Beer–Lambert conversion needs an epsilon computed from sequence (5500 per Trp, 1490 per Tyr); a tryptophan-free protein needs BCA or Bradford. OD600 reports cell scattering and leaves linearity above 0.6–0.8.",
+  "key_zh": "A280 之所以能测蛋白，是因为 280 nm 的吸收几乎全部来自 Trp 和 Tyr（Phe 的峰在 257 nm）；按 Beer–Lambert 定律 A = ε·c·l 换算时，ε 应当由序列算出（每个 Trp 5500、每个 Tyr 1490），不含 Trp 的蛋白必须改用 BCA 或 Bradford。OD600 测的主要是细胞散射，超过 0.6–0.8 就明显偏离线性。"
  },
  {
   "index": 4,
@@ -78,7 +86,9 @@
    "样品质量在 nanodrop 上靠 OD260/OD280 判断。干净的蛋白样品这个数值在约 0.6–0.7 之间；作为参照，纯蛋白约 0.57，纯 DNA 为 1.8，纯 RNA 为 2.0。比值远高于 0.8 甚至到 1，就说明有核酸 nucleic acid 污染，因为核酸在 260 nm 吸收很强。这个比值只能回答「有没有核酸」，回答不了蛋白纯不纯、有没有降解——那要靠 SDS-PAGE 和分子筛层析 SEC。",
    "去除污染有两个手段。一是超级核酸酶（benzonase 一类），无差别地把所有核酸消化掉。二是肝素柱 heparin column，一种多糖亲和柱：肝素是高度硫酸化的多糖，模拟 DNA 的负电骨架，所以它结合的是核酸结合蛋白，也就是你的目标蛋白。核酸和不结合的杂质随流穿 flow-through 出去，目标蛋白被保留，再用高盐梯度洗脱。",
    "在氨基酸的化学反应里，要记住的是 Edman 降解：这是商业上现在仍在使用的化学测序方法，从 N 端（氮端）开始一个一个地读残基。它分三步：苯异硫氰酸酯 PITC 在碱性下与游离 α-氨基反应，酸性条件切下末端残基，再鉴定生成的 PTH-氨基酸，然后重复循环。两个限制常考。其一，N 端若被封闭（乙酰化、焦谷氨酸等），反应就完全做不动；其二，每轮效率不到 100%，累积下来实际只能连续读约 30–50 个残基，这正是长蛋白必须先酶切成肽段再测的原因。"
-  ]
+  ],
+  "key_en": "A clean protein reads OD260/OD280 about 0.6–0.7 (pure protein 0.57, DNA 1.8, RNA 2.0); above 0.8 means nucleic-acid contamination. Edman degradation reads residues sequentially from the N-terminus but stops at a blocked N-terminus and, from sub-100% cycle efficiency, only reaches 30–50 residues.",
+  "key_zh": "干净蛋白样品的 OD260/OD280 约在 0.6–0.7（纯蛋白 0.57、纯 DNA 1.8、纯 RNA 2.0），高于 0.8 就说明有核酸污染，但这个比值答不了蛋白纯不纯、有没有降解。Edman 降解从 N 端一个一个往下读，N 端一旦被封闭就完全做不动，而且每轮效率不到 100%，累积下来只能连续读 30–50 个残基。"
  },
  {
   "index": 5,
@@ -95,7 +105,9 @@
    "关于大小，习惯上把胰岛素 insulin 当作最小的蛋白质：人胰岛素 5808 Da，牛胰岛素 5733 Da，共 51 个残基，由 21 个残基的 A 链和 30 个残基的 B 链通过二硫键连接；小于约 6000 Da 的一般算小多肽 polypeptide，但这个界限并不严格。而且「最小的蛋白质」本来也只是一种习惯说法。胰岛素真正之所以经典，是因为它是第一个被完整测定氨基酸序列的蛋白（Sanger，1950 年代），从而证明了蛋白质具有确定的序列。书写惯例上，肽链一般从 N 端（氮端）写到 C 端（碳端）。",
    "肽键存在两种共振式 resonance：碳氧双键 C=O 可以共振成碳氮双键 C=N 的形式，因此肽键介于单键与双键之间，可以理解为「1.5 个键」。定量地说，肽键的 C–N 键长约 1.32 Å，介于 C–N 单键的 1.49 Å 与 C=N 双键的 1.27 Å 之间，双键成分约 40%。相应地，肽键比普通的 C–N 单键更稳定，但没有真正的双键那么稳定，而且它是典型的平面 planar 的键。绕这个键旋转的能垒约 20 kcal/mol，所以 ω 二面角基本被锁在 180°（trans），唯一显著的例外是 X–Pro 肽键，其 cis 形式可占百分之几到十几。平面性真正的后果是：主链上每个残基只剩 φ 和 ψ 两个可转二面角，这正是 Ramachandran plot 能用一张二维图穷尽主链构象的前提。",
    "还有两件事属于这里。双缩脲反应 biuret reaction 在碱性条件下用铜离子 Cu2+ 络合成配合物、呈紫色，在 540 nm 比色定量；它需要至少 2 个肽键，所以三肽以上才显色、二肽不显色。谷胱甘肽 glutathione 是一个特殊的小肽：其中的谷氨酸用 γ-羧基而不是经典的 α-羧基参与成肽键，这是必记的点；它在蛋白变性—复性 refolding 过程中很重要，能解开错误形成的二硫键、促成正确折叠的二硫键。至于测序，Edman 是从 N 端开始的连续测序；现在更常用的是酶裂解 + HPLC + MS 的鸟枪法 shotgun：用不同的酶把蛋白水解成肽段，用高效液相色谱 HPLC 分离，逐段测定分子量与组成，最后按重叠区拼接还原全长序列。肼解法一类的老方法现在已经没人再用。"
-  ]
+  ],
+  "key_en": "Resonance gives the peptide C–N bond about 40% double-bond character (1.32 Å) and a rotation barrier near 20 kcal/mol, so omega is locked near 180° trans and each residue keeps only phi and psi — which is why a two-dimensional Ramachandran plot exhausts backbone conformation. Kjeldahl measures total nitrogen, not protein.",
+  "key_zh": "共振使肽键的 C–N 带约 40% 双键成分（键长 1.32 Å），旋转能垒约 20 kcal/mol，因此 ω 被锁在 180°（trans），每个残基主链只剩 φ 和 ψ 两个可转二面角——这正是一张二维 Ramachandran plot 就能穷尽主链构象的前提。凯氏定氮 Kjeldahl 测的是总氮而不是蛋白，任何含氮杂质都会被折算成蛋白。"
  },
  {
   "index": 6,
@@ -112,7 +124,9 @@
    "二级结构 secondary structure 是多肽链主链 backbone 的折叠方式。之所以定义在主链上，是因为稳定它的氢键全部发生在主链的 N–H 与 C=O 之间，与侧链是什么无关——这也是为什么只看 φ 和 ψ 就能判断是 α-helix 还是 β-sheet。三级结构 tertiary structure 是一整条完整多肽链的折叠，这是最明显的区分：一个三级结构上可以存在许多个相互独立的二级结构，很多个二级结构串起来才形成一条完整的肽链。三级结构则主要靠侧链之间的作用力稳定：疏水作用 hydrophobic effect 是最主要的驱动力，此外还有盐桥、氢键和二硫键；这条「主链 vs 侧链」的区分，是判别你在看哪一级结构最可靠的标准。折叠的信息藏在序列里，这正是 Anfinsen 用核糖核酸酶 A 做的复性实验所说明的：用尿素加 β-巯基乙醇变性、打开四对二硫键，再除去变性剂，蛋白便自发复性，活性得以恢复。",
    "四级结构 quaternary structure 描述寡聚 oligomeric 蛋白各亚基之间的空间相对位置排布。并不是所有蛋白都有，因为不是所有蛋白都是寡聚形式的；只有当好几个单体（即好几个三级结构）通过相互作用连成寡聚体时，才谈得上四级结构。有四级结构的蛋白一般都对应某些特殊的生物学功能，因为生物不会白白花费能量去做没有意义的事情；血红蛋白 hemoglobin 就是后面要详细讲的例子。超二级结构 supersecondary structure 是一个较古早、现在已不常提的概念，指两三个二级结构以某种特殊方式排列起来，但还没有达到「一整条多肽链折叠」的三级结构层次；这类排列就是 motif，例如 βαβ、helix-turn-helix、β-hairpin、Greek key。motif 不等于结构域 domain。domain 指能独立折叠、常常能独立行使功能的模块，通常 100–200 个残基，可以被剪切出来单独表达；而 motif 只是几个二级结构单元的固定排列，本身并不要求能独立折叠；一个结构域里通常含有多个 motif。",
    "SARS-CoV-2 的聚合酶 RdRp 是典型的有四级结构的蛋白，由 nsp12 与 nsp7 以及两拷贝 nsp8 组成复合物，这也是它比较难表达制备的原因。生化上把聚合酶的形状比作一只右手，包含三个标准部分：fingers 结合进入的核苷三磷酸 NTP 和模板链，palm 是催化中心、含两个金属离子（two-metal-ion mechanism），thumb 夹住已经合成好的双链产物。瑞德西韦 remdesivir 就是作用于这个催化中心的核苷类似物。"
-  ]
+  ],
+  "key_en": "Secondary structure is backbone conformation, stabilised entirely by backbone N–H to C=O hydrogen bonds, while tertiary structure is one whole chain folded by side-chain forces, hydrophobic effect foremost — backbone versus side chain is the reliable test. Quaternary structure exists only when several separate chains associate.",
+  "key_zh": "二级结构 secondary structure 是主链 backbone 的构象，稳定它的氢键全部发生在主链 N–H 与 C=O 之间，与侧链无关；三级结构 tertiary structure 是一整条多肽链的折叠，靠侧链之间的作用力稳定，其中疏水作用 hydrophobic effect 是主要驱动力——「主链 vs 侧链」是判别层级最可靠的标准。只有多条独立链缔合成寡聚体时，才谈得上四级结构。"
  },
  {
   "index": 7,
@@ -129,7 +143,9 @@
    "所以在病毒里,聚合酶不是一个酶而是一个 complex,因为病毒 mRNA 必须带上 5' cap 和 poly(A) 尾巴,宿主的真核翻译机器才会识别它。SARS-CoV-2 的加帽是分工完成的:nsp12 的 NiRAN 结构域负责 GTP 转移这一步,nsp14 做 N7-甲基化,nsp16(以 nsp10 为辅因子)做 2'-O-甲基化,nsp13 还兼有 RNA 三磷酸酶活性。而 poly(A) 尾巴根本不是转录后由酶加上去的——它是从负链上的一段 poly(U) 模板复制出来的。",
    "这些功能各自占据一个 domain,也就是可以独立折叠的三级结构单位;又因为它们在时间和空间上前后相接,承载它们的多肽链会组装成寡聚体 oligomer。这里的术语必须用准:四级结构 quaternary structure 指两条或以上独立的多肽链,也就是亚基 subunit,通过非共价作用结合在一起。同一条链上折叠出来的多个 domain,无论多少个,都仍然只是三级结构。多结构域不等于多亚基,这个区别是常考的陷阱。",
    "寡聚体规模很小,一般不超过十个亚基;英文还区分同源寡聚 homo-oligomer(同一种链的多个拷贝)和异源寡聚 hetero-oligomer(不同的链)。SARS-CoV-2 复制复合物的核心正是 hetero-oligomer 的教科书例子:一份 nsp12、一份 nsp7 加两份 nsp8,构成一个异源四聚体 heterotetramer。"
-  ]
+  ],
+  "key_en": "Quaternary structure requires two or more separate polypeptide chains held together non-covalently; however many domains fold within a single chain, that remains tertiary structure. The SARS-CoV-2 replication core is a textbook hetero-oligomer: one nsp12, one nsp7 and two copies of nsp8, a heterotetramer.",
+  "key_zh": "四级结构 quaternary structure 要求两条或以上独立的多肽链（亚基 subunit）通过非共价作用结合；同一条链上折叠出多少个 domain 都仍然只是三级结构，多结构域不等于多亚基，这是常考的陷阱。SARS-CoV-2 复制复合物的核心正是 hetero-oligomer 的教科书例子：一份 nsp12、一份 nsp7 加两份 nsp8，构成异源四聚体。"
  },
  {
   "index": 8,
@@ -146,7 +162,9 @@
    "后半个问题的常规解法不是分别纯化再混合,而是共表达 co-expression:昆虫细胞 baculovirus/Sf9 的 MultiBac 系统,或大肠杆菌里的多顺反子、双质粒共转,让各亚基在同一个细胞里同时折叠、边合成边组装(co-translational assembly),并辅以共表达分子伴侣 chaperone、可溶性融合标签和降低诱导温度。即便如此,人为的体外组装也做不到活细胞那样精妙——体内基本能百分之百正确组装,人为组装最后总有一部分是错的。猴痘病毒 monkeypox 的聚合酶就是最典型的例子:它难就难在组装得不完全。假如这个酶由 A、B、C 三个组分构成,有些颗粒只是 A+B(C 没有正确贴上去),另一些颗粒则是 B+C。",
    "这正是冷冻电镜 cryo-EM 派上用场的场合。它不需要结晶,而多亚基、柔性、部分组装的复合物恰恰最长不出晶体。单颗粒流程是:冻样 → 采集照片 micrographs → 运动矫正 motion correction 与 CTF 估计 → 挑颗粒 particle picking → 做 2D classification,看到蛋白在不同角度下的样貌,并剔除冰、碎片和坏颗粒 → 建初始模型 → 3D classification → refinement → 用 gold-standard FSC = 0.143 判定分辨率。",
    "对一个组装不完全的样品来说,起决定作用的一步是 3D classification:它能在计算上把组装完整和不完整的颗粒分开——晶体学做不到这一点,样品不均一时要么长不出晶体,要么只能得到一个被平均掉的模型。术语上还有一点要留神:亚基 subunit 是一条独立的多肽链,而结构域 domain 是一条链内可以独立折叠的单位。结构图上每个颜色通常是一个 domain,真正决定有没有四级结构的是亚基的数目。"
-  ]
+  ],
+  "key_en": "Multi-subunit complexes are hard to produce because single subunits are unstable alone, so they are co-expressed and assembled inside one cell rather than purified separately and mixed. Cryo-EM suits them because it needs no crystals, and 3D classification separates fully from partly assembled particles computationally.",
+  "key_zh": "多亚基复合物难做，是因为单个亚基单独存在时往往不稳定，所以常规解法是共表达 co-expression——让各亚基在同一个细胞里边合成边组装，而不是分别纯化再混合。cryo-EM 正适合这类样品：它不需要结晶，而且 3D classification 能在计算上把组装完整和不完整的颗粒分开，这是晶体学做不到的。"
  },
  {
   "index": 9,
@@ -163,7 +181,9 @@
    "这样一篇文章能发 Science,是因为在此之前没有人解析过这个病毒的 polymerase,而真正的难点是没有人表达纯化出有活性的酶。文章本身图不多、实验也不多,工作量全在摸条件上:要试不同的方法、不同的 buffer。蛋白表达纯化到今天仍然很玄学,靠的是经验和不断试错——像高福院士那样的实验室,会同时派四五个人做同一个没人表达过的蛋白,最后可能只有一两个经验丰富或运气好的人做出来,别人照着基本相同的方法就是做不出来。",
    "3D classification 把拍到的所有颗粒分成若干类,这里是四类。其中两类,约占 13% 和 14%,下面一段的密度是缺失的;另外两类下面这一段则很清楚。这些百分比是颗粒数的占比,反映样品里处于某个组装状态或构象的颗粒有多少。它既不是分辨率也不是活性比例,而且冰层厚度、取向偏好 preferred orientation、挑颗粒的偏差都会影响这些数字,所以只能当作定性证据,不能当作严格的定量。",
    "密度缺失同样有两种读法:这个亚基或结构域真的没有组装上去,或者它组装上了但高度柔性,在多颗粒平均时被抹平了。两者在图上长得一模一样,要区分开必须靠交联质谱 XL-MS、样品的 SDS-PAGE 组分分析或者生化实验。但无论是哪一种,结论都成立:难就难在组分多。做出一个蛋白已经不容易,这里还要保证每个组分都正确折叠,并且都处在恰当的环境里,才能形成一个有功能的复合物。"
-  ]
+  ],
+  "key_en": "An extension assay proves activity: template, primer with a free 3'-OH, the right substrates (dNTPs for a DNA polymerase, NTPs for an RdRp) and Mg2+, with no-enzyme and catalytic-Asp-to-Ala controls excluding host polymerase. 3D-classification percentages are particle fractions, and missing density means non-assembly or flexibility.",
+  "key_zh": "验证活性做的是延伸实验 extension assay：模板、带游离 3'-OH 的引物、正确的底物（DNA 聚合酶用 dNTP，RdRp 用 NTP、产物含 U）和 Mg2+，再用不加酶与催化位点 Asp→Ala 突变体两个对照排除宿主聚合酶污染。3D classification 给出的百分比只是颗粒数占比；密度缺失既可能是这个亚基没组装上，也可能是它太柔性被平均掉了。"
  },
  {
   "index": 10,
@@ -180,7 +200,9 @@
    "绕开波长限制的经典办法是 X 射线衍射 X-ray diffraction。1 埃 angstrom 等于 0.1 纳米,实际使用的光源波长大约在 1.0 到 1.54 埃之间,Cu K-alpha 是 1.54 埃。真实的蛋白晶体结构常见分辨率是 1.5 到 3 埃;要真正看到氢原子,需要优于约 1.0 埃的原子分辨率,现实中很少见,常规结构里画出来的氢原子是按几何关系计算加上去的,不是观测到的。最终达到的分辨率取决于衍射数据的质量和晶体的有序程度,并不等于光源的波长。X 射线仍然是目前分辨率比较高的方法之一。",
    "另一条测定高级结构的经典路线是核磁共振 NMR,它可以直接在溶液里测,这是它最大的好处。它检测的是氢原子和碳原子的信号,蛋白一旦太大,信号太多就难以归属;实用的分子量上限大约是 30 到 40 kDa,用氘代标记和 TROSY 技术还能往上推。这个方法比较难、用得也比较少,但它独有的价值是能给出构象系综和动力学信息,而这是晶体学看不到的。",
    "再往后是一些给不出三维结构、但能大概知道组成的方法:紫外吸收 UV、荧光 fluorescence,以及基于同样原理的圆二色谱 circular dichroism(CD)。CD 测的是二级结构的含量比例——一个蛋白里 alpha helix 和 beta sheet 各占百分之多少——仅此而已:它不给任何原子坐标,也不告诉你哪一段是螺旋。远紫外区 190 到 250 nm 反映主链构象,alpha helix 在 208 nm 和 222 nm 有双负峰,beta sheet 在约 218 nm 有单负峰,无规卷曲在约 195 nm 有负峰;近紫外区 250 到 320 nm 反映芳香族侧链所处的环境,可用来判断三级结构是否折叠好。这份清单确实偏古早:今天大复合物和膜蛋白基本交给冷冻电镜 cryo-EM,它不需要结晶,常规能到 2 到 3 埃;而 AlphaFold 一类工具给出的是模型,是预测,预测不能替代实验测定。"
-  ]
+  ],
+  "key_en": "Light microscopy stops near 200 nm by the Abbe criterion d = lambda/(2NA), so structure needs X-ray diffraction, whose 1.5–3 Å resolution depends on crystal order rather than source wavelength, or NMR in solution up to roughly 30–40 kDa. CD gives only secondary-structure percentages, no coordinates.",
+  "key_zh": "光学显微镜受 Abbe 判据 d = λ/(2NA) 的物理限制，看不到约 200 nm 以下的东西；要看结构就得靠 X 射线衍射（常见 1.5–3 Å，最终分辨率取决于晶体的有序程度和数据质量，而不是光源波长），或直接在溶液里做的 NMR（实用上限约 30–40 kDa，但能给出构象系综与动力学）。CD 只能给出二级结构的百分比，给不出任何原子坐标。"
  },
  {
   "index": 11,
@@ -199,7 +221,9 @@
    "氢键之所以重要,靠的是数量:一个蛋白里氢键可能上千,而盐桥只有几十个。即便如此,对球状蛋白折叠贡献最大的单一因素仍然是疏水作用 hydrophobic effect,而且机制是熵驱动的:非极性侧链暴露在水中时,会迫使周围的水分子排成有序的笼状结构,把这些侧链埋进核心可以释放这些水,溶剂熵增,自由能变化因而被推向负值。折叠时形成的每一个链内氢键,都要以打断一个与水的氢键为代价,所以单个氢键的净收益有限。范德华力单个来看最弱,不过在堆积紧密的核心里累加起来也不可忽略。",
    "二硫键 disulfide bond 单独成一类,因为它是共价键。它由两个半胱氨酸 cysteine 的巯基氧化生成,需要氧化性的区室:真核在内质网 ER 里由 PDI 催化,细菌在周质 periplasm 里由 Dsb 系统催化。细胞质是还原环境,充满谷胱甘肽 GSH,胞质蛋白因此几乎没有二硫键——这正是分泌型蛋白在大肠杆菌胞质中表达时常常形成包涵体的原因。链间二硫键,比如抗体的重链-轻链、重链-重链连接,则起到稳定四级结构的作用。",
    "问二硫键影响蛋白质的哪一级结构,中文教材的答案是一级和三级。算一级是定义约定:一级结构 = 氨基酸序列 + 二硫键的位置,而这个键并不改变氨基酸连接的先后顺序,所以这是定义上的归类,不是重排。不算二级,是因为二级结构就是 alpha helix、beta sheet 和无规卷曲那几种,都不涉及二硫键。算三级,是因为二硫键通常正是在这一层次上起作用。很多英文教材则只把序列算作一级结构,而把二硫键的贡献归到三级或四级,所以用英文答题时最稳妥的做法是写清楚它是链内 intrachain 还是链间 interchain。"
-  ]
+  ],
+  "key_en": "The largest single contribution to folding is the hydrophobic effect, and it is entropic: burying non-polar side chains releases the ordered water caging them. A salt bridge nets only a few kJ/mol when solvent-exposed but is much stronger buried, and disulfides, being covalent, need an oxidising compartment.",
+  "key_zh": "对球状蛋白折叠贡献最大的单一因素是疏水作用 hydrophobic effect，机制是熵驱动的：把非极性侧链埋进核心可以释放包在它们外面的有序水，溶剂熵增把自由能变化推向负值。盐桥 salt bridge 暴露在表面时净贡献常常只有几 kJ/mol，埋在低介电的核心里才明显更强；二硫键因为是共价键，形成需要氧化性区室。"
  },
  {
   "index": 12,
@@ -216,7 +240,9 @@
    "精细的测定确立了一件事:这两个角必须符合 Ramachandran plot(拉氏图)。这张图纵坐标是 psi、横坐标是 phi,主链上每一个残基都必须落在图上的某些区域内。淡色区代表这个二面角在特殊情况下可以扭转到的位置,即允许区 allowed;红色区代表比较 favorable 的区域,二面角落在这里时能量比较低。禁区不是什么神秘规则,就是硬球位阻:某些 phi/psi 组合会让相邻肽平面上的羰基氧、酰胺 NH 和 C-beta 原子相互碰撞。这也是为什么对非甘氨酸残基来说,允许区只占整个 (phi, psi) 平面的约四分之一——Ramachandran 当年正是用硬球模型算出这张图的,并不是先有实验统计。",
    "有三个地标坐标值得背下来,因为考题可能直接给一组 (phi, psi) 让你判断是哪种二级结构:右手 alpha helix 约在 (-57, -47),位于左下象限;反平行 beta sheet 约在 (-139, +135),位于左上象限;左手 alpha helix 约在 (+57, +47),是右上角那个小岛,几乎只有甘氨酸能占据。另有两个特殊残基。甘氨酸 Gly 的侧链只是一个氢,空间位阻最小,允许区大得多,能进入别的残基进不去的区域,所以结构验证软件通常把 Gly 单独画一张拉氏图。脯氨酸 Pro 的侧链环回到主链氮上,把 phi 锁定在约 -60 度正负 25 度,是典型的螺旋终止子 helix breaker,常出现在转角处。",
    "这一切背后只有一条道理:多肽链最终采取的构象是自由能最低的那一个。一个应变的、高能量的构象需要额外做功去维持,所以只要没有别的补偿,体系就会自发弛豫到能量更低的排布——落在图上,就是那些 favorable 的区域。"
-  ]
+  ],
+  "key_en": "Ramachandran's forbidden regions are plain hard-sphere sterics between adjacent peptide planes, which leaves non-glycine residues about a quarter of the plane. Memorise the right-handed alpha-helix near (−57, −47), antiparallel beta-sheet near (−139, +135), and left-handed helix at (+57, +47), almost exclusively glycine.",
+  "key_zh": "拉氏图的禁区不是什么神秘规则，就是硬球位阻：某些 φ/ψ 组合会让相邻肽平面上的羰基氧、酰胺 NH 和 Cβ 撞在一起，所以非甘氨酸残基的允许区只占整个平面约四分之一。三个地标坐标要背下来：右手 α helix 约 (−57, −47)、反平行 β sheet 约 (−139, +135)、左手 α helix 约 (+57, +47)，最后那个几乎只有 Gly 能占据。"
  },
  {
   "index": 13,
@@ -233,7 +259,9 @@
    "即便是一个已经修得比较好、并被验证服务器接受的结构,也可能还留着一两个 outlier,而它们出现在什么位置本身就有信息。一个已经比较贴近允许区的点,往往属于处在 loop 区的残基——那是一段既不是 alpha helix 也不是 beta sheet 的无定形区域,软件在这里根本看不到二级结构。解释在于:氨基酸之间是相互制约、相互协调的,正是这种协调才让所有 phi/psi 都落在良好区间;而柔性 loop 上的残基很容易摆动,也容易受到溶剂水分子的推挤,所以更容易落进不良区域。",
    "loop 之所以如此,是因为没有规则的氢键网络把它的主链锁住:B 因子(温度因子)高、密度弱,常常有多个构象共存——在 NMR 的结构系综里,同一段 loop 会画出一大把不同的走向。因此 loop 区的原子坐标,以及任何建立在这些坐标上的结论(比如某个位点是否参与结合),都要留余地。反过来,恰恰是这种柔性让 loop 常常成为底物结合位点、变构位点和抗体识别位点。",
    "但这并不意味着应该把每一个 outlier 都强推进 favorable 区。旋转这个残基处的那根键,phi 和 psi 会同时改变,只要稍微转一点点就能把它送回理想位置——可回去以后又可能跟旁边的残基产生额外的互斥,这往往就足以成为不去动它的理由。而且在分辨率不高时,电子密度或 EM 密度本身并不足以唯一确定主链角度,强行修出一张完美的拉氏图,等于把模型的先验偏见塞进数据里,那属于 over-fitting,表现为 R_free 不降反升。真正的 outlier 有时也有意义:酶活性中心的残基常常处于应变构象 strained conformation,这份张力由结合能补偿,是催化的一部分,不该被抹平。归根到底,体系走向最低的是 Gibbs 自由能,delta G = delta H - T x delta S,而不是单看能量最低:折叠本身让多肽链的构象熵下降,之所以还能自发进行,是因为疏水作用释放有序水带来的溶剂熵增补偿有余。"
-  ]
+  ],
+  "key_en": "Refinement adjusts side-chain orientations and phi/psi, with standards of at least 98% favoured and about 0.05% outliers, but the outliers that remain usually sit on flexible loops. Forcing them into favoured regions injects the model's prior into the data — over-fitting, visible as R_free rising.",
+  "key_zh": "精修 refinement 主要调两样东西：侧链朝向和 φ/ψ；现行标准是 Ramachandran favored ≥98%、outlier 在约 0.05% 以下。但剩下的一两个 outlier 多半落在柔性 loop 上，因为那里没有规则氢键网络锁住主链。硬把每个 outlier 推进 favorable 区，等于把模型的先验塞进数据，属于 over-fitting，表现为 R_free 不降反升；而酶活性中心的应变构象本来就是催化的一部分。"
  },
  {
   "index": 14,
@@ -248,7 +276,9 @@
    "组成肽键的那一组原子是共平面的，这个刚性单元叫酰胺平面 amide plane，而一条多肽链就是一串首尾相接的平面。能转动的只有连接相邻两个平面的那两根键，绕它们的扭转角 φ 和 ψ 可以看成相邻两个酰胺平面之间的二面角 dihedral angle。改变它们从来不是局部动作：它会扰动别处的非共价相互作用 non-covalent interactions，因为蛋白里每个原子都在制约别的原子，而侧链间的相互作用反过来又把 φ/ψ 固定在原处。拉氏图 Ramachandran plot 上值得背下的坐标是：右手 α helix 在 φ ≈ −57°、ψ ≈ −47°；反平行 β sheet 在 −140°、+135° 附近；左手 α helix 在 +57°、+47°，那个区域正常只对甘氨酸 glycine 开放。",
    "二级结构 secondary structure 的严格定义是主链局部的、有规律的构象，够格的只有 α helix 和 β sheet；自然界中几乎所有规则二级结构都属于这两类。但这不等于说它们占满了整个蛋白。在典型的球状蛋白里，只有约 50%–60% 的残基处于规则二级结构中，其余是 turn 和 loop。人体蛋白中的螺旋一定是右手的，因为天然蛋白由 L 型氨基酸 L-amino acids 构成，L 构型决定了旋向；某些细菌确实能掺入 D 型氨基酸 D-amino acids，因而可以形成左手螺旋。",
    "几何由两个数决定。每上升一整圈约 0.54 nm，即螺距 pitch 5.4 Å；每个氨基酸沿轴上升约 0.15 nm，即 1.5 Å，因此螺旋每圈 3.6 个残基。主链氢键的编号是 i → i+4：第 i 位残基的 C=O 与第 i+4 位残基的 N–H 成氢键，闭合成一个 13 元环，所以 α helix 也写作 3.6₁₃。i → i+3 是 3₁₀ helix，i → i+5 是 π helix，两者都存在但少见，通常只作为 α helix 两端的帽子。所有这些氢键都埋在螺旋内部、沿轴自上而下，而每一个侧链都朝向外部。正是这种侧链外向的排布使 α helix 成为极好的识别表面，也是为什么抗体接触抗原的区域常常就是几段螺旋。"
-  ]
+  ],
+  "key_en": "An alpha-helix has 3.6 residues per turn, rising 1.5 Å per residue for a 5.4 Å pitch, held by i→i+4 backbone hydrogen bonds closing a thirteen-atom ring (3.6-13); those bonds run inside along the axis while every side chain points outward, which makes helices good recognition surfaces.",
+  "key_zh": "α helix 每圈 3.6 个残基，每个残基沿轴上升 1.5 Å、每圈螺距 pitch 5.4 Å，靠 i → i+4 的主链氢键维持——第 i 位的 C=O 接第 i+4 位的 N–H，闭合成一个 13 元环，所以也写作 3.6₁₃。这些氢键全部埋在螺旋内部沿轴走，而每一个侧链一律朝外，这正是 α helix 适合充当识别表面的原因。"
  },
  {
   "index": 15,
@@ -263,7 +293,9 @@
    "构成 α helix 的一般是侧链比较小、带电荷比较少的氨基酸，标准例子是丙氨酸 alanine、缬氨酸 valine 和异亮氨酸 isoleucine。沿着螺旋，相邻残基的侧链会互相碰撞、互相制约，这种侧向堆积也是把结构固定住的因素之一。有两个残基是公认最差的成螺旋者，即经典的 helix breaker：甘氨酸 glycine 和脯氨酸 proline。螺旋倾向 helix propensity 大致排序为 Ala > Leu > Met > Glu > Gln … 一路到 Gly，最后是 Pro，丙氨酸最好，脯氨酸最差。",
    "脯氨酸破坏性更强，理由有两条。第一条也是决定性的：它的氮原子被锁在五元吡咯烷环里，是仲胺，因此该位置的主链上根本没有 N–H，无法作为氢键供体，i → i+4 这个氢键梯子上就缺了一格。第二条：环把 φ 角锁死在约 −60°，剥夺了主链摆出螺旋扭转角的自由度。甘氨酸使螺旋不稳则是相反性质的原因。它的侧链只是一个氢原子，小到与邻居几乎没有任何接触；但更标准的解释是热力学的：没有 Cβ，它在拉氏图上可及的区域最大，该位置在展开态时构象熵极高，把它折进螺旋所付出的熵代价比任何其他残基都大。",
    "这两条排除都不是绝对的——「绝对不会有」是记忆口号，不是事实。脯氨酸实际上常见于螺旋的第一圈和 N 端帽 N-cap，那里本来就没有 i−4 的氢键伙伴，缺一个 N–H 并不吃亏；在跨膜螺旋中它会造成一个约 20° 的 kink，如 GPCR 中的 proline kink。不过它最常见的去处在别处：接下来要讲的 β 转角 β-turn 和各种 loop 区域——那里要的正是一个自带的折角。"
-  ]
+  ],
+  "key_en": "Proline breaks a helix because its ring nitrogen carries no backbone N–H to donate, so one rung of the i→i+4 ladder is missing, and phi is locked near −60°. Glycine destabilises helices for the opposite reason: lacking C-beta, its unfolded state has high conformational entropy.",
+  "key_zh": "脯氨酸 Pro 破坏 α helix，决定性的理由是它的氮被锁在五元吡咯烷环里、是仲胺，主链上根本没有 N–H 可以供氢键，i → i+4 的梯子就缺了一格；其次是环把 φ 锁死在约 −60°。甘氨酸 Gly 则是相反性质的理由：没有 Cβ，它在拉氏图上可及区域最大，展开态构象熵极高，把它折进螺旋付出的熵代价比任何残基都大。"
  },
  {
   "index": 16,
@@ -280,7 +312,9 @@
    "片层分两类。平行 parallel 时两条链走向一致，反平行 antiparallel 时走向相反，后果体现在氢键上。反平行的氢键接近直线，且基本与链垂直对齐，因此单键更强、片层更稳定，可以只有两条链，常由 β 发夹 β-hairpin 形成。平行的氢键是斜过来的、被扭曲，稳定性较差，通常需要五条链以上，而且多埋在蛋白内部。考试里一般认出「这是 β sheet」就够了，但这个分类是教科书标准内容，应当知道。",
    "β sheet 最重要的功能是构建疏水腔 hydrophobic core：片层的一面可以全部由亮氨酸 leucine、缬氨酸 valine、异亮氨酸 isoleucine、苯丙氨酸 phenylalanine 构成。由于 β 链上相邻残基的侧链交替指向两面，这样一个疏水面只需在序列上每隔一个残基放一个疏水氨基酸，即 i、i+2、i+4。与螺旋的对比是判读序列的常用工具：α helix 每圈 3.6 个残基，所以两亲螺旋 amphipathic helix 的疏水残基是每隔 3–4 位出现一次。经典安排是两层 β sheet 相对，围出一整个疏水腔，刚性很强，构成一个典型的结构域；朝外的那一面可以是疏水的也可以是亲水的，取决于序列。",
    "β sheet 也可以跨分子形成。淀粉样纤维 amyloid fibril 的核心就是 cross-β 结构：链间氢键把不同的蛋白分子连成一根可以无限延伸的 β sheet，见于阿尔茨海默病的 Aβ、朊病毒 prion 和胰岛淀粉样多肽。另一个值得知道的排布是 β barrel：革兰阴性菌外膜的孔蛋白 porin 把片层卷成闭合的桶，外面疏水、内腔亲水，与球状蛋白正好相反。"
-  ]
+  ],
+  "key_en": "Beta-sheet hydrogen bonds are backbone-to-backbone between adjacent strands, with side chains alternating above and below, so a hydrophobic face is built by placing hydrophobic residues at i, i+2, i+4. Antiparallel bonds are near-linear and stronger; parallel ones are slanted and usually need five or more strands.",
+  "key_zh": "β sheet 的氢键完全发生在相邻链的主链之间（一条链的 N–H 对另一条链的 C=O），侧链不参与，而是交替伸向片层的上下两面；因此只要在序列上每隔一位放一个疏水残基（i、i+2、i+4），就能造出一整面疏水面来构建疏水腔 hydrophobic core。反平行氢键接近直线因而更强，两条链即可成片；平行氢键是斜的、被扭曲，通常需要五条链以上。"
  },
  {
   "index": 17,
@@ -299,7 +333,9 @@
    "一段链可以转过 180° 却仍然不是 β 转角：如果它既不含甘氨酸也不含脯氨酸，也没有氢键把它固定住，那就只是一段 unstructured 区。这个判据值得明说：β 转角是被主动定型的，靠刚性或某种特定的相互作用；而 unstructured 区没有自己的维持力，形状是被周围因素被动决定的。实际上结构生物学口语里很少说 unstructured，通用的说法是 flexible loop 灵活环区。",
    "无规卷曲 random coil 指完全没有结构、柔性地飘在水里的一段；它同样由一级结构决定——这段序列不含任何能形成 α helix 或 β sheet 的内容。不过这个名字骗人。在一个已折叠的蛋白里，这样的区域通常有确定、可重复的构象，晶体结构里能解出坐标；它缺的只是周期性的规律，所以应理解为「无规则」而不是「随机」。真正意义上的 random coil 是变性后的多肽链，构象在系综中随机采样。Ω 环 omega loop 也属于这一类：肽链直走—鼓出一个套索—再直走，首尾两个 Cα 靠得很近；Leszczynski 与 Rose 于 1986 年在蛋白结构中定义并统计，它是常见元件，平均每个蛋白有若干个，常常构成酶活性位点的盖子或抗体的互补决定区 CDR。",
    "turn 和 loop 很少被提及，却常常是蛋白最关键的部分：抗体的抗原结合位点 CDR 全部是 loop，酶的底物特异性主要由活性口袋周围的 loop 决定，蛋白酶切位点、磷酸化位点和降解信号也大多位于柔性 loop 上。在晶体结构里，这些区域的 B 因子最高，甚至会因为没有电子密度而整段缺失。「结构里看不见」不等于「不存在」，通常正相反——它说明这一段很灵活。"
-  ]
+  ],
+  "key_en": "A beta-turn is four residues, i to i+3, with a hydrogen bond from C=O of i to N–H of i+3 and the two alpha-carbons under 7 Å apart, proline usually at i+1 and glycine obligatory at i+2 of a type II turn. An unheld reversal is just a flexible loop.",
+  "key_zh": "β 转角 β-turn 的定义比「拐个弯」严格：四个残基 i 到 i+3，第 i 位的 C=O 与第 i+3 位的 N–H 成一个氢键，两端 Cα 距离小于 7 Å，链方向反转约 180°；type I 转角里 Pro 常在 i+1，type II 转角里 i+2 位必须是 Gly。若一段链转了 180° 却既不含 Gly/Pro 也没有氢键固定，那只是被周围被动定形的 flexible loop。"
  },
  {
   "index": 18,
@@ -316,7 +352,9 @@
    "α 角蛋白 α-keratin 完全由相互缠绕的 α helix 构成，教科书例子是人的头发。基本单元是二聚体：两条右手 α helix 相互缠绕成一个左手的卷曲螺旋 coiled coil，靠七肽重复 heptad repeat a-b-c-d-e-f-g 中 a、d 两位的疏水残基沿界面咬合固定。二聚体再组装成原纤维 protofilament、微纤维 microfibril，最后形成发丝。α 角蛋白富含半胱氨酸 cysteine，这些 cysteine 在相邻螺旋之间形成交联的二硫键 disulfide bond；正是这种共价交联给了头发机械强度。相对地，β 角蛋白 β-keratin 由 β sheet 构成，见于蚕丝丝心蛋白 silk fibroin、羽毛和爬行动物鳞片。",
    "烫发就是有意识地跑一遍这套化学。第一剂是还原剂 reducing agent，通常是巯基乙酸铵 ammonium thioglycolate，呈碱性，所以有氨味；它把螺旋之间的二硫键打开，头发变得非常软。定型之后，第二剂即「中和剂」是氧化剂 oxidizing agent，过氧化氢 H₂O₂ 或溴酸钠 sodium bromate，让打开的二硫键在人为改造过的新位置重新形成，发型就固定下来。直发膏用的是同一套化学，只是定型方向不同。气味来自这些试剂中的硫；实验室里巯基乙醇 β-mercaptoethanol 最臭，DTT 相对好一些，DTT 是还原二硫键的标准试剂，有微量毒性，用在头发上的肯定不是它。",
    "新长出来的头发不受影响，这就是为什么烫发会「长出来」。哪几对半胱氨酸配对，取决于它们在一级结构上的位置以及毛囊挤出发丝时的几何；烫发这两样都没改变，只是临时换了一组配对关系，所以每一段新发都以原本的形态长出。同理，天然的卷直程度主要由毛囊截面形状和交联密度决定，是遗传性状。二硫键的形成还需要氧化环境：真核细胞中它们在内质网 ER 腔内由蛋白二硫键异构酶 PDI 催化形成，而胞质 cytosol 由谷胱甘肽 glutathione 维持还原状态，正常不含二硫键。因此抗体、胰岛素这类分泌蛋白和细胞外蛋白富含二硫键，而胞内蛋白很少；也因此 SDS-PAGE 上样缓冲液里要加 DTT 或 β-ME，正是为了拆掉这些键。"
-  ]
+  ],
+  "key_en": "alpha-Keratin is two right-handed helices wound into a left-handed coiled coil through the hydrophobic a and d positions of a heptad repeat, cross-linked by cysteine disulfides that give hair its strength. A perm reduces those disulfides, reshapes the hair, then re-oxidises them in new positions.",
+  "key_zh": "α 角蛋白 α-keratin 的基本单元是两条右手 α helix 相互缠绕成一个左手卷曲螺旋 coiled coil，靠七肽重复 heptad repeat 中 a、d 两位的疏水残基沿界面咬合固定；相邻螺旋之间由 cysteine 形成交联的二硫键，头发的机械强度正来自这些共价交联。烫发就是先用还原剂打开二硫键、把头发定型，再用氧化剂让它们在新位置重新形成。"
  },
  {
   "index": 19,
@@ -333,7 +371,9 @@
    "序列是严格的 (Gly-X-Y)ₙ 重复，X 常为脯氨酸 Pro，Y 常为 4-羟脯氨酸 4-Hyp。甘氨酸每隔两位必须出现一次，因为三股螺旋的轴心极其拥挤，只有氢原子那么大的侧链才塞得进去。这就是为什么胶原蛋白不仅能容忍、而且必须依赖普通 α helix 恰恰无法容纳的那两种残基，也是为什么序列容不得差错：任何一个 Gly 被突变成别的残基都会破坏整根纤维，这正是成骨不全症 osteogenesis imperfecta（脆骨病）的分子基础。",
    "羟脯氨酸 hydroxyproline 和羟赖氨酸 hydroxylysine 不是由 tRNA 掺入的。脯氨酸先正常掺入，随后由脯氨酰-4-羟化酶 prolyl-4-hydroxylase 做翻译后修饰；该酶需要 Fe²⁺、α-酮戊二酸 α-ketoglutarate、O₂ 和抗坏血酸 ascorbate，维生素 C 的作用是把酶中被氧化的 Fe³⁺ 还原回 Fe²⁺。缺了它，羟脯氨酸不足，链间氢键网络不稳，三股螺旋的熔点下降，纤维变脆，结果就是坏血病 scurvy：牙龈出血、伤口不愈、血管脆弱。纤维的强度则来自另一条完全独立的交联通路，因为胶原蛋白几乎不含半胱氨酸、也没有二硫键：赖氨酰氧化酶 lysyl oxidase 这个铜酶把赖氨酸和羟赖氨酸侧链的氨基氧化成醛，醛再自发缩合成共价交联；交联随年龄累积、使组织变硬，而铜缺乏同样会导致结缔组织病变。",
    "最后是一个流行的误解：胶原蛋白不是优质膳食蛋白。营养学上，完全蛋白 complete protein 指含有全部必需氨基酸 essential amino acids 且比例合适。胶原蛋白几乎完全不含色氨酸 tryptophan——这是它区别于几乎所有其他蛋白的特点，历史上就靠这一点鉴定——并且缺乏半胱氨酸、酪氨酸和蛋氨酸，因此属于不完全蛋白 incomplete protein。附带一条推论：口服的胶原蛋白与任何蛋白一样被消化成氨基酸和小肽，没有任何机制把它定向送到皮肤上。"
-  ]
+  ],
+  "key_en": "Collagen twists three left-handed polyproline II strands into a right-handed superhelix — opposite in sense and strand count to keratin — and its strict (Gly-X-Y)n repeat needs glycine every third position because the crowded axis fits nothing larger. Vitamin C keeps prolyl-4-hydroxylase's iron reduced; without it, scurvy.",
+  "key_zh": "胶原蛋白 collagen 是三条左手 polyproline II 螺旋拧成一个右手超螺旋，与 α 角蛋白（两条右手螺旋拧成左手 coiled coil）在旋向和股数上都相反，这一对最容易记串。序列是严格的 (Gly-X-Y)ₙ 重复，每第三位必须是 Gly，因为三股螺旋的轴心极其拥挤，只塞得下氢原子那么大的侧链。维生素 C 把 prolyl-4-hydroxylase 的铁还原回 Fe²⁺，缺了它羟脯氨酸不足、纤维变脆，就是坏血病 scurvy。"
  },
  {
   "index": 20,
@@ -350,7 +390,9 @@
    "Rossmann 折叠 Rossmann fold 值得细讲。它是一个 β-α-β-α-β 单元，六条平行 β 链形成片层、两侧被 α helix 夹住，其功能是结合 NAD⁺、NADP⁺ 这类二核苷酸辅因子。在第一个 β-α 交接处它带有一段富甘氨酸的指纹序列 GxGxxG，用来兜住焦磷酸基团；在序列里看到这个基序，几乎就能预言这是一个脱氢酶。作为对比，β 曲折 β-meander 是相邻 β 链依次首尾相接构成的反平行片层。motif 这个词本身有两个含义，必须分清：结构基序 structural motif 指 βαβ、螺旋-转角-螺旋 helix-turn-helix 这类空间排布，也就是超二级结构；序列基序 sequence motif 指 GxGxxG、锌指的 C₂H₂ 这类保守的残基模式。两者常常对应但并不等价，因为同一个结构基序可以由完全不相关的序列实现——这正是「结构比序列保守」的来源。",
    "到了三级结构 tertiary structure 这一层，就存在一个明确的功能结构域，真的能行使功能。结构域 domain 是一个紧凑的三维区域，由若干二级结构和超二级结构组装而成，相对独立于链的其余部分，并执行特定功能。三条可操作的判据把它说实：其一，大小通常 40–200 个残基；其二，能独立折叠——把编码它的那段基因单独表达出来，蛋白往往仍能折叠成同样的结构并保留活性，这是实验上的金标准；其三，它是进化重组的基本单位，通过结构域重排 domain shuffling 在不相关的蛋白间反复出现，如 SH2、SH3 和免疫球蛋白折叠。结构域之间由松散的、没有太多结构的肽段连接，标准例子是 DNA 聚合酶：它的 fingers、thumb、palm 是同一条链上的三个独立结构域。",
    "包含关系很直接。三级结构指球状蛋白整条多肽链在二级结构和结构域装配完成后的整体结构，结构域包含在其中，一个三级结构可以包含好几个，聚合酶就是 3 个。这里正好把层级补全：一级结构 primary 是氨基酸序列，二级结构 secondary 是局部的规则构象，三级结构 tertiary 是一条多肽链完整的三维结构，四级结构 quaternary 是多条独立多肽链（亚基 subunits）之间的空间排布，如血红蛋白的 α₂β₂。要害的区分是：结构域是一条链的一部分，永远不跨链，而亚基是一条完整的链——「一个蛋白有三个结构域」和「一个蛋白由三个亚基组成」是完全不同的陈述。相比之下，把蛋白分成「全 α 蛋白」「全 β 蛋白」这类分类没有多少值得背的东西。"
-  ]
+  ],
+  "key_en": "Supersecondary structure is a regular combination of secondary elements that has not yet reached a functional domain. A domain is 40–200 residues, folds independently when its gene segment is expressed alone, and is the unit of evolutionary shuffling; a domain is part of one chain, a subunit is a whole chain.",
+  "key_zh": "超二级结构 supersecondary structure 是若干个二级结构相互作用形成的规则组合，判据是否定式的：它还没有形成一个能行使功能的结构域。结构域 domain 通常 40–200 个残基，把编码它的那段基因单独表达出来仍能独立折叠并保留活性（这是实验金标准），而且它是进化重组 domain shuffling 的基本单位。要害的区分是：domain 是一条链的一部分、永不跨链，subunit 则是一整条完整的链。"
  },
  {
   "index": 21,
@@ -367,7 +409,9 @@
    "活性能自己回来，这才是关键。折叠是自发过程，不需要外加信息，因此天然构象 native conformation 是序列在给定溶剂条件下的必然结果。这就是 Anfinsen's dogma，也叫热力学假说 thermodynamic hypothesis。",
    "折叠的根本动力是整个体系的熵增 entropy increase，而不是蛋白链本身变得更有序。水无法与非极性侧链 nonpolar side chains 形成氢键 hydrogen bond，只能在它们周围重排成有序的笼状水壳 clathrate；疏水效应 hydrophobic effect 把这些侧链埋进内部，笼状水被释放回自由水，水获得的熵非常可观。与此同时，主链肽键 peptide bond 的氢键能力主要在二级结构内部相互满足。",
    "写成 dG = dH − T dS：折叠时蛋白链自身的构象熵 conformational entropy 下降，这一项不利，但溶剂熵上升得更多，总的自由能变化因而为负。这个余量其实很小：天然态相对变性态通常只稳定约 20–60 kJ/mol，相当于几个氢键，所以蛋白质是「勉强稳定 marginally stable」的。用加热或变性剂打破这个平衡，就会引发陡峭的协同性去折叠 cooperative unfolding，而熔解温度的测定读的正是这个转变。"
-  ]
+  ],
+  "key_en": "RNase A refolds spontaneously to about 95% activity after denaturation, so the sequence alone specifies the native fold; folding is driven by the entropy released when caged water leaves buried nonpolar side chains, leaving the native state only 20-60 kJ/mol stable.",
+  "key_zh": "RNase A 变性后能自发重折叠、活性恢复约 95%，说明序列本身就规定了 native fold；折叠的动力来自疏水侧链被埋起来时笼状水被释放所带来的溶剂熵增，而天然态相对变性态只稳定约 20–60 kJ/mol，属于「勉强稳定 marginally stable」。"
  },
  {
   "index": 22,
@@ -384,7 +428,9 @@
    "常用仪器是 NanoTemper 的设备：毛细管 capillary 吸取几微升蛋白溶液，边升温边读信号。读出的物理量是蛋白的内源荧光 intrinsic fluorescence：用约 280 nm 激发色氨酸 Trp 与酪氨酸 Tyr，同时记录 330 nm 与 350 nm 的发射强度，报告 F350/F330 比值。埋在内部的 Trp 发射峰偏向 330 nm；一旦去折叠把它暴露到水中，发射峰红移到 350 nm 一侧，比值就在转变点上陡然跳变。",
    "让蛋白在 280 nm 有吸收的正是这几个芳香族氨基酸：色氨酸 Trp（摩尔消光系数最大）和酪氨酸 Tyr，二硫键 cystine 有很小的贡献。苯丙氨酸 Phe 在 280 nm 基本没有吸收，它的吸收带在 257 nm 附近；一个既不含 Trp 也不含 Tyr 的蛋白，A280 定量和这个实验都会失灵。方法名叫 nanoDSF，nano 指上样量极小，DSF 是差示扫描荧光法 differential scanning fluorimetry，要和 DSC 差示扫描量热法 differential scanning calorimetry 分清楚：后者直接测热容变化、能给出焓变，是热力学金标准，但耗样量大得多。",
    "同一个实验又叫 TSA，热位移实验 thermal shift assay，因为同一个蛋白的 TM 会随缓冲条件或所加配体向左或向右 shift。只结合天然态的配体会稳定天然态，把 TM 推向右侧，位移的大小与结合亲和力正相关，因此这是药物发现中 fragment screening 常用的一级筛选，也是优化 pH、盐和添加剂的常规手段。另一种经典做法是在 qPCR 仪上用 SYPRO Orange：去折叠暴露出疏水区，染料结合后发出荧光，原理与 nanoDSF 并不相同。无论哪种，操作都简单、上样量都很小。"
-  ]
+  ],
+  "key_en": "TM is the temperature at which half the protein has unfolded; nanoDSF reads it from the F350/F330 intrinsic tryptophan fluorescence ratio, which jumps as buried Trp becomes solvent-exposed. Ligands binding only the folded state shift TM right in proportion to affinity.",
+  "key_zh": "TM 是一半蛋白发生去折叠时的温度；nanoDSF 通过内源 Trp 荧光的 F350/F330 比值读它——埋藏的 Trp 一旦暴露到水中，发射红移、比值陡然跳变。只结合天然态的配体会把 TM 向右推，位移大小与亲和力正相关，这就是 TSA。"
  },
  {
   "index": 23,
@@ -401,7 +447,9 @@
    "折叠确实是自发、随机地开始的，但并不是每一次尝试都从头再来，已经成功的部分会被保留，这就是累积选择 cumulative selection。设想一条链能折成 A 到 F 若干形式，只有 A 是正确的。A 的能量最低，因而被保留、不再发生大的变动；B 到 F 能量较高，容易再解开重折，或在分子伴侣 chaperone 协助下被纠正回来。今天对同一想法的表述是折叠漏斗 folding funnel 或能量地形 energy landscape：能量面不是平坦的高原，而是一个漏斗，越接近天然态，构象熵和能量一起下降，随机运动因此被地形本身导向下坡，不需要遍历所有构象。漏斗壁上的小坑就是动力学陷阱 kinetic traps，对应错误折叠的中间体。",
    "把能量画在纵坐标上，也就解释了朊病毒 prion。正常蛋白处在局部能量最低点 local minimum，实际条件下可以稳定存在；朊病毒构象则占据全局能量最低点 global minimum，正常分子一旦遇到朊病毒分子，就倾向于从前者翻越到后者，构象因此具有「传染性」。这正好点出热力学稳定性 thermodynamic stability 与动力学稳定性 kinetic stability 的区别：天然态往往只是被高能垒保护、在动力学上可及的局部最低点，而淀粉样纤维 amyloid 才常常是真正的全局最低点，所以 Anfinsen 那条规则严格说只在可及的构象空间内成立。",
    "涉及的分子是 PrP 蛋白。正常型 PrP^C 富含 α-螺旋 α-helix；致病型 PrP^Sc 富含 β-折叠 β-sheet，能抵抗蛋白酶 K proteinase K 的消化，并聚集成淀粉样纤维。两者一级结构完全相同，只有构象不同，这使 PrP 成为「序列决定结构」最有名的反例；Stanley Prusiner 因此获得 1997 年诺贝尔生理学或医学奖，相关疾病有羊瘙痒病 scrapie、疯牛病 BSE 和人的 CJD。朊病毒把蛋白推进了一个更稳定的状态，而那个更稳定的状态并不是有活性的状态。"
-  ]
+  ],
+  "key_en": "The folding funnel resolves Levinthal's paradox: partial successes are retained and the energy landscape steers random motion downhill, so no exhaustive search is needed. Prions show the limit - PrP-Sc's beta-sheet amyloid is the global minimum, making the native state a kinetically trapped local one.",
+  "key_zh": "折叠漏斗 folding funnel 化解了 Levinthal 悖论：已成功的部分被保留，能量地形本身把随机运动导向下坡，不需要遍历所有构象。朊病毒 prion 划出了这条规则的边界——PrP-Sc 的 β-sheet 淀粉样才是全局最低点，天然态只是被高能垒护住的动力学局部最低点。"
  },
  {
   "index": 24,
@@ -418,7 +466,9 @@
    "分子伴侣是一类热休克蛋白 heat shock protein，缩写 HSP，名字来自 heat 加 shock：升温会让一部分 TM 值较低、不够稳定的蛋白部分变性，细胞需要帮手把它们重新折回去。但 HSP 并不必等到热击才表达：正常条件下它们也有本底表达 basal expression，日常帮助新生肽链折叠。",
    "它们在冷冻电镜 cryo-EM 下的形态非常典型：七个亚基围成一个环，两个这样的七元环背靠背堆叠成一个共十四个亚基的桶，顶上再扣一个七聚体盖子 GroES（Hsp10，约 10 kDa）。大肠杆菌的这个蛋白叫 GroEL，属 Hsp60 家族，真核的对应物是 chaperonin/TRiC。电镜图中间看似没有密度的地方是一个疏水腔 hydrophobic cavity，未折叠的肽链被容纳进去，在隔离环境里折叠。这个腔并不是被动的容器：GroEL/GroES 是 ATP 酶，ATP 结合会把腔壁由疏水翻转为亲水，把底物释放出来再试一次；Hsp70（DnaK）也通过同类循环调节它对暴露疏水片段的亲和力。伴侣蛋白不提供任何构象信息，它们只是防止聚集 aggregation 并给出反复尝试的机会，所以与 Anfinsen 实验并不矛盾。",
    "这一点在实验台上很实际。一个难表达、无法自身正确折叠的目的蛋白，会促使大肠杆菌大量产生伴侣蛋白，两者于是被一起纯化下来：呈线状的目的蛋白一端靠标签 tag 挂在亲和柱上，另一端还留在伴侣蛋白腔里，把伴侣蛋白一起拉了下来。线状未折叠蛋白不稳定、容易降解，4 °C 放一晚上，目的蛋白就没了，只剩下极其稳定的伴侣蛋白。因此有一条经验法则：跑胶时若在 50–55 kDa 出现一条非常清晰的单体条带就要警惕，GroEL 单体约 57 kDa，另一个常见污染是约 70 kDa 的 DnaK；伴侣蛋白几乎存在于所有生命体，昆虫表达系统里也拿到过同一条带。如果确实怀疑是 GroEL，可在洗涤缓冲液中加 5–10 mM ATP 加 Mg²⁺，触发一轮循环把底物释放掉，GroEL 就随流穿走；或者直接用质谱 mass spectrometry 鉴定，不要靠分子量猜。"
-  ]
+  ],
+  "key_en": "Chaperones add no conformational information: GroEL/GroES uses ATP to flip its cavity wall from hydrophobic to hydrophilic, preventing aggregation and granting repeated folding attempts, so Anfinsen still holds. At the bench a sharp 57 kDa band is GroEL copurifying with an unfolded target.",
+  "key_zh": "分子伴侣 chaperone 不提供任何构象信息：GroEL/GroES 靠 ATP 把腔壁由疏水翻成亲水，只是防止聚集并给出反复尝试的机会，因此与 Anfinsen 实验并不矛盾。实验台上的推论是：一条很锐的 57 kDa 条带多半是 GroEL 被未折叠的目的蛋白一起拉下来的。"
  },
  {
   "index": 25,
@@ -435,7 +485,9 @@
    "第二个优势是遗传经济性 genetic economy，不过要说得准确。并不是「一个多聚体只需要一条基因」：人的 HbA 是 α₂β₂ 异源四聚体 heterotetramer，由 HBA 和 HBB 两个不同基因编码。真正的论证是：编码一条短链再重复使用它来组装，比编码一条四倍长的单链更省 DNA；而且翻译错误率随链长累积，短亚基使出错的那一份可以被丢弃，而不是整条产物报废，组装本身又提供了一道质控。",
    "第三个优势最重要：协同效应 cooperativity 和别构效应 allosteric effect 需要四级结构才会出现。血红蛋白是四聚体 tetramer，一次运 4 个氧分子；肌红蛋白是单体，只结合 1 个。肌红蛋白的氧结合曲线是双曲线 hyperbolic，血红蛋白的是 S 形 sigmoidal，这个差别是「多亚基产生协同性」最直观的证据。说某个蛋白「有协同效应」或「是别构的」，描述的一定是它四级结构层面的性质；相应地，多数受协同或别构调控的酶 enzyme 都有明确的四级结构。",
    "有两点值得补充。协同结合 cooperative binding 严格要求的是多个能彼此沟通的结合位点，而这通常由多个亚基提供；别构 allostery 的定义则是「一个位点的结合改变另一个位点的性质」，所以单体原则上也可以有别构位点。葡萄糖激酶 glucokinase 就是单体，却通过缓慢的构象转换表现出动力学协同性 kinetic cooperativity。应考时「协同＝四级结构」这条口诀成立，但底层的要求是位点之间能够沟通。"
-  ]
+  ],
+  "key_en": "Quaternary structure buys stability and genetic economy, but its decisive advantage is cooperativity and allostery: hemoglobin's tetramer gives a sigmoidal curve where monomeric myoglobin gives a hyperbola. The strict requirement is multiple binding sites that can communicate, which subunits normally supply.",
+  "key_zh": "四级结构 quaternary structure 带来稳定性和遗传经济性，但决定性的优势是协同性 cooperativity 与别构 allostery：四聚体血红蛋白给出 S 形曲线，单体肌红蛋白只给出双曲线。严格说要求的是「多个能互相沟通的结合位点」，而多亚基通常正是提供这一点的方式。"
  },
  {
   "index": 26,
@@ -452,7 +504,9 @@
    "流感病毒 influenza 说明的是相反的一面。它是遗传稳定性低的 RNA 病毒，一代代传下去相似度逐渐下降，因而分为 A、B、C、D 四型。这四型之间有些蛋白功能基本相同、长相也一样，序列一致性却只有百分之三四十。可见结构和功能相似，并不要求序列相似。",
    "镰刀型贫血病 sickle cell anemia 说明的是另一面：一个氨基酸就足以决定命运。突变位于 β-珠蛋白 β-globin 第 6 位，把带负电的谷氨酸 Glu 换成疏水的缬氨酸 Val，产物称为 HbS。机制并不是单个血红蛋白分子的携氧能力下降：在脱氧状态下，新暴露出来的疏水贴片会插进相邻 HbS 分子的疏水口袋，分子因此聚合成长纤维，把红细胞拉成镰刀形，僵硬的细胞容易溶血、堵塞微血管，贫血和疼痛危象由此而来。关键词是 deoxy-HbS 的聚合 polymerization。该病是隐性遗传，杂合子 HbAS 携带者对恶性疟原虫 Plasmodium falciparum 有明显抵抗力，这就是该等位基因在疟疾流行区维持高频率的原因，是平衡选择 balancing selection 的教科书案例。",
    "血红蛋白和肌红蛋白本身就是一对同源蛋白，而且很有教学价值：三级结构 tertiary structure 高度相似，序列一致性却只有约 15–25%。它们并不是各自独立发明出来的。二者同属珠蛋白超家族 globin superfamily，是同一个古老祖先基因经基因复制 gene duplication 后分化而来的旁系同源 paralogs。它们的折叠——经典的 globin fold，八段螺旋 A–H——以及关键功能残基——近端组氨酸 proximal His F8 与远端组氨酸 distal His E7——都被严格保守，而保守的功能位点正是共同起源的证据，不是趋同的证据。蛋白质里真正的趋同进化 convergent evolution 例子是 chymotrypsin 与 subtilisin：催化三联体相同，整体折叠却完全不同。"
-  ]
+  ],
+  "key_en": "Homology is binary descent from a common ancestor; only sequence identity is quantifiable, and it tracks structure loosely - myoglobin and hemoglobin are paralogs at 15-25% identity, while the single beta6 Glu-to-Val substitution makes deoxy-HbS polymerise into sickling fibres.",
+  "key_zh": "homology 同源性指「来自共同祖先」，是有或没有的二元性质，能定量的只有 sequence identity；而一致性与结构的对应很松——肌红蛋白与血红蛋白是 paralogs，一致性只有 15–25%，而 β 链第 6 位 Glu→Val 这一个残基就足以让 deoxy-HbS 聚合成纤维、把红细胞拉成镰刀形。"
  },
  {
   "index": 27,
@@ -468,25 +522,29 @@
    "血红蛋白和肌红蛋白结合氧气靠的不是多肽链本身，而是辅基 prosthetic group 血红素 heme，它的环状部分化学上是卟啉 porphyrin。环中心是一个二价铁离子 Fe²⁺，即亚铁 ferrous，这一点很重要：氧化态更高的三价铁 Fe³⁺ 完全不能结合氧。正因为它是亚铁、还没到最高氧化态，它仍有多余的电子可以再形成额外的配位键 coordination bond——配位键是金属形成的一种特殊化学键，强度相当可观。",
    "血红素中的铁是六配位、八面体 octahedral。四条配位键连向卟啉环的四个吡咯氮 pyrrole N，位于环平面内。第五条伸向平面上方的一个组氨酸 histidine，其侧链咪唑环上的氮原子与铁配位：这是近端组氨酸 proximal His (F8)，血红蛋白和肌红蛋白都一样。第六个位置在平面下方，是铁与 O2 或一氧化碳 CO 形成额外配位键的地方，也就是氧结合位点。这一面上方还有第二个组氨酸，远端组氨酸 distal His (E7)，它并不与铁配位。若铁被氧化成 Fe³⁺，蛋白就变成高铁血红蛋白 methemoglobin，完全丧失载氧能力，体内靠高铁血红蛋白还原酶 methemoglobin reductase（细胞色素 b5 还原酶）把它还原回来。",
    "在水溶液中的游离血红素上，CO 结合卟啉环的能力约为 O2 的两万倍，这就是一氧化碳中毒的化学基础。原因在电子几何。CO 是线性双原子分子，近似为碳氧三键，它的碳是 sp 杂化：一个 sp 轨道形成 σ 键，另一个容纳一对沿分子轴向外指的孤对电子，剩下两个 p 轨道形成两条 π 键。这对沿轴的孤对电子正好指向铁离子，使 CO 成为很强的 σ 给体；同时 CO 的空 π* 轨道还接受金属 d 电子的回馈。氧气则不同：它的电子分布不一样，是以端接且弯曲的方式结合，而不是线性的，结合方式和强度因而都不同。",
-   "在血红蛋白内部，对 CO 的偏好只剩下约 200–250 倍，把它驯服的正是蛋白质环境：远端组氨酸 His E7 立在结合位点上方，对 CO 偏好的线性取向造成空间位阻，迫使 Fe–C–O 弯曲，同时又与弯曲结合的 O2 形成氢键并加以稳定。若没有它，人体正常代谢产生的那一点点 CO 就足以让血红蛋白永久失能。临床上 CO 致死有两重原因：一是 COHb 占据结合位点，直接减少载氧量；二是更隐蔽的一重，已结合 CO 的亚基会把其余亚基锁在高亲和力的 R 态，使氧解离曲线左移，连还带着的那部分氧也不肯在组织中释放。因此中毒患者的动脉血 PaO2 可以完全正常，脉搏血氧仪 pulse oximeter 也可能读出假性正常的 SpO2，必须直接测 COHb；治疗是高浓度氧或高压氧，靠质量作用把 CO 竞争下来。"
-  ]
+   "在血红蛋白内部，对 CO 的偏好只剩下约 200–200 倍，把它驯服的正是蛋白质环境：远端组氨酸 His E7 立在结合位点上方，对 CO 偏好的线性取向造成空间位阻，迫使 Fe–C–O 弯曲，同时又与弯曲结合的 O2 形成氢键并加以稳定。若没有它，人体正常代谢产生的那一点点 CO 就足以让血红蛋白永久失能。临床上 CO 致死有两重原因：一是 COHb 占据结合位点，直接减少载氧量；二是更隐蔽的一重，已结合 CO 的亚基会把其余亚基锁在高亲和力的 R 态，使氧解离曲线左移，连还带着的那部分氧也不肯在组织中释放。因此中毒患者的动脉血 PaO2 可以完全正常，脉搏血氧仪 pulse oximeter 也可能读出假性正常的 SpO2，必须直接测 COHb；治疗是高浓度氧或高压氧，靠质量作用把 CO 竞争下来。"
+  ],
+  "key_en": "Heme iron must be ferrous: it is six-coordinate octahedral, four bonds to pyrrole nitrogens, the fifth to proximal His F8, the sixth to O2 - oxidation to Fe(III) gives methemoglobin, which carries none. CO binds free heme 20,000-fold more tightly than O2.",
+  "key_zh": "血红素的铁必须是亚铁 Fe(II)：六配位、八面体，四条键连卟啉环的吡咯氮，第五条连 proximal His F8，第六条留给 O2——一旦氧化成 Fe(III) 就是 methemoglobin，完全不载氧。游离血红素上 CO 的结合力约为 O2 的两万倍。"
  },
  {
   "index": 28,
   "heading_en": "Carbon monoxide, cyanide, and the steric protection given by the distal histidine",
   "heading_zh": "一氧化碳、氰化物中毒与远端组氨酸的位阻保护",
   "en": [
-   "Molecular oxygen is a poor iron ligand on geometric grounds. O2 is sp2-hybridised and nearly planar, its electron density spread to both sides, so it must tilt before a lone pair points at Fe2+. Carbon monoxide has no such problem: it is linear, its carbon forms only three bonds and keeps a lone pair pointing straight out along the molecular axis, the ideal orientation for a coordination bond. Free heme iron therefore binds CO roughly 25 000-fold more tightly than O2.",
-   "In intact hemoglobin that ratio falls to about 250-fold, and the residue responsible sits above the binding site. Two histidines flank the heme and must be kept apart. Proximal His F8 approaches from below the porphyrin and is the permanent fifth ligand of the iron; distal His E7 sits on the oxygen side and does not coordinate the iron at all, the sixth position being empty in deoxy heme. His E7 acts as a steric gate: a ligand can reach the iron only at a bent angle, which costs CO its preferred straight-on geometry, while bound O2 gains an extra hydrogen bond from that same histidine. CO is penalised twice, O2 rewarded once, and the hundred-fold discrimination follows.",
+   "Molecular oxygen is a poor iron ligand on geometric grounds. O2 is sp2-hybridised and nearly planar, its electron density spread to both sides, so it must tilt before a lone pair points at Fe2+. Carbon monoxide has no such problem: it is linear, its carbon forms only three bonds and keeps a lone pair pointing straight out along the molecular axis, the ideal orientation for a coordination bond. Free heme iron therefore binds CO roughly 20,000-fold more tightly than O2.",
+   "In intact hemoglobin that ratio falls to about about 200-fold, and the residue responsible sits above the binding site. Two histidines flank the heme and must be kept apart. Proximal His F8 approaches from below the porphyrin and is the permanent fifth ligand of the iron; distal His E7 sits on the oxygen side and does not coordinate the iron at all, the sixth position being empty in deoxy heme. His E7 acts as a steric gate: a ligand can reach the iron only at a bent angle, which costs CO its preferred straight-on geometry, while bound O2 gains an extra hydrogen bond from that same histidine. CO is penalised twice, O2 rewarded once, and the hundred-fold discrimination follows.",
    "The optimisation is real but incomplete, which is why CO remains lethal. An occupied heme cannot carry oxygen, and carboxyhemoglobin also left-shifts the dissociation curve of the remaining subunits, so what oxygen is still bound unloads poorly — CO poisoning is worse than simply losing a few sites. The binding is strong but reversible, so treatment is mass action: 100% oxygen, and hyperbaric oxygen where available.",
    "Cyanide is likewise a very strong iron ligand, but the details differ. CN− is an anion and a classic strong-field ligand, and the cyanide poisons are salts such as NaCN and KCN. Its lethal target is mostly not hemoglobin but the Fe3+ of mitochondrial cytochrome c oxidase, complex IV, which it blocks, stopping the electron transport chain. Ferrous hemoglobin binds CN− poorly, and that weakness is the basis of the antidote: nitrite converts part of the circulating hemoglobin to methemoglobin, whose Fe3+ pulls cyanide back out of the mitochondria, after which thiosulfate or hydroxocobalamin clears it. Cyanide is extremely toxic, but it is not untreatable."
   ],
   "zh": [
-   "从几何上看，分子氧本来就不是一个好的铁配体。O2 是 sp2 杂化、接近平面的结构，电子密度分布在分子两侧，必须先发生偏转才能把一对孤对电子 lone pair 朝向 Fe2+。一氧化碳没有这个障碍：CO 是线性分子，碳只形成三条键、保留一对孤对电子，且这对电子沿分子轴笔直指向外侧，是形成配位键 coordination bond 最有利的取向。因此游离血红素 free heme 中 Fe2+ 结合 CO 的能力约为结合 O2 的 25000 倍。",
-   "在完整的血红蛋白 hemoglobin 里，这个比值只剩约 250 倍，起作用的残基就位于结合位点上方。血红素两侧各有一个 histidine，必须分清楚：近端组氨酸 proximal His F8 从卟啉环下方靠近，是铁始终结合的第 5 配位；远端组氨酸 distal His E7 在氧气一侧，根本不与铁配位——去氧血红素的第 6 配位位置是空的。His E7 提供的是一道位阻门户 steric gate：配体只能以斜角接近铁，这正好惩罚了 CO 偏好的笔直取向；而结合上来的 O2 还能额外获得该 histidine 给出的一个氢键。CO 被惩罚两次、O2 被奖励一次，百倍量级的辨别力就是这样来的。",
+   "从几何上看，分子氧本来就不是一个好的铁配体。O2 是 sp2 杂化、接近平面的结构，电子密度分布在分子两侧，必须先发生偏转才能把一对孤对电子 lone pair 朝向 Fe2+。一氧化碳没有这个障碍：CO 是线性分子，碳只形成三条键、保留一对孤对电子，且这对电子沿分子轴笔直指向外侧，是形成配位键 coordination bond 最有利的取向。因此游离血红素 free heme 中 Fe2+ 结合 CO 的能力约为结合 O2 的 20,000 倍。",
+   "在完整的血红蛋白 hemoglobin 里，这个比值只剩约 200 倍，起作用的残基就位于结合位点上方。血红素两侧各有一个 histidine，必须分清楚：近端组氨酸 proximal His F8 从卟啉环下方靠近，是铁始终结合的第 5 配位；远端组氨酸 distal His E7 在氧气一侧，根本不与铁配位——去氧血红素的第 6 配位位置是空的。His E7 提供的是一道位阻门户 steric gate：配体只能以斜角接近铁，这正好惩罚了 CO 偏好的笔直取向；而结合上来的 O2 还能额外获得该 histidine 给出的一个氢键。CO 被惩罚两次、O2 被奖励一次，百倍量级的辨别力就是这样来的。",
    "这种优化是真实的，但并不彻底，所以 CO 中毒 CO poisoning 依然致命。被占住的血红素不能再运氧；而且碳氧血红蛋白 COHb 会使其余亚基的氧解离曲线左移，已经结合的氧在组织里更难卸下——CO 中毒远比「少了几个结合位点」更危险。好在这种结合虽强却可逆，因此治疗依靠质量作用：吸入 100% 纯氧，必要时使用高压氧 hyperbaric oxygen。",
    "氰化物同样是极强的铁配体，但细节不同。CN− 是阴离子，是典型的强场配体 strong-field ligand；真正的氰毒物是氰化钠、氰化钾这类盐。它的致死靶点主要不是血红蛋白，而是线粒体细胞色素 c 氧化酶 cytochrome c oxidase（复合物 IV）中的 Fe3+，由此阻断电子传递链 electron transport chain。亚铁血红蛋白对 CN− 的亲和力并不高，而这个弱点正是解毒的依据：用亚硝酸盐把部分血红蛋白氧化成高铁血红蛋白 methemoglobin，其 Fe3+ 把氰离子从线粒体抢回血液，再用硫代硫酸盐或羟钴胺 hydroxocobalamin 清除。氰化物剧毒，但并非无药可救。"
-  ]
+  ],
+  "key_en": "Distal His E7 does not coordinate the iron; it forces incoming ligands to bend, penalising CO's preferred linear geometry while hydrogen-bonding bent O2, which drops the CO/O2 preference from about 20,000-fold on free heme to about about 200-fold. Cyanide's lethal target is instead complex IV.",
+  "key_zh": "远端组氨酸 distal His E7 并不与铁配位，它构成一道位阻门户：配体只能弯着进来，这惩罚了 CO 偏好的线性取向，同时又给弯曲结合的 O2 一个氢键，于是 CO/O2 的偏好从游离血红素的约 20,000 倍降到约 200 倍。氰化物的致死靶点则不是血红蛋白，而是线粒体的 complex IV。"
  },
  {
   "index": 29,
@@ -503,7 +561,9 @@
    "肌红蛋白结合氧是一个简单的可逆反应 Mb + O2 ⇌ MbO2，反应进行到什么程度由一个常数描述。写成「未反应比已反应」的形式，即 K = [Mb]·pO2 / [MbO2]，这个常数是解离常数 dissociation constant Kd。方向必须写清楚：通常约定的平衡常数 Keq 恰好相反，是产物比反应物，两者互为倒数。记号上，中括号 [ ] 表示浓度 concentration；氧气是气体，用分压 partial pressure pO2 表示，分压越高表示可用的氧越多。",
    "真正想要的量是氧饱和度 Y (fractional saturation)：Y = [MbO2] / ([Mb] + [MbO2])。这样写在实践中并不好用——蛋白浓度极难测定，而氧分压用光学方法测起来相对简单。用 K 的表达式把浓度项替换掉，得到 Y = pO2 / (K + pO2)，一条只含一个可测变量的曲线。把 Y = 0.5 代入得到 pO2 = K，即这个常数在数值上就是半饱和氧分压 P50——正是这个等式把代数公式和后面从曲线上读出的数值连接起来。而 Y = [L] / (Kd + [L]) 是所有单位点可逆结合的通式，与米氏方程 Michaelis–Menten v = Vmax[S] / (Km + [S]) 完全同形：Kd 之于半饱和，正如 Km 之于半速度。",
    "氧饱和度在 98% 以上是临床最重要的指标之一，但要归属正确。脉搏血氧饱和度 SpO2（>95% 为正常）测的是动脉血中的血红蛋白，不是肌红蛋白。肌红蛋白在肌细胞胞内，不参与血液循环，血氧仪不可能测到它；血中出现肌红蛋白是完全不同的信号，是横纹肌溶解或心肌、骨骼肌损伤的标志。"
-  ]
+  ],
+  "key_en": "Eliminating the unmeasurable protein concentrations from the myoglobin-oxygen equilibrium gives Y = pO2/(Kd + pO2); setting Y = 0.5 shows Kd is numerically the half-saturation pressure P50. The form is algebraically identical to Michaelis-Menten, Kd standing to half-saturation as Km does to half-maximal velocity.",
+  "key_zh": "把难以测定的蛋白浓度项从 Mb + O2 ⇌ MbO2 的平衡式中消去，得到 Y = pO2/(Kd + pO2)；代入 Y = 0.5 即得 pO2 = Kd，所以这个解离常数在数值上就是半饱和分压 P50。该式与米氏方程 Michaelis-Menten 完全同形：Kd 之于半饱和，正如 Km 之于半速度。"
  },
  {
   "index": 30,
@@ -520,7 +580,9 @@
    "这个指数必须叫对名字，因为它并不是「结合了几个氧」。它是 Hill 系数 nH，衡量各结合位点协同的强弱，取值范围是 1 ≤ nH ≤ 结合位点数。nH = 1 表示完全没有协同性，即单体的情形；nH = 4 才表示理论上「全或无」的四聚体；血红蛋白的实测值约为 2.8，协同性很强但显然不是全或无。小于 1 则表示负协同。当 n = 1 时公式退化为肌红蛋白的双曲线，所以两条曲线本来就是同一个公式的两种取值。",
    "形状也随之不同。肌红蛋白几乎一上来就冲上去，在很低的分压下就接近饱和，是一条双曲线 hyperbolic，约 2 torr 即达半饱和。血红蛋白则是 S 形（乙状）曲线 sigmoid，低分压区上升缓慢、中段陡峭，要到约 26 torr 才达到 50% 饱和。这个半饱和分压就是 P50；血红蛋白的 P50 远高于肌红蛋白，也就是说它对氧的亲和力低得多。这里要把量和单位分清：pO2 是「氧分压」这个物理量，torr（= mmHg）才是它的单位，1 atm = 760 torr，所以正确说法是「Hb 的 P50 约为 26 torr」。",
    "把这些数字钉在身体上。肺泡毛细血管 pO2 约 100 torr，此处血红蛋白约 98% 饱和；静息组织约 40 torr，运动中的肌肉可低至 20 torr 甚至更低。P50 约 26 torr 恰好落在肺与组织之间，使 S 形曲线最陡的一段正对着生理工作区间——这是被选择调校出来的，而不是巧合。这个指数本身也是测出来的，不是假定的：以 log[Y / (1 − Y)] 对 log pO2 作图（Hill plot），得到一条直线，斜率就是 nH，横轴截距对应 log P50。"
-  ]
+  ],
+  "key_en": "The exponent in Y = pO2^n/(K + pO2^n) is the Hill coefficient, a measure of cooperativity and not a count of bound oxygens; hemoglobin's is about 2.8, not 4. Its P50 of 26 torr sits between lung (100) and tissue (40 torr).",
+  "key_zh": "Y = pO2^n/(K + pO2^n) 中的指数是 Hill 系数 nH，衡量的是各位点协同的强弱，而不是「结合了几个氧」；血红蛋白实测约 2.8 而非 4，取值范围为 1 ≤ nH ≤ 位点数。它的 P50 约 26 torr，正落在肺（约 100 torr）与组织（约 40 torr）之间。"
  },
  {
   "index": 31,
@@ -537,7 +599,9 @@
    "值得定量地说明血红蛋白为什么不能是双曲线。假设它具有肌红蛋白那样的高亲和力，则它在肺（100 torr）几乎 100% 饱和，到组织（40 torr）仍约 95% 饱和，几乎什么都送不出去。真实的 S 形曲线让它在肺约 98%、在组织降到 60% 甚至更低，卸氧比例提高数倍。对运输蛋白来说，低亲和力不是缺陷，而是必要条件。",
    "这条亲和力的逻辑还能延伸到血液之外。正因为肌红蛋白对氧的亲和力高于血红蛋白，氧才能自发地顺梯度从毛细血管里的血红蛋白交给肌细胞内的肌红蛋白，使肌红蛋白成为肌肉内的氧储库——潜水哺乳动物肌肉中含量极高。胎儿血红蛋白 HbF 是同一逻辑再往前一步：HbF 对氧的亲和力高于母体 HbA，因为它的 γ 链与 2,3-二磷酸甘油酸 2,3-BPG 结合很弱，氧因此能穿过胎盘从母亲转交给胎儿。曲线本身也会移动：在活跃的组织中，CO2 升高、H+ 升高（pH 降低）、温度升高以及红细胞内的 2,3-BPG 都会使它右移，降低亲和力、促进卸氧。这就是波尔效应 Bohr effect，其美妙之处在于代谢最旺盛的组织——最缺氧、最酸、最热的组织——自动取走最多的氧。",
    "送到的氧最终去了哪里，只有一个诚实的答案。三羧酸循环 TCA cycle 的八步反应没有任何一步直接使用分子氧；O2 是在电子传递链 electron transport chain 末端被消耗的，由细胞色素 c 氧化酶（复合物 IV）接受电子还原成水。循环之所以需要氧，只是因为它依赖电子传递链把 NADH 重新氧化为 NAD+：氧一停，NAD+ 耗尽，循环随之停转。糖、脂肪、核酸代谢依赖 ATP，而 ATP 的产生依赖电子传递链，所以把氧描述为「间接提供 ATP」是恰当的——上面这条链路就是「间接」二字的机制。"
-  ]
+  ],
+  "key_en": "Low affinity is a requirement, not a defect: a hyperbolic hemoglobin would run 100% saturated in lung to 95% in tissue and deliver nothing, whereas the sigmoid runs 98% to 60%. The delivered O2 is consumed at complex IV, not in the TCA cycle.",
+  "key_zh": "对运输蛋白来说低亲和力是必要条件而非缺陷：若血红蛋白是双曲线，它在肺 100 torr 几乎 100% 饱和、到组织 40 torr 仍约 95%，几乎送不出氧；真实的 S 形曲线让它从约 98% 降到 60% 以下。而送到的 O2 并不被 TCA cycle 直接使用，是在电子传递链末端由 complex IV 还原成水。"
  },
  {
   "index": 32,
@@ -554,7 +618,9 @@
    "绝不能混淆的是：普通的 O2 是正常给机体供能的，而活性氧 reactive oxygen species (ROS) 完全是另一回事。普通 O2 表现得好像不活泼，但原因很微妙：基态 O2 是三线态双自由基 triplet diradical，带两个自旋平行的未成对电子，它的迟钝来自自旋禁阻 spin restriction 这一动力学限制，而不是缺乏氧化能力——热力学上 O2 是强氧化剂。正因如此，生物氧化必须借助铁、铜这类过渡金属或黄素 flavin 辅因子，一个电子一个电子地把氧还原，而这种逐电子处理本身就是 ROS 泄漏的来源。",
    "这些物种构成一条短链条。给 O2 加一个电子得到超氧阴离子 superoxide anion O2•−——它仍然只有两个氧原子，只是一个多接受了一个电子的 O2 分子，不能与臭氧 O3 混淆，后者有三个氧原子，是另一种氧化剂。超氧化物歧化酶 SOD 把超氧转化为过氧化氢 H2O2，H2O2 再经 Fe2+ 参与的 Fenton 反应生成羟自由基 •OH。超氧本身反应性相对温和，凶猛的是 •OH。主要的内源来源是线粒体电子传递链复合物 I 和 III 的电子泄漏，以及中性粒细胞杀菌所用的 NADPH 氧化酶；紫外光和刺激性物质会额外增加负荷。",
    "主要攻击目标是脂质和细胞膜。脂类那一章说的「不饱和脂肪酸 unsaturated fatty acid 会被氧进攻」，实际上是被 ROS 进攻：羟自由基夺走烯丙位的一个氢，留下一个以碳为中心的自由基 free radical，它又去攻击隔壁的脂肪酸；于是一个起始事件就以链式反应 chain reaction 的方式蔓延，破坏一大片膜脂，膜一被破坏细胞就死亡。这种细胞杀伤性在癌症研究中被主动用来杀灭癌细胞，是目前很热门的一条通路。细胞并非毫无防御：超氧化物歧化酶 SOD 清除 O2•−，过氧化氢酶 catalase 与谷胱甘肽过氧化物酶 glutathione peroxidase（依赖硒和 GSH）把 H2O2 还原为水；维生素 E（α-生育酚）是脂溶性的断链抗氧化剂 chain-breaking antioxidant，插在膜内终止脂质过氧化的链式反应，并由维生素 C 再生。"
-  ]
+  ],
+  "key_en": "Ground-state O2 is a triplet diradical, sluggish by spin restriction rather than weak oxidising power, so biology reduces it one electron at a time, leaking ROS: superoxide to H2O2 by SOD, then to hydroxyl radical by Fenton chemistry, which starts the lipid-peroxidation chain reaction.",
+  "key_zh": "基态 O2 是三线态双自由基，它的迟钝来自自旋禁阻这一动力学限制，而不是氧化能力弱，所以生物氧化必须借金属或黄素一个电子一个电子地还原它，ROS 就是从这里泄漏出来的：O2•− 经 SOD 变成 H2O2，再经 Fenton 反应生成 •OH，而 •OH 夺氢后引发脂质过氧化的链式反应。"
  },
  {
   "index": 33,
@@ -571,7 +637,9 @@
    "两种状态各有名称：紧张态 T (tense) 是去氧状态，松弛态 R (relaxed) 是充氧状态。这里的 tense 指的是「更紧实」而不是「紧张」——T 态下亚基彼此贴得很紧，整个复合物更加紧凑——中文译作「紧张态」并不贴切。有一句话在答卷上千万不要写：T 态时 histidine「占住了氧的位置」。去氧血红素铁的第 6 配位位置是空的：近端组氨酸 proximal His F8 从卟啉环下方始终占据第 5 配位，而远端组氨酸 distal His E7 位于氧气一侧却不与铁配位，只构成一道位阻门户，并在 O2 结合后与之形成氢键。",
    "真正的开关是力学性的，起点在铁原子。T 态中半径较大的高自旋 Fe2+ 位于卟啉环平面之外约 0.6 Å；结合 O2 后铁被拉入平面，而由于近端 His F8 与它配位，这个 histidine 连同整条 F 螺旋被一起牵动约 1 Å。这个位移传到 α1β2 界面，使两个 αβ 二聚体相对旋转约 15°，把 T 态切换成 R 态，其余亚基的结合口袋随之打开。「铁进入平面」就是分子扳机；远端 histidine 的轻微形变是次要后果，真正起作用的是亚基之间的相互关系。每个亚基各带一个卟啉环 porphyrin，两侧各有一个 histidine。",
    "术语要分层。同促效应 homotropic effect 指配体调节自身的结合，例如 O2 促进 O2；若调节物是另一种分子——H+、CO2、2,3-BPG 调节氧的结合——则称为异促效应 heterotropic effect，这三者都是负性异促调节物，稳定 T 态、使曲线右移，波尔效应即在其中。有两个经典模型把机制形式化：「一个亚基变了、其余极快跟着变」接近齐变模型 MWC (concerted model)，四个亚基必须同时处于 T 或同时处于 R，配体只改变两态间的平衡；而序变模型 KNF (sequential model) 则让亚基逐个通过诱导契合改变构象，允许中间的混合状态。实测的血红蛋白介于两者之间，Hill 系数是 2.8 而不是 4，正是这一证据。"
-  ]
+  ],
+  "key_en": "T is the tense deoxy state, R the relaxed oxygenated one, and the sixth position of deoxy heme is empty - no histidine occupies it. Binding pulls Fe2+ into the porphyrin plane, dragging His F8 and helix F and rotating the alpha-beta dimers about 15 degrees.",
+  "key_zh": "T 态是去氧的紧实态，R 态是氧合的松弛态；去氧血红素的第 6 配位位置是空的——没有任何 histidine「占住氧的位置」，这句话在答卷上不能写。真正的开关是力学的：结合 O2 把 Fe2+ 拉入卟啉平面，带动 proximal His F8 与整条 F helix，使两个 αβ dimer 相对旋转约 15°。"
  },
  {
   "index": 34,
@@ -588,7 +656,9 @@
    "两者分工不同，也各有规范名称。从下方直接与铁配位、把铁离子固定在环上的那一个，是近端组氨酸 proximal histidine (His F8)；位于氧气结合那一面的，是远端组氨酸 distal histidine (His E7)，它根本不与铁成键。只说「上面那个、下面那个」是不够的，考试要用 proximal / distal 的英文名。远端组氨酸另有用处：它与结合上来的 O2 形成氢键，并对 CO 想要形成的线形加合物造成空间位阻——正因如此，从游离血红素进入蛋白之后，CO 相对 O2 的偏好下降约两个数量级，从上万倍降到几百倍。",
    "未结合配体的去氧结构就是 T 态，此时亚基之间贴得非常紧密。氧气对铁卟啉的亲和力很高，结合在空着的第 6 配位位置上；但接下来发生的事并不是把某个 histidine 挤开。去氧时的 Fe(II) 是高自旋、半径较大，突出于血红素平面约 0.4–0.6 Å；结合 O2 后铁变为低自旋、半径缩小并落入平面。近端组氨酸从未被「踢开」——它始终与铁配位——所以铁一移动，就把这个 histidine 连同其后的 F 螺旋一起拉动约 0.5 Å。这是「拉」，不是「踢」。",
    "这正是关键的力学传递环节，因为这个 histidine 并非孤立存在：它长在一段 alpha helix 上，残基被拉动，整段螺旋就跟着动。F 螺旋一动，它在亚基界面上形成的接触随之重排，蛋白就从紧实的 tense (T) 态转变为较松弛的 relax (R) 态。这就是「结构决定功能」这一论证的起点——一个铁原子上半个埃的位移，被放大成整个四聚体形状的改变，进而改变了它结合配体的方式。"
-  ]
+  ],
+  "key_en": "Proximal His F8 is never displaced by oxygen - it stays coordinated, so the iron's 0.4-0.6 angstrom drop into the heme plane pulls the histidine and helix F with it and rearranges the subunit interfaces from T to R. A pull, not a kick.",
+  "key_zh": "proximal His F8 从不会被氧「踢开」——它始终与铁配位，所以高自旋的 Fe(II) 结合 O2 后收缩、落入血红素平面约 0.4–0.6 Å 时，是把这个 histidine 连同其后的 F helix 一起拉动，界面接触随之重排，蛋白由 T 态转为 R 态。是「拉」，不是「踢」。"
  },
  {
   "index": 35,
@@ -605,7 +675,9 @@
    "这次偏转的后果是：那些还没有结合任何配体的亚基，其氧结合口袋也被露了出来。最简单的图景是四个关闭的口袋——在高氧分压 high pO2 下，只要一个 O2 进入其中一个口袋，其余的也随之打开。因此后面的氧分子比第一个结合得容易得多，这正是典型的正协同 positive cooperativity。结合→位移→更易结合，是一个因-果-因的循环，也是结构决定功能最典型的案例。",
    "衡量这一性质的量是 Hill 系数 Hill coefficient nH。nH = 1 表示完全没有协同：肌红蛋白 myoglobin 是单链蛋白，nH = 1，结合曲线为双曲线 hyperbolic。血红蛋白的 nH 约为 2.8–3.0，而它小于亚基数 4 这一点很有信息量——协同作用很强，但不是全或无，由此得到的是 S 形 sigmoidal 曲线而不是一个阶跃。",
    "有两个模型把这两种可能形式化，口试很爱问。MWC（协同／齐变模型）只允许两种构象，四个亚基整齐地一起由 T 跳到 R；KNF（序变模型）则认为每一次结合逐个诱导邻居发生改变。一个口袋打开、四个全开的图景本质上就是 MWC，而真实的血红蛋白介于两者之间。"
-  ]
+  ],
+  "key_en": "A roughly 15-degree rotation of one alpha-beta dimer against the other breaks the alpha1-beta2 salt bridges and exposes the still-empty O2 pockets, so later oxygens bind far more easily; nH of 2.8-3.0 rather than 4 means strong but not all-or-none cooperativity.",
+  "key_zh": "一个 αβ dimer 相对另一个转过约 15°，α1–β2 界面上的一批 salt bridges 因此断裂，尚未结合配体的亚基的氧口袋被露了出来，所以后面的氧比第一个结合得容易得多；nH 约 2.8–3.0 而不是 4，说明协同很强但并非全或无。"
  },
  {
   "index": 36,
@@ -622,7 +694,9 @@
    "它的结合位点不在血红素的氧结合口袋，而在四聚体中央的空腔，所以这是别构调节 allosteric regulation 而不是竞争。一个四聚体只结合一个分子，它带 3–5 个负电荷，由两条 beta 链上的正电残基固定：beta 链 N 端的 Val1、His2、Lys82 和 His143。这个空腔只有在 T 态才足够宽。于是 2,3-BPG 把瘦高的 X 拉回扁平形状，阻断那次滑动位移，口袋重新关闭，氧气被丢出去；而在 R 态腔变窄，BPG 被挤出，所以「BPG 稳定 T 态」与「氧合把 BPG 排出」说的是同一件事。",
    "生理意义在于：一个小分子巧妙地把中心代谢、电子传递和氧气运输三件事连在一起。2,3-BPG 高的地方曲线右移，血红蛋白正好在电子传递链 electron transport chain 大量耗氧的地方把氧交出去。这并不妨碍装载：同一批血红蛋白会流经肺部，在肺泡 alveoli 的高氧分压下照常结合氧气。这个效应必须放在整个循环里读，而不是停在某一点上看。",
    "由此得到三个应用。高原适应时红细胞 2,3-BPG 上升，曲线右移，组织卸氧更好。胎儿血红蛋白 HbF 用 gamma 链取代 beta 链，gamma 链把 His143 换成 Ser，结合 BPG 很弱，因此 HbF 的氧亲和力高于母体的 HbA，胎盘处氧气才能由母亲流向胎儿。库存血则相反：2,3-BPG 被耗尽，卸氧能力变差。"
-  ]
+  ],
+  "key_en": "2,3-BPG binds one per tetramer in the central cavity, not the heme pocket, and that cavity is wide only in T, so it stabilises T, lowers oxygen affinity and shifts the curve right. HbF's gamma chains swap His143 for Ser and bind it weakly.",
+  "key_zh": "2,3-BPG 一个四聚体只结合一分子，位点在四聚体中央的空腔而不是血红素口袋，所以是 allosteric regulation 而非竞争；该腔只有 T 态才够宽，因此 BPG 稳定 T 态、降低氧亲和力、使曲线右移。HbF 的 γ 链把 His143 换成 Ser，结合 BPG 很弱，氧亲和力因而高于母体 HbA。"
  },
  {
   "index": 37,
@@ -639,7 +713,9 @@
    "玻尔效应与 2,3-BPG 的方向一致：在氧分压高的肺泡 alveoli 装载氧气，在缺氧的组织卸载氧气。几个数字值得背下来。血红蛋白的 P50，即半饱和时的氧分压，约 26 torr；肺泡 pO2 约 100 torr，此时饱和度约 98%，静息组织约 40 torr、约 75%，运动中的肌肉可降到 20 torr 以下。曲线右移意味着 P50 升高、卸氧增强，由 H+、CO2、2,3-BPG 与体温的升高共同造成。",
    "这些氧究竟耗在哪里，分布并不均匀。耗氧集中在躯干，内脏耗氧最多，大脑也很多。四肢主要是肌肉，其需求只有一部分由血红蛋白在毛细血管处直接交付；手上静脉多而动脉少，与这一图景相符，因为外周并不需要那么高的氧输送量。",
    "其余部分由肌红蛋白 myoglobin 承担，但它并不是在血液里抓取游离氧。它是肌细胞内的单体蛋白，P50 约 2.8 torr，意味着在血红蛋白已经把自己的氧交出去的分压下，它仍能牢牢抓住氧。它接受血红蛋白在毛细血管处卸下、随后扩散进细胞的氧，起短期储存和促进胞内扩散的作用。它不是血红蛋白的替代供氧者，而是接力的下一棒；潜水的海洋哺乳动物正是依靠肌肉中极高的肌红蛋白含量。"
-  ]
+  ],
+  "key_en": "CO2 stabilises T by two independent routes: protons from carbonic anhydrase protonate residues such as beta-chain His146, and CO2 itself forms carbamates on the four N-terminal amino groups. Myoglobin, P50 about 2.8 torr, then takes up what hemoglobin unloads - the next leg of a relay.",
+  "key_zh": "CO2 通过两条彼此独立的途径稳定 T 态：经 carbonic anhydrase 生成的质子使 β 链 C 端 His146 一类残基质子化、加固盐桥；CO2 本身又与四条链 N 端的氨基生成 carbamate。玻尔效应即由此而来。肌红蛋白 P50 约 2.8 torr，接收血红蛋白在毛细血管卸下的氧，是接力的下一棒而非另一个供氧者。"
  },
  {
   "index": 38,
@@ -658,7 +734,9 @@
    "第三条线索是：同一个铁为什么对 O2、H+ 和 CO 的亲和力差别如此之大。溶液中游离血红素对 CO 与 O2 的偏好之比约为 20000:1；在血红蛋白内部降到约 200:1，原因是 distal His E7 的位阻迫使本来是直线的 Fe–C–O 几何发生弯折。即便如此 CO 仍然轻松取胜，而且结合了 CO 的亚基会把其余亚基锁在高亲和的 R 态，于是已经结合的氧也卸不下来。正是这套双重机制让 CO 中毒致命。",
    "第四条线索是那两条曲线。肌红蛋白的单一位点给出双曲线 hyperbolic，血红蛋白四个协同位点给出 S 形 sigmoidal，而有用的读法是给定氧分压下的饱和百分数：肺部接近饱和，静息组织已明显卸载，工作中的肌肉卸得更多。S 形曲线最陡的一段恰好落在生理范围内，这才使运输高效。",
    "最后是一处化学，因为氢键 hydrogen bond 和盐桥 salt bridge 很容易混。氢键是 D–H···A 形式的定向偶极相互作用，供体与受体是 N 或 O，能量约 4–20 kJ/mol，双方都不需要带净电荷。盐桥则是带相反电荷的基团之间的静电吸引，例如 Lys 的铵基与 Asp 的羧基，通常还带有氢键成分；其强度取决于局部介电常数，当这对基团埋在疏水内部时最强。"
-  ]
+  ],
+  "key_en": "Hemoglobin is allosteric: iron displacement on O2 binding travels through proximal His F8 to helix F, breaks alpha1-beta2 salt bridges and rotates the dimers 15 degrees from T to R; 2,3-BPG, H+ and CO2 stabilise T, O2 stabilises R, giving a sigmoidal shiftable curve.",
+  "key_zh": "一句话串起全章：血红蛋白是别构蛋白，结合氧时铁的位移经 proximal His F8 传到 F helix，破坏 α1–β2 界面的 salt bridges，两个 dimer 旋转约 15° 完成 T→R；T 态由 2,3-BPG、H+ 与 CO2 稳定，R 态由 O2 稳定，结果就是一条既呈 S 形、又能左右平移的曲线。"
  },
  {
   "index": 39,
@@ -675,7 +753,9 @@
    "这一带最常见的混淆，是把「容易给出氢」和「容易给出电子」当成同一句话。氢离子就是一个裸质子 proton，完全没有电子：氢原子本来只有一个电子，被夺走之后剩下的只有原子核。所以羧酸 carboxylic acid 解离时给出去的不是电子，而是一个带一个正电荷的质子。质子 proton 指氢的原子核，电子 electron 指带负电荷的那个粒子。",
    "氧对电子的抓取，同样不能靠说它最外层有 7 个电子来解释。氧的原子序数为 8，电子构型 1s² 2s² 2p⁴，最外层是 6 个价电子 valence electrons，还需要再得 2 个电子（或形成 2 个共价键）才达到八隅体；最外层 7 个电子的是卤素，例如氟和氯。说氧「抢电子」的正确依据是它的电负性 electronegativity 为 3.44，仅次于氟。更一般地说，在生化里不必用「得失电子」去硬套每一个反应，但要有一条可用的规则替代它：实用判据是碳的氧化态，碳上 C–H 键减少、C–O 或 C=O 增加即为氧化，反之为还原，所以 醇→醛→羧酸 是逐步氧化。电子载体把两套语言统一了起来：NAD+/NADH 与 FAD/FADH2 传递的是氢化物 hydride 加一个质子，而一个 H− 就等于同时给出 1 个质子和 2 个电子。",
    "磷酸化 phosphorylation 又属于另一个范畴。它是一种共价修饰 modification，不是「反应开始」的信号，也与氧化还原无关。蛋白激酶 protein kinase 把磷酸基团从 ATP 转移到 Ser、Thr 或 Tyr 的羟基上（原核中也用 His 和 Asp），蛋白磷酸酶 protein phosphatase 再把它移除，因此是一个可逆开关。生理 pH 下这个基团体积大且带约 −2 电荷，能重塑局部的静电与氢键网络；至于结果是激活 activation 还是失活 inactivation，完全取决于该位点在结构中扮演什么角色。糖原磷酸化酶被磷酸化而激活，糖原合酶被磷酸化而失活。"
-  ]
+  ],
+  "key_en": "A hydrogen ion is a bare proton with no electron, so giving up H+ is not giving up an electron; oxygen has six valence electrons, not seven, and is electron-hungry by its electronegativity of 3.44. Phosphorylation is a reversible covalent switch, unrelated to redox.",
+  "key_zh": "氢离子就是一个不带电子的裸质子 proton，所以「容易给出氢」不等于「容易给出电子」；氧是 8 号元素，最外层是 6 个价电子而不是 7 个（7 个的是卤素），说它抢电子的依据是电负性 3.44。磷酸化 phosphorylation 属于另一个范畴：可逆的共价修饰开关，与氧化还原无关。"
  },
  {
   "index": 40,
@@ -692,6 +772,8 @@
    "它与本章的接口十分直接。米氏动力学假定没有协同，给出的是双曲线，正是肌红蛋白氧结合曲线的形状。有协同的别构酶不遵守米氏方程，给出的是 S 形曲线，要用 Hill 方程及其 Hill 系数来描述。因此本章遇到的 S 形曲线，正是后面「不遵守米氏方程」那一大类的原型，把两处连起来问的题目很常见。",
    "口试有一个现实特点值得提前安排：问什么很大程度取决于主考官自己做什么研究，问题会往他自己的方向漂。例如一位做 TNF-alpha 的考生，就被问到其结构里的一个 sandwich。这个术语指的是 beta-sandwich（jelly-roll 折叠）：TNF-alpha 是同源三聚体 homotrimer，每个单体由两片反平行 beta-sheet 面对面叠成夹心，是 TNF 超家族共同的折叠。这类折叠名——Rossmann fold、TIM barrel、免疫球蛋白折叠 Ig fold、beta-sandwich——属于超二级结构 supersecondary structure 与结构域折叠这一层次，位于二级结构与三级结构之间，所以普通课本的二级结构一节从不提它们。",
    "由此得到的做法是：提前用同一套词汇读一读自己研究对象的结构。做 SARS-CoV-2 的，就要能在 fold 这一层次上描述这些蛋白，而不只是笼统地说。另外也值得知道接下来是什么。三羧酸循环 TCA cycle 那一块化学很多，需要慢慢过，而且它的中间物英文名彼此长得极像，光是背英文本身就是个麻烦。"
-  ]
+  ],
+  "key_en": "The Michaelis-Menten equation rests on the steady-state assumption and assumes no cooperativity, so it gives a hyperbola - exactly myoglobin's oxygen curve; cooperative allosteric enzymes disobey it and give the Hill-equation sigmoid, making this chapter the prototype of the non-Michaelis-Menten class ahead.",
+  "key_zh": "米氏方程 Michaelis-Menten 依据的是稳态假设 steady-state（Briggs–Haldane），并假定没有协同，因此给出双曲线，正是肌红蛋白氧结合曲线的形状；有协同的别构酶不遵守它，给出的是用 Hill 方程描述的 S 形曲线。所以本章的 S 形曲线正是后面「不遵守米氏方程」那一大类的原型。"
  }
 ]

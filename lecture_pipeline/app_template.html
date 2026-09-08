@@ -318,6 +318,19 @@ video{width:100%;display:block;background:#000;max-height:100%}
   margin-bottom:calc(var(--rlh) * 0.55em)}
 .readsec p.zh{font-size:calc(var(--rf) - 1.5px);
   margin-bottom:calc(var(--rlh) * 0.85em)}
+
+/* The one claim the section exists to deliver. */
+.key{border-left:3px solid var(--good);background:var(--panel2);
+  border-radius:0 8px 8px 0;padding:11px 14px;margin:0 0 16px}
+.key p{margin:0;font-size:calc(var(--rf) - 0.5px);line-height:1.7}
+.key p.zh{font-size:calc(var(--rf) - 2px);color:var(--dim);margin-top:5px}
+/* Keys-only: the takeaways are the document, the prose steps out of the way. */
+[data-keys="on"] .readsec .pair,
+[data-keys="on"] .pre{display:none}
+[data-keys="on"] .key{margin-bottom:8px}
+[data-keys="on"] .readsec{margin-bottom:16px}
+[data-keys="on"] .readsec h2{padding-top:10px}
+[data-keys="on"] .readdoc{max-width:76ch}
 .readdoc h1{font-size:calc(var(--rf) + 6px)}
 .readsec h2{font-size:calc(var(--rf) + 1px)}
 /* Side by side fills a wide screen without lengthening the line: the width
@@ -535,6 +548,9 @@ video{width:100%;display:block;background:#000;max-height:100%}
         <button id="tface" title="字体">Aa</button>
         <button id="tspace" title="字间距">⋯</button>
         <button id="tpair" title="中英上下 / 左右">⇄</button>
+      </span>
+      <button class="iconbtn" id="keysbtn" title="只看每节一句重点">只看重点</button>
+      <span class="tset">
       </span>
       <span class="n">空格 / ↓ 下一段 · Esc 退出</span>
     </div>
@@ -1172,6 +1188,14 @@ function renderRead(){
     const e=document.createElement('span'); e.className='en'; e.textContent=sec.heading_en||'';
     const z=document.createElement('span'); z.className='zh'; z.textContent=sec.heading_zh||'';
     h2.append(e,z); s2.appendChild(h2);
+    if(sec.key_en){
+      const kb=document.createElement('div'); kb.className='key';
+      const ke=document.createElement('p'); ke.className='en';
+      ke.textContent=sec.key_en; kb.appendChild(ke);
+      if(sec.key_zh){ const kz=document.createElement('p'); kz.className='zh';
+        kz.textContent=sec.key_zh; kb.appendChild(kz); }
+      s2.appendChild(kb);
+    }
     /* English then Chinese, paragraph for paragraph, so the two can be read
        against each other; the body-language switch does not reorder these
        because both are wanted here. */
@@ -1442,6 +1466,20 @@ $('tline').onclick =()=>cycleType('line');
 $('twide').onclick =()=>cycleType('wide');
 $('tspace').onclick=()=>cycleType('space');
 $('tface').onclick =()=>cycleType('face');
+function applyKeys(){
+  const on=load('keysonly','')==='1';
+  document.documentElement.dataset.keys=on?'on':'off';
+  $('keysbtn').classList.toggle('on',on);
+  $('keysbtn').textContent=on?'看全文':'只看重点';
+}
+applyKeys();
+$('keysbtn').onclick=()=>{
+  store('keysonly', load('keysonly','')==='1'?'':'1');
+  applyKeys();
+  /* Focus and read-along both walk paragraphs, which are not on screen now. */
+  if(document.documentElement.dataset.keys==='on'){ stopAlong(); setFocus(false); }
+};
+
 function applyPair(){
   document.documentElement.dataset.pair=load('pairmode','stack');
 }
