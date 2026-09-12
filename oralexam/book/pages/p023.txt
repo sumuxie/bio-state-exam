@@ -1,0 +1,35 @@
+| A ce) Aminokyseliny nevyskytující se v proteinech
+| Vedle 20 běžných aminokyselin a jejich derivátů, bylo nalezeno v různých buňkách a tkáních
+| přes 150 aminokyselin, tyto se vyskytují buď volně nebo vázané, ale nikdy v proteinech. Někte-
+| rénebílkovinné aminokyseliny patří do D-konfigurační řady (jako např. D-glutamová kyselina
+| A v bakteriálních buněčných stěnách); některé aminokyseliny této skupiny jsou důležitými pre-
+| kurzory nebo intermediáty v metabolismu; např. citrulin a ornithin jsou intermediáty při tvorbě
+2% močoviny (kap. 5.2.2.), f-alanin je prekurzor pro syntézu koenzymu A, apod.
+| -A 2.1.2 Fyzikálně chemické vlastnosti aminokyselin
+| 3 Acidobazické vlastnosti aminokyselin
+a Znalost acidobazických vlastností aminokyselin je velmi důležitá pro poznání a analýzu vlast-
+n ností proteinů, stejně tak i pro analýzu aminokyselin.
+Z iontového charakteru aminokyselin vyplývá závislost jejich struktury na pH. Při nízkém
+JA pH je potlačena disociace karboxylové skupiny, která se protonizuje a aminokyselina se chová
+r jako kation; naopak při vysokém pH se deprotonizuje kvartérní amoniová skupina a aminoky-
+a selina se chová jako anion.
+A : + je rd + Poe Hr m
+m HaN=CH=-COO0H Z————= HN- CH—C00 m——= HN — CH — C00
+á | +H | oN
+a R R R
+3 : Tomuto chování odpovídá titrační křivka aminokyselin; titrační křivka glycinu je znázorně-
+A na na obr. 2.1.
+a 4%
+- e
+S v Po mo
+A pi "61
+3 [.) LOT L E L T O O T T T T T okol uknů
+A z —
+R. 0 1 2
+| spotřeba OH mmol
+á Obr. 2.1 Titrační křivka glycinu
+1 Na této křivce jsou významné dva inflexní body, které odpovidají pK, karboxylové a aminové
+3 skupiny, a dále hodnota pH, odpovídající polovině spotřeby titračního činidla; tato hodnota se
+A nazývá izoelektrický bod (pl):
+| 5
+lytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

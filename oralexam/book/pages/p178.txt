@@ -1,0 +1,43 @@
+i Názvosloví mastných kyselin používá buď triviální názvy odvozené od přirozeného zdroje
+mastných kyselin (např. kys. palmitová), nebo systematické chemické názvosloví, které vyjá
+dřuje řeckými číslovkami počet uhlíků v řetězci a příponou —nová (např. kys. hexadekanová, i
+16:0) u nasycených mastných kyselin a příponami -enová, -dienová, -trienová přítomnost jede
+né, dvou, resp. tří dvojných vazeb v řetězci nenasycené nebo polynenasycené mastné kyseliny
+(např. kys. oktadekadienová, 18:2). Poloha dvojných vazeb počítáno od karboxylového konce
+se značí A. Poloha dvojné vazby od metylového konce se značí n- resp. podle starší nomenb la
+tury ds- a slouží k označení tzv. sérií mastných kyselin (např. n-6 a n-3 série) (obr. 8.2).
+Potrava savců musí obsahovat mastné kyseliny linolovou 9,12 C18:2n-6 a a-linolenovou
+9,12,15 C18:3n-3 (esenciální mastné kyseliny). Mastné kyseliny s vyšším počtem uhlíků než 18
+a s větším počtem nenasycených dvojných vazeb si savci dokáží syntetizovat z těchto esenciál.
+ních mastných kyselin pomocí systému elongas a desaturas. Mastné kyseliny výrazně ovlivňu- :
+jí chemické a fyzikálně chemické vlastnosti lipidů, jichž jsou součástí: a
+: — nasycené mastné kyseliny vedou k vyšší chemické stabilitě a k vyššímu bodu tání:
+lipidů 4
+— nenasycené mastné kyseliny snižují chemickou stabilitu a bod tání lipidů A
+— poloha dvojné vazby čím blíže ke karboxylové skupině, tím více snižuje chemickou |
+stabilitu a bod tání 3
+8.2.2 Jednoduché lipidy A
+Neutrální acylglyceroty +
+Acylglyceroly (též glyceridy) jsou estery trihydroxyalkoholu glycerolu a mastných kyselin. —
+Podle počtu esterifikovaných hydroxylových skupin existují monoacylglyceroly, diacylglyce-
+roly a triacylglyceroly. V přírodě se nejčastěji vyskytují triacylglyceroly. Acylglyceroly neob- |
+sahují v molekule žádnou ionizovatelnou funkční skupinu, a proto patří do skupiny tzv. neu- —
+trálních lipidů: v závislosti na jejich fyzikálním stavu při teplotě místnosti, daném obsahem |
+různých typů mastných kyselin, je nazýváme neutrální tuky (pevné) nebo neutrální oleje
+(kapalné). |
+Přirozené lipidy jsou většinou L-izomery: a
+o o o ]
+"CH oH CH „OC-R o "CH „oC-R o "cH oc-R 1
+2] 2 |? pol“ ||“ *
+HO-C-H * HO-C-H R'-CO-C-H R'-CO-C-H O A
+M M JM OH 9M oben: 1
+glycerol t-acyl-L-glycerol t,2.diacyl-L-glycerol = triacyl-L-glycerol |
+V živočišných buňkách mají triacylglyceroly tři základní funkce: 1
+1. v tukové tkání tvoří tzv. tukovou zásobu, zásobní formu uhlíku a energie, ve kterou je I
+přeměňován jakýkoliv nadměrný přísun uhlíku či energie v potravě (především cukry: |
+2. ve formě lipoproteinových partikulí (chylomikronů) slouží k transportu a distribuci mast-
+ných kyselin z potravy lymfatickým a krevním systémem v těle, J
+3. zajišťují fyzickou ochranu a teplotní izolaci různých tělesných orgánů (ledviny, střeva-
+apod.). A
+178 1
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/Wwww.software6lW.cz/

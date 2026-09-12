@@ -1,0 +1,41 @@
+3 organismu udržovat jejich hladinu na žádoucí úrovní. Koncentrace dané látky může být poměr-
+= ně nízká (řádově mmol/l), ale její obrat bývá velmi rychlý. Bylo např. vypočítáno, že lidské tělo
+= vyrobí za 24 hodin asi 70 kg ATP,
+a Názorným příkladem takového metabolického „poolu“ je acetyl-CoA, který vzniká degra-
+= dací cukrů, lipidů i proteinů a je odčerpáván při syntéze mastných kyselin a lipidů, při syntéze
+= isoprenoidů, steroidů ap. (viz obr. 10.1).
+J Sacharidy Lipidy Proteiny
+ž Pyruvát Mastné kys. Aminokyseliny
+A Acetyl-CoA
+| Citrátový cyklus Lipidy Isoprenoidy
+É Dýchací řetězec
+i Obr. 10.1 Aceyl-CoA a jeho metabolismus
+= 10.1.1 Metabolismus sacharidů
+3 Prvním krokem metabolismu sacharidů (kap. 7.7 a dále) je tvorba fosťorylovaného mono-
+a -sacharidu, ať už fosforylací monosacharidu za spotřeby ATP (vzniká Gle-6-(P)) nebo fosforo-
+É lýzou glykogenu (vzniká Gle-l-(P)). V glykolýze lze za klíčové body odbourávání cukrů pova-
+A žovat rozštěpení Fru-1,6-bisfosfátu na dvě fosfotriosy, dehydrogenaci 3-(P)-glyceraldehydu na
+: fosfoglycerát a dehydrataci 2-fosfoglycerátu na fosfocnolpyruvát. Odbouráním jednoho molu
+1 glukosy na dva moly pyruvátu tak vzniknou 2 mol NADH a 2 moly ATP.
+
+S Pyruvát je za aerobních podmínek odbouráván v citrátovém cyklu na oxid uhličitý a vodu.
+
+Ť Za anaerobních podminek je ve svalu redukován na laktát,
+
+S Glukosa může být také oxidována přímo cestou pentosafosfátového cyklu. Tento způsob od-
+
+| bourávání sacharidů využívá organismus pro tvorbu pentos a k syntéze nukleových kyselin,
+
+: současně vznikající NADPH není oxidován v dýchacím řetězci, ale je využíván pro syntetic-
+L ké reakce.
+
+: Syntéza sacharidů v živočišném organismu (glukoneogeneze) používá jako zdroj uhlíku ky-
+| selinu mléčnou, která vznikla anaerobní glykolýzou. Syntéza sacharidů je vlastně obrácená gly-
+| kolýza od fosfoenolpyruvátu až po šestiuhlíkaté struktury. Problémem je pouze přeměna py-
+| ruvátu na fosfoenolpyruvát, ta probíhá oklikou, karboxylací pyruvátu na oxalacetát. Také obě
+| fosforylace hexos při jejich odbourávání v glykolýze jsou reakce nevratné a v procesu syntézy
+| musí být katalyzovány jinými enzymy (hydrolasami). Některé aminokyseliny mohou být touto
+
+cestou přeměněny až na sacharidy,
+219
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

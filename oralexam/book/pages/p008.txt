@@ -1,0 +1,54 @@
+1. OBECNĚ ZÁKONITOSTI ZIVÝCH SOUSTAV
+1.1 Co je biochemie? | |
+Můžeme-li chemii označit jako vědu o kvalitativních přeměnách látek, je nejpřirozenější vy- |
+mezit biochemii jako disciplinu, zabývající se zkoumáním takovýchto přeměn, které probíhají |
+v živé hmotě. S encyklopedickou úplnosti bychom mohli biochemii definovat např. jako „stu-
+dium látek, které se vyskytují v organismech, procesů, jimiž tyto látky do organismů vstupují
+nebo se v nich vytvářejí, a jimiž reagují spolu navzájem a s okolním prostředím, a také studium
+metod, jimiž jsou tyto látky a procesy identifikovány, charakterizovány a měřeny“. Biochemie
+se tím řadí jak mezi vědy biologické (zkoumá totiž živou přírodu), tak mezi chemické obory
+(protože se zabývá chemickými přeměnami).
+
+YWznik biochemie odráží její interdisciplinární povahu: jejími „rodiči“ jsou z „chemické“
+strany organická chemie (resp. původně s ni totožná chemie přírodních látek), z „biologické“
+strany pak fyziologie. (Proto se zpočátku používalo i označení „fyziologická chemie“.) Před-
+pokladem pro rozvoj biochemie jako samostatného oboru bylo ovšem dosažení takového stup-
+ně znalostí „obecné chemie“ a zejména takového rozvoje analytických metod, aby bylo mož-
+no úspěšně analyzovat vysoce organizovanou a z chemického hlediska velmi složitou živou
+hmotu, a aby bylo možno pochopit alespoň nejjednodušší z přeměn v ní probíhajících. (Příkla-
+dem metody, která měla takovýto zásadní význam pro vznik biochemie, je Kjeldahlova meto-
+da stanovení dusíku, vyvinutá r. 1883.) Tím si lze vysvětlit, proč se biochemie objevuje jako
+samostatný obor až v poslední čtvrtině 19. století, jako poslední z „velkých“ chemických disci-
+plin. O skutečném rozvoji biochemie lze hovořit od přelomu století — charakteristickým datem
+je např. vznik prvého časopisu, v jehož názvu bylo použito slova „biochemie“ (Biochemische
+Zeitschrift r. 1906). We druhé polovině 20. století jsme pak svědky bouřlivého rozvoje bioche-
+mie; jeho předpokladem bylo, právě tak jako při vzniku oboru, výrazné zdokonalení experi-
+mentálních metod (tentokrát především fyzikálně-chemických: spektroskopie, chromatografie,
+rentgenové strukturní analýzy, elektronové mikroskopie apod.), a také výrazný pokrok v úrov-
+ni obecných znalostí v příbuzných a souvisejících oborech, zejména v obecné biologii. Přehled
+některých význačných mezníků ve vývoji biochemie přináší tab, 1.1.
+
+Biochemie je typickým hraničním oborem, který má mnoho vazeb na jiné biologické a che-
+mické discipliny. V obdobném postavení jako biochemie je biofyzika; vzhledem k významu
+instrumentálních (svou podstatou fyzikálních) metod pro moderní biochemii jsou si oba obo-
+ry v soudobém pojetí velmi blízké. Biochemie má přirozeně vazby také k ostatním chemickým
+oborům, které jsou jejím metodickým nástrojem i zdrojem koncepcí pro interpretaci a pocho-
+pení experimentálních dat: nejvýraznější je tato vazba ve směru k organické chemii a k jejímu
+podoboru, chemii přírodních látek. Svými výsledky je biochemie zapojena do kontextu věd 1
+
+: biologických; celkový rozvoj biologického poznání a metodik na druhé straně umožňuje bioche-
+
+mikům vydělovat z vysoce strukturované a organizované živé hmoty takové podsystémy, které
+vytvářejí funkční jednotky, a u nichž lze předpokládat (a má smysl zkoumat) vnitřně organizo-
+vaný systém chemických přeměn. Tuto roli plní jak systematické biologické obory (vymezují-
+cí a zpřesňující jednotlivé taxony), tak zejména obecné biologické discipliny: jejich poznatky
+jsou také rámcem, který uvádí do souvislostí děje z chemického hlediska izolované a nezávislé.
+Jako příklad bychom zde mohli uvést fyziologii, cytologií, genetiku, mikrobiologii, virologii.
+
+Zvláštním postavení má molekulární biologie, která je ve svém širším pojetí vlastně sou-
+částí biochemie — zabývá se totiž objasňováním biologicky významných dějů na molekulární
+(a tedy chemické) úrovní. Dnes ovšem často převládá užší pojetí molekulární biologie, které
+tento obor v zásadě ztotožňuje s molekulární genetikou.
+
+L]
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

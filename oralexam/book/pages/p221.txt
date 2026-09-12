@@ -1,0 +1,40 @@
+i Prostřednictvím fumarátu je propojen citrátový cyklus s metábolismem aminokyselin tyrosinu
+= a kyseliny asparagové (kap. 5).
+| 10.2 Regulační mechanismy
+: : "Při nekontrolované koexistenci by enzymové reakce na mnoha místech metabolismu probíha-
+| ly neužitečně, případně by se účinky některých enzymových systémů vzájemně rušily. Vysoký
+| stupeň organizace je možný jen za podmínek důsledné regulace enzymových reakcí,
+-A O regulaci metabolických procesů lze uvažovat na různých úrovních. Můžeme mluvit o re-
+S gulaci metabolismu celého organismu, určitého orgánu, buňky, systému enzymových reakcí,
+| jediné enzymové reakce. Z fyziologického hlediska můžeme klasifikovat regulaci nervovou,
+|- něbo hormonální. Soustředíme se na možnosti regulace jediné enzymové reakce a systémů en-
+A zymových reakcí.
+: ž Regulace uskutečňovaná Michaeclisovou kinetikou
+a l Sama enzymově katalyzovaná reakce je příkladem jednoduchého způsobu regulace (i když ne
+A příliš účinného). Ze závislosti rychlosti reakce na koncentraci substrátu (viz kap. 3.3.1) je zřej-
+p: 1M mé, že malá změna koncentrace substrátu vyvolává velkou změnu rychlosti reakce. Rychlost
+a reakce je tedy v tomto případě regulována koncentrací substrátu. Tato závislost však platí pro
+A jednoduchý enzym jen v oblasti kinetiky prvního řádu v lineární časti křivky. Při vysokých kon-
+A centracích substrátu se již tato regulace neuplatňuje. Za podmínek s vřvo jsou však předpokla-
+| dy pro tento typ regulace splněny.
+: | Regulace změnou hladiny (koncentrace) enzymu
+| | Regulovat enzymové reakce je možné rovněž kontrolovanou syntézou enzymů, Y tomto přípa-
+a dě mluvíme o regulaci biosyntézy enzymů indukcí nebo represí (kap. 4.2.4). Jde o úroveň vyu-
+a žívání genetické výbavy buňky. Induktorem může být vyvolána nebo zvýšena transkripce a ná-
+3 sledně i translace daného proteinu. Obdobně je možno transkripci a translaci potlačit. Indukci
+E biosyntězy enzymů působí např. steroidní hormony.
+| Inhibice enzymových reakcí
+7 O možnosti a typech inhibice enzymových reakcí již bylo pojednáno jinde (kap. 3.5). Na tom-
+i: to místě je třeba jen uvést, že tyto možnosti ovlivnění enzymových reakcí vazbou inhibitorů do
+1 aktivního místa enzymů představují důležitý způsob regulace enzymových reakcí. K inhibici
+1 může docházet i produktem enzymové reakce, a tak se při hromadění produktu enzymová re-
+| akce zpomalí.
+i i Alosterická kontrola
+| Alosterická aktivace a inhibice enzymů je jedním z nejúčinnějších mechanismů metabolické
+| regulace. Jak již bylo vysvětleno jinde (kap. 3.7.1) alosterickou kontrolou rozumíme inhibici
+| nebo aktivaci enzymů metabolitem, který se neváže do aktivního místa, ale na jiné místo enzy-
+mové bílkoviny a ovlivňuje enzymovou aktivitu. Učinek nastává změnou konformace enzymů.
+Tato možnost představuje i regulaci tzv, zápornou zpětnou vazbou (angl. „feedback contral““).
+Jde o vliv konečného produktu na reakční stupně, které jsou na začátku reakčního sledu. Do-
+2žl
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

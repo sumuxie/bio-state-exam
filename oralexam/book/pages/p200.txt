@@ -1,0 +1,40 @@
+Funkce membránových proteinů -A :
+i Membránové proteiny, integrální i periferní, mohou být rozděleny podle jejich role v me bráně
+na strukturní a dynamické. Hranice mezi těmito typy není nikterak ostrá, ale jako struktumi
+proteiny lze chápat ty, které pomáhají udržovat strukturu a vzájemné interakce komponent bio-
+logických membrán. Často tyto proteiny mají protáhlý vláknitý tvar, jsou umístěny na hydrofile
+ním povrchu membrány a fungují jako jakási zakotvující lana. Dynamické proteiny jsou odpo-
+vědné za buněčné procesy, které se realizují na úrovní biologických membrán. Ve všech typech
+buněk jsou obvykle přítomny tři typy dynamických proteinů: A
+1) transportní proteiny zprostředkovávající pohyb látek do buňky a z buňky ven -M
+2) katalytické proteiny zprostředkovávající enzymové reakce vázané na biologické mem-
+3) receptorové proteiny zprostředkovávající specifickou vazbu určitých látek (hormonů, to- =
+xinů, transmiterů) na vnější straně membrány, poskytující signál, který vede k biochemie- -
+kým změnám v membráně nebo v prostoru, který membrána ohraničuje. A :
+8.5.3 Membránový transport M
+Biologické membrány vytvářejí hranici mezi dvěma prostory — buňkami nebo subcelulárními —
+kompartmenty. Kdyby byly nepropustně, buňky by byly zcela izolované, výživa by nemohla
+vstupovat, produkty by nemohly z buňky vystupovat. Naopak kdyby byly propustné, jakáko-
+liv látka by se mohla volně pohybovat mezi regiony. Samozřejmě ani jeden z těchto extrémů |
+není v přírodě přípustný a biologické membrány jsou selektivně propustné — semipermeabil- |
+ní, tzn. že některé látky mohou procházet zcela volně, jiné volně procházet nemohou. Existu-
+jí dva základní typy transportu látek přes membránu: pasivní a aktivní transport. Jestliže látka i
+prochází přes membránu difúzí z oblasti o vyšší koncentraci do oblastí s její nižší koncentrací JA
+bez spotřeby energie, jedná se o pasivní transport. Difúze může být prostá nebo usnadněná —
+(zprostředkovaná). Prostá difůze se uskutečňuje bez jakékoliv účasti membránových protemů, S)
+k transportu dochází přímo přes lipidní dvojnou vrstvu, nahodilými póry v membráně nebo ka- =
+nálky vytvořenými integrálními membránovými proteiny protínajícími membránu. Tímto způ- —
+sobem jsou transportovány látky lipofilní, voda a některé ionty. M
+A je) B A
+ki a A
+A * a.) * Ko:
+K e1 i ; VDVIM |
+o . A
+a“ w* O 3
+. o * *
+* o a . 4
+Obr. 8.3 Typy transportu prostou difůzí, A
+A — průnik lipofilních molekul rozpouštěním v membránových lipidech; B — tok roztoku, ze- A
+jména vody, mikropórem v integrálních proteinech; C — průnik malých molekul poruchami —
+v membráně A
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software l cz/

@@ -1,0 +1,34 @@
+Nejprve enzym reaguje s NAD*(ev. ATP), které slouží jako donory adenylové skupiny pod- 3 | .
+le rovnice: J A
+E + ATP (NAD“) — E-AMP + difosfát (nikotinamid-ribosa- fosfát) T.
+AMP je v binárním komplexu enzym-adenylát vázán na e-aminoskupinu lysinu prostřednictvím I S
+fosfoamidové vazby: a |
+Aktivovaný zbytek AMP je poté přenášen z lysylového zbytku k fosfátové skupině S'-konce — -
+DNA a dochází k tvorbě komplexu DNA-adenylát. Finálním krokem je nukleofilní atak 3'-OH: | .
+skupiny druhé molekuly DNA (nebo části molekuly DNA) naaktivovaný S'-fosforečný zbytek, W ©
+Reakce dále probíhá podle rovnice: % A
+DNA-3'-OH + AMP-5'-fosfát-DNA — DNA-3'-0-5'- fosfát-DNA + AMP. | A
+Celkově je možné reakce vyjádřit rovnicí: L
+DNA-3'-OH + 5"-fosfát-DNA + ATP (NAD) — S)
+— DNA-3'-0-5'- fosfát-DNA + AMP + difosfát (nikotinamid-Rib-fosfát) K
+DNA může být v průběhu replikace vizualizována autoradiograficky (inkorporací značené- I-
+ho *H-thymidinu) nebo elektronovou mikroskopii. Bylo zjištěno, že např. replikující se DNA:
+z E. coli je ve formě uzavřeného kruhu (cirkulární struktura) s vnitřní smyčkou (tzv. the- W
+ta struktura“). Název vyplývá z podobnosti této struktury s řeckým písmenem theta, obr. 4.21. W
+čouriasp oč John Caláaá, Góšd áriáy Harbor Latankorý Replication Je | +
+Obr. 4.21 Autoradiogram replikujícího se chromosomu £. coli a jeho schěématický nákres. ) »
+V obrázku je znázorněno i replikační očko („replication eye'") kruhového chromosomu |
+Vlastní replikace (zdvojení) dvoušroubovicové DNA probíhá semikonservativně. Část dvou- | A
+šroubovice je rozvinuta a replikace probíhá pouze na této části jednovláknové DNA. Místo, ve Z
+kterém dochází k rozpletení dvoušroubovice a současně zde probíhá replikace, se nazývá re- R
+plikační vidlice (vidlička) („replication fork“), obr. 4.22. Začátek replikace je vázán na určité a A
+místo v molekule DNA. V replikační vidlici DNA slouží oba řetězce mateřské DNA jako tem- P
+pláty pro syntézu nové DNA. Všechny známé DNA polymerasy však mohou prodlužovat ře- P
+tězce DNA jen ve směru 5'-a3'. Zdvojení vláken DNA proto probíhá jako semidiskontinuální Ť S
+replikace (obr. 4.22). Obě parentální vlákna jsou replikována různými postupy, Nově syntetizo- p
+vaný řetězec DNA, který roste ve směru 5'-+3've směru pohybu replikační vidličky (vedoucí, A
+„leading“ řetězec) je syntetizován prakticky nepřetržitě ve svém směru 5'—>3 "současně s po- 1 -
+stupem replikační vidličky. Druhý nově syntetizovaný řetězec, tzv. opožďující se (váznoucí, kA
+„lagping“) řetězec však také musí být syntetizován ve směru 5'-23"', je tedy tvořen diskontinu- ž A
+álně (tvoří se tzv. Okazakiho fragmenty, obr. 4.22. a: 4.23). z.
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.softwaret ) ozl

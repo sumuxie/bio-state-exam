@@ -1,0 +1,34 @@
+| = BP, které katalyzuje vlastní polymeraci. Holoenzym RNA polymerasy je zodpovědný za ně-
+| |= kolik komplexních funkcí: (i) vazbu templátu, (ii) iniciaci řetězce RNA, (iii) elongaci (prodlu-
+: = žování) řetězce a (iv) terminaci (ukončení) řetězce.
+je : = Eukaryotní jádro obsahuje tři typy tohoto enzymu (I, II, III, označované také jako A, B, C).
+3 2 R A-polymerasa I syntetizuje v jadérku prekurzory rRNA, RNA-polymerasa II, přítomná v ja-
+É = derné plazmě, syntetizuje prekurzory mRNA a RNA-polymerasa III (rovněž přítomná v jader-
+| = hé plazmě) se podílí převážně na syntéze prekurzorů tRNA a 5S rRNA. Syntéza všech nukleo-
+| = vých kyselin probíhá v jádře buněk.
+3 | Syntéza RNA je iniciována na specifických místech templátu DNA. RNA-polymerasa se
+: = Váže ke svým iniciačním místům sekvencemi bází, označovanými jako promotory („promo-
+: = ters“), které jsou rozpoznávány odpovídajícím faktorem «' (část podjednotky molekuly RNA
+: = polymerasy). Promotor je umístěn v blízkosti startovního nukleotidu. Sekvenční studie ukazu-
+: = jh že se promotor překrývá s operátorem /ac (obr. 4.29 a dále kapitola 4.2.4, Regulace proteo-
+A = syntézy, Regulace transkripce, obr. 4.46 a 4.47). Holoenzym tvoří pevné komplexy s promoto-
+; | ty, čímž chrání navázané úseky DNA před štěpením DNAasou I. Jakmile holoenzym iniciuje
+A = transkripci RNA, faktor a disociuje z komplexu „jádro“ enzymu-DNA-RNA a může se navázat
+A 2 ha jiné „jádro“ za vzniku nového iniciačního komplexu. i
+3 A : -80 -70 -60 -500 -400 -0 -20 -10 +1 +100 +200 © +80
+- -1 Obr. 4.29 Nukleotidová sekvence /ac-promotoru £. coli — oblast operátoru leží mezi C-konco-
+| = vou oblastí /acž (vlevo) a N-terminální oblastí /acZ (vpravo).
+É A Proces elongace řetězce RNA je znázorněn na obr. 4.30 Prodlužování řetězce je katalyzová-
+| no RNA-polymerasou, která katalyzuje reakci obdobnou reakci DNA-polymerasy (obr. 4.31).
+: i: 1 RNA
+1 A l) polymeráše
+A s hascent RNA DNA antisense strand p,
+JA PBRÁ n „tl A) MRrmB) popem -MM
+É "ao a 9 7 M Transeription
+a : bubile
+: E | (hb) Master HK FMA n ooo
+: :. ca [Bl om 2) pojyměrocs a. 97, MM DNA antisense strand
+: A p +— Undervinding Transeriptian čverwinding —+
+a bubble
+.. Obr. 4.30 Elongace (prodlužování) řetězce RNA RNA polymerasou.
+ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

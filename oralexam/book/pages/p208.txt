@@ -1,0 +1,50 @@
+přenosu energie ve světlosběrných systémech nedochází k separaci nábojů. Na přenos ene gie
+mezi molekulami světlosběrného komplexu směrem do RC se uplatňují fyzikální metody po pisu,
+
+RC spolu s přidruženými nejbližšími akceptory a donory elektronů, s příslušnými vazeb-
+
+nými proteiny a světlosběrnými pigmenty se obvykle nazývá fotosystém (PS). Fotosystémy
+a tudíž i reakční centra jsou orientovaně zasazeny, lokalizovány, v thylakoidních membránách ;
+
+a prostupují fosfolipidovou dvojvrstvou, jako tzv. integrální proteiny, lépe řečeno pigmentopro-
+teinové komplexy. Primární fotochemická reakce tedy vede k oddělení nábojů, které je orien- 3
+továno napříč membránou. (řibbsova energie takto oddělených nábojů se stabilizuje tak, že se A
+elektron z primárního akceptoru přesune na sekundární akceptor po spádu elektrochemického ;
+potenciálu (kap. 6.2.1): a
+A+A, A+A, = i
+Obdobně se zaplní elektronová mezera v chlorofylu v RC elektronem z předcházejícího členu | AA
+řetězce přenosu elektronů, z tzv. sekundárního donoru. (Primárním donorem elektronů je pig- — a
+ment Py RC.): A :|
+D,+P--D/'+P T)
+Do tohoto souboru (A „A „D,, atd.) lze zahrnout celý sled přenosu elektronů od výchozího do- a |
+noru — molekul vody — až po konečný akceptor, NÁDP". Pokud se elektrony vracejí zpět do: — ž
+RC, probíhá tzv. cyklický tok elektronů. Jeho jediným výsledkem je vznik ATP. Někdy se tento — ň
+děj nazývá také cyklická fotofosforylace. Dvě fotoreakce, dva fotosystémy v sérii znamenají li- — 3
+neární tok elektronů (jinak též někdy necyklická fotofosforylace), jež se obvykle znázorňuje ve- A
+schématech v podobě ležatého písmene Z (viz vložené schéma v obr. 9.5), a to buď ve stupni- — S
+ci oxidačně redukčních potenciálů: v dolní části jsou oxidanty (E OH O = 520 mv), v horní Ě ž
+části reduktanty (E NÁDPY/NADPH = -320 mW) nebo ve stupnici hodnot Giibbsovy energie. 3
+Ve stupnici AG jsou zřetelné exergonické děje (přerušovaná čára) a endergonické děje, tj. pro- — 3
+cesy v RC, které vyžadují přísun energie ve formě fotonů, A Ů
+Fotosystém, který fotooxiduje molekuly vody a přenáší elektrony na plastochinon se kon- 3 Ň|
+venčěně označuje jako PS II. Fotosystém, který přenáší elektrony na NADP* a navíc se účastní
+cyklického toku elektronů (mezi ferredoxinem Fd a plastochinony ©), jako PSI, Při vnitřním — Ť
+povrchu thylakoidů (obr, 9.1 a obr. 9,5) probíhá fotolýza vody, na vnějších stranách thylakoidů + A
+se redukuje NÁDP" a vyčnívá komplex ATP-synthasy. A :
+S přesuny elektronů je spřažen přenos protonů, podobně jako při konzervaci energie v respi-  — ž
+račním řetězci: zdánlivý, pokud se protony na jedné straně membrány spotřebovávají (redukce  — A
+NADP“") ana druhé straně uvolňují (fotolýza vody) anebo skutečný, pokud se protony přenášejí na- W
+příč membránou. Skutečný přenos protonů obstarávají molekuly hydrofobních plastochinonů, které- )
+operují za spoluúčasti tzv. komplexu cytochromů b a f (cytochrom b/E obr. 9.5) uvnitř membrány. 1 A
+Přenos elektronů je tedy doprovázen přesunem protonů. Při osvětlení stoupá koncentra-
+ce protonů v celém vnitřním prostoru thylakoidů (H* jsou delokalizovány), při vnějším povwr-
+chu thylakoidní membrány naopak klesá koncentrace H". Generuje se transmembránový roz- W
+díl v koncentraci H*. Gibbsova energie ApH je využita buď bezprostředně (např. pro aktivní W
+transport) anebo ATP-synthasou, posledním supramolekulárním thylakoidním komplexem, kte-
+rý obsahuje pouze nepigmentované proteiny a jehož složení i funkce jsou opět analogické ATP- %
+-synthase ve vnitřní mitochondriální membráně (obr.6.4 a 6.6). ATP-synthasa vyrovnává ApH: R
+i elektrochemický potenciál na obou stranách membrány a syntetizuje ATP.:z ADP a anorganice R
+kého fosfátu. Obrácená je však orientace thylakoidních membrán: při fotosyntetických oxidač- 0
+ně redukčních reakcích se přesunují protony z vnějšku dovnitř thylakoidů. Rovněž komplex k
+
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.softwaret hcz/

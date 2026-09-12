@@ -1,0 +1,36 @@
+| a Z-oxo-L-gulonové kyseliny (viz obr. 7.6); obsahuje endiolové seskupení (dvě hydroxylové sku-
+: = piny na jedné dvojné vazbě) a působí jako všechny endioly silně redukčně. Odštěpením vodíku
+= přechází v kyselinu dehydroaskorbovou. Askorbová kyselina je rozšířena převážně v rostlinách.
+j a | 0
+p + kyselina L-askorbová kyselina L-dehydroaskorbová
+A Obr. 7.6 Kyselina askorbová
+= A 7.2.3 Cukerné alkoholy
+| 1 Redukcí karbonylové skupiny monosacharidů vznikají tzv. cukerné alkoholy (alditoly). Reduk-
+i = cí D-glukosy např. vzniká D-glucitol (dřívější název sorbitol; tentýž alditol vzniká i redukcí
+M = L-glukosy, D-fruktosy i L-sorbosy), redukcí D-mannosy vzniká D-mannitol.
+É A V přírodě se vyskytují ještě tři další cukerné alkoholy: ribitol, glycerol a inositol. Inositol je
+A = vlastně cyklohexanový derivát; vyskytuje se nejenom jako složka fosfolipidů, ale také jako fy-
+| = lová kyselina (hexafosforečný ester inositolu).
+| č 7.24 Aminocukry
+Š 3 Aminocukry vznikají formálně náhradou hydroxylové skupiny cukru aminoskupinou. Bioche-
+: = micky jsou důležité tři sloučeniny: D-glukosamin, (2-deoxy-2-amino-D-glukosa), D-galaktosa-
+: | min (2-deoxy-2-amino-D-galaktosa) a kyselina neuraminová. Aminoskupina aminocukrů bývá
+= Velmi často acylována zbytkem organické kyseliny, především acetylem.
+: A N-Acetyl-D-glukosamin — vyskytuje se vázaný v polysacharidu chitinu, v glykolipidech,
+= glykoproteinech a heteroglykanech (viz obr. 7.12).
+: A N-Acetyl-D-galaktosamin — je důležitou složkou glykoproteinů a glykolipidů (viz obr. 7.12).
+A.. Kyselina neuraminová — její struktura odpovídá formálně produktu aldolové kondensace ky-
+; = seliny pyrohroznové a D-mannosaminu, Neuraminová kyselina se nevyskytuje ve volné for-
+: = mě. Její N-acetylové nebo N-glykolylové deriváty jsou velmi důležitými složkami glykolipidu
+i v membránách, látek krevních skupin a mnohých dalších glykoproteinů (viz obr. 7.12),
+1 7.2.5 Deoxycukry
+: » Mezi biochemicky nejdůležitější deoxycukry patří 2-deoxy-D-ribosa, která je složkou DNA.
+20 Dále se v přírodě vyskytují 6-deoxyhexosy: L-fukosa (6-deoxy-L-galaktosa) je obsažena v oli-
+"| gosacharidech mléka a v glykoproteinech (viz obr. 7.12); L-rhamnosa (6-deoxy-L-mannosa) se
+| vyskytuje v glykosidech.
+| 7.2.6 Glykosidy
+| | : Náhradou poloacetálového hydroxylu sacharidu alkoxylem lze odvodit glykosidy. Při zahří-
+: vání D-glukosy v methanolu obsahujícím HCl, se tvoří dva acetály (dva glykosidy): methyl-
+1M
+T 153
+ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

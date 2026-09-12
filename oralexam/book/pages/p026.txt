@@ -1,0 +1,38 @@
+2.1.4 Tvorba peptidové vazby
+V proteinech je karboxylová skupina jedné aminokyseliny spojena s o-aminoskupinou další
+aminokyseliny peptidovou vazbou (amidovou vazbou). Tvorba dipeptidu ze dvou aminokyse-
+lin, doprovázená ztrátou molekuly vody, je znázorněna na obr, 2.3. ]
+HW-vo H o H o H o |
+a L- A + | I |
+HN=—6—6, + + „ls bec: — ě vědí: toe č Ta. 4+ HO :
+R, © R, O R, HR O
+Obr. 2.3 Tvorba peptidové vazby
+Polypeptidový řetězec je tvořen mnoha aminokyselinovými zbytky spojenými peptidovou vaz-
+bou a je nevětvený, Vzhledem k tomu, že stavební jednotky, které tvoří peptidový řetězec (ami-
+nokyselinové zbytky) mají dvě funkční skupiny (-NH, a -COOH), má i peptidový řetězec dva
+konce. Podle konvence se sekvence aminokyselin v peptidovém řetězci píše tak, že se začíná
+aminokyselinou, která má volnou aminoskupinu (tzy, N-koncová aminokyselina) a končí ami-
+nokyselinou, která má volnou karboxylovou skupinu (tzv. C-koncová aminokyselina) (obr. 2.4).
+Polypeptidový řetězec se skládá jednak z pravidelně se opakující části (hlavní řetězec) a jednak ]
+z variabilní časti, kterou tvoří různé postranní řetězce aminokyselin (R—R.) (obr, 2.4).
+| H O HO H H O v ;
+k | | i Ma P pa
+v mi mou moe m m p
+| ň, H Ř, H h, H R H R, W
+N-koncová aminokyselina C-koncová aminokyselina
+Obr. 2.4 Pentapeptid
+Dvě aminokyseliny tvoří dipeptid, tři — tripeptid, atd. Jestliže není spojeno více než 10 amino- ]
+kyselin, mluvíme o oligopeptidech, při vyšším počtu o polypeptidech. Jako bílkoviny (protei-
+ny) se označují peptidové řetězce, které se skládají z více než 100 aminokyselinových zbytků. |
+| 2.2 Proteiny
+2.2.1 Sekvence aminokyselin ]
+Pro charakterizaci peptidového řetězce nestačí jen znát druh a počet aminokyselinových zbyt- |
+ků, které tvoří peptidový řetězec, a které se mohou uvolnit hydrolýzou, nýbrž je nutné znát je- ]
+jich pořadí.
+Pořadí aminokyselin kovalentně vázaných v peptidovém řetězci — sekvence aminokys elin —
+bývá označována jako primární struktura. Znalost sekvence aminokyselin v peptidovém řetěz-
+ci je důležitá z mnoha důvodů:
+a) analýza vztahů mezi sekvencí aminokyselin a trojrozměrnou strukturou proteinu odhaluje
+pravidla, která řídí uspořádání peptidového řetězce v prostoru; aminokyselinová sekvence tak
+26 |
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na htto:/www.software602.cz/

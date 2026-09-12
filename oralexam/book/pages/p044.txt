@@ -1,0 +1,43 @@
+amidadenindinukleotidfosfát (NADP"), který se liší od NAD" tím, že obsahuje ve svě molekule |
+další zbytek kyseliny fosforečné vázaný v poloze 2'-adenosinové části, :
+o Ala ]
+s n NON J I
+Hi ]
+H—mo—iB)—>—o—H,C ke A
+H a
+H H H H I
+du o 3
+A NAD+ R= —H |
+NADP+ R= —(P) ]
+Funkcí těchto koenzymů je reverzibilně vázat vodík. Ten se váže na C-4 pyridinového kru- |
+hu, který tím ztrácí aromatickou povahu a také kladný náboj. Oxidoredukci nikotinamidových
+koenzymů vystihuje rovnice: :
+[*] sd
+He HM pů 1
+| = be + Bt )
+| *N -2 N Ť
+I l 1
+> ab =(P—(P— Ado Rib—(P) — P) —Ado |
+NAD* + 2H === NADH + H* Ť
+V organismu mají koenzymy rozdílnou funkci. NADPH funguje jako redukční ekvivalent při |
+biosyntetických reakcích, NAD" se podílí spíše na reakcích odbourávání a na reakcích vedou- |
+cích k tvorbě ATP, |
+E iso) (A temy MMB I
+ci k O===— -0 NADH ]
+= sí ]
+| di Ja || A
+| 2 somobf/ 3 |
+k] i j
+=- i vů |
+© 5000 Fa |
+| a A |
+| M] 1
+„P k j
+C)
+M0 M0 140 300
+vlnová dělka (nm)
+Redukovaná forma koenzymů (NADH i NADPH) má rozdílné absorpění spektrum ve srovnání j
+s oxidovanými koenzymy, s výrazným absorpěním maximem při 340 nm. Tohoto faktu se s vý- ]
+hodou využívá pro stanovování koncentrace koenzymů a především pro sledování enzymových
+reakci, kterých se tyto koenzymy účastní.
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

@@ -1,0 +1,51 @@
+i 1 I Ý I
+
+S 2 O00C-CH.„-C-S-ACP CH„-C-CH „-C-S-ACP: + CO,
+
+a 1 o 7 feketoacy1-S-ACP a
+
+3 : 4 | synthasa ACP-SH
+
+A : Třetím krokem (Ill) biosyntézy je redukce fi-ketoxyacylové skupiny enzymem fi-ketoacylre-
+da = duktasou:
+
+„M : 0 0 NADPH(H ) NADP F I
+
+A A CH, =F-=cHz -C=ACP f-ketoacylreduktasa CH. -CH-Cif, C-O-ACF
+
+= | Vzniklá sloučenina f-hydroxybutyl-S-ACP je ve čtvrtém kroku (IV) dehydratována enzymem
+A = ji-hydroxyacyldehydratasou:
+
+| L T HO I
+
+ju B z z -CH=CH-C--5-
+
+A CH „-CH-CH „-C+S-ACP aemřároxtácy idehydrataša CH -CH=CH-C-S-ACP
+
+A J Pátým krokem (V) je další redukce za pomocí enzymu o, fi-enoylreduktasy:
+
+poč Ý NADPH(H O) —— NADP :
+
+A CH -CH=CH-C-S-ACP m ooomoyireduktasa > CHg7CH -CH -C>S-ACP
+
+E 0) butyryl-S-ACP
+
+| Ž Čtyřuhlíkatý zbytek kyseliny (obecně acyl) je v posledním, šestém kroku (VT) přenesen z cent-
+|] rální SH-skupiny dfosfopantheteinu) na periferní SH-skupinu (cysteinu).
+
+A Celý cyklus se může znovu opakovat opětovným navázáním malonylu na uvolněnou cent-
+A rální SH-skupinu a pokračovat kondenzací s butyryl-S-A CP za vzniku šestiuhlíkatého řetězce
+A a dále jeho 1. redukcí, dehydratací a 2.redukci. Dalšími pěti cykly (celkem tedy sedmi) může-
+A i me získat palmitoyl-S-ACP. Tento 16-ti uhlíkatý zbytek organické kyseliny se skládá z 8 acety-
+A : lových jednotek, avšak v cyklu biosyntézy této molekuly se reakcí zúčastnil acetyl-CoA pouze
+2 jedenkrát v prvním kroku, ostatní dvouhlikaté fragmenty byly do molekuly zabudovány pro-
+ÉJ střednictvím malonyl-CoA. Poslední reakcí ukončující biosyntézu mastných kyselin je hyd-
+zů rolytické uvolnění mastné kyseliny z multienzymového komplexu. Má-li být mastná kyseli-
+— na zapojena do dalších biosyntetických drah lipidů, musí být aktivována thiokinasou za vzniku
+l palmitoyl-CoA.
+
+SS Díky kondenzačním reakcím na multienzymovém komplexu, zvaném někdy těž synthetaso-
+A vý komplex mastných kyselin, je zřejmě, že acylový řetězec narůstá vždy o dva atomy uhlíku
+p od methylového konce ke konci karboxylovému:
+
+v tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

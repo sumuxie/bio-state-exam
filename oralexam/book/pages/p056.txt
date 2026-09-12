@@ -1,0 +1,37 @@
+Rychlost reakce je přímo úměrná koncentraci substrátu, má tedy kinetiku I. řádu. 3
+Když je koncentrace substrátu velmi vysoká [A] >> K„„ pak zjednodušení znamená, že 1
+rychlost enzymové reakce je konstantní a maximální (V „). Veškerý enzym se nachází v kom-
+plexu enzym-substrát (EA), enzym je substrátem nasycen. Dosazením Ka V dorovnicel) |
+dostaneme nejobvyklejší formu rovnice Michaelise a Mentenové J
+E |
+v = Vým LA] (6)
+Km F[A] É
+Když se koncentrace substrátu právě rovná Michaelisově konstantě [A] = K, pak se |
+v = V 2. Z těto úvahy vyplývá smysl konstanty K.. Hodnota K. se rovná koncentraci sub- |
+strátu, při které je enzym právě z poloviny substrátem nasycen. Je to veličina, která charakte-  —
+rizuje vždy dvojicí enzym a substrát, vyjadřuje afinitu enzymu k substrátu. Čím je hodnota K. I
+nižší, tím je daná látka lepším substrátem pro enzym. Michaelisova konstanta má tedy rozměr-
+koncentrace.
+Experimentální určování Ka V.. j
+Už závislost v na [A] (Obr. 3.2) v principu umožňuje stanovit hodnoty těchto konstant. V praxi: —
+se tohoto stanovení neužívá vzhledem k tomu, že měření rychlostí v oblasti vysokých koncent-  —
+rací substrátu je nepřesné a materiálově náročné. Častěji se využívá lineární transformace rov-
+nice Michaelise a Mentenové (6). Tento způsob určování hodnot Ka V „navrhli Linewea-
+vera Burk. ]
+v
+Vin po----------nmmm= |
+Vim |- 1
+2 | í
+I 3
+I |
+Kr IA] |
+Obr. 3.2 Vliv koncentrace substrátu na rychlost enzymové reakce :
+v ]
+1 ]
+př m |
+„r Vim
+7 :
+„0 [A] 1
+Obr. 3.3 Určování kinetických konstant enzymu podle Lineweavera a Burka ]
+50 ]
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software604cz/

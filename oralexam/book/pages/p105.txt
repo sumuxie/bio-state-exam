@@ -1,0 +1,60 @@
+: | (obr. 4.48), který má podobnou funkci jako operátor. V případě přepisu /rp-operonu do mRNA
+
+: = je syntetizován kratší úsek mRNA, pouze do místa atenuátoru (obr. 4.458).
+
+; "Model mechanismu atenuace je znázorněn na obr. 4.49,
+
+E leader . K Y.) Transeription
+
+: A oh Kao £0/ terminator
+
+P MATE .
+
+: -A (z n 3 A "Teřminated"
+
+ží po MP dc: -+ C RNA polymerase
+
+= imLmRNA Rav
+
+1 A Ribosome transcribing
+
+3% 2 the leader peptide mRNA
+
+= | 0) Lowtryptophan | em G
+
+| A h m Eí pa Antiterminatoť Transcribing
+
+A 9 1 zak m | be polymerase
+
+M (9D zad“
+
+: A Ribosome. stalled
+
+: E “. DNA encoding
+
+A at tandem Trp codons frp operon
+
+: Úbr. 4.49 Atenuace v zrp-operonu (a) V případě dostatku tRNA, zabraňuje ribosom v úseku
+
+: = Z vzniku vlásenky 2—3, spárované bázemi. Tak může vzniknout vlásenka 3-4, nezbytná složka
+| lerminátoru transkripce, čímž dochází k přerušení transkripce. (b) W případě nedostatku tryp-
+
+= tofanyl- tRNA, ribosom se zastaví na tandemu Trp-kodonů v úseku 1. Tato situace umožnila
+= Vznik vlásenky 2-3; která dále zabraňuje vzniku vlásenky 3-4. RNA polymerasa tedy přepíše
+= tento nefunkční terminátor a pokračuje v transkripci operonu ep,
+
+A Při pozitivní regulací (stimulací exprese mRNA) se na gen promotor naváže regulační pro-
+= teina dochází ke změně konformace sousedního úseku DNA, Změnou konformace se usnadňu-
+| je interakce DNA s enzymem RNA-polymerasou, která se pohybuje po vlákně DNA a synteti-
+= zuje na principu komplementarity bází mRNA (ev. další RNA).
+= Regulace proteosyntézy mnohobuněčných eukaryontů se odlišuje od výše uvedené regu-
+| lace u prokaryontů. Genová regulace v eukaryontních buňkách se vysvětluje několika mode-
+= ly, ale žádný nebyl ještě plně experimentálně ověřen. Jeden z modelů předpokládá, že regula-
+| ceunižších eukaryontů se rovněž účastní gen promotor, ale každý eukaryontní gen má zřejmě
+= Více promotorů, na které se může připojit RNA-polymerasa. Jako regulační proteiny vystupu-
+= ji zřejmě proteiny nehistonového typu, které interagují s DNA, Tyto bílkoviny se syntetizují na
+
+É = zvláštních regulačních genech.
+
+A 105
+eno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

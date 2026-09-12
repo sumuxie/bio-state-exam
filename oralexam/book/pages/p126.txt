@@ -1,0 +1,26 @@
+Z hlediska biochemického průběhu lze katabolické reakce aminokyselin rozdělit do pěti skupin: |
+l. Přeměna na acetylkoenzym A přes pyruvát (C -rodina) A
+Aminokyseliny se napojují produkty svého kataholismu na citrátový cyklus v různých místech 3
+(viz dále). Nejvýznamnější vstup však představuje acetylkoenzym A. -1 |
+|
+Alanin se při této přeměně odbourává na pyruvát přímou transaminací s 2-oxoglutarátem. Se-
+rin je dehydratován a deaminován na pyruvát v reakci katalyzované serindehydratasou. Alter- j
+nativně může být serin odbouráván též na glycin. Threonin se štěpí účinkem threoninaldola- —
+sy na glycin a acetaldehyd. Dehydratací threoninu alternativně vzniká 2-oxobutyrát, který se |
+transaminuje na 2-aminobutyrát nebo aerobně dekarboxyluje na propionát. Významná je pře- —
+měna glycinu na serin, která je katalyzována serinhydroxymethyltransferasou. Přeměna cysti-  —
+nu a cysteinu na pyruvát může probíhat různým mechanismem. Reakci, vedoucí přes kyselinu —
+cysteinsulfinovou, katalyzuje dehydrogenasa a desulfinasa: A
+2 + A Wo kyselina I
+(NAD —> NADH+H 3 cystein- 3
+HOOC—CH-CH SH HOOC—CH-CH „SO H sulfinová 4
+PystetA | transaminace 3
+Ů (u) a
+Ů I! :
+CH —C-COOH demu lfirace  nogc-C-cH so H .
+pyruvát B-sulfinyipyruvát 2
+2. Přeměna na acčetylkoenzym A přes acetoacetylkoenzym A I
+Na acetylkoenzym A se odbourává i dalších pět aminokyselin (fenylalanin, tyrosin, lysin, tryp- 1
+tofan a leucin), a to cestou přes acetoacetát, resp. acetoacetylkoenzym A: Ť
+126 ]
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software cz/

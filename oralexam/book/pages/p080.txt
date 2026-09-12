@@ -1,0 +1,40 @@
+nost 67 000), v němž je obsažena část proteinu mající 3" — 5' nukleasovou a polymerasovou 1
+aktivitu. Spojené 5"—+3' exonukleasové a polymerasové účinky DNA polymerasy I mohou vy- —
+měňovat nukleotidy na 5'-straně mezery („nick““) ve vláknu jinak nepoškozené DNA. Tyto re- =
+akce vlastně posunují mezeru směrem k 3'-konci vlákna, aniž by jinak měnily molekulu DNA |
+(obr. 4.18). Z enzymových aktivit DNA-polymerasy I vyplývá, že její funkce v buňce může být —
+dvojí: (i) opravuje DNA, a (ii) může i syntetizovat DNA (resp. její úseky). DINA polymerasa: =
+I hraje určitou roli i při rozplétání dvoušroubovice DNA. a
+a TT zh ]
+s HELL, | ANNNNAROHR HANA ANNN NAHA ANNE NOke |
+Nick dNTPs | :
+1 DNA polymerase I iM
+PP; |
+Bi M kat Lila Vl rnn a A
+oci 3
+Mononucleotides l. raál 1
+přez ]
+Obr. 4.18 Posun mezery („nick““) katalyzovaný DNA polymerasou I 1
+Yedle DNA-polymerasy I byly v buňkách nalezeny ještě dvě další polymerasy, DNA- |
+-polymerasa II a III. Tyto enzymy mají shodné dvě enzymové aktivity (polymerasovou —
+a 3' — 5" exonukleasovou), DNA polymerasa II však nevykazuje 5' —> 3' nukleasovou ak- —
+tivitu. Funkce n vívo je známá pouze pro DNA-polymerasu III. Plní funkci DNA replikasy, —
+tedy syntetizuje většinu nové DNA, zatímco DNA-polymerasa I odbourává primery a vyplňuje: —
+vzniklé mezery v řetězci DNA. )
+2) Helikasy, vazebné proteiny a DiNA-ligasy :
+Rozplétání dvoušroubovice DNA je zprostředkováno kooperací enzymu helikasy (DnaB pro- i
+tein v obr. 4.19), rozplétacích proteinů a proteinů bránících opětovného spárování vláken (pro-
+teinu SBB v obr, 4,19). Energie je ději poskytována hydrolýzou ATP. Helikasa rozděluje vlák-  —
+na dvoušroubovice DNA pohybem podél opožďujícího se vlákna („lagging strand“) matrice. —
+Podobně se pohybuje poděl vedoucího vlákna („leading strand“) jeden z rozplétacích proteinů —
+(protein Rep — není v obr. 4.19 znázorněn). Odděleným vláknům DNA za postupující helikasou —
+zabraňuje ve zpětném spárování navázaný protein SBB (obr, 4.19), 1
+SSB :
+DnaB zle ka z. : 5 :
+Lagging strand 3
+a pá. AVA Ř -= Fork movement 3
+ko | v XU Leading strand
+za eo A ate A] Lg )
+Obr. 4.19 Rozplétání dvoušroubovicové DNA do replikační vidličky („fork“) |
+| 80 ]
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software603.cz/

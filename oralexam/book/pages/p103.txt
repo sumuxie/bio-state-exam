@@ -1,0 +1,34 @@
+= y Regulatory | Control
+-— -A = gene —M |=- sites -| Structural genes ————*
+A EEN BEE F [JU
+A M A “— —---— Lactose operon ——>=———— jm
+A = Obr. 4.46 Mapa genů E. coli kódujících enzymy metábolismu laktosy a míst v genomu, která
+2 |= tegulují jejich expresi. Geny Z, Fa 4 kódují P-galaktosidasu, galaktosidpermeasu a thiogalak-
+A |= tosidiransacetylasu.
+— H (a) Absence oř inducer
+i 3 A m———— Hto ODB mm
+
+a - a Repressor binds to
+
+a -MA opěrator, prevěnting
+va p k: transeription of fae operon
+p A (b) Presence of inducer
+č RNA" < M 1 | '
+F A Inducer Transoription of
+ců JEA ae structural genes
+
+Ň M čomplex does nat
+. a bind ta operator
+p S Obr. 4.47 Exprese /ac-operonu. (a) V nepřítomnosti induktoru se represor, produkt genu / váže
+: = Da operátor, čímž zabraňuje transkripci lac-operonu. (b) Po vazbě induktoru represor disociuje
+: | Z operátoru, což umožňuje transkripci a následnou translaci strukturních genů /ac.
+A A Na tomto případě (indukce enzymů metabolismus laktosy) si rovněž tento proces vysvětlí-
+Ň | Me. Skupina genů, které kódují syntézu jedně skupiny bílkovin se nazývá operon (obr. 4.46
+i = pro geny £. coli kódující enzymy metabolismu laktosy, /ac-operon). Vedle operonu je v DNA
+A = přítomen regulátorový gen („regulatory gene“, gen /, obr. 4.46), jehož proteinový produkt
+| = slouží k regulaci procesu transkripce. Operon se skládá ze dvou oblastí — regulačního místa
+: = („control site“, geny P a O, obr. 4.46), a úseku strukturních genů (geny Z, Fa A, obr. 4.46),
+i = jejichž proteinový produkt, zejména enzymy (v obr. 4,46 geny enzymů metabolismu lakto-
+; = 8y), se účastní obecného metabolismu buňky. Regulační místo je tvořeno genem operátorem
+| - (gen O, obr. 4.46.), který je nezávislý na regulátorovém genu /, který se vyskytuje (či překrývá)
+| M pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

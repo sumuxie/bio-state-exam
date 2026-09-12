@@ -1,0 +1,41 @@
+: 3 Vzniklý sukcinyl-CoA, který je makroergickou sloučeninou, přechází v sukcinát (anion kyseli-
+= hy jantarové) nikoliv pouhou hydrolýzou, ale reakcí s GDP a anorganickým fostfátem. Reakce
+= je katalyzována sukcinyl-CoA-synthetasou:
+
+1 sukcinyl=S8-CoA + P, + GDP — sukcinát + GTP + CoA-SH
+z Koncový fosťátový zbytek v GTP může být přenesen na ADP;
+A GTP + ADP = GDP + ATP
+» Sukcinát se oxiduje na fumarát enzymem sukcinátdehydrogenasou, který obsahuje kovalentně
+-2 vázaný FAD:
+h cHcoor
+A | + FAD =- -O0C-CH + FADH,
+-— CH,-Coo- |
+A CH-CO0Or-
+A sukcinát furnarůt
+a Fumarát vznikne ve formě trans-izomeru a v další reakci, kterou katalyzuje fumaráthydratasa,
+= Tesp. fumarasa, se mění na L-malát. Obdobně jako při třetí reakci citrátového cyklu se aduje
+= molekula vody na dvojnou vazbu:
+| . Fumarát + H,O => L-malát
+. Malát je substrátem malátdehydrogenasy, která produkuje NADH a oxalacetát:
+A CH,—coo- CH,—C00-
+: | +. NADĚ. == | + NADH + H*
+É HO—CH-CO00- 0=C-Coo-
+| S L-malát oxalacetát
+| ž Tato reakce uzavírá citrátový cyklus a produkuje další NÁDH. (Oxalacetát, podobně jako oxal-
+sukcinát, je J-oxokyselina. Je však stálejší.)
+= Uelý citrátový cyklus lze vyjádřit rovnicí:
+I Acetyl-CoA+3NAD'+FAD + GDP+P+2H,0 = 2C0,-HNÁAÁDH+3H+rFADH +GTP+CoA
+: Regenerace redukovaných forem koenzymů NADH a FADH, zajistí respirační řetězec (viz kap.
+= 6.2.4), jež produkuje ATP v poměrech přibližně 3 ATP/NADH a 2 ATP/FADH,. Včetně GTP
+a přeměnitelného na ATP, dostáváme rovnici, která udává maximální zisk biologicky využitelné
+| energie (ATP) v průběhu citrátového cyklu: :
+
+A CH,CO-S8-CoA +20,+12ADP+12P — 200, + CoA-SH + 12 ATP + 13 H,O
+
+j Při odbourání 1 molu glukosy za aerobních podmínek lze tedy maximálně získat: 8 ATP (glyko-
+
+1 lýza) + 6 ATP (oxidační dekarboxylace pyruvátu) + 24 ATP (citrátový cyklus). Celkem 38 molů
+
+j 139
+
+J vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

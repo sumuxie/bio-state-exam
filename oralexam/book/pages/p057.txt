@@ -1,0 +1,30 @@
+: o | 5
+
+1. -Kn A, A: TA]
+
+Ť Obr. 3.4 Určování kinetických konstant enzymu podle Cornish-Bowdena a Fisenthala
+
+| A ve Vu eh 0
+| A Toto je rovnice přímky, jejíž směrnice je K//V a úsek, který přímka vytíná na ose 1/v je
+5 AM
+
+ř o: Jednodušší způsob určování hodnot kinetických konstant navrhli Cornish-Bowden a Eisen-
+> |) thal. Plyne z charakteru hyperboly dané rovnicí (6). Souřadnice průsečíku asymptot této hyper-
+"= boly jsou právě Ka Vo
+
+s A — da3.2 Dvousubstrátové reakce
+
+| . Rovnice Michaelise a Mentenové platí pro reakce, ve kterých se přeměňuje jediný substrát.
+o | Když se reakce účastní dva substráty je situace složitější. V zásadě jsou možné dva mecha-
+o W nismy dvousubstrátových reakcí:
+
+T a) Mechanismus, při kterém se tvoří ternární komplex, tzn. že v průběhu reakce jsou vázá-
+> W ny oba substráty současně na enzym (EAB). Mechanismus tohoto typu může být buď neuspo-
+o | řádaný (angl. random), tzn. že nezáleží na pořadí vazby substrátů na enzym nebo uspořádaný
+o W (angl. ordered), u kterého platí přísné pořadí ve vazbě substrátů na enzym:
+
+- a B A Y x
+
+A EXY BY
+
+A h ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

@@ -1,0 +1,39 @@
+A A Interface view Back view
+
+| a Obr. 4.27b Struktura 168 rRNA T: thermophilus
+
+= | Transferové RNA (tRNA) jsou nejmenší RNA (4 5). Přenášejí aktivované aminokyseliny při
+> | proteosyntéze z cytoplasmy do místa proteosyntézy (na ribosom). Vzhledem k malé moleku-
+= | lové hmotnosti jsou tRNA dobře rozpustné ve vodě. V buňkách existuje nejméně tolik tRNA,
+| | kolik je aminokyselin v bílkovinách (každá tRNA přenáší jen jednu aminokyselinu). Všechny
+"RNA mají stejné pořadí bází na 3'-konci molekuly a to ...pCpCpA.
+
+A Struktura tRNA je nejlépe prozkoumanou strukturou RNA. Všechny mají tvar schématic-
+"| ky znázorněný formou jetelového listu. Jejich molekula se skládá ze tří konstantních smyček
+"0 f (sarm“) a jedné menší smyčky, tzv, smyčky variabilní („variable arm“) (obr. 4.28a). Smyčky
+of v tRNA obsahující tzv. minoritní báze jsou spojené šroubovicovou strukturou (obr. 4.28b). Na
+| začátku tRNA je akceptorové místo („acceptor stem, obr. 4.28a) pro aminokyselinu (CUA ko-
+"| nec tRNA). Antikodonová smyčka obsahuje antikodon (triplet, který se pří proteosyntéze na-
+= | vazuje na příslušný kodon v molekule mRNA, obr. 4.28a,b). Molekula tRNÁ je obdobně jako
+of mRNAarRNA tvořena ve formě prekurzoru, který je řízeně upravován.
+
+* O struktuře a funkci nukleových RNA (nRNA) je známo nejméně. Mezi nukleové RNA se
+= | řadí prekurzorové RNA pro všechny druhy RNA, ale i jiné nRNA. Dále do této skupiny RNA
+of patří nízkomolekulbvá (malá) nukleová RNA (snRNA) a chromosomové RNA (cRNA).
+| | snRNA tvoří komplexy s bílkovinami a váží se i k DNA, snRNA také participuje na vyštěpo-
+2 © vániexonů z RNA.
+
+A eRNÁA se vyskytují v chromatinu, kde se váží s nehistonovými bílkovinami. Působí jako ak-
+"| tivátory či represory genů.
+
+| S Virová RNA hraje u vírů úlohu jak DNA tak i mRNA.
+
+I Syntéza RNA probíhá v buňce podobným mechanismem jako DNA (podle principu komple-
+"| mentarity bází), avšak sekvence bází v DNA se přepisuje do sekvence bází RNA. Proto se
+| a tento proces nazývá transkripce. Tímto procesem se syntetizují všechny druhy RNA (tRNA,
+T rRNA i mRNA). Jsou syntetizovány v jádře jako vysokomolekulární prekurzory, které jsou cí-
+T lenou hydrolýzou štěpeny na vlastní molekuly.
+
+T Pro syntézu RNA jsou opět potřeba jako substráty čtyři druhy nukleotidů — ribonukleotid-
+T trifosfáty (adenosintrifosfát, guanosintrifosfát, cytidintrifosfát a uridintrifosfát) a dále DNA
+Výtvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

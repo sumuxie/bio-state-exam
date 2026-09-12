@@ -1,0 +1,34 @@
+chází k alosterické inhibici některého z počátečních enzymů reakčního systému konečným pro-
+duktem. Takový enzym se pak nazývá řídícím enzymem. sa
+Řídící reakce 00
+Řídící (kontrolní) enzym nemusí vykonávat svou řídící funkci ve sledu enzymových reg keci.
+jen tím, že je alostericky kontrolován, ale také tím, že katalyzuje prakticky ireverzibilní re-
+akci (např. reakci silně exergonickou). Příkladem může být enzym fosfofruktokinasa, k er č
+v glykolýze katalyzuje prakticky ireverzibilní fosforylaci fruktosa-6-fosfátu (víz kap. 7.8).
+Regulace limitujícími metabolity A
+W tomto případě dostupnost (přísun, zásoba) klíčového metabolitu může ovlivňovat množství
+produktu enzymové reakce nebo celého systému enzymových reakcí. Příkladem může být fos-
+forylace v dýchacím řetězci, kde limitujícím faktorem je dostatek ADP, A
+Regulace enzymovou modifikací (enzymů) A :
+Některé enzymy mohou přecházet z méně aktivní případně zcela inaktivní formy v aktivní A
+formu (nebo obráceně) chemickou modifikací. Ta je katalyzována opět enzymově. Nejčastě- —
+ji je k tomuto účelu využívána enzymová fosforylace enzymů (kap. 3.7.2). Jiným typem enzy- —
+mové modifikace je přeměna inaktivního proenzymu na aktivní enzym částečnou proteolýzou  —
+(trypsinogen-trypsin, kap. 5.1). A
+Regulace na principu isoenzymů : i:
+Možnosti regulace na tomto principu jsou popsány v kap. 3.7.3. 1
+Kompartmnentace *
+Buňka je rozdělena na mnoho různých prostorů (kompartmentů), ve kterých se uskutečňu- A
+jí určité reakce a substráty i produkty musí být transportovány (většinou řízeně) přes membrá-
+ny, které tyto kompartmenty oddělují (kap. 8.5.3). Je to důležitý prostředek k tomu, aby mohly —
+např. odděleně a kontrolovaně probíhat syntetické i degradační reakce, které mají zčásti stejně —
+meziprodukty. A
+10.3 Hormony A
+Hormonálním řízením rozumíme ovlivňování tkání nebo buněk specificky účinnými látkami, |
+hormony. Ty se tvoří ve specializovaných žlázách, tkáních nebo buňkách a vylučují se do krev- —
+ního oběhu nebo působí na okolní buňky.
+Činnost hormonální žlázy bývá řízena zase hormonálně. V případě systému hypofýza -kůra —
+nadledvinek tato hierarchie hormonálních žláz zahrnuje tři stupně, vzniká regulační okruh tvor-
+by hormonů: +
+222 J
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na httop://www.software : cz/

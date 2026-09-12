@@ -1,0 +1,49 @@
+AA = čemž se otvírá disulfidový kruh a aldehydová skupina se přemění na CH,-CO- a na -H. To je
+„Ah = Vlastní dehydrogenační (oxidační) stupeň. Vzniká při něm z lipoové kyseliny derivát dihyd-
+A = olipoové kyseliny a z aldehydu derivát kyseliny. Gibbsova energie oxidace aldehydu zůstává
+
+0m = obsažena ve výsledné sloučenině, neboť ta obsahuje acetylový zbytek Vázaný makroergickou,
+A = thioesterovou vazbou. Odtud se acetyl snadno přenáší na koenzym A za vzniku acetyl-CoA.
+"A a Lipoová kyselina se z dihydrolipoové kyseliny regeneruje dehydrogenací flavoproteinem,
+A = který přenáší vodík z dihydrolipoové kyseliny na NAD*. Redoxní potenciál tohoto flavoprotei-
+-a = mu (dehydrogenasy) je mnohem negativnější než potenciál běžných flavoproteinů, takže může
+A | tento enzym přenášet vodík na NAD*.
+
+A A NAD" se pak regeneruje v dýchacím řetězci za vzniku asi tří molekul ATP. Oxidační dekar-
+= boxylace, jak je popsaná pro případ pyruvátu, je však daleko obecněji využívaným pochodem.
+A = Přecházejí tak obecně a-oxokyseliny na acyl-CoA. S těmito reakcemi se setkáváme např. v ci-
+= trátovém cyklu (viz kap. 6.2.2), když z a-oxoglutarátu vzniká sukcinyl-CoA, nebo při přemě-
+: A | ně o-oxokyselin vzniklých transaminací při metabolismu některých aminokyselin (alanin, va-
+-A = lin, isoleucin, leucin) (viz kap. 5.2. 1).
+
+"| 7.9 Glukoneogeneze, resyntéza glukosy
+
+* A Při anaerobní glykolýze vzniká takové množství laktátu, že se jeho část může použít k resyntéze
+-E glukosy a glykogenu. V zásadě by mohla syntéza probíhat jako zvrat glykolýzy, u některých re-
+L akcí je však rovnováha posunuta v neprospěch žádaných produktů. Týká se to hlavně pyruvát-
+--—R kinasy, kdy tvorba pyruvátu a ATP z fosfoenolpyruvátu a ADP je prakticky ireverzibilní. Proto
+A a musí při resyntéze glukosy dojít na tomto místě k oklice přes oxalacetát. Ten vzniká karboxy-
+A lací pyruvátu. Oxalacetát se fosforyluje mnohem snadněji, neboť je usnadněna tvorba enolfor-
+p Š my. K fosforylaci se používá v tomto případě GTP místo ATP. Od fosfoenolpyruvátu probíhá
+m- již glukoneogeneze jako zvrat glykolýzy. V závěru resyntézy glukosy jsou pak změny v tom,
+a že fruktosa-lL.6-bisfosfát se hydrolyzuje na fruktosa-6-fosfát a anorganický fosfát a glukosa pak
+—- vzniká hydrolýzou glukosa-6-fosfátu rovněž za vzniku anorganického fosfátu a nikoliv ATP, jak
+-—* by odpovídalo v obou případech zvratu glykolýzy. :
+
+A | NAD? ADH + HŤ ÚU
+
+4 pe- coce cod
+
+"AM dy m É - ADP ATP vem s -© =
+2 ČHs ka 2
+
+A u-laktát pyruvát o> fosfosnolpyruvát
+
+% C0, biotin coz
+
+-A čo?
+
+AA oxalacetát ;
++ 169
+
+fytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

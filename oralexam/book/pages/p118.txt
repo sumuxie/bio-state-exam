@@ -1,0 +1,42 @@
+Většina trávicích enzymů je biosyntézována ve formě proproteinů (zymogenů), které jsou post- -
+translačně modifikovány částečnou proteolýzou (kap. 4.3). Biosyntéza proenzymových fo cm
+je velmi účelným ochranným mechanismem zabraňujícím natrávení produkčních orgánů a tká:
+ní. Proenzymy se aktivují až při vylučování do trávicího traktu. Postupné odbourávání bílkovin
+trávicími enzymy je schématicky znázorněno na obr, 5.2. A
+Do žaludečního obsahu se vylučuje pepsinogen, ze kterého se působením kyseliny chlorovo- — 7
+díkové odštěpuje pět peptidů a vzniká komplex pepsin-inhibitor. V kyselém prostředí se z toho- |
+to komplexu uvolňuje peptidový inhibitor a vzniká pepsin, který odbourává bílkoviny na vět- —
+ší polypeptidy, peptony. A
+Ze slinivky (pankreatu) se do tenkého střeva vylučuje hned několik proteinů: trypsinogen, A
+chymotrypsinogen, proelastesa, prokarboxypeptidasa a inhibitor trypsinu. Irypsinogen se =
+mění účinkem další proteasy, enteropeptidasy ze sliznice tenkého střeva, na trypsin. Inhibi- | *
+tor trypsinu vazbou na trypsin jednak chrání tuto proteinasu před autokatalytickým rozkladem, 4 A
+jednak zabraňuje předčasné aktivaci chymotrypsinogenu a prokarboxypeptidas ve střevním — F
+obsahu. Účinkem trypsinu, chymotrypsinu a elastasy se peptony štěpí na menší polypeptidy I .
+a oligopeptidy, které jsou v tenkém střevu dále degradovány pomocí karboxypeptidas a ami- — a
+nopeptidas ze sliznice tenkého střeva až na jednotlivé aminokyseliny a di- (případně tri-) pep- M
+tidy. Ty jsou nakonec odbourávány dipeptidasami a tripeptidasami, produkovanými slizni- — „A
+covým epitelem tenkého střeva. Do krevního řečiště se u člověka denně resorbuje asi 200 g A A
+L-aminokyselin. 3 :
+5.2 Odbourávání aminokyselin = č
+Působením endo- a exopeptidas na proteiny či peptidy vzniká nakonec směs aminokyselin. Dal- W-
+ší odbourávání aminokyselin probíhá ve třech fázích: -F
+— přeměna na «-C-atomu, -%
+— detoxikace amoniaku, F%
+— odbourávání uhlíkové kostry. T.
+Primárním předpokladem pro odbourávání aminokyselin je odstranění jejich aminoskupi- *%.
+ny na a-C atomu, a to nejčastěji transaminací nebo oxidační deaminací. První fáze je spo- — ž
+lečná téměř pro všechny aminokyseliny, v druhé se jednotlivé aminokyseliny liší. Konečným AA
+odbourávacím mechanismem je oxidace uhlíkového skeletu aminokyselin v citrátovém cyklu W
+(kap. 6.2.2). Katabolismus aminokyselin probíhá u savců v játrech, v malé míře též v ledvinách. =
+Řada aminokyselin přitom může být katabolizována několika mechanismy. *
+5.2.1. Metabolické reakce na o-uhlíkovém atomu aminokyselin %*
+Základní reakcí odbourávání aminokyselin je odstranění dusíku, resp. aminoskupiny. Mecha- W
+nismem této reakce by mohla být prostá deaminace, tj. odštěpení amoniaku za vzniku dvojné
+vazby. Tento mechanismus se však uplatňuje pouze při odbourávání histidinu na kyselinu uro-  — |
+kanovou, která se může dále odbourávat přes glutamát. o
+U TY? ——.. SOP OH 3 -|
++ É ka]
+histidin urokanová kysalina . -|
+118 Z)
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwaré 2.cz/

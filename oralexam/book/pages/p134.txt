@@ -1,0 +1,33 @@
+6.1.3 Katabolické a anabolické děje A
+Veškeré přeměny látek v živých soustavách, tj. metabolické pochody, lze rozdělit na pochody )
+katabolické a anabolické (obr. 6.2). +)
+Katabolismus a anabolismus probíhá stupňovitě, v řadě následných, enzymově katalyzova-
+ných reakcí. Rozložení obou dějů do mnoha stupňů je ekonomické. Je to dáno tím, že: a
+a) jak tvorba, tak spotřeba je „kvantována“, Jednotlivé dávky Gibbsovy energie zhruba od-
+povídají jednotlivým dílčím reakcím katabolických a anabolických dějů, :
+| b) jednotlivé metabolity lze odčerpávat a použít pro různé metabolické cesty anebo jimi do-
+| plňovat jejich zásobu, stacionární koncentraci z různých zdrojů, JA
+| c) takovýto členitý metabolismus je regulovatelný (kap. 10.2). Další možnost nezávislé re-
+| gulace katabolismu a anabolismu spočívá v tom, že tyto děje mají odlišný enzymový apa-
+rát a že jsou lokalizovány v různých částech, kompartmentech buňky. 3
+6.2 Děje vedoucí k zisku Gibbsovy energie, resp. k tvorbě ATP |
+6.2.1 Oxidačně redukční pochody 1
+Oxidoredukční systém lze obecně popsat vztahem: |]
+Red = Ox +ne- |
+| kde Red je redukovaná forma a Ox forma oxidovaná, např.: 3
+Fett = FoXt+ o- 4
+] Oxidace v tomto případě znamená odevzdávání, ztrátu elektronů, redukce naopak přijímání -
+elektronů, V oboru organických sloučenin oxidace často znamená dehydrogenaci, tedy ztrátu —
+JŘ atomu či atomů vodíku, tj. páru proton a elektron, např.: a
+[] CH CH OH = CH,CHO *
+| | Uvolněné elektrony a protony nejsou schopny samostatné existence, Proto je oxidační pochod Ť
+jE vždy spřažen s redukcí jiné látky, probíhá oxidačně redukční pochod. Při oxidaci, která je exer- |
+pi gonickým dějem, přecházejí sloučeniny na produkty s nižším obsahem Gibbsovy energie, tj. —
+JA na stabilnější metabolity, avšak s vyšší entropií než výchozí látky. Naopak redukce představu- —
+eh je děj endergonický. Oxidoredukční systém se charakterizuje oxidačně redukčním (někdy těž: =
+|] redox-) potenciálem, Jeho hodnota je dána známým Nernstovým a Petersovým vztahem: *
+| n [Red] :
+| | Biologické oxidoredukční systémy lze seřadit podle stoupajících standardních redoxpotenciá- I
+| lů (tab. 6.2). i
+| 134 ]
+Mýtvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software60gw.cz/

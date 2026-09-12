@@ -1,0 +1,48 @@
+| ATP-synthasy je opačně orientován — „paličky“ ATP-synthasy ční na vnějším povrchu — a pro-
+A pouští protony zevnitř ven. (Vysvětlení obrácené orientace thylakoidních membrán a vnitřní mi-
+A tochondriální membrány tkví v eyoluci membrán a jejich různém „zaškrcování“ a sebeuzaví-
+0 rání.) Pochody lokalizované v thylakoidních membránách poskytují jako první stálé produkty
+=) NADPH a ATP, v nichž je uložena elektromagnetická energie fotonů přeměněná v energii che-
+A mickou. Tyto dvě sloučeniny se především využijí při fixaci a redukci CO..
+| 9.1.4 Fotosyntetická fixace CO,
+pe á Stručně lze reakce fotosyntézy bezprostředně navazující na fotochemické procesy fotosystémů
+1 a separaci náboje popsat vztahem:
+A ž enzymy chloroplastu
+A DO o CHL,
+-A NADPH, ATP
+JA Celý děj se u vyšších rostlin odehrává v chloroplastech. Zahrnuje řadu enzymových reakcí,
+2 které vyžadují ATP a koenzym NADPH. Výsledkem je vznik organické sloučeniny — sachari-
+| A | du C,H „O z anorganické sloučeniny CO.. Tento děj se nazývá fixace nebo asimilace vzduš-
+JA ného oxidu uhličitého. Často se také používá termín temná fáze nebo temnotní reakce foto-
+a syntézy, což ovšem není vhodné, protože navozuje myšlenku, že k této přeměně nedochází na
+oj světle. Ani termín fotosyntetická reakce nezávislá na světle není vhodný, neboť fixace CO, je
+Ja sled reakcí probíhajících buď na světle, nebo ve tmě tak dlouho, dokud je k dispozici dostatek
+3 NADPH a ATP vyprodukovaného přeměnou světelné energie fotosystémy.
+A Sumární rovnice fixace CO, může sama o sobě věst k dalším dvěma nesprávným interpreta-
+je 1 cím: 1) že atomy uhlíku šesti molekul CO, vstupující do reakce jsou součástí jedné a téže mo-
+2 lekuly sacharidu; 2) že fixace CO, je omezena jen na tuto metabolickou aktivitu. Ani jedno
+A tvrzení není přesné: vztah 6 CO,- C H „O, je pouze sumární rovnicí; rovněž tak cílem foto-
+A syntetické fixace CO, není jen syntéza hexos a následně celulosy či škrobu. Větší část je dopra-
+je vena do centrálních metabolických drah (např. citrátového cyklu) a slouží jako chemický zdroj
+a energie a uhlíku pro biosyntézy dalších sacharidů, aminokyselin, proteinů, mastných kyselin,
+3 lipidů, nukleotidů, nukleových kyselin, pigmentů anebo dalších tzv. sekundárních rostlinných
+|] metabolitů (viz kap. 9.5).
+y Reakce fixace CO, byly popsány M. Calvinem (nositel Nobelovy ceny 1961), A. A. Ben-
+SA sonem a J. A. Basshamem a často jsou označovány jmény svých objevitelů nebo jen zkráceně
+É jako Calvinův cyklus.
+A První reakcí Calvinova cyklu je zachycení anorganického CO, a jeho zabudování do struktu-
+E ry organické sloučeniny, kterou je ribulosa-l,S-bisfosfát (RuBP). Tato reakce je chemicky kar-
+1 boxylace a je katalyzována enzymem ribulosabisfosfátkarboxylasou/oxygenasou (RubisCO).
+M] Je to rozpustný, na Zemi jeden z nejrozšířenějších vysokomolekulárních proteinů, umístěný ve
+Ů stromatu chloroplastů, skládající se ze dvou typů podjednotek — malých a velkých. Funkční en-
+A zym je dimerní molekula složená z monomerů obsahujících vždy 4 malé (S) a 4 velké (L) pod-
+J jednotky:
+
+-DD
+
+0 k
+Pohled shora Pohled z boku
+
+209
+
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

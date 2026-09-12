@@ -1,0 +1,46 @@
+pl m pk + pr. i
+2 i
+V postranních řetězcích aminokyselin jsou ještě další ionizovatelné skupiny. Jejich disociace
+také závisí na pH a tudíž hodnoty pl různých aminokyselin se liší; této skutečnosti se využívá )
+při jejich dělení (ionexová chromatografie, elektroforéza).
+Stereochemie aminokyselin
+Jak vyplývá z obecného vzorce |
+MPP- 00
+NHz
+aminokyseliny, u kterých R není vodík, obsahují alespoň jeden asymetrický uhlík a jsou optic-
+ky aktivní. Glycin tedy neobsahuje asymetrický uhlík; všechny ostatní aminokyseliny běžně se
+vyskytující v proteinech, obsahují jeden, s výjimkou threoninu a isoleucinu, které obsahují dva
+| asymetrické uhlíky. i
+| Všechny aminokyseliny nalezené v proteinech (s výjimkou glycinu) patří k L-konfigurační
+řadě, stejně jako L-serin odvozený od L-glyceraldehydu. ;
+CHO n R
+n—0H aje ke Hair b2H ;
+CH20H CH„0H CHz0H ]
+D-glyceraldehyd L-glyceraldehyd L-serin |
+| Absorpční spektra i
+| Žádná z 20 aminokyselin nalezených v proteinech neabsorbuje světlo ve viditelné oblasti; tři
+i aminokyseliny (tyrosin, tryptofan, fenylalanín) absorbují významně v UV oblasti. Vzhledem
+k tomu, že proteiny obsahují tyrosinové a tryptofanové zbytky, měření absorbance těchto zbyt-
+ků při 280 nm se využívá jako rychlá a pohodlná metoda ke stanovení obsahu proteinů v rozto- |
+ku. Cystin absorbuje slabě při 240 nm. |
+|
+2.1.3 Chemické reakce aminokyselin |
+Chemických reakcí aminokyselin se účastní jednak základní funkční skupiny (—COOHa-NH) >
+a jednak postranní řetězce aminokyselin.
+
+Karboxylové skupiny mohou tvořit amidy (viz kap. 2.1.4.), estery, acylhalidy a azidy; tyto |
+reakce se využívají při syntéze peptidů; dále -COOH skupina může být redukována za vzniku
+oa-aminoalkoholu.
+
+a-Aminoskupina může být acylována působením acylhalidů nebo anhydridů, což se využí-
+vá k chránění aminoskupin. Jednou z nejcharakterističtějších reakcí a-aminoskupiny je ninhyd-
+
+| rinová reakce.
+
+Zahřátím roztoku aminokyseliny s ninhydrinem vzniká intenzivně zabarvený produkt; v pří-
+padě aminokyseliny s volnou -NH, skupinou — modrofialově zabarvený, v případě aminoky-
+seliny se substituovanou -NH, skupinou — žlutě zabarvený (prolin). Průběh reakce je znázor-
+něn na obr. 2.2.
+
+24
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

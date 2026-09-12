@@ -1,0 +1,57 @@
+A f-Otáčka (P-ohyb)
+
+3) Většina proteinů má kompaktní globulární tvar, což je způsobeno početnými změnami směru
+
+a jejich základného polypeptidového řetězce; tyto změny směru základního peptidového řetězce
+|% jsou uskutečněny tzv. f-otáčkou (angl. j-turn). CO skupina n-tého aminokyselinového zbytku
+A se spojí vodíkovou vazbou s NH skupinou (n+3) zbytku; polypeptidový řetězec je pak stabili-
+
+E zován jako antiparalelní -struktura (viz obr. 2.12).
+| a Kolagenová struktura
+A Kolagenová struktura je vedle a-helixu a fP-struktury, třetí periodickou strukturou, která se vy-
+
+3 skytuje v proteinech. Kolagen má zcela zvláštní primární strukturu: obsahuje skoro 30% gly-
+
+Z cinu, a neobvyklé aminokyseliny S-hydroxylysin a 4-hydroxyprolin; 4-hydroxyproli a prolin
+
+A tvoří dalších 30% aminokyselinových zbytků. 5 touto neobvyklou primární strukturou souvisí
+i jeho sekundární struktura. Základem modelu jsou tři polypeptidové řetězce; každý z těchto tří
+
+A řetězců je v helikální konformaci. U tohoto typu šroubovice plochy peptidové vazby nejsou pa-
+
+3 ralelní s osou šroubovice; nemohou tvořit intramolekulární vodíkové vazby; v těchto útvarech
+
+ee třetina postranních řetězců směřuje dovnitř šroubovice (viz obr 2.13).
+
+a Tři šroubovice se u kolagenu stáčejí jako lano kolem společné osy a vytvářejí pravotočivou
+A super-šroubovici. Počet aminokyselinových zbytků na závit je 3,3. Toto uspořádání je stabili-
+a zováno vytvářením intermolekulárních vodíkových vazeb (viz obr. 2.14).
+
+A Kolagenní struktura nemá obecné využití jako sekundární struktura proteinů a je specifická
+| pro sekundární strukturu kolagenu.
+
+E. + lo ze
+
+3 a ď ý K.
+
+6.. ěn r. a Ý
+| A A 3
+| i | AD:
+| 4 GAA-
+
+ž HY) (a. J
+
+be i . (a
+
+i (a (0) .
+
+3 Coe Me: Y . ně
+
+i 2 É: nů
+
+4 | Co d
+A Obr. 2.12 Model -otáčky Obr. 2.13 Model kolagenové struktury
+
+| 31
+
+: vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

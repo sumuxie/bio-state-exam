@@ -1,0 +1,39 @@
+| A a..,2 Detoxikace amoniaku, močovinový (ornithinový) cyklus-
+|“ * Amoniak, uvolněný katabolickými přeměnami na -atomu uhlíku aminokyselin, může být
+| | U většiny organismů zpětně využíván reakcí, katalyzovanou glutamátdehydrogenasou:
+A NH, + 2-oxoglutarát + NADPH + H* = Glu + NADP* + H,O
+i 3 Určitou omezenou roli při regulaci koncentrace amoniaku v krevním oběhu hraje též glutamin-
+A = synthetasa, katalyzující přeměnu kyseliny glutamové na glutamin:
+| A glutamát + NH, + ATP = glutamin + ADP + P,
+: 1 Vznikající volný amoniak, který je pro organismy značně toxický, musí být z organismu odstra-
+É a něn. Způsob eliminace amoniaku závisí na druhu organismu. Vodní živočichové mohou amo-
+: Z niak eliminovat prostou difůzí do vody žábrami (amonotelní organismy), u suchozemských
+"S živočichů se amoniak přeměňuje v játrech, cyklickým a silně endergonickým procesem na mo-
+2 čovinu (ureotelní organismy). U vejcorodých (ptáků a plazů) se díky embryonálnímu vývoji
+"0 v uzavřeném systému (vejce) vyvinul v průběhu fylogeneze jiný mechanismus eliminace amo-
+7 © niaku, a to přeměna v kyselinu močovou (uráť), která se vzhledem ke své špatné rozpustnosti
+"| vylučuje jako suspenze krystalů furikotelní organismy).
+A ) Močovinový (ornithinový) cyklus
+| » V první fázi cyklu se za spotřeby energie tvoří karbamoylfosfát. Je to reakce silně endergo-
+| nická a katalyzuje jí karbamoylfosfátsynthetasa (E. C. 6.3.4.16.), lokalizovaná v matrix mito-
+| | chondrií. Tento enzym je aktivován N-acetylglutamátem, který vzniká rovněž v mitochondriál-
+-a ní matrix acetylací glutamátu.
+-S NH„* + C0, +2 ATP ——— H,N-C-0-P +2 ADP + P; + H*
+a I
+T karbamoyttostát
+; J Karbamoylfostát vstupuje do cyklu reakcí s aminokyselinou ornithinem (odtud odvozen i al-
+|) ternativní název cyklu), katalyzovanou ornithinkarbamoyltransferasou (E. C. 2.1.3.3.). Uve-
+a denou reakcí (reakce 1, obr. 5.4) vzniká citrulin, který přechází z mitochondrií do cytoplazmy.
+"| Tam reaguje s aspartátem na argininsukcinát (reakce 2, obr. 5.4). Aspartát se touto reakcí stá-
+Z vá donorem druhé molekuly dusíku finálně vznikající močoviny. Tvorba argininsukcinátu je ka-
+: talyzována argininsukcinátsynthetasou (E.C. 6.3.4.5). Z tohoto meziproduktu se v další re-
+A akci působením lyasy odštěpuje fumarát a uvolňuje arginin. Cyklus se uzavírá díky dalšímu
+A enzymu, arginase (E.C. 3.5.3.1., reakce 4, obr. 5.4), který hydrolytický odštěpuje močovinu
+á a regeneruje ornithin. Ten je pak transponován zpět do mitochondrií.
+a Na rozdíl např. od citrátového cyklu není močovinový cyklus lokalizován pouze v jedné or-
+a ganele. Jeho součástí je i přenos meziproduktů přes mitochondriální membránu z matrix do cy-
+3 tosolového prostoru a zpět (obr. 5.5).
+i Energeticky je močovinový cyklus značně náročný, neboť v jeho průběhu se spotřebovávají
+a celkem 4 moly ATP na 1 mol močoviny; tj. 2 moly ATP při syntéze karbamoylfosfátu, při kte-
+| 123
+tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

@@ -1,0 +1,31 @@
+hlavní komponentou vitaminu B, je ribonukleotid, který je výjimečný tím, že jako bázi obsa- i
+huje šŠ,6-dimethylbenzimidazol vázaný a-N-glykosidovou vazbou na D-ribosu, Tento nukleotid
+je vázán na korrinové jádro jednak koordinační vazbou, jednak vazbou esterovou, Koenzym B, |
+se účastní reakcí, ve kterých si vyměňují místo vodík a skupina na sousedním uhlíku. a
+3.3 Kinetika enzymové reakce 1
+Z funkčního hlediska lze enzymy definovat jako katalyzátory chemických reakcí probíhajících ]
+v organismech. Aby se v chemické reakci přeměnila látka A na produkt X, musí molekuly látky: =
+A překonat energetickou bariéru, musí jim být dodána tzv. aktivační energie. z
+Zvýšit rychlost chemické reakce je možné několika způsoby, Buď se systém zahřeje, tím se >
+zvýší energie molekul reaktantů a také jejich schopnost překonat energetickou baričru. Tuto: |
+cestu však nemohou využít organismy, protože jsou většinou thermolabilní. Druhý způsob-
+zvýšení rychlosti reakce je katalýza. Funkce katalyzátoru — v organismech enzymu — spočívá:
+v tom, že se přechodně spojí s reaktanty, takže reakce probíhá jiným mechanismem s nižší akti-
+vační energií. Existuje ještě jedna cesta urychlení chemické reakce. Molekuly reaktantů mohou: >
+být excitovány elektromagnetickým zářením (světlem). Reakce pak ale obvykle probíhá pod-
+le jiné reakční koordináty, i
+| A ]
+jE ko 1
+o |
+jŮ AK Í
+|| Obr. 3.1 Energetický diagram reakce nekatalyzovaně (2) a katalyzovaně (1) |
+JI A — výchozí látka, AK — komplex A s katalyzátorem K, P— produkt, E, EE, — aktivační energie
+| 3.3.1 Rovnice Michaelise a Mentenové |
+| Na základě experimentálního pozorování závislosti rychlosti enzymové reakce na koncentra-
+ci substrátu vyplynulo, že i nejjednodušší enzymová reakce probíhá ve dvou krocích. Nejprve
+| se substrát (A) spojuje s enzymem (E) na komplex enzym-substrát (EA). Tento krok je rychlý
+a reverzibilní. E a A jsou poutány slabými interakcemi. Ve druhé fázi enzymové reakce proběh-
+: ne vlastní chemická přeměna, komplex EA se rozpadne na původní E a produkt (X). Tato reak-
+ce je pomalejší a ireverzibilní.
+54
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

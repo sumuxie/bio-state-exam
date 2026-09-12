@@ -1,0 +1,39 @@
+* -A E+A FA ———>E+X
+
+A | Pro tento mechanismus odvodíme kinetickou rovnici pro tzv. ustálený stav (angl. „steady-
+A |= sstate“). Od okamžiku smíchání E a A koncentrace komplexu EA nejprve stoupá, až dosáhne
+A | konstantní koncentrace, tzn. že se vyrovnají rychlost jeho vzniku a rychlost jeho rozpadu, Této
+É = fázi reakce se říká ustálený stav. Matematicky lze formulovat takto:
+| + k [E][A] — k [EA] = k [EA] = 0 (1)
+p : An : rychlost rychlosti
+JA "A vzniku rozpadu
+JA = Když je ve sledu reakcí některá výrazně pomalejší, pak tato reakce rozhoduje o výsledně rych-
+| = losti celého mechanismu. Tak v tomto případě výsledná rychlost přeměny A na X je dána
+A : 3 | rychlostí rozpadu komplexu EA na E a X:
+T. vzk [EA] o
+"W Celková koncentrace enzymu [E] která je jediná přístupná měření, je dána součtem koncentra-
+E: = ceenzymu volného [E] a koncentrace komplexu [EA].
+| A [B] = [E] + [EA] 3)
+1 A Spojením rovnic (1), (2) a (3) můžeme vyjádřit výslednou kinetickou rovnici, která vyjadřuje
+W závislost počáteční rychlosti enzymové reakce (v) na [A ].
+3 -0 Postup: z rovnice (3) vyjádříme [E] = [E] — [EA], dosadíme do rovnice (1) a vyjádříme
+T. E), [A
+| 2A Dosadime za [EA] do rovnice (2)
+T k, [E] [A
+| ) věk. C A (4)
+| Zlomek ve jmenovateli tvořený rychlostními konstantami je také konstanta označovaná jako
+= | konstanta Michaelisova (K).
+
+A : : „= ky lEh [A]
+
+T. Kn +[A]
+
+s S% > Když je koncentrace substrátu velmi malá [A] << K „pak lze rovnici zjednodušit na
+
+T. k, [E] [A
+
+A vale o ez kont [A]
+
+0 Km
+
+A 'ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

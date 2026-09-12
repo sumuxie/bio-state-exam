@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>样卡 · Describe the levels of protein structure</title>
+<style>
+:root{
+  --paper:#fbfaf7; --ink:#1c1b19; --dim:#6b6862; --rule:#ded9d0;
+  --card:#ffffff; --accent:#7a5c2e; --accent-soft:#f3ecdf;
+  --warn:#8a4b12; --warn-bg:#fdf2e5; --warn-rule:#e8c9a0;
+  --good:#2f5d3a; --good-bg:#eef4ee;
+  --chip:#efece6; --script-bg:#fdfcfa;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171614; --ink:#e9e5dd; --dim:#9d978c; --rule:#332f2a;
+    --card:#1e1c19; --accent:#c8a466; --accent-soft:#2a241a;
+    --warn:#e0a866; --warn-bg:#2a2016; --warn-rule:#5a4326;
+    --good:#8fc49c; --good-bg:#1a241c;
+    --chip:#2a2723; --script-bg:#201e1a;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.75;
+}
+.wrap{max-width:940px; margin:0 auto; padding:0 20px; padding-block:36px 72px}
+
+header{border-bottom:2px solid var(--ink); padding-bottom:18px; margin-bottom:28px}
+.kicker{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin:0 0 8px}
+h1{font-size:26px; line-height:1.3; margin:0 0 4px; font-weight:650}
+.h1cn{font-size:16px; color:var(--dim); margin:0 0 14px}
+.meta{font-size:12.5px; color:var(--dim); display:flex; flex-wrap:wrap; gap:6px 18px; margin:0}
+.meta b{font-weight:600; color:var(--ink)}
+
+.howto{
+  background:var(--accent-soft); border:1px solid var(--rule); border-radius:8px;
+  padding:14px 18px; margin-bottom:32px; font-size:13.5px;
+}
+.howto p{margin:0 0 6px}
+.howto p:last-child{margin-bottom:0}
+.howto b{color:var(--accent)}
+
+.band{
+  display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+  margin:40px 0 18px; padding-bottom:8px; border-bottom:1px solid var(--ink);
+}
+.band h2{font-size:18px; margin:0; font-weight:650}
+.band span{font-size:12.5px; color:var(--dim)}
+
+.box{
+  background:var(--card); border:1px solid var(--rule); border-radius:8px;
+  padding:18px 20px; margin-bottom:16px; border-left:4px solid var(--accent);
+}
+.box.reserve{border-left-width:1px; border-left-color:var(--rule); background:transparent}
+.box > h3{
+  font-size:15.5px; margin:0 0 4px; font-weight:650;
+  display:flex; align-items:baseline; gap:9px; flex-wrap:wrap;
+}
+.box > h3 em{font-style:normal; font-size:12.5px; font-weight:400; color:var(--dim)}
+.why{font-size:13px; color:var(--dim); margin:0 0 14px; padding-bottom:12px; border-bottom:1px dashed var(--rule)}
+
+.script{
+  background:var(--script-bg); border:1px solid var(--rule); border-left:3px solid var(--accent);
+  border-radius:0 6px 6px 0; padding:14px 16px; margin:12px 0;
+  font-family:Georgia,"Times New Roman",serif; font-size:15px; line-height:1.72;
+}
+.script .lbl{
+  display:block; font-family:system-ui,sans-serif; font-size:11px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--dim); margin-bottom:8px;
+}
+.script p{margin:0 0 10px}
+.script p:last-child{margin-bottom:0}
+.cut{color:var(--dim)}
+.cut::after{
+  content:"可裁"; font-family:system-ui,sans-serif; font-size:10px; vertical-align:super;
+  color:var(--warn); margin-left:3px; letter-spacing:.05em;
+}
+.cn{font-size:13.5px; color:var(--dim); margin:10px 0 0}
+.cn b{color:var(--ink); font-weight:600}
+
+.ladder{list-style:none; margin:12px 0 0; padding:0; counter-reset:step}
+.ladder li{
+  position:relative; padding:0 0 14px 34px; margin:0;
+  border-left:1px solid var(--rule); margin-left:11px;
+}
+.ladder li:last-child{border-left:none; padding-bottom:0}
+.ladder li::before{
+  counter-increment:step; content:counter(step);
+  position:absolute; left:-11px; top:1px; width:22px; height:22px; border-radius:50%;
+  background:var(--accent); color:var(--paper); font-size:12px; font-weight:650;
+  display:flex; align-items:center; justify-content:center;
+}
+.ladder .q{font-weight:600; font-size:14px}
+.ladder .a{font-size:13.5px; color:var(--dim); margin-top:2px}
+.stop{
+  margin-top:14px; background:var(--good-bg); border:1px solid var(--rule);
+  border-radius:6px; padding:12px 14px;
+}
+.stop .lbl{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--good); font-weight:650}
+.stop q{font-family:Georgia,serif; font-size:14.5px; display:block; margin-top:6px}
+
+.tw{overflow-x:auto; margin:12px 0}
+table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:520px}
+th,td{text-align:left; padding:7px 10px; border-bottom:1px solid var(--rule); vertical-align:top}
+th{font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); font-weight:600; white-space:nowrap}
+tbody tr:hover{background:var(--accent-soft)}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+.pg{
+  font-family:ui-monospace,"Cascadia Mono",Consolas,monospace; font-size:11.5px;
+  background:var(--chip); border-radius:3px; padding:1px 5px; white-space:nowrap; color:var(--dim);
+}
+
+.flag{
+  background:var(--warn-bg); border:1px solid var(--warn-rule); border-left:3px solid var(--warn);
+  border-radius:0 6px 6px 0; padding:12px 15px; margin:12px 0; font-size:13.5px;
+}
+.flag b{color:var(--warn)}
+.flag p{margin:0 0 7px}
+.flag p:last-child{margin-bottom:0}
+
+ol.traps{margin:10px 0 0; padding-left:20px}
+ol.traps li{margin-bottom:12px; font-size:13.5px}
+ol.traps b{font-weight:650}
+.traps .say{color:var(--dim); font-family:Georgia,serif}
+
+.bridge{border-top:1px solid var(--rule); padding-top:12px; margin-top:12px}
+.bridge:first-of-type{border-top:none; padding-top:0; margin-top:0}
+.bridge h4{margin:0 0 4px; font-size:14px; font-weight:650}
+.bridge .say{font-family:Georgia,serif; font-size:14px; margin:6px 0}
+
+code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace; font-size:.9em; background:var(--chip); border-radius:3px; padding:1px 5px}
+
+footer{margin-top:48px; padding-top:18px; border-top:2px solid var(--ink); font-size:13px; color:var(--dim)}
+footer h3{font-size:14px; color:var(--ink); margin:0 0 8px}
+footer ul{margin:0 0 18px; padding-left:20px}
+footer li{margin-bottom:5px}
+
+@media print{
+  body{background:#fff; font-size:11pt}
+  .box,.script,.flag,.stop{break-inside:avoid}
+  .band{break-after:avoid}
+}
+@media (max-width:560px){
+  h1{font-size:21px}
+  .box{padding:14px 15px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">样卡 · 审形状用 · Biochemistry #10 / #29 · weight 2</p>
+  <h1>Describe the levels of protein structure.</h1>
+  <p class="h1cn">描述蛋白质的各级结构。（与 #29 “What are the different levels of protein structure?” 合并为一张卡）</p>
+  <p class="meta">
+    <span><b>事实出处</b> Biochemie（Základní kurz, Praha 2009）OCR p026–p034、p009</span>
+    <span><b>建立</b> 2026-09-11</span>
+    <span><b>状态</b> 待审形状</span>
+  </p>
+</header>
+
+<div class="howto">
+  <p><b>① ② ③ ④ 是要背出口的</b>，连起来约 90 秒。标了 <span class="cut"></span> 的句子是时间不够时先砍的。</p>
+  <p><b>⑤ ⑥ ⑦ ⑧ 不背</b>，考前扫两眼混个眼熟就行，它们只负责挡追问。</p>
+  <p><b>⑥ 里每条都带 p 页码</b>，对应 <code>book/pages/p###.txt</code>，想核原文直接翻那个文件。</p>
+</div>
+
+<div class="band">
+  <h2>主干四格</h2>
+  <span>开口 60–90 秒，逐字稿，要背</span>
+</div>
+
+<section class="box">
+  <h3>① 定义 <em>它是哪一类东西 + 由什么界定</em></h3>
+  <p class="why">老师默认你知道“蛋白质结构”这个词，他要听的不是名词，是你能不能给出边界。所以开口先说两件事：conformation 的定义，和什么才算 protein。</p>
+
+  <div class="script">
+    <span class="lbl">开口逐字稿</span>
+    <p>“Protein structure means the <b>conformation</b> — the spatial arrangement of the atoms of a polypeptide chain. Two boundaries before I go into the levels.</p>
+    <p>First, what counts as a protein: a peptide chain of <b>more than a hundred</b> amino-acid residues. Up to ten residues we say oligopeptide, above that polypeptide.</p>
+    <p>Second, and this is the point of the question: we describe that arrangement <b>in levels</b>, and the reason is not that the molecule has layers. It is that <b>the forces that fix each level are different</b> — so each level is a different physical question.”</p>
+  </div>
+
+  <p class="cn"><b>为什么这样开口。</b>“分层是因为固定每一层的力不同”这句话就是整道题的骨架，一说出来，后面 ② ③ ④ 全是它的展开，老师也会知道你不是在背顺序。<b>书本身就是这么组织的</b>：p032 单独开一节讲“决定蛋白质结构的力的本质”。</p>
+</section>
+
+<section class="box">
+  <h3>② 归类与分层 <em>分类的依据比名字重要</em></h3>
+  <p class="why">断层在这一级：教材默认你已经有了分类依据，从第二级起步。先说依据，再说四级分别是什么。</p>
+
+  <div class="script">
+    <span class="lbl">开口逐字稿</span>
+    <p>“The levels are separated by two criteria: <b>how far apart the residues are along the sequence</b>, and <b>what holds them</b>.</p>
+    <p><b>Primary</b> structure is the covalent level — the sequence of amino acids, and in this textbook also the <b>positions of the disulfide bridges</b>.</p>
+    <p><b>Secondary</b> structure is the arrangement of residues that lie <b>close together</b> in the linear sequence, held by hydrogen bonds of the <b>main chain</b>. The regular ones are the α-helix, the β-structure and the collagen helix.</p>
+    <p><b>Tertiary</b> structure is the arrangement of residues that lie <b>far apart</b> in the sequence, held by non-covalent interactions, mostly between side chains.</p>
+    <p><b>Quaternary</b> structure exists only if the protein is built of <b>more than one chain</b>: it is the arrangement of the subunits and the character of their contacts.</p>
+    <p class="cut">“Later work added two more levels: <b>supersecondary</b> structure — clusters of secondary elements such as the βαβ motif — and <b>domains</b>, compact globular regions of 100 to 400 residues.”</p>
+  </div>
+
+  <p class="cn"><b>这一格的杀手锏</b>是 secondary 和 tertiary 的分界：不是靠力的种类分的，<b>是靠残基在序列上的距离</b>分的。书自己承认这条界线有时候很难划（p033）。主动把这句说出来，是 researcher 的答法，不是 technician 的。</p>
+</section>
+
+<section class="box">
+  <h3>③ 机制 <em>怎么成立、谁作用在谁身上</em></h3>
+  <p class="why">这是老师心里的“正常答案”，但它必须排在 ① ② 之后。这一格最长，时间不够就按 <span class="cut"></span> 砍。</p>
+
+  <div class="script">
+    <span class="lbl">开口逐字稿</span>
+    <p>“Mechanically the whole thing comes down to <b>what can and cannot rotate</b>. The peptide C–N bond is <b>1.32 Å</b>, between a single C–N at 1.49 and a double C=N at 1.27, because the nitrogen lone pair is partly delocalised into the carbonyl. So the amide group is <b>planar and cannot rotate freely</b>. That gives cis–trans isomers; in globular proteins it is essentially always <b>trans</b>, and cis occurs practically only next to <b>proline</b>.</p>
+    <p>Free rotation is left only at the two bonds at the α-carbon. So the backbone is <b>a series of rigid planes joined at the α-carbons</b>, and the periodic secondary structures are simply the ways of hydrogen-bonding that chain.</p>
+    <p>The <b>α-helix</b>: main-chain CO to main-chain NH about one turn further along, <b>3.6 residues per turn</b>, identity period <b>0.54 nm</b>, right-handed, and it accepts every proteinogenic amino acid <b>except proline</b>.</p>
+    <p>The <b>β-structure</b>: the chain is almost fully extended and hydrogen-bonds to a second stretch, either <b>parallel</b> or <b>antiparallel</b>; the pleating is what leaves room for the side chains.</p>
+    <p class="cut">“The <b>collagen</b> helix is the third periodic structure: three chains as a right-handed superhelix, 3.3 residues per turn, nearly 30% glycine — and its hydrogen bonds are <b>intermolecular</b>, between the three chains, because the peptide planes are not parallel to the helix axis.”</p>
+    <p>Above that, the tertiary and quaternary levels are fixed by <b>disulfide bridges</b> — covalent — and by non-covalent interactions: <b>ion pairs</b> or salt bridges, <b>hydrogen bonds</b>, and <b>van der Waals</b> contacts. Van der Waals are individually weak, but in a tightly packed protein there are so many contacts that the total contribution is large.”</p>
+  </div>
+
+  <p class="cn"><b>顺序上的一个选择。</b>先讲肽键的刚性、再讲二级结构，是因为这样 α-helix 和 β-sheet 就不是两个要背的名字，而是“在一条只剩两个可转键的链上还能怎么形成氢键”的两个答案。老师问“为什么只有这几种二级结构”，你已经答过了。</p>
+</section>
+
+<section class="box">
+  <h3>④ 为什么 <em>三层，落到地基就停</em></h3>
+  <p class="why">老师的“为什么”是无限的。你需要一个能体面停住的落点，而不是被问到崩。这题的落点是<b>热力学</b>，而且书自己把话说到了那一层（p033）。</p>
+
+  <ol class="ladder">
+    <li>
+      <div class="q">为什么一条链会有一个确定的构象？</div>
+      <div class="a">因为功能完全取决于构象：随机排列或伸展的肽链基本没有生物活性（p027）。而肽键的刚性平面把可走的构象空间压得比看上去小得多。</div>
+    </li>
+    <li>
+      <div class="q">为什么偏偏是那一个构象？</div>
+      <div class="a">因为在水里非极性侧链会互相靠拢，于是分子取<b>表面积最小</b>、并且有一个<b>非极性核心</b>的那个结构（p033，书列的正是这两条表现）。</div>
+    </li>
+    <li>
+      <div class="q">那为什么非极性基团会互相靠拢？</div>
+      <div class="a">不是因为它们互相吸引，<b>是水的事</b>：非极性颗粒周围的水本来排列整齐，两个这样的基团靠在一起就把那层有序的水拆掉了，<b>水的熵升高</b>。这就是 hydrofobní efekt（p032–033）。</div>
+    </li>
+  </ol>
+
+  <div class="stop">
+    <span class="lbl">停止规则 · 落在「热力学」这块地基</span>
+    <q>“Ultimately this comes down to the hydrophobic effect, which is an <b>entropy term of the water</b>, not an attraction between the side chains. Below that we are in physical chemistry rather than biochemistry.”</q>
+  </div>
+
+  <p class="cn"><b>这句话本身就是分数。</b>它同时做了三件事：给出机制的真正根因、纠正一个常见误解（疏水不是“互相吸引”）、并且明说你知道自己学科的边界在哪。说完就停，别再往下走。</p>
+</section>
+
+<div class="band">
+  <h2>储备四格</h2>
+  <span>不背，眼熟即可，只挡追问</span>
+</div>
+
+<section class="box reserve">
+  <h3>⑤ 怎么发现的 <em>挡“当年是怎么搞清楚的”这类问题</em></h3>
+
+  <div class="tw"><table>
+    <thead><tr><th>年</th><th>发生了什么</th><th>谁</th><th>页</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1864</td><td>第一次把蛋白质结晶出来（hemoglobin）</td><td>Hoppe-Seyler</td><td><span class="pg">p009</span></td></tr>
+      <tr><td class="num">1902</td><td>证明蛋白质是<b>多肽</b>本质</td><td>Fischer</td><td><span class="pg">p009</span></td></tr>
+      <tr><td class="num">1951</td><td>提出 <b>α-helix</b>（同一工作还提出 β-structure）</td><td>Pauling &amp; Corey</td><td><span class="pg">p009</span> <span class="pg">p028</span></td></tr>
+      <tr><td class="num">1953</td><td>第一个蛋白质<b>序列</b>（insulin）</td><td>Sanger</td><td><span class="pg">p009</span></td></tr>
+      <tr><td class="num">1957</td><td>第一个蛋白质<b>空间结构</b>（myoglobin）</td><td>Kendrew</td><td><span class="pg">p009</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="script">
+    <span class="lbl">追问时说这一段</span>
+    <p>“The interesting thing is the <b>order</b>. The α-helix was proposed in <b>1951</b> — two years before the first protein sequence and six years before the first protein structure. Pauling and Corey did not read it off a protein; they <b>derived it from the bond lengths and angles measured on amino acids and small peptides</b>, and asked what regular structures such a chain could form. The levels were not discovered from the bottom up.”</p>
+  </div>
+  <p class="cn">这一段是 researcher 答法的现成样板：不是“谁在哪年做了什么”，而是“<b>他们当时手上只有什么，所以只能怎么推</b>”。p028 原文说得很清楚：Pauling 与 Corey 是 <i>na základě znalostí úhlů a délek vazeb u aminokyselin a malých peptidů</i> 提出这两种周期结构的。</p>
+</section>
+
+<section class="box reserve">
+  <h3>⑥ 硬事实 <em>very specific 题的弹药库 · 全部抄自书，带页码</em></h3>
+
+  <div class="tw"><table>
+    <thead><tr><th>项</th><th>值 / 名称</th><th>页</th></tr></thead>
+    <tbody>
+      <tr><td>算 protein 的门槛</td><td class="num">&gt; 100 个残基</td><td><span class="pg">p026</span></td></tr>
+      <tr><td>oligopeptid 的上限</td><td class="num">≤ 10 个氨基酸</td><td><span class="pg">p026</span></td></tr>
+      <tr><td>肽键 C–N 键长</td><td class="num">1,32 Å（0,132 nm）</td><td><span class="pg">p027</span></td></tr>
+      <tr><td>单键 C–N / 双键 C=N</td><td class="num">1,49 Å / 1,27 Å</td><td><span class="pg">p027</span></td></tr>
+      <tr><td>cis 构型出现在哪</td><td>几乎只在 <b>prolin</b> 残基旁</td><td><span class="pg">p027</span></td></tr>
+      <tr><td>镰刀型贫血的替换</td><td>hemoglobin β 链第 <b>6</b> 位 <b>Glu → Val</b></td><td><span class="pg">p027</span> ⚠</td></tr>
+      <tr><td>α-helix 每圈残基数</td><td class="num">3,6</td><td><span class="pg">p029</span></td></tr>
+      <tr><td>α-helix identity period</td><td class="num">0,54 nm</td><td><span class="pg">p029</span></td></tr>
+      <tr><td>α-helix 手性</td><td>蛋白质里的都是<b>右手</b></td><td><span class="pg">p029</span></td></tr>
+      <tr><td>α-helix 唯一装不下的氨基酸</td><td><b>prolin</b></td><td><span class="pg">p029</span></td></tr>
+      <tr><td>α-helix 氢键</td><td>主链 CO(n) ··· NH ——<b>书上正文写 n+3，图 2.8 画的是 n+4</b>，见 ⑦</td><td><span class="pg">p029</span> ⚠</td></tr>
+      <tr><td>β-structure 的两种排布</td><td><b>paralelní</b> / <b>antiparalelní</b></td><td><span class="pg">p030</span></td></tr>
+      <tr><td>β-otáčka（β-turn）氢键</td><td>CO(n) ··· NH(n+3)，结果稳定成反平行</td><td><span class="pg">p031</span></td></tr>
+      <tr><td>collagen 甘氨酸含量</td><td class="num">约 30%</td><td><span class="pg">p031</span></td></tr>
+      <tr><td>collagen 的特殊氨基酸</td><td>5-hydroxylysin、4-hydroxyprolin</td><td><span class="pg">p031</span></td></tr>
+      <tr><td>collagen 中 4-Hyp + Pro</td><td class="num">另外约 30%</td><td><span class="pg">p031</span></td></tr>
+      <tr><td>collagen 每圈残基数</td><td class="num">3,3</td><td><span class="pg">p031</span></td></tr>
+      <tr><td>collagen 超螺旋手性</td><td><b>右手</b>（三股像绳子一样绞）</td><td><span class="pg">p031</span></td></tr>
+      <tr><td>collagen 的氢键类型</td><td><b>分子间</b>（intermolekulární），不是分子内</td><td><span class="pg">p031</span></td></tr>
+      <tr><td>共价的稳定力</td><td>disulfidové můstky（两个 cystein 巯基氧化而成）</td><td><span class="pg">p032</span></td></tr>
+      <tr><td>盐桥由哪些侧链形成</td><td>Glu、Asp 对 Lys、Arg</td><td><span class="pg">p032</span></td></tr>
+      <tr><td>van der Waals 的两部分</td><td>Londonovy 吸引力 + 电子云之间的排斥力</td><td><span class="pg">p032</span></td></tr>
+      <tr><td>hydrofobní efekt 的本质</td><td><b>熵增</b>：非极性颗粒周围有序水层被拆</td><td><span class="pg">p033</span></td></tr>
+      <tr><td>hydrofobní efekt 的两种表现</td><td>① 表面积最小 ② 形成非极性 core</td><td><span class="pg">p033</span></td></tr>
+      <tr><td>supersekundární 的例子</td><td><b>βαβ</b> motiv、βαβ 单元、β-meandr</td><td><span class="pg">p033</span></td></tr>
+      <tr><td>domain 的大小</td><td class="num">100–400 个残基</td><td><span class="pg">p034</span></td></tr>
+      <tr><td>蛋白质按整体形态分两类</td><td><b>fibrilární</b>（纤维状） / <b>globulární</b>（球状）</td><td><span class="pg">p034</span></td></tr>
+      <tr><td>keratin 的 protofibrila</td><td>两对平行 α 螺旋绞成<b>左手</b>四股“缆”</td><td><span class="pg">p034</span></td></tr>
+      <tr><td>fibroin（丝）</td><td>Gly、Ala、Ser 含量高；反平行 β</td><td><span class="pg">p034</span></td></tr>
+      <tr><td>以 α-helix 为主的蛋白</td><td>myoglobin、hemoglobin</td><td><span class="pg">p034</span></td></tr>
+      <tr><td>几乎不含 α-helix 的蛋白</td><td><b>chymotrypsin</b></td><td><span class="pg">p034</span></td></tr>
+      <tr><td>球状变纤维状的例子</td><td>凝血时 fibrinogen → fibrin</td><td><span class="pg">p034</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="flag">
+    <p><b>⚠ OCR 丢字，已回原图确认：</b>p027 讲镰刀型贫血那句，OCR 出来是 “v poloze 6 -řetězce hemoglobinu”，希腊字母 <b>β</b> 被扫掉了。原文是 β 链。引用时写 β。</p>
+  </div>
+</section>
+
+<section class="box reserve">
+  <h3>⑦ 陷阱 <em>老师的追问多半就设在这些点上</em></h3>
+
+  <div class="flag">
+    <p><b>1 · 这本书正文写错了一个数，它自己的图是对的。</b></p>
+    <p>p029 正文：<i>“CO skupina každé n-té aminokyseliny se účastní vodíkové vazby s NH skupinou <b>(n+3)</b> aminokyseliny v pořadí.”</i> —— 我回去看了 400 dpi 原图，<b>书上印的确实是 n+3，不是 OCR 错</b>。但同一页的 <b>Obr. 2.8</b>，那条括号是从 R₁ 后面那个 CO 连到 R₅ 前面那个 NH，也就是 <b>n → n+4</b>。国际通用写法也是 <b>i → i+4</b>。</p>
+    <p>而且 <b>3,6 残基／圈</b> 这个数只跟 n+4 自洽：一圈 3.6 个残基，氢键跨一整圈自然落在第 4 个残基上。n+3 是 <b>β-turn</b> 的数（p031），书在两处用了同一个数字，这大概就是错的来源。</p>
+    <p><b>考场上怎么说：</b>先说模糊但正确的 —— <i>“the CO hydrogen-bonds to the NH about one full turn further along the chain”</i>。被逼问具体数字再说 <b>n+4</b>，并补一句 <i>“3.6 residues per turn only works out with n+4”</i>。这样即使老师按书记的是 n+3，你也是在讲道理，不是在跟他对答案。</p>
+  </div>
+
+  <ol class="traps">
+    <li><b>二硫键算几级？</b>这本书把它算进 <b>primary structure</b>（p033 明写“primární struktura — 由序列<b>和二硫桥的位置</b>决定”）。别的教材常把它算进三级。<span class="say">按这本书答，但知道差别。</span></li>
+    <li><b>二级结构靠的是主链，不是侧链。</b>p029 / p030 都写的是 <i>mezi NH a CO skupinami hlavního řetězce</i>。侧链之间的相互作用是三级的事。这是最容易被一句话抓住的点。</li>
+    <li><b>二级和三级的分界不是力，是距离。</b>依据是残基在<b>线性序列上离得近还是远</b>。而且书自己说这条界线 <i>“v některých případech těžko definovatelná”</i>（p033）。主动说出来比被问出来好。</li>
+    <li><b>collagen 的氢键是分子间的。</b>因为它那种螺旋的肽键平面不平行于螺旋轴，<b>形不成分子内氢键</b>（p031）。跟 α-helix 正好相反。</li>
+    <li><b>两个“绞绳子”方向相反。</b>collagen 的超螺旋是<b>右手</b>（p031），keratin 的四股 protofibrila 是<b>左手</b>（p034）。很容易记混。</li>
+    <li><b>prolin 的两面。</b>它<b>进不去</b> α-helix（p029），但 cis 肽键<b>几乎只出现在它旁边</b>（p027）。老师问 proline 时想听的往往是第二条。</li>
+    <li><b>没有四级结构不是缺陷。</b>quaternary 只在“由多于一条链组成”时才存在（p033）。单链蛋白再大也没有四级结构，别硬答。</li>
+    <li><b>hydrofobní efekt 不是“疏水基团互相吸引”。</b>它是水的熵项（p033）。这条同时是 ④ 的落点。</li>
+  </ol>
+
+  <div class="flag">
+    <p><b>⚠ 书里没写，别从记忆里补：</b>collagen <b>单条链自身</b>的手性（通用说法是左手 polyproline-II 型，三股再绞成右手超螺旋）——<b>这本书只写了超螺旋是右手，没写单链</b>。老师若问单链手性，答“书上只给了超螺旋”比编一个稳。</p>
+  </div>
+</section>
+
+<section class="box reserve">
+  <h3>⑧ 桥 <em>答完主干主动伸出去，老师顺着你走就不会自己挑深坑</em></h3>
+
+  <div class="bridge">
+    <h4>桥 1 · 四级结构 → 抗体结合位点 → 你的 Kd 与 yeast display</h4>
+    <p class="cn">这座桥<b>是书自己搭的</b>：p033 讲 quaternary 时直接举了抗体 —— <i>“u protilátek je vazebné místo pro antigen tvořeno částmi peptidových řetězců, které patří k oběma typům podjednotek”</i>（抗原结合位点由两类亚基各自的链段共同构成）。从这句话走到你自己的工作是一步的事。</p>
+    <p class="say">“The textbook’s own example of why subunit contacts matter is the antibody: the antigen-binding site is formed by parts of chains belonging to <b>both</b> types of subunit. That is also where I work experimentally — I measure how a binding surface tolerates change, using yeast display and dissociation constants.”</p>
+  </div>
+
+  <div class="bridge">
+    <h4>桥 2 · 一级决定高级 → 序列–结构规则 → 定向进化</h4>
+    <p class="cn">p026 列“为什么要知道序列”的第一条就是：<b>分析序列与三维结构的关系，能揭示肽链在空间中排布的规则</b>；序列因此是 DNA 里的遗传信息和决定功能的三维结构之间的<b>连接环节</b>。这正好是 directed evolution 在做的事，也接得上题库里 #6 那道 <i>protein fitness landscape / folding landscape</i>。</p>
+    <p class="say">“The reason the primary structure counts as a level at all is that it is the link between the genetic information and the three-dimensional structure that carries the function. That is exactly what directed evolution exploits: you change the sequence and read out whether the fold and the binding survive.”</p>
+  </div>
+
+  <div class="bridge">
+    <h4>桥 3（备用）· 二硫键 → 分泌蛋白与表面蛋白的翻译后修饰</h4>
+    <p class="cn">二硫键在球状蛋白里主要起“稳定<b>已经形成的</b>结构”的作用（p032）。这条直通题库 #12 “surface and secreted proteins 最关键的两种翻译后修饰”。两道题可以共用一段话。</p>
+  </div>
+</section>
+
+<footer>
+  <h3>这张卡里什么是核过的</h3>
+  <ul>
+    <li>⑥ 每一条都出自 <code>book/pages/p###.txt</code>，页码即 PDF 页码，与书上印的页码一致（offset 0）。</li>
+    <li>α-helix 的 n+3 / n+4、镰刀型贫血的 β 链，都<b>回到 400 dpi 原图看过</b>，不是只看 OCR。</li>
+    <li>年表出自 p009 的 <i>Tab. 1.1</i>，年份逐条抄的，没有从记忆里补。</li>
+    <li>标了 ⚠ 的两处是书里<b>确实没有</b>、或<b>确实与通用写法冲突</b>的，没有糊过去。</li>
+  </ul>
+
+  <h3>要你定的四件事（定完再批量写剩下 31 张）</h3>
+  <ul>
+    <li><b>① 八格是不是太多。</b>现场真正背的只有 ①–④，⑤–⑧ 只求眼熟。这个分工你认不认？</li>
+    <li><b>② 逐字稿写英语对不对。</b>题目单是英文，所以暂定英文答、捷克术语只作备查。要是实际用捷克语答，⑥ 的捷克词就得从“备查”升成“主词”。</li>
+    <li><b>③ 书错了的时候听谁的。</b>n+3 这条我给了个折中说法（先说“一整圈之后”，被逼问再给 n+4）。你要是知道这位老师就按书讲，我改成书优先。</li>
+    <li><b>④ ⑥ 硬事实按什么挑。</b>现在是把书里<b>所有带数字、带名字、带捷克术语</b>的都收进来（32 条）。如果太多，可以改成只收书里加粗的和表格里的。</li>
+  </ul>
+
+  <p>样卡 · 2026-09-11 · 只在 <code>oralexam/</code> 内产出 · 零外链，断网可看</p>
+</footer>
+
+</div>
+</body>
+</html>

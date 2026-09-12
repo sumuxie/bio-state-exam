@@ -1,0 +1,46 @@
+10.1.2 Metabolismus lipidů kA A)
+Odbourávání tuků (kap. 8.4) začíná hydrolýzou na složky, tj. glycerol a mastné kyseliny. Gly- = |
+cerol může být oxidován na triosu — glyceraldehyd a ve fosforylované formě se zapojit do me- » A
+tabolismu sacharidů. Odbourávání mastných kyselin musí být iniciováno jejich aktivací, která — A
+spotřebuje 1 ATP a z mastné kyseliny vznikne acyl-CoA. Jejich odbouráním vznikají na kaže = É
+dou dvouuhlíkatou jednotku 1 FADH, (oxidace kyseliny na nenasycenou mastnou kyselinu), | JA
+1 NADH (oxidace hydroxykyseliny na oxokyselinu). Mastná kyselina se tak odbourá na acetyl- |
+„CoA, kompletní odbourání až na oxid uhličitý a vodu obstarávají opět citrátový cyklus a dý- — :
+chací řetězec. Při zaplavení organismu acetyl-CoA (např. diabetes) může ze dvou jeho molekul | Ji
+vznikat kyselina acetoctová a aceton. TA A
+Pro syntézu mastných kyselin (kap. 8.3) je výchozí sloučeninou opět acetyl-CoA. Proces- A]
+syntézy je sice formálně podobný odbourávání, ale má několik zásadních odlišností. A A)
+— Syntéza začíná aktivací neaktivní methylové skupiny acetylu karboxylací na malonyl- -S 1
+-CoňA, A 7
+— Donorem vodíku pro syntézu je NADPH, zatímco oxidací vzniká NADH. a
+— Syntéza je v buňce oddělena od degradace (ta je lokalizována v mitochondriích). Probíhá = | 4
+na multienzymovém komplexu v cytoplasmě, všechny intermediáty zůstávají vázány na- 3)
+enzymy, uvolňují se až hotové šestnácti- a osmnáctiuhlíkové acyl-CoA. JA A
+Pro syntézu molekuly tuku je třeba kromě acyl-CoA ještě glycerofosfát, ten pochází z me- — :
+tabolismu cukrů. A |
+10.1.3 Vztah metabolismu sacharidů a lipidů -A
+Obě tyto skupiny živin jsou v organismu odbourávány na acetyl-CoA. Když buňka potřebuje =
+energii, může být acetyl-CoA oxidován na oxid uhličitý a vodu citrátovým cyklem a respirače  — S
+ním řetězcem. Když jsou energetické nároky buňky nízké, bývá acetyl-CoA využit především č
+pro syntézu mastných kyselin a tuků. Plyne z toho, že v organismu jsou v případě nadbytečně- 2) ň
+ho přísunu ať už sacharidů nebo tuků, živiny přeměňovány na tuky a ukládány. Živočišný orga- — )
+nisinus neumí přeměňovat acetyl-CoA na pyruvát, výchozí sloučeninu pro syntězu sacharidů, — :
+a proto také nemůže z tuků tvořit sacharidy. 1 |
+10.1.4 Citrátový cyklus a respirační řetězec -F
+V citrátovém cyklu (kap. 6.2.2) jsou zbytky kyseliny octové (acetyl-) oxidovány až na oxid uh- 3 )
+ličitý. Atomy vodíku jsou využity k redukci koenzymů. V prvním kroku se acetyl-CoA navá-
+že na oxalacetát a vznikne citrát. Tato šestiuhlíková sloučenina se v cyklu dvakrát dekarboxy- B
+Iuje a při jedné otočce cyklu tak vznikne I FADH, (při dehydrogenací sukcinátu na fumarát) =
+a 3 NADH (při oxidačních přeměnách isocitrátu, a-oxoglutarátu a malátu). V cyklu se tvoří: —
+také 1 makroergická sloučenina — GTP — při oxidační dekarboxylaci a-oxoglutarátu. S
+Vlastní přeměna hlavního podílu energie obsažené v acetyl-CoA se uskutečňuje v respirač- A
+ním řetězci (kap. 6.2.4) při reoxidaci redukovaných koenzymů NADH a FADH,. Tento sled: =
+oxidoredukčních reakcí je spojen s tzv. aerobní fosforylací. V dýchacím řetězci jsou reoxido-  —
+vány redukované koenzymy pocházející i z jiných reakcí, ale citrátový cyklus je jejich nejvý-
+znamnějším dodavatelem. Navíc jsou oba děje lokalizovány v těsném sousedství v mitochon- A
+driích. k.
+Citrátový cyklus může sloužit také jako zdroj intermediátů některých syntetických reakcí. =
+u-Ketoglutarát a oxalacetát jsou přeměňovány v transaminačních reakcích na aminokyseliny. :
+Sukcinyl-CoA poskytuje reakcí s glycinem č-aminolevulát, z něho se tvoří porfyriny (kap. 6.3). a
+220 L.
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na htto:/Awww.softwaret cz/

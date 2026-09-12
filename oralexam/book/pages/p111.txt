@@ -1,0 +1,35 @@
+ce objeví v lumenu ER, je hydrolyticky odštěpena signální peptidasou, vázanou na membrá-
+Iu, Ribonukleoprotein SRP se vzápětí po připojení ribosomu k ER uvolňuje, aby se mohl vá-
+: řátna další signální sekvenci.
+| Zbytek polypeptidového řetězce je po odštěpení transportován dovnitř cisteren ER a potě
+„zabalen“ do jakýchsi váčků — mikrovesikul, které se odpojují z ER a putují ke Golgiho apa-
+| rátu, Tam je protein případně dále modifikován (viz dále) a ve finální formě nakonec uvolněn
+= Vpodobě sekrečních granulí, které putují k cílovým organelám nebo k plasmatické membrá-
+| hě buňky, se kterou fúzují, přičemž se z nich uvolňují transponované proteiny do extracelulár-
+| ího prostoru.
+= Rada bílkovin, především exkretovaných, podléhá dvoustupňové proteolytické modifika-
+Ad průběhu prvního stupně se uvolní signální sekvence (tj. dochází k přeměně preproproteinu
+= na preprotein), v druhém stupni probíhá selektivní proteolýza. K tomuto procesu dochází větši-
+= hou v Golgiho aparátu. Například insulin je původně syntetizován jako preproinsulin, obsahu-
+= jlcí signální sekvenci na N-konci složenou z 23 aminokyselin. Po odštěpení této sekvence vzni-
+= ká proinsulin, který již obsahuje hotové A a B řetězce insulinu: A řetězec tvoří C-terminální
+É = aB-řetězec N-terminální část proinsulinu, Střední část tvoří tzy. C-peptid, který spojuje oba ře-
+= tězee. Selektivní proteolýzou se C-peptid odštěpuje a vzniká biologicky aktivní insulin, ve kte-
+= rém jsou řetězce spojeny třemi disulfidovými vazbami. Na selektivní proteolytické modifikaci
+= insulinu se podílejí nejméně 2 enzymy: enzym se specifitou podobnou trypsinu, který odštěpu-
+É = je C-peptid, a karboxypeptidasa, uvolňující dipeptid, složený z dvou basických aminokyselin,
+= kterými byl původně C-peptid připojen.
+| A áno Ch
+É: a ; kk. M jen omezí 4
+A [NE]
+: = : (S) +eDP P atů
+o receptor |
+| ž p "peptidový: MR 18 ke v- signální Z: AK 7) : 2425 r 10k
+| ondoplasmatické 0.. translokační receptor- S poptidasa -1 u = a
+= ratikulum PŘ komplex et ER ek) i o k. === AN A Á.
+A Obr. 4.55 Translokace nascentního peptidového řetězce do endoplasmatického retikula
+A 4.3.3 Kovalentní modifikace bočních řetězců aminokyselin
+A Boční řetězce aminokyselin v nascentním polypeptidovém řetězci mohou být kovalentně modi-
+"f= fikovány glykosylací, hydroxylací, karboxylací, oxidací sulfhydrylových skupin na disulfidové
+vazby, methylací, fosforylací a sulfatací.
+vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

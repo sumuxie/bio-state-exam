@@ -1,0 +1,30 @@
+| 2 Flavinové koenzymy
+i = tvoří prosthetické skupiny flavoproteinů. Podstatnou částí jejích struktury je vitamin B., ribo-
+| flavin, Flavinmononukieotid (FMN) se skládá z báze (alloxazinový derivát), cukerné složky
+vi = (vtomto případě pěti mocného alkoholu ribitolu) a zbytku kyseliny fosforečné.
+200 riboflavin-5“-osfát
+i A = flavinmononukleotid, FMM
+| A Většina flavoproteinů neobsahuje FMN, ale flavinadenindinukleotid (FAÁD). Ten je tvořen po-
+W dobně jako pyridinové nukleotidy ze dvou nukleotidů, a to adenosinmonofosfátu a FMN spo-
+| - jených pyrofosfátovou vazbou.
+i A o o
+| H, KM M HyC om o
+| or CH, CH,
+AN JA, NH, I NHz
+"2m H—C—oH H—C—aH
+4 H-—C—OH NM MAE „ey čty A
+p en : H H ů ? Ji
+
+A óH ÓH ÓH OH
+i = : flávinádenindinukleotkd (oxidovaná a redukovaná orma)
+i A Jako redoxní struktura funguje u tohoto koenzymu isoalloxazinový kruh, vodík se váže na N!
+a NI, Zatímco flavin je žlutý, protože obsahuje systém konjugovaných dvojných vazeb, jeho
+= -i = dihydrogenderivát je bezbarvý. Toho lze využít ke sledování reakcí, kterých se flavoproteiny
+| účastní, optickými methodami.
+| * Koenzym 0
+| V redoxních reakcích se uplatňuje také ubichinon označovaný jako koenzym O. Ve vyšších
+| rostlinách má podobnou funkci plastochinon. V dýchacím řetězci tvoří koenzym © prostřední-
+| ka mezi flavoproteiny a cytochromy. Redoxní děje probíhají mezi chinonem a hydrochinonem,
+jak je patrné ze schématu.
+L 45
+M tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

@@ -1,0 +1,37 @@
+s genem P promotorem. Regulační úsek je zodpovědný za regulaci exprese strukturních genů |
+(obr. 4.46). Regulátorový gen / je zodpovědný za vznik difuzibilního produktu, negativního re- —
+gulačního proteinu, represoru, který reguluje expresi strukturních genů (operonu). J
+Funkce represoru může být ještě ovlivněna nízkomolekulárním efektorem — korepresorem.
+Nizkomolekulární efektory, které po interakci s represorem naopak blokují jeho vazbu na DNA, |
+se nazývají induktory (viz obr. 4.47). Jsou to tedy pozitivní efektory, které umožňují pohyb —
+RNA-polymerasy po DNA a umožňují tedy přepis strukturních genů. Induktorem např. pro syn- —
+tězu bílkovin s enzymovou aktivitou může být substrát tohoto enzymu nebo jeho derivát. A
+V nepřítomnosti induktoru se represor /ac váže na gen operátor (gen ©), čímž zabraňuje
+enzymovou transkripci /ac-operonu (obr. 4.47a). Po vazbě induktoru na represor, tento kom- —
+plex disociuje z genu operátoru, takže umožňuje transkripci strukturních genů do ac mRNA |
+(obr. 4.47). Systém operátor-represor-induktor tedy slouží jako molekulový vypínač, takže lac
+operátor může regulovat expresi enzymů operonu /ac (téhož chromosomu). 3
+Gen operátor /ac má těměř palindromovou strukturu, která usnadňuje vazbu proteinů do těto =
+oblasti DNA. Lac-represor má tři vazebná místa pro /ac-operon, primární operátor O, který se —
+překrývá s lac-promotorem, a dva tzv. pseudooperátory O, a O, (uvnitř genu /aeZ, obr. 4.29). =
+Při iniciaci transkripce tvoří holoenzym DNA polymerasy (a „pp'o) £. coli otevřený komplex : :
+s promotorem a zahajuje opakovanou syntézu oligomerů RNA s délkou do 9 nukleotidů. Tato =
+předčasná iniciace se zastaví, pokud je odstraněn faktor c a je uvolněn promotor. Výsledné já-
+dro“ RNA polymerasy (0 pp") pak zahájí postupnou elongaci přepisované RNA. 3
+ran E Apterii čtěné = gieuoeem : ě
+| ; : | i A
+RE r T A ra T a I ze t T roi T oz T risk o i :
+509 at jo mne 1
+Chorismate tai Aytikranitate ze A'4-Phpophoribnavi) M. No okotmný Indsletyvoro-P 7m 1-Tryptophan 1 =
+Ghrtamina | Glutumate | PRPP: PP; Iedenxyribulnče ÚU, teSerine  Glyceraldehyde-a.P A ch
+-. phosphato | JŘ
+Obr. 4.48 Genetická mapa frp-operonu £. coli s vyznačením enzymů, které kóduje, a reakce- W
+mi, které katalyzuje. Genový produkt trpC' katalyzuje dvě následné reakce syntézy tryptofanu. — Ja
+Na obr. 4.48 je znázorněna genetická mapa dalšího operonu £. cofí, trp-operonu, kódujícího  — |
+pět polypeptidů, které tvoří tři enzymy zprostředkující syntézu tryptofanu. RNA-polymerasase W-
+nejdříve pohybuje po genu operátoru, na kterém syntetizuje pouze tzv. vedoucí sekvenci (zpl, | W
+„leader mRNA, obr. 4.48, v případě rpL úsek se 162 nukleotidy). Vedoucí sekvence se do W
+mRNA transkribuje, ale k translaci této časti mRNA na peptid (protein) nedochází (obr. 4.48), P
+Tato skutečnost platí obecně, nejen pro případ stimulace či represe (snížení) exprese mRNA, P-
+Ke konci vedoucí sekvence je přítomen další regulační prvek, tzv. zeslabovač (atennátor)  — . |
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwaré |2.cz/

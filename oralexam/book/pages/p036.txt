@@ -1,0 +1,50 @@
+2.2.5 Jednoduché a složené proteiny r
+Proteiny bývají někdy rozdělovány na proteiny jednoduché a proteiny složené: proteiny jed-
+noduché po hydrolýze poskytují pouze aminokyseliny, nebo-li obsahují pouze peptidovou W
+složku; složené proteiny obsahují kromě aminokyselin ještě další složky. Vedle proteinů ob- — A
+sahujících kovalentně vázané neaminokyselinové složky, která je součástí molekuly složeného W
+proteinu, existují proteiny, které mají tuto složku vázanou pomocí nekovalentních interakcí. A
+S rozvojem analytických metod a zvýšením jejich citlivosti stoupá počet proteinů, u kterých — A
+byla prokázána přítomnost nepeptidové složky. Podle současných představ jsou nepeptidové W
+složky proteinů pravidelnou součástí převážné většiny bílkovin; tzv. jednoduché proteiny jsou A
+spíše výjimkou. Kvantitativní poměr mezi peptidovou a nepeptidovou složkou může býtznače
+ně rozdílný. | A
+Podle povahy nepeptidové složky je možně „složené“ bílkoviny rozdělit na několik skupin. | A
+Glykoproteiny o
+Glykoproteiny (obecně), jak vyplývá z názvu, obsahují kromě peptidové části, ještě část sacha- = |
+ridovou; ta je na peptidový řetězec vázaná kovalentně. A)
+Je možné rozlišit několik typů glykoproteinů: i.
+a) proteiny, které obsahují kratší oligosacharidové řetězce, velmi často větvené; tato skupi-
+na látek bývá označována jako glykoproteiny; sacharidová část je vázána: A
+I, N-glykosidově (přes amidový dusík asparaginu); typickými představiteli jsou gly- W
+koproteiny krevního séra; k: 2MM
+2. O-plykosidově (přes hydroxylovou skupinu serinu nebo threoninu); jako příklad je | :|
+možné jmenovat glykoproteiny látek krevních skupin nebo glykoproteiny mucinů m
+(hlenů); složení sacharidových částí glykoproteinů viz kap. 7.5. 0
+b) proteoglykany, které obsahují molekuly glykosaminglykanů vázaných kovalentně na kA)
+molekulu proteinu; proteoglykany jsou složkami pojiva; složení sacharidové části těchto =
+látek viz kap. 7.4.2; n aa
+c) kolagen, který obsahuje D-galaktosu nebo disacharid obsahující D-galaktosu a D-gluko-  —
+su, vázané převážně na hydroxyprolin nebo hydroxylysin. B.
+Fosfoproteiny z
+U eukaryotů je fosfátová skupina ve fosfoproteinech vázána na peptidový řetězec kovalent- |
+ně; nejčastěji esterovou vazbou na hydroxylovou skupinu serinu, threoninu a nebo tyrosinu. |
+U těchto organismů fosfoproteiny a fosforylace proteinů pomocí kinas proteinů hraje velmi dů- j
+ležitou roli při regulaci buněčného cyklu a při buněčné signalizaci.
+
+Vedle toho fosfoproteiny mají také depotní funkci, tj. umožňují uchovat dostatek fosfátu po- ]
+třebného pro rychle se vyvíjející zárodek a mladý organismus. Jako představitele fosfoproteinů |
+je možné jmenovat fosvitin — depotní protein vaječného žloutku; obsahuje 10* zbytků fosfátu r
+na jeden peptidový řetězec (M, = 35 000). V mléce je obsažen rozpustný fosfoprotein — kasein. )
+Metaloproteiny :
+Karboxylové, imidazolové a sulfhydrylové skupiny proteinů mají obecně schopnost vytvářet
+komplexy zejména s těžkými kovy. Mezi metaloproteiny patří jednak depotní proteiny, u kterých
+obsah kovu je velký; příkladem může sloužit ferritin: molekula ferritinu (M,= 46 000) může
+obsahovat železité ionty až do 30 procent hmotnosti; Fe" ionty se v případě potřeby uvolňují. J
+
+Transportní funkci pro ionty železa má transferrin; je to bílkovina krevní plasmy, která je
+může vázat Fe? ionty s vysokou afinitou. Jako transportní protein pro ionty mědi slouží ceru- A
+loplasmin v krevním séru. |
+
+26
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

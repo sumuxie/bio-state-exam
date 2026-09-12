@@ -1,0 +1,32 @@
+6. BIOENERGETIKA 1
+6.1 Principy bioenergetiky J
+Živá hmota se vyznačuje, zvláště ve srovnání s okolním prostředím, vysokým stupněm vnitřní
+uspořádanosti. Tato organizovanost není samoúčelná, ale umožňuje živým systémům autonom-
+ní regulaci a adaptaci na změny ve vnějším prostředí. K udržování života je tudíž také potřeb- |
+ná neustálá výměna informací, hmoty a energie s okolím. Z toho je zřejmé, že živý organismus
+představuje z termodynamického hlediska tzv. otevřený systém, který kryje svou potřebu ener-
+gie a hmoty na úkor okolního prostředí, ve kterém zvyšuje stupeň neuspořádanosti. Rovnová-
+ha s okolím je zdánlivá, lépe řečeno dynamická (někdy též termin stacionární stav), která je
+vzdálená od statické rovnováhy v izolovaném systému popisovaném v klasické termodynamice
+rovnovážného stavu, Základní zákony termodynamiky však platí beze zbytku i pro živou hmo-
+tu (kap. 1.5). A
+Y této kapitole se budeme zabývat především získáváním, přeměnou a využitím energie,
+kterou živé organismy potřebují 3
+— k mechanické práci při svalové kontrakci a dalších pohybech buněk, i
+| — k aktivnímu transportu molekul a iontů, zpracování signálu (informace), z
+— k biosyntéze makromolekul a dalších látek z prekurzorů. A
+| Tok energie v biosféře znázorňuje následující schéma: 3
+Elektromagnetická anergie slunečního záření J
+Energie chemických vazeb (ATP, NADPH, živiny) )
+]
+. (teplo, entropie) |
+| U energetického aparátu živých systémů platí jedna důležitá zvláštnost. Nesnesou větší rozdi- |
+ly tlaku, teploty, koncentrace protonů a jiných iontů a mohou tudíž konat práci pouze za kon- —
+stantní teploty, tlaku a dalších konstantních podmínek. Vhodnou stavovou veličinou pro popis:
+energetických změn je tedy CGibbsova energie (AG). Takřka veškerá energie, kterou využívá- |
+jí organismy na Zemi, pochází původně z energie elektromagnetického záření Slunce, která: —
+se ve fototrofech (rostliny a některé bakterie) mění v energii chemických vazeb živin (kap. 9). —
+Ostatní organismy, tj. chemotrofové, získávají Gibbsovu energii oxidačním štěpením živin-
+(kap 1.4). |
+| 130 |
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software66 cz/

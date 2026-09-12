@@ -1,0 +1,17 @@
+这是国考口试材料的新目录,从零开始。不要去 Documents\trae_projects 下的任何目录,
+也不要读那边的文件——那棵树会让窗口被掐断。
+
+先读三份:README.md、ANSWER_SHAPE.md、book/FOUND_PAGES.md。
+
+然后按顺序做两件事:
+
+1. 跑 python tools/ocr_book.py 把整本书 OCR 完(上次跑到 163/229,可续跑,已有的页会跳过)。
+   完了报告 book/pages_manifest.tsv 里 status=thin 的页有几张。
+
+2. 按 ANSWER_SHAPE.md 的八格,给 "Describe the levels of protein structure" 写一张完整样卡。
+   硬事实(第⑥格)一律从 book/pages/ 里抄,每条带 p### 页码;书里找不到的标 "⚠ 未在书中找到",
+   不要从记忆里补。交付成本地自包含 HTML,不要外链。
+
+只写这一张。我审完形状,再批量写生化那 32 道。
+
+补充:我是生化 PhD,中文讲解,专业名词留英文。

@@ -1,0 +1,32 @@
+(iRNA) (messenger RNA, mediátorová RNA, informační RNA), rRNA (ribosomální RNA), =
+tRNA (transferová, přenosová RNA), snRNA (malá jaderná, nukleová RNA) a virová RNA, —
+Vlastnosti některých RNA z £. coli jsou uvedeny v tab, 4.2. 1
+Tab. 4.2 Vlastnosti RNA z E. coli 1
+nař Sedimentační Počet 3
+aw [bn eee |- LA
+mRNA zprostředkovává přenos genetické informace z DNA na bílkoviny. Velikost její moleku- j
+ly závisí na množství přenášených informací a je v přímém vztahu k velikosti a počtu peptido-  —
+vých řetězců, jejichž vznik určuje, Vedle kódujících úseků (přepis strukturních genů) obsahuje W
+i regulační úsek (viz dále, obr. 4.46 a 4.47). 1. 0)
+Prvním přepisem DNA u eukaryontů (jaderných organismů) je heterogenní nukleová RNA: —
+(hnRNA), která je podstatně delší než přepis samotného strukturního genu. Tato RNA obsa- —
+huje úseky jak kódující (exony), tak nekódující (introny). Působením enzymů ribonukleas se
+molekula upravuje na funkční mRNA (viz dále, obr. 4.51). Molekula mRNA má jednovlákno-
+vou strukturu. n A
+rRNA je stavební složkou ribosomů, U prokaryotických organismů (bezjaderných) se nachá- =
+zejí tři různě velké rRNA, které se označují podle svých sedimentačních koeficientů (5 S RNA, =
+l6 S RNA, 23 S RNA), tab. 4.2. U eukaryotických buněk byly nalezeny až čtyři rRNÁ (58,
+5,8 S, 18 S, 28 8). Ribosomální RNA jsou rovněž syntetizovány ve formě prekurzorových mo- —
+lekul, které jsou upravovány. rRNA jsou jednovláknové, ale určité části jejich molekul jsou spá-
+rované a mají strukturu dvojité šroubovice, jiné části pro neúplnost komplementární struktury
+vytvářejí jakési laloky a porušují pravidelnost helixu (obr. 4.27 a,b). i
+cal Im EX AD mí jee n o i
+Central Domain 8 Ga o BB Ť
+U g mrd, i 3' Major Domain )
+5' Domain E M 1
+n tí dd: ln A %.
+ho H 3 Minor Domain 2
+EK | [AED 3 +
+4 165 RNA a
+Obr. 4.27a Struktura 165 rRNA E. coli A
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwareg h.cz/

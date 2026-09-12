@@ -1,0 +1,38 @@
+pyruvát + NADH + H* = laktát + NAD“ A
+Regenerace NAD" při redukci pyruvátu na laktát nebo ethanol umožňuje chod glyl olý-
+zy za anaerobních podmínek. Kdyby se neregenerovalo NAD" tímto způsobem, glykolýza by
+nemohla pokračovat dále než ke glyceraldehyd-3-fosfátu, takže by nemohlo vznikat ani se ro-
+generovat ATP. Pouze malá část energie obsažená v glukose se však uvolní při anaerobní pře-
+měně na laktát (nebo ethanol). A
+3. Mnohem více energie lze získat aerobně cestou citrátového cyklu a dýchacího řetězce
+(kap. 6). Vstupní sloučeninou oxidační cesty je acetyl-CoA, který se tvoří uvnitě mitochondní:
+oxidační dekarboxylací pyruvátu. 2
+pyruvát + NAD*+ CoA = acetyl-CoA + CO, + NADH + H* +
+Reakce je katalyzována multienzymovým komplexem. NAD" potřebné pro tuto reakci stejně 2
+jako pro oxidací glyceraldehyd-3-fosfátu se regeneruje z NADH při přenosu elektronů na kys-
+lík v dýchacím řetězci mitochondrií. p i
+Multienzymový komplex umožňuje dekarboxylaci a současnou oxidaci (oxidační dekarho- j
+xylace a-oxokyselin). Jako kofaktory se při tomto ději účastní thiamindifosfát, lipoová kyse-
+lina a koenzym A. V regeneraci lipoové kyseliny pak dále participují FAD a konečně NAD :
+d) o A
+dech | .
+cH.c-—séah »
+vd 3 :
+H,—=0— 0007 sko u A
+2 thiaminpyrolosťát A S ryjáP Š ře
+pyruvůl (TEP) SH SH J
+co, CHs a + S%
+CH—ÓH -A
+TPP g-—8 )
+hydroxyecthyl-TPP lipoová kys, 1 i
+: pyruvát- dihydrolipoyl- dihydrolipoyl- A :
+dehydropgenása transaceltylasa dehydragenasa i
+(l) I
+ča p MR (k cn aa dimery ; 3
+dihydrolipoy- G E NG OE LÝ = pyruvát (44 v okr 1 0) dihydro- (6 VohL „Mo M :
+transacetylasa o-( ka dehydro-< "hope T ; n lipoyl- — r o nm ia. 3
+zku genasa Par Poco dehydrogenasa jší facka É |
+Nejprve se odštěpuje oxid uhličitý a tvoří se „aktivní acetaldehyd“, který se váže na atom: —
+C-2 thiazolového cyklu thiamindifosfátu. Dále se aldehyd přenáší na lipoovou kyselinu, při-
+168 1
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software cz/

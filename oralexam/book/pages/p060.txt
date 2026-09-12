@@ -1,0 +1,40 @@
+Vezměme jednosubstrátovou enzymovou reakci, jak už byla popsána dříve (kap. 3.3). Inhibi- I
+tor může interagovat buď s volným enzymem — vznikne binární komplex enzym-inhibitor (ED), —
+nebo s komplexem EA — vznikne ternární komplex enzym-substrát-inhibitor (EAT). 1
+Pokud inhibitor reaguje pouze s volným enzymem, mluvíme o inhibici kompetitivní, vzniká -
+pouze EI. Inhibitor a substrát soutěží o totéž vazné místo na enzymu. Sílu interakce mezi inhi- <
+bitorem a enzymem charakterizuje tzv. inhibiční konstanta K; definovaná jako disociační kon- —
+stanta komplexu EI ]
+K „21 ]
+č ODEM]
+Klasickým příkladem kompetitivní inhibice je inhibice sukcinátdehydrogenasy malonátem,
+který je substrátu podobný natolik, že se na enzym může vázat, ale už nemůže být dehydro- 0
+genován, J
+COoH COoH i
+- sukcinátdehydrogenasa 4 a
+COOH ČOOH ]
+© kyselina jantarová kyselina fumarová l
+(sukcinát) (fumarát) 3
+; i. sukcinátdehydrogenasa <. ] |
+COOH |
+kyselina malonová Ť
+(malonát) Ji
+Experimentálně se kompetitivní inhibice projeví v grafu podle Lineweavera a Burka tím, že se: —
+nemění V a zvyšuje se K.
+Pokud reaguje inhibitor pouze s komplexem EA, jde o tzv. inhibici antikompetitivní (un-), 1
+vzniká pouze ternární komplex EAI, K. je opět inhibiční konstanta charakterizující afinitu in- —
+hibitoru ke komplexu EA. |
+K! „ [BA] 1] |
+P [EAT] i
+Antikompetitivní inhibice je velmi vzácná u jednosubstrátových reakcí, ale poměrně častá u re- ]
+akcí dvousubstrátových. Antikompetitivní inhibitor se nemůže vázat na volný enzym, tepr-
+ve interakce enzymu se substrátem vyvolá konformační změny v molekule enzymu, kterými: |
+se vazné místo pro inhibitor vytvoří. Vazbou inhibitoru na EA se ale naruší katalytická funkce |
+enzymu. ke |
+Experimentálně se antikompetitivní inhibice projeví v grafu L/v proti l/[a] snížením jak V |
+tak K.. KA
+Pokud inhibitor interaguje jak s volným enzymem tak s komplexem EA, a to se stejnou afi-
+nitou (K, = K), komplexy EI i EAI vznikají stejně snadno, jde o inhibici nekompetitivní, In-
+hibitor se váže na jiné místo na enzymu než substrát, A a L si nekonkurují ve vazbě na enzym,
+60 |
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

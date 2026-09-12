@@ -1,0 +1,38 @@
+V části molekuly DNA, která má být přepisována, je šroubovice DNA rozvinuta po dělce a JE
+jednoho závitu, aby mohlo templátové vlákno DNA vytvořit krátký úsek hybridní dvoušrou-
+bovice (DNA-RNA) s 3'-koncem RNA. RNA polymerasa postupuje poděl templátu DNA (na
+obrázku doprava) a úsek DNA se rozvíjí před rostoucím 3'-koncem RNA, přičemž se za ním
+opět svinuje. Tím iniciuje (startuje) nově syntetizovanou RNA z templátového vlákna, (a) K to-
+muto ději může dojít tak, že RNA-polymerasa „sleduje“ templátové vlákno šroubovice DNA,
+přičemž transkript obtáčí DNA jednou na závit dvoušroubovice. (b) Pravděpodobnější je, že:
+se RNA pohybuje v přímém směru, zatímco DNA pod ní rotuje. V tomto případě by se RNA:
+nestáčela okolo DNA, ale dvoušroubovice DNA by se rozvíjela před postupující transkripční
+„bublinou“, a za ní by se opět svíjela. Tento model předpokládá, že konce DNA i RNA polyme-
+rasy jsou chráněny před rotací vazbami uvnitř buňky (viz pruhy v části obr. by. %
+a o A
+Template DNA rz Mí u ;
+2omra o o, o
+.. p p poj P p P: Pyrophosphate lon P p p p p Pi-ž z:
+| | DNA polymerase É :
+B; B; B, By B, B, B; B *.
+-M | R] P PPP =-po| P] BOB +
+B —* 3 Replicated DNA *
+Obr. 4.31 RNA polymerasy spojují nukleosidtrifosfáty na jednovláknových matricích DNA. W
+a tak, za odštěpení difosfátu („pyrophosphate““), syntetizují řetězce RNA ve směru 5'—3". T.
+DNA, která se transkribuje, obsahuje specifická místa, v nichž dochází k terminaci prodlužo- W
+vání řetězce RNA. Transkripční terminační sekvence několika genů E, coli mají dvě společné W
+charakteristiky: (i) Sérii 4-10 párů A-T se zbytky A ve vlákně templátu. Přepisovaná RNA je: W
+ukončena v této sekvenci nebo těsně za ní, (ii) Oblast bohatá na G + C s palindromovými („vlá- W
+senkovými“, dvojčetně symetrickými) sekvencemi, které sousedí se sérií párů A-T (obr. 4.32). — |
+Transkript této oblasti RNA tedy může tvořit autokomplementární „vlásenkovou strukturu“, W
+ukončenou několika zbytky U (obr. 4.32b). Stabilita terminační vlásenky (bohaté na G+ C). W
+a slabé párování bází její koncové sekvence oligo(U) s templátem DNA jsou zřejmě rozhodu-
+jicími faktory správně terminace. Tyto terminační sekvence indukují spontánní terminaci tran- W
+skripce. Jiná terminační místa však tyto sekvence neobsahují a vyžadují k terminaci transkripce
+účast proteinu p (rho faktor). Jedná se o enzym katalyzující rozvinutí dvoušroubovice RNA- W
+-DNA a RNA-RNA za spotřeby nukleosidtrifosfátů (NTP). Terminace závislá na faktoru ptaké p
+vyžaduje speciální rozpoznávací sekvence umístěné proti směru od terminačního místa (spíše P-
+na vznikající RNA než DNA). Vlastnosti tohoto terminačního místa dosud nebyly charakteri- W
+zovány. LM
+90 J.
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software6 2 .cz/

@@ -1,0 +1,33 @@
+a kt glykolýzy, kde vzniká štěpením fruktosa-Ló-bisfosfátu. Při přenosu na glyceraldehyd-
+J-fosfát jde o transketolasovou reakci a produktem je xylulosa-S-fosfát a erythrosa-4-fosfát,
+| který se stává akceptorem tříuhlíkového zbytku v transaldolasové reakci (donorem je fruktosa-
+| b-fosfát), Produkty jsou sedoheptulosa-7-fosfát a glyceraldehyd-3-fosfát. Tyto dva produkty
+| še v následné transketolasové reakci přeměňují ve dvě pentosy, ribosa-S-fosfát a xylulosa-5-
+| losfát (donorem dvouuhlikového štěpu je sedoheptulosa-7-fosfát). Xylulosa-5-fosfát se epi-
+| Ineruje na ribulosa-S-fosfát a ten se izomeruje na ribosa-S-fosfát. Výsledkem je vznik tří pen-
+= los ze dvou hexos a jedné triosy, Tato neoxidační cesta je využívána tehdy, když je zapotřebí
+| syntetizovat mnohem více ribosa-5-fosfátu než NADPH. Všechny přeměny uvedené cesty jsou
+= Však reverzibilní, a tak může být také přeměňována ribosa-S-fosfát na glyceraldehyd-3-fosfát
+= A fruktosa-6-fosfát. Ze tří pentos mohou vznikat dvě hexosy a jedna triosa. Napojením tohoto
+= Obráceného pochodu na oxidační odbourávání glukosa-6-fosfátu za vzniku NADPH a pentos,
+= jak je uvedeno shora, a doplněním izomerace fruktosa-ó-fosfátu na glukosa-6-fosfát, dostáváme
+= Úplný cyklus (pentosový cyklus), v němž by se mohla zcela oxidovat glukosa (glyceraldehyd-
+= -J-fosfát by se odbourával glykolýzou) za vzniku 12 molekul NADPH na každou molekulu
+= glukosa-6-fosfátu. Oxidace glukosa-ú-fosfátu musí proběhnout šestkrát, vždy za vzniku dvou
+© molekul NADPH, aby se získalo 6 molekul ribosa-5-fosfátu, ze kterých vzniknou 2 moleku-
+| A ly glyceraldehyd-3-fosfátu. Ten se pak odbourá cestou glykolýzy, citrátového cyklu a dýchací-
+= hořetězce.
+Ť G-fosfogiukonát
+s glukosa-6-(F) NADPH +49 NADPÍŮŮ
+3 (Ce NADPP ribulosa-5-(P)
+M oridace glukosy na pentosu A
+j 3 onthrona-4- © Roe: 7- (F)
+| 0 <
+A fruktosa-6-(F) a dod-3 ©
+a haxosy v pantosy -+ pomlosy v heney v hexosy
+1 Tento mechanismus však organismus pro dokonalé odbourávání glukosy nepoužívá. Popsané
+= pochody slouží spíše k biosyntéze pentosafosťátů, které jsou nezbytné pro výstavbu nukleových
+a kyselin, buď za současného vzniku redukovaného NADP", tedy NADPH, potřebného pro růz-
+i né syntézy (mastných kyselin, cholesterolu atd.), nebo bez něj.
+: 163
+á vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

@@ -1,0 +1,30 @@
+= Tab. 6.1 Hodnoty AG" pro hydrolýzu některých fosforylovaných sloučenín
++ Sloučenina AG (kdJ.mol“") Směr přenosu Pi
+ah Fosfoenolpyruvát -61,9
+; a L a-bislostoglycerát -49,3
+a kreatinfosfát -43,1
+= | acetylfostát -42,2
+= |anorganický difosfát -33,5
+= | (acetylkoenzym A) -31,4
+| |ATP= ADP + P -20,5
+= |glukosa-1-fosfát -20,9
+= | fruktosa-6-fosfát -15,9
+= | glukosa-6-fostát -13,8
+= |I-glycerol-3-fosfát -9,2
+A V tabulce 6.1 jsou seřazeny jednotlivé typy fosforylovaných sloučenin. Plyne z ní:
+= a) Existují dvě skupiny biochemických derivátů kyseliny fosforečné: sloučeniny, uvedené
+A v tabulce nad ATP, s vysokými hodnotami AG" hydrolýzy, které mohou sloužit jako do-
+a nory fosfátové skupiny a látky pod ATP, s nízkými hodnotami AG", jejichž organické
+| va zbytky působí jako akceptory fosfátu.
+= b) ATP a ADP tvoří dvojicí, která má roli univerzálního donoru a akceptoru fosfátové sku-
+: = piny a jsou to ústřední sloučeniny bioenergetiky. Tvorba ATP v organismu je krom toho
+: = dobře regulovatelná. ATP tak představuje jednu z forem distribuce Gibbsovy energie
+| 3 a její AG" hydrolýzy (—30,5 kJ. mol" na vazbu) je jakýmsi „kvantem“ pro energetické
+2 přeměny v buňce.
+Ž ein | | orokooeny
+3 otestět
+A ker |
+: | 4
+a nelocetů | růt
+z Obr. 6.2 Tři fáze katabolických a anabolických dějů
+jořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

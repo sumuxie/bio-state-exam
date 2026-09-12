@@ -1,0 +1,45 @@
+| A DNA ligasa katalyzuje spojení fosfodiesterových vazeb, a to jejich tvorbu mezi 3'-OH skupi-
+= | nou jednoho řetězce DNA a 5'-fosfátovou skupinou jiného řetězce DNA, Jde o endergonickou
+W reakcí, kde energie může být dodána buď rozštěpením ATP nebo rozštěpením NAD" Tento spo-
+= S jovací proces je nezbytný nejen pro normální syntézu DNA (tvorba nových vláken totiž nepro-
+É A bíhá kontinuálně, ale vznikají polydeoxyribonukleové úseky — 10" nukleotidových zbytků, tzv.
+"| Okazakiho fragmenty, víz dále — které se spojí), ale i pro opravy poškozených molekul DNA
+"| (mezery v DNA), rovněž jako pro tzv. „splicing“ (spájení střihem) řetězců DNA při genetické
+"| rekombinaci u eukaryontů. DNA-ligasa nemůže spojovat dvě molekuly DNA, které jsou jedno-
+> | vláknové. Alespoň část molekuly DNA musí být ve formě dyouvláknové šroubovice. Mecha-
+"W nismus účinu DNA-ligasy je uveden na obr. 4.20.
+
+P E —Lys— NH; + N—-R—-0—P—0—P-0—R—A
+
+A E — Lys — NH, M) 0—R—A
+
+A k- A
+
+T% 2 ao
+
+| A Mm] „m + E—Lys—NHy
+
+S W
+
+T OH P
+
+I“ ť -
+
+J* A. od 02 či
+
+J p
+
+| a AK
+
+J. "0 0—BR—A
+
+A O
+
+M Ú—P=-0, :
+
+| i Obr. 4.20 Reakce katalyzovaná DNA ligasou. V případě eukaryotních DNA ligas funguje mís-
+1 to NAD" ATP,
+
+| | 81
+
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

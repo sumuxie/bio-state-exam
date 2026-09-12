@@ -1,0 +1,58 @@
+F% U některých proteinů jsou Fe ionty vázány v komplexu s -SH skupinami a sulfidovými ion-
+É. A = tys jsou označovány jako FeS proteiny; tyto komplexy byly prokázány v bakteriálních a rostlin-
+W ných ferredoxinech a mají význam v biologických oxidoredukčních reakcích.
+
+1 Některé metaloproteiny obsahují velmi malá množství iontu těžkého kovu; přítomnost těch-
+o to iontů bývá nutná pro biologickou nebo katalytickou funkci proteinu; jako příklad je mož-
+W né uvést některé enzymy; karboxypeptidasa obsahuje Zně", pyruvátdekarboxylasa — Mn** ionty
+W- a xanthinoxidasa — ion molybdenu.
+
+| Hemoproteiny
+
+-W Vedle komplexu iontů kovů s funkčními skupinami aminokyselin, které se rozpadají při roz-
+-W štěpení peptidového řetězce, vyskytují se v proteinech ionty Fe vázané v komplexu s porfyri-
+| nem; tento komplex se pak nazývá hem; mezi hemoproteiny patří přenašeče kyslíku, cytochro-
+| my ahemové enzymy.
+
+| 2.2.6 Vlastnosti proteinů
+
+| o úd) Fyzikálně chemické vlastnosti globulárních proteinů
+
+| Fyzikálně chemické vlastnosti proteinů jsou podmíněny jednak jejich chemickým složením,
+| jednak jejích relativní molekulovou hmotnosti. Globulární proteiny jsou obecně rozpustné ve
+| vodných roztocích soli. Vzhledem k vysoké rel. mol. hmotnosti jsou molekuly proteinu v roz-
+: MA toku srovnatelné s částicemi anorganických koloidů, a proto mají jejich roztoky některé vlast-
+„W nosti společné s roztoky koloidními (např. Tyndallův jev, tvorba gelů, koagulace); na rozdíl od
+| těchto polydisperzních systémů, roztoky proteinů jsou však systémy homodisperzní, čímž se
+| podobají pravým roztokům:
+
+: 9 Relativní molekulová hmotnost
+
+Relativní molekulová hmotnost (M) proteinů se pohybuje v rozmezí 10* až 105, u virů až
+| 10". Tato skutečnost způsobuje, že pro její stanovení nelze užívat klasické metody. Pro stano-
+É A vení M, proteinu se používá několik typů fyzikálně chemických metod: ultracentrifugační ana-
+k A lýza, chromatografie při použití tzv. molekulárních sít (gelová nebo permeační chromatografie)
+| aelektromigrační metody.
+
+| Při sedimentačních metodách stanovení M, se roztok proteinu vystavuje působení odstředi-
+JJ  vésíly v ultracentrifuze. Molekuly proteinu, které jsou těžší než voda, klesají zvolna ke dnu ky-
+|- vety, tj. putují směrem od středu otáčení. Sedimentační rychlost je definována jako dráha mo-
+T lekuly ve směru odstředivého zrychlení za časovou jednotku dx/dt a je úměrná odstředivému
+= zrychlení:
+
+T A ask
+
+T x = vzdálenost od středu otáčení
+
+: JA s. — sedimentační koeficient; jeho hodnota se udává v jednotkách svedberg (5):
+
+i A l svedberg = 107% sec
+
+| A wm — úhlová rychlost. :
+
+| ž Ačkoliv sedimentační koeficient vzrůstá s M, není to přímá úměrnost. Hodnotu M, lze vypočí-
+F tat při použití Svedbergovy rovnice:
+
+: A  Dil=v+p)
+
+) jtvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

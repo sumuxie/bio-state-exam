@@ -1,0 +1,50 @@
+= Např. v metahbolickém řetězci je látka A postupně přeměňována přes meziprodukty B, C, D, E
+= na produkt F. Jednotlivé reakce jsou katalyzovány příslušnými enzymy E, až E., ale pouze pro-
+= dukt F působí inhibičně na první enzym celé sekvence E,. Tomuto typu inhibice se říká „inhibi-
+= te zpětnou vazbou“, enzym E, bývá enzym alosterický. Toto je obecný mechanismus regulace
+= biosynthetických pochodů prozkoumaný především u bakterií. Tímto způsobem se minimali-
+= zují požadavky na uhlík, dusík a energii.
+| Konkrétním příkladem je biosyntěéza aminokyseliny Ile z Thr, která probíhá přes pět inter-
+1 | mediátů. První enzym této sekvence, který katalyzuje dehydrataci Thr je inhibován konečným
+= produktem, tj. Ile.
+= Alosterické enzymy bývají obvykle složeny z podjednotek. Jako alosterické efektory mohou
+= fungovat i jejich vlastní substráty. V molekule enzymu existuje více vazných míst pro substrát
+
+; = (obvykle sudý počet). Pro kinetiku takovýchto enzymů neplatí rovnice Michaelise a Menteno-
+
+OW vé, závislost rychlosti reakce na koncentraci substrátu není hyperbolická ale sigmoidní.
+
+M -o m
+oRc:. o aelé P sva
+
+: 2- ; Pa „
+
+| M 2 nů k.
+
+0 Šo,5 [A]
+
+T Obr. 3.7 Kinetické chování alosterického enzymu: 1 — inhibice, 2 — aktivace
+Navázání první molekuly substrátu na enzym ovlivní — zvýší afinitu enzymu k dalším moleku-
+= Jám substrátu. Tzn., že v určité oblasti koncentrací substrátu i velmi malá změna koncentrace
+
+: = substrátu způsobí velkou změnu rychlosti reakce, mnohem větší než by tomu bylo u neregulač-
+= ního enzymu. Tento jev se nazývá „pozitivní kooperativita“, Analogicky existuje také negativ-
+| ní kooperativita, což znamená, že první navázaný substrát sníží afinitu enzymu k dalším mo-
+lekulám substrátu. Rychlost reakce u takových enzymů jen velmi pomalu stoupá s koncentrací
+= substrátu,
+= 3.7.2 Kovalentně modulované enzymy
+
+| Tyto enzymy mohou existovát ve více formách, které se vzájemně liší svou aktivitou. Přemě-
+
+| na mezi jednotlivými formami enzymu se děje v reakcích, které jsou katalyzovány jinými en-
+
+| zymy. Tento typ enzymů může tudíž za jistých okolností být sám substrátem pro jiné enzymy.
+Glykogen je zásobní polysacharid, který je odbouráván v okamžiku potřeby. Jeho štěpení
+= katalyzuje je enzym fosforylasa, která může existovat v organismu ve dvou formách označova-
+| ných a ab. Fosforylasa a je aktivní, zatímco fosforylasa b je téměř neaktivní. Jejich vzájemná
+| přeměna má charakter reversibilní fosforylace -OH skupiny serinu v aktivním centru enzymu
+| každé podjednotky. Důležité je, že přeměna neaktivní formy na aktivní je katalyzována spěci-
+| fickým enzymem a v případě potřeby může být takto značně zesílen signál, který ve svém dů-
+= sledku vede k mohutnému příkonu energie. Když pomine potřeba energie je opět fosforylasa
+| a defosforylována specifickou fosfatasou na fosforylasu 8.
+Mytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

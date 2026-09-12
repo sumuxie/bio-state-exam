@@ -1,0 +1,32 @@
+katalyzuje enzym 1
+ATP: hexosa-fosfotransferasa (hexokinasa). i;
+3. Hydrolasy ;
+katalyzují hydrolytické reakce. Enzymy ze skupiny hydrolas patří k nejděle známým enzymům, |
+Mnoho z nich nese původní nesystematické názvy, Podtřídy jsou tvořeny podle typu hydroly-
+zované vazhy, i
+4. Lyasy (Synthasy) |
+jsou enzymy, které katalyzují nehydrolytické nebo neoxidační štěpení vazeb, často za vzniku |
+dvojné vazby a nebo naopak adici na dvojnou vazbu. Systematický název se tvoří podle vzoru: -
+Substrát skupina-lyasa. |
+Např. reakci: :
+(COOH), > HCOOH + Co, i
+katalyzuje enzym 1
+oxalát karboxy-lyasa (oxalátdekarboxylasa). ]
+| 3. lzomerasy : i
+| katalyzují izomerace, Systematický název se tvoří podle vzoru: 3
+| substrát typ izomerie izomerasa (nebo pouze -asa) Ť
+| Např. reakci: |
+| fumarát = maleát |
+| katalyzuje enzym fumarát cis-trans-izomerasa ©
+| ó. Ligasy (Synthetasy) )
+| jsou enzymy, které katalyzují vznik vazeb za současné hydrolýzy makroergických sloučenín  —
+(především nukleotid trifosfátů), nejčastěji ATP. |
+Í Systematický název se tvoří podle vzoru: i
+| X : Y ligasa (ADP, ev. AMP tvořící)
+| To je název pro enzym, který katalyzuje reakci:
+X+Y+ATP— X-Y+ ADP + P.. |
+3.2 Struktura molekuly enzymu :
+Všechny donedávna známé enzymy byly bílkovinné povahy. Z výzkumů posledních asi 20 let j
+plyně, že také některé jiné typy makromolekul mohou mit určitou katalytickou schopnost. Za- Ť
+42 |
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

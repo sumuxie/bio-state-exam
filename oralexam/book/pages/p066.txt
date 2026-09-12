@@ -1,0 +1,39 @@
+4. NUKLEOVÉ KYSELINY A PROTEOSYNTÉZA |
+4.1 Nukleové kyseliny jsou základní molekuly dědičnosti : :
+Nukleové kyseliny jsou makromolekuly, které uchovávají a přenášejí genetickou informa- I :
+ci. V hierarchii látek potřebných pro existenci živé hmoty stojí nukleové kyseliny na jednom: =
+z prvních mist. Jsou to látky, které nesou informaci pro průběh všech životních procesů. j ;
+Deoxyribonukleotidy a ribonukleotidy, složené ze tří základních složek (dusíkatá báze: pu- W
+riny, pyrimidiny, pentosy: 2-deoxy-D-ribosa, D-ribosa, a zbytek kyseliny fosforečné), tvoří zá- —
+klad deoxyribonukleových kyselin (DNA) a ribonukleových kyselin (RNA). o
+Nejdůležitější báze nukleových kyselin jsou adenin, guanin (purinové báze), cytosin, uracil W
+a thymin (pyrimidinové báze). Pyrimidinové báze se vyskytují v tautomerních formách (lakti- W
+mová a laktamová forma) (Obr. 4.1). Vedle základních bází se v některých nukleových kyse- W
+linách vyskytují i jiné, tzv. minoritní báze. Jednou z minoritních purinových bází je hypoxan- W
+thin (Hyp), jehož struktura odpovídá molekule guaninu bez aminoskupiny. Ye formě nukleotidů:
+inosinmonosfátu, IMP) je prvním derivátem biosyntézy purinových nukleotidů (kapitola 4.1.1,- A
+obr. 4.3). n 2m
+HH: Éi 3 :
+M S ha MH p.
+A k oo |
+: adenin guanin )
+MH o a o OH T.
+"M NH NH NH M ;
+o o So u P son 1.
+cytosin uracil thyýmin laktamová forma | laktimová forma ] :
+(stabilnější) (slabě kyselá) i
+Obr. 4.1 Nejdůležitější purinové a pyrimidinové báze nukleových kyselin. Zkratky bází jsou: kA
+adenin (Ade), guanin (Guma), cytosin (Cytť), uracil (Ura), thymin (Thy). V sekvencích nukleo- W
+vých kyselin se obvykle používají jednopísmenné zkratky, tj. začáteční písmena jednotlivých
+bází (adenin-A, guanin-G, cytosin-C; uřacil-U, thymin-T). +.
+Sloučeniny purinové či pyrimidinové báze a sacharidu se nazývají nukleosidy. Když jsou vá- I :
+zané všechny tři složky, sloučeniny se nazývají nukleotidy. Názvosloví bází, nukleosidů a muk- W
+leotidů je uvedena v tab. 4.1. A
+Tab. 4.1 Nomenklatura bází, nukleosidů a nukleotidů 4 :
+Ribonukleotid (5"--monofosfát) : 5
+(AMP) (adenosinmonofostál) A
+jouanin  [Guanosn— |cwamiát | (8MP) (guanosinmonotostáh) |
+(UMP) (uridinmonofostát) 1
+Cytidylát (CMP) (cytidinmonofostát) |
+66 1
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

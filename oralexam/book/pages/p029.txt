@@ -1,0 +1,25 @@
+) Ť -Helix
+W V případě a-helixu, je peptidový řetězec stočen do šroubovice. a-Helix je struktura, která připo-
+| miná tyčinku. Stočený polypeptidový řetězec tvoří vnitřní část tyčinky, postranní řetězce ami-
+| nokyselin jsou umístěny na vnější straně a vyčnívají směrem od útvaru tvořeného stočeným
+-W peptidovým řetězcem (viz obr. 2.7).
+T a-Helix je stabilizován vodíkovými vazbami mezi NH a CO skupinami hlavního řetězce;
+-P CO skupina každé n-té aminokyseliny se účastní vodíkové vazby s NH skupinou (n-+3) amino-
+| kyseliny v pořadí (viz obr. 2.8).
+T H HHO H HHO HH
++. KA LIT. C LTE
+a AM AVN PAT VT.
+T H |“ | | LL] | ||
+[A Obr. 2.8 a-Helix — tvorba vodíkových vazeb
+| S Každá skupina CO a NH v hlavním řetězci je vázána vodíkovou vazbou. Délka jednoho závitu
+| šroubovice je 3,6 zbytků. a-Helix tvoří velmi stabilní útvar s periodou identity 0,54 nm. Šrou-
+| bovice může být buď pravotočivá nebo levotočivá; -struktury nalezené v proteinech jsou pra-
+3 A votočivěé, -Helix dovoluje inkorporaci všech proteinogenních aminokyselin s výjimkou proli-
+= nu (víz obr. 2.9).
+A je R *
+7 ; 7
+> % Go
+M% : n
+A Obr. 2.9 Model pravotočivého a-helixu
+A 29
+ly vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

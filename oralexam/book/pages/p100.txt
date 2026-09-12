@@ -1,0 +1,63 @@
+som společně s GTP a je uvolněn až jeho hydrolýzou na GDP a fosfát. Uvolnění faktoru a
+EF-G je nutnou podmínkou pro začátek dalšího elongačního cyklu, protože vazba EF-G |
+
+a EF-Tu se navzájem vylučuje. Místo A je nyní volně a v poloze nového dalšího kodonu * :
+
+(obr. 4.42). k
+
+eech) AAS M 200] V oa U: o RTÉH A +
+
+TL, T oh p) 0 HEY -—
+
+osm "5 PAE: NKY: dkt, EE Sam %
+
+ee U z 0 aa %
+
+O tNA | BRNA: 2 MA 0 i%
+
+Peptidyl-tRNA Aminoacyl-tRNA Unchargod (RNA Poptidyl-tRNA 3 Ť
+
+Obr. 4.43 Reakce ribosomální peptidyltransferasy vytvářející peptidovou vazbu. Aminoskupi-
+
+na aminoacyl-tRNA ve vazném místě A nukleofilním „tahem“ přemístí nascentní řetězec pepti- kA)
+
+du z peptidyl-tRNA na aminoacyl-tRNA do vazného místa P (viz též obr. 4.41). *.
+
+Popsaný děj se opakuje tak dlouho než dochází k poslednímu stupni proteosyntězy — terminací. Ť i
+
+4) Terminace Ť Í
+
+Terminační fáze proteosyntézy je zahájena tehdy, když se y mRNA objeví jeden z terminač- 0
+
+ních (STOP) kodonů (UAA, UAG, UGA), když je tento kodon v poloze A-místa na ribosomu -o
+
+(obr. 4.44). Vzhledem k tomu, že tyto triplety nekódují žádnou aminokyselinu, nemůže elon- W
+
+gační proces dále probíhat. A-místo na ribosomu zůstává volně. A
+
+Poté dochází k odštěpení peptidového řetězce z tRNA a z ribosomu. Této reakce se účast- W
+
+ní další proteosyntetické faktory — tzv. uvolňovací faktory (RF-1 rozeznává kodony UAA či W
+
+UAG a RF-2 rozeznává kodony UAA nebo UGA). Žádný z těchto dvou faktorů se však nemů-
+
+že vázat na ribosom současně s faktorem EF-G. Třetí uvolňovací faktor RF-3 váže GTP a sti- T.
+
+muluje vazbu RF-1 a RF-2 na ribosom (tab. 4.4). Uvolňovací faktory působí v místě A. T
+
+Vazba uvolňovacího faktoru na terminační kodon indukuje přenos peptidylové skupiny na
+molekulu vody místo na aminoacyl-tRNA (obr. 4.45). tRNA je disociaci uvolněna z ribosomu: =
+
+a uvolňovací faktor je odštěpen při současné hydrolýze GTP na GDP a fostát. Po uvolnění de-
+
+aminoacylované tRNA se uvolňuje neaktivní ribosom z mRNA. Tento děj vyžaduje přítomnost B
+
+faktoru RRF (faktor uvolňující ribosomy), dále faktor EF-G a energii uvolněnou z hydrolýzy :
+
+GTP. Tyto faktory též v posledním kroku napomáhají disociaci ribosomu na pod) ednotky acelý = W
+
+cyklus proteosyntézy může opět začít iniciačním krokem. Jde tedy o proces, který je cyklický, = W
+
+a který se při biosyntéze každého proteinu opakuje. +
+
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na hito://www.softwaree .cz/

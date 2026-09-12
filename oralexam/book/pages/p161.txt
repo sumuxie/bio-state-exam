@@ -1,0 +1,48 @@
+* = že se uhlíkový řetězec vlastně „otáčí“, takže z C-6 glukuronátu se stává C-l gulonát. Z L-gu-
+: A lonátu se odvětvuje biosyntéza askorbátu nebo se L-gulonát dehydrogenuje na C-3 (pomocí
+| NAD) a vzniklá f-oxokyselina se dekarboxyluje. Vzniká L-xylulosa, která může posléze pře-
+| = Jít (po redukci a opětné dehydrogenaci) na D-xylulosu, která se fosforyluje a může vstoupit do
+ca = transketolasových reakcí.
+
+| » coo? coo? coo?
+
+A S po-) —H o B) HO — ní Co, HerOH
+
+Ů "— MO—Č—H NADPH HO—C—H  NADŤ | C=0 c=o
+
+A Mozna E c 1 n
+
+A 1 H—éÉ—OH H—é—0H H—Č—OH H—É—0H
+
+vá + Ho—Č—H HO—Č—H Ho—C—H Ho—C—H
+
+Ý | yt H,COH HACOH HCOH
+
+si AA L-gulonát 3-keto-L- L-xylulosa D-xylulosa
+
+. 7 L-gulonolakton
+
+v 7 při pentosurii Drkylulóša -5
+=) 7.6.3 Přenos tříuhlíkových nebo dvouuhlíkových štěpů
+
+A . Aldolasa. Tříuhlíkové fragmenty mohou vznikat štěpením hexos. Aldolasa štěpí fruktosa- 1,6-
+Í: = -bisťosfát na dihydroxyacetonfosfát a glyceraldehyd-3-fosfát,
+
+"2 HO—C—H aldolasa
+
+o) H-f> -M
+
+-+ H= ČH Hu „20
+
+-A HWC—0—(B) H—C —0H
+
+MA H„C—0—
+
+A fruktosa-1,6-bistosfát ©
+
+-F triosafostáty i
+
+p j Transaldolasa. Aldolasa poskytuje jen triosy z hexosy a obráceně. Transaldolasa naproti tomu
+přenáší zbytek dihydroxyacetonu na jiné aldosy. Enzym nemá koenzym.
+
+V ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

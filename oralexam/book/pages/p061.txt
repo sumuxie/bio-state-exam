@@ -1,0 +1,64 @@
+W Obvykle se jedná o látky, které interagují s funkčními skupinami mimo aktivní centrum enzy-
+1 = mu, které jsou však nutné pro zachování katalytické aktivity enzymu. Např. ionty těžkých kovů
+W nekompetitivně inhibují SH-enzymy.
+
+: = Experimentálně se nekompetitivní inhibice jeví v grafu snížením V; hodnota K, se nemění.
+
+| = Obecným případem nekompetitivní inhibice je inhibice smíšená. Platí pro ni vše, co bylo
+
+W řečeno pro nekompetitivní inhibici, pouze interakce inhibitoru s E a EA není stejná (K, se ne-
+
+n 7) $%
+
+] A nekompetitivní A] kaompetitivní (A] antikompetitivní jÁ]
+
+1. Obr. 3.6 Reverzibilní inhibice enzymu
+
+-W 3.6 Mechanismus působení enzymů
+
+k A Za katalytickou schopnost enzymu odpovídá pouze část jeho molekuly, tzv. aktivní centrum,
+
+W Jetota část, v níž se realizuje kontakt mezi enzymem a substrátem a kde také jsou skupiny od-
+
+>| povědné za vlastní katalýzu chemické reakce, V aktivním centru enzymu jsou často lokalizová-
+
+"W ny aminokyseliny s reaktivními postranními skupinami, jako histidin, serin, tyrosin ap. Aktivní
+
+W centrum tvoří v terciární struktuře molekuly enzymu určitou relativně malou oblast, ale amino-
+
+| R = kyseliny k němu náležející mohou být, pokud jde o primární strukturu proteinu, od sebe znač-
+
+"W ně vzdálené.
+
+F Význačným rysem enzymů je specifita jejich působení. Enzym katalyzuje přeměnu jen ur-
+
+P čítého substrátu (specifita substrátová) a reakce katalyzovaná enzymem probíhá jen určitým
+
+A způsobem (specifita účinu). Kdyby tomu tak nebylo, byla by buňka velmi rychle zaplavena ne-
+
+"W žádoucími produkty* Je nutno dodat, že mezi enzymy jsou rozdíly ve stupní jejich substrátové
+
+W- specifity. Existují enzymy, jejichž specifita je prakticky absolutní — nepůsobí ani na molekuly
+
+"| velmi podobné substrátu, jiné enzymy naopak atakují celou velkou skupinu látek obsahujících
+= pouze určité strukturní znaky. Nejnověji se zdá, že existují také enzymy schopné katalyzovat
+| dvěrůzné chemické reakce, Většina enzymů je stereospecifická, některé jsou schopné dokonce
+
+"| rozlišit mezi dvěma stejnými substituenty na nechirálním uhlíku.
+
+: A Druhou významnou vlastností enzymů je jejich vysoká účinnost. (Např. enzym ureasa zvý-
+a ší rychlost hydrokýzy močoviny 10krát oproti katalýze vodíkovými ionty.) Zásluhou enzymů
+= probíhá v buňce většina reakcí ve zředěných roztocích, při nízké teplotě a neutrálním pH.
+
+T Bylo formulováno mnoho hypotéz, které se snaží vysvětlit vysokou účinnost i specifitu pů-
+
+| sobení enzymů. Zde uvedeme pouze ty, které mají obecnější platnost a které už byly experi-
+
+| mentálně ověřeny. Podle tzv. efektu přibližování (proximity efekt) se předpokládá, že vazbou
+| substrátu na enzym se přiblíží důležitá skupina substrátu ke katalytické skupině enzymu v ak-
+
+; A tivním centru a tím se vytvoří podmínky pro urychlení reakce. Enzymová reakce vlastně není
+
+A |
+
+X tv 'ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

@@ -1,0 +1,38 @@
+| dodávány do systému nejméně dvěma přenašeči: feredoxinem (Fe-S proteinem) a flavodoxi-
+| nem (obsahujícím flavinmononukleotid). Proces je závislý na ATF, pravděpodobně vyžaduje
+o A | ATP pro každý přenesený elektron.
+.] M Mo-Fe protein
+a 6 e —=5 feredoxin ——- flavodoxin ———
+„A z buněčných Fe protein
+m1 metabolických
+i | drah 6 ATP 6 ADP, P,
+A Vzniklý amoniak může být přímo využit rostlinami k produkci dusíkatých organických slouče-
+B nin, Nejdůležitějším krokem je fixace amoniaku enzymem glutamátdehydrogenasou (viz též
+A kap. 5) v chloroplastech:
+| a-oxoglutarát + NADPH + H*+ NH,* = glutamát + NADP*+ H,O
+: i Zásobárnou dusíku v chloroplastech je glutamin vznikající fixací další molekuly NH, pomocí
+1 enzymu glutaminsynthasy. Transaminačními reakcemi vznikají všechny ostatní aminokyseli-
+| ny a postupně další dusíkaté sloučeniny, které tak vstupují do potravního řetězce.
+: | L-glutamát + NH *+ ATP 5 L-glutamin + AMP + 2P,
+É i Formou výměšků a po smrti formou rozpadu těl rostlin a živočichů se redukované formy du-
+i síku dostávají zpět do půdy. Veškerý půdní amoniak může být bakteriálně oxidován na dusič-
+a nan (nitráť) procesem zvaným nitrifikace; NO, představuje netoxickou zásobu půdního dusí-
+É ku. Řada půdních bakterií je schopna opačného pochodu — denitrifikace:
+ji xNO, +y NADH +yH'2(N,0,N„N,H)+y NAD+ z HO
+| Proces se rovněž někdy nazývá nitrátové dýchání, neboť NO, za anaerobních podmínek vlast-
+Ť ně nahrazuje kyslík.
+| Větší část nitrátu je z půdy absorbována vyššími rostlinami, které do jisté míry opakují re-
+i dukci, kterou již jednou provedly půdní bakterie fixující N., tentokrát však jde o redukci z jiné-
+i ho oxidačního stupně rozdělenou do dyou stupňů:
+: NO, > NO, > NH/'
+| První stupeň katalyzuje enzym nitrátreduktasa, obsažený v buněčné cytoplazmě. Jeho rel.
+| molekulová hmotnost je asi 500 000, obsahuje ionty Mo a Fe a FAD, donorem elektronů je
+NADH.
+3+ 5+ H*
+NADH « | „FADH, 2 Fe 2 Mo NOT
+| 3
+NOp
+NAD FAD 2 Fe?t 2 Mob! H„O
+komplax nitrůátraduktany
+215
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

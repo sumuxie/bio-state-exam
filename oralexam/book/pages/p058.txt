@@ -1,0 +1,53 @@
+b) Mechanismus ping-pong, při kterém ternární komplex nevzniká. Enzym reaguje s jedním -
+substrátem (A), vzniklý binární komplex se rozpadne za vzniku prvního produktu (X) a modi-
+fikovaného enzymu (E'). Ten reaguje s druhým substrátem (B), vznikne druhý binární komplex |
+(E'B) a konečně druhý produkt (*) a enzym se regeneruje: A
+
+A B i
+* ď
+
+Příkladem dvousubstrátových enzymových reakcí jsou např. reakce enzymů s nikotinamidový- —
+mi koenzymy, kterých je v reakci třeba stechiometrické množství a z kinetického hlediska mají —
+charakter substrátu. i
+3.3.3 Měření enzymové aktivity jé
+Množství enzymu lze vyjadřovat v gramech nebo molech jako u jiných látek, ale jen v přípa- 1
+dě, kdy pracujeme s čistým enzymem, jehož molekulová hmotnost je známa. Protože často :
+není splněn žádný z těchto předpokladů, je obvyklejší vyjadřovat množství enzymu jeho akti
+vitou. Abychom mohli stanovit katalytickou aktivitu enzymu, je třeba předem znát chemickou: —
+podstatu reakce, kterou enzym katalyzuje a mít k disposici jednoduchou metodu pro sledování >
+úbytku substrátu nebo lépe přírůstku produktu s časem. Je třeba znát hodnotu K pro daný sub- ]
+strát, aby se měření provádělo při saturační koncentraci substrátu, kdy reakce probíhá kinetikou =
+0. řádu, tzn. že rychlost reakce je úměrná koncentraci enzymu. Je třeba znát pH optimum enzy-
+mu a vliv teploty na něj. ]
+
+| Standardní jednotka enzymové aktivity (je označována U), je takové množství enzymu, kte- >
+
+| ré přemění | jumol substrátu za I minutu za standardních podmínek, tzn. pH optimum enzymu |
+
+| a 25 C. V SI systému jednotek byla zavedena nová jednotka enzymové aktivity katal, což je —
+takové množství enzymu, které přemění 1 mol substrátu za 1 sekundu, tzn. I Kat=6-10"U. |
+
+Koncentrace enzymu se vyjadřuje v aktivitě vztažené na jednotku objemu (U/ml). Mírou čís-
+
+toty enzymového preparátu je tzv. specifická aktivita, což je aktivita vztažena na množství pro-
+teinů (U/mg). Mírou katalytické schopnosti enzymu je jeho molekulární aktivita (MA), dříve —
+„číslo přeměny“ (TN), tj. počet molekul substrátu přeměněných jednou molekulou enzymu za 1
+1 minutu. Lze ji určit z hodnoty V a molekulové hmotnosti enzymu. i
+3.4 Vliv pH a teploty na enzymové reakce i
+Aktivita většiny enzymů závisí na koncentraci H* v prostředí. Pro většinu enzymů má tato zá- |
+vislost tvar křivky s maximem, hodnota pH odpovídající nejvyšší aktivitě se nazývá pH opti- |
+
+| mum. Podstatou vlivu H* na enzym je acidobasický charakter molekuly enzymu, zvláště té jeho
+části, která se nazývá aktivní centrum. Také na disociaci substrátu může mít vliv pH prostředí. |
+Hodnota pH optima enzymu se nemusí shodovat s hodnotou pH, při kterém musí enzym fungo- i
+vat v organismu, Právě vliv pH na aktivitu enzymu je jedním z nástrojů regulace enzymové ak- —
+tivity i regulace metabolismu buňky.
+
+Rychlost většiny chemických reakcí a také reakcí enzymových závisí na teplotě. Jejich rych- i
+
+lost se přibližně dvakrát zvýší, když teplota stoupne o 10 C., Pokud však u enzymových reak-
+
+| cí přestoupí teplota kritickou hodnotu, převáží tepelná denaturace proteinové molekuly kataly- |
+
+58
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602|cz/

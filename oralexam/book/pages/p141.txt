@@ -1,0 +1,56 @@
+1 tové ne“ Sram
+
+ž 1 Obr. 6.5 Glyoxylátový cyklus
+
+| A Úměrně 2 molům NADH a 1 molu FADH, vznikne 8 molů ATP. Tento cyklus je příčinou,
+
+„proč mnohé bakterie mohou růst na acetátu nebo jiných sloučeninách, které produkují acetyl-
+
+1) -koenzym A. Klíčící rostliny olejnatých semen mohou po rozkladu mastných kyselin touto ces-
+
+| tou získat potřebné sacharidy a energii.
+
+: + 6.2.4 Respirační řetězec a aerobní fosforylace
+
+: = Tyto dva pochody lokalizované ve vnitřní mitochondriální membráně (obr. 6.6) představují ae-
+
+| robní způsob získávání chemické energie oxidačním štěpením chemických vazeb a završují bi-
+
+| ocnergetické procesy. Při biologických oxidacích živin vstupují do respiračního řetězce reduko-
+
+=) vané formy kofaktorů získané nejen ve čtyřech dehydrogenačních stupních citrátověho cyklu,
+
+1 ale v oxidační dekarboxylaci pyruvátu (kap. 7.8.), j-oxidaci mastných kyselin (kap. 8.4) a de-
+
+"— hydrogenací glyceraldehyd-3-fosťátu, probíhá-li glykolýza (kap. 7.8) aerobně.
+
+p Přenos elektronů a protonů anebo pouze elektronů v respiračním (někdy těž dýchacím) ře-
+
+1) tězci se realizuje sérií přenosů z jednoho kofaktoru na druhý, až konečně na kyslík, z míst s niž-
+
+Ť a ším redoxpotenciálem ve směru stoupajících kladných hodnot (viz tab. 6.2). Příslušné oxidore-
+= duktanty jsou spjaty se strukturou vnitřní mitochondriální membrány. Zabudování enzymového
+= systému do biologické membrány určuje katalyzované reakci kromě rychlosti také směr v troj-
+| rozměrném prostoru, tj. dodává jí vektorový charakter. To umožňuje vzájemnou přeměnu che-
+1 mické energie (AG) a osmotické práce (přenos H* proti koncentračnímu gradientu, viz dále),
+= která tvoří spojovací článek mezi dvěma systémy transportu energie v živých soustavách, tj.
+= mezi oxidoredukčním a fosforylačním,
+č Z vnitřní mitochondriální membrány lze izolovat pět multienzymových lipoproteinových
+: komplexů, jejichž substráty jsou mobilními složkami dýchacího řetězce a fosforylačního sys-
+
+A tému. Jednotlivé komplexy, označované římskými číslicemi, jsou integrálními složkami této
+
+| a membrány a představují základní jednotky dýchacího řetězce (obr. 6.9 a 6.10).
+
+-A Mobilní složky tvoří NÁDH, ubíchinol (tj. dihydroubichinon někdy těž koenzym O), cyto-
+k. Komplex I (detailně viz obr. 6.7) lze označit jako NAÁDH:ubichinon-oxidoreduktasu. Kata-
+
+10 lyzuje reakci popsanou vztahem:
++ NADH+ H*+20H'= NAD*+20H,
+
+: to jest redukci semichinoidní formy ubíichinonu (OH) na ubíchinol (OH). Jeho základem je
+a flavoprotein NADH-dehydrogenasa obsahující kromě FMN další prostetické skupiny typu FeS
+
+: 1 141
+
+) Ý ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

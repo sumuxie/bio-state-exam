@@ -1,0 +1,25 @@
+nukleotidy, které jsou obsaženy v mRNA, ani jejich dvojicemi (dublety). Mohou být kódovány ]
+pouze triplety (trojicemi nukleotidů). Při tripletovém kódu existuje 64 kombinací (= od).
+Z toho vyplývá, že některé aminokyseliny se mohou kódovat několika triplety, Tento jev se na- —
+zývá degenerace kódu. Ukázalo se, že některé aminokyseliny jsou kódovány až šesti různými
+triplety, jiné např. čtyřmi, třemi, dvěma nebo pouze jediným tripletem (tab. 4.3). A
+Kodon AUG (pro methionin) slouží jako iniciační kodon. Triplety UAA, UAG a UGA, kte- —
+ré nekódují žádnou aminokyselinu, se nazývají terminační kodony (stop kodony, nesmyslné: —
+kodony). Kód pro aminokyseliny je universální pro všechny organismy. 3
+4.2.2 Proteosyntéza probíhá v ribosomech i
+Ribosomy jsou buněčné organely tvořené rRNA a proteiny (ribonukleoproteinové částice). A :
+Skládají se z malé (30 S u prokaryontů a 40 S u eukaryontů) a velké (50 S, resp. 60 S) podjed- —
+notky. Ribosomy £, cofi mají v průměru 20 nm, hmotnost okolo hodnoty 2 700 kDa a sedimen- 1
+tační konstantu 70 S (obr. 4.36). Za určitých podmínek mohou podjednotky ribosomu disocio- — :
+vat, někdy dochází k disociaci i dalších komponent ribosomu. 3 ž
+Proteiny ribosomu mají nejen strukturní úlohu v těchto organelách, ale řada z nich jsou en- — A
+zymy nebo faktory přímo participující na proteosyntéze. 3 i
+) Central : :
+7 -tí MP Spam i 3 :
+"Mao sk. = "Ridge F
+Ritácně et | i
+Obr. 4.36 Trojrozměrný model ribosomu E. coli. Malá podjednotka (nahoře) asociuje s vel- | |
+kou podjednotkou (uprostřed) za vzniku kompletního ribosomu (dole). („platform““ — stupínek,
+„protuberance“ — výčnělek). T.
+94 ) 1
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na htte:/www.softvaře 2.cz/

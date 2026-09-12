@@ -1,0 +1,35 @@
+Místem aktivace je cytoplasma (eytosol). Aktivaci aminokyselin katalyzují enzymy amino- a :
+-acyl-tRNA-synthetasy, které jsou specifické pro každou jednotlivou aminokyselinu a tRNA., — +
+Všechny mají molekulovou hmotnost kolem hodnoty 100 000 a jednu či více -SH skupin, kte- — +
+ré jsou nezbytné pro jejich aktivitu. Pro svou funkci navíc potřebují ionty Mg** jako kofaktor, — 3
+Aktivační reakce probíhá ve dvou stupních: (i) vznik aminoacyladenylátu a (ii) vznik | J
+aminoacyl-tRNA (obr. 4.38). A Ad
+H H O H O 3 1)
+R—0—0 + AMP--P-*P R—0—0--AMP K S a, 3 3)
+Amino acid ATP Aminoacyl-adenylate AminoneyliRNA: | © 3)
+pr- pyrophosphatase ap, a |
+ele Ho S
+Ť Obr. 4.38 Aktivace aminokyselin na aminoacyl-tRNA, > |
+V molekule tRNA je aminokyselina vázána esterově svým karboxylem buď na 2'-OH nebo | A
+3"-OH skupinu (obr. 4. 39) koncového AMP tripletu ...pCpCpA (CCA konec tRNA) příslušné W-
+tRNA., Počínaje vznikem aminoacyl-tRNA je každá aminokyselina v proteosyntěze rozpoznána : -A
+(charakterizována) antikodonem své tRNA a nikoliv svým chemických složením. -o
+E o Sr rá: O. Adenine 1 1
+o KH HŽ A
+o OH ] A]
+I c=0 ;
+H-0C-R A
+Aminoacyl-tRNA | A
+Obr. 4.39 Aminoacyl-iRNA. T.
+Ostatní stupně proteosyntézy jsou vázány na organely ribosomy (ev. polyribosomy, polyso- 1 "1
+my). Dalším stupněm proteosyntézy je vazba mRNA na menší ribosomální podjednotku (30 S, W-
+ev, 40 S). Na tento komplex se postupně navazují komplexy aminoacyl--RNA, Na každém: |-
+ribosomu existují nejméně dvě místa specifická pro vazbu molekul tRNA, Jsou označována
+jako A-misto nebo aminoacyl-tRNA místo, na které se kodonově specificky (interakcí kodon- R
+-antikodon) váže aminoacyl-tRNA a P-místo nebo peptidylové místo, které je v blízkosti mís- | A
+ta A. Na toto P-místo je vázána tRNÁ nesoucí nově syntetizovanou část peptidového řetězce, W
+tedy peptidyl-tRNA, opět interakcí kodon-antikodon. Interakce kodon-antikodon setakéusku- P-
+tečňuje na principu párování bázi. T)
+% A
+
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software 2 .cz/

@@ -1,0 +1,49 @@
+|
+aA + bB —cC + dD za rovnováhy (p, T = konst.)
+č dď |
+Ú=konst.+ RT In LTL: (konst. = AG) |
+[4] [8] |
+|
+po úpravě mAGP = RT > In K, kde konstanta K (argument logaritmu) definuje rovnovážnou kon- |
+stantu reakce. Nula v horním indexu označuje, že hodnoty AG (a jí odpovídající K) vztahuje- |
+me k standardnímu stavu. Zatímco obecně v termodynamice je běžné volit jako standardní stav |
+s Jednotkovými aktivitami všech složek soustavy, pro biochemii je tato volba nevhodná s ohle- |
+dem na fyziologické hodnoty aktivity vodíkových iontů. Obvykle se proto volí jako standard- |
+ní stav takový stav, kde aktivita vodíkových iontů odpovídá pH 7, aktivity ostatních složek jsou |
+jednotkové, pro rozlišení je zvykem připojovat k označení jako horní index čárku (AG, K). |
+Zásadním omezením klasické termodynamiky je to, že její vztahy a zákony platí striktně |
+vzato pouze pro izolované soustavy v rovnováze. Takové ideální systémy neexistují ani v živé,
+ani v neživé přírodě (a existují-li, nemůžeme je bez narušení jejích izolovanosti pozorovat), Po-
+užitelnost zákonů rovnovážné termodynamiky na reálné soustavy vyplývá z tzv. principu lo-
+kální rovnováhy, který umožňuje za určitých předpokladů rozčlenit nerovnovážný (uzavřený
+nebo otevřený) termodynamický systém na podsystémy, které lze s dostatečnou přesností pova-
+žovat za rovnovážné, Proto lze vztahů klasické termodynamiky využít např. pro popis jednotli- |
+vých chemických reakcí nebo jevů na biologické membráně.
+Živá hmota je většinou v tzv. stacionárním stavu, který se navenek podobá rovnováze (pa-
+rametry systému jsou nezávislé na čase); rovnovážný stav je zvláštním případem stacionárního
+stavu. Na rozdíl od rovnováhy je stacionární stav uskutečnitelný i v otevřených systémech, tj.
+při výměně hmoty s okolím. Je třeba si ovšem uvědomit, že nezávislost na čase platí pro živé
+systémy jen v omezeném časovém intervalu, jejich celkový vývoj je nestacionární (stárnutí,
+smrt).
+Ještě přesněji lze charakterizovat živou hmotu jako dynamicky stacionární soustavu, v níž
+se aktuální hodnoty stavových veličin pohybují v jistém rozmezí kolem hodnot stacionárních,
+udržování těchto výkyvů v přípustných mezích (homeostáze, princip stálosti vnitřního pro- |
+středí) je důležitou podmínkou stacionárního chování systému — tedy jeho života, |
+Pro popis chování organismu jako celku již prostředky klasické termodynamiky nepostaču-
+jí. Neznamená to, že by pro živou hmotu neplatily zákony fyziky. Není však možné pro úpl-
+ný popis jejího chování použít vztahů, popisujících jednoduché a zjednodušené ideální systé-
+my. Soudobá fyzika hledá nový pojmový a teoretický aparát pro postižení procesů v živé hmotě
+(nerovnovážná termodynamika) i obecněji všech dějů, při nichž dochází k náhlé změně kva- |
+lity (synergetika). Řešení tohoto úkolu si vyžaduje rozvoj speciálních matematických prostřed-
+ků, zaměřených např. na hledání nestability řešení soustav parciálních diferenciálních rovnic
+(teorie bifurkací, teorie katastrof), nebo využívajících abstraktních prostorů s neceločíselnou dí- |
+menzí (fraktálů).
+1.6 Vznik a vývoj života
+Člověka vždy udivovala složitost a mnohotvárnost organismů, stejně jako prvky účelnosti v je- |
+jich vnitřním uspořádání, vnějších orgánech i činnosti. Otázky po původu živých organismů |
+i po původu života jako takového proto patří k nejstarším, které si lidé kladou. |
+Vysvětlení původu života je možno rozdělit do tří skupin: |
+a) život vznikl jako výsledek nadpřirozeného zásahu (kreacionismus) nebo působením sil |
+nepřístupných přímému vědeckému zkoumání (tzv. inteligentní design); |
+18
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

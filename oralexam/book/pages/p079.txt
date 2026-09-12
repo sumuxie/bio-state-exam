@@ -1,0 +1,27 @@
+o Mismatched
+M00 bases
+
+i .. Exonuclease 1
+| A hydrolysis sítě
+| A = Obr. 4.16 3'—5" — Exonuklasová funkce DNA polymerasy I a DNA polymerasy III.
+F = DNA-polymerasa I také hydrolyzuje DNA od 5'-0H konce řetězce. Tato 5'-»+3'nukleasová
+: = Aktivita je však zcela odlišná od 3'—+5" exonukleasové aktivity. Štěpení v tomto případě pro-
+
+= bihá uvnitř řetězce (v dvoušroubovicové oblasti), dochází k odštěpení delšího úseku DNA
+: = (obr 4.17).
+i -4 5'—+-3' Exonuclease
+A A 8. Single-strand nick ; k
+B A Úbr. 4.17 523 — Exonuklasová funkce DNA polymerasy I odštěpuje v místě přerušení vlák-
+E ma až 10 nukleotidů.
+J 3 = Tato funkce enzymu'je důležitá ze dvou důvodů: (i) Je klíčová pro biosyntézu DNA (replikaci),
+| neboť tímto způsobem se odbourává primer (startér) (viz dále). (ii) Kromě toho se touto re-
+j T akcí opravují některé poruchy, např. vyštěpení chýbných pyrimidinových dimerů, které se tvoří
+-fv DNA vystavené UV záření, Po excizi těto poškozené DNA, DNA polymerasa I zároveň svým
+> | © polymerasovým účinkem vyplňuje mezeru, která v DNA vznikla, DNA -polymerasa I obsahuje
+a = tři aktivní centra, která jsou pro jednotlivé výše uvedené reakce rozdílná.
+ž | malý fragment velký fragment (Klanowův fragment)
+1 A Tento trojfunkční enzym může být rozštěpen proteasami na tzv. malý fragment (molekulo-
+= | vá hmotnost 36 000), který obsahuje celou část molekuly zodpovědnou za 5' —> 3' nukleaso-
+> A vou aktivitu a na zbývající fragment, tzv. velký nebo Klenowův fragment (molekulová hmot-
+i ) 79
+V vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/
