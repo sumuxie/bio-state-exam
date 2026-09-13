@@ -151,8 +151,8 @@ figs:[
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
-{q:'What are the different levels of protein structure?',
- mean:'题库 #30，跟本题同一道。<b>整段照说。</b>',
+{q:'Protein structure.',
+ mean:'他也可能只念题目，或说 #30 那句 “What are the different levels of protein structure?”。题库 #30，跟本题同一道。<b>整段照说。</b>',
  say:'“Four levels. Primary is the covalent level — the exact order of residues joined by peptide bonds, and the disulfide positions. Secondary is the regular local conformation of the main chain, held by main-chain hydrogen bonds. Tertiary is the overall fold of one whole chain, bringing residues far apart in the sequence into contact, held mostly by side-chain interactions and the hydrophobic core. And quaternary exists only if there is more than one chain.”'},
 
 {q:'What holds a protein together?',
@@ -174,10 +174,6 @@ recog:[
 {q:'Is haemoglobin an example of tertiary structure?',
  mean:'<b>陷阱：血红蛋白是四级的标准例子，不是三级。</b>三级的标准例子是肌红蛋白。两个名字换一下，就是 PESB 那种失分。',
  say:'“No — haemoglobin is the standard example of <b>quaternary</b> structure: four chains, two α and two β. The textbook itself speaks of the β-chain of haemoglobin in the sickle-cell example, and a β-chain implies there is an α-chain. The tertiary example is <b>myoglobin</b> — a single chain, mostly α-helix folded around a heme, the first protein structure ever solved, Kendrew 1957. Each chain of haemoglobin has a myoglobin-like fold; the way the four chains are arranged is the quaternary level.”'},
-
-{q:'What is a domain?',
- mean:'后补的那一级。给尺寸，并说明它是后来加的。',
- say:'“A compact globular region of a hundred to four hundred residues, joined to the rest of the chain by a flexible segment. It is not one of the classical four levels — later work added it, together with supersecondary structure, clusters of a few secondary-structure elements such as the βαβ motif.”'},
 
 {q:'Describe the structure and function of proteins.',
  mean:'题库 #29。<b>同一批材料，但结尾必须转到功能。</b>',
@@ -229,6 +225,9 @@ recog:[
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'他默认你知道名词，所以专挑名词问。这一组最容易被打个措手不及。', items:[
+{r:'中', q:'What is a domain?',
+ en:'“A compact globular region of a hundred to four hundred residues, joined to the rest of the chain by a flexible segment. It is not one of the classical four levels — later work added it, together with supersecondary structure, clusters of a few secondary-structure elements such as the βαβ motif.”',
+ cn:'后补的那一级。给尺寸，并说明它是后来加的。'},
 {r:'实测', q:'What is a hydrogen bond?',
  en:'“The textbook calls it a special case of electrostatic interaction between dipoles: the attraction between a hydrogen covalently bound to an electronegative atom — that atom, with its hydrogen, is the donor — and a lone pair on another electronegative atom, the acceptor. Unlike van der Waals contacts it is <b>directional</b>, and that is why it can fix a geometry rather than just hold things close.”',
  cn:'在主链里，<b>供体是 N–H，受体是羰基的 O</b>。被继续追「谁能形成」：供体只能是 <b>N–H、O–H</b>（S–H 很弱），受体是 <b>O、N</b> 上的孤对。再追「为什么 C–H 不行」：<b>碳的电负性不够</b>，那个氢不带足够的正电。',

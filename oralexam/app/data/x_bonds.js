@@ -94,19 +94,41 @@ cram:[
 
 end:'<b>这张卡的用法：</b>被问到任何一个键，先答<b>它连接的是哪两个基团</b>，再答它属于共价还是非共价。这两句给完，剩下的都是细节。<b>「高能」是另一个问题，别混进来。</b>',
 
+/* ---------------- 演练 ---------------- */
+segs:[
+ {tag:'段 1 · 定义', h:'先说键是什么，再给两个分法',
+  p:['“A chemical bond is an attraction between atoms strong enough to hold them together as one unit. In biochemistry we sort bonds by two questions. First, what kind: <b>covalent</b> — two atoms sharing a pair of electrons, hundreds of kJ per mole, the bonds that fix the sequence — or <b>non-covalent</b> — electrostatic attractions that share no electrons, a few kJ per mole each, the ones that build the conformation.',
+     'Second, how much energy comes out when it breaks — and that, the textbook says, is a property of the <b>compound</b>, not of the kind of bond: speak of macroergic compounds, not macroergic bonds.”'],
+  note:'两个问题分开问，是这张卡的骨架：<b>种类</b>看连接的是哪两个基团；<b>能量</b>看产物比反应物稳定多少。书 p012 分共价/非共价，p131 说「化合物不说键」。'},
+ {tag:'段 2 · general', h:'共价按「谁连谁」报，非共价三种，外加一个不是键的',
+  p:['“Covalent, named by what they join: the <b>peptide</b> bond, carboxyl carbon to α-amino nitrogen — an amide; the <b>disulfide</b>, sulfur to sulfur between two cysteines; the <b>glycosidic</b> bond, anomeric carbon to a hydroxyl or a nitrogen; the <b>phosphodiester</b>, one phosphate esterified to two hydroxyls; the <b>ester</b>, acid to alcohol; the <b>thioester</b>, acid to thiol; the <b>anhydride</b>, acid to acid; and the <b>coordination</b> bond, a lone pair donated into an empty orbital of a metal.',
+     'Non-covalent, three: the <b>ion pair</b> between a carboxylate and an ammonium or guanidinium; the <b>hydrogen bond</b>, a special case of dipole–dipole attraction, directional; and <b>van der Waals</b> contacts, weak singly but many. And one thing that is not a bond at all: the <b>hydrophobic effect</b>, the entropy the water gains when nonpolar groups pack together.”'],
+  note:'名字几乎全是按「谁连谁」起的，知道两头就能推名字。书给的非共价清单在 p032；疏水效应「不是键」在 p013。'},
+ {tag:'段 3 · 稍展开', h:'挑肽键和氢键，因为二级结构靠它们',
+  p:['“Take the peptide bond. The nitrogen lone pair is delocalised into the carbonyl, so the C–N is 1.32 Å, between a single bond at 1.49 and a double at 1.27 — a partial double bond, planar, no rotation, hence cis and trans. That is why the backbone has only two free rotations per residue, and why there are so few kinds of regular secondary structure.',
+     'And the bond that holds those structures: the hydrogen bond — an electrostatic attraction between an N–H or O–H donor and a lone pair on oxygen or nitrogen. It is directional, which is why it can fix a geometry rather than merely hold two groups close.”'],
+  note:'p027 键长三个数；p032 氢键归类。<b>两句连起来就是「为什么二级结构只有那几种」。</b>'},
+ {tag:'段 4 · 留口子', h:'落到 His-tag 和 Kd',
+  p:['“The bond I use every week is the coordination bond: the imidazole of histidine donating its lone pair into an empty orbital of an immobilised Ni²⁺ — that is a His-tag column, and imidazole in the buffer competes it off.',
+     'And the number I measure, the dissociation constant, is a statement about non-covalent bonds only: a nanomolar K d is a handful of hydrogen bonds and ion pairs plus the hydrophobic effect — no covalent bond involved, which is exactly why it is reversible.”'],
+  note:'两个口子都在主场：His-tag 的配位键（卡 x_bonds 自己的追问），Kd 是非共价的总和（卡 02）。'}
+],
+
+why:{
+ rungs:[
+  ['为什么共价键强、非共价键弱？','共价是<b>共用电子对</b>，拆开要重新分配电子；非共价只是<b>静电吸引</b>，拆开只要克服库仑力或偶极。差两个数量级，所以一个定序列、一个定构象。'],
+  ['为什么「高能」不是键的性质？','因为放出的能量是<b>产物比反应物稳定多少</b>，是整个化合物的事——同一个 ATP 上酐键放 30 kJ/mol、酯键不到 12（p131）。'],
+  ['疏水效应为什么不算键？','因为它不是两个基团之间的吸引，是<b>水的熵</b>：非极性面靠在一起时，周围有序的水被放掉（p013、p033）。']
+ ],
+ stop:{lbl:'停 · 落在物理化学',
+  say:'“Below that — which orbital overlaps which, why a lone pair delocalises, why an electron cloud repels — is physical chemistry rather than biochemistry.”'}
+},
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What forces hold a protein together?',
  mean:'共价两种 ＋ 非共价三种 ＋ 一个驱动力。<b>按级给，不要一股脑列。</b>',
  say:'“Covalently, the peptide bonds of the backbone and the disulfide bridges. Non-covalently, hydrogen bonds, ion pairs and van der Waals contacts. And underneath those, the hydrophobic effect — which is not a bond at all, it is the entropy of the water.”'},
-
-{q:'What is a high-energy bond?',
- mean:'<b>陷阱题。</b>他想看你会不会说成「键特别强」。',
- say:'“The name is a little misleading, and the textbook says so: speak of macroergic compounds, not bonds. A macroergic compound is one in an energetically unstable state, held there by a single bond; hydrolysing that bond releases 30 to 60 kJ per mole, against under 12 for an ordinary one — ATP to ADP is minus 30.5. For ATP the instability is the accumulated negative charges on the phosphate oxygens repelling each other. It is not a strong bond — its products are simply much more stable. ATP and acetyl-CoA are the standard examples.”'},
-
-{q:'Why is acetyl-CoA special?',
- mean:'问的是<b>硫酯</b>。',
- say:'“Because the acetyl group is bound to the free SH of coenzyme A, so it is a <b>thioester</b> — the textbook calls thioesters generally very reactive, and acetyl-CoA a macroergic compound. That is why it can donate the acetyl group in so many reactions.”'},
 
 {q:'What kind of bond joins two nucleotides?',
  mean:'phosphodiester，而且要给 <b>3′–5′</b>。',
@@ -133,6 +155,9 @@ recog:[
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'卡上的英文句用到的词，他会单独拎出来问。', items:[
+{r:'中', q:'What is a high-energy bond?',
+ en:'“The name is a little misleading, and the textbook says so: speak of macroergic compounds, not bonds. A macroergic compound is one in an energetically unstable state, held there by a single bond; hydrolysing that bond releases 30 to 60 kJ per mole, against under 12 for an ordinary one — ATP to ADP is minus 30.5. For ATP the instability is the accumulated negative charges on the phosphate oxygens repelling each other. It is not a strong bond — its products are simply much more stable. ATP and acetyl-CoA are the standard examples.”',
+ cn:'<b>陷阱题。</b>他想看你会不会说成「键特别强」。'},
 {r:'高', q:'What is a chemical bond, and what is covalent versus non-covalent?',
  en:'“A chemical bond is an attraction between atoms strong enough to hold them together as one unit. A covalent bond is one in which two atoms share a pair of electrons — the strong bond, hundreds of kJ per mole; in a protein it fixes the sequence, the primary structure. A non-covalent interaction is an attraction between groups that does not share electrons — electrostatic in origin: ion pairs, hydrogen bonds, van der Waals contacts. Each is weak, a few kJ per mole, so the structure rests on their number; they build the conformation — secondary, tertiary, quaternary — while covalent bonds fix the sequence.”',
  cn:'书 p012 把共价和非共价分开说；强度数字是通用。'},
@@ -178,6 +203,9 @@ ask:[
 ]},
 
 {g:'为什么类', gn:'键的「为什么」几乎都落在同一个地方：稳定性差。', items:[
+{r:'中', q:'Why is acetyl-CoA special?',
+ en:'“Because the acetyl group is bound to the free SH of coenzyme A, so it is a <b>thioester</b> — the textbook calls thioesters generally very reactive, and acetyl-CoA a macroergic compound. That is why it can donate the acetyl group in so many reactions.”',
+ cn:'问的是<b>硫酯</b>。'},
 {r:'高', q:'Why is the peptide bond planar?',
  en:'“Because the lone pair on the nitrogen is partly delocalised into the carbonyl, so the C–N bond has partial double-bond character — 1.32 Å, between a single bond at 1.49 and a double at 1.27. A partial double bond cannot rotate, and the atoms around it are held in one plane — the two α-carbons, the carbonyl C and O, and the N and its H.”',
  cn:'<b>这是全书最好用的一条「结构解释性质」</b>：一个键长数字直接解释了为什么蛋白骨架只剩两个可转的角，也就解释了为什么二级结构只有那么几种：“So each residue has only two freely rotating bonds, the two at the α-carbon — which is why there are so few kinds of regular secondary structure.”<span class="pg">p027</span>'},
