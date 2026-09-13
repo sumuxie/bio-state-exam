@@ -331,6 +331,7 @@ button.b:disabled{opacity:.35;cursor:default}
   <button class="b" id="next">我说完了</button>
 </div>
 
+<script src="audio/words.js"></script>
 <script src="data/_index.js"></script>
 <script>window.CARDS = [];</script>
 <script src="data/01.js"></script>
@@ -346,6 +347,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/12.js"></script>
 <script src="data/16.js"></script>
 <script src="data/17.js"></script>
+<script src="data/08.js"></script>
 <script src="data/x_bonds.js"></script>
 
 <script>
@@ -607,6 +609,23 @@ function utter(txt, rate){
   u.rate = rate || 0.9; return u;
 }
 function setVoice(name){ try { localStorage.setItem(VK, name || ''); } catch(e){} }
+/* 单词：项目自带的音频文件优先——那是同一个声音，任何设备都一样。 */
+var WAUDIO = null;
+function wordSlug(w){ return String(w).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+function wordFile(w){
+  if (!window.AUDIO_WORDS || !AUDIO_WORDS.words) return '';
+  if (!WAUDIO){ WAUDIO = {}; for (var i=0;i<AUDIO_WORDS.words.length;i++) WAUDIO[AUDIO_WORDS.words[i]] = 1; }
+  var k = String(w).toLowerCase().replace(/[^a-z0-9’'\-]+/g, '');
+  return WAUDIO[k] ? 'audio/w/' + wordSlug(k) + '.mp3' : '';
+}
+function playWord(w, onend){
+  var src = wordFile(w);
+  if (!src){ if (window.speechSynthesis){ var u = utter(w, 0.85); u.onend = u.onerror = onend || null; speechSynthesis.speak(u); } else if (onend) onend(); return false; }
+  var a = new Audio(src);
+  a.onended = a.onerror = onend || null;
+  a.play().catch(function(){ if (window.speechSynthesis){ var u2 = utter(w, 0.85); u2.onend = u2.onerror = onend || null; speechSynthesis.speak(u2); } else if (onend) onend(); });
+  return true;
+}
 if (window.speechSynthesis && 'onvoiceschanged' in speechSynthesis) speechSynthesis.onvoiceschanged = function(){};
 function wrapSentences(el){
   if (el.dataset.wrapped) return;
@@ -717,18 +736,16 @@ document.addEventListener('click', function(e){
   var w = txt.slice(a, b).replace(/^[’'\-]+|[’'\-]+$/g, '');
   if (!w || !/[A-Za-z]/.test(w)) return;
   speechSynthesis.cancel(); clearReading();
-  var u = utter(w, 0.85);
   var span = document.createElement('span'); span.className = 'wd';
   var r2 = document.createRange(); r2.setStart(node, a); r2.setEnd(node, b);
   var wrapped = false;
   try { r2.surroundContents(span); wrapped = true; } catch(err) {}
   var rect = (wrapped ? span : r2).getBoundingClientRect();
-  u.onend = u.onerror = function(){
+  playWord(w, function(){
     if (!wrapped) return;
     var p = span.parentNode; if (!p) return;
     p.replaceChild(document.createTextNode(span.textContent), span); p.normalize();
-  };
-  speechSynthesis.speak(u);
+  });
   showWordPop(w, rect);
 });
 window.addEventListener('scroll', function(){ var wp = document.getElementById('wpop'); if (wp) wp.style.display = 'none'; }, {passive:true});
@@ -1044,6 +1061,8 @@ function favToggle(t, text){
 }
 function favRemove(i){ var f = loadF(); f.splice(i, 1); saveF(f); renderFav(); }
 function speakText(txt){
+  var one = String(txt).trim();
+  if (/^[A-Za-z’'\-]+$/.test(one) && wordFile(one)){ if (window.speechSynthesis) speechSynthesis.cancel(); clearReading(); playWord(one); return; }
   if (!window.speechSynthesis) return;
   speechSynthesis.cancel(); clearReading();
   var u = utter(txt, txt.split(' ').length > 3 ? 0.9 : 0.85);
@@ -1093,7 +1112,7 @@ function renderFav(){
     + '</section>'
     + (f.length ? '<p style="margin-top:18px"><button class="bbtn" type="button" onclick="speakAllFav()">🔊 全部连读</button></p>' : '');
   var vs = voices(), cur = pickVoice(), want = ''; try { want = localStorage.getItem(VK) || ''; } catch(e){}
-  h += '<section class="favsec"><h3>声音</h3><p class="sub2">朗读用的是浏览器自带的声音库，<b>每台设备不一样</b>。这里挑这台机器上最好的英音；换设备要再挑一次。</p>'
+  h += '<section class="favsec"><h3>声音</h3><p class="sub2"><b>单词</b>用项目自带的音频文件（微软英式 Sonia），<b>任何设备都是同一个声音</b>。<b>整句</b>用浏览器自带的声音库，每台设备不一样——这里挑这台机器上最好的英音，换设备要再挑一次。</p>'
     + '<select id="vsel" onchange="setVoice(this.value)"><option value="">自动（' + (cur ? esc(cur.name) : '无') + '）</option>'
     + vs.filter(function(v){ return /^en/i.test(v.lang); }).map(function(v){ return '<option value="' + esc(v.name) + '"' + (want === v.name ? ' selected' : '') + '>' + esc(v.name) + ' · ' + esc(v.lang) + '</option>'; }).join('')
     + '</select> <button class="bbtn ghost" type="button" onclick="speakText(\'The peptide bond has partial double-bond character.\')">试听</button></section>';
