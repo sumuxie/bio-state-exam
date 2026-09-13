@@ -69,6 +69,9 @@ jobs:
           mkdir -p _site
           cp index.html _site/
           cp -r biochemie_basic biochemie_pro biochemie_struct PESB pesbexplain jiri_bank exam30 _site/
+          # oralexam ships only its app/ subdirectory: the rest of that folder is
+          # the working material (book OCR, notes, tools) and is not served.
+          mkdir -p _site/oralexam && cp -r oralexam/app _site/oralexam/
           echo "artifact contents:"; du -sh _site/*; du -sh _site
 
       # Assert the whitelist above actually covers every app in the repo, so
