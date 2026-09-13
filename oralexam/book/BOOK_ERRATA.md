@@ -130,6 +130,7 @@ disulfidových můstků**”*（一级结构由序列**和二硫桥的位置**�
 |---|---|
 | 原来的结论 | `LOGIC.md` §7 写「这本书正文一个加粗都没有，所以『只背加粗的』这个标准不存在」。 |
 | 反例 | **p110–p111**（§4.3.2 翻译后加工）正文里有加粗：*preproteinů · preproproteinů · signální sekvenci · ribonukleoproteinu SRP · riboforiny I a II · signální peptidasou · sekrečních granulí · preproinsulin · proinsulin*。 |
+| 第二处反例 | **p202**（§9 光合作用开头）正文也有加粗：*Thylakoidní membrány · chloroplasty*。两处分属不同章，**可能是不同作者写的章节排版习惯不同**。 |
 | 怎么发现的 | 写卡 08（propeptide / signal peptide）时回原图核 23 残基那个数字，顺带看见的。 |
 | 注意 | OCR 出来的纯文本**不带格式**，所以 `book/pages/*.txt` 里看不出加粗——这也是当初得出「没有加粗」的原因。**凡是关于版式的结论，只能回原图看。** |
 | 结论怎么改 | 「全书无加粗」→「**加粗零星出现，至少第 4 章有**；但它仍然不是可靠的重点标记，锚点还是靠节标题、图、表、命名句」。已改 `LOGIC.md` §7。 |
