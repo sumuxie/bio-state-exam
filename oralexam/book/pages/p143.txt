@@ -1,0 +1,25 @@
+A NADH+H* | NADĚ M
+Ť » FP Br Ale
+S HM
+= Obr. 6.7 Funkce komplexu I ve vnitřní mitochondriální membráně. Schéma přenosu dvou
+S elektronů a dvou protonů
+= Komplex II (obr. 6.9) lze stručně definovat jako sukcinát:ubichinon-oxidoreduktasu. Je to fla-
+= Voprotein, obsahující prosthetickou skupinu FAD a dvě skupiny typu FeS, Je to sukcinátde-
+= hydrogenasa známá z citrátového cyklu,
+; -M Hř H*
+a OA " bez All. s
+a COCOA OOOVÉĚ mA)
+| v
+= Obr. 6.8 Funkce komplexu III ve vnitřní mitochondriální membráně. (Pro jednoduchost zná-
+= zorněn přenos jednoho elektronu)
+= Produkt komplexu I či II, ubichinol, je reoxidován komplexem III (obr. 6.8), který můžeme
+= charakterizovat jako ubichinol:cytochrom c-oxidoreduktasu a jeho funkci vyjádřit vztahem:
++ 2 OH, +2 cyte(Fe“) — 2 cyto(Fe'')+2O0H' +2 H*
+3 Základem tohoto redoxsystému jsou dvě molekuly cytochromů b (b, a b,) které se liší, díky
+= vazbě na různé polypeptidy, svým redoxpotenciálem. Pouze cytochrom b, je redukovatelný
+= ubichinolem. Dále tento komplex obsahuje cytochrom c, a molekulu FeS-proteinu. Ubíchinol
+| OH, vzniklý redukcí semichinoidní formy (OH') komplexem I nebo II se v membráně pohybu-
+| jeaje na cytosolové (C) straně oxidován cytochromem b, opět pouze na semichinon (OH'). Do
+= cytosolového prostoru se uvolní jeden proton. Tento semichinon je dále oxidován cytochromem
+Ť 143
+dřeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

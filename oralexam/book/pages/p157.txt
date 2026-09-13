@@ -1,0 +1,38 @@
+= Mannany — jsou homopolysacharidy složené z D-mannosových jednotek; byly nalezeny v kva-
+|= Sinkách, bakteriích a rostlinách.
+J B, Strukturní polysacharidy
+= Celulosa — tvoří přibližně 50 % celkového organického uhlíku v biosféře. Dřevo je z 50% ce-
+= Iulosa a bavlněná vlákna představují téměř čistou celulosu. Celulosu tvoří nerozvětvené řetěz-
+= te D-glukosových jednotek vázaných fi(l—-+4) glykosidovou vazbou; j-glykosidové uspořádání,
+= narozdíl od a-glykosidového, umožňuje tvorbu velmi dlouhých rovných řetězců. Každý násle-
+: = ující D-glukosový zbytek je vůči předcházejícímu otočen o 180%; kyslík pyranosového cyklu
+= se účastní vodíkové vazby s hydroxylovou skupinou na C-3 následujícího monosacharidového
+= zbytku (viz obr. 7.9).
+a Sr CHOH OH OH
+J) <<-H—0 0:
+A vazba fi- 1,4
+a Obr. 7,9 Schématické znázornění konformace celulosy
+A Rovné řetězce celulosy umožňují tvorbu fibril; celulosové fibrily jsou pevně pospojovány dal-
+= Šími vysokomolekulárními látkami, jsou to: hemicelulosy, (převážně D-xylany, D-xylosové
+= jednotky vázány [WI-+4) vazbami), pektiny (polymery obsahující D-galakturonovou kyselinu)
+= a tzy. „extension“ protein. Vedle těchto látek dřevo obsahuje ještě další makromolekulami lát-
+= ku- lignin — která se skládá z polymerizovaných aromatických alkoholů. Celulosa je hlavní
+= strukturní komponenta buněčných stěn rostlin; popsané uspořádání celulosových řetězců umož-
+= ňuje plnit podpůrnou funkci polysacharidu.
+A Chitin — je strukturní polysacharid podobný celulose, Skládá se z N-acetyl-D-glukosaminových
+= jednotek, vázaných fiíl24) vazbou. Opakující se jednotkou je disacharid — chitobiosa. Chitin se
+= Vyskytuje jednak u hub a jednak tvoří základ krunýře raků a exoskelet (kutikula) hmyzu.
+p Ta2 Heteropolysacharidy
+1 Základními složkami některých polysacharidů nejsou jen jednoduché cukry, nýbrž také jejich
+= deriváty, jako jsou např. aminocukry nebo uronové kyseliny. Většina těchto látek tvoří základ-
+| ní hmotu pojiva.
+ž Mezibuněčná hmota pojiva se skládá z vláknitých bílkovin, glykoproteinů a proteoglykanů,
+A V proteoglykanech jsou na protein kovalentní vazbou vázány molekuly heteropolysacharidů —
+| glykosaminglykanu (dříve označovaných jako kyselé mukopolysacharidy).
+É Molekuly glykosaminglykanu se skládají z disacharidových jednotek, v nichž je jeden zby-
+= tek kyseliny uronové glykosidově vázán na acetylovaný aminocukr převážně v poloze 3; tyto
+= disacharidové jednotky jsou pak spojeny vazbou l24 v lineární makromolekulu. Hydroxylové
+| skupiny sacharidových zbytků, popř. aminoskupina aminocukru, mohou být esterifikovány ky-
+| selinou sírovou; tudíž jsou to látky velmi kyselé,
+i 157
+tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

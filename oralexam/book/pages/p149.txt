@@ -1,0 +1,37 @@
+*
+A ; ka)
+7 s KOH
+D-glyceraldehyd
+„A : r H oje
+1 4 „OH ČH.OH
+: m D-erythrosa D-threosa
+d 1 - A HO nd A HO
++ z OH H HČOH HOČH
+* 3 HČOH HČOH HO HOCH
+: A “ HČOH HÉOH HÉOH HČOH
+k 2 M H OH „OH „OH „OH
+| JA D-ribosa D-arabinosa D-xylosa D-lyxosa
+i 1 $$ JŠ o / Ř o nA Ř Ho A X o
+"r MOH |: HOČH jen HOČH HDR HH tok HOČH
+> K HČOH | HOČH HOČH HČOH HČOH |“ HOČH HOCH
+© HČOH HČOH HČOH HČOH HOČH HOCH HOCH HO
+A H HČOH HČOH HČOH HČOH ja: HČOH HČOH
+A „OH „OH H„OH H„oH „OH „OH H„OH ÉH„OH
+: A D- allosa | D-altrosa D-glukosa D-mannosa D-gulost  nejdosa | D-galaktosa D-talosa
+3% Obr. 7.1 Odvození aldos
+| De-glukosa, D-mannosa a D-galaktosa jsou nejběžnější aldohexosy; D-glukosa se liší od D-man-
+a nosy pouze v konfiguraci na C-2 a od D-galaktosy v konfigurací na C-4. Monosacharidy, které
+| se liší v konfiguraci pouze na jednom asymetrickém uhlíku se, nazývají epimery.
++ Řadu ketos je možno odvodit od dihydroxyacetonu obdobným způsobem, jako byla odvoze-
+a na řada aldohexos. Vzhledem k tomu, že výchozí sloučenina, dihydroxyaceton, je opticky in-
+= aktivní, ketotetrosý obsahují jen jeden asymetrický uhlík a existují pouze dva stereoizomery
+| (D- a L-erythrulosa). Obdobně je možné odvodit 4 stereoizomery ketopentos a 8 stereoizome-
+a rů ketohexos (viz obr. 7.2). Nejběžnější ketohexosou je D-fruktosa.
+= 7.1.3 Poloacetálové formy
+A Karbonylová skupina monosacharidů je velice reaktivní a tato skutečnost je odpovědná za tvor-
+= bu cyklických forem monosacharidů.
+: V případě D-glukosy, aldehydová skupina na C-l1 (v rovném řetězci) může reagovat s hydro-
+JA xylovou skupinou na C-5; vytvoří se intramolekulární poloacetal. Výsledný cyklus se nazývá
+a pyránosa, podle analogie s pyranem (viz obr. 7.3):
+Ž 149
+tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

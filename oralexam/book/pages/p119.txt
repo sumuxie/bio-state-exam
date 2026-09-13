@@ -1,0 +1,33 @@
+h ostou deaminací je v bakteriích a rostlinách odbouráván rovněž aspartát, fenylalanin a tyrosin.
+= Další možností pro odstranění aminoskupiny je deaminace aminokyseliny dehydrataci; ta je
+| Však podmíněna přítomnosti hydroxylové skupiny na fi-atomu uhlíku a probíhá tedy u serinu
+| athreoninu. Hydroxyskupina těchto aminokyselin umožňuje v přítomnosti specifické dehyd-
+a atasy (např. serindehydratasy, E. C. 4.2.1.13) odštěpení molekuly vody a následnou tautomeri-
+| čaci přes iminokyseliny až na oxokyseliny.
+A tz -HO ko +H,O ě
+a Ha ius: Hal m —>— 4+: NH,*
+JA sarin aminoakrylát pyruvát
+- Obdobně vzniká dehydratací threoninu Z-oxobutyrát. Koenzymem uvedené dehydratasy je py-
+| = Ttidoxalfosfát, který však v tomto případě nepůsobí jako oxidační činidlo.
+| Uvětšiny aminokyselin je však deaminace provázena oxidací ct-uhlíkového atomu. Souhrn-
+= ně je tato reakce nazývána oxidační deaminace. Silně exergonickými reakcemi, katalyzova-
+= nými dehydrogenasami s NAD nebo NÁDP" jako koenzymy, při nich z aminokyselin vznika-
+| ji 2-oxokyseliny:
+A En nm once oH
++ R + R dostávalo + NH,
+| J NHa UM A
+| ja Mechanismus této reakce si lze představit jako oxidací skupiny >CH-NH, na imin >C=NH, kte-
+= rý se spontánně hydrolyzuje. Ve směru tvorby 2-oxoglutarátu reakce probíhá jen za současné
+= Berobní reoxidace vzniklého NADH, např. v mitochondriích. Allosterickými inhibitory této re-
+= akce jsou ATP a GTP, zatímco ADP a GDP působí jako aktivátory.
+A Zdaleka nejvýznamnější je oxidační deaminace kyseliny glutamové, katalyzovaná gluta-
+= mátdehydrogenasou (E.C. 1.4.1.2) s nikotinamidovým koenzymem (NAD nebo NÁDP"):
+* o o o o
+: OOo + NAD(P)"=—= skot“ te + NADíP)H + H*
+M glutamát u-iminoglutarát
+ř o
+M z-oxoglutarát
+a Jak bude ukázáno později, je tato přeměna glutamátu na 2-oxoglutarát jednou z uzlových reak-
+: cí metabolismu aminokyselin.
+a 119
+/ ytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

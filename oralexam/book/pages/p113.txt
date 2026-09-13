@@ -1,0 +1,41 @@
+A coo-
+A -O0 O0
+
+A y-karboxyglutamát
+1 Tvorba disulfidových vazeb
+"0 J Jedním ze způsobů, kterým může být polypeptidový řetězec „zafixován“ ve zvláštní, energetic-
+o ky ne zcela výhodné konfiguraci, je oxidace sulfhydrylových skupin na přilehlém páru cystei-
+| nových zbytků za vzniku cystinu, V proinsulinu, prekurzoru insulinu, se disulfidové vazby mezi
+| © AaB řetězcem tvoří při reakci s oxidovanou formou tripeptidu glutathionu, při níž se vodíko-
+> © vě atomy z thiolových skupin proinsulinu přenášejí na disulfidové zbytky oxidovaného gluta-
+A s.
+4 0
+A Oo HAN OH
+*. Glutathion (y-glutamylcysteinylglycin)
+
+. V bílkovinách, které obsahují více než dva cysteinylové zbytky, má vznik disulfidových vazeb
+
+= zcela zásadní význam pro jejich aktivitu. Na tvorbě těchto vazeb se podílí poměrně nedávno
+"| objevený enzym protein-disulfid-izomerasa, který je lokalizován v cisternách ER.,
+
+= Methylace
+
+| Některé proteiny jsou modifikovány methylací nabitých postranních řetězců, především
+Z karboxyskupin kyseliny glutamové a kyseliny asparagové za vzniku příslušných O-me-
+
+= thylesterů, nebo aminoskupin lysinu, argininu a histidinu, kdy vznikají mono- až tri-MN-
+o -methylaminoderiváty aminokyselin (Obr. 4.56).
+
+a Methylací jsou modifikovány např. některé bakteriální proteiny podílející se na pohybu bak-
+-S terií po koncentračním gradientu (chemotaxe). Poměrně častou příčinou neplodnosti může být
+
+= chybná methylace proteinů spermie.
+
+1 Fosforylace a sulfatace
+
+= Velmi významnou modifikací je změna náboje postranních řetězců aminokyselin fosforylací,
+"© Fosforylací hydroxyskupiny serinu a threoninu nebo fenolické hydroxyskupiny tyrosinu vzni-
+
+. 113
+
+vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

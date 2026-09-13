@@ -1,0 +1,41 @@
+Glykosylace A
+Sacharidy jsou k polypeptidovému řetězci kovalentně připojeny buď N-glykosidovou vazbo p
+přes volnou amidovou skupinu asparaginu nebo O-glykosidovou vazbou na hydroxyskupimu
+threoninu čí serinu (kap. 2). Glykosylace je jednou z nejvýznamnějších posttranslačních mo-
+difikací, které podléhá řada proteinů. K tomuto procesu dochází v endoplasmatickém retiku-
+Iu a v Golgiho aparátu, a to účinkem vysoce specifických enzymů — glykosyltransteras. Tyto
+enzymy rozlišují nejen substrát, ale i strukturu polypeptidového řetězce, na níž má být substrát =
+vázán, Substrátem glykosylačních reakcí jsou cukerné nukleotidy. Glykosylace probíhá ve dvou)
+fázích: |
+= v první fázi vzniká v řadě dílčích reakcí, zahájených vazbou UDP-N-acetyl-D-
+-glukosaminu na vysokomolekulární lipidový přenašeč — dolicholfosfát ((P)-Dol), akt-
+vované oligosacharidové jádro, které má složení Gle,Man,(GleNAc)2 — (P) —- (P) - Dol.
+CHa CHs 3
+dolicholfosfát a
+(n= 9-22) |
+— v druhé fázi je toto oligosacharidové jádro přenášeno na protein. Reakci, vedoucí ke vzni- 3
+ku N-glykosidové vazby, katalyzují transferasy. Signálem pro vazbu na asparagin je tri- -
+peptidová sekvence Asn-X-Ser (nebo 'Thr), kde X je jakákoliv aminokyselina kromě |
+prolinu. K vazbě oligosacharidu na protein dochází již v membránové části ER, kdy část |
+proteinu je ještě syntetizována. Po dokončení proteosyntézy je nascentní glykoprotein j
+transponován do Golgiho aparátu, kde je sacharidová část dokončována především od- —
+štěpením D-glukosových zbytků účinkem glukosidas a různého počtu D-mannosových |
+| zbytků mannosidasami. Pomocí dalších glykosyltransferas jsou pak připojovány další |
+sacharidy v pořadí N-acetyl-D-glukosamin, D-galaktosa a sialové kyseliny jako termi- —
+| nální sacharidy. D-mannosové zbytky mohou být fosforylovány v poloze 6 za vzniku -
+D-mannoso-ó-fosfátu a tímto způsobem vznikají glykoproteiny sekrečního typu, které -
+| jsou transportovány do lysozómů. 1
+ji Hydroxylace 3
+| V kolagenech savců se běžně vyskytují hydroxyaminokyseliny A-hydroxyprolin, |
+| 3-hydroxyprolin a Š-hydroxylysin. Hydroxylaci prolinových a lysinových zbytků katalyzují tři-
+i specifické hydroxylasy, které jsou lokalizovány v cisternách endoplasmatického retikula, Pro i
+| hydroxylaci je ještě nezbytná přítomnost kyslíku, 2-oxoglutarátu, L-askorbové kyseliny a iontů 1
+| Fe. Během hydroxylační reakce se 2-oxoglutarát dekarboxyluje a jeden z atomů kyslíku od-
+štěpené karboxyskupiny se inkorporuje do vznikající hydroxyskupiny. |
+| Karboxylace 3
+ř Tato posttranslační modifikace byla poprvé zjištěna u plasmatických glykoproteinů, které se zů- —
+častňují srážení krve. Účinkem karboxylasy, lokalizované na vnitřní stěně membrány ER, jsou-
+karboxylovány zbytky kyseliny glutamové za vzniku y-karboxyglutamylových skupin, Působe- |
+h ní karboxylasy je závislé na přítomnosti vitaminu K. :
+| 12 3
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

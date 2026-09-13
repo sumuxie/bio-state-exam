@@ -1,0 +1,37 @@
+Oxidační deaminace aminokyselin může též probíhat oxidasovým mechanismem. V tom o 1
+případě je reakce katalyzovaná dvěma flavoproteiny: oxidasou D-aminokyselin (E.C. 1.4.3.3), A
+která má význam spíše detoxikační, a oxidasou L-aminokyselin (E.C. 1.4.3.2) — ta však má má- — A)
+lou katalytickou účinnost. A 39
+
+Základní reakcí, umožňující, napojení metabolismu aminokyselin na metabolismus tuků A
+a cukrů je transaminace, V této reakci dochází k přenesení aminoskupiny z aminokyseliny na- |
+oxoskupinu 2-oxokyseliny, kterým nejčastěji je pyruvát, 2-oxoglutarát nebo oxalacetát; vý- — 2
+sledným produktem přeměny aminokyselin jsou tedy opět 2-oxokyseliny, vedle nich však na- |
+víc vznikají příslušné nové aminokyseliny: E A
+
+R,-CH-COOH + em čtený eo“ + R -CH-COOH -%
+NH., 0 0 NH, +
+Transaminaci podléhají zejména Glu, Asp, Gin, Asn, Ala, Odpovídající reakce katalyzují ami- — A)
+notransferasy (transaminasy) (E. C. 2.6.1.) s koenzymem pyridoxalfosfátem (PLP), který tvo- W-
+ří s aminokyselinami Schiffovu bázi (obr. 5.3). Z aminotransferas, které katalyzují tento typ re- — A
+akcí, jsou nejvýznamnější alaninaminotransferasa pro reakci; 3 1)
+o-aminokyselina + pyruvát = 2-oxokyselina + alanin + A
+a glutamátaminotransferasa, katalyzující reakci: 3 Ť
+a-aminokyselina + 2-oxoglutarát = 2-oxokyselina + glutamát 3 .
+Cílem transaminačních reakcí je nahromadit aminoskupiny jednotlivých aminokyselin ve for- ) -|
+mě jediné aminokyseliny, obvykle kyseliny glutamové, která je v další katabolické fázi oxi- P
+dačně deaminována. o
+0=0 HENB-C—H 1.
+M CH T
+7. coo: coo T.
+: 2-oxoglutarát glutamát 1 SA
+PLP 3 4
+amino- *.
+transferasa S
+coo coo T.
+L-aminokyselina 2-oxokyselina E A
+Transaminasy se vyskytují jak v mitochondriích, tak v cytosolu eukaryotických buněk. Tyto : A
+organely spolupracují při deaminaci aminokyselin. V cytoplasmě nakonec vzniká glutamát, p
+120 A
+
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na htto://www.softwarel 2.czl

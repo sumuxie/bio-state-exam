@@ -1,0 +1,39 @@
+: Struktura DNA je obdobná, ale místo ribosy je přítomna 2-deoxyribosa.
+
+: = Podle úmluvy se polynukleotidové sekvence zapisují svým 5'-koncem vlevo, 3'-koncem
+; | Vpravo, Konvence v symbolech, které tedy udávají pořadí bází v nukleových kyselinách (např.
+E |: ACG nebo pApípíí) znamená, že š'-konec je v tomto případě adenosin, zatímco 3'-konec tvo-
+: | Mguanosin, Sekvence bází je tedy psána ve směru od 5'-konce ke 3"-konci.
+
+| = Jako všechny makromolekuly, jsou i molekuly nukleových kyselin vedle primární struktury
+| > charakterizovány ještě strukturami vyššími, tj. konformací v prostoru.
+
+: = DNA má složitou strukturu, kde jeji dva řetězce jsou spletené zpravidla do pravotočivé
+: 1 voušroubovice (double helix) — obr. 4.8 znázorňuje jednu ze struktur dvoušrouhovice DNA,
+) | B-DNA, Struktura DNA je částečně stabilizována, vedle dalších interakcí, vodíkovými vazba-
+É = Mi mezi bázemi dvou různých řetězců,
+
+s = Vodíkové vazby se tvoří z prostorových důvodů pouze mezi určitými bázemi (mezi adeni-
+A | nema thyminem — dvě vodíkové vazby — a mezi guaninem a cytosinem = tři vodíkové vazby).
+Ť = Tento děj se nazývá párování bází (obr. 4.9). Tvorba vodíkových vazeb je nezbytná k zajiš-
+) = ění specifity párování bází v DNA, která je zodpovědná za přesnost správné replikace DNA,
+4 “% -om tá C9 S
+
+| A A o" A
+
+A hy a
+
+A 5 dl 7
+
+Ř » Obr. 4.8 Struktura B-DNA (minor groove — menší žlábek, major groove — větší žlábek)
+
+| A V důsledku párování bází může báze z jednoho polynukleotidového řetězce v dvoušroubovi-
+o | ci zaujmout místo pouze proti takové bázi z druhého řetězce, se kterou může vytvořit vodíkové
+| vazby. Sekvence nukleotidů v jednom řetězci je tedy komplementární (ale ne identická) s ře-
+| tězcem druhým, Obě vlákna v DNA jsou antiparalelní, tj. že jedno vlákno ve směru 5 — 3'
+: = Vzávitnici stoupá a druhé vlákno v tomtéž směru klesá.
+
+T Mezi další stabilizující prvky dvoušroubovice DNA (kromě vodíkových můstků) patří tzv.
+| „stohování“ bází (stohy, stacks), které se snaží vytvářet purinové a pyrimidinové zbytky DNÁ
+-| (obr. 4.10). „Stohové“ asociace ve vodném roztoku jsou stabilizovány především hydrofobními
+V tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

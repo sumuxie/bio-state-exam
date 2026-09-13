@@ -1,0 +1,38 @@
+7.8 Glykolýza A
+V biologických systémech je glykolýza téměř univerzální metabolickou cestou. Pod názvem
+glykolýza rozumíme sled reakcí, jimiž se přeměňuje glukosa na pyruvát za současné prod ko:
+ATP. U aerobních organismů glykolýza předchází citrátovému cyklu a dýchacímu řetězci, kde
+se získává většina energie obsažená v glukose. U těchto organismů pyruvát vstupuje do mito-
+chondrií, kde je úplně oxidován na CO, a HO. Je-li přísun kyslíku nedostatečný, jako v aktivně:
+pracujícím svalu, přeměňuje se pyruvát dočasně na laktát. U anaerobních organismů, jako jso |
+kvasinky, se pyruvát přeměňuje na ethanol. a :
+cH,6-co0- laktát 1 :
+glukosa pyruvát OH JE
+glykolýza a p
+CH,-CH;OH ethanol: 0
+(ilukosa, která je obsažena v krvi, musí být nejprve přijata buňkou, kde potom v cytosolu pro- | |
+bíhají reakce glykolýzy. Glukosa je nejprve fosforylována v poloze 6, donorem fosfátu je ATP. | :
+Reakce je katalyzována buď hexokinasou, která katalyzuje fosforylaci mnoha hexos na C-6, —
+nebo glukokinasou, která je enzymem specifickým pro glukosu. Glukokinasa je významnějším — .
+enzymem v játrech. Produktem obou reakcí je glukosa-6-fosfát. Intracelulární formou, v nižse: :
+skladuje glukosa, je glykogen, který bez spotřeby ATP přechází na glukosa-1-fosfát fosforolý- — :
+zou (viz kapitola 7.11.2). Dále pak musí dojít k přesunu fosfátového zbytku za vzniku glukosa- — č
+-„6-fosfátu. A :
+Glukosa-ó-fosfát izomeruje účinkem hexosafosfátizomerasy na fruktosa-ó-fosfát. Jde o pře- —
+měnu aldosy na ketosu. Fruktosa-6-fosfát tvoří 30% směsí v rovnovážném stavu. Po izomera- A |
+ci následuje další fosforylační reakce, kdy za katalýzy fosfofruktokinasou je fruktosa-6-fosfát 1 :
+fosforylován pomocí ATP na fruktosa-l,6-bisfosfát. Tato fosforylace je prakticky ireverzibilní. = i
+Tím se uvedená reakce stává reakcí limitující rychlost celého glykolytického pochodu. Aktivi- > Ň
+ta fosfofruktokinasy je alostericky kontrolována systémem ATP/ADP. T
+Vzniklý fruktoša-l,6-bisfosfát se štěpí aldolasou na dvě triosy — dihydroxyacetonfostát (C-l Ů
+až C-3) a glyceraldehydfostát (C-4 až C-6). V rovnovážném stavu je 89% hexosy a 11% obou 7 M
+trios. Dihydroxyacetonfosftát a glyceraldehydfostát jsou v rovnováze přes společnou enolo- h |
+vou formu. Ustavení rovnováhy urychluje triosafosfátizomerasa. V rovnováze je 96% dihyd- —
+roxyacetonfosfátu. Ten je však snadno přeměňován na glyceraldehyd-3-fosfát, který je spotře- W
+bováván následnými reakcemi. Tak vznikají dyě molekuly glyceraldehyd-3-fosfátu z jedně :
+molekuly fruktosa-l,6-bisfosfátu postupným účinkem aldolasy a triosafosfátizomerasy. 4
+V další reakci se aldehydová skupina triosafosfátu dehydrogenuje pomocí NÁD". Reakce je —
+silně exergonická a je spřažena s příjmem anorganického fosfátu. a
+glyceraldehyd-3-fosfát + NAD* + P, = 1,3-bisfosfoglycerát + NADH + H* F
+164 I
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwarel cz/

@@ -1,0 +1,40 @@
+Biosyntéza pyrimidinových nukleotidů je regulována na úrovní vzniku N-karbamoylaspartá A
+Jde o typ regulace zpětnou vazbou. Enzym, který katalyzuje tuto první reakci (aspartáttranskar
+bamoylasa) je allosterickým enzymem, který je inhibován CTP, tj. produktem celého biosynte-
+tického procesu (obr. 4.5). 3
+Nukleotidy s deoxyribosou (deoxyribosidy), které jsou potřebné pro DNA, vznikají obdob-
+ným způsobem, jak je popsáno výše. Deriváty deoxyribosy (deoxyribosidy) se tvoří z ribonuk-
+leosiddifosfátů (NDP), skupina 2'-OH ribosy se odstraňuje redukcí působením thioredoxinu,
+Oxidovaný thioredoxin je redukován flavinovým enzymem thioredoxinreduktasou s NADPH
+jako koenzymem (obr. 4.6). Ž
+o. 5“ 8-8 x „2H SM: v NDPÍ
+A P SH « X TA |
+Thioredoxin reductase Thioredoxin = Ribonucleotide i
+reductase 1
+Obr. 4.6 Přenos elektronů při redukci nukleosidfostťátu (NDP). Redukční ekvivalenty pro ten- |
+to děj poskytuje NADPH prostřednictvím thioredoxinreduktasy, thioredoxinu a ribonukleotid-
+reduktasy. |
+4.1.2 Struktura nukleových kyselin 4
+| Makromolekuly nukleových kyselin jsou tvořeny velkým počtem nukleosidů, které jsou spoje- =
+ny pomocí fosfodiesterových vazeb. Fosfodiesterová vazba se obyčejně vytváří mezi uhlíkem:
+číslo 3 jedné pentosy a uhlíkem číslo 5 následující pentosy. Vzniklá 3'—-5" vazba se vyskytuje -
+v molekule DNÁ i RNA. V molekule RNA jsou možně i vazby 2'—5". Struktura úseku řetězce: |
+RNA (dinukleotidu) je uvedena na obr. 4.7. i
+MHz |
+K M 1
+u NN i
+* a 3
+| -A |
+č G=p. o——CHz :
+: Do NH |
+a 2
+o  OoH | ]
+A
+o= Peo—cHz 4
+| o É
+: -U ]
+Oo oH Ť
+| :
+Obr. 4.7 Struktura úseku RNA, dinukleotid. i
+72 |
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software6 OBLcz/

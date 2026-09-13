@@ -1,0 +1,26 @@
+c, lokalizovaným rovněž na cytosolové straně na ubichinon (©). Současně se uvolní do c to-
+solového prostoru další proton. Membránový cytochrom c, pak redukuje mobilní cytochrom e, ;
+který může „klouzat“ při povrchu membrány v cytosolovém prostoru. Aa
+Co s redukovaným cyt b.? Tento předá elektron cytochromu by, jež dále redukuje na mat-
+xové straně ubichinon na semichinoidní formu, k čemuž se spotřebovává proton z matrixu, Čes-
+tu elektronů v komplexu UI lze znázornit schématem: AA :
+Komplex 1či L ——+ OH —— by + ty O > A
+Jeden elektron tedy cyklicky „obíhá“ ve smyčce OH 2 b,>> by OH | 1.
+Přenosu jednoho elektronu z komplexu Il nebo II na cytochrom c pak odpovídá přenos dvou | AM
+protonů do cytosolového prostoru neboli dva elektrony z NÁDH dovolují na tomto místě pře- S]
+nos čtyř protonů. Tímto uspořádáním je zároveň umožněno, že dvouelektronový (a dvouproto- 2)
+nový) přenašeč, ubichinol, interaguje s jednoelektronovým přenašečem cytochromem c. 3 X
+KS
+Obr. 6.9 Celkové schéma funkce oxidoredukčních komplexů I až IV ve vnitřní mitochondriál- a =
+ní membráně a 3
+Komplex V (obr, 6.9) funguje jako ferrocytochrom c:kyslik-oxidoreduktasa, to jest cytochro- 3
+moxidasa. Katalyzovanou reakci lze popsat sumární rovnicí: 3) AA
+| 2 cyte(Fe'“) + 1/2 0, = 2 cyt e(Fe?') + Ož- o
+Mechanismus funkce tohoto komplexu je nejméně jasný ze všech oxidoredukčních mitochond- * -
+riálních systémů. Tento komplex se skládá ze sedmi proteinů a jeho funkčními jednotkami jsou- ů
+cytochromy a, a, jakož i ionty mědi. Cytochromoxidasa přijímá elektrony od mobilního cytc W
+na cytosolové straně a postupně redukuje molekuly kyslíku na oxidové ionty. Nepřenáší proto- W
+ny přes membránu, ale přesto zvyšuje pH matrixu protonací oxidových iontů ve finální reakci, — A
+při níž vzniká voda: -—
+1/2. 0,+20'+ 2H* — HO *
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.softwa ) cz/

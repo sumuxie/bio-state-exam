@@ -1,0 +1,49 @@
+W je intramolekulární interakce. Podstatou hydrofobního efektu je zvyšování entropie v důsledku
+Ř: = rozrušení pravidelného uspořádání molekul vody kolem hydrofobních částic. Hydrofobní efekt
+= W má význam pro stabilizací a tvorbu struktury proteinu.
+= W Projevuje se dvojím způsobem:
+
+W l) molekula proteinu má tendenci vytvářet struktury s co nejmenším povrchem;
+= W 2) nepolární řetězce mají tendenci vzájemně interagovat a vytvářet nepolární jádro (angl.
++. core) molekuly.
+
+ů A | 2.2.3 Konformace proteinů
+W Při popisu trojrozměrného uspořádání proteinů jsou rozlišovány čtyři úrovně:
+
+-W primární struktura — je dána sekvencí aminokyselin v peptidovém řetězci a umístěním di-
+a S sulfdových můstků;
+
+A p. sekundární struktura — se vztahuje k prostorovému uspořádání aminokyselinových zbyt-
+= ků, které jsou blízko sebe v lineární sekvenci; některá uspořádání se pravidelně opakují a jsou
+
+| základem periodických struktur; a-helix, f-struktura, kolagenový helix jsou elementy sekun-
+
+T. terciární struktura — se vztahuje k prostorovému uspořádání aminokyselinových zbytků
+-W umístěných v lineární sekvenci daleko od sebe; hranice mezi sekundární a terciární strukturou
+| jev některých případech těžko definovatelná;
+
+4 A kvarterní struktura — o kvarterní struktuře mluvíme v případě proteinů, které se skládají
+-W z více než jednoho peptidového řetězce (z podjednotek); kvarterní struktura se vztahuje k pro-
+I E storovému uspořádání podjednotek a charakteru jejich spojení (kontaktu); proteiny se mohou
+| skládat ze stejných nebo různých podjednotek; místa spojení podjednotek nebo kontaktu pod-
+W jednotek, jsou často důležitá pro biologickou aktivitu proteinu; např. u protilátek je vazebné
+
+| místo pro antigen tvořeno částmi peptidových řetězců, které patří k oběma typům podjednotek
+
+3 Pozdější studie konformace, funkce a evoluce proteinů prokázaly důležitost ještě dalších
+| úrovní organizace těchto makromolekul:
+
+A supersekundární struktura — pojem se vztahuje ke „shlukům“ (angl. clusters) jednotli-
+| vých úseků sekundárních struktur, např. u mnoha proteinů bylo nalezeno seskupení dvou úse-
+ků f-struktur oddělených úsekem peptidového řetězce zaujímajícím ce-helikální uspořádání;
+| tento motiv se nazývá fiafi; vedle tohoto seskupení se v proteinech vyskytují ještě i jiné (viz
+| obr. 2.15).
+
+F “- (b)
+
+j Ubr. 2.15 Schematické znázornění některých supersekundárních struktur: a — iai jednotka;
+
+A b- ae jednotka; c — j-meandr (šipkami jsou označeny fi-struktury, spirálou a-helix)
+
+33
+lytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

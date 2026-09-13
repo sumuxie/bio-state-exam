@@ -1,0 +1,35 @@
+] 1 tvoří spojovací článek mezi genetickou informací obsaženou v DNA a trojrozměrnou struktu-
+Ť. rou proteinu, která podmiňuje jeho biologickou funkci;
+S b) znalost sekvence aminokyselin patří mezi základní poznatky při řešení mechanismu účin-
+p ku proteinu, např. katalytického mechanismu enzymů;
+| A c) znalost sekvence aminokyselin proteinu je součástí tzv. molekulární pathologie; změ-
+3 na v sekvenci aminokyselin může způsobit abnormální funkci proteinu a závažné onemocně-
+J ní; příkladem může sloužit onemocnění srpkovitá anemie, která je způsobena záměnou jediné
+1. aminokyseliny v hemoglobinu; konkrétně kyselina glutamová v poloze 6 -řetězce hemoglobi-
+1M nu je nahrazena valinem;
+A d) znalost sekvence aminokyselin proteinu odhaluje mnohé z jeho evoluční historie; protei-
+A ny jsou si podobné v sekvenci aminokyselin pouze tehdy, jestliže mají společného předchůdce.
+| A 2,2,2 Principy konformace
+A Charakteristickou vlastností protemů je jejich velmi přesně definované prostorové uspořádání.
+a Nahodile uspořádaný nebo natažený peptidový řetězec nevykazuje většinou biologickou akti-
+| A vitu; funkce proteinu je zcela závislá na konformaci, což je v podstatě prostorové uspořádání
+A atomů peptidového řetězce.
+| A a) Stereochemie peptidové vazby
+A Pro strukturu peptidů a proteinů je důležitá stereochemie peptidové vazby. Na základě krys-
+|A talografických studií aminokyselin a peptidů byly určeny základní dělky a úhly vazeb pro zá-
+| S kladní složky peptidového řetězce (viz obr. 2.5).
+A A jar n K y
+A 120.60 „PA kA 0 2M a..
+E oc S20 A
+| : je... M em -token n. vola jii?
+a p A k. jm. A rovina amidu
+| „NO 6
+a Obr. 2.5 Rozměry peptidové vazby v trans-konfiguraci (délka vazeb v A (= 107'm))
+i Bylo zjištěno, že délka vazby C-N v peptidové vazbě je 1,32 A (0,132 nm; tato hodnota leží
+Ž mezi délkami vazeb pro jednoduchou C-N (1,49 A) a dvojnou vazbou C = N (1,27 A). Vaz-
+. ba C-N v peptidové vazbě má částečně charakter dvojné vazby (v důsledku částečné deloka-
+* lizace x-elektronů karbonylu a volného elektronového páru dusíku) a nemůže se volně otáčet.
+J Tato skutečnost má za následek existenci cis-trans izomerů. V globulárních proteinech převlá-
+a dá jednoznačně trans-izomer; cis-forma se vyskytuje prakticky pouze v sousedství prolinověé-
+3 ho zbytku.
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

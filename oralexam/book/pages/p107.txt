@@ -1,0 +1,50 @@
+| = Eukaryotní mRNA mají zvláštní enzymově navázané čepičkové struktury („cap“), které jsou
+Ť = tvořeny zbytkem 7-methylguanosinu, jež je připojen trifosfátovým můstkem š'-5" k počáteční-
+ja = Mu nukleotidu transkriptu (obr. 4.50). Čepička může být methylovaná na kyslíku 2'-0H ribosy
+p = ba Vedoucím nukleosidu transkriptu (čepička-l, mnohobuněčně organismy), na prvních dvou
+É A. nukleotidech (čepička-2) nebo methylovaná není (čepička-ů, jednobuněční).
+
+É | Heterogenní nukleová RNA (hnRNA), je upravována na „maturovanou“ mRNA v několi-
+| = ka krocích (obr. 4.51).
+
+=) 4 === m ———— Úvaliumin ené, TT p mem
+
+= n. LE: 3. 4 5 8 7
+
+-4 L 1208 AR:1 7
+
+A ah Primary transcript (hnftNA)
+
+a A |pssse and polyzdenyláti
+
+ji A L -A Ae kT 5 B 7
+
+A 123 4 5 6 7
+
+I * k =— 1872 nučleotides —-
+
+"© Obr.4.51 Sekvence kroků při vzniku eukaryotní mRNA pro gen slepičího ovalbuminu. Po tran-
+k. = skripci je na primární transkript navázána čepička a dochází k jeho polyadenylací. Poté jsou vy-
+| Stěpeny introny a exony opět spojeny, čímž vzniká „maturovaná“ mRNA.
+
+: | Na primární přepis hnRNA (5'-konec) se váže kyselina guanylová zvláštní vazbou
+o (GpppůpYp... Kyselina guanylová se methyluje v poloze 7 a methylují se i další nukleoti-
+| Z dy. Toto uspořádání na 5'-konci se nazývá čepička. Tento útvar umožňuje i ribosomu rozpo-
+"znat mRNA (víz výše). Rozpoznávací funkci má rovněž krátký úsek v mRNA, který následu-
+"J © je za čepičkou a nepřekládá se. Tento úsek umožňuje párování bází mezi mRNA a 18 S RNA
+"| ueukaryontních ribosomů. Čepička obsahuje i přepis tzv. startovacího bodu translace, kte-
+= | rým je úsek asi 12 nukleotidů následujících po G*ppp.... Vedle toho na tomto konci zůstává ješ-
+"| tě připojena vedoucí sekvence. 3'-konec následuje za kódující sekvencí a nepřekládá se. Té-
+> j ©— měř všechny eukaryotní mRNA mají 3'-poly(A)-konce, tvořené 20—250 nukleotidy. Poly(A)
+"S úseky jsou navázány k primárním transkriptům ve dvou reakcích: (i) Transkript je rozštěpen
+| ve vzdálenosti 15-25 nukleotidů za vysoce konzervovanou sekvencí pěti nukleotidů AAUAA,
+| J— jejíž mutace zabraňují štěpení a polyadenylaci, a uvnitř sekvence 50 nukleotidů před méně
+> j konzervovanou sekvencí, bohatou na sekvence U a GU. (ii) Následně vzniká z ATP za účas-
+"J ti poly(A)-polymerasy poly(A)-konec. Tyto úseky zakončují řetězec mRNA. Komplementární
+> úsek pentanukleotidu A AUAA na DNA se nazývá terminační signál a je důležitý pro zakon-
+| | čení transkripce. Působením enzymů ribonukleas se molekula hnRNÁA postupně zkracuje a od-
+"| straní se tzv, vnitřní (nekódující) sekvence (introny), které se nepřekládají. Sekvence spojení
+"| exon-intron vykazuje vysoký stupeň homologie u různých eukaryontů, včetně neměnné sekven-
+T 107
+
+Ý vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

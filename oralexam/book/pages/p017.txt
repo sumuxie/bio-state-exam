@@ -1,0 +1,42 @@
+A Tab. 1.4 Rozdělení organismů podle způsobu výživy (trofiky)
+JA Světlo (FOTO) zeleně a purpurové sirné bakterie, purpurové něsirné bakterie, autotrofní
+o řasy, sinice, zelené rostliny prvoci (krásnoočko)
+A | CHEMOLITOTROFNÍ CHEMOORGANOTROFNÍ
+| A sirné, železité, nitrifikační bakterie bakterie, houby, prvoci, živočichové
+A 1.5 Energie a život
+| = Zabývejme se nyní otázkou, jak organismy získávají, uchovávají a využívají energii, nutnou
+A kjejich životu arůstu. =
+ů Obecné zákonitosti přeměny energie jsou předmětem studia termodynamiky. Chování ter-
+| modynamických systémů je popsáno pomocí stavových veličin, tj. takových vlastností systě-
+AE mu, které závisí jen na jeho celkovém stavu, nikoliv na konkrétní cestě, po níž k tomuto stavu
+a dospěl. První zákon termodynamiky lze shrnout do tvrzení, že celková energie systému a jeho
+A okolí je konstantní. Ekvivalentní je konstatování, že vnitřní energie systému (U) je stavovou
+3 veličinou. Druhý termodynamický zákon poskytuje kritérium pro rozlišení spontánních proce-
+A sů: jsou to děje, při nichž roste celková entropie systému a jeho okolí (resp. celková entropie
+A izolovaného systému S, což je totéž). Pro praktické použití v biochemii je nejvýhodnější sta-
+a vovou veličinou Gibbsova energie G = U +pV- TS, (Prvé dva členy výrazu definují entalpii
+= H = U + pV. Při většině biochemických dějů je možné zanedbat objemovou práci a H se tak
+= prakticky shoduje s vnitřní energií.) Za konstantního tlaku a teploty (což prakticky jsou pod-
+A mínky biochemických reakcí) v uzavřené soustavě (bez výměny hmoty s okolím) jsou spon-
+ň tánní takové děje, při nichž G klesá (AG < 0). Protože je G stavovou veličinou a její změna
+A tedy nezávisí na způsobu provedení děje, umožňuje znalost rozdílu Gibbsovy energie výcho-
+o zích látek a produktů rozhodnout, zda zkoumaná reakce (děj) může probíhat samovolně či
+A nikoliv.
+É Gibbsova energie je tzv. termodynamickým potenciálem analogicky jako potenciální ener-
+a gie v mechanice; právě tak ale také nedává žádné informace o rychlosti příslušného děje, pro
+S níž je rozhodující konkrétní mechanismus, jímž se děj realizuje. Důležitým důsledkem toho,
+3 že principiální možnost či nemožnost děje závisí jen na počátečním a výchozím stavu je mož-
+É nost spřažení reakcí: energeticky nevýhodná (endergonická) reakce (AG, > 0) může probíhat,
+; probíhá-li s ní souběžně v systému reakce exergonická (AG, < 0), a je-li celková změna Gibb-
+» sovy energie AG = AG, + AG, < 0. Energii si je tedy možno „vyrobit do zásoby“ vhodnou re-
+|: akcí a takto vzniklou energeticky bohatou sloučeninu (nebo obecněji energeticky bohatou si-
+| tuaci — např. nerovnovážné rozdělení určitých iontů mezi dva různé kompartmenty) využít pro
+A realizaci dějů energeticky nevýhodných.
+| Pro popis vícesložkových soustav je zaveden chemický potenciál, tj. parciální molární
+: Gibbsova energie charakteristická pro jednotlivé složky. V roztocích s ideálním chováním (vel-
+| mi zředěné) je tato veličina lineární funkcí koncentrace; v reálných roztocích je lineární funkci
+4 termodynamické koncentrace neboli aktivity, definované právě tak, aby uvedené tvrzení plati-
+| lo. Protože pro rovnovážnou soustavu je celkové ACG = 0, platí pro reakci:
+| 17
+|
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

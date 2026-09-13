@@ -1,0 +1,37 @@
+Podle katalytické funkce lze komplex V nazvat ATP-synthasa. Na rozdíl od všech předcho zo)
+komplexů zde dochází k pohybu H* ve směru koncentračního gradientu, tedy z cytosolové stn
+ny membrány do matrixu. Tím se opět vyrovná rozdíl v koncentraci protonů. Tento pochod ji
+spojen s tvorbou ATP: -A
+ADP+ Pi- ATP+H,O | AG" = +30,5 kJ.mol" A
+Výklad mechanismu tvorby ATP předpokládá, že aktivní místo v podjednotce F, ATP-syn asy
+vede k vytvoření vazby mezi ADP a fosfátem. Vzniklý ATP však zůstává podle této hypotézy
+v aktivním místě vázán. Průchod protonů podjednotkou F, změní konformaci aktivního místa,
+takže se vytvořený ATP může od podjednotky F, uvolnit a cyklus se může opakovat, Podle sou-
+časných představ o aerobní fosforylaci odpovídá přenosu 6 protonů přes vnitřní mitochondriál-
+ní membránu tvorba přibližně 3 ATP, při přenosu 4 protonů tvorba asi 2 ATP: 4
+NADH + H*+40,+3 ADP+3P,— NAD*+3 ATP +4 H,O »
+6.3 Porfyrinové proteiny *
+Porfyrin je poměrně složitý útvar, který sestává ze čtyř pyrolových heterocyklických kruhů vzá
+jemně spojených čtyřmi methinovými můstky. O porfyrinech už pojednávala kap. 3.2. v odstav-
+ci o koenzymech typu cytochromů a kap. 6.2. o respiračním či dýchacím řetězci. a
+Bohatý systém konjugovaných dvojných vazeb předznamenává absorpci ve viditelně části
+elektromagnetického záření. Tyto látky jsou barevné, jsou to pigmenty, Příroda využila porty:
+rinové molekuly několikanásobně. Jsou to tedy biologicky významné látky a mnohostrannost
+porfyrinové katalýzy dokumentuje tabulka 6.4. A
+Tab. 6.4 Mnohostrannost porfyrinů +
+[Látka [Funkce | | Prostetická skupina 1
+[emo [wr] [eno |=
+hem (Fe*+/Fe*+) +
+oxidace pomocí HO, hem (Fe/Fo*) ]
+rozklad 2H,0, + 2H,0+0 |
+| terminální oxidace ; a
+zavádění O, do substrátů |
+přeměna světelné energie : 1
+Důležitým prekurzorem porfyrinů je d-aminolevulát (obr. 6.12) 1
+Tvoří se ze sukcinyl-Cos (kap. 6.2.2) a glycinu. Příslušný enzym ó-aminolevulátsynthasa —
+je klíčovým bodem regulace syntézy porfyrinů. Kondenzace 2 molekul Š-aminolevulátu vede <
+k pyrolovému derivátu porfobilinogenu. Čtyři porfobilinogeny kondenzují za vzniku lineární- 3
+ho tetrapyrolu. Přes další metabolity a jejich přeměny se dospěje např. k hemu. A
+Deriváty porfyrinů s předponou uro- obsahují ještě 8 karboxylových skupin. A
+146 A
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software60 cz/

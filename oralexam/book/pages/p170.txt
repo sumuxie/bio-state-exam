@@ -1,0 +1,43 @@
+; Na tvorbu jednoho triosafosfátu při glukoneogenezi je třeba tří makroergických fosfátů. Jed ho-
+ho na tvorbu karboxybiotinu, druhého při dekarboxylační fosforylaci oxalacetátu na fosfoenol-
+pyruvát a třetího při redukci 3-fosfoglycerové kyseliny. a
+Hlavní enzymy glukoneogeneze ve svalu chybějí, proto se zde ani za přísunu kyslíku nemů-
+že přeměňovat laktát, vzniklý za anaerobních podmínek, na glukosu (může se však za ae ob
+ních podmínek dále odbourávat). Nadbytečný laktát se přenáší krevním řečištěm do jater, kde
+potom probíhá syntéza glukosy. Vzniklá glukosa může být krví zpět transportována do svalu
+7.9.1 Glukoneogenéze z aminokyselin 19
+Mnohé aminokyseliny se mohou přeměnit na glukosu. Předpokladem je, aby poskytovaly
+čtyřuhlíkové dikarboxylové kyseliny (např. asparagová kyselina) nebo pyruvát (např. alanin),
+Čtyřuhlíkové dikarboxylové kyseliny jako meziprodukty cyklu citrónové kyseliny mohou pře-
+jít na oxalacetát a ten se může přímo zapojit, stejně jako pyruvát, do glukoneogeneze. .
+7.10 Enzymové štěpení a biosyntéza glykosidů a oligosacharidů A
+Hydrolýza glykosidů a oligosacharidů probíhá podle následujícího schématu: | a
+OH HCOH A
+f- p-glukosidasa I
+H . H s
+Rovnováha je posunuta na stranu štěpení. Enzymy, které katalyzují ustavení rovnováhy, se na- 7 :
+zývájí glykosidasy (patří mezi hydrolasy), Jsou vysoce specifické vůči vázanému cukr a typu-
+glykosidové vazby, Vůči aglykonu (necukerné části glykosidu) je specifita malá. Proto rozli-
+šujeme např. a-D-glukosidasy, p-D-glukosidasy, «-D-galaktosidasy, p-D-galaktosidasy, B-D- —
+-„fruktofuranosidasy atd. A
+
+„Emulsin“* ze sladkých mandlí je jeden z nejděle známých enzymů vůbec. Je směsí různých
+glykosidas, ve které převládá p-D-glukosidasa a zcela chybí a-D-glukosidasa. a
+
+Glykosidasy vlastně přenášejí zbytek cukru z glykosidu nebo oligosacharidu na vodu. Je-li
+v dostatečné koncentraci přítomna látka s volnou hydroxylovou skupinou, mohou přenášet zby-
+tek cukru i na tutb hydroxylovou skupinu, tedy vlastně syntézovat, Je to však reakce pro tylo -E
+enzymy netypická. *
+
+K biosyntéze glykosidu a oligosacharidů slouží především glykosyltransferasy, (které ne- ]
+hydrolyzují). Mají specifitu podobnou jako glykosidasy, tj., jsou specifické vůči typu cukru, —
+který přenášejí a vůči typu vazby, kterou vytvářejí. Proto, aby mohl být zbytek cukru glykosyl-  —
+transferasou přenesen a vytvořila se glykosidová vazba, musí být monosacharid předem aktivo-  —
+ván, převeden na makroergický derivát. Aktivující skupinou je většinou nukleosiddifosfát, vel-
+
+mi často uridindifosfát. Pro mannosu je však aktivující skupinou guanosindifosfát, pro sialové =
+kyseliny cytidinmonofosfát. Aktivace je komplexním pochodem. Nejprve se za katalýzy kina- —
+sou vytvoří např. z glukosy a ATP glukosa-6-fosfát. Ten se přesmykuje na glukosa-l-fosťát, kte-
+rý pak reaguje enzymově s uridintrifosfátem (UTP) na uridindifosfoglukosu (UDP-Gle). :
+170 A
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software 60 cz/

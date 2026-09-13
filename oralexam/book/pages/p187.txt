@@ -1,0 +1,49 @@
+a = Nejstálejší prostorovou formou karotenoidů je uspořádání all-trans které je termodynamicky
+je = nejvýhodnější. Po zvýšení obsahu energie v molekule karotenoidů např. po absorpci kvanta
+| 0 světelného záření se forma cis mění na trans. Tato endotermní přeměna je velmi významná pro
+| recepci světla ve světločivných orgánech.
+
+je I V přírodě karotenoidy tvoří dvě velké skupiny látek: karoteny (čisté uhlovodíky) a xantofy-
+JA = ly (deriváty karotenu obsahující v molekule kyslikaté skupiny — hydroxylové, epoxidové, kar-
+A = bonylové, karboxylové, nebo sacharidové zbytky). Zavedení takovéto funkční skupiny do mo-
+"P lekuly karotenu se navenek projeví změnou zabarvení — posunem absorpčního maxima směrem
+a k vyšším vlnovým dělkám. Díky systěmu konjugovaných dvojných vazeb jsou karotenoidy
+| visolovaném stavu poměrně nestálé sloučeniny, snadno se oxidují vzdušným kyslíkem, zejmé-
+1 A na na světle. V přirozeném stavu jsou chráněny a stabilizovány obvykle vazbou na proteino-
+je: = vou strukturu ve formě tzv. karotenoproteinů. Schopnosti karotenoidů absorbovat světelné záře-
+| níje využito při procesu fotosyntézy, kde mají karotenoidy za úkol působit jako tzv. doplňkové
+1 světlosběrné pigmenty (víz kap. 9.1.1). Karotenoidy jsou také schopny vázat tzv. aktivní formy
+|) kyslíku (singletový kyslík, superoxidový anionradikál, hydroperoxidový radikál), uplatňují se
+=) tedy rovněž jako antioxidanty.
+
+"A Po požití živočichy se rostlinné karotenoidy vylučují z organismu v nezměněné formě, část
+W sejich ukládá v tukové a nervové tkáni jako zásoba provitaminu A. Některé jsou vázány na bíl-
+| koviny, např. v krevním séru ve formě tzv. chromoproteinů, kde se rovněž výrazně uplatňují je-
+-A jich antioxidační vlastnosti a byly prokázány i jejich antikancerogenní účinky,
+
+-= Pro živočichy je velmi důležité enzymy řízené symetrické štěpení fi-karotenu na dvě mole-
+200) kuly retinolu — vitaminu A (axeroftolu):
+
+-E oxidativní
+
+A 3 kč
+
+— 8.3 Biosyntéza lipidů
+
+1 Mastné kyseliny
+
+5] Aparát biosyntézy mastných kyselin je u eukaryotních organismů lokalizován celkem do tří
+A subcelulárních kompartmentů: základní dráha biosyntézy nasyceného řetězce do délky 18 C
+p) (kys. palmitová) je umístěn v cytoplazmě, systém elongas odpovědný za další prodloužení ře-
+2 tězce je umístěn v matrix mitochondrií a systém desaturas odpovědný za konverzi nasycených
+) mastných kyselin na nenasycené a umožňující rovněž prodloužení řetězce je vázán na endo-
+A plasmatické retikulum.
+
+R ) Základní stavební jednotkou při biosyntéze mastných kyselin de novo je acetyl-CoA, je-
+U ] hož hlavním zdrojem jsou mastné kyseliny (katabolický děj se nazývá f-oxidace -viz kap.
+A 8.4.4) a zejména sacharidy, kdy při glykolýze vznikající pyruvát je oxidačně dekarboxylován
+K] na acetyl-CoA a CO, (viz kap. 7).
+
+k 187
+
+I ytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

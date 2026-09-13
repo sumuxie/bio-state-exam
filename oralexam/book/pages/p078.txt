@@ -1,0 +1,30 @@
+Obr. 4.15 Elektronoptický snímek replikačního „oka“ v DNA Drosofily. Jednovláknové úseky ]
+v blízkosti replikačních vidliček (označeny šipkami) mají konfiguraci trans, která odpovídá mo- —
+delu semikonservativní replikace DNA, E
+1) DNA-polymerasy 1
+DNA-polymerasa I katalyzuje na matricích DNA připojování deoxyribonukleotidů =
+(deoxyribonukleosid-trifosfátů) k volné 3'-OH skupině 3'-konce úseku vznikající DNÁ, která W
+se prodlužuje (obr. 4.14). Reakce je „poháněna“ uvolněním a následnou hydrolýzou difosfátu:
+(pyrofosfátu, PP). Směr syntézy DNA je tedy od 5'-konce k 3'-konci: 3
+(DNA), + dNTP —*+ (DNA) „+ difosfát i
+(úsek DNA) (deoxy-nukleotid-trifosfát) :
+Substráty DNA-polymerasy I jsou tedy kromě úseku DNA používaného jako předlohy (temp- ]
+lát, matrice) všechny čtyři deoxyribonukleotid-5"-trifosfáty (dATP, dGTP, dCTP a dTTP). Aby —
+deoxynukleotidy mohly být připojeny k volné 3'-OH skupině, musí být na templátu přítomen: —
+polynukleotidový úsek spárovaný s matricí mající volnou 3'-OH skupinu. Pro funkci DNA- —
+-polymerasy I je nezbytná přítomnost hořečnatých iontů. 31
+Polymerasa katalyzuje nukleofilní atak 3"-OH konce polynukleotidového úseku spárované- —
+ho s matricí na atom fosforu dNTP (obr. 4.14). Tvoří se fosfodiesterová vazba a uvolní se difos-
+fát (pyrofosfát), který je ještě dále štěpen pyrofosfatasou na anorganický fosfát. Nejdůležitější =
+vlastností DNA-polymerasy 1 je, že připojuje deoxynukleotidy v takovém pořadí, které přímo
+určuje templát, tj. předloha DNA. Aktivní centrum DNÁ-polymerasy I udržuje v optimálním —
+prostorovém uspořádání předlohu DNA, na které k syntěze dochází, 3'-OH konec nově synte-  —
+tizovaného řetězce a vstupující deoxyribonukleotidtrifostát. í
+DNA-polymerasa I působí rovněž jako exonukleasa. Enzym se podílí na rozštěpení dvou- —
+šroubovice DNA a na hydrolytickém odbourávání řetězce DNA od 3'-OH konce článek po |
+článku (obr. 4.16). Jde tedy o 3'+5' exonukleasu. Obdobnou katalytickou funkci má též DNA <
+polymerasa HII (viz dále, obr. 4.16). Tato exonukleasová aktivita význačně napomáhá ke zpřes-  —
+nění replikace DNA (slouží jako druhý korektor —- opravovač — chyb v párování bází, ke které- —
+mu může dojít v počátcích syntézy DNA), :
+78 I
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http/Avww.software6a cz/

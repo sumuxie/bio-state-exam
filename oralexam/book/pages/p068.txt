@@ -1,0 +1,42 @@
+4.1.1.1 Biosyntéza purinových nukleotidů j
+Čtyři atomy dusíku při biosyntéze purinového kruhu pocházejí z kyseliny asparagové, glycinu |
+a amidových skupin glutaminu. +
+X „< glycin :
+A va ea -A
+aspartát vé nN ]
+Ná No 3
+ké H 2*« amidová skupina J
+v glutáminu 3
+amidová skupina |
+glutaminu 3
+Primárně vytvořeným derivátem purinových nukleotidů je inosinmonofosfát (inositát, |
+IMP) (Obr. 4.3). Výchozí sloučeninou jeho biosyntézy je -D-ribosa-S-fosfát, který je ak- >
+tivován ribosafosfátdifosfokinasou reakcí s ATP za tvorby 5'-fosforibosyl-a-D-difosfátu:
+(5'-phosphoribosyl-1-pyrophosphate, PRPP, obr. 4.3). Tato sloučenina reakcí s glutaminem: =
+poskytuje Š-fosforibosylamin. S-fosforibosylamin nejprve kondenzuje s glycinem za spo- —
+třeby ATP. Molekula je dále rozšířena o jeden uhlíkový atom, jehož donorem je kyselina 1
+Ni formyltetráhydrolistová. Poté je zaveden atom dusíku (N číslo 3) přenesený z amidové sku- 1
+piny glutaminu za spotřeby ATP, Za spotřeby další molekuly ATP se uzavře imidazolový kruh.
+Šestičlenný kruh je dále tvořen kyselinou uhličitou (atom C 6), která reaguje ve formě hydro- WW
+genkarbonátu. Reakce je neobvyklá tím, že nevyžaduje ani přítomnost biotinu, ani zdroj ener- |
+gie. Rovnováha reakce je však nepříznivá a musí tedy být zprostředkována spřažením s exergo- a
+nickými reakcemi, které se vyskytují v dalších stupních biosyntetické dráhy. Další dusík (N 1)
+je přenesen z kyseliny asparagové (aspartátu) kondenzační reakcí za spotřeby ATP. Po přeno-
+su aminoskupiny aspartátu dochází k eliminácí skeletu aspartátu ve formě kyseliny fumarové
+(fumarátu) pocházející z aspartátu. Poslední atom purinového kruhu se získává formylací pro- ;
+střednictvím aktivované kyseliny mravenčí (M-formyltetrahydrofolátu). Poslední reakce bio- W
+syntézy, uzavření šestičlenného kruhu za vzniku IMP, probíhá za současné eliminace vody. |
+Na rozdíl od cyklizace imidazolového kruhu purinového skeletu, tato reakce nevyžaduje ATP.
+Schéma biosyntézy IMP uvádí obrázek 4.3. IMP je dále přeměňován na adenosinmonofosfát —
+(AMP) a guanosinmonofosfát (GMP, AMP, který se liší od IMP pouze záměnou atomu kyslíku —
+v poloze 6 aminoskupinou, je tvořen reakcí aminoskupiny aspartátu za vzniku adenylsukciná-
+tu, jež vyžaduje energii dodanou hydrolýzou GTP. Finální reakcí tvorby AMP je eliminace fu- 1
+marátu (obr. 4.4). :
+První reakcí syntézy GMP z IMP je jeho dehydrogenace prostřednictvím redukce NÁD* za »
+vzniku xanthosinmonofosfátu (xanthylátu, XMPP). Ten je přeměněn na GMP náhradou kyslíku-
+na uhlíku © 2 aminoskupinou pocházející z amidové skupiny glutaminu, a to za spotřeby ATP —
+(štěpení ATP na AMP a PP, který se následně štěpí na dva fosfáty) (obr. 4.4). KR
+Pro syntézu nukleových kyselin je nutná přeměna nukleosidmonofostátů (AMP, GMP) na-
+nukleosidtrifosfáty. Ty jsou tvořeny kinasami za postupné spotřeby dvou molekul ATP. ]
+68 |
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwareGpR2.cz/

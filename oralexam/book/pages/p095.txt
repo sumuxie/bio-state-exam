@@ -1,0 +1,33 @@
+: A Ribosomy většinou působí v komplexu, v němž je mnoho těchto organel vázáno na mRNA,
+A = kterou všechny současně překládají. Tyto komplexy jsou nazývány polyribosomy (polysomy)
+E = (obr. 4.37). Jednotlivé ribosomy jsou v polysomech vzdáleny asi 5 až 15 nm, takže je jejich ma-
+| řimální hustota na mRNA asi 1 ribosom na 80 nukleotidů. Ke vzniku polysomů dochází pro-
+a = to, že iniciační sekvence se po aktivaci jednoho ribosomu uvolní a je k disposici pro aktivací
+É a dalšího.
+
+a = Obr. 4.37 Elektronová mikrofotografie polysomu žláz housenky bource morušového (Bomhyx
+= | mori) produkujícího hedvábí. 3'-Konec je vpravo. Šipky znázorňují polypeptidy syntetizova-
+"| ného proteinu (fibroinu).
+
+É = 4.2.3 Fáze proteosyntézy
+
+1 A Vlastní tvorba proteinu probíhá při translaci v několika stupních;
+
+A 1) Aktivace aminokyselin,
+
+| 2) iniciace (začátek proteosyntézy),
+
+-T 3) elongace (prodlužování polypeptidového řetězce),
+
+—- 4) terminace (ukončení syntězy proteinu).
+
+S Pro jednotlivé stupně proteosyntézy jsou důležité skupiny faktorů (bílkovin s katalytickou
+= | schopností, které se však nezařazují mezi enzymy) (tab. 4.4).
+
+| A 1) K aktivaci aminokyselin dochází proto, že bílkoviny se nemohou tvořit přímo z volných
+| | aminokyselin, ale aminokyseliny musí být tzv. vyzdviženy na vyšší energetickou hladinu (ak-
+| | © tivovány).
+
+A = Tab. 4.4 Translační faktory ribosomu £. coli
+
+Výjvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

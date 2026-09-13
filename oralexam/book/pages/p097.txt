@@ -1,0 +1,53 @@
+A = Párování bází mezi mRNA a 165-rRNA napomáhá při výběru iniciačního místa translace.
+A = Kodon AUG kóduje jak iniciační Met (formylMet) polypeptidu, tak i vnitřní methioninové
+-a = zbytky. Iniciační misto translace proto musí být rozlišeno účinnějším způsobem než pouze ko-
+A = donem, Toho je dosaženo pomocí tzv, dodatkového signálu. 16 S-rRNA obsahuje na 3'-konci
+A = sekvence bohatě na pyrimidinové nukleotidy, která se nazývá Shine-Dalgarova sekvence,
+a = která má střed umístěn asi 10 nukleotidů před iniciačním kodonem AUG (v případě E. colř)
+A = (obr, 4.40). Párováním bází mezi Shine-Dalgarovou sekvencí a částí sekvence 16 S-rRNA
+S = Umožňuje ribosomu rozpoznat správně iniciační kodon (obr. 4.40).
+
+A A Initiation
+
+1- pt i codon
+oral -vuvaaaAvkdďReěucmamAacatWlecaavu-
+
+1M k gali -AGCCUAAUGGAGCGAaAUUADHGaGaAGUU-
+A locl -CAAUUCAGGGUGGUGAUUGUGAAACCA-
+
+A p lac -UUCACACAGGAAACAGCUAWNGACCAUG-
+
+A = AA phage replicase -= UA AC WAAGGAU GAAAUGCANHONUCUAAG-
+
+A = gX174 phageA protein: —- A AUCU UdGAGEC UUUUUUAHAGUUCcaU-
+
+M | Rl7 phagecoat protein: - UCAACC veGEuU UGAAGCAUmNGCUUcU-
+
+A = Rihosomal S12 -AAAACCOAGGAGCUAUUUVANUAGCAACA-
+
+= © Ribosomal L10 -CUACCAGGAUCAAAGCUAANGGCUUUA-
+
+a 2 tepl -CAAAAUUAGAGAAUAACAAMHOGOCAAACA-
+W Hp leader -GUAAAXAGGGUAUCGACAMUGMAAAGCA-
++ Obr. 4.40 Některé z iniciačních translačních sekvencí rozpoznávaných ribosomy 8, coli.
+p | mRNA jsou seřazeny podle svých iniciačních kodonů (až na /Jacď všechny AUG). Jejich Shine-
+A = -Dalgarovy sekvence (vedoucí sekvence, např. Hp leader) jsou komplementární, pokud jde
+É: = 0G-U páry z oblastí na 3'-konci 16 S-rRNA (dole).
+
+- - Iniciační proces probíhá ve třech fázích (obr. 4.41) a hrají v něm roli iniciační faktory
+= (tab. 4.4).
+
+- A 1) Po skončení syntézy polypeptidu zůstávají podjednotky 30 S a 50 S asociovány v inak-
+ja M tívním 70 S«ribosomu. Faktor IF-3 se váže k podjednotce 308, čímž napomáhá disocia-
+ak. ci komplexu. IF-1 zvyšuje rychlost disociace, pravděpodobně usnadněním vazby fakto-
+3 A 2) GTP, mRNA a komplex IF-2 s formyl-Met--RNAM se vážou k podjednotce 30 S (mis-
+A to P). Rozpoznání iniciační formyl-Met-iRNAM ribosomem je jediná vazba tRNA na ri-
+-— bosom, která není striktně řízena vazbou kodon-antikodon, i když se na ní tato interakce
+% také podílí. Faktor [F-3 se navíc podílí na vazbě 30 S-podjednotky na Shine-Dalgarovu
+A sekvenci.
+
+|) 3) Během procesu, kterému předchází uvolnění faktoru IF-3 se 50 S- podjednotka při-
+A pojuje k 20 S iniciačnímu komplexu, přičemž se hydrolyzuje navázaný GTP na GDP
+A a fosfát. V tomto ireverzibilním kroku také dojde ke změně v konformaci podjednotek
+A A 30 S a uvolnění IF-1 a 1F-2. Ty se poté mohou podílet na dalších iniciačních reakcích.
+vy er o pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/vww.software602.cz/

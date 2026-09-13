@@ -1,0 +1,29 @@
+| Nutným předpokladem pro biosyntézu mastných kyselin je aktivace methylové skupiny A
+acetyl-CoA pro kondenzaci přeměnou v matonyl-CoA. Tato karboxylační reakce závislá ni a
+ATP je katalyzována enzymem acetyl-CoA karboxylasou, vyžadující koenzym biotin: A
+
+| acetyl-CoA karboxylasa | A A)
+Co, + C-SCoA + ATP => OOC-CH,C-SCOA + ADP + P) a
+oč, Mn2*. biotin z „A *
+K vlastní biosyntéze mastných kyselin dochází na rozpustném multienzymovém komplexu. Já 3
+dreém komplexu je protein, schopný vázat thioesterovou vazbou organické kyseliny acetát a ma- 3
+lonát. Často se označuje zkratkou ACP z angl. deyl Carrier Protein (protein nesoucí acyl:  — A
+Jedna molekula ACP obsahuje dvě odlišné funkční sulfhydrylové (SH) skupiny. První pochází — A
+z cysteinu v aminokyselinovém řetězcí, druhá je součástí fosfopantheteinu (též součást moleku- a A
+ly CoA — viz kap. 3.2.1), který je kovalentně navázán na polypeptidový řetězec v centru multi- — jE
+proteinového komplexu: i i :
+OH 1
+protein o X S i
+| | CH CH NH CH, NH CH, A I
+/ k k PAROU A :
+CH „-o-P-0“ cí M en cc en A
+0 CH, CH, 0 A
+fosfopanthetein *
+Počátečním krokem (1) biosyntézy je obsazení sulfhydrylových skupin acetylem (cysteinová I
+skupina) a malonylem (fosfopantheteinová skupina) za účasti enzymů acetyltransferasy a ma-
+lonyltransferasy. Acetyltransferasa vstupuje do děje jen v tomto prvním (iniciačním) stupni,
+v dalších fázích je aktivována jen malonyltransterasa. A
+Druhým krokem (Il) biosyntézy je kondenzace malonyl-ACP a acetyl-ACP za účasti enzy-  —
+mu fi-ketoacyl-A CP synthasy, čímž vznikne acetoacetyl-A CP: jE
+188 Ť
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na hito://www.software cz/

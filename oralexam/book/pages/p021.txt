@@ -1,0 +1,39 @@
+| 2. AMINOKYSELINY A PROTEINY
+| A 2.1 Aminokyseliny
+A Aminokyseliny jsou organické látky, které obsahují karboxylovou a aminovou skupinu. V ži-
+A vých organismech se vyskytuje řada látek této skupiny. Zvláštní postavení mezi nimi má malá
+A skupina aminokyselin (20), které jsou základními složkami proteinů. Tyto aminokyseliny jsou
+i A také výchozími látkami pro tvorbu všech typů pro organismus důležitých sloučenin dusíku.
+| 2.1.1 Struktura aminokyselin a výskyt
+| a a) Aminokyseliny běžně se vyskytující v proteinech (proteinogenní aminokyseliny)
+L U aminokyselin, které jsou součástí proteinů a pro které existuje genetický kód, je aminoskupi-
+Ž : na vždy v poloze ai ke skupině karboxylové.
+[E R-j-cooH
+3 NH2
++ ; Aminokyseliny jsou označovány buď triviálními názvy, nebo třípísmenkovými symboly od-
+A vozenými od triviálních názvů (alanin — Ala, tyrosin — Tyr, apod.); při popisu sekvence peptidu
+k. bývá užíván jednopismenkový symbol (Ala — A, Tyr— Y, apod.).
+] K Přehled 20 aminokyselin patřících do této skupiny je uveden v Tab. 2.1.
+A Všechny tyto aminokyseliny, s výjimkou prolinu, mají volnou nesubstituovanou aminovou
+3% skupinu na at-uhlíku. Vedle základních funkčních skupin (-COOH a —-NH,), každá aminokyse-
+Ak lina má charakteristický postranní řetězec označovaný R.
+p. Proteinogenní aminokyseliny je možno rozdělit podle povahy postranního řetězce na něko-
+„A lik skupin:
+ž l) aminokyseliny s nepolárním postranním řetězcem:
+a do této skupiny patří 5 aminokyselin s alifatickým řetězcem (alanin, leucin, isoleucin, va-
+A lin, prolin), dvě s aromatickým cyklem (fenylalanin, tryptofan) a jedna obsahující síru
++ (methionin);
+3 2) aminokyseliny s polárním postranním řetězcem:
+S aminokyseliny této skupiny obsahují buď -OH skupinu (threonin, serin, tyrosin), amido-
+A vou skupinu (asparagin, glutamin), a nebo —SH skupinu (cystein). Glycin je velmi obtíž-
+A né zařadit do této klasifikace. Nejpolárnější z těchto aminokyselin je cystein a tyrosin;
+2M 3) aminokyseliny s negativně nabitými postranními řetězci:
+; do této skupiny patří kyselina glutamová a asparagová, které mají v postranním řetězci
+: ještě druhou karboxylovou skupinu;
+A 4) aminokyseliny s pozitivně nabitým postranním řetězcem:
+A tuto skupinu tvoří lysin (obsahuje druhou amino skupinu), arginin (guanidinová skupina)
+3 a histidin (obsahuje slabě bazický imidazolový zbytek).
+3 b) Aminokyseliny vzácně se vyskytující v proteinech
+3 V hydrolyzátech některých proteinů byly nalezeny, vedle 20 běžných, ještě aminokyseliny, je-
+a jichž výskyt je většinou vázán na určitý typ proteinu. Všechny tyto, tzv. vzácně se vyskytují-
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

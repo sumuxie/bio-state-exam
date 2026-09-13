@@ -1,0 +1,32 @@
+30 kJ + mol, které odpovídá hydrolýze a tvorbě ATP (kap. 6.1.1 a 6.1.2). Kromě univerzálního
+bioenergetického „oběživa“, tj. ATP/ADP, jsou důležitými metabolity oxidované formy někte-
+rých koenzymů oxidoreduktas, např. NÁD?, NÁDP, FAD, které slouží jako akceptory elek tro-
+nů a protonů v oxidační degradací živin (substrátů) a ve své posléze redukované formě jsou.
+zdrojem CGibbsovy energie pro finální tvorbu ústředního systému ATP/ADP v respiračním ře
+tězci (kap. 6.2.4). A
+Anaerobní procesy (glykolýza, kvašení, kap. 7.8) jsou energeticky méně výhodné než acrob-
+ní procesy (citrátový cyklus, kap. 6.2.2 a respirační řetězec, kap. 6.2.4). Zisk ATP u anaerobiů-
+zy — např. při mléčném či laktátovém kvašení — je mnohem nižší (1 mol glukosy poskyt 0
+2 moly ATP) než při aerobióze (1 mol glukosy poskytne teoreticky 38 molů ATP). Aerobní o dj.
+bourávání sacharidů je vývojově vyšší. A
+| 6.2.2 Citrátový cyklus A :
+Pyruvát, který se vytvoří v glykolýze při odbourávání sacharidů (kap. 7.8) anebo při transami- - |
+naci (kap. 5.2) alaninu, lze oxidační dekarboxylací přeměnit na acetyl-CoA (kap. 7.8.1). Tento Já
+vzniká v hojné míře i při |-oxidaci mastných kyselin (kap. 8.4). Acetyl-CoA představuje vstup | A
+těchto vyjmenovaných metabolických cest do citrátového cyklu (někdy též cyklus trikarboxy- a :
+lových kyselin). Acetyl se přemění na 2 CO,. Kromě toho se tvoří redukované formy koenzy- 3 ž
+mů NÁDH a FADH.. A: :
+Tab. 6.3 Enzymy citrátového cyklu a jejich kofaktory Ť |
+-2 tmoeetEene 2 n te
+Úplná oxidace obou uhlíků acetylového zbytku vázaného na koenzym A se v buňce uskuteč. W
+ní sledem reakcí citrátového cyklu lokalizovaného v matrix, vnitřním prostoru mitochondrie WW
+(obr. 6.4). Průběh a dílčí reakce citrátového cyklu jsou shrnuty v obr. 6.3 a v tabulce 6.3. -Z
+- Thioesterová skupina acetyl-CoA brání mezomerii běžné u O-esterové vazby (kap. 6.1.2).
+Tím se v acetyl-CoA fixuje struktura karbonylu a umožní se např. aldolová kondenzace. Ta je —
+základem reakce acetyl-CoA s látkou, která představuje klíčovou sloučeninu cyklu, tj. s oxa- A
+lacetátem. Při této reakci se jedná o kondenzaci mezi uhlíkovým atomem karbonylu kyseliny
+oxaloctové a methylovou skupinou acetylu, který je aktivován karbonylem thioesterové vazby.
+Současně se odštěpí koenzym A. Reakci katalyzuje citrátsynthasa, která je regulačním enzy-  —
+mem. U většiny organismů ji silně inhibuje ATP, u některých NADH. Je to exergonická reakce:
+136 E
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.softwareé ).cz/

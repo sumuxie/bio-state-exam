@@ -1,0 +1,39 @@
+| A komplexu EF-Tu-GTP-aminoacyl-tRNA. Všechny aminoacyl-tRNA se vyskytují v tako-
+; A vých ternárních komplexech. Při interakci kodonu s antikodonem se GTP štěpí na GDP
+"A a fosfát a binární komplex EF-Tu — GDP se z ribosomu uvolňuje. Faktor EF-Tu, resp. bi-
+-E nární komplex EF-Tu — GTP je limitujícím faktorem elongace. Na regeneraci binárního
+%* komplexu EF-Tu — GTP se podílí faktor EF-Ts (obr. 4.42).
+É S 2) Transpeptidace. V dalším stupní elongace dochází působením enzymu peptidyl-
+M -transferasy (protein lokalizovaný ve větší ribosomální podjednotce) k odštěpení for-
+E a mylmethionylového (ev. peptidylového) zbytku z tRNA v P-miístě a k jeho přenese-
+A ní na aminoacyl-tRNA, která se nachází v A-mistě. Vzniká tak nová peptidová vazba
+A. a peptidyl-tRNA se prodlužuje o jednu aminokyselinu (obr. 4.43). Tato peptidyl-cRNA
+|% prodloužená o jednu aminokyselinu je nyní v místě A a v P-místě je vázána volná tRNA
+* (deaminoacylovaná — „nenabitá“ „uncharged“ (RNA) (obr. 4.42).
+3 A EF - Te GTP
+j 3 : 1 Naser -Z
+z -% palypeptide EF-Tu. GTP EF-Tu ; EF - Ts
+A A ; Aminoacy| -tRNA s
+B. A Papticy|-tRNA Aminoacyl=tRNA EF -Tu -GDP Arninoačy|=
+ma EF -Tu . GTP RÝNA
+m | a d
+: A NOM Pot MAMeKéh Kc Ši mu
+Z mA :
+vě A Translocatim Palte : Transpeptidation
+T EF-G oa k. 4.0ž M — Poptidy| -tRNA
+: A 8 ST dh
+A : *GTP
+p 3 Obr. 4.42 Elongační cyklus v ribosomech E, coli. Elongace v eukaryontech probíhá podobně,
+| | ale EF-Tu a EF-Ts jsou nahrazeny jedním proteinem (oligomerním) eEF-1, a EF-G proteinem
+my cEF-2.
+| 1 3) Translokace. V dalším, posledním, kroku elongace se deaminoacylovaná tRNA uvolňu-
+Yu je z ribosomálního P-místa [resp. je spíše přesunuta nejdříve do tzv, místa E (není zná-
+<. A zorměno na obr. 4,42) a je uvolněna až následující vazbou] a peptidyl--RNA je společně
+A s navázanou mRNA přesunuta z místa A do místa P. Tím je ribosom připraven na dal-
+I M ší elongační cyklus. Udržování interakce kodon-antikodon peptidyl-tRNÁA není již nutně
+L m pro specifikaci aminokyseliny, ale umožňuje ribosomu přesný posun o právě tři nukleo-
+1. tidy mRNA (o jeden kodon) a zachování přesného čtecího rámce, Tento děj, který se na-
+E A zývá translokace, vyžaduje přítomnost elongačního faktoru EF-G, který se váže na ribo-
+T 99
+
+tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

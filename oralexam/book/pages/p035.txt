@@ -1,0 +1,39 @@
+| A = Existuje několik typů znázorňování prostorového uspořádání proteinové molekuly. Na
+W obr. 2.16 je znázorněno prostorové uspořádání cytochromu P-450. V tomto znázorňování se po-
+W užívá stočená páska nebo válec k zobrazení šroubovicových struktur a plochá šipka (od N-kon-
+o W ceřetězce) k označení jednotlivých větví fi-struktury.
+L SED Ms A
+| T Obr. 2.16 Schéma struktury cytochromu P450 (hem je znázorněn šrafováním)
+: JA Denaturace
+= Bílkovina v nativním stavu má zcela určité prostorové uspořádání (charakteristickou konfor-
+| imacíi), která je úzce spjata s její biologickou aktivitou. Působením řady fyzikálních a chemic-
+| kých vlivů se nativní konformace porušuje a proteiny přecházejí na méně uspořádanou formu:
+náhodné či statistické klubko; proteiny přitom ztrácejí svou biologickou funkci a mění své fy-
+= zikální vlastnosti. Tento jev se nazývá denaturace.
+
+| AA Primárním účinkem všech denaturačních činidel je rozvinutí peptidového řetězce. Tím se
+| odkrývají nepolární zbytky aminokyselin, které byly v nativní molekule uvnitř globule; dále
+
+"se snižuje solvatace molekuly a tím i rozpustnost proteinu.
+
+| 200 Rozvinutí peptidového řetězce může být docíleno opatrným přidáváním denaturačního čini-
+| dla k velmi zředěnému roztoku bílkoviny; výsledkem může být reverzibilní denaturace; po-
+
+= zvolným odstraněním činidla se protein vrací do nativní formy. V koncentrovanějších roztocích
+
+| bílkovin však nastává sekundární proces: nově přístupné postranní řetězce aminokyselin mo-
+A hou spolu interagovat, což vede ke vzniku agregátů a k dalšímu snížení rozpustnosti. Výsled-
+| kem pak je ireverzibilní denaturace, WV některých případech, jako např. při tepelné denaturaci,
+| A se bílkovina vylučuje z roztoku; tento jev se nazývá koagulace. V případě jiných činidel (např.
+| působení tenzidů, močoviny) ke koagulaci nedochází.
+1. Denaturaci proteinů mohou způsobovat různě vlivy, např.: fyzikální (zvýšená teplota, pěně-
+A ní roztoků proteinů), chemické (silné kyseliny a zásady, organická rozpouštědla, tenzidy; mo-
+S čovina, guanidin). j
+
+S Denaturace proteinů má nejenom negativní účinky; z pozitivních je možno jmenovat: dena-
+A turované bílkoviny jsou snadněji přístupné hydrolytickým enzymům (podstata tepelně úpravy
+A potravy); denaturace ničí choroboplodné zárodky (tepelná nebo chemická sterilizace).
+
+| 35
+
+A vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

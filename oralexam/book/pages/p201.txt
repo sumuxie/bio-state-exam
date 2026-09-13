@@ -1,0 +1,35 @@
+: Proces usnadněné difúze předpokládá účast přenašečové molekuly, obvykle integrálního mem-
+= bránového proteinu, který má specifickou vazebnou schopnost pro přenášenou látku. Po navá-
+= zání transponovaně látky na přenašeč dojde pravděpodobně k pohybu přenašeče v membráně
+= tak, že se přenášená látka objeví na druhé straně membrány, kde je z přenašeče uvolněna a ten
+= se vrací do své původní polohy.
+A p
+| m. —— me]
+) stku síly z -
+) :
+= Obr. 8.4 Schématické znázornění přenašečového transportu (zprostředkované difúze).
+| S — přenášená látka, P — přenašeč, M — membrána
+: : Významnou vlastností usnadněné difúze je specifita, saturovatelnost a inhibovatelnost procesu,
+: přenašeč se tedy chová jako enzym a děj je možné popsat rovnicemi pro enzymovou kinetiku.
+| Specializované přenašeče pro ionty se nazývají ionofory (látky nebílkovinně povahy) nebo ion-
+17 tové kanály (membránové bílkoviny).
+k) Jestliže k transportu látky přes membránu je vyžadován přísun energie, jedná se o aktivní
+A transport. Ten se vždy uskutečňuje proti koncentračnímu gradientu transportovaně látky. Po-
+A žadavek energie v případě tzv. primárního aktivního transportu obvykle kryje dodávka ATP
+ž a štěpení makroergické vazby (mluvíme o tzv. ATPasových pumpách) nebo je zdrojem jiná
+j exergonická reakce. V případě tzv. sekundárního aktivního transportu se využívá energie
+3 koncentračního gradientu jiné látky dříve vytvořeného např. primárním transportem. Aktivní-
+3 ho transportu se vždy účastní membránový protein a mechanismus je podobný usnadněně di-
+A fúzi. Na rozdíl od ní však každý krok je závislý na energii přenašeče a často se jedná o složitý
+3 transport dvou nebo více látek stejným směrem (tzv. symport) nebo opačným směrem (anti-
+a port). Přenos pouze jedné látky je nazýván uniport. Při přenosu složitějších organických mole-
+3 kul (např. sacharidů, aminokyselin, disacharidů, peptidů) může současně dojít k chemické reak-
+] ci (např. fosforylaci nebo hydrolýze), přenašeč má tedy další enzymovou aktivitu. Takověmuto
+a transportu se říká skupinová translokace. Nejkomplikovanějším typem membránového trans-
+l. portu je transport makromolekul (proteinů, DNA) nebo celých partikulí (membrán, virů, gra-
+. nulí), který se uskutečňuje mechanismem zahrnujícím lokální přestavbu membrány. V prvním
+případě se jedná o submikroskopické změny na membráně, ve druhé případě o změny mikro-
+i skopicky pozorovatelné (pinocytóza a fagocytóza). Podle směru transportu rozlišujeme endo-
+:Í cytózu (směrem do buňky) nebo exocytózu (směrem ven z buňky).
+| 201
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

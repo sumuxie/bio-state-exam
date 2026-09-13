@@ -1,0 +1,27 @@
+source : C:\Users\Admin\Downloads\Biochemie.pdf
+pages  : 229
+out    : C:\Users\Admin\Downloads\bio-state-exam\oralexam\book\pages
+  ocr 39/229
+  ocr 50/229
+  ocr 60/229
+  ocr 70/229
+  ocr 80/229
+  ocr 90/229
+  ocr 100/229
+  ocr 110/229
+  ocr 120/229
+  ocr 130/229
+  ocr 140/229
+  ocr 150/229
+  ocr 160/229
+  ocr 170/229
+  ocr 180/229
+  ocr 190/229
+  ocr 200/229
+  ocr 210/229
+  ocr 220/229
+
+written 199, skipped 30, total 229
+manifest: C:\Users\Admin\Downloads\bio-state-exam\oralexam\book\pages_manifest.tsv
+thin pages (<200 chars): 2
+  1, 140

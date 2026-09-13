@@ -1,0 +1,26 @@
+| Fenylalanin se na této metabolické dráze hydroxyluje fenylalaninhydroxylasou na tyrosin.
+lato reakce vysvětluje esenciální charakter fenylalaninu a postradatelnost tyrosinu.
+T rosin je transaminován na kyselinu p-hydroxyfenylpyrohroznovou, která je oxidačně de-
+karboxylována a po řadě následných reakcí se hydrolyticky štěpí až na kyselinu fumarovou
+kaceloacetát, Tryptofan se v poměrně složitém sledu reakcí dekarboxyluje, oxiduje, hydrolyzu-
+Je, deaminuje a opět oxidačně dekarboxyluje až na glutarylkoenzym A, který po dehydrogenaci,
+te karboxylaci a adici vody poskytuje konečný produkt, acetoacetylkoenzym A. Všechny tyto
+tří aromatické aminokyseliny jsou fyziologicky velmi významné pro biosyntézu hormonů (nor-
+ddrenalin, adrenalin, dopamin, trijodthyronin, thyroxin) a dalších látek s aromatickým kruhem.
+A glutaryl-CoA
+A ACETOACETYLKOENZYM A
+A ACETYLKOENZYM A
+|= Leucin se odbourává po transaminacíi a oxidační dekarboxylací až na acetylkoenzym A a ace-
+= togcetát. Pro degradaci lysinu na kyselinu 2-oxoadipovou existují v metabolismu dvě alterna-
+= tivní dráhy, jejichž produktem je glutarylkoenzym A., Ten přechází transaminací po dalším sle-
+= dureakcí až na acetylkoenzym A.
+Ť 3. Přeměna na Z-oxoglutarát (C, -rodina)
+= Arginin, histidin, kyselina glutamová, glutamin a prolin vstupují do citrátového cyklu přes
+= Z-oxoglutarát (a-ketoglutarát). Jeho bezprostředním prekurzorem je kyselina glutamová. Pro-
+= lin se při odbourávání nejprve oxiduje na kyselinu A -pyrrolin-5-karboxylovou, která je v rov-
+| hováze y-semialdehydem kyseliny glutamové:
+S AH M
+> [> prolin dehydrogenasa (< ———————y m VOP
++ J : ře i. NH
+| pln A ,-pyrrolin-5-karboxylová kyselina y-semialdehyd kyseliny glutamové
+ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

@@ -1,0 +1,46 @@
+| ja ninhydrin
+| hydrindantin úd. barevný produkt
+| A © Obr. 2.2 Mechanismus ninhydrinové reakce
+| » : Jinou velmi důležitou reakcí a-aminoskupiny aminokyseliny je reakce s l-fluoro-2,4-dinitro-
+| A -benzenem; za mírných reakčních podmínek vznikají žluté 2,4-dinitrofenylové deriváty ami-
+|Ř nokyselin. Tato reakce se využívá při identifikaci N-koncové aminokyseliny peptidů a protej-
+a nů. Aminoskupiny aminokyselin mohou dále reverzibilně reagovat s aldehydovými skupinami
+A za vzniku SŠchiffových bazí, Tato reakce je základem řady metabolických přeměn aminokyse-
+3 lin (viz kap. 3.2.1 a 5.2).
+
+= Z chemické reaktivity postranních řetězců aminokyselin jsou nejdůležitější reakce cystei-
+A nu: v přítomnosti těžkých kovů se tvoří merkaptidy; dále se -SH skupina cysteinu velmi snad- |
+A no oxiduje za tvorby —S-—5— můstků (eystin).
+
+ee Cystin tímto způsobem hraje roli „zesíťovacího činidla“ v proteinové molekule; dva cystei-
+a nové zbytky jsou spojeny kovalentní disulfidovou vazbou.
+
+3 HH HH
+
+É 1 —N=(—0— —N —
+
+E Hs Hz
+
+A sH
+
+"a —>
+
+I SH
+
+3 CH; Hy
+
+* NE Ma: — M .— 0
+
+A | (1 U
+
+Í HH H HO
+
+] cystein cystin
+
+. Disulňdová vazba je snadno štěpitelná v alkalickém prostředí, dále je možno ji redukovat
+I působením redukčních činidel za vzniku dvou cysteinů; oxidací cystinu na druhé straně vzniká
+a kyselina cysteová (využívá se při aminokyselinové analýze).
+
+1 25
+
+V ytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

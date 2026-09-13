@@ -1,0 +1,34 @@
+— DNA 5'— A-G-A-G-G-T-G-0-T— a'
+
+A mRNA 5'— A-G-A-G-G-U-G-0-U— a-
+
+A tRNAs U-C-U C-C-A C-G-A
+
+A a Arginine Glycine Alanine
+
+: Ů A Polypeptide -Arg-Gly- Ala-
+
+3 A Obr, 4.35 Genová exprese do mRNA a translace pořadí bazí do pořadí aminokyselin.
+
+= | Tab. 4.3 Genetický kód
+
+—- Druhý nukleotid
+
+-A | První nukleatid
+
+—* TK
+
+-| © |IK- terminační kodony
+
+| I * v přítomnosti specifické sekvence y mRNA (SECIS elementu) je interpretován jako kodon pro aminokyselinu
+A | selenocystein
+
+3 | | Informace se na molekule DNA začíná „číst“ vždy od určitého začátečního bodu a pokračuje
+"| Jedním směrem po stejně velkých skupinách, tj. kodon za kodonem (obr. 4.35). Kodon je sku-
+S pina nukleotidů (v mRNA) určující připojení jedné aminokyseliny do rostoucího polypeptido-
+"Jj věho řetězce (obr. 4.35). Kodony jsou komplementární antikodonu jednotlivých tRNA (tripletu
+= | na antikodonové smyčce tRNA, obr. 4.28, kapitola 4.1.4). Je jasně, že dvacet různých aminoky-
+< | selin, které se vyskytují v přirozených bílkovinách, nemůže být kódováno čtyřmi jednotlivými
+A 3 93
+
+V vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

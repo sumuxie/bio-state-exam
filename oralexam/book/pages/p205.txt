@@ -1,0 +1,42 @@
+: 1 Chlorofyly (porfyriny — kap. 6.3 — molekuly podobné hemu, např. v hemoglobinu a cyto-
+A chromech).
+| | 2. Fykobiliny (s otevřeným tetrapyrolovým řetězcem, podobné též žlučovým barvivům biliver-
+i S dinu, bilirubinu, sterkobilinu).
+
+| 3, Karotenoidy (isoprenoidy — kap. 8.2.4 — příbuzné se steroidy).
+= (Obr. 9.2) jsou obligatorními a nejdůležitějšími fotosyntetickými pigmenty. Základní strukturou
+0 je portyrin (kap. 6.3). Porfyriny jsou tetrapyroly vzájemně spojené methinovými můstky s bo-
+| hatým systémem konjugovaných dvojných vazeb. Všechny chlorofyly mají obdobnou struktu-
+Ř m Kromě porfyrinu, který je vždy odpovědný za fotochemické vlastnosti, obsahuje molekula
+|" chlorofylu ještě alkohol: nejčastější je fytylový zbytek obsahující 20 atomů uhlíku, Je to iso-
+A prenoid (kap. 8).
+Z: Univerzální rozšíření chlorofylu a u organismů s oxygenním typem fotosyntézy (bakterio-
+M.A chlorofyl má poněkud odlišnou strukturu) vedlo ke správnému názoru, že pouze chlorofyl a je
+-© vlastním transformátorem energie ve fotosyntéze, který se bezprostředně účastní primárního fo-
+m tochemického děje, tj. přeměny energie elektromagnetického záření v energii chemickou.
+„SA e 160
+SA H
+A a 140 140
+» ů 20 chlorofyl a p“ ehlorofyl b
+1A a oro
+I „2 80 80
+A 1 40 40
+A 20 20
+i 400 500 600 700 400 500 600 700 m
+| | : " Obr. 9.3 Absorpční spektra chlorofylu a a chlorofylu b
+a : Obr. 9.3 znázorňuje absorpční spektrum chlorofylu a a chlorofylu b. Je třeba si všimnout velké
+A podobnosti ve tvaru i pozici absorpčních pásů. Molekuly chlorofylů absorbují v oblasti vlno-
+A vých dělek 415 až 440 nm (tato oblast není významná pro fotosyntézu, protože odpovídá exci-
+a tací elektronů do 2. singletového excitovaného stavu, jehož doba života je příliš krátká a proto
+i nelze tuto excitaci využít pro start následujících oxidačně redukčních reakcí) a v červené oblasti
+P) spektra 640 až 700 nm. Tato absorpce je významná pro fotosyntézu. Odpovídá excitaci elektro-
+A nů do 1. singletového excitovaného stavu, Komplementární barvou červené je zelená. Proto je
+A rostlinný svět „zelený“
+- Ostatní pigmenty v thylakoidech mají pouze pomocnou funkci: zachycují kvanta dopadají-
+ů ciho záření a energii svého excitovaného stavu přenášejí na chlorofyl a v tzv. reakčním cent-
+| ru (víz dále). Proto se nazývají pomocná, akcesorická nebo doplňková, Doplňují, rozšiřují to-
+i; tíž spektrum fotosynteticky účinného záření. Patří sem další typy chlorofylů, u sinic a ruduch
+
+205
+
+Mytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

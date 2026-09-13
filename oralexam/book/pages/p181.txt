@@ -1,0 +1,43 @@
+W V přírodních fosfolipidech je zpravidla v poloze 2 glycerolu vázána mastná kyselina nenasyce-
+| ná, v poloze I mastná kyselina nasycená, Molekula fosfolipidů vykazuje zcela jasně dvě odliš-
+0- né oblasti: nepolární, hydrofobní oblast reprezentovanou mastnou kyselinou a polární, hydro-
+a = filní oblast, reprezentovanou glycerolem, kyselinou fosforečnou a příslušnou funkční skupinou.
+"0 Tomuto duálnímu charakteru molekuly se říká amfipatie. Fosfolipidy jsou amfipatické slouče-
+0 niny. Amtipatický charakter molekul samotných acylglycerolů je velmi nevýrazný, hlavní pří-
+"© spěvek pochází od funkčních skupin, z nichž některé (cholin, ethanolamin, serin) mohou při
+S fyziologickém pH něst elektrický náboj, což hraje velmi významnou roli při plnění biologické
+0 funkce fosfolipidů v biologických membránách.
+2 Sfingolipidy
+W Stingomyeliny
+"0 Sfingomyeliny se skládají z jedné mastné kyseliny, cholinu, kyseliny fosforečné a sfingosinu,
+= tj. látek, které můžeme obdržet po kompletní hydrolýze molekuly sfingomyelinu. Sfingosin je
+| nenasycený 18-ti uhlíkatý aminodialkohol:
+p Ů CH=CH(CH 2 ) 1 „cH 3
+A p ke tk pesolt
+A HČ-NH, ned- R UO-M-Č-R
+A lon | | | +
+LA CH „OPOCH „CH N“ (CH),
+i“ A sfingosin ceramid l:
+S (N-acylsfingosin) 0
+a sfingomyelin
+70 Ačkoliv sfingosin obsahuje 2 hydroxylové skupiny, mastná kyselina je na molekulu vázána pro-
+= střednictvím aminoskupiny (tzv. amidovou vazbou) a vzniklá sloučenina se nazývá ceramid.
+| Připojením fosforylcholinové skupiny k ceramidu na primární (koncovou) OH-skupinu estero-
+10 vou vazbou vznikne sfingomyelin. Tato molekula má rovněž amfipatický charakter a struktu-
+= rou molekuly i fyzikálně chemickými vlastnostmi je velmi podobná molekule fosfatidylcholi-
+> nu. Nalézá se především v buněčných membránách nervů a mozkové tkáně (myelinové pochvy
+= axonů). .
+A Cerebrosidy a gangliosidy
+> Tato skupina sfingolipidů obsahuje sacharid vázaný na acylsfingosinovou strukturu (O-glyko-
+= sidovou vazbou na koncový hydroxyl skupiny -CH,„OH), přísluší jim tedy název glykosfingo-
++ lipidy. Nacházejí se podobně jako sfingomyeliny především v buněčných membránách ner-
+| vů a mozkových tkání a mají rovněž amfpatický charakter, ačkoliv neobsahují fosfoesterovou
+2 skupinu. Polární charakter „hlavy“ molekuly glykosfingolipidů zajišťují monosacharidy nebo
+. oligosacharidové řetězce, které často zahrnují kyselinu N-acetylneuraminovou, tedy výrazné
+= hydrofilní či dokonce skupiny nesoucí elektrický náboj. Hydrofobní charakter „ocasu“ zvýraz-
+S ňují dlouhé mastné kyseliny (C), které představují až 80% obsahu mastných kyselin.
+| Nejjednodušší glykosfingolipidy zvané cerebrosidy obsahují pouze jednu molekulu sacha-
+= řídu, Asi 25% mozkových cerebrosidů obsahuje sulfátovou skupinu vázanou na 3. uhlíku sa-
+= charidu (obvykle galaktosy), takže je můžeme souborně nazvat těž sulfolipidy nebo sulfatidy.
+Ť 181
+jtvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

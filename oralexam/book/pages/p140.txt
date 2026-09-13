@@ -1,0 +1,31 @@
+ATP, což odpovídá 1159 kJ + mol“, čili asi 40% z celkové energetické bilance oxidace glukoy O
+na CO, tj. AG"=-2870 kJ » mol". A A
+Vztah citřátového cyklu k biosyntetickým pochodům E A
+Kromě nesporného významu bioenergetického je citrátový cyklus důležitý i pro některé bio- i
+syntézy. Např. 2-oxoglutarát se může transaminovat na aminokyselinu glutamát, sukcinyl-Cok A
+slouží jako prekurzor při biosyntéze porfyrinů (viz kap. 6.3). Odčerpáváním kteréhokoliv me- 3%
+tabolitu může postupně klesnout množství výchozí látky, oxalacetátu, pod únosnou miru, Koza =
+jištění nerušeného průběhu citrátového cyklu slouží doplňovací,tj. v překladu anaplerotické a
+reakce. Nejdůležitější z nich je reakce katalyzovaná pyruvátkarboxylasou. Katalyzuje vznik) M
+oxalacetátu z pyruvátu a CO, za účasti ATP, Mn** a koenzymu biotinu. 1 A
+Mn** |
+pyruvát + CO, + ATP+ HO — oxalacetát + ÁDP+ P M M
+6.2.3 Glyoxylátový cyklus | 1
+U některých mikroorganismů a rostlin byla popsána zajímavá modifikace citrátového cyklu, L A
+kdy není acetyl-CoA rozkládán, protože je vynechána degradační fáze citrátového cyklu, alé *. |
+acetyl-CoA se naopak využívá k syntéze čtyřuhlíkových dikarboxylových kyselin, eventuelně 0.
+jejich prostřednictvím k biosyntéze i jiných sloučenín. Základem jsou dvě reakce odlišující zá- | b áŮ
+roveň citrátový a glyoxylátový cyklus. První je katalyzovaná isocitrátlyasou; hb
+isocitrát glyoxylát sukcinát k A
+Druhá reakce je katalyzovaná matátsynthasou, používající produktu první reakce — glyoxylá- : :
+tu — a dalšího acetyl-CoA:; A
+O=CH-COO7 + H-CHy-CO-$-C0A + HD — | + CcoA-SH R
+CH,-Coo- A
+glyaxylát acatyl-CoA malát A
+Z malátu můžeme po dehydrogenaci získat oxalacetát (OO0C-CO-CH,COO). Ve spojení s re- : :
+akcemi citrátového cyklu tak vzniká glyoxylátový cyklus, který lze znázornit schématem: je
+(obr. 6.5) anebo vystihnout sumární rovnicí: ka
+2 CH,CO+8-CoA + 2 NAD*+ FAD +3 H0 > f
+—+"00C-CO-CH,COO+ 2 NADH + H*+ FADH, + 2 CoA-SH i |
+
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na oo

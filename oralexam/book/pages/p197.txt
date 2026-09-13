@@ -1,0 +1,33 @@
+A rávání je v tomto případě B-hydroxy-fi-methylglutaryl-CoA, který je výchozí sloučeninou při
+7 biosyntěze isoprenojidů, nebo může být dále degradován na acetyl-CoA a acetacetát (víz výše).
+a 2x CH C-SCoA acetyl-CoA
+3 Ň CoASH
+| A o o
+a CH Č-CH Č-SCoA acetoacety1-CoA
+3 acetyl-SCoA H„0
+A „M
++ | fR-hydroxy-R-methylglutaryl-Cod
+s CH,
+A l.)
+3 CH C-SCoA acetyl-CodA
+L z o o
+a | s „O |
+LA CH CCH „coo acetoacetát > CH CCH, + co,
+KA aceton *
+JA CH „CHCH„COO | B-hydroxybutyrát
+| 8.5 Biologické membrány
+A Vnitřní prostor všech živých buněk je oddělen od vnějšího prostředí speciálním buněčným
+3 útvarem zvaným buněčná membrána. Eukaryotní buňky mají navíc dále rozčleněn pomocí
+A membrán i vnitřní prostor. Subcelulární organely (např. jádro, mitochondrie) jsou ohraniče-
+3 ny membránou, v cytoplazmě jsou přítomny i další subcelulární membránové útvary jako jsou
+i např. Golgiho aparát, endoplasmatické retikulum, mikrosomy apod. Hlavním úkolem mem-
+s brán je oddělovat biochemicky a fyziologicky odlišné prostory, ale nejsou pouze statickými
+| hranicemi. Ve skutečnosti to jsou biochemicky velmi aktivní systémy, odpovědné za selek-
+i tivní transport látek do nitra buňky a buněčných kompartmentů a naopak, za vazbu hormo-
+E nů a jiných regulačních systémů, za přenos elektrických impulsů, je zde lokalizována řada
+ň enzymových reakcí včetně řady bioenergeticky významných pochodů a produkce ATP. Ač-
+koliv základní schéma struktury biologických membrán je pro všechny buňky stejné, funkč-
+É ně se jednotlivé membrány dosti liší, jsou specializované. Např. pouze vnitřní mitochondriální
+| membrána je odpovědná za produkci ATP, určitě hormony se vážou pouze na určité membrá-
+| 197
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

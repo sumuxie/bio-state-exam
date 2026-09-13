@@ -1,0 +1,37 @@
+R tím je však popsán pouze případ jedné ribonukleové kyseliny a jiné případy nejsou známy. Mo-
+A lekula některých enzymů je tvořena pouze polypeptidovým řetězcem nebo řetězci, aktivní for-
+TJ. ma jiných enzymů obsahuje ještě neproteinovou složku, tzv. kofaktor, Kofaktorem může být
+PA ion kovu nebo organická molekula, tzv. koenzym. Některé enzymy mohou obsahovat obojí.
+© Obecně platí, že kofaktory enzymů jsou tepelně stabilní, zatimco proteinová část molekuly en-
+A zymu ně. Katalyticky aktivní komplex protein-koťaktor se nazývá holoenzym, proteinová část
+I enzymu, po odstranění kofaktoru se označuje apoenzym.
+
+| A Enzymy obsahující ionty kovů jako kofaktory se nazývají metaloenzymy. Nejčastěji se v en-
+2 zyměech vyskytují ionty Zn** (alkoholdehydrogenasa), Mg* (fosfatasa), Mn** (hexokinasa),
+i Fe, Fe" (cytochromy), Cu** (tyrosinasa), K* (pyruvátkinasa), Na* (ATPasa), aj. Ionty kovů
+| A fungují v molekule enzymu jako součást aktivního centra, jako můstky pro vazbu substrátu na
+| S enzym nebo jako prvek stabilizující prostorovou strukturu molekuly enzymu.
+
+| A 3.2.1 Koenzymy
+| A Kocnzymy obvykle fungují jako intermediární přenašeče funkčních skupin, atomů nebo
+| 9 elektronů, které jsou přenášeny v reakci, kterou daný enzym katalyzuje. Když je koenzym vá-
+| zán na apoenzym velmi silně, nazývá se prosthetická skupina. Jiné koenzymy jsou vázány na
+| A bíilkovinnou část molekuly enzymu jen slabými interakcemi a z kinetického hlediska vystupují
+| jako substrát enzymu. Koenzymy jsou většinou molekuly svou strukturou odpovídající vitami-
+S nům nebo jejich derivátům. Vitaminy jsou organické látky nepostradatelné pro životní funkce
+A buněk, které musí být organismu dodávány s potravou. V tabulce 3.1 jsou shrnuty hlavní koen-
+| A zymy, typy reakcí, kterých se účastní a jejich vztah k vitaminům.
+É Tab. 3.1 Koenzymy a typy reakcí, kterých se účastní
+| |koenzym přenášená skupina | vitamin 000
+a Zkratky jsou vysvětleny v následujícím textu.
+
+3 Struktura a funkce některých koenzymů
+
+a a) Koenzymy oxidoreduktas
+
+i Nikotinamidové koenzymy
+
+a Patří sem především dva koenzymy, oba mají strulceturu dínukleotidu, jejichž jednou bází je ade-
+: nin a druhou nikotinamid, cukernou složku tvoří vždy D-ribosa, nukleotidy jsou spojeny dvě-
+ne ma zbytky kyseliny fosforečné. Jsou to tedy nikotinamidadenindinukleotid (NAD“) a nikotin-
+V ytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

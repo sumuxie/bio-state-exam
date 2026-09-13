@@ -1,0 +1,44 @@
+10. VZÁJEMNE VZTAHY V INTERMEDIÁARNÍM -AM :
+METABOLISMU A REGULAČNÍ MECHANISMY © |
+10.1 Vzájemné vztahy v intermediárním metabolismu 9 :
+Intermediárním metabolismem se rozumí souhrn reakcí vzájemně přísně koordinovaných, kte- a
+ré probíhají v živé buňce. Degradační část metabolických reakcí se nazývá katabolismus, sou- .
+hrn syntetických reakcí tvoří anabolismus. K anabolickým reakcím patří i reakce, jimiž se tvo- :
+ří zásobní látky organismu vlastní (víz kap. 6.1.3). 3 MM
+Funkcí metabolismu je -A A
+a) získávat chemickou energii z molekul živin nebo ze slunečního záření, A) )
+b) přeměňovat exogenní látky na stavební jednotky nebo prekurzory makromolekul buňce | 2]
+vlastních, A a
+c) syntetizovat z těchto prekurzoru proteiny, nukleové kyseliny, lipidy a jiné buněčné kom- — ::
+d) syntetizovat a odbourávat molekuly potřebné pro specifické funkce buňky. i. E
+Každá katabolická i anabolická cesta se skládá z řady následných enzymově katalyzovaných — :
+reakcí (obr. 6.2). Degradace objemných živin především sacharidů, lipidů a proteinů probíhá 2 A
+ve třech fázích. V první fázi jsou velké molekuly štěpeny na své stavební jednotky, tzn. polysa- = i
+charidy na monosacharidy, lipidy na mastné kyseliny a glycerol a proteiny na aminokyseliny. — 3
+Ve druhé fázi katabolismu jsou tyto produkty přeměňovány na malý počet ještě menších inter- — Š
+mediátů. Tak sacharidy a glycerol se mění přes pyruvát na acetyl-CoA. Mastné kyseliny seod- = A
+bourávají f-oxidací také na acetyl-CoA a podobně i většina aminokyselin. Konečně ve třetí fázi Ť
+jsou produkty fáze druhé oxidovány až na oxid uhličitý a vodu. * >
+Také biosyntéza má tři fáze. Z malých molekul prekurzorů produkovaných ve třetí fázi kata- ;
+bolismu a nebo přijímaných z prostředí (voda, oxid uhličitý, amoniak ap.) se ve druhé fázi ana- E
+bolických reakcí tvoří stavební jednotky makromolekul a ve třetí fázi vznikají makromoleku-  — ]
+ly buňce vlastní. Např. při biosyntéze proteinů se v první fázi tvoří oxokyseliny, ty se ve druhé :
+fázi přeměňují na a-aminokyseliny, stavební kameny proteinů a z aminokyselin jsou syntetizo- i
+vány bílkoviny tělu vlastní. a :
+Katabolické a anabolické pochody mezi prekurzorem a konečným produktem nejsou však A ž
+vzájemně reversní, probíhají různými cestami. Je to dáno především zásadními rozdíly v jejich A |
+energetických nárocích. Zatímco katabolické děje produkují ATP, anabolické reakce vyžadu-  —
+jí energii a v jejich průběhu se ATP spotřebovává. To, že jsou tyto cesty oddělené, má výhodu
+v tom, že mohou být nezávisle regulovány. Ř :
+Katabolické a anabolické reakce bývají také lokalizovány v jiných částech eukaryontní buň- W
+ky. Separace procesů v různých organelách umožňuje, aby oba procesy probíhaly současně d
+a při tom nezávisle. -A
+Mezi metabolickými pochody existují rozmanitá křížová propojení. Z jedné strany jsou slou-  —
+čeniny tvořeny a v jiné fázi metabolismu spotřebovávány. Organismus je v tzv. „dynamické
+rovnováze“, Propojení metabolických procesů nastává v určitých uzlových bodech, tzn. že roz- R
+dílné procesy mají společné intermediáty. Význam z hlediska regulace metabolismu buněk mají
+zvláště některé metabolity, jako jsou: acetyl-CoA, pyruvát, a-ketoglutarát, redukované nikoti- a
+namidové koenzymy (NADH a NADPH) a ATP. Významná je jejich mobilizovatelná zásoba, A
+tzv. „pool“. Nemusí se ani jednat o vysokou koncentraci dané látky, ale důležitá je schopnost S)
+218 AA
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/Avww.softwaredle.cz/

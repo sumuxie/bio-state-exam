@@ -1,0 +1,46 @@
+. který je přenášen do mitochondrií aktivním transportem (kap. 8.5.3) pomocí specifického sys-
+
+| tému přenašečů.
+
+| Podstatně měně běžnou přeměnou aminokyselin je dekarboxylace. Tímto mechanismem,
+: = katalyzovaným pyridoxalfosfátem jako koenzymem, vznikají fyziologicky účinné primární
+
+A > aminy (biogenní aminy):
+
++ R-CH-COOH —— R-CH„-NH, + CO,
+
+- Většina reakcí o-uhlíku aminokyselin probíhá na koenzymu pyridoxalfosfát (PLP, kap. 3).
+| | Tento koenzym je vázán na odpovídající apoenzym jednak iontovými vazbami, jednak kova- |
+W lentně na g-aminoskupinu lysinového zbytku jako aldimin. Při reakci s aminokyselinou, váza- É
+= nou vaktivním centru enzymu, se tato aminokyselina váže přes svou a-aminoskupinu na koen-
+: | zym, a tím nahradí lysinový zbytek v aldiminu (reakce 1, obr. 5.3).
+| - Vzniklý reakční meziprodukt obsahuje řetězec konjugovaných dvojných vazeb mezi navá-
+1 zanou molekulou aminokyseliny a protonovaným atomem dusíku pyridinového kruhu koenzy-
+
+= nu. Kladný náboj pyridinového jádra přitahuje elektrony z konjugovaného systému dvojných
+| vazeb, což umožňuje snadné odštěpení všech zbývajících substituentů na 0-C atomu aminoky-
+
+= seliny (-NH,, -COOH, -R).
+A Nejjednodušší, a také nejčastější, je odštěpení protonu (reakce 2a na obr. 5.3), který se pak
+= váže na karbonylovém uhlíku pyridoxalfosťátu. Ze vzniklého aldiminu se hydrolyticky odště-
+| puje 2-oxokyselina, z pyridoxalfosfťátu vzniká pyridoxaminfosfát:
+A ot-aminokyselina-1 + enzym-pyridoxalfosfát
+> A Z-oxokyselina-1 + enzym-pyridoxaminfosfát
+A Pro efektivní průběh této reakce je nutná regenerace koenzymu, která probíhá transaminační re-
+= akcí pyridoxaminfosfátu s jinou oxokyselinou. Vzniká při ní druhá aminokyselina (o-aminoky-
+= selina-2), pyridoxaminfosfát se přeměňuje zpět na pyridoxalfosfát:
+: ] enzym-pyridoxaminfosfát + 2-oxokyselina-2
+S o-aminokyselina-2 + enzym-pyridoxalfosfát
+a Celkovým výsledkem těchto reakcí je tedy přenos aminoskupiny z aminokyseliny na oxokyse-
+= linu, tj. transaminace:
+S a-aminokyselina-1 + 2-oxokyselina-2 = o-aminokyselina-2 + 2-oxokyselina-1
+A Z uvedeného je zřejmé, že transaminace mezi aminokyselinami a pyridoxalfosfátem by probí-
+= haly v cyklu, jehož výsledkem by nemohla být potřebná eliminace aminoskupiny. Východis-
+= kem z tohoto bludného kruhu je kombinace transaminace s reakcí oxidační dehydrogenace glu-
+= tamátu, při které se amoniak uvolňuje (viz výše uvedená rovnice).
+a Další možnou reakcí komplexu aminokyseliny s pyridoxalfosfátem je dekarboxylace (re-
+= akce 2b, obr. 5.3), která však nevede k odstranění dusíku z aminokyselin. Vzniklé aminy jsou
+| Významné pro syntetické reakce, Např. dekarboxylací cysteinu a asparátu vzniká oysteamin
+> a fi-alanin, které jsou složky koenzymu A.
+121
+h ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

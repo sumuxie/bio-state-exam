@@ -1,0 +1,40 @@
+3 P-Amylasy působí jako exoglykosidasy, odštěpují maltosové jednotky od konců polysacha-
+i | tidových řetězců. Tyto enzymy označujeme jako ji proto, že vznikající maltosa se uvolňuje
+= v f-formě, dále se pak mutarotací ustavuje rovnováha mezi a a fi-formou. Amylosa se f-amy-
+: = lasami hydrolyzuje prakticky úplně, u amylopektinu se štěpení zastavuje před větvením. Zbý-
+= vátedy poměrně vysokomolekulární dextrin. P-Amylasy se vyskytují převážně v rostlinné říši.
+ů Konečným produktem odbourávání polysacharidů (škrobu nebo glykogenu) « a j-amyla-
+7 sami je maltosa a isomaltosa (isomaltosa pochází z oblastí větvení) a částečně 1 glukosa, která
+= Vzniká štěpením oligosacharidů o lichém počtu glukosových zbytků. Štěpení maltosy na gluko-
+| su uskutečňuje 0-D-glukosidasa (maltasa) ve střevě.
+J yv-Amylasy odštěpují z glykogenu glukosové jednotky, enzymy hydrolyzují jak vazby 1—4,
+= tak 1-6 a mohou glykogen úplně odbourat. Vyskytují se v játrech. Pro označení Yy není jiný dů-
+= vod než, že jde o třetí nalezený typ amylasy.
+a Celulasy hydrolyzují celulosu. Vyskytují se hlavně u mikroorganismů, u zvířat se nacháze-
+; 1 jí vzácně. Při rozkladu celulosy jako potravy, se podílí takřka vždy mikroflora (např. v bacho-
+100 ru přežvýkavců).
+2 7.11.2 Fosforolýza škrobu a glykogenu
+1 Odbourávání polysacharidů v buňkách se liší od odbourávání polysacharidů v zažívacím traktu
+tím, že nedochází k hydrolýze, ale k fosforolýze. Platí to jak pro odbourávání škrobu v rostlin-
+= ných buňkách, tak i pro odbourávání glykogenu ve svalu a v játrech. Při fosforolýze se odštěpu-
+= je glukosový zbytek na neredukujícím konci polysacharidů a přenáší se na fosforečnou kyseli-
+hu. Vzniká glukosa-l1-fosfát. Nově vzniklý koncový zbytek může být dále odštěpován stejným
+0 způsobem. Reakci katalyzuje enzym fosforylasa.
+a HCOH H2ČOH H2COH HC OH
+ů e
+3 OH OH H H
+I / HPO O
+ž HCOH HaCOH OH H2COH
+| o
+p. * H ;
+i H -© H :
+: H H H H
+á glukosa-t -fosfát
+3 Odbourávání glykogenu fosforylasou se zastaví u čtvrtého glukosového zbytku před mistem
+3 větvení. Transglykosidasa pak oddělí od řetězce štěp tvořený třemi zbytky a přenese jej na jiný
+A řetězec, na který jej naváže o-le4 vazbou. V místě původního větvení zbývá po této transgly-
+A kosidacíi jen jeden glukosový zbytek vázaný vazbou 1+6. Ten se odštěpí hydrolyticky půso-
+ai bením a-l,6-glukosidasy. Při úplném odbourání glykogenu vzniká tedy vedle glukosa-l-fosfátu
+3 vždy asi 10% volně glukosy, která pochází právě z míst větvení.
++ 173
+/ytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

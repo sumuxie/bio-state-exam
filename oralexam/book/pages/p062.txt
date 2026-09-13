@@ -1,0 +1,40 @@
+normální reakcí v roztoku, ale odehrává se v omezeném prostoru aktivního centra, kde jsou ;
+substráty nejen koncentrovány ale i správně orientovány. 3
+U některých enzymů probíhá katalýza tak, že se přechodně tvoří nejen komplex enzym- |
+-substrát ale i velmi reaktivní nestabilní kovalentně modifikovaný enzym, který se velmi rych-
+le rozpadá za vzniku produktu. Tento jev se nazývá kovalentní katalýza, Tímto mechanismem =
+probíhá např. reakce katalyzovaná chymotrypsinem: i
+E-0H +NO,-C,H-O-Cco-CH, = E-0-Co-CH,+ NO,C,H, |
+enzym substrát acetylovaný 1. produkt 3
+hitrofenylacetát enzym nitrofenol Ť
+E-0-Co-CH,+H,0 — BE-0H+CH,CcooH 3
+eKZYM 2, produkt A
+V aktivním centru mnoha enzymů jsou skupiny schopné fungovat jako donor nebo akceptor H*. |
+Katalýza enzymy mívá také charakter obecné acidobasické katalýzy. Týká se to především
+skupin: -COOH (Asp,Glu), -NH, (Lys), -OH (Tyr) a imidazol (His). :
+Další teorie, která se snaží vysvětlit vysokou účinnost enzymů je teorie indukovaného při-
+způsobení (angl. induced fit). Původně se předpokládalo, že molekula substrátu zapadá do ak- |
+tivního místa enzymu jako klíč do zámku, že enzym a substrát mají komplementární strukturu.
+Dnes je však jasné, že enzym a substrát nemusí být strukturně komplementární. Teprve při in- :
+terakci se enzym strukturně přizpůsobuje substrátu, mění svou konformaci. To ale znamená, že —
+vzniklý komplex EA je termodynamicky nestabilní a má silnou tendenci se ke stabilní konfor- j
+mácí vrátit, a proto se rozpadá za vzniku produktu. Analogicky je při interakci enzymu se sub- —
+strátem deformována také molekula substrátu, což opět přispívá k urychlení reakce. Aby enzym >
+přizpůsobil svou konformaci substrátu, je nutné, aby afinita mezi E a A byla dostatečně veliká, |
+tzn. že pouze pravý substrát dokáže přinutit molekulu enzymu ke změně konformace. Některé
+molekuly se síce na enzym váží, ale změnu konformace nejsou schopné vyvolat. Takové látky
+působí jako inhibitory. E
+3.7 Regulační enzymy Ť
+Všechny enzymy mají vlastnosti, kterých může být využito k ovlivnění jejich aktivity v buň- |
+ce. Na aktivitu enzymu má vliv pH prostředí, koncentrace substrátu nebo koenzymu, přítom-
+nost inhibitoru ňebo aktivátoru ap. Existují však enzymy se specifickými vlastnostmi, které jim: —
+předurčují regulační úlohu v metabolismu. Těmito vysoce specializovanými enzymy jsou jed- |
+nak tzv. enzymy alosterické, jednak enzymy kovalentně modulované. i
+3.7.1 Alosterické enzymy jf
+jsou takové enzýmy, jejichž aktivita je modulována nekovalentní interakcí se specifickým me- )
+tabolitem, Ten se váže do zvláštního místa v molekule enzymu, do tzv. alosterického místa. |
+Alosterickými modulátory jsou často produkty metabolické řady, na jejímž začátku právě pů- ]
+sobí alosterický enzym. ]
+A cr. Bocroměot C kon. D som Boo E J
+62 ]
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

@@ -1,0 +1,34 @@
+3 A Chromosom £. coli se replikuje obousměrně na „theta“ struktuře (obr. 4.21) z jediného re-
+> plíkačního počátku. Syntézy DNA se účastní soubor proteinů označovaný jako primosom
+-E (obr. 4.25). Dvoušroubovice DNA je rozpletena za spolupráce rozplétacích proteinů, helika-
+= | sy ll (DnaB protein v obr. 4.25) a primosomu na opožďujícím se vláknu matrice. Oddělené ře-
+> © tězce jsou stabilizovány v nespárovaném stavu interakcí s proteiny stabilizujícími jejich jedno-
+>| vláknovou strukturu, proteiny SSB, Syntéza vedoucího vlákna je katalyzována holoenzymem
+= © DNA polymerasy III, stejně jako syntéza opožďujícího se vlákna. Syntéza tohoto vlákna však
+"| © probíhá až po syntéze primerů, katalyzované primasou spojenou s primosomem. Předpoklá-
+= | dáse, že syntéza obou vláken DNA probíhá na jediném multiproteinovém komplexu, tzv., re-
+E plíisomu. Opožďující se matricové vlákno tedy musí být okolo tohoto replisomu „přehozeno“
+á A (obr. 4.25). Po dokončení syntézy Okazakiho fragmentu se holoenzym na opožďujícím se ře-
+" f — tězci přemístí k novému primeru blízko replikační vidličky a primer na začátku dříve syntetizo-
+F = vaného Okazakiho fragmentu je vyštěpen při posunu mezery katalyzovanou DNA polymerasou
+"| (obr. 4.24) a mezera je uzavřena DNA ligasou (obr. 4.25).
+1 3 4.1.4 INA je přepisována do RNA
+É ž -DNA není přímý templát pro syntézu proteinu. Ternplátem pro syntézu proteinu je RNA. Cesta
+É A genetické informace v normálních buňkách je následující:
+E A transkripce translace
+z DNA — RNA —* protein
+| Rozšířené, cyklické schéma přenosu genetické informace (r. 1953 F. Crick), je označováno jako
+of „Centrální dogma molekulární biologie“ — „DNA řídí svou vlastní replikaci a transkripci na
+of RNA, která dále řídí svou translaci na proteiny“ (obr. 4.26).
+T Replication
+| A Transéription A
+A i rářsteton
+T. Obr. 4.26 Centrální dogma molekulární biologie. Plné šipky označují přenosy genetické infor-
+"© mace. Speciální přenosy jsou označeny šipkami přerušovanými. RNA polymerasa řízená RNA
+A je přítomna v některých virech a rostlinách. DNA polymerasa, řízená RNA (reverzní trans-
+a kriptasa), se vyskytuje v některých RNA-virech. DNA přímo určující protein není známa, Její
+> A existence však nemusí být zcela nereálná.
+I Jednotlivé ribonukleové kyseliny (RNA) se liší biologickou funkcí v buňce, ale i struktu-
+J rou a molekulovou hmotností. RNA se vyskytuje v buňkách v následujících druzích: mRNA
+1 ŠA
+I jtvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

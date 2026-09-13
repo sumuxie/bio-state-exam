@@ -1,0 +1,41 @@
+7. SACHARIDY +
+Sacharidy jsou organické látky, které v přírodě patří k nejrozšířenějším; tvoří největší podíl or-
+ganické hmoty na Zemi. Tato skutečnost souvisí s různorodými funkcemi sacharidů, které se
+uplatňují v různých formách života: Ai
+a) sacharidy slouží jako zásobárna energie; škrob u rostlin nebo glykogen u živočichů jsou
+polysacharidy, které mohou být velmi snadno mobilizovány a poskytují D-glukosu, jako
+primární sloučeninu k získávání energie; „A
+b) D-ribosa a 2-deoxy-D-ribosa jsou pentosy, které tvoří část základního řetězce DNA
+a RNA; konformační flexibilita cukerného kruhu je důležitá pro uchování a expresi gene-
+tické informace; -A
+c) polysacharidy mají dále funkce podpůrné; polysacharidy jsou základními složkami bu-
+něčných stěn bakterií a rostlin, dále v exoskeletu u hmyzu a korýšů; např. celulosa, hlav- 1
+ní složka rostlinných buněčných stěn je nejrozšířenější organickou sloučeninou v biosféře; |
+d) sacharidy tvoří složku glykoproteinů, které se buď vyskytují na povrchu buněk nebo sub- |
+celulárních částic nebo jsou součástí sekretovaných proteinů; právě tyto sacharidové části |
+glykoproteinů hrají klíčovou roli v rozpoznávacích mechanismech v různých systémech;
+vedle proteinů se v živých organismech vyskytují sacharidy vázané na lipidy a jsou sou-
+částí membránových glykolipidů a lipopolysacharidů. | +
+7,1 Monosacharidy 3
+7.1.1 Aldosy, ketosy 1
+Monosacharidy jsou nejjednodušší cukry; jsou to aldehydy nebo ketony, které obsahují dvě
+nebo více hydroxylových skupin; jejich sumární vzorec je (CH,O),. Glyceraldehyd a dihydro-
+xyaceton jsou nejmenšími monosacharidy, pro které n = 3; jsou nazývány triosy. Glyceraldehyd |
+má jeden asymetrický uhlík, tudíž existují dva stereoizomery: D-glyceraldehyd a L-glyceral- =
+dehyd. Předpona D- a L- označují absolutní konfiguraci. D-glyceraldehyd, v jehož projekčním |
+vzorci hydroxylová skupina směřuje doprava, je základem sloučenin D-řady, Příslušnost k řadě
+D- a L- neříká nic o optické otáčivostí cukru, která může být (+) (vpravo) nebo (2) (vlevo). A
+| Cukry, které obsahují 4, 5, 6 a 7 atomů uhlíku jsou nazývány tetrosy, pentosy, hexosy a hep- |
+tosy, resp, U cukrů, které obsahují více než jeden asymetrický uhlík, symboly D- a L- se vzta- |
+hují k absolutnt konfiguraci asymetrického uhlíku nejvzdálenějšího od aldehydové nebo keto- A
+nové skupiny. J
+7.1.2 Odvozování aldos a ketos I
+Obecně, molekula obsahující n asymetrických uhlíků a žádnou rovinu symetrie, má 2" stereo- a
+izomerních forem. Pro aldotriosy n = L, a tudíž, jak již bylo uvedeno, existují dva stereoizome- 3
+ry, D-glyceraldehyd a L-glyceraldehyd. Prodloužením řetězce aldotriosy o skupinu HCOH, zís- 7
+káme 4 aldotetrosy (n = 2); dvě z nich jsou řady D- (D-erythrosa a D-threosa) a druhé dvě řady *
+(L-erythrosa a L-threosa). Aldopentosy mají tri asymetrická centra, a proto existuje 8: (27) ste- —
+reoizomerů, z toho 4 v řadě D- a 4 v řadě L-. Analogicky aldohexosy obsahují ve své molekule: |
+4 asymetrické uhlíky, a proto existuje 16 (2) stereoizomerů (víz obr. 7.1). :
+148 ;
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na htto:/www.software6 cz/

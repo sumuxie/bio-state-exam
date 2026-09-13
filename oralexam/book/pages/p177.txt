@@ -1,0 +1,45 @@
+| 8.2 Chemické složení a vlastnosti lipidů
+= 8.2.1 Mastné kyseliny
+A Mastně kyseliny jsou základní složkou jednoduchých a složených lipidů (i některých odvoze-
+= ných), neboť právě jejich výrazná hydrofobicita je odpovědná za celkový hydrofobní charak-
+= ter molekuly lipidu.
+: Název mastná kyselina má původ v jejich hlavním zdroji — tuku (tučný = mastný). Chemic-
+| ky jsou mastné kyseliny mnohouhlíkaté alifatické monokarboxylové kyseliny. Jedná se o po-
+= něrně širokou skupinu látek, kterou lze klasifikovat z několika hledisek podle charakteru uhlí-
+= katého řetězce:
+- — lineární, větvené nebo alicyklické
+A — nasycené (neobsahují v řetězci dvojnou vazbu) nebo nenasycené (mono-, di- nebo
+a polynenasycené podle počtu dvojných vazeb)
+Ž — s konňgurací dvojných vazeb cís nebo trans
+A V přírodě se nejčastěji vyskytují mastné kyseliny:
+a = slineárním řetězcem se sudým počtem atomů uhlíku, tzv. vyšší mastné kyseliny s C4
+ň — nenasycené jsou obvykle mastné kyseliny C.
+Ť — obsahují-li 2 či více dvojných vazeb, jedná se o polynenasycené mastné kyseliny;
+3 dvojné vazby jsou izolované CH, skupinou, umístěné víceméně symetricky ve středu
+A molekuly
+: — dvojné vazby jsou většinou v konfigurací cis
+Tab. 8.2 Hlavní přírodní mastné kyseliny
+% a taý systematický hn- A
+ž triviální název zkratka název kyseliny A (c) strukturní vzorec
+= NASYCENÉ:
+p. laurová 12:0 dodekanová kom reocu
+a myristová 14:0 = tetradekanová Mno non o v "ore
+„ palmitová 16:0 hexadekanová Mrmvv v 7 eo
+a stearová 18:0  oktadekanová VTZ < <" "7 "teen
+E arašidová 20:0 = eikosanová Va; n a l at at oa oa ete
+Ji S JEDNOU DVOJNOU VAZBOU:
+% palmitolejová  lé:l hexadekaenová s n-7 ny st v m O7 v toe
+A olejová 18:1 oktadekaenová 9 n-9 M n rm A rm $$ a  "otena
+J eruková 22:1 dokosaenová 13 n89. nt v v m v v vv "eten
+j SE DVĚMA DVOJNÝMI VAZBAMI:
+Je linolová 15:2 oktadekadienová | %12 n- Mo neo"
+a SE TŘEMI DVOJNÝMI VAZBAMI:
+a u-linolenová 18:3 oktadekatnienová | 912,15 n-3 n s vl "a < O "ot
+a y-linolenová = 18:3 ) oktadekatrienová | 69.12 n-6 vaty tan At ao
+| SE ČTYŘMI DVOJNÝMI VAZBAMI:
+: arašidonová 20:4 eikosatetrasnová | 58,11,14 : n-6 M rc r "ra "ma "r "v "een
+: S PĚTI DVOJNÝMI VAZBAMI:
+A timnodonová 20:5  eikosapentaenová ve n-3 W s v a m "< "tet
+= S ŠESTI DVOJNÝMI VAZBAMI:
+3 klupadonová = 22:6 | dokosahexaenová ot B-3 této —"7 —óo=o7
+3 vořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

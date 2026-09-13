@@ -1,0 +1,45 @@
+A PP,
+-a 1. stupeň pa 0 Z. stupeň
+j | i + A l i
+S | l l o! b
+r Poem: U | thlaoklnasm |o* +
+a RCH„CD07 + ATP + CoASH —— ROH Č+SCOA + AMP
+ň volná m.k. aktivovaná m..
+= Mastné kyseliny jsou degradovány postupným odstraňováním dvouuhlíkatých jednotek — ace-
+| tylů (CH,COO-) směrem od karboxylového konce molekuly. Proces byl nazván f-oxidací, což
+= Vystihuje biochemickou podstatu celého děje. U eukaryotních buněk je f-oxidace lokalizována
+=- do matrix mitochondrií, obsahujícího všechny 4 enzymy potřebné pro průběh 1 cyklu degrada-
+100 ce, tj. zkrácení uhlovodikového řetězce o 2 atomy uhlíku.
+3 Odbourávání kyseliny stearové ukazuje schéma na následujísí straně.
+| Celkem tedy kyselina stearová poskytne v 8 cyklech 9 molekul acetyl-CoA:
+TA CH(CH.) „CO-CoA + 8 FAD + 8 NAD" + 8 H,O + 8 CoASH >
+-S —9CHCO-CoA + 8 FADH, + 8 NADH+ 8 H'
+"0 Produktem f-oxidace všech typů mastných kyselin je acetyl-CoA. Za určitých podmínek, např.
+-při cukrovce, hladovění nebo naopak při dietě bohaté na tuky dochází k nadprodukci acetyl-
+"© -CoňA, protože nemůže být všechen využit v citrátovém cyklu. Přebytek je v jaterních buňkách
+Š přeměněn na látku zvanou fi-hydroxy-ji-methylglutaryl-CoA. Ten může být využit k biosynté-
+= ze terpenoidů a steroidů, část je přeměněna na acetoacetát (navázaný na CoA) a acetyl-CoA.
+| Acetoacetát může být enzymově redukován na ji-hydroxybutyrát, ale může být rovněž neenzy-
+© mově dekarboxylován na aceton. Jsou-li tyto metabolické dráhy abnormálně aktivní, objevují
+1" se jejich produkty v krvi (ve formě tzv. ketonových látek) a vedou k onemocnění acidose a ke-
+= tose. Důsledkem je snížení pH krve, aceton je cítit v dechu. Takovýto děle trvající stav vede ke
+ž komatu a k smrti.
+Kromě nasycených mastných kyselin se v přírodě často vyskytují něnasycené mastné ky-
+E seliny. Jejich degradace fi-oxidací však neprobíhá bez problémů, neboť přirozené nenasycené
+i mastné kyseliny obsahují dvojné vazby v poloze cís, což je konfigurace nevhodná pro enzymy
+i fi-oxidace, které vyžadují vazbu řrans,. Do sekvence reakcí zde musí zasáhnout další enzymy
+a cis-trans izomerasa a epimerasa a fi-oxidace může proběhnout bez problémů až do konce.
+j Méně často se v přírodě setkáváme s mastnými kyselinami obsahujícími lichý počet ato-
+Í mů uhlíku. Tyto mastně kyseliny mohou být odbourány na příslušný počet molekul acetyl-CoA
+1 a zbytkový propionyl-CoA., Tento tříuhlíkatý zbytek je v několika reakčních stupních prodlou-
+Jj žen na čtyřuhlíkatý sukcinyl-CoA, který již může být přímo napojen na reakce citrátového cyklu.
+i Méně obvyklé jsou i větvené (nelineární) řetězce mastných kyselin. Podle místa větvení roz-
+É lišujeme tzv. a-větvené (rozvětvené na sudém uhlíku) nebo fi-větvené (rozvětvené na lichém
+i uhlíku). Protože větvení nebývá rozsáhlé, obvykle je tvořené pouze methylovou skupinou, a na-
+| chází se na opačné straně molekuly než karboxylová skupina, může být kyselina odbourává-
+na fi-oxidací tak dlouho, až se ve zkrácené molekule objeví větvení na uhlíku a nebo ji. Větve-
+j ní v poloze a nepředstavuje pro enzymy f-oxidace žádnou překážku a konečným produktem je
+| acetyl-CoA. Při j-methylovém větvení musí nejdříve dojít k enzymově řízené karboxylaci za
+j přítomnosti koenzymu biotinu a vzniká dikarboxylová kyselina. Konečným produktem odbou-
+| 195
+| ytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

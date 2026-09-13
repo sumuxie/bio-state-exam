@@ -1,0 +1,48 @@
+R — universální plynová konstanta 1
+T — absolutní teplota i
+p — hustota rozpouštědla J
+v — parciální specifický objem sedimentující částice j
+s —sedimentační koeficient i
+D - difúzní koeficient částice 3
+Pro určení M, z měření rychlosti sedimentace je nutno stanovit experimentálně difůzní koefici- 4
+ent D. :
+Při použití metody sedimentační rovnováhy lze získat hodnoty M, které nejsou ovlivněny
+tvarem molekuly, W tomto případě není nutné experimentálně stanovit D. |
+Při druhém typu metod pro stanovení M, proteinů se využívá tzv. molekulárních sít; jedná —
+se o porézní materiál s velikostí pórů o průměru řadově odpovídajícím průměru analyzovaných >
+proteinů. Tyto metody bývají někdy označované jako metody permeační; používají se i pro dě- =
+lení směsi proteinů (obecně makromolekul) a nazývají se také gelová nebo permeační chro-  —
+matografie. Pro stanovení M, proteinu se roztok směsi proteinů o známé M, nechá procházet =
+sloupcem porézního materiálu. Molekuly, které mohou procházet do pórů se zpožďují proti mo-
+lekulám, které se pohybují vně zrnek materiálu. Eluční objem, ve kterém je protein ze sloupce
+eluován je tím menší, čím je větší M; lze získat lineární závislost mezi elučními objemy protei- Ť
+nů a log M; eluční objem neznámého proteinu se porovná s elučními objemy proteinů o známé —
+M, a určí se M neznámého proteinu. 1
+Rozpustnost proteinů ;
+Obecně lze říci, že většina fibrilárních proteinů tvoří agregáty propojené intermolekulárními = >
+vazbami, a proto jsou nerozpustné ve vodě nebo ve zředěných roztocích solí. Naopak globu- >
+lární proteiny jeví tendenci se rozpouštět v těchto mediích; různé globulární proteiny se však
+značně liší rozpustnosti. |
+Rozpustnost globulámích proteinů závisí na pH, iontové síle, dielektrických vlastnostech |
+rozpouštědla a teplotě, Globulární proteiny jsou nejméně rozpustně při pH, které se rovná pl —
+| (izoelektrický bod); při tomto pH proteiny nemají náboj a neexistuje odpuzování mezi soused- J
+| ními molekulami. :
+Neutrální sole mají významný vliv na rozpustnost globulárních proteinů: při nízkých kon- 1
+centracích solí vzrůstá rozpustnost mnoha proteinů (tento jev se nazývá „vsolování“ angl. sa/i- |
+| ing in). Když koncentrace neutrálních solí dále vzrůstá, rozpustnost proteinů počíná klesat při |
+| vysokých koncentracích proteinu může být bílkovina kompletně precipitována; tento jev se na- |
+zývá vysolovámí (angl. salting out). Oba tyto jevy se využívají při separaci proteinových směsí. |
+Na základě rozpustnosti lze globulární proteiny rozdělit na dvě skupiny: i
+| albuminy — jsou rozpustné ve vodě a lze je vysolit teprve vysokými koncentracemi síranu
+amonného (70—100 % nasycení); |
+| globuliny — jsou naproti tomu v čisté vodě nerozpustné nebo velmi málo: rozpouštějí se-
+| snadno ve zředěných roztocích solí; precipitují z roztoku při polovičním nasycení síranem
+amonným (50 25 nasycení). ]
+Acido-bazické vlastnosti proteinů ]
+Acido-bazické chování nativních globulárních proteinů v roztoku je dáno relativně velkým po-
+čtem ionizovatelných postranních řetězců aminokyselin; příspěvek koncových -amino a kar- |
+boxylových skupin je minimální.
+Proteiny, podobně jako peptidy a aminokyseliny, jsou charakterizovány určitou hodnotou j
+pH, při kterém neputují v elektrickém poli (pl — izoelektrický bod). Při pH vyšším než pl, ]
+38
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602 cz/

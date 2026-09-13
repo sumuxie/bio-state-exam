@@ -1,0 +1,41 @@
+Mechanismus funkce enzymu ukazuje, že každé z osmi aktivních míst katalyzuje p měn a
+RuBP na enolátový (endiolátový) ion, který jakožto reaktivní sloučenina může vázat moleku A)
+lu CO, Vznikne tak šestiuhlíkatý intermediát, který velmi rychle hydrolyzuje za vzniku dvou :
+molekul 3-fosfoglycerátu (PG). 1m
+M OH„OPOŽ: CH„OPOŽ ď oH„oPOj: "MA 3
+0=0 m o iE 12. Ho—c——coo A% A
+Enz-B Ko, 0- oH = oZo H z=— do a A
+H—0—0H H—0—0H H-—C—OH vd A
+CH„OPOŽ- CH„OPOŽ- CH,OPOŤ A A
+RuBP andiolát P-oxakysalina - A
+H—O A A
+jme c ř (ooror. čí 19 |
+Hů=C=000 =—— Hů-(—( xD A
+Hů-Ú—coo- A -A
+O ů | MA Ů:
+$$ H—ů—0OH A A)
+H—0—0oH CH„oPOS“ > a |
+CH„oPOJ- „A -|
+PG A I
+Prvním stabilním produktem fixace CO, je tedy J3-fosfoglycerát, tříuhlíkatá sloučenina, podle » ž
+které se rostliny využívající mechanismus Calvinova cyklu nazývají rostliny C-3. Fosfoglycerát = É:
+je dále ve dvou krocích přeměněn za spotřeby ATP a NADPH na glyceraldehyd-3-fosfát (GAP), 3 3
+Děj zahrnuje enzymy fosfoglycerátkinasu a glyceraldehydfťostátdehydrogenasu a je znám z gly- — A
+kolýzy, kde však probíhá opačným směrem. . S
+| o o
+coo“ * č-o-B ČH | J|
+| ATP | NADPH | -%
+H=C-0H: eee H-CE0H oo: HOOK -*%
+| ADP | NADP | A.
+ěH„o-d SH, Pi cn- A
+PG 1,3-BPG GAP I)
+Glyceraldehyd-3-fosfát je klíčovou sloučeninou Calvinova cyklu (obr. 9.6); je dále zpracován p. Š
+čtyřmi možnými cestami, jedná se však vždy jen o modifikaci a vnitřní konverzi (izomeraci, P
+tj. přeměnu aldosa-ketosa, epimeraci, defosforylaci a fosforylaci) různých fosforylovaných sa-
+charidů. Všechny tyto typy reakcí jsou zahrnuty v pentosovém cyklu (viz kap. 7.7) a jejich ko-
+nečným produktem je v Calvinově cyklu vždy ribulosa-S-fosfát (RušP). RušP je dále fosfory-
+lován pomocí ATP-dependentní kinasy na ribulosa-LS-bisfosfát, výchozí sloučeninu celého děje
+a cyklus je tak vlastně uzavřen. ; A 3
+210 A
+
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwa Ee 2 cz/

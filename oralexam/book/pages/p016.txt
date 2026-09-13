@@ -1,0 +1,47 @@
+Při zkoumání živé hmoty se musí badatel vypořádat s faktem, že organismus existuje pouze
+v interakci se svým okolím a jako celek, a bylo by jej proto záhodno studovat v těchto jeho vaz- —
+bách (systémový přístup). Naproti tomu z praktických důvodů je výhodně jednotlivě aspek-
+ty existence organismu a jeho životní funkce co nejvíce izolovat od dalších vlivů a studovat je
+odděleně (redukcionismus). Biochemie jako celek je (alespoň prozatím) spíše výrazem reduk-
+cionistického přístupu ke zkoumání života. Poznatky získané studiem izolovaných reakcí (čas-
+to ve značně zjednodušených modelových systémech ve zkumavce neboli m vliro) je proto tře- :
+ba konfrontovat s výsledky pozorování a pokusů v přirozeném prostředí (i vívo) a zařazovat je :
+do systému již známých biochemických reakcí. V soudobě biochemii získává na významu také )
+studium počítačových modelů („/n silico modeling“"). Ť
+| 1.4 Výživa a metabolismus
+Charakteristickým rysem života je využití energie, přijímané zvnějšku, k vytváření vlastního
+organismu. Přitom se sloučeniny, získávaně organismem, přeměňují na jeho konstituenty nebo :
+jsou využívány jako zdroj energie. I ve velmi jednoduchém organismu, jakým je např. Esche-
+richia coli, je k tomu potřeba koordinovaného využití více než tisíce chemických reakcí; jejich |
+souhrn je označován jako přeměna látková (metabolismus). |
+Z hlediska postavení jednotlivých sloučenin v metabolismu je možno mluvit o substrátech |
+či živinách (také asimilátech), meziproduktech čili intermediátech (které mohou sloužit jako
+prekurzory biologických makromolekul, pro uchování energie v chemicky využitelné formě,
+nebo jako prostředky pro přeměnu jednoho typu biologicky významných sloučenin na jině), |
+vlastních stavebních látkách a odpadních produktech (disimilátech). Toto dělení je však do jis-
+té míry relativní — tatáž látka může být z hlediska syntetických reakcí (anabolismus) produk-
+| tem, z hlediska odbourávacích pochodů (katabolismus) substrátem. Kromě toho pochopitel-
+| ně platí, že jednodušší látky jsou substráty v reakcích, v nichž vznikají složitější meziprodukty,
+| které mohou být substráty pro látky ještě složitější. Jako základní substráty označujeme tzv.
+anorganické látky (vodu, oxid uhličitý, amoniak, soli), obecně látky s nízkým obsahem che-
+micky využitelné energie. Zvláštní význam mají makroergické sloučeniny, z nichž lze naopak
+biochemickými pochody relativně snadno získat značné množství energie, a které slouží orga-
+nismům jako jakési univerzální „energetické platidlo“ pro přenos a uchovávání energie. Vět-
+šina biochemických reakcí probíhá jen v přítomnosti katalyzátorů, vesměs jde o enzymy, tj.
+specializované proteiny.
+Z hlediska způsobu výživy (označovaného také jako trofika), tedy podle povahy přijíma-
+ných živin rozlišujeme organismy autotrofní (litotrofní), které jsou producenty sloučenin ob-
+sahujících hydrogenovaný uhlík (jako zdroj uhlíku využívají oxid uhličitý), a heterotrofní
+(organotrofní), které jsou konzumenty organických sloučenin, vytvořených autotrofy, Podle
+toho, co je zdrojem energie pro asimilaci, rozlišujeme fototrofy (využívají světelného záření
+v procesu fotosyntézy) a chemotrofy (energii získávají oxidací substrátů). Možné kombinace
+uvádí tab. 1.4 spolu s příklady organismů.
+Jiným významným faktorem metabolismu je vztah organismu ke kyslíku. Jako striktní
+anaeroby označujeme organismy, které mohou růst a množit se jen v nepřítomnosti kyslíku,
+| pro některé z nich je kyslík již ve stopách prudkým jedem. Většina striktních (obligatorních)
+| anaerobů patří k primitivním prokaryotickým mikroorganismům, některé z nich jsou nebezpeč-
+né patogeny. Fakultativně anaerobní jsou organismy (např. kvasinky), které podle vnějších
+podmínek mohou využívat alternativních metabolických schémat. Většina organismů (včetně
+člověka) je obligatorně aerobních a kyslík ke svému životu nezbytně potřebují.
+l6
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

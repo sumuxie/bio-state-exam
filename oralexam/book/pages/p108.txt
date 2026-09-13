@@ -1,0 +1,45 @@
+ce GU na 5'-kraji a neměnné sekvence AG na jeho 3'-kraji. Tyto sekvence jsou nezbytné a po- A
+stačující pro definici místa sestřihu, Sestřih je zprostředkován malými jadernými ribonuklopro-
+teiny (snRNP). Probíhá v částicích se sedimentačním koeficientem 50—60S, které se nazývají |
+spliceosomy (od „splicing“, sestřih, spájení střihem). Spliceosom obsahuje pre-mR'NA, snRNA |
+a různé proteiny vázající se na pre-mRNA. a
+Vedle úpravy hnRNA na funkční mRNA, která probíhá v jádře, je proteosyntéza regulována |
+i selektivním transportem mRNA do cytoplazmy. 3
+V poslední době se rovněž uvažuje, že malá frakce hnRNA se může vyhnout úpravě. V její 3
+molekule zůstávají některé introny, které potom při translaci tvoří určité úseky aminokyselino- |
+vých sekvencí bílkovin. Mohou tedy vznikat příbuzné bílkoviny s vyšší molekulovou hmotnos-
+tí. Z tohoto mechanismu vyplývá, že jeden gen by mohl kódovat několik proteinů. 3
+Ke změnám v proteosyntéze dochází většinou v průběhu vývoje a diferenciace buněk euka- |
+ryontů. Tyto změny se většinou týkají celého souboru enzymů a jejich regulace je řízena hor-
+monálně. Hormony (viz kap. 10) mohou působit obdobně jako u eukaryontů korepresory, tj. a
+v komplexu represor-hormon a tím mohou ovlivňovat přepis příslušných strukturních genů. A
+Komplex represor-hormon (receptor-hormon) může působit buď přímo na DNA nebo ovliv. —
+nit aktivitu enzymu proteinkinasy, která fosforyluje určité bílkoviny, které se váží na DNA |
+a ovlivňují transkripci. Hormony rovněž ovlivňují (aktivují) enzym vázaný v membránách —- —
+adenyláteyklasu (enzym katalyzující syntézu cAMP). cAMP ovlivňuje proteinkinasu obdob- —
+ným způsobem jako hormony. Další regulace je tedy zprostředkována cyklickým AMP. cAMP ž
+působí jako efektor u většiny organismů. |
+Vedle regulace na úrovní tvorby funkční mRNA a hnRNÁ u eukaryontů se pří kontrole ž
+translace uplatňuje též tzv. proinhibitor a inhibitor iniciace tvorby polypeptidového řetězce
+Tímto inhibitorem je enzym proteinkinasa, která není regulována cAMP. Proinhibitor se mční: >
+na inhibitor fosforylací, kterou naopak katalyzuje jiná proteinkinasa (dependentní na cAMP). :
+4.3 Posttranslační modifikace a transport proteinů 3
+Proteosyntéza vychází z 20 geneticky kódovaných aminokyselin. Kromě těchto aminokyselin A
+se však v bílkovinách vyskytují ještě jejich deriváty a struktura biologicky aktivního proteinu —
+se v řadě případů odlišuje od struktury nascentního proteinu. K přeměně nascentního v bolo- >
+gicky aktivní protein dochází velmi významnými procesy, na kterých se již nepodílejí nukleo- —
+vé kyseliny, a které se souhrnně nazývají posttranslační modifikace. Boční řetězce aminokyse- ]
+lin však mohou být modifikovány již v komplexech aminoacyl-tRNA, ale nikoliv před jejich —
+vznikem. :
+Posttranslační modifikace je možné rozdělit na tři druhy procesů: i
+— nekovalentní interakce, které určují prostorové uspořádání polypeptidového řetězce, i
+asociaci a agregaci jednotlivých řetězců a nekovalentní interakci s ligandy 1
+— kovalentní modifikace základní kostry polypeptidového řetězce, která se uplatňuje ze- 1
+jména při transportu proteinů mimo buňku É
+— kovalentní modifikace bočních řetězců aminokyselin J
+4.3.1 Nekovalentní interakce a uspořádání peptidového řetězce do biologicky aktivní 3
+formy 1
+Prostorové uspořádání polypeptidového řetězce je v zásadě určeno sekvencí aminokyselin. :
+Bylo však zjištěno, že jen některé proteiny, většinou malé a jen několik složitějších bílkovin,
+108 7
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwaré cz/

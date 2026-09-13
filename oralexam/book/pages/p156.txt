@@ -1,0 +1,38 @@
+7.4.1 Homopolysacharidy :
+A. Zásobní polysacharidy 3
+Škrob — je zásobní polysacharid rostlin složený z D-glukosových jednotek, který obsahuje d a
+typy glukanů: :
+
+a) amylosa se skládá z dlouhých nerozvětvených řetězců, ve kterých D-glukosové zbytky
+jsou vázány u(l->4) vazbami. Řetězec amylosy je polydisperzní a liší se v rel. mol. hmot-
+nosti (od několika tisíc do 500 000). Amylosa ve vodě tvoří hydratované micely, které po-
+skytují s jodem modré zabarvení. V těchto micelách je polysacharidový řetězec stočen do
+tvaru šroubovice. S
+
+b) amylopektin má molekulu větvenou (na rozdíl od amylosy). Základní řetězec je tvořen -
+(124) glykosidovými vazbami, na který se navazují a(l->6) vazbou postranní řetězce
+obdobně jako v případě glykogenu (víz obr. 7.8). Větve jsou přibližně 12 D-plukosových
+zbytků dlouhé a k větvení dochází přibližně na každém 12. D-glukosovém zbytku, Amy-
+lopektin tvoří v roztoku také micely, které poskytují s jodem červeno-fialové zabarvení.
+Rel. mol. hmotnost může být až 1 000 000. a :
+
+Glykogen — je živočišný zásobní polysacharid; je rezervní látkou uloženou především vjáte
+rech a ve svalech. Struktura glykogenu připomíná strukturu amylopektinu, ale na rozdíl od něj,
+je glykogen mnohem více větvený; k větvení dochází na každém 8.-10. D-plukosovém zbyt-
+ku (viz Obr. 7.8). Rel. mol. hmotnost glykogenu je velmi vysoká; svalový glykogen přibližně
+1 000 000, jaterní — přibližně 16 milionů. Přesto jsou glykogeny rozpustné ve vodě; molekuly
+mají tvar plochého elipsoidu. +
+My vazba a-1,6 I
+H Ť
+s Ho 3
+u H H %
+0— :
+vazba a-1,4 1
+| Obr. 7.8 Glykogen — místo větvení a
+Dextrany — jsou zásobní polysacharidy kvasinek a bakterií; skládají se také z D-glukosových |
+jednotek, které jsou však převážně vázány a(l->6)glykosidovou vazbou. Mohou být výjimečně —
+rozvětvené, s místem větvení (1-2), (1-23) nebo (l2+4), v závislosti na původu. I
+Inulin — je rostlinný polysacharid složený z D-fruktosových jednotek, které jsou vázány ji2-=—1) I
+glykosidovými vazbami; řetězec inulinu je zakončen D-glukosovým zbytkem, resp. sacharosou.
+l56 I
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.softwaret cz/

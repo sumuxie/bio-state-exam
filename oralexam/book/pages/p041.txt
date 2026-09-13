@@ -1,0 +1,34 @@
+[| 03. ENZYMY
+| * Enzymy jsou proteiny specializované pro katalýzu reakcí probíhajících v živých organismech.
+Jj Jsou to velmi pozoruhodné biomakromolekuly s vysokou specifitou účinku a vysokou kata-
+W lytickou účinností. V roce 1926 byl izolován první enzym v krystalickém stavu, byla to urca-
+= sna izoloval ji Sumner, ve třícátých letech byly získány další krystalické enzymy, a to trypsin,
+| pepsina chymotrypsin. Od té doby až dodnes bylo objeveno a popsáno více než 3000 enzymů,
+= i když zdaleka ne všechny byly připraveny v čistém stavu.
+| A 3.1 Klasifikace a názvosloví enzymů
+a Enzymy jsou rozděleny do šesti hlavních tříd podle toho, jakou reakci katalyzují. V tomto tří-
+M dění je každému enzymu přidělen jednak systematický název, který charakterizuje katalyzova-
+| nou reakci (tento název bývá velmi dlouhý a složitý), jednak doporučený název, který se použí-
+| vá v běžné praxi, a konečně kódové číslo, které enzym jednoznačně identifikuje.
+|“ Např. reakci:
+A L-laktát + NAD“ = pyruvát + NADH + H*
+| A katalyzuje enzym, jehož systematický název je L-laktát:NAD"-oxidoreduktasa, doporučený ná-
+| zev je laktátdehydrogenasa a kódové čislo je E.C.1.1.1.27. První číslo kódu značí hlavní třídu
+| A enzymů, druhé číslo podtřídu, v tomto případě oxidaci primární alkoholické skupiny, třetí čís-
+| A lo určuje typ akceptoru vodíku, v tomto případě se jedná o enzym spolupracující s nikotinami-
+A dovými koenzymy a čtvrté číslo je pořadové číslo konkrétního enzymu v daně podpodskupině.
+1 > = L Oxidoreduktasy
+= jsou enzymy, které katalyzují oxidoredukční reakce, tj. přenos elektronů, přenos vodíku nebo
+| reakci s kyslíkem. Systematický název se tvoří podle vzoru:
+donor: akceptor-oxidoreduktasa. :
+= Např. reakci:
+A +“ ethanol + NAD“ = acetaldehyd + NADH + H*
+a katalyzuje enzym
+3 ethanol : NAD*-oxidoreduktasa (alkoholdehydrogenasa).
+| J 2 Transferasy
+| jsou enzymy, které katalyzují přenos skupin, Systematický název se tvoří podle vzoru:
+| - donor; akceptor skupina-transferasa.
+| 3 Např. reakci:
+* hexosa + ATP -+ hexosa-(P)+ ADP
+1 al
+| Ytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

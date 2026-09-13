@@ -1,0 +1,43 @@
+RNA úiKNLA |
+o Adenine o Adenine ]
+j ! z O :
+o HH ——- o H H + mo-0H 3
+H H Hr H | H jí :
+0 08 sFz HO OH sů :
+7 | 3
+ROH H NH 3
+c=0 i é
+Rua CH Polypaptide a
+NH j
+Poptidyl-tRNA 1
+Obr. 4.45 Na ribosomu je katalyzována hydrolýza peptidyl-:RNA za vzniku polypeptidu a vol- |
+ně (RNA, ]
+Yzniklý polypeptid má na svém začátku stále vázaný formylmethionin. V různých biologic- |
+kých druzích je začátek peptidového řetězce upraven do definitivní formy účinkem hydrolytic-
+kých enzymů, které odštěpují buď formylový zbytek či formylmethionín či dokonce několik: =
+počátečních aminokyselin, a
+Popsané proteosyntetické procesy jsou typické pro prokaryontní buňky. V eukaryontních —
+buňkách probíhá proteosyntéza podobně, ale s určitými rozdíly (např. eukaryontní ribosomy
+mají mnohem větší skupinu iniciačních faktorů, elF, ve vazbě mRNA a komplexu eIF-2, GTP: >
+a Met--RNAM k podjednotce 40 5, eukaryotní mRNA nemají sekvenci odpovídající Shine- —
+-Dalgarově sekvenci, která by se vázala na 18 S-rRNA, ale úlohu v rozpoznání iniciačního mís- —
+ta hrají podjednotka eIF-4F, jež interaguje s čepičkou (viz dále), a migrace podjednotky 40 S. |
+poděl sekvence mRNÁ, u eukaryontů je na začátku polypeptidového řetězce methionin místo-
+formylmethioninu). Rozdílem mezi proteosyntězou eukaryontních a prokaryontních organizmů: —
+je rovněž místo proteosyntézy. Bylo řečeno, že k biosyntěze bílkovin dochází na ribosomech —
+(ev. polysomech). V buňkách eukaryontů se ribosomy vyskytují buď volné nebo vázané na po- —
+vrch endoplasmatického retikula (drsné endoplasmatické retikulum). Prokaryontní buňky ne- —
+mají systém endoplasmatického retikula, proto v těchto buňkách proteosyntéza probíhá pouze i
+na volných ribosomech (polysomech). j
+4.2.4 Regulace proteosyntézy I
+Regulace na úrovní transkripce probíhá v podstatě dvěma způsoby. Negativní regulací (re-
+presi) dochází k brzdění transkripce DNA na mRNA a pozitivní regulací (stimulací) se na- |
+opak působením regulačního proteinu urychluje přepis DNA na mRNA, Obě tyto kontroly =
+zabezpečují, aby se určité proteiny v buňce nesyntetizovaly zbytečně, či naopak se jich nedo- =
+stávalo. : A
+První přiblížení vysvětlení mechanismu regulace proteosyntězy na úrovní transkripce vychá-  —
+zí z popsání dějů označovaných jako indukce enzymů (indukce biosyntězy proteinů). I
+Regulace genové exprese je popsána hypotetickým mechanismem Jacoba a Monoda, který = —
+byl odvozen z experimentů sledujících indukci enzymů metabolismu laktosy a byl již částečně: <
+experimentálně ověřen pro prokaryontní buňky. :
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwareG cz/

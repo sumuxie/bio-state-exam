@@ -1,0 +1,39 @@
+| pi echázejí spontánně do biologicky aktivní konformace, která je shodná s konformací o nejniž-
+k: |= Šlenergii. U řady dalších proteinů bylo zjištěno, že jejich biologicky aktivní konformace není
+č = shodná s energeticky nejvýhodnější konformací. Uspořádání čerstvě vytvořeného (nascetní-
+F = ho) peptidového řetězce se uskutečňuje řízeným způsobem. Různé druhy závažných neurolo-
+MŠ = Bických onemocnění jsou právě zapříčiněny nesprávným uspořádáním proteinových struktur,
+p a | Teprve poměrně nedávno se podařilo prokázat existenci specifických proteinů, které během
+3 = posttranslační modifikace v endoplasmatickém retikulu (ER) katalyzují „sbalení“ (angl. „fold
+É = ing) polypeptidového řetězce do potřebně, biologicky aktivní formy. Proteiny takové skupiny
+: = byly nazvány chaperony (viz obr. 4.52).
+j A ž (a) ©
+: 0) ribosom -
+S A L A
+> A kl ATP ;
+| A (9 (ohaperoní. částečně nativní
+; A P protei sbalený protein
+d va přokém protein
+T (b) nativní
+| A p protein p: ADP protein
+3 L 4 1 s]
+| je | ATP -M
+F — GroES  (chaperonin)
+= GroEL :
+| A Obr. 4.52 Úprava (sbalení) nascentního peptidového řetězce za účasti chaperonu (a) a chape-
+| + Chaperony a chaperoniny jsou evolučně konservované proteiny, které se vyskytují v eukary-
+: = otnich i prokaryotních buňkách. Jejich působení spočívá v rozpoznávání a stabilizaci částečně
+: = sbalených proteinových strukturních intermediátů a účastní se i oprav nesprávně upravených
+: = peptidových řetězců.
+| Další skupinu tvoří peptidylprolyl-cis,trans-izomerasy (PPlasy)., katalyzující rotaci kolem
+= specifické peptidové vazby. Tyto proteiny jsou široce rozšířeny od bakterií až po buňky sav-
+| = ců. Všechny X-Pro vazby (X — jakýkoliv aminokyselinový zbytek) jsou syntetizovány v trans
+> konfiguraci. Avšak asi 6% X-Pro vazeb v nativních proteinech se vyskytuje v cis konfiguraci,
+| = nejčastěji v f-otáčkách. Cis-trans izomerace je katalyzována prolin-cis,trans-izomerasou (viz
+1 obr. 4.53). Ž
+ů S Ke stabilizaci a vzniku biologicky aktivních forem přispívá významně r kovalentní modifi-
+A A kace sulfhydrylových skupin oxidací na disulfidové vazby (kap. 4.3.3.). Tvorba —S—-S— vazeb
+= však nění specifická. Enzym katalyzující výměnu disulfidické vazby mezi dvojicemi cysteino-
+= vých zbytků (protein-disulňd-izomerasa) usnadňuje vytvoření vazeb, které stabilizují nativní
+| konformaci proteinu (viz obr. 4.54).
+) ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/vww.software602.cz/

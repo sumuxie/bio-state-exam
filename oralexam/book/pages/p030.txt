@@ -1,0 +1,16 @@
+P-Struktura (struktura skládaného listu)
+Hlavní polypeptidový řetězec je v modelu B-struktury skoro úplně rozvinut. Tato struktura je
+stabilizována tvorbou vodíkových vazeb mezi CO a NH skupinami dvou různých peptidových
+řetězců. Kdyby řetězce byly nataženy úplně, zbylo by málo prostoru postranním řetězcům;  —
+zvrásněný model však umožňuje dostatek prostoru i pro postranní řetězce.
+Sousední řetězce v fi-struktuře mohou mít stejný směr, vzniká paralelní f-struktura  —
+(obr. 2.10). i
+| PYSKY TE V TTU
+PW OW 00 |
+| -kb P k | |
+Ů Obr. 2.10 Model paralelní [i-struktury
+| Nebo mohou mit opačný směr — výsledkem je pak antiparalelní fi-struktura (viz obr, 2.11).
+| a BLR A 25 a 80
+| há
+jit] Obr. 2.11 Model antiparalelní fi-struktury
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

@@ -1,0 +1,47 @@
+1 A Motion af
+
+ia A ooo. (oji||ilation
+
+T „mmm |
+
+a 2 Leading strand | fl 1
+
+| A Lagging strand | |
+
+„-— a , ; 5 Parental strands
+
+A von n T
+
+A — Obr, 4,22 Při replikaci DNA jsou obě dceřiná vlákna syntetizována ve směru 5'—3". Vedoucí
+>P (leading) vlákno je syntetizováno nepřetržitě, zatímco opožďující se („lagging“) vlákno vzni-
+= | © kápostupně (po částech).
+
+i : Velmi důležitou skutečností je požadavek DNA polymeras na volnou 3"-OH skupinu. Proto
+>| sev místě natavení (rozvinutí) dvoušroubovicové DNA syntetizuje krátký úsek RNA o délce
+-P až 60 nukleotidů, který slouží jako tzv. startér (primer) (obr. 4.23). Prokaryotické organismy
+a = (např, E. coli) obsahují dva enzymy, RNA polymerasu — enzym, který zajišťuje transkrip-
+= W ci (viz dále), a též mnohem menší primasu. Předpokládá se, že na syntéze primerů se podíle-
+> | © ji oba enzymy.
+
+A RNA pronoř ú | | | d | | 5
+
+| „mmm -
+
+; A Okazaki fragment X
+
+Ň 4. Obr. 4.23 Zahájení syntézy DNÁ syntézou primerů
+
+= | Poté dochází k vazbě DNA -polymerasy III, která začíná syntézu DNA a utvoří úsek DNA o po-
+of čtu nukleotidů asi 1 000 až 2 000. Tyto úseky se nazývají Okazakiho fragmenty (obr. 4.23).
+| V další fázi se odbourává startér a DNA-polymerasa I syntetizuje DNA v mezerách po starté-
+o | © rové nukleové kyselině. Mezery po startérové nukleové kyselině se tak zcela vyplní(obr. 4.24).
+A DNA-ligasa spojí konce úseků DNA (Okazakiho úseků a úseků DNA vzniklých v meze-
+of  rách po startéru). Tak se postupně vyplní (zdvojí) „natavený“ úsek DNA, DNA se otevírá v dal-
+>| ší části své molekuly a děj probíhá obdobně dále. Replikace DNA je však mnohem složitějším
+| | © procesem, a to jak v organismech prokaryotických, tak především v organismech eukaryo-
+-| tických. Na obr. 4.25 je zjednodušeně znázorněna replikace DNA v prokaryotním organismu
+M E coli.
+
+: a 83
+
+) ořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software602.cz/

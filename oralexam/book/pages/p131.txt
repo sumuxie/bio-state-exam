@@ -1,0 +1,45 @@
+| 6.1.1 Reakce exergonické a endergonické
+
+A živé hmotě neprobíhají jednotlivé reakce izolovaně, ale jsou součástí systémů:
+
+| lineárních: | A-B=>C>D..
+
+| ozvětvených: A—B=C-D...
+
+| acyklickýchh A- Ba Co- : > E
+A Za těchto podmínek mohou současně probíhat reakce termodynamicky nevýhodné, ender-
+= gonické, jejichž AG" > 0, na účet reakcí spontánně probíhajících, exergonických, jejichž
+= AGW'< 0. Principem tohoto spřažení je plynulé odstraňování produktů endergonické reakce re-
+= akcí exergonickou. Významným termodynamickým faktem je totiž skutečnost, že celková změ-
+= na Ciibbsovy energie řady reakcí je rovna součtu AG" jednotlivých reakčních stupňů:
+Aa AG (kJ, mol"
+= Endergonickáreakce: = glukosa+Pi | = glukosa-6-fosfát + H,O +13,8
+= Exergonickáreakce: = ATP+H,O | = ADP+Pi -30,5
+
+= Spřažená reakce: glukosa + ATP. = glukosa-6-fosfát + ADP -16,7
+A Výsledná spřažená reakce při odbourávání glukosy v glykolýze katalyzovaná hexokinasou je
+= čxergonická.
+| AG" chemické reakce znamená maximální práci, která může být teoreticky vykonána při
+A izotermicko-izobarickém provedení děje.
+
+A 6.1.2 Makroergické sloučeniny
+
+A Spřažení exergonických a endergonických reakcí (kap. 1.5 a 6.1.1) nemusí být vždy bezpro-
+= střední a přímé. V žitých systémech funguje několik metabolitů, které mají schopnost Gibbso-
+= Wu energii ve své molekule akumulovat, uchovat, přenášet a v případě potřeby uvolňovat. Tyto
+= metabolity jsou v energeticky nestabilním stavu, přičemž v přechodu do stabilního stavu může
+= bránit jediná chemická vazba, která se mnohdy nazývá makroergická a značí se malou vlnov-
+
+. | kou. Zrušením takové makroergické vazby se systém stabilizuje, uvolní se Gibbsova energie,
+= která se využije např. při endergonické reakci,
+
+A | Atomy seskupené kolem tzv. makroergické vazby jsou však angažované v dalších kovalent-
+= hích interakcích a tak makroergičnost je obvykle vlastností většího úseku molekuly, Mluvme
+= tedy správněji o makroergických sloučeninách než o makroergických vazbách. U makroergic-
+= kých sloučenin byly nalezeny vysoké hodnoty AGP" hydrolýzy, v rozmezí 30 až 60 kJ.mol“' na
+
+| = | vazbu. Hydrolýza nemakroergických sloučenin nepřesahuje obvykle 12 kJ.mol'' na l vazbu.
+
+| A Makroergických sloučenin je několik typů (obr. 6.1):
+
+: e no pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/Mvww.software602.cz/

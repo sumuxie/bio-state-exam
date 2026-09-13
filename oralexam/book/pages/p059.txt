@@ -1,0 +1,29 @@
+| A = kud
+| A A 6 B 10 : rů 6
+| pe. zátoru a rychlost enzymové reakce začne klesat. Teplotní optimum enzymu je tedy výsledkem
+W těchto dvou protichůdných procesů, jeho hodnota závisí na uspořádání experimentu. Většina
+W enzymů je inaktivována kolem 55—60 *C, i když existují enzymy, většinou z termofilních bak-
+= terií, které jsou aktivní i při 85 "C.
+W 3.5 Inhibice enzymových reakcí
+AE Látky, které ovlivňují rychlost enzymové reakce tím, že interagují s katalyzátorem, se nazývají
+W modulátory. Ty, které rychlost zvyšují, jsou aktivátory, ty, které ji snižují, jsou inhibitory. Dále
+W budeme mluvit pouze o inhibitorech, v praxi se vyskytují mnohem častěji, ale všechny údaje
+o platíi pro aktivátory pouze v opačném smyslu.
+i A Interakce inhibitoru s enzymem může být dvojího typu:
+T% a) ireverzibilní, tzn. inhibitor se váže velmi pevně většinou kovalentně na enzym, modifiku-
+W je jeho funkční skupiny a tím jej inaktivuje, Pro tyto děje neplatí rovnice Michaelise a Mente-
+-— nové, protože se mění koncentrace aktivní formy enzymu. Ireverzibilní inhibice se využívá ke
+W studiu struktury enzymu. Působení některých bojových chemických látek má charakter irever-
+W- zibílní inhibice enzymů nervových tkání.
+T. b) reverzibilní inhibitor se váže na enzym slabými interakcemi. Reverzibilní inhibitory po-
+| skytují cenné údaje o substrátové specifitě i struktuře aktivního centra enzymu. Reverzibilní in-
+= hibice enzymů specifickými metabolity je důležitým nástrojem regulace intermediárního meta-
+E bolismuí podstatou působení některých léků.
+T Na působení revertzibilních inhibitorů Ize aplikovat rovnici Michaelise a Mentenové. Z kine-
+| tického hlediska lze reverzibilní inhibitory dělit na několik typů, v principu podle toho, se kte-
+E rou formou enzymu inhibitor interaguje.
+| A E+A=—=——"= EFA —————>rE+xX
+a | |
+o. o
+* El EAI
+| tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

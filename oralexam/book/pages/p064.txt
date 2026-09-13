@@ -1,0 +1,42 @@
+Jiným typem kovalentně modulovaných enzymů jsou některé proteasy, které jsou organis- 1
+mem syntézovány ve formě neaktivních zymogenů nebo proenzymů a teprve v případě potře- —
+by jsou aktivovány. Aktivace se opět děje v enzymově katalyzovaných reakcích, má charakter |
+hydrolytického odštěpení částí peptidového řetězce, takže se tím odhalí vlastní aktivní centrum-
+enzymu. Tento typ regulace je tentokrát nevratný a je typický např. pro trypsin, chymotrypsin, |
+pepsin (enzymy z procesu trávení) nebo pro některé enzymy uplatňující se v mechanismu srá- |
+žení krve ap. (obr. 3.8). Ť
+
+S- -5 1
+
+Sme S<y :
+
+zymogen aktivní enzym |
+
+3.7.3 Izoenzymy J
+V jednom organismu, dokonce v jediné buňce je někdy možně detegovat násobné formy en- ]
+zymu. Tím se myslí proteiny separovatelné chemickými nebo fyzikálně-chemickými metoda- i
+mi, které mají stejnou enzymovou aktivitu. Důvodů této heterogenity může být několik (viz
+tab. 3.2). 3
+Tab. 3.2 Násobné formy enzymů |
+|
+1. Geneticky nezávislé proteiny Malátdehydrogenasa v mitochondriích a v ocytoplasmě |-
+2, Polymerní proteiny tvořené více typy Ť
+podjednotek Laktátdehydrogenasa |
+
+; Glutamátdehydrogenasa o molekulové hmotnosti 1
+
+Heterogenita enzymů může být tedy podmíněna geneticky (příklad 1. a 2.) a nebo jí způsobí I
+posttranslační modifikace proteinu (příklad 3. a 4.). Ť
+Isocnzymy jsou definovány jáko enzymově aktivní proteiny, které katalyzují tutěž chemic- —
+kou reakci a vyskytují se v jednom organismu. Tyto proteiny se však liší fyzikálně-chemickými =
+vlastnostmi, což je způsobeno geneticky podmíněnými rozdíly v primární struktuře. ]
+
+Někdy jsou ovšem jako isoenzymy označovány formy enzymu, u kterých důvod heteroge- |
+nity nění znám.
+
+Isoenzymy se mohou lišit kromě primární struktury, svou afinitou k substrátům, koenzy- |
+mům nebo inhibitorům. Mohou mít rozdílnou termální nebo chemickou stabilitu. Toho lze vyu- —
+žít k jejich separaci i stanovení. Nejčastěji se k separaci isoenzymů používá elektroforézy a ná- —
+sledného specifického histochemického barvení elektroforeogramů.
+ó4 |
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software604cz/

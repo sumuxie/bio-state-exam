@@ -1,0 +1,35 @@
+1 ab. 6.2 Biologicky významné oxidoredukční systémy a jejich charakteristika
+lě
+p Redukovaná forma |Oxidovanáforma | BV) | A0 |
+[acetaldehyd— |acetát | -0,60 | -hodnoty | vyšší
+[soát | 2:oxoglutarát+ C0,
+| | olutathion-SH glutathion-SS
+= | olyceraldehyd-3-fosfát + H„PO, | 1,3-bisfosfoglycerát | -0,28 | w||S
+a +ne- || -ne a ||ma
+á cytochrom b(Fe*) | 0,00 | bs
+= |eytochrom c (Fe)
+jee m | 0 [+029] + hodnoty
+| Bo [60] [+082 | (oxidens) | nižší v)
+A U sloučenin uvedených v této tabulce budou spontánně přecházet elektrony ze systému, kte-
+| rý má negativnější redoxpotenciál (redukční činidlo, reduktans) na systém, který má vyšší re-
+= oxpotenciál (oxidační činidlo, oxidans). K ose standardních redoxpotenciálů lze ještě přiřadit
+| paralelní osu hodnot standardní Gibbsovy energie. Na rozdíl od osy E, která má výchozí bod
+| určený konvencí, kde E?tzv. vodíkové elektrody je O mY (ale v biologických systémech E?' vo-
+= díkové elektrody = -420 mV) nemá osa AG" pevný výchozí bod a lze na ni přiřazovat pouze
+= hodnotám rozdílů E" hodnoty AG" podle vztahu:
+A AG = z nFAEY
+= Organismy získávají tedy energii oxidačním štěpením živin, které při tom přecházejí na základ-
+= ní produkty s nízkým obsahem energie. Hlavní typy živin mohou být oxidovány podle těchto
+= sumárních rovnic:
+= Glukosa (anaerobně)— laktátové kvašení AG" (kF.mol")
+: CH 0, m 2 CH,-CHOH-COOH —196,6
+= Glukosa (acrobně)
+p] : CH O, +60,6CO0,+6 HO -2 870
+ž Kyselina palmitová
+ě C „HH O, +230,- 16 CO,+ 16 H,O -11 340
+7 Alanin
+3 -CHO N+30,23C0,+2H0+NH, -1 046
+J Množství Gibbsovy energie, které lze teoreticky získat je značně veliké. Jak už bylo řeče-
+s no, organismus však může zachycovat a využívat energii jen v určitých kvantech, řádově
+| 135
+ytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

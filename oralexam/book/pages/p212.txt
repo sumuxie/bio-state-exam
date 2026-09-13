@@ -1,0 +1,44 @@
+FóP ————> cóF—>—>——> glukosa : 7 A
+—> celulosa vm ja
+—— obecné metabolické dráhy - glykolýza jé A
+9.2 Fotorespirace S A
+V posledních letech bylo zjištěno, že většina rostlin je schopna v době osvětlení vedle fotosyn- B.
+tetické produkce kyslík i spotřebovávat. Důvody zatím nejsou zcela jasné. Proces se nazývá | AA
+fotorespirace a liší se podstatně od respirace mitochondrií (dýchacího řetězce, viz kap. 6). Za- — "1%
+hrnuje tři enzymy: RubisCO (který má kromě karboxylasové aktivity ještě aktivitu oxy genaso- — :»
+vou — odtud plný název enzymu ribulosa-l,S-bisfosfátkarboxylasa/oxygenasa), fosfoglykolát- — a
+fosfatasu a glykolátoxygenasu (obr. 9.7). A A
+Enzymem RubisCO je RuBP oxygenován a rozpadá se na 3-fosfoglycerát a fosfoglykolát. — %
+Fosfoglykolát je hydrolyzován na glykolát a pomocí enzymu glykolátoxygenasy vzniká gly- — >
+oxylát. :12ma) A
+Sekvence těchto reakcí se zdá být pro rostliny zcela neužitečná, navíc je kompetitivní vzhle- — M
+dem ke Calvinově cyklu, neboť využívá stejný substrát, RuBP. Fotorespirace však pravděpo- A o
+dobně chrání fotosyntetický aparát před škodlivou fotooxidací, když není dostatek CO, a je A
+i cestou rostlinné biosyntézy aminokyselin glycinu a serinu. AE -A
+Fotorespirace probíhá v chloroplastu, peroxisomu a v mitochondrií (viz obr. 9,7). "A A
+9,3 Alternativní způsob fixace CO, A %
+Calvinův cyklus není jediným mechanismem asimilace CO,. V r. 1970 M. Hatch a C. Slack ob- — A
+jevili, že některé rostliny jsou schopny fixovat CO, cestou, která nevyužívá tříuhlíkaté mezi- — KA)
+produkty, ale čtyřuhlíkaté sloučeniny malát (event. aspartát). Podle toho se tyto rostliny nazý-  — -a
+vají rostliny C-4. ZA A
+Primárním akceptorem CO, je fosfoenolpyruvát (PEP) a produktem je oxalacetát, reakci ka- i. AA
+talyzuje enzym PEP-karboxylasa (obr. 9.8). Oxalacetát může být metabolizován dvojím způso-  — -
+bem, buď cestou vedoucí přes transaminaci k aspartátu nebo přes hydrogenací ke malátu. Tuto — A
+redukci zajišťuje enzym malátdehydrogenasa, využívající koenzym NADPH. Malát je poté de- A
+karboxylován na pyruvát a uvolní se CO,. Pyruvát je fosforylován pyruvátřosfátdikinasou za A i.
+vzniku PEP a spotřeby ATP. Cyklus regenerace primárního akceptoru CO, se tak uzavírá. 4
+Dosud bylo objeveno více než 100 druhů rostlin využívajících C-4 fixaci CO, Jedná se —
+o rostliny žijící v oblastech s horkým klimatem — v tropech a pouštích. Jsou to především tro- — vákA
+pické trávy (např. cukrová třtina) a kaktusovité rostliny (sukulenty). Otázkou je, proč tyto rost- A
+liny fixují CO, prostřednictvím PEP a vzápětí opět CO, uvolňují a využívají normálním způso- W-
+bem Calvinův cyklus. Důvodem je zvýšení účinnosti fixace CO, v oblastech s vysokou sluneční — 3
+radiací, s vysokými teplotami a omezenou dodávkou vody. V těchto podmínkách je rychlost W-
+fixace CO, u C-4 rostlin vůči C-3 rostlinám asi dvojnásobná. Jedním z důvodů je i schop-
+nost PEP-karboxylasy využívat nižší koncentrace CO, (nižší K), než vyžaduje RubisCO. Tato = Ja
+schopnost umožňuje, že průduchy listů, kudy proniká CO, do listu, jsou otevřeny jen minimál- 4%
+ně, aby nedocházelo k enormnímu odpařování vody z těla rostlin. Mechanismem C-4 se tak “. MM
+vlastně zakoncentrovává CO, pro činnost RuBPkarboxylasy v Calvinově cyklu. C-4 rostliny 0
+jsou i vhodně anatomicky ke své činnosti uzpůsobeny. Mezi povrchovými buňkami epidermu F%
+a vaskulárním pletivem se nacházejí dvě vrstvy odlišných buněk — buňky mezofylové a buňky R
+212 Jr
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.softwal 92.cz/

@@ -1,0 +1,47 @@
+domény — u některých peptidových řetězců je část peptidového řetězce uspořádána do dvou: |
+nebo více kompaktních globulárních oblastí, které byly spojeny flexibilním segmentem řetěz- |
+ce; kompaktní globulární oblasti se nazývají domény, jejich velikost se pohybuje od 100 do 400-
+aminokyselinových zbytků. :
+2.2.4 Typy stavby proteinové molekuly :
+Podle celkového uspořádání peptidových řetězců můžeme rozlišovat dva hlavní typy protei- |
+nů: fibrilární (vláknité) a zlobulární. U fibrilárních bílkovin jsou peptidové řetězce více či měně =
+nataženy a spojují se vzájemně příčnými vazbami v makroskopická vlákna (fibrily). Tento typ-
+proteinů má význam zejména pro tvorbu biologických struktur a jejich mechanickou funkci, ]
+V globulárních bílkovinách je základní peptidový řetězec sbalen do klubíčka (globule) (viz
+kap. 4.3). Ve vnitřní stavbě globule se střídají úseky a- nebo fi-typu a úseky bez pravidelně
+struktury (tzv. náhodné klubko, angl. random coil), Bílkoviny tohoto typu obstarávají většinu-
+biologických funkcí. Globulární protein může být přeměněn na protein fibrilární, tvořící me- —
+chanicky pevnou strukturu; např. při vzniku fibrinu z globulárního rozpustněho fibrinogenů: |
+v procesu srážení krve. ;
+a) Konformace fibrilárních proteinů ]
+Fibrilární proteiny jsou nejenom základem struktury povrchových, pojivových a podpůmých  —
+tkání živočichů, ale i vnitřní struktury buněk (tzv. eytoskeleton). ]
+Keratin je základním proteinem povrchu těla obratlovců (pokožky, vlasů, chlupů, peří, u- —
+pin). Základní sekundární strukturou kerátinu savců je a-šroubovice. Dya páry paralelně probí-
+hajících šroubovic se stáčejí do levotočivěho čtyřpramenného „kabelu“ — protofibrily. Navlhče- |
+| ní a zahřátí makroskopického vlákna (vlasu) uvolňuje vodíkové vazby a-šroubovice, takže vlas —
+lze natáhnout až na dvojnásobnou délku. V této podobě mohou peptidové řetězce tvořit j-para- |
+lelní strukturu a fixovat ji.
+| Fibroin je bílkovina hedvábného vlákna a je podobný keratinu. Vysoký obsah zbytků ma-
+| lých aminokyselin (glycin, alanin, serin) umožňuje pravidelné prostorové uspořádání rovinných |
+| útvarů, které mají -antiparalelní sekundární strukturu. ]
+| Kolagen je třetím zástupcem fibrilárních proteinů; jeho prostorové uspořádání bylo popsá-  —
+no v kap. 2.2.2. j
+| b) Konformace globulárních proteinů
+| Na rozdíl od fibrilárních proteinů, které jsou agregáty mnoha molekul souběžně orientovaných, ]
+| globulární proteiny existují ve zředěném roztoku jako jednotlivé na sobě nezávislé molekuly, ž
+V globulární bílkovině je základní peptidový řetězec určitým způsobem poskládán. Jednotlivé |
+úseky řetězců jsou ve své poloze udržovány pomocí disulfidových vazeb, iontových interakci, |
+vodíkových vazeb, van der Waalsových sil a hydrofobního efektu.
+| Jak již bylo řečeno v úvodu, v molekulách globulárních proteinů se vyskytují různé typy se-
+] kundárních struktur vedle sebe v jediném peptidovém řetězci, spojené oblastmi bez pravidelné i
+struktury (náhodně klubko). Dvě plošně uspořádané části peptidového řetězce spojené ji-otáč-
+kou mohou snadno vytvořit antiparalelní strukturu. Je-li mezi oběma plochými částmi delší ře- ]
+tězec může vzniknout paralelní fi-struktura. Špojením obou principů vzniká antiparalelní struk-
+tura meandrového typu (viz obr. 2.15). : ]
+Podíl a-helikálních struktur na celkové struktuře molekuly je v různých bíilkovinách růz- |]
+ný. U některých proteinů, jako např. myoglobin nebo hemoglobin, je o-helix hlavním struktur- ;
+ním motivem. Na druhé straně některé proteiny, jako např. chymotrypsin, a-helixové struktu- i
+ry v podstatě neobsahují.
+34
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

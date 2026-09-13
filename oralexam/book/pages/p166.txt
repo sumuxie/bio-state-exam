@@ -1,0 +1,35 @@
+3-Fosfoglycerát se dále přeměňuje na 2-fosfoglycerát enzymem fosfoglycerátmutasou, „Kon
+zymem“ této reakce je 2,3-bisfosfoglycerát. Fosfát y komplexu enzym-2,3-bisfosfoglycerát los
+foryluje 3-fosfoglycerát na 2,3-bisfosfoglycerát a defosforylovaný koenzym, tj. 2-fosfoglyceril,
+který se uvolní. Fosforylovaný produkt působí jako nový koenzym.
+H— k —OH 6.
+HC 70 B 1
+a-fosfoglycerát F cnzymĎ A z
+coo kod 1
+Hm H—ť—0—(8) *
+dým sd-0-6| -bd |
+| fosfoglycerát- A
+coo fostomutasa A
+l. O :
+ké-o--0) »
+ů w-é-0-0
+a a -A
+pově a pyruvátkinasa va enolasa | 2-tostoglycerát
+ka ez jE) A
+Ha Hz ADP CHz +
+pyruvát ATP fosfoenolpyruvát a
+UÚčinkem enolasy se pak odštěpí voda a vzniká fosfoenolpyruvát,. Zbytek kyseliny fosforečně :
+přítomný v energií bohaté formě se dále přenáší pyruvátkinasou na ADP za vzniku ATP apyru —
+vátu. Při tomto vzniku ATP jde o přenos toho zbytku kyseliny fosforečně, který při fosforyla- S
+ci hexos byl dodán z ATP. ATP spotřebovaný na začátku glykolýzy se tedy tímto postupem zís- i
+kává zpět. . ; ň i
+Spotřeba a tvorba ATP při glykolýze i
+ÓÓÓÓimmmĚ/cmm- mk
+reakce ATP/glukosa k
+glukosa — glukosa-S-fosfát -i :
+fruktosa-6-fosfát — fruktosa-1,6-bisfosfát -1 A
+2x 1,3-bisfosfoglycerát — 2x 3-fosfoglycerát : +2 3 |
+2x fosfoenolpynuvát — 2x pyruvát +2 3 |
+zisk +2 A
+l66 Ť
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software6 cz/

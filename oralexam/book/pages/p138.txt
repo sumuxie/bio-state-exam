@@ -1,0 +1,35 @@
+Jď A s i „m . A :. JIL IP moa 0 hh r.
+Obr. 6.4 Schématický řez mitochondrií 7
+(Mb, — vnější membrána, Mb,- vnitřní membrána, MMP — mezimembránový, někdy těž cyto- -
+solový prostor, Mx — matrix) A
+Produkt této kondenzace, citrát, obsahuje terciární alkoholovou skupinu, která se nemůže dále |
+oxidovat. Předpokladem pro jeho další, oxidační přeměnu je proto izomerace na isocitrát, jehož :
+sekundární alkoholová skupina je schopna dehydrogenace. Tuto izomerací zahrnující dehyd.
+rataci citrátu a následnou adici vody na a,fi-dvojnou vazbu cis-akonitátu katalyzuje akonitát- -
+hydratasa (někdy těž akonitasa): 3
+CH,-CO0- CH -COo- HO-CH-Coo- 0
+vek -HO  ] +H,0 | :
+Ho-CCcoo-  ==—* CcC—X00- =— CH—Xo00- a
+| +H.0 | -HO | 2
+citrát cis-akonitát isocitrát É
+Oxidační rozklad isocitrátu na 2-oxoglutarát (někdy též m-oxoglutarát anebo a-ketoglutarát) | ž
+probíhá tímto reakčním mechanismem: a %
+- . =C-Coo- :
+ROr--DO NAD+ NADH o LO WH co, O ]
+| A
+CH,-COo- CH,-COo- CH,-COo- ;
+isocitrát oxalsukcinát Z-oxoglutarát 3
+Oxalsukcinát je nestabilní sloučenina díky tomu, že obsahuje jeden z karboxylů v poloze B :
+vzhledem ke karbonylové skupině. Takovéto fi-ketokyseliny (3-oxokyseliny) dekarboxylují =
+samovolně, tj. exergonickou reakcí. Rozklad 3-oxokyselin je, vedle oxidační dekarboxylace |
+2-oxokyselin, hlavním zdrojem CO. v biochemických systémech. +
+Oxidační dekarboxylace kyseliny 2-oxoglutarové se uskuteční mechanismem oxidační de- — ;
+-karboxylace 2-oxokyselin popsaným při oxidační dekarboxylaci pyruvátu (kap. 7.8.), protože
+2Z-oxoglutarát je homologem pyruvátu: 3
+ose- CO-S-CoA :
+(2 + NAD + CoA-SH ——— CH, + CO, + NADH + H+
+| -A
+CH,-coo- CH,-COO- 3
+2-oxoglutarát sukcinyl-ČoA —
+138 T
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software cz/

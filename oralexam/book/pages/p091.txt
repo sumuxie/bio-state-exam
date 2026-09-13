@@ -1,0 +1,44 @@
+A fb) v 0
+; tal GC AT u+0 ;
+-n rich region leh reslon o+B
+: = B+ NNO OOP ONNNNOCOOC GE POTTTTNNN +++ a! C. ůo
+"E v NNAAGCGOCGNNNNOCGGCGOUUUUUU—OH 3' RNA transoript y.. :
+) a A«
+„A **"NNNN tUUUU-oH 2
+| Obr. 4.32 Sekvence bází hypotetického silného (výkonného) terminátoru. (a) Sekvence DNA
+1 f ©—— společně se sekvencí RNA jí odpovídající. Osa s dvojčetnou symetrií (čočkovitý útvar v obráz-
+E ku) se vztahuje k přilehlým stínovaným úseků, které tvoří převrácený palindrom. (b) Vlásenko-
+á A vá struktura RNÁ a koncová sekvence poly(U), která spouští terminaci transkripce.
+| Další RNA (tRNA a rRNA) jsou produkty enzymové úpravy primárního přepisu DNA, post-
+JA transkripční úpravou („processing“) (obr. 4.33 ukazuje tvorbu rRNA).
+F A Primary transcript
+s ie Number
+"| ořbases: 180 1700 150 200 2920 200
+A ! gTt | E MAA
+9 RN: IMI mů | in MP FPE
+"2 POF Primary processing
+|. 20 i Pre-5S
+"A Prá-165 rRNA Ý Pro-235 (RAMA rRNA
+| A - EEE I EzEEEEEEENENEE ES 5-
++ | fo] k om
+-A RNáséě: Mlů M18  D Mža Mža MBE Dn
+r. : Secondary processing
+A BS rRNA
+3 168 rRNA tRNÁ(S) Ý 235 rRNA | tRNACS)
+mm S NEEEEEEEE E NEEEENEENEENEENEEKY ES E v
+o ořbasesi 1541 2804 120
+| Obr. 4.33 Posttranskripční úprava („processing“) rRNA E. coli.
+| | 4.1.5 Odbourávání'nukleových kyselin
++ Degradaci polynukleotidů (nukleových kyselin) v buňkách katalyzují nukleasy. Exonuklea-
+= sy odštěpují koncové nukleotidy a endonukleasy štěpí esterové vazby uvnitř řetězce nukleové
+= kyseliny. Nukleasy se vyskytují ve dvou formách označovaných jako nukleasy a a b. Nukle-
+"asy a štěpí vazbu mezi 3'-OH skupinou cukru a kyselinou fosforečnou a poskytují nukleosid-
+= -S-fosfáty. Nukleasy b štěpí vazbu mezi 5'-0H skupinou cukru a kyselinou fosforečnou a tvo-
+= ří nukleosid-3"-fosfáty. i
+h Podle toho zda nukleasy štěpí DNA či RNA se nazývají deoxyribonukleasy a ribonukleasy.
+3 Vzniklé nukleotidy jsou štěpeny nukleotidasami, což jsou svojí podstatou fosfatasy (alka-
+| lické s pH optimem 7—8 a kyselé s optimem pH 5) za vzniku nukleosidů. Nebo se nukleotidy
+= štěpí na bází a pentosa-fosfát, které se dále rozkládají samostatně.
+Ja Štěpení nukleosidové vazby mezi cukrem a bází, které je katalyzováno enzymem nukleo-
+= sidlasou, probíhá pravděpodobně především fosforolyticky. Reakce se většinou účastní fos-
+tvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

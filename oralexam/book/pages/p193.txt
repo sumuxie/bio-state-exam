@@ -1,0 +1,43 @@
+a Enzym HMG-CoA-reduktasa, vyžadující 2 molekuly koenzymu NÁDPH, je klíčový regulač-
+| níenzym biosyntézy terpenoidů, v lékařské praxi je sledován zejména v souvislosti s biosynté-
+| zou cholesterolu a možnou terapií aterosklerózy. Ve fázi B je mevalonát nejdříve aktivován tře-
+| mi ATP-dependentními kinasami za vzniku 3-fosfo-5-pyrofosfomevalonátu. Ten je extrémně
+p. nestabilním meziproduktem a ihned dochází k jeho dekarboxylaci a defosforylaci. Vzniká pěti-
+= Uhlíkatá sloučenina-isopentenylpyrofostát (IPP), který může dále izomerizovat na dimethylal-
+= lylpyrofosfát (DMAPP). Tyto pětiuhlíkaté molekuly jsou základními stavebními jednotkami
+= terpenoidů (isoprenoidů), jejichž sumární vzorec je (CH).
+3 Pryní kondenzací izomerů IPP a DMAPP vznikne desetiuhlikatá sloučenina geranylpyrofos-
+200 ft (GPP) — výchozí sloučenina monoterpenů. Další kondenzací s IPP vznikne patnáctiuhlíkatý
+| farnesylpyrofosťát (FPP), výchozí prekurzor seskviterpenů (viz schéma na následující straně).
+m Fázi C nelze popsat žádným obecným schématem. Jedná se o řadu rozmanitých enzymově
+= řízených modifikací základních nenasycených uhlovodíků — mono-, seskvi-, di-, tri-, tetraterpe-
+A nů, produktů fáze B. Nejčastěji dochází k oxidacím (zavedení hydroxylové, aldehydické, kar-
+1: M bonylové či karboxylové funkční skupiny), ke zkrácení či prodloužení řetězce o 1 nebo více
+> B methylových skupin. YWelmi často se objevuje cyklizace od tří až po devitičlenné cykly, Kon-
+5 m denzací dvou molekul farnesylpyrofosfátu vzniká alifatický třicetiuhlíkatý uhlovodík skvalen,
+A který přechází působením skvalen monooxygenasy na 2,3 skvalen epoxid a dalším působením
+A. cyklas na cyklický sterol lanosterol. Z lanosterolu sérií dvaceti dalších reakcí (přesun a odstra-
+í nění metylových skupin) vzniká u živočichů cholesterol.
+"| 8.4 Odbourávání lipidů
+a 8.4.1 Jednoduché lipidy
+| | Triacylglyceroly jsou hlavní zásobní látkou v organismech. Při jejich odbourávání se uplatňují
+É hydrolytické enzymy lipasy (přítomné v cytoplazmě), které ruší esterověé vazby mastných ky-
+a selin a glycerolu:
+: | lipasa
+A triacylglycerol + H,O -> volně mastně kyseliny + glycerol
+a 8.4.2 Složené lipidy
+| Tyto lipidy jsou především součástí biologických membrán, a k jejich degradaci dochází v cy-
+p toplazmě.
+: Fosfolipidy jsou odbourávány hydrolytickými enzymy fosfolipasami, které ruší esterové
+A vazby v molekule. Podle místa působení rozlišujeme čtyři typy fosfolipas:
+| fasfolipasa “
+| o
+| ME m NA RN NOV LN
+i fosfolipasa D | ů
+kA >
+| ja CH„a—P—oa—CH, :
+| Ho—jnchy, 4 M fosfolipasa A,
+| GHz řosfolinasa C :
+| fosfatidyicholin (lecitin)
+193
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http://www.software602.cz/

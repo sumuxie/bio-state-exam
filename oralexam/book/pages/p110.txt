@@ -1,0 +1,33 @@
+R A
+“] KAY. NH [a ů fe:
+22 om 0 00 ]
+cis-Pro trans-Pro |
+Obr, 4.53 Reakce katalyzovaná peptidylprolyl-cis,trans-izomerasou 3
+: protein-disulfid-isomerasa 1
+nesbalený špatně sbalený :
+protein protein peptidyl-prolin-cis,frans-isomerasa:
+ake VA B. SH SH Ť ž
+hsp 70 (chaperon) Pro (cis) Pro (trans) 1
+Obr. 4.54 Stabilizace konformace peptidového řetězce působením protein-disulfid-izomerasy Ž
+4.3.2 Posttranslační modifikace polypeptidového řetězce a přenos proteinů přes membránu )
+Proteiny, které jsou určeny pro sekreci mimo buňku, a pravděpodobně i lysosomální proteiny, 3
+jsou často primárně syntetizovány v podobě preproteinů či preproproteinů, tedy jako větší
+molekuly, které jsou později přeměňovány částečnou hydrolýzou na biologicky aktivní formy-
+(např. bílkoviny krevní plazmy). Přitom se z původního řetězce odštěpuje jeden či více pepti-  —
+dových fragmentů. Pre(pro)formy proteinů mají totiž v nativním stavu tzv. signální sekvenci —
+aminokyselin, která je na úrovní mRNA kódovaná signálními kodony. Signální kodony násle- -<
+dují hned za iniciačním kodonem a signální sekvence se tedy vyskytuje na N-konci polypepti-  -
+dového řetězce. Jejím primárním úkolem jé podle signální teorie připojení ribosomu k recepto-  —
+ru na vnější straně endoplasmatického retikula, a to prostřednictvím ribonukleoproteinu SRP-
+(z angl. „signal recognition particle“), který se specificky váže na již syntetizovanou signální —
+sekvenci. Na vazbě ribosomu se podílí rovněž specifický receptor pro ribonukleoprotein SRP, A
+který je lokalizován na membráně ER (Obr. 4.55). I
+Signální sekvence obsahuje převážně hydrofobní aminokyseliny ve střední části, a nabité
+aminokyseliny na konci řetězce. Díky tomuto uspořádání zůstává při interakci s membránou ]
+ER nabitý konec signální sekvence vně membrány, zatímco střední, hydrofobní část se vnořu- ]
+je do nepolární endoplasmatické membrány, kde vytváří s přilehlými riboforiny La Il struk-  —
+turu skládaného listu. Tato nekovalentní interakce si vzápětí vynucuje rozevření „póru“, ohra- :
+ničeného riboforiny, a tím umožní průnik zbytku syntetizovaného polypeptidového řetězce do 3
+vnitřku ER. Po dokončení proteosyntézy pre(pro)proteinu, tj. jakmile se konec signální sekven- i
+10 ]
+Vytvořeno pomocí Software602 Print2PDF 8. Tuto řádku odstraníte zakoupením licence a aktivací na http:/www.software6 C cz/
