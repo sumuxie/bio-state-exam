@@ -15,7 +15,7 @@ cram:[
  {g:'开口', gn:'这题的定义就是整道题。定义说准了，后面全是它的推论。'},
  {n:'01', t:'定义',
   big:'Kd 是<b>解离反应的平衡常数</b>：复合物拆成两个游离组分',
-  en:'“A dissociation constant is the <b>equilibrium constant</b> of a dissociation reaction — a complex, say a protein and its ligand, coming apart into its two free partners — the ratio their concentrations settle at once the complex is falling apart as fast as it forms.”',
+  en:'“A dissociation constant is <b>defined</b> as the <b>equilibrium constant</b> of a dissociation reaction — a complex, say a protein and its ligand, coming apart into its two free partners — the ratio their concentrations settle at once the complex is falling apart as fast as it forms.”',
   note:'<b>「平衡常数」这四个字把整题的性质定死了</b>：平衡常数属于热力学，不属于动力学。后面 Km 那个陷阱就是靠这句话挡住的。'},
  {n:'02', t:'式子',
   big:'游离的两个，除以复合物：<b>Kd = [P][L] / [PL]</b>',
@@ -98,7 +98,7 @@ sib:[
 
 segs:[
  {tag:'段 1 · 定义', h:'先说它是什么类的常数',
-  p:['“A dissociation constant is the equilibrium constant of a dissociation reaction — a complex, say a protein and its ligand, coming apart into its two free partners — the ratio their concentrations settle at once the complex is falling apart as fast as it forms. So it is the concentration of free protein times the concentration of free ligand, divided by the concentration of the complex.',
+  p:['“A dissociation constant is defined as the equilibrium constant of a dissociation reaction — a complex, say a protein and its ligand, coming apart into its two free partners — the ratio their concentrations settle at once the complex is falling apart as fast as it forms. So it is the concentration of free protein times the concentration of free ligand, divided by the concentration of the complex.',
      'The textbook writes exactly this form for the inhibition constant — K i equals free enzyme times free inhibitor over the enzyme–inhibitor complex.',
      'And because it is a ratio of concentrations over a concentration, it has units of concentration.”'],
   note:'<b>开口就说「平衡常数」。</b>那四个字把整题定死在热力学这一侧，后面 Km 那个陷阱就不用临时挡。书自己的 Ki 写法在 <span class="pg">p060</span>。'},
@@ -215,7 +215,8 @@ ask:[
  cn:'「半数占据」那条推导全靠它。被追问就直接把 [L] = Kd 代进去演一遍。'},
 {r:'中', q:'What is occupancy?',
  en:'“The fraction of binding sites that are filled at a given free-ligand concentration. K d is the concentration at which that fraction is one half.”'}
-]},
+],
+ cn:'占据率 = 结合位点里被配体占着的比例，0 到 1。半数占据时游离配体浓度 = Kd——这是「Kd 是浓度」那句的读法。书 p056 对应的词是「饱和」（<i>nasycen</i>）：Km 是半饱和的底物浓度。'},
 
 {g:'为什么类', gn:'给了结论没给理由的地方。', items:[
 {r:'高', q:'Why does an enzyme not change the equilibrium?',

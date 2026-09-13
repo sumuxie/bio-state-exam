@@ -14,7 +14,7 @@ cram:[
  {g:'开口', gn:'先给定义和边界。「酶是蛋白质」这句话现在需要加一个限定词——这正是他可能挖的第一刀。'},
  {n:'01', t:'定义',
   big:'酶是<b>专门用来催化生物体内反应</b>的蛋白质，特点是<b>专一性高</b>、<b>催化效率高</b>',
-  en:'“Enzymes are proteins specialised for catalysing the reactions that take place in living organisms — that is, they bind the reactants transiently and route the reaction through a path of lower activation energy, without being consumed. Two properties characterise them: <b>high specificity</b> and <b>high catalytic efficiency</b>.”',
+  en:'“Enzymes are proteins specialised for catalysing the reactions that take place in living organisms — that is, they bind the reactants transiently and route the reaction through a path of lower activation energy, without being consumed. Two properties characterise them: <b>high specificity</b> and <b>high catalytic efficiency</b>. The question has two halves: the <b>structure</b> of the enzyme — what the molecule is built of, the protein and any cofactor — and the <b>active site</b>, the small region of that structure where the substrate binds and the chemistry happens.”',
   note:'书 p041 开篇原话。<b>「专一性 ＋ 效率」这两个词是整题的骨架</b>——后面所有结构上的东西，都是为这两条服务的。'},
  {n:'02', t:'边界',
   big:'「酶都是蛋白质」<b>已经不完全对了</b>',
@@ -167,7 +167,7 @@ sib:[
 segs:[
  {tag:'段 1 · 定义', h:'先给定义，并主动加那个限定词',
   p:['“Enzymes are proteins specialised for catalysing the reactions that take place in living organisms. Two properties define them: very high <b>specificity</b> and very high <b>catalytic efficiency</b>.',
-     'One qualification worth making at the start: until recently every known enzyme was a protein, but it is now clear that some other macromolecules can have catalytic ability as well — the textbook mentions one case, a ribonucleic acid.”'],
+     'One qualification worth making at the start: until recently every known enzyme was a protein, but it is now clear that some other macromolecules can have catalytic ability as well — the textbook mentions one case, a ribonucleic acid. The question has two halves: the structure of the enzyme — what the molecule is built of, the protein and any cofactor — and the active site, the small region of that structure where the substrate binds and the chemistry happens; I take them in that order.”'],
   note:'<b>主动说出那个限定，比等他来纠正好。</b>而且它显示你读的是这本书而不是一个概括——这句话就在 p042。'},
  {tag:'段 2 · general', h:'结构分两个层次，先说层次再说名字',
   p:['“Structurally an enzyme is first a globular protein — one or more chains folded into a tertiary structure, often several subunits — and the fold is what brings the active-site residues together. On top of that there are two cases. Some enzymes are the polypeptide alone. In others the active form also contains a non-protein component — the <b>cofactor</b> — which can be a metal ion or an organic molecule, a <b>coenzyme</b>. Some have both.',
@@ -198,26 +198,6 @@ why:{
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
-{q:'What is induced fit?',
- mean:'<b>核心词正面定义。</b>卡上一直在描述它，但没把名字和定义放在一起。',
- say:'“Induced fit is the idea that the active site is not pre-shaped to the substrate: enzyme and substrate need not be complementary, and on interaction the enzyme changes its conformation to fit — the picture that replaced Fischer’s lock and key. Its consequence is the catalytic one: the fitted complex is strained and thermodynamically unstable, tends back to the stable conformation, and so breaks down to product.”'},
-
-{q:'What is specificity?',
- mean:'正面定义，一句。',
- say:'“Specificity means the enzyme discriminates. It has two sides: substrate specificity — it converts only a particular substrate; and reaction specificity, the textbook’s specificity of action — it converts it by only one reaction.”'},
-
-{q:'What is catalytic efficiency?',
- mean:'开口说的两条性质之一，之前只答了「多高」没答「是什么」。',
- say:'“How much faster the reaction runs with the enzyme than without it — the ratio of the catalysed to the uncatalysed rate. The textbook’s example is urease on urea against hydrogen-ion catalysis. As a measurable quantity the textbook gives molecular activity, the old turnover number: the number of substrate molecules one enzyme molecule converts per minute, obtained from V max and the molecular mass.”'},
-
-{q:'What is a coenzyme?',
- mean:'正面定义，不用先绕 cofactor。',
- say:'“An organic, non-protein molecule that some enzymes need for activity — the organic kind of cofactor, as opposed to a metal ion. It acts as an intermediate carrier of a group, atoms or electrons in the reaction, and most coenzymes are vitamins or their derivatives.”'},
-
-{q:'What is an enzyme?',
- mean:'<b>他真正会说的短句。</b>答案要自带结构：定义 → 两个特点 → 一个限定词。不要等他问「都是蛋白质吗」。',
- say:'“Proteins specialised for catalysing the reactions of living organisms, defined by two things — very high specificity and very high catalytic efficiency. One qualification: until recently all known enzymes were proteins, but some other macromolecules also turn out to have catalytic ability.”'},
-
 {q:'What is a substrate?',
  mean:'<b>全卡最承重的名词，书里没定义。</b>一句说完。',
  say:'“The reactant the enzyme acts on — the molecule that binds in the active site and is converted to product. The textbook adds a kinetic point: a loosely bound coenzyme like NAD⁺ is needed in stoichiometric amount and behaves as a second substrate.”'},
@@ -272,6 +252,21 @@ recog:[
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'这题名词密度很高，每一个都可能被单独拎出来。', items:[
+{r:'中', q:'What is induced fit?',
+ en:'“Induced fit is the idea that the active site is not pre-shaped to the substrate: enzyme and substrate need not be complementary, and on interaction the enzyme changes its conformation to fit — the picture that replaced Fischer’s lock and key. Its consequence is the catalytic one: the fitted complex is strained and thermodynamically unstable, tends back to the stable conformation, and so breaks down to product.”',
+ cn:'<b>核心词正面定义。</b>卡上一直在描述它，但没把名字和定义放在一起。'},
+{r:'中', q:'What is specificity?',
+ en:'“Specificity means the enzyme discriminates. It has two sides: substrate specificity — it converts only a particular substrate; and reaction specificity, the textbook’s specificity of action — it converts it by only one reaction.”',
+ cn:'正面定义，一句。'},
+{r:'中', q:'What is catalytic efficiency?',
+ en:'“How much faster the reaction runs with the enzyme than without it — the ratio of the catalysed to the uncatalysed rate. The textbook’s example is urease on urea against hydrogen-ion catalysis. As a measurable quantity the textbook gives molecular activity, the old turnover number: the number of substrate molecules one enzyme molecule converts per minute, obtained from V max and the molecular mass.”',
+ cn:'开口说的两条性质之一，之前只答了「多高」没答「是什么」。'},
+{r:'中', q:'What is a coenzyme?',
+ en:'“An organic, non-protein molecule that some enzymes need for activity — the organic kind of cofactor, as opposed to a metal ion. It acts as an intermediate carrier of a group, atoms or electrons in the reaction, and most coenzymes are vitamins or their derivatives.”',
+ cn:'正面定义，不用先绕 cofactor。'},
+{r:'中', q:'What is an enzyme?',
+ en:'“Proteins specialised for catalysing the reactions of living organisms, defined by two things — very high specificity and very high catalytic efficiency. One qualification: until recently all known enzymes were proteins, but some other macromolecules also turn out to have catalytic ability.”',
+ cn:'<b>他真正会说的短句。</b>答案要自带结构：定义 → 两个特点 → 一个限定词。不要等他问「都是蛋白质吗」。'},
 {r:'实测', q:'Which coenzyme carries what?',
  en:'“NAD⁺ carries a hydride — two electrons and a proton — on the nicotinamide ring, which loses its aromatic character and its positive charge when reduced. FAD carries two hydrogens on the isoalloxazine ring. Heme carries one electron by its iron switching between Fe²⁺ and Fe³⁺. Thiamine pyrophosphate carries an ‘active aldehyde’, a two-carbon unit, on C-2 of the thiazole ring. Coenzyme A carries acyl groups on its thiol. Biotin carries CO₂ on a ring nitrogen, and sits on a lysine through an amide bond. Pyridoxal phosphate carries amino groups through its aldehyde, as a Schiff base. Tetrahydrofolate carries one-carbon units — hydroxymethyl and formyl.”',
  cn:'p044 NAD⁺ · p045 FAD · p046 heme · p050 TPP、CoA · p049–p050 biotin · p053 PLP · p048 THF。书 Tab. 3.1（p043）就是这张表，OCR 碎了，后面几页把内容给全了。'},

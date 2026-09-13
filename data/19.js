@@ -17,7 +17,7 @@ cram:[
   note:'<b>先给上位类，显示你知道抑制剂只是一半。</b>书还补了一句好用的：关于抑制剂说的一切，<b>对激活剂反过来说也成立</b>。<span class="pg">p059</span>'},
  {n:'02', t:'第一刀',
   big:'先分<b>不可逆</b>和<b>可逆</b>——这一刀比后面三类更根本',
-  en:'“The first division is not competitive versus non-competitive. It is <b>irreversible</b> versus <b>reversible</b>, because they are not even described by the same equations.”',
+  en:'“The different types are a classification by two cuts — first by whether the inhibitor comes off again, then by which form of the enzyme it binds. The first division is not competitive versus non-competitive. It is <b>irreversible</b> versus <b>reversible</b>, because they are not even described by the same equations.”',
   note:'<b>这一句是这题的骨架。</b>直接报三类，等于跳过了这一刀，而它才是分类的依据。'},
 
  {g:'不可逆', gn:'一句定义、一个后果、一个用途、一个例子。'},
@@ -138,7 +138,7 @@ sib:[
 segs:[
  {tag:'段 1 · 定义', h:'先给上位类和第一刀',
   p:['“Substances that affect the rate of an enzyme reaction by interacting with the catalyst are called <b>modulators</b> — activators if they speed it up, inhibitors if they slow it down. Everything said about inhibitors holds for activators in the opposite sense.',
-     'The first division is not competitive versus non-competitive. It is <b>irreversible</b> versus <b>reversible</b> — and the reason that comes first is that they are not even described by the same equations.”'],
+     'The different types come from two cuts: whether the inhibitor comes off again, and which form of the enzyme it binds. The first division is not competitive versus non-competitive. It is <b>irreversible</b> versus <b>reversible</b> — and the reason that comes first is that they are not even described by the same equations.”'],
   note:'<b>「不是……而是……」这个句式在这里很有用</b>：它显示你知道大多数人会先说什么，而你有理由不那样说。'},
  {tag:'段 2 · general', h:'两边各一句，重点在为什么方程不同',
   p:['“An <b>irreversible</b> inhibitor binds very firmly, usually covalently, modifies the enzyme’s functional groups and inactivates it. The Michaelis–Menten equation does not apply, because the concentration of the <b>active form of the enzyme</b> is itself changing. Irreversible inhibition is used to study enzyme structure, and the action of some chemical warfare agents on nerve-tissue enzymes has this character.',
@@ -201,11 +201,6 @@ recog:[
  mean:'<b>因为它是「像到能结合但不能反应」的最干净的例子。</b>而且它连着卡 24。',
  say:'“Because it is close enough to succinate to bind succinate dehydrogenase, but it cannot be dehydrogenated — it has only one CH₂ between its two carboxyls, no adjacent pair of carbons to lose two hydrogens from — so it occupies the site and does nothing. It also happens to sit in the citric acid cycle, at the one step that is in the inner membrane and gives FADH₂.”'},
 
-{q:'What is Ki?',
- mean:'<b>书里唯一明确叫「解离常数」的东西。</b>而且有两个。',
- say:'“The inhibition constant — the textbook defines it as the <b>dissociation constant</b> of the enzyme–inhibitor complex: free enzyme times free inhibitor over EI. Whenever the inhibitor also binds the enzyme–substrate complex there is a second one, K i prime, the dissociation constant of EAI. Uncompetitive has only K i prime; non-competitive has K i equal to K i prime; mixed has them different.”',
- tail:'完整的 Kd 内容在<b>卡 02</b>。<b>注意：Ki 是解离常数，Km 不是</b>——书自己在 p055 和 p056 前后打架，见卡 02 的陷阱那一格。'},
-
 {q:'Can an inhibitor be useful rather than harmful?',
  mean:'<b>三个用途，书全给了。</b>',
  say:'“Three ways. Irreversible inhibitors are used to study enzyme structure. Reversible ones report on substrate specificity and on the structure of the active site. And in the cell itself, reversible inhibition by specific metabolites is one of the main instruments of metabolic regulation.”'}
@@ -229,6 +224,9 @@ ask:[
 ]},
 
 {g:'定义类', gn:'', items:[
+{r:'中', q:'What is Ki?',
+ en:'“The inhibition constant — the textbook defines it as the <b>dissociation constant</b> of the enzyme–inhibitor complex: free enzyme times free inhibitor over EI. Whenever the inhibitor also binds the enzyme–substrate complex there is a second one, K i prime, the dissociation constant of EAI. Uncompetitive has only K i prime; non-competitive has K i equal to K i prime; mixed has them different.”',
+ cn:'<b>书里唯一明确叫「解离常数」的东西。</b>而且有两个。<br>完整的 Kd 内容在<b>卡 02</b>。<b>注意：Ki 是解离常数，Km 不是</b>——书自己在 p055 和 p056 前后打架，见卡 02 的陷阱那一格。'},
 {r:'高', q:'What is a modulator?',
  en:'“The general term for a substance that changes the rate of an enzyme reaction by interacting with the catalyst — an activator if it raises the rate, an inhibitor if it lowers it. The textbook notes that everything said about inhibitors holds for activators in the opposite sense.”',
  cn:'<b>开口就给上位类，显示你知道抑制剂只是一半。</b>'},

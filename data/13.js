@@ -155,20 +155,8 @@ why:{
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
-{q:'What is glycosylation?',
- mean:'<b>核心词正面定义。</b>先说它是什么，再分 N/O。',
- say:'“Glycosylation is the <b>covalent attachment of carbohydrate to a protein</b> by highly specific glycosyltransferases, with nucleotide sugars as donors. Two linkages: N-glycosidic, to the side-chain amide nitrogen of asparagine, or O-glycosidic, to the side-chain hydroxyl of serine or threonine. It takes place in the ER and the Golgi, and the textbook calls it one of the most important post-translational modifications.”'},
-
-{q:'What is a signal peptide?',
- mean:'题库 #9 就是这句（bw 指到这张卡）。<b>整条从书 p110–p111 来。</b>',
- say:'“A signal peptide is the <b>N-terminal sequence</b> — coded by the signal codons right after the initiation codon — that sends a nascent chain into the ER; preproinsulin’s is 23 residues. It has a hydrophobic middle and charged ends. The signal recognition particle, SRP, binds it as it emerges from the ribosome and docks on the SRP receptor in the ER membrane; the hydrophobic part enters the membrane, a pore opens — bounded by ribophorins, the textbook says — and the rest of the chain is threaded into the lumen as it is made. Once its end appears in the lumen, membrane-bound signal peptidase cuts it off, so the mature protein no longer carries it. The textbook files this under covalent modification of the backbone — the one tied to export.”'},
-
-{q:'Why do you need vitamin K?', odd:1,
- mean:'跟维 C 那条平行：问的是 <b>γ-羧化</b>。',
- say:'“Because γ-carboxylation depends on it. γ-Carboxylation adds a second carboxyl to the γ-carbon of glutamate side chains, giving γ-carboxyglutamate; the carboxylase sits on the inner face of the ER membrane and needs vitamin K. The textbook says it was first found in the plasma glycoproteins of blood clotting — generally prothrombin and factors VII, IX and X — where the paired carboxyls bind calcium. No vitamin K, no carboxylation, no clotting.”'},
-
-{q:'What is post-translational modification?',
- mean:'<b>这就是他真正会说出口的那句。</b>卷面那句完整题面他不会念。所以这一句的答案必须<b>自带结构</b>：定义 → 挑两个 → 为什么是这两个 → 分别对应什么。',
+{q:'What is PTM?',
+ mean:'他多半说全称 “What is post-translational modification?”。<b>这就是他真正会说出口的那句。</b>卷面那句完整题面他不会念。所以这一句的答案必须<b>自带结构</b>：定义 → 挑两个 → 为什么是这两个 → 分别对应什么。',
  say:'“Post-translational modification means the processes that turn the nascent polypeptide into the biologically active protein once the nucleic acids are no longer involved — nothing in it is encoded by a codon; in the narrow sense, the covalent changes to the backbone and the side chains. For proteins that go to the surface or out of the cell, two matter most: N-glycosylation and disulfide bond formation. What they have in common is that neither can be made in the cytosol — it is reducing, so a structural disulfide does not survive there, and the transferase that puts the sugar core on faces the ER lumen.”'},
 
 {q:'Name some post-translational modifications.',
@@ -205,7 +193,11 @@ recog:[
 {q:'Which of these modifications is reversible?',
  mean:'分类问题。<b>可逆的是信号用的，不可逆的是结构用的。</b>',
  say:'“Phosphorylation — a phosphoester on the hydroxyl of serine, threonine or tyrosine, put on by a protein kinase and hydrolysed off by a phosphatase — is the reversible one: the textbook calls it a mechanism for controlling the biological activity of proteins, especially enzymes, through a change of conformation, and notes that some proteins are more active once the phosphate is hydrolysed off again. Glycosylation and disulfide formation are not reversed in normal operation; they are structural, not regulatory.”',
- tail:'⚠ 「可逆 vs 不可逆」这个分法**书里没有明说**，是从 p113–p114 推的。说成 "generally" 比较稳。'}
+ tail:'⚠ 「可逆 vs 不可逆」这个分法**书里没有明说**，是从 p113–p114 推的。说成 "generally" 比较稳。'},
+
+{q:'Why do you need vitamin K?', odd:1,
+ mean:'跟维 C 那条平行：问的是 <b>γ-羧化</b>。',
+ say:'“Because γ-carboxylation depends on it. γ-Carboxylation adds a second carboxyl to the γ-carbon of glutamate side chains, giving γ-carboxyglutamate; the carboxylase sits on the inner face of the ER membrane and needs vitamin K. The textbook says it was first found in the plasma glycoproteins of blood clotting — generally prothrombin and factors VII, IX and X — where the paired carboxyls bind calcium. No vitamin K, no carboxylation, no clotting.”'},
 ],
 
 /* ---------------- 追问 ---------------- */
@@ -223,6 +215,12 @@ ask:[
 ]},
 
 {g:'定义类', gn:'他默认你知道这些名词。', items:[
+{r:'中', q:'What is glycosylation?',
+ en:'“Glycosylation is the <b>covalent attachment of carbohydrate to a protein</b> by highly specific glycosyltransferases, with nucleotide sugars as donors. Two linkages: N-glycosidic, to the side-chain amide nitrogen of asparagine, or O-glycosidic, to the side-chain hydroxyl of serine or threonine. It takes place in the ER and the Golgi, and the textbook calls it one of the most important post-translational modifications.”',
+ cn:'<b>核心词正面定义。</b>先说它是什么，再分 N/O。'},
+{r:'中', q:'What is a signal peptide?',
+ en:'“A signal peptide is the <b>N-terminal sequence</b> — coded by the signal codons right after the initiation codon — that sends a nascent chain into the ER; preproinsulin’s is 23 residues. It has a hydrophobic middle and charged ends. The signal recognition particle, SRP, binds it as it emerges from the ribosome and docks on the SRP receptor in the ER membrane; the hydrophobic part enters the membrane, a pore opens — bounded by ribophorins, the textbook says — and the rest of the chain is threaded into the lumen as it is made. Once its end appears in the lumen, membrane-bound signal peptidase cuts it off, so the mature protein no longer carries it. The textbook files this under covalent modification of the backbone — the one tied to export.”',
+ cn:'题库 #9 就是这句（bw 指到这张卡）。<b>整条从书 p110–p111 来。</b>'},
 {r:'高', q:'What is the endoplasmic reticulum?',
  en:'“The endoplasmic reticulum is the membrane network of flattened sacs — cisternae — continuous with the nuclear envelope. The rough ER carries the ribosomes making secretory and membrane proteins; its lumen is where they fold, get their N-glycan and their disulfides, and it is topologically already outside the cell — its contents reach the extracellular space by vesicle fusion and never mix with the cytosol, which is why it can hold an oxidising chemistry the cytosol cannot.”',
  cn:'定义是通用细胞生物学；在里面发生什么是书 p109–p112。'},

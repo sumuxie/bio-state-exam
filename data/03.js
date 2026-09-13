@@ -145,17 +145,13 @@ why:{
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
-{q:'What are the differences between DNA and RNA?',
- mean:'<b>比较题的通用形状：先说轴，再填。</b>不要交替列特征。这一招 #14 和 #28 直接复用。',
+{q:'DNA versus RNA?',
+ mean:'整句是 “What are the differences between DNA and RNA?”。<b>比较题的通用形状：先说轴，再填。</b>不要交替列特征。这一招 #14 和 #28 直接复用。',
  say:'“Both are nucleic acids — polynucleotides that store and transmit genetic information: DNA is the material carrier, the information stored as the order of its bases; RNA is the working copy, the direct template for protein synthesis. Chemically the question is then three questions: which pentose, which bases, and how many chains. The sugar — deoxyribose versus ribose, a difference of one hydroxyl. The bases — uracil practically only in RNA, thymine predominantly in DNA. The strands — DNA a right-handed double helix, most RNA single-stranded though partly paired.”'},
 
 {q:'What is the difference between a nucleoside and a nucleotide?',
  mean:'<b>定义题伪装成比较题。</b>一句话，别展开。',
  say:'“A nucleoside is a base joined to carbon one of the pentose by an N-glycosidic bond — from N9 of a purine, N1 of a pyrimidine. Esterify a phosphate onto the sugar, normally at the 5′ carbon, and it is a nucleotide.”'},
-
-{q:'What is base pairing?',
- mean:'<b>核心词正面定义。</b>书 p073 明说「这个过程叫碱基配对」。',
- say:'“Base pairing is the specific hydrogen bonding of a base on one strand to the one base on the other strand it can bond with — adenine with thymine by two hydrogen bonds, guanine with cytosine by three; the textbook says the bonds form only between those pairs for steric reasons and names the phenomenon base pairing. It is what makes the two strands complementary and replication accurate.”'},
 
 {q:'What is the double helix?',
  mean:'<b>核心词正面定义。</b>说完它是什么，再说什么撑着它。',
@@ -190,10 +186,6 @@ recog:[
  mean:'清单题。<b>报名字，再报一个能显出你读过表的细节。</b>',
  say:'“Five main kinds in the textbook — plus the nuclear RNAs it adds as the least understood group: the precursors of every kind, small nuclear RNA, and chromosomal RNA. Messenger RNA carries the genetic information from DNA to the ribosome, single-stranded. Ribosomal RNA is the structural component of the ribosome, named by sedimentation coefficient — in prokaryotes 5S, 16S and 23S; in eukaryotes up to four, 5S, 5.8S, 18S and 28S. Transfer RNA, the smallest at 4S, carries one activated amino acid each to the ribosome, all ending in CCA at the 3′ end, folded as a cloverleaf — three constant arms and a variable one, the acceptor stem carrying the CCA and the amino acid, the anticodon loop the triplet that pairs with the codon. Small nuclear RNA forms complexes with proteins — the spliceosome — and takes part in splicing. Viral RNA serves a virus as both its DNA and its mRNA.”'},
 
-{q:'What is hnRNA?',
- mean:'真核转录的第一条产物。<b>顺手把 exon/intron 带出来。</b>',
- say:'“In eukaryotes the first transcript is heterogeneous nuclear RNA, substantially longer than the structural gene itself. It contains both coding regions — exons — and non-coding ones, introns, and it is processed into the functional messenger RNA — the introns are removed by the spliceosome, a complex of small nuclear RNA and proteins; the textbook’s word on p086 is simply ribonucleases.”'},
-
 {q:'Which is left-handed?',
  mean:'<b>只有 Z。</b>一句话答完。',
  say:'“Only Z-DNA. A and B are both right-handed. Under physiological conditions DNA is almost exclusively B. Z-DNA has a deep minor groove and no distinguishable major groove; it occurs only in certain stretches — the textbook’s example sequence is d(CGCATGCG) — and its biological function is not known.”'}
@@ -202,6 +194,12 @@ recog:[
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'比较题的每个名词都可能被单独拎出来问。', items:[
+{r:'中', q:'What is base pairing?',
+ en:'“Base pairing is the specific hydrogen bonding of a base on one strand to the one base on the other strand it can bond with — adenine with thymine by two hydrogen bonds, guanine with cytosine by three; the textbook says the bonds form only between those pairs for steric reasons and names the phenomenon base pairing. It is what makes the two strands complementary and replication accurate.”',
+ cn:'<b>核心词正面定义。</b>书 p073 明说「这个过程叫碱基配对」。'},
+{r:'中', q:'What is hnRNA?',
+ en:'“In eukaryotes the first transcript is heterogeneous nuclear RNA, substantially longer than the structural gene itself. It contains both coding regions — exons — and non-coding ones, introns, and it is processed into the functional messenger RNA — the introns are removed by the spliceosome, a complex of small nuclear RNA and proteins; the textbook’s word on p086 is simply ribonucleases.”',
+ cn:'真核转录的第一条产物。<b>顺手把 exon/intron 带出来。</b>'},
 {r:'实测', q:'What are purines and pyrimidines?',
  en:'“A pyrimidine is one six-membered aromatic ring with nitrogens at positions 1 and 3 — cytosine, uracil, thymine. A purine is that ring fused to a five-membered imidazole ring — nine atoms, nitrogens at 1, 3, 7 and 9 — adenine and guanine. So the purine is the larger base; its sugar attaches at N9, the pyrimidine’s at N1.”',
  cn:'结构 p066 图 4.1；N9/N1 p067。卡上用了十次的词，之前没定义。'},

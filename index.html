@@ -278,6 +278,24 @@ button.b:disabled{opacity:.35;cursor:default}
 .reading .rd{opacity:1}
 .rd span.s{opacity:.45}
 .rd span.s.cur{opacity:1;background:var(--warnbg);border-radius:3px;box-shadow:0 0 0 3px var(--warnbg)}
+.wd{background:var(--goodbg);border-radius:3px;box-shadow:0 0 0 2px var(--goodbg)}
+#wpop{position:fixed;z-index:60;display:none}
+#wpop button{font-family:inherit;font-size:13px;border:1px solid var(--rule);background:var(--card);color:var(--ink);
+  border-radius:14px;padding:6px 11px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.14)}
+#wpop button i{font-style:normal;font-family:Georgia,serif}
+#wpop button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.favs{border:none;background:var(--chip);color:var(--dim);border-radius:6px;cursor:pointer;font-size:13px;line-height:1;
+  padding:4px 7px;margin-left:4px;vertical-align:2px;font-family:inherit}
+.favs:hover{background:var(--accent);color:#fff}
+.favs.on{background:var(--warn);color:#fff}
+.favsec h3{margin:18px 0 8px}
+#vsel{font-family:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--rule);border-radius:9px;background:var(--card);color:var(--ink);max-width:100%}
+.favl{list-style:none;margin:0;padding:0}
+.favl li{display:flex;gap:10px;align-items:center;padding:10px 14px;margin-bottom:8px;background:var(--card);border:1px solid var(--rule);border-radius:10px}
+.favl .ft{flex:1;font-family:Georgia,"Times New Roman",serif;font-size:16px;line-height:1.6}
+.favl .fc{font-size:12px;color:var(--faint);text-decoration:none;white-space:nowrap}
+.favl .fx{border:none;background:transparent;color:var(--faint);cursor:pointer;font-size:14px}
+.en,.say,.pt-en,.gd,.nt,.wn,.pt-big{cursor:text}
 /* 追问底部收起 */
 .fold{display:block;margin:14px 0 0 auto;border:1px solid var(--rule);background:var(--chip);color:var(--dim);
   border-radius:14px;padding:5px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
@@ -322,6 +340,12 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/18.js"></script>
 <script src="data/19.js"></script>
 <script src="data/24.js"></script>
+<script src="data/aa.js"></script>
+<script src="data/gly.js"></script>
+<script src="data/06.js"></script>
+<script src="data/12.js"></script>
+<script src="data/16.js"></script>
+<script src="data/17.js"></script>
 <script src="data/x_bonds.js"></script>
 
 <script>
@@ -490,6 +514,7 @@ function renderList(){
     + '</div>'
     + (dueN ? '<p class="due"><b>该复习：</b>' + dueLinks + '</p>' : '')
     + '<button class="bbtn" onclick="copyDigest(this)">复制进度给老师</button>'
+    + ' <a class="bbtn ghost" href="#/fav" style="text-decoration:none">☆ 不会念的</a>'
     + ' <button class="bbtn ghost" onclick="if(confirm(\'清空全部练习记录？\')){localStorage.removeItem(PK);route();}">清空记录</button>'
     + '</div>' + goHtml + '<input id="search" placeholder="搜题目、关键词…">';
 
@@ -554,7 +579,7 @@ function cleanEn(raw){
 }
 function englishOf(el){
   var t = el.cloneNode(true);
-  var b = t.querySelectorAll('.pg, figcaption, .spk, .fold'); for (var i=0;i<b.length;i++) b[i].remove();
+  var b = t.querySelectorAll('.pg, figcaption, .spk, .fold, .favs'); for (var i=0;i<b.length;i++) b[i].remove();
   var raw = t.textContent;
   var q = raw.match(/“[^”]{30,}”/g);          /* 混合块：只念引号里的英文 */
   if (q) raw = q.join(' ');
@@ -562,6 +587,27 @@ function englishOf(el){
 }
 var SPK = 0;
 var PURE_EN = '.en, .pt-en, .say, .qbody .en, .rq .en';
+/* 声音：浏览器自带（Web Speech API），每台设备的声音库不同。这里按偏好表挑最好的英音，也允许手选。 */
+var VK = 'oralexam.voice.v1';
+var VOICE_PREF = ['Google UK English Female', 'Google UK English Male', 'Microsoft Sonia Online', 'Microsoft Libby Online',
+  'Microsoft Ryan Online', 'Microsoft Hazel', 'Microsoft George', 'Daniel', 'Kate', 'Serena', 'Samantha', 'Google US English'];
+function voices(){ try { return speechSynthesis.getVoices() || []; } catch(e){ return []; } }
+function pickVoice(){
+  var vs = voices(); if (!vs.length) return null;
+  var want = ''; try { want = localStorage.getItem(VK) || ''; } catch(e){}
+  if (want) { for (var i=0;i<vs.length;i++) if (vs[i].name === want) return vs[i]; }
+  for (var p=0;p<VOICE_PREF.length;p++) for (var j=0;j<vs.length;j++) if (vs[j].name.indexOf(VOICE_PREF[p]) === 0) return vs[j];
+  for (var k=0;k<vs.length;k++) if (/^en[-_]GB/i.test(vs[k].lang)) return vs[k];
+  for (var q=0;q<vs.length;q++) if (/^en/i.test(vs[q].lang)) return vs[q];
+  return null;
+}
+function utter(txt, rate){
+  var u = new SpeechSynthesisUtterance(txt);
+  var v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-GB';
+  u.rate = rate || 0.9; return u;
+}
+function setVoice(name){ try { localStorage.setItem(VK, name || ''); } catch(e){} }
+if (window.speechSynthesis && 'onvoiceschanged' in speechSynthesis) speechSynthesis.onvoiceschanged = function(){};
 function wrapSentences(el){
   if (el.dataset.wrapped) return;
   el.dataset.wrapped = '1';
@@ -570,7 +616,7 @@ function wrapSentences(el){
   while (w.nextNode()) nodes.push(w.currentNode);
   nodes.forEach(function(n){
     var p = n.parentNode;
-    if (p.closest && p.closest('.spk, .pg, figcaption, .fold')) return;
+    if (p.closest && p.closest('.spk, .pg, figcaption, .fold, .favs')) return;
     var txt = n.nodeValue;
     if (pend && /^\s*[A-Z“"(]/.test(txt)) k++;
     var parts = txt.replace(/([.!?]["”)]?)(\s+)(?=[A-Z“"(])/g, '$1$2\u0001').split('\u0001');
@@ -618,8 +664,7 @@ function speak(btn){
     el.querySelectorAll('span.s.cur').forEach(function(x){ x.classList.remove('cur'); });
     sn.spans.forEach(function(x){ x.classList.add('cur'); });
     if (sn.spans[0] && sn.spans[0].scrollIntoView) sn.spans[0].scrollIntoView({block:'nearest'});
-    var u = new SpeechSynthesisUtterance(sn.t);
-    u.lang = 'en-GB'; u.rate = 0.9;
+    var u = utter(sn.t, 0.9);
     u.onend = next; u.onerror = finish;
     speechSynthesis.speak(u);
   }
@@ -644,6 +689,49 @@ document.addEventListener('click', function(e){
   var b = e.target.closest && e.target.closest('b');
   if (b && b.closest('.pt-big, .en, .say, ul.sib li .txt, .detail .e')) b.classList.toggle('show');
 });
+/* 点一个英文单词 = 朗读那个词 */
+document.addEventListener('click', function(e){
+  var wp0 = document.getElementById('wpop');
+  if (wp0 && !(e.target.closest && e.target.closest('#wpop'))) wp0.style.display = 'none';
+  if (!window.speechSynthesis || !e.target.closest) return;
+  var t = e.target;
+  if (t.closest('.spk, .fold, .favs, button, a, summary, input, textarea')) return;
+  var host = t.closest('.en, .say, .pt-en, .gd, .nt, .wn, .pt-big, ul.sib li .txt, .detail .e, .detail .c');
+  if (!host) return;
+  if (document.body.classList.contains('cloze') && t.closest('b')) return;
+  var sel = window.getSelection && window.getSelection();
+  if (sel && sel.type === 'Range' && sel.toString().length > 1) return;   /* 正在选文字，不打扰 */
+  var range = null;
+  if (document.caretRangeFromPoint) range = document.caretRangeFromPoint(e.clientX, e.clientY);
+  else if (document.caretPositionFromPoint) {
+    var cp = document.caretPositionFromPoint(e.clientX, e.clientY);
+    if (cp) { range = document.createRange(); range.setStart(cp.offsetNode, cp.offset); }
+  }
+  if (!range || range.startContainer.nodeType !== 3) return;
+  var node = range.startContainer, txt = node.nodeValue, i = range.startOffset;
+  var isW = function(ch){ return /[A-Za-z0-9\u00C0-\u024F’'\-]/.test(ch || ''); };
+  if (!isW(txt[i]) && !isW(txt[i-1])) return;
+  var a = i, b = i;
+  while (a > 0 && isW(txt[a-1])) a--;
+  while (b < txt.length && isW(txt[b])) b++;
+  var w = txt.slice(a, b).replace(/^[’'\-]+|[’'\-]+$/g, '');
+  if (!w || !/[A-Za-z]/.test(w)) return;
+  speechSynthesis.cancel(); clearReading();
+  var u = utter(w, 0.85);
+  var span = document.createElement('span'); span.className = 'wd';
+  var r2 = document.createRange(); r2.setStart(node, a); r2.setEnd(node, b);
+  var wrapped = false;
+  try { r2.surroundContents(span); wrapped = true; } catch(err) {}
+  var rect = (wrapped ? span : r2).getBoundingClientRect();
+  u.onend = u.onerror = function(){
+    if (!wrapped) return;
+    var p = span.parentNode; if (!p) return;
+    p.replaceChild(document.createTextNode(span.textContent), span); p.normalize();
+  };
+  speechSynthesis.speak(u);
+  showWordPop(w, rect);
+});
+window.addEventListener('scroll', function(){ var wp = document.getElementById('wpop'); if (wp) wp.style.display = 'none'; }, {passive:true});
 function addSpeakers(){
   if (!window.speechSynthesis) return;
   var sel = '.en, .pt-en, .say, .stopbox q, .qbody .en, .rq .en, .gd, .nt, .wn';
@@ -658,6 +746,12 @@ function addSpeakers(){
     b.textContent = '🔊 听';
     b.setAttribute('onclick', 'speak(this)');
     e.appendChild(b);
+    var f = document.createElement('button');
+    var fon = favHas('s', t0);
+    f.className = 'favs' + (fon ? ' on' : ''); f.type = 'button'; f.title = '收藏这句（不会念的）';
+    f.textContent = fon ? '★' : '☆';
+    f.setAttribute('onclick', 'favSent(this)');
+    e.appendChild(f);
   }
 }
 
@@ -676,6 +770,7 @@ function renderCard(c){
     + (c.ask || c.recog ? '<button id="mAsk" onclick="mode(\'ask\')">追问</button>' : '')
     + (c.figs && c.figs.length ? '<button id="mFig" onclick="mode(\'figs\')">图</button>' : '')
     + '<button id="mCloze" onclick="cloze()" title="把关键词盖住，点一下露出">遮词</button>'
+    + '<button onclick="location.hash=\'#/fav\'" title="收藏的词和句">☆</button>'
     + '</div>';
 
   document.getElementById('main').innerHTML =
@@ -935,7 +1030,80 @@ function markRun(spoken){
 }
 
 /* =================== router =================== */
+/* =================== 收藏：不会念的词和句 =================== */
+var FK = 'oralexam.fav.v1';
+function loadF(){ try { return JSON.parse(localStorage.getItem(FK)) || []; } catch(e){ return []; } }
+function saveF(f){ try { localStorage.setItem(FK, JSON.stringify(f)); } catch(e){} }
+function favKey(t, text){ return t + '|' + String(text).trim().toLowerCase(); }
+function favHas(t, text){ var k = favKey(t, text); return loadF().some(function(x){ return favKey(x.t, x.text) === k; }); }
+function favToggle(t, text){
+  var f = loadF(), k = favKey(t, text), i = -1;
+  for (var j=0;j<f.length;j++) if (favKey(f[j].t, f[j].text) === k) { i = j; break; }
+  if (i >= 0) f.splice(i, 1); else f.push({t:t, text:String(text).trim(), card:(window.C && C.id) || '', ts:Date.now()});
+  saveF(f); return i < 0;
+}
+function favRemove(i){ var f = loadF(); f.splice(i, 1); saveF(f); renderFav(); }
+function speakText(txt){
+  if (!window.speechSynthesis) return;
+  speechSynthesis.cancel(); clearReading();
+  var u = utter(txt, txt.split(' ').length > 3 ? 0.9 : 0.85);
+  speechSynthesis.speak(u);
+}
+function showWordPop(w, rect){
+  var wp = document.getElementById('wpop');
+  if (!wp){ wp = document.createElement('div'); wp.id = 'wpop'; document.body.appendChild(wp); }
+  var on = favHas('w', w);
+  wp.innerHTML = '<button type="button" class="' + (on ? 'on' : '') + '" data-w="' + w.replace(/"/g, '&quot;') + '" onclick="favWord(this)">'
+    + (on ? '★ 已收藏 ' : '☆ 收藏 ') + '<i>' + w.replace(/</g, '&lt;') + '</i></button>';
+  wp.style.display = 'block';
+  var left = Math.max(8, Math.min(rect.left, window.innerWidth - 220));
+  var top = rect.top - 40; if (top < 8) top = rect.bottom + 8;
+  wp.style.left = left + 'px'; wp.style.top = top + 'px';
+}
+function favWord(btn){
+  var w = btn.dataset.w, on = favToggle('w', w);
+  btn.className = on ? 'on' : '';
+  btn.innerHTML = (on ? '★ 已收藏 ' : '☆ 收藏 ') + '<i>' + w.replace(/</g, '&lt;') + '</i>';
+}
+function favSent(btn){
+  var el = btn.parentNode, text = englishOf(el); if (!text) return;
+  var on = favToggle('s', text);
+  btn.textContent = on ? '★' : '☆'; btn.classList.toggle('on', on);
+}
+function speakAllFav(){
+  if (!window.speechSynthesis) return;
+  var f = loadF(); speechSynthesis.cancel(); clearReading();
+  f.forEach(function(x){ speechSynthesis.speak(utter(x.text, x.t === 'w' ? 0.8 : 0.9)); });
+}
+function renderFav(){
+  document.getElementById('top').innerHTML = '<a class="home" href="#/">← 全部</a><span class="id">收藏</span>';
+  var f = loadF(), words = [], sents = [];
+  f.forEach(function(x, i){ (x.t === 'w' ? words : sents).push({x:x, i:i}); });
+  function row(o){
+    return '<li><span class="ft">' + esc(o.x.text) + '</span>'
+      + (o.x.card ? '<a class="fc" href="#/c/' + o.x.card + '">卡 ' + esc(o.x.card) + '</a>' : '')
+      + '<button class="spk" type="button" onclick="speakText(this.parentNode.querySelector(\'.ft\').textContent)">🔊 听</button>'
+      + '<button class="fx" type="button" title="删掉" onclick="favRemove(' + o.i + ')">✕</button></li>';
+  }
+  var h = '<div class="lhero"><h1>不会念的</h1><p>' + words.length + ' 个词 · ' + sents.length + ' 句 · 点 🔊 听，点 ✕ 删。只存在这台机器上。</p></div>'
+    + '<section class="favsec"><h3>词</h3>'
+    + (words.length ? '<ul class="favl">' + words.map(row).join('') + '</ul>' : '<p class="sub2">还没有。在卡里点一个英文词，它旁边会出「☆ 收藏」。</p>')
+    + '</section><section class="favsec"><h3>句</h3>'
+    + (sents.length ? '<ul class="favl">' + sents.map(row).join('') + '</ul>' : '<p class="sub2">还没有。每个英文块的 🔊 旁边有 ☆。</p>')
+    + '</section>'
+    + (f.length ? '<p style="margin-top:18px"><button class="bbtn" type="button" onclick="speakAllFav()">🔊 全部连读</button></p>' : '');
+  var vs = voices(), cur = pickVoice(), want = ''; try { want = localStorage.getItem(VK) || ''; } catch(e){}
+  h += '<section class="favsec"><h3>声音</h3><p class="sub2">朗读用的是浏览器自带的声音库，<b>每台设备不一样</b>。这里挑这台机器上最好的英音；换设备要再挑一次。</p>'
+    + '<select id="vsel" onchange="setVoice(this.value)"><option value="">自动（' + (cur ? esc(cur.name) : '无') + '）</option>'
+    + vs.filter(function(v){ return /^en/i.test(v.lang); }).map(function(v){ return '<option value="' + esc(v.name) + '"' + (want === v.name ? ' selected' : '') + '>' + esc(v.name) + ' · ' + esc(v.lang) + '</option>'; }).join('')
+    + '</select> <button class="bbtn ghost" type="button" onclick="speakText(\'The peptide bond has partial double-bond character.\')">试听</button></section>';
+  document.getElementById('main').innerHTML = h;
+  var nav = document.getElementById('nav'); if (nav) nav.classList.add('hide');
+  window.scrollTo(0, 0);
+}
+
 function route(){
+  if (location.hash === '#/fav'){ renderFav(); return; }
   var m = location.hash.match(/^#\/c\/(.+)$/);
   if (m){ var c = byId(m[1]); if (c){ renderCard(c); return; } }
   renderList();

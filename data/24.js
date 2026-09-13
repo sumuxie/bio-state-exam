@@ -14,7 +14,7 @@ cram:[
  {g:'开口', gn:'不要一上来就背八步。先说它是什么、在哪儿、进来的是什么，这三句决定他还挖不挖。'},
  {n:'01', t:'归类',
   big:'线粒体基质里的一圈 <b>8 步酶反应</b>，把 acetyl-CoA 的乙酰基<b>彻底氧化成 2 CO₂</b>，氢交给 NAD⁺/FAD；oxaloacetate 开环也闭环。它是<b>分解</b>代谢的<b>共同终点</b>',
-  en:'“The citric acid cycle — also called the tricarboxylic acid cycle — is a closed sequence of eight enzyme-catalysed reactions in the mitochondrial matrix that <b>oxidises the acetyl group of acetyl-CoA completely to two CO₂</b>, putting the hydrogen onto NAD⁺ and FAD. Acetyl-CoA enters by condensing with oxaloacetate, and oxaloacetate is regenerated in the last step — recycled, not consumed. It is where the <b>catabolic</b> pathways converge — the breakdown routes, the ones that take a nutrient apart and release energy: carbohydrate arrives as pyruvate — from glycolysis, or from transamination of alanine — oxidatively decarboxylated to acetyl-CoA; fatty acids as acetyl-CoA from β-oxidation; amino acids enter at several points — most as acetyl-CoA, the rest as 2-oxoglutarate, succinyl-CoA, fumarate or oxaloacetate.”',
+  en:'“The citric acid cycle — also called the tricarboxylic acid cycle — is a closed sequence of eight enzyme-catalysed reactions — those eight are the main steps the question asks for — in the mitochondrial matrix that <b>oxidises the acetyl group of acetyl-CoA completely to two CO₂</b>, putting the hydrogen onto NAD⁺ and FAD. Acetyl-CoA enters by condensing with oxaloacetate, and oxaloacetate is regenerated in the last step — recycled, not consumed. It is where the <b>catabolic</b> pathways converge — the breakdown routes, the ones that take a nutrient apart and release energy: carbohydrate arrives as pyruvate — from glycolysis, or from transamination of alanine — oxidatively decarboxylated to acetyl-CoA; fatty acids as acetyl-CoA from β-oxidation; amino acids enter at several points — most as acetyl-CoA, the rest as 2-oxoglutarate, succinyl-CoA, fumarate or oxaloacetate.”',
   note:'<b>先说它是什么（一圈反应、在哪、干什么），再说「汇合」</b>——「汇合」是它在代谢图上的位置，不是定义。书 p136 的原话：乙酰基两个碳的彻底氧化由定位在基质里的一串反应完成，oxaloacetate 是关键化合物，p139「这一步闭合循环」。八步是 Lehninger 的数法（书把 aconitase 的脱水和加水分开数）。<br><b>「氨基酸都以 acetyl-CoA 进来」是错的</b>：p126 说氨基酸的分解产物在<b>不同位置</b>接入循环，acetyl-CoA 只是最重要的入口；p127 Arg/His/Glu/Gln/Pro 经 2-oxoglutarate，p128 Met/Ile/Val 经 succinyl-CoA，p129 Asp/Asn 经 oxaloacetate，p221 Tyr/Asp 经 fumarate。书 p136 列的三个入口（丙酮酸氧化脱羧、alanine 转氨、β-氧化）只是 acetyl-CoA 这一个门。英文：“Arginine, histidine, glutamate, glutamine and proline enter as 2-oxoglutarate; methionine, isoleucine and valine as succinyl-CoA; aspartate and asparagine as oxaloacetate; tyrosine and phenylalanine give fumarate as well as acetoacetate.” 为什么绕一圈：“Because oxaloacetate is regenerated it behaves like a catalyst: a small amount can process an unlimited number of acetyl groups.”<span class="pg">p126 p136 p139</span>'},
  {g:'账', gn:'投入、产出、总结三行。只说产出是半张账——他一句「那消耗了什么」就能把你问停。'},
  {n:'02', t:'投入',
@@ -142,7 +142,7 @@ sib:[
 
 segs:[
  {tag:'段 1 · 定义', h:'先说它是什么、在哪儿',
-  p:['“The citric acid cycle — also called the tricarboxylic acid cycle — is a closed sequence of eight enzyme reactions in the mitochondrial matrix that oxidises the acetyl group of acetyl-CoA completely to two CO₂, putting the hydrogen onto NAD⁺ and FAD; oxaloacetate opens the cycle and is regenerated at the end. It is where the <b>catabolic</b> pathways converge, the breakdown routes that take a nutrient apart and release energy: carbohydrate and fat arrive as acetyl-CoA, amino acids there, or as 2-oxoglutarate, succinyl-CoA, fumarate or oxaloacetate.',
+  p:['“The citric acid cycle — also called the tricarboxylic acid cycle — is a closed sequence of eight enzyme reactions — the main steps — in the mitochondrial matrix that oxidises the acetyl group of acetyl-CoA completely to two CO₂, putting the hydrogen onto NAD⁺ and FAD; oxaloacetate opens the cycle and is regenerated at the end. It is where the <b>catabolic</b> pathways converge, the breakdown routes that take a nutrient apart and release energy: carbohydrate and fat arrive as acetyl-CoA, amino acids there, or as 2-oxoglutarate, succinyl-CoA, fumarate or oxaloacetate.',
      'The cycle oxidises that acetyl group to two molecules of CO₂, and it runs in the <b>matrix</b>, the inner space of the mitochondrion.”'],
   note:'<b>「汇合」是这题的骨架。</b>书列的三个入口：糖酵解来的丙酮酸经氧化脱羧、alanine 转氨、脂肪酸 β-氧化。'},
  {tag:'段 2 · general', h:'先说产物和意义，再说八步',
@@ -173,25 +173,13 @@ why:{
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
-{q:'What are NAD⁺ and FAD — and what is NADH?',
- mean:'<b>这张卡用得最多的名词，之前没正面定义。</b>',
- say:'“NAD⁺ and FAD are the coenzymes of the dehydrogenases in their oxidised form: they accept the hydrogen — two electrons with protons — that a dehydrogenase strips from its substrate. NAD⁺ takes a hydride and becomes NADH; FAD takes two hydrogens and becomes FADH₂. The reduced forms carry that energy to the respiratory chain, which reoxidises them and makes the ATP. NAD⁺ is loosely bound and moves between enzymes; the FAD of succinate dehydrogenase is covalently bound, a prosthetic group.”'},
-
-{q:'What is oxaloacetate?',
- mean:'书叫它「循环的关键化合物」（p136）。',
- say:'“The four-carbon 2-oxo dicarboxylic acid that accepts the acetyl group in the first step and is regenerated in the last — the textbook calls it the key compound of the cycle, and because it comes back it is a carrier, not a reactant. It is also a β-keto acid, but a stable one, and by transamination it is the carbon skeleton of aspartate.”'},
-
-{q:'Tell me about the citric acid cycle.',
- mean:'<b>他真正会说的那句，比卷面短得多。</b>所以答案要自带结构：是什么 → 在哪 → 产什么 → 意义，然后才是步骤。<b>不要一上来就背八步。</b>',
+{q:'The citric acid cycle.',
+ mean:'他也可能说 “Tell me about the citric acid cycle.”。<b>他真正会说的那句，比卷面短得多。</b>所以答案要自带结构：是什么 → 在哪 → 产什么 → 意义，然后才是步骤。<b>不要一上来就背八步。</b>',
  say:'“It is the closed sequence of eight reactions in the mitochondrial matrix that oxidises the acetyl group of acetyl-CoA to two CO₂ and hands the hydrogen to NAD⁺ and FAD. It is where the catabolic pathways converge — sugar and fat arrive as acetyl-CoA, amino acids there, or as 2-oxoglutarate, succinyl-CoA, fumarate or oxaloacetate. Per acetyl group it gives three NADH, one FADH₂ and one GTP — so what it really produces is reducing power, not ATP. The ATP comes later, in the respiratory chain.”'},
 
 {q:'How much ATP does the citric acid cycle produce?',
  mean:'<b>陷阱问法。</b>直接报数字就上钩了——先纠正前提。',
  say:'“Directly, one GTP per turn — that is all. Of the twelve usually quoted per acetyl group, eleven are made by the respiratory chain from the three NADH and one FADH₂ the cycle hands it; the twelfth is that GTP.”'},
-
-{q:'Where does it happen?',
- mean:'一个词的答案，但<b>那个例外值得主动说</b>。',
- say:'“In the matrix, the inner space of the mitochondrion. With one exception — succinate dehydrogenase sits in the inner membrane, which is also why that step feeds its electrons straight to ubiquinone — the enzyme is complex II of the chain.”'},
 
 {q:'Which step is regulated?',
  mean:'书只点了一个调节酶，报它，并给抑制剂。',
@@ -230,6 +218,17 @@ recog:[
 
 /* ---------------- 追问 ---------------- */
 ask:[
+{g:'定义类', gn:'他会单独拎出来问的名词。', items:[
+{r:'中', q:'Where does it happen?',
+ en:'“In the matrix, the inner space of the mitochondrion. With one exception — succinate dehydrogenase sits in the inner membrane, which is also why that step feeds its electrons straight to ubiquinone — the enzyme is complex II of the chain.”',
+ cn:'一个词的答案，但<b>那个例外值得主动说</b>。'},
+{r:'中', q:'What are NAD⁺ and FAD — and what is NADH?',
+ en:'“NAD⁺ and FAD are the coenzymes of the dehydrogenases in their oxidised form: they accept the hydrogen — two electrons with protons — that a dehydrogenase strips from its substrate. NAD⁺ takes a hydride and becomes NADH; FAD takes two hydrogens and becomes FADH₂. The reduced forms carry that energy to the respiratory chain, which reoxidises them and makes the ATP. NAD⁺ is loosely bound and moves between enzymes; the FAD of succinate dehydrogenase is covalently bound, a prosthetic group.”',
+ cn:'<b>这张卡用得最多的名词，之前没正面定义。</b>'},
+{r:'中', q:'What is oxaloacetate?',
+ en:'“The four-carbon 2-oxo dicarboxylic acid that accepts the acetyl group in the first step and is regenerated in the last — the textbook calls it the key compound of the cycle, and because it comes back it is a carrier, not a reactant. It is also a β-keto acid, but a stable one, and by transamination it is the carbon skeleton of aspartate.”',
+ cn:'书叫它「循环的关键化合物」（p136）。'},
+]},
 {g:'为什么类', gn:'四个「为什么」，全部有书作根据。这一组比八个酶名值钱。', items:[
 {r:'高', q:'What is oxidative decarboxylation?',
  en:'“The conversion of a 2-oxo acid into the acyl-CoA one carbon shorter: the carboxyl next to the keto group leaves as CO₂ while the remaining carbonyl carbon is oxidised to an acyl group and captured as a thioester on coenzyme A, with NAD⁺ reduced. A multienzyme complex does it, with thiamine diphosphate, lipoate, coenzyme A, FAD and NAD⁺. Pyruvate to acetyl-CoA and 2-oxoglutarate to succinyl-CoA are the two cases in this topic.”',
