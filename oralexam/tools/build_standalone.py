@@ -14,7 +14,7 @@ import io, os, re, sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 APP = os.path.join(ROOT, 'app')
-CDN = 'https://cdn.jsdelivr.net/gh/sumuxie/bio-state-exam@claude/molecure-lite/oralexam/app/'
+CDN = 'https://cdn.jsdelivr.net/gh/sumuxie/bio-state-exam@main/oralexam/app/'
 
 s = io.open(os.path.join(APP, 'index.html'), encoding='utf-8').read()
 
