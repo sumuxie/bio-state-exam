@@ -104,3 +104,32 @@ disulfidových můstků**”*（一级结构由序列**和二硫桥的位置**�
 
 **跟第 1 条（α-helix n+3）同一类**：书内部自相矛盾，而不是书与通用写法冲突。
 这一类的处理方式是**用书的一半打书的另一半**，比引用外部权威稳。
+
+---
+
+## 6 · p196 · β-氧化第四步的酶印成 `β-ketokinasa`，应为 thiolase
+
+| | |
+|---|---|
+| 书上印的 | Obr. 8.x β-氧化四步表，第四步 **D. Thiolytické štěpení**，酶名那一栏印的是 **`β-ketokinasa`** |
+| 是 OCR 错吗 | **不是。**已回 280 dpi 原图确认，书上印的就是 ketokinasa。 |
+| 书自己的图 | **同一行**写的是 *thiolytické štěpení*（硫解），进来的是 **CoASH**，出去的是 acyl-CoA ＋ acetyl-CoA。 |
+| 矛盾在哪 | **kinase 转移的是磷酸**，这一步一个磷酸都没有。硫解酶按反应命名就是 **thiolase**（3-ketoacyl-CoA thiolase，即 β-ketothiolase）。「ketokinasa」多半是 **thiolasa → kinasa** 的排印错。 |
+| 怎么用 | 跟第 1、5 条同一招：**用书的一半打书的另一半**——不说「别的教材叫 thiolase」，说「你这本书同一行写的是 thiolytické štěpení，加的是 CoASH 不是磷酸」。 |
+
+**考场说法**：
+> *"The textbook's own figure calls this step thiolytic cleavage and shows coenzyme A coming in, not
+> phosphate — so the enzyme is a thiolase, generally 3-ketoacyl-CoA thiolase. The name printed next
+> to it, ketokinase, cannot be right: a kinase transfers a phosphoryl group and there is none here."*
+
+---
+
+## 7 · 「这本书正文一个加粗都没有」——不成立，至少第 4 章不成立
+
+| | |
+|---|---|
+| 原来的结论 | `LOGIC.md` §7 写「这本书正文一个加粗都没有，所以『只背加粗的』这个标准不存在」。 |
+| 反例 | **p110–p111**（§4.3.2 翻译后加工）正文里有加粗：*preproteinů · preproproteinů · signální sekvenci · ribonukleoproteinu SRP · riboforiny I a II · signální peptidasou · sekrečních granulí · preproinsulin · proinsulin*。 |
+| 怎么发现的 | 写卡 08（propeptide / signal peptide）时回原图核 23 残基那个数字，顺带看见的。 |
+| 注意 | OCR 出来的纯文本**不带格式**，所以 `book/pages/*.txt` 里看不出加粗——这也是当初得出「没有加粗」的原因。**凡是关于版式的结论，只能回原图看。** |
+| 结论怎么改 | 「全书无加粗」→「**加粗零星出现，至少第 4 章有**；但它仍然不是可靠的重点标记，锚点还是靠节标题、图、表、命名句」。已改 `LOGIC.md` §7。 |
