@@ -610,13 +610,14 @@ function utter(txt, rate){
 }
 function setVoice(name){ try { localStorage.setItem(VK, name || ''); } catch(e){} }
 /* 单词：项目自带的音频文件优先——那是同一个声音，任何设备都一样。 */
+var AUDIO_BASE = '';          /* 单文件版会被换成 CDN 地址，见 tools/build_standalone.py */
 var WAUDIO = null;
 function wordSlug(w){ return String(w).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
 function wordFile(w){
   if (!window.AUDIO_WORDS || !AUDIO_WORDS.words) return '';
   if (!WAUDIO){ WAUDIO = {}; for (var i=0;i<AUDIO_WORDS.words.length;i++) WAUDIO[AUDIO_WORDS.words[i]] = 1; }
   var k = String(w).toLowerCase().replace(/[^a-z0-9’'\-]+/g, '');
-  return WAUDIO[k] ? 'audio/w/' + wordSlug(k) + '.mp3' : '';
+  return WAUDIO[k] ? AUDIO_BASE + 'audio/w/' + wordSlug(k) + '.mp3' : '';
 }
 function playWord(w, onend){
   var src = wordFile(w);
