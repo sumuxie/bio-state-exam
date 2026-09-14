@@ -124,7 +124,7 @@ print('内容审查 —— 每条对应 Ruojin 提过的一个要求')
 print('=' * 78)
 for f in files:
     b = os.path.basename(f)
-    if b == '_index.js': continue
+    if b.startswith('_'): continue
     if want and not any(w in b for w in want): continue
     c = load(f)
     issues = review(c)

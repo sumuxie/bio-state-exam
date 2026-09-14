@@ -54,6 +54,7 @@ def spoken(src):
 
 
 def clean(t):
+    t = re.sub(r"'\s*\+\s*'", ' ', t)
     t = re.sub(r'<[^>]+>', '', t)
     t = re.sub(r'\\(.)', r'\1', t)
     return re.sub(r'\s+', ' ', t).strip()
@@ -106,7 +107,7 @@ print('出声念的英文 —— 只揪说不顺的：插入语套插入语 · �
 print('=' * 78)
 for f in files:
     b = os.path.basename(f)
-    if b == '_index.js': continue
+    if b.startswith('_'): continue
     if want and not any(w in b for w in want): continue
     total, rows = scan(f)
     gt += total; gb += len(rows)

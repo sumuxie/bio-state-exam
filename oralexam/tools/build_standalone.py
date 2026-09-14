@@ -34,6 +34,8 @@ if left:
 if "var AUDIO_BASE = ''" not in s:
     print("ABORT: index.html 里没有 AUDIO_BASE"); sys.exit(1)
 s = s.replace("var AUDIO_BASE = ''", "var AUDIO_BASE = '%s'" % CDN, 1)
+# 图同理：单文件带不动 jpg，指到 CDN
+s = s.replace("var IMG_BASE = ''", "var IMG_BASE = '%s'" % CDN, 1)
 
 out = os.path.join(APP, 'standalone.html')
 io.open(out, 'w', encoding='utf-8', newline='\n').write(s)

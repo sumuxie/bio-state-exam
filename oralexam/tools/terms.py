@@ -102,7 +102,7 @@ def norm(w):
 cards = {}
 for f in sorted(glob.glob(os.path.join(DATA, '*.js'))):
     b = os.path.basename(f)
-    if b == '_index.js': continue
+    if b.startswith('_'): continue
     src = io.open(f, encoding='utf-8').read()
     cards[b[:-3]] = {
         'src': src,

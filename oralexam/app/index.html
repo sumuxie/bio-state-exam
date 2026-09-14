@@ -291,7 +291,42 @@ button.b:disabled{opacity:.35;cursor:default}
 .rd span.s{opacity:.45}
 .rd span.s.cur{opacity:1;background:var(--warnbg);border-radius:3px;box-shadow:0 0 0 3px var(--warnbg)}
 .wd{background:var(--goodbg);border-radius:3px;box-shadow:0 0 0 2px var(--goodbg)}
-#wpop{position:fixed;z-index:60;display:none}
+#wpop{position:fixed;z-index:60;display:none;max-width:min(360px,92vw)}
+#wpop .card{background:var(--card);border:1px solid var(--rule);border-radius:11px;
+  padding:12px 13px 10px;box-shadow:0 10px 30px rgba(0,0,0,.18);margin-bottom:6px}
+#wpop .hw{font-size:17px;font-weight:700;color:var(--ink);line-height:1.3}
+#wpop .ipa{font-family:Georgia,serif;font-size:13px;color:var(--dim);margin-left:7px}
+#wpop .cn{font-size:14px;color:var(--ink);margin:7px 0 0;line-height:1.65}
+#wpop .en{font-size:12.5px;color:var(--dim);margin:6px 0 0;line-height:1.6}
+#wpop .ex{font-size:12px;color:var(--faint);margin:7px 0 0;line-height:1.55;
+  border-left:2px solid var(--rule);padding-left:8px}
+#wpop .none{font-size:12.5px;color:var(--faint);margin:6px 0 0}
+/* ---------- 单词本 ---------- */
+.wbhero{margin:0 0 6px}
+.wbstat{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 4px}
+.wbstat span{background:var(--soft);color:var(--accent);border-radius:7px;
+  padding:6px 11px;font-size:13px;font-weight:700}
+.wbcard{background:var(--card);border:1px solid var(--rule);border-radius:14px;
+  padding:30px 20px;margin:18px 0 0;text-align:center}
+.wbcard .hw{font-size:31px;font-weight:700;line-height:1.25;word-break:break-word}
+.wbcard .ipa{font-family:Georgia,serif;font-size:15px;color:var(--dim);margin-top:8px}
+.wbcard .cn{font-size:17px;margin:16px 0 0;line-height:1.7;text-align:left}
+.wbcard .en{font-size:13.5px;color:var(--dim);margin:10px 0 0;line-height:1.7;text-align:left}
+.wbcard .ex{font-size:13px;color:var(--faint);margin:12px 0 0;line-height:1.6;text-align:left;
+  border-left:2px solid var(--rule);padding-left:10px}
+.wbcard .from{font-size:12px;color:var(--faint);margin:14px 0 0}
+.wbbtns{display:flex;gap:9px;margin:16px 0 0}
+.wbbtns button{flex:1;font-family:inherit;font-size:14px;font-weight:700;padding:13px 6px;
+  border-radius:10px;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
+.wbbtns button b{display:block;font-size:11px;font-weight:400;color:var(--faint);margin-top:3px}
+.wbbtns button.bad{border-color:#c2410c;color:#c2410c}
+.wbbtns button.good{border-color:var(--accent);color:var(--accent)}
+.wbbtns button.easy{border-color:#15803d;color:#15803d}
+.wblist{list-style:none;padding:0;margin:14px 0 0}
+.wblist li{display:flex;align-items:center;gap:9px;padding:9px 2px;border-bottom:1px solid var(--rule);font-size:14px}
+.wblist li .w{font-weight:700}
+.wblist li .m{color:var(--dim);flex:1;font-size:13px}
+.wblist li .due{font-size:11.5px;color:var(--faint)}
 #wpop button{font-family:inherit;font-size:13px;border:1px solid var(--rule);background:var(--card);color:var(--ink);
   border-radius:14px;padding:6px 11px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.14)}
 #wpop button i{font-style:normal;font-family:Georgia,serif}
@@ -346,6 +381,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="audio/words.js"></script>
 <script src="data/_index.js"></script>
 <script>window.CARDS = [];</script>
+<script src="data/_gloss.js"></script>
 <script src="data/01.js"></script>
 <script src="data/02.js"></script>
 <script src="data/03.js"></script>
@@ -379,7 +415,7 @@ function esc(x){ return x == null ? '' : String(x); }
 /* 图有两种来源：f.svg 是内联画的（离线、缩放不糊、跟主题变色），f.src 是书上裁的图片。 */
 function figBody(f){
   if (f.svg) return '<div class="svgwrap">' + f.svg + '</div>';
-  if (f.src) return '<img alt="" src="' + f.src + '">';
+  if (f.src) return '<img alt="" src="' + IMG_BASE + f.src + '">';
   return '';
 }
 function fig(f){
@@ -661,7 +697,7 @@ function utter(txt, rate){
 }
 function setVoice(name){ try { localStorage.setItem(VK, name || ''); } catch(e){} }
 /* 单词：项目自带的音频文件优先——那是同一个声音，任何设备都一样。 */
-var AUDIO_BASE = '';          /* 单文件版会被换成 CDN 地址，见 tools/build_standalone.py */
+var AUDIO_BASE = ''; var IMG_BASE = '';          /* 单文件版会被换成 CDN 地址，见 tools/build_standalone.py */
 var WAUDIO = null;
 function wordSlug(w){ return String(w).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
 function wordFile(w){
@@ -840,6 +876,7 @@ function renderCard(c){
     + (c.figs && c.figs.length ? '<button id="mFig" onclick="mode(\'figs\')">图</button>' : '')
     + '<button id="mCloze" onclick="cloze()" title="把关键词盖住，点一下露出">遮词</button>'
     + '<button onclick="location.hash=\'#/fav\'" title="收藏的词和句">☆</button>'
+    + '<button onclick="location.hash=\'#/wb\'" title="单词本">📕</button>'
     + '</div>';
 
   document.getElementById('main').innerHTML =
@@ -1120,21 +1157,52 @@ function speakText(txt){
   var u = utter(txt, txt.split(' ').length > 3 ? 0.9 : 0.85);
   speechSynthesis.speak(u);
 }
+/* 释义查表。卡上是 accelerates，表里是 accelerate，所以要先把词形还原。 */
+var WSUF = [['s',''],['es',''],['ies','y'],['ed',''],['ed','e'],['ing',''],['ing','e'],
+            ['er',''],['est',''],['ly',''],['ations','ate'],['ation','ate'],['ally','al']];
+function glossOf(w){
+  var G = window.GLOSS || {};
+  var k = (w || '').toLowerCase().replace(/^[^a-z0-9]+|[^a-z0-9]+$/g, '');
+  if (!k) return null;
+  if (G[k]) return G[k];
+  for (var i=0;i<WSUF.length;i++){
+    var suf = WSUF[i][0];
+    if (k.length - suf.length >= 3 && k.slice(-suf.length) === suf){
+      var c = k.slice(0, k.length - suf.length) + WSUF[i][1];
+      if (G[c]) return G[c];
+    }
+  }
+  if (k.indexOf('-') >= 0){
+    var parts = k.split('-');
+    for (i=0;i<parts.length;i++) if (parts[i].length > 4 && G[parts[i]]) return G[parts[i]];
+  }
+  return null;
+}
 function showWordPop(w, rect){
   var wp = document.getElementById('wpop');
   if (!wp){ wp = document.createElement('div'); wp.id = 'wpop'; document.body.appendChild(wp); }
-  var on = favHas('w', w);
-  wp.innerHTML = '<button type="button" class="' + (on ? 'on' : '') + '" data-w="' + w.replace(/"/g, '&quot;') + '" onclick="favWord(this)">'
-    + (on ? '★ 已收藏 ' : '☆ 收藏 ') + '<i>' + w.replace(/</g, '&lt;') + '</i></button>';
+  var on = favHas('w', w), g = glossOf(w);
+  var h = '<div class="card"><div class="hw">' + esc(w)
+        + (g && g.ipa ? '<span class="ipa">' + esc(g.ipa) + '</span>' : '') + '</div>';
+  if (g && g.cn) h += '<p class="cn">' + esc(g.cn) + '</p>';
+  if (g && g.en) h += '<p class="en">' + esc(g.en) + '</p>';
+  if (g && g.ex) h += '<p class="ex">' + esc(g.ex) + '</p>';
+  if (!g) h += '<p class="none">词库里还没有这个词的释义。收藏它，补的时候就知道该补哪些。</p>';
+  else if (!g.cn) h += '<p class="none">这条只有英文释义，中文还没补。</p>';
+  h += '</div>';
+  h += '<button type="button" class="' + (on ? 'on' : '') + '" data-w="' + w.replace(/"/g, '&quot;') + '" onclick="favWord(this)">'
+    + (on ? '★ 在单词本里 ' : '☆ 加进单词本 ') + '<i>' + w.replace(/</g, '&lt;') + '</i></button>';
+  wp.innerHTML = h;
   wp.style.display = 'block';
-  var left = Math.max(8, Math.min(rect.left, window.innerWidth - 220));
-  var top = rect.top - 40; if (top < 8) top = rect.bottom + 8;
+  var left = Math.max(8, Math.min(rect.left, window.innerWidth - 320));
+  var top = rect.bottom + 8;
+  if (top + 200 > window.innerHeight && rect.top > 220) top = Math.max(8, rect.top - 210);
   wp.style.left = left + 'px'; wp.style.top = top + 'px';
 }
 function favWord(btn){
   var w = btn.dataset.w, on = favToggle('w', w);
   btn.className = on ? 'on' : '';
-  btn.innerHTML = (on ? '★ 已收藏 ' : '☆ 收藏 ') + '<i>' + w.replace(/</g, '&lt;') + '</i>';
+  btn.innerHTML = (on ? '★ 在单词本里 ' : '☆ 加进单词本 ') + '<i>' + w.replace(/</g, '&lt;') + '</i>';
 }
 function favSent(btn){
   var el = btn.parentNode, text = englishOf(el); if (!text) return;
@@ -1156,7 +1224,7 @@ function renderFav(){
       + '<button class="spk" type="button" onclick="speakText(this.parentNode.querySelector(\'.ft\').textContent)">🔊 听</button>'
       + '<button class="fx" type="button" title="删掉" onclick="favRemove(' + o.i + ')">✕</button></li>';
   }
-  var h = '<div class="lhero"><h1>不会念的</h1><p>' + words.length + ' 个词 · ' + sents.length + ' 句 · 点 🔊 听，点 ✕ 删。只存在这台机器上。<br><b>音频念错的词也点星收藏</b>，然后「复制清单给老师」，我照着修。</p></div>'
+  var h = '<div class="lhero"><h1>不会念的</h1><p>' + words.length + ' 个词 · ' + sents.length + ' 句 · 点 🔊 听，点 ✕ 删。只存在这台机器上。<br><b>音频念错的词也点星收藏</b>，然后「复制清单给老师」，我照着修。<br><a href="#/wb">📕 单词本</a>：同一批词，按间隔重复背。</p></div>'
     + '<section class="favsec"><h3>词</h3>'
     + (words.length ? '<ul class="favl">' + words.map(row).join('') + '</ul>' : '<p class="sub2">还没有。在卡里点一个英文词，它旁边会出「☆ 收藏」。</p>')
     + '</section><section class="favsec"><h3>句</h3>'
@@ -1193,7 +1261,105 @@ function copyFav(){
   alert(ok ? '复制好了，直接粘给我。\n\n音频念错的词也点星收藏，我照着修。' : t);
 }
 
+/* =================== 单词本 · 间隔重复 ===================
+   卡片本身来自收藏的词（收藏＝加进单词本）。这里只存每个词的复习进度。
+   算法是 SM-2 的简化版：记不住就回到一天，记住就按 ease 拉长。 */
+var WBK = 'oralexam.wb.v1';
+function wbLoad(){ try { return JSON.parse(localStorage.getItem(WBK)) || {}; } catch(e){ return {}; } }
+function wbSave(o){ try { localStorage.setItem(WBK, JSON.stringify(o)); } catch(e){} }
+function wbWords(){
+  var out = [];
+  loadF().forEach(function(x){ if (x.t === 'w') out.push(x); });
+  return out;
+}
+function wbPlus(days){
+  var d = new Date(); d.setDate(d.getDate() + days);
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+function wbGrade(word, g){
+  var st = wbLoad(), r = st[word] || {i:0, e:2.5, n:0, lap:0};
+  if (g === 0){ r.lap = (r.lap||0) + 1; r.e = Math.max(1.3, r.e - 0.2); r.i = 1; }
+  else if (g === 1){ r.i = r.i ? Math.max(1, Math.round(r.i * r.e)) : 1; r.n = (r.n||0) + 1; }
+  else { r.e = r.e + 0.15; r.i = r.i ? Math.round(r.i * r.e * 1.5) : 3; r.n = (r.n||0) + 1; }
+  r.d = wbPlus(r.i);
+  st[word] = r; wbSave(st);
+}
+function wbQueue(){
+  var st = wbLoad(), t = today(), due = [], fresh = [];
+  wbWords().forEach(function(x){
+    var r = st[x.text];
+    if (!r || !r.d) fresh.push(x);
+    else if (r.d <= t) due.push(x);
+  });
+  return {due: due, fresh: fresh, all: wbWords().length};
+}
+var wbCur = null, wbShown = false;
+function wbNext(){
+  var q = wbQueue();
+  wbCur = q.due.length ? q.due[0] : (q.fresh.length ? q.fresh[0] : null);
+  wbShown = false;
+  renderWb();
+}
+function wbShow(){ wbShown = true; renderWb(); }
+function wbAnswer(g){
+  if (!wbCur) return;
+  wbGrade(wbCur.text, g);
+  wbNext();
+}
+function renderWb(){
+  document.getElementById('top').innerHTML =
+    '<a class="home" href="#/">← 全部</a><span class="id">单词本</span>';
+  var nav = document.getElementById('nav'); if (nav) nav.classList.add('hide');
+  var q = wbQueue(), st = wbLoad();
+  var h = '<div class="lhero wbhero"><h1>单词本</h1>'
+        + '<p>在卡里点一个英文词，弹出来的框里点「加进单词本」。这里按间隔重复排，记不住的会回头找你。</p></div>'
+        + '<div class="wbstat"><span>该复习 ' + q.due.length + '</span><span>没学过 ' + q.fresh.length
+        + '</span><span>一共 ' + q.all + '</span></div>';
+  if (!q.all){
+    h += '<p class="sub2" style="margin-top:16px">还是空的。去任何一张卡，点一个不认识的英文词。</p>';
+  } else if (!wbCur){
+    h += '<div class="wbcard"><div class="hw">今天清空了</div>'
+       + '<p class="cn">该复习的都过完了。下面是全部 ' + q.all + ' 个词。</p></div>';
+  } else {
+    var g = glossOf(wbCur.text), r = st[wbCur.text];
+    h += '<div class="wbcard"><div class="hw">' + esc(wbCur.text) + '</div>'
+       + (g && g.ipa ? '<div class="ipa">' + esc(g.ipa) + '</div>' : '')
+       + '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="playWord(' + JSON.stringify(wbCur.text) + ')">🔊 听</button></p>';
+    if (wbShown){
+      if (g && g.cn) h += '<p class="cn">' + esc(g.cn) + '</p>';
+      if (g && g.en) h += '<p class="en">' + esc(g.en) + '</p>';
+      if (g && g.ex) h += '<p class="ex">' + esc(g.ex) + '</p>';
+      if (!g) h += '<p class="cn">词库里没有这个词的释义。</p>';
+      if (wbCur.card) h += '<p class="from">来自 <a href="#/c/' + esc(wbCur.card) + '">卡 ' + esc(wbCur.card) + '</a></p>';
+      if (r && r.i) h += '<p class="from">上次间隔 ' + r.i + ' 天 · 忘过 ' + (r.lap||0) + ' 次</p>';
+    }
+    h += '</div>';
+    if (!wbShown){
+      h += '<p style="margin:16px 0 0"><button class="bbtn" type="button" onclick="wbShow()">显示意思</button></p>';
+    } else {
+      h += '<div class="wbbtns">'
+         + '<button type="button" class="bad" onclick="wbAnswer(0)">忘了<b>明天再来</b></button>'
+         + '<button type="button" class="good" onclick="wbAnswer(1)">想起来了<b>拉长间隔</b></button>'
+         + '<button type="button" class="easy" onclick="wbAnswer(2)">太简单<b>放很久</b></button>'
+         + '</div>';
+    }
+  }
+  if (q.all){
+    h += '<section class="favsec" style="margin-top:26px"><h3>全部 ' + q.all + ' 个词</h3><ul class="wblist">';
+    wbWords().forEach(function(x){
+      var g2 = glossOf(x.text), r2 = st[x.text];
+      h += '<li><span class="w">' + esc(x.text) + '</span>'
+         + '<span class="m">' + esc(g2 && g2.cn ? g2.cn : (g2 && g2.en ? g2.en : '还没有释义')) + '</span>'
+         + '<span class="due">' + (r2 && r2.d ? r2.d : '新') + '</span></li>';
+    });
+    h += '</ul></section>';
+  }
+  document.getElementById('main').innerHTML = h;
+  window.scrollTo(0, 0);
+}
+
 function route(){
+  if (location.hash === '#/wb'){ wbNext(); return; }
   if (location.hash === '#/fav'){ renderFav(); return; }
   var m = location.hash.match(/^#\/c\/(.+)$/);
   if (m){ var c = byId(m[1]); if (c){ renderCard(c); return; } }
