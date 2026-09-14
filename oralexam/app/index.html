@@ -324,7 +324,12 @@ button.b:disabled{opacity:.35;cursor:default}
 #wpop{position:fixed;z-index:60;display:none;max-width:min(360px,92vw)}
 #wpop .card{background:var(--card);border:1px solid var(--rule);border-radius:11px;
   padding:12px 13px 10px;box-shadow:0 10px 30px rgba(0,0,0,.18);margin-bottom:6px}
-#wpop .hw{font-size:17px;font-weight:700;color:var(--ink);line-height:1.3}
+#wpop .hd{display:flex;align-items:flex-start;gap:10px}
+#wpop .hw{font-size:17px;font-weight:700;color:var(--ink);line-height:1.3;flex:1;min-width:0}
+#wpop .star{flex:none;font-family:inherit;font-size:13px;font-weight:700;white-space:nowrap;
+  border:1px solid var(--accent);background:var(--card);color:var(--accent);
+  border-radius:8px;padding:6px 11px;cursor:pointer}
+#wpop .star.on{background:var(--accent);color:var(--onAccent)}
 #wpop .ipa{font-family:Georgia,serif;font-size:13px;color:var(--dim);margin-left:7px}
 #wpop .cn{font-size:14px;color:var(--ink);margin:7px 0 0;line-height:1.65}
 #wpop .en{font-size:12.5px;color:var(--dim);margin:6px 0 0;line-height:1.6}
@@ -1250,8 +1255,10 @@ function showWordPop(w, rect){
   var wp = document.getElementById('wpop');
   if (!wp){ wp = document.createElement('div'); wp.id = 'wpop'; document.body.appendChild(wp); }
   var on = favHas('w', w), g = glossOf(w);
-  var h = '<div class="card"><div class="hw">' + esc(w)
-        + (g && g.ipa ? '<span class="ipa">' + esc(g.ipa) + '</span>' : '') + '</div>';
+  var h = '<div class="card"><div class="hd"><div class="hw">' + esc(w)
+        + (g && g.ipa ? '<span class="ipa">' + esc(g.ipa) + '</span>' : '') + '</div>'
+        + '<button type="button" class="star' + (on ? ' on' : '') + '" data-w="' + w.replace(/"/g, '&quot;')
+        + '" onclick="favWord(this)">' + (on ? '★ 在本子里' : '☆ 加进本子') + '</button></div>';
   if (g && g.ex){
     h += '<p class="ex">' + esc(g.ex) + '</p>'
        + '<p class="exfrom">你卡上的原句'
@@ -1263,8 +1270,7 @@ function showWordPop(w, rect){
   else if (!g.cn) h += '<p class="none">这条只有英文释义，中文还没补。</p>';
   if (g) h += '<p class="src">' + srcLine(g) + '</p>';
   h += '</div>';
-  h += '<button type="button" class="' + (on ? 'on' : '') + '" data-w="' + w.replace(/"/g, '&quot;') + '" onclick="favWord(this)">'
-    + (on ? '★ 在单词本里 ' : '☆ 加进单词本 ') + '<i>' + w.replace(/</g, '&lt;') + '</i></button>';
+
   wp.innerHTML = h;
   wp.style.display = 'block';
   var left = Math.max(8, Math.min(rect.left, window.innerWidth - 320));
@@ -1274,8 +1280,8 @@ function showWordPop(w, rect){
 }
 function favWord(btn){
   var w = btn.dataset.w, on = favToggle('w', w);
-  btn.className = on ? 'on' : '';
-  btn.innerHTML = (on ? '★ 在单词本里 ' : '☆ 加进单词本 ') + '<i>' + w.replace(/</g, '&lt;') + '</i>';
+  btn.className = 'star' + (on ? ' on' : '');
+  btn.textContent = on ? '★ 在本子里' : '☆ 加进本子';
 }
 function favSent(btn){
   var el = btn.parentNode, text = englishOf(el); if (!text) return;
