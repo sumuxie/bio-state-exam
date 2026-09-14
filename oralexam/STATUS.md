@@ -9,6 +9,34 @@
 
 ---
 
+## ⚠ 范围：这个 app 只做了三科里的一科（2026-09-15 查出来的）
+
+导师三张题目单一共 **98 道**，分三个标题（`jiri_bank/_qindex.json`）：
+
+| 标题 | 题数 | 卷一上的 | oralexam 里 |
+|---|---|---|---|
+| Biochemistry | 32 | 7 | **全部有卡**（合并后 30 道） |
+| Basic Lab Techniques | 34 | 6 | **一张卡都没有** |
+| Microbiology | 32 | 6 | **一张卡都没有** |
+
+**oralexam 从一开始就只按生化建**（`TOPICS.md` 就叫「三十道题的地图」，
+`_index.js` 注释是「30 道生化题」）。但**文档里没有任何一处写着「另外两科不做」**——
+这个范围是默认出来的，不是选出来的。**66 道题、三分之二的题目单，没有出声的答案。**
+
+**她自己发现的**：「jiribank里肯定有ph这道题」。确实有，两道，都在 Basic Lab Techniques：
+`Define pH, what is a buffer, and explain the Henderson-Hasselbalch equation.` 和
+`How do you properly calibrate a pH meter?`。
+她凭「我这块乱不清」提的横向卡 `x-ph`，几乎逐字压在第一道上。
+
+**另外两科不是没料**：`jiri_bank/` 本身是个题库 app，`data/` 有 2.4 MB，`q_s1`–`q_s4` 覆盖三张卷子。
+缺的是**出声卡那种形态**（四段逐字稿、追问、停止句），不是缺内容。
+
+**2026-09-15 夜她的决定**：先把另外两科的**题面**放进 app，`#/q/basic` 和 `#/q/micro`，
+**只有题目，一个字答案都不写**（她原话）。料是 `tools/make_qbank.py` 从 `jiri_bank/_qindex.json` 抽的（那个目录在 oralexam 外面），
+落在 `app/data/_qbank.js`。下一步做不做卡，她还没定。
+
+---
+
 ## 新卡原则（2026-09-15 Ruojin 同意的，之后开卡按这个判）
 
 **只有三张还值得做，排好序了。做之前先问她背诵数字。**
