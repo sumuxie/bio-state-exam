@@ -10649,6 +10649,10 @@ function wbQueue(){
   return {due: due, fresh: fresh, all: wbWords().length};
 }
 var wbCur = null, wbShown = false;
+/* 词库清单默认收起。她的话（2026-09-15）：「词库先隐藏」。
+   单词本里只会出现她收藏过的词，没收藏的一个都不进来。 */
+var wbListOpen = false;
+function wbToggleList(){ wbListOpen = !wbListOpen; renderWb(); }
 function wbNext(){
   var q = wbQueue();
   wbCur = q.due.length ? q.due[0] : (q.fresh.length ? q.fresh[0] : null);
@@ -10699,7 +10703,7 @@ function renderWb(){
          + '</div>';
     }
   }
-  if (q.all){
+  if (q.all && wbListOpen){
     h += '<section class="favsec" style="margin-top:26px"><h3>全部 ' + q.all + ' 个词</h3><ul class="wblist">';
     wbWords().forEach(function(x){
       var g2 = glossOf(x.text), r2 = st[x.text];
@@ -10707,7 +10711,9 @@ function renderWb(){
          + '<span class="m">' + esc(g2 && g2.cn ? g2.cn : (g2 && g2.en ? g2.en : '还没有释义')) + '</span>'
          + '<span class="due">' + (r2 && r2.d ? r2.d : '新') + '</span></li>';
     });
-    h += '</ul></section>';
+    h += '</ul><p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="wbToggleList()">收起清单</button></p></section>';
+  } else if (q.all){
+    h += '<p style="margin:26px 0 0"><button class="bbtn ghost" type="button" onclick="wbToggleList()">看全部 ' + q.all + ' 个词</button></p>';
   }
   document.getElementById('main').innerHTML = h;
   window.scrollTo(0, 0);
