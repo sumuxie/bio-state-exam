@@ -46,10 +46,16 @@ for i, a in enumerate(sys.argv):
 
 SUF = [('s', ''), ('es', ''), ('ies', 'y'), ('ed', ''), ('ed', 'e'), ('ing', ''), ('ing', 'e'),
        ('er', ''), ('est', ''), ('ly', ''), ('ations', 'ate'), ('ation', 'ate'),
-       ('ally', 'al'), ('ised', 'ise'), ('ized', 'ize'), ('ises', 'ise'), ('izes', 'ize')]
+       ('ally', 'al'), ('ised', 'ise'), ('ized', 'ize'), ('ises', 'ise'), ('izes', 'ize'),
+       ('ated', 'ate'), ('ates', 'ate'), ('ating', 'ate'),
+       ('ical', 'ic'), ('ically', 'ic'), ('ive', 'e'), ('ives', 'ive'),
+       ('ities', 'ity'), ('ness', ''), ('ments', 'ment')]
 
 
 def variants(w):
+    # 所有格：卡上写 arginine’s、Crick’s、ATP’s，词库里只有原形
+    if w.endswith(("’s", "'s")) and len(w) > 4:
+        w = w[:-2]
     yield w
     for suf, rep in SUF:
         if w.endswith(suf) and len(w) - len(suf) >= 3:
@@ -152,8 +158,20 @@ def load_dict(need):
     return d, lemma
 
 
+def load_extra():
+    """人工补的那张表，优先级最高。见 tools/gloss_extra.py。"""
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from gloss_extra import EXTRA
+        return {k.lower(): v for k, v in EXTRA.items()}
+    except Exception as e:
+        print('（没读到 gloss_extra：%s）' % e)
+        return {}
+
+
 def main():
     words, exmap = card_words()
+    extra = load_extra()
     bank = load_bank()
     need = set(words)
     for w in list(words):
@@ -162,9 +180,15 @@ def main():
 
     out, risky = {}, []
     n_bank = n_dict = 0
+    n_extra = 0
     for w in sorted(words):
         rec, src = None, 0
-        for v in variants(w):
+        if w in extra:
+            cn, en = (list(extra[w]) + [''])[:2]
+            if cn:
+                rec, src = {'cn': cn, 'en': en, 'ipa': ''}, 5
+                n_extra += 1
+        for v in ([] if rec else variants(w)):
             if v in bank and (bank[v]['cn'] or bank[v]['en']):
                 rec, src = bank[v], 1; break
         drec = None
@@ -186,6 +210,20 @@ def main():
                 sim = difflib.SequenceMatcher(None, rec['cn'][:80], drec['cn'][:80]).ratio()
                 if sim < 0.45:
                     risky.append((round(1 - sim, 3), w, rec['cn'][:70], drec['cn'][:70]))
+        # 连字符复合词（acid-base、side-chain）：每一段都查得到就拼出来，来源标 4
+        if rec is None and '-' in w:
+            parts = [x for x in w.split('-') if x]
+            got = []
+            for pp in parts:
+                pr = None
+                for v in variants(pp):
+                    if v in bank and bank[v].get('cn'): pr = bank[v]; break
+                    if v in dic and dic[v].get('cn'): pr = dic[v]; break
+                if not pr: got = []; break
+                got.append(pr['cn'].split(' · ')[0])
+            if got:
+                rec = {'cn': ' · '.join(got), 'en': '', 'ipa': ''}
+                src = 4
         if rec is None: continue
         e = {}
         if rec.get('cn'): e['cn'] = rec['cn'][:160]
@@ -216,8 +254,8 @@ def main():
     ex = sum(1 for v in out.values() if v.get('ex'))
     print('卡上 %d 词 · 写进 %d 条（%.0f%%）· 有中文 %d（%.0f%%）· 带卡上原句 %d'
           % (len(words), len(out), 100 * len(out) / len(words), cn, 100 * cn / len(words), ex))
-    print('  来自她的词库 %d（其中中文借词典的 %d）· 全部来自通用词典 %d · 危险词候选 %d（--risky 看）'
-          % (n_bank, mix, n_dict, len(risky)))
+    print('  人工补的 %d · 来自她的词库 %d（其中中文借词典的 %d）· 全部来自通用词典 %d · 危险词候选 %d（--risky 看）'
+          % (n_extra, n_bank, mix, n_dict, len(risky)))
     print('文件 %.0f KB' % (os.path.getsize(os.path.join(DATA, '_gloss.js')) / 1024))
 
 
