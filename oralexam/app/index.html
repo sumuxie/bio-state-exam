@@ -226,6 +226,18 @@ button.b:disabled{opacity:.35;cursor:default}
 .figcard h3{font-size:18px;margin:0 0 10px;line-height:1.45}
 .figcard img{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;
   border:1px solid var(--rule);border-radius:8px;padding:8px}
+.figcard .svgwrap,.fig .svgwrap{background:var(--card);border:1px solid var(--rule);border-radius:8px;
+  padding:14px 10px;overflow-x:auto}
+.figcard .svgwrap svg,.fig .svgwrap svg{display:block;margin:0 auto;max-width:100%;height:auto;
+  color:var(--ink);font-family:ui-sans-serif,system-ui,"Segoe UI",sans-serif}
+.svgwrap svg text{fill:currentColor}
+.svgwrap svg .bond{stroke:currentColor;stroke-width:2;fill:none}
+.svgwrap svg .weak{stroke:var(--accent);stroke-width:2;fill:none;stroke-dasharray:5 4}
+.svgwrap svg .hi{fill:var(--accent)}
+.svgwrap svg .box{stroke:var(--accent);stroke-width:2;fill:none;rx:6}
+.svgwrap svg .lbl{font-size:13px;font-weight:700}
+.svgwrap svg .sub{font-size:11px}
+.svgwrap svg .note{font-size:12px;fill:var(--dim)}
 .figcard .cap{font-size:14px;color:var(--dim);margin:14px 0 0;line-height:1.72}
 .figcard .cap b{color:var(--ink)}
 .figcard .src{font-size:12px;color:var(--faint);margin:10px 0 0}
@@ -347,6 +359,8 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/06.js"></script>
 <script src="data/12.js"></script>
 <script src="data/16.js"></script>
+<script src="data/x_ph.js"></script>
+<script src="data/x_rxn.js"></script>
 <script src="data/31.js"></script>
 <script src="data/32.js"></script>
 <script src="data/14.js"></script>
@@ -362,9 +376,15 @@ button.b:disabled{opacity:.35;cursor:default}
 <script>
 /* =================== helpers =================== */
 function esc(x){ return x == null ? '' : String(x); }
+/* 图有两种来源：f.svg 是内联画的（离线、缩放不糊、跟主题变色），f.src 是书上裁的图片。 */
+function figBody(f){
+  if (f.svg) return '<div class="svgwrap">' + f.svg + '</div>';
+  if (f.src) return '<img alt="" src="' + f.src + '">';
+  return '';
+}
 function fig(f){
   if (!f) return '';
-  return '<figure class="fig"><img alt="" src="' + f.src + '">'
+  return '<figure class="fig">' + figBody(f)
        + (f.cap ? '<figcaption>' + f.cap + '</figcaption>' : '') + '</figure>';
 }
 function byId(id){ for (var i=0;i<CARDS.length;i++) if (CARDS[i].id === id) return CARDS[i]; return null; }
@@ -928,7 +948,7 @@ function buildFigs(c){
       + '<span class="kind ' + (f.k === '画' ? 'draw' : 'know') + '">'
       + (f.k === '画' ? '可能让你画' : '可能让你认') + '</span>'
       + (f.t ? '<h3>' + f.t + '</h3>' : '')
-      + '<img alt="" src="' + f.src + '">'
+      + figBody(f)
       + (f.cap ? '<p class="cap">' + f.cap + '</p>' : '')
       + (f.src2 ? '<p class="src">' + f.src2 + '</p>' : '')
       + '</div>';
@@ -1136,13 +1156,13 @@ function renderFav(){
       + '<button class="spk" type="button" onclick="speakText(this.parentNode.querySelector(\'.ft\').textContent)">🔊 听</button>'
       + '<button class="fx" type="button" title="删掉" onclick="favRemove(' + o.i + ')">✕</button></li>';
   }
-  var h = '<div class="lhero"><h1>不会念的</h1><p>' + words.length + ' 个词 · ' + sents.length + ' 句 · 点 🔊 听，点 ✕ 删。只存在这台机器上。</p></div>'
+  var h = '<div class="lhero"><h1>不会念的</h1><p>' + words.length + ' 个词 · ' + sents.length + ' 句 · 点 🔊 听，点 ✕ 删。只存在这台机器上。<br><b>音频念错的词也点星收藏</b>，然后「复制清单给老师」，我照着修。</p></div>'
     + '<section class="favsec"><h3>词</h3>'
     + (words.length ? '<ul class="favl">' + words.map(row).join('') + '</ul>' : '<p class="sub2">还没有。在卡里点一个英文词，它旁边会出「☆ 收藏」。</p>')
     + '</section><section class="favsec"><h3>句</h3>'
     + (sents.length ? '<ul class="favl">' + sents.map(row).join('') + '</ul>' : '<p class="sub2">还没有。每个英文块的 🔊 旁边有 ☆。</p>')
     + '</section>'
-    + (f.length ? '<p style="margin-top:18px"><button class="bbtn" type="button" onclick="speakAllFav()">🔊 全部连读</button></p>' : '');
+    + (f.length ? '<p style="margin-top:18px"><button class="bbtn" type="button" onclick="speakAllFav()">🔊 全部连读</button> <button class="bbtn ghost" type="button" onclick="copyFav()">复制清单给老师</button></p>' : '');
   var vs = voices(), cur = pickVoice(), want = ''; try { want = localStorage.getItem(VK) || ''; } catch(e){}
   h += '<section class="favsec"><h3>声音</h3><p class="sub2"><b>单词</b>用项目自带的音频文件（微软英式 Sonia），<b>任何设备都是同一个声音</b>。<b>整句</b>用浏览器自带的声音库，每台设备不一样——这里挑这台机器上最好的英音，换设备要再挑一次。</p>'
     + '<select id="vsel" onchange="setVoice(this.value)"><option value="">自动（' + (cur ? esc(cur.name) : '无') + '）</option>'
@@ -1151,6 +1171,26 @@ function renderFav(){
   document.getElementById('main').innerHTML = h;
   var nav = document.getElementById('nav'); if (nav) nav.classList.add('hide');
   window.scrollTo(0, 0);
+}
+
+/* 把收藏的词和句复制出去。念错的词她点星，复制过来我就能修音频。
+   起因 2026-09-14：「你再检查一下所有词的发音，比如 ester/diester/phosphodiester 发音不准确」。 */
+function copyFav(){
+  var f = loadF(), w = [], s = [];
+  f.forEach(function(x){ (x.t === 'w' ? w : s).push(x.text + (x.card ? '（卡 ' + x.card + '）' : '')); });
+  var t = ['不会念 / 念错了 · ' + today(),
+           '词 ' + w.length + ' 个：', w.join('、') || '（无）', '',
+           '句 ' + s.length + ' 句：'].concat(s.length ? s : ['（无）']).join('\n');
+  var ok = false;
+  try { if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t); ok = true; } } catch(e){}
+  if (!ok){
+    var a = document.createElement('textarea');
+    a.value = t; a.style.position = 'fixed'; a.style.top = '-1000px';
+    document.body.appendChild(a); a.select();
+    try { ok = document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(a);
+  }
+  alert(ok ? '复制好了，直接粘给我。\n\n音频念错的词也点星收藏，我照着修。' : t);
 }
 
 function route(){
