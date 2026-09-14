@@ -15,7 +15,7 @@ cram:[
  {n:'01', t:'上位类',
   big:'两者都是<b>核酸</b>：储存和传递遗传信息的大分子；化学上是 <b>polynucleotide</b>。DNA 是信息的载体，RNA 是蛋白合成的直接模板',
   en:'“Both are nucleic acids — the macromolecules that <b>store and transmit genetic information</b>. Chemically they are polynucleotides, chains of nucleotides joined by <b>phosphodiester bonds</b>. A nucleotide is a nitrogenous base, a purine or a pyrimidine, plus a pentose and at least one phosphate. DNA is the material carrier of the information, stored as the order of its bases. RNA is the working copy — the direct template for protein synthesis.”',
-  note:'先给共同的上位类，<b>而且要说各自是什么、干什么</b>。书 p066 §4.1 第一句就是功能定义（<i>uchovávají a přenášejí genetickou informaci</i>）；p076 DNA 是遗传信息的物质载体，信息以碱基顺序存储；p085 DNA 不是蛋白合成的直接模板，模板是 RNA。<b>只列三条化学区别、不说各自是什么，就是卡 01 三级结构那种错——判据不是定义。</b>'},
+  note:'先给共同的上位类，<b>而且要说各自是什么、干什么</b>。书 p066 §4.1 第一句就是功能定义（书自己那句话的英译：<i>they store and transmit genetic information</i>）；p076 DNA 是遗传信息的物质载体，信息以碱基顺序存储；p085 DNA 不是蛋白合成的直接模板，模板是 RNA。<b>只列三条化学区别、不说各自是什么，就是卡 01 三级结构那种错——判据不是定义。</b>'},
  {n:'02', t:'四条轴',
   big:'区别是<b>三条化学轴 ＋ 一条功能轴</b>：<b>糖</b>、<b>其中一个碱基</b>、<b>链数</b>、<b>各自干什么</b>',
   en:'“So there are four differences. Three of them are chemical: <b>which pentose, which bases, and how many chains</b>. The fourth difference is <b>what each one is for</b>, and that is what the chemistry is paying for.”',
@@ -29,7 +29,7 @@ cram:[
  {n:'04', t:'轴二 · 碱基',
   big:'共用 A、G、C；<b>uracil 实际上只在 RNA</b>，<b>thymine 主要在 DNA</b>',
   en:'“Both use the purines adenine and guanine and the pyrimidine cytosine. Of the other two pyrimidines, uracil is found <b>practically only</b> in RNA, and thymine <b>predominantly</b> in DNA. The textbook is careful with those words, and so am I.”',
-  note:'<b>书用的就是这两个限定词</b>（prakticky pouze / převážně）。<b>不要说「thymine 只在 DNA」</b>——tRNA 的 T-loop 里有 ribothymidine（通用知识；书 p087 只说 tRNA 环上有「minoritní báze」，没点名）。<b>跟着书加限定词，本身就是分数。</b><span class="pg">p067</span>'},
+  note:'<b>书用的就是这两个限定词</b>（书上印的那两个限定词，英译就是 practically only 和 predominantly）。<b>不要说「thymine 只在 DNA」</b>——tRNA 的 T-loop 里有 ribothymidine（通用知识；书 p087 只说 tRNA 环上有「minor bases」——书上印的就是这个词，这里给的是英译——没点名）。<b>跟着书加限定词，本身就是分数。</b><span class="pg">p067</span>'},
  {n:'05', t:'轴三 · 链数',
   big:'DNA 通常是<b>右手双螺旋</b>；mRNA 和 rRNA 是单链，<b>但 rRNA 有配对成螺旋的局部</b>',
   en:'“DNA is normally a right-handed double helix. Messenger and ribosomal RNA are single-stranded — though parts of ribosomal RNA pair up into helices.”',
@@ -38,7 +38,7 @@ cram:[
  {n:'06', t:'轴四 · 功能',
   big:'DNA <b>存</b>全部遗传信息；RNA 是<b>其中一条指令的临时拷贝</b>——而“拷贝”这个角色<b>只属于 mRNA</b>',
   en:'“The fourth axis is what each one is for. DNA stores the genetic information. RNA is a temporary copy of one specific instruction. Two contrasts make that precise. DNA is the whole archive, and one RNA is a single entry taken out of it. And DNA is permanent, while an RNA is made when it is needed and then destroyed. The copy role belongs to messenger RNA. Transfer and ribosomal RNA are not copies of an instruction at all. They are working parts of the machinery that reads the copy, and some RNA is catalytic.”',
-  note:'<b>这是她自己的说法，照说。</b>两个对比把它说准：<b>全部 vs 一条</b>、<b>永久 vs 用完就拆</b>。<br>三处书的出处：p066 §4.1 第一句就是功能定义（<i>uchovávají a přenášejí genetickou informaci</i>）；p076 DNA 是遗传信息的<b>物质载体</b>，信息以<b>碱基顺序</b>存储；p085 §4.1.4 第一句 <i>DNA není přímý templát pro syntézu proteinu</i>——模板是 RNA。<br>“用完就拆”也有书的出处：p091 §4.1.5 <i>Odbourávání nukleových kyselin</i>：核酸由<b>核酸酶</b>降解，分外切和内切，切 RNA 的叫<b>核糖核酸酶</b>。<b>但书没给任何寿命数字。</b><span class="pg">p066 p076 p085 p091</span>',
+  note:'<b>这是她自己的说法，照说。</b>两个对比把它说准：<b>全部 vs 一条</b>、<b>永久 vs 用完就拆</b>。<br>三处书的出处：p066 §4.1 第一句就是功能定义（书自己那句话的英译：<i>they store and transmit genetic information</i>）；p076 DNA 是遗传信息的<b>物质载体</b>，信息以<b>碱基顺序</b>存储；p085 §4.1.4 第一句英译是 <i>DNA is not the direct template for protein synthesis</i>——模板是 RNA。<br>“用完就拆”也有书的出处：p091 §4.1.5，这一节的标题英译是 <i>Degradation of nucleic acids</i>：核酸由<b>核酸酶</b>降解，分外切和内切，切 RNA 的叫<b>核糖核酸酶</b>。<b>但书没给任何寿命数字。</b><span class="pg">p066 p076 p085 p091</span>',
   warn:'<b>“RNA 是那个临时拷贝”只对 mRNA 成立。</b>不加限定地说出口，他一句“那 tRNA 呢”就穿了——tRNA 和 rRNA 不是任何指令的拷贝，是读拷贝的那台机器的零件（rRNA 是核糖体的<b>结构成分</b> <span class="pg">p086</span>；tRNA <b>运活化的氨基酸</b> <span class="pg">p087</span>）。<b>第一次说这条轴时就把 messenger 这个词说出来。</b>',
   good:'三条化学轴分别在为它付账——他问“为什么化学是这样”就说这段：<br>“Each of the three chemical differences is paying for that. The 2-prime hydroxyl sits next to the phosphodiester bond and makes RNA easy to cleave, which suits something disposable and is wrong for an archive. Thymine instead of uracil matters for a reason the textbook does not give. Generally, cytosine can lose its amino group and turn into uracil, and that is called deamination. In DNA the repair machinery reads that uracil as damage and takes it out, because uracil does not belong there. That only matters for something you keep. And two complementary strands mean every base is written down twice, so a damaged one can be rebuilt from its partner. That again only matters for something you keep.”'},
 
@@ -95,7 +95,7 @@ sib:[
  '把名词差异变成可以往下追的化学事实。'],
 ['<b>碱基</b>：uracil <b>实际上只在</b> RNA，thymine <b>主要在</b> DNA',
  '“Uracil practically only in RNA, thymine predominantly in DNA.”',
- '<b>书用的就是这两个限定词。</b>别说「只在」——tRNA 里有 ribothymidine（通用知识，书只说「minoritní báze」）。'],
+ '<b>书用的就是这两个限定词。</b>别说「只在」——tRNA 里有 ribothymidine（通用知识，书只说「minor bases」）。'],
 ['<b>链数</b>：DNA 双链右手；mRNA/rRNA 单链，<b>但 rRNA 有配对局部</b>',
  '“DNA is a right-handed double helix. Messenger and ribosomal RNA are single-stranded, though parts of ribosomal RNA pair up.”',
  '后半句必须说。「RNA 是单链」只对 mRNA 的整体拓扑成立。'],
@@ -155,6 +155,45 @@ why:{
   say:'“Beyond that, the answer is historical rather than mechanistic: the deoxy form is made by reducing the ribo form, so RNA chemistry came first and DNA is derived from it. There is no deeper purpose than that the arrangement survived.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'认',
+  src:'img/p073_obr48_bdna_grooves.jpg',
+  t:'双螺旋外面的两条沟 —— 哪条是大沟，哪条是小沟',
+  cap:'<b>他把这张图摆过来、或者直接说 major / minor groove，要的就是你认得出来。</b>'
+    + '没人会让你在黑板上画一个球棍模型的双螺旋，所以这张是<b>认</b>，不是画。'
+    + '<br><br><b>图上怎么看</b>：上面那支箭头指的是 <b>minor groove</b>（小沟，窄的那条），'
+    + '下面那支指的是 <b>major groove</b>（大沟，宽的那条）。左下角印着 <b>B-DNA</b>——'
+    + '<b>这正是生理条件下的那一种</b>，所以这张图同时也是「生理条件下几乎全是 B-DNA」那一条的图。'
+    + '<br><br><b>看到图要说的一句</b>：螺旋在外面留下两条<b>宽窄不等</b>的螺旋通道，'
+    + '<b>碱基对的边缘在沟里朝外露着</b>，所以蛋白<b>不用把螺旋打开</b>就能读到序列。'
+    + '要识别特定序列的蛋白读的是<b>大沟</b>，因为那一面露出来的信息更多。'
+    + '<br><br>⚠ <b>「蛋白从沟里读序列」这半句书里没有</b>——书只给了名字和这张图，'
+    + '所以说的时候带 generally。整段英文照说：'
+    + '<br>“Through the grooves. The double helix leaves two unequal spiral channels on the outside — '
+    + 'the textbook calls them the larger and the smaller groove, major and minor. '
+    + 'That is where the edges of the bases are readable from outside without opening the helix. '
+    + 'Generally, a protein that has to recognise a specific sequence reads the major groove.”',
+  src2:'Biochemie, figure 4.8, p073 · 原图裁切，未修改'},
+ {k:'画',
+  src:'img/p074_obr49_base_pairing.jpg',
+  t:'碱基配对 —— A–T 两根氢键，G–C 三根',
+  cap:'<b>要会画的是这张图的简化版</b>：两个环面对面，中间几根虚线——<b>A–T 两根，G–C 三根</b>。'
+    + '<b>说反是这题最常见的失误</b>，而画出来就说不反了。'
+    + '<br><br><b>画的顺序</b>：① 左边画<b>嘌呤</b>（双环，A 或 G），右边画<b>嘧啶</b>（单环，T 或 C）——'
+    + '<b>永远是一大一小面对面</b>，所以每一对宽度都一样，主链才规整。'
+    + '② 在两个环之间拉虚线：<b>A–T 拉两根，G–C 拉三根</b>。'
+    + '③ 两端各引一根短线到标着 <b>1′</b> 的那个原子，那是接糖的地方。'
+    + '<br><br><b>图上还有两件正文没写的事</b>：两个 1′ 之间标的是 <b>10.85 Å</b>，'
+    + '<b>A–T 那一对和 G–C 那一对是同一个数</b>——这就是「每一对宽度相同」的量化版；'
+    + '两边各标 <b>51.5°</b>，是糖苷键相对那条轴的角度，左右对称。'
+    + '<br><br>图的上下两边分别印着 <b>Major groove</b> 和 <b>Minor groove</b>：'
+    + '<b>同一个碱基对，朝大沟的那一面和朝小沟的那一面露出来的边缘不一样</b>——'
+    + '这半句直接接上一张图，也是「蛋白为什么读大沟」的理由。'
+    + '<br><br>⚠ 10.85 Å 和 51.5° 是<b>图上印的</b>，正文里没有；被问就说这是图里标的。',
+  src2:'Biochemie, figure 4.9, p074 · 220 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'DNA versus RNA?',
@@ -164,7 +203,7 @@ recog:[
 {q:'What is the role of DNA and RNA in the cell?',
  mean:'<b>问的就是第四条轴</b>，而且他要的是功能，不是化学。<b>先答功能，再用化学去解释功能，不要反过来。</b>这道题和 #15「Describe the structure and function of nucleic acids」是同一个答案。',
  say:'“DNA stores the genetic information. It is the material carrier of the genetic information of all organisms, and the information is stored as the order of its bases. RNA is a temporary copy of one specific instruction taken from that store. The copy role is messenger RNA. It carries the information from DNA to the ribosome, because DNA is not the direct template for protein synthesis. The other RNAs are working parts rather than copies. Ribosomal RNA builds the ribosome, transfer RNA brings in the activated amino acids, and small nuclear RNA makes up the spliceosome. So the path is DNA to RNA to protein, which the textbook calls the central dogma.”',
- tail:'<b>“central dogma” 是书里的词</b>（<span class="pg">p085</span>，obr. 4.26，书上标 F. Crick 1953），原话是“DNA 指导自己的复制和向 RNA 的转录，RNA 再指导向蛋白质的翻译”。图上还标了两条<b>特殊传递</b>：某些病毒和植物里有 RNA 指导的 RNA 聚合酶，某些 RNA 病毒里有<b>反转录酶</b>。“物质载体、信息存成碱基顺序”是 <span class="pg">p076</span> 的原话。'},
+ tail:'<b>“central dogma” 是书里的词</b>（<span class="pg">p085</span>，figure 4.26，书上标 F. Crick 1953），原话是“DNA 指导自己的复制和向 RNA 的转录，RNA 再指导向蛋白质的翻译”。图上还标了两条<b>特殊传递</b>：某些病毒和植物里有 RNA 指导的 RNA 聚合酶，某些 RNA 病毒里有<b>反转录酶</b>。“物质载体、信息存成碱基顺序”是 <span class="pg">p076</span> 的原话。'},
 
 {q:'Why does the cell not just use DNA directly?', odd:1,
  mean:'<b>便装问法，问的还是第四条轴。</b>他要的是“为什么要拷贝”，不是“拷贝怎么做”。',
@@ -218,17 +257,17 @@ ask:[
 {g:'定义类', gn:'比较题的每个名词都可能被单独拎出来问。', items:[
 {r:'高', q:'What does “temporary” actually mean — how long does a messenger RNA last?',
  en:'“The textbook gives no lifetime, so I will give the criterion instead. A messenger RNA lasts while the cell still needs that protein, and then it is degraded. What destroys it are the nucleases. The book has a section on the degradation of nucleic acids. Exonucleases take off the terminal nucleotides, endonucleases cut ester bonds inside the chain, and the ones that act on RNA are called ribonucleases. Generally, a message is short-lived and the DNA it was copied from is not. That difference is the point. Regulation works by making and destroying copies, and the original is never touched.”',
- cn:'书 p091 §4.1.5 <i>Odbourávání nukleových kyselin</i>：核酸由<b>核酸酶</b>降解，<b>外切酶</b>切末端核苷酸、<b>内切酶</b>切链内的酯键；按底物分<b>脱氧核糖核酸酶</b>和<b>核糖核酸酶</b>。真核的 hnRNA 加工成 mRNA 也是核糖核酸酶干的（<span class="pg">p086</span>）。<span class="pg">p091</span>',
+ cn:'书 p091 §4.1.5，这一节的标题英译是 <i>Degradation of nucleic acids</i>：核酸由<b>核酸酶</b>降解，<b>外切酶</b>切末端核苷酸、<b>内切酶</b>切链内的酯键；按底物分<b>脱氧核糖核酸酶</b>和<b>核糖核酸酶</b>。真核的 hnRNA 加工成 mRNA 也是核糖核酸酶干的（<span class="pg">p086</span>）。<span class="pg">p091</span>',
  warn:'<b>书里没有 mRNA 寿命的任何数字。</b>他问“多久？给个数”就走 LOGIC §11 三步：先说这个边界不是数字定义的，再给判据（这个蛋白还需不需要）。<b>不要报一个分钟数。</b>short-lived 是程度词，所以第一句先把它卡死了。'},
 {r:'高', q:'You said RNA is a copy. Is transfer RNA a copy of anything?',
  en:'“No, and I should have said messenger RNA. Transfer RNA and ribosomal RNA are transcribed from DNA, so they are products of a gene, but they are not copies of an instruction for a protein. Ribosomal RNA is the structural component of the ribosome. Transfer RNA is the adaptor. It carries one activated amino acid to the ribosome, and its anticodon pairs with the codon on the messenger. Small nuclear RNA, together with proteins, forms the spliceosome. And some RNA is catalytic. A ribozyme is an RNA molecule with catalytic activity. So only messenger RNA is the temporary copy, and the others are working parts.”',
  cn:'<b>这是第四条轴的陷阱，必须预备。</b>rRNA <span class="pg">p086</span>（核糖体的结构成分）· tRNA <span class="pg">p087</span>（最小 4S，运活化氨基酸，反密码子配密码子）· snRNA <span class="pg">p087 p108</span> · 病毒 RNA <span class="pg">p087</span>。<b>ribozyme 书里没有</b>，卡 18 有正面定义，所以这里就地给了一句。<br>最稳的做法是<b>根本不让他问出这一刀</b>：第一次说这条轴时就说 messenger。'},
 {r:'高', q:'How is the copy made — what is transcription?',
  en:'“Transcription is the copying of the base sequence of DNA into the base sequence of RNA. That is the textbook’s own definition, and its reason for the name. It is done by DNA-dependent RNA polymerase, from the four ribonucleoside triphosphates, and it needs no primer. Only one strand of the DNA is copied. That one is called the codogenic strand, which is the book’s word for it, meaning the strand that carries the code. It starts at a promoter, which is the base sequence the polymerase binds, recognised by the sigma factor. It ends at a terminator, where a G-C-rich palindrome gives a transcript that folds into a hairpin followed by a run of uridines. All kinds of RNA are made this way, and all are made first as long precursors that are then processed.”',
- cn:'<b>定义是书的原话</b>：p087：<i>sekvence bází v DNA se přepisuje do sekvence bází RNA. Proto se tento proces nazývá transkripce.</i><br>两头的界定也都在书里：起点 <b>promotor</b>（<span class="pg">p089</span>，σ 因子识别；起始后 σ 解离，核心酶延长）、终点 <b>terminator</b>（<span class="pg">p090</span>，G+C 富集的回文 → 发夹 ＋ 一串 U；另一类要 <b>ρ 因子</b>）。<b>只抄一条链</b>，书叫 <i>kodogenní vlákno</i>（<span class="pg">p088</span>），而且<b>不需要引物</b>——这一条跟 DNA 复制正好相反，是很好的对照（接 #16）。真核三种 RNA 聚合酶 I / II / III 分别做 rRNA / mRNA / tRNA＋5S 的前体（<span class="pg">p089</span>）。<span class="pg">p087 p088 p089 p090</span>'},
+ cn:'<b>定义是书的原话</b>：p087 那两句的英译：<i>the sequence of bases in DNA is transcribed into the sequence of bases in RNA. That is why this process is called transcription.</i><br>两头的界定也都在书里：起点 <b>promoter</b>（<span class="pg">p089</span>，σ 因子识别；起始后 σ 解离，核心酶延长）、终点 <b>terminator</b>（<span class="pg">p090</span>，G+C 富集的回文 → 发夹 ＋ 一串 U；另一类要 <b>ρ 因子</b>）。<b>只抄一条链</b>，书给这条链的名字英译是 <i>codogenic strand</i>（<span class="pg">p088</span>），而且<b>不需要引物</b>——这一条跟 DNA 复制正好相反，是很好的对照（接 #16）。真核三种 RNA 聚合酶 I / II / III 分别做 rRNA / mRNA / tRNA＋5S 的前体（<span class="pg">p089</span>）。<span class="pg">p087 p088 p089 p090</span>'},
 {r:'中', q:'What actually carries the information, in DNA and in RNA?',
  en:'“The order of the bases, in both. The textbook says it twice. The genetic information is stored as the order of bases in the DNA molecule. The bases carry it, and the deoxyribose and the phosphate only build the spatial structure. And transcription copies the base sequence of DNA into the base sequence of RNA. So the sugar and the backbone are the same along the whole chain and cannot say anything. Only the part that changes from one unit to the next can carry a message.”',
- cn:'<b>前两句都是书的原话。</b>p076：<i>Genetická informace je uložena ve formě pořadí bází v molekule DNA</i>；同一段还说<b>碱基“携带”遗传信息，而脱氧核糖和磷酸只参与空间结构</b>。p087：转录就是把 DNA 的碱基序列抄成 RNA 的碱基序列。<br>最后一句“只有逐个单元在变的那部分才能携带信息”是<b>推论，不是书说的</b>，但它是这道题最像 researcher 的一句。<span class="pg">p076 p087</span>'},
+ cn:'<b>前两句都是书的原话。</b>p076 那句的英译：<i>the genetic information is stored in the form of the order of bases in the DNA molecule</i>；同一段还说<b>碱基“携带”遗传信息，而脱氧核糖和磷酸只参与空间结构</b>。p087：转录就是把 DNA 的碱基序列抄成 RNA 的碱基序列。<br>最后一句“只有逐个单元在变的那部分才能携带信息”是<b>推论，不是书说的</b>，但它是这道题最像 researcher 的一句。<span class="pg">p076 p087</span>'},
 {r:'中', q:'What is base pairing?',
  en:'“Base pairing is the specific hydrogen bonding of a base on one strand to the one base on the other strand it can bond with. Adenine pairs with thymine by two hydrogen bonds, guanine with cytosine by three. The textbook says the bonds form only between those pairs for steric reasons, and it names the phenomenon base pairing. It is what makes the two strands complementary and replication accurate.”',
  cn:'<b>核心词正面定义。</b>书 p073 明说「这个过程叫碱基配对」。'},
@@ -270,7 +309,7 @@ ask:[
  cn:'模板 p076；修复是通用。这是 why 梯子第二级的英文版。'},
 {r:'高', q:'Why does the cell make a copy at all instead of using the DNA itself?',
  en:'“Three reasons, and a fourth in eukaryotes. The textbook gives the first one: DNA is not the direct template for protein synthesis. The template is RNA, and the path is DNA to RNA to protein. Generally, the other reasons follow from what the two molecules are for. The original has to survive, so you do not want the synthesis machinery working on it and damaging it. And the cell can make many copies of one gene, or few, or none, and that is how it controls how much of each protein it makes. In a eukaryote there is a fourth reason. The DNA stays in the nucleus and the ribosomes are in the cytoplasm, so something has to carry the message out.”',
- cn:'第一条是<b>书的原话</b>：p085 §4.1.4 开头 <i>DNA není přímý templát pro syntézu proteinu. Templátem pro syntézu proteinu je RNA.</i> 同一页就是中心法则图。<br>后面几条<b>书没有明说</b>，所以开口带 generally。间接支撑：mRNA 除编码区外还含<b>调控区</b>（<span class="pg">p086</span>），核酸合成全在核内（<span class="pg">p089</span>），tRNA 把氨基酸从<b>胞质</b>运到核糖体（<span class="pg">p087</span>）。完整的“拷贝数＝调控量”在卡 12（lac / trp 操纵子）。<span class="pg">p085 p086 p087 p089</span>'},
+ cn:'第一条是<b>书的原话</b>：p085 §4.1.4 开头那两句的英译 <i>DNA is not the direct template for protein synthesis. The template for protein synthesis is RNA.</i> 同一页就是中心法则图。<br>后面几条<b>书没有明说</b>，所以开口带 generally。间接支撑：mRNA 除编码区外还含<b>调控区</b>（<span class="pg">p086</span>），核酸合成全在核内（<span class="pg">p089</span>），tRNA 把氨基酸从<b>胞质</b>运到核糖体（<span class="pg">p087</span>）。完整的“拷贝数＝调控量”在卡 12（lac / trp 操纵子）。<span class="pg">p085 p086 p087 p089</span>'},
 {r:'高', q:'Why does the cell make deoxyribonucleotides from ribonucleotides instead of building them separately?',
  en:'“Because the de novo pathways make ribonucleotides. The purine ring is assembled stepwise on ribose-5-phosphate. The pyrimidine ring is closed first, as orotate, then attached to phosphoribosyl diphosphate. And the deoxy form is one modification at the end: the 2′-OH is removed at the <b>diphosphate</b> level by ribonucleotide reductase. One biosynthetic route, one modification step — cheaper than two parallel pathways.”',
  cn:'<b>注意「在二磷酸水平」这个细节</b>——不是在从头合成核苷酸的时候就用脱氧糖。这一点很容易答错。<span class="pg">p072</span>'},

@@ -1,7 +1,7 @@
 /* 卡 land · What is protein fitness landscape and what is protein folding landscape?
    题库 #7（S1 Biochemistry 7）· w3 · bw = 0
-   ⚠ 出处：全书 grep fitness / landscape / krajin / folding / skládání / trychtýř /
-   funnel / Anfinsen / Levinthal / selekc = 全部 0 命中。书能给的只有两块，而且都要用：
+   ⚠ 出处：全书 grep 过 fitness / landscape / folding / funnel / selection 这几个词的英文
+   和捷克语形式，外加 Anfinsen / Levinthal = 全部 0 命中。书能给的只有两块，而且都要用：
      · 折叠 —— p108–p109（§4.3.1）：序列原则上决定构象；但只有一部分蛋白自发走到
        「与能量最低构象相同」的活性构象，对相当一部分蛋白活性构象<b>不是</b>能量最低的；
        折叠是被引导的过程，靠 chaperone（GroEL/GroES、hsp70）；折错致严重神经疾病。
@@ -51,12 +51,12 @@ cram:[
  {n:'06', t:'书自己的修正 · 全卡最重要的页码',
   big:'<b>书明说漏斗有例外</b>：对相当一部分蛋白，<b>活性构象不是能量最低的构象</b>；折叠是被<b>引导</b>的，靠 chaperone；折错就是病',
   en:'“The textbook makes the correction that matters, and I can give the page. It says the spatial arrangement is <b>in principle determined by the sequence</b>. But only <b>some</b> proteins, mostly small ones, pass spontaneously into a biologically active conformation <b>identical with the lowest-energy one</b>. For a number of others the <b>active conformation is not the energetically most favourable one</b>. So folding of the nascent chain is a <b>directed process</b>, catalysed by <b>chaperones</b> — proteins that recognise and stabilise partly folded intermediates. And it names the failure: several serious neurological diseases are caused by wrongly arranged protein structures.”',
-  note:'<b>这一段让一道书里 0 命中的题有了页码。</b><span class="pg">p108</span><span class="pg">p109</span><br>捷克原话两句：<i>Prostorové uspořádání polypeptidového řetězce je v zásadě určeno sekvencí aminokyselin</i>（p108）；<i>biologicky aktivní konformace není shodná s energeticky nejvýhodnější konformací</i>（p109）。chaperone 的例子是 <b>GroEL / GroES</b> 和 <b>hsp70</b>（Obr. 4.52）。<br><br><b>说成「对模型的修正」，不是「漏斗是错的」</b>：漏斗仍然解释了折叠为什么这么快，书补的是「最低点不一定是活性点」。',
+  note:'<b>这一段让一道书里 0 命中的题有了页码。</b><span class="pg">p108</span><span class="pg">p109</span><br>书自己的两句话，英译：<i>the spatial arrangement of a polypeptide chain is in principle determined by the sequence of amino acids</i>（p108）；<i>the biologically active conformation is not identical with the energetically most favourable conformation</i>（p109）。chaperone 的例子是 <b>GroEL / GroES</b> 和 <b>hsp70</b>（figure 4.52）。<br><br><b>说成「对模型的修正」，不是「漏斗是错的」</b>：漏斗仍然解释了折叠为什么这么快，书补的是「最低点不一定是活性点」。',
   good:'<b>同一页还有两个帮手，被追问就给：</b>“The same page names two more helpers. One is peptidyl-prolyl cis,trans-isomerase. It catalyses rotation about that one peptide bond — about six per cent of X-Pro bonds in native proteins are cis. The other is protein disulfide isomerase, which reshuffles disulfide bridges until the native conformation is stabilised, because the textbook says disulfide formation is not itself specific.”<span class="pg">p109</span>'},
  {n:'07', t:'让你画漏斗 · 画的顺序',
   big:'<b>七步。</b>先画两条轴，再画面，最后把书的修正标上去',
   en:'“Vertical axis, <b>free energy</b>. The width stands for the <b>number of conformations still available</b>. The surface is a funnel with a rough inner wall — wide and high at the unfolded end, narrow and low at the native structure. And the routes down are <b>many, not one</b>.”',
-  note:'<b>画的顺序（这是要临摹的）：</b><br>① 画<b>竖轴</b>，标 <b>free energy</b>，箭头向上。<br>② 画<b>横向宽度</b>，标 <b>number of conformations</b>——越宽表示还能走的构象越多。<br>③ 画一个<b>上宽下窄</b>的漏斗侧影。<br>④ 口标 <b>unfolded / random coil</b>（书 p035 变性后的 <i>náhodné klubko</i>），底标 <b>native</b>。<br>⑤ 内壁上画两三个<b>小坑</b>，标 <b>kinetic traps</b>。<br>⑥ 从口到底画<b>几条</b>曲折向下的路——「不是一条路径，是一族路径」要说出口。<br>⑦ 底部加一个箭头标 <b>chaperone</b>，说书那句：对相当一部分蛋白，最低点<b>不是</b>活性构象（p109）。'},
+  note:'<b>画的顺序（这是要临摹的）：</b><br>① 画<b>竖轴</b>，标 <b>free energy</b>，箭头向上。<br>② 画<b>横向宽度</b>，标 <b>number of conformations</b>——越宽表示还能走的构象越多。<br>③ 画一个<b>上宽下窄</b>的漏斗侧影。<br>④ 口标 <b>unfolded / random coil</b>（书 p035 变性之后用的说法，英译 <i>random coil</i>），底标 <b>native</b>。<br>⑤ 内壁上画两三个<b>小坑</b>，标 <b>kinetic traps</b>。<br>⑥ 从口到底画<b>几条</b>曲折向下的路——「不是一条路径，是一族路径」要说出口。<br>⑦ 底部加一个箭头标 <b>chaperone</b>，说书那句：对相当一部分蛋白，最低点<b>不是</b>活性构象（p109）。'},
 
  {g:'适应度那一半', gn:'这一半全是词。每个词他都可能单拎出来问，所以每条都写成了能独立站住的定义。'},
  {n:'08', t:'sequence space',
@@ -74,7 +74,7 @@ cram:[
  {n:'11', t:'neutral network 与 drift · 这一条书上真的有',
   big:'等高的序列连成的<b>平地</b>，靠<b>漂变</b>横着走——<b>书 p020 的「中性进化」说的就是它</b>',
   en:'“Not every step changes the height. Sequences of <b>equal fitness</b> one mutation apart form a <b>neutral network</b> — a flat path crossed by <b>drift</b>, by chance rather than by selection. And that network lets a population move <b>sideways</b> to somewhere a new peak is reachable. This one I can put in the textbook. It names two mechanisms. In the Darwinian one, mutations that <b>increase</b> the efficiency of the molecule are accepted. In <b>neutral evolution</b>, mutations that <b>do not worsen</b> the molecule are accepted.”',
-  note:'<b>书 p020 原话</b>：<i>uplatňuje i mechanismus tzv. neutrální evoluce (akceptovány jsou mutace nezhoršující účinnost)</i>，点名是 <b>M. Kimura</b>。<span class="pg">p020</span><br><br><b>这是适应度这一半唯一的页码。</b>把自己实验室的词落回他书里的词，是这张卡最值钱的动作。'},
+  note:'<b>书 p020 原话的英译</b>：<i>the mechanism of what is called neutral evolution also applies (mutations that do not impair efficiency are accepted)</i>，点名是 <b>M. Kimura</b>。<span class="pg">p020</span><br><br><b>这是适应度这一半唯一的页码。</b>把自己实验室的词落回他书里的词，是这张卡最值钱的动作。'},
  {n:'12', t:'让你画 fitness landscape · 画的顺序',
   big:'<b>七步。</b>而且<b>第一步就要说出横轴是简化的</b>——不说他就会问',
   en:'“Two horizontal axes standing in for <b>sequence space</b>, and the vertical axis is <b>fitness</b>, higher being better. The warning belongs on the drawing itself: the real space has <b>one dimension per residue</b>, so two axes are a cartoon, not the thing.”',
@@ -174,7 +174,7 @@ segs:[
      '“A <b>local optimum</b> is a point where every single mutation away from it is worse, although a better sequence exists elsewhere. A surface with many of them is called rugged. A stepwise uphill walk gets stuck on it, because reaching the higher peak would mean going down first.”',
      '“What makes a surface rugged is <b>epistasis</b> — the effect of one mutation depending on which other mutations are already present. Without it every mutation would add up independently and there would be one smooth peak.”',
      '“And not every step changes the height. Sequences of equal fitness one mutation apart form a <b>neutral network</b>, crossed by drift rather than selection. That flat path lets a population move sideways to somewhere a new peak is reachable. That one is in the textbook. It names two mechanisms of molecular evolution. In the Darwinian one, mutations increasing the efficiency of the molecule are accepted. In neutral evolution, mutations that do not worsen that efficiency are accepted.”'],
-  note:'<b>四个词，四句，每句都从「它是什么」起步。</b>他从这四个里挑哪一个单独问 “What is X”，你都已经说过一遍完整定义。<br>最后那句把 neutral network 落回书的 <i>neutrální evoluce</i>（<span class="pg">p020</span>，Kimura）——<b>适应度这一半唯一的页码，别漏。</b>'},
+  note:'<b>四个词，四句，每句都从「它是什么」起步。</b>他从这四个里挑哪一个单独问 “What is X”，你都已经说过一遍完整定义。<br>最后那句把 neutral network 落回书的 <i>neutral evolution</i>（<span class="pg">p020</span>，Kimura）——<b>适应度这一半唯一的页码，别漏。</b>'},
  {tag:'段 4 · 留口子', h:'转进主场，说到 Kd 就停',
   p:['“<b>Directed evolution</b> is the experimental use of that picture: make a library of variants, apply a selection or a screen so that the property you care about decides who is kept, keep the winners, and repeat. What you control is where you start, how big a step you take, and what counts as height.”',
      '“In my own work each tool sits at a definite place on it. Error-prone PCR or DNA shuffling decides how far a step goes — random substitutions per gene, or recombination of whole segments between related sequences. Recombination can cross a valley a point mutation cannot. Yeast display with flow sorting measures the height of each point: each cell carries one variant on its surface, labelled antigen is titrated against the cells, and they are sorted on how much they bind. And the height has a unit — for a binder the fitness axis is a dissociation constant.”',
@@ -278,7 +278,7 @@ ask:[
  warn:'<b>epistasis 书里 0 命中</b>，是通用遗传学词汇。'},
 {r:'中', q:'What is a neutral network?',
  en:'“A set of sequences of <b>equal fitness</b> connected to one another by single mutations — a flat path across the landscape. A population crosses it by <b>drift</b>, by chance rather than by selection, since no step is rewarded or punished. It matters because it lets a population move sideways to a region from which a new peak is reachable, without ever going down.”',
- cn:'<b>这一条能落回书。</b><span class="pg">p020</span>：除达尔文机制外还有 <b>M. Kimura</b> 的<b>中性进化</b>——<i>akceptovány jsou mutace nezhoršující účinnost</i>。<br>两者是同一件事的两个说法：书说哪些突变被接受，landscape 说被接受的那些连成了什么形状。'},
+ cn:'<b>这一条能落回书。</b><span class="pg">p020</span>：除达尔文机制外还有 <b>M. Kimura</b> 的<b>中性进化</b>——<i>mutations that do not impair efficiency are accepted</i>。<br>两者是同一件事的两个说法：书说哪些突变被接受，landscape 说被接受的那些连成了什么形状。'},
 {r:'中', q:'What is drift?',
  en:'“Change in the frequency of a variant in a population that happens <b>by chance rather than by selection</b>, because a finite population only ever samples a few of its possible descendants. On a landscape it is what moves a population along a flat region — the only mover where selection is indifferent.”',
  cn:'<b>「有限群体」这半句是承重的</b>：漂变之所以存在，是因为群体不是无限大。去掉它「随机」就成了空词。<br><b>⚠ 通用群体遗传学，书里没有</b>，而且它就在停止线上——说完可以直接说「再往下是群体遗传学」。'},
@@ -288,10 +288,10 @@ ask:[
 {r:'中', q:'What do you mean by a funnel?',
  en:'“A surface that is <b>wide and high at one end and narrow and low at the other</b>: many high-energy conformations at the top, few low-energy ones at the bottom, the width representing how many conformations are still available. The shape is the claim — that losing free energy and losing conformational freedom happen <b>together</b>, so the chain is guided rather than searching. The rough inner wall is the <b>kinetic traps</b>: local minima the chain can fall into.”',
  cn:'<b>「形状本身就是那个论断」是这条的核心。</b>漏斗不是装饰，它说的是「自由能下降」和「可走构象减少」是同一个过程——这就是 Levinthal 悖论的解。',
- warn:'<b>漏斗这个图书里没有</b>（trychtýř / funnel 全书 0 命中）。通用，1990 年代初的画法。'},
+ warn:'<b>漏斗这个图书里没有</b>（funnel 这个词的英文和捷克语形式，全书都 0 命中）。通用，1990 年代初的画法。'},
 {r:'中', q:'What is a chaperone?',
  en:'“A protein that helps another protein reach its correct conformation. The textbook says they are proteins which, during post-translational modification in the endoplasmic reticulum, <b>catalyse the folding of the polypeptide chain into the required, biologically active form</b>. It adds that chaperones and chaperonins are <b>evolutionarily conserved</b>, occur in eukaryotic and prokaryotic cells, <b>recognise and stabilise partly folded intermediates</b>, and take part in repairing incorrectly arranged chains. Its examples are GroEL with GroES, and hsp70.”',
- cn:'<b>整条是书上的</b>，<span class="pg">p109</span>，Obr. 4.52。<b>能报页码的地方一定要报。</b><br>书的措辞是「催化折叠」不是「提供信息」——被追问时给：“It does not supply the information — the sequence does that. It prevents and reverses the wrong routes.”'},
+ cn:'<b>整条是书上的</b>，<span class="pg">p109</span>，figure 4.52。<b>能报页码的地方一定要报。</b><br>书的措辞是「催化折叠」不是「提供信息」——被追问时给：“It does not supply the information — the sequence does that. It prevents and reverses the wrong routes.”'},
 {r:'中', q:'What is a library, in this sense?',
  en:'“A <b>population of variants of the same gene</b>, made on purpose and carried in cells so that <b>each cell holds one variant</b>. It is how you sample a region of sequence space in a single experiment. It has two parameters. One is the <b>size</b>, how many points you sample. The other is how far each variant sits from the starting sequence, which is the step length on the landscape.”',
  cn:'<b>「一个细胞一个变体」这半句是承重的</b>：没有它后面的流式分选说不通——分选分的是细胞，读的是那个细胞上的变体。<br>库容<b>只报数量级</b>，不要报确切数字。'}
@@ -324,7 +324,7 @@ ask:[
 {r:'中', q:'Where does the funnel picture come from?',
  en:'“Generally, it is the resolution of <b>Levinthal’s paradox</b>, which Cyrus Levinthal posed at the end of the 1960s. A chain cannot search its conformations one at a time in the time folding actually takes. The funnel came from the statistical-mechanics side of the field in the <b>early 1990s</b>. It is an energy surface biased towards the native state, so that losing free energy and losing conformational freedom happen together. Before it, folding was discussed as a pathway. Afterwards it was discussed as an ensemble of routes down one surface.”',
  cn:'<b>「之前讲一条路径，之后讲一族路径」这句比任何人名都值钱</b>——它说明你知道这个模型改变了什么，而不是只记得它叫什么。',
- warn:'<b>书里 0 命中</b>（Levinthal、funnel、trychtýř 全零）。人名年份<b>从记忆写的，核过再说</b>；不确定就说 “at the end of the 1960s” 和 “the early 1990s”。'},
+ warn:'<b>书里 0 命中</b>（Levinthal，以及 funnel 的英文和捷克语形式，全零）。人名年份<b>从记忆写的，核过再说</b>；不确定就说 “at the end of the 1960s” 和 “the early 1990s”。'},
 {r:'高', q:'How do we know the sequence contains enough information to fold the chain?',
  en:'“The classical experiment is in this textbook, although it is not given a name: unfold a protein carefully in a <b>very dilute</b> solution and then remove the denaturant slowly, and the protein <b>returns to its native form</b>. Nothing but the sequence was present to tell it how. The textbook adds the limit a few pages later: in the cell only some proteins do this spontaneously, and for others the active conformation is not the lowest-energy one, so chaperones are needed.”',
  cn:'<b>这就是 Anfinsen 的实验，而书自己写了它</b>（<span class="pg">p035</span>），只是没给名字。<b>能用这本书回答一个通常要引外部文献的问题，是口试里最稳的位置。</b><br>两句必须连着说：只说前一句是 1960 年代的结论，加上后一句才是这本书的结论。',

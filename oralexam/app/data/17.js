@@ -1,10 +1,10 @@
 /* 卡 17 · What is the role of enzymes in biochemical reactions?
    题库 #17（S3 Biochemistry 4）
    出处 Biochemie OCR p016（多数生化反应只在催化剂存在下进行；E. coli 上千个反应；in vitro）、p017–p018（G 是状态函数、不给速率信息；ΔG° = −RT ln K）、
-        p009（年表）、p039–p040（Tab. 2.2：酶是最大最重要的一组，>3000 种）、p041–p043（§3 定义、Sumner 1926、六大类、催化 RNA）、
-        p054（§3.3 催化剂定义、活化能、三条路、thermolabilní、Obr. 3.1、两步机制）、p058–p059（温度）、
+        p009（年表）、p039–p040（table 2.2：酶是最大最重要的一组，>3000 种）、p041–p043（§3 定义、Sumner 1926、六大类、催化 RNA）、
+        p054（§3.3 催化剂定义、活化能、三条路、thermolabile、figure 3.1、两步机制）、p058–p059（温度）、
         p061–p062（专一性、10¹⁴、稀溶液低温中性 pH、邻近效应、§3.7 调控）、p063（反馈抑制）、p116（papain）、p155–p156、p173（α/β、纤维素酶）。
-   已回 300 dpi 原图核：p061 ureasa **10¹⁴krát**（OCR 吃了指数）；p054 Obr. 3.1 已看图。 */
+   已回 300 dpi 原图核：p061 urease **10¹⁴ times**（OCR 把指数吃掉了）；p054 figure 3.1 已看图。 */
 
 window.CARDS.push({
 id:'17', n:17, w:1,
@@ -18,11 +18,11 @@ cram:[
  {n:'01', t:'定义 · 酶',
   big:'酶是<b>专门催化生物体内反应的蛋白质</b>——生物催化剂；两个特点：<b>专一性高</b>、<b>催化效率高</b>',
   en:'“An enzyme is a protein specialised for catalysing the reactions that take place in living organisms — a biological catalyst. Two things characterise it: very high <b>specificity</b>, meaning it acts on one substrate and runs one reaction, and very high <b>catalytic efficiency</b>, meaning the reaction runs enormously faster with it than without it. One qualification: until recently every known enzyme was a protein, but some RNAs also turn out to catalyse.”',
-  note:'书给了<b>两个定义</b>：p041 从结构说（<i>proteiny specializované pro katalýzu reakcí</i>），p054 从功能说（<i>katalyzátory chemických reakcí probíhajících v organismech</i>）。合起来才是全定义：<b>是蛋白质，干的是催化</b>。RNA 那个限定书在 p042–p043 自己写了（写书时只有一例）；年表 p009：<b>1985 Cech</b>。<span class="pg">p041 p054 p042 p009</span>'},
+  note:'书给了<b>两个定义</b>：p041 从结构说（英译：<i>proteins specialised for catalysing reactions</i>），p054 从功能说（英译：<i>catalysts of the chemical reactions taking place in organisms</i>）。合起来才是全定义：<b>是蛋白质，干的是催化</b>。RNA 那个限定书在 p042–p043 自己写了（写书时只有一例）；年表 p009：<b>1985 Cech</b>。<span class="pg">p041 p054 p042 p009</span>'},
  {n:'02', t:'定义 · 催化剂',
   big:'催化剂是<b>暂时和反应物结合</b>、让反应<b>走另一条活化能更低的机制</b>、自己<b>原样回来</b>的物质',
   en:'“A catalyst is a substance that speeds up a reaction by <b>joining the reactants transiently</b>, so that the reaction runs by a <b>different mechanism with a lower activation energy</b>. And it comes out of it unchanged, so one molecule of catalyst serves over and over. In organisms the catalyst is the enzyme.”',
-  note:'p054 原话：<i>přechodně spojí s reaktanty, takže reakce probíhá jiným mechanismem s nižší aktivační energií</i>。「原样回来」在同页两步机制里：复合物 EA 散开成<b>原来的 E</b>（<i>původní E</i>）和产物。<span class="pg">p054</span>'},
+  note:'p054 原话的英译：<i>it joins transiently with the reactants, so that the reaction runs by a different mechanism with a lower activation energy</i>。「原样回来」在同页两步机制里：复合物 EA 散开成<b>原来的 E</b>（书上印的就是这个说法，英译 <i>the original E</i>）和产物。<span class="pg">p054</span>'},
  {n:'03', t:'作用一句话',
   big:'作用 = <b>让代谢反应以有用的速度发生</b>，<b>只让该发生的发生</b>，而且在<b>细胞能活的条件</b>下：稀溶液、低温、中性 pH',
   en:'“So the role of enzymes is three things at once. They make the reactions of metabolism run at a <b>useful rate</b>. They make <b>only the wanted ones</b> run, because each enzyme is specific. And they do it under conditions a cell can survive. The textbook’s phrase is that thanks to enzymes most reactions in the cell run in <b>dilute solution, at low temperature and at neutral pH</b>.”',
@@ -32,7 +32,7 @@ cram:[
  {n:'04', t:'活化能',
   big:'反应物要变成产物，得先<b>翻过一道能量坎</b>；翻坎需要的能量叫<b>活化能</b>',
   en:'“For a substance A to become product X, the molecules of A must first get over an <b>energy barrier</b>. They have to be supplied with the <b>activation energy</b>. It is the energy needed to reach the top of the barrier — the <b>transition state</b>. That is the arrangement of the atoms in which the old bonds are half broken and the new ones half formed. That term is general, and the textbook only names the barrier.”',
-  note:'p054 原话：<i>musí … překonat energetickou bariéru, musí jim být dodána tzv. aktivační energie</i>。「过渡态」<b>书里没有</b>（全书 grep 无），书只叫它「能量坎」。承重名词交代了：不懂活化能，「降低活化能」是空话。<span class="pg">p054</span>'},
+  note:'p054 原话的英译：<i>they must … overcome an energy barrier, they must be supplied with what is called the activation energy</i>。「过渡态」<b>书里没有</b>（全书 grep 无），书只叫它「能量坎」。承重名词交代了：不懂活化能，「降低活化能」是空话。<span class="pg">p054</span>'},
  {n:'05', t:'三条加速的路',
   big:'加速反应有三条路：<b>加热</b> · <b>催化</b> · <b>光</b>——生物只能走中间那条，因为<b>生物是热不稳定的</b>',
   en:'“There are three ways to make a reaction go faster. <b>Heat</b> the system: the molecules gain energy and more of them can get over the barrier. Organisms cannot use that route, because they are mostly <b>thermolabile</b> — built of proteins and membranes that heat destroys. The second way is <b>catalysis</b>. The third is <b>light</b>: exciting the reactant molecules with radiation — but then the reaction usually runs along a different reaction coordinate altogether.”',
@@ -42,17 +42,17 @@ cram:[
   en:'“Even the simplest enzyme reaction runs in two steps. First the substrate joins the enzyme into the <b>enzyme–substrate complex</b>. That step is fast and reversible, and the two are held together by weak, non-covalent interactions. Then the actual chemical change happens: the complex breaks down into the <b>original enzyme</b> and the product — slower, and irreversible.”',
   note:'p054 §3.3.1 原话。<b>「原来的酶」是「酶不被消耗」的书内出处。</b>这两步是卡 02 的 Km 来源（k₁、k₋₁、k₂），也是你主场的分界线：<b>第一步是结合，第二步才是催化</b>。<span class="pg">p054</span>'},
  {n:'07', t:'图 · 他可能让你画',
-  big:'<b>Obr. 3.1 能量图</b>：两条曲线，<b>同一个起点和终点</b>，只有<b>坎的高度</b>不同',
+  big:'<b>figure 3.1 能量图</b>：两条曲线，<b>同一个起点和终点</b>，只有<b>坎的高度</b>不同',
   en:'“On an energy diagram the uncatalysed reaction is one big hump between reactant A and product P. The catalysed one is a lower path with two small humps and a dip between them. The dip is the transient complex of A with the catalyst. Both curves start at A and end at P at the same heights. So the energy difference between reactant and product is the same, and only the barrier changes.”',
-  note:'<b>画的顺序</b>（照 p054 Obr. 3.1，已看原图）：① 横轴 reaction coordinate，纵轴 energy。② 左边点 A（反应物），右边点 P（产物），<b>P 比 A 低</b>。③ 曲线 2（不催化，实线）：A 到 P 一个大鼓包，顶到 A 的高度差标 <b>E₂</b>。④ 曲线 1（催化，虚线）：从 A 先一个小鼓包（标 <b>E₁</b>），然后<b>掉进一个比 A 还低的坑</b>，坑底标 <b>AK</b>（A 与催化剂 K 的复合物），再一个小鼓包，然后下到 P。⑤ 图例：A · AK · P · E₁、E₂ 活化能。<br>他问坑为什么比 A 低：“The well below A means the complex is more stable than free A, so binding is downhill. The two small humps are the two steps of the textbook’s mechanism: binding, then the chemical step.”<span class="pg">p054</span>'},
+  note:'<b>画的顺序</b>（照 p054 figure 3.1，已看原图）：① 横轴 reaction coordinate，纵轴 energy。② 左边点 A（反应物），右边点 P（产物），<b>P 比 A 低</b>。③ 曲线 2（不催化，实线）：A 到 P 一个大鼓包，顶到 A 的高度差标 <b>E₂</b>。④ 曲线 1（催化，虚线）：从 A 先一个小鼓包（标 <b>E₁</b>），然后<b>掉进一个比 A 还低的坑</b>，坑底标 <b>AK</b>（A 与催化剂 K 的复合物），再一个小鼓包，然后下到 P。⑤ 图例：A · AK · P · E₁、E₂ 活化能。<br>他问坑为什么比 A 低：“The well below A means the complex is more stable than free A, so binding is downhill. The two small humps are the two steps of the textbook’s mechanism: binding, then the chemical step.”<span class="pg">p054</span>'},
  {n:'08', t:'速率变，平衡不变',
   big:'催化剂改的是<b>速率</b>，不是<b>平衡</b>——热力学没动，动力学动了',
   en:'“A catalyst changes how fast equilibrium is reached, not where it lies. The grounds are in the textbook’s first chapter. Gibbs energy is a state function, so its change does not depend on the path taken, and it gives <b>no information about rate</b>. Rate is decided by the mechanism. A catalyst changes only the mechanism, the path. So the free-energy change and the equilibrium constant are untouched, and both directions are accelerated equally. The energy diagram shows it: the two curves share their start and end points.”',
-  note:'⚠ <b>书没有把「催化剂不改变平衡」写成一句话</b>——这是 p017（<i>Gibbsova energie … nedává žádné informace o rychlosti … rozhodující je konkrétní mechanismus</i>）加 p054（催化剂换机制）接出来的。说 “it follows from”，不说 “the textbook says”。<b>「正反两个方向一样加速」是通用推论</b>，书里没有。ΔG° = −RT ln K 在 p018。<span class="pg">p017 p018 p054</span><br><br><b>=== 这一条上有两个式子，各说各的 ===</b><br><code>ΔG°′ = −RT ln K</code>（热力学，书 p018）里<b>只有起点和终点</b>，一个字都没提坎有多高。<br><code>k = A·e^(−Ea/RT)</code>（动力学，Arrhenius，<b>书里没有这个式子</b>）里<b>只有坎，没有终点</b>。<br><b>两个式子除了 R 和 T 没有任何共用的量——这就是「催化剂改速率不改平衡」最干净的说法：催化剂动的是 Ea，而 Ea 压根不出现在第一个式子里。</b><br>两条的完整算法在追问「Why does a lower barrier make the reaction faster?」和「Why does a catalyst accelerate both directions equally?」里。'},
+  note:'⚠ <b>书没有把「催化剂不改变平衡」写成一句话</b>——这是 p017（英译：<i>Gibbs energy … gives no information about rate … what decides is the specific mechanism</i>）加 p054（催化剂换机制）接出来的。说 “it follows from”，不说 “the textbook says”。<b>「正反两个方向一样加速」是通用推论</b>，书里没有。ΔG° = −RT ln K 在 p018。<span class="pg">p017 p018 p054</span><br><br><b>=== 这一条上有两个式子，各说各的 ===</b><br><code>ΔG°′ = −RT ln K</code>（热力学，书 p018）里<b>只有起点和终点</b>，一个字都没提坎有多高。<br><code>k = A·e^(−Ea/RT)</code>（动力学，Arrhenius，<b>书里没有这个式子</b>）里<b>只有坎，没有终点</b>。<br><b>两个式子除了 R 和 T 没有任何共用的量——这就是「催化剂改速率不改平衡」最干净的说法：催化剂动的是 Ea，而 Ea 压根不出现在第一个式子里。</b><br>两条的完整算法在追问「Why does a lower barrier make the reaction faster?」和「Why does a catalyst accelerate both directions equally?」里。'},
  {n:'09', t:'效率',
   big:'有多快：<b>urease 把尿素水解加速 10¹⁴ 倍</b>（相对于 H⁺ 催化）——所以细胞里的反应能在<b>稀溶液、低温、中性 pH</b> 下进行',
   en:'“How efficient: the textbook’s example is urease, which speeds up the hydrolysis of urea <b>ten to the fourteenth</b> times compared with catalysis by hydrogen ions. That is what the efficiency is for. Because of enzymes, most reactions in the cell run in dilute solution, at low temperature and at neutral pH. Without a catalyst they would practically not run under those conditions at all.”',
-  note:'<b>10¹⁴ 已回 300 dpi 原图核过</b>（OCR 出来是「10krát」；卡 18 写时还标着待核，现在是书的数）。书的比较对象是<b>氢离子催化</b>，不是不催化的水解——Lehninger 的 10¹⁴ 是对不催化说的。按书说。<b>后半句比数字重要</b>：效率的意义是快到能在细胞的条件下用。<span class="pg">p061</span><br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>10¹⁴ 是什么的比</b>：是两个<b>速率常数</b>之比，<code>k(urease) ÷ k(H⁺) = 10¹⁴</code>。不是产率之比，也不是平衡之比——<b>平衡那边酶一点没动。</b><br><br><b>把它翻成「坎矮了多少」</b>（用 <code>k = A·e^(−Ea/RT)</code>）：<br>① 两个 k 相除，A 约掉 → <code>k₂ ÷ k₁ = e^(ΔEa/RT)</code>。<br>② 取常用对数 → <code>ΔEa = RT·ln10·log(k₂ ÷ k₁) = 5.71 × 14 ≈ 80 kJ/mol</code>（25 °C）。<br><b>所以「加速 10¹⁴ 倍」＝「把那道坎削掉约 80 kJ/mol」。</b><br><br><b>=== 一句话理解 ===</b><br>两个画面，挑一个说：<br>① <b>时间</b>：酶一秒钟干完的事，H⁺ 催化要 <code>10¹⁴ 秒 ≈ 320 万年</code>。「加速」这个词平时太温和了，它真正的意思是<b>把三百万年压成一秒</b>。<br>② <b>代价</b>：削掉的那 80 kJ/mol，<b>连一根共价键的四分之一都不到，大约就是四五个氢键的量</b>（横向卡 x-bonds 的尺子：氢键典型 20 kJ/mol）。<b>酶没有砸开任何东西，它只是多伸出几只手，把半路上那个状态多扶了几下。</b>——这一句同时把「催化剂凭什么做到」也答了。<br>⚠ 80 kJ/mol、320 万年、氢键 20 kJ/mol <b>都不是书里的</b>，是从书给的 10¹⁴ 用 Arrhenius 算出来的；书只给 10¹⁴（p061）。被追问就说这是 Arrhenius 关系、属于物理化学，然后接停止句。'},
+  note:'<b>10¹⁴ 已回 300 dpi 原图核过</b>（OCR 出来只剩「10 times」，指数被吃掉了；卡 18 写时还标着待核，现在是书的数）。书的比较对象是<b>氢离子催化</b>，不是不催化的水解——Lehninger 的 10¹⁴ 是对不催化说的。按书说。<b>后半句比数字重要</b>：效率的意义是快到能在细胞的条件下用。<span class="pg">p061</span><br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>10¹⁴ 是什么的比</b>：是两个<b>速率常数</b>之比，<code>k(urease) ÷ k(H⁺) = 10¹⁴</code>。不是产率之比，也不是平衡之比——<b>平衡那边酶一点没动。</b><br><br><b>把它翻成「坎矮了多少」</b>（用 <code>k = A·e^(−Ea/RT)</code>）：<br>① 两个 k 相除，A 约掉 → <code>k₂ ÷ k₁ = e^(ΔEa/RT)</code>。<br>② 取常用对数 → <code>ΔEa = RT·ln10·log(k₂ ÷ k₁) = 5.71 × 14 ≈ 80 kJ/mol</code>（25 °C）。<br><b>所以「加速 10¹⁴ 倍」＝「把那道坎削掉约 80 kJ/mol」。</b><br><br><b>=== 一句话理解 ===</b><br>两个画面，挑一个说：<br>① <b>时间</b>：酶一秒钟干完的事，H⁺ 催化要 <code>10¹⁴ 秒 ≈ 320 万年</code>。「加速」这个词平时太温和了，它真正的意思是<b>把三百万年压成一秒</b>。<br>② <b>代价</b>：削掉的那 80 kJ/mol，<b>连一根共价键的四分之一都不到，大约就是四五个氢键的量</b>（横向卡 x-bonds 的尺子：氢键典型 20 kJ/mol）。<b>酶没有砸开任何东西，它只是多伸出几只手，把半路上那个状态多扶了几下。</b>——这一句同时把「催化剂凭什么做到」也答了。<br>⚠ 80 kJ/mol、320 万年、氢键 20 kJ/mol <b>都不是书里的</b>，是从书给的 10¹⁴ 用 Arrhenius 算出来的；书只给 10¹⁴（p061）。被追问就说这是 Arrhenius 关系、属于物理化学，然后接停止句。'},
 
  {g:'酶跟普通催化剂差在哪', gn:'「biochemical」这个限定词就是这一组。铂、H⁺ 也是催化剂；酶多出来的是三样：专一、温和、可调。'},
  {n:'10', t:'专一性',
@@ -80,11 +80,11 @@ cram:[
  {n:'15', t:'在蛋白质功能表里的位置',
   big:'在书的<b>蛋白质功能表</b>里，酶是<b>最大、最重要的一组</b>；已知<b>超过 3000 种</b>；第二大组是结构蛋白',
   en:'“In the textbook’s table of protein functions, enzymes are the largest and most important group. More than three thousand different enzymes are known. The second main group are the structural proteins. The table’s own examples: ribonuclease hydrolyses RNA, trypsin hydrolyses the peptide bond, cytochrome c transfers electrons, snake-venom enzymes hydrolyse phospholipids.”',
-  note:'Tab. 2.2 p039–p040。<b>这一条是题库标的书页出处</b>（p039–p042），也是 #29 的一行。<span class="pg">p039 p040</span>'},
+  note:'table 2.2 p039–p040。<b>这一条是题库标的书页出处</b>（p039–p042），也是 #29 的一行。<span class="pg">p039 p040</span>'},
  {n:'16', t:'怎么发现的',
   big:'<b>1833 Payen</b> 第一个酶（amylase）· <b>1893 Ostwald</b> 酶是催化剂 · <b>1897 Buchner</b> 无细胞发酵 · <b>1926 Sumner</b> 结晶 urease · 30 年代 trypsin、pepsin、chymotrypsin · <b>1985 Cech</b> RNA 有酶活性',
   en:'“The textbook’s timeline: the first enzyme isolated was amylase, Payen, 1833. Ostwald proved in 1893 that enzymes are catalysts. Buchner proved in 1897 that fermentation is a chemical process — it runs in a yeast extract with no living cell. Harden and Young found the first coenzyme, NAD, in 1905. The first enzyme obtained as crystals was urease, Sumner, 1926, and that settled that an enzyme is a protein. In the thirties trypsin, pepsin and chymotrypsin followed. In 1985 Cech found enzymatic activity in RNA.”',
-  note:'年份全在 p009 Tab. 1.1，Sumner p041 又写了一遍。<b>「结晶 ＝ 证明是蛋白质」和「无细胞」是通用史实</b>，书只写「第一个结晶态的酶」「证明发酵是化学过程」。<span class="pg">p009 p041</span>'},
+  note:'年份全在 p009 table 1.1，Sumner p041 又写了一遍。<b>「结晶 ＝ 证明是蛋白质」和「无细胞」是通用史实</b>，书只写「第一个结晶态的酶」「证明发酵是化学过程」。<span class="pg">p009 p041</span>'},
 
  {g:'收尾', gn:'一句停住，一句伸出去。'},
  {n:'17', t:'停止句',
@@ -198,7 +198,7 @@ recog:[
 {q:'Why does meat tenderiser work?', odd:1,
  mean:'问的是<b>水解酶的作用</b>——蛋白酶在厨房条件下切肽键。',
  say:'“Because it is a protease — papain from papaya, listed in the textbook among the cysteine proteases. A protease hydrolyses peptide bonds, the bonds between the amino acids in the meat’s proteins, especially the connective-tissue protein collagen. It does at room temperature, in a dilute, near-neutral solution, what your own trypsin and pepsin do in the gut. That is the point about efficiency: without an enzyme, peptide-bond hydrolysis under those conditions is practically nil.”',
- tail:'papain p116（Tab. 5.1：papaya，pH 8，切 Lys、Phe 之后）；collagen 是结缔组织成分 p040。<b>「嫩不嫩主要看 collagen」是通用说法，书里没有。</b><span class="pg">p116 p040</span>'},
+ tail:'papain p116（table 5.1：papaya，pH 8，切 Lys、Phe 之后）；collagen 是结缔组织成分 p040。<b>「嫩不嫩主要看 collagen」是通用说法，书里没有。</b><span class="pg">p116 p040</span>'},
 
 {q:'Why does hydrogen peroxide fizz on a cut?', odd:1,
  mean:'问的是<b>催化剂让一个本来就下坡的反应跑起来</b>。',
@@ -238,7 +238,7 @@ ask:[
  cn:'p054。'},
 {r:'高', q:'What is activation energy?',
  en:'“The energy the reactant molecules must be supplied with to get over the barrier between reactant and product — the textbook’s words. On the energy diagram it is the height of the hump above the starting level. The horizontal axis, the reaction coordinate, tracks how far the old bonds have stretched and the new ones formed. Heat supplies the activation energy by raising the molecules’ energy. A catalyst lowers it by offering a different path.”',
- cn:'p054 Obr. 3.1：E₂ 不催化，E₁ 催化。「reaction coordinate」书在光那条路里用了：光激发后反应通常走<b>另一条反应坐标</b>——另一条路，不只是同一条路上矮一点的坎。<br><br><b>活化能定量上是什么</b>：<b>它不是一个能量差，是一个门槛。</b>同一温度下，能量够得着它的分子只占 <code>e^(−Ea/RT)</code>；25 °C 时 <code>RT = 2.48 kJ/mol</code>，<code>RT·ln10 = 5.71 kJ/mol</code>——<b>Ea 每高 5.71 kJ/mol，够格的分子就少一个数量级。</b>整段算法（为什么降低它是乘不是加、urease 的 10¹⁴ 对应 80 kJ/mol）在追问「Why does a lower barrier make the reaction faster?」那一条里。'},
+ cn:'p054 figure 3.1：E₂ 不催化，E₁ 催化。「reaction coordinate」书在光那条路里用了：光激发后反应通常走<b>另一条反应坐标</b>——另一条路，不只是同一条路上矮一点的坎。<br><br><b>活化能定量上是什么</b>：<b>它不是一个能量差，是一个门槛。</b>同一温度下，能量够得着它的分子只占 <code>e^(−Ea/RT)</code>；25 °C 时 <code>RT = 2.48 kJ/mol</code>，<code>RT·ln10 = 5.71 kJ/mol</code>——<b>Ea 每高 5.71 kJ/mol，够格的分子就少一个数量级。</b>整段算法（为什么降低它是乘不是加、urease 的 10¹⁴ 对应 80 kJ/mol）在追问「Why does a lower barrier make the reaction faster?」那一条里。'},
 {r:'高', q:'What is the transition state?',
  en:'“The highest-energy arrangement along the path from reactant to product — old bonds half broken, new bonds half formed. The energy needed to reach it is the activation energy. The term is general. The textbook speaks only of the energy barrier. Lehninger’s way of saying what an enzyme does is that its active site is complementary to the transition state and binds it more tightly than the substrate. The textbook’s way is that the reaction runs by a different mechanism.”',
  cn:'<b>书里没有这个词</b>。书和 Lehninger 的说法不矛盾，是同一件事的两种描述——说的时候把两种都点名。'},
@@ -271,7 +271,7 @@ ask:[
  cn:'<b>通用推论，书里没有。</b>但它是 p017（G 是状态函数）的动力学版本，两个说法互相支撑。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：平衡时正逆速率相等 → <code>k₊[A] = k₋[X]</code> → <code>K = [X] ÷ [A] = k₊ ÷ k₋</code>。<b>平衡常数就是两个速率常数的比。</b>这一步把热力学和动力学接在了一起。<br><b>三步推导</b>：<br>① 正向 <code>k₊ = A·e^(−Ea₊/RT)</code>，逆向 <code>k₋ = A·e^(−Ea₋/RT)</code>；<code>Ea₊ − Ea₋</code> 就是反应物和产物的能量差（严格说是焓差，追到这一层已经出生化了）。<br>② 催化剂把<b>坎顶</b>降了 ΔEa。<b>坎顶只有一个，所以两边同时矮了同样多</b>：<code>k₊ → k₊·e^(ΔEa/RT)</code>，<code>k₋ → k₋·e^(ΔEa/RT)</code>。<br>③ 相除：<code>K = k₊ ÷ k₋</code>，<b>那个 e^(ΔEa/RT) 上下约掉了</b>——K 一动不动。<br><br><b>=== 一句话理解 ===</b><br><b>坎顶是一个点，不是两个。</b>你没办法只给一边挖矮——从左边看矮了多少，从右边看就矮了同样多。<b>所以「正反两个方向一样加速」不是巧合，是几何上根本没有别的可能。</b><br>这也就是热力学那句话的动力学版本：<b>ΔG 说「两头没动」，Arrhenius 说「中间那个点矮了，但对两边是同一个降幅」——说的是同一张图。</b>他要是还追，就指速背第 7 点那张能量图：<b>两条曲线起点终点重合，只有中间的包矮了。</b>'},
 {r:'高', q:'Why must the enzyme come out unchanged?',
  en:'“Because otherwise it would be a reagent, not a catalyst — used up one molecule per reaction, so the cell would need as much enzyme as substrate. The textbook’s mechanism has the complex breaking down into the original enzyme and the product. That regeneration is what lets one enzyme molecule turn over thousands of substrate molecules — the molecular activity. Enzymes do wear out, but by denaturation, not by the reaction they catalyse.”',
- cn:'p054「původní E」；「磨损靠变性」是通用。<br><b>「反复用」是多反复，有个数</b>：分子活性 MA ＝ 一个酶分子每分钟转化的底物分子数（书 p058）。<b>如果酶真是消耗品，MA 恒等于 1</b>；实测的 MA 动辄成千上万，<b>这个数本身就是「它没被消耗」的直接证据</b>。所以「催化剂不被消耗」不是定义上的规定，是<b>一个量得出来的数</b>——怎么量在追问「What is molecular activity」那一条里。'},
+ cn:'p054 的「the original E」；「磨损靠变性」是通用。<br><b>「反复用」是多反复，有个数</b>：分子活性 MA ＝ 一个酶分子每分钟转化的底物分子数（书 p058）。<b>如果酶真是消耗品，MA 恒等于 1</b>；实测的 MA 动辄成千上万，<b>这个数本身就是「它没被消耗」的直接证据</b>。所以「催化剂不被消耗」不是定义上的规定，是<b>一个量得出来的数</b>——怎么量在追问「What is molecular activity」那一条里。'},
 {r:'高', q:'Why does the cell need specificity — why not just make more of everything?',
  en:'“Because a non-specific catalyst would run every reaction its substrates could undergo, and the textbook says what follows: the cell would very quickly be flooded with unwanted products. Specificity is what turns a bag of a thousand reactions into pathways, each step feeding the next and nothing else. Feedback regulation then keeps a pathway from making more than is needed. The textbook says that minimises the demand for carbon, nitrogen and energy.”',
  cn:'p061（淹没）、p063（反馈抑制节省 C、N、能量）。'},
@@ -298,7 +298,7 @@ ask:[
  cn:'p017：G 是状态函数，不给速率信息。'},
 {r:'高', q:'（陷阱）Enzymes are consumed',
  en:'“No — the complex breaks down into the original enzyme and the product. One molecule turns over many.”',
- cn:'p054「původní E」。'},
+ cn:'p054 的「the original E」。'},
 {r:'高', q:'（陷阱）Every enzyme is a protein',
  en:'“Nearly — but the textbook itself says some other macromolecules have catalytic ability, and Cech’s 1985 discovery of catalytic RNA is in its timeline.”',
  cn:'p042–p043、p009。'},
