@@ -4,7 +4,7 @@
    题型：比较题。第一张这个类型，形状见 recog 第一行。 */
 
 window.CARDS.push({
-id:'03', n:3, w:3,
+id:'03', n:3, merged:[15], w:3,
 q:'What are the differences between DNA and RNA?',
 qcn:'DNA 和 RNA 有什么区别',
 sub:'主干说完约 80 秒 · 比较题 · 导师写过两遍',
