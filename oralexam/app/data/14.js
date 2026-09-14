@@ -2,22 +2,25 @@
    题库 #14（S2 Biochemistry 9）· w2 · 书本投入 bw 0 · gap 'ok'（她说这是强项）
 
    ⛔ 出处规矩：这张卡里没有一句可以说成「书上说」。229 页全文 grep 的结果：
-      transfekce · transdukce · elektroporace · kompetence · bakteriofág · fág · plasmid ·
-      plazmid · klonování · rekombinantní · restrikční · konjugace · antibiotikum ·
-      ampicilin · liposom · lipofekce · episom · integrace · virový vektor = 全部 0 命中。
-      transformace 全书只有两处，而且两处都不是这道题的意思：
-        · p056 —— lineární transformace 的 Michaelis–Mentenové 方程（Lineweaver–Burk），是数学变换；
-        · p182 —— 糖脂与糖蛋白「pravděpodobně i za transformaci normálně rostoucích buněk v maligní」，
-          正常生长的细胞变成恶性的。⚠ 这就是这张卡的陷阱：书里 transformation 的唯一生物学用法是癌症那个。
-      vektor 只有 p141 p142 的 vektorový charakter（矢量的），跟载体无关。
-      selekční 只有 p019 的 selekční tlak（进化的选择压力），跟 selection marker 的 selection 不是一回事。
+      查的是这些词的捷克语形式：transfection · transduction · electroporation · competence ·
+      bacteriophage · phage · plasmid（两种拼法都查了）· cloning · recombinant · restriction ·
+      conjugation · antibiotic · ampicillin · liposome · lipofection · episome · integration ·
+      viral vector = 全部 0 命中。
+      transformation 这个词全书只有两处，而且两处都不是这道题的意思：
+        · p056 —— 说的是 Michaelis–Menten 方程的<b>线性变换</b>（Lineweaver–Burk），是数学变换；
+        · p182 —— 糖脂与糖蛋白「probably also responsible for the transformation of normally
+          growing cells into malignant ones」，正常生长的细胞变成恶性的。⚠ 这就是这张卡的陷阱：
+          书里 transformation 的唯一生物学用法是癌症那个。
+      vector 这个词只在 p141 p142 出现，说的是「vector character」＝矢量的，跟载体无关。
+      selection 这个词只在 p019 出现，说的是 selection pressure（进化的选择压力），
+      跟 selection marker 的 selection 不是一回事。
    书能给的只有邻居，都带页码，而且每次都要说清「书讲的不是这个用法」：
-      p009 年表 1944「Průkaz přenosu genetické informace DNA (Avery)」← 这一行讲的就是转化实验本身，
+      p009 年表 1944「proof that genetic information is transferred by DNA (Avery)」← 这一行讲的就是转化实验本身，
         但书既不叫它 transformation，也没写实验怎么做 ·
       p015 病毒的定义：活与非活的边界 · 细胞内寄生 · 比原核细胞还简单 · 借宿主的生化机器 ·
-        本身「v zásadě jen genetickou informaci, nutnou k reprodukci」← 转导为什么天然可行的全部理由 ·
-      p015 Tab. 1.3 细胞壁：植物和原核生物的壁厚 20 nm，由多糖等构成，起保护作用 ·
-      p198 膜的结构基础是脂双层，「výrazně nepolární střed a dva polární povrchy」，厚 3,5–4,0 nm ·
+        本身「essentially only the genetic information needed for its reproduction」← 转导为什么天然可行的全部理由 ·
+      p015 table 1.3 细胞壁：植物和原核生物的壁厚 20 nm，由多糖等构成，起保护作用 ·
+      p198 膜的结构基础是脂双层，「a markedly nonpolar middle and two polar surfaces」，厚 3,5–4,0 nm ·
       p200 简单扩散走脂双层、膜上随机的孔或整合蛋白的通道，过去的是亲脂物质、水和一些离子 ·
       p197 膜负责向细胞内外的选择性转运 ·
       p076 DNA 是遗传信息的物质载体，信息以碱基顺序存储。
@@ -36,7 +39,7 @@ sub:'主干说完约 90 秒 · 比较题 · 书里 0 命中：每一句都要标
 cram:[
  {g:'开口 · 先给轴，再把四个名字各定义一次', gn:'⚠ 比较题的第一句决定成败：<b>先说比较的轴，再往轴上填</b>（卡 03 是样板）。这道题的轴比卡 03 多一层——<b>四个里有一个不在同一张清单上</b>。题面的五个实词（difference、transformation、electroporation、transduction、transfection）在这一组里全部交代掉。口试他多半只念 “What is transformation?”，其余的是他准备挖的方向。'},
  {n:'01', t:'先划出处',
-  big:'全书 <b>0 命中</b>：transfekce、transdukce、elektroporace、kompetence、bakteriofág、plasmid 全没有。<b>transformace 出现两次，两次都不是这个意思</b>。所以这张卡全部是<b>通用分子生物学</b>或<b>我自己的实验室实践</b>',
+  big:'全书 <b>0 命中</b>：transfection、transduction、electroporation、competence、bacteriophage、plasmid 这些词的捷克语形式全没有。<b>transformation 出现两次，两次都不是这个意思</b>。所以这张卡全部是<b>通用分子生物学</b>或<b>我自己的实验室实践</b>',
   en:'“One thing before I answer. This is not textbook material. Three of the four words do not appear in this book at all. The fourth, transformation, appears twice and never in this sense. So everything I say is either general molecular biology or my own laboratory practice, and I will say which as I go.”',
   note:'<b>这一句是整张卡的保险。</b>书外题最危险的失分不是答错，是把实验室的东西说成「书上说」——他翻得到。先说清楚，后面每一句都安全，而且「我知道这本书里有什么、没有什么」本身就是加分。跟卡 <b>taq</b> 和卡 <b>land</b> 同一个开法。<span class="pg">p056</span><span class="pg">p182</span>'},
  {n:'02', t:'轴 · 这道题的第一句',
@@ -80,7 +83,7 @@ cram:[
  {n:'09', t:'competence 是什么 · 天然的与做出来的',
   big:'<b>competence ＝ 能把外面的 DNA 拿进去的那个状态。</b>有些菌天生就有这套机器（<b>Bacillus subtilis · Streptococcus pneumoniae</b>），<b>E. coli 没有</b>，所以实验室里是<b>做出来的</b>',
   en:'“Competence is the state in which a bacterium can take up DNA from outside. It is not a property every bacterium has. Some species are naturally competent, and they carry genes for a machine that binds DNA at the surface and pulls one strand in. <b>Bacillus subtilis</b> and <b>Streptococcus pneumoniae</b> are the usual examples, and in those species competence is regulated and switched on under particular conditions. <b>E. coli</b> is not naturally competent in any useful way. So in the lab competence is made, either chemically or by the electric pulse.”',
-  note:'⚠ 全部 general。书里 kompetence 0 命中。<br><b>「天然的」和「做出来的」要分开说</b>：这是下一刀的位置，而且分开说之后 electroporation 自然接上去——电穿孔就是「做出来」的第二种办法。'},
+  note:'⚠ 全部 general。书里 competence 这个词 0 命中。<br><b>「天然的」和「做出来的」要分开说</b>：这是下一刀的位置，而且分开说之后 electroporation 自然接上去——电穿孔就是「做出来」的第二种办法。'},
  {n:'10', t:'化学 competence · 为什么要钙、为什么要热激',
   big:'两边都是<b>负电</b>：DNA 主链每个核苷酸一个负电荷（卡 03），细菌表面也是负的。<b>Ca²⁺ 把这层排斥屏蔽掉</b>；冰让膜变硬；随后一次短促的 <b>heat shock</b> 把 DNA 推进去。<b>⚠ 机制到今天没有定论，这句要说出来</b>',
   en:'“Both sides of the approach are negative. The DNA backbone carries one negative charge per nucleotide, and the bacterial surface is negative too, so the two repel each other. A divalent cation sits between them and screens that repulsion. Cells are grown to early exponential phase, washed cold, and left on ice in calcium chloride. The cold keeps the membrane rigid while the DNA is brought close. Then a brief heat shock, in ordinary practice around forty-two degrees for well under a minute, is thought to drive the DNA through. I say thought because the detailed mechanism is still not settled, and I would rather say that than invent one.”',
@@ -129,7 +132,7 @@ cram:[
  {n:'18', t:'⚠ 陷阱 · transformation 在癌症生物学里是另一件事',
   big:'<b>这本书里 transformation 唯一的生物学用法就是癌症那个</b>：p182 说糖脂和糖蛋白「大概也负责正常生长的细胞转变成恶性的」。<b>混合领域的考官很可能用的正是这个意思</b>',
   en:'“One word on this list carries a second meaning, and it is worth putting on the table myself. In cancer biology <b>transformation</b> means a normal cell acquiring the growth properties of a malignant one. That is the only biological sense in which this textbook uses the word. On p182 it says that glycolipids and glycoproteins of the cell surface are probably responsible for the transformation of normally growing cells into malignant ones. So if the question comes from that side, transformation is not about DNA uptake at all. I would ask which sense is meant rather than guess.”',
-  note:'<b>这是这张卡最值钱的一条。</b>她说这道题是强项，而强项题的失分方式正是「把另一个意思的那个词答成了这个意思」——PESB 那次 cut / elute 就是同一个形状（LOGIC §1）。<br>书的另一处 <span class="pg">p056</span> 用 transformace 指 Michaelis–Mentenové 方程的<b>线性变换</b>（Lineweaver–Burk），那是数学不是生物，顺口提一句能显出你真的翻过书。<span class="pg">p182</span>'},
+  note:'<b>这是这张卡最值钱的一条。</b>她说这道题是强项，而强项题的失分方式正是「把另一个意思的那个词答成了这个意思」——PESB 那次 cut / elute 就是同一个形状（LOGIC §1）。<br>书的另一处 <span class="pg">p056</span> 用 transformation 指 Michaelis–Menten 方程的<b>线性变换</b>（Lineweaver–Burk），那是数学不是生物，顺口提一句能显出你真的翻过书。<span class="pg">p182</span>'},
  {n:'19', t:'落点 · 这四个词里有三个在我的台面上',
   big:'每周都在做：把质粒<b>电转</b>进 E. coli（那是一次 transformation）· 把文库<b>转化</b>进酵母做展示（酵母是真核，但还是叫 transformation）· 用<b>抗性</b>把拿到 DNA 的那些挑出来',
   en:'“In my own work three of these appear every week. I put plasmids into <b>E. coli</b> by electroporation, and that is a transformation done electrically. I put a library into yeast for display, and although yeast is a eukaryote the field still calls that transformation. In both the read-out depends on a marker. For a library that matters twice over. The number of cells that take up DNA sets how many variants I can actually screen, so the efficiency of this one step is the ceiling on the diversity I can look at.”',
@@ -139,7 +142,7 @@ end:'<b>顺序：先划出处 → 给轴 → 四个定义各一句 → 三个去
 
 /* ---------------- 演练 ---------------- */
 sib:[
-['<b>先划出处</b>：书里 transfekce / transdukce / elektroporace / kompetence / plasmid 全 0；transformace 两处都不是这个意思',
+['<b>先划出处</b>：书里 transfection / transduction / electroporation / competence / plasmid 全 0；transformation 两处都不是这个意思',
  '“This is not textbook material. Three of the four words do not appear in this book at all, and the fourth appears twice and never in this sense. So everything here is general molecular biology or my own laboratory practice.”',
  '<b>书外题的第一句永远是出处。</b>把实验室的东西说成「书上说」，他翻得到。'],
 ['<b>轴</b>：四个都是把<b>外源核酸送进细胞</b>；区别只在<b>哪一种细胞</b>和<b>谁带它过膜</b>',
@@ -206,7 +209,7 @@ segs:[
 
 why:{
  rungs:[
-  ['为什么外源 DNA 非要这四样里的一样？它自己不能走进细胞吗？','<b>不能，而且书自己给了理由。</b>膜的结构基础是<b>脂双层</b>，<span class="pg">p198</span> 说它有「明显非极性的中间和两个极性表面」，厚 3,5–4,0 nm。<span class="pg">p200</span> 说简单扩散过去的是<b>亲脂物质、水和一些离子</b>。而 DNA 正好是反面：<b>每个核苷酸一个负电荷</b>（卡 03），既高度极性又极大。细菌外面还多一层壁（<span class="pg">p015</span> Tab. 1.3：20 nm，多糖）。“So it needs a pore, a vehicle, or a coat that hides its charge — and those are exactly the four words in the question.”'],
+  ['为什么外源 DNA 非要这四样里的一样？它自己不能走进细胞吗？','<b>不能，而且书自己给了理由。</b>膜的结构基础是<b>脂双层</b>，<span class="pg">p198</span> 说它有「明显非极性的中间和两个极性表面」，厚 3,5–4,0 nm。<span class="pg">p200</span> 说简单扩散过去的是<b>亲脂物质、水和一些离子</b>。而 DNA 正好是反面：<b>每个核苷酸一个负电荷</b>（卡 03），既高度极性又极大。细菌外面还多一层壁（<span class="pg">p015</span> table 1.3：20 nm，多糖）。“So it needs a pore, a vehicle, or a coat that hides its charge — and those are exactly the four words in the question.”'],
   ['那有些细菌为什么会<b>有</b>一套专门拿 DNA 的机器？','<b>因为那是被选出来的。</b>天然 competence 不是膜漏了，它是<b>基因编码的、受调控的</b>：有专门的蛋白把 DNA 结合在表面、把一条链拉进去，而且只在特定条件下打开。<b>会花代价、又受调控的性状，是被选择保留的性状。</b>通行的解释有三个，而且并存：① 获得新基因（水平基因转移，抗性就是这么传的）② 拿外源 DNA 当<b>修复模板</b> ③ 拿 DNA 当<b>营养</b>，核苷酸和磷都是稀缺的。'],
   ['那到底是哪一个？','<b>这一问就撞到地基了。</b>三个解释都有实验支持，而且它们<b>不互斥</b>——同一套机器可以同时干三件事。更麻烦的是：一个性状<b>现在起什么作用</b>，和它<b>当初为什么被选出来</b>，是两个问题，后者没有直接证据可看。这是进化解释的通病，不是这个例子特有的。']
  ],
@@ -277,10 +280,10 @@ ask:[
  cn:'<b>naked 是 transformation 定义里的承重词</b>，不解释的话「细胞自己拿进去」这个结论就空了（LOGIC §4b）。'},
 {r:'高', q:'What is a bacteriophage?',
  en:'“A bacteriophage is a virus that infects bacteria. It is a piece of nucleic acid inside a protein coat, with a structure for attaching to the bacterial surface and injecting that nucleic acid. The textbook does not use the word, but its definition of a virus on p015 is exactly the reason a phage can be used this way. It calls a virus an intracellular parasite, simpler than a prokaryotic cell, and essentially only the genetic information needed for its reproduction. A delivery device for nucleic acid is what that description amounts to.”',
- cn:'⚠ bakteriofág 全书 0 命中，但 <span class="pg">p015</span> 的病毒定义可以整句引。<b>卡 12 用过 phage 这个词（T7 RNA polymerase）但没定义</b>，这里补上，两张卡说法一致。'},
+ cn:'⚠ bacteriophage 全书 0 命中，但 <span class="pg">p015</span> 的病毒定义可以整句引。<b>卡 12 用过 phage 这个词（T7 RNA polymerase）但没定义</b>，这里补上，两张卡说法一致。'},
 {r:'高', q:'What is a vector?',
  en:'“In this context a vector is a piece of DNA built to carry a gene into a cell and keep it there. A plasmid vector carries its own origin of replication so that it is copied by the host, plus a selection marker, plus a place to put the insert. A viral vector is a virus stripped of the genes it needs to multiply, keeping only the parts that get it into a cell. So the word names a carrier, not a method. Transformation, transduction and transfection are how a vector is delivered.”',
- cn:'⚠ 书里 vektor 只有 <span class="pg">p141</span><span class="pg">p142</span> 的 vektorový charakter（矢量的），跟这个词毫无关系——<b>别顺嘴说「书上讲 vector」</b>。origin of replication 在<b>卡 16</b>，质粒的来历在大本营卡 <code>x_plasmid</code>。'},
+ cn:'⚠ 书里 vector 只有 <span class="pg">p141</span><span class="pg">p142</span> 那两处，说的是「vector character」＝矢量的，跟这个词毫无关系——<b>别顺嘴说「书上讲 vector」</b>。origin of replication 在<b>卡 16</b>，质粒的来历在大本营卡 <code>x_plasmid</code>。'},
 {r:'高', q:'What is a selection marker, and what kinds are there?',
  en:'“A selection marker is a gene carried in with the foreign DNA whose product lets the cell that has it survive or be identified under a condition applied to all the cells. There are two shapes. A selectable marker kills the cells without it, and antibiotic resistance in bacteria is the usual case. A screenable marker only labels the cells that have it, and a fluorescent protein is the usual case, so the cells are sorted instead of killed. Generally a construct carries both, one to survive the plate and one to see the result.”',
  cn:'<b>「选」和「筛」分开说，是这一条的分数</b>：前者杀掉其余的，后者只是标出来。卡 <b>taq</b> 用过 selectable marker 这个词，没正面定义，这里是它的定义。'},
@@ -312,7 +315,7 @@ ask:[
  cn:'<b>最后两句是这条的分数</b>：不是「加了药才长出来」，是<b>不加药它会退回去</b>。这一层他多半没预期你会说。'},
 {r:'中', q:'Why is a phage a good vehicle for DNA at all?',
  en:'“Because that is what a phage already is. The textbook puts it better than I would, on p015. It calls a virus an intracellular parasite, simpler than a prokaryotic cell. The virus uses the host’s biochemical apparatus, and it is essentially only the genetic information needed for its reproduction. So a virus is a nucleic acid with a delivery system around it, and evolution has already solved the two hard parts. It recognises the right cell surface, and it gets the nucleic acid across the membrane. Transduction is that machine carrying something other than its own genome.”',
- cn:'<b>用书的定义解释一个书里完全没有的过程</b>——这是书外题最稳的接法，跟卡 <b>taq</b> 用 p035 的 denaturace 定义解释 PCR 是同一个动作。<span class="pg">p015</span>'}
+ cn:'<b>用书的定义解释一个书里完全没有的过程</b>——这是书外题最稳的接法，跟卡 <b>taq</b> 用 p035 的 denaturation 定义解释 PCR 是同一个动作。<span class="pg">p015</span>'}
 ]},
 
 {g:'怎么发现的', gn:'⚠ 人名和年份<b>全部是通用知识</b>，只有 1944 那一行是书上的，而且书<b>没有</b>说那个实验叫什么、怎么做的。先给书的那一行，再给通用的故事。', items:[
