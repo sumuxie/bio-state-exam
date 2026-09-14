@@ -15,27 +15,36 @@
 }
 /* 跟系统走 */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#141311; --ink:#ece8e0; --dim:#a49e93; --faint:#7d776d; --rule:#302d28;
-  --card:#1c1a17; --accent:#d0a969; --soft:#272117; --onAccent:#191714;
-  --bad:#f08a5a; --ok:#6fc98a;
-  --good:#93c7a0; --goodbg:#18221a;
-  --warn:#e0a866; --warnbg:#271f14;
-  --chip:#282520;
+  /* 照 Trae（VS Code Dark Modern）的对比度：底 #1F1F1F、字 #CCCCCC（不是白）、
+     灰字 #9D9D9D、分隔线 #2B2B2B。这里保留她这套的暖调，只把对比度降到同一档。 */
+  --paper:#1a1a19; --ink:#cbc7c0; --dim:#9a958d; --faint:#74706a; --rule:#2e2d2a;
+  --card:#222221; --accent:#c6a06a; --soft:#282420; --onAccent:#1a1a19;
+  --bad:#d9825c; --ok:#6cb488;
+  --good:#7fb891; --goodbg:#1e2620;
+  --warn:#c9995f; --warnbg:#28221a;
+  --chip:#2a2927;
 }}
 /* 她自己按了「深」——系统是浅色也要变深 */
 :root[data-theme="dark"]{
-  --paper:#141311; --ink:#ece8e0; --dim:#a49e93; --faint:#7d776d; --rule:#302d28;
-  --card:#1c1a17; --accent:#d0a969; --soft:#272117; --onAccent:#191714;
-  --bad:#f08a5a; --ok:#6fc98a;
-  --good:#93c7a0; --goodbg:#18221a;
-  --warn:#e0a866; --warnbg:#271f14;
-  --chip:#282520;
+  /* 照 Trae（VS Code Dark Modern）的对比度：底 #1F1F1F、字 #CCCCCC（不是白）、
+     灰字 #9D9D9D、分隔线 #2B2B2B。这里保留她这套的暖调，只把对比度降到同一档。 */
+  --paper:#1a1a19; --ink:#cbc7c0; --dim:#9a958d; --faint:#74706a; --rule:#2e2d2a;
+  --card:#222221; --accent:#c6a06a; --soft:#282420; --onAccent:#1a1a19;
+  --bad:#d9825c; --ok:#6cb488;
+  --good:#7fb891; --goodbg:#1e2620;
+  --warn:#c9995f; --warnbg:#28221a;
+  --chip:#2a2927;
 }
 /* 书上裁下来的图本身是白纸，容器保持白的才不别扭；深色下压一点亮度，晚上不刺眼 */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .figcard img,
-  :root:not([data-theme="light"]) figure.fig img{filter:brightness(.86) contrast(1.02)}}
+  :root:not([data-theme="light"]) figure.fig img{filter:brightness(.72) contrast(1.05)}}
 :root[data-theme="dark"] .figcard img,
-:root[data-theme="dark"] figure.fig img{filter:brightness(.86) contrast(1.02)}
+:root[data-theme="dark"] figure.fig img{filter:brightness(.72) contrast(1.05)}
+/* 图的白底容器在深色下也跟着暗下去，不然是一整块白 */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .figcard img,
+  :root:not([data-theme="light"]) figure.fig{background:#d8d5cf}}
+:root[data-theme="dark"] .figcard img,
+:root[data-theme="dark"] figure.fig{background:#d8d5cf}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
   font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
@@ -319,8 +328,14 @@ button.b:disabled{opacity:.35;cursor:default}
 #wpop .ipa{font-family:Georgia,serif;font-size:13px;color:var(--dim);margin-left:7px}
 #wpop .cn{font-size:14px;color:var(--ink);margin:7px 0 0;line-height:1.65}
 #wpop .en{font-size:12.5px;color:var(--dim);margin:6px 0 0;line-height:1.6}
-#wpop .ex{font-size:12px;color:var(--faint);margin:7px 0 0;line-height:1.55;
-  border-left:2px solid var(--rule);padding-left:8px}
+#wpop .ex{font-size:12.5px;color:var(--ink);margin:8px 0 0;line-height:1.6;
+  border-left:2px solid var(--accent);padding-left:9px}
+#wpop .exfrom{font-size:11px;color:var(--faint);margin:4px 0 0;padding-left:11px}
+#wpop .exfrom a{color:var(--accent)}
+#wpop .src{font-size:11px;color:var(--faint);margin:9px 0 0;border-top:1px solid var(--rule);padding-top:7px}
+.wbcard .exfrom{font-size:12px;color:var(--faint);margin:4px 0 0;text-align:left}
+.wbcard .src{font-size:12px;color:var(--faint);margin:12px 0 0;text-align:left;
+  border-top:1px solid var(--rule);padding-top:8px}
 #wpop .none{font-size:12.5px;color:var(--faint);margin:6px 0 0}
 /* ---------- 单词本 ---------- */
 .wbhero{margin:0 0 6px}
@@ -1063,7 +1078,9 @@ function buildAsk(c){
          + (r.mean ? '<p class="mean">' + r.mean + '</p>' : '')
          + '<p class="en">' + r.say + '</p>'
          + (r.tail ? '<p class="nt">' + r.tail + '</p>' : '')
-         + fig(r.fig) + '</div></details>';
+         + fig(r.fig)
+         + '<button class="fold" type="button" onclick="foldQA(this)">收起 ▴</button>'
+         + '</div></details>';
     }
     h += '</div>';
   }
@@ -1222,17 +1239,29 @@ function glossOf(w){
   }
   return null;
 }
+/* 释义是哪来的。她看见「通用词典」就知道这条要打折听。 */
+function srcLine(g){
+  if (!g) return '';
+  if (g.s === 2) return '释义来自<b>通用英汉词典</b>——那是通用义，生化里可能不是这个意思，以上面那句原句为准。';
+  if (g.s === 3) return '英文释义来自<b>你自己的生化词库</b>，中文是<b>通用词典</b>补的。';
+  return '来自<b>你自己的生化词库</b>（按生化写的）。';
+}
 function showWordPop(w, rect){
   var wp = document.getElementById('wpop');
   if (!wp){ wp = document.createElement('div'); wp.id = 'wpop'; document.body.appendChild(wp); }
   var on = favHas('w', w), g = glossOf(w);
   var h = '<div class="card"><div class="hw">' + esc(w)
         + (g && g.ipa ? '<span class="ipa">' + esc(g.ipa) + '</span>' : '') + '</div>';
+  if (g && g.ex){
+    h += '<p class="ex">' + esc(g.ex) + '</p>'
+       + '<p class="exfrom">你卡上的原句'
+       + (g.c ? ' · <a href="#/c/' + esc(g.c) + '">卡 ' + esc(g.c) + '</a>' : '') + '</p>';
+  }
   if (g && g.cn) h += '<p class="cn">' + esc(g.cn) + '</p>';
   if (g && g.en) h += '<p class="en">' + esc(g.en) + '</p>';
-  if (g && g.ex) h += '<p class="ex">' + esc(g.ex) + '</p>';
   if (!g) h += '<p class="none">词库里还没有这个词的释义。收藏它，补的时候就知道该补哪些。</p>';
   else if (!g.cn) h += '<p class="none">这条只有英文释义，中文还没补。</p>';
+  if (g) h += '<p class="src">' + srcLine(g) + '</p>';
   h += '</div>';
   h += '<button type="button" class="' + (on ? 'on' : '') + '" data-w="' + w.replace(/"/g, '&quot;') + '" onclick="favWord(this)">'
     + (on ? '★ 在单词本里 ' : '☆ 加进单词本 ') + '<i>' + w.replace(/</g, '&lt;') + '</i></button>';
@@ -1374,11 +1403,16 @@ function renderWb(){
        + (g && g.ipa ? '<div class="ipa">' + esc(g.ipa) + '</div>' : '')
        + '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="playWord(' + JSON.stringify(wbCur.text) + ')">🔊 听</button></p>';
     if (wbShown){
+      if (g && g.ex){
+        h += '<p class="ex">' + esc(g.ex) + '</p>'
+           + '<p class="exfrom">你卡上的原句'
+           + (g.c ? ' · <a href="#/c/' + esc(g.c) + '">卡 ' + esc(g.c) + '</a>' : '') + '</p>';
+      }
       if (g && g.cn) h += '<p class="cn">' + esc(g.cn) + '</p>';
       if (g && g.en) h += '<p class="en">' + esc(g.en) + '</p>';
-      if (g && g.ex) h += '<p class="ex">' + esc(g.ex) + '</p>';
       if (!g) h += '<p class="cn">词库里没有这个词的释义。</p>';
-      if (wbCur.card) h += '<p class="from">来自 <a href="#/c/' + esc(wbCur.card) + '">卡 ' + esc(wbCur.card) + '</a></p>';
+      if (g) h += '<p class="src">' + srcLine(g) + '</p>';
+      if (wbCur.card && !(g && g.c)) h += '<p class="from">收藏自 <a href="#/c/' + esc(wbCur.card) + '">卡 ' + esc(wbCur.card) + '</a></p>';
       if (r && r.i) h += '<p class="from">上次间隔 ' + r.i + ' 天 · 忘过 ' + (r.lap||0) + ' 次</p>';
     }
     h += '</div>';
