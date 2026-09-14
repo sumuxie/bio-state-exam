@@ -1186,7 +1186,7 @@ ask:[
    兼任大本营卡：别的卡的「留口子」都可以落到这里。 */
 
 window.CARDS.push({
-id:'02', n:4, w:3,
+id:'02', n:4, merged:[20,21], w:3,
 q:'What is the dissociation constant (Kd) and how is it defined?',
 qcn:'什么是解离常数，它是怎么定义的',
 sub:'主干说完约 75 秒 · 兼大本营卡 · 导师写过两遍',
@@ -1453,7 +1453,7 @@ ask:[
    题型：比较题。第一张这个类型，形状见 recog 第一行。 */
 
 window.CARDS.push({
-id:'03', n:3, w:3,
+id:'03', n:3, merged:[15], w:3,
 q:'What are the differences between DNA and RNA?',
 qcn:'DNA 和 RNA 有什么区别',
 sub:'主干说完约 80 秒 · 比较题 · 导师写过两遍',
@@ -9890,7 +9890,12 @@ function renderList(){
   var built = [], todo = [], cross = [];
   for (var i=0;i<CARDS.length;i++){ (CARDS[i].cross ? cross : built).push(CARDS[i]); }
   var haveN = {};
-  for (i=0;i<built.length;i++) haveN[built[i].n] = 1;
+  /* 一张卡可能吸收好几道题（merged）。只看主题号，被吸收的那几道会一直显示成待做。 */
+  for (i=0;i<built.length;i++){
+    haveN[built[i].n] = 1;
+    var mg = built[i].merged || [];
+    for (var j=0;j<mg.length;j++) haveN[mg[j]] = 1;
+  }
   for (i=0;i<QINDEX.length;i++) if (!haveN[QINDEX[i].n]) todo.push(QINDEX[i]);
 
   function rowCard(c){
