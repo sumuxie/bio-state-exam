@@ -424,7 +424,12 @@ function digest(){
 }
 
 
-/* 今天该做的那一张：到期的 > 从没练过的 > 上次漏最多的 */
+/* 今天该做的那一张：到期的 > 从没练过的 > 上次漏最多的
+   同一批里轮着来——上次给过的那张，只要还有别的候选，就先给别的。
+   （2026-09-14 Ruojin：「这个卡没有变化，一直都是同一个主题」。
+     原来到期的一批永远取「上次漏最多」的那张，是个死序，回首页也不会换。） */
+function lastServed(){ try { return localStorage.getItem('oralexam.last.v1') || ''; } catch(e){ return ''; } }
+function markServed(id){ try { localStorage.setItem('oralexam.last.v1', id); } catch(e){} }
 function nextCard(){
   var p = loadP(), due = [], never = [], rest = [];
   for (var i=0;i<CARDS.length;i++){
@@ -432,17 +437,34 @@ function nextCard(){
     if (!r || !r.runs.length){ never.push(c); continue; }
     if (dueIn(r) <= 0) due.push(c); else rest.push(c);
   }
-  function worst(list){
+  function misses(c){ return p[c.id].runs.slice(-1)[0].m; }
+  function byOverdue(list){
     list.sort(function(a,b){
-      var ra = p[a.id].runs.slice(-1)[0].m, rb = p[b.id].runs.slice(-1)[0].m;
-      return rb - ra;
+      var da = dueIn(p[a.id]), db = dueIn(p[b.id]);
+      if (da !== db) return da - db;            /* 欠得最久的排最前 */
+      return misses(b) - misses(a);
     });
+    return list;
+  }
+  function byMiss(list){
+    list.sort(function(a,b){ return misses(b) - misses(a); });
+    return list;
+  }
+  function rotate(list){
+    if (list.length > 1){
+      var L = lastServed(), f = [];
+      for (var k=0;k<list.length;k++) if (list[k].id !== L) f.push(list[k]);
+      if (f.length) list = f;
+    }
     return list[0];
   }
-  if (due.length) return {c: worst(due), why: '这张到复习期了'};
-  if (never.length) return {c: never[0], why: '这张你还没练过'};
-  if (rest.length) return {c: worst(rest), why: '今天都练过了，这张上次漏得最多，可以再来一遍'};
-  return null;
+  var pick = null, why = '';
+  if (due.length){ pick = rotate(byOverdue(due)); why = '这张到复习期了'; }
+  else if (never.length){ pick = rotate(never); why = '这张你还没练过'; }
+  else if (rest.length){ pick = rotate(byMiss(rest)); why = '今天都练过了，这张上次漏得最多，可以再来一遍'; }
+  if (!pick) return null;
+  markServed(pick.id);
+  return {c: pick, why: why};
 }
 
 /* =================== list =================== */
