@@ -7,18 +7,35 @@
 <style>
 :root{
   --paper:#faf8f4; --ink:#1a1917; --dim:#716c64; --faint:#9a948b; --rule:#e4dfd5;
-  --card:#fff; --accent:#7a5c2e; --soft:#f4eee2;
+  --card:#fff; --accent:#7a5c2e; --soft:#f4eee2; --onAccent:#fff;
+  --bad:#c2410c; --ok:#15803d;
   --good:#2f5d3a; --goodbg:#eef4ee;
   --warn:#8a4b12; --warnbg:#fcf1e3;
   --chip:#efeae1;
 }
+/* 跟系统走 */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#141311; --ink:#ece8e0; --dim:#a49e93; --faint:#7d776d; --rule:#302d28;
-  --card:#1c1a17; --accent:#d0a969; --soft:#272117;
+  --card:#1c1a17; --accent:#d0a969; --soft:#272117; --onAccent:#191714;
+  --bad:#f08a5a; --ok:#6fc98a;
   --good:#93c7a0; --goodbg:#18221a;
   --warn:#e0a866; --warnbg:#271f14;
   --chip:#282520;
 }}
+/* 她自己按了「深」——系统是浅色也要变深 */
+:root[data-theme="dark"]{
+  --paper:#141311; --ink:#ece8e0; --dim:#a49e93; --faint:#7d776d; --rule:#302d28;
+  --card:#1c1a17; --accent:#d0a969; --soft:#272117; --onAccent:#191714;
+  --bad:#f08a5a; --ok:#6fc98a;
+  --good:#93c7a0; --goodbg:#18221a;
+  --warn:#e0a866; --warnbg:#271f14;
+  --chip:#282520;
+}
+/* 书上裁下来的图本身是白纸，容器保持白的才不别扭；深色下压一点亮度，晚上不刺眼 */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .figcard img,
+  :root:not([data-theme="light"]) figure.fig img{filter:brightness(.86) contrast(1.02)}}
+:root[data-theme="dark"] .figcard img,
+:root[data-theme="dark"] figure.fig img{filter:brightness(.86) contrast(1.02)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
   font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
@@ -32,11 +49,15 @@ a{color:inherit}
 .top .home{font-size:13px;color:var(--dim);text-decoration:none;border:1px solid var(--rule);
   border-radius:18px;padding:5px 13px;white-space:nowrap;cursor:pointer;background:var(--card)}
 .top .home:hover{border-color:var(--accent);color:var(--accent)}
+.thm{position:fixed;top:9px;right:12px;z-index:9;font-family:inherit;font-size:15px;
+  line-height:1;border:1px solid var(--rule);background:var(--card);color:var(--ink);
+  border-radius:16px;padding:6px 11px;cursor:pointer;opacity:.82}
+.thm:hover{opacity:1;border-color:var(--accent)}
 .top .id{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
 .modes{display:flex;border:1px solid var(--rule);border-radius:20px;overflow:hidden;margin-left:auto}
 .modes button{font-family:inherit;font-size:13px;border:none;background:transparent;color:var(--dim);
   padding:6px 16px;cursor:pointer;white-space:nowrap}
-.modes button.on{background:var(--accent);color:#fff;font-weight:600}
+.modes button.on{background:var(--accent);color:var(--onAccent);font-weight:600}
 
 main{max-width:680px;margin:0 auto;padding:0 20px 130px}
 
@@ -58,7 +79,7 @@ main{max-width:680px;margin:0 auto;padding:0 20px 130px}
 .row .w{flex:none;font-size:11px;font-weight:800;width:26px;height:26px;border-radius:7px;
   display:flex;align-items:center;justify-content:center;margin-top:2px}
 .row .w{font-size:12px}
-.row .w.hi{background:var(--accent);color:#fff}
+.row .w.hi{background:var(--accent);color:var(--onAccent)}
 .row .w.mid{background:var(--soft);color:var(--accent)}
 .row .w.lo{background:var(--chip);color:var(--faint)}
 .row .w.non{background:var(--warnbg);color:var(--warn)}
@@ -137,7 +158,7 @@ table.tb td{padding:10px 12px;border-top:1px solid var(--rule);vertical-align:to
 @keyframes in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 #drill{padding-top:28px}
 .tag{display:inline-block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
-  color:#fff;background:var(--accent);border-radius:3px;padding:3px 10px;font-weight:650;margin-bottom:16px}
+  color:var(--onAccent);background:var(--accent);border-radius:3px;padding:3px 10px;font-weight:650;margin-bottom:16px}
 h2{font-size:22px;line-height:1.35;margin:0 0 12px;font-weight:650}
 .lead{font-size:15px;color:var(--dim);margin:0 0 22px}
 .askbox{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:36px 26px;text-align:center}
@@ -155,10 +176,10 @@ ul.sib li .txt{flex:1;min-width:0}
 ul.sib li.hit{background:var(--goodbg);border-color:var(--good)}
 ul.sib li.hit .bx{background:var(--good);border-color:var(--good);position:relative}
 ul.sib li.hit .bx::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
-  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(42deg)}
+  border:solid var(--onAccent);border-width:0 2.5px 2.5px 0;transform:rotate(42deg)}
 ul.sib li .more{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--rule);
   background:transparent;color:var(--faint);font-size:14px;cursor:pointer;font-family:inherit;padding:0}
-ul.sib li.open .more{background:var(--accent);color:#fff;border-color:var(--accent)}
+ul.sib li.open .more{background:var(--accent);color:var(--onAccent);border-color:var(--accent)}
 ul.sib li .detail{display:none;flex-basis:100%;margin:11px 0 3px;padding-top:12px;border-top:1px dashed var(--rule)}
 ul.sib li.open .detail{display:block}
 ul.sib li .detail .e{font-family:Georgia,serif;font-size:16px;line-height:1.7;margin:0 0 9px}
@@ -201,8 +222,8 @@ ul.sib li .detail .c b{color:var(--ink)}
 .qa[open] > summary{border-bottom:1px solid var(--rule);background:var(--soft)}
 .risk{flex:none;font-size:10.5px;letter-spacing:.06em;padding:3px 7px;border-radius:4px;
   font-weight:700;margin-top:2px;white-space:nowrap}
-.risk.m{background:var(--warn);color:#fff}
-.risk.h{background:var(--accent);color:#fff}
+.risk.m{background:var(--warn);color:var(--onAccent)}
+.risk.h{background:var(--accent);color:var(--onAccent)}
 .risk.n{background:var(--chip);color:var(--faint)}
 .qbody{padding:16px 17px 18px}
 
@@ -212,7 +233,7 @@ ul.sib li .detail .c b{color:var(--ink)}
   padding:12px 18px calc(12px + env(safe-area-inset-bottom));display:flex;gap:10px;justify-content:center}
 .nav.hide{display:none}
 button.b{font-family:inherit;font-size:16px;font-weight:600;border-radius:11px;padding:13px 28px;
-  cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:#fff;min-width:140px}
+  cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:var(--onAccent);min-width:140px}
 button.b.ghost{background:transparent;color:var(--dim);border-color:var(--rule);min-width:76px;font-weight:500}
 button.b:disabled{opacity:.35;cursor:default}
 
@@ -221,7 +242,7 @@ button.b:disabled{opacity:.35;cursor:default}
   padding:18px 18px 14px}
 .figcard .kind{display:inline-block;font-size:11px;letter-spacing:.11em;text-transform:uppercase;
   font-weight:700;border-radius:4px;padding:3px 9px;margin-bottom:12px}
-.figcard .kind.draw{background:var(--accent);color:#fff}
+.figcard .kind.draw{background:var(--accent);color:var(--onAccent)}
 .figcard .kind.know{background:var(--soft);color:var(--accent)}
 .figcard h3{font-size:18px;margin:0 0 10px;line-height:1.45}
 .figcard img{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;
@@ -258,7 +279,7 @@ button.b:disabled{opacity:.35;cursor:default}
 .due b{color:var(--ink)}
 .due a{color:var(--accent);font-weight:600;text-decoration:none;margin-right:9px;white-space:nowrap}
 .bbtn{font-family:inherit;font-size:14px;font-weight:600;border-radius:9px;padding:10px 16px;
-  cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:#fff}
+  cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:var(--onAccent)}
 .bbtn.ghost{background:transparent;color:var(--dim);border-color:var(--rule);font-weight:500}
 .copied{font-size:13px;color:var(--good);margin-left:10px}
 .row .st{flex:none;font-size:11.5px;color:var(--faint);margin-top:5px;white-space:nowrap;
@@ -271,20 +292,20 @@ button.b:disabled{opacity:.35;cursor:default}
 
 
 /* ---------- 一键开始 ---------- */
-.gobox{background:var(--accent);border-radius:14px;padding:22px 22px 20px;margin:22px 0 6px;color:#fff}
+.gobox{background:var(--accent);border-radius:14px;padding:22px 22px 20px;margin:22px 0 6px;color:var(--onAccent)}
 .gobox .k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin:0 0 8px}
-.gobox h2{margin:0 0 6px;font-size:21px;line-height:1.4;color:#fff;font-weight:650}
+.gobox h2{margin:0 0 6px;font-size:21px;line-height:1.4;color:var(--onAccent);font-weight:650}
 .gobox p{margin:0 0 16px;font-size:14px;opacity:.9;line-height:1.7}
-.gobox a{display:inline-block;background:#fff;color:var(--accent);text-decoration:none;
+.gobox a{display:inline-block;background:var(--card);color:var(--accent);text-decoration:none;
   font-weight:700;font-size:16px;border-radius:10px;padding:13px 26px}
-.gobox .alt{display:block;margin-top:12px;font-size:13px;opacity:.85;color:#fff}
-.gobox .alt a{background:none;color:#fff;text-decoration:underline;padding:0;font-weight:600;font-size:13px}
+.gobox .alt{display:block;margin-top:12px;font-size:13px;opacity:.85;color:var(--onAccent)}
+.gobox .alt a{background:none;color:var(--onAccent);text-decoration:underline;padding:0;font-weight:600;font-size:13px}
 
 /* ---------- 朗读 ---------- */
 .spk{border:none;background:var(--chip);color:var(--dim);border-radius:6px;cursor:pointer;
   font-size:13px;line-height:1;padding:4px 8px;margin-left:8px;vertical-align:2px;font-family:inherit}
-.spk:hover{background:var(--accent);color:#fff}
-.spk.on{background:var(--good);color:#fff}
+.spk:hover{background:var(--accent);color:var(--onAccent)}
+.spk.on{background:var(--good);color:var(--onAccent)}
 /* 朗读时：当前句高光，其余变暗 */
 .reading .en,.reading .say,.reading .pt-en,.reading .pt-big,.reading .nt,.reading .gd,.reading .wn{opacity:.35;transition:opacity .2s}
 .reading .rd{opacity:1}
@@ -319,9 +340,9 @@ button.b:disabled{opacity:.35;cursor:default}
 .wbbtns button{flex:1;font-family:inherit;font-size:14px;font-weight:700;padding:13px 6px;
   border-radius:10px;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
 .wbbtns button b{display:block;font-size:11px;font-weight:400;color:var(--faint);margin-top:3px}
-.wbbtns button.bad{border-color:#c2410c;color:#c2410c}
+.wbbtns button.bad{border-color:var(--bad);color:var(--bad)}
 .wbbtns button.good{border-color:var(--accent);color:var(--accent)}
-.wbbtns button.easy{border-color:#15803d;color:#15803d}
+.wbbtns button.easy{border-color:var(--ok);color:var(--ok)}
 .wblist{list-style:none;padding:0;margin:14px 0 0}
 .wblist li{display:flex;align-items:center;gap:9px;padding:9px 2px;border-bottom:1px solid var(--rule);font-size:14px}
 .wblist li .w{font-weight:700}
@@ -330,11 +351,11 @@ button.b:disabled{opacity:.35;cursor:default}
 #wpop button{font-family:inherit;font-size:13px;border:1px solid var(--rule);background:var(--card);color:var(--ink);
   border-radius:14px;padding:6px 11px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.14)}
 #wpop button i{font-style:normal;font-family:Georgia,serif}
-#wpop button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+#wpop button.on{background:var(--accent);color:var(--onAccent);border-color:var(--accent)}
 .favs{border:none;background:var(--chip);color:var(--dim);border-radius:6px;cursor:pointer;font-size:13px;line-height:1;
   padding:4px 7px;margin-left:4px;vertical-align:2px;font-family:inherit}
-.favs:hover{background:var(--accent);color:#fff}
-.favs.on{background:var(--warn);color:#fff}
+.favs:hover{background:var(--accent);color:var(--onAccent)}
+.favs.on{background:var(--warn);color:var(--onAccent)}
 .favsec h3{margin:18px 0 8px}
 #vsel{font-family:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--rule);border-radius:9px;background:var(--card);color:var(--ink);max-width:100%}
 .favl{list-style:none;margin:0;padding:0}
@@ -346,7 +367,7 @@ button.b:disabled{opacity:.35;cursor:default}
 /* 追问底部收起 */
 .fold{display:block;margin:14px 0 0 auto;border:1px solid var(--rule);background:var(--chip);color:var(--dim);
   border-radius:14px;padding:5px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
-.fold:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.fold:hover{background:var(--accent);color:var(--onAccent);border-color:var(--accent)}
 /* 遮词：关键词盖住，悬停或点一下露出 */
 .cloze .pt-big b,.cloze .en b,.cloze .say b,.cloze ul.sib li .txt b,.cloze .detail .e b{
   background:var(--ink);color:transparent;border-radius:3px;cursor:pointer}
@@ -372,6 +393,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <body>
 
 <div class="top" id="top"></div>
+<button class="thm" id="thm" type="button" onclick="cycleTheme()" title="配色：跟随系统 / 浅 / 深"></button>
 <main id="main"></main>
 <div class="nav hide" id="nav">
   <button class="b ghost" id="prev">上一步</button>
@@ -10400,6 +10422,22 @@ function speak(btn){
   }
   next();
 }
+/* 配色三档：跟随系统 → 浅 → 深。她自己选的存在这台机器上。
+   （2026-09-15 Ruojin 要的黑夜模式。原来只跟系统，她切不了。） */
+var TK = 'oralexam.theme.v1';
+function themePref(){ try { return localStorage.getItem(TK) || ''; } catch(e){ return ''; } }
+function applyTheme(){
+  var p = themePref(), r = document.documentElement;
+  if (p === 'dark' || p === 'light') r.setAttribute('data-theme', p);
+  else r.removeAttribute('data-theme');
+  var b = document.getElementById('thm');
+  if (b) b.textContent = p === 'dark' ? '\u263e' : (p === 'light' ? '\u2600' : '\u25d1');
+}
+function cycleTheme(){
+  var p = themePref(), nxt = p === '' ? 'dark' : (p === 'dark' ? 'light' : '');
+  try { if (nxt) localStorage.setItem(TK, nxt); else localStorage.removeItem(TK); } catch(e){}
+  applyTheme();
+}
 function foldQA(b){
   var d = b.closest('details'); if (!d) return;
   d.open = false; d.scrollIntoView({block:'start'});
@@ -10994,6 +11032,7 @@ function route(){
   if (m){ var c = byId(m[1]); if (c){ renderCard(c); return; } }
   renderList();
 }
+applyTheme();
 window.addEventListener('hashchange', route);
 route();
 </script>
