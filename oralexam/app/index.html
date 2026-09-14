@@ -535,7 +535,12 @@ function renderList(){
   var built = [], todo = [], cross = [];
   for (var i=0;i<CARDS.length;i++){ (CARDS[i].cross ? cross : built).push(CARDS[i]); }
   var haveN = {};
-  for (i=0;i<built.length;i++) haveN[built[i].n] = 1;
+  /* 一张卡可能吸收好几道题（merged）。只看主题号，被吸收的那几道会一直显示成待做。 */
+  for (i=0;i<built.length;i++){
+    haveN[built[i].n] = 1;
+    var mg = built[i].merged || [];
+    for (var j=0;j<mg.length;j++) haveN[mg[j]] = 1;
+  }
   for (i=0;i<QINDEX.length;i++) if (!haveN[QINDEX[i].n]) todo.push(QINDEX[i]);
 
   function rowCard(c){

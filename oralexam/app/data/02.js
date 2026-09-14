@@ -5,7 +5,7 @@
    兼任大本营卡：别的卡的「留口子」都可以落到这里。 */
 
 window.CARDS.push({
-id:'02', n:4, w:3,
+id:'02', n:4, merged:[20,21], w:3,
 q:'What is the dissociation constant (Kd) and how is it defined?',
 qcn:'什么是解离常数，它是怎么定义的',
 sub:'主干说完约 75 秒 · 兼大本营卡 · 导师写过两遍',
