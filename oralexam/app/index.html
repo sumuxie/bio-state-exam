@@ -368,6 +368,21 @@ button.b:disabled{opacity:.35;cursor:default}
 .wblist li .w{font-weight:700}
 .wblist li .m{color:var(--dim);flex:1;font-size:13px}
 .wblist li .due{font-size:11.5px;color:var(--faint)}
+/* ---------- 另外两科的题目单：只有题面 ---------- */
+.qb{list-style:none;padding:0;margin:16px 0 0}
+.qb li{display:flex;gap:11px;padding:13px 2px;border-bottom:1px solid var(--rule)}
+.qb .n{flex:none;width:26px;text-align:right;color:var(--faint);font-size:13px;padding-top:2px}
+.qb .t{flex:1;min-width:0}
+.qb .t b{display:block;font-size:15px;font-weight:600;line-height:1.5}
+.qb .t span{display:block;font-size:13px;color:var(--dim);margin-top:3px;line-height:1.6}
+.qb .t i{display:block;font-style:normal;font-size:11.5px;color:var(--faint);margin-top:5px}
+.qb .w{flex:none;font-size:11px;font-weight:700;border-radius:4px;padding:3px 8px;height:fit-content;
+  background:var(--chip);color:var(--dim)}
+.qb .w.hi{background:var(--accent);color:var(--onAccent)}
+.qbnav{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0 0}
+.qbnav a{font-size:13px;text-decoration:none;border:1px solid var(--rule);border-radius:18px;
+  padding:7px 14px;color:var(--ink);background:var(--card)}
+.qbnav a:hover{border-color:var(--accent);color:var(--accent)}
 #wpop button{font-family:inherit;font-size:13px;border:1px solid var(--rule);background:var(--card);color:var(--ink);
   border-radius:14px;padding:6px 11px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.14)}
 #wpop button i{font-style:normal;font-family:Georgia,serif}
@@ -422,6 +437,7 @@ button.b:disabled{opacity:.35;cursor:default}
 
 <script src="audio/words.js"></script>
 <script src="data/_index.js"></script>
+<script src="data/_qbank.js"></script>
 <script>window.CARDS = [];</script>
 <script src="data/_gloss.js"></script>
 <script src="data/01.js"></script>
@@ -640,7 +656,13 @@ function renderList(){
 
   var h = '<div class="lhero"><h1>生化口试卡</h1>'
     + '<p>' + built.length + ' 张已写 · ' + cross.length + ' 张横向卡 · '
-    + todo.length + ' 题未写 · 全部本地，断网可看</p></div>'
+    + todo.length + ' 题未写 · 全部本地，断网可看</p>'
+    + '<p class="sub2" style="margin-top:10px">导师的题目单一共三科 <b>98 道</b>，这个 app 只做了生化那 32 道。'
+    + '另外两科还没有卡，题面在这里：</p>'
+    + '<div class="qbnav"><a href="#/q/basic">实验基本技术 · '
+    + (((window.QBANK||{}).basic||[]).length) + ' 道</a>'
+    + '<a href="#/q/micro">微生物学 · '
+    + (((window.QBANK||{}).micro||[]).length) + ' 道</a></div></div>'
     + '<div class="board"><h3>今天</h3>'
     + '<p class="sub2">只有<b>出声说完</b>的才算。看一遍不记数。<br><b>9 月 21 日之后不再做新材料</b>——剩下的时间只有出声、复习、演练。</p>'
     + '<div class="stats">'
@@ -1448,7 +1470,48 @@ function renderWb(){
   window.scrollTo(0, 0);
 }
 
+/* =================== 另外两科的题目单 ===================
+   2026-09-15 Ruojin：「除了题目以外什么都不要写」。所以这里只有题面。
+   料在 data/_qbank.js，来自导师三张题目单（jiri_bank/_qindex.json，98 道）。
+   oralexam 从头只按 Biochemistry 建，另外 66 道在这个 app 里一张卡都没有。 */
+var QBMETA = {
+  basic: {t:'Basic Lab Techniques', cn:'实验基本技术'},
+  micro: {t:'Microbiology', cn:'微生物学'},
+  biochem: {t:'Biochemistry', cn:'生物化学'}
+};
+function renderQB(key){
+  var m = QBMETA[key] || QBMETA.basic, list = (window.QBANK || {})[key] || [];
+  document.getElementById('top').innerHTML =
+    '<a class="home" href="#/">← 全部</a><span class="id">' + esc(m.t) + '</span>';
+  var nav = document.getElementById('nav'); if (nav) nav.classList.add('hide');
+  var w3 = 0;
+  for (var i=0;i<list.length;i++) if (list[i].w === 3) w3++;
+  var h = '<div class="lhero"><h1>' + esc(m.t) + '</h1>'
+        + '<p>导师题目单上的 ' + list.length + ' 道题，其中 <b>' + w3 + ' 道在第一张卷子上</b>。'
+        + '<br><b>这里只有题目，没有答案。</b>这一科还没有做卡。</p></div>'
+        + '<div class="qbnav">'
+        + '<a href="#/q/basic">实验基本技术</a>'
+        + '<a href="#/q/micro">微生物学</a>'
+        + '<a href="#/">生化（有卡）</a></div>'
+        + '<ul class="qb">';
+  for (i=0;i<list.length;i++){
+    var q = list[i];
+    h += '<li><span class="n">' + (i+1) + '</span>'
+       + '<span class="t"><b>' + esc(q.en) + '</b>'
+       + (q.cn ? '<span>' + esc(q.cn) + '</span>' : '')
+       + (q.refs && q.refs.length ? '<i>' + esc(q.refs.join(' · ')) + '</i>' : '')
+       + '</span>'
+       + '<span class="w' + (q.w === 3 ? ' hi' : '') + '">' + (q.w === 3 ? '卷一' : (q.w === 2 ? '卷二' : '卷三')) + '</span>'
+       + '</li>';
+  }
+  h += '</ul>';
+  document.getElementById('main').innerHTML = h;
+  window.scrollTo(0, 0);
+}
+
 function route(){
+  var qm = location.hash.match(/^#\/q\/(basic|micro|biochem)$/);
+  if (qm){ renderQB(qm[1]); return; }
   if (location.hash === '#/wb'){ wbNext(); return; }
   if (location.hash === '#/fav'){ renderFav(); return; }
   var m = location.hash.match(/^#\/c\/(.+)$/);
