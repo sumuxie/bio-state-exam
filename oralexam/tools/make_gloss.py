@@ -4,38 +4,54 @@
 起因（2026-09-14 Ruojin）：
   「在能点单词发音的基础上把单词的意思也显现，然后就是如果我点了单词的收藏，
     单词单独作为需要背诵的单词本被记录在册，内嵌单词本 app，类似墨墨背单词。」
+  （2026-09-15）「我现在点词汇会出声但是大部分都没有翻译」
 
-料从哪来：她自己以前建过一个词库，在
-  C:/Users/Admin/Documents/trae_projects/recombinants_trae_independant/vocab/out
-**那个目录只读，一个字都不写**（她原话：污染严重，谨慎，不要碰里面的东西）。
-需要的部分提取进本项目，之后 app 不再依赖那个目录。
+三层，按优先级取，取到就停。这个顺序是她拍板的，理由是**词典给的是通用义**：
+  reduction 在词典里是「减少」，在她这儿是**还原**；base 是「基础」，这儿是**碱/碱基**；
+  charge 是「收费」，这儿是**电荷**；residue 是「残渣」，这儿是**残基**。
 
-三个来源，按可信度排：
-  1. app_data.js 里的 cards —— 她人工过过的词卡，4099 张，**全部有中文**，带音标和例句
-  2. app_data.js 里的 gloss —— 3581 条，中英释义都有
-  3. vocab.json —— 36629 条，英文释义多，中文少，但音标覆盖最广
+  第 1 层 · 她自己的词库（按生化写的，最准）
+      C:/Users/Admin/Documents/trae_projects/recombinants_trae_independant/vocab/out
+      **那个目录只读，一个字都不写**（她原话：污染严重，谨慎，不要碰里面的东西）。
+      三个来源按可信度排：app_data.js 的 cards（人工过过，全部有中文）→ 同文件的 gloss → vocab.json。
+  第 2 层 · 通用英汉词典 ECDICT（开源，约 340 万词条，带中文、音标、词形变化）
+      文件不进仓库（66 MB）。放在仓库外面：C:/Users/Admin/Downloads/ecdict.csv
+      没有就下：curl -sL -o ecdict.csv https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv
 
-词形还原是必须的：卡上是 accelerates，词库里是 accelerate。
+**每条都标来源**（字段 s：1 = 她的词库，2 = 通用词典）。app 里小字写出来，
+她看见「通用词典」就知道这条要打折听。这一步比选对词义更管用。
+
+**例句一律用她自己卡上的那一句**（字段 ex ＋ c 卡号）。这是防误导的主力：
+即使词典给的是「减少」，她眼睛先看到的是自己卡上 “Reduction is the gain of electrons”。
+
+词形还原：先用 ECDICT 的 exchange 字段（那里有权威的原形），再退回后缀规则。
 
 跑法：
-    python tools/make_gloss.py            # 重建 app/data/_gloss.js
-    python tools/make_gloss.py --missing  # 只列没有中文的词，供以后补
+    python tools/make_gloss.py                         # 重建 _gloss.js
+    python tools/make_gloss.py --dict D:/path/ecdict.csv
+    python tools/make_gloss.py --risky                 # 列「危险词」候选：
+                                                       #   常用词但在生化里换了意思，需要人工写
 """
-import io, os, re, sys, json, glob
+import io, os, re, sys, json, glob, csv
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+csv.field_size_limit(10 ** 7)
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 DATA = os.path.join(ROOT, 'app', 'data')
-SRC = os.path.join('C:' + os.sep, 'Users', 'Admin', 'Documents',
-                   'trae_projects', 'recombinants_trae_independant', 'vocab', 'out')
+BANK = os.path.join('C:' + os.sep, 'Users', 'Admin', 'Documents', 'trae_projects',
+                    'recombinants_trae_independant', 'vocab', 'out')
+DICT = os.path.join('C:' + os.sep, 'Users', 'Admin', 'Downloads', 'ecdict.csv')
+for i, a in enumerate(sys.argv):
+    if a == '--dict' and i + 1 < len(sys.argv): DICT = sys.argv[i + 1]
+
+SUF = [('s', ''), ('es', ''), ('ies', 'y'), ('ed', ''), ('ed', 'e'), ('ing', ''), ('ing', 'e'),
+       ('er', ''), ('est', ''), ('ly', ''), ('ations', 'ate'), ('ation', 'ate'),
+       ('ally', 'al'), ('ised', 'ise'), ('ized', 'ize'), ('ises', 'ise'), ('izes', 'ize')]
 
 
 def variants(w):
     yield w
-    for suf, rep in (('s', ''), ('es', ''), ('ies', 'y'), ('ed', ''), ('ed', 'e'),
-                     ('ing', ''), ('ing', 'e'), ('er', ''), ('est', ''), ('ly', ''),
-                     ('ations', 'ate'), ('ation', 'ate'), ('ally', 'al'),
-                     ('ised', 'ise'), ('ized', 'ize'), ('ises', 'ise'), ('izes', 'ize')):
+    for suf, rep in SUF:
         if w.endswith(suf) and len(w) - len(suf) >= 3:
             yield w[:-len(suf)] + rep
     if '-' in w:
@@ -43,72 +59,165 @@ def variants(w):
             if len(p) > 4: yield p
 
 
+# ---------------- 卡上的词，和每个词在卡上的那一句 ----------------
 def card_words():
-    """卡上出声念的英文词，跟 make_audio.py 用同一个口径。"""
-    out = set()
+    words, ex = set(), {}
+    for f in sorted(glob.glob(os.path.join(DATA, '*.js'))):
+        if os.path.basename(f).startswith('_'): continue
+        s = io.open(f, encoding='utf-8').read()
+        m = re.search(r"id:'([^']+)'", s)
+        cid = m.group(1) if m else ''
+        for span in re.findall('\u201c(.*?)\u201d', s, re.S):
+            t = re.sub(r"'\s*\+\s*'", ' ', span)
+            t = re.sub(r'<[^>]+>', ' ', t)
+            t = re.sub(r'\s+', ' ', t).strip()
+            for sent in re.split(r'(?<=[.!?])\s+', t):
+                sent = sent.strip()
+                if not (20 <= len(sent) <= 190): continue
+                for w in set(x.strip("\u2019'-").lower()
+                             for x in re.findall(r"[A-Za-z][A-Za-z\u2019'\-]*", sent)):
+                    if len(w) < 2: continue
+                    words.add(w)
+                    old = ex.get(w)
+                    # 留最短的那句：短句她一眼能读完
+                    if old is None or len(sent) < len(old[0]): ex[w] = (sent, cid)
+    # 没进例句表的词（只出现在超长/超短句里）也要收进来
     for f in sorted(glob.glob(os.path.join(DATA, '*.js'))):
         if os.path.basename(f).startswith('_'): continue
         s = io.open(f, encoding='utf-8').read()
         for e in re.findall(r"\b(?:en|say|big|p):'(.*?)'(?=,\s*\n|\}|\s*\n)", s, re.S):
             t = re.sub(r'<[^>]+>', ' ', e)
             for w in re.findall(r"[A-Za-z][A-Za-z\u2019'\-]*", t):
-                w = w.strip("\u2019'-")
-                if len(w) > 1: out.add(w.lower())
-    return out
+                w = w.strip("\u2019'-").lower()
+                if len(w) > 1: words.add(w)
+    return words, ex
 
 
-def load_sources():
+# ---------------- 第 1 层 · 她自己的词库 ----------------
+def load_bank():
     idx = {}
     def put(k, rec):
         k = (k or '').lower()
         if k and k not in idx: idx[k] = rec
-    s = io.open(os.path.join(SRC, 'app_data.js'), encoding='utf-8').read()
+    s = io.open(os.path.join(BANK, 'app_data.js'), encoding='utf-8').read()
     V = json.loads(s[s.index('=') + 1:].strip().rstrip(';'))
     for c in V.get('cards', []):
         rec = {'t': c.get('t') or '', 'ipa': c.get('ipa') or '', 'cn': c.get('cn') or '',
-               'en': c.get('def') or '', 'ex': c.get('quote') or '', 'src': 'card'}
+               'en': c.get('def') or ''}
         put(c.get('k'), rec); put(c.get('t'), rec)
     for k, g in (V.get('gloss') or {}).items():
         rec = {'t': g.get('t') or k, 'ipa': '', 'cn': g.get('cn') or '',
-               'en': g.get('den') or g.get('d') or '', 'ex': '', 'src': 'gloss'}
+               'en': g.get('den') or g.get('d') or ''}
         put(k, rec); put(g.get('t'), rec)
-    for x in json.load(io.open(os.path.join(SRC, 'vocab.json'), encoding='utf-8')):
+    for x in json.load(io.open(os.path.join(BANK, 'vocab.json'), encoding='utf-8')):
         rec = {'t': x.get('term') or '', 'ipa': x.get('ipa') or '',
-               'cn': x.get('def_cn') or x.get('cn') or '', 'en': x.get('def_en') or '',
-               'ex': '', 'src': 'vocab'}
+               'cn': x.get('def_cn') or x.get('cn') or '', 'en': x.get('def_en') or ''}
         put(x.get('key'), rec); put(x.get('term'), rec)
     return idx
 
 
+# ---------------- 第 2 层 · 通用词典 ----------------
+def clean_cn(t):
+    """ECDICT 的 translation 一行一个义项，还夹着 [网络] 那种噪音。取前两行干净的。"""
+    out = []
+    for line in (t or '').split('\\n'):
+        line = line.strip()
+        if not line or line.startswith('[网络]') or line.startswith('['): continue
+        out.append(line)
+        if len(out) == 2: break
+    return ' · '.join(out)
+
+
+def load_dict(need):
+    """只读需要的词，省内存。同时把 exchange 里的原形登记成别名。"""
+    if not os.path.exists(DICT):
+        print('⚠ 没有词典：%s' % DICT)
+        print('  下载：curl -sL -o ecdict.csv https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv')
+        return {}, {}
+    d, lemma = {}, {}
+    with io.open(DICT, encoding='utf-8', newline='') as fh:
+        for row in csv.DictReader(fh):
+            w = (row.get('word') or '').strip().lower()
+            if not w: continue
+            ex = row.get('exchange') or ''
+            if '0:' in ex:
+                base = ex.split('0:')[1].split('/')[0].strip().lower()
+                if base and w in need: lemma[w] = base
+            if w not in need and w not in lemma.values(): continue
+            d[w] = {'ipa': (row.get('phonetic') or '').strip(),
+                    'cn': clean_cn(row.get('translation')),
+                    'en': re.sub(r'\s+', ' ', (row.get('definition') or '').replace('\\n', '; ')).strip(),
+                    'tag': (row.get('tag') or '').strip(),
+                    'frq': (row.get('frq') or '0').strip()}
+    return d, lemma
+
+
 def main():
-    words = card_words()
-    idx = load_sources()
-    out, missing = {}, []
+    words, exmap = card_words()
+    bank = load_bank()
+    need = set(words)
+    for w in list(words):
+        for v in variants(w): need.add(v)
+    dic, lemma = load_dict(need)
+
+    out, risky = {}, []
+    n_bank = n_dict = 0
     for w in sorted(words):
-        rec = None
+        rec, src = None, 0
         for v in variants(w):
-            if v in idx: rec = idx[v]; break
-        if not rec:
-            missing.append(w); continue
+            if v in bank and (bank[v]['cn'] or bank[v]['en']):
+                rec, src = bank[v], 1; break
+        drec = None
+        for v in [w, lemma.get(w, '')] + list(variants(w)):
+            if v and v in dic and dic[v]['cn']: drec = dic[v]; break
+        if rec is None and drec is not None:
+            rec, src = drec, 2; n_dict += 1
+        elif rec is not None:
+            n_bank += 1
+            # 她的词库只有英文释义、没中文的，中文借词典的，来源标 3（混合），
+            # app 里会写明「中文来自通用词典」。
+            if not rec.get('cn') and drec is not None and drec.get('cn'):
+                rec = dict(rec); rec['cn'] = drec['cn']; src = 3
+            # 两边都有 → 常用词在生化里可能换了意思，登记成候选让人工看
+            # 只有两边**说得不一样**才算危险。她那个词库有一部分本身就是从同一个
+            # 词典来的，两边一字不差的那些是噪音，排掉。
+            if drec is not None and rec.get('cn') and drec.get('cn'):
+                import difflib
+                sim = difflib.SequenceMatcher(None, rec['cn'][:80], drec['cn'][:80]).ratio()
+                if sim < 0.45:
+                    risky.append((round(1 - sim, 3), w, rec['cn'][:70], drec['cn'][:70]))
+        if rec is None: continue
         e = {}
-        if rec['cn']: e['cn'] = rec['cn']
-        if rec['en']: e['en'] = rec['en'][:400]
-        if rec['ipa']: e['ipa'] = rec['ipa']
-        if rec['ex']: e['ex'] = rec['ex'][:300]
-        if e: out[w] = e
-        if not rec['cn']: missing.append(w)
-    if '--missing' in sys.argv:
-        print('\n'.join(missing)); return
+        if rec.get('cn'): e['cn'] = rec['cn'][:160]
+        if rec.get('en'): e['en'] = rec['en'][:220]
+        ipa = rec.get('ipa') or (drec or {}).get('ipa') or ''
+        if ipa: e['ipa'] = ipa[:60]
+        if w in exmap:
+            e['ex'] = exmap[w][0][:190]
+            if exmap[w][1]: e['c'] = exmap[w][1]
+        e['s'] = src
+        out[w] = e
+
+    if '--risky' in sys.argv:
+        risky.sort(reverse=True)
+        print('两边说得不一样的词 %d 个 —— 生化义和通用义分叉了。按分叉程度排：' % len(risky))
+        for d, w, a, b in risky[:120]:
+            print('%-20s 你的词库：%-32s 通用词典：%s' % (w, a, b))
+        return
+
     body = json.dumps(out, ensure_ascii=False, separators=(',', ':'))
     head = ('/* 单词释义表 —— tools/make_gloss.py 生成，别手改。\n'
-            '   料来自她自己以前建的词库（trae_projects 那个目录，只读）。\n'
-            '   键是卡上出现的小写词形，值 cn 中文 · en 英文释义 · ipa 音标 · ex 例句。*/\n')
+            '   s:1 是她自己的生化词库，s:2 是通用英汉词典（通用义，要打折听）。\n'
+            '   ex 是这个词在她卡上的那一句，c 是卡号。*/\n')
     io.open(os.path.join(DATA, '_gloss.js'), 'w', encoding='utf-8', newline='\n').write(
         head + 'window.GLOSS = ' + body + ';\n')
-    have_cn = sum(1 for v in out.values() if v.get('cn'))
-    print('卡上 %d 词 · 写进 %d 条（%.0f%%）· 其中有中文 %d（%.0f%%）· 还缺中文 %d'
-          % (len(words), len(out), 100 * len(out) / len(words),
-             have_cn, 100 * have_cn / len(words), len(words) - have_cn))
+    mix = sum(1 for v in out.values() if v.get('s') == 3)
+    cn = sum(1 for v in out.values() if v.get('cn'))
+    ex = sum(1 for v in out.values() if v.get('ex'))
+    print('卡上 %d 词 · 写进 %d 条（%.0f%%）· 有中文 %d（%.0f%%）· 带卡上原句 %d'
+          % (len(words), len(out), 100 * len(out) / len(words), cn, 100 * cn / len(words), ex))
+    print('  来自她的词库 %d（其中中文借词典的 %d）· 全部来自通用词典 %d · 危险词候选 %d（--risky 看）'
+          % (n_bank, mix, n_dict, len(risky)))
     print('文件 %.0f KB' % (os.path.getsize(os.path.join(DATA, '_gloss.js')) / 1024))
 
 
