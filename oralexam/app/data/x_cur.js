@@ -1,0 +1,352 @@
+/* 横向卡 · 细胞的标准接头（载体分子 / 辅酶）
+   不对应某一道题，跨很多题共用。存在的理由是数出来的：
+   NADH 在十一张卡的出声英文里出现，从来没被定义过；cytochrome 九张、reducing power 七张、
+   FADH2 六张、high-energy 六张、GTP / succinyl / UDP-glucose 各五张，全都没有定义。
+   出处 Biochemie OCR p043–p053（辅酶那一章，含 Tab. 3.1）、p131–p136（生物能学）、
+   p139、p141–p146（呼吸链）、p159–p160、p170、p172–p174（糖的活化）、p191（脂的活化）。
+   刻意不重做 Tab. 3.1 的逐行走读 —— 那一格在卡 31。 */
+
+window.CARDS.push({
+id:'x-cur', cross:1, w:0,
+q:'细胞只有一套标准接头 —— 载体分子到底有几族',
+qcn:'横向卡 · 先问「搬的是什么」，再报名字；NADH 去呼吸链、NADPH 去合成，是这张卡的那一句',
+sub:'跨题共用 · 卡 gly、24、25、27、31、02、17、x-meta、x-bonds、x-rxn 都要用到',
+
+cram:[
+ {g:'先问一句：搬的是什么', gn:'这张卡<b>不是一张辅酶清单</b>。清单在卡 <b>31</b>（书的 Tab. 3.1 逐行走读）。这里只做一件事：把二十个名字压成<b>四个家族</b>，问一句就能归位。'},
+ {n:'01', t:'这张卡为什么存在',
+  big:'这些词在她自己的卡上出现过几十次，<b>一次都没有人定义过</b>',
+  en:'“Every pathway I can describe runs on the same few carrier molecules, so I should be able to say what each of them is. A carrier is a small molecule the cell uses over and over to move one particular thing, from the reaction that makes it to the reaction that needs it. The textbook’s word for most of them is coenzyme.”',
+  note:'<b>书给的定义（<span class="pg">p043 §3.2.1</span>，一字不改）</b>：辅酶通常作为<b>中间的搬运工</b>，搬的是那个酶所催化的反应里被转移的<b>官能团、原子或电子</b>。<br>这一句里有三件事要听出来：<b>它不是酶的一部分</b>（酶是蛋白）、<b>它不是底物</b>（底物被改变，它不被改变）、<b>它带着货来，空着手走</b>。<br><b>数出来的账</b>：出声念的英文里 <b>NADH 出现在十一张卡上</b>，cytochrome 九张，reducing power 七张，FADH₂ 六张，high-energy 六张，GTP、succinyl、UDP-glucose 各五张。<b>没有一个被正面定义过。</b>这张卡就是补这一批。',
+  warn:'⚠ <b>cofactor、coenzyme、holoenzyme、apoenzyme、prosthetic group 这五个词不在这张卡上</b>，它们在卡 <b>18</b>（酶的结构）。这里只用，不重讲。被问到就说「那是酶的结构那一题」，然后给一句：<b>辅因子可以是金属离子，也可以是有机分子也就是辅酶；结合得很紧的辅酶叫辅基</b>（<span class="pg">p043</span>）。'},
+ {n:'02', t:'判断顺序',
+  big:'别背二十个名字。问一句 —— <b>它搬的是什么</b> —— 答案落进四族里的一族',
+  en:'“I sort the carriers by what is being moved, and that gives four groups. Some carry a phosphoryl group, and those are the nucleoside triphosphates. Some carry electrons, and those are the nicotinamide and flavin coenzymes. Some carry a chemical group, and each of those is named after the group it carries. And some carry electrons but stay at the membrane instead of travelling through the cell.”',
+  tbl:{head:['问「搬的是什么」','家族','成员','认出它的判据'],
+   rows:[
+    ['一个<b>磷酰基</b>','<b>家族 1</b> · 转移，不是储存','<b>ATP</b> · <b>GTP</b>，以及 UTP 和 CTP','分子里有一串<b>磷酸酐</b>键 <span class="pg">p132</span>'],
+    ['<b>电子</b>（多半连着氢一起）','<b>家族 2</b> · 还原力','<b>NAD⁺</b> · <b>NADP⁺</b> · <b>FAD</b>（还有 FMN）','一次收<b>两个</b>电子；反应式里它跟底物一起出现 <span class="pg">p044 p045</span>'],
+    ['一个<b>化学基团</b>','<b>家族 3</b> · 基团转移','<b>CoA</b> · <b>biotin</b> · <b>PLP</b> · <b>THF</b> · <b>SAM</b> · <b>TPP</b> · <b>UDP</b> 和 <b>CDP</b>','名字几乎都跟着<b>被搬的那个基团</b>走 <span class="pg">p048–p053</span>'],
+    ['<b>电子</b>，但不离开膜','<b>家族 4</b> · 呼吸链里那几个','<b>醌</b>（辅酶 Q）· <b>细胞色素</b>的血红素铁 · <b>铁硫中心</b>','一次多半只过<b>一个</b>电子，而且金属在换价 <span class="pg">p045 p046</span>'],
+   ]},
+  note:'<b>这四问就是这张卡的用法。</b>他报一个你没听过的辅酶，你不需要背过它，你需要能说出<b>它属于哪一族、搬的是什么</b>。<br><b>家族 3 最好认</b>：书自己就是按被搬的东西给它们分节的 —— <span class="pg">p048</span> 是「一碳基团代谢的辅酶」，<span class="pg">p050</span> 是「二碳基团代谢的辅酶」，<span class="pg">p052</span> 是「其他转移基团的辅酶」。',
+  warn:'⚠ <b>四个家族这个排法是这张卡自己排的，书里没有。</b>书的排法是按它服务的酶类分的（<span class="pg">p043</span>：氧化还原酶的辅酶 / 一碳 / 二碳 / ATP / 其他）。<b>两种排法不打架</b>，书那一套也是按「搬什么」排的，只是把电子那一族放在最前面。被追问出处，这一句要说得出来。'},
+
+ {g:'家族 1 · 搬磷酰基 —— ATP 和 GTP', gn:'这一族的关键词是<b>转移</b>，不是储存。书把 ATP 放在辅酶那一章里，标题就叫「<b>ATP 作为辅酶</b>」（<span class="pg">p051 d)</span>）—— 它跟 CoA、PLP 是同一类东西，只是搬的货是磷酸。'},
+ {n:'03', t:'ATP 是搬运工，不是电池',
+  big:'书把它放进<b>辅酶</b>那一章，而且说它能搬<b>四种</b>东西',
+  en:'“The textbook lists ATP among the coenzymes, under the heading ATP as a coenzyme. It says ATP has the ability to transfer groups. It can transfer a phosphate and leave as ADP, or a diphosphate and leave as AMP. It can also transfer the adenosine monophosphate group, or the adenosyl group when all three phosphates come off. The enzymes that put the phosphate on an alcohol or an acyl or an amide are the kinases.”',
+  note:'<b>这一格纠正的是最常见的一个说法。</b>「ATP 是细胞的电池」听起来对，但它会把人带到「储存」上去，而<b>书的说法是「分配」</b>：<span class="pg">p133</span> 原话是 ATP 和 ADP 构成一对，是磷酸基团的<b>通用供体和受体</b>，是生物能学的<b>中心化合物</b>；ATP 代表 Gibbs 能<b>分配的一种形式</b>，它水解的 −30,5 kJ/mol 是细胞里能量转换的一个<b>「量子」</b>。<br><b>书给的四种搬法</b>（<span class="pg">p051</span>）：<code>搬 P → 剩 ADP</code>　<code>搬 P–P → 剩 AMP</code>　<code>搬 AMP → 掉出 P–P</code>　<code>搬 adenosyl → 三个磷酸全掉</code>。<br><b>最后那一种就是 SAM 的来路</b>（第 12 点），<b>第三种是氨基酸上 tRNA 和脂肪酸活化的那一步</b>（<span class="pg">p051</span>，卡 <b>23</b>）。<br><b>这一格接</b>：卡 <b>gly</b>（底物水平磷酸化）· 卡 <b>25</b>（氧化磷酸化）· 卡 <b>x-rxn</b> 第 10 点（磷酸化的三个收件人）· 卡 <b>x-bonds</b> 第 9 点（为什么是两个高能键不是三个）。',
+  warn:'⚠ <b>别说 ATP 里存着能量。</b>被追问「高在哪」，答<b>产物更稳定</b>，不是键更强。理由和那两个数（30–60 对不到 12 kJ/mol，<span class="pg">p131</span>）在卡 <b>x-bonds</b> 第 2 点，那里有换算成平衡常数的推导。'},
+ {n:'04', t:'GTP · 那三张卡上从没定义过的词',
+  big:'书自己写了这一句：<b>ATP 不是唯一的活性三磷酸</b>',
+  en:'“GTP is guanosine triphosphate, the same molecule as ATP with guanine in place of adenine. Guanine is one of the two purine bases of the nucleic acids, and adenine is the other. The textbook says plainly that ATP is not the only reactive triphosphate, and that adenine can be replaced by other bases such as guanine, cytosine or uracil. It also lists the anhydride bonds of ATP, UTP, GTP and CTP together. So GTP carries a phosphoryl group exactly as ATP does, and its phosphate can be handed straight to ADP.”',
+  note:'<b>反应式</b>（书 <span class="pg">p139</span> 自己印的两行）：<code>sukcinyl-S-CoA ＋ Pᵢ ＋ GDP → sukcinát ＋ GTP ＋ CoA-SH</code><br><code>GTP ＋ ADP ⇌ GDP ＋ ATP</code>　书的原话是：<b>GTP 上的末端磷酸残基可以被转移到 ADP 上。</b><br>酶叫 <b>sukcinyl-CoA-synthetasa</b>。<b>这就是柠檬酸循环里那个 GTP 的全部来历</b>，卡 <b>24</b> 的账上那一个 GTP 就是它，而账里能把它算成一个 ATP，靠的正是上面第二行。<br><b>为什么这一格值钱</b>：卡 24 上 GTP 出现了五次，从来没有人说过它是什么。他一句「Why GTP and not ATP here?」就能把人问停。<b>答案是「因为它们是同一件事，末端磷酸可以直接对调」</b>，不是「因为这个酶就长这样」。',
+  good:'顺势能给的一句：“Different pathways happen to use different bases, but the chemistry is one chemistry. The bond that breaks is the same either way. A phosphoanhydride is what two acid groups give when they condense and lose a water.”'},
+
+ {g:'家族 2 · 搬电子 —— 这一组是整张卡存在的理由', gn:'<b>一句话贯穿六张卡，而这六张卡上从来没有人说过它</b>：NADH 去呼吸链换 ATP，NADPH 去合成。书把这一句写在 <span class="pg">p044</span>，只有两行。'},
+ {n:'05', t:'NAD⁺ 和 NADH',
+  big:'两个核苷酸接成的<b>二核苷酸</b>，干活的是<b>烟酰胺环</b>；氢加在 <b>C-4</b> 上',
+  en:'“NAD is nicotinamide adenine dinucleotide. It is two nucleotides joined by their phosphates, one carrying adenine and the other carrying nicotinamide, with D-ribose as the sugar in both. The textbook says the function of these coenzymes is to bind hydrogen reversibly. The hydrogen goes onto carbon four of the pyridine ring, and that ring thereby loses its aromatic character and also its positive charge. So NAD-plus is the oxidised form and NADH is the reduced form.”',
+  fig:{src:'img/p044_nad_hydride.jpg', cap:'书 <span class="pg">p044</span> 自己画的那一步：<b>氢加在吡啶环的 C-4 上</b>，环因此失去芳香性和正电荷。下面那一行 <code>NAD⁺ ＋ 2H ⇌ NADH ＋ H⁺</code> 是书印的配平式。'},
+  note:'<b>反应式</b>（书 <span class="pg">p044</span> 印的）：<code>NAD⁺ ＋ 2 H ⇌ NADH ＋ H⁺</code><br><b>这个配平本身是一道题。</b>底物交出来的是<b>两个氢原子</b>，也就是两个质子加两个电子；<b>环只收下其中一个氢加两个电子</b>（合起来就是一个负氢离子），<b>剩下那个质子留在溶液里</b>。所以式子右边必须写 ＋ H⁺，写成 NAD⁺ ＋ 2H → NADH 就不配平。<br><b>为什么写作 NAD⁺</b>：那个加号<b>不是说它带一个净正电荷</b>，是说<b>吡啶环上那个氮带着正电</b>。整个分子上还有两个磷酸的负电荷。<b>被问「为什么还原型不写 NADH⁻」，答的就是这一句</b>：还原掉的是环上那个正电荷。<br>⚠ <b>结构式不用背</b>（她有专门的 app）。这张图放在这里只有两个用处：<b>指出 C-4</b>，和<b>指出环变了</b>。',
+  warn:'⚠ <b>别把 NAD⁺ 说成酶的一部分。</b>书 <span class="pg">p043</span> 说得很清楚：结合得<b>很紧</b>的辅酶叫<b>辅基</b>，结合得<b>很松</b>的<b>在动力学上表现得像底物</b>。<b>NAD⁺ 是后者</b> —— 它来了又走，所以脱氢酶的反应式里它跟底物并排写。<b>FAD 常常是前者</b>，共价挂在酶上（书说琥珀酸脱氢酶上的 FAD 是<b>共价结合</b>的，<span class="pg">p139</span>）。'},
+ {n:'06', t:'那一句 · NADH 去呼吸链，NADPH 去合成',
+  big:'<b>同一套化学，两个池子。</b>差别只有一个磷酸，在腺苷部分的 <b>2′ 位</b>',
+  en:'“NADP differs from NAD by one extra phosphate, on the two-prime position of the adenosine part. The chemistry is the same and the textbook gives them one equation. But their jobs are not the same, and the textbook says so in one sentence. NADPH works as the reducing equivalent in biosynthetic reactions, while NAD-plus takes part rather in degradative reactions and in reactions leading to the formation of ATP. So reduced NAD goes to the respiratory chain to be turned into ATP, and reduced NADP goes to synthesis.”',
+  tbl:{head:['','<b>NAD⁺ / NADH</b>','<b>NADP⁺ / NADPH</b>'],
+   rows:[
+    ['结构差别','没有那个磷酸','腺苷的 <b>2′ 位</b>多一个磷酸 <span class="pg">p044</span>'],
+    ['书给的分工','<b>分解</b>反应，以及<b>通向生成 ATP</b> 的反应','<b>生物合成</b>反应里的<b>还原当量</b> <span class="pg">p044</span>'],
+    ['还原型去哪','<b>呼吸链</b>，在那里兑成 ATP（卡 <b>25</b>）','<b>合成</b>：脂肪酸、胆固醇、核苷酸（卡 <b>23</b>、卡 <b>x-meta</b>）'],
+    ['还原型哪来','糖酵解 GAPDH（卡 <b>gly</b>）· 柠檬酸循环四步脱氢（卡 <b>24</b>）· β-氧化（卡 <b>23</b>）','磷酸戊糖途径第一步（<span class="pg">p160</span>，卡 <b>06</b>）· 光合作用光反应（卡 <b>27</b>）'],
+    ['细胞里的比例','<b>大部分是氧化型</b>，随时准备收电子','<b>大部分是还原型</b>，随时准备放电子'],
+   ]},
+  note:'<b>这一句为什么值一整格</b>：它贯穿卡 <b>gly</b>、<b>24</b>、<b>25</b>、<b>27</b>、<b>31</b>、<b>x-meta</b> —— 每一张都在用这个区分，每一张都默认它已经被说过，而<b>整套卡里一次都没有说过</b>。<br><b>「还原力」这个词也在这里定义</b>：它<b>不是能量的一种形式</b>，是<b>一批准备好交出去的电子</b>。书用的词是<b>还原当量</b>（reducing equivalent，<span class="pg">p044</span>），口试上说 reducing power 更常见，两个是一回事。<br>⚠ 表里「大部分氧化型 / 大部分还原型」那一行<b>书里没有数</b>，是通用知识。<b>被要数就给判据，不要编</b>：<b>一个池子不可能同时既主要是氧化型又主要是还原型</b>，而细胞必须同时做氧化和还原，所以它养了两个池子。',
+  good:'加分的一句，把差别和分工缝在一起：“One extra phosphate carries no chemistry at all. What it does is let the enzymes tell the two pools apart, so the cell can keep one mostly oxidised for catabolism and the other mostly reduced for synthesis.”',
+  warn:'⚠ <b>别说 NADPH 是「另一种能量货币」。</b>能量货币是 ATP（<span class="pg">p133</span>：通用供体受体、中心化合物）。<b>NADPH 是还原剂，不是磷酸供体</b>，它的那个 2′ 磷酸从来不被转移出去 —— <b>它是一个标签，不是一件货</b>。'},
+ {n:'07', t:'FAD 和 FADH₂',
+  big:'底子是<b>核黄素</b>（维生素 B₂）。它多半<b>挂在酶上不走</b>，所以叫黄素蛋白',
+  en:'“FAD is flavin adenine dinucleotide, and the flavin part comes from riboflavin, vitamin B-two. Flavin mononucleotide is the smaller of the two, riboflavin five-prime-phosphate, and FAD is that joined to AMP by a pyrophosphate bond. The textbook says the flavin coenzymes form the prosthetic groups of the flavoproteins, so unlike NAD they usually stay on the enzyme. The redox happens on the isoalloxazine ring. Oxidised flavin is yellow because of its conjugated double bonds, and the reduced form is colourless.”',
+  note:'<b>三个名字一次分清</b>：<code>riboflavin ＝ 维生素 B₂ 本身</code>　<code>FMN ＝ 核黄素-5′-磷酸</code>　<code>FAD ＝ FMN ＋ AMP，焦磷酸键连起来</code>。<span class="pg">p045</span><br><b>书给的糖不是核糖</b>：黄素这一边是<b>核糖醇</b>，一个五碳的<b>多元醇</b>，不是糖环。所以严格说 FMN 不是核苷酸，书自己也只说它「由碱基、糖组分和一个磷酸残基组成」。<br><b>书给的两个用处</b>：复合物 I 的核心是黄素蛋白 <b>NADH 脱氢酶</b>，含 <b>FMN</b>（<span class="pg">p141</span>）；复合物 II 就是柠檬酸循环里那个<b>琥珀酸脱氢酶</b>，含 <b>FAD</b> 和两个铁硫中心（<span class="pg">p143</span>）。<br><b>颜色那一句能当证据用</b>：氧化型黄，还原型无色，所以黄素蛋白的反应可以用<b>光学方法</b>跟踪（<span class="pg">p045</span>）—— 跟 NADH 的 340 nm 是同一个思路。',
+  warn:'⚠ <b>氢加在哪个氮上，书自己跟自己打架</b>（勘误第 8 条）：<span class="pg">p045</span> 正文印的是 <b>N-1 和 N-10</b>，但<b>同一页</b>的结构式把核糖醇链画在 <b>N-10</b> 上，那个氮已经没有空价。同页画的氧化／还原对照把两个氢画在 <b>N-1 和 N-5</b> 上。<b>说的时候用书的图打书的正文</b>，别引外部教材。完整说法在卡 <b>31</b>。'},
+ {n:'08', t:'公式 · 一个还原型载体值几个 ATP',
+  big:'<b>三和二这两个数是数质子数出来的</b>，不是背出来的',
+  en:'“The number comes from counting protons. The textbook says that complexes one, three and four together move two electrons from NADH to oxygen, and that six protons are transported out of the matrix as they do it. With succinate dehydrogenase, which enters at complex two, only four protons go out. The textbook then says that six protons across the membrane corresponds to about three ATP and four protons to about two. So NADH is worth roughly three and FADH-two roughly two, and the reason is simply that succinate enters below complex one and misses that pump.”',
+  note:'<b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>书自己印的那一行</b>（<span class="pg">p146</span>）：<code>NADH ＋ H⁺ ＋ ½ O₂ ＋ 3 ADP ＋ 3 Pᵢ → NAD⁺ ＋ 3 ATP ＋ 4 H₂O</code><br><b>第一步 · 数质子。</b><span class="pg">p145</span> 原话：复合物 <b>I ＋ III ＋ IV</b> 一起把 NADH 的两个电子送到氧，同时把 <b>6 个质子</b>从基质泵到胞浆侧；换成琥珀酸脱氢酶走 <b>II ＋ III ＋ IV</b>，<b>只有 4 个</b>。<br><b>第二步 · 质子换 ATP。</b><span class="pg">p146</span> 原话：<code>6 H⁺ ≈ 3 ATP</code>　<code>4 H⁺ ≈ 2 ATP</code>。<b>两步合起来就是 3 和 2</b>，卡 <b>24</b> 的账（每个乙酰基 12 个 ATP）整根梁就架在这两个数上。<br><b>第三步 · 用能量对一遍，看数合不合理。</b>式子是书 <span class="pg">p135</span> 印的：<code>ΔG°′ = −n·F·ΔE°′</code><br>ΔG°′ 是标准自由能变（撇 ＝ 生化标准态，pH 7）· <b>n</b> 是转移的电子数 · <b>F</b> 是法拉第常数 96485 C·mol⁻¹ · <b>ΔE°′</b> 是终点减起点的标准电极电位差。<br>书 <span class="pg">p135</span> 表 6.2 给了两头：<code>NADH ＋ H⁺ / NAD⁺ = −0,32 V</code>　<code>H₂O / ½O₂ = ＋0,82 V</code>。<br>① <code>ΔE°′ = 0,82 − (−0,32) = 1,14 V</code>　② <code>n = 2</code>　③ <code>ΔG°′ = −2 × 96485 × 1,14 ≈ −220 kJ/mol</code>。<br>④ 三个 ATP 值 <code>3 × 30,5 = 91,5 kJ/mol</code>（−30,5 是书 <span class="pg">p133</span> 的数）。⑤ <code>91,5 ÷ 220 ≈ 42%</code>。<br>换成 FADH₂：<code>FADH₂/FAD = −0,20 V</code>（同表）→ <code>ΔE°′ = 1,02 V</code> → <code>ΔG°′ ≈ −197 kJ/mol</code>，两个 ATP 是 61 kJ → <b>约 31%</b>。<br><br><b>=== 一句话理解 ===</b><br><b>「一个 NADH 值三个 ATP」不是一条生物学定律，是一条除法的结果，而且分子分母都在书上。</b>真正被固定的是两件事：<b>电位差（一路 1,14 V）</b>和<b>一个 ATP 的价钱（30,5 kJ/mol）</b>。剩下的全是泵了几个质子。<br>所以<b>FADH₂ 少一个 ATP，不是因为它「差一点」，是因为它进场的位置在复合物 I 的下面</b> —— 书的表上 FADH₂ 是 −0,20，NADH 是 −0,32，那 0,12 V 的落差就是复合物 I 那一段，<b>它直接被跳过了</b>。<b>少泵两个质子，就少一个 ATP。</b><br>⚠ <b>−220、−197、42%、31% 这四个数书里没有</b>，是按书印的式子和书表里的电位算的。<b>被追问出处，把哪一半是书的说清楚。</b>书自己也留了口子：<span class="pg">p146</span> 用的是「<b>大约</b>」，<span class="pg">p139</span> 用的是「<b>比例大致上</b>」。<b>完整的电位表和 ATP 合酶那一半在卡 25，这里不重做。</b>',
+  warn:'⚠ <b>别把 3 和 2 报成硬数。</b>书自己写的是「约 3」「约 2」。<b>被追问「为什么不是整数」</b>，答：泵出的质子数和 ATP 合酶转一圈要几个质子<b>都不是整数比</b>，所以现代教材常写 2,5 和 1,5。<b>这一条在卡 24 和卡 25 上都已经有了，顺势指过去就行。</b>'},
+
+ {g:'家族 3 · 搬一个化学基团 —— 名字跟着货走', gn:'这一族最好记，因为<b>书自己就是按被搬的东西分节的</b>：<span class="pg">p048</span> 一碳基团、<span class="pg">p050</span> 二碳基团、<span class="pg">p052</span> 其他。每一个只要三件事：<b>叫什么 · 搬什么 · 在哪张卡见过</b>。'},
+ {n:'09', t:'七个载体，一张表',
+  big:'每一个都是<b>一个货</b>对<b>一个载体</b>。说得出货，名字就跟着来了',
+  en:'“Each of these carries one kind of group, and the textbook groups them by that. Coenzyme A carries an acyl group. Biotin carries carbon dioxide. Pyridoxal phosphate carries an amino group. Tetrahydrofolate carries a one-carbon unit. S-adenosylmethionine carries a methyl group. Thiamine diphosphate carries a two-carbon aldehyde unit. And the uridine and cytidine nucleotides carry a sugar and a lipid head group.”',
+  tbl:{head:['载体','搬的是什么','书给的去处','在哪张卡'],
+   rows:[
+    ['<b>CoA</b>（辅酶 A）','<b>酰基</b>，挂在末端游离 <b>SH</b> 上','脂肪酸氧化 · 丙酮酸氧化 · 脂肪酸合成 · 生物乙酰化 <span class="pg">p050</span>','<b>24</b> · <b>23</b> · <b>gly</b> · <b>x-meta</b>'],
+    ['<b>biotin</b>','<b>CO₂</b>（书叫「活化的 CO₂」）','羧化反应，例如 acetyl-CoA → malonyl-CoA <span class="pg">p050</span>','<b>23</b> · <b>31</b> · <b>x-rxn</b>'],
+    ['<b>PLP</b>（磷酸吡哆醛）','<b>氨基</b>','转氨反应，底物与它先成 <b>Schiff 碱</b>；也做脱羧 <span class="pg">p053</span>','<b>aa</b> · <b>24</b> · <b>18</b> · <b>x-rxn</b>'],
+    ['<b>THF</b>（四氢叶酸）','<b>一个碳</b>：羟甲基和甲酰基','「活化甲醛」＝ N⁵,N¹⁰-亚甲基-THF；「活化甲酸」＝ N¹⁰-甲酰-THF <span class="pg">p048 p049</span>','<b>aa</b>（丝氨酸给出那个碳）'],
+    ['<b>SAM</b>（S-腺苷甲硫氨酸）','<b>甲基</b>','转到有孤对电子的原子上，<b>最常见是氮</b> <span class="pg">p048</span>','<b>aa</b> · <b>x-meta</b>'],
+    ['<b>TPP</b>（焦磷酸硫胺素）','<b>二碳的醛单元</b>（乙醛或乙醇醛）','2-氧代酸脱羧（裂合酶）· 转酮醇酶反应（转移酶）<span class="pg">p050</span>','<b>gly</b> · <b>06</b> · <b>27</b> · <b>31</b>'],
+    ['<b>UDP</b> 和 <b>CDP</b>','<b>一个糖</b> / <b>一个脂的头</b>','UDP 活化糖去做糖苷键；CDP 搬<b>磷酸胆碱</b>去做磷脂 <span class="pg">p052</span>','<b>06</b> · <b>23</b> · <b>x-rxn</b>'],
+   ]},
+  note:'<b>书自己把 biotin 放在「一碳基团」那一节里</b>，跟 THF 和 SAM 并排 —— 因为 CO₂ 也是一个碳。<b>这个安排本身就是答案</b>：三个载体搬的都是一个碳，<b>区别在那个碳的氧化态</b>（第 11 点那一格）。<br><b>Tab. 3.1 的逐行走读在卡 31</b>，连每一行对应哪个维生素都在那儿。<b>这里不重做</b>，被问到维生素就交过去：<b>维生素是原料，辅酶是成品</b>。',
+  warn:'⚠ <b>书的表不全，正文比表多。</b>卡 <b>31</b> 已经数过：正文另外给了 THF、SAM、辅酶 B₁₂、biopterin、硫辛酸、谷胱甘肽、ATP、UDP、CDP。<b>说出「表和正文不一样」这句话本身就是分。</b>'},
+ {n:'10', t:'CoA 那一格 · 顺便定义 acetyl 和 succinyl',
+  big:'干活的只有末端那个 <b>–SH</b>。接上酰基就是<b>硫酯</b>，而硫酯是<b>高能化合物</b>',
+  en:'“Coenzyme A serves as the carrier of acyl groups. The working end is a single free SH group, and the acid is bound to it as a thioester. The textbook calls thioesters generally very reactive and calls acetyl-CoA a macroergic compound. An acyl group is what is left of a carboxylic acid when its OH is taken away. So acetyl-CoA carries the two carbons of acetic acid, and succinyl-CoA carries the four carbons of succinic acid.”',
+  note:'<b>书给 CoA 的组成</b>（<span class="pg">p050</span>）：<code>腺苷-3′,5′-二磷酸 ＋ 泛酸 ＋ β-丙氨酸 ＋ 巯基乙胺</code>，后三样用<b>肽键</b>连。泛酸和 β-丙氨酸合起来叫<b>泛酸（pantothenic acid）</b>，属 B 族维生素，是做 CoA 的<b>必需前体</b>。<br><b>书还给了 acetyl-CoA 的第二条来路</b>（<span class="pg">p050</span> 印的式子）：<code>ATP ＋ CoA ＋ 乙酸 → AMP ＋ P–P ＋ acetyl-CoA</code>。<b>注意这里掉的是 AMP 和焦磷酸，不是 ADP</b> —— 正好是第 3 点里 ATP 的第三种搬法。<br><b>succinyl-CoA 在她的卡上出现过五次，没人定义过。</b>它有两个身份：柠檬酸循环第五步的<b>底物</b>（<span class="pg">p139</span>，交出 GTP），以及氨基酸骨架的<b>汇入点</b>（甲硫氨酸、异亮氨酸、缬氨酸，<span class="pg">p128</span>，卡 <b>aa</b>）。<b>书还给了第三个去处</b>：它和甘氨酸缩合成 δ-氨基乙酰丙酸，那是<b>卟啉的前体</b>（<span class="pg">p146</span>）—— <b>一句话就把这张卡的家族 3 和家族 4 接上了</b>。',
+  good:'顺势能给的一句，把「为什么偏偏是硫」说清楚：“The sulfur atom prevents the resonance that normally stabilises an O-ester, so the carbonyl stays reactive. That is the textbook’s own reason, and it is why coenzyme A is the standard acyl donor.” <span class="pg">p132 p136</span>，完整一格在卡 <b>x-bonds</b> 第 8 点。'},
+ {n:'11', t:'三个都搬「一个碳」，区别在<b>那个碳的氧化态</b>',
+  big:'书 <span class="pg">p048</span> 自己列了一碳基团的四个级别：<b>–CH₃ · –CH₂OH · –CHO · –COOH</b>',
+  en:'“Three carriers all move a single carbon, and the textbook lists them together. What separates them is how oxidised that carbon is. S-adenosylmethionine carries the most reduced one, a methyl group. Tetrahydrofolate carries the middle ones, a hydroxymethyl or a formyl group. Biotin carries the most oxidised one, carbon dioxide. So the question to ask is not which carrier but which oxidation level.”',
+  tbl:{head:['氧化级别','基团','载体','书给的名字和例子'],
+   rows:[
+    ['最<b>还原</b>','<b>–CH₃</b> 甲基','<b>SAM</b>','甲硫氨酸是<b>甲基的主要供应者</b>；例子是肌酸的生成 <span class="pg">p048</span>'],
+    ['中间','<b>–CH₂OH</b> 羟甲基','<b>THF</b>','「<b>活化的甲醛</b>」＝ N⁵,N¹⁰-亚甲基-THF，<b>供体通常是丝氨酸</b> <span class="pg">p048</span>'],
+    ['中间偏上','<b>–CHO</b> 甲酰基','<b>THF</b>','「<b>活化的甲酸</b>」＝ N¹⁰-甲酰-THF，由亚甲基型<b>脱氢</b>而来（NADP⁺，还要花 ATP）<span class="pg">p049</span>'],
+    ['最<b>氧化</b>','<b>–COOH / CO₂</b>','<b>biotin</b>','「<b>活化的 CO₂</b>」＝ 羧基生物素酶；用在羧化反应 <span class="pg">p049 p050</span>'],
+   ]},
+  note:'<b>这一格是这张卡上最反直觉的一条，也是最像研究者的一条。</b>「一碳代谢」听起来是一个题目，其实是<b>一把梯子</b>：书 <span class="pg">p048</span> 开篇就把四个基团按氧化态排好了，然后<b>每一级派一个载体</b>。<br><b>而且这把梯子跟卡 x-rxn 第 8 点那把是同一把</b>：连 O 加一、连 H 减一。甲基 −3、羟甲基 −1、甲酰 ＋1、羧基 ＋3。<b>THF 那两级之间书自己说要脱氢（NADP⁺）</b>，梯子上每上一格就是一次氧化 —— <b>这不是比喻，是书印在那儿的反应。</b><br><b>装货都要先花钱</b>（第 12 点）：SAM 要 ATP，biotin 接 CO₂ 要 ATP，THF 从亚甲基升到甲酰也要 ATP。',
+  warn:'⚠ <b>−3 / −1 / ＋1 / ＋3 这四个氧化数书里没有</b>，是按通用有机化学的数法算的。<b>书给的是四个基团的名字和顺序</b>（<span class="pg">p048</span>），以及那一步脱氢（<span class="pg">p049</span>）。被追问出处，两半分开说。'},
+ {n:'12', t:'装货要先花钱 —— 三个例子，书都写了',
+  big:'载体不会自己捡起货。<b>把货装上去的那一步，几乎都要水解一个三磷酸</b>',
+  en:'“A carrier does not pick the group up for free. The textbook says so three times over. Attaching the transferred carbon dioxide to biotin consumes ATP. The methyl group of methionine is activated by reacting the amino acid with ATP, which gives S-adenosylmethionine. And a sugar must be activated first, by reacting glucose-1-phosphate with UTP to give UDP-glucose. So the energy is spent on loading, and the transfer step itself can then run downhill.”',
+  note:'<b>三条书证</b>：<span class="pg">p049</span>「把被转移的 CO₂ 接到辅酶上<b>消耗 ATP</b>」· <span class="pg">p048</span>「甲硫氨酸里的甲基<b>通过氨基酸与 ATP 反应</b>被活化，生成 S-腺苷甲硫氨酸」· <span class="pg">p170</span>「为了让糖残基能被糖基转移酶转移并生成糖苷键，单糖必须<b>事先被活化</b>，转变成一个<b>高能衍生物</b>」。<br><b>SAM 那一条最漂亮</b>：书说 ATP 上<b>三个磷酸残基全部掉下来</b>（掉出一个 Pᵢ 和一个焦磷酸），甲硫氨酸的硫直接接上腺苷，生成一个<b>非常活泼的锍盐</b>。<b>这就是第 3 点里 ATP 的第四种搬法「搬 adenosyl」</b>，全书只有这一处用到。<br><b>一句话把这一格立住</b>：<b>基团转移看起来是白拿的，其实钱在上一步就付过了。</b>他问「为什么合成比分解贵」，这就是最具体的一条答案（卡 <b>x-meta</b> 有账那一半）。'},
+ {n:'13', t:'UDP 和 CDP · 糖和脂的活化形式',
+  big:'<b>UDP 接糖，CDP 接脂的头。</b>不同的糖用不同的核苷酸，书逐个点了名',
+  en:'“The activating group for a sugar is usually a nucleoside diphosphate, and most often uridine diphosphate. The textbook adds two exceptions by name. For mannose the activating group is guanosine diphosphate, and for the sialic acids it is cytidine monophosphate. Cytidine diphosphate is the coenzyme of phospholipid synthesis, and it carries cholinephosphate, the head group a phospholipid needs, which is a choline with a phosphate on it. So the same idea runs through both chapters. Activate the piece first, then let a transferase move it.”',
+  note:'<b>书给的三步活化</b>（<span class="pg">p170</span>，一步不能少）：<code>① 葡萄糖 ＋ ATP →(激酶) 葡萄糖-6-磷酸</code>　<code>② 重排成 葡萄糖-1-磷酸</code>　<code>③ ＋ UTP → UDP-葡萄糖</code>。<b>结构上的关键</b>：UDP-糖里那个糖是<b>用它的异头 OH</b> 接上去的，所以它随时能被转到另一个 OH 上。<br><b>三处她已经有的用法</b>：糖原合成，glykogensynthasa 把葡萄糖从 UDP-Glc 转到末端残基的 <b>C-4 羟基</b>上（<span class="pg">p174</span>，卡 <b>06</b>）· 半乳糖那一题，<b>UDP-glukosa-4-epimerasa</b>，平衡时葡萄糖比半乳糖是 <b>1 : 3</b>（<span class="pg">p172</span>，卡 <b>06</b>、卡 <b>x-rxn</b>）· 磷脂合成，CDP-胆碱（<span class="pg">p052</span>、<span class="pg">p191</span>，卡 <b>23</b>）。<br><b>顺手接上一条账</b>：书 <span class="pg">p174</span> 说，从葡萄糖做糖原<b>要经过两次磷酸化</b>（走 UDP-Glc），所以磷酸解拆糖原只<b>保住了不到一半</b>付出去的能量。<b>这一句是「磷酸解省了一次磷酸化」那条的另一半</b>，卡 <b>x-rxn</b> 第 15 点只说了省的那一半。',
+  warn:'⚠ <b>UDP 不是「糖的 ATP」。</b>它<b>不把磷酸交出去</b>，它交出去的是<b>糖</b>。判据一句话：<b>看走的是哪一半</b> —— ATP 走磷酸留下 ADP，UDP-糖走糖留下 UDP。'},
+
+ {g:'家族 4 · 留在膜上的电子载体', gn:'这一族跟家族 2 干的是同一件事（搬电子），<b>差别是它们不在细胞里跑</b>。书 <span class="pg">p141</span> 自己点了名：呼吸链里能动的只有三样 —— <b>NADH、ubichinol 和细胞色素 c</b>，其余全是膜上的整合组分。'},
+ {n:'14', t:'醌 · 两个世界之间的变速箱',
+  big:'书叫它<b>辅酶 Q</b>（ubiquinone）。<b>它是黄素蛋白和细胞色素之间的中间人</b>',
+  en:'“Ubiquinone is the one the textbook calls coenzyme Q, and in higher plants the counterpart is plastoquinone. The textbook says that in the respiratory chain coenzyme Q is the intermediary between the flavoproteins and the cytochromes. The redox goes between the quinone and the hydroquinone. It is lipophilic, so it is dissolved in the membrane and moves freely inside it rather than through the cell.”',
+  note:'<b>为什么它非在这儿不可</b>：它的<b>上游是两电子的世界</b>（NADH、FMN、FAD），<b>下游是一电子的世界</b>（细胞色素的铁一次只换一价）。醌能停在三个状态上 —— <b>醌 · 半醌 · 氢醌</b> —— 所以它能一次收两个、一个一个放出去。<b>书自己用了「半醌形式」这个词</b>，在 <span class="pg">p141 p143 p144</span> 反复出现。<b>这就是第 17 点那个公式块的机械原理。</b><br><b>三个名字别混</b>：<code>ubichinon ＝ 氧化型</code>　<code>ubichinol（＝ dihydroubichinon）＝ 还原型</code>　<code>semichinon ＝ 中间那一步，只多一个电子</code>。书 <span class="pg">p135</span> 的表给的电位是 <code>dihydroubichinon / ubichinon = ＋0,10 V</code>，正好卡在 cytochrom b 的 0,00 和 cytochrom c 的 ＋0,26 中间。<br><b>接卡 27</b>：光合作用里对应的是 <b>plastoquinone</b>，把电子送到<b>细胞色素 b₆f 复合物</b> —— 同一个零件，换了一台机器。'},
+ {n:'15', t:'cytochrome · 九张卡上从没定义过的那个词',
+  big:'<b>一个带血红素的蛋白</b>，靠铁在 <b>Fe²⁺ 和 Fe³⁺ 之间换价</b>来传电子',
+  en:'“A cytochrome is a haem protein that carries electrons, and the iron does the carrying by changing its valency between the two-plus and the three-plus state. The haem is four pyrrole rings joined by four methine bridges into a flat conjugated ring, with the iron held in the middle by the four nitrogens. The individual cytochromes differ in the substituents on those pyrrole rings, and that is what gives each of them a different electrochemical potential. The textbook says at least five have been identified in the mitochondria of higher animals: b, c-one, c, a and a-three.”',
+  note:'<b>书还给了三件事</b>（<span class="pg">p046</span>）：<b>①</b> 血红素是<b>辅基</b>，用<b>牢固的共价键或配位共价键</b>结合在脱辅基酶蛋白上 —— 所以细胞色素<b>不像 NAD⁺ 那样来了又走</b>。<b>②</b> 铁在卟啉平面之外<b>还能再形成两个键</b>，垂直于平面。<b>③</b> 它们主要在<b>线粒体和叶绿体</b>里，也有在<b>内质网</b>的，在那里参与<b>羟化反应</b>。<br><b>「同一个血红素，靠环上的取代基拉开电位」这一句是这一格最值钱的。</b>它一次回答两个追问：<b>为什么呼吸链上有那么多个细胞色素</b>（要一级一级地把电位抬上去），以及<b>为什么它们不能互换</b>。<br><b>书给的那一句定义式的功能</b>（<span class="pg">p046</span>）：它们<b>把来自各种脱氢酶系统的电子一路传到氧上</b>，是细胞呼吸的催化剂。<br><b>接</b>：卡 <b>25</b>（四个复合物，复合物 IV 就是<b>细胞色素氧化酶</b>，功能单元是细胞色素 a、a₃ 和<b>铜离子</b>，<span class="pg">p144</span>）· 卡 <b>27</b>（细胞色素 b₆f）· 卡 <b>17</b>（书举的例子里 cytochrome c 就是「传电子」那一行）· 卡 <b>x-bonds</b> 第 10 点（卟啉的四个氮抱住铁，是配位键）。',
+  warn:'⚠ <b>细胞色素不是「铁蛋白」的统称。</b>判据是<b>血红素</b>：铁被<b>卟啉</b>箍住的才是细胞色素；铁被<b>半胱氨酸的 SH</b> 抓住的是<b>铁硫蛋白</b>，是下一格。<b>两者干的事一样（Fe²⁺ ⇌ Fe³⁺），装法完全不同。</b><br>⚠ <b>还有一个同名不同事的</b>：血红蛋白和肌红蛋白也带血红素，<b>但它们的铁全程是 Fe²⁺，不换价</b>，它们搬的是氧不是电子。书 <span class="pg">p146</span> 的表 6.4 把卟啉的几种用法排在一起，<b>那张表就是这条区分的书证</b>。'},
+ {n:'16', t:'铁硫中心 · 同一个铁，另一种装法',
+  big:'铁<b>直接挂在蛋白上</b>：半胱氨酸的 <b>–SH</b>，加上<b>游离的硫离子</b>',
+  en:'“In an iron-sulfur protein the iron is bound straight onto the protein, by the SH groups of cysteine and by free sulfide ions. The textbook calls these Fe-S proteins and gives ferredoxin as its example. It says they occur in all organisms and work as electron carriers above all in respiration and in photosynthesis, with the iron changing valency between the two-plus reduced form and the three-plus oxidised form. The textbook gives three arrangements: a linear Fe-S with cysteine only, a planar Fe-two-S-two, and a three-dimensional Fe-four-S-four.”',
+  note:'<b>书特意用了一个说法</b>（<span class="pg">p142</span>）：这些是「<b>以非血红素方式结合的铁和硫原子</b>」的蛋白。<b>「非血红素铁」这个词就是用来跟细胞色素分开的。</b><br><b>它们藏在哪</b>：复合物 I 的黄素蛋白除了 FMN 还带<b>好几个 FeS 辅基</b>（<span class="pg">p141</span>）· 复合物 II 带 <b>FAD 和两个 FeS</b>（<span class="pg">p143</span>）· 复合物 III 里也有一个（<span class="pg">p143</span>）。<b>所以链上真正干活的电子载体，一半是看不见名字的。</b><br><b>后两种结构里那些硫不是来自半胱氨酸</b>，是<b>游离的硫离子</b>（书的原话就是「游离的硫离子」）。⚠ 这一点常被说错成「全是半胱氨酸的硫」。',
+  good:'加分的一句，接光合作用：“The same kind of centre appears on the other side of the leaf: ferredoxin is the iron-sulfur protein that takes the electrons out of photosystem one.” 卡 <b>27</b> 有那一格。'},
+ {n:'17', t:'公式 · 两个电子对一个电子，以及 6 这个数怎么数出来',
+  big:'<b>家族 2 一次过两个电子，家族 4 的金属一次只过一个。</b>整条链的结构就是这个错位',
+  en:'“The textbook states the alternation itself. The cofactors NAD-plus, FMN and Q transport a whole pair, better said two electrons with two protons, while the iron-sulfur proteins and the cytochromes transfer electrons only. It then draws the consequence. Transferring one electron to cytochrome c corresponds to two protons moved out, so the two electrons from NADH allow four protons at that point. And that arrangement is what lets the two-electron carrier ubiquinol work with the one-electron carrier cytochrome c.”',
+  note:'<b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>第一步 · 为什么有两种载体。</b><code>NAD⁺ ＋ 2H ⇌ NADH ＋ H⁺</code> —— 一次<b>两个</b>电子。<code>Fe³⁺ ＋ e⁻ ⇌ Fe²⁺</code> —— 一次<b>一个</b>电子，因为价态只差一。<b>这不是设计上的巧合，是化学上的强制</b>：一个铁离子没有办法一次换两价还留在那儿。<br><b>第二步 · 于是需要一个变速箱。</b>书 <span class="pg">p144</span> 原话：这样的安排<b>使得两电子（也是两质子）的载体 ubichinol 能够和一电子的载体细胞色素 c 相互作用</b>。做这件事的就是<b>半醌</b>（第 14 点）。<br><b>第三步 · 把质子数数出来</b>（书 <span class="pg">p142 p144</span> 逐段给的，三段相加）：<br><code>复合物 I　　2 e⁻ 过去，泵出 2 H⁺</code>　　书 p142：由于载体交替和它们在膜上的位置，记录到<b>2 个质子</b>从基质侧被送到膜间腔。<br><code>复合物 III　1 e⁻ 到 cyt c 对应 2 H⁺，所以 2 e⁻ 对应 4 H⁺</code>　　书 p144 原话。<br><code>复合物 IV　 0 H⁺</code>　　书 p144：它<b>不把质子送过膜</b>，但它<b>通过让氧离子质子化</b>把基质的 pH 抬高。<br><code>合计　2 ＋ 4 ＋ 0 = 6 H⁺</code>　—— <b>正好对上 p145 那句「6 个质子」</b>，再由 p146 换成 3 个 ATP。<br><br><b>=== 一句话理解 ===</b><br><b>整条呼吸链的形状，是被「一个铁一次只能过一个电子」这件小事逼出来的。</b><br>如果电子能从 NADH 一步走到氧，那 1,14 V 的落差会一次性放出 220 kJ/mol，<b>细胞没有任何办法把这么大一笔钱存进 30,5 kJ/mol 的 ATP 里</b> —— 书 <span class="pg">p134</span> 自己说过，生成和消耗都是「<b>量子化</b>」的，每一小份大致对应一步反应。<br>所以链做了两件事：<b>把落差切成小段</b>（每段配一个能承受的载体），以及<b>在两电子和一电子之间换挡</b>（醌）。<b>而「泵出几个质子」正是这些换挡点的副产品</b> —— 6 不是一个被规定的数，是 2 ＋ 4 ＋ 0 数出来的。<br>⚠ <b>「一个铁一次只能过一个电子」这句话书里没有明写</b>，书写的是结果（FeS 蛋白和细胞色素<b>只传电子</b>，而且铁在两价和三价之间换）。<b>推的那一步要说清是自己推的。</b>',
+  warn:'⚠ <b>别把「只传电子」说成「不传质子」就完了。</b>书的说法更准：交替传<b>整对（电子＋质子）</b>和<b>只传电子</b>，而<b>正是这个交替</b>加上载体在膜上的位置，才造成质子<b>被从一侧送到另一侧</b>（<span class="pg">p142</span>）。<b>质子不是被泵出去的第二件事，它是电子换手方式改变的后果。</b>这一句说得出，卡 <b>25</b> 那道题就稳了。'},
+
+ {g:'收口 · 这张卡怎么用', gn:'两格。一格补掉最后一个没定义的词，一格是这张卡值这一个小时的地方。'},
+ {n:'18', t:'“high-energy” 这个词',
+  big:'书说该叫<b>高能化合物</b>，不是高能键。<b>它不是键更强，是产物更稳</b>',
+  en:'“The textbook prefers to speak of macroergic compounds rather than macroergic bonds. A macroergic compound sits in an energetically unstable state, and a single bond can be what holds it there. Hydrolysing that bond releases between 30 and 60 kilojoules per mole, against under 12 for an ordinary one. ATP is the standard example, and so are the thioesters of coenzyme A and the activated sugar nucleotides.”',
+  note:'<b>这个词在她的卡上出现了六次，没有人定义过。</b>完整一格在卡 <b>x-bonds</b> 第 2 点，那里还有把 30 / 60 / 12 换算成平衡常数的推导（<b>普通键是一百多倍的事，高能化合物是十万倍到百亿倍的事</b>）。<span class="pg">p131</span><br><b>放在这张卡上的用处是一句话</b>：<b>这四个家族里，载货的那一头几乎都是高能化合物。</b>ATP 的酐键 · acetyl-CoA 的硫酯 · UDP-葡萄糖（书 <span class="pg">p170</span> 直接叫它<b>高能衍生物</b>）· 羧基生物素。<b>所以「载体」和「高能化合物」不是两个话题，是同一件事的两面</b>：<b>能被搬走，就是因为它待在一个不稳的地方。</b>'},
+ {n:'19', t:'这张卡值这一个小时的地方',
+  big:'他报一个你<b>从没听过</b>的辅酶 —— 你照样答得对',
+  en:'“If I am given the name of a coenzyme I have never met, I can still place it. I ask what is being moved. If it is a phosphoryl group it belongs with ATP. If it is electrons it belongs with the nicotinamide and flavin coenzymes, and I would then ask whether it stays at a membrane. If it is a chemical group, the carrier is almost always named after that group. The textbook itself has several I would have to place this way, and lipoic acid is one of them.”',
+  note:'<b>拿书里那几个冷门的试一遍，四问全过</b>：<br><b>硫辛酸</b>（<span class="pg">p047</span>）—— 书说它是<b>环状二硫化物</b>，主要参与<b>氧化脱羧</b>，作用实质上是<b>把活化的醛氧化成酸</b>，氧化型是环状二硫、还原型是带两个 SH 的二氢硫辛酸。<b>→ 家族 2，搬电子</b>（顺带把一个酰基交给 CoA）。<br><b>Biopterin</b>（<span class="pg">p047</span>）—— 四氢型是还原态，二氢的醌型是氧化态，是某些<b>单加氧酶</b>的辅酶。<b>→ 家族 2。</b><br><b>谷胱甘肽</b>（<span class="pg">p047 p048</span>）—— <code>G-SH ＋ HS-G → G-S-S-G ＋ 2 e⁻ ＋ 2 H⁺</code>，靠半胱氨酸的<b>游离 SH</b> 在还原型（单体）和氧化型（二聚体）之间来回。<b>→ 家族 2</b>，而且书<b>特意说它大概算不上辅酶</b>（书的原话是「它大概不具有辅酶的地位」）—— <b>这一句本身就是一分</b>。<br><b>辅酶 B₁₂</b>（<span class="pg">p053</span>）—— 中间是<b>钴</b>，被<b>四个配位键</b>抱在<b>咕啉环</b>里；咕啉像卟啉，但有两个吡咯环是<b>直接相连</b>的，不经甲炔桥。<b>→ 家族 4 的亲戚，一个金属中心。</b>',
+  good:'考场上最后那一句，能说出来就不像背书的人：“The point is that there are only a few connectors, and every pathway plugs into one of them. So I do not need to have met a coenzyme before. I need to know what it is carrying.”'}
+],
+
+end:'<b>这张卡的用法：</b>他报一个载体的名字，先别急着说它在哪条通路上。<b>问一句「它搬的是什么」</b> —— 磷酰基 · 电子 · 一个化学基团 · 还是留在膜上的电子 —— 落在哪一族就先说那一族，再报名字，再给一个书上的例子。<b>而这张卡最要紧的一句只有一行：NADH 去呼吸链兑成 ATP，NADPH 去合成。</b>',
+
+/* ---------------- 演练四段 ---------------- */
+segs:[
+ {tag:'段 1 · 定义', h:'先说清楚「载体」是什么，再说清楚它们为什么这么少',
+  p:['“A carrier is a small molecule the cell uses over and over to move one particular thing, from the reaction that makes it to the reaction that needs it. The textbook’s word for most of them is coenzyme, and it defines a coenzyme as the intermediary carrier of the functional groups, the atoms or the electrons transferred in the reaction the enzyme catalyses.”',
+     '“Two things follow from that definition. A coenzyme is not part of the enzyme, because the enzyme is the protein. And it is not the substrate either, because it arrives loaded and leaves empty. The useful point is how few of them there are. A cell does not invent a new carrier for each pathway. It keeps a small set of standard connectors, and every pathway plugs into one of them.”'],
+  note:'定义是书 <span class="pg">p043 §3.2.1</span> 的，一字不改。<b>第二段那个「标准接头」的说法是这张卡自己的</b>，书没有这么写 —— 但它是从书的编排里读出来的：书就是按「搬什么」给辅酶分节的。<br><b>cofactor / holoenzyme / apoenzyme / prosthetic group 在卡 18</b>，这里不讲，被问到就交过去。'},
+ {tag:'段 2 · general', h:'四个家族，判据是「搬的是什么」',
+  p:['“I sort them by what is being moved, and that gives four groups. The first carries a phosphoryl group. That is ATP, and also GTP, because the textbook says ATP is not the only reactive triphosphate. The point of this group is transfer rather than storage. The textbook calls ATP and ADP the universal donor and acceptor pair of the phosphate group.”',
+     '“The second carries electrons. That is NAD-plus and NADP-plus and FAD. The third carries a chemical group, and each of those is named after its group. Coenzyme A carries an acyl, biotin carries carbon dioxide, pyridoxal phosphate carries an amino group, tetrahydrofolate carries one carbon, S-adenosylmethionine carries a methyl, and thiamine diphosphate carries a two-carbon aldehyde unit. The fourth group also carries electrons, but it stays at the membrane: the quinone, the cytochromes with their haem iron, and the iron-sulfur centres.”'],
+  note:'⚠ <b>四个家族这个排法是这张卡排的，书里没有。</b>书的排法在 <span class="pg">p043–p052</span>：氧化还原酶的辅酶 / 一碳 / 二碳 / ATP / 其他转移基团的。<b>两套不打架</b>，书那一套也是按搬什么排的。<b>说的时候把这一句带上。</b>'},
+ {tag:'段 3 · 稍展开', h:'挑两处最值钱的：一个分工，一个错位',
+  p:['“Take the electron carriers first, because one sentence in the textbook decides a lot. NADPH works as the reducing equivalent in biosynthetic reactions, while NAD-plus takes part rather in degradative reactions and in reactions leading to the formation of ATP. So reduced NAD goes to the respiratory chain to be turned into ATP, and reduced NADP goes to synthesis. The two differ by one phosphate on the two-prime position, and that phosphate carries no chemistry. It is a label that lets the enzymes tell the pools apart.”',
+     '“Then take the membrane carriers, because there is a mismatch there. The textbook says NAD-plus and FMN and coenzyme Q move a whole pair, two electrons with two protons, while the iron-sulfur proteins and the cytochromes transfer electrons only. An iron can change by one valency at a time, so it can only take one. The quinone is what bridges the two, because it can also sit in a half-reduced semiquinone form.”'],
+  note:'第一段那一句是 <span class="pg">p044</span> 的原话，<b>这张卡就是为了它才存在</b> —— 它贯穿卡 <b>gly</b>、<b>24</b>、<b>25</b>、<b>27</b>、<b>31</b>、<b>x-meta</b>，而那六张里一次都没说过。<br>第二段两句都是书的：交替那一句在 <span class="pg">p142</span>，两电子对一电子那一句在 <span class="pg">p144</span>。<b>「铁一次只能换一价」是自己推的一步，要说明。</b>'},
+ {tag:'段 4 · 留口子', h:'落到她天天用的那两样：一个是试剂，一个是读数',
+  p:['“Two of these carriers are things I handle every week rather than things I read about. The first is biotin. The textbook introduces it as the carrier of activated carbon dioxide, and then adds that it binds to avidin, a specific protein of egg white, and is thereby inactivated. That inactivation is exactly what my field turned into a tool. I biotinylate an antigen and capture it with streptavidin, and that is how I titrate binding on yeast display.”',
+     '“The second is the readout. The textbook says the reduced coenzymes have a different absorption spectrum from the oxidised ones, with a marked maximum at 340 nanometres, and that this is used to follow enzyme reactions. So a carrier is not only a piece of metabolism. It is also the thing that makes an enzyme assay possible, because the carrier changes colour and the substrate does not.”'],
+  note:'两个口子都在主场：biotin–avidin 接卡 <b>02</b>（Kd 和滴定曲线）和她的 yeast display；340 nm 接卡 <b>17</b>（酶怎么测）和卡 <b>02</b>（初速度怎么量）。<br>⚠ <b>biotin 和 avidin 结合有多紧，书里没有数。</b>被逼问就说<b>通用文献常引到 10⁻¹⁵ M 上下，是已知最紧的非共价结合之一，而这本书只说它「使生物素失活」</b>，并给了后果：<b>大量生食蛋清会造成生物素缺乏</b>（<span class="pg">p049</span>）。<b>把哪一半是书的说清楚。</b>'}
+],
+
+why:{
+ rungs:[
+  ['为什么非要有载体？为什么电子和基团不能直接从一个反应飞到另一个反应？','因为<b>它们不能单独存在</b>。书 <span class="pg">p134</span> 原话：放出来的电子和质子<b>没有能力独立存在</b>，所以氧化过程<b>总是</b>跟另一样东西的还原偶联在一起。<b>载体就是干这个偶联的那个东西。</b>基团也一样：一个酰基、一个氨基不可能在水里自己待着，得有人接着。'],
+  ['那为什么只有这么几个？换个通路换个载体不行吗？','因为<b>一个载体要能用，装货的酶和卸货的酶都得认得它</b>。每多一个新载体，就要多两套识别；<b>共用一个，一套都不用多</b>。所以通路越多，越划算的是<b>把接头做成标准件</b>。书自己的编排就是这个结论的形状：全书十章，反复出现的还是那十来个名字。'],
+  ['那为什么电子载体要有两个（NAD 和 NADP），不能合成一个？','因为细胞必须<b>同时</b>做两件相反的事：一边氧化食物，一边还原前体去搭东西。<b>一个池子不可能同时既主要是氧化型又主要是还原型。</b>所以细胞养了两个池子，化学几乎一样，靠 2′ 位<b>一个不参与化学的磷酸</b>让酶分得开。⚠ <b>「两个比例</b>」这一层书里没有明写，书只写了分工（<span class="pg">p044</span>）。']
+ ],
+ stop:{lbl:'停 · 落在热力学',
+  say:'“Below that we are asking why a given couple sits where it does on the scale of standard potentials, and that is physical chemistry rather than biochemistry. What biochemistry can say is what the textbook says. The electrons move spontaneously from the system with the more negative potential to the system with the higher one. That difference is what the cell has to work with.”'}
+},
+
+/* ---------------- 同一个答案，不同问法 ---------------- */
+recog:[
+{q:'What is NADH?',
+ mean:'<b>最短的问法，而且是这张卡存在的理由。</b>它在十一张卡上出现过，从没被定义。答案要三段：<b>是什么 · 怎么装上的 · 往哪去</b>。',
+ say:'“NADH is the reduced form of nicotinamide adenine dinucleotide. That coenzyme is two nucleotides joined by their phosphates, one carrying adenine and the other nicotinamide. Its job, the textbook says, is to bind hydrogen reversibly. The hydrogen goes onto carbon four of the pyridine ring, and the ring thereby loses its aromatic character and its positive charge. So NADH is a carrier holding two electrons, and it carries them to the respiratory chain, where they are turned into ATP.”',
+ tail:'⚠ <b>最后半句是这张卡的核心</b>，别漏：<b>NADH 去呼吸链，NADPH 去合成</b>（<span class="pg">p044</span>）。他要配平式就给 <code>NAD⁺ ＋ 2H ⇌ NADH ＋ H⁺</code>，并说明<b>多出来的那个质子留在溶液里</b>。'},
+
+{q:'What is a cytochrome?',
+ mean:'九张卡上出现过，从没被定义。答案的骨架是<b>血红素 ＋ 铁换价</b>，加一句<b>为什么有好几个</b>。',
+ say:'“A cytochrome is a haem protein that carries electrons, and the iron does the carrying by changing valency between the two-plus and the three-plus state. The haem is four pyrrole rings joined by four methine bridges into a flat conjugated ring, with the iron held by the four nitrogens in the middle. The individual cytochromes differ in the substituents on those rings, and that gives each one a different electrochemical potential. The textbook names at least five in the mitochondria of higher animals: b, c-one, c, a and a-three.”',
+ tail:'<b>最后那句「取代基不同所以电位不同」是这一格的分</b>（<span class="pg">p046</span>）—— 它顺手回答了「为什么链上要那么多个」。⚠ 别把铁硫蛋白也叫细胞色素，判据是<b>有没有卟啉</b>。'},
+
+{q:'What is reducing power?',
+ mean:'七张卡上出现过。他要的是<b>它是什么东西</b>，不是它有什么用。',
+ say:'“Reducing power is a supply of electrons that the cell is holding ready to give away. It is not a form of energy on its own. It is stored as the reduced forms of the electron-carrying coenzymes, above all NADPH and NADH. The textbook’s own word for NADPH is the reducing equivalent for biosynthetic reactions. And it draws the line between the two: NADPH goes to synthesis, while reduced NAD goes to the reactions leading to the formation of ATP.”',
+ tail:'<b>「不是能量的一种形式」这半句要说出来。</b>能量货币是 ATP（<span class="pg">p133</span>）。还原力是一批<b>准备交出去的电子</b>，要经过呼吸链才变成 ATP（卡 <b>25</b>）。'},
+
+{q:'What is FADH2, and why is it worth less than NADH?',
+ mean:'两问一格。<b>第二问的答案是「它进场的位置低」</b>，不是「它差一点」。',
+ say:'“FADH2 is the reduced form of flavin adenine dinucleotide, the coenzyme built from riboflavin, vitamin B-two. Unlike NAD it is usually a prosthetic group, bound to the enzyme rather than diffusing. It is worth less because of where it enters. Succinate dehydrogenase is complex two, which sits below complex one on the scale of potentials, so complex one is skipped. The textbook counts six protons pumped for NADH and only four from succinate, and it converts six protons to about three ATP and four to about two.”',
+ tail:'<b>数字全是书的</b>：<span class="pg">p145</span> 六和四，<span class="pg">p146</span> 三和二，<span class="pg">p135</span> 表 6.2 的 −0,32 和 −0,20。<b>速背第 8 点有完整推导</b>，包括用 ΔG°′ = −nFΔE°′ 对一遍。'},
+
+{q:'Why is there GTP in the citric acid cycle instead of ATP?',
+ mean:'卡 24 上 GTP 出现五次没定义。答案是<b>「它们是同一件事」</b>，不是「这个酶就长这样」。',
+ say:'“Because GTP is the same chemistry with a different base. The textbook says plainly that ATP is not the only reactive triphosphate, and that adenine can be replaced by guanine, cytosine or uracil. In the cycle, succinyl-CoA synthetase makes GTP from GDP and inorganic phosphate as the thioester is broken. And the textbook adds the step that makes it count: the terminal phosphate of GTP can be transferred to ADP, giving ATP. So the cycle’s one GTP is one ATP in the ledger.”',
+ tail:'<span class="pg">p051 p132 p139</span>。<b>卡 24 那笔账里的那一个 GTP 就是靠最后这一行折算的。</b>'},
+
+{q:'What is succinyl-CoA?',
+ mean:'五张卡上出现过没定义。<b>答案里要有「它是个硫酯，所以是高能化合物」这一层</b>，不然下一刀就落在这里。',
+ say:'“Succinyl-CoA is the four-carbon acid succinate carried on coenzyme A as a thioester. That four-carbon acyl group is called succinyl, in the same way the two-carbon one is called acetyl. The textbook calls the whole compound macroergic, and that is the point of it. Breaking that thioester is what pays for making GTP in the fifth step of the citric acid cycle. It has two other roles in the textbook. The carbon skeletons of methionine, isoleucine and valine are broken down to it. And it condenses with glycine to give the precursor of the porphyrins.”',
+ tail:'<span class="pg">p128 p139 p146</span>。<b>最后那条是这张卡里最好的一条桥</b>：搬酰基的那一族，正好做出了搬电子的那一族用的血红素。'},
+
+{q:'What is UDP-glucose, and why does the cell bother making it?',
+ mean:'她的卡上出现五次没定义。答案是<b>活化</b>，而且<b>钱付在装货那一步</b>。',
+ say:'“UDP-glucose is glucose attached through its anomeric hydroxyl to uridine diphosphate, and it is the activated form of the sugar. The textbook is explicit about why. A glycosyltransferase is the enzyme that makes a glycosidic bond. Before one can move a sugar residue, the textbook says, the monosaccharide has to be activated into a macroergic derivative. The route has three steps: glucose to glucose-6-phosphate by a kinase, then to glucose-1-phosphate, then a reaction with UTP. Glycogen is built that way.”',
+ tail:'<span class="pg">p170 p174</span>。<b>书还给了两个例外</b>：甘露糖用 <b>GDP</b>，唾液酸用 <b>CMP</b>。⚠ 判据别混：<b>ATP 交出的是磷酸，UDP 交出的是糖。</b>'},
+
+{q:'What does it mean to call a compound high-energy?',
+ mean:'六张卡上出现过。<b>完整一格在 x-bonds</b>，这里给能一口气说完的那一版。',
+ say:'“The textbook prefers to speak of macroergic compounds rather than macroergic bonds. A compound is high-energy, meaning macroergic in the textbook’s word, when it sits in an energetically unstable state with a single bond holding it there. Hydrolysing that bond releases between 30 and 60 kilojoules per mole, against under 12 for an ordinary bond. So it is not a strong bond. It is an unstable compound whose products are much more stable. ATP is the standard case, and so are the thioesters of coenzyme A.”',
+ tail:'<span class="pg">p131</span>。<b>把 30 / 60 / 12 换算成平衡常数的推导在卡 x-bonds 第 2 点</b>，别在这里重算。'},
+
+{q:'How would you place a coenzyme you have never heard of?',
+ mean:'这张卡的用法本身。<b>他多半在你答完一族之后顺口扔一个名字过来。</b>',
+ say:'“I ask what is being moved. If it is a phosphoryl group it belongs with ATP and the other nucleoside triphosphates. If it is electrons it belongs with the nicotinamide and flavin coenzymes, and I would then ask whether it stays at a membrane, because the membrane ones pass electrons one at a time. If it is a chemical group, the carrier is almost always named after that group. Lipoic acid is a case in point. The textbook says it is a cyclic disulfide that serves the oxidative decarboxylations, so it is an electron carrier.”'},
+
+{q:'Why does a lot of raw egg white make you ill?', odd:1,
+ mean:'问的是 <b>biotin</b>，而且这一条<b>书上真的有</b>。答完顺势能拐到她的主场。',
+ say:'“Because egg white contains avidin. Biotin is the coenzyme that carries activated carbon dioxide into carboxylation reactions, and the textbook says biotin binds to avidin, a specific protein of egg white, and is thereby inactivated. It adds the consequence directly: high doses of raw egg white in the diet can bring on a biotin deficiency. Cooking denatures the avidin, so cooked egg white does not do it.”',
+ tail:'<span class="pg">p049</span>。⚠ <b>「加热让 avidin 变性」那半句书里没有，是通用知识。</b><br><b>顺势能拐到主场</b>：同一个「结合得极紧」是 biotin–streptavidin 被做成标准标记手段的原因，也就是她滴定亲和力时用的那一套（卡 <b>02</b>）。'},
+
+{q:'Why do biochemists sit and watch a solution at 340 nanometres?', odd:1,
+ mean:'问的是 <b>NADH 的吸收</b>，而且这是书自己点明的用途。<b>这道题把「载体」和「怎么测」接起来。</b>',
+ say:'“Because that is where the reduced coenzyme absorbs and the oxidised one does not. The textbook says the reduced forms, NADH and NADPH, have a different absorption spectrum from the oxidised coenzymes, with a marked maximum at 340 nanometres. It says this is used to determine the concentration of the coenzymes and above all to follow the enzyme reactions they take part in. So any dehydrogenase can be assayed by watching that wavelength, because the carrier changes and the substrate usually does not.”',
+ tail:'<span class="pg">p044</span>。<b>340 nm 是书印的数。</b>这一条接卡 <b>17</b>（酶的作用怎么被量出来）和卡 <b>02</b>（初速度）。<b>同一个思路在黄素上也成立</b>：氧化型黄、还原型无色，所以黄素蛋白也能用光学方法跟踪（<span class="pg">p045</span>）。'},
+
+{q:'Why is blood red and a leaf green, if both run on iron and light?', odd:1,
+ mean:'问的是<b>卟啉</b>。答案要落在<b>共轭双键系统</b>上，然后顺手把细胞色素带出来。',
+ say:'“Because both are porphyrins, and a porphyrin is coloured. The textbook says the rich system of conjugated double bonds means absorption in the visible part of the spectrum, so these substances are pigments. It then lists how many jobs nature gave the same ring: oxygen transport in haemoglobin, terminal oxidation in the cytochromes, breaking down peroxide in catalase, and the conversion of light energy. The metal in the middle differs. Haem holds iron, and chlorophyll holds magnesium.”',
+ tail:'<span class="pg">p146</span> 表 6.4。⚠ <b>「叶绿素里是镁」这一句这一页没写</b>，表里只写了「光能转换」那一行；镁是通用知识，卡 <b>27</b> 有。<b>被追问就说是哪一半。</b>'},
+
+{q:'Why does a vitamin tablet turn your urine bright yellow?', odd:1,
+ mean:'问的是 <b>riboflavin</b>，而且书刚好给了颜色的理由。',
+ say:'“Because of riboflavin, vitamin B-two. The textbook says flavin is yellow because it contains a system of conjugated double bonds, while its dihydro derivative is colourless. Riboflavin is the part of FMN and FAD that does the redox work, and it is water-soluble, so what the body cannot use is passed out. The same colour change is useful in the laboratory, because it lets flavoprotein reactions be followed by optical methods.”',
+ tail:'<span class="pg">p045</span> 给的是<b>黄素为什么黄</b>和<b>还原型无色</b>。⚠ <b>「尿是黄的」书里没有，水溶性维生素排出这一层也是通用知识。</b>把两半分开说。'},
+
+{q:'Why can you not just eat ATP?', odd:1,
+ mean:'问的是<b>「转移不是储存」</b>那一条。<b>这是段 1 的另一个入口。</b>',
+ say:'“Because ATP is not a store, it is a carrier in circulation. The textbook calls ATP and ADP the universal donor and acceptor pair for the phosphate group. It says the hydrolysis of ATP, about 30 and a half kilojoules per mole, is a kind of quantum for the energy conversions in the cell. A carrier only works if it is turned over. It is made where energy is released and spent where work is done, and swallowing more of it would not put it into that cycle.”',
+ tail:'<span class="pg">p133</span>。⚠ <b>「吃下去也进不了循环」这一句书里没有</b>，是通用知识（ATP 在消化道里会被水解）。<b>书能撑住的是前半句：它是通用的供体受体对，是分配的形式。</b>'}
+],
+
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'认',
+  src:'img/p044_nad_hydride.jpg',
+  t:'烟酰胺环收下那个氢 —— 书 p044 自己画的那一步',
+  cap:'<b>这一张是「认」，不是「画」。</b>化合物结构式她另有 app，这张放在这里只做两件事：<b>指出氢落在哪个碳上</b>，和<b>指出环因此变了</b>。'
+    + '<br><br><b>图上怎么看</b>：左边是氧化型，环上的<b>氮带着一个正号</b>，这就是 NAD⁺ 那个加号的由来。'
+    + '右边是还原型，<b>最上面那个碳上多了一个 H</b>（原来只有一个，现在是两个）—— 那个碳就是<b>吡啶环的 C-4</b>。'
+    + '下面那一行是书印的配平式：<code>NAD⁺ ＋ 2H ⇌ NADH ＋ H⁺</code>。'
+    + '<br><br><b>看到图要说的一句</b>：“The hydrogen goes onto carbon four of the pyridine ring, and the ring thereby loses its aromatic character and its positive charge. That is why the reduced form absorbs at 340 nanometres and the oxidised form does not.”'
+    + '<br><br><b>如果他让你画</b>：顺序只有三步 —— ① 画一个六元环，一个角上写 <b>N</b>，给它一个 <b>＋</b>；'
+    + '② 在氮对面隔一个位置的碳上（<b>C-4</b>）画一个 <b>H</b>；③ 画箭头进来第二个 <b>H</b>，同时把氮上的 ＋ 擦掉，'
+    + '右边补一个游离的 <b>H⁺</b>。<b>侧链的 C(=O)NH₂（酰胺）和下面的 Rib–P–P–Ado 只要标出来，不用画细。</b>',
+  src2:'Biochemie，p044，§3.2.1 辅酶那一节里烟酰胺辅酶的氧化还原式'}
+],
+
+/* ---------------- 追问 ---------------- */
+ask:[
+{g:'定义类', gn:'<b>这张卡就是为了这一组存在的。</b>下面每个词在她已有的卡上都出现过，而且一次都没有被正面定义过 —— 所以这里每个都得给一句，不能只放定义链。', items:[
+{r:'高', q:'What is NAD-plus, and why the plus sign?',
+ en:'“NAD-plus is nicotinamide adenine dinucleotide, the oxidised form. The plus sign does not mean the whole molecule carries a net positive charge, because there are two phosphates on it as well. It means the nitrogen of the pyridine ring is positively charged. When the ring takes the hydrogen at carbon four it loses its aromatic character and that positive charge as well. That is why the reduced form is written NADH and not NADH-minus.”',
+ cn:'书 <span class="pg">p044</span> 原话：氢结合在<b>吡啶环的 C-4</b> 上，环因此<b>失去芳香性，也失去正电荷</b>。<b>「那个加号说的是环上的氮」这一句书没有明写</b>，是从这一句读出来的，说的时候标明。<br><b>为什么要预备这一条</b>：NAD⁺ 这个写法她每天都在看，<b>而「为什么带加号」是一个一问就停的问题</b>。'},
+{r:'高', q:'What is NADPH, and what is it for?',
+ en:'“NADPH is the reduced form of NADP, which differs from NAD by one extra phosphate on the two-prime position of the adenosine part. The chemistry of the two is the same. The jobs are not. The textbook says NADPH functions as the reducing equivalent in biosynthetic reactions, while NAD-plus takes part rather in degradative reactions and in reactions leading to the formation of ATP. So NADPH is the reductant for building things, and it comes above all from the pentose phosphate pathway and from the light reactions of photosynthesis.”',
+ cn:'<span class="pg">p044</span>。<b>这一条是这张卡的心脏</b>，出现在卡 <b>gly</b>、<b>24</b>、<b>25</b>、<b>27</b>、<b>31</b>、<b>x-meta</b> 的背后，而那六张一次都没说过。<br><b>两个来源的书证</b>：磷酸戊糖途径第一步，葡萄糖-6-磷酸被 <b>NADP⁺</b> 氧化（<span class="pg">p160</span>，卡 <b>06</b>）· 光反应（卡 <b>27</b>）。<b>去处的书证</b>：脂肪酸合成的还原剂是 NADPH，而氧化给出的是 NADH（卡 <b>23</b>、<b>x-meta</b>）。'},
+{r:'高', q:'What is a haem, and is every haem protein a cytochrome?',
+ en:'“A haem is four pyrrole rings joined by four methine bridges into a flat conjugated structure, with an iron ion bound in the middle by the four nitrogens. The iron can form two further bonds perpendicular to that plane. Not every haem protein is a cytochrome. In a cytochrome the iron changes valency between two-plus and three-plus, and that is how it carries electrons. In haemoglobin the iron stays two-plus throughout and what is carried is oxygen, not electrons.”',
+ cn:'<span class="pg">p046</span> 给了血红素的构造和「铁靠换价传电子」；<span class="pg">p146</span> 的<b>表 6.4</b> 把卟啉的几种用途排在一起，<b>那张表就是「不是每个血红素蛋白都是细胞色素」的书证</b>。<br><b>垂直于平面的那两个键</b>是血红蛋白接氧的位置，也是细胞色素 c 接蛋白的位置。<b>这一句在卡 x-bonds 第 10 点（配位键）也有。</b>'},
+{r:'高', q:'What is an iron-sulfur centre?',
+ en:'“It is iron bound straight onto the protein rather than inside a porphyrin. The textbook says the iron is held by the SH groups of cysteine and by free sulfide ions, and it calls these proteins Fe-S proteins, with ferredoxin as its example. They occur in all organisms and work as electron carriers, mainly in respiration and in photosynthesis, the iron changing between the two-plus reduced form and the three-plus oxidised form. The textbook gives a linear Fe-S with cysteine only, a planar Fe-two-S-two, and a spatial Fe-four-S-four.”',
+ cn:'<span class="pg">p046</span>。<b>「非血红素结合的铁」这个说法在 <span class="pg">p142</span></b>，是书用来跟细胞色素分开的词。<br>⚠ <b>后两种里的硫不全来自半胱氨酸</b>，还有<b>游离硫离子</b>。这一点常被说反。'},
+{r:'中', q:'What is a quinone doing in a membrane?',
+ en:'“Ubiquinone is the textbook’s coenzyme Q, and in higher plants the counterpart is plastoquinone. The textbook says that in the respiratory chain coenzyme Q is the intermediary between the flavoproteins and the cytochromes, with the redox running between the quinone and the hydroquinone. It is there because it is lipophilic. It dissolves in the lipid of the membrane and moves freely inside it, so it can carry electrons sideways from one complex to another without leaving the membrane.”',
+ cn:'<span class="pg">p045 p142</span>。<b>三个名字分清</b>：ubichinon 氧化型 · ubichinol（＝ dihydroubichinon）还原型 · semichinon 中间那一步。<b>书自己在 p141、p143、p144 反复用「半醌形式」这个词</b>，那是第 17 点那个公式块的机械原理。'},
+{r:'中', q:'What is a hydride, if the ring takes one?',
+ en:'“A hydride is a hydrogen with two electrons on it rather than one, so it is a proton plus two electrons, carrying a negative charge. When a substrate is dehydrogenated it gives up two hydrogen atoms, which is two protons and two electrons. The ring takes one proton and both electrons, and the other proton is left in solution. That is why the textbook’s equation has to be written NAD-plus plus 2 H gives NADH plus H-plus.”',
+ cn:'⚠ <b>「hydride」这个词书里没有</b>，书写的是 <code>NAD⁺ ＋ 2H ⇌ NADH ＋ H⁺</code> 和「可逆地结合氢」（<span class="pg">p044</span>）。<b>负氢这个说法是通用知识，说的时候标明。</b><br><b>但那个配平式是书印的</b>，而<b>右边那个 ＋H⁺ 就是这一条的全部理由</b> —— 会问它的人，问的就是这个。'},
+{r:'中', q:'What is an acyl group, and what is a thioester?',
+ en:'“An acyl group is what is left of a carboxylic acid when the OH is taken off, so the acetyl of acetyl-CoA is one and the succinyl of succinyl-CoA is another. A thioester is the bond between an acyl group and a thiol, an SH group. Coenzyme A carries acyl groups that way, on a single free SH at its end. The textbook calls thioesters generally very reactive and calls acetyl-CoA a macroergic compound.”',
+ cn:'<span class="pg">p050</span>。<b>书给的理由在别处</b>（<span class="pg">p132 p136</span>）：<b>硫原子挡住了 O-酯常见的共振</b>，所以羰基还是活泼的。<b>完整一格在卡 x-bonds 第 8 点</b>，这里只给到能接住下一刀的程度。'},
+{r:'中', q:'What is a prosthetic group, and which of these carriers is one?',
+ en:'“The textbook’s rule is about how tightly the coenzyme is held. When it is bound to the apoenzyme very strongly it is called a prosthetic group. Coenzymes held only by weak interactions come and go, and kinetically they behave as a substrate of the enzyme. By that rule NAD-plus is the loose kind, which is why it appears in the equation beside the substrate. The flavins are prosthetic groups of the flavoproteins, the haems are prosthetic groups, and biotin is bound to a lysine that way. An isopeptide is a peptide bond made to a side chain rather than to the end of the chain.”',
+ cn:'<span class="pg">p043 p045 p046 p049</span>。<b>完整一格在卡 18</b>（酶的结构）。<b>放在这里的用处是一个判据</b>：<b>反应式里写不写它</b> —— 写在式子里的是松的（NAD⁺），不写的是挂在酶上的（FAD、血红素、biotin）。'},
+{r:'中', q:'What does macroergic mean, since you keep using it?',
+ en:'“It is the textbook’s term for a compound in an energetically unstable state, where a single bond can be what holds it there. Hydrolysing that bond gives 30 to 60 kilojoules per mole, against under 12 for an ordinary bond. The textbook says we should speak of macroergic compounds rather than macroergic bonds, because the atoms around that bond are involved in other covalent interactions too.”',
+ cn:'<span class="pg">p131</span>（两个门槛都是<b>「按每个键算」</b>）。<b>完整一格和换算成平衡常数的推导在卡 x-bonds 第 2 点。</b>'},
+{r:'中', q:'What is a two-carbon aldehyde unit, the thing TPP carries?',
+ en:'“The textbook says three two-carbon groups come into question in metabolism: acetaldehyde, glycolaldehyde and acetic acid. Thiamine diphosphate carries the aldehyde ones, and the transferred aldehyde group binds to carbon two of the thiazole ring. The textbook draws that intermediate and labels it active acetaldehyde. It serves two classes of reaction: the decarboxylation of 2-oxoacids, which are lyases, and the transketolase reaction, which is a transferase.”',
+ cn:'<span class="pg">p050</span>，一字不改，连「这些反应常常还要 <b>Mg²⁺</b>」那半句也是书的。<br><b>两类反应对应两张卡</b>：丙酮酸氧化脱羧（卡 <b>gly</b>、<b>31</b>）· 转酮醇酶（磷酸戊糖途径，卡 <b>06</b>；Calvin 循环，卡 <b>27</b>）。'}
+]},
+
+{g:'最容易混的几对', gn:'乱，通常不是不知道，是两个名字挨得太近。<b>每一对都给一句能当场把它们分开的判据。</b>', items:[
+{r:'高', q:'NADH or NADPH — how do you decide which a pathway uses?',
+ en:'“I ask which direction the pathway is going. The textbook’s sentence decides it. NADPH works as the reducing equivalent in biosynthetic reactions, while NAD-plus takes part rather in degradative reactions and in reactions leading to the formation of ATP. So a breakdown pathway hands its hydrogen to NAD-plus and the NADH goes to the respiratory chain. A synthesis pathway takes its hydrogen from NADPH. Fatty acids show both in one place: the oxidation gives NADH and the synthesis needs NADPH.”',
+ cn:'<b>判据一句话：拆东西用 NAD，搭东西用 NADP。</b><span class="pg">p044</span><br><b>脂肪酸那个例子是最好用的</b>，因为一条通路的两个方向摆在一起（卡 <b>23</b>、卡 <b>x-meta</b>）。'},
+{r:'高', q:'A cofactor, a coenzyme, a prosthetic group — are these three things?',
+ en:'“They are one thing described at three levels. A cofactor is the non-protein component that some enzymes need in their active form, and the textbook says it can be a metal ion or an organic molecule. The organic kind is a coenzyme. And a coenzyme bound to the apoenzyme very tightly is a prosthetic group. So the metal ion is a cofactor but not a coenzyme, and a prosthetic group is a coenzyme described by how tightly it is held.”',
+ cn:'<span class="pg">p043</span>。<b>完整一格在卡 18。</b>放在这里是因为<b>这三个词她在四张卡上见过，混起来很容易</b>。判据是两问：<b>是有机分子吗</b>（是 → 辅酶）· <b>结合得紧吗</b>（紧 → 辅基）。'},
+{r:'高', q:'Biotin, tetrahydrofolate, S-adenosylmethionine — all one carbon. What separates them?',
+ en:'“The oxidation level of that carbon. The textbook lists the one-carbon groups in order: methyl, hydroxymethyl, formyl and carboxyl. S-adenosylmethionine carries the most reduced one, the methyl. Tetrahydrofolate carries the middle two, and the textbook names them activated formaldehyde and activated formic acid. Biotin carries the most oxidised one, carbon dioxide. So the question is not which carrier but which level, and the carrier follows.”',
+ cn:'<span class="pg">p048 p049</span>。<b>这是这张卡上最反直觉的一条</b>：「一碳代谢」不是一个话题，是<b>一把梯子，每一级派一个载体</b>。<br><b>而且书自己在梯子上写了台阶</b>：从亚甲基-THF 升到甲酰-THF 要<b>脱氢</b>（NADP⁺），还要花 ATP（<span class="pg">p049</span>）。<b>那一步就是爬一格。</b>'},
+{r:'中', q:'Coenzyme Q or a cytochrome — both pass electrons, so why both?',
+ en:'“Because they pass different numbers of them. The textbook says NAD-plus, FMN and Q move a whole pair, two electrons with two protons, while the iron-sulfur proteins and the cytochromes transfer electrons only. An iron changes by one valency at a time, so a cytochrome takes one. The quinone can also sit half-reduced as a semiquinone, so it can take two and give them out one at a time. The textbook says this arrangement is what lets the two-electron carrier ubiquinol interact with the one-electron carrier cytochrome c.”',
+ cn:'<span class="pg">p142 p144</span>，两句都是书的。<b>「铁一次只能换一价」是推的一步，要说明。</b><br><b>完整的质子账（2 ＋ 4 ＋ 0 = 6）在速背第 17 点</b>，那是这张卡最值钱的一格。'},
+{r:'中', q:'ATP or UDP-glucose — both are called activated. Activated for what?',
+ en:'“For different transfers, and the giveaway is which half leaves. ATP hands over a phosphate and what is left behind is ADP. UDP-glucose hands over the glucose and what is left behind is UDP. So ATP activates by raising the energy of the acceptor, and UDP activates the sugar itself so a glycosyltransferase can move it. The textbook calls the activated sugar a macroergic derivative, and it says the activation has to happen before the glycosidic bond can be made.”',
+ cn:'<span class="pg">p051 p170</span>。<b>判据一句话：看走的是哪一半。</b><br><b>这一条顺手回答了「为什么合成比分解贵」</b>：从葡萄糖做糖原<b>要两次磷酸化</b>，所以磷酸解拆回来只保住<b>不到一半</b>付出去的能量（<span class="pg">p174</span>）。'},
+{r:'中', q:'A carrier or a substrate — how do you tell, if both appear in the equation?',
+ en:'“By whether it comes back. A substrate is changed into the product and does not come back. A carrier is regenerated, so over a whole pathway it cancels out. That is why the citric acid cycle is written as producing NADH but the cell does not accumulate NADH. The respiratory chain oxidises it back to NAD-plus, and the same molecules go round again. The textbook makes the same point about cofactors in general: they are not consumed.”',
+ cn:'<b>判据一句话：它回不回来。</b><br><b>这一条是卡 31 那笔账的骨架</b>：丙酮酸氧化脱羧一步用了五个辅因子，<b>只有底物被消耗</b>，五个辅因子都回到原处。⚠ 严格说 NAD⁺ 在动力学上表现得像底物（<span class="pg">p043</span>），<b>所以这一条要说「在通路的尺度上」</b>。'}
+]},
+
+{g:'为什么类', gn:'卡上给了结论没给理由的地方 —— 他插刀就插在这里。这一族的「为什么」多半落在同一处：<b>细胞要同时做两件相反的事</b>。', items:[
+{r:'高', q:'Why does the cell need carriers at all?',
+ en:'“Because what is being moved cannot exist on its own. The textbook says released electrons and protons are not capable of independent existence, so an oxidation is always coupled to the reduction of something else. The carrier is what does that coupling. The same holds for a chemical group. A free acyl group or a free amino group cannot sit in water waiting, so something has to hold it between the reaction that takes it off and the reaction that puts it on.”',
+ cn:'<span class="pg">p134</span> 是书的原话（电子和质子<b>没有能力独立存在</b>）。<b>把这一句推广到基团上是这张卡自己做的一步</b>，要说明。<br><b>这是 why 的第一层</b>，也是这张卡最稳的那一层 —— 它不是记来的，是从一句话推出来的。'},
+{r:'高', q:'Why only a handful of carriers, when there are hundreds of pathways?',
+ en:'“Because a carrier only works if two different enzymes recognise it, the one that loads it and the one that unloads it. Every new carrier would mean a new pair of recognitions on both sides. Sharing one costs nothing extra. So the more pathways there are, the more it pays to make the connector a standard part. The textbook’s own layout shows the result: across ten chapters the same dozen names keep coming back.”',
+ cn:'⚠ <b>这一层书里没有</b>，是从书的编排读出来的一个论证。<b>说的时候标明是自己的推理。</b><br><b>但它接得住下一刀</b>：他问「那为什么不同生物用的是同一套」，答案落在<b>进化</b>上 —— 标准件一旦定了就改不动，因为改一个接头要同时改上百个酶。'},
+{r:'中', q:'Why does the cell keep two electron carriers instead of one?',
+ en:'“Because it has to run oxidation and reduction at the same time. One pool cannot be mostly oxidised and mostly reduced at once. So the cell keeps two pools, with almost the same chemistry, and tells them apart by one phosphate that takes no part in the chemistry at all. The textbook gives the division of labour: NADPH is the reducing equivalent for biosynthesis, and NAD-plus serves degradation and the reactions leading to ATP.”',
+ cn:'<b>分工那一句是书的</b>（<span class="pg">p044</span>）。⚠ <b>「两个比例可以分别设定」这个理由书里没有</b>，是通用知识，说的时候标明。<br><b>这一条被追数字时怎么办</b>：他问「那两个比例各是多少」，<b>不要编</b>。答判据：<b>一个池子的氧化还原比由它连着的那些反应共同决定，而两个池子连的是方向相反的反应</b>。'},
+{r:'中', q:'Why is the respiratory chain a chain at all, instead of one step?',
+ en:'“Because of the size of the drop. From NADH at minus 0.32 volts to oxygen at plus 0.82 is 1.14 volts over two electrons, which is a very large release in one go. The textbook says both the production and the consumption of Gibbs energy are quantised, each portion corresponding roughly to one partial reaction. One ATP is about 30 and a half kilojoules per mole. So the drop is cut into steps, each small enough to be captured, and the carriers are the steps.”',
+ cn:'<span class="pg">p134 p135 p133</span>。<b>−220 kJ/mol 这个数是算的不是书的</b>（速背第 8 点有推导）。<br><b>卡 24 和卡 25 上都有这一条的短版</b>，这里给的是<b>从载体这一侧看</b>的版本：<b>载体不是链上的零件，载体就是那些台阶本身。</b>'},
+{r:'中', q:'Why must a group be activated before it can be transferred?',
+ en:'“Because transfer only runs downhill if the donor is the less stable side. The textbook says a monosaccharide must be activated into a macroergic derivative before a glycosyltransferase can move it. It says attaching the transferred carbon dioxide to biotin consumes ATP, and that the methyl group of methionine is activated by reacting the amino acid with ATP. So the energy is paid at loading, and the transfer itself can then be spontaneous.”',
+ cn:'<span class="pg">p049 p048 p170</span>，三条都是书的。<br><b>这一条是「为什么合成比分解贵」最具体的一个回答</b>（卡 <b>x-meta</b> 有账的那一半）：<b>分解是往下走，合成要先把每一块货抬上去。</b>'},
+{r:'中', q:'Why can biotin be used as a laboratory label, if it is a metabolic coenzyme?',
+ en:'“Because of the one property the textbook mentions in passing. Biotin binds to avidin, a specific protein of egg white, and is thereby inactivated, and the textbook adds that a lot of raw egg white in the diet can cause a biotin deficiency. That binding is extremely tight. So biotin can be attached to almost anything and then captured by avidin or streptavidin, which is how I label an antigen and titrate binding on yeast display.”',
+ cn:'<span class="pg">p049</span>。⚠ <b>书没有给这个结合有多紧的数。</b>被逼问就说<b>通用文献常引到 10⁻¹⁵ M 上下</b>，并标明这不是书上的；书能撑住的只有<b>「使生物素失活」</b>和<b>生食蛋清会造成缺乏</b>这两条后果。<br><b>这是段 4 那条桥的第二层</b>，接住了就落在卡 <b>02</b>（Kd）上。'}
+]}
+]
+});
