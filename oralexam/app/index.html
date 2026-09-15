@@ -419,6 +419,42 @@ button.b:disabled{opacity:.35;cursor:default}
   background:transparent;color:inherit}
 .cloze .pt-big b.show{color:var(--accent)}
 
+/* ---------- 必背：她自己划的段 ---------- */
+/* 跟 app 已有的强调都不一样：加粗是卡自己定的，这个底色＋下划线是「我自己挑的」 */
+/* 下划线用 text-decoration 不用 border-bottom：它跟着字一起画，
+   朗读到这一句时 span.s.cur 的黄底盖不掉它；换行也跟着断 */
+.mk{background:color-mix(in srgb,var(--accent) 15%,transparent);border-radius:2px;cursor:pointer;
+  text-decoration:underline;text-decoration-color:var(--accent);
+  text-decoration-thickness:2px;text-underline-offset:3px}
+/* 朗读时整块被压到 .35，标记跟着一起淡下去，所以这里把底色加浓，压暗了也还看得出 */
+.reading .mk{background:color-mix(in srgb,var(--accent) 34%,transparent)}
+/* 遮词模式：盖住的那个 b 里面的标记不许把黑条掏出一块亮的，只留下划线 */
+.cloze .pt-big b .mk,.cloze .en b .mk,.cloze .say b .mk,
+.cloze ul.sib li .txt b .mk,.cloze .detail .e b .mk{background:transparent}
+#mkpop{position:fixed;z-index:70;display:none}
+#mkpop button{font-family:inherit;font-size:14.5px;font-weight:600;border:1px solid var(--accent);
+  background:var(--accent);color:var(--onAccent);border-radius:16px;padding:9px 16px;cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.22)}
+#mkpop button.off{background:var(--card);color:var(--accent)}
+#mktoast{position:fixed;left:50%;transform:translateX(-50%);bottom:86px;z-index:80;display:none;
+  background:var(--ink);color:var(--paper);border-radius:18px;padding:9px 16px;font-size:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.mkgrp{margin:30px 0 0}
+.mkgrp h3{margin:0 0 3px;font-size:16.5px;line-height:1.5}
+.mkgrp p.mn{margin:0;font-size:12.5px;color:var(--faint);line-height:1.6}
+.mkgrp p.mn b{color:var(--warn)}
+.mklist{list-style:none;margin:10px 0 0;padding:0}
+.mklist li{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;margin-bottom:8px;
+  background:var(--card);border:1px solid var(--rule);border-radius:11px}
+.mklist .mt{flex:1;min-width:0;font-family:Georgia,"Times New Roman",serif;font-size:16px;line-height:1.66;
+  word-break:break-word}
+.mklist .mw{display:block;font-family:inherit;font-size:11.5px;color:var(--faint);margin-top:5px}
+.mklist .mg{flex:none;font-size:12.5px;color:var(--accent);text-decoration:none;white-space:nowrap;
+  font-weight:600;margin-top:3px}
+.mklist .mx{flex:none;border:none;background:transparent;color:var(--faint);cursor:pointer;
+  font-size:15px;font-family:inherit;padding:0 2px}
+.mklist.mkstale li{background:var(--warnbg);border-color:var(--warn)}
+
 /* ---------- 降级梯子 ---------- */
 .ladder2{background:var(--soft);border-radius:11px;padding:15px 17px;margin-top:16px;
   font-size:14px;line-height:1.75;text-align:left}
@@ -675,7 +711,7 @@ function renderList(){
     + '<a href="#/q/micro">微生物学 · '
     + (((window.QBANK||{}).micro||[]).length) + ' 道</a></div></div>'
     + '<div class="board"><h3>今天</h3>'
-    + '<p class="sub2">只有<b>出声说完</b>的才算。看一遍不记数。<br><b>9 月 21 日之后不再做新材料</b>——剩下的时间只有出声、复习、演练。</p>'
+    + '<p class="sub2">只有<b>出声说完</b>的才算。看一遍不记数。<br><b>9 月 26 日之后不再做新材料</b>——剩下的时间只有出声、复习、演练。</p>'
     + '<div class="stats">'
     + '<div class="stat' + (todayN ? ' good' : '') + '"><b>' + todayN + '</b><span>今天出声</span></div>'
     + '<div class="stat"><b>' + streak + '</b><span>连续天数</span></div>'
@@ -685,6 +721,8 @@ function renderList(){
     + (dueN ? '<p class="due"><b>该复习：</b>' + dueLinks + '</p>' : '')
     + '<button class="bbtn" onclick="copyDigest(this)">复制进度给老师</button>'
     + ' <a class="bbtn ghost" href="#/fav" style="text-decoration:none">☆ 不会念的</a>'
+    + ' <a class="bbtn ghost" href="#/mk" style="text-decoration:none">★ 必背 '
+    + mkLoad().length + ' 段</a>'
     + ' <button class="bbtn ghost" onclick="if(confirm(\'清空全部练习记录？\')){localStorage.removeItem(PK);route();}">清空记录</button>'
     + '</div>' + goHtml + '<input id="search" placeholder="搜题目、关键词…">';
 
@@ -972,6 +1010,7 @@ function renderCard(c){
     + (c.ask || c.recog ? '<button id="mAsk" onclick="mode(\'ask\')">追问</button>' : '')
     + (c.figs && c.figs.length ? '<button id="mFig" onclick="mode(\'figs\')">图</button>' : '')
     + '<button id="mCloze" onclick="cloze()" title="把关键词盖住，点一下露出">遮词</button>'
+    + '<button id="mMk" onclick="mkGo()" title="我划过的必背段">必背</button>'
     + '<button onclick="location.hash=\'#/fav\'" title="收藏的词和句">☆</button>'
     + '<button onclick="location.hash=\'#/wb\'" title="单词本">📕</button>'
     + '</div>';
@@ -987,6 +1026,8 @@ function renderCard(c){
   mode('cram');
   addSpeakers();
   syncCloze();
+  mkApplyAll();
+  mkSyncBtn();
 }
 
 function buildCram(c){
@@ -1042,7 +1083,8 @@ function buildDrill(c){
 
   h += '<section class="step"><span class="tag">对答案</span><h2>刚才说到了哪些？</h2>'
      + '<p class="lead">点掉你说到的，漏 2 条以内算过。<b>看不懂的按右边问号展开。</b></p>'
-     + '<ul class="sib" id="sib"></ul><div class="tally" id="tally">还没点</div></section>';
+     + '<ul class="sib" id="sib">' + sibHtml(c) + '</ul>'
+     + '<div class="tally" id="tally">还没点</div></section>';
 
   for (var i=0;i<c.segs.length;i++){
     var s = c.segs[i];
@@ -1144,17 +1186,23 @@ function buildAsk(c){
 }
 
 /* =================== behaviour =================== */
+/* 对答案那一屏的清单。buildDrill 先把它写进 HTML（这样「必背」离屏重建正文时
+   文字跟真页面一模一样），wireSib 再用同一段 HTML 覆盖一遍并挂事件，结果不变。 */
+function sibHtml(c){
+  if (!c || !c.sib) return '';
+  var u = '';
+  for (var j=0;j<c.sib.length;j++){
+    u += '<li><span class="bx"></span><span class="txt">' + c.sib[j][0] + '</span>'
+      +  '<button class="more" title="展开">?</button>'
+      +  '<div class="detail"><p class="e">' + c.sib[j][1] + '</p>'
+      +  '<p class="c">' + c.sib[j][2] + '</p></div></li>';
+  }
+  return u;
+}
 function wireSib(){
   var sib = document.getElementById('sib');
   if (!sib || !C.sib) return;
-  var u = '';
-  for (var j=0;j<C.sib.length;j++){
-    u += '<li><span class="bx"></span><span class="txt">' + C.sib[j][0] + '</span>'
-      +  '<button class="more" title="展开">?</button>'
-      +  '<div class="detail"><p class="e">' + C.sib[j][1] + '</p>'
-      +  '<p class="c">' + C.sib[j][2] + '</p></div></li>';
-  }
-  sib.innerHTML = u;
+  sib.innerHTML = sibHtml(C);
   sib.addEventListener('click', function(e){
     var li = e.target.closest('li'); if (!li) return;
     if (e.target.classList.contains('more')){ li.classList.toggle('open'); return; }
@@ -1232,6 +1280,401 @@ function markRun(spoken){
   box.innerHTML = '<div class="delta">' + msg + '<br>' + next + '</div>'
     + '<div class="note" style="text-align:left"><p style="margin:0">'
     + '记下了，第 ' + r.runs.length + ' 次。回首页点「复制进度给老师」，我看数字给你点评。</p></div>';
+}
+
+/* =================== 必背 · 她自己划出来的段 ===================
+   2026-09-15 Ruojin：「我选中（不管长短，不管是到哪个词，而不是看你自己确定的
+   段落/句子/词语）然后标记为重点需要背」。
+   这是第一个**往下减**的功能：三十张卡在这里变成她自己挑的一份短清单，
+   考前一晚只读 #/mk 那一页。
+
+   卡的 HTML 每次导航都重新生成，所以标记不能存位置，只能存**文字本身**：
+   选中的原文 ＋ 前后各 48 个字的上下文。每次渲染完把正文的文本节点走一遍拼成
+   一条纯文本，用上下文把重复出现的那几处分开，再**逐个文本节点**包成 span.mk
+   （所以一段话跨了几个标签也能包住）。
+   找不回来的**不删**，在清单里单独一节标出来，由她决定重划还是删。 */
+var MKK = 'oralexam.mark.v1';
+var MKCTX = 48;
+var MKSEC = {cram:'速背', drill:'演练', ask:'追问', figs:'图'};
+var MKSKIP = '.spk, .favs, .fold';          /* 这几个按钮是渲染后塞进正文的，还会变字（☆/★），不算正文 */
+var mkSel = null, mkTimer = null, mkToastT = null, MKJUMP = '';
+
+function mkLoad(){ try { return JSON.parse(localStorage.getItem(MKK)) || []; } catch(e){ return []; } }
+function mkSave(a){ try { localStorage.setItem(MKK, JSON.stringify(a)); } catch(e){} }
+function mkNewId(){ return String(Date.now()) + '-' + String(Math.floor(Math.random() * 1000000)); }
+function mkGo(){ location.hash = '#/mk'; }
+/* 卡上的字里有 < 和 &（ΔG < 0 之类），清单页要转义，不然会把那一行吃掉 */
+function mkEsc(x){
+  return String(x == null ? '' : x).split('&').join('&amp;').split('<').join('&lt;')
+         .split('>').join('&gt;').split('"').join('&quot;');
+}
+
+/* ---- 正文的纯文本 ---- */
+function mkNodes(root){
+  var out = [], w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  while (w.nextNode()){
+    var n = w.currentNode, p = n.parentNode;
+    if (!p || !n.nodeValue || !n.nodeValue.length) continue;
+    if (p.closest && p.closest(MKSKIP)) continue;
+    out.push(n);
+  }
+  return out;
+}
+function mkPlain(nodes){
+  var s = '', st = [];
+  for (var i=0;i<nodes.length;i++){ st.push(s.length); s += nodes[i].nodeValue; }
+  return {s:s, starts:st};
+}
+/* 空白折叠成一个空格，并记下每个字回到原文的位置。
+   这样卡里换行、缩进改了，标记还能对上。 */
+function mkIsSp(c){ return c === 32 || c === 9 || c === 10 || c === 13 || c === 12 || c === 160; }
+function mkNorm(s){
+  var out = '', map = [], prev = false;
+  for (var i=0;i<s.length;i++){
+    if (mkIsSp(s.charCodeAt(i))){
+      if (prev) continue;
+      out += ' '; map.push(i); prev = true;
+    } else { out += s.charAt(i); map.push(i); prev = false; }
+  }
+  map.push(s.length);
+  return {s:out, map:map};
+}
+function mkTrim(s){
+  var a = 0, b = s.length;
+  while (a < b && mkIsSp(s.charCodeAt(a))) a++;
+  while (b > a && mkIsSp(s.charCodeAt(b-1))) b--;
+  return s.slice(a, b);
+}
+function mkFlat(s){ return mkNorm(String(s == null ? '' : s)).s; }
+
+/* ---- 找回一段：先按文字找，有好几处就比上下文 ---- */
+function mkLocate(N, m){
+  var needle = mkTrim(mkFlat(m.text));
+  if (needle.length < 1) return null;
+  var hay = N.s, hits = [], i = hay.indexOf(needle);
+  while (i > -1 && hits.length < 300){ hits.push(i); i = hay.indexOf(needle, i + 1); }
+  if (!hits.length) return null;
+  var pre = mkFlat(m.pre), post = mkFlat(m.post), best = hits[0], bestSc = -1;
+  for (var k=0;k<hits.length;k++){
+    var at = hits[k], sc = 0, lim = Math.min(pre.length, at);
+    while (sc < lim && pre.charAt(pre.length - 1 - sc) === hay.charAt(at - 1 - sc)) sc++;
+    var end = at + needle.length, sc2 = 0, lim2 = Math.min(post.length, hay.length - end);
+    while (sc2 < lim2 && post.charAt(sc2) === hay.charAt(end + sc2)) sc2++;
+    if (sc + sc2 > bestSc){ bestSc = sc + sc2; best = at; }
+  }
+  return {a: N.map[best], b: N.map[best + needle.length]};
+}
+
+/* ---- 包起来。一段话可能横跨好几个文本节点（粗体里一半、后面一句一半），
+       所以不去 surroundContents 整个区间，而是**一个文本节点切一刀包一个**。 ---- */
+function mkWrap(root, id, a, b){
+  var nodes = mkNodes(root), P = mkPlain(nodes), got = 0;
+  for (var i=0;i<nodes.length;i++){
+    var node = nodes[i], ns = P.starts[i], len = node.nodeValue.length, ne = ns + len;
+    if (ne <= a || ns >= b) continue;
+    var s0 = Math.max(a, ns) - ns, e0 = Math.min(b, ne) - ns;
+    if (e0 <= s0) continue;
+    var t = node;
+    if (e0 < len) t.splitText(e0);          /* 先切尾 */
+    if (s0 > 0) t = t.splitText(s0);        /* 再切头，剩下的就是要包的那一截 */
+    var par = t.parentNode; if (!par) continue;
+    var sp = document.createElement('span');
+    sp.className = 'mk'; sp.setAttribute('data-mk', id);
+    par.replaceChild(sp, t); sp.appendChild(t);
+    got++;
+  }
+  return got;
+}
+function mkStrip(root){
+  var els = root.querySelectorAll ? root.querySelectorAll('span.mk') : [];
+  for (var i=els.length-1;i>=0;i--){          /* 倒着来：两段套在一起时先脱里面那层 */
+    var e = els[i], p = e.parentNode; if (!p) continue;
+    while (e.firstChild) p.insertBefore(e.firstChild, e);
+    p.removeChild(e);
+  }
+  if (els.length && root.normalize) root.normalize();
+}
+function mkForCard(id){
+  var a = mkLoad(), out = [];
+  for (var i=0;i<a.length;i++) if (a[i].card === id) out.push(a[i]);
+  return out;
+}
+/* 当前这张卡：先把旧的高亮全脱掉（可以重复跑），再一条条包回去。
+   包不上的记 miss=1 存起来，清单页照这个标「找不到了」。 */
+function mkApplyAll(){
+  var root = document.getElementById('main');
+  if (!root || !window.C || !document.getElementById('cram')) return;
+  mkStrip(root);
+  var all = mkLoad(), dirty = false, any = false;
+  for (var i=0;i<all.length;i++){
+    if (all[i].card !== C.id) continue;
+    any = true;
+    var N = mkNorm(mkPlain(mkNodes(root)).s);   /* 每条都重新拼一次：上一条已经把节点切开了 */
+    var hit = mkLocate(N, all[i]), ok = false;
+    if (hit && hit.b > hit.a) ok = mkWrap(root, all[i].id, hit.a, hit.b) > 0;
+    if (ok && all[i].miss){ delete all[i].miss; dirty = true; }
+    if (!ok && !all[i].miss){ all[i].miss = 1; dirty = true; }
+  }
+  if (any && dirty) mkSave(all);
+}
+function mkSyncBtn(){
+  var b = document.getElementById('mMk');
+  if (!b || !window.C) return;
+  var n = mkForCard(C.id).length;
+  b.textContent = n ? ('必背 ' + n) : '必背';
+}
+
+/* ---- 选中 → 冒出「★ 标成必背」 ---- */
+function mkSecOf(node){
+  var el = (node && node.nodeType === 3) ? node.parentNode : node;
+  if (!el || !el.closest) return '';
+  var s = el.closest('#cram, #drill, #ask, #figs');
+  return s ? s.id : '';
+}
+function mkOffset(nodes, starts, container, offset){
+  if (!container) return -1;
+  if (container.nodeType === 3){
+    for (var i=0;i<nodes.length;i++) if (nodes[i] === container) return starts[i] + offset;
+    return -1;
+  }
+  var child = container.childNodes ? container.childNodes[offset] : null;
+  if (child){
+    for (var j=0;j<nodes.length;j++)
+      if (nodes[j] === child || (child.nodeType === 1 && child.contains(nodes[j]))) return starts[j];
+  }
+  for (var k=nodes.length-1;k>=0;k--)
+    if (container.contains && container.contains(nodes[k])) return starts[k] + nodes[k].nodeValue.length;
+  return -1;
+}
+function mkHidePop(){ var p = document.getElementById('mkpop'); if (p) p.style.display = 'none'; }
+function mkPop(){
+  var pop = document.getElementById('mkpop');
+  if (!pop){
+    pop = document.createElement('div'); pop.id = 'mkpop';
+    pop.addEventListener('mousedown', function(ev){ ev.preventDefault(); });  /* 别把选区点没了 */
+    document.body.appendChild(pop);
+  }
+  return pop;
+}
+function mkShowPop(rect, id){
+  var pop = mkPop();
+  pop.innerHTML = '';
+  var b = document.createElement('button');
+  b.type = 'button';
+  if (id){ b.className = 'off'; b.textContent = '✕ 不背了'; b.onclick = function(){ mkOff(id); }; }
+  else {
+    b.textContent = '★ 标成必背'; b.onclick = function(){ mkAdd(); };
+    var wp = document.getElementById('wpop');          /* 双击选词时两个浮框会叠在一起 */
+    if (wp) wp.style.display = 'none';
+  }
+  pop.appendChild(b);
+  pop.style.display = 'block';
+  var w = pop.offsetWidth || 130, h = pop.offsetHeight || 40;
+  var left = Math.max(8, Math.min(rect.left, window.innerWidth - w - 8));
+  var top = rect.bottom + 14;                 /* 放选区下面：手机自带的复制条在上面 */
+  if (top + h > window.innerHeight - 8) top = Math.max(8, rect.top - h - 14);
+  pop.style.left = left + 'px'; pop.style.top = top + 'px';
+}
+function mkCheckSel(){
+  var sel = window.getSelection && window.getSelection();
+  if (!sel || !sel.rangeCount || sel.isCollapsed || !window.C){ mkSel = null; mkHidePop(); return; }
+  var r = sel.getRangeAt(0), sec = mkSecOf(r.startContainer);
+  var root = document.getElementById('main');
+  if (!sec || !root || !root.contains(r.endContainer)){ mkSel = null; mkHidePop(); return; }
+  var nodes = mkNodes(root), P = mkPlain(nodes);
+  var a = mkOffset(nodes, P.starts, r.startContainer, r.startOffset);
+  var b = mkOffset(nodes, P.starts, r.endContainer, r.endOffset);
+  if (a < 0 || b < 0 || b <= a){
+    var raw = mkTrim(sel.toString());                 /* 退一步：直接在正文里找这串字 */
+    var at = raw.length > 1 ? P.s.indexOf(raw) : -1;
+    if (at < 0){ mkSel = null; mkHidePop(); return; }
+    a = at; b = at + raw.length;
+  }
+  var cut = P.s.slice(a, b), txt = mkTrim(cut);
+  if (txt.length < 2){ mkSel = null; mkHidePop(); return; }
+  var a2 = a + cut.indexOf(txt), b2 = a2 + txt.length;
+  mkSel = {card: C.id, sec: sec, text: txt,
+           pre: P.s.slice(Math.max(0, a2 - MKCTX), a2), post: P.s.slice(b2, b2 + MKCTX)};
+  mkShowPop(r.getBoundingClientRect(), '');
+}
+document.addEventListener('selectionchange', function(){
+  if (mkTimer) clearTimeout(mkTimer);
+  mkTimer = setTimeout(mkCheckSel, 260);      /* 等她把手指松开、拖完把手再冒出来 */
+});
+function mkAdd(){
+  if (!mkSel) return;
+  var all = mkLoad();
+  for (var i=0;i<all.length;i++)
+    if (all[i].card === mkSel.card && all[i].text === mkSel.text && all[i].pre === mkSel.pre){
+      mkSel = null; mkHidePop(); mkToast('这一段已经标过了'); return;
+    }
+  all.push({id: mkNewId(), card: mkSel.card, sec: mkSel.sec, text: mkSel.text,
+            pre: mkSel.pre, post: mkSel.post, ts: Date.now()});
+  mkSave(all);
+  mkSel = null; mkHidePop();
+  var s = window.getSelection && window.getSelection();
+  if (s && s.removeAllRanges) s.removeAllRanges();
+  mkApplyAll(); mkSyncBtn();
+  mkToast('标好了 · 一共 ' + mkLoad().length + ' 段');
+}
+function mkOff(id){
+  var all = mkLoad(), out = [];
+  for (var i=0;i<all.length;i++) if (all[i].id !== id) out.push(all[i]);
+  mkSave(out); mkHidePop();
+  mkApplyAll(); mkSyncBtn();
+  mkToast('取消了');
+}
+function mkDrop(i){
+  var all = mkLoad();
+  if (i < 0 || i >= all.length) return;
+  all.splice(i, 1); mkSave(all);
+  if (location.hash === '#/mk') mkRenderMk();
+  else { mkApplyAll(); mkSyncBtn(); }
+}
+function mkToast(msg){
+  var t = document.getElementById('mktoast');
+  if (!t){ t = document.createElement('div'); t.id = 'mktoast'; document.body.appendChild(t); }
+  t.textContent = msg; t.style.display = 'block';
+  if (mkToastT) clearTimeout(mkToastT);
+  mkToastT = setTimeout(function(){ t.style.display = 'none'; }, 1900);
+}
+/* 点已经标上的那一段 = 问要不要取消。capture 里拦下来，免得同时又弹出读词的框。
+   遮词模式下盖着的 b 不拦——那一下是翻开它。 */
+document.addEventListener('click', function(e){
+  if (!e.target || !e.target.closest) return;
+  if (e.target.closest('#mkpop')) return;
+  var mk = e.target.closest('span.mk');
+  if (!mk){ if (!mkSel) mkHidePop(); return; }
+  if (e.target.closest('a, button, summary, input, textarea, select')) return;
+  if (document.body.classList.contains('cloze') && e.target.closest('b')) return;
+  var sel = window.getSelection && window.getSelection();
+  if (sel && !sel.isCollapsed && sel.toString().length > 1) return;   /* 正在划字，不打扰 */
+  var wp = document.getElementById('wpop'); if (wp) wp.style.display = 'none';
+  e.stopPropagation();
+  mkSel = null;
+  mkShowPop(mk.getBoundingClientRect(), mk.getAttribute('data-mk'));
+}, true);
+window.addEventListener('scroll', function(){
+  var pop = document.getElementById('mkpop');
+  if (!pop || pop.style.display !== 'block') return;
+  var sel = window.getSelection && window.getSelection();
+  if (mkSel && sel && sel.rangeCount && !sel.isCollapsed){
+    mkShowPop(sel.getRangeAt(0).getBoundingClientRect(), '');
+    return;
+  }
+  pop.style.display = 'none';
+}, {passive:true});
+
+/* ---- 清单页 #/mk ---- */
+/* 离屏把一张卡的正文重新生成一遍，只为了确认那几段还在不在。
+   用 template：里面的 img 不会真去下载。 */
+var MKTX = {};
+function mkCardText(c){
+  if (MKTX[c.id] !== undefined) return MKTX[c.id];   /* 删一条就重画一次，别把二十张卡又拼一遍 */
+  var t = document.createElement('template');
+  t.innerHTML = '<section id="cram">' + buildCram(c) + '</section>'
+              + '<div id="drill">' + buildDrill(c) + '</div>'
+              + '<section id="ask">' + buildAsk(c) + '</section>'
+              + '<section id="figs">' + buildFigs(c) + '</section>';
+  MKTX[c.id] = mkPlain(mkNodes(t.content)).s;
+  return MKTX[c.id];
+}
+function mkRow(o, cid){
+  return '<li><span class="mt">' + mkEsc(o.m.text)
+    + '<span class="mw">' + (MKSEC[o.m.sec] || '正文')
+    + (o.lab ? ' · ' + mkEsc(o.lab) : '') + '</span></span>'
+    + (cid ? '<a class="mg" href="#/c/' + mkEsc(cid) + '/k/' + mkEsc(o.m.id) + '">进卡</a>' : '')
+    + '<button class="mx" type="button" title="删掉" onclick="mkDrop(' + o.i + ')">✕</button></li>';
+}
+function mkRenderMk(){
+  document.getElementById('top').innerHTML =
+    '<a class="home" href="#/">← 全部</a><span class="id">必背</span>';
+  var nav = document.getElementById('nav'); if (nav) nav.classList.add('hide');
+  mkHidePop();
+
+  var all = mkLoad(), built = [], cross = [];
+  for (var i=0;i<CARDS.length;i++) (CARDS[i].cross ? cross : built).push(CARDS[i]);
+  built.sort(function(a,b){ return (a.id > b.id) ? 1 : -1; });
+  var seq = built.concat(cross), byCard = {}, stale = [], okN = 0, cardN = 0, dirty = false;
+  for (i=0;i<all.length;i++){
+    var k = all[i].card;
+    (byCard[k] = byCard[k] || []).push({m: all[i], i: i});
+  }
+  var body = '';
+  for (i=0;i<seq.length;i++){
+    var c = seq[i], g = byCard[c.id];
+    if (!g || !g.length) continue;
+    delete byCard[c.id];
+    var N = mkNorm(mkCardText(c)), rows = '', liveN = 0;
+    for (var j=0;j<g.length;j++){
+      var hit = mkLocate(N, g[j].m);
+      if (hit){
+        if (g[j].m.miss){ delete g[j].m.miss; dirty = true; }
+        rows += mkRow(g[j], c.id); liveN++; okN++;
+      } else {
+        if (!g[j].m.miss){ g[j].m.miss = 1; dirty = true; }
+        g[j].lab = '卡 ' + c.id;
+        stale.push({o: g[j], cid: c.id});
+      }
+    }
+    if (!liveN) continue;
+    cardN++;
+    body += '<div class="mkgrp"><h3><a href="#/c/' + mkEsc(c.id) + '" style="text-decoration:none">'
+         + c.q + '</a></h3><p class="mn">'
+         + (c.cross ? '横向卡 · ' : (c.n ? '#' + c.n + ' · ' : ''))
+         + '卡 ' + mkEsc(c.id) + ' · ' + liveN + ' 段</p>'
+         + '<ul class="mklist">' + rows + '</ul></div>';
+  }
+  /* 卡本身没了（改过 id 或者删掉了）的标记也留着 */
+  for (var kk in byCard){
+    var g2 = byCard[kk];
+    for (var q=0;q<g2.length;q++){ g2[q].lab = '卡 ' + kk + '（这张卡现在不在了）'; stale.push({o: g2[q], cid: ''}); }
+  }
+  if (dirty) mkSave(all);
+
+  var h = '<div class="lhero"><h1>必背</h1><p>'
+    + okN + ' 段 · 来自 ' + cardN + ' 张卡'
+    + (stale.length ? ' · <b>' + stale.length + ' 段找不到了</b>' : '')
+    + '</p><p class="sub2" style="margin-top:10px">这一页是你自己划出来的，不是我挑的。'
+    + '<b>考前一晚只读这里。</b><br>在任何一张卡里选中一段话——不管多长，划到哪个词都行——'
+    + '下面会冒出「★ 标成必背」。点卡里的高亮可以取消。只存在这台机器上。</p></div>';
+  if (!all.length){
+    h += '<p class="sub2" style="margin-top:20px">还是空的。随便打开一张卡，用手指或鼠标划一段，'
+      + '点「★ 标成必背」。划多划少都行，边界你自己定。</p>';
+  }
+  h += body;
+  if (stale.length){
+    var sr = '';
+    for (i=0;i<stale.length;i++) sr += mkRow(stale[i].o, stale[i].cid);
+    h += '<div class="mkgrp"><h3>找不到了 · ' + stale.length + ' 段</h3>'
+      + '<p class="mn"><b>卡的正文改过，这几段按原文对不上了。</b>'
+      + '一条都没删——原文都在下面，你自己决定是回卡里重新划一次，还是删掉。</p>'
+      + '<ul class="mklist mkstale">' + sr + '</ul></div>';
+  }
+  document.getElementById('main').innerHTML = h;
+  window.scrollTo(0, 0);
+}
+/* #/c/<卡>/k/<标记> —— 从清单点「进卡」，直接跳到那一段 */
+function mkPath(){
+  var hh = location.hash;
+  if (hh.indexOf('#/c/') !== 0) return null;
+  var p = hh.slice(4).split('/');
+  if (p.length >= 3 && p[1] === 'k' && p[0]) return {id: p[0], k: p.slice(2).join('/')};
+  return null;
+}
+function mkJump(){
+  if (!MKJUMP) return;
+  var k = MKJUMP; MKJUMP = '';
+  var el = document.querySelector('span.mk[data-mk="' + k + '"]');
+  if (!el) return;
+  var d = el.closest('details'); if (d) d.open = true;
+  var sec = el.closest('#cram, #drill, #ask, #figs'), id = sec ? sec.id : 'cram';
+  if (id === 'drill'){
+    var st = el.closest('.step');
+    if (st) for (var i=0;i<steps.length;i++) if (steps[i] === st) cur = i;
+  }
+  mode(id);
+  setTimeout(function(){ if (el.scrollIntoView) el.scrollIntoView({block:'center'}); }, 40);
 }
 
 /* =================== router =================== */
@@ -1515,6 +1958,9 @@ function renderQB(key){
 }
 
 function route(){
+  var mp = mkPath();
+  if (mp){ var mc = byId(mp.id); if (mc){ MKJUMP = mp.k; renderCard(mc); mkJump(); return; } }
+  if (location.hash === '#/mk'){ mkRenderMk(); return; }
   var qm = location.hash.match(/^#\/q\/(basic|micro|biochem)$/);
   if (qm){ renderQB(qm[1]); return; }
   if (location.hash === '#/wb'){ wbNext(); return; }

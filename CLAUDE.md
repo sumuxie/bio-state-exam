@@ -24,11 +24,7 @@
 
 ---
 
-**开窗口先读两份，一次就够**：`oralexam/LOGIC.md`（推理链，几乎不变）和
-`oralexam/STATUS.md`（进度，每次都变）。**别回读对话历史**——口令改过很多轮，读全会卡死窗口。
-
-动手做卡时再读 `oralexam/RECIPE.md`（十一步 ＋ 卡数据字段）。
-决定先做哪道题看 `oralexam/TOPICS.md`。查具体规则看 `oralexam/PREMISES.md`。
-文档分工的完整表在 `oralexam/README.md`。
+主项目是 `oralexam/`。**先读 `oralexam/LOGIC.md` 和 `oralexam/STATUS.md`，
+别回读对话历史。** 其余文档的分工写在 `oralexam/README.md`。
 
 产出只进 `oralexam/`，只写本地文件，不发布任何东西。
