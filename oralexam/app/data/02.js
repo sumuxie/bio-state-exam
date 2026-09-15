@@ -38,29 +38,52 @@ cram:[
  {n:'06', t:'也能从速率读',
   big:'<b>Kd = k<sub>off</sub> / k<sub>on</sub></b>——同一个数，两条路到达',
   en:'“It has a kinetic reading as well: K d equals the off-rate divided by the on-rate. The same number can be reached from equilibrium or from the two rate constants.”',
-  note:'<b>注意措辞</b>：kon 和 koff 各自是动力学量，<b>它们的比值才是热力学量</b>：“k on and k off are each kinetic quantities. Their ratio is an equilibrium constant, so K d itself is thermodynamic.” 两个 Kd 相同的结合，kon 和 koff 可以差几个数量级，生物学后果完全不同。'},
+  note:'<b>注意措辞</b>：kon 和 koff 各自是动力学量，<b>它们的比值才是热力学量</b>：“k on and k off are each kinetic quantities. Their ratio is an equilibrium constant, so K d itself is thermodynamic.” 两个 Kd 相同的结合，kon 和 koff 可以差几个数量级，生物学后果完全不同。<b>可是这句话里那两个字母本身还没交代过</b>——下一格第 7、8 点把它们定死，不定死，这一条就只是两个符号在换位置。'},
+
+ {g:'两个速率常数', gn:'第 6 点里那两个字母，一直没人告诉你它们是什么。这一格就是把它们各自定死，顺便给出最容易记住的那条对比。'},
+ {n:'07', t:'k<sub>off</sub> 是什么',
+  big:'<b>已经结合好的复合物自己散开</b>的速率常数：一级，单位 <b>1/s</b>',
+  en:'“k off is the rate constant for an existing complex coming apart. It is a first-order rate constant, with units of reciprocal seconds. Read it as a probability per unit time, in the same sense as a radioactive decay constant. Each complex has a fixed chance per second of letting go. That chance does not depend on anything else in the solution. Its reciprocal is the lifetime of the complex. That lifetime is called the residence time.”',
+  note:'<b>值得带上考场的直觉只有一条：k<sub>off</sub> 的倒数就是这个复合物能活多久。</b>叫 residence time（停留时间）。<br>「一级」的意思是这一步<b>只需要一个东西在场</b>——那个复合物自己。所以它的速度只跟「现在有多少复合物」成正比：<code>v<sub>off</sub> = k<sub>off</sub>[PL]</code>。<br>「概率」那个说法不是比喻：k<sub>off</sub> = 0.001 s⁻¹ 就是「每个复合物每秒有千分之一的机会松手」，跟放射性衰变常数是同一类的量，<b>跟旁边还有多少游离配体一点关系都没有</b>。<br>（<b>书上没有这一格</b>，是通用动力学；被追出处就说 “that is the general kinetic definition”。）'},
+ {n:'08', t:'k<sub>on</sub> 是什么',
+  big:'<b>游离的蛋白和游离的配体撞上并结合</b>的速率常数：二级，单位 <b>1/(M·s)</b>',
+  en:'“k on is the rate constant for a free protein and a free ligand finding each other and binding. It is a second-order rate constant, with units of reciprocal molar reciprocal seconds. There is a concentration in those units because two separate things have to meet. The off-rate constant has no concentration in its units, because only one thing has to happen. That contrast is the cleanest way to hold the two apart.”',
+  note:'<b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>K<sub>d</sub> = k<sub>off</sub> / k<sub>on</sub></code><br>k<sub>on</sub> 是结合的速率常数，单位 <code>M⁻¹s⁻¹</code> · k<sub>off</sub> 是散开的速率常数，单位 <code>s⁻¹</code> · K<sub>d</sub> 是两者的比，单位 <code>M</code>。<br><br><b>三步推导</b>（他问「平衡和速率这两条路为什么给出同一个数」就照这个说）：<br>① 结合的速度正比于两个游离物撞在一起的机会：<code>v<sub>on</sub> = k<sub>on</sub>[P][L]</code>。<b>要两个东西同时在场，所以式子里有两个浓度</b>——这就是 k<sub>on</sub> 单位里那个 M⁻¹ 的来历。<br>② 散开的速度只取决于现在有多少复合物：<code>v<sub>off</sub> = k<sub>off</sub>[PL]</code>。<b>只要一个东西在场，所以式子里只有一个浓度</b>，单位里就没有 M。<br>③ 平衡的定义就是这两个速度相等：<code>k<sub>on</sub>[P][L] = k<sub>off</sub>[PL]</code>。两边整理 → <code>[P][L]/[PL] = k<sub>off</sub>/k<sub>on</sub></code>，左边正是第 2 点那个 K<sub>d</sub>。<br>单位也自动对上：<code>s⁻¹ ÷ M⁻¹s⁻¹ = M</code>，正好是第 3 点说的「Kd 的单位是浓度」。<br><br><b>=== 一句话理解 ===</b><br><b>k<sub>off</sub> 的倒数是「抓住之后能拿多久」，k<sub>on</sub>[L] 的倒数是「放开之后要等多久才等到下一个」。K<sub>d</sub> 就是这两段时间的比。</b><br>所以同一个 Kd 可以有两种完全不同的活法：<b>快结合、快松手</b>，和<b>慢慢才结合上、但一抓就是几个小时</b>。识别表里「两个抗体 Kd 一样，是同一个东西吗」问的就是这件事，第 6 点那句「差几个数量级」到这里才有内容。<br>（<b>书上没有这一格</b>，是通用动力学；被追出处就说 “that is the general kinetic definition”。）'},
 
  {g:'再深一层', gn:'时间不够可以砍这一格，但它是 ④ 的落点。'},
- {n:'07', t:'它其实是自由能',
+ {n:'09', t:'它其实是自由能',
   big:'ΔG°(结合) = RT ln Kd —— <b>一个数就是一个自由能</b>；书 p018 写 ΔG° = −RT ln K，差的是方向',
   en:'“Because it is an equilibrium constant, it is a free energy in disguise. The standard Gibbs free energy of <b>binding</b> equals R T times the natural log of K d. The textbook’s form is delta G equals <b>minus</b> R T ln K — the sign flips because K d describes the reverse direction, coming apart. Every <b>tenfold</b> tightening is about <b>5.7 kilojoules per mole</b> at 25 degrees — 298 kelvin.”',
   note:'标准结合吉布斯自由能等于 R T 乘以 K d 的自然对数。<br>✔ 已算：RT ln10 在 298.15 K = <b>5.71 kJ/mol</b>。<b>书里没有这个数</b>，它来自热力学定义。被追问出处就说 “that is just R T ln ten”。<br><b>方向必须说。</b>书 p018 印的是 −ΔG° = RT ln K，即 ΔG° = −RT ln K。Kd 是<b>解离</b>的 K，所以 ΔG°(解离) = −RT ln Kd，ΔG°(结合) = +RT ln Kd。只说 “delta G equals RT ln Kd” 不说哪个方向，他拿 p018 一对就是「你符号错了」。<br>「standard」被问：“Standard means all components at unit activity. The biochemical standard state, marked with a prime, fixes hydrogen-ion activity at pH 7 instead.”（p018）'},
 
- {g:'收尾', gn:'一句停住，一句伸出去。这题有两条停止线，第二条更适合你。'},
- {n:'08', t:'落点一 · 热力学',
+ {g:'收尾', gn:'一句停住。这题有两条停止线，第二条更适合你——而第二条后面那两格，是它在实验台上的正面说法。伸出去那句在最后一格。'},
+ {n:'10', t:'落点一 · 热力学',
   big:'再往下 Kd 只是<b>浓度尺度上的一个自由能差</b>',
   en:'“Below that, K d is just a free-energy difference on a concentration scale, and how that free energy splits into enthalpy and entropy is <b>calorimetry rather than biochemistry</b>.”',
   note:'标准停止句，落在热力学这块地基上。'},
- {n:'09', t:'落点二 · 测量限制',
+ {n:'11', t:'落点二 · 测量限制',
   big:'一个 Kd <b>只和它背后那个平衡一样可靠</b>',
   en:'“There is also a practical floor: a K d is no better than the equilibrium behind it. <b>Below roughly the concentration of your own binding sites</b>, a titration stops reporting affinity and starts reporting how much protein you put in.”',
-  note:'<b>这条比上一条更适合你</b>，因为说完可以顺势转进主场。它落在「测量方法的限制」那块地基上。'},
- {n:'10', t:'留口子',
+  note:'<b>这条比上一条更适合你</b>，因为说完可以顺势转进主场。它落在「测量方法的限制」那块地基上。<br><b>但它只说了失效，没说怎么不失效。</b>下面两格就是它的正面说法：既然低于自己的位点浓度就不再报亲和力，那蛋白到底该加多少——这正是他顺着你的实验最可能问下来的那一句。'},
+
+ {g:'落点二的台面做法', gn:'停止线说「低于自己的位点浓度，滴定就不再报亲和力」。这两格把它翻成正面：蛋白该加多少、配体滴多宽、读不出来的时候报什么。你实验里真的会狂加蛋白和配体，所以这一格不是理论。'},
+ {n:'12', t:'蛋白必须远低于 Kd',
+  big:'蛋白远高于 Kd 时，中点报的是<b>蛋白浓度和化学计量，不是亲和力</b>',
+  en:'“A binding titration reports K d only when the protein sits well below K d. Once the protein is far above K d, nearly every ligand molecule you add is captured at once. That goes on until the protein is saturated. The curve then straightens into two lines meeting at a corner. What the midpoint reports there is the protein concentration and the stoichiometry, not the affinity. The reason is in the definition itself. The occupancy expression uses the free ligand concentration, while the experiment plots the total ligand you added. Putting one in place of the other is only legal when the bound fraction is negligible against the total. That is exactly the condition that the protein sits below K d. The failure has a name. It is called ligand depletion.”',
+  note:'<b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>占据率</b>：<code>θ = [L]<sub>游离</sub> / (K<sub>d</sub> + [L]<sub>游离</sub>)</code>。θ 是被占住的位点比例，0 到 1 · [L]<sub>游离</sub> 是<b>没结合上的</b>那部分配体。<br><b>可是实验横轴画的是</b>：<code>[L]<sub>总</sub> = [L]<sub>游离</sub> + [PL]</code>——你移液枪加进去的那个数。<b>整张卡的中点读法建立在拿后者当前者用，这一步不是永远合法的。</b><br><br><b>四步看清它什么时候失效</b>（他问「你怎么定浓度」就照这个说）：<br>① 想用 [L]<sub>总</sub> 代替 [L]<sub>游离</sub>，条件是被结合掉的那部分可以忽略：<code>[PL] ≪ [L]<sub>总</sub></code>。<br>② 半占据那一点上 <code>[PL] = [P]<sub>总</sub>/2</code>，而同一点上 <code>[L]<sub>游离</sub> = K<sub>d</sub></code>。代进去，条件就变成 <code>[P]<sub>总</sub> ≪ 2K<sub>d</sub></code>。<b>「蛋白要远低于 Kd」这句话是这么来的，不是一条经验规矩。</b><br>③ 违反了会怎样：中点整体往右挪，<code>中点 ≈ K<sub>d</sub> + [P]<sub>总</sub>/2</code>。蛋白一旦远大于 Kd，右边第二项主导，<b>你读出来的中点就是自己加的蛋白量的一半，跟亲和力没关系了</b>。曲线也不再是双曲线，而是两条直线拐一个角。<br>④ <b>那该怎么定</b>：先从文献或预实验<b>猜一个 Kd</b> → 蛋白<b>定在它的十分之一或更低</b> → 配体<b>从 0.1×Kd 滴到 10×Kd</b>。这个跨度对应占据率 <code>0.1/1.1 ≈ 9%</code> 到 <code>10/11 ≈ 91%</code>，曲线的平台和起步都看得见，拟合才有东西可拟。<br><br><b>=== 一句话理解 ===</b><br><b>你自己加进去的位点浓度，就是这台实验的地板：你能报的最紧的 Kd，不会紧过它。</b>所以如果把蛋白压到十分之一 Kd 之后信号就弱到读不出来，<b>挡住你的已经不是这个分子的亲和力，而是这个方法的检测下限</b>。这时候诚实的做法是<b>报一个界</b>——“The K d is at or below one nanomolar, and that is the limit of the method rather than the molecule.”——而不是硬报一个数。<br>（<b>书上没有这一格</b>，书里连 dissociation constant 这个词条都没有；被追出处就说 “that is general biophysics rather than the textbook”。）'},
+ {n:'13', t:'ITC 的 c 值',
+  big:'同一条规矩的定量形式：<b>c = n · [P] / K<sub>d</sub></b>，可用区间大约 <b>1 到 1000</b>',
+  en:'“Isothermal titration calorimetry puts the same rule into a single number, the c value. It is the protein concentration times the stoichiometry, divided by K d. A usable window runs roughly from one to one thousand, and a comfortable one from ten to one hundred. If the c value is too small, the curve has almost no curvature, and a fit cannot find K d. If it is too large, the curve is a square corner, and the corner reports the stoichiometry rather than the affinity.”',
+  note:'<b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>c = n · [P]<sub>总</sub> / K<sub>d</sub></code>。c 是个<b>没有单位</b>的数 · [P]<sub>总</sub> 是池子里的蛋白浓度 · n 是化学计量，一个蛋白身上有几个位点 · K<sub>d</sub> 是你要测的那个数。<br><br><b>四步</b>：<br>① c 就是「蛋白浓度是 Kd 的多少倍」。<b>它和上一点那条「蛋白要远低于 Kd」是同一件事，只是写成了一个比值</b>，所以这一格不是新知识，是上一格的刻度。<br>② <b>c 太小（小于 1）</b>：蛋白比 Kd 还稀，每一滴配体大部分留在游离态，曲线几乎是一条斜直线。<b>没有拐弯就没有 Kd 可拟合</b>。<br>③ <b>c 太大（大于 1000）</b>：每一滴配体一进去就被吃光，直到位点用完，曲线是一个<b>直角</b>。直角的位置只告诉你 n 和蛋白浓度。<br>④ 所以实践区间是 <code>1 ≤ c ≤ 1000</code>，舒服的是 <code>10 ≤ c ≤ 100</code>：既有拐弯可以拟合，热信号又够大。要调的旋钮就是蛋白浓度，因为 Kd 不归你管、n 也不归你管。<br><br><b>=== 一句话理解 ===</b><br><b>c 值就是把「曲线拐得够不够」变成一个数。拐弯是 Kd 的唯一来源，直线和直角都没有拐弯，所以两头都测不出亲和力。</b><br>⚠ <b>这就是那个陷阱，而且它就长在你的答案里</b>：你一说「我实验里蛋白和配体都加得很足」，他下一句几乎一定是 “Then what did you actually measure?”。<b>诚实的答案是化学计量和蛋白浓度，不是亲和力。</b>先自己说出来，别等他指出来——自己说是懂行，被指出来是错。<br>（<b>书上没有 ITC</b>，是通用生物物理；被追出处就说 “that is general biophysics rather than the textbook”。）'},
+
+ {g:'留口子', gn:'主动给他一个抓手。三个词全在你的地盘，他追哪一个都答得住。'},
+ {n:'14', t:'留口子',
   big:'这就是<b>你自己在测的那个数</b>',
   en:'“And this is the number I actually measure. I work with <b>yeast display</b>: you titrate labelled antigen against cells and read the midpoint by <b>flow cytometry</b>. What decides whether the number means anything is whether the titration really reached equilibrium. At low concentrations that can take hours. The approach to equilibrium runs at k on times the ligand concentration plus k off, and at low ligand that is essentially k off alone. For a nanomolar binder that is of the order of one per hour. And if you read too early you report a K d that is too weak.”',
-  note:'<b>三个口子全在你的地盘</b>：yeast display、flow cytometry、平衡时间。他追哪一个都答得住。'}
+  note:'<b>三个口子全在你的地盘</b>：yeast display、flow cytometry、平衡时间。他追哪一个都答得住。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>k<sub>obs</sub> = k<sub>on</sub> · [L] + k<sub>off</sub></code><br>k<sub>obs</sub> 是<b>观测到的趋近平衡的速率</b>，单位 <code>s⁻¹</code>。<b>注意它不是「结合有多快」，是「信号还要多久才不再变」</b> · [L] 是游离配体浓度 · k<sub>on</sub>、k<sub>off</sub> 就是第 7、8 点那两个。<br><br><b>三步</b>：<br>① 复合物一边在生成、一边在散开：<code>d[PL]/dt = k<sub>on</sub>[P][L] − k<sub>off</sub>[PL]</code>。<br>② 配体大大过量时 [L] 可以当常数，这条式子就是一个单指数趋近，<b>指数上的那个数就是 k<sub>on</sub>[L] + k<sub>off</sub></b>。<br>③ <b>把 k<sub>obs</sub> 对 [L] 作图是一条直线：斜率就是 k<sub>on</sub>，截距就是 k<sub>off</sub>。</b>一次实验两个常数都拿到，K<sub>d</sub> 是它们的比。<b>表面等离子共振（SPR）报出来的那两个数就是这么来的。</b><br><br><b>=== 一句话理解 ===</b><br><b>[L] 很低的时候，k<sub>on</sub>[L] 这一项几乎没有，剩下 k<sub>off</sub> 一个人撑着——所以越稀的那几个滴定点，越慢到平衡。</b>等待时间被 k<sub>off</sub> 一个人卡死，跟你加了多少配体无关。nanomolar 的结合子 k<sub>off</sub> 大约是每小时一次的量级，<code>1/k<sub>obs</sub></code> 就是小时级。<b>读早了，弱的那几个点还没长满，中点就偏右，报出来的 Kd 偏弱。</b>这正是上面那句英文的算式版本。<br>（<b>书上没有这一格</b>，书里连 dissociation constant 这个词条都没有；被追出处就说 “that is general biophysics rather than the textbook”。）',
+  good:'<b>他问「你怎么知道到平衡了」，顺势给这一层：</b>“The approach to equilibrium follows a single exponential. Its observed rate is k on times the free ligand concentration, plus k off. So if you plot that observed rate against ligand concentration, the slope is k on and the intercept is k off. One experiment then gives both rate constants, and K d is their ratio. That is how a surface plasmon resonance experiment reports both numbers.”'}
 ],
-end:'<b>这十点里，前六点是要背出口的，7–10 是被追问和收尾用的。</b>整题的胜负手在第 1 点——说出「平衡常数」这四个字，Km 那个陷阱就自动挡掉了。',
+end:'<b>这十四点里，前六点是要背出口的；7–8 把 kon 和 koff 定死，是第 6 点的地基；9–14 是被追问和收尾用的，其中 12–13 是落点二的实操版，也是他最可能顺着你的实验挖的地方。</b>整题的胜负手在第 1 点——说出「平衡常数」这四个字，Km 那个陷阱就自动挡掉了。',
 
 /* ---------------- 演练 ---------------- */
 sib:[
@@ -124,7 +147,7 @@ why:{
   ['为什么半数占据的位置正好是 Kd？','把 [L] = Kd 代回质量作用式，[PL] = [P]。<b>这不是巧合，是定义直接推出来的。</b>'],
   ['那 Kd 本身由什么决定？','由结合前后的<b>自由能差</b>：ΔG°(结合) = RT ln Kd（书 p018 的 ΔG° = −RT ln K 说的是解离方向）。所以 Kd 不是界面的几何性质，<b>是一个能量</b>。“So K d is not a geometric property of the interface. It is an energy.”']
  ],
- stop:{lbl:'停 · 落在热力学（另有一条落在测量限制，见速背第 9 点）',
+ stop:{lbl:'停 · 落在热力学（另有一条落在测量限制，见速背第 11 点）',
   say:'“Below that, K d is just a free-energy difference on a concentration scale, and how that free energy splits into enthalpy and entropy is calorimetry rather than biochemistry.”'}
 },
 
@@ -213,6 +236,24 @@ ask:[
 {r:'中', q:'What is mass action?',
  en:'“The rule that each direction of a reaction runs at a rate proportional to the product of the concentrations of what reacts in it. Set the two directions equal and you get the equilibrium form: product concentrations over reactant concentrations is a constant. That is the expression I put [L] = K d into.”',
  cn:'「半数占据」那条推导全靠它。被追问就直接把 [L] = Kd 代进去演一遍。'},
+{r:'高', q:'What is k off?',
+ en:'“k off is the rate constant for an existing complex coming apart. It is first order, with units of reciprocal seconds. Read it as a probability per unit time, in the same sense as a radioactive decay constant. Each complex has a fixed chance per second of letting go, whatever else is in the solution. Its reciprocal is the lifetime of the complex. That lifetime is called the residence time.”',
+ cn:'<b>速背第 7 点。</b>「一级」＝ 这一步只要一个东西在场，所以速度只正比于复合物的量：<code>v<sub>off</sub> = k<sub>off</sub>[PL]</code>。⚠ <b>书上没有</b>，通用动力学。'},
+{r:'高', q:'What is k on?',
+ en:'“k on is the rate constant for a free protein and a free ligand finding each other and binding. It is second order, with units of reciprocal molar reciprocal seconds. There is a concentration in those units because two separate things have to meet. The off-rate constant has no concentration in its units, because only one thing has to happen. K d is the ratio of the two, k off over k on.”',
+ cn:'<b>速背第 8 点。</b>单位里有没有浓度，就是「要几个东西碰到一起」的直接后果。⚠ <b>书上没有</b>，通用动力学。'},
+{r:'中', q:'What is residence time?',
+ en:'“It is how long a complex lasts once it has formed. It is one over k off. A binder with an off-rate of one per hour has a residence time of about an hour. Two binders can share a K d and still have residence times that differ by orders of magnitude.”',
+ cn:'<b>k<sub>off</sub> 唯一值得带上考场的直觉。</b>它也是「两个抗体 Kd 一样是不是同一个东西」那条的正面答案。⚠ <b>书上没有</b>，通用。'},
+{r:'高', q:'What is ligand depletion?',
+ en:'“It is what happens when enough of the added ligand ends up bound that the free concentration is no longer what you pipetted. Occupancy is defined by the free ligand, so the fitted K d comes out wrong. It happens when the binding sites are not well below K d. The cure is to lower the protein, or to fit the depletion explicitly.”',
+ cn:'<b>这是「半数占据 ≠ 半数蛋白被用掉」那个陷阱的正式名字</b>，也是速背第 12 点那条推导的名字。有名字就说名字，比描述现象稳。⚠ <b>书上没有</b>，通用。'},
+{r:'中', q:'What is the c value in isothermal titration calorimetry?',
+ en:'“It is the protein concentration times the stoichiometry, divided by K d. It says whether the titration curve will bend enough to be fitted. Roughly one to one thousand is usable, and ten to one hundred is comfortable. Too small and the curve is nearly a straight line. Too large and it is a square corner, which reports stoichiometry rather than affinity.”',
+ cn:'<b>速背第 13 点。</b>它就是「蛋白要远低于 Kd」写成比值。⚠ <b>书上没有 ITC</b>，通用生物物理。'},
+{r:'中', q:'What is surface plasmon resonance?',
+ en:'“It is a label-free method that watches binding in real time. One partner is immobilised on a sensor surface, and the other flows over it. The instrument reads how much mass is bound at the surface as that changes. Because you see the whole time course, you get k on and k off directly, and K d as their ratio.”',
+ cn:'<b>说了 SPR 就会被追怎么拿到两个常数</b>，答案是速背第 14 点那条 <code>k<sub>obs</sub> = k<sub>on</sub>[L] + k<sub>off</sub></code>：对 [L] 作图，斜率 k<sub>on</sub>、截距 k<sub>off</sub>。⚠ <b>书上没有</b>，通用生物物理。'},
 {r:'中', q:'What is occupancy?',
  en:'“The fraction of binding sites that are filled at a given free-ligand concentration. K d is the concentration at which that fraction is one half.”'}
 ],
@@ -227,7 +268,13 @@ ask:[
  cn:'<b>书自己给的理由，一个词就够</b>：thermolabile，书上印的就是这个词（<span class="pg">p054</span>）。书还列了第三条路——用光激发，但那时反应走的是另一条反应坐标：“The textbook lists a third route, exciting the reactants with light. But then the reaction usually runs along a different reaction coordinate.”'},
 {r:'中', q:'Why use Lineweaver-Burk instead of reading the curve?',
  en:'“Because measuring rates at high substrate concentration is imprecise and expensive in material, so in practice the equation is linearised. You plot one over v against one over substrate concentration. That gives a straight line with slope K m over V max and intercept one over V max. The textbook says exactly that.”',
- cn:'<span class="pg">p056</span>。<b>这是一道方法题</b>，而方法题是这位老师的口味。'}
+ cn:'<span class="pg">p056</span>。<b>这是一道方法题</b>，而方法题是这位老师的口味。'},
+{r:'高', q:'Why does k on carry a concentration in its units and k off not?',
+ en:'“Because binding needs two partners to meet, so its rate depends on two concentrations. Coming apart needs only the complex that is already there, so its rate depends on one concentration. The rate constant carries whatever units are left over. That is why k on is per molar per second and k off is simply per second.”',
+ cn:'<b>这是分开这两个常数最干净的一刀</b>，比背单位可靠。顺下去就是 <code>s⁻¹ ÷ M⁻¹s⁻¹ = M</code>，正好接回「Kd 的单位是浓度」。'},
+{r:'高', q:'Why do you keep the protein well below K d, and how do you choose the number?',
+ en:'“Because half-occupancy is defined by the free ligand concentration, while the titration plots the total ligand added. Those two agree only when very little of the ligand is bound. In practice I first guess a K d from the literature or from a pilot run. Then I set the protein at a tenth of that or lower. Then I titrate the ligand from about a tenth of K d up to ten times K d. That span covers roughly a tenth to nine tenths of the sites, so the curve has both ends on it. If the signal is too weak at that protein concentration, then the detection limit of the method is the floor on the affinity I can report. In that case I report a bound rather than a number.”',
+ cn:'<b>这是他顺着你实验最可能问下来的那一句，推导在速背第 12 点。</b>ITC 的说法见第 13 点：<code>c = n[P]/K<sub>d</sub></code>，1–1000 可用、10–100 舒服。<b>「报一个界」这半句不要省</b>——报界是方法学素养，硬报一个数是可以被当场证伪的错误。⚠ <b>书上没有</b>，通用生物物理。'}
 ]},
 
 {g:'陷阱', gn:'这题的陷阱密度是所有卡里最高的。', items:[
@@ -242,7 +289,10 @@ ask:[
  cn:'这是滴定浓度下限的由来，也是识别表里那道「为什么滴定会失效」。'},
 {r:'中', q:'（陷阱）两个 Ki',
  en:'“K i is for the enzyme-inhibitor complex. K i prime is for the enzyme-substrate-inhibitor complex.”',
- cn:'书两个都给了（<span class="pg">p060</span>），而且说反竞争性抑制<b>在单底物反应里很罕见，在双底物反应里相当常见</b>。'}
+ cn:'书两个都给了（<span class="pg">p060</span>），而且说反竞争性抑制<b>在单底物反应里很罕见，在双底物反应里相当常见</b>。'},
+{r:'高', q:'（陷阱）狂加蛋白和配体 —— 那测到的是化学计量，不是亲和力',
+ en:'“If I load protein far above K d, the titration reports how much protein I put in. It reports the stoichiometry rather than the affinity.”',
+ cn:'⚠ <b>这一条就长在你自己的实验动作里</b>：加得多信号好看，而那恰好是把亲和力洗掉的做法。他问 “How much protein do you use?” 之后，下一句多半是 “Then what did you actually measure?”。<b>先自己把这句说出来，比被他指出来好——自己说是懂行，被指出来是错。</b>正面做法见速背第 12、13 点。'}
 ]},
 
 {g:'怎么发现的', gn:'⚠ 这一格书里几乎没有，说的时候注意出处。', items:[
