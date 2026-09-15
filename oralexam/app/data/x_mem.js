@@ -1,0 +1,306 @@
+/* 横向卡 · 膜与区室 —— 一条通路为什么住在那个房间里
+   不对应任何一道考题。书 §8.5 生物膜（p197–p201）整节此前没有任何一张卡覆盖，
+   而「哪个合成在哪个区室」是她自己报的弱点。两件事是一件事：
+   **通路住在一个区室里，是因为一张膜把两边隔开，并且管着什么能过去。**
+   出处 Biochemie OCR p013（区室的定义 ＋ 差别是一种能量保存形式）、p015（细胞器表和尺寸）、
+   p089（核酸合成都在核里）、p110–p112（信号序列 · 糖基化 · 甘露糖 6-磷酸送溶酶体）、
+   p136（柠檬酸循环在基质）、p141–p146（内膜 · 向量性 · 6 质子 ≈ 3 ATP · ΔG°′ = +30,5）、
+   p164（糖酵解在胞质）、p187（脂肪酸合成横跨三个区室）、p193–p195（脂肪酶 · β-氧化在基质）、
+   p197–p201（§8.5 全节：组成 · 结构 · 膜蛋白 · 膜运输）、p206–p209（类囊体膜 · 基质 · 反向的梯度）、
+   p222（调控章的 Kompartmentace 一段）。
+   两处书自己打自己的，写在追问里：① p200 说简单扩散「不需要任何膜蛋白」，同一句又把整合蛋白
+   做的通道列进去，而 p201 把 ion channel 明写成膜蛋白；② p197 说「只有线粒体内膜负责产 ATP」，
+   p208 又写类囊体膜上的 ATP 合成酶在造 ATP。 */
+
+window.CARDS.push({
+id:'x-mem', cross:1, w:0,
+q:'膜与区室 —— 一条通路为什么住在那个房间里',
+qcn:'横向卡 · 膜是什么做的 · 什么能过去 · 三种运输 · 九个房间各交回哪张卡',
+sub:'跨题共用 · 书 §8.5 此前零覆盖 · 接卡 23、x-bonds、gly、24、25、27、28、13、08、16、32、x-meta、x-ph',
+
+cram:[
+ {g:'开口 · 为什么两件事写成一张卡', gn:'她自己报的弱点是「<b>哪个合成在哪个区室，永远分不清</b>」；书里没人覆盖的一节是 §8.5 <b>生物膜</b>。<b>这两件事是同一件事的两面</b>，所以合在一张卡上，而且这个理由要能说出口。'},
+ {n:'01', t:'主干 · 一句话',
+  big:'<b>一张膜造出一个「里面」；有了「里面」，才谈得上一个值得维持的差别。</b>',
+  en:'“A biological membrane is the boundary between two spaces. The textbook says its main task is to separate biochemically and physiologically different spaces, and that membranes are not only static boundaries. It calls them biochemically very active systems. Once there is an inside, the two sides can be held different. A pathway sits in a compartment because a membrane keeps things apart and controls what crosses.”',
+  note:'<b>这句话就是这张卡</b>，四段里每一段都是它的推论。<span class="pg">p197</span><br><br>书在同一段里把膜的活干了什么列全了：<b>选择性运输</b>、<b>结合激素和别的调节系统</b>、<b>传电脉冲</b>、<b>一大批酶反应，包括产 ATP</b>。<b>「不只是静态边界」这半句是书自己写的</b>，引它很安全。<br><br>书接着给了这一节的读法：<b>理解生物膜的功能，从理解它的结构开始</b>（<span class="pg">p198</span> 第一句）。<b>所以这张卡的顺序也是先结构、再什么能过去、最后才是区室。</b>'},
+ {n:'02', t:'书自己把两件事接在一起',
+  big:'调控那一章列调控手段，其中一条就叫 <b>compartmentation</b>，而它<b>直接指回 §8.5.3 膜运输</b>',
+  en:'“The textbook joins the two subjects itself. In the chapter on metabolic regulation it lists compartmentation as one of the devices. It says the cell is divided into many spaces in which certain reactions take place. Substrates and products have to be transported across the membranes that separate those spaces, and that transport is usually controlled. It then gives the reason. Synthetic and degradative reactions that share some intermediates can run separately and under control.”',
+  note:'<span class="pg">p222</span> 原话，连那个「见 8.5.3 章」的指路都是书自己写的。<b>所以「区室」和「膜运输」不是我把两道题捆在一起，是书把它们捆在一起的。</b><br><br><b>最后那半句是这张卡最值钱的一句</b>：区室化要解决的问题是<b>合成和分解共用中间体</b>。共用中间体又要同时开工、还要各管各的——<b>只能靠放在不同的房间里</b>。调控的完整清单在卡 <b>32</b>，这里只取这一条。'},
+ {n:'03', t:'再往下一层 · 差别本身就是能量',
+  big:'书在第 1 章就说了：区室之间的<b>差别是「一种特殊形式的能量保存」</b>',
+  en:'“The book puts the same idea at the very beginning. Living matter is not homogeneous. It is divided into compartments, and the exchange of substances between them is limited to a certain degree. That is what lets each compartment hold its own pH and its own ion concentrations, and run its own reactions. The book then calls those differences a special form of energy conservation. They can be used to make substances or to carry information.”',
+  note:'<span class="pg">p013</span>。<b>这一句把「区室」从一个解剖学名词变成一个热力学名词</b>，而且它是后面质子梯度那一格的地基。<br><br>书在 <span class="pg">p017</span> 又说了一遍，用词更硬：能量可以「<b>造出来存着</b>」，存的形式可以是一个高能化合物，<b>也可以是「一个能量上很富的局面，例如某些离子在两个区室之间的非平衡分布」</b>。<br><br><b>所以「细胞把能量存在 ATP 里」只讲了一半。另一半存在两个房间的差里。</b>',
+  good:'顺势可以给的一句：“The textbook says an energy-rich situation can be a compound, or it can be a non-equilibrium distribution of ions between two compartments. So a gradient is a store of energy in exactly the sense that ATP is.”'},
+
+ {g:'膜是什么做的', gn:'<b>这一组只要够撑住主干就行。</b>脂本身的十一类、两亲性、胆固醇，全在卡 <b>23</b>；疏水效应「不是一种键」在卡 <b>x-bonds</b>。<b>这里只拿走三样：成分、双层、膜蛋白。</b>'},
+ {n:'04', t:'成分和双层（四个数全是书印的）',
+  big:'<b>蛋白 ＋ 脂</b>，重量比 <b>1:4 到 3:1</b>；糖 <b>0,5–10%</b>，一定挂在糖蛋白或糖脂上；双层厚 <b>3,5–4,0 nm</b>',
+  en:'“Biological membranes consist of proteins and lipids. The weight ratio of protein to lipid runs from one to four up to three to one, and it differs by the origin and the function of the membrane. Carbohydrates are always present too, either as glycoproteins or as glycolipids, half a per cent to ten per cent of the mass. The structural basis is a double layer of lipids. The hydrophobic tails are in close contact with each other and so are the hydrophilic heads, and the two monolayers face tail to tail. So the bilayer has a markedly nonpolar middle and two polar surfaces, and it is three and a half to four nanometres thick.”',
+  note:'<span class="pg">p198</span> §8.5.1–8.5.2。<b>这四个数卡 23 上也有，两处必须说同一套，别换词。</b><br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>蛋白的重量分数 = 蛋白份数 ÷ (蛋白份数 ＋ 脂份数)</code>。<br><b>每个符号</b>：书给的是<b>重量比</b>不是分子数比，所以直接按份数算百分比就行。<br><br><b>两步</b>：<br>① <code>1 : 4 → 1 ÷ 5 = 20%</code> 是蛋白。<br>② <code>3 : 1 → 3 ÷ 4 = 75%</code> 是蛋白。<br><b>所以「膜」这个词盖住的是一个从 20% 蛋白到 75% 蛋白的区间，蛋白的量能差将近四倍。</b><br><br><b>=== 一句话理解 ===</b><br><b>「生物膜」不是一种材料，是一种做法。</b>脂双层是那个做法，而膜与膜之间真正的差别在<b>上面插了多少蛋白</b>——书自己说的就是这个：基本结构到处一样，<b>功能上各张膜差别相当大，是特化的</b>（<span class="pg">p197</span>）。<b>所以「这是哪张膜」这个问题，本质上是「这张膜上装了什么蛋白」。</b><br>⚠ <b>20% 和 75% 是从书的比值除出来的，书没有印百分数</b>；<b>书也没有说哪张膜落在哪一端</b>。通用知识里髓鞘是最偏脂的一端、线粒体内膜是最偏蛋白的一端——要说就明说这是通用知识。<br>另一个能画出来的读法：<b>3,5–4,0 nm 这个厚度就是两条脂肪酸尾巴头顶头的长度</b>。书说双层的流动性<b>由脂肪酸链的种类和长度决定</b>（<span class="pg">p198</span>），而书给的链长是 <b>12 到 24 个碳</b>（卡 <b>23</b>）——<b>厚度不是随便的一个数，它是链长直接量出来的结果。</b>'},
+ {n:'05', t:'为什么会自己排成双层',
+  big:'不是脂互相吸引。是<b>水把它们挤到一起</b>——疏水效应，而书明说<b>它不是一种键</b>',
+  en:'“Nothing holds the lipids to each other. The textbook says the interactions of the heads and the tails are exclusively noncovalent. What drives the arrangement is the hydrophobic effect. The book is careful to say this is not an affinity between nonpolar substances. It is the result of a change in the structure of the water around them. A phospholipid has two tails and one head, so the shape that suits both ends is a sheet rather than a droplet.”',
+  note:'<span class="pg">p013</span>、<span class="pg">p198</span>。<b>完整的疏水效应在卡 x-bonds 第 14 点，两亲性在卡 23 第 10 点，这里只借用，不重讲。</b><br><br><b>「两条尾巴 → 片，一条尾巴 → 球」这条是通用的</b>（书讲胶束只在 <span class="pg">p156</span> 的淀粉那里），要说就带 generally：“Generally a single-tailed amphipathic molecule packs into a micelle, and a two-tailed one packs into a bilayer.”<br><br><b>这一格的用处是接住一个很常见的追问</b>：「膜是被什么粘住的？」——<b>答「没有东西粘它，是水不肯让它散开」</b>，比列三种非共价力有力得多。'},
+ {n:'06', t:'膜蛋白两类',
+  big:'<b>外周</b>只碰极性头，<b>容易洗下来</b>；<b>整合</b>扎进尾巴堆里，靠<b>疏水作用</b>留住，有的还穿透整张膜',
+  en:'“Proteins sit in a membrane in two ways. Peripheral proteins lie on the surface and interact only with the polar heads, through the polar side chains of their amino acids. The textbook says they can be released and isolated as pure proteins by a relatively simple procedure. Integral proteins are sunk into the bilayer and interact with the hydrophobic tails, held there by hydrophobic interaction of their nonpolar side chains. They differ in how deep they go. Some are sunk from one side only and others cross the membrane completely.”',
+  note:'<span class="pg">p199</span>。<b>「容易洗下来」这一句是书自己写的，而且它是一个实验事实，不是分类学</b>——被追问「怎么区分」时，这一句比任何定义都管用：<b>盐洗下来的是外周，要去垢剂才下来的是整合。</b>（后半句是通用知识，书只说了外周那一半。）<br><br>书还给了<b>流动镶嵌模型</b>：膜的组分一直在动，蛋白可以<b>转</b>、可以在膜平面里<b>横着走</b>，<b>但蛋白没有真正的翻转</b>（脂有，叫翻转机制，书说它的生物学意义目前还没定义清楚）。<b>流动镶嵌在卡 23 第 15 点已经说过，那边和这边要用同一套说法。</b>'},
+ {n:'07', t:'膜蛋白干什么（书自己分的）',
+  big:'<b>结构蛋白</b>（书叫它们「锚缆」）＋ <b>动态蛋白三类</b>：<b>运输 · 催化 · 受体</b>',
+  en:'“The textbook divides membrane proteins by their role into structural and dynamic, and says the line between them is not sharp. Structural ones help hold the membrane and its components together. They are often long and fibrous, they lie on the hydrophilic surface, and the book calls them anchoring ropes. Dynamic ones carry out the cell processes that happen at the membrane, and it says three kinds are usually present in every type of cell. Transport proteins move substances into the cell and out of it. Catalytic proteins run enzyme reactions bound to the membrane. Receptor proteins bind hormones, toxins or transmitters on the outer side, and pass on a signal that changes something inside.”',
+  note:'<span class="pg">p200</span>。<b>这三类一报，三张卡的门就都开了</b>：运输 → 这张卡下半页；催化 → 卡 <b>25</b> 的五个复合体；受体 → 卡 <b>32</b> 的激素那一节。<br><br>书在 <span class="pg">p199</span> 还补了一条很好用的：膜里一个蛋白发生构象变化，<b>常常就是邻近蛋白跟着变构象的信号</b>，书把这称作膜的生物活性的<b>一个重要调节因素</b>。<b>所以「膜是调控的场所」这句话，书是直接说了的。</b>',
+  warn:'⚠ <b>书自己打自己的一处</b>：<span class="pg">p197</span> 写<b>「只有线粒体内膜负责 ATP 的产生」</b>，用来举例说各张膜是特化的；但 <span class="pg">p208</span> 写类囊体膜上的 <b>ATP 合成酶由 ADP 和无机磷酸合成 ATP</b>。<b>考场说法：引 p197 那句时加一个限定</b> —— “The textbook says only the inner mitochondrial membrane is responsible for producing ATP, and in the photosynthesis chapter it gives the thylakoid ATP synthase as well. In an animal cell the statement holds.”'},
+
+ {g:'什么能过去，什么过不去', gn:'§8.5.3 <b>膜运输</b>，<span class="pg">p200</span>–<span class="pg">p201</span>。<b>这一节整套卡里零覆盖</b>，所以这一组的每一个词都要能自己定义。书的开头是一个很漂亮的两端论证，照着说就行。'},
+ {n:'08', t:'先说为什么必须「半透」',
+  big:'不透 → 细胞饿死也排不出去；全透 → 什么都能乱跑，等于没有隔开。<b>两个极端自然都不允许</b>',
+  en:'“The textbook makes the argument from both extremes. If membranes were impermeable, cells would be completely isolated. Nutrition could not get in and products could not get out. If they were freely permeable, any substance could move between any two regions. Neither extreme is allowed in nature, so biological membranes are selectively permeable. The book also calls that semipermeable.”',
+  note:'<span class="pg">p200</span> 原话的结构，一个字没加。<b>这段论证的好处是它自己就回答了「为什么需要运输蛋白」</b>——不是细胞想控制，是<b>物理上只剩这一条路</b>。<br><br><b>semipermeable ＝ 半透 ＝ 有些物质完全自由地过，有些根本过不去。</b>这个词整套卡里没人解释过，所以要就地交代。'},
+ {n:'09', t:'被动 · 简单扩散',
+  big:'顺浓度梯度、<b>不花能量</b>。书说它<b>不需要任何膜蛋白参与</b>，走的是脂双层本身、偶发的孔、或者整合蛋白做的通道',
+  en:'“There are two basic types of transport across a membrane, passive and active. Passive means the substance moves by diffusion from higher concentration to lower, with no energy spent. Diffusion is either simple or facilitated. Simple diffusion happens without any membrane protein taking part. The textbook gives three routes for it. Straight through the lipid bilayer, through random pores in the membrane, or through channels made by integral proteins that cross the membrane. What travels this way is lipophilic substances, water, and some ions.”',
+  note:'<span class="pg">p200</span>，图 Obr. 8.3 把三条路各画了一个：<b>A 脂溶性分子直接溶进膜脂 · B 水从整合蛋白的微孔里流过 · C 小分子从膜的缺陷处钻过去</b>。<br><br><b>「什么能自己过去」这三样要背死：脂溶性物质、水、一部分离子。</b>反过来说就是这张卡下半页的地基：<b>带电的、极性大的、分子大的，全都过不去。</b>',
+  warn:'⚠ <b>这一句书自己跟自己矛盾</b>：说「不需要任何膜蛋白参与」，同一句却把<b>整合蛋白做成的通道</b>列成第三条路；而 <span class="pg">p201</span> 又把 <b>ion channel 明写成膜蛋白</b>，放在<b>易化扩散</b>那一段。<b>判据用行为，不要用结构</b>：<b>能被饱和、能被抑制、挑底物的是载体；三样都没有的是洞。</b>完整说法在追问里。'},
+ {n:'10', t:'被动 · 易化扩散（这里接卡 02）',
+  big:'要一个<b>载体</b>，通常是整合蛋白，有<b>专一结合位点</b>。关键性质三条：<b>专一 · 可饱和 · 可抑制</b>——<b>所以书说它「行为像一个酶」</b>',
+  en:'“Facilitated diffusion needs a carrier molecule, usually an integral membrane protein with a specific binding site for the substance carried. The substance binds, the carrier probably moves inside the membrane, the substance appears on the other side, and the carrier goes back. The textbook names the important properties. The process is specific, it can be saturated, and it can be inhibited. So the carrier behaves like an enzyme, and the book says the process can be described by the equations of enzyme kinetics. Specialised carriers for ions have two names. An ionophore is not a protein. An ion channel is a membrane protein.”',
+  note:'<span class="pg">p201</span>，图 Obr. 8.4。<b>「可以用酶动力学的方程描述」这一句是书自己写的，不是我接上去的</b>——所以这一格直接通到卡 <b>02</b>：<b>可饱和意味着有一个半饱和浓度，而半饱和浓度就是 K<sub>m</sub> 的定义。</b><br>英文：“Because the carrier is saturable, a transport curve has the same shape as an enzyme curve, so it has a half-saturation concentration. That is why transport is described with a Michaelis constant.”<br><br><b>ionophore 这个词整套卡里没人解释过</b>（<code>terms.py</code> 查过），书给的定义就是它自己那半句：<b>专门运离子的载体分两种，离子载体（不是蛋白）和离子通道（是蛋白）</b>。'},
+ {n:'11', t:'主动运输 · 初级和次级',
+  big:'<b>要能量</b>，而且<b>永远逆着浓度梯度走</b>。初级花 <b>ATP 的高能键</b>（书叫它们 <b>ATPase 泵</b>），次级花<b>别人先建好的梯度</b>',
+  en:'“Active transport is transport that needs energy put in, and the textbook says it always goes against the concentration gradient of the substance moved. In primary active transport the energy usually comes from ATP, from splitting a macroergic bond, and the book calls these ATPase pumps. Another exergonic reaction can be the source instead. In secondary active transport the cell spends a concentration gradient of some other substance, one that primary transport built earlier. A membrane protein is always involved and the mechanism resembles facilitated diffusion. The difference is that every step depends on the energy of the carrier. The names for direction are simple. Uniport moves one substance. Symport moves two or more the same way. Antiport moves them in opposite directions.”',
+  note:'<span class="pg">p201</span>。<b>三个方向词一次背掉</b>：<b>uni</b> 一个、<b>sym</b> 同向、<b>anti</b> 反向。<br><br><b>「次级」不是「次要」，是「用的是二手能量」</b>：那个梯度是初级泵先花 ATP 建起来的，所以次级主动运输<b>最后还是 ATP 付的账，只是隔了一手</b>。<br><br><b>这一格和第 3 点扣在一起</b>：书说非平衡的离子分布是一种<b>能量富集的局面</b>（<span class="pg">p017</span>）——次级主动运输就是把那笔存款取出来花掉。<b>能存、能取，它才算得上能量。</b>',
+  tbl:{head:['怎么过去','要蛋白吗','要能量吗','往哪走','关键词'],
+   rows:[
+    ['<b>简单扩散</b>','书说<b>不要</b>（同一句又列了通道——见陷阱）','不要','顺梯度','脂溶性物质 · 水 · 一部分离子'],
+    ['<b>易化扩散</b>','要，载体或通道','不要','顺梯度','<b>专一 · 可饱和 · 可抑制</b>'],
+    ['<b>初级主动运输</b>','要','要，<b>ATP 的高能键</b>','<b>逆梯度</b>','ATPase pumps'],
+    ['<b>次级主动运输</b>','要','要，<b>别人先建好的梯度</b>','<b>逆梯度</b>','uniport · symport · antiport'],
+    ['<b>基团转位</b>','要，这个载体<b>本身还是酶</b>','看那个反应','—','运的时候顺手磷酸化或水解'],
+    ['<b>大块运输</b>','要，<b>整段膜重建</b>','要','—','endocytosis · exocytosis']
+   ]}},
+ {n:'12', t:'剩下两种：运的时候顺手反应，和整段膜重建',
+  big:'<b>基团转位</b> ＝ 载体本身是酶，边运边改；<b>大块运输</b> ＝ 大分子和整颗粒子，靠<b>局部把膜重新搭一遍</b>',
+  en:'“Two more kinds finish the list. In group translocation the carrier also has an enzyme activity, so a chemical reaction happens during the transport itself. The textbook names phosphorylation and hydrolysis as the reaction, and sugars, amino acids, disaccharides and peptides as the cargo. The most complicated kind is the transport of macromolecules or of whole particles, and it needs a local rebuilding of the membrane. Inwards that is endocytosis and outwards it is exocytosis. The forms large enough to see under a microscope are pinocytosis and phagocytosis.”',
+  note:'<span class="pg">p201</span>。书举的「整颗粒子」是<b>膜、病毒、颗粒</b>；第一种（大分子）只是膜上的<b>亚显微变化</b>，第二种才是显微镜下看得见的。<br><br><b>基团转位值得多说一句，因为它把这张卡和糖的卡接上了</b>：运进来的糖<b>当场被磷酸化</b>，于是它<b>再也出不去了</b>——磷酸基带电，过不了双层。<b>这跟糖酵解第一步花一个 ATP 把葡萄糖磷酸化是同一个道理</b>（卡 <b>gly</b>）：<b>那一个磷酸买的不只是活化，还是「锁在屋里」。</b>⚠ 这个观察<b>书里没有</b>，是自己看出来的，别挂到书上。'},
+
+ {g:'账 · 一个 ATP 的质子账', gn:'<b>这一格是呼吸链卡缺的那块地基。</b>只说「有个质子梯度」撑不住一问，因为下一句一定是「凭什么梯度维持得住」和「一个质子到底值多少」。'},
+ {n:'13', t:'质子过不去，所以梯度才立得住',
+  big:'质子<b>带电</b>，双层中间<b>明显非极性</b>——<b>它自己过不去</b>。所以泵出去的就留在那儿，回来只有一条路：<b>ATP 合成酶</b>',
+  en:'“This is the foundation the respiratory chain question needs. A proton carries a charge, so it cannot cross a bilayer on its own. The nonpolar middle of the membrane is what stops it. So pumping protons to one side builds something that stays built, and the only way back is through a protein. In the mitochondrion that protein is ATP synthase. The textbook says the transfer of six protons across the inner mitochondrial membrane gives about three ATP. Four protons give about two.”',
+  tbl:{head:['','一个 ATP 的质子账'],
+   rows:[
+    ['<b>投入</b>','<b>2 个质子</b>的跨膜梯度（书 <span class="pg">p146</span>：6 个质子 ≈ 3 ATP，4 个 ≈ 2 ATP，两处都是 2:1）'],
+    ['<b>产出</b>','<b>1 个 ATP</b>（书 <span class="pg">p146</span> 印的：ADP ＋ Pᵢ → ATP ＋ H₂O，ΔG°′ = <b>+30,5 kJ/mol</b>）'],
+    ['<b>总结</b>','每个质子<b>至少要值 15 kJ/mol</b>；一个 pH 单位只值 <b>5,7</b>（卡 <b>x-ph</b>）——<b>所以缺的那一大半在电荷上</b>']
+   ]},
+  note:'<b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>每个质子至少值的能量 = ΔG(造一个 ATP) ÷ (每个 ATP 花掉的质子数)</code>。<br><b>每个符号</b>：ΔG 取书 <span class="pg">p146</span> 印的 <code>+30,5 kJ/mol</code>（正号，因为写的是合成方向）· 质子数取书同页的兑换率。<br><br><b>三步推导</b>：<br>① <b>先定每个 ATP 几个质子</b>：<code>6 ÷ 3 = 2</code>，<code>4 ÷ 2 = 2</code>。<b>书给的两档互相自洽，都是 2 个质子换 1 个 ATP。</b><br>② <b>每个质子至少要值多少</b>：<code>30,5 ÷ 2 ≈ 15 kJ/mol</code>。<br>③ <b>拿卡 x-ph 的尺子一量就出问题</b>：<b>一个 pH 单位只值 5,71 kJ/mol</b>（推导在卡 <b>x-ph</b>，这里不重算）。<code>15 ÷ 5,71 ≈ 2,7</code>——<b>如果梯度只有浓度差这一项，两边就得差 2,7 个 pH 单位</b>，也就是质子浓度差五百倍。<br><br><b>=== 一句话理解 ===</b><br><b>所以「质子梯度」这四个字里，pH 差只是其中一半，另一半是电荷差。</b>质子搬过去的时候<b>同时搬走了一个正电荷</b>，于是膜两边不只是酸碱不同，还带上了电位差。<b>书自己把两项都算进去了</b>：<span class="pg">p208</span> 说 ATP 合成酶抹平的是「<b>ΔpH ＋ 膜两侧的电化学电位</b>」，<span class="pg">p141</span> 说膜干的活是把<b>化学能和渗透功</b>互相换。<br><b>可以说出口的一句</b>：“A gradient of protons is not only a difference in pH. The proton carries a charge, so the same pumping makes an electrical difference as well, and the textbook counts both.”<br>⚠ <b>15 和 2,7 是拿书的两个数除出来的，书里没有印；5,71 的推导在卡 x-ph，不是这本书的。</b>'},
+ {n:'14', t:'为什么反应非得装在膜上 —— 书的「向量性」',
+  big:'装进膜里，反应就不只有<b>速率</b>，还有了<b>三维空间里的方向</b>。<b>书用的词是 vectorial character</b>',
+  en:'“The textbook gives the deepest reason for putting a pathway into a membrane. Building an enzyme system into a biological membrane settles not only the rate of the reaction but its direction in three-dimensional space. The book says the membrane gives the reaction a vectorial character. That is what lets chemical energy and osmotic work be converted into one another. Osmotic work here means moving protons against their concentration gradient. The book calls the membrane the link between the two systems of energy transport in living matter. Those two are the oxidoreduction system and the phosphorylation system.”',
+  note:'<span class="pg">p141</span>。<b>这一格是这张卡里最像 researcher 的一句话</b>，因为它回答的是一个大部分人不会问的问题：<b>为什么呼吸链非得挂在膜上，不能泡在基质里？</b><br><br><b>答案是：溶液里的反应没有方向。</b>一个酶泡在水里，底物从哪边来、产物往哪边去，都没有意义——四面八方都一样。<b>把它按在一张膜上，「这边」和「那边」才第一次有了区别</b>，于是同一个化学反应才能顺手把一个质子从这边搬到那边。<br><br><b>所以「膜造出一个里面」这句主干，在这里得到了它的机制版本</b>：膜不只是把东西分开，它<b>给反应装了一个方向</b>。<b>这也是氧化还原系统和磷酸化系统之间唯一的接头。</b>'},
+
+ {g:'区室 —— 九个房间，每个交回一张卡', gn:'<b>她自己报的弱点就是这一格。</b>治法不是背九条，是<b>每个房间挂一张已经会的卡</b>——<b>房间本身不是新知识，是已有知识的索引。</b>'},
+ {n:'15', t:'九个房间',
+  big:'每个房间只记<b>一件你已经会的事</b>，再记它是<b>哪张卡</b>。九行背完，这个弱点就没了',
+  en:'“I can answer this compartment by compartment, and every one of them carries something I already know. Glycolysis is in the cytosol. The citric acid cycle is in the mitochondrial matrix. The respiratory chain and aerobic phosphorylation are in the inner mitochondrial membrane. The synthesis of all nucleic acids is in the nucleus. A secreted protein is threaded into the endoplasmic reticulum and finished in the Golgi. A mannose-6-phosphate tag sends it to the lysosome instead. The light reactions are in the thylakoid membrane and the fixation of carbon dioxide is in the stroma. And fatty acids are built in the cytosol but broken down in the matrix.”',
+  tbl:{head:['房间','书说那里发生什么','页','交回哪张卡'],
+   rows:[
+    ['<b>胞质 / 细胞质</b>','糖酵解 · 戊糖磷酸产 NADPH 和核糖-5-磷酸 · 脂肪酶拆三酰甘油 · 脂肪酸合成到 18 碳 · 尿素循环的后半','<span class="pg">p164 p162 p193 p187 p123</span>','<b>gly</b> · <b>23</b> · <b>x-meta</b>'],
+    ['<b>线粒体基质</b>','柠檬酸循环 · β-氧化（书说<b>一轮要的四个酶都在这里</b>）· 延长酶 · 氨甲酰磷酸和尿素循环的前半','<span class="pg">p136 p195 p187 p123</span>','<b>24</b> · <b>23</b> · <b>x-meta</b>'],
+    ['<b>线粒体内膜</b>','呼吸链和需氧磷酸化 · <b>五个复合体都是这张膜的整合组分</b> · 泛醌靠疏水性在膜里自由移动','<span class="pg">p141 p142</span>','<b>25</b>'],
+    ['<b>细胞核</b>','<b>所有</b>核酸的合成都在核里 · 三种 RNA 聚合酶分工（I 在核仁做 rRNA 前体）','<span class="pg">p089</span>','<b>16</b> · <b>12</b> · <b>03</b>'],
+    ['<b>内质网</b>','信号序列把新生链穿进来 · 二硫键 · N-糖基化在 ER 膜段就起步 · 胶原的羟化酶在 ER 池里 · 去饱和酶','<span class="pg">p110 p112 p113 p187</span>','<b>08</b> · <b>13</b>'],
+    ['<b>高尔基体</b>','糖链在这里完工（切葡萄糖和甘露糖，再接 GlcNAc、半乳糖、唾液酸）· 书的表还写着它「分泌蛋白质、<b>合成膜</b>」','<span class="pg">p112 p015</span>','<b>13</b>'],
+    ['<b>溶酶体</b>','甘露糖被磷酸化成<b>甘露糖 6-磷酸</b>的分泌型糖蛋白被送到这里','<span class="pg">p112</span>','<b>13</b>'],
+    ['<b>类囊体膜</b>','光反应 · 光系统是<b>整合的色素蛋白复合体</b>，横穿双层 · <b>水的光解在类囊体内表面</b>，NADP⁺ 在外表面被还原','<span class="pg">p206 p208</span>','<b>27</b>'],
+    ['<b>叶绿体基质</b>','CO₂ 的固定和还原 · <b>RuBisCO 是可溶的，就在基质里</b>','<span class="pg">p209</span>','<b>27</b> · <b>28</b>']
+   ]},
+  note:'<b>书还印了几个尺寸，被问「有多大」时直接报</b>（<span class="pg">p015</span> 表 1.3）：<b>核 4–6 μm · 线粒体约 1 μm · 叶绿体 5–8 μm · 核糖体约 20 nm · 细胞壁 20 nm</b>。同一张表还说<b>线粒体和叶绿体都有自己的 DNA</b>，<b>线粒体那张打褶的内膜「划出了另一个空间，即基质」</b>，叶绿体里<b>还有一张膜把类囊体的空间隔开</b>。<br><br>⚠ <b>两个房间要当心</b>：① <b>尿素循环横跨基质和胞质</b>，书特意说它<b>跟柠檬酸循环不一样，不待在一个细胞器里</b>（<span class="pg">p123</span>）；② <b>光呼吸横跨三个细胞器</b>（叶绿体 · 过氧化物酶体 · 线粒体，卡 <b>28</b>）。<b>主动说出这两个例外，比等他拿它们来挑好。</b>'},
+ {n:'16', t:'她问的那一条 · 脂肪酸：造在胞质，拆在基质',
+  big:'同一种分子，两条路，<b>两个房间、两种载体、两种还原型辅酶</b>。<b>这是「为什么要分开」最干净的实例</b>',
+  en:'“This is the cleanest example of why the cell separates two directions at all. Fatty acids are broken down in the mitochondrial matrix and built in the cytoplasm. The two also use different carriers. Degradation carries the chain on coenzyme A, as a thioester. Synthesis carries it on the acyl carrier protein, and the textbook says the intermediates never leave the enzyme complex until the finished chain is released. The reducing coenzyme differs too. Degradation hands its hydrogen to NAD-plus and FAD, and synthesis takes its hydrogen from NADPH. The textbook actually gives three compartments for the synthesis. The basic pathway up to eighteen carbons is in the cytoplasm, the elongases are in the mitochondrial matrix, and the desaturases are bound to the endoplasmic reticulum.”',
+  note:'<span class="pg">p187</span>、<span class="pg">p188</span>、<span class="pg">p220</span>。<b>三条差别的完整说法在卡 x-meta 第 13 点，账（8 acetyl ＋ 7 ATP ＋ 14 NADPH → 棕榈酸）也在那里。这一格只负责「为什么是两个房间」，说完就把话交出去。</b><br><br><b>「载体不同」这一条要说准</b>：拆的时候链挂在 <b>CoA 的巯基</b>上（硫酯）；造的时候链挂在 <b>ACP</b> 上，而 <b>ACP 身上那条磷酸泛酰巯基乙胺臂，本来就是 CoA 分子里的一块</b>（<span class="pg">p188</span>）。<b>所以两边用的其实是同一种化学、装在两个不同的蛋白上——这正是「分开」的精确含义：化学一样，身份不一样。</b><br><br><b>书 p187 给的是三个区室，不是两个</b>，比卡 x-meta 上写的那句更细：<b>主干在胞质、延长在线粒体基质、去饱和挂在 ER</b>。<b>被问「那更长的链怎么办」时，这一条直接接住。</b>',
+  good:'顺势的第二层，接卡 <b>32</b>：“The textbook lists compartmentation among the devices of metabolic regulation, and this is what it means by it. Two directions that share intermediates are put in two rooms, so each can be switched without touching the other.”'},
+ {n:'17', t:'不知道的时候怎么办 —— 判据，不是清单',
+  big:'别猜房间，<b>问这个反应需要什么</b>。四条判据，外加一个我自己先说出来的反例',
+  en:'“If I am asked about a pathway I have not placed, I would not guess. I would ask what the reaction needs. If it hands its hydrogen to the respiratory chain, it is in the mitochondrion. If it reads or writes DNA, it is in the nucleus. If it needs a disulfide bond or a sugar chain, it is in the endoplasmic reticulum or the Golgi. And if it spends NADPH on a reductive synthesis, it is in the cytosol. One warning about the last kind of rule. Needing oxygen is not a criterion, because the textbook puts the collagen hydroxylases in the cisternae of the endoplasmic reticulum and says they need oxygen.”',
+  note:'<b>这四条判据是我自己总结的，书里没有这张清单</b>——但<b>每一条单独都有页码</b>：还原力去呼吸链 <span class="pg">p141</span>、核酸合成在核 <span class="pg">p089</span>、糖基化在 ER 和高尔基 <span class="pg">p112</span>、NADPH 用于合成而不进呼吸链 <span class="pg">p161</span>。<b>说的时候要把「这是我的归纳」和「这是书的事实」分开。</b><br><br><b>最后那个反例是故意自己先说的</b>（LOGIC §4）：<b>「需要氧气所以在线粒体」是个听起来很顺、但书自己就有反例的规则</b>——胶原的羟化在 <b>ER 池</b>里，而书明写它<b>需要氧气、2-氧代戊二酸、抗坏血酸和铁离子</b>（<span class="pg">p112</span>）。<b>主动给出这个反例，比被他挑出来强得多。</b>'}
+],
+
+end:'<b>这张卡的用法：</b>先说主干——<b>膜造出一个「里面」，有了「里面」才有值得维持的差别</b>。然后三步：<b>膜是什么做的</b>（四个数，剩下交给卡 23）· <b>什么能过去</b>（脂溶性、水、一部分离子；其余都得走蛋白）· <b>三种运输</b>（简单扩散 / 易化扩散 / 主动运输，初级花 ATP、次级花梯度）。<br>问到区室就<b>一个房间挂一张卡</b>，问到脂肪酸就说<b>两个房间、两种载体、两种还原型辅酶</b>，然后把话交给卡 <b>x-meta</b> 和卡 <b>32</b>。<b>质子那一格是留给卡 25 的地基，别在这张卡上把呼吸链讲完。</b>',
+
+/* ---------------- 演练四段 ---------------- */
+segs:[
+ {tag:'段 1 · 定义', h:'先给定义和书自己那句「不只是静态边界」，再把主干说出来',
+  p:['“A biological membrane is the boundary that separates two spaces, either two cells or two compartments inside one cell. The textbook says its main task is to separate biochemically and physiologically different spaces. It then says at once that membranes are not only static boundaries. They are biochemically very active systems, responsible for selective transport, for binding hormones, for carrying electrical impulses, and for many enzyme reactions including the production of ATP.”',
+     '“So the two halves of this question are one subject. A membrane makes an inside. Only once there is an inside can there be a difference worth maintaining. A pathway sits in a compartment because a membrane keeps things apart and controls what crosses. The textbook says the same thing from the other side. Understanding the function of a biological membrane begins with understanding its structure.”'],
+  note:'<span class="pg">p197</span>、<span class="pg">p198</span>。<b>第二段那三句是这张卡的主干</b>，一个字都别改。<br><b>最后一句是书 §8.5 的第一句话</b>，用它当过门，下一屏就顺理成章地讲结构。'},
+ {tag:'段 2 · general', h:'结构四个数，然后两端论证，然后三种运输一次报完',
+  p:['“Structure first. Membranes are made of proteins and lipids, in a weight ratio from one to four up to three to one, with half a per cent to ten per cent carbohydrate. The structural basis is a lipid bilayer, tails inward and heads outward, and every interaction holding it is noncovalent. It is three and a half to four nanometres thick. Proteins sit in it in two ways. Peripheral ones touch only the polar heads and come off easily. Integral ones are sunk among the tails, and some of them cross the membrane.”',
+     '“Then transport. A membrane cannot be impermeable, because then nothing could get in or out, and it cannot be freely permeable, because then nothing would be separated. So it is selectively permeable. There are two basic types, passive and active. Passive is diffusion down a concentration gradient with no energy spent, and it is either simple, through the bilayer itself, or facilitated, through a carrier protein. Active transport needs energy and always goes against the gradient. Primary active transport pays with ATP, and secondary active transport pays with a gradient that primary transport built earlier.”'],
+  note:'<span class="pg">p198</span>–<span class="pg">p201</span>。<b>四个数报完就停，别往脂的分类里走</b>——那是卡 <b>23</b>。<br><b>两端论证是书自己的</b>（不透 / 全透 都不行），它比直接说「膜是半透的」有力，因为它顺带解释了为什么必须有运输蛋白。'},
+ {tag:'段 3 · 稍展开', h:'挑区室，因为这是她的弱点，而且每个房间都能交回一张已经会的卡',
+  p:['“Now the compartments, because that is what the transport is for. Glycolysis is in the cytosol and the citric acid cycle is in the mitochondrial matrix. The respiratory chain sits in the inner mitochondrial membrane, and the textbook says its five complexes are integral components of that membrane. The synthesis of all nucleic acids is in the nucleus. A secreted protein is threaded into the endoplasmic reticulum, glycosylated there and finished in the Golgi. In a chloroplast the light reactions are in the thylakoid membrane and the carbon fixation is in the stroma.”',
+     '“The example that shows why any of this matters is fatty acid metabolism. Degradation is in the mitochondrial matrix and synthesis is in the cytoplasm. They use different carriers as well, coenzyme A for degradation and the acyl carrier protein for synthesis, and different reducing coenzymes. That is not an accident. The textbook lists compartmentation among the devices of metabolic regulation, and says it is what lets synthesis and degradation that share intermediates run separately and under control.”'],
+  note:'<span class="pg">p164</span> <span class="pg">p136</span> <span class="pg">p141</span> <span class="pg">p089</span> <span class="pg">p112</span> <span class="pg">p208</span> <span class="pg">p209</span>；脂肪酸那一段 <span class="pg">p187</span> <span class="pg">p220</span>；最后一句 <span class="pg">p222</span>。<br><b>最后那一句是整段的落点</b>：区室不是解剖学，是调控手段。<b>说到这里就把话交给卡 32 和卡 x-meta。</b>'},
+ {tag:'段 4 · 留口子', h:'落到酵母表面展示 —— 她每周做的事，本身就是一连串「过不过膜」的决定',
+  p:['“The place this touches my own work is yeast surface display. The protein I display is made with a signal sequence at its amino end. So it is threaded into the endoplasmic reticulum while it is still being made. It gets its disulfide bonds in that lumen, because the cytosol is reducing and the lumen is not. It then goes through the Golgi and out to the cell surface, held there through an anchoring partner protein.”',
+     '“That is also why the measurement works at all. I put a labelled ligand outside the cell, and the membrane keeps it outside. So the dissociation constant I read is binding at the surface, on a protein that never entered the cytosol. A Kd measured on a whole cell only means something because a membrane decided what could cross.”'],
+  note:'三个口子都在主场：<b>信号序列</b>接卡 <b>08</b>，<b>二硫键和糖基化</b>接卡 <b>13</b>，<b>K<sub>d</sub></b> 接卡 <b>02</b>。<br>⚠ <b>酵母表面展示的细节书里没有</b>（锚定伴侣蛋白、流式读数都是书外的），说的时候别挂到书上；<b>但信号序列进 ER 那一段是书的</b>（<span class="pg">p110</span>），可以引。<br><b>「膜替我决定了什么能进来」这句话是段 4 的落点</b>，它把主干在她自己的实验上又说了一遍。'}
+],
+
+why:{
+ rungs:[
+  ['为什么一条通路非得待在某个区室里？','因为<b>膜把两边的条件分开了</b>。书 <span class="pg">p013</span>：分成区室之后，各区室能维持<b>各自的 pH 和离子浓度</b>、跑各自的反应；书 <span class="pg">p222</span>：这样<b>共用中间体的合成和分解才能分开、可控地跑</b>。'],
+  ['那膜凭什么维持得住这个差？','因为<b>双层中间是明显非极性的</b>（<span class="pg">p198</span>）。带电的、极性大的东西过不去；<b>能过去的那些都得走蛋白</b>，而蛋白是细胞能开关的（<span class="pg">p200</span>、<span class="pg">p201</span>）。<b>所以「维持」不是一直使劲，是默认过不去。</b>'],
+  ['为什么非极性的中间就挡得住一个质子？','因为一个离子在水里是<b>裹着一层水的</b>，要挤进非极性层就得<b>先把那层水剥掉</b>，这笔账很大。<b>到这里就已经不是生化了。</b>']
+ ],
+ stop:{lbl:'停 · 落在物理化学',
+  say:'“Below that we are asking what it costs to take the water off an ion and put it into a nonpolar layer, and that is physical chemistry rather than biochemistry.”'}
+},
+
+/* ---------------- 同一个答案，不同问法 ---------------- */
+recog:[
+{q:'What is a biological membrane?',
+ mean:'<b>最短的问法。</b>答案要自带结构：<b>定义 → 化学组成 → 结构 → 功能</b>。别只答「脂双层」，那只是四步里的第三步。',
+ say:'“It is the boundary that separates two spaces, either two cells or two compartments within one cell. The textbook says its main task is to separate biochemically and physiologically different spaces, and that it is not only a static boundary. Chemically it is proteins and lipids with some carbohydrate. Structurally it is a lipid bilayer, three and a half to four nanometres thick. Functionally it is selectively permeable. Some things cross freely and the rest cross only through proteins the cell controls.”',
+ tail:'<span class="pg">p197</span> <span class="pg">p198</span> <span class="pg">p200</span>。<b>第四句和第五句之间是这道题的转折点</b>：从「它是什么」转到「它干什么」，而他的下一刀多半就落在这里。'},
+
+{q:'What does a biological membrane actually do?',
+ mean:'书在 <span class="pg">p197</span> 一句话里列了四件事，<b>照那四件报</b>，比自己组织安全。',
+ say:'“Four things, and the textbook lists them in one sentence. Selective transport of substances into the cell and into its compartments, and out again. Binding of hormones and other regulatory systems. Transmission of electrical impulses. And it holds a whole set of enzyme reactions, including bioenergetically important ones and the production of ATP. The book adds that although the basic structure is the same everywhere, individual membranes are functionally quite different and specialised.”',
+ tail:'<b>最后那句限定很重要</b>，它让你后面说「只有线粒体内膜产 ATP」时有台阶下。'},
+
+{q:'How does a substance get across a membrane?',
+ mean:'他要的是<b>一张分类表</b>，不是一个例子。<b>两大类 → 被动分两种 → 主动分两种 → 三个方向词。</b>',
+ say:'“There are two basic types, passive and active. Passive is diffusion down the concentration gradient and it costs no energy. It is simple when no membrane protein takes part, and facilitated when a carrier protein carries the substance. Active transport needs energy and always goes against the gradient. Primary active transport pays with a macroergic bond of ATP, and the book calls those ATPase pumps. Secondary active transport spends a gradient that primary transport made earlier. For direction there are three words. Uniport, symport and antiport.”',
+ tail:'<span class="pg">p200</span> <span class="pg">p201</span>。<b>被追问「什么能自己过去」就给书的三样</b>：<b>脂溶性物质、水、一部分离子</b>。'},
+
+{q:'What is the difference between passive and active transport?',
+ mean:'两条差别，而且它们是同一件事的两面。<b>「有没有蛋白」不是判据</b>——易化扩散也有蛋白。',
+ say:'“Passive transport goes down the concentration gradient and spends nothing. Active transport goes against the gradient and needs energy put in. In primary active transport that energy is a macroergic bond of ATP. In secondary active transport it is a gradient of another substance, built earlier by primary transport. Both facilitated diffusion and active transport use a membrane protein, so the presence of a carrier does not tell you which one it is. The direction against the gradient is what tells you.”',
+ tail:'<b>最后两句是加分的</b>，它说明你知道这个分类的边界在哪。'},
+
+{q:'What does compartmentation mean in metabolic regulation?',
+ mean:'这是卡 <b>32</b> 的一条，也是这张卡存在的理由。<b>书的原话就够，不用自己发挥。</b>',
+ say:'“It means the cell is divided into many spaces in which certain reactions take place, so substrates and products have to be transported across the membranes that separate them. The textbook says that transport is usually controlled. It then gives the point directly. Synthetic and degradative reactions that share some intermediates can run separately and under control. The book lists it beside allosteric inhibition, control reactions, limiting metabolites, covalent modification and isoenzymes.”',
+ tail:'<span class="pg">p222</span>。<b>清单的其余几条在卡 32</b>，报出名字就够，别在这里展开。'},
+
+{q:'Why is fatty acid synthesis in the cytosol and its breakdown in the matrix?',
+ mean:'她自己报的那道题。答案<b>不是「因为酶在那里」</b>，是<b>「因为两个方向必须能分开调控」</b>。',
+ say:'“So that the two directions can be regulated separately. The textbook says catabolic and anabolic routes are not the reverse of one another, because their energy requirements differ fundamentally. It then gives compartmentation as one of the ways they are kept apart. The carriers differ too. Degradation carries the chain as a thioester on coenzyme A in the matrix, and synthesis carries it on the acyl carrier protein in the cytoplasm. The reducing coenzyme differs as well, NADPH for synthesis against NAD-plus and FAD for degradation.”',
+ tail:'<span class="pg">p218</span> <span class="pg">p220</span> <span class="pg">p222</span>。<b>三条差别的完整版在卡 x-meta</b>，账也在那里。⚠ <b>书 p187 给的其实是三个区室</b>：主干在胞质、延长酶在基质、去饱和酶在 ER。'},
+
+{q:'Which processes happen in the mitochondrion, and which in the chloroplast?',
+ mean:'他要的是<b>两张膜的对照</b>。书自己把它们并排讲过，引那一句很稳。',
+ say:'“In the mitochondrion the citric acid cycle is in the matrix, and the respiratory chain and aerobic phosphorylation are in the inner membrane. Beta-oxidation is in the matrix too, and the textbook says the matrix holds all four enzymes of one cycle. In the chloroplast the light reactions are in the thylakoid membrane and the fixation of carbon dioxide is in the stroma. The book says the thylakoid membrane is the closest analogue of the inner mitochondrial membrane, in structure and in function. It also notes one difference in composition. Thylakoid membranes have fewer phospholipids and additionally carry glycolipids.”',
+ tail:'<span class="pg">p136</span> <span class="pg">p141</span> <span class="pg">p195</span> <span class="pg">p206</span> <span class="pg">p209</span>。<b>「最接近的类比」这句是书自己下的判断</b>，用它把卡 <b>25</b> 和卡 <b>27</b> 一句话接起来。'},
+
+{q:'Why does soap destroy a cell?', odd:1,
+ mean:'问的是<b>主干本身</b>，只是反过来说一遍。',
+ say:'“Because a detergent is built like a phospholipid, a hydrocarbon tail and a polar head, so it competes for the tails and takes the bilayer apart. Once the bilayer is gone there is no boundary, and once there is no boundary there is no inside. Everything the cell was keeping different from its surroundings simply equalises.”',
+ tail:'接卡 <b>23</b> 和卡 <b>x-bonds</b>（去垢剂那一条）。<b>最后一句是这张卡的主干倒过来说，说出口很有分量。</b>'},
+
+{q:'How does a nerve fire?', odd:1,
+ mean:'听起来像生理学，其实问的是<b>初级主动运输 ＋ 通道</b>，而书把「传电脉冲」列进了膜的职责。',
+ say:'“It spends a difference that was built earlier. A pump used ATP to move ions against their gradient, which is primary active transport. A channel then lets them run back down that gradient. The textbook lists the transmission of electrical impulses among the jobs of biological membranes. So the signal is not made at the moment it fires. It was stored in a gradient beforehand, and firing is just letting a little of it go.”',
+ tail:'<span class="pg">p197</span> <span class="pg">p201</span>。<b>「信号是先存好的」这一句把它接回速背第 3 点</b>：非平衡的离子分布是一种能量保存形式。⚠ 具体哪个泵、哪个通道<b>书里没有</b>，别报名字。'},
+
+{q:'Why does a cell burst in pure water?', odd:1,
+ mean:'问的是<b>半透</b>：水过得去，溶质过不去。',
+ say:'“Because the membrane is selectively permeable, and water is one of the things that crosses it freely. The textbook puts water among the substances carried by simple diffusion. The solutes inside cannot leave at the same rate, so water keeps coming in and the cell swells. A plant cell survives it because of the wall, which the textbook says is about twenty nanometres thick and made of polysaccharides.”',
+ tail:'<span class="pg">p200</span> <span class="pg">p015</span>。⚠ <b>渗透压这本书没有专门讲</b>，上面每一句都是从「半透」和「水走简单扩散」推出来的。要给公式就说那是物理化学。'},
+
+{q:'Why is the inside of a mitochondrion so folded?', odd:1,
+ mean:'问的是<b>「工作发生在膜上」</b>这件事，也是 Obr. 6.4 那张图的用法。',
+ say:'“Because the work happens on the membrane rather than in the space. The respiratory chain and ATP synthase are built into the inner membrane, so the amount of that membrane sets how much of it one mitochondrion can run. The textbook describes the inner membrane as folded, and says the folding marks off a further space, the matrix. Folding buys more working surface inside the same volume.”',
+ tail:'<span class="pg">p015</span> <span class="pg">p141</span>。⚠ <b>最后那句「买到更多面积」书里没有</b>，是自己的推论，说的时候别挂到书上。'},
+
+{q:'Why does alcohol reach your brain so quickly?', odd:1,
+ mean:'问的是<b>简单扩散</b>：脂溶性的东西不用等载体。',
+ say:'“Because it does not need a transporter. The textbook says lipophilic substances, water and some ions cross by simple diffusion, directly through the lipid bilayer. Anything that dissolves in the nonpolar middle of a membrane goes straight through, with no protein and no energy spent. So it is not saturable and it cannot be competed off, which is exactly what makes it fast.”',
+ tail:'<span class="pg">p200</span>。⚠ <b>书没有点名乙醇</b>，说的时候把「脂溶性物质走简单扩散」挂给书，把乙醇那一步说成推论。<b>同一条也解释了为什么麻醉气体起效那么快。</b>'}
+],
+
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p199_obr82_plasma_membrane.jpg',
+  t:'质膜的横截面 —— 他说「画一张膜」时，画的就是这个',
+  cap:'<b>画的顺序（五笔，边画边说）</b>：<br>① <b>先画两排头</b>，上下各一排小圆圈——那是极性的头，朝着水。<br>② <b>头下面各画一束尾巴，两排尾巴顶在一起</b>——这就是书说的「尾对尾」，中间那一带是<b>明显非极性</b>的。标厚度 <b>3,5–4,0 nm</b>。<br>③ <b>画一个只扎进上半层的蛋白</b>（图上标 IP₁），再画<b>一个从上穿到下的</b>（IP₂）——这两个都是<b>整合蛋白</b>，靠<b>疏水作用</b>抓住尾巴。<br>④ <b>在膜面上趴一个不进去的</b>（PPP、PPS）——<b>外周蛋白</b>，只碰极性头，盐洗就下来。<br>⑤ <b>最后在朝外那一面挂糖链</b>（GP 是糖蛋白，C 是它的糖单位）——<b>糖永远在外面，而且永远挂在糖蛋白或糖脂上</b>。<br><b>画完顺口说一句</b>：“Everything holding this together is noncovalent.”',
+  src2:'Biochemie p199 Obr. 8.2（书自己的图；标注 IP₁ IP₂ PPP PPS GP C）'},
+ {k:'认',
+  src:'img/p138_obr64_mitochondrion.jpg',
+  t:'线粒体的截面 —— 四个名字，认出来就够',
+  cap:'<b>四个名字，从外往里</b>：<b>Mb₁ 外膜</b> · <b>Mb₂ 内膜</b>（打褶的那张，褶就是嵴）· <b>MMP 膜间隙</b>（书在呼吸链那几页把它叫作「胞质侧」，见追问里的陷阱）· <b>Mx 基质</b>。<br><b>把三张卡挂上去</b>：<b>柠檬酸循环和 β-氧化在 Mx</b>（卡 <b>24</b>、卡 <b>23</b>）· <b>呼吸链的五个复合体全在 Mb₂ 上</b>（卡 <b>25</b>）· <b>质子被泵到 MMP</b>，再从 ATP 合成酶回 Mx。<br><b>被问尺寸就报书的数</b>：线粒体约 <b>1 μm</b>，而且<b>它有自己的 DNA</b>（<span class="pg">p015</span>）。',
+  src2:'Biochemie p138 Obr. 6.4（书自己的图；标注 Mb₁ Mb₂ MMP Mx）'}
+],
+
+/* ---------------- 追问 ---------------- */
+ask:[
+{g:'定义类', gn:'<b>§8.5 这一节整套卡里零覆盖</b>，所以下面这些词在别的卡上都查不到解释。每一条的英文都要背下来。', items:[
+{r:'高', q:'What is a compartment?',
+ en:'“A compartment is one of the smaller spaces that living matter is divided into, and the exchange of substances between them is limited to a certain degree. The textbook says this division is what lets each one keep different conditions, a different pH and different ion concentrations, and run its own specific reactions. It then makes a point worth repeating. Those differences are a special form of energy conservation, and they can be used for making substances or for carrying information.”',
+ cn:'<span class="pg">p013</span>。<b>这是全书对区室最正面的一次定义</b>，而且它出现在第 1 章，不在膜那一节——<b>所以「区室」这个概念书是当作基本概念来讲的。</b><br><b>注意书的用词是「在一定程度上受限」，不是「隔绝」</b>。说 isolated 会被挑，说 limited 不会。<br><b>最后那半句是这一条的价值所在</b>：区室之间的差<b>本身就是能量</b>，这正是质子梯度那一格的地基。'},
+{r:'高', q:'What does semipermeable mean, and why must a membrane be that way?',
+ en:'“Semipermeable means selectively permeable. Some substances pass completely freely and others cannot pass freely at all. The textbook argues it from both extremes. If membranes were impermeable, cells would be completely isolated, nutrition could not enter and products could not leave. If they were freely permeable, any substance could move between any two regions. Neither extreme is permissible in nature, so membranes fall between them.”',
+ cn:'<span class="pg">p200</span> 原话的结构。<b>这个两端论证是这一节最好用的一段</b>，因为它不是一个要背的事实，是一个能自己推出来的结论。<br><b>而且它顺带答了下一个问题</b>：既然不能全透，那能过去的东西就必须被挑选；<b>挑选就得有装置，装置就是膜蛋白。</b>'},
+{r:'高', q:'What is an integral membrane protein, and what is a peripheral one?',
+ en:'“Peripheral proteins sit on the surface and interact only with the polar heads of the lipids, through the polar side chains of their own amino acids. The textbook says they can be released from the membrane and isolated as pure proteins by a relatively simple procedure. Integral proteins are sunk into the bilayer and interact with the hydrophobic tails, and they are held there by hydrophobic interaction of their nonpolar side chains. They differ in how deeply they sit. Some are sunk from one side only and others penetrate the whole membrane.”',
+ cn:'<span class="pg">p199</span>。<b>判据一句话：外周只碰头，整合碰尾巴。</b><br><b>实验上的判据比定义好用</b>：<b>外周蛋白拿相对简单的办法就能洗下来</b>（书说的）；整合蛋白要把膜拆了才拿得到（<b>通用知识</b>，书只说了外周那一半，要说就带 generally）。<br>书还提了一条容易漏的：<b>蛋白在两层脂里的分布也是不对称的</b>，这跟脂的不对称是并列的一条。'},
+{r:'中', q:'What is the fluid mosaic model?',
+ en:'“It is the model that describes the components of a biological membrane as being in constant motion. The textbook says it captures the dynamics of membranes well enough. Proteins can rotate, and they can move laterally in the plane of the membrane. A flip from one monolayer to the other, in the true sense, has not been found for proteins, although lipids do it. The book adds that movement can bring a protein into a new conformation, and that this is often the signal for conformational changes in its neighbours.”',
+ cn:'<span class="pg">p199</span>。<b>卡 23 第 15 点也有这一条，两处要用同一套说法。</b><br><b>最后那一句在这张卡上特别有用</b>：书自己把膜蛋白的构象连锁称作<b>膜的生物活性的一个重要调节因素</b>——<b>所以「膜是调控的场所」不是我加的，是书说的</b>。接卡 <b>32</b>。<br>脂那边对应的词是<b>翻转机制</b>（flip-flop），书说<b>它的生物学意义目前还没有被确切定义</b>——<b>引这句很安全，因为承认不知道的是书</b>。'},
+{r:'中', q:'What is an ionophore, and what is an ion channel?',
+ en:'“They are the two kinds of specialised carrier for ions, and the textbook separates them by what they are made of. An ionophore is a substance that is not a protein. An ion channel is a membrane protein. Both appear in the section on facilitated diffusion, so both move ions down a gradient without energy being spent.”',
+ cn:'<span class="pg">p201</span>。<b>ionophore 这个词整套卡里从来没有人解释过</b>（<code>terms.py</code> 查过），所以这一条必须背熟。<br><b>书给的判据只有「是不是蛋白」这一条</b>，别自己补更多。要多说一句就说 generally：“Generally an ionophore is a small molecule that wraps an ion and carries it through the nonpolar interior.”'},
+{r:'中', q:'What is group translocation?',
+ en:'“It is transport in which the carrier has an additional enzyme activity, so a chemical reaction happens during the transport itself. The textbook names phosphorylation and hydrolysis as the reaction. It says this happens with the more complex organic molecules, and names sugars, amino acids, disaccharides and peptides. So the molecule that arrives on the other side is not the molecule that left.”',
+ cn:'<span class="pg">p201</span>。<b>最后一句是自己加的总结，但它是这个名字的意思</b>：translocation 之外还有 group，因为<b>被搬的分子身上换了一个基团</b>。<br><b>顺手接一句糖酵解</b>：磷酸基带电，<b>磷酸化过的糖再也漏不出去</b>——<b>所以那一个磷酸买的不只是活化，还是「锁在屋里」</b>（卡 <b>gly</b>）。⚠ 这个观察书里没有。'},
+{r:'中', q:'What is a lysosome, and how does a protein end up in one?',
+ en:'“A lysosome is one of the membrane-bounded organelles of a eukaryotic cell. The textbook does not define its function, but it does give the address label. During glycosylation in the Golgi a mannose residue can be phosphorylated at position six. It says that glycoproteins of the secretory type made in this way, carrying mannose-6-phosphate, are transported to lysosomes. Generally the lysosome is the compartment that holds the enzymes which break material down by hydrolysis.”',
+ cn:'<span class="pg">p112</span>。<b>lysosome 在整套卡里只有中文解释过</b>（<code>terms.py</code> 查过），所以英文要背下来。<br>⚠ <b>书没有给溶酶体的功能</b>：<span class="pg">p015</span> 的细胞器表里根本没有这一行，它只出现在 Obr. 1.5、Obr. 1.6 的图标和 <span class="pg">p110</span>、<span class="pg">p112</span> 的正文里。<b>「装水解酶的房间」这句是通用知识，说的时候要带 generally。</b><br><b>甘露糖 6-磷酸这条标签在卡 13 上已经有了</b>，两处说法要一致。'},
+{r:'中', q:'What are the matrix, the stroma and the thylakoid — how many names does an inside have?',
+ en:'“They are the names of three different insides. The matrix is the inner space of a mitochondrion, marked off by the folded inner membrane. The stroma is the corresponding space of a chloroplast, outside the thylakoids. A thylakoid is a further membrane structure inside the chloroplast, and it encloses a space of its own. So a chloroplast has one more level than a mitochondrion, and its innermost space is the thylakoid lumen.”',
+ cn:'<span class="pg">p015</span>、<span class="pg">p203</span>。<b>三个词只是三个「里面」，记住这一点就不会乱。</b><br><b>叶绿体比线粒体多一层</b>：线粒体是「外膜—内膜—基质」三层，叶绿体是「外膜—内膜—基质—类囊体膜—腔」五层。<b>所以叶绿体的质子被泵进最里面那一层，线粒体的质子被泵到最外面去</b>——这正是下面那条「两个梯度方向相反」的几何原因。<br>⚠ <b>granum、stroma、lumen 这几个词书的正文里没有，全在 Obr. 9.1 的图注上</b>（卡 <b>27</b> 记过这一条）。'}
+]},
+
+{g:'最容易混的几对', gn:'这一节乱，多半不是不知道，是<b>书自己在两页之间换了口径</b>。下面每一对都给一句能当场分开它们的判据。', items:[
+{r:'高', q:'Simple diffusion and facilitated diffusion — where exactly is the line?',
+ en:'“The line the textbook draws is whether a membrane protein takes part. Simple diffusion, it says, happens without any participation of membrane proteins. Facilitated diffusion needs a carrier, usually an integral membrane protein with a specific binding site. But the book then lists channels made by integral proteins among the routes of simple diffusion, and on the next page it calls ion channels membrane proteins under facilitated diffusion. So the same structure appears on both sides of its own line. The criterion that always works is the behaviour. A carrier is specific, saturable and inhibitable, and a hole is none of those.”',
+ cn:'⚠ <b>这是书自己打自己的一处，而且就在同一句话里</b>：<span class="pg">p200</span> 写简单扩散「<b>不需要任何膜蛋白参与</b>」，同一句的三条路里第三条就是「<b>由穿膜的整合膜蛋白形成的通道</b>」；<span class="pg">p201</span> 又把 <b>ion channel 明写成膜蛋白</b>，而且放在<b>易化扩散</b>那一段。<br><b>考场处理方式（LOGIC §14：用书的一半打书的另一半）</b>：不要说「书错了」，说<b>判据应该换一个</b>——“The textbook draws the line by whether a protein is involved, and its own examples cross that line. The criterion that survives is the behaviour: specificity, saturability and inhibitability.”<br><b>这一条是这张卡上最值钱的一格</b>，因为它证明你读的是这本书，而且读进去了。'},
+{r:'高', q:'Facilitated diffusion and active transport both use a carrier protein. What separates them?',
+ en:'“The direction. Facilitated diffusion still runs down the concentration gradient and costs nothing, so it only speeds up something that was going to happen anyway. Active transport runs against the gradient, so it cannot happen at all without energy. The textbook says the mechanism of active transport resembles facilitated diffusion, except that every single step depends on the energy of the carrier. A second clue is that active transport often moves two or more substances at once, as a symport or an antiport.”',
+ cn:'<span class="pg">p201</span>。<b>判据一句话：看方向。顺梯度＝易化，逆梯度＝主动。</b><br><b>「有没有蛋白」分不开它们</b>，两边都有蛋白——<b>这正是上一条那个矛盾为什么要紧</b>。<br>加一句更硬的：<b>易化扩散改变的是速率，主动运输改变的是终点。</b>前者只能让平衡来得更快，后者能把体系推离平衡。'},
+{r:'高', q:'Primary and secondary active transport — what is the difference?',
+ en:'“Where the energy comes from. Primary active transport spends a macroergic bond of ATP directly, or the energy of another exergonic reaction, and the textbook calls those ATPase pumps. Secondary active transport spends the concentration gradient of some other substance, one that a primary pump built earlier. So the second one is still paid for by ATP, but at one remove. That is also the clearest proof that a gradient really is a store of energy.”',
+ cn:'<span class="pg">p201</span>。<b>「次级」不是「次要」，是「用的是二手能量」。</b><br><b>最后那一句把它接回速背第 3 点</b>：书 <span class="pg">p017</span> 说「某些离子在两个区室之间的非平衡分布」<b>是一种能量丰富的局面</b>。<b>能存进去、能取出来花——它才算得上一种能量形式。</b>'},
+{r:'中', q:'The cytosol, the cytoplasm and the intermembrane space — the textbook mixes two of them. Which is which?',
+ en:'“The textbook calls the outer side of the inner mitochondrial membrane the cytosolic side, and once it adds that this means, more precisely, the intermembrane space. Strictly those are two different places. The intermembrane space lies between the outer membrane and the inner one. The cytosol is outside the whole mitochondrion. Generally the two are treated as one because the outer membrane is freely permeable to small molecules. In an answer I would say intermembrane space and give that reason.”',
+ cn:'<span class="pg">p142</span>——书自己的括号里就写着「<b>更确切地说是膜间隙</b>」，所以这不是错，是它的用词习惯。<b>但如果你跟着它说 cytosolic side，听起来就像你把两个空间弄混了。</b><br>⚠ <b>「外膜对小分子自由通透」这一条书里没有</b>，要说就带 generally。<br><b>cytoplasm 和 cytosol 也差一层</b>：书讲脂肪酸合成用的词是 <b>cytoplasm</b>（<span class="pg">p187</span>），讲糖酵解用的是 <b>cytosol</b>（<span class="pg">p164</span>）。<b>通用的区分是：细胞质包括细胞器，胞质是扣掉细胞器之后剩下的那部分液体。</b>书没有做这个区分，跟着书的用词最安全。'},
+{r:'中', q:'The proton gradients of the mitochondrion and the thylakoid run in opposite directions. Why?',
+ en:'“They do. In the mitochondrion protons are pumped out of the matrix. In the thylakoid they are driven from the outside into the inner space. The ATP synthase is turned round to match, with its head on the stroma side, and it lets protons out of the thylakoid rather than into it. The textbook gives a reason for the reversed orientation. It says the explanation lies in the evolution of membranes, in the way they pinched off and closed on themselves.”',
+ cn:'<span class="pg">p208</span>、<span class="pg">p209</span>。<b>这是全书少见的、书自己给出进化解释的地方</b>，落在四块地基里的<b>进化</b>那一块，说出口很稳。<br><b>几何上的记法更好记</b>：<b>叶绿体比线粒体多一层</b>，所以「最里面」在两边指的不是同一个位置——<b>线粒体的质子往外走，类囊体的质子往里走，两边的 ATP 合成酶的头都朝着那个大的空间。</b><br><b>接卡 25 和卡 27</b>，那两张卡上都有这一对。'}
+]},
+
+{g:'为什么类', gn:'这一族的「为什么」最后都落在同一处：<b>膜挡住了一个带电或很极性的东西</b>，再往下就是物理化学。', items:[
+{r:'高', q:'Why can a proton not simply cross the membrane on its own?',
+ en:'“Because it carries a charge, and the middle of the bilayer is markedly nonpolar. The textbook describes the bilayer as having a markedly nonpolar middle and two polar surfaces, and it lists what does cross by simple diffusion. Lipophilic substances, water and some ions. A bare proton is not lipophilic. So pumping protons to one side builds a difference that stays built, and the only way back is through a protein. In the mitochondrion that protein is ATP synthase, and the textbook says six protons give about three ATP.”',
+ cn:'<span class="pg">p198</span>、<span class="pg">p200</span>、<span class="pg">p146</span>。<b>这一条是呼吸链卡缺的那块地基</b>：不先说「质子自己过不去」，「梯度」两个字就没有内容。<br><b>完整的质子账在速背第 13 点</b>：2 个质子换 1 个 ATP，每个质子至少值 15 kJ/mol，而一个 pH 单位只值 5,7（卡 <b>x-ph</b>）——<b>差价在电荷上</b>。<br>⚠ <b>再往下问「为什么带电就过不去」就落到物理化学了</b>，给停止句。'},
+{r:'高', q:'Why put an enzyme system into a membrane at all?',
+ en:'“Because it gives the reaction a direction. The textbook says that building an enzyme system into a biological membrane determines, besides the rate, also the direction of the catalysed reaction in three-dimensional space. Its word for that is vectorial character. A reaction in free solution has no direction, because every side of the enzyme faces the same solution. Fix the enzyme in a membrane and there is a this side and a that side. That is what allows chemical energy and osmotic work to be converted into one another.”',
+ cn:'<span class="pg">p141</span>。<b>「溶液里的反应没有方向」这一句是自己补的解释，书只给了结论</b>，但它是这条的关键——说出来比只背 vectorial 这个词强得多。<br><b>书把这件事的意义说得很大</b>：膜是<b>氧化还原系统和磷酸化系统之间的连接环节</b>。<b>换句话说，没有膜，呼吸链和 ATP 的合成就接不上。</b>'},
+{r:'高', q:'Why does the cell use a carrier when a hole would be simpler?',
+ en:'“Because a hole cannot be controlled and a carrier can. The textbook makes the point from the other end. A freely permeable membrane would let any substance move between any two regions, which is one of the two extremes it says nature does not allow. A carrier is specific, so it chooses what crosses. It is saturable, so the rate has a ceiling. And it is inhibitable, so the cell can switch it. The book says the carrier therefore behaves like an enzyme.”',
+ cn:'<span class="pg">p200</span>、<span class="pg">p201</span>。<b>三个性质就是三种控制</b>：专一＝<b>选谁过</b>，可饱和＝<b>限速</b>，可抑制＝<b>开关</b>。<br><b>这一条直通卡 02</b>：可饱和意味着有半饱和浓度，<b>半饱和浓度就是 K<sub>m</sub></b>，所以书才敢说可以用酶动力学的方程描述运输。<b>同一个形状第三次出现</b>（K<sub>d</sub>、K<sub>m</sub>、pK<sub>a</sub>，见卡 x-ph）。'},
+{r:'中', q:'Why do a synthesis and a degradation of the same molecule need two different rooms?',
+ en:'“Because they share intermediates. The textbook says catabolic and anabolic routes between the same two compounds are not reversible into one another, and that their energy requirements differ fundamentally. It also says the two are often located in different compartments of the cell. Under metabolic regulation it names compartmentation as the device, and says it is an important means of letting synthetic and degradative reactions that partly share intermediates run separately and under control. Fatty acids are the clean example, matrix for degradation and cytoplasm for synthesis.”',
+ cn:'<span class="pg">p134</span>、<span class="pg">p218</span>、<span class="pg">p220</span>、<span class="pg">p222</span>。<b>书在四个地方说了同一件事</b>，其中 <span class="pg">p134</span> 那处最早：分解和合成能独立调控，是因为<b>它们用不同的酶系统，而且被放在细胞的不同部位</b>。<br><b>「共用中间体」这四个字是这条的核心</b>：如果两条路一个中间体都不共用，放一个房间也没事；<b>正因为共用，才必须分开</b>。<br><b>完整的调控清单在卡 32，脂肪酸的三条差别在卡 x-meta。</b>'},
+{r:'中', q:'Why are membranes a good place for regulation?',
+ en:'“Three reasons, and the textbook gives all three. First, everything that crosses a membrane has to go through a protein, and that transport is usually controlled. Second, the receptor proteins sit there, binding hormones, toxins and transmitters on the outer face and passing a signal inward. Third, a conformational change in one membrane protein is often the signal for changes in its neighbours, and the book calls that an important regulatory factor of the biological activity of membranes. So the boundary is also the control panel.”',
+ cn:'<span class="pg">p199</span>、<span class="pg">p200</span>、<span class="pg">p222</span>。<b>三条都是书自己的，一条都不用编。</b><br><b>最后那句是可以说出口的总结</b>：“The membrane is not only the wall. It is also where the switches are.” 接卡 <b>32</b> 的激素那一节。'}
+]}
+]
+});
