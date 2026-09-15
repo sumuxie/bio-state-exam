@@ -6,9 +6,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 :root{
-  --paper:#faf8f4; --ink:#1a1917; --dim:#716c64; --faint:#9a948b; --rule:#e4dfd5;
+  /* 白天也照 Trae 的对比度：它的浅色主题用 #31353A 的字配白底，
+     VS Code Light Modern 用 #3B3B3B，都不是纯黑。原来这里是 #1a1917，高一档。
+     （2026-09-15 Ruojin：让字和背景对比不要那么强烈） */
+  --paper:#f8f6f2; --ink:#3a3835; --dim:#6d6961; --faint:#9c978e; --rule:#e6e2da;
   --card:#fff; --accent:#7a5c2e; --soft:#f4eee2; --onAccent:#fff;
-  --bad:#c2410c; --ok:#15803d;
+  --bad:#b5491d; --ok:#2f6b41;
   --good:#2f5d3a; --goodbg:#eef4ee;
   --warn:#8a4b12; --warnbg:#fcf1e3;
   --chip:#efeae1;
@@ -324,7 +327,12 @@ button.b:disabled{opacity:.35;cursor:default}
 #wpop{position:fixed;z-index:60;display:none;max-width:min(360px,92vw)}
 #wpop .card{background:var(--card);border:1px solid var(--rule);border-radius:11px;
   padding:12px 13px 10px;box-shadow:0 10px 30px rgba(0,0,0,.18);margin-bottom:6px}
-#wpop .hd{display:flex;align-items:flex-start;gap:10px}
+#wpop .hd{display:flex;align-items:center;gap:8px}
+#wpop .say{flex:none;font-family:inherit;font-size:14px;line-height:1;border:1px solid var(--rule);
+  background:var(--card);color:var(--ink);border-radius:8px;padding:7px 10px;cursor:pointer}
+#wpop .say:hover{border-color:var(--accent);color:var(--accent)}
+#wpop .one{font-size:14px;color:var(--ink);margin:9px 0 0;line-height:1.55;
+  overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
 #wpop .hw{font-size:17px;font-weight:700;color:var(--ink);line-height:1.3;flex:1;min-width:0}
 #wpop .star{flex:none;font-family:inherit;font-size:13px;font-weight:700;white-space:nowrap;
   border:1px solid var(--accent);background:var(--card);color:var(--accent);
@@ -10901,21 +10909,15 @@ function showWordPop(w, rect){
   var wp = document.getElementById('wpop');
   if (!wp){ wp = document.createElement('div'); wp.id = 'wpop'; document.body.appendChild(wp); }
   var on = favHas('w', w), g = glossOf(w);
-  var h = '<div class="card"><div class="hd"><div class="hw">' + esc(w)
-        + (g && g.ipa ? '<span class="ipa">' + esc(g.ipa) + '</span>' : '') + '</div>'
+  /* 只三样：词、朗读、收藏，再加一行中文。别的在单词本里看。 */
+  var cn = (g && g.cn) ? g.cn : '';
+  var h = '<div class="card"><div class="hd"><div class="hw">' + esc(w) + '</div>'
+        + '<button type="button" class="say" title="朗读" onclick="playWord(' + JSON.stringify(w) + ')">🔊</button>'
         + '<button type="button" class="star' + (on ? ' on' : '') + '" data-w="' + w.replace(/"/g, '&quot;')
-        + '" onclick="favWord(this)">' + (on ? '★ 在本子里' : '☆ 加进本子') + '</button></div>';
-  if (g && g.ex){
-    h += '<p class="ex">' + esc(g.ex) + '</p>'
-       + '<p class="exfrom">你卡上的原句'
-       + (g.c ? ' · <a href="#/c/' + esc(g.c) + '">卡 ' + esc(g.c) + '</a>' : '') + '</p>';
-  }
-  if (g && g.cn) h += '<p class="cn">' + esc(g.cn) + '</p>';
-  if (g && g.en) h += '<p class="en">' + esc(g.en) + '</p>';
-  if (!g) h += '<p class="none">词库里还没有这个词的释义。收藏它，补的时候就知道该补哪些。</p>';
-  else if (!g.cn) h += '<p class="none">这条只有英文释义，中文还没补。</p>';
-  if (g) h += '<p class="src">' + srcLine(g) + '</p>';
-  h += '</div>';
+        + '" onclick="favWord(this)">' + (on ? '★' : '☆') + '</button></div>'
+        + '<p class="one" title="' + (cn ? cn.replace(/"/g, '&quot;') : '') + '">'
+        + (cn ? esc(cn) : '还没有中文释义') + '</p>'
+        + '</div>';
 
   wp.innerHTML = h;
   wp.style.display = 'block';
