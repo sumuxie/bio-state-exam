@@ -158,6 +158,20 @@ def load_dict(need):
     return d, lemma
 
 
+CZECH = 'ěščřžýáíéúůňťďó'
+def strip_czech(t):
+    """她的词库里有些英文释义夹着捷克原词。她的话：一点捷克语都不要。
+    先剥掉带捷克字母的引号／括号片段；剥不干净的整条丢弃，宁可没有也不要留捷克语。"""
+    if not t: return t
+    if not any(c in t for c in CZECH): return t
+    for pat in (r"'[^']*[" + CZECH + r"][^']*'", r'\([^()]*[' + CZECH + r'][^()]*\)',
+                r'“[^”]*[' + CZECH + r'][^”]*”'):
+        t = re.sub(pat, '', t)
+    t = re.sub(r'\s{2,}', ' ', t).strip(' ,;:')
+    if any(c in t for c in CZECH): return ''
+    return t
+
+
 def load_extra():
     """人工补的那张表，优先级最高。见 tools/gloss_extra.py。"""
     try:
@@ -226,8 +240,10 @@ def main():
                 src = 4
         if rec is None: continue
         e = {}
-        if rec.get('cn'): e['cn'] = rec['cn'][:160]
-        if rec.get('en'): e['en'] = rec['en'][:220]
+        cnv = strip_czech(rec.get('cn') or '')
+        env = strip_czech(rec.get('en') or '')
+        if cnv: e['cn'] = cnv[:160]
+        if env: e['en'] = env[:220]
         ipa = rec.get('ipa') or (drec or {}).get('ipa') or ''
         if ipa: e['ipa'] = ipa[:60]
         if w in exmap:

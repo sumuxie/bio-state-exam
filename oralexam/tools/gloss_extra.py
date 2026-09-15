@@ -24,6 +24,9 @@
 """
 
 EXTRA = {
+    # 她旧词库里 biology 那条是一段课程介绍，不是释义。
+    'biology': ('生物学 —— 研究生命体及其过程的科学。', 'The study of living organisms and their processes.'),
+
     # 这两个不是捷克语残留，清完捷克语也不会消失，所以照写。
     'eikosi': ('希腊语的「二十」。二十碳酸（eicosanoid，类二十烷酸）就是照这个数命名的——'
                '前体花生四烯酸正好二十个碳。卡 23 和卡 32 里用英文讲过这个词源。', 'Greek for twenty'),
@@ -266,7 +269,7 @@ EXTRA = {
 'hsp': ('HSP ＝ 热激蛋白（heat-shock protein）。分子伴侣，名字来自它们在热应激时大量诱导。书点名的是 GroEL/GroES 和 hsp70。要点：伴侣只是催化折叠、把错误折叠的再拆开重来，它不提供信息——信息在序列里。', ''),
 's-s': ('S-S ＝ 二硫键（–S–S–）。两个半胱氨酸的巯基被氧化连在一起，得到胱氨酸（cystine）。它是唯一常见的共价侧链交联，把折叠锁住；碱能断、还原剂断成两个半胱氨酸、过甲酸则不可逆地氧化成半胱磺酸。',
         'A disulfide bridge: two cysteine thiols oxidised together.'),
-'co-nh': ('CO-NH 就是肽键写开的样子：前一个氨基酸的羰基（C＝O）连着后一个的氮（N–H）。电子在 O-C-N 上离域，所以 C–N 带部分双键性质、不能自由转动，整个肽单元是一个平面。捷克书把它叫 peptidová (amidová) vazba，也就是「肽键（酰胺键）」。',
+'co-nh': ('CO-NH 就是肽键写开的样子：前一个氨基酸的羰基（C＝O）连着后一个的氮（N–H）。电子在 O-C-N 上离域，所以 C–N 带部分双键性质、不能自由转动，整个肽单元是一个平面。书上把它叫 peptide (amide) bond，也就是「肽键（酰胺键）」。',
           'The peptide (amide) bond written out: C=O of one residue joined to N-H of the next.'),
 'conh': ('–CONH₂ ＝ 酰胺基。天冬酰胺和谷氨酰胺的侧链末端就是它：羧基换成酰胺，所以不带电。天冬酰胺侧链的这个氮正是 N-连接糖基化唯一的挂点。', ''),
 'n-h': ('N-H 键。氢键的给体之一（O-H 和 N-H 都是永久偶极）。α 螺旋和 β 折叠靠的就是主链自己的 C＝O 和 N-H 之间的氢键。', ''),

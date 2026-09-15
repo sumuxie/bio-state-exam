@@ -2,21 +2,21 @@
    题库 #5（S1 Biochemistry 5）＋ #10（S2 Biochemistry 4：Describe the activities of Taq and Kapa polymerases.）
    导师写过两遍 · w3 · 书本投入 bw 0 · gap 'ok'（她的日常工作）
 
-   ⛔ 出处规矩：这张卡里没有一句可以说成「书上说」。229 页全文 grep 的结果：
-      Taq = 0 · Thermus aquaticus = 0 · termostabilní = 0 · TaqMan = 0 · hot start = 0 ·
-      restrikce / klonování / sekvenování / hybridizace / knihovna = 全 0 ·
-      DNA 的热变性 = 0（denaturace 只有 p035 讲蛋白质、p058–p059 讲酶的热失活）·
-      Kapa 的唯一命中是 p178 的捷克词 kapalné（液态的），跟酶无关 ·
-      PCR 只有一处：p009 年表 “1983-5 | Objev polymerasové řetězové reakce (PCR)”，无人名。
+   ⛔ 出处规矩：这张卡里没有一句可以说成「书上说」。229 页全文 grep 的结果（每个词都按书里的原词搜过，这里列的是英文）：
+      Taq = 0 · Thermus aquaticus = 0 · thermostable = 0 · TaqMan = 0 · hot start = 0 ·
+      restriction / cloning / sequencing / hybridisation / library = 全 0 ·
+      DNA 的热变性 = 0（denaturation 只有 p035 讲蛋白质、p058–p059 讲酶的热失活）·
+      Kapa 的唯一命中是 p178 上一个意思是「液态的」的普通词，跟酶无关 ·
+      PCR 只有一处：p009 年表 “1983-5 | Discovery of the polymerase chain reaction (PCR)”，无人名。
    书能给的只有邻居，都带页码，而且每次都要说清「书讲的是酶，不是这个用法」：
-      p077 四种 dNTP ＋ templát（matrice）＋ RNA 当 startér (primer) ·
+      p077 四种 dNTP ＋ template（书上那个词是「matrix」）＋ RNA 当 primer（书上那个词是「starter」）·
       p078 只能接游离 3′-OH · 亲核进攻 · 放出 PPi · 必须有镁离子 · 3′→5′ exonuclease ＝「第二个纠错者」·
       p079–p080 pol I 的三种活性（这就是描述 Taq / Kapa 的全部词汇表）· Klenow ·
       p059 大多数酶 55–60 °C 失活，但有些来自嗜热菌的酶 85 °C 仍有活性 ← 全书唯一能接「耐热」的句子 ·
-      p035 denaturace 的定义：天然构象被破坏、链展开、失去生物功能，热变性通常不可逆 ·
+      p035 denaturation 的定义：天然构象被破坏、链展开、失去生物功能，热变性通常不可逆 ·
       p073 A–T 两个氢键、G–C 三个氢键 ＋ 碱基堆积 ← GC-rich 难扩增和 Tm 的理由 ·
       p085 反转录酶（RNA 指导的 DNA polymerase，见于某些 RNA 病毒）·
-      p087 Obr. 4.27b 是 T. thermophilus 的 16S rRNA ← 全书唯一出现 Thermus 这个属的地方，讲的是核糖体。
+      p087 figure 4.27b 是 T. thermophilus 的 16S rRNA ← 全书唯一出现 Thermus 这个属的地方，讲的是核糖体。
    卡 16 已经定义过、这里只引用不重复：primer · template · 5′→3′ · exonuclease · 校对 · Okazaki · 复制叉。
    标记约定：英文里出现 “generally” ＝ 通用分子生物学；“in the lab / in my hands / for us” ＝ 她的实验室实践。 */
 
@@ -30,7 +30,7 @@ sub:'主干说完约 90 秒 · 导师写过两遍 · 书里 0 命中：每一句
 cram:[
  {g:'开口', gn:'⚠ 这道题书里一个字都没有，所以<b>第一句先划出处，第二句才给定义</b>。题面的五个实词——activities、Taq、Kapa、polymerases、以及 “why is that important for us”——这一组里全部交代掉；important 那一问的正面答案是第 12 点那一句判据。口试他多半只念 “What is Taq polymerase?”，其余的是他准备挖的方向。'},
  {n:'01', t:'先划出处',
-  big:'全书 <b>0 命中</b>：Taq、Thermus、termostabilní、TaqMan 都没有；PCR 只有 <b>p009 年表一行</b>，而且<b>没有人名</b>。所以这张卡全部是<b>通用分子生物学</b>或<b>我自己的实验室实践</b>',
+  big:'全书 <b>0 命中</b>：Taq、Thermus、thermostable、TaqMan 都没有；PCR 只有 <b>p009 年表一行</b>，而且<b>没有人名</b>。所以这张卡全部是<b>通用分子生物学</b>或<b>我自己的实验室实践</b>',
   en:'“One thing before I answer: this is not textbook material. In this book the polymerase chain reaction appears once, in the chronological table, as the discovery of the polymerase chain reaction in 1983 to 1985, with no name attached. And neither Taq nor Thermus aquaticus appears anywhere. So everything I say here is either general molecular biology or my own laboratory practice, and I will say which as I go. What the textbook does give me is the vocabulary: the three enzyme activities it lists for E. coli DNA polymerase I.”',
   note:'<b>这一句是整张卡的保险。</b>书外题最危险的失分不是答错，是<b>把实验室的东西说成「书上说」</b>——他翻得到。先说清楚，后面每一句都安全，而且「我知道这本书里有什么、没有什么」本身就是加分。<span class="pg">p009</span>'},
  {n:'02', t:'定义 · PCR',
@@ -62,7 +62,7 @@ cram:[
  {n:'06', t:'Taq 是什么',
   big:'<b>Taq ＝ Thermus aquaticus 的 DNA polymerase</b>，温泉里的细菌，最适生长就在 70 °C 上下。它<b>有</b> polymerase 5′→3′、<b>有</b> 5′→3′ exonuclease、<b>没有</b> 3′→5′ 校对',
   en:'“Taq polymerase is, generally, the thermostable DNA polymerase of <b>Thermus aquaticus</b> — a bacterium that lives in hot springs and grows best at around seventy degrees. The name is just the first letters of the genus and the species. In the textbook’s three-activity vocabulary it has two of the three: the 5′→3′ polymerase and a 5′→3′ exonuclease, like polymerase I. What it does not have is the 3′→5′ exonuclease, so it cannot proofread. Almost everything else about the enzyme follows from that one absence.”',
-  note:'⚠ 全部 general。<b>书里唯一出现 Thermus 这个属的地方是 <span class="pg">p087</span> 的 Obr. 4.27b——T. thermophilus 的 16S rRNA 结构图</b>，讲的是核糖体不是聚合酶。顺势可以给一句（要说明是我接的，不是书接的）：“Structural biology uses these organisms for the same reason PCR does — their macromolecules survive heat.”'},
+  note:'⚠ 全部 general。<b>书里唯一出现 Thermus 这个属的地方是 <span class="pg">p087</span> 的 figure 4.27b——T. thermophilus 的 16S rRNA 结构图</b>，讲的是核糖体不是聚合酶。顺势可以给一句（要说明是我接的，不是书接的）：“Structural biology uses these organisms for the same reason PCR does — their macromolecules survive heat.”'},
  {n:'07', t:'错误率',
   big:'没有校对 ＝ 错得多。量级是<b>每个碱基每次倍增 10⁻⁴ 到 10⁻⁵</b>——<b>报量级，不报精确数</b>',
   en:'“Because it cannot proofread, Taq’s error rate is high: generally of the order of one wrong base in ten thousand to one in a hundred thousand, per base per duplication. I give that as an order of magnitude deliberately. Published values differ severalfold between assays and between buffers, so a single precise number is one I could not defend. For comparison, the textbook gives no figure at all for replication in the cell. Generally, base pairing on its own is about the same order. It is proofreading and then mismatch repair that take a bacterium down to roughly one error in a billion bases.”',
@@ -128,7 +128,7 @@ end:'<b>顺序：先划出处 → PCR 是什么 → 三个温度 → 耐热是�
 
 /* ---------------- 演练 ---------------- */
 sib:[
-['<b>先划出处</b>：书里 Taq / Thermus / termostabilní 全 0，PCR 只有 p009 年表一行、没有人名',
+['<b>先划出处</b>：书里 Taq / Thermus / thermostable 全 0，PCR 只有 p009 年表一行、没有人名',
  '“This is not textbook material — the book mentions the polymerase chain reaction once, in its chronological table, and never mentions Taq. So everything here is general molecular biology or my own laboratory practice.”',
  '<b>书外题的第一句永远是出处。</b>把实验室的东西说成「书上说」，他翻得到。'],
 ['<b>PCR 的定义</b>：体外方法，<b>循环温度</b>，把<b>两条引物划定</b>的那一段 DNA <b>指数</b>复制出来',
@@ -286,7 +286,7 @@ ask:[
  cn:'⚠ 全部通用与实验室。<b>第二个理由是这张卡独有的</b>，卡 16 上没有，也是他最可能觉得意外的一条。'},
 {r:'中', q:'What are blunt and sticky ends?',
  en:'“A blunt end is a double-stranded end where both strands stop at the same position, nothing overhanging. A sticky, or cohesive, end has a short single-stranded overhang. That overhang can base pair with a complementary overhang on another molecule and hold the two together while a ligase seals them. Generally they come from restriction enzymes cutting the two strands at staggered positions. Or, here, they come from a polymerase: Taq leaves a one-base 3′ adenine, a proofreading enzyme leaves blunt product. Blunt ligation works but is less efficient, because nothing holds the two pieces together first.”',
- cn:'⚠ 书里 restrikce / klonování 全 0 命中，全部通用。<b>「什么按住它们」这句是 blunt 连接效率低的理由</b>，比说「blunt 比较难连」有用。'},
+ cn:'⚠ 书里 restriction / cloning 全 0 命中，全部通用。<b>「什么按住它们」这句是 blunt 连接效率低的理由</b>，比说「blunt 比较难连」有用。'},
 {r:'中', q:'What is TA cloning?',
  en:'“TA cloning is ligating a PCR product straight into a vector by using the single 3′ adenine that Taq leaves. The vector comes linearised with a single 3′ thymine on each end. The A and the T pair with each other, and a ligase seals the nicks — no restriction enzyme and no end-preparation step. It works only with a non-proofreading polymerase: with a proofreading enzyme the product is blunt, and even an added adenine would be removed by the 3′→5′ exonuclease.”',
  cn:'⚠ 全部实验室。<b>最后半句把两个酶重新连起来</b>，而且是「活性 → 操作后果」的干净例子。'},
@@ -304,7 +304,7 @@ ask:[
 {g:'为什么类', gn:'卡上给了结论没给理由的地方。<b>书没有理由的先划出处再解释。</b>', items:[
 {r:'高', q:'Why must the polymerase be thermostable?',
  en:'“Because every cycle has to reach about ninety-five degrees to separate the strands, and an ordinary enzyme denatures there. That is the textbook’s own definition on p035: the native conformation is disturbed, the chain unfolds, biological function is lost, and heat denaturation is usually irreversible. Without a thermostable enzyme, fresh polymerase would have to be added after every cycle, which is how the method was first done. A polymerase from an organism that lives at seventy degrees survives instead, so the reaction can be left in a machine.”',
- cn:'<b>用书自己的 denaturace 定义</b>（<span class="pg">p035</span>）来解释一个书里没有的方法——这是书外题最稳的接法。<span class="pg">p059</span>'},
+ cn:'<b>用书自己的 denaturation 定义</b>（<span class="pg">p035</span>）来解释一个书里没有的方法——这是书外题最稳的接法。<span class="pg">p059</span>'},
 {r:'高', q:'Why does each step need the temperature it needs?',
  en:'“Each temperature is set by a different physical event. Ninety-five is what it takes to break the hydrogen bonds holding the strands together, and GC-rich stretches need the most, three per pair against two. Fifty to sixty-five is the window where a twenty-base primer is stably paired but a partly matched one is not, so it sets the specificity of the whole reaction. Seventy-two is near the optimum of these thermophilic enzymes. The textbook’s point on p058 holds, that rate roughly doubles per ten degrees until thermal denaturation takes over. And for an enzyme from a hot spring that crossover is far higher.”',
  cn:'<b>三个温度三个理由，而且第三个能引书</b>（<span class="pg">p058</span> 的 Q10 与热失活）。这是这张卡里少数能真正靠书说话的地方。'},
@@ -325,7 +325,7 @@ ask:[
  cn:'<b>最后一句是故意留的口子</b>——它把这道题接到 directed evolution，而那是她的主场。<span class="pg">p073</span>'}
 ]},
 
-{g:'怎么发现的', gn:'⚠ 人名和年份<b>全部是通用知识</b>，书里只有 p009 年表的一行 “1983-5 Objev polymerasové řetězové reakce (PCR)”，<b>连人名都没有</b>。先给书的那一行，再给通用的故事。', items:[
+{g:'怎么发现的', gn:'⚠ 人名和年份<b>全部是通用知识</b>，书里只有 p009 年表的一行 “1983-5 Discovery of the polymerase chain reaction (PCR)”，<b>连人名都没有</b>。先给书的那一行，再给通用的故事。', items:[
 {r:'中', q:'Who invented PCR?',
  en:'“Generally, Kary Mullis, in 1983, and the method was published and developed over the following two years. That matches this textbook’s chronological table, where the discovery of the polymerase chain reaction is dated 1983 to 1985, though the table gives no name. The idea is simple, and that is its point. If a polymerase copies a primed template, and heat rather than an enzyme separates the strands, the copying can be repeated. And a repeated doubling is exponential growth.”',
  cn:'<span class="pg">p009</span> 是书里唯一的落点，而且<b>正好支持 1983 这个年份</b>——先引书再给人名，最稳。',
@@ -375,7 +375,7 @@ ask:[
  cn:'<b>「表达」这个词在判据里承重，所以要能接下去。</b>启动子和操纵子在卡 12；质粒本身书里 0 命中，材料在 `content/x_plasmid.md`（大本营卡）。'},
 {r:'中', q:'→ Sanger 测序需要干净的模板',
  en:'“Generally — the method is not in the textbook, although its table credits Sanger with the first protein sequence in 1953. Sanger sequencing reads one population of molecules at a time and reports, at each position, whatever the majority says. So it needs a single clean product: a mixed PCR, a smear, or leftover primers give overlapping traces that cannot be read. One more reason the product I am going to sequence is made with a proofreading enzyme and checked on a gel first.”',
- cn:'⚠ sekvenování 全书 0 命中；<span class="pg">p009</span> 的 Sanger 说的是<b>胰岛素的氨基酸序列</b>，不是 DNA 测序——<b>别把这两件事混成一件</b>。'},
+ cn:'⚠ sequencing 全书 0 命中；<span class="pg">p009</span> 的 Sanger 说的是<b>胰岛素的氨基酸序列</b>，不是 DNA 测序——<b>别把这两件事混成一件</b>。'},
 {r:'中', q:'→ 其他常用的校对酶',
  en:'“KAPA HiFi is not the only one — generally, Phusion and Q5 are the other two I would name. Both are engineered B-family enzymes with the same 3′→5′ proofreading activity and the same practical consequences: blunt products, hot start, lower error rate, sensitivity of primers to the exonuclease. Which one a laboratory uses is largely habit and buffer. The activity that matters is the same.”',
  cn:'<b>点出名字但不比较细节</b>——「largely habit」这半句防止他往产品参数上追，那不是生化。'}

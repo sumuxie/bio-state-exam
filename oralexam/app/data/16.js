@@ -2,7 +2,7 @@
    题库 #16（S3 Biochemistry 3）· 单卷题 · 书本投入 45
    出处 Biochemie OCR p076–p085（§4.1.2.1、§4.1.3）、p073（配对特异性＝复制准确性）、
         p088（转录不需要 primer，相邻）、p009（年表：1953 Watson–Crick、1983–5 PCR）
-   书里 0 命中，全部标 general 或实验室：topoisomerase / gyrase · telomere · Meselson–Stahl ·
+   书里 0 命中（按书里的原词搜的），全部标 general 或实验室：topoisomerase / gyrase · telomere · Meselson–Stahl ·
    Kornberg（DNA pol I；书里的 Kornberg 是 2001 年 RNA polymerase 结构那位）· Okazaki 人名 ·
    错误率数字 · α-磷酸这个叫法 · 真核 pol α/δ/ε · Taq / Kapa。
    卡 03 已定义、这里不重复：antiparallel、complementary、base pairing、phosphodiester bond、撇号约定。 */
@@ -23,7 +23,7 @@ cram:[
  {n:'02', t:'半保留',
   big:'<b>Semiconservative</b>：每条新双螺旋里，一条链是旧的，一条链是新合成的',
   en:'“Replication is semiconservative: each of the two daughter double helices keeps one parental strand and gets one newly made strand. The parental helix is neither kept whole nor broken up. It is split between the two products. The textbook says so directly, and its electron micrograph of a replication eye in Drosophila DNA is consistent with the semiconservative model.”',
-  note:'p082「probíhá semikonservativně」；p078 Obr. 4.15。<b>Meselson–Stahl 1958 书里没有</b>（全书 0 命中），要说就带 “generally”。<span class="pg">p078 p082</span>'},
+  note:'p082 那句话说复制「proceeds semiconservatively」（书上原话的英译）；p078 figure 4.15。<b>Meselson–Stahl 1958 书里没有</b>（全书 0 命中），要说就带 “generally”。<span class="pg">p078 p082</span>'},
  {n:'03', t:'需要什么',
   big:'底物：<b>四种 dNTP</b> ＋ <b>模板 DNA</b> ＋ 一小段 <b>RNA primer</b>；polymerase 还要 <b>Mg²⁺</b>',
   en:'“Besides the enzymes, the synthesis needs several substrates. All four deoxyribonucleotides as triphosphates: dATP, dGTP, dCTP and dTTP. DNA as the template. And a short piece of RNA that serves as the starter, the primer. DNA polymerase also needs magnesium ions.”',
@@ -45,11 +45,11 @@ cram:[
  {n:'06', t:'校对',
   big:'<b>3′→5′ exonuclease ＝ 校对</b>：从 3′-OH 端往回拆，配错的就拆掉；书叫它「<b>第二个纠错者</b>」——第一个是碱基配对本身',
   en:'“An exonuclease takes nucleotides off from an end of a chain, one at a time, by hydrolysis. The 3′→5′ exonuclease of polymerases I and III works from the 3′-OH end backwards, and the textbook calls it a second corrector of base-pairing errors. That is proofreading: a mispaired nucleotide is removed before the chain goes on. The first corrector is base pairing itself: the textbook says the specificity of the hydrogen bonding is what is responsible for the accuracy of replication.”',
-  note:'p078「druhý korektor」；第一个纠错者是 p073 那句。<b>错误率的数字书里没有</b>——被问就说 generally（见追问）。<span class="pg">p073 p078</span>'},
+  note:'p078 把它叫「the second proofreader」（书上印的那个词的英译）；第一个纠错者是 p073 那句。<b>错误率的数字书里没有</b>——被问就说 generally（见追问）。<span class="pg">p073 p078</span>'},
  {n:'07', t:'5′→3′ 核酸酶',
   big:'pol I 的 <b>5′→3′ 核酸酶</b>从缺口处往下切、一次一段（≤10 nt）：<b>拆 primer</b>、切 UV 造成的<b>嘧啶二聚体</b>；配上聚合活性就是「缺口平移」',
   en:'“A nick is a break in one strand. Polymerase I’s 5′→3′ nuclease is different in kind: it cuts inside the chain, in a double-stranded region, starting at a nick, and removes a piece of up to ten nucleotides. It matters for two reasons: it is how the RNA primer is removed, and it repairs some damage. It excises the pyrimidine dimers that UV light makes, and polymerase I fills the gap. Nuclease and polymerase together move a nick along the strand towards its 3′ end — nick translation.”',
-  note:'p079–p080，Obr. 4.17、4.18。也是「修复」在这本书里的唯一落点（grep「reparac」0 命中，只有 p079 的 opravy）。<span class="pg">p079 p080</span>'},
+  note:'p079–p080，figure 4.17、4.18。也是「修复」在这本书里的唯一落点（书里没有 repair 那个术语词，0 命中；p079 用的是日常说法「修正」）。<span class="pg">p079 p080</span>'},
  {n:'08', t:'helicase 与 SSB',
   big:'解链是 <b>helicase</b>（DnaB）的活，靠水解 <b>ATP</b>；<b>SSB</b> 抓住分开的单链不让它们重新配对',
   en:'“Unwinding the double helix is done by the helicase, with unwinding proteins, and the energy comes from hydrolysing ATP. In E. coli that helicase is the DnaB protein. It separates the strands moving along the lagging-strand template, and the Rep protein moves along the leading one. Behind the helicase the single strands are held apart by single-strand-binding protein, SSB, which stops them pairing back before they are copied.”',
@@ -61,13 +61,13 @@ cram:[
  {n:'10', t:'ligase',
   big:'<b>DNA ligase</b> 把一条链的 <b>3′-OH</b> 和另一条链的 <b>5′-磷酸</b>连成磷酸二酯键；吸能，E. coli 用 <b>NAD⁺</b>，真核用 <b>ATP</b>；只能接双链里的缺口',
   en:'“DNA ligase makes a phosphodiester bond between the 3′-OH of one DNA chain and the 5′-phosphate of another. The reaction is endergonic, and the energy comes from splitting ATP or, in E. coli, NAD⁺. The ligase first takes an AMP onto the amino group of a lysine and passes it to the 5′-phosphate of the DNA. Then the 3′-OH attacks that activated phosphate and AMP leaves. Ligase cannot join two single-stranded molecules: part of the DNA must be double-stranded. What it does is seal nicks in a duplex.”',
-  note:'p081–p082，Obr. 4.20。<b>陷阱：ligase 不是在合成时连核苷酸的，那是 polymerase</b>；ligase 只封缺口。<span class="pg">p081 p082</span>'},
+  note:'p081–p082，figure 4.20。<b>陷阱：ligase 不是在合成时连核苷酸的，那是 polymerase</b>；ligase 只封缺口。<span class="pg">p081 p082</span>'},
 
  {g:'复制叉上的顺序', gn:'题面的「process」要的就是这一组。「两条母链都是模板」＋「polymerase 只走 5′→3′」两句一碰，半不连续就自己推出来。'},
  {n:'11', t:'起点与叉',
   big:'从<b>固定位点</b>起始；E. coli 环状染色体从<b>一个</b>起点<b>双向</b>复制，像希腊字母 <b>θ</b>；解开又同时合成的地方叫<b>复制叉</b>',
   en:'“Replication starts at a specific site in the molecule — generally called the origin. The E. coli chromosome is a closed circle and replicates bidirectionally from a single origin, so the replicating molecule looks like the Greek letter theta. The textbook shows Cairns’s autoradiogram, made by incorporating tritiated thymidine. Only part of the helix is unwound at a time. The place where it is being unwound and copied at the same moment is the replication fork, and two forks make the replication eye, or bubble.”',
-  note:'p082、p085、p077。「origin」这个词书没用（0 命中），书说「určité místo」——带 generally。<span class="pg">p077 p082 p085</span>'},
+  note:'p082、p085、p077。「origin」这个词书没用（0 命中），书说的是「a certain site」（书上那个说法的英译）——带 generally。<span class="pg">p077 p082 p085</span>'},
  {n:'12', t:'半不连续',
   big:'两条母链<b>都当模板</b>；但 polymerase 只走 5′→3′，两条模板又<b>反平行</b>，所以一条新链连续（<b>leading</b>），另一条只能倒着分段做（<b>lagging</b>）',
   en:'“At the fork both parental strands serve as templates. But every known DNA polymerase extends only 5′→3′, and the two parental strands are antiparallel. So on one template the new chain grows continuously in the direction the fork moves: the leading strand. On the other template the new chain must also be made 5′→3′, and that direction is away from the fork. So it is made in pieces: the lagging strand, built as Okazaki fragments. The textbook’s word is semidiscontinuous replication.”',
@@ -75,11 +75,11 @@ cram:[
  {n:'13', t:'Okazaki 循环',
   big:'每段四步：primase 做 RNA primer → <b>pol III</b> 接 <b>1000–2000 nt</b> → <b>pol I</b> 拆 primer 并补 DNA → <b>ligase</b> 封口',
   en:'“Each Okazaki fragment takes four steps. Primase lays down an RNA primer. Polymerase III extends it into a stretch of about one to two thousand nucleotides in E. coli. Polymerase I removes the RNA primer with its 5′→3′ nuclease and fills the gap with DNA. DNA ligase joins the fragment to the one before it. Then the helix opens further and the cycle runs again. Both strands are made on one complex, the replisome, with the lagging template looped around it so its polymerase can still travel with the fork. The textbook says the replisome is probably two polymerase III holoenzymes.”',
-  note:'p083–p085，Obr. 4.25。⚠ p081 也给了一个 Okazaki 长度，指数被 OCR 吃了（「10ⁿ」）——报 p083 的 1000–2000。真核片段短得多（generally 100–200 nt），书没给。「trombone model」是通用叫法。<span class="pg">p081 p083 p084 p085</span>'},
+  note:'p083–p085，figure 4.25。⚠ p081 也给了一个 Okazaki 长度，指数被 OCR 吃了（「10ⁿ」）——报 p083 的 1000–2000。真核片段短得多（generally 100–200 nt），书没给。「trombone model」是通用叫法。<span class="pg">p081 p083 p084 p085</span>'},
  {n:'14', t:'画复制叉',
   big:'他让画：一个<b>横躺的 Y</b>，先标两臂的 5′/3′，再画箭头',
   en:'“If I draw it: a Y lying on its side — the stem is the parental duplex, the arms are the separated templates, the fork moves left. On the upper arm the new strand runs continuously towards the fork — leading. On the lower arm short arrows point away from the fork — Okazaki fragments, each starting from a small RNA primer, ligase between them.”',
-  note:'<b>画的顺序</b>（书 Obr. 4.22）：① 横躺的 Y，叉尖朝左 ② 上臂从叉尖往右标 <b>5′→3′</b>（叉端是 5′），下臂从叉尖往右标 <b>3′→5′</b>（叉端是 3′）——反平行 ③ 上臂下面一条长箭头<b>指向叉</b>，箭头尖标 3′，写 leading ④ 下臂上面三段短箭头<b>背离叉</b>，每段左端一小段波浪线＝RNA primer，写 lagging / Okazaki ⑤ 叉尖画 helicase，裸露单链上几个小圆＝SSB ⑥ 两段之间标 ligase。<span class="pg">p083</span>'},
+  note:'<b>画的顺序</b>（书 figure 4.22）：① 横躺的 Y，叉尖朝左 ② 上臂从叉尖往右标 <b>5′→3′</b>（叉端是 5′），下臂从叉尖往右标 <b>3′→5′</b>（叉端是 3′）——反平行 ③ 上臂下面一条长箭头<b>指向叉</b>，箭头尖标 3′，写 leading ④ 下臂上面三段短箭头<b>背离叉</b>，每段左端一小段波浪线＝RNA primer，写 lagging / Okazaki ⑤ 叉尖画 helicase，裸露单链上几个小圆＝SSB ⑥ 两段之间标 ligase。<span class="pg">p083</span>'},
 
  {g:'账与边界', gn:'合成类的题也要三行账。然后是原核/真核的边界——书只给了两句。'},
  {n:'15', t:'账',
@@ -163,7 +163,7 @@ segs:[
 
 why:{
  rungs:[
-  ['为什么新链的顺序不会错？','两个纠错者。第一个是<b>碱基配对本身</b>——书 p073 说氢键的特异性正是复制准确性的来源；第二个是 <b>3′→5′ exonuclease</b>，书 p078 叫它「druhý korektor」，配错的核苷酸在链继续之前被拆掉。'],
+  ['为什么新链的顺序不会错？','两个纠错者。第一个是<b>碱基配对本身</b>——书 p073 说氢键的特异性正是复制准确性的来源；第二个是 <b>3′→5′ exonuclease</b>，书 p078 叫它「the second proofreader」（书上印的那个词的英译），配错的核苷酸在链继续之前被拆掉。'],
   ['为什么需要 primer，而且为什么是 RNA？','需要 primer 是因为 DNA polymerase <b>不能起头</b>（p078）；能起头的是 RNA polymerase 类的酶，所以由 primase 做成 RNA（p083）。<b>为什么偏要 RNA</b> 书没说，generally：起头那几个核苷酸是在没有校对的情况下放上去的，做成 RNA 等于贴了「临时」标签——pol I 把它拆掉，换成校对过的 DNA。'],
   ['那为什么所有 polymerase 都只能 5′→3′？','书只说「所有已知的 DNA polymerase 都只能 5′→3′」（p082）。generally：能量在<b>进来的 dNTP</b> 的三磷酸上。反过来长，活化的三磷酸就得放在链的 5′ 端，校对一拆掉错的核苷酸，链就丢了活化端、停了。长在 3′-OH 上，能量永远跟下一个单体一起来，链可以被纠错并继续。']
  ],
@@ -246,7 +246,7 @@ ask:[
  cn:'p083–p085。holoenzyme 在卡 18 是「酶 ＋ 辅因子」，这里是多亚基完整复合物，同一个词两种用法。'},
 {r:'高', q:'What is DNA ligase?',
  en:'“DNA ligase seals a nick: it forms the phosphodiester bond between a 3′-OH and a 5′-phosphate that lie next to each other in one strand of a duplex. It is endergonic and is paid for by NAD⁺ in E. coli or ATP in eukaryotes, through an AMP intermediate on a lysine. It cannot join two single strands.”',
- cn:'p081–p082，Obr. 4.20。'},
+ cn:'p081–p082，figure 4.20。'},
 {r:'中', q:'What is a topoisomerase — gyrase?',
  en:'“Generally — not in the textbook: a topoisomerase changes the topology of DNA by cutting one strand, or both, letting the helix rotate, and resealing it. Gyrase is the E. coli topoisomerase that introduces negative supercoils, relieving the overwinding a moving fork creates ahead of itself. The textbook mentions supercoiling of circular DNA but names no enzyme.”',
  cn:'topoisomer / gyras 0 命中；超螺旋只在 p076。<b>先说不在书里。</b>'},
@@ -258,7 +258,7 @@ ask:[
  cn:'p082 原话。'},
 {r:'中', q:'What is processivity?',
  en:'“Generally — not in the textbook: processivity is how many nucleotides a polymerase adds before it lets go of the template. Polymerase III is highly processive because a sliding clamp holds it on the DNA. Polymerase I is not, which suits short gap-filling. Taq is moderately processive — one reason PCR extension time is set by product length.”',
- cn:'通用。sliding clamp 只在 Obr. 4.25 的图注里出现。'},
+ cn:'通用。sliding clamp 只在 figure 4.25 的图注里出现。'},
 {r:'中', q:'What is the Klenow fragment?',
  en:'“The large piece of polymerase I left when a protease cuts off the small fragment: molecular weight 67 000, carrying the polymerase and the 3′→5′ exonuclease but not the 5′→3′ nuclease. That nuclease stays on the small fragment of 36 000. It is the classic laboratory polymerase for filling in ends.”',
  cn:'p079–p080。最后半句是实验室用法。'}
@@ -273,7 +273,7 @@ ask:[
  cn:'p078、p083 ＋ 通用。'},
 {r:'高', q:'Why is pyrophosphate hydrolysed — why two steps?',
  en:'“Because the bond-forming step on its own is close to reversible — one phosphoanhydride bond spent, one phosphodiester made. Hydrolysing the released pyrophosphate to two phosphates with pyrophosphatase spends a second high-energy bond and pulls the equilibrium far to the product side. The textbook says the reaction is driven by the release and subsequent hydrolysis of the diphosphate. The same trick appears in the ligase reaction and in aminoacyl-tRNA formation.”',
- cn:'p078。「近可逆」是通用推论，书只说「poháněna」。落在<b>热力学</b>。'},
+ cn:'p078。「近可逆」是通用推论，书只说它是「driven（被推着走的）」。落在<b>热力学</b>。'},
 {r:'中', q:'Why does polymerase I need magnesium?',
  en:'“The textbook only says magnesium ions are essential. Generally the metal does two things: it holds the triphosphate of the incoming dNTP by coordinating its negatively charged oxygens, and it makes the 3′-OH a better nucleophile. There are two magnesium ions in the active site. That also matters in the laboratory: PCR fidelity depends on the magnesium concentration, and manganese in its place makes Taq error-prone.”',
  cn:'p078 ＋ 通用（two-metal-ion mechanism）。最后半句是实验室——错配 PCR 的配方。'},
@@ -312,7 +312,7 @@ ask:[
  cn:'p082–p083。<b>最常见的说错。</b>'},
 {r:'高', q:'“DNA polymerase unwinds the DNA.”',
  en:'“No. Unwinding is the helicase’s job, with ATP, and SSB keeps the strands apart. The textbook does add that polymerase I plays some role in unwinding. That refers to its displacing a strand ahead of a nick during nick translation, not to opening the helix at the fork. The textbook assigns that to DnaB.”',
- cn:'p080 两处：解链是 helicase 的（原文），末尾又说 pol I「在解链上也有一定作用」。<b>用书的前一句打后一句</b>，再用 Obr. 4.18 的缺口平移解释后一句。'},
+ cn:'p080 两处：解链是 helicase 的（原文），末尾又说 pol I「在解链上也有一定作用」。<b>用书的前一句打后一句</b>，再用 figure 4.18 的缺口平移解释后一句。'},
 {r:'高', q:'“Ligase joins the nucleotides during synthesis.”',
  en:'“No. Every phosphodiester bond in a growing chain is made by the polymerase as each dNTP is added. Ligase makes one bond: the one that closes a nick between two finished pieces, a 3′-OH against a 5′-phosphate. It needs NAD⁺ or ATP to do it.”',
  cn:'p078 vs p081。'},
@@ -327,10 +327,10 @@ ask:[
  cn:'反平行 → 半不连续；互补 → 模板；配对特异性 → 准确性（p073）。全在卡 03。'},
 {r:'高', q:'→ 转录 p088–p091',
  en:'“Transcription is the neighbour: DNA-dependent RNA polymerase copies the coding strand of a gene into RNA, needs no primer, and binds a promoter through its sigma factor. In eukaryotes there are three — I for ribosomal RNA precursors, II for messenger precursors, III mostly for transfer and 5S RNA.”',
- cn:'p088–p089。σ 因子 OCR 成了「faktor a」；promotor 与 lac operator 重叠接 #12。'},
+ cn:'p088–p089。σ 因子 OCR 读成了「factor a」；promotor 与 lac operator 重叠接 #12。'},
 {r:'中', q:'→ 修复',
  en:'“The textbook’s one repair example is on this card: polymerase I’s 5′→3′ nuclease excises UV-induced pyrimidine dimers, its polymerase fills the gap, ligase seals it. Generally, the third corrector after pairing and proofreading is mismatch repair, which reads the newly made strand after the fork has passed.”',
- cn:'p079。mismatch repair 是通用；书里没有「reparace」这个词。'},
+ cn:'p079。mismatch repair 是通用；书里没有 repair 那个术语词（p079 用的是日常说法「修正」）。'},
 {r:'中', q:'→ 中心法则 p085',
  en:'“Replication is the first arrow of the central dogma. DNA directs its own replication and its transcription into RNA, and the RNA directs its translation into protein. The textbook attributes the scheme to Crick and dates it 1953. Generally 1953 is the double helix, and the central dogma is Crick’s 1958 lecture. Reverse transcriptase is the special arrow the book adds — RNA-directed DNA polymerase in some RNA viruses.”',
  cn:'p085。<b>书的 1953 和通用的 1958 不一致</b>——说出来，不改书。'}

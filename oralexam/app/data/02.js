@@ -1,6 +1,6 @@
 /* 卡 02 · What is the dissociation constant (Kd) and how is it defined?
    题库 #4（S1 Biochemistry 4 ＋ S2 Biochemistry 8）· 导师写过两遍
-   出处 Biochemie OCR p054–p062。书里没有「disociační konstanta」词条，
+   出处 Biochemie OCR p054–p062。书里没有「dissociation constant」这个词条（按书里的原词搜过，全书 0 命中），
    全书唯一明确定义成解离常数的是 p060 的 Ki。
    兼任大本营卡：别的卡的「留口子」都可以落到这里。 */
 
@@ -43,8 +43,8 @@ cram:[
  {g:'再深一层', gn:'时间不够可以砍这一格，但它是 ④ 的落点。'},
  {n:'07', t:'它其实是自由能',
   big:'ΔG°(结合) = RT ln Kd —— <b>一个数就是一个自由能</b>；书 p018 写 ΔG° = −RT ln K，差的是方向',
-  en:'“Because it is an equilibrium constant, it is a free energy in disguise: the standard free energy of <b>binding</b> equals R T times the natural log of K d. The textbook’s form is delta G equals <b>minus</b> R T ln K — the sign flips because K d describes the reverse direction, coming apart. Every <b>tenfold</b> tightening is about <b>5.7 kilojoules per mole</b> at 25 degrees — 298 kelvin.”',
-  note:'✔ 已算：RT ln10 在 298.15 K = <b>5.71 kJ/mol</b>。<b>书里没有这个数</b>，它来自热力学定义。被追问出处就说 “that is just R T ln ten”。<br><b>方向必须说。</b>书 p018 印的是 −ΔG° = RT ln K，即 ΔG° = −RT ln K。Kd 是<b>解离</b>的 K，所以 ΔG°(解离) = −RT ln Kd，ΔG°(结合) = +RT ln Kd。只说 “delta G equals RT ln Kd” 不说哪个方向，他拿 p018 一对就是「你符号错了」。<br>「standard」被问：“Standard means all components at unit activity. The biochemical standard state, marked with a prime, fixes hydrogen-ion activity at pH 7 instead.”（p018）'},
+  en:'“Because it is an equilibrium constant, it is a free energy in disguise. The standard Gibbs free energy of <b>binding</b> equals R T times the natural log of K d. The textbook’s form is delta G equals <b>minus</b> R T ln K — the sign flips because K d describes the reverse direction, coming apart. Every <b>tenfold</b> tightening is about <b>5.7 kilojoules per mole</b> at 25 degrees — 298 kelvin.”',
+  note:'标准结合吉布斯自由能等于 R T 乘以 K d 的自然对数。<br>✔ 已算：RT ln10 在 298.15 K = <b>5.71 kJ/mol</b>。<b>书里没有这个数</b>，它来自热力学定义。被追问出处就说 “that is just R T ln ten”。<br><b>方向必须说。</b>书 p018 印的是 −ΔG° = RT ln K，即 ΔG° = −RT ln K。Kd 是<b>解离</b>的 K，所以 ΔG°(解离) = −RT ln Kd，ΔG°(结合) = +RT ln Kd。只说 “delta G equals RT ln Kd” 不说哪个方向，他拿 p018 一对就是「你符号错了」。<br>「standard」被问：“Standard means all components at unit activity. The biochemical standard state, marked with a prime, fixes hydrogen-ion activity at pH 7 instead.”（p018）'},
 
  {g:'收尾', gn:'一句停住，一句伸出去。这题有两条停止线，第二条更适合你。'},
  {n:'08', t:'落点一 · 热力学',
@@ -145,7 +145,7 @@ recog:[
 {q:'Is Km the same as Kd?',
  mean:'<b>这题的核心陷阱，而且书自己前后打架。</b>先给书的读法，再给成立条件，最后指出书自己在别处给了干净的定义。',
  say:'“Not in general. K m is k minus one plus k two, over k one. That is <b>substrate falling off, plus the catalytic step, over binding</b>. A true dissociation constant is k minus one over k one. The two coincide only when the catalytic step is negligible next to the substrate falling off. The textbook does read K m as an affinity, and by its own description of the mechanism that is fair. It says binding of substrate to enzyme is <b>fast and reversible</b> and the catalytic step slower. So the substrate falls off far more often than it is turned over. What is always true is the book’s other sentence: K m is the substrate concentration at half-maximal rate in the <b>steady state</b>, whereas K d is the free-ligand concentration at half occupancy at <b>equilibrium</b>. The clean dissociation constant in this book is K i, free enzyme times free inhibitor over the complex.”',
- tail:'书 <span class="pg">p055</span> 把 Km = (k₋₁+k₂)/k₁ 的式子<b>印出来了</b>（已回原图确认），<span class="pg">p056</span> 却说它「vyjadřuje afinitu」。<b>你是在引用这本书反驳这本书，那是最安全的位置</b>——不是「别的教材说」，是「你这本书第 55 页印的式子说」。<br><b>p054 帮你一把</b>：书自己写第一步「快而可逆」、第二步「更慢、不可逆」（<i>Tento krok je rychlý a reverzibilní … Tato reakce je pomalejší</i>），那正是 k₂ 可忽略的条件——所以「书为什么敢把 Km 叫亲和力」有书内的解释，比单纯「书打架」稳。<b>⚠ 别顺嘴报 kcat 的数：书 p058 的 turnover number 按「每分钟」定义</b>，通用是每秒。'},
+ tail:'书 <span class="pg">p055</span> 把 Km = (k₋₁+k₂)/k₁ 的式子<b>印出来了</b>（已回原图确认），<span class="pg">p056</span> 却说它「expresses affinity」（书上那句话的英译）。<b>你是在引用这本书反驳这本书，那是最安全的位置</b>——不是「别的教材说」，是「你这本书第 55 页印的式子说」。<br><b>p054 帮你一把</b>：书自己写第一步「快而可逆」、第二步「更慢、不可逆」（<i>This step is fast and reversible … This reaction is slower</i>），那正是 k₂ 可忽略的条件——所以「书为什么敢把 Km 叫亲和力」有书内的解释，比单纯「书打架」稳。<b>⚠ 别顺嘴报 kcat 的数：书 p058 的 turnover number 按「每分钟」定义</b>，通用是每秒。'},
 
 {q:'How would you measure it?',
  mean:'<b>你的主场。</b>方法 ＋ 那个决定数字是否有意义的条件。',
@@ -187,7 +187,7 @@ ask:[
  cn:'p055 稳态假设的原话；p018 「生命物质多处于看起来像平衡的稳态，平衡是它的特例」。Km 是稳态量、Kd 是平衡量，这条是那句话的地基。'},
 {r:'高', q:'What is activation energy?',
  en:'“The energy barrier the reactant molecules must overcome to be converted into product. The textbook says that for A to become X, the molecules of A must be supplied with the activation energy. Heat can supply it. A catalyst lowers it by taking the reaction through a different mechanism.”',
- cn:'p054，Obr. 3.1。'},
+ cn:'p054，figure 3.1。'},
 {r:'中', q:'What do first order and zero order mean here?',
  en:'“First order in substrate means the rate is directly proportional to substrate concentration — the low-substrate limit, substrate far below K m. Zero order means the rate no longer depends on substrate at all. At saturation, substrate far above K m, v equals V max and is proportional to enzyme alone. That is why activity is measured there.”',
  cn:'p055–p056 两个极限；p058 活性测定要在饱和底物下。'},
@@ -216,7 +216,7 @@ ask:[
 {r:'中', q:'What is occupancy?',
  en:'“The fraction of binding sites that are filled at a given free-ligand concentration. K d is the concentration at which that fraction is one half.”'}
 ],
- cn:'占据率 = 结合位点里被配体占着的比例，0 到 1。半数占据时游离配体浓度 = Kd——这是「Kd 是浓度」那句的读法。书 p056 对应的词是「饱和」（<i>nasycen</i>）：Km 是半饱和的底物浓度。'},
+ cn:'占据率 = 结合位点里被配体占着的比例，0 到 1。半数占据时游离配体浓度 = Kd——这是「Kd 是浓度」那句的读法。书 p056 对应的词是「饱和」（书上印的就是 <i>saturated</i>）：Km 是半饱和的底物浓度。'},
 
 {g:'为什么类', gn:'给了结论没给理由的地方。', items:[
 {r:'高', q:'Why does an enzyme not change the equilibrium?',
@@ -224,7 +224,7 @@ ask:[
  cn:'<b>这一条把 Kd 和酶两件事分清楚了</b>，也是「热力学 vs 动力学」最干净的一个例子。<span class="pg">p054</span>'},
 {r:'高', q:'Why can’t organisms just heat things up to go faster?',
  en:'“Because they are mostly <b>thermolabile</b> — the textbook says so directly. Heating would speed the reaction and denature the enzyme, a protein, at the same time. That is why catalysis, not temperature, is the biological route.”',
- cn:'<b>书自己给的理由，一个词就够</b>：thermolabilní（<span class="pg">p054</span>）。书还列了第三条路——用光激发，但那时反应走的是另一条反应坐标：“The textbook lists a third route, exciting the reactants with light. But then the reaction usually runs along a different reaction coordinate.”'},
+ cn:'<b>书自己给的理由，一个词就够</b>：thermolabile，书上印的就是这个词（<span class="pg">p054</span>）。书还列了第三条路——用光激发，但那时反应走的是另一条反应坐标：“The textbook lists a third route, exciting the reactants with light. But then the reaction usually runs along a different reaction coordinate.”'},
 {r:'中', q:'Why use Lineweaver-Burk instead of reading the curve?',
  en:'“Because measuring rates at high substrate concentration is imprecise and expensive in material, so in practice the equation is linearised. You plot one over v against one over substrate concentration. That gives a straight line with slope K m over V max and intercept one over V max. The textbook says exactly that.”',
  cn:'<span class="pg">p056</span>。<b>这是一道方法题</b>，而方法题是这位老师的口味。'}

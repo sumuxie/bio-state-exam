@@ -3,9 +3,9 @@
    出处 Biochemie OCR p176–p197（§8 全章）＋ p197–p201（§8.5 生物膜，后门）；另引 p012 / p032–p033（疏水效应）、
    p035（去污剂是变性剂）、p039（蛇毒、血脂蛋白）、p112（dolichol）、p134–p135（能量数字）、p148 / p153（糖脂、唾液酸）、
    p163（NADPH）、p206（类囊体糖脂）、p218–p220（脂代谢总账）、p224–p228（磷脂酶 C、甾体激素、二十碳类）。
-   ⚠ OCR 把 p176 的 Tab. 8.1（十一类 ＋ 水解产物）整张吃掉了 —— 已回 200 dpi 原图抄回来，速背 03 就是它。
-   同样回原图核过：p177 的 C12–24 / C16–24 与 Tab. 8.2 全表、p179 的蜡碳数与 50–85 °C、p181 的 C24 与 80%、
-   p196 β-氧化四步酶名（书确实印 β-ketokinasa，见「相邻考点」的 warn）。
+   ⚠ OCR 把 p176 的 table 8.1（十一类 ＋ 水解产物）整张吃掉了 —— 已回 200 dpi 原图抄回来，速背 03 就是它。
+   同样回原图核过：p177 的 C12–24 / C16–24 与 table 8.2 全表、p179 的蜡碳数与 50–85 °C、p181 的 C24 与 80%、
+   p196 β-氧化四步酶名（书确实印 β-ketokinase，见「相邻考点」的 warn）。
    书里没有：saponifiable / non-saponifiable · micelle（脂这一章）· HDL/LDL · 反式脂肪的工业来源 · lipid A ·
    「胆固醇是流动性缓冲剂」· Gorter-Grendel 与 Singer-Nicolson。全部标 general。
    她没学过这一章，所以这张卡是教，不是提醒。 */
@@ -28,7 +28,7 @@ cram:[
   en:'“The question asks for the <b>different types</b> of lipids and their <b>roles in the body</b>, so two lists first. The <b>types</b>: structurally the textbook makes three groups — <b>simple</b>, <b>complex</b> and <b>derived</b>. Its table splits those into eleven classes by what each gives on hydrolysis. The <b>roles in the body</b>, its own five. One, a <b>component of biological membranes</b>. Two, the <b>main storage form of carbon and energy</b>. Three, <b>precursors of vitamins, hormones and regulatory substances</b>. Four, an <b>insulating barrier against thermal, electrical or other physical shock</b>. Five, a <b>protective coat against infection and dehydration</b>.”',
   note:'五条是 <span class="pg">p176</span> 的原顺序，一条不加一条不减；被追问哪一条都能停在那一条展开。<br><b>书没把「信号」单列成第六条</b>——它在第三条「调控物质的前体」里（激素、二十碳类）。要说信号，就说它是第三条的内容。'},
  {n:'03', t:'归类 · 书的表',
-  big:'Tab. 8.1 十一类，第二列是<b>水解产物</b>——<b>「水解出什么」就是书的分类判据</b>',
+  big:'Table 8.1 十一类，第二列是<b>水解产物</b>——<b>「水解出什么」就是书的分类判据</b>',
   en:'“The table classifies by hydrolysis products. <b>Simple</b>, two classes. Acylglycerols give glycerol and fatty acids. Waxes give a long-chain alcohol and long-chain fatty acids. <b>Complex</b>, five classes. Glycoacylglycerols give sugar, glycerol and fatty acids. Phosphoacylglycerols give glycerol, fatty acids, phosphate and an organic compound. Sphingomyelins give sphingosine, fatty acids, phosphate and choline. Cerebrosides give sphingosine, fatty acids and sugars. Gangliosides give the same plus sialic acid. <b>Derived</b>: four classes with no hydrolysis products listed at all, because they are not esters.”',
   tbl:{head:['三大组','类','水解出什么'],
    rows:[
@@ -42,7 +42,7 @@ cram:[
     ['<b>衍生</b>','8 prostaglandins · 9 steroids','—'],
     ['','10 carotenoids · 11 lipophilic vitamins','—']
    ]},
-  note:'<b>⚠ Tab. 8.1 被 OCR 整张吃掉，这张表是回 200 dpi 原图抄的</b>（<span class="pg">p176</span>）。表头原文 <i>klasifikace</i> / <i>produkty hydrolýzy</i>。<br><b>这张表是这道题的骨架</b>：他问「有哪些类型」你有十一个名字；他挑任一类往下问，你先答「它水解出什么」，等于自动给出了结构。书正文把复合脂明确数成 <b>5 组</b>，跟表的 3–7 行对得上。'},
+  note:'<b>⚠ Table 8.1 被 OCR 整张吃掉，这张表是回 200 dpi 原图抄的</b>（<span class="pg">p176</span>）。表头那两列，书上印的原词译过来就是 <i>classification</i> / <i>hydrolysis products</i>。<br><b>这张表是这道题的骨架</b>：他问「有哪些类型」你有十一个名字；他挑任一类往下问，你先答「它水解出什么」，等于自动给出了结构。书正文把复合脂明确数成 <b>5 组</b>，跟表的 3–7 行对得上。'},
  {n:'04', t:'每一层的判据',
   big:'<b>简单</b>＝只有酸 ＋ 醇的酯；<b>复合</b>＝再加一样（糖 / 磷酸＋碱基 / 鞘氨醇），那一样就是<b>极性头</b>；<b>衍生</b>＝剩下的，骨架来自异戊二烯，<b>根本没有脂肪酸酯</b>',
   en:'“Each branch has a criterion. <b>Simple lipids are esters of fatty acids and alcohols</b> and nothing else, so they carry no ionisable group — the textbook calls them <b>neutral lipids</b>. <b>Complex lipids contain in addition a further component</b>, and that extra piece gives the molecule a <b>polar head</b> at one end. That is the difference that matters, because only a molecule with a polar head can build a membrane. <b>Derived lipids are the remaining compounds of lipid nature that cannot be put in the preceding groups</b>, and practically all of them are terpenes.”',
@@ -71,7 +71,7 @@ cram:[
     ['<b>arachidonic</b>','<b>20:4</b>','eicosatetraenoic','5,8,11,14','n-6','<b>二十碳类的来源</b> p228'],
     ['timnodonic · clupanodonic','20:5 · 22:6','eicosapentaenoic · docosahexaenoic','—','n-3','EPA 与 DHA，表里最长']
    ]},
-  note:'Tab. 8.2 <span class="pg">p177</span>，命名规则 <span class="pg">p178</span>，整表已回原图核。<br><b>要背的只有黑体那六个</b>：16:0 · 18:0 · 18:1 · 18:2 · 18:3 · 20:4。<b>α- 与 γ-亚麻酸是最阴的一对</b>：都是 18:3，只差 Δ9,12,15（n-3）还是 Δ6,9,12（n-6）——必需的是 <b>α</b>。'},
+  note:'Table 8.2 <span class="pg">p177</span>，命名规则 <span class="pg">p178</span>，整表已回原图核。<br><b>要背的只有黑体那六个</b>：16:0 · 18:0 · 18:1 · 18:2 · 18:3 · 20:4。<b>α- 与 γ-亚麻酸是最阴的一对</b>：都是 18:3，只差 Δ9,12,15（n-3）还是 Δ6,9,12（n-6）——必需的是 <b>α</b>。'},
  {n:'07', t:'必需脂肪酸 ＋ 熔点',
   big:'必需的只有两个：<b>linoleic 18:2 n-6</b> 和 <b>α-linolenic 18:3 n-3</b>；其余靠<b>延长酶和去饱和酶</b>自己造。<b>饱和 → 熔点高；不饱和 → 熔点低；双键越靠羧基降得越多</b>',
   en:'“The textbook is precise: <b>the diet of mammals must contain linoleic acid, eighteen-two n-six, and alpha-linolenic acid, eighteen-three n-three</b>. Anything longer or more unsaturated mammals make from those two with <b>elongases and desaturases</b>. So what we cannot do is put a double bond past a certain point, not build a chain. And it gives three rules. <b>Saturated fatty acids raise the chemical stability and the melting point.</b> <b>Unsaturated ones lower both.</b> <b>And the closer the double bond lies to the carboxyl group, the more it lowers them.</b>”',
@@ -87,10 +87,10 @@ cram:[
   big:'骨架是<b>磷脂酸</b>：甘油 C-1、C-2 接两个脂肪酸（<b>酯键</b>），C-3 接磷酸；头基 R 用<b>磷酸酯键</b>接在磷酸上——换 R 就换名字',
   en:'“<b>Phospholipids are the most abundant complex lipids in nature</b>, and the textbook says where: components of biological membranes of all types. The simplest, and the precursor of the rest, is <b>phosphatidic acid</b> — glycerol with fatty acids esterified at positions one and two and a phosphate at three. <b>The individual phospholipids differ only in the group bound to it by a phosphoester bond</b>: <b>phosphatidyl-ethanolamine, -choline, -serine, -glycerol, -inositol, and diphosphatidylglycerol</b>. One regularity: <b>position two usually carries an unsaturated fatty acid, position one a saturated one</b>.”',
   note:'§8.2.3 <span class="pg">p180 p181</span>，六个头基是书列的全部。<b>diphosphatidylglycerol 就是心磷脂 cardiolipin</b>——俗名不是书的。<br><b>别漏植物那一类</b>：<b>glycoacylglycerols</b>（表的第 3 类）是<b>植物膜、尤其叶绿体类囊体膜</b>的主要脂——MGDG、DGDG、SL（<span class="pg">p179</span>）；<span class="pg">p206</span> 说类囊体膜磷脂较少、多的正是这三种。<b>#27 光合从这里接。</b>'},
- {n:'10', t:'两亲性 · amfipatie',
-  big:'一个分子<b>两头性质相反</b>：脂肪酸那头非极性疏水，甘油＋磷酸＋头基那头极性亲水。书管这个叫 <b>amfipatie</b>。<b>膜、胶束、肥皂都是这一条的推论</b>',
+ {n:'10', t:'两亲性 · amphipathy',
+  big:'一个分子<b>两头性质相反</b>：脂肪酸那头非极性疏水，甘油＋磷酸＋头基那头极性亲水。书管这个叫 <b>amphipathy</b>。<b>膜、胶束、肥皂都是这一条的推论</b>',
   en:'“A phospholipid shows <b>two clearly different regions</b>: a nonpolar hydrophobic one, the fatty acids, and a polar hydrophilic one, the glycerol, the phosphoric acid and the functional group. <b>The textbook calls this dual character amphipathy and says phospholipids are amphipathic compounds.</b> It adds the quantitative point. The amphipathic character of acylglycerols alone is <b>very weak</b>, and the contribution comes from the head groups. <b>Some of them, choline, ethanolamine and serine, can carry an electric charge at physiological pH</b>, and it says that matters greatly for how phospholipids work in membranes.”',
-  note:'§8.2.3 <span class="pg">p181</span>，<i>amfipatie</i> 是书的词，全书唯一一处。图上两个标签也是书的：<i>ionizovatelná polární hydrofilní “hlava”</i> / <i>neionizovatelný nepolární hydrofobní “ocas”</i>。<b>「头」「尾」这两个字她要说出口</b>——书讲膜时用的就是它们。同一条在<b>横向卡 bonds</b>。',
+  note:'§8.2.3 <span class="pg">p181</span>，<i>amphipathy</i> 是书印的词，全书唯一一处。图上两个标签也是书印的，译过来是：<i>ionizable polar hydrophilic “head”</i> / <i>non-ionizable nonpolar hydrophobic “tail”</i>。<b>「头」「尾」这两个字她要说出口</b>——书讲膜时用的就是它们。同一条在<b>横向卡 bonds</b>。',
   warn:'<b>micelle 在脂这一章书里没有</b>（全书只有 <span class="pg">p156 p157</span> 讲淀粉的水合胶束）。要说就 general：“Generally a single-tailed amphipathic molecule such as a soap packs into a <b>micelle</b>. A two-tailed phospholipid packs into a <b>bilayer</b>.” 同样 general：哪个头是两性离子（PC、PE）、哪个净负电（PS、PI、PG）——<b>书只说「有些能带电」。</b>'},
  {n:'11', t:'鞘脂',
   big:'醇换成<b>鞘氨醇</b>（18 碳不饱和氨基二元醇）。脂肪酸接的<b>不是羟基而是氨基 → 酰胺键 → ceramide</b>。＋磷酰胆碱（酯键）= <b>鞘磷脂</b>；＋糖（O-糖苷键）= <b>脑苷脂 / 神经节苷脂</b>',
@@ -107,7 +107,7 @@ cram:[
   note:'§8.2.4 <span class="pg">p184 p185</span>；0–40% 是书印的。<b>维生素 D 的机制书给了</b>（<span class="pg">p186</span>）：钙化醇本身<b>没有甾体结构</b>，但来自甾体前体——<b>紫外线打开 B 环的 C-9 与 C-10 之间</b>并发生双键重排，7-脱氢胆固醇 → 胆钙化醇（D₃）。「晒太阳造维生素 D」问的就是这句。植物那一路：stigmasterol、ergosterol、sitosterol，以及强心苷。',
   warn:'<b>书说胆固醇「增加刚性」，通用说法是「流动性缓冲剂 fluidity buffer」。</b>书只描述了一侧（<span class="pg">p185 p198</span>：胆固醇越多流动性越低）。给第二层要明说来源：“The textbook says cholesterol increases rigidity. Generally it is called a <b>fluidity buffer</b>, because below the transition temperature it does the opposite — it stops the chains packing tightly.”'},
  {n:'14', t:'前列腺素与二十碳类',
-  big:'Tab. 8.1 的第 8 类。<b>二十碳（ikosanoidy，「eikosi」希腊语二十）</b>，全部来自<b>花生四烯酸 20:4</b>：<b>前列腺素、前列环素、血栓烷、白三烯</b>。这是「信号」那条功能的落点',
+  big:'Table 8.1 的第 8 类。<b>二十碳（eicosanoids，「eikosi」希腊语二十）</b>，全部来自<b>花生四烯酸 20:4</b>：<b>前列腺素、前列环素、血栓烷、白三烯</b>。这是「信号」那条功能的落点',
   en:'“<b>Prostaglandins are class eight of the table</b>, the first of the derived lipids, and the hormone chapter says what they are. The textbook divides hormones into four groups: steroid hormones, amino-acid derivatives, peptide and protein hormones, and <b>eicosanoids</b>. <b>Eicosanoids contain twenty carbon atoms, and <i>eikosi</i>, it says, is Greek for twenty.</b> <b>Eicosanoid hormones arise from arachidonate</b>, the main ones being <b>leukotrienes, prostaglandins, prostacyclins and thromboxanes</b>, regulating <b>blood flow, ion transport and synaptic transmission</b>.”',
   note:'<span class="pg">p176</span>（表）＋ §10.3 <span class="pg">p225 p226 p228</span>。<b>⚠ 说 arachidonic 要说清是 20:4——碳二十、四个双键</b>，别念成 24 个碳。<br>书还给了<b>甾体激素怎么起作用</b>（<span class="pg">p225</span>）：甾体和甲状腺激素<b>进入细胞</b>，结合能结合 DNA 的受体蛋白，被带进核，结合 DNA 特定位点<b>激活基因的某些部分</b>——跟肽类激素停在膜受体上完全不同。<b>「为什么脂溶性激素能直接进细胞」的答案就是这一章的定义。</b>'},
 
@@ -150,9 +150,9 @@ sib:[
 ['<b>三酰甘油 ＋ 蜡</b>：酯键；无可电离基团 = <b>中性脂</b>，固体 fat、液体 oil；蜡是长链酸 ＋ <b>长链醇</b>，防水防干',
  '“Esters of glycerol and fatty acids. No ionisable group, so neutral lipids. In adipose tissue the store of carbon and energy, in chylomicrons the transport form, around the organs the insulation. Waxes esterify a long-chain alcohol instead, are not attacked by lipases, and waterproof surfaces.”',
  'p178–p179。书说中性酰甘油只能发生一种反应：水解。'],
-['<b>甘油磷脂 ＋ 两亲</b>：骨架是<b>磷脂酸</b>，头基靠<b>磷酸酯键</b>接上；书管两头相反叫 <b>amfipatie</b>',
+['<b>甘油磷脂 ＋ 两亲</b>：骨架是<b>磷脂酸</b>，头基靠<b>磷酸酯键</b>接上；书管两头相反叫 <b>amphipathy</b>',
  '“The simplest is phosphatidic acid, and the others differ only in the group bound to it by a phosphoester bond — ethanolamine, choline, serine, glycerol, inositol. The textbook calls the dual character amphipathy, and says choline, ethanolamine and serine can carry an electric charge at physiological pH.”',
- 'p180–p181。amfipatie 是书的词，全书唯一一处。'],
+ 'p180–p181。amphipathy 就是书印的那个词，全书唯一一处。'],
 ['<b>鞘脂</b>：脂肪酸走<b>氨基 → 酰胺键 → ceramide</b>；＋磷酰胆碱（酯键）= 鞘磷脂；＋糖（O-糖苷键）= 糖鞘脂',
  '“Although sphingosine has two hydroxyls, the fatty acid binds through the amino group — an amide bond. That gives a ceramide. Phosphorylcholine by an ester bond gives sphingomyelin. A sugar by an O-glycosidic bond gives the glycosphingolipids, and a ganglioside always contains at least one sialic acid.”',
  'p181–p182。ceramide 是共同核心，先说它再分叉。'],
@@ -235,7 +235,7 @@ recog:[
  say:'“Because soap is amphipathic in exactly the way a phospholipid is — a hydrocarbon tail and a polar head. Amphipathy is the textbook’s word for that dual character. The tails bury themselves in the grease. The grease is triacylglycerol and has no polar part at all. The heads stay in the water, so the grease ends up in a particle with a water-friendly outside. Generally that particle is a micelle. The same trick unfolds proteins: the textbook lists detergents with urea and guanidine as chemical denaturants, because the tails get in between the nonpolar side chains and take away the hydrophobic effect holding the core together.”'},
 
 {q:'Why do we have to eat some fats at all?', odd:1,
- mean:'两层：<b>必需脂肪酸</b>（p178）和<b>脂溶性维生素</b>（Tab. 8.1 第 11 类）。',
+ mean:'两层：<b>必需脂肪酸</b>（p178）和<b>脂溶性维生素</b>（table 8.1 第 11 类）。',
  say:'“Two reasons in the textbook. First, two fatty acids are essential: the diet of mammals must contain linoleic acid, eighteen-two n-six, and alpha-linolenic acid, eighteen-three n-three. Anything longer or more unsaturated we build from those with elongases and desaturases — so the requirement is for a particular double-bond position, not for fat as fuel. Second, the lipophilic vitamins are class eleven of the textbook’s own table of lipids: A, D, E and K are lipids, so they arrive dissolved in dietary fat. Arachidonic acid matters for a third reason — it is the source of the eicosanoids.”'},
 
 {q:'Why is cholesterol both necessary and dangerous?', odd:1,
@@ -260,7 +260,7 @@ ask:[
 {g:'定义类', gn:'这一章的词他默认你知道，而且它们互相定义。每个一句。', items:[
 {r:'高', q:'What does amphipathic mean?',
  en:'“One molecule with two regions of opposite character. The textbook’s wording for a phospholipid: a nonpolar hydrophobic region represented by the fatty acid, and a polar hydrophilic region represented by the glycerol, the phosphoric acid and the functional group. It calls this dual character amphipathy. It adds that acylglycerols alone are barely amphipathic, and that choline, ethanolamine and serine carry an electric charge at physiological pH.”',
- cn:'<span class="pg">p181</span>，<i>amfipatie</i> 全书唯一一处。同一条在<b>横向卡 bonds</b> 和<b>卡 01</b> 疏水效应的追问里。'},
+ cn:'<span class="pg">p181</span>，<i>amphipathy</i> 全书唯一一处。同一条在<b>横向卡 bonds</b> 和<b>卡 01</b> 疏水效应的追问里。'},
 {r:'高', q:'What is a ceramide?',
  en:'“Sphingosine with a fatty acid on it, and the bond is the point. Although sphingosine carries two hydroxyls, the fatty acid is bound through the <b>amino</b> group, as an amide. Sphingosine itself is an unsaturated eighteen-carbon amino-dialcohol. The ceramide is the common core of the whole sphingolipid group: add phosphorylcholine by an ester bond for sphingomyelin, a sugar by an O-glycosidic bond for a cerebroside, or a chain containing sialic acid for a ganglioside.”',
  cn:'<span class="pg">p181</span>。<b>「两个羟基却用氨基」是书自己强调的</b>，也是这一章唯一的酰胺键。'},
@@ -293,7 +293,7 @@ ask:[
  cn:'<span class="pg">p198</span> 只有结构和厚度。<b>Gorter 与 Grendel 的名字和 1925 书里零命中</b>，卡上也不写人名，只说 “in the nineteen-twenties”——<b>报不出人名比报错人名安全。</b>'},
 {r:'中', q:'Where does the fluid mosaic model come from?',
  en:'“The textbook uses the term: it says the components of biological membranes are in constant motion, and it speaks of the model of a fluid mosaic. Proteins move rotationally or laterally in the plane, while a flip-flop in the true sense has not been found for proteins, only for lipids. That the model was proposed in the early nineteen-seventies is general. The textbook gives no author and no date.”',
- cn:'<span class="pg">p198 p199</span>。<b>书对翻转机制自己承认不懂</b>：<i>jeho biologický význam není zatím přesně definován</i>——引这句比硬编一个功能安全。'}
+ cn:'<span class="pg">p198 p199</span>。<b>书对翻转机制自己承认不懂</b>：<i>its biological significance has so far not been precisely defined</i>——引这句比硬编一个功能安全。'}
 ]},
 
 {g:'陷阱', gn:'最容易被抓的是几对邻近的名字，和三个听起来很对的结论。每条一句判据。', items:[
@@ -305,7 +305,7 @@ ask:[
  cn:'<span class="pg">p176 p184 p185</span>。<b>「不可皂化」正是这个意思</b>，但那个词不是书的，要说带 generally。'},
 {r:'高', q:'So lipids are polymers of fatty acids?',
  en:'“No — and this is the one class of biomolecule that is not a polymer. A protein, a nucleic acid and a polysaccharide are chains of repeating monomers joined end to end. A triacylglycerol is three fatty acids hung on one glycerol by three separate esters, and a phospholipid is an assembly of four different kinds of piece. Nothing repeats and nothing extends. One qualification, and it is the textbook’s own. It describes the terpenes as an extensive group of substances on the basis of polymers, with isoprene as the monomer unit. So inside the derived lipids there is a repeating unit, though there is none in a fat or a phospholipid.”',
- cn:'<b>书自己在 <span class="pg">p182</span> 用了 polymer 这个词</b>（<i>na bázi polymerů</i>），所以「脂不是聚合物」<b>不能说死</b>——LOGIC §18 的教训：封闭清单要先在全书搜反例。<b>这句限定词说出来是加分的，不是麻烦。</b>'},
+ cn:'<b>书自己在 <span class="pg">p182</span> 用了 polymer 这个词</b>（<i>polymer-based</i>），所以「脂不是聚合物」<b>不能说死</b>——LOGIC §18 的教训：封闭清单要先在全书搜反例。<b>这句限定词说出来是加分的，不是麻烦。</b>'},
 {r:'高', q:'Unsaturated means trans, and trans is what makes it liquid?',
  en:'“The other way round. The textbook says natural fatty acids have their double bonds mostly in the <b>cis</b> configuration, and it is the cis geometry that lowers the melting point. The evidence is inside the book. It says the beta-oxidation enzymes require <b>trans</b> isomers. That is precisely why a natural cis-unsaturated fatty acid needs a cis-trans isomerase before it can be broken down. Generally, trans fatty acids in food come from industrial hydrogenation and behave more like saturated ones. The textbook does not discuss that.”',
  cn:'<span class="pg">p177 p195</span>。<b>书自己的 β-氧化那段就是证据——用书的一半打书的另一半，比引外部权威稳。</b>'},
@@ -324,7 +324,7 @@ ask:[
 {r:'高', q:'How is a fatty acid broken down?',
  en:'“By beta-oxidation, in the mitochondrial matrix, which the textbook says holds all four enzymes needed for one cycle. The acid is first activated to a thioester with coenzyme A by a thiokinase, costing one ATP. Then two carbons come off the carboxyl end per cycle, in four steps. One, dehydrogenation by acyl-CoA dehydrogenase with FAD, producing only trans isomers. Two, hydration by enoyl-CoA hydratase, which requires trans and gives only L-isomers. Three, dehydrogenation by beta-hydroxyacyl-CoA dehydrogenase with NAD⁺. Four, thiolytic cleavage with CoASH, releasing acetyl-CoA. Its example is stearic acid: eight cycles, nine acetyl-CoA, eight FADH₂ and eight NADH.”',
  cn:'§8.4.4 <span class="pg">p195 p196</span>；总账 <span class="pg">p220</span>：<b>投入</b> 1 acyl-CoA（活化已耗 1 ATP）＋ 每切一次 1 FAD ＋ 1 NAD⁺；<b>产出</b> 每切一次 1 acetyl-CoA ＋ 1 FADH₂ ＋ 1 NADH；<b>总结</b> 脂肪酸只被交付成 acetyl-CoA，真正兑成 ATP 是<b>卡 24</b> 和<b>卡 25</b> 的事。',
- warn:'<b>⚠ 书把第四步的酶印成 β-ketokinasa（已回 280 dpi 原图核，不是 OCR 错）。</b>但书自己把这一步画成 <i>thiolytické štěpení</i>，加的是 CoASH，不是磷酸——<b>激酶转磷酸，这一步不转磷酸</b>。通用名是 <b>thiolase（β-ketothiolase）</b>。考场说法：“The textbook labels it beta-ketokinase, but the step it draws is a thiolytic cleavage with coenzyme A, so generally this enzyme is called a thiolase.” <b>用书的图打书的字。</b>'},
+ warn:'<b>⚠ 书把第四步的酶印成 β-ketokinase（已回 280 dpi 原图核，不是 OCR 错）。</b>但书自己把这一步画成 <i>thiolytic cleavage</i>，加的是 CoASH，不是磷酸——<b>激酶转磷酸，这一步不转磷酸</b>。通用名是 <b>thiolase（β-ketothiolase）</b>。考场说法：“The textbook labels it beta-ketokinase, but the step it draws is a thiolytic cleavage with coenzyme A, so generally this enzyme is called a thiolase.” <b>用书的图打书的字。</b>'},
 {r:'高', q:'And how is one made?',
  en:'“On a soluble multienzyme complex in the cytoplasm, and the textbook lists the differences rather than letting you assume symmetry. The carrier is not coenzyme A but <b>ACP</b>, acyl carrier protein, with two different SH groups. The chain cannot be extended by acetyl directly: acetyl-CoA is first carboxylated to <b>malonyl-CoA</b> by acetyl-CoA carboxylase, ATP-dependent and requiring <b>biotin</b>. Then four steps per cycle — condensation releasing CO₂, reduction, dehydration, reduction. And the reductant is <b>NADPH</b> where degradation gave NADH. Seven cycles give palmitate. The balance is eight acetyl-CoA, seven ATP and fourteen NADPH.”',
  cn:'§8.3 <span class="pg">p187 p188 p189 p190</span>；四条对照在 <span class="pg">p220</span>。三个区室也是书的：<b>饱和链到 C18 在细胞质、延长酶在线粒体基质、去饱和酶在内质网</b>。NADPH 从哪来 → 戊糖磷酸途径（<span class="pg">p163</span>，<b>卡 06</b>）。'},
@@ -339,7 +339,7 @@ ask:[
  cn:'<span class="pg">p199 p035</span>。<b>non-ionic vs ionic、以及「拿掉去污剂就聚集」都是通用的</b>，说时带 generally。变性那条在<b>卡 01</b> 和<b>横向卡 bonds</b>。'},
 {r:'中', q:'Does anything in this chapter interfere with your purification?',
  en:'“Two things. From a Gram-negative host the outer membrane carries <b>lipopolysaccharide</b>, and its lipid part is <b>lipid A</b>, the endotoxin. It is amphipathic, it sticks to proteins and it has to be removed. The textbook does not describe it, but it does say the carbohydrates of a membrane are always present as glycoproteins or glycolipids, and it names lipopolysaccharides among the sugar-bearing lipids. The second is the opposite problem. Express in yeast instead and the protein goes through the secretory pathway, so the lipid question turns into a glycan question. That is a different card.”',
- cn:'<b>lipid A / endotoxin 书里零命中</b>，只有 <span class="pg">p148</span> 的 <i>lipopolysacharidů</i> 和 <span class="pg">p198</span> 的「膜糖只以糖蛋白或糖脂形式存在」。<b>说时明说 generally。</b>糖那一路是<b>卡 13</b> 和<b>卡 06</b>。'},
+ cn:'<b>lipid A / endotoxin 书里零命中</b>，只有 <span class="pg">p148</span> 的 <i>lipopolysaccharides</i> 和 <span class="pg">p198</span> 的「膜糖只以糖蛋白或糖脂形式存在」。<b>说时明说 generally。</b>糖那一路是<b>卡 13</b> 和<b>卡 06</b>。'},
 {r:'中', q:'Why express a surface protein in yeast rather than in E. coli, in lipid terms?',
  en:'“Because a membrane is not just a barrier, it is a compartment boundary, and the compartments are what a eukaryote has. The textbook makes the point that eukaryotic cells further divide their internal space with membranes, and that individual membranes are specialised. Only the inner mitochondrial membrane makes ATP, and only certain membranes bind certain hormones. A protein destined for a cell surface is folded and modified as it crosses those membranes, and a bacterium has nowhere to do that.”',
  cn:'<span class="pg">p197</span>。<b>这条把「膜」从一句结构事实抬成一句生物学论点</b>，落点正好在你日常做的事上。二硫键和糖基化那两条理由在<b>卡 13</b>。'}

@@ -15,7 +15,7 @@ cram:[
  {n:'01', t:'定义 · signal peptide',
   big:'新生链 <b>N 端</b>的一段序列，由<b>紧接起始密码子后面的信号密码子</b>编码；任务是把核糖体带到 <b>ER 膜</b>上；在 <b>ER 腔内被信号肽酶切掉</b>',
   en:'“The term signal peptide means the stretch of amino acids at the <b>N-terminus</b> of a nascent polypeptide — the textbook says signal sequence. It is encoded by the signal codons that follow immediately after the initiation codon. Its job is to bring the ribosome to the membrane of the endoplasmic reticulum. The rest of the chain is then threaded into the ER lumen as it is made. Once its end is inside, a membrane-bound <b>signal peptidase</b> cuts it off — the mature protein does not carry it.”',
-  note:'书叫 signální sekvence，题面叫 signal peptide，同一个东西；「signal peptide」也指切下来的那一截。<span class="pg">p110 p111</span>'},
+  note:'书上那个词是 <i>signal sequence</i>，题面叫 signal peptide，同一个东西；「signal peptide」也指切下来的那一截。<span class="pg">p110 p111</span>'},
  {n:'02', t:'定义 · propeptide',
   big:'前体蛋白（<b>proprotein</b>）里的一截肽：链已经折好、已经在分泌路上，但<b>这一截不去掉它就没有活性</b>；由<b>选择性蛋白水解</b>切掉，切了就回不来',
   en:'“The term propeptide means a segment of a precursor protein, the <b>proprotein</b>, that is still there after the chain has folded and entered the secretory route. It has to be removed by <b>selective proteolysis</b>, cleavage at specific peptide bonds, before the protein is biologically active. The textbook’s example is the <b>C-peptide</b> of proinsulin. The pieces cut off the digestive zymogens are the same idea. The word propeptide itself is not in the textbook — its objects are the proprotein, the proenzyme or zymogen, and the C-peptide.”',
@@ -263,7 +263,7 @@ ask:[
 {g:'怎么发现的', gn:'书只说「按信号理论」，人名年份都是 general。', items:[
 {r:'中', q:'How was the signal hypothesis established?',
  en:'“Generally: Günter Blobel and Bernhard Dobberstein, in 1975, translated the mRNA of a secreted protein in a cell-free system. Without ER membranes the product was longer, because it still had the signal, and added protease digested it. With ER microsomes the product was shorter, the signal gone, and protected from protease, because it was inside the vesicles. So cleavage and translocation happen together, at the ER. Blobel’s Nobel Prize for it was 1999. The textbook just says ‘signal theory’.”',
- cn:'<span class="pg">p110</span> 书只有「podle signální teorie」四个字，其余 general。<b>被问时先说实验逻辑，人名年份放最后。</b>'},
+ cn:'<span class="pg">p110</span> 书上只有「<i>according to the signal theory</i>」这一句，其余 general。<b>被问时先说实验逻辑，人名年份放最后。</b>'},
 {r:'中', q:'How was proinsulin discovered?',
  en:'“Generally: Donald Steiner, in 1967, labelled a human insulin-producing tumour with radioactive amino acids and followed the label over time. It appeared first in a single larger chain and only later in insulin, so the two-chain hormone had to come from a one-chain precursor. That precursor was proinsulin, and the piece removed was the C-peptide.”',
  cn:'全条 general；书只有 proinsulin 的结构（p111）。'}
@@ -278,7 +278,7 @@ ask:[
  cn:'<span class="pg">p064 p222</span> 三种调控的区分：别构（非共价、可逆）· 磷酸化（共价、可逆）· 酶原激活（共价、不可逆）。卡 18/19 那边有别构。'},
 {r:'高', q:'Do all secreted proteins have a propeptide?',
  en:'“No. The textbook says secreted proteins are often made as preproteins or preproproteins — often, not always. Generally every protein that enters the ER has a signal, but the propeptide is optional: it is there when activity or assembly has to wait. So pre is the rule, pro is the exception.”',
- cn:'<span class="pg">p110</span> 书原词 <i>často</i>。「只有」「都」是邀请函——不要说「所有分泌蛋白都是 preproprotein」。'},
+ cn:'<span class="pg">p110</span> 书上那个词是 <i>often</i>（不是「总是」）。「只有」「都」是邀请函——不要说「所有分泌蛋白都是 preproprotein」。'},
 {r:'中', q:'The textbook says removing the signal turns a preproprotein into a preprotein. Is that right?',
  en:'“That line on page 111 is a slip. By the textbook’s own definition on the page before, the pre-forms are the ones that still carry the signal sequence. So once the signal is removed, what is left is the proprotein, which still has the propeptide. The example on the same page says it correctly: preproinsulin minus the signal is proinsulin.”',
  cn:'<span class="pg">p111 p110</span> 回 300 dpi 原图核过，书印的就是 preprotein。<b>用书 p110 的定义打书 p111 的这一句</b>，同页的 preproinsulin → proinsulin 例子是第二个证人。'},
