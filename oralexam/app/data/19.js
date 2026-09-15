@@ -68,7 +68,7 @@ cram:[
  {n:'13', t:'非竞争性',
   big:'跟 <b>E 和 EA 都结合，而且一样紧</b>（Ki = Ki′）；位点跟底物不同，所以不竞争',
   en:'“<b>Non-competitive</b>: the inhibitor binds both the free enzyme and the enzyme–substrate complex, <b>with the same affinity</b>. K i equals K i prime, so EI and EAI form equally easily. It binds at a different site from the substrate, so the two do not compete. Usually these are substances reacting with groups outside the active site that the enzyme still needs for catalysis. Heavy-metal ions inhibiting SH-enzymes are the textbook’s example. They bind the sulfhydryl, the thiol group of cysteine residues, and those enzymes need it to stay active.”',
-  note:'<b>定义在 p060 最后三行，不是 p061 开头那句「通常是……」。</b>书的原话：跟 E 和 EA 都作用、亲和力相同（Ki = Ki′）、EI 和 EAI 一样容易生成、结合位点跟底物不同、A 和 I 不竞争。「活性中心之外的基团」是书接着说的<b>典型情形</b>（<i>Obvykle se jedná o látky…</i>），不是定义——混合型也结合在活性中心之外，能区分两者的只有「亲和力相不相等」。书给的例子：<b>重金属离子非竞争性地抑制含 SH 的酶</b>。<br><b>图上：Vmax 降低，Km 不变。</b>Km 不变的原因正是亲和力相等：抑制剂不动底物结合的平衡，只把固定的一部分酶扣在不周转的复合物里。<span class="pg">p060 p061</span>'},
+  note:'<b>定义在 p060 最后三行，不是 p061 开头那句「通常是……」。</b>书的原话：跟 E 和 EA 都作用、亲和力相同（Ki = Ki′）、EI 和 EAI 一样容易生成、结合位点跟底物不同、A 和 I 不竞争。「活性中心之外的基团」是书接着说的<b>典型情形</b>（书上那句话的英译：<i>These are usually substances…</i>），不是定义——混合型也结合在活性中心之外，能区分两者的只有「亲和力相不相等」。书给的例子：<b>重金属离子非竞争性地抑制含 SH 的酶</b>。<br><b>图上：Vmax 降低，Km 不变。</b>Km 不变的原因正是亲和力相等：抑制剂不动底物结合的平衡，只把固定的一部分酶扣在不周转的复合物里。<span class="pg">p060 p061</span>'},
  {n:'14', t:'混合型',
   big:'非竞争性的<b>一般情形</b>：跟 E 和 EA 都结合，但<b>结合得不一样紧</b>',
   en:'“<b>Mixed</b> inhibition is the general case of non-competitive. Everything said about non-competitive holds, except that the interaction with E and with EA is <b>not the same</b> — the two constants differ.”',

@@ -52,7 +52,7 @@ cram:[
  {n:'09', t:'后来补的两级',
   big:'<b>supersecondary</b>（βαβ）和 <b>domain</b>（100–400 残基）',
   en:'“Later work added two more levels. <b>Supersecondary</b> structure means clusters such as the βαβ motif. A <b>domain</b> is a compact globular region of a hundred to four hundred residues.”',
-  note:'书 p033 明说是「pozdější studie」的结果。说出来显示你知道这个分级<b>是人定的、而且在变</b>。<b>时间不够先砍这一点。</b>'},
+  note:'书 p033 明说是「later studies」（书上那句话的英译）的结果。说出来显示你知道这个分级<b>是人定的、而且在变</b>。<b>时间不够先砍这一点。</b>'},
 
  {g:'收尾', gn:'一句停住，一句伸出去。这两点决定他接下来往哪问。'},
  {n:'10', t:'落点',
@@ -118,7 +118,7 @@ segs:[
      'The periodic structures are then just the ways of hydrogen-bonding such a chain. The α-helix: 3.6 residues per turn, right-handed, taking every amino acid except proline. The β-structure: nearly extended, parallel or antiparallel.”'],
   note:'先讲肽键刚性再讲二级结构，<b>「为什么只有这几种二级结构」就顺带答了</b>。<br>⚠ α-helix 氢键：书正文印 n+3，同页图画的是 n+4，通用写法也是 n+4，而且 3.6 残基/圈只跟 n+4 自洽。<b>先说 “about one full turn further along the chain”，被逼问再给 n+4。</b>',
   fig:{src:'img/p029_obr28_alphahelix_hbond.jpg',
-       cap:'<b>Obr. 2.8（书 p029 原图）。</b>括号从 <b>R₁ 后面那个 O</b>（第 1 个残基的羰基氧）连到 <b>R₅ 前面那个 H</b>（第 5 个残基的酰胺氢）。数一下就是 <b>n → n+4</b>，而同一页正文印的是 n+3。<b>被质疑时把这张图指给他看。</b>'}},
+       cap:'<b>Figure 2.8（书 p029 原图）。</b>括号从 <b>R₁ 后面那个 O</b>（第 1 个残基的羰基氧）连到 <b>R₅ 前面那个 H</b>（第 5 个残基的酰胺氢）。数一下就是 <b>n → n+4</b>，而同一页正文印的是 n+3。<b>被质疑时把这张图指给他看。</b>'}},
  {tag:'段 4 · 留口子', h:'主动给他一个抓手',
   p:['“And the level I actually work at is the quaternary one. In antibodies the antigen-binding site is formed by parts of chains from both types of subunit — that is the textbook’s own example. It is also where I work experimentally: I measure how a binding surface tolerates change, using yeast display and dissociation constants.”'],
   note:'<b>这不是漏洞，是钓饵。</b>yeast display 和 dissociation constant 故意不交代。<b>你不给抓手，他就自己去挑一个深坑。</b>'}
@@ -146,7 +146,7 @@ figs:[
     + '而同一页正文印的是 <b>n+3</b>。'
     + '<br><br>考场上先说 “about one full turn further along the chain”；被逼问再给 n+4，'
     + '补一句 “3.6 residues per turn only works out with n+4”。<b>被质疑就把这张图指给他看。</b>',
-  src2:'Biochemie, Obr. 2.8, p029 · 300 dpi 原图裁切，未修改'}
+  src2:'Biochemie, figure 2.8, p029 · 300 dpi 原图裁切，未修改'}
 ],
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
@@ -241,11 +241,11 @@ ask:[
 {r:'实测', q:'How far apart is “far apart”? Give me a number.',
  en:'“There is no number, and the textbook says so — it writes that the boundary between secondary and tertiary structure is <b>in some cases difficult to define</b>. The line is drawn by a <b>criterion</b>, not by a distance: secondary structure is what can form <b>locally, as the chain emerges</b>, from residues that are near each other in the sequence. Tertiary structure needs residues that only meet <b>once the whole chain has folded back on itself</b>.”',
  cn:'<b>他问一个数字，而这个边界没有数字。编一个就死定了。</b><br><br>能给的<b>操作性锚点</b>（都是书里的）：α-helix 的氢键跨<b>大约一整圈</b>，也就是三到四个残基；β-turn 是 <b>n → n+3</b>。所以「近」在实践中就是<b>一圈之内、几个残基</b>。「远」是指那些<b>只有等整条链折回来才碰得到</b>的残基，可能隔几十上百个。',
- good:'<b>他还追？分成两件事答——这是这道追问的完整版：</b><br><br><b>① 具体结构的数字是存在的，而且精确：</b><br>α-helix 氢键 <b>i → i+4</b>（每圈 3.6 残基，螺距 0.54 nm）· β-turn <b>n → n+3</b> · 3₁₀ helix i+3 · π-helix i+5。<b>这些可以直接报。</b><br><br><b>② 但「类别的边界」那个数不存在，而且不该存在。</b>因为 <b>β-structure 打破任何阈值</b>：两段配对的链可以隔一百个残基，仍然是二级结构——定义它的是主链氢键的规则重复，不是距离。<br><br><b>③ 为什么不该存在：这个分级是人划的，不是分子自带的。</b>书自己在证明这一点——它先给四级，然后说「pozdější studie」又加了 supersecondary 和 domain。<b>一个会被后人加两层的分类，是描述工具，不是自然事实。</b><br><br>完整说法：<br>“The individual structures have exact numbers — the α-helix hydrogen bond spans <b>i to i+4</b>, a β-turn is <b>n to n+3</b>. What has no number is the boundary between the <b>categories</b>, because the categories are a description we impose rather than something the molecule has. The β-structure is the case that breaks any cutoff: two strands a hundred residues apart in the sequence are still secondary structure, because what defines it is regular main-chain hydrogen bonding, not proximity.”<br><br><b>这个答案比任何数字都强</b>：它给出了真实存在的数、说清了哪个数不存在、并说明了为什么不存在。最后那句 “a description we impose” 是 researcher 的标志。'},
+ good:'<b>他还追？分成两件事答——这是这道追问的完整版：</b><br><br><b>① 具体结构的数字是存在的，而且精确：</b><br>α-helix 氢键 <b>i → i+4</b>（每圈 3.6 残基，螺距 0.54 nm）· β-turn <b>n → n+3</b> · 3₁₀ helix i+3 · π-helix i+5。<b>这些可以直接报。</b><br><br><b>② 但「类别的边界」那个数不存在，而且不该存在。</b>因为 <b>β-structure 打破任何阈值</b>：两段配对的链可以隔一百个残基，仍然是二级结构——定义它的是主链氢键的规则重复，不是距离。<br><br><b>③ 为什么不该存在：这个分级是人划的，不是分子自带的。</b>书自己在证明这一点——它先给四级，然后说「later studies」（书上那句话的英译）又加了 supersecondary 和 domain。<b>一个会被后人加两层的分类，是描述工具，不是自然事实。</b><br><br>完整说法：<br>“The individual structures have exact numbers — the α-helix hydrogen bond spans <b>i to i+4</b>, a β-turn is <b>n to n+3</b>. What has no number is the boundary between the <b>categories</b>, because the categories are a description we impose rather than something the molecule has. The β-structure is the case that breaks any cutoff: two strands a hundred residues apart in the sequence are still secondary structure, because what defines it is regular main-chain hydrogen bonding, not proximity.”<br><br><b>这个答案比任何数字都强</b>：它给出了真实存在的数、说清了哪个数不存在、并说明了为什么不存在。最后那句 “a description we impose” 是 researcher 的标志。'},
 
 {r:'高', q:'You put the disulfide bridges under primary structure. Then why do they hold the tertiary fold?',
  en:'“Because those are two different questions. <b>Which cysteines are joined</b> is part of the covalent description of the chain, so this textbook lists the disulfide positions with the primary structure. Lehninger does the same. <b>What the bridge does</b> is lock a fold that has already formed: the textbook says it contributes mainly to stabilising an already formed structure. And the pairing is not automatic. The textbook says disulfide formation is not specific, and protein disulfide isomerase in the ER reshuffles the bridges until the native pairing is reached.”',
- cn:'p033 把二硫键的<b>位置</b>算进一级；p032 说它「主要是稳定<b>已经形成</b>的结构」（<i>přispívají zejména ke stabilizaci již vytvořené struktury</i>）；p034 又把它列进固定球蛋白折叠的五样力里。<b>三处不矛盾：一处说它在哪一级登记，两处说它干什么。</b>把三处连起来说，比只说「别的教材算三级」稳得多。',
+ cn:'p033 把二硫键的<b>位置</b>算进一级；p032 说它「主要是稳定<b>已经形成</b>的结构」（<i>they contribute mainly to stabilising a structure that has already formed</i>）；p034 又把它列进固定球蛋白折叠的五样力里。<b>三处不矛盾：一处说它在哪一级登记，两处说它干什么。</b>把三处连起来说，比只说「别的教材算三级」稳得多。',
  good:'<b>他再追「那为什么胞质蛋白基本没有二硫键」</b>——那是卡 13 的地盘：胞质是还原环境，有足够游离巯基，S–S 会被拆回去，只有 ER 里留得住。<b>这是一个你想接的口子。</b>'},
 
 {r:'高', q:'Give me an example for each level.',
@@ -285,7 +285,7 @@ ask:[
  warn:'这条的两个理由<b>不是书上的</b>，是通用解释。说的时候不要说「书上写」。'},
 {r:'实测', q:'Why does the peptide bond have partial double-bond character?',
  en:'“Because the <b>lone pair on the nitrogen is delocalised into the carbonyl</b>. The electrons are shared over O-C-N rather than sitting on the nitrogen, so the C-N bond is a hybrid between a single and a double bond. The measurement says so: the C-N is <b>1.32 Å</b>, between a single C-N at 1.49 and a double at 1.27. And a bond with double-bond character <b>cannot rotate</b>. The six atoms of the amide, the two α-carbons, C, O, N and H, lie in one <b>plane</b>. That is why there are cis and trans forms at all, and why the only free rotations in the backbone are the two single bonds at the α-carbon.”',
- cn:'全在 p027–p028，书的原话是「羰基 π 电子和氮的自由电子对<b>部分离域</b>」（<i>částečné delokalizace π-elektronů karbonylu a volného elektronového páru dusíku</i>），然后「不能自由转动」→ cis/trans → 球蛋白里几乎全是 trans、cis 只在 proline 旁；p028：肽键原子共面，Cα–C 和 Cα–N 是单键可以转，所以主链是<b>一串刚性平面被 –CHR– 隔开</b>（Obr. 2.6）。<br><b>三件事按这个顺序说：原因（离域）→ 证据（键长）→ 后果（平面、不能转、cis/trans）。</b>只说「它是部分双键」而不说为什么，他下一句一定是 why。',
+ cn:'全在 p027–p028，书的原话是「羰基 π 电子和氮的自由电子对<b>部分离域</b>」（<i>partial delocalisation of the π electrons of the carbonyl and of the lone electron pair of the nitrogen</i>），然后「不能自由转动」→ cis/trans → 球蛋白里几乎全是 trans、cis 只在 proline 旁；p028：肽键原子共面，Cα–C 和 Cα–N 是单键可以转，所以主链是<b>一串刚性平面被 –CHR– 隔开</b>（figure 2.6）。<br><b>三件事按这个顺序说：原因（离域）→ 证据（键长）→ 后果（平面、不能转、cis/trans）。</b>只说「它是部分双键」而不说为什么，他下一句一定是 why。',
  good:'<b>这条有一个值得主动接的后果：</b>同一个离域让羰基 O 带部分负电、N–H 带部分正电，所以主链的 C=O 和 N–H 是<b>很强的一对氢键受体和给体</b>——二级结构靠主链氢键，根子就在这里。一句话把段 3 和「为什么主链氢键」接上。<br><b>停止线：</b>他要追「为什么孤对会离域」——「因为离域把电荷放到电负性更大的氧上，整体能量更低。再往下是轨道，物理化学。」<b>不要说 sp2、不要画轨道。</b>'},
 
 {r:'实测', q:'What is that ring called?',
@@ -305,18 +305,18 @@ ask:[
  cn:'卡上说了「几乎总是 trans」和「cis 几乎只在 proline 旁」，<b>但没说为什么</b>。这两句连起来就是一个完整回答，而且第二句正好解释了第一句的例外。<span class="pg">p027</span>'},
 {r:'实测', q:'What is the hydrophobic effect?',
  en:'“It is the tendency of nonpolar substances and groups in water to associate with each other and avoid being solvated, the way two drops of oil in water merge. The groups meant here are hydrocarbons, the nonpolar parts of lipids and the nonpolar side chains. It is <b>not an attraction between them</b>: it is the <b>entropy the water gains</b> when the ordered shell it has to form around a nonpolar surface is released. In a protein it shows in two ways: the molecule takes the shape with the <b>smallest surface</b>, and the nonpolar side chains gather into a <b>nonpolar core</b>.”',
- cn:'三句全是书的：定义和「两滴油」p012–p013 · 「不是亲和力，是水的结构变化」p013 · 两种表现 p033。<b>说完第三句就停</b>——再往下是水的熵，物理化学。<br><br><b>他从这里能往哪儿走（每条一句话，来源都在书里）：</b><br>① <b>「hydrophobic 到底什么意思」</b>——对水亲和力低的基团：烃、脂的非极性部分、非极性侧链（p012）。反面 <b>hydrophilic</b>：极性或带电，能被水溶剂化。<b>一个分子两头各占一种，书叫 amphipathic</b>（<i>amfipatie</i>，p181）：磷脂的脂肪酸尾疏水、甘油–磷酸–头基亲水。「亲脂 lipophilic」书只在膜运输那里用（p200），意思跟 hydrophobic 实际重合；「恐脂」不是一个用的词。<br>② <b>「它是键吗」</b>——不是，是驱动力。见横向卡 bonds。<br>③ <b>「还在哪里起作用」</b>——膜：双层里尾对尾、头朝外，非极性中间层，厚 3.5–4 nm，头尾之间的作用力全是非共价（p198）；整合膜蛋白靠非极性侧链跟脂尾的疏水作用留在膜里（p199）。DNA 碱基堆叠主要靠疏水作用稳定（p073，卡 03）。信号肽中段是疏水氨基酸（p110，卡 13）。<br>④ <b>「为什么肥皂让蛋白变性」</b>——去污剂两亲，钻进非极性侧链之间，把撑着核心的疏水效应拆掉；p035 把去污剂、尿素、胍列成化学变性剂，跟加热不同，不凝固。见横向卡 bonds。',
+ cn:'三句全是书的：定义和「两滴油」p012–p013 · 「不是亲和力，是水的结构变化」p013 · 两种表现 p033。<b>说完第三句就停</b>——再往下是水的熵，物理化学。<br><br><b>他从这里能往哪儿走（每条一句话，来源都在书里）：</b><br>① <b>「hydrophobic 到底什么意思」</b>——对水亲和力低的基团：烃、脂的非极性部分、非极性侧链（p012）。反面 <b>hydrophilic</b>：极性或带电，能被水溶剂化。<b>一个分子两头各占一种，书叫 amphipathic</b>（书 p181 印的名词就是 <i>amphipathy</i>）：磷脂的脂肪酸尾疏水、甘油–磷酸–头基亲水。「亲脂 lipophilic」书只在膜运输那里用（p200），意思跟 hydrophobic 实际重合；「恐脂」不是一个用的词。<br>② <b>「它是键吗」</b>——不是，是驱动力。见横向卡 bonds。<br>③ <b>「还在哪里起作用」</b>——膜：双层里尾对尾、头朝外，非极性中间层，厚 3.5–4 nm，头尾之间的作用力全是非共价（p198）；整合膜蛋白靠非极性侧链跟脂尾的疏水作用留在膜里（p199）。DNA 碱基堆叠主要靠疏水作用稳定（p073，卡 03）。信号肽中段是疏水氨基酸（p110，卡 13）。<br>④ <b>「为什么肥皂让蛋白变性」</b>——去污剂两亲，钻进非极性侧链之间，把撑着核心的疏水效应拆掉；p035 把去污剂、尿素、胍列成化学变性剂，跟加热不同，不凝固。见横向卡 bonds。',
  good:'<b>哪条接、哪条停：</b>②④ 在 bonds 卡上，③ 的碱基堆叠和信号肽各有卡，<b>都可以接</b>。③ 的膜那句说完就停——再往下是脂那道题（#23），还没做。<br><b>他要追「水为什么会有序」</b>：非极性表面不能跟水成氢键，水分子只好在它周围排成笼子来保住彼此的氢键；两个非极性面靠在一起，中间的笼子放掉，熵升高。这是八分答案的第二层，被逼才给。'},
 
 {r:'中', q:'Why does a protein need a hydrophobic core at all?',
  en:'“For a globular protein the core is what selects one conformation in water: take it away and the chain is a random coil. That is exactly what the textbook says a denatured protein becomes. Fibrillar proteins are the exception: collagen is held by hydrogen bonds between chains and glycine packing, not by a core.”',
- cn:'这条把 <b>④ 的落点</b>和 <b>denaturation 那一节</b>接在一起：p035 说变性后是 <i>náhodné či statistické klubko</i>。<b>所以「有核心」和「有唯一构象」是同一件事的两种说法。</b>'}
+ cn:'这条把 <b>④ 的落点</b>和 <b>denaturation 那一节</b>接在一起：p035 说变性后是 <i>a random or statistical coil</i>。<b>所以「有核心」和「有唯一构象」是同一件事的两种说法。</b>'}
 ]},
 
 {g:'怎么发现的', gn:'plasmid 那一类。要像 researcher 答：他们当时手上只有什么，所以只能怎么推。', items:[
 {r:'实测', q:'How did anyone know a protein has one definite three-dimensional structure at all?',
  en:'“The first hint was crystallisation, in 1864 with haemoglobin. <b>A molecule that crystallises must all be the same shape</b> — a mixture of random conformations does not form a lattice. The actual structure had to wait until 1957, when Kendrew solved myoglobin by X-ray analysis.”',
- cn:'<b>「能结晶就说明形状唯一」这个论证是这题的分数所在。</b>它把一个 1864 年的现象变成一个推理，而不是一个年份。<br><br>年表全在 p009 的 Tab. 1.1：1864 Hoppe-Seyler 结晶 hemoglobin · 1902 Fischer 证明多肽本质 · <b>1951 Pauling &amp; Corey 提出 α-helix 与 β-structure</b> · 1953 Sanger 第一个序列 · 1957 Kendrew 第一个结构。方法名在 p008。'},
+ cn:'<b>「能结晶就说明形状唯一」这个论证是这题的分数所在。</b>它把一个 1864 年的现象变成一个推理，而不是一个年份。<br><br>年表全在 p009 的 table 1.1：1864 Hoppe-Seyler 结晶 hemoglobin · 1902 Fischer 证明多肽本质 · <b>1951 Pauling &amp; Corey 提出 α-helix 与 β-structure</b> · 1953 Sanger 第一个序列 · 1957 Kendrew 第一个结构。方法名在 p008。'},
 {r:'高', q:'Why did Pauling get the α-helix right before anyone had a protein structure?',
  en:'“He did not read it off a protein. He derived it from bond lengths and angles measured on amino acids and small peptides, and asked what regular structures such a chain could form. The α-helix was proposed in 1951 — two years before the first protein sequence and six years before the first protein structure.”',
  cn:'<b>这个动作可以搬到任何一题上</b>：不说「谁在哪年做了什么」，说「他们当时手上只有什么，所以只能怎么推」。这就是 researcher 和 technician 的区别。<span class="pg">p028 p009</span>'},

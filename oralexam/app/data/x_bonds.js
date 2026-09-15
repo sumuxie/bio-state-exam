@@ -17,7 +17,7 @@ cram:[
  {n:'02', t:'第二个问题',
   big:'这个键<b>断了能放出多少能量</b>？——跟种类<b>没有必然关系</b>',
   en:'“The textbook says we should speak of macroergic <b>compounds</b> rather than macroergic bonds. A macroergic compound is one in an energetically unstable state, held there by a single bond. Breaking that bond by hydrolysis releases <b>30 to 60 kJ per mole</b>, against under 12 for an ordinary bond — ATP to ADP is minus 30.5. It is not a strong bond. It is an unstable compound whose products are much more stable.”',
-  note:'书对 makroergické sloučeniny 的说法是：<b>能相对容易地从中取得大量能量</b>，是生物体的通用「能量货币」（p016）。<br><br><b>这是最容易乱的地方：「高能键」不是「强键」，正好相反。</b>它容易断，而且断完之后回不去。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>ΔG°′ = −RT ln K</code><br>ΔG°′ 是标准自由能变（撇 ＝ 生化标准态，pH 7）· R = 8.314 J·mol⁻¹·K⁻¹ · T 是绝对温度 · K 是平衡常数。<br><br><b>三步推导</b>（他问「30 到 60 这个门槛哪来的」就照这个说）：<br>① 每个组分的化学势 <code>μ = μ° + RT ln a</code>（a 是活度，稀溶液里当浓度用）。书 p017–p018 就是从这儿起步的。<br>② 平衡时整个体系 <code>ΔG = 0</code>，把各组分按化学计量代进去整理 → <code>ΔG°′ = −RT ln K</code>（书 p018 印的是 −ΔG°′ = RT ln K，同一个式子，只差挪个负号）。<br>③ 换成以 10 为底：<code>ΔG°′ = −RT·ln10·log K = −5.71·log K</code>（25 °C）。<b>K 每差十倍，ΔG°′ 差 5.71 kJ/mol</b>——跟卡 02 里 Kd 用的是同一个数。<br><br><b>=== 一句话理解 ===</b><br>把书给的两个门槛翻成平衡常数，「高能」这两个字就不再是形容词了：<br><code>12 kJ/mol → K ≈ 130</code> · <code>30 kJ/mol → K ≈ 2×10⁵</code> · <code>60 kJ/mol → K ≈ 3×10¹⁰</code> · <code>ATP 的 30.5 → K ≈ 2×10⁵</code><br><b>所以「普通键」水解是一百倍上下的事——把产物堆浓一点就能推回去；「高能化合物」水解是十万倍到百亿倍的事——实际上拉不回来。</b>门槛不是谁拍脑袋定的，它画在「可逆」和「不可逆」之间。<br>⚠ 30–60 和 12 是书 p131 的数（<i>na 1 vazbu</i>，按每个键算）；换算出来的这几个 K <b>书里没有</b>，是按 ΔG°′ = −RT ln K 算的，被追问出处就说这是热力学定义，不是书上的数。',
+  note:'书对 macroergic compounds 的说法是：<b>能相对容易地从中取得大量能量</b>，是生物体的通用「能量货币」（p016）。<br><br><b>这是最容易乱的地方：「高能键」不是「强键」，正好相反。</b>它容易断，而且断完之后回不去。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>ΔG°′ = −RT ln K</code><br>ΔG°′ 是标准自由能变（撇 ＝ 生化标准态，pH 7）· R = 8.314 J·mol⁻¹·K⁻¹ · T 是绝对温度 · K 是平衡常数。<br><br><b>三步推导</b>（他问「30 到 60 这个门槛哪来的」就照这个说）：<br>① 每个组分的化学势 <code>μ = μ° + RT ln a</code>（a 是活度，稀溶液里当浓度用）。书 p017–p018 就是从这儿起步的。<br>② 平衡时整个体系 <code>ΔG = 0</code>，把各组分按化学计量代进去整理 → <code>ΔG°′ = −RT ln K</code>（书 p018 印的是 −ΔG°′ = RT ln K，同一个式子，只差挪个负号）。<br>③ 换成以 10 为底：<code>ΔG°′ = −RT·ln10·log K = −5.71·log K</code>（25 °C）。<b>K 每差十倍，ΔG°′ 差 5.71 kJ/mol</b>——跟卡 02 里 Kd 用的是同一个数。<br><br><b>=== 一句话理解 ===</b><br>把书给的两个门槛翻成平衡常数，「高能」这两个字就不再是形容词了：<br><code>12 kJ/mol → K ≈ 130</code> · <code>30 kJ/mol → K ≈ 2×10⁵</code> · <code>60 kJ/mol → K ≈ 3×10¹⁰</code> · <code>ATP 的 30.5 → K ≈ 2×10⁵</code><br><b>所以「普通键」水解是一百倍上下的事——把产物堆浓一点就能推回去；「高能化合物」水解是十万倍到百亿倍的事——实际上拉不回来。</b>门槛不是谁拍脑袋定的，它画在「可逆」和「不可逆」之间。<br>⚠ 30–60 和 12 是书 p131 的数（<i>per bond</i>，按每个键算）；换算出来的这几个 K <b>书里没有</b>，是按 ΔG°′ = −RT ln K 算的，被追问出处就说这是热力学定义，不是书上的数。',
   warn:'考场上别说 "high-energy bond" 就完事。被追问「高在哪」，答<b>产物更稳定</b>，不是<b>键更强</b>。'},
 
  {g:'共价键 · 七种', gn:'共价 = 共用电子。断它要酶，或者要强条件。按「连接什么」排。'},
@@ -45,7 +45,7 @@ cram:[
   big:'一个<b>酸</b> ＋ 一个<b>巯基</b>——比酯<b>活泼得多</b>',
   en:'“A thioester is the acyl bond between a carboxylic acid and a thiol — in acetyl-CoA the acetyl group sits on the free SH of coenzyme A. The textbook calls thioesters generally very reactive and acetyl-CoA macroergic, and gives the reason: the sulfur atom prevents the resonance that normally stabilises an O-ester, so the carbonyl stays reactive.”',
   note:'<b>这是「种类」和「能量」两个问题在同一个键上相遇的地方</b>：硫酯和酯连接的官能团只差一个原子（O 换成 S），但硫酯是高能化合物，酯不是。<span class="pg">p050</span>',
-  warn:'理由<b>书里写了</b>（p132、p136：硫原子阻止了 O-酯常见的离域/共振，<i>atom síry brání mezomerii</i>）。可以直接说是书上的。'},
+  warn:'理由<b>书里写了</b>（p132、p136：硫原子阻止了 O-酯常见的离域/共振，<i>the sulfur atom prevents mesomerism</i>）。可以直接说是书上的。'},
  {n:'09', t:'anhydride',
   big:'两个<b>酸</b>缩掉一分子水——ATP 的磷酸酐键就是这个',
   en:'“An anhydride is what two acids give when they condense with loss of water. In ATP the α-β and β-γ links are phosphoanhydride bonds, but the α-phosphate is joined to the 5′-hydroxyl of ribose by an ester. So ATP has two macroergic bonds, not three, and hydrolysing that ester gives under 12 kJ per mole. The textbook also puts pyrophosphate, the acyl phosphates 1,3-bisphosphoglycerate and carbamoyl phosphate, and the phosphosulfate of PAPS under anhydrides, and says ATP and ADP are complexed with Mg²⁺ in the cell.”',
@@ -78,7 +78,7 @@ cram:[
   note:'书说得很直接：它<b>不是非极性物质之间某种亲和力的表现（不是一种键）</b>，而是<b>溶质周围水的结构发生变化的结果</b>（p013）。<br><br>所以当老师问「有哪些非共价相互作用」时，前三个是键，这个是<b>驱动力</b>。<b>把这个区别说出来是加分。</b><span class="pg">p012 p013 p032 p033</span>'},
 
  {g:'另一个维度：高能', gn:'跟「种类」正交。同一种键可以高能也可以不高能。'},
- {n:'15', t:'makroergní',
+ {n:'15', t:'macroergic',
   big:'高能的是<b>化合物</b>，不是<b>键的种类</b>',
   en:'“The textbook lists four types of macroergic compound. Phosphoanhydrides: ATP, pyrophosphate, and the acyl phosphates. Phosphamides: the phosphagens creatine phosphate in vertebrates and phosphoarginine in invertebrates. Enol phosphates: phosphoenolpyruvate, with the highest free energy of hydrolysis. And thioesters: acetyl-CoA. On the same ATP molecule the anhydride bonds are macroergic and the ribose ester is not, so macroergic is a property of the compound, not of a bond type.”',
   tbl:{head:['高能的','键的种类','出处'],
@@ -87,7 +87,7 @@ cram:[
     ['<b>acetyl-CoA</b>','<b>硫酯</b>','p050'],
     ['<b>phosphoenolpyruvate</b>、1,3-bisphosphoglycerate','烯醇磷酸 / 酰基磷酸','第 6、7 章'],
     ['ATP 的 α–核糖','磷酸<b>酯</b> ——<b>这个不高能</b>','标准知识；门槛见 p131'],
-    ['<b>creatine phosphate</b>、phosphoarginine','<b>磷酰胺</b>（fosfamid）——书列的第二类','p132']
+    ['<b>creatine phosphate</b>、phosphoarginine','<b>磷酰胺</b>（phosphamide）——书列的第二类','p132']
    ]},
   note:'<b>最后一行是重点</b>：同一个 ATP 分子上，酐键高能、酯键不高能。<b>所以「高能」是化合物的性质，不是某类键天生的性质。</b>'}
 ],
@@ -123,6 +123,134 @@ why:{
  stop:{lbl:'停 · 落在物理化学',
   say:'“Below that it is physical chemistry rather than biochemistry — which orbital overlaps which, why a lone pair delocalises, why an electron cloud repels.”'}
 },
+
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p026_obr23_peptide_bond_formation.jpg',
+  t:'肽键怎么形成 —— 书 figure 2.3',
+  cap:'<b>这张是「画」。</b>他一句 “show me how a peptide bond is formed” 就要求你在纸上画它，而书这张图<b>只用两个氨基酸和一分子水</b>就把整个缩合说完了。'
+    + '<br><br><b>画的顺序（五步，照这个练）</b>：'
+    + '<br>① <b>先写左边那个氨基酸</b>：<code>⁺H₃N–C–COO⁻</code>，中间那个 C 上面写 <b>H</b>、下面写 <b>R₁</b>。'
+    + '<br>② <b>右边再写一个一模一样的</b>，下面写 <b>R₂</b>，两个中间画一个 <b>＋</b>。'
+    + '<br>③ 中间画<b>双向箭头</b> ⇌——书画的是可逆的，不是单箭头。'
+    + '<br>④ 右边写产物：<code>⁺H₃N–C–CO–NH–C–COO⁻</code>。<b>新出现的那根 C–N 就是肽键</b>，N 底下<b>一定要把那个 H 写出来</b>。'
+    + '<br>⑤ 最后在产物后面补 <b>＋ H₂O</b>。'
+    + '<br><br><b>画的时候要说的那两句</b>：“The carboxyl of the first residue condenses with the α-amino nitrogen of the second, and one water leaves.” 和 '
+    + '“The nitrogen keeps one hydrogen, and that N-H is the donor for every main-chain hydrogen bond later.”'
+    + '<br><br>⚠ <b>两个最容易漏的细节</b>：一是<b>两端的电荷</b>，⁺H₃N 和 COO⁻ 都要标，那是 pH 7 的样子；'
+    + '二是<b>产物氮上那个 H</b>——漏了它，后面讲二级结构时就没有氢键供体了。',
+  src2:'Biochemie, figure 2.3, p026 · 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p159_obr711_o_and_n_glycosidic.jpg',
+  t:'O-糖苷键和 N-糖苷键 —— 一张图答两个问题（书 figure 7.11a）',
+  cap:'<b>这张是「画」，而且它一张顶两张</b>：<b>左边是 O-糖苷</b>（GalNAc 接 <b>Ser</b>），<b>右边是 N-糖苷</b>（GlcNAc 接 <b>Asn</b>）。图上<b>灰底那一条是氨基酸，白底是糖</b>。'
+    + '<br><br><b>画的顺序（四步，左右两边一样）</b>：'
+    + '<br>① 先画<b>一个六元环的糖</b>，把<b>右边那个碳</b>圈出来——那是<b>异头碳</b>，所有糖苷键都从它出发。'
+    + '<br>② 从异头碳往右引一根键：<b>左边这根引到 O</b>，<b>右边这根引到 N</b>。<b>差别只在这一个原子。</b>'
+    + '<br>③ O 后面接 <b>–CH₂–CH</b>，那是 <b>serine</b> 的侧链；N 后面接 <b>–CO–CH₂–CH</b>，那是 <b>asparagine</b> 的侧链酰胺。'
+    + '<br>④ 两个糖上都挂着 <b>–NH–CO–CH₃</b>，所以它们叫 <b>GalNAc</b> 和 <b>GlcNAc</b>。'
+    + '<br><br><b>画完要说的一句</b>：“The bond always starts at the anomeric carbon. To an oxygen it is O-glycosidic, to a nitrogen N-glycosidic — and in a nucleoside the same N-glycosidic bond goes to the base.”'
+    + '<br><br>⚠ 这张图<b>只画了糖蛋白那两处</b>。<b>第三处，核苷里糖连碱基，在书的另一章</b>，靠嘴补一句，别在这张图上硬加。<span class="pg">p112 p159</span>',
+  src2:'Biochemie, figure 7.11a, p159 · 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p072_obr47_rna_dinucleotide.jpg',
+  t:'磷酸二酯键 —— 一段 RNA 的两个核苷酸（书 figure 4.7）',
+  cap:'<b>这张是「画」。</b>“Draw me the linkage between two nucleotides” 是核酸题最常落的一刀，而书这张图<b>把 3′ 和 5′ 两个数字印在了该在的位置上</b>。'
+    + '<br><br><b>画的顺序（六步）</b>：'
+    + '<br>① 先画<b>上面那个核糖</b>（五元环），左上角引出 <b>5′–CH₂</b>，左下角标 <b>3′</b>，右下角挂 <b>OH</b>——<b>是 RNA 才有这个 2′-OH</b>。'
+    + '<br>② 5′ 那头往左接 <b>–O–P</b>，磷上写 <b>＝O</b> 和两个 <b>O⁻</b>。'
+    + '<br>③ 环的右上角往上引一根键到<b>碱基</b>（图上是 adenine）——<b>这根是 N-糖苷键，不是磷酸二酯键，别混</b>。'
+    + '<br>④ 从 <b>3′</b> 往下引 <b>–O–P</b>，这个磷上写 <b>＝O</b> 和<b>一个</b> <b>O⁻</b>。'
+    + '<br>⑤ 这个磷再往右接 <b>–O–CH₂</b>，往下画<b>第二个核糖</b>，它的碱基是 cytosine。'
+    + '<br>⑥ <b>最后把中间那个磷圈起来，数它身上的四个氧</b>：两个当桥、一个 P＝O、一个 P–O⁻。'
+    + '<br><br><b>画完要说的那两句</b>：“One phosphate esterified to two hydroxyls — the three prime of one pentose and the five prime of the next.” 和 '
+    + '“Two of its four oxygens are used up in the bridges, so one negative charge is left per nucleotide. That is why DNA is negatively charged.”',
+  src2:'Biochemie, figure 4.7, p072 · 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p114_obr457_phosphoserine.jpg',
+  t:'磷酸酯键 —— phosphoserine（书 figure 4.57）',
+  cap:'<b>这张是「画」，而且它小到十秒能画完</b>——所以「举个酯键的例子」这一刀就用它，别临场去想甘油酯。'
+    + '<br><br><b>画的顺序（三步）</b>：'
+    + '<br>① 先写一个标准氨基酸骨架：上面 <b>COO⁻</b>，中间一个 <b>C</b>，左边 <b>⁺H₃N</b>，右边 <b>H</b>。'
+    + '<br>② 从中间那个 C 往下写 <b>CH₂</b>，再往右写 <b>–O–</b>。'
+    + '<br>③ <b>O 后面接 P</b>，磷上写 <b>＝O</b>，右边和下面各写一个 <b>O⁻</b>。'
+    + '<br><b>画完把 CH₂–O–P 那一段圈起来</b>——那就是酯键本身，他要看的就是这三个符号。'
+    + '<br><br><b>画完要说的一句</b>：“An ester is an acid plus an alcohol. Here the acid is phosphate and the alcohol is the side-chain hydroxyl of serine. A kinase makes this bond, a phosphatase takes it off.”'
+    + '<br><br>⚠ 书同一张图上还并排画着 <b>phosphothreonine</b> 和 <b>phosphotyrosine</b>——<b>被磷酸化的正好就是 Ser、Thr、Tyr 这三个带羟基的残基</b>。'
+    + '他要第二个例子就报这两个名字，不用重画。<span class="pg">p113 p114</span>',
+  src2:'Biochemie, figure 4.57, p114 · 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p132_obr61_thioester_acetylcoa.jpg',
+  t:'硫酯键 —— 书写 acetyl-CoA 的那一行（书 figure 6.1）',
+  cap:'<b>这张是「画」，而且整条只有一行字</b>：<code>CoA-S~COCH₃</code>。<b>书就是这么写的，照抄。</b>'
+    + '<br><br><b>写的顺序（三步）</b>：'
+    + '<br>① 先写 <b>CoA</b>，一横接 <b>S</b>——<b>那个 S 就是辅酶 A 末端的游离巯基</b>。'
+    + '<br>② S 后面画<b>一条波浪线 ~</b>，<b>不是短横</b>。'
+    + '<br>③ 波浪线后面写 <b>COCH₃</b>，也就是乙酰基。'
+    + '<br><br><b>写完要说的那两句</b>：“The wavy line is the textbook’s notation for a macroergic bond. The acetyl group sits on the free SH of coenzyme A, so this is a thioester.” 和 '
+    + '“The sulfur blocks the resonance that stabilises an O-ester, so the carbonyl stays reactive.”'
+    + '<br><br>⚠ <b>这一行里两根键要分清</b>：<b>CoA–S 那根是普通键</b>，<b>S~CO 那根才是硫酯</b>。'
+    + '波浪线是书的记号，意思是「这根断了放很多能」。<span class="pg">p050 p132 p136</span>',
+  src2:'Biochemie, figure 6.1, p132 · 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p132_obr61_atp_phosphoanhydride.jpg',
+  t:'磷酸酐键 —— ATP 上的两个（书 figure 6.1）',
+  cap:'<b>这张是「画」，而且它是「ATP 到底有几个高能键」那一刀的护身符</b>：图上那<b>三支弯箭头是书自己画的</b>，指的就是能断的位置。'
+    + '<br><br><b>画的顺序（四步）</b>：'
+    + '<br>① <b>从左往右画三个磷</b>：<code>⁻O–P–O–P–O–P–</code>，每个磷上面写 <b>＝O</b>、下面写 <b>⁻O</b>。'
+    + '<br>② 第三个磷右边接 <b>–OCH₂</b>，往下画<b>核糖</b>（五元环），环底下两个碳挂 <b>HO</b> 和 <b>OH</b>。'
+    + '<br>③ 环的右上角往上引一根键到 <b>adenine</b>（双环，角上挂 <b>NH₂</b>）。'
+    + '<br>④ <b>在三个磷上面各画一支弯箭头</b>，照书的样子。'
+    + '<br><br><b>画完当着他的面数一遍</b>：三个磷排成一串，接头只有三个。<b>γ–β 一个酐、β–α 一个酐、α–核糖是酯不是酐</b>，因为核糖那头是醇，不是酸。'
+    + '<br><code>3 个磷酸 → 3 个连接 → 2 个酐 ＋ 1 个酯</code>'
+    + '<br><br><b>画完要说的一句</b>：“Two of these three links are phosphoanhydride bonds. The third, to the ribose, is an ester, and hydrolysing it gives under twelve kilojoules per mole. So ATP has two macroergic bonds, not three.”',
+  src2:'Biochemie, figure 6.1, p132 · 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p074_obr49_base_pairing_hbonds.jpg',
+  t:'氢键长什么样 —— A–T 两条、G–C 三条（书 figure 4.9）',
+  cap:'<b>这张是「画」。</b>全书<b>唯一一处把氢键单独画出来的地方就是碱基配对</b>，所以他说「画一个氢键给我看」就用这张。'
+    + '<br><br><b>画的顺序（四步）</b>：'
+    + '<br>① <b>左边画嘌呤</b>（双环，上排是 <b>A</b>，下排是 <b>G</b>），<b>右边画嘧啶</b>（单环，<b>T</b> 和 <b>C</b>）。'
+    + '<br>② <b>中间用虚线连</b>：<b>A–T 两条，G–C 三条</b>。虚线的两头必须落在 <b>N 或 O</b> 上。'
+    + '<br>③ 每条虚线上<b>要有一个 H</b>，而且那个 H 是<b>已经接在 N 或 O 上</b>的，不是凭空浮着的——<b>这是这张图最值钱的一点</b>。'
+    + '<br>④ 两端各引一根往外的键并标 <b>1′</b>，那是接糖的位置；两个 1′ 之间图上标着 <b>10.85 Å</b>。'
+    + '<br><br><b>画完要说的那两句</b>：“A hydrogen bond is a hydrogen already bound to an electronegative atom, attracted to a lone pair on another one. The donor here is an N-H, the acceptor an oxygen or a ring nitrogen.” 和 '
+    + '“It is directional, which is why it can fix a geometry rather than merely hold two groups close.”'
+    + '<br><br>⚠ 图上还印着 <b>major groove</b>、<b>minor groove</b> 和两个 <b>51.5°</b>。'
+    + '<b>被问「为什么双螺旋处处一样宽」就指那个 10.85 Å</b>：嘌呤配嘧啶，所以每一对的跨度相同。',
+  src2:'Biochemie, figure 4.9, p074 · 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p132_obr61_acylphosphate_phosphamide.jpg',
+  t:'认 —— 酰基磷酸和磷酰胺，书列的第一、二类高能化合物（书 figure 6.1）',
+  cap:'<b>这张是「认」，不用画。</b>他把书翻到这一页问「这两个是什么」，你要认得出，并说出它们各属于书列的哪一类。'
+    + '<br><br><b>左边那个</b>：<code>H₃C–CO–O–P</code>，一个<b>羧酸</b>和一个<b>磷酸</b>脱水接在一起——<b>acetyl phosphate</b>，属于书的第一类 <b>anhydrides</b> 底下的 <b>acyl phosphates</b>。'
+    + '<b>同一类里要顺口报上的例子是 1,3-bisphosphoglycerate 和 carbamoyl phosphate。</b>'
+    + '<br><b>右边那个</b>：磷直接接在一个 <b>N</b> 上（<code>P–N</code>），右边带着胍基和一个 N-甲基——<b>creatine phosphate</b>，属于书的第二类 <b>phosphamides</b>。'
+    + '<br><br><b>要说的一句</b>：“On the left an acyl phosphate — a carboxylic acid and phosphoric acid joined as an anhydride. On the right creatine phosphate, a phosphamide: the phosphate is bound to nitrogen. Both are macroergic, and they belong to two different classes.”'
+    + '<br><br>⚠ <b>认的抓手就是那根 P–N</b>：<b>磷接氧是酐或酯，磷接氮就是磷酰胺</b>。书列的磷酰胺只有两个——脊椎动物的 <b>creatine phosphate</b>、无脊椎动物的 <b>phosphoarginine</b>。<span class="pg">p132</span>',
+  src2:'Biochemie, figure 6.1, p132 · 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p132_obr61_enolphosphate_pep.jpg',
+  t:'认 —— 烯醇磷酸 phosphoenolpyruvate，书列的第三类（书 figure 6.1）',
+  cap:'<b>这张是「认」。</b>PEP 是书列的四类高能化合物里<b>水解自由能最高的那一个</b>，所以它值得单独认一次。'
+    + '<br><br><b>图上看三件事</b>：'
+    + '<br>① 最上面是一个<b>磷酸</b>，通过一个 <b>O</b> 往下接。'
+    + '<br>② 接上去的那个碳<b>带着一个 C＝C 双键</b>（<code>H₂C＝C</code>）——<b>「烯醇」这两个字说的就是这个双键碳上的羟基被磷酸化了</b>。'
+    + '<br>③ 右边是 <b>COO⁻</b>，所以整个分子是<b>丙酮酸的烯醇式</b>。'
+    + '<br><br><b>要说的一句</b>：“Phosphoenolpyruvate — an enol phosphate. The textbook says this class has the highest free energy of hydrolysis. The ester bond to phosphate blocks the keto form, and the keto form is the poorer in energy and the more stable.”'
+    + '<br><br>⚠ <b>理由是书自己给的</b>：磷酸酯键<b>挡住了酮式的形成</b>，而酮式能量更低、更稳定；磷酸一掉，分子立刻塌到酮式去，所以放能特别多。'
+    + '<b>这是「产物更稳定，不是键更强」这句话最干净的一个例子。</b><span class="pg">p132</span>',
+  src2:'Biochemie, figure 6.1, p132 · 原图裁切，未修改'}
+],
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
@@ -174,7 +302,7 @@ ask:[
  en:'“Electronegativity is how strongly an atom pulls shared electrons toward itself — oxygen and nitrogen strongly, carbon and hydrogen much less. A dipole is a bond or molecule whose positive and negative charge centres are separated because one atom pulls the electrons harder. O-H and N-H are permanent dipoles. A transient dipole is the same thing for an instant, and it induces an opposite dipole in a neighbour. A lone pair is a pair of valence electrons on an atom that is not in a bond — nitrogen has one, oxygen two. It is what a hydrogen-bond acceptor offers and what a ligand donates in a coordination bond.”',
  cn:'通用；书 p012、p027、p032 用了这些词没定义。'},
 {r:'中', q:'What does amphipathic mean, and what is coagulation?',
- en:'“Amphipathic means one molecule with a nonpolar, hydrophobic part and a polar, hydrophilic part. The textbook’s word is amfipatie, used for phospholipids: fatty-acid tails and a glycerol-phosphate head. A detergent is the same design, a hydrocarbon tail with an ionic head. Coagulation is when a denatured protein separates out of solution — the textbook’s example is heat. Detergents and urea unfold the chain without precipitating it.”',
+ en:'“Amphipathic means one molecule with a nonpolar, hydrophobic part and a polar, hydrophilic part. The textbook’s word is amphipathy, used for phospholipids: fatty-acid tails and a glycerol-phosphate head. A detergent is the same design, a hydrocarbon tail with an ionic head. Coagulation is when a denatured protein separates out of solution — the textbook’s example is heat. Detergents and urea unfold the chain without precipitating it.”',
  cn:'p181；p035。'},
 {r:'中', q:'What is a porphyrin, and what is a corrin?',
  en:'“A porphyrin is a ring of four pyrrole rings joined by methine bridges. With iron at the centre it is heme. The corrin of vitamin B12 is similar, but two of the pyrroles are joined directly, and the metal is cobalt.”',
@@ -188,11 +316,11 @@ ask:[
  en:'“Only one atom: an ester joins an acid to an <b>alcohol</b>, a thioester joins it to a <b>thiol</b>. But that one atom changes everything. The sulfur blocks the resonance that stabilises an O-ester, so the thioester is much more reactive. Acetyl-CoA is a macroergic compound while a simple carboxylic O-ester is not.”',
  cn:'<b>这一对是「种类相近、能量差很远」的标准例子</b>，非常适合用来展示你分得清那两个问题。<span class="pg">p050</span>'},
 {r:'高', q:'Amide or peptide — are they the same bond?',
- en:'“Yes. The peptide bond <b>is</b> an amide bond. Peptide is just the name we use when it joins two amino acids. The textbook writes it as “peptidová (amidová) vazba”.”',
+ en:'“Yes. The peptide bond <b>is</b> an amide bond. Peptide is just the name we use when it joins two amino acids. The textbook writes it as “peptide (amide) bond”.”',
  cn:'书 p026 括号里就并排写了这两个名字。<b>知道它们是一回事，比记住两个名字有用。</b><span class="pg">p026</span>'},
 {r:'高', q:'Ion pair, salt bridge, ionic bond — three things or one?',
  en:'“Two names for one thing, and a third that is related but not what we say for proteins. Ion pair and salt bridge are the textbook’s two names for the electrostatic attraction between an ionised acidic side chain and an ionised basic one. The acidic one is the carboxylate of glutamate or aspartate, the basic one the ε-ammonium of lysine or the guanidinium of arginine. In the protein literature ‘salt bridge’ is sometimes reserved for an ion pair close enough to hydrogen-bond as well. What we do not call it in proteins is an ionic bond in the crystal sense, because it is one pair in water, not a lattice.”',
- cn:'书用的词是 <i>iontové páry</i>（离子对），「也叫 <i>solné můstky</i>（盐桥）」（p012、p032）；<i>iontová vazba</i> 书只用在 p074 磷酸–Mg²⁺ 那里：“The textbook uses ‘ionic bond’ only once, for the fully ionised phosphate groups of DNA binding Mg²⁺ or Mn²⁺.”<b>回答时用 salt bridge，因为那是英语文献里更常见的。</b>'},
+ cn:'书用的词是 <i>ion pairs</i>（离子对），「也叫 <i>salt bridges</i>（盐桥）」（p012、p032）；<i>ionic bond</i> 书只用在 p074 磷酸–Mg²⁺ 那里：“The textbook uses ‘ionic bond’ only once, for the fully ionised phosphate groups of DNA binding Mg²⁺ or Mn²⁺.”<b>回答时用 salt bridge，因为那是英语文献里更常见的。</b>'},
 {r:'实测', q:'Is the hydrophobic effect a bond?',
  en:'“No. The hydrophobic effect is the tendency of nonpolar groups in water to associate. It is not an attraction between them at all — it is the entropy the water gains when the ordered layer around each nonpolar surface is released. So it is a driving force rather than a bond.”',
  cn:'书 p013 明确否定了「非极性物质之间有某种亲和力」这个说法。<b>这一条同时是很多题的 why 落点</b>，说完就可以停在热力学上。',
