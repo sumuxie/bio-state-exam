@@ -153,6 +153,92 @@ why:{
   say:'“Beyond that, why glycosylation specifically rather than some other tag is a historical question — the pathway is what survived. What we can measure is where the sugar sends the protein.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p111_obr455_er_translocation.jpg',
+  t:'分泌通路的第一段 —— 链是怎么进到 ER 里的（书 Obr. 4.55）',
+  cap:'<b>速背 03 那一整段英文，书把它画成了这张图，而且编了号。</b>'
+    + '上半部标着 <b>cytosol</b>，下半部那个长扈子就是 <b>ER</b>，里面写着 <b>ER lumen</b>。'
+    + '图上四个捷克语标注对应你要说的四个名词：<b>signální sekvence ＝ 信号序列</b>、'
+    + '<b>ribosomový receptor ＝ 核糖体受体</b>、<b>peptidový translakační komplex ＝ 肽链转位复合物</b>、'
+    + '<b>signální peptidasa ＝ 信号肽酶</b>；SRP 和 SRP receptor 本来就是英文。'
+    + '<br><br><b>画的顺序（他说“show me”就画这五笔）</b>：'
+    + '<br>① 下面画<b>一条横的 ER 膜</b>，膜下写 <b>ER lumen</b>，膜上写 <b>cytosol</b>。'
+    + '<br>② 膜上方画一个<b>核糖体</b>，下面拉一条 <b>mRNA</b>，核糖体里伸出一截<b>新生肽链</b>，'
+    + '链的 <b>N 端那一段标“信号序列”</b>。'
+    + '<br>③ 在信号序列上挂一个小棒，标 <b>SRP</b>；箭头指到膜上一个小方块，标 <b>SRP receptor</b>。'
+    + '<br>④ 膜上再画一个<b>穿膜的孔</b>，标 <b>translocation complex</b>，链从这个孔<b>向下穿进 lumen</b>。'
+    + '<br>⑤ 在孔旁边画一把小剪刀，标 <b>signal peptidase</b>，把信号序列剪下来。'
+    + '最后在 lumen 里画一个已经卷好的团。'
+    + '<br><br><b>边画边说的三句</b>：“The signal sequence sits at the <b>N-terminus</b> and is encoded by ordinary codons right after the initiation codon, '
+    + 'so it is part of the chain until it is cut off.”'
+    + '<br>“The <b>SRP</b> binds the signal sequence, brings the whole ribosome to its <b>receptor</b> on the ER membrane, and is then released to be used again.”'
+    + '<br>“The chain is threaded through the translocation complex into the <b>lumen while it is still being made</b>. <b>Signal peptidase</b> sits on that membrane and cuts the signal off there.”'
+    + '<br><br><b>这张图是你那一句胜负手的地图</b>：表面蛋白和分泌蛋白的共同点就是<b>都走这条路、都经过 ER 腔</b>。'
+    + '指着图说完路线，再说两个修饰，顺序就不会变成列清单。',
+  src2:'Biochemie, Obr. 4.55, p111 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p110_obr454_pdi_folding.jpg',
+  t:'二硫键是怎么被改对的 —— 四格漫画（书 Obr. 4.54）',
+  cap:'<b>这张同时回答速背 12 和定义里那一条「非共价的折叠也算 PTM」。</b>'
+    + '从左到右四格：<b>没折叠的链（上面挂着 hsp 70 chaperone）→ 折错了的（图里看得见 –SH 和 –S–S–）'
+    + '→ 经过 ① → 经过 ②</b>。右上角的图例就是两个酶的名字：'
+    + '<b>① protein-disulfid-isomerasa（PDI）、② peptidyl-prolin-cis,trans-isomerasa</b>——两个名字本来就是拉丁文，直接能读。'
+    + '<br><br><b>画的顺序（他问“how does the cell get the right pairs”就画这四笔）</b>：'
+    + '<br>① 画一条<b>松开的链</b>，上面挂两个圆点，标 <b>chaperone（hsp 70）</b>。'
+    + '<br>② 箭头→ 画一个卷好了的团，上面写几个 <b>–SH</b> 和两根 <b>–S–S–</b>，写一句「配错了」。'
+    + '<br>③ 箭头上方写 <b>PDI</b>，右边再画同一个团，<b>S–S 换了搭档</b>。'
+    + '<br>④ 再一个箭头，上方写 <b>PPIase</b>，把图里那个五边形（就是 proline）从 <b>cis 翻成 trans</b>。'
+    + '<br><br><b>边画边说的三句</b>：“A disulfide is a covalent <b>sulfur–sulfur</b> bond between two cysteine side chains that are close together <b>in the fold</b>, '
+    + 'though they can be far apart in the sequence. It forms by <b>oxidation</b>, and the two residues together are called a <b>cystine</b>.”'
+    + '<br>“Which pairs form first is <b>not specific</b>, so the first set is often wrong. '
+    + '<b>Protein disulfide isomerase</b> reshuffles them until the chain reaches its stable conformation — the name says isomerase, not synthase, and that is the point.”'
+    + '<br>“The figure also shows the other repair enzyme, <b>peptidyl-prolyl cis-trans isomerase</b>, which flips a proline peptide bond. '
+    + 'Proline is the one residue where the <b>cis</b> form really occurs, so it needs an enzyme of its own.”'
+    + '<br><br>⚠ <b>一句最值钱的要接在这里</b>：“All of this happens in the <b>ER lumen</b>, because the <b>cytosol is reducing</b> — '
+    + 'there are enough free thiols there that any S-S would be pulled apart again.”'
+    + '<b>这同时是「为什么表达膜蛋白用酵母不用大肠杆」那个桥的前半句。</b>',
+  src2:'Biochemie, Obr. 4.54, p110 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p112_dolichol_phosphate.jpg',
+  t:'对糖的那个载体长什么样 —— dolichol phosphate（书 p112）',
+  cap:'<b>这张是「认」，而且它把速背 07 里最难想象的那个名词变成了一个形状。</b>'
+    + '左边一个圈着的 <b>P</b> 就是磷酸基，右边一条<b>很长的烃链，隔几个碳挂一个 CH₃、每段一个双键</b>——'
+    + '那就是<b>异戊二烯重复单元</b>，中间那对括号右下角的 <b>n</b> 就是重复次数。'
+    + '<b>图注直接印着 n = 9–22</b>，这个数不用猜。'
+    + '<br><br><b>看到图要说的那一段</b>：“The oligosaccharide core is <b>not built on the protein</b>. '
+    + 'It is assembled on a lipid carrier in the ER membrane, <b>dolichol phosphate</b> — a long <b>isoprenoid</b> chain, nine to twenty-two units, with a phosphate at one end. '
+    + 'The sugars come from <b>nucleotide sugars</b>, starting with UDP-N-acetylglucosamine, and the finished block is <b>Glc₃Man₉GlcNAc₂</b> held on a pyrophosphate. '
+    + 'Only then is the whole block transferred onto an asparagine.”'
+    + '<br><br><b>为什么要有这个载体，一句话</b>：它是<b>脂</b>，所以它待在膜里；'
+    + '糖在膜上装好一整块再一次性搬过去，比在蛋白上一个一个接快得多。'
+    + '<br>⚠ 这里<b>没有糖链核心本身的图</b>——全书没画 Glc₃Man₉GlcNAc₂的结构，也没画修剪过程。'
+    + '<b>所以那一段只能说，不能指图。</b>',
+  src2:'Biochemie, p112 · 250 dpi 原图裁切，未修改（书上这张没给图号）'},
+
+ {k:'画',
+  src:'img/p114_obr457_phospho_ser_thr_tyr.jpg',
+  t:'磷酸化接在哪三个残基上（书 Obr. 4.57）',
+  cap:'<b>他问「还有哪些翻译后修饰」时，最常落在磷酸化，而书就画了这三个。</b>'
+    + '三个名字照字面读就是 <b>phosphoserine · phosphothreonine · phosphotyrosine</b>。'
+    + '<br><br><b>画的顺序（三步，接在氨基酸卡的骨架后面）</b>：'
+    + '<br>① 先按氨基酸卡那个骨架画一个 <b>serine</b>：α 碳上 H₃N⁺、COO⁻、H，侧链 <b>CH₂–OH</b>。'
+    + '<br>② 把那个 <b>OH 上的 H 换成 PO₃²⁻</b>：写成 <b>CH₂–O–P</b>，磷上一个双键 O、两个 <b>O⁻</b>。'
+    + '<br>③ 把侧链换成 threonine（<b>CH–OH</b> 旁边多一个 CH₃）或 tyrosine（苯环对位的 <b>OH</b>），同样把 H 换成磷。'
+    + '<br><br><b>边画边说的两句</b>：“Phosphorylation makes a <b>phosphoester</b> on a side-chain hydroxyl — '
+    + 'on <b>serine</b>, <b>threonine</b> or <b>tyrosine</b>. The textbook says lysine, arginine and histidine are phosphorylated far more rarely.”'
+    + '<br>“The textbook calls phosphorylation and dephosphorylation probably the <b>most important regulatory mechanism</b> for the activity of proteins, especially enzymes and protein hormones. '
+    + 'For some proteins the phosphorylated form is the active one, for others it is the opposite.”'
+    + '<br><br><b>为什么这三个，一句话</b>：<b>只有它们的侧链带着一个能被酶接手的 –OH</b>。'
+    + '这正好接回氨基酸卡的「三个羟基」那一点：Ser、Thr、Tyr。'
+    + '<br>⚠ <b>别把它说成表面/分泌蛋白的两个关键修饰之一。</b>磷酸化主要发生在<b>胞质</b>侧，'
+    + '是调控，不是「到过 ER 的签名」。他问到它时把这句差别说出来，比多数一个例子都值钱。',
+  src2:'Biochemie, Obr. 4.57, p114 · 250 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What is PTM?',

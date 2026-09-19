@@ -191,7 +191,82 @@ figs:[
     + '<b>同一个碱基对，朝大沟的那一面和朝小沟的那一面露出来的边缘不一样</b>——'
     + '这半句直接接上一张图，也是「蛋白为什么读大沟」的理由。'
     + '<br><br>⚠ 10.85 Å 和 51.5° 是<b>图上印的</b>，正文里没有；被问就说这是图里标的。',
-  src2:'Biochemie, figure 4.9, p074 · 220 dpi 原图裁切，未修改'}
+  src2:'Biochemie, figure 4.9, p074 · 220 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p072_obr47_rna_dinucleotide.jpg',
+  t:'一条链是怎么接起来的 —— 而且 2′-OH 就在图上（书 Obr. 4.7，RNA 二核苷酸）',
+  cap:'<b>这张把轴一（糖）和「链是怎么接的」一次画完了。</b>上面是 <b>adenosine</b>，下面是 <b>cytidine</b>，'
+    + '两个糖环上各有一个写出来的 <b>OH</b>——<b>那就是 2′-OH，DNA 没有的就是它。</b>'
+    + '<br><br><b>画的顺序（他说 draw a dinucleotide 就这么画，五步）</b>：'
+    + '<br>① 画一个<b>五元环，右上角放 O</b>（糖环）；右边那个角是 <b>C-1′</b>。'
+    + '<br>② 从 <b>C-1′</b> 往右上接<b>碱基</b>（上面画双环的 A）——这根键叫 <b>N-糖苷键</b>。'
+    + '<br>③ 左上角的 <b>C-5′</b> 接出 <b>CH₂–O–P</b>，磷上写两个 <b>O⁻</b>。'
+    + '<br>④ 左下角的 <b>C-3′</b> 往下接 <b>O–P</b>，再接到下一个糖的 <b>C-5′</b>——'
+    + '<b>这一根磷同时接了两个糖，所以叫磷酸二酢键</b>。'
+    + '<br>⑤ 两个糖的 <b>C-2′</b> 上各写一个 <b>OH</b>。<b>把这两个 OH 抹掉，它就是 DNA。</b>'
+    + '<br><br><b>边画边说的三句</b>：“A nucleotide is three parts: a <b>base</b>, a <b>pentose</b>, and a <b>phosphate</b>. '
+    + 'The base is joined to carbon one of the sugar by an <b>N-glycosidic bond</b>. Base plus sugar with no phosphate is a <b>nucleoside</b>.”'
+    + '<br>“The chain is built by a <b>phosphodiester bond</b>: one phosphate esterified twice, to the <b>three-prime</b> carbon of one sugar and the <b>five-prime</b> carbon of the next. '
+    + 'That is what gives the chain a direction, and why we say five-prime to three-prime.”'
+    + '<br>“This one is RNA, because both sugars still carry the hydroxyl on <b>carbon two</b>. Remove those two and you have DNA.”'
+    + '<br><br>⚠ <b>这张图是你在「为什么 DNA 带负电」上的护身符</b>：每一步都能看见 <b>O⁻</b>，'
+    + '骱架上每一个磷都带一个负电荷。',
+  src2:'Biochemie, Obr. 4.7, p072 · 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p074_obr410_bonds_in_dna.jpg',
+  t:'一张图里的四种东西：磷酸二酢键 · 氢键 · 堆叠 · 两头倒着的 5′/3′（书 Obr. 4.10）',
+  cap:'<b>这张是「认」，而且它一张图回答了速背的两点：反平行，和「还有什么在稳定它」。</b>'
+    + '<br><br><b>图上四个标注，逐个对应过去（标注是捷克语，不用读，记位置就行）</b>：'
+    + '<br>① 右下那个大括号指的是 <b>磷酸二酢键</b>（phosphodiester bond）——沟通两个糖的那根骱架。'
+    + '<br>② 中下那根指引线指的是 <b>氢键</b>（图里碱基之间那一组细斜线）。'
+    + '<br>③ 右中那个短引线指的是 <b>糖</b>（cukr）；上方那个分叉引线指的是 <b>碱基</b>（báze），'
+    + '而它指的那两片<b>直接画成上下叠起来的</b>——<b>那就是堆叠（stacking），书把它画出来了。</b>'
+    + '<br>④ <b>四个角上的灰底标签就是 5′ 端和 3′ 端</b>（konec ＝ 端）：'
+    + '<b>一条链左下是 5′、左上是 3′，另一条右上是 5′、右下是 3′</b>——正好倒着。'
+    + '<b>这就是反平行，而且它是图上看得见的，不是背的。</b>'
+    + '<br><br><b>看到图要说的那一段</b>：“Three different things hold this together, and the figure shows all three. '
+    + 'Along each strand, <b>phosphodiester bonds</b> — covalent. Across the two strands, <b>hydrogen bonds</b> between the bases. '
+    + 'And the flat bases lie face to face on top of each other. That is <b>base stacking</b>, and the textbook attributes it mainly to <b>hydrophobic</b> interactions. '
+    + 'The two strands are <b>antiparallel</b>: you can read the five-prime and three-prime ends off the corners of the figure, and they are the other way round on the two chains.”'
+    + '<br><br>⚠ 还有<b>第四样图上看不到的</b>，说了加分：磷酸基在 pH 7 全部电离，'
+    + '靠 <b>Mg²⁺ 或 Mn²⁺</b> 这类反离子中和（p074 正文）。<b>所以别说「只有两样」。</b>'
+    + '<br>（这张以前被否掉过一次，因为三个捷克语标注都在图内。'
+    + '<b>现在的规矩是看得清就行，所以它回来了。</b>）',
+  src2:'Biochemie, Obr. 4.10, p074 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p075_obr411a_a_dna.jpg',
+  t:'A-DNA —— 宽而扁，小沟浅得几乎没有（书 Obr. 4.11a）',
+  cap:'<b>这张是「认」。它和下一张要摆在一起看，因为考点就是三种构象的区别。</b>'
+    + '每张图都是<b>左边一个线条模型、右边一个实心球模型</b>，画的是同一东西。'
+    + '<br><br><b>这张看一件事就够了</b>：跟已经看过的 <b>B-DNA</b>（figure 4.8）比，'
+    + '<b>螺旋明显更宽、更扁</b>，两条沟<b>深浅差很多</b>。左边模型上那两个小箭头就是在指两条沟。'
+    + '<br><br><b>看到图要说的那一段</b>：“This is <b>A-DNA</b>. It is still <b>right-handed</b>, but wider and flatter than B. '
+    + 'It has a <b>deep major groove</b> and a <b>very shallow minor groove</b>. '
+    + 'What produces it is <b>dehydration</b>: the textbook says B goes over to A when the relative water content falls to about <b>seventy-five percent</b>. '
+    + 'Not temperature, not salt — water.”'
+    + '<br><br>⚠ <b>图里的标注很小，不要指望当场读它。</b>这张图对你的用处是<b>形状</b>：宽、扁、小沟平。'
+    + '75% 这个数字是 p075 正文印的，可以报。',
+  src2:'Biochemie, Obr. 4.11a, p075 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p075_obr411b_z_dna.jpg',
+  t:'Z-DNA —— 细、束腰，而且它是唯一左手的那一种（书 Obr. 4.11b）',
+  cap:'<b>这张是「认」，而且它是三种构象里最容易被单独问的那一种。</b>'
+    + '跟上一张 A-DNA 摆在一起看：<b>A 是宽而扁的，Z 是细而长的</b>，中间像被捱了一把。'
+    + '<b>形状就是你在图上认它的办法。</b>'
+    + '<br><br><b>看到图要说的那一段</b>：“This is <b>Z-DNA</b>, and the one thing to say about it is that it is <b>left-handed</b>. '
+    + 'B and A are both right-handed. Z is the exception. It has a <b>deep minor groove</b>, and the major groove is not really distinguishable at all. '
+    + 'The textbook says it occurs only in certain stretches of a DNA molecule, and that its biological function is <b>not yet known</b>. '
+    + 'Under physiological conditions DNA is almost exclusively <b>B</b>.”'
+    + '<br><br>⚠ <b>诚实一点</b>：这张扫描上的螺旋<b>看不出左右手</b>，所以<b>不要说「你看图上就是左手的」</b>。'
+    + '左手这件事是 p075 正文写的，拿正文当依据。'
+    + '<br><b>书还给了一个序列</b>：<b>d(CGCATGCG)</b> 能形成类似的螺旋（p075）——'
+    + '他问「什么序列容易变 Z」时这个能拿出来，<b>注意它是 CG 交替</b>。'
+    + '「CG 交替序列才能形成 Z」这一步是通用知识，说的时候带 generally。',
+  src2:'Biochemie, Obr. 4.11b, p075 · 250 dpi 原图裁切，未修改'}
 ],
 
 /* ---------------- 同一个答案，不同问法 ---------------- */

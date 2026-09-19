@@ -199,6 +199,122 @@ why:{
   say:'“Why the code settled on these twenty rather than some other set is a question about the origin of the genetic code. It is evolutionary history rather than something we can derive from chemistry.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p021_amino_acid_general_formula.jpg',
+  t:'共同骨架 —— 书 p021 就这么画的',
+  cap:'<b>速背 03 说的「他让你画就这样画」，指的就是这一张。</b>'
+    + '中间一个 <b>C</b>，上面 <b>H</b>、下面 <b>NH₂</b>、左边 <b>R</b>、右边 <b>COOH</b>。<b>四根线，完了。</b>'
+    + '<br><br><b>画的顺序（五步）</b>：'
+    + '<br>① 中间写一个 <b>C</b>，旁边标一个 <b>α</b>。'
+    + '<br>② 向上一根线接 <b>H</b>，向下一根线接 <b>NH₂</b>。'
+    + '<br>③ 向右接 <b>COOH</b>，向左接 <b>R</b>。'
+    + '<br>④ 他要具体的：<b>R 换成 H 就是 glycine，R 换成 CH₃ 就是 alanine</b>。'
+    + '<br>⑤ 他要两性离子：<b>把 NH₂ 改成 H₃N⁺，COOH 改成 COO⁻</b>，其余一笔不动。'
+    + '<br><br><b>边画边说的两句</b>：“Every one of the twenty has the same backbone: one <b>alpha-carbon</b> carrying a hydrogen, an <b>amino group</b>, a <b>carboxyl group</b> and a <b>side chain</b>, R. '
+    + 'Everything that distinguishes them is in R.”'
+    + '<br>“The textbook draws it in the <b>uncharged</b> form, but at physiological pH it is really the <b>dipolar</b> form, ammonium and carboxylate. '
+    + 'I can redraw it that way.”'
+    + '<br><br>⚠ <b>一个小但能追的点</b>：这张图里没有画出立体，所以它没回答 L 还是 D。'
+    + '他要构型就用下面那张 Fischer 投影的图。',
+  src2:'Biochemie, p021 · 400 dpi 原图裁切，未修改（书上这张没给图号）'},
+
+ {k:'认',
+  src:'img/p022_tab21_twenty_amino_acids.jpg',
+  t:'书自己的四组 —— I / II / III / IV 就印在图上（书 Tab. 2.1）',
+  cap:'<b>这张是「认」，而且要认的不是结构式，是<u>分组</u>。</b>'
+    + '化合物结构式你另有专门的 app，这里要看的只有<b>左边那四个罗马数字</b>。'
+    + '<br><br><b>四组对应速背 04，数目数得出来</b>：'
+    + '<br><b>I）非极性，八个</b>——glycine 排在这一组的最前面，然后 Ala · Val · Leu · Ile · Phe · Pro，'
+    + '加上第二组里的 Met。<b>注意书把 glycine 画进了这张表的第一格，却在正文里说它很难归类。</b>'
+    + '<br><b>II）极性不带电</b>——Ser · Thr · Cys · Met · Trp · Tyr · Asn · Gln。'
+    + '<br><b>III）带负电</b>——Asp · Glu，图上两个的侧链末端都是 <b>COOH</b>。'
+    + '<br><b>IV）带正电</b>——Lys（末端 CH₂–NH₃⁺）· Arg（末端那个带两个 N 的叉子是胍基）· His（五元双 N 环）。'
+    + '<br><br><b>看图时顺手数一件事，这一条能当场拿出来</b>：<b>Pro 是表里唯一一个氮长在环上的</b>——'
+    + '图上它的 <b>H₂N</b> 直接连回侧链，所以它没有自由的 α-氨基。'
+    + '<b>这就是它碰茵三酮变黄、它开不了 α-helix 的同一个原因。</b>'
+    + '<br><br><b>认图时要说的那一段</b>：“The textbook divides them by the <b>nature of the side chain</b> into four groups: '
+    + '<b>nonpolar</b>, <b>polar but uncharged</b>, <b>negatively charged</b> and <b>positively charged</b>. '
+    + 'Eight, six, two and three, plus glycine, which it says is very hard to place. That is twenty.”'
+    + '<br>⚠ 表上的名字是捷克语拼法（glycin、L-alanin、L-serin…），<b>跟英文只差词尾</b>，读的时候自己补上就行；'
+    + '<b>三字母缩写是国际通用的，表上那一列直接能用</b>。'
+    + '<br>Asn 写成 <b>Asp.NH₂</b>、Gln 写成 <b>Glu.NH₂</b>，那是旧写法，就是天冬酰胺和谷氨酰胺。',
+  src2:'Biochemie, Tab. 2.1, p022 · 240 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p023_glycine_three_forms.jpg',
+  t:'三种形态，两步放质子（书 p023）',
+  cap:'<b>这张要和下面的滴定曲线一起看，它是曲线的坐标轴。</b>'
+    + '从左到右三个形态，两个双箭头上写着 <b>−H⁺</b>、下面写着 <b>＋H⁺</b>：'
+    + '<br>① <b>⁺H₃N–CH(R)–COOH</b>，净 <b>＋1</b>，低 pH 那一端。'
+    + '<br>② <b>⁺H₃N–CH(R)–COO⁻</b>，净 <b>0</b>，就是两性离子（zwitterion）。'
+    + '<br>③ <b>H₂N–CH(R)–COO⁻</b>，净 <b>−1</b>，高 pH 那一端。'
+    + '<br><br><b>图上看得见的两件事，都能当场说</b>：'
+    + '<br>① <b>先掉的是羧基上那个质子，后掉的是氨基上那个</b>——因为羧基酸得多，pK 小得多。'
+    + '<br>② 中间那个形态<b>同时带一个正一个负</b>，所以「净电荷零」不等于「不带电」。'
+    + '<b>这是他最容易抓的一句。</b>'
+    + '<br><br><b>看到图要说的那一段</b>：“Both groups ionise, so the form depends on pH. '
+    + 'At low pH the carboxyl is protonated and the molecule is a <b>cation</b>. At high pH the ammonium loses its proton and it is an <b>anion</b>. '
+    + 'In between it is the <b>dipolar</b> form: carboxylate negative, ammonium positive, <b>net</b> charge zero — not uncharged, but zero overall.”'
+    + '<br>⚠ <b>书把 –NH₃⁺ 印成了「季铵」，那是书的笔误</b>：季铵的氮接四个碳、永久带正电、放不掉质子，'
+    + '而这张图里它明明放掉了一个。<b>图自己反驳了正文。别跟着说 quaternary。</b>',
+  src2:'Biochemie, p023 · 300 dpi 原图裁切，未修改（书上这张没给图号）'},
+
+ {k:'画',
+  src:'img/p023_obr21_glycine_titration.jpg',
+  t:'甘氨酸的滴定曲线 —— 三个数字就印在图上（书 Obr. 2.1）',
+  cap:'<b>★ 这是这张卡上最有用的一张图，而且它把速背 15 里那三个「待核」的数字给了。</b>'
+    + '图上直接印着三条线：<b>pK<sub>A1</sub> ＝ 2.4</b>（虚线）、<b>pI ＝ 6.1</b>（点线）、<b>pK<sub>A2</sub> ＝ 9.8</b>（虚线）。'
+    + '<b>这三个是书自己的数，不是通用值，可以直接报。</b>'
+    + '（OCR 读不出图里的字，所以卡上原来标的是通用值 2.3 / 9.6 / 6——两套数差不多，'
+    + '但<b>报书上那一套才是安全的</b>。）'
+    + '<br><br><b>坐标轴只有两个词</b>：纵轴是 <b>pH</b>（0–14），横轴那个捷克语是'
+    + '<b>加进去的 OH⁻，单位 mmol</b>，从 <b>0 到 2</b>。<b>横轴走到 1 的地方就是 pI。</b>'
+    + '<br><br><b>画的顺序（六步，黑板上一分钟）</b>：'
+    + '<br>① 画坐标轴：纵轴 <b>pH 0 到 14</b>，横轴 <b>OH⁻ 0 到 2</b>。'
+    + '<br>② 从左下角起笔，先画<b>一段往上爬的平流</b>，在 <b>pH ≈ 2.4</b> 处最平——第一个缓冲区。'
+    + '<br>③ 到横轴 <b>1</b> 的位置突然<b>竖直往上窜</b>，窜到 <b>pH ≈ 6.1</b> 那一点——这是等当量点，也就是 <b>pI</b>。'
+    + '<br>④ 再画<b>第二段平流</b>，在 <b>pH ≈ 9.8</b> 处最平——第二个缓冲区。'
+    + '<br>⑤ 到横轴 <b>2</b> 再竖直往上，收在 pH 12 以上。'
+    + '<br>⑥ 在三个高度上各拉一条横虚线，写 <b>pK₁ · pI · pK₂</b>。'
+    + '<br><br><b>边画边说的四句</b>：“A <b>plateau</b> means the base I add is being taken up by a group instead of staying in solution, '
+    + 'so the pH hardly moves. That only happens when that group is about <b>half dissociated</b>, which is its <b>pKa</b>. '
+    + 'Two ionisable groups, two pKa values, two plateaus.”'
+    + '<br>“The first plateau, at <b>2.4</b>, is the <b>carboxyl</b>. The second, at <b>9.8</b>, is the <b>ammonium</b> group.”'
+    + '<br>“Between them the curve is <b>steepest</b>, because almost everything is the dipolar form and nothing is buffering. '
+    + 'That point is the <b>isoelectric point</b>, and the figure prints it as <b>6.1</b> — the average of the two.”'
+    + '<br>“A side chain that can ionise adds a third pKa and a <b>third plateau</b>, and that is why every amino acid has its own pI.”'
+    + '<br><br><b>这张图还是横向卡 x-ph 的地基</b>：「pH ≅ pKa 时正好解离一半」在这里是看得见的一根平段。'
+    + '他问「buffer 是什么」时，<b>指这两段平的地方比背定义强</b>。',
+  src2:'Biochemie, Obr. 2.1, p023 · 300 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p024_dl_fischer_glyceraldehyde_serine.jpg',
+  t:'L 是怎么定出来的 —— 跟甘油醛比（书 p024）',
+  cap:'<b>速背 16 说「书 p024 就是这样画 L-serine 的」，指的就是这一张。</b>'
+    + '三个 Fischer 投影式并排，名字就在下面：<b>D-glyceraldehyd · L-glyceraldehyd · L-serin</b>。'
+    + '<br><br><b>看图只看一件事：那个官能团在左边还是右边。</b>'
+    + '<br>① <b>D-甘油醛</b>：OH 在<b>右</b>。'
+    + '<br>② <b>L-甘油醛</b>：HO 在<b>左</b>。'
+    + '<br>③ <b>L-serine</b>：<b>H₂N 在左</b>——跟 L-甘油醛同一边，<b>所以它叫 L</b>。'
+    + '<b>就是这么定的，没有别的依据。</b>'
+    + '<br><br><b>画的顺序（四步，他说 “draw L-serine” 就这么画）</b>：'
+    + '<br>① 画一根<b>竖线</b>，上、中、下三个位置。'
+    + '<br>② 顶上写 <b>COOH</b>（甘油醛那两个顶上是 <b>CHO</b>），底下写 <b>CH₂OH</b>（就是 R）。'
+    + '<br>③ 中间写 <b>C</b>，左边接 <b>H₂N–</b>，右边接 <b>–H</b>。'
+    + '<br>④ 要画 D 型就<b>把左右两个对调</b>，其余不动。'
+    + '<br><br><b>边画边说的三句</b>：“The configuration is defined by comparison with <b>glyceraldehyde</b>, the same convention as for sugars. '
+    + 'In the Fischer projection the amino group of <b>L-serine</b> is on the <b>left</b>, like the hydroxyl of L-glyceraldehyde.”'
+    + '<br>“Every amino acid found in proteins is of the <b>L</b> configuration. D-amino acids exist but outside proteins — '
+    + 'the textbook’s example is <b>D-glutamate in bacterial cell walls</b>.”'
+    + '<br>“This figure says nothing about <b>optical rotation</b>. D and L are <b>configuration</b>, read off a drawing. '
+    + 'Plus and minus are <b>rotation</b>, measured on an instrument. <b>L-alanine is right-rotating and L-serine is left-rotating, and both are L.</b>”'
+    + '<br><br>⚠ 图上只画了 <b>serine</b> 一个例子，而 serine 的侧链正好是 <b>CH₂OH</b>，'
+    + '跟甘油醛的底部一模一样——<b>书选它就是为了让两边能直接对着看</b>。这一句说出来很加分。',
+  src2:'Biochemie, p024 · 300 dpi 原图裁切，未修改（书上这张没给图号）'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'The amino acids?',

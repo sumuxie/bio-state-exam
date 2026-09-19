@@ -194,6 +194,101 @@ why:{
   say:'“Below that we are asking why economy wins, and that is selection — a historical answer, not a mechanistic one. The other direction down is binding: how tightly the repressor holds the operator relative to random DNA, and by how much the inducer loosens it. That is a dissociation constant, and below that we are in physical chemistry rather than biochemistry.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p103_obr446_lac_gene_map.jpg',
+  t:'操纵子的四个部件，一条横线画完（书 Obr. 4.46）',
+  cap:'<b>速背 20 说「没有导图」——那是按旧规矩下的判断。'
+    + '现在图裁出来了，而且图里的标注本来就是英文的：'
+    + 'Regulatory gene · Control sites · Structural genes · Lactose operon。</b>'
+    + '<br><br><b>这张图的全部内容就是一件事：哪一段算 operon，哪一段不算。</b>'
+    + '下面那根 <b>Lactose operon</b> 的箭头<b>从 P 开始</b>，<b>不包含 I</b>。'
+    + '<br><br><b>画的顺序（四步，十秒）</b>：'
+    + '<br>① 画<b>一条横长条</b>，从左到右分成六格，依次写 <b>I ｜ P ｜ O ｜ Z ｜ Y ｜ A</b>。'
+    + '<br>② 在 <b>I</b> 上方写 <b>regulatory gene</b>；在 <b>P 和 O</b> 上方写 <b>control sites</b>；'
+    + '在 <b>Z Y A</b> 上方写 <b>structural genes</b>。'
+    + '<br>③ 在下方画一根<b>从 P 到 A</b> 的双向箭头，写 <b>lac operon</b>。<b>这一笔就是考点。</b>'
+    + '<br>④ 在 Z、Y、A 下面各引一根箭头，写三个酶的名字。'
+    + '<br><br><b>边画边说的两句</b>：“An <b>operon</b> is a group of genes that code the synthesis of one group of proteins. '
+    + 'It has two parts: a <b>control region</b>, the promoter and the operator, and a stretch of <b>structural genes</b>.”'
+    + '<br>“The <b>regulatory gene</b> is next to the operon but <b>not part of it</b>. Its product is the <b>repressor</b>, and because the repressor is a diffusible protein the regulatory gene does not even have to sit here.”'
+    + '<br><br>⚠ <b>图注里书把三个酶的名字都给了</b>：Z 是 <b>β-galactosidase</b>、'
+    + 'Y 是 <b>galactoside permease</b>、A 是 <b>thiogalactoside transacetylase</b>。'
+    + '<b>三个都能报名字，比只说「three enzymes」值钱。</b>',
+  src2:'Biochemie, Obr. 4.46, p103 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p103_obr447_lac_operon_switch.jpg',
+  t:'lac 开关的两个状态 —— 没诱导物 / 有诱导物（书 Obr. 4.47）',
+  cap:'<b>上下两格，标题本来就是英文：(a) Absence of inducer · (b) Presence of inducer。</b>'
+    + '这两格就是速背 07、08、09 三点的全部内容。'
+    + '<br><br><b>画的顺序（两格，每格三笔）</b>：'
+    + '<br><b>(a) 没有诱导物</b>：① 把上一张的条再画一遍（P O Z Y A）；'
+    + '② 在 <b>O</b> 上面扣一个椭圆，标 <b>repressor</b>；'
+    + '③ 旁边写一句 <b>no transcription</b>。'
+    + '<br><b>(b) 有诱导物</b>：① 同一条；② 把椭圆从 <b>O</b> 上拿开，在旁边画一个小黑点贴在它身上，'
+    + '小黑点标 <b>inducer</b>，写一句 <b>does not bind</b>；'
+    + '③ 在 <b>P</b> 上画一个大椭圆标 <b>RNA polymerase</b>，从它往右拉一条横线盖过 Z Y A，标 <b>lac mRNA</b>，'
+    + '再从 Z、Y、A 各向下一根箭头。'
+    + '<br><br><b>边画边说的三句</b>：“The default state is <b>off</b>. The repressor, the product of gene I, sits on the <b>operator</b> and prevents transcription.”'
+    + '<br>“The <b>inducer</b> binds the <b>repressor</b>, not the DNA. The complex can no longer bind the operator, it falls off, and RNA polymerase can move. '
+    + 'So the textbook calls the inducer a <b>positive effector</b>, and the whole operator-repressor-inducer system a <b>molecular switch</b>.”'
+    + '<br>“One promoter gives <b>one</b> mRNA covering all three structural genes, and that single mRNA is translated into three separate proteins.”'
+    + '<br><br><b>图里那条 lac mRNA 底下的三根箭头，就是「一条 mRNA 、三个产物」的书证。</b>'
+    + '“polycistronic” 这个词书里没有，是 Lehninger 的；要用就先指图再报这个词。'
+    + '<br>⚠ 说到“inducer”时别把它说成直接作用在 DNA 上。<b>它绑的是蛋白，不是基因</b>——图里那根箭头就是这么画的。',
+  src2:'Biochemie, Obr. 4.47, p103 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p104_obr448_trp_operon_map.jpg',
+  t:'trp 操纵子的地图 —— 多了 trpL 和 Attenuator 两格（书 Obr. 4.48）',
+  cap:'<b>把这张跟 lac 那张对着看，差别一眼就出来了：</b>'
+    + 'trp 的控制区后面<b>多了两格</b>——<b>trpL</b>（先导序列）和紧跟着的 <b>Attenuator</b>，'
+    + '然后才是五个结构基因 <b>trpE trpD trpC trpB trpA</b>。<b>这两格就是第二层调控住的地方。</b>'
+    + '<br><br><b>画的顺序（五步）</b>：'
+    + '<br>① 一条横条，最左一格写 <b>trpP, O</b>（启动子加操作基因，书把它们合在一格）。'
+    + '<br>② 接一格写 <b>trpL</b>，它右端紧贴一个<b>窄黑格</b>，上方写 <b>Attenuator</b>。'
+    + '<br>③ 后面五格依次写 <b>trpE · trpD · trpC · trpB · trpA</b>，上方写 <b>structural genes</b>。'
+    + '<br>④ 下方画<b>两条波浪线</b>：一条长的标 <b>mRNA</b>，一条只到 attenuator 就断的标 <b>leader mRNA</b>，'
+    + '两条之间写一个 <b>or</b>。<b>这一笔把衰减画出来了：不是不转录，是只转录一段就停。</b>'
+    + '<br>⑤ 要多说一层就报产物：五个基因 → <b>三个酶</b>。'
+    + '<br><br><b>边画边说的三句</b>：“The trp operon codes <b>five polypeptides</b> that make up <b>three enzymes</b> of tryptophan synthesis. '
+    + 'Two pairs associate: anthranilate synthase is made of two different components, and tryptophan synthase is an alpha-two beta-two.”'
+    + '<br>“Before the structural genes there is a <b>leader</b> region, <b>trpL</b>, of <b>162 nucleotides</b>, and at its end a second regulatory element, the <b>attenuator</b>.”'
+    + '<br>“The attenuator has a similar function to an operator, but it does not work by binding a protein. '
+    + 'When it acts, the polymerase stops at the attenuator, so the cell gets a short <b>leader mRNA</b> instead of the whole operon.”'
+    + '<br><br><b>图的下半部还白送一条路</b>：从 <b>chorismate</b> 到 <b>L-tryptophan</b> 的整条合成，'
+    + '每一步的底物、酶和副产物都写了。<b>他问「trpC 干什么」时照图注说：trpC 的产物催化两步。</b>',
+  src2:'Biochemie, Obr. 4.48, p104 · 300 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p105_obr449_attenuation.jpg',
+  t:'衰减的两种情形 —— 而且这张图是你打正文的那把刀（书 Obr. 4.49）',
+  cap:'<b>两格，标题就是两种情形：(a) High tryptophan · (b) Low tryptophan。全部标注都是英文。</b>'
+    + '<br><br><b>★ 先看一个标注，它是这张卡上最值钱的一根指头。</b>(a) 里写着'
+    + '<b>“Ribosome transcribing the leader peptide mRNA”</b>，而 p104 正文说先导序列'
+    + '「转录但<b>不翻译</b>成肽」。<b>书自己跟自己矛盾，而机制站在图这一边。</b>'
+    + '被问到就把图指给他：“The text says the leader is not translated. The figure on the next page shows a <b>ribosome</b> on it, and the mechanism needs that ribosome.”'
+    + '<br><br><b>画的顺序（两格，每格四笔）</b>：'
+    + '<br><b>(a) Trp 够用</b>：① 一条横的 mRNA，上面标 <b>1 2 3 4</b> 四段；'
+    + '② 把一个核糖体画在 <b>2</b> 上面（它跑到了 2）；'
+    + '③ 剩下的 <b>3 和 4 配成一个发夹</b>，标 <b>transcription terminator</b>；'
+    + '④ 右边画一个掉下来的圆，标 <b>terminated RNA polymerase</b>。'
+    + '<br><b>(b) Trp 不够</b>：① 同一条；② 核糖体<b>卡在 1</b>（标 stalled at tandem Trp codons）；'
+    + '③ <b>2 和 3 配成发夹</b>，标 <b>antiterminator</b>；④ 4 落单，转录继续，右边画 RNA 聚合酶往前走。'
+    + '<br><br><b>边画边说的四句</b>：“The leader mRNA has <b>four</b> segments that can pair in two different ways, and only one way at a time.”'
+    + '<br>“When tryptophan is plentiful there is plenty of charged <b>tryptophanyl-tRNA</b>. '
+    + 'The ribosome runs straight through segment one into segment two, so two cannot pair with three. '
+    + 'Then <b>three pairs with four</b>, and that hairpin is the <b>terminator</b>. Transcription stops.”'
+    + '<br>“When tryptophan is scarce the ribosome <b>stalls</b> on the two tryptophan codons in segment one. '
+    + 'Segment two is left free, <b>two pairs with three</b>, the three-four hairpin cannot form, and the polymerase reads on through the whole operon.”'
+    + '<br>“So the cell is reading its own <b>translation speed</b> as the signal, not the amino acid itself.”'
+    + '<br><br>⚠ <b>为什么只有原核能这么干</b>：图里核糖体坐在<b>还在被转录的</b> mRNA 上。'
+    + '没有核膜，转录和翻译在同一个地方同时发生，衰减才成立。<b>真核生物做不到，这一句要主动说。</b>',
+  src2:'Biochemie, Obr. 4.49, p105 · 250 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What is an operon?',
