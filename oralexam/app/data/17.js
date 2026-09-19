@@ -44,7 +44,7 @@ cram:[
  {n:'07', t:'图 · 他可能让你画',
   big:'<b>figure 3.1 能量图</b>：两条曲线，<b>同一个起点和终点</b>，只有<b>坎的高度</b>不同',
   en:'“On an energy diagram the uncatalysed reaction is one big hump between reactant A and product P. The catalysed one is a lower path with two small humps and a dip between them. The dip is the transient complex of A with the catalyst. Both curves start at A and end at P at the same heights. So the energy difference between reactant and product is the same, and only the barrier changes.”',
-  note:'<b>画的顺序</b>（照 p054 figure 3.1，已看原图）：① 横轴 reaction coordinate，纵轴 energy。② 左边点 A（反应物），右边点 P（产物），<b>P 比 A 低</b>。③ 曲线 2（不催化，实线）：A 到 P 一个大鼓包，顶到 A 的高度差标 <b>E₂</b>。④ 曲线 1（催化，虚线）：从 A 先一个小鼓包（标 <b>E₁</b>），然后<b>掉进一个比 A 还低的坑</b>，坑底标 <b>AK</b>（A 与催化剂 K 的复合物），再一个小鼓包，然后下到 P。⑤ 图例：A · AK · P · E₁、E₂ 活化能。<br>他问坑为什么比 A 低：“The well below A means the complex is more stable than free A, so binding is downhill. The two small humps are the two steps of the textbook’s mechanism: binding, then the chemical step.”<span class="pg">p054</span>'},
+  note:'<b>画的顺序</b>（照 p054 figure 3.1，已看原图）：① 横轴 reaction coordinate，纵轴 energy。② 左边点 A（反应物），右边点 P（产物），<b>P 比 A 低</b>。③ 曲线 2（不催化，实线）：A 到 P 一个大鼓包，顶到 A 的高度差标 <b>E₀</b>（回原图核过，书上给这个大包印的是 E₀）。④ 曲线 1（催化，虚线）：从 A 先一个小鼓包（标 <b>E₁</b>），然后<b>掉进一个比 A 还低的坑</b>，坑底标 <b>AK</b>（A 与催化剂 K 的复合物），再一个小鼓包，然后下到 P。⑤ 图例：A · AK · P · <b>E₀、E₁、E₂ 三个活化能</b>（书的图注列了三个：E₀ 是不催化那个大包，E₁ 和 E₂ 是催化那条路上的两个小包）。<br>他问坑为什么比 A 低：“The well below A means the complex is more stable than free A, so binding is downhill. The two small humps are the two steps of the textbook’s mechanism: binding, then the chemical step.”<span class="pg">p054</span>'},
  {n:'08', t:'速率变，平衡不变',
   big:'催化剂改的是<b>速率</b>，不是<b>平衡</b>——热力学没动，动力学动了',
   en:'“A catalyst changes how fast equilibrium is reached, not where it lies. The grounds are in the textbook’s first chapter. Gibbs energy is a state function, so its change does not depend on the path taken, and it gives <b>no information about rate</b>. Rate is decided by the mechanism. A catalyst changes only the mechanism, the path. So the free-energy change and the equilibrium constant are untouched, and both directions are accelerated equally. The energy diagram shows it: the two curves share their start and end points.”',
@@ -228,6 +228,40 @@ recog:[
  mean:'问的是 <b>Buchner 1897</b>，也是「生化为什么能在试管里做」。',
  say:'“No. Buchner showed in 1897 that fermentation is a chemical process — a yeast extract with no living cells converts sugar to alcohol. The textbook’s timeline entry is ‘proof of the chemical nature of fermentation’. That is what makes enzymes biochemistry rather than biology: they can be taken out of the cell and studied in a test tube. That is in vitro, the reductionist approach the textbook describes in its first chapter.”',
  tail:'年表 <span class="pg">p009</span>；in vitro 与还原论 <span class="pg">p016</span>。「无细胞提取液」是对年表那一行的通用解释。'}
+],
+
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p054_obr31_activation_energy.jpg',
+  t:'能量图 —— 速背第 7 点说的就是这一张（书 Obr. 3.1）',
+  cap:'<b>这是这道题唯一的一张图，也是整道题的论证变成看得见的那一刻。</b>'
+    + '书的图注把字母全交代了：<b>A</b> 是起始物、<b>AK</b> 是 A 跟催化剂 K 的复合物、<b>P</b> 是产物、<b>E₀ E₁ E₂</b> 都是活化能；'
+    + '曲线 <b>2</b> 是<b>不催化</b>的，曲线 <b>1</b> 是<b>催化</b>的。'
+    + '<br><br><b>画的顺序（六步）</b>:'
+    + '<br>① 两条轴：纵轴那个词就是<b>能量</b>，横轴那行字就是<b>反应进程</b>。说的时候说 energy 和 reaction coordinate。'
+    + '<br>② 左边一条水平线标 <b>A</b>，右边一条<b>更低</b>的水平线标 <b>P</b>。'
+    + '<br>③ 曲线 <b>2</b>（不催化，实线）：从 A 起一个<b>又高又宽的鼓包</b>再落到 P；从 A 的高度到包顶画一根竖箭头，标 <b>E₀</b>。'
+    + '<br>④ 曲线 <b>1</b>（催化，虚线）：从 A 起一个<b>小鼓包</b>（竖箭头标 <b>E₁</b>），然后<b>掉进一个比 A 还低的坑</b>，坑底标 <b>AK</b>。'
+    + '<br>⑤ 从坑里再起<b>第二个小鼓包</b>（竖箭头标 <b>E₂</b>），然后下到 P。'
+    + '<br>⑥ 最后检查一遍：<b>两条曲线的起点和终点完全重合</b>。这一点是整张图的结论，画的时候一定要画准。'
+    + '<br><br><b>边画边说的三句</b>：“The uncatalysed reaction is <b>one big hump</b> between reactant A and product P. The catalysed one is a lower path with <b>two small humps and a dip</b> between them, and the dip is the transient complex of A with the catalyst.”'
+    + '<br>“Both curves start at A and end at P at the <b>same heights</b>. So the energy difference between reactant and product is unchanged and only the <b>barrier</b> changes. A catalyst changes how fast equilibrium is reached, not where it lies.”'
+    + '<br>“The well below A means the complex is <b>more stable than free A</b>, so binding is downhill. The two small humps are the two steps of the textbook’s mechanism: <b>binding</b> first, then the <b>chemical step</b>.”'
+    + '<br><br>⚠ <b>标号按书上的来（回原图核过）</b>：书把不催化那个大包标成 <b>E₀</b>，<b>E₁ 和 E₂ 是催化那条路上的两个小包</b>，图注里三个字母都列了。'
+    + '速背第 7 点原来写的是「大包标 E₂」，<b>按原图改成 E₀</b>；⑤ 那一行原来只提了两个活化能，书上是三个。',
+  src2:'Biochemie, Obr. 3.1, p054 · 280 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p059_two_step_mechanism.jpg',
+  t:'两步机制 —— 速背第 6 点，书把三个速率常数印出来了（书 p059）',
+  cap:'<b>这张是「认」，它就是上一张图里「两个小鼓包夹一个坑」的代数写法。</b>'
+    + '<br><b>第一步</b> <code>E + A ⇌ EA</code>：结合。<b>快、可逆</b>，靠弱相互作用，正反两个方向各有一个速率常数 <b>k₁</b> 和 <b>k₋₁</b>。'
+    + '<br><b>第二步</b> <code>EA → E + X</code>：催化。<b>慢、不可逆</b>，速率常数 <b>k₂</b>，酶原样出来。'
+    + '<br><br><b>看到图要说的那一段</b>：“Even the simplest enzyme reaction runs in <b>two steps</b>. First the substrate binds to the enzyme and gives the enzyme-substrate complex, and that step is <b>fast and reversible</b>, held together by weak interactions. Then the chemical change happens and the complex breaks up into free enzyme and product, and that step is <b>slower and irreversible</b>. The enzyme comes out unchanged, which is exactly what makes it a catalyst.”'
+    + '<br><br><b>两个小鼓包正好对上两步</b>：第一个包是结合，坑底是 EA，第二个包是化学那一步。<b>图和式子说的是同一件事</b>，一起给他，比只说一句有力。'
+    + '<br>三个常数怎么组合成 K<sub>m</sub>，在卡 <b>02</b>。⚠ 这张反应式在书上还往下挂着 EI 和 EAI 两支（被裁掉了），那是卡 <b>19</b> 的内容。',
+  src2:'Biochemie, p059（§3.5 开头那张反应式；两步机制的正文在 p054）· 300 dpi 原图裁切，未修改'}
 ],
 
 /* ---------------- 追问 ---------------- */

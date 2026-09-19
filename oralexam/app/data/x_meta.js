@@ -190,6 +190,96 @@ recog:[
  tail:'<span class="pg">p123</span>。<b>书给的理由是「蛋是个封闭系统」</b>，这是四块地基里的<b>进化</b>那一块，说出口很稳。'}
 ],
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p133_obr62_three_phases.jpg',
+  t:'漏斗本身 —— 三个阶段，书自己画的（书 Obr. 6.2）',
+  cap:'<b>这是这张卡的主图，速背第 3 点那三个阶段就是照着它说的。</b>'
+    + '图分三层，左边一栏标着<b>阶段一、阶段二、阶段三</b>；进口在最上面一排三个框，<b>从左到右是脂肪 · 多糖 · 蛋白质</b>。'
+    + '<br><br><b>画的顺序（五步）</b>:'
+    + '<br>① 最上面横着画<b>三个框</b>：脂肪 · 多糖 · 蛋白质。每个框下面一根双箭头接到第二排：'
+    + '<b>脂肪酸和甘油</b> · <b>己糖和戊糖</b> · <b>氨基酸</b>。<b>这一层就是阶段一——大分子拆成建筑块。</b>'
+    + '<br>② 中间画一条竖线往下走：<b>甘油醛-3-磷酸 → 磷酸烯醇丙酮酸 → 丙酮酸 → acetyl-CoA</b>。<b>这是阶段二的主干。</b>'
+    + '<br>③ 从左边的脂肪酸、右边的氨基酸各拉<b>几条斜线汇到同一个框</b>：<b>acetyl-CoA</b>。'
+    + '<b>三条进口在这里并成一条，这一笔就是漏斗。</b>'
+    + '<br>④ 下面画柠檬酸循环的环：<b>柠檬酸 → 异柠檬酸 → 2-氧代戊二酸 → 琥珀酸 → 延胡索酸 → 苹果酸 → 草酰乙酸</b>，回到 acetyl-CoA。'
+    + '<br>⑤ 环的下面画两个出口框：<b>H₂O</b> 和 <b>CO₂</b>。<b>这是阶段三。</b>'
+    + '<br><br><b>边画边说的三句</b>：“Degradation of the bulk nutrients runs in <b>three phases</b>. In the first, large molecules are cut into their building blocks: polysaccharides into monosaccharides, lipids into fatty acids and glycerol, proteins into amino acids.”'
+    + '<br>“In the second phase those building blocks are converted into a <b>small number of still smaller intermediates</b>, and almost everything ends at <b>acetyl coenzyme A</b>. That is the neck of the funnel: a few hundred different molecules go in and essentially one comes out.”'
+    + '<br>“In the third phase the products of the second are oxidised all the way to <b>carbon dioxide and water</b>, and that is the citrate cycle together with the respiratory chain.”'
+    + '<br><br>⚠ <b>看一眼右边氨基酸那几条线</b>：有几条汇到 acetyl-CoA，<b>另外几条越过它一直往第三阶段走</b>。'
+    + '<b>所以不能说「氨基酸都以 acetyl-CoA 进循环」</b>——这一条卡 <b>24</b> 上纠正过，而<b>书自己的图就是证据</b>。'
+    + '<br>⚠ 最上面那三个框和左边那一栏是捷克文，意思就是上面写的；<b>框里的代谢物名字本来就是国际通用的拼法，直接念</b>。',
+  src2:'Biochemie, Obr. 6.2, p133 · 280 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p219_obr101_acetylcoa_hub.jpg',
+  t:'一个 acetyl-CoA，三进三出 —— 漏斗的浓缩版（书 Obr. 10.1）',
+  cap:'<b>这张也是「画」，而且它只要十五秒</b>。上一张画的是<b>路</b>，这一张画的是<b>路口</b>；'
+    + '他问「代谢地图长什么样」，<b>两张一起画，四十秒说完，然后就停</b>。'
+    + '<br><br><b>画的顺序（四步）</b>:'
+    + '<br>① 正中间画一个椭圆，里面写 <b>Acetyl-CoA</b>。'
+    + '<br>② 上面一排三个词（书上那三个词从左到右就是<b>糖 · 脂 · 蛋白质</b>），各往下一根箭头到中间那一排：'
+    + '<b>丙酮酸 · 脂肪酸 · 氨基酸</b>，再各一根斜箭头<b>指进</b>椭圆。'
+    + '<br>③ 椭圆下面三根箭头<b>指出去</b>：左边<b>柠檬酸循环 ＋ 呼吸链</b>、中间<b>脂</b>、右边<b>异戊二烯类</b>。'
+    + '<br>④ 画完点一句：<b>进来的三条全是分解；出去的三条里只有第一条是分解，另外两条是合成。</b>'
+    + '<b>同一个分子，两个方向都从这里走。</b>'
+    + '<br><br><b>边画边说的两句</b>：“Acetyl-CoA is the clearest example of a metabolic <b>pool</b>. It is produced by the degradation of <b>sugars, lipids and proteins</b> alike, and it is drawn off again for the synthesis of <b>fatty acids and lipids</b>, and of <b>isoprenoids and steroids</b>, or oxidised in the <b>citrate cycle</b>.”'
+    + '<br>“The textbook’s point about a pool is that the <b>concentration can be low while the turnover is very fast</b>. On the same page it calculates that a human body makes about <b>seventy kilograms of ATP in twenty-four hours</b>, and the amount present at any moment is nothing like that.”'
+    + '<br><br>⚠ 这张图的图注把 Acetyl 少印了一个字母（印成 Aceyl），<b>不用管</b>。',
+  src2:'Biochemie, Obr. 10.1, p219 · 280 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p115_obr51_protein_aa_metabolism.jpg',
+  t:'氮为什么不走漏斗 —— 它自己有一条路（书 Obr. 5.1）',
+  cap:'<b>这张是「认」，它是速背第 7 点唯一的书证</b>，也是这张卡上<b>唯一一张把「碳走一条、氮走另一条」画出来的图</b>。'
+    + '<br>图被一根竖条分成两半：<b>左边是体外，右边是体内</b>。'
+    + '<b>左上角那个椭圆是食物里的蛋白</b>，一根箭头穿过竖条进到体内，落在正中间那个椭圆——<b>游离氨基酸池</b>。'
+    + '<b>正上方那个椭圆是氨基酸的生物合成</b>，也往这个池子里加。'
+    + '<br><b>池子有四个出口</b>：'
+    + '<br>· 往右上 → <b>蛋白质合成</b>（用掉，不拆）。'
+    + '<br>· 往右下 → <b>碳骨架</b> → 再往右下那个框 → <b>取得能量</b>。<b>这一条才是进漏斗的那一条。</b>'
+    + '<br>· 往正下 → 中间那个框，里面竖着列了一串：<b>核苷酸 · 卟啉 · 胺类 · 黑色素 · 肌酐 · 激素等等</b>。'
+    + '<br>· 往左下 → 小椭圆 <b>NH₃</b> → 方框 <b>尿素</b> → 穿过竖条 → <b>排出体外</b>。'
+    + '<br><br><b>看到图要说的那一段</b>：“In a heterotroph the amino acid pool is the <b>only source</b> of nitrogen, of sulfur, of aromatic rings and of branched aliphatic structures, so it is drawn on for far more than energy. The <b>carbon skeleton</b> goes into the funnel and is oxidised in the citrate cycle. The <b>nitrogen leaves on its own route</b>: it is stripped off as <b>ammonia</b>, built into <b>urea</b>, and excreted.”'
+    + '<br>“That is why proteins cannot be replaced in the diet by simply eating more of something else. Fat and carbohydrate can substitute for each other as fuel. <b>Nothing substitutes for the nitrogen.</b>”'
+    + '<br><br><b>这张图顺手把氨基酸的另外两个去处也给了</b>：回去<b>合成蛋白</b>，或者去做那一串含氮的小分子。'
+    + '<b>被问「氨基酸除了烧掉还能干什么」，指着中间那个框念就行。</b>'
+    + '<br>⚠ 图里的框和椭圆是捷克文，意思就是上面写的位置对应的那几个词。',
+  src2:'Biochemie, Obr. 5.1, p115 · 280 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p196_beta_oxidation_four_steps.jpg',
+  t:'一轮 β-氧化的四步 —— 速背第 9 点那笔账的来源（书 p196）',
+  cap:'<b>这张是「认」，它就是速背第 9 点「一轮的账」印在书上的样子。</b>'
+    + '左边一栏是每一步的<b>反应类型</b>，右边一栏是酶名，中间是进出的辅酶。'
+    + '<br><b>四步从上到下</b>：<b>脱氢</b>（氢交给 <b>FAD</b>）→ <b>加水</b>（加一个 <b>H₂O</b>，β 碳上出现 –OH）→ '
+    + '<b>再脱氢</b>（氢交给 <b>NAD⁺</b>，–OH 变 =O）→ <b>硫解</b>（<b>CoASH</b> 进来，切下一个 <b>acetyl-CoA</b>）。'
+    + '最下面那一栏标着「重复 A、B、C、D」，把一条十六碳的链一路切到底，<b>编号 1 到 9</b>。'
+    + '<br><br><b>要说的那一句</b>：“One round of beta-oxidation is <b>oxidise, hydrate, oxidise again, then cut</b>. It yields <b>one FADH two, one NADH and one acetyl-CoA</b>, and it shortens the chain by <b>two carbons</b>. Palmitate has sixteen carbons, so it takes <b>seven</b> rounds to give <b>eight</b> acetyl-CoA: the last round produces two at once.”'
+    + '<br><br>⚠ <b>勘误第 6 条。</b>最后一行的左栏写着<b>硫解</b>，右栏印的酶名却是 <b>β-ketokinase</b>。'
+    + '<b>kinase 搬的是磷酸，而这一行进来的是 CoASH，一个磷酸都没有</b>，所以它应该叫 <b>thiolase</b>。已回 280 dpi 原图确认。'
+    + '说的时候<b>指书自己的图</b>，不要说「别的教材说」。'
+    + '<br>合成那一半的总账在下一张；<b>四个反应类型怎么分</b>在横向卡 <b>反应类型</b>，同一张图两边都用。',
+  src2:'Biochemie, p196（§8.4 β-氧化的四步）· 280 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p190_palmitate_balance.jpg',
+  t:'合成那一半的总账 —— 书自己的框图（书 p190）',
+  cap:'<b>这张是「认」，它就是速背最后那一格说的「被追问总账就给书 p190 的框图」。</b>'
+    + '<br>一根竖箭头从上到下：进口 <b>8× acetyl-SCoA</b>，出口 <b>棕榈酸</b>；'
+    + '左边进来 <b>7× ATP</b>、出去 <b>7× ADP ＋ 7× P<sub>i</sub></b> 和 <b>8× HSCoA</b>；'
+    + '右边进来 <b>14× NADPH</b>、出去 <b>14× NADP⁺</b>；中间那个方框写着<b>七个酶 ＋ ACP-SH</b>。'
+    + '<br><br><b>看到图要说的那一段</b>：“Fatty acid synthesis is <b>not</b> beta-oxidation run backwards. The balance is <b>eight acetyl-CoA, seven ATP and fourteen NADPH</b> to one palmitate. Seven, because the chain is built in <b>seven</b> condensation steps, each one preceded by carboxylating an acetyl group to malonyl at the cost of one ATP. Fourteen, because each of those seven steps is reduced <b>twice</b>.”'
+    + '<br>“The other two differences are just as sharp. The reductant is <b>NADPH</b>, not NADH, and the whole thing happens in the <b>cytosol</b> on a multienzyme complex whose core protein is <b>A C P</b>, the acyl carrier protein, while beta-oxidation happens in the <b>mitochondrial matrix</b>.”'
+    + '<br><br><b>NADH 和 NADPH 的分工，一句通则</b>：<b>NADH 送去呼吸链换 ATP，NADPH 送去合成当还原剂。</b>'
+    + '<b>这张图一眼就能看见——进来的全是 NADPH，一个 NADH 都没有。</b>'
+    + '<br>⚠ 中间那个方框里的词是捷克文的「七个酶」，加号后面那个 <b>ACP-SH</b> 本来就是英文缩写。'
+    + '<b>书里没有把 β-氧化和这一张并排画成对照图</b>，两张要自己摆在一起看。',
+  src2:'Biochemie, p190（§8.4 脂肪酸生物合成的总反应）· 300 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'这张卡自己用到的词，他会一个个拎出来问。<b>其中几个在整套卡里从来没有正面定义过</b>，所以必须在这里给。', items:[

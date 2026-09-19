@@ -201,6 +201,46 @@ recog:[
  say:'“Because the imidazole of histidine coordinates the nickel through the lone pair on a ring nitrogen. Its pKa is near six, so dropping the pH to four or five protonates that nitrogen. The lone pair is then taken by the proton and cannot be donated to the metal, so the protein comes off.”'}
 ],
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p023_obr21_glycine_titration.jpg',
+  t:'甘氨酸滴定曲线 —— 这张卡的主图，三个数都印在图里（书 Obr. 2.1）',
+  cap:'<b>这是这张卡上最值钱的一张</b>：pK<sub>a</sub>、缓冲、pI 三件事全落在这一条线上，'
+    + '而且<b>速背第 8 点那三个数就写在图上</b>——<b>pK<sub>A1</sub> = 2,4</b>、<b>pI = 6,1</b>、<b>pK<sub>A2</sub> = 9,8</b>。'
+    + '<br><br><b>画的顺序（六步）</b>:'
+    + '<br>① 纵轴 <b>pH，从 0 到 14</b>；横轴是<b>加进去的 OH⁻</b>，从 <b>0 到 2</b>（单位 mmol）。<b>横轴只走到 2，是因为甘氨酸有两个可解离的基团。</b>'
+    + '<br>② 从左下角起笔，画一条<b>两级台阶</b>的线：陡 → 平 → 陡 → 平 → 陡。'
+    + '<br>③ 第一个平段的中点在 <b>pH 2,4</b>，拉一条水平虚线，标 <b>pK<sub>A1</sub></b>（那是 –COOH）。'
+    + '<br>④ 第二个平段的中点在 <b>pH 9,8</b>，再拉一条水平虚线，标 <b>pK<sub>A2</sub></b>（那是 –NH₃⁺）。'
+    + '<br>⑤ 两个平段之间那一段<b>最陡</b>的地方，横轴正好在 <b>1 mmol</b>，拉一条点线标 <b>pI = 6,1</b>。'
+    + '<b>那一点就是第一个当量点</b>：一个可解离基团正好被中和完。'
+    + '<br>⑥ 画完自己验一遍：<code>(2,4 + 9,8) ÷ 2 = 6,1</code>。<b>三个数互相自洽，这件事本身就是答案的一部分。</b>'
+    + '<br><br><b>边画边说的三句</b>：“A titration curve plots the pH against the amount of base added. Glycine has <b>two</b> dissociable groups, the carboxyl and the amino group, so the curve has <b>two flat regions</b> and the axis runs to <b>two</b> equivalents.”'
+    + '<br>“Each flat region is centred on a <b>pKa</b>. At that pH the group is exactly <b>half dissociated</b>, so half the molecules still carry the proton and half have given it up. That is what a pKa is, and it is also why a buffer works best there: adding acid or base moves the <b>ratio</b> of the two forms, not the pH.”'
+    + '<br>“Between the two flat regions the curve is <b>steep</b>. The pH in the middle of that steep part is the <b>isoelectric point</b>. There the net charge is zero. For a molecule with two dissociable groups it is simply the <b>average</b> of the two pKa values.”'
+    + '<br><br>⚠ <b>书用逗号当小数点</b>，2,4 就是 2.4。<b>考场上报书上的数</b>，因为老师脑子里是这本书；'
+    + '被问「别的书写 2.3 和 9.6」就说两套在实验误差范围内，<b>而这本书的三个数自洽</b>。'
+    + '<br>⚠ 图注那行捷克语就是「甘氨酸的滴定曲线」，横轴那行是「消耗掉的 OH⁻，mmol」。'
+    + '氨基酸卡 <code>aa</code> 上用的是同一张图，<b>两处的说法要一样，别换词</b>。',
+  src2:'Biochemie, Obr. 2.1, p023 · 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p059_ph_optimum_trypsin_pepsin.jpg',
+  t:'酶的钟形曲线 —— 速背第 13、14 点的书证（书 p059 顶上，这张没印图号）',
+  cap:'<b>这张是「认」。</b>纵轴是<b>相对活性</b>，横轴是 <b>pH</b>。'
+    + '左边那条标着 <b>Trypsin</b>，横轴刻度 6·8·10，<b>峰在 8 上下</b>；右边那条标着 <b>Pepsin</b>，横轴刻度 2·4·6，<b>峰在 2 上下</b>。'
+    + '<b>两条摆在一起就把这一格说完了</b>：最适 pH 是每个酶自己的数，不是一个通用值。'
+    + '<br><br><b>看到图要说的那一段</b>：“Most enzymes show a <b>maximum</b> in activity against pH, and the pH at that maximum is called the <b>pH optimum</b>. The reason the textbook gives is the <b>acid-base character</b> of the enzyme molecule, above all of the part called the <b>active centre</b>. The dissociation of the substrate can depend on pH as well.”'
+    + '<br>“Pepsin works in the stomach and peaks near <b>two</b>. Trypsin works in the small intestine and peaks near <b>eight</b>. The textbook also says the pH optimum <b>need not equal</b> the pH at which the enzyme actually has to work in the organism, and that pH is one of the tools the cell uses to <b>regulate</b> enzyme activity.”'
+    + '<br><br><b>这张图跟上一张是同一件事的两种读法</b>：滴定曲线上的平段是「一个基团半解离」，'
+    + '钟形曲线的峰是「<b>两个</b>基团各停在相反的解离状态上」——一个必须已经放掉质子，另一个必须还带着。'
+    + '<b>两条相反的曲线相乘，中间剩下一个峰。</b>这个双解离模型书里没有，说的时候标明是通用的。'
+    + '<br>⚠ <b>这张图书上没有编号</b>，就在 p059 正文上方；右边那条的横轴标注扫得有点糊，是 <b>pH</b>。'
+    + '⚠ 书另有一张表列了几个酶的最适 pH（速背第 14 点），那是表不是图。',
+  src2:'Biochemie, p059 顶部（§3.4 的图，书上未编号）· 300 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'这张卡的英文句里全是数学词。他会挑一个单独问，而她不能停在「就是那个意思」。', items:[

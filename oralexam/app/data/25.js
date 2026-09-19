@@ -201,6 +201,101 @@ why:{
   say:'“Below that we are asking how an electrochemical gradient becomes mechanical rotation and then binding energy inside a protein. That is bioenergetics and physical chemistry rather than biochemistry.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p145_obr610_chain_complexes_and_atp.jpg',
+  t:'整条链 ＋ ATP 合酶，一张图 —— 速背 15 那六步画的就是它（书 Obr. 6.10）',
+  cap:'<b>这张是「画」，而且它是这道题最该被临摹的一张。</b>两条横线是<b>内膜</b>，上面标 <b>M ＝ 基质</b>，下面标 <b>C ＝ 胞质侧（膜间隙）</b>。膜里从左到右嵌着五个框：<b>II · III · I · IV · V</b>，最后那个带一个伸进基质的大头 <b>F₁</b> 和一个埋在膜里的 <b>F₀</b>。'
+    + '<br><br><b>⚠ 一眼会看错的地方</b>：<b>书画的顺序是 II · III · I · IV，不是 I · II · III · IV</b>。<b>它是按「谁把电子交给泛醌」排的，不是按编号排的</b>。你自己画的时候<b>可以按编号排</b>，只要 I 和 II 都指向同一个 Q 就不算错；但<b>他把书摊开问你「这是哪个」，你要认得出左起第一个是 II</b>。'
+    + '<br><br><b>画的顺序（六步，照这个练）</b>：'
+    + '<br>① <b>两条平行横线</b>就是内膜。上面写 <b>M（matrix）</b>，下面写 <b>C（intermembrane space）</b>。<b>先定上下，后面所有箭头的方向都由它决定。</b>'
+    + '<br>② 膜里画四个方框，标 <b>I · II · III · IV</b>；右边再画第五个，<b>柄在膜里标 F₀，球在基质侧标 F₁</b>，整体标 <b>V</b>。'
+    + '<br>③ <b>膜里</b>画两个小圈标 <b>Q</b>（一个在 II 和 III 之间，一个在 I 和 III 之间）；<b>膜的 C 侧表面</b>画两个小圈标 <b>c</b>。<b>Q 在膜里、c 在膜外表面，这个位置差别是要点，不是画风。</b>'
+    + '<br>④ 电子箭头：<b>NADH → I → Q</b>，<b>succinate → II → Q</b>，<b>Q → III → c → IV → ½ O₂ → H₂O</b>。'
+    + '<br>⑤ 质子箭头<b>朝下（朝 C）</b>：<b>I 标 2 H⁺</b>，<b>III 标 4 H⁺</b>，<b>IV 什么都不标</b>。合酶那根箭头<b>朝上（回基质）</b>，标 <b>6 H⁺ → 3 ATP</b>；旁边加一行小字 <b>4 H⁺ → 2 ATP</b>，那是走 II 的路。'
+    + '<br>⑥ 底下写一排电位：<b>−0,32 → +0,10 → +0,26 → +0,82</b>。'
+    + '<br><br><b>边画边说的三句</b>：“The chain does one thing. It turns the <b>fall in redox potential</b> into <b>protons on the other side of the membrane</b>.”'
+    + '<br>“NADH enters at <b>complex I</b> and succinate at <b>complex II</b>. Complex II pumps nothing, so succinate is worth <b>four</b> protons instead of six.”'
+    + '<br>“ATP synthase is <b>complex V</b>. It is not an oxidoreductase. The protons run back <b>down</b> the gradient through it, and that is where ATP is made.”'
+    + '<br><br><b>图上那两行数字就是书的兑换率</b>：<b>6 H⁺（nebo 4 H⁺）</b> 对着 <b>3 ADP ＋ 3 P（nebo 2 ADP ＋ 2 P）</b>，<b>nebo 是捷克语的「或者」</b>。这一行就是 <b>3 ATP / NADH</b> 和 <b>2 ATP / FADH₂</b> 的出处。',
+  src2:'Biochemie, Obr. 6.10, p145 · 300 dpi 原图裁切，未修改（图注捷克语保留）'},
+
+ {k:'认',
+  src:'img/p144_obr69_complexes_i_to_iv.jpg',
+  t:'四个复合物在干什么 —— 质子数就标在下缘（书 Obr. 6.9）',
+  cap:'<b>这张是「认」，它是上一张的放大版，而且它把质子数标出来了。</b>还是 <b>M 在上、C 在下</b>，复合物还是 <b>II · III · I · IV</b> 的排法。'
+    + '<br><br><b>三处要盯住的</b>：'
+    + '<br>① <b>下缘三根朝外的箭头</b>：<b>4 H⁺ · 4 H⁺ · 2 H⁺</b>。<b>2 H⁺ 那根是复合物 I 的，两根 4 H⁺ 都是复合物 III 的</b>——一根给从 I 来的电子，一根给从 II 来的。<b>所以一个 NADH 是 2 ＋ 4 ＝ 6，一个 FADH₂ 是 0 ＋ 4 ＝ 4。</b>这两个数就是 3 ATP 和 2 ATP 的全部来源。'
+    + '<br>② <b>复合物 IV 底下一根箭头都没有</b>。<b>这本书说它不泵</b>，现代教材说它泵 2 个。<b>先给书的，被追问再给现代的。</b>'
+    + '<br>③ 左上角进来的是 <b>succinate / fumarate</b> 那一对（图上是捷克语的结构式，不用管怎么拼），右上角进来的是 <b>NAD⁺ / NADH＋H⁺</b> 和 <b>O₂</b>。<b>两个入口一个出口，图上一眼看得见。</b>'
+    + '<br><br><b>摆到面前时说的两句</b>：“Left to right the textbook draws complex <b>two</b>, three, one and four. It orders them by <b>where the electrons enter ubiquinone</b>, not by number.”'
+    + '<br>“The protons leave on the <b>C side</b>. Two at complex one, four at complex three, and this textbook draws <b>none</b> at complex four.”'
+    + '<br><br>⚠ 图里那两个画在膜外表面的小圈都写着 <b>c</b>，里面是 <b>4Fe²⁺ / 4Fe³⁺</b>——那是 <b>cytochrome c</b>，中间那根粗的双向箭头画的就是它<b>在膜表面滑来滑去</b>。<b>「它是怎么在两个复合物之间传电子的」，答案就是这根箭头。</b>',
+  src2:'Biochemie, Obr. 6.9, p144 · 300 dpi 原图裁切，未修改（图注捷克语保留）'},
+
+ {k:'认',
+  src:'img/p142_obr66_respiratory_chain_membrane.jpg',
+  t:'全套零件摆在真的内膜上 —— 连运输蛋白一起（书 Obr. 6.6）',
+  cap:'<b>这张是「认」，它是全书关于这道题信息最密的一张。</b>画的是一段折叠的内膜（那些褶子就是 <b>cristae</b>），<b>M 在里、C 在外</b>，图注原话译过来是「<b>M 是基质侧，C 是胞质侧，有时也叫膜间隙</b>」。'
+    + '<br><br><b>从右往左认零件</b>：<b>NADH＋H⁺ / NAD⁺ → FMNH₂ → Fe–S → Fe–S → QH· / Q</b>；两个 <b>b</b>；<b>QH₂ 和 QH·</b>；<b>c₁</b> 和 <b>c</b>；<b>a</b>、<b>a₃</b> 和 <b>Cu</b>；最后 <b>½ O₂ ＋ 2 H⁺ → H₂O</b>。右缘三根 <b>2 H⁺</b> 箭头指向 C。左下那个带六个球的大蘑菇是 <b>F₁</b>，柄是 <b>F₀</b>，箭头写着 <b>ADP ＋ Pᵢ → ATP</b>，下面一根 <b>2 H⁺</b> 箭头<b>朝里</b>。'
+    + '<br><br><b>左上角那一排是这张图独有的东西</b>：四个嵌在膜里的<b>运输蛋白</b>，标着 <b>malát · Pᵢ · ADP</b> 进、<b>Pᵢ · OH⁻ · ATP</b> 出。<b>ATP 和 ADP 是对着换的，Pᵢ 是跟 OH⁻ 对着换的。</b>'
+    + '<br><br><b>摆到面前时说的两句</b>：“The chain and the synthase are in the same membrane, and so are the <b>transporters</b>. ATP leaves the matrix only in exchange for ADP coming in.”'
+    + '<br>“That exchange is why the modern count needs <b>four</b> protons per ATP rather than three. One of them pays for bringing the phosphate in.”'
+    + '<br><br>⚠ <b>malát 出现在这张图上不是意外</b>：那是<b>苹果酸-天冬氨酸穿梭</b>的入口，胞质里的 NADH 就是这么把氢送进基质的。<b>他问「糖酵解的 NADH 怎么进来」，你指着这张图的左上角回答。</b>',
+  src2:'Biochemie, Obr. 6.6, p142 · 300 dpi 原图裁切，未修改（图注捷克语保留）'},
+
+ {k:'画',
+  src:'img/p145_obr611_atp_synthase.jpg',
+  t:'ATP 合酶的零件表 —— 速背 18 那几个希腊字母长这样（书 Obr. 6.11）',
+  cap:'<b>这张是「画」，而且它是把「F₀ 和 F₁」从两个名字变成一台机器的那一张。</b>膜里那一段是 <b>F₀</b>，伸进基质的大头是 <b>F₁</b>。'
+    + '<br><br><b>图上标到的零件</b>：<b>F₁</b> 那个头由 <b>α</b> 和 <b>β</b> 交替围成，中轴是 <b>γ</b> 和 <b>ε</b>，顶上连着 <b>δ</b>；<b>δ</b> 往下接一根<b>侧柄 b₂</b>；膜里那块是 <b>a</b>。<b>γ 旁边画着一个旋转箭头和一个 H⁺</b>——<b>那个箭头就是这张图最值钱的一笔。</b>'
+    + '<br><br><b>画的顺序（五步）</b>：'
+    + '<br>① 先画膜（两条线），膜里画一个方块标 <b>a</b>，那是<b>质子通道</b>的一半。'
+    + '<br>② 膜上方画一个<b>大圆头</b>，里面画<b>三对交替的瓣</b>，标 <b>α</b> 和 <b>β</b>——<b>催化位点在 β 上</b>。'
+    + '<br>③ 从膜里穿过圆头中心画一根<b>轴</b>，标 <b>γ</b>，轴底标 <b>ε</b>。'
+    + '<br>④ 旁边画一根<b>细长的侧柄</b>连到头顶，柄标 <b>b₂</b>，顶标 <b>δ</b>。<b>侧柄的作用是「按住不让头跟着转」</b>，这一句是通用的，不是书上的。'
+    + '<br>⑤ 在 γ 旁边画一个<b>弯的旋转箭头</b>，在膜里画一根 <b>H⁺</b> 箭头<b>朝基质</b>。'
+    + '<br><br><b>边画边说的三句</b>：“Complex <b>five</b>. Unlike the other four it is <b>not</b> an oxidoreductase. It is a phosphorylating enzyme.”'
+    + '<br>“<b>F₀</b> is the proton channel in the membrane. <b>F₁</b> is the catalytic head on the matrix side. Here the protons move <b>with</b> the gradient.”'
+    + '<br>“And this is the part people get backwards. The active site in F₁ <b>forms the bond by itself</b>. The proton flow changes its shape so the finished ATP can be <b>released</b>.”'
+    + '<br><br>⚠ <b>α₃β₃ 这个写法是通用的，书只画不写</b>。书列的亚基就是图上这几个：<b>F₀ · F₁ · α · β · γ · δ · ε · a · b₂</b>。<b>他要化学计量就说 generally，别装成书上的。</b>',
+  src2:'Biochemie, Obr. 6.11, p145 · 300 dpi 原图裁切，未修改（图注捷克语保留）'},
+
+ {k:'认',
+  src:'img/p143_obr67_complex_i.jpg',
+  t:'复合物 I 的内部 —— 两个电子和两个质子（书 Obr. 6.7）',
+  cap:'<b>这张是「认」，图注原话译过来是「复合物 I 在内膜里的功能，两个电子和两个质子的传递示意」。</b>还是 <b>M 在上、C 在下</b>。'
+    + '<br><br><b>图上走一遍</b>：顶上 <b>NADH＋H⁺ → NAD⁺</b>，交给标着 <b>FP</b> 的黄素蛋白，里面 <b>FMN → FMNH₂</b>；接着两个大圈是两个铁硫中心，标 <b>Fe₄S₄</b> 和 <b>Fe₂S₂</b>，圈里写着 <b>Fe³⁺ ⇄ Fe²⁺</b>；最右边 <b>2 QH· → 2 QH₂</b>；<b>底下一根箭头写 2 H⁺，指向 C。</b>'
+    + '<br><br><b>看图要说的两句</b>：“Complex I is <b>NADH:ubiquinone oxidoreductase</b>. Its prosthetic groups are <b>FMN</b> and several <b>iron-sulfur centres</b>.”'
+    + '<br>“The flavin carries <b>electrons together with protons</b>. The iron-sulfur centres carry <b>electrons only</b>. That is why the protons are left on the outside.”'
+    + '<br><br>⚠ <b>别去背两个 FeS 的先后。</b>图上画的顺序跟正文读起来的顺序<b>对不太上</b>，而这本书在别处也有这类自相矛盾（见 <code>book/BOOK_ERRATA.md</code> 的做法）。<b>安全的答法是只说「有几个铁硫中心，质子在电子交给铁硫时被放到膜外」，不排先后。</b>他要是追，就把图指给他，说书自己在这里画得比写得清楚。<span class="pg">p141 p142 p143</span>',
+  src2:'Biochemie, Obr. 6.7, p143 · 300 dpi 原图裁切，未修改（图注捷克语保留）'},
+
+ {k:'认',
+  src:'img/p143_obr68_complex_iii.jpg',
+  t:'复合物 III 的那个环 —— 两电子载体怎么接上单电子载体（书 Obr. 6.8）',
+  cap:'<b>这张是「认」，图注末尾自己说了「为简单起见只画了一个电子的传递」。</b>还是 <b>M 在上、C 在下</b>。'
+    + '<br><br><b>图上认三样东西就够</b>：'
+    + '<br>① <b>上下叠着的两个大椭圆，标 b_K 和 b_T</b>——<b>那就是「两个 b 型细胞色素」</b>，书说它们<b>长在不同的多肽上，所以电位不同</b>。'
+    + '<br>② 左边进来的 <b>QH₂</b>，中间的 <b>·QH</b>（<b>半醌</b>），右边的 <b>Q</b>。<b>同一个醌的三种状态都画出来了</b>：拿两个氢的、拿一个的、一个都不拿的。'
+    + '<br>③ 右下角两个圈 <b>c₁</b> 和 <b>c</b>，在<b>膜的 C 侧</b>。图上一共四处 <b>H⁺</b> 标注。'
+    + '<br><br><b>看图要说的两句</b>：“Ubiquinol carries <b>two</b> electrons. Cytochrome c takes <b>one</b>. The textbook says this cycle is what matches the two to each other.”'
+    + '<br>“The quinone is oxidised in two one-electron steps through the <b>semiquinone</b>. A proton is let go at each step, and one electron goes back through the two b cytochromes.”'
+    + '<br><br>⚠ <b>左边那个 「I,II→1e⁻」 的标注是说「电子来自复合物 I 或 II」</b>——<b>这就是两条路在这里合流的那一点</b>，也是为什么 III 的 4 个质子两条路都算得上。<b>指着这一处回答「succinate 的电子后来去哪了」。</b>',
+  src2:'Biochemie, Obr. 6.8, p143 · 300 dpi 原图裁切，未修改（图注捷克语保留）'},
+
+ {k:'认',
+  src:'img/p138_obr64_mitochondrion_with_caption.jpg',
+  t:'链住在哪儿 —— 线粒体剖面（书 Obr. 6.4）',
+  cap:'<b>这张是「认」，它是「地点」那一格的图。</b>图上四个捷克语缩写，图注里逐个解释过：<b>Mb1 ＝ 外膜 · Mb2 ＝ 内膜 · MMP ＝ 膜间隙 · Mx ＝ 基质</b>。内膜往里折的那些褶子是 <b>cristae</b>。'
+    + '<br><br><b>看到图要说的三句</b>：“The chain and the synthase are in the <b>inner</b> membrane. The citric acid cycle runs in the <b>matrix</b> just inside it.”'
+    + '<br>“It has to be the inner one. The <b>outer</b> membrane is freely permeable to small ions, so no proton gradient could be held across it.”'
+    + '<br>“The folds, the <b>cristae</b>, are what give the inner membrane its area. More area means more chains and more synthase per mitochondrion.”'
+    + '<br><br>⚠ <b>C 这个字母在这一章会让人误会。</b>书画链的那几张图上，<b>C 指的是胞质那一侧，也就是膜间隙</b>，不是整个细胞质。<b>质子被泵到的是 MMP 那条缝，不是细胞质。</b>',
+  src2:'Biochemie, Obr. 6.4, p138 · 300 dpi 原图裁切，未修改（图注捷克语保留）'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What is the respiratory chain?',

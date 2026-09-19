@@ -199,6 +199,68 @@ recog:[
  tail:'竞争性抑制的经典例子书给了：<b>malonate 抑制 succinate dehydrogenase</b>——像底物到能结合，但不能被脱氢。图上的表现是 <b>Vmax 不变、Km 升高</b>。英文：“The textbook’s classic competitive example is malonate inhibiting succinate dehydrogenase. It is similar enough to bind, but it cannot be dehydrogenated. On the plot V max is unchanged and K m rises.”<span class="pg">p060</span>'}
 ],
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p056_obr32_saturation_curve.jpg',
+  t:'饱和曲线 —— 这道题最可能被要求现场画的一张（书 Obr. 3.2）',
+  cap:'<b>这张是「画」，而且它是这道题的主图</b>——考官画两条轴，让你把曲线填上去，这是这类题最常见的问法。'
+    + '<br><b>先记住书用的字母</b>：横轴印的是 <b>[A]</b> 不是 [S]（这本书用 A 表示底物），纵轴是 <b>v</b>，平台标的是 <b>V<sub>lim</sub></b> 不是 V<sub>max</sub>。<b>照书的字母画，他认得出来。</b>'
+    + '<br><br><b>画的顺序（五步）</b>:'
+    + '<br>① 两条轴：纵轴 <b>v</b>（初速度），横轴 <b>[A]</b>（底物浓度）。'
+    + '<br>② 从<b>原点</b>起笔，先陡后缓，向右<b>趋平</b>但永远碰不到顶——这是一条<b>直角双曲线</b>。'
+    + '<br>③ 在顶上画一条<b>水平虚线</b>，标 <b>V<sub>lim</sub></b>。'
+    + '<br>④ 在一半高度再画一条水平虚线，标 <b>V<sub>lim</sub>/2</b>；它跟曲线相交那一点<b>向下引一条竖虚线</b>落到横轴。'
+    + '<br>⑤ 竖虚线的落点标 <b>K<sub>m</sub></b>。<b>这一步就是整张图的意思</b>，别的都是陪衬。'
+    + '<br><br><b>边画边说的三句</b>：“Plot the initial velocity against the substrate concentration and you get a <b>rectangular hyperbola</b>. It rises steeply and then flattens onto a plateau.”'
+    + '<br>“The plateau is <b>V max</b>, the rate at which the substrate has saturated the enzyme, so essentially every enzyme molecule is in the enzyme-substrate complex and adding more substrate changes nothing.”'
+    + '<br>“The substrate concentration that gives exactly <b>half</b> that rate is the <b>Michaelis constant</b>. So K m has the dimension of a concentration, and the lower it is, the better that substrate is for that enzyme.”'
+    + '<br><br><b>这张图跟 K<sub>d</sub> 是同一个形状</b>：半饱和点落在 [A] = K<sub>m</sub>，占据率曲线的半占据点落在 [L] = K<sub>d</sub>。'
+    + '<b>两条曲线长得一样，因为它们问的是同一句话——要多浓才够占住一半。</b>'
+    + '<br>⚠ 图下面那行捷克图注的意思是「底物浓度对酶反应速率的影响」，不用管它怎么拼，<b>看得清就行</b>。',
+  src2:'Biochemie, Obr. 3.2, p056 · 300 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p056_obr33_lineweaver_burk.jpg',
+  t:'Lineweaver–Burk 双倒数图 —— 把双曲线拉直（书 Obr. 3.3）',
+  cap:'<b>这张也是「画」。</b>他常常先让你画上一张，再追一句「那你怎么从实验数据把 K<sub>m</sub> 和 V<sub>max</sub> 读出来」——答案就是这张。'
+    + '<br><br><b>画的顺序（五步）</b>:'
+    + '<br>① 两条轴：纵轴 <b>1/v</b>，横轴 <b>1/[A]</b>。<b>画成十字，横轴要留出负的那一半</b>，因为直线要往左延伸过去。'
+    + '<br>② 画一条<b>向右上的直线</b>，在右半边落几个<b>空心圆点</b>——书上画的就是实验点。'
+    + '<br>③ 直线往左<b>用虚线延长</b>，穿过纵轴，交到横轴<b>负</b>的那一侧。'
+    + '<br>④ 纵轴截距标 <b>1/V<sub>lim</sub></b>，横轴截距标 <b>−1/K<sub>m</sub></b>。'
+    + '<br>⑤ 斜率标 <b>K<sub>m</sub>/V<sub>lim</sub></b>。'
+    + '<br><br><b>边画边说的两句</b>：“Take reciprocals of both sides of the Michaelis-Menten equation and the hyperbola becomes a <b>straight line</b>: one over v against one over substrate. The intercept on the vertical axis is <b>one over V max</b>, the intercept on the horizontal axis is <b>minus one over K m</b>, and the slope is <b>K m over V max</b>.”'
+    + '<br>“The textbook’s reason for using it is practical rather than theoretical. Reading V max off the saturation curve needs measurements at very high substrate concentration, and the textbook says those are <b>inaccurate and expensive in material</b>. The straight line gets both constants out of the range you can actually measure.”'
+    + '<br><br><b>这张图还是下一道题的工具</b>：三种可逆抑制在这张图上各有一个样子，见下面第四张，完整的说法在卡 <b>19</b>。'
+    + '<br>⚠ 图下面那行捷克图注的意思是「按 Lineweaver 和 Burk 测定酶的动力学常数」——<b>两个人名本来就是拉丁字母，直接念</b>。',
+  src2:'Biochemie, Obr. 3.3, p056 · 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p059_two_step_mechanism.jpg',
+  t:'两步机制 —— 速背第 6 点里那三个速率常数，书自己印出来了（书 p059）',
+  cap:'<b>这张是「认」，而且它是你在 K<sub>m</sub> 那一刀上的护身符。</b>书把<b>三个速率常数</b>印在同一行：结合 <b>k₁</b>、散开 <b>k₋₁</b>、催化 <b>k₂</b>。'
+    + '<br><b>第一步</b> <code>E + A ⇌ EA</code> 是结合，<b>快、可逆</b>，靠弱相互作用；<b>第二步</b> <code>EA → E + X</code> 是化学变化，<b>慢、不可逆</b>，酶原样出来。'
+    + '<br><br><b>为什么要它</b>：<span class="pg">p055</span> 把式子印出来了，<code>K<sub>m</sub> = (k₋₁ + k₂)/k₁</code>；可是 <span class="pg">p056</span> 又说 K<sub>m</sub>「表达亲和力」。'
+    + '<b>这两句不能同时全对</b>——亲和力是 k₋₁/k₁，而式子的分子上多一个 k₂。'
+    + '<br><b>要说的那一句</b>：“K m equals the dissociation constant of the enzyme-substrate complex <b>only when</b> the catalytic step is much slower than the complex falling apart, that is when k two is much smaller than k minus one. Otherwise K m is <b>larger</b> than the true dissociation constant, and it stays a kinetic quantity rather than a binding one.”'
+    + '<br><b>这就是「用书的一半打书的另一半」</b>：不是「别的教材说」，是<b>「你这本书第 55 页印的式子说」</b>，那是最安全的位置。'
+    + '<br><br>⚠ 这张反应式在书上还往下挂着两支（被裁掉了），落到 EI 和 EAI——那是抑制那道题的内容，见卡 <b>19</b>。',
+  src2:'Biochemie, p059（§3.5 开头那张反应式；两步机制的正文在 p054）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p061_obr36_reversible_inhibition.jpg',
+  t:'三种可逆抑制在双倒数图上各是什么样子（书 Obr. 3.6）',
+  cap:'<b>这张是「认」。</b>卡上那句「malonate 抑制 succinate dehydrogenase，图上 V<sub>max</sub> 不变、K<sub>m</sub> 升高」，指的就是<b>中间</b>那一张。'
+    + '<br>三张小图的标题从左到右是<b>非竞争性 · 竞争性 · 反竞争性</b>；每张右上角那个 <b>[I]</b> 加一根弯箭头，意思是「抑制剂浓度沿箭头方向越来越大」。'
+    + '<br><br><b>三张图各只看一个地方</b>:'
+    + '<br>· <b>竞争性（中）</b>：几条线<b>交在纵轴上同一点</b> → 1/V<sub>lim</sub> 没动 → <b>V<sub>max</sub> 不变</b>；横轴截距往右挪 → <b>K<sub>m</sub> 变大</b>。'
+    + '<br>· <b>非竞争性（左）</b>：几条线<b>交在横轴上同一点</b> → −1/K<sub>m</sub> 没动 → <b>K<sub>m</sub> 不变</b>；纵轴截距往上挪 → <b>V<sub>max</sub> 降</b>。'
+    + '<br>· <b>反竞争性（右）</b>：几条线<b>互相平行</b> → 斜率没动 → <b>V<sub>max</sub> 和 K<sub>m</sub> 一起降</b>。'
+    + '<br><br><b>一句话记法</b>：交点在哪一条轴上，那条轴对应的常数就没变。三类怎么定义、Ki 是什么，全在卡 <b>19</b>，这里只认图。',
+  src2:'Biochemie, Obr. 3.6, p061 · 300 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'他默认你知道这些词。而这题的每个词都很容易被追。', items:[

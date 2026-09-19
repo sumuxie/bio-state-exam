@@ -220,6 +220,72 @@ recog:[
  tail:'⚠ <b>这本书没有这个例子，酶名不要编。</b>能说的是书给 oxidoreductases 的定义里有「与氧反应」这一条（p041）。他要名字就说这是书外的。'}
 ],
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'认',
+  src:'img/p196_beta_oxidation_four_steps.jpg',
+  t:'一张图里四个反应类型的名字 —— β-氧化的 A·B·C·D（书 p196）',
+  cap:'<b>这张是「认」，而且它是这张卡最值钱的一张</b>：书把每一步的<b>反应类型</b>直接印在左边那一栏，一行一个名字，'
+    + '右边那一栏是酶名，中间是进出的辅酶。<b>四个名字竖着排下来，正好就是这张卡的判断顺序。</b>'
+    + '<br><br><b>四行分别是</b>（左栏的捷克词按顺序就是这四个意思）:'
+    + '<br>· <b>A ＝ 脱氢</b>：酶是 <b>acyl-CoA dehydrogenase</b>，拿走两个氢交给 <b>FAD</b>（出去的是 FADH₂），在 α 和 β 两个碳之间造出一个双键。<b>氧化数变了 → 氧化还原类。</b>'
+    + '<br>· <b>B ＝ 加水</b>：酶是 <b>enoyl-CoA hydratase</b>，把一个 <b>H₂O</b> 加到那个双键上，β 碳上出现 <b>–OH</b>。<b>没有氧化还原，只是加了一个水。</b>'
+    + '<br>· <b>C ＝ 再脱氢</b>：酶是 <b>β-hydroxyacyl-CoA dehydrogenase</b>，这次的收件人换成 <b>NAD⁺</b>（出去的是 NADH），–OH 变成 <b>=O</b>。'
+    + '<br>· <b>D ＝ 硫解</b>：进来的是 <b>CoASH</b>，出去的是<b>短了两个碳</b>的 acyl-CoA <b>加一个</b> acetyl-CoA。<b>砍键的是硫，不是水。</b>'
+    + '<br><br><b>四步连起来要说的一句</b>：“One round of beta-oxidation is <b>oxidise, hydrate, oxidise again, then cut</b>. The first oxidation hands its hydrogens to <b>FAD</b> and the second to <b>NAD plus</b>. The cut is made by the <b>sulfur of coenzyme A</b>. That is why the step is called thiolytic rather than hydrolytic. Each round shortens the chain by <b>two carbons</b> and releases one acetyl-CoA.”'
+    + '<br><br>⚠ <b>勘误第 6 条，这一条值得当面用。</b>同一行的左栏写着<b>硫解</b>，右栏印的酶名却是 <b>β-ketokinase</b>。'
+    + '<b>kinase 转移的是磷酸，而这一步进来的是 CoASH，整行一个磷酸都没有</b>，所以这个酶应该叫 <b>thiolase</b>。已回 280 dpi 原图确认，不是 OCR 读错。'
+    + '<br><b>说的时候指书自己的图</b>：“The textbook’s own figure names this step <b>thiolytic cleavage</b>, and the reagent coming in is <b>coenzyme A</b>, with no phosphate anywhere in the row. A kinase transfers a phosphate, so the enzyme named in the same row cannot be a kinase. It is a <b>thiolase</b>.”'
+    + '<br>⚠ 左栏那四个名字书上印的是捷克文，<b>意思就是上面那四个</b>；这里给的是英文说法，考场上说英文。',
+  src2:'Biochemie, p196（§8.4 β-氧化的四步）· 280 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p120_transamination_general.jpg',
+  t:'transamination 的通式 —— 书把它直接印出来了（书 p120）',
+  cap:'<b>这张是「画」，而且它是速背第 9 点最干净的一张。</b>四个分子写成一行，<b>什么都没多</b>。'
+    + '<br><br><b>画的顺序（五步）</b>:'
+    + '<br>① 左边写一个氨基酸：<code>R₁–CH(NH₂)–COOH</code>。<b>NH₂ 写在 CH 下面</b>，跟书一样。'
+    + '<br>② 加号，再写一个 2-酮酸：<code>R₂–C(=O)–COOH</code>。<b>=O 写在 C 下面。</b>'
+    + '<br>③ 中间一根<b>单箭头</b>。'
+    + '<br>④ 右边把两个基团<b>换过来</b>：<code>R₁–C(=O)–COOH</code> ＋ <code>R₂–CH(NH₂)–COOH</code>。'
+    + '<br>⑤ 画完指着说：<b>变的只有 –NH₂ 和 =O 这一对，两条碳骨架一个碳都没动。</b>'
+    + '<br><br><b>边画边说的两句</b>：“Transamination moves an <b>amino group</b> from an amino acid onto the <b>oxo group</b> of a two-oxo acid. Nothing is oxidised and nothing is cut: the two carbon skeletons stay whole and simply <b>trade</b> the amino group for the keto oxygen. The products are a new two-oxo acid and a new amino acid.”'
+    + '<br>“The acceptor is almost always <b>pyruvate, two-oxoglutarate or oxaloacetate</b>. The enzymes are the <b>aminotransferases</b>, E C two point six point one, and the coenzyme is <b>pyridoxal phosphate</b>, which forms a <b>Schiff base</b> with the amino acid. The purpose of the whole set of reactions is to <b>collect</b> the amino groups of all the different amino acids onto one of them, usually glutamate.”'
+    + '<br><br><b>为什么它在这张卡上很要紧</b>：transamination 是「基团搬家」那一族<b>最干净的例子</b>——'
+    + '<b>没有氧化还原，也没有断碳链</b>，所以它既不是 oxidation，也不是任何一种 -lysis。'
+    + '拿它当标尺，下面那张氧化脱氨一比就清楚了。',
+  src2:'Biochemie, p120（§5.2.1 转氨那一节的通式）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p119_oxidative_deamination.jpg',
+  t:'oxidative deamination 的通式 —— 先氧化，再自己水解（书 p119）',
+  cap:'<b>这张是「认」，它是上一张的对照组</b>：名字里都有「氨」，做的事完全不同。'
+    + '<br>三步写在一行：左边是氨基酸 <code>R–CH(NH₂)–COOH</code>；<b>−2H</b> 那根箭头之后变成中间那个<b>亚胺</b> <code>R–C(=NH)–COOH</code>；'
+    + '再加 <b>H₂O</b>，右边就是 <b>2-酮酸</b> <code>R–CO–COOH</code> 加一个 <b>NH₃</b>。'
+    + '<br><br><b>看到图要说的那一段</b>：“<b>Oxidative deamination</b> is two things under one arrow. First the carbon that carries the amino group is <b>oxidised</b>. The single bond from that carbon to nitrogen becomes an <b>imine</b>, a C double bond N H. Then the imine <b>hydrolyses spontaneously</b>: water comes in, ammonia leaves, and what is left is a <b>two-oxo acid</b>. The enzymes are dehydrogenases with NAD plus or NADP plus as coenzyme, and by far the most important one is <b>glutamate dehydrogenase</b> acting on glutamate.”'
+    + '<br><br><b>跟上一张的区别就是这张卡要你分清的那一刀</b>：'
+    + '<b>转氨不放氨</b>，只是把氨基搬到另一条碳骨架上，氮还在体系里；'
+    + '<b>氧化脱氨真的把氮放出来</b>，变成 NH₃，接下来才进尿素那条路。'
+    + '<b>一个是搬家，一个是出门。</b>'
+    + '<br>⚠ 书还给了另一种脱氨：serine 和 threonine 靠<b>脱水</b>脱氨（因为 β 碳上有羟基），那一条<b>不是氧化</b>。'
+    + '<b>所以「deamination」这个词底下至少有两类，不能一见到就答氧化。</b><span class="pg">p119</span>',
+  src2:'Biochemie, p119（§5.2.1 氧化脱氨的通式）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p172_c4_epimerisation.jpg',
+  t:'epimerisation 长什么样 —— 只有 C-4 上那一个 OH 翻过来（书 p172）',
+  cap:'<b>这张是「认」，而且它就是速背第 4 点那个例子的书证。</b>'
+    + '左边是 <b>UDP-葡萄糖</b>，右边是 <b>UDP-半乳糖</b>，中间那个酶名印得清清楚楚：<b>4-epimerase</b>（书上用的是它的捷克拼法，词是同一个）。'
+    + '<br><b>整张图只有一个地方不一样</b>：环上<b>第 4 个碳</b>的 –OH，左边朝下、右边朝上。<b>别的原子一个都没动</b>，两边还拖着同一条尾巴（两个磷酸—核糖—尿嘧啶，也就是 UDP）。'
+    + '<br><br><b>看到图要说的那一段</b>：“<b>Epimerisation</b> inverts the configuration at <b>one</b> chiral carbon and leaves every other centre alone. Here the hydroxyl on <b>carbon four</b> flips over, and glucose becomes galactose. The enzyme is <b>U D P glucose four-epimerase</b>, and the coenzyme, uridine diphosphate, is the tail you can see on both sides.”'
+    + '<br>“That is what separates it from <b>isomerisation</b>, where the <b>carbonyl group moves</b> to the neighbouring carbon, for example glucose to fructose, or glyceraldehyde three-phosphate to dihydroxyacetone phosphate. Epimerisation changes a <b>configuration</b>. Isomerisation changes <b>where the carbonyl sits</b>.”'
+    + '<br><br>书正文在同一页还给了一个数：平衡时<b>葡萄糖比半乳糖是 1 : 3</b>（书上就这么印的）。'
+    + '<br>⚠ <b>书里没有给「epimerisation 对 isomerisation」画一张对照图。</b>'
+    + '§7.6.1（<span class="pg">p160</span>）只有三行字，两个例子都在那三行里，<b>没有配图</b>。'
+    + '这一张是全书最接近的一张，<b>另外那一半要靠嘴说</b>——说完这张就把 glucose ⇌ fructose 补一句。',
+  src2:'Biochemie, p172（§7.10 末尾，UDP-葡萄糖的 C-4 差向异构）· 300 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'这张卡自己用到的词，他会一个个拎出来问。<b>这张卡欠这些解释，所以每个都得在这里给。</b>', items:[

@@ -117,7 +117,7 @@ cram:[
   en:'“<b>Biological membranes consist of proteins and lipids</b>, the <b>protein to lipid weight ratio running from one to four up to three to one</b>. <b>Carbohydrates are always present as glycoproteins or glycolipids, half a per cent to ten per cent</b>. The structure is the <b>lipid bilayer</b>. Each layer is predominantly <b>complex lipids</b>, hydrophobic <b>tails</b> in close contact and hydrophilic <b>heads</b> likewise, the monolayers <b>tail to tail</b>. So it has <b>a markedly nonpolar middle and two polar surfaces</b>, and it is <b>three and a half to four nanometres</b> thick. And <b>the interactions of heads and tails are exclusively noncovalent</b>.”',
   note:'§8.5.1–8.5.2 <span class="pg">p198</span>，四个数全是书印的。<br><b>三条书自己给的，被问一句一条</b>：① <b>脂的不对称</b>——两层脂组成不同，脑苷脂和神经节苷脂一般在<b>外</b>层；② <b>翻转机制 flip-flop</b> 能让脂在两层间交换，书说<b>它的生物学意义目前还没有确切定义</b>（引这句很安全）；③ <b>流动镶嵌模型</b>（<span class="pg">p199</span>），<b>蛋白没有真正的翻转</b>。<br><b>膜蛋白两类</b>：<b>外周</b>只跟极性头作用、容易释放；<b>整合</b>靠<b>疏水作用</b>留在膜里。<b>这两句是段 4 的入口。</b>'},
 
- {g:'画 · 收尾', gn:'他可能说「画一个三酰甘油」或「画一个磷脂」。没有图片文件，下面就是图——<b>拿纸画三遍，边画边说。</b>'},
+ {g:'画 · 收尾', gn:'他可能说「画一个三酰甘油」或「画一个磷脂」。书上那两张图在「图」那一页，下面是顺序——<b>拿纸画三遍，边画边说。</b>'},
  {n:'16', t:'画 · 三酰甘油与磷脂',
   big:'两张图共用一个骨架：<b>竖着的甘油三个碳</b>。三个位子都挂脂肪酸 = 三酰甘油；<b>第三个位子换成磷酸 ＋ 头基</b> = 磷脂',
   en:'“Same backbone for both. <b>Glycerol</b>: three carbons written vertically, numbered one to three, each with a hydroxyl. For a <b>triacylglycerol</b> every hydroxyl makes an <b>ester</b> with a fatty acid — glycerol oxygen, carbonyl carbon, then a zig-zag chain. Three esters, no charged group anywhere, which is why it is a <b>neutral</b> lipid. For a <b>phospholipid</b> I keep the esters at one and two, <b>saturated at one, unsaturated with a cis kink at two</b>. Then I replace the third by a <b>phosphate</b> carrying the head group. With no head group it is <b>phosphatidic acid</b>.”',
@@ -198,6 +198,204 @@ why:{
  stop:{lbl:'停 · 落在热力学',
   say:'“Below that we are counting the entropy of water molecules around a nonpolar surface — physical chemistry rather than biochemistry.”'}
 },
+
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'认',
+  src:'img/p176_tab81_eleven_lipid_classes.jpg',
+  t:'十一类脂 —— 速背 03 就是这张表（书 Tab. 8.1）',
+  cap:'<b>这张是「认」，而且它是这道题的地图。</b>卷面问的是 <b>types</b>，这张表就是答案本身。三栏的表头是 <b>Skupina ＝ 大组 · Třída ＝ 类 · Produkty hydrolýzy ＝ 水解产物</b>。'
+    + '<br><br><b>左边那一栏只有三个值</b>，而<b>这三个就是你开口第二段要说的三大组</b>：<b>jednoduché ＝ 简单脂 · složené ＝ 复合脂 · odvozené ＝ 衍生脂</b>。'
+    + '<br><br><b>这张表最值钱的地方在第三栏</b>：它是按<b>水解以后剩下什么</b>来分类的。'
+    + '<br>· <b>简单脂水解只给醇和脂肪酸</b>，没有第三样东西。'
+    + '<br>· <b>复合脂多一样</b>——磷酸、糖或者别的极性基团，<b>那一样就是极性头</b>。'
+    + '<br>· <b>衍生脂那一栏是空的或者写着不水解</b>，因为它们根本没有酯键可拆。'
+    + '<br><br><b>摆到面前时说的两句</b>：“The textbook groups lipids as <b>simple, complex and derived</b>, and its table splits those into <b>eleven</b> classes.”'
+    + '<br>“The criterion is <b>what hydrolysis gives</b>. A simple lipid gives only an alcohol and fatty acids. A complex lipid gives one component more, and that component is the <b>polar head</b>.”'
+    + '<br><br>⚠ <b>这张表 OCR 整张吃掉了</b>，纯文本里搜不到，<b>只有回原图才看得见</b>。<b>他要是问「一共几类」，答案就在这张图上：十一类。</b>'
+    + '<br>⚠ <b>不要说 saponifiable 和 non-saponifiable。</b>那是通用的分法，<b>这本书不用这两个词</b>，老师手里的是这张表。',
+  src2:'Biochemie, Tab. 8.1, p176 · 300 dpi 原图裁切，未修改（图上捷克语类名保留）'},
+
+ {k:'认',
+  src:'img/p177_tab82_fatty_acids.jpg',
+  t:'脂肪酸名单 —— 速背 06 那张表的原件（书 Tab. 8.2）',
+  cap:'<b>这张是「认」，它是穿起前七类的那根线的全表。</b>栏目从左到右是：<b>俗名 · 缩写（碳数:双键数）· 系统名 · 双键位置 · 结构式</b>。'
+    + '<br><br><b>六个黑体的要能在表上一眼找到</b>：<b>16:0 palmitová · 18:0 stearová · 18:1 olejová · 18:2 linolová · 18:3 linolenová · 20:4 arachidonová</b>。（捷克语的酸名就是把英文的词尾换成 -ová，认得出就行。）'
+    + '<br><br><b>看表要看出来的三件事</b>：'
+    + '<br>① <b>碳数全是偶数</b>，一个奇数都没有。<b>他问为什么，答合成不答观察</b>：链每次长两个碳，起点是二碳的乙酰。'
+    + '<br>② <b>不饱和的那些，双键位置数字之间都差 3</b>：9,12 · 9,12,15 · 5,8,11,14。<b>那是因为双键之间隔着一个 CH₂</b>，书叫它「非共轭」。'
+    + '<br>③ <b>最右边那一栏的结构式里，双键处的链都是折的</b>。<b>那个折就是 cis</b>，也是「为什么不饱和的熔点低」的全部答案。'
+    + '<br><br><b>摆到面前时说的两句</b>：“Natural fatty acids are <b>linear</b>, with an <b>even</b> number of carbons, twelve to twenty-four. The double bonds are <b>mostly cis</b> and separated by a CH₂ group.”'
+    + '<br>“Two of them the body cannot make: <b>linoleic acid</b>, eighteen-two n-six, and <b>alpha-linolenic acid</b>, eighteen-three n-three. Everything longer is built from those two.”'
+    + '<br><br>⚠ <b>表上最阴的一对是两个 18:3</b>：<b>α</b> 是 Δ9,12,15，属 <b>n-3</b>，<b>必需</b>；<b>γ</b> 是 Δ6,9,12，属 <b>n-6</b>，<b>不必需</b>。<b>两行长得几乎一样，答错的就是这一处。</b>',
+  src2:'Biochemie, Tab. 8.2, p177 · 300 dpi 原图裁切，未修改（图上捷克语酸名保留）'},
+
+ {k:'画',
+  src:'img/p178_glycerol_to_triacylglycerol.jpg',
+  t:'三酰甘油 —— 一格一格挂上去（书 p178 图式）',
+  cap:'<b>这张是「画」，而且它跟速背 16 的画法完全一致</b>：<b>甘油竖着写，C-1 在上、C-2 在中、C-3 在下</b>，碳号就印在旁边。四格从左到右是 <b>glycerol → 1-acyl-L-glycerol → 1,2-diacyl-L-glycerol → triacyl-L-glycerol</b>，<b>四个名字书印的就是英文，不用翻译</b>。'
+    + '<br><br><b>画的顺序（五步）</b>：'
+    + '<br>① <b>竖着写三个碳</b>，标 <b>1 · 2 · 3</b>，每个旁边写 <b>OH</b>。<b>这就是甘油，一个三元醇。</b>'
+    + '<br>② 把 C-1 的 <b>OH</b> 改写成 <b>–O–C(=O)–R</b>。<b>那根 C–O–C 加一个双键氧就是酯键</b>，画的时候把 <b>＝O</b> 写出来。'
+    + '<br>③ C-2 也照做，写 <b>R′</b>；C-3 也照做，写 <b>R″</b>。<b>三个 R 写成不同的符号，因为三条链通常不一样。</b>'
+    + '<br>④ 三条 R 画成<b>锯齿链</b>，其中一条中间打个折，<b>那是 cis 双键</b>。'
+    + '<br>⑤ 最后<b>在整个分子上扫一眼，确认一个带电的基团都没有</b>。'
+    + '<br><br><b>边画边说的三句</b>：“<b>Acylglycerols are esters of the trihydric alcohol glycerol and fatty acids.</b> An <b>ester</b> is the bond between an acid and an alcohol, formed with loss of water.”'
+    + '<br>“With all three hydroxyls esterified there is <b>no ionisable group left</b>, so a triacylglycerol is a <b>neutral</b> lipid. Solid at room temperature it is a <b>fat</b>, liquid an <b>oil</b>.”'
+    + '<br>“And there is only one reaction it can undergo: <b>hydrolysis</b>, by a <b>lipase</b>.”'
+    + '<br><br>⚠ <b>四个名字里的 L- 是书自己标的</b>：天然的酰甘油多是 <b>L-异构体</b>。<b>C-2 一旦挂上不同的东西就成了手性碳</b>，这就是那个 L 的来处。'
+    + '<br>⚠ <b>顺手把「为什么存脂不存糖原」挂在这张图上</b>：这三条链<b>全是 CH₂，一个氧都没有</b>，所以它比糖<b>更还原</b>，烧起来放的能量更多——每克约 <b>44 kJ</b> 对 <b>16 kJ</b>。<b>图上看得见的事实，比背数字稳。</b>',
+  src2:'Biochemie, p178 图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p180_phosphatidic_acid.jpg',
+  t:'磷脂酸 —— 所有甘油磷脂的母体（书 p180 图式）',
+  cap:'<b>这张是「画」，它就是上一张换掉一个位子。</b>甘油还是竖着三个碳：<b>C-1 和 C-2 挂脂肪酸（酯键），C-3 挂的是磷酸</b>。'
+    + '<br><br><b>画的顺序（四步，接着三酰甘油那张画）</b>：'
+    + '<br>① 先把三酰甘油画出来。'
+    + '<br>② <b>把 C-3 那条链擦掉</b>，换成 <b>–O–P(=O)(O⁻)–OH</b>。<b>磷上一定要写那个 O⁻</b>，它是这一整类分子有极性头的原因。'
+    + '<br>③ 停在这里，<b>这就是磷脂酸</b>。'
+    + '<br>④ 再往磷酸上接一个 <b>R</b>，就变成具体的某个磷脂。<b>换 R 就换名字，骨架一个字都不改。</b>'
+    + '<br><br><b>边画边说的两句</b>：“<b>Phospholipids are the most abundant complex lipids in nature</b>, and they are components of biological membranes of all types.”'
+    + '<br>“The simplest of them, and the precursor of the rest, is <b>phosphatidic acid</b>. The individual phospholipids differ only in the group bound to the phosphate by a <b>phosphoester</b> bond.”'
+    + '<br><br>⚠ <b>一条书自己给的规律，值一分</b>：<b>C-2 通常挂不饱和的脂肪酸，C-1 通常挂饱和的</b>。画的时候把 C-2 那条链<b>折一下</b>，C-1 那条画直，<b>图就替你把这句话说了</b>。',
+  src2:'Biochemie, p180 图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p180_phospholipid_head_and_tail.jpg',
+  t:'头和尾 —— 速背 16 第 ⑤ 步说的就是这张（书 p180 图式）',
+  cap:'<b>这张是「画」，而且它是这张卡上最该被临摹的一张</b>：<b>amphipathy 这个概念，它用两个大括号就说完了</b>。'
+    + '<br><br><b>⚠ 书这一张是横着画的</b>，甘油三个碳从左到右是 <b>3 · 2 · 1</b>（碳号印在碳旁边），跟上面那张三酰甘油竖着画正好转了九十度。<b>你自己画的时候竖着横着都行，位置关系一样</b>；但<b>他把书摊开，你要认得出这是同一个骨架</b>。'
+    + '<br><br><b>图下面那两个虚线大括号，就是这张图的全部</b>。译过来是：<b>左边 ＝ 可电离的 · 极性的 · 亲水的「头」</b>；<b>右边 ＝ 不可电离的 · 非极性的 · 疏水的「尾」</b>。<b>「头」和「尾」这两个字是书自己用的，加了引号，所以你说 head 和 tail 是在说书的话。</b>'
+    + '<br><br><b>画的顺序（三步）</b>：'
+    + '<br>① 先画磷脂：<b>R–O–P(=O)(O⁻)–O–CH₂–CH–CH₂–</b>，两个 <b>–O–C(=O)–</b> 接出两条锯齿链，<b>其中一条中间打个折</b>。'
+    + '<br>② <b>在甘油＋磷酸＋R 外面画一个大括号，写 polar hydrophilic head。</b>'
+    + '<br>③ <b>在两条链外面画另一个大括号，写 nonpolar hydrophobic tail。</b><b>这两笔才是他要的答案，前面那些原子只是载体。</b>'
+    + '<br><br><b>边画边说的三句</b>：“A phospholipid shows <b>two clearly different regions</b>. The fatty acids are nonpolar and hydrophobic. The glycerol, the phosphate and the head group are polar and hydrophilic.”'
+    + '<br>“<b>The textbook calls this dual character amphipathy</b>, and says phospholipids are amphipathic compounds.”'
+    + '<br>“Some head groups, <b>choline, ethanolamine and serine</b>, can carry an electric charge at physiological pH, and the textbook says that matters greatly for how the membrane works.”'
+    + '<br><br>⚠ <b>画完顺手再画一笔，把这张卡的落点带出来</b>：两排磷脂<b>尾对尾</b>，头朝两边的水，旁边写 <b>3.5–4.0 nm</b>。<b>从「一个分子两头不一样」到「一张膜」，只隔这一笔。</b>',
+  src2:'Biochemie, p180 图式（无图号）· 300 dpi 原图裁切，未修改（图上两个捷克语标注保留，译文在正文里）'},
+
+ {k:'认',
+  src:'img/p180_phospholipid_head_groups.jpg',
+  t:'六个头基 —— 换的只是那个 R（书 p180 图式）',
+  cap:'<b>这张是「认」，它是上一张里那个 R 的全部取值。</b>书列的六个就是这六个，<b>没有第七个</b>：'
+    + '<br>· <b>fosfatidylethanolamin（PE）</b>：R ＝ –O–CH₂CH₂N⁺H₃'
+    + '<br>· <b>fosfatidylcholin（PC）</b>：R ＝ –O–CH₂CH₂N⁺(CH₃)₃'
+    + '<br>· <b>fosfatidylserin（PS）</b>：R ＝ –O–CH₂CH(COO⁻)NH₃⁺'
+    + '<br>· <b>fosfatidylglycerol（PG）</b>：R ＝ –O–CH₂CH(OH)CH₂OH'
+    + '<br>· <b>difosfatidylglycerol（DPG）</b>：两个磷脂酸接在同一个甘油上'
+    + '<br>· <b>fosfatidylinositol（PI）</b>：R ＝ 一个六元环，环上五个 OH'
+    + '<br><br><b>要看出来的两件事</b>：'
+    + '<br>① <b>PE 和 PC 只差三个甲基</b>。图上一眼看得出来：N⁺H₃ 对 N⁺(CH₃)₃。<b>「这两个有什么区别」是很好答的一刀。</b>'
+    + '<br>② <b>PS 那一行多一个 COO⁻</b>，PI 那一行是个糖环。<b>头基带不带净电荷，就是从这些多出来的基团来的。</b>'
+    + '<br><br><b>摆到面前时说的两句</b>：“They all share <b>phosphatidic acid</b>. What differs is only the group on the phosphate.”'
+    + '<br>“<b>Diphosphatidylglycerol</b> is the odd one. It is two phosphatidic acids on one glycerol, and it sits in the <b>inner mitochondrial membrane</b>.”'
+    + '<br><br>⚠ <b>cardiolipin 这个俗名不是这本书的</b>，DPG 才是它印的名字。说 cardiolipin 要带一句 generally。'
+    + '<br>⚠ <b>哪个两性离子、哪个净负电，书没说</b>。书只写了「有些能带电」。<b>要往下说就明说是 general：PC 和 PE 两性离子，PS、PI、PG 净负电。</b>',
+  src2:'Biochemie, p180 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语名称保留，缩写 PE/PC/PS/PG/DPG/PI 是书印的）'},
+
+ {k:'认',
+  src:'img/p181_sphingosine_ceramide_sphingomyelin.jpg',
+  t:'鞘脂三连 —— 先有 ceramide，再分叉（书 p181 图式）',
+  cap:'<b>这张是「认」，而且它把速背 11 那一整格的顺序摆出来了。</b>三格从左到右：<b>sfingosin → ceramid（N-acylsfingosin）→ sfingomyelin</b>，<b>括号里那个 N-acyl 是书自己加的注</b>。'
+    + '<br><br><b>要盯住的就是第二格那一处</b>：sfingosin 身上有<b>两个 OH 和一个 NH₂</b>。脂肪酸接上来的时候，<b>接的是 NH₂ 不是 OH</b>——图上写的是 <b>HC–NH–C(=O)–R</b>。<b>那是酰胺键，不是酯键，而且是这一整章唯一的酰胺键。</b>'
+    + '<br><br><b>第三格再加一样</b>：最下面那个 <b>CH₂OH</b> 上接了 <b>–O–P(O⁻)(=O)–O–CH₂CH₂N⁺(CH₃)₃</b>，<b>也就是磷酰胆碱，这回是酯键</b>。加上去就是<b>鞘磷脂</b>。'
+    + '<br><br><b>摆到面前时说的三句</b>：“<b>Sphingosine is an unsaturated eighteen-carbon amino-dialcohol.</b> The fatty acid binds through the <b>amino</b> group, not a hydroxyl, so the bond is an <b>amide</b>.”'
+    + '<br>“That compound is a <b>ceramide</b>, and every sphingolipid is built from it.”'
+    + '<br>“Add <b>phosphorylcholine</b> on the terminal hydroxyl and it is <b>sphingomyelin</b>, in the membranes of nerve and brain, the <b>myelin sheaths</b>. Add a <b>sugar</b> there instead and it is a glycosphingolipid.”'
+    + '<br><br>⚠ <b>第三格跟磷脂酰胆碱长得很像，但骨架不是甘油。</b><b>他把这两张图摆一起问「区别在哪」，答案是骨架和那根酰胺键，不是头基。</b>'
+    + '<br>⚠ <b>糖鞘脂那一支书没画结构</b>：一个糖是<b>脑苷脂</b>，一串糖并且<b>一定含至少一个唾液酸</b>的是<b>神经节苷脂</b>。<b>没有图就不要硬画，用嘴补。</b>',
+  src2:'Biochemie, p181 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语名称保留）'},
+
+ {k:'认',
+  src:'img/p183_terpene_classes_tree.jpg',
+  t:'萜类是按生物合成分级的 —— 一棵树（书 p183 图式）',
+  cap:'<b>这张是「认」，它证明速背 12 那句「分组一律来自生物合成」不是空话。</b>树是<b>从上往下</b>长的，每往下一层就多五个碳。'
+    + '<br><br><b>从上往下认一遍</b>：'
+    + '<br>· 顶上 <b>isopentenylpyrofosfát（IPP）⇌ dimethylallylpyrofosfát（DMAPP）</b>，两个都是 <b>C₅</b>，方框写 <b>hemiterpeny</b>。'
+    + '<br>· 两个 C₅ 合起来 → <b>geranyl-PP，C₁₀ ＝ monoterpeny</b>。'
+    + '<br>· 再加一个 IPP → <b>farnesyl-PP，C₁₅ ＝ seskviterpeny</b>。'
+    + '<br>· 再加一个 IPP → <b>digeranyl-PP，C₂₀ ＝ diterpeny</b>；<b>或者</b>两个 farnesyl 拼起来 → <b>skvalen，C₃₀ ＝ triterpeny</b>。'
+    + '<br>· 两个 digeranyl 拼起来 → <b>fytoen，C₄₀ ＝ tetraterpeny</b>。'
+    + '<br><br><b>摆到面前时说的两句</b>：“<b>Practically all natural derived lipids are terpenes.</b> They count as lipids because of their <b>hydrophobic character</b>, not because they contain fatty acids. They contain none.”'
+    + '<br>“The subgroups follow from the <b>biosynthesis</b>. The unit is <b>isoprene</b>, five carbons, and each class is a whole number of those units.”'
+    + '<br><br><b>这棵树顺手挂住了四道别的题</b>：<b>C₃₀ 的 skvalen 是胆固醇的前体</b>（下一张图就是甾体）；<b>C₄₀ 的 tetraterpeny 是类胡萝卜素，β-胡萝卜素对称裂解成两分子视黄醇，那就是维生素 A</b>；<b>phytol 那一支给了叶绿素和维生素 K₁</b>；<b>同一类的链还挂在维生素 E 和辅酶 Q 上</b>。'
+    + '<br><br>⚠ <b>辅酶 Q 从这里走到卡 25，dolichol phosphate 从这里走到卡 13。</b><b>他问「脂跟你做的蛋白有什么关系」，dolichol 是现成的桥。</b>',
+  src2:'Biochemie, p183 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语类名保留）'},
+
+ {k:'画',
+  src:'img/p185_sterane_skeleton.jpg',
+  t:'甾烷骨架 —— 十七个碳都编好号了（书 p185 图式）',
+  cap:'<b>这张是「画」，而且它可能是这张卡上最实用的一张</b>：<b>所有甾体共用的骨架，十七个碳的编号一个不少地印在上面</b>，图底下的捷克语 <b>steran</b> 就是 <b>sterane</b>。'
+    + '<br><br><b>画的顺序（四步）</b>：'
+    + '<br>① <b>先画三个六元环，并排稠合</b>（共用边），从左到右就是 <b>A · B · C</b> 环。'
+    + '<br>② <b>在最右边那个环上再稠一个五元环</b>，那是 <b>D</b> 环。<b>三个六一个五，这一点画错就全错。</b>'
+    + '<br>③ 编号：<b>从左下角开始逆时针数 1 到 10 走完 A 环和两个稠合碳</b>，接着 11 到 14 走 C 环，15 到 17 走 D 环。<b>要记的其实只有两个位置：C-3 在 A 环左下，C-17 在 D 环右上。</b>'
+    + '<br>④ <b>在 C-3 上写 OH，在 C-17 上接一条八到十个碳的链</b>。<b>这两笔一加，甾烷就变成固醇。</b>'
+    + '<br><br><b>边画边说的三句</b>：“<b>The common structural basis of all steroids is a skeleton of fused alicyclic rings called sterane.</b> Three six-membered rings and one five-membered.”'
+    + '<br>“A hydrocarbon chain of <b>eight to ten carbons at position seventeen</b> and a <b>hydroxyl at position three</b> mark the steroids called <b>sterols</b>.”'
+    + '<br>“The most important one in animals is <b>cholesterol</b>.”'
+    + '<br><br>⚠ <b>会编号，就能答「维生素 D 是怎么来的」</b>：书说紫外线<b>打开 B 环上 C-9 和 C-10 之间的键</b>，并发生双键重排，7-脱氢胆固醇就变成胆钙化醇。<b>指着图上的 9 和 10 说这句话，比背名字有力得多。</b>',
+  src2:'Biochemie, p185 图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p185_cholesterol_progesterone_testosterone.jpg',
+  t:'胆固醇和从它来的两个激素 —— 同一个骨架（书 p185 图式）',
+  cap:'<b>这张是「认」，三个分子摆在一起，说的是同一件事：骨架没变，变的只是挂件。</b>上面是 <b>cholesterol</b>，下面左边 <b>progesteron</b>、右边 <b>testosteron</b>。'
+    + '<br><br><b>看图只要认三处</b>：'
+    + '<br>① <b>C-3</b>：胆固醇是 <b>HO–</b>，两个激素都变成了 <b>O＝</b>。'
+    + '<br>② <b>C-17</b>：胆固醇挂着一条<b>长烃链</b>，孕酮只剩一个<b>乙酰基</b>，睾酮只剩一个 <b>OH</b>。<b>「前体变激素」在图上就是这条链被剪短。</b>'
+    + '<br>③ <b>双键</b>：三个分子都有一根，位置不同。'
+    + '<br><br><b>摆到面前时说的两句</b>：“Cholesterol has two roles. <b>Structural</b>, as zero to forty per cent of the membrane lipids, and <b>precursor</b>, of the bile acids, the sex hormones and vitamin D.”'
+    + '<br>“Because the steroid skeleton is <b>relatively inflexible</b>, the textbook says it contributes very significantly to <b>membrane rigidity</b>.”'
+    + '<br><br>⚠ <b>书只说了「增加刚性」这一半。</b>通用的说法是<b>流动性缓冲剂</b>：在相变温度<b>以下</b>它做的是相反的事，挡着链不让它们排紧。<b>给第二层要明说来源。</b>'
+    + '<br>⚠ <b>这张图还顺手回答了一道听起来不像生化的题</b>：“Why can steroid hormones act inside the cell while peptide hormones stop at the surface?” <b>因为它们是脂——按定义就溶得进膜。</b>书 p225 说它们进细胞、结合受体蛋白、被带进核、结合 DNA 的特定位点。',
+  src2:'Biochemie, p185 图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p195_fatty_acid_activation_thiokinase.jpg',
+  t:'烧脂肪之前要先点火 —— 活化那一步（书 p195 图式）',
+  cap:'<b>这张是「认」。</b>下面那行主反应是：<b>游离脂肪酸 ＋ ATP ＋ CoASH →（thiokinasa）→ 酰基-CoA ＋ AMP</b>；上面用虚线框出来的是<b>中间体 acyl-AMP</b>，左边还标着放出 <b>PPᵢ</b>。图上两个捷克语标注是 <b>volná m.k. ＝ 游离脂肪酸</b>、<b>aktivovaná m.k. ＝ 活化的脂肪酸</b>。'
+    + '<br><br><b>看图要说的两句</b>：“A fatty acid cannot be oxidised as it is. It must first be <b>activated</b> to its <b>coenzyme A thioester</b>, and that costs ATP.”'
+    + '<br>“The ATP is split to <b>AMP and pyrophosphate</b>, not to ADP. So the step really costs <b>two</b> high-energy bonds, and hydrolysis of the pyrophosphate pulls it forward.”'
+    + '<br><br>⚠ <b>「costs two」这一句是这张图最值钱的地方</b>，而且它是算账时最常漏的一笔。<b>他问「一个棕榈酸净赚多少」，先说活化花掉两个高能键，再说后面赚回来的。</b>'
+    + '<br>⚠ <b>活化在胞质，β-氧化在基质</b>——中间要过线粒体内膜，<b>通用的答案是肉碱穿梭（carnitine shuttle）</b>。<b>书没画这一步，说的时候带 generally。</b>',
+  src2:'Biochemie, p195 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语标注保留）'},
+
+ {k:'认',
+  src:'img/p196_beta_oxidation_four_steps.jpg',
+  t:'β-氧化四步 —— 而且书把那个酶名印错了（书 p196 图式）',
+  cap:'<b>这张是「认」，它是「相邻考点」里 β-氧化那一条的原件。</b>四步左边的捷克语标题就是四个动作：<b>A. Dehydrogenace ＝ 脱氢 · B. Hydratace ＝ 加水 · C. Dehydrogenace ＝ 再脱氢 · D. Thiolytické štěpení ＝ 硫解</b>。'
+    + '<br><br><b>四步的酶名印在右边，是通用写法</b>：<b>acyl-CoA dehydrogenasa（FAD）· enoyl-CoA hydrasa · β-hydroxyacyl-CoA dehydrogenasa（NAD⁺）· β-ketokinasa</b>。'
+    + '<br><br><b>⚠ 最后那个名字是错的，而且错得很有用。</b><b>书印的是 β-ketokinasa，正确的是 β-ketothiolase（硫解酶）</b>。<b>kinase 是转移磷酸的酶，而这一步根本不碰磷酸，它是用 CoA 的硫把链切开。</b><b>他要是照书问，你可以说「书上这个名字应该是 thiolase，这一步是硫解不是磷酸化」——这是用书的化学反驳书的排字，很稳。</b>'
+    + '<br><br><b>图上还印着两条不显眼的括注，都值一分</b>：第一步<b>只产生 trans 异构体</b>；第二步<b>只接受 trans，而且只产生 L-异构体</b>；第三步<b>只接受 L-</b>。<b>这三句连起来就是「为什么天然的 cis 不饱和脂肪酸需要额外的异构酶」。</b>'
+    + '<br><br><b>看图要说的三句</b>：“Four steps, and the pattern is <b>oxidise, hydrate, oxidise, cut</b>. Each round shortens the chain by <b>two</b> carbons and gives one <b>FADH₂</b>, one <b>NADH</b> and one <b>acetyl-CoA</b>.”'
+    + '<br>“It is called <b>beta</b>-oxidation because the carbon that gets oxidised is the <b>beta</b> carbon, the third one counting the carboxyl as one.”'
+    + '<br>“The enzymes accept only <b>trans</b> double bonds, but natural unsaturated fatty acids are <b>cis</b>, so an <b>isomerase</b> and an <b>epimerase</b> have to step in.”'
+    + '<br><br>⚠ <b>不要把 β-氧化说成「循环」。</b>它是<b>螺旋</b>：每转一圈链就短两个碳，不回到起点。<b>这一点跟柠檬酸循环正好相反，而那正是它容易被拿来对比的原因。</b>',
+  src2:'Biochemie, p196 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语步骤名和酶名保留）'},
+
+ {k:'画',
+  src:'img/p198_obr81_lipid_bilayer_zones.jpg',
+  t:'双层里的三个带 —— 胆固醇就插在那儿（书 Obr. 8.1）',
+  cap:'<b>这张是「画」，它是这张卡的落点</b>：从「一个分子两头不一样」走到「一张膜」。'
+    + '<br><br><b>图注原话译过来是</b>：<b>带小头的分子是磷脂；有甾烷骨架、骨架朝着极性区的分子是胆固醇；I 是极性区，II 是非极性的刚性区，III 是非极性的流动区。</b><b>左边那三条虚线标的就是 I · II · III。</b>'
+    + '<br><br><b>要看出来的一件事，而且它是这张图独有的</b>：<b>胆固醇不是横躺在膜里的，是竖着插进去的</b>，它那个<b>硬的环骨架顶在靠近头基的那一带（II 区）</b>，把链的上半段<b>按住</b>；而<b>膜的正中间（III 区）没有胆固醇，所以是流动的</b>。<b>「胆固醇为什么增加刚性」的答案就是这个位置。</b>'
+    + '<br><br><b>画的顺序（五步）</b>：'
+    + '<br>① <b>画两排小圆圈，头对着外、尾对着中间</b>，两排<b>尾对尾</b>。'
+    + '<br>② 每个圆圈下面画<b>两条尾巴</b>，有些画直、有些画折。'
+    + '<br>③ 在膜的两侧各标一次<b>水</b>，中间写 <b>3.5–4.0 nm</b>。'
+    + '<br>④ <b>在链的上半段插几个短而硬的四环骨架</b>，标 <b>cholesterol</b>。'
+    + '<br>⑤ 在左边标出三条带：<b>I 极性 · II 非极性刚性 · III 非极性流动</b>。'
+    + '<br><br><b>边画边说的三句</b>：“Each monolayer is predominantly <b>complex lipids</b>, hydrophobic tails in close contact and hydrophilic heads likewise, the two layers <b>tail to tail</b>.”'
+    + '<br>“So the bilayer has <b>a markedly nonpolar middle and two polar surfaces</b>, and it is <b>three and a half to four nanometres</b> thick.”'
+    + '<br>“<b>The interactions of heads and tails are exclusively noncovalent.</b> That is why a detergent can take a membrane apart without breaking a single bond.”'
+    + '<br><br>⚠ <b>最后那一句是这张卡跟她自己工作的接口。</b>纯化蛋白第一步就是拆这层膜；<b>拆得掉，正是因为撑着它的力全是非共价的</b>。'
+    + '<br>⚠ <b>书还给了三条可以一句一条抛出去的</b>：① 两层的脂组成<b>不同</b>，脑苷脂和神经节苷脂一般在<b>外</b>层；② <b>翻转机制（flip-flop）</b>能让脂在两层间交换，<b>书自己说它的生物学意义目前还没有确切定义</b>——引这句很安全；③ 流动性由<b>链的饱和度、链长和胆固醇含量</b>决定，<b>三样越高流动性越低</b>。',
+  src2:'Biochemie, Obr. 8.1, p198 · 300 dpi 原图裁切，未修改（图注捷克语保留）'}
+],
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[

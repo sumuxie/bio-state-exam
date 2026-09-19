@@ -230,6 +230,113 @@ why:{
   say:'“Below that we are asking how a photon becomes a separated charge across a membrane in a few picoseconds, and that is photophysics and physical chemistry rather than biochemistry. The textbook draws the line in the same place. It says the primary events belong to the <b>physics</b> of photosynthesis, and that biochemistry starts where the redox reactions start.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p203_obr91_chloroplast.jpg',
+  t:'叶绿体 —— 左边电镜照片、右边结构图（书 Obr. 9.1）',
+  cap:'<b>这张是「画」，而且它一张就把「光反应在哪、暗反应在哪、质子往哪去」三件事一起答完。</b>'
+    + '左边 a) 是玉米叶绿体的电镜照片，右边 b) 是同一个东西的结构图，<b>两边的引线指的是同一批名字</b>。'
+    + '<br><br><b>图上七个引线标注，从上往下</b>：外膜 · 基质类囊体 · 内膜 · 膜间隙 · <b>granum</b>（就是那一摞压扁的饼）· 基质 · <b>类囊体内腔</b>（右下角那一条，指向饼的里面）。'
+    + '<br>⚠ <b>granum 这个词全书正文一次都没出现，只印在这张图上</b>，所以说 “the textbook labels the grana in its diagram of a maize chloroplast”。'
+    + '<br><br><b>画的顺序（五步，边画边说）</b>：'
+    + '<br>① 一个椭圆，外面画<b>两条贴着的线</b>——外膜和内膜，缝里写 <b>intermembrane space</b>。'
+    + '<br>② 椭圆内部的空白写 <b>stroma</b>，旁边补一句「rubisco 和 Calvin 循环在这儿」。'
+    + '<br>③ 里面画<b>两摞压扁的饼</b>，每摞标 <b>granum</b>，说明<b>一片就是一个 thylakoid</b>。'
+    + '<br>④ 用长条把两摞连起来，标 <b>stroma thylakoid</b>。'
+    + '<br>⑤ 在一片饼的里面写 <b>lumen</b>，画一根<b>向内</b>的箭头写 <b>H⁺</b>。'
+    + '<br><br><b>边画边说的三句</b>：“A chloroplast has three membranes and three spaces. The outer and inner membranes enclose the intermembrane space.”'
+    + '<br>“Inside them is the <b>stroma</b>, and that is where rubisco and the Calvin cycle sit.”'
+    + '<br>“The third membrane is the <b>thylakoid</b>. Thylakoids are closed flattened sacs, stacked into <b>grana</b> and joined by stroma thylakoids. Protons are pumped into the thylakoid <b>lumen</b>, so the gradient is across the thylakoid membrane and not across the inner membrane.”'
+    + '<br><br>⚠ 图上的引线标注是捷克语，但它们逐个对着上面那七个名字，位置一看就对得上——<b>不用会读，会指就行</b>。',
+  src2:'Biochemie, Obr. 9.1, p203 · 300 dpi 原图裁切，未修改（捷克图注在框外）'},
+
+ {k:'画',
+  src:'img/p207_obr95_z_scheme.jpg',
+  t:'Z 图 —— 书自己画的那一个小方框（书 Obr. 9.5 右上角的插图）',
+  cap:'<b>这张是「画」，而且它是这道题最值钱的一张。</b>它是 Obr. 9.5 右上角那个圆角方框，书把整条光反应压成了一个字母 Z。'
+    + '<br><br><b>图上只有五样东西</b>：左边两根平行的竖轴，左轴标 <b>ΔE</b> 箭头<b>朝下</b>、右轴标 <b>ΔG</b> 箭头<b>朝上</b>；左下角 <b>H₂O</b>；两根<b>向上的实心箭头</b>，箭头下面各有一个方框写 <b>PS II</b> 和 <b>PS I</b>；两段<b>向右下的虚线</b>；右上角 <b>NADP⁺</b>。'
+    + '<br><b>两根轴的方向就是这张图的全部窍门</b>：ΔE 朝下，意思是<b>越往下电位越正、越想抢电子</b>；ΔG 朝上，意思是<b>越往上能量越高</b>。所以水待在左下角——<b>全生物界最不肯交出电子的地方</b>。'
+    + '<br><br><b>画的顺序（六步，边画边说）</b>：'
+    + '<br>① 一条<b>竖轴</b>，下端写 <b>oxidants / ＋</b>，上端写 <b>reductants / −</b>，轴名 <b>E°′</b>。'
+    + '<br>② 左下角一个点，标 <b>H₂O, ＋820 mV</b>。'
+    + '<br>③ 从它<b>向上</b>一根实心竖箭头，旁边写 <b>hν</b>，落点写 <b>P680*</b>，底下框住写 <b>PS II</b>。'
+    + '<br>④ 一条<b>向右下的虚线</b>，途中标 <b>PQ → cyt b₆f → PC</b>，落到中间高度写 <b>P700</b>。'
+    + '<br>⑤ 再一根<b>向上</b>的实心箭头写 <b>hν</b>，落点 <b>P700*</b>，底下框住写 <b>PS I</b>。'
+    + '<br>⑥ 再一条<b>向右下的虚线</b>，标 <b>A₀ → A₁ → FeS → Fd → FNR</b>，终点写 <b>NADP⁺, −320 mV</b>。'
+    + '<br><b>画完把笔放下说</b>：“The two vertical arrows are the two photons. Everything else runs downhill.”'
+    + '<br><br>⚠ <b>书这张插图上没有数字，也没有载体的名字。</b>＋820 和 −320 来自正文和书自己的 table 6.2（<span class="pg">p135</span>），PQ、cyt b₆f、PC、Fd 这些名字来自同一张 Obr. 9.5 的主图。<b>你画的那张比书的插图更全，这是对的</b>——被问「书上哪来的」，就说数字在第 135 页的表里、载体名字在同一张图的下半部分。',
+  src2:'Biochemie, Obr. 9.5（右上角插图）, p207 · 500 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p207_obr95_thylakoid_membrane.jpg',
+  t:'类囊体膜全景 —— 两个光系统、一条链、一台合酶（书 Obr. 9.5）',
+  cap:'<b>这张是「认」。</b>他把这张图摆过来问「这是什么」，答：“This is the thylakoid membrane, with both photosystems, the electron carriers between them, and the ATP synthase.”'
+    + '<br><br><b>从左往右读，一次读完整条链</b>：最左边 <b>2H₂O → 4H⁺ ＋ O₂</b>，旁边那三个字母 <b>OEC</b> 就是放氧复合体；往上 <b>P680</b>、<b>Pheo</b>、<b>Q<sub>A</sub></b>、<b>Q<sub>B</sub></b>，框住的是 <b>PS II</b>；然后 <b>4QH₂</b> 走到框住的 <b>cytochrome b₆f</b>；出来是 <b>PC</b>（那个在膜内侧滚动的小球）；接着框住的 <b>PS I</b> 里有 <b>P700 · A₀ · A₁ · FeS</b>；再往上 <b>Fd</b>、<b>FAD</b>，标着 <b>Fd–NADP⁺ reductase</b>，出 <b>2NADPH</b>；最右边那个蘑菇是合酶，柄标 <b>CF₀</b>、头标 <b>CF₁</b>，标注写着 <b>ATP synthase</b>，旁边 <b>3H⁺</b> 换 <b>ATP</b>。'
+    + '<br><b>左上角还有一个小图</b>，画的是整个叶绿体，标着 stroma 和 thylakoid——书自己在提醒你这条链长在哪一层膜上。'
+    + '<br><br><b>看到图要说的那一段</b>：“Water is split on the lumen side, so the protons are released inside. The electrons go through photosystem two, the quinone pool, the cytochrome b-six-f complex and plastocyanin to photosystem one. From there they reach ferredoxin and the Fd to NADP reductase. That enzyme makes NADPH on the stroma side. The gradient drives the synthase, and the textbook prints three protons per ATP.”'
+    + '<br><br>⚠ <b>图上有两组对不上的数</b>：cyt b₆f 那一段印的是 <b>8H⁺ ＋ 4QH₂</b>（按 8 个电子画的），而同一张图左下角的 <b>2H₂O → 4H⁺ ＋ O₂</b> 只给 4 个电子。<b>两组差一个 2 倍，别混着引</b>——被追数字只引 <b>3H⁺/ATP</b> 和 <b>2H₂O → O₂</b>。'
+    + '<br>⚠ 图上标注用的是书的语言，但 <b>PS I · PS II · P680 · P700 · Fd · PC · OEC</b> 本来就是国际缩写，一模一样；细胞色素和合酶那两个长名字只是词尾不同，首几个字母加位置就够认出来。',
+  src2:'Biochemie, Obr. 9.5, p207 · 250 dpi 原图裁切，未修改（捷克图注在框外）'},
+
+ {k:'认',
+  src:'img/p205_obr93_chlorophyll_ab_spectra.jpg',
+  t:'叶绿素 a 和 b 的吸收光谱 —— 两个峰，中间一个洞（书 Obr. 9.3）',
+  cap:'<b>这张是「认」，而且它回答了一个听起来不像生化题的生化题：叶子为什么是绿的。</b>'
+    + '<br>左边是叶绿素 <b>a</b>，右边是叶绿素 <b>b</b>，横轴都是 <b>400 到 700 nm</b>，纵轴是相对吸收。'
+    + '<br><br><b>一眼要看出来的三件事</b>：'
+    + '<br>① <b>每条曲线都是两个峰</b>——一个在蓝紫区（400–470 之间），一个在红区（620–680 之间）。'
+    + '<br>② <b>中间 500 到 600 那一段几乎贴着零。</b>那段正是绿光，<b>没被吸收的光才是你看见的颜色</b>。'
+    + '<br>③ <b>两者的峰不在同一个位置</b>：a 的红峰更靠右（更接近 670），b 的红峰明显更靠左；蓝峰则反过来，b 的更靠右。书正文专门说了要注意这个差别。'
+    + '<br><br><b>看到图要说的那一段</b>：“Both chlorophylls absorb in two bands, one in the blue and one in the red. Between them, around five hundred to six hundred nanometres, they absorb almost nothing. That is the green light, and it is the light a leaf reflects. The two pigments have their maxima at different wavelengths, so together they cover more of the spectrum than either alone.”'
+    + '<br><br>⚠ <b>具体的峰值不要报数。</b>这张图的纵轴是相对单位，横轴刻度只有每 100 nm 一格——<b>能读出的是位置关系，不是精确波长</b>。他要数就说 “in the blue and in the red, and a is further to the red than b”，然后把图指给他。（LOGIC §11：类别之间的边界没有数，编一个是最危险的动作。）',
+  src2:'Biochemie, Obr. 9.3, p205 · 300 dpi 原图裁切，未修改（捷克图注在框外）'},
+
+ {k:'认',
+  src:'img/p206_obr94_pigment_spectra.jpg',
+  t:'四类色素叠在太阳光谱上 —— 辅助色素干什么用（书 Obr. 9.4）',
+  cap:'<b>这张是「认」，它接着上一张答同一个追问：既然叶绿素中间有个洞，那段光就浪费了吗。</b>'
+    + '<br><b>图上六条线</b>：<b>叶绿素 a</b>（点线）· <b>叶绿素 b</b>（虚线）· <b>类胡萝卜素</b> · <b>藻红蛋白</b> · <b>藻蓝蛋白</b>，再加最上面那条平缓的大弧——<b>那条是太阳辐射的光谱</b>，标注在右上角。'
+    + '<br><br><b>一眼要看出来的两件事</b>：'
+    + '<br>① <b>两条叶绿素曲线的谷，正好被类胡萝卜素和两个藻胆蛋白填上了。</b>类胡萝卜素占 450–500，藻红蛋白占 500–570，藻蓝蛋白占 600 上下。'
+    + '<br>② <b>叠起来，四类色素几乎盖满了 400 到 700 的整个可见区</b>——这就是书图注说的那句话。'
+    + '<br><br><b>看到图要说的那一段</b>：“Chlorophyll alone leaves a gap in the middle of the visible range. The accessory pigments fill it. Carotenoids absorb just above the blue band, and the phycobilins absorb in the green and the yellow. Together they cover almost the whole visible spectrum, and they pass the energy on to chlorophyll a.”'
+    + '<br><br><b>这张图还是一条现成的桥</b>：他问 “why more than one pigment?”，答案不是「为了好看」，是<b>太阳光谱在中间最强，而叶绿素恰恰在那儿不吸</b>——图上那条太阳曲线的顶点就落在叶绿素的谷里。',
+  src2:'Biochemie, Obr. 9.4, p206 · 300 dpi 原图裁切，未修改（捷克图注在框外）'},
+
+ {k:'画',
+  src:'img/p211_obr96_calvin_carboxylation.jpg',
+  t:'Calvin 循环的头四步 —— 她真正要画的那一段（书 Obr. 9.6 第一行）',
+  cap:'<b>这张是「画」。</b>整张 Obr. 9.6 有十三步，但<b>他让你画的时候要画的只有这一行</b>：固定和还原两个阶段，四步走完。'
+    + '<br><br><b>四步，每步的酶名图上都印着</b>：'
+    + '<br>① <b>ATP → ADP</b>，酶是 <b>phosphoribulokinase</b>，产物 <b>ribulose-1,5-bisphosphate（RuBP，5C）</b>。'
+    + '<br>② <b>CO₂ 进来</b>，酶是 <b>ribulose-bisphosphate carboxylase</b>（就是 rubisco），产物 <b>2 × 3-phosphoglycerate（3-PG，3C）</b>——图上把两个三碳画成上下叠着、中间一个加号。'
+    + '<br>③ <b>ATP → ADP</b>，酶是 <b>phosphoglycerate kinase</b>，产物 <b>1,3-bisphosphoglycerate</b>。'
+    + '<br>④ <b>NADPH → NADP⁺ ＋ Pᵢ</b>，酶是 <b>glyceraldehyde-3-phosphate dehydrogenase</b>，产物 <b>GAP（3C）</b>。'
+    + '<br><br><b>画的顺序（四步，边画边说）</b>：'
+    + '<br>① 横着写 <b>RuBP (5C)</b>，一支箭从外面进来，箭上写 <b>CO₂</b>、箭下写 <b>rubisco</b>，落点写 <b>2 × 3-PG (3C)</b>。'
+    + '<br>② 往右一箭，上面写 <b>ATP</b>、下面写 <b>kinase</b>。'
+    + '<br>③ 再往右一箭，上面写 <b>NADPH</b>，落点写 <b>GAP (3C)</b>。'
+    + '<br>④ 从 GAP 引一支箭<b>往下出去</b>，写 <b>F6P → glucose / starch / cellulose</b>，标上 <b>唯一离开循环的一支</b>。'
+    + '<br><b>边画边说的两句</b>：“Three carbons come in as CO₂, and three leave as triose. Everything else on the circle is bookkeeping to get the acceptor back.”'
+    + '<br>“The reduction half is glycolysis run backwards, the same two enzymes in the opposite direction, only with NADPH instead of NADH.”'
+    + '<br><br>⚠ <b>一个跟卡上说法对不上的地方，先知道再看图</b>：书把 <b>phosphoribulokinase 编成第 1 步</b>，所以图上<b>第一个 ATP 出现在羧化之前</b>。那一步其实是<b>再生阶段的最后一步</b>（把 Ru5P 变回 RuBP）。速背 17 的画法把这个 ATP 放在左半边的再生箭上——<b>两种画法都对，别被图上的编号绕进去</b>。',
+  src2:'Biochemie, Obr. 9.6（第一行）, p211 · 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p211_obr96_calvin_cycle.jpg',
+  t:'Calvin 循环全图 —— 十三步，但只认三件事（书 Obr. 9.6）',
+  cap:'<b>这张是「认」，而且它的用法是：他摆出来的时候你不要去读那十三步。</b>'
+    + '<br><b>只认三件事，二十秒说完</b>：'
+    + '<br>① <b>唯一进来的碳是第 2 步那个 CO₂</b>，进的酶是 rubisco。'
+    + '<br>② <b>唯一出去的是右上角写着「产物」的那一支</b>，从 GAP 拐出去。'
+    + '<br>③ <b>剩下的十步（编号 5 到 13）全是把受体拼回来</b>——图上那些酶名 <b>triosephosphate isomerase · aldolase · transketolase · fructose-bisphosphatase · sedoheptulose-bisphosphatase · phosphopentose epimerase · ribose-phosphate isomerase</b>，全部是重排，<b>没有一步再碰 CO₂</b>。'
+    + '<br><br><b>看到图要说的那一段</b>：“Only one arrow brings carbon in, and only one takes it out. All the rest is regeneration of the acceptor. The enzymes on the lower half are the same transketolase and aldolase reactions as in the pentose phosphate pathway, so I do not need a separate set of chemistry for them.”'
+    + '<br><br><b>为什么值得认</b>：这张图上的分子名字她在<b>糖酵解卡</b>和<b>碳水卡</b>里全见过——fructose-1,6-bisphosphate、dihydroxyacetone phosphate、erythrose-4-phosphate、ribose-5-phosphate。<b>他要是指着中间某个化合物问「这是什么」，答案在别的卡上，不在这张。</b>'
+    + '<br>⚠ 本图 200 dpi，十三步的小字能读但很密。<b>它不是拿来背的，是拿来在考场上认出「这就是那张 Calvin 图」的。</b>',
+  src2:'Biochemie, Obr. 9.6, p211 · 200 dpi 原图裁切，未修改（捷克图注在框外）'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What is photosynthesis?',

@@ -249,6 +249,60 @@ recog:[
  tail:'书给的例子：L-lactate + NAD⁺ ⇌ pyruvate + NADH，系统名 <b>L-lactate:NAD⁺-oxidoreductase</b>，通用名 <b>lactate dehydrogenase</b>，编号 <b>E.C.1.1.1.27</b>。四个数字分别是：大类 · 亚类（这里是伯醇的氧化）· 氢受体类型（烟酰胺辅酶）· 顺序号。<span class="pg">p041</span>'}
 ],
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'认',
+  src:'img/p035_obr216_cytochrome_p450_fold.jpg',
+  t:'一个酶分子长什么样 —— 而且辅基就画在里面（书 Obr. 2.16）',
+  cap:'<b>这张是「认」，而且它一张就把速背第 3 点那两个层次摆出来了。</b>'
+    + '书画的是<b>细胞色素 P450</b> 的三级结构：<b>那些圆柱是 α-螺旋</b>（A 到 L 是各段螺旋的编号），细线是把它们连起来的环。'
+    + '<b>中间那个打了阴影的圆盘就是血红素</b>——书的图注原话就是「血红素用阴影表示」。'
+    + '<br><br><b>看到图要说的那一段</b>：“This is the tertiary fold of an enzyme, cytochrome P four fifty. Most of what is drawn is the <b>polypeptide</b>. The hatched disc in the middle is the <b>haem</b>, and it is not made of amino acids at all. That is the point of the picture: many enzymes are a protein part <b>plus</b> a non-protein part.”'
+    + '<br>“The protein part on its own is the <b>apoenzyme</b>, the non-protein part is the <b>cofactor</b>, and the catalytically active complex of the two is the <b>holoenzyme</b>. A cofactor is either a <b>metal ion</b> or an organic molecule, and an organic one is called a <b>coenzyme</b>. Some enzymes carry both.”'
+    + '<br><br><b>这张图还顺手回答了「活性中心在哪」</b>：那个圆盘<b>埋在折叠出来的口袋里</b>，不在表面上。'
+    + '书 <span class="pg">p061</span> 写得很明确：活性中心在<b>三级结构</b>里只是相对小的一块，可是属于它的那些氨基酸<b>在一级结构上可以离得很远</b>。'
+    + '<b>这正是「为什么必须折叠」的正面答案</b>——不折叠，那几个残基就永远凑不到一起。'
+    + '<br>⚠ 图下面那行捷克图注的意思就是「细胞色素 P450 结构示意（血红素用阴影表示）」。',
+  src2:'Biochemie, Obr. 2.16, p035 · 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p044_nad_hydride.jpg',
+  t:'辅酶到底在干什么 —— 一个环收两个氢（书 p044）',
+  cap:'<b>这张是「认」，它回答速背第 6、7 点那一刀：辅酶不是催化剂，它是被搬来搬去的那个东西。</b>'
+    + '<br>左边是<b>氧化型的 NAD⁺</b>：环上的氮带正电。右边是<b>还原型的 NADH</b>：环上那个碳多挂了一个 <b>H</b>，正电没了，外面还放出一个 <b>H⁺</b>。'
+    + '书直接把总式印在下面：<code>NAD⁺ + 2 H ⇌ NADH + H⁺</code>。'
+    + '<br><b>两边拖着同一条尾巴</b>（核糖—两个磷酸—腺苷），<b>那条尾巴从头到尾一个原子都没变</b>——变的只有环上那一个位置。'
+    + '<br><br><b>看到图要说的那一段</b>：“A coenzyme is not a catalyst by itself. It behaves as a <b>second substrate</b> that carries something in and out. Here the <b>nicotinamide ring</b> takes up two hydrogens, keeps two electrons and one proton on the ring, and releases the other proton into solution. Everything else in the molecule, the ribose, the two phosphates and the adenosine, is only the <b>handle</b> the enzyme grips.”'
+    + '<br>“That is also why the textbook says cofactors are <b>heat stable</b> while the protein part is not. The chemistry sits on a small organic molecule. The protein only holds it in the right place and decides <b>which</b> substrate gets to react with it.”'
+    + '<br><br><b>紧还是松</b>（速背第 6 点）：结合得<b>紧</b>、跟着酶一起走的叫<b>辅基</b>——<b>上一张图里那个阴影圆盘就是一个</b>；'
+    + '结合得<b>松</b>、用完就扩散走的就是普通辅酶，<b>这一张里的就是</b>。两张图放在一起，这一格不用背也说得出来。',
+  src2:'Biochemie, p044（§3.2.1 烟酰胺辅酶那一节的反应式）· 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p059_ph_optimum_trypsin_pepsin.jpg',
+  t:'pH 为什么要紧 —— 书画了两条钟形曲线（书 p059 顶上，这张没印图号）',
+  cap:'<b>这张是「认」，它是速背第 13 点唯一的书证。</b>纵轴是<b>相对活性</b>，横轴是 <b>pH</b>。'
+    + '<br>左边那条标着 <b>Trypsin</b>，横轴刻度 6·8·10，<b>峰在 8 上下</b>；右边那条标着 <b>Pepsin</b>，横轴刻度 2·4·6，<b>峰在 2 上下</b>。'
+    + '<b>两条画在一起就是这一格的全部意思</b>：最适 pH 是每个酶自己的数，不是一个通用值。'
+    + '<br><br><b>看到图要说的那一段</b>：“Most enzymes show a <b>maximum</b> in activity against pH, and the pH at that maximum is called the <b>pH optimum</b>. The reason the textbook gives is the <b>acid-base character</b> of the enzyme molecule, above all of the part called the <b>active centre</b>. The dissociation of the substrate can depend on pH as well.”'
+    + '<br>“Pepsin works in the stomach and peaks near <b>two</b>. Trypsin works in the small intestine and peaks near <b>eight</b>. The textbook adds that the pH optimum <b>need not equal</b> the pH at which the enzyme has to work in the organism, and that pH is one of the tools the cell uses to <b>regulate</b> enzyme activity.”'
+    + '<br><br><b>为什么是钟形</b>（这一步书只给了结论，机制是通用的，说的时候标明）：活性中心要<b>两个方向相反的解离状态同时成立</b>——'
+    + '一个基团必须<b>已经</b>放掉质子，另一个必须<b>还带着</b>。两条相反的曲线相乘，中间就只剩一个峰。'
+    + '<b>机制一给，书那句「最适 pH 不一定等于体内 pH」就自动被解释了</b>：峰的位置由那两个基团的 pK<sub>a</sub> 定，跟细胞的 pH 没有必然联系。'
+    + '<br>⚠ <b>这张图书上没有编号</b>，就在 p059 正文的上方；右边那条的横轴标注扫得有点糊，是 <b>pH</b>。完整的 pH 那一套在横向卡 <b>pH</b>。',
+  src2:'Biochemie, p059 顶部（§3.4 的图，书上未编号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p061_obr36_reversible_inhibition.jpg',
+  t:'活性中心看不见，但抑制剂能把它的轮廓画出来（书 Obr. 3.6）',
+  cap:'<b>这张是「认」，它就是这道题落点（速背第 19 点）的图</b>：活性中心的证据不是照片，是<b>什么能结合、什么不能</b>。'
+    + '<br>三张小图从左到右是<b>非竞争性 · 竞争性 · 反竞争性</b>，每张右上角那个 <b>[I]</b> 加弯箭头表示抑制剂浓度越来越大。'
+    + '<b>对这道题只要认中间那一张</b>：竞争性抑制剂跟底物<b>抢同一个位点</b>，所以加足够多底物能把它挤掉，V<sub>max</sub> 还在；而<b>左边那张</b>的结合位点<b>不在活性中心</b>，所以加多少底物都没用。'
+    + '<br><br><b>看到图要说的那一句</b>：“You cannot see the active site directly, but you can <b>map</b> it. Test which substrate analogues bind and which do not, and whether raising the substrate concentration can displace them. A compound that can be outcompeted by substrate must be binding <b>in the same site</b>. One that cannot must be binding <b>somewhere else</b>. The pattern tells you what shape and which groups the site requires.”'
+    + '<br><br>三类怎么定义、Ki 是什么、书原话在哪一行，全在卡 <b>19</b>；这一格只借它做落点。',
+  src2:'Biochemie, Obr. 3.6, p061 · 300 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'定义类', gn:'这题名词密度很高，每一个都可能被单独拎出来。', items:[
