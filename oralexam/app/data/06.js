@@ -201,6 +201,87 @@ why:{
   say:'“Below that it is conformational energetics: which ring, which chair, which anomer is lowest in energy. That is physical chemistry rather than biochemistry.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p152_obr75a_fischer_haworth_chair.jpg',
+  t:'一张图四种画法：开链 · Fischer · Haworth · 椅式（书 Obr. 7.5a）',
+  cap:'<b>这张是「画」，而且它就是卷面那道题。</b>从左到右四格画的是<b>同一个分子</b>：① 开链的 Fischer 式（顶上是 <b>CHO</b>）；② 同一条链，右边那根方括号<b>就是 C-5 的氧伸过去连到 C-1</b>，成环的那一步；③ <b>Haworth</b> 式，碳上标了 1–6；④ <b>椅式</b>。后三格都是 α-D-glucopyranose。'
+    + '<br><br><b>画的顺序（六步，照这个练）</b>：'
+    + '<br>① <b>竖线，六个碳</b>，顶上写 <b>CHO</b>，底下写 <b>CH₂OH</b>，<b>把 1–6 标在碳旁边</b>——书这张图第二格就标了号，标了号他问「哪个是异头碳」你能指。'
+    + '<br>② C-2 到 C-5 每个碳一边写 <b>OH</b>、一边写 <b>H</b>，OH 按 <b>右 · 左 · 右 · 右</b>。开链画完。'
+    + '<br>③ 另起一个<b>平躺的六边形</b>，<b>后右角写 O</b>；O 右边那个角是 <b>C-1</b>，然后顺时针 C-2、C-3、C-4、C-5。'
+    + '<br>④ 按两条换算规则填：<b>刚才在右边的 → 画在环下</b>（C-2、C-4 的 OH 朝下），<b>在左边的 → 画在环上</b>（C-3 的 OH 朝上）。'
+    + '<br>⑤ <b>C-5 上面写 CH₂OH（C-6）</b>——D 系一律朝上。'
+    + '<br>⑥ 最后剩一个自由度，就是 C-1 的 OH：<b>朝下 = α，朝上 = β</b>。图上画的是 α。空位补 H。'
+    + '<br><br><b>看图时顺手数一件事，这一条把「异头碳」一次说清。</b>这张卡上 <b>anomeric（异头的）</b>这个词出现几十次，书却没给判据。判据是：<b>Haworth 那个环里，只有 C-1 同时连着两个氧</b>——一个是环上的 O，一个是它自己的 OH。<b>环里唯一连着两个氧的碳，就是异头碳。</b>不用背位置，数氧就行；果糖的 C-2 也是这么找出来的。'
+    + '<br><br>⚠ 第四格椅式<b>书只画不说</b>。被问就说：“The ring is really puckered, not flat. In the β form every bulky group is equatorial, and that is why β is the major form at equilibrium.” 说完补一句 generally——这是通用有机化学，不是书上的字。',
+  src2:'Biochemie, Obr. 7.5 a), p152 · 原图裁切，未修改（每一格下面的说明文字在框外）'},
+
+ {k:'画',
+  src:'img/p151_obr73_ring_closure.jpg',
+  t:'开链怎么变成环 —— 书 Obr. 7.3 的前半段',
+  cap:'<b>这张是「画」，画的是<u>那一根箭头</u>。</b>左边是开链的 Fischer 式；右边是同一条链<b>躺下来卷成马蹄形</b>，<b>C-5 的那个 HO 正好转到 C-1 的醛基旁边</b>。中间是<b>双箭头</b>——成环是可逆的，它一直在来回开合。'
+    + '<br><br><b>画的顺序（四步）</b>：'
+    + '<br>① 先照上一张把开链画好。'
+    + '<br>② 旁边把同一条链<b>摆成马蹄形</b>：C-1 的醛基在右上，C-5 在左，<b>让 C-5 的 OH 对着 C-1</b>。'
+    + '<br>③ <b>从 C-5 的氧上画一根弯箭头指到 C-1 的碳</b>——这一根就是这张图的全部内容。'
+    + '<br>④ 中间写 <b>⇌</b>，不要写单箭头。'
+    + '<br><br><b>边画边说的那两句</b>：“The carbonyl is very reactive, and the hydroxyl on carbon five is placed to reach it.” 和 “That gives an intramolecular hemiacetal, a carbon carrying both an OH and an OR. Carbon one is now asymmetric, so there are two ring forms.”'
+    + '<br><br><b>左上角那根小箭头指着醛基</b>：书在那里标的是「还原基团」。<b>「还原糖」这个词就是从这一个箭头来的</b>——能开回这个醛的糖才还原（速背 12）。'
+    + '<br><br>⚠ 本图<b>只裁了前半段</b>。书的原图右边还有 α 和 β 两个成品环，但那两个环的名字印在图的正当中，框不掉，所以那半张整个放弃了；<b>两个环看下面那张 Obr. 7.5b 的头两格。</b>',
+  src2:'Biochemie, Obr. 7.3, p151 · 原图左半裁切，未修改（图上的名称标注在框外）'},
+
+ {k:'认',
+  src:'img/p152_obr75b_pyranose_furanose_forms.jpg',
+  t:'同一个葡萄糖的五种形：六元 · 五元 · 开链（书 Obr. 7.5b）',
+  cap:'<b>这张是「认」。</b>五格从左到右是 <b>α-D-glucopyranose · β-D-glucopyranose · 开链 · α-D-glucofuranose · β-D-glucofuranose</b>，五格画的全是<b>同一个 D-glucose</b>。书把名字印在每一格下面，裁在框外了，所以<b>请按这个顺序记</b>。'
+    + '<br><br><b>一眼分 α 和 β</b>：只看<b>最右边那个碳（C-1）上的 OH</b>。<b>朝下是 α（第 1 格），朝上是 β（第 2 格）</b>，其余取代基两格一模一样。换句话说，<b>α 的异头 OH 跟 CH₂OH 在环的两侧，β 的跟它同侧</b>。'
+    + '<br><br><b>一眼分六元和五元</b>：数环上的角。<b>前两格是六边形 = pyranose</b>，<b>后两格是五边形 = furanose</b>。中间那格<b>环是开的</b>，右端露出一个连着双键氧的 C–H，那就是醛基。'
+    + '<br><br><b>摆到面前时说的两句</b>：“These are all the same sugar, D-glucose. The ring can close from the C-5 hydroxyl to give a pyranose or from the C-4 hydroxyl to give a furanose.” 中间那格是<b>桥</b>，顺手把变旋带出来：“The open chain in the middle is the route between the two anomers, which is why one pure anomer mutarotates to a mixture.”'
+    + '<br><br>⚠ <b>葡萄糖实际上几乎全是六元的</b>，书画出五元式只是为了说明同一个糖能围出几种环。真正常见的五元环是<b>果糖</b>（下面那张）和核酸里的<b>核糖</b>。',
+  src2:'Biochemie, Obr. 7.5 b), p152 · 原图裁切，未修改（五格下面的名称在框外）'},
+
+ {k:'认',
+  src:'img/p149p150_obr71_obr72_aldose_vs_ketose.jpg',
+  t:'醛糖和酮糖只差羰基站在哪个碳上 —— D-glucose 对 D-fructose（书 Obr. 7.1 ＋ Obr. 7.2）',
+  cap:'<b>这张是「认」。</b>左边是 <b>D-glucose</b>，从书的<b>醛糖表</b>（Obr. 7.1）里裁下来；右边是 <b>D-fructose</b>，从<b>酮糖表</b>（Obr. 7.2）里裁下来，两张原本印在相邻的两页上。<b>两条链碳数一样，下面三个碳的左右一模一样</b>，<b>差别只在最上面两个碳</b>：'
+    + '<br>· 葡萄糖：<b>C-1 是 CHO</b>（醛），C-2 是 HCOH，是个不对称碳。'
+    + '<br>· 果糖：<b>C-1 是 CH₂OH，C-2 是 C=O</b>（酮），C-2 不再是不对称碳。'
+    + '<br><br><b>所谓醛糖和酮糖，就是这一个羰基往下挪了一格。</b>挪下来的后果整张卡都在用：不对称碳少一个，所以<b>酮己糖只有 8 个而不是 16 个</b>；异头碳跟着羰基走，所以<b>果糖的 α/β 看 C-2</b>；C-5 的 OH 够到 C-2 只能围出五元环，所以<b>果糖给的是 furanose</b>。'
+    + '<br><br><b>他要你顺手画果糖时的顺序</b>：① 竖线六个碳；② 顶上写 <b>CH₂OH</b>，第二个碳写 <b>C=O</b>；③ C-3 的 OH 写<b>左</b>，C-4、C-5 写<b>右</b>；④ 底下写 <b>CH₂OH</b>。<b>跟葡萄糖比就一句话：把顶上的 CHO 换成 CH₂OH 加 C=O，下面三个碳照抄。</b>'
+    + '<br><br><b>要说的那一句</b>：“An aldose and a ketose differ only in where the carbonyl sits. In glucose it is the aldehyde on carbon one, in fructose the ketone on carbon two, and the rest of the chain is the same.”'
+    + '<br><br>⚠ 书那两张原图是<b>整张醛糖家谱和整张酮糖家谱</b>（从三碳糖一路分叉下来，就是 2ⁿ 那个数的来源）。<b>家谱上每个结构下面都印着名字，框不掉</b>，所以整张表没法收；这里只取了最该对照的两格并排放着，两格本身一个像素没改。',
+  src2:'Biochemie, Obr. 7.1（p149）＋ Obr. 7.2（p150）· 两处原图裁切后并排，未修改（表上的名称在框外）'},
+
+ {k:'画',
+  src:'img/p151_obr74_fructose_furanose.jpg',
+  t:'果糖成环，得到的是五元环 —— 书 Obr. 7.4',
+  cap:'<b>这张是「画」，对应速背 08。</b>左边是 D-fructose 的开链（<b>C-2 上那个 C=O</b>）；中间是链卷起来、<b>C-5 的 OH 转到 C-2 旁边</b>；右边就是围好的<b>五元环</b>。最右边那个小环是 <b>furan</b>——<b>furanose 这个名字就是从它来的</b>，跟葡萄糖那边的 pyran / pyranose 是同一种取名法。'
+    + '<br><br><b>画的顺序（五步）</b>：'
+    + '<br>① 画一个<b>平躺的五边形</b>，<b>后面正中写 O</b>。'
+    + '<br>② <b>右边那个角是 C-2，也就是异头碳</b>：<b>向上挂 CH₂OH（那是 C-1）</b>，另一边挂 <b>OH</b>；<b>这个 OH 朝哪边就是 α 还是 β</b>。'
+    + '<br>③ 从 C-2 数下去：C-3 在右下、C-4 在左下、C-5 在左；<b>C-5 向上挂 CH₂OH（C-6）</b>。'
+    + '<br>④ 填两个 OH，用的还是那两条换算规则：C-3 的 OH 朝<b>上</b>（开链里它在左边），C-4 的 OH 朝<b>下</b>（开链里在右边）。'
+    + '<br>⑤ 空位补 H。'
+    + '<br><br><b>边画边说</b>：“The ketone on carbon two reacts with the hydroxyl on carbon five. That closes a five-membered ring, a hemiketal, so fructose gives a furanose.”'
+    + '<br><br>⚠ <b>书自己加了一个限定词，说出来很值钱</b>：<b>游离</b>的果糖其实偏好六元的 pyranose；五元的 furanose 是它<b>结合</b>在蔗糖、菊糖和某些磷酸酯里时的样子。<b>两个环用的是同一条通式</b>：C-5 够到 C-2 围出五元，C-6 够到 C-2 围出六元。书这张图画的是 α 式。',
+  src2:'Biochemie, Obr. 7.4, p151 · 原图裁切，未修改（图注和两个名称在框外）'},
+
+ {k:'认',
+  src:'img/p154_obr77_methyl_glucoside.jpg',
+  t:'糖苷：异头碳上的 OH 换成了 OCH₃ —— 书 Obr. 7.7a',
+  cap:'<b>这张是「认」。</b>它跟前面几张只差一处：<b>右边那个碳（C-1，异头碳）上原来是 OH，这里成了 OCH₃</b>。这就是<b>甲基-α-D-吡喃葡萄糖苷</b>，葡萄糖在甲醇里加酸加热的产物。'
+    + '<br><br><b>三样要认出来的东西</b>：'
+    + '<br>· <b>C-1–O–CH₃ 这根键就是糖苷键</b>，更准确地说是 <b>O-糖苷键</b>。'
+    + '<br>· <b>CH₃ 那一头叫 aglycone</b>（配基）——糖以外的那部分一律叫这个名字。'
+    + '<br>· <b>半缩醛变成了缩醛</b>：C-1 仍然连着两个氧，但<b>没有游离的 OH 了</b>。'
+    + '<br><br><b>这一张图能一口气答三个问题</b>：糖苷为什么<b>不还原</b>、为什么<b>不变旋</b>、蔗糖为什么<b>两样都不行</b>。因为这三件事全都要 C-1 能开回醛，而 OCH₃ 把它锁死了（速背 12）。'
+    + '<br><br><b>要说的那一句</b>：“Replace the hemiacetal hydroxyl by an alkoxyl and it is an acetal, a glycoside. The bond from the anomeric carbon to that oxygen is the glycosidic bond, and the non-sugar part is the aglycone.”'
+    + '<br><br>⚠ 书的原图<b>还有一个 b)</b>，是同一个分子的 <b>β</b> 式（OCH₃ 朝上）。a) 和 b) 中间印着一行标注，框不掉，所以只收了 a)。<b>α 和 β 的对照看上面 Obr. 7.5b 的头两格。</b>',
+  src2:'Biochemie, Obr. 7.7 a), p154 · 原图裁切，未修改（中间那行标注在框外）'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'Draw glucose.',
