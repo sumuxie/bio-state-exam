@@ -177,6 +177,97 @@ why:{
   say:'“Below that we are asking why a reaction has a direction at all, and why free energy cannot be recovered once it is spent. That is thermodynamics rather than metabolic regulation.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'认',
+  src:'img/p063_obr37_allosteric_sigmoid.jpg',
+  t:'S 形曲线 —— 变构酶被抑制和被活化（书 Obr. 3.7）',
+  cap:'<b>这张是「认」，而且它是这张卡最值钱的一张。</b>他把它摆过来问「这是什么」，<b>八分答案一句话</b>：'
+    + '<br>“An allosteric enzyme. The curve is <b>sigmoid</b>, not hyperbolic, because of cooperativity. The two outer curves are the same enzyme with an inhibitor and with an activator.”'
+    + '<br><br><b>图上只有四样东西</b>：纵轴 <b>v</b>，横轴 <b>[A]</b>（底物浓度），纵轴上标出 <b>V<sub>lim</sub>/2</b>，横轴上标出 <b>S₀,₅</b>；三条曲线，右边那条标 <b>1</b>，左边那条标 <b>2</b>，中间那条不标号——<b>中间那条是没加东西的原样</b>。'
+    + '<br><b>1 ＝ 抑制</b>：曲线<b>右移</b>，要更多底物才到半速。<b>2 ＝ 活化</b>：曲线<b>左移</b>，更少底物就到半速。'
+    + '<br><br>⚠⚠ <b>这张图上没有 Km，只有 S₀,₅。</b>这不是印错——<b>变构酶不服从 Michaelis-Menten，所以「Km」这个符号在这里根本不成立</b>，书换了一个只表示「半速时的底物浓度」的记号。<b>他指着横轴问「这是不是 Km」，答 “No.”，然后给理由。</b>'
+    + '<br><br><b>S 形曲线的意义，一句话</b>：双曲线在任何浓度上都是「加一点底物、快一点点」；<b>S 形有一段是「加一点底物、快很多」——那一段就是可调的工作区</b>。<b>调控酶要的不是快，是陡。</b>'
+    + '<br><b>被追问就给这一层</b>：“Binding the first substrate molecule raises the affinity for the next ones. That is positive cooperativity. So over a narrow range of concentration a small change in substrate gives a much larger change in rate. Negative cooperativity is the opposite, and then the rate rises only very slowly.”'
+    + '<br><br><b>这张图把卡 02 接进了调控题，而且是书自己接的</b>——同一本书的第 56 页画双曲线，第 63 页画这一条，<b>两张图放一起就是「调控酶跟普通酶不是一回事」的全部证据</b>。'
+    + '<br>⚠ 图下那行捷克图注写的就是「变构酶的动力学行为：1 — 抑制，2 — 活化」，<b>已经裁在框外，不用读</b>。',
+  src2:'Biochemie, Obr. 3.7, p063 · 400 dpi 原图裁切，未修改（捷克图注在框外）'},
+
+ {k:'画',
+  src:'img/p062_feedback_inhibition.jpg',
+  t:'反馈抑制 —— 三笔画完的那张小图（书 p062）',
+  cap:'<b>这张是「画」，而且它是这道题里最容易得分的一笔</b>：三秒画完，说的却是整条原则。'
+    + '<br><b>图上就一行</b>：<code>A —E₁→ B —E₂→ C —E₃→ D —E₄→ E —E₅→ F</code>，然后<b>从最右边的 F 引一条长线绕回左边，指回第一根箭</b>。'
+    + '<br><br><b>画的顺序（三步，边画边说）</b>：'
+    + '<br>① 横着写 <b>A B C D E F</b> 六个字母，五根箭连起来，<b>每根箭上标 E₁ 到 E₅</b>。'
+    + '<br>② 从 <b>F</b> 往下拉一条线，向左绕回去，<b>指回 A→B 那根箭</b>。'
+    + '<br>③ 在 <b>E₁</b> 底下写 <b>allosteric</b>，在回线的末端画一个<b>横杠</b>表示抑制。'
+    + '<br><b>边画边说的两句</b>：“The end product of the sequence inhibits the <b>first</b> enzyme of the sequence, and that enzyme is allosteric.”'
+    + '<br>“Inhibiting the last enzyme would stop the product but leave every intermediate already built. Inhibiting the first means nothing is spent at all. The textbook says this minimises the demand for carbon, nitrogen and energy.”'
+    + '<br><br>⚠ <b>一处跟速背 06 不一样的细节，先知道</b>：<b>书这张图的回线末端画的是一个普通箭头，不是横杠。</b>横杠是通用的抑制记号，画上去更清楚、也不会被说错；<b>但你要是照书临摹，看到的是箭头。</b>两种都行，说清楚「这一条是抑制」就够。'
+    + '<br><br><b>书还给了第二个实例，可以顺手接上</b>：嘧啶核苷酸合成被控在第一步，<b>aspartate transcarbamoylase</b> 是变构酶，被整条路的终产物 <b>CTP</b> 抑制（<span class="pg">p072</span>）。<b>画完这张图再报这个名字，等于把规则和例子一起交了。</b>',
+  src2:'Biochemie, p062 · 400 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p219_obr101_acetylcoa_hub.jpg',
+  t:'acetyl-CoA 是个漏斗 —— 三进三出（书 Obr. 10.1）',
+  cap:'<b>这张是「画」，而且它十秒画完。</b>它回答的是「代谢池 / 节点是什么意思」——<b>节点就是很多条路都经过的那个点</b>。'
+    + '<br><br><b>图上三行</b>：最上一行三个词 <b>糖类 · 脂类 · 蛋白质</b>；第二行对应 <b>pyruvate · 脂肪酸 · 氨基酸</b>；三根箭往下汇到中间一个圈，圈里写 <b>Acetyl-CoA</b>；再从圈往下发三根箭到 <b>柠檬酸循环 ＋ 呼吸链</b>、<b>脂类</b>、<b>异戊二烯类</b>。'
+    + '<br><b>这些词的捷克拼法跟国际写法几乎一样</b>，中间那个圈更是直接印着 <b>Acetyl-CoA</b>，<b>整张图不用读捷克语也看得懂</b>。'
+    + '<br><br><b>画的顺序（三步，边画边说）</b>：'
+    + '<br>① 中间画一个<b>椭圆</b>，里面写 <b>acetyl-CoA</b>。'
+    + '<br>② 上面写三个来路：<b>carbohydrates → pyruvate</b>、<b>lipids → fatty acids</b>、<b>proteins → amino acids</b>，三根箭朝下汇进椭圆。'
+    + '<br>③ 下面写三个去路：<b>citric acid cycle ＋ respiratory chain</b>、<b>lipids</b>、<b>isoprenoids</b>，三根箭从椭圆朝下发出去。'
+    + '<br><b>边画边说的两句</b>：“Acetyl-CoA is the textbook’s worked example of a metabolic pool. It is made by the breakdown of sugars, lipids and proteins, and it is drawn off for the citric acid cycle, for fatty acids and lipids, and for isoprenoids and steroids.”'
+    + '<br>“Regulating a pathway really means holding the level of a node like this one where it is wanted. The concentration is low, of the order of millimoles per litre, but the turnover is very fast.”'
+    + '<br><br><b>书点名的调控节点一共五个</b>：<b>acetyl-CoA · pyruvate · 2-oxoglutarate · NADH 和 NADPH · ATP</b>。<b>这张图只画了第一个，另外四个报名字就行</b>（<span class="pg">p218 p219</span>）。'
+    + '<br>⚠ <b>注意「脂类」在图上出现了两次</b>——上面一次是来路，下面一次是去路。<b>这不是印错，这正是漏斗的意思</b>：同一类物质拆进来又装回去，中间过的是同一个池子。',
+  src2:'Biochemie, Obr. 10.1, p219 · 350 dpi 原图裁切，未修改（捷克图注在框外）'},
+
+ {k:'认',
+  src:'img/p175_glycogen_cascade.jpg',
+  t:'糖原磷酸化酶的放大级联 —— 共价修饰那一层长什么样（书 p175）',
+  cap:'<b>这张是「认」，它是三个层级里「共价修饰」那一层的实物图。</b>他摆出来问「这是什么」，答：'
+    + '<br>“The amplifying cascade that controls glycogen breakdown and glycogen synthesis at the same time. Every step is a phosphorylation, and one hormone molecule ends up switching a very large number of enzyme molecules.”'
+    + '<br><br><b>从右上角往下读，一条主线</b>：<b>adrenalin / glukagon</b> 两个激素名印在最右上 → 激活 <b>adenylate cyclase</b> → 把 <b>ATP</b> 变成 <b>3′,5′-cAMP</b>（<b>这个记号图上直接印着</b>）→ 激活底下那条长条里的 <b>protein kinase</b> → 它分两路：'
+    + '<br>① <b>往左</b>：把 <b>phosphorylase kinase b</b> 磷酸化成 <b>a</b>（花 ATP），a 再把 <b>phosphorylase b</b> 磷酸化成 <b>a</b> —— <b>phosphorylase a 才是能拆糖原的那个</b>，图中间写着 <b>glycogen → glucose-1-phosphate</b>。'
+    + '<br>② <b>往右</b>：把 <b>glycogen synthase I</b> 磷酸化成 <b>D</b> —— <b>磷酸化在这一侧是关掉</b>。'
+    + '<br><b>最下面那条长条是 protein phosphatase</b>，它把所有磷酸拆下来（图上那些圈住的 P），<b>把两边同时拨回原位</b>。'
+    + '<br><br>⚠⚠ <b>这张图的全部要害在「同一个信号，两个相反的结果」</b>：<b>磷酸化让分解的那个酶开、让合成的那个酶关</b>。'
+    + '<br><b>这句话要背下来</b>：“One and the same phosphorylation activates the degrading enzyme and inactivates the synthesising one. That is how the cell avoids running both directions at once, which would only burn ATP.”'
+    + '<br><br><b>三个可以主动留的口子</b>：① <b>放大</b>——每一级都是一个酶去改很多个下一级，所以叫 amplifying cascade。② <b>可逆</b>——磷酸酶把它全拆回去，所以信号会停。③ <b>a 和 b 这两个字母</b>：a 是磷酸化的活性形式，b 是去磷酸的；<b>合成酶那一侧反过来用 I 和 D</b>。'
+    + '<br>⚠ 图上的酶名用的是书的语言，但 <b>adenylate cyclase · protein kinase · phosphorylase · glycogen synthase · protein phosphatase</b> 这五个跟图上印的只差词尾，<b>位置＋首几个字母就足够认出来</b>。',
+  src2:'Biochemie, p175（无编号图）· 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p223_hormone_axis_feedback.jpg',
+  t:'激素轴 —— 反馈抑制在整只动物身上是什么样（书 p223）',
+  cap:'<b>这张是「认」，而且它跟那张 A→F 的小图是同一条原则的两个尺度。</b>'
+    + '<br><b>图上从上往下五个圆角框</b>：<b>间脑 → 垂体 → 激素腺（肾上腺皮质）→ 外周起作用的激素（图上举的例子是 cortisol）→ 组织</b>。两根箭之间还标着中间产物：第一段写<b>神经分泌物</b>，第二段写<b>促腺激素</b>。'
+    + '<br><b>左边那条竖线标着「抑制」两个字</b>，<b>它从最下面的激素引出来，同时指回垂体和间脑</b>——<b>终产物回头关掉上游</b>。'
+    + '<br><br><b>看到图要说的那一段</b>：“This is feedback inhibition again, but on the level of the whole organism. The end product is the hormone itself, and it inhibits the two glands above it. It is the same principle as the end product of a pathway inhibiting the first enzyme.”'
+    + '<br><br><b>为什么这张图值得单独记</b>：这张卡说的是<b>三个层级</b>，而这一张<b>把最上面那一层画成了图</b>。<b>拿它跟 p062 那张 A→F 并排</b>，你就能说一句考官很难接下去的话：'
+    + '<br>“The same control shape appears at three scales: one enzyme inhibited by its own end product, one pathway inhibited by its end product, and one gland inhibited by the hormone it caused to be made.”'
+    + '<br><br>⚠ <b>器官名是捷克语，但位置就是答案</b>：<b>从上往下是脑、垂体、腺体、激素、组织</b>，记这个顺序比记拼写有用。图上举的那个激素名跟英文只差一个字母。'
+    + '<br>⚠ <b>别把这张图讲成内分泌学。</b>这道题问的是<b>代谢调控的原则</b>，这张图在卡上的身份是<b>「反馈抑制」这条原则的第三个例子</b>，说完就停（LOGIC §12：答八分）。',
+  src2:'Biochemie, p223（激素调节示意图）· 400 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p223_atp_camp_amp.jpg',
+  t:'ATP → cyclic AMP → AMP —— 两个酶名就印在箭头上（书 p223）',
+  cap:'<b>这张是「认」。</b>它三格竖着排，<b>要看的不是结构，是两根箭上的两个酶名</b>。'
+    + '<br><b>最上面 ATP</b>：三个磷酸串成一条。<b>往下一根箭，箭旁印着 adenylate cyclase</b>，箭上甩出 <b>PPᵢ</b>（焦磷酸）。'
+    + '<br><b>中间 cyclic AMP</b>：<b>只剩一个磷酸，而且它两头都接在同一个核糖上</b>——<b>这就是「环」的意思，图上画得很清楚</b>。'
+    + '<br><b>再往下一根箭，箭旁印着 phosphodiesterase</b>，进 <b>H₂O</b>、出 <b>H⁺</b>。'
+    + '<br><b>最下面 AMP</b>：环开了，磷酸只剩一头连着。'
+    + '<br><br><b>看到图要说的那一段</b>：“Adenylate cyclase makes cyclic AMP from ATP and releases pyrophosphate. The cyclic form is a ring closed onto the ribose of the same nucleotide. A phosphodiesterase then hydrolyses it back to AMP, so the signal decays. That is why the response stops when the hormone is gone.”'
+    + '<br><br>⚠ <b>一处可以把卡上的保留去掉</b>：速背里写着「3′ 和 5′ 那个环的连接方式书上有但 OCR 读不出」。<b>回原图看，同一章 <span class="pg">p175</span> 的级联图上直接印着 3′,5′-cAMP 这个记号</b>——<b>所以这个数字是书给的，可以放心报</b>，不必只说 “a ring closed onto the ribose”。'
+    + '<br><br><b>这一格的落点</b>：<b>第二信使这个概念，全部好处就在「一个进不来的分子，靠一个小分子在里面代它说话」</b>。'
+    + '<br><b>被追问就给这一句</b>：“The hormone never enters the cell. It binds a receptor on the outside, and cyclic AMP carries the message inside. One hormone molecule raises many molecules of cyclic AMP, and each of those switches on a kinase, so the signal is amplified at every step.”'
+    + '<br>⚠ <b>结构本身不用背</b>，她另有专门的 app。这张图在卡上的身份是<b>「两个酶名 ＋ 一个环」</b>。',
+  src2:'Biochemie, p223（ATP / 环化 AMP / AMP）· 400 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'Metabolic regulation.',

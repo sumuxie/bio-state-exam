@@ -223,6 +223,57 @@ why:{
   say:'“Below that we are asking why an ancient active site could not be re-optimised once the whole pathway had been built on top of it. That is molecular evolution rather than biochemistry, and honestly the size of that constraint is still argued about. What I can say is what the plants did instead, which is C-4 and CAM.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p214_obr98_c4_shuttle.jpg',
+  t:'C-4 的四步 —— 两种细胞，一条来回（书 Obr. 9.8）',
+  cap:'<b>这张是「画」，而且它是这道题最值钱的一张</b>——整道题的答案就是「<b>两种细胞</b>，一个负责抓，一个负责固」。'
+    + '<br><b>图上把两种细胞的名字都印出来了</b>：上半那一行的右下角标的是<b>叶肉细胞</b>，右下角那一块标的是<b>维管束鞘细胞</b>。<b>这两行加粗的捷克语你不用会读，认位置就行：上面那行是叶肉，下面那块是鞘。</b>'
+    + '<br><br><b>上面一行（叶肉细胞），从左往右四步，酶名图上全印着</b>：'
+    + '<br>① <b>pyruvate ＋ ATP ＋ Pᵢ → PEP ＋ AMP ＋ PPᵢ</b>，酶是 <b>pyruvate-phosphate dikinase</b>。注意它花掉的是<b>两个高能键</b>（出来的是 AMP，不是 ADP），图上另标了 <b>2Pᵢ</b>。'
+    + '<br>② 空气里的 <b>CO₂ →（carbonate dehydratase）→ HCO₃⁻</b>。图上那个箭头从最上面的 <b>CO₂</b> 下来，右边那个单词就是「空气」。'
+    + '<br>③ <b>PEP ＋ HCO₃⁻ → oxaloacetate ＋ Pᵢ</b>，酶是 <b>PEP carboxylase</b>。'
+    + '<br>④ <b>oxaloacetate ＋ NADPH → malate</b>，酶是 <b>malate dehydrogenase</b>。'
+    + '<br><b>下面（维管束鞘细胞）</b>：<b>malate →（脱羧型 malate dehydrogenase，书图上还加了引号写「苹果酸酶」）→ pyruvate ＋ CO₂ ＋ NADPH</b>，放出来的 <b>CO₂ 直接进 Calvin 循环</b>（图上那根短箭头写着 Calvin，落点 <b>PG</b>），<b>pyruvate 沿最左边那条长线走回叶肉细胞</b>，回到第 ① 步。'
+    + '<br><br><b>画的顺序（五步，边画边说）</b>：'
+    + '<br>① 横着画<b>两个方框</b>，左框写 <b>mesophyll cell</b>，右框写 <b>bundle-sheath cell</b>。'
+    + '<br>② 左框里写 <b>PEP (3C)</b>，一支箭进来写 <b>CO₂ / HCO₃⁻</b>、箭下写 <b>PEP carboxylase</b>，落点 <b>oxaloacetate (4C)</b>。'
+    + '<br>③ 接一箭写 <b>NADPH</b>，落点 <b>malate (4C)</b>。'
+    + '<br>④ 一根<b>粗箭头穿过两框的边界</b>，写 <b>malate</b>——这一根就是整张图的全部内容。'
+    + '<br>⑤ 右框里写 <b>malate → pyruvate (3C) ＋ CO₂</b>，<b>CO₂ 往下进 rubisco / Calvin</b>，<b>pyruvate 沿一条回线走回左框</b>，在回线上写 <b>ATP → AMP</b>。'
+    + '<br><b>边画边说的两句</b>：“The four-carbon acid is not a product. It is a <b>carrier</b>, and the whole point is that it carries carbon across a cell boundary.”'
+    + '<br>“Rubisco never meets the air. It sits in the bundle sheath, where the CO₂ is released again at a high local concentration, so the oxygenase reaction is suppressed. The cost is the ATP on the return leg.”'
+    + '<br><br>⚠ <b>这张图跟书的正文打架，而这正是它的用处</b>（LOGIC §14）。正文 <span class="pg">p212</span> 说第一受体直接收 <b>CO₂</b>；<b>这张图画的是先变成 HCO₃⁻</b>，酶名印在箭上。被问就说：“The textbook’s own figure 9.8 shows carbonate dehydratase making bicarbonate first, and PEP carboxylase using the bicarbonate. The running text simply says CO₂.”'
+    + '<br>⚠ <b>malate 和 oxaloacetate 这两个名字她在卡 24 见过</b>——柠檬酸循环第 7、8 步。<b>同样两个分子，完全不同的差事</b>：那里被氧化取电子，这里只当搬运工。',
+  src2:'Biochemie, Obr. 9.8, p214 · 300 dpi 原图裁切，未修改（捷克图注在框外）'},
+
+ {k:'认',
+  src:'img/p213_obr97_rubisco_two_jobs.jpg',
+  t:'一个酶，两件事 —— 这张小图就是整道题的问题本身（书 Obr. 9.7 上半的叶绿体框）',
+  cap:'<b>这张是「认」，而且它是这张卡的开口。</b>C3、C4、CAM 是三个答案，<b>问题就画在这张图里</b>。'
+    + '<br><br><b>中间那个方框里印的名字是 RuBP 羧化酶-加氧酶</b>，<b>从它引出两根虚线</b>：'
+    + '<br>① 一根<b>往左下</b>指到 <b>CO₂</b> 那一步 —— <b>RuBP ＋ CO₂ → 2 × PG</b>，这是光合。'
+    + '<br>② 一根<b>往上</b>指到 <b>O₂</b> 那一步 —— <b>RuBP ＋ O₂ → 磷酸乙醇酸 ＋ PG</b>，这是光呼吸。'
+    + '<br><b>同一个酶，同一个底物，两根虚线</b>——这就是为什么这道题会存在。'
+    + '<br><br><b>看到图要说的那一段（这也是开口的第一句）</b>：“The three plant types are three answers to one problem, and the problem is this enzyme. Rubisco is both a carboxylase and an oxygenase. With CO₂ it gives two molecules of phosphoglycerate. With O₂ it gives one phosphoglycerate and one phosphoglycolate, which is a dead end that has to be salvaged. C4 and CAM are two ways of keeping oxygen away from it.”'
+    + '<br><br><b>框右边那一小段也值得指</b>：磷酸乙醇酸被 <b>phosphoglycolate phosphatase</b> 去磷酸变成 <b>glycolate</b>，然后那根线出了叶绿体——<b>这就是代价开始的地方</b>，下一张图接着走。'
+    + '<br>⚠ 框底那行小字是「叶绿体」，标在框内右下角；这三个字不用会读，看位置就知道整个框是一个区室。',
+  src2:'Biochemie, Obr. 9.7（上半的叶绿体框）, p213 · 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p213_obr97_photorespiration.jpg',
+  t:'光呼吸走三个区室 —— 代价长什么样（书 Obr. 9.7 全图）',
+  cap:'<b>这张是「认」。</b>他问 “what is the cost of photorespiration?”，最有力的回答是把这张图指给他：<b>代价不是一个数字，是这条路要跨三个细胞器</b>。'
+    + '<br><br><b>三个圆角框，从上到下</b>：<b>叶绿体 · 过氧化物酶体 · 线粒体</b>；两框之间那一条窄缝标的是<b>胞质</b>。'
+    + '<br><b>一条路线走完</b>：叶绿体里 RuBP 被 O₂ 切成<b>磷酸乙醇酸</b> → 去磷酸变 <b>glycolate</b> → 进<b>过氧化物酶体</b>，被 <b>glycolate oxidase</b> 用 O₂ 氧化，副产物 <b>H₂O₂</b> 由 <b>catalase</b> 拆成 ½O₂ ＋ H₂O → 得到 <b>glyoxylate</b> → <b>转氨</b>成 <b>glycine</b> → 进<b>线粒体</b>，两个 glycine 并成一个 <b>serine</b> 并<b>放掉一个 CO₂</b>（图最右下角那个箭头）→ serine 回过氧化物酶体 → <b>hydroxypyruvate</b> →（<b>hydroxypyruvate reductase</b>，花掉 <b>NADH</b>）→ <b>glycerate</b> → 到<b>胞质</b>被 <b>glycerate kinase</b> 花掉 <b>ATP</b> 磷酸化 → 变回 <b>PG</b>，回到 Calvin 循环。'
+    + '<br><br><b>看到图要说的那一段</b>：“Photorespiration is not a pathway with a purpose. It is a salvage route. The plant spends ATP and NADH and loses one carbon as CO₂, only to recover three quarters of the carbon that the oxygenase reaction took away. It runs across three compartments, which is why it is expensive.”'
+    + '<br><br><b>两个可以主动留的口子</b>：① <b>glycine 和 serine 在这里被造出来</b>——她被同事问倒过的那个问题（glycine 的来路）在这张图上有一半答案。② <b>过氧化物酶体为什么要有 catalase</b>：因为这条路自己产 H₂O₂，图上写得明明白白。'
+    + '<br>⚠ 本图 200 dpi、细长，字小但能读。框里的区室名是捷克语，<b>三个框的顺序从上到下就是叶绿体、过氧化物酶体、线粒体</b>，记顺序不用记拼写。'
+    + '<br><br>⚠⚠ <b>这张卡只有三张图，而且三张全部来自 C-3 / C-4 那一半。</b><b>CAM 书里一个字都没有，所以也没有任何图</b>；<b>叶片解剖的对照图（花环结构、叶肉与鞘的位置关系）书里也没有画</b>——<b>那两块只能用嘴说，开口时照卡上原来的做法标一次 general。</b>',
+  src2:'Biochemie, Obr. 9.7, p213 · 200 dpi 原图裁切，未修改（捷克图注在框外）'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'C3, C4 and CAM.',

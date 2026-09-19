@@ -171,6 +171,118 @@ why:{
   say:'“Below that we are asking how a membrane turns a proton gradient into chemical work. That is bioenergetics rather than the cycle itself, and it belongs to the respiratory chain.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p137_obr63_citrate_cycle.jpg',
+  t:'整个循环一张图 —— 这道题最可能被要求画的就是它（书 Obr. 6.3）',
+  cap:'<b>这张是「画」，而且它就是这道题本身。</b>圈是<b>顺时针</b>的：<b>左上 oxalacetát</b>，乙酰基从<b>上面斜着接进来</b>，右边一路往下放掉两个 CO₂，底下折回左边再爬上来。'
+    + '<br><br><b>⚠ 先把编号说清楚。</b>图上的圈码是 <b>①–⑨ 九个</b>，卡上是<b>八步</b>。差别只有一处：<b>书把 aconitase 的脱水和加水当成两根箭头分开数（② 和 ③）</b>。所以<b>从 ④ 起，图上的号比卡上的步号大 1</b>——卡第 3 步 ＝ 图 ④，卡第 8 步 ＝ 图 ⑨。<b>他按图问、你按卡答不会错，但你得知道这一层。</b>'
+    + '<br><br><b>画的顺序（七步，照这个练）</b>：'
+    + '<br>① <b>先画一个大圆圈</b>，标上顺时针方向，在圈上点出<b>八个位置</b>。<b>先把圈画对，再写名字</b>——名字写歪了还能改，圈画反了整张就废了。'
+    + '<br>② <b>左上写 oxalacetát</b>，它既是起点也是终点。从圈外<b>斜着引一根箭头进来</b>，箭尾写 <b>acetyl-CoA</b>，箭头标 <b>①</b>，旁边写 <b>CoA-SH</b> 出来。'
+    + '<br>③ 顺时针依次写 <b>citrát（六碳）→ cis-akonitát → isocitrát</b>。中间那两根箭头就是 aconitase 的 <b>−H₂O</b> 和 <b>＋H₂O</b>，净零。'
+    + '<br>④ 接着写 <b>2-oxoglutarát（五碳）</b>，在箭头旁往圈外画一根短箭头，写 <b>CO₂ ＋ NADH</b>。<b>第一次氧化脱羧。</b>'
+    + '<br>⑤ 再写 <b>sukcinyl-CoA（四碳）</b>，同样往外画 <b>CO₂ ＋ NADH</b>。<b>两个碳到这里全部出去了</b>，后面一个碳都不动。'
+    + '<br>⑥ 底下写 <b>sukcinát</b>，往外画 <b>GTP</b>（<b>书这根箭头上标的是 GTP 不是 ATP</b>）；左下写 <b>fumarát</b>，往外画 <b>FADH₂</b>；左边写 <b>malát</b>。'
+    + '<br>⑦ 最后一根箭头回到 oxalacetát，往外画第三个 <b>NADH</b>。<b>圈合上了。</b>'
+    + '<br><br><b>边画边说的四句</b>：“The four-carbon <b>oxaloacetate</b> condenses with the two-carbon acetyl group to give the six-carbon <b>citrate</b>.”'
+    + '<br>“Citrate carries a <b>tertiary</b> alcohol, which cannot be oxidised, so aconitase moves the hydroxyl and gives <b>isocitrate</b>, a <b>secondary</b> one.”'
+    + '<br>“Then two <b>oxidative decarboxylations</b> in a row, six carbons to five and five to four. <b>Both CO₂ of the whole turn leave here</b>, and each of them gives an NADH.”'
+    + '<br>“The rest of the turn moves no carbon at all. It only takes hydrogen off: one <b>GTP</b> at succinyl-CoA synthetase, one <b>FADH₂</b>, then water adds, then the third <b>NADH</b> — and oxaloacetate is back.”'
+    + '<br><br><b>收笔前数一遍圈外挂的东西</b>：<b>2 CO₂ · 3 NADH · 1 FADH₂ · 1 GTP</b>。<b>这四样数对了，账那三行就不用另背——画出来就等于算出来了。</b>',
+  src2:'Biochemie, Obr. 6.3, p137 · 300 dpi 原图裁切，未修改（图内捷克语中间物名保留）'},
+
+ {k:'认',
+  src:'img/p136_tab63_cycle_enzymes.jpg',
+  t:'九个反应的酶名和辅因子 —— 上面那张图的图例（书 Tab. 6.3）',
+  cap:'<b>这张是「认」，它是上一张图的图例。</b>三栏的表头是 <b>Reakce ＝ 反应号 · Enzymy ＝ 酶 · Kofaktory ＝ 辅因子</b>，每个酶后面的括号里是 <b>EC 号</b>。'
+    + '<br><br><b>一眼要看出来的三件事</b>：'
+    + '<br>① <b>第 2 行和第 3 行都是 akonitasa</b>。<b>这就是「书数九步、卡数八步」的全部原因</b>——一个酶占了两行。'
+    + '<br>② <b>第 5 行书印的名字是带引号的：『2-oxoglutarátoxidasa』</b>。你嘴里说的是 <b>2-oxoglutarate dehydrogenase complex</b>，指的是同一个东西；<b>那对引号是书自己打的，说明它也知道那不是正式名</b>。那一行的辅因子栏是全表最长的：<b>TDP · CoA · FAD · NAD⁺ · 硫辛酸 · Mg²⁺</b>——正好是丙酮酸脱氢酶那一整套。'
+    + '<br>③ <b>第 8 行 fumarasa 的辅因子栏写着 žádné，意思是「没有」</b>。<b>全表唯一一个不需要辅因子的酶</b>，他问「哪一步不用辅因子」你指得出来。'
+    + '<br><br><b>摆到面前时说的两句</b>：“The textbook counts <b>nine</b> reactions because it lists <b>aconitase twice</b>, once for the dehydration and once for the rehydration. Counted as enzymes there are <b>eight</b>.”'
+    + '<br>“Two of them need <b>iron</b>: aconitase as Fe²⁺, and succinate dehydrogenase with FAD together with iron. <b>Only fumarase needs no cofactor at all.</b>”'
+    + '<br><br>⚠ <b>EC 号不用背，但第一位数字值得看一眼</b>：<b>1</b> 开头是氧化还原酶（isocitrate · succinate · malate 三个脱氢酶），<b>4</b> 开头是裂合酶（citrate synthase · aconitase · fumarase），<b>6</b> 开头是连接酶（succinyl-CoA synthetase）。<b>他问「这几个酶各属哪一类」，答案就印在括号里。</b>',
+  src2:'Biochemie, Tab. 6.3, p136 · 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p138_obr64_mitochondrion_with_caption.jpg',
+  t:'循环在哪儿跑 —— 线粒体剖面（书 Obr. 6.4）',
+  cap:'<b>这张是「认」，它一张图就把这道题和下一道题分开了。</b>图上四个捷克语缩写，图注里逐个解释过：<b>Mb1 ＝ 外膜 · Mb2 ＝ 内膜 · MMP ＝ 膜间隙 · Mx ＝ 基质</b>。内膜往里折出来的那些褶子是 <b>cristae</b>。'
+    + '<br><br><b>看到图要说的两句</b>：“The cycle runs in the <b>matrix</b>, the inner compartment. <b>One</b> of its enzymes, succinate dehydrogenase, sits in the <b>inner membrane</b> instead — and that same enzyme is complex II of the respiratory chain.”'
+    + '<br>“The <b>respiratory chain</b> is in that same inner membrane, so the NADH made in the matrix is handed over across almost no distance. The folds, the <b>cristae</b>, are what give that membrane its area.”'
+    + '<br><br><b>指着图能顺手答掉两个常问的</b>：<b>「为什么是内膜不是外膜」</b>——外膜是通透的，撑不住质子梯度；<b>「NADH 怎么过膜」</b>——循环的 NADH 就产在基质里，<b>根本不过膜</b>，要过膜的是<b>糖酵解</b>那两个胞质 NADH，那才需要穿梭系统。<b>这两件事最容易被混成一件。</b>',
+  src2:'Biochemie, Obr. 6.4, p138 · 300 dpi 原图裁切，未修改（图注捷克语保留）'},
+
+ {k:'认',
+  src:'img/p138_aconitase_citrate_isocitrate.jpg',
+  t:'第 2 步 · 为什么要多绕这一下（书 p138 正文图式）',
+  cap:'<b>这张是「认」，它把第 2 步存在的唯一理由画出来了。</b>三个结构从左到右是 <b>citrát → cis-akonitát → isocitrát</b>，两根箭头上分别写着 <b>−H₂O</b> 和 <b>＋H₂O</b>。'
+    + '<br><br><b>一眼要盯住的就是那个 OH 搬了家</b>：左边 citrát 的 OH 长在<b>同时连着三个碳</b>的那个碳上（<b>叔醇</b>），右边 isocitrát 的 OH 搬到了旁边、只连着两个碳的碳上（<b>仲醇</b>）。中间的 cis-akonitát 没有 OH，只有一根双键。'
+    + '<br><br><b>看图要说的那两句</b>：“A <b>tertiary</b> alcohol cannot be dehydrogenated, because the carbon carrying the hydroxyl has <b>no hydrogen left</b> to remove. So aconitase takes the water out and puts it back on the other carbon, giving a <b>secondary</b> alcohol, which can.”'
+    + '<br>“It is one enzyme doing both halves, so the water is <b>net zero</b> — it does not appear in the overall equation of the cycle.”'
+    + '<br><br>⚠ <b>这一步是全循环最容易被问「为什么」的地方</b>，而理由不是生物学的，是有机化学的一条小规则：<b>要脱氢，那个碳上得先有氢。</b>说出这一句，比说出 aconitase 这个名字值钱得多。',
+  src2:'Biochemie, p138 正文图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p138_isocitrate_dehydrogenase.jpg',
+  t:'第 3 步 · 第一个 CO₂ 是怎么掉下来的（书 p138 正文图式）',
+  cap:'<b>这张是「认」，而且它画出了一个卡上只用文字提过的中间物。</b>从左到右：<b>isocitrát</b>，先被 <b>NAD⁺</b> 脱氢变成 <b>oxalsukcinát</b>，然后<b>自己掉一个 CO₂</b>，成为 <b>2-oxoglutarát</b>。箭头上标着 <b>NAD⁺ → NADH</b> 和 <b>CO₂</b>。'
+    + '<br><br><b>要看出来的一件事</b>：中间那个 oxalsukcinát，<b>被脱掉氢的那个碳已经变成羰基</b>，而<b>羧基就挂在它的 β 位上</b>——这正是书说的 <b>β-酮酸</b>。β-酮酸会<b>自发</b>脱羧，不用再推。'
+    + '<br><br><b>看图要说的那两句</b>：“Oxidation comes first, decarboxylation second. The dehydrogenation makes a <b>keto group</b>, and a carboxyl <b>beta</b> to a keto group leaves as CO₂ spontaneously — it is an exergonic step.”'
+    + '<br>“The textbook says the two general sources of CO₂ in biochemical systems are exactly this: <b>decomposition of beta-keto acids</b>, and <b>oxidative decarboxylation of 2-oxo acids</b>. The cycle uses one of each.”'
+    + '<br><br>⚠ <b>oxalsukcinát 很少有人说得出来</b>，而它就印在这里。<b>顺手提一句它跟 oxalacetát 的关系</b>：两个都是 β-酮酸，但书说 <b>oxalacetát 稳定得多</b>，所以第 8 步的产物不会自己脱羧掉。<b>同一条化学规则，一次用上、一次用不上——这是书自己埋的对照。</b>',
+  src2:'Biochemie, p138 正文图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p138_oxoglutarate_dehydrogenase.jpg',
+  t:'第 4 步 · 第二个 CO₂，跟丙酮酸一模一样（书 p138 正文图式）',
+  cap:'<b>这张是「认」。</b>左边 <b>2-oxoglutarát</b>，右边 <b>sukcinyl-CoA</b>，箭头上挂着四样：<b>NAD⁺ · CoA-SH</b> 进去，<b>CO₂ · NADH</b> 出来。'
+    + '<br><br><b>要看出来的一件事，也是这一步全部的省力处</b>：把 2-oxoglutarát <b>左边那一截 CH₂–COO⁻ 遮住</b>，剩下的就是 <b>pyruvát</b>。书的原话就是它是<b>丙酮酸的同系物</b>——<b>所以丙酮酸脱氢酶那一整套机制原样搬过来，一个字都不用另背</b>。'
+    + '<br><br><b>看图要说的那两句</b>：“2-oxoglutarate is a <b>homologue of pyruvate</b>: pyruvate with a CH₂–COO⁻ on the methyl. Its 2-oxo-acid end reacts in exactly the same way.”'
+    + '<br>“So the same complex chemistry applies: <b>thiamine diphosphate</b> takes up the fragment after CO₂ leaves, <b>lipoic acid</b> oxidises it and carries the succinyl group, <b>coenzyme A</b> receives it as a <b>thioester</b>, and <b>FAD</b> then <b>NAD⁺</b> reoxidise the lipoate.”'
+    + '<br><br><b>两个碳到这里全部出去了。</b>后面四步一个碳都不动，只是把氢一步步取走——<b>这句话说出来，「二进二出」那笔账就闭合了</b>。'
+    + '<br>⚠ <b>机制的图在这张卡的丙酮酸脱氢那一张上</b>（书 p168），两张对着看一次就够，<b>不要分别背两遍</b>。',
+  src2:'Biochemie, p138 正文图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p139_succinate_dehydrogenase_fad.jpg',
+  t:'第 6 步 · 唯一在膜上的一步，也是唯一给 FADH₂ 的一步（书 p139 正文图式）',
+  cap:'<b>这张是「认」。</b>左边 <b>sukcinát</b>（两个 CH₂ 夹在两个 COO⁻ 中间，完全对称），右边 <b>fumarát</b>（中间那根<b>双键</b>，两个 COO⁻ 分在两头 ＝ <b>反式</b>），箭头上是 <b>FAD → FADH₂</b>。'
+    + '<br><br><b>看图要说的那三句</b>：“Succinate is oxidised to fumarate by <b>succinate dehydrogenase</b>. The FAD on that enzyme is <b>covalently bound</b>, not a free coenzyme.”'
+    + '<br>“The enzyme is built into the <b>inner membrane</b>, so this is the only step of the cycle that is not in the matrix. The textbook identifies it as <b>complex II</b> of the respiratory chain.”'
+    + '<br>“That is also why this step alone gives <b>FADH₂</b> rather than NADH, and why it is worth only <b>two</b> ATP instead of three: the electrons enter at complex II and <b>bypass complex I</b>.”'
+    + '<br><br>⚠ <b>产物一定是反式的 fumarát，不是顺式的 maleát</b>——下一步的 fumarase 只认反式。<b>图上双键两边的 COO⁻ 画在对角，就是这个信息。</b>',
+  src2:'Biochemie, p139 正文图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p139_malate_dehydrogenase_closes_cycle.jpg',
+  t:'第 8 步 · 闭环的那一根箭头（书 p139 正文图式）',
+  cap:'<b>这张是「认」，它是循环合上的那一笔。</b>左边 <b>L-malát</b>（那个 <b>HO–CH</b> 就是要被脱氢的地方），右边 <b>oxalacetát</b>（同一个碳变成了 <b>O＝C</b>），箭头是<b>双向的</b>，上面挂 <b>NAD⁺ → NADH ＋ H⁺</b>。'
+    + '<br><br><b>看图要说的那两句</b>：“Malate dehydrogenase makes the <b>third NADH</b> and regenerates <b>oxaloacetate</b>, which closes the cycle. Because oxaloacetate is regenerated it behaves like a <b>catalyst</b> — a small amount can process an unlimited number of acetyl groups.”'
+    + '<br>“The textbook adds that oxaloacetate is a <b>beta-keto acid</b> just like oxalosuccinate in the third step, <b>but a much more stable one</b>, so it does not decarboxylate by itself.”'
+    + '<br><br>⚠ <b>注意那根箭头是双向的。</b>这一步的平衡其实偏向 malát，是靠<b>下一圈立刻把 oxalacetát 用掉</b>才往前走的——<b>他问「这一步不是不利吗」，答案是「产物被消耗，所以被拉过去」</b>，跟糖酵解第 5 步用的是同一句话。',
+  src2:'Biochemie, p139 正文图式（无图号）· 300 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p168_pyruvate_dehydrogenase_complex.jpg',
+  t:'进门那一步 —— 丙酮酸怎么变成 acetyl-CoA（书 p168 图式 I）',
+  cap:'<b>这张是「画」，而且它不在这道题的页码里，却是这道题的门。</b>循环本身不认丙酮酸，只认 <b>acetyl-CoA</b>；把前者变成后者的就是这一张。<b>第 4 步（2-oxoglutarát）走的是一模一样的化学</b>，所以这张图<b>一张管两处</b>。'
+    + '<br><br><b>图上从左到右的五个站</b>：<b>pyruvát</b> 先掉 <b>CO₂</b>；剩下的两碳片挂到 <b>thiaminpyrofosfát（TPP）</b> 上成为 <b>hydroxyethyl-TPP</b>；交给 <b>lipoová kys.（硫辛酸）</b>那个 <b>S–S</b>，被氧化成<b>乙酰基</b>挂在硫上；<b>CoASH</b> 来接走，出去的是 <b>CH₃C–S-CoA</b>；最后 <b>[FAD]</b> 和 <b>NAD⁺</b> 把还原掉的硫辛酸重新氧化回 S–S，放出 <b>NADH ＋ H⁺</b>。底下那三个方括号标的就是三个酶：<b>pyruvátdehydrogenasa · dihydrolipoyl-transacetylasa · dihydrolipoyl-dehydrogenasa</b>。'
+    + '<br><br><b>画的顺序（五步，照这个练）</b>：'
+    + '<br>① 左边写 <b>pyruvát</b>，往下画一根箭头写 <b>CO₂</b>。'
+    + '<br>② 往右画一个大圈，圈上写 <b>TPP</b>，圈下写 <b>hydroxyethyl-TPP</b>。'
+    + '<br>③ 再往右画第二个圈，中间画一个 <b>S–S</b> 的五元环挂在 <b>Protein</b> 上——那是<b>硫辛酸</b>，它被拴在蛋白上，像一条<b>摆臂</b>在三个活性位点之间递东西。'
+    + '<br>④ 从乙酰基那里往上引一根箭头写 <b>CoASH</b> 进、<b>acetyl-CoA</b> 出。'
+    + '<br>⑤ 最右边画第三个圈，标 <b>FAD</b> 和 <b>NAD⁺ → NADH</b>。'
+    + '<br><br><b>边画边说的三句</b>：“<b>Oxidative decarboxylation</b> of pyruvate. One carbon leaves as CO₂ and the two-carbon fragment is oxidised, so the step gives both <b>CO₂ and NADH</b>, and the product is a <b>thioester</b>, acetyl-CoA.”'
+    + '<br>“Five cofactors, and the order matters: <b>thiamine diphosphate</b> picks the fragment up, <b>lipoic acid</b> oxidises it and carries it, <b>coenzyme A</b> takes it away, then <b>FAD</b> and <b>NAD⁺</b> put the lipoate back the way it was.”'
+    + '<br>“The <b>2-oxoglutarate dehydrogenase complex</b> in the cycle itself does exactly the same thing with the same five cofactors — that is step four.”'
+    + '<br><br>⚠ <b>这一步不属于循环</b>。账上它算在「一分子葡萄糖 38 ATP」里的那个 <b>6</b>（两个丙酮酸各一个 NADH），<b>不算在循环的 24 里</b>。<b>他问「循环从哪儿开始」，答案是 acetyl-CoA，不是丙酮酸。</b>',
+  src2:'Biochemie, p168 图式 (I)（无图号）· 300 dpi 原图裁切，未修改（图上捷克语酶名保留）'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'The citric acid cycle.',

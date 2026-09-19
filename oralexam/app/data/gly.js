@@ -120,7 +120,7 @@ cram:[
   big:'我天天用的生物就是<b>酵母</b>——它跑的正是这条路：葡萄糖里<b>发酵</b>，换到<b>半乳糖</b>诱导表达时糖从 p172 那条路进来；PFK、LDH 是变构和同工酶的教科书例子',
   en:'“One thing worth adding from my own work: the organism I use every day is yeast, and it runs exactly this pathway. Yeast is a facultative anaerobe, the textbook’s example of one, so in a glucose culture it ferments to ethanol. And to induce my display construct I move the cells from glucose to galactose. The sugar they then live on enters glycolysis through the galactokinase, uridyltransferase and 4-epimerase route, on the same page as the pathway. And the glycolytic enzymes are the textbook cases of the regulation I have to keep in mind when I measure binding. Phosphofructokinase is the allosteric enzyme, and lactate dehydrogenase has five isoenzymes that catalyse the same reaction with different kinetics.”',
   note:'酵母是兼性厌氧的例子：p016，英译 <i>facultatively anaerobic are organisms (e.g. yeasts)</i>。「即使有氧、糖多时酵母也发酵」是 <b>Crabtree 效应</b>，通用，书没有；「葡萄糖阻遏 GAL 启动子」也是通用分子生物学。<b>不要在这里点病原体的名字</b>（DRILL.md 的规矩）——说 “my display construct”、“the binding protein I work on”。LDH 五种同工酶在 p064–p065（H/M 亚基、四聚体、Mr 140 000、结合 4 mol NAD⁺、动力学不同、被机体用来调节代谢）。口子落到<b>卡 02（Kd）</b>和大本营卡。<span class="pg">p016 p064 p065 p172</span>'},
- {n:'21', t:'画（没有图文件，按这个顺序画）',
+ {n:'21', t:'画（图在「图」那一页，按这个顺序画）',
   big:'一条竖线，<b>先写十个中间物，再补酶，最后标能量</b>',
   en:'“If asked to draw it: a vertical line of ten compounds. Glucose, glucose-6-phosphate, fructose-6-phosphate, fructose-1,6-bisphosphate, then a fork into dihydroxyacetone phosphate and glyceraldehyde-3-phosphate, then in duplicate: 1,3-bisphosphoglycerate, 3-phosphoglycerate, 2-phosphoglycerate, phosphoenolpyruvate, pyruvate. Then the enzymes on the arrows, then the money: ATP in at steps 1 and 3, NAD-plus and phosphate in at step 6, ATP out at steps 7 and 10, water out at step 9. Finally three thick arrows for the irreversible steps and a bracket under the lower half marked times two.”',
   tbl:{head:['顺序','画什么'],
@@ -131,7 +131,7 @@ cram:[
     ['4','三个不可逆步加粗（1、3、10）；下半段画个括号写 ×2'],
     ['5','丙酮酸下面画三叉：lactate（LDH）· ethanol（PDC ＋ ADH，放 CO₂）· acetyl-CoA（线粒体）']
    ]},
-  note:'书 p165–p167 有三页结构式图，OCR 全碎了；<b>考场上不需要结构式，需要的是顺序和名字</b>。她的结构式另有 app。'}
+  note:'书 p165–p167 有三页结构式图，OCR 全碎了，<b>已经回 300 dpi 原图裁进「图」那一页</b>；<b>考场上不需要结构式，需要的是顺序和名字</b>。她的结构式另有 app。'}
 ],
 end:'<b>十步里真正要背的是「谁变成谁 ＋ 酶名 ＋ 可逆不可逆」。</b>四个「为什么」（为什么先磷酸化、为什么 PFK 是控制点、为什么先氧化才能造 ATP、为什么 NAD⁺ 必须再生）比十个名字更值钱——那是他追问时的落点。<b>账要说三行</b>：投入、产出、净账。',
 
@@ -221,6 +221,112 @@ why:{
  stop:{lbl:'停 · 落在热力学',
   say:'“Below that we are asking why an acyl phosphate or an enol phosphate holds more free energy than a phosphoanhydride. The answer is resonance and charge repulsion, which is physical chemistry rather than biochemistry.”'}
 },
+
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p167_glycolysis_whole_pathway.jpg',
+  t:'整条路一张图 —— 而且 NAD⁺ 那条回路就画在中间（书 p167 图式）',
+  cap:'<b>这张是「画」，而且它是这道题的骨架。</b>书<b>没有把它画成竖线，画成了一个圈</b>：左上角写着 <b>glukosa</b>，顺时针从右边下来，走到底再从左边爬上去，左上偏下那个写着 <b>laktát</b>。<b>整张图只印了这两个名字</b>，别的全是结构式。'
+    + '<br><br><b>圈上挨个数下来的十一个位置</b>：glukosa → 葡萄糖-6-磷酸 → 果糖-6-磷酸 → 果糖-1,6-二磷酸 →〈3-磷酸甘油醛 ⇌ 二羟丙酮磷酸〉→ 1,3-二磷酸甘油酸 → 3-磷酸甘油酸 → 2-磷酸甘油酸 → 磷酸烯醇丙酮酸 → 丙酮酸 → 乳酸。'
+    + '<br><br><b>⚠ 这张图上一个酶名都没有。</b>酶名在下面那两张（书 p165、p166）。<b>这张管形状和钱，那两张管名字。</b>'
+    + '<br><br><b>画的顺序（六步。她自己那一版是竖着写，照那个也行，但圈有一个好处：NAD⁺ 的回路画得出来）</b>：'
+    + '<br>① <b>先画一个大圈</b>，左上角起笔写 <b>glucose</b>，顺时针点出十个位置。'
+    + '<br>② 沿圈写完十个中间物的名字。<b>在 F1,6BP 那里画一个叉，分成 DHAP 和 GAP 两支，中间写 ⇌。</b>'
+    + '<br>③ 箭头上补酶名：<b>hexokinase · isomerase · PFK · aldolase · TPI · GAPDH · PGK · mutase · enolase · PK</b>。'
+    + '<br>④ 标钱：<b>ATP 进（第 1、3 步）· NAD⁺ 和 Pᵢ 进（第 6 步）· ATP 出（第 7、10 步）· H₂O 出（第 9 步）</b>。'
+    + '<br>⑤ <b>圈里画那条回路</b>：从第 6 步拉一根线写 <b>NADH</b> 过去，接到<b>丙酮酸 → 乳酸</b>那根箭头上，再把 <b>NAD⁺</b> 拉回第 6 步。<b>书画的就是这个回路，它是整张图最值钱的一笔。</b>'
+    + '<br>⑥ 三个不可逆的步（1、3、10）画成粗箭头；下半段画个括号写 <b>×2</b>。'
+    + '<br><br><b>边画边说的三句</b>：“The upper half <b>invests</b> two ATP. The lower half <b>pays back four</b>. Everything below the split happens <b>twice</b> per glucose.”'
+    + '<br>“There is only <b>one</b> oxidation in the whole pathway, at glyceraldehyde-3-phosphate. That is where the NADH comes from.”'
+    + '<br>“So the NAD-plus has to be given back, or the pathway stops. Without oxygen the cell does that by <b>reducing pyruvate to lactate</b>. That loop is drawn in the middle of this figure.”'
+    + '<br><br><b>⚠ 一个常被问穿的点：这张图上葡萄糖的六个碳，一个都没有变成 CO₂。</b>丙酮酸还是三碳，两个丙酮酸还是六碳。<b>糖酵解不放 CO₂</b>，放 CO₂ 的是后面的丙酮酸氧化脱羧和柠檬酸循环。<b>他问「氧在哪里用掉的」，答案是「这张图里根本没有氧」。</b>',
+  src2:'Biochemie, p167 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语 glukosa / laktát 保留）'},
+
+ {k:'画',
+  src:'img/p165_glycolysis_steps1to5.jpg',
+  t:'投入相一整段 —— 五步连酶名一起（书 p165 图式）',
+  cap:'<b>这张是「画」，它把第 1 步到第 5 步连酶名一起画完了。</b>捷克语的酶名跟你要说的英文几乎一一对得上：<b>hexokinasa ＝ hexokinase · fosfohexosaisomerasa ＝ hexose phosphate isomerase · fosfofruktokinasa ＝ phosphofructokinase · aldolasa ＝ aldolase · fosfotriosaisomerasa ＝ triose phosphate isomerase</b>。'
+    + '<br><br><b>⚠ 一个会让人卡住的叫法</b>：图上把 GAP 写成 <b>3-fosfoglyceraldehyd</b>，就是 <b>glyceraldehyde-3-phosphate</b>，同一个东西两种写法。'
+    + '<br><br><b>图上要看出来的三件事</b>：'
+    + '<br>① <b>前三个都还是环</b>——葡萄糖和 6-磷酸葡萄糖是六元环，6-磷酸果糖和 1,6-二磷酸果糖是五元环。<b>「醛糖变酮糖」这句话在图上就是六元环变五元环。</b>'
+    + '<br>② <b>aldolase 那一步之前，书把果糖-1,6-二磷酸画成了开链式</b>。<b>这不是另一个分子，是同一个分子打开了环</b>——环不打开就没有可以被切断的 C–C 键。<b>他问「为什么这里突然变成链」，答案就这一句。</b>'
+    + '<br>③ <b>两个 ATP 都花在上半段</b>：第 1 步 hexokinase，第 3 步 phosphofructokinase。<b>两根 ATP→ADP 的弯箭头，图上画得很清楚。</b>'
+    + '<br><br><b>画的顺序（四步）</b>：'
+    + '<br>① 先写 <b>glucose</b>，往右画箭头标 <b>hexokinase</b>，箭头下挂 <b>ATP → ADP</b>，得到 <b>G6P</b>。'
+    + '<br>② 再往右 <b>isomerase</b> 得 <b>F6P</b>。<b>顺口说一句这是醛糖变酮糖。</b>'
+    + '<br>③ 往下 <b>PFK</b>，再挂一次 <b>ATP → ADP</b>，得 <b>F1,6BP</b>。<b>这根箭头画粗，它是限速步。</b>'
+    + '<br>④ 往下 <b>aldolase</b> 劈成两个三碳，左边 <b>GAP</b>、右边 <b>DHAP</b>，中间 <b>TPI</b> 加双向箭头。'
+    + '<br><br><b>边画边说的三句</b>：“The first phase <b>spends</b> ATP. Phosphorylation traps the sugar inside the cell, because the charged phosphate cannot cross the membrane.”'
+    + '<br>“<b>Phosphofructokinase</b> is the committed step. It is practically irreversible and it is the rate-limiting step, controlled allosterically by the ATP to ADP ratio.”'
+    + '<br>“Aldolase splits the six-carbon sugar into two three-carbon phosphates. Only one of them goes on, so the isomerase keeps converting the other one across.”'
+    + '<br><br>⚠ <b>别忘了说为什么要先花钱。</b>“The cell pays two ATP first to make a molecule that can be cut in half and oxidised. It gets four back.” <b>这一句把「投入相」从一个名词变成一个理由。</b>',
+  src2:'Biochemie, p165 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语酶名保留）'},
+
+ {k:'认',
+  src:'img/p165_gapdh_pgk_mechanism.jpg',
+  t:'第 6 步和第 7 步的机制 —— 能量是从这里进来的（书 p165 图式）',
+  cap:'<b>这张是「认」，而且它是全卡最该看懂的一张。</b>速背 11 那一整段文字，就是这张图。'
+    + '<br><br><b>图上五个站，顺着走一遍</b>：'
+    + '<br>① 左上 <b>glyceraldehyd-3-fosfát</b>，那个 <b>C＝O</b> 带一个 H，是<b>醛</b>。'
+    + '<br>② <b>＋ HS-enzym</b>：酶上的<b>巯基</b>加到醛上，方括号里那个是<b>中间体</b>，碳上同时挂着 <b>OH</b> 和 <b>S-enzym</b>。'
+    + '<br>③ <b>NAD⁺ 过来拿走氢</b>，变成 <b>NADH ＋ H⁺</b>；右下那个产物碳上只剩 <b>C～S-enzym</b>，<b>那根波浪线就是硫酯，是高能键</b>。'
+    + '<br>④ <b>＋ H₃PO₄，− HS-enzym</b>：<b>无机磷酸</b>把硫酯切开，酶走了，磷酸接上，得到 <b>1,3-bisfosfoglycerát</b>，那根 <b>C～O–P</b> 也画着波浪线。'
+    + '<br>⑤ 最后 <b>ADP</b> 过来，拿走那个磷酸变成 <b>ATP</b>，剩下 <b>3-fosfoglycerát</b>。'
+    + '<br><br><b>看图要说的三句</b>：“This is the <b>only oxidation</b> in glycolysis, and it is the step that pays for everything.”'
+    + '<br>“The aldehyde is oxidised to a <b>thioester</b> with the enzyme, so the energy of the oxidation is held in that bond instead of being lost.”'
+    + '<br>“Then <b>phosphate</b>, not water, cleaves the thioester. The textbook calls that <b>phosphorolysis</b>. The energy moves into an <b>acyl phosphate</b>, and the next enzyme hands that phosphate to ADP.”'
+    + '<br><br>⚠ <b>两根波浪线是这张图的全部。</b>它们标的是<b>高能键</b>：先是 <b>C～S</b>，然后是 <b>C～O–P</b>。<b>他问「底物水平磷酸化的能量哪来的」，你指着这两根波浪线说「从醛被氧化那一下存进来的」</b>，比背「substrate-level phosphorylation」这个词管用得多。',
+  src2:'Biochemie, p165 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语名称保留）'},
+
+ {k:'认',
+  src:'img/p166_glycolysis_steps8to10.jpg',
+  t:'第 8 到第 10 步 —— 磷酸怎么被挪到能造 ATP 的位置（书 p166 图式）',
+  cap:'<b>这张是「认」。</b>上半张是 <b>fosfoglycerát-fosfomutasa</b> 的机制，下面一行是 <b>enolasa</b> 和 <b>pyruvátkinasa</b>。'
+    + '<br><br><b>上半张那个圈要看出一件事</b>：<b>mutase 不是自己把磷酸从 C-3 搬到 C-2</b>。图上画着两个标 <b>enzym</b> 的小椭圆，酶自己先带着一个磷酸；它把这个磷酸给底物，做出一个<b>两头都带磷酸</b>的中间物（<b>2,3-二磷酸甘油酸</b>），再从另一头拿走一个。<b>酶交出一个、收回一个，净效果才是「搬家」。</b>'
+    + '<br><br><b>下面一行三个结构</b>：<b>2-fosfoglycerát</b>；<b>enolasa</b> 脱掉一个水得到 <b>fosfoenolpyruvát</b>（注意那个磷酸上也画了<b>波浪线</b>，高能）；<b>pyruvátkinasa</b> 把磷酸交给 <b>ADP → ATP</b>。'
+    + '<br><br><b>⚠ 最后那一格最容易被漏掉</b>：pyruvátkinasa 的直接产物图上画的是 <b>C–OH 带双键的烯醇式</b>，旁边一根<b>双向箭头</b>才变成 <b>pyruvát</b> 的 <b>C＝O</b>。<b>那一步是互变异构，不用酶，而且是它把整个反应拉成不可逆的。</b>'
+    + '<br><br><b>看图要说的两句</b>：“Enolase removes water. That does not add energy, it <b>redistributes</b> it, and the phosphate ends up on an <b>enol</b>, which is a high-energy position.”'
+    + '<br>“Pyruvate kinase then gives that phosphate to ADP. The enol product <b>tautomerises</b> to the keto form at once, and that is what makes the step irreversible.”'
+    + '<br><br>⚠ <b>2,3-二磷酸甘油酸这个名字值得记一下</b>：它在红细胞里另有身份，是调节血红蛋白放氧的那个分子。<b>他要是从血红蛋白那边问过来，入口就在这张图上。</b>',
+  src2:'Biochemie, p166 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语酶名保留）'},
+
+ {k:'认',
+  src:'img/p166_glycolysis_atp_table.jpg',
+  t:'账就是这张表 —— −1 −1 ＋2 ＋2 ＝ ＋2（书 p166 表）',
+  cap:'<b>这张是「认」，它就是速背 05 那三行账的出处。</b>表头 <b>Reakce ＝ 反应 · Spotřeba ATP ＝ 花掉的 ATP · Tvorba ATP ＝ 做出的 ATP</b>，最后一行 <b>Zisk ＝ 净赚</b>。'
+    + '<br><br><b>四行数字</b>：hexokinasa <b>−1</b>；fosfofruktokinasa <b>−1</b>；fosfoglycerátkinasa <b>＋2</b>；pyruvátkinasa <b>＋2</b>。<b>底下一行：＋2。</b>'
+    + '<br><br><b>要看出来的一件事</b>：<b>花掉的两个各只有 1，做出的两个各有 2</b>。<b>差别就是第 4 步那一刀</b>——一个葡萄糖劈成两个三碳以后，下半段的每一步都走<b>两遍</b>。<b>这张表的 2 不是「这个酶做两个 ATP」，是「这个酶被用了两次」。</b>'
+    + '<br><br><b>摆到面前时说的两句</b>：“Two ATP spent in the upper half, four made in the lower half, so the net gain is <b>two</b>. The lower half runs twice per glucose.”'
+    + '<br>“The table counts only <b>substrate-level</b> phosphorylation. The two NADH are not in it. With oxygen they are worth about six more, and without oxygen they are worth nothing.”'
+    + '<br><br>⚠ <b>这张表里没有 NADH，是它最容易骗人的地方。</b><b>说账一定要说三行</b>：投入、产出、净账，而且把 NADH 单独说出来。<b>只报这张表的 ＋2，就等于默认了无氧。</b>',
+  src2:'Biochemie, p166 表（Spotřeba a tvorba ATP při glykolýze）· 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p168_pyruvate_dehydrogenase_complex.jpg',
+  t:'丙酮酸的第三条去路 —— 有氧时它怎么进线粒体（书 p168 图式 I）',
+  cap:'<b>这张是「认」，它是这条路的出口。</b>丙酮酸有三条去路，乳酸和乙醇都画在别处，<b>而有氧那一条就是这张</b>：<b>氧化脱羧成 acetyl-CoA</b>。'
+    + '<br><br><b>图上从左到右</b>：<b>pyruvát</b> 掉一个 <b>CO₂</b>；两碳片挂到 <b>thiaminpyrofosfát（TPP）</b> 上成 <b>hydroxyethyl-TPP</b>；交给 <b>lipoová kys.（硫辛酸）</b>的 <b>S–S</b>，被氧化成乙酰基；<b>CoASH</b> 接走，出去的是 <b>CH₃C–S-CoA</b>；最后 <b>FAD</b> 和 <b>NAD⁺</b> 把硫辛酸氧化回去，放出 <b>NADH ＋ H⁺</b>。底下三个方括号是三个酶：<b>pyruvátdehydrogenasa · dihydrolipoyl-transacetylasa · dihydrolipoyl-dehydrogenasa</b>。'
+    + '<br><br><b>看图要说的两句</b>：“With oxygen the pyruvate goes into the mitochondrion and is <b>oxidatively decarboxylated</b> to acetyl-CoA. One carbon leaves as CO₂ and one more NADH is made.”'
+    + '<br>“The complex needs five cofactors: <b>thiamine diphosphate, lipoic acid, coenzyme A, FAD and NAD-plus</b>. The same complex chemistry appears again in the citric acid cycle at 2-oxoglutarate.”'
+    + '<br><br>⚠ <b>这一步不属于糖酵解。</b>它在「一分子葡萄糖 38 ATP」那笔账里是单独的一项 <b>6</b>（两个丙酮酸各一个 NADH）。<b>糖酵解在丙酮酸就结束了</b>，这一点他很可能追。'
+    + '<br>另外<b>它跟乳酸那条路是竞争关系</b>：两条都要处理丙酮酸，<b>只有这一条能把 NADH 变成 ATP</b>。<b>「为什么剧烈运动时会产乳酸」的答案就是这一句——不是因为喜欢乳酸，是因为 NAD⁺ 必须马上回来。</b>',
+  src2:'Biochemie, p168 图式 (I)（无图号）· 300 dpi 原图裁切，未修改（图上捷克语酶名保留）'},
+
+ {k:'认',
+  src:'img/p172_galactose_to_glucose1p.jpg',
+  t:'半乳糖怎么挤进这条路 —— 速背 18 的那三个酶（书 p172 图式）',
+  cap:'<b>这张是「认」，它是「别的糖怎么进来」那一格里最容易被追的一条。</b>四个化合物、三根箭头、三个酶名，图上全有。'
+    + '<br><br><b>三步</b>：'
+    + '<br>① <b>galaktosa</b> 被 <b>galaktokinasa</b> 用一个 <b>ATP</b> 磷酸化成 <b>galaktosa-1-fosfát</b>。'
+    + '<br>② <b>transferasa</b>（图上是 hexosa-1-fosfát-uridylyltransferasa）拿 <b>UDP-glukosa</b> 来交换：半乳糖换到 UDP 上，放出 <b>glukosa-1-fosfát</b>。'
+    + '<br>③ <b>epimerasa</b> 在 <b>UDP-galaktosa</b> 上动手，把 <b>C-4</b> 翻个面变回 <b>UDP-glukosa</b>，<b>循环重新开始</b>。'
+    + '<br><br><b>看图要说的两句</b>：“Galactose and glucose differ at <b>one</b> carbon, carbon four. So the cell does not rebuild the sugar, it <b>epimerises</b> it.”'
+    + '<br>“The inversion happens while the sugar is attached to <b>UDP</b>, and the product enters glycolysis as <b>glucose-1-phosphate</b>, then glucose-6-phosphate.”'
+    + '<br><br>⚠ <b>这就是同事问过的那道题。</b>“How is glucose converted to galactose?” 的答案是一句话：<b>epimerization at C-4</b>，酶是 <b>UDP-glucose-4-epimerase</b>。<b>图上第三根箭头就是它。</b>'
+    + '<br>顺带一句临床的，问到就说，说完就停：“A defect in the <b>transferase</b> is classical <b>galactosaemia</b>.” <b>这是 general，不是这本书上的。</b>',
+  src2:'Biochemie, p172 图式（无图号）· 300 dpi 原图裁切，未修改（图上捷克语名称保留）'}
+],
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[

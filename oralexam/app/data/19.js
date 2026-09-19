@@ -206,6 +206,50 @@ recog:[
  say:'“Three ways. Irreversible inhibitors are used to study enzyme structure. Reversible ones report on substrate specificity and on the structure of the active site. And in the cell itself, reversible inhibition by specific metabolites is one of the main instruments of metabolic regulation.”'}
 ],
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p059_inhibition_scheme_ei_eai.jpg',
+  t:'三类怎么分的 —— 书用一张反应式就说完了（书 p059，§3.5 末尾）',
+  cap:'<b>这张是「画」，而且它是这道题的骨架</b>：三类不是背出来的名字，是这张图上<b>三种走法</b>。'
+    + '<br>主线是酶反应本身 <code>E + A ⇌ EA → E + X</code>；<b>两支往下掉的箭头</b>就是抑制剂能插进去的两个地方，'
+    + '插在<b>游离酶</b>上得到 <b>EI</b>，插在<b>酶-底物复合物</b>上得到 <b>EAI</b>。两支各有自己的解离常数 <b>K<sub>i</sub></b> 和 <b>K<sub>i</sub>′</b>。'
+    + '<br><br><b>画的顺序（五步）</b>:'
+    + '<br>① 横着写主线：<code>E + A</code>，双箭头（上标 <b>k₁</b>、下标 <b>k₋₁</b>）到 <code>EA</code>，再一根单箭头（标 <b>k₂</b>）到 <code>E + X</code>。'
+    + '<br>② 在 <b>E</b> 的正下方写一个 <b>+ I</b>。'
+    + '<br>③ 从那里往下画一对反向箭头，旁边标 <b>K<sub>i</sub></b>，落到 <b>EI</b>。'
+    + '<br>④ 在 <b>EA</b> 的正下方同样写 <b>+ I</b>，往下一对反向箭头标 <b>K<sub>i</sub>′</b>，落到 <b>EAI</b>。'
+    + '<br>⑤ <b>画完再分类</b>：只走左边那一支 ＝ <b>竞争性</b>；只走右边那一支 ＝ <b>反竞争性</b>；两支都走、而且 K<sub>i</sub> ＝ K<sub>i</sub>′ ＝ <b>非竞争性</b>；两支都走但 K<sub>i</sub> ≠ K<sub>i</sub>′ ＝ <b>混合型</b>。'
+    + '<br><br><b>边画边说的两句</b>：“Reversible inhibitors are classified by <b>which form of the enzyme they bind</b>. The inhibitor can react with the <b>free enzyme</b>, giving the binary complex E I, or with the <b>enzyme-substrate complex</b>, giving the ternary complex E A I, or with both. K i is the dissociation constant of E I and K i prime that of E A I.”'
+    + '<br>“<b>Competitive</b> binds only the free enzyme and competes for the same site. <b>Uncompetitive</b> binds only the complex, because the site for it is created by the conformational change the substrate induces. <b>Non-competitive</b> binds both with the <b>same</b> affinity, and <b>mixed</b> inhibition is the general case where the two affinities <b>differ</b>.”'
+    + '<br><br>⚠ 书用的字母是 <b>A</b> 表示底物、<b>I</b> 表示抑制剂，跟别的教材的 S 不一样，<b>照书画</b>。'
+    + '⚠ 这张图<b>只管可逆那一半</b>；不可逆抑制书明说 Michaelis–Menten 方程根本不成立，因为活性酶的浓度自己在变。',
+  src2:'Biochemie, p059（§3.5 末尾那张反应式）· 300 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p061_obr36_reversible_inhibition.jpg',
+  t:'三类在双倒数图上各是什么样子 —— 考官最爱摆的就是这一张（书 Obr. 3.6）',
+  cap:'<b>这张是「画」，而且它是这道题最可能被摆到面前的一张。</b>'
+    + '书把三张小图并排画好了，标题从左到右是<b>非竞争性 · 竞争性 · 反竞争性</b>；'
+    + '每张右上角那个 <b>[I]</b> 加一根弯箭头，意思是「<b>抑制剂浓度沿箭头方向越来越大</b>」，所以每张里那几条线是同一个酶在几个抑制剂浓度下测出来的。'
+    + '<br><br><b>画的顺序（每一张都是同样四步）</b>:'
+    + '<br>① 两条轴：纵轴 <b>1/v</b>，横轴 <b>1/[A]</b>，画成十字，横轴留出负的那一半。'
+    + '<br>② 先画<b>没有抑制剂</b>那条线（最下面、最平的一条）。'
+    + '<br>③ 再画两条抑制剂越来越多的线，<b>关键是它们跟第一条线的关系</b>——'
+    + '<b>竞争性</b>：都<b>交在纵轴上同一点</b>，像一把扇子从纵轴上展开；'
+    + '<b>非竞争性</b>：都<b>交在横轴上同一点</b>（用虚线往左延长才看得到）；'
+    + '<b>反竞争性</b>：<b>互相平行</b>，整把往上平移。'
+    + '<br>④ 标出结论：竞争性 <b>V<sub>max</sub> 不变、K<sub>m</sub> 升</b> · 非竞争性 <b>V<sub>max</sub> 降、K<sub>m</sub> 不变</b> · 反竞争性 <b>两个一起降</b>。'
+    + '<br><br><b>一句话记法</b>：<b>交点落在哪条轴上，那条轴对应的常数就没变。</b>'
+    + '交在纵轴 → 截距 1/V<sub>lim</sub> 不动 → V<sub>max</sub> 不变（竞争性）；交在横轴 → 截距 −1/K<sub>m</sub> 不动 → K<sub>m</sub> 不变（非竞争性）；哪条轴上都不交 → 两个都变（反竞争性）。'
+    + '<br><br><b>边画边说的三句</b>：“<b>Competitive</b> inhibition shows up as an unchanged V max and a raised K m. That is the plot saying what the mechanism says. Enough substrate can always <b>outcompete</b> the inhibitor, so the maximum rate survives. You just need more substrate to reach half of it.”'
+    + '<br>“<b>Non-competitive</b> inhibition lowers V max and leaves K m alone. More substrate does not help, because the inhibited enzyme molecules are not working at all. In effect a fraction of the enzyme has been <b>taken out of the system</b>.”'
+    + '<br>“<b>Uncompetitive</b> inhibition lowers <b>both</b>. The inhibitor binds only the enzyme-substrate complex, so it can only act where substrate has already bound.”'
+    + '<br><br>⚠ 「相当于把一部分酶从体系里拿掉」<b>是推论，不是书上的话</b>，书只给了图上的表现。说的时候用 “in effect”。'
+    + '<br>⚠ 书的横轴写的是 <b>1/[A]</b>；书正文对反竞争性用的词是 un-（英文 <b>uncompetitive</b>），跟「非竞争性」是两回事，<b>别混</b>。',
+  src2:'Biochemie, Obr. 3.6, p061 · 300 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 追问 ---------------- */
 ask:[
 {g:'为什么类', gn:'这题的结论多、理由少，所以他插刀的位置很集中。', items:[

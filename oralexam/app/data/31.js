@@ -49,7 +49,7 @@ cram:[
 
  {g:'水溶性维生素 → 辅酶', gn:'书的 <b>Table 3.1</b> 就是这一组的骨架：<b>辅酶 · 搬什么 · 来自哪个维生素</b>，三列。每一行只要三件事：<b>叫什么 · 搬什么基团 · 在哪个反应里见过</b>。结构式不用背（她有专门的 app）。'},
  {n:'07', t:'书的表，原样',
-  big:'<b>Table 3.1（p043）</b>——这张表是这道题的地图。<b>注意最后两行 vitamin 那一栏是空的</b>，那个空格本身就是一道题',
+  big:'<b>Table 3.1（p043）</b>——这张表是这道题的地图。<b>注意有两行 vitamin 那一栏是空的</b>（辅酶 Q 和硫辛酰胺，不是最后两行），那个空格本身就是一道题',
   en:'“The textbook has one table for this, table three point one on page forty-three. It has three columns: the coenzyme, the group it transfers, and the vitamin behind it. Ten coenzymes are listed, and two of them have an empty vitamin column.”',
   tbl:{head:['coenzyme','group transferred','vitamin'],
        rows:[['NAD⁺','H⁺, e⁻','nicotinic acid'],
@@ -203,6 +203,92 @@ why:{
  stop:{lbl:'停 · 落在进化',
   say:'“Below that we are asking which lineage lost which biosynthetic pathway and when. That is evolutionary biology rather than biochemistry.”'}
 },
+
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'认',
+  src:'img/p043_tab31_coenzymes.jpg',
+  t:'Table 3.1 —— 这道题的地图（书 p043）',
+  cap:'<b>这张是「认」，而且它是这张卡最值钱的一张。</b>他摆出来问「这是什么」，答：“This is the textbook’s table of coenzymes, the group each one transfers, and the vitamin behind it.”'
+    + '<br><b>三列</b>：左列是<b>辅酶</b>，中列是<b>搬的基团</b>，右列是<b>维生素</b>。十行。'
+    + '<br><br>⚠⚠ <b>这张表是拿来看「分组」的，不是拿来看结构的。</b>哪个维生素变成哪个辅酶、那个辅酶搬什么——<b>这三件事连起来就是这道题</b>。<b>化合物的结构式她另有专门的 app，这里一个都不用背。</b>'
+    + '<br><br><b>十行一眼分成四组（这就是「分组」的意思）</b>：'
+    + '<br>① <b>搬氢和电子的五个</b>：NAD⁺ · NADP⁺ · FMN · FAD · Coenzyme Q。中列全写着 H⁺, e⁻。'
+    + '<br>② <b>搬醛的一个</b>：TPP。'
+    + '<br>③ <b>搬酰基的两个</b>：Coenzyme A 和 Lipoamide（后者中列写的是 acyl, H，两样都搬）。'
+    + '<br>④ <b>各搬一样的两个</b>：Biotin 搬 CO₂，Pyridoxal phosphate 搬 –NH₂。'
+    + '<br><br><b>右列有两个空格，那两个空格本身就是一道题</b>：<b>Coenzyme Q</b> 和 <b>Lipoamide</b> 的维生素栏是空的。'
+    + '<br><b>被问就答</b>：“Two of them have no vitamin. Coenzyme Q and lipoamide are made by the body itself, so they are not dietary requirements. That is exactly the line between a vitamin and a coenzyme. A vitamin is what we cannot make.”'
+    + '<br>⚠ <b>速背 07 的中文写着「最后两行 vitamin 那一栏是空的」，看图就知道不是最后两行</b>——空的是<b>第 5 行（Coenzyme Q）和第 8 行（Lipoamide）</b>。速背里的 <code>tbl</code> 十行本身是对的，只有那句话的位置说法要按图改。'
+    + '<br>⚠ 右列的维生素名印的是捷克拼法，但 <b>riboflavin · thiamine · biotin · pyridoxine</b> 几乎一样；写作「烟酸」和「泛酸」的那两行是 <b>nicotinic acid</b> 和 <b>pantothenic acid</b>，它们后面都跟着一个意思是「酸」的词。',
+  src2:'Biochemie, Tab. 3.1, p043 · 300 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p044_nad_hydride.jpg',
+  t:'NAD⁺ 收氢那一步 —— 书自己画的（书 p044）',
+  cap:'<b>这张是「认」。</b>它只画一件事：<b>氢加在吡啶环的 C-4 上</b>。'
+    + '<br>左边是氧化型，环里的氮带<b>正电</b>；右边是还原型，<b>C-4 上多了一个 H</b>，正电没了。下面那一行 <code>NAD⁺ ＋ 2H ⇌ NADH ＋ H⁺</code> 是书印的配平式。'
+    + '<br>两边底下的 <b>Rib–P–P–Ado</b> 是同一条尾巴：核糖、两个磷酸、腺苷——<b>这就是「二核苷酸」四个字的全部内容</b>。'
+    + '<br><br><b>看到图要说的那一段</b>：“The nicotinamide coenzymes are dinucleotides. One base is nicotinamide, the other adenine. The hydrogen is added to carbon four of the pyridine ring, which then loses its positive charge and its aromatic character. NADP differs only by one extra phosphate on the two-prime position of the adenosine.”'
+    + '<br><br><b>这一格把两件事接在一起</b>：维生素那一栏写的是<b>烟酸</b>，而图上被改造的正是<b>烟酰胺</b>那个环——<b>吃进去的是维生素，干活的是这个环</b>。',
+  src2:'Biochemie, p044 · 原图裁切，未修改（与卡 x-cur 共用同一张图）'},
+
+ {k:'认',
+  src:'img/p045_fad_oxidised_reduced.jpg',
+  t:'FAD 的氧化型和还原型 —— 她在 N-1 / N-10 上的护身符（书 p045）',
+  cap:'<b>这张是「认」，而且它的主要用途是当证据</b>（LOGIC §16：图可以当护身符）。'
+    + '<br><b>左边是氧化型，右边是还原型，中间写着 ＋2H / −2H。</b>'
+    + '<br><br><b>要在图上数出来的那件事</b>：左边三个环里，<b>那个连着长链的氮已经有三根键了</b>——链就挂在它身上，<b>它没有空位再接一个氢</b>。而右边还原型上多出来的两个 <b>H</b>，画在<b>另外两个氮</b>上。'
+    + '<br><br>⚠ <b>书正文 <span class="pg">p045</span> 印的是氢加在 N¹ 和 N¹⁰</b>（已回 320 dpi 确认不是 OCR 错），<b>可这张图自己反着说</b>：带链的那个氮就是 N-10。通用写法是 <b>N-1 和 N-5</b>。'
+    + '<br><b>考场说法（先给模糊但正确的）</b>：“The hydrogen adds across two ring nitrogens of the isoalloxazine system.”'
+    + '<br><b>被逼问再给这一层，并且把图指给他</b>：“The textbook prints N-one and N-ten, but its own structure on the same page puts the ribityl chain on N-ten, so that nitrogen has no free valence. The generally accepted positions are N-one and N-five.”'
+    + '<br><b>这是「用这本书的一半打这本书的另一半」</b>——比引外部教材稳得多。'
+    + '<br><br>图下那行字是「黄素腺嘌呤二核苷酸（氧化型和还原型）」，也就是图注本身。右半那个腺嘌呤加核糖，就是名字里「二核苷酸」的另一半。',
+  src2:'Biochemie, p045 · 300 dpi 原图裁切，未修改（图注在框内下方）'},
+
+ {k:'认',
+  src:'img/p046_haem_iron.jpg',
+  t:'血红素 —— 铁坐在哪里（书 p046）',
+  cap:'<b>这张是「认」，而且要数的是数量，不是结构。</b>结构式她另有 app，这里只数四件事。'
+    + '<br><br><b>四个数，看图一眼数得出来</b>：'
+    + '<br>① <b>四个五元环</b>（吡咯核）围成一圈。'
+    + '<br>② <b>四座桥连着它们</b>，图上写成 <b>HC＝</b> 和 <b>＝CH</b>，就是次甲基桥。'
+    + '<br>③ 正中间写着 <b>Fe</b>，上面那个小 <b>(II)</b> 是它的价态；<b>四根虚线连到四个氮</b>。'
+    + '<br>④ 底下那三个字母就是这个基团的名字（<b>haem</b>）；左边和下面伸出来的两条 <b>HOOC</b> 是丙酸侧链。'
+    + '<br><br><b>看到图要说的那一段</b>：“A haem is four pyrrole rings joined by four methine bridges into one flat conjugated ring. The iron sits in the middle, held by the four ring nitrogens. It still has two more coordination positions, perpendicular to the plane, and those are what bind the protein on one side and oxygen or a substrate on the other. Electron transfer is the iron changing between Fe two-plus and Fe three-plus.”'
+    + '<br><br><b>这一格是「矿物质」那半张卡的落点</b>：铁不是燃料，是<b>换价的中心</b>。书还说不同细胞色素的差别只在<b>吡咯环上挂什么取代基</b>，那一点点差别给了它们<b>不同的电化学电位</b>——所以呼吸链才排得出顺序（接卡 25）。'
+    + '<br>⚠ <b>配位化学到这里停。</b>「两个垂直的配位位置」能在实验台上看见（一氧化碳抢的就是那一个），<b>再往下的空轨道、八面体、d 电子数是停止线</b>（LOGIC §5）。',
+  src2:'Biochemie, p046 · 400 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p183_terpene_family_tree.jpg',
+  t:'萜类的家谱 —— A · D · E · K 住在这棵树上（书 p183）',
+  cap:'<b>这张是「认」，而且它是这张卡最反直觉的一格</b>：<b>书从不说「脂溶性维生素」四个字</b>，它把 A D E K 放进了脂类那一章的萜类小节。<b>分类的依据在这棵树上，不在溶解度表上。</b>'
+    + '<br><br><b>树怎么读（从上往下，每一层加五个碳）</b>：'
+    + '<br>① 最上面两个 <b>C₅</b>：<b>IPP</b> 和 <b>DMAPP</b>，它们互为异构体，箭头是双向的。这一层叫<b>半萜</b>。'
+    + '<br>② 两个 C₅ 并起来 → <b>geranyl-PP，C₁₀</b> → <b>单萜</b>。'
+    + '<br>③ 再加一个 IPP → <b>farnesyl-PP，C₁₅</b> → <b>倍半萜</b>。'
+    + '<br>④ 再加一个 IPP → <b>digeranyl-PP，C₂₀</b> → <b>二萜</b>；同一层往右两个 C₁₅ 并起来 → <b>squalene，C₃₀</b> → <b>三萜</b>（<b>甾体就从这儿来</b>）。'
+    + '<br>⑤ 两个 C₂₀ 并起来 → <b>phytoene，C₄₀</b> → <b>四萜</b>（<b>胡萝卜素就在这一层</b>）。'
+    + '<br>右边那一列方框里写的就是这六个类名，<b>它们的拼法跟英文几乎一样，一眼认得出</b>。'
+    + '<br><br><b>看到图要说的那一段</b>：“The textbook does not group A, D, E and K by solubility. It puts them in the lipid chapter, among the terpenes, which are built from five-carbon isoprene units. Vitamin A is retinol, and its precursor is the tetraterpene carotene, at the bottom of this scheme. Vitamin D comes from a steroid, which comes from squalene on the right. Vitamin K and vitamin E carry a chain derived from phytol.”'
+    + '<br><br><b>为什么这棵树值得记</b>：它把<b>三个看起来无关的东西接成一条线</b>——胆固醇、胡萝卜素、维生素 K 的尾巴。<b>他从「脂溶性维生素」走出去，多半就走到这棵树上。</b>'
+    + '<br>⚠ <b>书里没有任何每日需要量</b>，这张图上也没有。被问剂量就说这本书不给数（LOGIC §11：不编不存在的数）。',
+  src2:'Biochemie, p183 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p183_phytol_vitamin_k.jpg',
+  t:'植醇和维生素 K —— 那条尾巴就是「脂溶」的全部理由（书 p183）',
+  cap:'<b>这张是「认」，它把上一张的结论落到一个具体分子上。</b>'
+    + '<br><b>上面那条长链下面标的就是植醇（<b>phytol</b>）</b>，一条带四个甲基分支的二十碳链，右端一个 <b>CH₂OH</b>。'
+    + '<br><b>下面是维生素 K 的骨架</b>：左边一个苯环并着一个含两个 <b>O</b> 的六元环（那是醌），环上一个 <b>CH₃</b>，再挂一条重复的支链 <b>(CH₂CH＝C(CH₃)CH₂)ₙ–H</b>。'
+    + '<br><b>右边两行标注给的是同一个骨架的两个成员</b>：<b>vitamin K₁</b>（叶绿醌，<b>n＝4</b>）和 <b>vitamin K₂</b>（甲萘醌，<b>n＝8</b>）——<b>差别只有 n</b>。'
+    + '<br><br><b>看到图要说的那一段</b>：“The head of vitamin K is a quinone, and the tail is an isoprenoid chain derived from phytol. The textbook says the phytol chain is what gives vitamin K its lipophilic character. K-one and K-two are the same molecule with a different number of isoprene units, four and eight.”'
+    + '<br><br><b>这一格的价值在于它给了一个能说出口的因果</b>：<b>不是「K 是脂溶性的，所以它在脂类章」，是「K 挂着一条植醇来的疏水尾巴，所以它是脂溶性的」</b>。书自己那句话就是这个意思。'
+    + '<br><b>同一条尾巴还出现在两处</b>：维生素 <b>E</b> 上，和<b>辅酶 Q</b> 上——<b>所以呼吸链那张卡里 Q 为什么泡在膜里，答案也在这张图上</b>（接卡 25）。'
+    + '<br>⚠ <b>n＝4 和 n＝8 这两个数是图上印的</b>，可以报。<b>别把它读成「维生素 K 有两种」</b>——书写的是一个通式加两个命名的成员。',
+  src2:'Biochemie, p183, 植醇与维生素 K 结构 · 350 dpi 原图裁切，未修改'}
+],
 
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[

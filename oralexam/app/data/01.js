@@ -3,7 +3,7 @@
    出处 Biochemie OCR p026–p035、p009、p109 */
 
 window.CARDS.push({
-id:'01', n:11, merged:[30], w:2,
+id:'01', n:11, merged:[29,30], w:2,
 q:'Describe the levels of protein structure.',
 qcn:'描述蛋白质的各级结构',
 sub:'主干说完约 90 秒',
