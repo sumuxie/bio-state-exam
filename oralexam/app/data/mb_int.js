@@ -1,0 +1,383 @@
+/* 横向卡 · 第三科（分子生物学）第一张
+   这两个分子到底有没有接触 —— 八种方法，八种读出。
+   出处是《现代分子生物学》第五版 §6.3（印刷页 219–228），经 20260828_molecure_lite/data/
+   spine_ch6_interactions.js 转录（节点 M-6-3，18 步）。那份转录自己分两层：
+   正文来自扫描页；标了 beyond:true 的是通用知识，转录者注明「那一页上没写」。
+   卡上凡是来自 beyond 的，当场标了「书上没写」。
+   ⚠ 这张卡是她自己说的重心：「主要还是方法论吧」（2026-09-20）。
+   理由是考官顺着她的课题往下追，最容易落在「你怎么证明它们结合」。
+   接卡 02（Kd，SPR 和 pull-down 给的那个量）、pe-pur（抗体、标签、球珠、洗脱）、
+   pe-evo（噬菌体展示的亲和力 vs 亲合力）、x-trans（报告基因、转录激活）、
+   14（转化/转染，把载体弄进细胞）、16（基因组上的位置）。
+   页码用 <span class="pg"> 标印刷页，例如 p.221。
+   ⚠ 图：《现代分子生物学》的扫描件不在这个仓库里，只有转录出来的文字。
+   图 6-18 到 6-30 都没法裁，按规矩 R4「要画的先记下不要画」，一张都没放。
+   想要的图记在 LOGIC.md §16。 */
+
+window.CARDS.push({
+id:'mb-int', cross:1, w:0,
+q:'这两个分子到底有没有接触 —— 八种方法，八种读出',
+qcn:'横向卡 · 第三科第一张 · 脊梁：接触本身看不见，每种方法都在接触的下游造一个信号，再拿这个信号报告接触',
+sub:'跨题共用 · 出处《现代分子生物学》第五版 §6.3 · 接卡 02、pe-pur、pe-evo、x-trans、14',
+
+cram:[
+ {g:'开口 · 先把八种方法串成一句话', gn:'这张卡不是八个名字的清单。它是<b>三个问题</b>，任何一种方法都能被这三个问题安放进去，名字只是填进去的例子。'},
+
+ {n:'01', t:'这是一件什么工作',
+  big:'显微镜分辨不出「两个分子在接触」。所以<b>每一种方法都在接触的下游造一个信号</b>，然后拿那个信号当答案',
+  en:'“Two molecules touching is not something a microscope resolves. Every method here builds a signal downstream of the contact and reports that signal instead. A contact is read out as a colony that grows, a colony that turns blue, an angle of reflected light, a band on a gel, or a wavelength of emitted light. It is never read out as seeing the two molecules together.”',
+  note:'<b>这一句是整张卡的地基，第一句就说它。</b><span class="pg">p.219</span><br>说了这一句，后面每一种方法你都只需要补三样：<b>读出是什么、在哪儿做、它看不见什么</b>。<br><b>为什么这句话值钱</b>：考官问「你怎么证明它们结合」的时候，他真正在听的是你知不知道<b>你手上那个信号离真正的接触有多远</b>。一上来就承认「我看的是下游信号」，比说「我看到它们结合了」稳得多。'},
+
+ {n:'02', t:'三个问题，安放任何一种方法',
+  big:'<b>问的是哪一对</b>（蛋白–DNA / 蛋白–蛋白 / RNA–RNA）· <b>在哪儿做</b>（酵母核 / 试管 / 芯片 / 活细胞）· <b>读出是什么</b>（菌落 / 条带 / 角度 / 波长 / 测序）',
+  en:'“I sort these methods by three questions. Which pair is being asked about. Where the experiment happens. And what the readout is. Yeast one-hybrid asks about a protein and a piece of DNA, inside a yeast nucleus, and reads out a blue colony. Surface plasmon resonance asks about two proteins, on a chip, and reads out an angle. Once I have those three answers for a method I can say what it cannot show.”',
+  note:'<b>这三个问题是背这张卡的唯一办法。</b>八个名字硬背会串，三个问题填空不会。<br><b>碰到一个你没见过的方法怎么办</b>：照样问这三句。他要是提一个卡上没有的方法（酵母三杂交、EMSA、DNase I 足迹法、RIP），你说 “I would ask the same three questions about it” 然后现场推，比承认没听过强得多。<br>⚠ <b>那四个方法这张卡上没有</b>，因为转录的那几页上没有；<b>别假装它们在书里</b>。'},
+
+ {n:'03', t:'⚠ 每一种都有它显示不出来的东西',
+  big:'一个方法的<b>盲点</b>，决定了它给出的阳性结果<b>值多少钱</b>。这是他插刀最狠的地方',
+  en:'“Each method has something it structurally cannot show. The blind spot of a method is the part that decides what a positive result is worth. A yeast two-hybrid hit says two proteins bind when both are placed in a yeast nucleus. A co-precipitation says two proteins sit in one pellet. An absent FRET signal is consistent with two proteins that never bind and also with two that bind in the wrong orientation. I would not claim more than the readout gives me.”',
+  note:'<b>这一点单独列出来，因为它是这张卡上最容易加分也最容易失分的地方。</b><br>她 2026-09-01 的 PESB 口试复盘（见 <code>LOGIC.md</code>）里，失分最重的一刀不是不知道，是<b>答的那一层不是他问的那一层</b>。这里同理：他问 “How do you know they interact?”，你答一个方法名，他下一句必然是 “And what would that experiment miss?”。<br><b>主动说出盲点，比被他挖出来好。</b>',
+  warn:'⚠ <b>八分答案是「方法 ＋ 读出 ＋ 盲点」三件套，说完就停。</b>不要一口气把八种都背出来——他没问你要清单，而且背完你就把自己推到了下一层。'},
+
+ {g:'在酵母细胞里做 · 两种（单杂交、双杂交）', gn:'这两种共用<b>同一套零件</b>：一个转录激活结构域、一个报告基因。差别只在<b>谁是已知的那一半</b>。'},
+
+ {n:'04', t:'酵母单杂交 · 哪个蛋白结合这段 DNA',
+  big:'把<b>已知的那段 DNA</b> 接在最简启动子 Pmin 上游，报告基因接在下游，待测蛋白融合到 <b>AD</b> 上。蛋白一结合，就把 AD 拖到了 Pmin 跟前',
+  en:'“Yeast one-hybrid identifies a protein that binds stably to a known piece of DNA, and it works inside a living yeast cell. A known cis-acting element is cloned upstream of a minimal promoter called Pmin, and a reporter gene is joined downstream of Pmin. The candidate protein is expressed as a fusion with a yeast transcription activation domain. A protein that binds the element drags its attached activation domain to Pmin, Pmin fires, and the reporter gene is transcribed. So binding to a piece of DNA is read out as expression of a reporter gene.”',
+  note:'<b>顺式作用元件（cis-acting element）＝ 调控蛋白所结合的那一小段 DNA</b>。这个词承重，必须在同一句里交代掉。<span class="pg">p.219–220（图 6-18）</span><br><b>报告基因一般是 HIS3 或 LacZ</b>，大多数体系里它待在质粒上，不整合进酵母染色体。<b>顺式元件连 3 个以上拷贝，识别和结合效率会提高</b>。<br><b>书上的实例</b>：4 个 DRE 元件排在 Pmin 上游驱动 LacZ，拟南芥 cDNA 文库融合在载有 LEU2 的载体上的 GAL4 AD 前面。<span class="pg">p.220（图 6-19）</span>',
+  good:'<b>这个方法真正的用武之地是灵敏度</b>：细胞里含量低到任何生化纯化都够不着的转录调控因子，靠它能克隆出来。<b>这一句比背流程有用</b>——它回答的是「为什么不直接把蛋白纯化出来」。'},
+
+ {n:'05', t:'⚠ 蓝色菌落是验证的起点，不是结论',
+  big:'平板上变蓝的转化体被当作阳性克隆挑出来，<b>每一个都还要再测序、再单独验证结合活性</b>',
+  en:'“Yeast transformants that turn blue are picked as positive clones. Every one of them is then sequenced and has its binding activity verified separately. A blue colony is where the verification starts.”',
+  note:'<b>这句是书上自己写的，不是我加的限定。</b><span class="pg">p.220</span><br>为什么要强调：一个文库筛选出来的阳性，<b>本身是一个候选，不是一个答案</b>。她答「我做了单杂交，筛到了」，考官接 “And then?”——答不上来这一步，前面说得再顺也停在半路。'},
+
+ {n:'06', t:'整套读出的支点 · 转录调控因子是组件式的',
+  big:'真核转录调控因子由<b>相互独立的结构域</b>拼成，激活因子必需的是两个：<b>DNA 结合结构域 BD</b> 和<b>转录激活结构域 AD</b>。两者要到同一个位置，<b>但不必长在同一条多肽链上</b>',
+  en:'“Eukaryotic transcription regulators have a modular structure. Each one is built from two or more mutually independent domains, and an activator needs two of them in order to work. One is a DNA binding domain and the other is an activation domain. A binding domain on its own binds the promoter region of a gene and stops there, having started no transcription. A hybrid protein carrying the binding domain of one regulator and the activation domain of a different regulator activates transcription perfectly well. So the two domains have to arrive in the same place, and they do not have to be on the same polypeptide.”',
+  note:'<b>这一点是整组的支点，单杂交和双杂交都是从它长出来的。</b><span class="pg">p.221</span><br>把这一句说清楚，后面双杂交你不用解释原理，一句 “that separation put to work on protein pairs” 就够了。<br><b>同一个事实还有第二种用法</b>：把某个未知基因融合到 GAL4 的 BD 上，去读 GAL4 顺式元件下游的报告基因；报告基因亮了，说明<b>这个未知蛋白自身带有转录激活功能</b>。这是一个独立的实验，不是双杂交。',
+  good:'<b>接卡 x-trans</b>：那张卡讲的是「从基因到蛋白，细胞把同一条信息抄两遍」。这里用到的是抄第一遍那一步的开关——<b>转录激活</b>。报告基因能亮，说明 RNA 聚合酶被招来了。'},
+
+ {n:'07', t:'酵母双杂交 · 诱饵和猎物',
+  big:'BD 挂<b>已知蛋白</b>＝诱饵（bait），AD 挂 <b>cDNA 文库的每个插入片段</b>＝猎物（prey）。猎物一结合诱饵，AD 和 BD 被牵到一起，凑成一个能干活的转录调控因子',
+  en:'“Yeast two-hybrid is that separation of the two domains put to work on protein pairs. The sequence of a known protein is joined to the binding domain fragment of a yeast regulator such as GAL4 on an expression vector. The hybrid protein binds the regulatory region upstream of a reporter gene and sits there. That construct is the bait, meaning the half that is known and fixed. The activation domain fragment is joined separately to each insert of a cDNA library to give prey vectors, and those are transformed into the bait carrying cells. When a prey protein binds the bait, the two domains are drawn together into one working regulator, the reporter gene switches on, and the prey vector recovered from that colony carries a new interacting gene.”',
+  note:'<b>常用的 BD 来源是 GAL1、GAL4 或 GCN1。</b><span class="pg">p.221（图 6-20）</span><br><b>「诱饵」这个词的定义要说出来</b>：bait ＝ 已知的、固定不动的那一半。不说清楚，他会以为你在背比喻。<br><b>拿回来的是什么</b>：一个菌落 → 回收猎物载体 → 里面那段 cDNA 就是一个新的互作基因。<b>整个筛选的产物是一段序列，不是一个结论。</b>',
+  good:'<b>接卡 14</b>：「转化进含诱饵的酵母细胞」用的就是那张卡上的 transformation。酵母是转化，不是转染——<b>这两个词说反是实测会被抓的。</b>'},
+
+ {n:'08', t:'⚠ 双杂交的盲点 · 它要求的条件就是它的限制',
+  big:'两边都得<b>在酵母里被造出来</b>、都<b>进得了酵母核</b>、还得<b>结合得够久</b>让报告基因转录完。<b>这三条要求，同时就是三个盲点</b>',
+  en:'“Both partners have to be produced inside a yeast cell, reach the yeast nucleus, and hold together long enough for a reporter gene to be transcribed. Two consequences follow. An interaction that depends on a chemical modification yeast does not make will not appear at all. And two proteins that are never in the same compartment in the organism they came from can still score positive. A yeast two-hybrid hit is a statement about two proteins placed together in a yeast nucleus. It carries no information about whether those two ever meet in the cell they came from.”',
+  note:'<b>最后那一句是这一点的八分答案，说完就停。</b><span class="pg">p.221</span><br>⚠ <b>书上没写</b>：那两个后果是从机制推出来的通用知识，转录者标了 <code>beyond</code>，说那一页上只有机制和读出。<b>说的时候别挂到书上</b>，说 “that follows from how the assay works” 就对了。<br><b>两个后果各自对应什么</b>：<b>假阴性</b>＝依赖磷酸化、糖基化这类酵母做不出的修饰的互作，根本不出现；<b>假阳性</b>＝原本一个在核里一个在膜上、永不相遇的两个蛋白，在这里照样阳性。'},
+
+ {g:'从细胞里拿出来做 · 三种（SPR、CoIP、GST pull-down）', gn:'这三种都在试管或芯片上。共同的好处是<b>能给一个量</b>，共同的代价是<b>诱饵不在细胞里了</b>。'},
+
+ {n:'09', t:'SPR · 等离子体表面共振',
+  big:'诱饵固定在<b>纳米厚金属膜</b>上的葡聚糖层里，蛋白混合物流过。凡是结合上的，<b>都让表面折射率上升，反射光的共振角度跟着变</b>',
+  en:'“Surface plasmon resonance immobilises the bait protein on a dextran layer, and that layer is fixed onto a metal film of nanometre thickness. A protein mixture is flowed past it. Anything in the mixture that interacts with the bait raises the refractive index at the film surface, and that shifts the resonance angle. The resonance angle is the angle at which the reflected light loses intensity, and the shift is linear in the protein concentration at that spot. Surface plasmon resonance needs no label and no dye. It is fast and it returns a quantity rather than a yes. The price is a dedicated instrument, and a bait sitting on a chip instead of in a cell.”',
+  note:'<b>共振角度＝反射光强度下降的那个角度</b>。这个词承重，一句话交代掉。<span class="pg">p.221–222（图 6-21）</span><br><b>SPR 在八种里的位置</b>：它是<b>最物理的那一端</b>。上一组读的是「报告基因转录了没有」，隔着好几层；这里读的是一个角度，中间没有生物学。<br><b>无标记、无染料</b>这一点要说，因为它直接回答「你的标签会不会干扰结合」。',
+  good:'<b>接卡 02</b>：SPR 给的正是那张卡上的<b>结合曲线</b>。<b>她的主场在这里</b>——K<sub>d</sub> 那张卡讲的是这个量怎么定义、怎么被误读；这张卡讲的是这个量在实验台上从哪儿来。'},
+
+ {n:'10', t:'SPR 的实例 · 一对蛋白还需要第三个分子',
+  big:'JAZ1 以 <b>1000 共振单位</b>固定在芯片上。<b>只有体系里同时有 JA–Ile 时，COI1 才结合</b>（升到 380 单位）；单独的 COI1 贴着零',
+  en:'“JAZ1 is a negative regulator of the jasmonic acid signalling pathway, and it was immobilised on the chip at one thousand resonance units. With jasmonic acid isoleucine and COI1 both present, the signal climbed to three hundred and eighty resonance units. Luciferase, luciferase with the small molecule, and COI1 on its own all stayed near zero. Coronatine is a bacterial toxin resembling methyl jasmonate, and it drove the same interaction to about three hundred and ten units, while three other related small molecules produced no response. So COI1 binds JAZ1 only when a particular small molecule is present as well, and a trace measured in resonance units is what turns that requirement into a number.”',
+  note:'<b>这个例子值得记，因为它回答的是一个很常见的追问</b>：「你做了实验没看到结合，能说明它们不结合吗」。<b>不能</b>——可能缺一个小分子。<span class="pg">p.222（图 6-22）</span><br><b>三条对照都贴零</b>：荧光素酶、荧光素酶加 JA–Ile、单独 COI1。<b>对照是这个实验的全部说服力所在</b>。<br>⚠ <b>数字别记混</b>：固定量 1000 单位是<b>芯片上装了多少诱饵</b>，380 是<b>结合信号的高度</b>，约 350 s 处那个是<b>解离尖峰</b>。三个数三件事。<br>COR ＝ 冠毒素，细菌毒素，结构和功能都像茉莉酸甲酯（MeJA）；无反应的三个是 JA、MeJA 和 OPDA。'},
+
+ {n:'11', t:'免疫共沉淀 CoIP · 全部读出就是「在不在沉淀里」',
+  big:'靶蛋白的<b>抗体</b>连在固体基质上，加待筛选蛋白，<b>低速离心</b>；基质、抗体和挂在它们身上的一切一起沉到管底',
+  en:'“Co-immunoprecipitation rests on one thing, an antibody specific for the target protein. That antibody is coupled by an affinity reaction onto a solid matrix. The proteins to be screened are added to the system, and low centrifugal force or microfiltration brings the matrix, the antibody and everything hanging off them down to the bottom of the tube. A screened protein that has interacted with the target rides down attached to it. So presence in the pellet is the entire readout of the experiment.”',
+  note:'<b>「全部读出就是在不在沉淀里」——这句话本身就是盲点的伏笔</b>，先说出来，下一点接得上。<span class="pg">p.222–223（图 6-23）</span><br><b>关键词是低速</b>：low centrifugal force。转速高了复合物会被打散，也会把不相干的东西一起沉下来。<br><b>接卡 pe-pur</b>：那张卡上的亲和纯化用的是同一套逻辑——<b>把一样东西固定住，让它去抓别的</b>。差别只在抓手是抗体还是镍离子。'},
+
+ {n:'12', t:'CoIP 实操 · 两个标签，一张胶',
+  big:'两个靶蛋白由 <b>pGADT7</b> 和 <b>pGBKT7</b> 表达成融合蛋白，一个带 <b>HA 标签</b>一个带 <b>c-Myc 标签</b>。<b>用 Myc 抗体沉淀，然后看同一条泳道里有没有 HA 那一个</b>',
+  en:'“In practice neither protein is chased with an antibody of its own. Each is expressed as a fusion carrying a short tag that a ready made antibody recognises. One carries an HA tag and the other carries a c-Myc tag. Both are transcribed and translated in vitro, the products are mixed and incubated, the mixture is precipitated with either antibody, passed over a column, and separated by gel electrophoresis. Whether the two proteins interact is read straight off that gel. Precipitate with the Myc antibody, then look for the HA tagged partner in the same lane.”',
+  note:'<b>标签＝一小段有现成抗体认得的多肽序列。</b>这个词承重，交代掉。<span class="pg">p.223（图 6-24）</span><br><b>为什么用标签不用各自的抗体</b>：做一支特异抗体既慢又贵，而且对没研究过的蛋白根本没有现成的。<b>标签把「要一支新抗体」变成「用一支旧抗体」。</b><br><b>体外转录翻译</b>：两边都是在管子里做出来的，不在细胞里。<b>接卡 pe-cfps</b>，那张卡讲的就是把翻译搬进管子。<br>书上的实例是六对：棉花乙烯合成酶 <b>ACS2 与钙依赖蛋白激酶 CDPK1 是唯一的阳性</b>；ACS2 对 CDPK32、CRK5 都没有；ACO1 对三个都没有。<b>每对跑 H 和 c 两条泳道，c 是共沉淀那一份</b>；ACO1 底下 c 泳道空、H 泳道还有带——<b>这就是这里的阴性长什么样</b>。<span class="pg">p.223–224（图 6-25）</span>'},
+
+ {n:'13', t:'⚠ CoIP 的盲点 · 同一个复合物不等于彼此接触',
+  big:'共沉淀说明两个蛋白<b>在同一个被沉下来的复合物里</b>。至于是<b>彼此直接接触</b>，还是<b>同时被第三样东西攥着</b>，<b>这张胶分不开</b>',
+  en:'“A co-precipitation puts two proteins in one pelleted complex. Whether they touch each other, or are both held by a third thing in the mixture, is a question the gel does not separate.”',
+  note:'⚠ <b>书上没写</b>：这一条转录者标了 <code>beyond</code>，说印刷页 223 到 224 上有配对、结论和那条空泳道，但这句关于「复合物不等于接触」的话不在那两页上。<b>说的时候标明它是通用知识。</b><br><b>怎么补救这个盲点</b>（他很可能追这一句）：<b>做体外的重组蛋白 pull-down</b>（只有两个纯化出来的蛋白，没有第三者），或者<b>用 FRET 看距离</b>（1 到 10 纳米是直接接触的尺度）。<b>这一句把这张卡自己串起来了</b>——一个方法的盲点，正好是另一个方法的强项。',
+  warn:'⚠ <b>这是最容易被抓的一刀。</b>说「CoIP 证明 A 和 B 相互作用」——他接 “Directly?” 你就停住了。<b>正确说法是 “they are in the same complex”。</b>'},
+
+ {n:'14', t:'GST pull-down · 对照管才是让胶可读的东西',
+  big:'GST 对球珠上的<b>谷胱甘肽</b>有亲和性。一管放 <b>GST–蛋白X ＋ 裂解物</b>，对照管放<b>裸 GST ＋ 同样的裂解物</b>。<b>只在前一管出现的那条带，才是 X 的互作蛋白</b>',
+  en:'“A pull-down is a purification with a handle. Glutathione S-transferase has affinity for glutathione coupled to agarose beads, so anything fused to it can be fished out of a mixed protein sample. One tube receives the fusion of the tag with protein X, the beads, and a labelled cell lysate. A control tube receives bare tag with the same beads and the same lysate. After incubation at four degrees and a spin, the first tube yields beads with the fusion and whatever partner it held, and the second yields beads with the bare tag alone. Gel electrophoresis resolves three bands. A band present with the fusion and absent with the bare tag is what identifies a partner of X. So the control tube is what makes the gel readable at all.”',
+  note:'<b>三条带自上而下</b>：发生相互作用的蛋白质、GST 融合物、GST。<span class="pg">p.223–224（图 6-26）</span><br><b>裂解物是 ³⁵S 标记的</b>，所以胶上读的是放射性信号。<br><b>4 ℃ 反应</b>：低温减少蛋白降解，也让弱的结合不容易散。<br><b>接卡 pe-pur</b>：GST 是那张卡上的<b>亲和标签</b>之一。<b>同一个 GST，在纯化那张卡上是为了把目标蛋白弄干净，在这张卡上是为了钓出别人。</b>标签一样，问题不一样。',
+  good:'<b>「对照管才是让这张胶可读的东西」——这句话可以单独拿出来用。</b>他要是问「你怎么设计一个互作实验」，这一句比任何流程都像一个做过实验的人说的。'},
+
+ {n:'15', t:'pull-down 给的是百分数，不是判决',
+  big:'PIF3 做钓饵：<b>超过 30% 的 phyB</b> 被沉下来；<b>缺了 N 端 37 个氨基酸的 phyB 突变体约 10%</b>；phyA 约 5%；单独的 GAD 接近零',
+  en:'“The same layout was run with a GAL4 activation domain fused to different segments of PIF3 as the bait, against phytochrome prey. Over thirty percent of phytochrome B was precipitated. A mutant of phytochrome B lacking its amino terminal thirty seven residues gave about ten percent. Phytochrome A gave about five percent, and the tag on its own gave close to zero. A pull-down returns a percentage rather than a verdict. So deleting thirty seven residues shows up as a fall from thirty percent to ten percent, instead of as an interaction that vanishes.”',
+  note:'<b>和 SPR 的共振单位是同一招：给一个数，而不只给一个「有」。</b><span class="pg">p.223, p.225（图 6-27）</span><br><b>为什么这一点重要</b>：定量的读出能让你看见<b>「弱化」</b>，而不只是<b>「消失」</b>。删掉 37 个残基，互作从 30% 掉到 10%——这句话说明那 37 个残基参与但不是全部。<b>定性的实验给不出这个结论。</b><br><b>接卡 02</b>：这正是 K<sub>d</sub> 那张卡的精神——<b>结合不是有和无，是强和弱</b>。'},
+
+ {g:'在活细胞里做 · 两种（FRET、ChIP）', gn:'前面两组要么把分子搬进酵母，要么把它拿出细胞。<b>这两种不搬</b>，代价各自不同。'},
+
+ {n:'16', t:'FRET · 三个条件必须同时满足',
+  big:'蛋白 A 接 <b>CFP</b>，蛋白 B 接 <b>YFP</b>。两者靠近时，<b>440 nm 激发给出的从 CFP 的 480 nm 换成 YFP 的 535 nm</b>。条件是：<b>相距 1–10 nm · 光谱有重叠 · 偶极取向合适</b>',
+  en:'“Fluorescence resonance energy transfer is energy passing from a fluorescent donor to a fluorescent acceptor by dipole coupling, without radiation. It needs three conditions at once. The donor and acceptor must be one to ten nanometres apart. The emission spectrum of the donor must overlap the absorption spectrum of the acceptor. And the two dipoles must be in a suitable spatial orientation. Protein A carries cyan fluorescent protein and protein B carries yellow fluorescent protein. Held apart, they give only the four hundred and eighty nanometre emission of the donor under excitation at four hundred and forty. Brought together by an interaction, the same excitation yields the five hundred and thirty five nanometre emission of the acceptor, and fluorescence imaging records that colour change inside the cell.”',
+  note:'<b>三个条件是这一点的全部。</b>说出来的时候按 <b>距离 → 光谱 → 取向</b> 这个顺序，最好记。<span class="pg">p.225–226（图 6-28）</span><br><b>1 到 10 纳米这个尺度要记住</b>：它就是「直接接触」的物理尺度。这也是为什么 FRET 能补 CoIP 的盲点。<br><b>非辐射</b>：能量不是先发出一个光子再被吸收，是直接通过偶极耦合传过去的。这个词他可能单独问。'},
+
+ {n:'17', t:'⚠ 没有 FRET 信号，不等于不结合',
+  big:'三个条件里<b>任何一个不满足</b>，535 nm 都不出现。所以「没有 FRET」对<b>「从不结合」</b>和<b>「结合了但取向不对」</b>同样成立',
+  en:'“Any one of the three conditions failing leaves no acceptor signal. So an absent FRET result is equally consistent with two proteins that never bind, and with two proteins that bind in the wrong orientation.”',
+  note:'<b>这是全卡最干净的一个阴性陷阱，一定要会说。</b><span class="pg">p.226</span><br><b>为什么它特别容易被问</b>：阴性结果的解释是口试里最能分出「做过」和「背过」的地方。背过的人说「没有相互作用」，做过的人说「我的实验没检出」。<br><b>怎么补</b>：换标签在蛋白上的位置（N 端换到 C 端），取向变了信号可能就出来了。<b>这一句说出来非常加分</b>，因为它说明你知道 FRET 测的是几何而不只是接触。'},
+
+ {n:'18', t:'ChIP · 这个蛋白结合基因组上的哪些地方',
+  big:'和单杂交<b>正好反过来</b>。单杂交问「哪个蛋白结合这段 DNA」，ChIP 问「<b>这个蛋白结合哪些 DNA</b>」。五步：<b>活细胞固定 → 随机打断 → 抗体沉淀 → 纯化加接头 → 高通量测序</b>',
+  en:'“Chromatin immunoprecipitation asks the reverse of the one-hybrid question. One-hybrid asks which protein binds a chosen piece of DNA. This asks which DNA a chosen protein binds, and it asks it inside a living cell. The procedure has five moves. Protein and DNA complexes are fixed while the cells are alive. Sonication or enzyme treatment cuts the chromatin randomly into small fragments. An antibody precipitates the complex and enriches the DNA fragments bound to the protein of interest. Those fragments are purified, end repaired and given adaptors. And high throughput sequencing reads them. What comes out is the sequence of the bound DNA, its position in the genome, the strength of binding, and its effect on gene expression.”',
+  note:'<b>五步要背顺序，顺序本身就是答案的骨架。</b><span class="pg">p.226–227（图 6-29、6-30）</span><br><b>「活细胞状态下固定」是第一步，也是整个方法成立的原因</b>：先把接触冻住，再去拆细胞。顺序反了就什么都测不到。<br><b>接卡 16</b>：那张卡讲 DNA 复制，用到的是同一个概念——<b>基因组上的位置</b>。'},
+
+ {n:'19', t:'ChIP 的分辨率 · 定位到一段染色质，不是一个碱基',
+  big:'ChIP 交还给你的是<b>一段有一定长度的片段</b>。所以它把蛋白定位到<b>染色质的一段上</b>，不是定位到某一个碱基上',
+  en:'“Chromatin immunoprecipitation hands back a fragment of a certain length. So it places a protein on a stretch of chromatin, rather than on a base.”',
+  note:'<b>这一句是它的盲点，也是它和足迹法之类方法的分界。</b><span class="pg">p.227</span><br><b>抗体不必针对转录因子</b>：换成针对组蛋白共价修饰的抗体，它就能测这种修饰的分布和基因表达的关系。<b>棉花里用抗 H3K4me3 抗体做全基因组检测</b>，富集轨迹上<b>约 31 和约 23 两个峰</b>正落在 Cotton_A_37370 和 Cotton_A_37371 两个基因的 <b>5′ 端</b>，<b>基因体中部几乎为零</b>。<span class="pg">p.226–227（图 6-30）</span><br><b>那两个峰落在 5′ 端这件事本身就是结论</b>：H3K4me3 标记的是活跃基因的启动子区。',
+  good:'<b>一句很值钱的收尾</b>：把目的蛋白定位到某个<b>具体基因的启动子区</b>，这一步才是把一次结合测量<b>变成一句关于这个蛋白生物学功能的论断</b>。测到结合是数据，落到某个基因上才是结果。'},
+
+ {g:'RNA 对 RNA · 一种（RNAi）', gn:'这一串里最后一种相互作用不在蛋白之间。它也不是<b>检测</b>方法，是<b>扰动</b>方法——<b>这个区别本身就是一道题</b>。'},
+
+ {n:'20', t:'RNAi · 用双链小 RNA 降解同源 mRNA',
+  big:'<b>dsRNA 是触发物</b>，触发的是与它互补的那条单链 RNA 被降解。<b>Dicer</b>（有 RNase Ⅲ 活性的核酸酶）把 30 nt 以上的 dsRNA 切成 <b>21–25 nt 的 siRNA</b>',
+  en:'“RNA interference uses a small double stranded RNA to degrade the homologous messenger RNA inside a cell, efficiently and specifically. It blocks expression of the target gene, so the cell shows the phenotype of having lost that gene. The first observation was in a nematode. Foreign double stranded RNA injected into the worm induced specific silencing of gene sequences highly homologous to that RNA. Double stranded RNA is the trigger, and what it triggers is degradation of the single stranded RNA complementary to it. Dicer is a nuclease with RNase three activity, and it cuts double stranded RNA longer than thirty nucleotides into short interfering RNA of twenty one to twenty five nucleotides. Double stranded RNA too short to be processed into that size cannot mediate interference at all.”',
+  note:'<b>最早在线虫里看到</b>，后来在果蝇、锥虫、涡虫和大部分植物里都找到了。<span class="pg">p.226–228</span><br><b>21–25 nt 这个数字要记住</b>，它在下一点还要用一次（哺乳动物细胞里的特异性）。<br><b>siRNA 的结构特征</b>：<b>5′ 端磷酸基团、3′ 端羟基，两条链的 3′ 端各有两个碱基突出</b>。这个结构他可能单独问。'},
+
+ {n:'21', t:'RISC 和 RdRP · 一条 siRNA 同时给了切割装置和扩增办法',
+  big:'siRNA 的<b>反义链</b>指导装配 <b>RISC</b>，由它切开目的 mRNA 上互补的那一段。同时 <b>RdRP</b> 以同一条 mRNA 为模板造出新的 dsRNA，<b>再切成新的 siRNA 重新进入循环</b>',
+  en:'“The antisense strand of the small interfering RNA directs assembly of a ribonucleoprotein called the RNA induced silencing complex. That complex cleaves the region of the target message complementary to the antisense strand. The small RNA also doubles as a special primer. An RNA dependent RNA polymerase copies the target message into fresh double stranded RNA, which is cut into new small interfering RNA and re-enters the cycle. So even a low injected dose is amplified into complete gene silencing.”',
+  note:'<b>放大这件事解释了一个常见的疑问</b>：注进去那么一点点 RNA，怎么能把整个基因关掉。<b>因为产物又变成了原料。</b><span class="pg">p.228</span><br>⚠ <b>哺乳动物细胞里的限定</b>：较长的 dsRNA 会引起<b>非特异性</b>沉默，<b>只有 21–25 nt 的 siRNA 在那里才是特异的</b>。这一条是实验设计上的真限制，值得单独说。'},
+
+ {n:'22', t:'⚠ RNAi 和基因敲除的区别 · 一个毁信使，一个拿掉基因',
+  big:'从头到尾<b>被摧毁的是 mRNA</b>，<b>靶基因本身仍然留在基因组上</b>。基因敲除是把基因从染色体上去掉',
+  en:'“Throughout interference it is the messenger RNA that is destroyed, and the target gene stays in the genome. Gene knockout removes the gene from the chromosome. Interference leaves the gene and destroys its message. So interference gives a knockdown rather than a knockout, and the phenotype it produces is a reduction rather than an absence.”',
+  note:'<b>这一点是这张卡和那一张方法卡（基因敲除、CRISPR）的接口。</b><br><b>为什么这个区别值钱</b>：它直接决定实验能说什么。<b>敲除给的是「没有这个基因会怎样」，RNAi 给的是「这个基因少一点会怎样」。</b>而且 RNAi 从来不是 100%，所以<b>表型弱不一定说明这个基因不重要，可能只是没敲干净</b>。<br>⚠ <b>knockdown 和 knockout 这两个词说反是实测级别的错误。</b>',
+  warn:'⚠ <b>RNAi 在这一节里的位置有点特别，别被他绕进去。</b>前七种是<b>检测</b>相互作用的方法，RNAi 是<b>利用</b>一种相互作用（RNA 对 RNA）去<b>扰动</b>基因。他要是问 “Is RNAi an interaction detection method?”，老实答 “It is not a detection method, it is a perturbation method that exploits an RNA to RNA interaction.”'}
+],
+
+end:'八种方法，一个问题。<b>说的时候只给三样：这是哪一对、在哪儿做、读出是什么。</b>再加一句「它看不见什么」，就停。<b>不要背清单。</b>',
+
+sib:[
+ ['这一组方法回答的是什么问题','“Do these two molecules touch? Every method here answers that one question with a different readout.”','一句话把八个名字串起来。先说问题，再说方法，不要先报名字。'],
+ ['为什么不能直接看','“A contact is not something a microscope resolves, so every method builds a signal downstream of the contact and reports that instead.”','这是整张卡的地基。说了它，后面每种方法都只需要补三样。'],
+ ['安放任何一种方法的三个问题','“Which pair, where it happens, and what the readout is.”','背这张卡的唯一办法。碰到没见过的方法也照样问这三句。'],
+ ['酵母单杂交问的是哪一边','“One-hybrid asks which protein binds a chosen piece of DNA. The protein drags an activation domain to a minimal promoter and a reporter gene fires.”','已知的是 DNA，未知的是蛋白。'],
+ ['整套酵母读出的支点','“A hybrid protein carrying the binding domain of one regulator and the activation domain of another activates transcription perfectly well.”','两个结构域要到同一个位置，不必在同一条链上。说清楚这句，双杂交就不用再解释原理。'],
+ ['酵母双杂交的盲点','“A hit says two proteins bind when both are placed in a yeast nucleus. It carries no information about whether they ever meet in the cell they came from.”','假阴性来自酵母做不出的修饰，假阳性来自原本不同区室的两个蛋白。'],
+ ['SPR 强在哪','“It needs no label and no dye, and it returns a quantity rather than a yes.”','代价是专门的仪器，和一个待在芯片上而不在细胞里的诱饵。'],
+ ['CoIP 能说到什么程度','“A co-precipitation puts two proteins in one pelleted complex. Whether they touch, or are both held by a third thing, is a question the gel does not separate.”','说「in the same complex」，不要说「directly interact」。'],
+ ['pull-down 的对照管','“A band present with the fusion and absent with the bare tag is what identifies a partner. The control tube is what makes the gel readable at all.”','这一句比背流程更像一个做过实验的人说的。'],
+ ['FRET 的三个条件','“One to ten nanometres apart, overlapping spectra, and a suitable dipole orientation. Any one of them failing leaves no signal.”','所以阴性结果不能读成「不结合」。'],
+ ['ChIP 问的是哪一边','“It asks which DNA a chosen protein binds, inside a living cell, and it hands back a fragment rather than a base.”','和单杂交正好反过来。分辨率是一段染色质。'],
+ ['RNAi 和敲除差在哪','“Interference destroys the message and leaves the gene in the genome. Knockout removes the gene from the chromosome.”','knockdown 不是 knockout，表型是减弱不是缺失。']
+],
+
+segs:[
+ {tag:'段 1 · 定义', h:'先说这一组方法在干什么，再说为什么它们看起来这么不一样',
+  p:['“Eight methods, one question. Do these two molecules touch.”',
+     '“Two molecules touching is not something a microscope resolves. So every method here builds a signal downstream of the contact and reports that signal instead.”',
+     '“A contact is read out as a colony that grows, a colony that turns blue, an angle of reflected light, a band on a gel, or a wavelength of emitted light. It is never read out as seeing the two molecules together.”',
+     '“That is why the methods look so different from each other. They are not different answers. They are different ways of making the same event leave a mark.”'],
+  note:'<b>第一句就是定义和轴，不要从背景起手。</b>「八种方法一个问题」这个开头把整段的结构先交给他，他知道你要往哪儿走。<br>最后那句是这一段的落点：<b>方法之间的差别不在结论，在读出</b>。'},
+
+ {tag:'段 2 · 展开', h:'三个问题把八种方法排成一张表 —— 给一个他能记住的结构',
+  p:['“I sort them by three questions. Which pair is being asked about. Where the experiment happens. And what the readout is.”',
+     '“Two of them happen inside a yeast cell. One-hybrid asks which protein binds a chosen piece of DNA. Two-hybrid asks which protein binds a chosen protein. Both read out as a reporter gene switching on.”',
+     '“Three of them take the pair out of any cell. Surface plasmon resonance reads an angle on a chip. Co-immunoprecipitation reads presence in a pellet. And a pull-down reads a band that is there with the tagged bait and absent with the bare tag.”',
+     '“Two of them stay inside a living cell. Energy transfer between two fluorescent proteins reads a change of emitted wavelength. Chromatin immunoprecipitation reads a sequenced fragment of DNA.”',
+     '“And the last one is not protein with protein at all. Interference exploits an RNA binding a complementary RNA, and it uses that to destroy a message.”'],
+  note:'<b>四组，不是八项。</b>酵母里两种、拿出来三种、活细胞两种、RNA 一种。<b>四个数字比八个名字好记得多</b>，而且分组本身是答案的一部分——它说明你按「在哪儿做」理解这些方法。<br>⚠ 这一段说完大概 50 秒，<b>是整张卡里最可能被打断的地方</b>。被打断很正常，他打断说明他找到了想挖的那一条。'},
+
+ {tag:'段 3 · 深一层', h:'挑一条往下挖 —— 每个方法的盲点，以及盲点之间怎么互相补',
+  p:['“The useful thing about this list is not the methods. It is that each one has something it structurally cannot show.”',
+     '“A two-hybrid hit says two proteins bind when both are placed in a yeast nucleus. It says nothing about whether they ever meet in the cell they came from.”',
+     '“A co-precipitation puts two proteins in one pellet. Whether they touch each other, or are both held by a third thing, the gel does not separate.”',
+     '“An absent energy transfer signal is equally consistent with two proteins that never bind and with two that bind in the wrong orientation.”',
+     '“So I would not read any one of these as a conclusion on its own. The blind spot of one method is usually the strength of another. If a co-precipitation cannot tell me whether the contact is direct, a pull-down with two purified proteins can, and energy transfer can, because one to ten nanometres is the scale of a direct contact.”'],
+  note:'<b>这一段是整张卡的核心，也是最能拉开分数的地方。</b>前两段任何背过书的人都能说，这一段只有想过的人能说。<br><b>最后一句的形状要记住</b>：先承认单个方法不够，再<b>具体说出用哪个方法补、为什么它能补</b>。空泛地说「要多种方法互相验证」是废话，说「CoIP 分不出直接还是间接，所以用纯化蛋白的 pull-down 或者 FRET，因为 1 到 10 纳米就是直接接触的尺度」才是回答。'},
+
+ {tag:'段 4 · 落点', h:'停在一个量上 —— 这些方法里真正能定量的那几个，和她自己的主场',
+  p:['“There is one more axis under all of this, and it is whether the method returns a yes or a number.”',
+     '“Surface plasmon resonance returns resonance units, and a pull-down returns a percentage. Over thirty percent of one phytochrome came down with the bait, and a mutant lacking thirty seven residues gave about ten percent.”',
+     '“That matters because it turns an interaction that weakens into something I can see. A qualitative assay would have shown a band in both cases.”',
+     '“And a number is what lets one experiment show that a pair needs a third molecule. A plant regulator was immobilised on a chip, and its partner only bound when a particular small molecule was present in the system as well. Without a quantitative trace, that experiment reads as a failed experiment.”',
+     '“So when I am asked whether two things interact, the question I actually want to answer is how tightly, and under what conditions.”'],
+  note:'<b>这一段落在她的主场：结合是强和弱，不是有和无。</b>这正是卡 02（K<sub>d</sub>）的精神，也是 pe-evo 里亲和力和亲合力那一条的精神。<br><b>最后那句是停止句</b>，它把问题从「有没有」抬到「多紧、什么条件下」——<b>停在这里他很可能接着问 K<sub>d</sub>，而那张卡你是熟的。</b><br><b>这是故意的</b>：停止句要停在你还稳的地方，把下一刀引到你的主场。'}
+],
+
+why:{
+ rungs:[
+  ['为什么八种方法要一起记，不能只记一种？','因为<b>每一种都有它显示不出来的东西</b>，而一个方法的盲点，正好是另一个方法的强项。只会一种，就没法回答「那这个实验漏了什么」。'],
+  ['为什么读出是什么这么重要？','因为<b>接触本身看不见</b>。你手上永远只有一个下游信号——菌落、条带、角度、波长。知道自己离真正的接触隔着几层，才知道这个阳性值多少钱。'],
+  ['为什么酵母双杂交的阳性要打折听？','因为它要求两边都在酵母里造出来、都进核、还结合得够久。<b>这三条要求同时就是三个盲点</b>：酵母做不出的修饰导致假阴性，原本不同区室的两个蛋白导致假阳性。'],
+  ['为什么定量的方法值钱？','因为它让<b>「弱化」</b>看得见。删掉 37 个残基，互作从 30% 掉到 10%——定性的实验只会告诉你两边都有带。'],
+  ['为什么 RNAi 被放在这一节里？','因为它利用的也是一种分子间相互作用，<b>只不过发生在 RNA 和 RNA 之间</b>。但它是<b>扰动</b>方法不是<b>检测</b>方法——这个区别要主动说。']
+ ],
+ stop:{lbl:'停 · 落在「多紧、什么条件下」',
+  say:'“So when I am asked whether two things interact, the question I actually want to answer is how tightly, and under what conditions.”'}
+},
+
+recog:[
+ {q:'How would you show that two proteins interact?',
+  mean:'这是<b>这道题的最短问法</b>，也是他最可能用的那一句。他要的是一个<b>有结构的答案</b>，不是一个方法名。',
+  say:'“I would answer it with three questions. Which pair, where the experiment happens, and what the readout is. If I want a screen against a library I would use yeast two-hybrid, and I would remember that a hit means they bind in a yeast nucleus. If I want a number I would use surface plasmon resonance or a pull-down. And if I want it inside a living cell I would use energy transfer between two fluorescent proteins. I would not read any single one as a conclusion.”',
+  tail:'⚠ <b>不要一口气背八种。</b>给结构、给两三个例子、给一句「单个方法不够」，然后停。'},
+
+ {q:'How do you know they interact?',
+  mean:'这是<b>顺着她课题往下追最常见的那一刀</b>。他不是在考方法，是在考<b>她对自己数据的信心边界</b>。',
+  say:'“With the assay I used I can say they are in the same complex. To say the contact is direct I would need a pull-down with two purified proteins, or an energy transfer measurement, because one to ten nanometres is the scale of a direct contact.”',
+  tail:'<b>先说这个实验能说到哪一层，再说要往上一层需要什么。</b>这个形状几乎对任何方法都适用。'},
+
+ {q:'What is a reporter gene?',
+  mean:'他挑了一个零件问。<b>承重词</b>，前面几点里反复用到。',
+  say:'“A reporter gene is a gene whose product is easy to see, placed downstream of the regulatory sequence being tested, so that transcription of that sequence becomes something I can look at. In these assays it is usually HIS3 or LacZ, and a colony in which LacZ fires turns blue.”'},
+
+ {q:'What is a bait and what is a prey?',
+  mean:'术语。答得干脆说明你不是在背比喻。',
+  say:'“The bait is the half that is known and fixed. It is the protein fused to the DNA binding domain, and it sits on the regulatory region upstream of the reporter gene. The prey is the unknown half. Each insert of a complementary DNA library is fused to the activation domain, and a prey that binds the bait switches the reporter on.”'},
+
+ {q:'Why is a tag used instead of an antibody against the protein itself?',
+  mean:'实操层的问题。答得出来说明你想过成本。',
+  say:'“Raising a specific antibody against a new protein is slow and expensive, and for an uncharacterised protein there may be none. A tag is a short peptide that a ready made antibody already recognises, so the same two antibodies work for any pair of proteins I want to test.”',
+  tail:'<b>接卡 pe-pur</b>：那张卡上的标签是为了纯化，这里是为了沉淀。同一段多肽，两个用途。'},
+
+ {q:'Your co-immunoprecipitation is positive. Is the interaction direct?',
+  mean:'⚠ <b>这是这张卡上最锋利的一刀</b>，专门抓「把复合物说成接触」。',
+  say:'“Not necessarily. A co-precipitation puts the two proteins in one pelleted complex. Whether they touch each other, or are both held by a third thing in the lysate, is a question the gel does not separate. To answer it I would repeat the pull-down with two purified recombinant proteins, so there is no third partner in the tube.”',
+  tail:'答 “yes” 就输了。<b>答 “not necessarily” 再给出怎么验证，是满分。</b>'},
+
+ {q:'You see no FRET signal. Do the two proteins interact?',
+  mean:'⚠ <b>阴性结果的解释</b>，最能分出「做过」和「背过」。',
+  say:'“I cannot conclude that they do not. Energy transfer needs three conditions at once, and any one of them failing gives no signal. They may bind with the two fluorophores in an unsuitable orientation, or too far apart. I would move the tag from one terminus to the other and repeat it.”'},
+
+ {q:'What is the difference between a knockout and a knockdown?',
+  mean:'两个常被说反的词。他可能顺着 RNAi 问过来。',
+  say:'“A knockout removes the gene from the chromosome, so the product is absent. A knockdown leaves the gene in the genome and destroys its message, so the product is reduced. Interference gives a knockdown, and the phenotype it produces is a reduction rather than an absence.”',
+  tail:'<b>加一句更稳</b>：“That also means a weak phenotype after interference does not prove the gene is unimportant. It may just mean the knockdown was incomplete.”'},
+
+ {q:'实测 · 你的方法为什么选这一个？',
+  mean:'他其实在问<b>你有没有想过替代方案</b>。答一个理由不够，要答一个<b>取舍</b>。',
+  say:'“I chose it because of what I needed the readout to be. I needed a number rather than a yes, so a qualitative precipitation would not have answered my question. The trade-off is that the bait is on a chip and not in a cell, so I am measuring the binding and not the biology.”',
+  tail:'<b>「我选它是因为我要的读出是什么」这个形状可以套到任何方法上。</b>'},
+
+ {q:'便装 · 为什么有的实验要放一管什么都不加的对照？',
+  mean:'听起来像最基础的问题，其实问的是<b>对照在逻辑上干什么</b>。',
+  say:'“Because the signal on its own means nothing. In a pull-down the control tube has the bare tag with the same beads and the same lysate, and a band is only informative if it is present with the fusion and absent with the bare tag. The control tube is what makes the gel readable at all.”',
+  odd:1},
+
+ {q:'便装 · 显微镜为什么看不见两个蛋白结合在一起？',
+  mean:'他在问<b>分辨率</b>，而这正好是这张卡的第一句。',
+  say:'“Because the distance that defines a contact is one to ten nanometres, and a light microscope cannot resolve that. That is why every method here reports a downstream signal instead. Energy transfer is the closest any of them gets, and even that reports a change of emitted wavelength rather than an image.”',
+  odd:1},
+
+ {q:'便装 · 一个细菌毒素为什么能代替植物激素？',
+  mean:'他拿 SPR 那个实例的细节问机制。<b>答得出来说明你读懂了那张图而不只是记住了数字。</b>',
+  say:'“Coronatine is a bacterial toxin that resembles methyl jasmonate in structure and in function. In the resonance experiment it drove the same protein pair to about three hundred and ten units, close to what the plant molecule gave. So the receptor is responding to a shape, and a molecule from another organism that has that shape works.”',
+  odd:1},
+
+ {q:'便装 · 注进去那么一点点 RNA，怎么能把一个基因整个关掉？',
+  mean:'问的是<b>放大</b>。',
+  say:'“Because the product becomes the starting material again. An RNA dependent RNA polymerase copies the target message into fresh double stranded RNA, that is cut into new small interfering RNA, and it re-enters the cycle. So a low injected dose is amplified into complete silencing.”',
+  odd:1}
+],
+
+ask:[
+ {g:'定义类 · 他挑一个词问「那是什么」',
+  gn:'这些词在前面反复出现。<b>被单独挑出来问的时候，一句话给定义，不要顺着往下讲。</b>',
+  items:[
+   {r:'高', q:'What is a cis-acting element?',
+    en:'“A cis-acting element is a short DNA sequence that a regulatory protein binds. It acts on the gene it sits next to on the same molecule of DNA.”',
+    cn:'「顺式」这个词的意思就是<b>作用在同一条 DNA 上相邻的基因上</b>，跟「反式」相对。<span class="pg">p.219</span>'},
+   {r:'高', q:'What is a minimal promoter?',
+    en:'“A minimal promoter is the shortest piece of promoter that still allows transcription to start, and on its own it gives very little. It is used in these assays so that any reporter signal comes from the element placed upstream of it.”',
+    cn:'<b>为什么要用最简启动子</b>：背景低。用一个强启动子，报告基因自己就亮了，测不出待测元件的作用。'},
+   {r:'高', q:'What is an activation domain?',
+    en:'“An activation domain is the part of a transcription regulator that recruits the machinery to start transcription. It does not bind DNA itself. A binding domain on its own binds a promoter region and starts nothing.”',
+    cn:'<b>两个结构域分工明确</b>：BD 负责定位，AD 负责启动。这张卡上所有酵母方法都建立在这个分工上。<span class="pg">p.221</span>'},
+   {r:'中', q:'What does modular mean here?',
+    en:'“Modular means the regulator is built from two or more domains that work independently of each other, so a domain can be taken off one protein and bolted onto another and still do its job.”',
+    cn:'这个词是整组酵母方法成立的原因。<b>说清楚 modular，双杂交就不用再解释。</b>'},
+   {r:'中', q:'What is a tag?',
+    en:'“A tag is a short peptide stretch fused to a protein, chosen because a ready made antibody or a ready made resin recognises it. An HA tag and a c-Myc tag are two common ones.”',
+    cn:'<b>接卡 pe-pur</b>：那张卡上讲的 His 标签是同一类东西，抓手不同而已。'},
+   {r:'中', q:'What is Dicer?',
+    en:'“Dicer is a nuclease with RNase three activity. It cuts double stranded RNA longer than thirty nucleotides into short interfering RNA of twenty one to twenty five nucleotides.”',
+    cn:'<b>RNase Ⅲ 活性这个词要带上</b>，它说明 Dicer 切的是双链 RNA 而不是单链。'},
+   {r:'中', q:'What is RISC?',
+    en:'“RISC is the RNA induced silencing complex. It is a ribonucleoprotein assembled under the direction of the antisense strand of the small interfering RNA, and it cleaves the region of the target message complementary to that strand.”',
+    cn:'<b>反义链既是向导又是模板</b>：它指导装配，也决定切在哪里。'},
+   {r:'中', q:'What is a resonance unit?',
+    en:'“A resonance unit is the arbitrary unit in which the shift of the resonance angle is recorded. It is proportional to the amount of material bound at that spot on the chip.”',
+    cn:'⚠ <b>它是相对单位不是摩尔数</b>。书上给的 1000 单位是固定的诱饵量，380 是结合信号的高度。<b>两个数别混。</b>'}
+  ]},
+
+ {g:'为什么类 · 他问「为什么是这样」',
+  gn:'这一组是<b>卡上给了结论没给理由的地方</b>。他插刀最常插在这里。',
+  items:[
+   {r:'高', q:'Why does yeast two-hybrid need the two domains on separate proteins?',
+    en:'“Because that is what turns the assay into a question about two proteins. If both domains were on one polypeptide the reporter would fire regardless. Splitting them means the reporter can only fire if something brings the two halves together, and the thing that brings them together is the interaction being tested.”',
+    cn:'<b>这一问答得好不好，直接决定他信不信你懂这个方法。</b>把「为什么要拆开」说成「拆开之后，报告基因亮就等于两个蛋白结合」，逻辑就闭合了。'},
+   {r:'高', q:'Why put three or more copies of the element upstream?',
+    en:'“Putting three or more copies of the cis-acting element in a row raises the efficiency with which the factor is recognised and bound, so a weak binder still gives a readable reporter signal.”',
+    cn:'书上的实例用了 <b>4 个 DRE</b>。<span class="pg">p.220</span><br>⚠ <b>顺带一个隐患</b>：多拷贝也提高了亲合力，所以选出来的可能是弱结合子。<b>这一条书上没写，是从 pe-evo 那张卡上的亲和力/亲合力推过来的通用知识，说的时候标明。</b>'},
+   {r:'高', q:'Why is the yeast one-hybrid method worth using at all, when you could purify the protein?',
+    en:'“Because of its sensitivity. It reaches transcription regulators present at concentrations too low for any biochemical purification to reach. That is what the method is for.”',
+    cn:'<b>这一句是书自己写的</b>，而且它回答的正是「为什么不直接纯化」这个最自然的疑问。<span class="pg">p.220</span>'},
+   {r:'高', q:'Why must the cells be fixed before the chromatin is cut in a ChIP experiment?',
+    en:'“Because the contact has to be frozen while it still exists. The complexes are fixed while the cells are alive, and only then is the chromatin cut into fragments. If the cells were broken open first, the proteins and the DNA would come apart before anything could be precipitated.”',
+    cn:'<b>五步的顺序本身就是答案。</b>顺序反了，实验什么都测不到。'},
+   {r:'中', q:'Why is the pull-down done at four degrees?',
+    en:'“Low temperature slows proteolysis in the lysate, and it makes a weak complex less likely to come apart during the incubation and the spin.”',
+    cn:'⚠ <b>书上只写了 4 ℃ 这个条件，没写理由。</b>这条是通用知识，说的时候标明。'},
+   {r:'中', q:'Why does a short double stranded RNA fail to trigger interference?',
+    en:'“Because it cannot be processed into small interfering RNA of the right size. Dicer cuts double stranded RNA over thirty nucleotides into twenty one to twenty five nucleotide pieces, and a duplex too short to be processed cannot mediate interference at all.”',
+    cn:'<b>长度有下限也有上限</b>：在哺乳动物细胞里，太长的 dsRNA 引起非特异沉默。<b>两头都有限制。</b>'}
+  ]},
+
+ {g:'⚠ 陷阱 · 说错了听起来还挺对的地方',
+  gn:'<b>这一组最值钱。</b>每一条都是「说出来很顺，但把结论说大了一层」。',
+  items:[
+   {r:'实测', q:'（陷阱）说「CoIP 证明 A 和 B 直接相互作用」',
+    en:'“A co-precipitation shows that the two proteins are in the same complex. I would not call the contact direct on that evidence alone.”',
+    cn:'<b>正确说法是 in the same complex。</b>这一刀他几乎一定会切，因为它是整组方法里最容易被说大的一个结论。',
+    warn:'⚠ 这一条的正确版本<b>书上没写</b>，转录者标了 beyond。说的时候不要挂到书上。'},
+   {r:'高', q:'（陷阱）说「没有 FRET 信号说明它们不结合」',
+    en:'“An absent signal is equally consistent with two proteins that never bind and with two that bind in an unsuitable orientation. I cannot conclude they do not interact.”',
+    cn:'<b>FRET 测的是几何，不只是接触。</b>距离、光谱重叠、偶极取向，三者缺一就没信号。'},
+   {r:'高', q:'（陷阱）说「双杂交阳性说明它们在体内相互作用」',
+    en:'“A hit says they bind when both are placed in a yeast nucleus. Whether they ever meet in the cell they came from is not information this assay carries.”',
+    cn:'<b>假阳性的来源很具体</b>：原本一个在核里一个在膜上的两个蛋白，被强行放进同一个酵母核。'},
+   {r:'高', q:'（陷阱）把 knockdown 说成 knockout',
+    en:'“Interference is a knockdown. The gene stays in the genome and the message is destroyed, so the product is reduced rather than absent.”',
+    cn:'<b>这两个词说反，等于告诉他你没分清基因和它的信使。</b>'},
+   {r:'高', q:'（陷阱）说「蓝色菌落就是阳性结果」',
+    en:'“Blue colonies are picked as positive clones, and every one is then sequenced and has its binding activity verified separately. A blue colony is where the verification starts.”',
+    cn:'<b>书自己写了这一句</b>，所以这一条不用打折。<span class="pg">p.220</span>'},
+   {r:'中', q:'（陷阱）把 RNAi 当成一种检测相互作用的方法',
+    en:'“Interference is not a detection method. It is a perturbation method that exploits an RNA binding a complementary RNA.”',
+    cn:'它和前七种<b>不是同一类东西</b>，只是被放在同一节里。<b>主动说清楚这个区别是加分的。</b>'},
+   {r:'中', q:'（陷阱）把 SPR 的两个数字说混',
+    en:'“One thousand resonance units is how much bait was immobilised on the chip. Three hundred and eighty is the height of the binding signal.”',
+    cn:'<b>一个是装了多少，一个是结合了多少。</b>说混了他会追问，而这是个很容易避免的失分。'}
+  ]},
+
+ {g:'相邻考点 · 从这道题最容易走到哪儿',
+  gn:'他顺着一个词就走了。<b>先知道会走到哪，就不会被带懵。</b>',
+  items:[
+   {r:'高', q:'（走向 Kd）You mentioned a quantity. What quantity exactly?',
+    en:'“The dissociation constant. It is the concentration of free ligand at which half of the binding sites are occupied, so a lower value means tighter binding. Resonance units and a precipitated percentage are two ways of getting at it experimentally.”',
+    cn:'<b>接卡 02。</b>这是段 4 停止句故意引过来的方向——<b>她在这张卡上是稳的。</b>'},
+   {r:'高', q:'（走向纯化）How would you get the purified proteins for that control experiment?',
+    en:'“I would express both as tagged fusions and purify each one by affinity chromatography, then mix only those two in the tube so there is no third partner.”',
+    cn:'<b>接卡 pe-pur。</b>这一步正是 CoIP 盲点的解法，所以他很可能顺着这里走。'},
+   {r:'中', q:'（走向转化）How do you get the two vectors into the yeast?',
+    en:'“By transformation. The bait vector and the prey vectors are introduced into yeast cells, and the cells that take up both are selected on the appropriate medium.”',
+    cn:'<b>接卡 14。</b>⚠ <b>酵母是 transformation 不是 transfection</b>——那张卡上把这四个词分清楚了。'},
+   {r:'中', q:'（走向表观）What is H3K4me3 and why does it sit at the five prime end?',
+    en:'“It is a methylation on lysine four of histone H3, carried at three methyl groups. In the cotton experiment the enrichment peaks sit over the five prime ends of two named genes with the gene bodies near zero, and that placement is characteristic of the promoter regions of actively transcribed genes.”',
+    cn:'<b>这是分子生物学那一门里另一张卡的入口</b>（真核调控与表观）。现在先能说这一句。'},
+   {r:'中', q:'（走向敲除）If interference only gives a knockdown, how would you remove the gene completely?',
+    en:'“By gene knockout. The gene is replaced in the chromosome through homologous recombination between an introduced construct and its matching sequence, and correctly targeted cells are picked out by selection.”',
+    cn:'<b>接分子生物学第二张卡</b>（基因敲除、正负双选、CRISPR）。那张卡做出来之前，这一句是她在这个方向上能说的全部。'},
+   {r:'中', q:'（走向展示技术）Is a yeast two-hybrid a kind of display?',
+    en:'“They share one idea. Both need a physical link between a protein and the gene that encodes it, so that a hit can be recovered and read. In two-hybrid the link is the cell, and the prey vector is recovered from the colony. In phage display the link is the particle, with the protein outside and its DNA packaged inside.”',
+    cn:'<b>接卡 pe-evo。</b>这一句把两门课连起来了，说出来很加分——<b>而且这两块她都得学，连起来省一份记忆。</b>'}
+  ]}
+]
+});
