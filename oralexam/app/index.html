@@ -92,6 +92,7 @@ main{max-width:680px;margin:0 auto;padding:0 20px 130px}
   display:flex;align-items:center;justify-content:center;margin-top:2px}
 .row .w{font-size:12px}
 .row .w.hi{background:var(--accent);color:var(--onAccent)}
+.row .w.pe{background:var(--good);color:var(--onAccent)}
 .row .w.mid{background:var(--soft);color:var(--accent)}
 .row .w.lo{background:var(--chip);color:var(--faint)}
 .row .w.non{background:var(--warnbg);color:var(--warn)}
@@ -719,7 +720,14 @@ function renderList(){
   document.getElementById('nav').classList.add('hide');
 
   var built = [], todo = [], cross = [];
-  for (var i=0;i<CARDS.length;i++){ (CARDS[i].cross ? cross : built).push(CARDS[i]); }
+  var pesb = [];
+  for (var i=0;i<CARDS.length;i++){
+    var cc = CARDS[i];
+    /* PESB 是另一门课，不能跟生化的横向卡混在一段里——她找不到。 */
+    if (String(cc.id).indexOf('pe-') === 0) pesb.push(cc);
+    else if (cc.cross) cross.push(cc);
+    else built.push(cc);
+  }
   var haveN = {};
   /* 一张卡可能吸收好几道题（merged）。只看主题号，被吸收的那几道会一直显示成待做。 */
   for (i=0;i<built.length;i++){
@@ -732,7 +740,8 @@ function renderList(){
   function rowCard(c){
     var mg = c.merged && c.merged.length ? ' ＋#' + c.merged.join('、#') : '';
     return '<a class="row" href="#/c/' + c.id + '">'
-      + '<span class="w ' + (c.cross ? 'mid' : 'hi') + '">' + (c.cross ? '横' : '卡') + '</span>'
+      + '<span class="w ' + (String(c.id).indexOf('pe-') === 0 ? 'pe' : (c.cross ? 'mid' : 'hi')) + '">'
+      + (String(c.id).indexOf('pe-') === 0 ? 'PE' : (c.cross ? '横' : '卡')) + '</span>'
       + '<span class="t"><b>' + c.q + '</b><span>'
       + (c.n ? '#' + c.n + mg + ' · ' : '') + esc(c.qcn) + '</span></span>'
       + '<span class="st ' + statusOf(c.id).cls + '">' + statusOf(c.id).txt + '</span></a>';
@@ -783,6 +792,7 @@ function renderList(){
 
   var h = '<div class="lhero"><h1>生化口试卡</h1>'
     + '<p>' + built.length + ' 张已写 · ' + cross.length + ' 张横向卡 · '
+    + (pesb.length ? pesb.length + ' 张 PESB · ' : '')
     + todo.length + ' 题未写 · 全部本地，断网可看</p>'
     + '<p class="sub2" style="margin-top:10px">导师的题目单一共三科 <b>98 道</b>，这个 app 只做了生化那 32 道。'
     + '另外两科还没有卡，题面在这里：</p>'
@@ -816,6 +826,13 @@ function renderList(){
     h += '<p class="lgrp">横向卡</p>'
       + '<p class="lgrp-n">不对应某一道题，跨很多题共用。乱不清的东西放这里。</p>';
     for (i=0;i<cross.length;i++) h += rowCard(cross[i]);
+  }
+  if (pesb.length){
+    h += '<p class="lgrp">PESB · 蛋白工程与合成生物学</p>'
+      + '<p class="lgrp-n"><b>这是另一门课</b>，不是生化。考试考三门，这一门刚开头，'
+      + '料在她自己的讲义笔记里（130 个节点）。还差六张：什么是蛋白工程 · 克隆 · '
+      + '六种表达系统怎么选 · 无细胞与改写遗传密码 · 定向进化 · 合成生物学。</p>';
+    for (i=0;i<pesb.length;i++) h += rowCard(pesb[i]);
   }
   if (todo.length){
     h += '<p class="lgrp">还没写</p>'
