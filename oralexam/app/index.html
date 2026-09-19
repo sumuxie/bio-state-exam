@@ -391,6 +391,19 @@ button.b:disabled{opacity:.35;cursor:default}
 .qbnav a{font-size:13px;text-decoration:none;border:1px solid var(--rule);border-radius:18px;
   padding:7px 14px;color:var(--ink);background:var(--card)}
 .qbnav a:hover{border-color:var(--accent);color:var(--accent)}
+.qb li.has{display:block;padding:0}
+.qb details{padding:13px 2px}
+.qb details>summary{list-style:none;cursor:pointer;display:flex;gap:11px}
+.qb details>summary::-webkit-details-marker{display:none}
+.qb details>summary .t b::after{content:" ▾";color:var(--accent);font-size:12px}
+.qb details[open]>summary .t b::after{content:" ▴"}
+.qb .ans{margin:12px 0 2px 37px}
+.qb .ans .en{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);
+  border-radius:9px;padding:13px 14px;font-size:15px;line-height:1.85;margin:0}
+.qb .ans .nt{font-size:13.5px;color:var(--dim);line-height:1.75;margin:10px 0 0}
+.qb .ans .wn{font-size:13.5px;background:var(--warnbg);color:var(--warn);border-radius:8px;
+  padding:10px 12px;margin:10px 0 0;line-height:1.7}
+.qb .noans{font-size:12.5px;color:var(--faint);margin:6px 0 0 37px}
 #wpop button{font-family:inherit;font-size:13px;border:1px solid var(--rule);background:var(--card);color:var(--ink);
   border-radius:14px;padding:6px 11px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.14)}
 #wpop button i{font-style:normal;font-family:Georgia,serif}
@@ -482,6 +495,8 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="audio/words.js"></script>
 <script src="data/_index.js"></script>
 <script src="data/_qbank.js"></script>
+<script src="data/_ans_micro_a.js"></script>
+<script src="data/_ans_micro_b.js"></script>
 <script>window.CARDS = [];</script>
 <script src="data/_gloss.js"></script>
 <script src="data/01.js"></script>
@@ -1927,33 +1942,51 @@ var QBMETA = {
   micro: {t:'Microbiology', cn:'微生物学'},
   biochem: {t:'Biochemistry', cn:'生物化学'}
 };
+/* 题目单上这道题有没有写过答案。键是题面原文，两个 _ans_ 文件拼在同一个全局上。 */
+function ansFor(qen){
+  var A = window.ANS_MICRO || [];
+  for (var i=0;i<A.length;i++) if (A[i].q === qen) return A[i];
+  return null;
+}
 function renderQB(key){
   var m = QBMETA[key] || QBMETA.basic, list = (window.QBANK || {})[key] || [];
   document.getElementById('top').innerHTML =
     '<a class="home" href="#/">← 全部</a><span class="id">' + esc(m.t) + '</span>';
   var nav = document.getElementById('nav'); if (nav) nav.classList.add('hide');
-  var w3 = 0;
-  for (var i=0;i<list.length;i++) if (list[i].w === 3) w3++;
+  var w3 = 0, nAns = 0;
+  for (var i=0;i<list.length;i++){ if (list[i].w === 3) w3++; if (ansFor(list[i].en)) nAns++; }
   var h = '<div class="lhero"><h1>' + esc(m.t) + '</h1>'
         + '<p>导师题目单上的 ' + list.length + ' 道题，其中 <b>' + w3 + ' 道在第一张卷子上</b>。'
-        + '<br><b>这里只有题目，没有答案。</b>这一科还没有做卡。</p></div>'
+        + (nAns ? '<br><b>' + nAns + ' 道写了能说出口的短答案</b>，点题目展开。三到五句，不是卡——'
+                + '这一科没有做卡，时间不够，而且短答案更适合当追问用。'
+                : '<br><b>这里只有题目，没有答案。</b>这一科还没有写。')
+        + '</p></div>'
         + '<div class="qbnav">'
         + '<a href="#/q/basic">实验基本技术</a>'
         + '<a href="#/q/micro">微生物学</a>'
         + '<a href="#/">生化（有卡）</a></div>'
         + '<ul class="qb">';
   for (i=0;i<list.length;i++){
-    var q = list[i];
-    h += '<li><span class="n">' + (i+1) + '</span>'
+    var q = list[i], a = ansFor(q.en);
+    var head = '<span class="n">' + (i+1) + '</span>'
        + '<span class="t"><b>' + esc(q.en) + '</b>'
        + (q.cn ? '<span>' + esc(q.cn) + '</span>' : '')
        + (q.refs && q.refs.length ? '<i>' + esc(q.refs.join(' · ')) + '</i>' : '')
        + '</span>'
-       + '<span class="w' + (q.w === 3 ? ' hi' : '') + '">' + (q.w === 3 ? '卷一' : (q.w === 2 ? '卷二' : '卷三')) + '</span>'
-       + '</li>';
+       + '<span class="w' + (q.w === 3 ? ' hi' : '') + '">' + (q.w === 3 ? '卷一' : (q.w === 2 ? '卷二' : '卷三')) + '</span>';
+    if (a){
+      h += '<li class="has"><details><summary>' + head + '</summary><div class="ans">'
+         + '<p class="en">' + a.en + '</p>'
+         + (a.cn ? '<p class="nt">' + a.cn + '</p>' : '')
+         + (a.warn ? '<div class="wn"><b>⚠</b> ' + a.warn + '</div>' : '')
+         + '</div></details></li>';
+    } else {
+      h += '<li>' + head + '</li>';
+    }
   }
   h += '</ul>';
   document.getElementById('main').innerHTML = h;
+  addSpeakers();
   window.scrollTo(0, 0);
 }
 

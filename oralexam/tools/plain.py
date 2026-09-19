@@ -107,7 +107,9 @@ print('出声念的英文 —— 只揪说不顺的：插入语套插入语 · �
 print('=' * 78)
 for f in files:
     b = os.path.basename(f)
-    if b.startswith('_'): continue
+    # 下划线开头的是生成文件，平时跳过；命令行点名的除外
+    # （_ans_micro 这种是手写的出声答案，必须查）
+    if b.startswith('_') and not (want and any(w in b for w in want)): continue
     if want and not any(w in b for w in want): continue
     total, rows = scan(f)
     gt += total; gb += len(rows)
