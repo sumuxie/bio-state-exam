@@ -475,6 +475,39 @@ button.b:disabled{opacity:.35;cursor:default}
 .ladder2 ol{margin:8px 0 0;padding-left:20px}
 .ladder2 li{margin-bottom:4px}
 
+/* ---------- 查找 ---------- */
+#sxq{width:100%;margin:18px 0 6px;padding:12px 15px;font-family:inherit;font-size:16px;
+  border:1px solid var(--rule);border-radius:11px;background:var(--card);color:var(--ink)}
+#sxq:focus{outline:none;border-color:var(--accent)}
+.sxsum{font-size:13.5px;color:var(--faint);margin:12px 0 0;line-height:1.7}
+.sxsum b{color:var(--accent)}
+.sxgloss{background:var(--soft);border-radius:12px;padding:16px 18px;margin:18px 0 0}
+.sxgloss .gw{font-size:21px;font-weight:700;line-height:1.3}
+.sxgloss .gipa{font-family:Georgia,serif;font-size:13px;color:var(--dim);margin-left:8px;font-weight:400}
+.sxgloss .gcn{font-size:15px;margin:8px 0 0;line-height:1.7}
+.sxgloss .gen{font-size:13px;color:var(--dim);margin:7px 0 0;line-height:1.65}
+.sxgloss .gex{font-size:13px;margin:9px 0 0;line-height:1.65;
+  border-left:2px solid var(--accent);padding-left:10px}
+.sxgloss .gfrm{font-size:12px;color:var(--faint);margin:8px 0 0}
+.sxgloss .gfrm a{color:var(--accent);font-weight:600;text-decoration:none}
+.sxgrp{margin:30px 0 0}
+.sxgrp h3{margin:0 0 3px;font-size:16.5px;line-height:1.5}
+.sxgrp h3 a{text-decoration:none}
+.sxgrp p.mn{margin:0 0 10px;font-size:12.5px;color:var(--faint)}
+.sxrow{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;margin-bottom:7px;
+  background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  text-decoration:none;color:inherit}
+.sxrow:hover{border-color:var(--accent)}
+.sxs{flex:1;min-width:0;font-size:14.5px;line-height:1.7;word-break:break-word}
+.sxw{flex:none;font-size:11.5px;color:var(--faint);margin-top:3px;white-space:nowrap}
+.sxhi{font-style:normal;font-weight:700;color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 16%,transparent);border-radius:3px;padding:0 1px}
+.sxnone{font-size:14.5px;color:var(--dim);margin:24px 0 0;line-height:1.78}
+.sxnone b{color:var(--ink)}
+/* 从结果跳进卡里时，那一处的底色。跟必背的 .mk 故意不同色 */
+.sxhit{background:color-mix(in srgb,var(--warn) 30%,transparent);border-radius:3px;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--warn) 30%,transparent)}
+
 @media (max-width:520px){
   .hero h1,.lhero h1{font-size:22px}
   .pt-big{font-size:20px}
@@ -738,6 +771,7 @@ function renderList(){
     + ' <a class="bbtn ghost" href="#/fav" style="text-decoration:none">☆ 不会念的</a>'
     + ' <a class="bbtn ghost" href="#/mk" style="text-decoration:none">★ 必背 '
     + mkLoad().length + ' 段</a>'
+    + ' <a class="bbtn ghost" href="#/s/" style="text-decoration:none">🔍 查找</a>'
     + ' <button class="bbtn ghost" onclick="if(confirm(\'清空全部练习记录？\')){localStorage.removeItem(PK);route();}">清空记录</button>'
     + '</div>' + goHtml + '<input id="search" placeholder="搜题目、关键词…">';
 
@@ -1026,6 +1060,7 @@ function renderCard(c){
     + (c.figs && c.figs.length ? '<button id="mFig" onclick="mode(\'figs\')">图</button>' : '')
     + '<button id="mCloze" onclick="cloze()" title="把关键词盖住，点一下露出">遮词</button>'
     + '<button id="mMk" onclick="mkGo()" title="我划过的必背段">必背</button>'
+    + '<button onclick="sxOpen()" title="查一个词在所有地方的出现">🔍</button>'
     + '<button onclick="location.hash=\'#/fav\'" title="收藏的词和句">☆</button>'
     + '<button onclick="location.hash=\'#/wb\'" title="单词本">📕</button>'
     + '</div>';
@@ -1990,9 +2025,486 @@ function renderQB(key){
   window.scrollTo(0, 0);
 }
 
+/* =================== 查找 · 一个词在所有地方的出现 ===================
+   2026-09-19 Ruojin：「再加一个查找图标 我可以直接查找某个词某个概念在所有地方的出现」。
+   起因是卡 06 上的 anomeric：那张卡用了它三十几次，一次也没定义，
+   她只好出了 app 才知道它是什么。所以这个页要回答的是两件事：
+   **它还在哪出现过**，和**哪一处真把它解释了**。
+   所以每一条给的不是标题，是它所在的**那句话**，点一下跳回卡里那一句。
+   卡的数据两兆多，所以索引只建一次（第一次搜的时候），之后每一下敲键只在索引上跑 indexOf。 */
+
+/* 卡的顶层字段 → 【跳回哪一屏，她对这块的叫法】。不在表里的新字段照样进索引。 */
+var SXSEC = {
+  q:    ['cram', '题面'],
+  qcn:  ['cram', '题面'],
+  sub:  ['cram', '题面'],
+  cram: ['cram', '速背'],
+  end:  ['cram', '速背'],
+  sib:  ['drill', '演练'],
+  segs: ['drill', '逐字稿'],
+  why:  ['drill', '为什么'],
+  recog:['ask', '同一个答案不同问法'],
+  ask:  ['ask', '追问'],
+  figs: ['figs', '图']
+};
+var SXORDER = ['q','qcn','sub','cram','end','sib','segs','why','recog','ask','figs'];
+/* id 不是正文；src 是图片路径；svg 是一大块标记；
+   k（画/认）和 r（实测/高）是标签，进了索引就满屏都是。其余字段一律走通用遍历。 */
+var SXSKIP = {id:1, src:1, svg:1, k:1, r:1};
+/* 行内标签不断句：「<b>anomeric</b> carbon」还是同一句 */
+var SXINLINE = {b:1, i:1, u:1, em:1, strong:1, span:1, a:1, sub:1, sup:1, small:1,
+                code:1, q:1, mark:1, s:1, big:1, font:1, abbr:1};
+var SXSEP = String.fromCharCode(1);
+var SXEND = '。！？；';
+var SXIDX = null, SXJUMP = null, SXSHOWN = null, SXTIMER = null, SXFIRST = '';
+
+function sxOpen(){ location.hash = '#/s/'; }
+function sxAlpha(ch){ return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'); }
+function sxFlat(x){ return mkTrim(mkNorm(String(x == null ? '' : x)).s); }
+
+/* 一段 HTML 串 → 几行纯文字。
+   行界＝块级标签（<br>、<p>、表格格子……），行内标签不算。
+   ⇒ 每一行都是她在屏幕上看见的一段连续的字，可以直接拿去当句子切。
+   ⇒ 而且它是 DOM 里那一段文字的子串，所以拿它去卡里找能找得回来。
+   卡上有真的 < 号（ΔG < 0），所以只有 < 后面跟着字母或 / 才当标签。 */
+function sxLines(raw){
+  var s = String(raw == null ? '' : raw), out = '', i = 0;
+  while (i < s.length){
+    var ch = s.charAt(i);
+    if (ch === '<'){
+      var nx = s.charAt(i + 1), j = -1;
+      if (sxAlpha(nx) || nx === '/' || nx === '!') j = s.indexOf('>', i + 1);
+      if (j > -1){
+        var name = '', p = i + 1;
+        if (s.charAt(p) === '/') p++;
+        while (p < j && sxAlpha(s.charAt(p))){ name += s.charAt(p).toLowerCase(); p++; }
+        out += SXINLINE[name] ? '' : SXSEP;
+        i = j + 1;
+        continue;
+      }
+    }
+    out += ch;
+    i++;
+  }
+  out = out.split('&nbsp;').join(' ').split('&lt;').join('<').split('&gt;').join('>')
+           .split('&quot;').join('"').split('&#39;').join("'")
+           .split('&middot;').join(' · ').split('&amp;').join('&');
+  var parts = out.split(SXSEP), lines = [];
+  for (var k = 0; k < parts.length; k++){
+    var t = sxFlat(parts[k]);
+    if (t.length) lines.push(t);
+  }
+  return lines;
+}
+
+/* 通用遍历：不点名字段，踩到字符串就收。卡多一个字段也能搜到。 */
+function sxWalk(v, sec, lab, out){
+  if (v == null) return;
+  var t = typeof v;
+  if (t === 'string'){
+    var L = sxLines(v);
+    for (var i = 0; i < L.length; i++)
+      out.push({sec: sec, lab: lab, t: L[i], lc: L[i].toLowerCase()});
+    return;
+  }
+  if (t !== 'object') return;
+  if (Object.prototype.toString.call(v) === '[object Array]'){
+    for (var j = 0; j < v.length; j++) sxWalk(v[j], sec, lab, out);
+    return;
+  }
+  for (var k in v){
+    if (!Object.prototype.hasOwnProperty.call(v, k)) continue;
+    if (SXSKIP[k]) continue;
+    sxWalk(v[k], sec, lab, out);
+  }
+}
+
+function sxBuild(){
+  if (SXIDX) return SXIDX;
+  var i, j, k, built = [], cross = [];
+  for (i = 0; i < CARDS.length; i++) (CARDS[i].cross ? cross : built).push(CARDS[i]);
+  built.sort(function(a, b){ return (a.id > b.id) ? 1 : -1; });
+  var seq = built.concat(cross), cards = [];
+  for (i = 0; i < seq.length; i++){
+    var c = seq[i], bag = {cram: [], drill: [], ask: [], figs: []}, seen = {};
+    var keys = [];
+    for (j = 0; j < SXORDER.length; j++)
+      if (Object.prototype.hasOwnProperty.call(c, SXORDER[j])){ keys.push(SXORDER[j]); seen[SXORDER[j]] = 1; }
+    for (k in c)
+      if (Object.prototype.hasOwnProperty.call(c, k) && !seen[k]) keys.push(k);
+    for (j = 0; j < keys.length; j++){
+      k = keys[j];
+      if (SXSKIP[k]) continue;
+      var d = SXSEC[k] || ['cram', '卡上'];
+      sxWalk(c[k], d[0], d[1], bag[d[0]]);
+    }
+    cards.push({id: c.id, q: c.q, n: c.n, cross: c.cross,
+                rows: bag.cram.concat(bag.drill, bag.ask, bag.figs)});
+  }
+
+  /* 两科题目单 */
+  var qb = window.QBANK || {}, names = ['basic', 'micro', 'biochem'], qrows = [], where = {};
+  for (i = 0; i < names.length; i++){
+    var list = qb[names[i]] || [];
+    for (j = 0; j < list.length; j++){
+      var it = list[j], rr = [];
+      where[it.en] = {key: names[i], no: j + 1};
+      sxWalk(it.en, names[i], '', rr);
+      sxWalk(it.cn, names[i], '', rr);
+      for (var m = 0; m < rr.length; m++){
+        rr[m].no = j + 1;
+        rr[m].lab = ((QBMETA[names[i]] || {}).cn || names[i]) + ' 第 ' + (j + 1) + ' 题';
+        qrows.push(rr[m]);
+      }
+    }
+  }
+  /* 微生物短答 */
+  var A = window.ANS_MICRO || [], arows = [];
+  for (i = 0; i < A.length; i++){
+    var a = A[i], w = where[a.q] || {key: 'micro', no: 0}, rr2 = [];
+    /* a.q 跟题目单上那一句是同一句（ansFor 就是按它对上的），不再算一遍 */
+    sxWalk(a.en, w.key, '', rr2);
+    sxWalk(a.cn, w.key, '', rr2);
+    sxWalk(a.warn, w.key, '', rr2);
+    for (j = 0; j < rr2.length; j++){
+      rr2[j].lab = ((QBMETA[w.key] || {}).cn || w.key) + ' 短答'
+                 + (w.no ? ' · 第 ' + w.no + ' 题' : '');
+      arows.push(rr2[j]);
+    }
+  }
+  SXIDX = {cards: cards, q: qrows, a: arows};
+  return SXIDX;
+}
+
+/* ---- 句子：命中的那一句，不是整段 ---- */
+function sxIsEnd(s, i){
+  var ch = s.charAt(i);
+  if (SXEND.indexOf(ch) > -1) return true;
+  if (ch === '.' || ch === '!' || ch === '?' || ch === ';'){
+    var n = s.charAt(i + 1);
+    return n === '' || n === ' ' || n === '"' || n === '”' || n === ')';
+  }
+  return false;
+}
+function sxSent(t, a, b){
+  var s = 0, e = t.length, i, cutL = false, cutR = false;
+  var loL = a - 110 > 0 ? a - 110 : 0;
+  for (i = a - 1; i >= loL; i--) if (sxIsEnd(t, i)){ s = i + 1; break; }
+  if (i < loL && loL > 0){ s = loL; cutL = true; }
+  var hiR = b + 150 < t.length ? b + 150 : t.length;
+  for (i = b; i < hiR; i++) if (sxIsEnd(t, i)){ e = i + 1; break; }
+  if (i >= hiR && hiR < t.length){ e = hiR; cutR = true; }
+  while (e < t.length && '”")'.indexOf(t.charAt(e)) > -1) e++;
+  while (s < a && t.charAt(s) === ' ') s++;
+  return {s: s, e: e, cutL: cutL, cutR: cutR};
+}
+function sxMark(text, ql){
+  var lc = text.toLowerCase(), out = '', at = 0, i = lc.indexOf(ql);
+  while (i > -1){
+    out += mkEsc(text.slice(at, i)) + '<em class="sxhi">' + mkEsc(text.slice(i, i + ql.length)) + '</em>';
+    at = i + ql.length;
+    i = lc.indexOf(ql, at);
+  }
+  return out + mkEsc(text.slice(at));
+}
+/* 跳回卡里用的钥匙：命中的那一段再各带一点上下文，
+   因为同一个词一张卡上可能出现几十次。 */
+function sxNeedle(t, a, b){
+  var s = a - 22 > 0 ? a - 22 : 0, e = b + 22 < t.length ? b + 22 : t.length;
+  var cut = t.slice(s, e), trimmed = mkTrim(cut);
+  /* at 是这个词在 needle 里的位置：拿 needle 去卡里定位，只把 at 那一段点亮。 */
+  return {t: trimmed, at: a - s - cut.indexOf(trimmed), len: b - a};
+}
+function sxHref(id, sec, nd){
+  return '#/c/' + encodeURIComponent(id) + '/f/' + sec + '/' + nd.at + '-' + nd.len
+       + '/' + encodeURIComponent(nd.t);
+}
+
+/* ---- 跑一遍索引 ---- */
+function sxHits(rows, ql, cap){
+  var hits = [], n = 0;
+  for (var j = 0; j < rows.length; j++){
+    var r = rows[j], at = r.lc.indexOf(ql), guard = 0, pe = -1;
+    while (at > -1 && guard < 60){
+      n++;
+      /* 同一句话里又出现一次，不再列一条——那一条里两处本来就都高亮了。 */
+      if (at >= pe){
+        var sp = sxSent(r.t, at, at + ql.length);
+        pe = sp.e;
+        if (hits.length < cap)
+          hits.push({sec: r.sec, lab: r.lab, no: r.no,
+                     html: (sp.cutL ? '…' : '') + sxMark(r.t.slice(sp.s, sp.e), ql) + (sp.cutR ? '…' : ''),
+                     needle: sxNeedle(r.t, at, at + ql.length)});
+      }
+      at = r.lc.indexOf(ql, at + ql.length);
+      guard++;
+    }
+  }
+  return {hits: hits, n: n};
+}
+
+/* ---- 词库 ---- */
+function sxAlnum(ch){
+  return (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9');
+}
+function sxGlossTop(q){
+  var G = window.GLOSS || {}, k = q.toLowerCase();
+  if (G[k]) return {w: k, g: G[k]};
+  /* glossOf 会把两头的标点剔掉再查，所以搜「&amp;」会给出 amp。
+     两头不是字母数字的，就不当它是一个词。 */
+  if (!k.length || !sxAlnum(k.charAt(0)) || !sxAlnum(k.charAt(k.length - 1))) return null;
+  var g = glossOf(q);
+  if (g){
+    for (var w in G) if (G[w] === g) return {w: w, g: g};
+    return {w: k, g: g};
+  }
+  return null;
+}
+function sxGlossMore(q, skip, cap){
+  var G = window.GLOSS || {}, ql = q.toLowerCase(), out = [];
+  for (var w in G){
+    if (w === skip) continue;
+    var g = G[w];
+    if (w.indexOf(ql) > -1 || (g.cn && g.cn.toLowerCase().indexOf(ql) > -1)
+        || (g.en && g.en.toLowerCase().indexOf(ql) > -1)){
+      out.push({w: w, g: g});
+      if (out.length >= cap) break;
+    }
+  }
+  return out;
+}
+function sxGlossCard(w, g){
+  var h = '<div class="sxgloss"><div class="gw">' + mkEsc(w)
+        + (g.ipa ? '<span class="gipa">' + mkEsc(g.ipa) + '</span>' : '') + '</div>';
+  if (g.cn) h += '<p class="gcn">' + mkEsc(g.cn) + '</p>';
+  if (g.en) h += '<p class="gen">' + mkEsc(g.en) + '</p>';
+  if (g.ex) h += '<p class="gex">' + mkEsc(g.ex) + '</p>';
+  h += '<p class="gfrm">' + srcLine(g)
+     + (g.c ? ' · <a href="#/c/' + mkEsc(g.c) + '">卡 ' + mkEsc(g.c) + '</a>' : '') + '</p></div>';
+  return h;
+}
+
+/* ---- 结果页 ---- */
+function sxShow(raw){
+  var out = document.getElementById('sxout');
+  if (!out) return;
+  var q = String(raw == null ? '' : raw).trim();
+  if (SXSHOWN === q) return;
+  SXSHOWN = q; SXFIRST = '';
+  if (q.length < 2){
+    out.innerHTML = '<p class="sxnone">输两个字以上。'
+      + '英文中文都行，不分大小写，不用整词——'
+      + '搜 anomer 也能把 anomeric 都找出来。</p>';
+    return;
+  }
+  var ql = q.toLowerCase(), X = sxBuild(), i, h = '';
+
+  var top = sxGlossTop(q);
+  if (top) h += sxGlossCard(top.w, top.g);
+
+  var body = '', nHit = 0, nCard = 0;
+  for (i = 0; i < X.cards.length; i++){
+    var c = X.cards[i], R = sxHits(c.rows, ql, 30);
+    if (!R.n) continue;
+    nCard++; nHit += R.n;
+    var rows = '';
+    for (var j = 0; j < R.hits.length; j++){
+      var t = R.hits[j];
+      rows += '<a class="sxrow" href="' + sxHref(c.id, t.sec, t.needle) + '">'
+            + '<span class="sxs">' + t.html + '</span>'
+            + '<span class="sxw">' + t.lab + '</span></a>';
+      if (!SXFIRST) SXFIRST = sxHref(c.id, t.sec, t.needle);
+    }
+    body += '<div class="sxgrp"><h3><a href="#/c/' + mkEsc(c.id) + '">' + c.q + '</a></h3>'
+         + '<p class="mn">' + (c.cross ? '横向卡' : (c.n ? '#' + c.n : '')) + ' · 卡 '
+         + mkEsc(c.id) + ' · ' + R.n + ' 处'
+         + (R.hits.length < R.n ? '（列出 ' + R.hits.length + ' 条）' : '') + '</p>'
+         + rows + '</div>';
+  }
+
+  var QR = sxHits(X.q, ql, 40), AR = sxHits(X.a, ql, 40), qbody = '';
+  if (QR.n || AR.n){
+    var qr = '', all = QR.hits.concat(AR.hits);
+    for (i = 0; i < all.length; i++){
+      var u = all[i];
+      qr += '<a class="sxrow" href="#/q/' + u.sec + '">'
+          + '<span class="sxs">' + u.html + '</span>'
+          + '<span class="sxw">' + u.lab + '</span></a>';
+      if (!SXFIRST) SXFIRST = '#/q/' + u.sec;
+    }
+    qbody = '<div class="sxgrp"><h3>题目单与微生物短答</h3>'
+          + '<p class="mn">导师的三张题目单 · '
+          + (QR.n + AR.n) + ' 处。这两科没有卡，只能跳到那一科的清单。</p>'
+          + qr + '</div>';
+  }
+
+  var more = sxGlossMore(q, top ? top.w : '', 12), gbody = '';
+  if (more.length){
+    var gr = '';
+    for (i = 0; i < more.length; i++){
+      var g = more[i].g, one = g.cn || g.en || '';
+      var href2 = g.c ? '#/c/' + encodeURIComponent(g.c) : '';
+      var inner = '<span class="sxs"><b>' + sxMark(more[i].w, ql) + '</b> · '
+                + sxMark(one, ql) + '</span>'
+                + '<span class="sxw">' + (g.c ? '卡 ' + mkEsc(g.c) : '词库') + '</span>';
+      gr += href2 ? ('<a class="sxrow" href="' + href2 + '">' + inner + '</a>')
+                  : ('<div class="sxrow">' + inner + '</div>');
+    }
+    gbody = '<div class="sxgrp"><h3>词库里还有 ' + more.length + ' 条</h3>'
+          + '<p class="mn">这是释义，不是卡上的话。</p>' + gr + '</div>';
+  }
+
+  var sum = '';
+  if (nHit || QR.n || AR.n || top || more.length){
+    sum = '<p class="sxsum"><b>' + nHit + '</b> 处 · <b>' + nCard + '</b> 张卡'
+        + ((QR.n + AR.n) ? ' · 题目单与短答 ' + (QR.n + AR.n) + ' 处' : '')
+        + (more.length ? ' · 词库 ' + more.length + ' 条' : '')
+        + '<br>点任一条，直接跳到卡里的那一句。回车跳第一条。</p>';
+  }
+  if (!nHit && !QR.n && !AR.n && !top && !more.length){
+    out.innerHTML = '<p class="sxnone">「' + mkEsc(q) + '」<b>一处也没有</b>。'
+      + '<br>整套卡、两科题目单、微生物短答、词库，都没有这几个字。'
+      + '<br>换一个说法试试：卡上的中文跟书上的叫法走，'
+      + '比如“端基碳”在这套卡里叫“异头碳”。'
+      + '或者直接搜英文词。</p>';
+    return;
+  }
+  out.innerHTML = sum + h + body + qbody + gbody;
+}
+
+function sxSetHash(q){
+  var want = '#/s/' + encodeURIComponent(q);
+  if (location.hash === want) return;
+  if (window.history && history.replaceState){
+    try { history.replaceState(null, '', want); return; } catch(e){}
+  }
+  location.hash = want;          /* 退一步：同一个词重画一次会被 SXSHOWN 挡住 */
+}
+function sxTyped(e){
+  var el = e.target;
+  if (SXTIMER) clearTimeout(SXTIMER);
+  SXTIMER = setTimeout(function(){
+    SXTIMER = null;
+    sxShow(el.value);
+    sxSetHash(String(el.value).trim());
+  }, 180);
+}
+function sxKey(e){
+  if (e.key !== 'Enter') return;
+  if (SXTIMER){ clearTimeout(SXTIMER); SXTIMER = null; }
+  sxShow(e.target.value);
+  sxSetHash(String(e.target.value).trim());
+  if (SXFIRST) location.hash = SXFIRST;
+}
+function sxHashQ(){
+  var hh = location.hash;
+  if (hh === '#/s' || hh === '#/s/') return '';
+  if (hh.indexOf('#/s/') !== 0) return null;
+  var raw = hh.slice(4);
+  try { return decodeURIComponent(raw); } catch(e){ return raw; }
+}
+function renderSearch(q){
+  var box = document.getElementById('sxq');
+  if (box && document.getElementById('sxout')){
+    if (box.value.trim() !== q) box.value = q;
+    sxShow(q);
+    return;
+  }
+  document.getElementById('top').innerHTML =
+    '<a class="home" href="#/">← 全部</a><span class="id">查找</span>';
+  var nav = document.getElementById('nav'); if (nav) nav.classList.add('hide');
+  document.getElementById('main').innerHTML =
+      '<div class="lhero"><h1>查找</h1>'
+    + '<p>一个词、一个概念，看它在三十张卡、两科题目单、'
+    + '微生物短答和词库里都出现在哪。'
+    + '<br>每一条给的是它所在的<b>那句话</b>，点一下跳回卡里那一句。</p></div>'
+    + '<input id="sxq" placeholder="anomeric · 异头 · 半缩醇…" autocomplete="off">'
+    + '<div id="sxout"></div>';
+  var b = document.getElementById('sxq');
+  b.value = q;
+  b.addEventListener('input', sxTyped);
+  b.addEventListener('keydown', sxKey);
+  SXSHOWN = null;
+  sxShow(q);
+  try { b.focus(); } catch(e){}
+  window.scrollTo(0, 0);
+}
+
+/* ---- #/c/<卡>/f/<哪一屏>/<那一段字> —— 从结果跳进卡里那一句 ---- */
+function sxPath(){
+  var hh = location.hash;
+  if (hh.indexOf('#/c/') !== 0) return null;
+  var p = hh.slice(4).split('/');
+  if (p.length < 5 || p[1] !== 'f' || !p[0]) return null;
+  var raw = p.slice(4).join('/'), txt = raw;
+  try { txt = decodeURIComponent(raw); } catch(e){}
+  var id = p[0];
+  try { id = decodeURIComponent(p[0]); } catch(e){}
+  var two = String(p[3]).split('-'), at = parseInt(two[0], 10), len = parseInt(two[1], 10);
+  if (!(at >= 0)) at = 0;
+  if (!(len > 0)) len = 0;
+  return {id: id, sec: p[2], q: txt, at: at, len: len};
+}
+/* 跟 mkWrap 同一个做法：一个文本节点切一刀包一个，所以跨标签也包得住 */
+function sxWrap(root, a, b){
+  var nodes = mkNodes(root), P = mkPlain(nodes), got = 0;
+  for (var i = 0; i < nodes.length; i++){
+    var node = nodes[i], ns = P.starts[i], len = node.nodeValue.length, ne = ns + len;
+    if (ne <= a || ns >= b) continue;
+    var s0 = Math.max(a, ns) - ns, e0 = Math.min(b, ne) - ns;
+    if (e0 <= s0) continue;
+    var t = node;
+    if (e0 < len) t.splitText(e0);
+    if (s0 > 0) t = t.splitText(s0);
+    var par = t.parentNode; if (!par) continue;
+    var sp = document.createElement('span');
+    sp.className = 'sxhit';
+    par.replaceChild(sp, t); sp.appendChild(t);
+    got++;
+  }
+  return got;
+}
+function sxJump(){
+  if (!SXJUMP) return;
+  var j = SXJUMP; SXJUMP = null;
+  var sec = (j.sec === 'drill' || j.sec === 'ask' || j.sec === 'figs') ? j.sec : 'cram';
+  var root = document.getElementById(sec);
+  if (!root){ mode('cram'); return; }
+  var needle = sxFlat(j.q), el = null;
+  if (needle.length){
+    var N = mkNorm(mkPlain(mkNodes(root)).s);
+    var at = N.s.indexOf(needle);
+    if (at < 0) at = N.s.toLowerCase().indexOf(needle.toLowerCase());
+    if (at > -1){
+      /* 只点亮那个词。needle 带的那圈上下文只是用来分清楚
+         同一个词在这张卡上的几十处。 */
+      var a = at, b = at + needle.length;
+      if (j.len > 0 && j.at + j.len <= needle.length){ a = at + j.at; b = a + j.len; }
+      if (sxWrap(root, N.map[a], N.map[b]) > 0) el = root.querySelector('span.sxhit');
+    }
+  }
+  if (el){
+    var d = el.closest('details'); if (d) d.open = true;
+    /* 对答案那一屏的解释藏在右边那个「?」后面，得先翻开 */
+    var li = el.closest('ul.sib li'); if (li) li.classList.add('open');
+    /* 遮词模式下这个词可能正被黑条盖着，露出来 */
+    var bb = el.closest('b'); if (bb) bb.classList.add('show');
+    if (sec === 'drill'){
+      var st = el.closest('.step');
+      if (st) for (var i = 0; i < steps.length; i++) if (steps[i] === st) cur = i;
+    }
+  }
+  mode(sec);
+  if (el) setTimeout(function(){ if (el.scrollIntoView) el.scrollIntoView({block: 'center'}); }, 40);
+}
+
 function route(){
   var mp = mkPath();
   if (mp){ var mc = byId(mp.id); if (mc){ MKJUMP = mp.k; renderCard(mc); mkJump(); return; } }
+  var sp = sxPath();
+  if (sp){ var sc = byId(sp.id); if (sc){ SXJUMP = sp; renderCard(sc); sxJump(); return; } }
+  var sq = sxHashQ();
+  if (sq !== null){ renderSearch(sq); return; }
   if (location.hash === '#/mk'){ mkRenderMk(); return; }
   var qm = location.hash.match(/^#\/q\/(basic|micro|biochem)$/);
   if (qm){ renderQB(qm[1]); return; }
