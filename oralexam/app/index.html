@@ -305,6 +305,24 @@ button.b:disabled{opacity:.35;cursor:default}
 
 
 /* ---------- 一键开始 ---------- */
+/* 随手一题：小、安静、不要求她下决心 */
+.one{background:var(--card);border:1px solid var(--rule);border-radius:13px;padding:16px 17px 15px;margin:16px 0 6px}
+.one .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 9px}
+.one .k b{color:var(--accent);letter-spacing:0;text-transform:none;font-size:12px}
+.one .qq{font-size:16.5px;font-weight:600;line-height:1.6;margin:0}
+.one .ans{margin:13px 0 0;padding:12px 14px;background:var(--soft);border-radius:9px;font-size:14.5px;line-height:1.8}
+.one .ans .cn2{display:block;margin-top:9px;font-size:13px;color:var(--dim);line-height:1.7}
+.one .btns{display:flex;gap:9px;margin:14px 0 0}
+.one .btns button{flex:1;font-family:inherit;font-size:14px;font-weight:700;padding:11px 6px;border-radius:9px;
+  border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
+.one .btns button.no{border-color:var(--bad);color:var(--bad)}
+.one .btns button.yes{border-color:var(--ok);color:var(--ok)}
+.one .from{font-size:12px;color:var(--faint);margin:11px 0 0}
+.one .from a{color:var(--accent)}
+.sxbar{display:block;width:100%;font-family:inherit;font-size:15px;text-align:left;cursor:pointer;
+  margin:16px 0 0;padding:13px 15px;border-radius:11px;border:1px solid var(--rule);
+  background:var(--card);color:var(--dim)}
+.sxbar:hover{border-color:var(--accent);color:var(--accent)}
 .gobox{background:var(--accent);border-radius:14px;padding:22px 22px 20px;margin:22px 0 6px;color:var(--onAccent)}
 .gobox .k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin:0 0 8px}
 .gobox h2{margin:0 0 6px;font-size:21px;line-height:1.4;color:var(--onAccent);font-weight:650}
@@ -718,6 +736,80 @@ function nextCard(){
 }
 
 /* =================== list =================== */
+/* =================== 随手一题 ===================
+   2026-09-20 她的话：「主页那个巨大的不用想就练这个，有点无用，还不如每次刷新
+   就随机出现一个追问/定义，然后我可以选记得/记不得」。
+   池子 = 所有卡的追问 ＋「同一个答案不同问法」。记不得的权重高，会更早再撞上。
+   刻意做得小：一题、两个按钮、没有进度条——她现在一天两张都学不完，
+   首页再放一件大事只会让她关掉。 */
+var RCK = 'oralexam.rc.v1';
+function rcLoad(){ try { return JSON.parse(localStorage.getItem(RCK)) || {}; } catch(e){ return {}; } }
+function rcSave(o){ try { localStorage.setItem(RCK, JSON.stringify(o)); } catch(e){} }
+var RCPOOL = null;
+function rcBuild(){
+  if (RCPOOL) return RCPOOL;
+  var out = [];
+  for (var i=0;i<CARDS.length;i++){
+    var c = CARDS[i], g = c.ask || [], j, k;
+    for (j=0;j<g.length;j++){
+      var it = g[j].items || [];
+      for (k=0;k<it.length;k++)
+        if (it[k].q && it[k].en) out.push({c:c.id, t:'追问', q:it[k].q, a:it[k].en, cn:it[k].cn || ''});
+    }
+    var r = c.recog || [];
+    for (j=0;j<r.length;j++)
+      if (r[j].q && r[j].say) out.push({c:c.id, t:'换个问法', q:r[j].q, a:r[j].say, cn:r[j].mean || ''});
+  }
+  RCPOOL = out;
+  return out;
+}
+function rcKey(x){ return x.c + '|' + String(x.q).slice(0, 44); }
+function rcPick(){
+  var pool = rcBuild();
+  if (!pool.length) return null;
+  var st = rcLoad(), bag = [], i, j;
+  for (i=0;i<pool.length;i++){
+    var r = st[rcKey(pool[i])] || {};
+    var w = r.n ? 1 : 2;                      /* 没见过的算两份 */
+    if (r.bad) w += Math.min(6, r.bad * 3);   /* 记不得过的更容易再来 */
+    for (j=0;j<w;j++) bag.push(i);
+  }
+  return pool[bag[Math.floor(Math.random()*bag.length)]];
+}
+var RCCUR = null, RCSHOWN = false;
+function rcPaint(){ var b = document.getElementById('onebox'); if (b) b.innerHTML = rcHtml(); }
+function rcMark(ok){
+  if (!RCCUR) return;
+  var st = rcLoad(), k = rcKey(RCCUR), r = st[k] || {n:0, bad:0};
+  r.n = (r.n||0) + 1;
+  r.bad = ok ? 0 : (r.bad||0) + 1;
+  r.d = today();
+  st[k] = r; rcSave(st);
+  RCSHOWN = true; rcPaint();
+}
+function rcNext(){ RCCUR = rcPick(); RCSHOWN = false; rcPaint(); }
+function rcHtml(){
+  if (!RCCUR) return '';
+  var st = rcLoad(), r = st[rcKey(RCCUR)] || {};
+  var h = '<p class="k">随手一题 · <b>' + esc(RCCUR.t) + '</b>'
+        + (r.bad ? ' · 上次没想起来' : '') + '</p>'
+        + '<p class="qq">' + RCCUR.q + '</p>';
+  if (RCSHOWN)
+    h += '<div class="ans">' + RCCUR.a
+       + (RCCUR.cn ? '<span class="cn2">' + RCCUR.cn + '</span>' : '') + '</div>'
+       + '<p class="from">来自 <a href="#/c/' + esc(RCCUR.c) + '">卡 ' + esc(RCCUR.c) + '</a></p>'
+       + '<div class="btns"><button type="button" onclick="rcNext()">再来一题</button></div>';
+  else
+    h += '<div class="btns">'
+       + '<button type="button" class="no" onclick="rcMark(false)">记不得</button>'
+       + '<button type="button" class="yes" onclick="rcMark(true)">记得</button></div>';
+  return h;
+}
+
+/* PESB 是另一门课。09-20 她说首页看见它「呼吸困难」，所以默认收起来，卡一张没删。 */
+var PESBOPEN = false;
+function pesbToggle(){ PESBOPEN = !PESBOPEN; renderList(); }
+
 function renderList(){
   document.getElementById('top').innerHTML =
     '<span class="id">口试卡 · 生化</span>';
@@ -784,19 +876,13 @@ function renderList(){
     if (streakDays[kk]){ streak++; dd.setDate(dd.getDate()-1); } else break; }
 
 
-  var nx = nextCard();
-  var goHtml = nx ? ('<div class="gobox"><p class="k">不用挑，就这张</p>'
-      + '<h2>' + nx.c.q + '</h2>'
-      + '<p>' + nx.why + '。<b>出声说，说到卡住为止再翻。</b><br>'
-      + '卡住不要停——降级：说不出就看着说，看着也说不出就<b>朗读一遍</b>。<b>不许停在零。</b></p>'
-      + '<a href="#/c/' + nx.c.id + '">开始</a>'
-      + '<span class="alt">今天只做这一张也算数。'
-      + '<a href="#" onclick="document.getElementById(\'search\').focus();return false;">我想自己挑</a></span>'
-      + '</div>') : '';
+  RCCUR = rcPick(); RCSHOWN = false;
+  var goHtml = RCCUR ? ('<div class="one" id="onebox">' + rcHtml() + '</div>') : '';
+  var sxBar = '<button class="sxbar" type="button" onclick="sxOpen()">'
+      + '🔍 查一个词在所有卡上的出现</button>';
 
   var h = '<div class="lhero"><h1>生化口试卡</h1>'
     + '<p>' + built.length + ' 张已写 · ' + cross.length + ' 张横向卡 · '
-    + (pesb.length ? pesb.length + ' 张 PESB · ' : '')
     + todo.length + ' 题未写 · 全部本地，断网可看</p>'
     + '<p class="sub2" style="margin-top:10px">导师的题目单一共三科 <b>98 道</b>，这个 app 只做了生化那 32 道。'
     + '另外两科还没有卡，题面在这里：</p>'
@@ -804,6 +890,7 @@ function renderList(){
     + (((window.QBANK||{}).basic||[]).length) + ' 道</a>'
     + '<a href="#/q/micro">微生物学 · '
     + (((window.QBANK||{}).micro||[]).length) + ' 道</a></div></div>'
+    + sxBar + goHtml
     + '<div class="board"><h3>今天</h3>'
     + '<p class="sub2">只有<b>出声说完</b>的才算。看一遍不记数。<br><b>9 月 26 日之后不再做新材料</b>——剩下的时间只有出声、复习、演练。</p>'
     + '<div class="stats">'
@@ -819,7 +906,7 @@ function renderList(){
     + mkLoad().length + ' 段</a>'
     + ' <button class="bbtn ghost" type="button" onclick="sxOpen()">🔍 查找</button>'
     + ' <button class="bbtn ghost" onclick="if(confirm(\'清空全部练习记录？\')){localStorage.removeItem(PK);route();}">清空记录</button>'
-    + '</div>' + goHtml + '<input id="search" placeholder="搜题目、关键词…">';
+    + '</div><input id="search" placeholder="搜题目、关键词…">';
 
   if (built.length){
     h += '<p class="lgrp">已写</p><p class="lgrp-n">点开就能背。</p>';
@@ -831,12 +918,16 @@ function renderList(){
       + '<p class="lgrp-n">不对应某一道题，跨很多题共用。乱不清的东西放这里。</p>';
     for (i=0;i<cross.length;i++) h += rowCard(cross[i]);
   }
-  if (pesb.length){
+  if (pesb.length && !PESBOPEN){
+    h += '<p style="margin:30px 0 0"><button class="bbtn ghost" type="button" onclick="pesbToggle()">'
+       + 'PESB 那一门的 ' + pesb.length + ' 张卡 · 点开</button></p>';
+  } else if (pesb.length){
     h += '<p class="lgrp">PESB · 蛋白工程与合成生物学</p>'
       + '<p class="lgrp-n"><b>这是另一门课</b>，不是生化。考试考三门，这一门刚开头，'
       + '料在她自己的讲义笔记里（130 个节点）。还差六张：什么是蛋白工程 · 克隆 · '
       + '六种表达系统怎么选 · 无细胞与改写遗传密码 · 定向进化 · 合成生物学。</p>';
     for (i=0;i<pesb.length;i++) h += rowCard(pesb[i]);
+    h += '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="pesbToggle()">收起 ▴</button></p>';
   }
   if (todo.length){
     h += '<p class="lgrp">还没写</p>'
@@ -1039,8 +1130,11 @@ document.addEventListener('click', function(e){
   if (wp0 && !(e.target.closest && e.target.closest('#wpop'))) wp0.style.display = 'none';
   if (!window.speechSynthesis || !e.target.closest) return;
   var t = e.target;
-  if (t.closest('.spk, .fold, .favs, button, a, summary, input, textarea')) return;
-  var host = t.closest('.en, .say, .pt-en, .gd, .nt, .wn, .pt-big, ul.sib li .txt, .detail .e, .detail .c');
+  if (t.closest('.spk, .fold, .favs, button, a, input, textarea')) return;
+  /* 09-20 改：原来是一张 class 白名单，漏一个 class 整段就点不动——
+     追问的题目在 <summary> 里（还被显式排除了），图的标题和说明是 .figcard h3 / .cap，
+     三处都不在名单上。改成整张卡都能点，只挡控件。 */
+  var host = t.closest('#cram, #drill, #ask, #figs, #onebox, #sxpanel');
   if (!host) return;
   if (document.body.classList.contains('cloze') && t.closest('b')) return;
   var sel = window.getSelection && window.getSelection();
@@ -1060,6 +1154,11 @@ document.addEventListener('click', function(e){
   while (b < txt.length && isW(txt[b])) b++;
   var w = txt.slice(a, b).replace(/^[’'\-]+|[’'\-]+$/g, '');
   if (!w || !/[A-Za-z]/.test(w)) return;
+  /* 追问的题目是 <summary>，点一下本来会开合。已经展开的就别关——她正在读那个答案，
+     所以只查词；还没展开的顺手展开。收起用答案里那颗「收起 ▴」。
+     点风险标签（实测/高）或空白处照常开合，因为那里没有英文单词。 */
+  var sum = t.closest('summary');
+  if (sum && sum.parentNode && sum.parentNode.open) e.preventDefault();
   speechSynthesis.cancel(); clearReading();
   var span = document.createElement('span'); span.className = 'wd';
   var r2 = document.createRange(); r2.setStart(node, a); r2.setEnd(node, b);
