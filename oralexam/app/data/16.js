@@ -171,6 +171,120 @@ why:{
   say:'“Below that we are making a statement about common ancestry rather than mechanism: the arrangement that could be proofread is the one that survived. That is why every polymerase we know shares this one chemistry. The energetics of the pyrophosphate step itself is physical chemistry rather than biochemistry.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p083_obr422_leading_lagging.jpg',
+  t:'复制叉 —— 速背 14 说的就是这张（书 Obr. 4.22）',
+  cap:'<b>这是这张卡上最要紧的一张，而且图里的标注本来就是英文的：'
+    + 'Leading strand · Lagging strand · Parental strands · Motion of replication fork。</b>'
+    + '他说 “draw a replication fork”，要的就是这个横着的 Y。'
+    + '<br><br><b>画的顺序（六步，就是这张图的骨架）</b>：'
+    + '<br>① <b>横着的 Y</b>，叉尖朝右（图上未解开的双螺旋在右边），左边分成上下两臂。'
+    + '<br>② <b>四个端先标好 5′/3′</b>：上臂模板左端 3′、新链左端 5′；下臂新链左端 3′、底下 5′。'
+    + '<b>先标方向再画箭头，否则必错。</b>'
+    + '<br>③ 上臂画<b>一根长箭头指向叉</b>，箭头尖标 3′，旁边写 <b>Leading strand</b>。'
+    + '<br>④ 下臂画<b>三段短箭头，全部背离叉</b>，旁边写 <b>Lagging strand</b>。'
+    + '<br>⑤ 最上面画<b>一根指向叉的长箭头</b>，写 <b>Motion of replication fork</b>。'
+    + '<br>⑥ 右边画两三圈<b>还没解开的双螺旋</b>，写 <b>Parental strands</b>。'
+    + '<br><br><b>边画边说的三句</b>：“Every known DNA polymerase can only extend a chain in the <b>five-prime to three-prime</b> direction. '
+    + 'The two template strands are <b>antiparallel</b>. Those two facts together force everything else on this figure.”'
+    + '<br>“On one template the new chain grows in the same direction as the fork moves, so it is made <b>continuously</b>. That is the <b>leading</b> strand.”'
+    + '<br>“On the other template the polymerase would have to run <b>backwards</b>, so it is made in short pieces, each started again behind the fork. '
+    + 'That is the <b>lagging</b> strand, and the pieces are <b>Okazaki fragments</b>. The textbook calls the whole thing <b>semidiscontinuous</b> replication.”'
+    + '<br><br>⚠ <b>说“discontinuous”是错的，书印的是 semidiscontinuous</b>——因为只有一半不连续。这个词本身就是一个错点。',
+  src2:'Biochemie, Obr. 4.22, p083 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p080_obr419_fork_helicase_ssb.jpg',
+  t:'叉尖上都有谁 —— helicase（DnaB）和 SSB（书 Obr. 4.19）',
+  cap:'<b>这张是上一张的叉尖特写，而且标注也是英文：'
+    + 'DnaB protein · SSB · Fork movement · Leading / Lagging strand。</b>'
+    + '左边那个套在双螺旋上、带两个旋转箭头的圈，画的就是<b>解旋这个动作</b>。'
+    + '两条被拆开的单链上那一串小黑点就是 <b>SSB</b>。'
+    + '<br><br><b>画的顺序（三笔，直接加在上一张的叉尖上）</b>：'
+    + '<br>① 在叉尖上画一个<b>圈或一团小球</b>，标 <b>helicase（DnaB）</b>，旁边加一个<b>旋转箭头</b>。'
+    + '<br>② 两条裸露的单链上画<b>一串小圆</b>，标 <b>SSB</b>。'
+    + '<br>③ 叉尖旁边画一根箭头，写 <b>fork movement</b>。'
+    + '<br><br><b>边画边说的两句</b>：“<b>Helicase</b> separates the two strands, and the textbook names the <b>DnaB</b> protein. '
+    + 'It moves along the <b>lagging-strand</b> template, and the energy comes from <b>ATP hydrolysis</b>.”'
+    + '<br>“The separated strands would simply pair up again, so <b>single-strand binding protein</b>, SSB in the textbook, coats them and keeps them apart. '
+    + 'It binds the single strand without any sequence preference, and it does not act as an enzyme.”'
+    + '<br><br>⚠ <b>书里还有一个没画在图上的蛋白</b>：Rep 蛋白，沿<b>前导链</b>模板走（p080 正文自己说了 “Rep — not shown in the figure”）。'
+    + '<b>他问「还有吗」时这一句是现成的答案，而且它证明你看的是正文不只是图。</b>',
+  src2:'Biochemie, Obr. 4.19, p080 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p083_obr423_primer_okazaki.jpg',
+  t:'一个 Okazaki 片段是怎么开头的 —— RNA primer（书 Obr. 4.23）',
+  cap:'<b>两格，上下对照看，标注也是英文：RNA primer → Okazaki fragment。</b>'
+    + '上格后随链上只有一小段（那就是引物），下格它已经被接长成一整段。'
+    + '<br><br><b>画的顺序（三步，接在复制叉那张上）</b>：'
+    + '<br>① 在后随链每一段的<b>右端（靠近叉的那一头）画一小段波浪线或粗线</b>，标 <b>RNA primer</b>。'
+    + '<br>② 从那一小段的 <b>3′ 端向左拉一根箭头</b>，写 <b>Okazaki fragment</b>。'
+    + '<br>③ 两段之间留一个缺口，标 <b>ligase</b>。'
+    + '<br><br><b>边画边说的四句</b>：“The real reason primers exist is that <b>DNA polymerase cannot start a chain</b>. '
+    + 'It can only add to a <b>free three-prime OH</b> that is already paired to the template.”'
+    + '<br>“So a short piece of <b>RNA</b>, up to about <b>sixty nucleotides</b>, is made first and serves as the starter. '
+    + 'In prokaryotes the textbook says both <b>RNA polymerase</b> and the much smaller <b>primase</b> are thought to take part.”'
+    + '<br>“Then <b>DNA polymerase III</b> extends it into a piece of about <b>one to two thousand nucleotides</b>. Those pieces are the <b>Okazaki fragments</b>.”'
+    + '<br>“Afterwards the RNA is removed, <b>DNA polymerase I</b> fills the gap with DNA, and <b>DNA ligase</b> joins the ends.”'
+    + '<br><br><b>一个值钱的反问</b>：他问「为什么引物是 RNA 不是 DNA」时，不要编。'
+    + '能从书里说的是：<b>能从无到有开头的是 RNA 聚合酶，DNA 聚合酶做不到</b>，'
+    + '所以开头必须交给前者。再往下“为什么这样进化”就是进化地基，说到那里停。',
+  src2:'Biochemie, Obr. 4.23, p083 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p084_obr424_primer_removal.jpg',
+  t:'引物是怎么被换掉的 —— DNA polymerase I 的那一手（书 Obr. 4.24）',
+  cap:'<b>这张是「认」，它把一件很容易说含糊的事画成了一步一步。</b>标注全是英文：'
+    + '<b>Template DNA · Nick · RNA primer · DNA · dNTPs · pyrophosphate ion · DNA polymerase I · Newly synthesized DNA · Ribonucleotides</b>。'
+    + '<br><br><b>图上按顺序读四件事</b>：'
+    + '<br>① 上格：新链上有一个 <b>Nick（缺口）</b>，缺口右边是 <b>RNA primer</b>，再右边才是 <b>DNA</b>。'
+    + '<br>② 中间：<b>DNA polymerase I</b> 一边吃 dNTPs、一边吐 <b>焦磷酸根</b>。'
+    + '<br>③ 下格：原来是引物的那一段变成了 <b>Newly synthesized DNA</b>。'
+    + '<br>④ 右下飞出去的那一堆是 <b>Ribonucleotides</b>——被拆掉的引物。'
+    + '<b>整个缺口向右移了一段，这就是书说的 nick translation。</b>'
+    + '<br><br><b>看到图要说的那一段</b>：“<b>DNA polymerase I</b> does two things at once here. '
+    + 'Its <b>five-prime to three-prime nuclease</b> activity removes the RNA ahead of it, and its polymerase activity fills the same space with DNA. '
+    + 'The nick is simply <b>moved along</b> the strand, which is why the textbook calls it shifting the nick. '
+    + 'Then <b>DNA ligase</b> seals the last phosphodiester bond and the strand is continuous.”'
+    + '<br><br><b>这张图把三个 polymerase 分清楚了</b>：<b>III</b> 是真正的复制酶，合成大部分新 DNA；'
+    + '<b>I</b> 去掉引物、填空；<b>II</b> 的体内功能书说不清楚（p080）。<b>“not known” 也是一个可以说出口的答案。</b>',
+  src2:'Biochemie, Obr. 4.24, p084 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p078_obr415_em_replication_eye.jpg',
+  t:'复制真的被看见过 —— 果蝇 DNA 里的复制眼（书 Obr. 4.15）',
+  cap:'<b>这张是「认」，而且它是你在「当年怎么搞清楚的」那一格的回答。</b>'
+    + '这是一张<b>电镜照片</b>，不是示意图。一条 DNA 中间<b>鼓出一个沮形的泡</b>，'
+    + '两支箭头分别指着这个泡的<b>两个尖端</b>——<b>那两个尖端就是两个复制叉</b>。'
+    + '下方那根标尺写着 <b>1 kb</b>，是图里唯一的尺度。'
+    + '<br><br><b>看到图要说的那一段</b>：“This is an <b>electron micrograph</b> of a replication <b>eye</b> in Drosophila DNA. '
+    + 'The bubble is where the double helix has been opened, and the two arrows mark the two <b>replication forks</b> at its ends. '
+    + 'They move in <b>opposite</b> directions, so one origin gives two forks. '
+    + 'The textbook points out that the single-stranded regions near the forks are in the <b>trans</b> configuration, which is what the <b>semiconservative</b> model predicts.”'
+    + '<br><br><b>为什么这张值得记</b>：他问「how do we know replication is semiconservative」时，'
+    + '你除了 Meselson–Stahl 还能再给一条：<b>看得见</b>。'
+    + '<b>一个密度梯度实验加一张照片，比两个名字强。</b>',
+  src2:'Biochemie, Obr. 4.15, p078 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p082_obr421_theta_autoradiogram.jpg',
+  t:'环状染色体复制时是个 theta —— Cairns 的放射自显影（书 Obr. 4.21）',
+  cap:'<b>这张也是「认」，上半是底片，下半是书自己给的线条描图。</b>'
+    + '线条图里那个英文标注 <b>Replication eye</b> 指的就是中间鼓出来的那一圈。'
+    + '左下角那行小字写着照片来自 <b>John Cairns</b>，冷泉港实验室。'
+    + '<br><br><b>看到图要说的那一段</b>：“Replicating DNA can be visualised in two ways: by <b>autoradiography</b>, feeding the cells labelled <b>tritiated thymidine</b>, '
+    + 'or by <b>electron microscopy</b>. This is the autoradiograph. '
+    + 'A replicating <b>E. coli</b> chromosome is a <b>closed circle with a loop inside it</b>, and because that looks like the Greek letter theta the textbook calls it the <b>theta structure</b>.”'
+    + '<br><br><b>两张图要一起说，因为它们说的是同一件事</b>：'
+    + '果蝇那张（Obr. 4.15）是<b>线形</b> DNA 上的复制眼，这张是<b>环形</b>染色体上的同一个东西。'
+    + '<b>环上的复制眼就是 theta。</b>'
+    + '<br>⚠ 这张底片本身很淡，<b>不要指望从底片上看出什么</b>；要看的是下面那张描图。',
+  src2:'Biochemie, Obr. 4.21, p082 · 250 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What is DNA replication?',

@@ -169,6 +169,86 @@ why:{
   say:'“And the lock is one-shot because removal is proteolysis: hydrolysis of a peptide bond is exergonic and the fragment diffuses away, so nothing in the cell puts it back. Below that the question is why the peptide bond is thermodynamically unstable in water yet stays put until an enzyme acts. There we are in physical chemistry rather than biochemistry.”'}
 },
 
+/* ---------------- 图 ---------------- */
+figs:[
+ {k:'画',
+  src:'img/p111_obr455_er_translocation.jpg',
+  t:'信号肽的一生 —— 认出、对接、穿膜、被剪掉（书 Obr. 4.55）',
+  cap:'<b>速背 05、06、07、08 四点全在这一张上，而且它给每一步编了号。</b>'
+    + '上方标 <b>cytosol</b>，下方那个长扈子里写着 <b>ER lumen</b>。'
+    + '四个捷克语标注就是你要说的四个名词：<b>signální sekvence ＝ 信号序列</b>、'
+    + '<b>ribosomový receptor ＝ 核糖体受体</b>、<b>peptidový translakační komplex ＝ 肽链转位复合物</b>、'
+    + '<b>signální peptidasa ＝ 信号肽酶</b>。'
+    + '<br><br><b>画的顺序（五步，边画边把五个名字挂上去）</b>：'
+    + '<br>① 一条<b>横的 ER 膜</b>，膜上写 cytosol，膜下写 ER lumen。'
+    + '<br>② 膜上方一个<b>核糖体</b>，带一条 mRNA；从核糖体里伸出一截链，'
+    + '<b>最前面那一段画成粗的，标 signal sequence（N 端）</b>。'
+    + '<br>③ 在它上面挂一个小棒标 <b>SRP</b>，箭头指到膜上一个小块标 <b>SRP receptor</b>；'
+    + '旁边再画一个小块标 <b>ribosome receptor</b>。'
+    + '<br>④ 膜上画一个<b>穿膜的孔</b>，标 <b>pore（ribophorin I ＋ II）</b>，链从孔向下穿进 lumen。'
+    + '<br>⑤ 孔旁边一把小剪刀标 <b>signal peptidase</b>，<b>把那一段粗的剪下来</b>；'
+    + 'lumen 里画一个已经没有信号肽的链。'
+    + '<br><br><b>边画边说的四句</b>：“A <b>signal peptide</b> is an N-terminal stretch of the nascent chain, '
+    + 'encoded by ordinary <b>signal codons</b> that follow straight after the initiation codon. So it is part of the protein until it is cut off.”'
+    + '<br>“It is mostly <b>hydrophobic in the middle</b> with <b>charged residues at the ends</b>. '
+    + 'At the membrane the charged end stays outside and the hydrophobic middle sinks into the non-polar interior.”'
+    + '<br>“The <b>SRP</b>, a ribonucleoprotein, binds it and docks the ribosome on the <b>SRP receptor</b>. '
+    + 'The hydrophobic stretch then opens a <b>pore</b> and the rest of the chain crosses <b>while it is still being made</b>.”'
+    + '<br>“A membrane-bound <b>signal peptidase</b> hydrolyses the signal off in the lumen. From then on the protein is the proprotein or the mature protein.”'
+    + '<br><br>⚠ <b>一个图上看得见、很值钱的细节</b>：标着 ⑧ 的那个核糖体已经从膜上下来、拆成两个亚基了。'
+    + '<b>所以这整张图是一个循环，不是一条线</b>——书把它写成 <b>SRP cyklus</b> 和 <b>ribosomový cyklus</b> 两个循环。'
+    + '说一句 “the SRP is released and used again” 就把这一层带到了。'
+    + '<br>⚠ <b>书上没有</b> preproinsulin → proinsulin → insulin 的图，也没有信号肽本身的结构图。'
+    + '<b>速背 09 那一条只能说，指不了图。</b>',
+  src2:'Biochemie, Obr. 4.55, p111 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p064_obr38_zymogen_activation.jpg',
+  t:'酶原变成酶 —— 切下一小段，活性中心就露出来了（书 Obr. 3.8）',
+  cap:'<b>这张就是「propeptide 到底干什么」的一张图回答，而且好画得不像话。</b>'
+    + '左边标 <b>zymogen</b>（酶原），右边标 <b>aktivní enzym</b>（活性酶）——这两个捷克语词照字面就能读。'
+    + '<b>左边那一小段黑的，到右边就被剪掉丢在旁边了；图里两根 S–S 一直在，没动。</b>'
+    + '<br><br><b>画的顺序（四步）</b>：'
+    + '<br>① 画一个<b>绕来绕去的带子</b>（一条折好的链），底下留一截<b>涂黑的尾巴</b>，标 <b>zymogen</b>。'
+    + '<br>② 在链上随手画<b>两根 S–S</b> 虚线。'
+    + '<br>③ 箭头→ 右边再画同一条链，<b>黑尾巴不见了，单独摆在旁边</b>，链在那一块<b>敲开了一个口子</b>。'
+    + '<br>④ 在那个口子上指一下，说 <b>active site</b>。<b>两根 S–S 原样保留——这一点不要漏。</b>'
+    + '<br><br><b>边画边说的三句</b>：“A <b>zymogen</b>, or proenzyme, is an <b>inactive</b> form in which the enzyme is synthesised and stored.”'
+    + '<br>“Activation is a <b>hydrolytic removal of part of the peptide chain</b>, and that <b>uncovers the active site</b>. '
+    + 'It is catalysed by another enzyme, so it is itself an enzymic reaction.”'
+    + '<br>“The textbook stresses that this kind of regulation is <b>irreversible</b>, unlike phosphorylation. '
+    + 'Its examples are trypsin, chymotrypsin and pepsin, and the enzymes of <b>blood clotting</b>.”'
+    + '<br><br><b>这张图把 propeptide 和 signal peptide 的差别画清楚了</b>：'
+    + '信号肽是<b>地址</b>，切掉就没了；propeptide 是<b>开关</b>，<b>切掉那一刻蛋白才开始干活</b>。'
+    + '两个都是部分水解，两个都不可逆，但目的不同。',
+  src2:'Biochemie, Obr. 3.8, p064 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p117_obr52_zymogen_cascade.jpg',
+  t:'消化酶原的整本账 —— 谁激活谁（书 Obr. 5.2）',
+  cap:'<b>这张是「认」，而且它是速背 13 那笔账的原图。不要背整张，只拿三条线。</b>'
+    + '<br><br><b>三个框是三个地方（捷克语，记意思就行）</b>：最上面那框 <b>ŽALUDEK ＝ 胃</b>，'
+    + '中间那个大框 <b>TENKÉ STŘEVO ＝ 小肠</b>，最下面 <b>KREVNÍ ŘEČIŠTĚ ＝ 血流</b>。'
+    + '右边一列大写字是底物被拆得越来越小：<b>BÍLKOVINY（蛋白）→ PEPTONY → POLYPEPTIDY/OLIGOPEPTIDY '
+    + '→ DIPEPTIDY → L-AMINOKYSELINY（氨基酸）</b>。'
+    + '<br><br><b>要拿走的三条线（酶名都是拉丁文，直接读）</b>：'
+    + '<br>① 胃里：<b>pepsinogen → pepsin</b>，触发的是 <b>HCl</b>，而且图上写着切下 <b>5 个肽</b>。'
+    + '<br>② 小肠里的<b>第一张骨牌</b>：<b>trypsinogen → trypsin</b>，干这件事的是'
+    + '<b>enteropeptidase</b>（需要 Ca²⁺），切下来的小肽图上直接写着 <b>Val-Asp₄-Lys</b>。'
+    + '<br>③ 之后<b>全部括号里都写着 trypsin</b>：chymotrypsinogen、proelastase、procarboxypeptidase '
+    + '三条的激活者都是它。<b>一个酶原被激活，其余全跟着开——这就是级联。</b>'
+    + '<br><br><b>看到图要说的那一段</b>：“Most digestive enzymes are made as <b>proproteins</b>, that is <b>zymogens</b>, and they are activated '
+    + 'only when they are secreted into the digestive tract. '
+    + 'In the stomach <b>hydrochloric acid</b> turns pepsinogen into pepsin. In the small intestine <b>enteropeptidase</b> turns trypsinogen into trypsin, '
+    + 'and <b>trypsin then activates all the others</b> — chymotrypsinogen, proelastase and procarboxypeptidase. '
+    + 'So one activation opens the whole cascade.”'
+    + '<br><br><b>为什么要这么干，一句话</b>：“A protease that was active where it is made would digest the cell that made it. '
+    + 'The proform separates the <b>place of synthesis</b> from the <b>place of action</b>.”'
+    + '<br>⚠ 这张图在<b>第 5 章</b>（p117），不在 PTM 那一节。'
+    + '<b>说得出页码比说得出内容更能撑住一句话</b>，而且它同时是氨基酸代谢那一章的开头。',
+  src2:'Biochemie, Obr. 5.2, p117 · 220 dpi 原图裁切，未修改'}
+],
+
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What is a propeptide?',

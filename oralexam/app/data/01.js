@@ -137,6 +137,63 @@ why:{
 /* ---------------- 图 ---------------- */
 figs:[
  {k:'画',
+  src:'img/p026_obr24_pentapeptide.jpg',
+  t:'一级结构 —— 五个框子，框里是主链，框外是侧链（书 Obr. 2.4）',
+  cap:'<b>这张是「画」，而且它一笔就把「主链 / 侧链」分开了</b>——而主链正是二级结构那一格的承重词。'
+    + '书把每一个残基的 <b>N–C–C</b> 圈进一个方框，<b>框里那三个原子就是主链</b>，'
+    + '<b>R₁…R₅ 掛在框外</b>；框与框之间那根短线就是<b>肽键</b>。'
+    + '<br><br><b>画的顺序（五步）</b>：'
+    + '<br>① 横着画 <b>五个开口的方框</b>，两两之间用一根短横线连起来。'
+    + '<br>② 每个框里从左到右写 <b>N – C – C</b>（中间那个就是 α-碳）。'
+    + '<br>③ 中间那个碳的<b>上面写 H、下面写 R</b>（标 R₁…R₅）；右边那个碳<b>上面双键接 O</b>；N <b>下面接 H</b>。'
+    + '<br>④ 最左边写 <b>H₃N–</b>，最右边写 <b>–COO⁻</b>。'
+    + '<br>⑤ 两头各标一个名字：左 <b>N 端</b>，右 <b>C 端</b>。图上那两行捷克语就是这两个词。'
+    + '<br><br><b>边画边说的三句</b>：“The repeating part inside the boxes is the <b>main chain</b>, the nitrogen, alpha-carbon and carbonyl-carbon of every residue. '
+    + 'Everything that varies, R one to R five, hangs <b>outside</b> it. Secondary structure is hydrogen bonding of the part inside the boxes, not of the part outside.”'
+    + '<br>“The chain has two different ends, so it has a direction: a free amino group at one end, a free carboxyl at the other. By convention the sequence is written from the <b>N-terminal</b> to the <b>C-terminal</b> residue.”'
+    + '<br>“A peptide chain is <b>unbranched</b>. Two residues make a dipeptide, up to ten an oligopeptide, more a polypeptide, and above about a hundred the textbook calls it a protein.”'
+    + '<br><br>⚠ 图上两行捷克语是 <b>N-端氨基酸</b> 和 <b>C-端氨基酸</b>，就是两端的名字，不用管它怎么拼。',
+  src2:'Biochemie, Obr. 2.4, p026 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p027_obr25_peptide_bond_dimensions.jpg',
+  t:'肽键的键长和键角 —— 那个阴影四边形就是“酰胺平面”（书 Obr. 2.5）',
+  cap:'<b>这张是「认」，而且它是你在「肽键为什么是平的」这一刀上的证据。</b>'
+    + '中间那块<b>阴影的四边形</b>就是书说的酰胺平面（图上右下那个捷克语标注指的就是它）；'
+    + '中间那根指向 <b>C–N</b> 的线上那个捷克语标注指的就是<b>肽键本身</b>。'
+    + '<br><br><b>一眼要看出来的三个数</b>：羰基 <b>C＝O 是 1.24</b>、<b>C–N 是 1.33</b>、'
+    + 'Cα–N 是 <b>1.46</b>（单位是 Å，图注里写了 Å = 10⁻¹⁰ m）。'
+    + '<b>关键就是中间那个</b>：1.33 夹在单键 C–N（1.49）和双键 C＝N（1.27）<b>中间</b>——'
+    + '这就是「部分双键」四个字的全部证据，不用提轨道。'
+    + '<br><br><b>看到图要说的那一段</b>：“The six atoms of the peptide bond lie in <b>one plane</b>. '
+    + 'The carbon-nitrogen bond is <b>1.33 Å</b>, between a single bond at 1.49 and a double bond at 1.27, '
+    + 'so it has <b>partial double-bond character</b> and cannot rotate freely. That is why <b>cis-trans isomers</b> exist, '
+    + 'and in globular proteins it is almost always the <b>trans</b> one. The cis form occurs practically only before a <b>proline</b>.”'
+    + '<br><br>⚠ <b>一处书自己对不上的小数</b>：图上印的 C–N 是 <b>1.33</b>，同页正文写的是 <b>1.32 Å（0.132 nm）</b>。'
+    + '他要数就说 “about 1.32 to 1.33 Å”，两个都是这本书的。'
+    + '<br>图里两个捷克语标注就是<b>肽键</b>和<b>酰胺平面</b>，它们长在图正中间，裁不掉也不用裁——图看得清就行。',
+  src2:'Biochemie, Obr. 2.5, p027 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p028_obr26_amide_planes_rotation.jpg',
+  t:'一条链 ＝ 一串硬平面 ＋ 两个能转的键（书 Obr. 2.6）',
+  cap:'<b>这张把上一张接成一条链，而且它是「为什么只有那几种二级结构」的回答。</b>'
+    + '一排<b>阴影的平行四边形</b>就是一个接一个的酰胺平面；它们<b>只在 α-碳上铰接</b>，'
+    + '那两根键上画着<b>弯曲的旋转箭头</b>和 φ、ψ 两个希腊字母。两端的箭头标着 <b>N 端</b> 和 <b>C 端</b>。'
+    + '<br><br><b>画的顺序（四步，黑板上三十秒）</b>：'
+    + '<br>① 横着画 <b>三到四个阴影的四边形</b>，一上一下错开。'
+    + '<br>② 每两个四边形<b>只用一个点相连</b>，那个点标 <b>Cα</b>。'
+    + '<br>③ 在 Cα 两边的两根键上各画一个<b>弯箭头</b>，左边标 <b>φ</b>（N–Cα），右边标 <b>ψ</b>（Cα–C）。'
+    + '<br>④ 左端写 <b>N</b>、右端写 <b>C</b>，各加一个箭头。'
+    + '<br><br><b>边画边说的两句</b>：“The backbone is a series of <b>rigid planes</b> separated by the substituted methylene groups, the alpha-carbons.”'
+    + '<br>“The two bonds at each alpha-carbon, <b>phi</b> and <b>psi</b>, are ordinary single bonds and <b>can rotate</b>. '
+    + 'So the only freedom the chain has is at the alpha-carbons, and that is why there are only a few regular conformations: '
+    + 'the <b>alpha-helix</b>, the <b>beta-structure</b> and, in this textbook, the <b>collagen helix</b>. '
+    + 'Pauling and Corey proposed the first two in <b>1951</b>, from bond lengths and angles alone.”'
+    + '<br><br>这两句把段 3 和速背 06 接起来：<b>平面是约束，φ/ψ 是自由度，二级结构就是这个自由度只有几个解。</b>',
+  src2:'Biochemie, Obr. 2.6, p028 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
   src:'img/p029_obr28_alphahelix_hbond.jpg',
   t:'α-helix 的氢键怎么连',
   cap:'<b>要会画的就是这个：</b>一条伸展的主链，把 <b>CO</b> 和<b>一整圈之后</b>的 <b>NH</b> 用虚线连起来。'
@@ -146,7 +203,78 @@ figs:[
     + '而同一页正文印的是 <b>n+3</b>。'
     + '<br><br>考场上先说 “about one full turn further along the chain”；被逼问再给 n+4，'
     + '补一句 “3.6 residues per turn only works out with n+4”。<b>被质疑就把这张图指给他看。</b>',
-  src2:'Biochemie, figure 2.8, p029 · 300 dpi 原图裁切，未修改'}
+  src2:'Biochemie, figure 2.8, p029 · 300 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p030_obr210_beta_parallel.jpg',
+  t:'平行 β-structure —— 三支箭头同一个方向（书 Obr. 2.10）',
+  cap:'<b>这一张和下一张要一起看，差别就在右边那三支箭头。</b>这张三支<b>全朝右</b>，所以是<b>平行</b>。'
+    + '请注意上半部是俯视，下半部是<b>从侧面看同一东西</b>——一条折线，这就是书叫它「折叠纸」的理由。'
+    + '<br><br><b>画的顺序（四步，不用画原子）</b>：'
+    + '<br>① 画<b>三条水平的长箭头</b>，上中下排好，<b>三个箭头尖全指右</b>。'
+    + '<br>② 相邻两条之间拉<b>几根竖虚线</b>，标上 <b>C＝O … H–N</b>——这是主链氢键。'
+    + '<br>③ 在每条链上交替向上向下标几个 <b>R</b>——侧链交替地朝两面突出。'
+    + '<br>④ 另起一行画侧面视图：一条<b>来回折的锐角线</b>。'
+    + '<br><br><b>边画边说的两句</b>：“In the beta-structure the main chain is almost <b>fully extended</b>, and it is held by hydrogen bonds between the <b>C=O and N-H groups of two different chains</b>, not within one chain as in the helix.”'
+    + '<br>“If the neighbouring chains run in the <b>same direction</b> it is the <b>parallel</b> beta-structure.”'
+    + '<br><br><b>这张图还是你在「二级跟三级怎么分」上的反例</b>：两条配对的链在序列上可以离得很远，'
+    + '按「序列上挨得近」这条判据它该算三级，可它靠的是<b>主链</b>氢键、有规则重复，所以是二级。'
+    + '他要你给“多远”的数字时，<b>把这张图拿出来比给一个编的数字稳得多</b>。',
+  src2:'Biochemie, Obr. 2.10, p030 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p030_obr211_beta_antiparallel.jpg',
+  t:'反平行 β-structure —— 中间那支箭头反了（书 Obr. 2.11）',
+  cap:'<b>跟上一张只差一件事，而那件事就是考点。</b>右边三支箭头是'
+    + '<b>右 · 左 · 右</b>——相邻两条链<b>方向相反</b>，所以是<b>反平行</b>。'
+    + '<b>考场上就看这三支箭头，别看原子。</b>'
+    + '<br><br><b>画的顺序</b>：跟上一张<b>一模一样</b>，只把第② 步的中间那条箭头<b>调过来指左</b>。'
+    + '其余四步不变。<b>两张一起画，左边一个右边一个，箭头一比就说完了。</b>'
+    + '<br><br><b>边画边说的两句</b>：“If the neighbouring chains run in <b>opposite</b> directions it is the <b>antiparallel</b> beta-structure. '
+    + 'The textbook gives exactly these two.”'
+    + '<br>“A <b>beta-turn</b> lets one single chain fold back on itself, and the two flat pieces on either side of the turn then pair up <b>antiparallel</b>. '
+    + 'If the connecting piece is longer, the two can also pair up parallel.”'
+    + '<br><br><b>两个书上的例子，一句带过</b>：<b>fibroin</b>（丝）是<b>反平行</b>的，而且它的小残基（glycine、alanine、serine）'
+    + '特别多，因为两张图里那些 R 得有地方放（p034）；'
+    + '<b>头发的 keratin</b> 本来是 α-螺旋，<b>泖湿加热拉开就变成 β</b>，能拉到两倍长——'
+    + '这就是「烫头发为什么有用」那一类听起来不像生化题的生化题。',
+  src2:'Biochemie, Obr. 2.11, p030 · 250 dpi 原图裁切，未修改'},
+
+ {k:'画',
+  src:'img/p033_obr215_supersecondary.jpg',
+  t:'超二级结构的三个样子：βαβ · αα · β-meander（书 Obr. 2.15）',
+  cap:'<b>速背 09 那一点里的 βαβ，就是图里的 (a)。</b>这张好画到不像话，而且图注里书自己把符号交代了：'
+    + '<b>箭头 ＝ β-structure，螺旋线 ＝ α-helix</b>。'
+    + '<br><br><b>画的顺序（他说 supersecondary 你就画 (a)，三笔）</b>：'
+    + '<br>① 画一支<b>向上的粗箭头</b>。'
+    + '<br>② 右边隔一点再画<b>一支向上的粗箭头</b>（两支<b>同向</b>，所以是平行 β）。'
+    + '<br>③ 两支之间<b>画一根斜着的弹簧线</b>，两头分别接到两支箭头的尾巴和头。完了。'
+    + '<br><br><b>边画边说的两句</b>：“Supersecondary structure means <b>clusters</b> of secondary-structure elements that recur in many proteins. '
+    + 'The commonest is the <b>beta-alpha-beta</b> unit: two stretches of beta-structure separated by a stretch in the alpha-helical conformation.”'
+    + '<br>“The textbook also shows an <b>alpha-alpha</b> unit and a <b>beta-meander</b>, which is three or more strands connected by short turns, all antiparallel.”'
+    + '<br><br><b>这一点的价值不在名字，在它证明了什么。</b>书先给四级，然后说「后来的研究」又加了'
+    + '<b>超二级</b>和<b>结构域</b>。一个会被后人加两层的分类，是描述工具，不是自然事实。'
+    + '他问「二级和三级的界线在哪里」时，这张图就是那句 “the categories are a description we impose rather than something the molecule has” 的书证。',
+  src2:'Biochemie, Obr. 2.15, p033 · 250 dpi 原图裁切，未修改'},
+
+ {k:'认',
+  src:'img/p035_obr216_cytochrome_p450_fold.jpg',
+  t:'三级结构画出来是什么样 —— 圆柱 ＝ 螺旋，扁箭头 ＝ β（书 Obr. 2.16）',
+  cap:'<b>这张是「认」。全书只有这一张把一条链折完之后的样子画出来了。</b>'
+    + '他把这类图摄过来问「这是什么」，答案是三级结构，不是四级——<b>从头到尾只有一根线，就是一条链。</b>'
+    + '<br><br><b>书自己把画法的约定写在图上方那段里，三条</b>：'
+    + '<br>① <b>圆柱（或盘着的纽带）＝ α-helix</b>——图里标着 A、B、D、E、I、J、K、L 的那些。'
+    + '<br>② <b>扁箭头＝ β-structure 的一支</b>，而且<b>箭头从 N 端指出去</b>——所以箭头同时告诉你方向，'
+    + '拿它就能当场说出哪几支是平行、哪几支是反平行。'
+    + '<br>③ 中间那个<b>打斜线的圆盘是血红素（heme）</b>，图注里书明说了。'
+    + '<br><br><b>看到图要说的那一段</b>：“This is a <b>ribbon scheme</b> of a tertiary structure — <b>one</b> chain, folded. '
+    + 'Cylinders are <b>alpha-helices</b>, flat arrows are strands of <b>beta-structure</b> pointing away from the N-terminus, '
+    + 'and the rest is irregular chain, the <b>random coil</b> regions between them. '
+    + 'The hatched disc in the middle is the <b>heme</b>, so this is cytochrome P450.”'
+    + '<br><br>⚠ <b>三级的例子说书上的那个</b>：肌红蛋白（myoglobin）一条链、以 α-helix 为主（p034），'
+    + '1957 年 Kendrew 解出的第一个蛋白质三维结构（p009）。<b>血红蛋白是四级的例子，不是三级的。</b>'
+    + '<b>chymotrypsin 几乎没有 α-helix</b>（p034）——他问「是不是每个蛋白都有螺旋」时就拿这个答。',
+  src2:'Biochemie, Obr. 2.16, p035 · 250 dpi 原图裁切，未修改'}
 ],
 
 /* ---------------- 同一个答案，不同问法 ---------------- */

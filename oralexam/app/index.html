@@ -404,6 +404,23 @@ button.b:disabled{opacity:.35;cursor:default}
 .qb .ans .wn{font-size:13.5px;background:var(--warnbg);color:var(--warn);border-radius:8px;
   padding:10px 12px;margin:10px 0 0;line-height:1.7}
 .qb .noans{font-size:12.5px;color:var(--faint);margin:6px 0 0 37px}
+/* ---------- 查找浮层 ---------- */
+#sxmask{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.34);display:none}
+#sxmask.on{display:block}
+#sxpanel{position:fixed;z-index:71;left:50%;transform:translateX(-50%);
+  top:14px;width:min(720px,94vw);max-height:calc(100vh - 28px);display:none;
+  flex-direction:column;background:var(--paper);border:1px solid var(--rule);
+  border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.3);overflow:hidden}
+#sxpanel.on{display:flex}
+#sxhead{display:flex;align-items:center;gap:10px;padding:12px 14px;
+  border-bottom:1px solid var(--rule);background:var(--card)}
+#sxhead #sxq{flex:1;min-width:0;margin:0}
+#sxhead .x{flex:none;font-family:inherit;font-size:14px;line-height:1;cursor:pointer;
+  border:1px solid var(--rule);background:var(--card);color:var(--dim);
+  border-radius:9px;padding:9px 12px}
+#sxhead .x:hover{border-color:var(--accent);color:var(--accent)}
+#sxbody{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:0 14px 16px}
+#sxbody .sxtip{font-size:12.5px;color:var(--faint);margin:10px 0 0;line-height:1.7}
 #wpop button{font-family:inherit;font-size:13px;border:1px solid var(--rule);background:var(--card);color:var(--ink);
   border-radius:14px;padding:6px 11px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.14)}
 #wpop button i{font-style:normal;font-family:Georgia,serif}
@@ -519,6 +536,17 @@ button.b:disabled{opacity:.35;cursor:default}
 
 <div class="top" id="top"></div>
 <button class="thm" id="thm" type="button" onclick="cycleTheme()" title="配色：跟随系统 / 浅 / 深"></button>
+<div id="sxmask" onclick="sxClose()"></div>
+<div id="sxpanel" role="dialog" aria-label="查找">
+  <div id="sxhead">
+    <input id="sxq" placeholder="anomeric · 异头 · 半缩醛…" autocomplete="off">
+    <button class="x" type="button" onclick="sxClose()">关闭</button>
+  </div>
+  <div id="sxbody">
+    <p class="sxtip">一个词、一个概念，看它在三十张卡、两科题目单、微生物短答和词库里都出现在哪。每一条给的是它所在的<b>那句话</b>，点一下跳回卡里那一句。<br><b>这一层浮在你正在看的那页上面</b>，关掉就回到原处。</p>
+    <div id="sxout"></div>
+  </div>
+</div>
 <main id="main"></main>
 <div class="nav hide" id="nav">
   <button class="b ghost" id="prev">上一步</button>
@@ -530,6 +558,8 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/_qbank.js"></script>
 <script src="data/_ans_micro_a.js"></script>
 <script src="data/_ans_micro_b.js"></script>
+<script src="data/_ans_basic_a.js"></script>
+<script src="data/_ans_basic_b.js"></script>
 <script>window.CARDS = [];</script>
 <script src="data/_gloss.js"></script>
 <script src="data/01.js"></script>
@@ -771,7 +801,7 @@ function renderList(){
     + ' <a class="bbtn ghost" href="#/fav" style="text-decoration:none">☆ 不会念的</a>'
     + ' <a class="bbtn ghost" href="#/mk" style="text-decoration:none">★ 必背 '
     + mkLoad().length + ' 段</a>'
-    + ' <a class="bbtn ghost" href="#/s/" style="text-decoration:none">🔍 查找</a>'
+    + ' <button class="bbtn ghost" type="button" onclick="sxOpen()">🔍 查找</button>'
     + ' <button class="bbtn ghost" onclick="if(confirm(\'清空全部练习记录？\')){localStorage.removeItem(PK);route();}">清空记录</button>'
     + '</div>' + goHtml + '<input id="search" placeholder="搜题目、关键词…">';
 
@@ -1979,8 +2009,12 @@ var QBMETA = {
 };
 /* 题目单上这道题有没有写过答案。键是题面原文，两个 _ans_ 文件拼在同一个全局上。 */
 function ansFor(qen){
-  var A = window.ANS_MICRO || [];
-  for (var i=0;i<A.length;i++) if (A[i].q === qen) return A[i];
+  /* 两科各自一个全局，微生物和实验基本技术；题面原文当键。 */
+  var L = [window.ANS_MICRO || [], window.ANS_BASIC || []];
+  for (var j=0;j<L.length;j++){
+    var A = L[j];
+    for (var i=0;i<A.length;i++) if (A[i].q === qen) return A[i];
+  }
   return null;
 }
 function renderQB(key){
@@ -2058,7 +2092,36 @@ var SXSEP = String.fromCharCode(1);
 var SXEND = '。！？；';
 var SXIDX = null, SXJUMP = null, SXSHOWN = null, SXTIMER = null, SXFIRST = '';
 
-function sxOpen(){ location.hash = '#/s/'; }
+/* 查找是浮层，不是页面。开着的时候底下那张卡原样留着。 */
+function sxOpen(q){
+  var m = document.getElementById('sxmask'), p = document.getElementById('sxpanel'),
+      b = document.getElementById('sxq');
+  if (!m || !p || !b) return;
+  m.classList.add('on'); p.classList.add('on');
+  document.body.style.overflow = 'hidden';
+  if (typeof q === 'string') b.value = q;
+  if (!b.dataset.wired){
+    b.addEventListener('input', sxTyped);
+    b.addEventListener('keydown', sxKey);
+    b.dataset.wired = '1';
+  }
+  SXSHOWN = null;
+  sxShow(b.value.trim());
+  try { b.focus(); b.select(); } catch(e){}
+}
+function sxClose(){
+  var m = document.getElementById('sxmask'), p = document.getElementById('sxpanel');
+  if (m) m.classList.remove('on');
+  if (p) p.classList.remove('on');
+  document.body.style.overflow = '';
+}
+function sxIsOpen(){
+  var p = document.getElementById('sxpanel');
+  return !!(p && p.classList.contains('on'));
+}
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && sxIsOpen()) sxClose();
+});
 function sxAlpha(ch){ return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'); }
 function sxFlat(x){ return mkTrim(mkNorm(String(x == null ? '' : x)).s); }
 
@@ -2373,6 +2436,8 @@ function sxShow(raw){
 }
 
 function sxSetHash(q){
+  /* 浮层模式下不碰地址栏：地址栏还指着她原来那张卡，关掉浮层就在原处。 */
+  if (sxIsOpen()) return;
   var want = '#/s/' + encodeURIComponent(q);
   if (location.hash === want) return;
   if (window.history && history.replaceState){
@@ -2465,6 +2530,7 @@ function sxWrap(root, a, b){
   return got;
 }
 function sxJump(){
+  if (sxIsOpen()) sxClose();
   if (!SXJUMP) return;
   var j = SXJUMP; SXJUMP = null;
   var sec = (j.sec === 'drill' || j.sec === 'ask' || j.sec === 'figs') ? j.sec : 'cram';
