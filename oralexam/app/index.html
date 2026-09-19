@@ -1101,7 +1101,7 @@ function renderCard(c){
   C = c; cur = 0;
   document.getElementById('top').innerHTML =
       '<a class="home" href="#/">← 全部</a>'
-    + '<span class="id">' + (c.cross ? '横向卡' : '卡 ' + c.id) + '</span>'
+    + '<span class="id">' + (String(c.id).indexOf('pe-') === 0 ? 'PESB · 蛋白工程' : (c.cross ? '横向卡' : '卡 ' + c.id)) + '</span>'
     + '<div class="modes">'
     + '<button id="mCram" onclick="mode(\'cram\')">速背</button>'
     + (c.segs ? '<button id="mDrill" onclick="mode(\'drill\')">演练</button>' : '')
@@ -2398,7 +2398,7 @@ function sxShow(raw){
       if (!SXFIRST) SXFIRST = sxHref(c.id, t.sec, t.needle);
     }
     body += '<div class="sxgrp"><h3><a href="#/c/' + mkEsc(c.id) + '">' + c.q + '</a></h3>'
-         + '<p class="mn">' + (c.cross ? '横向卡' : (c.n ? '#' + c.n : '')) + ' · 卡 '
+         + '<p class="mn">' + (String(c.id).indexOf('pe-') === 0 ? 'PESB' : (c.cross ? '横向卡' : (c.n ? '#' + c.n : ''))) + ' · 卡 '
          + mkEsc(c.id) + ' · ' + R.n + ' 处'
          + (R.hits.length < R.n ? '（列出 ' + R.hits.length + ' 条）' : '') + '</p>'
          + rows + '</div>';
