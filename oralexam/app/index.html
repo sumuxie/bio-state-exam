@@ -594,6 +594,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/06.js"></script>
 <script src="data/12.js"></script>
 <script src="data/16.js"></script>
+<script src="data/mb_int.js"></script>
 <script src="data/pe_clone.js"></script>
 <script src="data/pe_evo.js"></script>
 <script src="data/pe_cfps.js"></script>
@@ -807,6 +808,13 @@ function rcHtml(){
 }
 
 /* PESB 是另一门课。09-20 她说首页看见它「呼吸困难」，所以默认收起来，卡一张没删。 */
+/* 卡属于哪一门，看 id 前缀。'' ＝ 生化。 */
+function subjOf(c){
+  var k = String(c && c.id);
+  if (k.indexOf('pe-') === 0) return 'pe';
+  if (k.indexOf('mb-') === 0) return 'mb';
+  return '';
+}
 var PESBOPEN = false;
 function pesbToggle(){ PESBOPEN = !PESBOPEN; renderList(); }
 
@@ -816,11 +824,12 @@ function renderList(){
   document.getElementById('nav').classList.add('hide');
 
   var built = [], todo = [], cross = [];
-  var pesb = [];
+  var pesb = [], mb = [];
   for (var i=0;i<CARDS.length;i++){
     var cc = CARDS[i];
     /* PESB 是另一门课，不能跟生化的横向卡混在一段里——她找不到。 */
     if (String(cc.id).indexOf('pe-') === 0) pesb.push(cc);
+    else if (String(cc.id).indexOf('mb-') === 0) mb.push(cc);
     else if (cc.cross) cross.push(cc);
     else built.push(cc);
   }
@@ -836,8 +845,8 @@ function renderList(){
   function rowCard(c){
     var mg = c.merged && c.merged.length ? ' ＋#' + c.merged.join('、#') : '';
     return '<a class="row" href="#/c/' + c.id + '">'
-      + '<span class="w ' + (String(c.id).indexOf('pe-') === 0 ? 'pe' : (c.cross ? 'mid' : 'hi')) + '">'
-      + (String(c.id).indexOf('pe-') === 0 ? 'PE' : (c.cross ? '横' : '卡')) + '</span>'
+      + '<span class="w ' + (subjOf(c) ? 'pe' : (c.cross ? 'mid' : 'hi')) + '">'
+      + (subjOf(c) === 'pe' ? 'PE' : (subjOf(c) === 'mb' ? 'MB' : (c.cross ? '横' : '卡'))) + '</span>'
       + '<span class="t"><b>' + c.q + '</b><span>'
       + (c.n ? '#' + c.n + mg + ' · ' : '') + esc(c.qcn) + '</span></span>'
       + '<span class="st ' + statusOf(c.id).cls + '">' + statusOf(c.id).txt + '</span></a>';
@@ -918,15 +927,24 @@ function renderList(){
       + '<p class="lgrp-n">不对应某一道题，跨很多题共用。乱不清的东西放这里。</p>';
     for (i=0;i<cross.length;i++) h += rowCard(cross[i]);
   }
-  if (pesb.length && !PESBOPEN){
+  /* 另外两门。默认收起来——首页只放生化，她看见三门并排会喘不过气。 */
+  if ((pesb.length || mb.length) && !PESBOPEN){
     h += '<p style="margin:30px 0 0"><button class="bbtn ghost" type="button" onclick="pesbToggle()">'
-       + 'PESB 那一门的 ' + pesb.length + ' 张卡 · 点开</button></p>';
-  } else if (pesb.length){
-    h += '<p class="lgrp">PESB · 蛋白工程与合成生物学</p>'
-      + '<p class="lgrp-n"><b>这是另一门课</b>，不是生化。考试考三门，这一门刚开头，'
-      + '料在她自己的讲义笔记里（130 个节点）。还差六张：什么是蛋白工程 · 克隆 · '
-      + '六种表达系统怎么选 · 无细胞与改写遗传密码 · 定向进化 · 合成生物学。</p>';
-    for (i=0;i<pesb.length;i++) h += rowCard(pesb[i]);
+       + '另外两门 · PESB ' + pesb.length + ' 张 · 分子生物学 ' + mb.length + ' 张 · 点开</button></p>';
+  } else if (pesb.length || mb.length){
+    if (pesb.length){
+      h += '<p class="lgrp">PESB · 蛋白工程与合成生物学</p>'
+        + '<p class="lgrp-n"><b>这是另一门课</b>，不是生化。六张做完了，'
+        + '料是她自己的讲义笔记（130 个节点）。</p>';
+      for (i=0;i<pesb.length;i++) h += rowCard(pesb[i]);
+    }
+    if (mb.length){
+      h += '<p class="lgrp">分子生物学 · 方法那一侧</p>'
+        + '<p class="lgrp-n"><b>第三门课</b>。料是《现代分子生物学》第五版，'
+        + '在 molecure_lite 那个 app 里。这里只做四张：'
+        + '互作八法 · 基因敲除与 CRISPR · 真核调控 · 不编码蛋白的那一半。</p>';
+      for (i=0;i<mb.length;i++) h += rowCard(mb[i]);
+    }
     h += '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="pesbToggle()">收起 ▴</button></p>';
   }
   if (todo.length){
@@ -1204,7 +1222,7 @@ function renderCard(c){
   C = c; cur = 0;
   document.getElementById('top').innerHTML =
       '<a class="home" href="#/">← 全部</a>'
-    + '<span class="id">' + (String(c.id).indexOf('pe-') === 0 ? 'PESB · 蛋白工程' : (c.cross ? '横向卡' : '卡 ' + c.id)) + '</span>'
+    + '<span class="id">' + (subjOf(c) === 'pe' ? 'PESB · 蛋白工程' : (subjOf(c) === 'mb' ? '分子生物学' : (c.cross ? '横向卡' : '卡 ' + c.id))) + '</span>'
     + '<div class="modes">'
     + '<button id="mCram" onclick="mode(\'cram\')">速背</button>'
     + (c.segs ? '<button id="mDrill" onclick="mode(\'drill\')">演练</button>' : '')
@@ -2501,7 +2519,7 @@ function sxShow(raw){
       if (!SXFIRST) SXFIRST = sxHref(c.id, t.sec, t.needle);
     }
     body += '<div class="sxgrp"><h3><a href="#/c/' + mkEsc(c.id) + '">' + c.q + '</a></h3>'
-         + '<p class="mn">' + (String(c.id).indexOf('pe-') === 0 ? 'PESB' : (c.cross ? '横向卡' : (c.n ? '#' + c.n : ''))) + ' · 卡 '
+         + '<p class="mn">' + (subjOf(c) === 'pe' ? 'PESB' : (subjOf(c) === 'mb' ? '分子生物学' : (c.cross ? '横向卡' : (c.n ? '#' + c.n : '')))) + ' · 卡 '
          + mkEsc(c.id) + ' · ' + R.n + ' 处'
          + (R.hits.length < R.n ? '（列出 ' + R.hits.length + ' 条）' : '') + '</p>'
          + rows + '</div>';
