@@ -19647,6 +19647,18 @@ function speak(btn){
       if (t) sents.push({t:t, spans:byI[i]});
     });
   }
+  /* ⚠ 2026-09-20：span 里是**屏幕上的**文字，而屏幕上的缩写已经被 unspell 合过了
+     （D N A → DNA）。直接拿它去念，等于把当初拆开写的努力全抵消掉。
+     所以：**高亮用 span，念的用 data-say 里那份没合过的原文。**
+     unspell 只在句子内部把字母连起来，不增删句号，所以两边的句子数必然相等；
+     万一不等就退回用 span 的文字，宁可念错也不要错位高亮。 */
+  var raw = el.getAttribute && el.getAttribute('data-say');
+  if (raw && sents.length){
+    var rs = raw.replace(/([.!?]["”)]?)(\s+)(?=[A-Z“"(])/g, '$1$2\u0001').split('\u0001');
+    var clean = [];
+    for (var ri=0; ri<rs.length; ri++){ var c = cleanEn(rs[ri]); if (c) clean.push(c); }
+    if (clean.length === sents.length) for (var si=0; si<sents.length; si++) sents[si].t = clean[si];
+  }
   if (!sents.length) { var txt = englishOf(el); if (!txt) return; sents = [{t:txt, spans:[]}]; }
   document.body.classList.add('reading'); el.classList.add('rd'); btn.classList.add('on');
   var idx = 0;
