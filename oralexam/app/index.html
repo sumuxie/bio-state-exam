@@ -1214,8 +1214,15 @@ document.addEventListener('click', function(e){
   if (t.closest('.spk, .fold, .favs, button, a, input, textarea')) return;
   /* 09-20 改：原来是一张 class 白名单，漏一个 class 整段就点不动——
      追问的题目在 <summary> 里（还被显式排除了），图的标题和说明是 .figcard h3 / .cap，
-     三处都不在名单上。改成整张卡都能点，只挡控件。 */
-  var host = t.closest('#cram, #drill, #ask, #figs, #onebox, #sxpanel');
+     三处都不在名单上。改成整张卡都能点，只挡控件。
+     ⚠ 09-20 又栽了一次，同一个形状：改成 class 白名单之后，**容器 id 还是一张白名单**
+     （#cram #drill #ask #figs #onebox #sxpanel）。题库和出声短答那个页面
+     （renderQB）写进 #main 时根本没有 section id，于是整页点读失效——
+     喇叭有、点读没有，因为 addSpeakers 是按 class 找的，不看容器。
+     这次直接放开到 #main：**上面已经挡掉了 button / a / input / textarea 和三个控件 class**，
+     卡列表的每一行本身就是 <a>，所以放开不会抢掉导航。
+     **以后再加新页面，不需要回来改这里。** */
+  var host = t.closest('#main, #sxpanel');
   if (!host) return;
   if (document.body.classList.contains('cloze') && t.closest('b')) return;
   var sel = window.getSelection && window.getSelection();
