@@ -352,7 +352,7 @@ button.b:disabled{opacity:.35;cursor:default}
 .spk:hover{background:var(--accent);color:var(--onAccent)}
 .spk.on{background:var(--good);color:var(--onAccent)}
 /* 朗读时：当前句高光，其余变暗 */
-.reading .en,.reading .say,.reading .pt-en,.reading .pt-big,.reading .nt,.reading .gd,.reading .wn{opacity:.35;transition:opacity .2s}
+.reading .ez,.reading .ezcn,.reading .en,.reading .say,.reading .pt-en,.reading .pt-big,.reading .nt,.reading .gd,.reading .wn{opacity:.35;transition:opacity .2s}
 .reading .rd{opacity:1}
 .rd span.s{opacity:.45}
 .rd span.s.cur{opacity:1;background:var(--warnbg);border-radius:3px;box-shadow:0 0 0 3px var(--warnbg)}
@@ -469,16 +469,16 @@ button.b:disabled{opacity:.35;cursor:default}
 .favl .ft{flex:1;font-family:Georgia,"Times New Roman",serif;font-size:16px;line-height:1.6}
 .favl .fc{font-size:12px;color:var(--faint);text-decoration:none;white-space:nowrap}
 .favl .fx{border:none;background:transparent;color:var(--faint);cursor:pointer;font-size:14px}
-.en,.say,.pt-en,.gd,.nt,.wn,.pt-big{cursor:text}
+.ez,.ezcn,.en,.say,.pt-en,.gd,.nt,.wn,.pt-big{cursor:text}
 /* 追问底部收起 */
 .fold{display:block;margin:14px 0 0 auto;border:1px solid var(--rule);background:var(--chip);color:var(--dim);
   border-radius:14px;padding:5px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
 .fold:hover{background:var(--accent);color:var(--onAccent);border-color:var(--accent)}
 /* 遮词：关键词盖住，悬停或点一下露出 */
-.cloze .pt-big b,.cloze .en b,.cloze .say b,.cloze ul.sib li .txt b,.cloze .detail .e b{
+.cloze .ezcn b,.cloze .pt-big b,.cloze .en b,.cloze .say b,.cloze ul.sib li .txt b,.cloze .detail .e b{
   background:var(--ink);color:transparent;border-radius:3px;cursor:pointer}
-.cloze .pt-big b:hover,.cloze .en b:hover,.cloze .say b:hover,.cloze ul.sib li .txt b:hover,.cloze .detail .e b:hover,
-.cloze .pt-big b.show,.cloze .en b.show,.cloze .say b.show,.cloze ul.sib li .txt b.show,.cloze .detail .e b.show{
+.cloze .ezcn b:hover,.cloze .pt-big b:hover,.cloze .en b:hover,.cloze .say b:hover,.cloze ul.sib li .txt b:hover,.cloze .detail .e b:hover,
+.cloze .ezcn b.show,.cloze .pt-big b.show,.cloze .en b.show,.cloze .say b.show,.cloze ul.sib li .txt b.show,.cloze .detail .e b.show{
   background:transparent;color:inherit}
 .cloze .pt-big b.show{color:var(--accent)}
 
@@ -492,7 +492,7 @@ button.b:disabled{opacity:.35;cursor:default}
 /* 朗读时整块被压到 .35，标记跟着一起淡下去，所以这里把底色加浓，压暗了也还看得出 */
 .reading .mk{background:color-mix(in srgb,var(--accent) 34%,transparent)}
 /* 遮词模式：盖住的那个 b 里面的标记不许把黑条掏出一块亮的，只留下划线 */
-.cloze .pt-big b .mk,.cloze .en b .mk,.cloze .say b .mk,
+.cloze .ezcn b .mk,.cloze .pt-big b .mk,.cloze .en b .mk,.cloze .say b .mk,
 .cloze ul.sib li .txt b .mk,.cloze .detail .e b .mk{background:transparent}
 #mkpop{position:fixed;z-index:70;display:none}
 #mkpop button{font-family:inherit;font-size:14.5px;font-weight:600;border:1px solid var(--accent);
@@ -1068,7 +1068,9 @@ function englishOf(el){
   return cleanEn(raw);
 }
 var SPK = 0;
-var PURE_EN = '.en, .pt-en, .say, .qbody .en, .rq .en';
+/* ⚠ 2026-09-20：`.ez` 原来不在这里，结果最短版能念、但不逐句高亮。
+   她背的就是最短版，所以这是三个同源 bug 里最后一个。 */
+var PURE_EN = '.ez, .en, .pt-en, .say, .qbody .en, .rq .en';
 /* 声音：浏览器自带（Web Speech API），每台设备的声音库不同。这里按偏好表挑最好的英音，也允许手选。 */
 var VK = 'oralexam.voice.v1';
 var VOICE_PREF = ['Google UK English Female', 'Google UK English Male', 'Microsoft Sonia Online', 'Microsoft Libby Online',
@@ -1203,7 +1205,7 @@ function syncCloze(){
 document.addEventListener('click', function(e){
   if (!document.body.classList.contains('cloze')) return;
   var b = e.target.closest && e.target.closest('b');
-  if (b && b.closest('.pt-big, .en, .say, ul.sib li .txt, .detail .e')) b.classList.toggle('show');
+  if (b && b.closest('.ezcn, .pt-big, .en, .say, ul.sib li .txt, .detail .e')) b.classList.toggle('show');
 });
 /* 点一个英文单词 = 朗读那个词 */
 document.addEventListener('click', function(e){
