@@ -269,7 +269,7 @@ ask:[
 
 {g:'最容易混的几对', gn:'她说的「乱不清」，八成落在这几对上。每一对都是「两个名字挨得太近」。', items:[
 {r:'实测', q:'What is the difference between pH and pKa?',
-    ez:'“pH is a property of the solution. pKa is a property of one group. That group sits on one particular molecule. Both are read off the same scale. That is why people confuse them. The important case is when they are equal. When the pH equals the pKa, that group is exactly half dissociated.”',
+    ez:'“pH is a property of the solution. pKa is a property of one group. That group sits on one particular molecule. Both are read off the same scale. That is why people confuse them. The important case is when they are equal. Now set the p H equal to the p K a. That group is then exactly half dissociated.”',
     ezcn:'<b>pH 是溶液的性质，pKa 是某个分子上某一个基团的性质。</b>两者读的是同一把尺子，所以容易混。<b>要紧的是它们相等的那一刻：pH ＝ pKa 时，那个基团正好解离一半。</b>',
  en:'“pH is a property of the solution. pKa is a property of one particular group on one particular molecule. They have the same units, in the sense that both are read off the same scale, and that is why they get confused. The whole point is what happens when they are equal. When the pH equals the pKa, that group is exactly half dissociated.”',
  cn:'<b>这是这张卡存在的理由那一条。</b>两个词长得像、刻度一样、都是对数，但<b>一个说的是溶液，一个说的是分子上的一个基团</b>。<br><b>拿一句话把它们的关系钉住</b>：<b>pH 是外面的环境，pK<sub>a</sub> 是这个基团的门槛；比较这两个数就知道它现在什么状态。</b><br>被追问就做减法：<code>pH − pK<sub>a</sub></code> 是正的就是已经解离了，是负的就是还带着质子，差多少个单位就是差几个十倍。'},

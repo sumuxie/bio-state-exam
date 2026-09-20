@@ -505,7 +505,7 @@ ask:[
 
 {g:'陷阱', gn:'每一条都是「知识对、出口错」的地方——考的是嘴。', items:[
 {r:'实测', q:'So glycolysis makes four ATP?',
-    ez:'“It makes four. But it also spends two. So the net gain is two. The textbook writes the table. Minus one at hexokinase. Minus one at phosphofructokinase. Plus two at phosphoglycerate kinase. Plus two at pyruvate kinase. The gain is plus two. If I say four, I have forgotten the investment. If I say two, I should be able to show the four.”',
+    ez:'“It makes four. But it also spends two. So the net gain is two. The textbook writes the table. Minus one at hexokinase. Minus one at phosphofructokinase. Plus two at phosphoglycerate kinase. Plus two at pyruvate kinase. The gain is plus two. Suppose I say four. Then I have forgotten the investment. Suppose I say two. Then I should be able to show the four.”',
     ezcn:'<b>造四个，花掉两个，净赚两个。</b>书的表：<b>己糖激酶 −1</b>、<b>磷酸果糖激酶 −1</b>、<b>磷酸甘油酸激酶 +2</b>、<b>丙酮酸激酶 +2</b>，<b>净 +2</b>。<b>说「四」就是忘了投入；说「二」就要能把那四个指出来。</b>',
  en:'“It makes four and spends two, so the net is two. The textbook writes the table: minus one at hexokinase, minus one at phosphofructokinase, plus two at phosphoglycerate kinase, plus two at pyruvate kinase — gain, plus two. If I say four, I have forgotten the investment. If I say two, I should be able to show the four.”',
  cn:'p166 的表就是为这个问题存在的。<span class="pg">p166</span>'},

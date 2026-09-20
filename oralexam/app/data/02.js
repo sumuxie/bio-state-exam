@@ -281,7 +281,7 @@ ask:[
  en:'“A steady state is when a concentration stops changing because it is <b>formed and removed at the same rate</b>, while material still flows through. Here it is the enzyme-substrate complex, formed and broken down to product at the same rate. Equilibrium is the special case where every step is itself balanced and nothing flows. The textbook says living matter is mostly in a stationary state that only looks like equilibrium.”',
  cn:'p055 稳态假设的原话；p018 「生命物质多处于看起来像平衡的稳态，平衡是它的特例」。Km 是稳态量、Kd 是平衡量，这条是那句话的地基。'},
 {r:'高', q:'What is activation energy?',
-    ez:'“It is the energy barrier the reactant molecules must overcome. They must overcome it to become product. The textbook says it plainly. For A to become X, the molecules of A must be supplied with the activation energy. Heat can supply it. A catalyst lowers it instead. It lowers it by taking the reaction through a different mechanism.”',
+    ez:'“It is the energy barrier the reactant molecules must overcome. They must overcome it to become product. The textbook says it plainly. A has to become X. The molecules of A must be supplied first. They are supplied with the activation energy. Heat can supply it. A catalyst lowers it instead. It lowers it by taking the reaction through a different mechanism.”',
     ezcn:'<b>活化能 ＝ 反应物分子要变成产物必须翻过去的那道能垒。</b>书的说法：<b>A 要变成 X，A 的分子必须被供给活化能</b>。<b>加热可以供给它；催化剂则是把它压低</b>——<b>办法是让反应改走另一条机制。</b>',
  en:'“The energy barrier the reactant molecules must overcome to be converted into product. The textbook says that for A to become X, the molecules of A must be supplied with the activation energy. Heat can supply it. A catalyst lowers it by taking the reaction through a different mechanism.”',
  cn:'p054，figure 3.1。'},
