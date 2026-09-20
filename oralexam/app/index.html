@@ -491,6 +491,12 @@ button.b:disabled{opacity:.35;cursor:default}
   text-decoration-thickness:2px;text-underline-offset:3px}
 /* 朗读时整块被压到 .35，标记跟着一起淡下去，所以这里把底色加浓，压暗了也还看得出 */
 .reading .mk{background:color-mix(in srgb,var(--accent) 34%,transparent)}
+/* 「不用背」：划掉 ＋ 变灰。跟必背共用一套定位机制，只是换个样子 */
+.mk.mkskip{background:transparent;color:var(--faint);opacity:.55;
+  text-decoration:line-through;text-decoration-color:var(--faint);
+  text-decoration-thickness:1.5px;text-underline-offset:0}
+.reading .mk.mkskip{background:transparent}
+.mklist li.skiprow .mt{text-decoration:line-through;color:var(--faint)}
 /* 遮词模式：盖住的那个 b 里面的标记不许把黑条掏出一块亮的，只留下划线 */
 .cloze .ezcn b .mk,.cloze .pt-big b .mk,.cloze .en b .mk,.cloze .say b .mk,
 .cloze ul.sib li .txt b .mk,.cloze .detail .e b .mk{background:transparent}
@@ -1688,7 +1694,7 @@ function mkLocate(N, m){
 
 /* ---- 包起来。一段话可能横跨好几个文本节点（粗体里一半、后面一句一半），
        所以不去 surroundContents 整个区间，而是**一个文本节点切一刀包一个**。 ---- */
-function mkWrap(root, id, a, b){
+function mkWrap(root, id, a, b, kind){
   var nodes = mkNodes(root), P = mkPlain(nodes), got = 0;
   for (var i=0;i<nodes.length;i++){
     var node = nodes[i], ns = P.starts[i], len = node.nodeValue.length, ne = ns + len;
@@ -1700,7 +1706,8 @@ function mkWrap(root, id, a, b){
     if (s0 > 0) t = t.splitText(s0);        /* 再切头，剩下的就是要包的那一截 */
     var par = t.parentNode; if (!par) continue;
     var sp = document.createElement('span');
-    sp.className = 'mk'; sp.setAttribute('data-mk', id);
+    sp.className = 'mk' + (kind === 'x' ? ' mkskip' : '');
+    sp.setAttribute('data-mk', id);
     par.replaceChild(sp, t); sp.appendChild(t);
     got++;
   }
@@ -1732,7 +1739,7 @@ function mkApplyAll(){
     any = true;
     var N = mkNorm(mkPlain(mkNodes(root)).s);   /* 每条都重新拼一次：上一条已经把节点切开了 */
     var hit = mkLocate(N, all[i]), ok = false;
-    if (hit && hit.b > hit.a) ok = mkWrap(root, all[i].id, hit.a, hit.b) > 0;
+    if (hit && hit.b > hit.a) ok = mkWrap(root, all[i].id, hit.a, hit.b, all[i].k) > 0;
     if (ok && all[i].miss){ delete all[i].miss; dirty = true; }
     if (!ok && !all[i].miss){ all[i].miss = 1; dirty = true; }
   }
@@ -1741,7 +1748,8 @@ function mkApplyAll(){
 function mkSyncBtn(){
   var b = document.getElementById('mMk');
   if (!b || !window.C) return;
-  var n = mkForCard(C.id).length;
+  var g = mkForCard(C.id), n = 0;
+  for (var i=0;i<g.length;i++) if (g[i].k !== 'x') n++;
   b.textContent = n ? ('必背 ' + n) : '必背';
 }
 
@@ -1782,13 +1790,26 @@ function mkShowPop(rect, id){
   pop.innerHTML = '';
   var b = document.createElement('button');
   b.type = 'button';
-  if (id){ b.className = 'off'; b.textContent = '✕ 不背了'; b.onclick = function(){ mkOff(id); }; }
+  if (id){
+    /* 点已有的高亮＝取消它。划掉的那种说「不背了」是反的，所以按种类换字。 */
+    var rec = null, arr = mkLoad();
+    for (var q=0;q<arr.length;q++) if (arr[q].id === id) rec = arr[q];
+    b.className = 'off';
+    b.textContent = (rec && rec.k === 'x') ? '✕ 取消划掉' : '✕ 不背了';
+    b.onclick = function(){ mkOff(id); };
+  }
   else {
     b.textContent = '★ 标成必背'; b.onclick = function(){ mkAdd(); };
     var wp = document.getElementById('wpop');          /* 双击选词时两个浮框会叠在一起 */
     if (wp) wp.style.display = 'none';
   }
   pop.appendChild(b);
+  if (!id){                                            /* 反面那个：把这一段从要背的量里拿走 */
+    var b2 = document.createElement('button');
+    b2.type = 'button'; b2.className = 'off'; b2.textContent = '\u2298 \u4e0d\u7528\u80cc';
+    b2.onclick = function(){ mkAdd('x'); };
+    pop.appendChild(b2);
+  }
   pop.style.display = 'block';
   var w = pop.offsetWidth || 130, h = pop.offsetHeight || 40;
   var left = Math.max(8, Math.min(rect.left, window.innerWidth - w - 8));
@@ -1822,21 +1843,36 @@ document.addEventListener('selectionchange', function(){
   if (mkTimer) clearTimeout(mkTimer);
   mkTimer = setTimeout(mkCheckSel, 260);      /* 等她把手指松开、拖完把手再冒出来 */
 });
-function mkAdd(){
+function mkAdd(kind){
   if (!mkSel) return;
-  var all = mkLoad();
+  var all = mkLoad(), isX = (kind === 'x');
   for (var i=0;i<all.length;i++)
     if (all[i].card === mkSel.card && all[i].text === mkSel.text && all[i].pre === mkSel.pre){
-      mkSel = null; mkHidePop(); mkToast('这一段已经标过了'); return;
+      /* 同一段已经标过了。种类不同就直接换过去，不用先取消再标一次。 */
+      var was = (all[i].k === 'x');
+      if (was === isX){ mkSel = null; mkHidePop(); mkToast('这一段已经标过了'); return; }
+      if (isX) all[i].k = 'x'; else delete all[i].k;
+      mkSave(all); mkSel = null; mkHidePop();
+      mkApplyAll(); mkSyncBtn();
+      mkToast(isX ? '改成「不用背」了' : '改成「必背」了');
+      return;
     }
-  all.push({id: mkNewId(), card: mkSel.card, sec: mkSel.sec, text: mkSel.text,
-            pre: mkSel.pre, post: mkSel.post, ts: Date.now()});
+  var rec = {id: mkNewId(), card: mkSel.card, sec: mkSel.sec, text: mkSel.text,
+             pre: mkSel.pre, post: mkSel.post, ts: Date.now()};
+  if (isX) rec.k = 'x';
+  all.push(rec);
   mkSave(all);
   mkSel = null; mkHidePop();
   var s = window.getSelection && window.getSelection();
   if (s && s.removeAllRanges) s.removeAllRanges();
   mkApplyAll(); mkSyncBtn();
-  mkToast('标好了 · 一共 ' + mkLoad().length + ' 段');
+  mkToast(isX ? '划掉了 · 这一段不用背' : ('标好了 · 必背一共 ' + mkCount() + ' 段'));
+}
+/* 顶栏那个计数只数「必背」——划掉的不该让这个数字变大 */
+function mkCount(){
+  var a = mkLoad(), k = 0;
+  for (var i=0;i<a.length;i++) if (a[i].k !== 'x') k++;
+  return k;
 }
 function mkOff(id){
   var all = mkLoad(), out = [];
@@ -1901,8 +1937,9 @@ function mkCardText(c){
   return MKTX[c.id];
 }
 function mkRow(o, cid){
-  return '<li><span class="mt">' + mkEsc(o.m.text)
-    + '<span class="mw">' + (MKSEC[o.m.sec] || '正文')
+  return '<li' + (o.m.k === 'x' ? ' class="skiprow"' : '') + '><span class="mt">' + mkEsc(o.m.text)
+    + '<span class="mw">' + (o.m.k === 'x' ? '\u4e0d\u7528\u80cc \u00b7 ' : '')
+    + (MKSEC[o.m.sec] || '正文')
     + (o.lab ? ' · ' + mkEsc(o.lab) : '') + '</span></span>'
     + (cid ? '<a class="mg" href="#/c/' + mkEsc(cid) + '/k/' + mkEsc(o.m.id) + '">进卡</a>' : '')
     + '<button class="mx" type="button" title="删掉" onclick="mkDrop(' + o.i + ')">✕</button></li>';
@@ -1916,7 +1953,7 @@ function mkRenderMk(){
   var all = mkLoad(), built = [], cross = [];
   for (var i=0;i<CARDS.length;i++) (CARDS[i].cross ? cross : built).push(CARDS[i]);
   built.sort(function(a,b){ return (a.id > b.id) ? 1 : -1; });
-  var seq = built.concat(cross), byCard = {}, stale = [], okN = 0, cardN = 0, dirty = false;
+  var seq = built.concat(cross), byCard = {}, stale = [], okN = 0, skipN = 0, cardN = 0, dirty = false;
   for (i=0;i<all.length;i++){
     var k = all[i].card;
     (byCard[k] = byCard[k] || []).push({m: all[i], i: i});
@@ -1932,6 +1969,7 @@ function mkRenderMk(){
       if (hit){
         if (g[j].m.miss){ delete g[j].m.miss; dirty = true; }
         rows += mkRow(g[j], c.id); liveN++; okN++;
+        if (g[j].m.k === 'x') skipN++;
       } else {
         if (!g[j].m.miss){ g[j].m.miss = 1; dirty = true; }
         g[j].lab = '卡 ' + c.id;
@@ -1953,15 +1991,17 @@ function mkRenderMk(){
   }
   if (dirty) mkSave(all);
 
-  var h = '<div class="lhero"><h1>必背</h1><p>'
-    + okN + ' 段 · 来自 ' + cardN + ' 张卡'
+  var h = '<div class="lhero"><h1>我划过的段</h1><p>'
+    + (okN - skipN) + ' 段必背 · ' + skipN + ' 段不用背 · 来自 ' + cardN + ' 张卡'
     + (stale.length ? ' · <b>' + stale.length + ' 段找不到了</b>' : '')
     + '</p><p class="sub2" style="margin-top:10px">这一页是你自己划出来的，不是我挑的。'
     + '<b>考前一晚只读这里。</b><br>在任何一张卡里选中一段话——不管多长，划到哪个词都行——'
-    + '下面会冒出「★ 标成必背」。点卡里的高亮可以取消。只存在这台机器上。</p></div>';
+    + '下面会冒出两个按钮：<b>★ 标成必背</b> 和 <b>⊘ 不用背</b>。'
+    + '划掉的那些在卡上是灰的、带删除线，等于从要背的量里拿走了。'
+    + '点卡里的高亮可以取消，再标一次可以换种类。只存在这台机器上。</p></div>';
   if (!all.length){
     h += '<p class="sub2" style="margin-top:20px">还是空的。随便打开一张卡，用手指或鼠标划一段，'
-      + '点「★ 标成必背」。划多划少都行，边界你自己定。</p>';
+      + '点「★ 标成必背」或者「⊘ 不用背」。划多划少都行，边界你自己定。</p>';
   }
   h += body;
   if (stale.length){
