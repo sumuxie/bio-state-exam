@@ -305,53 +305,77 @@ figs:[
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What is the respiratory chain?',
+  ez:'“It is a series of electron carriers. They are built into the inner mitochondrial membrane. There are four complexes. Two mobile carriers move between them. It passes electrons from N A D H and F A D H two down to oxygen. And it uses the energy to pump protons out of the matrix. Its role is the last step of respiration. The hydrogen taken off the nutrients finally meets the oxygen. It becomes water. The oxidised coenzymes are regenerated at the same time.”',
+  ezcn:'<b>呼吸链 ＝ 镶在线粒体内膜上的一串电子载体：四个复合物，中间两个可移动载体。</b><b>它把 NADH 和 FADH₂ 上的电子一路传到氧，并用这个过程的能量把质子泵出基质。</b><b>它在细胞呼吸里的角色是最后一步：从营养物上取下来的氢终于遇到氧、变成水；同时把氧化型辅酶再生出来，而它建起的梯度就是 ATP 合酶用来造 ATP 的东西。</b><b>四个复合物都是氧化还原酶，泛醌和细胞色素 c 在它们之间穿梭。</b>',
  mean:'<b>他嘴里多半只有这一句。</b>卷面写了 “describe … and its role in cellular respiration”，口试却从最短的问法起步——<b>剩下的结构要你自己接</b>：是什么 → 在哪 → 把什么变成什么 → 在呼吸里的角色 → 然后才是名字。',
  say:'“It is the series of electron carriers built into the inner mitochondrial membrane: four complexes with two mobile carriers between them. It passes the electrons from NADH and FADH₂ down to oxygen and uses the energy to pump protons out of the matrix. Its role in cellular respiration is the last step. The hydrogen taken off the nutrients finally meets the oxygen and becomes water. The oxidised coenzymes are regenerated, and the gradient it builds is what ATP synthase turns into ATP. The four complexes are all oxidoreductases, and ubiquinone and cytochrome c move between them.”'},
 
 {q:'What is oxidative phosphorylation?',
+  ez:'“It is the synthesis of A T P from A D P and inorganic phosphate. The proton gradient drives it. The chain built that gradient across the inner membrane. The protons flow back into the matrix through A T P synthase. That flow drives the release of the A T P. It is called oxidative for one reason. The energy comes from oxidising N A D H and F A D H two. It is called phosphorylation for another. The energy is spent adding a phosphate to A D P.”',
+  ezcn:'<b>氧化磷酸化 ＝ 由 ADP 和无机磷酸合成 ATP，驱动力是呼吸链在内膜两侧建起的质子梯度。</b><b>质子经 ATP 合酶流回基质，这股流驱动 ATP 的释放。</b><b>「氧化」是因为能量来自氧化 NADH 和 FADH₂；「磷酸化」是因为这些能量花在给 ADP 接上一个磷酸。</b><b>书管它叫需氧磷酸化，并把六个质子折算成每个 NADH 约三个 ATP。</b>',
  mean:'<b>并进来的那道题（#26），会被单独问。</b>先给定义，再说它跟链的关系，最后才是数字。',
  say:'“It is the synthesis of ATP from ADP and inorganic phosphate, driven by the proton gradient the chain has built across the inner mitochondrial membrane. The protons flow back into the matrix through ATP synthase, and that flow drives the release of the ATP. Oxidative because the energy comes from oxidising NADH and FADH₂. Phosphorylation because it is spent adding a phosphate to ADP. The textbook calls it aerobic phosphorylation, and converts six protons into about three ATP per NADH.”'},
 
 {q:'What is its role in cellular respiration?',
+  ez:'“Cellular respiration is the complete oxidation of a nutrient. The products are carbon dioxide and water. Glycolysis takes some carbon off as carbon dioxide. So do the decarboxylation of pyruvate and the citric acid cycle. Beta oxidation does the same. They all park the hydrogen on N A D plus and F A D. The chain is where that hydrogen finally reaches the oxygen. It does two things. It regenerates the oxidised coenzymes. And it turns the energy into a proton gradient.”',
+  ezcn:'<b>细胞呼吸 ＝ 把一个营养物完全氧化成 CO₂ 和水。</b><b>糖酵解、丙酮酸氧化脱羧、柠檬酸循环、β-氧化负责把碳以 CO₂ 的形式取走，并把氢寄存在 NAD⁺ 和 FAD 上。</b><b>呼吸链是那些氢最终遇到氧的地方，它做两件事：把氧化型辅酶再生出来（没有它，上面那些途径全停），以及把能量变成质子梯度。</b><b>每分子葡萄糖 38 个 ATP 里，有 34 个来自那个梯度。</b>',
  mean:'卷面上多出来的那半句，<b>他会单独问</b>。要答「它在整条路上的位置」，不是重复定义。',
  say:'“Cellular respiration is the complete oxidation of a nutrient to CO₂ and water. Glycolysis, the oxidative decarboxylation of pyruvate, the citric acid cycle and β-oxidation take the carbon off as CO₂ and park the hydrogen on NAD-plus and FAD. The chain is where that hydrogen finally reaches the oxygen. It does two things. It regenerates the oxidised coenzymes, without which all those pathways stop, and it turns the energy into a proton gradient. Thirty-four of the thirty-eight ATP per glucose come from that gradient.”'},
 
 {q:'Describe the electron transport — what is actually being transported?',
+  ez:'“Electrons are transported. And part of the way protons travel with them. N A D H gives two electrons to complex one. Complex one passes them to ubiquinone. Ubiquinone is a lipid soluble quinone. It carries two electrons with two protons inside the membrane. It takes them to complex three. Complex three passes them one at a time to cytochrome c. Cytochrome c sits on the outer face. It takes them to complex four. Complex four gives them to oxygen.”',
+  ezcn:'<b>被运输的是电子，而且有一段路上质子跟着一起走。</b><b>NADH 把两个电子交给复合物 I，复合物 I 传给泛醌；泛醌是脂溶性的醌，在膜内部带着两个电子和两个质子移动，把它们送到复合物 III；复合物 III 一次一个地传给外表面的细胞色素 c；细胞色素 c 送到复合物 IV，复合物 IV 交给氧。</b><b>载体是交替的：有些带着质子一起搬电子，而铁硫中心和细胞色素只搬电子——正是这一点把质子留在了外面。</b>',
  mean:'卷面上的 “electron transport” 四个字。<b>他要的是：谁在动，动到哪。</b>',
  say:'“Electrons, and part of the way protons travel with them. NADH gives two electrons to complex one, which passes them to ubiquinone. Ubiquinone is a lipid-soluble quinone that carries two electrons with two protons inside the membrane. Ubiquinone takes them to complex three, which passes them one at a time to cytochrome c on the outer face. Cytochrome c takes them to complex four, which gives them to oxygen. The carriers alternate: some carry electrons with protons, the iron-sulfur centres and cytochromes carry electrons only — which is what leaves the protons outside.”'},
 
 {q:'Which complexes pump protons, and how many?',
+  ez:'“On this textbook’s account complex one pumps two protons. That is per pair of electrons. Complex three pumps four. Complex four pumps none. So it is six per N A D H. Succinate enters at complex two. Complex two pumps nothing. So that route gives four. Six protons correspond to about three A T P. Four correspond to about two. Modern textbooks count complex four as a pump too. That part is general and not from this book.”',
+  ezcn:'<b>按这本书的算法：复合物 I 每对电子泵 2 个质子，复合物 III 泵 4 个，复合物 IV 不泵——每个 NADH 共 6 个。</b><b>琥珀酸从复合物 II 进来，复合物 II 不泵，所以那条路只有 4 个。</b><b>6 个质子对应约 3 个 ATP，4 个对应约 2 个。</b>⚠ <b>现代教材把复合物 IV 也算作泵，每个 NADH 10 个质子，按每个 ATP 约 4 个质子算就是 2.5 和 1.5——这一段是通用的，不是这本书的，报的时候要分开说。</b>',
  mean:'<b>要数字的问法。</b>先给书的数，再说明现代值差在哪——不要只给一个数。',
  say:'“On this textbook’s account, complex one pumps two protons per pair of electrons, complex three four, complex four none — six per NADH. Succinate enters at complex two, which pumps nothing, so that route gives four. Six protons correspond to about three ATP, four to about two. Modern textbooks count complex four as a pump too, ten protons per NADH, which with about four protons per ATP gives 2.5 and 1.5. That part is general, not from this book.”'},
 
 {q:'How are the chain and the ATP synthesis coupled together?',
+  ez:'“Only through the proton gradient. The chain pumps protons out of the matrix. They go into the intermembrane space. So a difference in proton concentration builds across the membrane. A T P synthase lets them back in. And it uses that flow. No chemical intermediate passes between the two. That is the chemiosmotic principle. An uncoupler shows it well. It simply leaks protons back. So A T P synthesis stops. And the chain runs faster than ever.”',
+  ezcn:'<b>只通过质子梯度耦合。</b><b>呼吸链把质子从基质泵进膜间隙，于是膜两侧建立起质子浓度差；ATP 合酶让它们流回来，并利用这股流。</b><b>两者之间没有任何化学中间物传递——这就是化学渗透原理。</b><b>解偶联剂正好说明这一点：它只是让质子漏回去，于是 ATP 合成停了，而呼吸链跑得比任何时候都快。</b><b>区室要说清：链在内膜、循环在基质、质子被泵进膜间隙。</b>',
  mean:'<b>这是 #26 真正的考点</b>，也是「化学渗透」该出现的地方。顺带把区室说清：链在<b>内膜</b>，循环在<b>基质</b>，质子被泵进<b>膜间隙</b>。',
  say:'“Only through the proton gradient. The chain pumps protons out of the matrix into the intermembrane space and builds a transmembrane difference in proton concentration. ATP synthase lets them back in and uses the flow. No chemical intermediate passes between them. That is the chemiosmotic principle. It is also why an uncoupler, which simply leaks protons back, stops ATP synthesis while the chain runs faster than ever.”'},
 
-{q:'Why does cyanide kill you so quickly?', odd:1,
+{q:'Why does cyanide kill you so quickly?',
+  ez:'“Because it blocks cytochrome oxidase. That is the last complex of the chain. So oxygen can no longer take the electrons. Everything upstream stays reduced. No protons are pumped. And oxidative phosphorylation stops. That is thirty four of the thirty eight A T P per glucose. Glycolysis keeps running. But two per glucose is nowhere near enough. Brain and heart cannot live on that. The striking part is the blood. It stays oxygenated.”',
+  ezcn:'因为<b>它阻断细胞色素氧化酶——呼吸链的最后一个复合物，于是氧再也接不走电子</b>。<b>上游全都停在还原态，质子不再被泵，氧化磷酸化停摆：每分子葡萄糖 38 个 ATP 里没了 34 个。</b><b>糖酵解照样跑，但每分子葡萄糖两个 ATP 对大脑和心脏差得太远。</b><b>最触目的一点是血还是含氧的——氧就在那里，细胞用不了。</b>⚠ <b>氰化物是通用知识，这本书里没有。</b>', odd:1,
  mean:'<b>听起来像毒理学题。</b>答案全在这张卡上——这种入口最容易把人问懵。',
  say:'“Because it blocks cytochrome oxidase, the last complex of the chain, so oxygen can no longer take the electrons. Everything upstream stays reduced, no protons are pumped, and oxidative phosphorylation stops — thirty-four of the thirty-eight ATP per glucose. Glycolysis keeps running, but two per glucose is nowhere near enough for brain and heart. The striking part is that the blood stays oxygenated: the oxygen is there, the cell cannot use it. Cyanide is general knowledge, not in this textbook.”',
  tail:'<b>卡 gly 也有这一条</b>，从糖酵解那一侧答。两边说的是同一件事：糖酵解不停，但它不够。'},
 
-{q:'Why do we need to breathe oxygen at all?', odd:1,
+{q:'Why do we need to breathe oxygen at all?',
+  ez:'“Because oxygen is the final electron acceptor. Every oxidation in metabolism hands two electrons to a coenzyme. And the pool of coenzyme is small. So the cell must unload them somewhere. That is how it gets N A D plus back. The chain unloads them onto oxygen. Oxygen sits at the positive end of the scale. It is plus zero point eight two volts. N A D H is minus zero point three two. Without oxygen the carriers stay reduced.”',
+  ezcn:'因为<b>氧是最终电子受体</b>。<b>代谢里每一次氧化都把一对电子交给某个辅酶，而辅酶的池子很小，细胞必须把它们卸到某个地方，才能把 NAD⁺ 拿回来。</b><b>呼吸链卸给的就是氧，因为氧坐在电位标尺的正端：＋0.82 V，而 NADH 是 −0.32 V。</b><b>没有氧，载体一直是还原态，辅酶再生不出来，整个循环停下——不是因为氧跟营养物反应，而是因为没有别的东西接得走电子。</b>', odd:1,
  mean:'<b>最朴素的问法，最容易答得空。</b>要落在「最后的电子受体」上。',
  say:'“Because oxygen is the final electron acceptor. Every oxidation in metabolism hands a pair of electrons to a coenzyme, and the pool of coenzyme is small. The cell must unload them somewhere to get NAD-plus back. Oxygen is what the chain unloads them onto, because it sits at the positive end of the scale: plus 0.82 volts against minus 0.32 for NADH. Without it the carriers stay reduced, the coenzymes are not regenerated, and the cycle stops. Not because oxygen reacts with the nutrient, but because nothing else can take the electrons.”'},
 
-{q:'Why do you breathe faster when you run?', odd:1,
+{q:'Why do you breathe faster when you run?',
+  ez:'“Because the muscle is spending A T P. Spending A T P means producing A D P. And A D P is what limits the chain. The textbook uses this as its example. It is regulation by a limiting metabolite. With more A D P the synthase lets more protons through. So the gradient falls. Electron transport then speeds up. And more oxygen is consumed. So the demand for A T P pulls the oxygen in.”',
+  ezcn:'因为<b>肌肉在花 ATP，而花 ATP 就等于在生产 ADP——限制呼吸链的正是 ADP</b>。<b>书把「呼吸链的磷酸化」当作「限制性代谢物调节」的例子。</b><b>ADP 一多，合酶放更多质子过去，梯度落下来，电子传递随之加快，耗氧增加。</b><b>所以是「对 ATP 的需求把氧拉进来」，不是「氧把 ATP 推出去」。</b>⚠ <b>后半句（梯度落下去、传递加速）是通用推论，书只写了「限制因素是 ADP 够不够」。</b>', odd:1,
  mean:'<b>生理学入口，生化答案。</b>答在 ADP 上——书自己说限速的是 ADP。',
  say:'“Because the muscle is spending ATP, which means producing ADP. And ADP is what limits the chain. The textbook gives phosphorylation in the respiratory chain as its example of regulation by a limiting metabolite: with more ADP the synthase lets more protons through, the gradient falls, electron transport speeds up and more oxygen is consumed. So the demand for ATP pulls the oxygen in, rather than the oxygen pushing the ATP out.”',
  tail:'后半句（梯度落下去、传递加速）是<b>通用</b>推论；书只写了「限制因素是 ADP 够不够」。<span class="pg">p222</span>'},
 
-{q:'Why is brown fat warm?', odd:1,
+{q:'Why is brown fat warm?',
+  ez:'“Because in brown fat the chain is deliberately uncoupled. It is uncoupled from A T P synthesis. A protein in the inner membrane does it. That protein is thermogenin. It lets protons back into the matrix. They do not pass through A T P synthase. So the gradient is spent as heat. And the chain runs fast to keep rebuilding it. Two four dinitrophenol does the same thing chemically. That is why it was lethal as a diet pill.”',
+  ezcn:'因为<b>棕色脂肪里，呼吸链是被故意跟 ATP 合成解偶联的</b>。<b>内膜上的一个蛋白——解偶联蛋白（thermogenin）——让质子绕过 ATP 合酶直接回到基质，于是梯度被当作热花掉，而呼吸链为了不断重建它就跑得飞快。</b><b>2,4-二硝基苯酚在化学上做的是同一件事，这也是它当减肥药会致命的原因。</b>⚠ <b>通用知识：这本书既没有解偶联剂也没有棕色脂肪。</b>', odd:1,
  mean:'<b>听起来像生理题，其实问的是耦合。</b>解偶联那一格的现成出口。',
  say:'“Because in brown fat the chain is deliberately uncoupled from ATP synthesis. A protein in the inner membrane, thermogenin, lets protons back into the matrix without passing through ATP synthase, so the gradient is spent as heat and the chain runs fast to keep rebuilding it. It is what 2,4-dinitrophenol does chemically — which is why it was lethal as a diet pill. That is general knowledge. This textbook has neither uncouplers nor brown fat.”'},
 
-{q:'Why is the inner membrane of a mitochondrion folded?', odd:1,
+{q:'Why is the inner membrane of a mitochondrion folded?',
+  ez:'“Because the machinery is in the membrane. It is not in solution. So membrane area limits how much A T P one mitochondrion can make. Folding multiplies that area. And the organelle does not get bigger. The folds also enclose a small intermembrane space. So the protons pumped out raise the concentration there quickly. The textbook makes a related remark. Membranes are specialised. Only the inner mitochondrial membrane produces A T P.”',
+  ezcn:'因为<b>机器长在膜上，不在溶液里</b>——<b>所以一个线粒体能造多少 ATP 受膜面积限制，而折叠在不把细胞器变大的前提下把面积翻了上去。</b><b>这些褶皱还围出一个很小的膜间隙，于是泵出去的质子能很快把那里的浓度提上来。</b><b>书自己的相关说法是：各种膜是特化的，只有线粒体内膜负责生产 ATP。</b>⚠ <b>cristae 这个词书里 0 命中，说的时候用 folds，被追问再给名字。</b>', odd:1,
  mean:'<b>形态学入口。</b>答面积和区室两件事，落回「膜是专门化的」。',
  say:'“Because the machinery is in the membrane, not in solution. So how much ATP a mitochondrion can make is limited by membrane area, and folding multiplies the area without making the organelle bigger. The folds also enclose a small intermembrane space, so the protons pumped out raise the concentration there quickly. The textbook’s own remark is that membranes are specialised, and that only the inner mitochondrial membrane is responsible for producing ATP.”',
  tail:'「cristae」这个词书里 0 命中，所以用 folds 说，被问再给名字。<span class="pg">p197</span>'},
 
-{q:'Cells die without oxygen, but glycolysis does not need oxygen — so why do they die?', odd:1,
+{q:'Cells die without oxygen, but glycolysis does not need oxygen — so why do they die?',
+  ez:'“There are two reasons. The first is arithmetic. Glycolysis alone gives two A T P per glucose. The textbook’s total is thirty eight. Brain and heart cannot run on two. The second reason is more fundamental. Glycolysis needs N A D plus back. Without the chain there is only one way to regenerate it. Pyruvate must be reduced to lactate. In yeast it goes to ethanol. That works. But it throws away most of the energy.”',
+  ezcn:'<b>两个理由。</b><b>① 算术：单靠糖酵解每分子葡萄糖只有 2 个 ATP，而书给的总数是 38——大脑和心脏靠 2 个活不了。</b><b>② 更根本的：糖酵解需要把 NAD⁺ 拿回来。</b><b>没有呼吸链，唯一的再生办法是把丙酮酸还原成乳酸（酵母里是乙醇）。</b><b>这办法管用，但它把大部分能量扔掉了：葡萄糖 → 乳酸是 −196.6 kJ/mol，完全氧化是 −2870。</b>', odd:1,
  mean:'<b>这个入口专门用来把人问懵。</b>答案有两层：够不够，和 NAD⁺ 回不回得来。',
  say:'“Two reasons. First, arithmetic: glycolysis alone gives two ATP per glucose against the textbook’s thirty-eight, and brain and heart cannot run on that. Second, and more fundamental, glycolysis needs NAD-plus back. Without the chain the only way to regenerate it is to reduce pyruvate to lactate, or to ethanol in yeast. That works, but it throws away most of the energy: minus 196.6 kJ per mole for glucose to lactate against minus 2870 for complete oxidation.”',
  tail:'数字见卡 <b>gly</b> 和书 <span class="pg">p135 p136</span>。'}
@@ -361,7 +385,7 @@ recog:[
 ask:[
 {g:'定义类', gn:'逐字稿里没交代完的名词，他会一个一个拎出来问。', items:[
 {r:'高', q:'What is a redox potential?',
-    ez:'“It is a number in volts. It says how strongly a redox pair holds its electrons. It is measured against a standard electrode at p H seven. The more negative the value, the more readily that system gives electrons away. And electrons pass spontaneously in one direction. They pass from the more negative system to the more positive one.”',
+    ez:'“It is a number in volts. It says how strongly a redox pair holds its electrons. It is measured against a standard electrode at p H seven. A value can be very negative. Then that system gives electrons away readily. And electrons pass spontaneously in one direction. They pass from the more negative system to the more positive one.”',
     ezcn:'<b>氧化还原电位 ＝ 一个以伏特为单位的数，说的是某一对氧化还原物质抓电子抓得有多紧</b>（<b>在 pH 7 下对标准电极测的</b>）。<b>值越负，那个体系越容易把电子给出去</b>；<b>而电子自发的流向是：从更负的体系流向更正的体系。</b>',
  en:'“A number in volts saying how strongly a redox pair holds its electrons, measured against a standard electrode at pH 7. The more negative, the more readily that system gives electrons away — and electrons pass spontaneously from the more negative system to the more positive one.”',
  cn:'Table 6.2 <span class="pg">p135</span>，<b>已回 300 dpi 核过</b>，从 acetaldehyde 的 −0,60 排到氧的 +0,82。被追「跟 ΔG 什么关系」——同一页给了桥：ΔG°′ = −nFΔE°′；E 轴有约定原点（生物系统里氢电极 −420 mV），ΔG 轴没有，只能配给<b>电位差</b>。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>ΔG°′ = −nFΔE°′</code>（书 p135）——它只能配给<b>差</b>，配给单个 E 没有意义。<br><br><b>两步看懂为什么</b>：<br>① E 轴的原点是<b>人为约定</b>的：氢电极被定成 0 V（那是 pH 0），换到 pH 7 它自己就成了 <b>−420 mV</b>。<b>原点换一个，表上每个数都跟着变。</b><br>② 而 ΔE 是<b>两个数相减</b>：原点在相减时被消掉了。所以海平面定在哪儿，落差都不变，能量也不变。<br><br><br><b>=== 一句话理解 ===</b><br><b>电位像海拔</b>：说「这里 800 米」之前得先有人定一个海平面，而<b>「从 800 米降到 200 米能做多少功」不需要海平面</b>。能量只认落差，所以式子里永远是 ΔE。<br>再往前一步：<code>ΔG°′ = −nFΔE°′</code> 和 <code>ΔG°′ = −RT ln K</code>（通用）是同一个 ΔG 的两种量法，一种量<b>电位差</b>，一种量<b>平衡位置</b>。<b>所以标准电位就是电子的 K<sub>d</sub></b>——这一句直接走进卡 02。'},

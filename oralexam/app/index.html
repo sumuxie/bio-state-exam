@@ -637,6 +637,51 @@ button.b:disabled{opacity:.35;cursor:default}
 <script>
 /* =================== helpers =================== */
 function esc(x){ return x == null ? '' : String(x); }
+
+/* ez 里的缩写是**故意拆成单个字母**写的（D N A、P C R、d A T P），
+   因为语音引擎见到 DNA 会当成一个词念。但屏幕上不该显示成「D N A」——
+   2026-09-20 Ruojin 报的 bug：「dna pcr 等词是 D N A P C R」。
+   **显示时合回去，念的时候仍然用拆开的原文**（见 data-say）。
+
+   ⚠ 只认白名单，不在名单上的一个字母都不动。
+   为什么不用通则：卡上「A C three plant」「A D N A polymerase」的开头
+   都是冠词 A，而「A T P」的 A 是缩写的一部分，光看形状分不开。
+   白名单的最坏情况是维持现状，通则的最坏情况是把句子改错。
+   **新写了别的缩写，要往这个表里加一条。** */
+var ABBR = {};
+(function(){
+  var L = ('DNA RNA mRNA tRNA rRNA cDNA gRNA ncAA ATP ADP AMP GTP GDP UTP UDP CMP cAMP '
+         + 'dATP dGTP dCTP dTMP dUMP dTTP dNTP ddNTP NAD NADH NADP NADPH FAD FADH FMN '
+         + 'PCR IPTG PEP CAM pH pKa pI Km Kd Ki ER SH OH NH CH GC AT AG TA CCA CONH '
+         + 'TAG TAA UAG UGA AUG GATC SSB SRP TEV MBP GST SDS PAGE EDTA DTT GSH GSSG '
+         + 'UV HIS FRET SELEX LIC KAPA CHO HEK MLV CEN ARS EF OD ACP HMG BCAA MSG '
+         + 'NNK NNN PURE pET pUC pDUET GAL BAD LEVLFQ ENLYFQ FeS Fe SECIS CMV VP EC '
+         + 'ZDNA BDNA').split(' ');
+  for (var i=0;i<L.length;i++) ABBR[L[i]] = L[i];
+  /* 合起来不好看的，单独给一个写法 */
+  ABBR.SDSPAGE = 'SDS PAGE'; ABBR.RTqPCR = 'RT-qPCR'; ABBR.RTPCR = 'RT-PCR';
+  ABBR.EFG = 'EF-G'; ABBR.EFTu = 'EF-Tu';
+  ABBR.BDNA = 'B-DNA'; ABBR.ZDNA = 'Z-DNA'; ABBR.ADNA = 'A-DNA';
+  ABBR.pIII = 'pIII'; ABBR.pVIIIa = 'pVIII'; ABBR.RT = 'RT'; ABBR.SS = 'S-S';
+})();
+function unspell(x){
+  if (x == null) return '';
+  return String(x).replace(/(^|[^A-Za-z<])((?:[A-Za-z] ){1,9}[A-Za-z])(?![A-Za-z])/g,
+    function(m, pre, run){
+      var ls = run.split(' ');
+      var whole = ls.join('');
+      if (ABBR[whole]) return pre + ABBR[whole];
+      /* 冠词 a / A 后面跟一个缩写：冠词留着，只合后面那串 */
+      if ((ls[0] === 'a' || ls[0] === 'A') && ls.length > 2){
+        var rest = ls.slice(1).join('');
+        if (ABBR[rest]) return pre + ls[0] + ' ' + ABBR[rest];
+      }
+      return m;
+    });
+}
+function escAttr(x){
+  return esc(x).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
 /* 图有两种来源：f.svg 是内联画的（离线、缩放不糊、跟主题变色），f.src 是书上裁的图片。 */
 function figBody(f){
   if (f.svg) return '<div class="svgwrap">' + f.svg + '</div>';
@@ -1012,6 +1057,9 @@ function cleanEn(raw){
             .replace(/[“”"]/g, '').replace(/\s{2,}/g, ' ').trim();
 }
 function englishOf(el){
+  /* ez 段落屏幕上是合并过的（DNA），但要念的是拆开的原文（D N A）。 */
+  var ds = el.getAttribute && el.getAttribute('data-say');
+  if (ds) return cleanEn(ds);
   var t = el.cloneNode(true);
   var b = t.querySelectorAll('.pg, figcaption, .spk, .fold, .favs'); for (var i=0;i<b.length;i++) b[i].remove();
   var raw = t.textContent;
@@ -1166,8 +1214,15 @@ document.addEventListener('click', function(e){
   if (t.closest('.spk, .fold, .favs, button, a, input, textarea')) return;
   /* 09-20 改：原来是一张 class 白名单，漏一个 class 整段就点不动——
      追问的题目在 <summary> 里（还被显式排除了），图的标题和说明是 .figcard h3 / .cap，
-     三处都不在名单上。改成整张卡都能点，只挡控件。 */
-  var host = t.closest('#cram, #drill, #ask, #figs, #onebox, #sxpanel');
+     三处都不在名单上。改成整张卡都能点，只挡控件。
+     ⚠ 09-20 又栽了一次，同一个形状：改成 class 白名单之后，**容器 id 还是一张白名单**
+     （#cram #drill #ask #figs #onebox #sxpanel）。题库和出声短答那个页面
+     （renderQB）写进 #main 时根本没有 section id，于是整页点读失效——
+     喇叭有、点读没有，因为 addSpeakers 是按 class 找的，不看容器。
+     这次直接放开到 #main：**上面已经挡掉了 button / a / input / textarea 和三个控件 class**，
+     卡列表的每一行本身就是 <a>，所以放开不会抢掉导航。
+     **以后再加新页面，不需要回来改这里。** */
+  var host = t.closest('#main, #sxpanel');
   if (!host) return;
   if (document.body.classList.contains('cloze') && t.closest('b')) return;
   var sel = window.getSelection && window.getSelection();
@@ -1208,7 +1263,9 @@ document.addEventListener('click', function(e){
 window.addEventListener('scroll', function(){ var wp = document.getElementById('wpop'); if (wp) wp.style.display = 'none'; }, {passive:true});
 function addSpeakers(){
   if (!window.speechSynthesis) return;
-  var sel = '.en, .pt-en, .say, .stopbox q, .qbody .en, .rq .en, .gd, .nt, .wn';
+  /* ⚠ 2026-09-20：加了「先背这句」之后，完整版被折进 <details> 里，
+     而 .ez 不在这个选择器里 —— 结果有最短版的卡上喇叭全没了。加上 .ez。 */
+  var sel = '.ez, .en, .pt-en, .say, .stopbox q, .qbody .en, .rq .en, .gd, .nt, .wn';
   var els = document.querySelectorAll(sel);
   for (var i=0;i<els.length;i++){
     var e = els[i];
@@ -1283,7 +1340,7 @@ function buildCram(c){
        + (b.n || b.t ? '<p class="pt-n">' + esc(b.n) + (b.n && b.t ? ' · ' : '') + esc(b.t) + '</p>' : '')
        + (b.big ? '<p class="pt-big">' + b.big + '</p>' : '')
        /* R14：有最短版就把它摆在最上面，完整版收起来。她背的是最短版。 */
-       + (b.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez">' + b.ez + '</p>'
+       + (b.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez" data-say="' + escAttr(b.ez) + '">' + unspell(b.ez) + '</p>'
             + (b.ezcn ? '<p class="ezcn">' + b.ezcn + '</p>' : '') + '</div>' : '')
        + (b.en ? (b.ez
             ? '<details class="full"><summary>完整版 ▾ 不用背，想看再点</summary>'
@@ -1397,7 +1454,7 @@ function buildAsk(c){
       h += '<details class="rq' + (r.odd ? ' odd' : '') + '"><summary>'
          + '<span class="qq">' + r.q + '</span></summary><div class="body">'
          + (r.mean ? '<p class="mean">' + r.mean + '</p>' : '')
-         + (r.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez">' + r.ez + '</p>'
+         + (r.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez" data-say="' + escAttr(r.ez) + '">' + unspell(r.ez) + '</p>'
               + (r.ezcn ? '<p class="ezcn">' + r.ezcn + '</p>' : '') + '</div>' : '')
          + (r.ez ? '<details class="full"><summary>完整版 ▾ 不用背，想看再点</summary>'
               + '<p class="en">' + r.say + '</p></details>'
@@ -1419,7 +1476,7 @@ function buildAsk(c){
       h += '<details class="qa"><summary><span class="risk ' + cls + '">' + a.r + '</span>'
          + '<span>' + a.q + '</span></summary><div class="qbody">'
          /* R14：追问也有最短版。她被打断之后现说的就是这一版。 */
-         + (a.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez">' + a.ez + '</p>'
+         + (a.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez" data-say="' + escAttr(a.ez) + '">' + unspell(a.ez) + '</p>'
               + (a.ezcn ? '<p class="ezcn">' + a.ezcn + '</p>' : '') + '</div>' : '')
          + (a.ez ? '<details class="full"><summary>完整版 ▾ 不用背，想看再点</summary>'
               + '<p class="en">' + a.en + '</p></details>'
