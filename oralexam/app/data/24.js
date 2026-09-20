@@ -91,7 +91,7 @@ cram:[
   note:'落在<b>热力学</b>那块地基上，而且顺手把 #25 #26 划成了另一个话题——<b>这是体面的收手，不是回避。</b>'},
  {n:'18', t:'留口子',
   big:'它<b>不只是分解</b>：中间产物同时是<b>合成</b>的原料',
-  en:'“One thing worth adding: the cycle is not purely catabolic. 2-oxoglutarate and oxaloacetate are the carbon skeletons for glutamate and aspartate. Succinyl-CoA is a precursor of porphyrins, and the textbook has a whole section on that. So it is also a supply depot. Draining any intermediate lowers oxaloacetate, so the cell has replenishing, anaplerotic, reactions. The most important is pyruvate carboxylase, which makes oxaloacetate from pyruvate and CO₂ at the cost of one ATP, with biotin as cofactor.”',
+  en:'“One thing worth adding: the cycle is not purely <b>catabolic</b>, not purely degradative. 2-oxoglutarate and oxaloacetate are the carbon skeletons for glutamate and aspartate. Succinyl-CoA is a precursor of porphyrins, and the textbook has a whole section on that. So it is also a supply depot. Draining any intermediate lowers oxaloacetate, so the cell has replenishing, anaplerotic, reactions. The most important is pyruvate carboxylase, which makes oxaloacetate from pyruvate and CO₂ at the cost of one ATP, with biotin as cofactor.”',
   note:'<b>「amphibolic（两性代谢）」这个概念不用说出这个词</b>，说出现象就够；他说了你要听得懂：“Amphibolic means serving both catabolism and anabolism — the cycle oxidises acetyl-CoA and at the same time supplies carbon skeletons for glutamate, aspartate and porphyrins.”<br>口子留在 <b>succinyl-CoA → 卟啉</b>（书 §6.3，p146）和 <b>氨基酸碳骨架</b>（#32 代谢调控）。'}
 ],
 end:'<b>八步里真正要背的是「谁变成谁 ＋ 酶名」，不是结构式。</b>四个「为什么」（叔醇不能氧化、β-酮酸自发脱羧、硫酯是高能的、FAD 共价结合）比八个名字更值钱，因为它们是他追问时的落点。',
@@ -159,7 +159,7 @@ segs:[
      'Then three steps take it back to the start. Succinate goes to fumarate by <b>succinate dehydrogenase</b> with its covalently bound FAD. Fumarate goes to malate by <b>fumarate hydratase</b>. Malate goes to oxaloacetate by <b>malate dehydrogenase</b>, and that gives the third NADH.”'],
   note:'<b>时间不够就砍到四句</b>：缩合、异构、两次氧化脱羧、然后三步回到 oxaloacetate。<b>四个「为什么」不要砍</b>，那是他追问时的落点。'},
  {tag:'段 4 · 留口子', h:'说出它不只是分解',
-  p:['“One thing worth adding: the cycle is not purely catabolic. 2-oxoglutarate and oxaloacetate are the carbon skeletons that amino acids are built from and broken down to. Succinyl-CoA together with glycine is the starting point for porphyrin synthesis, and the textbook has a separate section on that. So the cycle is also a supply depot. Because draining any intermediate lowers oxaloacetate, the textbook adds the replenishing, anaplerotic, reactions, above all pyruvate carboxylase: oxaloacetate from pyruvate and CO₂, one ATP, biotin.”'],
+  p:['“One thing worth adding: the cycle is not purely <b>catabolic</b>, not purely degradative. 2-oxoglutarate and oxaloacetate are the carbon skeletons that amino acids are built from and broken down to. Succinyl-CoA together with glycine is the starting point for porphyrin synthesis, and the textbook has a separate section on that. So the cycle is also a supply depot. Because draining any intermediate lowers oxaloacetate, the textbook adds the replenishing, anaplerotic, reactions, above all pyruvate carboxylase: oxaloacetate from pyruvate and CO₂, one ATP, biotin.”'],
   note:'口子留在 <b>succinyl-CoA ＋ glycine → δ-aminolevulinate → 卟啉</b>（书 §6.3，<span class="pg">p146</span>）和氨基酸碳骨架（#32）。<b>两个都在书里，追下去都答得住。</b>'}
 ],
 

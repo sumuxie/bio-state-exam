@@ -52,7 +52,7 @@ cram:[
   note:'<b>七个金属七个酶，书全给了。</b>这是典型的 very specific 题弹药。<span class="pg">p043</span>'},
  {n:'09', t:'金属的三个作用',
   big:'金属离子干三件事：<b>活性中心的一部分</b> · <b>底物结合的桥</b> · <b>稳定空间结构</b>',
-  en:'“The metal ion works in three ways: as <b>part of the active site</b>, as a <b>bridge</b> for binding the substrate to the enzyme, or as an element that <b>stabilises the spatial structure</b> of the molecule.”',
+  en:'“The cofactor can be an organic coenzyme or a <b>metal ion</b>. The metal ion works in three ways: as <b>part of the active site</b>, as a <b>bridge</b> for binding the substrate to the enzyme, or as an element that <b>stabilises the spatial structure</b> of the molecule.”',
   note:'<b>书列的正是这三条。</b>「桥」那一条直接接 His-tag——那也是金属当桥，只不过桥的另一头是柱子不是底物：“A His-tag column uses the same bridging role, a metal between two ligands. Only the other end of the bridge is the column, not a substrate.”<span class="pg">p043</span>'},
 
  {g:'活性中心', gn:'到这里才说活性中心。先结构后功能，顺序不能反。'},
