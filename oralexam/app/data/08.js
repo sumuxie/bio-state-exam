@@ -33,8 +33,8 @@ cram:[
 
  {g:'signal peptide 的机器，按顺序', gn:'书 p110–p111 给了一整条链，名字都有。按顺序说，一个环节一句。'},
  {n:'04', t:'长什么样',
-  big:'<b>中间疏水</b>、<b>末端带电</b>；preproinsulin 的信号序列 <b>23 个残基</b>',
-  en:'“It is mostly <b>hydrophobic residues in the middle</b> and <b>charged residues at the end</b>. That arrangement is the mechanism: at the ER membrane the charged end stays outside, and the hydrophobic middle sinks into the non-polar membrane. Preproinsulin’s signal sequence is <b>23 residues</b> long.”',
+  big:'<b>中间疏水</b>、<b>末端带电</b>；preproinsulin（＝ 胰岛素最初被做出来的那个全长前体，两段多余的都还在）的信号序列 <b>23 个残基</b>',
+  en:'“It is mostly <b>hydrophobic residues in the middle</b> and <b>charged residues at the end</b>. That arrangement is the mechanism: at the ER membrane the charged end stays outside, and the hydrophobic middle sinks into the non-polar membrane. Insulin is first made as <b>preproinsulin</b>, the full-length precursor that still carries both extra pieces. Its signal sequence is <b>23 residues</b> long.”',
   note:'23 回原图核过，是书印的。<span class="pg">p110 p111</span> 通用说法分三段（N 端带正电、疏水核心、C 端极性含切点），书只分两段——说书的。'},
  {n:'05', t:'SRP 和它的受体',
   big:'<b>SRP</b>（signal recognition particle，一个核糖核蛋白）认出<b>已经合成出来的</b>信号序列，把核糖体带到 ER 外侧的 <b>SRP 受体</b>上',

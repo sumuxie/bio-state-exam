@@ -107,11 +107,22 @@ def uses(blk, term):
 
 
 def rebolds(blk, term):
-    """这一格自己有没有把这个词再加粗一次。加粗＝卡上的约定「这里交代这个词」。"""
+    """这一格自己有没有把这个词交代一遍。两种算数：
+
+    ① 它以加粗出现过——**整段加粗短语里包含它就算**（卡上的约定：加粗＝这里立这个词）。
+       卡 17 第 10 格开口 "Specificity has two sides."，下一句就是
+       "<b>Substrate specificity</b> means…"，词在更长的加粗短语里立住了。
+    ② 这一格用 is / are / means 当场给了定义。
+       卡 16 第 04 格自己就写着 "Five-prime and three-prime are the two sugar carbons…"。
+    """
+    tl = term.lower()
     for f in ('en', 'big'):
         for b in re.findall(r'<b>(.*?)</b>', field(blk, f), re.S):
-            if plain(b).strip(' ,.;:*()').strip().lower() == term.lower():
+            if tl in plain(b).lower():
                 return True
+    say = plain(field(blk, 'en')).lower()
+    if re.search(re.escape(tl) + r'\w*\s+(is|are|means)\b', say):
+        return True
     return False
 
 
@@ -133,10 +144,70 @@ def early_uses(bl, intro):
             said = (plain(field(bl[i][2], 'big')) + ' '
                     + first_sentence(field(bl[i][2], 'en'))).lower()
             if w_l in said:
+                if rebolds(bl[i][2], w):   # 那一格自己就交代了，不算裸用
+                    break
                 out.append((bl[i][0], bl[i][1], w, qn, bl[qi][1], qi - i))
                 break
     return out
 
+
+
+# 2026-09-20 把 66 处逐条对着卡看过。补了 11 处线，剩下的记在这里。
+# 两类：① 被 <b> 包住的加粗片段，本来就不是术语；
+#       ② 本格自己已经交代了，只是句式躲过了上面的豁免——例如
+#          卡 23 第 10 格 a nonpolar hydrophobic one, the fatty acids（当场解释）、
+#          卡 32 第 15 格 The outermost layer is hormonal. A hormone is…（下一句就是定义）、
+#          卡 14 第 01 格那三个词（那一格说的就是「这些词书里没有」，是元陈述）。
+# 基线是手工核过的，不是自动忽略：这些地方一旦改动，仍然会照报。
+CHECKED_ITEMS = [
+    # 第 06 格已经当场补了 meaning the shape that stretch of chain settles into，
+    # 只是句式不是 X is / means，上面的豁免认不出来
+    ('01.js', '06', 'conformation'),
+    ('01.js', '10', 'side chains'),
+    ('06.js', '14', 'Support'),
+    ('06.js', '14', 'recognition'),
+    ('08.js', '17', 'irreversible'),
+    ('08.js', '03', 'Golgi'),
+    ('13.js', '02', 'asparagine'),
+    ('14.js', '01', 'bacteriophage'),
+    ('14.js', '01', 'transformation'),
+    ('14.js', '01', 'transduction'),
+    ('16.js', '05', '拆 primer'),
+    ('16.js', '10', 'ligase'),
+    ('16.js', '07', 'pol I'),
+    ('17.js', '09', 'catalysis'),
+    ('17.js', '03', '稀溶液、低温、中性 pH'),
+    ('18.js', '09', 'substrate'),
+    ('23.js', '09', 'types'),
+    ('23.js', '10', 'nonpolar'),
+    ('23.js', '05', 'carboxyl'),
+    ('23.js', '09', 'complex lipids'),
+    ('23.js', '09', 'phospholipid'),
+    ('23.js', '08', 'Glycerol'),
+    ('24.js', '01', 'NAD⁺'),
+    ('24.js', '01', 'matrix'),
+    ('24.js', '05', 'succinate dehydrogenase'),
+    ('24.js', '05', 'inner membrane'),
+    ('25.js', '06', 'pump'),
+    ('25.js', '04', 'with'),
+    ('25.js', '08', 'Ubiquinone'),
+    ('25.js', '11', 'cytochrome c'),
+    ('27.js', '01', 'into'),
+    ('27.js', '04', 'NADP-plus'),
+    ('27.js', '16', 'Five'),
+    ('27.js', '09', 'Three'),
+    ('27.js', '03', 'ATP ＋ NADPH'),
+    ('28.js', '01', 'rate'),
+    ('32.js', '15', 'hormonal'),
+    ('aa.js', '13', 'phenol'),
+    ('aa.js', '16', 'different group'),
+    ('aa.js', '06', 'asymmetric carbon'),
+    ('aa.js', '02', 'genetic code'),
+    ('gly.js', '01', '2 ATP'),
+    ('taq.js', '05', 'Read'),
+    ('x_rxn.js', '06', 'trans'),
+]
+CHECKED = set((a, b, c.lower()) for a, b, c in CHECKED_ITEMS)
 
 want = [a for a in sys.argv[1:] if not a.startswith('--')]
 if '--gap' in sys.argv:
@@ -146,7 +217,8 @@ print('=' * 74)
 print('冷启动审查 · 开口第一句用了一个 %d 格以前立的词，中间一次都没再提' % GAP)
 print('=' * 74)
 
-total, files = 0, 0
+total, files, skipped = 0, 0, [0]
+SHOWALL = '--all' in sys.argv    # 连已核过的一起列出来
 for f in sorted(glob.glob(os.path.join(D, '*.js'))):
     b = os.path.basename(f)
     if b.startswith('_'):
@@ -177,6 +249,10 @@ for f in sorted(glob.glob(os.path.join(D, '*.js'))):
                 continue
             hits.append((n, t, w, qn, bl[qi][1], i - qi))
     early = early_uses(bl, intro)
+    if not SHOWALL:
+        hits = [h for h in hits if (b, h[0], h[2].lower()) not in CHECKED]
+        early = [h for h in early if (b, h[0], h[2].lower()) not in CHECKED]
+        skipped[0] += 1
     if hits or early:
         print('\n%s' % b)
         for n, t, w, qn, qt, gap in hits:
@@ -189,5 +265,7 @@ for f in sorted(glob.glob(os.path.join(D, '*.js'))):
 
 print()
 print('查了 %d 张卡，%d 处冷启动。' % (files, total))
+if not SHOWALL:
+    print('另有 %d 条 2026-09-20 逐条核过、判为不是问题的（加粗片段，或本格自己已经交代了）。--all 看全部。' % len(CHECKED))
 if total:
     print('修法不是删，是在开口那句前面补一根线——一句话说清它是哪一格来的。')
