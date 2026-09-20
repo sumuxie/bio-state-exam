@@ -152,7 +152,8 @@ def track_cram(c):
     for p in (c.get('cram') or []):
         if p.get('g'): continue
         r = refof(p.get('note'), p.get('good'), p.get('warn'))
-        for s in quoted(p.get('en')): out.append((s, r))
+        # R14：有最短版就念最短版。她背的是那一版，跟读也该跟那一版。
+        for s in quoted(p.get('ez') or p.get('en')): out.append((s, r))
     return out
 
 def track_segs(c):
