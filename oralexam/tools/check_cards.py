@@ -81,7 +81,37 @@ for f in sorted(glob.glob(os.path.join(D, '*.js'))):
              'ok' if not r['unterminated'] else 'UNTERMINATED',
              r['cards'], r['js'], '' if ok else '  ← 有问题'))
 print()
+
+# ── ask 条目必须有 en ────────────────────────────────────────────────────
+# 2026-09-20：mb_ko 和 mb_reg 是我新写的两张，ask 里漏了 en，
+# 而别的 38 张卡一条都不漏。en 是「出声完整版」，ez 只是它的最短版；
+# 少了 en，那一条追问就没有完整答案可说，而且四个检查一个都不会报。
+# 所以在这里立一道闸：这个比例只许是 100%。
+import re as _re
+_HEAD = _re.compile(r"\{r:'")
+_noen = []
+for f in sorted(glob.glob(os.path.join(D, '*.js'))):
+    b0 = os.path.basename(f)
+    if b0.startswith('_'):
+        continue
+    s0 = io.open(f, encoding='utf-8').read()
+    pos = [m.start() for m in _HEAD.finditer(s0)] + [len(s0)]
+    k = 0
+    for i in range(len(pos) - 1):
+        if " en:'" not in s0[pos[i]:pos[i + 1]]:
+            k += 1
+    if k:
+        _noen.append((b0, k))
+if _noen:
+    bad += len(_noen)
+    print('⚠ 有 ask 条目缺 en（出声完整版），这一列必须是 0：')
+    for b0, k in _noen:
+        print('   %-16s %d 条' % (b0, k))
+    print()
+
 if esprima is None:
     print('⚠ 没装 esprima，最要命的那一类（字符串里有真实换行）查不了：pip install esprima')
-print('全部通过' if bad == 0 else '%d 个文件有问题，卡会从列表里消失' % bad)
+print('全部通过' if bad == 0 else
+      '%d 个文件有问题。语法错会让整张卡从列表里消失；'
+      '缺 en 不会，但那一条追问就没有完整答案可说。' % bad)
 sys.exit(1 if bad else 0)
