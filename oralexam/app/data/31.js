@@ -484,7 +484,7 @@ ask:[
  en:'“Yes, and that is the honest way to say it. A coordination bond is a binding equilibrium, so it has a dissociation constant like any other. Free metal times free protein over the complex. It is why imidazole works as a competitor and why EDTA works as a sink. Measuring that kind of constant is what I do.”',
  cn:'<b>落到卡 02。</b>Kd 的定义、单位、半数占据那条曲线全在那张卡上，<b>这里只给一句，别展开</b>——按 LOGIC §12，答八分就停。<b>被追问再给第二层：竞争洗脱是把 Kd 表观值抬高，EDTA 是把游离金属浓度压低，两者作用在同一个式子的不同项上。</b>'},
 {r:'中', q:'Do vitamins or trace metals matter in your own cultures?',
-  ez:'“Yes, in a practical way. A defined medium has to supply them. It supplies the vitamins and trace metals the cells cannot make. That is exactly the list this question is about. If the medium is short of one, the culture grows badly. And the expression drops. But I would not overstate it. I buy the medium already defined.”',
+  ez:'“Yes, in a practical way. A defined medium has to supply them. It supplies the vitamins and trace metals the cells cannot make. That is exactly the list this question is about. The medium may be short of one. Then the culture grows badly. And the expression drops. But I would not overstate it. I buy the medium already defined.”',
   ezcn:'<b>有，而且是很实际的那种。</b><b>一份成分确定的培养基必须提供细胞自己造不出来的那些维生素和痕量金属——也就是这道题讲的那份清单。</b><b>缺了其中一个，培养物长得差，表达也掉。</b>⚠ <b>但我不会说得过头：培养基我是买现成配好的。</b>',
  en:'“Yes, in a practical way. A defined medium has to supply the vitamins and the trace metals the cells cannot make, and that is exactly the list this question is about. If the medium is short of one of them the culture grows badly and the expression drops. But I would not overstate it. I buy the medium already defined.”',
  cn:'<b>诚实地短。</b>培养基的具体配方书里 0 命中，<b>别报任何一个组分的浓度</b>。<b>不点具体课题、不展开</b>——见 `DRILL.md` 的三条机制。'}
