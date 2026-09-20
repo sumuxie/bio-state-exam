@@ -1,0 +1,149 @@
+# -*- coding: utf-8 -*-
+"""冷启动审查：某一格开口就用了一个几格之前才立起来的词，中间又一次都没再出现。
+
+起因：2026-09-20 Ruojin 在卡 06 上说——
+
+    「我没搞懂怎么突然就开始聊半缩醛的 OH 换成 OR → 缩醛 = 糖苷……
+     前面还在聊 mutarotation，哪里都没聊到半缩醛突然就开始说糖苷键了」
+
+查下来卡上其实有那一格：速背 06 就是「成环 · 半缩醛」。断的是**中间那根线**——
+06 立起 hemiacetal，07 画 Haworth、08 果糖、09 变旋，三格里一次都没再提它，
+到了 10 又直接拿它开口。**她背的时候那根线已经断了。**
+
+所以这个脚本查的是一个很具体的形状：
+
+    一个词 T 在第 Q 格被加粗立起来（<b>T</b>），
+    到第 P 格又出现在**开口第一句**里，
+    而 P − Q ≥ GAP，且 Q 与 P 之间的每一格都没有提过 T。
+
+判据故意窄：**必须是开口第一句**（她一格一格背，开口那句最吃力），
+**必须中间完全断掉**（中间提过一次就不算断），**必须够远**（隔一格不算）。
+宽一点就全是噪声——像 DNA、glucose 这种词到处都是，报出来没有意义。
+
+跑法：
+    python tools/coldstart.py           # 全部卡
+    python tools/coldstart.py 06 gly    # 只看这两张
+    python tools/coldstart.py --gap 2   # 放宽到隔两格
+"""
+import io, os, re, sys, glob
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+D = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'app', 'data')
+
+GAP = 3                      # 隔几格才算「断了」
+
+# 到处都是的词，立不起来，报了也没用
+STOP = set('''dna rna mrna trna rrna atp adp amp gtp nadh nadph fad ph pka pi km kd
+glucose water carbon oxygen nitrogen hydrogen protein enzyme cell membrane gene
+acid base sugar bond energy reaction group chain ring form structure'''.split())
+
+
+def blocks(src):
+    """把 cram 里的格子按顺序切出来：[(n, t, 整格原文), ...]"""
+    i = src.find('cram:[')
+    if i < 0:
+        return []
+    j = len(src)
+    for k in ("\nend:", "\nsib:", "\nsegs:"):
+        m = src.find(k, i)
+        if m > -1:
+            j = min(j, m)
+    body = src[i:j]
+    out, parts = [], re.split(r"\n\s*\{n:'", body)
+    for p in parts[1:]:
+        n = p[:p.find("'")]
+        t = ''
+        mt = re.search(r"t:'((?:[^'\\]|\\.)*)'", p)
+        if mt:
+            t = mt.group(1)
+        out.append((n, t, p))
+    return out
+
+
+def field(blk, name):
+    m = re.search(name + r":'((?:[^'\\]|\\.)*)'", blk)
+    return m.group(1) if m else ''
+
+
+def plain(s):
+    s = re.sub(r'<[^>]+>', '', s)
+    return re.sub(r'\s+', ' ', s)
+
+
+def first_sentence(en):
+    """开口第一句。en 是 “ … ” 包着的，先剥引号。"""
+    s = plain(en).strip().lstrip('“').strip()
+    m = re.search(r'[.!?](\s|$)', s)
+    return s[:m.start() + 1] if m else s
+
+
+def terms_of(blk):
+    """这一格里被加粗立起来的词。只取 en 和 big——note 是给她看的，不是说的。"""
+    out = set()
+    for f in ('en', 'big'):
+        for b in re.findall(r'<b>(.*?)</b>', field(blk, f), re.S):
+            w = plain(b).strip(' ,.;:·—-()（）').strip()
+            if not w or len(w) < 4:
+                continue
+            if len(w.split()) > 3:
+                continue
+            if not re.search(r'[A-Za-z]', w):          # 纯中文的先不查
+                continue
+            if w.lower() in STOP:
+                continue
+            out.add(w)
+    return out
+
+
+def uses(blk, term):
+    """这一格有没有提过这个词（整格，包括 note）。"""
+    return term.lower() in plain(blk).lower()
+
+
+want = [a for a in sys.argv[1:] if not a.startswith('--')]
+if '--gap' in sys.argv:
+    GAP = int(sys.argv[sys.argv.index('--gap') + 1])
+
+print('=' * 74)
+print('冷启动审查 · 开口第一句用了一个 %d 格以前立的词，中间一次都没再提' % GAP)
+print('=' * 74)
+
+total, files = 0, 0
+for f in sorted(glob.glob(os.path.join(D, '*.js'))):
+    b = os.path.basename(f)
+    if b.startswith('_'):
+        continue
+    if want and not any(w in b for w in want):
+        continue
+    bl = blocks(io.open(f, encoding='utf-8').read())
+    if not bl:
+        continue
+    files += 1
+    intro = {}                                   # 词 → 第一次被加粗立起来的格号
+    for i, (n, t, p) in enumerate(bl):
+        for w in terms_of(p):
+            intro.setdefault(w.lower(), (i, w, n))
+    hits = []
+    for i, (n, t, p) in enumerate(bl):
+        head = first_sentence(field(p, 'en')).lower()
+        if not head:
+            continue
+        for w_l, (qi, w, qn) in intro.items():
+            if qi >= i or i - qi < GAP:
+                continue
+            if w_l not in head:
+                continue
+            if any(uses(bl[k][2], w) for k in range(qi + 1, i)):
+                continue
+            hits.append((n, t, w, qn, bl[qi][1], i - qi))
+    if hits:
+        print('\n%s' % b)
+        for n, t, w, qn, qt, gap in hits:
+            print('  [%s %s] 开口就用 <%s>' % (n, t, w))
+            print('      它是第 %s 格「%s」立的，中间隔 %d 格没再提过' % (qn, qt, gap))
+        total += len(hits)
+
+print()
+print('查了 %d 张卡，%d 处冷启动。' % (files, total))
+if total:
+    print('修法不是删，是在开口那句前面补一根线——一句话说清它是哪一格来的。')
