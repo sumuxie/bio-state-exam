@@ -31,10 +31,10 @@ cram:[
   en:'“The order of the steps is capture, then intermediate purification, then polishing. That order is forced rather than chosen. Volume runs from large to small while the resolution you need runs from low to high. So the first column is picked for capacity and the last one is picked for resolution.”',
   note:'<span class="pg">L5 s.9</span>「顺序是被逼出来的、不是挑出来的」这一句笔记标了 beyond the slides，但它的根据在幻灯片上：SEC 的上样体积上限是柱体积的 5%，那是硬的。'},
  {n:'03', t:'没见过的模式怎么摆进去',
-  ez:'“Suppose I meet a mode I have not seen before. Then I ask two questions. What property does the resin bind. And what do I change to release it. Those two answers put it into the four step frame. They also tell me roughly where in the order it belongs.”',
+  ez:'“A chromatography mode is one property. It is the property the resin binds. Charge is one. Size is another. Suppose I meet a mode I have not seen before. Then I ask two questions. What property does the resin bind. And what do I change to release it. Those two answers put it into the four step frame. They also tell me roughly where in the order it belongs.”',
   ezcn:'<b>碰到一个没见过的层析模式，我问两个问题：树脂结合的是哪个性质？我改变什么才能把它放开？</b><b>这两个答案既把它放进那个四步框架，也大致告诉我它该排在顺序里的哪一段。</b>',
   big:'问两句就够：<b>它靠什么抓住？改什么它才放开？</b>',
-  en:'“If I meet a mode I have not seen before, I ask two questions. What property does the resin bind, and what do I change to release it? Those two answers put it into the four-step frame and tell me roughly where in the order it belongs.”',
+  en:'“A chromatography mode is the one property the resin binds, such as charge or size. If I meet a mode I have not seen before, I ask two questions. What property does the resin bind, and what do I change to release it? Those two answers put it into the four-step frame and tell me roughly where in the order it belongs.”',
   note:'<b>这两句是这张卡自己排的，不是笔记上的句子。</b>但它们是从笔记的分类方式直接倒出来的——笔记那张「五种模式」的表，每一行就是「按什么分离」加「用什么洗脱」两栏。<span class="pg">L4 s.13</span><br>第三句可选：<b>容量和上样体积</b>决定它排在第几步。'},
 
  {g:'五种模式 · 按「抓什么 / 放什么」排', gn:'不是按名字背，是按<b>两栏</b>背。抓的那一栏是性质，放的那一栏是你手里的旋钮。'},

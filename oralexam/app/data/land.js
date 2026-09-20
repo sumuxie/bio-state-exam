@@ -20,10 +20,10 @@ sub:'主干说完约 90 秒 · 书里 0 命中 · 出处是通用知识和你自
 cram:[
  {g:'开口', gn:'这题的分数几乎全在前四点：两个定义各一次，然后把区别说出口。后面都是展开。'},
  {n:'01', t:'先定义那个共用的词',
-  ez:'“Both terms use the same geometrical device. So let me define that first. A landscape is a surface. It lies over a space of possibilities. Every point is one possible state of the system. The height is one number you care about. The two questions then differ in two ways. They differ in what a point is. And they differ in what the height means.”',
+  ez:'“A landscape is a surface. It lies over a space of possibilities. Every point is one possible state of the system. The height is one number you care about. Both terms use that same device. So I define it once. The two questions then differ in two ways. They differ in what a point is. And they differ in what the height means.”',
   ezcn:'<b>两个词用的是同一个几何装置，所以我先定义那个装置。</b><b>地形（landscape）＝ 架在一个「可能性空间」上面的一张曲面</b>：<b>每一个点是这个系统的一种可能状态，高度是你关心的某一个数</b>。<b>两个问题的差别就只在两处：点是什么，以及高度指什么。</b>',
   big:'<b>landscape 是一个面</b>：每个点是一种<b>可能的状态</b>，高度是<b>你在意的那一个数</b>',
-  en:'“Both terms use the same geometrical device, so let me define that first. A <b>landscape</b> is a <b>surface over a space of possibilities</b>: every point is one possible state of the system, and the height is <b>one number you care about</b>. The two questions differ only in what a point is and what the height means.”',
+  en:'“A <b>landscape</b> is a <b>surface over a space of possibilities</b>: every point is one possible state of the system, and the height is <b>one number you care about</b>. Both terms use that same device, so I define it once. The two questions differ only in what a point is and what the height means.”',
   note:'<b>先交代 landscape 本身，是这道题最省力的一步。</b>这个词在两个术语里都出现，他真正在问的就是「同一个画法的两种用法」。画法说清楚了，后面两个定义各一句就够。'},
  {n:'02', t:'定义一 · fitness landscape',
   ez:'“A fitness landscape maps sequence to fitness. Every sequence the protein could have is one point. The height there is its fitness. Fitness means how well that variant performs. It performs under a selection you defined in advance. How tightly it binds is one example. Evolution is a walk on that surface. And the walk is constrained. It can only take steps a mutation can make.”',
