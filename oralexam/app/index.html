@@ -117,6 +117,20 @@ main{max-width:680px;margin:0 auto;padding:0 20px 130px}
 .pt{padding:32px 0 0}
 .pt-n{font-size:11.5px;letter-spacing:.13em;color:var(--faint);font-variant-numeric:tabular-nums;
   margin:0 0 10px;font-weight:600}
+/* R14 最短版。摆在完整版上面，因为她背的就是这一版。 */
+.ezb{margin:0 0 14px;padding:14px 16px;background:var(--soft);border-radius:11px;
+  border-left:3px solid var(--accent)}
+.ezb .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  font-weight:700;margin:0 0 8px}
+.ezb .ez{font-size:16.5px;line-height:1.95;margin:0;color:var(--ink)}
+.ezb .ezcn{font-size:14px;line-height:1.85;margin:10px 0 0;color:var(--dim)}
+.ezb .ezcn b{color:var(--ink)}
+.full{margin:0 0 4px}
+.full>summary{list-style:none;cursor:pointer;font-size:12.5px;color:var(--faint);
+  padding:5px 0;user-select:none}
+.full>summary::-webkit-details-marker{display:none}
+.full>summary:hover{color:var(--accent)}
+.full[open]>summary{color:var(--accent)}
 .pt-big{font-size:22px;line-height:1.5;font-weight:650;margin:0 0 16px;letter-spacing:-.008em}
 .pt-big b{color:var(--accent);font-weight:650}
 .en{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);
@@ -1268,7 +1282,13 @@ function buildCram(c){
     h += '<div class="pt">'
        + (b.n || b.t ? '<p class="pt-n">' + esc(b.n) + (b.n && b.t ? ' · ' : '') + esc(b.t) + '</p>' : '')
        + (b.big ? '<p class="pt-big">' + b.big + '</p>' : '')
-       + (b.en ? '<p class="en">' + b.en + '</p>' : '')
+       /* R14：有最短版就把它摆在最上面，完整版收起来。她背的是最短版。 */
+       + (b.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez">' + b.ez + '</p>'
+            + (b.ezcn ? '<p class="ezcn">' + b.ezcn + '</p>' : '') + '</div>' : '')
+       + (b.en ? (b.ez
+            ? '<details class="full"><summary>完整版 ▾ 不用背，想看再点</summary>'
+              + '<p class="en">' + b.en + '</p></details>'
+            : '<p class="en">' + b.en + '</p>') : '')
        + (b.tbl ? tbl(b.tbl) : '')
        + (b.note ? '<p class="nt">' + b.note + '</p>' : '')
        + (b.warn ? '<div class="wn"><b>⚠</b> ' + b.warn + '</div>' : '')
