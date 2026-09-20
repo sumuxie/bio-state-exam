@@ -74,7 +74,7 @@ DEFQ = re.compile(r'^\s*(what (is|are|do you mean by)\b|what does .*\bmean\b'
                   r'|define\b|describe the activities)', re.I)
 # ⚠「A 和 B 有什么区别」问的是对比，不是定义。这类题**先给轴**是卡上有意教的形状
 #    （「先给轴，再让其余差别从这根轴上长出来」），所以不算违规，排除掉。
-DIFFQ = re.compile(r'^\s*what (is|are) the difference', re.I)
+DIFFQ = re.compile(r'what (is|are) the difference', re.I)   # 题面里任何位置都算
 
 
 def sentences(t):
@@ -82,6 +82,11 @@ def sentences(t):
     for q in QUOTES:
         body = body.replace(q, ' ')
     return [x.strip() for x in re.split(r'(?<=[.?!])\s+', body) if x.strip()]
+
+
+# 「按书的说法，……」这种出处状语是限定，不是铺垫，判断之前先剥掉。
+LEADIN = re.compile(r'^(by|in|on|under|according to)\s+(the|this)\s+'
+                    r'(textbook|book|convention)[^,]{0,40},\s*', re.I)
 
 
 def lead(t):
@@ -97,13 +102,15 @@ def lead(t):
 
 def wanted(where, question):
     """这一段该不该以定义开头。"""
-    if DIFFQ.match(question or ''):
+    q = question or ''
+    if DIFFQ.search(q):
         return False
     if where.startswith('开口段'):
         return True
-    if '定义' in where:
-        return True
-    return bool(DEFQ.match(question or ''))
+    # ⚠「定义类」这一组里也有问数字、问为什么的题（「Give me a number」
+    #    「Why is denaturation sometimes reversible」），那些不该要求先下定义。
+    #    第一版按组名一刀切，两条抽检都是误报。只认真的在问「X 是什么」的题面。
+    return bool(DEFQ.match(q))
 
 
 ART = re.compile(r'^(a|an|the|one|any|every|each|two|three|four|five)\b', re.I)
@@ -138,7 +145,7 @@ def judge(en, question, where):
     ss = sentences(en)
     if not ss:
         return 'ok', ''
-    first = lead(en)
+    first = LEADIN.sub('', lead(en))
     term = term_of(question) if not where.startswith('开口段') else ''
     if BECAUSE.match(first) and WHYQ.match((question or '').strip()):
         return 'ok', first
