@@ -37,6 +37,12 @@ STOP = set('''dna rna mrna trna rrna atp adp amp gtp nadh nadph fad ph pka pi km
 glucose water carbon oxygen nitrogen hydrogen protein enzyme cell membrane gene
 acid base sugar bond energy reaction group chain ring form structure'''.split())
 
+# 这些词本身立不起来，谁先说谁后说都无所谓
+VAGUE = set(('both types different group one carbon two carbons same carbon '
+             'support recognition storage structural free other '
+             'first second third').split()) | set(
+            ['one carbon', 'different group', 'two or more', 'same carbon'])
+
 
 def blocks(src):
     """把 cram 里的格子按顺序切出来：[(n, t, 整格原文), ...]"""
@@ -100,6 +106,38 @@ def uses(blk, term):
     return term.lower() in plain(blk).lower()
 
 
+def rebolds(blk, term):
+    """这一格自己有没有把这个词再加粗一次。加粗＝卡上的约定「这里交代这个词」。"""
+    for f in ('en', 'big'):
+        for b in re.findall(r'<b>(.*?)</b>', field(blk, f), re.S):
+            if plain(b).strip(' ,.;:*()').strip().lower() == term.lower():
+                return True
+    return False
+
+
+def early_uses(bl, intro):
+    """第二类：一个词在第 Q 格才被立起来，可第 P 格（P < Q）已经拿它说话了。
+
+    这一类是 2026-09-20 真正咬到她的那一类，而上面那个检查抓不到：
+    卡 06 第 01 格开口就说 "monosaccharides joined by glycosidic bonds"，
+    而这个词要到第 10 格才有定义，hemiacetal 更要到第 06 格才第一次出现。
+    ——「她听到这个词的时候，后面什么都没有。」
+    只看 en 和 big（她真正说出口的两栏），note 里提前用一下不算。
+    """
+    out = []
+    for w_l, (qi, w, qn) in intro.items():
+        if w_l in VAGUE:
+            continue
+        for i in range(qi):
+            # 只看她真正开口说的那一句：big 那一行，和 en 的第一句
+            said = (plain(field(bl[i][2], 'big')) + ' '
+                    + first_sentence(field(bl[i][2], 'en'))).lower()
+            if w_l in said:
+                out.append((bl[i][0], bl[i][1], w, qn, bl[qi][1], qi - i))
+                break
+    return out
+
+
 want = [a for a in sys.argv[1:] if not a.startswith('--')]
 if '--gap' in sys.argv:
     GAP = int(sys.argv[sys.argv.index('--gap') + 1])
@@ -135,13 +173,19 @@ for f in sorted(glob.glob(os.path.join(D, '*.js'))):
                 continue
             if any(uses(bl[k][2], w) for k in range(qi + 1, i)):
                 continue
+            if rebolds(p, w):        # 本格自己又立了一遍，不算赖账
+                continue
             hits.append((n, t, w, qn, bl[qi][1], i - qi))
-    if hits:
+    early = early_uses(bl, intro)
+    if hits or early:
         print('\n%s' % b)
         for n, t, w, qn, qt, gap in hits:
             print('  [%s %s] 开口就用 <%s>' % (n, t, w))
             print('      它是第 %s 格「%s」立的，中间隔 %d 格没再提过' % (qn, qt, gap))
-        total += len(hits)
+        for n, t, w, qn, qt, gap in early:
+            print('  [%s %s] \u26a0 \u8bf4\u51fa\u53e3\u7528\u4e86 <%s>\uff0c\u53ef\u5b83\u8981\u5230\u7b2c %s \u683c\u300c%s\u300d\u624d\u7acb\u8d77\u6765' % (n, t, w, qn, qt))
+            print('      \u65e9\u4e86 %d \u683c\u2014\u2014\u542c\u5230\u8fd9\u4e2a\u8bcd\u7684\u65f6\u5019\uff0c\u540e\u9762\u4ec0\u4e48\u90fd\u6ca1\u6709' % gap)
+        total += len(hits) + len(early)
 
 print()
 print('查了 %d 张卡，%d 处冷启动。' % (files, total))
