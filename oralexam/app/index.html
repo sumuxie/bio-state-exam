@@ -617,6 +617,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/mb_int.js"></script>
 <script src="data/mb_ko.js"></script>
 <script src="data/mb_reg.js"></script>
+<script src="data/mb_post.js"></script>
 <script src="data/pe_clone.js"></script>
 <script src="data/pe_evo.js"></script>
 <script src="data/pe_cfps.js"></script>
@@ -666,7 +667,10 @@ var ABBR = {};
          + 'NNK NNN PURE pET pUC pDUET GAL BAD LEVLFQ ENLYFQ FeS Fe SECIS CMV VP EC '
          + 'ZDNA BDNA '
          /* mb-reg（真核转录调控与表观）新加的 */
-         + 'CTD TBP TAF UPE HAT HDAC CpG HTH bZIP bHLH PRC YTH ERE GRE').split(' ');
+         + 'CTD TBP TAF UPE HAT HDAC CpG HTH bZIP bHLH PRC YTH ERE GRE '
+         /* mb-post（转录之外的每一层）新加的 */
+         + 'siRNA miRNA lncRNA ncRNA dsRNA snoRNA UTR IRE IREBP HSE HSF HSP '
+         + 'PKA PKC PTK CRE CREB DAG TfR HRE CDK RDRP AGO PAZ CBP').split(' ');
   for (var i=0;i<L.length;i++) ABBR[L[i]] = L[i];
   /* 合起来不好看的，单独给一个写法 */
   ABBR.SDSPAGE = 'SDS PAGE'; ABBR.RTqPCR = 'RT-qPCR'; ABBR.RTPCR = 'RT-PCR';
