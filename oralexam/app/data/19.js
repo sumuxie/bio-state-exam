@@ -291,12 +291,16 @@ ask:[
  en:'“Because regulation has to be <b>reversible</b>. An end product inhibiting the first enzyme of its own pathway has to let go again when the product runs low. Irreversible inhibition cannot serve as a control mechanism — you would destroy an enzyme every time you used it.”',
  cn:'<b>这条接 #32 代谢调控和书里的反馈抑制那一段</b>（<span class="pg">p063</span>）：终产物抑制整条序列的第一个酶，那个酶通常是<b>别构酶</b>。'},
 {r:'中', q:'Why is uncompetitive inhibition rare with one substrate but common with two?',
+  ez:'“Because an uncompetitive inhibitor needs a particular site. That site exists only on the enzyme substrate complex. The textbook says what creates it. Substrate binding induces a conformational change. In a two substrate reaction that situation is built in. In an ordered mechanism the second substrate binds late. It binds only after the first. So anything resembling it binds the complex. It does not bind free enzyme. With one substrate there is no such site.”',
+  ezcn:'因为<b>反竞争性抑制剂需要一个「只存在于酶–底物复合物上」的位点</b>，<b>而书说那个位点是由底物结合所诱导的构象变化创造出来的。</b><b>在双底物反应里这个情形是天然自带的：有序机制里第二个底物本来就只有在第一个结合之后才结合——所以任何长得像第二底物的东西都是结合 EA 而不是游离的 E，那正好就是一个反竞争性抑制剂。</b><b>单底物时没有这样的第二位点，所以这种情形少见。</b>⚠ <b>书只给了事实，这条联系是我的推论。</b>',
  en:'“Because an uncompetitive inhibitor needs a site that exists only on the enzyme–substrate complex. The textbook says the site is created by the conformational change substrate binding induces. In a two-substrate reaction that situation is built in. In an ordered mechanism the second substrate itself binds only after the first has. So anything resembling the second substrate binds EA and not free E, which is exactly an uncompetitive inhibitor. With one substrate there is no such second site, so the case is rare. The textbook states the fact, and the link is my inference.”',
  cn:'书给了机制（p060：位点由底物诱导的构象变化造出来），<b>但没给「为什么单底物罕见、双底物常见」的直接理由</b>——后半句说成推测：“presumably because…”。'}
 ]},
 
 {g:'定义类', gn:'', items:[
 {r:'中', q:'What is Ki?',
+  ez:'“It is the inhibition constant. The textbook defines it as a dissociation constant. It belongs to the enzyme inhibitor complex. So it is free enzyme times free inhibitor over E I. Sometimes the inhibitor also binds the enzyme substrate complex. Then there is a second constant. K i prime is the dissociation constant of E A I. Uncompetitive has only K i prime. Non competitive has the two equal. Mixed has them different.”',
+  ezcn:'<b>Ki ＝ 抑制常数；书把它定义为「酶–抑制剂复合物的解离常数」：游离酶 × 游离抑制剂 ÷ EI。</b><b>当抑制剂同时也结合酶–底物复合物时，还有第二个常数 Ki′，是 EAI 的解离常数。</b><b>反竞争性只有 Ki′；非竞争性是 Ki ＝ Ki′；混合型是两者不等。</b>',
  en:'“The inhibition constant. The textbook defines it as the <b>dissociation constant</b> of the enzyme–inhibitor complex: free enzyme times free inhibitor over EI. Whenever the inhibitor also binds the enzyme–substrate complex there is a second one, K i prime, the dissociation constant of EAI. Uncompetitive has only K i prime. Non-competitive has K i equal to K i prime. Mixed has them different.”',
  cn:'<b>书里唯一明确叫「解离常数」的东西。</b>而且有两个。<br>完整的 Kd 内容在<b>卡 02</b>。<b>注意：Ki 是解离常数，Km 不是</b>——书自己在 p055 和 p056 前后打架，见卡 02 的陷阱那一格。'},
 {r:'高', q:'What is a modulator?',
@@ -311,6 +315,8 @@ ask:[
  cn:'p056–p057 给了斜率、1/v 截距和「不精确、费材料」的理由；p060 给了坐标轴（1/v 对 1/[A]）；x 截距是通用知识。抑制类型就是看这条线怎么动。'},
 
 {r:'中', q:'What is a ternary complex?',
+  ez:'“It is a complex of three species at once. Here that is enzyme and substrate and inhibitor. We write it E A I. In two substrate kinetics it means something else. There it is the enzyme with both substrates. We write that E A B. Uncompetitive inhibition is one particular case. Only this complex forms there. The inhibitor cannot bind the free enzyme. In non competitive and mixed inhibition E A I forms alongside E I.”',
+  ezcn:'<b>三元复合物 ＝ 三个物种同时结合在一起；这里是酶 ＋ 底物 ＋ 抑制剂，写作 EAI。</b><b>在双底物动力学里它指的是酶加两个底物，写作 EAB。</b><b>反竞争性抑制是这样一种特例：只形成这个复合物，因为抑制剂结合不了游离酶。</b><b>而非竞争性和混合型里，EAI 和 EI 并存。</b>',
  en:'“A complex of three species at once — here enzyme, substrate and inhibitor, EAI. In two-substrate kinetics it is the enzyme with both substrates, EAB. Uncompetitive inhibition is the case where <b>only</b> this complex forms, because the inhibitor cannot bind the free enzyme. In non-competitive and mixed inhibition EAI forms alongside EI.”',
  cn:'三元复合物在双底物动力学里也出现（<span class="pg">p058</span>），跟 ping-pong 机制相对。'}
 ]},
@@ -328,6 +334,8 @@ ask:[
  cn:'p062–p063 原文，含苏氨酸→异亮氨酸的例子。这是「为什么细胞要有可逆抑制」那条的正面定义。'},
 
 {r:'中', q:'What is an allosteric enzyme?',
+  ez:'“Allosteric enzymes are modulated non covalently. A specific metabolite does it. It binds at a separate allosteric site. Often that metabolite is the end product. It is the product of the pathway the enzyme starts. They are usually built of subunits. They have several substrate binding sites. Their own substrate can act as an effector. And their kinetics are not Michaelis Menten. The curve is sigmoid, not hyperbolic.”',
+  ezcn:'<b>别构酶 ＝ 被某个特异代谢物以非共价方式、在一个单独的别构位点上调节的酶</b>（<b>那个代谢物往往就是这个酶所启动的途径的终产物</b>）。<b>它们通常由亚基构成，有好几个底物结合位点，而且自己的底物也能充当效应物。</b><b>它们的动力学不是米氏的：速率对底物浓度的曲线是 S 形，不是双曲线。</b>',
  en:'“Allosteric enzymes are modulated non-covalently by a specific metabolite binding at a separate allosteric site — often the end product of the pathway that enzyme starts. They are usually built of subunits with several substrate-binding sites, and their own substrate can act as an effector. Their kinetics are not Michaelis–Menten. The rate against substrate concentration is <b>sigmoid</b>, not hyperbolic.”',
  cn:'书 §3.7.1（<span class="pg">p062 p063</span>）。<b>这是可逆抑制在体内的主要形态</b>，接 #32。'}
 ]}

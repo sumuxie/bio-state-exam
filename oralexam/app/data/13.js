@@ -324,15 +324,21 @@ ask:[
  en:'“The glycosylation decides where the protein goes and, in the standard picture, reports how far it has folded — the trimming state is readable. The disulfide fixes the chain in a conformation that, as the textbook puts it, is not entirely favourable energetically. One is routing and quality control. The other is mechanical stability, and that matters precisely for proteins that leave the cell. Outside there are, generally speaking, no chaperones, and the medium is oxidising, so a disulfide survives there. And the glycan is the first thing the outside world touches.”',
  cn:'<b>「一个管去向，一个管稳定」是最短的分工说法。</b>说完这句，surface and secreted 那个限定词就答完了。'},
 {r:'中', q:'Only two? What about the others? (two)',
+  ez:'“There are more. Hydroxylation and methylation and phosphorylation. Sulfation and gamma carboxylation as well. But phosphorylation and methylation act mostly on cytosolic proteins. They act in signalling and regulation. The question here is about surface and secreted proteins. Nearly all of those carry two. Those two are N glycosylation and disulfides. Hydroxylation belongs to collagen. Gamma carboxylation belongs to the clotting factors.”',
+  ezcn:'<b>还有更多：羟化 · 甲基化 · 磷酸化 · 硫酸化 · γ-羧化。</b><b>但磷酸化和甲基化主要作用在胞质蛋白上，属于信号和调节。</b><b>如果问的是表面蛋白和分泌蛋白，那么几乎每一个都带的是这两个：N-糖基化和二硫键。</b><b>羟化和 γ-羧化也是内质网里的修饰，但羟化是胶原的事，γ-羧化是凝血因子的事。</b>',
  en:'“There are more — hydroxylation, methylation, phosphorylation, sulfation, gamma-carboxylation. But phosphorylation and methylation act mostly on cytosolic proteins, in signalling and regulation. If the question is about surface and secreted proteins in general, the two that nearly all of them carry are N-glycosylation and disulfides. Hydroxylation and γ-carboxylation are ER modifications too, but hydroxylation is collagen’s and γ-carboxylation belongs to the clotting factors.”',
  cn:'<b>把「还有哪些」和「为什么只挑两个」一起答掉。</b>这样既显示你知道全集，又说明你听懂了限定词。'}
 ]},
 
 {g:'定义类', gn:'他默认你知道这些名词。', items:[
 {r:'中', q:'What is glycosylation?',
+  ez:'“Glycosylation is the covalent attachment of carbohydrate to a protein. Highly specific glycosyltransferases do it. Nucleotide sugars are the donors. There are two linkages. N glycosidic goes to the amide nitrogen of asparagine. O glycosidic goes to the hydroxyl of serine or threonine. It takes place in the E R and the Golgi. The textbook calls it one of the most important modifications.”',
+  ezcn:'<b>糖基化 ＝ 把碳水化合物共价接到蛋白上，由高度专一的糖基转移酶完成，供体是核苷酸糖。</b><b>两种连接：N-糖苷键接到天冬酰胺侧链的酰胺氮上，O-糖苷键接到丝氨酸或苏氨酸侧链的羟基上。</b><b>发生在内质网和高尔基体里；书称它是最重要的翻译后修饰之一。</b>',
  en:'“Glycosylation is the <b>covalent attachment of carbohydrate to a protein</b> by highly specific glycosyltransferases, with nucleotide sugars as donors. Two linkages: N-glycosidic, to the side-chain amide nitrogen of asparagine, or O-glycosidic, to the side-chain hydroxyl of serine or threonine. It takes place in the ER and the Golgi, and the textbook calls it one of the most important post-translational modifications.”',
  cn:'<b>核心词正面定义。</b>先说它是什么，再分 N/O。'},
 {r:'中', q:'What is a signal peptide?',
+  ez:'“A signal peptide is an N terminal sequence. It sends a nascent chain into the E R. The signal codons code it. Those come right after the initiation codon. In preproinsulin it is twenty three residues. It has a hydrophobic middle and charged ends. The signal recognition particle binds it. Then it docks on its receptor in the E R membrane. The chain is threaded into the lumen. Signal peptidase then cuts the signal off.”',
+  ezcn:'<b>信号肽 ＝ 把新生链送进内质网的那段 N 端序列，由紧跟起始密码子之后的信号密码子编码。</b><b>胰岛素原前体里是 23 个残基：中间疏水，两端带电荷。</b><b>信号识别颗粒（SRP）在它刚从核糖体出来时结合它，再停靠到内质网膜上的 SRP 受体上；疏水部分进入膜、打开一个孔（书说孔由核糖体结合蛋白围成），链一边被合成一边被穿进腔里。</b><b>等它那一端出现在腔中，膜结合的信号肽酶就把它切掉——成熟蛋白身上不再带着它。</b>',
  en:'“A signal peptide is the <b>N-terminal sequence</b> that sends a nascent chain into the ER, coded by the signal codons right after the initiation codon. In preproinsulin it is 23 residues. It has a hydrophobic middle and charged ends. The signal recognition particle, SRP, binds it as it emerges from the ribosome and docks on the SRP receptor in the ER membrane. The hydrophobic part enters the membrane and a pore opens, bounded by ribophorins, the textbook says. The rest of the chain is threaded into the lumen as it is made. Once its end appears in the lumen, membrane-bound signal peptidase cuts it off, so the mature protein no longer carries it. The textbook files this under covalent modification of the backbone — the one tied to export.”',
  cn:'题库 #9 就是这句（bw 指到这张卡）。<b>整条从书 p110–p111 来。</b>'},
 {r:'高', q:'What is the endoplasmic reticulum?',
@@ -341,6 +347,8 @@ ask:[
  en:'“The endoplasmic reticulum is the membrane network of flattened sacs, the cisternae, continuous with the nuclear envelope. The rough ER carries the ribosomes making secretory and membrane proteins. Its lumen is where they fold and get their N-glycan and their disulfides. That lumen is topologically already outside the cell. Its contents reach the extracellular space by vesicle fusion and never mix with the cytosol. That is why it can hold an oxidising chemistry the cytosol cannot.”',
  cn:'定义是通用细胞生物学；在里面发生什么是书 p109–p112。'},
 {r:'中', q:'What is the Golgi apparatus?',
+  ez:'“The Golgi apparatus is a stack of flattened cisternae. It receives the microvesicles budding from the E R. There the glycan is trimmed and finished. Proproteins are cut there too. Proinsulin becomes insulin. The products are then packed into secretory granules. Those granules fuse with the plasma membrane.”',
+  ezcn:'<b>高尔基体 ＝ 一摞扁平的囊泡，接收从内质网出芽而来的微囊泡。</b><b>糖链在那里被修剪和做完，前体蛋白也在那里被切（胰岛素原 → 胰岛素）；产物随后被装进分泌颗粒，颗粒再跟质膜融合。</b>',
  en:'“The Golgi apparatus is the stack of flattened cisternae that receives the microvesicles budding from the ER. There the glycan is trimmed and finished, and proproteins are cut — proinsulin to insulin. The products are then packed into secretory granules that fuse with the plasma membrane.”',
  cn:'p111–p112。'},
 {r:'高', q:'What is proinsulin?',
@@ -349,6 +357,8 @@ ask:[
  en:'“Insulin is made as preproinsulin: a 23-residue N-terminal signal sequence, then the B chain, the connecting C-peptide, then the A chain. Signal peptidase removes the signal in the ER, giving proinsulin. In the Golgi a trypsin-like enzyme cuts out the C-peptide, and a carboxypeptidase removes the basic dipeptide it was attached by. What is left is insulin — A and B chains held by three disulfides that formed while the C-peptide still held them together.”',
  cn:'p111，书的主干加工例子。'},
 {r:'中', q:'What is O-glycosylation?',
+  ez:'“O glycosylation attaches sugars one at a time. They come directly from nucleotide sugars. They go onto the hydroxyl of serine or threonine. There is no lipid carrier. There is no preassembled core. And there is no sequon. Generally it happens in the Golgi. It happens after folding. The textbook’s own example is collagen. The sugar sits on its hydroxylysine.”',
+  ezcn:'<b>O-糖基化 ＝ 一个一个地把糖直接从核苷酸糖上接到丝氨酸或苏氨酸的羟基上：没有脂质载体、没有预先装好的糖核心、也没有序列子。</b>⚠ <b>通用地说，它发生在高尔基体里、在折叠之后。</b><b>书自己的例子是胶原羟赖氨酸上的那个糖。</b>',
  en:'“O-glycosylation attaches sugars one at a time, directly from nucleotide sugars, to the side-chain hydroxyl of serine or threonine. There is no lipid carrier, no preassembled core, no sequon. Generally it happens in the Golgi, after folding. The textbook’s own example is the sugar on the hydroxylysine of collagen.”',
  cn:'书 p112 只给了连接位置；其余通用。'},
 {r:'高', q:'What is a reducing environment, and why does it stop disulfides forming?',
@@ -362,6 +372,8 @@ ask:[
  en:'“A sequon is the short consensus sequence a glycosyltransferase recognises as its attachment site. The textbook calls it the signal for binding to asparagine: asparagine, any residue except proline, then serine or threonine. Only an asparagine sitting in that pattern gets glycosylated. The word ‘sequon’ is the standard name, not the textbook’s.”',
  cn:'<b>被继续追「为什么不能是 proline」</b>：proline 的氮在环里，主链在那个位置的几何被锁死，转移酶读不到它要的构象：“Why not proline? Generally speaking, proline’s nitrogen is part of its pyrrolidine ring, so the backbone at that position cannot take the conformation oligosaccharyltransferase needs to read the sequon. The textbook gives the rule, not the reason.”<br>⚠ 这个理由<b>书里没有</b>，是通用解释，别说成书上的。'},
 {r:'中', q:'What is dolichol?',
+  ez:'“Dolichol is a polyisoprenoid alcohol. The textbook says nine to twenty two isoprene units. It ends in a hydroxyl. As dolichol phosphate it is a membrane bound carrier. The sugar core is built on it. The core is built from nucleotide sugars. Those are monosaccharides activated on a nucleoside diphosphate. U D P glucose is one. The core starts with U D P GlcNAc.”',
+  ezcn:'<b>多萜醇 ＝ 一个聚异戊二烯醇（书说 9–22 个异戊二烯单元），末端是一个羟基。</b><b>以磷酸多萜醇的形式，它是那个膜结合的载体——糖核心就建在它上面。</b><b>核心由核苷酸糖搭起来（即活化在某个核苷二磷酸上的单糖：UDP-葡萄糖、UDP-GlcNAc、GDP-甘露糖），从 UDP-GlcNAc 开始，最后整块被搬到天冬酰胺上。</b>',
  en:'“Dolichol is a polyisoprenoid alcohol — nine to twenty-two isoprene units, the textbook says, ending in a hydroxyl. As dolichol phosphate it is the membrane-bound carrier on which the sugar core is built. The core is built from nucleotide sugars, monosaccharides activated on a nucleoside diphosphate: UDP-glucose, UDP-GlcNAc, GDP-mannose. The core starts with UDP-GlcNAc, before the whole block is moved onto asparagine.”',
  cn:'⚠ n = 9–22 这个数<b>要回原图核</b>（OCR 数字容易吃掉）。<span class="pg">p112</span>'}
 ]},
@@ -381,6 +393,8 @@ ask:[
 
 {g:'桥回主场', gn:'他顺着走就到你答得住的地方。', items:[
 {r:'中', q:'What is the periplasm?',
+  ez:'“The periplasm is a space in a Gram negative bacterium. It lies between the inner and outer membranes. Unlike the cytoplasm it is oxidising. And it has its own disulfide forming enzymes. Those are the Dsb proteins. So disulfides can form there.”',
+  ezcn:'<b>周质 ＝ 革兰氏阴性菌内膜和外膜之间的那个空间。</b><b>跟胞质不同，它是氧化性的，而且有自己形成二硫键的酶（Dsb 蛋白）——所以二硫键在那里形成得起来。</b>',
  en:'“The periplasm is the space between the inner and outer membranes of a Gram-negative bacterium. Unlike the cytoplasm it is oxidising and has its own disulfide-forming enzymes, the Dsb proteins, so disulfides can form there.”',
  cn:'通用；这是「E. coli 里怎么做二硫键」的答案。'},
 {r:'高', q:'So how would you express a protein like that?',
@@ -389,6 +403,8 @@ ask:[
  en:'“Not easily in E. coli — its cytoplasm is reducing, so no disulfides unless you go to the periplasm or an engineered strain, and it has no N-glycosylation. For a surface protein that needs both, a eukaryotic host is the point. That is why I work with <b>yeast display</b>: the protein is anchored on the yeast surface, so it has gone through the secretory pathway, and I can read binding cell by cell.”',
  cn:'<b>这是全卡最强的一个口子。</b>它从书里的一句化学事实（胞质是还原性的）一步走到你的日常工作，而且中间没有跳跃。'},
 {r:'中', q:'You said folding quality control — how does that work?',
+  ez:'“In the standard picture two E R lectins do the check. They are calnexin and calreticulin. They bind a glycoprotein under one condition. Its N glycan must still carry a single glucose. Once that last glucose is trimmed the protein is released. Suppose it is still misfolded. Then a glucosyltransferase puts one glucose back. So it goes round again. On top of that sit the chaperones proper.”',
+  ezcn:'⚠ <b>通用的图景是：内质网里两个凝集素——钙连蛋白和钙网蛋白——负责检查。</b><b>它们只在糖蛋白的 N-糖链上还剩一个葡萄糖时结合它；最后那个葡萄糖一被修掉，蛋白就被放走。</b><b>如果它仍然折叠错误，一个叫 UGGT 的葡萄糖基转移酶会再装回一个葡萄糖，于是它再走一圈。</b><b>在这之上还有真正的分子伴侣：识别并稳定部分折叠的中间体、帮忙修复折错的链——书点名了 GroEL、GroES 和 hsp70，并说有若干严重的神经系统疾病是由蛋白质错误折叠引起的。</b>',
  en:'“In the standard picture the check is done by two ER lectins, calnexin and calreticulin. They bind a glycoprotein only while its N-glycan still carries a single glucose. Once that last glucose is trimmed the protein is released. If it is still misfolded, a glucosyltransferase called UGGT puts one glucose back, so it goes round again. On top of that sit the chaperones proper, which recognise and stabilise partially folded intermediates and help repair chains that have folded wrongly. The textbook names GroEL and GroES, and hsp70. It also says that a number of serious neurological diseases are caused by protein misfolding.”',
  cn:'完整内容在<b>卡 01 的追问</b>里。<span class="pg">p109</span>'}
 ]}

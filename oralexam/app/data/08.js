@@ -354,6 +354,8 @@ ask:[
  en:'“SRP is a ribonucleoprotein, protein subunits on a small RNA. It binds specifically to a signal sequence the moment that sequence has been synthesised. Then it carries the ribosome to its own receptor, the SRP receptor, in the ER membrane. Once the ribosome is attached it is released and picks up the next signal sequence. Generally it also pauses elongation while it does this. The textbook gives the binding and the recycling, not the pause.”',
  cn:'<span class="pg">p110 p111</span> 「暂停翻译」标 general。通用的组成（6 个蛋白 ＋ 7S RNA）书里没有，不用报数。'},
 {r:'中', q:'What is a ribophorin?',
+  ez:'“In the textbook ribophorins one and two are E R membrane proteins. The hydrophobic part of the signal lines up beside them. It lines up as a pleated sheet. And they bound the pore the chain goes through. In the standard picture the channel is the Sec sixty one translocon. The ribophorins are subunits of the oligosaccharyltransferase next to it. That enzyme puts the N glycan on.”',
+  ezcn:'<b>在书里，核糖体结合蛋白 I 和 II 是内质网膜上的两个蛋白：信号序列的疏水部分以折叠片的形式贴着它们排列，而它们围出了肽链穿过的那个孔。</b>⚠ <b>通用的图景里，那个通道本身是 Sec61 转运子，而核糖体结合蛋白是旁边那个寡糖基转移酶的亚基——正是它把 N-糖链装上去。</b><b>这也是糖基化在肽链还在穿过时就开始的原因。</b>',
  en:'“In the textbook, ribophorins I and II are the two ER membrane proteins beside which the hydrophobic part of the signal sequence lines up as a pleated sheet, and which bound the pore the chain goes through. In the standard picture the channel itself is the Sec61 translocon, and the ribophorins are subunits of the oligosaccharyltransferase next to it that puts the N-glycan on. That is why glycosylation starts while the chain is still coming through.”',
  cn:'<span class="pg">p110</span> 书 vs 通用：书说 ribophorin 围孔，通用说 Sec61。<b>卡上说书的，被追问再补通用。</b>这条顺便接卡 13 的「N-糖基化是共翻译的」。'},
 {r:'高', q:'What is selective proteolysis?',
@@ -388,9 +390,13 @@ ask:[
 
 {g:'怎么发现的', gn:'书只说「按信号理论」，人名年份都是 general。', items:[
 {r:'中', q:'How was the signal hypothesis established?',
+  ez:'“Generally, by Blobel and Dobberstein, in nineteen seventy five. They translated the messenger of a secreted protein. They did it in a cell free system. Without E R membranes the product was longer. It still had the signal. And added protease digested it. With E R microsomes the product was shorter. The signal was gone. And it was protected from protease. So cleavage and translocation happen together.”',
+  ezcn:'⚠ <b>generally：Günter Blobel 和 Bernhard Dobberstein，1975 年。</b><b>他们在无细胞体系里翻译一个分泌蛋白的 mRNA：不加内质网膜时，产物更长（信号还在），而且加进蛋白酶就被消化掉；加了内质网微粒体时，产物更短（信号没了），而且受保护不被蛋白酶消化——因为它在囊泡里面。</b><b>所以切割和转位是一起发生的，就在内质网上。</b><b>Blobel 为此获 1999 年诺奖；书只说「信号理论」。</b>',
  en:'“Generally: Günter Blobel and Bernhard Dobberstein, in 1975, translated the mRNA of a secreted protein in a cell-free system. Without ER membranes the product was longer, because it still had the signal, and added protease digested it. With ER microsomes the product was shorter, the signal gone, and protected from protease, because it was inside the vesicles. So cleavage and translocation happen together, at the ER. Blobel’s Nobel Prize for it was 1999. The textbook just says ‘signal theory’.”',
  cn:'<span class="pg">p110</span> 书上只有「<i>according to the signal theory</i>」这一句，其余 general。<b>被问时先说实验逻辑，人名年份放最后。</b>'},
 {r:'中', q:'How was proinsulin discovered?',
+  ez:'“Generally, by Donald Steiner, in nineteen sixty seven. He labelled a human insulin producing tumour. He used radioactive amino acids. Then he followed the label over time. It appeared first in a single larger chain. Only later did it appear in insulin. So the two chain hormone had to come from a one chain precursor. That precursor was proinsulin. And the piece removed was the C peptide.”',
+  ezcn:'⚠ <b>generally：Donald Steiner，1967 年。</b><b>他用放射性氨基酸标记一个产胰岛素的人类肿瘤，然后随时间追踪标记：它先出现在一条更长的单链上，之后才出现在胰岛素里——所以这个双链激素必定来自一个单链前体。</b><b>那个前体就是胰岛素原，被切掉的那一段是 C 肽。</b>',
  en:'“Generally: Donald Steiner, in 1967, labelled a human insulin-producing tumour with radioactive amino acids and followed the label over time. It appeared first in a single larger chain and only later in insulin, so the two-chain hormone had to come from a one-chain precursor. That precursor was proinsulin, and the piece removed was the C-peptide.”',
  cn:'全条 general；书只有 proinsulin 的结构（p111）。'}
 ]},
@@ -412,9 +418,13 @@ ask:[
  en:'“No. The textbook says secreted proteins are often made as preproteins or preproproteins — often, not always. Generally every protein that enters the ER has a signal, but the propeptide is optional: it is there when activity or assembly has to wait. So pre is the rule, pro is the exception.”',
  cn:'<span class="pg">p110</span> 书上那个词是 <i>often</i>（不是「总是」）。「只有」「都」是邀请函——不要说「所有分泌蛋白都是 preproprotein」。'},
 {r:'中', q:'The textbook says removing the signal turns a preproprotein into a preprotein. Is that right?',
+  ez:'“That line is a slip. Look at the textbook’s own definition. It is on the page before. The pre forms are the ones still carrying the signal sequence. So once the signal is removed the pre is gone. What is left is the proprotein. It still has the propeptide. The example on the same page says it correctly. Preproinsulin minus the signal is proinsulin.”',
+  ezcn:'⚠ <b>那一行（p111）是笔误。</b><b>按书自己在前一页给的定义，pre- 形式指的是「还带着信号序列」的那些；所以信号一被切掉，pre 就没有了，剩下的是 proprotein（还带着前肽）。</b><b>同一页上的例子倒是说对了：胰岛素原前体减去信号就是胰岛素原。</b>',
  en:'“That line on page 111 is a slip. By the textbook’s own definition on the page before, the pre-forms are the ones that still carry the signal sequence. So once the signal is removed, what is left is the proprotein, which still has the propeptide. The example on the same page says it correctly: preproinsulin minus the signal is proinsulin.”',
  cn:'<span class="pg">p111 p110</span> 回 300 dpi 原图核过，书印的就是 preprotein。<b>用书 p110 的定义打书 p111 的这一句</b>，同页的 preproinsulin → proinsulin 例子是第二个证人。'},
 {r:'中', q:'Do mitochondrial proteins use the same signal?',
+  ez:'“Generally, no. Proteins made in the cytosol for the mitochondrion carry their own sequence. It is an N terminal targeting sequence. The pattern is different. Receptors in the mitochondrial membranes read it. S R P does not. And a mitochondrial processing peptidase cuts it off inside. Nuclear proteins are different again. They carry an internal signal that is never cut. The textbook only describes the E R one.”',
+  ezcn:'⚠ <b>generally：不是。</b><b>在胞质里为线粒体合成的蛋白带着自己的 N 端靶向序列——图式不同，由线粒体膜上的受体（不是 SRP）识别，进去之后由线粒体加工肽酶切掉。</b><b>核蛋白又不一样：它们带一个内部的核定位信号，而且从不被切。</b><b>内质网那个信号只是好几个地址中的一个，而书只描述了它。</b>',
  en:'“Generally, no. Proteins made in the cytosol for the mitochondrion carry their own N-terminal targeting sequence. It is a different pattern, read by receptors in the mitochondrial membranes rather than by SRP, and cut off inside by a mitochondrial processing peptidase. Nuclear proteins carry an internal nuclear localisation signal that is never cut. The ER signal is one address among several. The textbook only describes the ER one.”',
  cn:'全条 general；书只有 ER 这一套。别把「signal peptide」说成所有靶向序列的总称。'}
 ]},
@@ -426,9 +436,13 @@ ask:[
  en:'“The modifications of the secretory route are these. N-glycosylation starts in the ER membrane while the chain is still coming through. Disulfide bonds are formed and reshuffled by protein disulfide isomerase in the ER cisternae. Collagen is hydroxylated there and the clotting factors γ-carboxylated. In the Golgi the glycan is finished, the propeptide is cut, and mannose-6-phosphate sends lysosomal proteins off.”',
  cn:'<b>全部在卡 13</b>，这里只说一句。<span class="pg">p111 p112 p113</span>'},
 {r:'中', q:'What is the initiation codon?',
+  ez:'“It is A U G. It codes for methionine. In bacteria it is formylmethionine at the start. A U G also codes internal methionines. So the ribosome needs help finding the right one. It pairs the messenger with its sixteen S r R N A. That happens at the Shine Dalgarno sequence. That sequence is about ten nucleotides upstream. The signal codons come immediately after it.”',
+  ezcn:'<b>起始密码子是 AUG，编码甲硫氨酸（细菌里起始处是甲酰甲硫氨酸）。</b><b>因为 AUG 也编码链内部的甲硫氨酸，核糖体要靠把 mRNA 跟自己的 16S rRNA 在 Shine-Dalgarno 序列处配对来找到正确的那一个（大肠杆菌里约在上游十个核苷酸处）。</b><b>而信号密码子紧跟在起始密码子之后——这就是信号肽在 N 端的原因。</b>',
  en:'“AUG, which codes for methionine, or in bacteria formylmethionine at the start. Because AUG also codes internal methionines, the ribosome finds the right one by pairing the mRNA with its 16S rRNA at the Shine-Dalgarno sequence, about ten nucleotides upstream in E. coli. The signal codons come immediately after it, which is why the signal peptide is N-terminal.”',
  cn:'<span class="pg">p094 p097 p110</span> 翻译那段书（p092–p101）没有题，但这题和卡 12 从两边夹着它。'},
 {r:'中', q:'What other kinds of covalent modulation of enzymes are there?',
+  ez:'“The textbook gives two. The first is reversible phosphorylation. A kinase puts a phosphate on a hydroxyl. That hydroxyl is on serine or threonine or tyrosine. A phosphatase takes it off. The second is the activation of zymogens. Partial proteolysis does it. And that one is irreversible. Both are covalent. But only the first can be undone. Allosteric regulation is the non covalent alternative.”',
+  ezcn:'<b>书给了两种。</b><b>① 可逆的磷酸化：激酶把磷酸装到丝氨酸、苏氨酸或酪氨酸的羟基上，磷酸酶再把它拿下来。</b><b>② 酶原的激活：靠部分蛋白水解，而这一种是不可逆的。</b><b>两者都是共价的，但只有第一种能被撤销；非共价的那条替代路线是别构调节。</b>',
  en:'“The textbook gives two. The first is reversible phosphorylation: a kinase puts a phosphate on a serine, threonine or tyrosine hydroxyl, and a phosphatase takes it off. The second is the irreversible activation of zymogens by partial proteolysis. Both are covalent, but only the first can be undone. Allosteric regulation is the non-covalent alternative.”',
  cn:'<span class="pg">p063 p064 p222</span> 卡 18/19 的地盘。溶酶体（M6P）在卡 13。'}
 ]},
@@ -440,6 +454,8 @@ ask:[
  en:'“The display vector carries a secretion signal in front of the Aga2p fusion. In the standard yeast-display system it is the Aga2p signal sequence itself. Other yeast expression vectors use the α-factor leader, which is a genuine prepro sequence. It has a signal cut by signal peptidase in the ER and a pro-region cut in the Golgi by the Kex2 protease. That protease cleaves after a lysine-arginine pair. Either way the fusion goes through the ER and the Golgi and ends up on the surface.”',
  cn:'<b>lab 知识。</b>具体用的是哪个 leader 看你自己的载体图；考场上说「my vector carries」，不说型号。'},
 {r:'中', q:'And in E. coli?',
+  ez:'“A bacterial signal peptide goes in front of the protein. pel B is one. Omp A is another. It sends the protein through the Sec machinery. The destination is the periplasm. There the bacterial signal peptidase removes the signal. And disulfides can form. The periplasm is oxidising. It has the Dsb enzymes. So the logic is the same as the E R signal. The membrane and the machinery are different.”',
+  ezcn:'<b>细菌里是在蛋白前面加一段细菌信号肽（pelB 或 OmpA），把它经由 Sec 机器送进周质；在那里由细菌的信号肽酶切掉信号，而且二硫键能形成——因为周质是氧化性的，还有 Dsb 那套酶。</b><b>逻辑跟内质网那个信号完全一样：一段 N 端疏水序列，过膜之后被切掉；不同的是膜和机器。</b>',
  en:'“A bacterial signal peptide such as pelB or OmpA in front of the protein sends it through the Sec machinery into the periplasm. There the signal is removed by the bacterial signal peptidase and disulfides can form, because the periplasm is oxidising and has the Dsb enzymes. It is the same logic as the ER signal — a hydrophobic N-terminal stretch, cut off after crossing. The membrane and the machinery are different.”',
  cn:'<b>lab 知识。</b>周质与二硫键在卡 13 也有。'},
 {r:'高', q:'Where do you put the His-tag, and why?',
@@ -448,6 +464,8 @@ ask:[
  en:'“After the signal sequence, or at the C-terminus — never in front of the signal, because everything before the cleavage site leaves with the signal peptide. If the construct also has a pro-region, the tag has to sit after that cleavage site too. And the residues right after the cut affect how efficiently signal peptidase cleaves, so I keep the junction as it is in the parent vector.”',
  cn:'<b>lab 知识。</b>这条是 pre/pro 两个词在实验台上的直接后果，也是他最容易顺着问的一步。'},
 {r:'中', q:'How would you check that the signal was actually cleaved?',
+  ez:'“By the N terminus of the product. N terminal sequencing shows where it starts. Mass spectrometry of the purified protein does too. You compare that with the predicted cleavage site. On a gel the cleaved protein runs slightly smaller. The uncleaved one runs higher. There is a second check. An uncleaved protein would sit in the membrane fraction. It would not be in the secreted fraction.”',
+  ezcn:'<b>看产物的 N 端：对纯化后的蛋白做 N 端测序或质谱，看它是不是从预测的切割位点处开始；胶上，切过的那个比没切的跑得略小一点。</b><b>还有第二重检查：如果信号还在，这个蛋白会待在膜组分里，而不是在分泌组分或周质组分里。</b>',
  en:'“By the N-terminus of the product: N-terminal sequencing or mass spectrometry of the purified protein shows whether it starts where the cleavage site predicts, and on a gel the cleaved protein runs slightly smaller than the uncleaved one. If the signal were still on, the protein would also be sitting in the membrane fraction rather than in the secreted or periplasmic fraction.”',
  cn:'<b>lab 知识。</b>落在测量限制：能看见的是 N 端和大小，不是切的过程。'}
 ]}

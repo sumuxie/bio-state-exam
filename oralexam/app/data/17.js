@@ -330,12 +330,18 @@ ask:[
  en:'“Specificity means the enzyme discriminates. It converts only a particular substrate, which is substrate specificity, and it converts it by only one reaction, which is specificity of action. It comes from the active site, a few side chains arranged in the tertiary structure so that only one substrate fits. The full story is card 18.”',
  cn:'p061。'},
 {r:'中', q:'What does thermolabile mean?',
+  ez:'“Thermolabile means destroyed by heat. The textbook uses it for a reason. Organisms cannot speed their reactions by heating. They are mostly thermolabile. Their catalysts are proteins. Above a critical temperature denaturation wins. It wins over the rate increase. Most enzymes are inactivated around fifty five to sixty degrees. Denaturation means the fold comes apart. The chain itself stays intact.”',
+  ezcn:'<b>热不稳定 ＝ 被热破坏。</b><b>书用这个词是为了解释一件事：生物体不能靠加热来加快自己的反应，因为它们大多是热不稳定的——它们的催化剂是蛋白质，超过某个临界温度，蛋白的热变性就压过了速率的增加。</b><b>大多数酶在 55–60 ℃ 附近失活。</b><b>变性的意思是折叠散开而链本身完好：维持三级结构的那些弱相互作用断了，活性中心也跟着没了。</b>',
  en:'“Destroyed by heat. The textbook’s reason organisms cannot speed their reactions by heating is that they are mostly thermolabile. Their catalysts are proteins, and above a critical temperature thermal denaturation of the protein wins over the rate increase. Most enzymes are inactivated around 55 to 60 degrees. Denaturation means the fold comes apart while the chain stays intact — the weak interactions that hold the tertiary structure break, and with them the active site.”',
  cn:'p054、p058–p059。变性的定义在卡 01。'},
 {r:'中', q:'What is molecular activity — the turnover number?',
+  ez:'“It is the number of substrate molecules one enzyme molecule converts. It is counted per unit time. The textbook uses it as the measure of catalytic capacity. It defines it per minute. The general k cat is per second instead. It comes from V max. The molar mass of the enzyme is needed too.”',
+  ezcn:'<b>分子活性（转换数）＝ 一个酶分子在单位时间里转化多少个底物分子，书拿它当酶催化能力的度量。</b>⚠ <b>书按「每分钟」定义，通用的 kcat 是「每秒」。</b><b>它由 Vmax 和酶的摩尔质量算出来。</b>',
  en:'“The number of substrate molecules one enzyme molecule converts per unit time — the textbook’s measure of an enzyme’s catalytic capacity, defined per minute. The general k cat is per second. It comes from V max and the molar mass of the enzyme.”',
  cn:'p058。报数之前先说清按分钟还是按秒——卡 02 也有这条。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>三个量别混</b>（前两个量的是<b>酶有多少</b>，第三个量的是<b>一个酶分子有多能干</b>）：<br><code>1 U ＝ 每分钟转化 1 μmol 底物所需的酶量</code>（书 p058：标准条件 ＝ 该酶的最适 pH、25 °C）<br><code>1 katal ＝ 每秒转化 1 mol 底物所需的酶量</code>（SI 单位，书 p058）<br><code>MA 分子活性（旧名 turnover number）＝ 一个酶分子每分钟转化的底物分子数</code>（书 p058）<br><br><b>6×10⁷ 是怎么来的</b>（书 p058 直接写了 <code>1 kat = 6×10⁷ U</code>，但它其实只是两次单位换算）：<br>① 摩尔换微摩尔：<code>1 mol = 10⁶ μmol</code>。<br>② 秒换分钟：<code>每秒 ＝ 60 × 每分钟</code>。<br>③ <code>10⁶ × 60 = 6×10⁷</code>。<b>这个数里没有一点生物学，纯粹是单位。</b><br><b>同理 MA 和 k<sub>cat</sub> 之间也只差一个 60</b>：<code>MA（每分钟）= 60 × k<sub>cat</sub>（每秒）</code>。<b>书按分钟，通用文献按秒——报数之前先说按哪个，不然差 60 倍。</b><br><b>MA 怎么从 V<sub>max</sub> 算</b>（书只说「可由 V<sub>max</sub> 和酶的分子量求出」，没写式子）：<code>k<sub>cat</sub> = V<sub>max</sub> ÷ [E]ₜ</code>，而 <code>[E]ₜ = 酶的质量浓度 ÷ 摩尔质量</code>。<b>分子量就是在这一步用掉的</b>——它把「几毫克蛋白」换成「几摩尔分子」。<br><br><b>=== 一句话理解 ===</b><br><b>U 和 katal 回答「这管液体里有多少干活的能力」，MA 和 k<sub>cat</sub> 回答「一个分子一分钟干几件事」。</b>前者不需要知道有几个酶分子（所以纯不纯、分子量知不知道都能报），后者非知道不可——<b>这正是书为什么说「量酶通常用活性而不用克或摩尔」：多数时候你根本不知道有多少分子。</b><br>而 MA 本身就是「酶不被消耗」这句话的<b>数字形式</b>：它能大到每分钟成千上万，唯一的原因是<b>同一个分子被反复用</b>。<b>如果酶是消耗品，MA 最大只能是 1。</b>'},
 {r:'中', q:'What is a biochemical reaction — is it different from a chemical one?',
+  ez:'“Not in its laws. The thermodynamics is the same. So is the kinetics. What differs is the conditions. And the catalyst. A biochemical reaction runs in water. It runs in dilute solution. It runs at low temperature. And it runs near neutral p H. Almost always an enzyme is present. The textbook says most biochemical reactions run only with catalysts. Nearly all of those are enzymes.”',
+  ezcn:'<b>在规律上没有区别——同样的热力学、同样的动力学。</b><b>不同的是条件和催化剂：生化反应在水里、在稀溶液里、在低温和接近中性的 pH 下进行，而且几乎总有一个酶在场。</b><b>书说大多数生化反应只有在催化剂存在时才进行，而这些催化剂几乎全是酶。</b>',
  en:'“Not in its laws — the same thermodynamics and the same kinetics. What is different is the conditions and the catalyst. A biochemical reaction runs in water, in dilute solution, at low temperature and near-neutral pH, and almost always in the presence of an enzyme. The textbook says most biochemical reactions run only in the presence of catalysts, nearly all of them enzymes.”',
  cn:'p016、p061。「biochemical」这个限定词的正面定义。'}
 ]},
@@ -362,15 +368,21 @@ ask:[
  en:'“Because a non-specific catalyst would run every reaction its substrates could undergo, and the textbook says what follows: the cell would very quickly be flooded with unwanted products. Specificity is what turns a bag of a thousand reactions into pathways, each step feeding the next and nothing else. Feedback regulation then keeps a pathway from making more than is needed. The textbook says that minimises the demand for carbon, nitrogen and energy.”',
  cn:'p061（淹没）、p063（反馈抑制节省 C、N、能量）。'},
 {r:'中', q:'Why is dilute solution the point — why not just concentrate the reactants?',
+  ez:'“Because a cell is a dilute solution of thousands of things. It cannot concentrate each pair separately. The enzyme does it locally instead. The textbook puts it well. An enzyme reaction is not really a reaction in solution. It happens in the confined space of the active site. There the substrates are concentrated. They are also correctly oriented. The proximity effect is the textbook’s name for it.”',
+  ezcn:'因为<b>细胞是几千种东西的稀溶液，它没法把每一对反应物单独浓缩起来——酶是在局部替它做这件事</b>。<b>书说得好：酶反应其实不是一个「在溶液里发生」的反应，它发生在活性中心那个受限的小空间里，底物在那里既被浓缩、又被摆正了取向。</b><b>书给这个现象的名字是邻近效应。</b>',
  en:'“Because a cell is a dilute solution of thousands of different things and cannot concentrate each pair separately. The enzyme does it locally. The textbook says an enzyme reaction is not really a reaction in solution. It happens in the confined space of the active site, where the substrates are not only concentrated but correctly oriented. The proximity effect is the textbook’s name for it.”',
  cn:'p061–p062。'}
 ]},
 
 {g:'怎么发现的', gn:'书给了年表，人名年份可以直接用。', items:[
 {r:'中', q:'How was it shown that an enzyme is a protein?',
+  ez:'“By crystallising one. Sumner obtained urease as crystals in nineteen twenty six. The textbook calls it the first enzyme in the crystalline state. Crystals mean a pure defined substance. And that substance was protein. In the thirties three more followed. They were trypsin and pepsin and chymotrypsin. Ostwald had already shown enzymes are catalysts. Buchner had shown fermentation is chemical.”',
+  ezcn:'<b>靠把一个酶结晶出来。</b><b>Sumner 1926 年得到了脲酶的晶体——书称之为第一个处于结晶状态的酶。</b><b>晶体意味着一种纯的、确定的物质，而那个物质是蛋白质。</b><b>1930 年代又有胰蛋白酶、胃蛋白酶、胰凝乳蛋白酶。</b><b>在那之前，Ostwald 1893 年已证明酶是催化剂，Buchner 1897 年已证明发酵是化学过程——那是一个可以从细胞里拿出来的催化剂。</b>',
  en:'“By crystallising one. Sumner obtained urease as crystals in 1926, the first enzyme in the crystalline state, the textbook says. Crystals mean a pure, defined substance, and the substance was protein. In the thirties trypsin, pepsin and chymotrypsin followed. Before that, Ostwald had shown in 1893 that enzymes are catalysts, and Buchner in 1897 that fermentation is a chemical process. That is a catalyst you can take out of the cell. The textbook adds that of the more than three thousand enzymes described since, far from all have been prepared pure.”',
  cn:'p041、p009。「结晶 ＝ 纯物质 ＝ 蛋白质」这个推理是通用史实，书只说「第一个结晶态的酶」。'},
 {r:'中', q:'When was it found that RNA can be an enzyme?',
+  ez:'“In nineteen eighty five, by Cech. The textbook’s timeline records it. It calls it the discovery of enzymatic activity in R N A. The enzyme chapter was written when only one case was known. So it says some other macromolecules may have catalytic ability. Today several ribozymes are standard. The peptidyl transferase of the ribosome is among them. The textbook also uses the idea for the origin of life.”',
+  ezcn:'<b>1985 年，Cech——书的年表里记的是「发现 RNA 具有酶活性」。</b><b>酶那一章是在只知道一个例子的时候写的，所以它的措辞是「另一些大分子也可能有催化能力」。</b><b>今天好几种核酶都是标准内容，核糖体的肽基转移酶就是其中之一。</b><b>书在讲生命起源那一节也用了这个想法：最早能自我复制的分子，可能就是带有某种催化活性的 RNA。</b>',
  en:'“1985, Cech, in the textbook’s timeline — the discovery of enzymatic activity in RNA. The enzyme chapter, written when only one case was described, says some other macromolecules may have catalytic ability. Today several ribozymes are standard, the peptidyl transferase of the ribosome among them. The textbook also uses the idea in its origin-of-life section: the first self-reproducing molecules may have been RNAs with some catalytic activity.”',
  cn:'p009、p042–p043、p019。'}
 ]},
@@ -397,6 +409,8 @@ ask:[
  en:'“Nearly — but the textbook itself says some other macromolecules have catalytic ability, and Cech’s 1985 discovery of catalytic RNA is in its timeline.”',
  cn:'p042–p043、p009。'},
 {r:'中', q:'（陷阱）10¹⁴ over the uncatalysed reaction',
+  ez:'“The textbook’s ten to the fourteenth is for urease. But the comparison is not what people assume. It is against catalysis by hydrogen ions. It is not against the uncatalysed hydrolysis.”',
+  ezcn:'⚠ <b>书给脲酶的那个 10¹⁴，比的不是「没有催化的水解」，而是「氢离子催化」。</b>',
  en:'“The textbook’s ten to the fourteenth for urease is against catalysis by hydrogen ions, not against the uncatalysed hydrolysis.”',
  cn:'p061 原图核过。Lehninger 的同一个数是对不催化说的——按书说。'}
 ]},
@@ -418,6 +432,8 @@ ask:[
  en:'“From the two-step mechanism on this card: binding fast and reversible, the chemical step slower. Steady state on the complex gives v equals V max times substrate over K m plus substrate, with K m equal to k minus one plus k two over k one. That is why K m is an affinity only when the catalytic step is slow.”',
  cn:'卡 02 装着 #4、#20、#21；Km ≠ Kd 那个陷阱也在那里（BOOK_ERRATA 第 5 条）。'},
 {r:'中', q:'→ How is metabolism regulated? (#32)',
+  ez:'“Largely through enzymes. Allosteric enzymes are one way. A metabolite modulates them at a separate site. Covalently modulated enzymes are another. Phosphorylation switches those. Feedback inhibition is the third. The end product inhibits the first enzyme of the pathway.”',
+  ezcn:'<b>主要通过酶：别构酶（某个代谢物在一个单独的位点上调节它）· 共价调节酶（靠磷酸化开关）· 反馈抑制（终产物抑制这条途径的第一个酶）。</b>',
  en:'“Largely through enzymes: allosteric enzymes modulated by a metabolite at a separate site, covalently modulated enzymes switched by phosphorylation, and feedback inhibition of the first enzyme of a pathway by its end product.”',
  cn:'p062–p063。'}
 ]},
@@ -434,6 +450,8 @@ ask:[
  en:'“Only about the first step. K d is the equilibrium constant of the substrate, or ligand, coming off. So it says how tightly the complex forms, and nothing about whether the chemistry then happens. Binding is necessary and not sufficient: the textbook’s own example of that is an inhibitor, which binds and is not converted.”',
  cn:'卡 02、卡 19。'},
 {r:'中', q:'Why does PCR need a polymerase from a thermophile?',
+  ez:'“Because the enzyme has to survive the strand separation step. That step runs near boiling. Most enzymes are inactivated around fifty five to sixty degrees. That is the textbook’s number. Enzymes from thermophilic bacteria are different. They are still active at eighty five. Taq polymerase is one of those. So this is the thermolabile point turned into a tool.”',
+  ezcn:'因为<b>这个酶必须熬过「分开两条链」那一步，而那一步接近沸腾</b>。<b>书给的数是：大多数酶在 55–60 ℃ 失活，而嗜热菌的酶在 85 ℃ 仍有活性——Taq 聚合酶就是其中之一。</b><b>这等于把「热不稳定」那个要点反过来变成了一个工具。</b>',
  en:'“Because the enzyme has to survive the strand-separation step near boiling. Most enzymes are inactivated around 55 to 60 degrees, the textbook’s number, while enzymes from thermophilic bacteria are still active at 85. Taq polymerase is one of those. That is the thermolabile point turned into a tool.”',
  cn:'p059；接 #5（Taq/Kapa，导师写过两遍）。<b>「生物热不稳定」那一条的实验室版本。</b>'}
 ]}

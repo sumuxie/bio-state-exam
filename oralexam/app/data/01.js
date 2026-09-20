@@ -392,6 +392,8 @@ recog:[
 ask:[
 {g:'定义类', gn:'他默认你知道名词，所以专挑名词问。这一组最容易被打个措手不及。', items:[
 {r:'中', q:'What is a domain?',
+  ez:'“A domain is a compact globular region. It is a hundred to four hundred residues. A flexible segment joins it to the rest of the chain. It is not one of the classical four levels. Later work added it. Supersecondary structure was added at the same time. That means clusters of a few secondary structure elements. The beta alpha beta motif is one.”',
+  ezcn:'<b>结构域 ＝ 一块紧实的球状区域，100–400 个残基，由一段柔性片段跟链的其余部分相连。</b><b>它不属于经典的四个层级，是后来的工作补进来的，同时补进来的还有「超二级结构」——几个二级结构元件的小簇，比如 βαβ 基序。</b>',
  en:'“A compact globular region of a hundred to four hundred residues, joined to the rest of the chain by a flexible segment. It is not one of the classical four levels. Later work added it, together with supersecondary structure. That means clusters of a few secondary-structure elements, such as the βαβ motif.”',
  cn:'后补的那一级。给尺寸，并说明它是后来加的。'},
 {r:'实测', q:'What is a hydrogen bond?',
@@ -511,6 +513,8 @@ ask:[
  good:'<b>哪条接、哪条停：</b>②④ 在 bonds 卡上，③ 的碱基堆叠和信号肽各有卡，<b>都可以接</b>。③ 的膜那句说完就停——再往下是脂那道题（#23），还没做。<br><b>他要追「水为什么会有序」</b>：非极性表面不能跟水成氢键，水分子只好在它周围排成笼子来保住彼此的氢键；两个非极性面靠在一起，中间的笼子放掉，熵升高。这是八分答案的第二层，被逼才给。'},
 
 {r:'中', q:'Why does a protein need a hydrophobic core at all?',
+  ez:'“For a globular protein the core selects one conformation. It selects it in water. Take the core away and the chain is a random coil. That is what the textbook says a denatured protein becomes. Fibrillar proteins are the exception. Collagen is held differently. Hydrogen bonds between chains hold it. Glycine packing holds it too. There is no core.”',
+  ezcn:'对<b>球状蛋白</b>来说，<b>疏水核心是「在水里挑出唯一一个构象」的那个东西——把它拿掉，链就是一团无规卷曲，而书说变性蛋白变成的正是这个。</b><b>纤维状蛋白是例外：胶原靠链与链之间的氢键和甘氨酸的紧密堆积维持，不靠核心。</b>',
  en:'“For a globular protein the core is what selects one conformation in water: take it away and the chain is a random coil. That is exactly what the textbook says a denatured protein becomes. Fibrillar proteins are the exception: collagen is held by hydrogen bonds between chains and glycine packing, not by a core.”',
  cn:'这条把 <b>④ 的落点</b>和 <b>denaturation 那一节</b>接在一起：p035 说变性后是 <i>a random or statistical coil</i>。<b>所以「有核心」和「有唯一构象」是同一件事的两种说法。</b>'}
 ]},
@@ -533,6 +537,8 @@ ask:[
  cn:'<b>这就是 Anfinsen 的实验，而书自己写了它</b>（p035），只是没提名字。<b>你可以完全用这本书回答一个通常要引外部文献的问题</b>——这在口试里是最稳的位置。',
  warn:'Anfinsen 这个名字和 ribonuclease 这个体系<b>书里没有</b>，是从记忆写的。核过再主动说出口。<b>而且这句话要跟下一条连着说</b>，只说这一句是不完整的。'},
 {r:'中', q:'How is a protein structure actually determined today?',
+  ez:'“X ray crystallography is the classical route. That is how myoglobin was solved. The textbook also names electron microscopy. Since it was written the field has changed. N M R took over part of it. So did cryo electron microscopy. And so did prediction from sequence.”',
+  ezcn:'<b>经典路线是 X 射线晶体学——肌红蛋白就是这么解出来的；书还点了电子显微镜。</b>⚠ <b>书写成之后，NMR、冷冻电镜和从序列直接预测，已经接管了这个领域相当大的一部分。</b>',
  en:'“X-ray crystallography is the classical route — that is how myoglobin was solved. The textbook also names electron microscopy. Since it was written, NMR, cryo-electron microscopy and prediction from sequence have taken over a large part of the field.”',
  cn:'<b>书只给了两个名字</b>（p008），而且是 2009 年的书。<b>主动说「since it was written」是加分</b>：它显示你知道这本书的年代。<br><br>被追问 AlphaFold 就说它预测的是 folded state，不预测折叠路径——接得上题库 #7 的 folding landscape。'}
 ]},
@@ -556,6 +562,8 @@ ask:[
  en:'“Ferritin stores iron — it can hold up to <b>thirty percent of its mass</b> as iron. Transferrin carries iron in plasma, caeruloplasmin carries copper. And some enzymes need only a trace: carboxypeptidase has <b>zinc</b>, pyruvate decarboxylase <b>manganese</b>, xanthine oxidase <b>molybdenum</b>.”',
  cn:'书 p036–p037 把名字和数字都给齐了，<b>这是典型的 very specific 题弹药</b>。<br><br>结合金属的是哪些基团？书说是<b>羧基、咪唑基、巯基</b>——咪唑基就是 histidine 的侧链，<b>这正是 His-tag 靠的那个基团</b>。<br><br>还有 <b>FeS 蛋白</b>：Fe 与 –SH 和硫离子成的簇，在细菌和植物 <b>ferredoxin</b> 里，管氧化还原。<span class="pg">p036 p037</span>'},
 {r:'中', q:'What is a hemoprotein?',
+  ez:'“A hemoprotein is a conjugated protein. Its non peptide component is haem. Haem is iron held in a complex. A porphyrin holds it. The haemoproteins cover three groups. The oxygen carriers. The cytochromes. And the haem enzymes.”',
+  ezcn:'<b>血红素蛋白 ＝ 非肽部分是血红素的那类结合蛋白；血红素 ＝ 被卟啉络合住的铁。</b><b>这一类包括三组：氧载体、细胞色素、以及血红素酶。</b>',
  en:'“A conjugated protein whose non-peptide component is <b>haem</b> — iron held in a complex with a <b>porphyrin</b>. The haemoproteins are the oxygen carriers, the cytochromes, and the haem enzymes.”',
  cn:'书把它跟其他金属蛋白分开写，理由很具体：<b>其他金属复合物在肽链被切断时就散了，而血红素不会</b>，因为铁是被卟啉抱住的。<span class="pg">p037</span>'},
 {r:'高', q:'Does the sequence really fold the protein by itself?',
@@ -569,9 +577,13 @@ ask:[
  en:'“Yes. There is a whole enzyme family for it: the <b>peptidyl-prolyl cis,trans-isomerases</b>, which catalyse rotation about that specific peptide bond. They are found from bacteria to mammals.”',
  cn:'<b>这条把卡上已有的两个点接成了一条链</b>：肽键几乎总是 trans（p027）→ 例外是 proline 旁 → 而细胞专门派了一个酶系管这件事（p109）。<br><br>能把两章接起来，是这场考试里最划算的动作。<span class="pg">p109 p027</span>'},
 {r:'中', q:'How do you determine the molecular mass of a protein?',
+  ez:'“The classical methods are four. Ultracentrifugation is one. Gel or permeation chromatography is another. Those are the molecular sieves. Electromigration is the fourth. Ordinary methods do not work here. The relative molecular mass is too large. It runs from ten to the fourth to ten to the fifth. For viruses it reaches ten to the seventh.”',
+  ezcn:'<b>经典方法有四种：超速离心 · 凝胶（渗透）层析 · 分子筛 · 电迁移。</b><b>普通方法在这里行不通，因为相对分子质量太大：从 10⁴ 到 10⁵，病毒可到 10⁷。</b>',
  en:'“The classical methods are <b>ultracentrifugation</b>, gel or permeation chromatography, the molecular sieves, and <b>electromigration</b>. Ordinary methods do not work because the relative molecular mass runs from ten to the fourth up to ten to the fifth, and for viruses up to ten to the seventh.”',
  cn:'书 §2.2.6（p037）整节讲这个。<b>方法题是这位老师的口味</b>（他会问「当年怎么发现要用 plasmid」那种题）。<br><br>顺带的一组性质：球状蛋白溶于盐水；溶液有胶体的部分性质（<b>Tyndall 效应、成胶、凝聚</b>），<b>但是均一分散系</b>，这点又像真溶液。<span class="pg">p037</span>'},
 {r:'中', q:'How is the peptide bond formed, and which end do you write first?',
+  ez:'“It is a condensation. The carboxyl of one amino acid joins the next one. It joins its alpha amino group. A molecule of water is lost. The chain is unbranched. And it has two different ends. So there is a convention. The sequence is written from the N terminal residue. It ends at the C terminal one.”',
+  ezcn:'<b>肽键由缩合形成：前一个氨基酸的羧基接后一个的 α-氨基，脱掉一个水分子。</b><b>这条链不分支，而且两端不同，所以有个约定：序列从 N 端残基开始写，到 C 端结束。</b>',
  en:'“It is a condensation: the carboxyl of one amino acid joins the α-amino group of the next, with the loss of a molecule of water. The chain is <b>unbranched</b> and has two different ends, so by convention the sequence is written starting from the <b>N-terminal</b> residue and ending at the C-terminal one.”',
  cn:'书 §2.1.4（p026）。<b>这是一道看上去太简单、因而没人准备的题。</b><br><br>书还在同一处把链拆成两部分：<b>规律重复的主链</b> 和 <b>可变的侧链</b>。你主干里反复说的「主链氢键」就是靠这句话站住的。<span class="pg">p026</span>'}
 ]},
@@ -583,6 +595,8 @@ ask:[
  en:'“The textbook’s own example is sickle-cell haemoglobin: glutamate to valine at position six of the β chain. One charged surface residue becomes a hydrophobic one, and that patch makes the molecules stick to each other.”',
  cn:'<b>这是书内的例子（p027），但它直通你的工作</b>：一个残基改变整个分子的行为，正是 fitness landscape 和 directed evolution 在量的东西。<br><br>接法：“That is the same question I work on experimentally — how much substitution a binding surface tolerates before the fold or the binding is lost.”'},
 {r:'中', q:'You mentioned dissociation constants — what is a Kd?',
+  ez:'“It is the equilibrium constant of the dissociation reaction. So it is free protein times free ligand. That is over the complex. It has units of concentration. And numerically it means one thing. It is the free ligand concentration at half occupancy.”',
+  ezcn:'<b>Kd ＝ 解离反应的平衡常数：游离蛋白 × 游离配体 ÷ 复合物。</b><b>量纲是浓度；数值上就是「半数位点被占据时的游离配体浓度」。</b>',
  en:'“The equilibrium constant of the dissociation reaction: free protein times free ligand over the complex. It has units of concentration, and numerically it is the free-ligand concentration at which half the sites are occupied.”',
  cn:'<b>这一刀是你自己在段 4 故意留的</b>，所以必须接得住。完整答案在卡 02。<br><br>一句话记住方向：<b>Kd 越小结合越紧</b>，因为它是「拆开」的常数。'}
 ]}
