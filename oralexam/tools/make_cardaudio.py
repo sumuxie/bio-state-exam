@@ -11,7 +11,7 @@
 她自己说在本地跑、她来拷，这个决定把问题整个绕开了，所以 audio_out/ 进 .gitignore。
 
 **三个模式，对应她的三种时间。**
-  1-提问：问题 → **8 秒真静音** → 答案。走路、做饭、睡醒那五分钟用。
+  1-提问：问题 → **4 秒真静音** → 答案。走路、做饭、睡醒那五分钟用。
          这个模式是有理由的：她说「脑子里是轮廓而不是内容甚至框架」，
          那是只输入不提取的症状，先想一下再听答案才能把轮廓变成框架。
   2-跟读：一句英文 → 等长静音，她跟一句。**这个才算出声。**
@@ -132,11 +132,12 @@ def track_ask(c):
     out = []
     for g in (c.get('ask') or []):
         for it in (g.get('items') or []):
-            q, a = plain(it.get('q')), quoted(it.get('en'))
+            # R14：有最短版就念最短版。提问模式放的就是她要现说的那一版。
+            q, a = plain(it.get('q')), quoted(it.get('ez') or it.get('en'))
             r = refof(it.get('cn'), it.get('good'), it.get('warn'))
             if is_en(q) and a: out.append((q, ' '.join(a), r))
     for x in (c.get('recog') or []):
-        q, a = plain(x.get('q')), quoted(x.get('say'))
+        q, a = plain(x.get('q')), quoted(x.get('ez') or x.get('say'))
         r = refof(x.get('mean'), x.get('tail'))
         if is_en(q) and a: out.append((q, ' '.join(a), r))
     for row in (c.get('sib') or []):
@@ -238,7 +239,7 @@ def write_mp3(samples, path):
 def main():
     import numpy as np
     args = sys.argv[1:]
-    gap = 8.0
+    gap = 4.0   # 2026-09-20 她定的：「四秒停顿吧 8秒太长了」
     only_mode = None
     ids = []
     i = 0
