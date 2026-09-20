@@ -414,7 +414,7 @@ ask:[
  en:'“It goes into the respiratory chain, the series of electron carriers in the <b>inner mitochondrial membrane</b>, complexes I to IV with ubiquinone and cytochrome c between them. That is a different compartment from the cycle itself. NADH is oxidised by complex I, NADH:ubiquinone oxidoreductase. The electrons go to ubiquinone, complex III, cytochrome c and complex IV, from lower to higher redox potential, and finally to oxygen. Redox potential is the measure of how strongly a redox pair holds its electrons: NADH/NAD⁺ sits at about −0.32 volts, oxygen at +0.82. Protons are pumped into the intermembrane space, and ATP synthase makes ATP by letting them back.”',
  cn:'书 §6.2.4 从 <span class="pg">p141</span> 开始。<b>循环在基质、呼吸链在内膜</b>——这个区室的区别是两道题的分界线（#25 #26）。'},
 {r:'中', q:'Where does succinyl-CoA go if not round the cycle?',
-  ez:'“Into porphyrin synthesis. Succinyl Co A reacts with glycine. Together they give delta aminolevulinate. The enzyme that does it has a name. It is delta aminolevulinate synthase. And the textbook calls it the key regulatory point. It is the key point of porphyrin synthesis.”',
+  ez:'“Into porphyrin synthesis. Succinyl Co A reacts with glycine. Together they give delta aminolevulinate. The enzyme that does it is delta aminolevulinate synthase. The textbook calls it the key regulatory point of porphyrin synthesis.”',
   ezcn:'<b>去卟啉的合成。</b><b>琥珀酰-CoA 跟甘氨酸反应给出 δ-氨基乙酰丙酸；做这件事的酶是 δ-氨基乙酰丙酸合酶，而书称它是卟啉合成的关键调节点。</b>',
  en:'“Into porphyrin synthesis. Succinyl-CoA and glycine give delta-aminolevulinate. The enzyme that does it, delta-aminolevulinate synthase, is the <b>key regulatory point</b> of porphyrin synthesis.”',
  cn:'书 §6.3（<span class="pg">p146</span>）。<b>这条同时接卡 01 的血红素、和 glycine 的去向。</b>'},
