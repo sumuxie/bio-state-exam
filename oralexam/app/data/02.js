@@ -265,6 +265,8 @@ figs:[
 ask:[
 {g:'定义类', gn:'他默认你知道这些词。而这题的每个词都很容易被追。', items:[
 {r:'实测', q:'What is the Michaelis constant?',
+    ez:'“K m is a substrate concentration. At that concentration the initial rate is half of V max. It comes out of the steady state derivation. It equals k minus one plus k two, over k one. Those are the rate constants in the denominator. The denominator belongs to the Michaelis Menten equation. K m has units of concentration. It characterises one enzyme and substrate pair. The textbook reads it as an affinity. That reading is only exact in one case. The catalytic step has to be negligible.”',
+    ezcn:'<b>K<sub>m</sub> 是一个底物浓度</b>：在这个浓度下<b>初速度等于 V<sub>max</sub> 的一半</b>。它从稳态推导里出来，等于 <b>(k₋₁ ＋ k₂) / k₁</b>，也就是米氏方程分母里那组速率常数。<b>单位是浓度</b>，描述的是<b>一对酶和底物</b>。书把它读成亲和力，<b>但那个读法只有在催化那一步可以忽略时才准确</b>。',
  en:'“K m is the <b>substrate concentration at which the initial rate is half of V max</b>. It comes out of the steady-state derivation as k minus one plus k two, over k one. That is the ratio of rate constants in the denominator of the Michaelis-Menten equation. It has units of concentration and characterises one enzyme-substrate pair. The textbook reads it as the affinity of enzyme for substrate, and it is a true dissociation constant only when the catalytic step is negligible.”',
  cn:'p055 印了式子，p056 给了「半饱和的底物浓度」和「有浓度的量纲」。正面定义放前面，Km 对 Kd 的陷阱在同一个答案题那条。'},
 {r:'高', q:'What is a steady state, and how is it different from equilibrium?',
@@ -341,6 +343,8 @@ ask:[
 
 {g:'陷阱', gn:'这题的陷阱密度是所有卡里最高的。', items:[
 {r:'实测', q:'（陷阱）Km 当成亲和力',
+    ez:'“K m is only an affinity in one case. Catalysis has to be slow. It has to be slow compared with the substrate falling back off.”',
+    ezcn:'<b>只有一种情况下 K<sub>m</sub> 才算亲和力</b>：催化这一步<b>比底物掉下来慢得多</b>。否则 K<sub>m</sub> 里混了催化速率，不是纯粹的结合。',
  en:'“K m is only an affinity when catalysis is slow compared with the substrate falling back off.”',
  cn:'见识别表里那一条。<b>书自己前后矛盾，已记进 BOOK_ERRATA 第 5 条。</b>'},
 {r:'高', q:'（陷阱）方向说反',

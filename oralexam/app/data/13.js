@@ -290,6 +290,8 @@ recog:[
 ask:[
 {g:'他会挖的三个方向', gn:'卷面上多出来的每个词，就是一个方向。', items:[
 {r:'实测', q:'Why those two in particular? (critical)',
+    ez:'“Because they are the two general ones. The textbook puts four modifications in the E R. They are glycosylation, disulfide formation, hydroxylation and gamma carboxylation. But hydroxylation belongs to collagen. Gamma carboxylation belongs to the clotting factors. Nearly every surface protein carries an N glycan. Nearly every one carries disulfides too. Neither can be made in the cytosol. The cytosol is reducing. And the transferase faces the E R lumen. So these two mark a protein that went through the secretory route.”',
+    ezcn:'因为<b>它俩是内质网四种修饰里唯二通用的</b>。书列了四种：糖基化、二硫键、羟化、γ-羧化——<b>但羟化是胶原专属，γ-羧化是凝血因子专属</b>。几乎所有表面蛋白和分泌蛋白都带 <b>N-糖</b> 和<b>二硫键</b>。<b>这两样在胞质里都做不出来</b>：胞质是还原环境，而装糖核心的那个转移酶朝着内质网腔。<b>所以这两样就是「这个蛋白走过分泌途径」的标记。</b>',
  en:'“Because they are the two general ones among the ER modifications. The textbook puts four in the ER: glycosylation, disulfide formation, hydroxylation, γ-carboxylation. But hydroxylation is collagen’s and γ-carboxylation belongs to the clotting factors. Nearly every surface or secreted protein carries an N-glycan and disulfides. Neither can be made in the cytosol: it is reducing, and the transferase for the sugar core faces the ER lumen. So these two are the signature of a protein that has been through the secretory route. The textbook itself lists backbone processing as the modification tied to export — signal-sequence cleavage, proinsulin to insulin. That is the entry ticket, and these two are what the folded product carries.”',
  cn:'<b>2026-09-11 就是这一刀没接住。</b>只答 O-glycan / N-glycan 是回答了「哪两个」，没回答「为什么 critical」——<b>而题面本身在问后者</b>。'},
 {r:'高', q:'What do they each do? (surface and secreted)',

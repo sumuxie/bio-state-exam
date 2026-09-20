@@ -301,6 +301,8 @@ ask:[
 
 {g:'最容易混的几对', gn:'乱，通常不是不知道，是两个名字挨得太近。<b>每一对都给一句能当场分开它们的判据。</b>', items:[
 {r:'实测', q:'Transcription or translation — which is which?',
+    ez:'“Transcription is the first copy. Translation is the second reading. The names already say it. Transcription writes the same language down again. It turns D N A bases into R N A bases. So nothing is interpreted. Translation goes into a different language. The alphabet changes from four letters to twenty. That is also why only the second one needs an adaptor.”',
+    ezcn:'<b>转录是第一次抄，翻译是第二次读</b>，名字本身就说了。<b>转录是把同一种语言再写一遍</b>（DNA 碱基 → RNA 碱基），<b>没有任何东西被解释</b>。<b>翻译是换一种语言</b>，字母表从<b>四个变成二十个</b>。<b>所以只有第二步需要一个适配器（tRNA）。</b>',
  en:'“Transcription is the first copy and translation is the second reading. The names say it. Transcription writes the same language down again, DNA bases into RNA bases, so nothing is interpreted. Translation goes into a different language, because the alphabet changes from four letters to twenty. That is also why only the second one needs an adaptor.”',
  cn:'<b>判据一句话：换没换字母表。</b>没换 ＝ 转录；换了 ＝ 翻译。<br><b>这一对必须张口就来</b>，因为它是 #13 那道题的题面里就有的词（post-<b>translational</b>），而她的卡上这个词出现在 10 张卡里却一次没被定义过。'},
 {r:'高', q:'Codogenic, template, antisense, coding — how many strands is that?',

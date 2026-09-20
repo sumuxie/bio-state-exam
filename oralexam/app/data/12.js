@@ -408,6 +408,8 @@ ask:[
 
 {g:'陷阱', gn:'这题最容易在名词的宾语上错——谁结合谁。每条一句改正。', items:[
 {r:'实测', q:'Does the repressor bind the RNA polymerase?',
+    ez:'“No. It binds the DNA. The site it binds is the operator. The operator overlaps the promoter. So when the repressor sits there, polymerase cannot bind. The two proteins never touch. The inducer binds the repressor. The inducer does not bind the DNA.”',
+    ezcn:'<b>不，它结合的是 DNA，是操纵基因（operator）。</b>操纵基因<b>跟启动子重叠</b>，所以阻遏蛋白一坐上去，聚合酶就挂不上——<b>两个蛋白根本不用接触</b>。<b>诱导物结合的是阻遏蛋白，不是 DNA。</b>',
  en:'“No — it binds the DNA, the operator. The operator overlaps the promoter, so with the repressor there polymerase cannot bind. No contact between the two proteins is needed. The inducer, in turn, binds the repressor, not the DNA.”',
  cn:'<b>PESB 那次失分的形状</b>——把两个名字的宾语接错。宾语链：诱导物 → 阻遏物 → 操纵基因；聚合酶 → 启动子。<span class="pg">p104</span>'},
 {r:'高', q:'So lactose induces the lac operon?',

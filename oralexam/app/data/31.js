@@ -382,6 +382,8 @@ ask:[
 ]},
 {g:'陷阱', gn:'这几条几乎每次都会被问，而且都是一句话说错就掉分的那种。', items:[
 {r:'实测', q:'So a coenzyme is a vitamin?',
+    ez:'“No. The vitamin is the raw material. The coenzyme is the finished tool. Nicotinic acid is the vitamin. The cell builds N A D plus out of it. They are not even the same molecule. The vitamin is nicotinic acid. The part the coenzyme carries is nicotinamide. The mapping is also not one to one. Nicotinic acid gives N A D. It gives N A D P as well.”',
+    ezcn:'<b>不是。维生素是原料，辅酶是做好的工具。</b>烟酸是维生素，细胞拿它造出 <b>NAD⁺</b>。<b>两者连分子都不是同一个</b>：维生素是<b>烟酸</b>，辅酶上搬东西的那部分是<b>烟酰胺</b>。<b>而且不是一对一</b>——烟酸同时给出 <b>NAD</b> 和 <b>NADP</b>。',
  en:'“No. The vitamin is the raw material and the coenzyme is the finished tool. Nicotinic acid is the vitamin, and the cell builds NAD-plus out of it. They are not even the same molecule. The vitamin is nicotinic acid and the part the coenzyme carries is nicotinamide. And the mapping is not one to one. Nicotinic acid gives both NAD and NADP.”',
  cn:'<b>这是这张卡的头号陷阱。</b>证据不用外借：书自己的 Table 3.1 里 <b>Coenzyme Q 和 Lipoamide 两行的 vitamin 栏是空的</b>（<span class="pg">p043</span>，已回原图核过）。<b>「人体自己能做这两个」是通用知识，书只留了空格</b>，说的时候分清楚。<br>反方向也别说错：<b>不是所有维生素都变辅酶</b>——A 和 D 都不是。所以准确说法是 “most of the water-soluble vitamins are precursors of coenzymes”。'},
 {r:'高', q:'Are minerals a source of energy?',
