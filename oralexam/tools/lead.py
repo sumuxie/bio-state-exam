@@ -60,7 +60,9 @@ DEF = re.compile(
 NOT_DEF = re.compile(
     r'^(both (?!are\b|is\b)|let me|so let|i (?!mean\b)\w|we \w|you \w|my \w'
     r'|there (are|is|were)\b|it depends|that depends'
-    r'|same\b|they (share|go|differ|are two)|these two'
+    # ⚠「They are two layers of different cells.」「They are two stages of one thing.」
+    #    都是定义，只是主语用了代词。抽检 28 和 08 两条都是误报，撤掉 they 这一条。
+    r'|same\b|these two'
     r'|first,|second,|one axis|two things|three things|four\.|five\.'
     r'|in my (own )?work|in the cell|in practice'
     r'|when |if |before |after |by |with |from |for |at |on |through )', re.I)
@@ -86,7 +88,7 @@ def sentences(t):
 
 # 「按书的说法，……」这种出处状语是限定，不是铺垫，判断之前先剥掉。
 LEADIN = re.compile(r'^(by|in|on|under|according to)\s+(the|this)\s+'
-                    r'(textbook|book|convention)[^,]{0,40},\s*', re.I)
+                    r'(textbook|book|convention)[^,]{0,40},?\s*', re.I)  # 逗号可有可无
 
 
 def lead(t):

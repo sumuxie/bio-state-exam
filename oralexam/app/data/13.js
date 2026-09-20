@@ -19,10 +19,10 @@ cram:[
   en:'“Post-translational modification is the set of processes that turn the nascent polypeptide into the <b>biologically active protein</b>, once the nucleic acids are no longer involved. So nothing in it is <b>encoded by a codon</b>. The textbook counts three kinds: the non-covalent folding and association of the chain, covalent changes to the backbone such as signal-peptide cleavage, and covalent changes to side chains. In the usual narrower sense the term means the covalent ones. And some of those, N-glycosylation for instance, actually begin while the chain is still on the ribosome.”',
   note:'「没有密码子」这条边界一句话挡掉两道题：这题的定义，和 #1 里「hydroxyproline 为什么不算 proteinogenic」。<b>同一个边界，两道题共用。</b>'},
  {n:'02', t:'挑两个',
-  ez:'“Two of them matter most. That is for proteins going to the surface. It also holds for proteins going out of the cell. Those two are N glycosylation and disulfide bond formation.”',
+  ez:'“N glycosylation attaches a sugar core to an asparagine. A disulfide bond links two cysteines, and that bond is covalent. Two of them matter most. That is for proteins going to the surface. It also holds for proteins going out of the cell. Those two are N glycosylation and disulfide bond formation.”',
   ezcn:'<b>对于要去细胞表面、或者要分泌出去的蛋白，最要紧的是两个：N-糖基化 和 二硫键的形成。</b>',
   big:'<b>N-glycosylation</b> 和 <b>disulfide bond formation</b>',
-  en:'“For proteins that go to the surface or out of the cell, two of them matter most: <b>N-glycosylation</b> and <b>disulfide bond formation</b>.”',
+  en:'“N-glycosylation attaches a sugar core to an asparagine side chain, and a disulfide bond is a covalent link between two cysteines. For proteins that go to the surface or out of the cell, two of them matter most: <b>N-glycosylation</b> and <b>disulfide bond formation</b>.”',
   note:'题面里的 <b>two</b> 是导师自己写的——他要的是**挑两个**，不是列一堆。列一堆就答偏了。'},
 
  {g:'为什么偏偏是这两个', gn:'这一格是整题的胜负手。只说名字＝不合格，说清这个＝答对一半。'},
