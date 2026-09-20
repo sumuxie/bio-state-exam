@@ -173,39 +173,57 @@ why:{
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What is enzyme inhibition?',
+  ez:'“Inhibition is a decrease in the rate of an enzyme reaction. A substance causes it. That substance interacts with the enzyme itself. It is called the inhibitor. The general term including activators is modulator. The first division is irreversible against reversible. The two are not described by the same equations. Within the reversible ones there is a second division. It is by which form of the enzyme is bound. The free enzyme. The complex. Or both.”',
+  ezcn:'<b>抑制 ＝ 由某种跟酶本身相互作用的物质引起的酶反应速率下降，那个物质就是抑制剂（把激活剂也包含在内的上位词是 modulator）。</b><b>第一刀是不可逆 vs 可逆，因为这两者不能用同一套方程描述。</b><b>可逆的那一类里，第二刀按「抑制剂结合的是酶的哪一种形式」来切：游离酶 · 酶–底物复合物 · 还是两者都结合。</b>',
  mean:'<b>他真正会说的短句。</b>答案自带结构：上位类 → 第一刀 → 三类 → 依据。',
  say:'“Inhibition is a decrease in the rate of an enzyme reaction caused by a substance that interacts with the enzyme itself — that substance is the inhibitor. The general term including activators is modulator. The first division is irreversible versus reversible, because the two are not described by the same equations. Within the reversible ones the division is by which form of the enzyme the inhibitor binds: the free enzyme, the enzyme–substrate complex, or both.”'},
 
 {q:'Name the types of reversible inhibition.',
+  ez:'“Competitive binds the free enzyme only. Uncompetitive binds the enzyme substrate complex only. Non competitive binds both of them. It binds them with the same affinity. And it binds at a site other than the substrate’s. Mixed inhibition is the general case of that. There the two affinities differ.”',
+  ezcn:'<b>竞争性：只结合游离酶。</b><b>反竞争性：只结合酶–底物复合物。</b><b>非竞争性：两者都结合，亲和力相同，而且结合在底物位点以外的另一个位点上。</b><b>混合型：就是非竞争性的一般情形——两个亲和力不相等。</b><b>报名字的同时报「跟谁结合」，一句一个。</b>',
  mean:'他要清单。<b>报名字的同时报「跟谁结合」，一句一个。</b>',
  say:'“Competitive — binds the free enzyme only. Uncompetitive binds the enzyme–substrate complex only. Non-competitive — binds both, free enzyme and complex, with the same affinity, at a site other than the substrate’s. And mixed, which is the general case of that, where the two affinities differ.”'},
 
 {q:'How can you tell them apart experimentally?',
+  ez:'“By what happens to the two Michaelis Menten parameters. Those are V max and K m. I read them off a Lineweaver Burk plot. That plots one over v against one over substrate. Competitive gives an unchanged maximum velocity. And K m rises. Uncompetitive makes both fall together. Non competitive lowers the maximum velocity. There K m is unchanged. Mixed changes both. Irreversible inhibition shows up differently again.”',
+  ezcn:'<b>看那两个米氏参数（Vmax 和 Km）各自怎么变，读法是 Lineweaver–Burk 双倒数图（1/v 对 1/[S]）。</b><b>竞争性：Vmax 不变、Km 升高。</b><b>反竞争性：两个一起下降。</b><b>非竞争性：Vmax 下降、Km 不变。</b><b>混合型：两个都变。</b><b>不可逆抑制则完全是另一回事——米氏方程根本不再描述它，因为有活性的酶的量本身在变。</b>',
  mean:'<b>方法题。</b>两个参数，四种组合。',
  say:'“By what happens to the two Michaelis–Menten parameters, V max and K m. You read them off a Lineweaver–Burk plot, one over v against one over substrate concentration. Competitive: maximum velocity unchanged, K m rises. Uncompetitive: both fall together. Non-competitive: maximum velocity falls, K m unchanged. Mixed: both change. And irreversible inhibition shows up differently again. The Michaelis–Menten equation stops describing it at all, because the amount of active enzyme is changing.”'},
 
-{q:'Why does adding more substrate rescue one type but not the other?', odd:1,
+{q:'Why does adding more substrate rescue one type but not the other?',
+  ez:'“Because a competitive inhibitor fights the substrate for one site. With enough substrate the substrate wins. So the maximum velocity is still reachable. You just need more substrate to get halfway there. A non competitive inhibitor binds elsewhere. It binds equally well with or without substrate. So substrate cannot displace it. The inhibitor concentration alone sets how much enzyme it occupies. And that fraction does not turn over. So the ceiling itself drops.”',
+  ezcn:'因为<b>竞争性抑制剂是在跟底物抢同一个位点</b>：<b>底物足够多就抢赢了，所以最大速率仍然够得到，你只是需要更多底物才走到一半——Km 升高、Vmax 不变。</b><b>非竞争性抑制剂结合在别的位点上，而且有没有底物它都一样能结合，所以底物顶不掉它；它占住多少酶只由它自己的浓度决定，而那一部分酶不干活——于是天花板本身降下来了。</b>', odd:1,
  mean:'<b>这一问在测你懂不懂那两张图，而不是背没背。</b>',
  say:'“Because a competitive inhibitor is fighting the substrate for the same site. With enough substrate you win, so the maximum velocity is still reachable. You just need more substrate to get halfway there. A non-competitive inhibitor binds at a different site, and equally well whether or not substrate is there — so substrate cannot displace it. The fraction of enzyme it occupies is set by the inhibitor concentration alone, and that fraction does not turn over, so the ceiling itself drops.”'},
 
-{q:'How do nerve agents work?', odd:1,
+{q:'How do nerve agents work?',
+  ez:'“They work as irreversible inhibitors. They bind firmly to enzymes in nerve tissue. The binding is usually covalent. They modify the functional groups there. So the enzyme is permanently inactivated. That is how the textbook defines irreversible inhibition. And the amount of active enzyme is falling. So the kinetics is not Michaelis Menten at all.”',
+  ezcn:'<b>作为不可逆抑制剂起作用</b>：<b>它们牢固地（通常是共价地）结合到神经组织的酶上、修饰那里的功能基团，使酶被永久灭活——这正是书对不可逆抑制的定义。</b><b>因为有活性的酶的量一直在减少，所以这里的动力学根本不是米氏动力学。</b>⚠ <b>具体是哪个酶（乙酰胆碱酯酶）和哪个基团（活性位丝氨酸）书里没有，要说就标 generally。</b>', odd:1,
  mean:'<b>书自己提了这个</b>——不可逆抑制。',
  say:'“As irreversible inhibitors. They bind firmly, usually covalently, to enzymes in nerve tissue and modify the functional groups, so the enzyme is permanently inactivated. That is how the textbook defines irreversible inhibition. Because the amount of active enzyme is falling, the kinetics is not Michaelis–Menten at all.”',
  tail:'⚠ 具体是哪个酶（acetylcholinesterase）和哪个基团（活性位丝氨酸）<b>书里没有</b>。要说就说成 generally：“The textbook does not name it. Generally the enzyme is acetylcholinesterase, and the agent phosphorylates the serine hydroxyl in its active site, so acetylcholine is no longer broken down.”'},
 
-{q:'How do drugs work, biochemically?', odd:1,
+{q:'How do drugs work, biochemically?',
+  ez:'“A large class of them work as reversible inhibitors. The textbook puts it directly. Reversible inhibition by specific metabolites is important. It is an instrument of metabolic regulation. And it is the basis of the action of some drugs. So such a drug borrows a control mechanism. The cell already uses that mechanism itself.”',
+  ezcn:'<b>对很大一类药来说，是作为可逆抑制剂起作用的。</b><b>书有一句现成的：特异代谢物对酶的可逆抑制是代谢调节的重要手段，也是某些药物作用的基础。</b><b>也就是说，这样一个药借用的是细胞自己本来就在用的一套控制机制。</b>', odd:1,
  mean:'<b>书给了一句现成的：</b>可逆抑制是某些药物作用的本质。',
  say:'“For a large class of them, as reversible inhibitors. The textbook puts it directly. Reversible inhibition of enzymes by specific metabolites is an important instrument of metabolic regulation, and the basis of the action of some drugs. A drug that works this way is borrowing a control mechanism the cell already uses.”'},
 
-{q:'Why are heavy metals poisonous?', odd:1,
+{q:'Why are heavy metals poisonous?',
+  ez:'“One reason is non competitive inhibition. Heavy metal ions react with sulfhydryl groups. Those are the thiols of cysteine residues. So they inactivate S H enzymes. Those enzymes need a free cysteine thiol to work. Such groups are often outside the active site. They are still necessary for the enzyme to work. That is the textbook’s usual picture of a non competitive inhibitor. It binds equally with or without substrate.”',
+  ezcn:'<b>原因之一是非竞争性抑制。</b><b>重金属离子跟巯基（半胱氨酸残基上的 SH）反应，于是让「SH 酶」——那些需要一个游离半胱氨酸巯基才能工作的酶——失活。</b><b>这些基团常常在活性中心之外，却仍然是酶工作所必需的；这正是书对非竞争性抑制剂的典型描述：结合在底物位点以外，而且有没有底物它都一样结合。</b>', odd:1,
  mean:'问的是<b>非竞争性抑制</b>那个例子。',
  say:'“One reason is non-competitive inhibition. Heavy-metal ions react with sulfhydryl groups — the thiol of cysteine residues. So they inactivate SH-enzymes, the enzymes that need a free cysteine thiol to work. Those groups are often outside the active site but still necessary for the enzyme to keep working. That is the textbook’s usual picture of a non-competitive inhibitor. It binds the enzyme equally with or without substrate, at a site other than the substrate’s.”'},
 
-{q:'Why is malonate the textbook example?', odd:1,
+{q:'Why is malonate the textbook example?',
+  ez:'“Because it is close enough to succinate to bind. It binds succinate dehydrogenase. But it cannot be dehydrogenated. It has only one C H two between its two carboxyls. So there is no adjacent pair of carbons. Nothing can lose two hydrogens. So it occupies the site and does nothing. It also sits in the citric acid cycle. That step is in the inner membrane. And that step gives F A D H two.”',
+  ezcn:'因为<b>它像琥珀酸像到能结合琥珀酸脱氢酶，却不能被脱氢</b>：<b>它两个羧基之间只有一个 CH₂，没有相邻的一对碳可以各失一个氢，所以它占着位子什么也不干——这是「像到能结合但不能反应」最干净的例子。</b><b>而且它正好坐在柠檬酸循环上，就在那个唯一位于内膜、产 FADH₂ 的步骤。</b>', odd:1,
  mean:'<b>因为它是「像到能结合但不能反应」的最干净的例子。</b>而且它连着卡 24。',
  say:'“Because it is close enough to succinate to bind succinate dehydrogenase, but it cannot be dehydrogenated. It has only one CH₂ between its two carboxyls, and no adjacent pair of carbons to lose two hydrogens from. So it occupies the site and does nothing. It also happens to sit in the citric acid cycle, at the one step that is in the inner membrane and gives FADH₂.”'},
 
 {q:'Can an inhibitor be useful rather than harmful?',
+  ez:'“There are three ways. Irreversible inhibitors are used to study enzyme structure. Reversible ones report on substrate specificity. They also report on the structure of the active site. And there is a third way, inside the cell. Reversible inhibition by specific metabolites is used there. It is one of the main instruments of metabolic regulation.”',
+  ezcn:'<b>三条用途，书全给了：① 不可逆抑制剂用来研究酶的结构；② 可逆抑制剂用来报告底物专一性和活性中心的结构；③ 在细胞自己身上——特异代谢物造成的可逆抑制，是代谢调节的主要手段之一。</b>',
  mean:'<b>三个用途，书全给了。</b>',
  say:'“Three ways. Irreversible inhibitors are used to study enzyme structure. Reversible ones report on substrate specificity and on the structure of the active site. And in the cell itself, reversible inhibition by specific metabolites is one of the main instruments of metabolic regulation.”'}
 ],

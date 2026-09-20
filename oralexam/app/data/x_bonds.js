@@ -259,26 +259,38 @@ figs:[
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'What forces hold a protein together?',
+  ez:'“Covalently there are two. The peptide bonds of the backbone. And the disulfide bridges. Non covalently there are three. Hydrogen bonds. Ion pairs. And van der Waals contacts. Underneath all of those there is one more thing. It is the hydrophobic effect. And it is not a bond at all. It is the entropy of the water.”',
+  ezcn:'<b>共价的两种：主链的肽键，和二硫桥。</b><b>非共价的三种：氢键 · 离子对 · 范德华接触。</b><b>而在这些底下还有一样东西：疏水效应——它根本不是一种键，它是水的熵。</b><b>按级给，不要一股脑列。</b>',
  mean:'共价两种 ＋ 非共价三种 ＋ 一个驱动力。<b>按级给，不要一股脑列。</b>',
  say:'“Covalently, the peptide bonds of the backbone and the disulfide bridges. Non-covalently, hydrogen bonds, ion pairs and van der Waals contacts. And underneath those, the hydrophobic effect — which is not a bond at all, it is the entropy of the water.”'},
 
 {q:'What kind of bond joins two nucleotides?',
+  ez:'“A phosphodiester bond. One phosphate is esterified to two hydroxyls. It forms between two pentoses. It joins the three prime hydroxyl of one. And the five prime hydroxyl of the next. It is usually three prime to five prime. That holds in both D N A and R N A. The textbook adds one thing. R N A can also form two prime to five prime.”',
+  ezcn:'<b>磷酸二酯键：一个磷酸酯化到两个羟基上——一个戊糖的 3′-OH 和下一个戊糖的 5′-OH 之间。</b><b>DNA 和 RNA 里通常都是 3′→5′；书补了一句：RNA 也能形成 2′-5′。</b>',
  mean:'phosphodiester，而且要给 <b>3′–5′</b>。',
  say:'“A phosphodiester bond — one phosphate esterified to two hydroxyls, formed between the 3′-hydroxyl of one pentose and the 5′-hydroxyl of the next. It is usually 3′→5′ in both DNA and RNA, and the textbook adds that RNA can also form 2′-5′.”'},
 
-{q:'Why is DNA negatively charged?', odd:1,
+{q:'Why is DNA negatively charged?',
+  ez:'“Because of the phosphodiester backbone. The phosphate has four oxygens. Two of them are in ester links. Those go to the two sugars. The other two are free. And they share one negative charge. At p H seven the group is fully ionised. Those are the textbook’s words. So there is one negative charge per nucleotide.”',
+  ezcn:'因为<b>磷酸二酯骨架</b>：<b>磷酸的四个氧里，两个用在跟两个糖的酯键上，剩下两个是游离的，共享一个负电荷。</b><b>书的原话是：在 pH 7 时这个基团完全电离。</b><b>所以每个核苷酸带一个负电荷。</b>', odd:1,
  mean:'还是 phosphodiester。<b>一个磷酸用掉两个羟基，还剩一个负电荷。</b>',
  say:'“Because of the phosphodiester backbone. Two of the phosphate’s four oxygens are in ester links to the two sugars, the other two are free and share one negative charge. At pH 7 the group is fully ionised — the textbook’s words. So one negative charge per nucleotide.”'},
 
-{q:'Why does soap denature proteins?', odd:1,
+{q:'Why does soap denature proteins?',
+  ez:'“Soap is a detergent. A detergent is amphipathic. So it gets in between the nonpolar side chains. It then takes away the hydrophobic effect. That effect was holding the core together. The textbook lists detergents as chemical denaturants. It lists them with urea and guanidine. It also notes one difference from heat. They do not cause coagulation.”',
+  ezcn:'<b>肥皂是去垢剂，而去垢剂是两亲的</b>：<b>它挤进那些非极性侧链之间，把原本把疏水核心攥在一起的疏水效应拿走。</b><b>书把去垢剂跟尿素、胍一起列为化学变性剂，并指出它们跟热不一样——不引起凝固。</b>', odd:1,
  mean:'问的是<b>疏水效应</b>——不是三种键里的任何一种。',
  say:'“Soap is a detergent, and a detergent is amphipathic, so it gets between the nonpolar side chains and takes away the hydrophobic effect that was holding the core together. The textbook lists detergents together with urea and guanidine as chemical denaturants — and notes that unlike heat, they do not cause coagulation.”'},
 
-{q:'Why does a change of pH destroy a protein?', odd:1,
+{q:'Why does a change of pH destroy a protein?',
+  ez:'“Because an ion pair needs both partners charged. Change the p H far enough and one of them loses its charge. It may be the acidic side chain. It may be the basic one. Then every salt bridge holding the fold simply stops existing. The textbook lists strong acids and bases. It lists them among the chemical denaturants.”',
+  ezcn:'因为<b>离子对要求双方都带电</b>：<b>pH 变得够远，酸性侧链或碱性侧链就失去电荷，于是维持折叠的每一个盐桥干脆就不存在了。</b><b>书把强酸和强碱列在化学变性剂里。</b>', odd:1,
  mean:'问的是 <b>ion pair</b> 依赖电荷。',
  say:'“Because ion pairs need both partners charged. Change the pH far enough and the acidic or the basic side chain loses its charge, and every salt bridge holding the fold together simply stops existing. The textbook lists strong acids and bases among the chemical denaturants.”'},
 
-{q:'What does the nickel in a His-tag column actually bind?', odd:1,
+{q:'What does the nickel in a His-tag column actually bind?',
+  ez:'“It binds the imidazole ring of histidine. The ring nitrogen must be unprotonated. That nitrogen donates its lone pair. It donates it into an empty orbital of the immobilised nickel. That is a coordination bond. The textbook lists exactly those groups. They are the ones that form complexes with metals. Carboxyl. Imidazole. And sulfhydryl.”',
+  ezcn:'<b>它结合的是组氨酸的咪唑环。</b><b>未质子化的那个环氮把自己的孤对电子给进固定化 Ni²⁺ 的一个空轨道——这是配位键。</b><b>书列出的能跟金属形成配合物的基团正好就是这几个：羧基 · 咪唑 · 巯基。</b>⚠ <b>这条是 PESB 那次的失分点：不是 histidine binds lysine，也不是靠芳香环。</b>', odd:1,
  mean:'问的是 <b>coordination bond</b>。',
  say:'“The imidazole ring of histidine. The unprotonated ring nitrogen donates its lone pair into an empty orbital of the immobilised Ni²⁺ — a coordination bond. The textbook lists exactly that group as the ones that form complexes with metals — carboxyl, <b>imidazole</b> and sulfhydryl.”',
  tail:'⚠ 这条是 PESB 那次的失分点。<b>不是 histidine binds lysine，也不是靠芳香环。</b>往下追到「哪个空轨道」就说停止句。'}

@@ -288,44 +288,64 @@ figs:[
 /* ---------------- 同一个答案，不同问法 ---------------- */
 recog:[
 {q:'The citric acid cycle.',
+  ez:'“It is a closed sequence of eight reactions. It runs in the mitochondrial matrix. It oxidises the acetyl group of acetyl Co A. The products are two carbon dioxide. And the hydrogen goes to N A D plus and F A D. It is where the catabolic pathways converge. Sugar and fat arrive as acetyl Co A. Amino acids arrive there too. Per acetyl group it gives three N A D H. It also gives one F A D H two and one G T P.”',
+  ezcn:'<b>柠檬酸循环 ＝ 线粒体基质里由八个反应组成的一个闭合序列：把乙酰-CoA 的乙酰基氧化成两个 CO₂，把氢交给 NAD⁺ 和 FAD。</b><b>它是各条分解代谢途径汇合的地方——糖和脂肪以乙酰-CoA 的形式进来，氨基酸从那里或者从 2-氧代戊二酸、琥珀酰-CoA、延胡索酸、草酰乙酸进来。</b><b>每个乙酰基给出 3 个 NADH、1 个 FADH₂、1 个 GTP——所以它真正产的是还原力，不是 ATP；ATP 是后面在呼吸链里出来的。</b>',
  mean:'他也可能说 “Tell me about the citric acid cycle.”。<b>他真正会说的那句，比卷面短得多。</b>所以答案要自带结构：是什么 → 在哪 → 产什么 → 意义，然后才是步骤。<b>不要一上来就背八步。</b>',
  say:'“It is the closed sequence of eight reactions in the mitochondrial matrix that oxidises the acetyl group of acetyl-CoA to two CO₂ and hands the hydrogen to NAD⁺ and FAD. It is where the catabolic pathways converge — sugar and fat arrive as acetyl-CoA, amino acids there, or as 2-oxoglutarate, succinyl-CoA, fumarate or oxaloacetate. Per acetyl group it gives three NADH, one FADH₂ and one GTP — so what it really produces is reducing power, not ATP. The ATP comes later, in the respiratory chain.”'},
 
 {q:'How much ATP does the citric acid cycle produce?',
+  ez:'“Directly it produces one G T P per turn. That is all of it. People usually quote twelve per acetyl group. Eleven of those are made by the respiratory chain. The chain makes them from what the cycle hands over. That is three N A D H and one F A D H two. The twelfth one is that G T P.”',
+  ezcn:'⚠ <b>这是陷阱问法，直接报数字就上钩了——先纠正前提。</b><b>它直接产的只有每圈一个 GTP，就这些。</b><b>通常说的「每个乙酰基 12 个」里，有 11 个是呼吸链用循环交给它的 3 个 NADH 和 1 个 FADH₂ 造出来的；第 12 个才是那个 GTP。</b>',
  mean:'<b>陷阱问法。</b>直接报数字就上钩了——先纠正前提。',
  say:'“Directly, one GTP per turn — that is all. Of the twelve usually quoted per acetyl group, eleven are made by the respiratory chain from the three NADH and one FADH₂ the cycle hands it. The twelfth is that GTP.”'},
 
 {q:'Which step is regulated?',
+  ez:'“The textbook singles out one enzyme. It is citrate synthase, the first step. A T P inhibits it strongly. In some organisms N A D H does too. That makes sense. Both are the products the cycle exists to make. The standard account adds two more enzymes. Isocitrate dehydrogenase is one. The two oxoglutarate dehydrogenase complex is the other. All three are inhibited by A T P and N A D H. And A D P activates them.”',
+  ezcn:'<b>书只点了一个调节酶：第一步的柠檬酸合酶，被 ATP 强烈抑制，某些生物里也被 NADH 抑制。</b><b>这很合理——这两样正是循环存在的目的产物。</b><b>通用的说法再加两个：异柠檬酸脱氢酶和 2-氧代戊二酸脱氢酶复合体。</b><b>三个都被 ATP 和 NADH 抑制、被 ADP 激活，所以细胞富能时循环就慢下来。</b>',
  mean:'书只点了一个调节酶，报它，并给抑制剂。',
  say:'“The textbook singles out citrate synthase, the first step, strongly inhibited by ATP and in some organisms by NADH. That makes sense: both are the products the cycle exists to make. The standard account adds isocitrate dehydrogenase and the 2-oxoglutarate dehydrogenase complex. All three are inhibited by ATP and NADH and activated by ADP, so the cycle slows when the cell is energy-rich.”'},
 
-{q:'Why do you get more energy from fat than from sugar?', odd:1,
+{q:'Why do you get more energy from fat than from sugar?',
+  ez:'“Because fat is more reduced. A fatty acid is a chain of C H two groups. It carries no oxygen. Every carbon of glucose already carries an oxygen. So per carbon fat has more hydrogen to give away. It gives it to N A D plus and F A D. The textbook gives two figures. Glucose is minus two thousand eight hundred and seventy. Palmitic acid is minus eleven thousand three hundred and forty. Per carbon that is about one and a half times more.”',
+  ezcn:'因为<b>脂肪被还原得更彻底</b>：<b>脂肪酸是一串光秃秃的 CH₂，不带氧；而葡萄糖的每一个碳上已经挂了一个氧。</b><b>所以按碳算，脂肪身上还剩下更多能交给 NAD⁺ 和 FAD 的氢，也就是更多送进呼吸链的电子。</b><b>书给的数：葡萄糖 −2870 kJ/mol（六碳，约每碳 −478），软脂酸 −11340（十六碳，约每碳 −709）——709 ÷ 478 ≈ 1.5，是「每个碳多一半」，不是「总量多四倍」。</b><b>两者烧在同一个循环里，β-氧化只是把脂肪以乙酰-CoA 的形式送进来。</b>', odd:1,
  mean:'<b>听起来是营养学题。</b>答案是脂肪酸 β-氧化产出更多 acetyl-CoA 进入同一个循环，加上脂更还原。',
  say:'“Because fat is more <b>reduced</b>. A fatty acid is a chain of CH₂ groups with no oxygen, while every carbon of glucose already carries an oxygen. So per carbon, fat has more hydrogen to hand to NAD⁺ and FAD, and more electrons for the respiratory chain. The textbook’s figures: glucose −2 870 kJ per mole, palmitic acid −11 340 — about one and a half times more per carbon. Both are burned in the same cycle. In β-oxidation the fat is simply delivered as acetyl-CoA. That is the mitochondrial breakdown of an activated fatty acid, acyl-CoA: it oxidises the β-carbon and cuts off two carbons at a time as acetyl-CoA, with one FADH₂ and one NADH per cut.”',
  tail:'「更还原」这层书没有直接说，但 p135 给了数字（葡萄糖 −2 870、棕榈酸 −11 340 kJ/mol），按碳算约 1.5 倍——拿数字说比拿理论说稳。β-氧化 p220。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>每个碳能放多少能量 = ΔG°′ ÷ 碳数</code><br><br><b>三步推导</b>（「1.5 倍」是这么来的，书只给了前两个数）：<br>① 葡萄糖是六碳：<code>−2 870 ÷ 6 ≈ −478 kJ/mol 每碳</code>。<br>② 棕榈酸是十六碳：<code>−11 340 ÷ 16 ≈ −709 kJ/mol 每碳</code>。<br>③ <code>709 ÷ 478 ≈ 1,5</code>。所以是「<b>每个碳</b>多一半」，不是「总量多四倍」——总量的差只是因为棕榈酸的链更长。<b>不按碳归一化就没法比，这一步是这条答案的全部要害。</b><br><br><br><b>=== 一句话理解 ===</b><br>一个碳能放多少能量，看的是<b>它身上还挂着几个氢</b>：氢是电子的运输工具，而分子唯一能交给 NAD⁺ 和 FAD 的就是氢。<br>糖的<b>每一个碳都已经挂着一个氧</b>（等于半路上已经被氧化过一次），脂肪酸的碳是光秃秃的 CH₂，<b>所以糖的每个碳只剩下大约三分之二的路可走</b>。<br><b>「脂肪能量高」不是密度上的比喻，是每个碳的氧化态之差</b>——这样说比报营养学那种「每克多少千卡」稳得多。'},
 
-{q:'Why can’t you turn fat into sugar?', odd:1,
+{q:'Why can’t you turn fat into sugar?',
+  ez:'“Because two carbons enter as the acetyl group. And two carbons leave as carbon dioxide. So there is no net carbon left. Nothing remains to build glucose from. The textbook says it directly. The animal cannot turn acetyl Co A back into pyruvate. So it cannot make sugar from fat. The textbook does give one exception. It is the glyoxylate cycle. Bacteria and germinating oil seeds use it.”',
+  ezcn:'因为<b>进去两个碳（乙酰基），出来两个碳（CO₂），净剩的碳是零——没有东西可以拿去造葡萄糖</b>。<b>书直接说：动物不能把乙酰-CoA 变回丙酮酸，所以造不出糖。</b><b>书给的例外是乙醛酸循环：细菌和萌发的油料种子用它绕过那两次脱羧——这正是它们能靠乙酸生长的原因。</b><b>一个「不能」加一个书里的例外，正是 researcher 的答法。</b>', odd:1,
  mean:'<b>问的是乙酰基的两个碳全变成 CO₂ 出去了。</b>而且书给了唯一的例外。',
  say:'“Because two carbons enter as the acetyl group and two leave as CO₂, so there is no net carbon left to build glucose from. The textbook says it directly: the animal cannot turn acetyl-CoA back into pyruvate, so it cannot make sugar from fat. The exception the textbook gives is the <b>glyoxylate cycle</b>. Bacteria and germinating oil seeds use it to bypass the two decarboxylations, which is exactly why they can grow on acetate.”',
  tail:'<b>这一条非常好用</b>：一个「不能」加一个书里的例外，正是 researcher 的答法。<span class="pg">p140 p141</span>'},
 
-{q:'Why does the cycle keep running even when the cell has plenty of ATP?', odd:1,
+{q:'Why does the cycle keep running even when the cell has plenty of ATP?',
+  ez:'“It slows down. But it does not stop. It slows because A T P inhibits citrate synthase. It does not stop because the cycle is also a supply depot. Two oxoglutarate and oxaloacetate are carbon skeletons. They become glutamate and aspartate. Succinyl Co A is the precursor of porphyrins. Those are needed whatever the A T P level is. Draining them lowers oxaloacetate. So anaplerotic reactions refill it.”',
+  ezcn:'<b>它会慢下来，但不会停。</b><b>慢，是因为柠檬酸合酶被 ATP 抑制；不停，是因为这个循环同时还是一个供货仓库：2-氧代戊二酸和草酰乙酸是谷氨酸和天冬氨酸的碳骨架，琥珀酰-CoA 是卟啉的前体——不管细胞缺不缺 ATP，这些都得有。</b><b>抽走它们会把草酰乙酸拉低，所以要靠回补反应（首先是丙酮酸羧化酶）把它补回来。</b>', odd:1,
  mean:'问的是<b>它不只是分解</b>——留口子那一格。',
  say:'“It slows, but it does not stop. It slows because citrate synthase is inhibited by ATP. It does not stop because the cycle is also a supply depot. 2-oxoglutarate and oxaloacetate are the carbon skeletons for glutamate and aspartate, and succinyl-CoA is the precursor of porphyrins. Those are needed whether or not the cell needs ATP. Draining them lowers oxaloacetate, so anaplerotic reactions, above all pyruvate carboxylase, refill it.”'},
 
 {q:'What is acetyl-CoA and why is it special?',
+  ez:'“It is a thioester. The acetyl group is bound to the free S H of coenzyme A. The textbook says thioesters are generally very reactive. It calls acetyl Co A a macroergic compound. That reactivity is the point. It is what lets its methyl group react in the first step. That step is an aldol condensation with oxaloacetate.”',
+  ezcn:'<b>它是一个硫酯：乙酰基接在辅酶 A 游离的 SH 上。</b><b>书说硫酯一般都非常活泼，并把乙酰-CoA 称为高能化合物。</b><b>那个活泼性正是要点——它让乙酰基上的甲基能在第一步跟草酰乙酸做羟醛缩合。</b>',
  mean:'接<b>化学键</b>那张横向卡。',
  say:'“It is a <b>thioester</b> — the acetyl group is bound to the free SH of coenzyme A. The textbook calls thioesters generally very reactive and acetyl-CoA a macroergic compound. That reactivity is what lets its methyl group do the aldol condensation with oxaloacetate in the first step.”'},
 
 {q:'Which steps produce CO₂?',
+  ez:'“Two steps do. Isocitrate goes to two oxoglutarate. Then two oxoglutarate goes to succinyl Co A. The textbook makes a general point here. Two reaction types are the main sources of carbon dioxide. One is the decarboxylation of beta keto acids. The other is the oxidative decarboxylation of two oxo acids. And this cycle uses one of each. A dehydrogenase complex does the oxidative one. The other one happens spontaneously.”',
+  ezcn:'<b>两步：异柠檬酸 → 2-氧代戊二酸，以及 2-氧代戊二酸 → 琥珀酰-CoA。</b><b>书顺带给了一个通则：生化体系里 CO₂ 的两大来源是 β-酮酸的脱羧和 2-氧代酸的氧化脱羧，而这个循环两种各用了一次。</b><b>2-氧代酸（＝ α-酮酸）的酮基在羧基旁边那个碳上（丙酮酸、2-氧代戊二酸）；β-酮酸（＝ 3-氧代酸）的再往下一个碳（草酰琥珀酸、草酰乙酸）。</b><b>前者由脱氢酶复合体氧化脱羧，后者自发脱羧。</b>',
  mean:'两步，而且书给了它们的共同机制。',
  say:'“Two: isocitrate to 2-oxoglutarate, and 2-oxoglutarate to succinyl-CoA. The textbook notes that the decarboxylation of <b>beta-keto acids</b> and the oxidative decarboxylation of <b>2-oxo acids</b> are the two main sources of CO₂ in biochemical systems. And the cycle uses one of each. A 2-oxo acid, also called an α-keto acid, has its keto group on the carbon next to the carboxyl: pyruvate, 2-oxoglutarate. A β-keto acid, or 3-oxo acid, has it one carbon further along: oxalosuccinate, oxaloacetate. The first is decarboxylated oxidatively by a dehydrogenase complex. The second decarboxylates spontaneously.”'},
 
 {q:'Which step gives FADH₂ rather than NADH?',
+  ez:'“Succinate goes to fumarate. Succinate dehydrogenase does it. Two things are unusual about that enzyme. Its F A D is covalently bound. It is not a free coenzyme. And the enzyme sits in the inner membrane. It does not sit in the matrix.”',
+  ezcn:'<b>琥珀酸 → 延胡索酸，由琥珀酸脱氢酶完成。</b><b>这个酶有两处特别：它的 FAD 是共价结合的，不是游离的辅酶；而且它坐在内膜上，不在基质里。</b>',
  mean:'一步，而且它有两个特别之处。',
  say:'“Succinate to fumarate, by succinate dehydrogenase. Two things are unusual about it: the FAD is <b>covalently</b> bound rather than a free coenzyme, and the enzyme sits in the inner membrane rather than in the matrix.”'},
 
 {q:'What is substrate-level phosphorylation?',
+  ez:'“It is the formation of A T P or G T P in a particular way. A phosphoryl group is transferred directly onto A D P. It comes from a high energy substrate intermediate. A soluble enzyme does it. There is no membrane and no proton gradient. The textbook’s example is one three bisphosphoglycerate. That is in glycolysis. In this cycle it happens once. Succinyl Co A is macroergic. It reacts with G D P and inorganic phosphate.”',
+  ezcn:'<b>底物水平磷酸化 ＝ 把一个磷酰基从某个高能的底物中间物上直接转到 ADP 或 GDP 上，从而生成 ATP 或 GTP。</b><b>做这件事的是一个可溶的酶：不涉及膜，也不涉及质子梯度。</b><b>书的例子是糖酵解里的 1,3-二磷酸甘油酸。</b><b>这个循环里只发生一次：琥珀酰-CoA 是高能的硫酯（水解能约 30 kJ/mol），所以它不是白白水解，而是跟 GDP 和无机磷酸反应生成 GTP，那个磷酸随后可以再交给 ADP。</b>',
  mean:'循环里只有一处，正好当例子。',
  say:'“Substrate-level phosphorylation is the formation of ATP or GTP by transferring a phosphoryl group from a high-energy substrate intermediate directly onto ADP or GDP. A soluble enzyme does it — no membrane, no proton gradient. The textbook’s example is 1,3-bisphosphoglycerate in glycolysis. In this cycle it happens once. Succinyl-CoA is macroergic, a thioester with about 30 kJ per mole of hydrolysis energy. So instead of just hydrolysing, it reacts with GDP and inorganic phosphate to give GTP, and that phosphate can be handed on to ADP.”'}
 ],
