@@ -395,11 +395,13 @@ ask:[
 
   {r:'中', q:'（陷阱）说 LoxP 的方向无所谓',
    ez:'“Direction decides what Cre does. Two Lox P sites pointing the same way give a deletion. Cre joins them and removes everything between. Two pointing opposite ways give an inversion instead. So the targeting vector places both sites in the same orientation. Otherwise the piece is turned round rather than removed.”',
-   ezcn:'⚠ <b>方向决定 Cre 干什么。</b><b>两个同向的 LoxP 给出删除：Cre 把它们接起来、去掉中间的一切。</b><b>两个反向的给出的是倒位。</b><b>所以打靶载体把两个位点放成同一个方向——否则那一段是被翻过来，而不是被拿走。</b>'},
+   ezcn:'⚠ <b>方向决定 Cre 干什么。</b><b>两个同向的 LoxP 给出删除：Cre 把它们接起来、去掉中间的一切。</b><b>两个反向的给出的是倒位。</b><b>所以打靶载体把两个位点放成同一个方向——否则那一段是被翻过来，而不是被拿走。</b>',
+   en:'“Direction decides what Cre does. Two LoxP sites pointing the same way give a deletion, because Cre joins them and removes everything lying between. Two pointing in opposite directions give an inversion instead. So the targeting vector places both sites in the same orientation. Otherwise the piece is turned round rather than taken out.”'},
 
   {r:'中', q:'（陷阱）把 PAM 说成靶序列的一部分',
    ez:'“The P A M is next to the target and not in it. The guide is complementary to the twenty bases of the protospacer. The P A M follows immediately after them. It is not part of what the guide pairs with. And the cut falls three bases upstream of it. So the P A M limits where a cut can be aimed. It does not tell you what the guide should be.”',
-   ezcn:'⚠ <b>PAM 在靶序列旁边，不在靶序列里面。</b><b>引导序列互补的是原型间隔序列那 20 个碱基，而 PAM 紧跟在它们后面，不属于引导序列配对的那一段；切点落在 PAM 上游第三个碱基处。</b><b>所以 PAM 限制的是「刀能瞄到哪里」，它不告诉你引导序列该是什么。</b>'}
+   ezcn:'⚠ <b>PAM 在靶序列旁边，不在靶序列里面。</b><b>引导序列互补的是原型间隔序列那 20 个碱基，而 PAM 紧跟在它们后面，不属于引导序列配对的那一段；切点落在 PAM 上游第三个碱基处。</b><b>所以 PAM 限制的是「刀能瞄到哪里」，它不告诉你引导序列该是什么。</b>',
+   en:'“The PAM sits next to the target rather than inside it. The guide is complementary to the twenty bases of the protospacer, and the PAM follows immediately after them, so it is not part of what the guide pairs with. The cut itself falls three bases upstream of it. The PAM therefore limits where a cut can be aimed. It does not tell you what the guide sequence should be.”'}
  ]},
 
  {g:'相邻考点', gn:'从这道题最容易走到哪儿。', items:[
@@ -410,15 +412,18 @@ ask:[
 
   {r:'中', q:'（走向 16）What is homologous recombination, exactly?',
    ez:'“It is an exchange between two matching sequences. One is the D N A you introduce. The other is the chromosomal site that matches it. The exchange copies in what lies between the two matching arms. It happens on its own but very rarely. And it is also one of the two repair routes after a double strand break. There it works against an intact template.”',
-   ezcn:'<b>同源重组 ＝ 两段互相匹配的序列之间的交换</b>：<b>一段是你导入的 DNA，另一段是染色体上与之对应的位点；交换把两条同源臂之间的东西拷贝进去。</b><b>它自己会发生，但非常罕见。</b><b>而且它同时也是双链断裂之后的两条修复路线之一——在那里它以一份完好的拷贝为模板。</b>'},
+   ezcn:'<b>同源重组 ＝ 两段互相匹配的序列之间的交换</b>：<b>一段是你导入的 DNA，另一段是染色体上与之对应的位点；交换把两条同源臂之间的东西拷贝进去。</b><b>它自己会发生，但非常罕见。</b><b>而且它同时也是双链断裂之后的两条修复路线之一——在那里它以一份完好的拷贝为模板。</b>',
+   en:'“It is an exchange between two matching sequences, the DNA you introduce and the chromosomal site that matches it. The exchange copies in whatever lies between the two matching arms. It happens on its own, but very rarely, at ten to the minus two down to ten to the minus five in animals. It is also one of the two repair routes after a double-strand break, and there it works against an intact template rather than against introduced DNA.”'},
 
   {r:'中', q:'（走向 12）Why does the promoter in front of Cre matter so much?',
    ez:'“Because Cre is itself a gene. So it is made only where its promoter is active. And it is made only when that promoter is on. Whatever decides when and where Cre appears decides when and where the target gene dies. A tissue specific promoter fixes the place. A drug inducible one fixes the time.”',
-   ezcn:'因为 <b>Cre 自己也是一个基因</b>：<b>它只在它的启动子活跃的地方被做出来，也只在那个启动子被打开的时候被做出来。</b><b>所以「何时何地有 Cre」就决定了「何时何地靶基因死掉」——组织特异性启动子定地点，药物诱导型启动子定时间。</b>'},
+   ezcn:'因为 <b>Cre 自己也是一个基因</b>：<b>它只在它的启动子活跃的地方被做出来，也只在那个启动子被打开的时候被做出来。</b><b>所以「何时何地有 Cre」就决定了「何时何地靶基因死掉」——组织特异性启动子定地点，药物诱导型启动子定时间。</b>',
+   en:'“Because Cre is itself a gene, so it is made only where its promoter is active and only when that promoter is switched on. Whatever decides when and where Cre appears decides when and where the target gene dies. A tissue-specific promoter fixes the place and a drug-inducible one fixes the time. That is what turns a knockout which would be lethal into an experiment you can actually run.”'},
 
   {r:'中', q:'（走向 pe-clone）What is the binary vector system?',
    ez:'“It solves a handling problem. A Ti plasmid is large and awkward to cut and rejoin. In a binary system two plasmids are used and they never recombine. Each replicates independently. One helper Ti plasmid keeps Vir and has lost its T D N A entirely. A separate shuttle plasmid carries the gene between a left border and a right border. Vir recognises those two borders and cuts there.”',
-   ezcn:'<b>它解决的是操作问题：Ti 质粒很大，切开再接回去很不好做。</b><b>双元载体系统用两个质粒，而且两者之间不发生同源重组、各自独立复制：辅助 Ti 质粒只保留 Vir 功能、T-DNA 区已被整个删掉；另一个穿梭质粒把目的基因夹在左臂（LB）和右臂（RB）之间。</b><b>Vir 认的就是这两个边界，并在那里下刀。</b>'}
+   ezcn:'<b>它解决的是操作问题：Ti 质粒很大，切开再接回去很不好做。</b><b>双元载体系统用两个质粒，而且两者之间不发生同源重组、各自独立复制：辅助 Ti 质粒只保留 Vir 功能、T-DNA 区已被整个删掉；另一个穿梭质粒把目的基因夹在左臂（LB）和右臂（RB）之间。</b><b>Vir 认的就是这两个边界，并在那里下刀。</b>',
+   en:'“It solves a handling problem, because a Ti plasmid is large and awkward to cut and rejoin. In a binary system two plasmids are used which never recombine with each other and replicate independently. One is a helper Ti plasmid that keeps the Vir functions and has lost its T-DNA region entirely. The other is a shuttle plasmid carrying the gene of interest between a left border and a right border. Vir recognises those two borders and cuts there, so the gene travels while the machinery stays behind.”'}
  ]},
 
  {g:'桥回主场', gn:'把话拉回你真正做的事。', items:[
@@ -429,7 +434,8 @@ ask:[
 
   {r:'中', q:'Would you use CRISPR in your own work?',
    ez:'“I would answer by what I need. C R I S P R changes a genome at a chosen site. My question is not about a chosen site. It is about many variants at once. So I build a library and let a selection choose between them. Where the two meet is a screen. A pooled C R I S P R screen also links a guide sequence to a phenotype. And reading that link back out is sequencing, exactly as in my own work.”',
-   ezcn:'<b>我会按「我需要什么」来回答。</b><b>CRISPR 改的是基因组上一个选定的位点，而我的问题不是关于某一个选定的位点，是关于同时比较很多个变体——所以我建文库，让筛选在它们之间挑。</b><b>两者相遇的地方是「筛选」：混合的 CRISPR 筛选同样是把一段引导序列跟一个表型拴在一起，而把这条连接读回来靠的也是测序，跟我做的事一模一样。</b>'}
+   ezcn:'<b>我会按「我需要什么」来回答。</b><b>CRISPR 改的是基因组上一个选定的位点，而我的问题不是关于某一个选定的位点，是关于同时比较很多个变体——所以我建文库，让筛选在它们之间挑。</b><b>两者相遇的地方是「筛选」：混合的 CRISPR 筛选同样是把一段引导序列跟一个表型拴在一起，而把这条连接读回来靠的也是测序，跟我做的事一模一样。</b>',
+   en:'“I would answer by what I need. CRISPR changes a genome at a chosen site, and my question is not about a chosen site. It is about many variants at once, so I build a library and let a selection choose between them. Where the two meet is the screen. A pooled CRISPR screen also links a guide sequence to a phenotype, and reading that link back out is sequencing, exactly as in my own work.”'}
  ]}
 ]
 });
