@@ -24,16 +24,22 @@ cram:[
  {g:'开口 · 先把八种方法串成一句话', gn:'这张卡不是八个名字的清单。它是<b>三个问题</b>，任何一种方法都能被这三个问题安放进去，名字只是填进去的例子。'},
 
  {n:'01', t:'这是一件什么工作',
+  ez:'“Two molecules touching is not something a microscope resolves. So every method here does the same thing. It builds a signal downstream of the contact. Then it reports that signal instead. A contact is read out as a colony that grows. Or a colony that turns blue. Or an angle of reflected light. Or a band on a gel. Or a wavelength of emitted light. It is never read out as seeing the two molecules together.”',
+  ezcn:'<b>两个分子有没有接触，显微镜分辨不出来。</b><b>所以这里每一种方法做的都是同一件事：在接触事件的下游造一个信号，然后拿那个信号来报告</b>。<b>「接触」被读成的东西是：一个长出来的菌落、一个变蓝的菌落、一个反射光的角度、一条胶上的带、一个新的发射波长</b>——<b>从来不是「看见两个分子在一起」。</b>',
   big:'显微镜分辨不出「两个分子在接触」。所以<b>每一种方法都在接触的下游造一个信号</b>，然后拿那个信号当答案',
   en:'“Two molecules touching is not something a microscope resolves. Every method here builds a signal downstream of the contact and reports that signal instead. A contact is read out as a colony that grows, a colony that turns blue, an angle of reflected light, a band on a gel, or a wavelength of emitted light. It is never read out as seeing the two molecules together.”',
   note:'<b>这一句是整张卡的地基，第一句就说它。</b><span class="pg">p.219</span><br>说了这一句，后面每一种方法你都只需要补三样：<b>读出是什么、在哪儿做、它看不见什么</b>。<br><b>为什么这句话值钱</b>：考官问「你怎么证明它们结合」的时候，他真正在听的是你知不知道<b>你手上那个信号离真正的接触有多远</b>。一上来就承认「我看的是下游信号」，比说「我看到它们结合了」稳得多。'},
 
  {n:'02', t:'三个问题，安放任何一种方法',
+  ez:'“I sort these methods by three questions. Which pair is being asked about. Where the experiment happens. And what the readout is. Take yeast one hybrid. It asks about a protein and a piece of D N A. It happens inside a yeast nucleus. And it reads out a blue colony. Take surface plasmon resonance. It asks about two proteins. It happens on a chip. And it reads out an angle. Once I have those three answers, I can say one more thing. I can say what that method cannot show.”',
+  ezcn:'<b>我用三个问题给这些方法分类：问的是哪一对？在哪儿做？读出是什么？</b><b>酵母单杂交：问的是一个蛋白和一段 DNA，在酵母细胞核里做，读出是一个蓝色菌落。</b><b>SPR：问的是两个蛋白，在芯片上做，读出是一个角度。</b><b>三个答案一到手，我就能再说一件事：这个方法显示不出什么。</b>',
   big:'<b>问的是哪一对</b>（蛋白–DNA / 蛋白–蛋白 / RNA–RNA）· <b>在哪儿做</b>（酵母核 / 试管 / 芯片 / 活细胞）· <b>读出是什么</b>（菌落 / 条带 / 角度 / 波长 / 测序）',
   en:'“I sort these methods by three questions. Which pair is being asked about. Where the experiment happens. And what the readout is. Yeast one-hybrid asks about a protein and a piece of DNA, inside a yeast nucleus, and reads out a blue colony. Surface plasmon resonance asks about two proteins, on a chip, and reads out an angle. Once I have those three answers for a method I can say what it cannot show.”',
   note:'<b>这三个问题是背这张卡的唯一办法。</b>八个名字硬背会串，三个问题填空不会。<br><b>碰到一个你没见过的方法怎么办</b>：照样问这三句。他要是提一个卡上没有的方法（酵母三杂交、EMSA、DNase I 足迹法、RIP），你说 “I would ask the same three questions about it” 然后现场推，比承认没听过强得多。<br>⚠ <b>那四个方法这张卡上没有</b>，因为转录的那几页上没有；<b>别假装它们在书里</b>。'},
 
  {n:'03', t:'⚠ 每一种都有它显示不出来的东西',
+  ez:'“Each method has something it structurally cannot show. The blind spot decides what a positive result is worth. A yeast two hybrid hit says one thing. Two proteins bind when both are put in a yeast nucleus. A co precipitation says another. Two proteins sit in one pellet. An absent F R E T signal fits two cases. Two proteins that never bind. And two that bind in the wrong orientation. So I would not claim more than the readout gives me.”',
+  ezcn:'<b>每一种方法都有它结构上显示不出来的东西，而这个盲点决定了一个阳性结果值多少钱。</b><b>双杂交阳性说的是：这两个蛋白被放进同一个酵母核里会结合。</b><b>共沉淀说的是：这两个蛋白在同一个沉淀里。</b><b>没有 FRET 信号同时符合两种情况：从不结合，以及结合了但取向不对。</b><b>所以我不会说得比读出信号给我的更多。</b>',
   big:'一个方法的<b>盲点</b>，决定了它给出的阳性结果<b>值多少钱</b>。这是他插刀最狠的地方',
   en:'“Each method has something it structurally cannot show. The blind spot of a method is the part that decides what a positive result is worth. A yeast two-hybrid hit says two proteins bind when both are placed in a yeast nucleus. A co-precipitation says two proteins sit in one pellet. An absent FRET signal is consistent with two proteins that never bind and also with two that bind in the wrong orientation. I would not claim more than the readout gives me.”',
   note:'<b>这一点单独列出来，因为它是这张卡上最容易加分也最容易失分的地方。</b><br>她 2026-09-01 的 PESB 口试复盘（见 <code>LOGIC.md</code>）里，失分最重的一刀不是不知道，是<b>答的那一层不是他问的那一层</b>。这里同理：他问 “How do you know they interact?”，你答一个方法名，他下一句必然是 “And what would that experiment miss?”。<br><b>主动说出盲点，比被他挖出来好。</b>',

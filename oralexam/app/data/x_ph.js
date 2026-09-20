@@ -13,6 +13,8 @@ sub:'跨题共用 · 卡 aa、02、17、18、19、25、x-bonds 都在用它，�
 cram:[
  {g:'先说清这张卡为什么存在', gn:'它不回答任何一道题。但已经有五处在用它，而且每处都只是路过时顺手解释了一遍。'},
  {n:'01', t:'这张卡的位置',
+  ez:'“Almost every acid base statement comes out of one fact. Take any group with a p K a. Now set the p H equal to that p K a. The group is then half dissociated. Four things are readings of that same fact. The titration curve. The buffer. The isoelectric point. And the p H optimum of an enzyme. So I would define p H and p K a first. Then I would read all four off them.”',
+  ezcn:'<b>生物化学里几乎每一句关于酸碱的话，都出自同一个事实：当 pH 等于某个基团的 pK<sub>a</sub> 时，那个基团正好解离一半。</b><b>滴定曲线、缓冲液、等电点、酶的最适 pH——这四样都是同一个事实的四种读法。</b><b>所以我宁可先把 pH 和 pK<sub>a</sub> 定义清楚，再把那四样从它们身上读出来。</b>',
   big:'pH 在别的卡上一直是<b>承重的</b>，却从来不是<b>主角</b>——所以它在哪儿都没被正面定义过',
   en:'“Almost every acid-base statement in biochemistry comes out of one fact. A group is half dissociated when the pH equals its pKa. The titration curve, the buffer, the isoelectric point and the pH optimum of an enzyme are four readings of that same fact. So I would rather define pH and pKa first and then read all four off them.”',
   note:'<b>它现在住在哪几张卡上，各占哪一块：</b><br>· <b>氨基酸卡 <code>aa</code></b>：pK<sub>a</sub>、甘氨酸滴定曲线、pI、「pH 7 上为什么偏偏是组氨酸」。<br>· <b>酶卡 <code>17</code> <code>18</code> <code>19</code></b>：pH 最适、活性中心那几个基团的解离状态。<br>· <b>K<sub>d</sub> 卡 <code>02</code></b>：半饱和——跟半解离是同一个形状。<br>· <b>呼吸链卡 <code>25</code></b>：质子梯度，还有一个由 pH 差换算出来的电位。<br>· <b>键卡 <code>x-bonds</code></b>：磷酸基团在 pH 7 带几个负电荷。<br><br><b>五处各自解释一遍，就是五个说法。</b>这张卡把它定义一次，那五处都有地方可以指回来。<br>⚠ <b>她自己报的弱点原话是「乱不清」。</b>乱不清的原因多半不是不知道，是<b>同一件事在五个地方用五种口径出现</b>。',
