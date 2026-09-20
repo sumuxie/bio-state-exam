@@ -354,12 +354,18 @@ recog:[
 ask:[
 {g:'定义类', gn:'他会单独拎出来问的名词。', items:[
 {r:'中', q:'Where does it happen?',
+  ez:'“In the matrix. That is the inner space of the mitochondrion. There is one exception. Succinate dehydrogenase sits in the inner membrane. It is complex two of the respiratory chain. That is also why that step feeds its electrons straight to ubiquinone.”',
+  ezcn:'<b>在基质里，也就是线粒体的内腔。</b><b>有一个例外：琥珀酸脱氢酶坐在内膜上，它就是呼吸链的复合物 II——这也是那一步的电子直接交给泛醌的原因。</b>',
  en:'“In the matrix, the inner space of the mitochondrion. There is one exception: succinate dehydrogenase sits in the inner membrane, and it is complex II of the chain. That is also why that step feeds its electrons straight to ubiquinone.”',
  cn:'一个词的答案，但<b>那个例外值得主动说</b>。'},
 {r:'中', q:'What are NAD⁺ and FAD — and what is NADH?',
+  ez:'“They are the coenzymes of the dehydrogenases. These are their oxidised forms. They accept the hydrogen a dehydrogenase strips off. That is two electrons with protons. N A D plus takes a hydride and becomes N A D H. F A D takes two hydrogens and becomes F A D H two. The reduced forms carry that energy to the chain. N A D plus is loosely bound and moves between enzymes. The F A D of succinate dehydrogenase is covalently bound.”',
+  ezcn:'<b>NAD⁺ 和 FAD 是脱氢酶的辅酶的氧化型：它们接走脱氢酶从底物上剥下来的氢（两个电子连同质子）。</b><b>NAD⁺ 接一个氢负离子变成 NADH；FAD 接两个氢变成 FADH₂。</b><b>还原型把那份能量带到呼吸链，链再把它们重新氧化、造出 ATP。</b><b>NAD⁺ 结合得松，在酶之间移动；而琥珀酸脱氢酶的 FAD 是共价结合的，是一个辅基。</b>',
  en:'“NAD⁺ and FAD are the coenzymes of the dehydrogenases in their oxidised form. They accept the hydrogen that a dehydrogenase strips from its substrate — two electrons with protons. NAD⁺ takes a hydride and becomes NADH. FAD takes two hydrogens and becomes FADH₂. The reduced forms carry that energy to the respiratory chain, which reoxidises them and makes the ATP. NAD⁺ is loosely bound and moves between enzymes. The FAD of succinate dehydrogenase is covalently bound, a prosthetic group.”',
  cn:'<b>这张卡用得最多的名词，之前没正面定义。</b>'},
 {r:'中', q:'What is oxaloacetate?',
+  ez:'“It is a four carbon two oxo dicarboxylic acid. It accepts the acetyl group in the first step. And it is regenerated in the last. The textbook calls it the key compound of the cycle. Because it comes back it is a carrier. It is not a reactant. It is also a beta keto acid. But it is a stable one. By transamination it is the skeleton of aspartate.”',
+  ezcn:'<b>草酰乙酸 ＝ 一个四碳的 2-氧代二羧酸：第一步接走乙酰基，最后一步又被再生出来。</b><b>书称它是这个循环的关键化合物；而因为它会回来，它是载体，不是反应物。</b><b>它也是一个 β-酮酸，不过是稳定的那种；经转氨它就是天冬氨酸的碳骨架。</b>',
  en:'“The four-carbon 2-oxo dicarboxylic acid that accepts the acetyl group in the first step and is regenerated in the last. The textbook calls it the key compound of the cycle, and because it comes back it is a carrier, not a reactant. It is also a β-keto acid, but a stable one, and by transamination it is the carbon skeleton of aspartate.”',
  cn:'书叫它「循环的关键化合物」（p136）。'},
 ]},
@@ -390,6 +396,8 @@ ask:[
  en:'“Because the thioester bond blocks the resonance, the mesomerism, that stabilises an ordinary O-ester: sulfur’s lone pair does not delocalise into the carbonyl. That leaves a real carbonyl, and with the carbonyl fixed the methyl group can act as the nucleophile in the condensation with oxaloacetate. That condensation is exactly the first step of the cycle. The textbook calls it an <b>aldol condensation</b>: the α-carbon of one carbonyl compound joining the carbonyl carbon of another, giving a β-hydroxy carbonyl, here citryl-CoA. Lehninger calls it a Claisen-type condensation, because the nucleophile is a thioester enolate.”',
  cn:'<b>这一条把「化学键」那张横向卡接了进来</b>，而且它解释了为什么细胞非要用硫酯不用普通酯。<span class="pg">p136</span>'},
 {r:'中', q:'Why store the energy as NADH instead of making ATP directly?',
+  ez:'“Because the cell captures energy in packets. Each packet is about thirty kilojoules per mole. That is one A T P. Oxidising N A D H with oxygen releases far more. It releases far more than one packet. So the electrons are parked on N A D H. Then they are let down the chain stepwise. Each step is matched to proton pumping. And the gradient is matched to A T P.”',
+  ezcn:'因为<b>细胞只能以「一包一包」的方式收住能量，每一包大约 30 kJ/mol，也就是一个 ATP</b>。<b>而用氧去氧化 NADH 一次释放的远不止一包。</b><b>所以电子先被寄存在 NADH 上，再沿呼吸链一步一步放下来：每一步都跟泵质子对上，而梯度又跟 ATP 对上。</b>',
  en:'“Because the cell can only capture energy in packets of about 30 kJ per mole — one ATP. Oxidising NADH with oxygen releases far more than one packet, so the electrons are parked on NADH and let down the respiratory chain stepwise, each step matched to proton pumping and, through the gradient, to ATP.”',
  cn:'书 p134–p135 给了根据：能量的生成和消耗都是「量子化」的，机体只能以约 30 kJ/mol 的份额（一个 ATP）捕获能量。比原来那句「在膜上统一结算」有书可依。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>ΔG°′ = −nFΔE°′</code>（书 p135）· <code>一个 ATP ≈ 30 kJ/mol</code>（书 p135–p136 说的那个「量子」）<br>n 是转移的电子数 · F 是法拉第常数，一摩尔电子带的电量 <code>≈ 96,5 kJ·V⁻¹·mol⁻¹</code> · ΔE°′ 是两端的电位差。<br><br><b>三步推导</b>（一次烧完到底浪费多少）：<br>① NADH 那一端的电位是 <b>−0,32 V</b>，氧那一端是 <b>+0,82 V</b>（书 table 6.2，p135）：<code>ΔE°′ = 0,82 − (−0,32) = 1,14 V</code>。<br>② 一个 NADH 交出<b>两个</b>电子，n = 2：<code>ΔG°′ = −2 × 96,5 × 1,14 ≈ −220 kJ/mol</code>。<br>③ 而细胞一次只装得下约 <b>30 kJ</b>（一个 ATP）：<code>220 ÷ 30 ≈ 7</code> 份。按书的 3 个 ATP 算，实收 <code>3 × 30,5 ≈ 91 kJ</code>，约 <b>40%</b>。<br><br><br><b>=== 一句话理解 ===</b><br>一步烧完，等于拿一个 <b>30 毫升的杯子</b>去接 <b>220 毫升</b>的水：接住 30，洒掉 190。<br><b>把落差切成一串台阶，不是为了慢，是为了让每一级的落差正好装得进一个杯子。</b>NADH 的作用就是先把电子<b>停在半路</b>（−0,32 V 这个高度），等膜上有台阶了再一级一级放下去。<br>这也顺带解释了为什么全代谢里<b>没有任何一步是「NADH → ATP」</b>：两边的货币不一样（这边流通电子，那边流通磷酸基），中间必须换一次汇，而那个汇就是质子梯度。<br>⚠ <code>−220</code> 和 <code>40%</code> 是拿书的表和书的式子<b>算出来的，书没有印</b>——报的时候带一句「按你这本书的数算下来大约」。'}
 ]},
@@ -406,18 +414,26 @@ ask:[
  en:'“It goes into the respiratory chain, the series of electron carriers in the <b>inner mitochondrial membrane</b>, complexes I to IV with ubiquinone and cytochrome c between them. That is a different compartment from the cycle itself. NADH is oxidised by complex I, NADH:ubiquinone oxidoreductase. The electrons go to ubiquinone, complex III, cytochrome c and complex IV, from lower to higher redox potential, and finally to oxygen. Redox potential is the measure of how strongly a redox pair holds its electrons: NADH/NAD⁺ sits at about −0.32 volts, oxygen at +0.82. Protons are pumped into the intermembrane space, and ATP synthase makes ATP by letting them back.”',
  cn:'书 §6.2.4 从 <span class="pg">p141</span> 开始。<b>循环在基质、呼吸链在内膜</b>——这个区室的区别是两道题的分界线（#25 #26）。'},
 {r:'中', q:'Where does succinyl-CoA go if not round the cycle?',
+  ez:'“Into porphyrin synthesis. Succinyl Co A reacts with glycine. Together they give delta aminolevulinate. The enzyme that does it has a name. It is delta aminolevulinate synthase. And the textbook calls it the key regulatory point. It is the key point of porphyrin synthesis.”',
+  ezcn:'<b>去卟啉的合成。</b><b>琥珀酰-CoA 跟甘氨酸反应给出 δ-氨基乙酰丙酸；做这件事的酶是 δ-氨基乙酰丙酸合酶，而书称它是卟啉合成的关键调节点。</b>',
  en:'“Into porphyrin synthesis. Succinyl-CoA and glycine give delta-aminolevulinate. The enzyme that does it, delta-aminolevulinate synthase, is the <b>key regulatory point</b> of porphyrin synthesis.”',
  cn:'书 §6.3（<span class="pg">p146</span>）。<b>这条同时接卡 01 的血红素、和 glycine 的去向。</b>'},
 {r:'中', q:'Why is aerobic metabolism worth the trouble?',
+  ez:'“Because it yields nineteen times more A T P per glucose. Lactate fermentation gives two. Aerobic degradation gives thirty eight in theory. The textbook adds a comment. Aerobic degradation of carbohydrates is evolutionarily the later form. It calls it the higher form.”',
+  ezcn:'因为<b>每分子葡萄糖产出的 ATP 多十九倍：乳酸发酵 2 个，有氧理论上 38 个。</b><b>书还补了一句：碳水化合物的有氧降解在进化上是更晚、更高级的形式。</b>',
  en:'“Because it yields nineteen times more ATP per glucose: two by lactate fermentation, theoretically thirty-eight aerobically. The textbook adds that aerobic degradation of carbohydrates is <b>evolutionarily the later, higher form</b>.”',
  cn:'<b>书自己下了这个进化结论</b>，所以你可以直接引用而不用担心越界。<span class="pg">p136</span><br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>38 ÷ 2 = 19</code>。<b>「19 倍」不是书印的词</b>，是把书 p136 那两个数（每摩尔葡萄糖：无氧 2 摩尔 ATP、有氧理论上 38 摩尔）相除得来的。<br><br><b>两步推导</b>：<br>① 无氧（乳酸发酵）：只有糖酵解的<b>净 2 个</b>底物水平磷酸化。那 2 个 NADH 必须拿去把丙酮酸还原成乳酸，才能把 NAD⁺ 还回来让糖酵解继续——<b>一个也兑不成 ATP</b>。<br>② 有氧：同一分子葡萄糖，<code>8 + 6 + 24 = 38</code>。<code>38 ÷ 2 = 19</code>。<br><br><br><b>=== 一句话理解 ===</b><br>差的这 19 倍<b>全部来自氧</b>——而且不是氧「提供」了能量，是氧<b>把电子收走了</b>，链才腾得出手继续泵质子。<br><b>没有最终受体，还原辅酶就堆在那里，那 36 个 ATP 一个也收不上来。</b>报数字时照书说「<b>理论上</b> 38」，因为那是理论最大值；现代教材算 30–32，差在哪儿见上面「兑换率」那一格。'}
 ]},
 
 {g:'硬事实', gn:'不背，眼熟即可。specific 题的弹药。', items:[
 {r:'中', q:'名字全表（八步的酶）',
+  ez:'“Citrate synthase. Then aconitate hydratase. Then isocitrate dehydrogenase. Then the two oxoglutarate dehydrogenase complex. Then succinyl Co A synthetase. Then succinate dehydrogenase. Then fumarate hydratase. And then malate dehydrogenase.”',
+  ezcn:'<b>八步的酶：柠檬酸合酶 · 顺乌头酸水合酶 · 异柠檬酸脱氢酶 · 2-氧代戊二酸脱氢酶复合体 · 琥珀酰-CoA 合成酶 · 琥珀酸脱氢酶 · 延胡索酸水合酶 · 苹果酸脱氢酶。</b>',
  en:'“Citrate synthase · aconitate hydratase · isocitrate dehydrogenase · the 2-oxoglutarate dehydrogenase complex · succinyl-CoA synthetase · succinate dehydrogenase · fumarate hydratase · malate dehydrogenase.”',
  cn:'书还有一张 <b>Table 6.3「柠檬酸循环的酶及其辅因子」</b>（<span class="pg">p136</span>），OCR 出来碎了。<b>⚠ 待办：回 300 dpi 原图抄这张表。</b><br>另外 isocitrate dehydrogenase 这个名字 OCR 没直接给出，是从反应推的——<b>也要回原图核。</b>辅因子被问（原图核对前按通用说）：“The cofactors are these. Isocitrate dehydrogenase and malate dehydrogenase use NAD⁺. The 2-oxoglutarate dehydrogenase complex uses thiamine diphosphate, lipoic acid, coenzyme A, FAD and NAD⁺. Succinate dehydrogenase has covalently bound FAD and iron–sulfur centres. Succinyl-CoA synthetase needs GDP and phosphate. Aconitase carries an iron–sulfur cluster. Citrate synthase and fumarase need no cofactor.”'},
 {r:'中', q:'中间产物按顺序',
+  ez:'“Citrate. Then cis aconitate. Then isocitrate. Then oxalosuccinate. Then two oxoglutarate. Then succinyl Co A. Then succinate. Then fumarate. Then L malate. And then oxaloacetate.”',
+  ezcn:'<b>柠檬酸 · 顺乌头酸 · 异柠檬酸 · 草酰琥珀酸 · 2-氧代戊二酸 · 琥珀酰-CoA · 琥珀酸 · 延胡索酸 · L-苹果酸 · 草酰乙酸。</b>',
  en:'“Citrate · cis-aconitate · isocitrate · oxalosuccinate · 2-oxoglutarate · succinyl-CoA · succinate · fumarate · L-malate · oxaloacetate.”',
  cn:'<b>十个名字。</b>其中 cis-aconitate 和 oxalosuccinate 是<b>不稳定的中间体</b>，通常不算在「八步」里——所以说「八步」和说「十个中间产物」都对：“Two of the ten are unstable intermediates that stay on the enzyme: cis-aconitate and oxalosuccinate. They are not counted as separate steps, so there are eight steps and ten named compounds. The textbook counts the aconitase dehydration and hydration separately, which is why it calls the hydration of cis-aconitate the third reaction.”'}
 ]}
