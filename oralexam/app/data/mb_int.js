@@ -334,6 +334,8 @@ ask:[
   gn:'<b>这一组最值钱。</b>每一条都是「说出来很顺，但把结论说大了一层」。',
   items:[
    {r:'实测', q:'（陷阱）说「CoIP 证明 A 和 B 直接相互作用」',
+    ez:'“A co-precipitation shows one thing. The two proteins are in the same complex. I would not call the contact direct. That evidence alone does not show it.”',
+    ezcn:'<b>共沉淀只说明一件事：两个蛋白在同一个复合物里。</b>光凭这个证据<b>不能说接触是直接的</b>。要说直接，得用两个纯化蛋白重做 pull-down，或者用 FRET 看距离。',
     en:'“A co-precipitation shows that the two proteins are in the same complex. I would not call the contact direct on that evidence alone.”',
     cn:'<b>正确说法是 in the same complex。</b>这一刀他几乎一定会切，因为它是整组方法里最容易被说大的一个结论。',
     warn:'⚠ 这一条的正确版本<b>书上没写</b>，转录者标了 beyond。说的时候不要挂到书上。'},

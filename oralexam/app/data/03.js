@@ -350,6 +350,8 @@ ask:[
  en:'“In eukaryotes the first transcript is heterogeneous nuclear RNA, substantially longer than the structural gene itself. It contains both coding regions, the exons, and non-coding ones, the introns. It is then processed into the functional messenger RNA: the introns are removed by the spliceosome, a complex of small nuclear RNA and proteins. The textbook’s word on p086 is simply ribonucleases.”',
  cn:'真核转录的第一条产物。<b>顺手把 exon/intron 带出来。</b>'},
 {r:'实测', q:'What are purines and pyrimidines?',
+    ez:'“A pyrimidine is one six membered aromatic ring. It has nitrogens at positions one and three. Cytosine, uracil and thymine are pyrimidines. A purine is that same ring fused to a second one. The second ring is a five membered imidazole. A purine has nine atoms in all. Its nitrogens sit at one, three, seven and nine. Adenine and guanine are purines. So the purine is the larger base. A purine attaches its sugar at N nine. A pyrimidine attaches its sugar at N one.”',
+    ezcn:'<b>嘧啶 pyrimidine</b>＝一个六元芳香环，氮在 <b>1 和 3 位</b>——胞嘧啶、尿嘧啶、胸腺嘧啶。<b>嘌呤 purine</b>＝那个环<b>再并上一个五元咪唑环</b>，<b>一共九个原子</b>，氮在 <b>1、3、7、9 位</b>——腺嘌呤、鸟嘌呤。<b>所以嘌呤是大的那个。</b>接糖的位置：<b>嘌呤在 N9，嘧啶在 N1。</b>',
  en:'“A pyrimidine is one six-membered aromatic ring with nitrogens at positions 1 and 3 — cytosine, uracil, thymine. A purine is that ring fused to a five-membered imidazole ring, nine atoms in all, with nitrogens at 1, 3, 7 and 9 — adenine and guanine. So the purine is the larger base. Its sugar attaches at N9, the pyrimidine’s at N1.”',
  cn:'结构 p066 图 4.1；N9/N1 p067。卡上用了十次的词，之前没定义。'},
 {r:'高', q:'Why “predominantly” — where else does thymine occur?',

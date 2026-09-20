@@ -408,6 +408,8 @@ recog:[
 ask:[
 {g:'定义类', gn:'这题名词密度很高——每个酶的类名、每个辅酶、每个能量词，他都能单独拎出来问。', items:[
 {r:'实测', q:'What is substrate-level phosphorylation?',
+    ez:'“It is one way of making A T P. A soluble enzyme does it. The enzyme transfers a phosphate group directly onto A D P. The phosphate comes from a macroergic intermediate. No membrane is involved. No proton gradient is involved. No oxygen is needed. The textbook names it at phosphoglycerate kinase. Glycolysis has two such steps. The other one is pyruvate kinase. The citric acid cycle has one more. That one is succinyl CoA synthetase, and it makes G T P. The contrast is oxidative phosphorylation. There A T P synthase uses a proton gradient.”',
+    ezcn:'<b>底物水平磷酸化 ＝ 一个可溶的酶，把磷酸基从一个高能中间物上直接搬到 ADP 上</b>造出 ATP。<b>不用膜、不用质子梯度、不用氧。</b>书在<b>磷酸甘油酸激酶</b>那一步点了名。糖酵解里有<b>两处</b>（这一处和<b>丙酮酸激酶</b>），柠檬酸循环里还有一处（<b>琥珀酰辅酶 A 合成酶</b>，造的是 GTP）。<b>对照组是氧化磷酸化</b>——那边是 ATP 合酶靠质子梯度做。',
  en:'“Substrate-level phosphorylation is the formation of ATP by a soluble enzyme transferring a phosphate group directly from a macroergic intermediate onto ADP. No membrane, no proton gradient, no oxygen. The textbook names it at phosphoglycerate kinase: the macroergically bound phosphate of 1,3-bisphosphoglycerate is transferred to ADP. Glycolysis has two: that one and pyruvate kinase, from phosphoenolpyruvate. The citric acid cycle has one more, succinyl-CoA synthetase, which makes GTP. The contrast is oxidative phosphorylation, where ATP synthase in the inner membrane makes ATP from a proton gradient.”',
  cn:'「底物水平磷酸化」这个词全书只在 p165 出现一次，就是以 PGK 为例。卡 24 点 11 是第三个例子。<span class="pg">p165</span>'},
 {r:'高', q:'What is a macroergic compound?',
@@ -483,6 +485,8 @@ ask:[
 
 {g:'陷阱', gn:'每一条都是「知识对、出口错」的地方——考的是嘴。', items:[
 {r:'实测', q:'So glycolysis makes four ATP?',
+    ez:'“It makes four. But it also spends two. So the net gain is two. The textbook writes the table. Minus one at hexokinase. Minus one at phosphofructokinase. Plus two at phosphoglycerate kinase. Plus two at pyruvate kinase. The gain is plus two. If I say four, I have forgotten the investment. If I say two, I should be able to show the four.”',
+    ezcn:'<b>造四个，花掉两个，净赚两个。</b>书的表：<b>己糖激酶 −1</b>、<b>磷酸果糖激酶 −1</b>、<b>磷酸甘油酸激酶 +2</b>、<b>丙酮酸激酶 +2</b>，<b>净 +2</b>。<b>说「四」就是忘了投入；说「二」就要能把那四个指出来。</b>',
  en:'“It makes four and spends two, so the net is two. The textbook writes the table: minus one at hexokinase, minus one at phosphofructokinase, plus two at phosphoglycerate kinase, plus two at pyruvate kinase — gain, plus two. If I say four, I have forgotten the investment. If I say two, I should be able to show the four.”',
  cn:'p166 的表就是为这个问题存在的。<span class="pg">p166</span>'},
 {r:'高', q:'Is the energy captured in NADH — so glycolysis really makes more than two ATP?',
