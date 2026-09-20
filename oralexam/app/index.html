@@ -615,6 +615,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/12.js"></script>
 <script src="data/16.js"></script>
 <script src="data/mb_int.js"></script>
+<script src="data/mb_ko.js"></script>
 <script src="data/pe_clone.js"></script>
 <script src="data/pe_evo.js"></script>
 <script src="data/pe_cfps.js"></script>
@@ -981,7 +982,8 @@ function renderList(){
     + mkLoad().length + ' 段</a>'
     + ' <button class="bbtn ghost" type="button" onclick="sxOpen()">🔍 查找</button>'
     + ' <button class="bbtn ghost" onclick="if(confirm(\'清空全部练习记录？\')){localStorage.removeItem(PK);route();}">清空记录</button>'
-    + '</div><input id="search" placeholder="搜题目、关键词…">';
+    + '</div><input id="search" placeholder="搜卡名、关键词…">'
+    + '<p id="lsx" class="sub2" style="display:none;margin:8px 0 0"></p>';
 
   if (built.length){
     h += '<p class="lgrp">已写</p><p class="lgrp-n">点开就能背。</p>';
@@ -1027,12 +1029,27 @@ function renderList(){
   document.getElementById('main').innerHTML = h;
 
   document.getElementById('search').addEventListener('input', function(e){
-    var q = e.target.value.trim().toLowerCase();
+    var q = e.target.value.trim().toLowerCase(), vis = 0;
     var rows = document.querySelectorAll('.row');
     for (var k=0;k<rows.length;k++){
       var t = rows[k].textContent.toLowerCase();
-      rows[k].style.display = (!q || t.indexOf(q) > -1) ? '' : 'none';
+      var on = (!q || t.indexOf(q) > -1);
+      rows[k].style.display = on ? '' : 'none';
+      if (on) vis++;
     }
+    /* ⚠ 这个框只看卡名那一行，看不进卡里。2026-09-20 她在这里搜 first order
+       一无所获，而卡 02 的追问里明明有——就是这个原因。
+       所以一打字就把「进全文查找」摆在眼前，别让她以为搜过了。 */
+    var p = document.getElementById('lsx');
+    if (!p) return;
+    if (!q){ p.style.display = 'none'; p.innerHTML = ''; return; }
+    p.style.display = '';
+    p.innerHTML = (vis ? ('卡名里 <b>' + vis + '</b> 张。') : '<b>卡名里一张都没有。</b>')
+      + '这个框只搜卡名 · '
+      + '<button type="button" class="bbtn ghost" id="lsxgo" style="margin-top:6px">'
+      + '在所有卡里找「' + mkEsc(e.target.value.trim()) + '」</button>';
+    var g = document.getElementById('lsxgo');
+    if (g) g.onclick = function(){ sxOpen(e.target.value.trim()); };
   });
 }
 
@@ -2629,6 +2646,35 @@ function sxGlossCard(w, g){
 }
 
 /* ---- 结果页 ---- */
+/* 某一段在整套材料里有多少处。cap 给 0：只数，不攒结果，便宜。 */
+function sxAnyN(seg){
+  var ql = String(seg).toLowerCase(), X = sxBuild(), i, k = 0;
+  for (i = 0; i < X.cards.length; i++) k += sxHits(X.cards[i].rows, ql, 0).n;
+  return k + sxHits(X.q, ql, 0).n + sxHits(X.a, ql, 0).n;
+}
+/* 「first/second order」是她心里的写法，却不是任何一张卡上的字符串。
+   按 / 、 ， 拆开，再把最后一段的尾巴补回前面几段：
+   ['first', 'second order'] → 'first order' ／ 'second order'。
+   只留真有货的，省得给她一排点了还是空的按钮。 */
+function sxAlts(q){
+  var t0 = String(q).split('／').join('/').split('、').join('/')
+                    .split('，').join('/').split(',').join('/');
+  var parts = t0.split('/'), out = [], seen = {}, i;
+  if (parts.length < 2) return out;
+  var tail = parts[parts.length - 1].trim(), sp = tail.split(' ');
+  var suff = sp.length > 1 ? ' ' + sp.slice(1).join(' ') : '';
+  for (i = 0; i < parts.length; i++){
+    var s0 = parts[i].trim();
+    if (!s0) continue;
+    var cand = (i < parts.length - 1 && suff && s0.indexOf(' ') < 0) ? s0 + suff : s0;
+    if (cand.length < 2 || seen[cand.toLowerCase()]) continue;
+    seen[cand.toLowerCase()] = 1;
+    var k = sxAnyN(cand);
+    if (k) out.push({s: cand, n: k});
+  }
+  return out;
+}
+
 function sxShow(raw){
   var out = document.getElementById('sxout');
   if (!out) return;
@@ -2706,11 +2752,19 @@ function sxShow(raw){
         + '<br>点任一条，直接跳到卡里的那一句。回车跳第一条。</p>';
   }
   if (!nHit && !QR.n && !AR.n && !top && !more.length){
+    var alts = sxAlts(q), ab = '';
+    for (i = 0; i < alts.length; i++)
+      ab += '<button type="button" class="bbtn ghost sxalt" data-q="' + mkEsc(alts[i].s)
+          + '" style="margin:0 8px 8px 0">' + mkEsc(alts[i].s) + ' · ' + alts[i].n + ' 处</button>';
     out.innerHTML = '<p class="sxnone">「' + mkEsc(q) + '」<b>一处也没有</b>。'
       + '<br>整套卡、两科题目单、微生物短答、词库，都没有这几个字。'
-      + '<br>换一个说法试试：卡上的中文跟书上的叫法走，'
-      + '比如“端基碳”在这套卡里叫“异头碳”。'
-      + '或者直接搜英文词。</p>';
+      + (ab ? '<br><b>这是一条一条对字找的，斜杠两边不会分开试。</b>拆开就有：'
+            : '<br>换一个说法试试：卡上的中文跟书上的叫法走，'
+              + '比如“端基碳”在这套卡里叫“异头碳”。或者直接搜英文词。')
+      + '</p>' + (ab ? '<p style="margin:0 0 6px">' + ab + '</p>' : '');
+    var bs = out.querySelectorAll('.sxalt');
+    for (i = 0; i < bs.length; i++)
+      bs[i].onclick = function(){ sxOpen(this.getAttribute('data-q')); };
     return;
   }
   out.innerHTML = sum + h + body + qbody + gbody;
