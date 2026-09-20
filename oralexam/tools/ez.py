@@ -73,6 +73,12 @@ def opening(c):
     return out
 
 
+# 为了让语音念对，缩写在 ez 里是拆成单个字母写的：N A D H、d A T P、P C R。
+# 数词数的时候要把连着的单字母收回成一个词，不然「N A D H」算成四个词，
+# 会把完全简单的句子报成超长。⚠ 这是第二次栽在同一个形状上：
+# 拿一个窄匹配器去数，数完就信那个数（LOGIC §18）。
+LETTERS = re.compile(r'(?<![A-Za-z])(?:[A-Za-z]\s+){1,9}[A-Za-z](?![A-Za-z])')
+
 def sentences(t):
     body = re.sub(r'<[^>]+>', ' ', t or '')
     body = body.replace('“', ' ').replace('”', ' ')
@@ -112,7 +118,7 @@ def main():
         for p in op:
             if not p.get('ez'): continue
             for s in sentences(p['ez']):
-                w = len(s.split())
+                w = len(LETTERS.sub('X', s).split())
                 if w > MAXW: problems.append((name, p.get('n'), '%d 词' % w, s[:64]))
                 elif CLAUSE.search(s): problems.append((name, p.get('n'), '有从句', s[:64]))
             if PUNCT.search(re.sub(r'<[^>]+>', '', p['ez'])):

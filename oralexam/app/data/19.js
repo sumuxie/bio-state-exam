@@ -258,12 +258,18 @@ figs:[
 ask:[
 {g:'为什么类', gn:'这题的结论多、理由少，所以他插刀的位置很集中。', items:[
 {r:'高', q:'Why does irreversible inhibition break the Michaelis–Menten equation?',
+    ez:'“Because that equation assumes something. It assumes the total enzyme concentration is constant. What changes is only how much is in complex. An irreversible inhibitor removes enzyme permanently. So the concentration of the active form changes with time. It is itself a function of time. The premise of the derivation is gone.”',
+    ezcn:'因为<b>米氏方程有一个前提：酶的总浓度是恒定的</b>，<b>变化的只是其中有多少处在复合物状态</b>。<b>不可逆抑制剂是把酶永久性地拿走</b>——<b>于是「活性形式的浓度」本身成了时间的函数，推导的前提就没有了。</b>',
  en:'“Because that equation assumes the <b>total enzyme concentration is constant</b> — what changes is only how much of it is in complex. An irreversible inhibitor removes enzyme permanently, so the concentration of the active form is itself a function of time. The premise of the derivation is gone.”',
  cn:'<b>这一条是这张卡的核心。</b>它把「不可逆 vs 可逆」从一个名字上的区别变成了一个模型上的区别。书 p059 明写了这个理由。'},
 {r:'高', q:'Why does non-competitive inhibition lower Vmax but not Km?',
+    ez:'“Because it binds both forms with the same affinity. It binds the free enzyme and the complex equally. So K i equals K i prime. It therefore does not shift the substrate binding equilibrium. And the substrate concentration giving half maximal rate is unchanged. What it does instead is hold a fixed fraction of the enzyme. The inhibitor concentration alone sets that fraction. Those complexes do not turn over. So the ceiling falls. A mixed inhibitor is different. It binds the two forms unequally. So it shifts K m as well.”',
+    ezcn:'因为<b>它对游离酶和酶–底物复合物的亲和力一样</b>（<b>K<sub>i</sub> ＝ K<sub>i</sub>′</b>）——<b>所以它根本不改变底物结合的平衡，给出半数最大速率的底物浓度也就不变</b>。<b>它干的是：把固定比例的酶扣在「不周转的复合物」里，而那个比例只由抑制剂浓度决定</b>——<b>所以天花板降了</b>。<b>混合型抑制剂不一样：它对两种形式的亲和力不等，所以 K<sub>m</sub> 也会被改变。</b>',
  en:'“Because it binds the free enzyme and the enzyme–substrate complex with the same affinity. K i equals K i prime. So it does not shift the substrate-binding equilibrium at all, and the substrate concentration giving half-maximal rate is unchanged. What it does is hold a fixed fraction of the enzyme, set by the inhibitor concentration alone, in complexes that do not turn over. So the ceiling falls. A mixed inhibitor, which binds the two forms unequally, shifts K m as well.”',
  cn:'<b>「相当于把一部分酶从体系里拿掉」是最好的直觉。</b>⚠ 这个说法是推论，书只给了图上的表现。说成 “in effect”。'},
 {r:'高', q:'Why would a cell use reversible rather than irreversible inhibition to regulate?',
+    ez:'“Because regulation has to be reversible. Take an end product inhibiting the first enzyme of its own pathway. It has to let go again. It lets go when the product runs low. Irreversible inhibition cannot serve as a control mechanism. You would destroy an enzyme every time you used it.”',
+    ezcn:'因为<b>调控必须是可逆的</b>。<b>一个终产物抑制自己通路的第一个酶，等产物变少时它必须能松手</b>。<b>不可逆抑制当不了控制机制——那等于每用一次就毁掉一个酶。</b>',
  en:'“Because regulation has to be <b>reversible</b>. An end product inhibiting the first enzyme of its own pathway has to let go again when the product runs low. Irreversible inhibition cannot serve as a control mechanism — you would destroy an enzyme every time you used it.”',
  cn:'<b>这条接 #32 代谢调控和书里的反馈抑制那一段</b>（<span class="pg">p063</span>）：终产物抑制整条序列的第一个酶，那个酶通常是<b>别构酶</b>。'},
 {r:'中', q:'Why is uncompetitive inhibition rare with one substrate but common with two?',
@@ -276,9 +282,13 @@ ask:[
  en:'“The inhibition constant. The textbook defines it as the <b>dissociation constant</b> of the enzyme–inhibitor complex: free enzyme times free inhibitor over EI. Whenever the inhibitor also binds the enzyme–substrate complex there is a second one, K i prime, the dissociation constant of EAI. Uncompetitive has only K i prime. Non-competitive has K i equal to K i prime. Mixed has them different.”',
  cn:'<b>书里唯一明确叫「解离常数」的东西。</b>而且有两个。<br>完整的 Kd 内容在<b>卡 02</b>。<b>注意：Ki 是解离常数，Km 不是</b>——书自己在 p055 和 p056 前后打架，见卡 02 的陷阱那一格。'},
 {r:'高', q:'What is a modulator?',
+    ez:'“Modulator is the general term. It covers any substance that changes the rate of an enzyme reaction. It does that by interacting with the catalyst. An activator raises the rate. An inhibitor lowers it. The textbook notes one thing. Everything said about inhibitors holds for activators. It holds in the opposite sense.”',
+    ezcn:'<b>modulator 调节物是个总称</b>：<b>凡是通过跟催化剂打交道来改变酶反应速率的物质都算</b>。<b>加快的叫激活剂，减慢的叫抑制剂</b>。<b>书特意注了一句：关于抑制剂说的一切，对激活剂反过来同样成立。</b>',
  en:'“The general term for a substance that changes the rate of an enzyme reaction by interacting with the catalyst. An activator raises the rate, an inhibitor lowers it. The textbook notes that everything said about inhibitors holds for activators in the opposite sense.”',
  cn:'<b>开口就给上位类，显示你知道抑制剂只是一半。</b>'},
 {r:'高', q:'What is a Lineweaver–Burk plot?',
+    ez:'“It is the linearised Michaelis Menten equation. You plot one over v against one over substrate concentration. That gives a straight line. Its slope is K m over V max. Its intercept on the vertical axis is one over V max. Its intercept on the horizontal axis is minus one over K m. It is used for a practical reason. Rates at high substrate concentration are imprecise. They are also costly to measure. So the constants are read from the line instead of the curve.”',
+    ezcn:'<b>Lineweaver-Burk 作图 ＝ 米氏方程的线性化版本</b>：<b>用 1/v 对 1/[S] 作图，得到一条直线</b>。<b>斜率是 K<sub>m</sub>/V<sub>max</sub>；在纵轴上的截距是 1/V<sub>max</sub>；在横轴上的截距是 −1/K<sub>m</sub></b>。<b>用它的理由很实际：高底物浓度下的速率既不精确又贵，所以常数从直线上读，而不是从曲线上读。</b>',
  en:'“The linearised Michaelis–Menten equation: <b>one over v plotted against one over substrate concentration</b>. It gives a straight line whose slope is K m over V max. Its intercept on the 1/v axis is one over V max, and the intercept on the 1/[A] axis is minus one over K m. It is used because rates at high substrate concentration are imprecise and costly to measure, so the constants are read from the line instead of the curve.”',
  cn:'p056–p057 给了斜率、1/v 截距和「不精确、费材料」的理由；p060 给了坐标轴（1/v 对 1/[A]）；x 截距是通用知识。抑制类型就是看这条线怎么动。'},
 
@@ -289,9 +299,13 @@ ask:[
 
 {g:'桥回主场', gn:'', items:[
 {r:'高', q:'You said binding without catalysis — how do you measure that?',
+    ez:'“As a dissociation constant. With yeast display the protein is on the cell surface. You titrate a labelled partner. Then you read the midpoint by flow cytometry. There is no turnover involved at all. So what comes out is the binding half on its own.”',
+    ezcn:'<b>测成一个 K<sub>d</sub>。</b><b>酵母展示里蛋白在细胞表面，滴定一个带标记的配体，用流式读中点</b>。<b>整个过程里没有任何周转发生，所以出来的就是单独的「结合那一半」。</b>',
  en:'“As a dissociation constant. With yeast display the protein is on the cell surface, you titrate a labelled partner and read the midpoint by flow cytometry. There is no turnover involved at all, so what comes out is the binding half on its own.”',
  cn:'完整内容在<b>卡 02</b>。<b>这个桥是书搭的</b>：p062 把「能结合但逼不动构象变化」定义成抑制剂，而你测的正是「能结合」这一半。'},
 {r:'高', q:'What is feedback inhibition?',
+    ez:'“Feedback inhibition is when an end product inhibits an enzyme. The product is the end product of a metabolic sequence. The enzyme is the first enzyme of that sequence. Only the last product acts. And it acts only on the first enzyme. That enzyme is usually allosteric. The textbook’s example is isoleucine synthesis. It is made from threonine over five intermediates. The first enzyme dehydrates threonine. Isoleucine inhibits it. It is the general mechanism for regulating biosynthesis. And it minimises the demand for carbon, nitrogen and energy.”',
+    ezcn:'<b>反馈抑制 ＝ 一条代谢序列的终产物，抑制这条序列的第一个酶。</b><b>只有最后那个产物起作用，而且只作用于第一个酶</b>，<b>那个酶通常是别构酶</b>。书的例子是<b>从苏氨酸经五个中间物合成异亮氨酸</b>：<b>第一个酶（让苏氨酸脱水的那个）被异亮氨酸抑制</b>。<b>这是调控生物合成的通用机制，而且它把对碳、氮和能量的需求降到最低。</b>',
  en:'“Feedback inhibition is when the <b>end product</b> of a metabolic sequence inhibits the <b>first enzyme</b> of that sequence. Only the last product acts, and only on the first enzyme. That enzyme is usually allosteric. The textbook’s example is isoleucine synthesis from threonine over five intermediates: the first enzyme, which dehydrates threonine, is inhibited by isoleucine. It is the general mechanism for regulating biosynthesis, and it minimises the demand for carbon, nitrogen and energy.”',
  cn:'p062–p063 原文，含苏氨酸→异亮氨酸的例子。这是「为什么细胞要有可逆抑制」那条的正面定义。'},
 
