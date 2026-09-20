@@ -523,7 +523,7 @@ ask:[
 
 {g:'相邻考点', gn:'这题坐在书投入最大的一片里（p066–p091），四面都有门。', items:[
 {r:'高', q:'→ 卡 03 · DNA 的结构',
-    ez:'“Three properties of the double helix explain everything here. The strands are antiparallel. The bases are complementary. And they are held by base pairing. Those three are the whole reason replication looks the way it does.”',
+    ez:'“The strands are antiparallel. The bases are complementary. And they are held by base pairing. Those three properties are the whole reason replication looks the way it does.”',
     ezcn:'<b>双螺旋的三个性质解释了这里的一切</b>：<b>反向平行 · 互补 · 靠碱基配对维系</b>。<b>复制之所以长成这个样子，理由全在这三条里。</b>',
  en:'“Antiparallel, complementary, base-paired — those three properties of the double helix are the whole reason replication looks the way it does.”',
  cn:'反平行 → 半不连续；互补 → 模板；配对特异性 → 准确性（p073）。全在卡 03。'},

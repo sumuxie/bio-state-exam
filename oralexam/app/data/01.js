@@ -551,7 +551,7 @@ ask:[
  cn:'<b>这是书里紧接着结构分级的下一节（§2.2.5, p036），所以它是最自然的续问。</b>四大类：<b>glycoprotein、phosphoprotein、metalloprotein、hemoprotein</b>。',
  good:'<b>书里一句很好用的话：</b>“By current understanding the non-peptide component is a regular part of the <b>great majority</b> of proteins — so-called simple proteins are rather the exception.” 这句把分类说成了历史遗留的划分，而不是自然界的事实。<span class="pg">p036</span>'},
 {r:'实测', q:'Glycoproteins — how is the sugar attached?',
-    ez:'“There are two linkages. The first one is N glycosidic. The sugar goes onto the amide nitrogen of asparagine. The serum glycoproteins are the typical case. The second one is O glycosidic. The sugar goes onto the hydroxyl of serine or threonine. The blood group substances are the typical case. The mucins are another one.”',
+    ez:'“There are two linkages. N glycosidic goes onto the amide nitrogen of asparagine. The serum glycoproteins are the typical case. O glycosidic goes onto the hydroxyl of serine or threonine. The blood group substances are the typical case. The mucins are another one.”',
     ezcn:'两种连法。<b>N-糖苷</b>：糖接在<b>天冬酰胺的酰胺氮</b>上，典型例子是血清糖蛋白。<b>O-糖苷</b>：糖接在<b>丝氨酸或苏氨酸的羟基</b>上，典型例子是血型物质和黏蛋白。',
  en:'“Two linkages. <b>N-glycosidic</b>, through the amide nitrogen of <b>asparagine</b> — the serum glycoproteins are the typical case. And <b>O-glycosidic</b>, through the hydroxyl of <b>serine or threonine</b> — the blood-group substances and the mucins.”',
  cn:'同学转述的实测问题里有一条就是「N-glycosylation 到底是怎么形成的」，<b>而且要机制不要现象</b>。<br><br>第三类是 <b>proteoglycan</b>（含 glycosaminoglycan，结缔组织成分）。<b>第四类直接接回你的主干</b>：collagen 上接的是 D-galactose 或含半乳糖和葡萄糖的二糖，<b>接在 hydroxyproline 或 hydroxylysine 上</b>——就是你卡上那两个 collagen 特有残基。<span class="pg">p036</span>',
