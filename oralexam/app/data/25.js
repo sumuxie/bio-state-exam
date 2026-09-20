@@ -355,9 +355,13 @@ recog:[
 ask:[
 {g:'定义类', gn:'逐字稿里没交代完的名词，他会一个一个拎出来问。', items:[
 {r:'高', q:'What is a redox potential?',
+    ez:'“It is a number in volts. It says how strongly a redox pair holds its electrons. It is measured against a standard electrode at p H seven. The more negative the value, the more readily that system gives electrons away. And electrons pass spontaneously in one direction. They pass from the more negative system to the more positive one.”',
+    ezcn:'<b>氧化还原电位 ＝ 一个以伏特为单位的数，说的是某一对氧化还原物质抓电子抓得有多紧</b>（<b>在 pH 7 下对标准电极测的</b>）。<b>值越负，那个体系越容易把电子给出去</b>；<b>而电子自发的流向是：从更负的体系流向更正的体系。</b>',
  en:'“A number in volts saying how strongly a redox pair holds its electrons, measured against a standard electrode at pH 7. The more negative, the more readily that system gives electrons away — and electrons pass spontaneously from the more negative system to the more positive one.”',
  cn:'Table 6.2 <span class="pg">p135</span>，<b>已回 300 dpi 核过</b>，从 acetaldehyde 的 −0,60 排到氧的 +0,82。被追「跟 ΔG 什么关系」——同一页给了桥：ΔG°′ = −nFΔE°′；E 轴有约定原点（生物系统里氢电极 −420 mV），ΔG 轴没有，只能配给<b>电位差</b>。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>ΔG°′ = −nFΔE°′</code>（书 p135）——它只能配给<b>差</b>，配给单个 E 没有意义。<br><br><b>两步看懂为什么</b>：<br>① E 轴的原点是<b>人为约定</b>的：氢电极被定成 0 V（那是 pH 0），换到 pH 7 它自己就成了 <b>−420 mV</b>。<b>原点换一个，表上每个数都跟着变。</b><br>② 而 ΔE 是<b>两个数相减</b>：原点在相减时被消掉了。所以海平面定在哪儿，落差都不变，能量也不变。<br><br><br><b>=== 一句话理解 ===</b><br><b>电位像海拔</b>：说「这里 800 米」之前得先有人定一个海平面，而<b>「从 800 米降到 200 米能做多少功」不需要海平面</b>。能量只认落差，所以式子里永远是 ΔE。<br>再往前一步：<code>ΔG°′ = −nFΔE°′</code> 和 <code>ΔG°′ = −RT ln K</code>（通用）是同一个 ΔG 的两种量法，一种量<b>电位差</b>，一种量<b>平衡位置</b>。<b>所以标准电位就是电子的 K<sub>d</sub></b>——这一句直接走进卡 02。'},
 {r:'高', q:'What is a prosthetic group, and which ones are in the chain?',
+    ez:'“A prosthetic group is a cofactor bound permanently to the protein. A coenzyme is different. A coenzyme comes and goes. The chain has four kinds. First, flavins. F M N is in complex one. F A D is in complex two. Second, iron sulfur centres. That is non heme iron held by cysteine sulfurs. Third, hemes. That is iron in a porphyrin ring. They are in cytochromes b, c one, c, a and a three. And fourth, copper in complex four.”',
+    ezcn:'<b>辅基 ＝ 永久结合在蛋白上的辅因子</b>（<b>辅酶则是来来去去的</b>）。<b>呼吸链里有四类</b>：<b>黄素</b>（<b>复合体 Ⅰ 里是 FMN，Ⅱ 里是 FAD</b>）· <b>铁硫中心</b>（<b>非血红素铁，由半胱氨酸的硫抓着</b>）· <b>血红素</b>（<b>卟啉环里的铁，在细胞色素 b、c₁、c、a、a₃ 里</b>）· <b>复合体 Ⅳ 里的铜</b>。',
  en:'“A cofactor bound permanently to the protein, unlike a coenzyme that comes and goes. The chain has four kinds. <b>Flavins</b>: FMN in complex one, FAD in two. <b>Iron-sulfur centres</b>, non-heme iron held by cysteine sulfurs. <b>Hemes</b>, iron in a porphyrin ring, in cytochromes b, c₁, c, a and a₃. And <b>copper</b> in complex four.”',
  cn:'全部在书里：黄素 <span class="pg">p045</span>、血红素与五种细胞色素 <span class="pg">p046</span>、FeS 的三种结构（线型、Fe₂S₂ 平面、Fe₄S₄ 立体）<span class="pg">p046</span>、铜 <span class="pg">p144</span>。<b>「辅基 vs 辅酶」本身就是一道小题</b>，顺手答掉。'},
 {r:'中', q:'What is ubiquinone, and why must it be lipid-soluble?',
@@ -367,12 +371,18 @@ ask:[
 
 {g:'为什么类', gn:'卡上给了结论没给理由的地方 —— 他插刀就插在这里。', items:[
 {r:'高', q:'Why does complex II not pump protons?',
+    ez:'“Because that step releases too little energy. Succinate to ubiquinone is zero point zero seven volts. N A D H into the same acceptor is zero point four two. Use the textbook’s equation. Delta G equals minus n F delta E. That gives about fourteen kilojoules per mole against eighty one. And the book says energy is captured in quanta. Those quanta are about thirty kilojoules.”',
+    ezcn:'因为<b>那一步放出的能量太少</b>。<b>琥珀酸到泛醌只有 0.07 V，而 NADH 到同一个受体是 0.42 V</b>。<b>用书的公式 ΔG ＝ −nFΔE 算，大约是 14 kJ/mol 对 81 kJ/mol</b>——<b>而书说能量是以大约 30 kJ 一份的「量子」被捕获的。</b>',
  en:'“Because that step releases too little energy. Succinate to ubiquinone is 0.07 volts. NADH into the same acceptor is 0.42. Through the textbook’s equation, ΔG equals minus n F ΔE, that is about 14 kJ per mole against 81. And the book says energy is captured in quanta of about 30.”',
  cn:'电位、式子和 30 kJ 的量子都在 <span class="pg">p135</span>；<b>换算是我们做的，书只给了结果</b>（走 II 那条路只有 4 个质子，p145）。报的时候说「按你这本书的表和式子算」。'},
 {r:'高', q:'How does passing an electron move a proton across the membrane?',
+    ez:'“Through the alternation of two kinds of carrier. N A D plus, F M N and quinone carry electrons together with protons. Iron sulfur centres and cytochromes carry electrons only. So take a proton carrying form. It is oxidised by an electron only carrier. That happens on the outer side. Then the protons are left outside. And the electrons travel on. Each carrier also has a fixed place. So the transfer has a direction.”',
+    ezcn:'<b>靠两类载体交替出现。</b><b>NAD⁺、FMN、醌是「连着质子一起搬电子」的；铁硫中心和细胞色素只搬电子</b>。<b>所以当一个带着质子的形式在外侧被一个「只搬电子」的载体氧化时，质子就被留在外面，电子自己往下走</b>。<b>而且每个载体的位置是固定的，所以整个传递是有方向的。</b>',
  en:'“Through the alternation of two kinds of carrier. NAD-plus, FMN and quinone carry electrons together with protons. Iron-sulfur centres and cytochromes carry electrons only. So when a proton-carrying form is oxidised by an electron-only carrier on the outer side, the protons are left outside while the electrons travel on. And each carrier has a fixed place, so the transfer has a direction.”',
  cn:'<span class="pg">p142</span>。<b>书用的词是「表观的」（apparent），那一页印的就是这个词</b>：质子不是被一台泵抽过去的，是被交替的载体在两侧一取一放<b>搬</b>过去的。<b>「pump」这个词本身不解释任何事，这一句才解释。</b>'},
 {r:'高', q:'Why is the yield “about” three ATP and not a whole number?',
+    ez:'“Because nothing in the mechanism requires a whole number. The chain pumps a certain number of protons. The synthase needs a certain number per A T P. And the two counts are independent. Six protons and roughly three A T P is a ratio. It is not a stoichiometry. The textbook itself writes approximately three.”',
+    ezcn:'因为<b>机制里没有任何东西要求它是整数</b>。<b>呼吸链泵出去的质子数是一个数，ATP 合酶每做一个 ATP 需要的质子数是另一个数，两者互相独立</b>。<b>「六个质子、大约三个 ATP」是一个比值，不是化学计量</b>。<b>书自己写的就是「约三个」。</b>',
  en:'“Because nothing in the mechanism requires a whole number. The chain pumps a certain number of protons, the synthase needs a certain number per ATP, and the two counts are independent. Six protons and roughly three ATP is a ratio, not a stoichiometry. The textbook itself writes <b>approximately</b> three.”',
  cn:'书 p146 印的正是「approximately 3 ATP」「about 2 ATP」。现代值：约 10 个质子/NADH、约 4 个质子/ATP（3 个转动 ＋ 1 个把磷酸运进来）→ <b>2.5 和 1.5</b>，<b>书里 0 命中，标 general</b>。这条同时回答「为什么现代教材说 30–32」；另一半原因（胞质 NADH 要穿梭进来）见卡 <b>gly</b>。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>一个还原辅酶值几个 ATP ＝ 泵出去的质子数 ÷ 造一个 ATP 花掉的质子数</code><br><b>这是个汇率，不是化学计量。</b>分子和分母是两次互不相干的点数，它们<b>没有任何理由</b>正好整除。<br><br><b>两套数各自怎么来的</b>：<br>① <b>书（经典）</b>：分子 <code>6</code>（I 泵 2 ＋ III 泵 4 ＋ IV 不泵），结果是 3 个 ATP，反推出单价约 <b>2 个质子一个 ATP</b>；FADH₂ <code>4 ÷ 2 = 2</code>。<br>② <b>现代（general，书里 0 命中）</b>：分子 <code>10</code>（I 泵 4 ＋ III 泵 4 ＋ <b>IV 也泵 2</b>），分母 <code>4</code>——其中 <b>3 个用来转合酶</b>（F₁ 上有三个 β 催化位点，中轴转一整圈松出三个 ATP），<b>1 个用来把 Pᵢ 连着质子一起运进基质</b>。<br>③ 于是 <code>10 ÷ 4 = 2,5</code>，FADH₂ <code>6 ÷ 4 = 1,5</code>；一分子葡萄糖从 38 掉到 <b>30–32</b>。<br><br><br><b>=== 一句话理解 ===</b><br><b>2,5 不是「两个半 ATP」这种怪东西，它是个汇率：十份收入除以四份单价。</b>链和合酶之间没有任何化学键把两边锁成整数比，中间只隔着<b>一池子质子</b>——泵的那头不知道取的那头一次要舀几个。<br>所以问「一个 NADH 到底几个 ATP」，就像问「<b>一百块钱到底是几件衣服</b>」：答案取决于衣服的单价，不取决于这一百块。<b>书自己用的词就是「approximately（大约）」——那不是含糊，那是诚实。</b>'},
 {r:'中', q:'Why does everything stop when oxygen runs out?',
@@ -391,9 +401,13 @@ ask:[
 
 {g:'陷阱', gn:'这几条几乎每次都会被问，而且都是一句话说错就掉分的那种。', items:[
 {r:'高', q:'So the respiratory chain makes the ATP?',
+    ez:'“No. The chain makes a gradient. A T P synthase makes the A T P. The textbook is explicit. Complex five is unlike all the others. It is not an oxidoreductase. It is a phosphorylating enzyme. And it is the only one where protons move with the gradient. So anything that leaks protons back stops the A T P. It does not stop the chain.”',
+    ezcn:'<b>不是。呼吸链造的是梯度，造 ATP 的是 ATP 合酶。</b>书说得很明确：<b>复合体 Ⅴ 跟其余所有的都不同——它不是氧化还原酶，是磷酸化酶，而且它是唯一一个「质子顺着梯度走」的地方</b>。<b>所以任何让质子漏回去的东西都会停掉 ATP，却不会停掉呼吸链。</b>',
  en:'“No. The chain makes a <b>gradient</b>. ATP synthase makes the ATP. The textbook is explicit: complex five, unlike all the others, is not an oxidoreductase but a phosphorylating enzyme, and it is the only one where protons move <b>with</b> the gradient. Anything that leaks protons back stops the ATP without stopping the chain.”',
  cn:'<span class="pg">p145 p146</span>。<b>这是这道题最常见的说错。</b>说 “the chain produces ATP” 就等于承认没分清两半。'},
 {r:'高', q:'Which way do the protons go?',
+    ez:'“Out of the matrix. They go into the intermembrane space. Complexes one and three pump them against their gradient. The textbook calls the intermembrane space the cytosolic side. Then they come back in. They come back through A T P synthase, with the gradient. That levels the difference out again. In the chloroplast it is the other way round. There protons are pumped into the thylakoid.”',
+    ezcn:'<b>从基质里泵出去，泵进膜间隙</b>（<b>由复合体 Ⅰ 和 Ⅲ 逆着梯度泵，书把膜间隙叫做「胞质侧」</b>）；<b>然后顺着梯度经 ATP 合酶回来，把这个差值重新抹平</b>。<b>叶绿体里是反过来的：质子被泵进类囊体腔。</b>',
  en:'“<b>Out</b> of the matrix, into the intermembrane space, pumped against their gradient by complexes one and three. The textbook calls the intermembrane space the cytosolic side. Then back <b>in</b> through ATP synthase, with the gradient, which levels the difference out again. In the chloroplast it is the other way round: protons are pumped into the thylakoid.”',
  cn:'<span class="pg">p142 p146</span>；类囊体方向相反见 <span class="pg">p208</span>（书自己把两者并排讲了）。<b>方向说反了，整台机器就反了。</b>'},
 {r:'中', q:'Is oxygen a reactant that gets burned?',
@@ -406,6 +420,8 @@ ask:[
 
 {g:'相邻考点', gn:'从这道题走出去，他多半走这三个方向。每个一句话就能接住。', items:[
 {r:'高', q:'Where do the NADH and FADH₂ come from?',
+    ez:'“The textbook lists four sources. First, the four dehydrogenation steps of the citric acid cycle. Second, the oxidative decarboxylation of pyruvate. Third, the beta oxidation of fatty acids. Fourth, glyceraldehyde three phosphate dehydrogenation. That fourth one happens when glycolysis runs aerobically. The cycle is much the largest supplier. And it runs in the matrix. It runs right beside the membrane.”',
+    ezcn:'书列了四个来源：<b>① 柠檬酸循环的四个脱氢步骤</b>；<b>② 丙酮酸的氧化脱羧</b>；<b>③ 脂肪酸的 β-氧化</b>；<b>④ 有氧糖酵解时甘油醛-3-磷酸的脱氢</b>。<b>循环是最大的那个供应者，而且它就在基质里跑，紧挨着那层膜。</b>',
  en:'“The textbook lists four sources: the four dehydrogenation steps of the citric acid cycle, the oxidative decarboxylation of pyruvate, the β-oxidation of fatty acids, and glyceraldehyde-3-phosphate dehydrogenation when glycolysis runs aerobically. The cycle is much the largest supplier, and it runs in the matrix right beside the membrane.”',
  cn:'四个来源是书列的（<span class="pg">p141</span>），「循环是最重要的供应者」在 <span class="pg">p220</span>。<b>有个坑</b>：糖酵解那两个 NADH 在<b>胞质</b>里，过不了内膜，只有电子靠穿梭进去（general，书里没有）。英文：“One catch: the glycolytic NADH is made in the cytosol and cannot cross the inner membrane — only its electrons cross, by a shuttle. That is general knowledge.”'},
 {r:'中', q:'Is there anything like this in photosynthesis?',

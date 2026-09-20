@@ -290,6 +290,8 @@ figs:[
 ask:[
 {g:'定义类', gn:'这张卡自己用到的词，他会一个个拎出来问。<b>这张卡欠这些解释，所以每个都得在这里给。</b>', items:[
 {r:'高', q:'What is an isomer?',
+    ez:'“Two compounds are isomers when two things hold. They have the same molecular formula. And they have a different arrangement of the atoms. Suppose the difference is only in space. Then they are stereoisomers. A molecule with n asymmetric carbons has two to the n of those. That assumes no plane of symmetry. The textbook gives that counting rule. It also defines epimers and anomers. But it never defines isomer itself.”',
+    ezcn:'<b>两个化合物互为异构体，要同时满足两条：分子式相同，原子排列不同。</b><b>如果差别只在空间排列上，它们是立体异构体</b>；<b>一个有 n 个不对称碳、又没有对称面的分子，有 2ⁿ 个立体异构体</b>。⚠ <b>书给了这条计数规则，也定义了差向异构体和异头物，却从来没有定义过「异构体」本身。</b>',
  en:'“Two compounds are isomers when they have the same molecular formula and a different arrangement of the atoms. If the difference is only in the arrangement in space they are stereoisomers, and a molecule with n asymmetric carbons and no plane of symmetry has two to the n of those. The textbook gives that counting rule and it defines epimers and anomers, but it never defines isomer itself.”',
  cn:'<b>数目和 epimer、anomer 的定义是书的</b><span class="pg">p148 p149 p150</span>；<b>isomer 本身的定义是通用的。</b>把这两半分开说，比含糊地说「书上说」安全。',
  warn:'⚠ 全书<b>没有 enantiomer 这个词</b>，stereoisomer 也只出现在 p148 和 p149。'},
@@ -318,12 +320,18 @@ ask:[
 
 {g:'最容易混的几对', gn:'乱，通常不是不知道，是两个名字挨得太近。<b>每一对都给一句能当场分开它们的判据。</b>', items:[
 {r:'高', q:'Glucose to fructose — isomerisation or epimerisation?',
+    ez:'“Isomerisation. The carbonyl moves from carbon one to carbon two. So an aldose becomes a ketose. That is the textbook’s own example of isomerisation. Epimerisation is different. It changes the configuration at one carbon. And it does not move the carbonyl. The textbook’s example of that is glucose to galactose. Both kinds keep the number of carbon atoms the same.”',
+    ezcn:'<b>是异构化。</b><b>羰基从 C1 挪到 C2，于是醛糖变成酮糖</b>——<b>这正是书自己举的异构化例子</b>。<b>差向异构化不一样：它改变某一个碳上的构型，但不挪动羰基</b>（<b>书举的例子是葡萄糖→半乳糖</b>）。<b>两种都不改变碳原子的数目。</b>',
  en:'“Isomerisation. The carbonyl moves from carbon one to carbon two, so an aldose becomes a ketose, and that is the textbook’s own example of isomerisation. Epimerisation would change the configuration at one carbon without moving the carbonyl, and the textbook’s example of that is glucose to galactose. Both keep the number of carbon atoms the same.”',
  cn:'<b>判据一句话：羰基挪了没有。</b>挪了是 isomerisation，没挪只是某个碳翻了个身就是 epimerisation。<span class="pg">p160</span><br>同事真的问过的那道题是反过来的方向：<b>glucose → galactose 答 epimerization at C-4</b>，酶是 UDP-glucose-4-epimerase（<span class="pg">p172</span>，卡 <b>06</b>）。'},
 {r:'高', q:'Transamination or deamination?',
+    ez:'“They are not the same reaction. In transamination the amino group is handed over. It goes to a two oxo acid. So no ammonia is released. And a new amino acid appears. In oxidative deamination the amino group leaves. It leaves as free ammonia. The textbook’s enzyme is glutamate dehydrogenase. It uses a nicotinamide coenzyme. The cell puts them in that order on purpose. Transaminations collect the amino groups onto glutamate. Then glutamate alone is deaminated.”',
+    ezcn:'<b>不是同一个反应。</b><b>转氨作用：氨基被交给一个 α-酮酸，所以不放出氨，而且出现一个新的氨基酸</b>。<b>氧化脱氨：氨基以游离氨的形式离开</b>（<b>书里的酶是谷氨酸脱氢酶，用烟酰胺辅酶</b>）。<b>细胞把两者排成这个顺序是有意的：先靠转氨把各处的氨基都收集到谷氨酸上，然后只对谷氨酸做脱氨。</b>',
  en:'“They are not the same reaction. In transamination the amino group is handed to a 2-oxoacid, so no ammonia is released and a new amino acid appears. In oxidative deamination the amino group leaves as free ammonia, and the textbook’s enzyme is glutamate dehydrogenase, E.C. 1.4.1.2, with a nicotinamide coenzyme. The cell puts them in that order on purpose: transaminations collect the amino groups onto glutamate, and then glutamate alone is deaminated.”',
  cn:'<b>判据一句话：有没有放出氨。</b>没放出就是对调，是 transamination；放出了才是 deamination。<span class="pg">p119 p120</span><br><b>最后那句「先汇集再脱氨」是书自己的话</b>，说出来比只分辨两个词有力得多 —— 它顺手把卡 <b>aa</b> 的尿素那一段接上了。'},
 {r:'高', q:'Kinase, phosphorylase or phosphatase?',
+    ez:'“Three names with phosphate in them. And three different reactions. A kinase moves a phosphate from A T P onto something. So it is a transferase. A phosphatase hydrolyses a phosphate off. So it is a hydrolase. A phosphorylase does neither. It uses inorganic phosphate to break a bond. Glycogen phosphorylase releases glucose one phosphate that way. The textbook says starch and glycogen are broken down by phosphorolysis. They are not broken down by hydrolysis.”',
+    ezcn:'<b>三个名字里都有「磷酸」，但是三个不同的反应。</b><b>激酶 kinase ＝ 把磷酸从 ATP 搬到某样东西上（转移酶）</b>；<b>磷酸酶 phosphatase ＝ 用水解把磷酸拿掉（水解酶）</b>；<b>磷酸化酶 phosphorylase ＝ 两者都不是——它用无机磷酸去断一根键</b>（<b>糖原磷酸化酶就是这样放出葡萄糖-1-磷酸的</b>）。<b>书说淀粉和糖原是靠磷酸解分解的，不是靠水解。</b>',
  en:'“Three names with phosphate in them and three different reactions. A kinase moves a phosphate from ATP onto something, so it is a transferase. A phosphatase hydrolyses a phosphate off, so it is a hydrolase. A phosphorylase does neither: it uses inorganic phosphate to break a bond, and glycogen phosphorylase releases glucose-1-phosphate that way. The textbook says starch and glycogen are broken down by phosphorolysis rather than by hydrolysis.”',
  cn:'<span class="pg">p042 p063 p173</span>。<b>判据：磷酸是被搬走的、被拆下来的、还是拿来砍键的。</b>',
  warn:'⚠ <b>最刁的一点在这里</b>：做磷酸解的那个酶，自己是被磷酸化开关的。书 <span class="pg">p063 §3.7.2</span>：<b>glycogen phosphorylase a 是活性形式，b 几乎无活性</b>，靠活性中心里一个丝氨酸羟基的<b>可逆磷酸化</b>互变，拆磷酸的是专门的磷酸酶。<b>一个名字里带 phosphoryl（酶名 phosphorylase）、一个动作叫 phosphorolysis、一个开关叫 phosphorylation —— 三件不同的事挤在同一个酶身上。</b>'},
