@@ -86,6 +86,7 @@ def main():
     files = [f for f in sorted(glob.glob(os.path.join(D, '*.js')))
              if not os.path.basename(f).startswith('_')]
     done_pts = todo_pts = 0
+    ask_tot = ask_done = rec_tot = rec_done = 0
     todo_cards = []
     problems = []
     for f in files:
@@ -97,6 +98,17 @@ def main():
         done_pts += len(op) - len(miss)
         todo_pts += len(miss)
         if miss: todo_cards.append((name, len(miss), len(op)))
+        # 追问和「换个问法」也算进来。2026-09-20 她说：「但是还有追问题也需要吧
+        # 最短版 最无语法版」「我觉得你最好都出 我能保证每个都搂一眼」。
+        for g in (c.get('ask') or []):
+            for it in (g.get('items') or []):
+                if not it.get('en'): continue
+                ask_tot += 1
+                if it.get('ez'): ask_done += 1
+        for x in (c.get('recog') or []):
+            if not x.get('say'): continue
+            rec_tot += 1
+            if x.get('ez'): rec_done += 1
         for p in op:
             if not p.get('ez'): continue
             for s in sentences(p['ez']):
@@ -114,6 +126,8 @@ def main():
     print('=' * 70)
     print('共 %d 个点，已写 %d 个（%.0f%%），还差 %d 个' %
           (tot, done_pts, 100.0 * done_pts / max(tot, 1), todo_pts))
+    print('追问   %d 条，已写 %d 条（%.0f%%）' % (ask_tot, ask_done, 100.0*ask_done/max(ask_tot,1)))
+    print('换问法 %d 条，已写 %d 条（%.0f%%）' % (rec_tot, rec_done, 100.0*rec_done/max(rec_tot,1)))
     if problems:
         print('\n不合规 %d 处（每句 ≤ %d 词 · 不许从句 · 不许破折号分号 · 要有中文那行）：' % (len(problems), MAXW))
         for p in problems[:30]:

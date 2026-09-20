@@ -200,10 +200,14 @@ recog:[
 ask:[
 {g:'⚠ 实测 · 2026-09-01 那一串', gn:'<b>这一组是这张卡存在的理由。</b>上一次他反复往 flexizyme 上引，而答出去的是分子克隆的答案。<b>每一条都先默问一句：他问的是「怎么装」还是「用哪个密码子」。</b>', items:[
 {r:'实测', q:'What is a flexizyme?',
+    ez:'“A flexizyme is an artificial ribozyme. Its job is to charge a tRNA. The name means flexible tRNA acylation ribozyme. It is flexible in two ways. First, it ignores the side chain of the monomer. It only reads an activating group on the substrate. Second, it ignores the body of the tRNA. It only reads the three prime C C A. Every tRNA has that end.”',
+    ezcn:'<b>flexizyme</b> 是人工<b>核酶</b>，干的事是<b>给 tRNA 上货</b>（charge a tRNA）。名字拆开是 flexible tRNA acylation ribozyme。它「灵活」在两处：<b>不看单体的侧链</b>，只认底物上那个活化基团；<b>不看 tRNA 的身子</b>，只认所有 tRNA 都有的 <b>3′-CCA</b>。',
  en:'“A flexizyme is an artificial ribozyme that charges a tRNA, and the name stands for flexible tRNA acylation ribozyme. It is flexible in two directions. It does not read the side chain of the amino acid, only an activating group on the substrate. And it does not read the body of the tRNA, only the three-prime CCA that every tRNA has.”',
  cn:'<b>2026-09-01 实测，完全答不上的一处。</b>他问了不止一次，说明这是他心里的重点。<span class="pg">L8 s.44–46</span><br><b>两个方向合起来就是 flexible 的双重含义</b>：任意活化底物 × 任意 tRNA。机制上朴素得可以一句话说完：<b>它自己的 GGU 末端跟 tRNA 的 CCA 末端互补配对。</b>来自 Hiroaki Suga 实验室。',
  warn:'⚠ <b>说完立刻给对照，别等他问</b>：“The alternative is to evolve an orthogonal synthetase for every new monomer. The flexizyme skips the synthetase question altogether.” <b>那就是他当时想引出来的那句话。</b>'},
 {r:'实测', q:'You wrote that you would use amber suppression. Is that not too complicated?',
+    ez:'“Yes, it is the heavier route. Amber suppression needs an orthogonal pair. That means a synthetase and a tRNA. The synthetase must be evolved. It must accept my monomer. It must also refuse the natural twenty. In a tube there is a shorter way. A flexizyme charges the tRNA directly. So no synthetase has to be persuaded. The cost is one thing. That route only works in vitro.”',
+    ezcn:'<b>承认它重</b>：amber 抑制要一套<b>正交对</b>（合成酶 ＋ tRNA），而且那个合成酶得<b>进化到既接受我的单体、又拒绝天然二十种</b>。管子里有条近路：<b>flexizyme 直接给 tRNA 上货</b>，不用说服任何合成酶。<b>代价是它只能体外做</b>。',
  en:'“It is the heavier route, yes. Amber suppression needs an orthogonal synthetase and tRNA pair, and the synthetase has to be evolved to accept my monomer and refuse the natural twenty. In a tube there is a shorter way. A flexizyme charges the tRNA directly, so no synthetase has to be persuaded of anything. The cost is that the charging happens in a tube, so that route is in vitro only.”',
  cn:'<b>2026-09-01 的原话形状。</b>「太复杂」不是在批评作业，<b>是在提示有一条更短的路</b>。<b>听见有人说你的方案复杂，先问一句他心里那条短路是什么。</b><br>⚠ 那次答的是 <b>T4 ligase 和限制性酶切</b>。那回答的是「怎么把一段 DNA 拼进载体」，属于<b>构建模板</b>那一侧，<b>跟「怎么把单体装到 tRNA 上」不是同一件事</b>。整条推理在 LOGIC 第 9 条。',
  warn:'⚠ <b>中途发现答偏了的回收线</b>：“I think I have drifted into cloning. The question is how the monomer gets onto the tRNA, and the answer there is a flexizyme.” <b>说出来不丢分，接着往错的方向说才丢分。</b>另一个更安全的版本是直接反问分层：“Do you mean how the monomer is attached to the tRNA, or how the template is built?”'},
@@ -244,6 +248,8 @@ ask:[
 
 {g:'最容易混的几对', gn:'乱，通常不是不知道，是两个东西挨得太近。<b>每一对都给一句能当场分开它们的判据。</b>', items:[
 {r:'实测', q:'An orthogonal pair and a flexizyme both put a monomer on a tRNA. What is the difference?',
+    ez:'“They answer the same question. But the cost is very different. The orthogonal pair is the heavy route. You evolve a synthetase for your monomer. It must also refuse the natural twenty. That is a separate project for every new monomer. The flexizyme is the shortcut. It charges the tRNA directly. It never asks a synthetase anything. But it only works in a tube.”',
+    ezcn:'同一个问题，两个代价差很远的答案。<b>正交对是重路</b>：每换一种单体，就要重新进化一个合成酶——那是一个独立工程。<b>flexizyme 是近路</b>：直接上货，不求任何合成酶，<b>但只能在管子里</b>。',
  en:'“They answer the same question at very different cost. The orthogonal pair is the heavy route. You evolve a synthetase that accepts your monomer and refuses the natural twenty, and that is a separate engineering project for every new monomer. The flexizyme is the shortcut. It charges the tRNA directly and never asks a synthetase anything, but it only works in a tube.”',
  cn:'<b>这一条是整张卡的落点，也是 2026-09-01 他想听到的那句对照。</b><br><b>判据一句话：重路是改造一个酶，捷径是绕过整个酶。</b>再往上一层：正交对是<b>把限制拆掉</b>（删编辑域、改口袋），flexizyme 是<b>从头就不设限制</b>。<b>两种做法，同一个思路。</b>',
  good:'加分的一句：<b>在管子里正交对并没有失效，只是变得多余</b>——一旦能用化学方法给 tRNA 充电，你就不再需要一个肯接受 ncAA 的合成酶。<b>真正只能待在图上一边的是 flexizyme，它没办法在体内用。</b>'},

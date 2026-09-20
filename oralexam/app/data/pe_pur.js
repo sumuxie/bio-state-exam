@@ -278,6 +278,8 @@ ask:[
 
 {g:'⚠ 三层分开问', gn:'<b>这一组是这张卡的核心。</b>三个问题听起来几乎一样，而且他可以随便问哪一个。<b>每答一句之前先默认一次：他问的是哪一层。</b>', items:[
 {r:'实测', q:'How would you neutralise the effect of a histidine tag?',
+    ez:'“By competing it off the resin with imidazole. The tag binds for one reason. The histidine side chain is an imidazole ring. That ring coordinates a nickel ion. Free imidazole is the bare version of that side chain. So adding it displaces the tag. Elution uses two hundred and fifty to five hundred millimolar. The wash already contains twenty to forty.”',
+    ezcn:'用<b>咪唑</b>把它从柱子上<b>竞争下来</b>。标签能挂住只有一个理由：<b>组氨酸的侧链就是一个咪唑环</b>，它配位镍离子。<b>游离咪唑就是那个侧链的光杆版</b>，加进去就把标签顶下来了。洗脱用 <b>250–500 mM</b>，洗涤液里本来就有 <b>20–40 mM</b>。',
  en:'“By competing it off the resin with imidazole. The tag binds because the histidine side chain is an imidazole ring coordinating a nickel ion. Free imidazole is the bare version of that side chain, so adding it displaces the tag. Elution uses 250 to 500 millimolar, and the wash already contains 20 to 40.”',
  cn:'<b>2026-09-01 实测，丢分最重的一处。</b>他问的是洗脱层，答成了移除层（protease）。<b>两个答案都对，但后一个不回答被问的那个问题。</b>整条推理在 LOGIC 第 9 条。<br><b>触发词</b>：neutralise · elute · release · get it off the column · recover it from the resin ——<b>全部是同一层</b>。',
  warn:'⚠ 如果一时分不清他问的是哪一层，<b>就把分层本身说出来</b>：“Do you mean getting it off the resin, or removing the tag from the protein? Those are different operations.” <b>反问一句不丢分，答错一层才丢分。</b>'},

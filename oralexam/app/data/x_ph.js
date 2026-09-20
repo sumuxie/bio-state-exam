@@ -263,6 +263,8 @@ ask:[
 
 {g:'最容易混的几对', gn:'她说的「乱不清」，八成落在这几对上。每一对都是「两个名字挨得太近」。', items:[
 {r:'实测', q:'What is the difference between pH and pKa?',
+    ez:'“pH is a property of the solution. pKa is a property of one group. That group sits on one particular molecule. Both are read off the same scale. That is why people confuse them. The important case is when they are equal. When the pH equals the pKa, that group is exactly half dissociated.”',
+    ezcn:'<b>pH 是溶液的性质，pKa 是某个分子上某一个基团的性质。</b>两者读的是同一把尺子，所以容易混。<b>要紧的是它们相等的那一刻：pH ＝ pKa 时，那个基团正好解离一半。</b>',
  en:'“pH is a property of the solution. pKa is a property of one particular group on one particular molecule. They have the same units, in the sense that both are read off the same scale, and that is why they get confused. The whole point is what happens when they are equal. When the pH equals the pKa, that group is exactly half dissociated.”',
  cn:'<b>这是这张卡存在的理由那一条。</b>两个词长得像、刻度一样、都是对数，但<b>一个说的是溶液，一个说的是分子上的一个基团</b>。<br><b>拿一句话把它们的关系钉住</b>：<b>pH 是外面的环境，pK<sub>a</sub> 是这个基团的门槛；比较这两个数就知道它现在什么状态。</b><br>被追问就做减法：<code>pH − pK<sub>a</sub></code> 是正的就是已经解离了，是负的就是还带着质子，差多少个单位就是差几个十倍。'},
 {r:'高', q:'Is the isoelectric point the same kind of number as a pKa?',
@@ -272,6 +274,8 @@ ask:[
  en:'“Not necessarily, and the textbook says so explicitly. The optimum is set by the pKa values of the groups in the active site. Sometimes the two agree. Pepsin has an optimum of one point five to two point five and works in the stomach. Sometimes they do not. Papain has an optimum of eight and comes from a papaya, and cathepsin B has an optimum of five to six.”',
  cn:'<b>用书的表打书的话</b>：结论在 p058 §3.4，反例在 p116 的 table 5.1。<b>这是 LOGIC §14 那条打法的一个干净例子。</b><br>⚠ 别把这条说反了：书说的是<b>「不一定相同」</b>，不是「一定不同」。<b>pepsin 那一行就是相同的那种。</b><span class="pg">p058 p116</span>'},
 {r:'实测', q:'Is changing the pH the same thing as denaturing the protein?',
+    ez:'“No. The difference is how far you go. A moderate change only changes which groups carry a charge. Salt bridges appear and disappear. Activity goes up or down. Put the pH back and the activity comes back. A large change unfolds the chain. That is denaturation. The textbook lists strong acids and strong bases as chemical denaturants. It lists them next to organic solvents, detergents, urea and guanidine.”',
+    ezcn:'<b>不是同一件事，差别在走多远。</b>小幅改变只是<b>换掉哪些基团带电</b>——盐桥出现又消失、活性上下动，<b>pH 调回去活性就回来</b>。大幅改变会<b>把链摊开，那才是变性</b>。书把强酸强碱列在化学变性剂里，跟有机溶剂、去污剂、尿素、胍并列。',
  en:'“No, and the difference is how far you go. A moderate change only changes which groups carry a charge. Salt bridges appear and disappear, activity goes up or down, and putting the pH back puts the activity back. A large change unfolds the chain, and that is denaturation. The textbook lists strong acids and strong bases among the chemical denaturants, next to organic solvents, detergents, urea and guanidine.”',
  cn:'<b>三层，按被问的深度给</b>：① 换电荷（可逆）→ ② 盐桥丢了、局部松动 → ③ 展开、暴露疏水核、聚集、不可逆（p035）。<br><b>中间那一层最值钱</b>，因为它把「pH」和「非共价键」接上了：离子对要求两边同时带电，横向卡 <code>x-bonds</code> 第 12 点。<span class="pg">p035</span>'},
 {r:'中', q:'Is a pKa a rate or an equilibrium?',

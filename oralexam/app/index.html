@@ -1397,7 +1397,11 @@ function buildAsk(c){
       h += '<details class="rq' + (r.odd ? ' odd' : '') + '"><summary>'
          + '<span class="qq">' + r.q + '</span></summary><div class="body">'
          + (r.mean ? '<p class="mean">' + r.mean + '</p>' : '')
-         + '<p class="en">' + r.say + '</p>'
+         + (r.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez">' + r.ez + '</p>'
+              + (r.ezcn ? '<p class="ezcn">' + r.ezcn + '</p>' : '') + '</div>' : '')
+         + (r.ez ? '<details class="full"><summary>完整版 ▾ 不用背，想看再点</summary>'
+              + '<p class="en">' + r.say + '</p></details>'
+              : '<p class="en">' + r.say + '</p>')
          + (r.tail ? '<p class="nt">' + r.tail + '</p>' : '')
          + fig(r.fig)
          + '<button class="fold" type="button" onclick="foldQA(this)">收起 ▴</button>'
@@ -1414,7 +1418,12 @@ function buildAsk(c){
       var cls = a.r === '实测' ? 'm' : (a.r === '高' ? 'h' : 'n');
       h += '<details class="qa"><summary><span class="risk ' + cls + '">' + a.r + '</span>'
          + '<span>' + a.q + '</span></summary><div class="qbody">'
-         + '<p class="en">' + a.en + '</p>'
+         /* R14：追问也有最短版。她被打断之后现说的就是这一版。 */
+         + (a.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez">' + a.ez + '</p>'
+              + (a.ezcn ? '<p class="ezcn">' + a.ezcn + '</p>' : '') + '</div>' : '')
+         + (a.ez ? '<details class="full"><summary>完整版 ▾ 不用背，想看再点</summary>'
+              + '<p class="en">' + a.en + '</p></details>'
+              : '<p class="en">' + a.en + '</p>')
          + (a.cn ? '<p class="nt">' + a.cn + '</p>' : '')
          + (a.warn ? '<div class="wn"><b>⚠</b> ' + a.warn + '</div>' : '')
          + (a.good ? '<div class="gd">' + a.good + '</div>' : '')

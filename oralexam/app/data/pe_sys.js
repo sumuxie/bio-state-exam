@@ -289,6 +289,8 @@ ask:[
 
 {g:'最容易混的几对', gn:'乱，通常不是不知道，是两个东西挨得太近。<b>每一对都给一句能当场分开它们的判据。</b>', items:[
 {r:'实测', q:'Yeast, insect and mammalian cells all glycosylate. Is that the same thing?',
+    ez:'“No, and treating it as the same thing is the standard error. Yeast builds high mannose structures. Those are immunogenic in humans. They also vary within one batch. Insect cells do modify the protein. But they do not build human glycans either. Only mammalian cells give the human complex type. So the question is never whether a host glycosylates. The question is whether it installs the glycan the protein needs.”',
+    ezcn:'<b>不是同一件事，把它们当成同一件事是标准错误。</b>酵母做的是<b>高甘露糖型</b>，对人有免疫原性，而且同一批之间还不均一；昆虫细胞确实会修饰，<b>但也不是人的糖型</b>；<b>只有哺乳动物细胞给出人的复杂型</b>。<b>所以问题从来不是「这个宿主糖基化吗」，是「它装的是不是这个蛋白需要的那种糖」。</b>',
  en:'“No, and treating it as the same thing is the standard error. Yeast builds high-mannose structures, immunogenic in humans and heterogeneous within a batch. Insect cells modify, but not with fully human glycans either. Only mammalian cells give the human complex type. So the question is never whether a host glycosylates. It is whether it installs the glycan the protein actually needs.”',
  cn:'<b>判据一句话：有糖链不等于有对的糖链。</b><span class="pg">L3 s.27–28</span> <span class="pg">L3 s.44</span><br><b>这是这张卡上最容易丢分的一处</b>，因为「真核生物 → 会糖基化 → 问题解决」这条推理听起来毫无破绽。<b>破绽在于它推理的是门类，而糖型取决于物种。</b>'},
 {r:'高', q:'Glycosylation and disulfide bonds are both modifications. Why does the chain ask about them separately?',
