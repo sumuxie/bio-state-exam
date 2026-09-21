@@ -25,7 +25,9 @@ def inline(m):
     return '<script>\n/* %s */\n%s\n</script>' % (m.group(1), body)
 
 
-s = re.sub(r'<script src="((?:data|audio)/[a-z0-9_]+\.js)"></script>', inline, s)
+# ⚠ 2026-09-21 起 index.html 的 data 脚本带版本号（tools/stamp.py 盖的，用来破缓存），
+# 所以这里要连 ?v=xxxxxxxx 一起匹配，取文件名时把查询串剥掉。
+s = re.sub(r'<script src="((?:data|audio)/[a-z0-9_]+\.js)(?:\?v=[0-9a-f]+)?"></script>', inline, s)
 left = re.findall(r'<script src="([^"]+)"', s)
 if left:
     print('ABORT: 还有没内联的脚本', left); sys.exit(1)
