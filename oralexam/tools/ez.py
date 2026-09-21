@@ -84,6 +84,24 @@ def load(path):
     return None
 
 
+def load_ans(path):
+    """`_ans_*.js` 是 `window.ANS_X = (window.ANS_X||[]).concat([ ... ])`。
+    卡的 load() 只认 CallExpression 的第一个实参，所以这里单独切出那个数组。"""
+    src = io.open(path, encoding='utf-8').read()
+    i = src.index('.concat(')
+    j = src.rindex(');')
+    tree = esprima.parseScript('var _ = ' + src[i + 8:j] + ';', {'tolerant': True})
+    out = []
+    for st in tree.body:
+        for d in getattr(st, 'declarations', []) or []:
+            v = getattr(d, 'init', None)
+            if v is not None and v.type == 'ArrayExpression':
+                for e in v.elements:
+                    if e is not None and e.type == 'ObjectExpression':
+                        out.append(ev(e))
+    return out
+
+
 def opening(c):
     """开口段 ＝ 第一个组标题之后、第二个组标题之前的那些点。"""
     out, seen = [], 0
@@ -116,6 +134,7 @@ def main():
              if not os.path.basename(f).startswith('_')]
     done_pts = todo_pts = 0
     ask_tot = ask_done = rec_tot = rec_done = 0
+    ans_tot = ans_done = 0
     todo_cards = []
     problems = []
     for f in files:
@@ -167,6 +186,27 @@ def main():
             if not p.get('ezcn'):
                 problems.append((name, p.get('n'), '缺中文那一行', ''))
 
+    # 66 道出声短答（实验基本技术 34 ＋ 微生物 32）。同一套 R14 规矩。
+    for f in sorted(glob.glob(os.path.join(D, '_ans_*.js'))):
+        name = os.path.basename(f)[:-3]
+        for a in load_ans(f):
+            if not a.get('en'):
+                continue
+            ans_tot += 1
+            if not a.get('ez'):
+                continue
+            ans_done += 1
+            for s in sentences(a['ez']):
+                w = len(squash(s).split())
+                if w > MAXW: problems.append((name, '短答', '%d 词' % w, s[:64]))
+                elif CLAUSE.search(s): problems.append((name, '短答', '有从句', s[:64]))
+                elif FRONT.search(s): problems.append((name, '短答', '句首从句', s[:64]))
+                elif CORREL.search(s): problems.append((name, '短答', '比较结构', s[:64]))
+            if PUNCT.search(re.sub(r'<[^>]+>', '', a['ez'])):
+                problems.append((name, '短答', '破折号或分号', a['ez'][:64]))
+            if not a.get('ezcn'):
+                problems.append((name, '短答', '缺中文那一行', a.get('q', '')[:64]))
+
     tot = done_pts + todo_pts
     print('=' * 70)
     print('R14 · 开口段最短版')
@@ -175,6 +215,7 @@ def main():
           (tot, done_pts, 100.0 * done_pts / max(tot, 1), todo_pts))
     print('追问   %d 条，已写 %d 条（%.0f%%）' % (ask_tot, ask_done, 100.0*ask_done/max(ask_tot,1)))
     print('换问法 %d 条，已写 %d 条（%.0f%%）' % (rec_tot, rec_done, 100.0*rec_done/max(rec_tot,1)))
+    print('短答   %d 条，已写 %d 条（%.0f%%）' % (ans_tot, ans_done, 100.0*ans_done/max(ans_tot,1)))
     if problems:
         print('\n不合规 %d 处（每句 ≤ %d 词 · 不许从句 · 不许破折号分号 · 要有中文那行）：' % (len(problems), MAXW))
         for p in problems[:200]:
