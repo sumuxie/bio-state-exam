@@ -111,6 +111,19 @@ if _noen:
 
 if esprima is None:
     print('⚠ 没装 esprima，最要命的那一类（字符串里有真实换行）查不了：pip install esprima')
+# ── 结构 ────────────────────────────────────────────────────────────────
+# 2026-09-21：mb_int 打不开，而这里报「全部通过」——因为那是**合法的 JS**，
+# 只是 8 条追问落在了组外面。语法和结构是两件事，所以把 shape.py 接在这里，
+# 跑一条命令同时查两样。
+import subprocess as _sp
+_r = _sp.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'shape.py')],
+             capture_output=True, text=True, encoding='utf-8')
+_out = (_r.stdout or '').strip()
+if '结构全部正常' not in _out:
+    bad += 1
+    print(_out)
+    print()
+
 print('全部通过' if bad == 0 else
       '%d 个文件有问题。语法错会让整张卡从列表里消失；'
       '缺 en 不会，但那一条追问就没有完整答案可说。' % bad)
