@@ -595,10 +595,10 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="audio/words.js"></script>
 <script src="data/_index.js?v=fb63d2a6"></script>
 <script src="data/_qbank.js?v=e7740c8c"></script>
-<script src="data/_ans_micro_a.js?v=e3d961f6"></script>
-<script src="data/_ans_micro_b.js?v=ca6ed3c4"></script>
-<script src="data/_ans_basic_a.js?v=9631c10b"></script>
-<script src="data/_ans_basic_b.js?v=20c23e5c"></script>
+<script src="data/_ans_micro_a.js?v=c2d76e5c"></script>
+<script src="data/_ans_micro_b.js?v=285bbaa2"></script>
+<script src="data/_ans_basic_a.js?v=026a970b"></script>
+<script src="data/_ans_basic_b.js?v=6d069935"></script>
 <script>window.CARDS = [];</script>
 <script src="data/_gloss.js?v=595a18bc"></script>
 <script src="data/01.js?v=f7db88b2"></script>
@@ -635,7 +635,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/32.js?v=5eef9446"></script>
 <script src="data/14.js?v=0916103f"></script>
 <script src="data/17.js?v=cab6dd59"></script>
-<script src="data/08.js?v=2500c392"></script>
+<script src="data/08.js?v=cd90bfc3"></script>
 <script src="data/25.js?v=d22d76f4"></script>
 <script src="data/27.js?v=42493c1d"></script>
 <script src="data/28.js?v=d4245dcf"></script>
@@ -678,6 +678,8 @@ var ABBR = {};
   ABBR.BDNA = 'B-DNA'; ABBR.ZDNA = 'Z-DNA'; ABBR.ADNA = 'A-DNA';
   /* 卡 12 书外那两组（ch7 原核调控）新加的 */
   ABBR.SOS = 'SOS'; ABBR.AMPCRP = 'AMP-CRP';
+  /* 66 道短答的 ez 里新出现的 */
+  ABBR.BCA = 'BCA'; ABBR.ELISA = 'ELISA'; ABBR.TE = 'TE'; ABBR.PVDF = 'PVDF';
   ABBR.pIII = 'pIII'; ABBR.pVIIIa = 'pVIII'; ABBR.RT = 'RT'; ABBR.SS = 'S-S';
 })();
 function unspell(x){
@@ -2352,7 +2354,12 @@ function renderQB(key){
        + '<span class="w' + (q.w === 3 ? ' hi' : '') + '">' + (q.w === 3 ? '卷一' : (q.w === 2 ? '卷二' : '卷三')) + '</span>';
     if (a){
       h += '<li class="has"><details><summary>' + head + '</summary><div class="ans">'
-         + '<p class="en">' + a.en + '</p>'
+         /* R14：短答也有最短版。2026-09-21 她说「那是必须得弄一下的，缺的是 ez」。 */
+         + (a.ez ? '<div class="ezb"><p class="lbl">先背这句</p><p class="ez" data-say="' + escAttr(a.ez) + '">' + unspell(a.ez) + '</p>'
+              + (a.ezcn ? '<p class="ezcn">' + a.ezcn + '</p>' : '') + '</div>' : '')
+         + (a.ez ? '<details class="full"><summary>完整版 ▾ 不用背，想看再点</summary>'
+              + '<p class="en">' + a.en + '</p></details>'
+              : '<p class="en">' + a.en + '</p>')
          + (a.cn ? '<p class="nt">' + a.cn + '</p>' : '')
          + (a.warn ? '<div class="wn"><b>⚠</b> ' + a.warn + '</div>' : '')
          + '</div></details></li>';
