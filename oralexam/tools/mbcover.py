@@ -120,8 +120,14 @@ print('合计 %d 个节点，偏薄的 %d 个。' % (grand_n, grand_thin))
 
 print()
 print('=' * 74)
-print('☠ 有料、但没有任何一张卡对应的')
+print('✅ 四张卡范围之外的，2026-09-21 已穿插（不加卡）')
 print('=' * 74)
+DEST = {
+    'spine_ch7.js': '卡 12，17 条（转录层 8 · 转录之后 9）',
+    'spine_misc2.js': 'RNA 那一半 1-22 → mb_post 8 条；固氮那一半 23-37 → 卡 28 四条 ＋ 卡 12 一条',
+    'spine_misc.js': '转座子 1-15 → mb_ko 6 条；CpG 脱氨 16-18 → mb_reg 1 条；SNP 群体那段没做',
+    'spine_ch6_yeast.js': '酵母互补 → mb_ko 3 条；EMSA／体外激酶／GFP 与免疫荧光／Western → mb_int 4 条；噬菌体展示 → pe_evo 1 条；GWAS 没做',
+}
 tot = 0
 for sp in ORPHAN:
     p = os.path.join(SPINE, sp)
@@ -134,5 +140,8 @@ for sp in ORPHAN:
     print('\n%-28s %2d 个节点' % (sp, len(ns)))
     if m:
         print('    ' + re.sub(r'\*\*', '', m.group(1))[:110])
+    if sp in DEST:
+        print('    → ' + DEST[sp])
 print()
-print('这四份共 %d 个节点，完全在四张卡的范围之外。' % tot)
+print('这四份共 %d 个节点，2026-09-21 全部穿完，压成 37 条追问，一张新卡没加。' % tot)
+print('⚠ 故意没做的两块：SNP 群体遗传与 HapMap（misc 19-25）· GWAS（ch6_yeast 26-27）——跟三十道题都不沾边。')
