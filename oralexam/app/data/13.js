@@ -312,6 +312,28 @@ recog:[
 
 /* ---------------- 追问 ---------------- */
 ask:[
+ {g:'⚠ 书外 · 全景，以及书上没有的那几种', gn:'这一组只是「提一下」，不深入。<b>捷克书 §4.3.3（p.111）列的 7 项卡上都有，包括硫酸化。</b>⚠ <b>而泛素化、蛋白酶体、SUMO 化、脂酰化——捷克书里一个字都没有（搜过各种写法，都是 0 页）。下面这几条全出自 Lehninger，说的时候要把出处带上。</b>', items:[
+  {r:'高', q:'How are post-translational modifications usually grouped?',
+   ez:'“They fall into four kinds. The first adds a small chemical group. Those are usually reversible signals. The second attaches a sugar chain or a lipid. Those set where the protein goes. The third attaches a whole small protein as a tag. The fourth cuts the chain or cross links it. Those are mostly one way.”',
+   ezcn:'<b>分四类。</b><b>① 挂一个小化学基团</b>（磷酸化、乙酰化、甲基化、羟基化、羧基化、硫酸化），多半可逆，当信号。<b>② 挂糖链或脂质</b>（糖基化、脂酰化），定去向和寿命。<b>③ 挂另一个完整的小蛋白当标签</b>（泛素化、SUMO 化）。<b>④ 切开或交联</b>（有限蛋白酶解、二硫键），多半不可逆。⚠ <b>捷克书 §4.3.3 只盖住 ①②④ 里的 7 项，第 ③ 类整类没有。</b>',
+   en:'“They fall into four kinds. The first adds a small chemical group, and those are usually reversible signals: phosphorylation, acetylation, methylation, hydroxylation, carboxylation, sulfation. The second attaches a sugar chain or a lipid, which sets where the protein goes and how long it lasts. The third attaches a whole small protein as a tag, ubiquitin or SUMO. The fourth cuts the chain or cross-links it, and those are mostly one-way. Lehninger puts the first and third together in one sentence. It lists phosphoryl, acetyl, methyl, myristoyl, palmitoyl, prenyl, hydroxyl and sulfate groups, and then says entire proteins can serve as modifying groups too.”'},
+  {r:'中', q:'What is ubiquitination?',
+   ez:'“Ubiquitination attaches ubiquitin to a lysine of the target protein. Ubiquitin is a small protein of seventy six residues. A chain of several ubiquitins is the signal for destruction. The tagged protein is then sent to the proteasome.”',
+   ezcn:'<b>泛素化 ＝ 把泛素（一个 76 个残基的小蛋白）挂到靶蛋白的赖氨酸上。</b><b>多泛素化是「死亡标签」：被标记的蛋白被送去蛋白酶体拆掉。</b>⚠ <b>捷克书里一个字都没有；这条出自 Lehninger（图 6-38、图 4-23）。</b>',
+   en:'“Ubiquitination attaches ubiquitin, a small protein of seventy-six residues, to a lysine of the target protein. A chain of several ubiquitins is the signal for destruction, and the tagged protein is sent to the proteasome. The Czech textbook does not mention it anywhere, so this comes from Lehninger.”'},
+  {r:'中', q:'What is the proteasome?',
+   ez:'“The proteasome is the machine that takes proteins apart. It is a large protein complex in the cell. It accepts proteins carrying a ubiquitin chain. It cuts them into short peptides.”',
+   ezcn:'<b>蛋白酶体 ＝ 细胞里拆蛋白的那台机器，一个大的蛋白复合物。</b><b>它收带着泛素链的蛋白，把它们切成短肽。</b>⚠ <b>捷克书 0 处（proteazom / proteasom / 26S / 20S 都搜不到）。Lehninger 图 4-23 把它跟自噬、淀粉样纤维并排在蛋白稳态那张图里。</b>',
+   en:'“The proteasome is the machine that takes proteins apart, a large protein complex in the cell. It accepts proteins carrying a ubiquitin chain and cuts them into short peptides. The Czech textbook has nothing on it, while Lehninger places it alongside autophagy in its picture of proteostasis.”'},
+  {r:'中', q:'What is SUMOylation?',
+   ez:'“SUMOylation attaches SUMO to a target protein. SUMO stands for small ubiquitin like modifier. It looks like ubiquitin but it does not mean destruction. It changes where the protein sits or how stable it is.”',
+   ezcn:'<b>SUMO 化 ＝ 把 SUMO（small ubiquitin-like modifier，泛素样修饰子）挂到靶蛋白上。</b>⚠ <b>它长得像泛素，但不意味着降解：它改的是蛋白待在哪里、或者稳不稳定。</b>⚠ <b>别跟 pe-pur 卡上的 SUMO 蛋白酶混——那是切融合标签的工具，不是这个修饰。捷克书 0 处，这条出自 Lehninger。</b>',
+   en:'“SUMOylation attaches SUMO, the small ubiquitin-like modifier, to a target protein. It resembles ubiquitination but does not mean destruction. It changes where the protein sits or how stable it is. It should not be confused with the SUMO protease used to cut fusion tags, which is a laboratory tool.”'},
+  {r:'中', q:'What is lipidation?',
+   ez:'“Lipidation attaches a lipid to a protein by a covalent bond. The lipid can be a fatty acid such as myristate or palmitate. It can also be a prenyl group. The lipid then works as an anchor that holds the protein in a membrane.”',
+   ezcn:'<b>脂酰化 ＝ 用共价键把一条脂质挂到蛋白上</b>（肉豆蔻酰基、棕榈酰基这类脂肪酸链，或异戊烯基）。<b>它的作用是当一把锚，把蛋白固定在膜上。</b>⚠ <b>捷克书 0 处（书里的 farnesyl 只出现在萜类与胆固醇合成）；Lehninger 的清单里有 myristoyl、palmitoyl、prenyl。</b>',
+   en:'“Lipidation attaches a lipid to a protein through a covalent bond. The lipid may be a fatty acid such as myristate or palmitate, or a prenyl group. It works as an anchor holding the protein in a membrane. The Czech textbook does not mention it, and Lehninger lists myristoyl, palmitoyl and prenyl among its modifying groups.”'},
+ ]},
 {g:'他会挖的三个方向', gn:'卷面上多出来的每个词，就是一个方向。', items:[
 {r:'实测', q:'Why those two in particular? (critical)',
     ez:'“Because they are the two general ones. The textbook puts four modifications in the E R. They are glycosylation, disulfide formation, hydroxylation and gamma carboxylation. But hydroxylation belongs to collagen. Gamma carboxylation belongs to the clotting factors. Nearly every surface protein carries an N glycan. Nearly every one carries disulfides too. Neither can be made in the cytosol. The cytosol is reducing. And the transferase faces the E R lumen. So these two mark a protein that went through the secretory route.”',
