@@ -2231,6 +2231,12 @@ function wbQueue(){
   });
   return {due: due, fresh: fresh, all: wbWords().length};
 }
+/* 2026-09-21 她提的：「单词书跳转下一个单词就自动出下个单词的声音」。
+   只在 wbNext()（真的翻到下一个词）时响；显示意思、展开清单这些重新渲染不响。
+   默认开，可以关掉——图书馆里背的时候用得上。 */
+var WBAK = 'oralexam.wbauto.v1';
+function wbAuto(){ try { return localStorage.getItem(WBAK) !== '0'; } catch(e){ return true; } }
+function wbToggleAuto(){ try { localStorage.setItem(WBAK, wbAuto() ? '0' : '1'); } catch(e){} renderWb(); }
 var wbCur = null, wbShown = false;
 /* 词库清单默认收起。她的话（2026-09-15）：「词库先隐藏」。
    单词本里只会出现她收藏过的词，没收藏的一个都不进来。 */
@@ -2241,6 +2247,10 @@ function wbNext(){
   wbCur = q.due.length ? q.due[0] : (q.fresh.length ? q.fresh[0] : null);
   wbShown = false;
   renderWb();
+  /* 有 mp3 就放 mp3，没有就退回语音合成——playWord 自己处理。
+     浏览器要求先有用户手势，点「想起来了」就是手势；
+     第一次进页面可能被拦，playWord 内部 catch 掉，不报错也不中断。 */
+  if (wbCur && wbAuto()) playWord(wbCur.text);
 }
 function wbShow(){ wbShown = true; renderWb(); }
 function wbAnswer(g){
@@ -2266,7 +2276,9 @@ function renderWb(){
     var g = glossOf(wbCur.text), r = st[wbCur.text];
     h += '<div class="wbcard"><div class="hw">' + esc(wbCur.text) + '</div>'
        + (g && g.ipa ? '<div class="ipa">' + esc(g.ipa) + '</div>' : '')
-       + '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="playWord(' + JSON.stringify(wbCur.text) + ')">🔊 听</button></p>';
+       + '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="playWord(' + JSON.stringify(wbCur.text) + ')">🔊 听</button>'
+       + ' <button class="bbtn ghost" type="button" onclick="wbToggleAuto()">自动发音 '
+       + (wbAuto() ? '开' : '关') + '</button></p>';
     if (wbShown){
       if (g && g.ex){
         h += '<p class="ex">' + esc(g.ex) + '</p>'
