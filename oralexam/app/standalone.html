@@ -57,7 +57,7 @@ a{color:inherit}
 /* ---------- top bar ---------- */
 .top{position:sticky;top:0;z-index:6;background:color-mix(in srgb,var(--paper) 93%,transparent);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);
-  padding:10px 18px;display:flex;align-items:center;gap:12px}
+  padding:10px 62px 10px 18px;display:flex;align-items:center;gap:12px}   /* 右边留 62px 给固定在窗口角上的 .thm，不然 📕 会压在它底下 */
 .top .home{font-size:13px;color:var(--dim);text-decoration:none;border:1px solid var(--rule);
   border-radius:18px;padding:5px 13px;white-space:nowrap;cursor:pointer;background:var(--card)}
 .top .home:hover{border-color:var(--accent);color:var(--accent)}
@@ -23520,6 +23520,12 @@ function wbQueue(){
   });
   return {due: due, fresh: fresh, all: wbWords().length};
 }
+/* 2026-09-21 她提的：「单词书跳转下一个单词就自动出下个单词的声音」。
+   只在 wbNext()（真的翻到下一个词）时响；显示意思、展开清单这些重新渲染不响。
+   默认开，可以关掉——图书馆里背的时候用得上。 */
+var WBAK = 'oralexam.wbauto.v1';
+function wbAuto(){ try { return localStorage.getItem(WBAK) !== '0'; } catch(e){ return true; } }
+function wbToggleAuto(){ try { localStorage.setItem(WBAK, wbAuto() ? '0' : '1'); } catch(e){} renderWb(); }
 var wbCur = null, wbShown = false;
 /* 词库清单默认收起。她的话（2026-09-15）：「词库先隐藏」。
    单词本里只会出现她收藏过的词，没收藏的一个都不进来。 */
@@ -23530,6 +23536,10 @@ function wbNext(){
   wbCur = q.due.length ? q.due[0] : (q.fresh.length ? q.fresh[0] : null);
   wbShown = false;
   renderWb();
+  /* 有 mp3 就放 mp3，没有就退回语音合成——playWord 自己处理。
+     浏览器要求先有用户手势，点「想起来了」就是手势；
+     第一次进页面可能被拦，playWord 内部 catch 掉，不报错也不中断。 */
+  if (wbCur && wbAuto()) playWord(wbCur.text);
 }
 function wbShow(){ wbShown = true; renderWb(); }
 function wbAnswer(g){
@@ -23555,7 +23565,9 @@ function renderWb(){
     var g = glossOf(wbCur.text), r = st[wbCur.text];
     h += '<div class="wbcard"><div class="hw">' + esc(wbCur.text) + '</div>'
        + (g && g.ipa ? '<div class="ipa">' + esc(g.ipa) + '</div>' : '')
-       + '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="playWord(' + JSON.stringify(wbCur.text) + ')">🔊 听</button></p>';
+       + '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="playWord(' + JSON.stringify(wbCur.text) + ')">🔊 听</button>'
+       + ' <button class="bbtn ghost" type="button" onclick="wbToggleAuto()">自动发音 '
+       + (wbAuto() ? '开' : '关') + '</button></p>';
     if (wbShown){
       if (g && g.ex){
         h += '<p class="ex">' + esc(g.ex) + '</p>'
