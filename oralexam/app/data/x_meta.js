@@ -308,6 +308,12 @@ figs:[
 
 /* ---------------- 追问 ---------------- */
 ask:[
+ {g:'⚠ 书上有、卡上本来没有的一句', gn:'2026-09-21 查 PTM 的时候顺手查出来的：书 <span class="pg">p115</span> 开篇讲蛋白质周转那一段，<b>里面的半衰期数字全套卡上一次都没出现过</b>。', items:[
+  {r:'高', q:'How long does a protein last in the body?',
+   ez:'“Most proteins are continually degraded and made again. The textbook gives one number. Human serum albumin has a half life of twenty to twenty five days. In the body proteases catalyse that breakdown. The amino acids released are partly reused. The rest are broken down further.”',
+   ezcn:'<b>绝大多数蛋白质在体内不断被降解、又不断被重新合成。</b><b>书给了一个数：人血清白蛋白的半衰期是 20～25 天。</b><b>肽键的水解在酸性和碱性环境中会自发发生；在体内这一步由蛋白水解酶催化。</b><b>放出的氨基酸一部分再用于合成，一部分继续被拆：氮变成氨和尿素，碳骨架进柠檬酸循环。</b>',
+   en:'“Most proteins in the body are continually degraded and re-synthesised. The textbook gives one figure for that. Human serum albumin has a half-life of twenty to twenty-five days. Hydrolysis of the peptide bond happens spontaneously in acidic and alkaline conditions. In the organism this catabolic step is catalysed by proteolytic enzymes, the proteases. The amino acids they release go partly into new biosynthesis and are partly broken down further, the nitrogen into ammonia and urea and the carbon skeleton into the citrate cycle.”'},
+ ]},
 {g:'定义类', gn:'这张卡自己用到的词，他会一个个拎出来问。<b>其中几个在整套卡里从来没有正面定义过</b>，所以必须在这里给。', items:[
 {r:'高', q:'What is beta-oxidation?',
     ez:'“Beta oxidation is the degradation of a fatty acid. It removes two carbon units. Those leave as acetyl groups. They come off the carboxyl end. It is named after the beta carbon. That is the second one along from the carboxyl. It is the one that gets oxidised. One cycle shortens the chain by two carbons. It has four steps. Dehydrogenation by F A D. Hydration of the double bond. Dehydrogenation by N A D plus. And thiolytic cleavage by coenzyme A. In eukaryotes it sits in the mitochondrial matrix. The textbook says the matrix holds all four enzymes.”',
