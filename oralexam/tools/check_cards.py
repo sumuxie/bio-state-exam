@@ -6,7 +6,7 @@
    括号/引号扫描抓不到「单引号字符串里有真实换行」——JS 里这是语法错，
    而这一条会让整张卡从列表里消失（2026-09-14 Kd 卡就是这么没的）。
    所以最后一列用 esprima 真解析一遍。"""
-import io, os, glob, sys
+import io, os, re, glob, sys
 try:
     import esprima
 except ImportError:
@@ -122,6 +122,34 @@ _out = (_r.stdout or '').strip()
 if '结构全部正常' not in _out:
     bad += 1
     print(_out)
+    print()
+
+# ── 页面：装数据之前有没有先把数组建出来 ────────────────────────────────
+# 2026-09-22：drill.html 第一版页面上只显示「卡的数据没装上」。
+# 原因不在数据里，在页面里：data/*.js 写的是 window.CARDS.push({...})，
+# **数组必须先存在**，否则第一个文件就抛 TypeError，后面四十个一个都不执行。
+# index.html 第 602 行有 `window.CARDS = [];`，drill.html 漏了。
+# 语法检查、结构检查、ez、plain 全都看不见这一类错——它不在卡里，在页面里。
+_APP = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'app')
+_pages = [f for f in sorted(glob.glob(os.path.join(_APP, '*.html')))
+          if os.path.basename(f) != 'standalone.html']
+_pbad = []
+for _p in _pages:
+    _s = io.open(_p, encoding='utf-8').read()
+    # 只看真正会 push 的那些：下划线开头的（_index / _qbank / _ans_* / _gloss）
+    # 定义的是别的全局，不碰 window.CARDS，排在前面完全正常。
+    _m = re.search(r'<script src="data/(?!_)[a-z0-9_]+\.js', _s)
+    if not _m:
+        continue
+    _decl = re.search(r'window\.CARDS\s*=\s*\[\s*\]', _s)
+    if not _decl or _decl.start() > _m.start():
+        _pbad.append(os.path.basename(_p))
+if _pbad:
+    bad += len(_pbad)
+    print('⚠ 这些页面在装 data/*.js 之前没有先写 `window.CARDS = [];`，')
+    print('  于是第一个数据文件就会抛错，整页一张卡都没有：')
+    for _b in _pbad:
+        print('   ', _b)
     print()
 
 print('全部通过' if bad == 0 else

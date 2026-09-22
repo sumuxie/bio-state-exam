@@ -106,7 +106,12 @@ a{color:var(--accent)}
   <div id="main"></div>
 </div>
 
-<!-- ===== 卡的数据 · 跟 index.html 用同一批文件 ===== -->
+<!-- ===== 卡的数据 · 跟 index.html 用同一批文件 =====
+     ⚠ 这一行必须在所有 data/*.js 之前：那些文件里写的是 window.CARDS.push({...})，
+     数组不先存在，第一个文件就会抛 “Cannot read properties of undefined”，
+     然后后面 40 个一个都不会执行 —— 页面上看到的就是「卡的数据没装上」。
+     index.html 第 602 行有同样的一句，drill.html 第一版漏了它。2026-09-22 修。 -->
+<script>window.CARDS = [];</script>
 <script src="data/01.js?v=f7db88b2"></script>
 <script src="data/02.js?v=13d403d3"></script>
 <script src="data/03.js?v=4051652c"></script>
@@ -190,9 +195,18 @@ function qlist(c){
   return out;
 }
 function cardTitle(c){ return strip(c.qcn||c.q||c.id); }
-/* 卡面题是英文就用它开场（那才是考官真会念的那一句）；是中文就退回抽一道追问。 */
+/* 卡面题是英文就用它开场（那才是考官真会念的那一句）；是中文就退回抽一道追问。
+   主问题的「标准答案」用这张卡的**逐字稿 segs** —— 那本来就是整题出声说一遍的版本，
+   比落点 end 完整得多，漏词表也才有足够的关键词可比。segs 没有就退回 end。 */
+function fullAnswer(c){
+  var ps = [];
+  (c.segs||[]).forEach(function(s){ (s.p||[]).forEach(function(x){ ps.push(strip(x)); }); });
+  var t = ps.join(' ');
+  return t || strip(c.end||'');
+}
 function mainOf(c, pool){
-  if(c.q && !CJK.test(c.q)) return {q:strip(c.q), en:(c.end?strip(c.end):''), cn:'', warn:'', g:'卷面题', r:'高', isMain:1};
+  if(c.q && !CJK.test(c.q))
+    return {q:strip(c.q), en:fullAnswer(c), cn:'', warn:'', g:'卷面题 · 完整回答', r:'高', isMain:1};
   return pool[0];
 }
 
@@ -474,9 +488,14 @@ function ask(){
     + '</div>'
     + '<p class="small">⚠ 答案要等这一组<b>全部结束</b>之后才出现。</p>';
   paintLive();
-  /* 先念题，念完再开麦 —— 不然它会把自己念的话也记进去。 */
-  say(q.q, function(){ recStart(); runClock(secs); });
+  /* 先念题，念完再开麦 —— 不然它会把自己念的话也记进去。
+     ⚠ 闸：say() 开头会 speechSynthesis.cancel()，而 cancel 会让**上一条**的 onend
+     立刻触发。没有这个序号，上一题的回调会在新题上再开一次计时器和麦克风，
+     于是两个 clock 同时在跑、时间一秒掉两格。 */
+  var mine = ++seq;
+  say(q.q, function(){ if(mine !== seq) return; recStart(); runClock(secs); });
 }
+var seq = 0;
 
 var timerId=null;
 function fmt(s){ return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
@@ -494,6 +513,7 @@ function runClock(secs){
 }
 
 function doneAnswer(){
+  seq++;                       /* 作废掉还没回来的朗读回调 */
   if(timerId){ clearInterval(timerId); timerId=null; }
   recStop();
   try{ speechSynthesis.cancel(); }catch(e){}
@@ -524,6 +544,7 @@ function nextCard(){
 }
 
 function quit(){
+  seq++;
   if(timerId){ clearInterval(timerId); timerId=null; }
   recStop();
   try{ speechSynthesis.cancel(); }catch(e){}
