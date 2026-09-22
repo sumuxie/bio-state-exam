@@ -112,6 +112,13 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
   font-weight:700;letter-spacing:.6px;border-radius:5px;padding:1px 7px;margin-right:7px;
   vertical-align:2px}
 .defbig{font-weight:600}
+.modes{display:flex;gap:10px;margin:14px 0 0;flex-wrap:wrap}
+.modes .mode{flex:1;min-width:210px;text-align:left;padding:12px 14px;line-height:1.5}
+.modes .mode b{display:block;font-size:15.5px;margin-bottom:2px}
+.modes .mode span{display:block;font-size:12.5px;color:var(--dim)}
+.modes .mode.sel{border-color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.modes .mode.sel b{color:var(--accent)}
 .defhl{background:color-mix(in srgb,var(--accent) 14%,transparent);
   box-shadow:inset 3px 0 0 var(--accent);padding:2px 6px 2px 9px;border-radius:0 5px 5px 0;
   font-weight:600}
@@ -603,6 +610,19 @@ function home(){
         + usable.length + ' 张过一遍要 <b id="estall">'
         + Math.round(usable.length*(120+nF*60)/60) + '</b> 分钟</span>'
     + '</div>'
+    /* ⚠ 2026-09-22 她：「两个模式：纯导师拷问版和有正确答案版」。 */
+    + (function(){ var m = s.mode || 'answer', sec = (s.ansSecs==null?20:s.ansSecs);
+        return '<div class="modes">'
+        + '<button class="mode' + (m==='grill'?' sel':'') + '" onclick="setMode(\'grill\')">'
+          + '<b>纯拷问</b><span>一路问到底 · 答案只在最后的总览里 · 最像真的口试</span></button>'
+        + '<button class="mode' + (m==='answer'?' sel':'') + '" onclick="setMode(\'answer\')">'
+          + '<b>带答案</b><span>每题答完当场给 ' + sec + ' 秒答案，看完自动进下一题</span></button>'
+        + '</div>'
+        + (m==='answer' ? '<div class="row" style="margin-top:8px"><label>答案看多久 '
+            + '<select id="asec">'
+            + [10,15,20,30,45].map(function(n){ return '<option value="'+n+'"'
+                + (n===sec?' selected':'') + '>' + n + ' 秒</option>'; }).join('')
+            + '</select></label></div>' : ''); })()
     + '<div class="row" style="margin-top:12px">'
       + '<label>念题的声音 <select id="vsel" style="max-width:340px"></select></label>'
       + '<span class="small">★ 是神经网络语音，最接近真人。<b>选一个就会试念一句。</b></span>'
@@ -633,6 +653,8 @@ function home(){
       + '<br>③ 记录只存在这台机器上，跟收藏、单词本一样。</div>'
     + '<p class="small">卡片数据跟主 app 是同一批。<a href="index.html">← 回主 app</a></p>';
   paintVoices();
+  var asec = $('asec');
+  if(asec) asec.onchange = function(){ var s2=st(); s2.ansSecs = +asec.value; save(s2); home(); };
   var sel=$('nf');
   if(sel) sel.onchange=function(){
     var s2=st(); s2.nFollow=+sel.value; save(s2);
@@ -640,6 +662,8 @@ function home(){
     $('estall').textContent = Math.round(usable.length*(120+(+sel.value)*60)/60);
   };
 }
+
+function setMode(m){ var s2=st(); s2.mode=m; save(s2); home(); }
 
 function begin(){
   var s=st(); var nF=(s.nFollow==null?3:s.nFollow);
@@ -678,7 +702,10 @@ function ask(){
       + '<button class="ghost" onclick="doneAnswer()">跳过</button> '
       + '<button class="ghost" onclick="quit()">结束这一组</button></p>'
     + '</div>'
-    + '<p class="small">⚠ 答案要等这一组<b>全部结束</b>之后才出现。</p>';
+    + '<p class="small">' + ((st().mode||'answer')==='grill'
+        ? '⚠ 纯拷问模式：答案要等这一组<b>全部结束</b>之后才出现。'
+        : '说完之后会给你 ' + ((st().ansSecs==null?20:st().ansSecs)) + ' 秒看答案，然后自动进下一题。')
+      + '</p>';
   paintLive();
   /* 先念题，念完再开麦 —— 不然它会把自己念的话也记进去。
      ⚠ 闸：say() 开头会 speechSynthesis.cancel()，而 cancel 会让**上一条**的 onend
@@ -749,8 +776,60 @@ function doneAnswer(){
     var rest = c.pool.filter(function(x){ return x!==c.main; });
     c.follow = rankFollow(rest, said).slice(0, c.nFollow);
   }
+  /* ⚠ 两个模式在这里分岔。带答案模式先给 20 秒，纯拷问模式直接下一题。 */
+  var s2 = st();
+  if((s2.mode || 'answer') === 'answer' && (s2.ansSecs == null ? 20 : s2.ansSecs) > 0){
+    revealAnswer(S.log[S.log.length-1]);
+  } else {
+    advanceQ();
+  }
+}
+
+/* 答完一题，当场给答案看一会儿。⚠ 这一屏是「看」不是「说」——
+   麦克风在 doneAnswer 里已经停了，这里不要再开，否则她念答案的声音
+   会被下一题抓进去。 */
+var revealTimer = null;
+function revealAnswer(x){
+  if(!x){ advanceQ(); return; }
+  var secs = (function(){ var v = st().ansSecs; return v==null ? 20 : v; })();
+  var ez = x.ez || x.en || '';
+  var d0 = splitSent(ez)[0] || '';
+  $('main').innerHTML =
+    '<div class="card">'
+    + '<div class="small">' + esc(x.title) + (x.sub ? ' · 追问 ' + x.sub : ' · 主问题') + '</div>'
+    + '<p class="q" style="font-size:17px">' + esc(x.q) + '</p>'
+    + (x.gave ? '<div class="fix"><b class="small">你说了说不上。</b> 那就看这 '
+        + secs + ' 秒 —— 下次先把定义那一句说出口就够了。</div>' : '')
+    + '<div class="ans">' + markDef(ez) + '</div>'
+    + (x.ezcn ? '<details><summary>中文对照</summary><div class="small" style="line-height:1.9">'
+        + x.ezcn + '</div></details>' : '')
+    + '<div class="row" style="margin-top:14px">'
+      + '<button class="main" onclick="advanceQ()">下一题 ▸</button>'
+      + '<button onclick="sayEl(document.querySelector(\'.ans\'))">🔊 念一遍</button>'
+      + '<button class="ghost" onclick="holdReveal(this)">再看一会</button>'
+      + '<span class="timer" id="rclock" style="font-size:26px">' + secs + '</span>'
+    + '</div></div>';
+  if(d0) say(d0);                     /* 只念定义那一句，短，来得及 */
+  var left = secs;
+  if(revealTimer) clearInterval(revealTimer);
+  revealTimer = setInterval(function(){
+    left--;
+    var el = $('rclock'); if(!el){ clearInterval(revealTimer); return; }
+    el.textContent = left;
+    if(left <= 0){ clearInterval(revealTimer); revealTimer = null; advanceQ(); }
+  }, 1000);
+}
+function holdReveal(btn){
+  if(revealTimer){ clearInterval(revealTimer); revealTimer = null;
+    var el = $('rclock'); if(el) el.textContent = '—';
+    btn.textContent = '不再自动跳'; btn.disabled = true; }
+}
+function advanceQ(){
+  if(revealTimer){ clearInterval(revealTimer); revealTimer = null; }
+  try{ speechSynthesis.cancel(); }catch(e){}
+  var c = curCard();
   S.sub++;
-  if(S.sub > (c.follow? c.follow.length : 0)) nextCard(); else ask();
+  if(S.sub > (c.follow ? c.follow.length : 0)) nextCard(); else ask();
 }
 
 function nextCard(){
