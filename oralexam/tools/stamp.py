@@ -19,9 +19,9 @@ import io, os, re, sys, hashlib
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 APP = os.path.join(HERE, '..', 'app')
-P = os.path.join(APP, 'index.html')
-
-t = io.open(P, encoding='utf-8').read()
+# 2026-09-22：演练台 drill.html 装的是同一批 data/*.js，所以它也必须盖版本号，
+# 否则她那边永远打不到新数据 —— 9/21 mb_int「打不开」就是这么来的（推上去了，她看到的是旧的）。
+PAGES = [os.path.join(APP, 'index.html'), os.path.join(APP, 'drill.html')]
 PAT = re.compile(r'(<script src="(data/[^"?]+\.js)(?:\?v=[0-9a-f]+)?"></script>)')
 
 n = changed = 0
@@ -41,7 +41,13 @@ def sub(m):
     return new
 
 
-t2 = PAT.sub(sub, t)
-if t2 != t:
-    io.open(P, 'w', encoding='utf-8', newline='\n').write(t2)
-print(u'盖了 %d 个数据文件的版本号，其中 %d 个变了' % (n, changed))
+pages = 0
+for P in PAGES:
+    if not os.path.exists(P):
+        continue
+    pages += 1
+    t = io.open(P, encoding='utf-8').read()
+    t2 = PAT.sub(sub, t)
+    if t2 != t:
+        io.open(P, 'w', encoding='utf-8', newline='\n').write(t2)
+print(u'盖了 %d 个数据文件的版本号，其中 %d 个变了（%d 个页面）' % (n, changed, pages))
