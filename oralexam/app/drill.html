@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>口试演练</title>
+<!--
+  口试演练台 —— 2026-09-22 Ruojin 提的。
+
+  她的原话：「可以另外做一个出来，不一定和现在的 app 相关。用目前的 app 的卡片，
+  模仿老师们的考试，五个卡片为一个 set，然后就是随机的 set，每个卡片里也随机抽问题
+  出来。关键在于是互动式，问题会念出来，然后给我两分钟，这两分钟会转录我的语音，
+  然后根据我的语音再提问，每个问题可以提 5 个追问。每天都必须练。最后肯定会显示出
+  答案，但是我觉得应该在最最后，全部卡片结束之后再显示。」
+  后面又补：「练过的可以循环反复出现，但是每次都需要有新问题。最好是一天能够把所有
+  卡片都过一遍。」
+
+  ⚠ 为什么这一个值得破例做（规矩三）。这个仓库里所有别的产出都是**材料**，
+  而她自己说过「我在用整理学习材料来逃避真正的学习」。
+  **这是唯一一个把材料逼成开口的东西**，挡住她的不是「找不到 X」，是「张不开嘴」。
+
+  三件不用花力气的事：
+  · 朗读 —— 浏览器自带 speechSynthesis。
+  · 转录 —— 浏览器自带 SpeechRecognition，不要 key、不要后端。
+  · 追问 —— **1212 条已经写好了，不需要生成**。按「她刚才没说到哪些词」来挑，
+    比现编的准，而且这正是这个项目一直在用的那把尺子（「哪几张漏超过 2 条」）。
+
+  三件真正的风险，都写在页面上告诉她了：
+  ① 只有 Chrome / Edge 桌面版靠谱，Safari 和 iOS 多半不行。
+  ② 专业词会被听错（oxaloacetate 这类），所以漏词表是**线索不是判决**，
+     匹配只比前 5 个字母，而且原始转录一定显示出来给她自己看。
+  ③ Chrome 的识别把音频送到 Google 的服务器 —— 说一次，让她知道。
+
+  这一页不依赖 index.html 的任何代码，只共用 data/*.js（它们往 window.CARDS 上 push）。
+-->
+<style>
+:root{
+  --bg:#faf8f4; --ink:#1c1a17; --dim:#6b645c; --line:#e3ddd3;
+  --card:#fff; --accent:#8a5a2b; --good:#2f6b3f; --bad:#a33; --warn:#8a6d1f;
+}
+:root:not([data-theme="light"]){ }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16140f; --ink:#ece7dd; --dim:#9a9187; --line:#2e2a22;
+    --card:#1e1b15; --accent:#d9a066; --good:#7fc08e; --bad:#e58b83; --warn:#d8bb63;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16140f; --ink:#ece7dd; --dim:#9a9187; --line:#2e2a22;
+  --card:#1e1b15; --accent:#d9a066; --good:#7fc08e; --bad:#e58b83; --warn:#d8bb63;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  padding:0 16px 80px;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+header{padding:22px 0 10px;border-bottom:1px solid var(--line);margin-bottom:20px}
+h1{font-size:21px;margin:0 0 4px}
+.sub{color:var(--dim);font-size:13.5px;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+button{font:inherit;cursor:pointer;border-radius:9px;border:1px solid var(--line);
+  background:var(--card);color:var(--ink);padding:9px 15px}
+button:hover{border-color:var(--accent)}
+button.main{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;padding:12px 22px}
+button.main:disabled{opacity:.45;cursor:not-allowed}
+button.ghost{color:var(--dim)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.q{font-size:20px;line-height:1.5;font-weight:600;margin:6px 0 4px}
+.qmeta{color:var(--dim);font-size:13px;margin:0 0 14px}
+.timer{font-size:44px;font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:1px}
+.timer.low{color:var(--bad)}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin:10px 0 16px}
+.bar>i{display:block;height:100%;background:var(--accent);width:100%}
+.live{background:var(--bg);border:1px dashed var(--line);border-radius:9px;padding:12px;
+  min-height:96px;font-size:15px;line-height:1.75;white-space:pre-wrap}
+.live .interim{color:var(--dim)}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;
+  padding:2px 10px;font-size:12.5px;color:var(--dim);margin:0 6px 6px 0}
+.pill.on{border-color:var(--accent);color:var(--accent)}
+.miss{color:var(--bad);font-weight:600}
+.hit{color:var(--good)}
+.warnbox{border-left:3px solid var(--warn);padding:8px 12px;margin:12px 0;
+  background:color-mix(in srgb,var(--warn) 9%,transparent);font-size:14px;border-radius:0 8px 8px 0}
+.ans{border-left:3px solid var(--accent);padding:10px 14px;margin:10px 0;
+  background:color-mix(in srgb,var(--accent) 7%,transparent);border-radius:0 8px 8px 0}
+.said{border-left:3px solid var(--line);padding:10px 14px;margin:10px 0;font-size:15px}
+h3{font-size:16px;margin:26px 0 6px}
+label{font-size:14px;color:var(--dim)}
+select,input[type=number]{font:inherit;padding:6px 8px;border-radius:8px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.small{font-size:13px;color:var(--dim)}
+.grade{display:flex;gap:8px;margin-top:8px}
+.grade button{flex:1;padding:8px}
+.grade button.sel{background:var(--accent);color:#fff;border-color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>口试演练台</h1>
+    <p class="sub">五张卡一组 · 问题念出来 · 你说话，它记下来 · <b>答案全部结束之后才给</b></p>
+  </header>
+  <div id="main"></div>
+</div>
+
+<!-- ===== 卡的数据 · 跟 index.html 用同一批文件 ===== -->
+<script src="data/01.js?v=f7db88b2"></script>
+<script src="data/02.js?v=13d403d3"></script>
+<script src="data/03.js?v=4051652c"></script>
+<script src="data/06.js?v=1e207f29"></script>
+<script src="data/08.js?v=cd90bfc3"></script>
+<script src="data/12.js?v=7995ae8a"></script>
+<script src="data/13.js?v=35272bc4"></script>
+<script src="data/14.js?v=0916103f"></script>
+<script src="data/16.js?v=6483ecdf"></script>
+<script src="data/17.js?v=cab6dd59"></script>
+<script src="data/18.js?v=427f675d"></script>
+<script src="data/19.js?v=e9aef2e5"></script>
+<script src="data/23.js?v=0842e721"></script>
+<script src="data/24.js?v=01f88a35"></script>
+<script src="data/25.js?v=d22d76f4"></script>
+<script src="data/27.js?v=42493c1d"></script>
+<script src="data/28.js?v=d4245dcf"></script>
+<script src="data/31.js?v=5b45630e"></script>
+<script src="data/32.js?v=4cab3a68"></script>
+<script src="data/aa.js?v=50b0f9af"></script>
+<script src="data/gly.js?v=59558f5c"></script>
+<script src="data/land.js?v=3013ba76"></script>
+<script src="data/taq.js?v=626ce82f"></script>
+<script src="data/mb_int.js?v=786391f3"></script>
+<script src="data/mb_ko.js?v=9b5fd757"></script>
+<script src="data/mb_post.js?v=d5368420"></script>
+<script src="data/mb_reg.js?v=8bda3edc"></script>
+<script src="data/pe_cfps.js?v=bb723325"></script>
+<script src="data/pe_clone.js?v=e618bf42"></script>
+<script src="data/pe_evo.js?v=a9ed00df"></script>
+<script src="data/pe_expr.js?v=80f8bb18"></script>
+<script src="data/pe_pur.js?v=04ae56f7"></script>
+<script src="data/pe_sys.js?v=8853e642"></script>
+<script src="data/x_bonds.js?v=540209bd"></script>
+<script src="data/x_cur.js?v=a2ab6a96"></script>
+<script src="data/x_fg.js?v=08cdafee"></script>
+<script src="data/x_mem.js?v=3fe10c8c"></script>
+<script src="data/x_meta.js?v=2a530d1c"></script>
+<script src="data/x_ph.js?v=40035789"></script>
+<script src="data/x_rxn.js?v=03550c6f"></script>
+<script src="data/x_trans.js?v=eb5275a5"></script>
+
+<script>
+/* ============================ 小工具 ============================ */
+var CARDS = window.CARDS || [];
+var CJK = /[一-鿿]/;
+var $ = function(id){ return document.getElementById(id); };
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function strip(h){ return String(h==null?'':h).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim(); }
+function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+function today(){ var d=new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function hash(s){ var h=0; s=String(s); for(var i=0;i<s.length;i++){ h=(h*31+s.charCodeAt(i))|0; } return (h>>>0).toString(36); }
+
+/* ============================ 存档 ============================
+   只存在这台机器上，跟收藏、单词本一样。 */
+var KEY='oralexam.drill.v1';
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY))||{}; }catch(e){ return {}; } }
+function save(o){ try{ localStorage.setItem(KEY,JSON.stringify(o)); }catch(e){} }
+function st(){ var s=load(); s.days=s.days||{}; s.asked=s.asked||{}; s.passes=s.passes||0; return s; }
+function dayRec(s,d){ s.days[d]=s.days[d]||{cards:[],qs:0,miss:0,sets:0}; return s.days[d]; }
+function streak(){
+  var s=st(), n=0, d=new Date();
+  for(;;){ var k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    if(s.days[k]&&s.days[k].sets>0){ n++; d.setDate(d.getDate()-1); } else break; }
+  return n;
+}
+
+/* ============================ 问题池 ============================
+   只收**真正是问题**的那些：题面必须是英文、而且必须有完整答案 en。
+   陷阱和相邻考点的中文标签不是问题，跳过。 */
+function qlist(c){
+  var out=[];
+  (c.ask||[]).forEach(function(g){
+    (g.items||[]).forEach(function(x){
+      if(!x.q||!x.en) return;
+      if(CJK.test(x.q)) return;
+      out.push({q:x.q, en:x.en, cn:x.cn||'', warn:x.warn||'', g:g.g||'', r:x.r||''});
+    });
+  });
+  return out;
+}
+function cardTitle(c){ return strip(c.qcn||c.q||c.id); }
+/* 卡面题是英文就用它开场（那才是考官真会念的那一句）；是中文就退回抽一道追问。 */
+function mainOf(c, pool){
+  if(c.q && !CJK.test(c.q)) return {q:strip(c.q), en:(c.end?strip(c.end):''), cn:'', warn:'', g:'卷面题', r:'高', isMain:1};
+  return pool[0];
+}
+
+/* ============================ 关键词与漏检 ============================
+   ⚠ 这是线索，不是判决。语音识别会把 oxaloacetate 听成别的东西，
+   所以只比**前 5 个字母**，而且原始转录一定显示出来给她自己判断。 */
+var STOP = (' about above after again against already also although always among another answer '
++ 'because become becomes been before begin behind being below between both bring build built '
++ 'called cannot carry carries change changes come comes could course different does doing done '
++ 'down during each either enough even every example first follow following from gives given goes '
++ 'going have having here high higher important into itself just keep keeps kind know large last '
++ 'later leave less like little long look made make makes many means might more most much must '
++ 'need needs never next nothing often once only other others over part parts place point points '
++ 'possible practice question rather really reason right same says second sense several should '
++ 'since small some something still such take takes tell than that their them then there these '
++ 'they thing things think this those three through thus time times together under until upon '
++ 'used uses using usually very want well were what when where which while will with within '
++ 'without work works would your ').split(' ');
+var STOPSET = {}; STOP.forEach(function(w){ if(w) STOPSET[w]=1; });
+
+function terms(en){
+  var t = strip(en).toLowerCase().replace(/[‘’“”]/g,' ');
+  var ws = t.match(/[a-z][a-z-]{4,}/g) || [];
+  var seen={}, out=[];
+  ws.forEach(function(w){ w=w.replace(/-/g,''); if(w.length<5) return;
+    if(STOPSET[w]) return; if(seen[w]) return; seen[w]=1; out.push(w); });
+  return out;
+}
+function heard(t, said){
+  /* 只比前 5 个字母 —— 识别把词尾听错是常态，词头很少错。 */
+  return said.indexOf(t.slice(0,5)) !== -1;
+}
+function missOf(en, transcript){
+  var said = ' ' + strip(transcript).toLowerCase().replace(/[^a-z]+/g,' ') + ' ';
+  var ts = terms(en), miss=[], hit=[];
+  ts.forEach(function(t){ (heard(t,said)?hit:miss).push(t); });
+  return {miss:miss, hit:hit, total:ts.length};
+}
+/* 追问怎么挑：她**最没说到**的那几条排前面。 */
+function rankFollow(pool, transcript){
+  var said = ' ' + strip(transcript).toLowerCase().replace(/[^a-z]+/g,' ') + ' ';
+  return pool.map(function(x){
+    var ts = terms(x.q + ' ' + x.en), n=0;
+    ts.forEach(function(t){ if(heard(t,said)) n++; });
+    return {x:x, cov: ts.length ? n/ts.length : 1};
+  }).sort(function(a,b){ return a.cov-b.cov; }).map(function(o){ return o.x; });
+}
+
+/* ============================ 朗读 ============================
+   她 2026-09-22：「一定要真人语音提问」。
+   ⚠ 说实话：浏览器里拿不到真人录音。能拿到的最接近的是**神经网络语音**
+   （Windows / Edge 上名字里带 Natural 或 Online 的那些，例如 Sonia、Libby、Ryan），
+   它们跟早年的机器音完全不是一回事，听感接近真人。
+   所以这里做两件事：① 排序时把 Natural / Online / Neural / Premium / Enhanced 排最前；
+   ② 给一个下拉框让她自己挑最像人的那一个，选择存下来。 */
+var VOICE=null;
+function voiceScore(v){
+  var n=(v.name||'')+' '+(v.voiceURI||''), s=0;
+  if(/natural|neural|online|premium|enhanced/i.test(n)) s+=100;
+  if(/^en[-_]GB/i.test(v.lang)) s+=20;          /* 捷克考场上英音更常见 */
+  else if(/^en[-_](IE|AU)/i.test(v.lang)) s+=12;
+  else if(/^en[-_]US/i.test(v.lang)) s+=10;
+  else if(/^en/i.test(v.lang)) s+=4;
+  if(/google/i.test(n)) s+=6;
+  if(/compact|espeak/i.test(n)) s-=30;
+  return s;
+}
+function enVoices(){
+  if(!window.speechSynthesis) return [];
+  return (speechSynthesis.getVoices()||[]).filter(function(v){ return /^en/i.test(v.lang); })
+    .sort(function(a,b){ return voiceScore(b)-voiceScore(a); });
+}
+function pickVoice(){
+  var vs = enVoices(); if(!vs.length) return null;
+  var want = (st().voice||'');
+  for(var i=0;i<vs.length;i++) if(vs[i].name===want) return vs[i];
+  return vs[0];
+}
+if(window.speechSynthesis){
+  VOICE = pickVoice();
+  speechSynthesis.onvoiceschanged = function(){ VOICE = pickVoice(); var s=$('vsel'); if(s) paintVoices(); };
+}
+function paintVoices(){
+  var sel=$('vsel'); if(!sel) return;
+  var vs=enVoices();
+  sel.innerHTML = vs.map(function(v){
+    var human = /natural|neural|online|premium|enhanced/i.test(v.name+v.voiceURI);
+    return '<option value="'+esc(v.name)+'"'+(VOICE&&v.name===VOICE.name?' selected':'')+'>'
+      + (human?'★ ':'') + esc(v.name) + ' · ' + esc(v.lang) + '</option>';
+  }).join('') || '<option>（这个浏览器没有英文语音）</option>';
+  sel.onchange = function(){
+    var s2=st(); s2.voice=sel.value; save(s2); VOICE=pickVoice();
+    say('Explain the functioning of the Lac and Trp operons.');
+  };
+}
+function say(text, cb){
+  if(!window.speechSynthesis){ if(cb) cb(); return; }
+  try{ speechSynthesis.cancel(); }catch(e){}
+  var u = new SpeechSynthesisUtterance(strip(text));
+  if(VOICE) u.voice = VOICE;
+  u.lang = (VOICE && VOICE.lang) || 'en-GB';
+  u.rate = 0.95;
+  u.onend = u.onerror = function(){ if(cb) cb(); };
+  speechSynthesis.speak(u);
+}
+
+/* ============================ 转录 ============================ */
+var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+var rec=null, recWant=false, finalTxt='', interimTxt='';
+function recStart(){
+  if(!SR) return false;
+  recWant = true;
+  if(rec) { try{ rec.stop(); }catch(e){} }
+  rec = new SR();
+  rec.continuous = true; rec.interimResults = true; rec.lang = 'en-GB'; rec.maxAlternatives = 1;
+  rec.onresult = function(e){
+    interimTxt='';
+    for(var i=e.resultIndex;i<e.results.length;i++){
+      var r=e.results[i];
+      if(r.isFinal) finalTxt += r[0].transcript + ' ';
+      else interimTxt += r[0].transcript;
+    }
+    paintLive();
+  };
+  /* Chrome 在静音一段时间之后会自己停。只要计时还在跑就重新开起来。 */
+  rec.onend = function(){ if(recWant){ try{ rec.start(); }catch(e){} } };
+  rec.onerror = function(e){
+    if(e && (e.error==='not-allowed'||e.error==='service-not-allowed')){
+      recWant=false; var l=$('live'); if(l) l.innerHTML='<b class="miss">麦克风被拒了。</b>浏览器地址栏左边点一下，允许麦克风，然后刷新。';
+    }
+  };
+  try{ rec.start(); }catch(e){}
+  return true;
+}
+function recStop(){ recWant=false; if(rec){ try{ rec.stop(); }catch(e){} } rec=null; }
+function paintLive(){
+  var l=$('live'); if(!l) return;
+  l.innerHTML = esc(finalTxt) + '<span class="interim">' + esc(interimTxt) + '</span>'
+    || '<span class="interim">说话吧，这里会实时出字……</span>';
+  l.scrollTop = l.scrollHeight;
+}
+
+/* ============================ 一场演练 ============================ */
+var S = null;   /* 当前这一组的状态 */
+
+/* 她 2026-09-22：「一共五个问题卡，其中两个一定是分子生物学 / pesb」。
+   分子生物学 ＝ mb-*；PESB ＝ pe-* 再加 taq 和 land
+   （题库里 #5 Taq/Kapa 和 #7 fitness landscape 都归在「K · 书外（实验室）」，
+    而且都是 w3，属于她自己的日常工作那一块）。
+   ⚠ 卡的 id 用的是连字符（mb-ko、pe-clone、x-meta），不是下划线——别写错。 */
+function isMBPE(c){
+  var id = c.id||'';
+  return /^mb-/.test(id) || /^pe-/.test(id) || id==='taq' || id==='land';
+}
+function takeFrom(pool, doneToday, n){
+  /* 今天还没过的优先；不够了再从过过的里面补（那时问题是新的）。 */
+  var fresh = shuffle(pool.filter(function(c){ return !doneToday[c.id]; }));
+  var used  = shuffle(pool.filter(function(c){ return  doneToday[c.id]; }));
+  return fresh.concat(used).slice(0, n);
+}
+
+function buildSet(nCards, nFollow){
+  var s = st(), d = today(), rec0 = dayRec(s, d);
+  var usable = CARDS.filter(function(c){ return qlist(c).length > 0; });
+  var doneToday = {}; rec0.cards.forEach(function(id){ doneToday[id]=1; });
+  var newPass = false;
+  if(usable.every(function(c){ return doneToday[c.id]; })){
+    /* 今天已经把所有卡过了一遍 —— 开新的一遍 */
+    s.passes++; rec0.cards = []; save(s); newPass = true; doneToday = {};
+  }
+  var mbpe  = usable.filter(isMBPE);
+  var other = usable.filter(function(c){ return !isMBPE(c); });
+  var want2 = Math.min(2, mbpe.length);
+  var cards = takeFrom(mbpe, doneToday, want2);
+  var seen={}; cards.forEach(function(c){ seen[c.id]=1; });
+  cards = cards.concat(takeFrom(other.filter(function(c){ return !seen[c.id]; }), doneToday, nCards-cards.length));
+  if(cards.length < nCards){    /* 万一别的不够，用 mb/pe 补满 */
+    cards.forEach(function(c){ seen[c.id]=1; });
+    cards = cards.concat(takeFrom(mbpe.filter(function(c){ return !seen[c.id]; }), doneToday, nCards-cards.length));
+  }
+  cards = shuffle(cards);       /* 摆出来的顺序还是随机的，别让她认出哪两张是保送的 */
+  return {
+    cards: cards.map(function(c){
+      /* 问题级历史：没问过的排最前，其次最久没问的。 */
+      var seen = s.asked;
+      var pool2 = qlist(c).slice().sort(function(a,b){
+        return (seen[c.id+'|'+hash(a.q)]||0) - (seen[c.id+'|'+hash(b.q)]||0);
+      });
+      return {card:c, pool:pool2, main:mainOf(c,pool2), asked:[], nFollow:nFollow};
+    }),
+    i:0, sub:0, log:[], newPass:newPass, nFollow:nFollow
+  };
+}
+
+function curCard(){ return S.cards[S.i]; }
+function curQ(){ var c=curCard(); return S.sub===0 ? c.main : c.follow[S.sub-1]; }
+
+/* ============================ 界面 ============================ */
+function home(){
+  recStop();
+  var s = st(), d = today(), r = s.days[d]||{cards:[],qs:0,sets:0,miss:0};
+  var usable = CARDS.filter(function(c){ return qlist(c).length>0; });
+  var left = usable.length - (r.cards||[]).length;
+  var nF = (s.nFollow==null?3:s.nFollow), nC = 5;
+  var mins = Math.round((nC*(120 + nF*60))/60);
+  var srOk = !!SR;
+  $('main').innerHTML =
+    '<div class="card">'
+    + '<div class="row" style="justify-content:space-between">'
+      + '<div><b style="font-size:19px">' + (r.sets? '今天已经练了 '+r.sets+' 组' : '今天还没练') + '</b>'
+      + '<div class="small">连续 ' + streak() + ' 天 · 今天答了 ' + (r.qs||0) + ' 题 · '
+      + '全部 ' + usable.length + ' 张卡里还剩 <b>' + left + '</b> 张今天没过 · 已完整过了 ' + s.passes + ' 遍</div></div>'
+    + '</div>'
+    + '<div class="bar" style="margin-top:14px"><i style="width:'
+      + Math.round(100*((usable.length-left)/usable.length)) + '%"></i></div>'
+    + '<div class="row" style="margin-top:10px">'
+      + '<label>每张卡追问 <select id="nf">'
+        + [1,2,3,4,5].map(function(n){ return '<option value="'+n+'"'+(n===nF?' selected':'')+'>'+n+' 个</option>'; }).join('')
+      + '</select></label>'
+      + '<span class="small">一组五张 ≈ <b id="est">'+mins+'</b> 分钟 · 全部 '
+        + usable.length + ' 张过一遍要 <b id="estall">'
+        + Math.round(usable.length*(120+nF*60)/60) + '</b> 分钟</span>'
+    + '</div>'
+    + '<div class="row" style="margin-top:12px">'
+      + '<label>念题的声音 <select id="vsel" style="max-width:340px"></select></label>'
+      + '<span class="small">★ 是神经网络语音，最接近真人。<b>选一个就会试念一句。</b></span>'
+    + '</div>'
+    + '<p style="margin:18px 0 0"><button class="main" onclick="begin()">开始一组</button> '
+      + '<button class="ghost" onclick="report(true)">看上一次的结果</button></p>'
+    + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
+      + '（mb-* · pe-* · taq · land），另外三张从其余 '
+      + usable.filter(function(c){ return !isMBPE(c); }).length + ' 张里随机。</p>'
+    + '</div>'
+    + (srOk ? '' : '<div class="warnbox"><b>这个浏览器不能转录。</b>Web Speech API 只有 '
+        + '<b>桌面版 Chrome / Edge</b> 稳；Safari 和 iPhone 多半不行。'
+        + '没有转录也能练——计时和朗读照跑，只是没有漏词表。</div>')
+    + '<div class="warnbox"><b>三件要知道的事。</b>'
+      + '① 专业词会被听错（oxaloacetate 这类），所以<b>漏词表是线索不是判决</b>，'
+      + '匹配只比前五个字母，原始转录一定给你看。'
+      + '<br>② Chrome 的识别<b>把音频送到 Google 的服务器</b>处理。'
+      + '<br>③ 记录只存在这台机器上，跟收藏、单词本一样。</div>'
+    + '<p class="small">卡片数据跟主 app 是同一批。<a href="index.html">← 回主 app</a></p>';
+  paintVoices();
+  var sel=$('nf');
+  if(sel) sel.onchange=function(){
+    var s2=st(); s2.nFollow=+sel.value; save(s2);
+    $('est').textContent = Math.round(5*(120+ (+sel.value)*60)/60);
+    $('estall').textContent = Math.round(usable.length*(120+(+sel.value)*60)/60);
+  };
+}
+
+function begin(){
+  var s=st(); var nF=(s.nFollow==null?3:s.nFollow);
+  S = buildSet(5, nF);
+  if(!S.cards.length){ alert('没有可用的卡。'); return; }
+  ask();
+}
+
+function ask(){
+  var c = curCard(), q = curQ();
+  if(!q){ nextCard(); return; }
+  finalTxt=''; interimTxt='';
+  var total = S.cards.length, n = S.i+1;
+  var isMain = S.sub===0;
+  var secs = isMain ? 120 : 60;
+  $('main').innerHTML =
+    '<div class="card">'
+    + '<div class="small">第 ' + n + ' / ' + total + ' 张 · ' + esc(cardTitle(c.card))
+      + (isMain ? ' · <b>主问题</b>' : ' · 追问 ' + S.sub + ' / ' + c.follow.length) + '</div>'
+    + '<p class="q">' + esc(q.q) + '</p>'
+    + '<p class="qmeta">' + esc(q.g||'') + (q.r? ' · ' + esc(q.r) : '') + '</p>'
+    + '<div class="row"><button onclick="say(' + JSON.stringify(q.q).replace(/"/g,'&quot;') + ')">🔊 再念一遍</button>'
+      + '<span class="timer" id="clock">' + fmt(secs) + '</span></div>'
+    + '<div class="bar"><i id="barfill"></i></div>'
+    + '<div class="live" id="live"></div>'
+    + '<p style="margin:16px 0 0"><button class="main" onclick="doneAnswer()">说完了 ▸</button> '
+      + '<button class="ghost" onclick="doneAnswer()">跳过</button> '
+      + '<button class="ghost" onclick="quit()">结束这一组</button></p>'
+    + '</div>'
+    + '<p class="small">⚠ 答案要等这一组<b>全部结束</b>之后才出现。</p>';
+  paintLive();
+  /* 先念题，念完再开麦 —— 不然它会把自己念的话也记进去。 */
+  say(q.q, function(){ recStart(); runClock(secs); });
+}
+
+var timerId=null;
+function fmt(s){ return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+function runClock(secs){
+  var left=secs, tot=secs;
+  if(timerId) clearInterval(timerId);
+  timerId = setInterval(function(){
+    left--;
+    var cl=$('clock'); if(!cl){ clearInterval(timerId); return; }
+    cl.textContent = fmt(Math.max(0,left));
+    if(left<=15) cl.classList.add('low');
+    var b=$('barfill'); if(b) b.style.width = Math.max(0,100*left/tot) + '%';
+    if(left<=0){ clearInterval(timerId); doneAnswer(); }
+  },1000);
+}
+
+function doneAnswer(){
+  if(timerId){ clearInterval(timerId); timerId=null; }
+  recStop();
+  try{ speechSynthesis.cancel(); }catch(e){}
+  var c=curCard(), q=curQ();
+  var said = (finalTxt + ' ' + interimTxt).trim();
+  var m = missOf(q.en || q.q, said);
+  S.log.push({card:c.card.id, title:cardTitle(c.card), q:q.q, en:q.en, cn:q.cn, warn:q.warn,
+              said:said, miss:m.miss, hit:m.hit.length, total:m.total, sub:S.sub});
+  /* 记下这道题问过了 */
+  var s=st(); s.asked[c.card.id+'|'+hash(q.q)] = Date.now(); save(s);
+
+  if(S.sub===0){
+    /* 主问答完，按「她最没说到什么」挑追问 */
+    var rest = c.pool.filter(function(x){ return x!==c.main; });
+    c.follow = rankFollow(rest, said).slice(0, c.nFollow);
+  }
+  S.sub++;
+  if(S.sub > (c.follow? c.follow.length : 0)) nextCard(); else ask();
+}
+
+function nextCard(){
+  var s=st(), d=today(), r=dayRec(s,d);
+  var c=curCard();
+  if(r.cards.indexOf(c.card.id)===-1) r.cards.push(c.card.id);
+  save(s);
+  S.i++; S.sub=0;
+  if(S.i>=S.cards.length) finish(); else ask();
+}
+
+function quit(){
+  if(timerId){ clearInterval(timerId); timerId=null; }
+  recStop();
+  try{ speechSynthesis.cancel(); }catch(e){}
+  finish();
+}
+
+function finish(){
+  var s=st(), d=today(), r=dayRec(s,d);
+  r.sets++; r.qs += S.log.length;
+  S.log.forEach(function(x){ r.miss += x.miss.length; });
+  s.last = {when:new Date().toISOString(), log:S.log};
+  save(s);
+  report(false);
+}
+
+/* ============================ 结果 · 只在这里给答案 ============================ */
+function report(fromHome){
+  recStop();
+  var s=st();
+  var log = (fromHome ? (s.last&&s.last.log) : S.log) || [];
+  if(!log.length){ $('main').innerHTML='<div class="card">还没有结果。<p><button class="main" onclick="home()">回去</button></p></div>'; return; }
+  var qs=log.length, missTot=0, ptsTot=0;
+  log.forEach(function(x){ missTot+=x.miss.length; ptsTot+=x.total; });
+  var h = '<div class="card"><b style="font-size:19px">这一组的结果</b>'
+    + '<div class="small">' + qs + ' 题 · 答案里一共 ' + ptsTot + ' 个关键词 · '
+    + '<b class="miss">没说到 ' + missTot + ' 个</b>（' + Math.round(100*(ptsTot-missTot)/Math.max(1,ptsTot)) + '% 说到了）</div>'
+    + '<p style="margin:14px 0 0"><button class="main" onclick="home()">回首页</button> '
+    + '<button onclick="copyOut()">复制给老师</button></p></div>';
+  log.forEach(function(x,i){
+    h += '<div class="card">'
+      + '<div class="small">' + esc(x.title) + (x.sub? ' · 追问 '+x.sub : ' · 主问题') + '</div>'
+      + '<p class="q" style="font-size:17px">' + esc(x.q) + '</p>'
+      + '<div class="said"><b class="small">你说的</b><br>' + (x.said? esc(x.said) : '<i class="small">没有录到</i>') + '</div>'
+      + (x.miss.length
+          ? '<div><b class="small">没说到的词</b><br>' + x.miss.map(function(w){ return '<span class="pill">'+esc(w)+'</span>'; }).join('') + '</div>'
+          : '<div class="hit small"><b>关键词都说到了。</b></div>')
+      + '<div class="ans"><b class="small">标准答案</b><br>' + strip(x.en).replace(/^"|"$/g,'') + '</div>'
+      + (x.warn? '<div class="warnbox">' + x.warn + '</div>' : '')
+      + (x.cn? '<div class="small">' + x.cn + '</div>' : '')
+      + '</div>';
+  });
+  h += '<p class="small">⚠ 漏词表是线索不是判决：识别听错专业词是常态，以你自己读「你说的」那一段为准。</p>';
+  $('main').innerHTML = h;
+}
+
+function copyOut(){
+  var s=st(), log=(s.last&&s.last.log)||[], d=today(), r=s.days[d]||{};
+  var lines = ['口试演练 ' + d, '连续 ' + streak() + ' 天 · 今天 ' + (r.sets||0) + ' 组 · ' + (r.qs||0) + ' 题', ''];
+  log.forEach(function(x){
+    lines.push('[' + x.title + '] ' + x.q);
+    lines.push('  说到 ' + (x.total-x.miss.length) + '/' + x.total
+      + (x.miss.length? ' · 漏：' + x.miss.slice(0,12).join(' ') : ''));
+  });
+  var t = lines.join('\n');
+  try{ navigator.clipboard.writeText(t); alert('复制好了，粘给老师。'); }
+  catch(e){ prompt('手动复制：', t); }
+}
+
+/* ============================ 起 ============================ */
+if(!CARDS.length){
+  $('main').innerHTML = '<div class="card"><b class="miss">卡的数据没装上。</b>'
+    + '<p class="small">这一页要跟 <code>data/</code> 放在一起才能跑。</p></div>';
+} else {
+  home();
+}
+</script>
+</body>
+</html>
