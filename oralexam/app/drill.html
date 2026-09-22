@@ -101,9 +101,13 @@ a{color:var(--accent)}
 .fix p{margin:0 0 8px;font-size:16px;line-height:1.75}
 .fix p:last-child{margin-bottom:0}
 u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
-.defline{border-left:3px solid var(--accent);padding-left:10px;margin-left:-13px}
-.deftag{display:block;font-size:11.5px;letter-spacing:.4px;color:var(--accent);
-  font-weight:700;margin-bottom:2px}
+.fixrow{margin:0 0 14px}
+.fixrow:last-of-type{margin-bottom:0}
+.fixrow p{margin:2px 0 0;font-size:16.5px;line-height:1.75}
+.fixtag{display:block;font-size:12.5px;color:var(--dim);font-weight:600}
+.fixrow.defline{border-left:3px solid var(--accent);padding-left:11px}
+.fixrow.defline .fixtag{color:var(--accent)}
+.fixnote{font-size:12.5px;color:var(--dim);line-height:1.7;margin:12px 0 0}
 .sayit{cursor:pointer}
 .sayit:hover{background:color-mix(in srgb,var(--accent) 12%,transparent);border-radius:4px}
 details{margin:8px 0}
@@ -232,7 +236,7 @@ function qlist(c){
     (g.items||[]).forEach(function(x){
       if(!x.q||!x.en) return;
       if(CJK.test(x.q)) return;
-      out.push({q:x.q, en:x.en, ez:x.ez||'', cn:x.cn||'', warn:x.warn||'', g:g.g||'', r:x.r||''});
+      out.push({q:x.q, en:x.en, ez:x.ez||'', ezcn:x.ezcn||'', cn:x.cn||'', warn:x.warn||'', g:g.g||'', r:x.r||''});
     });
   });
   return out;
@@ -700,7 +704,7 @@ function doneAnswer(){
      没录到声音的也一样处理 —— 沉默跟说不上来是同一件事。 */
   var gave = saidGiveUp(said) || !said;
   S.log.push({card:c.card.id, title:cardTitle(c.card), q:q.q, en:q.en, full:q.full||'',
-              ez:q.ez||'', cn:q.cn, warn:q.warn,
+              ez:q.ez||'', ezcn:q.ezcn||'', cn:q.cn, warn:q.warn,
               said:said, miss:m.miss, hit:m.hit.length, total:m.total, sub:S.sub,
               self:(gave ? 2 : null), gave:gave});
   if(gave){
@@ -896,11 +900,27 @@ function report(fromHome, hist){
       + '<p class="q" style="font-size:17px" onclick="sayEl(this)">' + esc(x.q) + '</p>';
 
     if(fixes.length){
-      h += '<div class="fix"><b class="small">' + (x.gave ? '这一题你说了说不上。下次先说出这一句：' : '下次一定要说出口的：') + '</b>'
-         + fixes.map(function(f){
-             return '<p class="sayit' + (f.def?' defline':'') + '" onclick="sayEl(this)">'
-               + (f.def ? '<span class="deftag">定义 · 这一句永远先说</span>' : '')
-               + hl(f.s, x.miss) + '</p>'; }).join('')
+      /* ⚠ 2026-09-22 她：「下次一定要说出口这里我感觉扎眼一看很云里雾里」。
+         她是对的：原来这个框就是三句没有说明的英文 —— 定义和「你漏的」长得一模一样，
+         划线是什么意思没写，整框一个中文字都没有。她刚说完两分钟英文，
+         扑面又是一堆英文，看不懂是正常的。
+         现在：每一句上面有一行中文说明它是什么，划线的含义写出来，
+         再给一个中文对照（卡上本来就有 ezcn，之前没取）。 */
+      h += '<div class="fix">'
+         + '<b class="small">这一题，下次开口就按这个顺序说</b>'
+         + fixes.map(function(f, fi){
+             var head = f.def
+               ? '① 先说定义 —— 不管他问什么，这一句永远是第一句'
+               : (fixes.length>1 ? '② 这一句你这次没说出口' : '① 这一句你这次没说出口');
+             return '<div class="fixrow' + (f.def?' defline':'') + '">'
+               + '<span class="fixtag">' + head + '</span>'
+               + '<p class="sayit" onclick="sayEl(this)">' + hl(f.s, x.miss) + '</p>'
+               + '</div>'; }).join('')
+         + (x.miss.length ? '<p class="fixnote">划线的词 ＝ 机器认为你没说出口。'
+             + '⚠ 它会把专业词听错（helicase 听成 hello kiss），所以<b>以你自己的录音为准</b>。'
+             + '点句子可以听它念一遍。</p>' : '')
+         + (x.ezcn ? '<details><summary>中文对照（这一整题在说什么）</summary>'
+             + '<div class="small" style="line-height:1.9">' + x.ezcn + '</div></details>' : '')
          + '</div>';
     } else if(x.gave){
       h += '<div class="fix"><b class="small">这一题你说了说不上。</b> 下次先把这一句说出口就够了。</div>';
@@ -910,8 +930,13 @@ function report(fromHome, hist){
       /* ⚠ 就算她全说到了，定义那一句也要摆出来 —— 「定义千万不能省」。 */
       var d0 = splitSent(x.ez || x.en || '')[0];
       h += '<div class="hit small" style="margin:10px 0"><b>关键的几个词你都说到了。</b></div>'
-        + (d0 ? '<div class="fix"><p class="sayit defline" onclick="sayEl(this)">'
-            + '<span class="deftag">定义 · 这一句永远先说</span>' + esc(d0) + '</p></div>' : '');
+        + (d0 ? '<div class="fix"><b class="small">这一题，下次开口就按这个顺序说</b>'
+            + '<div class="fixrow defline"><span class="fixtag">'
+            + '① 先说定义 —— 不管他问什么，这一句永远是第一句</span>'
+            + '<p class="sayit" onclick="sayEl(this)">' + esc(d0) + '</p></div>'
+            + (x.ezcn ? '<details><summary>中文对照（这一整题在说什么）</summary>'
+                + '<div class="small" style="line-height:1.9">' + x.ezcn + '</div></details>' : '')
+            + '</div>' : '');
     }
 
     h += '<div class="gr">'
