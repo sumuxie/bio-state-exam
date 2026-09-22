@@ -108,6 +108,13 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .fixrow.defline{border-left:3px solid var(--accent);padding-left:11px}
 .fixrow.defline .fixtag{color:var(--accent)}
 .fixnote{font-size:12.5px;color:var(--dim);line-height:1.7;margin:12px 0 0}
+.deftag2{display:inline-block;background:var(--accent);color:#fff;font-size:11px;
+  font-weight:700;letter-spacing:.6px;border-radius:5px;padding:1px 7px;margin-right:7px;
+  vertical-align:2px}
+.defbig{font-weight:600}
+.defhl{background:color-mix(in srgb,var(--accent) 14%,transparent);
+  box-shadow:inset 3px 0 0 var(--accent);padding:2px 6px 2px 9px;border-radius:0 5px 5px 0;
+  font-weight:600}
 .sayit{cursor:pointer}
 .sayit:hover{background:color-mix(in srgb,var(--accent) 12%,transparent);border-radius:4px}
 details{margin:8px 0}
@@ -825,6 +832,19 @@ function toFix(item, n){
   }).filter(function(o){ return o.k>0; }).sort(function(a,b){ return b.k-a.k; });
   return out.concat(scored.slice(0, n||2));
 }
+/* ⚠ 2026-09-22 她：「而且定义一定要标出来」。
+   不只是那个「下次怎么说」的框 —— **凡是这一页上出现完整答案的地方，
+   第一句（定义）都要一眼看得见**。她这一整天立的规矩就是「任何东西都先定义」，
+   而定义在卡上永远是答案的第一句（C1，见 PREMISES）。 */
+function markDef(txt){
+  var s = strip(txt).replace(/^["“]/, '').replace(/["”]$/, '');
+  var ss = splitSent(s);
+  if(!ss.length) return esc(s);
+  var first = ss[0], at = s.indexOf(first);
+  var rest = at < 0 ? '' : s.slice(at + first.length);
+  return '<b class="defhl"><span class="deftag2">定义</span>' + esc(first) + '</b>' + esc(rest);
+}
+
 /* 句子里把漏掉的词标出来 */
 function hl(s2, miss){
   var out = esc(s2);
@@ -913,8 +933,8 @@ function report(fromHome, hist){
                ? '① 先说定义 —— 不管他问什么，这一句永远是第一句'
                : (fixes.length>1 ? '② 这一句你这次没说出口' : '① 这一句你这次没说出口');
              return '<div class="fixrow' + (f.def?' defline':'') + '">'
-               + '<span class="fixtag">' + head + '</span>'
-               + '<p class="sayit" onclick="sayEl(this)">' + hl(f.s, x.miss) + '</p>'
+               + '<span class="fixtag">' + (f.def ? '<span class="deftag2">定义</span>' : '') + head + '</span>'
+               + '<p class="sayit' + (f.def?' defbig':'') + '" onclick="sayEl(this)">' + hl(f.s, x.miss) + '</p>'
                + '</div>'; }).join('')
          + (x.miss.length ? '<p class="fixnote">划线的词 ＝ 机器认为你没说出口。'
              + '⚠ 它会把专业词听错（helicase 听成 hello kiss），所以<b>以你自己的录音为准</b>。'
@@ -932,8 +952,8 @@ function report(fromHome, hist){
       h += '<div class="hit small" style="margin:10px 0"><b>关键的几个词你都说到了。</b></div>'
         + (d0 ? '<div class="fix"><b class="small">这一题，下次开口就按这个顺序说</b>'
             + '<div class="fixrow defline"><span class="fixtag">'
-            + '① 先说定义 —— 不管他问什么，这一句永远是第一句</span>'
-            + '<p class="sayit" onclick="sayEl(this)">' + esc(d0) + '</p></div>'
+            + '<span class="deftag2">定义</span>① 先说定义 —— 不管他问什么，这一句永远是第一句</span>'
+            + '<p class="sayit defbig" onclick="sayEl(this)">' + esc(d0) + '</p></div>'
             + (x.ezcn ? '<details><summary>中文对照（这一整题在说什么）</summary>'
                 + '<div class="small" style="line-height:1.9">' + x.ezcn + '</div></details>' : '')
             + '</div>' : '');
@@ -946,10 +966,11 @@ function report(fromHome, hist){
        + '</div>'
       + '<details><summary>你刚才说的</summary><div class="said">'
         + (x.said ? esc(x.said) : '<i class="small">没有录到</i>') + '</div></details>'
-      + '<details><summary>完整答案</summary><div class="ans sayit" onclick="sayEl(this)">'
-        + strip(x.en).replace(/^"|"$/g,'') + '</div>'
+      + '<details><summary>完整答案（定义那一句已经标出来了）</summary>'
+        + '<div class="ans sayit" onclick="sayEl(this)">' + markDef(x.en) + '</div>'
         + (x.full ? '<div class="ans sayit" onclick="sayEl(this)" style="opacity:.85">'
-            + esc(x.full).replace(/\n\n/g,'<br><br>') + '</div>' : '')
+            + x.full.split('\n\n').map(function(p,pi){
+                return pi===0 ? markDef(p) : esc(p); }).join('<br><br>') + '</div>' : '')
         + (x.warn ? '<div class="warnbox">' + x.warn + '</div>' : '')
         + (x.cn ? '<div class="small">' + x.cn + '</div>' : '')
       + '</details>'
