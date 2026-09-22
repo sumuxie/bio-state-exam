@@ -101,6 +101,9 @@ a{color:var(--accent)}
 .fix p{margin:0 0 8px;font-size:16px;line-height:1.75}
 .fix p:last-child{margin-bottom:0}
 u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
+.defline{border-left:3px solid var(--accent);padding-left:10px;margin-left:-13px}
+.deftag{display:block;font-size:11.5px;letter-spacing:.4px;color:var(--accent);
+  font-weight:700;margin-bottom:2px}
 .sayit{cursor:pointer}
 .sayit:hover{background:color-mix(in srgb,var(--accent) 12%,transparent);border-radius:4px}
 details{margin:8px 0}
@@ -130,6 +133,10 @@ details[open]>summary:before{content:'▾ ';}
 .nudge{color:var(--accent);font-size:14.5px;margin:8px 0 0;min-height:22px}
 .hello{font-size:16px;line-height:1.75;margin:0 0 6px}
 .bridge{font-size:15px;color:var(--accent);margin:0 0 10px;min-height:22px}
+.cardline{font-size:14px;color:var(--dim);margin:0 0 2px;min-height:20px}
+.win{border-left:3px solid var(--good);padding:10px 14px;margin:10px 0 0;
+  background:color-mix(in srgb,var(--good) 10%,transparent);border-radius:0 8px 8px 0;
+  font-size:15.5px;line-height:1.7}
 </style>
 </head>
 <body>
@@ -414,6 +421,25 @@ var BRIDGE_FIRST = ['Right. Here is the first one.', 'Okay. Let us start.'];
 var BRIDGE_MID   = ['Good. Next one.', 'Alright. Here is the next.', 'Okay. Carry on.',
                     'Take your time with this one.', 'Good. Let us keep going.'];
 var BRIDGE_LAST  = ['Last one.', 'This is the last one.'];
+/* 这张卡跟她的关系。一个人背的时候没有这种话。 */
+function cardLine(c){
+  var s = st(), pool = qlist(c), gaveN = 0, okN = 0, seen = 0;
+  s.qres = s.qres || {};
+  pool.forEach(function(x){
+    var r = s.qres[c.id + '|' + hash(x.q)];
+    if(!r) return;
+    seen++;
+    if(r.gave || r.self===2) gaveN++;
+    if(r.self===0) okN++;
+  });
+  if(!seen) return {cn:'这张卡你还没在这里练过。', en:''};
+  if(gaveN >= 2) return {cn:'⚠ 这张卡你上次有 ' + gaveN + ' 题说不上。它又来了。',
+                         en:'This is the one you got stuck on.'};
+  if(gaveN === 1) return {cn:'这张卡上次有一题你说不上来。', en:'You got stuck on this one last time.'};
+  if(okN >= 2) return {cn:'这张卡你上次答得挺好。', en:'You did well on this one last time.'};
+  return {cn:'这张卡你练过 ' + seen + ' 题了。', en:''};
+}
+
 function bridgeFor(){
   var isFirst = (S.i===0 && S.sub===0);
   var c = curCard();
@@ -607,6 +633,7 @@ function ask(){
     '<div class="card">'
     + '<div class="small">第 ' + n + ' / ' + total + ' 张 · ' + esc(cardTitle(c.card))
       + (isMain ? ' · <b>主问题</b>' : ' · 追问 ' + S.sub + ' / ' + c.follow.length) + '</div>'
+    + '<p class="cardline" id="cardline"></p>'
     + '<p class="bridge" id="bridge"></p>'
     + '<p class="q">' + esc(q.q) + '</p>'
     + '<p class="qmeta">' + esc(q.g||'') + (q.r? ' · ' + esc(q.r) : '') + '</p>'
@@ -631,6 +658,12 @@ function ask(){
      于是两个 clock 同时在跑、时间一秒掉两格。 */
   var mine = ++seq;
   var br = bridgeFor();
+  /* 一张新卡开场的时候，先说一句这张卡跟她的关系。 */
+  if(S.sub === 0){
+    var cl = cardLine(c.card);
+    var clEl = $('cardline'); if(clEl) clEl.textContent = cl.cn;
+    if(cl.en) br = cl.en + ' ' + br;
+  }
   var brEl = $('bridge'); if(brEl) brEl.textContent = br;
   /* 桥和问题拼成一条朗读 —— 分两条会被 cancel 打断。 */
   say(br + ' ' + q.q, function(){ if(mine !== seq) return; recStart(); runClock(secs); startNudges(); });
@@ -675,8 +708,13 @@ function doneAnswer(){
     if(nu) nu.textContent = '说不上就说不上，我记下来了，明天还问你。';
     say('That is fine. We will come back to it.');
   }
-  /* 记下这道题问过了 */
-  var s=st(); s.asked[c.card.id+'|'+hash(q.q)] = Date.now(); save(s);
+  /* 记下这道题问过了。⚠ 同时把**上一次**的结果留在 prev 上 ——
+     全部结束之后要用它算出「今天真正进步的那一条」。 */
+  var s=st(); var qk = c.card.id+'|'+hash(q.q);
+  s.asked[qk] = Date.now();
+  s.qres = s.qres || {};
+  S.log[S.log.length-1].prev = s.qres[qk] || null;
+  save(s);
 
   if(S.sub===0){
     /* 主问答完，按「她最没说到什么」挑追问 */
@@ -734,6 +772,11 @@ function finish(){
 
   /* 她 2026-09-22：「我觉得这个练习过的能不能也储存起来」。
      每一组都留下来，最多 60 组（再多就没人看了，也怕把 localStorage 撑爆）。 */
+  /* 这一次每道题的结果写回 qres，下次才比得出进步。 */
+  s.qres = s.qres || {};
+  S.log.forEach(function(x){
+    s.qres[x.card + '|' + hash(x.q)] = {self:x.self, gave:!!x.gave, ts:Date.now()};
+  });
   var key = String(Date.now());
   var names = S.cards.map(function(cc){ return cc.card.id; }).join(' ');
   var pack = {key:key, when:new Date().toISOString(), cards:names, log:S.log};
@@ -764,12 +807,19 @@ function toFix(item, n){
   var src = item.ez || item.en || '';
   var ss = splitSent(src);
   if(!ss.length){ src = item.en || ''; ss = splitSent(src); }
-  var scored = ss.map(function(s2){
+  if(!ss.length) return [];
+  /* ⚠ 2026-09-22 她：「定义这个千万不能省」。她说得对，这是这一屏的一个真漏洞：
+     把答案压成「你漏掉的那几句」之后，如果那句定义她正好说到了，它就不会被选中，
+     于是整屏再也看不到定义 —— 而她这一整天立的规矩就是「任何东西都先定义」，
+     卡上每个答案的**第一句就是定义**（C1，见 PREMISES）。
+     所以：**第一句永远在，而且不参与评分**，后面再按漏得多少补一两句。 */
+  var out = [{s:ss[0], k:0, def:true}];
+  var scored = ss.slice(1).map(function(s2){
     var low = ' ' + s2.toLowerCase().replace(/[^a-z]+/g,' ') + ' ', k=0;
     item.miss.forEach(function(w){ if(low.indexOf(w.slice(0,5))!==-1) k++; });
     return {s:s2, k:k};
   }).filter(function(o){ return o.k>0; }).sort(function(a,b){ return b.k-a.k; });
-  return scored.slice(0, n||2);
+  return out.concat(scored.slice(0, n||2));
 }
 /* 句子里把漏掉的词标出来 */
 function hl(s2, miss){
@@ -811,8 +861,21 @@ function report(fromHome, hist){
   var line = '这一组我陪你走完了。' + log.length + ' 题里，'
     + (gv ? '有 ' + gv + ' 题你当场说了说不上——那几题明天还会来。' : '你每一题都开口了。')
     + (ok ? ' 你自己标了 ' + ok + ' 题是答得出的。' : '');
+  /* ⚠ 今天真正进步的那一条。不是分数，是一件具体的事。
+     判据：上一次这道题她说不上（gave 或自评答不上），这一次她说出来了。 */
+  var win = null;
+  log.forEach(function(x){
+    if(win) return;
+    var p = x.prev;
+    if(p && (p.gave || p.self===2) && !x.gave && x.said && x.said.length > 30) win = x;
+  });
+  var winLine = win
+    ? '⭑ 今天真正的进步是这一条：上次「' + esc(strip(win.q).slice(0,52))
+      + '」你说不上来，<b>这次你说出来了</b>。'
+    : '';
   var h = '<div class="card">'
     + '<p class="hello">' + line + '</p>'
+    + (winLine ? '<p class="win">' + winLine + '</p>' : '')
     + '<b style="font-size:19px">这一组说完了 · ' + log.length + ' 题</b>'
     + '<div class="small">下面按「差得最多」排。<b>只读前两条也行</b>，别从头读到尾。</div>'
     + '<div class="small" style="margin-top:8px">⚠ 识别会把专业词听坏（helicase 听成 hello kiss 这种），'
@@ -835,14 +898,20 @@ function report(fromHome, hist){
     if(fixes.length){
       h += '<div class="fix"><b class="small">' + (x.gave ? '这一题你说了说不上。下次先说出这一句：' : '下次一定要说出口的：') + '</b>'
          + fixes.map(function(f){
-             return '<p class="sayit" onclick="sayEl(this)">' + hl(f.s, x.miss) + '</p>'; }).join('')
+             return '<p class="sayit' + (f.def?' defline':'') + '" onclick="sayEl(this)">'
+               + (f.def ? '<span class="deftag">定义 · 这一句永远先说</span>' : '')
+               + hl(f.s, x.miss) + '</p>'; }).join('')
          + '</div>';
     } else if(x.gave){
       h += '<div class="fix"><b class="small">这一题你说了说不上。</b> 下次先把这一句说出口就够了。</div>';
     } else if(!x.said){
       h += '<div class="fix"><b class="small">这一题没录到声音。</b></div>';
     } else {
-      h += '<div class="hit small" style="margin:10px 0"><b>关键的几个词你都说到了。</b></div>';
+      /* ⚠ 就算她全说到了，定义那一句也要摆出来 —— 「定义千万不能省」。 */
+      var d0 = splitSent(x.ez || x.en || '')[0];
+      h += '<div class="hit small" style="margin:10px 0"><b>关键的几个词你都说到了。</b></div>'
+        + (d0 ? '<div class="fix"><p class="sayit defline" onclick="sayEl(this)">'
+            + '<span class="deftag">定义 · 这一句永远先说</span>' + esc(d0) + '</p></div>' : '');
     }
 
     h += '<div class="gr">'
