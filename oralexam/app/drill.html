@@ -112,6 +112,16 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
   font-weight:700;letter-spacing:.6px;border-radius:5px;padding:1px 7px;margin-right:7px;
   vertical-align:2px}
 .defbig{font-weight:600}
+/* 跟读 */
+.shb{margin-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.shb button{padding:6px 12px;font-size:13.5px}
+.shb .st{font-size:13px;color:var(--dim)}
+.shres{margin-top:8px;font-size:15px;line-height:1.9}
+.shres .ok{color:var(--good);font-weight:600}
+.shres .no{color:var(--bad);font-weight:600;text-decoration:underline}
+.shres .raw{display:block;margin-top:6px;font-size:13px;color:var(--dim)}
+.shbar{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0;
+  border-bottom:1px solid var(--line);margin-bottom:8px}
 .modes{display:flex;gap:10px;margin:14px 0 0;flex-wrap:wrap}
 .modes .mode{flex:1;min-width:210px;text-align:left;padding:12px 14px;line-height:1.5}
 .modes .mode b{display:block;font-size:15.5px;margin-bottom:2px}
@@ -307,7 +317,24 @@ var STOP = (' about above after again against already also although always among
 + 'since small some something still such take takes tell than that their them then there these '
 + 'they thing things think this those three through thus time times together under until upon '
 + 'used uses using usually very want well were what when where which while will with within '
-+ 'without work works would your ').split(' ');
++ 'without work works would your '
+/* ⚠ 2026-09-23 补的一批。她第一次把成绩粘过来：20 题里 18 题报「漏 12–16 / 16」，
+   均匀地全漏 —— 那不像一个人的表现，像一把坏尺子。查下来「关键词」里混着
+   textbook / practically / principle / material / starting / backwards 这种词：
+   她永远不会说出口，也不该说。**这些不是知识点，是写答案的语气。** */
++ 'textbook practically principle material starting backwards describes actually '
++ 'generally usually instead however therefore whether although besides moreover '
++ 'therefore chapter section above below earlier later simply merely rather '
++ 'entirely completely exactly roughly approximately typically commonly '
++ 'answer answers asked asking saying speak spoken sentence explain explains '
++ 'means meaning matter matters worth notice noticed remember '
++ 'difference differences differ differs similar similarly '
++ 'consequence consequences result results follows therefore '
++ 'happens happened happening runs running goes going '
++ 'number numbers amount amounts level levels '
++ 'whole entire single double triple half '
++ 'below above outside inside around across along '
++ 'their theirs itself themselves ').split(' ');
 var STOPSET = {}; STOP.forEach(function(w){ if(w) STOPSET[w]=1; });
 
 /* ⚠ 2026-09-22 实测之后加的上限。第一版不封顶，于是卡 17 的主问题
@@ -315,14 +342,20 @@ var STOPSET = {}; STOP.forEach(function(w){ if(w) STOPSET[w]=1; });
    整屏报「说到 9%」——那个数字没有意义，只会让人崩溃。
    现在：按词长倒序取前 MAXT 个（长词更可能是真正的专业词），最多 16 个。
    漏 16 个里的 5 个，是一句能听懂的话；漏 200 个里的 180 个，不是。 */
-var MAXT = 16;
+/* ⚠ 2026-09-23 改了两处，起因是她第一份成绩单：20 题里 18 题「漏 12–16 / 16」。
+   ① **不再按词长倒序。** 昨天我写「长词更可能是真正的专业词」—— 听起来有道理，
+      实际上把 practically(11) 排在 lactate(7) 和 glucose(7) 前面，
+      而且**长词恰恰是语音识别最容易听坏的**。
+      改成**按出现顺序**：卡上每个答案的第一句就是定义（C1），
+      所以**先出现的词本来就是最中心的词**。
+   ② **上限 16 → 10。** 「漏 3 / 10」是一句能读懂的话，「漏 12 / 16」是噪音。 */
+var MAXT = 10;
 function terms(en){
   var t = strip(en).toLowerCase().replace(/[‘’“”]/g,' ');
   var ws = t.match(/[a-z][a-z-]{4,}/g) || [];
   var seen={}, out=[];
   ws.forEach(function(w){ w=w.replace(/-/g,''); if(w.length<5) return;
     if(STOPSET[w]) return; if(seen[w]) return; seen[w]=1; out.push(w); });
-  out.sort(function(a,b){ return b.length-a.length; });
   return out.slice(0, MAXT);
 }
 function heard(t, said){
@@ -996,6 +1029,7 @@ function report(fromHome, hist){
     return;
   }
   RLOG = log; RKEY = (pack && pack.key) || '';
+  SH = []; shQueue = null; shBusy = false;
 
   /* 按「漏得最多」排前面 —— 她只读前两条就该停。 */
   var order = log.map(function(x,i){ return {x:x, i:i,
@@ -1029,7 +1063,14 @@ function report(fromHome, hist){
     + '所以<b>机器算的漏词只是线索</b>。每题下面有三个自评键，<b>那个才是进度</b>。'
     + '已评 <b id="gcount">' + graded + '</b> / ' + log.length + '</div>'
     + '<p style="margin:14px 0 0"><button class="main" onclick="home()">回首页</button> '
-    + '<button onclick="copyOut()">复制进度给老师</button></p></div>';
+    + '<button onclick="copyOut()">复制进度给老师</button></p></div>'
+    /* ⚠ 2026-09-23：纠错这一屏不该是一堵要读的墙。她说「阅读困难…不然强制性必须
+       录音念一遍？」—— 所以这里给一个走完全程的按钮，她一句都不用读。 */
+    + '<div class="card shbar"><b>读不进去就别读 —— 跟着念</b>'
+      + '<div class="small">它念一句，你跟一句。说到的词标绿，没说到的标红，'
+      + '<b>原话一定显示出来</b>（识别会听坏专业词，以你自己听到的为准）。</div>'
+      + '<p style="margin:12px 0 0"><button class="main" id="shall" onclick="shAll()">▶ 跟着念完这一组</button> '
+      + '<span class="small">今天已经跟读 <b id="shdone">0</b> 句</span></p></div>';
 
   order.forEach(function(o){
     var x = o.x, idx = o.i;
@@ -1055,9 +1096,13 @@ function report(fromHome, hist){
              var head = f.def
                ? '① 先说定义 —— 不管他问什么，这一句永远是第一句'
                : (fixes.length>1 ? '② 这一句你这次没说出口' : '① 这一句你这次没说出口');
+             var si = shReg(f.s);
              return '<div class="fixrow' + (f.def?' defline':'') + '">'
                + '<span class="fixtag">' + (f.def ? '<span class="deftag2">定义</span>' : '') + head + '</span>'
                + '<p class="sayit' + (f.def?' defbig':'') + '" onclick="sayEl(this)">' + hl(f.s, x.miss) + '</p>'
+               + '<div class="shb"><button id="shb' + si + '" onclick="shadow(' + si + ')">🎤 跟读这一句</button>'
+                 + '<span class="st" id="shs' + si + '"></span></div>'
+               + '<div id="sh' + si + '"></div>'
                + '</div>'; }).join('')
          + (x.miss.length ? '<p class="fixnote">划线的词 ＝ 机器认为你没说出口。'
              + '⚠ 它会把专业词听错（helicase 听成 hello kiss），所以<b>以你自己的录音为准</b>。'
@@ -1074,9 +1119,13 @@ function report(fromHome, hist){
       var d0 = splitSent(x.ez || x.en || '')[0];
       h += '<div class="hit small" style="margin:10px 0"><b>关键的几个词你都说到了。</b></div>'
         + (d0 ? '<div class="fix"><b class="small">这一题，下次开口就按这个顺序说</b>'
-            + '<div class="fixrow defline"><span class="fixtag">'
-            + '<span class="deftag2">定义</span>① 先说定义 —— 不管他问什么，这一句永远是第一句</span>'
-            + '<p class="sayit defbig" onclick="sayEl(this)">' + esc(d0) + '</p></div>'
+            + (function(){ var si = shReg(d0);
+                return '<div class="fixrow defline"><span class="fixtag">'
+                + '<span class="deftag2">定义</span>① 先说定义 —— 不管他问什么，这一句永远是第一句</span>'
+                + '<p class="sayit defbig" onclick="sayEl(this)">' + esc(d0) + '</p>'
+                + '<div class="shb"><button id="shb' + si + '" onclick="shadow(' + si + ')">🎤 跟读这一句</button>'
+                  + '<span class="st" id="shs' + si + '"></span></div>'
+                + '<div id="sh' + si + '"></div></div>'; })()
             + (x.ezcn ? '<details><summary>中文对照（这一整题在说什么）</summary>'
                 + '<div class="small" style="line-height:1.9">' + x.ezcn + '</div></details>' : '')
             + '</div>' : '');
@@ -1107,6 +1156,91 @@ function report(fromHome, hist){
   h += '<p class="small">选中任意一段英文，会冒出「★ 加进必背」—— 标了的会出现在主 app 的 ★ 必背里。'
      + '<br>点一句英文就念那一句。</p>';
   $('main').innerHTML = h;
+  shCount();
+}
+
+/* ============================ 跟读 ============================
+   ⚠ 2026-09-23 她：「整体纠错的时候，又有点阅读困难了…不然强制性必须录音念一遍？」
+   她自己给出了正确答案 —— 这个工具的前提就是她读不进去但说得出来，
+   而我把纠错屏做成了一堵要读的墙。所以这一屏也改成「跟着说」。 */
+var SH = [];            /* 这一屏所有要跟读的句子 */
+var shBusy = false, shQueue = null;
+
+function shReg(s){ SH.push(s); return SH.length - 1; }
+
+function shadow(i, auto){
+  if(shBusy) return;
+  var s2 = SH[i]; if(!s2) return;
+  shBusy = true;
+  var box = $('sh' + i);
+  /* ⚠ 这里原来叫 st，把全局的 st() 函数遮住了。改名 lbl。 */
+  var lbl = $('shs' + i);
+  if(lbl) lbl.textContent = '在念给你听…';
+  say(s2, function(){
+    if(lbl) lbl.textContent = '⏺ 该你了，跟着说一遍';
+    finalTxt = ''; interimTxt = '';
+    recStart();
+    /* 给的时间按句子长度来：每个词一秒，最少 8 秒，最多 30 秒。 */
+    var secs = Math.max(8, Math.min(30, s2.split(/\s+/).length));
+    setTimeout(function(){
+      recStop();
+      var said = (finalTxt + ' ' + interimTxt).trim();
+      shShow(i, s2, said);
+      shBusy = false;
+      shCount();
+      if(auto) shNext();
+    }, secs * 1000);
+  });
+}
+
+function shShow(i, sent, said){
+  var low = ' ' + strip(said).toLowerCase().replace(/[^a-z]+/g,' ') + ' ';
+  var words = sent.split(/(\s+)/);
+  var hit = 0, tot = 0, html = '';
+  words.forEach(function(w){
+    var bare = w.toLowerCase().replace(/[^a-z]/g,'');
+    if(bare.length < 4 || STOPSET[bare]){ html += esc(w); return; }
+    tot++;
+    var ok = low.indexOf(bare.slice(0,5)) !== -1;
+    if(ok) hit++;
+    html += '<span class="' + (ok?'ok':'no') + '">' + esc(w) + '</span>';
+  });
+  var box = $('sh' + i);
+  if(box) box.innerHTML = '<div class="shres">' + html
+    + '<span class="raw">识别听到的：' + (said ? esc(said) : '（没录到）') + '</span></div>';
+  var lbl = $('shs' + i);
+  if(lbl) lbl.innerHTML = tot ? ('说到 <b>' + hit + ' / ' + tot + '</b> 个词') : '';
+  var b = $('shb' + i);
+  if(b){ b.textContent = '再念一遍'; }
+  var s3 = st();
+  s3.shadow = (s3.shadow||0) + 1;
+  var d = today(); var r = dayRec(s3, d); r.shadow = (r.shadow||0) + 1;
+  save(s3);
+}
+function shCount(){
+  var el = $('shdone'); if(!el) return;
+  var s3 = st(), d = today(), r = s3.days[d] || {};
+  el.textContent = (r.shadow || 0);
+}
+
+/* 一句接一句走完，她全程不用读。 */
+function shAll(){
+  if(shQueue !== null){ shQueue = null; var b=$('shall'); if(b) b.textContent='▶ 跟着念完这一组'; return; }
+  shQueue = 0; var b=$('shall'); if(b) b.textContent='⏸ 停下';
+  shNext();
+}
+function shNext(){
+  if(shQueue === null) return;
+  if(shQueue >= SH.length){
+    shQueue = null;
+    var b=$('shall'); if(b) b.textContent='✓ 这一组念完了';
+    say('Good. That is the whole set.');
+    return;
+  }
+  var i = shQueue++;
+  var el = $('sh' + i);
+  if(el && el.scrollIntoView) el.scrollIntoView({behavior:'smooth', block:'center'});
+  setTimeout(function(){ shadow(i, true); }, 400);
 }
 
 /* ---- 点读 ---- */
@@ -1183,11 +1317,18 @@ function copyOut(){
 /* 规矩一的三个数，现在是量出来的，不是问出来的。 */
 function numbers(){
   var s = st(), d = today(), r = s.days[d] || {cards:[]};
-  var bad = [], seen = {};
+  /* ⚠ 2026-09-23：原来的判据是「这张卡漏词总数 > 2」。她第一份成绩单里
+     五张卡全部上榜 —— 因为每题都被算成漏十几个，这个阈值就没意义了。
+     改成**按比例**：这张卡漏掉的关键词超过一半才算。而且自评说得上的题不计。 */
+  var bad = [], mi = {}, to = {};
   ((s.last && s.last.log) || []).forEach(function(x){
-    seen[x.card] = (seen[x.card]||0) + x.miss.length;
+    if(x.self === 0) return;                 /* 她自己说答得出的，不算 */
+    mi[x.card] = (mi[x.card]||0) + x.miss.length;
+    to[x.card] = (to[x.card]||0) + (x.total||0);
   });
-  Object.keys(seen).forEach(function(k){ if(seen[k] > 2) bad.push(k); });
+  Object.keys(mi).forEach(function(k){
+    if(to[k] >= 6 && mi[k] / to[k] > 0.5) bad.push(k);
+  });
   var rep = Object.keys(s.repeat||{}).map(function(k){ return {id:k, w:s.repeat[k]}; });
   return {cardsToday:(r.cards||[]).length, bad:bad, rep:rep};
 }
