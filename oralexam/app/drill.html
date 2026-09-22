@@ -224,7 +224,22 @@ function hash(s){ var h=0; s=String(s); for(var i=0;i<s.length;i++){ h=(h*31+s.c
    只存在这台机器上，跟收藏、单词本一样。 */
 var KEY='oralexam.drill.v1';
 function load(){ try{ return JSON.parse(localStorage.getItem(KEY))||{}; }catch(e){ return {}; } }
-function save(o){ try{ localStorage.setItem(KEY,JSON.stringify(o)); }catch(e){} }
+/* ⚠ 2026-09-22：历史要全存，所以写不下的时候不能默默失败。
+   localStorage 每个源一般 5 MB；满了就丢最老的两成再试，最多试三轮。
+   丢掉的那一批在页面上说一句 —— 别让她以为还在。 */
+var SAVE_WARN = '';
+function save(o){
+  for(var k=0;k<4;k++){
+    try{ localStorage.setItem(KEY, JSON.stringify(o)); return true; }
+    catch(e){
+      if(!o.hist || o.hist.length < 4){ SAVE_WARN = '⚠ 浏览器存不下了，这一组没能存进历史。'; return false; }
+      var drop = Math.max(1, Math.floor(o.hist.length * 0.2));
+      o.hist = o.hist.slice(drop);
+      SAVE_WARN = '⚠ 浏览器空间满了，丢掉了最老的 ' + drop + ' 组历史。建议用「导出历史」备份。';
+    }
+  }
+  return false;
+}
 function st(){ var s=load(); s.days=s.days||{}; s.asked=s.asked||{}; s.passes=s.passes||0; return s; }
 function dayRec(s,d){ s.days[d]=s.days[d]||{cards:[],qs:0,miss:0,sets:0}; return s.days[d]; }
 function streak(){
@@ -602,7 +617,8 @@ function home(){
         + '</div>'; })()
     + '<p style="margin:18px 0 0"><button class="main" onclick="begin()">开始一组</button> '
       + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '
-      + '<button class="ghost" onclick="histPage()">练过的</button></p>'
+      + '<button class="ghost" onclick="histPage()">练过的</button> '
+      + '<button class="ghost" onclick="statsPage()">分析</button></p>'
     + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
       + '（mb-* · pe-* · taq · land），另外三张从其余 '
       + usable.filter(function(c){ return !isMBPE(c); }).length + ' 张里随机。</p>'
@@ -629,6 +645,7 @@ function begin(){
   var s=st(); var nF=(s.nFollow==null?3:s.nFollow);
   S = buildSet(5, nF);
   if(!S.cards.length){ alert('没有可用的卡。'); return; }
+  S.startedAt = Date.now();
   ask();
 }
 
@@ -790,10 +807,17 @@ function finish(){
   });
   var key = String(Date.now());
   var names = S.cards.map(function(cc){ return cc.card.id; }).join(' ');
-  var pack = {key:key, when:new Date().toISOString(), cards:names, log:S.log};
+  /* ⚠ 瘦记录：答案原文（en / full / ezcn / cn / warn）不进历史 ——
+     它们在 data/*.js 里，看的时候按 card ＋ q 捞回来就行。
+     带着存：一组 42 KB；不带：一组 12 KB。60 组的差别是 2.4 MB 对 0.7 MB。 */
+  var slim = S.log.map(function(x){
+    return {card:x.card, title:x.title, q:x.q, said:x.said, miss:x.miss,
+            total:x.total, self:x.self, gave:!!x.gave, sub:x.sub};
+  });
+  var pack = {key:key, when:new Date().toISOString(), cards:names, log:slim,
+              secs:Math.round((Date.now() - (S.startedAt||Date.now()))/1000)};
   s.hist = s.hist || [];
-  s.hist.push(pack);
-  while(s.hist.length > 60) s.hist.shift();
+  s.hist.push(pack);          /* 不设上限 —— 满了由 save() 丢最老的 */
   s.last = pack;
   save(s);
   report(false);
@@ -855,6 +879,26 @@ function hl(s2, miss){
   return out;
 }
 
+/* 历史里只有瘦记录，看的时候按 card ＋ q 把答案从卡里捞回来。
+   捞不到（那张卡改过、那道题被改写了）就只显示她说过的话，不假装有答案。 */
+function hydrate(log){
+  return log.map(function(x){
+    if(x.en) return x;                       /* 刚做完的那一组本来就带着 */
+    var c = null;
+    for(var i=0;i<CARDS.length;i++) if(CARDS[i].id===x.card){ c=CARDS[i]; break; }
+    var y = {}; for(var k in x) y[k]=x[k];
+    if(!c){ y.en=''; return y; }
+    var hit = null;
+    qlist(c).forEach(function(it){ if(!hit && it.q===x.q) hit=it; });
+    if(hit){ y.en=hit.en; y.ez=hit.ez; y.ezcn=hit.ezcn; y.cn=hit.cn; y.warn=hit.warn; }
+    else if(x.sub===0){                      /* 卷面题：从逐字稿第一段来 */
+      var ps = segParas(c);
+      y.en = ps[0] || strip(c.end||''); y.full = ps.join('\n\n');
+    } else { y.en=''; }
+    return y;
+  });
+}
+
 /* ============================ 结果 · 只在这里给答案 ============================
    ⚠ 2026-09-22 她实测一组之后：「反馈还是太机械化了，罗列出所有原答案，
    这很好，但是我看着就很崩溃了」。
@@ -867,7 +911,7 @@ function report(fromHome, hist){
   recStop();
   var s = st();
   var pack = hist || (fromHome ? s.last : {when:new Date().toISOString(), log:S.log, key:(s.last&&s.last.key)});
-  var log = (pack && pack.log) || [];
+  var log = hydrate((pack && pack.log) || []);
   if(!log.length){
     $('main').innerHTML = '<div class="card">还没有结果。<p><button class="main" onclick="home()">回去</button></p></div>';
     return;
@@ -1067,6 +1111,119 @@ function numbers(){
   Object.keys(seen).forEach(function(k){ if(seen[k] > 2) bad.push(k); });
   var rep = Object.keys(s.repeat||{}).map(function(k){ return {id:k, w:s.repeat[k]}; });
   return {cardsToday:(r.cards||[]).length, bad:bad, rep:rep};
+}
+
+/* ============================ 分析 ============================
+   她 2026-09-22：「或者至少用作分析」。
+   这一页要回答的只有一个问题：**明天先练哪一张。** */
+function statsPage(){
+  var s = st(), hs = s.hist || [];
+  var per = {}, qrep = {}, days = {}, secs = 0, qtot = 0;
+  hs.forEach(function(p){
+    secs += (p.secs||0);
+    var d = (p.when||'').slice(0,10);
+    days[d] = days[d] || {q:0, ok:0, gave:0};
+    (p.log||[]).forEach(function(x){
+      qtot++;
+      days[d].q++;
+      if(x.self===0) days[d].ok++;
+      if(x.gave || x.self===2) days[d].gave++;
+      var a = per[x.card] = per[x.card] || {id:x.card, title:x.title, n:0, ok:0, gave:0, last:p.when};
+      a.n++; if(x.self===0) a.ok++; if(x.gave||x.self===2) a.gave++;
+      if(p.when > a.last) a.last = p.when;
+      if(x.gave || x.self===2){
+        var k = x.card + '|' + x.q;
+        qrep[k] = qrep[k] || {card:x.card, title:x.title, q:x.q, n:0};
+        qrep[k].n++;
+      }
+    });
+  });
+  var usable = CARDS.filter(function(c){ return qlist(c).length>0; });
+  var never = usable.filter(function(c){ return !per[c.id]; });
+  var rows = Object.keys(per).map(function(k){ return per[k]; })
+    .sort(function(a,b){ return (b.gave/Math.max(1,b.n)) - (a.gave/Math.max(1,a.n)); });
+  var reps = Object.keys(qrep).map(function(k){ return qrep[k]; })
+    .filter(function(o){ return o.n>=2; }).sort(function(a,b){ return b.n-a.n; });
+  var dk = Object.keys(days).sort();
+
+  var h = '<div class="card"><b style="font-size:19px">分析</b>'
+    + '<div class="small">这一页只回答一个问题：<b>明天先练哪一张。</b></div>'
+    + '<div class="big3" style="margin-top:12px">'
+      + '<div><b>' + hs.length + '</b><span>练过的组数</span></div>'
+      + '<div><b>' + qtot + '</b><span>答过的题数</span></div>'
+      + '<div><b>' + Math.round(secs/60) + '</b><span>出声的分钟数</span></div>'
+    + '</div>'
+    + '<p style="margin:14px 0 0"><button class="main" onclick="home()">回首页</button> '
+      + '<button onclick="expHist()">导出历史</button> '
+      + '<button class="ghost" onclick="impHist()">导入历史</button></p>'
+    + (SAVE_WARN ? '<div class="warnbox">' + SAVE_WARN + '</div>' : '')
+    + '</div>';
+
+  if(reps.length){
+    h += '<div class="card"><b>⚠ 反复说不上的题（' + reps.length + ' 道）</b>'
+      + '<div class="small">这是整个 app 里最值钱的一张表 —— 它是<b>量出来的</b>，不是猜的。</div>';
+    reps.slice(0,20).forEach(function(o){
+      h += '<p style="margin:10px 0 0"><span class="pill">说不上 ' + o.n + ' 次</span>'
+        + '<b>' + esc(o.q) + '</b><br><span class="small">' + esc(o.title) + '</span></p>';
+    });
+    h += '</div>';
+  }
+
+  h += '<div class="card"><b>每张卡（按「最该练」排）</b>'
+    + '<div class="small">说不上的比例高的排前面。</div>';
+  rows.forEach(function(a){
+    var pct = Math.round(100*a.gave/Math.max(1,a.n));
+    h += '<p style="margin:10px 0 0"><b class="' + (pct>=40?'miss':(pct===0?'hit':'')) + '">'
+      + pct + '%</b> 说不上 · ' + esc(a.title || a.id)
+      + '<br><span class="small">练过 ' + a.n + ' 题 · 答得出 ' + a.ok + ' · 说不上 ' + a.gave
+      + ' · 上次 ' + esc((a.last||'').slice(0,10)) + '</span></p>';
+  });
+  if(never.length){
+    h += '<hr><b class="miss">还没在这里练过的 ' + never.length + ' 张</b><p class="small">'
+      + never.map(function(c){ return esc(c.id); }).join(' · ') + '</p>';
+  }
+  h += '</div>';
+
+  if(dk.length){
+    h += '<div class="card"><b>每天</b>';
+    dk.slice(-14).forEach(function(d){
+      var o = days[d], w = Math.min(100, o.q*2);
+      h += '<p style="margin:8px 0 0" class="small">' + esc(d) + ' · ' + o.q + ' 题 · 答得出 '
+        + o.ok + ' · 说不上 ' + o.gave + '</p>'
+        + '<div class="bar" style="margin:2px 0 0"><i style="width:' + w + '%"></i></div>';
+    });
+    h += '</div>';
+  }
+  $('main').innerHTML = h;
+}
+
+/* 导出 / 导入 —— localStorage 是「这一台机器这一个浏览器」的，清缓存就没了。
+   所以「全部都储存」在静态页面里真正的答案，是让她能把它复制出去。 */
+function expHist(){
+  var s = st();
+  var txt = JSON.stringify({v:1, when:new Date().toISOString(),
+    days:s.days, hist:s.hist, qres:s.qres, missHist:s.missHist, repeat:s.repeat, passes:s.passes});
+  try{ navigator.clipboard.writeText(txt);
+    alert('全部历史已经复制到剪贴板（' + Math.round(txt.length/1024) + ' KB）。\n'
+      + '粘到一个记事本里存着，或者发到另一台机器上用「导入历史」。'); }
+  catch(e){ prompt('手动复制（全选）：', txt); }
+}
+function impHist(){
+  var txt = prompt('把导出的那一大段粘进来。⚠ 会跟这台机器上已有的历史合并，不会覆盖。');
+  if(!txt) return;
+  var o; try{ o = JSON.parse(txt); }catch(e){ alert('这段不是导出的内容。'); return; }
+  var s = st();
+  var have = {}; (s.hist||[]).forEach(function(p){ have[p.key]=1; });
+  var add = (o.hist||[]).filter(function(p){ return !have[p.key]; });
+  s.hist = (s.hist||[]).concat(add).sort(function(a,b){ return (a.when||'')<(b.when||'')?-1:1; });
+  ['days','qres','missHist','repeat'].forEach(function(k){
+    s[k] = s[k] || {};
+    for(var kk in (o[k]||{})) if(!(kk in s[k])) s[k][kk] = o[k][kk];
+  });
+  s.passes = Math.max(s.passes||0, o.passes||0);
+  save(s);
+  alert('合并了 ' + add.length + ' 组历史。');
+  statsPage();
 }
 
 /* ---- 历史 ---- */
