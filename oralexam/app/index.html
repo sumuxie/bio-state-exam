@@ -114,6 +114,16 @@ main{max-width:680px;margin:0 auto;padding:0 20px 130px}
 .grp-h span{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .grp-h i{flex:1;height:1px;background:var(--rule)}
 .grp-note{font-size:13.5px;color:var(--faint);margin:0 0 6px}
+/* 2026-09-23：速背按组折叠（她：「做成地图那种，这张卡下面分着 xx 种，然后一点就显示」） */
+details.grp>summary.grp-h{cursor:pointer;list-style:none;user-select:none;padding:3px 0}
+details.grp>summary.grp-h::-webkit-details-marker{display:none}
+details.grp>summary.grp-h::marker{content:''}
+.grp-h b.car{font-size:10px;color:var(--accent);transition:transform .15s;display:inline-block}
+details.grp[open]>summary.grp-h b.car{transform:rotate(90deg)}
+.grp-h b.cnt{font-size:11px;color:var(--faint);font-weight:600;white-space:nowrap}
+.grpbar{display:flex;gap:8px;align-items:center;margin:26px 0 0}
+.grpbar button{font-size:12.5px;padding:5px 11px}
+.grpbar span{font-size:12.5px;color:var(--faint)}
 .pt{padding:32px 0 0}
 .pt-n{font-size:11.5px;letter-spacing:.13em;color:var(--faint);font-variant-numeric:tabular-nums;
   margin:0 0 10px;font-weight:600}
@@ -628,7 +638,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/x_fg.js?v=08cdafee"></script>
 <script src="data/x_mem.js?v=d874e175"></script>
 <script src="data/x_trans.js?v=eb5275a5"></script>
-<script src="data/x_meta.js?v=e69b9f5f"></script>
+<script src="data/x_meta.js?v=4d494726"></script>
 <script src="data/x_ph.js?v=40035789"></script>
 <script src="data/x_rxn.js?v=03550c6f"></script>
 <script src="data/31.js?v=5b45630e"></script>
@@ -1214,7 +1224,7 @@ function speak(btn){
     var sn = sents[idx++];
     el.querySelectorAll('span.s.cur').forEach(function(x){ x.classList.remove('cur'); });
     sn.spans.forEach(function(x){ x.classList.add('cur'); });
-    if (sn.spans[0] && sn.spans[0].scrollIntoView) sn.spans[0].scrollIntoView({block:'nearest'});
+    if (sn.spans[0]){ grpReveal(sn.spans[0]); if (sn.spans[0].scrollIntoView) sn.spans[0].scrollIntoView({block:'nearest'}); }
     var u = utter(sn.t, 0.9);
     u.onend = next; u.onerror = finish;
     speechSynthesis.speak(u);
@@ -1378,12 +1388,26 @@ function buildCram(c){
         + (c.n ? '#' + c.n + (c.merged&&c.merged.length ? ' / #'+c.merged.join(' / #') : '')
                  + ' · weight ' + c.w + ' · ' : '')
         + esc(c.sub) + '</p></div>';
+  /* 每组有几格，先数一遍；顺便数这张卡一共几格，决定要不要默认收起。 */
+  var L = c.cram || [], cnt = [], ptot = 0, gi = -1;
+  for (var k=0;k<L.length;k++){
+    if (L[k].g !== undefined){ cnt.push(0); gi++; }
+    else { ptot++; if (gi >= 0) cnt[gi]++; }
+  }
+  /* 12 格以上才折叠。小卡不值得多一次点击。 */
+  var fold = ptot > 12, gn2 = -1;
+  if (fold) h += '<div class="grpbar"><button onclick="grpAll(1)">全部展开</button>'
+              + '<button onclick="grpAll(0)">全部收起</button>'
+              + '<span>共 ' + ptot + ' 格 · 点组名展开那一组</span></div>';
   var open = false;
-  for (var i=0;i<(c.cram||[]).length;i++){
-    var b = c.cram[i];
+  for (var i=0;i<L.length;i++){
+    var b = L[i];
     if (b.g !== undefined){
-      if (open) h += '</div>';
-      h += '<div class="grp"><div class="grp-h"><span>' + b.g + '</span><i></i></div>'
+      if (open) h += '</details>';
+      gn2++;
+      h += '<details class="grp"' + (fold ? '' : ' open') + '>'
+         + '<summary class="grp-h"><b class="car">▶</b><span>' + b.g + '</span><i></i>'
+         + '<b class="cnt">' + (cnt[gn2] || 0) + ' 格</b></summary>'
          + (b.gn ? '<p class="grp-note">' + b.gn + '</p>' : '');
       open = true; continue;
     }
@@ -1404,9 +1428,23 @@ function buildCram(c){
        + fig(b.fig)
        + '</div>';
   }
-  if (open) h += '</div>';
+  if (open) h += '</details>';
   if (c.end) h += '<div class="endnote">' + c.end + '</div>';
   return h;
+}
+/* 全部展开／全部收起 */
+function grpAll(on){
+  var g = document.querySelectorAll('#cram details.grp');
+  for (var i=0;i<g.length;i++) g[i].open = !!on;
+}
+/* ⚠ 收起的组里也有内容：搜索命中、必背高亮、跳转都可能落在里面。
+   滚过去之前先把祖先全部打开，否则「跳过去了但屏幕上什么都没有」。 */
+function grpReveal(el){
+  var n = el;
+  while (n && n !== document.body){
+    if (n.tagName === 'DETAILS') n.open = true;
+    n = n.parentNode;
+  }
 }
 function tbl(t){
   var h = '<div class="twrap"><table class="tb">';
@@ -2066,7 +2104,7 @@ function mkJump(){
     if (st) for (var i=0;i<steps.length;i++) if (steps[i] === st) cur = i;
   }
   mode(id);
-  setTimeout(function(){ if (el.scrollIntoView) el.scrollIntoView({block:'center'}); }, 40);
+  setTimeout(function(){ grpReveal(el); if (el.scrollIntoView) el.scrollIntoView({block:'center'}); }, 40);
 }
 
 /* =================== router =================== */
@@ -2927,7 +2965,7 @@ function sxJump(){
     }
   }
   mode(sec);
-  if (el) setTimeout(function(){ if (el.scrollIntoView) el.scrollIntoView({block: 'center'}); }, 40);
+  if (el) setTimeout(function(){ grpReveal(el); if (el.scrollIntoView) el.scrollIntoView({block: 'center'}); }, 40);
 }
 
 function route(){
