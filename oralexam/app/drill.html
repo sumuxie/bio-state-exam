@@ -784,7 +784,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>271be41</b>'
+      + ' · 版本 <b>1160883</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1478,6 +1478,12 @@ function stream(c, kind){
 function ranked(c){
   return streamMain(c).concat(streamAsk(c));
 }
+/* ⚠ 2026-09-23 这一行被我误删过一次，页面因此整个打不开。
+   当时删 ranked() 用的刀法是「从 `function ranked(` 切到下一个 `function`」，
+   而这行 var 正好夹在两个函数中间，**被连带切掉了**，roundItems 却还在用它。
+   报错是 `Uncaught ReferenceError: PERROUND is not defined`，首页一渲染就抛，#main 空白。
+   教训：**按「切到下一个 function」删代码，会连带删掉夹在中间的 var。** */
+var PERROUND = 3;               /* 全局三轮：每张卡取 3 条 */
 function roundItems(n){          /* n = 1 2 3；返回这一轮全部的题 */
   var out = [];
   CARDS.forEach(function(c){
