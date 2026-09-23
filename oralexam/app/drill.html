@@ -317,7 +317,16 @@ function qlist(c){
   (c.ask||[]).forEach(function(g){
     (g.items||[]).forEach(function(x){
       if(!x.q||!x.en) return;
-      if(CJK.test(x.q)) return;
+      /* ⚠ 2026-09-23 她：「不应该有中文的 应该全部都是英文」「英文才是要背的」。
+         查出来 23 条是「中文前缀 ＋ 干净英文题」，例如
+         「（陷阱）Enzymes shift the equilibrium」「（走向 Kd）You mentioned a quantity…」。
+         原来这一行看到开头有中文就整条跳过 —— **这 23 条英文题在演练台里一次都抽不到**。
+         现在先把前缀剥掉；剥完还是纯英文就收，题目用剥干净的那一版。
+         ⚠ 剩下的中文题（纯中文标签 46 条、指路 → 22 条）仍然跳过：
+         那些本来就不是题，是给她自己看的标记。 */
+      var q2 = String(x.q).replace(/^（[^）]{1,12}）\s*/, '');
+      if(CJK.test(q2)) return;
+      x = (q2 === x.q) ? x : {q:q2, en:x.en, ez:x.ez, ezcn:x.ezcn, cn:x.cn, warn:x.warn, r:x.r};
       out.push({q:x.q, en:x.en, ez:x.ez||'', ezcn:x.ezcn||'', cn:x.cn||'', warn:x.warn||'', g:g.g||'', r:x.r||''});
     });
   });
@@ -775,7 +784,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>657fdfd</b>'
+      + ' · 版本 <b>271be41</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
