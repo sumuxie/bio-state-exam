@@ -81,7 +81,7 @@ cram:[
  {n:'13', t:'Okazaki 循环',
   big:'每段四步：primase 做 RNA primer → <b>pol III</b> 接 <b>1000–2000 nt</b> → <b>pol I</b> 拆 primer 并补 DNA → <b>ligase</b> 封口',
   en:'“Each Okazaki fragment takes four steps. Primase lays down an RNA primer. Polymerase III extends it into a stretch of about one to two thousand nucleotides in E. coli. Polymerase I removes the RNA primer with its 5′→3′ nuclease and fills the gap with DNA. DNA ligase joins the fragment to the one before it. Then the helix opens further and the cycle runs again. Both strands are made on one complex, the replisome, with the lagging template looped around it so its polymerase can still travel with the fork. The textbook says the replisome is probably two polymerase III holoenzymes.”',
-  note:'p083–p085，figure 4.25。⚠ p081 也给了一个 Okazaki 长度，指数被 OCR 吃了（「10ⁿ」）——报 p083 的 1000–2000。真核片段短得多（generally 100–200 nt），书没给。「trombone model」是通用叫法。<span class="pg">p081 p083 p084 p085</span>'},
+  note:'<b>🪄 邪修记法</b>：每段 “<b>P</b>rime, <b>3</b>, <b>1</b>, <b>L</b>ock” ＝ primase → pol <b>Ⅲ</b> → pol <b>Ⅰ</b> → ligase。Ⅲ 先 Ⅰ 后：大的干活，小的收拾。<br>p083–p085，figure 4.25。⚠ p081 也给了一个 Okazaki 长度，指数被 OCR 吃了（「10ⁿ」）——报 p083 的 1000–2000。真核片段短得多（generally 100–200 nt），书没给。「trombone model」是通用叫法。<span class="pg">p081 p083 p084 p085</span>'},
  {n:'14', t:'画复制叉',
   big:'他让画：一个<b>横躺的 Y</b>，先标两臂的 5′/3′，再画箭头',
   en:'“If I draw it: a Y lying on its side — the stem is the parental duplex, the arms are the separated templates, the fork moves left. On the upper arm the new strand runs continuously towards the fork — leading. On the lower arm short arrows point away from the fork — Okazaki fragments, each starting from a small RNA primer, ligase between them.”',

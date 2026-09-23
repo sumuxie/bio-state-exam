@@ -64,7 +64,7 @@ cram:[
   en:'“It runs in the <b>inner mitochondrial membrane</b>, beside the matrix where the citric acid cycle runs. What limits the rate is the supply of <b>ADP</b>: the textbook gives phosphorylation in the respiratory chain as its example of regulation by a limiting metabolite.”',
   note:'p222 原话：「限制因素是 ADP 是否充足」。p197 另一句好用的：<b>「只有线粒体内膜负责 ATP 的生产」</b>。后半句（没有 ADP → 质子回不去 → 梯度顶住 → 传递变慢）是<b>通用</b>推论。<span class="pg">p197 p222</span>'},
 
- {g:'四个复合物 ＋ 两个流动载体', gn:'每个只记四件事：<b>书给的名字（都是氧化还原酶）· 进来什么出去什么 · 辅基 · 泵不泵</b>。结构不用背。'},
+ {g:'四个复合物 ＋ 两个流动载体', gn:'<b>🪄 邪修记法</b>：电子的路 <b>NADH → Ⅰ → Q → Ⅲ → c → Ⅳ → O₂</b>，念成「<b>一 Q 三 c 四</b>」；Ⅱ 从 succinate 侧门插进 Q。辅基对号：Ⅰ <b>FMN</b>＋FeS · Ⅱ <b>FAD</b>＋FeS · Ⅲ 细胞色素 <b>b、c₁</b>＋FeS · Ⅳ 细胞色素 <b>a、a₃</b>＋Cu。抑制剂 “<b>R-A-C</b>” 按 <b>1-3-4</b>：<b>R</b>otenone 堵 Ⅰ · <b>A</b>ntimycin 堵 Ⅲ · <b>C</b>yanide 堵 Ⅳ。<br>每个只记四件事：<b>书给的名字（都是氧化还原酶）· 进来什么出去什么 · 辅基 · 泵不泵</b>。结构不用背。'},
  {n:'08', t:'复合物 I',
   big:'<b>NADH:ubiquinone oxidoreductase</b> · NADH → 泛醌 · 辅基 <b>FMN ＋ 若干 FeS</b> · <b>泵 2 个质子</b>',
   en:'“Complex I is <b>NADH:ubiquinone oxidoreductase</b>. Its core is the flavoprotein NADH dehydrogenase. Its prosthetic groups are <b>FMN</b> and several <b>iron-sulfur centres</b>, non-heme iron held by cysteine sulfurs. A prosthetic group is a cofactor bound permanently to the protein. The complex dehydrogenates NADH on the matrix side, passes the electrons to ubiquinone, and two protons appear outside.”',
