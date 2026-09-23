@@ -33,7 +33,7 @@ cram:[
  {n:'04', t:'轴二 · 碱基',
   big:'共用 A、G、C；<b>uracil 实际上只在 RNA</b>，<b>thymine 主要在 DNA</b>',
   en:'“Both use the purines adenine and guanine and the pyrimidine cytosine. Of the other two pyrimidines, uracil is found <b>practically only</b> in RNA, and thymine <b>predominantly</b> in DNA. The textbook is careful with those words, and so am I.”',
-  note:'<b>🪄 邪修记法</b>：“<b>CUT</b> the <b>PY</b>e” ＝ <b>C</b>ytosine · <b>U</b>racil · <b>T</b>hymine 是 <b>py</b>rimidines（单环——名字长的环反而小）；“<b>PUR</b>e <b>A</b>s <b>G</b>old” ＝ <b>A</b>denine · <b>G</b>uanine 是 <b>pur</b>ines（双环）。<br><b>书用的就是这两个限定词</b>（书上印的那两个限定词，英译就是 practically only 和 predominantly）。<b>不要说「thymine 只在 DNA」</b>——tRNA 的 T-loop 里有 ribothymidine（通用知识；书 p087 只说 tRNA 环上有「minor bases」——书上印的就是这个词，这里给的是英译——没点名）。<b>跟着书加限定词，本身就是分数。</b><span class="pg">p067</span>'},
+  note:'<b>🪄 邪修记法</b>：「<b>嘧啶 CUT 小单环，嘌呤 AG 大双环</b>」——<b>C</b>ytosine · <b>U</b>racil · <b>T</b>hymine 是 pyrimidines（名字长，环反而小）；<b>A</b>denine · <b>G</b>uanine 是 purines。英文：“<b>CUT</b> the <b>PY</b>e”（切派）· “<b>PUR</b>e <b>A</b>s <b>G</b>old”（纯如金）。<br><b>书用的就是这两个限定词</b>（书上印的那两个限定词，英译就是 practically only 和 predominantly）。<b>不要说「thymine 只在 DNA」</b>——tRNA 的 T-loop 里有 ribothymidine（通用知识；书 p087 只说 tRNA 环上有「minor bases」——书上印的就是这个词，这里给的是英译——没点名）。<b>跟着书加限定词，本身就是分数。</b><span class="pg">p067</span>'},
  {n:'05', t:'轴三 · 链数',
   big:'DNA 通常是<b>右手双螺旋</b>；mRNA 和 rRNA 是单链，<b>但 rRNA 有配对成螺旋的局部</b>',
   en:'“DNA is normally a right-handed double helix. Messenger and ribosomal RNA are single-stranded — though parts of ribosomal RNA pair up into helices.”',
