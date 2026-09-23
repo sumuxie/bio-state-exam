@@ -803,7 +803,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>40cea39</b>'
+      + ' · 版本 <b>8f4d80b</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -853,7 +853,9 @@ function ask(){
     + '<div class="dots" id="dots"></div>'
     + '<div class="live" id="live"></div>'
     + '<p class="nudge" id="nudge"></p>'
-    + '<p style="margin:16px 0 0"><button class="main" onclick="doneAnswer()">说完了 ▸</button> '
+    + '<p style="margin:16px 0 0">'
+      + (canBack() ? '<button class="ghost" onclick="backQ()">◂ 上一题</button> ' : '')
+      + '<button class="main" onclick="doneAnswer()">说完了 ▸</button> '
       + '<button class="ghost" onclick="doneAnswer()">跳过</button> '
       + '<button class="ghost" onclick="quit()">结束这一组</button></p>'
     + '</div>'
@@ -993,6 +995,35 @@ function holdReveal(btn){
     var el = $('rclock'); if(el) el.textContent = '—';
     btn.textContent = '不再自动跳'; btn.disabled = true; }
 }
+/* ⚠ 2026-09-23 她：「给我的所有出口演练都按一个**上一题按钮**」。
+   退回去有一个坑：每答一题都会往 S.log 里推一条，**退回去重答会推第二条**，
+   报告里同一题就出现两次。所以退回去的时候**先把那一题旧的记录删掉**，
+   重答的那次就直接替换它。 */
+function backQ(){
+  if(!S) return;
+  if(revealTimer){ clearInterval(revealTimer); revealTimer = null; }
+  try{ speechSynthesis.cancel(); }catch(e){}
+  recStop(); stopNudges();
+  if(S.sub > 0){
+    S.sub--;
+  } else if(S.i > 0){
+    S.i--;
+    var c0 = S.cards[S.i];
+    S.sub = c0.follow ? c0.follow.length : 0;   /* 回到上一张卡的最后一问 */
+  } else {
+    return;                                     /* 已经是第一题 */
+  }
+  /* 把要回去那一题的旧记录去掉，免得报告里出现两次 */
+  var c = curCard(), q = curQ();
+  if(q && S.log){
+    S.log = S.log.filter(function(x){
+      return !(x.card === c.card.id && x.q === q.q);
+    });
+  }
+  ask();
+}
+function canBack(){ return !!(S && (S.sub > 0 || S.i > 0)); }
+
 function advanceQ(){
   if(revealTimer){ clearInterval(revealTimer); revealTimer = null; }
   try{ speechSynthesis.cancel(); }catch(e){}
@@ -1772,7 +1803,9 @@ function walkRender(){
       + '<button id="wkm-keys" onclick="wkMode(\'keys\')">关键词提示</button></div>'
       + '<div id="wkt3">' + wkText('blind') + '</div>'
       + wkBtn('3a', '背第 1 遍') + wkBtn('3b', '背第 2 遍') + '</div>'
-    + '<p style="margin:18px 0 0"><button class="main" onclick="walkNext()">下一条 →</button> '
+    + '<p style="margin:18px 0 0">'
+      + (CH.i > 0 ? '<button class="ghost" onclick="walkPrev()">← 上一条</button> ' : '')
+      + '<button class="main" onclick="walkNext()">下一条 →</button> '
       + '<button class="ghost" onclick="home()">回首页</button> '
       + '<span class="small">今天整段出声 <b id="wkdone">' + (r.walk||0) + '</b> 遍</span></p>'
     + (x.ezcn ? '<details class="full" style="margin-top:14px"><summary>中文 ▾</summary>'
@@ -1786,6 +1819,23 @@ function walkNext(){
   var o = CH.list[CH.i];
   if(o) wMark(o.card.id, o.item.q);   /* 走过就记一次 —— 下次这一条是涂掉的 */
   CH.i++; walkRender();
+}
+/* ⚠ 2026-09-23 她要的「上一题」。
+   要把「走过一遍」的计数**一起退回去** —— 否则来回点两下就能把进度刷满，
+   而那个进度是她用来判断「这一份还剩多少」的，刷满了就没意义了。 */
+function wUnmark(card, q){
+  var s = st(); s.walked = s.walked || {};
+  var k = wKey(card, q);
+  if(s.walked[k]) { s.walked[k]--; if(!s.walked[k]) delete s.walked[k]; save(s); }
+}
+function walkPrev(){
+  if(!CH || CH.i <= 0) return;
+  recStop();
+  if(WK && WK.busy){ WK.busy = null; wkRecStop(function(){}); }
+  CH.i--;
+  var o = CH.list[CH.i];
+  if(o) wUnmark(o.card.id, o.item.q);
+  walkRender();
 }
 function walkDone(){
   var s = st(), d = today(), r = s.days[d] || {};
