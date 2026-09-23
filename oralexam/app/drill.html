@@ -766,7 +766,12 @@ function home(){
       + '匹配只比前五个字母，原始转录一定给你看。'
       + '<br>② Chrome 的识别<b>把音频送到 Google 的服务器</b>处理。'
       + '<br>③ 记录只存在这台机器上，跟收藏、单词本一样。</div>'
-    + '<p class="small">卡片数据跟主 app 是同一批。<a href="index.html">← 回主 app</a></p>';
+    + '<p class="small">卡片数据跟主 app 是同一批。<a href="index.html">← 回主 app</a>'
+      /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
+         之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
+         把构建号印在页面上，她报一眼就知道手里是不是新的。 */
+      + ' · 版本 <b>cf2e115</b>'
+      + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
   if(asec) asec.onchange = function(){ var s2=st(); s2.ansSecs = +asec.value; save(s2); home(); };
