@@ -82,7 +82,7 @@ cram:[
  {n:'14', t:'六大类',
   big:'按<b>催化的反应类型</b>分六大类：oxidoreductases · transferases · hydrolases · lyases · isomerases · ligases；每个酶有<b>系统名、常用名、EC 号</b>',
   en:'“Enzymes are classified into six main classes by the reaction they catalyse: oxidoreductases, transferases, hydrolases, lyases, isomerases and ligases. Each enzyme has a systematic name describing the reaction, a recommended name for everyday use, and a code number. Lactate dehydrogenase is E.C. 1.1.1.27, systematic name L-lactate:NAD⁺ oxidoreductase.”',
-  note:'p041–p042。<b>每类一句、synthase 与 synthetase、EC 四个数字，都在卡 18 的追问里</b>，这里不重复。<span class="pg">p041 p042</span>'},
+  note:'<b>🪄 邪修记法</b>（EC 1→6 的顺序）：“<b>O</b>nly <b>T</b>he <b>H</b>ungry <b>L</b>ions <b>I</b>gnore <b>L</b>ambs” ＝ Oxidoreductases · Transferases · Hydrolases · Lyases · Isomerases · Ligases。⚠ 常见的 “Over The HILL” 把 4 和 5 说反了：EC 4 是 lyase，5 才是 isomerase。<br>p041–p042。<b>每类一句、synthase 与 synthetase、EC 四个数字，都在卡 18 的追问里</b>，这里不重复。<span class="pg">p041 p042</span>'},
  {n:'15', t:'在蛋白质功能表里的位置',
   big:'在书的<b>蛋白质功能表</b>里，酶是<b>最大、最重要的一组</b>；已知<b>超过 3000 种</b>；第二大组是结构蛋白',
   en:'“In the textbook’s table of protein functions, enzymes are the largest and most important group. More than three thousand different enzymes are known. The second main group are the structural proteins. The table’s own examples: ribonuclease hydrolyses RNA, trypsin hydrolyses the peptide bond, cytochrome c transfers electrons, snake-venom enzymes hydrolyse phospholipids.”',

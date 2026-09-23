@@ -48,7 +48,7 @@ cram:[
     ['<b>衍生</b>','8 prostaglandins · 9 steroids','—'],
     ['','10 carotenoids · 11 lipophilic vitamins','—']
    ]},
-  note:'<b>⚠ Table 8.1 被 OCR 整张吃掉，这张表是回 200 dpi 原图抄的</b>（<span class="pg">p176</span>）。表头那两列，书上印的原词译过来就是 <i>classification</i> / <i>hydrolysis products</i>。<br><b>这张表是这道题的骨架</b>：他问「有哪些类型」你有十一个名字；他挑任一类往下问，你先答「它水解出什么」，等于自动给出了结构。书正文把复合脂明确数成 <b>5 组</b>，跟表的 3–7 行对得上。'},
+  note:'<b>🪄 邪修记法</b>：十一类按三大组数「<b>2 · 5 · 4</b>」。简单 2 ＝ <b>酰甘油 · 蜡</b>；复合 5 ＝ 甘油骨架两个（<b>糖</b>酰甘油 · <b>磷</b>酰甘油）＋ 鞘氨醇骨架三个（鞘磷脂 · 脑苷脂 · 神经节苷脂 ＝ 「<b>磷 · 糖 · 糖＋唾液酸</b>」，越挂越多）；衍生 4 ＝ <b>前列腺素 · 甾体 · 类胡萝卜素 · 脂溶维生素</b>。<br><b>⚠ Table 8.1 被 OCR 整张吃掉，这张表是回 200 dpi 原图抄的</b>（<span class="pg">p176</span>）。表头那两列，书上印的原词译过来就是 <i>classification</i> / <i>hydrolysis products</i>。<br><b>这张表是这道题的骨架</b>：他问「有哪些类型」你有十一个名字；他挑任一类往下问，你先答「它水解出什么」，等于自动给出了结构。书正文把复合脂明确数成 <b>5 组</b>，跟表的 3–7 行对得上。'},
  {n:'04', t:'每一层的判据',
   ez:'“Each branch has its own criterion. A simple lipid is only an ester. It is a fatty acid joined to an alcohol. It has nothing else. So it carries no charged group. The textbook calls these neutral lipids. A complex lipid has one extra part. The extra part can be a sugar. It can be a phosphate. It can be sphingosine. That extra part is polar. So one end of the molecule is polar. This is the difference that matters. Only a molecule with a polar head can build a membrane. A derived lipid is everything else. These have no fatty acid ester at all. Almost all of them are terpenes.”',
   ezcn:'三层各有自己的判据。<b>simple</b>＝只有「脂肪酸 ＋ 醇」的酯，别的什么都没有，所以不带电，书叫它 <b>neutral lipid</b>。<b>complex</b>＝多出一样东西（糖／磷酸／<b>sphingosine</b>），多出来的那一样是极性的，于是分子有了一个<b>极性头</b>——<b>这一条才是要紧的，因为只有带极性头的分子才能造膜</b>。<b>derived</b>＝剩下的，根本没有脂肪酸酯，几乎全是 <b>terpene</b>。',
@@ -79,7 +79,7 @@ cram:[
     ['<b>arachidonic</b>','<b>20:4</b>','eicosatetraenoic','5,8,11,14','n-6','<b>二十碳类的来源</b> p228'],
     ['timnodonic · clupanodonic','20:5 · 22:6','eicosapentaenoic · docosahexaenoic','—','n-3','EPA 与 DHA，表里最长']
    ]},
-  note:'Table 8.2 <span class="pg">p177</span>，命名规则 <span class="pg">p178</span>，整表已回原图核。<br><b>要背的只有黑体那六个</b>：16:0 · 18:0 · 18:1 · 18:2 · 18:3 · 20:4。<b>α- 与 γ-亚麻酸是最阴的一对</b>：都是 18:3，只差 Δ9,12,15（n-3）还是 Δ6,9,12（n-6）——必需的是 <b>α</b>。'},
+  note:'<b>🪄 邪修记法</b>：黑体六个 “<b>P</b>retty <b>S</b>ure <b>O</b>ld <b>L</b>adies <b>L</b>ove <b>A</b>rachnids” ＝ <b>P</b>almitic 16:0 · <b>S</b>tearic 18:0 · <b>O</b>leic 18:1 · <b>L</b>inoleic 18:2 · <b>L</b>inolenic 18:3 · <b>A</b>rachidonic 20:4——双键数 0·0·1·2·3·4 顺着爬。<br>Table 8.2 <span class="pg">p177</span>，命名规则 <span class="pg">p178</span>，整表已回原图核。<br><b>要背的只有黑体那六个</b>：16:0 · 18:0 · 18:1 · 18:2 · 18:3 · 20:4。<b>α- 与 γ-亚麻酸是最阴的一对</b>：都是 18:3，只差 Δ9,12,15（n-3）还是 Δ6,9,12（n-6）——必需的是 <b>α</b>。'},
  {n:'07', t:'必需脂肪酸 ＋ 熔点',
   big:'必需的只有两个：<b>linoleic 18:2 n-6</b> 和 <b>α-linolenic 18:3 n-3</b>；其余靠<b>延长酶和去饱和酶</b>自己造。<b>饱和 → 熔点高；不饱和 → 熔点低；双键越靠羧基降得越多</b>',
   en:'“The textbook is precise: <b>the diet of mammals must contain linoleic acid, eighteen-two n-six, and alpha-linolenic acid, eighteen-three n-three</b>. Anything longer or more unsaturated mammals make from those two with <b>elongases and desaturases</b>. So what we cannot do is put a double bond past a certain point, not build a chain. And it gives three rules. <b>Saturated fatty acids raise the chemical stability and the melting point.</b> <b>Unsaturated ones lower both.</b> <b>And the closer the double bond lies to the carboxyl group, the more it lowers them.</b>”',
