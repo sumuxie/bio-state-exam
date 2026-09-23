@@ -1344,7 +1344,7 @@ function chemStart(){
 var WK = null;      /* 当前这一题：{src, keys, mode3, busy, done:{1,2,3a,3b}, cardId} */
 var WREC = {mr:null, stream:null, chunks:[]};
 
-function bare(w){ return String(w||'').toLowerCase().replace(/[’ʼ']s/g,'').replace(/[^a-z]/g,''); }
+function bare(w){ return String(w||'').toLowerCase().replace(/[\u2019\u02bc']s(?![a-z])/g,'').replace(/[^a-z]/g,''); }
 function keyWords(x){
   var set = {};
   (String(x.en||'').match(/<b>[^<]*<\/b>/g) || []).forEach(function(b){
