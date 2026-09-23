@@ -39,10 +39,10 @@ sub:'主干说完约 90 秒 · 比较题 · 书里 0 命中：每一句都要标
 cram:[
  {g:'开口 · 先给轴，再把四个名字各定义一次', gn:'⚠ 比较题的第一句决定成败：<b>先说比较的轴，再往轴上填</b>（卡 03 是样板）。这道题的轴比卡 03 多一层——<b>四个里有一个不在同一张清单上</b>。题面的五个实词（difference、transformation、electroporation、transduction、transfection）在这一组里全部交代掉。口试他多半只念 “What is transformation?”，其余的是他准备挖的方向。'},
  {n:'01', t:'先划出处',
-  ez:'“One thing before I answer. This is not textbook material. Three of the four words are not in this book. The fourth one is transformation. It appears twice. And never in this sense. So everything I say comes from two places. It is general molecular biology. Or it is my own laboratory practice. I will say which as I go.”',
-  ezcn:'<b>答之前先说一句：这不是教材里的内容。</b><b>四个词里有三个这本书里根本没有；第四个 transformation 出现过两次，而且都不是这个意思。</b><b>所以我说的每一句要么是通用分子生物学，要么是我自己的实验室实践——我会边说边标明是哪一种。</b>',
+  ez:'“This is general molecular biology and my own laboratory practice. It is not from this textbook. I will say which as I go.”',
+  ezcn:'<b>这是通用分子生物学和我自己的实验室实践，不是教材里的内容——我会边说边标明是哪一种。</b>',
   big:'全书 <b>0 命中</b>：transfection、transduction、electroporation、competence、bacteriophage、plasmid 这些词的捷克语形式全没有。<b>transformation 出现两次，两次都不是这个意思</b>。所以这张卡全部是<b>通用分子生物学</b>或<b>我自己的实验室实践</b>',
-  en:'“One thing before I answer. This is not textbook material. Three of the four words do not appear in this book at all. The fourth, transformation, appears twice and never in this sense. So everything I say is either general molecular biology or my own laboratory practice, and I will say which as I go.”',
+  en:'“This is general molecular biology and my own laboratory practice rather than textbook material, and I will say which as I go.”',
   note:'<b>这一句是整张卡的保险。</b>书外题最危险的失分不是答错，是把实验室的东西说成「书上说」——他翻得到。先说清楚，后面每一句都安全，而且「我知道这本书里有什么、没有什么」本身就是加分。跟卡 <b>taq</b> 和卡 <b>land</b> 同一个开法。<span class="pg">p056</span><span class="pg">p182</span>'},
  {n:'02', t:'轴 · 这道题的第一句',
   ez:'“All four name ways of getting foreign nucleic acid into a cell. The cell is a living one. So the difference is not four unrelated things. It is two questions asked of each one. Which cell. And what carries the nucleic acid across the membrane. Foreign means D N A or R N A from elsewhere. The cell did not make it. Those two questions sort the four words. They give three destinations and one method.”',
