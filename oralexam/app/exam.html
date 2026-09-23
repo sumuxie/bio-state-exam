@@ -179,26 +179,6 @@ function sayEl(el){
 }
 
 /* ---- 房间的判据，跟 tools/cellmap.py 同一套 ---- */
-/* ⚠ 考官的「第二层问题」句式。2026-09-23。
-   ⚠ **这些不是原题。** 网上流传的那份委员会分析里引了一些答辩记录原话，
-   我查不到出处，所以**一句都没有照抄**。下面是从他们**公开的研究方向**推出来的
-   「他答完之后习惯往哪边再推一下」—— **练的是第二层问题的形状，不是猜题**。 */
-var EXPROBE = [
- ['Hodek',      'And what happens to that molecule next?',                    '那个分子接下来怎么样？'],
- ['Hodek',      'Which enzyme does that, and where in the cell?',             '这一步是哪个酶做的，在细胞的什么地方？'],
- ['Hudeček',    'That instrument — what physical quantity does it measure?',  '你说的那台仪器，测的到底是什么物理量？'],
- ['Hudeček',    'How would you know that number is not an artefact?',         '你怎么知道那个数不是假象？'],
- ['Lipovová',   'Would that still work outside a test tube?',                 '这个拿到试管外面还成立吗？'],
- ['Lipovová',   'What are the kinetic limits of that?',                       '它的动力学极限在哪？'],
- ['Martínková', 'Say that again so someone outside the field understands it.', '再说一遍，让不在这个领域的人也听得懂。'],
- ['Martínková', 'What does that mean for the cell, not for the molecule?',     '这件事对细胞意味着什么，不是对分子。'],
- ['Martínek',   'Does that actually answer the question you started with?',    '这个答案回答了你一开始提的那个问题吗？'],
- ['Ryšlavá',    'How do you explain that?',                                    '你怎么解释这个现象？'],
- ['Ryšlavá',    'What would you expect upstream of it?',                       '它的上游你预期是什么？'],
- ['Šulc',       'Is that enough evidence to conclude it?',                     '这些证据够得出这个结论吗？'],
- ['Šulc',       'How would you check that experimentally?',                    '这一点你打算怎么用实验验证？'],
-];
-function probeFor(who){ return EXPROBE.filter(function(p){ return p[0] === who; }); }
 
 var EXAMINERS = [
  ['Hodek', 'Prof. RNDr. Petr Hodek, CSc.', '生化系系主任 · PřF UK',
@@ -340,10 +320,6 @@ function render(){
     h += '<details class="room"' + (q?' open':'') + '><summary><span>' + esc(E[1]) + '</span>'
        + '<span class="n">' + tot + ' 格</span></summary><div class="roombody">'
        + '<p class="roomnote"><b>' + esc(E[2]) + '</b><br>' + E[3]
-       + (function(){ var ps = probeFor(key); if(!ps.length) return '';
-           return '<br><br><b>⚠ 他答完之后习惯往哪边再推一下</b>（<b>推测的提问风格，不是原题</b>）：'
-             + ps.map(function(p){ return '<br>· <span class="ez" onclick="sayEl(this)">' + esc(p[1])
-                 + '</span><br>&nbsp;&nbsp;<span class="cn">' + esc(p[2]) + '</span>'; }).join(''); })()
        + '</p>';
     groups.forEach(function(g){
       if(!g[1].length) return;
@@ -357,7 +333,7 @@ function render(){
   h += '<p class="small" style="margin-top:20px">'
      + '⚠ 「已有的」是<b>按关键词自动收进来的，会漏也会多</b>；<b>⭐ 是专门为这位考官补的追问</b>，'
      + '它们同样写在卡上，所以<b>演练台抽得到</b>。<br>'
-     + '⚠ 七位的单位和方向 2026-09-23 核过；网上流传的「答辩原题」<b>查不到出处，别当事实用</b>。<br>'
+     + '⚠ 七位的单位和方向 2026-09-23 核过。<b>网上流传的「答辩原题」和「提问风格」查不到出处，她说「没必要挪用」，所以一句都没有写进来。</b><br>'
      + '<a href="index.html">← 回主 app</a> · <a href="drill.html">🎙 口试演练</a> · <a href="map.html">🗺 地图</a></p>';
   $('main').innerHTML = h;
   var el = $('q');
