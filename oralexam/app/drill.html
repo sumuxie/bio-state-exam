@@ -770,7 +770,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>cf2e115</b>'
+      + ' · 版本 <b>08c1b8b</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1409,7 +1409,14 @@ function gpri(g){
    这样轮 1 拿到的就是三个不同类型的问题。 */
 function ranked(c){
   var bucket = {};
-  qlist(c).forEach(function(x, i){
+  /* ⚠ 2026-09-23 她问：「你那些问题是只有追问吗」—— 是，**主问题原来没进去**。
+     而她最早那句写的就是「把题目们（**主题**＋跟读）全部完整分成 3 份」。
+     所以卷面那道题必须排在**第一条**：它是考官真会念出来的那一句，
+     也是唯一一条「说完 90 秒」的整段。中文卡面题（短答那 9 张）没有主问题，跳过。 */
+  var pool0 = qlist(c);
+  var head = [], m0 = mainOf(c, pool0);
+  if(m0 && m0.isMain && strip(m0.en)) head.push(m0);
+  pool0.forEach(function(x, i){
     var p = gpri(x.g);
     (bucket[p] = bucket[p] || []).push({x:x, i:i});
   });
@@ -1421,7 +1428,7 @@ function ranked(c){
       return a.i - b.i;
     });
   });
-  var out = [], round = 0, any = true;
+  var out = head.slice(), round = 0, any = true;
   while(any){
     any = false;
     keys.forEach(function(k){
