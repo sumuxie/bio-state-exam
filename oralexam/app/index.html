@@ -496,12 +496,15 @@ button.b:disabled{opacity:.35;cursor:default}
 .fold{display:block;margin:14px 0 0 auto;border:1px solid var(--rule);background:var(--chip);color:var(--dim);
   border-radius:14px;padding:5px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
 .fold:hover{background:var(--accent);color:var(--onAccent);border-color:var(--accent)}
-/* 遮词：关键词盖住，悬停或点一下露出 */
-.cloze .ezcn b,.cloze .pt-big b,.cloze .en b,.cloze .say b,.cloze ul.sib li .txt b,.cloze .detail .e b{
-  background:var(--ink);color:transparent;border-radius:3px;cursor:pointer}
-.cloze .ezcn b:hover,.cloze .pt-big b:hover,.cloze .en b:hover,.cloze .say b:hover,.cloze ul.sib li .txt b:hover,.cloze .detail .e b:hover,
-.cloze .ezcn b.show,.cloze .pt-big b.show,.cloze .en b.show,.cloze .say b.show,.cloze ul.sib li .txt b.show,.cloze .detail .e b.show{
-  background:transparent;color:inherit}
+/* 遮词：关键词盖住，悬停或点一下露出。
+   2026-09-23 她：「遮词不要纯黑色吧看着有点瘆人」→ 黑条换成主色的浅底。
+   「看着稍微难一点的都遮掉」→ 除了卡上加粗的 <b>，8 个字母以上的实词也盖（span.cz，czWrap 加的）。 */
+.cloze .ezcn b,.cloze .pt-big b,.cloze .en b,.cloze .say b,.cloze ul.sib li .txt b,.cloze .detail .e b,.cloze .cz{
+  background:color-mix(in srgb,var(--accent) 26%,var(--card));color:transparent;border-radius:3px;cursor:pointer;
+  box-shadow:inset 0 -2px 0 color-mix(in srgb,var(--accent) 55%,transparent)}
+.cloze .ezcn b:hover,.cloze .pt-big b:hover,.cloze .en b:hover,.cloze .say b:hover,.cloze ul.sib li .txt b:hover,.cloze .detail .e b:hover,.cloze .cz:hover,
+.cloze .ezcn b.show,.cloze .pt-big b.show,.cloze .en b.show,.cloze .say b.show,.cloze ul.sib li .txt b.show,.cloze .detail .e b.show,.cloze .cz.show{
+  background:transparent;color:inherit;box-shadow:none}
 .cloze .pt-big b.show{color:var(--accent)}
 
 /* ---------- 必背：她自己划的段 ---------- */
@@ -1269,17 +1272,59 @@ function cloze(){
   var on = document.body.classList.toggle('cloze');
   var b = document.getElementById('mCloze'); if (b) b.classList.toggle('on', on);
   try { localStorage.setItem('cloze', on ? '1' : ''); } catch(e){}
+  if (on) czWrap();
 }
 function syncCloze(){
   var on = false; try { on = !!localStorage.getItem('cloze'); } catch(e){}
   document.body.classList.toggle('cloze', on);
   var b = document.getElementById('mCloze'); if (b) b.classList.toggle('on', on);
+  if (on) czWrap();
 }
 document.addEventListener('click', function(e){
   if (!document.body.classList.contains('cloze')) return;
-  var b = e.target.closest && e.target.closest('b');
+  var b = e.target.closest && e.target.closest('b, .cz');
   if (b && b.closest('.ezcn, .pt-big, .en, .say, ul.sib li .txt, .detail .e')) b.classList.toggle('show');
 });
+/* 2026-09-23 她：「可以多遮掉一些」「看着稍微难一点的都遮掉」。
+   加粗的 <b> 是卡自己定的关键词；这里再把 8 个字母以上、不是虚词的英文词也盖上。
+   只动文本节点，不碰 <b> 里面、按钮、标记（.mk）；重复跑不会重复包。 */
+var CZSTOP = {};
+('generally practically textbook therefore however because between through another something different '
+ + 'following important together although whether without describes actually usually instead moreover '
+ + 'otherwise sometimes everything anything nothing question questions answer answers sentence sentences '
+ + 'remember consider considered especially particular particularly according themselves yourself '
+ + 'afterwards beforehand meanwhile nevertheless whenever wherever whatever whichever').split(' ')
+  .forEach(function(w){ CZSTOP[w] = 1; });
+function czWrap(){
+  if (!document.body.classList.contains('cloze')) return;
+  var roots = document.querySelectorAll('.ezcn, .pt-big, .en, .say, ul.sib li .txt, .detail .e');
+  var re = /[A-Za-z][A-Za-z-]{7,}/g;
+  for (var r = 0; r < roots.length; r++){
+    var walker = document.createTreeWalker(roots[r], NodeFilter.SHOW_TEXT, null, false), nodes = [], n;
+    while ((n = walker.nextNode())){
+      if (!re.test(n.nodeValue)) { re.lastIndex = 0; continue; }
+      re.lastIndex = 0;
+      if (n.parentNode.closest('b, .cz, button, a, .spk, .favs, .fold, .pg')) continue;
+      nodes.push(n);
+    }
+    nodes.forEach(function(t){
+      var txt = t.nodeValue, frag = document.createDocumentFragment(), last = 0, m;
+      re.lastIndex = 0;
+      while ((m = re.exec(txt))){
+        var w = m[0].toLowerCase().replace(/-/g, '');
+        if (CZSTOP[w]) continue;
+        frag.appendChild(document.createTextNode(txt.slice(last, m.index)));
+        var sp = document.createElement('span'); sp.className = 'cz'; sp.textContent = m[0];
+        frag.appendChild(sp); last = m.index + m[0].length;
+      }
+      if (!last) return;
+      frag.appendChild(document.createTextNode(txt.slice(last)));
+      t.parentNode.replaceChild(frag, t);
+    });
+  }
+}
+/* 追问展开时才出现的正文也要盖 */
+document.addEventListener('toggle', function(){ czWrap(); }, true);
 /* 点一个英文单词 = 朗读那个词 */
 document.addEventListener('click', function(e){
   var wp0 = document.getElementById('wpop');
