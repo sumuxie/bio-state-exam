@@ -21,7 +21,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 APP = os.path.join(HERE, '..', 'app')
 # 2026-09-22：演练台 drill.html 装的是同一批 data/*.js，所以它也必须盖版本号，
 # 否则她那边永远打不到新数据 —— 9/21 mb_int「打不开」就是这么来的（推上去了，她看到的是旧的）。
-PAGES = [os.path.join(APP, 'index.html'), os.path.join(APP, 'drill.html')]
+PAGES = [os.path.join(APP, 'index.html'), os.path.join(APP, 'drill.html'),
+         os.path.join(APP, 'map.html')]
 PAT = re.compile(r'(<script src="(data/[^"?]+\.js)(?:\?v=[0-9a-f]+)?"></script>)')
 
 n = changed = 0

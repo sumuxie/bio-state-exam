@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>地图</title>
+<!--
+  地图页 —— 2026-09-23 Ruojin 提的，我连着做砸两次才做对。
+
+  她最早的话：「我还在想再写一个很大的全部穿起来的内容，你不用加新东西，
+  而是把他们都地图化，就是比如一个细胞，xx 发生了什么，
+  然后这里就是一张小卡，或者追问内容，这样，要写很全面」
+
+  ⚠ 我做砸的两版，记在这里免得再犯：
+  ① 第一版：往 x_mem 里塞了一张「指针表」（线粒体基质 | 23 追问 · 24 速背 01 · …）。
+     她：「太糟糕透顶了 根本没办法用」。对 —— 那一行没有任何内容。
+  ② 第二版：改成手写六行「那里发生什么」。她：「nonono 完全错误」。
+     也对 —— 她要的从来不是**一张表**。
+
+  ③ 她第三次说清楚了：「我让你做那种**折叠问题卡**，然后我可以**直接点展开**，
+     然后就能**看到你写的这些所有**」。
+     —— 要的是 app 里一个**能点开的东西**，展开直接给**内容本身**，
+     不是跳转、不是指针、不是摘要。**卡里塞表这条路从一开始就是错的。**
+
+  所以这一页：
+  · 一级是房间（或主题），点开是那个房间里的每一格；
+  · 二级是每一格，点开是**那一格的完整正文**（速背的 big ＋ en，追问的 en ＋ ez ＋ 中文）；
+  · 每一段都能点着念（跟主 app 一样）。
+  房间的判据沿用 tools/cellmap.py 的那一套（正文里点了这个区室的名字），
+  会漏也会多 —— 所以排序把「标题/口令里就点了名的」排在前面。
+-->
+<style>
+:root{
+  --bg:#faf8f4; --ink:#1c1a17; --dim:#6b645c; --line:#e3ddd3;
+  --card:#fff; --accent:#8a5a2b; --good:#2f6b3f; --bad:#a33; --warn:#8a6d1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16140f; --ink:#ece7dd; --dim:#9a9187; --line:#2e2a22;
+    --card:#1e1b15; --accent:#d9a066; --good:#7fc08e; --bad:#e58b83; --warn:#d8bb63;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16140f; --ink:#ece7dd; --dim:#9a9187; --line:#2e2a22;
+  --card:#1e1b15; --accent:#d9a066; --good:#7fc08e; --bad:#e58b83; --warn:#d8bb63;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  padding:0 16px 90px;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto}
+header{padding:22px 0 10px;border-bottom:1px solid var(--line);margin-bottom:16px}
+h1{font-size:21px;margin:0 0 4px}
+.sub{color:var(--dim);font-size:13.5px;margin:0}
+a{color:var(--accent)}
+.small{font-size:13px;color:var(--dim)}
+input[type=search]{width:100%;font:inherit;padding:10px 12px;border-radius:10px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);margin:0 0 14px}
+/* 一级 · 房间 */
+details.room{border:1px solid var(--line);border-radius:12px;background:var(--card);
+  margin:0 0 10px;overflow:hidden}
+details.room>summary{cursor:pointer;list-style:none;padding:13px 16px;font-size:17px;
+  font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:10px}
+details.room>summary::-webkit-details-marker{display:none}
+details.room>summary:before{content:'▸';color:var(--accent);margin-right:8px;font-weight:400}
+details.room[open]>summary:before{content:'▾'}
+details.room[open]>summary{border-bottom:1px solid var(--line);background:
+  color-mix(in srgb,var(--accent) 7%,transparent)}
+summary .n{font-size:12.5px;color:var(--dim);font-weight:400}
+.roombody{padding:6px 12px 12px}
+.roomnote{font-size:13px;color:var(--dim);padding:8px 4px 4px;line-height:1.7}
+/* 二级 · 每一格 */
+details.box{border-left:3px solid var(--line);margin:8px 0;padding-left:12px}
+details.box[open]{border-left-color:var(--accent)}
+details.box>summary{cursor:pointer;list-style:none;font-size:14.5px;line-height:1.6;padding:4px 0}
+details.box>summary::-webkit-details-marker{display:none}
+details.box>summary:before{content:'+ ';color:var(--accent)}
+details.box[open]>summary:before{content:'− ';}
+.where{display:inline-block;font-size:11.5px;color:#fff;background:var(--accent);
+  border-radius:5px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.where.q{background:var(--dim)}
+.body{padding:6px 0 10px}
+.big{font-size:14.5px;line-height:1.8;margin:0 0 8px;color:var(--dim)}
+.en{font-size:16px;line-height:1.85;margin:0 0 8px;cursor:pointer}
+.en:hover{background:color-mix(in srgb,var(--accent) 12%,transparent);border-radius:5px}
+.ez{font-size:15.5px;line-height:1.85;margin:0 0 6px;cursor:pointer;
+  border-left:3px solid var(--accent);padding-left:10px}
+.cn{font-size:14px;line-height:1.85;color:var(--dim);margin:0 0 6px}
+.lbl{font-size:11.5px;letter-spacing:.4px;color:var(--accent);font-weight:700;margin:0 0 2px}
+.pg{background:color-mix(in srgb,var(--accent) 16%,transparent);border-radius:4px;padding:0 5px}
+b{color:var(--ink)}
+.warnb{border-left:3px solid var(--warn);padding:6px 10px;margin:6px 0;font-size:13.5px;
+  background:color-mix(in srgb,var(--warn) 9%,transparent);border-radius:0 6px 6px 0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tabs button{font:inherit;cursor:pointer;border-radius:999px;border:1px solid var(--line);
+  background:var(--card);color:var(--ink);padding:6px 14px;font-size:14px}
+.tabs button.sel{background:var(--accent);color:#fff;border-color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>地图</h1>
+    <p class="sub">点一个房间 → 展开 → 点一格 → <b>直接看到那一格写了什么</b>。不跳转。</p>
+  </header>
+  <div id="main">装载中…</div>
+</div>
+
+<!-- ⚠ 必须在所有 data/*.js 之前：那些文件写的是 window.CARDS.push({...}) -->
+<script>window.CARDS = [];</script>
+<script src="data/01.js?v=e2906773"></script>
+<script src="data/02.js?v=13d403d3"></script>
+<script src="data/03.js?v=4051652c"></script>
+<script src="data/06.js?v=1e207f29"></script>
+<script src="data/08.js?v=cd90bfc3"></script>
+<script src="data/12.js?v=7995ae8a"></script>
+<script src="data/13.js?v=35272bc4"></script>
+<script src="data/14.js?v=0916103f"></script>
+<script src="data/16.js?v=6483ecdf"></script>
+<script src="data/17.js?v=cab6dd59"></script>
+<script src="data/18.js?v=427f675d"></script>
+<script src="data/19.js?v=e9aef2e5"></script>
+<script src="data/23.js?v=0842e721"></script>
+<script src="data/24.js?v=01f88a35"></script>
+<script src="data/25.js?v=d22d76f4"></script>
+<script src="data/27.js?v=42493c1d"></script>
+<script src="data/28.js?v=d4245dcf"></script>
+<script src="data/31.js?v=5b45630e"></script>
+<script src="data/32.js?v=4cab3a68"></script>
+<script src="data/aa.js?v=50b0f9af"></script>
+<script src="data/gly.js?v=59558f5c"></script>
+<script src="data/land.js?v=3013ba76"></script>
+<script src="data/taq.js?v=626ce82f"></script>
+<script src="data/mb_int.js?v=786391f3"></script>
+<script src="data/mb_ko.js?v=9b5fd757"></script>
+<script src="data/mb_post.js?v=d5368420"></script>
+<script src="data/mb_reg.js?v=8bda3edc"></script>
+<script src="data/pe_cfps.js?v=bb723325"></script>
+<script src="data/pe_clone.js?v=e618bf42"></script>
+<script src="data/pe_evo.js?v=a9ed00df"></script>
+<script src="data/pe_expr.js?v=80f8bb18"></script>
+<script src="data/pe_pur.js?v=04ae56f7"></script>
+<script src="data/pe_sys.js?v=8853e642"></script>
+<script src="data/x_bonds.js?v=540209bd"></script>
+<script src="data/x_cur.js?v=a2ab6a96"></script>
+<script src="data/x_fg.js?v=08cdafee"></script>
+<script src="data/x_mem.js?v=d874e175"></script>
+<script src="data/x_meta.js?v=e69b9f5f"></script>
+<script src="data/x_ph.js?v=40035789"></script>
+<script src="data/x_rxn.js?v=03550c6f"></script>
+<script src="data/x_trans.js?v=eb5275a5"></script>
+
+<script>
+var CARDS = window.CARDS || [];
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function strip(h){ return String(h==null?'':h).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim(); }
+
+/* ---- 朗读：点哪一段念哪一段 ---- */
+var VOICE=null;
+function pickVoice(){
+  if(!window.speechSynthesis) return null;
+  var vs=(speechSynthesis.getVoices()||[]).filter(function(v){ return /^en/i.test(v.lang); });
+  vs.sort(function(a,b){
+    function sc(v){ var s=0; if(/natural|neural|online|premium|enhanced/i.test(v.name)) s+=100;
+      if(/^en[-_]GB/i.test(v.lang)) s+=20; else if(/^en/i.test(v.lang)) s+=6; return s; }
+    return sc(b)-sc(a);
+  });
+  return vs[0]||null;
+}
+if(window.speechSynthesis){ VOICE=pickVoice(); speechSynthesis.onvoiceschanged=function(){ VOICE=pickVoice(); }; }
+function sayEl(el){
+  if(!el||!window.speechSynthesis) return;
+  var t=(el.textContent||'').trim(); if(!t) return;
+  try{ speechSynthesis.cancel(); }catch(e){}
+  var u=new SpeechSynthesisUtterance(t);
+  if(VOICE){ u.voice=VOICE; u.lang=VOICE.lang; } else u.lang='en-GB';
+  u.rate=0.95; speechSynthesis.speak(u);
+}
+
+/* ---- 房间的判据，跟 tools/cellmap.py 同一套 ---- */
+var ROOMS = [
+ ['线粒体基质',    /mitochondrial matrix|in the matrix|matrix of the mitochond/i],
+ ['线粒体内膜',    /inner (mitochondrial )?membrane|respiratory chain|electron transport chain/i],
+ ['线粒体膜间隙',  /intermembrane space/i],
+ ['细胞核',        /\bnucleus\b|\bnuclear\b|nucleolus|nucleoli/i],
+ ['内质网',        /endoplasmic reticulum|\bE R membrane\b|rough E R/i],
+ ['高尔基体',      /Golgi/i],
+ ['溶酶体',        /lysosom/i],
+ ['过氧化物酶体',  /peroxisom/i],
+ ['类囊体',        /thylakoid/i],
+ ['叶绿体基质',    /\bstroma\b|chloroplast/i],
+ ['周质',          /periplasm/i],
+ ['核糖体',        /\bribosom/i],
+ ['细胞壁 / 膜外', /cell wall|extracellular|secreted|outside the cell|into the medium/i],
+ ['质膜',          /plasma membrane|cytoplasmic membrane|cell membrane/i],
+ ['胞质',          /cytosol|cytoplasm|cytosolic/i]
+];
+var ROOMNOTE = {
+ '核糖体':'⚠ 这个房间最大（全套 80 多格），因为几乎每张讲蛋白的卡都会提到它。先看「标题里就点了名」的那几格。',
+ '胞质':'⚠ 同上，很多格只是顺口提了一句「在胞质里」。排在前面的那几格才是真讲这个房间的。',
+ '细胞壁 / 膜外':'判据里包含 secreted / extracellular，所以分泌蛋白那一路都会落进来。'
+};
+
+/* ---- 收集：每一格属于哪些房间 ---- */
+var BOXES = [];   /* {card, cardTitle, where, title, big, en, ez, ezcn, cn, warn, rooms, strong} */
+CARDS.forEach(function(c){
+  var ct = strip(c.qcn || c.q || c.id);
+  (c.cram||[]).forEach(function(p){
+    if(!p || !p.n) return;
+    var probe = (p.en||'') + ' ' + (p.big||'') + ' ' + (p.t||'');
+    var head  = (p.t||'') + ' ' + (p.big||'');
+    var rs=[], st=[];
+    ROOMS.forEach(function(r){
+      if(r[1].test(strip(probe))){ rs.push(r[0]); if(r[1].test(strip(head))) st.push(r[0]); }
+    });
+    if(rs.length) BOXES.push({card:c.id, cardTitle:ct, where:'速背 '+p.n, title:strip(p.t||''),
+      big:p.big||'', en:p.en||'', ez:p.ez||'', ezcn:p.ezcn||'', cn:p.note||'', warn:p.warn||'',
+      rooms:rs, strong:st});
+  });
+  (c.ask||[]).forEach(function(g){
+    (g.items||[]).forEach(function(x){
+      if(!x || !x.en) return;
+      var rs=[], st=[];
+      ROOMS.forEach(function(r){
+        if(r[1].test(strip(x.en))){ rs.push(r[0]); if(r[1].test(strip(x.q||''))) st.push(r[0]); }
+      });
+      if(rs.length) BOXES.push({card:c.id, cardTitle:ct, where:'追问', title:strip(x.q||''),
+        big:'', en:x.en, ez:x.ez||'', ezcn:x.ezcn||'', cn:x.cn||'', warn:x.warn||'',
+        rooms:rs, strong:st});
+    });
+  });
+});
+
+/* ---- 渲染 ---- */
+var FILTER = '';
+function boxHTML(b, room){
+  return '<details class="box"><summary>'
+    + '<span class="where' + (b.where==='追问'?' q':'') + '">' + esc(b.card) + ' · ' + esc(b.where) + '</span>'
+    + esc(b.title || '（无标题）') + '</summary><div class="body">'
+    + (b.big ? '<p class="big">' + b.big + '</p>' : '')
+    + (b.ez ? '<p class="lbl">先背这句</p><p class="ez" onclick="sayEl(this)">' + b.ez + '</p>' : '')
+    + (b.ezcn ? '<p class="cn">' + b.ezcn + '</p>' : '')
+    + (b.en ? '<p class="lbl">' + (b.ez?'完整版':'出声说的') + '</p><p class="en" onclick="sayEl(this)">' + b.en + '</p>' : '')
+    + (b.warn ? '<div class="warnb">' + b.warn + '</div>' : '')
+    + (b.cn ? '<p class="cn">' + b.cn + '</p>' : '')
+    + '<p class="small">点上面任意一段英文就念那一段 · 这一格在卡 <b>' + esc(b.card) + '</b>（'
+      + esc(b.cardTitle).slice(0,40) + '）</p>'
+    + '</div></details>';
+}
+function render(){
+  var q = FILTER.trim().toLowerCase();
+  var h = '<input type="search" id="q" placeholder="在全部内容里找一个词（房间、酶名、英文都行）…" value="'
+        + esc(FILTER) + '">';
+  var any = 0;
+  ROOMS.forEach(function(r){
+    var name = r[0];
+    var list = BOXES.filter(function(b){
+      if(b.rooms.indexOf(name) === -1) return false;
+      if(!q) return true;
+      return (b.title + ' ' + strip(b.en) + ' ' + strip(b.ezcn) + ' ' + b.card).toLowerCase().indexOf(q) !== -1;
+    });
+    if(!list.length) return;
+    any += list.length;
+    /* 标题/口令里就点了名的排前面 —— 那些才是真讲这个房间的 */
+    list.sort(function(a,b){
+      var x = (b.strong.indexOf(name)!==-1?1:0) - (a.strong.indexOf(name)!==-1?1:0);
+      if(x) return x;
+      return (a.where==='速背'?0:1) - (b.where==='速背'?0:1);
+    });
+    h += '<details class="room"' + (q?' open':'') + '><summary><span>' + esc(name) + '</span>'
+       + '<span class="n">' + list.length + ' 格</span></summary><div class="roombody">'
+       + (ROOMNOTE[name] ? '<p class="roomnote">' + ROOMNOTE[name] + '</p>' : '')
+       + list.map(function(b){ return boxHTML(b, name); }).join('')
+       + '</div></details>';
+  });
+  if(!any) h += '<p class="small">没找到。换个词试试。</p>';
+  h += '<p class="small" style="margin-top:20px">'
+     + '⚠ 判据是「这一格的英文正文里点了这个区室的名字」，所以<b>会漏也会多</b>。'
+     + '排在前面的是标题或口令里就点了名的那几格。<br>'
+     + '<a href="index.html">← 回主 app</a> · <a href="drill.html">🎙 口试演练</a></p>';
+  $('main').innerHTML = h;
+  var el = $('q');
+  if(el){
+    el.oninput = function(){ FILTER = el.value; render();
+      var e2 = $('q'); if(e2){ e2.focus(); e2.setSelectionRange(e2.value.length, e2.value.length); } };
+  }
+}
+
+if(!CARDS.length){
+  $('main').innerHTML = '<p><b>卡的数据没装上。</b>这一页要跟 data/ 放在一起才能跑。</p>';
+} else {
+  render();
+}
+</script>
+</body>
+</html>
