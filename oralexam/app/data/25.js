@@ -383,6 +383,13 @@ recog:[
 
 /* ---------------- 追问 ---------------- */
 ask:[
+ {g:'⚠ 线粒体自己的那套东西', gn:'⚠ <b>2026-09-23 审查补的。</b><code>mitochondrial D N A</code>／<code>endosymbio</code>／<code>maternal</code> 在<b>全书和全套卡上都是 0 命中</b>。<b>而「线粒体为什么有自己的 DNA」是呼吸链这道题最经典的一条外延</b> —— 他讲完复合物，往外走一步就是这里。', items:[
+{r:'中', q:'Why does a mitochondrion have its own DNA?',
+    ez:'“Because it used to be a free living bacterium. That is the endosymbiotic theory. An early cell took in an aerobic bacterium. The bacterium stayed and kept its own genome. Most of its genes moved to the nucleus over time. A few stayed behind. The human mitochondrial genome is circular. It carries thirty seven genes. Thirteen of them are subunits of the respiratory chain. The rest are transfer R N As and ribosomal R N As. The evidence is in the machinery. Mitochondrial ribosomes are bacterial in type. The genome is inherited from the mother alone.”',
+    ezcn:'<b>因为它原本是一个独立生活的细菌——这就是<b>内共生学说</b>。</b><b>早期的细胞吞下了一个好氧细菌，这个细菌留了下来，<b>带着自己的基因组</b>；后来它的大部分基因搬进了细胞核，<b>只剩少数留在原地</b>。</b><b>人的线粒体基因组是<b>环状</b>的，带 <b>37 个基因</b>：其中 <b>13 个是呼吸链的亚基</b>，其余是 tRNA 和 rRNA。</b>⚠ <b>证据就在机器本身：<b>线粒体的核糖体是细菌型的</b>；而且<b>这套基因组只从母亲那里传下来</b>。</b>',
+ en:'“Because it was once a free-living bacterium, which is the endosymbiotic theory. An early cell took in an aerobic bacterium, the bacterium stayed and kept its own genome, and over time most of its genes moved to the nucleus while a few stayed behind. The human mitochondrial genome is circular and carries thirty-seven genes, of which thirteen are subunits of the respiratory chain and the rest are transfer RNAs and ribosomal RNAs. The evidence is in the machinery, because mitochondrial ribosomes are bacterial in type, and the genome is inherited from the mother alone. None of this is in the textbook.”',
+ cn:'⚠ <b>整条 general</b>：<code>mitochondrial DNA</code>、<code>endosymbio</code>、<code>maternal</code> 在书上和卡上<b>都是 0 命中</b>。<br><br><b>为什么值得记</b>：这一条把这张卡的<b>十三个亚基</b>变成一件有来历的事 —— <b>呼吸链是唯一一套由两个基因组共同编码的复合物</b>，大部分亚基来自细胞核，十三个来自线粒体自己。<br><br>⚠ <b>留一个口子，不要多讲</b>：线粒体基因的突变会引起疾病（如 LHON、MELAS），而且因为母系遗传，家系图看起来跟孟德尔遗传不一样。<b>说到这里停</b>，那是遗传学不是生化。'},
+ ]},
 {g:'定义类', gn:'逐字稿里没交代完的名词，他会一个一个拎出来问。', items:[
 {r:'高', q:'What is a redox potential?',
     ez:'“It is a number in volts. It says how strongly a redox pair holds its electrons. It is measured against a standard electrode at p H seven. A value can be very negative. Then that system gives electrons away readily. And electrons pass spontaneously in one direction. They pass from the more negative system to the more positive one.”',

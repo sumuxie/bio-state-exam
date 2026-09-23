@@ -436,6 +436,13 @@ recog:[
 
 /* ---------------- 追问 ---------------- */
 ask:[
+ {g:'⚠ 氨基酸不只是用来造蛋白的', gn:'⚠ <b>2026-09-23 审查补的。</b>Lehninger 22.3「由氨基酸衍生的分子」比捷克书多说 4.5 倍。卡上<b>血红素从甘氨酸＋琥珀酰 CoA</b> 那条已经有了（8 处），但 <code>nitric oxide</code> 只有 1 处、<code>neurotransmitter</code> 只有 1 处。<b>「这个氨基酸除了造蛋白还有什么用」是一道很容易被问到的题。</b>', items:[
+{r:'中', q:'Apart from building proteins, what else are amino acids used for?',
+    ez:'“They are the starting material for several small molecules. Glycine and succinyl coenzyme A make the porphyrin ring. That ring becomes heme. Arginine makes nitric oxide. The enzyme is nitric oxide synthase and the other product is citrulline. Nitric oxide is a gas and it is a signal. It relaxes smooth muscle and widens blood vessels. Tyrosine makes dopamine and adrenaline. Tryptophan makes serotonin. Glutamate makes gamma aminobutyric acid. Three amino acids together make glutathione. Arginine and glycine also make creatine.”',
+    ezcn:'<b>它们是好几类小分子的<b>起始原料</b>：</b><b>① <b>甘氨酸 ＋ 琥珀酰 CoA</b> → 卟啉环 → <b>血红素</b>；</b><b>② <b>精氨酸</b> → <b>一氧化氮</b>（酶是 <b>NO 合酶</b>，另一个产物是瓜氨酸）—— NO 是<b>气体信号分子</b>，使平滑肌舒张、血管扩张；</b><b>③ <b>酪氨酸</b> → 多巴胺、肾上腺素；<b>色氨酸</b> → 血清素；<b>谷氨酸</b> → GABA；</b><b>④ 三个氨基酸拼成<b>谷胱甘肽</b>；精氨酸和甘氨酸还参与<b>肌酸</b>的合成。</b>',
+ en:'“They are the starting material for several classes of small molecule. Glycine and succinyl-CoA make the porphyrin ring that becomes heme. Arginine makes nitric oxide, by nitric oxide synthase, with citrulline as the other product, and nitric oxide is a gaseous signal that relaxes smooth muscle and widens blood vessels. Tyrosine gives dopamine and adrenaline, tryptophan gives serotonin, and glutamate gives gamma-aminobutyric acid. Three amino acids together make glutathione, and arginine with glycine contributes to creatine. The textbook has the heme route. The rest is general knowledge.”',
+ cn:'⚠ <b>血红素那一条是书上的</b>（<span class="pg">p220</span> 说 succinyl-CoA 跟 glycine 反应生成 δ-aminolevulate，再做成卟啉）；<b>其余全部 general</b>。<code>nitric oxide</code> 在整套卡上只有 1 处，<code>neurotransmitter</code> 也只有 1 处。<br><br><b>怎么用</b>：这是一条<b>不用背全也能得分</b>的追问 —— <b>先说「氨基酸是小分子的起始原料」这个形状，再随便给两三个例子就够</b>。<b>血红素那条最稳，因为书上有。</b><br><br>⚠ <b>NO 那一条还有个接口</b>：它是靠<b>激活鸟苷酸环化酶、产生 cGMP</b> 起作用的，接卡 <b>32</b> 的第二信使那一组。<b>被追问再说，不要主动展开。</b>'},
+ ]},
 {g:'定义类', gn:'他默认你知道名词，所以专挑名词问。这题名词密度极高——每个环、每个基团都可能被单独拎出来。', items:[
 {r:'中', q:'What is pKa?',
   ez:'“The p K a is a p H value. At that p H a given acidic group is half protonated. The other half is deprotonated. Numerically it is the negative logarithm of the acid dissociation constant. Below its p K a the group is mostly protonated. Above it the group mostly is not. On the glycine titration curve there are two p K a values. They are the two inflection points.”',
