@@ -215,7 +215,7 @@ details[open]>summary:before{content:'▾ ';}
 <script src="data/14.js?v=56d51f5e"></script>
 <script src="data/16.js?v=6483ecdf"></script>
 <script src="data/17.js?v=cab6dd59"></script>
-<script src="data/18.js?v=cc529f82"></script>
+<script src="data/18.js?v=33f4d3be"></script>
 <script src="data/19.js?v=e9aef2e5"></script>
 <script src="data/23.js?v=0842e721"></script>
 <script src="data/24.js?v=01f88a35"></script>
@@ -244,7 +244,7 @@ details[open]>summary:before{content:'▾ ';}
 <script src="data/x_mem.js?v=f78c44f5"></script>
 <script src="data/x_meta.js?v=79dd55c4"></script>
 <script src="data/x_ph.js?v=40035789"></script>
-<script src="data/x_rxn.js?v=4e405dd3"></script>
+<script src="data/x_rxn.js?v=697b66d8"></script>
 <script src="data/x_trans.js?v=eb5275a5"></script>
 
 <script>
@@ -1116,6 +1116,15 @@ function report(fromHome, hist){
     + '<div class="small" style="margin-top:8px">⚠ 识别会把专业词听坏（helicase 听成 hello kiss 这种），'
     + '所以<b>机器算的漏词只是线索</b>。每题下面有三个自评键，<b>那个才是进度</b>。'
     + '已评 <b id="gcount">' + graded + '</b> / ' + log.length + '</div>'
+    + (function(){
+        /* ⚠ 2026-09-23 名单下来之后加的：一组练完给**一条**考官式的第二层问题。
+           一次只给一条是故意的 —— 这一屏她已经说过「看着就很崩溃」，不能再堆东西。 */
+        var p = EXPROBE[Math.floor(Math.random()*EXPROBE.length)];
+        return '<div class="do" style="margin-top:14px"><b>下一次，如果坐在对面的是 ' + esc(p[0])
+          + '，他答完多半会再推一句：</b>'
+          + '<p class="sayit" style="margin:8px 0 0;font-size:17px" onclick="sayEl(this)">' + esc(p[1]) + '</p>'
+          + '<div class="small">' + esc(p[2])
+          + ' · ⚠ <b>这是按公开的研究方向推出来的提问风格，不是原题。</b></div></div>'; })()
     + '<p style="margin:14px 0 0"><button class="main" onclick="home()">回首页</button> '
     + '<button onclick="copyOut()">复制进度给老师</button></p></div>'
     /* ⚠ 2026-09-23：纠错这一屏不该是一堵要读的墙。她说「阅读困难…不然强制性必须
@@ -1548,6 +1557,27 @@ function oneStart(){
   S.startedAt = Date.now();
   ask();
 }
+
+/* ⚠ 考官的「第二层问题」句式。2026-09-23。
+   ⚠ **这些不是原题。** 网上流传的那份委员会分析里引了一些答辩记录原话，
+   我查不到出处，所以**一句都没有照抄**。下面是从他们**公开的研究方向**推出来的
+   「他答完之后习惯往哪边再推一下」—— **练的是第二层问题的形状，不是猜题**。 */
+var EXPROBE = [
+ ['Hodek',      'And what happens to that molecule next?',                    '那个分子接下来怎么样？'],
+ ['Hodek',      'Which enzyme does that, and where in the cell?',             '这一步是哪个酶做的，在细胞的什么地方？'],
+ ['Hudeček',    'That instrument — what physical quantity does it measure?',  '你说的那台仪器，测的到底是什么物理量？'],
+ ['Hudeček',    'How would you know that number is not an artefact?',         '你怎么知道那个数不是假象？'],
+ ['Lipovová',   'Would that still work outside a test tube?',                 '这个拿到试管外面还成立吗？'],
+ ['Lipovová',   'What are the kinetic limits of that?',                       '它的动力学极限在哪？'],
+ ['Martínková', 'Say that again so someone outside the field understands it.', '再说一遍，让不在这个领域的人也听得懂。'],
+ ['Martínková', 'What does that mean for the cell, not for the molecule?',     '这件事对细胞意味着什么，不是对分子。'],
+ ['Martínek',   'Does that actually answer the question you started with?',    '这个答案回答了你一开始提的那个问题吗？'],
+ ['Ryšlavá',    'How do you explain that?',                                    '你怎么解释这个现象？'],
+ ['Ryšlavá',    'What would you expect upstream of it?',                       '它的上游你预期是什么？'],
+ ['Šulc',       'Is that enough evidence to conclude it?',                     '这些证据够得出这个结论吗？'],
+ ['Šulc',       'How would you check that experimentally?',                    '这一点你打算怎么用实验验证？'],
+];
+function probeFor(who){ return EXPROBE.filter(function(p){ return p[0] === who; }); }
 
 /* ---- 点读 ---- */
 function sayEl(el){ if(!el) return; var t2 = el.textContent || ''; if(t2.trim()) say(t2); }

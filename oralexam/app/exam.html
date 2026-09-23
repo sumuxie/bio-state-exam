@@ -118,7 +118,7 @@ b{color:var(--ink)}
 <script src="data/14.js?v=56d51f5e"></script>
 <script src="data/16.js?v=6483ecdf"></script>
 <script src="data/17.js?v=cab6dd59"></script>
-<script src="data/18.js?v=cc529f82"></script>
+<script src="data/18.js?v=33f4d3be"></script>
 <script src="data/19.js?v=e9aef2e5"></script>
 <script src="data/23.js?v=0842e721"></script>
 <script src="data/24.js?v=01f88a35"></script>
@@ -147,7 +147,7 @@ b{color:var(--ink)}
 <script src="data/x_mem.js?v=f78c44f5"></script>
 <script src="data/x_meta.js?v=79dd55c4"></script>
 <script src="data/x_ph.js?v=40035789"></script>
-<script src="data/x_rxn.js?v=4e405dd3"></script>
+<script src="data/x_rxn.js?v=697b66d8"></script>
 <script src="data/x_trans.js?v=eb5275a5"></script>
 
 <script>
@@ -179,6 +179,27 @@ function sayEl(el){
 }
 
 /* ---- 房间的判据，跟 tools/cellmap.py 同一套 ---- */
+/* ⚠ 考官的「第二层问题」句式。2026-09-23。
+   ⚠ **这些不是原题。** 网上流传的那份委员会分析里引了一些答辩记录原话，
+   我查不到出处，所以**一句都没有照抄**。下面是从他们**公开的研究方向**推出来的
+   「他答完之后习惯往哪边再推一下」—— **练的是第二层问题的形状，不是猜题**。 */
+var EXPROBE = [
+ ['Hodek',      'And what happens to that molecule next?',                    '那个分子接下来怎么样？'],
+ ['Hodek',      'Which enzyme does that, and where in the cell?',             '这一步是哪个酶做的，在细胞的什么地方？'],
+ ['Hudeček',    'That instrument — what physical quantity does it measure?',  '你说的那台仪器，测的到底是什么物理量？'],
+ ['Hudeček',    'How would you know that number is not an artefact?',         '你怎么知道那个数不是假象？'],
+ ['Lipovová',   'Would that still work outside a test tube?',                 '这个拿到试管外面还成立吗？'],
+ ['Lipovová',   'What are the kinetic limits of that?',                       '它的动力学极限在哪？'],
+ ['Martínková', 'Say that again so someone outside the field understands it.', '再说一遍，让不在这个领域的人也听得懂。'],
+ ['Martínková', 'What does that mean for the cell, not for the molecule?',     '这件事对细胞意味着什么，不是对分子。'],
+ ['Martínek',   'Does that actually answer the question you started with?',    '这个答案回答了你一开始提的那个问题吗？'],
+ ['Ryšlavá',    'How do you explain that?',                                    '你怎么解释这个现象？'],
+ ['Ryšlavá',    'What would you expect upstream of it?',                       '它的上游你预期是什么？'],
+ ['Šulc',       'Is that enough evidence to conclude it?',                     '这些证据够得出这个结论吗？'],
+ ['Šulc',       'How would you check that experimentally?',                    '这一点你打算怎么用实验验证？'],
+];
+function probeFor(who){ return EXPROBE.filter(function(p){ return p[0] === who; }); }
+
 var EXAMINERS = [
  ['Hodek', 'Prof. RNDr. Petr Hodek, CSc.', '生化系系主任 · PřF UK',
   '细胞色素 P450 与异源物代谢：外源物怎么被氧化、怎么被结合排掉，以及<b>解毒为什么有时反而是活化</b>。'
@@ -318,7 +339,12 @@ function render(){
     var tot = mine.length;
     h += '<details class="room"' + (q?' open':'') + '><summary><span>' + esc(E[1]) + '</span>'
        + '<span class="n">' + tot + ' 格</span></summary><div class="roombody">'
-       + '<p class="roomnote"><b>' + esc(E[2]) + '</b><br>' + E[3] + '</p>';
+       + '<p class="roomnote"><b>' + esc(E[2]) + '</b><br>' + E[3]
+       + (function(){ var ps = probeFor(key); if(!ps.length) return '';
+           return '<br><br><b>⚠ 他答完之后习惯往哪边再推一下</b>（<b>推测的提问风格，不是原题</b>）：'
+             + ps.map(function(p){ return '<br>· <span class="ez" onclick="sayEl(this)">' + esc(p[1])
+                 + '</span><br>&nbsp;&nbsp;<span class="cn">' + esc(p[2]) + '</span>'; }).join(''); })()
+       + '</p>';
     groups.forEach(function(g){
       if(!g[1].length) return;
       h += '<details class="room"' + (q||g[0].indexOf('⭐')===0?' open':'') + '><summary><span>'
