@@ -259,6 +259,11 @@ details[open]>summary:before{content:'▾ ';}
 <script src="data/x_ph.js?v=40035789"></script>
 <script src="data/x_rxn.js?v=697b66d8"></script>
 <script src="data/x_trans.js?v=eb5275a5"></script>
+<script src="data/_ans_basic_a.js?v=026a970b"></script>
+<script src="data/_ans_basic_b.js?v=6d069935"></script>
+<script src="data/_ans_micro_a.js?v=c2d76e5c"></script>
+<script src="data/_ans_micro_b.js?v=285bbaa2"></script>
+<script src="data/labmicro.js?v=332e4ad1"></script>
 
 <script>
 /* ============================ 小工具 ============================ */
@@ -740,11 +745,15 @@ function home(){
       + '<label>问 <select id="oneq">'
       + [1,2,3,4,5,6,8,10].map(function(n){ return '<option value="'+n+'"'+(n===3?' selected':'')+'>'+n+' 个</option>'; }).join('')
       + '</select></label>'
-      + '<button class="main" onclick="oneStart()">拷问式</button>'
-      + '<button class="main" onclick="walkCard()">跟读式</button></div>'
-      + '<div class="small" style="margin:8px 0 0"><b>拷问式</b>＝它问你答，跟一组一样。'
-      + '<b>跟读式</b>＝一页一题：看着读一遍 → 难词挖掉半读半背 → 背两遍，每一遍都录下来能回放 —— <b>不打分</b>。'
-      + '（她 2026-09-23：「不用一句一句跟读…我要重复背两次，都要录音」）</div></div>'
+      + '<button class="main" onclick="oneStart()">拷问式 · 开始</button></div>'
+      /* ⚠ 2026-09-23 她：「每张卡分三份」「我让你改的是这个」。
+         选中这张卡之后，它的题按「定义 → 为什么 → 陷阱」排好再三等分。 */
+      + '<div class="small" style="margin:12px 0 4px"><b>跟读式 · 这张卡分三份</b>'
+        + ' —— 一页一题：看着读 → 难词涂掉半读半背 → 背两遍，每遍都录下来能回放。<b>不打分。</b></div>'
+      + '<div id="thirds"></div>'
+      + '<div class="small" style="margin:8px 0 0"><b>拷问式</b>＝它问你答，跟一组一样，你自己定问几个。'
+      + '<br><b>三份的分法</b>：这张卡的题先按 <b>定义 → 为什么 → 陷阱 → 相邻考点</b> 排好，再三等分。'
+      + '<b>走过一遍的题，下次出现关键词会浅褐色涂掉</b>，点一下露出来。</div></div>'
     + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
       + '（mb-* · pe-* · taq · land），另外三张从其余 '
       + usable.filter(function(c){ return !isMBPE(c); }).length + ' 张里随机。</p>'
@@ -761,6 +770,8 @@ function home(){
   paintVoices();
   var asec = $('asec');
   if(asec) asec.onchange = function(){ var s2=st(); s2.ansSecs = +asec.value; save(s2); home(); };
+  var oc = $('onecard');
+  if(oc){ oc.onchange = paintThirds; paintThirds(); }
   var sel=$('nf');
   if(sel) sel.onchange=function(){
     var s2=st(); s2.nFollow=+sel.value; save(s2);
@@ -1425,6 +1436,16 @@ function roundItems(n){          /* n = 1 2 3；返回这一轮全部的题 */
   });
   return out;
 }
+/* ⚠ 2026-09-23 改：三份是**这一张卡的题分三份**，不是全局的三轮。
+   她指着「只练一张」说「我让你改的是这个」，回头看她最早那句也是
+   「每张卡分三份」。份的大小跟着卡走：卡 01 有 48 问就是每份 16 条，
+   小卡可能一份只有 3 条 —— **她一次只面对一张卡，所以这才是能走完的单位**。 */
+function cardThird(c, n){
+  var r = ranked(c);
+  if(!r.length) return [];
+  var per = Math.ceil(r.length / 3);
+  return r.slice((n-1)*per, n*per).map(function(x){ return {card:c, item:x, turf:0}; });
+}
 function wKey(card, q){ return card + '|' + hash(q); }
 function wSeen(s, card, q){ return ((s.walked || {})[wKey(card, q)] || 0); }
 function wMark(card, q){
@@ -1446,6 +1467,47 @@ function walkRound(n){
   CH = {list:list, i:0, tag:'📖 轮 ' + n, done:'轮 ' + n + ' 到这里',
         again:'walkRound(' + n + ')', round:n};
   walkRender();
+}
+function thirdStat(c, n){
+  var s = st(), list = cardThird(c, n), done = 0;
+  list.forEach(function(o){ if(wSeen(s, o.card.id, o.item.q)) done++; });
+  return {tot:list.length, done:done};
+}
+function cardById(id){
+  for(var i=0;i<CARDS.length;i++) if(CARDS[i].id === id) return CARDS[i];
+  return null;
+}
+/* 走「这张卡的第 n 份」 */
+function walkThird(n){
+  var sel = $('onecard');
+  if(!sel) return;
+  var c = cardById(sel.value);
+  if(!c){ alert('没找到这张卡。'); return; }
+  var s = st(), list = cardThird(c, n);
+  if(!list.length){ alert('这一份里没有题。'); return; }
+  list.forEach(function(o){ o.seen = wSeen(s, o.card.id, o.item.q); });
+  CH = {list:list, i:0, tag:'📖 份 ' + n,
+        done:cardTitle(c).slice(0,18) + ' · 份 ' + n + ' 到这里',
+        again:'walkThird(' + n + ')', third:n};
+  walkRender();
+}
+/* 换一张卡就把三份的进度条重画一遍 */
+function paintThirds(){
+  var box = $('thirds'), sel = $('onecard');
+  if(!box || !sel) return;
+  var c = cardById(sel.value);
+  if(!c){ box.innerHTML = ''; return; }
+  var h = '<div class="parts">';
+  for(var n=1;n<=3;n++){
+    var s2 = thirdStat(c, n);
+    var pc = s2.tot ? Math.round(100 * s2.done / s2.tot) : 0;
+    h += '<div class="part' + (pc >= 100 ? ' done' : '') + '"><h4>份 ' + n
+       + (pc >= 100 ? ' ✓' : '') + '</h4>'
+       + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
+       + '<div class="small">走过 <b>' + s2.done + ' / ' + s2.tot + '</b></div>'
+       + '<button class="main" onclick="walkThird(' + n + ')">跟读这一份</button></div>';
+  }
+  box.innerHTML = h + '</div>';
 }
 
 var WK = null;      /* 当前这一题：{src, keys, mode3, busy, done:{1,2,3a,3b}, cardId} */
@@ -1628,24 +1690,6 @@ function walkDone(){
     + '<button class="ghost" onclick="home()">回首页</button></p></div>';
 }
 
-/* 跟读式 · 任意一张卡。
-   ⚠ 2026-09-23 她：「不过其实你写的那个**跟读然后立马背**的方式方法我感觉**适合每张卡**」。
-   所以这套流程不再是化学专用的 —— 化学只是它的一个池子。 */
-function walkCard(){
-  var sel = $('onecard'), qn = $('oneq');
-  if(!sel) return;
-  var id = sel.value, n = +qn.value, c = null;
-  for(var i=0;i<CARDS.length;i++) if(CARDS[i].id === id) c = CARDS[i];
-  if(!c){ alert('没找到这张卡。'); return; }
-  var s = st(), seen = s.asked;
-  var pool = qlist(c).slice().sort(function(a,b){
-    return (seen[c.id+'|'+hash(a.q)]||0) - (seen[c.id+'|'+hash(b.q)]||0);
-  }).slice(0, n);
-  if(!pool.length){ alert('这张卡没有可问的追问。'); return; }
-  CH = {list: pool.map(function(x){ return {card:c, item:x, turf:0}; }), i:0,
-        tag:'📖 跟读', done:'这一张过完了', again:'walkCard()'};
-  walkRender();
-}
 
 /* ======================= 📇 只练一张卡 =======================
    2026-09-23 她：「单张卡可以做另外一个模式的口试卡，就相当于还是同样的模式，

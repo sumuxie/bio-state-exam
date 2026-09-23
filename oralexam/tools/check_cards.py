@@ -94,6 +94,12 @@ for f in sorted(glob.glob(os.path.join(D, '*.js'))):
     b0 = os.path.basename(f)
     if b0.startswith('_'):
         continue
+    # ⚠ labmicro.js 不是字面量卡，是**运行时组装器**：它在浏览器里读
+    # window.ANS_BASIC / ANS_MICRO（那 66 条出声短答），拼成 9 张卡推进 CARDS。
+    # 里面的 `en:x.en` 是变量不是字符串，所以这个按字面量找 en 的检查对它无效。
+    # 短答本身的 en 由 tools/ez.py 管（66/66 全有）。
+    if b0 == 'labmicro.js':
+        continue
     s0 = io.open(f, encoding='utf-8').read()
     pos = [m.start() for m in _HEAD.finditer(s0)] + [len(s0)]
     k = 0
