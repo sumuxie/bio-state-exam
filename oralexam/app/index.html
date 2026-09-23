@@ -114,6 +114,18 @@ main{max-width:680px;margin:0 auto;padding:0 20px 130px}
 .grp-h span{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .grp-h i{flex:1;height:1px;background:var(--rule)}
 .grp-note{font-size:13.5px;color:var(--faint);margin:0 0 6px}
+/* 2026-09-23：首页「今天」那张卡改成口试演练的记录和分析 */
+.dline{font-size:13.5px;margin:8px 0 0;line-height:1.75}
+.dline b{color:var(--accent)}
+.dbad{color:var(--bad);font-weight:700}
+.dok{color:var(--good);font-weight:700}
+.d7{display:flex;gap:4px;align-items:flex-end;height:34px;margin:12px 0 0}
+.d7 i{flex:1;background:var(--rule);border-radius:2px 2px 0 0;min-height:2px;position:relative}
+.d7 i.on{background:var(--accent)}
+.d7wrap{margin:10px 0 0}
+.d7lbl{display:flex;gap:4px;margin:3px 0 0}
+.d7lbl span{flex:1;text-align:center;font-size:9.5px;color:var(--faint)}
+.dempty{font-size:13.5px;color:var(--faint);margin:8px 0 0;line-height:1.8}
 /* 2026-09-23：速背按组折叠（她：「做成地图那种，这张卡下面分着 xx 种，然后一点就显示」） */
 details.grp>summary.grp-h{cursor:pointer;list-style:none;user-select:none;padding:3px 0}
 details.grp>summary.grp-h::-webkit-details-marker{display:none}
@@ -611,7 +623,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/_ans_basic_b.js?v=6d069935"></script>
 <script>window.CARDS = [];</script>
 <script src="data/_gloss.js?v=595a18bc"></script>
-<script src="data/01.js?v=e2906773"></script>
+<script src="data/01.js?v=63a2480d"></script>
 <script src="data/02.js?v=13d403d3"></script>
 <script src="data/03.js?v=4051652c"></script>
 <script src="data/13.js?v=35272bc4"></script>
@@ -619,7 +631,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/19.js?v=e9aef2e5"></script>
 <script src="data/23.js?v=0842e721"></script>
 <script src="data/24.js?v=01f88a35"></script>
-<script src="data/aa.js?v=50b0f9af"></script>
+<script src="data/aa.js?v=60cfb995"></script>
 <script src="data/gly.js?v=59558f5c"></script>
 <script src="data/06.js?v=1e207f29"></script>
 <script src="data/12.js?v=7995ae8a"></script>
@@ -638,18 +650,18 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/x_fg.js?v=08cdafee"></script>
 <script src="data/x_mem.js?v=d874e175"></script>
 <script src="data/x_trans.js?v=eb5275a5"></script>
-<script src="data/x_meta.js?v=4d494726"></script>
+<script src="data/x_meta.js?v=a083c2a1"></script>
 <script src="data/x_ph.js?v=40035789"></script>
 <script src="data/x_rxn.js?v=03550c6f"></script>
 <script src="data/31.js?v=5b45630e"></script>
 <script src="data/32.js?v=4cab3a68"></script>
-<script src="data/14.js?v=0916103f"></script>
+<script src="data/14.js?v=56d51f5e"></script>
 <script src="data/17.js?v=cab6dd59"></script>
 <script src="data/08.js?v=cd90bfc3"></script>
 <script src="data/25.js?v=d22d76f4"></script>
 <script src="data/27.js?v=42493c1d"></script>
 <script src="data/28.js?v=d4245dcf"></script>
-<script src="data/taq.js?v=626ce82f"></script>
+<script src="data/taq.js?v=e9799f1c"></script>
 <script src="data/land.js?v=3013ba76"></script>
 <script src="data/x_bonds.js?v=540209bd"></script>
 
@@ -989,7 +1001,7 @@ function renderList(){
     + (((window.QBANK||{}).micro||[]).length) + ' 道</a></div></div>'
     + sxBar + goHtml
     + '<div class="board"><h3>今天</h3>'
-    + '<p class="sub2">只有<b>出声说完</b>的才算。看一遍不记数。<br><b>9 月 26 日之后不再做新材料</b>——剩下的时间只有出声、复习、演练。</p>'
+    + drillCard()
     + '<div class="stats">'
     + '<div class="stat' + (todayN ? ' good' : '') + '"><b>' + todayN + '</b><span>今天出声</span></div>'
     + '<div class="stat"><b>' + streak + '</b><span>连续天数</span></div>'
@@ -1381,6 +1393,103 @@ function renderCard(c){
   syncCloze();
   mkApplyAll();
   mkSyncBtn();
+}
+
+/* ============ 首页 · 口试演练的记录和分析 ============
+   2026-09-23 她：「这个卡改了，直接把口试演练的记录和分析按上去」。
+   规矩一的三个数从 2026-09-22 起是**量出来的**，量在 drill.html 里。
+   两个页面同源，所以首页直接读它的 localStorage。判据跟演练台里的 numbers() 一模一样。 */
+var DKEY = 'oralexam.drill.v1';
+function dLoad(){
+  try { return JSON.parse(localStorage.getItem(DKEY) || '{}') || {}; }
+  catch(e){ return {}; }
+}
+function dToday(){
+  var d = new Date(), p = function(n){ return (n<10?'0':'') + n; };
+  return d.getFullYear() + '-' + p(d.getMonth()+1) + '-' + p(d.getDate());
+}
+function dStreak(s){
+  var n = 0, d = new Date();
+  for (;;){
+    var p = function(x){ return (x<10?'0':'') + x; };
+    var k = d.getFullYear() + '-' + p(d.getMonth()+1) + '-' + p(d.getDate());
+    if (s.days && s.days[k] && s.days[k].sets > 0){ n++; d.setDate(d.getDate()-1); }
+    else break;
+  }
+  return n;
+}
+/* 跟 drill.html 的 numbers() 同一套判据：比例超过一半才算「漏得多」，
+   自评说得出的题不计。⚠ 改这里就要同时改那边。 */
+function dNumbers(s){
+  var bad = [], mi = {}, to = {};
+  ((s.last && s.last.log) || []).forEach(function(x){
+    if (x.self === 0) return;
+    mi[x.card] = (mi[x.card]||0) + (x.miss ? x.miss.length : 0);
+    to[x.card] = (to[x.card]||0) + (x.total||0);
+  });
+  Object.keys(mi).forEach(function(k){ if (to[k] >= 6 && mi[k]/to[k] > 0.5) bad.push(k); });
+  var rep = Object.keys(s.repeat||{});
+  return {bad:bad, rep:rep};
+}
+function dTitle(id){
+  for (var i=0;i<(window.CARDS||[]).length;i++) if (CARDS[i].id === id) return CARDS[i].q || id;
+  return id;
+}
+function drillCard(){
+  var s = dLoad(), d = dToday(), r = (s.days||{})[d];
+  var hasAny = s.days && Object.keys(s.days).length;
+  if (!hasAny){
+    return '<p class="dempty">这三个数从 <b>口试演练台</b> 里量出来，不是我问你要的。'
+      + '<br>去练一组，回来这里就有了 —— <b>看一遍不算，出声说完才算</b>。'
+      + '<br><a class="bbtn" href="drill.html" style="text-decoration:none;margin-top:10px">🎙 去练一组</a></p>';
+  }
+  var n = dNumbers(s), k = dStreak(s);
+  var cards = (r && r.cards) ? r.cards.length : 0;
+  var h = '<div class="stats">'
+    + '<div class="stat' + (cards ? ' good' : '') + '"><b>' + cards + '</b><span>今天出声的卡</span></div>'
+    + '<div class="stat"><b>' + k + '</b><span>连续天数</span></div>'
+    + '<div class="stat"><b>' + ((r&&r.qs)||0) + '</b><span>今天答的题</span></div>'
+    + '<div class="stat"><b>' + ((r&&r.shadow)||0) + '</b><span>今天跟读</span></div>'
+    + '</div>';
+  h += '<p class="dline">② 漏掉一半以上关键词的：'
+    + (n.bad.length
+       ? n.bad.map(function(x){ return '<span class="dbad">' + esc(dTitle(x)).slice(0,34) + '</span>'; }).join(' · ')
+       : '<span class="dok">无</span>') + '</p>';
+  h += '<p class="dline">③ 连着两次漏同一个点的：'
+    + (n.rep.length
+       ? n.rep.map(function(x){ return '<span class="dbad">' + esc(dTitle(x)).slice(0,34) + '</span>'; }).join(' · ')
+       : '<span class="dok">无</span>') + '</p>';
+  /* 最近 7 天，每天答了几题。断没断一眼看得见。 */
+  var bars = '', lbl = '', mx = 1, vals = [];
+  for (var i=6;i>=0;i--){
+    var dt = new Date(); dt.setDate(dt.getDate()-i);
+    var p = function(x){ return (x<10?'0':'') + x; };
+    var key = dt.getFullYear() + '-' + p(dt.getMonth()+1) + '-' + p(dt.getDate());
+    var q = ((s.days||{})[key] || {}).qs || 0;
+    vals.push({q:q, lab:(dt.getMonth()+1) + '/' + dt.getDate()});
+    if (q > mx) mx = q;
+  }
+  vals.forEach(function(v){
+    bars += '<i class="' + (v.q ? 'on' : '') + '" style="height:' + Math.round(v.q/mx*100) + '%" title="'
+         + v.lab + ' · ' + v.q + ' 题"></i>';
+    lbl += '<span>' + v.lab + '</span>';
+  });
+  h += '<div class="d7wrap"><div class="d7">' + bars + '</div><div class="d7lbl">' + lbl + '</div></div>';
+  h += '<p style="margin:12px 0 0">'
+    + '<a class="bbtn" href="drill.html" style="text-decoration:none">🎙 再练一组</a> '
+    + '<button class="bbtn ghost" onclick="copyDrill(this)">复制演练进度给老师</button></p>';
+  return h;
+}
+/* 跟演练台 copyOut() 同一份文本格式。 */
+function copyDrill(btn){
+  var s = dLoad(), d = dToday(), r = (s.days||{})[d] || {}, n = dNumbers(s);
+  var L = ['口试演练 ' + d,
+    '① 今天出声练了 ' + ((r.cards||[]).length) + ' 张（' + (r.sets||0) + ' 组 · ' + (r.qs||0) + ' 题）· 连续 ' + dStreak(s) + ' 天',
+    '② 漏掉一半以上关键词的：' + (n.bad.length ? n.bad.join(' ') : '无'),
+    '③ 连着两次漏同一个点的：' + (n.rep.length ? n.rep.join(' ') : '无')];
+  var txt = L.join('\n');
+  try { navigator.clipboard.writeText(txt); btn.textContent = '复制好了'; }
+  catch(e){ prompt('手动复制：', txt); }
 }
 
 function buildCram(c){
