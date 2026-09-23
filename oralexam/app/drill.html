@@ -158,6 +158,19 @@ details[open]>summary:before{content:'▾ ';}
 .big3 div{flex:1;min-width:140px;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
 .big3 b{display:block;font-size:22px;line-height:1.3}
 .big3 span{font-size:12.5px;color:var(--dim)}
+/* 2026-09-23 · 跟读式四步 */
+.wkstep{margin-top:16px;padding-top:12px;border-top:1px dashed var(--line)}
+.wktxt{font-size:16.5px;line-height:1.95;margin:6px 0}
+.wd{cursor:pointer;border-radius:3px}
+.wd:hover{background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.wd.kw{font-weight:650;color:var(--accent)}
+.bl{color:var(--accent);letter-spacing:1px;cursor:pointer;border-radius:3px}
+.bl:hover{background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.bl.show{font-weight:650;letter-spacing:0;text-decoration:underline}
+.gap{color:var(--dim);opacity:.6}
+.wkctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:6px 0}
+.wkctl button.sel{background:var(--accent);color:#fff;border-color:var(--accent)}
+.shres audio{display:block;margin-top:8px;width:100%;max-width:420px}
 /* 陪伴层 */
 .dots{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
 .dots i{width:11px;height:11px;border-radius:50%;background:var(--line);display:block;
@@ -697,8 +710,8 @@ function home(){
       + '<button class="main" onclick="oneStart()">拷问式</button>'
       + '<button class="main" onclick="walkCard()">跟读式</button></div>'
       + '<div class="small" style="margin:8px 0 0"><b>拷问式</b>＝它问你答，跟一组一样。'
-      + '<b>跟读式</b>＝先念给你听，你跟一句，最后才让你自己说 —— <b>不打分</b>。'
-      + '（她 2026-09-23：「跟读然后立马背的方式方法我感觉适合每张卡」）</div></div>'
+      + '<b>跟读式</b>＝一页一题：看着读一遍 → 难词挖掉半读半背 → 背两遍，每一遍都录下来能回放 —— <b>不打分</b>。'
+      + '（她 2026-09-23：「不用一句一句跟读…我要重复背两次，都要录音」）</div></div>'
     + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
       + '（mb-* · pe-* · taq · land），另外三张从其余 '
       + usable.filter(function(c){ return !isMBPE(c); }).length + ' 张里随机。</p>'
@@ -1319,75 +1332,178 @@ function chemStart(){
   CH = {list:list, i:0, tag:'🧪 化学', done:'三条化学过完了', again:'chemStart()'};
   walkRender();
 }
+/* ======================= 📖 跟读式 · 2026-09-23 改成「一页一题、四步、每步都录」 =======================
+   她 2026-09-23：「跟读口试卡，现在这个不太有效率，不用一句一句跟读，就像原本那个卡片就行了，
+   但是每页只有一个问题，原文不用整体读，但是单词点读功能还在，然后到我，就需我要整体读一遍，
+   然后把关键词挖掉，遮上，我再半读半背一遍，差不多了我可以选择直接背诵（或者关键词提示），
+   我要重复背两次，都要录音」。
+   所以：一页一题。① 看着整段读一遍 → ② 关键词挖掉，半读半背 → ③ 选「直接背」或「只留关键词」，背两遍。
+   每一步都录：转录标色（绿 ＝ 说到，红 ＝ 没说到）＋ 能回放自己的声音。**仍然不打分。**
+   遮哪些词：卡上作者加粗的（en 里的 <b>）＋ 她说的「看着稍微难一点的」＝ 8 个字母以上的实词。
+   跟主 app 的「遮词」是同一条规矩。 */
+var WK = null;      /* 当前这一题：{src, keys, mode3, busy, done:{1,2,3a,3b}, cardId} */
+var WREC = {mr:null, stream:null, chunks:[]};
+
+function bare(w){ return String(w||'').toLowerCase().replace(/[’ʼ']s/g,'').replace(/[^a-z]/g,''); }
+function keyWords(x){
+  var set = {};
+  (String(x.en||'').match(/<b>[^<]*<\/b>/g) || []).forEach(function(b){
+    strip(b).split(/\s+/).forEach(function(w){ var k = bare(w); if(k.length>=4 && !STOPSET[k]) set[k]=1; });
+  });
+  /* 她 2026-09-23：「可以多遮掉一些」「看着稍微难一点的都遮掉」 */
+  strip(x.ez||x.en||'').split(/\s+/).forEach(function(w){ var k = bare(w); if(k.length>=8 && !STOPSET[k]) set[k]=1; });
+  return set;
+}
+function isKey(w){ var k = bare(w); return !!(k && WK && WK.keys[k]); }
+function blankOf(w){
+  var m = w.match(/^([^A-Za-z]*)([A-Za-z][A-Za-z-]*)(.*)$/);
+  if(!m) return esc(w);
+  var n = Math.max(3, Math.min(12, m[2].length));
+  return esc(m[1]) + new Array(n+1).join('_') + esc(m[3]);
+}
+/* mode: read 全文可点 · cloze 关键词挖掉（点空格可以偷看一个）· keys 只留关键词 · blind 全遮 */
+function wkText(mode){
+  if(mode === 'blind') return '<p class="wktxt small" style="color:var(--dim)">（全部遮上了 —— 合上眼说。想偷看就往上看「①」那一段。）</p>';
+  if(mode === 'keys'){
+    var ss = splitSent(WK.src);
+    return '<p class="wktxt">' + ss.map(function(s2){
+      var ks = s2.split(/\s+/).filter(isKey).map(function(w){ return '<span class="wd kw" onclick="sayW(this)">' + esc(w.replace(/[^A-Za-z-]+$/,'')) + '</span>'; });
+      return ks.length ? ks.join(' · ') : '<span class="gap">…</span>';
+    }).join(' <span class="gap">／</span> ') + '</p>';
+  }
+  return '<p class="wktxt">' + WK.src.split(/(\s+)/).map(function(w){
+    if(!w.trim()) return w;
+    if(mode === 'cloze' && isKey(w)) return '<span class="bl" data-w="' + esc(w) + '" onclick="peek(this)">' + blankOf(w) + '</span>';
+    return '<span class="wd" onclick="sayW(this)">' + esc(w) + '</span>';
+  }).join('') + '</p>';
+}
+function sayW(el){ var t2 = (el.textContent||'').replace(/[^A-Za-z-]+$/,''); if(t2) say(t2); }
+function peek(el){ var w = el.getAttribute('data-w')||''; el.textContent = w; el.className = 'bl show'; sayW(el); }
+
+/* 录：转录（Web Speech）＋ 真录音（MediaRecorder，能回放）。两个都开，哪个不行就少哪个。 */
+function wkRecStart(){
+  finalTxt=''; interimTxt=''; recStart();
+  WREC.chunks = []; WREC.mr = null; WREC.stream = null;
+  if(navigator.mediaDevices && window.MediaRecorder){
+    navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+      if(!WK || !WK.busy){ stream.getTracks().forEach(function(t){ t.stop(); }); return; }
+      var mr = new MediaRecorder(stream);
+      WREC.mr = mr; WREC.stream = stream;
+      mr.ondataavailable = function(e){ if(e.data && e.data.size) WREC.chunks.push(e.data); };
+      mr.start();
+    }).catch(function(){});
+  }
+}
+function wkRecStop(cb){
+  recStop();
+  var said = (finalTxt + ' ' + interimTxt).trim();
+  var mr = WREC.mr, stream = WREC.stream;
+  WREC.mr = null; WREC.stream = null;
+  if(mr && mr.state !== 'inactive'){
+    mr.onstop = function(){
+      try{ stream.getTracks().forEach(function(t){ t.stop(); }); }catch(e){}
+      var blob = new Blob(WREC.chunks, {type: mr.mimeType || 'audio/webm'});
+      cb(said, blob.size ? URL.createObjectURL(blob) : '');
+    };
+    try{ mr.stop(); }catch(e){ cb(said, ''); }
+  } else cb(said, '');
+}
+/* 标色：绿 ＝ 说到，红 ＝ 没说到。只比前 5 个字母。不给数字。 */
+function wkColor(said){
+  var low = ' ' + strip(said).toLowerCase().replace(/[^a-z]+/g,' ') + ' ';
+  return WK.src.split(/(\s+)/).map(function(w){
+    var k = bare(w);
+    if(k.length < 4 || STOPSET[k]) return esc(w);
+    return '<span class="' + (low.indexOf(k.slice(0,5))!==-1 ? 'ok':'no') + '">' + esc(w) + '</span>';
+  }).join('');
+}
+
+var wkCap = null;
+/* step: '1' 整读 · '2' 半读半背 · '3a' 背第 1 遍 · '3b' 背第 2 遍 */
+function wkGo(step){
+  if(!WK) return;
+  var btn = $('wkb' + step), lbl = $('wks' + step);
+  if(WK.busy){
+    if(WK.busy !== step) return;          /* 别的步骤正在录 */
+    if(wkCap){ clearTimeout(wkCap); wkCap = null; }
+    if(lbl) lbl.textContent = '在整理…';
+    wkRecStop(function(said, url){
+      WK.busy = null;
+      var box = $('wkr' + step);
+      if(box) box.innerHTML = '<div class="shres">' + wkColor(said)
+        + '<span class="raw">识别听到的：' + (said ? esc(said) : '（没录到）') + '</span>'
+        + (url ? '<audio controls src="' + url + '"></audio>' : '<span class="raw">（这个浏览器没给录音，只有转录）</span>')
+        + '</div>';
+      if(lbl) lbl.textContent = '录好了。绿的是说到的；红的不是错，是下次补上的。想再来一遍就再点。';
+      if(btn){ btn.textContent = '🎙 再来一遍'; btn.className = ''; }
+      WK.done[step] = 1;
+      var s3 = st(), d = today(), r = dayRec(s3, d);
+      r.walk = (r.walk||0) + 1;
+      /* 背完两遍 ＝ 这张卡今天出过声了 —— 计进规矩一的第一个数。 */
+      if(WK.done['3a'] && WK.done['3b'] && WK.cardId && r.cards.indexOf(WK.cardId) === -1) r.cards.push(WK.cardId);
+      save(s3);
+      var c2 = $('wkdone'); if(c2) c2.textContent = r.walk;
+    });
+    return;
+  }
+  WK.busy = step;
+  if(lbl) lbl.textContent = '⏺ 在录。说完了点一下「说完了」。';
+  if(btn){ btn.textContent = '■ 说完了'; btn.className = 'main'; }
+  wkRecStart();
+  wkCap = setTimeout(function(){ if(WK && WK.busy === step) wkGo(step); }, 240000);   /* 4 分钟封顶，免得忘了关 */
+}
+function wkMode(m){
+  if(!WK) return;
+  WK.mode3 = m;
+  var t = $('wkt3'); if(t) t.innerHTML = wkText(m);
+  ['wkm-blind','wkm-keys'].forEach(function(id){ var b = $(id); if(b) b.className = (id === 'wkm-' + m) ? 'sel' : ''; });
+}
+function wkBtn(step, label){
+  return '<div class="wkctl"><button id="wkb' + step + '" onclick="wkGo(\'' + step + '\')">🎙 ' + label + '</button>'
+    + '<span class="small" id="wks' + step + '"></span></div><div id="wkr' + step + '"></div>';
+}
+function wkStep(n, title, mode, step, label){
+  return '<div class="wkstep"><p class="chemstep">' + title + '</p>'
+    + '<div id="wkt' + n + '">' + wkText(mode) + '</div>' + wkBtn(step, label) + '</div>';
+}
+
 function walkRender(){
   recStop();
+  if(WK && WK.busy){ WK.busy = null; wkRecStop(function(){}); }
   if(!CH || CH.i >= CH.list.length){ walkDone(); return; }
   var o = CH.list[CH.i], x = o.item;
-  var src = x.ez || x.en || '';
-  SH = []; shQueue = null; shBusy = false;
-  var ss = splitSent(src);
-  var rows = ss.map(function(s2){
-    var si = shReg(s2);
-    return '<div class="fixrow"><p class="sayit" onclick="sayEl(this)">' + esc(s2) + '</p>'
-      + '<div class="shb"><button id="shb' + si + '" onclick="shadow(' + si + ')">🎤 跟读这一句</button>'
-      + '<span class="st" id="shs' + si + '"></span></div><div id="sh' + si + '"></div></div>';
-  }).join('');
+  var src = strip(x.ez || x.en || '').replace(/^["“]/, '').replace(/["”]$/, '');
+  WK = {src:src, keys:keyWords(x), mode3:'blind', busy:null, done:{}, cardId:o.card.id};
+  var s3 = st(), d = today(), r = s3.days[d] || {};
   $('main').innerHTML =
     '<div class="card">'
     + '<span class="chemtag">' + (CH.tag || '📖 跟读') + ' ' + (CH.i+1) + ' / ' + CH.list.length + '</span>'
-    + '<p class="chemq">' + esc(x.q) + '</p>'
+    + '<p class="chemq sayit" onclick="sayEl(this)">' + esc(x.q) + '</p>'
     + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
       + (o.turf ? ' · <b>这是你自己天天在做的东西</b>' : '') + '</p>'
-    + '<div class="do"><b>这一屏不考你。</b>先听一遍，跟着说一遍，最后才让你自己说。'
-      + '<b>不打分。</b></div>'
-    + '<p class="chemstep">① 先听 ＋ 跟读 —— 说到的词会标绿，没说到的标红，原话一直在</p>'
-    + rows
-    + '<div class="chembar"><button class="main" id="shall" onclick="shAll()">▶ 一句接一句念完</button>'
-      + '<span class="small">今天化学跟读 <b id="shdone">0</b> 句</span></div>'
-    + '<p class="chemstep">② 现在把它问回给你 —— 合上眼自己说一遍</p>'
-    + '<div class="chembar"><button class="main" onclick="walkTry()">🎙 我来说一遍</button>'
-      + '<span class="small" id="walkst">它会念一遍题目，然后开麦 45 秒。</span></div>'
-    + '<div id="walkres"></div>'
-    + '<p style="margin:18px 0 0"><button class="ghost" onclick="walkNext()">下一条 →</button> '
-      + '<button class="ghost" onclick="home()">回首页</button></p>'
+    + '<div class="do"><b>这一屏不考你。</b>四步，每一步都录下来，你自己听。<b>不打分。</b>'
+      + '<span class="small"> 点任何一个词 ＝ 念那个词。</span></div>'
+    + wkStep(1, '① 看着整段，出声读一遍', 'read', '1', '开始读')
+    + wkStep(2, '② 难一点的词挖掉了 —— 半读半背一遍（点空格可以偷看一个）', 'cloze', '2', '开始')
+    + '<div class="wkstep"><p class="chemstep">③ 差不多了 —— 背两遍</p>'
+      + '<div class="wkctl"><button id="wkm-blind" class="sel" onclick="wkMode(\'blind\')">直接背</button>'
+      + '<button id="wkm-keys" onclick="wkMode(\'keys\')">关键词提示</button></div>'
+      + '<div id="wkt3">' + wkText('blind') + '</div>'
+      + wkBtn('3a', '背第 1 遍') + wkBtn('3b', '背第 2 遍') + '</div>'
+    + '<p style="margin:18px 0 0"><button class="main" onclick="walkNext()">下一条 →</button> '
+      + '<button class="ghost" onclick="home()">回首页</button> '
+      + '<span class="small">今天整段出声 <b id="wkdone">' + (r.walk||0) + '</b> 遍</span></p>'
     + (x.ezcn ? '<details class="full" style="margin-top:14px"><summary>中文 ▾</summary>'
         + '<p class="en">' + x.ezcn + '</p></details>' : '')
     + (x.warn ? '<div class="wn"><b>⚠</b> ' + x.warn + '</div>' : '')
     + '</div>';
-  shCount();
-}
-/* 自己说一遍。⚠ 只标颜色，**不给任何数字** —— 这是这一屏的全部意义。 */
-function walkTry(){
-  if(!CH) return;
-  var o = CH.list[CH.i], x = o.item, src = x.ez || x.en || '';
-  var stx = $('walkst');
-  if(stx) stx.textContent = '在念题目…';
-  say(x.q, function(){
-    if(stx) stx.textContent = '⏺ 说吧，慢慢说。';
-    finalTxt = ''; interimTxt = '';
-    recStart();
-    setTimeout(function(){
-      recStop();
-      var said = (finalTxt + ' ' + interimTxt).trim();
-      var low = ' ' + strip(said).toLowerCase().replace(/[^a-z]+/g,' ') + ' ';
-      var html = src.split(/(\s+)/).map(function(w){
-        var bare = w.toLowerCase().replace(/[^a-z]/g,'');
-        if(bare.length < 4 || STOPSET[bare]) return esc(w);
-        return '<span class="' + (low.indexOf(bare.slice(0,5))!==-1 ? 'ok':'no') + '">' + esc(w) + '</span>';
-      }).join('');
-      $('walkres').innerHTML = '<div class="shres">' + html
-        + '<span class="raw">识别听到的：' + (said ? esc(said) : '（没录到）') + '</span></div>'
-        + '<p class="small" style="margin:8px 0 0"><b>绿的是你说到的。</b>'
-        + '红的不是错 —— 是下次可以补上的词。<b>这里不记分。</b></p>';
-      if(stx) stx.textContent = '说完了。想再说一遍就再点一次。';
-    }, 45000);
-  });
+  window.scrollTo(0,0);
 }
 function walkNext(){ if(!CH) return; CH.i++; walkRender(); }
 function walkDone(){
   var s = st(), d = today(), r = s.days[d] || {};
   $('main').innerHTML = '<div class="card"><h2>' + (CH && CH.done || '这一轮过完了') + '</h2>'
-    + '<p class="small">今天一共跟读 <b>' + (r.shadow||0) + '</b> 句。'
+    + '<p class="small">今天整段出声 <b>' + (r.walk||0) + '</b> 遍 · 跟读 <b>' + (r.shadow||0) + '</b> 句。'
     + '<b>这一屏从来不打分，所以没有分数给你看</b> —— 你出过声了，这就是全部的意义。</p>'
     + '<p style="margin:16px 0 0"><button class="main" onclick="' + (CH && CH.again || 'chemStart()')
     + '">再来一轮</button> '
