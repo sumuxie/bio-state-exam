@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>地图</title>
+<title>考官</title>
 <!--
   地图页 —— 2026-09-23 Ruojin 提的，我连着做砸两次才做对。
 
@@ -100,8 +100,8 @@ b{color:var(--ink)}
 <body>
 <div class="wrap">
   <header>
-    <h1>地图</h1>
-    <p class="sub">点一个房间 → 展开 → 点一格 → <b>直接看到那一格写了什么</b>。不跳转。</p>
+    <h1>考官</h1>
+    <p class="sub">七个人，一人一个口。点开 → 他会往哪问 → <b>已有的内容直接在里面展开</b>；⭐ 是专门为他补的。不跳转。</p>
   </header>
   <div id="main">装载中…</div>
 </div>
@@ -179,63 +179,111 @@ function sayEl(el){
 }
 
 /* ---- 房间的判据，跟 tools/cellmap.py 同一套 ---- */
-var ROOMS = [
- ['线粒体基质',    /mitochondrial matrix|in the matrix|matrix of the mitochond/i],
- ['线粒体内膜',    /inner (mitochondrial )?membrane|respiratory chain|electron transport chain/i],
- ['线粒体膜间隙',  /intermembrane space/i],
- ['细胞核',        /\bnucleus\b|\bnuclear\b|nucleolus|nucleoli/i],
- ['内质网',        /endoplasmic reticulum|\bE R membrane\b|rough E R/i],
- ['高尔基体',      /Golgi/i],
- ['溶酶体',        /lysosom/i],
- ['过氧化物酶体',  /peroxisom/i],
- ['类囊体',        /thylakoid/i],
- ['叶绿体基质',    /\bstroma\b|chloroplast/i],
- ['周质',          /periplasm/i],
- ['核糖体',        /\bribosom/i],
- ['细胞壁 / 膜外', /cell wall|extracellular|secreted|outside the cell|into the medium/i],
- ['质膜',          /plasma membrane|cytoplasmic membrane|cell membrane/i],
- ['胞质',          /cytosol|cytoplasm|cytosolic/i]
-];
-var ROOMNOTE = {
- '核糖体':'⚠ 这个房间最大（全套 80 多格），因为几乎每张讲蛋白的卡都会提到它。先看「标题里就点了名」的那几格。',
- '胞质':'⚠ 同上，很多格只是顺口提了一句「在胞质里」。排在前面的那几格才是真讲这个房间的。',
- '细胞壁 / 膜外':'判据里包含 secreted / extracellular，所以分泌蛋白那一路都会落进来。'
-};
+var EXAMINERS = [
+ ['Hodek', 'Prof. RNDr. Petr Hodek, CSc.', '生化系系主任 · PřF UK',
+  '细胞色素 P450 与异源物代谢：外源物怎么被氧化、怎么被结合排掉，以及<b>解毒为什么有时反而是活化</b>。'
+  + '他也做禽类抗体 IgY。<b>⚠ 你那份查理大学医学生化考纲 #23B 正好是「外源物生物化学 · 生物转化第一相与第二相 · 乙醇代谢」——他把那份考纲原封不动发回给你。</b>',
+  [['细胞色素 P450', /cytochrome P ?450|\bC Y P\b|\bCYP\d/i],
+   ['生物转化 · 异源物', /biotransformation|xenobiotic|detoxif|conjugat/i],
+   ['单加氧酶 · 羟化', /monooxygenase|hydroxylase|hydroxylat/i],
+   ['致癌物 · DNA 加合物', /carcinogen|D N A adduct|mutagen/i],
+   ['抗体 · 免疫球蛋白', /antibod|immunoglobulin/i]]],
 
-/* ---- 收集：每一格属于哪些房间 ---- */
-var BOXES = [];   /* {card, cardTitle, where, title, big, en, ez, ezcn, cn, warn, rooms, strong} */
+ ['Hudeček', 'Prof. RNDr. Jiří Hudeček, CSc.', 'PřF UK · 生物物理化学',
+  '光谱学怎么读出一个蛋白：<b>UV-Vis · 圆二色谱 CD · 荧光 · SPR</b>，以及由它们算出来的 <b>Kd</b> 和化学计量。'
+  + '<b>⚠ 他最不能容忍把仪器当黑箱</b> —— 说了方法就要能说出它测的是什么物理量。',
+  [['UV-Vis · 分光光度', /absorbance|absorption spectr|spectrophotomet|A ?280|A ?260/i],
+   ['圆二色谱 CD', /circular dichroism|\bC D spectr/i],
+   ['荧光', /fluorescen/i],
+   ['SPR · 结合常数 Kd', /surface plasmon|\bS P R\b|dissociation constant|\bK ?d\b|binding affinity/i],
+   ['二级结构 α / β', /secondary structure|alpha helix|α-helix|beta sheet|β-structure/i]]],
+
+ ['Lipovová', 'Doc. Ing. Petra Lipovová, Ph.D.', 'VŠCHT · 生化与微生物研究所（跨校那一位）',
+  '应用酶学与蛋白质工程：<b>定点突变改底物特异性</b>、糖苷酶的转糖基、植物核酸酶、嗜冷酶。'
+  + '<b>她会把问题往「能不能用」上带</b> —— 稳定性、最适条件、能不能放大。<b>这一块基本就是你的 PESB 卡。</b>',
+  [['定点突变 · 蛋白质工程', /site directed mutagenesis|site-directed|point mutation|protein engineer/i],
+   ['重组表达 · 纯化', /recombinant|expression system|purif|affinity tag|His tag/i],
+   ['酶动力学 Km · kcat', /Michaelis|\bK ?m\b|kcat|turnover number|catalytic efficiency/i],
+   ['酶的稳定性 · 最适条件', /thermostab|optimum (?:temperature|p ?H)|denaturat|refold/i],
+   ['糖苷酶 · 核酸酶', /glycosidase|glucosidase|nuclease|RNase|DNase/i]]],
+
+ ['Martínková', 'Prof. RNDr. Markéta Martínková, Ph.D.', 'PřF UK · 含血红素传感器蛋白实验室',
+  '<b>血红素怎么当传感器</b>：气体分子（O₂ / NO / CO）结合到血红素铁上，构象一变，信号就传出去。'
+  + '她也做 p53 与血红素。<b>⚠ 她非常看重你说得清不清楚</b> —— 逻辑连贯、别人能听懂。',
+  [['血红素 · 卟啉 · 铁配位', /\bha?em\b|\bha?eme\b|porphyrin|ha?em iron/i],
+   ['氧结合 · 协同性 · T/R 态', /oxygen bind|cooperativ|sigmoid|\bT state|\bR state|tense|relaxed|Hill coefficient|Bohr/i],
+   ['气体信号 NO · CO', /nitric oxide|carbon monoxide/i],
+   ['信号转导 · 二组分系统', /signal transduction|two component|histidine kinase|second messenger/i],
+   ['别构调节', /allosteric/i]]],
+
+ ['Martínek', 'Doc. RNDr. Václav Martínek, Ph.D.', 'PřF UK · 计算建模与对接',
+  '计算机上的生物物理：<b>分子对接、分子动力学、结合自由能</b>。'
+  + '<b>⚠ 他问这些是冲着你论文里用没用计算方法。你没用就直说</b>——'
+  + '「我的工作是湿实验，没有建模部分」比背一段对接原理安全得多。'
+  + '他真正会抓的是<b>目标与结论对不对称</b>。',
+  [['结合能 · 热力学 ΔG', /free energy|binding energy|thermodynamic|ΔG|delta G|spontaneous/i],
+   ['活性位点 · 结合口袋', /active site|binding pocket|catalytic residue|induced fit/i],
+   ['非共价作用力', /van der Waals|hydrophobic|hydrogen bond|ionic bond|steric/i]]],
+
+ ['Ryšlavá', 'Prof. RNDr. Helena Ryšlavá, CSc.', 'PřF UK · 植物生物化学实验室',
+  '植物在胁迫下怎么改代谢：<b>抗氧化酶（SOD、过氧化物酶、过氧化氢酶）· 活性氧 · 次级代谢</b>，'
+  + '以及植物病毒蛋白酶怎么劫持宿主。<b>⚠ 她的典型问法是「你怎么解释这个现象」</b>——'
+  + '要的不是背诵，是从现象往上推机制。',
+  [['光合作用', /photosynthe|chlorophyll|rubisco|thylakoid/i],
+   ['活性氧 ROS · 抗氧化', /reactive oxygen|oxidative stress|free radical|superoxide|antioxidant|peroxidase|catalase/i],
+   ['植物特有代谢 · 固氮', /nitrogen fixation|nitrogenase|\bC4\b|CAM |photorespirat/i],
+   ['次级代谢产物', /secondary metabolite|alkaloid|terpen|flavonoid|phenolic/i],
+   ['蛋白酶 · 蛋白酶体', /protease|proteasome|peptidase|ubiquitin/i]]],
+
+ ['Šulc', 'Doc. RNDr. Miroslav Šulc, Ph.D.', 'PřF UK · 生物分子结构功能蛋白质组学',
+  '<b>用交联质谱画出蛋白复合物的架构</b>：非天然氨基酸掺进去、光照交联、酶切、串联质谱定位。'
+  + '<b>⚠ 他是方法论的严苛派</b> —— 会问你的数据量够不够支撑结论。',
+  [['质谱 · 肽段', /mass spectrometr|tandem mass|\bM S\/M S\b|tryptic|peptide mapping|proteomic/i],
+   ['交联 cross-linking', /cross ?link|crosslink/i],
+   ['蛋白–蛋白相互作用', /protein protein interaction|\bP P I\b|two hybrid|immunoprecipit|pull ?down|\bE M S A\b/i],
+   ['非天然氨基酸 · 无细胞', /non ?canonical amino acid|unnatural amino acid|cell free|\bC F P S\b/i]]],
+];
+
+/* 追问组标题里带这个标记的，就是专门为某位考官补的。 */
+function markedFor(gtitle){
+  var m2 = /考官 · ([A-Za-zÁ-Žá-ž]+)/.exec(strip(gtitle||''));
+  return m2 ? m2[1] : '';
+}
+
+var BOXES = [];   /* {card, cardTitle, where, title, big, en, ez, ezcn, cn, warn, who, star} */
 CARDS.forEach(function(c){
   var ct = strip(c.qcn || c.q || c.id);
+  function push(o, probe, star, who){
+    var hit = [];
+    EXAMINERS.forEach(function(E){
+      E[4].forEach(function(p){ if(p[1].test(probe)) hit.push(E[0] + '|' + p[0]); });
+    });
+    if(star && who) hit.unshift(who + '|⭐ 专门为他补的');
+    if(!hit.length) return;
+    o.who = hit; o.star = !!star;
+    BOXES.push(o);
+  }
   (c.cram||[]).forEach(function(p){
     if(!p || !p.n) return;
-    var probe = (p.en||'') + ' ' + (p.big||'') + ' ' + (p.t||'');
-    var head  = (p.t||'') + ' ' + (p.big||'');
-    var rs=[], st=[];
-    ROOMS.forEach(function(r){
-      if(r[1].test(strip(probe))){ rs.push(r[0]); if(r[1].test(strip(head))) st.push(r[0]); }
-    });
-    if(rs.length) BOXES.push({card:c.id, cardTitle:ct, where:'速背 '+p.n, title:strip(p.t||''),
-      big:p.big||'', en:p.en||'', ez:p.ez||'', ezcn:p.ezcn||'', cn:p.note||'', warn:p.warn||'',
-      rooms:rs, strong:st});
+    push({card:c.id, cardTitle:ct, where:'速背 '+p.n, title:strip(p.t||''), big:p.big||'',
+          en:p.en||'', ez:p.ez||'', ezcn:p.ezcn||'', cn:p.note||'', warn:p.warn||''},
+         strip((p.en||'') + ' ' + (p.big||'') + ' ' + (p.t||'')), false, '');
   });
   (c.ask||[]).forEach(function(g){
+    var who = markedFor(g.g);
     (g.items||[]).forEach(function(x){
       if(!x || !x.en) return;
-      var rs=[], st=[];
-      ROOMS.forEach(function(r){
-        if(r[1].test(strip(x.en))){ rs.push(r[0]); if(r[1].test(strip(x.q||''))) st.push(r[0]); }
-      });
-      if(rs.length) BOXES.push({card:c.id, cardTitle:ct, where:'追问', title:strip(x.q||''),
-        big:'', en:x.en, ez:x.ez||'', ezcn:x.ezcn||'', cn:x.cn||'', warn:x.warn||'',
-        rooms:rs, strong:st});
+      push({card:c.id, cardTitle:ct, where:'追问', title:strip(x.q||''), big:'',
+            en:x.en, ez:x.ez||'', ezcn:x.ezcn||'', cn:x.cn||'', warn:x.warn||''},
+           strip((x.q||'') + ' ' + x.en), !!who, who);
     });
   });
 });
 
-/* ---- 渲染 ---- */
 var FILTER = '';
-function boxHTML(b, room){
+function boxHTML(b){
   return '<details class="box"><summary>'
+    + (b.star ? '<span class="where q">⭐ 补的</span>' : '')
     + '<span class="where' + (b.where==='追问'?' q':'') + '">' + esc(b.card) + ' · ' + esc(b.where) + '</span>'
     + esc(b.title || '（无标题）') + '</summary><div class="body">'
     + (b.big ? '<p class="big">' + b.big + '</p>' : '')
@@ -250,35 +298,41 @@ function boxHTML(b, room){
 }
 function render(){
   var q = FILTER.trim().toLowerCase();
-  var h = '<input type="search" id="q" placeholder="在全部内容里找一个词（房间、酶名、英文都行）…" value="'
-        + esc(FILTER) + '">';
-  var any = 0;
-  ROOMS.forEach(function(r){
-    var name = r[0];
-    var list = BOXES.filter(function(b){
-      if(b.rooms.indexOf(name) === -1) return false;
+  var h = '<input type="search" id="q" placeholder="在全部内容里找一个词…" value="' + esc(FILTER) + '">';
+  EXAMINERS.forEach(function(E){
+    var key = E[0];
+    var mine = BOXES.filter(function(b){
+      if(!b.who.some(function(w){ return w.split('|')[0] === key; })) return false;
       if(!q) return true;
       return (b.title + ' ' + strip(b.en) + ' ' + strip(b.ezcn) + ' ' + b.card).toLowerCase().indexOf(q) !== -1;
     });
-    if(!list.length) return;
-    any += list.length;
-    /* 标题/口令里就点了名的排前面 —— 那些才是真讲这个房间的 */
-    list.sort(function(a,b){
-      var x = (b.strong.indexOf(name)!==-1?1:0) - (a.strong.indexOf(name)!==-1?1:0);
-      if(x) return x;
-      return (a.where==='速背'?0:1) - (b.where==='速背'?0:1);
+    var groups = [['⭐ 专门为他补的', []]];
+    E[4].forEach(function(p){ groups.push([p[0], []]); });
+    mine.forEach(function(b){
+      b.who.forEach(function(w){
+        var parts = w.split('|');
+        if(parts[0] !== key) return;
+        for(var i=0;i<groups.length;i++) if(groups[i][0] === parts[1]) groups[i][1].push(b);
+      });
     });
-    h += '<details class="room"' + (q?' open':'') + '><summary><span>' + esc(name) + '</span>'
-       + '<span class="n">' + list.length + ' 格</span></summary><div class="roombody">'
-       + (ROOMNOTE[name] ? '<p class="roomnote">' + ROOMNOTE[name] + '</p>' : '')
-       + list.map(function(b){ return boxHTML(b, name); }).join('')
-       + '</div></details>';
+    var tot = mine.length;
+    h += '<details class="room"' + (q?' open':'') + '><summary><span>' + esc(E[1]) + '</span>'
+       + '<span class="n">' + tot + ' 格</span></summary><div class="roombody">'
+       + '<p class="roomnote"><b>' + esc(E[2]) + '</b><br>' + E[3] + '</p>';
+    groups.forEach(function(g){
+      if(!g[1].length) return;
+      h += '<details class="room"' + (q||g[0].indexOf('⭐')===0?' open':'') + '><summary><span>'
+         + esc(g[0]) + '</span><span class="n">' + g[1].length + '</span></summary><div class="roombody">'
+         + g[1].map(boxHTML).join('') + '</div></details>';
+    });
+    if(!tot) h += '<p class="small">这位的方向在卡上还没有任何内容。</p>';
+    h += '</div></details>';
   });
-  if(!any) h += '<p class="small">没找到。换个词试试。</p>';
   h += '<p class="small" style="margin-top:20px">'
-     + '⚠ 判据是「这一格的英文正文里点了这个区室的名字」，所以<b>会漏也会多</b>。'
-     + '排在前面的是标题或口令里就点了名的那几格。<br>'
-     + '<a href="index.html">← 回主 app</a> · <a href="drill.html">🎙 口试演练</a></p>';
+     + '⚠ 「已有的」是<b>按关键词自动收进来的，会漏也会多</b>；<b>⭐ 是专门为这位考官补的追问</b>，'
+     + '它们同样写在卡上，所以<b>演练台抽得到</b>。<br>'
+     + '⚠ 七位的单位和方向 2026-09-23 核过；网上流传的「答辩原题」<b>查不到出处，别当事实用</b>。<br>'
+     + '<a href="index.html">← 回主 app</a> · <a href="drill.html">🎙 口试演练</a> · <a href="map.html">🗺 地图</a></p>';
   $('main').innerHTML = h;
   var el = $('q');
   if(el){
