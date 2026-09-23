@@ -131,6 +131,9 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .chembar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
 .onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
 .parts{display:flex;gap:10px;margin:0;flex-wrap:wrap}
+.strm{margin:0 0 12px}
+.strmh{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 5px}
+.strmh b{font-size:14px}
 .part{flex:1;min-width:190px;border:1px solid var(--line);border-radius:10px;padding:11px 13px}
 .part.done{border-color:var(--good)}
 .part h4{margin:0 0 5px;font-size:14.5px}
@@ -748,11 +751,13 @@ function home(){
       + '<button class="main" onclick="oneStart()">拷问式 · 开始</button></div>'
       /* ⚠ 2026-09-23 她：「每张卡分三份」「我让你改的是这个」。
          选中这张卡之后，它的题按「定义 → 为什么 → 陷阱」排好再三等分。 */
-      + '<div class="small" style="margin:12px 0 4px"><b>跟读式 · 这张卡分三份</b>'
+      + '<div class="small" style="margin:12px 0 6px"><b>跟读式 · 这张卡分四条流，每条流再分三层</b>'
         + ' —— 一页一题：看着读 → 难词涂掉半读半背 → 背两遍，每遍都录下来能回放。<b>不打分。</b></div>'
       + '<div id="thirds"></div>'
       + '<div class="small" style="margin:8px 0 0"><b>拷问式</b>＝它问你答，跟一组一样，你自己定问几个。'
-      + '<br><b>三份的分法</b>：这张卡的题先按 <b>定义 → 为什么 → 陷阱 → 相邻考点</b> 排好，再三等分。'
+      + '<br><b>四条流</b>：<b>整张卡</b> · <b>主问题</b>（卷面那道题）· <b>速背</b>（按卡上原顺序）· '
+      + '<b>追问</b>（按 定义 → 为什么 → 陷阱 → 相邻考点 轮转）。'
+      + '每条流各自再分三层，<b>每一层单独记「走过几条」</b> —— 分层就是为了能记录。'
       + '<b>走过一遍的题，下次出现关键词会浅褐色涂掉</b>，点一下露出来。</div></div>'
     + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
       + '（mb-* · pe-* · taq · land），另外三张从其余 '
@@ -770,7 +775,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>08c1b8b</b>'
+      + ' · 版本 <b>657fdfd</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1407,16 +1412,31 @@ function gpri(g){
    —— 因为定义类有三条就把名额占满了。这不是「定义 ＋ 为什么 ＋ 陷阱」。
    所以改成**按组轮转取**：先各组取第一条，再各组取第二条，依此类推。
    这样轮 1 拿到的就是三个不同类型的问题。 */
-function ranked(c){
+/* ⚠ 2026-09-23 她：「那你再分流」。
+   速背点全进来之后每张卡 60–73 条，一份 20–25 条 —— 太厚。
+   所以按**类型**分三条流，每条流各自三份：
+   · 主问题  卷面那道题，一条，不分份
+   · 速背    按卡上的原顺序（01 02 03…），那本来就是这张卡该被学的顺序
+   · 追问    按「定义 → 为什么 → 陷阱 → 相邻考点」按组轮转 */
+function streamMain(c){
+  var m0 = mainOf(c, qlist(c));
+  return (m0 && m0.isMain && strip(m0.en)) ? [m0] : [];
+}
+function streamCram(c){
+  var out = [];
+  (c.cram || []).forEach(function(p){
+    if(!p || !p.n) return;
+    var body = p.ez || p.en || '';
+    if(!strip(body)) return;
+    out.push({q:'速背 ' + p.n + ' · ' + strip(p.t || ''),
+              en:p.en || body, ez:p.ez || '', ezcn:p.ezcn || '',
+              cn:p.note || '', warn:p.warn || '', g:'速背', r:'高', isCram:1});
+  });
+  return out;
+}
+function streamAsk(c){
   var bucket = {};
-  /* ⚠ 2026-09-23 她问：「你那些问题是只有追问吗」—— 是，**主问题原来没进去**。
-     而她最早那句写的就是「把题目们（**主题**＋跟读）全部完整分成 3 份」。
-     所以卷面那道题必须排在**第一条**：它是考官真会念出来的那一句，
-     也是唯一一条「说完 90 秒」的整段。中文卡面题（短答那 9 张）没有主问题，跳过。 */
-  var pool0 = qlist(c);
-  var head = [], m0 = mainOf(c, pool0);
-  if(m0 && m0.isMain && strip(m0.en)) head.push(m0);
-  pool0.forEach(function(x, i){
+  qlist(c).forEach(function(x, i){
     var p = gpri(x.g);
     (bucket[p] = bucket[p] || []).push({x:x, i:i});
   });
@@ -1428,7 +1448,7 @@ function ranked(c){
       return a.i - b.i;
     });
   });
-  var out = head.slice(), round = 0, any = true;
+  var out = [], round = 0, any = true;
   while(any){
     any = false;
     keys.forEach(function(k){
@@ -1438,7 +1458,17 @@ function ranked(c){
   }
   return out;
 }
-var PERROUND = 3;
+function stream(c, kind){
+  if(kind === 'main') return streamMain(c);
+  if(kind === 'cram') return streamCram(c);
+  if(kind === 'ask')  return streamAsk(c);
+  /* 'all' ＝ 整张卡：主问题 → 速背 → 追问，就是这张卡该被学的顺序。 */
+  return streamMain(c).concat(streamCram(c), streamAsk(c));
+}
+/* 首页那块全局三轮还是用它：每张卡取 3 条 ＝ 主问题 ＋ 前两条追问 */
+function ranked(c){
+  return streamMain(c).concat(streamAsk(c));
+}
 function roundItems(n){          /* n = 1 2 3；返回这一轮全部的题 */
   var out = [];
   CARDS.forEach(function(c){
@@ -1452,9 +1482,10 @@ function roundItems(n){          /* n = 1 2 3；返回这一轮全部的题 */
    她指着「只练一张」说「我让你改的是这个」，回头看她最早那句也是
    「每张卡分三份」。份的大小跟着卡走：卡 01 有 48 问就是每份 16 条，
    小卡可能一份只有 3 条 —— **她一次只面对一张卡，所以这才是能走完的单位**。 */
-function cardThird(c, n){
-  var r = ranked(c);
+function cardThird(c, kind, n){
+  var r = stream(c, kind);
   if(!r.length) return [];
+  if(kind === 'main') return r.map(function(x){ return {card:c, item:x, turf:0}; });
   var per = Math.ceil(r.length / 3);
   return r.slice((n-1)*per, n*per).map(function(x){ return {card:c, item:x, turf:0}; });
 }
@@ -1480,8 +1511,8 @@ function walkRound(n){
         again:'walkRound(' + n + ')', round:n};
   walkRender();
 }
-function thirdStat(c, n){
-  var s = st(), list = cardThird(c, n), done = 0;
+function thirdStat(c, kind, n){
+  var s = st(), list = cardThird(c, kind, n), done = 0;
   list.forEach(function(o){ if(wSeen(s, o.card.id, o.item.q)) done++; });
   return {tot:list.length, done:done};
 }
@@ -1490,17 +1521,19 @@ function cardById(id){
   return null;
 }
 /* 走「这张卡的第 n 份」 */
-function walkThird(n){
+var KNAME = {main:'主问题', cram:'速背', ask:'追问', all:'整张卡'};
+function walkThird(kind, n){
   var sel = $('onecard');
   if(!sel) return;
   var c = cardById(sel.value);
   if(!c){ alert('没找到这张卡。'); return; }
-  var s = st(), list = cardThird(c, n);
+  var s = st(), list = cardThird(c, kind, n);
   if(!list.length){ alert('这一份里没有题。'); return; }
   list.forEach(function(o){ o.seen = wSeen(s, o.card.id, o.item.q); });
-  CH = {list:list, i:0, tag:'📖 份 ' + n,
-        done:cardTitle(c).slice(0,18) + ' · 份 ' + n + ' 到这里',
-        again:'walkThird(' + n + ')', third:n};
+  var tag = KNAME[kind] + (kind === 'main' ? '' : ' 份 ' + n);
+  CH = {list:list, i:0, tag:'📖 ' + tag,
+        done:cardTitle(c).slice(0,18) + ' · ' + tag + ' 到这里',
+        again:"walkThird('" + kind + "', " + n + ")", third:n, kind:kind};
   walkRender();
 }
 /* 换一张卡就把三份的进度条重画一遍 */
@@ -1509,22 +1542,37 @@ function paintThirds(){
   if(!box || !sel) return;
   var c = cardById(sel.value);
   if(!c){ box.innerHTML = ''; return; }
-  var h = '<div class="parts">';
-  for(var n=1;n<=3;n++){
-    var s2 = thirdStat(c, n);
-    var pc = s2.tot ? Math.round(100 * s2.done / s2.tot) : 0;
-    h += '<div class="part' + (pc >= 100 ? ' done' : '') + '"><h4>份 ' + n
-       + (pc >= 100 ? ' ✓' : '') + '</h4>'
-       + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
-       + '<div class="small">走过 <b>' + s2.done + ' / ' + s2.tot + '</b></div>'
-       + '<button class="main" onclick="walkThird(' + n + ')">跟读这一份</button></div>';
-  }
-  box.innerHTML = h + '</div>';
+  var s = st(), h = '';
+  ['all', 'main', 'cram', 'ask'].forEach(function(kind){
+    var all = stream(c, kind);
+    if(!all.length) return;
+    var done = 0;
+    all.forEach(function(x){ if(wSeen(s, c.id, x.q)) done++; });
+    h += '<div class="strm"><div class="strmh"><b>' + KNAME[kind] + '</b>'
+       + '<span class="small">' + all.length + ' 条 · 走过 ' + done + '</span></div>';
+    if(kind === 'main'){
+      h += '<div class="parts"><div class="part' + (done ? ' done' : '') + '">'
+         + '<h4>卷面那道题' + (done ? ' ✓' : '') + '</h4>'
+         + '<div class="small">说完约 90 秒的那一整段</div>'
+         + '<button class="main" onclick="walkThird(\'main\', 1)">走这一条</button></div></div>';
+    } else {
+      h += '<div class="parts">';
+      for(var n=1;n<=3;n++){
+        var s2 = thirdStat(c, kind, n);
+        if(!s2.tot) continue;
+        var pc = Math.round(100 * s2.done / s2.tot);
+        h += '<div class="part' + (pc >= 100 ? ' done' : '') + '"><h4>份 ' + n
+           + (pc >= 100 ? ' ✓' : '') + '</h4>'
+           + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
+           + '<div class="small">走过 <b>' + s2.done + ' / ' + s2.tot + '</b></div>'
+           + '<button class="main" onclick="walkThird(\'' + kind + '\', ' + n + ')">跟读这一份</button></div>';
+      }
+      h += '</div>';
+    }
+    h += '</div>';
+  });
+  box.innerHTML = h;
 }
-
-var WK = null;      /* 当前这一题：{src, keys, mode3, busy, done:{1,2,3a,3b}, cardId} */
-var WREC = {mr:null, stream:null, chunks:[]};
-
 function bare(w){ return String(w||'').toLowerCase().replace(/[\u2019\u02bc']s(?![a-z])/g,'').replace(/[^a-z]/g,''); }
 function keyWords(x){
   var set = {};
