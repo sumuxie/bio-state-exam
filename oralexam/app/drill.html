@@ -122,6 +122,15 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .shres .raw{display:block;margin-top:6px;font-size:13px;color:var(--dim)}
 .shbar{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0;
   border-bottom:1px solid var(--line);margin-bottom:8px}
+/* 2026-09-23 · 化学专练 ＋ 单卡模式 */
+.chemq{font-size:20px;font-weight:650;line-height:1.5;margin:0 0 4px}
+.chemtag{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;
+  background:var(--accent);color:#fff;font-weight:700;margin-bottom:8px}
+.chemfrom{font-size:12.5px;color:var(--dim);margin:0 0 12px}
+.chemstep{font-size:13px;color:var(--dim);margin:14px 0 6px;font-weight:600}
+.chembar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
+.onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
+.onebox select{max-width:420px}
 .modes{display:flex;gap:10px;margin:14px 0 0;flex-wrap:wrap}
 .modes .mode{flex:1;min-width:210px;text-align:left;padding:12px 14px;line-height:1.5}
 .modes .mode b{display:block;font-size:15.5px;margin-bottom:2px}
@@ -669,9 +678,27 @@ function home(){
           + '<span>连着两次漏同一个点' + (n.rep.length? '：' + n.rep.map(function(o){return o.id;}).join(' ') : '') + '</span></div>'
         + '</div>'; })()
     + '<p style="margin:18px 0 0"><button class="main" onclick="begin()">开始一组</button> '
+      /* 2026-09-23：化学专练。她说「看着就发怵」，所以这一屏不考她，是带着走的。 */
+      + '<button class="ghost" onclick="chemStart()">🧪 化学专练</button> '
       + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '
       + '<button class="ghost" onclick="histPage()">练过的</button> '
       + '<button class="ghost" onclick="statsPage()">分析</button></p>'
+    /* 2026-09-23：只练一张卡，题数自己定。 */
+    + '<div class="onebox"><b>只练一张</b>'
+      + '<div class="small" style="margin:2px 0 8px">挑一张卡，自己定问几个问题。流程跟一组一样。</div>'
+      + '<div class="row"><select id="onecard">'
+      + usable.slice().sort(function(a,b){ return (a.id<b.id?-1:1); }).map(function(c){
+          return '<option value="' + esc(c.id) + '">' + esc(cardTitle(c)).slice(0,42)
+               + '（' + qlist(c).length + ' 问）</option>'; }).join('')
+      + '</select>'
+      + '<label>问 <select id="oneq">'
+      + [1,2,3,4,5,6,8,10].map(function(n){ return '<option value="'+n+'"'+(n===3?' selected':'')+'>'+n+' 个</option>'; }).join('')
+      + '</select></label>'
+      + '<button class="main" onclick="oneStart()">拷问式</button>'
+      + '<button class="main" onclick="walkCard()">跟读式</button></div>'
+      + '<div class="small" style="margin:8px 0 0"><b>拷问式</b>＝它问你答，跟一组一样。'
+      + '<b>跟读式</b>＝先念给你听，你跟一句，最后才让你自己说 —— <b>不打分</b>。'
+      + '（她 2026-09-23：「跟读然后立马背的方式方法我感觉适合每张卡」）</div></div>'
     + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
       + '（mb-* · pe-* · taq · land），另外三张从其余 '
       + usable.filter(function(c){ return !isMBPE(c); }).length + ' 张里随机。</p>'
@@ -808,6 +835,20 @@ function doneAnswer(){
     /* 主问答完，按「她最没说到什么」挑追问 */
     var rest = c.pool.filter(function(x){ return x!==c.main; });
     c.follow = rankFollow(rest, said).slice(0, c.nFollow);
+    /* ⚠ 2026-09-23 她：「化学相关的所有内容都必须让我加强学习，
+       因为我**有看见就绕道走的惯性**」。
+       —— 光做一个「化学专练」按钮没用：**要她主动点的东西，她正好会绕开**。
+       所以在正常的一组里也掺进来：**这张卡的第一个追问，如果池子里有化学题就先问它**。
+       ⚠ 只提前一道，不多。她说「看着就发怵」，剂量大了她就不开这个页面了。 */
+    if(c.follow.length > 1){
+      var ci = -1;
+      for(var k=0;k<c.follow.length;k++){
+        var tx = strip(c.follow[k].q + ' ' + (c.follow[k].ez || c.follow[k].en || ''));
+        var mm = tx.match(CHEMRX);
+        if(mm && mm.length >= 3){ ci = k; break; }
+      }
+      if(ci > 0){ var pick = c.follow.splice(ci,1)[0]; c.follow.unshift(pick); }
+    }
   }
   /* ⚠ 两个模式在这里分岔。带答案模式先给 20 秒，纯拷问模式直接下一题。 */
   var s2 = st();
@@ -1241,6 +1282,155 @@ function shNext(){
   var el = $('sh' + i);
   if(el && el.scrollIntoView) el.scrollIntoView({behavior:'smooth', block:'center'});
   setTimeout(function(){ shadow(i, true); }, 400);
+}
+
+/* ======================= 🧪 化学专练 =======================
+   ⚠ 2026-09-23 她：「我觉得我可能需要化学专练…**但是我看着就发怵 哈哈哈哈
+   学的最薄弱的地方**」。所以这一屏**不考她**，它带着她走：
+   先念一遍 → 她跟读 → 再把题目问回来 → **不给分**。 */
+var CHEMRX = new RegExp('\\b(?:hydroxyl|carboxyl|carbonyl|amide|amine|thiol|sulfhydryl|disulfide'
+ + '|imidazole|phosphate|phosphoryl|ester|thioester|anhydride|glycosidic|peptide bond'
+ + '|hydrogen bond|ionic bond|coordination|covalent|van der Waals|hydrophobic|lone pair'
+ + '|electron|charge|charged|protonat|deprotonat|ionis|ioniz|ring|aromatic|double bond'
+ + '|stereo|configuration|isomer|epimer|anomer|nitrogen|oxygen|sulfur|nucleophil|electrophil'
+ + '|oxidis|oxidiz|reduce|reduced|reducing|resonance|chelat|ligand|acidic|basic|pK)\\b', 'gi');
+/* 她自己的地盘 —— 第一条永远从这里出。 */
+var MYTURF = {'pe-pur':1,'pe-expr':1,'pe-clone':1,'taq':1,'land':1,'x-fg':1,'x-bonds':1};
+var CH = null;
+
+function chemPool(){
+  var out = [];
+  CARDS.forEach(function(c){
+    qlist(c).forEach(function(x){
+      var txt = strip(x.q + ' ' + (x.ez || x.en || ''));
+      var m = txt.match(CHEMRX);
+      if(m && m.length >= 3) out.push({card:c, item:x, n:m.length, turf:MYTURF[c.id]?1:0});
+    });
+  });
+  return out;
+}
+function chemStart(){
+  var pool = chemPool();
+  if(pool.length < 3){ alert('化学题不够（只找到 ' + pool.length + ' 条）。'); return; }
+  var turf = shuffle(pool.filter(function(o){ return o.turf; }));
+  var rest = shuffle(pool.filter(function(o){ return !o.turf; }));
+  var list = turf.slice(0,1).concat(rest.slice(0,2));
+  while(list.length < 3) list.push((turf.concat(rest))[list.length]);
+  CH = {list:list, i:0, tag:'🧪 化学', done:'三条化学过完了', again:'chemStart()'};
+  walkRender();
+}
+function walkRender(){
+  recStop();
+  if(!CH || CH.i >= CH.list.length){ walkDone(); return; }
+  var o = CH.list[CH.i], x = o.item;
+  var src = x.ez || x.en || '';
+  SH = []; shQueue = null; shBusy = false;
+  var ss = splitSent(src);
+  var rows = ss.map(function(s2){
+    var si = shReg(s2);
+    return '<div class="fixrow"><p class="sayit" onclick="sayEl(this)">' + esc(s2) + '</p>'
+      + '<div class="shb"><button id="shb' + si + '" onclick="shadow(' + si + ')">🎤 跟读这一句</button>'
+      + '<span class="st" id="shs' + si + '"></span></div><div id="sh' + si + '"></div></div>';
+  }).join('');
+  $('main').innerHTML =
+    '<div class="card">'
+    + '<span class="chemtag">' + (CH.tag || '📖 跟读') + ' ' + (CH.i+1) + ' / ' + CH.list.length + '</span>'
+    + '<p class="chemq">' + esc(x.q) + '</p>'
+    + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
+      + (o.turf ? ' · <b>这是你自己天天在做的东西</b>' : '') + '</p>'
+    + '<div class="do"><b>这一屏不考你。</b>先听一遍，跟着说一遍，最后才让你自己说。'
+      + '<b>不打分。</b></div>'
+    + '<p class="chemstep">① 先听 ＋ 跟读 —— 说到的词会标绿，没说到的标红，原话一直在</p>'
+    + rows
+    + '<div class="chembar"><button class="main" id="shall" onclick="shAll()">▶ 一句接一句念完</button>'
+      + '<span class="small">今天化学跟读 <b id="shdone">0</b> 句</span></div>'
+    + '<p class="chemstep">② 现在把它问回给你 —— 合上眼自己说一遍</p>'
+    + '<div class="chembar"><button class="main" onclick="walkTry()">🎙 我来说一遍</button>'
+      + '<span class="small" id="walkst">它会念一遍题目，然后开麦 45 秒。</span></div>'
+    + '<div id="walkres"></div>'
+    + '<p style="margin:18px 0 0"><button class="ghost" onclick="walkNext()">下一条 →</button> '
+      + '<button class="ghost" onclick="home()">回首页</button></p>'
+    + (x.ezcn ? '<details class="full" style="margin-top:14px"><summary>中文 ▾</summary>'
+        + '<p class="en">' + x.ezcn + '</p></details>' : '')
+    + (x.warn ? '<div class="wn"><b>⚠</b> ' + x.warn + '</div>' : '')
+    + '</div>';
+  shCount();
+}
+/* 自己说一遍。⚠ 只标颜色，**不给任何数字** —— 这是这一屏的全部意义。 */
+function walkTry(){
+  if(!CH) return;
+  var o = CH.list[CH.i], x = o.item, src = x.ez || x.en || '';
+  var stx = $('walkst');
+  if(stx) stx.textContent = '在念题目…';
+  say(x.q, function(){
+    if(stx) stx.textContent = '⏺ 说吧，慢慢说。';
+    finalTxt = ''; interimTxt = '';
+    recStart();
+    setTimeout(function(){
+      recStop();
+      var said = (finalTxt + ' ' + interimTxt).trim();
+      var low = ' ' + strip(said).toLowerCase().replace(/[^a-z]+/g,' ') + ' ';
+      var html = src.split(/(\s+)/).map(function(w){
+        var bare = w.toLowerCase().replace(/[^a-z]/g,'');
+        if(bare.length < 4 || STOPSET[bare]) return esc(w);
+        return '<span class="' + (low.indexOf(bare.slice(0,5))!==-1 ? 'ok':'no') + '">' + esc(w) + '</span>';
+      }).join('');
+      $('walkres').innerHTML = '<div class="shres">' + html
+        + '<span class="raw">识别听到的：' + (said ? esc(said) : '（没录到）') + '</span></div>'
+        + '<p class="small" style="margin:8px 0 0"><b>绿的是你说到的。</b>'
+        + '红的不是错 —— 是下次可以补上的词。<b>这里不记分。</b></p>';
+      if(stx) stx.textContent = '说完了。想再说一遍就再点一次。';
+    }, 45000);
+  });
+}
+function walkNext(){ if(!CH) return; CH.i++; walkRender(); }
+function walkDone(){
+  var s = st(), d = today(), r = s.days[d] || {};
+  $('main').innerHTML = '<div class="card"><h2>' + (CH && CH.done || '这一轮过完了') + '</h2>'
+    + '<p class="small">今天一共跟读 <b>' + (r.shadow||0) + '</b> 句。'
+    + '<b>这一屏从来不打分，所以没有分数给你看</b> —— 你出过声了，这就是全部的意义。</p>'
+    + '<p style="margin:16px 0 0"><button class="main" onclick="' + (CH && CH.again || 'chemStart()')
+    + '">再来一轮</button> '
+    + '<button class="ghost" onclick="home()">回首页</button></p></div>';
+}
+
+/* 跟读式 · 任意一张卡。
+   ⚠ 2026-09-23 她：「不过其实你写的那个**跟读然后立马背**的方式方法我感觉**适合每张卡**」。
+   所以这套流程不再是化学专用的 —— 化学只是它的一个池子。 */
+function walkCard(){
+  var sel = $('onecard'), qn = $('oneq');
+  if(!sel) return;
+  var id = sel.value, n = +qn.value, c = null;
+  for(var i=0;i<CARDS.length;i++) if(CARDS[i].id === id) c = CARDS[i];
+  if(!c){ alert('没找到这张卡。'); return; }
+  var s = st(), seen = s.asked;
+  var pool = qlist(c).slice().sort(function(a,b){
+    return (seen[c.id+'|'+hash(a.q)]||0) - (seen[c.id+'|'+hash(b.q)]||0);
+  }).slice(0, n);
+  if(!pool.length){ alert('这张卡没有可问的追问。'); return; }
+  CH = {list: pool.map(function(x){ return {card:c, item:x, turf:0}; }), i:0,
+        tag:'📖 跟读', done:'这一张过完了', again:'walkCard()'};
+  walkRender();
+}
+
+/* ======================= 📇 只练一张卡 =======================
+   2026-09-23 她：「单张卡可以做另外一个模式的口试卡，就相当于还是同样的模式，
+   但是我可以选某张卡，然后自己选问多少问题」。流程一模一样，卡和题数由她定。 */
+function oneStart(){
+  var sel = $('onecard'), qn = $('oneq');
+  if(!sel) return;
+  var id = sel.value, n = +qn.value, c = null;
+  for(var i=0;i<CARDS.length;i++) if(CARDS[i].id === id) c = CARDS[i];
+  if(!c){ alert('没找到这张卡。'); return; }
+  var s = st(), seen = s.asked;
+  var pool2 = qlist(c).slice().sort(function(a,b){
+    return (seen[c.id+'|'+hash(a.q)]||0) - (seen[c.id+'|'+hash(b.q)]||0);
+  });
+  if(!pool2.length){ alert('这张卡没有可问的追问。'); return; }
+  S = {cards:[{card:c, pool:pool2, main:mainOf(c,pool2), asked:[], nFollow:Math.max(0,n-1)}],
+       i:0, sub:0, log:[], newPass:false, nFollow:Math.max(0,n-1), one:true};
+  S.startedAt = Date.now();
+  ask();
 }
 
 /* ---- 点读 ---- */
