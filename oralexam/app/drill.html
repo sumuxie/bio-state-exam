@@ -131,6 +131,7 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .chembar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
 .onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
 .parts{display:flex;gap:10px;margin:0;flex-wrap:wrap}
+.chembox{border-color:var(--accent)}
 .strm{margin:0 0 12px}
 .strmh{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 5px}
 .strmh b{font-size:14px}
@@ -722,10 +723,28 @@ function home(){
         + '</div>'; })()
     + '<p style="margin:18px 0 0"><button class="main" onclick="begin()">开始一组</button> '
       /* 2026-09-23：化学专练。她说「看着就发怵」，所以这一屏不考她，是带着走的。 */
-      + '<button class="ghost" onclick="chemStart()">🧪 化学专练</button> '
+
       + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '
       + '<button class="ghost" onclick="histPage()">练过的</button> '
       + '<button class="ghost" onclick="statsPage()">分析</button></p>'
+    /* 2026-09-23 她：「化学专练还是专门列出来吧」。
+       ⚠ 这一块要同时满足两件事：**显眼到绕不开**（她「有看见就绕道走的惯性」），
+       又**看上去不吓人**（她「看着就发怵，学的最薄弱的地方」）。
+       所以标题下面第一句就是「不考你」，按钮上写明一次几条。 */
+    + (function(){
+        var s3 = st(), d3 = today(), r3 = s3.days[d3] || {};
+        var np = chemPool().length;
+        return '<div class="onebox chembox"><b>🧪 化学专练</b>'
+          + '<div class="small" style="margin:2px 0 8px">'
+          + '<b>这一屏不考你，它带着你走</b>：念给你听 → 你跟着说 → 最后才让你自己说。<b>全程不打分。</b>'
+          + '<br><b>第一条永远从你自己的地盘出</b>（His-tag · 咪唑 · EDTA · 硫酯 —— 你天天在做的东西），'
+          + '再往外走到糖苷键、ATP 为什么高能这些。'
+          + '<br>题库里够格的化学题一共 <b>' + np + '</b> 条 · 今天已经跟读 <b>' + (r3.shadow || 0) + '</b> 句。</div>'
+          + '<div class="row"><label>一次 <select id="chemn">'
+          + [3,5,8].map(function(k){ return '<option value="'+k+'"'+(k===3?' selected':'')+'>'+k+' 条</option>'; }).join('')
+          + '</select></label>'
+          + '<button class="main" onclick="chemStart()">开始</button>'
+          + '<span class="small">薄弱区剂量小是故意的 —— 三条走完就算今天做到了。</span></div></div>'; })()
     /* 2026-09-23：三轮。每轮 ＝ 每张卡 3 条，一轮过完全部卡。 */
     + (function(){
         var h2 = '<div class="onebox"><b>跟读 · 三轮</b>'
@@ -784,7 +803,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>1160883</b>'
+      + ' · 版本 <b>723f936</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1385,14 +1404,19 @@ function chemPool(){
   });
   return out;
 }
-function chemStart(){
+function chemStart(n){
+  n = n || (+((($('chemn')||{}).value) || 3)) || 3;
   var pool = chemPool();
-  if(pool.length < 3){ alert('化学题不够（只找到 ' + pool.length + ' 条）。'); return; }
+  if(pool.length < n){ alert('化学题不够（只找到 ' + pool.length + ' 条）。'); return; }
   var turf = shuffle(pool.filter(function(o){ return o.turf; }));
   var rest = shuffle(pool.filter(function(o){ return !o.turf; }));
-  var list = turf.slice(0,1).concat(rest.slice(0,2));
-  while(list.length < 3) list.push((turf.concat(rest))[list.length]);
-  CH = {list:list, i:0, tag:'🧪 化学', done:'三条化学过完了', again:'chemStart()'};
+  /* ⚠ 第一条永远从她自己的地盘出（His-tag · 咪唑 · EDTA · 硫酯…）——
+     她说「看着就发怵」，所以开头必须是她天天在做的东西。 */
+  var list = turf.slice(0, 1).concat(rest.slice(0, n - 1));
+  var all = turf.concat(rest);
+  while(list.length < n && list.length < all.length) list.push(all[list.length]);
+  CH = {list:list, i:0, tag:'🧪 化学', done:list.length + ' 条化学过完了',
+        again:'chemStart(' + list.length + ')'};
   walkRender();
 }
 /* ======================= 📖 跟读式 · 2026-09-23 改成「一页一题、四步、每步都录」 =======================
@@ -1589,6 +1613,14 @@ function paintThirds(){
   box.innerHTML = h;
 }
 function bare(w){ return String(w||'').toLowerCase().replace(/[\u2019\u02bc']s(?![a-z])/g,'').replace(/[^a-z]/g,''); }
+/* ⚠ 2026-09-23 这两行也被我误删过，演练台的「跟读这一份」因此一点就没反应
+   （`Uncaught ReferenceError: WK is not defined`）。
+   跟 PERROUND 是同一个死法：重构 paintThirds 时用「切到下一个 function」，
+   夹在函数之间的 var 被连带切掉。**同一天同一种刀法，砍掉了三个变量。**
+   现在改用无头浏览器实跑 ＋ 逐个按钮点一遍（tools/smoke.py）来兜底。 */
+var WK = null;      /* 当前这一题：{src, keys, mode3, busy, done:{1,2,3a,3b}, cardId} */
+var WREC = {mr:null, stream:null, chunks:[]};   /* 真录音：MediaRecorder ＋ 它的流和分片 */
+
 function keyWords(x){
   var set = {};
   (String(x.en||'').match(/<b>[^<]*<\/b>/g) || []).forEach(function(b){
