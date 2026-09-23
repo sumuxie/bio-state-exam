@@ -130,6 +130,13 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .chemstep{font-size:13px;color:var(--dim);margin:14px 0 6px;font-weight:600}
 .chembar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
 .onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
+.parts{display:flex;gap:10px;margin:0;flex-wrap:wrap}
+.part{flex:1;min-width:190px;border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.part.done{border-color:var(--good)}
+.part h4{margin:0 0 5px;font-size:14.5px}
+.part .bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin:0 0 6px}
+.part .bar i{display:block;height:100%;background:var(--accent)}
+.part .small{margin:0 0 8px}
 .onebox select{max-width:420px}
 .modes{display:flex;gap:10px;margin:14px 0 0;flex-wrap:wrap}
 .modes .mode{flex:1;min-width:210px;text-align:left;padding:12px 14px;line-height:1.5}
@@ -164,9 +171,15 @@ details[open]>summary:before{content:'▾ ';}
 .wd{cursor:pointer;border-radius:3px}
 .wd:hover{background:color-mix(in srgb,var(--accent) 14%,transparent)}
 .wd.kw{font-weight:650;color:var(--accent)}
-.bl{color:var(--accent);letter-spacing:1px;cursor:pointer;border-radius:3px}
-.bl:hover{background:color-mix(in srgb,var(--accent) 14%,transparent)}
-.bl.show{font-weight:650;letter-spacing:0;text-decoration:underline}
+/* ⚠ 2026-09-23 她：「我其实比较喜欢**涂掉**，而不是挖空」「就用**浅褐色**涂掉」。
+   涂掉 ＝ 原话还在底下，只是被马克笔盖住；挖空是空的。对要出声的用法，涂掉更对。 */
+.bl{background:#c9a97e;color:transparent;cursor:pointer;border-radius:2px;padding:0 1px;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.bl:hover{background:#b9955f}
+
+.bl.show{background:#f0e2cc;color:inherit;font-weight:650}
+@media (prefers-color-scheme:dark){.bl{background:#7d6547}.bl:hover{background:#96794f}
+  .bl.show{background:#3a2f22;color:inherit}}
 .gap{color:var(--dim);opacity:.6}
 .wkctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:6px 0}
 .wkctl button.sel{background:var(--accent);color:#fff;border-color:var(--accent)}
@@ -696,6 +709,26 @@ function home(){
       + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '
       + '<button class="ghost" onclick="histPage()">练过的</button> '
       + '<button class="ghost" onclick="statsPage()">分析</button></p>'
+    /* 2026-09-23：三轮。每轮 ＝ 每张卡 3 条，一轮过完全部卡。 */
+    + (function(){
+        var h2 = '<div class="onebox"><b>跟读 · 三轮</b>'
+          + '<div class="small" style="margin:2px 0 8px">'
+          + '<b>一轮 ＝ 每张卡 3 条</b>，所以每一轮都过完全部 ' + usable.length + ' 张卡。'
+          + '走过一遍的题，下次出现<b>关键词浅褐色涂掉</b>，点一下露出来。'
+          + '<br>挑哪 3 条的顺序：<b>定义 → 为什么 → 陷阱 → 相邻考点</b>。</div>'
+          + '<div class="parts">';
+        for (var rn = 1; rn <= 3; rn++){
+          var rs = roundStat(rn);
+          var pc = rs.tot ? Math.round(100 * rs.done / rs.tot) : 0;
+          h2 += '<div class="part' + (pc >= 100 ? ' done' : '') + '"><h4>轮 ' + rn
+             + (pc >= 100 ? ' ✓' : '') + '</h4>'
+             + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
+             + '<div class="small">走过 <b>' + rs.done + ' / ' + rs.tot + '</b>（' + pc + '%）'
+             + ' · 约 ' + Math.round(rs.tot * 2 / 60 * 10) / 10 + ' 小时 · 摊到 12 天 = 每天 '
+             + Math.round(rs.tot * 2 / 12) + ' 分钟</div>'
+             + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
+        }
+        return h2 + '</div></div>'; })()
     /* 2026-09-23：只练一张卡，题数自己定。 */
     + '<div class="onebox"><b>只练一张</b>'
       + '<div class="small" style="margin:2px 0 8px">挑一张卡，自己定问几个问题。流程跟一组一样。</div>'
@@ -1116,15 +1149,6 @@ function report(fromHome, hist){
     + '<div class="small" style="margin-top:8px">⚠ 识别会把专业词听坏（helicase 听成 hello kiss 这种），'
     + '所以<b>机器算的漏词只是线索</b>。每题下面有三个自评键，<b>那个才是进度</b>。'
     + '已评 <b id="gcount">' + graded + '</b> / ' + log.length + '</div>'
-    + (function(){
-        /* ⚠ 2026-09-23 名单下来之后加的：一组练完给**一条**考官式的第二层问题。
-           一次只给一条是故意的 —— 这一屏她已经说过「看着就很崩溃」，不能再堆东西。 */
-        var p = EXPROBE[Math.floor(Math.random()*EXPROBE.length)];
-        return '<div class="do" style="margin-top:14px"><b>下一次，如果坐在对面的是 ' + esc(p[0])
-          + '，他答完多半会再推一句：</b>'
-          + '<p class="sayit" style="margin:8px 0 0;font-size:17px" onclick="sayEl(this)">' + esc(p[1]) + '</p>'
-          + '<div class="small">' + esc(p[2])
-          + ' · ⚠ <b>这是按公开的研究方向推出来的提问风格，不是原题。</b></div></div>'; })()
     + '<p style="margin:14px 0 0"><button class="main" onclick="home()">回首页</button> '
     + '<button onclick="copyOut()">复制进度给老师</button></p></div>'
     /* ⚠ 2026-09-23：纠错这一屏不该是一堵要读的墙。她说「阅读困难…不然强制性必须
@@ -1350,6 +1374,80 @@ function chemStart(){
    每一步都录：转录标色（绿 ＝ 说到，红 ＝ 没说到）＋ 能回放自己的声音。**仍然不打分。**
    遮哪些词：卡上作者加粗的（en 里的 <b>）＋ 她说的「看着稍微难一点的」＝ 8 个字母以上的实词。
    跟主 app 的「遮词」是同一条规矩。 */
+/* ======================= 三轮 =======================
+   ⚠ 2026-09-23。1162 条追问、12 天 —— **怎么切三份都是三座山**（一份 387 条 ＝ 13 小时）。
+   她：「你这样分我怎么可能学的完」。她是对的。
+   所以「一轮」不是「全部的三分之一」，是「**每张卡的 3 条**」：
+   轮 1 ＝ 每张卡最该先会的 3 条 ＝ 123 条 ＝ 每天 20 分钟 × 4 天，**一轮过完全部 41 张卡**。
+   挑的顺序：定义类 → 为什么类 → 陷阱 → 相邻考点 → 怎么发现的 → 桥，`高` 优先。 */
+var GPRI = [['定义', 0], ['为什么', 1], ['陷阱', 2], ['相邻', 3], ['怎么发现', 4], ['桥', 5]];
+function gpri(g){
+  g = String(g || '');
+  for(var i=0;i<GPRI.length;i++) if(g.indexOf(GPRI[i][0]) !== -1) return GPRI[i][1];
+  return 6;
+}
+/* 这张卡的题，按「该先会哪一条」排好。
+   ⚠ 2026-09-23 抽检时发现的坑：光按组优先级排序，卡 01 轮 1 抽到的三条**全是定义类**
+   —— 因为定义类有三条就把名额占满了。这不是「定义 ＋ 为什么 ＋ 陷阱」。
+   所以改成**按组轮转取**：先各组取第一条，再各组取第二条，依此类推。
+   这样轮 1 拿到的就是三个不同类型的问题。 */
+function ranked(c){
+  var bucket = {};
+  qlist(c).forEach(function(x, i){
+    var p = gpri(x.g);
+    (bucket[p] = bucket[p] || []).push({x:x, i:i});
+  });
+  var keys = Object.keys(bucket).map(Number).sort(function(a, b){ return a - b; });
+  keys.forEach(function(k){
+    bucket[k].sort(function(a, b){
+      var ra = (a.x.r === '高') ? 0 : 1, rb = (b.x.r === '高') ? 0 : 1;
+      if(ra !== rb) return ra - rb;
+      return a.i - b.i;
+    });
+  });
+  var out = [], round = 0, any = true;
+  while(any){
+    any = false;
+    keys.forEach(function(k){
+      if(bucket[k].length > round){ out.push(bucket[k][round].x); any = true; }
+    });
+    round++;
+  }
+  return out;
+}
+var PERROUND = 3;
+function roundItems(n){          /* n = 1 2 3；返回这一轮全部的题 */
+  var out = [];
+  CARDS.forEach(function(c){
+    var r = ranked(c);
+    if(!r.length) return;
+    r.slice((n-1)*PERROUND, n*PERROUND).forEach(function(x){ out.push({card:c, item:x, turf:0}); });
+  });
+  return out;
+}
+function wKey(card, q){ return card + '|' + hash(q); }
+function wSeen(s, card, q){ return ((s.walked || {})[wKey(card, q)] || 0); }
+function wMark(card, q){
+  var s = st(); s.walked = s.walked || {};
+  var k = wKey(card, q); s.walked[k] = (s.walked[k] || 0) + 1;
+  save(s);
+}
+function roundStat(n){
+  var s = st(), list = roundItems(n), done = 0;
+  list.forEach(function(o){ if(wSeen(s, o.card.id, o.item.q)) done++; });
+  return {tot:list.length, done:done};
+}
+function walkRound(n){
+  var s = st(), list = roundItems(n);
+  if(!list.length){ alert('这一轮没有题。'); return; }
+  /* 没走过的排前面；走过的留在后面，那时是涂掉的。 */
+  list.forEach(function(o){ o.seen = wSeen(s, o.card.id, o.item.q); });
+  list.sort(function(a, b){ return a.seen - b.seen; });
+  CH = {list:list, i:0, tag:'📖 轮 ' + n, done:'轮 ' + n + ' 到这里',
+        again:'walkRound(' + n + ')', round:n};
+  walkRender();
+}
+
 var WK = null;      /* 当前这一题：{src, keys, mode3, busy, done:{1,2,3a,3b}, cardId} */
 var WREC = {mr:null, stream:null, chunks:[]};
 
@@ -1364,11 +1462,12 @@ function keyWords(x){
   return set;
 }
 function isKey(w){ var k = bare(w); return !!(k && WK && WK.keys[k]); }
+/* ⚠ 2026-09-23 改成「涂掉」：原词还在，只是被浅褐色盖住，点一下露出来。
+   标点留在外面不盖，不然一行全是褐块，看不出断句。 */
 function blankOf(w){
   var m = w.match(/^([^A-Za-z]*)([A-Za-z][A-Za-z-]*)(.*)$/);
   if(!m) return esc(w);
-  var n = Math.max(3, Math.min(12, m[2].length));
-  return esc(m[1]) + new Array(n+1).join('_') + esc(m[3]);
+  return esc(m[1]) + esc(m[2]) + esc(m[3]);
 }
 /* mode: read 全文可点 · cloze 关键词挖掉（点空格可以偷看一个）· keys 只留关键词 · blind 全遮 */
 function wkText(mode){
@@ -1387,7 +1486,7 @@ function wkText(mode){
   }).join('') + '</p>';
 }
 function sayW(el){ var t2 = (el.textContent||'').replace(/[^A-Za-z-]+$/,''); if(t2) say(t2); }
-function peek(el){ var w = el.getAttribute('data-w')||''; el.textContent = w; el.className = 'bl show'; sayW(el); }
+function peek(el){ el.className = 'bl show'; sayW(el); }
 
 /* 录：转录（Web Speech）＋ 真录音（MediaRecorder，能回放）。两个都开，哪个不行就少哪个。 */
 function wkRecStart(){
@@ -1484,6 +1583,7 @@ function walkRender(){
   var src = strip(x.ez || x.en || '').replace(/^["“]/, '').replace(/["”]$/, '');
   WK = {src:src, keys:keyWords(x), mode3:'blind', busy:null, done:{}, cardId:o.card.id};
   var s3 = st(), d = today(), r = s3.days[d] || {};
+  var seen = wSeen(s3, o.card.id, x.q);
   $('main').innerHTML =
     '<div class="card">'
     + '<span class="chemtag">' + (CH.tag || '📖 跟读') + ' ' + (CH.i+1) + ' / ' + CH.list.length + '</span>'
@@ -1492,8 +1592,12 @@ function walkRender(){
       + (o.turf ? ' · <b>这是你自己天天在做的东西</b>' : '') + '</p>'
     + '<div class="do"><b>这一屏不考你。</b>四步，每一步都录下来，你自己听。<b>不打分。</b>'
       + '<span class="small"> 点任何一个词 ＝ 念那个词。</span></div>'
-    + wkStep(1, '① 看着整段，出声读一遍', 'read', '1', '开始读')
-    + wkStep(2, '② 难一点的词挖掉了 —— 半读半背一遍（点空格可以偷看一个）', 'cloze', '2', '开始')
+    /* ⚠ 2026-09-23 她：「在原本已经读过一遍的题目上直接涂掉」。
+       走过一遍的，第 ① 步就不再给全文了，直接是涂掉的那一版。 */
+    + (seen
+       ? wkStep(1, '① 这条你走过 ' + seen + ' 遍了 —— 关键词已经涂掉，点一下露出来', 'cloze', '1', '开始读')
+       : wkStep(1, '① 看着整段，出声读一遍', 'read', '1', '开始读'))
+    + wkStep(2, '② 关键词涂掉了 —— 半读半背一遍（点褐块可以露出一个）', 'cloze', '2', '开始')
     + '<div class="wkstep"><p class="chemstep">③ 差不多了 —— 背两遍</p>'
       + '<div class="wkctl"><button id="wkm-blind" class="sel" onclick="wkMode(\'blind\')">直接背</button>'
       + '<button id="wkm-keys" onclick="wkMode(\'keys\')">关键词提示</button></div>'
@@ -1508,7 +1612,12 @@ function walkRender(){
     + '</div>';
   window.scrollTo(0,0);
 }
-function walkNext(){ if(!CH) return; CH.i++; walkRender(); }
+function walkNext(){
+  if(!CH) return;
+  var o = CH.list[CH.i];
+  if(o) wMark(o.card.id, o.item.q);   /* 走过就记一次 —— 下次这一条是涂掉的 */
+  CH.i++; walkRender();
+}
 function walkDone(){
   var s = st(), d = today(), r = s.days[d] || {};
   $('main').innerHTML = '<div class="card"><h2>' + (CH && CH.done || '这一轮过完了') + '</h2>'
@@ -1558,26 +1667,6 @@ function oneStart(){
   ask();
 }
 
-/* ⚠ 考官的「第二层问题」句式。2026-09-23。
-   ⚠ **这些不是原题。** 网上流传的那份委员会分析里引了一些答辩记录原话，
-   我查不到出处，所以**一句都没有照抄**。下面是从他们**公开的研究方向**推出来的
-   「他答完之后习惯往哪边再推一下」—— **练的是第二层问题的形状，不是猜题**。 */
-var EXPROBE = [
- ['Hodek',      'And what happens to that molecule next?',                    '那个分子接下来怎么样？'],
- ['Hodek',      'Which enzyme does that, and where in the cell?',             '这一步是哪个酶做的，在细胞的什么地方？'],
- ['Hudeček',    'That instrument — what physical quantity does it measure?',  '你说的那台仪器，测的到底是什么物理量？'],
- ['Hudeček',    'How would you know that number is not an artefact?',         '你怎么知道那个数不是假象？'],
- ['Lipovová',   'Would that still work outside a test tube?',                 '这个拿到试管外面还成立吗？'],
- ['Lipovová',   'What are the kinetic limits of that?',                       '它的动力学极限在哪？'],
- ['Martínková', 'Say that again so someone outside the field understands it.', '再说一遍，让不在这个领域的人也听得懂。'],
- ['Martínková', 'What does that mean for the cell, not for the molecule?',     '这件事对细胞意味着什么，不是对分子。'],
- ['Martínek',   'Does that actually answer the question you started with?',    '这个答案回答了你一开始提的那个问题吗？'],
- ['Ryšlavá',    'How do you explain that?',                                    '你怎么解释这个现象？'],
- ['Ryšlavá',    'What would you expect upstream of it?',                       '它的上游你预期是什么？'],
- ['Šulc',       'Is that enough evidence to conclude it?',                     '这些证据够得出这个结论吗？'],
- ['Šulc',       'How would you check that experimentally?',                    '这一点你打算怎么用实验验证？'],
-];
-function probeFor(who){ return EXPROBE.filter(function(p){ return p[0] === who; }); }
 
 /* ---- 点读 ---- */
 function sayEl(el){ if(!el) return; var t2 = el.textContent || ''; if(t2.trim()) say(t2); }
