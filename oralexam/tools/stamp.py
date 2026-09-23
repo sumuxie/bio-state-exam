@@ -51,4 +51,22 @@ for P in PAGES:
     t2 = PAT.sub(sub, t)
     if t2 != t:
         io.open(P, 'w', encoding='utf-8', newline='\n').write(t2)
+# ⚠ 2026-09-23：页面本身的地址不带版本号，所以「推上去了」跟「她看到了」中间
+# 隔着一个缓存周期。把每个页面自己的短哈希印进页面（占位符 __BUILD__ 或上一次的值），
+# 这样她报一眼版本号就知道手里是不是新的。
+import re as _re2
+_BV = _re2.compile(r'版本 <b>[0-9a-f]{7}|__BUILD__</b>')
+for P in PAGES:
+    if not os.path.exists(P):
+        continue
+    t = io.open(P, encoding='utf-8').read()
+    if '版本 <b>' not in t:
+        continue
+    base = _re2.sub(r"版本 <b>[0-9a-f]{7}</b>", "版本 <b>__BUILD__</b>", t)
+    h = hashlib.md5(base.encode('utf-8')).hexdigest()[:7]
+    t2 = base.replace('__BUILD__', h)
+    if t2 != t:
+        io.open(P, 'w', encoding='utf-8', newline=chr(10)).write(t2)
+    print(u'  %s 构建号 %s' % (os.path.basename(P), h))
+
 print(u'盖了 %d 个数据文件的版本号，其中 %d 个变了（%d 个页面）' % (n, changed, pages))
