@@ -165,9 +165,10 @@ h3.sec.secmain i{box-shadow:0 0 0 3px var(--card)}
 .part button.main{font-size:14px;padding:9px 16px}
 #main button.ghost{font-size:13px;padding:7px 13px}
 /* 挑句：☆ 在句首，挑中整句高亮（她：「选中句子后句子会被 highlight」）*/
-p.wktxt.sent{margin:0 0 7px;padding:3px 6px;border-radius:6px;transition:background .12s}
-p.wktxt.sent.on{background:#fff2c2}
-@media (prefers-color-scheme:dark){p.wktxt.sent.on{background:#4a3f1c}}
+.wktxt .sent{padding:2px 3px;border-radius:6px;transition:background .12s;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sent.on{background:#fff2c2}
+@media (prefers-color-scheme:dark){.sent.on{background:#4a3f1c}}
 .pkgrp{margin:0 0 16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
 .pkq{margin:0 0 6px;font-size:13px;font-weight:700;display:flex;gap:8px;align-items:baseline}
 .pkq span{margin-left:auto;font-size:11px;color:var(--faint);font-weight:400}
@@ -175,10 +176,16 @@ p.pkline{margin:0 0 4px;padding:3px 6px;border-radius:6px;font-size:14.5px;line-
 p.pkline span{cursor:pointer}
 b.pk{cursor:pointer;color:var(--faint);font-size:14px;margin-right:6px;user-select:none}
 b.pk:hover{color:var(--accent)}
-p.wktxt.sent.on b.pk{color:#c9a227}
+.sent.on b.pk{color:#c9a227}
+/* 进度条：三屏共用。⚠ 条画的是「全部题」——三个数里只有它代表「离背完还有多远」。*/
+.prog{margin:8px 0 12px}
+.pbar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:0 0 5px}
+.pbar i{display:block;height:100%;background:var(--accent)}
+.pnum{font-size:11.5px;color:var(--dim);line-height:1.6}
+.pnum b{color:var(--ink);font-weight:700}
 .earbox{border-color:#7a5cff}
 .spot{margin:10px 0 0;padding:9px 11px;border:1px solid var(--line);border-radius:9px}
-.spot .bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin:0 0 6px}
+.spot .bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:0 0 6px}
 .spot .bar i{display:block;height:100%;background:var(--accent)}
 .spot .small{margin:0}
 .strm{margin:0 0 12px}
@@ -187,7 +194,7 @@ p.wktxt.sent.on b.pk{color:#c9a227}
 .part{flex:1;min-width:190px;border:1px solid var(--line);border-radius:10px;padding:11px 13px}
 .part.done{border-color:var(--good)}
 .part h4{margin:0 0 5px;font-size:14.5px}
-.part .bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin:0 0 6px}
+.part .bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:0 0 6px}
 .part .bar i{display:block;height:100%;background:var(--accent)}
 .part .small{margin:0 0 8px}
 .onebox select{max-width:420px}
@@ -868,7 +875,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>7a9d8e5</b>'
+      + ' · 版本 <b>a912b91</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -905,6 +912,7 @@ function ask(){
     '<div class="card">'
     + '<div class="small">第 ' + n + ' / ' + total + ' 张 · ' + esc(cardTitle(c.card))
       + (isMain ? ' · <b>主问题</b>' : ' · 追问 ' + S.sub + ' / ' + c.follow.length) + '</div>'
+    + progStrip(c.card.id)
     + '<p class="cardline" id="cardline"></p>'
     + '<p class="bridge" id="bridge"></p>'
     + '<p class="q">' + esc(q.q) + '</p>'
@@ -1625,10 +1633,59 @@ function cardThird(c, kind, n){
   return r.slice((n-1)*per, n*per).map(function(x){ return {card:c, item:x, turf:0}; });
 }
 function wKey(card, q){ return card + '|' + hash(q); }
+function ymdOf(ts){
+  var d = new Date(ts);
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0')
+       + '-' + String(d.getDate()).padStart(2,'0');
+}
+/* ⚠ 2026-09-24 她：「加个**时间戳**吧，比如 1-30 题是 9.23 背的，30-60 题是 9.24，
+   然后我可以**按时间点进去这些题**」。
+   问题是**原来的记录里没有日期** —— s.walked[键] 只是个次数。所以两步走：
+   · 往后：wMark() 第一次走过就把当天写进 s.wday[键]（见下面）；
+   · 往回：从 s.hist 倒推 —— 每一组都带 when（ISO）和 log（card ＋ q），
+     按时间从早到晚扫，第一次见到就写上；历史里没有的用 s.qres[键].ts 兜底。
+   ⚠ **倒推不出来的不瞎编日子**，单独归成「没记日子的」一堆，屏上明说。 */
+function wdayAll(s){ return s.wday || (s.wday = {}); }
+function backfillDays(s){
+  if(s.wdayFilled) return s;
+  var m = wdayAll(s);
+  (s.hist || []).slice().sort(function(a, b){
+    return String(a.when || '').localeCompare(String(b.when || ''));
+  }).forEach(function(p){
+    /* ⚠ when 存的是 ISO（UTC），直接 slice(0,10) 拿到的是 **UTC 那天**。
+       她常常练到后半夜，而 wMark 记的是 **本地那天**（today()）——
+       两边不一致会出现同一晚上被拆成两天。统一按**本地**算。 */
+    var ts = Date.parse(p.when);
+    if(isNaN(ts)) return;
+    var d = ymdOf(ts);
+    (p.log || []).forEach(function(x){
+      if(!x || !x.card || !x.q) return;
+      var k = wKey(x.card, x.q);
+      if(!m[k]) m[k] = d;
+    });
+  });
+  var qr = s.qres || {};
+  Object.keys(qr).forEach(function(k){
+    if(m[k] || !qr[k] || !qr[k].ts) return;
+    m[k] = ymdOf(qr[k].ts);
+  });
+  s.wdayFilled = 1;
+  save(s);
+  return s;
+}
+function earPlays(s){ return s.earPlay || (s.earPlay = {}); }
+function earStars(s){ return s.earStar || (s.earStar = {}); }
+function dayLabel(d){
+  if(d === '_none') return '没记日子的';
+  var p = d.split('-');
+  return (+p[1]) + ' 月 ' + (+p[2]) + ' 日';
+}
 function wSeen(s, card, q){ return ((s.walked || {})[wKey(card, q)] || 0); }
 function wMark(card, q){
   var s = st(); s.walked = s.walked || {};
   var k = wKey(card, q); s.walked[k] = (s.walked[k] || 0) + 1;
+  var m = wdayAll(s);
+  if(!m[k]) m[k] = today();   /* ⚠ 日戳只记**第一次**走过的那天 */
   save(s);
 }
 function roundStat(n){
@@ -1650,6 +1707,35 @@ function thirdStat(c, kind, n){
   var s = st(), list = cardThird(c, kind, n), done = 0;
   list.forEach(function(o){ if(wSeen(s, o.card.id, o.item.q)) done++; });
   return {tot:list.length, done:done};
+}
+/* ⚠ 2026-09-24 她：「**所有背诵卡里我都需要进度提示**，
+   特别重要的是**主题 coverage** 和**所有题的进度**」。
+   口径跟别处一致：`wSeen()` ＝ **出过声才算**，看一遍不算。 */
+function progStats(cardId){
+  var s = st(), p = {tot:0, done:0, cards:0, cdone:0, ctot:0, cd:0};
+  CARDS.forEach(function(c){
+    var list = qlist(c), any = 0, n = 0;
+    list.forEach(function(x){
+      p.tot++;
+      if(wSeen(s, c.id, x.q)){ p.done++; any = 1; n++; }
+    });
+    if(!list.length) return;
+    p.cards++;
+    if(any) p.cdone++;
+    if(c.id === cardId){ p.ctot = list.length; p.cd = n; }
+  });
+  return p;
+}
+function pct(a, b){ return b ? Math.round(a * 100 / b) : 0; }
+function progStrip(cardId){
+  var p = progStats(cardId);
+  return '<div class="prog">'
+    + '<div class="pbar"><i style="width:' + pct(p.done, p.tot) + '%"></i></div>'
+    + '<div class="pnum"><b>主题</b> ' + p.cdone + ' / ' + p.cards + ' 张开过口 ('
+      + pct(p.cdone, p.cards) + '%) · <b>全部题</b> ' + p.done + ' / ' + p.tot + ' ('
+      + pct(p.done, p.tot) + '%)'
+    + (cardId && p.ctot ? ' · <b>这张卡</b> ' + p.cd + ' / ' + p.ctot : '')
+    + '</div></div>';
 }
 function cardById(id){
   for(var i=0;i<CARDS.length;i++) if(CARDS[i].id === id) return CARDS[i];
@@ -1794,19 +1880,52 @@ function wkText(mode){
   }
   /* ⚠ 2026-09-24：按**句**切开渲染，每句前面一个 ☆ —— 点一下整句高亮，
      磨耳朵就只播挑中的这些。句子里的单词照旧点一下就念（sayW 不动）。 */
+  /* ⚠ 2026-09-24 她：「跟读里面变成**一句话一行字**，这个太难受了，
+     能不能还是**变成一段**？」——上一版每句一个 <p>（块级），当然一句一行。
+     现在是**一个 <p> 里一串 <span class="sent">**：版面回到一整段，
+     每句照样有自己的 ☆ 和高亮。 */
   var cid = (WK && WK.cardId) || '';
-  return splitSent(WK.src).map(function(s2){
+  return '<p class="wktxt">' + sentsKeep(WK.src).map(function(s2){
     var k = hash(strip(s2));
+    /* ⚠ 兼容：并短句之前挑的那些，键是按老的切法算的。老键也认一下，
+       高亮不会因为换了切法就凭空消失。 */
     var on = !!pickAll()[cid + '|' + k];
+    if(!on){
+      splitSent(s2).forEach(function(old){
+        if(pickAll()[cid + '|' + hash(strip(old))]) on = true;
+      });
+    }
     var body = s2.split(/(\s+)/).map(function(w){
       if(!w.trim()) return w;
       if(mode === 'cloze' && isKey(w)) return '<span class="bl" data-w="' + esc(w) + '" onclick="peek(this)">' + blankOf(w) + '</span>';
       return '<span class="wd" onclick="sayW(this)">' + esc(w) + '</span>';
     }).join('');
-    return '<p class="wktxt sent' + (on ? ' on' : '') + '">'
+    return '<span class="sent' + (on ? ' on' : '') + '">'
       + '<b class="pk" data-s="' + escAttr2(s2) + '" onclick="pickToggle(\'' + cid + '\', \'' + k + '\', this)">'
-      + (on ? '★' : '☆') + '</b>' + body + '</p>';
-  }).join('');
+      + (on ? '★' : '☆') + '</b>' + body + '</span>';
+  }).join(' ') + '</p>';
+}
+/* 按句切，但**一个字都不丢**。
+   ⚠ splitSent() 会把 12 个字以内的句子**整句扔掉** —— 那个函数原本只用来挑句子，
+   扔掉短句无所谓；但跟读的正文是她**要照着读**的，扔字就是错。
+   这里太短的并进上一句。 */
+function sentsKeep(t2){
+  var out = splitAllSent(t2), res = [];
+  out.forEach(function(x){
+    if(res.length && x.length <= 12) res[res.length - 1] += ' ' + x;
+    else res.push(x);
+  });
+  return res;
+}
+function splitAllSent(t2){
+  var s2 = strip(t2).replace(/[“”"]/g, '');
+  var parts = s2.split(/([.?!])\s+/), out = [], cur = '';
+  for(var i=0;i<parts.length;i++){
+    cur += parts[i];
+    if(/^[.?!]$/.test(parts[i])){ out.push(cur.trim()); cur = ''; }
+  }
+  if(cur.trim()) out.push(cur.trim());
+  return out.filter(function(x){ return x.length > 0; });
 }
 function escAttr2(s){ return esc(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
 function sayW(el){ var t2 = (el.textContent||'').replace(/[^A-Za-z-]+$/,''); if(t2) say(t2); }
@@ -1914,6 +2033,7 @@ function walkRender(){
     + '<p class="chemq sayit" onclick="sayEl(this)">' + esc(x.q) + '</p>'
     + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
       + (o.turf ? ' · <b>这是你自己天天在做的东西</b>' : '') + '</p>'
+    + progStrip(o.card.id)
     /* ⚠ 2026-09-24 她：「想看一下进度，但是不敢点回主页」。进度搬到这儿，不用离开。 */
     + (function(){
         var done = 0;
@@ -2080,10 +2200,56 @@ function altOf(c, item){
   return {k:k + 1, of:same.length};
 }
 
+/* 所有能出声的条目，走一遍 CARDS。按天 / 自标 那几个池子都从这里筛。 */
+function earAllItems(){
+  var out = [];
+  CARDS.forEach(function(c){
+    qlist(c).forEach(function(x){ if(x.en || x.ez) out.push({card:c, item:x}); });
+  });
+  return out;
+}
+/* 按「第一次走过的那天」分堆。每堆带两个数：
+   **整批都听过几遍**（这堆里的最小值 —— 说「每一条都至少听过 N 遍」才是实话）
+   和**一共播了多少次**。 */
+function earDays(){
+  var s = backfillDays(st()), m = wdayAll(s), pl = earPlays(s), byD = {};
+  earAllItems().forEach(function(o){
+    if(!wSeen(s, o.card.id, o.item.q)) return;
+    var k = wKey(o.card.id, o.item.q);
+    var d = m[k] || '_none';
+    var b = byD[d] || (byD[d] = {d:d, n:0, tot:0, min:-1});
+    var p = pl[k] || 0;
+    b.n++; b.tot += p;
+    b.min = (b.min < 0 || p < b.min) ? p : b.min;
+  });
+  return Object.keys(byD).sort(function(a, b){
+    if(a === '_none') return 1;
+    if(b === '_none') return -1;
+    return b.localeCompare(a);        /* 新的排前面 */
+  }).map(function(d){ return byD[d]; });
+}
 function earPool(mode){
   if(mode === true) mode = 'done';
   if(mode === false) mode = 'all';
   var s = st(), out = [];
+  if(mode === 'star'){
+    /* ⚠ 她要的「**自标多听戳**」 —— 跟日戳是两回事，自己占一个池子。 */
+    var mk = earStars(s);
+    earAllItems().forEach(function(o){
+      if(mk[wKey(o.card.id, o.item.q)]) out.push(o);
+    });
+    return shuffle(out);
+  }
+  if(mode.indexOf('day:') === 0){
+    var want = mode.slice(4);
+    var md = wdayAll(backfillDays(s));
+    earAllItems().forEach(function(o){
+      if(!wSeen(s, o.card.id, o.item.q)) return;
+      if((md[wKey(o.card.id, o.item.q)] || '_none') !== want) return;
+      out.push(o);
+    });
+    return shuffle(out);
+  }
   if(mode === 'pick'){
     /* ⚠ 2026-09-24 她：「**怎么只播一句啊 你应该播每个问题下面我高亮的所有句子**」。
        —— 上一版把每一句当成独立一条，于是同一道题被念好几遍，碎得要命。
@@ -2160,7 +2326,7 @@ function pickPage(scope){
     qlist(c).forEach(function(x){
       if(!x.en && !x.ez) return;
       if(PKSCOPE === 'done' && !wSeen(s, c.id, x.q)) return;
-      var ss = splitSent(x.ez || x.en || '');
+      var ss = sentsKeep(x.ez || x.en || '');
       if(!ss.length) return;
       groups.push({c:c, q:x.q, ss:ss});
       n += ss.length;
@@ -2216,18 +2382,45 @@ function earBox(){
     + '<br>🧪 <b>化学专区</b>跟「化学专练」是<b>同一批题</b>，第一条一样从你自己的地盘出。</div>'
     + '<div class="row"><label>播哪些 <select id="earwhich">'
     + '<option value="pick"' + (pk ? '' : ' disabled') + '>★ 只播我挑的句子（' + pk + ' 组）</option>'
+    + '<option value="star"' + (earPool('star').length ? '' : ' disabled') + '>'
+      + '⭐ 自标多听（' + earPool('star').length + '）</option>'
     + '<option value="chemdone"' + (chd ? '' : ' disabled') + '>🧪 化学 · 我练过的（' + chd + '）</option>'
     + '<option value="chem">🧪 化学 · 全部（' + ch + '）</option>'
     + '<option value="done" selected>只播我练过的（' + done + '）</option>'
     + '<option value="all">全部（' + all + '）</option></select></label>'
     + '<button class="main" onclick="earStart()">▶ 开始听</button>'
     + '<button class="ghost" onclick="pickPage()">☆ 去挑句</button>'
-    + '<span class="small" id="earst"></span></div></div>';
+    + '<span class="small" id="earst"></span></div>'
+    + earDayRow() + '</div>';
 }
-function earStart(){
-  var mode = (($('earwhich') || {}).value) || 'done';
+/* 「按哪天背的进去」那一行。⚠ 2026-09-24 她要的。 */
+function earDayRow(){
+  var ds = earDays();
+  if(!ds.length) return '';
+  var h = '<div class="small" style="margin:10px 0 0"><b>或者按哪天背的进去：</b></div>'
+        + '<div class="board" style="margin-top:6px">';
+  ds.forEach(function(b){
+    h += '<button class="bbtn" onclick="earStart(\'day:' + b.d + '\')">'
+       + '<b>' + dayLabel(b.d) + '</b> · ' + b.n + ' 条'
+       + ' · <span class="small">每条至少听过 ' + Math.max(0, b.min) + ' 遍'
+       + '（共 ' + b.tot + ' 次）</span></button>';
+  });
+  h += '</div>';
+  var none = ds.filter(function(b){ return b.d === '_none'; })[0];
+  if(none) h += '<div class="small" style="margin:6px 0 0">⚠ <b>「没记日子的」是 2026-09-24 '
+    + '之前走过的</b> —— 那时候程序根本没存日期，'
+    + '能从演练历史里倒推的已经倒推了，'
+    + '剩下这 ' + none.n + ' 条我<b>不瞎编日子</b>。</div>';
+  return h;
+}
+function earStart(m){
+  var mode = m || (($('earwhich') || {}).value) || 'done';
   var list = earPool(mode);
   if(!list.length){
+    if(mode === 'star'){
+      alert('还没标过多听 —— 磨耳朵的时候点那个 ☆ 标多听。');
+      return;
+    }
     if(mode === 'chemdone'){
       alert('化学题里你还没练过的 —— 换成「🧪 化学 · 全部」，或者先去化学专练走两条。');
       return;
@@ -2252,6 +2445,10 @@ function earScreen(){
   if(!EAR) return;
   var o = EAR.list[EAR.i];
   var alt = altOf(o.card, o.src || o.item);
+  var s9 = st(), k9 = (o.card && o.item && o.item.q) ? wKey(o.card.id, o.item.q) : '';
+  var play9 = k9 ? (earPlays(s9)[k9] || 0) : 0;
+  var star9 = k9 ? earStars(s9)[k9] : null;
+  var day9 = k9 ? (wdayAll(s9)[k9] || '') : '';
   $('main').innerHTML = '<div class="card">'
     + '<span class="chemtag">' + (EAR.chem ? '🧪 磨耳朵 · 化学 ' : '🎧 磨耳朵 ')
       + (EAR.i+1) + ' / ' + EAR.list.length + '</span>'
@@ -2259,7 +2456,11 @@ function earScreen(){
     + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
       + (o.nsent > 1 ? ' · <b>你挑的 ' + o.nsent + ' 句连起来</b>' : '')
       + (alt ? ' · <b class="altbadge">这道题有 ' + alt.of + ' 个说法 · 这是第 '
-               + alt.k + ' 个，另一个单独念</b>' : '') + '</p>'
+               + alt.k + ' 个，另一个单独念</b>' : '')
+      + (day9 ? ' · ' + dayLabel(day9) + '背的' : '')
+      + ' · 听过 <b id="earplay">' + play9 + '</b> 遍'
+      + (star9 ? ' · <b class="altbadge">' + dayLabel(star9) + '标的多听</b>' : '') + '</p>'
+    + progStrip(o.card && o.card.id)
     + '<div class="do" id="eara" style="font-size:17px;line-height:1.85"></div>'
     + '<p style="margin:18px 0 0">'
       + '<button class="main" onclick="earToggle()" id="earbtn">⏸ 暂停</button> '
@@ -2267,6 +2468,8 @@ function earScreen(){
       + '<button class="' + (EAR.loop ? 'main' : 'ghost') + '" onclick="earLoop()" id="earloop">'
         + (EAR.loop ? '🔁 循环中' : '🔁 单条循环') + '</button> '
       + '<button class="ghost" onclick="earHold()">⏳ 再多停 5 秒</button> '
+      + '<button class="' + (star9 ? 'main' : 'ghost') + '" onclick="earStarToggle()" id="earstar">'
+        + (star9 ? '⭐ 已标多听' : '☆ 标多听') + '</button> '
       + '<button class="ghost" onclick="earNext(1)">下一条 →</button> '
       + '<button class="ghost" onclick="earStop();home()">停下回首页</button></p>'
     + '<p class="small" style="margin:8px 0 0">'
@@ -2283,6 +2486,26 @@ function earReplay(){
   EAR.on = true;
   var b = $('earbtn'); if(b) b.textContent = '⏸ 暂停';
   earStep();
+}
+/* ⭐ 自标多听 —— 她：「每题再加个星标功能…单独有个『自标多听戳』」。
+   ⚠ 存的是**标记那天的日子**，跟「哪天背的」那个日戳是两回事，两个戳各管各的。 */
+function earStarToggle(){
+  if(!EAR) return;
+  var o = EAR.list[EAR.i];
+  if(!o || !o.card || !o.item || !o.item.q) return;
+  var s = st(), m = earStars(s), k = wKey(o.card.id, o.item.q);
+  if(m[k]) delete m[k]; else m[k] = today();
+  save(s);
+  var b = $('earstar');
+  if(b){ b.textContent = m[k] ? '⭐ 已标多听' : '☆ 标多听'; b.className = m[k] ? 'main' : 'ghost'; }
+}
+/* 念完一遍就记一次。⚠ 循环模式下每遍都算 —— 「听了几遍」本来就该这么算。 */
+function earCount(o){
+  if(!o || !o.card || !o.item || !o.item.q) return;
+  var s = st(), p = earPlays(s), k = wKey(o.card.id, o.item.q);
+  p[k] = (p[k] || 0) + 1;
+  save(s);
+  var e = $('earplay'); if(e) e.textContent = p[k];
 }
 /* 单条循环开关 */
 function earLoop(){
@@ -2343,6 +2566,7 @@ function earStep(){
          · 循环打开 → 原地再念一遍，不往下走；
          · 间隔可调（默认 2 秒，原来 0.9 秒是我拍的，太赶）；
          · 「再多停 5 秒」是一次性的，用完清掉。 */
+      earCount(o);
       var wait = (EAR.gap || 2000) + (EAR.extra || 0);
       EAR.extra = 0;
       var tip = $('earst2');
