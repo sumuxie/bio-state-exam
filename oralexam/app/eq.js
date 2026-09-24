@@ -51,6 +51,8 @@
     /* 跟读 / 磨耳朵那两屏的公式盒子 */
     '.eqbox{margin:12px 0 0;padding:8px 12px 10px;border:1px dashed var(--line,#ddd);border-radius:10px}',
     '.eqbox .eqh{font-size:11.5px;opacity:.7;margin:0 0 2px}',
+    'details.eqbox summary.eqh{cursor:pointer;list-style:revert}',
+    'details.eqbox[open] summary.eqh{margin-bottom:6px}',
     '.eqbox code.eq{margin:6px auto;font-size:18px}'
   ].join('\n');
 

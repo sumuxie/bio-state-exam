@@ -296,7 +296,7 @@ details[open]>summary:before{content:'▾ ';}
 <script src="data/27.js?v=6a8a20b5"></script>
 <script src="data/28.js?v=8cf1c0ab"></script>
 <script src="data/31.js?v=a48b3140"></script>
-<script src="data/32.js?v=3f341efe"></script>
+<script src="data/32.js?v=fb6d7fe0"></script>
 <script src="data/aa.js?v=09cd5b07"></script>
 <script src="data/gly.js?v=844f60ee"></script>
 <script src="data/land.js?v=1269368e"></script>
@@ -875,7 +875,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>cd8bf1f</b>'
+      + ' · 版本 <b>3e7a9be</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2065,14 +2065,24 @@ function eqsOfCard(c){
   return out.slice(0, 6);
 }
 function eqBox(x, c){
-  var eqs = eqsOf(x), head = '🧪 这一条里的公式 —— <b>看着念，不用逐字背</b>';
-  if(!eqs.length && c){
-    eqs = eqsOfCard(c);
-    head = '🧪 这张卡上的公式 —— <b>看着念，不用逐字背</b>';
+  var eqs = eqsOf(x);
+  var body = function(list){
+    return list.map(function(e){ return '<p><code>' + e + '</code></p>'; }).join('');
+  };
+  /* 这一条自己带的式子 —— 直接摆出来，它就是这段话里的东西。 */
+  if(eqs.length){
+    return '<div class="eqbox"><p class="eqh">🧪 这一条里的公式 —— <b>看着念，不用逐字背</b></p>'
+      + body(eqs) + '</div>';
   }
-  if(!eqs.length) return '';
-  return '<div class="eqbox"><p class="eqh">' + head + '</p>'
-    + eqs.map(function(e){ return '<p><code>' + e + '</code></p>'; }).join('') + '</div>';
+  /* ⚠ 2026-09-24 她：「公式一大块在下面 怎么回事」「**比如这个题根本就不需要公式**」。
+     卡级兑底是为了主问题那一屏（mainOf 的 cn 是空的）做的，
+     但卡 32 这种题摆一堆式子就是噪音。
+     所以卡级的**默认折起来**：需要的时候点一下，不需要的时候就一行字。 */
+  var cardEqs = c ? eqsOfCard(c) : [];
+  if(!cardEqs.length) return '';
+  return '<details class="eqbox"><summary class="eqh">🧪 这张卡上的公式（' + cardEqs.length
+    + ' 条）—— <b>这一条本身用不到，需要再展开</b></summary>'
+    + body(cardEqs) + '</details>';
 }
 
 function walkRender(){
@@ -2879,6 +2889,6 @@ if(!CARDS.length){
   home();
 }
 </script>
-<script src="eq.js?v=8e3139af"></script>
+<script src="eq.js?v=ec08a701"></script>
 </body>
 </html>
