@@ -272,10 +272,10 @@ recog:[
  tail:'<b>这是一个想接的口子</b>：他顺着走就到 yeast display，那是你的主场。'},
 
 {q:'Why do you need vitamin C?',
-  ez:'“Because ascorbate is a cofactor of three hydroxylases. Those enzymes make collagen’s hydroxyproline and hydroxylysine. They act after translation. They work in the cisternae of the E R. Three other things are needed there. Oxygen. Two oxoglutarate. And iron two plus. Generally the three enzymes are a prolyl four hydroxylase. There is also a prolyl three hydroxylase. And a lysyl five hydroxylase. Without ascorbate the collagen is not stable.”',
-  ezcn:'因为<b>抗坏血酸是那三个羟化酶的辅因子</b>——<b>它们在翻译之后、在内质网腔里造出胶原的羟脯氨酸和羟赖氨酸，同时还需要氧气、2-氧代戊二酸和 Fe²⁺。</b><b>通用地说，那三个酶是脯氨酰 4-羟化酶、脯氨酰 3-羟化酶和赖氨酰 5-羟化酶。</b><b>没有抗坏血酸，羟化做不完，胶原就不稳定。</b>⚠ <b>「坏血病」这个病名书里没有，要提就说 that is the biochemistry behind scurvy。</b>', odd:1,
+  ez:'“Because ascorbate is a cofactor of three hydroxylases. Those enzymes make collagen’s hydroxyproline and hydroxylysine. They act after translation. They work in the cisternae of the E R. Three other things are needed there. Oxygen. Alpha-ketoglutarate. And iron two plus. Generally the three enzymes are a prolyl four hydroxylase. There is also a prolyl three hydroxylase. And a lysyl five hydroxylase. Without ascorbate the collagen is not stable.”',
+  ezcn:'因为<b>抗坏血酸是那三个羟化酶的辅因子</b>——<b>它们在翻译之后、在内质网腔里造出胶原的羟脯氨酸和羟赖氨酸，同时还需要氧气、α-酮戊二酸和 Fe²⁺。</b><b>通用地说，那三个酶是脯氨酰 4-羟化酶、脯氨酰 3-羟化酶和赖氨酰 5-羟化酶。</b><b>没有抗坏血酸，羟化做不完，胶原就不稳定。</b>⚠ <b>「坏血病」这个病名书里没有，要提就说 that is the biochemistry behind scurvy。</b>', odd:1,
  mean:'问的是 <b>hydroxylation</b>，也是 ER 里的翻译后修饰。',
- say:'“Because ascorbate is a cofactor of the three hydroxylases that make collagen’s hydroxyproline and hydroxylysine after translation, in the cisternae of the ER. It works there alongside oxygen, 2-oxoglutarate and Fe²⁺. Generally those three enzymes are a prolyl 4-hydroxylase, a prolyl 3-hydroxylase and a lysyl 5-hydroxylase. Without <b>ascorbate</b> the hydroxylation does not finish and the collagen is not stable.”',
+ say:'“Because ascorbate is a cofactor of the three hydroxylases that make collagen’s hydroxyproline and hydroxylysine after translation, in the cisternae of the ER. It works there alongside oxygen, α-ketoglutarate and Fe²⁺. Generally those three enzymes are a prolyl 4-hydroxylase, a prolyl 3-hydroxylase and a lysyl 5-hydroxylase. Without <b>ascorbate</b> the hydroxylation does not finish and the collagen is not stable.”',
  tail:'⚠「坏血病」这个病名<b>书里没有</b>，辅因子清单有（p112）。要提病名就说 “that is the biochemistry behind scurvy”。'},
 
 {q:'How does a protein know to go to the lysosome?',

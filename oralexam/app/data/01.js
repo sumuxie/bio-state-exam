@@ -351,10 +351,10 @@ recog:[
  say:'“Because they are built on different secondary structures. Keratin is α-helical — two pairs of parallel helices twisted into a <b>left-handed</b> four-strand cable, the protofibril. Silk fibroin is <b>antiparallel β</b>, and it is rich in glycine, alanine and serine — the three smallest side chains. That is what lets the sheets stack.”'},
 
 {q:'Why do you need vitamin C?',
-  ez:'“Because collagen contains two modified residues. They are hydroxyproline and hydroxylysine. They are made after translation. Specific hydroxylases in the E R make them. Those enzymes need several things. They need oxygen and two oxoglutarate. They need metal ions. And they need ascorbate. Without ascorbate the hydroxylation does not finish. The collagen is then not stable.”',
+  ez:'“Because collagen contains two modified residues. They are hydroxyproline and hydroxylysine. They are made after translation. Specific hydroxylases in the E R make them. Those enzymes need several things. They need oxygen and alpha-ketoglutarate. They need metal ions. And they need ascorbate. Without ascorbate the hydroxylation does not finish. The collagen is then not stable.”',
   ezcn:'因为<b>胶原里含两种修饰过的残基：羟脯氨酸和羟赖氨酸</b>，<b>它们是翻译之后由内质网里专门的羟化酶做出来的</b>。<b>那些酶需要氧、α-酮戊二酸、金属离子——以及抗坏血酸</b>。<b>没有抗坏血酸，羟化做不完，胶原就不稳定。</b>', odd:1,
  mean:'<b>问的是 collagen 的羟化。</b>入口完全不像生化题。',
- say:'“Because collagen contains hydroxyproline and hydroxylysine, and those are made after translation by specific hydroxylases in the ER. Those enzymes need oxygen, 2-oxoglutarate, metal ions — and <b>ascorbate</b>. Without it the hydroxylation does not finish and the collagen is not stable.”',
+ say:'“Because collagen contains hydroxyproline and hydroxylysine, and those are made after translation by specific hydroxylases in the ER. Those enzymes need oxygen, α-ketoglutarate, metal ions — and <b>ascorbate</b>. Without it the hydroxylation does not finish and the collagen is not stable.”',
  tail:'⚠ 「坏血病」这个病名<b>书里没有</b>，辅因子清单有（p112）。要说病名就说 “that is the biochemistry behind scurvy”，别说成书上写的。'},
 
 {q:'Why is a scar different from normal skin?',
