@@ -293,7 +293,7 @@ details[open]>summary:before{content:'▾ ';}
 <script src="data/23.js?v=28a50eca"></script>
 <script src="data/24.js?v=c2a40b86"></script>
 <script src="data/25.js?v=59771812"></script>
-<script src="data/27.js?v=f9f7151d"></script>
+<script src="data/27.js?v=6a8a20b5"></script>
 <script src="data/28.js?v=8cf1c0ab"></script>
 <script src="data/31.js?v=a48b3140"></script>
 <script src="data/32.js?v=03647dd1"></script>
@@ -875,7 +875,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>5d436a2</b>'
+      + ' · 版本 <b>4ee8f69</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1047,7 +1047,7 @@ function revealAnswer(x){
     + '<div class="ans">' + markDef(ez) + '</div>'
     /* ⚠ 2026-09-24 她要「所有」屏都有公式。口试演练这一路放在**答案揭晓**这一屏，
        不放在问题屏 —— 放问题屏就是把答案摄在她眼前，这一组就不算数了。 */
-    + eqBox(x)
+    + eqBox(x, cardById(x.card))
     + (x.ezcn ? '<details><summary>中文对照</summary><div class="small" style="line-height:1.9">'
         + x.ezcn + '</div></details>' : '')
     + '<div class="row" style="margin-top:14px">'
@@ -2043,10 +2043,35 @@ function eqsOf(x){
   }
   return out;
 }
-function eqBox(x){
-  var eqs = eqsOf(x);
+/* 整张卡的式子（速背的注解和 big ＋ 追问的注解）。⚠ 给主问题那一屏兜底用：
+   `mainOf()` 给主问题造的对象里 `cn` 是写死的空字符串，它自己一条式子都没有，
+   而主问题恰恰是她每张卡**最先念**的那一条。 */
+function eqsOfCard(c){
+  if(!c) return [];
+  var bag = [];
+  (c.cram || []).forEach(function(p){
+    bag = bag.concat(eqsOf({cn:p.note || '', warn:p.warn || '', big:p.big || ''}));
+  });
+  qlist(c).forEach(function(x){ bag = bag.concat(eqsOf(x)); });
+  var out = [], seen = {};
+  bag.forEach(function(e){
+    /* ⚠ 去重的时候把箭头上的标签和空白先拿掉 ——
+       同一条式子在 note 里带标签、在 big 里不带，不归一就会摆两遍。 */
+    var k = strip(e).replace(/\[[^\]]*\]/g, '').replace(/\s+/g, '');
+    if(seen[k]) return;
+    seen[k] = 1;
+    out.push(e);
+  });
+  return out.slice(0, 6);
+}
+function eqBox(x, c){
+  var eqs = eqsOf(x), head = '🧪 这一条里的公式 —— <b>看着念，不用逐字背</b>';
+  if(!eqs.length && c){
+    eqs = eqsOfCard(c);
+    head = '🧪 这张卡上的公式 —— <b>看着念，不用逐字背</b>';
+  }
   if(!eqs.length) return '';
-  return '<div class="eqbox"><p class="eqh">🧪 这一条里的公式 —— <b>看着念，不用逐字背</b></p>'
+  return '<div class="eqbox"><p class="eqh">' + head + '</p>'
     + eqs.map(function(e){ return '<p><code>' + e + '</code></p>'; }).join('') + '</div>';
 }
 
@@ -2077,12 +2102,15 @@ function walkRender(){
           + '<br><b>停在哪儿都算数</b> —— 回首页不会丢，下次点「接着上次」就回到这一条。</div></div>'; })()
     + '<div class="do"><b>这一屏不考你。</b>四步，每一步都录下来，你自己听。<b>不打分。</b>'
       + '<span class="small"> 点任何一个词 ＝ 念那个词。</span></div>'
-    + eqBox(x)
     /* ⚠ 2026-09-23 她：「在原本已经读过一遍的题目上直接涂掉」。
        走过一遍的，第 ① 步就不再给全文了，直接是涂掉的那一版。 */
     + (seen
        ? wkStep(1, '① 这条你走过 ' + seen + ' 遍了 —— 关键词已经涂掉，点一下露出来', 'cloze', '1', '开始读')
        : wkStep(1, '① 看着整段，出声读一遍', 'read', '1', '开始读'))
+    /* ⚠ 2026-09-24 她：「**我的意思不是让你改跟背的内容**，而是**在这下面加上
+       这个一眼就能看懂公式**」。所以盒子摆在她要念的那段**下面**，
+       而且只是**另外摆一份** —— 原文一个字没动。 */
+    + eqBox(x, o.card)
     + wkStep(2, '② 关键词涂掉了 —— 半读半背一遍（点褐块可以露出一个）', 'cloze', '2', '开始')
     + '<div class="wkstep"><p class="chemstep">③ 差不多了 —— 背两遍</p>'
       + '<div class="wkctl"><button id="wkm-blind" class="sel" onclick="wkMode(\'blind\')">直接背</button>'
@@ -2494,7 +2522,7 @@ function earScreen(){
       + ' · 听过 <b id="earplay">' + play9 + '</b> 遍'
       + (star9 ? ' · <b class="altbadge">' + dayLabel(star9) + '标的多听</b>' : '') + '</p>'
     + progStrip(o.card && o.card.id)
-    + eqBox(o.src || o.item)
+    + eqBox(o.src || o.item, o.card)
     + '<div class="do" id="eara" style="font-size:17px;line-height:1.85"></div>'
     + '<p style="margin:18px 0 0">'
       + '<button class="main" onclick="earToggle()" id="earbtn">⏸ 暂停</button> '
