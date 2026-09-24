@@ -127,6 +127,7 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .chemtag{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;
   background:var(--accent);color:#fff;font-weight:700;margin-bottom:8px}
 .chemfrom{font-size:12.5px;color:var(--dim);margin:0 0 12px}
+.altbadge{color:var(--accent)}
 .chemstep{font-size:13px;color:var(--dim);margin:14px 0 6px;font-weight:600}
 .chembar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
 .onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
@@ -867,7 +868,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>807ac8e</b>'
+      + ' · 版本 <b>7a9d8e5</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2060,6 +2061,25 @@ function earSay(text, voice, pitch, cb){
    ⚠ 挑中的是**一整句**，但没有「问」。所以回去找这句属于哪一条追问
      （在 ez/en 里做包含匹配），找到就用那道题当男声的提问，Q&A 的形状保住；
      找不到就跳过男声、直接念这一句。 */
+/* 这一条在自己卡里是「第几个说法」。同一张卡里问句一模一样的有 8 道
+   （β-氧化 · 糖酵解 · DNA 复制 · 酶的作用 · 转化四法 · 两个 landscape ·
+   报告基因 · 两种聚合酶）。⚠ 她说「我多看看不同的语序」是好事，
+   **前提是别把两个答案混在一起念** —— 所以标出来，也分开念。 */
+function altOf(c, item){
+  if(!c || !item || !item.q) return null;
+  /* ⚠ 不能用 `x === item` 认人：**qlist() 每调一次都重新造对象**（365 行），
+     同一条在两次调用里不是同一个对象。按答案开头认。 */
+  var same = [], k = -1;
+  var key = strip(item.en || item.ez || '').slice(0, 60);
+  qlist(c).forEach(function(x){
+    if(x.q !== item.q) return;
+    if(k < 0 && strip(x.en || x.ez || '').slice(0, 60) === key) k = same.length;
+    same.push(x);
+  });
+  if(same.length < 2 || k < 0) return null;
+  return {k:k + 1, of:same.length};
+}
+
 function earPool(mode){
   if(mode === true) mode = 'done';
   if(mode === false) mode = 'all';
@@ -2075,19 +2095,24 @@ function earPool(mode){
       if(!v || !v.text) return;
       var txt = strip(v.text);
       if(txt.length < 8) return;
-      var c = cardById(v.card), item = null, pos = 0;
+      var c = cardById(v.card), item = null, pos = 0, ix = -1;
       if(c){
         var probe = txt.slice(0, 40);
-        qlist(c).forEach(function(x){
+        qlist(c).forEach(function(x, i){
           if(item) return;
           var body = strip(x.ez || '') + ' ' + strip(x.en || '');
           var at = body.indexOf(probe);
-          if(at !== -1){ item = x; pos = at; }
+          if(at !== -1){ item = x; pos = at; ix = i; }
         });
       }
-      var gk = (v.card || '') + '|' + (item ? hash(item.q) : '_loose');
+      /* ⚠ 2026-09-24 她：「**两个答案穿插起来了**，这就让整个答案都完全不伦不类了」。
+         病根在这一行：原来的键是 `卡 + hash(问句)`，于是**同一张卡里问句一样、
+         答案是两条**的（全 app 8 道）被并成一组，再按 pos 排序就交替着排了 ——
+         pos 是句子在**各自那条**原文里的位置，跨条比没有意义。
+         现在键用**这一条在卡里的序号**，两条答案各走各的。 */
+      var gk = (v.card || '') + '|' + (ix >= 0 ? ix : '_loose');
       if(!byQ[gk]) byQ[gk] = {card:c || {id:v.card, q:v.card, qcn:v.card},
-                              q:(item ? item.q : ''), parts:[]};
+                              q:(item ? item.q : ''), src:item, parts:[]};
       byQ[gk].parts.push({t:txt, pos:pos});
     });
     Object.keys(byQ).forEach(function(gk){
@@ -2095,7 +2120,7 @@ function earPool(mode){
       g.parts.sort(function(a, b){ return a.pos - b.pos; });   /* 按原文顺序 */
       var joined = g.parts.map(function(p){ return p.t; }).join(' ');
       out.push({card:g.card, item:{q:g.q, ez:joined, en:joined},
-                pick:1, nsent:g.parts.length});
+                src:g.src, pick:1, nsent:g.parts.length});
     });
     return shuffle(out);
   }
@@ -2226,12 +2251,15 @@ function earStop(){
 function earScreen(){
   if(!EAR) return;
   var o = EAR.list[EAR.i];
+  var alt = altOf(o.card, o.src || o.item);
   $('main').innerHTML = '<div class="card">'
     + '<span class="chemtag">' + (EAR.chem ? '🧪 磨耳朵 · 化学 ' : '🎧 磨耳朵 ')
       + (EAR.i+1) + ' / ' + EAR.list.length + '</span>'
     + '<p class="chemq" id="earq">' + esc(o.item.q || '（你挑的一句）') + '</p>'
     + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
-      + (o.nsent > 1 ? ' · <b>你挑的 ' + o.nsent + ' 句连起来</b>' : '') + '</p>'
+      + (o.nsent > 1 ? ' · <b>你挑的 ' + o.nsent + ' 句连起来</b>' : '')
+      + (alt ? ' · <b class="altbadge">这道题有 ' + alt.of + ' 个说法 · 这是第 '
+               + alt.k + ' 个，另一个单独念</b>' : '') + '</p>'
     + '<div class="do" id="eara" style="font-size:17px;line-height:1.85"></div>'
     + '<p style="margin:18px 0 0">'
       + '<button class="main" onclick="earToggle()" id="earbtn">⏸ 暂停</button> '
