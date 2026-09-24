@@ -68,6 +68,8 @@ details.room[open]>summary{border-bottom:1px solid var(--line);background:
   color-mix(in srgb,var(--accent) 7%,transparent)}
 summary .n{font-size:12.5px;color:var(--dim);font-weight:400}
 .roombody{padding:6px 12px 12px}
+.storyp{font-size:15px;line-height:1.95;margin:2px 0 0}
+.story>summary{color:var(--accent)}
 .roomnote{font-size:13px;color:var(--dim);padding:8px 4px 4px;line-height:1.7}
 /* 二级 · 每一格 */
 details.box{border-left:3px solid var(--line);margin:8px 0;padding-left:12px}
@@ -193,7 +195,8 @@ var EXAMINERS = [
    ['生物转化 · 异源物', /biotransformation|xenobiotic|detoxif|conjugat/i],
    ['单加氧酶 · 羟化', /monooxygenase|hydroxylase|hydroxylat/i],
    ['致癌物 · DNA 加合物', /carcinogen|D N A adduct|mutagen/i],
-   ['抗体 · 免疫球蛋白', /antibod|immunoglobulin/i]]],
+   ['抗体 · 免疫球蛋白', /antibod|immunoglobulin/i]],
+  '<b>他一辈子在问同一个问题：身体拿一个外来的分子怎么办。</b>答案是两相。第一相，细胞色素 P450 把它氧化，装上一个可以下手的位置；第二相，结合酶给它挂一个亲水的把手，它就能被排掉。<b>但他反复撞见的是反面：氧化之后往往更毒。</b>解毒这条路的中间产物可以比你吃进去的那个东西更致癌，这也是他研究黄酮类和食品添加剂的理由。<br><br>要检测 P450，他需要抗体，而他走了一条不常见的路：<b>用鸡的 IgY</b>，从蛋黄里纯化，一个蛋黄约一百毫克，取样完全不伤动物；还做<b>抗肽抗体</b>去认那些没人知道功能的「孤儿」P450。凭这套抗体，他们第一次在小龙虾的肝胰腺里找到 P450，也能在人肝微粒体里定量 P450 1A1。<br><br><b>所以他问抗原、表位、ELISA，不是考你教科书，那是他每天的工具。</b>⚠ <b>答不上来时往这两句上圆</b>：「对任何外来分子，身体都是两相：先氧化，再结合排掉」；「抗体是一个探针，所以我得先知道我的样品处理会不会把表位破坏掉」。'],
 
  ['Hudeček', 'Prof. RNDr. Jiří Hudeček, CSc.', 'PřF UK · 生物物理化学',
   '光谱学怎么读出一个蛋白：<b>UV-Vis · 圆二色谱 CD · 荧光 · SPR</b>，以及由它们算出来的 <b>Kd</b> 和化学计量。'
@@ -202,7 +205,8 @@ var EXAMINERS = [
    ['圆二色谱 CD', /circular dichroism|\bC D spectr/i],
    ['荧光', /fluorescen/i],
    ['SPR · 结合常数 Kd', /surface plasmon|\bS P R\b|dissociation constant|\bK ?d\b|binding affinity/i],
-   ['二级结构 α / β', /secondary structure|alpha helix|α-helix|beta sheet|β-structure/i]]],
+   ['二级结构 α / β', /secondary structure|alpha helix|α-helix|beta sheet|β-structure/i]],
+  '<b>他是系里的光谱学那个人。</b>他从不看蛋白的图片，他测一个物理量，再从这个量推结构。<br><br>一九八二年他参与的工作是用差示扫描量热法看 P450 怎么变性，结论是<b>两步</b>，第一步在五十摄氏度上下，而且这一步内部还分几个阶段——<b>意思是同一个蛋白的不同区域，稳定性不一样。</b>后来他用「钻石烷」类分子去标记 P450 2B4 的底物结合位点，再用质谱找出被标上的那几个胰蛋白酶片段，就这样把口袋画了出来；他也用<b>荧光相关光谱</b>追一个染料怎么结合到 P450 3A4 上。<br><br><b>所以「这台仪器到底测的是什么」不是刁难，那就是他的全部方法。</b>⚠ <b>答不上来时的顺序</b>：先说物理量，再说你从它推出什么。吸收之差、转动快慢、折射率变化——先把量说出口，结论自己就跟上来了。'],
 
  ['Lipovová', 'Doc. Ing. Petra Lipovová, Ph.D.', 'VŠCHT · 生化与微生物研究所（跨校那一位）',
   '应用酶学与蛋白质工程：<b>定点突变改底物特异性</b>、糖苷酶的转糖基、植物核酸酶、嗜冷酶。'
@@ -211,7 +215,8 @@ var EXAMINERS = [
    ['重组表达 · 纯化', /recombinant|expression system|purif|affinity tag|His tag/i],
    ['酶动力学 Km · kcat', /Michaelis|\bK ?m\b|kcat|turnover number|catalytic efficiency/i],
    ['酶的稳定性 · 最适条件', /thermostab|optimum (?:temperature|p ?H)|denaturat|refold/i],
-   ['糖苷酶 · 核酸酶', /glycosidase|glucosidase|nuclease|RNase|DNase/i]]],
+   ['糖苷酶 · 核酸酶', /glycosidase|glucosidase|nuclease|RNase|DNase/i]],
+  '<b>她是跨校那一位，来自化工大学，所以她的本能是「这东西能不能做出来、能不能用」。</b><br><br>她的酶很具体。<b>α-L-岩藻糖苷酶</b>：岩藻糖挂在糖链末端，跟免疫应答、受精和发育都有关，而她找这个酶的办法是<b>按活性筛基因组文库</b>——不是先知道序列，是先看哪个克隆有活性，再在大肠杆菌里表达、用亲和层析纯化出来。她也做<b>米曲霉的 S1 核酸酶</b>，追的是结构上哪些地方决定了它认底物、怎么切、为什么不专一、怎么被抑制。另外她带过从 <b>Paenibacillus</b> 里做 <b>L-天冬酰胺酶</b>的项目，和丹麦的 Novozymes 合作。<br><br><b>这一串连起来就是一条流水线：克隆 → 表达 → 纯化 → 表征 → 放大。</b>她给你出的那四道题正好沿着这条线：易错 PCR 建库、包涵体怎么变可溶、怎么测「真正有活性」的酶浓度。⚠ <b>答不上来时按流水线的顺序说</b>：构建、宿主、表达、可溶性、纯化、活性测定——她要听的是下一步做什么，不是定义。'],
 
  ['Martínková', 'Prof. RNDr. Markéta Martínková, Ph.D.', 'PřF UK · 含血红素传感器蛋白实验室',
   '<b>血红素怎么当传感器</b>：气体分子（O₂ / NO / CO）结合到血红素铁上，构象一变，信号就传出去。'
@@ -220,7 +225,8 @@ var EXAMINERS = [
    ['氧结合 · 协同性 · T/R 态', /oxygen bind|cooperativ|sigmoid|\bT state|\bR state|tense|relaxed|Hill coefficient|Bohr/i],
    ['气体信号 NO · CO', /nitric oxide|carbon monoxide/i],
    ['信号转导 · 二组分系统', /signal transduction|two component|histidine kinase|second messenger/i],
-   ['别构调节', /allosteric/i]]],
+   ['别构调节', /allosteric/i]],
+  '<b>她实验室问的是：一个细胞怎么闻到一种气体。</b>答案是<b>血红素</b>。血红素里的铁可以可逆地结合氧、一氧化氮或一氧化碳；气体一结合，蛋白的构象就变；构象一变，分子另一头的功能结构域就被打开。<b>结合在这一端，干活在那一端——中间传过去的就是构象。</b><br><br>她的模型蛋白是<b>球蛋白偶联的传感器</b>：一个叫 AfGcHK 的组氨酸激酶，来自土壤细菌，氧结合到二价铁血红素上之后，它 C 端那个结构域开始<b>自磷酸化</b>；另一个是二鸟苷酸环化酶 YddV。她的实验室 2013 年建立，看构象变化用的正是<b>氢氘交换质谱</b>——所以「哪一部分交换得更快」是她每天读的数据。<br><br><b>她的方向在你卡上已经有三处落点</b>：二组分系统在卡 12，血红素与卟啉在 x-cur 和卡 01，别构与 T/R 态在卡 01。⚠ <b>答不上来时回到她的框架</b>：「一个位点上的结合改变了构象，而构象本身就是信号」。这句话对她研究的每一个蛋白都成立。'],
 
  ['Martínek', 'Doc. RNDr. Václav Martínek, Ph.D.', 'PřF UK · 计算建模与对接',
   '计算机上的生物物理：<b>分子对接、分子动力学、结合自由能</b>。'
@@ -229,7 +235,8 @@ var EXAMINERS = [
   + '他真正会抓的是<b>目标与结论对不对称</b>。',
   [['结合能 · 热力学 ΔG', /free energy|binding energy|thermodynamic|ΔG|delta G|spontaneous/i],
    ['活性位点 · 结合口袋', /active site|binding pocket|catalytic residue|induced fit/i],
-   ['非共价作用力', /van der Waals|hydrophobic|hydrogen bond|ionic bond|steric/i]]],
+   ['非共价作用力', /van der Waals|hydrophobic|hydrogen bond|ionic bond|steric/i]],
+  '<b>他是 P450 那个组里管计算的那一半。</b>代表性的一篇：用<b>柔性对接加分子动力学、再加受力分子动力学</b>，去建 P450 1A2 和细胞色素 b5 之间那个蛋白—蛋白接触面；另一篇是把<b>活性位点突变</b>和计算配在一起，解释 P450 1A1、1A2、1B1 是怎么把马兜铃酸还原掉的。<b>注意这两篇的共同点：模拟旁边一定配一个能验证它的湿实验。</b><br><br>所以他那四道题问的全是<b>模拟的边界</b>：为什么必须加反离子、RMSD 拉平能说明什么、为什么 RNA 对接比小分子难。他不是在考软件。⚠ <b>答不上来时最安全的一句</b>：「我的工作是湿实验，没有建模部分」，然后接「如果要回答这个问题，我会做哪个实验」。再加一句他一定会点头的：<b>「模拟能提出假设，不能证明它」</b>。'],
 
  ['Ryšlavá', 'Prof. RNDr. Helena Ryšlavá, CSc.', 'PřF UK · 植物生物化学实验室',
   '植物在胁迫下怎么改代谢：<b>抗氧化酶（SOD、过氧化物酶、过氧化氢酶）· 活性氧 · 次级代谢</b>，'
@@ -239,7 +246,8 @@ var EXAMINERS = [
    ['活性氧 ROS · 抗氧化', /reactive oxygen|oxidative stress|free radical|superoxide|antioxidant|peroxidase|catalase/i],
    ['植物特有代谢 · 固氮', /nitrogen fixation|nitrogenase|\bC4\b|CAM |photorespirat/i],
    ['次级代谢产物', /secondary metabolite|alkaloid|terpen|flavonoid|phenolic/i],
-   ['蛋白酶 · 蛋白酶体', /protease|proteasome|peptidase|ubiquitin/i]]],
+   ['蛋白酶 · 蛋白酶体', /protease|proteasome|peptidase|ubiquitin/i]],
+  '<b>她做植物在逆境下怎么改代谢。</b>方法很朴素也很硬：测酶活、测次级代谢物、测氨基酸和蛋白含量，看植物被逼到什么程度时把哪条路打开。<br><br><b>而她的酶恰好就是你卡 28 上那三个</b>：PEP 羧化酶、NADP-苹果酸酶、丙酮酸磷酸双激酶——C4 里负责把二氧化碳浓缩起来的那一套。更有意思的是她关心它们的<b>非光合版本</b>：同样这几个酶在别的细胞里维持 pH，并且<b>给柠檬酸循环补中间产物</b>。也就是回补反应，那是 x-meta 那张卡的骨架。她的组也做<b>被病毒感染的植物</b>，例如给感染了马铃薯 Y 病毒的烟草做热处理之后代谢怎么变。<br><br>⚠ <b>她的典型问法是「你怎么解释这个现象」</b>，要的不是背诵，是从现象往上推机制。<b>答不上来时的方向</b>：说哪个酶的活性变了，再说植物为什么会想要这个变化。C4、回补、活性氧这三个词里任何一个都能把话接回她的主场。'],
 
  ['Šulc', 'Doc. RNDr. Miroslav Šulc, Ph.D.', 'PřF UK · 生物分子结构功能蛋白质组学',
   '<b>用交联质谱画出蛋白复合物的架构</b>：非天然氨基酸掺进去、光照交联、酶切、串联质谱定位。'
@@ -247,7 +255,8 @@ var EXAMINERS = [
   [['质谱 · 肽段', /mass spectrometr|tandem mass|\bM S\/M S\b|tryptic|peptide mapping|proteomic/i],
    ['交联 cross-linking', /cross ?link|crosslink/i],
    ['蛋白–蛋白相互作用', /protein protein interaction|\bP P I\b|two hybrid|immunoprecipit|pull ?down|\bE M S A\b/i],
-   ['非天然氨基酸 · 无细胞', /non ?canonical amino acid|unnatural amino acid|cell free|\bC F P S\b/i]]],
+   ['非天然氨基酸 · 无细胞', /non ?canonical amino acid|unnatural amino acid|cell free|\bC F P S\b/i]],
+  '<b>他用质谱画蛋白复合物的架构图。</b>做法是：先把一个<b>非天然氨基酸</b>掺进蛋白里，这个氨基酸被光一照就变成交联剂，把当时挨着它的那个蛋白锁住；然后酶切、上串联质谱，定位交联到底发生在哪两个残基之间。一个交联点就是一条距离约束，攒够了就能拼出谁挨着谁。他的仪器是 MALDI-FTICR 和 MALDI-TOF/TOF，模型蛋白用过<b>钙调蛋白</b>，也做过<b>天然电泳</b>配质谱。<br><br><b>他所有结论都压在「峰归属得对不对」上，所以他问的全是地基</b>：质谱到底测什么、道尔顿是什么、为什么一个肽段给出一簇峰、为什么亮氨酸和异亮氨酸光靠质量分不开。⚠ <b>他是方法论的严苛派，会问数据量够不够支撑结论。</b><b>答不上来时最稳的一句</b>：先说这个测量<b>能</b>区分什么、<b>不能</b>区分什么，再说要补哪个实验。承认分辨率的边界，在他这儿是加分不是减分。'],
 ];
 
 /* 追问组标题里带这个标记的，就是专门为某位考官补的。 */
@@ -325,7 +334,10 @@ function render(){
     h += '<details class="room"' + (q?' open':'') + '><summary><span>' + esc(E[1]) + '</span>'
        + '<span class="n">' + tot + ' 格</span></summary><div class="roombody">'
        + '<p class="roomnote"><b>' + esc(E[2]) + '</b><br>' + E[3]
-       + '</p>';
+       + '</p>'
+       + (E[5] ? '<details class="room story"><summary><span>📖 他是谁 · 小故事</span>'
+           + '<span class="n">不用背</span></summary><div class="roombody">'
+           + '<p class="storyp">' + E[5] + '</p></div></details>' : '');
     groups.forEach(function(g){
       if(!g[1].length) return;
       h += '<details class="room"' + (q||g[0].indexOf('⭐')===0?' open':'') + '><summary><span>'
@@ -338,7 +350,7 @@ function render(){
   h += '<p class="small" style="margin-top:20px">'
      + '⚠ 「已有的」是<b>按关键词自动收进来的，会漏也会多</b>；<b>⭐ 是专门为这位考官补的追问</b>，'
      + '它们同样写在卡上，所以<b>演练台抽得到</b>。<br>'
-     + '⚠ 七位的单位和方向 2026-09-23 核过。<b>网上流传的「答辩原题」和「提问风格」查不到出处，她说「没必要挪用」，所以一句都没有写进来。</b><br>'
+     + '⚠ 七位的单位和方向 2026-09-23 核过；<b>📖 小故事 2026-09-25 写的，全部来自公开的教职页和论文（ResearchGate 的研究档案、各自实验室主页、PubMed 与期刊页），一句没编。</b><b>网上流传的「答辩原题」和「提问风格」查不到出处，她说「没必要挪用」，所以一句都没有写进来。</b><br>'
      + '<a href="index.html">← 回主 app</a> · <a href="drill.html">🎙 口试演练</a> · <a href="map.html">🗺 地图</a></p>';
   $('main').innerHTML = h;
   var el = $('q');
