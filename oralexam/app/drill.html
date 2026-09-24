@@ -728,6 +728,73 @@ function buildSet(nCards, nFollow){
 function curCard(){ return S.cards[S.i]; }
 function curQ(){ var c=curCard(); return S.sub===0 ? c.main : c.follow[S.sub-1]; }
 
+/* ======================= 🎓 老师专题 =======================
+   她 2026-09-25：「老师专题（小标）」应该放在上面。
+   取题不需要新数据：卡上那些组名叫「⚠ 考官 · 名字 · …」的，
+   本身就是专门为某位考官补的（考官页 exam.html 用的是同一个标记）。 */
+function tutorPool(){
+  var out = {};
+  CARDS.forEach(function(c){
+    (c.ask || []).forEach(function(g){
+      if(!g || !g.g) return;
+      var m = /考官\s*·\s*([^·]+?)\s*(?:·|$)/.exec(strip(g.g));
+      if(!m) return;
+      var name = m[1].trim();
+      (g.items || []).forEach(function(x){
+        if(!x || !x.q || !x.en || CJK.test(x.q)) return;
+        (out[name] = out[name] || []).push({card:c, item:x, turf:0});
+      });
+    });
+  });
+  return out;
+}
+function tutorBox(){
+  var pool = tutorPool(), names = Object.keys(pool).sort();
+  if(!names.length) return '<div class="onebox"><b>🎓 老师专题</b>'
+    + '<div class="small">卡上还没有标了「考官 · 名字」的组。</div></div>';
+  var tot = 0;
+  names.forEach(function(n){ tot += pool[n].length; });
+  var h = '<div class="onebox"><b>🎓 老师专题</b>'
+    + '<div class="small" style="margin:2px 0 8px">七位名下一共 <b>' + tot + '</b> 条，'
+    + '都是<b>按他自己的研究方向补的追问</b>。'
+    + '背景小故事和自动收进来的卡在 <a href="exam.html">🎓 考官页</a>。</div>'
+    + '<div class="row"><select id="tutorsel">';
+  names.forEach(function(n){
+    var ss = starStats(pool[n]);
+    h += '<option value="' + esc(n) + '">' + esc(n) + '（' + pool[n].length + ' 条 · ★ '
+       + ss.starred + '）</option>';
+  });
+  h += '</select>'
+    + '<button class="main" onclick="tutorStart(\'walk\')">跟读式</button>'
+    + '<button class="ghost" onclick="tutorStart(\'ask\')">拷问式</button></div>'
+    + '<div class="small" style="margin:8px 0 0">★ 是你自己标的；'
+    + '<b>没星标的肯定还没背</b>，所以两个模式都把没星标的排在前面。</div></div>';
+  return h;
+}
+function tutorStart(mode){
+  var sel = $('tutorsel'); if(!sel) return;
+  var name = sel.value, pool = (tutorPool()[name] || []).slice();
+  if(!pool.length){ alert('这位老师名下还没有题。'); return; }
+  var s2 = st();
+  pool.forEach(function(o){
+    o.seen = wSeen(s2, o.card.id, o.item.q);
+    o.star = qStarred(o.card.id, o.item);
+    o.pri  = o.star ? 2 : (o.seen ? 0 : 1);
+  });
+  pool.sort(function(a, b){ return a.pri - b.pri || a.seen - b.seen; });
+  if(mode === 'walk'){
+    CH = {list:pool, i:0, tag:'🎓 ' + name, done:name + ' 这一组到这里',
+          again:'tutorStart(\'walk\')'};
+    walkRender();
+  } else {
+    S = {cards: pool.map(function(o){
+           return {card:o.card, pool:[o.item], main:o.item, asked:[], nFollow:0}; }),
+         i:0, sub:0, log:[], newPass:false, nFollow:0, one:true};
+    S.startedAt = Date.now();
+    ask();
+  }
+}
+
 /* ============================ 界面 ============================ */
 function home(){
   recStop();
@@ -741,9 +808,15 @@ function home(){
     '<div class="card">'
     + '<div class="row" style="justify-content:space-between">'
       + '<div><p class="hello">' + helloLine() + '</p>'
-      + '<div><b style="font-size:19px">' + (r.sets? '今天已经练了 '+r.sets+' 组' : '今天还没练') + '</b>'
-      + '<div class="small">连续 ' + streak() + ' 天 · 今天答了 ' + (r.qs||0) + ' 题 · '
-      + '全部 ' + usable.length + ' 张卡里还剩 <b>' + left + '</b> 张今天没过 · 已完整过了 ' + s.passes + ' 遍</div></div></div>'
+      /* ⚠ 2026-09-25：顶上原来只报「几组」，那是拷问式的口径，她早不用了。 */
+      + '<div><b style="font-size:19px">'
+        + ((r.walk||r.shadow) ? '今天出声了 —— 整段 ' + (r.walk||0) + ' 遍 · 跟读 ' + (r.shadow||0) + ' 句'
+                              : (r.sets ? '今天练了 ' + r.sets + ' 组' : '今天还没出声')) + '</b>'
+      + '<div class="small">连续 ' + streak() + ' 天 · 今天过了 ' + ((r.cards||[]).length) + ' 张卡 · '
+      + (function(){ var A = starStats(allItems());
+          return '全部 ' + A.tot + ' 题里 <b>★ ' + A.starred + '</b> 星标'
+            + (A.skimmed ? ' · <b class="miss">' + A.skimmed + '</b> 刷过没背' : '')
+            + ' · ' + A.untouched + ' 还没碰'; })() + '</div></div></div>'
     + '</div>'
     + '<div class="bar" style="margin-top:14px"><i style="width:'
       + Math.round(100*((usable.length-left)/usable.length)) + '%"></i></div>'
@@ -759,7 +832,59 @@ function home(){
           + ' —— <b>停在哪儿都算数。</b></div>'
           + '<button class="main" onclick="resumeSpot()">回到那一条</button> '
           + '<button class="ghost" onclick="clearSpot();home()">清掉</button></div>'; })()
-    + '<h3 class="sec secmain"><i>①</i>🎤 全程 mock<span>五张卡一组 · 念题 · 转录 · 追问 —— 最像真的口试</span></h3>'
+    + '<h3 class="sec"><i>①</i>🎧 磨耳朵<span>学累了就纯听 —— 男声问、女声答，不用动手</span></h3>'
+    + earBox()
+    + '<h3 class="sec secmain"><i>②</i>📖 全 topic 跟读背诵<span>一轮 ＝ 每张卡 3 条，一轮过完全部 50 张卡</span></h3>'
+    /* 2026-09-23：三轮。每轮 ＝ 每张卡 3 条，一轮过完全部卡。 */
+    + (function(){
+        var h2 = '<div class="onebox"><b>跟读 · 三轮</b>'
+          + '<div class="small" style="margin:2px 0 8px">'
+          + '<b>一轮 ＝ 每张卡 3 条</b>，所以每一轮都过完全部 ' + usable.length + ' 张卡。'
+          + '走过一遍的题，下次出现<b>关键词浅褐色涂掉</b>，点一下露出来。'
+          + '<br>挑哪 3 条的顺序：<b>定义 → 为什么 → 陷阱 → 相邻考点</b>。</div>'
+          + '<div class="parts">';
+        for (var rn = 1; rn <= 3; rn++){
+          var rs = roundStat(rn);
+          var pc = rs.tot ? Math.round(100 * rs.done / rs.tot) : 0;
+          var spc = rs.tot ? Math.round(100 * rs.starred / rs.tot) : 0;
+          h2 += '<div class="part' + (spc >= 100 ? ' done' : '') + '"><h4>轮 ' + rn
+             + (spc >= 100 ? ' ✓' : '') + '</h4>'
+             + '<div class="bar"><i style="width:' + spc + '%"></i></div>'
+             /* ⚠ 2026-09-24：数字独占一行，说明缩到下面 —— 不然大字号会把说明挤断行。 */
+             /* ⚠ 2026-09-25 换了头号数字。她：「这个 96 还是不对，我只背到了横向卡的
+                第一张或者第二张」—— 96 是「走过」，而她为了看进度往后点过几道。
+                **头号数字现在是星标**（她自己承认可信的下界），走过降成小字。 */
+             + '<div class="big"><b>★ ' + rs.starred + '</b><em>/ ' + rs.tot + '</em></div>'
+             + '<div class="meta">' + spc + '% 星标 · 约 ' + Math.round(rs.tot * 2 / 60 * 10) / 10
+             + ' 小时 · 每天 ' + Math.round(rs.tot * 2 / 12) + ' 分钟</div>'
+             + '<div class="meta">走过 ' + rs.done + ' · '
+               + (rs.skimmed ? '<b class="miss">' + rs.skimmed + ' 刷过没背</b> · ' : '')
+               + rs.untouched + ' 还没碰</div>'
+             + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
+        }
+        return h2 + '</div></div>'; })()
+    + '<h3 class="sec"><i>③</i>🧪 化学专题<span>163 条 · 不打分 · 第一条永远从你自己的地盘出</span></h3>'
+    /* 2026-09-23 她：「化学专练还是专门列出来吧」。
+       ⚠ 这一块要同时满足两件事：**显眼到绕不开**（她「有看见就绕道走的惯性」），
+       又**看上去不吓人**（她「看着就发怵，学的最薄弱的地方」）。
+       所以标题下面第一句就是「不考你」，按钮上写明一次几条。 */
+    + (function(){
+        var s3 = st(), d3 = today(), r3 = s3.days[d3] || {};
+        var np = chemPool().length;
+        return '<div class="onebox chembox"><b>🧪 化学专练</b>'
+          + '<div class="small" style="margin:2px 0 8px">'
+          + '<b>这一屏不考你，它带着你走</b>：念给你听 → 你跟着说 → 最后才让你自己说。<b>全程不打分。</b>'
+          + '<br><b>第一条永远从你自己的地盘出</b>（His-tag · 咪唑 · EDTA · 硫酯 —— 你天天在做的东西），'
+          + '再往外走到糖苷键、ATP 为什么高能这些。'
+          + '<br>题库里够格的化学题一共 <b>' + np + '</b> 条 · 今天已经跟读 <b>' + (r3.shadow || 0) + '</b> 句。</div>'
+          + '<div class="row"><label>一次 <select id="chemn">'
+          + [3,5,8].map(function(k){ return '<option value="'+k+'"'+(k===3?' selected':'')+'>'+k+' 条</option>'; }).join('')
+          + '</select></label>'
+          + '<button class="main" onclick="chemStart()">开始</button>'
+          + '<span class="small">薄弱区剂量小是故意的 —— 三条走完就算今天做到了。</span></div></div>'; })()
+    + '<h3 class="sec"><i>④</i>🎓 老师专题<span>七位名下的追问 · 没星标的排在前面</span></h3>'
+    + tutorBox()
+    + '<h3 class="sec"><i>⑤</i>🎤 全程 mock<span>五张卡一组 · 念题 · 转录 · 追问 —— 最像真的口试</span></h3>'
     + '<div class="row" style="margin-top:10px">'
       + '<label>每张卡追问 <select id="nf">'
         + [1,2,3,4,5].map(function(n){ return '<option value="'+n+'"'+(n===nF?' selected':'')+'>'+n+' 个</option>'; }).join('')
@@ -786,33 +911,7 @@ function home(){
       + '<span class="small">★ 是神经网络语音，最接近真人。<b>选一个就会试念一句。</b></span>'
     + '</div>'
     + '<p style="margin:14px 0 0"><button class="main" onclick="begin()">开始一组</button></p>'
-    + '<h3 class="sec"><i>②</i>📖 全 topic 跟读背诵<span>一轮 ＝ 每张卡 3 条，一轮过完全部 50 张卡</span></h3>'
-    /* 2026-09-23：三轮。每轮 ＝ 每张卡 3 条，一轮过完全部卡。 */
-    + (function(){
-        var h2 = '<div class="onebox"><b>跟读 · 三轮</b>'
-          + '<div class="small" style="margin:2px 0 8px">'
-          + '<b>一轮 ＝ 每张卡 3 条</b>，所以每一轮都过完全部 ' + usable.length + ' 张卡。'
-          + '走过一遍的题，下次出现<b>关键词浅褐色涂掉</b>，点一下露出来。'
-          + '<br>挑哪 3 条的顺序：<b>定义 → 为什么 → 陷阱 → 相邻考点</b>。</div>'
-          + '<div class="parts">';
-        for (var rn = 1; rn <= 3; rn++){
-          var rs = roundStat(rn);
-          var pc = rs.tot ? Math.round(100 * rs.done / rs.tot) : 0;
-          h2 += '<div class="part' + (pc >= 100 ? ' done' : '') + '"><h4>轮 ' + rn
-             + (pc >= 100 ? ' ✓' : '') + '</h4>'
-             + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
-             /* ⚠ 2026-09-24：数字独占一行，说明缩到下面 —— 不然大字号会把说明挤断行。 */
-             + '<div class="big"><b>' + rs.done + '</b><em>/ ' + rs.tot + '</em></div>'
-             + '<div class="meta">' + pc + '% · 约 ' + Math.round(rs.tot * 2 / 60 * 10) / 10
-             + ' 小时 · 每天 ' + Math.round(rs.tot * 2 / 12) + ' 分钟</div>'
-             /* ⚠ 2026-09-25：星标口径。走过 ≠ 背过（她自己说的），所以这一行才是实话。 */
-             + '<div class="meta">★ ' + rs.starred + ' 星标 · '
-               + (rs.skimmed ? '<b class="miss">' + rs.skimmed + ' 刷过没背</b> · ' : '')
-               + rs.untouched + ' 还没碰</div>'
-             + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
-        }
-        return h2 + '</div></div>'; })()
-    + '<h3 class="sec"><i>③</i>📇 单卡精练<span>挑一张挖穿 —— 四条流，每条流再分三层</span></h3>'
+    + '<h3 class="sec"><i>⑥</i>📇 单卡精练<span>挑一张挖穿 —— 四条流，每条流再分三层</span></h3>'
     /* 2026-09-23：只练一张卡，题数自己定。 */
     + '<div class="onebox"><b>只练一张</b>'
       + '<div class="small" style="margin:2px 0 8px">挑一张卡，自己定问几个问题。流程跟一组一样。</div>'
@@ -835,35 +934,28 @@ function home(){
       + '<b>追问</b>（按 定义 → 为什么 → 陷阱 → 相邻考点 轮转）。'
       + '每条流各自再分三层，<b>每一层单独记「走过几条」</b> —— 分层就是为了能记录。'
       + '<b>走过一遍的题，下次出现关键词会浅褐色涂掉</b>，点一下露出来。</div></div>'
-    + '<h3 class="sec"><i>④</i>🧪 化学专题<span>163 条 · 不打分 · 第一条永远从你自己的地盘出</span></h3>'
-    /* 2026-09-23 她：「化学专练还是专门列出来吧」。
-       ⚠ 这一块要同时满足两件事：**显眼到绕不开**（她「有看见就绕道走的惯性」），
-       又**看上去不吓人**（她「看着就发怵，学的最薄弱的地方」）。
-       所以标题下面第一句就是「不考你」，按钮上写明一次几条。 */
-    + (function(){
-        var s3 = st(), d3 = today(), r3 = s3.days[d3] || {};
-        var np = chemPool().length;
-        return '<div class="onebox chembox"><b>🧪 化学专练</b>'
-          + '<div class="small" style="margin:2px 0 8px">'
-          + '<b>这一屏不考你，它带着你走</b>：念给你听 → 你跟着说 → 最后才让你自己说。<b>全程不打分。</b>'
-          + '<br><b>第一条永远从你自己的地盘出</b>（His-tag · 咪唑 · EDTA · 硫酯 —— 你天天在做的东西），'
-          + '再往外走到糖苷键、ATP 为什么高能这些。'
-          + '<br>题库里够格的化学题一共 <b>' + np + '</b> 条 · 今天已经跟读 <b>' + (r3.shadow || 0) + '</b> 句。</div>'
-          + '<div class="row"><label>一次 <select id="chemn">'
-          + [3,5,8].map(function(k){ return '<option value="'+k+'"'+(k===3?' selected':'')+'>'+k+' 条</option>'; }).join('')
-          + '</select></label>'
-          + '<button class="main" onclick="chemStart()">开始</button>'
-          + '<span class="small">薄弱区剂量小是故意的 —— 三条走完就算今天做到了。</span></div></div>'; })()
-    + '<h3 class="sec"><i>⑤</i>🎧 磨耳朵<span>学累了就纯听 —— 男声问、女声答，不用动手</span></h3>'
-    + earBox()
     + '<h3 class="sec"><i>·</i>记录与别处<span>进度、结果、考官</span></h3>'
-    + (function(){ var n=numbers();
+    /* ⚠ 2026-09-25 换掉了。她：「下面就是错误 / 个人星标卡片 / 然后一些基础数据分析」。
+       原来这三个数是拷问式的漏词口径（漏超过 2 条、连着两次漏同一点），她早不用那套了。 */
+    + (function(){
+        var s4 = st(), all = allItems(), A = starStats(all);
+        /* 有星标的卡有几张，以及哪几张 —— 她想看的「个人星标卡片」 */
+        var byCard = {};
+        all.forEach(function(x){ if(qStarred(x.card.id, x.item)) byCard[x.card.id] = (byCard[x.card.id]||0) + 1; });
+        var starCards = Object.keys(byCard).sort(function(a,b){ return byCard[b]-byCard[a]; });
+        /* 反复说不上的题（历史里自评答不上 ≥2 次） */
+        var qrep = {};
+        (s4.hist || []).forEach(function(pk){
+          (pk.log || []).forEach(function(x){
+            if(x.gave || x.self === 2) qrep[x.card + '|' + x.q] = (qrep[x.card + '|' + x.q] || 0) + 1; }); });
+        var badN = Object.keys(qrep).filter(function(k){ return qrep[k] >= 2; }).length;
         return '<div class="big3">'
-        + '<div><b>' + n.cardsToday + '</b><span>今天出声练过的卡</span></div>'
-        + '<div><b class="' + (n.bad.length?'miss':'hit') + '">' + n.bad.length + '</b>'
-          + '<span>漏超过 2 条的卡' + (n.bad.length? '：' + n.bad.join(' ') : '') + '</span></div>'
-        + '<div><b class="' + (n.rep.length?'miss':'hit') + '">' + n.rep.length + '</b>'
-          + '<span>连着两次漏同一个点' + (n.rep.length? '：' + n.rep.map(function(o){return o.id;}).join(' ') : '') + '</span></div>'
+        + '<div><b class="' + (A.skimmed ? 'miss' : 'hit') + '">' + A.skimmed + '</b>'
+          + '<span>刷过但没星标 —— <b>这就是待办</b></span></div>'
+        + '<div><b>' + starCards.length + '</b><span>有星标的卡（★ ' + A.starred + ' 条）'
+          + (starCards.length ? '：' + starCards.slice(0, 8).join(' ') + (starCards.length > 8 ? ' …' : '') : '') + '</span></div>'
+        + '<div><b class="' + (badN ? 'miss' : 'hit') + '">' + badN + '</b>'
+          + '<span>反复说不上的题（自评答不上 ≥ 2 次）</span></div>'
         + '</div>'; })()
     + '<p style="margin:14px 0 0">'      + '<button class="main" onclick="copyOut()">复制进度给老师</button> '      + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '      + '<button class="ghost" onclick="histPage()">练过的</button> '      + '<button class="ghost" onclick="statsPage()">分析</button> '      + '<a class="ghost" href="exam.html" style="text-decoration:none;display:inline-block;padding:9px 15px;border:1px solid var(--line);border-radius:9px">🎓 考官</a></p>'
     + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
@@ -882,7 +974,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>65ddf67</b>'
+      + ' · 版本 <b>b8f3b3ff</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
