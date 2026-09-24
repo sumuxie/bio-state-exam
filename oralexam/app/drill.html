@@ -867,7 +867,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>6829cca</b>'
+      + ' · 版本 <b>6b48c74</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2065,22 +2065,37 @@ function earPool(mode){
   if(mode === false) mode = 'all';
   var s = st(), out = [];
   if(mode === 'pick'){
-    var P2 = pickAll();
+    /* ⚠ 2026-09-24 她：「**怎么只播一句啊 你应该播每个问题下面我高亮的所有句子**」。
+       —— 上一版把每一句当成独立一条，于是同一道题被念好几遍，碎得要命。
+       现在**按题归组**：一道题下面挑中的所有句子，**按原文顺序连起来**当一个答案念。
+       归不到题的（比如速背里挑的），按卡归成一组。 */
+    var P2 = pickAll(), byQ = {};
     Object.keys(P2).forEach(function(key){
       var v = P2[key];
       if(!v || !v.text) return;
       var txt = strip(v.text);
       if(txt.length < 8) return;
-      var c = cardById(v.card), item = null;
+      var c = cardById(v.card), item = null, pos = 0;
       if(c){
         var probe = txt.slice(0, 40);
         qlist(c).forEach(function(x){
           if(item) return;
-          if((strip(x.ez || '') + ' ' + strip(x.en || '')).indexOf(probe) !== -1) item = x;
+          var body = strip(x.ez || '') + ' ' + strip(x.en || '');
+          var at = body.indexOf(probe);
+          if(at !== -1){ item = x; pos = at; }
         });
       }
-      out.push({card: c || {id:v.card, q:v.card, qcn:v.card},
-                item: {q:(item ? item.q : ''), ez:txt, en:txt}, pick:1});
+      var gk = (v.card || '') + '|' + (item ? hash(item.q) : '_loose');
+      if(!byQ[gk]) byQ[gk] = {card:c || {id:v.card, q:v.card, qcn:v.card},
+                              q:(item ? item.q : ''), parts:[]};
+      byQ[gk].parts.push({t:txt, pos:pos});
+    });
+    Object.keys(byQ).forEach(function(gk){
+      var g = byQ[gk];
+      g.parts.sort(function(a, b){ return a.pos - b.pos; });   /* 按原文顺序 */
+      var joined = g.parts.map(function(p){ return p.t; }).join(' ');
+      out.push({card:g.card, item:{q:g.q, ez:joined, en:joined},
+                pick:1, nsent:g.parts.length});
     });
     return shuffle(out);
   }
@@ -2154,9 +2169,11 @@ function earBox(){
     + '<b>开始之后不用动手</b>：男声念题 → 停两秒 → 女声念答案 → 下一条，一直走。'
     + '<br>⚠ <b>这一屏不记分、不算进度</b> —— 这是休息，不是练习。'
     + '<br>⚠ <b>想只磨某几句？</b>跟读第 ① 步里每句话前面有个 <b>☆</b>，'
-    + '<b>点一下整句高亮</b>，这里选「只播我挑的句子」。<b>高亮会留着，下次再背一眼就看见。</b></div>'
+    + '<b>点一下整句高亮</b>，这里选「只播我挑的句子」。'
+    + '<br>⚠ <b>同一道题下面挑的几句会连起来念</b>，不会一句一句拆开。'
+    + '<b>高亮会留着，下次再背一眼就看见。</b></div>'
     + '<div class="row"><label>播哪些 <select id="earwhich">'
-    + '<option value="pick"' + (pk ? '' : ' disabled') + '>★ 只播我挑的句子（' + pk + '）</option>'
+    + '<option value="pick"' + (pk ? '' : ' disabled') + '>★ 只播我挑的句子（' + pk + ' 组）</option>'
     + '<option value="done" selected>只播我练过的（' + done + '）</option>'
     + '<option value="all">全部（' + all + '）</option></select></label>'
     + '<button class="main" onclick="earStart()">▶ 开始听</button>'
@@ -2186,7 +2203,8 @@ function earScreen(){
   $('main').innerHTML = '<div class="card">'
     + '<span class="chemtag">🎧 磨耳朵 ' + (EAR.i+1) + ' / ' + EAR.list.length + '</span>'
     + '<p class="chemq" id="earq">' + esc(o.item.q || '（你挑的一句）') + '</p>'
-    + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b></p>'
+    + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
+      + (o.nsent > 1 ? ' · <b>你挑的 ' + o.nsent + ' 句连起来</b>' : '') + '</p>'
     + '<div class="do" id="eara" style="font-size:17px;line-height:1.85"></div>'
     + '<p style="margin:18px 0 0">'
       + '<button class="main" onclick="earToggle()" id="earbtn">⏸ 暂停</button> '
