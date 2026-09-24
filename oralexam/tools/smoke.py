@@ -65,6 +65,14 @@ PROBE = {
    ("分析",       "statsPage();"),
    ("练过的",     "histPage();"),
    ("上次结果",   "report(true);"),
+   # ⚠ 2026-09-24：磨耳朵**不能在这里真启动**。它是一条 setTimeout 链，
+   #   而无头浏览器的 --virtual-time-budget 会把定时器快进，于是循环永远跑不完，
+   #   Chrome 挂住、smoke 超时 180 秒。（第一次加进来就是这么挂的。）
+   #   所以只调用它的各个函数、渲染它的那一块，**不进入播放循环**。
+   ("磨耳朵 池子", "earPool(true).length + earPool(false).length;"),
+   ("磨耳朵 那一块","earBox();"),
+   ("磨耳朵 选嗓子","pickTwoVoices();"),
+   ("磨耳朵 停",  "earStop();"),
    ("回首页5",    "home();"),
  ],
 }

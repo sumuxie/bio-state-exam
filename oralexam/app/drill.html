@@ -132,6 +132,12 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
 .parts{display:flex;gap:10px;margin:0;flex-wrap:wrap}
 .chembox{border-color:var(--accent)}
+/* 2026-09-24：首页分区 ＋ 磨耳朵 */
+h3.sec{display:flex;align-items:baseline;gap:9px;margin:26px 0 8px;font-size:16px;
+  padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3.sec i{font-style:normal;font-size:15px;color:var(--accent);font-weight:800}
+h3.sec span{font-size:12.5px;color:var(--dim);font-weight:400;margin-left:auto;text-align:right}
+.earbox{border-color:#7a5cff}
 .spot{margin:10px 0 0;padding:9px 11px;border:1px solid var(--line);border-radius:9px}
 .spot .bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin:0 0 6px}
 .spot .bar i{display:block;height:100%;background:var(--accent)}
@@ -692,6 +698,19 @@ function home(){
     + '</div>'
     + '<div class="bar" style="margin-top:14px"><i style="width:'
       + Math.round(100*((usable.length-left)/usable.length)) + '%"></i></div>'
+    /* ⚠ 2026-09-24：接着上次那一份。她：「我不敢点回主页」—— 现在敢了。 */
+    + (function(){
+        var sp = st().spot;
+        if(!sp || !sp.n) return '';
+        var ago = Math.round((Date.now() - (sp.ts || 0)) / 60000);
+        return '<div class="onebox" style="border-color:var(--good)"><b>▸ 接着上次那一份</b>'
+          + '<div class="small" style="margin:2px 0 8px">' + esc(sp.tag || '跟读')
+          + ' · 停在第 <b>' + (sp.i + 1) + ' / ' + sp.n + '</b> 条'
+          + (ago < 60 ? '（' + (ago < 1 ? '刚刚' : ago + ' 分钟前') + '）' : '')
+          + ' —— <b>停在哪儿都算数。</b></div>'
+          + '<button class="main" onclick="resumeSpot()">回到那一条</button> '
+          + '<button class="ghost" onclick="clearSpot();home()">清掉</button></div>'; })()
+    + '<h3 class="sec"><i>①</i>🎤 全程 mock<span>五张卡一组 · 念题 · 转录 · 追问 —— 最像真的口试</span></h3>'
     + '<div class="row" style="margin-top:10px">'
       + '<label>每张卡追问 <select id="nf">'
         + [1,2,3,4,5].map(function(n){ return '<option value="'+n+'"'+(n===nF?' selected':'')+'>'+n+' 个</option>'; }).join('')
@@ -717,50 +736,8 @@ function home(){
       + '<label>念题的声音 <select id="vsel" style="max-width:340px"></select></label>'
       + '<span class="small">★ 是神经网络语音，最接近真人。<b>选一个就会试念一句。</b></span>'
     + '</div>'
-    + (function(){ var n=numbers();
-        return '<div class="big3">'
-        + '<div><b>' + n.cardsToday + '</b><span>今天出声练过的卡</span></div>'
-        + '<div><b class="' + (n.bad.length?'miss':'hit') + '">' + n.bad.length + '</b>'
-          + '<span>漏超过 2 条的卡' + (n.bad.length? '：' + n.bad.join(' ') : '') + '</span></div>'
-        + '<div><b class="' + (n.rep.length?'miss':'hit') + '">' + n.rep.length + '</b>'
-          + '<span>连着两次漏同一个点' + (n.rep.length? '：' + n.rep.map(function(o){return o.id;}).join(' ') : '') + '</span></div>'
-        + '</div>'; })()
-    + '<p style="margin:18px 0 0"><button class="main" onclick="begin()">开始一组</button> '
-      /* 2026-09-23：化学专练。她说「看着就发怵」，所以这一屏不考她，是带着走的。 */
-
-      + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '
-      + '<button class="ghost" onclick="histPage()">练过的</button> '
-      + '<button class="ghost" onclick="statsPage()">分析</button></p>'
-    /* ⚠ 2026-09-24：接着上次那一份。她：「我不敢点回主页」—— 现在敢了。 */
-    + (function(){
-        var sp = st().spot;
-        if(!sp || !sp.n) return '';
-        var ago = Math.round((Date.now() - (sp.ts || 0)) / 60000);
-        return '<div class="onebox" style="border-color:var(--good)"><b>▸ 接着上次那一份</b>'
-          + '<div class="small" style="margin:2px 0 8px">' + esc(sp.tag || '跟读')
-          + ' · 停在第 <b>' + (sp.i + 1) + ' / ' + sp.n + '</b> 条'
-          + (ago < 60 ? '（' + (ago < 1 ? '刚刚' : ago + ' 分钟前') + '）' : '')
-          + ' —— <b>停在哪儿都算数。</b></div>'
-          + '<button class="main" onclick="resumeSpot()">回到那一条</button> '
-          + '<button class="ghost" onclick="clearSpot();home()">清掉</button></div>'; })()
-    /* 2026-09-23 她：「化学专练还是专门列出来吧」。
-       ⚠ 这一块要同时满足两件事：**显眼到绕不开**（她「有看见就绕道走的惯性」），
-       又**看上去不吓人**（她「看着就发怵，学的最薄弱的地方」）。
-       所以标题下面第一句就是「不考你」，按钮上写明一次几条。 */
-    + (function(){
-        var s3 = st(), d3 = today(), r3 = s3.days[d3] || {};
-        var np = chemPool().length;
-        return '<div class="onebox chembox"><b>🧪 化学专练</b>'
-          + '<div class="small" style="margin:2px 0 8px">'
-          + '<b>这一屏不考你，它带着你走</b>：念给你听 → 你跟着说 → 最后才让你自己说。<b>全程不打分。</b>'
-          + '<br><b>第一条永远从你自己的地盘出</b>（His-tag · 咪唑 · EDTA · 硫酯 —— 你天天在做的东西），'
-          + '再往外走到糖苷键、ATP 为什么高能这些。'
-          + '<br>题库里够格的化学题一共 <b>' + np + '</b> 条 · 今天已经跟读 <b>' + (r3.shadow || 0) + '</b> 句。</div>'
-          + '<div class="row"><label>一次 <select id="chemn">'
-          + [3,5,8].map(function(k){ return '<option value="'+k+'"'+(k===3?' selected':'')+'>'+k+' 条</option>'; }).join('')
-          + '</select></label>'
-          + '<button class="main" onclick="chemStart()">开始</button>'
-          + '<span class="small">薄弱区剂量小是故意的 —— 三条走完就算今天做到了。</span></div></div>'; })()
+    + '<p style="margin:14px 0 0"><button class="main" onclick="begin()">开始一组</button></p>'
+    + '<h3 class="sec"><i>②</i>📖 全 topic 跟读背诵<span>一轮 ＝ 每张卡 3 条，一轮过完全部 50 张卡</span></h3>'
     /* 2026-09-23：三轮。每轮 ＝ 每张卡 3 条，一轮过完全部卡。 */
     + (function(){
         var h2 = '<div class="onebox"><b>跟读 · 三轮</b>'
@@ -781,6 +758,7 @@ function home(){
              + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
         }
         return h2 + '</div></div>'; })()
+    + '<h3 class="sec"><i>③</i>📇 单卡精练<span>挑一张挖穿 —— 四条流，每条流再分三层</span></h3>'
     /* 2026-09-23：只练一张卡，题数自己定。 */
     + '<div class="onebox"><b>只练一张</b>'
       + '<div class="small" style="margin:2px 0 8px">挑一张卡，自己定问几个问题。流程跟一组一样。</div>'
@@ -803,6 +781,37 @@ function home(){
       + '<b>追问</b>（按 定义 → 为什么 → 陷阱 → 相邻考点 轮转）。'
       + '每条流各自再分三层，<b>每一层单独记「走过几条」</b> —— 分层就是为了能记录。'
       + '<b>走过一遍的题，下次出现关键词会浅褐色涂掉</b>，点一下露出来。</div></div>'
+    + '<h3 class="sec"><i>④</i>🧪 化学专题<span>163 条 · 不打分 · 第一条永远从你自己的地盘出</span></h3>'
+    /* 2026-09-23 她：「化学专练还是专门列出来吧」。
+       ⚠ 这一块要同时满足两件事：**显眼到绕不开**（她「有看见就绕道走的惯性」），
+       又**看上去不吓人**（她「看着就发怵，学的最薄弱的地方」）。
+       所以标题下面第一句就是「不考你」，按钮上写明一次几条。 */
+    + (function(){
+        var s3 = st(), d3 = today(), r3 = s3.days[d3] || {};
+        var np = chemPool().length;
+        return '<div class="onebox chembox"><b>🧪 化学专练</b>'
+          + '<div class="small" style="margin:2px 0 8px">'
+          + '<b>这一屏不考你，它带着你走</b>：念给你听 → 你跟着说 → 最后才让你自己说。<b>全程不打分。</b>'
+          + '<br><b>第一条永远从你自己的地盘出</b>（His-tag · 咪唑 · EDTA · 硫酯 —— 你天天在做的东西），'
+          + '再往外走到糖苷键、ATP 为什么高能这些。'
+          + '<br>题库里够格的化学题一共 <b>' + np + '</b> 条 · 今天已经跟读 <b>' + (r3.shadow || 0) + '</b> 句。</div>'
+          + '<div class="row"><label>一次 <select id="chemn">'
+          + [3,5,8].map(function(k){ return '<option value="'+k+'"'+(k===3?' selected':'')+'>'+k+' 条</option>'; }).join('')
+          + '</select></label>'
+          + '<button class="main" onclick="chemStart()">开始</button>'
+          + '<span class="small">薄弱区剂量小是故意的 —— 三条走完就算今天做到了。</span></div></div>'; })()
+    + '<h3 class="sec"><i>⑤</i>🎧 磨耳朵<span>学累了就纯听 —— 男声问、女声答，不用动手</span></h3>'
+    + earBox()
+    + '<h3 class="sec"><i>·</i>记录与别处<span>进度、结果、考官</span></h3>'
+    + (function(){ var n=numbers();
+        return '<div class="big3">'
+        + '<div><b>' + n.cardsToday + '</b><span>今天出声练过的卡</span></div>'
+        + '<div><b class="' + (n.bad.length?'miss':'hit') + '">' + n.bad.length + '</b>'
+          + '<span>漏超过 2 条的卡' + (n.bad.length? '：' + n.bad.join(' ') : '') + '</span></div>'
+        + '<div><b class="' + (n.rep.length?'miss':'hit') + '">' + n.rep.length + '</b>'
+          + '<span>连着两次漏同一个点' + (n.rep.length? '：' + n.rep.map(function(o){return o.id;}).join(' ') : '') + '</span></div>'
+        + '</div>'; })()
+    + '<p style="margin:14px 0 0">'      + '<button class="main" onclick="copyOut()">复制进度给老师</button> '      + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '      + '<button class="ghost" onclick="histPage()">练过的</button> '      + '<button class="ghost" onclick="statsPage()">分析</button> '      + '<a class="ghost" href="exam.html" style="text-decoration:none;display:inline-block;padding:9px 15px;border:1px solid var(--line);border-radius:9px">🎓 考官</a></p>'
     + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
       + '（mb-* · pe-* · taq · land），另外三张从其余 '
       + usable.filter(function(c){ return !isMBPE(c); }).length + ' 张里随机。</p>'
@@ -819,7 +828,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>a5f95f7</b>'
+      + ' · 版本 <b>9137880</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1921,6 +1930,133 @@ function oneStart(){
   ask();
 }
 
+
+/* ======================= 🎧 磨耳朵 =======================
+   ⚠ 2026-09-24 她：「比如我学累了，就**纯听**。磨耳朵。**男的提问，女的回答，不停止**，
+   就是**我已经练过的那些**来念。…我就是觉得这一种学习方法一会儿我学累了又他妈不碰了。
+   就是**还是得保证一点新奇性**。」
+
+   所以这一屏的设计只有三条：
+   · **不用动手** —— 开始之后一条接一条，问 → 答 → 下一条，不停；
+   · **两个嗓子** —— 男声问、女声答。一个嗓子念十分钟就变白噪音了；
+   · ⚠ **不记分、不算进度** —— 这是休息时间，不是练习时间。
+     记了反而会稀释「今天真的出过声几遍」那个数，而那个数才是规矩一要的。 */
+var EAR = null;      /* {list, i, on, part} */
+
+function pickTwoVoices(){
+  var vs = enVoices();
+  function score(v, male){
+    var n = (v.name || '').toLowerCase();
+    var s = voiceScore(v);
+    var isM = /male|david|george|guy|mark|ryan|daniel|thomas|alex/.test(n)
+              && !/female/.test(n);
+    var isF = /female|zira|aria|jenny|sonia|libby|samantha|karen|moira|hazel/.test(n);
+    if(male && isM) s += 100;
+    if(!male && isF) s += 100;
+    return s;
+  }
+  var m = vs.slice().sort(function(a,b){ return score(b,1)-score(a,1); })[0] || null;
+  var f = vs.slice().sort(function(a,b){ return score(b,0)-score(a,0); })[0] || null;
+  if(m && f && m.name === f.name){          /* 只有一个嗓子时，用音高拉开 */
+    f = m;
+  }
+  return {m:m, f:f};
+}
+function earSay(text, voice, pitch, cb){
+  try{ speechSynthesis.cancel(); }catch(e){}
+  var u = new SpeechSynthesisUtterance(unspell ? unspell(text) : text);
+  if(voice) u.voice = voice;
+  u.lang = (voice && voice.lang) || 'en-GB';
+  u.rate = 0.95; u.pitch = pitch;
+  u.onend = function(){ if(cb) cb(); };
+  u.onerror = function(){ if(cb) cb(); };
+  try{ speechSynthesis.speak(u); }catch(e){ if(cb) cb(); }
+}
+/* 池子：默认只放她**练过的**；「全部」就是所有能出声的题。 */
+function earPool(onlyDone){
+  var s = st(), out = [];
+  CARDS.forEach(function(c){
+    qlist(c).forEach(function(x){
+      if(!x.en && !x.ez) return;
+      if(onlyDone && !wSeen(s, c.id, x.q)) return;
+      out.push({card:c, item:x});
+    });
+  });
+  return shuffle(out);
+}
+function earBox(){
+  var s = st();
+  var done = earPool(true).length, all = earPool(false).length;
+  return '<div class="onebox earbox">'
+    + '<div class="small" style="margin:0 0 8px">'
+    + '<b>开始之后不用动手</b>：男声念题 → 停两秒 → 女声念答案 → 下一条，一直走。'
+    + '<br>⚠ <b>这一屏不记分、不算进度</b> —— 这是休息，不是练习。'
+    + '<br>你练过的有 <b>' + done + '</b> 条可以磨；全部 <b>' + all + '</b> 条。</div>'
+    + '<div class="row"><label>播哪些 <select id="earwhich">'
+    + '<option value="1">只播我练过的（' + done + '）</option>'
+    + '<option value="0">全部（' + all + '）</option></select></label>'
+    + '<button class="main" onclick="earStart()">▶ 开始听</button>'
+    + '<span class="small" id="earst"></span></div></div>';
+}
+function earStart(){
+  var onlyDone = (($('earwhich') || {}).value !== '0');
+  var list = earPool(onlyDone);
+  if(!list.length){ alert('还没有可以磨的 —— 先去走几条，或者切到「全部」。'); return; }
+  EAR = {list:list, i:0, on:true, v:pickTwoVoices()};
+  earScreen();
+  earStep();
+}
+function earStop(){
+  if(EAR) EAR.on = false;
+  try{ speechSynthesis.cancel(); }catch(e){}
+}
+function earScreen(){
+  if(!EAR) return;
+  var o = EAR.list[EAR.i];
+  $('main').innerHTML = '<div class="card">'
+    + '<span class="chemtag">🎧 磨耳朵 ' + (EAR.i+1) + ' / ' + EAR.list.length + '</span>'
+    + '<p class="chemq" id="earq">' + esc(o.item.q) + '</p>'
+    + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b></p>'
+    + '<div class="do" id="eara" style="font-size:17px;line-height:1.85"></div>'
+    + '<p style="margin:18px 0 0">'
+      + '<button class="main" onclick="earToggle()" id="earbtn">⏸ 暂停</button> '
+      + '<button class="ghost" onclick="earNext(1)">下一条 →</button> '
+      + '<button class="ghost" onclick="earStop();home()">停下回首页</button></p>'
+    + '<p class="small" style="margin:10px 0 0">⚠ <b>不记分、不算进度</b> —— 这是休息。'
+      + '躺着听就行，想跟着念也行。</p></div>';
+}
+function earToggle(){
+  if(!EAR) return;
+  EAR.on = !EAR.on;
+  var b = $('earbtn'); if(b) b.textContent = EAR.on ? '⏸ 暂停' : '▶ 继续';
+  if(EAR.on) earStep(); else { try{ speechSynthesis.cancel(); }catch(e){} }
+}
+function earNext(manual){
+  if(!EAR) return;
+  EAR.i = (EAR.i + 1) % EAR.list.length;
+  earScreen();
+  if(manual){ EAR.on = true; }
+  if(EAR.on) earStep();
+}
+function earStep(){
+  if(!EAR || !EAR.on) return;
+  var o = EAR.list[EAR.i];
+  var q = strip(o.item.q);
+  var a = strip(o.item.ez || o.item.en || '');
+  var ael = $('eara');
+  if(ael) ael.innerHTML = '<span class="small">（听题…）</span>';
+  earSay(q, EAR.v.m, 0.85, function(){
+    if(!EAR || !EAR.on) return;
+    setTimeout(function(){
+      if(!EAR || !EAR.on) return;
+      var el = $('eara'); if(el) el.textContent = a;
+      earSay(a, EAR.v.f, 1.06, function(){
+        if(!EAR || !EAR.on) return;
+        setTimeout(function(){ earNext(0); }, 900);
+      });
+    }, 1800);   /* 停两秒 —— 想跟着说的时候有个缝 */
+  });
+}
 
 /* ---- 点读 ---- */
 function sayEl(el){ if(!el) return; var t2 = el.textContent || ''; if(t2.trim()) say(t2); }
