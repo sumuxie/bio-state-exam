@@ -867,7 +867,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>6b48c74</b>'
+      + ' · 版本 <b>83437e0</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2189,7 +2189,9 @@ function earStart(){
       : '还没有可以磨的 —— 先去走几条，或者切到「全部」。');
     return;
   }
-  EAR = {list:list, i:0, on:true, v:pickTwoVoices()};
+  var s0 = st();
+  EAR = {list:list, i:0, on:true, v:pickTwoVoices(),
+         gap:(s0.earGap || 2000), loop:false, extra:0, gen:0};
   earScreen();
   earStep();
 }
@@ -2208,19 +2210,60 @@ function earScreen(){
     + '<div class="do" id="eara" style="font-size:17px;line-height:1.85"></div>'
     + '<p style="margin:18px 0 0">'
       + '<button class="main" onclick="earToggle()" id="earbtn">⏸ 暂停</button> '
+      + '<button class="ghost" onclick="earReplay()">↻ 再放一遍</button> '
+      + '<button class="' + (EAR.loop ? 'main' : 'ghost') + '" onclick="earLoop()" id="earloop">'
+        + (EAR.loop ? '🔁 循环中' : '🔁 单条循环') + '</button> '
+      + '<button class="ghost" onclick="earHold()">⏳ 再多停 5 秒</button> '
       + '<button class="ghost" onclick="earNext(1)">下一条 →</button> '
       + '<button class="ghost" onclick="earStop();home()">停下回首页</button></p>'
+    + '<p class="small" style="margin:8px 0 0">'
+      + '<label>答完停 <select onchange="earGap(this.value)">'
+      + [1,2,3,5,10].map(function(k){ return '<option value="'+k+'"'
+          + (((EAR.gap||2000)/1000)===k ? ' selected' : '') + '>'+k+' 秒</option>'; }).join('')
+      + '</select></label> <span id="earst2"></span></p>'
     + '<p class="small" style="margin:10px 0 0">⚠ <b>不记分、不算进度</b> —— 这是休息。'
       + '躺着听就行，想跟着念也行。</p></div>';
 }
+/* 这一条原地再念一遍（不改循环状态） */
+function earReplay(){
+  if(!EAR) return;
+  EAR.on = true;
+  var b = $('earbtn'); if(b) b.textContent = '⏸ 暂停';
+  earStep();
+}
+/* 单条循环开关 */
+function earLoop(){
+  if(!EAR) return;
+  EAR.loop = !EAR.loop;
+  var b = $('earloop');
+  if(b){ b.textContent = EAR.loop ? '🔁 循环中' : '🔁 单条循环'; b.className = EAR.loop ? 'main' : 'ghost'; }
+  var tip = $('earst2');
+  if(tip) tip.textContent = EAR.loop ? '（循环中 · 这一条还会再念）' : '';
+}
+/* 这一条念完之后多停 5 秒 —— 「再多看一会儿」 */
+function earHold(){
+  if(!EAR) return;
+  EAR.extra = (EAR.extra || 0) + 5000;
+  var tip = $('earst2');
+  if(tip) tip.textContent = '（这一条念完会多停 ' + Math.round(EAR.extra / 1000) + ' 秒）';
+}
+function earGap(v){
+  if(!EAR) return;
+  EAR.gap = (+v) * 1000;
+  var s = st(); s.earGap = EAR.gap; save(s);
+}
+
 function earToggle(){
   if(!EAR) return;
   EAR.on = !EAR.on;
   var b = $('earbtn'); if(b) b.textContent = EAR.on ? '⏸ 暂停' : '▶ 继续';
-  if(EAR.on) earStep(); else { try{ speechSynthesis.cancel(); }catch(e){} }
+  if(EAR.on) earStep();
+  else { EAR.gen++; try{ speechSynthesis.cancel(); }catch(e){} }  /* ⚠ 暂停要把挂着的定时器一起废掉 */
 }
 function earNext(manual){
   if(!EAR) return;
+  /* ⚠ 手动点「下一条」时，把「多停 5 秒」清掉 —— 那是给上一条的。 */
+  if(manual) EAR.extra = 0;
   EAR.i = (EAR.i + 1) % EAR.list.length;
   earScreen();
   if(manual){ EAR.on = true; }
@@ -2228,24 +2271,41 @@ function earNext(manual){
 }
 function earStep(){
   if(!EAR || !EAR.on) return;
+  /* ⚠ 播放链的代号。每次重新开念都换一个新的，链条上每一步都先对一次；
+     对不上就不动。没有它的话，在「念完 → 下一条」那 2 秒空档里点
+     「再放一遍」或者「下一条」，**旧的定时器照样会响** —— 跳两条，或者叠着念。
+     earSay 里的 cancel() 只掐得住正在响的声音，掐不住排好队的下一步。 */
+  var gen = ++EAR.gen;
+  function live(){ return EAR && EAR.on && EAR.gen === gen; }
   var o = EAR.list[EAR.i];
   var q = strip(o.item.q);
   var a = strip(o.item.ez || o.item.en || '');
   var ael = $('eara');
   function answer(){
-    if(!EAR || !EAR.on) return;
+    if(!live()) return;
     var el = $('eara'); if(el) el.textContent = a;
     earSay(a, EAR.v.f, 1.06, function(){
-      if(!EAR || !EAR.on) return;
-      setTimeout(function(){ earNext(0); }, 900);
+      if(!live()) return;
+      /* ⚠ 2026-09-24 她：「在单个问题上**循环播放 / 再放一遍 / 再多看一会儿**」。
+         · 循环打开 → 原地再念一遍，不往下走；
+         · 间隔可调（默认 2 秒，原来 0.9 秒是我拍的，太赶）；
+         · 「再多停 5 秒」是一次性的，用完清掉。 */
+      var wait = (EAR.gap || 2000) + (EAR.extra || 0);
+      EAR.extra = 0;
+      var tip = $('earst2');
+      if(tip) tip.textContent = EAR.loop ? '（循环中 · 这一条还会再念）' : '';
+      setTimeout(function(){
+        if(!live()) return;
+        if(EAR.loop){ earStep(); } else { earNext(0); }
+      }, wait);
     });
   }
   /* ⚠ 挑中的句子不一定配得到题；配不到就跳过男声，直接念这一句。 */
   if(!q){ answer(); return; }
   if(ael) ael.innerHTML = '<span class="small">（听题…）</span>';
   earSay(q, EAR.v.m, 0.85, function(){
-    if(!EAR || !EAR.on) return;
-    setTimeout(answer, 1800);   /* 停两秒 —— 想跟着说的时候有个缝 */
+    if(!live()) return;
+    setTimeout(function(){ if(live()) answer(); }, 1800);   /* 停两秒 —— 想跟着说的时候有个缝 */
   });
 }
 
