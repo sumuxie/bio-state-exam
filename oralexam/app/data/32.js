@@ -12,7 +12,7 @@ window.CARDS.push({
 id:'32', n:32, w:1,
 q:'What are the principles of metabolic regulation?',
 qcn:'代谢调控的基本原则',
-sub:'主干说完约 90 秒 · 三个层级 ＋ 一条「控在哪一步」的规矩 · 例子全部挂在别的卡上',
+sub:'主干约 90 秒 · <b>四问</b>：在哪控 → 怎么控 → 凭什么 → 谁下令 · 例子只报名字，全部挂在别的卡上',
 
 /* ---------------- 速背 ---------------- */
 cram:[
@@ -102,7 +102,7 @@ cram:[
   en:'“One thing worth adding. The level I work with every day is the first one, the amount of protein. On my bacterial expression plasmids I induce with <b>IPTG</b>. That is the lac operon used as a tool. In yeast surface display I switch the library on with the <b>GAL1</b> promoter, so my protein appears only when I feed galactose. And allosteric control is really a binding question. An effector has its own <b>dissociation constant</b> for its own site, so the response of the enzyme to that effector is a binding curve. The sigmoid curve the textbook draws for an allosteric enzyme is that binding curve made steep by cooperativity.”',
   note:'<b>这是给他的抓手</b>：往「诱导」走会落到卡 12（lac / trp 操纵子，IPTG 为什么用 gratuitous inducer），往「变构是 Kd 问题」走会落到卡 02（Kd、半数占据、饱和曲线）。<b>两个方向都是她的主场，都接得住。</b><br><b>「S 形曲线就是被协同性变陡了的结合曲线」这一句要练熟</b>——它把这张卡、卡 02 和卡 18 一次接起来，而且是他最容易觉得「这人真的懂」的那种句子。'}
 ],
-end:'<b>这题的成败在开口那二十秒</b>：你说的是「三个层级 ＋ 一条位置的规矩」，还是「糖酵解这样调、循环那样调」。<br>后者是目录，每报一条通路就递给他一把刀；前者是规则，每个例子都变成你的证据。<b>记住例子挂在哪张卡上（glycolysis → gly · citric acid cycle → 24 · respiratory chain → 25 · operons → 12 · Kd → 02），报名字就好，不要展开。</b>',
+end:'<b>这题的成败在开口那二十秒</b>：你说出口的是<b>「四个问题」</b>，还是「糖酵解这样调、循环那样调」。<br>后者是目录，每报一条通路就递给他一把刀；前者是规则，每个例子都变成你的证据。<br>⚠ <b>四问里最硬的是第一问</b>：<b>控制点只能落在远离平衡的那一步</b>（Q 和 K′eq 差不到两个数量级就是近平衡，糖酵解一半以上的酶都近平衡）。这一条答出来，这题就不是背口诀了。<br><b>例子挂在哪张卡上</b>：glycolysis → gly · citric acid cycle → 24 · respiratory chain → 25 · operons → 12 · Kd → 02。<b>报名字就好，不要展开。</b>',
 
 /* ---------------- 演练 ---------------- */
 sib:[
@@ -148,29 +148,36 @@ sib:[
 ],
 
 segs:[
- {tag:'段 1 · 定义', h:'三个实词各交代一句，并且声明这是规则不是清单',
-  p:['“Metabolism is the whole set of strictly coordinated enzyme reactions that run in a living cell. The textbook divides it in two. <b>Catabolism</b> is the degrading half. It takes nutrients apart and releases energy. <b>Anabolism</b> is the synthetic half. It builds the cell’s own molecules and spends energy.',
-     'Regulation means setting the rate of those reactions. So the cell makes what it needs, and not what it does not need. By <b>principles</b> I mean the general rules about where control sits and how it acts. I do not mean a list of pathways.',
-     'The textbook gives the reason at the start of the chapter. Under uncontrolled coexistence, enzyme reactions in many places of metabolism would run uselessly, and the effects of some enzyme systems would cancel each other out. A high degree of organisation is possible only under consistent regulation.”'],
-  note:'<b>「I do not mean a list of pathways」这一句请务必说出口。</b>它把接下来六十秒的结构交给了你，而不是交给他。<br>三个实词都交代了：<b>metabolic</b>（那一整套酶反应，分解 ＋ 合成）· <b>regulation</b>（设定速率）· <b>principles</b>（规则）。'},
- {tag:'段 2 · general', h:'三个层级 ＋ 一条位置的规矩，这一屏就是全部答案的骨架',
-  p:['“The textbook says regulation can be considered at many levels, from the whole organism down to a single enzyme reaction, and physiologically it distinguishes nervous from hormonal control. I will stay at the enzyme level, which is where the general rules live.',
-     'There are three levels at which a cell controls flux. Flux means the rate at which material passes through a pathway. The first level is the <b>amount</b> of enzyme, controlled by induction or repression of its synthesis. That is slow, and it changes the ceiling.',
-     'The second level is the <b>activity</b> of enzyme molecules that already exist. That is fast, because nothing has to be made. It happens in three ways: allosteric control, covalent modification, and the binding of an inhibitor into the active site.',
-     'The third level is <b>access</b>. Compartmentation decides whether the enzyme and the substrate are even in the same space. The supply of a limiting metabolite decides whether there is anything to work on.',
-     'And there is one rule about <b>position</b>. Control sits at a practically irreversible step, near the beginning of the pathway.”'],
-  note:'<b>这一屏说完，这题其实已经答完了。</b>后面两段都是证据。<br><b>flux 这个词在整套卡里只有这张用，所以要就地交代</b>（「物质通过一条通路的速率」）——这是她自己定的规矩：别在一张卡里用另一张卡没解释过的词。'},
- {tag:'段 3 · 稍展开', h:'每条规则挂一个书里的实例，报名字，不要展开',
-  p:['“For the first level the textbook’s examples are the <b>lac and trp operons</b>, and it adds that steroid hormones induce enzyme biosynthesis.',
-     'For allosteric control the classic pattern is <b>feedback inhibition</b>. The end product of a sequence inhibits the first enzyme of that sequence, and that enzyme is allosteric. The textbook calls it the <b>controlling enzyme</b>. Its examples are the synthesis of isoleucine from threonine, and aspartate transcarbamoylase inhibited by CTP. It says this minimises the demand for carbon, nitrogen and energy.',
-     'For covalent modification the example is <b>glycogen phosphorylase</b>, switched between an active and an almost inactive form by reversible phosphorylation of a serine. The irreversible kind is a proenzyme cut into an active enzyme, trypsinogen into trypsin.',
-     'For the rule about position the example is <b>phosphofructokinase</b>. It catalyses a practically irreversible phosphorylation, which makes it the rate-limiting reaction of glycolysis, and its activity is allosterically controlled by the ATP and ADP system. Position and mechanism sit on the same enzyme.',
-     'And regulating two opposing pathways is different from regulating one enzyme. Glycogen synthesis and breakdown are coordinately controlled by an amplifying cascade. The synthase is active when the phosphorylase is inactive, and the other way round.”'],
-  note:'<b>时间不够就砍到三句</b>：反馈抑制、phosphofructokinase、糖原互控。<b>不要砍掉「position and mechanism sit on the same enzyme」</b>——那一句是这段的收口。<br><b>每个例子只报名字。</b>糖酵解展开在卡 gly，柠檬酸循环在卡 24，呼吸链在卡 25，操纵子在卡 12。他要哪个你再打开哪个。'},
- {tag:'段 4 · 留口子', h:'伸到她的主场：诱导表达 ＋ 变构其实是 Kd',
-  p:['“One thing worth adding. The level I work with every day is the first one, the amount of protein. On my bacterial expression plasmids I induce with <b>IPTG</b>, which is the lac operon used as a laboratory tool. In yeast surface display I switch the library on with the <b>GAL1</b> promoter, so my protein appears only when I feed galactose.',
-     'And allosteric control is really a binding question. An effector has its own <b>dissociation constant</b> for its own site. So the response of an enzyme to that effector is a binding curve, and the sigmoid curve the textbook draws for an allosteric enzyme is that binding curve made steep by cooperativity.”'],
-  note:'<b>两个口子都落在她接得住的地方</b>：诱导 → 卡 12（IPTG 为什么用 gratuitous inducer、GAL1）；变构 → 卡 02（Kd、半数占据、饱和曲线）。<br>⚠ <b>不要在这一段主动提 Michaelis-Menten 方程对变构酶不成立</b>——那是加分项，留到他追问再给（见追问组）。<b>答八分就停。</b>'}
+ {tag:'段 1 · 定义 ＋ 四个问题', h:'一句定义，然后把这道题拆成四问 —— 骨架从这里就交到你手上',
+  p:['“Regulation means setting the rate of the reactions of metabolism, so that the cell makes what it needs and not what it does not need. Metabolism itself is the whole set of strictly coordinated enzyme reactions in a living cell. <b>Catabolism</b> takes nutrients apart and releases energy. <b>Anabolism</b> builds the cell’s own molecules and spends it.',
+     'By <b>principles</b> I mean the general rules. <b>I do not mean a list of pathways.</b> There are four questions and I will take them in turn. <b>Where</b> does control sit, <b>how</b> does it act, <b>what</b> does the cell sense, and <b>who</b> gives the order.',
+     'One distinction first, and this part is general rather than from my textbook. <b>Regulation</b> in the strict sense holds a parameter steady while the flow through the pathway changes. <b>Control</b> changes the output of the pathway in response to a signal. My own textbook opens the chapter with the reason for both. Under uncontrolled coexistence, enzyme reactions in many places would run uselessly, and the effects of some enzyme systems would cancel each other out.”'],
+  note:'<b>「四问」这一句是整张卡的新骨架</b>：说出口之后，接下来六十秒的结构就在你手里，他不会再追着你要通路名。<br>⚠ <b>regulation 对 control 这个区分是 Lehninger 的（§13.5 p497），书里没有</b>，所以要标 general —— 但正因为书里没有，说出来特别值钱。<br><b>旧版在这里背了一段 catabolism / anabolism 的字典定义</b>，那是在答「什么是代谢」，不是在答「原则是什么」，已经压成一句。'},
+
+ {tag:'段 2 · 第一问 · 在哪控', h:'⚠ 整道题唯一可检验的东西：控制点只能落在远离平衡的那一步',
+  p:['“First, where control sits. <b>Not every step can be a control point.</b> Most steps of a pathway run close to equilibrium. There the net flow is the small difference between a fast forward rate and a fast reverse rate.',
+     'That makes them useless as control points. A small change in concentration swings them either way, and it can even reverse the direction. The test for this is general rather than from my textbook. Compare the <b>mass action ratio</b> with the <b>equilibrium constant</b>. When the two are within one or two orders of magnitude, the reaction is near equilibrium. <b>That is true of more than half the enzymes of glycolysis.</b>',
+     'So control sits at the few steps that are <b>far from equilibrium</b>. My textbook states the same rule in its own words. Control sits at a <b>practically irreversible</b> step, near the beginning of the pathway. Its example is <b>phosphofructokinase</b>, which catalyses a practically irreversible phosphorylation and is allosterically controlled by the ATP and ADP system. <b>Position and mechanism sit on the same enzyme.</b>”'],
+  note:'⚠ <b>这一段是这次改写的核心。</b>旧版把「控在不可逆那一步」塞在段 2 最后一句当补充，而它是整道题<b>唯一一条可检验的规则</b>。<br><b>Q 对 K′eq 那把尺子是 Lehninger §13.5 p500 的</b>（general），但它跟你卡 <b>gly</b> 上已经会的「三步不可逆、七步近平衡」<b>是同一件事的两种讲法</b> —— 你其实已经会一半了。<br><b>被追问「为什么偏偏是那一步」时，这一段就是答案。</b>'},
+
+ {tag:'段 3 · 第二问 · 怎么控', h:'两种速度：慢的改数量（改天花板）· 快的改活性（不用现造）· 而且能叠加',
+  p:['“Second, how control acts. There are <b>two speeds</b>. The slow way changes the <b>amount</b> of enzyme, by induction or repression of its synthesis. That moves the ceiling. My textbook’s examples are the <b>lac and trp operons</b>, and it adds that steroid hormones induce enzyme biosynthesis.',
+     'The fast way changes the <b>activity</b> of enzyme molecules that already exist, because nothing has to be made. It works in four ways. An <b>allosteric effector</b> binds away from the active site. An <b>inhibitor</b> binds into it. A <b>phosphoryl group</b> is put on or taken off. And a <b>regulatory protein</b> binds or leaves. That fourth one is general rather than from my textbook.',
+     'The classic allosteric pattern is <b>feedback inhibition</b>, where the end product inhibits the first enzyme of its own sequence. My textbook calls that the <b>controlling enzyme</b> and gives isoleucine from threonine, and aspartate transcarbamoylase inhibited by CTP. For covalent modification it gives <b>glycogen phosphorylase</b>, switched by phosphorylation of a serine. <b>These mechanisms are not exclusive.</b> One enzyme is often regulated by several at once.',
+     'There is a third thing which is not a mechanism but a precondition. <b>Compartmentation</b> decides whether the enzyme and its substrate are in the same space at all. And the supply of a <b>limiting metabolite</b> decides whether there is anything to work on.”'],
+  note:'<b>例子还在，但降了一级</b>：旧版段 3 是七个例子排成一张清单，正好打了段 1「I do not mean a list」的脸。<br>现在每个例子<b>挂在它证明的那条规则后面</b>，只报名字不展开 —— <b>报名字是证据，展开是送刀</b>。<br>⚠ 「调节蛋白结合与解离」这第四种机制是 Lehninger 补的（PKA 在 cAMP 分开催化亚基和调节亚基之前没活性），<b>旧版只写了三种</b>。'},
+
+ {tag:'段 4 · 第三问 · 凭什么', h:'⚠ 旧版完全没有这一层 —— 细胞读的是比值，每个比值都是一张许可证',
+  p:['“Third, what the cell senses. <b>It does not measure an absolute amount. It reads ratios</b>, and each ratio is a permit.',
+     'The <b>adenine nucleotides</b> report the energy state. A falling ATP to ADP ratio says that energy is short. <b>AMP is the sharper signal.</b> Cells hold ATP near five to ten millimolar and AMP below a tenth of that. Adenylate kinase then turns a small loss of ATP into a large rise in AMP. That amplification is general rather than from my textbook.',
+     'The <b>nicotinamide nucleotides</b> report the redox state. NAD-plus is the oxidant a dehydrogenase needs, so a high NADH to NAD-plus ratio stalls catabolism. <b>NAD-plus is not a consumable, it is a permit.</b> The NADPH pool is kept reduced instead, and a high ratio there is a permit to build. Fatty acid synthesis is the clearest case.”'],
+  note:'⚠ <b>这一层旧版的主干里一个字都没有</b>，全在后面的追问组里 —— 她说的「神叨叨」就是这个：前面讲了半天「怎么控」，却没说细胞<b>凭什么知道该控</b>。<br><b>AMP 更灵敏</b>来自 Lehninger §13.5 p502（general）：ATP 掉一点，经腺苷酸激酶（2 ADP → ATP ＋ AMP）AMP 成倍涨，<b>信号被放大了</b>。<br>NAD⁺ 那条跟这张卡的「比值本身就是信号」那一组是同一件事，<b>主干里先给一句，追问再展开</b>。'},
+
+ {tag:'段 5 · 第四问 · 谁下令 ＋ 留口子', h:'激素是最外层 · 对向通路互控 · 然后伸到她自己的实验台',
+  p:['“Fourth, who gives the order. Inside one cell the signals I just described are enough. <b>Between tissues it is hormones</b>, and my textbook gives them the whole of the next section. Physiologically it distinguishes nervous from hormonal control.',
+     'One rule belongs to <b>pairs</b> of pathways rather than to single enzymes. <b>Opposing pathways are regulated reciprocally</b>, so that the two do not run at the same time and waste energy. My textbook’s example is glycogen synthesis and breakdown, coordinated by an amplifying cascade, with the synthase active when the phosphorylase is not.',
+     'One thing worth adding. <b>The level I work with every day is the first one</b>, the amount of protein. I induce bacterial expression with <b>IPTG</b>, which is the lac operon used as a laboratory tool. In yeast surface display I switch the library on with the <b>GAL1 promoter</b>, so my protein appears only when I feed galactose. And allosteric control is really a binding question. An effector has its own dissociation constant for its own site, so the sigmoid curve my textbook draws is that binding curve made steep by cooperativity.”'],
+  note:'<b>「谁下令」这一问把激素接了进来</b> —— 书 §10.3 紧接着 §10.2，所以这题很可能一路问到激素，<b>与其被带过去，不如自己走过去</b>。<br><b>对向通路互控</b>是原则不是例子：它回答「为什么合成和分解不会同时跑」。<br><b>最后那一段是她的主场</b>：IPTG ＝ lac 操纵子当工具、GAL1、以及「变构其实是 Kd」 —— 把答案落在她天天做的事上。'}
 ],
 
 why:{
