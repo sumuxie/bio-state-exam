@@ -358,6 +358,29 @@ ask:[
    cn:'⚠ <b>「平方级，不是指数级」这半句要主动说</b>。她 2026-09-25 那份准备材料的题面写的是「指数级增长」，那是用词错了 —— 对着方法论严苛派说错这个词很吃亏。<span class="pg">通用</span>'},
 ]},
 
+ {g:'⚠ 考官 · Hodek · 免疫学的四个定义（抗体是他的工具）', gn:'⚠ <b>2026-09-25 查出来的空白</b>：<b>表位、B / T 细胞全套卡 0 命中</b>，而「抵体」在卡上只作为<b>试剂</b>出现过（免疫共沉淀、亲和纯化），不是免疫学定义。<br><b>Prof. Petr Hodek 用鸡蛋黄里的 IgY 和抗肽抗体去查那些没人知道功能的 P450</b> —— <b>所以他问抗原、表位、ELISA，那是他每天的工具，不是考你教科书。</b><b>四条每条一句起步，不用铺成卡。</b>', items:[
+  {r:'高', q:'What is an antigen, and what is an antibody?',
+    ez:'“An antigen is anything the immune system recognises and that provokes a specific immune response. Usually it is a foreign protein or a polysaccharide or a molecule on a pathogen surface. An antibody is a glycoprotein. Plasma cells make it, and plasma cells come from B cells. One antibody binds one antigen specifically. It is the main effector of humoral immunity.”',
+    ezcn:'<b>抗原 ＝ 能被免疫系统认出、并诱发特异性免疫应答的东西</b>，<b>通常是外来的蛋白、多糖，或病原体表面的分子。</b><b>抗体 ＝ 一类糖蛋白，由浆细胞产生，而浆细胞来自 B 细胞。</b><b>一种抗体特异性地结合一种抗原，它是体液免疫的主要效应分子。</b>',
+   en:'“An antigen is anything the immune system recognises and that provokes a specific immune response, usually a foreign protein, a polysaccharide, or a molecule on the surface of a pathogen. An antibody is a glycoprotein made by plasma cells, which come from B cells. One antibody binds one antigen specifically, and it is the main effector of humoral immunity.”',
+   cn:'<b>两句话各给一个判据</b>：抗原是<b>被认出并引发应答的</b>，抗体是<b>被做出来去认它的</b>。<br>⚠ <b>卡上其余地方的「抗体」都是当试剂用</b>（mb-int 的免疫共沉淀、pe-pur 的亲和纯化）—— <b>那是用法，不是定义。</b><span class="pg">通用</span>'},
+  {r:'高', q:'What is an epitope, and how do you tell a conformational one from a linear one?',
+    ez:'“An epitope is the small part of an antigen that the antibody actually binds. It is usually a tiny fraction of the surface. The test is boiling. A linear epitope is one continuous stretch of sequence, so it survives denaturation and the antibody still binds after boiling. A conformational epitope is made of residues that are far apart in the sequence but brought together by folding. Denaturation scatters them, so binding is lost after boiling.”',
+    ezcn:'<b>表位 ＝ 抗原上被抗体真正结合的那一小块</b>，<b>通常只占表面很小一部分。</b><b>分辨的办法是煮。</b><b>线性表位是一段连续的序列，变性也还在，所以煮过之后抗体照样结合。</b><b>构象表位是由序列上隔很远、被折叠拉到一起的残基组成的；变性把它们打散，所以煮过之后结合不上。</b>',
+   en:'“An epitope is the small part of an antigen that the antibody actually binds, usually a tiny fraction of the surface. The test is boiling. A linear epitope is one continuous stretch of sequence, so it survives denaturation and the antibody still binds after boiling. A conformational epitope is made of residues far apart in the sequence but brought together by folding, so denaturation scatters them and binding is lost.”',
+   cn:'⚠ <b>方向最容易说反，而且她 2026-09-25 那份准备材料里这一条的题面和答案就是反的。</b><b>煮过还能结合 ＝ 线性；煮过结合不上 ＝ 构象。</b><br><b>接一句很有用的</b>：Western blot 用的是变性胶，<b>所以它只看得见线性表位</b>—— 接这张卡的 Western 那一格。<span class="pg">通用</span>'},
+  {r:'中', q:'What do B cells and T cells each do?',
+    ez:'“They split humoral and cellular immunity. A B cell recognises antigen and becomes a plasma cell. The plasma cell secretes antibody, and that antibody works outside cells. It neutralises pathogens and marks them for clearance. A T cell works on cells. A cytotoxic T cell kills infected host cells directly. A helper T cell secretes cytokines that coordinate the others, including B cells.”',
+    ezcn:'<b>两边分的是体液免疫和细胞免疫。</b><b>B 细胞认出抗原，变成浆细胞，浆细胞分泌抗体；抗体在细胞外干活，中和病原体、或者给它做上标记让别人清除。</b><b>T 细胞对付的是细胞</b>：<b>细胞毒性 T 细胞直接杀掉被感染的宿主细胞，辅助性 T 细胞分泌细胞因子去统调其他细胞，包括 B 细胞。</b>',
+   en:'“They split humoral and cellular immunity. A B cell recognises antigen and becomes a plasma cell. The plasma cell secretes antibody. That antibody works outside cells, neutralising pathogens and marking them for clearance. A T cell works on cells: a cytotoxic T cell kills infected host cells directly, and a helper T cell secretes cytokines that coordinate the other cells, including B cells.”',
+   cn:'<b>一句话的判据：B 细胞派出分子，T 细胞亲自动手。</b><span class="pg">通用</span>'},
+  {r:'中', q:'In an indirect ELISA, what do the primary antibody, the secondary antibody and the substrate each do?',
+    ez:'“Three layers. The plate is coated with the antigen. The primary antibody binds that antigen, and that is the specific recognition. The secondary antibody is raised against the species of the primary antibody, and it carries an enzyme. It does not touch the antigen. Several secondary antibodies can bind one primary antibody, and that is where the signal is amplified. The enzyme then turns the substrate into a coloured product, and the colour is read on a plate reader.”',
+    ezcn:'<b>三层。</b><b>孔板先包上抗原。</b><b>一抗结合那个抗原，这是特异性识别那一步。</b><b>二抗是针对一抗所属物种的，身上偶联一个酶，它不碰抗原。</b>⚠ <b>放大发生在这一层：多个二抗能结合到同一个一抗上。</b><b>酶再把底物变成有颜色的产物，用酶标仪读颜色深浅。</b>',
+   en:'“Three layers. The plate is coated with the antigen. The primary antibody binds that antigen, and that is the specific recognition. The secondary antibody is raised against the species of the primary antibody and carries an enzyme; it does not touch the antigen. Several secondary antibodies can bind one primary antibody, and that is where the signal is amplified. The enzyme then converts the substrate into a coloured product, which is read on a plate reader.”',
+   cn:'⚠ <b>放大的理由要说对</b>：<b>多个二抗结合到同一个一抗上</b>，不是「一个抗原被多个二抗结合」—— 她那份准备材料里写错了这一句。<br><b>「二抗不碰抗原」这半句也要说</b>，那才说明你懂 indirect 这个字。<span class="pg">通用</span>'}
+ ]},
+
  {g:'术语表 · 这张卡上剩下的名字', gn:'方法本身在上面的「方法速查」里，顺式元件、最简启动子、转录激活域、标签、Dicer、RISC 在下面的「定义类」里。<b>这一组只收两边都没收的那几个名字。</b>形式一样：<b>名字 ＝ 是什么 · 管什么 · 读出来是什么</b>。', items:[
   {r:'高', q:'bait and prey',
    ez:'“The bait is the half you already know. It is fused to the D N A binding domain. The prey is the half you are testing. It is fused to the activation domain. The two halves may bind. Then the domains are brought together and the reporter gene fires.”',
