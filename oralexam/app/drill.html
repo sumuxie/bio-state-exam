@@ -163,6 +163,18 @@ h3.sec.secmain i{box-shadow:0 0 0 3px var(--card)}
 #main button.main{font-size:17px;font-weight:700;padding:13px 26px;border-radius:11px}
 .part button.main{font-size:14px;padding:9px 16px}
 #main button.ghost{font-size:13px;padding:7px 13px}
+/* 挑句：☆ 在句首，挑中整句高亮（她：「选中句子后句子会被 highlight」）*/
+p.wktxt.sent{margin:0 0 7px;padding:3px 6px;border-radius:6px;transition:background .12s}
+p.wktxt.sent.on{background:#fff2c2}
+@media (prefers-color-scheme:dark){p.wktxt.sent.on{background:#4a3f1c}}
+.pkgrp{margin:0 0 16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.pkq{margin:0 0 6px;font-size:13px;font-weight:700;display:flex;gap:8px;align-items:baseline}
+.pkq span{margin-left:auto;font-size:11px;color:var(--faint);font-weight:400}
+p.pkline{margin:0 0 4px;padding:3px 6px;border-radius:6px;font-size:14.5px;line-height:1.7}
+p.pkline span{cursor:pointer}
+b.pk{cursor:pointer;color:var(--faint);font-size:14px;margin-right:6px;user-select:none}
+b.pk:hover{color:var(--accent)}
+p.wktxt.sent.on b.pk{color:#c9a227}
 .earbox{border-color:#7a5cff}
 .spot{margin:10px 0 0;padding:9px 11px;border:1px solid var(--line);border-radius:9px}
 .spot .bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin:0 0 6px}
@@ -855,7 +867,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>081459b</b>'
+      + ' · 版本 <b>6829cca</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1748,6 +1760,27 @@ function blankOf(w){
   if(!m) return esc(w);
   return esc(m[1]) + esc(m[2]) + esc(m[3]);
 }
+/* ======================= 挑句 =======================
+   ⚠ 2026-09-24 她：「**磨耳朵就是只能选中句子**」「**这样连贯性强点**」
+   「选中句子后句子会被 **highlight** ofc 然后下次再背也比较容易」。
+   —— 她先否了 ★ 必背那套（「不够连贯」），因为那存的是任意一段选中的文字，
+   可能半句、可能跨句，念出来是碎的。**以句为单位才连贯。** */
+function pickKey(card, sent){ return card + '|' + hash(strip(sent)); }
+function pickAll(){ var s = st(); return s.pick || (s.pick = {}); }
+function pickHas(card, sent){ return !!pickAll()[pickKey(card, sent)]; }
+function pickToggle(card, k, el){
+  var s = st(); s.pick = s.pick || {};
+  var sent = (el && el.getAttribute('data-s')) || '';
+  var key = card + '|' + k;
+  if(s.pick[key]){ delete s.pick[key]; }
+  else { s.pick[key] = {card:card, text:sent, ts:Date.now()}; }
+  save(s);
+  var box = el && el.closest ? el.closest('.sent') : null;
+  if(box) box.classList.toggle('on', !!s.pick[key]);
+  if(el) el.textContent = s.pick[key] ? '★' : '☆';
+}
+function pickCount(){ return Object.keys(pickAll()).length; }
+
 /* mode: read 全文可点 · cloze 关键词挖掉（点空格可以偷看一个）· keys 只留关键词 · blind 全遮 */
 function wkText(mode){
   if(mode === 'blind') return '<p class="wktxt small" style="color:var(--dim)">（全部遮上了 —— 合上眼说。想偷看就往上看「①」那一段。）</p>';
@@ -1758,12 +1791,23 @@ function wkText(mode){
       return ks.length ? ks.join(' · ') : '<span class="gap">…</span>';
     }).join(' <span class="gap">／</span> ') + '</p>';
   }
-  return '<p class="wktxt">' + WK.src.split(/(\s+)/).map(function(w){
-    if(!w.trim()) return w;
-    if(mode === 'cloze' && isKey(w)) return '<span class="bl" data-w="' + esc(w) + '" onclick="peek(this)">' + blankOf(w) + '</span>';
-    return '<span class="wd" onclick="sayW(this)">' + esc(w) + '</span>';
-  }).join('') + '</p>';
+  /* ⚠ 2026-09-24：按**句**切开渲染，每句前面一个 ☆ —— 点一下整句高亮，
+     磨耳朵就只播挑中的这些。句子里的单词照旧点一下就念（sayW 不动）。 */
+  var cid = (WK && WK.cardId) || '';
+  return splitSent(WK.src).map(function(s2){
+    var k = hash(strip(s2));
+    var on = !!pickAll()[cid + '|' + k];
+    var body = s2.split(/(\s+)/).map(function(w){
+      if(!w.trim()) return w;
+      if(mode === 'cloze' && isKey(w)) return '<span class="bl" data-w="' + esc(w) + '" onclick="peek(this)">' + blankOf(w) + '</span>';
+      return '<span class="wd" onclick="sayW(this)">' + esc(w) + '</span>';
+    }).join('');
+    return '<p class="wktxt sent' + (on ? ' on' : '') + '">'
+      + '<b class="pk" data-s="' + escAttr2(s2) + '" onclick="pickToggle(\'' + cid + '\', \'' + k + '\', this)">'
+      + (on ? '★' : '☆') + '</b>' + body + '</p>';
+  }).join('');
 }
+function escAttr2(s){ return esc(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
 function sayW(el){ var t2 = (el.textContent||'').replace(/[^A-Za-z-]+$/,''); if(t2) say(t2); }
 function peek(el){ el.className = 'bl show'; sayW(el); }
 
@@ -2009,36 +2053,125 @@ function earSay(text, voice, pitch, cb){
   u.onend = u.onerror = function(){ if(cb) cb(); };
   try{ speechSynthesis.speak(u); }catch(e){ if(cb) cb(); }
 }
-/* 池子：默认只放她**练过的**；「全部」就是所有能出声的题。 */
-function earPool(onlyDone){
+/* 池子三选一：
+   · 'pick' ⚠ 她要的那个：**只播她一句一句挑中的**
+   · 'done' 只放她练过的
+   · 'all'  所有能出声的题
+   ⚠ 挑中的是**一整句**，但没有「问」。所以回去找这句属于哪一条追问
+     （在 ez/en 里做包含匹配），找到就用那道题当男声的提问，Q&A 的形状保住；
+     找不到就跳过男声、直接念这一句。 */
+function earPool(mode){
+  if(mode === true) mode = 'done';
+  if(mode === false) mode = 'all';
   var s = st(), out = [];
+  if(mode === 'pick'){
+    var P2 = pickAll();
+    Object.keys(P2).forEach(function(key){
+      var v = P2[key];
+      if(!v || !v.text) return;
+      var txt = strip(v.text);
+      if(txt.length < 8) return;
+      var c = cardById(v.card), item = null;
+      if(c){
+        var probe = txt.slice(0, 40);
+        qlist(c).forEach(function(x){
+          if(item) return;
+          if((strip(x.ez || '') + ' ' + strip(x.en || '')).indexOf(probe) !== -1) item = x;
+        });
+      }
+      out.push({card: c || {id:v.card, q:v.card, qcn:v.card},
+                item: {q:(item ? item.q : ''), ez:txt, en:txt}, pick:1});
+    });
+    return shuffle(out);
+  }
   CARDS.forEach(function(c){
     qlist(c).forEach(function(x){
       if(!x.en && !x.ez) return;
-      if(onlyDone && !wSeen(s, c.id, x.q)) return;
+      if(mode === 'done' && !wSeen(s, c.id, x.q)) return;
       out.push({card:c, item:x});
     });
   });
   return shuffle(out);
 }
+/* ======================= 去挑句 =======================
+   ⚠ 2026-09-24 她：「目前这些磨耳朵我没有标过，你就**直接选出原文然后问我，
+   你想读哪几句？**然后我就直接弄一下。但是后续我会在跟读跟背的时候直接也标记了。」
+   —— 放聊天里贴几百句没法用，所以做成一屏：原文一句一句列出来，每句一个 ☆。 */
+var PKSCOPE = 'done';
+function pickPage(scope){
+  PKSCOPE = scope || PKSCOPE;
+  var s = st(), groups = [], n = 0;
+  CARDS.forEach(function(c){
+    qlist(c).forEach(function(x){
+      if(!x.en && !x.ez) return;
+      if(PKSCOPE === 'done' && !wSeen(s, c.id, x.q)) return;
+      var ss = splitSent(x.ez || x.en || '');
+      if(!ss.length) return;
+      groups.push({c:c, q:x.q, ss:ss});
+      n += ss.length;
+    });
+  });
+  var picked = pickCount();
+  var h = '<div class="card"><h2>挑句 —— 选出你想磨的句子</h2>'
+    + '<p class="small">点句子前面的 <b>☆</b> 就挑中，整句会高亮。'
+    + '<b>挑中的句子会进磨耳朵</b>，而且下次在跟读里看到它也是亮的。</p>'
+    + '<div class="row" style="margin:12px 0"><label>范围 <select id="pkscope" '
+      + 'onchange="pickPage(this.value)">'
+      + '<option value="done"' + (PKSCOPE === 'done' ? ' selected' : '') + '>我练过的</option>'
+      + '<option value="all"' + (PKSCOPE === 'all' ? ' selected' : '') + '>全部</option>'
+      + '</select></label>'
+      + '<span class="small">这个范围里 <b>' + n + '</b> 句 · 已挑 <b id="pkn">' + picked + '</b> 句</span>'
+      + '<button class="main" onclick="home()">挑好了</button></div>';
+  if(!groups.length){
+    h += '<p class="small">这个范围里还没有句子 —— 先去走几条，或者把范围切到「全部」。</p>';
+  }
+  groups.forEach(function(g){
+    h += '<div class="pkgrp"><p class="pkq">' + esc(g.q) + '<span>' + esc(cardTitle(g.c)).slice(0,26) + '</span></p>';
+    g.ss.forEach(function(s2){
+      var k = hash(strip(s2));
+      var on = !!pickAll()[g.c.id + '|' + k];
+      h += '<p class="pkline sent' + (on ? ' on' : '') + '">'
+        + '<b class="pk" data-s="' + escAttr2(s2) + '" onclick="pickToggle(\'' + g.c.id + '\', \'' + k + '\', this); pkCount()">'
+        + (on ? '★' : '☆') + '</b><span onclick="say(this.textContent)">' + esc(s2) + '</span></p>';
+    });
+    h += '</div>';
+  });
+  h += '<p style="margin:18px 0 0"><button class="main" onclick="home()">挑好了 ▸</button> '
+    + '<button class="ghost" onclick="pickClear()">清空全部</button></p></div>';
+  $('main').innerHTML = h;
+  window.scrollTo(0, 0);
+}
+function pkCount(){ var e = $('pkn'); if(e) e.textContent = pickCount(); }
+function pickClear(){
+  if(!confirm('清空全部挑中的句子？')) return;
+  var s = st(); s.pick = {}; save(s); pickPage();
+}
+
 function earBox(){
-  var s = st();
-  var done = earPool(true).length, all = earPool(false).length;
+  var done = earPool('done').length, all = earPool('all').length, pk = earPool('pick').length;
   return '<div class="onebox earbox">'
     + '<div class="small" style="margin:0 0 8px">'
     + '<b>开始之后不用动手</b>：男声念题 → 停两秒 → 女声念答案 → 下一条，一直走。'
     + '<br>⚠ <b>这一屏不记分、不算进度</b> —— 这是休息，不是练习。'
-    + '<br>你练过的有 <b>' + done + '</b> 条可以磨；全部 <b>' + all + '</b> 条。</div>'
+    + '<br>⚠ <b>想只磨某几句？</b>跟读第 ① 步里每句话前面有个 <b>☆</b>，'
+    + '<b>点一下整句高亮</b>，这里选「只播我挑的句子」。<b>高亮会留着，下次再背一眼就看见。</b></div>'
     + '<div class="row"><label>播哪些 <select id="earwhich">'
-    + '<option value="1">只播我练过的（' + done + '）</option>'
-    + '<option value="0">全部（' + all + '）</option></select></label>'
+    + '<option value="pick"' + (pk ? '' : ' disabled') + '>★ 只播我挑的句子（' + pk + '）</option>'
+    + '<option value="done" selected>只播我练过的（' + done + '）</option>'
+    + '<option value="all">全部（' + all + '）</option></select></label>'
     + '<button class="main" onclick="earStart()">▶ 开始听</button>'
+    + '<button class="ghost" onclick="pickPage()">☆ 去挑句</button>'
     + '<span class="small" id="earst"></span></div></div>';
 }
 function earStart(){
-  var onlyDone = (($('earwhich') || {}).value !== '0');
-  var list = earPool(onlyDone);
-  if(!list.length){ alert('还没有可以磨的 —— 先去走几条，或者切到「全部」。'); return; }
+  var mode = (($('earwhich') || {}).value) || 'done';
+  var list = earPool(mode);
+  if(!list.length){
+    alert(mode === 'pick'
+      ? '还没挑过句子 —— 跟读第 ① 步里，点每句话前面那个 ☆。'
+      : '还没有可以磨的 —— 先去走几条，或者切到「全部」。');
+    return;
+  }
   EAR = {list:list, i:0, on:true, v:pickTwoVoices()};
   earScreen();
   earStep();
@@ -2052,7 +2185,7 @@ function earScreen(){
   var o = EAR.list[EAR.i];
   $('main').innerHTML = '<div class="card">'
     + '<span class="chemtag">🎧 磨耳朵 ' + (EAR.i+1) + ' / ' + EAR.list.length + '</span>'
-    + '<p class="chemq" id="earq">' + esc(o.item.q) + '</p>'
+    + '<p class="chemq" id="earq">' + esc(o.item.q || '（你挑的一句）') + '</p>'
     + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b></p>'
     + '<div class="do" id="eara" style="font-size:17px;line-height:1.85"></div>'
     + '<p style="margin:18px 0 0">'
@@ -2081,17 +2214,20 @@ function earStep(){
   var q = strip(o.item.q);
   var a = strip(o.item.ez || o.item.en || '');
   var ael = $('eara');
+  function answer(){
+    if(!EAR || !EAR.on) return;
+    var el = $('eara'); if(el) el.textContent = a;
+    earSay(a, EAR.v.f, 1.06, function(){
+      if(!EAR || !EAR.on) return;
+      setTimeout(function(){ earNext(0); }, 900);
+    });
+  }
+  /* ⚠ 挑中的句子不一定配得到题；配不到就跳过男声，直接念这一句。 */
+  if(!q){ answer(); return; }
   if(ael) ael.innerHTML = '<span class="small">（听题…）</span>';
   earSay(q, EAR.v.m, 0.85, function(){
     if(!EAR || !EAR.on) return;
-    setTimeout(function(){
-      if(!EAR || !EAR.on) return;
-      var el = $('eara'); if(el) el.textContent = a;
-      earSay(a, EAR.v.f, 1.06, function(){
-        if(!EAR || !EAR.on) return;
-        setTimeout(function(){ earNext(0); }, 900);
-      });
-    }, 1800);   /* 停两秒 —— 想跟着说的时候有个缝 */
+    setTimeout(answer, 1800);   /* 停两秒 —— 想跟着说的时候有个缝 */
   });
 }
 

@@ -76,6 +76,9 @@ PROBE = {
    #   结果 earSay 里引用了演练台没有的 `unspell`，一播放就 ReferenceError，
    #   而 smoke 全绿 —— 她点了没声音才发现。单次调用不会进循环，安全。
    ("磨耳朵 念一句","earSay('test one two', null, 1, function(){});"),
+   # ⚠ 2026-09-24 她要的「挑句」：屏 ＋ 计数 ＋ 挑/取消
+   ("挑句屏",     "pickPage('all');"),
+   ("挑句 计数",   "pkCount(); pickCount();"),
    ("磨耳朵 停",  "earStop();"),
    ("回首页5",    "home();"),
  ],
