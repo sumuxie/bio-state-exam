@@ -293,10 +293,10 @@ details[open]>summary:before{content:'▾ ';}
 <script src="data/23.js?v=28a50eca"></script>
 <script src="data/24.js?v=c2a40b86"></script>
 <script src="data/25.js?v=59771812"></script>
-<script src="data/27.js?v=6a8a20b5"></script>
+<script src="data/27.js?v=a9e8ff42"></script>
 <script src="data/28.js?v=8cf1c0ab"></script>
 <script src="data/31.js?v=a48b3140"></script>
-<script src="data/32.js?v=aae5fc88"></script>
+<script src="data/32.js?v=7637a210"></script>
 <script src="data/aa.js?v=09cd5b07"></script>
 <script src="data/gly.js?v=844f60ee"></script>
 <script src="data/land.js?v=1269368e"></script>
@@ -875,7 +875,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>00ddc2b</b>'
+      + ' · 版本 <b>3541eb7</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2046,43 +2046,18 @@ function eqsOf(x){
 /* 整张卡的式子（速背的注解和 big ＋ 追问的注解）。⚠ 给主问题那一屏兜底用：
    `mainOf()` 给主问题造的对象里 `cn` 是写死的空字符串，它自己一条式子都没有，
    而主问题恰恰是她每张卡**最先念**的那一条。 */
-function eqsOfCard(c){
-  if(!c) return [];
-  var bag = [];
-  (c.cram || []).forEach(function(p){
-    bag = bag.concat(eqsOf({cn:p.note || '', warn:p.warn || '', big:p.big || ''}));
-  });
-  qlist(c).forEach(function(x){ bag = bag.concat(eqsOf(x)); });
-  var out = [], seen = {};
-  bag.forEach(function(e){
-    /* ⚠ 去重的时候把箭头上的标签和空白先拿掉 ——
-       同一条式子在 note 里带标签、在 big 里不带，不归一就会摆两遍。 */
-    var k = strip(e).replace(/\[[^\]]*\]/g, '').replace(/\s+/g, '');
-    if(seen[k]) return;
-    seen[k] = 1;
-    out.push(e);
-  });
-  return out.slice(0, 6);
-}
+/* ⚠ 2026-09-24 她：「**每个单独的出现的、需要公式的地方你单独放就行了**」
+   「**你为什么一次性给那么多公式**」。
+   所以**把整张卡的式子打包摆出来那个做法删了**。只剩两条路：
+   ① 这一条自己注解里带的式子 —— 它就是这段话里的东西，直接摆；
+   ② 卡上手写指定的 `eq:[...]` —— 给主问题那一屏用（mainOf 的 cn 是空的）。
+   **没有就什么都不摆。** */
 function eqBox(x, c){
   var eqs = eqsOf(x);
-  var body = function(list){
-    return list.map(function(e){ return '<p><code>' + e + '</code></p>'; }).join('');
-  };
-  /* 这一条自己带的式子 —— 直接摆出来，它就是这段话里的东西。 */
-  if(eqs.length){
-    return '<div class="eqbox"><p class="eqh">🧪 这一条里的公式 —— <b>看着念，不用逐字背</b></p>'
-      + body(eqs) + '</div>';
-  }
-  /* ⚠ 2026-09-24 她：「公式一大块在下面 怎么回事」「**比如这个题根本就不需要公式**」。
-     卡级兑底是为了主问题那一屏（mainOf 的 cn 是空的）做的，
-     但卡 32 这种题摆一堆式子就是噪音。
-     所以卡级的**默认折起来**：需要的时候点一下，不需要的时候就一行字。 */
-  var cardEqs = c ? eqsOfCard(c) : [];
-  if(!cardEqs.length) return '';
-  return '<details class="eqbox"><summary class="eqh">🧪 这张卡上的公式（' + cardEqs.length
-    + ' 条）—— <b>这一条本身用不到，需要再展开</b></summary>'
-    + body(cardEqs) + '</details>';
+  if(!eqs.length && c && c.eq && c.eq.length) eqs = c.eq.slice(0);
+  if(!eqs.length) return '';
+  return '<div class="eqbox"><p class="eqh">🧪 公式 —— <b>看着念，不用逐字背</b></p>'
+    + eqs.map(function(e){ return '<p><code>' + e + '</code></p>'; }).join('') + '</div>';
 }
 
 function walkRender(){
