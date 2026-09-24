@@ -132,6 +132,10 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
 .parts{display:flex;gap:10px;margin:0;flex-wrap:wrap}
 .chembox{border-color:var(--accent)}
+.spot{margin:10px 0 0;padding:9px 11px;border:1px solid var(--line);border-radius:9px}
+.spot .bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin:0 0 6px}
+.spot .bar i{display:block;height:100%;background:var(--accent)}
+.spot .small{margin:0}
 .strm{margin:0 0 12px}
 .strmh{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 5px}
 .strmh b{font-size:14px}
@@ -727,6 +731,18 @@ function home(){
       + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '
       + '<button class="ghost" onclick="histPage()">练过的</button> '
       + '<button class="ghost" onclick="statsPage()">分析</button></p>'
+    /* ⚠ 2026-09-24：接着上次那一份。她：「我不敢点回主页」—— 现在敢了。 */
+    + (function(){
+        var sp = st().spot;
+        if(!sp || !sp.n) return '';
+        var ago = Math.round((Date.now() - (sp.ts || 0)) / 60000);
+        return '<div class="onebox" style="border-color:var(--good)"><b>▸ 接着上次那一份</b>'
+          + '<div class="small" style="margin:2px 0 8px">' + esc(sp.tag || '跟读')
+          + ' · 停在第 <b>' + (sp.i + 1) + ' / ' + sp.n + '</b> 条'
+          + (ago < 60 ? '（' + (ago < 1 ? '刚刚' : ago + ' 分钟前') + '）' : '')
+          + ' —— <b>停在哪儿都算数。</b></div>'
+          + '<button class="main" onclick="resumeSpot()">回到那一条</button> '
+          + '<button class="ghost" onclick="clearSpot();home()">清掉</button></div>'; })()
     /* 2026-09-23 她：「化学专练还是专门列出来吧」。
        ⚠ 这一块要同时满足两件事：**显眼到绕不开**（她「有看见就绕道走的惯性」），
        又**看上去不吓人**（她「看着就发怵，学的最薄弱的地方」）。
@@ -803,7 +819,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>8f4d80b</b>'
+      + ' · 版本 <b>a5f95f7</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1592,6 +1608,33 @@ function cardById(id){
 }
 /* 走「这张卡的第 n 份」 */
 var KNAME = {main:'主问题', cram:'速背', ask:'追问', all:'整张卡'};
+/* ⚠ 2026-09-24 她：「我又想看一下进度，但是我不敢点回主页」。
+   —— 回首页会丢位置，所以她卡在那儿不敢动。存下位置，首页给一个「接着上次」。
+   ⚠ 存的是**位置**（哪张卡、哪一份、第几条），不是内容；
+   卡改了也不会指错，最多回到那一份的开头。 */
+function saveSpot(){
+  if(!CH || !CH.list || !CH.list.length) return;
+  var o = CH.list[CH.i] || CH.list[0];
+  var s = st();
+  s.spot = {kind:CH.kind || (CH.round ? 'round' : 'third'), third:CH.third || 0,
+            round:CH.round || 0, card:(o && o.card ? o.card.id : ''),
+            i:CH.i, n:CH.list.length, tag:CH.tag || '', ts:Date.now()};
+  save(s);
+}
+function clearSpot(){ var s = st(); if(s.spot){ delete s.spot; save(s); } }
+/* 首页那个「接着上次」 */
+function resumeSpot(){
+  var s = st(), p = s.spot;
+  if(!p) return;
+  if(p.kind === 'round' && p.round){ walkRound(p.round); }
+  else {
+    var sel = $('onecard');
+    if(sel && p.card){ sel.value = p.card; }
+    walkThird(p.kind === 'third' ? (p.k2 || 'all') : p.kind, p.third || 1);
+  }
+  if(CH && p.i < CH.list.length){ CH.i = p.i; walkRender(); }
+}
+
 function walkThird(kind, n){
   var sel = $('onecard');
   if(!sel) return;
@@ -1603,7 +1646,7 @@ function walkThird(kind, n){
   var tag = KNAME[kind] + (kind === 'main' ? '' : ' 份 ' + n);
   CH = {list:list, i:0, tag:'📖 ' + tag,
         done:cardTitle(c).slice(0,18) + ' · ' + tag + ' 到这里',
-        again:"walkThird('" + kind + "', " + n + ")", third:n, kind:kind};
+        again:"walkThird('" + kind + "', " + n + ")", third:n, kind:kind, cardId:c.id};
   walkRender();
 }
 /* 换一张卡就把三份的进度条重画一遍 */
@@ -1790,6 +1833,15 @@ function walkRender(){
     + '<p class="chemq sayit" onclick="sayEl(this)">' + esc(x.q) + '</p>'
     + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
       + (o.turf ? ' · <b>这是你自己天天在做的东西</b>' : '') + '</p>'
+    /* ⚠ 2026-09-24 她：「想看一下进度，但是不敢点回主页」。进度搬到这儿，不用离开。 */
+    + (function(){
+        var done = 0;
+        CH.list.forEach(function(x){ if(wSeen(s3, x.card.id, x.item.q)) done++; });
+        var pc = CH.list.length ? Math.round(100 * done / CH.list.length) : 0;
+        return '<div class="spot"><div class="bar"><i style="width:' + pc + '%"></i></div>'
+          + '<div class="small">这一份走过 <b>' + done + ' / ' + CH.list.length + '</b>'
+          + ' · 今天整段出声 <b>' + (r.walk || 0) + '</b> 遍'
+          + '<br><b>停在哪儿都算数</b> —— 回首页不会丢，下次点「接着上次」就回到这一条。</div></div>'; })()
     + '<div class="do"><b>这一屏不考你。</b>四步，每一步都录下来，你自己听。<b>不打分。</b>'
       + '<span class="small"> 点任何一个词 ＝ 念那个词。</span></div>'
     /* ⚠ 2026-09-23 她：「在原本已经读过一遍的题目上直接涂掉」。
@@ -1813,6 +1865,7 @@ function walkRender(){
     + (x.warn ? '<div class="wn"><b>⚠</b> ' + x.warn + '</div>' : '')
     + '</div>';
   window.scrollTo(0,0);
+  saveSpot();
 }
 function walkNext(){
   if(!CH) return;
