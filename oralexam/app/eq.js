@@ -28,15 +28,17 @@
     /* 独占一行的：居中的大块 */
     'code.eq{display:block;margin:12px auto;padding:11px 14px;text-align:center;',
     '  font-family:' + FONT + ';font-size:19px;line-height:2.05;letter-spacing:.01em;',
-    '  max-width:100%;overflow-x:auto;white-space:nowrap;background:none;border:0}',
+    '  max-width:100%;overflow:hidden;white-space:nowrap;background:none;border:0}',
     /* 夹在句子里的：同样的字体，不居中、不放大，免得把句子撑散 */
-    'code.eqin{font-family:' + FONT + ';font-size:1.06em;letter-spacing:.01em;',
-    '  padding:0 2px;white-space:nowrap}',
+    /* ⚠ 2026-09-24 她：「**要写成一行就装下 别回车**」「**一个公式一行**」。
+       所以夹在句子里的也单独占一行，只是不放大不居中。 */
+    'code.eqin{display:block;margin:6px 0;font-family:' + FONT + ';font-size:16px;',
+    '  letter-spacing:.01em;padding:0 2px;white-space:nowrap;max-width:100%;overflow:hidden}',
     /* 只是术语的 `<code>`：低调的底色，别跟公式抢 */
     'code.term{font-size:.94em;padding:1px 5px;border-radius:5px;background:rgba(127,127,127,.10)}',
     /* 箭头上带字 */
     'code .ar{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;',
-    '  vertical-align:middle;margin:0 .5em;line-height:1.05}',
+    '  vertical-align:middle;margin:0 var(--arm,.5em);line-height:1.05}',
     'code .ar b{font-size:11.5px;font-weight:600;letter-spacing:.02em;opacity:.75;',
     '  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;white-space:nowrap}',
     'code .ar i{font-style:normal;font-size:21px;margin-top:-2px}',
@@ -128,9 +130,39 @@
     el.className = (el.className ? el.className + ' ' : '') + ((alone || txt.length > 30) ? 'eq' : 'eqin');
   }
 
+  /* ⚠ 2026-09-24 她：「**要写成一行就装下 别回车**」。
+     nowrap 只能保证不折行，保证不了**装得下** —— 装不下就得横向拉，
+     跟折行一样难受。所以这里**量一下真实宽度，一级级把字号调小到能装下**。
+     最小 10.5px；再小就看不清了，那时候才放开横向滚动。 */
+  var FITMIN = 10.5;
+  function fit(el){
+    if(!el.clientWidth) return;
+    var base = parseFloat(el.getAttribute('data-fs') || 0);
+    if(!base){
+      base = parseFloat(window.getComputedStyle(el).fontSize) || 19;
+      el.setAttribute('data-fs', base);
+    }
+    el.style.fontSize = base + 'px';
+    for(var k = 0; k < 4 && el.scrollWidth > el.clientWidth + 1; k++){
+      var now = parseFloat(el.style.fontSize) || base;
+      var next = now * (el.clientWidth / el.scrollWidth) * 0.985;
+      if(next < FITMIN){ next = FITMIN; el.style.overflowX = 'auto'; }
+      el.style.fontSize = next + 'px';
+      /* 实在窄的时候把字距和箭头两边的空档收紧 ——
+         先挤空白，再挤字号，比一上来就把字调成蚂蚁强。 */
+      if(next < 13.5){ el.style.letterSpacing = '0'; el.style.setProperty('--arm', '.28em'); }
+      if(next <= FITMIN) break;
+    }
+  }
+  function fitAll(root){
+    var list = (root || document).querySelectorAll('code.eq,code.eqin');
+    for(var i = 0; i < list.length; i++) fit(list[i]);
+  }
+
   function sweep(root){
     var list = (root || document).querySelectorAll('code:not([data-eq])');
     for(var i = 0; i < list.length; i++) upgrade(list[i]);
+    if(list.length) fitAll(root);
     return list.length;
   }
 
@@ -149,10 +181,17 @@
     if(!window.MutationObserver || !document.body) return;
     /* ⚠ 挂在 body 上，哪一屏重画都能接住。处理过的带 data-eq，不会重复干活。 */
     new MutationObserver(later).observe(document.body, {childList:true, subtree:true});
+    /* 窗口宽度变了（转屏、缩放）要重新算一遍。 */
+    var rt = null;
+    window.addEventListener('resize', function(){
+      if(rt) clearTimeout(rt);
+      rt = setTimeout(function(){ fitAll(document); }, 150);
+    });
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 
   window.eqSweep = sweep;
+  window.eqFit = fitAll;
 })();
