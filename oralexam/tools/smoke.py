@@ -89,6 +89,12 @@ PROBE = {
    ("磨耳朵 多停",  "earHold(); earHold();"),
    ("磨耳朵 间隔",  "earGap(5); earGap(2);"),
    ("磨耳朵 再放",  "var _os = earStep; earStep = function(){ window.__rp = 1; }; earReplay(); earStep = _os; window.__rp;"),
+   # ⚠ 2026-09-24 她要的「日戳 / 听过几遍 / 自标多听」
+   ("磨耳朵 倒推日戳","backfillDays(st());"),
+   ("磨耳朵 分堆",  "earDays().length; earDayRow();"),
+   ("磨耳朵 标多听","earStarToggle(); earPool('star').length; earStarToggle();"),
+   ("磨耳朵 计遍数","earCount(EAR.list[0]);"),
+   ("磨耳朵 按天池","earPool('day:_none').length + earPool('day:2026-09-23').length;"),
    ("磨耳朵 停",  "earStop();"),
    ("回首页5",    "home();"),
  ],
