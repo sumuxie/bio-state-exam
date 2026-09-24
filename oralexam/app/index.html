@@ -654,7 +654,7 @@ button.b:disabled{opacity:.35;cursor:default}
 <script src="data/taq.js?v=e9799f1c"></script>
 <script src="data/land.js?v=1269368e"></script>
 <script src="data/x_bonds.js?v=28136aeb"></script>
-<script src="data/labmicro.js?v=332e4ad1"></script>
+<script src="data/labmicro.js?v=1fbee04f"></script>
 
 <script>
 /* =================== helpers =================== */
@@ -907,6 +907,8 @@ function subjOf(c){
   return '';
 }
 var PESBOPEN = false;
+var LABOPEN = false;
+function labToggle(){ LABOPEN = !LABOPEN; renderList(); }
 function pesbToggle(){ PESBOPEN = !PESBOPEN; renderList(); }
 
 function renderList(){
@@ -915,12 +917,16 @@ function renderList(){
   document.getElementById('nav').classList.add('hide');
 
   var built = [], todo = [], cross = [];
-  var pesb = [], mb = [];
+  var pesb = [], mb = [], labmic = [];
   for (var i=0;i<CARDS.length;i++){
     var cc = CARDS[i];
     /* PESB 是另一门课，不能跟生化的横向卡混在一段里——她找不到。 */
     if (String(cc.id).indexOf('pe-') === 0) pesb.push(cc);
     else if (String(cc.id).indexOf('mb-') === 0) mb.push(cc);
+    /* ⚠ 2026-09-24 她：「这几个是啥 为啥全是空的 但是又占地方…
+       可以的话就收起来我反正不需要点开」。
+       实验基本技术 / 微生物学是**另外两门考试科目**，跟生化的横向卡混在一段里只会挡路。 */
+    else if (/^(lab|mic)-/.test(String(cc.id))) labmic.push(cc);
     else if (cc.cross) cross.push(cc);
     else built.push(cc);
   }
@@ -1019,6 +1025,23 @@ function renderList(){
     h += '<p class="lgrp">横向卡</p>'
       + '<p class="lgrp-n">不对应某一道题，跨很多题共用。乱不清的东西放这里。</p>';
     for (i=0;i<cross.length;i++) h += rowCard(cross[i]);
+  }
+  /* 实验基本技术 ＋ 微生物学：又是两门，默认收起（她：「收起来我反正不需要点开」）。 */
+  if (labmic.length && !LABOPEN){
+    var nq = 0;
+    for (i=0;i<labmic.length;i++){
+      var gg = labmic[i].ask || [];
+      for (var g2=0;g2<gg.length;g2++) nq += (gg[g2].items||[]).length;
+    }
+    h += '<p style="margin:22px 0 0"><button class="bbtn ghost" type="button" onclick="labToggle()">'
+       + '另外两门考试 · 实验基本技术 ＋ 微生物学 · '
+       + labmic.length + ' 组 ' + nq + ' 道 · 点开</button></p>';
+  } else if (labmic.length){
+    h += '<p class="lgrp">实验基本技术 ＋ 微生物学</p>'
+      + '<p class="lgrp-n"><b>这是另外两门考试科目</b>，导师题单里的 34 ＋ 32 道。'
+      + '<b>它们没有速背，题全在追问里</b> —— 点进去往下翻就是。</p>';
+    for (i=0;i<labmic.length;i++) h += rowCard(labmic[i]);
+    h += '<p style="margin:14px 0 0"><button class="bbtn ghost" type="button" onclick="labToggle()">收起 ▴</button></p>';
   }
   /* 另外两门。默认收起来——首页只放生化，她看见三门并排会喘不过气。 */
   if ((pesb.length || mb.length) && !PESBOPEN){
