@@ -79,6 +79,15 @@ PROBE = {
    # ⚠ 2026-09-24 她要的「挑句」：屏 ＋ 计数 ＋ 挑/取消
    ("挑句屏",     "pickPage('all');"),
    ("挑句 计数",   "pkCount(); pickCount();"),
+   # ⚠ 2026-09-24 她要的「循环 / 再放一遍 / 多停一会儿」。
+   #   这几个的验证要小心：**不能让它们真的进播放链**（同上，定时器会被快进）。
+   #   所以先搭一个假 EAR，渲染那一屏，再单独调三个控制；
+   #   earReplay 把 earStep 暂时换掉—— 这样它自己的那几行真跑了，又不会掉进循环。
+   ("磨耳朵 假屏",  "EAR = {list:[{card:CARDS[0], item:{q:'q', ez:'hello there friend'}}], i:0, on:false, v:{m:null,f:null}, gap:2000, loop:false, extra:0, gen:0}; earScreen();"),
+   ("磨耳朵 循环",  "earLoop(); earLoop();"),
+   ("磨耳朵 多停",  "earHold(); earHold();"),
+   ("磨耳朵 间隔",  "earGap(5); earGap(2);"),
+   ("磨耳朵 再放",  "var _os = earStep; earStep = function(){ window.__rp = 1; }; earReplay(); earStep = _os; window.__rp;"),
    ("磨耳朵 停",  "earStop();"),
    ("回首页5",    "home();"),
  ],
