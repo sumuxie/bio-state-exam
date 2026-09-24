@@ -40,7 +40,14 @@
     var ask = d[4].map(function(g){ return grp(d[1], g[0], g[1]); })
                   .filter(function(g){ return g.items.length; });
     if(!ask.length) return;
-    window.CARDS.push({id:d[0], cross:1, w:2, q:d[2], qcn:d[2], sub:d[3],
-                       cram:[], ask:ask});
+    /* ⚠ 2026-09-24 她：列表里这几张看着像空壳。查了，**不是空的**，66 条题都在；
+       但列表行的大字是 q、小字是 qcn，而这两个字段本来写的是同一句话。
+       ⚠ q 必须留中文：mainOf() 看见 q 是英文就会把它当成「卷面主问题」，
+       而这九张没有主问题，它们是一组一组的题。所以改的是 qcn。 */
+    var n9 = 0;
+    ask.forEach(function(g){ n9 += (g.items || []).length; });
+    window.CARDS.push({id:d[0], cross:1, w:2, q:d[2],
+                       qcn:(n9 + ' 道 · 另一门考试科目 · 没有速背，题全在追问里'),
+                       sub:d[3], cram:[], ask:ask});
   });
 })();
