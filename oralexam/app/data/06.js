@@ -593,7 +593,7 @@ ask:[
  cn:'<span class="pg">p112 p158 p036</span>。<b>卡 13 是这道题的正面</b>；这里只留一句接口。'},
 {r:'中', q:'Where does glucose go after this chapter?',
   ez:'“There are three doors. The first is glycolysis. Glucose six phosphate goes to pyruvate. Fructose six phosphate is the first isomerisation. The second is the pentose phosphate pathway. That oxidises carbon one. Glucose six phosphate goes to six phosphogluconate. Decarboxylation then gives ribulose five phosphate. Two N A D P H come out. The third is oxidation at carbon six. That gives glucuronate.”',
-  ezcn:'<b>三扇门。</b><b>① 糖酵解：6-磷酸葡萄糖 → 丙酮酸，第一步异构化给出 6-磷酸果糖。</b><b>② 戊糖磷酸途径：在 C-1 上氧化，6-磷酸葡萄糖 → 6-磷酸葡萄糖酸内酯 → 6-磷酸葡萄糖酸，脱羧成 5-磷酸核酮糖，产出两个 NADPH。</b><b>③ 在 C-6 上氧化给出葡萄糖醛酸：它把外来化合物结合起来排出去，而且在多数动物里还通往抗坏血酸。</b>',
+  ezcn:'<b>三扇门。</b><b>① 糖酵解：6-磷酸葡萄糖 → 丙酮酸，第一步异构化给出 6-磷酸果糖。</b><b>② 磷酸戊糖途径：在 C-1 上氧化，6-磷酸葡萄糖 → 6-磷酸葡萄糖酸内酯 → 6-磷酸葡萄糖酸，脱羧成 5-磷酸核酮糖，产出两个 NADPH。</b><b>③ 在 C-6 上氧化给出葡萄糖醛酸：它把外来化合物结合起来排出去，而且在多数动物里还通往抗坏血酸。</b>',
  en:'“Three doors. Glycolysis — glucose-6-phosphate to pyruvate, with fructose-6-phosphate the first isomerisation. The pentose phosphate pathway — oxidation at carbon one, glucose-6-phosphate to 6-phosphogluconolactone to 6-phosphogluconate, decarboxylation to ribulose-5-phosphate, two NADPH. And oxidation at carbon six gives glucuronate, which conjugates foreign compounds for excretion and, in most animals, leads on to ascorbate.”',
  cn:'糖酵解 <span class="pg">p164</span>（她说学得好）；戊糖磷酸 §7.7 <span class="pg">p162 p163</span>；C-6 氧化 §7.6.2 <span class="pg">p160 p161</span>。'},
 {r:'中', q:'Which bonds have you named — glycosidic, ester, hemiacetal?',

@@ -1,9 +1,9 @@
-/* 卡 25 · Describe the electron transport chain and its role in cellular respiration.
+/* 卡 25 · Describe the respiratory chain and its role in cellular respiration.
    题库 #25（S3 Biochemistry 13）· 并入 #26 What is oxidative phosphorylation?（S3 Biochemistry 14）
    —— 两道题在书里是同一节：§6.2.4，节标题译过来是「Respiratory chain and aerobic phosphorylation」。
 
    出处：p141–p146（§6.2.4、figure 6.6–6.11）· p134–p136（table 6.2、ΔG°′ = −nFΔE°′、30 kJ 量子、2 vs 38）·
-   p139–p140（38 的拆分、3 ATP/NADH）· p045–p046（FMN/FAD、辅酶 Q、血红素、FeS）· p197（只有内膜产 ATP）·
+   p139–p140（38 的拆分、3 ATP/NADH）· p045–p046（FMN/FAD、泛醌、血红素、FeS）· p197（只有内膜产 ATP）·
    p206–p208（光合是镜像）· p219（NADPH 不进呼吸链）· p220（循环是最大供应者）· p222（限速的是 ADP）。
 
    回 300 dpi 原图核过四处：table 6.2 的 −0,32 / −0,20 / 0,00 / +0,10 / +0,26 / +0,82（p135）；
@@ -18,8 +18,8 @@
 
 window.CARDS.push({
 id:'25', n:25, merged:[26], w:1,
-q:'Describe the electron transport chain and its role in cellular respiration. What is oxidative phosphorylation?',
-qcn:'描述电子传递链及其在细胞呼吸中的作用 ＋ 什么是氧化磷酸化',
+q:'Describe the respiratory chain and its role in cellular respiration. What is oxidative phosphorylation?',
+qcn:'描述呼吸链及其在细胞呼吸中的作用 ＋ 什么是氧化磷酸化',
 sub:'主干说完约 90 秒 · 两道题一段书（§6.2.4）· 卡 24 交出来的还原力在这里兑成 ATP',
 
 /* ---------------- 速背 ---------------- */
@@ -66,8 +66,8 @@ cram:[
 
  {g:'四个复合物 ＋ 两个流动载体', gn:'<b>🪄 邪修记法</b>：电子的路 <b>NADH → Ⅰ → Q → Ⅲ → c → Ⅳ → O₂</b>，念「<b>一 Q 三 c 四</b>」；Ⅱ 从 succinate 侧门插进 Q。辅基对号：Ⅰ <b>FMN</b>＋FeS · Ⅱ <b>FAD</b>＋FeS · Ⅲ 细胞色素 <b>b、c₁</b>＋FeS · Ⅳ 细胞色素 <b>a、a₃</b>＋Cu。抑制剂 <b>R-A-C</b> 堵 <b>1-3-4</b>：<b>R</b>otenone 堵 Ⅰ · <b>A</b>ntimycin 堵 Ⅲ · <b>C</b>yanide 堵 Ⅳ。<br>每个只记四件事：<b>书给的名字（都是氧化还原酶）· 进来什么出去什么 · 辅基 · 泵不泵</b>。结构不用背。'},
  {n:'08', t:'复合物 I',
-  big:'<b>NADH:ubiquinone oxidoreductase</b> · NADH → 泛醌 · 辅基 <b>FMN ＋ 若干 FeS</b> · <b>泵 2 个质子</b>',
-  en:'“Complex I is <b>NADH:ubiquinone oxidoreductase</b>. Its core is the flavoprotein NADH dehydrogenase. Its prosthetic groups are <b>FMN</b> and several <b>iron-sulfur centres</b>, non-heme iron held by cysteine sulfurs. A prosthetic group is a cofactor bound permanently to the protein. The complex dehydrogenates NADH on the matrix side, passes the electrons to ubiquinone, and two protons appear outside.”',
+  big:'<b>NADH:ubiquinone<span class="alias">注：同时也可以叫做 coenzyme Q</span> oxidoreductase</b> · NADH → 泛醌<span class="alias">注：同时也可以叫做 辅酶 Q</span> · 辅基 <b>FMN ＋ 若干 FeS</b> · <b>泵 2 个质子</b>',
+  en:'“Complex I is <b>NADH:ubiquinone oxidoreductase</b>. Its core is the flavoprotein NADH dehydrogenase. Its prosthetic groups are <b>FMN</b> and several <b>iron-sulfur centres</b>, non-haem iron held by cysteine sulfurs. A prosthetic group is a cofactor bound permanently to the protein. The complex dehydrogenates NADH on the matrix side, passes the electrons to ubiquinone, and two protons appear outside.”',
   note:'书的式子：NADH + H⁺ + 2 QH· → NAD⁺ + 2 QH₂（把<b>半醌</b>还原成 <b>ubiquinol</b>）。p142：FMNH₂ 把电子交给膜<b>外侧</b>的 Fe₂S₂ 蛋白，<b>质子就在那里被放进膜间隙</b>；电子再传给<b>基质侧</b>的 Fe₄S₄。<span class="pg">p141 p142 p046</span>'},
  {n:'09', t:'复合物 II',
   big:'<b>succinate:ubiquinone oxidoreductase</b>，<b>就是循环里的 succinate dehydrogenase</b> · 辅基 <b>FAD ＋ 两个 FeS</b> · <b>不泵</b>',
@@ -87,9 +87,9 @@ cram:[
   warn:'<b>现代教科书说复合物 IV 是泵的</b>（每对电子 2 个），所以每个 NADH 是 <b>10</b> 个质子而不是 6 个。<b>先给书的（6 个、约 3 ATP），被追问再给现代值。</b>标 general。',
   note:'书自己承认：<b>「这个复合物的机制在所有线粒体氧化还原系统里是最不清楚的」</b>——被追细节时很好用。式子 ½ O₂ + 2 e⁻ + 2 H⁺ → H₂O；书说它虽不泵，但<b>消耗基质里的质子，因而提高基质 pH</b>。<span class="pg">p144</span>'},
  {n:'13', t:'两个流动载体',
-  big:'<b>ubiquinone（辅酶 Q）</b>：脂溶性小分子，<b>溶在膜里</b>移动，带 <b>2 电子 ＋ 2 质子</b>；<b>cytochrome c</b>：小蛋白，在<b>膜的外表面</b>滑动，一次带 <b>1 个电子</b>',
-  en:'“Between the complexes sit two mobile carriers. <b>Ubiquinone</b>, coenzyme Q, is a small lipid-soluble quinone, not a protein. It is mobile inside the membrane because it is hydrophobic, and it carries two electrons with two protons. <b>Cytochrome c</b> is a small protein with a heme that slides along the outer face carrying one electron at a time.”',
-  note:'p045：辅酶 Q 是<b>黄素蛋白和细胞色素之间的中介</b>（植物里对应 plastoquinone）。p144：cyt c 在膜表面<b>「滑动」</b>。p046：线粒体里至少五种细胞色素 <b>b、c₁、c、a、a₃</b>，靠吡咯环取代基不同而电位不同。<span class="pg">p045 p046 p142 p144</span>'},
+  big:'<b>ubiquinone（泛醌）</b>：脂溶性小分子，<b>溶在膜里</b>移动，带 <b>2 电子 ＋ 2 质子</b>；<b>cytochrome c</b>：小蛋白，在<b>膜的外表面</b>滑动，一次带 <b>1 个电子</b>',
+  en:'“Between the complexes sit two mobile carriers. <b>Ubiquinone</b>, ubiquinone, is a small lipid-soluble quinone, not a protein. It is mobile inside the membrane because it is hydrophobic, and it carries two electrons with two protons. <b>Cytochrome c</b> is a small protein with a haem that slides along the outer face carrying one electron at a time.”',
+  note:'p045：泛醌 是<b>黄素蛋白和细胞色素之间的中介</b>（植物里对应 plastoquinone）。p144：cyt c 在膜表面<b>「滑动」</b>。p046：线粒体里至少五种细胞色素 <b>b、c₁、c、a、a₃</b>，靠吡咯环取代基不同而电位不同。<span class="pg">p045 p046 p142 p144</span>'},
  {n:'14', t:'质子是怎么被搬出去的',
   big:'两类载体<b>交替</b>：NAD⁺ / FMN / Q 带「<b>电子 ＋ 质子</b>」，FeS 和细胞色素<b>只带电子</b>——质子在膜外被甩下，电子继续往里走',
   en:'“How can moving electrons move protons? The textbook’s answer is the <b>alternation</b>: NAD-plus, FMN and quinone carry electrons together with protons, while iron–sulfur centres and cytochromes carry <b>electrons only</b>. Each carrier has a fixed place in the membrane, so protons are taken up inside and released outside.”',
@@ -172,7 +172,7 @@ sib:[
 
 segs:[
  {tag:'段 1 · 定义', h:'两个定义，一句关系',
-  p:['“The <b>electron transport chain</b> is a series of electron carriers built into the inner mitochondrial membrane. This textbook calls it the respiratory chain. The inner membrane is the one that encloses the matrix, where the citric acid cycle runs. It is four multienzyme complexes, numbered one to four, with two mobile carriers between them. It takes the electrons that NADH and FADH₂ are carrying, passes them from one carrier to the next down to oxygen, and uses the energy released to pump protons out of the matrix.”',
+  p:['“The <b>respiratory chain</b> is a series of electron carriers built into the inner mitochondrial membrane. This textbook calls it the respiratory chain. The inner membrane is the one that encloses the matrix, where the citric acid cycle runs. It is four multienzyme complexes, numbered one to four, with two mobile carriers between them. It takes the electrons that NADH and FADH₂ are carrying, passes them from one carrier to the next down to oxygen, and uses the energy released to pump protons out of the matrix.”',
      '“Its <b>role in cellular respiration</b> is the final one. Cellular respiration is the complete oxidation of a nutrient to carbon dioxide and water: the cycle has already taken the carbon away as CO₂, and this is where the hydrogen finally reaches the oxygen and becomes water. It also regenerates NAD-plus and FAD — without that, glycolysis and the cycle would stop.”',
      '“<b>Oxidative phosphorylation</b> is the other half: the synthesis of ATP from ADP and inorganic phosphate, driven by that proton gradient as the protons flow back into the matrix through ATP synthase. Oxidative because the energy comes from oxidising the reduced coenzymes. Phosphorylation because it is spent putting a phosphate onto ADP. The textbook calls it aerobic phosphorylation and treats the two in one section.”',
      '“So the chain is the pump and the synthase is the turbine, and the only thing connecting them is the proton gradient across the membrane.”'],
@@ -409,14 +409,14 @@ ask:[
  en:'“A number in volts saying how strongly a redox pair holds its electrons, measured against a standard electrode at pH 7. The more negative, the more readily that system gives electrons away — and electrons pass spontaneously from the more negative system to the more positive one.”',
  cn:'Table 6.2 <span class="pg">p135</span>，<b>已回 300 dpi 核过</b>，从 acetaldehyde 的 −0,60 排到氧的 +0,82。被追「跟 ΔG 什么关系」——同一页给了桥：ΔG°′ = −nFΔE°′；E 轴有约定原点（生物系统里氢电极 −420 mV），ΔG 轴没有，只能配给<b>电位差</b>。<br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>ΔG°′ = −nFΔE°′</code>（书 p135）——它只能配给<b>差</b>，配给单个 E 没有意义。<br><br><b>两步看懂为什么</b>：<br>① E 轴的原点是<b>人为约定</b>的：氢电极被定成 0 V（那是 pH 0），换到 pH 7 它自己就成了 <b>−420 mV</b>。<b>原点换一个，表上每个数都跟着变。</b><br>② 而 ΔE 是<b>两个数相减</b>：原点在相减时被消掉了。所以海平面定在哪儿，落差都不变，能量也不变。<br><br><br><b>=== 一句话理解 ===</b><br><b>电位像海拔</b>：说「这里 800 米」之前得先有人定一个海平面，而<b>「从 800 米降到 200 米能做多少功」不需要海平面</b>。能量只认落差，所以式子里永远是 ΔE。<br>再往前一步：<code>ΔG°′ = −nFΔE°′</code> 和 <code>ΔG°′ = −RT ln K</code>（通用）是同一个 ΔG 的两种量法，一种量<b>电位差</b>，一种量<b>平衡位置</b>。<b>所以标准电位就是电子的 K<sub>d</sub></b>——这一句直接走进卡 02。'},
 {r:'高', q:'What is a prosthetic group, and which ones are in the chain?',
-    ez:'“A prosthetic group is a cofactor bound permanently to the protein. A coenzyme is different. A coenzyme comes and goes. The chain has four kinds. First, flavins. F M N is in complex one. F A D is in complex two. Second, iron sulfur centres. That is non heme iron held by cysteine sulfurs. Third, hemes. That is iron in a porphyrin ring. They are in cytochromes b, c one, c, a and a three. And fourth, copper in complex four.”',
+    ez:'“A prosthetic group is a cofactor bound permanently to the protein. A coenzyme is different. A coenzyme comes and goes. The chain has four kinds. First, flavins. F M N is in complex one. F A D is in complex two. Second, iron sulfur centres. That is non haem iron held by cysteine sulfurs. Third, hemes. That is iron in a porphyrin ring. They are in cytochromes b, c one, c, a and a three. And fourth, copper in complex four.”',
     ezcn:'<b>辅基 ＝ 永久结合在蛋白上的辅因子</b>（<b>辅酶则是来来去去的</b>）。<b>呼吸链里有四类</b>：<b>黄素</b>（<b>复合体 Ⅰ 里是 FMN，Ⅱ 里是 FAD</b>）· <b>铁硫中心</b>（<b>非血红素铁，由半胱氨酸的硫抓着</b>）· <b>血红素</b>（<b>卟啉环里的铁，在细胞色素 b、c₁、c、a、a₃ 里</b>）· <b>复合体 Ⅳ 里的铜</b>。',
- en:'“A cofactor bound permanently to the protein, unlike a coenzyme that comes and goes. The chain has four kinds. <b>Flavins</b>: FMN in complex one, FAD in two. <b>Iron-sulfur centres</b>, non-heme iron held by cysteine sulfurs. <b>Hemes</b>, iron in a porphyrin ring, in cytochromes b, c₁, c, a and a₃. And <b>copper</b> in complex four.”',
+ en:'“A cofactor bound permanently to the protein, unlike a coenzyme that comes and goes. The chain has four kinds. <b>Flavins</b>: FMN in complex one, FAD in two. <b>Iron-sulfur centres</b>, non-haem iron held by cysteine sulfurs. <b>Hemes</b>, iron in a porphyrin ring, in cytochromes b, c₁, c, a and a₃. And <b>copper</b> in complex four.”',
  cn:'全部在书里：黄素 <span class="pg">p045</span>、血红素与五种细胞色素 <span class="pg">p046</span>、FeS 的三种结构（线型、Fe₂S₂ 平面、Fe₄S₄ 立体）<span class="pg">p046</span>、铜 <span class="pg">p144</span>。<b>「辅基 vs 辅酶」本身就是一道小题</b>，顺手答掉。'},
 {r:'中', q:'What is ubiquinone, and why must it be lipid-soluble?',
-  ez:'“It is coenzyme Q. It is a small quinone, not a protein. It carries two electrons together with two protons. It must be lipid soluble because of its job. Its job is to move inside the membrane. It goes from complex one or two across to complex three. The textbook calls it the intermediary. It sits between the flavoproteins and the cytochromes.”',
-  ezcn:'<b>泛醌就是辅酶 Q：一个小的醌，不是蛋白，一次带两个电子连同两个质子。</b><b>它必须脂溶，是因为它的活儿就是在膜内部移动——从复合物 I 或 II 横过去到复合物 III。</b><b>书称它是黄素蛋白和细胞色素之间的中介。</b>',
- en:'“Coenzyme Q — a small quinone, not a protein, carrying two electrons together with two protons. It must be lipid-soluble because its job is to move <b>inside</b> the membrane, from complex one or two across to complex three. The textbook calls it the intermediary between the flavoproteins and the cytochromes.”',
+  ez:'“It is ubiquinone. It is a small quinone, not a protein. It carries two electrons together with two protons. It must be lipid soluble because of its job. Its job is to move inside the membrane. It goes from complex one or two across to complex three. The textbook calls it the intermediary. It sits between the flavoproteins and the cytochromes.”',
+  ezcn:'<b>泛醌就是泛醌：一个小的醌，不是蛋白，一次带两个电子连同两个质子。</b><b>它必须脂溶，是因为它的活儿就是在膜内部移动——从复合物 I 或 II 横过去到复合物 III。</b><b>书称它是黄素蛋白和细胞色素之间的中介。</b>',
+ en:'“Ubiquinone — a small quinone, not a protein, carrying two electrons together with two protons. It must be lipid-soluble because its job is to move <b>inside</b> the membrane, from complex one or two across to complex three. The textbook calls it the intermediary between the flavoproteins and the cytochromes.”',
  cn:'<span class="pg">p045 p142</span>。书说它「因为疏水所以自由移动」，并在醌、半醌、氢醌三态之间循环。植物里对应的是 <b>plastoquinone</b>——<b>这一句直接接到光合那道题</b>（#27）。'}
 ]},
 
@@ -474,7 +474,7 @@ ask:[
  cn:'<b>最后半句是很好用的一击。</b>式子 ½ O₂ + 2 e⁻ + 2 H⁺ → H₂O（<span class="pg">p144</span>）。这里造的水就是所谓<b>代谢水</b>：葡萄糖氧化总式里那六个水几乎全部出自这一步（<b>这半句是通用说法</b>，书只给总式）。'},
 {r:'中', q:'Does NADPH go into the respiratory chain too?',
   ez:'“No, and the textbook says so directly. The N A D P H from the pentose phosphate pathway is not oxidised there. It is used for synthetic reactions instead. The two differ by one phosphate. That phosphate sits on the ribose. And the cell keeps them for different jobs. N A D H serves catabolism and the chain. N A D P H serves reductive biosynthesis.”',
-  ezcn:'⚠ <b>不进，书直说了：戊糖磷酸途径来的 NADPH「不在呼吸链里被氧化，而是用于合成反应」。</b><b>两者只差核糖上的一个磷酸，而细胞把它们留给不同的活：NADH 服务分解代谢和呼吸链，NADPH 服务还原性的生物合成。</b>',
+  ezcn:'⚠ <b>不进，书直说了：磷酸戊糖途径来的 NADPH「不在呼吸链里被氧化，而是用于合成反应」。</b><b>两者只差核糖上的一个磷酸，而细胞把它们留给不同的活：NADH 服务分解代谢和呼吸链，NADPH 服务还原性的生物合成。</b>',
  en:'“No — and the textbook says so directly: the NADPH from the pentose phosphate pathway is not oxidised in the respiratory chain but used for synthetic reactions. The two differ by one phosphate on the ribose, and the cell keeps them for different jobs — NADH for catabolism and the chain, NADPH for reductive biosynthesis.”',
  cn:'<span class="pg">p219</span>。<b>价值在于「一个磷酸就把两条路分开了」</b>——这类「结构上的小差别 = 功能上的大分工」正是他喜欢的。'}
 ]},

@@ -55,7 +55,7 @@ cram:[
 
  {g:'水溶性维生素 → 辅酶', gn:'<b>🪄 邪修记法</b>（按书表的顺序）：中文首字「<b>烟 核 硫 · 泛 生 吡</b>」＝ 烟酸 → NAD/NADP 搬氢 · 核黄素 B₂ → FMN/FAD 搬氢 · 硫胺素 B₁ → TPP 搬醛 · 泛酸 → CoA 搬酰基 · 生物素 → 搬 CO₂ · 吡哆醇 B₆ → PLP 搬氨基。英文只用简单词：“<b>Naked Rats Take Pictures Before Party</b>” ＝ <b>N</b>iacin · <b>R</b>iboflavin · <b>T</b>hiamine · <b>P</b>antothenate · <b>B</b>iotin · <b>P</b>yridoxine。<br>书的 <b>Table 3.1</b> 就是这一组的骨架：<b>辅酶 · 搬什么 · 来自哪个维生素</b>，三列。每一行只要三件事：<b>叫什么 · 搬什么基团 · 在哪个反应里见过</b>。结构式不用背（她有专门的 app）。'},
  {n:'07', t:'书的表，原样',
-  big:'<b>Table 3.1（p043）</b>——这张表是这道题的地图。<b>注意有两行 vitamin 那一栏是空的</b>（辅酶 Q 和硫辛酰胺，不是最后两行），那个空格本身就是一道题',
+  big:'<b>Table 3.1（p043）</b>——这张表是这道题的地图。<b>注意有两行 vitamin 那一栏是空的</b>（泛醌<span class="alias">注：同时也可以叫做 辅酶 Q</span> 和硫辛酰胺，不是最后两行），那个空格本身就是一道题',
   en:'“The textbook has one table for this, table three point one on page forty-three. It has three columns: the coenzyme, the group it transfers, and the vitamin behind it. Ten coenzymes are listed, and two of them have an empty vitamin column.”',
   tbl:{head:['coenzyme','group transferred','vitamin'],
        rows:[['NAD⁺','H⁺, e⁻','nicotinic acid'],
@@ -68,7 +68,7 @@ cram:[
              ['Lipoamide','acyl, H','—（空）'],
              ['Biotin','CO₂','biotin (H)'],
              ['Pyridoxal phosphate','–NH₂','pyridoxine (B₆)']]},
-  note:'<b>这张表的正文 OCR 出来是空的，上面十行是回 300 dpi 原图一行一行读出来的。</b>书自己在表下注了一句，英译：<i>The abbreviations are explained in the text that follows.</i>（缩写在后文解释）。<br><b>两个要注意的地方</b>：① <b>同一页上书印了两个不同的名字</b>：这张表的 vitamin 栏里印的名字是 <b>nicotinic acid（烟酸）</b>，而同页正文讲到辅酶时，把辅酶里带的那个环叫作 <b>nicotinamide（烟酰胺）</b>——<b>书自己印的这两个名字指的不是同一个分子，这就是「维生素和它变成的东西不是一回事」的书面证据，而且这张表第一行就在演示</b>。② <b>Coenzyme Q 和 Lipoamide 两行的 vitamin 栏是空的</b>，见速背 19。<span class="pg">p043</span>'},
+  note:'<b>这张表的正文 OCR 出来是空的，上面十行是回 300 dpi 原图一行一行读出来的。</b>书自己在表下注了一句，英译：<i>The abbreviations are explained in the text that follows.</i>（缩写在后文解释）。<br><b>两个要注意的地方</b>：① <b>同一页上书印了两个不同的名字</b>：这张表的 vitamin 栏里印的名字是 <b>nicotinic acid（烟酸）</b>，而同页正文讲到辅酶时，把辅酶里带的那个环叫作 <b>nicotinamide（烟酰胺）</b>——<b>书自己印的这两个名字指的不是同一个分子，这就是「维生素和它变成的东西不是一回事」的书面证据，而且这张表第一行就在演示</b>。② <b>Ubiquinone 和 Lipoamide 两行的 vitamin 栏是空的</b>，见速背 19。<span class="pg">p043</span>'},
  {n:'08', t:'NAD⁺ / NADP⁺ · 搬氢和电子',
   big:'两个<b>二核苷酸</b>，一头腺嘌呤一头<b>烟酰胺</b>，糖都是 D-核糖。<b>氢加在吡啶环的 C-4 上</b>。NADP 多一个磷酸，在腺苷部分的 <b>2′ 位</b>',
   en:'“The nicotinamide coenzymes are NAD-plus and NADP-plus. Both are dinucleotides. One base is adenine, the other is nicotinamide, and the sugar is always D-ribose. NADP-plus differs by one further phosphate, on the two-prime position of the adenosine part. Their function is to bind hydrogen reversibly, onto carbon four of the pyridine ring, which then loses its aromatic character and its positive charge. NADPH is the reducing equivalent for biosynthesis, while NAD-plus works in the breakdown routes and in the reactions that make ATP.”',
@@ -126,9 +126,9 @@ cram:[
 
  {g:'陷阱', gn:'这一条几乎一定会被问，而且是一句话说错就掉分的那种。'},
  {n:'19', t:'辅酶不是维生素',
-  big:'<b>维生素是原料，辅酶是成品。</b>证据不用外借——<b>书自己的表里，Coenzyme Q 和 Lipoamide 那两行 vitamin 栏是空的</b>',
-  en:'“A coenzyme is not a vitamin. The vitamin is what comes in from the diet, and the coenzyme is what the cell builds out of it. The textbook makes the point in its own table without ever saying it. Ten coenzymes are listed, and two of them have an empty vitamin column: coenzyme Q and lipoamide. A coenzyme the organism can build for itself has no vitamin standing behind it. The first row shows the same thing from the other side. The vitamin is nicotinic acid, while the part the coenzyme carries is nicotinamide.”',
-  note:'<b>这是这张卡的核心陷阱，考官一定会让你说出区别。</b>三句话的层次要清楚：① 维生素是<b>营养学</b>的范畴，判据是「必须从食物来」；② 辅酶是<b>酶学</b>的范畴，判据是「酶的非蛋白有机部分，搬基团」；③ <b>两者的关系是前体和产物</b>，而且不是一一对应——烟酸一个维生素对应 NAD 和 NADP 两个辅酶，核黄素一个对应 FMN 和 FAD 两个。<br><b>Q 和硫辛酸人体能自己做，所以不是维生素</b>——<b>这半句书里没有，是通用知识</b>；书只留了两个空格。但书给了 Q 的来路：<span class="pg">p183</span> 说 <b>辅酶 Q 的疏水链跟维生素 K₂、维生素 E 一样，生化上出自 phytol</b>，那是异戊二烯的路线。',
+  big:'<b>维生素是原料，辅酶是成品。</b>证据不用外借——<b>书自己的表里，Ubiquinone<span class="alias">注：同时也可以叫做 coenzyme Q</span> 和 Lipoamide 那两行 vitamin 栏是空的</b>',
+  en:'“A coenzyme is not a vitamin. The vitamin is what comes in from the diet, and the coenzyme is what the cell builds out of it. The textbook makes the point in its own table without ever saying it. Ten coenzymes are listed, and two of them have an empty vitamin column: ubiquinone and lipoamide. A coenzyme the organism can build for itself has no vitamin standing behind it. The first row shows the same thing from the other side. The vitamin is nicotinic acid, while the part the coenzyme carries is nicotinamide.”',
+  note:'<b>这是这张卡的核心陷阱，考官一定会让你说出区别。</b>三句话的层次要清楚：① 维生素是<b>营养学</b>的范畴，判据是「必须从食物来」；② 辅酶是<b>酶学</b>的范畴，判据是「酶的非蛋白有机部分，搬基团」；③ <b>两者的关系是前体和产物</b>，而且不是一一对应——烟酸一个维生素对应 NAD 和 NADP 两个辅酶，核黄素一个对应 FMN 和 FAD 两个。<br><b>Q 和硫辛酸人体能自己做，所以不是维生素</b>——<b>这半句书里没有，是通用知识</b>；书只留了两个空格。但书给了 Q 的来路：<span class="pg">p183</span> 说 <b>泛醌 的疏水链跟维生素 K₂、维生素 E 一样，生化上出自 phytol</b>，那是异戊二烯的路线。',
   warn:'<b>反过来也别说错</b>：不是所有维生素都变成辅酶。<b>A 和 D 就不是辅酶</b>——A 走视觉的顺反异构，D 走激素的路。所以准确的说法是 “<b>most of the water-soluble vitamins</b> are precursors of coenzymes”，不是 “vitamins are coenzymes”。<b>「most」这个限定词是这句话的保险。</b>'}
 ],
 end:'<b>一句话记住整张卡：维生素被吃进来变成辅酶，辅酶搬基团和电子；矿物质要么坐在酶的活性中心里换价，要么在体液里带电荷。两样都不是燃料。</b><br><b>纸上怎么画（他说「画给我看」时用这张）</b>：画一条横线当接力跑道，左端写 pyruvate，右端写 acetyl-CoA。跑道上按顺序摆四个圈：<b>TPP → 硫辛酸 → CoA → FAD → NAD⁺</b>。第一个圈上方画一个箭头出去写 <b>CO₂</b>，最后一个圈上方画一个箭头出去写 <b>NADH</b>。然后在每个圈下面写它来自哪个维生素：<b>B₁ · （没有）· 泛酸 · B₂ · 烟酸</b>。<b>这一张图同时是账、是机制、是「辅酶不是维生素」的证据</b>——第二个圈下面那个空格，就是书表里那两个空格。',
@@ -219,13 +219,13 @@ figs:[
     + '<br><b>三列</b>：左列是<b>辅酶</b>，中列是<b>搬的基团</b>，右列是<b>维生素</b>。十行。'
     + '<br><br>⚠⚠ <b>这张表是拿来看「分组」的，不是拿来看结构的。</b>哪个维生素变成哪个辅酶、那个辅酶搬什么——<b>这三件事连起来就是这道题</b>。<b>化合物的结构式她另有专门的 app，这里一个都不用背。</b>'
     + '<br><br><b>十行一眼分成四组（这就是「分组」的意思）</b>：'
-    + '<br>① <b>搬氢和电子的五个</b>：NAD⁺ · NADP⁺ · FMN · FAD · Coenzyme Q。中列全写着 H⁺, e⁻。'
+    + '<br>① <b>搬氢和电子的五个</b>：NAD⁺ · NADP⁺ · FMN · FAD · Ubiquinone。中列全写着 H⁺, e⁻。'
     + '<br>② <b>搬醛的一个</b>：TPP。'
     + '<br>③ <b>搬酰基的两个</b>：Coenzyme A 和 Lipoamide（后者中列写的是 acyl, H，两样都搬）。'
     + '<br>④ <b>各搬一样的两个</b>：Biotin 搬 CO₂，Pyridoxal phosphate 搬 –NH₂。'
-    + '<br><br><b>右列有两个空格，那两个空格本身就是一道题</b>：<b>Coenzyme Q</b> 和 <b>Lipoamide</b> 的维生素栏是空的。'
-    + '<br><b>被问就答</b>：“Two of them have no vitamin. Coenzyme Q and lipoamide are made by the body itself, so they are not dietary requirements. That is exactly the line between a vitamin and a coenzyme. A vitamin is what we cannot make.”'
-    + '<br>⚠ <b>速背 07 的中文写着「最后两行 vitamin 那一栏是空的」，看图就知道不是最后两行</b>——空的是<b>第 5 行（Coenzyme Q）和第 8 行（Lipoamide）</b>。速背里的 <code>tbl</code> 十行本身是对的，只有那句话的位置说法要按图改。'
+    + '<br><br><b>右列有两个空格，那两个空格本身就是一道题</b>：<b>Ubiquinone</b> 和 <b>Lipoamide</b> 的维生素栏是空的。'
+    + '<br><b>被问就答</b>：“Two of them have no vitamin. Ubiquinone and lipoamide are made by the body itself, so they are not dietary requirements. That is exactly the line between a vitamin and a coenzyme. A vitamin is what we cannot make.”'
+    + '<br>⚠ <b>速背 07 的中文写着「最后两行 vitamin 那一栏是空的」，看图就知道不是最后两行</b>——空的是<b>第 5 行（Ubiquinone）和第 8 行（Lipoamide）</b>。速背里的 <code>tbl</code> 十行本身是对的，只有那句话的位置说法要按图改。'
     + '<br>⚠ 右列的维生素名印的是捷克拼法，但 <b>riboflavin · thiamine · biotin · pyridoxine</b> 几乎一样；写作「烟酸」和「泛酸」的那两行是 <b>nicotinic acid</b> 和 <b>pantothenic acid</b>，它们后面都跟着一个意思是「酸」的词。',
   src2:'Biochemie, Tab. 3.1, p043 · 300 dpi 原图裁切，未修改'},
 
@@ -291,7 +291,7 @@ figs:[
     + '<br><b>右边两行标注给的是同一个骨架的两个成员</b>：<b>vitamin K₁</b>（叶绿醌，<b>n＝4</b>）和 <b>vitamin K₂</b>（甲萘醌，<b>n＝8</b>）——<b>差别只有 n</b>。'
     + '<br><br><b>看到图要说的那一段</b>：“The head of vitamin K is a quinone, and the tail is an isoprenoid chain derived from phytol. The textbook says the phytol chain is what gives vitamin K its lipophilic character. K-one and K-two are the same molecule with a different number of isoprene units, four and eight.”'
     + '<br><br><b>这一格的价值在于它给了一个能说出口的因果</b>：<b>不是「K 是脂溶性的，所以它在脂类章」，是「K 挂着一条植醇来的疏水尾巴，所以它是脂溶性的」</b>。书自己那句话就是这个意思。'
-    + '<br><b>同一条尾巴还出现在两处</b>：维生素 <b>E</b> 上，和<b>辅酶 Q</b> 上——<b>所以呼吸链那张卡里 Q 为什么泡在膜里，答案也在这张图上</b>（接卡 25）。'
+    + '<br><b>同一条尾巴还出现在两处</b>：维生素 <b>E</b> 上，和<b>泛醌</b> 上——<b>所以呼吸链那张卡里 Q 为什么泡在膜里，答案也在这张图上</b>（接卡 25）。'
     + '<br>⚠ <b>n＝4 和 n＝8 这两个数是图上印的</b>，可以报。<b>别把它读成「维生素 K 有两种」</b>——书写的是一个通式加两个命名的成员。',
   src2:'Biochemie, p183, 植醇与维生素 K 结构 · 350 dpi 原图裁切，未修改'}
 ],
@@ -318,15 +318,15 @@ recog:[
 
 {q:'Name the coenzymes and say which vitamin each one comes from.',
   ez:'“N A D plus and N A D P plus carry hydrogen and electrons. Their vitamin is nicotinic acid. F M N and F A D carry hydrogen and electrons too. Their vitamin is riboflavin. Thiamine diphosphate carries an aldehyde. It comes from thiamine. Coenzyme A carries an acyl group. It comes from pantothenic acid. Biotin carries carbon dioxide. Pyridoxal phosphate carries an amino group. It comes from pyridoxine. The table also lists two with no vitamin at all.”',
-  ezcn:'<b>照书那张表逐行背：NAD⁺ 和 NADP⁺ 搬氢和电子，来自烟酸；FMN 和 FAD 搬氢和电子，来自核黄素；焦磷酸硫胺素搬醛基，来自硫胺素；辅酶 A 搬酰基，来自泛酸；生物素搬 CO₂；磷酸吡哆醛搬氨基，来自吡哆醇。</b><b>表里还列了辅酶 Q 和硫辛酰胺，而它们的维生素那一栏是空的——那个空白本身就是要点。</b><b>表外正文还补了四氢叶酸（来自叶酸）· S-腺苷甲硫氨酸 · 辅酶 B12 · ATP。</b>',
+  ezcn:'<b>照书那张表逐行背：NAD⁺ 和 NADP⁺ 搬氢和电子，来自烟酸；FMN 和 FAD 搬氢和电子，来自核黄素；焦磷酸硫胺素搬醛基，来自硫胺素；辅酶 A 搬酰基，来自泛酸；生物素搬 CO₂；磷酸吡哆醛搬氨基，来自吡哆醇。</b><b>表里还列了泛醌 和硫辛酰胺，而它们的维生素那一栏是空的——那个空白本身就是要点。</b><b>表外正文还补了四氢叶酸（来自叶酸）· S-腺苷甲硫氨酸 · 辅酶 B12 · ATP。</b>',
  mean:'<b>这是书的 Table 3.1 逐行背</b>。他问得出这句，说明他脑子里就是这张表。',
- say:'“NAD-plus and NADP-plus carry hydrogen and electrons, and the vitamin is nicotinic acid. FMN and FAD carry hydrogen and electrons, and the vitamin is riboflavin. Thiamine diphosphate carries an aldehyde, from thiamine. Coenzyme A carries an acyl group, from pantothenic acid. Biotin carries carbon dioxide. Pyridoxal phosphate carries an amino group, from pyridoxine. The table also lists coenzyme Q and lipoamide with no vitamin at all, and that blank is the point. Outside the table the text adds tetrahydrofolate from folic acid, S-adenosylmethionine, coenzyme B-twelve and ATP.”'},
+ say:'“NAD-plus and NADP-plus carry hydrogen and electrons, and the vitamin is nicotinic acid. FMN and FAD carry hydrogen and electrons, and the vitamin is riboflavin. Thiamine diphosphate carries an aldehyde, from thiamine. Coenzyme A carries an acyl group, from pantothenic acid. Biotin carries carbon dioxide. Pyridoxal phosphate carries an amino group, from pyridoxine. The table also lists ubiquinone and lipoamide with no vitamin at all, and that blank is the point. Outside the table the text adds tetrahydrofolate from folic acid, S-adenosylmethionine, coenzyme B-twelve and ATP.”'},
 
 {q:'What is the difference between a vitamin and a coenzyme?',
   ez:'“The vitamin is the raw material. The coenzyme is the finished tool. A vitamin is defined by nutrition. It has to come in with the food. A coenzyme is defined by enzymology. It is the non protein organic part that carries a group. The cell converts one into the other. And the mapping is not one to one. Nicotinic acid gives both N A D and N A D P. Riboflavin gives both F M N and F A D. Some coenzymes have no vitamin behind them at all.”',
-  ezcn:'<b>维生素是原料，辅酶是做好的工具。</b><b>维生素由营养学定义——它必须随食物进来；辅酶由酶学定义——它是替酶搬运某个基团的那个非蛋白有机部分。</b><b>细胞把前者变成后者，而且不是一一对应：烟酸给出 NAD 和 NADP 两个，核黄素给出 FMN 和 FAD 两个；还有些辅酶背后根本没有维生素，所以辅酶 Q 和硫辛酰胺那一栏是空的。</b>',
+  ezcn:'<b>维生素是原料，辅酶是做好的工具。</b><b>维生素由营养学定义——它必须随食物进来；辅酶由酶学定义——它是替酶搬运某个基团的那个非蛋白有机部分。</b><b>细胞把前者变成后者，而且不是一一对应：烟酸给出 NAD 和 NADP 两个，核黄素给出 FMN 和 FAD 两个；还有些辅酶背后根本没有维生素，所以泛醌 和硫辛酰胺那一栏是空的。</b>',
  mean:'<b>这张卡的核心陷阱，几乎一定会被问。</b>答得利落等于把整题钉死。',
- say:'“The vitamin is the raw material and the coenzyme is the finished tool. A vitamin is defined by nutrition, by the fact that it has to come in with the food. A coenzyme is defined by enzymology, as the non-protein organic part that carries a group for the enzyme. The cell converts the one into the other, and the mapping is not one to one. Nicotinic acid gives both NAD and NADP. Riboflavin gives both FMN and FAD. And some coenzymes have no vitamin behind them at all, which is why the vitamin column is empty for coenzyme Q and for lipoamide.”'},
+ say:'“The vitamin is the raw material and the coenzyme is the finished tool. A vitamin is defined by nutrition, by the fact that it has to come in with the food. A coenzyme is defined by enzymology, as the non-protein organic part that carries a group for the enzyme. The cell converts the one into the other, and the mapping is not one to one. Nicotinic acid gives both NAD and NADP. Riboflavin gives both FMN and FAD. And some coenzymes have no vitamin behind them at all, which is why the vitamin column is empty for ubiquinone and for lipoamide.”'},
 
 {q:'Which vitamins are fat-soluble, and why does that matter?',
   ez:'“They are A and D and E and K. This textbook never names the class. But it separates them all the same. It puts them in the lipid chapter among the terpenes. Biochemically they are isoprenoid. It says the phytol tail gives vitamin K its lipophilic character. Why it matters is storage. A water soluble vitamin in excess is excreted. A fat soluble one dissolves in the body fat and stays. The book gives the storage half directly.”',
@@ -433,16 +433,16 @@ ask:[
     ez:'“No. The vitamin is the raw material. The coenzyme is the finished tool. Nicotinic acid is the vitamin. The cell builds N A D plus out of it. They are not even the same molecule. The vitamin is nicotinic acid. The part the coenzyme carries is nicotinamide. The mapping is also not one to one. Nicotinic acid gives N A D. It gives N A D P as well.”',
     ezcn:'<b>不是。维生素是原料，辅酶是做好的工具。</b>烟酸是维生素，细胞拿它造出 <b>NAD⁺</b>。<b>两者连分子都不是同一个</b>：维生素是<b>烟酸</b>，辅酶上搬东西的那部分是<b>烟酰胺</b>。<b>而且不是一对一</b>——烟酸同时给出 <b>NAD</b> 和 <b>NADP</b>。',
  en:'“No. The vitamin is the raw material and the coenzyme is the finished tool. Nicotinic acid is the vitamin, and the cell builds NAD-plus out of it. They are not even the same molecule. The vitamin is nicotinic acid and the part the coenzyme carries is nicotinamide. And the mapping is not one to one. Nicotinic acid gives both NAD and NADP.”',
- cn:'<b>这是这张卡的头号陷阱。</b>证据不用外借：书自己的 Table 3.1 里 <b>Coenzyme Q 和 Lipoamide 两行的 vitamin 栏是空的</b>（<span class="pg">p043</span>，已回原图核过）。<b>「人体自己能做这两个」是通用知识，书只留了空格</b>，说的时候分清楚。<br>反方向也别说错：<b>不是所有维生素都变辅酶</b>——A 和 D 都不是。所以准确说法是 “most of the water-soluble vitamins are precursors of coenzymes”。'},
+ cn:'<b>这是这张卡的头号陷阱。</b>证据不用外借：书自己的 Table 3.1 里 <b>Ubiquinone 和 Lipoamide 两行的 vitamin 栏是空的</b>（<span class="pg">p043</span>，已回原图核过）。<b>「人体自己能做这两个」是通用知识，书只留了空格</b>，说的时候分清楚。<br>反方向也别说错：<b>不是所有维生素都变辅酶</b>——A 和 D 都不是。所以准确说法是 “most of the water-soluble vitamins are precursors of coenzymes”。'},
 {r:'高', q:'Are minerals a source of energy?',
     ez:'“No. Neither minerals nor vitamins are oxidised for energy. In a heterotroph energy comes from oxidising carbon and hydrogen. And it ends up in A T P. A mineral does something else. It sits in an enzyme and changes valency. Or it holds charge in a fluid. Iron in a cytochrome does pass electrons. But it ends every cycle in the state it started in.”',
     ezcn:'<b>不是。矿物质和维生素都不是被氧化来产能的。</b><b>异养生物的能量来自氧化碳和氢，最后落在 ATP 上</b>。<b>矿物质干的是别的事：要么坐在酶里改变价态，要么在体液里维持电荷</b>。<b>细胞色素里的铁确实传电子，但它每一个循环结束时都回到出发时的状态。</b>',
  en:'“No. Neither minerals nor vitamins are oxidised for energy. Energy in a heterotroph comes from oxidising carbon and hydrogen, and it ends up in ATP. A mineral either sits in an enzyme and changes valency, or it holds charge in a fluid. Iron in a cytochrome does pass electrons, but it ends every cycle in the state it started in.”',
  cn:'<b>「维生素供给能量」这句话会被顺口说出来，说了就掉分。</b>先否掉，再说它们是什么。<b>铁那半句是主动堵一个反问</b>——他很可能接一句「可是铁在呼吸链里参与了能量转换啊」。'},
-{r:'高', q:'Is coenzyme Q a vitamin?',
-    ez:'“Not in this book’s own table. Coenzyme Q is listed among the coenzymes. It transfers hydrogen and electrons. But its vitamin column is left empty. Lipoamide’s column is empty too. The book does give coenzyme Q an origin. It says several hydrophobic chains come from phytol. Those are vitamin K two, vitamin E and coenzyme Q. So it is a coenzyme with no vitamin behind it.”',
-    ezcn:'<b>在这本书自己的表里不是。</b><b>辅酶 Q 被列在辅酶里（传递氢和电子），但它的「维生素」那一栏是空的</b>，<b>硫辛酰胺那一栏也是空的</b>。<b>书倒是给了辅酶 Q 一个来源</b>：<b>它说维生素 K₂、维生素 E 和辅酶 Q 的疏水链在生物化学上都来自植物醇</b>。<b>所以它是一个「背后没有维生素」的辅酶。</b>',
- en:'“Not in this book’s own table. Coenzyme Q is listed among the coenzymes, transferring hydrogen and electrons, but its vitamin column is left empty, and so is lipoamide’s. The book does give coenzyme Q an origin. It says the hydrophobic chains of vitamin K-two, vitamin E and coenzyme Q all come biochemically from phytol. So it is a coenzyme with no vitamin behind it.”',
+{r:'高', q:'Is ubiquinone a vitamin?',
+    ez:'“Not in this book’s own table. Ubiquinone is listed among the coenzymes. It transfers hydrogen and electrons. But its vitamin column is left empty. Lipoamide’s column is empty too. The book does give ubiquinone an origin. It says several hydrophobic chains come from phytol. Those are vitamin K two, vitamin E and ubiquinone. So it is a coenzyme with no vitamin behind it.”',
+    ezcn:'<b>在这本书自己的表里不是。</b><b>泛醌 被列在辅酶里（传递氢和电子），但它的「维生素」那一栏是空的</b>，<b>硫辛酰胺那一栏也是空的</b>。<b>书倒是给了泛醌 一个来源</b>：<b>它说维生素 K₂、维生素 E 和泛醌 的疏水链在生物化学上都来自植物醇</b>。<b>所以它是一个「背后没有维生素」的辅酶。</b>',
+ en:'“Not in this book’s own table. Ubiquinone is listed among the coenzymes, transferring hydrogen and electrons, but its vitamin column is left empty, and so is lipoamide’s. The book does give ubiquinone an origin. It says the hydrophobic chains of vitamin K-two, vitamin E and ubiquinone all come biochemically from phytol. So it is a coenzyme with no vitamin behind it.”',
  cn:'<span class="pg">p043</span>（空格）与 <span class="pg">p183</span>（phytol 来源）。<b>「人自己能合成 Q，所以它不是维生素」这句推论要标成自己的推论</b>，书只给了空格和来源。<b>Q 在呼吸链里的位置见卡 25</b>：书 p045 说它在<b>黄素蛋白和细胞色素之间当中间人</b>。'},
 {r:'高', q:'Where exactly does the hydrogen go on a flavin?',
     ez:'“The redox part is the isoalloxazine ring. That is the three fused rings of the flavin. It takes two hydrogens at once. I would give the positions carefully. This textbook contradicts itself here. The text prints N one and N ten. But its own structural formula is on the same page. That formula puts the ribityl chain on N ten. So that nitrogen has no free valence. The generally accepted positions are N one and N five.”',
@@ -457,9 +457,9 @@ ask:[
 ]},
 {g:'相邻考点', gn:'从这道题走出去，他多半走这三个方向。每个一句话就能接住。', items:[
 {r:'高', q:'Which of these show up in the citric acid cycle and the respiratory chain?',
-    ez:'“Nearly all of them. The cycle needs coenzyme A. That brings the acetyl group in. It needs three N A D plus and one F A D. Those take the hydrogen out. It needs thiamine diphosphate with lipoic acid. Those do the oxidative decarboxylation of alpha-ketoglutarate. The chain then needs more. It needs flavins and iron sulfur centres. It needs iron in the cytochromes. It needs copper in complex four. And it needs coenzyme Q. So one vitamin deficiency can stop the whole of aerobic metabolism.”',
-    ezcn:'<b>几乎全都出现。</b><b>循环需要辅酶 A（把乙酰基带进来）、三个 NAD⁺ 和一个 FAD（把氢取出去）、硫胺素二磷酸配硫辛酸（做 α-酮戊二酸的氧化脱羧）</b>。<b>呼吸链还要：黄素、铁硫中心、细胞色素里的铁、复合体 Ⅳ 里的铜、以及辅酶 Q</b>。<b>所以一种维生素缺乏就能把整个有氧代谢停掉。</b>',
- en:'“Nearly all of them. The cycle needs coenzyme A to bring the acetyl group in, and three NAD-plus and one FAD to take the hydrogen out. It needs thiamine diphosphate with lipoic acid for the oxidative decarboxylation of alpha-ketoglutarate. The chain then needs flavins, iron-sulfur centres, iron in the cytochromes, copper in complex four, and coenzyme Q. So one vitamin deficiency can stop the whole of aerobic metabolism.”',
+    ez:'“Nearly all of them. The cycle needs coenzyme A. That brings the acetyl group in. It needs three N A D plus and one F A D. Those take the hydrogen out. It needs thiamine diphosphate with lipoic acid. Those do the oxidative decarboxylation of alpha-ketoglutarate. The chain then needs more. It needs flavins and iron sulfur centres. It needs iron in the cytochromes. It needs copper in complex four. And it needs ubiquinone. So one vitamin deficiency can stop the whole of aerobic metabolism.”',
+    ezcn:'<b>几乎全都出现。</b><b>循环需要辅酶 A（把乙酰基带进来）、三个 NAD⁺ 和一个 FAD（把氢取出去）、焦磷酸硫胺素配硫辛酸（做 α-酮戊二酸的氧化脱羧）</b>。<b>呼吸链还要：黄素、铁硫中心、细胞色素里的铁、复合体 Ⅳ 里的铜、以及泛醌</b>。<b>所以一种维生素缺乏就能把整个有氧代谢停掉。</b>',
+ en:'“Nearly all of them. The cycle needs coenzyme A to bring the acetyl group in, and three NAD-plus and one FAD to take the hydrogen out. It needs thiamine diphosphate with lipoic acid for the oxidative decarboxylation of alpha-ketoglutarate. The chain then needs flavins, iron-sulfur centres, iron in the cytochromes, copper in complex four, and ubiquinone. So one vitamin deficiency can stop the whole of aerobic metabolism.”',
  cn:'卡 24 与卡 25。<b>α-酮戊二酸走同一个机制是书说的</b>（<span class="pg">p138</span> <span class="pg">p169</span>）：<i>The oxidative decarboxylation of α-ketoglutaric acid takes place by the mechanism of oxidative decarboxylation</i>。<b>说出「同一个机制」比再背一遍五个辅因子有用。</b>'},
 {r:'中', q:'Where does biotin appear in fatty acid metabolism?',
   ez:'“At the committed step. Fatty acid synthesis starts by making malonyl Co A. It makes it from acetyl Co A. The reaction is a carboxylation. It depends on A T P. The enzyme is acetyl Co A carboxylase. And that enzyme requires biotin. The book prints the equation with manganese and biotin under the arrow. The same phosphopantetheine arm appears again. It is one of the two S H groups of the acyl carrier protein.”',

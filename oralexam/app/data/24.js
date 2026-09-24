@@ -22,7 +22,7 @@ cram:[
  {n:'02', t:'投入',
   big:'1 <b>acetyl-CoA</b> · 3 <b>NAD⁺</b> · 1 <b>FAD</b> · 1 <b>GDP ＋ Pᵢ</b> · 2 <b>H₂O</b>',
   en:'“Per turn it consumes one acetyl-CoA, three NAD-plus, one FAD, one GDP with inorganic phosphate, and two molecules of water.”',
-  note:'<b>两个水常被忘掉。</b>一个在第 1 步（citryl-CoA 中间体水解放出 citrate＋CoA，Lehninger），一个在第 7 步加到 fumarate 上。aconitase 那步先脱一个水再加一个水，净零——书 p138 图上就是 −H₂O / +H₂O。英文：“One water goes in at the first step: citrate synthase hydrolyses the citryl-CoA intermediate to release citrate and CoA. The other goes in at the seventh step, added across the double bond of fumarate by fumarate hydratase. Aconitase removes one and puts one back, so it is net zero.”<br><b>注意 oxaloacetate 不算投入</b>——它在第 1 步被消耗、第 8 步被再生，是<b>被回收的</b>，不是原料。这一点他很可能追。'},
+  note:'<b>两个水常被忘掉。</b>一个在第 1 步（citryl-CoA 中间体水解放出 citrate＋CoA，Lehninger），一个在第 7 步加到 fumarate 上。aconitase 那步先脱一个水再加一个水，净零——书 p138 图上就是 −H₂O / +H₂O。英文：“One water goes in at the first step: citrate synthase hydrolyses the citryl-CoA intermediate to release citrate and CoA. The other goes in at the seventh step, added across the double bond of fumarate by fumarase. Aconitase removes one and puts one back, so it is net zero.”<br><b>注意 oxaloacetate 不算投入</b>——它在第 1 步被消耗、第 8 步被再生，是<b>被回收的</b>，不是原料。这一点他很可能追。'},
  {n:'03', t:'产出',
   big:'2 <b>CO₂</b> · 3 <b>NADH</b> · 1 <b>FADH₂</b> · 1 <b>GTP</b> · <b>CoA-SH</b>',
   en:'“And it produces two CO₂, three NADH, one FADH₂, one GTP, and the coenzyme A is released.”',
@@ -46,8 +46,8 @@ cram:[
   en:'“Acetyl-CoA condenses with oxaloacetate to give citrate. The enzyme is <b>citrate synthase</b>, and it is a <b>regulatory</b> enzyme — strongly inhibited by ATP, and in some organisms by NADH.”',
   note:'<b>为什么 acetyl-CoA 能做这个反应</b>：它是<b>硫酯</b>，硫酯没有普通 O-酯那样的中介效应，所以羰基结构被固定住，甲基能参加<b>羟醛缩合</b>。<b>这一句把「化学键」那张横向卡接进来了。</b><span class="pg">p136</span>'},
  {n:'08', t:'第 2 步 · 异构',
-  big:'<b>citrate → isocitrate</b>，中间经 <b>cis-aconitate</b>，酶是 <b>aconitate hydratase</b>',
-  en:'“Citrate has a <b>tertiary</b> alcohol, which cannot be oxidised. So it is first isomerised to isocitrate, whose <b>secondary</b> alcohol can be dehydrogenated. The enzyme is aconitate hydratase — it dehydrates to cis-aconitate and adds water back the other way.”',
+  big:'<b>citrate → isocitrate</b>，中间经 <b>cis-aconitate</b>，酶是 <b>aconitase<span class="alias">注：同时也可以叫做 aconitate hydratase</span></b>',
+  en:'“Citrate has a <b>tertiary</b> alcohol, which cannot be oxidised. So it is first isomerised to isocitrate, whose <b>secondary</b> alcohol can be dehydrogenated. The enzyme is aconitase — it dehydrates to cis-aconitate and adds water back the other way.”',
   note:'<b>这一步的「为什么」书直接给了</b>：叔醇不能再氧化，仲醇可以。<b>整个第 2 步存在的唯一理由就是把 OH 挪到能被脱氢的位置。</b>记这个比记名字有用。<span class="pg">p138</span>'},
  {n:'09', t:'第 3 步 · 第一次氧化脱羧',
   big:'<b>isocitrate → α-ketoglutarate</b> <span class="alias">注：同时也可以叫做 2-oxoglutarate</span>，酶是 <b>isocitrate dehydrogenase</b>（NAD⁺），放 <b>第一个 CO₂</b> ＋ 第一个 <b>NADH</b>',
@@ -58,7 +58,7 @@ cram:[
   en:'“α-ketoglutarate undergoes the same oxidative decarboxylation as pyruvate, because it is a <b>homologue of pyruvate</b>. It is pyruvate with a CH₂–COO⁻ on its methyl, so its α-keto acid end reacts the same way. The carboxyl next to the keto group leaves as CO₂, while the rest is dehydrogenated and ends up as an acyl-CoA thioester, with NAD⁺ reduced. The α-ketoglutarate dehydrogenase complex does it, with the same five cofactors as the pyruvate dehydrogenase complex. Thiamine diphosphate takes up the fragment after the CO₂ leaves, lipoic acid oxidises it and carries the succinyl group, and coenzyme A receives it as a thioester. FAD and then NAD⁺ reoxidise the lipoate. It gives succinyl-CoA, the second CO₂ and the second NADH.”',
   note:'<b>「它是丙酮酸的同系物」这句话省掉了一整个机制。</b>丙酮酸脱氢那套（thiamine diphosphate 等）原样搬过来。<b>到这里两个碳已经全部作为 CO₂ 出去了。</b><span class="pg">p138</span>'},
  {n:'11', t:'第 5 步 · 底物水平磷酸化',
-  big:'<b>succinyl-CoA → succinate</b>，同时造出 <b>GTP</b>，酶是 <b>succinyl-CoA synthetase</b>',
+  big:'<b>succinyl-CoA → succinate</b>，同时造出 <b>GTP</b>，酶是 <b>succinyl-CoA synthetase<span class="alias">注：同时也可以叫做 succinate thiokinase</span></b>',
   en:'“Succinyl-CoA is a <b>macroergic</b> compound, so it does not just hydrolyse — the energy is captured. It reacts with GDP and inorganic phosphate to give succinate and GTP, and the terminal phosphate of GTP can be passed to ADP by nucleoside diphosphate kinase, so it counts as one ATP.”',
   note:'<b>这是整个循环里唯一直接造出高能磷酸的一步</b>，叫<b>底物水平磷酸化</b>。它之所以可能，是因为硫酯键是高能的——<b>又一次接回「化学键」那张卡</b>。<span class="pg">p139</span>'},
  {n:'12', t:'第 6 步 · 唯一在膜上的一步',
@@ -66,9 +66,9 @@ cram:[
   en:'“Succinate is oxidised to fumarate by succinate dehydrogenase. That enzyme carries a <b>covalently bound FAD</b> and is built into the inner membrane, and the textbook identifies it as complex II of the respiratory chain. This is the one step that gives FADH₂ rather than NADH.”',
   note:'<b>两件事要记住</b>：① FAD 是<b>共价</b>结合的，不是自由辅酶；② <b>这个酶坐在线粒体内膜上</b>，是循环里唯一不在基质里的一步，也正因如此它同时是呼吸链的复合物 II。<br>「它就是复合物 II」<b>书 p143 直接说了</b>（<i>It is the succinate dehydrogenase known from the citrate cycle</i>，书上那句话的英译；复合物 II = 琥珀酸:泛醌氧化还原酶，含 FAD 和两个 FeS），p141 说这些复合物是内膜的整合成分。英文：“Complex II is succinate:ubiquinone oxidoreductase, a flavoprotein with FAD and two iron–sulfur centres. It passes the electrons from succinate to ubiquinone, bypassing complex I, and that is why succinate is worth only two ATP.”<span class="pg">p139 p143</span>'},
  {n:'13', t:'第 7 步 · 加水',
-  big:'<b>fumarate → L-malate</b>，酶是 <b>fumarate hydratase</b>（fumarase）',
-  en:'“Fumarate is formed as the <b>trans</b> isomer, and fumarate hydratase adds water across the double bond to give L-malate. It is the same kind of hydration as in the aconitase step, where water adds to cis-aconitate.”',
-  note:'<b>书自己点了这个类比</b>（跟 aconitate hydratase 那一步同类）。反式这个细节值得说，因为酶只接受反式：“Fumarate hydratase is stereospecific: it hydrates only the trans isomer, fumarate, and not the cis isomer, maleate. It gives only L-malate.”<span class="pg">p139</span>'},
+  big:'<b>fumarate → L-malate</b>，酶是 <b>fumarase<span class="alias">注：同时也可以叫做 fumarate hydratase</span></b>（fumarase）',
+  en:'“Fumarate is formed as the <b>trans</b> isomer, and fumarase adds water across the double bond to give L-malate. It is the same kind of hydration as in the aconitase step, where water adds to cis-aconitate.”',
+  note:'<b>书自己点了这个类比</b>（跟 aconitase 那一步同类）。反式这个细节值得说，因为酶只接受反式：“Fumarase is stereospecific: it hydrates only the trans isomer, fumarate, and not the cis isomer, maleate. It gives only L-malate.”<span class="pg">p139</span>'},
  {n:'14', t:'第 8 步 · 闭环',
   big:'<b>L-malate → oxaloacetate</b>，酶是 <b>malate dehydrogenase</b>，产<b>第三个 NADH</b>',
   en:'“Malate dehydrogenase produces the third NADH and regenerates oxaloacetate, which closes the cycle.”',
@@ -80,7 +80,7 @@ cram:[
   en:'“Per acetyl group, the cycle together with the respiratory chain yields about twelve ATP: three NADH at roughly three each, one FADH₂ at two, plus the one GTP the cycle makes itself. Those are the textbook’s classical yields. Modern textbooks use 2.5 and 1.5, giving ten.”',
   note:'书给的总式：CH₃CO-S-CoA + 2 O₂ + 12 ADP + 12 Pᵢ → 2 CO₂ + CoA-SH + <b>12 ATP</b> + 13 H₂O。<b>「连呼吸链一起」这半句必须说</b>，不然跟下面「循环本身只产一个 GTP」自相矛盾。<br><b>他要是问「为什么现代教材说 10、30–32」</b>：差别只在每个 ATP 假设泵几个质子，葡萄糖总数上还差在胞质 NADH 用哪条穿梭进线粒体。书用 3 和 2（p139、p146），Lehninger 用 2.5 和 1.5。英文：“Because the yield depends on how many protons are pumped per NADH and how many the ATP synthase needs per ATP. The textbook takes six protons per NADH as about three ATP and four per FADH₂ as about two. Modern measurements give about 2.5 and 1.5, so ten per acetyl group. For a whole glucose there is a second difference: the two NADH from glycolysis are made in the cytosol and must enter the mitochondrion through a shuttle. The glycerol-3-phosphate shuttle hands them to FAD, worth 1.5 each. The malate–aspartate shuttle hands them to NAD⁺, worth 2.5. That is why the modern total is quoted as 30 to 32.”<span class="pg">p139</span><br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>12 ATP = 3 NADH × 3 + 1 FADH₂ × 2 + 1 GTP = 9 + 2 + 1</code><br><br><b>四步推导</b>（他问「12 是怎么凑出来的」就照这个说）：<br>① 循环<b>自己</b>只做出一个高能磷酸：第 5 步 succinyl-CoA synthetase 的那个 <b>GTP</b>，可以一比一换成 ATP。<br>② 其余全是还原力：<b>3 个 NADH</b>（第 3、4、8 步）＋ <b>1 个 FADH₂</b>（第 6 步）。<br>③ 按 p139 的兑换率换算：<code>3 × 3 = 9</code>、<code>1 × 2 = 2</code>。<br>④ <code>9 + 2 + 1 = 12</code>，正是书 p139 那条总式里的 <code>12 ADP + 12 Pᵢ → 12 ATP</code>。<br><br><br><b>=== 一句话理解 ===</b><br><b>12 个里有 11 个不是循环造的。</b>循环干的只有两件事：放两个 CO₂，和开出四张欠条（3 NADH ＋ 1 FADH₂）。兑现欠条的是内膜，兑出 <code>9 + 2 = 11</code> 个；第 12 个才是循环自己手里那个 GTP。<br>所以「柠檬酸循环产多少 ATP」这个问题问得就不对——<b>先把 12 拆成 1 ＋ 11，再说那 11 个是在另一张卡上造的</b>，这才是答对了题。<br><br><b>=== 公式和推导 · 那 13 个水是怎么来的 ===</b><br><b>式子</b>：<code>CH₃CO-S-CoA + 2 O₂ + 12 ADP + 12 Pᵢ → 2 CO₂ + CoA-SH + 12 ATP + 13 H₂O</code><br><br><b>三步配平</b>：<br>① <b>12 个水来自磷酸化</b>：每做一个 ATP 就是一次 <code>ADP + Pᵢ → ATP + H₂O</code>，做 12 个就放 12 个水。<br>② <b>1 个水来自乙酰基本身被烧掉</b>：<code>CH₃CO-S-CoA + 2 O₂ → 2 CO₂ + CoA-SH + H₂O</code>——乙酰基的三个氢，一个还给 CoA-SH，剩下两个跟氧结合成一个水（氧原子也对得上：1 ＋ 4 = 4 ＋ 1）。<br>③ <code>12 + 1 = 13</code>。循环第 1 步和第 7 步用掉的那两个水，已经在第 ② 条的净账里抵掉了，所以总式左边看不到水。<br><br><br><b>=== 一句话理解 ===</b><br>这 13 个水里<b>只有 1 个是「呼吸」意义上的水</b>——氧变成的那个，也就是所谓<b>代谢水</b>；另外 12 个全是造 ATP 时挤出来的副产品。<br><b>会拆这个 13，等于当场证明你在读式子而不是背式子。</b>他要是问「那氧到哪儿去了」，你指得出正是那一个水。'},
  {n:'16', t:'一分子葡萄糖',
-  big:'有氧共 <b>38 ATP</b>：糖酵解 8 ＋ 丙酮酸氧化脱羧 6 ＋ 柠檬酸循环 <b>24</b>',
+  big:'有氧共 <b>38 ATP</b>：糖酵解 8 ＋ 丙酮酸氧化脱羧 6 ＋ 柠檬酸循环<span class="alias">注：同时也可以叫做 三羧酸循环 / Krebs 循环</span> <b>24</b>',
   en:'“For one mole of glucose aerobically: eight from glycolysis, six from the oxidative decarboxylation of pyruvate, and twenty-four from the cycle — thirty-eight in total. Anaerobically, lactate fermentation gives only two.”',
   note:'<b>2 对 38 这个对比是书自己做的</b>，而且它给了一个进化上的结论：<b>好氧降解是演化上更高级的</b>。这一句是现成的 ④。<span class="pg">p136 p139</span><br><br><b>=== 公式和推导（背之前先看懂这一段） ===</b><br><b>式子</b>：<code>38 = 8（糖酵解）+ 6（丙酮酸氧化脱羧）+ 24（柠檬酸循环）</code>——书 p139 原话就是这三项。<br><br><b>四步推导</b>（他问「38 怎么拆」就照这个说）：<br>① <b>糖酵解 8</b>：底物水平磷酸化<b>净 2 个</b>（做出 4 个，前面先投进去 2 个），加上 <b>2 个 NADH × 3 = 6</b>，合起来 8。<br>② <b>氧化脱羧 6</b>：一个葡萄糖劈成<b>两个</b>丙酮酸，每个变成 acetyl-CoA 时产 1 个 NADH：<code>2 × 3 = 6</code>。<br>③ <b>循环 24</b>：两个乙酰基各转一圈，<code>2 × 12 = 24</code>。<br>④ <code>8 + 6 + 24 = 38</code>。无氧只有 <b>2</b>：就是第 ① 条里那个净 2，因为那 2 个 NADH 必须拿去把丙酮酸还原成乳酸才能把 NAD⁺ 换回来，一个也兑不成 ATP。<br><br><br><b>=== 一句话理解 ===</b><br>38 个里<b>只有 4 个是亲手做出来的</b>（糖酵解净 2 ＋ 两圈的 2 个 GTP），另外 <b>34 个全是拿质子在内膜上兑的</b>。<br>书 p140 顺手把效率也算了：<code>38 × 30,5 ≈ 1159 kJ/mol</code>，而葡萄糖全烧是 <code>−2 870 kJ/mol</code>，<code>1159 ÷ 2870 ≈ 40%</code>。<b>剩下六成变成热。</b><b>分步氧化的全部意义就在这里——把四成收进了口袋，而不是一次烧成热。</b>无氧那条路只拿到 <code>2 ÷ 38 ≈ 1/19</code>，这就是书说「好氧是演化上更高级」时手里握着的数。'},
 
@@ -113,7 +113,7 @@ sib:[
 ['<b>1</b> oxaloacetate ＋ acetyl-CoA → citrate · <b>citrate synthase</b>（调节酶，ATP 抑制）',
  '“Citrate synthase — a regulatory enzyme, strongly inhibited by ATP.”',
  'acetyl-CoA 是硫酯，羰基被固定，所以能做羟醛缩合。'],
-['<b>2</b> citrate → isocitrate（经 cis-aconitate）· <b>aconitate hydratase</b>',
+['<b>2</b> citrate → isocitrate（经 cis-aconitate）· <b>aconitase</b>',
  '“Citrate has a tertiary alcohol, which cannot be oxidised. Isocitrate has a secondary one, which can.”',
  '<b>这一步存在的唯一理由</b>就是把 OH 挪到能脱氢的位置。'],
 ['<b>3</b> isocitrate → α-ketoglutarate · <b>第一个 CO₂ ＋ NADH</b>',
@@ -128,7 +128,7 @@ sib:[
 ['<b>6</b> succinate → fumarate · <b>succinate dehydrogenase</b>，产 <b>FADH₂</b>',
  '“It carries a covalently bound FAD, and it is the one step located in the inner membrane.”',
  '循环里唯一不在基质、也是唯一产 FADH₂ 的一步。'],
-['<b>7</b> fumarate → L-malate · <b>fumarate hydratase</b>',
+['<b>7</b> fumarate → L-malate · <b>fumarase</b>',
  '“Fumarate forms as the trans isomer, and water adds across the double bond.”',
  '跟第 2 步同类的加水反应，书自己点了这个类比。'],
 ['<b>8</b> L-malate → oxaloacetate · <b>malate dehydrogenase</b>，<b>第三个 NADH</b>，闭环',
@@ -153,10 +153,10 @@ segs:[
   note:'<b>先给产物和意义，再给步骤。</b>直接背八步是 technician 的答法；先说「它产的是还原力不是 ATP」，他就知道你理解了它在代谢里的位置。'},
  {tag:'段 3 · 稍展开', h:'八步，每步只给「谁变成谁 ＋ 酶」',
   p:['“Acetyl-CoA condenses with oxaloacetate to citrate — <b>citrate synthase</b>, a regulatory enzyme inhibited by ATP.',
-     'Citrate is isomerised to isocitrate through cis-aconitate by <b>aconitate hydratase</b>. The reason is chemical: citrate’s alcohol is tertiary and cannot be oxidised, isocitrate’s is secondary and can.',
+     'Citrate is isomerised to isocitrate through cis-aconitate by <b>aconitase</b>. The reason is chemical: citrate’s alcohol is tertiary and cannot be oxidised, isocitrate’s is secondary and can.',
      'Isocitrate dehydrogenase oxidises isocitrate, and the product decarboxylates to α-ketoglutarate: first CO₂, first NADH. Then α-ketoglutarate undergoes the same oxidative decarboxylation as pyruvate. The carboxyl next to the keto group leaves as CO₂, and the rest is dehydrogenated into an acyl-CoA thioester. That gives succinyl-CoA: second CO₂, second NADH.',
      'Succinyl-CoA is macroergic, so instead of simply hydrolysing it reacts with GDP and phosphate. That is <b>succinyl-CoA synthetase</b>, and it gives succinate and GTP.',
-     'Then three steps take it back to the start. Succinate goes to fumarate by <b>succinate dehydrogenase</b> with its covalently bound FAD. Fumarate goes to malate by <b>fumarate hydratase</b>. Malate goes to oxaloacetate by <b>malate dehydrogenase</b>, and that gives the third NADH.”'],
+     'Then three steps take it back to the start. Succinate goes to fumarate by <b>succinate dehydrogenase</b> with its covalently bound FAD. Fumarate goes to malate by <b>fumarase</b>. Malate goes to oxaloacetate by <b>malate dehydrogenase</b>, and that gives the third NADH.”'],
   note:'<b>时间不够就砍到四句</b>：缩合、异构、两次氧化脱羧、然后三步回到 oxaloacetate。<b>四个「为什么」不要砍</b>，那是他追问时的落点。'},
  {tag:'段 4 · 留口子', h:'说出它不只是分解',
   p:['“One thing worth adding: the cycle is not purely <b>catabolic</b>, not purely degradative. α-ketoglutarate and oxaloacetate are the carbon skeletons that amino acids are built from and broken down to. Succinyl-CoA together with glycine is the starting point for porphyrin synthesis, and the textbook has a separate section on that. So the cycle is also a supply depot. Because draining any intermediate lowers oxaloacetate, the textbook adds the replenishing, anaplerotic, reactions, above all pyruvate carboxylase: oxaloacetate from pyruvate and CO₂, one ATP, biotin.”'],
@@ -201,7 +201,7 @@ figs:[
   cap:'<b>这张是「认」，它是上一张图的图例。</b>三栏的表头是 <b>Reakce ＝ 反应号 · Enzymy ＝ 酶 · Kofaktory ＝ 辅因子</b>，每个酶后面的括号里是 <b>EC 号</b>。'
     + '<br><br><b>一眼要看出来的三件事</b>：'
     + '<br>① <b>第 2 行和第 3 行都是 akonitasa</b>。<b>这就是「书数九步、卡数八步」的全部原因</b>——一个酶占了两行。'
-    + '<br>② <b>第 5 行书印的名字是带引号的：『2-oxoglutarátoxidasa』</b>。你嘴里说的是 <b>α-ketoglutarate dehydrogenase complex</b>，指的是同一个东西；<b>那对引号是书自己打的，说明它也知道那不是正式名</b>。那一行的辅因子栏是全表最长的：<b>TDP · CoA · FAD · NAD⁺ · 硫辛酸 · Mg²⁺</b>——正好是丙酮酸脱氢酶那一整套。'
+    + '<br>② <b>第 5 行书印的名字是带引号的：『2-oxoglutarátoxidasa』</b>。你嘴里说的是 <b>α-ketoglutarate dehydrogenase complex</b>，指的是同一个东西；<b>那对引号是书自己打的，说明它也知道那不是正式名</b>。那一行的辅因子栏是全表最长的：<b>Thiamine diphosphate · CoA · FAD · NAD⁺ · 硫辛酸 · Mg²⁺</b>——正好是丙酮酸脱氢酶那一整套。'
     + '<br>③ <b>第 8 行 fumarasa 的辅因子栏写着 žádné，意思是「没有」</b>。<b>全表唯一一个不需要辅因子的酶</b>，他问「哪一步不用辅因子」你指得出来。'
     + '<br><br><b>摆到面前时说的两句</b>：“The textbook counts <b>nine</b> reactions because it lists <b>aconitase twice</b>, once for the dehydration and once for the rehydration. Counted as enzymes there are <b>eight</b>.”'
     + '<br>“Two of them need <b>iron</b>: aconitase as Fe²⁺, and succinate dehydrogenase with FAD together with iron. <b>Only fumarase needs no cofactor at all.</b>”'
@@ -372,7 +372,7 @@ ask:[
 {g:'为什么类', gn:'四个「为什么」，全部有书作根据。这一组比八个酶名值钱。', items:[
 {r:'高', q:'What is oxidative decarboxylation?',
     ez:'“It is the conversion of a alpha-keto acid. It becomes the acyl coenzyme A one carbon shorter. The carboxyl next to the keto group leaves as carbon dioxide. The remaining carbonyl carbon is oxidised to an acyl group. It is captured as a thioester on coenzyme A. And N A D plus is reduced. A multienzyme complex does it. It uses thiamine diphosphate and lipoate. It also uses coenzyme A, F A D and N A D plus. Two cases appear in this topic. Pyruvate to acetyl coenzyme A. And alpha-ketoglutarate to succinyl coenzyme A.”',
-    ezcn:'<b>氧化脱羧 ＝ 把一个 α-酮酸变成少一个碳的酰基辅酶 A。</b><b>紧挨着酮基的那个羧基以 CO₂ 的形式离开；剩下的羰基碳被氧化成酰基，以硫酯的形式被辅酶 A 接住；同时 NAD⁺ 被还原</b>。<b>干活的是一个多酶复合体，用到硫胺素二磷酸、硫辛酸、辅酶 A、FAD 和 NAD⁺</b>。<b>这道题里有两例：丙酮酸→乙酰辅酶 A，α-酮戊二酸→琥珀酰辅酶 A。</b>',
+    ezcn:'<b>氧化脱羧 ＝ 把一个 α-酮酸变成少一个碳的酰基辅酶 A。</b><b>紧挨着酮基的那个羧基以 CO₂ 的形式离开；剩下的羰基碳被氧化成酰基，以硫酯的形式被辅酶 A 接住；同时 NAD⁺ 被还原</b>。<b>干活的是一个多酶复合体，用到焦磷酸硫胺素、硫辛酸、辅酶 A、FAD 和 NAD⁺</b>。<b>这道题里有两例：丙酮酸→乙酰辅酶 A，α-酮戊二酸→琥珀酰辅酶 A。</b>',
  en:'“The conversion of a α-keto acid into the acyl-CoA one carbon shorter. The carboxyl next to the keto group leaves as CO₂, while the remaining carbonyl carbon is oxidised to an acyl group and captured as a thioester on coenzyme A, with NAD⁺ reduced. A multienzyme complex does it, with thiamine diphosphate, lipoate, coenzyme A, FAD and NAD⁺. Pyruvate to acetyl-CoA and α-ketoglutarate to succinyl-CoA are the two cases in this topic.”',
  cn:'p168–p169，p138。'},
 {r:'高', q:'Are the two CO₂ released the two acetyl carbons?',
@@ -427,9 +427,9 @@ ask:[
 
 {g:'硬事实', gn:'不背，眼熟即可。specific 题的弹药。', items:[
 {r:'中', q:'名字全表（八步的酶）',
-  ez:'“Citrate synthase. Then aconitate hydratase. Then isocitrate dehydrogenase. Then the alpha-ketoglutarate dehydrogenase complex. Then succinyl Co A synthetase. Then succinate dehydrogenase. Then fumarate hydratase. And then malate dehydrogenase.”',
+  ez:'“Citrate synthase. Then aconitase. Then isocitrate dehydrogenase. Then the alpha-ketoglutarate dehydrogenase complex. Then succinyl Co A synthetase. Then succinate dehydrogenase. Then fumarase. And then malate dehydrogenase.”',
   ezcn:'<b>八步的酶：柠檬酸合酶 · 顺乌头酸水合酶 · 异柠檬酸脱氢酶 · α-酮戊二酸脱氢酶复合体 · 琥珀酰-CoA 合成酶 · 琥珀酸脱氢酶 · 延胡索酸水合酶 · 苹果酸脱氢酶。</b>',
- en:'“Citrate synthase · aconitate hydratase · isocitrate dehydrogenase · the α-ketoglutarate dehydrogenase complex · succinyl-CoA synthetase · succinate dehydrogenase · fumarate hydratase · malate dehydrogenase.”',
+ en:'“Citrate synthase · aconitase · isocitrate dehydrogenase · the α-ketoglutarate dehydrogenase complex · succinyl-CoA synthetase · succinate dehydrogenase · fumarase · malate dehydrogenase.”',
  cn:'书还有一张 <b>Table 6.3「柠檬酸循环的酶及其辅因子」</b>（<span class="pg">p136</span>），OCR 出来碎了。<b>⚠ 待办：回 300 dpi 原图抄这张表。</b><br>另外 isocitrate dehydrogenase 这个名字 OCR 没直接给出，是从反应推的——<b>也要回原图核。</b>辅因子被问（原图核对前按通用说）：“The cofactors are these. Isocitrate dehydrogenase and malate dehydrogenase use NAD⁺. The α-ketoglutarate dehydrogenase complex uses thiamine diphosphate, lipoic acid, coenzyme A, FAD and NAD⁺. Succinate dehydrogenase has covalently bound FAD and iron–sulfur centres. Succinyl-CoA synthetase needs GDP and phosphate. Aconitase carries an iron–sulfur cluster. Citrate synthase and fumarase need no cofactor.”'},
 {r:'中', q:'中间产物按顺序',
   ez:'“Citrate. Then cis aconitate. Then isocitrate. Then oxalosuccinate. Then alpha-ketoglutarate. Then succinyl Co A. Then succinate. Then fumarate. Then L malate. And then oxaloacetate.”',
