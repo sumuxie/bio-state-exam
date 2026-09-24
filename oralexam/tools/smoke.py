@@ -70,6 +70,7 @@ PROBE = {
    #   Chrome 挂住、smoke 超时 180 秒。（第一次加进来就是这么挂的。）
    #   所以只调用它的各个函数、渲染它的那一块，**不进入播放循环**。
    ("磨耳朵 池子", "earPool(true).length + earPool(false).length;"),
+   ("磨耳朵 化学池","earPool('chem').length + earPool('chemdone').length;"),
    ("磨耳朵 那一块","earBox();"),
    ("磨耳朵 选嗓子","pickTwoVoices();"),
    # ⚠ 2026-09-24：必须**真的调一次 earSay**。上一版只测了周边函数，

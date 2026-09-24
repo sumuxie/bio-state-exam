@@ -867,7 +867,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>83437e0</b>'
+      + ' · 版本 <b>807ac8e</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2099,6 +2099,21 @@ function earPool(mode){
     });
     return shuffle(out);
   }
+  if(mode === 'chem' || mode === 'chemdone'){
+    /* ⚠ 2026-09-24 她：「磨耳朵里面还需要一个**化学专区**」。
+       **用化学专练的同一个池子** `chemPool()`（CHEMRX 命中 ≥3 个化学词），
+       这样两边算的「化学题」是同一批，她不用在脑子里维护两套标准。
+       ⚠ 第一条从她自己的地盘出（MYTURF）—— 她说化学「看着就发怵」，
+       开头必须是她天天在做的东西。 */
+    var cp = chemPool().filter(function(o){
+      if(!o.item.en && !o.item.ez) return false;
+      if(mode === 'chemdone' && !wSeen(s, o.card.id, o.item.q)) return false;
+      return true;
+    });
+    var turf = shuffle(cp.filter(function(o){ return o.turf; }));
+    var rest = shuffle(cp.filter(function(o){ return !o.turf; }));
+    return turf.slice(0, 1).concat(shuffle(turf.slice(1).concat(rest)));
+  }
   CARDS.forEach(function(c){
     qlist(c).forEach(function(x){
       if(!x.en && !x.ez) return;
@@ -2164,6 +2179,7 @@ function pickClear(){
 
 function earBox(){
   var done = earPool('done').length, all = earPool('all').length, pk = earPool('pick').length;
+  var ch = earPool('chem').length, chd = earPool('chemdone').length;
   return '<div class="onebox earbox">'
     + '<div class="small" style="margin:0 0 8px">'
     + '<b>开始之后不用动手</b>：男声念题 → 停两秒 → 女声念答案 → 下一条，一直走。'
@@ -2171,9 +2187,12 @@ function earBox(){
     + '<br>⚠ <b>想只磨某几句？</b>跟读第 ① 步里每句话前面有个 <b>☆</b>，'
     + '<b>点一下整句高亮</b>，这里选「只播我挑的句子」。'
     + '<br>⚠ <b>同一道题下面挑的几句会连起来念</b>，不会一句一句拆开。'
-    + '<b>高亮会留着，下次再背一眼就看见。</b></div>'
+    + '<b>高亮会留着，下次再背一眼就看见。</b>'
+    + '<br>🧪 <b>化学专区</b>跟「化学专练」是<b>同一批题</b>，第一条一样从你自己的地盘出。</div>'
     + '<div class="row"><label>播哪些 <select id="earwhich">'
     + '<option value="pick"' + (pk ? '' : ' disabled') + '>★ 只播我挑的句子（' + pk + ' 组）</option>'
+    + '<option value="chemdone"' + (chd ? '' : ' disabled') + '>🧪 化学 · 我练过的（' + chd + '）</option>'
+    + '<option value="chem">🧪 化学 · 全部（' + ch + '）</option>'
     + '<option value="done" selected>只播我练过的（' + done + '）</option>'
     + '<option value="all">全部（' + all + '）</option></select></label>'
     + '<button class="main" onclick="earStart()">▶ 开始听</button>'
@@ -2184,6 +2203,10 @@ function earStart(){
   var mode = (($('earwhich') || {}).value) || 'done';
   var list = earPool(mode);
   if(!list.length){
+    if(mode === 'chemdone'){
+      alert('化学题里你还没练过的 —— 换成「🧪 化学 · 全部」，或者先去化学专练走两条。');
+      return;
+    }
     alert(mode === 'pick'
       ? '还没挑过句子 —— 跟读第 ① 步里，点每句话前面那个 ☆。'
       : '还没有可以磨的 —— 先去走几条，或者切到「全部」。');
@@ -2191,7 +2214,8 @@ function earStart(){
   }
   var s0 = st();
   EAR = {list:list, i:0, on:true, v:pickTwoVoices(),
-         gap:(s0.earGap || 2000), loop:false, extra:0, gen:0};
+         gap:(s0.earGap || 2000), loop:false, extra:0, gen:0,
+         chem:(mode === 'chem' || mode === 'chemdone')};
   earScreen();
   earStep();
 }
@@ -2203,7 +2227,8 @@ function earScreen(){
   if(!EAR) return;
   var o = EAR.list[EAR.i];
   $('main').innerHTML = '<div class="card">'
-    + '<span class="chemtag">🎧 磨耳朵 ' + (EAR.i+1) + ' / ' + EAR.list.length + '</span>'
+    + '<span class="chemtag">' + (EAR.chem ? '🧪 磨耳朵 · 化学 ' : '🎧 磨耳朵 ')
+      + (EAR.i+1) + ' / ' + EAR.list.length + '</span>'
     + '<p class="chemq" id="earq">' + esc(o.item.q || '（你挑的一句）') + '</p>'
     + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
       + (o.nsent > 1 ? ' · <b>你挑的 ' + o.nsent + ' 句连起来</b>' : '') + '</p>'
