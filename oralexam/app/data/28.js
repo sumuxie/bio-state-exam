@@ -370,6 +370,14 @@ recog:[
 
 /* ---------------- 追问 ---------------- */
 ask:[
+ {g:'⚠ 考官 · Ryšlavá · 这三个酶就是她的酶', gn:'⚠ <b>这一组不是补空白，是提醒：这张卡就是她的主场。</b><b>Prof. Helena Ryšlavá 的实验室做植物逆境下的代谢改变，而她的酶正好就是 PEP 羟化酶、NADP-苹果酸酶、丙酮酸磷酸双激酶</b> —— C-4 里浓缩二氧化碳那一套。<b>更要紧的是她关心它们的非光合版本</b>：同样这几个酶在别的细胞里<b>给柠檙酸循环补中间产物</b>。<b>她的问法是「你怎么解释这个现象」，要的不是背诵。</b>', items:[
+  {r:'高', q:'PEP carboxylase also exists in cells that do no photosynthesis at all. What is it doing there?',
+    ez:'“It is topping up the citric acid cycle. P E P carboxylase adds carbon dioxide to phosphoenolpyruvate and gives oxaloacetate. Oxaloacetate is a cycle intermediate. The cycle constantly loses intermediates, because they are pulled out for biosynthesis. Amino acids and porphyrins are made from them. If nothing replaced them the cycle would run down. Reactions that refill it are called anaplerotic reactions. So the same enzyme that concentrates carbon dioxide in a C four plant works as a top up valve elsewhere. It also helps hold the p H, because fixing carbon dioxide consumes bicarbonate.”',
+    ezcn:'<b>它在给柠檙酸循环补货。</b><b>PEP 羟化酶把二氧化碳装到 PEP 上，给出草酰乙酸 —— 而草酰乙酸是循环的中间产物。</b><b>循环一直在流失中间产物，因为它们被抽去做合成（氨基酸、卉琳）。</b><b>没人补上，循环就停了。</b><b>专门补货的那些反应叫回补反应。</b><b>所以同一个酶，在 C-4 植物里是浓缩二氧化碳的，在别处就是一个补货阀。</b><b>它还帮着稳住 pH，因为固定二氧化碳要消耗碳酸氢根。</b>',
+   en:'“It is topping up the citric acid cycle. PEP carboxylase adds carbon dioxide to phosphoenolpyruvate and gives oxaloacetate, which is a cycle intermediate. The cycle constantly loses intermediates because they are pulled out for biosynthesis, for amino acids and for porphyrins, and if nothing replaced them the cycle would run down. Reactions that refill it are called anaplerotic reactions. So the same enzyme that concentrates carbon dioxide in a C4 plant works as a top-up valve elsewhere, and it also helps hold the pH, because fixing carbon dioxide consumes bicarbonate.”',
+   cn:'⚠ <b>这一条把卡 28 和卡 24 / x-meta 接起来了，而且接在她的研究上。</b><b>回补反应（anaplerotic）这个词要说出口。</b><br><b>为什么循环会流失中间产物</b>：它不是纯分解的，α-酮戊二酸和琥珀酰-CoA 都被抽去做合成（卡 <b>24</b> 那一条）。<br><b>C-4 里的 PEP 羟化酶用的是碳酸氢根而不是 CO₂</b>，这一点卡 28 速背 07 已经标了。<span class="pg">通用 ＋ <span class="pg">p212 p215</span></span>'}
+ ]},
+
 {g:'定义类', gn:'他会单独拎出来问的名词。<b>每一个都要能头对头地答「它是什么」。</b>', items:[
 {r:'高', q:'What is rubisco?',
     ez:'“Rubisco attaches carbon dioxide to an organic molecule. It catalyses the first reaction of the Calvin cycle. That reaction is the carboxylation of ribulose one five bisphosphate. That is a five carbon sugar. Its full name is ribulose bisphosphate carboxylase oxygenase. The second half of the name is the whole problem. It also adds oxygen. The textbook describes it as a soluble protein in the stroma. It is one of the most abundant proteins on Earth. It is built from two kinds of subunit. The functional molecule has eight active sites. It works through a reactive enediolate intermediate. Carbon dioxide attacks that intermediate. So does oxygen.”',
