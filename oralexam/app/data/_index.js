@@ -315,8 +315,8 @@ window.QINDEX = [
  },
  {
   "n": 25,
-  "en": "Describe the electron transport chain and its role in cellular respiration.",
-  "cn": "描述电子传递链及其在细胞呼吸中的作用。",
+  "en": "Describe the respiratory chain and its role in cellular respiration.",
+  "cn": "描述呼吸链及其在细胞呼吸中的作用。",
   "rep": 1,
   "bw": 23,
   "gap": "gap",

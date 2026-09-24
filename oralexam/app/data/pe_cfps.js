@@ -106,7 +106,7 @@ cram:[
  {n:'15', t:'⚠ 那次实测到底错在哪',
   big:'<b>2026-09-01</b>：他反复问 flexizyme。作业用的是<b>琥珀抑制</b>，他说那条路太复杂、想把人引到 flexizyme，<b>而答出去的是 T4 连接酶和酶切</b>',
   en:'“I think I have drifted into cloning. The question is how the monomer gets onto the tRNA, and the answer there is a flexizyme.”',
-  note:'<b>失败的名字要叫得准：答进了另一场对话。</b>T4 连接酶和限制性内切酶回答的是「怎么把一段 DNA 拼进载体」，那是<b>构建模板</b>那一侧的事；他问的是<b>怎么把单体装到 tRNA 上</b>。<b>两个答案都可以是对的句子，但后一个不回答被问的那个问题。</b>整条推理在 LOGIC 第 9 条。<br><b>「太复杂」那句是提示，不是批评。</b>他说琥珀抑制太复杂，是在说「有一条更短的路，你说得出来吗」。<b>听见有人说你的方案复杂，先问一句他心里那条短路是什么。</b>',
+  note:'<b>失败的名字要叫得准：答进了另一场对话。</b>T4 连接酶和限制酶回答的是「怎么把一段 DNA 拼进载体」，那是<b>构建模板</b>那一侧的事；他问的是<b>怎么把单体装到 tRNA 上</b>。<b>两个答案都可以是对的句子，但后一个不回答被问的那个问题。</b>整条推理在 LOGIC 第 9 条。<br><b>「太复杂」那句是提示，不是批评。</b>他说琥珀抑制太复杂，是在说「有一条更短的路，你说得出来吗」。<b>听见有人说你的方案复杂，先问一句他心里那条短路是什么。</b>',
   warn:'⚠ <b>触发词</b>：flexizyme · ribozyme that charges tRNA · acylation · how does the amino acid get onto the tRNA · a simpler route than amber —— <b>全部落在「怎么装」这一问上</b>。<br>⚠ <b>中途发现自己答偏了怎么办</b>：上面那句就是回收线。<b>说出来不丢分，接着往错的方向说才丢分。</b>另一个版本更安全，直接把问题分层反问回去：“Do you mean how the monomer is attached to the tRNA, or how the template is built? Those are two different steps.”'}
 ],
 

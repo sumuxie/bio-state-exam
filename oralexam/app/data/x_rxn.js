@@ -123,7 +123,7 @@ cram:[
     ['<b>dehydration</b> 脱水','脱掉一分子水，<b>留下一个双键</b>','<b>1 → 1</b>','enolase 把 2-phosphoglycerate 变成 PEP（卡 <b>gly</b>）· serine dehydratase E.C.4.2.1.13 <span class="pg">p119</span>'],
    ]},
   note:'<b>反应式</b>：<code>hydrolysis　A–B ＋ H₂O → A–H ＋ B–OH</code>　<code>condensation　A–H ＋ B–OH → A–B ＋ H₂O</code><br><code>hydration　C＝C ＋ H₂O → HC–COH</code>　<code>dehydration　HC–COH → C＝C ＋ H₂O</code><br><b>最漂亮的一个例子是 aconitase。</b>书 <span class="pg">p138</span> 说 citrate → isocitrate 这一步是「一个<b>包含脱水、以及随后把水加到 cis-aconitate 的 α,β-双键上</b>的 isomerisation」。<b>脱水 ＋ 水合 ＝ 净水没变 ＝ 分子式没变 ＝ 这是一个异构化。</b>一句话把家族 A 和家族 E 缝在一起，卡 <b>24</b> 已经有这一条。',
-  warn:'⚠ <b>别把 hydration 说成 hydrolysis。</b>两个词长得像，但一个不断键、一个断键。<b>书自己的酶名帮得上忙</b>：延胡索酸那一步的酶叫 <b>fumarate hydratase</b>，不叫 hydrolase；而书把脱水酶编成 4.2.1.13，是 <b>lyase</b>，也不在水解酶那一类里。'},
+  warn:'⚠ <b>别把 hydration 说成 hydrolysis。</b>两个词长得像，但一个不断键、一个断键。<b>书自己的酶名帮得上忙</b>：延胡索酸那一步的酶叫 <b>fumarase</b>，不叫 hydrolase；而书把脱水酶编成 4.2.1.13，是 <b>lyase</b>，也不在水解酶那一类里。'},
  {n:'15', t:'-lysis 这个后缀',
   big:'后缀说的不是断了哪种键，是<b>哪个基团来进攻</b>',
   en:'“The ending -lysis names the attacker rather than the bond. Hydrolysis, water attacks. Phosphorolysis, phosphate attacks. Thiolysis, the thiol of coenzyme A attacks. The textbook makes the contrast itself. Starch and glycogen are broken down not by hydrolysis but by phosphorolysis, and phosphorylase hands the terminal glucose to phosphoric acid, so the product is glucose-1-phosphate.”',
@@ -179,7 +179,7 @@ recog:[
 
 {q:'What is transamination?',
   ez:'“Transamination transfers the amino group of an amino acid. It transfers it onto the oxo group of a two oxoacid. The textbook names three usual acceptors. Pyruvate. Alpha-ketoglutarate. And oxaloacetate. So the amino group and the oxo group swap. Neither carbon skeleton moves. The enzymes are the aminotransferases. The coenzyme is pyridoxal phosphate. It comes from vitamin B six.”',
-  ezcn:'<b>转氨 ＝ 把一个氨基酸的氨基转到一个 α-酮酸的氧代基上。</b><b>书点了三个常见受体：丙酮酸 · α-酮戊二酸 · 草酰乙酸。</b><b>氨基和氧代基对调，两条碳骨架都不动。</b><b>酶是氨基转移酶（E.C. 2.6.1），辅酶是来自维生素 B6 的磷酸吡哆醛。</b><b>书说它的意义是：把所有氨基酸的氨基收集到其中一个身上，通常是谷氨酸。</b>',
+  ezcn:'<b>转氨 ＝ 把一个氨基酸的氨基转到一个 α-酮酸的氧代基上。</b><b>书点了三个常见受体：丙酮酸 · α-酮戊二酸 · 草酰乙酸。</b><b>氨基和氧代基对调，两条碳骨架都不动。</b><b>酶是转氨酶（E.C. 2.6.1），辅酶是来自维生素 B6 的磷酸吡哆醛。</b><b>书说它的意义是：把所有氨基酸的氨基收集到其中一个身上，通常是谷氨酸。</b>',
  mean:'她的卡上用了十来次<b>从没定义过</b>的那个词。答案要说清<b>什么在动、什么不动</b>。',
  say:'“Transamination is the transfer of the amino group of an amino acid onto the oxo group of a α-keto acid. The textbook names three usual acceptors: pyruvate, α-ketoglutarate and oxaloacetate. So the amino group and the oxo group swap, and neither carbon skeleton moves. The enzymes are the aminotransferases, E.C. 2.6.1, and the coenzyme is pyridoxal phosphate from vitamin B-six. The point of it, the textbook says, is to collect the amino groups of all the amino acids onto one of them, usually glutamate.”'},
 
@@ -191,10 +191,10 @@ recog:[
  tail:'他要是接着问「那怎么算氧化数」，再给那把梯子：<b>连 O、N、S 加一，连 H 减一，连 C 算零</b>。梯子是通用的，不是书上的。'},
 
 {q:'What is the difference between hydrolysis and hydration?',
-  ez:'“Hydrolysis uses water to break a bond. So one molecule becomes two. Hydration adds a whole water across a double bond. Nothing breaks there. So one molecule stays one. The textbook’s own enzyme names keep them apart. Fumarate hydratase adds water to fumarate. It gives L malate. The textbook classes such enzymes as lyases. Arginase hydrolyses urea off arginine. That one is a hydrolase.”',
+  ez:'“Hydrolysis uses water to break a bond. So one molecule becomes two. Hydration adds a whole water across a double bond. Nothing breaks there. So one molecule stays one. The textbook’s own enzyme names keep them apart. Fumarase adds water to fumarate. It gives L malate. The textbook classes such enzymes as lyases. Arginase hydrolyses urea off arginine. That one is a hydrolase.”',
   ezcn:'<b>差别在分子数，不在水。</b><b>水解 ＝ 用水打断一根键，一个分子变成两个；水合 ＝ 把一整个水加到双键上，什么都没断，一个分子还是一个。</b><b>书自己的酶名就把它们分开了：延胡索酸水合酶给延胡索酸加水得 L-苹果酸，书把这类酶归在裂合酶里；精氨酸酶把尿素从精氨酸上水解下来，那个是水解酶。</b>',
  mean:'两个词差两个字母。答案的关键是<b>分子数</b>，不是水。',
- say:'“Hydrolysis uses water to break a bond, so one molecule becomes two. Hydration adds a whole water across a double bond, so nothing breaks and one molecule stays one. The textbook’s own enzyme names keep them apart. Fumarate hydratase adds water to fumarate and gives L-malate, and the textbook classes such enzymes as lyases. Arginase hydrolyses urea off arginine, and that one is a hydrolase.”'},
+ say:'“Hydrolysis uses water to break a bond, so one molecule becomes two. Hydration adds a whole water across a double bond, so nothing breaks and one molecule stays one. The textbook’s own enzyme names keep them apart. Fumarase adds water to fumarate and gives L-malate, and the textbook classes such enzymes as lyases. Arginase hydrolyses urea off arginine, and that one is a hydrolase.”'},
 
 {q:'What kind of reaction is the fourth step of β-oxidation?',
   ez:'“It is a thiolytic cleavage. Coenzyme A comes in. Its thiol attacks a carbon carbon bond. That bond is next to the keto group. A two carbon acetyl Co A then leaves. The textbook prints the enzyme name as beta ketokinase. That cannot be right. A kinase transfers a phosphate. And there is no phosphate anywhere here. So the enzyme is generally called a thiolase.”',
