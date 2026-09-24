@@ -363,7 +363,9 @@ function dayRec(s,d){ s.days[d]=s.days[d]||{cards:[],qs:0,miss:0,sets:0}; return
 function streak(){
   var s=st(), n=0, d=new Date();
   for(;;){ var k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-    if(s.days[k]&&s.days[k].sets>0){ n++; d.setDate(d.getDate()-1); } else break; }
+    /* ⚠ 2026-09-25：原来只数「组」（sets），而她早不跑拷问式了，于是天天跟读也显示「连续 0 天」。现在只要那天有出过声就算。 */
+    var rec = s.days[k];
+    if(rec && ((rec.sets||0) > 0 || (rec.walk||0) > 0 || (rec.shadow||0) > 0)){ n++; d.setDate(d.getDate()-1); } else break; }
   return n;
 }
 
@@ -803,6 +805,10 @@ function home(){
              + '<div class="big"><b>' + rs.done + '</b><em>/ ' + rs.tot + '</em></div>'
              + '<div class="meta">' + pc + '% · 约 ' + Math.round(rs.tot * 2 / 60 * 10) / 10
              + ' 小时 · 每天 ' + Math.round(rs.tot * 2 / 12) + ' 分钟</div>'
+             /* ⚠ 2026-09-25：星标口径。走过 ≠ 背过（她自己说的），所以这一行才是实话。 */
+             + '<div class="meta">★ ' + rs.starred + ' 星标 · '
+               + (rs.skimmed ? '<b class="miss">' + rs.skimmed + ' 刷过没背</b> · ' : '')
+               + rs.untouched + ' 还没碰</div>'
              + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
         }
         return h2 + '</div></div>'; })()
@@ -876,7 +882,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>623440f</b>'
+      + ' · 版本 <b>65ddf67</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1685,6 +1691,54 @@ function dayLabel(d){
   var p = d.split('-');
   return (+p[1]) + ' 月 ' + (+p[2]) + ' 日';
 }
+/* ⚠ 2026-09-25 加的第二个口径：星标。
+   她的话：「我为了看进度往后看了几道题但那些题我其实没有背，
+   但是有个好处就是**我没有星标过的绝对就是还没背的**」。
+   所以 `walked`（走过）是她自己承认被污染的信号，而**星标是可信的下界**：
+   星标过 ≠ 一定背熟，但**没星标 ＝ 肯定没背**。
+   星标存在主 app 同一个键（oralexam.mark.v1），存的是**选中的那段原文 ＋ 卡号**，
+   所以一道题算不算星标过，判据是：这张卡上有没有哪一段星标的文字落在这道题的答案里。
+   ⚠ 特意不用 `walked` 去反推 —— 那就把污染又带回来了。 */
+var STARIDX = null;
+function starIndex(){
+  if(STARIDX) return STARIDX;
+  STARIDX = {};
+  mkLoad().forEach(function(m){
+    if(!m || !m.card || !m.text) return;
+    (STARIDX[m.card] = STARIDX[m.card] || []).push(strip(m.text));
+  });
+  return STARIDX;
+}
+function qStarred(cardId, item){
+  var arr = starIndex()[cardId];
+  if(!arr || !arr.length) return 0;
+  var hay = strip((item.en || '') + ' ' + (item.ez || '') + ' ' + (item.ezcn || '') + ' ' + (item.q || ''));
+  for(var i=0;i<arr.length;i++){
+    var t = arr[i];
+    if(t.length >= 8 && hay.indexOf(t) !== -1) return 1;
+  }
+  return 0;
+}
+/* 星标的统计。⚠ 三个数分开报，因为它们说的是三件事：
+   · starred   ＝ 星标过的（可信的「动过手」）
+   · skimmed   ＝ 走过但没星标（**她刷过去、没背的那些**，最该回来）
+   · untouched ＝ 既没走过也没星标（还没碰） */
+function starStats(list){
+  var s = st(), o = {tot:0, starred:0, skimmed:0, untouched:0};
+  list.forEach(function(x){
+    o.tot++;
+    var st2 = qStarred(x.card.id, x.item), sn = wSeen(s, x.card.id, x.item.q);
+    if(st2) o.starred++;
+    else if(sn) o.skimmed++;
+    else o.untouched++;
+  });
+  return o;
+}
+function allItems(){
+  var out = [];
+  CARDS.forEach(function(c){ qlist(c).forEach(function(x){ out.push({card:c, item:x}); }); });
+  return out;
+}
 function wSeen(s, card, q){ return ((s.walked || {})[wKey(card, q)] || 0); }
 function wMark(card, q){
   var s = st(); s.walked = s.walked || {};
@@ -1696,14 +1750,23 @@ function wMark(card, q){
 function roundStat(n){
   var s = st(), list = roundItems(n), done = 0;
   list.forEach(function(o){ if(wSeen(s, o.card.id, o.item.q)) done++; });
-  return {tot:list.length, done:done};
+  var ss = starStats(list);
+  return {tot:list.length, done:done, starred:ss.starred, skimmed:ss.skimmed, untouched:ss.untouched};
 }
 function walkRound(n){
   var s = st(), list = roundItems(n);
   if(!list.length){ alert('这一轮没有题。'); return; }
-  /* 没走过的排前面；走过的留在后面，那时是涂掉的。 */
-  list.forEach(function(o){ o.seen = wSeen(s, o.card.id, o.item.q); });
-  list.sort(function(a, b){ return a.seen - b.seen; });
+  /* ⚠ 2026-09-25 改了排序判据。原来只按「走过没走过」排，
+     而她说走过这个信号被自己污染了（为了看进度往后点过几道）。
+     现在的顺序：① 走过但没星标（她刷过去、没背的，最该先回来）
+                 ② 没走过也没星标（还没碰）
+                 ③ 星标过的（动过手，留到最后，那时关键词是涂掉的） */
+  list.forEach(function(o){
+    o.seen = wSeen(s, o.card.id, o.item.q);
+    o.star = qStarred(o.card.id, o.item);
+    o.pri  = o.star ? 2 : (o.seen ? 0 : 1);
+  });
+  list.sort(function(a, b){ return a.pri - b.pri || a.seen - b.seen; });
   CH = {list:list, i:0, tag:'📖 轮 ' + n, done:'轮 ' + n + ' 到这里',
         again:'walkRound(' + n + ')', round:n};
   walkRender();
@@ -2689,21 +2752,47 @@ function mkAdd(){
 
 /* ---- 复制进度给老师：规矩一要的就是这三个数 ---- */
 function copyOut(){
-  var s = st(), d = today(), r = s.days[d] || {}, n = numbers();
-  var lines = ['口试演练 ' + d,
-    '① 今天出声练了 ' + n.cardsToday + ' 张（' + (r.sets||0) + ' 组 · ' + (r.qs||0) + ' 题）· 连续 ' + streak() + ' 天',
-    '② 漏超过 2 条的：' + (n.bad.length ? n.bad.join(' ') : '无'),
-    '③ 连着两次漏同一个点的：' + (n.rep.length ? n.rep.map(function(o){ return o.id+'('+o.w.slice(0,4).join(',')+')'; }).join(' ') : '无'),
-    ''];
-  RLOG.forEach(function(x){
-    lines.push('[' + x.title + '] ' + x.q);
-    lines.push('  自评 ' + (x.self==null ? '—' : ['答得出','答一半','答不上'][x.self])
-      + ' · 机器算漏 ' + x.miss.length + '/' + x.total);
+  /* ⚠ 2026-09-25 重写。她：「复制进度还是有点问题啊 怎么还是在复制我已经不用的东西」——
+     原来报的是拷问式那一套（组数、题数、机器算漏、每题自评），那套她已经不用了。
+     现在只报她真正在用的：三轮进度 · 星标口径 · 今天的出声次数。
+     ⚠ 星标口径为什么要单独报：她自己说「走过」被污染了（为了看进度往后点过几道），
+     而「没星标 ＝ 肯定没背」是可信的下界。所以「刷过没背」那个数才是真正的待办。 */
+  var s = st(), d = today(), r = s.days[d] || {};
+  var all = allItems(), A = starStats(all);
+  var walked = 0;
+  all.forEach(function(x){ if(wSeen(s, x.card.id, x.item.q)) walked++; });
+  var lines = ['口试演练 ' + d + ' · 连续 ' + streak() + ' 天'];
+  lines.push('');
+  lines.push('【今天】整段出声 ' + (r.walk || 0) + ' 遍 · 跟读 ' + (r.shadow || 0) + ' 句 · 卡 ' + ((r.cards||[]).length) + ' 张');
+  lines.push('');
+  lines.push('【三轮】');
+  for(var n = 1; n <= 3; n++){
+    var rs = roundStat(n);
+    lines.push('  轮 ' + n + '：走过 ' + rs.done + ' / ' + rs.tot
+      + '（★ ' + rs.starred + ' · 刷过没背 ' + rs.skimmed + ' · 还没碰 ' + rs.untouched + '）');
+  }
+  lines.push('');
+  lines.push('【全部 ' + A.tot + ' 题】走过 ' + walked
+    + ' · ★ 星标 ' + A.starred + ' · 刷过没背 ' + A.skimmed + ' · 还没碰 ' + A.untouched);
+  lines.push('  口径：★ 是我自己标的，没星标的肯定还没背。');
+  /* 最该回来的那些：走过但没星标，按卡聚一下，只报前十张 */
+  var by = {};
+  all.forEach(function(x){
+    if(qStarred(x.card.id, x.item)) return;
+    if(!wSeen(s, x.card.id, x.item.q)) return;
+    by[x.card.id] = (by[x.card.id] || 0) + 1;
   });
+  var ks = Object.keys(by).sort(function(a, b){ return by[b] - by[a]; });
+  if(ks.length){
+    lines.push('');
+    lines.push('【刷过但没背，按卡】' + ks.slice(0, 10).map(function(k){ return k + ' ' + by[k]; }).join(' · ')
+      + (ks.length > 10 ? ' …共 ' + ks.length + ' 张' : ''));
+  }
   var txt = lines.join('\n');
   try{ navigator.clipboard.writeText(txt); alert('复制好了，粘给老师。'); }
   catch(e){ prompt('手动复制：', txt); }
 }
+
 
 /* 规矩一的三个数，现在是量出来的，不是问出来的。 */
 function numbers(){
