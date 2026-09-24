@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>公式排版 · 看一眼再定</title>
+<!--
+  2026-09-24 她：「所有涉及公式的地方都写一下行吗 这种格式…
+  就是在所有 text 包括我跟背也能直接看到」，然后：
+  「**你先写一个我看看**」「**先不要直接挂进去**」「因为我在网页上看到这个格式很优美」。
+
+  所以这一页**只是样品**，谁也没挂上：app 的三个页面一个字都没动。
+  里面的公式**全是从她卡里原样抄出来的**，不是我编的例子 ——
+  编的例子好看不作数，她要看的是**她自己那些公式**长什么样。
+
+  ⚠ 查出来的实情：全套卡里 266 处 <code>，其中 103 处带反应箭头，
+  而 <code> 在三个页面里**一条样式都没有**。所以「这种格式」不是加新内容，是排版。
+-->
+<style>
+:root{
+  --bg:#faf8f4; --ink:#1c1a17; --dim:#6b645c; --line:#e3ddd3;
+  --card:#fff; --accent:#8a5a2b;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#16140f; --ink:#ece7dd; --dim:#9a9187; --line:#2e2a22;
+         --card:#1e1b15; --accent:#d9a066; }
+}
+*{box-sizing:border-box}
+body{margin:0;padding:22px 16px 60px;background:var(--bg);color:var(--ink);
+  font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif;
+  max-width:760px;margin-inline:auto}
+h1{font-size:22px;margin:0 0 4px}
+h2{font-size:15px;margin:28px 0 6px;padding-top:16px;border-top:1px solid var(--line)}
+.lead{font-size:13.5px;color:var(--dim);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;margin:0 0 14px}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;
+  border:1px solid var(--line);color:var(--dim);margin:0 0 8px}
+.from{font-size:11.5px;color:var(--dim);margin:2px 0 8px}
+small{font-size:12.5px;color:var(--dim)}
+.warn{color:var(--accent);font-weight:700}
+
+/* ===== 现在：一条样式都没有（这就是你现在看到的样子） ===== */
+.now code{}
+
+/* ===== 方案 A · 数学排版 =====
+   衬线、居中、字距放开，箭头上带字。她给的 LaTeX 样例就是这一路。 */
+.A .eq{display:block;margin:12px auto;padding:12px 14px;text-align:center;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif;
+  font-size:19px;line-height:2.1;letter-spacing:.01em;
+  overflow-x:auto;white-space:nowrap}
+.A .eq .op{margin:0 .38em;opacity:.75}
+.A .ar{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+  vertical-align:middle;margin:0 .55em;line-height:1.05}
+.A .ar b{font-size:11.5px;font-weight:600;letter-spacing:.02em;opacity:.75;
+  font-family:system-ui,sans-serif;white-space:nowrap}
+.A .ar i{font-style:normal;font-size:22px;margin-top:-2px}
+.A .hot{font-weight:700;color:var(--accent)}
+
+/* ===== 方案 B · 公式块 =====
+   等宽、描边、有底色 —— 跟正文分得更开，长式子能横向滚。 */
+.B .eq{display:block;margin:12px 0;padding:11px 13px;
+  border:1px solid var(--line);border-radius:9px;background:rgba(127,127,127,.06);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:15px;line-height:2;overflow-x:auto;white-space:nowrap}
+.B .ar{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+  vertical-align:middle;margin:0 8px;line-height:1.05}
+.B .ar b{font-size:10.5px;font-weight:600;opacity:.8;white-space:nowrap;
+  font-family:system-ui,sans-serif}
+.B .ar i{font-style:normal;font-size:19px;margin-top:-1px}
+.B .hot{font-weight:700;color:var(--accent)}
+</style>
+</head>
+<body>
+
+<h1>公式排版 —— 先看样品，你点头我再挂</h1>
+<p class="lead">三个页面（主 app · 演练台 · 地图）<b>一个字都没动</b>。
+下面每一条公式都是<b>从你卡里原样抄出来的</b>，不是编的例子。<br>
+先说一件事：全套卡里有 <b>266 处公式</b>（其中 <b>103 处带反应箭头</b>），
+而它们在三个页面里<b class="warn">一条样式都没有</b> ——
+浏览器默认等宽字，跟正文糊在一起。所以你说的「这种格式」<b>不是加新内容，是排版</b>。</p>
+
+<!-- ============ 1 ============ -->
+<h2>① 光合作用的通式（书自己印的）</h2>
+<div class="card from">来自 <b>卡 27 · 光合作用</b>。⚠ 这一条现在<b class="warn">卡上只有文字描述</b>
+（「The book’s general form is H₂D plus A, over the pigments…」），<b>方程式本身没印出来</b>。</div>
+
+<div class="card now"><span class="tag">现在</span><br>
+<code>H₂D ＋ A → H₂A ＋ D</code>（色素）
+</div>
+
+<div class="card A"><span class="tag">方案 A · 数学排版</span>
+<span class="eq">H<sub>2</sub>D<span class="op">＋</span>A<span class="ar"><b>pigments</b><i>⟶</i></span>H<sub>2</sub>A<span class="op">＋</span><span class="hot">D</span></span>
+</div>
+
+<div class="card B"><span class="tag">方案 B · 公式块</span>
+<span class="eq">H₂D ＋ A <span class="ar"><b>pigments</b><i>⟶</i></span> H₂A ＋ <span class="hot">D</span></span>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2>② 硬脂酸走完 β-氧化（书 p195，一个数没改）</h2>
+<div class="card from">来自<b>横向卡 · 代谢通路</b>速背 13。这是全套卡里最长的一条式子，<b>专门用来看长式子会不会炸</b>。</div>
+
+<div class="card now"><span class="tag">现在</span><br>
+<code>C₁₇H₃₅CO–CoA ＋ 8 FAD ＋ 8 NAD⁺ ＋ 8 H₂O ＋ 8 CoASH → 9 CH₃CO–CoA ＋ 8 FADH₂ ＋ 8 NADH ＋ 8 H⁺</code>
+</div>
+
+<div class="card A"><span class="tag">方案 A</span>
+<span class="eq">C<sub>17</sub>H<sub>35</sub>CO–CoA<span class="op">＋</span>8 FAD<span class="op">＋</span>8 NAD<sup>+</sup><span class="op">＋</span>8 H<sub>2</sub>O<span class="op">＋</span>8 CoASH<span class="ar"><b>8 轮</b><i>⟶</i></span><span class="hot">9</span> CH<sub>3</sub>CO–CoA<span class="op">＋</span>8 FADH<sub>2</sub><span class="op">＋</span>8 NADH<span class="op">＋</span>8 H<sup>+</sup></span>
+</div>
+
+<div class="card B"><span class="tag">方案 B</span>
+<span class="eq">C₁₇H₃₅CO–CoA ＋ 8 FAD ＋ 8 NAD⁺ ＋ 8 H₂O ＋ 8 CoASH <span class="ar"><b>8 轮</b><i>⟶</i></span> <span class="hot">9</span> CH₃CO–CoA ＋ 8 FADH₂ ＋ 8 NADH ＋ 8 H⁺</span>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2>③ 酶促反应的两步（带速率常数）</h2>
+<div class="card from">来自<b>卡 02 · 酶</b>。⚠ 这一条最能说明<b>箭头上带字有没有用</b>：
+现在 <code>k₊</code> 这些常数只能写在括号里或者另起一句。</div>
+
+<div class="card now"><span class="tag">现在</span><br>
+<code>E + S ⇌ ES → E + P</code>（k₁ / k₋₁ / k<sub>cat</sub>）
+</div>
+
+<div class="card A"><span class="tag">方案 A</span>
+<span class="eq">E<span class="op">＋</span>S<span class="ar"><b>k<sub>1</sub> / k<sub>−1</sub></b><i>⇌</i></span>ES<span class="ar"><b>k<sub>cat</sub></b><i>⟶</i></span>E<span class="op">＋</span>P</span>
+</div>
+
+<div class="card B"><span class="tag">方案 B</span>
+<span class="eq">E ＋ S <span class="ar"><b>k₁ / k₋₁</b><i>⇌</i></span> ES <span class="ar"><b>k<sub>cat</sub></b><i>⟶</i></span> E ＋ P</span>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2>④ 尿素循环的总式</h2>
+<div class="card from">来自<b>横向卡</b>速背 21（书 p123–124）。⚠ 卡上那条注解的考点是
+「<b>4 mol ATP</b> 和总式里的 <b>3 ATP</b> 是同一件事」—— 排版之后这个对比一眼能看见。</div>
+
+<div class="card now"><span class="tag">现在</span><br>
+<code>2 NH₄⁺ ＋ HCO₃⁻ ＋ 3 ATP ＋ H₂O → 尿素 ＋ 2 ADP ＋ 4 Pᵢ ＋ AMP ＋ 2 H⁺</code>
+</div>
+
+<div class="card A"><span class="tag">方案 A</span>
+<span class="eq">2 NH<sub>4</sub><sup>+</sup><span class="op">＋</span>HCO<sub>3</sub><sup>−</sup><span class="op">＋</span><span class="hot">3 ATP</span><span class="op">＋</span>H<sub>2</sub>O<span class="ar"><b>肝 · 尿素循环</b><i>⟶</i></span>尿素<span class="op">＋</span>2 ADP<span class="op">＋</span>4 P<sub>i</sub><span class="op">＋</span><span class="hot">AMP</span><span class="op">＋</span>2 H<sup>+</sup></span>
+</div>
+
+<div class="card B"><span class="tag">方案 B</span>
+<span class="eq">2 NH₄⁺ ＋ HCO₃⁻ ＋ <span class="hot">3 ATP</span> ＋ H₂O <span class="ar"><b>肝 · 尿素循环</b><i>⟶</i></span> 尿素 ＋ 2 ADP ＋ 4 Pᵢ ＋ <span class="hot">AMP</span> ＋ 2 H⁺</span>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2>⑤ 不带箭头的那种（公式，不是反应式）</h2>
+<div class="card from">来自<b>卡 gly</b>。⚠ 这类<b>不该跟反应式长一个样</b>，所以两个方案里它都不带箭头结构。</div>
+
+<div class="card now"><span class="tag">现在</span><br>
+<code>ΔG = ΔG°′ ＋ RT·ln Q</code>　<code>10^(16.7/5.9) ≈ 700</code>
+</div>
+
+<div class="card A"><span class="tag">方案 A</span>
+<span class="eq"><i style="font-style:italic">ΔG</i> = <i style="font-style:italic">ΔG</i>°′ <span class="op">＋</span> <i style="font-style:italic">RT</i> · ln <i style="font-style:italic">Q</i></span>
+</div>
+
+<div class="card B"><span class="tag">方案 B</span>
+<span class="eq">ΔG = ΔG°′ ＋ RT·ln Q</span>
+</div>
+
+<!-- ============ 差别 ============ -->
+<h2>两个方案的差别，就三点</h2>
+<div class="card">
+<p><b>方案 A（数学排版）</b>：衬线字、居中、字距放开，<b>最接近你在网页上看到的 LaTeX</b>。
+下标用真下标（H<sub>2</sub>O 而不是 H₂O），所以<b>任何式子都能排</b>，不受 Unicode 有没有那个字符的限制。<br>
+<small>代价：长式子在手机上要横向滚；跟正文的字体不是一路，一屏里出现四五条会有点「跳」。</small></p>
+<p style="margin-top:12px"><b>方案 B（公式块）</b>：等宽字、描边、有底色，<b>跟正文分得更开</b>，一眼知道「这是一条式子」。<br>
+<small>代价：没有 A 那么「优美」，数学味淡一些。</small></p>
+<p style="margin-top:12px"><b>共同的部分</b>（两个方案都有，也是你真正要的那一样）：
+<b class="warn">箭头上能带字</b> —— <code>→[pigments]</code> 写进卡里就渲染成上面那样。</p>
+</div>
+
+<h2>挂进去之后，改的是哪些地方</h2>
+<div class="card">
+<p>① <b>三个页面里已有的 266 处公式</b>自动升级 —— 不用我一条条去改数据，
+渲染的时候按内容认：带 <b>→ ⇌ =</b> 的当公式，只是术语的（比如 <code>hydrogen bond</code>）不动。</p>
+<p>② <b>跟读和磨耳朵那两屏会多一个公式盒子</b>：把这一条里出现的式子单独拎出来摆在题目下面。
+<b class="warn">这是你真正说的那句「包括我跟背也能直接看到」</b> ——
+现在跟读屏只显示你要念的那段英文，<b>公式在「中文注解」里，而跟读屏根本不显示中文注解</b>，
+所以你背的时候确实看不到。</p>
+<p>③ <b>箭头上的字要一条条加</b>（<code>→[pigments]</code>）。266 条里真正需要标签的大概二三十条，
+我只加<b>考官会追问的那些</b>：光合的 pigments、酶促的 k<sub>cat</sub>、各循环的酶名。</p>
+<p style="margin-top:10px"><small>⚠ 不引 KaTeX / MathJax：那是几百 KB，而且断网就没了。
+上面两个方案都是纯 CSS，离线照样好使。</small></p>
+</div>
+
+<p class="lead" style="margin-top:22px">选 <b>A</b> 还是 <b>B</b>，或者「<b>A 但别居中</b>」「<b>B 但字大一号</b>」这种也行 ——
+说一声我就挂。<b>现在什么都没挂。</b></p>
+
+</body>
+</html>
