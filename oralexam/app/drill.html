@@ -132,11 +132,37 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
 .parts{display:flex;gap:10px;margin:0;flex-wrap:wrap}
 .chembox{border-color:var(--accent)}
-/* 2026-09-24：首页分区 ＋ 磨耳朵 */
-h3.sec{display:flex;align-items:baseline;gap:9px;margin:26px 0 8px;font-size:16px;
-  padding-bottom:6px;border-bottom:1px solid var(--line)}
-h3.sec i{font-style:normal;font-size:15px;color:var(--accent);font-weight:800}
-h3.sec span{font-size:12.5px;color:var(--dim);font-weight:400;margin-left:auto;text-align:right}
+/* 2026-09-24：首页的层级。
+   ⚠ 她：「没啥变化 我要个**强弱 大小**这种对比」——
+   上一版只加了编号和分割线，字号粗细全一样，看着还是一片平的。**分区不等于分层。**
+   这里定一套尺度：区标题 23 / 块标题 15.5 / 说明 12.5 / 主按钮 17 / 次按钮 13。 */
+h3.sec{display:flex;align-items:center;gap:12px;margin:38px 0 12px;
+  font-size:23px;font-weight:800;letter-spacing:-.01em;padding:0}
+h3.sec i{font-style:normal;flex:none;width:30px;height:30px;border-radius:50%;
+  background:var(--accent);color:var(--onAccent);font-size:14px;font-weight:800;
+  display:flex;align-items:center;justify-content:center}
+h3.sec span{font-size:12px;color:var(--faint);font-weight:400;margin-left:auto;
+  text-align:right;max-width:46%;line-height:1.45;letter-spacing:0}
+/* ① 是主角：左边一条粗色条，背景略深 */
+.secmain{border-left:4px solid var(--accent);padding-left:14px;margin-left:-18px;
+  background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 7%,transparent),transparent 60%)}
+/* 块标题 vs 说明 —— 原来两者差不多大，所以糊成一团 */
+.onebox>b:first-child{font-size:15.5px;font-weight:700;display:block;margin-bottom:2px}
+.onebox .small{font-size:12.5px;line-height:1.6}
+.part h4{font-size:13px;font-weight:700;color:var(--dim);margin:0 0 6px}
+/* 她天天看的那个数，要大 */
+.part .big{display:flex;align-items:baseline;gap:5px;margin:2px 0 3px}
+.part .big b{font-size:26px;font-weight:800;line-height:1;letter-spacing:-.02em}
+.part .big em{font-style:normal;font-size:14px;color:var(--faint);font-weight:600}
+.part .meta{font-size:11px;color:var(--faint);line-height:1.4;margin:0 0 9px}
+/* ① 那个圆不要被渐变冲淡 */
+h3.sec.secmain i{box-shadow:0 0 0 3px var(--card)}
+.strmh b{font-size:14px}
+.strmh .small{font-size:11.5px}
+/* 主按钮 · 次按钮拉开 */
+#main button.main{font-size:17px;font-weight:700;padding:13px 26px;border-radius:11px}
+.part button.main{font-size:14px;padding:9px 16px}
+#main button.ghost{font-size:13px;padding:7px 13px}
 .earbox{border-color:#7a5cff}
 .spot{margin:10px 0 0;padding:9px 11px;border:1px solid var(--line);border-radius:9px}
 .spot .bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin:0 0 6px}
@@ -710,7 +736,7 @@ function home(){
           + ' —— <b>停在哪儿都算数。</b></div>'
           + '<button class="main" onclick="resumeSpot()">回到那一条</button> '
           + '<button class="ghost" onclick="clearSpot();home()">清掉</button></div>'; })()
-    + '<h3 class="sec"><i>①</i>🎤 全程 mock<span>五张卡一组 · 念题 · 转录 · 追问 —— 最像真的口试</span></h3>'
+    + '<h3 class="sec secmain"><i>①</i>🎤 全程 mock<span>五张卡一组 · 念题 · 转录 · 追问 —— 最像真的口试</span></h3>'
     + '<div class="row" style="margin-top:10px">'
       + '<label>每张卡追问 <select id="nf">'
         + [1,2,3,4,5].map(function(n){ return '<option value="'+n+'"'+(n===nF?' selected':'')+'>'+n+' 个</option>'; }).join('')
@@ -752,9 +778,10 @@ function home(){
           h2 += '<div class="part' + (pc >= 100 ? ' done' : '') + '"><h4>轮 ' + rn
              + (pc >= 100 ? ' ✓' : '') + '</h4>'
              + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
-             + '<div class="small">走过 <b>' + rs.done + ' / ' + rs.tot + '</b>（' + pc + '%）'
-             + ' · 约 ' + Math.round(rs.tot * 2 / 60 * 10) / 10 + ' 小时 · 摊到 12 天 = 每天 '
-             + Math.round(rs.tot * 2 / 12) + ' 分钟</div>'
+             /* ⚠ 2026-09-24：数字独占一行，说明缩到下面 —— 不然大字号会把说明挤断行。 */
+             + '<div class="big"><b>' + rs.done + '</b><em>/ ' + rs.tot + '</em></div>'
+             + '<div class="meta">' + pc + '% · 约 ' + Math.round(rs.tot * 2 / 60 * 10) / 10
+             + ' 小时 · 每天 ' + Math.round(rs.tot * 2 / 12) + ' 分钟</div>'
              + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
         }
         return h2 + '</div></div>'; })()
@@ -828,7 +855,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>9137880</b>'
+      + ' · 版本 <b>13f97f6</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1686,7 +1713,7 @@ function paintThirds(){
         h += '<div class="part' + (pc >= 100 ? ' done' : '') + '"><h4>份 ' + n
            + (pc >= 100 ? ' ✓' : '') + '</h4>'
            + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
-           + '<div class="small">走过 <b>' + s2.done + ' / ' + s2.tot + '</b></div>'
+           + '<div class="big"><b>' + s2.done + '</b><em>/ ' + s2.tot + '</em></div>'
            + '<button class="main" onclick="walkThird(\'' + kind + '\', ' + n + ')">跟读这一份</button></div>';
       }
       h += '</div>';
