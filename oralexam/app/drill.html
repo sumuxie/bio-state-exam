@@ -281,7 +281,7 @@ details[open]>summary:before{content:'▾ ';}
 <script src="data/01.js?v=599e6969"></script>
 <script src="data/02.js?v=13d403d3"></script>
 <script src="data/03.js?v=231d9cbf"></script>
-<script src="data/06.js?v=7d489577"></script>
+<script src="data/06.js?v=b9adf335"></script>
 <script src="data/08.js?v=cd90bfc3"></script>
 <script src="data/12.js?v=7995ae8a"></script>
 <script src="data/13.js?v=88066260"></script>
@@ -293,9 +293,9 @@ details[open]>summary:before{content:'▾ ';}
 <script src="data/23.js?v=28a50eca"></script>
 <script src="data/24.js?v=c2a40b86"></script>
 <script src="data/25.js?v=59771812"></script>
-<script src="data/27.js?v=03022db2"></script>
+<script src="data/27.js?v=f9f7151d"></script>
 <script src="data/28.js?v=8cf1c0ab"></script>
-<script src="data/31.js?v=fcfb45b8"></script>
+<script src="data/31.js?v=a48b3140"></script>
 <script src="data/32.js?v=03647dd1"></script>
 <script src="data/aa.js?v=09cd5b07"></script>
 <script src="data/gly.js?v=844f60ee"></script>
@@ -875,7 +875,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>f6e78dd</b>'
+      + ' · 版本 <b>3119487</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1045,6 +1045,9 @@ function revealAnswer(x){
     + (x.gave ? '<div class="fix"><b class="small">你说了说不上。</b> 那就看这 '
         + secs + ' 秒 —— 下次先把定义那一句说出口就够了。</div>' : '')
     + '<div class="ans">' + markDef(ez) + '</div>'
+    /* ⚠ 2026-09-24 她要「所有」屏都有公式。口试演练这一路放在**答案揭晓**这一屏，
+       不放在问题屏 —— 放问题屏就是把答案摄在她眼前，这一组就不算数了。 */
+    + eqBox(x)
     + (x.ezcn ? '<details><summary>中文对照</summary><div class="small" style="line-height:1.9">'
         + x.ezcn + '</div></details>' : '')
     + '<div class="row" style="margin-top:14px">'
@@ -1567,7 +1570,8 @@ function streamCram(c){
     if(!strip(body)) return;
     out.push({q:'速背 ' + p.n + ' · ' + strip(p.t || ''),
               en:p.en || body, ez:p.ez || '', ezcn:p.ezcn || '',
-              cn:p.note || '', warn:p.warn || '', g:'速背', r:'高', isCram:1});
+              cn:p.note || '', warn:p.warn || '', big:p.big || '',
+              g:'速背', r:'高', isCram:1});
   });
   return out;
 }
@@ -2018,6 +2022,34 @@ function wkStep(n, title, mode, step, label){
     + '<div id="wkt' + n + '">' + wkText(mode) + '</div>' + wkBtn(step, label) + '</div>';
 }
 
+/* ⚠ 2026-09-24 她：「H₂D ＋ A → H₂A ＋ D（色素）**这个我也没看到啊**」
+   「如果现在就有公式了，**你直接挂到我跟读的所有卡片上**」。
+   病根：**公式从来不在 `ez`/`en` 里** —— 那两个字段是她要出声念的，
+   塞公式进去就没法念。公式在**中文注解**（`cn`）里，
+   而**跟读屏原来不显示中文注解**。所以她确实看不到，不是没找到。
+   这里把这一条注解里带 `→ ⇌ =` 的 `<code>` 拎出来，摆在题目下面。
+   排版由 eq.js 接管（衬线、居中、箭头上带字）。 */
+function eqsOf(x){
+  /* ⚠ 速背那一路的式子很多写在 `big` 里（例如光合总式），不只在注解里。 */
+  var src = (x.cn || '') + ' ' + (x.warn || '') + ' ' + (x.big || '');
+  var out = [], seen = {}, rx = /<code>([\s\S]*?)<\/code>/g, m;
+  while((m = rx.exec(src))){
+    var body = m[1], plain = strip(body);
+    if(!/[→⇌=]/.test(plain)) continue;      /* 只是术语的不算公式 */
+    if(plain.length < 6 || seen[plain]) continue;
+    seen[plain] = 1;
+    out.push(body);
+    if(out.length >= 6) break;               /* 六条封顶 —— 再多就不是「看一眼」了 */
+  }
+  return out;
+}
+function eqBox(x){
+  var eqs = eqsOf(x);
+  if(!eqs.length) return '';
+  return '<div class="eqbox"><p class="eqh">🧪 这一条里的公式 —— <b>看着念，不用逐字背</b></p>'
+    + eqs.map(function(e){ return '<p><code>' + e + '</code></p>'; }).join('') + '</div>';
+}
+
 function walkRender(){
   recStop();
   if(WK && WK.busy){ WK.busy = null; wkRecStop(function(){}); }
@@ -2045,6 +2077,7 @@ function walkRender(){
           + '<br><b>停在哪儿都算数</b> —— 回首页不会丢，下次点「接着上次」就回到这一条。</div></div>'; })()
     + '<div class="do"><b>这一屏不考你。</b>四步，每一步都录下来，你自己听。<b>不打分。</b>'
       + '<span class="small"> 点任何一个词 ＝ 念那个词。</span></div>'
+    + eqBox(x)
     /* ⚠ 2026-09-23 她：「在原本已经读过一遍的题目上直接涂掉」。
        走过一遍的，第 ① 步就不再给全文了，直接是涂掉的那一版。 */
     + (seen
@@ -2461,6 +2494,7 @@ function earScreen(){
       + ' · 听过 <b id="earplay">' + play9 + '</b> 遍'
       + (star9 ? ' · <b class="altbadge">' + dayLabel(star9) + '标的多听</b>' : '') + '</p>'
     + progStrip(o.card && o.card.id)
+    + eqBox(o.src || o.item)
     + '<div class="do" id="eara" style="font-size:17px;line-height:1.85"></div>'
     + '<p style="margin:18px 0 0">'
       + '<button class="main" onclick="earToggle()" id="earbtn">⏸ 暂停</button> '
@@ -2817,5 +2851,6 @@ if(!CARDS.length){
   home();
 }
 </script>
+<script src="eq.js?v=62f80d04"></script>
 </body>
 </html>

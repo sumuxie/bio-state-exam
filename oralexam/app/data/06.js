@@ -413,7 +413,7 @@ ask:[
     ez:'“A monosaccharide is the simplest sugar. It is an aldehyde or a ketone. It carries two or more hydroxyl groups. Its general formula is C H two O, n times. It cannot be hydrolysed to a smaller sugar. It has three to seven carbons. Glyceraldehyde and dihydroxyacetone are the smallest ones.”',
     ezcn:'<b>单糖 ＝ 最简单的糖</b>：一个<b>醛或酮</b>，带<b>两个以上羟基</b>，通式 <b>(CH₂O)ₙ</b>，<b>再水解不出更小的糖</b>。三到七个碳，最小的是<b>甘油醛</b>和<b>二羟丙酮</b>。',
  en:'“The simplest sugar: an aldehyde or a ketone with two or more hydroxyl groups, general formula (CH₂O)n, that cannot be hydrolysed to a smaller sugar. Three to seven carbons. Glyceraldehyde and dihydroxyacetone are the smallest.”',
- cn:'<span class="pg">p148</span>。「不能再水解成更小的糖」是通用补的判据，书没写。'},
+ cn:'<span class="pg">p148</span>。<b>通式</b>：<code class="eq">(CH₂O)ₙ</code><br>「不能再水解成更小的糖」是通用补的判据，书没写。'},
 {r:'高', q:'What is an aldose, and what is a ketose?',
     ez:'“An aldose carries the carbonyl as an aldehyde. It sits on carbon one. Glucose, galactose and ribose are aldoses. A ketose carries it as a ketone. It sits on carbon two. Fructose is a ketose. This matters for the ring. An aldose closes to a hemiacetal at carbon one. A ketose closes to a hemiketal at carbon two. So the anomeric carbon is a different carbon. A ketose also has one asymmetric carbon fewer. There are eight ketohexoses. There are sixteen aldohexoses.”',
     ezcn:'<b>醛糖 aldose</b>＝羰基是<b>醛，在 C1</b>（葡萄糖、半乳糖、核糖）；<b>酮糖 ketose</b>＝羰基是<b>酮，在 C2</b>（果糖）。<b>这决定了成环的结果</b>：醛糖在 C1 关成<b>半缩醛</b>，酮糖在 C2 关成<b>半缩酮</b>，<b>所以异头碳不是同一个碳</b>。酮糖还<b>少一个不对称碳</b>——己酮糖 <b>8 种</b>，己醛糖 <b>16 种</b>。',
