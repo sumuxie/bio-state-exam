@@ -23,7 +23,9 @@ APP = os.path.join(HERE, '..', 'app')
 # 否则她那边永远打不到新数据 —— 9/21 mb_int「打不开」就是这么来的（推上去了，她看到的是旧的）。
 PAGES = [os.path.join(APP, 'index.html'), os.path.join(APP, 'drill.html'),
          os.path.join(APP, 'map.html'), os.path.join(APP, 'exam.html')]
-PAT = re.compile(r'(<script src="(data/[^"?]+\.js)(?:\?v=[0-9a-f]+)?"></script>)')
+# ⚠ 2026-09-24：eq.js（公式排版）也必须盖版本号 —— 它跟 data/*.js 一样被三个
+# 页面直接引用，不盖的话改了之后她的浏览器还吃旧的那一份。
+PAT = re.compile(r'(<script src="((?:data/[^"?]+|eq)\.js)(?:\?v=[0-9a-f]+)?"></script>)')
 
 n = changed = 0
 
