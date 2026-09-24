@@ -72,6 +72,10 @@ PROBE = {
    ("磨耳朵 池子", "earPool(true).length + earPool(false).length;"),
    ("磨耳朵 那一块","earBox();"),
    ("磨耳朵 选嗓子","pickTwoVoices();"),
+   # ⚠ 2026-09-24：必须**真的调一次 earSay**。上一版只测了周边函数，
+   #   结果 earSay 里引用了演练台没有的 `unspell`，一播放就 ReferenceError，
+   #   而 smoke 全绿 —— 她点了没声音才发现。单次调用不会进循环，安全。
+   ("磨耳朵 念一句","earSay('test one two', null, 1, function(){});"),
    ("磨耳朵 停",  "earStop();"),
    ("回首页5",    "home();"),
  ],

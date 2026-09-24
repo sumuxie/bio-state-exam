@@ -855,7 +855,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>13f97f6</b>'
+      + ' · 版本 <b>081459b</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1971,7 +1971,11 @@ function oneStart(){
 var EAR = null;      /* {list, i, on, part} */
 
 function pickTwoVoices(){
+  /* ⚠ 语音列表是异步加载的，刚进页面可能是空的。
+     空了就返回两个 null —— 浏览器会用默认嗓子，**至少有声音**，
+     比「挑不到就不播」强。 */
   var vs = enVoices();
+  if(!vs || !vs.length) return {m:null, f:null};
   function score(v, male){
     var n = (v.name || '').toLowerCase();
     var s = voiceScore(v);
@@ -1990,13 +1994,19 @@ function pickTwoVoices(){
   return {m:m, f:f};
 }
 function earSay(text, voice, pitch, cb){
+  /* ⚠ 2026-09-24：第一版这里写的是 `unspell ? unspell(text) : text`，
+     而 **`unspell` 只在主 app 里有，演练台里根本没有这个函数** ——
+     对未声明的标识符做真值判断会直接抛 ReferenceError，
+     于是一点「开始听」就静悄悄什么都不发生。**照 say() 抄就对了：用 strip()。**
+     ⚠ smoke 没抓到它，因为我为了防 Chrome 挂住**故意没让它真播放** —— 那是我留的盲区，
+     现在 smoke 会单独调一次 earSay。 */
+  if(!window.speechSynthesis){ if(cb) cb(); return; }
   try{ speechSynthesis.cancel(); }catch(e){}
-  var u = new SpeechSynthesisUtterance(unspell ? unspell(text) : text);
+  var u = new SpeechSynthesisUtterance(strip(text));
   if(voice) u.voice = voice;
   u.lang = (voice && voice.lang) || 'en-GB';
   u.rate = 0.95; u.pitch = pitch;
-  u.onend = function(){ if(cb) cb(); };
-  u.onerror = function(){ if(cb) cb(); };
+  u.onend = u.onerror = function(){ if(cb) cb(); };
   try{ speechSynthesis.speak(u); }catch(e){ if(cb) cb(); }
 }
 /* 池子：默认只放她**练过的**；「全部」就是所有能出声的题。 */
