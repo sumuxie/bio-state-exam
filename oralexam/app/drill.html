@@ -444,6 +444,20 @@ function save(o){
 }
 function st(){ var s=load(); s.days=s.days||{}; s.asked=s.asked||{}; s.passes=s.passes||0; return s; }
 function dayRec(s,d){ s.days[d]=s.days[d]||{cards:[],qs:0,miss:0,sets:0}; return s.days[d]; }
+function daysLeft(){            /* 考试 2026-10-05 */
+  var ms = new Date(2026, 9, 5) - new Date();
+  return Math.max(0, Math.ceil(ms / 86400000));
+}
+function goalStat(){            /* 考前的目标 ＝ 三轮，不是全库 */
+  var s9 = st(), tot = 0, done = 0;
+  for(var n = 1; n <= 3; n++){
+    roundItems(n).forEach(function(o){
+      tot++; if(wSeen(s9, o.card.id, o.item.q)) done++; });
+  }
+  var d = daysLeft();
+  return {tot:tot, done:done, left:tot - done, days:d,
+          perDay: d ? Math.ceil((tot - done) / d) : (tot - done)};
+}
 function streak(){
   var s=st(), n=0, d=new Date();
   for(;;){ var k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
@@ -901,9 +915,15 @@ function home(){
       + '<div class="small">连续 ' + streak() + ' 天 · 今天过了 ' + ((r.cards||[]).length) + ' 张卡 · '
       /* ⚠ 2026-09-25 晚：这里也别报星标了。星标太稀疏，摆在顶上只会给「★ 0」的错觉。
          顶上只报走过多少 —— 那是她真实的推进量。星标留在最下面那一块。 */
-      + (function(){ var s5 = st(), all = allItems(), w = 0;
-          all.forEach(function(x){ if(wSeen(s5, x.card.id, x.item.q)) w++; });
-          return '全部 ' + all.length + ' 题里走过 <b>' + w + '</b> · 还没走过 ' + (all.length - w); })()
+      /* ⚠ 2026-09-25 深夜：原来这里报的是全库 1355。
+         她：「我还有那么多 remaining 你能懂我的绣望感吗」。
+         **全库不是考前的目标。** 三轮 441 条才是 ——
+         那是每张卡按「定义 → 为什么 → 陷阱 → 相邻考点」排过序的前 9 条。
+         报它，而且把它除成每天多少条。 */
+      + (function(){ var G = goalStat();
+          return '考前目标 三轮 ' + G.tot + ' 条 · 已背过 <b>' + G.done + '</b>'
+            + ' · 还剩 <b>' + G.left + '</b>'
+            + ' · 还有 ' + G.days + ' 天，每天 <b>' + G.perDay + '</b> 条'; })()
       + '</div></div></div>'
     + '</div>'
     + '<div class="bar" style="margin-top:14px"><i style="width:'
@@ -975,22 +995,20 @@ function home(){
              + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
         }
         /* 2026-09-25 加的两块。轮 1-3 上面一个字没动。 */
+        /* ⚠ 2026-09-25 深夜：这两块原来挂了进度条和「还没走过 N 条」。
+           那把它们变成了 1691 条负债，而她当晚就说绣望。
+           **这两扇门是查东西用的**（她当初就是为了找病毒卡的蛋白清单才发现的），
+           不是待办清单。去掉进度条和剩余数，只留入口。 */
         h2 += (function(){
-          var a = poolStat(restItems()), b = poolStat(cramItems());
-          var pa = a.tot ? Math.round(100 * a.done / a.tot) : 0;
-          var pb = b.tot ? Math.round(100 * b.done / b.tot) : 0;
+          var a = restItems().length, b = cramItems().length;
           return '<div class="part rest"><h4>剩下的全部</h4>'
-            + '<div class="bar"><i style="width:' + pa + '%"></i></div>'
-            + '<div class="big"><b>' + a.done + '</b><em>/ ' + a.tot + '</em></div>'
-            + '<div class="meta">三轮只取每张卡前 9 条 · 这是<b>其余全部</b></div>'
-            + '<div class="meta">还没走过 ' + (a.tot - a.done) + ' 条</div>'
-            + '<button class="main" onclick="walkRest()">走这一批</button></div>'
+            + '<div class="meta" style="margin-top:6px">' + a + ' 条 · 三轮之外的其余全部</div>'
+            + '<div class="meta"><b>这不算进度</b> —— 要查东西的时候再进来</div>'
+            + '<button class="ghost" onclick="walkRest()">进去看</button></div>'
             + '<div class="part rest"><h4>速背</h4>'
-            + '<div class="bar"><i style="width:' + pb + '%"></i></div>'
-            + '<div class="big"><b>' + b.done + '</b><em>/ ' + b.tot + '</em></div>'
-            + '<div class="meta"><b>教学内容</b> · 以前跟读里一条都走不到</div>'
-            + '<div class="meta">病毒卡的蛋白清单就在这儿</div>'
-            + '<button class="main" onclick="walkCram()">走这一批</button></div>'; })();
+            + '<div class="meta" style="margin-top:6px">' + b + ' 条 · <b>教学内容</b></div>'
+            + '<div class="meta"><b>这不算进度</b> —— 病毒卡的蛋白清单就在这儿</div>'
+            + '<button class="ghost" onclick="walkCram()">进去看</button></div>'; })();
         return h2 + '</div></div>'; })()
     + '<h3 class="sec"><i>③</i>🧪 化学专题<span>163 条 · 不打分 · 第一条永远从你自己的地盘出</span></h3>'
     /* 2026-09-23 她：「化学专练还是专门列出来吧」。
@@ -1084,11 +1102,13 @@ function home(){
            而她看到报告后的原话是「刷过的都是背过的」。
            走过已经改成只有录过音或点了「✓ 背完了」才算，
            所以那 100 条是成绩，不是待办。真正的待办是还没碰的。 */
-        + (function(){ var w7 = 0;
-            all.forEach(function(x){ if(wSeen(s4, x.card.id, x.item.q)) w7++; });
-            var rest7 = all.length - w7;
-            return '<div><b class="' + (rest7 ? 'miss' : 'hit') + '">' + rest7 + '</b>'
-              + '<span>还没碰 —— <b>这才是待办</b>（已经背过 ' + w7 + '）</span></div>'; })()
+        /* ⚠ 2026-09-25 深夜又改了分母。上一版这一格报「还没碰 1232」，
+           而 1232 是我今晚把两扇新门接进来之后才出现的数。
+           她看到它的反应是绣望。改成三轮的剩余量。 */
+        + (function(){ var G = goalStat();
+            return '<div><b class="' + (G.left ? 'miss' : 'hit') + '">' + G.left + '</b>'
+              + '<span>考前目标还剩（三轮 ' + G.tot + ' 条里已背 '
+              + G.done + '）</span></div>'; })()
         + '<div><b>' + starCards.length + '</b><span>有星标的卡（★ ' + A.starred + ' 条）'
           + (starCards.length ? '：' + starCards.slice(0, 8).join(' ') + (starCards.length > 8 ? ' …' : '') : '') + '</span></div>'
         + '<div><b class="' + (badN ? 'miss' : 'hit') + '">' + badN + '</b>'
