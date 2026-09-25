@@ -1087,7 +1087,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>9d6a14b6</b>'
+      + ' · 版本 <b>4843b70a</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2402,7 +2402,7 @@ function walkRender(){
          两个方向都能点 —— 点错了旁边就是取消。 */
       + (wSeen(st(), o.card.id, x.q)
           ? '<button class="ghost done" onclick="wUndo()">✓ 已算进度 · 点这里取消</button> '
-          : '<button class="main ok" onclick="wDone()">✓ 这条背完了</button> ')
+          : '<button class="main ok" onclick="wDone()">✓ 背完了 · 下一条</button> ')
       + '<button class="main" onclick="walkNext()">下一条 →</button> '
       + '<button class="ghost" onclick="home()">回首页</button> '
       + '<span class="small">今天整段出声 <b id="wkdone">' + (r.walk||0) + '</b> 遍</span></p>'
@@ -2518,6 +2518,10 @@ function wDone(){
   var o = CH.list[CH.i];
   wMark(o.card.id, o.item.q);
   if(WK) WK.marked = 1;
+  /* ⚠ 2026-09-26 她：「背完了自动跳转下一条」。
+     点完就走，不再停在原地让她再点一次「下一条」。
+     标错了怎么办：回上一条（walkPrev）那里还是「✓ 已算进度 · 点这里取消」。 */
+  CH.i++;
   walkRender();
 }
 function walkNext(){
@@ -2542,8 +2546,11 @@ function walkPrev(){
   recStop();
   if(WK && WK.busy){ WK.busy = null; wkRecStop(function(){}); }
   CH.i--;
-  var o = CH.list[CH.i];
-  if(o) wUnmark(o.card.id, o.item.q);
+  /* ⚠ 2026-09-26：这里原本是「回上一条就把那一条的走过撤掉」——
+     因为旧逻辑是**翻页就记一次**，回退自然要撤。
+     现在翻页不记了（只有录音或点「✓ 背完了」才记），这个撤销就变成了误删：
+     她点了「背完了」跳到下一条，一回退就被悄悄取消。所以去掉。
+     要撤的话，那一条上有明写的「✓ 已算进度 · 点这里取消」。 */
   walkRender();
 }
 function walkDone(){
