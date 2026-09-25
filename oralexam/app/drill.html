@@ -970,13 +970,23 @@ function home(){
                 + '<br>要改的话：下面「记录与别处」里有「<b>对一下真实进度 —— 你自己指</b>」，'
                 + '选你真正走到的最后一条，之后的一键清掉。</div>'; })()
           + '<div class="parts">';
+        /* ⚠ 2026-09-26：她走完轮 1，说「我结束了但是轮2 还是灰色的」。
+           原因：lead 硬绑在 rn === 1 上，而 .part.rest 在 CSS 里是灰字。
+           轮 1 走完之后，该接棒的轮 2 还是灰的，
+           走完的轮 1 反而还占着高亮和整行宽度。
+           **lead 现在跟着进度走**：第一个没走完的轮拿 lead。 */
+        var RS = [null, roundStat(1), roundStat(2), roundStat(3)];
+        var leadRound = 0;
+        for (var k9 = 1; k9 <= 3; k9++){
+          if(RS[k9].tot && RS[k9].done < RS[k9].tot){ leadRound = k9; break; }
+        }
         for (var rn = 1; rn <= 3; rn++){
-          var rs = roundStat(rn);
+          var rs = RS[rn];
           var pc = rs.tot ? Math.round(100 * rs.done / rs.tot) : 0;
           var spc = rs.tot ? Math.round(100 * rs.starred / rs.tot) : 0;
-          h2 += '<div class="part ' + (rn === 1 ? 'lead' : 'rest')
+          h2 += '<div class="part ' + (rn === leadRound ? 'lead' : 'rest')
              + (pc >= 100 ? ' done' : '') + '"><h4>轮 ' + rn
-             + (pc >= 100 ? ' ✓' : '') + '</h4>'
+             + (pc >= 100 ? ' ✓ 走完了' : (rn === leadRound ? ' · 现在这一轮' : '')) + '</h4>'
              + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
              /* ⚠ 2026-09-24：数字独占一行，说明缩到下面 —— 不然大字号会把说明挤断行。 */
              /* ⚠ 2026-09-25 换了头号数字。她：「这个 96 还是不对，我只背到了横向卡的
