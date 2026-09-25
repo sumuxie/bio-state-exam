@@ -134,6 +134,8 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 /* ⚠ 2026-09-25 晚：她说「你凭什么把所有东西全部分平均到三份了 我明明在第一份发力的」。
    对 —— 三块等宽等重是在说「三件事一样要紧」，而她现在只在第一份里。
    所以第一份整行、大号；第二三份并排压到半宽、灰掉。 */
+button.main.ok{background:var(--good);border-color:var(--good)}
+button.ghost.done{color:var(--good);border-color:var(--good)}
 .earfold{border:1px solid var(--line);border-radius:10px;padding:0;margin:0}
 .earfold>summary{cursor:pointer;list-style:none;padding:11px 14px;font-size:13.5px;color:var(--dim)}
 .earfold>summary::-webkit-details-marker{display:none}
@@ -832,7 +834,10 @@ function home(){
       + '<div><p class="hello">' + helloLine() + '</p>'
       /* ⚠ 2026-09-25：顶上原来只报「几组」，那是拷问式的口径，她早不用了。 */
       + '<div><b style="font-size:19px">'
-        + ((r.walk||r.shadow) ? '今天出声了 —— 整段 ' + (r.walk||0) + ' 遍 · 跟读 ' + (r.shadow||0) + ' 句'
+        /* ⚠ 2026-09-25 晚：她「跟读 0 句 这也不对啊 怎么可能是 0」——
+           r.shadow 是**旧的逐句跟读**那条流程加的，现在的四步跟读根本不碰它，
+           所以它永远是 0。去掉，只报真正在动的那个数。 */
+        + ((r.walk||r.shadow) ? '今天出声了 —— 整段 ' + (r.walk||0) + ' 遍'
                               : (r.sets ? '今天练了 ' + r.sets + ' 组' : '今天还没出声')) + '</b>'
       + '<div class="small">连续 ' + streak() + ' 天 · 今天过了 ' + ((r.cards||[]).length) + ' 张卡 · '
       /* ⚠ 2026-09-25 晚：这里也别报星标了。星标太稀疏，摆在顶上只会给「★ 0」的错觉。
@@ -1010,7 +1015,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>4322567a</b>'
+      + ' · 版本 <b>039db1e8</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2320,8 +2325,13 @@ function walkRender(){
       + wkBtn('3a', '背第 1 遍') + wkBtn('3b', '背第 2 遍') + '</div>'
     + '<p style="margin:18px 0 0">'
       + (CH.i > 0 ? '<button class="ghost" onclick="walkPrev()">← 上一条</button> ' : '')
+      /* ⚠ 2026-09-25 晚：她「但是我还是想要做完/进度」。
+         录音之外，给一个**自己说了算**的按钮：背完了就点，进度立刻算上。
+         两个方向都能点 —— 点错了旁边就是取消。 */
+      + (wSeen(st(), o.card.id, x.q)
+          ? '<button class="ghost done" onclick="wUndo()">✓ 已算进度 · 点这里取消</button> '
+          : '<button class="main ok" onclick="wDone()">✓ 这条背完了</button> ')
       + '<button class="main" onclick="walkNext()">下一条 →</button> '
-      + (wSeen(st(), o.card.id, x.q) ? '<button class="ghost" onclick="wUnmark()">这条我其实没背 · 取消</button> ' : '')
       + '<button class="ghost" onclick="home()">回首页</button> '
       + '<span class="small">今天整段出声 <b id="wkdone">' + (r.walk||0) + '</b> 遍</span></p>'
     + (x.ezcn ? '<details class="full" style="margin-top:14px"><summary>中文 ▾</summary>'
@@ -2394,7 +2404,10 @@ function fixWalked(){
   home();
 }
 /* ⚠ 2026-09-25 晚：撤销「走过」。她发现有二十来条是被翻页误记的。 */
-function wUnmark(){
+/* ⚠ 2026-09-25 晚：本来我把它也叫 wUnmark，结果被文件里原有的
+   wUnmark(card, q)（walkPrev 在用）覆盖掉了 —— 同名后定义的赢，
+   所以点「取消」没反应。改名 wUndo。 */
+function wUndo(){
   if(!CH || !CH.list || !CH.list[CH.i]) return;
   var o = CH.list[CH.i], s2 = st(), k = wKey(o.card.id, o.item.q);
   s2.walked = s2.walked || {};
@@ -2402,6 +2415,14 @@ function wUnmark(){
   if(s2.wday) delete s2.wday[k];
   save(s2);
   if(WK) WK.marked = 0;
+  walkRender();
+}
+/* ⚠ 2026-09-25 晚：自己标「背完了」。录音会自动算，没录音就点这个。 */
+function wDone(){
+  if(!CH || !CH.list || !CH.list[CH.i]) return;
+  var o = CH.list[CH.i];
+  wMark(o.card.id, o.item.q);
+  if(WK) WK.marked = 1;
   walkRender();
 }
 function walkNext(){
@@ -2992,7 +3013,7 @@ function copyOut(){
   all.forEach(function(x){ if(wSeen(s, x.card.id, x.item.q)) walked++; });
   var lines = ['口试演练 ' + d + ' · 连续 ' + streak() + ' 天'];
   lines.push('');
-  lines.push('【今天】整段出声 ' + (r.walk || 0) + ' 遍 · 跟读 ' + (r.shadow || 0) + ' 句 · 卡 ' + ((r.cards||[]).length) + ' 张');
+  lines.push('【今天】整段出声 ' + (r.walk || 0) + ' 遍 · 卡 ' + ((r.cards||[]).length) + ' 张');
   lines.push('');
   lines.push('【三轮】');
   for(var n = 1; n <= 3; n++){
