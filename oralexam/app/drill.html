@@ -972,6 +972,7 @@ function home(){
     + '<h3 class="sec"><i>·</i>记录与别处<span>进度、结果、考官</span></h3>'
     /* ⚠ 2026-09-25 换掉了。她：「下面就是错误 / 个人星标卡片 / 然后一些基础数据分析」。
        原来这三个数是拷问式的漏词口径（漏超过 2 条、连着两次漏同一点），她早不用那套了。 */
+    + auditBox()
     + (function(){
         var s4 = st(), all = allItems(), A = starStats(all);
         /* 有星标的卡有几张，以及哪几张 —— 她想看的「个人星标卡片」 */
@@ -1009,7 +1010,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>b574ab5f</b>'
+      + ' · 版本 <b>4322567a</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2191,6 +2192,11 @@ function wkGo(step){
       if(lbl) lbl.textContent = '录好了。绿的是说到的；红的不是错，是下次补上的。想再来一遍就再点。';
       if(btn){ btn.textContent = '🎙 再来一遍'; btn.className = ''; }
       WK.done[step] = 1;
+      /* ⚠ 2026-09-25 晚：走过改在这里记 —— **录过音才算**，翻页不算。 */
+      if(CH && CH.list && CH.list[CH.i] && !WK.marked){
+        WK.marked = 1;
+        wMark(CH.list[CH.i].card.id, CH.list[CH.i].item.q);
+      }
       var s3 = st(), d = today(), r = dayRec(s3, d);
       r.walk = (r.walk||0) + 1;
       /* 背完两遍 ＝ 这张卡今天出过声了 —— 计进规矩一的第一个数。 */
@@ -2265,7 +2271,7 @@ function walkRender(){
   if(!CH || CH.i >= CH.list.length){ walkDone(); return; }
   var o = CH.list[CH.i], x = o.item;
   var src = strip(x.ez || x.en || '').replace(/^["“]/, '').replace(/["”]$/, '');
-  WK = {src:src, keys:keyWords(x), mode3:'blind', busy:null, done:{}, cardId:o.card.id};
+  WK = {src:src, keys:keyWords(x), mode3:'blind', busy:null, done:{}, cardId:o.card.id, marked:0};
   var s3 = st(), d = today(), r = s3.days[d] || {};
   var seen = wSeen(s3, o.card.id, x.q);
   $('main').innerHTML =
@@ -2315,6 +2321,7 @@ function walkRender(){
     + '<p style="margin:18px 0 0">'
       + (CH.i > 0 ? '<button class="ghost" onclick="walkPrev()">← 上一条</button> ' : '')
       + '<button class="main" onclick="walkNext()">下一条 →</button> '
+      + (wSeen(st(), o.card.id, x.q) ? '<button class="ghost" onclick="wUnmark()">这条我其实没背 · 取消</button> ' : '')
       + '<button class="ghost" onclick="home()">回首页</button> '
       + '<span class="small">今天整段出声 <b id="wkdone">' + (r.walk||0) + '</b> 遍</span></p>'
     + (x.ezcn ? '<details class="full" style="margin-top:14px"><summary>中文 ▾</summary>'
@@ -2324,10 +2331,86 @@ function walkRender(){
   window.scrollTo(0,0);
   saveSpot();
 }
+/* ======================= 对一下真实进度 =======================
+   ⚠ 2026-09-25 她：「你难道不能直接找到 Its message must leave the nucleus…
+   这附近然后手动排查前后几题到哪里没有星标吗」——
+   **我在这边看不到她浏览器里的星标，但这个页面能。** 所以做成一个按钮。
+   她补的两句是判据：「句子有星标，卡没有」「没有卡星标这个功能」——
+   所以星标是**句子级**的（主 app 的 oralexam.mark.v1），一道题算不算星标过，
+   看这张卡上有没有哪段星标文字落在这道题的答案里（qStarred）。
+   做两件事：① 报出星标在轮 1 的哪一条断掉；② 把那之后、又没星标的「走过」清掉
+   —— 那些正是被翻页误记的。⚠ 清之前一定弹确认，并且报清几条。 */
+function walkAudit(){
+  var s2 = st(), L = roundItems(1), last = -1, starN = 0, walkedN = 0;
+  L.forEach(function(o, i){
+    if(qStarred(o.card.id, o.item)){ last = i; starN++; }
+    if(wSeen(s2, o.card.id, o.item.q)) walkedN++;
+  });
+  var bad = [];
+  L.forEach(function(o, i){
+    if(i <= last) return;
+    if(qStarred(o.card.id, o.item)) return;
+    if(wSeen(s2, o.card.id, o.item.q)) bad.push({i:i, o:o});
+  });
+  return {list:L, last:last, starN:starN, walkedN:walkedN, bad:bad};
+}
+function auditBox(){
+  var a = walkAudit();
+  if(!a.starN) return '<div class="onebox"><b>对一下真实进度</b>'
+    + '<div class="small">这台机器上还没有句子星标，所以没法对。'
+    + '星标是在卡上选中一段文字之后点「★ 加进必背」。</div></div>';
+  var L = a.list, lastO = L[a.last];
+  var h = '<div class="onebox"><b>对一下真实进度</b>'
+    + '<div class="small" style="margin:2px 0 8px">'
+    + '星标是<b>句子级</b>的，所以用它来找你真正走到哪儿。<br>'
+    + '<b>轮 1 里最后一条有星标的是第 ' + (a.last + 1) + ' / ' + L.length + ' 条</b>'
+    + '（卡 <b>' + esc(lastO.card.id) + '</b>）：' + esc(strip(lastO.item.q)).slice(0, 60) + '<br>'
+    + '全轮共 <b>' + a.starN + '</b> 条有星标 · 记成走过的有 <b>' + a.walkedN + '</b> 条。</div>';
+  if(!a.bad.length){
+    h += '<div class="small hit">这之后没有「走过但没星标」的题 —— 记录是干净的。</div></div>';
+    return h;
+  }
+  h += '<div class="small"><b class="miss">这之后有 ' + a.bad.length + ' 条被记成走过、但没有星标</b>'
+     + ' —— 多半是翻页误记的（那个 bug 已经修了）。<br>前几条：'
+     + a.bad.slice(0, 5).map(function(x){ return esc(x.o.card.id) + ' 第' + (x.i + 1) + '条'; }).join(' · ')
+     + (a.bad.length > 5 ? ' …' : '') + '</div>'
+     + '<p style="margin:10px 0 0"><button class="main" onclick="fixWalked()">把这 '
+     + a.bad.length + ' 条的「走过」清掉</button></p></div>';
+  return h;
+}
+function fixWalked(){
+  var a = walkAudit();
+  if(!a.bad.length){ alert('没有要清的。'); return; }
+  if(!confirm('要把 ' + a.bad.length + ' 条「走过但没星标」的记录清掉吗？它们在轮 1 里都排在你最后一条星标之后。清掉之后它们会重新回到没走过的队列里。')) return;
+  var s2 = st();
+  s2.walked = s2.walked || {};
+  a.bad.forEach(function(x){
+    var k = wKey(x.o.card.id, x.o.item.q);
+    delete s2.walked[k];
+    if(s2.wday) delete s2.wday[k];
+  });
+  save(s2);
+  alert('清掉了 ' + a.bad.length + ' 条。');
+  home();
+}
+/* ⚠ 2026-09-25 晚：撤销「走过」。她发现有二十来条是被翻页误记的。 */
+function wUnmark(){
+  if(!CH || !CH.list || !CH.list[CH.i]) return;
+  var o = CH.list[CH.i], s2 = st(), k = wKey(o.card.id, o.item.q);
+  s2.walked = s2.walked || {};
+  delete s2.walked[k];
+  if(s2.wday) delete s2.wday[k];
+  save(s2);
+  if(WK) WK.marked = 0;
+  walkRender();
+}
 function walkNext(){
   if(!CH) return;
-  var o = CH.list[CH.i];
-  if(o) wMark(o.card.id, o.item.q);   /* 走过就记一次 —— 下次这一条是涂掉的 */
+  /* ⚠ 2026-09-25 晚：这里原来是「点一下下一条就记一次走过」。
+     她：「这附近到你现在显示的九十多，中间可能有二十题被漏掉了」—— 就是这个：
+     她为了看进度往后点了二十几下，每一下都把一条记成了走过。
+     **而这违反她自己定的规矩一：看一遍不算，出声才算。**
+     所以走过改成只在真录过音的时候记（见 wkGo），翻页本身不记。 */
   CH.i++; walkRender();
 }
 /* ⚠ 2026-09-23 她要的「上一题」。
