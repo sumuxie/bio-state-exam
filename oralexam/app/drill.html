@@ -996,7 +996,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>6f84938d</b>'
+      + ' · 版本 <b>592f279e</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1884,8 +1884,13 @@ function walkRound(n){
     o.star = qStarred(o.card.id, o.item);
   });
   list.sort(function(a, b){ return a.seen - b.seen; });
+  /* ⚠ 2026-09-25 晚：她「我要进去就是我的进度 你之前答应过我的」。
+     走过的被排到最后，所以进去显示「1 / 153」，看着像重来。
+     记下已走过多少，顶上的计数改成「已走过 96 · 剩下的第 1 / 57」。 */
+  var doneN = 0;
+  list.forEach(function(o){ if(o.seen) doneN++; });
   CH = {list:list, i:0, tag:'📖 轮 ' + n, done:'轮 ' + n + ' 到这里',
-        again:'walkRound(' + n + ')', round:n};
+        again:'walkRound(' + n + ')', round:n, doneBefore:doneN};
   walkRender();
 }
 function thirdStat(c, kind, n){
@@ -2252,7 +2257,18 @@ function walkRender(){
   var seen = wSeen(s3, o.card.id, x.q);
   $('main').innerHTML =
     '<div class="card">'
-    + '<span class="chemtag">' + (CH.tag || '📖 跟读') + ' ' + (CH.i+1) + ' / ' + CH.list.length + '</span>'
+    + (function(){
+        var d = CH.doneBefore || 0, rest = CH.list.length - d;
+        /* 走过的排在最后，所以前 rest 条才是「还没走过的」。 */
+        if(d && CH.i < rest)
+          return '<span class="chemtag">' + (CH.tag || '📖 跟读')
+            + ' · 已走过 ' + d + ' / ' + CH.list.length
+            + ' · 现在是剩下的第 ' + (CH.i + 1) + ' / ' + rest + '</span>';
+        if(d)
+          return '<span class="chemtag">' + (CH.tag || '📖 跟读')
+            + ' · 复习走过的 ' + (CH.i + 1 - rest) + ' / ' + d + '</span>';
+        return '<span class="chemtag">' + (CH.tag || '📖 跟读') + ' ' + (CH.i+1) + ' / ' + CH.list.length + '</span>';
+      })()
     + '<p class="chemq sayit" onclick="sayEl(this)">' + esc(x.q) + '</p>'
     + '<p class="chemfrom">来自 <b>' + esc(cardTitle(o.card)) + '</b>'
       + (o.turf ? ' · <b>这是你自己天天在做的东西</b>' : '') + '</p>'
