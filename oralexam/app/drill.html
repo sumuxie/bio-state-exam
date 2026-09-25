@@ -928,7 +928,7 @@ function home(){
        留在最上面（她要的位置），但收成一行 —— 想听的时候点开。 */
     + '<details class="earfold"><summary>🎧 点开听 —— 男声问、女声答，不用动手</summary>'
     + earBox() + '</details>'
-    + '<h3 class="sec secmain"><i>②</i>📖 全 topic 跟读背诵<span>一轮 ＝ 每张卡 3 条，一轮过完全部 50 张卡</span></h3>'
+    + '<h3 class="sec secmain"><i>②</i>📖 全 topic 跟读背诵<span>三轮 ＝ 每张卡前 9 条 · 剩下的和速背在后面两块</span></h3>'
     /* 2026-09-23：三轮。每轮 ＝ 每张卡 3 条，一轮过完全部卡。 */
     + (function(){
         var h2 = '<div class="onebox"><b>跟读 · 三轮</b>'
@@ -974,6 +974,23 @@ function home(){
              + '<div class="meta">还没走过 ' + (rs.tot - rs.done) + ' 条</div>'
              + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
         }
+        /* 2026-09-25 加的两块。轮 1-3 上面一个字没动。 */
+        h2 += (function(){
+          var a = poolStat(restItems()), b = poolStat(cramItems());
+          var pa = a.tot ? Math.round(100 * a.done / a.tot) : 0;
+          var pb = b.tot ? Math.round(100 * b.done / b.tot) : 0;
+          return '<div class="part rest"><h4>剩下的全部</h4>'
+            + '<div class="bar"><i style="width:' + pa + '%"></i></div>'
+            + '<div class="big"><b>' + a.done + '</b><em>/ ' + a.tot + '</em></div>'
+            + '<div class="meta">三轮只取每张卡前 9 条 · 这是<b>其余全部</b></div>'
+            + '<div class="meta">还没走过 ' + (a.tot - a.done) + ' 条</div>'
+            + '<button class="main" onclick="walkRest()">走这一批</button></div>'
+            + '<div class="part rest"><h4>速背</h4>'
+            + '<div class="bar"><i style="width:' + pb + '%"></i></div>'
+            + '<div class="big"><b>' + b.done + '</b><em>/ ' + b.tot + '</em></div>'
+            + '<div class="meta"><b>教学内容</b> · 以前跟读里一条都走不到</div>'
+            + '<div class="meta">病毒卡的蛋白清单就在这儿</div>'
+            + '<button class="main" onclick="walkCram()">走这一批</button></div>'; })();
         return h2 + '</div></div>'; })()
     + '<h3 class="sec"><i>③</i>🧪 化学专题<span>163 条 · 不打分 · 第一条永远从你自己的地盘出</span></h3>'
     /* 2026-09-23 她：「化学专练还是专门列出来吧」。
@@ -1984,6 +2001,43 @@ function walkRound(n){
         again:'walkRound(' + n + ')', round:n, doneBefore:doneN};
   walkRender();
 }
+/* ======== 2026-09-25 补的两扇门 ========
+   roundItems 只取 ranked(c) 的前 3*PERROUND = 9 条，**每张卡剩下的全部走不到**；
+   而 ranked() 根本不含 streamCram，所以速背那 487 组一条都进不了跟读。
+   她是从病毒卡发现的：那张卡的蛋白清单在 cram 里，她在跟读里翻不着。
+   ⚠ 只加，不改：轮 1-3 的取题、排序、计数全部原样，她的位置不动。 */
+function restItems(){            /* 三轮之外剩下的全部 ask */
+  var out = [];
+  CARDS.forEach(function(c){
+    ranked(c).slice(3 * PERROUND).forEach(function(x){ out.push({card:c, item:x, turf:0}); });
+  });
+  return out;
+}
+function cramItems(){            /* 速背 —— 教学内容，跟读里以前完全到不了 */
+  var out = [];
+  CARDS.forEach(function(c){
+    streamCram(c).forEach(function(x){ out.push({card:c, item:x, turf:0}); });
+  });
+  return out;
+}
+function poolStat(list){
+  var s = st(), done = 0;
+  list.forEach(function(o){ if(wSeen(s, o.card.id, o.item.q)) done++; });
+  return {tot:list.length, done:done};
+}
+function walkPool(list, tag, again){
+  if(!list.length){ alert('这一批没有题。'); return; }
+  var s = st();
+  list.forEach(function(o){ o.seen = wSeen(s, o.card.id, o.item.q); });
+  list.sort(function(a, b){ return a.seen - b.seen; });   /* 没走过的排前面，跟三轮一个规矩 */
+  var doneN = 0;
+  list.forEach(function(o){ if(o.seen) doneN++; });
+  CH = {list:list, i:0, tag:tag, done:tag + ' 到这里', again:again, doneBefore:doneN};
+  walkRender();
+}
+function walkRest(){ walkPool(restItems(), '\ud83d\udcd6 剩下的全部', 'walkRest()'); }
+function walkCram(){ walkPool(cramItems(), '\ud83d\udcd6 速背', 'walkCram()'); }
+
 function thirdStat(c, kind, n){
   var s = st(), list = cardThird(c, kind, n), done = 0;
   list.forEach(function(o){ if(wSeen(s, o.card.id, o.item.q)) done++; });
