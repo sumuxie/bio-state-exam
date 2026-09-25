@@ -134,6 +134,13 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 /* ⚠ 2026-09-25 晚：她说「你凭什么把所有东西全部分平均到三份了 我明明在第一份发力的」。
    对 —— 三块等宽等重是在说「三件事一样要紧」，而她现在只在第一份里。
    所以第一份整行、大号；第二三份并排压到半宽、灰掉。 */
+.earfold{border:1px solid var(--line);border-radius:10px;padding:0;margin:0}
+.earfold>summary{cursor:pointer;list-style:none;padding:11px 14px;font-size:13.5px;color:var(--dim)}
+.earfold>summary::-webkit-details-marker{display:none}
+.earfold>summary:before{content:'▸ ';}
+.earfold[open]>summary{border-bottom:1px solid var(--line);color:var(--ink);font-weight:600}
+.earfold[open]>summary:before{content:'▾ ';}
+.earfold>.onebox,.earfold>div{border:0;margin:0}
 .parts{display:flex;gap:10px;margin:0;flex-wrap:wrap}
 .part.lead{flex:1 1 100%;border-color:var(--accent);
   background:color-mix(in srgb,var(--accent) 5%,transparent)}
@@ -840,7 +847,10 @@ function home(){
     /* ⚠ 2026-09-24：接着上次那一份。她：「我不敢点回主页」—— 现在敢了。 */
     + (function(){
         var sp = st().spot;
-        if(!sp || !sp.n) return '';
+        /* ⚠ 2026-09-25 晚：她「停在第 1 / 153 条…这个是啥，为啥在那么靠前」。
+           刚点进去就退出来也会存一个断点，而「停在第 1 条」没有任何意义。
+           现在只有真的走进去一段（至少第 3 条）才显示。 */
+        if(!sp || !sp.n || (sp.i || 0) < 2) return '';
         var ago = Math.round((Date.now() - (sp.ts || 0)) / 60000);
         return '<div class="onebox" style="border-color:var(--good)"><b>▸ 接着上次那一份</b>'
           + '<div class="small" style="margin:2px 0 8px">' + esc(sp.tag || '跟读')
@@ -850,7 +860,10 @@ function home(){
           + '<button class="main" onclick="resumeSpot()">回到那一条</button> '
           + '<button class="ghost" onclick="clearSpot();home()">清掉</button></div>'; })()
     + '<h3 class="sec"><i>①</i>🎧 磨耳朵<span>学累了就纯听 —— 男声问、女声答，不用动手</span></h3>'
-    + earBox()
+    /* ⚠ 2026-09-25 晚：她「我说了磨耳朵啥的根本没必要做那么大」。
+       留在最上面（她要的位置），但收成一行 —— 想听的时候点开。 */
+    + '<details class="earfold"><summary>🎧 点开听 —— 男声问、女声答，不用动手</summary>'
+    + earBox() + '</details>'
     + '<h3 class="sec secmain"><i>②</i>📖 全 topic 跟读背诵<span>一轮 ＝ 每张卡 3 条，一轮过完全部 50 张卡</span></h3>'
     /* 2026-09-23：三轮。每轮 ＝ 每张卡 3 条，一轮过完全部卡。 */
     + (function(){
@@ -996,7 +1009,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>592f279e</b>'
+      + ' · 版本 <b>b574ab5f</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
