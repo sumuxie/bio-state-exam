@@ -880,16 +880,16 @@ function home(){
           /* ⚠ 2026-09-25 晚：她看到的「96」就在这儿，所以对账入口也放这儿。
              原来只放在最底下的「记录与别处」，她根本翻不到。 */
           + (function(){
-              var a = walkAudit();
-              if(!a.bad.length) return '';
+              /* ⚠ 2026-09-25 晚：这里原来自己用星标猜「虚高几条」，猜错了。
+                 现在不猜，只提醒有这么个工具，具体让她自己指。 */
+              var s6 = st(), L6 = roundItems(1), w6 = 0;
+              L6.forEach(function(o){ if(wSeen(s6, o.card.id, o.item.q)) w6++; });
+              if(!w6) return '';
               return '<div class="warnbox" style="margin:0 0 10px">'
-                + '<b>这个数可能虚高 ' + a.bad.length + ' 条。</b>'
-                + '轮 1 里最后一条有星标的是第 <b>' + (a.last + 1) + ' / ' + a.list.length + '</b> 条'
-                + '（卡 ' + esc(a.list[a.last].card.id) + '）；'
-                + '那之后有 <b>' + a.bad.length + '</b> 条被记成走过却没有星标 —— '
-                + '多半是旧版本「翻一页就记一次」留下的（那个 bug 已经修了）。'
-                + '<br><button class="main" style="margin-top:8px" onclick="fixWalked()">'
-                + '把这 ' + a.bad.length + ' 条清掉，进度改回 ' + (a.walkedN - a.bad.length) + '</button></div>'; })()
+                + '<b>这个数可能偏高。</b>旧版本有个 bug：<b>翻一页就记一次走过</b>，'
+                + '所以往后点过的题都被算进来了（已修，现在只有录音或点「✓ 这条背完了」才算）。'
+                + '<br>要改的话：下面「记录与别处」里有「<b>对一下真实进度 —— 你自己指</b>」，'
+                + '选你真正走到的最后一条，之后的一键清掉。</div>'; })()
           + '<div class="parts">';
         for (var rn = 1; rn <= 3; rn++){
           var rs = roundStat(rn);
@@ -1028,7 +1028,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>eee5c75f</b>'
+      + ' · 版本 <b>4d063f17</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -2378,28 +2378,51 @@ function walkAudit(){
   return {list:L, last:last, starN:starN, walkedN:walkedN, bad:bad};
 }
 function auditBox(){
-  var a = walkAudit();
-  if(!a.starN) return '<div class="onebox"><b>对一下真实进度</b>'
-    + '<div class="small">这台机器上还没有句子星标，所以没法对。'
-    + '星标是在卡上选中一段文字之后点「★ 加进必背」。</div></div>';
-  var L = a.list, lastO = L[a.last];
-  var h = '<div class="onebox"><b>对一下真实进度</b>'
+  /* ⚠ 2026-09-25 晚重写。上一版用星标去推她走到哪儿，结果报的是「第 51 条 卡 28」，
+     而她说那条根本没背过。原因：**星标是按「卡 ＋ 那段文字」存的，不是按题存的**，
+     所以它既会错配到同一张卡的别的题上，又会漏掉标在速背里的。
+     —— 星标当不了定位器。改成**她自己指**：列出所有被记成走过的题，
+     她点哪一条，那之后的全部清掉。她是唯一知道自己走到哪儿的人。 */
+  var s2 = st(), L = roundItems(1), walked = [];
+  L.forEach(function(o, i){
+    if(wSeen(s2, o.card.id, o.item.q)) walked.push({i:i, o:o});
+  });
+  if(!walked.length) return '';
+  var wd = (s2.wday || {});
+  var h = '<div class="onebox"><b>对一下真实进度 —— 你自己指</b>'
     + '<div class="small" style="margin:2px 0 8px">'
-    + '星标是<b>句子级</b>的，所以用它来找你真正走到哪儿。<br>'
-    + '<b>轮 1 里最后一条有星标的是第 ' + (a.last + 1) + ' / ' + L.length + ' 条</b>'
-    + '（卡 <b>' + esc(lastO.card.id) + '</b>）：' + esc(strip(lastO.item.q)).slice(0, 60) + '<br>'
-    + '全轮共 <b>' + a.starN + '</b> 条有星标 · 记成走过的有 <b>' + a.walkedN + '</b> 条。</div>';
-  if(!a.bad.length){
-    h += '<div class="small hit">这之后没有「走过但没星标」的题 —— 记录是干净的。</div></div>';
-    return h;
-  }
-  h += '<div class="small"><b class="miss">这之后有 ' + a.bad.length + ' 条被记成走过、但没有星标</b>'
-     + ' —— 多半是翻页误记的（那个 bug 已经修了）。<br>前几条：'
-     + a.bad.slice(0, 5).map(function(x){ return esc(x.o.card.id) + ' 第' + (x.i + 1) + '条'; }).join(' · ')
-     + (a.bad.length > 5 ? ' …' : '') + '</div>'
-     + '<p style="margin:10px 0 0"><button class="main" onclick="fixWalked()">把这 '
-     + a.bad.length + ' 条的「走过」清掉</button></p></div>';
+    + '轮 1 里现在有 <b>' + walked.length + '</b> 条被记成走过。'
+    + '⚠ 旧版本有个 bug：<b>翻一页就记一次</b>，所以往后点过的都被算进来了（已修）。'
+    + '<br><b>在下面选你真正走到的最后一条，那之后的全部清掉。</b>'
+    + '日期是第一次走过那天。</div>'
+    + '<div class="row"><select id="cutsel" style="max-width:100%;flex:1">';
+  walked.forEach(function(x){
+    var k = wKey(x.o.card.id, x.o.item.q);
+    h += '<option value="' + x.i + '">第 ' + (x.i + 1) + ' 条 · 卡 ' + esc(x.o.card.id)
+       + (wd[k] ? ' · ' + esc(wd[k]) : '')
+       + ' · ' + esc(strip(x.o.item.q)).slice(0, 46) + '</option>';
+  });
+  h += '</select></div>'
+    + '<p style="margin:10px 0 0"><button class="main" onclick="cutAfter()">只保留到这一条，后面的清掉</button></p>'
+    + '<div class="small" style="margin:8px 0 0">清掉之后它们会回到「没走过」的队列里，'
+    + '下次走这一轮会重新出现。<b>什么内容都不会丢。</b></div></div>';
   return h;
+}
+function cutAfter(){
+  var sel = $('cutsel'); if(!sel) return;
+  var keep = parseInt(sel.value, 10);
+  var s2 = st(), L = roundItems(1), gone = 0;
+  s2.walked = s2.walked || {};
+  L.forEach(function(o, i){
+    if(i <= keep) return;
+    var k = wKey(o.card.id, o.item.q);
+    if(s2.walked[k]){ delete s2.walked[k]; if(s2.wday) delete s2.wday[k]; gone++; }
+  });
+  if(!gone){ alert('这一条之后没有被记成走过的题。'); return; }
+  if(!confirm('要把第 ' + (keep + 2) + ' 条起的 ' + gone + ' 条「走过」清掉吗？内容不会丢，它们会回到没走过的队列里。')) return;
+  save(s2);
+  alert('清掉了 ' + gone + ' 条。现在走过 ' + (keep + 1) + ' 条。');
+  home();
 }
 function fixWalked(){
   var a = walkAudit();
