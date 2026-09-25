@@ -1080,8 +1080,15 @@ function home(){
             if(x.gave || x.self === 2) qrep[x.card + '|' + x.q] = (qrep[x.card + '|' + x.q] || 0) + 1; }); });
         var badN = Object.keys(qrep).filter(function(k){ return qrep[k] >= 2; }).length;
         return '<div class="big3">'
-        + '<div><b class="' + (A.skimmed ? 'miss' : 'hit') + '">' + A.skimmed + '</b>'
-          + '<span>刷过但没星标 —— <b>这就是待办</b></span></div>'
+        /* ⚠ 2026-09-25 晚改掉了。这一格原来报「刷过但没星标 —— 这就是待办」，
+           而她看到报告后的原话是「刷过的都是背过的」。
+           走过已经改成只有录过音或点了「✓ 背完了」才算，
+           所以那 100 条是成绩，不是待办。真正的待办是还没碰的。 */
+        + (function(){ var w7 = 0;
+            all.forEach(function(x){ if(wSeen(s4, x.card.id, x.item.q)) w7++; });
+            var rest7 = all.length - w7;
+            return '<div><b class="' + (rest7 ? 'miss' : 'hit') + '">' + rest7 + '</b>'
+              + '<span>还没碰 —— <b>这才是待办</b>（已经背过 ' + w7 + '）</span></div>'; })()
         + '<div><b>' + starCards.length + '</b><span>有星标的卡（★ ' + A.starred + ' 条）'
           + (starCards.length ? '：' + starCards.slice(0, 8).join(' ') + (starCards.length > 8 ? ' …' : '') : '') + '</span></div>'
         + '<div><b class="' + (badN ? 'miss' : 'hit') + '">' + badN + '</b>'
@@ -1957,8 +1964,13 @@ function starStats(list){
   return o;
 }
 function allItems(){
+  /* ⚠ 2026-09-25 晚：原来用 qlist(c)，只有 ask，**不含主问** ——
+     而 roundItems 用的是 ranked(c) = streamMain + streamAsk。
+     于是她那份报告里出了不可能的数：轮 1 走过 123，
+     「全部 1332 题」却只走过 109。差的那 14 条就是她走过的主问。
+     现在两边用同一个池子。 */
   var out = [];
-  CARDS.forEach(function(c){ qlist(c).forEach(function(x){ out.push({card:c, item:x}); }); });
+  CARDS.forEach(function(c){ ranked(c).forEach(function(x){ out.push({card:c, item:x}); }); });
   return out;
 }
 function wSeen(s, card, q){ return ((s.walked || {})[wKey(card, q)] || 0); }
@@ -3161,8 +3173,12 @@ function copyOut(){
   /* ⚠ 2026-09-25 重写。她：「复制进度还是有点问题啊 怎么还是在复制我已经不用的东西」——
      原来报的是拷问式那一套（组数、题数、机器算漏、每题自评），那套她已经不用了。
      现在只报她真正在用的：三轮进度 · 星标口径 · 今天的出声次数。
-     ⚠ 星标口径为什么要单独报：她自己说「走过」被污染了（为了看进度往后点过几道），
-     而「没星标 ＝ 肯定没背」是可信的下界。所以「刷过没背」那个数才是真正的待办。 */
+     ⚠ 2026-09-25 晚又改了一次。上一版把「走过但没星标」报成「刷过没背」，
+     因为那时「走过」确实被污染过（翻一页就计一次）。
+     **那个 bug 当天晚上已经修了**：现在只有录过音或点了「✓ 背完了」才计。
+     所以走过就是背过 —— 她原话：「刷过的都是背过的」。
+     旧标签把她 100 条真出过声的题叫成「没背」，是在倒扣工作量。
+     现在：走过 → 背过；待办 ＝ 还没碰；★ 降为书签，单独报。 */
   var s = st(), d = today(), r = s.days[d] || {};
   var all = allItems(), A = starStats(all);
   var walked = 0;
@@ -3174,25 +3190,33 @@ function copyOut(){
   lines.push('【三轮】');
   for(var n = 1; n <= 3; n++){
     var rs = roundStat(n);
-    lines.push('  轮 ' + n + '：走过 ' + rs.done + ' / ' + rs.tot
-      + '（★ ' + rs.starred + ' · 刷过没背 ' + rs.skimmed + ' · 还没碰 ' + rs.untouched + '）');
+    lines.push('  轮 ' + n + '：背过 ' + rs.done + ' / ' + rs.tot
+      + ' · 还没碰 ' + (rs.tot - rs.done) + '（★ 书签 ' + rs.starred + '）');
   }
   lines.push('');
-  lines.push('【全部 ' + A.tot + ' 题】走过 ' + walked
-    + ' · ★ 星标 ' + A.starred + ' · 刷过没背 ' + A.skimmed + ' · 还没碰 ' + A.untouched);
-  lines.push('  口径：★ 是我自己标的，没星标的肯定还没背。');
-  /* 最该回来的那些：走过但没星标，按卡聚一下，只报前十张 */
-  var by = {};
+  lines.push('【全部 ' + A.tot + ' 题】背过 ' + walked
+    + ' · 还没碰 ' + (A.tot - walked) + '（★ 书签 ' + A.starred + '）');
+  lines.push('  口径：背过 ＝ 真的出过声（录过音，或点了「✓ 背完了」）。★ 只是书签，不是进度。');
+  /* ⚠ 2026-09-25 晚整块换掉。原来这里列「走过但没星标」的卡，
+     按新口径那恰好是她**已经背完**的卡 —— 当待办列出来是反的。
+     现在列真正的待办：还没碰的条数最多的十张卡。 */
+  var by = {}, byDone = {};
   all.forEach(function(x){
-    if(qStarred(x.card.id, x.item)) return;
-    if(!wSeen(s, x.card.id, x.item.q)) return;
-    by[x.card.id] = (by[x.card.id] || 0) + 1;
+    if(wSeen(s, x.card.id, x.item.q)) byDone[x.card.id] = (byDone[x.card.id] || 0) + 1;
+    else by[x.card.id] = (by[x.card.id] || 0) + 1;
   });
   var ks = Object.keys(by).sort(function(a, b){ return by[b] - by[a]; });
   if(ks.length){
     lines.push('');
-    lines.push('【刷过但没背，按卡】' + ks.slice(0, 10).map(function(k){ return k + ' ' + by[k]; }).join(' · ')
-      + (ks.length > 10 ? ' …共 ' + ks.length + ' 张' : ''));
+    lines.push('【还没碰最多的十张卡】' + ks.slice(0, 10).map(function(k){
+        return k + ' ' + by[k] + (byDone[k] ? '（已背 ' + byDone[k] + '）' : ''); }).join(' · ')
+      + (ks.length > 10 ? ' …共 ' + ks.length + ' 张没完' : ''));
+  }
+  var dk = Object.keys(byDone).sort(function(a, b){ return byDone[b] - byDone[a]; });
+  if(dk.length){
+    lines.push('');
+    lines.push('【背得最多的十张卡】' + dk.slice(0, 10).map(function(k){
+        return k + ' ' + byDone[k]; }).join(' · '));
   }
   var txt = lines.join('\n');
   try{ navigator.clipboard.writeText(txt); alert('复制好了，粘给老师。'); }
