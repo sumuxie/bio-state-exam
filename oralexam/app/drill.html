@@ -285,6 +285,65 @@ details[open]>summary:before{content:'▾ ';}
 .win{border-left:3px solid var(--good);padding:10px 14px;margin:10px 0 0;
   background:color-mix(in srgb,var(--good) 10%,transparent);border-radius:0 8px 8px 0;
   font-size:15.5px;line-height:1.7}
+
+/* ============ 2026-09-25 晚 · 只收拾外观，不动任何数字和逻辑 ============
+   她：「再优化一下 ui 太丑了太丑了 别动任何数据数字啊」。
+   现在的毛病是**一片棕**：每个块都是同样的边框、同样的圆角、同样的实心棕按钮，
+   于是没有主次，越看越糊。这一段只做三件事：
+   ① 按钮分级 —— 一屏只留一个实心，其余全部描边；
+   ② 盒子减负 —— 边框换成极淡的底色，靠留白分块而不是靠线；
+   ③ 文字分层 —— 说明文字降一号、行距放开，标题反而收紧。 */
+
+/* ① 按钮 */
+button{border-radius:8px;transition:background .15s,border-color .15s,color .15s}
+button.main{font-weight:650;letter-spacing:.01em;box-shadow:none}
+button.main:hover{filter:brightness(1.06)}
+/* 次级：描边，不再是实心棕 */
+.part.rest button.main,
+.onebox .row button.ghost,
+#thirds button.main{
+  background:transparent;color:var(--accent);border:1px solid var(--accent);font-weight:600}
+.part.rest button.main:hover,#thirds button.main:hover{
+  background:color-mix(in srgb,var(--accent) 10%,transparent)}
+button.ghost{background:transparent;border:1px solid var(--line);color:var(--dim);font-weight:500}
+button.ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ② 盒子 */
+.onebox{border:0;background:color-mix(in srgb,var(--ink) 3.5%,transparent);
+  border-radius:12px;padding:14px 16px;margin-top:10px}
+.card{border:0;background:var(--card);border-radius:14px;
+  box-shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px -18px rgba(0,0,0,.35);padding:20px 22px}
+.part{border:0;background:var(--card);border-radius:11px;padding:13px 15px;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 9%,transparent)}
+.part.lead{box-shadow:inset 0 0 0 1.5px var(--accent)}
+.part.rest{opacity:1;background:transparent;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent)}
+.part.rest h4,.part.rest .big b,.part.rest .meta{color:var(--dim)}
+.warnbox{border-left-width:3px;border-radius:0 10px 10px 0;
+  background:color-mix(in srgb,var(--warn) 7%,transparent);padding:10px 14px}
+
+/* ③ 文字 */
+h3.sec{margin:34px 0 10px}
+.onebox>b:first-child{font-size:15px;letter-spacing:.01em}
+.onebox .small,.part .meta{font-size:12px;line-height:1.7;color:var(--dim)}
+.part .meta{color:var(--faint)}
+.part h4{letter-spacing:.02em}
+.part .big{margin:4px 0 5px}
+.hello{font-size:15.5px;line-height:1.7}
+
+/* ④ 单卡精练那一大片：三份并排的小块收窄，别铺满 */
+#thirds .parts{gap:8px}
+#thirds .part{padding:10px 12px}
+#thirds .part .big b{font-size:19px}
+
+/* ⑤ 下拉框统一 */
+select{border-radius:8px;border:1px solid var(--line);background:var(--card);
+  padding:7px 9px;max-width:100%}
+select:focus{outline:2px solid color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:1px}
+
+/* ⑥ 折叠条 */
+.earfold{background:color-mix(in srgb,var(--ink) 3.5%,transparent);border:0}
+.earfold>summary{padding:12px 16px}
 </style>
 </head>
 <body>
@@ -1028,7 +1087,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>4d063f17</b>'
+      + ' · 版本 <b>9d6a14b6</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
