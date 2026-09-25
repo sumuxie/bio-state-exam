@@ -131,22 +131,38 @@ u.mw{text-decoration:none;border-bottom:2px solid var(--bad);font-weight:600}
 .chemstep{font-size:13px;color:var(--dim);margin:14px 0 6px;font-weight:600}
 .chembar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
 .onebox{margin-top:14px;padding:12px;border:1px solid var(--line);border-radius:10px}
+/* ⚠ 2026-09-25 晚：她说「你凭什么把所有东西全部分平均到三份了 我明明在第一份发力的」。
+   对 —— 三块等宽等重是在说「三件事一样要紧」，而她现在只在第一份里。
+   所以第一份整行、大号；第二三份并排压到半宽、灰掉。 */
 .parts{display:flex;gap:10px;margin:0;flex-wrap:wrap}
+.part.lead{flex:1 1 100%;border-color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 5%,transparent)}
+.part.lead .big b{font-size:34px}
+.part.lead h4{font-size:15.5px;color:var(--ink)}
+.part.rest{flex:1 1 calc(50% - 5px);opacity:.72}
+.part.rest .big b{font-size:20px}
 .chembox{border-color:var(--accent)}
 /* 2026-09-24：首页的层级。
    ⚠ 她：「没啥变化 我要个**强弱 大小**这种对比」——
    上一版只加了编号和分割线，字号粗细全一样，看着还是一片平的。**分区不等于分层。**
    这里定一套尺度：区标题 23 / 块标题 15.5 / 说明 12.5 / 主按钮 17 / 次按钮 13。 */
-h3.sec{display:flex;align-items:center;gap:12px;margin:38px 0 12px;
-  font-size:23px;font-weight:800;letter-spacing:-.01em;padding:0}
-h3.sec i{font-style:normal;flex:none;width:30px;height:30px;border-radius:50%;
-  background:var(--accent);color:var(--onAccent);font-size:14px;font-weight:800;
-  display:flex;align-items:center;justify-content:center}
-h3.sec span{font-size:12px;color:var(--faint);font-weight:400;margin-left:auto;
-  text-align:right;max-width:46%;line-height:1.45;letter-spacing:0}
+/* ⚠ 2026-09-25 晚：她说「标们还是太丑了 又大又不明显」。
+   23px 特大反而糊 —— 大字号让每个标题都在喊，喊的人多了就没人突出。
+   改法：字号降到 17，靠**一条色条 ＋ 底线**做分隔，靠 .secmain 做唯一的主角。 */
+h3.sec{display:flex;align-items:baseline;gap:9px;margin:30px 0 10px;
+  font-size:17px;font-weight:750;letter-spacing:0;padding:0 0 6px;
+  border-bottom:1px solid var(--line)}
+h3.sec i{font-style:normal;flex:none;width:20px;height:20px;border-radius:5px;
+  background:var(--line);color:var(--dim);font-size:11px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;align-self:center}
+h3.sec span{font-size:11.5px;color:var(--faint);font-weight:400;margin-left:auto;
+  text-align:right;max-width:52%;line-height:1.4;letter-spacing:0}
 /* ① 是主角：左边一条粗色条，背景略深 */
-.secmain{border-left:4px solid var(--accent);padding-left:14px;margin-left:-18px;
-  background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 7%,transparent),transparent 60%)}
+/* 唯一的主角：色条 ＋ 色字 ＋ 实心圆点。别的小标题一律素的。 */
+h3.sec.secmain{border-left:4px solid var(--accent);padding-left:12px;margin-left:-16px;
+  border-bottom-color:var(--accent);font-size:19px;font-weight:800;
+  background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 8%,transparent),transparent 55%)}
+h3.sec.secmain i{background:var(--accent);color:var(--onAccent)}
 /* 块标题 vs 说明 —— 原来两者差不多大，所以糊成一团 */
 .onebox>b:first-child{font-size:15.5px;font-weight:700;display:block;margin-bottom:2px}
 .onebox .small{font-size:12.5px;line-height:1.6}
@@ -779,9 +795,8 @@ function tutorStart(mode){
   pool.forEach(function(o){
     o.seen = wSeen(s2, o.card.id, o.item.q);
     o.star = qStarred(o.card.id, o.item);
-    o.pri  = o.star ? 2 : (o.seen ? 0 : 1);
   });
-  pool.sort(function(a, b){ return a.pri - b.pri || a.seen - b.seen; });
+  pool.sort(function(a, b){ return a.seen - b.seen; });
   if(mode === 'walk'){
     CH = {list:pool, i:0, tag:'🎓 ' + name, done:name + ' 这一组到这里',
           again:'tutorStart(\'walk\')'};
@@ -813,10 +828,12 @@ function home(){
         + ((r.walk||r.shadow) ? '今天出声了 —— 整段 ' + (r.walk||0) + ' 遍 · 跟读 ' + (r.shadow||0) + ' 句'
                               : (r.sets ? '今天练了 ' + r.sets + ' 组' : '今天还没出声')) + '</b>'
       + '<div class="small">连续 ' + streak() + ' 天 · 今天过了 ' + ((r.cards||[]).length) + ' 张卡 · '
-      + (function(){ var A = starStats(allItems());
-          return '全部 ' + A.tot + ' 题里 <b>★ ' + A.starred + '</b> 星标'
-            + (A.skimmed ? ' · <b class="miss">' + A.skimmed + '</b> 刷过没背' : '')
-            + ' · ' + A.untouched + ' 还没碰'; })() + '</div></div></div>'
+      /* ⚠ 2026-09-25 晚：这里也别报星标了。星标太稀疏，摆在顶上只会给「★ 0」的错觉。
+         顶上只报走过多少 —— 那是她真实的推进量。星标留在最下面那一块。 */
+      + (function(){ var s5 = st(), all = allItems(), w = 0;
+          all.forEach(function(x){ if(wSeen(s5, x.card.id, x.item.q)) w++; });
+          return '全部 ' + all.length + ' 题里走过 <b>' + w + '</b> · 还没走过 ' + (all.length - w); })()
+      + '</div></div></div>'
     + '</div>'
     + '<div class="bar" style="margin-top:14px"><i style="width:'
       + Math.round(100*((usable.length-left)/usable.length)) + '%"></i></div>'
@@ -847,19 +864,24 @@ function home(){
           var rs = roundStat(rn);
           var pc = rs.tot ? Math.round(100 * rs.done / rs.tot) : 0;
           var spc = rs.tot ? Math.round(100 * rs.starred / rs.tot) : 0;
-          h2 += '<div class="part' + (spc >= 100 ? ' done' : '') + '"><h4>轮 ' + rn
-             + (spc >= 100 ? ' ✓' : '') + '</h4>'
-             + '<div class="bar"><i style="width:' + spc + '%"></i></div>'
+          h2 += '<div class="part ' + (rn === 1 ? 'lead' : 'rest')
+             + (pc >= 100 ? ' done' : '') + '"><h4>轮 ' + rn
+             + (pc >= 100 ? ' ✓' : '') + '</h4>'
+             + '<div class="bar"><i style="width:' + pc + '%"></i></div>'
              /* ⚠ 2026-09-24：数字独占一行，说明缩到下面 —— 不然大字号会把说明挤断行。 */
              /* ⚠ 2026-09-25 换了头号数字。她：「这个 96 还是不对，我只背到了横向卡的
                 第一张或者第二张」—— 96 是「走过」，而她为了看进度往后点过几道。
                 **头号数字现在是星标**（她自己承认可信的下界），走过降成小字。 */
-             + '<div class="big"><b>★ ' + rs.starred + '</b><em>/ ' + rs.tot + '</em></div>'
-             + '<div class="meta">' + spc + '% 星标 · 约 ' + Math.round(rs.tot * 2 / 60 * 10) / 10
+             /* ⚠ 2026-09-25 晚：头号数字改回「走过」。上午换成星标之后她看到的是
+                「★ 0」，而她实际已经背到横向卡了 —— 星标太稀疏，当不了进度。
+                星标退回小字，只当一个附加口径。 */
+             + '<div class="big"><b>' + rs.done + '</b><em>/ ' + rs.tot + '</em></div>'
+             + '<div class="meta">' + pc + '% · 约 ' + Math.round(rs.tot * 2 / 60 * 10) / 10
              + ' 小时 · 每天 ' + Math.round(rs.tot * 2 / 12) + ' 分钟</div>'
-             + '<div class="meta">走过 ' + rs.done + ' · '
-               + (rs.skimmed ? '<b class="miss">' + rs.skimmed + ' 刷过没背</b> · ' : '')
-               + rs.untouched + ' 还没碰</div>'
+             /* ⚠ 2026-09-25 晚去掉了星标那一行。她：「现在记录变成三个都有星表记录」——
+                星标这个口径太稀疏、又会跨轮命中，摆在进度旁边只是噪音。
+                星标只留在最下面「记录与别处」那一块当一个独立的数。 */
+             + '<div class="meta">还没走过 ' + (rs.tot - rs.done) + ' 条</div>'
              + '<button class="main" onclick="walkRound(' + rn + ')">走这一轮</button></div>';
         }
         return h2 + '</div></div>'; })()
@@ -974,7 +996,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>b8f3b3ff</b>'
+      + ' · 版本 <b>6f84938d</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
@@ -1853,12 +1875,15 @@ function walkRound(n){
      现在的顺序：① 走过但没星标（她刷过去、没背的，最该先回来）
                  ② 没走过也没星标（还没碰）
                  ③ 星标过的（动过手，留到最后，那时关键词是涂掉的） */
+  /* ⚠ 2026-09-25 晚：改回来了。我上午把「走过但没星标」排到最前面，以为那是她
+     刷过没背的 —— 结果她背过的卡大多没星标，于是全被推到队首，她说
+     「我之前都背到横向卡了，现在跟读跟背完全又重头开始了」。**顺序回到原样：
+     没走过的排前面**，走过的留在后面（那时关键词是涂掉的）。星标只用来显示，不排序。 */
   list.forEach(function(o){
     o.seen = wSeen(s, o.card.id, o.item.q);
     o.star = qStarred(o.card.id, o.item);
-    o.pri  = o.star ? 2 : (o.seen ? 0 : 1);
   });
-  list.sort(function(a, b){ return a.pri - b.pri || a.seen - b.seen; });
+  list.sort(function(a, b){ return a.seen - b.seen; });
   CH = {list:list, i:0, tag:'📖 轮 ' + n, done:'轮 ' + n + ' 到这里',
         again:'walkRound(' + n + ')', round:n};
   walkRender();
