@@ -877,6 +877,19 @@ function home(){
           + '<b>一轮 ＝ 每张卡 3 条</b>，所以每一轮都过完全部 ' + usable.length + ' 张卡。'
           + '走过一遍的题，下次出现<b>关键词浅褐色涂掉</b>，点一下露出来。'
           + '<br>挑哪 3 条的顺序：<b>定义 → 为什么 → 陷阱 → 相邻考点</b>。</div>'
+          /* ⚠ 2026-09-25 晚：她看到的「96」就在这儿，所以对账入口也放这儿。
+             原来只放在最底下的「记录与别处」，她根本翻不到。 */
+          + (function(){
+              var a = walkAudit();
+              if(!a.bad.length) return '';
+              return '<div class="warnbox" style="margin:0 0 10px">'
+                + '<b>这个数可能虚高 ' + a.bad.length + ' 条。</b>'
+                + '轮 1 里最后一条有星标的是第 <b>' + (a.last + 1) + ' / ' + a.list.length + '</b> 条'
+                + '（卡 ' + esc(a.list[a.last].card.id) + '）；'
+                + '那之后有 <b>' + a.bad.length + '</b> 条被记成走过却没有星标 —— '
+                + '多半是旧版本「翻一页就记一次」留下的（那个 bug 已经修了）。'
+                + '<br><button class="main" style="margin-top:8px" onclick="fixWalked()">'
+                + '把这 ' + a.bad.length + ' 条清掉，进度改回 ' + (a.walkedN - a.bad.length) + '</button></div>'; })()
           + '<div class="parts">';
         for (var rn = 1; rn <= 3; rn++){
           var rs = roundStat(rn);
@@ -1015,7 +1028,7 @@ function home(){
       /* ⚠ 2026-09-23 加的。页面本身的地址不带版本号，所以「推上去了」和「她看到了」
          之间隔着一个不确定的缓存周期 —— 今天为这个来回过两次。
          把构建号印在页面上，她报一眼就知道手里是不是新的。 */
-      + ' · 版本 <b>039db1e8</b>'
+      + ' · 版本 <b>eee5c75f</b>'
       + ' <a href="?v=' + Date.now() + '">强制取最新</a></p>';
   paintVoices();
   var asec = $('asec');
