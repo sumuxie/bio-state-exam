@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>糖的异构关系</title>
+<style>
+:root{
+  --bg:#faf8f5; --card:#fff; --ink:#1c1a17; --dim:#55504a; --faint:#8a837a;
+  --line:#e3ddd4; --accent:#b4591f; --good:#3f7d4a; --warn:#a6321f;
+  --hi:#fff3e2; --hiline:#e0a35f;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16140f; --card:#1f1c17; --ink:#f0ece4; --dim:#b6afa4; --faint:#8b8479;
+    --line:#332e26; --accent:#e08a42; --good:#5fa86c; --warn:#e07055;
+    --hi:#2c2418; --hiline:#7a5526;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16140f; --card:#1f1c17; --ink:#f0ece4; --dim:#b6afa4; --faint:#8b8479;
+  --line:#332e26; --accent:#e08a42; --good:#5fa86c; --warn:#e07055;
+  --hi:#2c2418; --hiline:#7a5526;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.7 -apple-system,"Segoe UI","Noto Sans SC",system-ui,sans-serif;
+  -webkit-text-size-adjust:100%}
+.wrap{max-width:1000px;margin:0 auto;padding:22px 16px 90px}
+h1{font-size:24px;margin:0 0 4px;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:14px;margin:0 0 22px}
+h2{font-size:19px;margin:34px 0 4px;padding-bottom:7px;border-bottom:2px solid var(--accent);
+  display:inline-block}
+h3{font-size:15px;margin:22px 0 8px;color:var(--dim);letter-spacing:.02em}
+p{margin:10px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;margin:14px 0}
+.grid{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.mol{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:12px 8px 8px;text-align:center;flex:1 1 210px;min-width:190px;
+  /* ⚠ 上限：不然一行里剩下的那一个会被 flex-grow 撑成整行宽 */
+  max-width:330px}
+.mol.star{border-color:var(--hiline);background:var(--hi)}
+.mol b{display:block;font-size:14.5px;margin:0 0 1px}
+.mol i{display:block;font-style:normal;font-size:11.5px;color:var(--faint);
+  line-height:1.45;min-height:32px;padding:0 4px}
+svg{display:block;margin:4px auto 0;overflow:visible}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);
+  font-weight:700;border-bottom:2px solid var(--line)}
+td:first-child{white-space:nowrap;font-weight:600}
+.en{font-family:"Segoe UI",system-ui,sans-serif}
+.k{color:var(--accent);font-weight:700}
+.warnbox{background:var(--hi);border:1px solid var(--hiline);border-radius:12px;
+  padding:14px 16px;margin:14px 0}
+.warnbox b{color:var(--accent)}
+.note{font-size:13.5px;color:var(--dim)}
+.rule{background:var(--card);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;
+  padding:12px 16px;margin:14px 0;font-size:15px}
+.toggle{position:fixed;top:12px;right:12px;background:var(--card);color:var(--dim);
+  border:1px solid var(--line);border-radius:9px;padding:7px 11px;font-size:13px;cursor:pointer;z-index:9}
+ul{margin:8px 0;padding-left:22px}
+li{margin:5px 0}
+.flow{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:4px 0 8px}
+/* ⚠ 手机上 TABLE.en 曾撑到 405px（视口 390）——
+   原因是 D-ribulose-5-P / D-xylulose-5-P 这种长词不断行。 */
+th,td{overflow-wrap:anywhere;word-break:break-word}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+.tw table{margin:0;min-width:520px}
+@media (max-width:520px){
+  .mol{flex:1 1 100%}
+  h1{font-size:21px}
+  td:first-child{white-space:normal}
+  th,td{padding:8px 7px;font-size:13px}
+  .wrap{padding:18px 12px 80px}
+}
+</style>
+</head>
+<body>
+<button class="toggle" onclick="tog()">◐ 夜间</button>
+<div class="wrap">
+
+<h1>糖的异构关系</h1>
+<p class="sub">谁是谁的什么 · 靠什么酶变过去 · 结构长什么样。<br>
+做给 2026-10-05 口试用的单页，不联任何数据。</p>
+
+<h2>一 · 己糖，四张 Fischer</h2>
+<p class="note">竖着的是碳链，C1 在上。<b class="k">橙色那一处</b>就是和葡萄糖不一样的地方。
+D 还是 L 只看编号最大的那个手性碳，己糖就是 C5。</p>
+<div class="grid" id="hex"></div>
+
+<div class="rule">葡萄糖的 OH 背成四个字：<b class="k">右 · 左 · 右 · 右</b>（C2 到 C5）。
+四个手性碳 → 己醛糖一共 2⁴ ＝ 16 个，D 八个、L 八个。</div>
+
+<h2>二 · 对映异构体长什么样</h2>
+<p class="note">上面那些都是 D 型。把<b>每一个</b>手性碳都翻过来，才是 L-葡萄糖 ——
+所以它和葡萄糖不是差向异构体，是<b class="k">镜像</b>。人不代谢它。</p>
+<div class="grid" id="ent"></div>
+
+<h2>三 · 戊糖</h2>
+<p class="note">核糖背成三个字：<b class="k">右 · 右 · 右</b>。后面两个是酮糖，磷酸戊糖途径里的主角。</p>
+<div class="grid" id="pent"></div>
+
+<h2>四 · 酶大类 —— 为什么你看不见 epimerase</h2>
+<div class="warnbox"><b>因为我把大类和具体酶名混在一列里了。</b>
+而且有个更要紧的关系要先说清：
+<b class="k">epimerase 不是 isomerase 的下级，它们是亲兄弟。</b></div>
+<div class="rule"><b class="k">EC 5 ＝ 异构酶这一大类</b>（你口诀里「裂合 · 异构 · 连接」的那个异构）。
+它下面分三个：<br>
+· <b class="k">EC 5.1 差向异构酶 epimerase</b> / 消旋酶 racemase —— <b>翻一个手性碳</b>，分子式不变、构型变<br>
+· <b class="k">EC 5.3 异构酶 isomerase</b>（分子内氧化还原酶）—— <b>羬基挪位置</b>，醒糖 ⇄ 酮糖<br>
+· <b class="k">EC 5.4 变位酶 mutase</b> —— <b>基团在分子内换位置</b>，比如磷酸从 C1 挪到 C6</div>
+<div class="rule"><b class="k">背这一句就够：名字的结尾就是大类。</b>
+叫 -epimerase 的就是 EC 5.1，叫 -isomerase 的就是 EC 5.3，叫 -mutase 的就是 EC 5.4。</div>
+
+<h3>每个酶：大类 · 它到底在干什么 · 底物变产物</h3>
+<div class="tw"><table>
+<tr><th>酶</th><th>大类 · EC</th><th>催化的反应本身是什么</th><th>底物 → 产物</th></tr>
+<tr><td class="en">Phosphoglucose isomerase (PGI)</td><td><b>Isomerase</b><br><span class="note en">EC 5.3.1.9</span></td><td><b>醒糖⇄酮糖异构化</b>：羬基从 C1 挪到 C2，经<b>顺式烯二醇</b>中间体。不要任何辅因子</td><td class="en note">Glc-6-P ⇄ Fru-6-P</td></tr>
+<tr><td class="en">Mannose-6-phosphate isomerase</td><td><b>Isomerase</b><br><span class="note en">EC 5.3.1.8</span></td><td>同上，醒糖⇄酮糖。<b>甘露糖就是这么进糖酥解的</b></td><td class="en note">Man-6-P ⇄ Fru-6-P</td></tr>
+<tr><td class="en">Ribose-5-phosphate isomerase</td><td><b>Isomerase</b><br><span class="note en">EC 5.3.1.6</span></td><td>醒糖⇄酮糖</td><td class="en note">Rib-5-P ⇄ Ribulose-5-P</td></tr>
+<tr><td class="en">Triose phosphate isomerase (TPI)</td><td><b>Isomerase</b><br><span class="note en">EC 5.3.1.1</span></td><td>醒糖⇄酮糖（三碳）。你口诀里糖酥解那个「换」</td><td class="en note">DHAP ⇄ G3P</td></tr>
+<tr><td class="en">UDP-glucose 4-epimerase (GALE)</td><td><b class="k">Epimerase</b><br><span class="note en">EC 5.1.3.2</span></td><td><b>C4 差向异构化</b>。离羬基太远，所以靠 <b>NAD⁺ 先把 C4 氧化成酮、转个面、再还原</b></td><td class="en note">UDP-Gal ⇄ UDP-Glc</td></tr>
+<tr><td class="en">Ribulose-5-phosphate 3-epimerase</td><td><b class="k">Epimerase</b><br><span class="note en">EC 5.1.3.1</span></td><td><b>C3 差向异构化</b>。酮糖的羬基在 C2，<b>C3 正好挨着</b>，所以经 2,3-烯二醇负离子，<b>不要 NAD⁺</b></td><td class="en note">Ru5P ⇄ Xu5P</td></tr>
+<tr><td class="en">UDP-GlcNAc 2-epimerase</td><td><b class="k">Epimerase</b><br><span class="note en">EC 5.1.3.14</span></td><td><b>C2 差向异构化</b>。一个真存在的 C2 差向异构酶，唱酸合成用它</td><td class="en note">UDP-GlcNAc ⇄ UDP-ManNAc</td></tr>
+<tr><td class="en">Aldose 1-epimerase（变旋酶 mutarotase）</td><td><b class="k">Epimerase</b><br><span class="note en">EC 5.1.3.3</span></td><td><b>异头碳 C1 翻面</b>，必须经开链。不加它也会自己发生，叫变旋</td><td class="en note">α-Glc ⇄ β-Glc</td></tr>
+<tr><td class="en">Phosphoglucomutase</td><td><b class="k">Mutase</b><br><span class="note en">EC 5.4.2.2</span></td><td><b>磷酸基在分子内换位置</b>，经 1,6-双磷酸中间体。⚠ 糖本身没变，所以这不是糖的异构体</td><td class="en note">Glc-1-P ⇄ Glc-6-P</td></tr>
+<tr><td class="en">Galactokinase</td><td><b>Transferase（激酶）</b><br><span class="note en">EC 2.7.1.6</span></td><td><b>磷酸基转移</b>，ATP 供磷</td><td class="en note">Gal → Gal-1-P</td></tr>
+<tr><td class="en">GALT（Gal-1-P uridylyltransferase）</td><td><b>Transferase</b><br><span class="note en">EC 2.7.7.12</span></td><td><b>尿苷酰基转移</b>—— 两个糖换伴儿。⚠ <b>这一步缺陷就是经典型半乳糖血症</b></td><td class="en note">Gal-1-P + UDP-Glc → UDP-Gal + Glc-1-P</td></tr>
+<tr><td class="en">Aldose reductase</td><td><b>Oxidoreductase</b><br><span class="note en">EC 1.1.1.21</span></td><td><b>羬基还原成醇</b>，NADPH 供氢。这不是异构化，是氧化还原</td><td class="en note">Glucose → Sorbitol</td></tr>
+<tr><td class="en">Sorbitol dehydrogenase</td><td><b>Oxidoreductase</b><br><span class="note en">EC 1.1.1.14</span></td><td><b>醇氧化成酮</b>，NAD⁺ 取氢</td><td class="en note">Sorbitol → Fructose</td></tr>
+</table></div>
+<p class="note">三个 <b class="k">Epimerase</b> 不要搂成一团：
+<b>GALE 要 NAD⁺</b>（C4 离羬基远），
+<b>3-epimerase 不要</b>（C3 挨着酮糖的羬基）。
+这一对对比本身就是考点。</p>
+
+<h3>又一张：谁和谁互为什么</h3>
+<div class="tw"><table class="en">
+<tr><th>Pair</th><th>Relationship</th><th>Interconverted by</th></tr>
+<tr><td>D-glucose / D-mannose</td><td><b>C2 epimers</b></td>
+    <td>No direct epimerase in humans. Mannose enters as Man-6-P, then
+        mannose-6-phosphate isomerase</td></tr>
+<tr><td>D-glucose / D-galactose</td><td><b>C4 epimers</b></td>
+    <td>UDP-glucose 4-epimerase, on the UDP-sugar only</td></tr>
+<tr><td>D-mannose / D-galactose</td><td><b>Diastereomers, not epimers</b> (C2 and C4)</td>
+    <td>No single enzyme. Both route through Glc-6-P</td></tr>
+<tr><td>D-glucose / D-fructose</td><td><b>Constitutional isomers</b>, aldose against ketose</td>
+    <td>Phosphoglucose isomerase</td></tr>
+<tr><td>D-glucose / L-glucose</td><td><b>Enantiomers</b></td>
+    <td>None. Every chiral centre would have to invert</td></tr>
+<tr><td>α- / β-D-glucopyranose</td><td><b>Anomers</b>, C1 only, and only once the ring is closed</td>
+    <td>Mutarotation, or aldose 1-epimerase</td></tr>
+<tr><td>D-ribose / D-arabinose</td><td><b>C2 epimers</b></td><td>Same enediol logic</td></tr>
+<tr><td>D-ribose / D-xylose</td><td><b>C3 epimers</b></td><td>No enzyme on the free sugars</td></tr>
+<tr><td>Ru5P / Xu5P</td><td><b>C3 epimers</b></td><td>Ribulose-5-phosphate 3-epimerase</td></tr>
+<tr><td>Glc-1-P / Glc-6-P</td><td><b>Positional isomers of the phosphate</b></td>
+    <td>Phosphoglucomutase</td></tr>
+</table></div>
+
+<h2>五 · 半乳糖那条完整通路</h2>
+<div class="card"><div class="flow" id="leloir"></div></div>
+<p class="note"><b>GALT 缺陷就是经典型半乳糖血症。</b>
+被问「半乳糖怎么进糖酵解」，答的是这三步，而不是「变成葡萄糖」。</p>
+
+<h2>六 · 为什么有的碳能直接翻，有的必须绕</h2>
+<div class="rule"><b class="k">要翻的那个碳，必须紧挨着羰基。</b>
+挨着，就能靠去质子再加质子翻过去，不要辅因子。<br>
+不挨着，就只能<b class="k">先氧化成酮、转个面、再还原回去</b>，必须有 NAD⁺。</div>
+<div class="card"><div class="flow" id="mech"></div></div>
+<table>
+<tr><th>糖</th><th>羰基在</th><th>于是哪个碳能直接翻</th><th>要 NAD⁺ 吗</th></tr>
+<tr><td>葡萄糖（醛糖）</td><td>C1</td><td>只有 C2 → 甘露糖、果糖</td><td>不要</td></tr>
+<tr><td>核酮糖（酮糖）</td><td>C2</td><td>C1 和 <b class="k">C3</b> → 木酮糖</td><td>不要</td></tr>
+<tr><td>葡萄糖的 C4</td><td>C1，离得远</td><td>翻不动</td><td><b class="k">必须要</b>（GALE）</td></tr>
+</table></div>
+<div class="warnbox"><b>⚠ 这一条我前面说窄过。</b>
+原来的说法是「只有 C2 能靠烯二醇翻」—— 那只对醛糖成立。
+酮糖的羰基在 C2，所以 <b>C3 也挨着羰基</b>，
+这正是 ribulose-5-phosphate 3-epimerase 不需要 NAD⁺ 的原因。</div>
+
+<h2>七 · Epimerase 到底有没有</h2>
+<p>有，而且是一整个类：<b class="k">EC 5.1.3</b>，专门管碳水化合物上的差向异构。
+它们几乎都作用在<b>核苷酸糖</b>（UDP / GDP / dTDP 挂着的糖）上，不是游离糖。</p>
+<div class="tw"><table class="en">
+<tr><th>Enzyme</th><th>EC</th><th>Which carbon</th><th>Cofactor</th><th>Where it matters</th></tr>
+<tr><td>UDP-glucose 4-epimerase (GALE)</td><td>5.1.3.2</td><td>C4</td><td><b>NAD⁺</b></td>
+    <td>Leloir pathway, galactose into glycolysis</td></tr>
+<tr><td>UDP-GlcNAc 2-epimerase</td><td>5.1.3.14</td><td><b>C2</b></td><td>none</td>
+    <td>Sialic acid synthesis. A real C2 epimerase</td></tr>
+<tr><td>Ribulose-5-phosphate 3-epimerase</td><td>5.1.3.1</td><td>C3</td><td>none</td>
+    <td>Pentose phosphate pathway</td></tr>
+<tr><td>UDP-glucuronate 4-epimerase</td><td>5.1.3.6</td><td>C4</td><td>NAD⁺</td>
+    <td>Plant cell wall, glycosaminoglycans</td></tr>
+<tr><td>GDP-mannose 3,5-epimerase</td><td>5.1.3.18</td><td>C3 and C5</td><td>NAD⁺</td>
+    <td>Plant vitamin C route</td></tr>
+<tr><td>Cellobiose 2-epimerase</td><td>5.1.3.11</td><td>C2 of a disaccharide</td><td>none</td>
+    <td>Bacterial</td></tr>
+<tr><td>Aldose 1-epimerase (mutarotase)</td><td>5.1.3.3</td><td>C1, anomeric</td><td>none</td>
+    <td>Speeds up mutarotation. Strictly an anomerase</td></tr>
+</table></div>
+<div class="rule">被追问的时候这样答：<b class="k">差向异构酶是 EC 5.1.3 一整族，
+但它们大多不碰游离糖，碰的是 UDP 挂着的糖。</b>
+人体里没有把游离葡萄糖直接翻成甘露糖的酶 —— 甘露糖是经 M6P 再异构成 F6P 进来的。</div>
+
+<h2>八 · 关环之后：异头物</h2>
+<p class="note">开链的 C1 是羰基，不是手性中心。<b>一关环，C1 就成了新的手性碳</b>，叫异头碳。
+所以异头物这一层<b class="k">只有环状结构才有</b>。</p>
+<div class="grid" id="haw"></div>
+<p class="note">图里<b>只画了 OH 和 CH₂OH，氢省略了</b>。前沿那条粗线（C1 到 C4）是离你最近的一边。</p>
+<div class="rule"><b class="k">Fischer 里 OH 在右，Haworth 里就朝下。</b>
+所以葡萄糖的 C2 朝下、C3 朝上、C4 朝下；半乳糖只有 C4 反过来朝上。</div>
+<table>
+<tr><th>位置</th><th>β-D-葡萄糖</th><th>β-D-半乳糖</th></tr>
+<tr><td>C1 的 OH</td><td>朝上（这就是 β 的意思）</td><td>朝上</td></tr>
+<tr><td>C2 的 OH</td><td>朝下</td><td>朝下</td></tr>
+<tr><td>C3 的 OH</td><td>朝上</td><td>朝上</td></tr>
+<tr><td>C4 的 OH</td><td><b>朝下</b></td><td><b class="k">朝上</b> ★</td></tr>
+<tr><td>C5 的 CH₂OH</td><td>朝上</td><td>朝上</td></tr>
+</table>
+<table>
+<tr><th></th><th>比旋光度</th><th>水里占多少</th></tr>
+<tr><td>α-D-葡萄糖</td><td>＋112°</td><td>约 36%</td></tr>
+<tr><td>β-D-葡萄糖</td><td>＋18.7°</td><td>约 64%</td></tr>
+<tr><td>平衡</td><td><b class="k">＋52.7°</b></td><td>开链不到 1%</td></tr>
+</table>
+<div class="warnbox"><b>β 为什么占多数 —— 这一句要主动说出来。</b>
+在椅式构象里，β-D-吡喃葡萄糖<b>所有取代基都在平伏键上</b>，谁也不挤。
+这也是葡萄糖成为生物界最常见的糖的原因。</div>
+
+<h2>九 · 口试答题的顺序</h2>
+<div class="rule">先说<b class="k">差几个碳、差的是哪个碳</b>，
+再说<b class="k">靠什么机制翻过去</b>，最后才报名字。<br>
+<span class="note">epimer / isomer / anomer 是结论，不是答案。先给判据，名字自己就出来了。</span></div>
+<p class="note">两个要主动说出口的 ✗：<b>果糖不是葡萄糖的 epimer</b>（官能团变了，是结构异构）；
+<b>L-葡萄糖也不是</b>（全身翻，是对映异构）。</p>
+
+</div>
+
+<script>
+/* ============ 夜间 ============ */
+function tog(){
+  var d = document.documentElement;
+  var cur = d.getAttribute('data-theme');
+  if(!cur) cur = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  var next = cur === 'dark' ? 'light' : 'dark';
+  d.setAttribute('data-theme', next);
+  try{ localStorage.setItem('sugars.theme', next); }catch(e){}
+}
+try{ var t = localStorage.getItem('sugars.theme');
+     if(t) document.documentElement.setAttribute('data-theme', t); }catch(e){}
+
+/* ============ Fischer 投影 ============ */
+/* rows：每一项是 'R'（OH 在右）· 'L'（OH 在左）· 'K'（羰基 C=O）
+   star：要高亮的行号（1 起算，对应 C2 开始数） */
+function fischer(top, rows, bottom, star){
+  var W = 200, dy = 46, padTop = 30, padBot = 34;
+  var H = padTop + rows.length * dy + padBot;
+  var cx = W / 2;
+  var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H
+        + '" role="img" aria-label="Fischer projection">';
+  s += '<style>'
+     + '.bb{stroke:var(--ink);stroke-width:2;stroke-linecap:round}'
+     + '.hb{stroke:var(--ink);stroke-width:1.7;stroke-linecap:round}'
+     + '.sb{stroke:var(--accent);stroke-width:2.6;stroke-linecap:round}'
+     + '.at{fill:var(--ink);font:600 14px "Segoe UI",system-ui,sans-serif}'
+     + '.ao{fill:var(--accent);font:700 14px "Segoe UI",system-ui,sans-serif}'
+     + '.cn{fill:var(--faint);font:600 10.5px "Segoe UI",system-ui,sans-serif}'
+     + '</style>';
+  var yTop = padTop, yBot = padTop + rows.length * dy;
+  /* 主链 */
+  s += '<line class="bb" x1="' + cx + '" y1="' + (yTop + 6) + '" x2="' + cx + '" y2="' + (yBot - 6) + '"/>';
+  /* 顶端基团 */
+  s += '<text class="at" x="' + cx + '" y="' + (yTop - 2) + '" text-anchor="middle">' + top + '</text>';
+  s += '<text class="cn" x="' + (cx + 30) + '" y="' + (yTop - 2) + '">C1</text>';
+  /* 每个中间碳 */
+  rows.forEach(function(r, i){
+    var y = padTop + (i + 1) * dy - dy / 2 + dy / 2;
+    y = padTop + (i + 1) * dy - 12;
+    var hot = star && star.indexOf(i + 1) >= 0;
+    var cls = hot ? 'sb' : 'hb';
+    var lab = hot ? 'ao' : 'at';
+    if(r === 'K'){
+      /* 酮基：双键画到右边 */
+      s += '<line class="' + cls + '" x1="' + (cx + 3) + '" y1="' + (y - 3) + '" x2="' + (cx + 26) + '" y2="' + (y - 3) + '"/>';
+      s += '<line class="' + cls + '" x1="' + (cx + 3) + '" y1="' + (y + 3) + '" x2="' + (cx + 26) + '" y2="' + (y + 3) + '"/>';
+      s += '<text class="' + lab + '" x="' + (cx + 32) + '" y="' + (y + 5) + '">O</text>';
+    } else {
+      var oh = (r === 'R');
+      /* 左臂 */
+      s += '<line class="' + (oh ? 'hb' : cls) + '" x1="' + (cx - 4) + '" y1="' + y + '" x2="' + (cx - 40) + '" y2="' + y + '"/>';
+      /* 右臂 */
+      s += '<line class="' + (oh ? cls : 'hb') + '" x1="' + (cx + 4) + '" y1="' + y + '" x2="' + (cx + 40) + '" y2="' + y + '"/>';
+      s += '<text class="' + (oh ? 'at' : lab) + '" x="' + (cx - 44) + '" y="' + (y + 5) + '" text-anchor="end">'
+         + (oh ? 'H' : 'HO') + '</text>';
+      s += '<text class="' + (oh ? lab : 'at') + '" x="' + (cx + 44) + '" y="' + (y + 5) + '">'
+         + (oh ? 'OH' : 'H') + '</text>';
+    }
+    s += '<text class="cn" x="' + (cx + 76) + '" y="' + (y + 4) + '">C' + (i + 2) + '</text>';
+  });
+  /* 底端 */
+  s += '<text class="at" x="' + cx + '" y="' + (yBot + 16) + '" text-anchor="middle">' + bottom + '</text>';
+  s += '</svg>';
+  return s;
+}
+
+function molBox(name, note, svg, star){
+  return '<div class="mol' + (star ? ' star' : '') + '"><b>' + name + '</b><i>' + note + '</i>' + svg + '</div>';
+}
+
+var CHO = 'CHO', CH2 = 'CH₂OH';
+
+document.getElementById('hex').innerHTML =
+    molBox('D-葡萄糖', '己醛糖 · 基准<br>右 左 右 右',
+           fischer(CHO, ['R','L','R','R'], CH2, []), false)
+  + molBox('D-甘露糖', 'C2 差向异构体<br>只翻了 C2',
+           fischer(CHO, ['L','L','R','R'], CH2, [1]), true)
+  + molBox('D-半乳糖', 'C4 差向异构体<br>只翻了 C4',
+           fischer(CHO, ['R','L','L','R'], CH2, [3]), true)
+  + molBox('D-果糖', '己酮糖 · 结构异构体<br>羰基从 C1 挪到 C2',
+           fischer(CH2, ['K','L','R','R'], CH2, [1]), true);
+
+document.getElementById('ent').innerHTML =
+    molBox('D-葡萄糖', '再放一次，方便对照',
+           fischer(CHO, ['R','L','R','R'], CH2, []), false)
+  + molBox('L-葡萄糖', '对映异构体<br>四个手性碳全部翻',
+           fischer(CHO, ['L','R','L','L'], CH2, [1,2,3,4]), true);
+
+document.getElementById('pent').innerHTML =
+    molBox('D-核糖', '戊醛糖 · 基准<br>右 右 右',
+           fischer(CHO, ['R','R','R'], CH2, []), false)
+  + molBox('D-阿拉伯糖', '核糖的 C2 差向异构体<br>诱导剂用的是 L 型',
+           fischer(CHO, ['L','R','R'], CH2, [1]), true)
+  + molBox('D-木糖', '核糖的 C3 差向异构体',
+           fischer(CHO, ['R','L','R'], CH2, [2]), true)
+  + molBox('D-核酮糖', '戊酮糖 · Ru5P<br>羰基在 C2',
+           fischer(CH2, ['K','R','R'], CH2, [1]), false)
+  + molBox('D-木酮糖', 'Ru5P 的 C3 差向异构体<br>Xu5P · 3-epimerase 的产物',
+           fischer(CH2, ['K','L','R'], CH2, [2]), true);
+
+/* ============ Haworth ============ */
+/* ⚠ 第二版。第一版画成正六边形，C3/C4 「朝上」的取代基
+   落进了环肚子里，看不出上下（截图确认）。
+   现在是**平铺式**：C1–C4 排在同一条水平线（前沿，粗线），
+   C5 和环氧抬到后面一条线。取代基笔直朝上或朝下，不会撞环。 */
+function haworth(kind, c1, c2, c3, c4){
+  var W = 300, H = 210;
+  var yF = 128, yB = 62;                 /* 前沿 / 后沿 两条线 */
+  var C4 = [62, yF], C3 = [128, yF], C2 = [194, yF], C1 = [260, yF];
+  var C5 = [86, yB], OO = [236, yB];
+  var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img">';
+  s += '<style>'
+     + '.rg{stroke:var(--ink);stroke-width:1.7;fill:none;stroke-linejoin:round;stroke-linecap:round}'
+     + '.rf{stroke:var(--ink);stroke-width:4.2;fill:none;stroke-linecap:round}'
+     + '.sb{stroke:var(--ink);stroke-width:1.6;stroke-linecap:round}'
+     + '.sbh{stroke:var(--accent);stroke-width:2.6;stroke-linecap:round}'
+     + '.lb{fill:var(--ink);font:600 12.5px "Segoe UI",system-ui,sans-serif}'
+     + '.lbh{fill:var(--accent);font:700 12.5px "Segoe UI",system-ui,sans-serif}'
+     + '.cn{fill:var(--faint);font:600 10px "Segoe UI",system-ui,sans-serif}'
+     + '.ox{fill:var(--accent);font:700 13.5px "Segoe UI",system-ui,sans-serif}'
+     + '</style>';
+  /* 后沿：C4-C5 / C5-O / O-C1 */
+  s += '<polyline class="rg" points="' + C4[0] + ',' + C4[1] + ' ' + C5[0] + ',' + C5[1]
+     + ' ' + OO[0] + ',' + OO[1] + ' ' + C1[0] + ',' + C1[1] + '"/>';
+  /* 前沿：C1-C2-C3-C4，粗线 */
+  s += '<polyline class="rf" points="' + C1[0] + ',' + C1[1] + ' ' + C2[0] + ',' + C2[1]
+     + ' ' + C3[0] + ',' + C3[1] + ' ' + C4[0] + ',' + C4[1] + '"/>';
+  /* 环氧 */
+  s += '<circle cx="' + OO[0] + '" cy="' + OO[1] + '" r="9.5" fill="var(--card)"/>';
+  s += '<text class="ox" x="' + OO[0] + '" y="' + (OO[1] + 5) + '" text-anchor="middle">O</text>';
+  /* 取代基 */
+  function sub(pt, dir, txt, hot){
+    var x = pt[0], y = pt[1], L = 34;
+    var y2 = dir === 'u' ? y - L : y + L;
+    s += '<line class="' + (hot ? 'sbh' : 'sb') + '" x1="' + x + '" y1="' + y + '" x2="' + x + '" y2="' + y2 + '"/>';
+    var ty = dir === 'u' ? y2 - 6 : y2 + 13;
+    s += '<text class="' + (hot ? 'lbh' : 'lb') + '" x="' + x + '" y="' + ty + '" text-anchor="middle">' + txt + '</text>';
+  }
+  /* 碳编号，标在前沿线的斜下方 */
+  function num(pt, n, dx){
+    s += '<text class="cn" x="' + (pt[0] + (dx || 9)) + '" y="' + (pt[1] + 15) + '">' + n + '</text>';
+  }
+  sub(C5, 'u', 'CH\u2082OH', false);
+  s += '<text class="cn" x="' + (C5[0] - 16) + '" y="' + (C5[1] + 4) + '">5</text>';
+  sub(C1, c1, 'OH', true);   num(C1, '1');
+  sub(C2, c2, 'OH', false);  num(C2, '2');
+  sub(C3, c3, 'OH', false);  num(C3, '3');
+  sub(C4, c4, 'OH', kind === 'gal'); num(C4, '4', -16);
+  s += '</svg>';
+  return s;
+}
+
+document.getElementById('haw').innerHTML =
+    molBox('\u03b2-D-\u5421\u5583\u8461\u8404\u7cd6',
+           'C1 \u7684 OH <b>\u671d\u4e0a</b> \u2014\u2014 \u8fd9\u5c31\u662f \u03b2<br>\u6905\u5f0f\u91cc\u5168\u90e8\u5e73\u4f0f\uff0c\u6240\u4ee5\u5b83\u6700\u591a',
+           haworth('glc', 'u', 'd', 'u', 'd'), false)
+  + molBox('\u03b1-D-\u5421\u5583\u8461\u8404\u7cd6',
+           'C1 \u7684 OH <b>\u671d\u4e0b</b> \u2014\u2014 \u8fd9\u5c31\u662f \u03b1<br>\u548c \u03b2 \u4e92\u4e3a\u5f02\u5934\u7269\uff0c\u9760\u53d8\u65cb\u4e92\u53d8',
+           haworth('glc', 'd', 'd', 'u', 'd'), false)
+  + molBox('\u03b2-D-\u5421\u5583\u534a\u4e73\u7cd6',
+           '\u53ea\u6709 C4 \u53cd\u8fc7\u6765 <b>\u671d\u4e0a</b><br>\u6574\u4e2a\u5dee\u522b\u5c31\u8fd9\u4e00\u5904',
+           haworth('gal', 'u', 'd', 'u', 'u'), true);
+
+/* ============ 通路图 ============ */
+function flowSVG(W, H, body){
+  return '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img">'
+    + '<style>'
+    + '.bx{fill:var(--card);stroke:var(--line);stroke-width:1.5;rx:8}'
+    + '.bxk{fill:var(--hi);stroke:var(--hiline);stroke-width:1.8}'
+    + '.tx{fill:var(--ink);font:600 13px "Segoe UI",system-ui,sans-serif}'
+    + '.txs{fill:var(--dim);font:600 11px "Segoe UI",system-ui,sans-serif}'
+    + '.ez{fill:var(--accent);font:700 11.5px "Segoe UI",system-ui,sans-serif}'
+    + '.ar{stroke:var(--ink);stroke-width:1.8;fill:none;marker-end:url(#ah)}'
+    + '.ar2{stroke:var(--accent);stroke-width:1.8;fill:none;marker-end:url(#ah2)}'
+    + '</style>'
+    + '<defs>'
+    + '<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">'
+    + '<path d="M0,0 L10,5 L0,10 z" fill="var(--ink)"/></marker>'
+    + '<marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">'
+    + '<path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker>'
+    + '</defs>' + body + '</svg>';
+}
+function box(x, y, w, h, t, sub, key){
+  var s = '<rect class="bx' + (key ? ' bxk' : '') + '" x="' + x + '" y="' + y + '" width="' + w
+        + '" height="' + h + '" rx="8"/>';
+  s += '<text class="tx" x="' + (x + w / 2) + '" y="' + (y + (sub ? 21 : h / 2 + 5)) + '" text-anchor="middle">' + t + '</text>';
+  if(sub) s += '<text class="txs" x="' + (x + w / 2) + '" y="' + (y + 37) + '" text-anchor="middle">' + sub + '</text>';
+  return s;
+}
+function arrow(x1, y1, x2, y2, label, sub, hot){
+  var s = '<line class="' + (hot ? 'ar2' : 'ar') + '" x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '"/>';
+  var mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+  if(label) s += '<text class="ez" x="' + mx + '" y="' + (my - 8) + '" text-anchor="middle">' + label + '</text>';
+  if(sub) s += '<text class="txs" x="' + mx + '" y="' + (my + 18) + '" text-anchor="middle">' + sub + '</text>';
+  return s;
+}
+
+/* Leloir */
+document.getElementById('leloir').innerHTML = flowSVG(900, 210,
+    box(8, 80, 98, 48, '半乳糖', 'galactose')
+  + arrow(110, 104, 200, 104, 'galactokinase', 'ATP')
+  + box(200, 80, 118, 48, 'Gal-1-P')
+  + arrow(322, 104, 400, 104, 'GALT', '换来 UDP')
+  + box(404, 80, 138, 48, 'UDP-半乳糖', 'UDP-Gal', true)
+  + arrow(546, 104, 636, 104, 'GALE + NAD⁺', 'C4 翻面', true)
+  + box(640, 80, 138, 48, 'UDP-葡萄糖', 'UDP-Glc', true)
+  + arrow(709, 76, 709, 42, '', '')
+  + '<text class="txs" x="709" y="30" text-anchor="middle">回头去接下一个 Gal-1-P</text>'
+  + arrow(709, 132, 709, 166, '', '')
+  + box(640, 166, 138, 40, 'Glc-1-P → 糖酵解')
+  + '<text class="txs" x="466" y="172" text-anchor="middle">GALT 缺陷 ＝ 经典型半乳糖血症</text>'
+);
+
+/* 两种机制 */
+document.getElementById('mech').innerHTML = flowSVG(900, 254,
+    '<text class="tx" x="10" y="20">① 挨着羰基 —— 去质子再加质子，不要辅因子</text>'
+  + box(30, 36, 118, 44, 'D-葡萄糖')
+  + arrow(152, 58, 236, 58, '碱 / 异构酶', 'C2 去质子')
+  + box(240, 36, 136, 44, '烯二醇中间体', 'enediol', true)
+  + arrow(380, 58, 462, 58, '从另一面', '加回 C2', true)
+  + box(466, 36, 118, 44, 'D-甘露糖', '', true)
+  /* ⚠ 这个标签原来走 arrow() 的 sub，落在 my+18，正好压在下面的方框上。 */
+  + arrow(318, 84, 318, 126, '', '')
+  + '<text class="txs" x="330" y="110">羰基挪到 C2</text>'
+  + box(250, 126, 136, 44, 'D-果糖', 'PGI 的产物')
+  + '<text class="txs" x="610" y="62">同一个中间体解释三件事</text>'
+  + '<text class="tx" x="10" y="198">② 离羰基远 —— 只能先氧化再还原，必须 NAD⁺</text>'
+  + box(30, 210, 130, 26, 'UDP-Gal')
+  + arrow(164, 223, 250, 223, '氧化 C4', 'NAD⁺', true)
+  + box(254, 210, 130, 26, 'C4 酮中间体', '', true)
+  + arrow(388, 223, 474, 223, '换面还原', 'NADH', true)
+  + box(478, 210, 130, 26, 'UDP-Glc')
+  + '<text class="txs" x="640" y="227">辅因子全程不离开酶</text>'
+);
+</script>
+</body>
+</html>
