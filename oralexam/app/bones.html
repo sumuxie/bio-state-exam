@@ -105,6 +105,27 @@ ol.steps li .d b{color:var(--ink);font-weight:580}
   color:var(--accent);margin:0 0 6px}
 .say .en{font-size:16px}
 .say .t{font-size:11.5px;color:var(--faint);margin:8px 0 0}
+/* ---------- 跟读跟背（她 2026-09-28 要的，照主 app 三步） ---------- */
+.wk{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:10px 0 0;
+  padding-top:9px;border-top:1px dashed var(--line)}
+.wk button{font-size:11.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;
+  background:var(--bg);color:var(--dim);cursor:pointer}
+.wk button:hover{border-color:var(--accent);color:var(--accent)}
+.wk button.on{background:var(--accent);color:var(--card);border-color:var(--accent)}
+.wk .done{font-size:11px;color:var(--faint);margin-left:auto}
+.bl{background:#c9a97e;color:transparent;border-radius:3px;cursor:pointer;
+  padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.bl:hover{background:#b89765}
+.bl.show{background:#f0e2cc;color:inherit}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bl{background:#7d6547}
+  :root:not([data-theme="light"]) .bl:hover{background:#96794f}
+  :root:not([data-theme="light"]) .bl.show{background:#4a3f1c;color:inherit}}
+.blind{color:var(--faint);font-size:14px;font-style:italic}
+#wkbar{margin:0 0 20px;padding:10px 13px;border:1px solid var(--line);border-radius:10px;
+  font-size:13px;color:var(--dim)}
+#wkbar b{color:var(--ink)}
+#wkbar .bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:7px 0 0}
+#wkbar .bar i{display:block;height:100%;background:var(--accent)}
 /* ---------- 朗读 ---------- */
 .s{cursor:pointer;border-radius:4px;transition:background .15s}
 .s:hover{background:rgba(122,92,46,.10)}
@@ -159,6 +180,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <a href="#t-ket">酮体</a> · <a href="#t-aa">尿素循环</a>（除三大以外的代谢）
 </p>
 
+<div id="wkbar"></div>
 <div id="toc"></div>
 
 <!-- ============ STRUCTURE ============ -->
@@ -809,7 +831,137 @@ by writing <b>twelve waters rather than six</b>.
 <div class="say"><p class="h">Say this</p><p class="en">The tissues do not all eat the same thing, and the differences are the point. The <b>liver is the switchboard</b>: after a meal it stores glycogen and makes fat; in starvation it releases glucose, runs <b>gluconeogenesis</b>, and makes <b>ketone bodies for everyone else</b> — <b>though it cannot use them itself</b>. The <b>brain normally burns only glucose</b> and takes about a fifth of the body’s oxygen; only after <b>prolonged starvation</b> does it switch partly to ketone bodies. <b>Red cells have no mitochondria</b>, so they depend entirely on glycolysis, and that is also why they depend on the <b>pentose phosphate pathway</b> for NADPH. <b>Muscle keeps its glycogen for itself</b>, because it lacks glucose-6-phosphatase, and in hard exercise it sends lactate to the liver through the <b>Cori cycle</b>.</p><p class="t">约 45 秒 · 这一段是串场题，四个器官各一句</p></div>
 </article>
 
+<article id="t-ptm">
+<h3>Post-translational modification</h3>
+<p class="zh">卡 13 · 06 · <b>基因只写了序列，功能是修饰出来的</b>（⚠ 这一节原来一页纸上没有）</p>
+<ol class="steps">
+<li><b class="t">什么时候跑 — 翻译当中和翻译之后</b><span class="d">
+一条刚合成的肽链<b>还不是成品</b>。折叠、切割、加基团之后才有功能。
+⚠ <b>一个基因因此能给出好几种不同的蛋白</b>。
+</span></li>
+<li><b class="t">信号肽 — 先决定这条蛋白去哪儿</b><span class="d">
+<b>N 端一段 15–30 个氨基酸，中间是一段疏水核心</b>，它就是<b>邮寄地址</b>。
+<b>SRP</b> 在翻译刚开头就认出它，<b>把核糖体暂停一下</b>，拖到 ER 膜上的<b>受体</b>那儿，
+新生肽链<b>一边合成一边穿过转运通道进 ER 腔</b>（<b>共翻译转运</b>），进去之后<b>信号肽酶把它切掉</b>。
+⚠ <b>没有信号肽的蛋白就留在胞质里</b> —— 有没有这一段，决定了这条蛋白的一生走哪条路。
+⚠ 你自己会用到：<b>想让蛋白分泌到周质或培养基，就在前面接一段信号肽</b>（pelB、OmpA 这些）。
+</span></li>
+<li><b class="t">N-糖基化 — 在 ER 开始，在 Golgi 完成</b><span class="d">
+⚠ <b>正因为蛋白是这样一边合成一边进 ER 的</b>，糖基转移酶才能<b>趁它还没折叠起来</b>就下手 ——
+<b>上一步和这一步是连着的，不是两件事</b>。
+⚠ <b>核心糖链是预先造好的</b>，挂在一个叫 <b>多萜醇（dolichol）</b>的<b>脂类载体</b>上等着。
+蛋白<b>正在进入 ER 的时候</b>（共翻译），这条现成的糖链认出序列
+<b>Asn-X-Ser/Thr</b>（⚠ <b>X 可以是任何氨基酸，但不能是脯氨酸</b>），
+整条<b>转移到天冬酰胺侧链的酰胺氮上</b>。
+⚠ <b>N 就是从 Asn 来的 —— 接在氮上。</b>之后在 Golgi 里被修剪和加工成最终形态。
+</span></li>
+<li><b class="t">O-糖基化 — 在 Golgi，规矩完全不同</b><span class="d">
+接在 <b>Ser 或 Thr 的羟基氧</b>上，<b>一个糖一个糖地加</b>，
+⚠ <b>没有共识序列，也不用脂载体</b> —— 跟 N-糖基化的三处差别正好成对比：
+<b>接在氮 vs 接在氧 · 整条转移 vs 逐个添加 · 有序列要求 vs 没有</b>。
+</span></li>
+<li><b class="t">磷酸化 — 最常见的开关</b><span class="d">
+加在 <b>Ser · Thr · Tyr</b> 的<b>羟基</b>上（⚠ 三个都有 −OH，这就是为什么是它们）。
+<b>激酶加上、磷酸酶拿掉</b>，<b>可逆</b>，所以适合当开关。
+⚠ 记那两个反向的例子：<b>糖原磷酸化酶磷酸化后开</b>，<b>PDH 磷酸化后关</b>。
+</span></li>
+<li><b class="t">其余几种，各有各的用处</b><span class="d">
+<b>乙酰化</b>（组蛋白，中和赖氨酸的正电，<b>染色质松开</b>）·
+<b>甲基化</b>（组蛋白和 DNA，调控）·
+<b>泛素化</b>（<b>降解的标签</b>，送去蛋白酶体）·
+<b>羟化</b>（胶原的脯氨酸和赖氨酸，⚠ <b>需要维生素 C</b>，缺了就是坏血病）·
+<b>γ-羧化</b>（凝血因子的谷氨酸，⚠ <b>需要维生素 K</b>）·
+<b>蛋白水解激活</b>（酶原切成活性酶，如胰蛋白酶原 → 胰蛋白酶，<b>不可逆</b>）。
+</span></li>
+<li><b class="t">为什么这跟你的实验有关</b><span class="d">
+⚠ <b>大肠杆菌不做糖基化</b>，也不太会做二硫键。
+所以要表达一个<b>需要糖基化才有功能</b>的真核蛋白，就得换宿主
+（酵母、昆虫细胞、哺乳动物细胞）。<b>这是选表达系统时第一个要问的问题。</b>
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+A newly made polypeptide is <b>not yet a finished protein</b>, and post-translational modification is
+<b>why one gene can give several different products</b>.
+<b>Where a protein is modified depends first on where it is sent</b>, and that is decided by a
+<b>signal peptide</b>: a short hydrophobic stretch at the N-terminus that is recognised by <b>SRP</b>
+as soon as it emerges, so the ribosome is brought to the ER membrane and the chain is threaded into the
+ER <b>as it is being made</b>. The signal peptide is then cut off.
+<b>And that is exactly why N-glycosylation can be co-translational.</b>
+<b>N-glycosylation begins in the ER and is completed in the Golgi.</b>
+The core sugar chain is <b>pre-assembled on a lipid carrier called dolichol</b>,
+and while the protein is <b>still entering the ER</b> that whole chain is transferred onto the
+<b>amide nitrogen of an asparagine</b>, at the sequence <b>Asn–X–Ser or Thr</b>,
+where <b>X can be anything except proline</b>.
+<b>O-glycosylation is different</b>: it happens in the Golgi, the sugars are added <b>one at a time</b>
+onto the <b>hydroxyl oxygen of serine or threonine</b>, and there is <b>no consensus sequence</b>.
+The most common regulatory modification is <b>phosphorylation</b>, on the hydroxyls of
+<b>serine, threonine and tyrosine</b>, and it is reversible, which is what makes it a switch.
+⚠ And practically: <b>E. coli does not glycosylate</b>, so a protein that needs its sugars
+has to be expressed in a eukaryotic host.
+</p><p class="t">约 55 秒 · 「预先造好挂在多萜醇上」和「X 不能是脯氨酸」是两个细节分</p></div>
+</article>
+
 <!-- ============ INFORMATION ============ -->
+<article id="t-shuttle">
+<h3>Shuttles &amp; inter-organ cycles</h3>
+<p class="zh">⚠ <b>散在各条路里、单独看都很小，但合起来只有七个</b> ——
+它们回答的是同一个问题：<b>膜挡住了这个分子，细胞怎么把它弄过去</b></p>
+<ol class="steps">
+<li><b class="t">总规矩 — 过不去就换个身份</b><span class="d">
+膜不让某个分子过，细胞的办法从来不是硬闯，而是<b>把它变成另一个能过的分子，到对面再变回来</b>。
+⚠ <b>七个穿梭全是这一招</b>，区别只在换成了什么、以及回程怎么走。
+</span></li>
+<li><b class="t">柠檬酸穿梭 — 把 acetyl-CoA 运出线粒体</b><span class="d">
+acetyl-CoA 过不了内膜 → 跟草酰乙酸缩合成<b>柠檬酸</b>坐转运体出来 →
+胞质里 ATP-citrate lyase 劈回来。
+⚠ <b>回程顺手造 NADPH</b>（草酰乙酸 → 苹果酸 → malic enzyme → 丙酮酸）。
+<b>给脂肪酸合成用的。</b>
+</span></li>
+<li><b class="t">肉碱穿梭 — 把长链脂酰基运进线粒体</b><span class="d">
+方向<b>正好反过来</b>。<b>CPT-1</b> 把酰基换到肉碱上 → translocase 换进去 → <b>CPT-2</b> 换回 CoA。
+⚠ <b>CPT-1 是 β-氧化的限速门，被丙二酰-CoA 关掉</b> ——
+<b>所以这两个穿梭是互锁的：一个开，另一个就关。</b>
+</span></li>
+<li><b class="t">苹果酸-天冬氨酸穿梭 — 把胞质的 NADH 运进去（肝、心）</b><span class="d">
+NADH 本身过不去 → 在胞质把草酰乙酸还原成<b>苹果酸</b>进去 → 在基质再氧化回去，
+<b>在里面交出一个 NADH</b>。⚠ <b>值 2.5 个 ATP。</b>
+</span></li>
+<li><b class="t">甘油磷酸穿梭 — 同样的事，但便宜一档（肌肉、脑）</b><span class="d">
+把氢交给 DHAP 变成甘油-3-磷酸，在膜上交给 <b>FAD</b> → 出来的是 <b>FADH₂</b>。
+⚠ <b>只值 1.5 个 ATP。</b>
+<span class="w">⚠ <b>这两条的差别，就是「一个葡萄糖 30 还是 32」的全部答案。</b></span>
+</span></li>
+<li><b class="t">Cori 循环 — 把乳酸从肌肉搬到肝（器官之间）</b><span class="d">
+肌肉缺氧产<b>乳酸</b> → 血 → <b>肝做糖异生变回葡萄糖</b> → 血 → 回肌肉。
+⚠ <b>这不是省能量，是转移负担</b>：<b>肝花 6 个 ATP 造出的葡萄糖，肌肉烧了只得 2 个</b>。
+<b>肌肉把账单寄给了肝。</b>
+</span></li>
+<li><b class="t">葡萄糖-丙氨酸循环 — 同一条路，顺便把氮也捎上</b><span class="d">
+肌肉里丙酮酸<b>接上一个氨基变成丙氨酸</b>再送去肝；
+肝把氨基摘下来进<b>尿素循环</b>，碳架去<b>糖异生</b>。
+⚠ <b>一趟车运两样东西</b>：Cori 循环只运碳，这一条<b>碳和氮一起运</b>。
+</span></li>
+<li><b class="t">尿素循环那一对进出 — 跨两个区室</b><span class="d">
+<b>瓜氨酸</b>要从线粒体出到胞质，<b>鸟氨酸</b>要从胞质回线粒体。
+⚠ <b>所以尿素循环「两步在线粒体、三步在胞质」不是随口一说，中间真有一对转运体在跑。</b>
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+Several pathways are split across a membrane, and the cell always solves that the same way:
+<b>it converts the molecule into something that can cross, and converts it back on the other side</b>.
+<b>Acetyl-CoA leaves the mitochondrion as citrate</b> for fatty acid synthesis,
+and the return leg also <b>generates NADPH</b>.
+<b>Fatty acyl groups go the other way on carnitine</b>, and
+<b>carnitine acyltransferase I is the rate-limiting step, inhibited by malonyl-CoA</b> —
+so the two shuttles are <b>interlocked</b>.
+<b>Cytosolic NADH cannot cross either</b>: the <b>malate–aspartate shuttle</b> delivers NADH and is worth <b>2.5 ATP</b>,
+while the <b>glycerol phosphate shuttle</b> delivers FADH₂ and is worth only <b>1.5</b>,
+<b>which is why a glucose is worth thirty or thirty-two depending on the tissue</b>.
+Between organs, the <b>Cori cycle</b> sends lactate from muscle to the liver and glucose back,
+and the <b>glucose–alanine cycle</b> does the same journey but <b>carries the amino nitrogen as well</b>.
+</p><p class="t">约 55 秒 · 「过不去就换个身份」是这一整节的那句总纲</p></div>
+</article>
+
 <h2>Central dogma</h2>
 
 <article id="t-rep">
@@ -1203,6 +1355,90 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
       h3.appendChild(b);
     })(arts[a2]);
   }
+
+  /* ================= 跟读跟背 =================
+     2026-09-28 她：「就这一页纸做一个小的跟读跟背系统，和主页面的一样」。
+     三步照演练台：① 看着念 → ② 关键词涂掉（点褐块露出来）→ ③ 全遮。
+     ⚠ 涂哪些：**作者加粗的那些**（<b> 里的），跟演练台同一条规矩 —— 加粗的本来就是要点。
+     ⚠ 进度只记在本地，而且**跟演练台是两本账**：这一页是「学会」，演练台才是「出声」。 */
+  var WKEY = 'oralexam.bones.v1';
+  function wkLoad(){ try{ return JSON.parse(localStorage.getItem(WKEY)) || {}; }catch(e){ return {}; } }
+  function wkSave(o){ try{ localStorage.setItem(WKEY, JSON.stringify(o)); }catch(e){} }
+
+  var SAYS = document.querySelectorAll('.say');
+  var ORIG = [];
+
+  function cloze(html){
+    /* 把 <b>…</b> 里的内容换成褐块，点一下露出来 */
+    return html.replace(/<b>([\s\S]*?)<\/b>/g, function(m, inner){
+      var plain = inner.replace(/<[^>]+>/g, '');
+      if (!plain.trim()) return m;
+      return '<span class="bl" onclick="this.className=\'bl show\'">' + inner + '</span>';
+    });
+  }
+
+  function setMode(i, mode, btnRow){
+    var box = SAYS[i].querySelector('.en');
+    if (mode === 'read') box.innerHTML = ORIG[i];
+    else if (mode === 'cloze') box.innerHTML = cloze(ORIG[i]);
+    else box.innerHTML = '<span class="blind">（全遮上了 —— 合上眼说一遍。想偷看就点「① 看着念」。）</span>';
+    var bs = btnRow.querySelectorAll('button[data-m]');
+    for (var k = 0; k < bs.length; k++) bs[k].className = (bs[k].getAttribute('data-m') === mode) ? 'on' : '';
+    /* 重新切句，朗读还要用 */
+    if (window.eqSweep) window.eqSweep(box);
+  }
+
+  function paintBar(){
+    var st = wkLoad(), n = 0;
+    for (var i = 0; i < SAYS.length; i++) if (st[SAYS[i].getAttribute('data-id')]) n++;
+    var pc = SAYS.length ? Math.round(100 * n / SAYS.length) : 0;
+    document.getElementById('wkbar').innerHTML =
+      '跟读跟背 · 走过 <b>' + n + ' / ' + SAYS.length + '</b> 段（' + pc + '%）'
+      + ' · <span style="font-size:11.5px">这一页只管「学会」，出声的次数以演练台为准</span>'
+      + '<div class="bar"><i style="width:' + pc + '%"></i></div>';
+  }
+
+  for (var i = 0; i < SAYS.length; i++){
+    (function(i){
+      var art = SAYS[i].closest ? SAYS[i].closest('article') : null;
+      var id = (art && art.id) || ('s' + i);
+      SAYS[i].setAttribute('data-id', id);
+      ORIG[i] = SAYS[i].querySelector('.en').innerHTML;
+      var row = document.createElement('div');
+      row.className = 'wk';
+      row.innerHTML = '<button data-m="read" class="on">① 看着念</button>'
+        + '<button data-m="cloze">② 涂掉关键词</button>'
+        + '<button data-m="blind">③ 全遮</button>'
+        + '<button data-m="say">🔊 念给我听</button>'
+        + '<span class="done"></span>';
+      SAYS[i].appendChild(row);
+      var bs = row.querySelectorAll('button');
+      for (var k = 0; k < bs.length; k++){
+        (function(b){
+          b.onclick = function(){
+            var m = b.getAttribute('data-m');
+            if (m === 'say'){
+              var txt = SAYS[i].querySelector('.en').textContent;
+              RUN = false; setBtn(); speak(txt, function(){});
+              return;
+            }
+            setMode(i, m, row);
+            if (m === 'blind'){
+              var st = wkLoad();
+              st[id] = (st[id] || 0) + 1;
+              wkSave(st);
+              paintBar();
+              row.querySelector('.done').textContent = '走过 ' + st[id] + ' 遍';
+            }
+          };
+        })(bs[k]);
+      }
+      var st0 = wkLoad();
+      if (st0[id]) row.querySelector('.done').textContent = '走过 ' + st0[id] + ' 遍';
+    })(i);
+  }
+  paintBar();
+  window.bonesWalked = function(){ var s = wkLoad(), n = 0; for (var k in s) n++; return n; };
 
   /* smoke 用：真的调一次朗读，但不进循环 */
   window.bonesSay = speak;
