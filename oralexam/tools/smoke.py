@@ -45,7 +45,9 @@ PROBE = {
  'bones.html': [
    ("一页纸 章节",  "if(document.querySelectorAll('article[id]').length < 20) throw new Error('章节太少');"),
    ("一页纸 目录",  "if(document.querySelectorAll('#toc a').length < 20) throw new Error('目录没生成');"),
-   ("一页纸 三块",  "if(document.querySelectorAll('.row.must').length < 14) throw new Error('MUST SAY 块太少');"),
+   # ⚠ 不再数固定的块数 —— 每改一批结构就得改一次阀值，那不是检查。
+   # 改成查**每一条都不能是空的**：要么有三格，要么有编号步骤。
+   ("一页纸 没空条","var bad=[];document.querySelectorAll('article[id]').forEach(function(a){if(!a.querySelector('.row.must')&&!a.querySelector('ol.steps'))bad.push(a.id);});if(bad.length) throw new Error('空条目: '+bad.join(','));"),
    # ⚠ 2026-09-27 过程类改成「编号步骤 ＋ 要背的那一段」，这两样得单独数
    ("一页纸 步骤",  "if(document.querySelectorAll('ol.steps li').length < 20) throw new Error('步骤太少');"),
    ("一页纸 要背的","if(document.querySelectorAll('.say .en').length < 6) throw new Error('Say this 太少');"),
