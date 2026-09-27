@@ -91,6 +91,20 @@ article>.zh b{color:var(--ink);font-weight:580}
 .w{color:var(--hot);font-weight:620}
 code{font-size:14px}
 
+/* ---------- 步骤 ＋ 要背的那一段 ---------- */
+ol.steps{margin:2px 0 14px;padding-left:0;list-style:none;counter-reset:st}
+ol.steps li{position:relative;padding:0 0 11px 34px;counter-increment:st}
+ol.steps li::before{content:counter(st);position:absolute;left:0;top:1px;
+  width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--card);
+  font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+ol.steps li b.t{display:block;font-size:15.5px;font-weight:620;margin:0 0 1px}
+ol.steps li .d{font-size:13px;color:var(--dim);line-height:1.65}
+ol.steps li .d b{color:var(--ink);font-weight:580}
+.say{border:1px solid var(--accent);border-radius:10px;padding:12px 14px;margin:14px 0 0}
+.say>.h{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
+  color:var(--accent);margin:0 0 6px}
+.say .en{font-size:16px}
+.say .t{font-size:11.5px;color:var(--faint);margin:8px 0 0}
 /* ---------- 朗读 ---------- */
 .s{cursor:pointer;border-radius:4px;transition:background .15s}
 .s:hover{background:rgba(122,92,46,.10)}
@@ -258,18 +272,9 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 
 <article id="t-ppp">
 <h3>Pentose phosphate pathway</h3>
-<p class="zh">⚠ 你说没碰过的那一批，从这里开始</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">Two products, and that is the whole point of the pathway: <b>NADPH</b>, for antioxidant defence and reductive synthesis, and <b>ribose-5-phosphate</b>, for nucleotides. It runs in the <b>cytosol</b> and the control enzyme is <b>glucose-6-phosphate dehydrogenase</b>.</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en"><b>2 NADPH · 1 CO₂ · 0 ATP.</b> It neither makes nor spends ATP.</p>
-<p class="zh2"><span class="w">「0 ATP」是最爱考的一个数。</span>⚠ 它的调控信号<b>不是 ATP，是 NADP⁺ 够不够</b>。</p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en"><b>G6PD deficiency</b>, also called favism. The red cell cannot make enough NADPH to keep glutathione reduced, so an oxidative stress causes <b>haemolysis</b>.</p>
-<p class="zh2">名字知道就够，不用展开。</p>
-</div></div>
+<p class="zh">⚠ 她说没碰过的那一批 · 两段，第一段不可逆、第二段可逆</p>
+<ol class="steps"><li><b class="t">氧化段 — 两次脱氢，掉一个碳（不可逆）</b><span class="d"><code class="eq">glucose-6-P →[G6PD|NADPH ①] 6-phosphogluconolactone →[lactonase|＋H₂O] 6-phosphogluconate →[6PGDH|NADPH ② · −CO₂] ribulose-5-P</code><b>G6PD 是限速酶</b>。⚠ 它的信号<b>不是 ATP，是 NADP⁺ 够不够</b>——这条最容易答错。</span></li><li><b class="t">非氧化段 — 把糖架重排（可逆）</b><span class="d">核酮糖-5-磷酸可以异构成<b>核糖-5-磷酸</b>（给核酸），也可以经<b>转酮酶（搬 2 碳）</b>和<b>转醛酶（搬 3 碳）</b>重排回<b>果糖-6-磷酸和甘油醛-3-磷酸</b>，接回糖酵解。⚠ <b>这一段是可逆的</b>，所以细胞可以按需要决定要核糖还是要 NADPH。</span></li></ol>
+<div class="say"><p class="h">Say this</p><p class="en">The pentose phosphate pathway runs in the <b>cytosol</b> and has <b>two parts</b>. The <b>oxidative part is irreversible</b>: two dehydrogenations and one decarboxylation give <b>two NADPH, one CO₂ and ribulose-5-phosphate</b>. The control enzyme is <b>glucose-6-phosphate dehydrogenase</b>, and what controls it is <b>the supply of NADP-plus, not ATP</b>. The <b>non-oxidative part is reversible</b>: transketolase moves two carbons and transaldolase moves three, so the sugars can be rearranged back into <b>fructose-6-phosphate and glyceraldehyde-3-phosphate</b>. The whole pathway <b>neither makes nor spends ATP</b>. Its two products are <b>NADPH</b>, for reductive synthesis and antioxidant defence, and <b>ribose-5-phosphate</b>, for nucleotides.</p><p class="t">约 40 秒 · 「0 ATP」和「看 NADP⁺ 不看 ATP」是两个必说</p></div>
 </article>
 
 <article id="t-pdh">
@@ -338,18 +343,9 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 
 <article id="t-fas">
 <h3>Fatty acid synthesis</h3>
-<p class="zh"><b class="w">⚠ 2026-09-27 她点名：这一条模糊</b>（β-氧化背过很多次，合成没有）</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">In the <b>cytosol</b>, and it is <b>not beta-oxidation run backwards</b>. The textbook gives three differences: the <b>compartment</b>, the carrier is <b>ACP</b> instead of CoA, and the reductant is <b>NADPH</b> instead of NAD⁺ and FAD. The chain is built <b>two carbons at a time</b>, and those two carbons are always delivered as <b>malonyl-CoA</b>, never as acetyl-CoA directly.</p>
-<p class="zh2"><b>一句话记住整条路</b>：碳从丙二酰-CoA 来，还原力从 NADPH 来，架子是 ACP。</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en">The committed step is <b>acetyl-CoA carboxylase</b>: it spends <b>1 ATP</b>, needs <b>biotin</b>, and turns acetyl-CoA into <b>malonyl-CoA</b>. Each round of elongation uses <b>2 NADPH</b>. The normal product is <b>palmitate, 16 carbons</b> — longer chains and double bonds are added afterwards, in the <b>ER</b>.</p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en">Acetyl-CoA is made <b>inside</b> the mitochondrion but needed <b>outside</b>, and it cannot cross. It comes out disguised as <b>citrate</b> — the <b>citrate shuttle</b>. So <b>citrate activates acetyl-CoA carboxylase</b> and at the same time <b>inhibits PFK-1</b>: one molecule saying "there is plenty of carbon, stop burning sugar and start storing".</p>
-<p class="zh2">⚠ 反过来也成立：<b>丙二酰-CoA 关掉 CPT-1</b>，合成一开，氧化的门就锁上。<b>这一对是互控最干净的例子。</b></p>
-</div></div>
+<p class="zh"><b class="w">⚠ 她点名模糊的那一条</b> · 四步，第一步就是把碳运出线粒体</p>
+<ol class="steps"><li><b class="t">Citrate shuttle — 把碳运出线粒体</b><span class="d">acetyl-CoA 在线粒体里，合成在胞质，<b>它过不了内膜</b>。于是跟草酰乙酸缩合成<b>柠檬酸</b>坐转运体出来，胞质里 <b>ATP-citrate lyase</b> 花一个 ATP 再把它劈回 acetyl-CoA。⚠ 草酰乙酸回程走「苹果酸 → malic enzyme → 丙酮酸」，<b>顺手造出一部分 NADPH</b>，其余的从磷酸戊糖途径来。</span></li><li><b class="t">Acetyl-CoA carboxylation — 承诺步骤</b><span class="d"><code class="eq">acetyl-CoA ＋ HCO₃⁻ ＋ ATP →[acetyl-CoA carboxylase|biotin] malonyl-CoA</code><b>限速步，调控全压在这个酶上</b>：柠檬酸开它 · 棕榈酰-CoA 关它 · AMPK 磷酸化关它 · 胰岛素开它。⚠ 而且 <b>malonyl-CoA 反手关掉 CPT-1</b>——合成一开，氧化的门就锁上。</span></li><li><b class="t">Fatty acid synthase complex — 真正长链子的地方</b><span class="d">动物的 FAS 是<b>一条多功能肽链</b>，摆臂是 <b>ACP</b>（那条臂来自泛酸）。每轮四步：<b>缩合（同时放掉一个 CO₂）→ 还原（NADPH）→ 脱水 → 再还原（NADPH）</b>，链子长两个碳。⚠ <b>必考的怪事</b>：第 2 步加上的 CO₂ 在这里又放掉了，根本没进产物——<b>它是用来买反应的</b>，脱羧释放的能量推着缩合往前走，换来这一步不可逆。</span></li><li><b class="t">后加工 — 加长和加双键</b><span class="d">FAS 只做到 <b>C16 棕榈酸</b>，转七轮之后硫酯酶把它切下来。更长的链和双键都在<b>内质网</b>另外加。⚠ 人做不出 C9 以后的双键，所以<b>亚油酸和亚麻酸是必需脂肪酸</b>。</span></li></ol>
+<div class="say"><p class="h">Say this</p><p class="en">Fatty acid synthesis happens in <b>four stages</b>. <b>First, the carbon has to leave the mitochondrion.</b> Acetyl-CoA cannot cross the inner membrane, so it comes out as <b>citrate</b>, and ATP-citrate lyase splits it back in the cytosol. The oxaloacetate returns as pyruvate, and that return trip <b>makes some of the NADPH</b>. <b>Second is the committed step</b>: acetyl-CoA carboxylase uses <b>biotin and one ATP</b> to make <b>malonyl-CoA</b>. <b>Third is the fatty acid synthase complex.</b> Each round is condensation, reduction, dehydration, reduction, it spends <b>two NADPH</b>, and the chain grows by two carbons. Seven rounds give <b>palmitate</b>. <b>Fourth, anything longer or unsaturated is added afterwards in the ER.</b> Overall: <b>eight acetyl-CoA, seven ATP and fourteen NADPH per palmitate</b>.</p><p class="t">约 45 秒 · 总账 8 / 7 / 14 一定要说出来</p></div>
 </article>
 
 <article id="t-tag">
@@ -403,6 +399,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="en"><b>Water-soluble ones are coenzyme parts; the fat-soluble ones, A D E K, are not.</b> They act as a light receptor, a hormone, an antioxidant and a clotting cofactor. Deficiencies worth the name only: <b>thiamine → beriberi</b>, <b>niacin → pellagra</b>, <b>vitamin C → scurvy</b> (collagen cannot be hydroxylated), <b>vitamin D → rickets</b>, <b>vitamin K → bleeding</b>.</p>
 <p class="zh2">⚠ <b>A D E K 脂溶性，其余水溶性</b> —— 这个分界本身就是一道题。</p>
 </div></div>
+<div class="say"><p class="h">Say this</p><p class="en">A water-soluble vitamin is <b>the part of a coenzyme that the body cannot make</b>, so each one is worth remembering as a pair: <b>which coenzyme it becomes, and what that coenzyme carries</b>. Thiamine becomes <b>TPP</b>, which carries an <b>aldehyde</b>. Riboflavin becomes <b>FAD</b>, which carries <b>hydrogen</b>. Niacin becomes <b>NAD-plus</b>, and the split matters — <b>NADH goes to the respiratory chain, NADPH goes to biosynthesis</b>. Pantothenate becomes <b>coenzyme A</b>, carrying <b>acyl groups</b>. Pyridoxine becomes <b>PLP</b>, carrying <b>amino groups</b>. <b>Biotin carries CO₂</b>, folate carries <b>one-carbon units</b>, and B12 carries <b>methyl groups</b>. The fat-soluble ones, <b>A, D, E and K</b>, are not coenzyme parts, and because they are stored rather than excreted, <b>A and D can be toxic in excess</b>.</p><p class="t">约 45 秒 · 「辅酶里身体造不出来的那一截」是开口第一句</p></div>
 </article>
 
 <article id="t-carrier">
@@ -422,64 +419,30 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 
 <article id="t-ket">
 <h3>Ketone bodies</h3>
-<p class="zh">⚠ 没碰过的一条</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en"><b>Made in the liver, used outside it.</b> They are made when acetyl-CoA is produced faster than the citric acid cycle can take it — in starvation and in diabetes.</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en">Three of them: <b>acetoacetate, β-hydroxybutyrate and acetone</b>. Only the first two are fuel — <b>acetone is waste</b>, breathed out.</p>
-<p class="zh2">生成的限速酶是 <b>HMG-CoA synthase</b>（肝线粒体）。</p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en"><b>The liver cannot use ketone bodies itself, because it lacks thiophorase.</b> That one sentence explains why it makes them and sends them all away.</p>
-<p class="zh2">⚠ 这是这道题最值钱的一句。</p>
-</div></div>
+<p class="zh">⚠ 没碰过的一条 · 肝内生成、肝外利用</p>
+<ol class="steps"><li><b class="t">什么时候造 — acetyl-CoA 多到循环吃不下</b><span class="d">饥饿或糖尿病时脂肪大量分解，<b>草酰乙酸又被抽去做糖异生</b>，于是 acetyl-CoA <b>进不了柠檬酸循环</b>，只能改道。</span></li><li><b class="t">生成（肝线粒体）</b><span class="d"><code class="eq">2 acetyl-CoA →[thiolase] acetoacetyl-CoA →[HMG-CoA synthase|限速] HMG-CoA →[HMG-CoA lyase] acetoacetate</code>乙酰乙酸再被还原成 <b>β-羟丁酸</b>（血里最多的那个），或者<b>自发脱羧</b>成<b>丙酮</b>。⚠ <b>丙酮是废气不是燃料</b>，从呼吸里出去。</span></li><li><b class="t">利用（肝外）</b><span class="d"><code class="eq">β-hydroxybutyrate →[BDH|NAD⁺] acetoacetate →[thiophorase (SCOT)|借 succinyl-CoA 的 CoA] acetoacetyl-CoA →[thiolase] 2 acetyl-CoA</code>⚠ <b>肝自己用不了，因为肝没有 thiophorase</b>——<b>这一句解释了为什么肝造了却全送走</b>。</span></li><li><b class="t">谁在吃</b><span class="d"><b>心和肌肉</b>平时就吃；<b>脑</b>正常只吃葡萄糖，<b>长期饥饿才改用酮体</b>。⚠ <b>红细胞永远不能用</b>——没有线粒体。</span></li></ol>
+<div class="say"><p class="h">Say this</p><p class="en">Ketone bodies are <b>made in the liver and used outside it</b>. They are made when acetyl-CoA is produced faster than the citric acid cycle can take it, in <b>starvation and in diabetes</b>. There are <b>three</b>: acetoacetate, β-hydroxybutyrate and acetone, but <b>only the first two are fuel</b> — acetone is waste and is breathed out. The committed enzyme is <b>HMG-CoA synthase</b>, in the liver mitochondrion. The tissues that use them convert them back to acetyl-CoA with <b>thiophorase</b>, and <b>the liver cannot use them itself precisely because it lacks that enzyme</b>. The heart and muscle use them routinely; the <b>brain only after prolonged starvation</b>, and <b>red cells never</b>, because they have no mitochondria.</p><p class="t">约 40 秒 · 「肝没有 thiophorase」是这题最值钱的一句</p></div>
 </article>
 
 <article id="t-gng">
 <h3>Gluconeogenesis</h3>
-<p class="zh">⚠ 没碰过的一条</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">Making glucose from non-sugar precursors — lactate, glycerol, glucogenic amino acids — mainly in the <b>liver and kidney</b>. Seven steps are shared with glycolysis, and <b>four enzymes bypass the three irreversible ones</b>: <b>pyruvate carboxylase, PEP carboxykinase, fructose-1,6-bisphosphatase, glucose-6-phosphatase</b>.</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en">One glucose costs <b>4 ATP, 2 GTP and 2 NADH</b>.</p>
-<p class="zh2">花的钱买的是<b>方向</b>。</p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en"><b>Acetyl-CoA activates pyruvate carboxylase</b> and at the same time <b>inhibits pyruvate dehydrogenase</b> — one molecule saying "there is fat to burn, stop burning sugar and start making it".</p>
-</div></div>
+<p class="zh">⚠ 没碰过的一条 · 七步共用，四个酶绕过三道坎</p>
+<ol class="steps"><li><b class="t">第一道坎 — 丙酮酸 → PEP，要两个酶两步走</b><span class="d"><code class="eq">pyruvate →[pyruvate carboxylase|biotin · ATP · 线粒体] oxaloacetate →[PEP carboxykinase|GTP · −CO₂] PEP</code>⚠ <b>先加一个 CO₂ 再把它拿掉</b>，跟脂肪酸合成那一步是同一个把戏：<b>花钱买不可逆</b>。而且 <b>acetyl-CoA 开启 pyruvate carboxylase</b>——脂肪够烧了就去造糖。</span></li><li><b class="t">中间七步 — 直接借糖酵解的酶倒着跑</b><span class="d">这七步本来就近平衡，<b>浓度一变方向就反</b>，不需要另外的酶。</span></li><li><b class="t">第二道坎 — 果糖-1,6-二磷酸酶</b><span class="d"><code class="eq">fructose-1,6-bisP →[fructose-1,6-bisphosphatase|水解，不是逆激酶] fructose-6-P</code>⚠ <b>被果糖-2,6-二磷酸关掉</b>，而同一个分子<b>开启 PFK-1</b>——一个分子管住正反两条路。</span></li><li><b class="t">第三道坎 — 葡萄糖-6-磷酸酶</b><span class="d"><code class="eq">glucose-6-P →[glucose-6-phosphatase|肝 · 肾] glucose</code>⚠ <b>只有肝和肾有这个酶</b>，所以只有它们能把葡萄糖放进血里。<b>肌肉没有。</b></span></li></ol>
+<div class="say"><p class="h">Say this</p><p class="en">Gluconeogenesis makes glucose from <b>lactate, glycerol and glucogenic amino acids</b>, mainly in the <b>liver and kidney</b>. Seven of the steps are simply glycolysis running backwards, because those steps are near equilibrium. <b>Three steps are irreversible and need four different enzymes.</b> Pyruvate is carboxylated to <b>oxaloacetate</b> by pyruvate carboxylase, using biotin and ATP, and then <b>PEP carboxykinase</b> spends GTP to make phosphoenolpyruvate. <b>Fructose-1,6-bisphosphatase</b> and <b>glucose-6-phosphatase</b> then hydrolyse the two phosphates off. The cost is <b>four ATP, two GTP and two NADH</b> per glucose, and what that cost buys is <b>direction</b>.</p><p class="t">约 40 秒 · 四个酶的名字 ＋ 4/2/2 这个代价</p></div>
 </article>
 
 <article id="t-glyco">
 <h3>Glycogen</h3>
-<p class="zh">⚠ 没碰过的一条</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">Synthesis needs the glucose <b>activated as UDP-glucose</b> first, then <b>glycogen synthase</b> makes α-1,4 bonds and a <b>branching enzyme</b> makes α-1,6. Breakdown inside the cell is <b>not hydrolysis but phosphorolysis</b>, by <b>glycogen phosphorylase</b>. In the gut it <b>is</b> hydrolysis, by amylases.</p>
-<p class="zh2">⚠ 「两种拆法」这个二分是考点。</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en">One cascade, two opposite results: <b>phosphorylation activates the phosphorylase and inactivates the synthase</b>.</p>
-<p class="zh2">这就是<b>对向通路互控</b>，避免无效循环（futile cycle）。</p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en"><b>Muscle has no glucose-6-phosphatase</b>, so muscle glycogen can never raise blood glucose — it is only for the muscle itself.</p>
-</div></div>
+<p class="zh">⚠ 没碰过的一条 · 合成和分解各四步，共用一套开关</p>
+<ol class="steps"><li><b class="t">合成 — 先活化，再接上去</b><span class="d"><code class="eq">glucose-6-P →[phosphoglucomutase] glucose-1-P →[UDP-glucose pyrophosphorylase|＋UTP] UDP-glucose →[glycogen synthase|α-1,4] glycogen</code>⚠ <b>葡萄糖不能直接接上去，必须先做成 UDP-葡萄糖</b>。分支由<b>分支酶</b>做成 α-1,6。</span></li><li><b class="t">分解 — 细胞内是磷酸解，不是水解</b><span class="d"><code class="eq">glycogen →[glycogen phosphorylase|＋Pᵢ · α-1,4] glucose-1-P →[phosphoglucomutase] glucose-6-P</code>⚠ <b>用磷酸而不是水去切，所以出来的是磷酸糖，省掉一次激酶</b>。分支点由<b>脱支酶</b>处理，那里放出的是<b>游离葡萄糖</b>。⚠ <b>消化道里才是水解</b>（淀粉酶），这个二分是考点。</span></li><li><b class="t">出口 — 只有肝能放糖进血</b><span class="d"><code class="eq">glucose-6-P →[glucose-6-phosphatase|只有肝和肾] glucose</code>⚠ <b>肌肉没有这个酶</b>，所以肌糖原只给肌肉自己用。</span></li><li><b class="t">调控 — 一套级联，两个相反的结果</b><span class="d"><b>磷酸化之后：磷酸化酶开（b→a），合成酶关（a→b）。</b>所以肾上腺素和胰高血糖素一来，拆的开、造的关，<b>绝不会同时跑</b>——这就是避免<b>无效循环</b>。</span></li></ol>
+<div class="say"><p class="h">Say this</p><p class="en">Glycogen synthesis needs the glucose <b>activated first, as UDP-glucose</b>. Then <b>glycogen synthase</b> makes the α-1,4 chain and a <b>branching enzyme</b> makes the α-1,6 branches. Breakdown inside the cell is <b>not hydrolysis but phosphorolysis</b>: <b>glycogen phosphorylase</b> uses inorganic phosphate, so the product is already <b>glucose-1-phosphate</b>. In the digestive tract it <b>is</b> hydrolysis, by amylases. Only the <b>liver and kidney</b> have glucose-6-phosphatase, so <b>muscle glycogen can never raise blood glucose</b>. And the two directions share one cascade: <b>phosphorylation activates the phosphorylase and inactivates the synthase</b>, so the cell never runs both at once.</p><p class="t">约 40 秒 · 磷酸解 vs 水解、肌肉没有磷酸酶，两句必说</p></div>
 </article>
 
 <article id="t-aa">
 <h3>Amino acid breakdown &amp; the urea cycle</h3>
-<p class="zh">⚠ 没碰过的一条</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">Nitrogen is removed by <b>transamination coupled to glutamate dehydrogenase</b>. The transaminases depend on <b>pyridoxal phosphate</b>, vitamin B6. Urea is then made <b>in the liver</b>, with the <b>first two steps in the mitochondrion and the last three in the cytosol</b>.</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en"><b>Four ATP per urea.</b> The summary equation writes three, because one of them is broken all the way to AMP.</p>
-<p class="zh2"><b>主动说破这一点是加分</b>——两个数说的是同一件事。</p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en">The <b>two nitrogens come from different places</b>: one from free ammonia, one from <b>aspartate</b>. The control enzyme <b>CPS I is switched on by N-acetylglutamate</b> — it only starts when amino acids are actually being broken down.</p>
-</div></div>
+<p class="zh">⚠ 没碰过的一条 · 氮和碳分开处理</p>
+<ol class="steps"><li><b class="t">摘氨基 — 转氨，再集中脱氨</b><span class="d">各种氨基酸把氨基交给 α-酮戊二酸，变成<b>谷氨酸</b>（转氨酶，辅酶 <b>PLP</b>，来自 B6）；谷氨酸再由<b>谷氨酸脱氢酶</b>放出游离氨。<b>这两步合起来叫联合脱氨。</b></span></li><li><b class="t">把氨运到肝 — 两条运输线</b><span class="d"><b>肌肉走丙氨酸-葡萄糖循环</b>，<b>脑和其他组织走谷氨酰胺</b>。⚠ <b>游离氨有毒，绝不在血里裸奔。</b></span></li><li><b class="t">尿素循环 — 两步在线粒体，三步在胞质</b><span class="d"><code class="eq">NH₄⁺ ＋ HCO₃⁻ →[CPS I|2 ATP · 限速] carbamoyl phosphate →[ornithine transcarbamoylase] citrulline</code><code class="eq">citrulline →[argininosuccinate synthetase|＋aspartate · ATP→AMP] argininosuccinate →[argininosuccinate lyase|−fumarate] arginine →[arginase] urea ＋ ornithine</code>⚠ <b>两个氮来路不同</b>：一个是游离氨，一个由<b>天冬氨酸</b>带进来。<b>CPS I 要 N-乙酰谷氨酸才开工</b>——有活干才开机。</span></li><li><b class="t">碳骨架去哪</b><span class="d">剩下的碳架按去向分两类：<b>生糖</b>的进丙酮酸或柠檬酸循环的中间物，<b>生酮</b>的变 acetyl-CoA。⚠ <b>纯生酮只有两个：Leu 和 Lys。</b></span></li></ol>
+<div class="say"><p class="h">Say this</p><p class="en">Amino acid breakdown separates the <b>nitrogen</b> from the <b>carbon skeleton</b>. The nitrogen is collected by <b>transamination onto glutamate</b> — the transaminases all need <b>pyridoxal phosphate</b>, vitamin B6 — and then released as free ammonia by <b>glutamate dehydrogenase</b>. Because ammonia is toxic it travels to the liver as <b>alanine from muscle</b> or as <b>glutamine</b> from other tissues. In the liver the <b>urea cycle</b> runs with its <b>first two steps in the mitochondrion and the last three in the cytosol</b>. The control enzyme is <b>carbamoyl phosphate synthetase I</b>, switched on by <b>N-acetylglutamate</b>. The <b>two nitrogens of urea come from different places</b>: one from free ammonia, one from <b>aspartate</b>. It costs <b>four ATP per urea</b>, although the summary equation writes three, because one ATP is broken all the way to AMP.</p><p class="t">约 50 秒 · 两个氮的来路 ＋ 4 对 3 那个说破</p></div>
 </article>
 
 <article id="t-ps">
