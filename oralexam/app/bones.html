@@ -1,384 +1,591 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>一页纸 · 考点骨架</title>
+<title>One Page · 考点骨架</title>
 <!--
-  🦴 一页纸 —— 2026-09-27 Ruojin 要的。
+  🦴 一页纸 —— 2026-09-27 Ruojin 要的，第二版。
 
-  她的话：「我希望你把他们总结到一个分支里，就是**直接点开就是这些东西**。
-  我感觉这些东西真的很基础。学起来也不费劲……因为**现在题太多了**……
-  **我不成体系** 所以我现在需要**很多总结性的结构性的学习材料穿起来用**
-  但**基本都是我们有的内容不是吗**」
-  然后：「这些好像也不是什么很多内容吧」「**其实中文贴上去也就一页纸**」
+  第一版她两句话否了：「**排版太丑了。。。。。**」「**然后就是英文为主 中文为辅**」。
+  第一版错在两处，记下来免得再犯：
+  ① 中文打底、英文点缀 —— 方向反了。**她是纯英文口试**，要出口的是英文，
+     中文只该做「看懂结构」的垫脚石。
+  ② 版式上每一块都是灰底方框、六个小标签挤成一行，**什么都一样重，等于什么都不重**。
 
-  ⚠ 所以这一页的定位，写死在这里免得以后有人改歪：
-  · 它**不是新材料**。她贴的 Lehninger 版考纲我逐条对过卡：56 项里 50 项卡上本来就有（93%）。
-    这一页是**把已有的东西按「考点」这个轴排一遍**，是视图，不是内容。
-  · 它**是中文的**，而卡是英文的 —— 这不矛盾：**中文负责让她看懂结构，英文负责她开口说**。
-    所以每一段里**该说出口的词用英文原样给**，其余用中文串。
-  · 它**不记进度、不打分、不出题**。这是一张摊开来看的纸，不是练习。
+  这一版的规矩：
+  · **每个主题只有三块**：MUST SAY / NUMBERS / HOOK ——
+    她指定的格式（「核心产物（必考）· 数字陷阱 · 临床应用」），
+    她的原话：「**甚至不用什么太多解释。只是知道这个概念和这个病。**」
+  · **英文是正文**（17px，能直接念出口）；**中文是注脚**（13px，灰，只解释结构）。
+  · 版式靠**留白和字号**分层，不靠框。全页只有一个强调色。
+  · ⚠ **不记进度、不打分。** 这是摊开来看的一页纸，不是练习。
 
-  ⚠ 跟已有两页的分工：
-  · `map.html` 地图 —— 按**房间**排（线粒体里发生什么）
-  · `index.html` 卡片 —— 按**题**排（一道题一张卡）
-  · 这一页 —— 按**考点**排（这个主题必须说出哪几件事）
-    三个轴，同一批内容。
+  ⚠ 背景（决定了这一版的取舍）：2026-09-27 她说
+  「我现在**除了三大：糖酵解 TCA 电子传递链，其他所有代谢降解合成几乎都没碰**」——
+  离考试 8 天。所以**没碰过的那些路写得最全**，三大反而从简。
+
+  ⚠ 临床那一行**全部是 general**，她的捷克教材不是医学教材，多半不问；
+  放进来只因为成本极低、万一问到就是白拿。
 -->
 <style>
 :root{
-  --bg:#faf8f4; --ink:#1c1a17; --dim:#6b645c; --line:#e3ddd3;
-  --card:#fff; --accent:#8a5a2b; --good:#2f6b3f; --bad:#a33; --warn:#8a6d1f;
+  --bg:#fbfaf7; --ink:#1a1815; --dim:#756f66; --faint:#a39c92;
+  --line:#e6e1d8; --card:#fff; --accent:#8a5a2b; --hot:#a33;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#16140f; --ink:#ece7dd; --dim:#9a9187; --line:#2e2a22;
-    --card:#1e1b15; --accent:#d9a066; --good:#7fc08e; --bad:#e58b83; --warn:#d8bb63;
+    --bg:#15130f; --ink:#ece7dd; --dim:#9a9187; --faint:#6f685f;
+    --line:#2b2721; --card:#1c1915; --accent:#d9a066; --hot:#e58b83;
   }
 }
 *{box-sizing:border-box}
-body{margin:0;padding:18px 16px 80px;background:var(--bg);color:var(--ink);
-  font:15.5px/1.75 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-  max-width:860px;margin-inline:auto;-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;padding:26px 20px 90px;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,"SF Pro Text",system-ui,"Segoe UI",sans-serif;
+  max-width:720px;margin-inline:auto}
 a{color:var(--accent)}
-h1{font-size:23px;margin:0 0 4px}
-.lead{font-size:13px;color:var(--dim);margin:0 0 6px}
-.top{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 22px}
-.top a{display:inline-block;font-size:13px;padding:7px 13px;border:1px solid var(--line);
-  border-radius:9px;background:var(--card);text-decoration:none;color:var(--ink)}
-h2{font-size:13px;letter-spacing:.06em;color:var(--dim);font-weight:700;
-  margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
-section{background:var(--card);border:1px solid var(--line);border-radius:12px;
-  padding:13px 15px;margin:0 0 12px}
-section>h3{font-size:17px;margin:0 0 8px;font-weight:750}
-section>h3 small{font-size:11.5px;color:var(--dim);font-weight:400;margin-left:8px}
-p{margin:0 0 7px}
-.k{display:inline-block;min-width:3.4em;font-size:11.5px;color:var(--dim);
-  font-weight:700;letter-spacing:.04em}
-b{font-weight:700}
-.en{color:var(--accent);font-weight:600}
-.w{color:var(--bad);font-weight:700}
-ul{margin:4px 0 8px;padding-left:1.25em}
-li{margin:0 0 3px}
-code{font-size:.95em}
-.note{font-size:12.5px;color:var(--dim);margin-top:8px;padding-top:7px;
-  border-top:1px dashed var(--line)}
-.jump{font-size:12px;color:var(--dim)}
-#toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin:0 0 22px}
-#toc a{display:inline-block;margin:0 10px 5px 0;font-size:13px;text-decoration:none}
+
+/* ---------- 页头 ---------- */
+header{margin:0 0 30px}
+h1{font-size:26px;line-height:1.25;margin:0 0 8px;letter-spacing:-.01em}
+header p{font-size:13.5px;color:var(--dim);margin:0;line-height:1.7}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0}
+nav a{font-size:12.5px;padding:6px 12px;border:1px solid var(--line);border-radius:20px;
+  background:var(--card);text-decoration:none;color:var(--dim)}
+
+/* ---------- 目录 ---------- */
+#toc{margin:0 0 36px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#toc a{display:inline-block;margin:0 14px 6px 0;font-size:13.5px;text-decoration:none;color:var(--dim)}
+#toc a:hover{color:var(--accent)}
+
+/* ---------- 分部 ---------- */
+h2{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+  font-weight:700;margin:46px 0 18px}
+
+/* ---------- 一个主题 ---------- */
+article{margin:0 0 34px;padding:0 0 30px;border-bottom:1px solid var(--line)}
+article:last-of-type{border-bottom:0}
+article>h3{font-size:20px;line-height:1.3;margin:0 0 3px;font-weight:700;letter-spacing:-.01em}
+article>.zh{font-size:13px;color:var(--dim);margin:0 0 16px}
+article>.zh b{color:var(--ink);font-weight:600}
+
+/* 三块 */
+.row{display:grid;grid-template-columns:76px 1fr;gap:14px;margin:0 0 15px;align-items:start}
+.lab{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
+  color:var(--faint);padding-top:4px;white-space:nowrap}
+.row.must .lab{color:var(--accent)}
+.en{font-size:16.5px;line-height:1.6;margin:0}
+.en b{font-weight:650}
+.zh2{font-size:13px;color:var(--dim);line-height:1.65;margin:5px 0 0}
+.zh2 b{color:var(--ink);font-weight:600}
+.w{color:var(--hot);font-weight:650}
+code{font-size:14px}
+
+@media (max-width:560px){
+  body{padding:20px 16px 80px}
+  .row{grid-template-columns:1fr;gap:3px}
+  .lab{padding-top:0}
+  .en{font-size:16px}
+}
 </style>
 </head>
 <body>
 
-<h1>🦴 一页纸 · 考点骨架</h1>
-<p class="lead">每个主题只问一件事：<b>他问到这儿，你必须说出哪几样。</b>
-中文负责让你看懂结构，<span class="en">英文</span>是你要出口的词。
-<b>这一页不记进度、不打分</b> —— 摊开来看的纸，不是练习。</p>
-<div class="top">
+<header>
+<h1>One page</h1>
+<p>每个主题只有三行：<b style="color:var(--accent)">MUST SAY</b> 他问到这儿你一定要说出口的那句 ·
+<b>NUMBERS</b> 一个数 · <b>HOOK</b> 一个名字，知道就行，不用解释。<br>
+英文是要念的，中文只是看懂用的。<b>这一页不记分、不算进度。</b></p>
+<nav>
   <a href="index.html">← 卡片</a>
   <a href="drill.html">🎙 演练台</a>
   <a href="map.html">🗺 地图</a>
   <a href="exam.html">🎓 考官</a>
-</div>
+</nav>
+</header>
+
+<p style="font-size:13.5px;line-height:1.8;margin:0 0 22px;padding:12px 14px;
+  border:1px solid var(--accent);border-radius:10px">
+<b style="color:var(--accent)">9 月 27 日你自己说的重点</b> —— 直接从这三个开始：<br>
+<a href="#t-fas">脂肪酸合成</a> · <a href="#t-tag">甘油三酯与磷脂</a> ·
+<a href="#t-chol">胆固醇</a>（你说「脂质合成有点模糊」）<br>
+<a href="#t-vit">维生素与辅酶</a> · <a href="#t-carrier">谁搬什么</a>（你说「完全没碰」）<br>
+<a href="#t-ppp">磷酸戊糖</a> · <a href="#t-gng">糖异生</a> · <a href="#t-glyco">糖原</a> ·
+<a href="#t-ket">酮体</a> · <a href="#t-aa">尿素循环</a>（除三大以外的代谢）
+</p>
 
 <div id="toc"></div>
 
-<!-- ==================== 一 · 静态结构 ==================== -->
-<h2>一 · 分子结构与理化性质</h2>
+<!-- ============ STRUCTURE ============ -->
+<h2>Structure &amp; properties</h2>
 
-<section id="t-prot"><h3>蛋白质结构 <small>卡 01</small></h3>
-<p><span class="k">必答</span>四层：<b>一级</b>＝残基顺序（<span class="en">peptide bonds</span> ＋ 二硫键位置，<b>共价那一层</b>）·
-<b>二级</b>＝主链局部构象，<b>只靠主链自己的氢键，跟侧链无关</b> ·
-<b>三级</b>＝一条链的整体折叠，<b>主要靠疏水作用</b> · <b>四级</b>＝多条链，全是非共价。</p>
-<p><span class="k">数字</span>α-螺旋 <b>右手 · 每圈 3.6 个残基 · 螺距 0.54 nm</b>，氢键是 <b>C=O ⋯ H-N(i+4)</b>，R 基全部朝外。
-β-折叠：<b>反平行比平行稳</b>（氢键正对着，接近 180°）。</p>
-<p><span class="k">几何</span>肽键 <b>六个原子共平面</b>（C<sub>α</sub>·C·O·N·H·C<sub>α</sub>），能转的只有 <span class="en">φ</span> 和 <span class="en">ψ</span>。
-<b>拉氏图</b>画的就是这两个角的允许区 —— <b>甘氨酸允许区最大</b>（侧链只有一个 H），<b>脯氨酸最小</b>（环锁死一个角）。</p>
-<p><span class="k">追问</span><b>为什么脯氨酸是 <span class="en">helix breaker</span>？</b>
-① 氮上<b>没有 N–H</b>，供不出螺旋要的氢键；② 五元环<b>锁死一个主链二面角</b>。同样两条解释它为什么常在 <span class="en">β-turn</span>。</p>
-<p><span class="k">操作</span>pH = pI 时<b>净电荷 0、不移动、溶解度最小</b>。<b>盐析</b>是可逆的（没变性）。
-<b>SDS-PAGE 只按分子量分</b>（SDS 把自身电荷盖掉了）。<span class="en">Sanger reagent = DNFB</span>、<span class="en">Edman = PITC</span>，都标 N 端。</p>
-<p class="note">⚠ <b>变性</b>：空间结构被破坏，<b>一级结构不动</b> → 活性没了、溶解度降、更容易被蛋白酶切。</p>
-</section>
+<article id="t-prot">
+<h3>Protein structure</h3>
+<p class="zh">卡 01 · 四层结构，每层靠什么键</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Four levels. <b>Primary</b> is the covalent level, the order of residues. <b>Secondary</b> is held by <b>main-chain hydrogen bonds only</b>, independent of the side chains. <b>Tertiary</b> is held mainly by the <b>hydrophobic effect</b>. <b>Quaternary</b> is several chains, all non-covalent.</p>
+<p class="zh2">二级只靠主链自己的氢键，<b>跟侧链无关</b>——这一句是分水岭。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">α-helix: <b>3.6 residues per turn</b>, rise <b>0.54 nm</b>, hydrogen bond from C=O to the N–H of <b>i+4</b>. Trp and Tyr absorb at <b>280 nm</b>.</p>
+<p class="zh2">反平行 β 折叠比平行的稳（氢键正对着）。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Denaturation</b> destroys the higher structure but <b>not the primary structure</b>. <b>Sickle-cell</b> is one residue: Glu → Val at position 6 of the β chain.</p>
+</div></div>
+</article>
 
-<section id="t-hb"><h3>蛋白质功能 · 肌红蛋白与血红蛋白 <small>卡 01</small></h3>
-<p><span class="k">必答</span><b>Mb 单亚基 → 双曲线</b>，只管储氧；<b>Hb 四亚基（α₂β₂）→ S 形曲线</b>，管运输。
-<b>S 形 ＝ 正协同</b>：第一个氧结合把亚基从 <span class="en">T state</span> 拽向 <span class="en">R state</span>。</p>
-<p><span class="k">三个调节物</span><b>H⁺ 和 CO₂</b>（<span class="en">Bohr effect</span>）稳住 T 态 → 在组织里放氧；
-<b>2,3-BPG</b> 带大量负电，塞进 T 态中央的正电空腔<b>锁死 T 态</b> —— 没有它，Hb 在组织里几乎放不出氧。</p>
-<p><span class="k">追问</span>Hill 系数说明什么？→ 协同性强弱。<b>一氧化碳中毒</b>为什么危险？→ 亲和力高几百倍，而且<b>把剩下的亚基推向 R 态，更放不出氧</b>。</p>
-</section>
+<article id="t-pro">
+<h3>Proline &amp; glycine — the two odd ones</h3>
+<p class="zh">卡 01 · 几乎必被追问的一对</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en"><b>Proline is the helix breaker</b>, for two reasons: its nitrogen has <b>no N–H left</b> to donate the hydrogen bond, and its five-membered ring <b>locks one backbone angle</b>. The same two reasons put it in <b>β-turns</b>. <b>Glycine</b> has only a hydrogen as its side chain, so it is the most flexible and the <b>only one with no chiral carbon</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">On a <b>Ramachandran plot</b> glycine has the <b>largest allowed region</b> and proline the <b>smallest</b>.</p>
+<p class="zh2">拉氏图画的是 φ 和 ψ 两个二面角的允许区。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Collagen</b> needs a glycine every third residue — only glycine fits the crowded centre of the triple helix.</p>
+</div></div>
+</article>
 
-<section id="t-enz"><h3>酶 · 动力学与抑制 <small>卡 02 · 17 · 19</small></h3>
-<p><span class="k">必答</span>酶<b>只降低活化能</b>，<b>不改变 K<sub>eq</sub>、不改变 ΔG</b>。
-⚠ 活性中心<b>对过渡态的亲和力最高</b>，不是对底物 —— 这一句是理解的分水岭。</p>
-<p><span class="k">数字</span><code>V₀ = Vmax[S] / (Km ＋ [S])</code>。
-<b>Km ＝ 半 Vmax 时的底物浓度</b>，<b>跟酶浓度无关</b>，<b>Km 越大亲和力越小</b>。
-<span class="en">k<sub>cat</sub></span> ＝ 周转数 ＝ Vmax/[E]ₜ。<span class="en">k<sub>cat</sub>/Km</span> ＝ 特异性常数，上限受扩散限制（10⁸–10⁹ M⁻¹s⁻¹）。</p>
-<p><span class="k">三种抑制</span>（双倒数图的几何是送分题）</p>
-<ul>
-<li><b>竞争性</b>：抢活性中心 → <b>Km ↑ · Vmax 不变</b> → 两线<b>交于 Y 轴</b>。例：磺胺 · 丙二酸抑制琥珀酸脱氢酶</li>
-<li><b>非竞争性</b>：结合在别处 → <b>Km 不变 · Vmax ↓</b> → 两线<b>交于 X 轴</b></li>
-<li><b>反竞争性</b>：只对 ES 下手 → <b>Km ↓ · Vmax ↓</b> → 两线<b>平行</b></li>
-</ul>
-<p><span class="k">六大类</span><span class="en">Our Tiny Horse Lives In Lemons</span> ＝
-氧化还原 · 转移 · 水解 · <b>裂合</b> · <b>异构</b> · 连接。
-⚠ 常见的 <span class="en">Over The HILL</span> 是错的，它把 4 和 5 说反了。</p>
-</section>
+<article id="t-hb">
+<h3>Myoglobin &amp; haemoglobin</h3>
+<p class="zh">卡 01 · 协同效应的教科书例子</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en"><b>Myoglobin is one subunit and gives a hyperbolic curve</b> — it stores oxygen. <b>Haemoglobin is four subunits and gives a sigmoid curve</b> — it transports it. The sigmoid shape is <b>positive cooperativity</b>: binding the first oxygen pulls the subunits from the <b>T state</b> to the <b>R state</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Four subunits, <b>α₂β₂</b>, four oxygens.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">Three things stabilise the T state and make it <b>release</b> oxygen in the tissues: <b>H⁺ and CO₂</b> (the <b>Bohr effect</b>) and <b>2,3-BPG</b>, which sits in the positively charged central cavity. Without 2,3-BPG haemoglobin barely releases any oxygen at all.</p>
+</div></div>
+</article>
 
-<section id="t-carb"><h3>糖类 <small>卡 06</small></h3>
-<p><span class="k">必答</span>单糖通式 <code class="eq">(CH₂O)ₙ</code>，是<b>醛或酮</b>＋两个以上羟基，<b>再水解不出更小的糖</b>。</p>
-<p><span class="k">键</span>麦芽糖 <b>α-1,4</b>（还原性）· 乳糖 <b>β-1,4</b>（还原性）· 蔗糖 <b>α-1,β-2</b>（<b>非还原</b>，两个还原端都占住了）·
-纤维素 <b>β-1,4</b>（人没有那个酶）· 糖原和淀粉主链 <b>α-1,4</b>、分支 <b>α-1,6</b>。</p>
-<p><span class="k">追问</span><b>变旋（mutarotation）</b>：水里开环闭环自发互变，给出 α/β 两种异头物。</p>
-</section>
+<article id="t-enz">
+<h3>Enzymes &amp; kinetics</h3>
+<p class="zh">卡 02 · 17 · 19</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">An enzyme <b>only lowers the activation energy</b>. It does <b>not</b> change the equilibrium constant and it does <b>not</b> change ΔG. The active site has the <b>highest affinity for the transition state</b>, not for the substrate.</p>
+<p class="zh2">「对过渡态亲和力最高」这一句是理解的分水岭，不是背的。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en"><b>K<sub>m</sub></b> is the substrate concentration at <b>half V<sub>max</sub></b>. It is a property of the enzyme, <b>independent of enzyme concentration</b>, and a <b>larger K<sub>m</sub> means weaker binding</b>. <b>k<sub>cat</sub>/K<sub>m</sub></b> is the specificity constant, limited by diffusion at 10⁸–10⁹ M⁻¹s⁻¹.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Competitive</b>: K<sub>m</sub> up, V<sub>max</sub> unchanged, lines meet on the <b>y-axis</b>. <b>Non-competitive</b>: K<sub>m</sub> unchanged, V<sub>max</sub> down, lines meet on the <b>x-axis</b>. <b>Uncompetitive</b>: both down, lines are <b>parallel</b>. Classic examples: <b>sulfonamides</b>, and <b>malonate</b> on succinate dehydrogenase.</p>
+</div></div>
+</article>
 
-<section id="t-na"><h3>核酸结构 <small>卡 03</small></h3>
-<p><span class="k">必答</span>B-DNA <b>右手双螺旋 · 两条链反平行</b>。<b>A=T 两个氢键，G≡C 三个</b>，<b>GC 越多越稳、Tm 越高</b>。</p>
-<p><span class="k">数字</span>每圈 <b>10.5 bp</b> · 每个碱基堆积 <b>0.34 nm</b>。
-<b>大沟 / 小沟</b> —— <b>绝大多数转录因子从大沟读序列</b>。超螺旋 <code class="eq">Lk = Tw ＋ Wr</code>。</p>
-<p><span class="k">测量</span>吸收峰在 <b>260 nm</b>（碱基共轭）。<b>变性 → 增色效应</b>（双链散开，A260 上升）。
-<b>Tm ＝ 变性到一半的温度</b>，正比于 GC% 和离子强度。<b>纯 DNA A260/A280 ＝ 1.8，纯 RNA ＝ 2.0</b>。</p>
-<p><span class="k">RNA</span>tRNA 二级是<b>三叶草</b>、三级是<b>倒 L</b>，3′ 端永远 <b>CCA-OH</b> 接氨基酸。
-rRNA 最多，而且<b>肽酰转移酶活性在 rRNA 上 —— 核糖体是个核酶</b>。</p>
-</section>
+<article id="t-carb">
+<h3>Carbohydrates</h3>
+<p class="zh">卡 06</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">A monosaccharide is an <b>aldehyde or a ketone with two or more hydroxyls</b>, general formula <code class="eq">(CH₂O)ₙ</code>, that <b>cannot be hydrolysed to a smaller sugar</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Maltose <b>α-1,4</b> · lactose <b>β-1,4</b> · sucrose <b>α-1,β-2</b> · cellulose <b>β-1,4</b>. Glycogen and starch: main chain <b>α-1,4</b>, branches <b>α-1,6</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Sucrose is the only non-reducing one</b> of those, because both anomeric carbons are used in the bond. Humans cannot digest cellulose because we have no enzyme for <b>β-1,4</b>.</p>
+</div></div>
+</article>
 
-<section id="t-mem"><h3>膜与运输 <small>横向卡 x-mem</small></h3>
-<p><span class="k">必答</span><b>外周膜蛋白</b>：静电/氢键贴在表面，<b>高盐或换 pH 就洗下来</b>；
-<b>内在膜蛋白</b>：横穿双层，<b>必须用去污剂</b>，跨膜段典型是疏水的 α-螺旋。</p>
-<p><span class="k">四种运输</span><b>单纯扩散</b>（无载体无能量，顺梯度）·
-<b>协助扩散</b>（有载体，无能量，顺梯度）·
-<b>原发性主动</b>（直接烧 ATP，逆梯度；<b>钠钾泵：1 ATP 泵出 3 Na⁺、泵入 2 K⁺</b>）·
-<b>继发性主动</b>（借钠梯度，不直接烧 ATP）。</p>
-</section>
+<article id="t-na">
+<h3>Nucleic acid structure</h3>
+<p class="zh">卡 03</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">B-DNA is a <b>right-handed double helix with antiparallel strands</b>. <b>A=T is two hydrogen bonds, G≡C is three</b>, so more GC means a more stable helix. Denaturation gives the <b>hyperchromic effect</b>: absorbance at 260 nm rises as the strands separate.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en"><b>10.5 base pairs per turn</b>, <b>0.34 nm</b> per base. <b>T<sub>m</sub></b> is the temperature at which half is denatured, and it rises with <b>GC content</b> and ionic strength. Pure DNA <b>A260/A280 = 1.8</b>, pure RNA <b>= 2.0</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">Most transcription factors read the sequence through the <b>major groove</b>. The <b>peptidyl transferase activity is in the rRNA</b> — the ribosome is a ribozyme.</p>
+</div></div>
+</article>
 
-<section id="t-sig"><h3>信号转导 · 四大通路 <small>卡 32 · mb-post</small></h3>
-<p><span class="k">口诀</span><span class="en">Cold Pizza Ruins Nights</span> ＝
-<b>c</b>AMP · <b>P</b>hosphoinositide · <b>R</b>eceptor tyrosine kinase · <b>N</b>uclear receptor</p>
-<ul>
-<li><b>GPCR</b>：<b>七次跨膜</b>。配体 → G 蛋白放出 Gα-GTP → <b>腺苷酸环化酶</b> → <b>cAMP</b> → <b>PKA</b> → 级联放大</li>
-<li><b>RTK</b>：受体自带酶活。胰岛素受体是代表，结合后<b>二聚化 ＋ 自身交叉磷酸化</b> → Ras-MAPK</li>
-<li><b>门控离子通道</b>：配体一结合就开门（乙酰胆碱受体）</li>
-<li><b>核受体</b>：类固醇/甲状腺素/维 D 脂溶性，<b>直接穿膜</b>，受体本身就是转录因子，结合 <b>HRE</b></li>
-</ul>
-</section>
+<!-- ============ METABOLISM ============ -->
+<h2>Metabolism — the ledger</h2>
 
-<!-- ==================== 二 · 代谢 ==================== -->
-<h2>二 · 代谢流 · 数字 · 关卡</h2>
+<article id="t-gly">
+<h3>Glycolysis</h3>
+<p class="zh">卡 gly · 你已经碰过的三条之一</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">In the <b>cytosol</b>, and it <b>does not need oxygen</b>. Three steps are irreversible and <b>all three are kinases</b>: hexokinase, <b>phosphofructokinase-1 — the main control point</b>, and pyruvate kinase.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Net <b>2 ATP and 2 NADH</b> per glucose — four made, two spent.</p>
+<p class="zh2"><span class="w">⚠ 有氧时一个葡萄糖：你的书说 38，现代教材 30–32。被问先问有没有氧，再给两个数。</span></p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Red cells have no mitochondria</b>, so this is all they have. Without oxygen pyruvate is reduced to lactate, and the point of that is <b>to regenerate NAD⁺</b>.</p>
+</div></div>
+</article>
 
-<section id="t-bioe"><h3>生物能学 <small>卡 x-bonds · 32</small></h3>
-<p><span class="k">必答</span><code class="eq">ΔG = ΔG°′ ＋ RT·ln Q</code>。
-<b>ΔG°′ 是地形，ΔG 是今天的水位</b> —— 决定方向的是后者。</p>
-<p><span class="k">数字</span><b>PEP −61.9</b> · <b>1,3-BPG −49.3</b> · <b>ATP −30.5</b> · G6P −13.8 kJ/mol。
-<b>ATP 站在梯子中间</b>，所以它能当通货：上面的能给它，下面的它能给出去。</p>
-</section>
+<article id="t-ppp">
+<h3>Pentose phosphate pathway</h3>
+<p class="zh">⚠ 你说没碰过的那一批，从这里开始</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Two products, and that is the whole point of the pathway: <b>NADPH</b>, for antioxidant defence and reductive synthesis, and <b>ribose-5-phosphate</b>, for nucleotides. It runs in the <b>cytosol</b> and the control enzyme is <b>glucose-6-phosphate dehydrogenase</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en"><b>2 NADPH · 1 CO₂ · 0 ATP.</b> It neither makes nor spends ATP.</p>
+<p class="zh2"><span class="w">「0 ATP」是最爱考的一个数。</span>⚠ 它的调控信号<b>不是 ATP，是 NADP⁺ 够不够</b>。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>G6PD deficiency</b>, also called favism. The red cell cannot make enough NADPH to keep glutathione reduced, so an oxidative stress causes <b>haemolysis</b>.</p>
+<p class="zh2">名字知道就够，不用展开。</p>
+</div></div>
+</article>
 
-<section id="t-gly"><h3>糖酵解 <small>卡 gly</small></h3>
-<p><span class="k">必答</span>在<b>胞质</b>，<b>不需要氧</b>，一分子葡萄糖净得 <b>2 ATP ＋ 2 NADH</b>（毛 4 净 2）。</p>
-<p><span class="k">数字</span><span class="w">⚠ 有氧时：你的书说 38，现代教材 30–32。</span>
-被问就<b>先问有没有氧，再给书的数，再说现代数差在哪</b>。</p>
-<p><span class="k">关卡</span>三个不可逆，<b>全是 kinase</b>：<b>hexokinase</b>（肝里是 glucokinase：<b>Km 高、不被 G6P 抑制</b>）·
-<b>PFK-1（最核心）</b> · <b>pyruvate kinase</b>。</p>
-<p><span class="k">调节</span>PFK-1 关于 <b>ATP · 柠檬酸</b>，开于 <b>AMP · ADP · 果糖-2,6-二磷酸</b>。
-PK 被 <b>果糖-1,6-二磷酸前馈激活</b>。</p>
-<p><span class="k">酶顺序</span><span class="en">Hot Indian Fries Are Tasty — Greasy Kebabs Make Everyone Plump</span>
-＝ Hexokinase · Isomerase · Fructokinase · Aldolase · Triose-P isomerase · GAPDH · Kinase(PGK) · Mutase(PGM) · Enolase · Pyruvate kinase</p>
-<p class="note">⚠ 追问「为什么先花 ATP 磷酸化」→ <b>锁在细胞里</b>（带电出不去）＋ <b>拉低胞内游离葡萄糖，维持进来的梯度</b>。</p>
-</section>
+<article id="t-pdh">
+<h3>Pyruvate dehydrogenase</h3>
+<p class="zh">糖和脂之间的单行道</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">An <b>oxidative decarboxylation</b> in the <b>mitochondrial matrix</b>, and it is <b>irreversible</b>. Pyruvate plus CoA plus NAD⁺ gives <b>acetyl-CoA, CO₂ and NADH</b>.</p>
+<p class="zh2"><b>这一步不可逆，就是「脂肪变不回糖」的断点。</b></p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en"><b>Five cofactors</b>: TPP, lipoamide, CoA, FAD and NAD⁺ — <b>four of them are B vitamins</b>.</p>
+<p class="zh2">α-酮戊二酸脱氢酶用同一套，背一次会两个。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Thiamine deficiency</b> stalls this step, so pyruvate and lactate accumulate. The brain suffers first because it runs on glucose. <b>Phosphorylation switches it off</b> — the opposite of glycogen phosphorylase.</p>
+</div></div>
+</article>
 
-<section id="t-ppp"><h3>磷酸戊糖途径 <small>横向卡速背 06</small></h3>
-<p><span class="k">必答</span>在<b>胞质</b>，两个产物：<b>NADPH</b>（抗氧化 ＋ 还原性合成）和 <b>核糖-5-磷酸</b>（核酸）。</p>
-<p><span class="k">数字</span><b>2 NADPH · 1 CO₂ · 0 ATP</b> —— <span class="w">既不产也不耗 ATP，这是最爱考的一个数。</span></p>
-<p><span class="k">关卡</span><b>G6PD</b>。<span class="w">⚠ 它的信号不是 ATP，是 NADP⁺ 够不够</b> —— 这条最容易答错。</span></p>
-<p><span class="k">追问</span>为什么红细胞特别依赖它？→ <b>红细胞没有线粒体</b>，NADPH 只能从这儿来，用去还原谷胱甘肽。
-<b>G6PD 缺乏 → 氧化刺激下溶血</b>。</p>
-</section>
+<article id="t-tca">
+<h3>Citric acid cycle</h3>
+<p class="zh">卡 24 · 你已经碰过的三条之一</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">The <b>convergence point</b> — sugars, fats and amino acids all arrive here as acetyl-CoA. Three irreversible steps: <b>citrate synthase</b>, <b>isocitrate dehydrogenase (the main one)</b> and <b>α-ketoglutarate dehydrogenase</b>.</p>
+<p class="zh2">⚠ acetyl-CoA 跟草酰乙酸是<b>合体</b>，不是「变成」——OAA 是托盘，转一圈还回来。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">One turn: <b>3 NADH, 1 FADH₂, 1 GTP and 2 CO₂</b>.</p>
+<p class="zh2"><span class="w">换成 ATP：书 12，现代 10。两个都要会。</span></p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Succinate dehydrogenase is the only membrane-bound enzyme of the cycle, and it is respiratory Complex II.</b> It is competitively inhibited by <b>malonate</b>.</p>
+<p class="zh2">陷阱：「循环产多少 ATP」→ <b>它直接产的只有 1 个 GTP</b>，其余是呼吸链造的。</p>
+</div></div>
+</article>
 
-<section id="t-pdh"><h3>丙酮酸脱氢酶复合体 <small>卡 gly · 24</small></h3>
-<p><span class="k">必答</span><b>氧化脱羧</b>，在<b>线粒体基质</b>，<span class="w">不可逆</span>：
-<code class="eq">pyruvate ＋ CoA-SH ＋ NAD⁺ →[pyruvate dehydrogenase complex] acetyl-CoA ＋ CO₂ ＋ NADH</code></p>
-<p><span class="k">五辅因子</span><span class="en">Tender Loving Care For Nancy</span> ＝
-<b>TPP</b>（脱羧）· <b>硫辛酰胺</b>（吊臂搬酰基）· <b>CoA</b>（接走）· <b>FAD</b>（留在酶上）· <b>NAD⁺</b>（带走氢）。
-<b>五个里四个是 B 族维生素</b> —— 缺硫胺素这一步就瘫。</p>
-<p><span class="k">调节</span>关于 <b>acetyl-CoA · NADH · ATP</b>；<b>PDH kinase 磷酸化 → 关</b>，磷酸酶去磷酸化 ＋ <b>Ca²⁺ · ADP → 开</b>。
-<span class="w">⚠ 磷酸化＝关，跟糖原磷酸化酶正好相反。</span></p>
-<p class="note">⚠ <b>α-酮戊二酸脱氢酶跟它同一套机制、同一批五个辅因子</b> —— 背一次会两个。</p>
-</section>
+<article id="t-etc">
+<h3>Respiratory chain &amp; oxidative phosphorylation</h3>
+<p class="zh">卡 25 · 你已经碰过的三条之一</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en"><b>Chemiosmosis</b>: no chemical intermediate passes between the chain and the synthase, they are coupled <b>only through the proton gradient</b>. <b>Complex II pumps nothing</b>, which is why FADH₂ is worth less.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Modern count: <b>4 + 4 + 2 = 10 protons per NADH</b>, and <b>4 protons per ATP</b>, giving <b>2.5</b> for NADH and <b>1.5</b> for FADH₂.</p>
+<p class="zh2"><span class="w">⚠ 你的书算的是 6 个质子 ≈ 3 ATP。先给书的数，再说现代值差在哪。</span></p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Cyanide, CO and azide block Complex IV.</b> An <b>uncoupler such as DNP</b> stops ATP synthesis but <b>speeds the chain up</b> and turns everything into heat. <b>Oligomycin</b> blocks the synthase and stops <b>both</b>.</p>
+<p class="zh2">这两个的<b>对比</b>比任何一个单独记都值钱。</p>
+</div></div>
+</article>
 
-<section id="t-tca"><h3>柠檬酸循环 <small>卡 24</small></h3>
-<p><span class="k">必答</span><b>汇合点</b>：糖、脂、氨基酸都变成 acetyl-CoA 进这里。在<b>线粒体基质</b>。
-<b>acetyl-CoA 和草酰乙酸是「合体」，不是「转化」</b> —— OAA 是托盘，转一圈还回来。</p>
-<p><span class="k">数字</span>一圈 <b>2 CO₂ · 3 NADH · 1 FADH₂ · 1 GTP</b>。
-<span class="w">换算成 ATP：你的书说 12，现代算法 10。</span></p>
-<p><span class="k">中间物</span><span class="en">Can I Keep Selling Sex For Money, Officer?</span><br>
-<code class="eq">acetyl-CoA ＋ oxaloacetate →[citrate synthase] citrate →[aconitase] isocitrate →[isocitrate dehydrogenase|NAD⁺ · −CO₂] α-ketoglutarate</code><br>
-<code class="eq">α-ketoglutarate →[α-KG dehydrogenase|NAD⁺ · −CO₂] succinyl-CoA →[succinyl-CoA synthetase|GDP＋Pᵢ] succinate →[succinate dehydrogenase|FAD · 内膜上] fumarate →[fumarase|＋H₂O] malate →[malate dehydrogenase|NAD⁺] oxaloacetate</code></p>
-<p><span class="k">关卡</span>三个不可逆：<b>citrate synthase · isocitrate dehydrogenase（最关键）· α-KG dehydrogenase</b>。
-<b>三个的刹车都是 NADH</b>；<b>Ca²⁺ 开其中两个</b>（肌肉一收缩就提速）。</p>
-<p class="note">⚠ <b>琥珀酸脱氢酶是唯一长在内膜上的，同时就是呼吸链复合体 Ⅱ</b>，被<b>丙二酸竞争性抑制</b>。<br>
-⚠ 两个 CO₂ <b>不是</b>刚进来那两个碳。<br>
-⚠ 「循环产多少 ATP」是陷阱 —— <b>它直接产的只有 1 个 GTP</b>。</p>
-</section>
+<article id="t-fao">
+<h3>Fatty acid oxidation</h3>
+<p class="zh">⚠ 没碰过的一条</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">In the <b>mitochondrial matrix</b>, and the acid must be <b>activated to a thioester with CoA first</b>. Then four steps repeat: <b>oxidation, hydration, oxidation, thiolysis</b>.</p>
+<p class="zh2">四步 ＝ <b>氧 · 水 · 氧 · 切</b>，酶名就是动作名。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Each round: <b>1 NADH, 1 FADH₂, 1 acetyl-CoA</b>, and the chain is <b>two carbons shorter</b>. <b>Rounds = carbons ÷ 2 − 1.</b></p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">The real control point is the door, not the chemistry: <b>carnitine acyltransferase I</b>, and it is <b>inhibited by malonyl-CoA</b> — the first product of fatty acid <b>synthesis</b>. So switching synthesis on switches oxidation off.</p>
+</div></div>
+</article>
 
-<section id="t-etc"><h3>呼吸链 ＋ 氧化磷酸化 <small>卡 25</small></h3>
-<p><span class="k">必答</span><b>化学渗透</b>：两者之间<b>没有化学中间物</b>，只靠<b>质子梯度</b>耦合。链在<b>内膜</b>，循环在<b>基质</b>，质子被泵进<b>膜间隙</b>。</p>
-<p><span class="k">数字</span><span class="w">书：NADH 泵 6 个质子 ≈ 3 ATP，FADH₂ 泵 4 个 ≈ 2。
-现代：Ⅰ 泵 4 ＋ Ⅲ 泵 4 ＋ Ⅳ 泵 2 ＝ 10，每 ATP 4 个质子 → 2.5；FADH₂ 走 6 个 → 1.5。</span>
-<b>两套都要会，而且要说得出差在哪</b>（差在复合体 Ⅳ 算不算泵、每个 ATP 几个质子）。</p>
-<p><span class="k">辅基</span><span class="en">Fat Frogs Bite Ankles</span> ＝ Ⅰ <b>FMN</b> · Ⅱ <b>FAD</b> · Ⅲ <b>b/c₁</b> · Ⅳ <b>a/a₃＋Cu</b>。
-<b>Q 接在 Ⅰ/Ⅱ 之后，cyt c 夹在 Ⅲ/Ⅳ 之间。</b></p>
-<p><span class="k">载体</span><b>CoQ 是唯一的非蛋白组分</b>，脂溶性，<b>带 2 电子 ＋ 2 质子</b>；
-<b>cyt c 是内膜外侧的外周蛋白，一次只带 1 个电子</b>。</p>
-<p><span class="k">毒物</span><span class="en">Rats Attack Cats</span> ＝ <b>鱼藤酮堵 Ⅰ · 抗霉素堵 Ⅲ · 氰化物堵 Ⅳ</b>（CO、叠氮同 Ⅳ）。</p>
-<p class="note"><span class="w">⚠ 两个最爱考的对比</span>：<b>解偶联剂（DNP、UCP）</b>只停 ATP，<b>电子传递和耗氧反而更快</b>，能量变热；
-<b>寡霉素</b>堵 ATP 合酶，<b>ATP 和电子传递一起停</b>（质子淤积把链压住）。</p>
-</section>
+<article id="t-fas">
+<h3>Fatty acid synthesis</h3>
+<p class="zh"><b class="w">⚠ 2026-09-27 她点名：这一条模糊</b>（β-氧化背过很多次，合成没有）</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">In the <b>cytosol</b>, and it is <b>not beta-oxidation run backwards</b>. The textbook gives three differences: the <b>compartment</b>, the carrier is <b>ACP</b> instead of CoA, and the reductant is <b>NADPH</b> instead of NAD⁺ and FAD. The chain is built <b>two carbons at a time</b>, and those two carbons are always delivered as <b>malonyl-CoA</b>, never as acetyl-CoA directly.</p>
+<p class="zh2"><b>一句话记住整条路</b>：碳从丙二酰-CoA 来，还原力从 NADPH 来，架子是 ACP。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">The committed step is <b>acetyl-CoA carboxylase</b>: it spends <b>1 ATP</b>, needs <b>biotin</b>, and turns acetyl-CoA into <b>malonyl-CoA</b>. Each round of elongation uses <b>2 NADPH</b>. The normal product is <b>palmitate, 16 carbons</b> — longer chains and double bonds are added afterwards, in the <b>ER</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">Acetyl-CoA is made <b>inside</b> the mitochondrion but needed <b>outside</b>, and it cannot cross. It comes out disguised as <b>citrate</b> — the <b>citrate shuttle</b>. So <b>citrate activates acetyl-CoA carboxylase</b> and at the same time <b>inhibits PFK-1</b>: one molecule saying "there is plenty of carbon, stop burning sugar and start storing".</p>
+<p class="zh2">⚠ 反过来也成立：<b>丙二酰-CoA 关掉 CPT-1</b>，合成一开，氧化的门就锁上。<b>这一对是互控最干净的例子。</b></p>
+</div></div>
+</article>
 
-<section id="t-fa"><h3>脂肪酸氧化与合成 ＋ 酮体 <small>卡 23 · 31 · 横向卡</small></h3>
-<p><span class="k">β-氧化</span>在<b>线粒体基质</b>，<b>先活化成硫酯</b>（花 2 个高能键）。四步 <span class="en">One Hot Oily Thief</span> ＝ <b>氧 · 水 · 氧 · 切</b>。
-一轮：<b>1 FADH₂ ＋ 1 NADH ＋ 1 acetyl-CoA</b>，<b>轮数 ＝ 碳数 ÷ 2 − 1</b>。<br>
-<code class="eq">acyl-CoA →[acyl-CoA dehydrogenase|FAD] enoyl-CoA →[enoyl-CoA hydratase|＋H₂O] 3-hydroxyacyl-CoA →[3-hydroxyacyl-CoA dehydrogenase|NAD⁺] 3-ketoacyl-CoA →[thiolase|＋CoA] acetyl-CoA</code></p>
-<p><span class="k">关卡</span><b>CPT-1</b>（进线粒体那道门），<span class="w">被丙二酰-CoA 关掉</span> —— <b>合成的第一个产物关掉氧化的入口，最干净的互控例子</b>。</p>
-<p><span class="k">合成</span>在<b>胞质</b>，关卡是 <b>acetyl-CoA carboxylase</b>（生物素 ＋ ATP），<b>开于柠檬酸</b>，还原力全部来自 <b>NADPH</b>。
-<span class="w">⚠ 不是 β-氧化倒着走</b>，书列了三条差别：胞质 · ACP · NADPH。</span></p>
-<p><span class="k">酮体</span>三个：<b>乙酰乙酸 · β-羟丁酸 · 丙酮</b>（<b>丙酮是废气，不是燃料</b>）。<b>肝内生成、肝外利用</b>。<br>
-<code class="eq">2 acetyl-CoA →[thiolase] acetoacetyl-CoA →[HMG-CoA synthase] HMG-CoA →[HMG-CoA lyase] acetoacetate</code><br>
-<span class="w">⚠ 肝自己用不了酮体，因为肝没有 thiophorase (SCOT)</b> —— 这一句最值钱。</span></p>
-<p class="note">⚠ <b>胆固醇</b>：承诺步骤是 <b>HMG-CoA reductase</b>，<b>他汀就是它的竞争性抑制剂</b>。
-HMG-CoA 这个中间物<b>同时是酮体和胆固醇的分岔</b>（线粒体 vs 胞质）。</p>
-</section>
+<article id="t-tag">
+<h3>Triacylglycerol &amp; phospholipid synthesis</h3>
+<p class="zh"><b class="w">⚠ 脂质合成的另一半</b> —— 造好的脂肪酸接下来去哪儿</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Both start from the <b>same backbone</b>: glycerol-3-phosphate gets <b>two fatty acids</b> to make <b>phosphatidic acid</b>. From there the path forks. Remove the phosphate and add a third fatty acid and you get a <b>triacylglycerol</b>, for storage. Keep the phosphate and put a <b>polar head group</b> on it — choline, ethanolamine, serine — and you get a <b>glycerophospholipid</b>, for membranes.</p>
+<p class="zh2"><b>同一个岔路口</b>：磷脂酸 → 去磷酸＝储能脂肪，留磷酸＋极性头＝膜脂。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">A triacylglycerol is <b>glycerol plus three fatty acids</b> by ester bonds, completely <b>non-polar</b>. A phospholipid is <b>amphipathic</b> — that is why one stores and the other forms bilayers.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Sphingolipids do not use glycerol at all</b> — the backbone is <b>sphingosine</b>, and the fatty acid is attached through an <b>amide</b> bond, not an ester.</p>
+</div></div>
+</article>
 
-<section id="t-gng"><h3>糖异生 ＋ 糖原 <small>卡 gly · 横向卡</small></h3>
-<p><span class="k">糖异生</span>主要在<b>肝和肾</b>。四个绕行酶 <span class="en">Please Call For Glucose</span>：<br>
-<code class="eq">pyruvate →[pyruvate carboxylase|biotin · ＋CO₂ · ATP] oxaloacetate →[PEP carboxykinase|GTP · −CO₂] PEP</code>
-<code class="eq">fructose-1,6-bisP →[fructose-1,6-bisphosphatase] fructose-6-P</code>
-<code class="eq">glucose-6-P →[glucose-6-phosphatase|肝 · 肾] glucose</code></p>
-<p><span class="k">代价</span>每做一个葡萄糖：<b>4 ATP ＋ 2 GTP ＋ 2 NADH</b>。<b>花的钱买的是方向。</b></p>
-<p><span class="k">糖原</span>合成 <span class="en">Make Plenty, Store Big</span> ＝ mutase · UDP-glucose pyrophosphorylase · <b>glycogen synthase</b>（α-1,4）· branching enzyme（α-1,6）。
-分解：<b>glycogen phosphorylase</b>（磷酸解，出 G1P）· debranching enzyme · mutase · <b>phosphatase（只有肝有）</b>。</p>
-<p class="note"><span class="w">⚠ 三个最常追问</span>：① <b>细胞内是磷酸解，消化道里才是水解</b>；
-② <b>肌肉没有葡萄糖-6-磷酸酶</b>，所以肌糖原只给自己用；
-③ <b>磷酸化之后：磷酸化酶开（b→a），合成酶关（a→b）</b> —— 一套级联，两个相反结果，避免<b>无效循环</b>。</p>
-</section>
+<article id="t-chol">
+<h3>Cholesterol</h3>
+<p class="zh"><b class="w">⚠ 脂质合成的第三块</b></p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Every carbon of cholesterol comes from <b>acetyl-CoA</b>. The committed and rate-limiting step is <b>HMG-CoA reductase</b>, making <b>mevalonate</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Cholesterol is the <b>sterol</b> class: a rigid <b>four-fused-ring</b> core. It is what tunes <b>membrane fluidity</b> in animals, and the precursor of <b>steroid hormones, bile acids and vitamin D</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Statins are competitive inhibitors of HMG-CoA reductase.</b> And note that <b>HMG-CoA is the branch point</b>: in the <b>mitochondrion</b> it goes to ketone bodies, in the <b>cytosol</b> to cholesterol.</p>
+</div></div>
+</article>
 
-<section id="t-aa"><h3>氨基酸代谢 ＋ 尿素循环 <small>卡 aa · 横向卡</small></h3>
-<p><span class="k">脱氨</span>主流是<b>联合脱氨</b>：<b>转氨酶</b>（辅酶 <b>PLP</b>，含 B6）＋ <b>谷氨酸脱氢酶</b> 偶联。
-运氨：<b>肌肉走丙氨酸-葡萄糖循环</b>，<b>脑和外周走谷氨酰胺</b>。</p>
-<p><span class="k">尿素循环</span>在<b>肝</b>，<b>前两步线粒体、后三步胞质</b>。<span class="en">One Cold Cat Ate A Fat Angry Uncle</span><br>
-<code class="eq">NH₄⁺ ＋ HCO₃⁻ →[carbamoyl phosphate synthetase I|2 ATP · 线粒体] carbamoyl phosphate →[ornithine transcarbamoylase|＋ornithine] citrulline</code>
-<code class="eq">citrulline →[argininosuccinate synthetase|＋aspartate · ATP→AMP] argininosuccinate →[argininosuccinate lyase|−fumarate] arginine →[arginase|＋H₂O] urea ＋ ornithine</code></p>
-<p><span class="k">数字</span><b>每 1 mol 尿素花 4 mol ATP</b>。<span class="w">⚠ 总式写的是 3 —— 因为有一个 ATP 断成了 AMP，断了两个键。主动说破这一点是加分。</span></p>
-<p><span class="k">关卡</span><b>CPS I</b>，<b>由 N-乙酰谷氨酸变构激活</b>（有活干才开工）。
-<b>两个氮</b>：一个来自<b>游离氨</b>，一个来自<b>天冬氨酸</b>。</p>
-<p><span class="k">六族</span><span class="en">Kings Give Old People Extra Rice</span> ＝
-α-酮戊二酸（谷谷脯精）· 3-磷酸甘油酸（丝甘半）· 草酰乙酸（天天甲苏赖异）· 丙酮酸（丙缬亮）· PEP＋赤藓糖（苯酪色）· 核糖-5-P（组）</p>
-</section>
+<article id="t-vit">
+<h3>Vitamins &amp; coenzymes</h3>
+<p class="zh"><b class="w">⚠ 2026-09-27 她点名：完全没碰过</b> · 卡 31</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">The structural idea is one sentence: <b>a water-soluble vitamin is the part of a coenzyme the body cannot make</b>. So you do not memorise vitamins — you memorise <b>which coenzyme each becomes, and what that coenzyme carries</b>.</p>
+<p class="zh2"><b>这一句是整章的钥匙。</b>不是背维生素，是背「它变成哪个辅酶、那个辅酶搬什么」。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en"><b>Thiamine → TPP</b>, carries an aldehyde (decarboxylations).
+<b>Riboflavin → FAD / FMN</b>, carries hydrogen.
+<b>Niacin → NAD⁺ / NADP⁺</b>, carries hydride.
+<b>Pantothenate → CoA</b>, carries acyl groups.
+<b>Pyridoxine → PLP</b>, carries amino groups.
+<b>Biotin</b> carries CO₂.
+<b>Folate → THF</b>, carries one-carbon units.
+<b>B12</b> carries methyl groups.</p>
+<p class="zh2">口诀 <b>Naked Rats Take Pictures Before Party</b> ＝ Niacin · Riboflavin · Thiamine · Pantothenate · Biotin · Pyridoxine。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Water-soluble ones are coenzyme parts; the fat-soluble ones, A D E K, are not.</b> They act as a light receptor, a hormone, an antioxidant and a clotting cofactor. Deficiencies worth the name only: <b>thiamine → beriberi</b>, <b>niacin → pellagra</b>, <b>vitamin C → scurvy</b> (collagen cannot be hydroxylated), <b>vitamin D → rickets</b>, <b>vitamin K → bleeding</b>.</p>
+<p class="zh2">⚠ <b>A D E K 脂溶性，其余水溶性</b> —— 这个分界本身就是一道题。</p>
+</div></div>
+</article>
 
-<section id="t-ps"><h3>光合作用 <small>卡 27 · 28</small></h3>
-<p><span class="k">必答</span>定义＝<b>把辐射能生物性地转化成化学能</b>（书自己的定义）。<b>两半在两个地方</b>：
-<b>光反应在类囊体膜</b>（出 ATP ＋ NADPH ＋ O₂）·<b>固碳在 stroma</b>（把这两样花掉）。</p>
-<p><span class="k">式子</span><code class="eq">H₂D ＋ A →[pigments] H₂A ＋ D</code>
-<code class="eq">12 H₂O ＋ 6 CO₂ →[light · pigments] C₆H₁₂O₆ ＋ 6 O₂ ＋ 6 H₂O</code>
-<b>ΔG°′ ＝ +2867 kJ/mol</b>（<b>正号 ＝ 吸能，这就是为什么非要有光</b>）</p>
-<p><span class="k">电子链</span><span class="en">Two Quick Boys Climb One Fir, Fetch Nuts</span> ＝
-<b>PS Ⅱ</b> · PQ · cyt b₆f · PC · <b>PS Ⅰ</b> · Fd · FNR · NADPH。
-<span class="w">⚠ 二号在一号前面干活</b> —— 编号按发现顺序，不按工作顺序。</span></p>
-<p><span class="k">Calvin</span><span class="en">Cows Run Round</span> ＝ <b>抓碳 · 还原 · 再生</b>。
-<b>NADPH 只花在「还原」</b>，ATP 花在「还原」和「再生」。核心酶 <b>rubisco</b> —— <b>地球上丰度最高的酶</b>。</p>
-<p class="note"><span class="w">⚠ 最爱考的一句：氧来自水，不是 CO₂。</span>书把式子写成<b>十二个水</b>而不是六个，就是为了强调这一点。<br>
-⚠ 别主动说「暗反应」——<b>书自己说这个名字不合适</b>（dark ＝ 不直接需要光，不是在黑暗里发生）。<br>
-⚠ <b>C3 不分 · C4 分地方 · CAM 分时间</b>，三者只动固碳那一半，光反应完全一样。</p>
-</section>
+<article id="t-carrier">
+<h3>Who carries what</h3>
+<p class="zh">七个基团载体 —— 把上面那张维生素表反过来查</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Every activated group travels on a dedicated carrier. <b>Acyl on CoA</b> · <b>CO₂ on biotin</b> · <b>amino on PLP</b> · <b>one carbon on tetrahydrofolate</b> · <b>methyl on SAM</b> · <b>aldehyde on TPP</b> · <b>sugar on UDP</b>.</p>
+<p class="zh2"><b>Can Bears Play Tennis? Some Try Upstairs.</b></p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Two electron carriers, and the split is the whole point: <b>NADH goes to the respiratory chain</b> to make ATP; <b>NADPH goes to biosynthesis</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">Several of these carriers contain a <b>nucleotide that takes no part in the chemistry</b> — it is a <b>handle</b> for the enzyme to grip, not cargo.</p>
+</div></div>
+</article>
 
-<section id="t-reg"><h3>代谢调控 <small>卡 32</small></h3>
-<p><span class="k">四问</span><b>在哪控 → 怎么控 → 凭什么 → 谁下令</b>。开口先说这四个问题，结构就在你手里。</p>
-<p><span class="k">在哪</span><b>控制点只能落在远离平衡的那一步。</b>近平衡的步骤正反速率都大，加酶两边一起快，<b>净通量不动</b>。
-判据：<b>比较 Q 和 K′eq，差不到一两个数量级就是近平衡 —— 糖酵解一半以上的酶都是</b>。</p>
-<p><span class="k">怎么控</span><b>慢的改数量</b>（诱导/阻遏，动天花板）· <b>快的改活性</b>（变构 · 共价修饰 · 抑制剂 · 调节蛋白结合），
-<b>而且可以叠加</b>。外加一个前提：<b>区室化 ＋ 限速代谢物供应</b>。</p>
-<p><span class="k">凭什么</span><b>细胞不量绝对量，它读比值，每个比值都是一张许可证。</b>
-ATP/ADP（<b>AMP 更灵敏，被腺苷酸激酶放大</b>）· NADH/NAD⁺（<b>NAD⁺ 不是耗材，是许可证</b>）· NADPH/NADP⁺（造东西的许可）。</p>
-<p><span class="k">谁下令</span>细胞内靠上面的信号，<b>组织之间靠激素</b>。外加一条属于「一对通路」的原则：
-<b>对向通路互控，避免无效循环（futile cycle）</b>。</p>
-<p class="note"><b>不可逆 ＝ 有调节物</b>，几乎是同一件事的两种说法。找调控点就是找不可逆步。<br>
-调节物只有四种来源：<b>自己的产物 · 能量信号 · 激素磷酸化 · 别条路的中间物</b>。<br>
-<span class="w">三个跨路信号，只记三个就记这三个</span>：<b>柠檬酸</b>（关糖酵解、开脂肪合成）·
-<b>丙二酰-CoA</b>（关脂肪氧化）· <b>acetyl-CoA</b>（关 PDH、开 pyruvate carboxylase）。</p>
-</section>
+<article id="t-ket">
+<h3>Ketone bodies</h3>
+<p class="zh">⚠ 没碰过的一条</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en"><b>Made in the liver, used outside it.</b> They are made when acetyl-CoA is produced faster than the citric acid cycle can take it — in starvation and in diabetes.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Three of them: <b>acetoacetate, β-hydroxybutyrate and acetone</b>. Only the first two are fuel — <b>acetone is waste</b>, breathed out.</p>
+<p class="zh2">生成的限速酶是 <b>HMG-CoA synthase</b>（肝线粒体）。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>The liver cannot use ketone bodies itself, because it lacks thiophorase.</b> That one sentence explains why it makes them and sends them all away.</p>
+<p class="zh2">⚠ 这是这道题最值钱的一句。</p>
+</div></div>
+</article>
 
-<section id="t-org"><h3>器官分工 <small>横向卡</small></h3>
-<p><span class="k">肝</span>中央调度：饭后开糖酵解/糖原合成/脂肪合成；饥饿关合成、放糖原、开糖异生、造酮体（<b>但自己不用</b>）。</p>
-<p><span class="k">脑</span><b>正常情况下只吃葡萄糖</b>（占全身耗氧 20%），<b>只有长期饥饿才勉强改用酮体</b>。</p>
-<p><span class="k">红细胞</span><b>没有线粒体</b> —— 一辈子只能靠无氧糖酵解，<b>所以它也特别依赖 PPP 来的 NADPH</b>。</p>
-<p><span class="k">肌肉</span><b>糖原只给自己</b>（没有葡糖-6-磷酸酶）；剧烈运动欠氧债走乳酸，回肝走 <b>Cori 循环</b>。</p>
-</section>
+<article id="t-gng">
+<h3>Gluconeogenesis</h3>
+<p class="zh">⚠ 没碰过的一条</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Making glucose from non-sugar precursors — lactate, glycerol, glucogenic amino acids — mainly in the <b>liver and kidney</b>. Seven steps are shared with glycolysis, and <b>four enzymes bypass the three irreversible ones</b>: <b>pyruvate carboxylase, PEP carboxykinase, fructose-1,6-bisphosphatase, glucose-6-phosphatase</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">One glucose costs <b>4 ATP, 2 GTP and 2 NADH</b>.</p>
+<p class="zh2">花的钱买的是<b>方向</b>。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Acetyl-CoA activates pyruvate carboxylase</b> and at the same time <b>inhibits pyruvate dehydrogenase</b> — one molecule saying "there is fat to burn, stop burning sugar and start making it".</p>
+</div></div>
+</article>
 
-<!-- ==================== 三 · 中心法则 ==================== -->
-<h2>三 · 中心法则</h2>
+<article id="t-glyco">
+<h3>Glycogen</h3>
+<p class="zh">⚠ 没碰过的一条</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Synthesis needs the glucose <b>activated as UDP-glucose</b> first, then <b>glycogen synthase</b> makes α-1,4 bonds and a <b>branching enzyme</b> makes α-1,6. Breakdown inside the cell is <b>not hydrolysis but phosphorolysis</b>, by <b>glycogen phosphorylase</b>. In the gut it <b>is</b> hydrolysis, by amylases.</p>
+<p class="zh2">⚠ 「两种拆法」这个二分是考点。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">One cascade, two opposite results: <b>phosphorylation activates the phosphorylase and inactivates the synthase</b>.</p>
+<p class="zh2">这就是<b>对向通路互控</b>，避免无效循环（futile cycle）。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Muscle has no glucose-6-phosphatase</b>, so muscle glycogen can never raise blood glucose — it is only for the muscle itself.</p>
+</div></div>
+</article>
 
-<section id="t-rep"><h3>DNA 复制 ＋ 修复 <small>卡 16</small></h3>
-<p><span class="k">必答</span><b>半保留 · 半不连续</b>，新链<b>永远 5′→3′</b>。领头链连续，随从链形成<b>冈崎片段</b>。</p>
-<p><span class="k">酶</span><span class="en">Please Throw One Log</span> ＝ <b>primase → pol Ⅲ → pol Ⅰ → ligase</b>。
-拓扑异构酶理超螺旋，解旋酶开链（烧 ATP），SSB 撑着。</p>
-<p><span class="k">pol Ⅲ 亚基</span><b>α ＝ 聚合</b> · <b>ε ＝ 3′→5′ 校对</b> · <b>β ＝ 滑动夹</b>（把酶锁在模板上，决定持续合成能力）。</p>
-<p><span class="k">保真度</span>三道关：<b>配对 10⁻⁴–10⁻⁵ → 校对再降 2–3 个数量级 → 错配修复再降</b>。</p>
-<p><span class="k">修复五类</span><span class="en">Don't Be Nervous, Mum's Driving</span> ＝
-<b>直接逆转</b>（光复活酶修 UV 二聚体）· <b>BER</b>（糖苷酶挖单个碱基 → AP 位点 → AP 内切酶）·
-<b>NER</b>（大块损伤两侧各一刀；缺了得<b>着色性干皮病</b>）· <b>MMR</b>（靠<b>半甲基化 GATC</b> 认新链）·
-<b>双链断裂</b>（HR 用姐妹染色单体、<b>Holliday junction</b>；NHEJ 快但出错）。</p>
-<p class="note">⚠ <b>你书上写了修复，但没给名字</b>：<span class="jump">p079</span> 讲 pol Ⅰ 时说它的 5′→3′ 外切酶
-「切除 UV 造成的嘧啶二聚体，再用聚合酶活性补上缺口」—— <b>那就是切除修复</b>。
-<b>先说书那一句，再挂通用的名字。</b></p>
-</section>
+<article id="t-aa">
+<h3>Amino acid breakdown &amp; the urea cycle</h3>
+<p class="zh">⚠ 没碰过的一条</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Nitrogen is removed by <b>transamination coupled to glutamate dehydrogenase</b>. The transaminases depend on <b>pyridoxal phosphate</b>, vitamin B6. Urea is then made <b>in the liver</b>, with the <b>first two steps in the mitochondrion and the last three in the cytosol</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en"><b>Four ATP per urea.</b> The summary equation writes three, because one of them is broken all the way to AMP.</p>
+<p class="zh2"><b>主动说破这一点是加分</b>——两个数说的是同一件事。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">The <b>two nitrogens come from different places</b>: one from free ammonia, one from <b>aspartate</b>. The control enzyme <b>CPS I is switched on by N-acetylglutamate</b> — it only starts when amino acids are actually being broken down.</p>
+</div></div>
+</article>
 
-<section id="t-tx"><h3>转录 ＋ 加工 <small>横向卡 x-trans</small></h3>
-<p><span class="k">必答</span><b>不需要引物</b>，以<b>模板链（反义链）</b>为模板，新 RNA 跟<b>编码链</b>一致（T 换 U）。</p>
-<p><span class="k">原核</span>全酶 <b>α₂ββ′σ</b>。<b>σ 的唯一任务是认启动子、定起点</b>，<b>起始之后就脱落</b>，核心酶负责延伸。</p>
-<p><span class="k">真核</span><b>Pol Ⅰ → rRNA</b>（核仁）· <b>Pol Ⅱ → mRNA</b>（最常考）· <b>Pol Ⅲ → tRNA ＋ 5S rRNA</b>。</p>
-<p><span class="k">加工</span><b>5′ 加帽 m⁷Gppp</b>（防降解 ＋ 帮核糖体识别）· <b>3′ 加 polyA</b>（不依赖模板）· <b>剪接体切内含子、拼外显子</b>。</p>
-</section>
+<article id="t-ps">
+<h3>Photosynthesis</h3>
+<p class="zh">卡 27 · 28</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Two halves in two places. The <b>light reactions run in the thylakoid membrane</b> and give <b>ATP, NADPH and oxygen</b>. The <b>fixation of CO₂ runs in the stroma</b> and spends exactly those two.</p>
+<p class="zh2">同一个细胞器的两个隔间，跟线粒体「膜上发电、旁边花钱」是同一个故事。</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en"><code class="eq">12 H₂O ＋ 6 CO₂ →[light · pigments] C₆H₁₂O₆ ＋ 6 O₂ ＋ 6 H₂O</code>, <b>ΔG°′ = +2867 kJ/mol</b>.</p>
+<p class="zh2"><b>正号 ＝ 吸能</b>，这就是为什么非要有光。</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><span class="w"><b>The oxygen comes from water, not from carbon dioxide.</b></span> The book writes <b>twelve</b> waters instead of six precisely to make that point. And <b>rubisco is the most abundant enzyme on Earth</b>.</p>
+<p class="zh2">⚠ 别主动说「暗反应」——书自己说这个名字不合适。</p>
+</div></div>
+</article>
 
-<section id="t-tl"><h3>翻译 ＋ 遗传密码 <small>横向卡 x-trans</small></h3>
-<p><span class="k">密码子</span>起始 <b>AUG</b>（甲硫氨酸）· 终止 <b>UAA · UAG · UGA</b>（不编码任何氨基酸）。
-特征：<b>简并性 · 通用性 · 摆动性</b>。</p>
-<p><span class="k">摆动</span>tRNA 反密码子<b>第 1 位</b>配 mRNA 密码子<b>第 3 位</b>：
-<b>C→只配 G</b> · <b>A→只配 U</b> · <b>U→配 A 或 G</b> · <b>G→配 C 或 U</b> · <b>I（次黄嘌呤）→配 A、C 或 U</b>。</p>
-<p><span class="k">能量账</span><b>每延长一个残基烧 4 个高能磷酸键</b>：
-氨基酸活化 <b>ATP→AMP ＝ 2 个</b> · 进位 <b>1 GTP</b> · 转位 <b>1 GTP</b>。</p>
-<p><span class="k">催化</span><b>成肽由肽酰转移酶催化，而它在 rRNA 上 —— 核糖体是核酶。</b></p>
-</section>
+<article id="t-reg">
+<h3>Metabolic regulation</h3>
+<p class="zh">卡 32 · 四问</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Four questions: <b>where</b> control sits, <b>how</b> it acts, <b>what</b> the cell senses, <b>who</b> gives the order. Control sits only at the steps that are <b>far from equilibrium</b>, because only there does the enzyme set the net flux.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">A reaction is near equilibrium when <b>Q and K′<sub>eq</sub> are within one or two orders of magnitude</b> — true of <b>more than half the enzymes of glycolysis</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">Three cross-pathway signals are worth more than any list: <b>citrate</b> shuts down glycolysis and opens fat synthesis; <b>malonyl-CoA</b> shuts down fat oxidation; <b>acetyl-CoA</b> shuts down PDH and opens gluconeogenesis.</p>
+</div></div>
+</article>
 
-<section id="t-gene"><h3>基因表达调控 · lac 操纵子 <small>卡 12</small></h3>
-<p><span class="k">三种状态</span>（标准得分模板）</p>
-<ul>
-<li><b>无乳糖 ＋ 有葡萄糖</b>：阻遏蛋白锁死 O 位点 → <b>完全关闭</b></li>
-<li><b>有乳糖 ＋ 有葡萄糖</b>：阻遏脱落，<b>但葡萄糖压低 cAMP</b> → 没有 cAMP-CAP → <b>只有极弱的基底表达</b></li>
-<li><b>有乳糖 ＋ 无葡萄糖</b>：阻遏脱落 ＋ <b>cAMP 飙升</b> → cAMP-CAP 招募 RNA 聚合酶 → <b>全力转录</b></li>
-</ul>
-<p class="note">⚠ 两套开关叠加：<b>阻遏蛋白是负调控，cAMP-CAP 是正调控</b> —— 两个都到位才全开。</p>
-</section>
+<article id="t-org">
+<h3>Who eats what</h3>
+<p class="zh">器官分工 —— 常被当作串场题</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">The <b>liver</b> is the switchboard: after a meal it stores, in starvation it releases glycogen, runs gluconeogenesis and makes ketone bodies for everyone else.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">The <b>brain normally burns only glucose</b> and takes about <b>20% of the oxygen</b>; only in prolonged starvation does it switch to ketone bodies.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Red cells have no mitochondria</b> — glycolysis only, and that is also why they depend on the pentose phosphate pathway for NADPH.</p>
+</div></div>
+</article>
 
-<section id="t-tools"><h3>分子克隆与测序 <small>卡 pe-clone · taq</small></h3>
-<p><span class="k">质粒三件套</span><b>Ori</b>（能自主复制）· <b>选择标记</b>（抗性基因，毒死没转进去的）· <b>MCS</b>（多克隆位点）。</p>
-<p><span class="k">Sanger 测序</span>靠 <b>ddNTP 链终止</b>：<b>它的 3′ 位是 −H 不是 −OH</b>，一旦掺进去就<b>接不上下一个磷酸二酯键</b>，链当场停住。</p>
-<p><span class="k">PCR</span>变性 · 退火 · 延伸。<b>Taq 没有 3′→5′ 校对，Kapa/Pfu 有</b> —— 要克隆就用有校对的。</p>
-</section>
+<!-- ============ INFORMATION ============ -->
+<h2>Central dogma</h2>
 
-<p class="lead" style="margin-top:26px">⚠ <b>这一页只帮你想起「有哪几件事」。</b>
-「为什么」的部分在卡上 —— 顺口溜和骨架都替代不了理解，
-<b>它们只替代「卡在第三个想不起第四个」那种空白</b>。</p>
+<article id="t-rep">
+<h3>Replication &amp; repair</h3>
+<p class="zh">卡 16</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en"><b>Semiconservative and semidiscontinuous</b>, and the new strand always grows <b>5′ to 3′</b>. <b>Primase</b> lays an RNA primer, <b>pol III</b> extends, <b>pol I</b> replaces the primer, <b>ligase</b> seals.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Three layers of accuracy: <b>base pairing gives about one error in 10⁴–10⁵</b>, <b>proofreading improves that by two to three orders of magnitude</b>, and <b>mismatch repair improves it again</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">Five repair routes: <b>direct reversal, base excision, nucleotide excision, mismatch repair, and double-strand break repair</b>. <b>Failure of nucleotide excision repair gives xeroderma pigmentosum.</b></p>
+<p class="zh2">⚠ 书上有半句：<b>p079</b> 说 pol Ⅰ 的 5′→3′ 外切酶切除 UV 二聚体再补缺口——<b>那就是切除修复，书只是没给名字</b>。先说书那句，再挂通用名。</p>
+</div></div>
+</article>
+
+<article id="t-tx">
+<h3>Transcription</h3>
+<p class="zh">横向卡 x-trans</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Transcription <b>needs no primer</b> and reads the <b>template strand</b>, so the RNA matches the coding strand with U for T. In bacteria the <b>sigma subunit only recognises the promoter</b> and <b>falls off once initiation has happened</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Three eukaryotic polymerases: <b>I makes rRNA, II makes mRNA, III makes tRNA and 5S</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">Eukaryotic mRNA gets three things done to it: a <b>5′ cap</b>, a <b>poly-A tail</b>, and <b>splicing</b> by the spliceosome.</p>
+</div></div>
+</article>
+
+<article id="t-tl">
+<h3>Translation</h3>
+<p class="zh">横向卡 x-trans</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">Start at <b>AUG</b>, stop at <b>UAA, UAG or UGA</b>. The peptide bond is made by <b>peptidyl transferase</b>, and that activity is in the <b>rRNA</b>, so the ribosome is a ribozyme.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en"><b>Four high-energy phosphate bonds per residue</b>: two to activate the amino acid, one GTP to bring it in, one GTP to translocate.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Wobble</b>: the first base of the anticodon pairs loosely with the third base of the codon. <b>Inosine is the flexible one</b> — it can read A, C or U.</p>
+<p class="zh2">简并性让很多突变不致命；摆动性让一个 tRNA 认好几个密码子。</p>
+</div></div>
+</article>
+
+<article id="t-gene">
+<h3>The lac operon</h3>
+<p class="zh">卡 12</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en"><b>Two switches, and both must be right.</b> The repressor is the <b>negative</b> one, cAMP–CAP is the <b>positive</b> one.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Three states: <b>no lactose → off</b>; <b>lactose and glucose → barely on</b>, because glucose keeps cAMP low; <b>lactose and no glucose → fully on</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en">Glucose lowers cAMP, so the cell will not bother with lactose while there is glucose. That is <b>catabolite repression</b>.</p>
+</div></div>
+</article>
+
+<article id="t-tools">
+<h3>Cloning &amp; sequencing</h3>
+<p class="zh">卡 pe-clone · taq · 实验基本技术</p>
+<div class="row must"><div class="lab">Must say</div><div>
+<p class="en">A plasmid needs three things: an <b>origin</b> so it replicates, a <b>selectable marker</b> so you can kill the cells that did not take it, and a <b>multiple cloning site</b>.</p>
+</div></div>
+<div class="row"><div class="lab">Numbers</div><div>
+<p class="en">Sanger sequencing works by <b>chain termination with ddNTPs</b>: the 3′ position is <b>–H instead of –OH</b>, so no further phosphodiester bond can form.</p>
+</div></div>
+<div class="row"><div class="lab">Hook</div><div>
+<p class="en"><b>Taq has no 3′→5′ proofreading; Kapa and Pfu do.</b> If the product is going to be cloned and expressed, use the one that proofreads.</p>
+</div></div>
+</article>
+
+<p style="font-size:13px;color:var(--dim);margin:30px 0 0;line-height:1.75">
+⚠ 这一页只帮你想起<b>「有哪几件事」</b>。「为什么」在卡上——
+<b>它替代的是「卡在第三个想不起第四个」那种空白，不是理解。</b><br>
+⚠ 临床那几个病名都是 <b>general</b>，你的教材不是医学教材，多半不问；
+放这儿只因为<b>成本低，万一问到就是白拿</b>。</p>
 
 <script>
 (function(){
-  var toc = document.getElementById('toc'), out = [];
-  var secs = document.querySelectorAll('section[id]');
-  for (var i=0;i<secs.length;i++){
-    var h = secs[i].querySelector('h3');
-    var t = h ? h.childNodes[0].nodeValue.trim() : secs[i].id;
-    out.push('<a href="#' + secs[i].id + '">' + t + '</a>');
+  var out = [], a = document.querySelectorAll('article[id]');
+  for (var i=0;i<a.length;i++){
+    var h = a[i].querySelector('h3');
+    out.push('<a href="#' + a[i].id + '">' + (h ? h.textContent : a[i].id) + '</a>');
   }
-  toc.innerHTML = out.join('');
+  document.getElementById('toc').innerHTML = out.join('');
 })();
 </script>
 <script src="eq.js"></script>
