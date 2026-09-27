@@ -325,19 +325,14 @@ document.getElementById('pent').innerHTML =
            fischer(CH2, ['K','L','R'], CH2, [2]), true);
 
 /* ============ Haworth ============ */
-/* 平铺式：C1–C4 排在同一条水平线（前沿，粗线），C5 和环氧抬到后面一条线。
-   取代基笔直朝上或朝下，不会撞环。hot 是要橙色高亮的位置编号。 */
-function haworth(o){
-  var W = 300, H = 200;
-  var yF = 124, yB = 58;
-  var C4 = [62, yF], C3 = [128, yF], C2 = [194, yF], C1 = [260, yF];
-  var C5 = [86, yB], OO = [236, yB];
-  var hot = o.hot || [];
-  function isHot(n){ return hot.indexOf(n) >= 0; }
-  var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img">';
-  s += '<style>'
+/* ⚠ 第三版。前两版都不是六边形：一版把环画成正六边形但取代基撞环，
+   二版把 C1–C4 排成一条水平线，结果是个梯形盒子 —— 她说「你的环全是正方形」。
+   现在是压扁的正六边形，三层高度：后沿 C5–O 在上，C4/C1 在中，前沿 C3–C2 在下。
+   朝上的取代基短一些，标签落在环内空白处（教科书里 C3-OH 朝上就是这么画的）。 */
+function ringStyle(){
+  return '<style>'
      + '.rg{stroke:var(--ink);stroke-width:1.7;fill:none;stroke-linejoin:round;stroke-linecap:round}'
-     + '.rf{stroke:var(--ink);stroke-width:4.2;fill:none;stroke-linecap:round}'
+     + '.rf{stroke:var(--ink);stroke-width:4.4;fill:none;stroke-linecap:round;stroke-linejoin:round}'
      + '.sb{stroke:var(--ink);stroke-width:1.6;stroke-linecap:round}'
      + '.sbh{stroke:var(--accent);stroke-width:2.8;stroke-linecap:round}'
      + '.lb{fill:var(--ink);font:600 12.5px "Segoe UI",system-ui,sans-serif}'
@@ -346,82 +341,88 @@ function haworth(o){
      + '.ox{fill:var(--accent);font:700 13.5px "Segoe UI",system-ui,sans-serif}'
      + '.ring{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:3 2.5}'
      + '</style>';
+}
+
+function haworth(o){
+  var W = 300, H = 210;
+  /* 压扁的正六边形 */
+  var C1 = [256, 108], OO = [212, 72], C5 = [124, 72],
+      C4 = [ 80, 108], C3 = [124, 144], C2 = [212, 144];
+  var hot = o.hot || [];
+  function isHot(n){ return hot.indexOf(n) >= 0; }
+  var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img">'
+        + ringStyle();
+  /* 后沿：C4–C5–O–C1 细线 */
   s += '<polyline class="rg" points="' + C4[0] + ',' + C4[1] + ' ' + C5[0] + ',' + C5[1]
      + ' ' + OO[0] + ',' + OO[1] + ' ' + C1[0] + ',' + C1[1] + '"/>';
+  /* 前沿：C1–C2–C3–C4 粗线（离眼睛近的那半边） */
   s += '<polyline class="rf" points="' + C1[0] + ',' + C1[1] + ' ' + C2[0] + ',' + C2[1]
      + ' ' + C3[0] + ',' + C3[1] + ' ' + C4[0] + ',' + C4[1] + '"/>';
   s += '<circle cx="' + OO[0] + '" cy="' + OO[1] + '" r="9.5" fill="var(--card)"/>';
   s += '<text class="ox" x="' + OO[0] + '" y="' + (OO[1] + 5) + '" text-anchor="middle">O</text>';
-  function sub(pt, dir, txt, n){
-    var x = pt[0], y = pt[1], L = 32, h = isHot(n);
+  /* 朝上的短一点（36），朝下的长一点（34），都不撞环 */
+  function sub(pt, dir, txt, n, upLen){
+    var x = pt[0], y = pt[1], h = isHot(n);
+    var L = dir === 'u' ? (upLen || 40) : 34;
     var y2 = dir === 'u' ? y - L : y + L;
     s += '<line class="' + (h ? 'sbh' : 'sb') + '" x1="' + x + '" y1="' + y + '" x2="' + x + '" y2="' + y2 + '"/>';
-    var ty = dir === 'u' ? y2 - 6 : y2 + 13;
+    var ty = dir === 'u' ? y2 - 5 : y2 + 13;
     s += '<text class="' + (h ? 'lbh' : 'lb') + '" x="' + x + '" y="' + ty + '" text-anchor="middle">' + txt + '</text>';
-    if(h) s += '<circle class="ring" cx="' + x + '" cy="' + (dir === 'u' ? y2 - 10 : y2 + 8) + '" r="15"/>';
+    if(h) s += '<circle class="ring" cx="' + x + '" cy="' + (dir === 'u' ? y2 - 8 : y2 + 8) + '" r="' + (dir === 'u' ? 13 : 15) + '"/>';
   }
-  sub(C5, 'u', o.c5txt || 'CH\u2082OH', 5);
-  s += '<text class="cn" x="' + (C5[0] - 16) + '" y="' + (C5[1] + 4) + '">5</text>';
-  sub(C1, o.c1, o.c1txt || 'OH', 1);
-  sub(C2, o.c2, 'OH', 2);
-  sub(C3, o.c3, 'OH', 3);
-  sub(C4, o.c4, 'OH', 4);
-  [[C1,'1',9],[C2,'2',9],[C3,'3',9],[C4,'4',-16]].forEach(function(p){
-    s += '<text class="cn" x="' + (p[0][0] + p[2]) + '" y="' + (p[0][1] + 15) + '">' + p[1] + '</text>';
-  });
+  sub(C5, 'u', o.c5txt || 'CH\u2082OH', 5, 34);
+  sub(C1, o.c1, o.c1txt || 'OH', 1, 42);
+  /* ⚠ 前沿这两个碳正好在 C5 和环氧的正下方。朝上时不能画长，
+     否则标签和高亮圈会压到 O 上 —— 甘露糖那组就撞了。落在环肚子里才是教科书画法。 */
+  sub(C2, o.c2, 'OH', 2, 30);
+  sub(C3, o.c3, 'OH', 3, 30);
+  sub(C4, o.c4, 'OH', 4, 42);
+  s += '<text class="cn" x="' + (C1[0] + 11) + '" y="' + (C1[1] + 4) + '">1</text>';
+  s += '<text class="cn" x="' + (C2[0] + 11) + '" y="' + (C2[1] + 5) + '">2</text>';
+  s += '<text class="cn" x="' + (C3[0] - 18) + '" y="' + (C3[1] + 5) + '">3</text>';
+  s += '<text class="cn" x="' + (C4[0] - 18) + '" y="' + (C4[1] + 4) + '">4</text>';
+  s += '<text class="cn" x="' + (C5[0] - 17) + '" y="' + (C5[1] + 4) + '">5</text>';
   s += '</svg>';
   return s;
 }
 
-/* 呋喃环（五元）—— 果糖用。异头碳 C2 放右边，和葡萄糖那张的 C1 同侧。
+/* 呋喃环（五元）—— 果糖用。真正的五边形：O 在顶，C2 右、C5 左，C3/C4 在下。
+   异头碳 C2 放右边，和葡萄糖那张的 C1 同侧。
    立体化学按 Fischer 换算：果糖 C3-OH 在左 → 朝上；C4-OH 在右 → 朝下；
    C5 的 C6 对 D 型朝上；β 的异头 OH 朝下、C1 朝上。 */
 function furanose(o){
   o = o || {};
-  var W = 300, H = 200;
-  var yF = 128, yB = 66;
-  var C2 = [214, yB], OO = [140, yB - 20], C5 = [66, yB];
-  var C3 = [190, yF], C4 = [96, yF];
+  var W = 300, H = 210;
+  var OO = [150, 68], C2 = [238, 104], C3 = [204, 152], C4 = [96, 152], C5 = [62, 104];
   var hot = o.hot || [];
   function isHot(n){ return hot.indexOf(n) >= 0; }
-  var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img">';
-  s += '<style>'
-     + '.rg{stroke:var(--ink);stroke-width:1.7;fill:none;stroke-linejoin:round;stroke-linecap:round}'
-     + '.rf{stroke:var(--ink);stroke-width:4.2;fill:none;stroke-linecap:round}'
-     + '.sb{stroke:var(--ink);stroke-width:1.6;stroke-linecap:round}'
-     + '.sbh{stroke:var(--accent);stroke-width:2.8;stroke-linecap:round}'
-     + '.lb{fill:var(--ink);font:600 12.5px "Segoe UI",system-ui,sans-serif}'
-     + '.lbh{fill:var(--accent);font:700 13px "Segoe UI",system-ui,sans-serif}'
-     + '.cn{fill:var(--faint);font:600 10px "Segoe UI",system-ui,sans-serif}'
-     + '.ox{fill:var(--accent);font:700 13.5px "Segoe UI",system-ui,sans-serif}'
-     + '.ring{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:3 2.5}'
-     + '</style>';
-  /* 后沿 C5-O-C2，两条斜边 C5-C4 与 C2-C3，前沿 C3-C4 粗 */
+  var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img">'
+        + ringStyle();
   s += '<polyline class="rg" points="' + C5[0] + ',' + C5[1] + ' ' + OO[0] + ',' + OO[1]
      + ' ' + C2[0] + ',' + C2[1] + '"/>';
-  s += '<line class="rg" x1="' + C5[0] + '" y1="' + C5[1] + '" x2="' + C4[0] + '" y2="' + C4[1] + '"/>';
-  s += '<line class="rg" x1="' + C2[0] + '" y1="' + C2[1] + '" x2="' + C3[0] + '" y2="' + C3[1] + '"/>';
-  s += '<line class="rf" x1="' + C3[0] + '" y1="' + C3[1] + '" x2="' + C4[0] + '" y2="' + C4[1] + '"/>';
+  s += '<polyline class="rf" points="' + C2[0] + ',' + C2[1] + ' ' + C3[0] + ',' + C3[1]
+     + ' ' + C4[0] + ',' + C4[1] + ' ' + C5[0] + ',' + C5[1] + '"/>';
   s += '<circle cx="' + OO[0] + '" cy="' + OO[1] + '" r="9.5" fill="var(--card)"/>';
   s += '<text class="ox" x="' + OO[0] + '" y="' + (OO[1] + 5) + '" text-anchor="middle">O</text>';
-  function sub(pt, dir, txt, n){
-    var x = pt[0], y = pt[1], L = 30, h = isHot(n);
+  function sub(pt, dir, txt, n, upLen){
+    var x = pt[0], y = pt[1], h = isHot(n);
+    var L = dir === 'u' ? (upLen || 40) : 34;
     var y2 = dir === 'u' ? y - L : y + L;
     s += '<line class="' + (h ? 'sbh' : 'sb') + '" x1="' + x + '" y1="' + y + '" x2="' + x + '" y2="' + y2 + '"/>';
-    var ty = dir === 'u' ? y2 - 6 : y2 + 13;
+    var ty = dir === 'u' ? y2 - 5 : y2 + 13;
     s += '<text class="' + (h ? 'lbh' : 'lb') + '" x="' + x + '" y="' + ty + '" text-anchor="middle">' + txt + '</text>';
-    if(h) s += '<circle class="ring" cx="' + x + '" cy="' + (dir === 'u' ? y2 - 10 : y2 + 8) + '" r="15"/>';
+    if(h) s += '<circle class="ring" cx="' + x + '" cy="' + (dir === 'u' ? y2 - 8 : y2 + 8) + '" r="' + (dir === 'u' ? 13 : 15) + '"/>';
   }
-  sub(C2, 'u', 'CH\u2082OH', 2);              /* C1 挂在 C2 上 —— 酮糖的记号 */
-  sub(C2, 'd', 'OH', 2);                      /* β 的异头 OH 朝下 */
-  sub(C3, 'u', 'OH', 3);                      /* Fischer 在左 → 朝上 */
-  sub(C4, 'd', 'OH', 4);                      /* Fischer 在右 → 朝下 */
-  sub(C5, 'u', o.c5txt || 'CH\u2082OH', 5);
-  s += '<text class="cn" x="' + (C2[0] + 12) + '" y="' + (C2[1] + 4) + '">2</text>';
-  s += '<text class="cn" x="' + (C3[0] + 11) + '" y="' + (C3[1] + 14) + '">3</text>';
-  s += '<text class="cn" x="' + (C4[0] - 17) + '" y="' + (C4[1] + 14) + '">4</text>';
-  s += '<text class="cn" x="' + (C5[0] - 16) + '" y="' + (C5[1] + 4) + '">5</text>';
-  s += '<text class="cn" x="' + (C2[0] + 12) + '" y="' + (C2[1] - 30) + '">1</text>';
+  sub(C2, 'u', 'CH\u2082OH', 2, 40);   /* C1 挂在 C2 上 —— 酮糖的记号 */
+  sub(C2, 'd', 'OH', 2, 0);            /* β 的异头 OH 朝下 */
+  sub(C3, 'u', 'OH', 3, 52);           /* Fischer 在左 → 朝上 */
+  sub(C4, 'd', 'OH', 4, 0);            /* Fischer 在右 → 朝下 */
+  sub(C5, 'u', o.c5txt || 'CH\u2082OH', 5, 40);
+  s += '<text class="cn" x="' + (C2[0] + 11) + '" y="' + (C2[1] + 4) + '">2</text>';
+  s += '<text class="cn" x="' + (C3[0] + 12) + '" y="' + (C3[1] + 5) + '">3</text>';
+  s += '<text class="cn" x="' + (C4[0] - 18) + '" y="' + (C4[1] + 5) + '">4</text>';
+  s += '<text class="cn" x="' + (C5[0] - 17) + '" y="' + (C5[1] + 4) + '">5</text>';
+  s += '<text class="cn" x="' + (C2[0] + 22) + '" y="' + (C2[1] - 42) + '">1</text>';
   s += '</svg>';
   return s;
 }
