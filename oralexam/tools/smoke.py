@@ -40,6 +40,13 @@ PROBE = {
  'index.html': [],
  'map.html':   [],
  'exam.html':  [],
+ # ⚠ bones.html 没有 #main，所以「渲染 0 字」不算检查 ——
+ # 一个总是能过的检查就是个盲区。这里真数一下章节和目录。
+ 'bones.html': [
+   ("一页纸 章节",  "if(document.querySelectorAll('section[id]').length < 15) throw new Error('章节太少');"),
+   ("一页纸 目录",  "if(document.querySelectorAll('#toc a').length < 15) throw new Error('目录没生成');"),
+   ("一页纸 公式",  "if(document.querySelectorAll('code').length < 8) throw new Error('公式没排');"),
+ ],
  'drill.html': [
    ("选一张卡",   "document.getElementById('onecard').value='01';"),
    ("paintThirds", "paintThirds();"),
@@ -141,12 +148,15 @@ def run(page):
     bad = [x.strip() for x in title.split('|') if '!!' in x]
     mlen = re.search(r'mainLen=(\d+)', title)
     n = int(mlen.group(1)) if mlen else 0
-    ok = not bad and (n > 200 or not steps)
+    # ⚠ 有些页没有 #main（例如 bones.html 是一页静态文），那就只看探针过没过。
+    has_main = ('id="main"' in t)
+    ok = not bad and ((n > 200) or not has_main)
     for x in bad:
         print('  ❌ ' + x)
     if not bad:
-        print('  ✅ %d 步全过 · #main 渲染 %d 字' % (len(steps), n))
-    elif n <= 200 and steps:
+        print('  ✅ %d 步全过%s' % (len(steps),
+              (' · #main 渲染 %d 字' % n) if has_main else ' · 静态页'))
+    elif n <= 200 and has_main:
         print('  ❌ #main 只有 %d 字 —— 首页多半没渲染出来' % n)
     return ok
 
@@ -156,7 +166,7 @@ def main():
         print('❌ 找不到 Chrome 或 Edge，跑不了。')
         return 2
     want = [a for a in sys.argv[1:] if not a.startswith('-')]
-    pages = [p for p in ['index.html', 'drill.html', 'map.html', 'exam.html']
+    pages = [p for p in ['index.html', 'drill.html', 'map.html', 'exam.html', 'bones.html']
              if not want or any(w in p for w in want)]
     print('=' * 70)
     print('实跑 —— 无头浏览器把页面跑起来，抓 Uncaught，再逐个按钮点一遍')
