@@ -55,6 +55,12 @@ PROBE = {
    #   就是因为我只测了周边函数、没真叫。单次调用不会进循环。
    ("一页纸 切句",  "if(window.bonesCount() < 60) throw new Error('句子切少了: '+window.bonesCount());"),
    ("一页纸 念一句","window.bonesSay('test one two', function(){});"),
+   # ⚠ 跟读跟背必须**真点一遍**：上次 earSay 就是因为只测周边函数、
+   #   没真叫，结果引用了不存在的 unspell，她点了没声音才发现。
+   ("一页纸 跟读按钮","if(document.querySelectorAll('.wk button[data-m]').length < 100) throw new Error('跟读按钮没装上');"),
+   ("一页纸 涂掉",  "document.querySelector('.wk button[data-m=\'cloze\']').click(); if(!document.querySelector('.say .bl')) throw new Error('涂不掉');"),
+   ("一页纸 全遮",  "document.querySelector('.wk button[data-m=\'blind\']').click(); if(!document.querySelector('.say .blind')) throw new Error('遮不上'); if(window.bonesWalked() < 1) throw new Error('走过没记上');"),
+   ("一页纸 回原样","document.querySelector('.wk button[data-m=\'read\']').click(); if(document.querySelector('.say .blind')) throw new Error('回不去');"),
    ("一页纸 标签没断","if(document.querySelectorAll('.en b').length < 200) throw new Error('切句把加粗标签切坏了');"),
  ],
  'drill.html': [
