@@ -257,17 +257,60 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 
 <article id="t-gly">
 <h3>Glycolysis</h3>
-<p class="zh">卡 gly · 你已经碰过的三条之一</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">In the <b>cytosol</b>, and it <b>does not need oxygen</b>. Three steps are irreversible and <b>all three are kinases</b>: hexokinase, <b>phosphofructokinase-1 — the main control point</b>, and pyruvate kinase.</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en">Net <b>2 ATP and 2 NADH</b> per glucose — four made, two spent.</p>
-<p class="zh2"><span class="w">⚠ 有氧时一个葡萄糖：你的书说 38，现代教材 30–32。被问先问有没有氧，再给两个数。</span></p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en"><b>Red cells have no mitochondria</b>, so this is all they have. Without oxygen pyruvate is reduced to lactate, and the point of that is <b>to regenerate NAD⁺</b>.</p>
-</div></div>
+<p class="zh">卡 gly · 十步分两相：<b>前五步花钱，后五步赚钱</b></p>
+<ol class="steps">
+<li><b class="t">什么时候跑 — 一直在跑</b><span class="d">
+<b>饭后血糖高的时候最快</b>；<b>缺氧的时候它是唯一的能量来源</b>；
+<b>红细胞一辈子只能靠它</b>（没有线粒体）。在<b>胞质</b>，<b>不需要氧</b>。
+</span></li>
+<li><b class="t">投入相（第 1–5 步）— 先花 2 个 ATP</b><span class="d">
+<b>磷酸化 → 异构 → 再磷酸化 → 劈开 → 互换</b>
+<code class="eq">glucose →[hexokinase|ATP] glucose-6-P →[phosphoglucose isomerase] fructose-6-P →[PFK-1|ATP · 限速] fructose-1,6-bisP →[aldolase] DHAP ＋ GAP</code>
+DHAP 再由 <b>triose phosphate isomerase</b> 变成 GAP，所以<b>一个葡萄糖给出两个 GAP</b>。
+⚠ <b>为什么一上来要花钱</b>：磷酸基带负电，<b>把葡萄糖锁在细胞里出不去</b>；
+而且<b>拉低胞内的游离葡萄糖浓度，进来的梯度才维持得住</b>。
+</span></li>
+<li><b class="t">回收相（第 6–10 步）— 每个三碳赚 2 个 ATP</b><span class="d">
+<b>氧化装磷 → 给 ATP → 挪磷 → 脱水 → 再给 ATP</b>
+<code class="eq">GAP →[GAPDH|NAD⁺ ＋ Pᵢ] 1,3-bisphosphoglycerate →[phosphoglycerate kinase|→ATP] 3-phosphoglycerate →[phosphoglycerate mutase] 2-phosphoglycerate →[enolase|−H₂O] PEP →[pyruvate kinase|→ATP] pyruvate</code>
+⚠ <b>GAPDH 是全程唯一的氧化步</b>，它把无机磷装上去做成高能的酰基磷酸，
+<b>能量是从这里进来的</b>，后面两次给 ATP 都是靠它。
+</span></li>
+<li><b class="t">三个关卡 — 全是 kinase，全不可逆</b><span class="d">
+<b>hexokinase</b>（肝里是 <b>glucokinase</b>：Km 高、<b>不被 G6P 抑制</b>，饭后才大量吃糖）·
+<b>PFK-1</b>（<b>最核心</b>：ATP 和柠檬酸关它，AMP、ADP 和<b>果糖-2,6-二磷酸</b>开它）·
+<b>pyruvate kinase</b>（被<b>果糖-1,6-二磷酸前馈激活</b>；肝型被磷酸化关掉）。
+</span></li>
+<li><b class="t">分叉 — 丙酮酸三条去路，取决于有没有氧</b><span class="d">
+<b>有氧</b> → 进线粒体，<b>PDH</b> 做成 acetyl-CoA。
+<b>缺氧（动物）</b> → <b>乳酸</b>。<b>缺氧（酵母）</b> → <b>乙醇 ＋ CO₂</b>。
+⚠ <b>后两条的目的不是产能，是再生 NAD⁺</b> —— 没有 NAD⁺，GAPDH 那一步就停，
+<b>整条路卡死</b>。这一句被问到的频率很高。
+</span></li>
+<li><b class="t">别的糖从哪儿插进来</b><span class="d">
+<b>果糖</b>（肝里经果糖激酶和醛缩酶 B 进到三碳那一层）· <b>半乳糖</b>（经三个酶变成 G1P 再进）·
+<b>糖原</b>（磷酸解直接给 G1P → G6P，<b>省掉第一个激酶</b>）。
+</span></li>
+<li><b class="t">总账</b><span class="d">
+<b>无氧：净 2 ATP ＋ 2 乳酸</b>（毛 4 净 2）。
+<span class="w"><b>有氧：你的书说 38，现代教材 30–32。</b></span>
+⚠ <b>差在两处</b>：每个 NADH 折算 3 还是 2.5；以及<b>胞质的两个 NADH 靠哪条穿梭进线粒体</b>
+（见呼吸链那一段）—— <b>这就是 30 和 32 的区别。</b>
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+Glycolysis runs in the <b>cytosol</b> and <b>needs no oxygen</b>. It has <b>ten steps in two phases</b>.
+The <b>first five spend two ATP</b> — phosphorylation, isomerisation, a second phosphorylation, cleavage,
+and interconversion of the two trioses. The <b>phosphate keeps the sugar inside the cell</b>
+and keeps the gradient for uptake.
+The <b>second five recover four</b>, so the net is <b>two ATP and two NADH per glucose</b>.
+The only oxidation is at <b>glyceraldehyde-3-phosphate dehydrogenase</b>, and that is where the energy enters.
+<b>Three steps are irreversible and all three are kinases</b>: hexokinase,
+<b>phosphofructokinase-1, which is the main control point</b>, and pyruvate kinase.
+Pyruvate then has three fates: with oxygen it goes to <b>acetyl-CoA</b>; without it, to <b>lactate</b>
+in animals or <b>ethanol</b> in yeast — and <b>the point of that is to regenerate NAD-plus</b>,
+without which the pathway would stop.
+</p><p class="t">约 55 秒 · 「再生 NAD⁺」那一句别漏</p></div>
 </article>
 
 <article id="t-ppp">
@@ -279,51 +322,156 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 
 <article id="t-pdh">
 <h3>Pyruvate dehydrogenase</h3>
-<p class="zh">糖和脂之间的单行道</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">An <b>oxidative decarboxylation</b> in the <b>mitochondrial matrix</b>, and it is <b>irreversible</b>. Pyruvate plus CoA plus NAD⁺ gives <b>acetyl-CoA, CO₂ and NADH</b>.</p>
-<p class="zh2"><b>这一步不可逆，就是「脂肪变不回糖」的断点。</b></p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en"><b>Five cofactors</b>: TPP, lipoamide, CoA, FAD and NAD⁺ — <b>four of them are B vitamins</b>.</p>
-<p class="zh2">α-酮戊二酸脱氢酶用同一套，背一次会两个。</p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en"><b>Thiamine deficiency</b> stalls this step, so pyruvate and lactate accumulate. The brain suffers first because it runs on glucose. <b>Phosphorylation switches it off</b> — the opposite of glycogen phosphorylase.</p>
-</div></div>
+<p class="zh">糖和脂之间的<b>单行道</b> · 三个酶、五个辅因子的接力</p>
+<ol class="steps">
+<li><b class="t">什么时候跑 — 有氧、而且细胞要烧糖的时候</b><span class="d">
+它是<b>糖酵解和柠檬酸循环之间的闸门</b>。能量够了就关，不够就开。
+在<b>线粒体基质</b>，丙酮酸得先被转运进去。
+</span></li>
+<li><b class="t">一句话总反应</b><span class="d">
+<code class="eq">pyruvate ＋ CoA-SH ＋ NAD⁺ →[pyruvate dehydrogenase complex] acetyl-CoA ＋ CO₂ ＋ NADH</code>
+<b>氧化脱羧</b>：掉一个碳变 CO₂，剩两个碳挂到 CoA 的硫上，脱下的氢给 NAD⁺。
+</span></li>
+<li><b class="t">三个酶的接力</b><span class="d">
+<b>E1</b> 脱羧（TPP 上去接住，CO₂ 跑掉）→ <b>E2</b> 把那两个碳经硫辛酰胺的摆臂交给 CoA →
+<b>E3</b> 收拾残局（把硫辛酰胺重新氧化，氢经 FAD 交给 NAD⁺）。
+</span></li>
+<li><b class="t">五个辅因子 — 四个是 B 族维生素</b><span class="d">
+<b>TPP（B₁）· 硫辛酰胺 · CoA（B₅）· FAD（B₂）· NAD⁺（B₃）</b>
+口诀 <b>Tender Loving Care For Nancy</b>。
+⚠ <b>α-酮戊二酸脱氢酶用的是同一套</b>，背一次会两个。
+</span></li>
+<li><b class="t">调控 — 两层，方向一致</b><span class="d">
+<b>产物抑制</b>：acetyl-CoA、NADH、ATP 多了就关。
+<b>共价修饰</b>：<b>PDH kinase 磷酸化 → 关</b>；磷酸酶去磷酸化 ＋ <b>Ca²⁺ 和 ADP → 开</b>。
+<span class="w">⚠ 磷酸化＝关，跟糖原磷酸化酶正好相反，这个反向爱考。</span>
+</span></li>
+<li><b class="t">为什么它这么要紧</b><span class="d">
+⚠ <b>这一步不可逆</b>，所以 <b>acetyl-CoA 回不到丙酮酸</b>。
+<b>糖能变脂肪，脂肪变不回糖，断点就在这儿。</b>
+⚠ 缺硫胺素这一步就瘫，<b>丙酮酸和乳酸堆起来，脑子最先垮</b>（脑只烧糖）。
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+Pyruvate dehydrogenase is the gate between glycolysis and the citric acid cycle,
+in the <b>mitochondrial matrix</b>, and the reaction is an <b>oxidative decarboxylation</b>:
+pyruvate gives <b>acetyl-CoA, CO₂ and NADH</b>.
+It is a <b>complex of three enzymes</b> using <b>five cofactors</b> —
+TPP, lipoamide, coenzyme A, FAD and NAD-plus — and <b>four of those are B vitamins</b>.
+It is switched off by its own products, acetyl-CoA and NADH, and also by <b>phosphorylation</b>,
+which is the opposite direction from glycogen phosphorylase.
+⚠ And because this step is <b>irreversible</b>, acetyl-CoA can never go back to pyruvate —
+<b>that is why fat cannot be converted to glucose</b>.
+</p><p class="t">约 40 秒 · 结尾那句「所以脂肪变不成糖」是整段的落点</p></div>
 </article>
 
 <article id="t-tca">
 <h3>Citric acid cycle</h3>
-<p class="zh">卡 24 · 你已经碰过的三条之一</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">The <b>convergence point</b> — sugars, fats and amino acids all arrive here as acetyl-CoA. Three irreversible steps: <b>citrate synthase</b>, <b>isocitrate dehydrogenase (the main one)</b> and <b>α-ketoglutarate dehydrogenase</b>.</p>
-<p class="zh2">⚠ acetyl-CoA 跟草酰乙酸是<b>合体</b>，不是「变成」——OAA 是托盘，转一圈还回来。</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en">One turn: <b>3 NADH, 1 FADH₂, 1 GTP and 2 CO₂</b>.</p>
-<p class="zh2"><span class="w">换成 ATP：书 12，现代 10。两个都要会。</span></p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en"><b>Succinate dehydrogenase is the only membrane-bound enzyme of the cycle, and it is respiratory Complex II.</b> It is competitively inhibited by <b>malonate</b>.</p>
-<p class="zh2">陷阱：「循环产多少 ATP」→ <b>它直接产的只有 1 个 GTP</b>，其余是呼吸链造的。</p>
-</div></div>
+<p class="zh">卡 24 · <b>汇合点，也是原料库</b> —— 两个身份都要说</p>
+<ol class="steps">
+<li><b class="t">什么时候跑 — 有氧，而且随时</b><span class="d">
+糖、脂、氨基酸都变成 acetyl-CoA 到这里汇合。在<b>线粒体基质</b>。
+⚠ <b>循环本身不用氧</b>，但<b>离了氧就停</b> —— 因为 NADH 要靠呼吸链换回 NAD⁺。
+</span></li>
+<li><b class="t">八步 — 中间物是难点，酶名可以现推</b><span class="d">
+<code class="eq">acetyl-CoA ＋ oxaloacetate →[citrate synthase] citrate →[aconitase] isocitrate →[isocitrate dehydrogenase|NAD⁺ · −CO₂] α-ketoglutarate</code>
+<code class="eq">α-ketoglutarate →[α-KG dehydrogenase|NAD⁺ · −CO₂] succinyl-CoA →[succinyl-CoA synthetase|GDP＋Pᵢ] succinate →[succinate dehydrogenase|FAD · 内膜上] fumarate →[fumarase|＋H₂O] malate →[malate dehydrogenase|NAD⁺] oxaloacetate</code>
+口诀 <b>Can I Keep Selling Sex For Money, Officer?</b>
+</span></li>
+<li><b class="t">碳怎么走 — 进两个，出两个</b><span class="d">
+4 ＋ 2 ＝ <b>6</b> → 掉一个碳 <b>5</b> → 再掉一个 <b>4</b>。
+⚠ <b>acetyl-CoA 和草酰乙酸是「合体」不是「转化」</b>：<b>OAA 是托盘，转一圈还回来，净增 0</b>。
+⚠ 而且第一圈掉的那两个 CO₂ <b>不是刚进来的那两个碳</b>。
+</span></li>
+<li><b class="t">账 — 一圈四样</b><span class="d">
+<b>2 CO₂ · 3 NADH · 1 FADH₂ · 1 GTP</b>。
+<span class="w">换成 ATP：你的书说 12，现代算法 10。</span>
+⚠ <b>陷阱问法</b>：「循环产多少 ATP」→ <b>它直接产的只有 1 个 GTP</b>，其余都是呼吸链造的。
+</span></li>
+<li><b class="t">三个关卡 ＋ 刹车</b><span class="d">
+<b>citrate synthase · isocitrate dehydrogenase（最关键）· α-KG dehydrogenase</b>。
+<b>三个的刹车都是 NADH</b> —— 所以真正决定转速的是<b>呼吸链跑不跑得动</b>。
+<b>Ca²⁺ 开其中两个</b>：肌肉一收缩，钙进来，循环立刻提速。
+</span></li>
+<li><b class="t">特殊的一步 — 琥珀酸脱氢酶</b><span class="d">
+⚠ <b>循环里唯一长在内膜上的酶，而且它就是呼吸链复合体 Ⅱ</b>。
+它不用 NAD⁺ 用 FAD，被结构类似的<b>丙二酸竞争性抑制</b>。
+</span></li>
+<li><b class="t">两用性 — 它同时是原料库</b><span class="d">
+中间物随时被抽走去做别的：<b>α-酮戊二酸 → 谷氨酸</b>· <b>草酰乙酸 → 天冬氨酸、糖异生</b>·
+<b>琥珀酰-CoA → 血红素</b>· <b>柠檬酸 → 出线粒体做脂肪酸</b>。
+⚠ 抽走了就得补回来，这叫<b>回补反应（anaplerotic）</b>，
+最主要的一个是 <b>pyruvate carboxylase</b>（丙酮酸 ＋ CO₂ → 草酰乙酸）。
+<b>这个词书上有</b>（<span class="jump">p140</span>）。
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+The citric acid cycle runs in the <b>mitochondrial matrix</b> and it is the <b>convergence point</b> —
+carbohydrate, fat and amino acids all arrive as <b>acetyl-CoA</b>.
+Each turn gives <b>two CO₂, three NADH, one FADH₂ and one GTP</b>.
+⚠ Note that <b>the cycle itself makes only that one GTP directly</b>; everything else is made later by the chain.
+<b>Three steps are irreversible</b>: citrate synthase, <b>isocitrate dehydrogenase, which is the main control point</b>,
+and α-ketoglutarate dehydrogenase, and <b>all three are braked by NADH</b>.
+<b>Succinate dehydrogenase is the only membrane-bound enzyme of the cycle and it is respiratory Complex II.</b>
+And the cycle is <b>amphibolic</b>: its intermediates are constantly withdrawn for biosynthesis,
+so they have to be replaced by <b>anaplerotic reactions</b>, mainly <b>pyruvate carboxylase</b>.
+</p><p class="t">约 50 秒 · 「只直接产 1 个 GTP」和「两用性」是两个区分度高的点</p></div>
 </article>
 
 <article id="t-etc">
 <h3>Respiratory chain &amp; oxidative phosphorylation</h3>
-<p class="zh">卡 25 · 你已经碰过的三条之一</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en"><b>Chemiosmosis</b>: no chemical intermediate passes between the chain and the synthase, they are coupled <b>only through the proton gradient</b>. <b>Complex II pumps nothing</b>, which is why FADH₂ is worth less.</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en">Modern count: <b>4 + 4 + 2 = 10 protons per NADH</b>, and <b>4 protons per ATP</b>, giving <b>2.5</b> for NADH and <b>1.5</b> for FADH₂.</p>
-<p class="zh2"><span class="w">⚠ 你的书算的是 6 个质子 ≈ 3 ATP。先给书的数，再说现代值差在哪。</span></p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en"><b>Cyanide, CO and azide block Complex IV.</b> An <b>uncoupler such as DNP</b> stops ATP synthesis but <b>speeds the chain up</b> and turns everything into heat. <b>Oligomycin</b> blocks the synthase and stops <b>both</b>.</p>
-<p class="zh2">这两个的<b>对比</b>比任何一个单独记都值钱。</p>
-</div></div>
+<p class="zh">卡 25 · <b>两件事，只靠质子梯度连着</b></p>
+<ol class="steps">
+<li><b class="t">什么时候跑 — 只要有氧和还原型载体</b><span class="d">
+前面所有路交上来的 <b>NADH 和 FADH₂</b> 都在这里兑现。在<b>线粒体内膜</b>上。
+⚠ <b>真正限制速度的不是氧，是 ADP</b> —— 没有 ADP 可磷酸化，链就慢下来（呼吸控制）。
+</span></li>
+<li><b class="t">电子从哪进 — 两个入口</b><span class="d">
+<b>NADH 从复合体 Ⅰ 进</b>；<b>FADH₂ 从复合体 Ⅱ 进</b>（琥珀酸脱氢酶就是它）。
+⚠ <b>Ⅱ 不泵质子</b>，所以从这儿进的电子少推一段，<b>FADH₂ 才比 NADH 值钱少</b>。
+</span></li>
+<li><b class="t">四个复合体 ＋ 两个搬运工</b><span class="d">
+<b>Ⅰ → Q → Ⅲ → cyt c → Ⅳ → O₂</b>
+辅基：<b>Ⅰ FMN · Ⅱ FAD · Ⅲ b/c₁ · Ⅳ a/a₃＋Cu</b>（口诀 Fat Frogs Bite Ankles）。
+⚠ <b>泛醌 Q 是唯一的非蛋白组分</b>，脂溶性，<b>带 2 电子 ＋ 2 质子</b>；
+<b>cyt c 是内膜外侧的外周蛋白，一次只带 1 个电子</b>。
+</span></li>
+<li><b class="t">泵出来多少质子</b><span class="d">
+<span class="w">现代：<b>Ⅰ 泵 4 ＋ Ⅲ 泵 4 ＋ Ⅳ 泵 2 ＝ 每个 NADH 10 个</b>；FADH₂ 只走后两段，<b>6 个</b>。</span>
+<span class="w">你的书：<b>Ⅳ 不算泵，每个 NADH 6 个 ≈ 3 ATP，FADH₂ 4 个 ≈ 2 ATP</b>。</span>
+⚠ <b>两套都要会，而且要说得出差在哪。</b>
+</span></li>
+<li><b class="t">ATP 合酶 — 一台被质子推着转的机器</b><span class="d">
+<b>F₀ 是嵌在膜里的质子通道</b>，质子流过去让它<b>转</b>；<b>F₁ 是伸进基质的头</b>，
+转动改变三个催化位点的构象，把 ADP ＋ Pᵢ 挤成 ATP。
+⚠ <b>每个 ATP 要 4 个质子：3 个用来转，第 4 个用来把磷酸运进基质。</b>
+<b>这就是 10 ÷ 4 ＝ 2.5 的来历。</b>
+</span></li>
+<li><b class="t">胞质的 NADH 怎么进来 — 两条穿梭，而且值钱不一样</b><span class="d">
+<b>NADH 本身过不了内膜</b>，糖酵解造的那两个得换个方式进去：
+<b>苹果酸-天冬氨酸穿梭</b>（肝、心）→ 在基质里还原出 <b>NADH</b>，<b>值 2.5</b>；
+<b>甘油磷酸穿梭</b>（肌肉、脑）→ 交给 <b>FAD</b>，变成 <b>FADH₂</b>，<b>只值 1.5</b>。
+<span class="w">⚠ <b>这就是「一个葡萄糖 30 还是 32」的答案</b> —— 看用哪条穿梭。</span>
+</span></li>
+<li><b class="t">毒物三类 — 分清楚才不会答反</b><span class="d">
+<b>① 堵复合体</b>：鱼藤酮 Ⅰ · 抗霉素 Ⅲ · <b>氰化物 / CO / 叠氮 Ⅳ</b> → <b>链停，ATP 也停</b>。
+<b>② 解偶联</b>（<b>DNP</b>、褐色脂肪的 <b>UCP</b>）：质子漏回去 → <b>ATP 停，但链跑得更快、耗氧更多，能量变热</b>。
+<b>③ 堵合酶</b>（<b>寡霉素</b>）：质子出不去、淤积 → <b>ATP 和链一起停</b>。
+⚠ <b>②和③的对比是最常考的一对。</b>
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+The respiratory chain and ATP synthesis are <b>two separate things, coupled only through the proton gradient</b> —
+that is <b>chemiosmosis</b>, and <b>no chemical intermediate passes between them</b>.
+Electrons from <b>NADH enter at Complex I</b> and from <b>FADH₂ at Complex II</b>, which <b>pumps no protons</b>,
+and that is why FADH₂ is worth less. They pass along <b>ubiquinone, Complex III, cytochrome c and Complex IV</b> to oxygen.
+On the modern count, <b>ten protons are pumped per NADH and six per FADH₂</b>,
+and the synthase needs <b>four protons per ATP</b> — three to turn it and one to bring the phosphate in —
+which gives <b>2.5 and 1.5</b>. My own textbook counts six protons and about three ATP instead.
+⚠ Cytosolic NADH cannot cross the membrane, so it enters by a <b>shuttle</b>:
+the malate–aspartate shuttle delivers NADH and the glycerol phosphate shuttle delivers FADH₂,
+<b>and that is why a glucose is worth thirty or thirty-two depending on the tissue</b>.
+</p><p class="t">约 60 秒 · 穿梭那一句是这一段新加的重点</p></div>
 </article>
 
 <article id="t-fao">
