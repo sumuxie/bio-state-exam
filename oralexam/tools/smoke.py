@@ -43,9 +43,9 @@ PROBE = {
  # ⚠ bones.html 没有 #main，所以「渲染 0 字」不算检查 ——
  # 一个总是能过的检查就是个盲区。这里真数一下章节和目录。
  'bones.html': [
-   ("一页纸 章节",  "if(document.querySelectorAll('section[id]').length < 15) throw new Error('章节太少');"),
-   ("一页纸 目录",  "if(document.querySelectorAll('#toc a').length < 15) throw new Error('目录没生成');"),
-   ("一页纸 公式",  "if(document.querySelectorAll('code').length < 8) throw new Error('公式没排');"),
+   ("一页纸 章节",  "if(document.querySelectorAll('article[id]').length < 20) throw new Error('章节太少');"),
+   ("一页纸 目录",  "if(document.querySelectorAll('#toc a').length < 20) throw new Error('目录没生成');"),
+   ("一页纸 三块",  "if(document.querySelectorAll('.row.must').length < 20) throw new Error('MUST SAY 块太少');"),
  ],
  'drill.html': [
    ("选一张卡",   "document.getElementById('onecard').value='01';"),
