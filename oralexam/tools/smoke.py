@@ -46,6 +46,11 @@ PROBE = {
    ("一页纸 章节",  "if(document.querySelectorAll('article[id]').length < 20) throw new Error('章节太少');"),
    ("一页纸 目录",  "if(document.querySelectorAll('#toc a').length < 20) throw new Error('目录没生成');"),
    ("一页纸 三块",  "if(document.querySelectorAll('.row.must').length < 20) throw new Error('MUST SAY 块太少');"),
+   # ⚠ 朝读必须**真调一次** —— 上次 earSay 引用了不存在的 unspell，
+   #   就是因为我只测了周边函数、没真叫。单次调用不会进循环。
+   ("一页纸 切句",  "if(window.bonesCount() < 60) throw new Error('句子切少了: '+window.bonesCount());"),
+   ("一页纸 念一句","window.bonesSay('test one two', function(){});"),
+   ("一页纸 标签没断","if(document.querySelectorAll('.en b').length < 200) throw new Error('切句把加粗标签切坏了');"),
  ],
  'drill.html': [
    ("选一张卡",   "document.getElementById('onecard').value='01';"),
