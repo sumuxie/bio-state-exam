@@ -328,17 +328,66 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 
 <article id="t-fao">
 <h3>Fatty acid oxidation</h3>
-<p class="zh">⚠ 没碰过的一条</p>
-<div class="row must"><div class="lab">Must say</div><div>
-<p class="en">In the <b>mitochondrial matrix</b>, and the acid must be <b>activated to a thioester with CoA first</b>. Then four steps repeat: <b>oxidation, hydration, oxidation, thiolysis</b>.</p>
-<p class="zh2">四步 ＝ <b>氧 · 水 · 氧 · 切</b>，酶名就是动作名。</p>
-</div></div>
-<div class="row"><div class="lab">Numbers</div><div>
-<p class="en">Each round: <b>1 NADH, 1 FADH₂, 1 acetyl-CoA</b>, and the chain is <b>two carbons shorter</b>. <b>Rounds = carbons ÷ 2 − 1.</b></p>
-</div></div>
-<div class="row"><div class="lab">Hook</div><div>
-<p class="en">The real control point is the door, not the chemistry: <b>carnitine acyltransferase I</b>, and it is <b>inhibited by malonyl-CoA</b> — the first product of fatty acid <b>synthesis</b>. So switching synthesis on switches oxidation off.</p>
-</div></div>
+<p class="zh"><b class="w">⚠ 她说太短的那一段，补全了</b> · 三步进门，一个循环，三个分叉</p>
+<ol class="steps">
+<li><b class="t">活化 — 在胞质，先做成硫酯</b><span class="d">
+<code class="eq">fatty acid ＋ CoA ＋ ATP →[acyl-CoA synthetase] acyl-CoA ＋ AMP ＋ PPᵢ</code>
+⚠ <b>ATP 断成 AMP，不是 ADP</b>，焦磷酸随后又被水解掉 —— 所以这一步的代价是
+<b>两个高能磷酸键，不是一个</b>。书说得很明白：<b>游离脂肪酸进不了任何代谢通路</b>，合成和分解都得先活化。
+</span></li>
+<li><b class="t">肉碱穿梭 — 真正的限速门</b><span class="d">
+长链酰基-CoA <b>过不了线粒体内膜</b>。外膜上的 <b>CPT-1</b> 把酰基换到<b>肉碱</b>上，
+<b>translocase</b> 把它换进去，内侧的 <b>CPT-2</b> 再换回 CoA。
+⚠ <b>CPT-1 是整条路的限速步，而它被丙二酰-CoA 关掉</b> —— 那是脂肪酸<b>合成</b>的第一个产物。
+<b>合成一开，氧化的门就锁上。</b>⚠ <b>中短链脂肪酸不用这道门，直接就进去了。</b>
+</span></li>
+<li><b class="t">四步循环 — 氧 · 水 · 氧 · 切</b><span class="d">
+<code class="eq">acyl-CoA →[acyl-CoA dehydrogenase|FAD] trans-Δ²-enoyl-CoA →[enoyl-CoA hydratase|＋H₂O] 3-hydroxyacyl-CoA →[3-hydroxyacyl-CoA dehydrogenase|NAD⁺] 3-ketoacyl-CoA →[thiolase|＋CoA] acetyl-CoA ＋ acyl-CoA（短两个碳）</code>
+每轮出 <b>1 FADH₂ ＋ 1 NADH ＋ 1 acetyl-CoA</b>，<b>轮数 ＝ 碳数 ÷ 2 − 1</b>。
+⚠ 白拿的加分：<b>前三步跟柠檬酸循环最后三步是同一套化学</b>（脱氢 → 加水 → 再脱氢）。
+</span></li>
+<li><b class="t">分叉一 · 奇数碳 — 最后剩三个碳</b><span class="d">
+偶数碳链切到最后正好是<b>两个 acetyl-CoA</b>，干净利落。
+<b>奇数碳链最后一轮剩下的是丙酰-CoA（3 碳）</b>，它得另走一条路：
+<code class="eq">propionyl-CoA →[propionyl-CoA carboxylase|biotin · ATP] methylmalonyl-CoA →[methylmalonyl-CoA mutase|B₁₂] succinyl-CoA</code>
+⚠ <b>琥珀酰-CoA 是柠檬酸循环的中间物，能变成草酰乙酸，所以能做糖。</b>
+<b>这是脂肪酸里唯一生糖的那一小块</b> —— 而「脂肪不能变成糖」的大原则还是对的，
+因为那说的是<b>偶数碳链给出的 acetyl-CoA</b>。
+⚠ 顺带：<b>这里是 B₁₂ 在代谢里露面的两处之一。</b>
+</span></li>
+<li><b class="t">分叉二 · 超长链（C &gt; 22）— 先去过氧化物酶体</b><span class="d">
+<b>线粒体处理不了太长的链</b>。C22 以上的先在<b>过氧化物酶体</b>里切几轮，短了再交给线粒体。
+⚠ <b>那里的第一步不一样</b>：用的是<b>氧化酶</b>，电子直接交给氧，
+<b>产物是 H₂O₂ 而不是 FADH₂</b>（过氧化氢酶随后把它拆掉）。
+<b>所以那几轮不产 ATP，能量变成热。</b>
+⚠ 病名知道就行：<b>X 连锁肾上腺脑白质营养不良</b>（超长链进不了过氧化物酶体）。
+</span></li>
+<li><b class="t">分叉三 · 不饱和 — 要多两个酶</b><span class="d">
+天然双键是<b>顺式</b>，而循环只认<b>反式 Δ²</b>。
+所以双键在<b>奇数位</b>时要一个<b>异构酶</b>把它搬正；在<b>偶数位</b>时还要一个
+<b>还原酶（用 NADPH）</b>先把两个双键并成一个再搬。
+⚠ <b>每绕过一个双键，就少一次 FAD 脱氢，所以不饱和脂肪酸产的 ATP 略少。</b>
+</span></li>
+<li><b class="t">总账 — 一整条棕榈酸（C16）</b><span class="d">
+<b>7 轮 → 8 acetyl-CoA ＋ 7 FADH₂ ＋ 7 NADH</b>，再减去活化花掉的 2 个高能键。
+<span class="w">现代算法 ≈ <b>106 ATP</b>；按你书的折算率（acetyl-CoA 12、NADH 3、FADH₂ 2）≈ <b>129</b>。</span>
+⚠ <b>报数之前先说是按哪套算的。</b>
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+Beta-oxidation happens in the <b>mitochondrial matrix</b>, and there are two things to get through first.
+The fatty acid must be <b>activated to a thioester with coenzyme A</b>, which costs <b>two high-energy bonds</b>
+because the ATP goes all the way to AMP. Then the acyl group has to cross the inner membrane on <b>carnitine</b>,
+and <b>carnitine acyltransferase I is the rate-limiting step of the whole pathway</b> — it is
+<b>inhibited by malonyl-CoA</b>, so switching synthesis on switches oxidation off.
+The cycle itself is <b>four steps: oxidation, hydration, oxidation and thiolysis</b>, giving
+<b>one FADH₂, one NADH and one acetyl-CoA</b> per round, and the chain is two carbons shorter each time.
+An <b>even-numbered chain ends as acetyl-CoA</b>. An <b>odd-numbered one leaves propionyl-CoA</b>,
+which is carboxylated and then rearranged by a <b>B12-dependent mutase into succinyl-CoA</b> —
+and that is the only part of a fatty acid that can become glucose.
+<b>Very long chains, above about twenty-two carbons, are shortened in the peroxisome first</b>,
+where the first oxidation gives <b>hydrogen peroxide instead of FADH₂</b>, so that part yields heat rather than ATP.
+</p><p class="t">约 60 秒 · 偶数/奇数那一句和过氧化物酶体那一句是这次补的重点</p></div>
 </article>
 
 <article id="t-fas">
