@@ -67,6 +67,20 @@ li{margin:5px 0}
    原因是 D-ribulose-5-P / D-xylulose-5-P 这种长词不断行。 */
 th,td{overflow-wrap:anywhere;word-break:break-word}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0}
+/* 一组变化：左结构 · 中间箭头写酶 · 右结构 · 底下一句说变了什么 */
+.step{display:flex;flex-wrap:wrap;align-items:center;gap:6px;background:var(--card);
+  border:1px solid var(--line);border-radius:12px;padding:14px 12px;margin:14px 0}
+.side{flex:1 1 250px;text-align:center;min-width:230px}
+.side b{display:block;font-size:14.5px;margin:0 0 2px}
+.mid{flex:0 1 190px;text-align:center;padding:4px 0}
+.arw{font-size:30px;color:var(--accent);line-height:.9}
+.enz{font-weight:700;font-size:13px;color:var(--accent);line-height:1.35;margin-top:4px}
+.kind{font-size:11.5px;color:var(--dim);margin-top:1px}
+.cof{font-size:12px;font-weight:700;margin-top:4px}
+.what{flex:1 1 100%;font-size:13.5px;color:var(--dim);line-height:1.65;
+  border-top:1px solid var(--line);padding-top:11px;margin-top:6px}
+.what b{color:var(--ink)}
+@media (max-width:640px){ .mid{flex:1 1 100%} .arw{font-size:24px} }
 .tw table{margin:0;min-width:520px}
 @media (max-width:520px){
   .mol{flex:1 1 100%}
@@ -102,61 +116,56 @@ D 还是 L 只看编号最大的那个手性碳，己糖就是 C5。</p>
 <p class="note">核糖背成三个字：<b class="k">右 · 右 · 右</b>。后面两个是酮糖，磷酸戊糖途径里的主角。</p>
 <div class="grid" id="pent"></div>
 
-<h2>四 · 酶大类 —— 为什么你看不见 epimerase</h2>
-<div class="warnbox"><b>因为我把大类和具体酶名混在一列里了。</b>
-而且有个更要紧的关系要先说清：
-<b class="k">epimerase 不是 isomerase 的下级，它们是亲兄弟。</b></div>
-<div class="rule"><b class="k">EC 5 ＝ 异构酶这一大类</b>（你口诀里「裂合 · 异构 · 连接」的那个异构）。
-它下面分三个：<br>
-· <b class="k">EC 5.1 差向异构酶 epimerase</b> / 消旋酶 racemase —— <b>翻一个手性碳</b>，分子式不变、构型变<br>
-· <b class="k">EC 5.3 异构酶 isomerase</b>（分子内氧化还原酶）—— <b>羬基挪位置</b>，醒糖 ⇄ 酮糖<br>
-· <b class="k">EC 5.4 变位酶 mutase</b> —— <b>基团在分子内换位置</b>，比如磷酸从 C1 挪到 C6</div>
-<div class="rule"><b class="k">背这一句就够：名字的结尾就是大类。</b>
-叫 -epimerase 的就是 EC 5.1，叫 -isomerase 的就是 EC 5.3，叫 -mutase 的就是 EC 5.4。</div>
+<h2>四 · 结构怎么变，中间是什么酶</h2>
+<p class="note">每一组都是：<b>左边的结构 → 箭头上写是谁干的 → 右边的结构</b>。
+<b class="k">橙色圈出来的就是变的那一处。</b></p>
+<div id="steps"></div>
+<p class="note">上面出现的三个词，只是按「它干了什么」分的：
+<b>差向异构酶</b>翻一个手性碳 · <b>异构酶</b>把羰基挪位置 · <b>变位酶</b>把基团在分子内挪位置。
+名字的结尾就是它干的事，不用记编号。</p>
 
-<h3>每个酶：大类 · 它到底在干什么 · 底物变产物</h3>
+<h3>一张表收口</h3>
 <div class="tw"><table>
-<tr><th>酶</th><th>大类 · EC</th><th>催化的反应本身是什么</th><th>底物 → 产物</th></tr>
-<tr><td class="en">Phosphoglucose isomerase (PGI)</td><td><b>Isomerase</b><br><span class="note en">EC 5.3.1.9</span></td><td><b>醒糖⇄酮糖异构化</b>：羬基从 C1 挪到 C2，经<b>顺式烯二醇</b>中间体。不要任何辅因子</td><td class="en note">Glc-6-P ⇄ Fru-6-P</td></tr>
-<tr><td class="en">Mannose-6-phosphate isomerase</td><td><b>Isomerase</b><br><span class="note en">EC 5.3.1.8</span></td><td>同上，醒糖⇄酮糖。<b>甘露糖就是这么进糖酥解的</b></td><td class="en note">Man-6-P ⇄ Fru-6-P</td></tr>
-<tr><td class="en">Ribose-5-phosphate isomerase</td><td><b>Isomerase</b><br><span class="note en">EC 5.3.1.6</span></td><td>醒糖⇄酮糖</td><td class="en note">Rib-5-P ⇄ Ribulose-5-P</td></tr>
-<tr><td class="en">Triose phosphate isomerase (TPI)</td><td><b>Isomerase</b><br><span class="note en">EC 5.3.1.1</span></td><td>醒糖⇄酮糖（三碳）。你口诀里糖酥解那个「换」</td><td class="en note">DHAP ⇄ G3P</td></tr>
-<tr><td class="en">UDP-glucose 4-epimerase (GALE)</td><td><b class="k">Epimerase</b><br><span class="note en">EC 5.1.3.2</span></td><td><b>C4 差向异构化</b>。离羬基太远，所以靠 <b>NAD⁺ 先把 C4 氧化成酮、转个面、再还原</b></td><td class="en note">UDP-Gal ⇄ UDP-Glc</td></tr>
-<tr><td class="en">Ribulose-5-phosphate 3-epimerase</td><td><b class="k">Epimerase</b><br><span class="note en">EC 5.1.3.1</span></td><td><b>C3 差向异构化</b>。酮糖的羬基在 C2，<b>C3 正好挨着</b>，所以经 2,3-烯二醇负离子，<b>不要 NAD⁺</b></td><td class="en note">Ru5P ⇄ Xu5P</td></tr>
-<tr><td class="en">UDP-GlcNAc 2-epimerase</td><td><b class="k">Epimerase</b><br><span class="note en">EC 5.1.3.14</span></td><td><b>C2 差向异构化</b>。一个真存在的 C2 差向异构酶，唱酸合成用它</td><td class="en note">UDP-GlcNAc ⇄ UDP-ManNAc</td></tr>
-<tr><td class="en">Aldose 1-epimerase（变旋酶 mutarotase）</td><td><b class="k">Epimerase</b><br><span class="note en">EC 5.1.3.3</span></td><td><b>异头碳 C1 翻面</b>，必须经开链。不加它也会自己发生，叫变旋</td><td class="en note">α-Glc ⇄ β-Glc</td></tr>
-<tr><td class="en">Phosphoglucomutase</td><td><b class="k">Mutase</b><br><span class="note en">EC 5.4.2.2</span></td><td><b>磷酸基在分子内换位置</b>，经 1,6-双磷酸中间体。⚠ 糖本身没变，所以这不是糖的异构体</td><td class="en note">Glc-1-P ⇄ Glc-6-P</td></tr>
-<tr><td class="en">Galactokinase</td><td><b>Transferase（激酶）</b><br><span class="note en">EC 2.7.1.6</span></td><td><b>磷酸基转移</b>，ATP 供磷</td><td class="en note">Gal → Gal-1-P</td></tr>
-<tr><td class="en">GALT（Gal-1-P uridylyltransferase）</td><td><b>Transferase</b><br><span class="note en">EC 2.7.7.12</span></td><td><b>尿苷酰基转移</b>—— 两个糖换伴儿。⚠ <b>这一步缺陷就是经典型半乳糖血症</b></td><td class="en note">Gal-1-P + UDP-Glc → UDP-Gal + Glc-1-P</td></tr>
-<tr><td class="en">Aldose reductase</td><td><b>Oxidoreductase</b><br><span class="note en">EC 1.1.1.21</span></td><td><b>羬基还原成醇</b>，NADPH 供氢。这不是异构化，是氧化还原</td><td class="en note">Glucose → Sorbitol</td></tr>
-<tr><td class="en">Sorbitol dehydrogenase</td><td><b>Oxidoreductase</b><br><span class="note en">EC 1.1.1.14</span></td><td><b>醇氧化成酮</b>，NAD⁺ 取氢</td><td class="en note">Sorbitol → Fructose</td></tr>
+<tr><th>酶</th><th>它干了什么</th><th>底物 → 产物</th></tr>
+<tr><td>磷酸葡糖异构酶 PGI</td><td>醛糖变酮糖，羰基从 C1 挪到 C2，六元环变五元环</td>
+    <td class="en note">Glc-6-P ⇄ Fru-6-P</td></tr>
+<tr><td>磷酸甘露糖异构酶</td><td>同上，醛糖变酮糖。<b>甘露糖就是这么进糖酵解的</b></td>
+    <td class="en note">Man-6-P ⇄ Fru-6-P</td></tr>
+<tr><td>磷酸丙糖异构酶 TPI</td><td>醛糖变酮糖（三碳）。你口诀里糖酵解那个「换」</td>
+    <td class="en note">DHAP ⇄ G3P</td></tr>
+<tr><td>核糖-5-磷酸异构酶</td><td>醛糖变酮糖</td>
+    <td class="en note">Rib-5-P ⇄ Ru5P</td></tr>
+<tr><td><b class="k">UDP-葡萄糖 4-差向异构酶 GALE</b></td>
+    <td><b>翻 C4</b>。离羰基远，<b>所以要 NAD⁺</b>：先氧化成酮，转面，再还原</td>
+    <td class="en note">UDP-Gal ⇄ UDP-Glc</td></tr>
+<tr><td><b class="k">核酮糖-5-磷酸 3-差向异构酶</b></td>
+    <td><b>翻 C3</b>。酮糖羰基在 C2，C3 正好挨着，<b>所以不要 NAD⁺</b></td>
+    <td class="en note">Ru5P ⇄ Xu5P</td></tr>
+<tr><td><b class="k">变旋酶 mutarotase</b></td>
+    <td><b>翻 C1（异头碳）</b>，必须经开链。不加它也会自己慢慢变</td>
+    <td class="en note">α-Glc ⇄ β-Glc</td></tr>
+<tr><td>磷酸葡糖变位酶</td><td><b>糖一点没变</b>，只有磷酸从 C1 挪到 C6</td>
+    <td class="en note">Glc-1-P ⇄ Glc-6-P</td></tr>
+<tr><td>半乳糖激酶</td><td>加一个磷酸，ATP 供</td><td class="en note">Gal → Gal-1-P</td></tr>
+<tr><td>GALT</td><td>两个糖换伴儿，把 UDP 递过去。<b>这一步缺陷＝经典型半乳糖血症</b></td>
+    <td class="en note">Gal-1-P + UDP-Glc → UDP-Gal + Glc-1-P</td></tr>
+<tr><td>醛糖还原酶</td><td>把羰基还原成醇，NADPH 供氢。<b>这不是异构化</b></td>
+    <td class="en note">Glucose → Sorbitol</td></tr>
+<tr><td>山梨醇脱氢酶</td><td>把醇氧化成酮，NAD⁺ 取氢</td>
+    <td class="en note">Sorbitol → Fructose</td></tr>
 </table></div>
-<p class="note">三个 <b class="k">Epimerase</b> 不要搂成一团：
-<b>GALE 要 NAD⁺</b>（C4 离羬基远），
-<b>3-epimerase 不要</b>（C3 挨着酮糖的羬基）。
-这一对对比本身就是考点。</p>
 
 <h3>又一张：谁和谁互为什么</h3>
-<div class="tw"><table class="en">
-<tr><th>Pair</th><th>Relationship</th><th>Interconverted by</th></tr>
-<tr><td>D-glucose / D-mannose</td><td><b>C2 epimers</b></td>
-    <td>No direct epimerase in humans. Mannose enters as Man-6-P, then
-        mannose-6-phosphate isomerase</td></tr>
-<tr><td>D-glucose / D-galactose</td><td><b>C4 epimers</b></td>
-    <td>UDP-glucose 4-epimerase, on the UDP-sugar only</td></tr>
-<tr><td>D-mannose / D-galactose</td><td><b>Diastereomers, not epimers</b> (C2 and C4)</td>
-    <td>No single enzyme. Both route through Glc-6-P</td></tr>
-<tr><td>D-glucose / D-fructose</td><td><b>Constitutional isomers</b>, aldose against ketose</td>
-    <td>Phosphoglucose isomerase</td></tr>
-<tr><td>D-glucose / L-glucose</td><td><b>Enantiomers</b></td>
-    <td>None. Every chiral centre would have to invert</td></tr>
-<tr><td>α- / β-D-glucopyranose</td><td><b>Anomers</b>, C1 only, and only once the ring is closed</td>
-    <td>Mutarotation, or aldose 1-epimerase</td></tr>
-<tr><td>D-ribose / D-arabinose</td><td><b>C2 epimers</b></td><td>Same enediol logic</td></tr>
-<tr><td>D-ribose / D-xylose</td><td><b>C3 epimers</b></td><td>No enzyme on the free sugars</td></tr>
-<tr><td>Ru5P / Xu5P</td><td><b>C3 epimers</b></td><td>Ribulose-5-phosphate 3-epimerase</td></tr>
-<tr><td>Glc-1-P / Glc-6-P</td><td><b>Positional isomers of the phosphate</b></td>
-    <td>Phosphoglucomutase</td></tr>
+<div class="tw"><table>
+<tr><th>一对</th><th>差在哪</th><th>叫什么</th></tr>
+<tr><td>葡萄糖 / 甘露糖</td><td>只差 C2</td><td><b>差向异构体</b></td></tr>
+<tr><td>葡萄糖 / 半乳糖</td><td>只差 C4</td><td><b>差向异构体</b></td></tr>
+<tr><td>甘露糖 / 半乳糖</td><td>差 C2 和 C4 两处</td><td><b>非对映异构体</b>，不是差向异构体</td></tr>
+<tr><td>葡萄糖 / 果糖</td><td>羰基换了碳，官能团变了</td><td><b>结构异构体</b></td></tr>
+<tr><td>D- / L-葡萄糖</td><td>所有手性碳全反</td><td><b>对映异构体</b></td></tr>
+<tr><td>α- / β-D-葡萄糖</td><td>只差 C1，且必须先关环</td><td><b>异头物</b></td></tr>
+<tr><td>核糖 / 阿拉伯糖</td><td>只差 C2</td><td><b>差向异构体</b></td></tr>
+<tr><td>核糖 / 木糖</td><td>只差 C3</td><td><b>差向异构体</b></td></tr>
 </table></div>
 
 <h2>五 · 半乳糖那条完整通路</h2>
@@ -180,31 +189,7 @@ D 还是 L 只看编号最大的那个手性碳，己糖就是 C5。</p>
 酮糖的羰基在 C2，所以 <b>C3 也挨着羰基</b>，
 这正是 ribulose-5-phosphate 3-epimerase 不需要 NAD⁺ 的原因。</div>
 
-<h2>七 · Epimerase 到底有没有</h2>
-<p>有，而且是一整个类：<b class="k">EC 5.1.3</b>，专门管碳水化合物上的差向异构。
-它们几乎都作用在<b>核苷酸糖</b>（UDP / GDP / dTDP 挂着的糖）上，不是游离糖。</p>
-<div class="tw"><table class="en">
-<tr><th>Enzyme</th><th>EC</th><th>Which carbon</th><th>Cofactor</th><th>Where it matters</th></tr>
-<tr><td>UDP-glucose 4-epimerase (GALE)</td><td>5.1.3.2</td><td>C4</td><td><b>NAD⁺</b></td>
-    <td>Leloir pathway, galactose into glycolysis</td></tr>
-<tr><td>UDP-GlcNAc 2-epimerase</td><td>5.1.3.14</td><td><b>C2</b></td><td>none</td>
-    <td>Sialic acid synthesis. A real C2 epimerase</td></tr>
-<tr><td>Ribulose-5-phosphate 3-epimerase</td><td>5.1.3.1</td><td>C3</td><td>none</td>
-    <td>Pentose phosphate pathway</td></tr>
-<tr><td>UDP-glucuronate 4-epimerase</td><td>5.1.3.6</td><td>C4</td><td>NAD⁺</td>
-    <td>Plant cell wall, glycosaminoglycans</td></tr>
-<tr><td>GDP-mannose 3,5-epimerase</td><td>5.1.3.18</td><td>C3 and C5</td><td>NAD⁺</td>
-    <td>Plant vitamin C route</td></tr>
-<tr><td>Cellobiose 2-epimerase</td><td>5.1.3.11</td><td>C2 of a disaccharide</td><td>none</td>
-    <td>Bacterial</td></tr>
-<tr><td>Aldose 1-epimerase (mutarotase)</td><td>5.1.3.3</td><td>C1, anomeric</td><td>none</td>
-    <td>Speeds up mutarotation. Strictly an anomerase</td></tr>
-</table></div>
-<div class="rule">被追问的时候这样答：<b class="k">差向异构酶是 EC 5.1.3 一整族，
-但它们大多不碰游离糖，碰的是 UDP 挂着的糖。</b>
-人体里没有把游离葡萄糖直接翻成甘露糖的酶 —— 甘露糖是经 M6P 再异构成 F6P 进来的。</div>
-
-<h2>八 · 关环之后：异头物</h2>
+<h2>七 · 关环之后：异头物</h2>
 <p class="note">开链的 C1 是羰基，不是手性中心。<b>一关环，C1 就成了新的手性碳</b>，叫异头碳。
 所以异头物这一层<b class="k">只有环状结构才有</b>。</p>
 <div class="grid" id="haw"></div>
@@ -229,7 +214,7 @@ D 还是 L 只看编号最大的那个手性碳，己糖就是 C5。</p>
 在椅式构象里，β-D-吡喃葡萄糖<b>所有取代基都在平伏键上</b>，谁也不挤。
 这也是葡萄糖成为生物界最常见的糖的原因。</div>
 
-<h2>九 · 口试答题的顺序</h2>
+<h2>八 · 口试答题的顺序</h2>
 <div class="rule">先说<b class="k">差几个碳、差的是哪个碳</b>，
 再说<b class="k">靠什么机制翻过去</b>，最后才报名字。<br>
 <span class="note">epimer / isomer / anomer 是结论，不是答案。先给判据，名字自己就出来了。</span></div>
@@ -340,67 +325,125 @@ document.getElementById('pent').innerHTML =
            fischer(CH2, ['K','L','R'], CH2, [2]), true);
 
 /* ============ Haworth ============ */
-/* ⚠ 第二版。第一版画成正六边形，C3/C4 「朝上」的取代基
-   落进了环肚子里，看不出上下（截图确认）。
-   现在是**平铺式**：C1–C4 排在同一条水平线（前沿，粗线），
-   C5 和环氧抬到后面一条线。取代基笔直朝上或朝下，不会撞环。 */
-function haworth(kind, c1, c2, c3, c4){
-  var W = 300, H = 210;
-  var yF = 128, yB = 62;                 /* 前沿 / 后沿 两条线 */
+/* 平铺式：C1–C4 排在同一条水平线（前沿，粗线），C5 和环氧抬到后面一条线。
+   取代基笔直朝上或朝下，不会撞环。hot 是要橙色高亮的位置编号。 */
+function haworth(o){
+  var W = 300, H = 200;
+  var yF = 124, yB = 58;
   var C4 = [62, yF], C3 = [128, yF], C2 = [194, yF], C1 = [260, yF];
   var C5 = [86, yB], OO = [236, yB];
+  var hot = o.hot || [];
+  function isHot(n){ return hot.indexOf(n) >= 0; }
   var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img">';
   s += '<style>'
      + '.rg{stroke:var(--ink);stroke-width:1.7;fill:none;stroke-linejoin:round;stroke-linecap:round}'
      + '.rf{stroke:var(--ink);stroke-width:4.2;fill:none;stroke-linecap:round}'
      + '.sb{stroke:var(--ink);stroke-width:1.6;stroke-linecap:round}'
-     + '.sbh{stroke:var(--accent);stroke-width:2.6;stroke-linecap:round}'
+     + '.sbh{stroke:var(--accent);stroke-width:2.8;stroke-linecap:round}'
      + '.lb{fill:var(--ink);font:600 12.5px "Segoe UI",system-ui,sans-serif}'
-     + '.lbh{fill:var(--accent);font:700 12.5px "Segoe UI",system-ui,sans-serif}'
+     + '.lbh{fill:var(--accent);font:700 13px "Segoe UI",system-ui,sans-serif}'
      + '.cn{fill:var(--faint);font:600 10px "Segoe UI",system-ui,sans-serif}'
      + '.ox{fill:var(--accent);font:700 13.5px "Segoe UI",system-ui,sans-serif}'
+     + '.ring{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:3 2.5}'
      + '</style>';
-  /* 后沿：C4-C5 / C5-O / O-C1 */
   s += '<polyline class="rg" points="' + C4[0] + ',' + C4[1] + ' ' + C5[0] + ',' + C5[1]
      + ' ' + OO[0] + ',' + OO[1] + ' ' + C1[0] + ',' + C1[1] + '"/>';
-  /* 前沿：C1-C2-C3-C4，粗线 */
   s += '<polyline class="rf" points="' + C1[0] + ',' + C1[1] + ' ' + C2[0] + ',' + C2[1]
      + ' ' + C3[0] + ',' + C3[1] + ' ' + C4[0] + ',' + C4[1] + '"/>';
-  /* 环氧 */
   s += '<circle cx="' + OO[0] + '" cy="' + OO[1] + '" r="9.5" fill="var(--card)"/>';
   s += '<text class="ox" x="' + OO[0] + '" y="' + (OO[1] + 5) + '" text-anchor="middle">O</text>';
-  /* 取代基 */
-  function sub(pt, dir, txt, hot){
-    var x = pt[0], y = pt[1], L = 34;
+  function sub(pt, dir, txt, n){
+    var x = pt[0], y = pt[1], L = 32, h = isHot(n);
     var y2 = dir === 'u' ? y - L : y + L;
-    s += '<line class="' + (hot ? 'sbh' : 'sb') + '" x1="' + x + '" y1="' + y + '" x2="' + x + '" y2="' + y2 + '"/>';
+    s += '<line class="' + (h ? 'sbh' : 'sb') + '" x1="' + x + '" y1="' + y + '" x2="' + x + '" y2="' + y2 + '"/>';
     var ty = dir === 'u' ? y2 - 6 : y2 + 13;
-    s += '<text class="' + (hot ? 'lbh' : 'lb') + '" x="' + x + '" y="' + ty + '" text-anchor="middle">' + txt + '</text>';
+    s += '<text class="' + (h ? 'lbh' : 'lb') + '" x="' + x + '" y="' + ty + '" text-anchor="middle">' + txt + '</text>';
+    if(h) s += '<circle class="ring" cx="' + x + '" cy="' + (dir === 'u' ? y2 - 10 : y2 + 8) + '" r="15"/>';
   }
-  /* 碳编号，标在前沿线的斜下方 */
-  function num(pt, n, dx){
-    s += '<text class="cn" x="' + (pt[0] + (dx || 9)) + '" y="' + (pt[1] + 15) + '">' + n + '</text>';
-  }
-  sub(C5, 'u', 'CH\u2082OH', false);
+  sub(C5, 'u', o.c5txt || 'CH\u2082OH', 5);
   s += '<text class="cn" x="' + (C5[0] - 16) + '" y="' + (C5[1] + 4) + '">5</text>';
-  sub(C1, c1, 'OH', true);   num(C1, '1');
-  sub(C2, c2, 'OH', false);  num(C2, '2');
-  sub(C3, c3, 'OH', false);  num(C3, '3');
-  sub(C4, c4, 'OH', kind === 'gal'); num(C4, '4', -16);
+  sub(C1, o.c1, o.c1txt || 'OH', 1);
+  sub(C2, o.c2, 'OH', 2);
+  sub(C3, o.c3, 'OH', 3);
+  sub(C4, o.c4, 'OH', 4);
+  [[C1,'1',9],[C2,'2',9],[C3,'3',9],[C4,'4',-16]].forEach(function(p){
+    s += '<text class="cn" x="' + (p[0][0] + p[2]) + '" y="' + (p[0][1] + 15) + '">' + p[1] + '</text>';
+  });
   s += '</svg>';
   return s;
 }
 
-document.getElementById('haw').innerHTML =
-    molBox('\u03b2-D-\u5421\u5583\u8461\u8404\u7cd6',
-           'C1 \u7684 OH <b>\u671d\u4e0a</b> \u2014\u2014 \u8fd9\u5c31\u662f \u03b2<br>\u6905\u5f0f\u91cc\u5168\u90e8\u5e73\u4f0f\uff0c\u6240\u4ee5\u5b83\u6700\u591a',
-           haworth('glc', 'u', 'd', 'u', 'd'), false)
-  + molBox('\u03b1-D-\u5421\u5583\u8461\u8404\u7cd6',
-           'C1 \u7684 OH <b>\u671d\u4e0b</b> \u2014\u2014 \u8fd9\u5c31\u662f \u03b1<br>\u548c \u03b2 \u4e92\u4e3a\u5f02\u5934\u7269\uff0c\u9760\u53d8\u65cb\u4e92\u53d8',
-           haworth('glc', 'd', 'd', 'u', 'd'), false)
-  + molBox('\u03b2-D-\u5421\u5583\u534a\u4e73\u7cd6',
-           '\u53ea\u6709 C4 \u53cd\u8fc7\u6765 <b>\u671d\u4e0a</b><br>\u6574\u4e2a\u5dee\u522b\u5c31\u8fd9\u4e00\u5904',
-           haworth('gal', 'u', 'd', 'u', 'u'), true);
+/* 呋喃环（五元）—— 果糖用。异头碳 C2 放右边，和葡萄糖那张的 C1 同侧。
+   立体化学按 Fischer 换算：果糖 C3-OH 在左 → 朝上；C4-OH 在右 → 朝下；
+   C5 的 C6 对 D 型朝上；β 的异头 OH 朝下、C1 朝上。 */
+function furanose(o){
+  o = o || {};
+  var W = 300, H = 200;
+  var yF = 128, yB = 66;
+  var C2 = [214, yB], OO = [140, yB - 20], C5 = [66, yB];
+  var C3 = [190, yF], C4 = [96, yF];
+  var hot = o.hot || [];
+  function isHot(n){ return hot.indexOf(n) >= 0; }
+  var s = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img">';
+  s += '<style>'
+     + '.rg{stroke:var(--ink);stroke-width:1.7;fill:none;stroke-linejoin:round;stroke-linecap:round}'
+     + '.rf{stroke:var(--ink);stroke-width:4.2;fill:none;stroke-linecap:round}'
+     + '.sb{stroke:var(--ink);stroke-width:1.6;stroke-linecap:round}'
+     + '.sbh{stroke:var(--accent);stroke-width:2.8;stroke-linecap:round}'
+     + '.lb{fill:var(--ink);font:600 12.5px "Segoe UI",system-ui,sans-serif}'
+     + '.lbh{fill:var(--accent);font:700 13px "Segoe UI",system-ui,sans-serif}'
+     + '.cn{fill:var(--faint);font:600 10px "Segoe UI",system-ui,sans-serif}'
+     + '.ox{fill:var(--accent);font:700 13.5px "Segoe UI",system-ui,sans-serif}'
+     + '.ring{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:3 2.5}'
+     + '</style>';
+  /* 后沿 C5-O-C2，两条斜边 C5-C4 与 C2-C3，前沿 C3-C4 粗 */
+  s += '<polyline class="rg" points="' + C5[0] + ',' + C5[1] + ' ' + OO[0] + ',' + OO[1]
+     + ' ' + C2[0] + ',' + C2[1] + '"/>';
+  s += '<line class="rg" x1="' + C5[0] + '" y1="' + C5[1] + '" x2="' + C4[0] + '" y2="' + C4[1] + '"/>';
+  s += '<line class="rg" x1="' + C2[0] + '" y1="' + C2[1] + '" x2="' + C3[0] + '" y2="' + C3[1] + '"/>';
+  s += '<line class="rf" x1="' + C3[0] + '" y1="' + C3[1] + '" x2="' + C4[0] + '" y2="' + C4[1] + '"/>';
+  s += '<circle cx="' + OO[0] + '" cy="' + OO[1] + '" r="9.5" fill="var(--card)"/>';
+  s += '<text class="ox" x="' + OO[0] + '" y="' + (OO[1] + 5) + '" text-anchor="middle">O</text>';
+  function sub(pt, dir, txt, n){
+    var x = pt[0], y = pt[1], L = 30, h = isHot(n);
+    var y2 = dir === 'u' ? y - L : y + L;
+    s += '<line class="' + (h ? 'sbh' : 'sb') + '" x1="' + x + '" y1="' + y + '" x2="' + x + '" y2="' + y2 + '"/>';
+    var ty = dir === 'u' ? y2 - 6 : y2 + 13;
+    s += '<text class="' + (h ? 'lbh' : 'lb') + '" x="' + x + '" y="' + ty + '" text-anchor="middle">' + txt + '</text>';
+    if(h) s += '<circle class="ring" cx="' + x + '" cy="' + (dir === 'u' ? y2 - 10 : y2 + 8) + '" r="15"/>';
+  }
+  sub(C2, 'u', 'CH\u2082OH', 2);              /* C1 挂在 C2 上 —— 酮糖的记号 */
+  sub(C2, 'd', 'OH', 2);                      /* β 的异头 OH 朝下 */
+  sub(C3, 'u', 'OH', 3);                      /* Fischer 在左 → 朝上 */
+  sub(C4, 'd', 'OH', 4);                      /* Fischer 在右 → 朝下 */
+  sub(C5, 'u', o.c5txt || 'CH\u2082OH', 5);
+  s += '<text class="cn" x="' + (C2[0] + 12) + '" y="' + (C2[1] + 4) + '">2</text>';
+  s += '<text class="cn" x="' + (C3[0] + 11) + '" y="' + (C3[1] + 14) + '">3</text>';
+  s += '<text class="cn" x="' + (C4[0] - 17) + '" y="' + (C4[1] + 14) + '">4</text>';
+  s += '<text class="cn" x="' + (C5[0] - 16) + '" y="' + (C5[1] + 4) + '">5</text>';
+  s += '<text class="cn" x="' + (C2[0] + 12) + '" y="' + (C2[1] - 30) + '">1</text>';
+  s += '</svg>';
+  return s;
+}
+
+/* ============ 成对变化：结构 → 酶 → 结构 ============ */
+function pair(id, rows){
+  var h = '';
+  rows.forEach(function(r){
+    h += '<div class="step">'
+       + '<div class="side"><b>' + r.a + '</b>' + r.aSvg + '</div>'
+       + '<div class="mid">'
+       +   '<div class="arw">\u27f6</div>'
+       +   '<div class="enz">' + r.enz + '</div>'
+       +   '<div class="kind">' + r.kind + '</div>'
+       +   (r.cof ? '<div class="cof">' + r.cof + '</div>' : '')
+       + '</div>'
+       + '<div class="side"><b>' + r.b + '</b>' + r.bSvg + '</div>'
+       + '<div class="what">' + r.what + '</div>'
+       + '</div>';
+  });
+  document.getElementById(id).innerHTML = h;
+}
 
 /* ============ 通路图 ============ */
 function flowSVG(W, H, body){
@@ -473,6 +516,107 @@ document.getElementById('mech').innerHTML = flowSVG(900, 254,
   + box(478, 210, 130, 26, 'UDP-Glc')
   + '<text class="txs" x="640" y="227">辅因子全程不离开酶</text>'
 );
+
+/* ============ 六组变化 ============ */
+var P4 = 'CH\u2082OPO\u2083\u00b2\u207b', OP = 'OPO\u2083\u00b2\u207b';
+
+pair('steps', [
+{
+  a:'\u03b1-D-\u5421\u5583\u8461\u8404\u7cd6',
+  aSvg: haworth({c1:'d', c2:'d', c3:'u', c4:'d', hot:[1]}),
+  b:'\u03b2-D-\u5421\u5583\u8461\u8404\u7cd6',
+  bSvg: haworth({c1:'u', c2:'d', c3:'u', c4:'d', hot:[1]}),
+  enz:'\u53d8\u65cb\u9176 mutarotase',
+  kind:'\u5dee\u5411\u5f02\u6784\u9176',
+  cof:'\u4e0d\u52a0\u5b83\u4e5f\u4f1a\u81ea\u5df1\u53d8',
+  what:'<b>C1 \u90a3\u4e2a OH \u4ece\u671d\u4e0b\u7ffb\u5230\u671d\u4e0a\uff0c\u522b\u7684\u4e00\u4e2a\u6ca1\u52a8\u3002</b> '
+     + '\u26a0 \u8fd9\u4e00\u6b65<b>\u5fc5\u987b\u5148\u5f00\u73af\u518d\u5173\u73af</b> \u2014\u2014 '
+     + '\u6240\u4ee5\u4e0d\u52a0\u9176\u4e5f\u4f1a\u81ea\u5df1\u6162\u6162\u53d1\u751f\uff0c\u53eb<b>\u53d8\u65cb</b>\u3002'
+     + '\u5e73\u8861\u65f6 \u03b2 \u5360\u7ea6 64%\uff0c\u56e0\u4e3a\u6905\u5f0f\u91cc\u5b83\u5168\u90e8\u5e73\u4f0f\u3002'
+},
+{
+  a:'\u03b2-D-\u5421\u5583\u8461\u8404\u7cd6',
+  aSvg: haworth({c1:'u', c2:'d', c3:'u', c4:'d', hot:[4]}),
+  b:'\u03b2-D-\u5421\u5583\u534a\u4e73\u7cd6',
+  bSvg: haworth({c1:'u', c2:'d', c3:'u', c4:'u', hot:[4]}),
+  enz:'UDP-\u8461\u8404\u7cd6 4-\u5dee\u5411\u5f02\u6784\u9176 GALE',
+  kind:'\u5dee\u5411\u5f02\u6784\u9176',
+  cof:'\u8981 NAD\u207a',
+  what:'<b>\u53ea\u6709 C4 \u4ece\u671d\u4e0b\u7ffb\u5230\u671d\u4e0a\u3002</b> '
+     + '\u26a0 C4 \u79bb\u7fb0\u57fa\u592a\u8fdc\uff0c\u76f4\u63a5\u7ffb\u4e0d\u52a8 \u2014\u2014 '
+     + '\u6240\u4ee5\u9176<b>\u5148\u7528 NAD\u207a \u628a C4 \u6c27\u5316\u6210\u916e\uff0c\u8f6c\u4e2a\u9762\uff0c\u518d\u8fd8\u539f\u56de\u53bb</b>\u3002'
+     + '\u800c\u4e14\u5b83<b>\u53ea\u8ba4\u6302\u7740 UDP \u7684\u7cd6</b>\uff0c\u4e0d\u78b0\u6e38\u79bb\u534a\u4e73\u7cd6\u3002'
+},
+{
+  a:'\u03b2-D-\u5421\u5583\u8461\u8404\u7cd6',
+  aSvg: haworth({c1:'u', c2:'d', c3:'u', c4:'d', hot:[2]}),
+  b:'\u03b2-D-\u5421\u5583\u7518\u9732\u7cd6',
+  bSvg: haworth({c1:'u', c2:'u', c3:'u', c4:'d', hot:[2]}),
+  enz:'\u4eba\u4f53\u5185\u6ca1\u6709\u76f4\u63a5\u7684\u9176',
+  kind:'\u5316\u5b66\u4e0a\u7ecf\u70ef\u4e8c\u9187',
+  cof:'',
+  what:'<b>C2 \u7ffb\u9762\u3002</b> \u26a0 C2 <b>\u7d27\u6328\u7740 C1 \u7684\u7fb0\u57fa</b>\uff0c'
+     + '\u6240\u4ee5\u5316\u5b66\u4e0a\u7ecf\u70ef\u4e8c\u9187\u5c31\u80fd\u7ffb \u2014\u2014 '
+     + '\u78b1\u6027\u6761\u4ef6\u4e0b\u8461\u8404\u7cd6\u3001\u7518\u9732\u7cd6\u3001\u679c\u7cd6\u4f1a\u81ea\u5df1\u4e92\u53d8\u3002'
+     + '<b>\u4f46\u4eba\u4f53\u4e0d\u8d70\u8fd9\u6761\u8def</b>\uff1a\u7518\u9732\u7cd6\u5148\u78f7\u9178\u5316\u6210 M6P\uff0c'
+     + '\u518d\u7531\u78f7\u9178\u7518\u9732\u7cd6\u5f02\u6784\u9176\u53d8\u6210 F6P \u8fdb\u7cd6\u9165\u89e3\u3002'
+},
+{
+  a:'\u8461\u8404\u7cd6-6-\u78f7\u9178 \u00b7 \u516d\u5143\u73af',
+  aSvg: haworth({c1:'u', c2:'d', c3:'u', c4:'d', c5txt:P4, hot:[1]}),
+  b:'\u679c\u7cd6-6-\u78f7\u9178 \u00b7 \u4e94\u5143\u73af',
+  bSvg: furanose({c5txt:P4}),
+  enz:'\u78f7\u9178\u8461\u7cd6\u5f02\u6784\u9176 PGI',
+  kind:'\u5f02\u6784\u9176',
+  cof:'\u4e0d\u8981\u8f85\u56e0\u5b50',
+  what:'<b>\u516d\u5143\u73af\u53d8\u6210\u4e86\u4e94\u5143\u73af\u3002</b> '
+     + '\u771f\u6b63\u53d8\u7684\u662f<b>\u7fb0\u57fa\u7684\u4f4d\u7f6e</b>\uff1a'
+     + '\u8461\u8404\u7cd6\u7684\u7fb0\u57fa\u5728 C1\uff08\u9192\uff09\uff0c\u679c\u7cd6\u7684\u5728 C2\uff08\u916e\uff09\u3002'
+     + '\u5f00\u94fe\u7684\u65f6\u5019\u7ecf\u987a\u5f0f\u70ef\u4e8c\u9187\u628a\u7fb0\u57fa\u632a\u4e00\u4e2a\u78b3\uff0c\u518d\u5173\u73af\u3002'
+     + '\u26a0 <b>\u7fb0\u57fa\u6362\u4e86\u78b3\uff0c\u5173\u51fa\u6765\u7684\u73af\u5c31\u5c11\u4e00\u4e2a\u6210\u5458</b> \u2014\u2014 '
+     + '\u8fd9\u5c31\u662f\u300c\u9192\u7cd6\u53d8\u916e\u7cd6\u300d\u5728\u56fe\u4e0a\u957f\u7684\u6837\u5b50\u3002'
+},
+{
+  a:'\u6838\u916e\u7cd6-5-\u78f7\u9178 Ru5P',
+  aSvg: fischer('CH\u2082OH', ['K','R','R'], P4, [2]),
+  b:'\u6728\u916e\u7cd6-5-\u78f7\u9178 Xu5P',
+  bSvg: fischer('CH\u2082OH', ['K','L','R'], P4, [2]),
+  enz:'\u6838\u916e\u7cd6-5-\u78f7\u9178 3-\u5dee\u5411\u5f02\u6784\u9176',
+  kind:'\u5dee\u5411\u5f02\u6784\u9176',
+  cof:'\u4e0d\u8981 NAD\u207a',
+  what:'<b>\u53ea\u7ffb C3\u3002</b> \u26a0 \u548c\u4e0a\u9762 GALE \u6b63\u597d\u6210\u4e00\u5bf9\uff1a'
+     + '<b>\u916e\u7cd6\u7684\u7fb0\u57fa\u5728 C2\uff0cC3 \u5c31\u7d27\u6328\u7740\u5b83</b>\uff0c'
+     + '\u6240\u4ee5\u53bb\u4e2a\u8d28\u5b50\u518d\u4ece\u53e6\u4e00\u9762\u52a0\u56de\u6765\u5c31\u884c\uff0c\u4e0d\u9700\u8981 NAD\u207a\u3002'
+     + '\u78f7\u9178\u620a\u7cd6\u9014\u5f84\u975e\u6c27\u5316\u6bb5\u9760\u5b83\u3002'
+},
+{
+  a:'\u8461\u8404\u7cd6-1-\u78f7\u9178',
+  aSvg: haworth({c1:'u', c1txt:OP, c2:'d', c3:'u', c4:'d', hot:[1]}),
+  b:'\u8461\u8404\u7cd6-6-\u78f7\u9178',
+  bSvg: haworth({c1:'u', c2:'d', c3:'u', c4:'d', c5txt:P4, hot:[5]}),
+  enz:'\u78f7\u9178\u8461\u7cd6\u53d8\u4f4d\u9176',
+  kind:'\u53d8\u4f4d\u9176',
+  cof:'\u7ecf 1,6-\u53cc\u78f7\u9178\u4e2d\u95f4\u4f53',
+  what:'\u26a0 <b>\u7cd6\u672c\u8eab\u4e00\u70b9\u6ca1\u53d8</b> \u2014\u2014 '
+     + '\u56db\u4e2a\u624b\u6027\u78b3\u5168\u5728\u539f\u4f4d\uff0c\u53ea\u6709<b>\u78f7\u9178\u4ece C1 \u642c\u5230\u4e86 C6</b>\u3002'
+     + '<b>\u6240\u4ee5\u8fd9\u4e0d\u662f\u5f02\u6784\u4f53\u4e4b\u95f4\u7684\u8f6c\u6362</b>\uff0c'
+     + '\u662f\u540c\u4e00\u4e2a\u7cd6\u6362\u4e86\u4e2a\u6302\u78f7\u9178\u7684\u5730\u65b9\u3002'
+     + '\u7cd6\u539f\u5206\u89e3\u653e\u51fa\u7684\u662f Glc-1-P\uff0c\u5fc5\u987b\u7ecf\u8fd9\u4e00\u6b65\u624d\u80fd\u8fdb\u7cd6\u9165\u89e3\u3002'
+}
+]);
+
+/* ============ Haworth \u90a3\u4e00\u6392 ============ */
+document.getElementById('haw').innerHTML =
+    molBox('\u03b2-D-\u5421\u5583\u8461\u8404\u7cd6',
+           'C1 \u7684 OH <b>\u671d\u4e0a</b>\uff0c\u8fd9\u5c31\u662f \u03b2<br>\u6905\u5f0f\u91cc\u5168\u90e8\u5e73\u4f0f\uff0c\u6240\u4ee5\u5b83\u6700\u591a',
+           haworth({c1:'u', c2:'d', c3:'u', c4:'d', hot:[1]}), false)
+  + molBox('\u03b1-D-\u5421\u5583\u8461\u8404\u7cd6',
+           'C1 \u7684 OH <b>\u671d\u4e0b</b>\uff0c\u8fd9\u5c31\u662f \u03b1<br>\u548c \u03b2 \u4e92\u4e3a\u5f02\u5934\u7269',
+           haworth({c1:'d', c2:'d', c3:'u', c4:'d', hot:[1]}), false)
+  + molBox('\u03b2-D-\u5421\u5583\u534a\u4e73\u7cd6',
+           '\u53ea\u6709 C4 \u53cd\u8fc7\u6765<b>\u671d\u4e0a</b><br>\u6574\u4e2a\u5dee\u522b\u5c31\u8fd9\u4e00\u5904',
+           haworth({c1:'u', c2:'d', c3:'u', c4:'u', hot:[4]}), true);
+
 </script>
 </body>
 </html>
