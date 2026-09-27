@@ -1124,7 +1124,7 @@ function home(){
         + '<div><b class="' + (badN ? 'miss' : 'hit') + '">' + badN + '</b>'
           + '<span>反复说不上的题（自评答不上 ≥ 2 次）</span></div>'
         + '</div>'; })()
-    + '<p style="margin:14px 0 0">'      + '<button class="main" onclick="copyOut()">复制进度给老师</button> '      + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '      + '<button class="ghost" onclick="histPage()">练过的</button> '      + '<button class="ghost" onclick="statsPage()">分析</button> '      + '<a class="ghost" href="bones.html" style="text-decoration:none;display:inline-block;padding:9px 15px;border:1px solid var(--line);border-radius:9px">🦴 一页纸</a> ' + '<a class="ghost" href="exam.html" style="text-decoration:none;display:inline-block;padding:9px 15px;border:1px solid var(--line);border-radius:9px">🎓 考官</a></p>'
+    + '<p style="margin:14px 0 0">'      + '<button class="main" onclick="copyOut()">复制进度给老师</button> '      + '<button class="ghost" onclick="report(true)">看上一次的结果</button> '      + '<button class="ghost" onclick="histPage()">练过的</button> '      + '<button class="ghost" onclick="statsPage()">分析</button> '      + '<button class="ghost" onclick="favPage()">⭐ 收藏的题</button> ' + '<a class="ghost" href="bones.html" style="text-decoration:none;display:inline-block;padding:9px 15px;border:1px solid var(--line);border-radius:9px">🦴 一页纸</a> ' + '<a class="ghost" href="exam.html" style="text-decoration:none;display:inline-block;padding:9px 15px;border:1px solid var(--line);border-radius:9px">🎓 考官</a></p>'
     + '<p class="small" style="margin:10px 0 0">一组五张里 <b>固定有两张是分子生物学或 PESB</b>'
       + '（mb-* · pe-* · taq · land），另外三张从其余 '
       + usable.filter(function(c){ return !isMBPE(c); }).length + ' 张里随机。</p>'
@@ -1194,6 +1194,7 @@ function ask(){
     + '<p class="nudge" id="nudge"></p>'
     + '<p style="margin:16px 0 0">'
       + (canBack() ? '<button class="ghost" onclick="backQ()">◂ 上一题</button> ' : '')
+      + favBtn(c.card.id, q.q)
       + '<button class="main" onclick="doneAnswer()">说完了 ▸</button> '
       + '<button class="ghost" onclick="doneAnswer()">跳过</button> '
       + '<button class="ghost" onclick="quit()">结束这一组</button></p>'
@@ -1319,6 +1320,7 @@ function revealAnswer(x){
     + '<div class="row" style="margin-top:14px">'
       + '<button class="main" onclick="advanceQ()">下一题 ▸</button>'
       + '<button onclick="sayEl(document.querySelector(\'.ans\'))">🔊 念一遍</button>'
+      + favBtn(x.card, x.q)
       + '<button class="ghost" onclick="holdReveal(this)">再看一会</button>'
       + '<span class="timer" id="rclock" style="font-size:26px">' + secs + '</span>'
     + '</div></div>';
@@ -1945,6 +1947,88 @@ function backfillDays(s){
 }
 function earPlays(s){ return s.earPlay || (s.earPlay = {}); }
 function earStars(s){ return s.earStar || (s.earStar = {}); }
+
+/* ======================= ⭐ 收藏这道题 =======================
+   2026-09-28 她：「现在模考还是没有收藏问题的功能」。
+   ⚠ **不新开存储键**：磨耳朵的「⭐ 自标多听」存的就是 `卡 + 题目`，
+   本来就是题级别的收藏，只是出口只有磨耳朵一处。
+   她已经有三套标记（★必背是一段文字 · ☆挑句是一个句子 · ⭐自标多听是一道题），
+   **再加第四套她必搞混**。所以这里只是给第三套加入口。 */
+function favHas(card, q){
+  if(!card || !q) return false;
+  return !!earStars(st())[wKey(card, q)];
+}
+function favToggle(card, q, btn){
+  if(!card || !q) return;
+  var s = st(), m = earStars(s), k = wKey(card, q);
+  if(m[k]) delete m[k]; else m[k] = today();
+  save(s);
+  if(btn){
+    btn.textContent = m[k] ? '⭐ 已收藏' : '☆ 收藏这道';
+    btn.className = m[k] ? 'main' : 'ghost';
+  }
+}
+function favBtn(card, q){
+  if(!card || !q) return '';
+  var on = favHas(card, q);
+  return '<button class="' + (on ? 'main' : 'ghost') + '" onclick="favToggle('
+    + JSON.stringify(card) + ', ' + JSON.stringify(q).replace(/"/g, '&quot;') + ', this)">'
+    + (on ? '⭐ 已收藏' : '☆ 收藏这道') + '</button> ';
+}
+/* 收藏的题，还原成 {card, item} —— 跟跟读那一路同一个形状，所以能直接拿去练。 */
+function favList(){
+  var s = st(), m = earStars(s), out = [];
+  CARDS.forEach(function(c){
+    qlist(c).forEach(function(x){
+      if(m[wKey(c.id, x.q)]) out.push({card:c, item:x, turf:0, when:m[wKey(c.id, x.q)]});
+    });
+    streamCram(c).forEach(function(x){
+      if(m[wKey(c.id, x.q)]) out.push({card:c, item:x, turf:0, when:m[wKey(c.id, x.q)]});
+    });
+  });
+  return out;
+}
+function favCount(){ return favList().length; }
+function favWalk(){
+  var list = favList();
+  if(!list.length){ alert('还没收藏过题 —— 模考或者答案屏上那个 ☆ 点一下就收了。'); return; }
+  CH = {list:shuffle(list), i:0, tag:'⭐ 收藏的',
+        done:'收藏的 ' + list.length + ' 条走完了',
+        again:'favWalk()'};
+  walkRender();
+}
+function favPage(){
+  var list = favList();
+  var h = '<div class="card"><h2>⭐ 收藏的题</h2>';
+  if(!list.length){
+    h += '<p class="small">还没有。<b>模考的问题屏和答案屏上都有一个 ☆</b>，点一下就收进来了。'
+      + '<br>⚠ 它跟磨耳朵里的「⭐ 自标多听」是<b>同一份</b> —— 收了就能直接磨耳朵。</p>';
+  } else {
+    h += '<p class="small">共 <b>' + list.length + '</b> 条。'
+      + '<b>收藏的意义不是存起来看，是回头再练</b>。</p>'
+      + '<p style="margin:10px 0 16px"><button class="main" onclick="favWalk()">🎙 拿收藏的练一组</button> '
+      + '<button class="ghost" onclick="home()">回首页</button></p>';
+    var byCard = {};
+    list.forEach(function(o){
+      var k = o.card.id;
+      if(!byCard[k]) byCard[k] = {card:o.card, items:[]};
+      byCard[k].items.push(o);
+    });
+    Object.keys(byCard).forEach(function(k){
+      var g = byCard[k];
+      h += '<div class="pkgrp"><p class="pkq">' + esc(cardTitle(g.card)) + '<span>' + g.items.length + ' 条</span></p>';
+      g.items.forEach(function(o){
+        h += '<p class="pkline"><b class="pk" onclick="favToggle(' + JSON.stringify(g.card.id)
+          + ', ' + JSON.stringify(o.item.q).replace(/"/g, '&quot;') + ', null); favPage()">⭐</b>'
+          + '<span onclick="say(this.textContent)">' + esc(o.item.q) + '</span></p>';
+      });
+      h += '</div>';
+    });
+  }
+  h += '<p style="margin:16px 0 0"><button class="ghost" onclick="home()">回首页</button></p></div>';
+  $('main').innerHTML = h;
+  window.scrollTo(0, 0);
+}
 function dayLabel(d){
   if(d === '_none') return '没记日子的';
   var p = d.split('-');
