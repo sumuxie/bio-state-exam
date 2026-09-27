@@ -118,6 +118,11 @@ PROBE = {
    ("磨耳朵 标多听","earStarToggle(); earPool('star').length; earStarToggle();"),
    ("磨耳朵 计遍数","earCount(EAR.list[0]);"),
    ("磨耳朵 按天池","earPool('day:_none').length + earPool('day:2026-09-23').length;"),
+   # ⚠ 2026-09-28 她要的「收藏这道题」。真收一道、真开一组，不只渲染。
+   ("收藏 收一道","var c0=CARDS[0], q0=qlist(c0)[0].q; favToggle(c0.id,q0,null); if(favCount()<1) throw new Error('没收上');"),
+   ("收藏 列表",  "favPage(); if(document.getElementById('main').innerHTML.indexOf('收藏的题')<0) throw new Error('列表没渲染');"),
+   ("收藏 练一组","favWalk(); if(!CH || !CH.list.length) throw new Error('开不了组');"),
+   ("收藏 取消",  "var c1=CARDS[0], q1=qlist(c1)[0].q; favToggle(c1.id,q1,null); if(favCount()!==0) throw new Error('取不掉');"),
    ("磨耳朵 停",  "earStop();"),
    ("回首页5",    "home();"),
  ],
