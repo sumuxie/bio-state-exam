@@ -82,6 +82,7 @@ article:last-of-type{border-bottom:0}
 .favbtn.on{background:var(--accent);color:var(--card);border-color:var(--accent)}
 #favbox{font-size:13px;line-height:1.9;margin:0 0 18px;display:none}
 #favbox a{margin:0 10px 0 0}
+.topaud{display:block;width:100%;height:32px;margin:0 0 14px}
 article>h3{font-size:20px;line-height:1.3;margin:0 0 3px;font-weight:650;letter-spacing:-.01em}
 article>.zh{font-size:13px;color:var(--dim);margin:0 0 16px}
 article>.zh b{color:var(--ink);font-weight:580}
@@ -1315,6 +1316,25 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
     }).join('');
     box.style.display = 'block';
     box.innerHTML = '<b style="color:var(--accent)">⭐ 收藏，今天重点背 (' + ids.length + ')</b><br>' + links;
+  }
+  /* ================= 🔊 每个主题一条 mp3 =================
+     2026-09-28 她：「把一页纸的音频全部做出来」，推上去之后又问「还没挂上吗」
+     「因为点开没变化」——音频文件确实生成、也推上去了，但页面上从来没放
+     播放器，等于挂了个她看不见的东西。这里补上：每个主题标题下面一条
+     <audio controls>，文件名是 tools/make_onepage_audio.py 按同一个文档顺序
+     编的号（01_t-prot.mp3 …），跟这里 arts 的顺序天然对上，不用另外维护映射表。 */
+  for (var fi = 0; fi < arts.length; fi++){
+    (function(art, idx){
+      var h3 = art.querySelector('h3');
+      var au = document.createElement('audio');
+      au.className = 'topaud';
+      au.controls = true;
+      au.preload = 'none';
+      var num = (idx + 1 < 10 ? '0' : '') + (idx + 1);
+      au.src = '../audio_out/onepage/' + num + '_' + art.id + '.mp3';
+      if (h3 && h3.parentNode) h3.parentNode.insertBefore(au, h3.nextSibling);
+      else art.insertBefore(au, art.firstChild);
+    })(arts[fi], fi);
   }
   for (var fi = 0; fi < arts.length; fi++){
     (function(art){
