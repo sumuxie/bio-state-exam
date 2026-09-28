@@ -1331,7 +1331,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
       au.controls = true;
       au.preload = 'none';
       var num = (idx + 1 < 10 ? '0' : '') + (idx + 1);
-      au.src = '../audio_out/onepage/' + num + '_' + art.id + '.mp3';
+      au.src = 'audio/onepage/' + num + '_' + art.id + '.mp3';
       if (h3 && h3.parentNode) h3.parentNode.insertBefore(au, h3.nextSibling);
       else art.insertBefore(au, art.firstChild);
     })(arts[fi], fi);

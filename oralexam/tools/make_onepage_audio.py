@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
-"""把「一页纸」(app/bones.html) 每个主题合成一条 mp3，本地放，可以拷到手机上。
+"""把「一页纸」(app/bones.html) 每个主题合成一条 mp3，挂在页面上（app/audio/onepage/）。
 
 2026-09-28 她：「把一页纸的音频全部做出来，我可以其他地方点开」「然后随机播放所有主题」。
 ⚠ 随机播放不用做——文件一多，随便一个手机播放器对着这个文件夹点「随机」就是了，
   跟 `make_cardaudio.py` 那批一样，这边不重复造轮子。
 
-跟 make_cardaudio.py 同一个决定：本地生成、不进 git（audio_out/ 已 .gitignore）。
+⚠ 2026-09-28 她推上去之后问「还没挂上吗」「因为点开没变化」——原来输出到
+`audio_out/`，那是 `.gitignore` 挡住 pages 部署的目录（`pages.yml` 的白名单
+只 `cp -r oralexam/app`，`audio_out/` 根本不会被拷进 `_site/`，就算推上去、
+就算 main 部署了，文件也是 404）。跟 `make_cardaudio.py` 那批不一样——那批
+从设计上就是不发布、她自己拷到手机的；这批既然要「挂 app 上」，就得在
+`app/` 里面，所以输出目录改成 `app/audio/onepage/`，随 `app/` 一起被部署。
+
 只念 `.en`（每个主题 MUST SAY / NUMBERS / HOOK 三行的英文正文），
 `<code class="eq">` 那些通路式子不念——那是「看着念」的，不是背的（eqBox 同一条判据）。
 
@@ -18,7 +24,7 @@ import io, os, re, sys, asyncio, html
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SRC  = os.path.join(ROOT, 'app', 'bones.html')
-OUT  = os.path.join(ROOT, 'audio_out', 'onepage')
+OUT  = os.path.join(ROOT, 'app', 'audio', 'onepage')
 
 VOICE = 'en-GB-SoniaNeural'
 RATE  = '-10%'
