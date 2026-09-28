@@ -1,0 +1,611 @@
+[
+ {
+  "en": "Cβ (C-beta)",
+  "zh": "Cβ 碳",
+  "gloss_en": "The first carbon of a side chain, the one attached to the backbone Cα. Every residue except glycine has one.",
+  "gloss_zh": "侧链的第一个碳，接在主链 Cα 上；除甘氨酸 Gly 外，每个氨基酸都有 Cβ。",
+  "first": 0
+ },
+ {
+  "en": "helix propensity",
+  "zh": "螺旋倾向性",
+  "gloss_en": "How readily a given residue is found in an α-helix. Ala is highest, Gly and Pro lowest.",
+  "gloss_zh": "某个氨基酸出现在 α-helix 里的倾向高低；Ala 最高，Gly 和 Pro 最低。",
+  "first": 0
+ },
+ {
+  "en": "hGH",
+  "zh": "人生长激素",
+  "gloss_en": "Human growth hormone. The hGH-receptor complex is the classic system in which alanine scanning and hot spots were first worked out.",
+  "gloss_zh": "人生长激素 human growth hormone；hGH 与其受体的复合物是最早做 alanine scanning、提出 hot spot 的经典体系。",
+  "first": 0
+ },
+ {
+  "en": "ΔΔG",
+  "zh": "结合自由能变化",
+  "gloss_en": "The change in binding free energy caused by a mutation, in kcal/mol: how much weaker binding became. The larger the positive value, the more that residue mattered.",
+  "gloss_zh": "突变引起的结合自由能变化，单位 kcal/mol；正值越大，说明该残基对结合越关键。",
+  "first": 0
+ },
+ {
+  "en": "thiolate",
+  "zh": "硫醇负离子",
+  "gloss_en": "The deprotonated form of an -SH group, -S⁻. It carries a negative charge and is far more reactive than -SH.",
+  "gloss_zh": "巯基 -SH 失去质子后的形式 -S⁻，带负电，反应性比 -SH 强得多。",
+  "first": 1
+ },
+ {
+  "en": "Asx / Glx",
+  "zh": "Asx / Glx",
+  "gloss_en": "Codes used when amino-acid composition analysis cannot tell Asp from Asn (Asx) or Glu from Gln (Glx), because hydrolysis has already turned the amide into the acid.",
+  "gloss_zh": "氨基酸组成分析里分不清 Asp 与 Asn 时写作 Asx，分不清 Glu 与 Gln 时写作 Glx——因为水解过程已经把酰胺变成了酸。",
+  "first": 2
+ },
+ {
+  "en": "bidentate hydrogen bond",
+  "zh": "双齿氢键",
+  "gloss_en": "Two hydrogen bonds made at the same time by one group to the same partner, like a two-pronged grip.",
+  "gloss_zh": "同一个基团同时用两个氢键抓住同一个对象，像两只爪子一起抓。",
+  "first": 2
+ },
+ {
+  "en": "guanidinium",
+  "zh": "胍基",
+  "gloss_en": "The positively charged group at the end of the arginine side chain: one carbon bonded to three nitrogens.",
+  "gloss_zh": "精氨酸 Arg 侧链末端那个带正电的基团，由一个碳连三个氮组成。",
+  "first": 2
+ },
+ {
+  "en": "imidazole",
+  "zh": "咪唑环",
+  "gloss_en": "The five-membered ring containing two nitrogens that makes up the histidine side chain.",
+  "gloss_zh": "组氨酸 His 侧链上那个含两个氮的五元环。",
+  "first": 2
+ },
+ {
+  "en": "BCA / Bradford",
+  "zh": "BCA / Bradford 法",
+  "gloss_en": "Two colour-forming assays for protein concentration, used when A280 will not work, for instance on a protein with no Trp.",
+  "gloss_zh": "两种靠显色测蛋白浓度的方法，用在 A280 不适用的时候（例如蛋白里没有 Trp）。",
+  "first": 3
+ },
+ {
+  "en": "Beer–Lambert law",
+  "zh": "比尔-朗伯定律",
+  "gloss_en": "A = ε·c·l: absorbance equals the molar extinction coefficient ε (how strongly one mole absorbs at that wavelength) times concentration times path length. It is what turns an absorbance reading into a concentration.",
+  "gloss_zh": "A = ε·c·l，吸光度 = 摩尔消光系数 ε（一摩尔物质在该波长吸光的强弱）× 浓度 × 光程；它把吸光读数换算成浓度。",
+  "first": 3
+ },
+ {
+  "en": "cystine",
+  "zh": "胱氨酸",
+  "gloss_en": "Two cysteines already joined by a disulfide bond, counted as one unit. Watch the spelling: cysteine is the single residue, cystine the linked pair.",
+  "gloss_zh": "两个 Cys 通过 disulfide bond 连起来后的整体。注意拼写：cysteine 是单个残基，cystine 是连好的一对。",
+  "first": 3
+ },
+ {
+  "en": "nanodrop",
+  "zh": "nanodrop 微量分光光度计",
+  "gloss_en": "A benchtop spectrophotometer that reads absorbance on a 1-2 microlitre drop with no cuvette; the routine way to check protein or nucleic acid concentration.",
+  "gloss_zh": "一种台式分光光度计，只需 1–2 微升液滴、不用比色皿就能读吸光度，是日常测蛋白和核酸浓度的仪器。",
+  "first": 3
+ },
+ {
+  "en": "ProtParam",
+  "zh": "ProtParam",
+  "gloss_en": "A free web tool on the ExPASy server that computes ε280, molecular weight, pI and similar parameters straight from a protein sequence.",
+  "gloss_zh": "ExPASy 服务器上的免费网页工具，输入蛋白序列就能算出 ε280、分子量、pI 等参数。",
+  "first": 3
+ },
+ {
+  "en": "PTH-amino acid",
+  "zh": "PTH-氨基酸",
+  "gloss_en": "The phenylthiohydantoin derivative released in each Edman cycle. PITC is the reagent that labels the N-terminal residue, and identifying the PTH product tells you which residue it was.",
+  "gloss_zh": "Edman 每一轮切下来的苯乙内酰硫脲衍生物。PITC 是标记 N 端残基的试剂，鉴定 PTH 产物就知道那一位是什么氨基酸。",
+  "first": 4
+ },
+ {
+  "en": "SDS-PAGE",
+  "zh": "SDS 聚丙烯酰胺凝胶电泳",
+  "gloss_en": "Gel electrophoresis in the detergent SDS, which unfolds proteins and coats them in uniform negative charge so they separate by size alone; the routine check of purity and molecular weight.",
+  "gloss_zh": "在去污剂 SDS 存在下跑的凝胶电泳。SDS 把蛋白解折叠并均匀带负电，因此只按大小分离，是检查纯度和分子量的常规手段。",
+  "first": 4
+ },
+ {
+  "en": "SECIS element",
+  "zh": "SECIS 元件",
+  "gloss_en": "A stem-loop in the mRNA that tells the ribosome to read one particular UGA as selenocysteine instead of as a stop codon.",
+  "gloss_zh": "mRNA 上的一段茎环结构，指示核糖体把某个 UGA 读成 selenocysteine 而不是终止密码。",
+  "first": 4
+ },
+ {
+  "en": "angstrom (Å)",
+  "zh": "埃",
+  "gloss_en": "A length unit, 1 Å = 0.1 nm. A C-C bond is about 1.5 Å, and protein structures are quoted at 1.5-3 Å.",
+  "gloss_zh": "长度单位，1 Å = 0.1 nm。一个 C–C 键约 1.5 Å，蛋白结构的分辨率常在 1.5–3 Å。",
+  "first": 5
+ },
+ {
+  "en": "dihedral angle",
+  "zh": "二面角 / 扭角",
+  "gloss_en": "The angle you see looking straight down a bond, describing how the groups at its two ends are rotated relative to each other. On the protein backbone there are three: φ, ψ and ω.",
+  "gloss_zh": "沿着一根键看过去，两端基团相对扭转的角度。蛋白主链上有三个：φ、ψ 和 ω。",
+  "first": 5
+ },
+ {
+  "en": "hydrazinolysis",
+  "zh": "肼解法",
+  "gloss_en": "An old chemical method that used hydrazine to identify the C-terminal residue of a protein; mentioned only as something now obsolete.",
+  "gloss_zh": "一种用肼来确定蛋白 C 端残基的老方法；课上提到它只是为了说明它已被淘汰。",
+  "first": 5
+ },
+ {
+  "en": "Anfinsen",
+  "zh": "安芬森",
+  "gloss_en": "Christian Anfinsen, whose ribonuclease A refolding experiment showed that the sequence alone carries the folding information (Nobel Prize 1972).",
+  "gloss_zh": "Christian Anfinsen，用核糖核酸酶 A 的复性实验证明折叠信息全在序列里（1972 年诺贝尔奖）。",
+  "first": 6
+ },
+ {
+  "en": "Greek key",
+  "zh": "希腊回纹",
+  "gloss_en": "A supersecondary arrangement in which four neighbouring β-strands fold back on themselves; named after the border pattern on Greek pottery.",
+  "gloss_zh": "四条相邻 β-strand 折返排列而成的超二级结构，名字来自希腊陶器上的回纹图案。",
+  "first": 6
+ },
+ {
+  "en": "nsp7 / nsp8 / nsp12",
+  "zh": "非结构蛋白 nsp7 / nsp8 / nsp12",
+  "gloss_en": "Non-structural proteins of SARS-CoV-2, numbered in the order they are cut out of the viral polyprotein. nsp12 is the polymerase subunit itself; nsp7 and nsp8 are its partner subunits.",
+  "gloss_zh": "SARS-CoV-2 的非结构蛋白 non-structural protein，按从多聚蛋白上被切下的顺序编号。nsp12 就是聚合酶本体，nsp7 和 nsp8 是它的搭档亚基。",
+  "first": 6
+ },
+ {
+  "en": "RdRp",
+  "zh": "RNA 依赖的 RNA 聚合酶",
+  "gloss_en": "RNA-dependent RNA polymerase: the enzyme an RNA virus uses to copy its own RNA genome.",
+  "gloss_zh": "RNA-dependent RNA polymerase，RNA 病毒用来复制自身 RNA 基因组的酶。",
+  "first": 6
+ },
+ {
+  "en": "two-metal-ion mechanism",
+  "zh": "双金属离子机制",
+  "gloss_en": "The catalytic trick shared by polymerases: two Mg2+ ions held by conserved acidic residues, one activating the attacking 3'-OH and the other stabilising the leaving pyrophosphate.",
+  "gloss_zh": "聚合酶共用的催化机制：由保守的酸性残基固定两个 Mg2+，一个活化发起进攻的 3'-OH，另一个稳定离去的焦磷酸。",
+  "first": 6
+ },
+ {
+  "en": "cryo-EM",
+  "zh": "冷冻电镜",
+  "gloss_en": "Cryo-electron microscopy: the sample is frozen so fast that the water becomes glass rather than ice, then imaged in an electron microscope, and thousands of single-particle images are averaged into a 3D map. No crystals needed.",
+  "gloss_zh": "冷冻电镜：把样品极速冻成玻璃态的水（不是冰晶），在电镜下成像，再把成千上万个颗粒的图像平均成三维密度图；不需要长晶体。",
+  "first": 8
+ },
+ {
+  "en": "CTF estimation",
+  "zh": "衬度传递函数估计",
+  "gloss_en": "Contrast transfer function: the way the microscope's optics distort each image. It is measured for every micrograph and corrected before the images are combined.",
+  "gloss_zh": "衬度传递函数 contrast transfer function，描述电镜光学对每张图像造成的畸变；要逐张估计并校正后才能把图像合并。",
+  "first": 8
+ },
+ {
+  "en": "FSC",
+  "zh": "傅里叶壳层相关",
+  "gloss_en": "Fourier shell correlation, the standard measure of cryo-EM resolution: the data are split in half, the two reconstructions compared, and the resolution quoted where their correlation falls to 0.143.",
+  "gloss_zh": "傅里叶壳层相关 Fourier shell correlation，冷冻电镜判定分辨率的标准做法：把数据对半分别重构再比较，相关性降到 0.143 处的那个尺度就是分辨率。",
+  "first": 8
+ },
+ {
+  "en": "resolution",
+  "zh": "分辨率",
+  "gloss_en": "How fine a detail a map or a microscope can still tell apart, quoted as a distance, so a smaller number is better. At 3 Å you see side chains; at 8 Å helices are only rods.",
+  "gloss_zh": "密度图或显微镜真正能分辨的最小细节，用距离表示，数字越小越好。3 Å 能看到侧链，8 Å 只能看到 helix 像一根根柱子。",
+  "first": 8
+ },
+ {
+  "en": "density",
+  "zh": "密度（密度图）",
+  "gloss_en": "The 3D map of scattering produced by cryo-EM or X-ray, into which the atomic model is built. 「Missing density」 means that part gave no signal: it is either absent or too mobile to survive averaging.",
+  "gloss_zh": "冷冻电镜或 X 射线得到的三维密度图，原子模型就是照着它搭进去的。「missing density」指那一段没有信号——要么真的不在，要么太活动、平均后被抹掉了。",
+  "first": 9
+ },
+ {
+  "en": "circular dichroism (CD)",
+  "zh": "圆二色谱",
+  "gloss_en": "A spectroscopy that measures the difference in absorbance between left- and right-circularly polarised light. Because the backbone is chiral, the spectrum reports how much α-helix and β-sheet a protein contains.",
+  "gloss_zh": "测量样品对左旋和右旋圆偏振光吸收的差值。主链本身有手性，所以谱形能反映蛋白中 α-helix 和 β-sheet 各占多少。",
+  "first": 10
+ },
+ {
+  "en": "numerical aperture (NA)",
+  "zh": "数值孔径",
+  "gloss_en": "A number saying how wide a cone of light a lens can collect. It appears in the Abbe limit d = λ/(2·NA), so a larger NA gives finer resolution; an oil objective reaches about 1.4.",
+  "gloss_zh": "描述物镜能收集多大锥角光线的数值。它出现在 Abbe 极限 d = λ/(2·NA) 里，NA 越大分辨率越细，油镜约为 1.4。",
+  "first": 10
+ },
+ {
+  "en": "desolvation",
+  "zh": "去溶剂化（脱水化层）",
+  "gloss_en": "The energy cost of stripping the shell of water molecules off a charged or polar group before it can pair with a partner.",
+  "gloss_zh": "带电或极性基团在与对方配对之前，必须先脱掉外面那层水分子，这一步要付出的能量代价。",
+  "first": 11
+ },
+ {
+  "en": "PDI",
+  "zh": "蛋白二硫键异构酶",
+  "gloss_en": "Protein disulfide isomerase, the ER enzyme that forms disulfide bonds and reshuffles wrongly paired ones.",
+  "gloss_zh": "蛋白二硫键异构酶 protein disulfide isomerase，内质网里负责形成二硫键、并把配错的二硫键重排的酶。",
+  "first": 11
+ },
+ {
+  "en": "B-factor",
+  "zh": "温度因子 / B 值",
+  "gloss_en": "A number carried by every atom in a structure file, saying how smeared out that atom is through motion or disorder. A high B-factor means the position is poorly pinned down, typical of loops and surface side chains.",
+  "gloss_zh": "结构文件里每个原子都带的一个数值，表示这个原子因运动或无序而被「抹开」的程度。B-factor 高即位置不确定，常见于 loop 和表面侧链。",
+  "first": 13
+ },
+ {
+  "en": "MolProbity",
+  "zh": "MolProbity",
+  "gloss_en": "The standard structure-validation service. It reports Ramachandran outliers, side-chain rotamer outliers, and the clashscore, which counts how many atoms bump into each other per 1000 atoms.",
+  "gloss_zh": "标准的结构验证服务，给出 Ramachandran outlier 比例、侧链 rotamer outlier 比例，以及 clashscore（每一千个原子中互相撞车的次数）。",
+  "first": 13
+ },
+ {
+  "en": "R / R_free",
+  "zh": "R 因子 / R_free",
+  "gloss_en": "In crystallography, how well the model reproduces the measured data; lower is better. R_free is the same measure on data deliberately held out of refinement, so a wide gap between the two means the model has been over-fitted.",
+  "gloss_zh": "晶体学中衡量模型与实测数据吻合程度的指标，越低越好。R_free 用的是刻意不参与精修的那部分数据，两者差距过大就说明模型过拟合了。",
+  "first": 13
+ },
+ {
+  "en": "rotamer",
+  "zh": "侧链构象",
+  "gloss_en": "One of the small number of energetically preferred orientations a side chain actually adopts. A rotamer outlier is a side chain modelled in a pose almost never seen in real structures.",
+  "gloss_zh": "侧链实际会采用的少数几种能量上有利的取向。rotamer outlier 指侧链被建成了真实结构中几乎不会出现的姿势。",
+  "first": 13
+ },
+ {
+  "en": "3₁₀ helix / π helix",
+  "zh": "3₁₀ 螺旋 / π 螺旋",
+  "gloss_en": "Two rarer helices, differing from the α-helix only in how far the backbone hydrogen bond reaches: i to i+3 for 3₁₀ and i to i+5 for π, against i to i+4 for the α-helix. They usually appear only as short caps at the ends of α-helices.",
+  "gloss_zh": "两种较少见的螺旋，与 α-helix 的区别只在主链氢键连到第几个残基：3₁₀ 是 i→i+3，π 是 i→i+5（α-helix 是 i→i+4）。它们通常只作为很短的一段出现在 helix 两端。",
+  "first": 14
+ },
+ {
+  "en": "N-cap",
+  "zh": "N 端封帽残基",
+  "gloss_en": "The first residue at the N-terminal end of a helix. Its backbone N-H has no partner inside the helix, so this position follows different rules from the helix body, and proline is common here.",
+  "gloss_zh": "helix 最靠 N 端的那个残基。它的主链 N–H 在螺旋内部找不到配对对象，所以这个位置的规则和螺旋中段不同，Pro 在这里并不少见。",
+  "first": 15
+ },
+ {
+  "en": "CDR",
+  "zh": "互补决定区",
+  "gloss_en": "Complementarity-determining region: the six loops at the tip of an antibody that actually touch the antigen and decide what it recognises.",
+  "gloss_zh": "互补决定区 complementarity-determining region，抗体顶端真正接触抗原的那六段 loop，决定抗体识别什么。",
+  "first": 17
+ },
+ {
+  "en": "heptad repeat",
+  "zh": "七肽重复",
+  "gloss_en": "The seven-position pattern a-b-c-d-e-f-g used to describe a coiled coil. Positions a and d are hydrophobic and form the stripe along which two helices wrap around each other.",
+  "gloss_zh": "描述 coiled coil 时用的七位重复 a-b-c-d-e-f-g：a 和 d 位是疏水残基，形成两条 helix 相互缠绕所依靠的那条疏水条纹。",
+  "first": 18
+ },
+ {
+  "en": "melting temperature (Tm)",
+  "zh": "融解温度",
+  "gloss_en": "For a protein, the temperature at which half the molecules are unfolded; the usual single number for how stable it is.",
+  "gloss_zh": "对蛋白而言，是一半分子解折叠时的温度，通常用这一个数字表示蛋白的稳定性 stability。",
+  "first": 19
+ },
+ {
+  "en": "osteogenesis imperfecta",
+  "zh": "成骨不全症（脆骨症）",
+  "gloss_en": "Brittle bone disease, caused by mutations in collagen, most often a glycine in the Gly-X-Y repeat replaced by a larger residue.",
+  "gloss_zh": "成骨不全症（脆骨症），由胶原蛋白突变引起，最常见的是 Gly-X-Y 重复里的 Gly 被更大的残基取代。",
+  "first": 19
+ },
+ {
+  "en": "Anfinsen's dogma (the Anfinsen experiment)",
+  "zh": "Anfinsen 法则／Anfinsen 实验",
+  "gloss_en": "Christian Anfinsen's RNase A refolding work, Nobel Prize 1972. 'Anfinsen's dogma' is the claim that the amino acid sequence alone carries all the information needed for the native fold. The lecture runs the experiment first and only names it afterwards, then uses the name as shorthand.",
+  "gloss_zh": "Anfinsen 实验就是本节做的 RNase A 变性—复性实验（1972 年诺贝尔化学奖）；Anfinsen's dogma 指「序列本身就写着折叠所需的全部信息」这条结论。课上先讲实验后给名字，之后就直接用这个名字当简称。",
+  "first": 21
+ },
+ {
+  "en": "clathrate (clathrate-like water shell)",
+  "zh": "笼状水壳",
+  "gloss_en": "A cage of water molecules that orders itself around a nonpolar group, because water cannot hydrogen-bond to that group and has to reorganise around it. Burying the group releases the cage waters, and that entropy gain is what drives folding.",
+  "gloss_zh": "水无法与非极性基团形成氢键，只能在它周围重排成一个笼状水壳 clathrate。折叠把这些基团埋进内部，笼水被释放回自由水，熵大幅上升——这就是折叠的驱动力。",
+  "first": 21
+ },
+ {
+  "en": "conformational entropy",
+  "zh": "构象熵",
+  "gloss_en": "The entropy a chain has simply from the number of shapes it could adopt. Folding narrows that down to essentially one shape, so this term always falls on folding and is unfavourable; it has to be paid for by the entropy gained by the solvent.",
+  "gloss_zh": "多肽链因为「能摆出很多种构象」而具有的熵。折叠把它压缩到基本只剩一种构象，所以构象熵 conformational entropy 总是下降、对折叠不利，必须靠溶剂熵的上升来抵偿。",
+  "first": 21
+ },
+ {
+  "en": "DSC (differential scanning calorimetry)",
+  "zh": "差示扫描量热法",
+  "gloss_en": "Heats the sample and measures the heat it actually absorbs, so it gives TM and the enthalpy of unfolding directly, with no dye and no fluorescence. The thermodynamic reference method, but it needs far more protein than DSF. One letter apart from DSF and easily confused with it.",
+  "gloss_zh": "直接测样品升温时吸收的热量，因此能同时给出 TM 和去折叠的焓变，不依赖任何染料或荧光。是热力学上的参考方法，但耗样量远大于 DSF。和 DSF 只差一个字母，最容易混。",
+  "first": 22
+ },
+ {
+  "en": "nanoDSF",
+  "zh": "（微量）差示扫描荧光法",
+  "gloss_en": "A label-free way of measuring TM: a few microlitres of protein in a capillary are heated while the protein's own tryptophan fluorescence is recorded at 330 and 350 nm. The F350/F330 ratio jumps when the core opens up and the tryptophans meet water.",
+  "gloss_zh": "测 TM 的一种无标记方法：几微升蛋白装在毛细管里升温，读它自身色氨酸 Trp 的内源荧光 intrinsic fluorescence 在 330 nm 与 350 nm 的强度比。疏水核心一散开、Trp 暴露到水中，F350/F330 就跳变。",
+  "first": 22
+ },
+ {
+  "en": "folding funnel / energy landscape",
+  "zh": "折叠漏斗／能量地形",
+  "gloss_en": "The modern picture of folding: the space of possible conformations is drawn as a funnel sloping down toward the native state, so random motion is steered downhill instead of having to search every shape. Small side wells in the funnel are the misfolded kinetic traps.",
+  "gloss_zh": "现在解释折叠为什么快的标准图像：把构象空间画成一个漏斗，越接近天然态越低，随机运动被地形本身导向底部，不需要遍历所有构象。漏斗壁上的小坑就是动力学陷阱 kinetic trap，对应错误折叠的中间体。",
+  "first": 23
+ },
+ {
+  "en": "scrapie / BSE / CJD",
+  "zh": "羊瘙痒病／疯牛病／克雅氏病",
+  "gloss_en": "The three prion diseases usually named together: scrapie in sheep, BSE (bovine spongiform encephalopathy, 'mad cow disease') in cattle, and Creutzfeldt-Jakob disease in humans. All are caused by a misfolded protein conformation, not by any nucleic acid genome.",
+  "gloss_zh": "常被一起点名的三种朊病毒病：羊的羊瘙痒病 scrapie、牛的疯牛病 BSE、人的克雅氏病 CJD。致病的都是错误折叠的蛋白构象本身，没有核酸基因组参与。",
+  "first": 23
+ },
+ {
+  "en": "DnaK (Hsp70)",
+  "zh": "DnaK（Hsp70）",
+  "gloss_en": "The E. coli Hsp70 chaperone, about 70 kDa. Unlike GroEL it does not enclose its substrate; it grips exposed hydrophobic stretches and lets go again through an ATP/ADP cycle. The other band that habitually contaminates E. coli protein preparations.",
+  "gloss_zh": "大肠杆菌的 Hsp70 伴侣蛋白，约 70 kDa。它不把底物关进腔里，而是抓住暴露的疏水片段，再靠 ATP/ADP 循环松手。是大肠杆菌纯化时另一条常见的污染条带。",
+  "first": 24
+ },
+ {
+  "en": "GroEL / GroES",
+  "zh": "GroEL／GroES（大肠杆菌伴侣蛋白）",
+  "gloss_en": "The E. coli chaperonin. GroEL is 14 subunits as two stacked seven-membered rings forming a barrel around a cavity; GroES is the seven-subunit lid that caps it. Its subunit is about 57 kDa, which is exactly the suspicious band the lecture warns about.",
+  "gloss_zh": "大肠杆菌的伴侣素 chaperonin。GroEL 由 14 个亚基组成，两个七元环背靠背堆成一个桶，中间是空腔；GroES 是扣在上面的七聚体盖子。单体约 57 kDa，正是课上说的那条「可疑条带」。",
+  "first": 24
+ },
+ {
+  "en": "PDI (protein disulfide isomerase)",
+  "zh": "蛋白二硫键异构酶",
+  "gloss_en": "An enzyme that reshuffles wrongly paired disulfide bonds until the right pairs are found. It works in the oxidising lumen of the ER; the cytoplasm is reducing, which is why disulfide-rich proteins so often fold badly when expressed in the E. coli cytoplasm.",
+  "gloss_zh": "把配错的二硫键反复拆开重配、直到配对正确的酶，位于真核细胞内质网 ER 的氧化性腔内。细胞质是还原环境、没有这套系统，所以富含二硫键的蛋白在大肠杆菌细胞质里常常折叠失败。",
+  "first": 24
+ },
+ {
+  "en": "SHuffle / Origami",
+  "zh": "SHuffle／Origami 菌株",
+  "gloss_en": "Engineered E. coli expression strains in which the cytoplasmic reducing enzymes have been knocked out, so disulfide bonds can survive in the cytoplasm. The standard workaround when a disulfide-containing protein will not fold in ordinary strains.",
+  "gloss_zh": "两种改造过的大肠杆菌表达菌株：细胞质里的还原酶被敲掉，二硫键因此能在细胞质中保住。带二硫键的蛋白在普通菌株里折不好时，常规做法就是换成这两种。",
+  "first": 24
+ },
+ {
+  "en": "TRiC (chaperonin)",
+  "zh": "TRiC（真核伴侣素）",
+  "gloss_en": "'Chaperonin' is the class of barrel-shaped chaperones that shut a substrate inside a cavity to fold. TRiC, also called CCT, is the one in the eukaryotic cytosol - the counterpart of bacterial GroEL.",
+  "gloss_zh": "chaperonin 伴侣素指那一类桶状、把底物关进腔里折叠的伴侣蛋白；TRiC（又叫 CCT）就是真核细胞质里的那一个，对应细菌的 GroEL。",
+  "first": 24
+ },
+ {
+  "en": "allosteric effect / allostery",
+  "zh": "别构效应（变构效应）",
+  "gloss_en": "Binding at one site changes the properties of a different site on the same protein. Here it is what lets oxygen bound to one subunit alter the others. Topic 25 uses the word; the definition only arrives in topic 29.",
+  "gloss_zh": "一个位点上的结合改变了同一蛋白另一个位点的性质。本章里指一个亚基结合氧后改变其余亚基的构象。第 25 节就在用这个词，第 29 节才给出定义。",
+  "first": 25
+ },
+ {
+  "en": "cooperativity",
+  "zh": "协同性（协同效应）",
+  "gloss_en": "In a protein with several binding sites, cooperativity means the sites are not independent: binding at one makes the next easier (positive) or harder (negative). It is a strict term, not a loose word for subunits 'working together'.",
+  "gloss_zh": "指多个结合位点彼此不独立：一个位点结合后，下一个变得更容易结合（正协同）或更难结合（负协同）。这是严格定义的术语，不是泛指亚基「一起工作」。",
+  "first": 25
+ },
+ {
+  "en": "mnemonic model",
+  "zh": "",
+  "gloss_en": "An explanation for a single-subunit enzyme that still gives a sigmoid curve: the enzyme switches conformation more slowly than it turns substrate over, so the free enzyme still 'remembers' the state the previous substrate molecule left it in. Mentioned only in passing, for glucokinase.",
+  "gloss_zh": "用来解释单体酶为什么也能给出 S 形曲线的模型：酶的构象转换比它催化一轮还慢，所以游离的酶还「记得」上一个底物离开时留下的状态。课上只在提葡萄糖激酶 glucokinase 时一带而过。",
+  "first": 25
+ },
+ {
+  "en": "globin fold",
+  "zh": "珠蛋白折叠",
+  "gloss_en": "The three-dimensional architecture shared by myoglobin and every haemoglobin chain: eight alpha helices, lettered A to H, packed around a pocket that holds one heme. It stays the same even where sequence identity is only 15-25%.",
+  "gloss_zh": "肌红蛋白与血红蛋白各条链共有的三维构架：八段 α-螺旋，按 A–H 编号，围出一个装血红素 heme 的口袋。即使序列一致性只有 15–25%，这个折叠依然不变。",
+  "first": 26
+ },
+ {
+  "en": "HbS",
+  "zh": "镰状血红蛋白",
+  "gloss_en": "The sickle-cell haemoglobin variant: glutamate at position 6 of beta-globin replaced by valine. In the deoxygenated state HbS molecules stick to one another and polymerise into long fibres, and it is the fibres that deform the red cell.",
+  "gloss_zh": "镰刀型贫血的血红蛋白变体：β 链第 6 位的 Glu 换成 Val。在脱氧状态下 HbS 分子彼此粘连、聚合成长纤维，把红细胞拉成镰刀形——变形来自聚合，不是单个分子载氧变差。",
+  "first": 26
+ },
+ {
+  "en": "homology",
+  "zh": "同源性",
+  "gloss_en": "Strictly, descent from a common ancestor, and therefore a yes/no property: two proteins either are homologous or they are not. '40% homology' is not a meaningful statement, however often it is said; what is measurable is sequence identity.",
+  "gloss_zh": "严格意义上指「来自共同祖先」，因此是有或没有的二元性质：两个蛋白要么同源，要么不同源。「40% 同源」这种说法说不通，尽管大家都这么讲；能量化的是 sequence identity。",
+  "first": 26
+ },
+ {
+  "en": "paralog",
+  "zh": "旁系同源",
+  "gloss_en": "Two genes in the same organism that arose by duplication of one ancestral gene, and have usually since taken on different jobs. Haemoglobin and myoglobin are paralogs. Contrast orthologs: the same gene in two species, separated by speciation, such as human and mouse myoglobin.",
+  "gloss_zh": "同一物种内由一个祖先基因复制而来的两个基因，之后功能常常分化——血红蛋白与肌红蛋白就是 paralogs。对照 ortholog 直系同源：两个物种里的同一个基因，由物种分化产生，例如人和小鼠的 Mb。",
+  "first": 26
+ },
+ {
+  "en": "sequence identity",
+  "zh": "序列一致性",
+  "gloss_en": "The percentage of aligned positions carrying exactly the same residue. This is the number people actually mean when they say 'forty percent homology'. Similarity is the looser measure that also credits chemically alike residues.",
+  "gloss_zh": "比对 alignment 之后，完全相同的位置所占的百分比。别人说「四十的同源性」时想说的其实就是这个数。similarity 相似性更宽松，把化学性质相近的残基也算作部分匹配。",
+  "first": 26
+ },
+ {
+  "en": "COHb (carboxyhaemoglobin)",
+  "zh": "碳氧血红蛋白",
+  "gloss_en": "Haemoglobin with CO bound in the site O2 would occupy. In suspected CO poisoning it has to be measured directly, because the ordinary oxygen readings can look entirely normal.",
+  "gloss_zh": "结合了 CO、占住本该给 O2 的位点的血红蛋白。怀疑 CO 中毒时必须直接测 COHb，因为常规的血氧读数可能完全正常。",
+  "first": 27
+ },
+ {
+  "en": "His F8 / His E7 (globin helix lettering)",
+  "zh": "His F8／His E7（螺旋编号法）",
+  "gloss_en": "Residues in globins are named by which helix they sit on and how far along it they are: F8 is the eighth residue of helix F, E7 the seventh of helix E. The scheme names the same structural position in myoglobin and in every haemoglobin chain, even though their sequence numbering differs.",
+  "gloss_zh": "珠蛋白里的残基按「在第几段螺旋、第几位」来命名：F8 就是 F 螺旋的第 8 个残基，E7 是 E 螺旋的第 7 个。这样即使各条链的序号不同，也能指同一个结构位置——所以近端 His F8、远端 His E7 在 Mb 和 Hb 各链里叫同一个名字。",
+  "first": 27
+ },
+ {
+  "en": "left shift / right shift (of the O2 dissociation curve)",
+  "zh": "氧解离曲线左移／右移",
+  "gloss_en": "Shorthand for the whole saturation curve sliding sideways. Right shift means a higher P50, lower affinity, oxygen given up more readily in tissue; left shift is the opposite, the oxygen held on to and not released.",
+  "gloss_zh": "指整条氧饱和曲线横向平移。右移 = P50 升高 = 亲和力下降 = 在组织里更容易卸氧；左移 = 相反，氧被抓得更牢、卸不下来。全章反复用这个简称。",
+  "first": 27
+ },
+ {
+  "en": "prosthetic group",
+  "zh": "辅基",
+  "gloss_en": "A non-protein group permanently bound to a protein and required for it to work at all - heme in the globins. Distinguished from a coenzyme, which associates and dissociates during the reaction.",
+  "gloss_zh": "牢固结合在蛋白上、蛋白要工作就少不了的非蛋白部分，珠蛋白里就是血红素 heme。与反应中来去自由的辅酶 coenzyme 相对。",
+  "first": 27
+ },
+ {
+  "en": "pulse oximetry (SpO2)",
+  "zh": "脉搏血氧饱和度",
+  "gloss_en": "The fingertip clip that reads what percentage of haemoglobin is carrying oxygen, from how blood absorbs two wavelengths of light. It sees arterial haemoglobin only and cannot tell bound O2 from bound CO. PaO2 is a different number: the partial pressure of oxygen dissolved in arterial blood.",
+  "gloss_zh": "夹在指尖那个仪器，用两个波长的吸光算出血红蛋白中带氧的百分比。它只看动脉血里的 Hb，而且分不清结合的是 O2 还是 CO。PaO2 是另一个数：动脉血中溶解氧的分压。",
+  "first": 27
+ },
+ {
+  "en": "T state / R state",
+  "zh": "T 态／R 态（紧张态／松弛态）",
+  "gloss_en": "The two quaternary conformations of haemoglobin: T (tense) is the compact form that binds oxygen weakly, R (relaxed) the form that binds it tightly. The labels are used from topic 27 onward and only explained in topic 33.",
+  "gloss_zh": "血红蛋白的两种四级构象：T 态 tense 结构更紧实、对氧亲和力低；R 态 relaxed 亲和力高。第 27 节起就在用这两个记号，第 33 节才展开讲。",
+  "first": 27
+ },
+ {
+  "en": "strong-field ligand",
+  "zh": "强场配体",
+  "gloss_en": "A ligand that splits a metal ion's d-orbital energies widely, binding tightly and pushing the metal into a low-spin state. CN- and CO are the textbook examples, which is why they outcompete O2 at heme iron.",
+  "gloss_zh": "能把金属离子 d 轨道能级劈得很开的配体，结合非常牢，并把金属压成低自旋 low-spin。CN⁻ 和 CO 是教科书例子——这正是它们能在血红素铁上把 O2 挤掉的原因。",
+  "first": 28
+ },
+ {
+  "en": "P50",
+  "zh": "半饱和氧分压",
+  "gloss_en": "The oxygen partial pressure at which the carrier is half saturated. A low P50 means high affinity (myoglobin, about 2.8 torr); a high P50 means low affinity (haemoglobin, about 26 torr).",
+  "gloss_zh": "使载氧蛋白达到 50% 饱和所需的氧分压。P50 小＝亲和力高（肌红蛋白约 2.8 torr）；P50 大＝亲和力低（血红蛋白约 26 torr）。",
+  "first": 29
+ },
+ {
+  "en": "Hill coefficient (nH)",
+  "zh": "Hill 系数",
+  "gloss_en": "A number saying how much binding at one site helps the next. nH = 1 means no cooperation, above 1 positive cooperativity, below 1 negative; it can never exceed the number of binding sites. Haemoglobin's is about 2.8.",
+  "gloss_zh": "一个数，表示一个位点结合之后对下一个位点的帮助有多大。nH = 1 表示完全没有协同性 cooperativity，大于 1 为正协同，小于 1 为负协同；上限是结合位点数。血红蛋白约 2.8。",
+  "first": 30
+ },
+ {
+  "en": "torr",
+  "zh": "托（＝mmHg）",
+  "gloss_en": "The pressure unit used for gas tensions in physiology: 1 torr = 1 mmHg, and 760 torr = 1 atm. Note that pO2 is the quantity and torr is its unit, so '26 torr', never '26 pO2'.",
+  "gloss_zh": "生理学里表示气体分压的单位：1 torr = 1 mmHg，760 torr = 1 atm。注意 pO2 是物理量、torr 才是单位，所以要写「26 torr」，不能写「26 pO2」。",
+  "first": 30
+ },
+ {
+  "en": "2,3-BPG (2,3-bisphosphoglycerate)",
+  "zh": "2,3-二磷酸甘油酸",
+  "gloss_en": "A small, heavily negatively charged molecule present in red cells. It binds in the central cavity of the haemoglobin tetramer, holds it in the T state, and so lowers oxygen affinity. Topic 36 explains it; before that it is used as a bare abbreviation.",
+  "gloss_zh": "红细胞里一个带多个负电荷的小分子。它结合在血红蛋白四聚体中央的空腔里，把蛋白锁在 T 态，因而降低氧亲和力。第 36 节才展开讲，在那之前只以缩写出现。",
+  "first": 31
+ },
+ {
+  "en": "HbF (fetal haemoglobin)",
+  "zh": "胎儿血红蛋白",
+  "gloss_en": "The haemoglobin of the fetus: alpha2-gamma2 instead of the adult alpha2-beta2. Its gamma chains bind 2,3-BPG only weakly, so HbF has higher oxygen affinity than the mother's HbA and can take oxygen from her across the placenta.",
+  "gloss_zh": "胎儿的血红蛋白，组成是 α₂γ₂，成人 HbA 是 α₂β₂。γ 链与 2,3-BPG 的结合很弱，所以 HbF 的氧亲和力高于母体 HbA，氧气才能在胎盘处由母亲转给胎儿。",
+  "first": 31
+ },
+ {
+  "en": "Fenton reaction",
+  "zh": "芬顿反应",
+  "gloss_en": "Fe2+ reacting with hydrogen peroxide to produce the hydroxyl radical, the most aggressive of the reactive oxygen species. It is the reason free iron inside a cell is dangerous.",
+  "gloss_zh": "Fe²⁺ 与过氧化氢反应生成羟自由基 •OH，是 ROS 里破坏力最强的那一种。这也是细胞里不能有游离铁的原因。",
+  "first": 32
+ },
+ {
+  "en": "homotropic / heterotropic effect",
+  "zh": "同促效应／异促效应",
+  "gloss_en": "Homotropic: the ligand regulates the binding of more of itself, as O2 does in haemoglobin. Heterotropic: the regulator is a different molecule, such as H+, CO2 or 2,3-BPG acting on O2 binding.",
+  "gloss_zh": "同促 homotropic：调节物就是配体自己，例如 O2 促进更多 O2 结合。异促 heterotropic：调节物是别的分子，例如 H⁺、CO2、2,3-BPG 来调节 O2 的结合。",
+  "first": 33
+ },
+ {
+  "en": "KNF model",
+  "zh": "KNF 序变模型",
+  "gloss_en": "The sequential model of allostery (Koshland-Nemethy-Filmer): subunits change one at a time by induced fit as each binds its ligand, so mixed intermediates with some subunits switched and some not do exist. The alternative to MWC.",
+  "gloss_zh": "别构的序变模型（Koshland–Némethy–Filmer）：亚基随各自的配体结合、一个接一个地发生诱导契合而改变构象，因此允许「一部分变了、一部分没变」的中间态。与 MWC 相对。",
+  "first": 33
+ },
+ {
+  "en": "MWC model",
+  "zh": "MWC 齐变模型",
+  "gloss_en": "The concerted model of allostery (Monod-Wyman-Changeux): all subunits are in the same state, either all T or all R, and ligand binding merely shifts the equilibrium between those two states. No mixed intermediates are allowed.",
+  "gloss_zh": "别构的齐变模型（Monod–Wyman–Changeux）：所有亚基必须处于同一状态，要么全是 T 要么全是 R，配体只是改变两态之间的平衡，不允许混合的中间态。",
+  "first": 33
+ },
+ {
+  "en": "high-spin / low-spin iron",
+  "zh": "高自旋铁／低自旋铁",
+  "gloss_en": "Two ways the d electrons of Fe(II) can be arranged. High-spin iron is larger and sits out of the heme plane; binding O2 makes it low-spin and smaller, so it drops into the plane - and that small movement is what starts the T-to-R switch.",
+  "gloss_zh": "Fe²⁺ 的 d 电子有两种排布方式。高自旋 high-spin 时半径较大，凸在卟啉平面之外；结合 O2 后变成低自旋 low-spin、半径变小，就落进平面——正是这一下微小位移启动了 T→R 转变。",
+  "first": 34
+ },
+ {
+  "en": "salt bridge",
+  "zh": "盐桥",
+  "gloss_en": "An electrostatic attraction between two oppositely charged side chains, for instance a lysine ammonium and an aspartate carboxylate. Unlike a hydrogen bond it requires actual net charges, and it is strongest when buried away from water.",
+  "gloss_zh": "两个带相反电荷的侧链之间的静电吸引，例如 Lys 的 −NH₃⁺ 与 Asp 的 −COO⁻。与氢键的区别是它需要真正的净电荷；埋在疏水内部、远离水时最强。",
+  "first": 35
+ },
+ {
+  "en": "Rapoport-Luebering shunt",
+  "zh": "Rapoport–Luebering 旁路",
+  "gloss_en": "A side branch of glycolysis found in red cells: 1,3-BPG is diverted into 2,3-BPG and then hydrolysed back into the main pathway. This is where the 2,3-BPG in erythrocytes comes from.",
+  "gloss_zh": "红细胞里糖酵解 glycolysis 的一条支路：1,3-BPG 被分流生成 2,3-BPG，再水解回主路。红细胞中的 2,3-BPG 就是从这里来的。",
+  "first": 36
+ },
+ {
+  "en": "resonance",
+  "zh": "共振（共振杂化）",
+  "gloss_en": "When one Lewis structure cannot describe a molecule, the real electron distribution is drawn as an average of several structures - as in a carboxylate, where the negative charge sits equally on both oxygens. It describes delocalised electrons, not a molecule flipping between forms.",
+  "gloss_zh": "一个 Lewis 结构画不出真实分子时，就用几个结构的平均来描述电子分布——例如羧酸根 −COO⁻ 的负电荷平均分在两个氧上。它描述的是电子离域，不是分子在几种形式之间来回跳。",
+  "first": 38
+ },
+ {
+  "en": "hydride (H-)",
+  "zh": "氢负离子（负氢）",
+  "gloss_en": "A hydrogen carrying both bonding electrons: one proton plus two electrons. NAD+/NADH transfers a hydride, which is why in metabolism 'giving up hydrogen' and 'giving up electrons' turn out to be the same event.",
+  "gloss_zh": "带着两个电子的氢，也就是 1 个质子 + 2 个电子。NAD⁺/NADH 传递的正是一个 hydride，所以代谢里「给氢」和「给电子」最后是同一件事。",
+  "first": 39
+ },
+ {
+  "en": "Rossmann fold / TIM barrel / immunoglobulin fold",
+  "zh": "Rossmann 折叠／TIM 桶／免疫球蛋白折叠",
+  "gloss_en": "Names of recurring three-dimensional folds: fixed arrangements of secondary structure that show up again in proteins with no sequence relationship. They sit between secondary and tertiary structure, which is why a secondary-structure lecture never mentions them.",
+  "gloss_zh": "几种反复出现的三维折叠的专名：二级结构以固定方式排布成的模块，会在毫无序列亲缘关系的蛋白里重复出现。它们介于二级结构与三级结构之间，所以讲二级结构那一节从不提。",
+  "first": 40
+ },
+ {
+  "en": "steady-state assumption (Briggs-Haldane)",
+  "zh": "稳态假设",
+  "gloss_en": "The assumption used to derive the Michaelis-Menten equation: the enzyme-substrate complex is formed and consumed at the same rate, so its concentration stays constant. A weaker assumption than treating ES as being in equilibrium with E and S.",
+  "gloss_zh": "推导米氏方程时用的假设：酶–底物复合物 ES 的生成速率与消耗速率相等，浓度保持恒定。这个前提比「ES 与 E、S 处于快速平衡」要宽松。",
+  "first": 40
+ }
+]

@@ -145,6 +145,119 @@ light themes, subtitles overlaid on the picture with size control, a search pane
 indexing everything (3248 entries for lecture 1) with per-category filters, and
 English text-to-speech.
 
+**Three views, and the video is opt-in.** A 视图 view switch offers 字版 Text,
+视频 Video and 只做题 Quiz, defaulting to **Text**. The video is for watching a
+structure being drawn, which is something you go and ask for, not something that
+should sit there playing while you read.
+
+- **Text** hides the whole middle column — video, timeline, subtitle bar and
+  transcript — and the docked quiz with it, since the quiz has its own view. The
+  notes take the whole width as **two side-by-side columns**, key points on the
+  left and the extra cards on the right, each scrolling independently under a
+  sticky header. Stacked, the extras sat below a screenful of points and were
+  never reached; side by side a point and the card that corrects or extends it
+  are on screen together. The subtitle controls hide too, since they steer
+  something that is not on screen.
+- **Quiz** hides everything but the quiz module and pools the lecture's whole
+  bank — 95 questions for lecture 1 rather than the two or three of the current
+  topic. Answer keys are `topic.question` in both views, so a score carries
+  across.
+- Every card and every quiz question carries a ▶ back to its topic's timestamp.
+  Clicking it switches to Video, seeks and plays; the click is a user gesture, so
+  autoplay is allowed. Plain navigation — picking a topic, following a search hit
+  — deliberately does *not* summon the video: `seek` leaves the view alone and
+  only `seekShow` changes it.
+
+Nothing is unloaded in Text view, only hidden, which is why the video is already
+at the right timestamp the moment a ▶ asks for it.
+
+**通读 Read — the integrated chapter.** A fourth view renders one lecture as a
+continuous document: a heading per section, an English paragraph followed by its
+Chinese counterpart, no timestamps, no play buttons, no reference to the
+recording at all. It is deliberately decoupled — a chapter to read instead of
+the video, not an index into it.
+
+What makes it worth having is what it does with the corrections. The per-topic
+cards annotate the lecture ("he said 3.4 nm, it is 0.15"); the read-through
+**writes the error out of existence**. The reader never meets it. In lecture 1
+that means 2,3-BPG is introduced through the Rapoport–Luebering shunt and never
+as a TCA intermediate, oxygen has six valence electrons, cyanide binds ferric
+iron in complex IV, myoglobin and haemoglobin are paralogs from gene duplication,
+collagen is three polyproline II helices, and the α-helix has 3.6 residues per
+turn derived in-text from 5.4 Å ÷ 1.5 Å.
+
+Built by `make_read_inputs.py <n>` → agents → `merge_read.py <n>`, into
+`data/NN/read.json`, inlined by `build_app_all.py` when present; the view shows a
+placeholder for lectures that have none. The merge refuses on a missing topic, a
+paragraph-count mismatch between the languages, or any phrase that points back at
+the recording — `the lecturer`, `as shown at`, `视频`, `课上说`, a bare timestamp.
+
+Lecture 1 came out at 41 sections, 163 paragraphs, ~16 800 English words. Agents
+consistently overran the 120–320 words-per-topic guide, landing at 300–540, and
+all three that reported gave the same reason: each topic carries three or four
+correction and addition cards, and compressing to the guide means dropping card
+content. That trade was left as they made it.
+
+**Three of the six agents were killed by the `[bio]` safeguard**, and this is a
+property of the working directory the session runs in, not of the content —
+biochemistry prose is not the trigger. All three had written and self-validated
+their files first, so nothing was lost, but a session doing this work should run
+from the `bio-state-exam` directory rather than a sibling project.
+
+**Pre-read glossary.** At the head of the read-through: the terms this lecture
+uses *without stopping to explain them*, one or two plain sentences each, in the
+order the reader will meet them. Lecture 1 has 87.
+
+Two rules decide what goes in, and both matter. A term the lecture defines
+properly is **not** a cold start — it is the content, and glossing it makes the
+list too long to finish. And a term a biology PhD will not be stopped by is
+dropped for the same reason: the agents cut cryo-EM, urea, imidazole,
+β-mercaptoethanol and about twenty more on that ground.
+
+The ordering key is where the term is **first used**, not where it is explained.
+An agent worked this out unprompted and it is the better rule: T/R state is used
+as shorthand in the carbon-monoxide card six sections before it is taught,
+2,3-BPG is dropped into an affinity card five sections before its own section.
+The place a reader stalls is the first encounter.
+
+Built by `make_term_inputs.py <n>` → two agents → `merge_terms.py <n>` into
+`data/NN/terms.json`, inlined when present. The merge collapses duplicates
+across the halves at the earlier `first`.
+
+**The metric I proposed for "what counts as a key point" was wrong** and is
+recorded here so it is not tried again. I suggested measuring centrality —
+how many quiz explanations cite a concept, how many lectures it spans. Two
+objections, both hers: the real exam has no question bank to count, and the
+examiner's idea of a key point is *what he spent time on or works on himself*.
+Her example was flexizyme, which any textbook-centrality ranking would sink and
+which the examiner treated as central. The measurable version of her rule uses
+the transcripts we already have: minutes spent per topic, and the places he says
+「这个要记」「考试会考」 or turns to his own research.
+
+**Reading aids in the read view.** Two buttons, for two things the reader
+actually reported: a wall of text gives the eye nowhere to enter and no way to
+keep its place, and attention drifts with nothing pacing it.
+
+- **专注 Focus** dims every paragraph except the one in hand — kept at 0.3
+  opacity rather than hidden, so the shape of the page still says where you are
+  in it — and marks it with a rule in the margin. Space or ↓ advances, ↑ goes
+  back, clicking a paragraph selects it, Esc leaves. The current paragraph
+  scrolls to the middle of the view. An English paragraph and its Chinese
+  counterpart are one unit and light up together.
+- **朗读 Read aloud** speaks the current paragraph **sentence by sentence**,
+  highlighting each as it is spoken, then moves to the next paragraph on its
+  own. Sentence-at-a-time rather than one utterance with boundary events,
+  because `onboundary` never fires on some network voices and the highlight
+  would drift out of sync; this cannot. It turns focus mode on, uses the app's
+  own voice and speech-rate settings, and a stale chain is fenced off by a
+  sequence number so Stop or a re-render cannot leave it running.
+
+**Neither touches the text.** An earlier attempt at "easier to read" in this
+project generated a reduced version of the prose — bold words and connectives —
+and it was incomprehensible, because that text had never been written or checked
+by anyone. Presentation is the safe place to make reading easier; the words are
+not.
+
 **Integration panel.** A 综合 Integration button in the header opens a full-screen
 panel of cross-lecture material that belongs to no single lecture and has no
 timestamps: eight sections — fuel states, carbon fates, control points,
