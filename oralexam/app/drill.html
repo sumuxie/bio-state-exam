@@ -2565,6 +2565,12 @@ function walkRender(){
     + (seen
        ? wkStep(1, '① 这条你走过 ' + seen + ' 遍了 —— 关键词已经涂掉，点一下露出来', 'cloze', '1', '开始读')
        : wkStep(1, '① 看着整段，出声读一遍', 'read', '1', '开始读'))
+    /* ⚠ 2026-09-28 她：「中文提示没了？全主题里是有的」——
+       中文（ezcn）一直都在，但原来摆在最底下、过完①②③和按钮才看得到。
+       第①步就是「看着整段读」，看不懂的词要立刻能查，不是走完四步才给。
+       挪到第①步下面，折叠着（点开才看），不改「英文是正文」这条。 */
+    + (x.ezcn ? '<details class="full" style="margin:10px 0 0"><summary>看不懂就点这里 · 中文 ▾</summary>'
+        + '<p class="en">' + x.ezcn + '</p></details>' : '')
     /* ⚠ 2026-09-24 她：「**我的意思不是让你改跟背的内容**，而是**在这下面加上
        这个一眼就能看懂公式**」。所以盒子摆在她要念的那段**下面**，
        而且只是**另外摆一份** —— 原文一个字没动。 */
@@ -2586,8 +2592,6 @@ function walkRender(){
       + '<button class="main" onclick="walkNext()">下一条 →</button> '
       + '<button class="ghost" onclick="home()">回首页</button> '
       + '<span class="small">今天整段出声 <b id="wkdone">' + (r.walk||0) + '</b> 遍</span></p>'
-    + (x.ezcn ? '<details class="full" style="margin-top:14px"><summary>中文 ▾</summary>'
-        + '<p class="en">' + x.ezcn + '</p></details>' : '')
     + (x.warn ? '<div class="wn"><b>⚠</b> ' + x.warn + '</div>' : '')
     + '</div>';
   window.scrollTo(0,0);

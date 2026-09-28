@@ -73,8 +73,15 @@ h2{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fa
   font-weight:700;margin:46px 0 18px}
 
 /* ---------- 一个主题 ---------- */
-article{margin:0 0 34px;padding:0 0 30px;border-bottom:1px solid var(--line)}
+article{margin:0 0 34px;padding:0 0 30px;border-bottom:1px solid var(--line);position:relative}
 article:last-of-type{border-bottom:0}
+/* ⚠ 2026-09-28 她要收藏，「收藏了的要重点背」——这不是进度/打分（那条规矩没变，
+   这页头上仍然「不记进度、不打分」），是标重要，跟磨耳朵的 ⭐ 是同一个意思。 */
+.favbtn{position:absolute;top:0;right:0;border:1px solid var(--line);background:var(--card);
+  color:var(--faint);border-radius:8px;font-size:12.5px;padding:3px 9px;cursor:pointer}
+.favbtn.on{background:var(--accent);color:var(--card);border-color:var(--accent)}
+#favbox{font-size:13px;line-height:1.9;margin:0 0 18px;display:none}
+#favbox a{margin:0 10px 0 0}
 article>h3{font-size:20px;line-height:1.3;margin:0 0 3px;font-weight:650;letter-spacing:-.01em}
 article>.zh{font-size:13px;color:var(--dim);margin:0 0 16px}
 article>.zh b{color:var(--ink);font-weight:580}
@@ -180,6 +187,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <a href="#t-ket">酮体</a> · <a href="#t-aa">尿素循环</a>（除三大以外的代谢）
 </p>
 
+<div id="favbox"></div>
 <div id="wkbar"></div>
 <div id="toc"></div>
 
@@ -1287,6 +1295,45 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
     out.push('<a href="#' + arts[i].id + '">' + (h ? h.textContent : arts[i].id) + '</a>');
   }
   document.getElementById('toc').innerHTML = out.join('');
+
+  /* ================= ⭐ 收藏这个主题 =================
+     2026-09-28 她：「主要是希望也是能加个收藏功能，然后收藏了的要重点背」。
+     跟头上那条「不记进度、不打分」不冲突——这不是打卡完成度，是标「这块要重点背」，
+     跟磨耳朵的 ⭐ 是一个意思，只是这页是按主题不是按句子，所以另存一个键，
+     不占用 drill.html 那三套。 */
+  var FAVK = 'onepage.fav.v1';
+  function favLoad(){ try{ return JSON.parse(localStorage.getItem(FAVK)) || {}; } catch(e){ return {}; } }
+  function favSave(m){ try{ localStorage.setItem(FAVK, JSON.stringify(m)); } catch(e){} }
+  var favMap = favLoad();
+  function favBox(){
+    var box = document.getElementById('favbox');
+    var ids = Object.keys(favMap).filter(function(k){ return favMap[k]; });
+    if (!ids.length){ box.style.display = 'none'; box.innerHTML = ''; return; }
+    var links = ids.map(function(id){
+      var a = document.getElementById(id), h = a ? a.querySelector('h3') : null;
+      return '<a href="#' + id + '">' + (h ? h.textContent : id) + '</a>';
+    }).join('');
+    box.style.display = 'block';
+    box.innerHTML = '<b style="color:var(--accent)">⭐ 收藏，今天重点背 (' + ids.length + ')</b><br>' + links;
+  }
+  for (var fi = 0; fi < arts.length; fi++){
+    (function(art){
+      var on = !!favMap[art.id];
+      var btn = document.createElement('button');
+      btn.className = 'favbtn' + (on ? ' on' : '');
+      btn.textContent = on ? '⭐' : '☆';
+      btn.title = '收藏这个主题，重点背';
+      btn.onclick = function(){
+        favMap[art.id] = !favMap[art.id];
+        favSave(favMap);
+        btn.className = 'favbtn' + (favMap[art.id] ? ' on' : '');
+        btn.textContent = favMap[art.id] ? '⭐' : '☆';
+        favBox();
+      };
+      art.appendChild(btn);
+    })(arts[fi]);
+  }
+  favBox();
 
   /* ================= 朗读 =================
      2026-09-27 她：「**单句朗读功能和整页朗读功能**」。
