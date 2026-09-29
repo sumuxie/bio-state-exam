@@ -86,7 +86,9 @@ G = [
 ]
 
 EN_P = re.compile(r'<p class="en">.*?</p>', re.S)
-SKIP = re.compile(r'<h3>.*?</h3>|<code\b.*?</code>|<p class="h">.*?</p>|<p class="t">.*?</p>', re.S)
+# 广度层的标题（wmove）和折叠摘要也不标：她要「标题一眼就能背」，塞括号就背不了了。
+SKIP = re.compile(r'<h3>.*?</h3>|<code\b.*?</code>|<p class="h">.*?</p>|<p class="t">.*?</p>'
+                  r'|<p class="wmove">.*?</p>|<summary>.*?</summary>', re.S)
 
 def masks(body):
     """每个字符：能不能插（不在标签里、不在跳过区）＋ 是不是英文段落。"""
