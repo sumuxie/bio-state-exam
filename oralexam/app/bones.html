@@ -135,7 +135,8 @@ body.ms-on p.en.rc-star::before{content:"⭐ 背了但不熟，再背";display:b
 #rcside .rs-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
 #rcside .rs-bar i{display:block;height:100%;background:var(--accent)}
 #rcside .rs-tg{display:block;margin:10px 0 8px;line-height:1.5;cursor:pointer}
-#rcside button{font-size:12.5px;padding:6px 10px;border:1px solid var(--accent);border-radius:999px;background:var(--bg);color:var(--accent);cursor:pointer;width:100%}
+#rcside .rs-out{width:100%;margin:8px 0 0;font-size:11px;font-family:ui-monospace,monospace;border:1px solid var(--line);border-radius:8px;padding:6px}
+#rcside button{font-size:12.5px;padding:6px 10px;margin:0 0 6px;border:1px solid var(--accent);border-radius:999px;background:var(--bg);color:var(--accent);cursor:pointer;width:100%}
 #rcside .rs-min{position:absolute;top:6px;right:8px;width:auto;border:0;padding:0 6px;color:var(--faint);font-size:16px}
 #rcside.mini{width:auto} #rcside.mini>*:not(.rs-h):not(.rs-min){display:none}
 #rcside.mini .rs-h{margin:0 18px 0 0}
@@ -5496,7 +5497,7 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
 
   var UNITS = [];
   for (var ua = 0; ua < arts.length; ua++){
-    var cnt = {main:0, wide:0};
+    var cnt = {main:0, wide:0, lab:0};   /* ⚠ 少写一项，那一类的 key 会全变成 NaN，整个主题共用一个 key */
     var ps = arts[ua].querySelectorAll('p.en');
     for (var up = 0; up < ps.length; up++){
       var lab = (arts[ua].id === 't-lab' || arts[ua].id === 't-micro' || arts[ua].id === 't-pesb');
@@ -5601,7 +5602,13 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
 
   function markDone(key){
     var it = RS.items[key] || {d:today(), n:0};
-    it.n = (it.n || 0) + 1; it.last = today(); RS.items[key] = it; rSave(RS);
+    var first = !it.n;
+    it.n = (it.n || 0) + 1; it.last = today(); RS.items[key] = it;
+    RS.days = RS.days || {};
+    var d0 = RS.days[today()] || {n:0, fresh:0};
+    d0.n++; if (first) d0.fresh++;
+    RS.days[today()] = d0;
+    rSave(RS);
     var u = unitOf(key); if (u) paintUnit(u); paintPanel();
   }
   function toggleStar(key, on){
@@ -5739,11 +5746,88 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
       + (l.tot ? bar('PESB · 实验技术 · 微生物', l) : '')
       + '<label class="rs-tg"><input type="checkbox"' + (on ? ' checked' : '') + '> 背诵进度模式（背过的变灰，⭐ 不熟的标黄）</label>'
       + '<button class="rs-shuf">🔀 Shuffle 复习背过的</button>'
+      + '<button class="rs-copy">📋 复制进度给老师</button>'
       + '<button class="rs-min" title="收起">–</button>';
     side.querySelector('input').onchange = function(){ RS.mode = this.checked ? 'ms' : 'off'; rSave(RS); paintPanel(); };
     side.querySelector('.rs-shuf').onclick = shuffleOpen;
+    side.querySelector('.rs-copy').onclick = function(){ copyProgress(this); };
     side.querySelector('.rs-min').onclick = function(){ side.classList.toggle('mini'); };
   }
+
+  /* ---- 复制进度给老师 ----
+     2026-09-29 她：「做个一页纸的『复制进度给老师』」。
+     ⚠ 规矩一要的是「量出来的」三个数，不是问出来的，所以这里只报计数器里真有的东西。
+     口径写在最后一行：背过 ＝ 点了「✓ 背过了」或录过一次音。⭐ 只是标记，不是进度。 */
+  function dayN(d){ var x = (RS.days || {})[d]; return x ? x.n : 0; }
+  function streak(){
+    var n = 0, d = new Date();
+    for (var i = 0; i < 400; i++){
+      var k = d.getFullYear() + '-' + ('0' + (d.getMonth()+1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+      if (dayN(k)) n++; else if (i > 0) break;
+      d.setDate(d.getDate() - 1);
+    }
+    return n;
+  }
+  function topicName(art){ var h = art.querySelector('h3'); return h ? h.firstChild.textContent.trim() : art.id; }
+  function progressText(){
+    var t = today(), all = sLoad(), recToday = 0, recTot = 0;
+    for (var k in all){ recTot += all[k].length; all[k].forEach(function(x){ if (x.d === t) recToday++; }); }
+    var m = stat('main'), w = stat('wide'), l = stat('lab');
+    var byArt = {}, order = [];
+    UNITS.forEach(function(u){
+      var id = u.art.id;
+      if (!byArt[id]){ byArt[id] = {name:topicName(u.art), tot:0, done:0, star:0}; order.push(id); }
+      var b = byArt[id]; b.tot++;
+      var it = RS.items[u.key];
+      if (it){ b.done++; if (it.star) b.star++; }
+    });
+    var zero = order.filter(function(id){ return byArt[id].done === 0; });
+    var star = order.filter(function(id){ return byArt[id].star; })
+      .sort(function(a, b){ return byArt[b].star - byArt[a].star; });
+    var most = order.filter(function(id){ return byArt[id].done; })
+      .sort(function(a, b){ return (byArt[b].done / byArt[b].tot) - (byArt[a].done / byArt[a].tot); });
+    function line(b){ return b.name + ' ' + b.done + '/' + b.tot; }
+    var L = [];
+    L.push('一页纸背诵进度 ' + t + ' · 连续 ' + streak() + ' 天');
+    L.push('');
+    L.push('【今天】背过 ' + dayN(t) + ' 段 · 其中第一次背 ' + (((RS.days || {})[t] || {}).fresh || 0)
+           + ' 段 · 录音 ' + recToday + ' 次');
+    L.push('');
+    L.push('【三条线】');
+    L.push('  生化 · 主路线：' + m.n + ' / ' + m.tot + '（⭐ 不熟 ' + m.st + '）');
+    L.push('  生化 · 广度：' + w.n + ' / ' + w.tot + '（⭐ 不熟 ' + w.st + '）');
+    L.push('  PESB · 实验技术 · 微生物：' + l.n + ' / ' + l.tot + '（⭐ 不熟 ' + l.st + '）');
+    L.push('');
+    L.push('【⭐ 标了不熟的主题】' + (star.length
+      ? star.slice(0, 10).map(function(id){ return byArt[id].name + ' ' + byArt[id].star; }).join(' · ')
+      : '（一个都没标）'));
+    L.push('');
+    L.push('【一段都没背过的主题】共 ' + zero.length + ' / ' + order.length + '：'
+      + (zero.length ? zero.slice(0, 12).map(function(id){ return byArt[id].name; }).join(' · ')
+         + (zero.length > 12 ? ' …' : '') : '没有了'));
+    L.push('');
+    L.push('【背得最多的主题】' + (most.length
+      ? most.slice(0, 8).map(function(id){ return line(byArt[id]); }).join(' · ') : '（还没有）'));
+    L.push('');
+    L.push('口径：背过 ＝ 点了「✓ 背过了」或录过一次音（' + recTot + ' 条转写都还留着）。⭐ 只是标记，不是进度。');
+    return L.join('\n');
+  }
+  function copyProgress(btn){
+    var txt = progressText();
+    function done(ok){
+      btn.textContent = ok ? '✓ 复制好了，粘给老师' : '复制不了，下面是全文';
+      if (!ok){
+        var ta = document.createElement('textarea');
+        ta.className = 'rs-out'; ta.value = txt; ta.rows = 12;
+        btn.parentNode.insertBefore(ta, btn.nextSibling); ta.select();
+      }
+      setTimeout(function(){ btn.textContent = '📋 复制进度给老师'; }, 4000);
+    }
+    try {
+      navigator.clipboard.writeText(txt).then(function(){ done(true); }, function(){ done(false); });
+    } catch(e){ done(false); }
+  }
+  window.bonesProgress = progressText;
 
   /* ---- Shuffle：只从背过的里抽，⭐ 不熟的权重 ×3 ---- */
   var quiz = null;
