@@ -3278,6 +3278,59 @@ and mismatch repair knows which strand is new <b>because the new strand is not y
 <b>溶原周期</b>：基因组整合进细菌染色体成为<b>原噬菌体</b>，跟着被动复制，受到胁迫信号再转入裂解。两条路都能走的叫<b>温和噬菌体</b>，λ 是典型。
 <b>BL21(DE3) 里的 DE3 就是一个 λ 原噬菌体</b> —— 接我自己的表达菌株。
 </span></li>
+
+<li><b class="t">负链病毒自带的那台机器 — 真底物不是裸 RNA</b><span class="d">
+负链基因组读不了，<b>宿主细胞又没有 RNA 依赖的 RNA 聚合酶</b>，所以颗粒里必须预先装好自己那一个。
+那个酶是<b>一条很大的蛋白（常记作 L）</b>，而且<b>它对裸露的 RNA 活性很低</b>：<b>真底物是核糖核蛋白</b>——基因组被<b>核蛋白</b>整根包起来之后的形态。
+L 还要靠一个搭档亚基（很多科里是<b>磷蛋白</b>）才能接近模板。<b>为什么要包起来</b>：包着的基因组不会被宿主的<b>先天免疫传感器</b>当成裸露的外来 RNA 认出来，也不容易被降解；代价是聚合酶得边走边把外壳掀开再盖回去。
+</span></li>
+<li><b class="t">负链病毒的两个花招 — 抢帽与转录梯度</b><span class="d">
+<b>抢帽</b>：有些<b>分节段</b>的负链病毒不自己造帽子，而是从<b>宿主的前体 mRNA 上切下一段带帽的短片段</b>当引物起头 —— 所以病毒信使最前面那几个碱基来自宿主。（<b>冠状病毒走的是另一条路：自己带甲基转移酶造帽。</b>）
+<b>转录梯度</b>：聚合酶只从基因组一端的<b>单一位点</b>进入，每过一个<b>基因间隔区</b>都有一定概率掉下来，概率会累积。
+所以<b>离入口近的基因转录得多，远的少 —— 表达量由基因排列的顺序决定</b>。⚠ 这里没有任何调控，梯度只是几何的后果。
+</span></li>
+<li><b class="t">冠状病毒的因果链 — 有校对 → 基因组能最长 → 才需要一套新办法</b><span class="d">
+冠状病毒的每一个特点都从<b>一条因果链</b>推下来，说的时候先给因果再给名字：
+<b>聚合酶复合体里有一个带外切酶活性的校对模块</b> → 突破了「保真度封住长度」这个上限，基因组能到约三万个核苷酸 → <b>基因组这么长，有用的基因离头部很远，就必须有一套高效表达下游基因的办法</b> → 那个办法就是<b>不连续转录</b>。
+⚠ <b>校对不等于修复</b>：校对发生在<b>合成的当时</b>，由聚合酶那一侧自己完成；修复是<b>事后</b>另一套酶去改。
+</span></li>
+<li><b class="t">一个移码位点 — 一条信使读出两条多聚蛋白，比例固定</b><span class="d">
+基因组<b>前三分之二编码两条多聚蛋白</b>。第一条读到一个<b>终止密码子</b><span class="syn">（= stop codon = termination codon = nonsense codon）</span>就停；但它上游有一段<b>滑动序列</b>，下游有一个 <b>RNA 假结</b>。
+<b>假结挡住核糖体、造出张力</b>，于是<b>一部分核糖体往回退一个核苷酸、换到新的读框</b>，直接读过那个终止密码子，读出更长的第二条。<b>效率大约三成。</b>
+⚠ <b>这不是移码突变</b>：移码突变是插入或缺失造成的错误，这里是基因组自带的机制，而且<b>比例固定</b>——那正是病毒控制两组蛋白用量的办法。
+</span></li>
+<li><b class="t">不连续转录 — 一整套嵌套信使，共用同一段前导序列</b><span class="d">
+<b>为什么需要它</b>：真核核糖体基本<b>只翻译一条信使最前面那个阅读框</b>，所以要表达靠后的基因，就得<b>做一条以那个基因开头的信使</b>。
+<b>怎么做到</b>：合成负链时，聚合酶走到两个基因之间的<b>调控序列</b>处发生<b>模板跳跃</b>，跳到基因组一端那段<b>共享的前导序列</b>上接着延伸。
+在不同的间隔处各跳一次，就得到一整套<b>彼此嵌套、末端都带着同一段前导</b>的信使；<b>在哪个间隔跳，决定哪个基因排在最前面</b>。
+⚠ 这里的「前导序列」和操纵子衰减子的前导<b>同名不同物</b>，被问到主动说破。
+</span></li>
+<li><b class="t">双膜囊泡 — 把复制现场关起来</b><span class="d">
+复制不是在胞质里裸着做的：<b>几个病毒的跨膜蛋白把宿主的膜掰成双膜囊泡</b>，复制在囊泡内部进行。
+<b>目的是藏起来</b>：复制中间体里有<b>双链 RNA</b>，而胞质里的先天免疫传感器认的正是双链 RNA——正常细胞质里不该有长的双链 RNA，所以它是一个干净的「外来」信号。
+囊泡上有<b>专门的孔道</b>把新合成的 RNA 运到胞质去。⚠ 这不是细胞原来就有的细胞器：<b>脂来自宿主，形状是病毒搭的</b>。
+</span></li>
+<li><b class="t">⭐ 两类关键蛋白（一）结构蛋白 — 被装进颗粒的那四个</b><span class="d">
+先把<b>分界</b>说清楚：<b>结构蛋白是被包装进病毒颗粒里、随颗粒一起出去的那些；非结构蛋白不进颗粒，是在被感染的细胞里现做出来、负责把基因组抄出来的那些。</b>
+<b>结构蛋白四个：</b>
+<b>刺突 S</b>——结合受体、驱动融合；
+<b>膜蛋白 M</b>——数量最多，决定颗粒的形状；
+<b>包膜蛋白 E</b>——很小，管出芽；
+<b>核蛋白 N</b>——把基因组结合成<b>核糖核蛋白</b>（跟负链病毒那一格是同一个道理：包起来才藏得住）。
+N 还值得多一句：它有<b>内在无序区</b>，能发生<b>液液相分离</b>，一般认为这既跟<b>基因组包装</b>有关，也跟<b>拮抗先天免疫</b>有关。⚠ 无序不等于没功能，那正是它能结合很多不同伙伴的原因。
+</span></li>
+<li><b class="t">⭐ 两类关键蛋白（二）非结构蛋白 — 干活的那一组，按功能记六样</b><span class="d">
+<b>按功能记，别按编号记：</b>
+① <b>聚合酶核心</b>（合成 RNA）· ② <b>两个病毒蛋白酶</b>（把多聚蛋白切开）· ③ <b>解旋酶</b>（拆开前方的二级结构）· ④ <b>带外切酶活性的校对模块</b> · ⑤ <b>甲基转移酶</b>（给信使加帽）· ⑥ <b>核酸内切酶</b>。它们组装成<b>转录复制复合体</b>。
+<b>蛋白酶那一条要说出后半句</b>：正因为能自己切开，才可以把所有东西编成两条长多聚蛋白——<b>用少数几个阅读框装很多蛋白</b>（和酶原<span class="syn">（= zymogen = proenzyme）</span>、propeptide<span class="syn">（= propeptide = prosequence = pro-region）</span> 是同一个逻辑）。
+⚠ <b>解旋酶是单独一个亚基，不是聚合酶的一个结构域。</b>加帽要紧是因为没帽子的信使在真核细胞里基本不被翻译，而且帽子让它看起来像宿主自己的信使。
+<b>第三组是辅助蛋白</b>：不搭颗粒、也不直接合成 RNA，主要<b>拮抗干扰素通路、干扰免疫信号</b>；很多在培养皿里不是复制必需的，<b>但决定病毒在真实宿主里能不能站住</b>。
+</span></li>
+<li><b class="t">刺突 — 一类融合蛋白，两半分工，还有一道构象的门</b><span class="d">
+刺突是<b>三聚体</b>，两半各管一件事：<b>S1 结合受体，S2 把病毒膜和细胞膜融合</b>。
+<b>受体结合结构域在 S1 上，有关闭和开放两种构象，只有开放的那个能碰到受体</b>——所以<b>结合这一步是被构象变化把着门的</b>（接别构和 Kd：表观亲和力里混着这个平衡）。
+<b>S1 与 S2 交界处有一个蛋白酶切位点</b>：在细胞表面就被切开，就在<b>表面融合</b>；进了内体才被切，就跟<b>内体膜融合</b>——切在哪儿，就在哪儿融合。不同冠状病毒用<b>不同的受体</b>，受体本身就是宿主范围的决定因素。
+</span></li>
 </ol>
 <div class="say"><p class="h">Say this</p><p class="en">
 A <b>virus</b> is a piece of nucleic acid inside a <b>protein capsid</b>, in some viruses wrapped in a <b>lipid envelope</b> taken from the host membrane.
@@ -3343,6 +3396,54 @@ A <b>negative-strand</b> genome must be copied first, and because <b>the host ha
 <p class="wmove">⑬ 书外：细菌用 CRISPR 保存噬菌体 DNA 片段，下次用 Cas9 切掉同一种噬菌体 <span>CRISPR–Cas</span></p>
 <p class="en">Bacteria store short <b>phage DNA sequences</b> in their <b>CRISPR</b> locus, and <b>Cas9</b> uses RNA copies of them to cut the same phage on the next infection. That is outside my textbook, so I give it as general knowledge.</p>
 <p class="zh2">主动标「书外」。</p>
+
+<p class="wmove">⑭ 负链病毒聚合酶真正的模板是核糖核蛋白，不是裸 RNA <span>ribonucleoprotein template</span></p>
+<p class="en">The polymerase of a negative-strand virus, one very large protein called <b>L</b>, works on the <b>ribonucleoprotein</b>: the genome wrapped along its whole length in <b>nucleoprotein</b>.</p>
+<p class="zh2">包起来才不被当成外来 RNA。</p>
+
+<p class="wmove">⑮ 负链病毒的基因排列顺序本身就定了表达量 <span>transcription gradient</span></p>
+<p class="en">The polymerase enters at one end and can fall off at every junction between two genes, so genes near the entry point are transcribed far more than distant ones.</p>
+<p class="zh2">没有调控，只是几何的后果。</p>
+
+<p class="wmove">⑯ 冠状病毒用一个移码位点从一条信使读出两条多聚蛋白 <span>programmed frameshift</span></p>
+<p class="en">A <b>slippery sequence</b> and a downstream <b>RNA pseudoknot</b> make about thirty per cent of ribosomes change frame, so one message gives both <b>polyproteins</b> in a fixed ratio.</p>
+<p class="zh2">比例固定，是控制用量的办法。</p>
+
+<p class="wmove">⑰ 不连续转录做出一整套共享同一段前导序列的嵌套信使 <span>discontinuous transcription · shared leader</span></p>
+<p class="en">While making the negative strand the polymerase switches template at a junction and lands on one shared <b>leader sequence</b>, producing a nested set of messages.</p>
+<p class="zh2">真核核糖体只读最前面那个阅读框。</p>
+
+<p class="wmove">⑱ 复制在双膜囊泡里进行，双链 RNA 被藏开胞质里的传感器 <span>double-membrane vesicles</span></p>
+<p class="en">Viral membrane proteins bend host membranes into <b>double-membrane vesicles</b>, and replication inside them hides the <b>double-stranded intermediates</b> from the cytoplasmic sensors that recognise them.</p>
+<p class="zh2">脂是宿主的，形状是病毒的。</p>
+
+<p class="wmove">⑲ 四个结构蛋白搭出颗粒，随颗粒一起出去 <span>spike · membrane protein · envelope protein</span></p>
+<p class="en">There are <b>four structural proteins</b>. The <b>spike</b> binds the receptor and drives fusion, the <b>membrane protein</b> is the most abundant and sets the particle's shape, the <b>envelope protein</b> works in budding.</p>
+<p class="zh2">结构蛋白＝被包装进颗粒的那些。</p>
+
+<p class="wmove">⑳ 书外 · general：核蛋白把基因组结合成核糖核蛋白 <span>nucleoprotein</span></p>
+<p class="en">The <b>nucleoprotein</b>, the fourth structural protein, binds the genome into <b>ribonucleoprotein</b>, and its <b>disordered regions</b> allow phase separation linked to packaging and to blocking innate immunity. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">无序不等于没功能。</p>
+
+<p class="wmove">㉑ 非结构蛋白在被感染的细胞里现做，按功能记六样 <span>non-structural proteins</span></p>
+<p class="en">The <b>non-structural proteins</b> are the working set: the <b>polymerase core</b>, two <b>proteases</b>, a <b>helicase</b>, the proofreading <b>exonuclease module</b>, capping <b>methyltransferases</b> and an <b>endonuclease</b>.</p>
+<p class="zh2">按功能记，别按编号记。</p>
+
+<p class="wmove">㉒ 这些非结构蛋白组装成转录复制复合体 <span>replication–transcription complex</span></p>
+<p class="en">Together they assemble into the <b>replication and transcription complex</b>, and the <b>proteases</b> are what makes the polyprotein strategy work, because they cut the long chains apart.</p>
+<p class="zh2">解旋酶是单独的亚基，不是聚合酶的结构域。</p>
+
+<p class="wmove">㉓ 辅助蛋白既不搭颗粒也不合成 RNA，它们对付免疫 <span>accessory proteins</span></p>
+<p class="en">The <b>accessory proteins</b> are a third group. They interfere with the <b>interferon</b> pathway and with immune signalling, and many are not required for replication in culture.</p>
+<p class="zh2">皿里看不出，体内才看得出。</p>
+
+<p class="wmove">㉔ 刺突分 S1 和 S2 两半，受体结合结构域有关闭和开放两种构象 <span>S1 · S2 · receptor-binding domain</span></p>
+<p class="en">The <b>spike</b> is a trimer with two halves: <b>S1</b> binds the receptor and <b>S2</b> fuses the membranes. Only the <b>open</b> conformation of the receptor-binding domain reaches the receptor.</p>
+<p class="zh2">结合被构象把着门。</p>
+
+<p class="wmove">㉕ 书外 · general：S1 与 S2 交界处的切位点决定病毒走哪条进入路径 <span>cleavage site · entry route</span></p>
+<p class="en">A <b>protease cleavage site</b> at the S1–S2 boundary decides whether fusion happens at the cell surface or inside an <b>endosome</b>. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">切在哪儿，就在哪儿融合。</p>
 
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
