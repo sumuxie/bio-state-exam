@@ -4303,6 +4303,483 @@ And <b>transcription is only one layer</b>: splicing, non-coding RNA and the con
 </details>
 </article>
 
+<article id="t-lab">
+<h3>Lab techniques</h3>
+<p class="zh">实验技术 34 题 · <b>答案都是你自己写过的，这里压成一句一条</b></p>
+<ol class="steps">
+<li><b class="t">配一管溶液 — 一条算术，两个坑</b><span class="d">
+<code class="eq">质量 ＝ 摩尔浓度 × 体积 × 分子量</code>，稀释是 <code class="eq">C₁V₁ ＝ C₂V₂</code>。整门课的算术就这两条。
+⚠ <b>摩尔浓度是「每升溶液」，不是「每升溶剂」</b> —— 这五个字就是为什么要<b>定容</b>：
+先用少于终体积的溶剂溶开，再补到刻度。<b>溶质自己占体积</b>，先量一升水再把粉倒进去，配出来一定偏稀。
+分子量<b>照瓶子上印的取</b>，带结晶水的盐每摩尔更重。
+<b>标准溶液</b>的定义是「浓度被准确知道」，所以<b>定量转移</b>（称量舟要冲洗进瓶）、定容、贴标签，每一步都是在保这个「准确」。
+⚠ <b>标准品的误差是系统误差</b>：它原封不动传给每一个照它测出来的样品 —— 标准液坏了不是打折扣，是整批作废。
+两个试剂各有各的坑：<b>1 M EDTA 的坑是溶解度</b>（游离酸要用氢氧化钠把 pH 提到约 <b>8</b> 才溶得开）；
+<b>6 M 盐酸胍的坑是体积</b>（固体本身占掉很大空间，先小体积溶、再定容），而且它溶解<b>强烈吸热</b>，会又冷又慢。
+</span></li>
+
+<li><b class="t">pH 与缓冲 — 你挑的从来不是酸或碱，是一个 pK<sub>a</sub></b><span class="d">
+<b>pH ＝ 氢离子活度的负对数</b>，差一个单位就是十倍。
+缓冲液 ＝ <b>一个弱酸 ＋ 它自己的共轭碱</b>：加进来的酸被碱型吃掉，加进来的碱被酸型吃掉。
+<code class="eq">pH = pK_a + log([共轭碱]/[弱酸])</code> —— 要用的那一层读法只有一句：
+<b>两种形式相等时 log 项为零，pH ＝ pK<sub>a</sub></b>，所以挑一个 pK<sub>a</sub> 贴着目标 pH 的缓冲液，工作区间是 <b>pK<sub>a</sub> ± 1</b>。
+⚠ <b>「酸性缓冲液 vs 碱性缓冲液」是个假对立</b>：机制一模一样，差别只是那个 pK<sub>a</sub> 落在 7 的哪一边
+（乙酸盐 ≈ 4.8 在下，Tris ≈ 8.1 在上）。
+两个要盯死：<b>Tris 的 pK<sub>a</sub> 随温度强烈移动</b>，室温调好的 Tris 进冷室就是另一个 pH；<b>磷酸盐会和钙镁生成沉淀</b>。
+pH 计那一题接得上：它测的是<b>电压</b>再换算成 pH，<b>斜率和截距都会漂</b>，所以要用<b>两个把目标夹在中间</b>的标准液
+（先 7 定截距，再 4 或 10 定斜率），同温校准，用新鲜标准液，电极<b>吸干不能擦</b>。
+</span></li>
+
+<li><b class="t">量出一个数 — 每台仪器都只量一个物理量</b><span class="d">
+<b>吸光度 ＝ ε × c × l</b>，这条线性关系就是分光光度法能定量的全部理由。
+仪器四件：光源 · 单色器 · 固定光程的比色皿 · 检测器；<b>先读空白</b>，把缓冲液和比色皿自己的吸收减掉。
+读数超出线性范围就<b>稀释后重测，绝不外推</b> —— 那里检测器正好饱和。
+<b>标准曲线</b>的要害是：它校准的是<b>整个流程</b>，不只是仪器 —— 所以标准品必须和样品同缓冲液、同温育、同一批次测。
+⚠ <b>OD600 是这一族里的假成员</b>：细胞在 600 nm 不吸收，它们把光<b>散射</b>出光路，所以它没有 ε，也分不出死活。
+核酸定量三层递进：<b>A260</b>（快，但凡带碱基的都吸）→ 必须连比值一起报（<b>A260/A280 ≈ 1.8 是 DNA，≈ 2.0 是 RNA</b>）→
+只对双链发光的<b>荧光染料法</b>才特异 → 要看<b>完整性</b>就跑胶。
+而这一切的下游是移液器：<b>准确度</b>（离真值多近）靠校准和选量程，<b>精密度</b>（重复之间多一致）靠手法 ——
+⚠ <b>一支移液器可以非常精密，同时稳定地错着</b>。
+</span></li>
+
+<li><b class="t">把混合物分开 — 力、分配、筛孔，三种分法</b><span class="d">
+<b>离心</b>靠一个远大于重力的力，沉降速率由<b>大小、形状、密度</b>决定。
+<b>差速离心</b>（低速沉大的、留上清、再提速沉下一档）把裂解液变成澄清裂解液；
+<b>密度梯度离心</b>分的不是大小而是<b>浮力密度</b>，样品走到自身密度等于介质那一点就停。
+⚠ <b>rcf 正比于「半径 × 转速²」</b>，所以同一个 rpm 换个转子就是另一个力 —— 方法里写 <b>× g</b>，不写 rpm。
+<b>层析</b>只有一个想法：混合物在<b>固定相</b>和<b>流动相</b>之间分配，作用强的走得慢；每一种模式都跑同样四步 ——
+<b>平衡 · 结合 · 洗 · 洗脱</b>。模式之间变的只有一样：<b>固定相被选来利用哪一种物理性质</b>
+（电荷 → 离子交换 · 疏水性 → HIC 与反相 · 大小 → 凝胶过滤 · 特异结合 → 亲和）。
+⚠ 一个诊断习惯：<b>读跑柱先看流穿液</b> —— 待在那里的蛋白根本没结合过，问题在结合条件，不在洗脱。
+<b>电泳</b>的前提只有一句：<b>单位质量电荷必须一致</b>，否则你同时在量电荷和大小，两个都读不出来。
+核酸天生满足（每个核苷酸一个磷酸），蛋白不满足 —— 所以要加 <b>SDS</b> 人为造出来；
+而两块胶是为了让所有蛋白<b>从同一条起跑线出发</b>：浓缩胶只浓缩，分离胶才筛分。
+</span></li>
+
+<li><b class="t">认出一个分子 — 抗体认形状，质谱认质量</b><span class="d">
+免疫测定的分工是固定的：<b>抗体提供特异性，标记提供信号</b>。
+夹心 ELISA 三次加样（捕获抗体 → 样品 → 针对<b>另一个表位</b>的检测抗体），
+⚠ <b>要两支抗体认两个表位，这正是它特异的原因</b>；定量还是靠标准曲线。
+Western blot 是同一个想法换个摆法：<b>分离 → 转印 → 探测</b>，
+而<b>转印是必需的不是图方便</b> —— 让分离成立的那些胶孔太细，笨重的抗体钻不进去。
+⚠ <b>上样对照验的是 Western blot 自己验不了的那个假设</b>（每道起点总蛋白相同），
+挑它的条件不是「丰度高」，而是<b>已被独立证明不随处理而变</b>；用法是<b>做比值</b>，不是看有没有。
+<b>质谱</b>换一条路：它不问形状，它测<b>质荷比</b>。三个部件（离子源 · 质量分析器 · 检测器）、
+两种软电离（电喷雾 · MALDI）、一条 bottom-up 流程（胰蛋白酶酶解 → 液相色谱 → 选一条肽碎裂 → 从质量差读序列）。
+落点一句：<b>它给的是翻译后修饰，那正是测序告诉不了你的东西</b>。
+</span></li>
+
+<li><b class="t">做出一个分子，再别弄伤自己 — 表达、PCR、无菌、安全</b><span class="d">
+细菌表达五步一条线：<b>质粒 → 转化 → 长到对数中期诱导 → 收菌破碎 → 亲和层析 ＋ 跑胶验</b>。
+⚠ <b>质粒上的元件第二句就主动报完</b>，别等他问：T7 启动子 · 核糖体结合位点 · 复制起点 · 抗性标记 · 亲和标签。
+菌株的选择对应三个不同的难处：<b>转录</b>（BL21(DE3) 带 T7 聚合酶）· <b>翻译</b>（Rosetta 补稀有密码子 tRNA）·
+<b>折叠</b>（Origami／SHuffle 的胞质还原性较弱，二硫键能形成），蛋白酶保护垫在这三样下面。
+<b>IPTG</b> 替代的是<b>别乳糖</b>，而且 ——<b>诱导是把一个阻挡拿掉，不是把一个基因打开</b>。
+给表面受体加标签，整道题的轴是<b>拓扑</b>：先定要检测哪一侧，再避开会被切掉的信号肽。
+PCR 六样里镁最该讲道理：<b>它两头都有代价</b>，少了酶慢，多了错配引发；
+而 <b>Taq 没有校正活性</b>，所以要克隆、表达、测序的一律换高保真酶。
+最后两件事的判据都极干净：<b>灭菌的标准永远是杀死芽孢</b>（121 ℃ 就是这么定出来的，0.22 µm 过滤是<b>除菌不是灭菌</b>）；
+<b>危险化学品按控制层级答</b>，而 PPE 排在最后是因为<b>它只保护一个人，失效的时候没有声音</b>。
+</span></li>
+</ol>
+
+<div class="say"><p class="h">Say this</p><p class="en">
+Almost every technique here <b>measures one physical quantity</b>, and the honest answer to <b>"what is the principle"</b> is to <b>name that quantity first</b>.
+A spectrophotometer measures <b>absorbance</b>, and the <b>Lambert-Beer <span class="syn">(also called Beer–Lambert law, Beer's law)</span> law</b> makes it proportional to concentration.
+<b>OD600 is the exception that proves it</b>: cells do not absorb at that wavelength, they <b>scatter light out of the beam</b>.
+A centrifuge applies a <b>force</b>, and that force depends on the <b>rotor radius</b>, so I report times g rather than rpm.
+Chromatography measures <b>partitioning</b> between a stationary and a mobile phase.
+Electrophoresis measures <b>size</b>, but only once the <b>charge per unit mass is uniform</b>, which is why proteins need SDS.
+An immunoassay measures <b>antibody binding</b>, and mass spectrometry measures the <b>mass to charge ratio</b>.
+Once I have named the quantity, the <b>control and the working range</b> follow from it.
+</p><p class="t">约 45 秒 · 先报物理量，再报它的对照和线性范围 —— 这个顺序本身就是答案</p></div>
+
+<details class="wide"><summary>广度 · 34 题，一题一两句 · 看标题就能背 <span class="wstar">⭐ 4 位考官：Hudeček、Hodek、Šulc、Lipovová</span></summary>
+
+<p class="wmove">① 摩尔浓度是「每升溶液」，所以要定容而不是加一升溶剂 <span>molarity</span></p>
+<p class="en">Molarity is <b>moles of solute per litre of solution</b>, so <b>mass equals molarity times volume times molecular weight</b> and dilutions follow <b>C1V1 equals C2V2</b>. I dissolve in less than the final volume and make up to the mark, and I take the molecular weight <b>from the bottle</b>, because a hydrated salt weighs more per mole.</p>
+<p class="zh2">溶质自己占体积。</p>
+
+<p class="wmove">② 标准溶液的每一步都在保护那个「准确已知」 <span>standard solution</span></p>
+<p class="en">A standard solution is one whose concentration is <b>known accurately</b>, so I <b>transfer quantitatively</b>, rinsing the weighing boat into the <b>volumetric flask</b>, make up to the mark, mix by inversion and label. An error in the standard is <b>systematic</b>: it passes into every unknown measured against it.</p>
+<p class="zh2">留在称量舟里的都是误差。</p>
+
+<p class="wmove">③ EDTA 的坑是溶解度，6 M 盐酸胍的坑是体积 <span>EDTA · guanidine hydrochloride</span></p>
+<p class="en">The <b>free acid of EDTA</b> will not dissolve until <b>sodium hydroxide</b> raises the pH to about <b>eight</b>, and I set the pH before making up to volume. <b>Six molar guanidine hydrochloride</b> goes into a smaller volume first, because the solid takes up so much space, and dissolving it is <b>strongly endothermic</b>.</p>
+<p class="zh2">一个卡在 pH，一个卡在体积。</p>
+
+<p class="wmove">④ pH 是氢离子活度的负对数，缓冲液是弱酸加它自己的共轭碱 <span>pH · buffer · Henderson-Hasselbalch</span></p>
+<p class="en">pH is the <b>negative logarithm of the hydrogen ion activity</b>, and a <b>buffer</b> is a weak acid with its <b>conjugate base</b>: added acid is absorbed by the base form, added base by the acid form. <b>Henderson-Hasselbalch</b> says pH equals the pKa plus the log of that ratio, so <b>equal amounts give pH equal to pKa</b>.</p>
+<p class="zh2">所以挑 pKa 贴着目标 pH 的那一个，范围 ±1。</p>
+
+<p class="wmove">⑤ 酸性和碱性缓冲液机制完全一样，差别只是挑了哪个 pKa <span>acidic versus basic buffers</span></p>
+<p class="en">The mechanism is <b>identical</b> and only the chosen pKa differs: <b>acetate</b>, near <b>four point eight</b>, buffers below pH seven, and <b>Tris</b>, near <b>eight point one</b>, above it. <b>Tris has a strongly temperature-dependent pKa</b>, and <b>phosphate precipitates with calcium and magnesium</b>.</p>
+<p class="zh2">室温调好的 Tris 进冷室就是另一个 pH。</p>
+
+<p class="wmove">⑥ pH 计测的是电压，斜率和截距都会漂，所以要两点校准 <span>calibrating a pH meter</span></p>
+<p class="en">The meter converts a <b>voltage</b> into a pH, and a glass electrode drifts in both <b>slope and offset</b>, so I use two standard buffers that <b>bracket my target</b> — conventionally <b>pH seven for the offset, then pH four or ten for the slope</b>. I calibrate <b>at the temperature I will measure at</b>, use fresh standards, and <b>blot the electrode rather than wipe it</b>.</p>
+<p class="zh2">单点校准正好掩盖坏掉的那一项。</p>
+
+<p class="wmove">⑦ 吸光度等于消光系数乘浓度乘光程，这个线性关系才让它能定量 ⭐ Hudeček <span>Lambert-Beer law</span></p>
+<p class="en">Absorbance equals the <b>molar extinction coefficient times concentration times path length</b>, so absorbance is <b>linearly proportional to concentration</b> — which is what makes spectrophotometry quantitative. I use it for protein at <b>280 nanometres</b>, nucleic acid at <b>260</b> and NADH at <b>340</b>, and it <b>fails at high concentration</b> and assumes no scattering.</p>
+<p class="zh2">280 是色氨酸和酪氨酸在吸。</p>
+
+<p class="wmove">⑧ 分光光度计四件套，控制项是空白 ⭐ Hudeček <span>spectrophotometry</span></p>
+<p class="en">The instrument is a <b>light source, a monochromator, a cuvette of fixed path length and a detector</b> that compares transmitted with incident light, and absorbance is the logarithm of that ratio, so it <b>has no units</b>. The control is the <b>blank</b>, everything except the analyte, read first so buffer and cuvette are subtracted.</p>
+<p class="zh2">280 nm 以下要用石英比色皿。</p>
+
+<p class="wmove">⑨ 标准曲线校准的是整个流程，不只是仪器 <span>standard curve</span></p>
+<p class="en">I read the unknown off a line built from <b>standards measured in the same run</b>, so the method never measures concentration directly. Two constraints carry every failure: the unknown must fall <b>inside the range of the standards</b>, and the standards must be treated <b>exactly like the samples</b>.</p>
+<p class="zh2">超出范围就稀释重测，绝不外推。</p>
+
+<p class="wmove">⑩ OD600 测的是散射不是吸收 ⭐ Hudeček <span>OD600</span></p>
+<p class="en">OD600 is <b>optical density at six hundred nanometres</b>, a turbidity reading standing in for cell density — and it is <b>not absorbance in the Lambert-Beer sense</b>, because cells <b>scatter light out of the beam</b>. It counts living and dead cells alike and is linear only to about <b>0.6 to 0.8</b>.</p>
+<p class="zh2">要真正的活菌数就涂板数 CFU。</p>
+
+<p class="wmove">⑪ A260 给浓度，两个比值给纯度 <span>quantifying DNA and RNA</span></p>
+<p class="en">Absorbance at <b>260 nanometres</b> is quickest, and an A260 of one is about <b>50 micrograms per millilitre of double-stranded DNA</b>, about <b>40 for RNA</b>. It cannot tell DNA from RNA, so I report ratios too: <b>A260 over A280 near 1.8 for DNA and 2.0 for RNA</b>, while a <b>fluorescent dye</b> is the specific option.</p>
+<p class="zh2">A260/A230 偏低 ＝ 带进了胍盐或苯酚。</p>
+
+<p class="wmove">⑫ 准确度是离真值多近，精密度是重复之间多一致 <span>accuracy and precision of pipetting</span></p>
+<p class="en">A pipette can be <b>very precise and consistently wrong</b>. <b>Accuracy comes from calibration</b>, checked gravimetrically with distilled water where <b>one milligram is one microlitre</b>, and from using the pipette in the <b>upper part of its range</b>; <b>precision comes from technique</b> — first stop to aspirate, second only to expel, vertical, slow, and <b>pre-wet the tip</b>.</p>
+<p class="zh2">不预湿，第一次排液就偏少。</p>
+
+<p class="wmove">⑬ 空气置换对水溶液准，粘稠和易挥发的液体要正向置换 <span>types of micropipettes</span></p>
+<p class="en"><b>Air displacement</b> puts a cushion of air between piston and liquid and is unreliable for <b>volatile, viscous or dense</b> liquids, because that cushion expands and contracts. <b>Positive displacement</b> has the piston touching the liquid in a disposable capillary, and it is also what I use in PCR work, since there is <b>no air path for an aerosol</b>.</p>
+<p class="zh2">单道 · 多道 · 连续分液 · 电动，是形式不是机制。</p>
+
+<p class="wmove">⑭ 离心机施加远大于重力的力，沉降由大小、形状、密度决定 <span>role of a centrifuge</span></p>
+<p class="en">A centrifuge separates by a force <b>far greater than gravity</b>, and particles sediment at rates set by <b>size, shape and density</b>. <b>Differential centrifugation</b> pellets the largest things first and spins the supernatant harder, while a <b>density gradient</b> separates by <b>buoyant density</b>, each species stopping where its density matches the medium.</p>
+<p class="zh2">对侧管一定要配平。</p>
+
+<p class="wmove">⑮ rcf 还取决于转子半径，所以方法里写 × g 不写 rpm <span>rpm versus rcf</span></p>
+<p class="en"><b>rpm</b> is how fast the rotor turns; <b>rcf</b> is the force the sample feels, as multiples of gravity, and it is <b>proportional to the radius times the square of the speed</b>. So the same rpm in a different rotor gives a different force, and a protocol quoting rpm alone <b>cannot be reproduced</b>.</p>
+<p class="zh2">换算表只对某一个转子半径成立。</p>
+
+<p class="wmove">⑯ 所有层析都是在两相之间分配，四步不变 <span>principles of chromatography</span></p>
+<p class="en">The mixture is <b>partitioned between a stationary and a mobile phase</b>, and what interacts more with the stationary phase moves more slowly; every mode runs <b>equilibrate, bind, wash and elute</b>, isocratically or on a gradient. I read a run <b>starting from the flow-through</b>, because protein sitting there <b>never bound at all</b>.</p>
+<p class="zh2">上样前先换到结合缓冲液。</p>
+
+<p class="wmove">⑰ 五种层析模式，按它利用的那个物理性质命名 <span>types of chromatography</span></p>
+<p class="en"><b>Ion exchange</b> uses net charge and elutes on a salt gradient; <b>hydrophobic interaction</b> binds in high salt and elutes in low; <b>size exclusion</b> <span class="syn">(also called size-exclusion chromatography, gel filtration)</span> binds nothing, so it is gentle but dilutes; <b>affinity</b>, usually a <b>histidine tag on a nickel column</b>, is the highest-resolution single step. <b>Reverse phase</b> uses hydrophobicity under organic solvent, so it <b>denatures</b> and is analytical.</p>
+<p class="zh2">HIC 与反相同一原理，区别是蛋白活不活得下来。</p>
+
+<p class="wmove">⑱ 电泳按大小分的前提是单位质量电荷一致 <span>principle of gel electrophoresis</span></p>
+<p class="en">Charged molecules move through a porous gel and are <b>sieved by size</b>, but only if the <b>charge per unit mass is the same for everything</b> — otherwise I measure charge and size at once and can read neither. Nucleic acid meets that for free, one phosphate per nucleotide; a protein does not, so <b>SDS</b> imposes a uniform negative charge.</p>
+<p class="zh2">DNA 用嵌入染料，蛋白用考马斯或银染。</p>
+
+<p class="wmove">⑲ 浓缩胶只浓缩，分离胶才筛分 <span>stacking and resolving gel</span></p>
+<p class="en">Separation needs every protein to <b>start from the same line</b>, but a loaded well is millimetres deep. The <b>stacking gel</b>, large pores at <b>pH 6.8</b>, compresses the sample into a thin band by <b>isotachophoresis</b> without separating anything; the <b>resolving gel</b>, small pores at <b>pH 8.8</b>, then sieves by size.</p>
+<p class="zh2">做堆积的是缓冲液里的甘氨酸，不是胶。</p>
+
+<p class="wmove">⑳ 细菌 DNA 提取四步，质粒改用碱裂解 <span>DNA extraction from bacteria</span></p>
+<p class="en">Four steps: <b>lyse</b> with SDS after <b>lysozyme</b> opens the peptidoglycan, remove protein with <b>proteinase K</b> and RNA with <b>RNase A</b>, separate with <b>phenol-chloroform or a silica column</b>, then precipitate with salt and cold ethanol. For plasmid I use <b>alkaline lysis</b>: on neutralisation the small closed circle <b>renatures and stays soluble</b> while chromosomal DNA precipitates.</p>
+<p class="zh2">留着 RNA 会把 A260 抬高。</p>
+
+<p class="wmove">㉑ 免疫测定：抗体给特异性，标记给信号 ⭐ Hodek <span>immunoassays · sandwich ELISA</span></p>
+<p class="en">An immunoassay uses the <b>specific binding of an antibody to its antigen</b> in a complex mixture: the <b>antibody supplies specificity, the label supplies signal</b>. In a <b>sandwich ELISA</b> a capture antibody coats the plate and a detection antibody against a <b>second epitope</b> carries the enzyme — and needing <b>two epitopes</b> is what makes it specific.</p>
+<p class="zh2">空白孔 ＋ 不加检测抗体的孔，两个对照。</p>
+
+<p class="wmove">㉒ Western blot 三步，转印是必需的不是图方便 ⭐ Hodek <span>Western blot</span></p>
+<p class="en">Three separable steps: <b>separate by SDS-PAGE, transfer to nitrocellulose or PVDF, then probe</b> with a primary and a labelled secondary antibody. The transfer is <b>necessary</b>, because the gel pores that made separation possible are <b>too fine for a bulky antibody</b> and the soft gel would not survive repeated washing.</p>
+<p class="zh2">Southern 是 DNA，Northern 是 RNA，Western 是蛋白。</p>
+
+<p class="wmove">㉓ 上样对照验的是 Western blot 自己验不了的那个假设 <span>loading control</span></p>
+<p class="en">It checks that <b>every lane started with the same total protein</b>, an assumption the blot depends on and cannot otherwise verify, since uneven pipetting, uneven transfer or partial degradation all look like a <b>real change in my protein</b>. The condition for choosing it is that the protein is <b>known not to respond to my treatment</b>, and I use it as a <b>ratio within the lane</b>.</p>
+<p class="zh2">肌动蛋白、微管蛋白、GAPDH 各有已发表的例外。</p>
+
+<p class="wmove">㉔ 质谱测的是质荷比，它给的是测序告诉不了你的翻译后修饰 ⭐ Šulc <span>mass spectrometry</span></p>
+<p class="en">Mass spectrometry measures the <b>mass to charge ratio of ions</b>, with an <b>ion source, a mass analyser and a detector</b>, and the sample must be ionised without being destroyed — hence <b>electrospray and MALDI</b>. The <b>bottom-up</b> workflow digests with <b>trypsin</b>, separates the peptides, then fragments one and <b>reads the sequence from mass differences</b>.</p>
+<p class="zh2">磷酸化与未磷酸化：同一个基因，不同的分子。</p>
+
+<p class="wmove">㉕ 细菌表达五步：克隆、诱导、破碎、亲和纯化、跑胶 ⭐ Lipovová <span>protein expression workflow</span></p>
+<p class="en">I clone the gene into a plasmid carrying a <b>T7 promoter, a ribosome binding site <span class="syn">(also called Shine–Dalgarno sequence)</span>, an origin of replication, an antibiotic marker and an affinity tag</b>, and transform <b>BL21(DE3)</b>. I grow to <b>mid exponential phase</b>, induce with IPTG at a lower temperature for solubility, <b>sonicate on ice</b>, then purify by <b>affinity chromatography</b> and check every fraction on a gel.</p>
+<p class="zh2">元件那一串别等他问，第二句就报完。</p>
+
+<p class="wmove">㉖ 三个表达菌株对应三个难处：转录、翻译、折叠 ⭐ Lipovová <span>BL21(DE3) · Rosetta · Origami</span></p>
+<p class="en"><b>DE3</b> means the strain carries the <b>T7 RNA polymerase</b> gene, so it works with pET vectors, and BL21 also lacks the <b>Lon and OmpT proteases</b>. <b>Rosetta</b> adds tRNAs for codons rare in E. coli; <b>Origami or SHuffle</b> have a less reducing cytoplasm so <b>disulfide bonds</b> can form.</p>
+<p class="zh2">没有 (DE3)，pET 质粒什么都不表达。</p>
+
+<p class="wmove">㉗ IPTG 替代别乳糖，诱导是拿掉一个阻挡 <span>IPTG</span></p>
+<p class="en"><b>IPTG</b>, a synthetic inducer of the <b>lac operon</b>, replaces <b>allolactose</b>: both bind the <b>LacI repressor</b> and make it release the operator, so <b>induction removes a block rather than switching a gene on</b>. IPTG is <b>not metabolised</b>, so the level stays where I set it, while lactose is degraded by the very operon it turns on.</p>
+<p class="zh2">50 µM～1 mM，对数中期加。</p>
+
+<p class="wmove">㉘ 给表面受体加标签，整道题的轴是拓扑 ⭐ Lipovová <span>tagging a surface receptor</span></p>
+<p class="en">A surface receptor sits in <b>three compartments</b>, so I first decide which side to detect: an <b>extracellular tag</b> can be labelled on intact living cells, a cytoplasmic one needs permeabilisation. The <b>N-terminal signal peptide <span class="syn">(also called signal sequence)</span> is cleaved during translocation</b>, so I place the tag <b>after it or on the C terminus</b>, on a flexible linker and away from the ligand site.</p>
+<p class="zh2">破坏转运的标签，回答的是另一个问题。</p>
+
+<p class="wmove">㉙ PCR 六样，镁两头都有代价 <span>components of a PCR mixture</span></p>
+<p class="en"><b>Template, two primers, a thermostable polymerase, the four dNTPs, magnesium and buffer.</b> The primers flank the target, so they <b>fix both ends and set the annealing temperature</b>; <b>magnesium is the cofactor and also stabilises primer-template pairing</b>, so too little makes the enzyme slow and too much gives mispriming and primer dimers.</p>
+<p class="zh2">出非特异条带，先把镁降下来。</p>
+
+<p class="wmove">㉚ 校正活性是长在同一个聚合酶身上的 3′→5′ 外切酶 <span>proofreading</span></p>
+<p class="en">A mismatch pairs badly and <b>stalls extension</b>, so the primer terminus moves into the <b>three prime to five prime exonuclease site</b>, the wrong base is excised and synthesis resumes — a correction <b>inside the enzyme</b>, not a separate repair pathway. <b>Taq</b> lacks it, while <b>Pfu and Kapa</b> have it, so anything cloned, expressed or sequenced needs a proofreading enzyme.</p>
+<p class="zh2">早期循环的一个错会被扩增成一大部分。</p>
+
+<p class="wmove">㉛ 卡那霉素耐热，氨苄会降解，卫星菌落因此只长在氨苄板上 <span>ampicillin versus kanamycin</span></p>
+<p class="en"><b>Ampicillin</b> has a hydrolysable <b>beta-lactam ring</b>, destroyed by heat and faster by the <b>beta-lactamase the resistant cells secrete</b>, which clears a halo where non-resistant cells then grow. <b>Kanamycin</b> is an aminoglycoside with no such ring and gives no satellites, and <b>neither is autoclaved</b> — both are filter sterilised into cooled medium.</p>
+<p class="zh2">卡那抗性在胞内修饰药物，培养基仍有选择性。</p>
+
+<p class="wmove">㉜ 灭菌的标准永远是杀死芽孢 <span>sterilising lab equipment</span></p>
+<p class="en">The default is <b>autoclaving with saturated steam at 121 degrees for fifteen to twenty minutes</b>, a temperature set by <b>bacterial endospores</b> rather than vegetative cells, with <b>dry heat</b> for metal and glass that must stay dry. Heat-labile things go through a <b>0.22 micrometre filter</b>, which <b>removes bacteria rather than killing them</b>.</p>
+<p class="zh2">胶带只证明它热过，要用芽孢条验证。</p>
+
+<p class="wmove">㉝ 危险化学品按控制层级答，PPE 排在最后 <span>hierarchy of controls</span></p>
+<p class="en">I answer in order: <b>substitution</b> first, a SYBR-type stain instead of ethidium bromide; then <b>engineering controls</b>, a fume hood or shielding, which protect everyone without depending on memory; then <b>administrative controls</b>, reading the safety data sheet and segregating waste. <b>PPE comes last</b>, because it protects one person and <b>fails silently</b>.</p>
+<p class="zh2">洒了先提醒周围的人，再确认是什么。</p>
+
+<p class="wmove">陷阱问法</p>
+<ul class="wdef">
+<li><b>"Your reading is above the highest standard — what now?"</b> — Dilute and read again; never extrapolate, because the detector saturates there. · 稀释重测，绝不外推。</li>
+<li><b>"Is OD600 absorbance?"</b> — No. Cells scatter light out of the beam, so there is no extinction coefficient. · 散射不是吸收。</li>
+<li><b>"Can I just quote rpm?"</b> — Not reproducibly; rcf depends on the rotor radius, so a protocol must say times g. · 写 × g。</li>
+<li><b>"Which component actually creates the stacking effect?"</b> — Glycine in the running buffer, not the gel: slow at pH 6.8, fast at pH 8.8. · 是甘氨酸。</li>
+<li><b>"Why do satellite colonies appear only on ampicillin?"</b> — Beta-lactamase is secreted and clears the drug around the colony. · 卡那是胞内修饰。</li>
+<li><b>"Why does a T7 system use IPTG at all?"</b> — The T7 polymerase gene itself sits under lac control in DE3, so the control is one layer removed. · 隔了一层。</li>
+<li><b>"What can mass spectrometry tell you that sequencing cannot?"</b> — Post-translational modifications, and whether the protein was actually made. · 翻译后修饰。</li>
+<li><b>"Two antibodies against one epitope?"</b> — They compete, so the signal falls instead of rising. · 必须认不同表位。</li>
+<li><b>"Why is PPE last?"</b> — It protects one person, depends on being done right every time, and fails silently. · 失效时没有提示。</li>
+</ul>
+
+<p class="wmove">定义</p>
+<ul class="wdef">
+<li><b>molarity</b> — moles of solute per litre of solution · 摩尔浓度</li>
+<li><b>buffer</b> — a weak acid together with its conjugate base, resisting change in pH · 缓冲液</li>
+<li><b>pKa</b> — the pH at which a group is exactly half dissociated · 半解离时的 pH</li>
+<li><b>absorbance</b> — the logarithm of incident over transmitted light, and dimensionless · 吸光度</li>
+<li><b>extinction coefficient</b> — the absorbance of a one molar solution over a one centimetre path · 消光系数</li>
+<li><b>accuracy</b> — closeness to the true value · 准确度</li>
+<li><b>precision</b> — reproducibility between replicates · 精密度</li>
+<li><b>rcf</b> — the force on the sample as multiples of gravity, set by radius times speed squared · 相对离心力</li>
+<li><b>isotachophoresis</b> — concentrating a sample between a fast and a slow ion front · 等速电泳</li>
+<li><b>chaotrope</b> — a salt such as guanidine hydrochloride that disrupts hydrogen bonding and unfolds proteins · 离液剂</li>
+<li><b>epitope</b> — the part of an antigen that an antibody actually binds · 表位</li>
+<li><b>loading control</b> — a second, unchanging protein used to normalise lanes on a blot · 上样对照</li>
+<li><b>endospore</b> — the dormant bacterial form that sets the sterilisation standard · 细菌芽孢</li>
+</ul>
+</details>
+</article>
+
+<article id="t-micro">
+<h3>Microbiology</h3>
+<p class="zh">微生物 32 题 · <b>答案都是你自己写过的，这里压成一句一条</b></p>
+<ol class="steps">
+<li><b class="t">细菌长什么样 — 一切从壁开始</b><span class="d">
+<b>肽聚糖</b>＝<b>N-乙酰葡糖胺</b>和 <b>N-乙酰胞壁酸</b>交替成链，再由短肽<b>交联</b>；做交联的是<b>转肽酶</b>。
+细菌相对环境是<b>高渗</b>的，水一直往里灌，<b>壁是唯一挡住裂解的那一层</b>。
+<b>革兰阳性</b>：单层膜外一层<b>厚</b>肽聚糖，贯穿<b>磷壁酸</b>。<b>革兰阴性</b>：<b>薄</b>肽聚糖躲在<b>周质</b>里，外面还有一层<b>脂多糖外膜</b>。
+⚠ <b>别说革兰阴性「没有肽聚糖」</b>——它有，只是薄。外膜那句后面接的是 <b>lipid A ＝ 内毒素</b>，他很容易追过去。
+壁外面还有两样：<b>荚膜</b>（多糖，抗吞噬）和饿出来的<b>芽孢</b>（不是繁殖）。
+</span></li>
+<li><b class="t">怎么养 · 怎么繁殖 · 怎么算</b><span class="d">
+繁殖只有一个词：<b>二分裂</b>。所以<b>一个菌落 ＝ 一个细胞的克隆后代</b>，划线分离才算得上纯化手段。
+生长曲线是<b>细胞数取对数对时间作图</b>，四个期：<b>延滞 · 对数 · 稳定 · 衰亡</b>。
+⚠ <b>只有对数期里「生长速率」才是一个有意义的数</b>，表达蛋白也在<b>对数中期</b>诱导。
+量它靠 <b>OD₆₀₀</b>——但那是<b>光散射</b>，死活一起算，要区分就另做<b>活菌计数</b>。
+代谢分类两条独立的轴交叉：<b>碳源</b>（自养／异养）× <b>能源</b>（光养／化能养，化能养再分无机／有机），第三条轴是<b>末端电子受体</b>。
+</span></li>
+<li><b class="t">怎么认出是谁 — 表型一路走到序列</b><span class="d">
+老路是<b>生化试验组合</b>：<b>过氧化氢酶 · 氧化酶 · 凝固酶</b>加糖发酵，读的是 pH 指示剂的颜色。
+⚠ <b>定菌的是一整组答案的模式，不是任何单独一个试验</b>；而且前提是<b>纯培养</b>，混样会给你一个很自信的错答案。
+新路是<b>16S rRNA 基因测序</b>：<b>保守区</b>让一对通用引物扒得住，<b>可变区</b>携带种的信号，<b>不用培养</b>。
+⚠ 测的是 16S 的<b>基因（DNA）</b>，不是 rRNA 本身。
+<b>Carl Woese</b> 当年就是拿这条分子比出了<b>古菌</b>和<b>三域</b>——今天鉴定还用 16S，用的就是他那套方法。
+</span></li>
+<li><b class="t">基因怎么在细菌之间传 — 进化不是一棵树</b><span class="d">
+<b>水平基因转移</b>三条路：<b>转化</b>（感受态细胞吃裸 DNA）· <b>转导</b>（噬菌体捎带宿主 DNA）· <b>接合</b>（质粒经性菌毛直接过去）。
+⚠ 后果是<b>一个基因可以一步跳进一个很远的谱系</b>，所以基因组是<b>镶嵌</b>的：核心基因组 ＋ 附属基因组。
+<b>质粒</b>是这件事的主要载具，它的定义性质是<b>自带复制起点、独立复制</b>。
+<b>噬菌体</b>两条程序：<b>裂解</b>和<b>溶原</b>——溶原那条正是 <b>DE3</b> 的原理。
+</span></li>
+<li><b class="t">实验室里怎么用细菌 — 克隆 · 菌株 · 开关</b><span class="d">
+克隆按<b>「接口是怎么做出来的」</b>分组，不是背一串名字：<b>酶切–连接 · Golden Gate · Gibson</b>，外加 TA／TOPO、Gateway、RF。
+判据一句话：<b>克隆株是 recA⁻ endA⁻（DH5α），表达株带 DE3 且缺蛋白酶（BL21(DE3)）</b>。
+⚠ <b>菌株名里没有 (DE3)，pET 质粒什么都不会产</b>——口试上这句比机制本身更得分。
+细菌那一侧还有两个特有的零件：<b>多顺反子 mRNA</b>（每个基因自带 RBS，一个开关管一整套）和<b>紧凑的启动子</b>（−10／−35，σ 因子直接认）。
+真核是扣帽扫描＋一整套通用转录因子，所以<b>表达载体是分宿主的，两边不通用</b>。
+</span></li>
+<li><b class="t">抗生素 · 耐药 · 群体行为</b><span class="d">
+按<b>靶点</b>分五组，统一原理是<b>选择性毒性</b>：<b>壁 · 核糖体 · 核酸 · 叶酸 · 膜</b>。
+她天天用的三个正好打三个靶：<b>氨苄</b>（转肽酶）· <b>卡那</b>（30S）· <b>环丙沙星</b>（DNA 旋转酶）。
+⚠ <b>抗生素不制造耐药，它筛选群体里本来就有的变异体</b>。四种机制：<b>毁药 · 修饰药 · 改靶点 · 挡在外面（外排泵）</b>。
+群体那一层：<b>群体感应</b>靠<b>自诱导物</b>＋<b>阈值</b>＋<b>正反馈</b>，所以是骤然开关；<b>生物膜</b>里的耐受是<b>生理性的 tolerance，不是遗传性的 resistance</b>。
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+Microbiology begins at the wall. <b>Peptidoglycan</b>, cross-linked by <b>transpeptidases</b>, holds the cell against turgor, and the <b>Gram stain</b> simply reads its thickness.
+A thick wall traps the <b>crystal violet iodine complex</b> through alcohol decolourisation and stays purple.
+A thin wall under a <b>lipopolysaccharide outer membrane</b> loses that complex and takes up <b>safranin</b>.
+The wall is also what <b>ampicillin</b> attacks; the other classes hit the ribosome, <b>DNA gyrase</b> <span class="syn">(also called DNA gyrase, topoisomerase II (bacteria))</span> or folate synthesis, always by <b>selective toxicity</b>.
+Bacteria reproduce only by <b>binary fission</b>, passing through <b>lag, exponential, stationary and death</b> phases.
+Everything else — transformation, transduction, conjugation — is <b>horizontal gene transfer</b>, and that is why resistance spreads faster than mutation alone could explain.
+To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <b>Carl Woese</b> used to discover the <b>Archaea</b>.
+</p><p class="t">约 45 秒 · 一根线：壁 → 染色 → 抗生素 → 怎么长 → 怎么传 → 怎么认</p></div>
+
+<details class="wide"><summary>广度 · 32 题，一题一两句 · 看标题就能背 <span class="wstar">⭐ 2 位考官：Hodek、Lipovová</span></summary>
+<p class="wmove">① 革兰阳性与阴性的差别就是壁，染色和临床都从它推出来 <span>Gram-positive vs Gram-negative</span></p>
+<p class="en">A <b>Gram-positive</b> cell has thick <b>peptidoglycan</b> outside one membrane, with <b>teichoic acids</b> running through it. A <b>Gram-negative</b> cell has thin peptidoglycan in the <b>periplasm</b>, between an inner membrane and an outer membrane of <b>lipopolysaccharide</b>, which carries <b>lipid A</b>, the endotoxin.</p>
+<p class="zh2">先说壁，其余都是它的后果。</p>
+
+<p class="wmove">② 细胞壁是肽聚糖，它挡住的是膨压 <span>peptidoglycan · murein</span></p>
+<p class="en"><b>Peptidoglycan</b>, also called <b>murein</b>, is chains of alternating <b>N-acetylglucosamine</b> and <b>N-acetylmuramic acid</b>, cross-linked by short peptides. <b>Transpeptidases</b> make those cross-links. A bacterium is hypertonic to its surroundings, so the wall is the only thing stopping lysis.</p>
+<p class="zh2">交联酶正是 β-内酰胺的靶。</p>
+
+<p class="wmove">③ 革兰染色四步，第三步才是真正干活的那一步 <span>Gram stain</span></p>
+<p class="en">I flood a heat-fixed smear with <b>crystal violet</b>, add <b>iodine</b> as a mordant, decolourise briefly with <b>alcohol</b>, then counterstain with <b>safranin</b>. Decolourisation is the timed and critical step: the thick wall dehydrates and traps the complex, the thin wall cannot hold it.</p>
+<p class="zh2">脱色过头或培养物太老，阳性读成阴性。</p>
+
+<p class="wmove">④ 荚膜的意义主要是毒力：抗吞噬，而且把下面的抗原藏起来 ⭐ Hodek <span>capsule</span></p>
+<p class="en">A <b>capsule</b> is an organised polysaccharide layer outside the wall, firmly attached unlike a slime layer. It resists <b>phagocytosis</b> and hides the surface antigens from <b>antibodies</b>. <b>Conjugate vaccines</b> link capsular polysaccharide to a carrier protein, turning a weak response into a lasting one.</p>
+<p class="zh2">Hodek 做抗体；纯多糖疫苗无记忆，所以要做成 conjugate。</p>
+
+<p class="wmove">⑤ 芽孢形成是对饥饿的存活反应，不是繁殖 <span>endospore formation · sporulation</span></p>
+<p class="en">The cell divides <b>asymmetrically</b> into a forespore and a mother cell, which <b>engulfs</b> the forespore. A <b>cortex</b> and protein <b>coat</b> are laid down, the core dehydrates and accumulates <b>calcium dipicolinate</b>, and <b>small acid-soluble proteins</b> protect the DNA.</p>
+<p class="zh2">抗性来自结构，所以高压灭菌要 121 °C。</p>
+
+<p class="wmove">⑥ 生长曲线是细胞数的对数对时间作图，四个期 <span>bacterial growth curve</span></p>
+<p class="en">In <b>lag phase</b> the cells make the enzymes and ribosomes the new medium needs. In <b>exponential phase</b> the doubling time is constant. In <b>stationary phase</b> division and death balance. Then the viable count falls in <b>death phase</b>.</p>
+<p class="zh2">表达蛋白在对数中期诱导。</p>
+
+<p class="wmove">⑦ 做生长曲线实验：定时取样、测 OD₆₀₀、对数作图 <span>growth-curve experiment · OD600</span></p>
+<p class="en">I inoculate from a fresh overnight culture, incubate with shaking, and sample at fixed intervals, measuring <b>optical density at 600 nanometres</b> against sterile medium. Optical density measures <b>light scattering</b>, so a <b>viable count</b> by dilution and plating is added when live and dead must be separated.</p>
+<p class="zh2">出线性范围先稀释；对数期点要密，才拟合得出倍增时间。</p>
+
+<p class="wmove">⑧ 分离培养的目标是纯培养，而划线就是用接种环做的稀释 <span>streak plating · pure culture</span></p>
+<p class="en">A <b>colony</b> is the clonal progeny of one <b>colony-forming unit</b>, so a single well-separated colony is the working definition of pure. I flame the loop between sectors, incubate, then re-streak one colony to confirm purity.</p>
+<p class="zh2">选择性培养基压住别的，鉴别性培养基让它们长得不一样。</p>
+
+<p class="wmove">⑨ 无菌操作同时朝两个方向保护，而污染在站稳之前看不见 <span>aseptic technique</span></p>
+<p class="en">It keeps contaminants out of my culture and keeps my organism out of me. A faster-growing contaminant takes over, and every result afterwards concerns the wrong species. I work near a flame, flame the loop and the bottle neck, and incubate an <b>uninoculated control plate</b>.</p>
+<p class="zh2">对照板长了，实验作废，不是打折。</p>
+
+<p class="wmove">⑩ 繁殖只有二分裂，水平基因转移和产孢都不算 <span>binary fission</span></p>
+<p class="en">The chromosome replicates from a single origin, the copies move to opposite poles, and a <b>septum</b> forms at mid-cell to give two identical daughters. A few species bud and filamentous bacteria fragment. Transformation, transduction, conjugation and sporulation do not raise the cell number.</p>
+<p class="zh2">「什么不是繁殖」那一句才是考官在等的。</p>
+
+<p class="wmove">⑪ 代谢按碳源和能源两条独立的轴分类，交叉出名字 <span>types of bacterial metabolism</span></p>
+<p class="en"><b>Autotrophs</b> fix carbon dioxide, <b>heterotrophs</b> use organic carbon; <b>phototrophs</b> use light, <b>chemotrophs</b> chemical oxidation, splitting into <b>lithotrophs</b> and <b>organotrophs</b>. Cyanobacteria are photoautotrophs, nitrifying bacteria chemolithoautotrophs, and <i>Escherichia coli</i> a chemoorganoheterotroph.</p>
+<p class="zh2">第三条轴是末端电子受体：氧／硝酸盐、硫酸盐／发酵。</p>
+
+<p class="wmove">⑫ 用测序鉴定细菌：测 16S rRNA 基因，不用培养 <span>16S ribosomal RNA gene</span></p>
+<p class="en">Every bacterium has the <b>16S ribosomal RNA gene</b>, it is essential, and its <b>conserved regions</b> sit next to <b>variable regions</b>. One universal primer pair therefore amplifies it from an unknown organism, and the variable regions identify the species against a reference database.</p>
+<p class="zh2">优势是免培养，局限是常常只到属。</p>
+
+<p class="wmove">⑬ Woese 发现了古菌和三域，而他用的方法是比序列 <span>Carl Woese · Archaea</span></p>
+<p class="en">He compared <b>16S ribosomal RNA sequences</b> rather than morphology, and found that organisms then called bacteria fell into two deeply separate groups. Life was reorganised into <b>Bacteria, Archaea and Eukarya</b>, and molecular sequence became the basis of phylogeny.</p>
+<p class="zh2">方法那一半直接接回 ⑫。</p>
+
+<p class="wmove">⑭ 生化试验靠一整组答案的模式定菌，不是任何单独一个试验 <span>biochemical tests</span></p>
+<p class="en">Each test asks whether one enzyme is present. <b>Catalase</b> separates staphylococci from streptococci, <b>oxidase</b> separates <i>Pseudomonas</i> from the Enterobacteriaceae, and <b>coagulase</b> separates <i>Staphylococcus aureus</i>. Sugar fermentation is read as a colour change of a <b>pH indicator</b>.</p>
+<p class="zh2">前提是纯培养；分辨率不如 16S。</p>
+
+<p class="wmove">⑮ PCR 是三个温度反复循环，引物划定产物两端 <span>PCR</span></p>
+<p class="en"><b>Denaturation</b> near ninety-five degrees separates the strands, <b>annealing</b> lets two primers bind facing each other, and <b>extension</b> near seventy-two degrees lets a thermostable polymerase build the new strands. In microbiology the uses are diagnostic: 16S amplification, and <b>quantitative PCR</b> for viral load.</p>
+<p class="zh2">终点 PCR 只能说「有」，要说「多」得用 qPCR<span class="syn">（= qPCR = real-time PCR (≠ RT-PCR)）</span>。</p>
+
+<p class="wmove">⑯ 定 SARS-CoV-2 的谱系是一条测序流程，因为谱系由基因组序列定义 <span>SARS-CoV-2 lineage</span></p>
+<p class="en">The genome is RNA, so I <b>reverse transcribe</b> it to cDNA, amplify the whole genome by <b>tiled multiplex PCR</b>, sequence the amplicons and assemble against the reference. The <b>consensus sequence</b> is then assigned a lineage from its mutations, using <b>Pango</b> nomenclature.</p>
+<p class="zh2">诊断用的 RT-qPCR 给不出 lineage。</p>
+
+<p class="wmove">⑰ 水平基因转移有三条路，后果是进化不是一棵树 <span>horizontal gene transfer</span></p>
+<p class="en"><b>Transformation</b> is uptake of free DNA by a competent cell, <b>transduction</b> is transfer by a bacteriophage, and <b>conjugation</b> is direct plasmid transfer through a pilus. A gene can appear in a distant lineage in one step, so genomes are mosaic: a <b>core genome</b> plus an <b>accessory genome</b>.</p>
+<p class="zh2">最清楚的例子是耐药基因跨种。</p>
+
+<p class="wmove">⑱ 转化是细菌摄取裸 DNA，天然过程和台上操作要分开说 <span>bacterial transformation</span></p>
+<p class="en">Naturally, a <b>competent</b> cell binds extracellular DNA, degrades one strand and imports the other, which <b>homologous recombination</b> integrates. At the bench I wash cells in ice-cold <b>calcium chloride</b>, heat-shock at <b>forty-two degrees</b>, recover in non-selective medium, then plate on selection.</p>
+<p class="zh2">电穿孔效率高两到三个数量级。</p>
+
+<p class="wmove">⑲ 转化效率 ＝ 每微克质粒 DNA 得到的菌落形成单位 <span>transformation efficiency · CFU/µg</span></p>
+<p class="en">I transform a small known mass of a supercoiled control plasmid, because too much DNA saturates the cells and reads falsely low. I plate a known fraction of a known dilution, count, then divide by the fraction plated and by the micrograms of DNA.</p>
+<p class="zh2">两个对照：不加 DNA 的板 ＋ 已知对照质粒。</p>
+
+<p class="wmove">⑳ 质粒的定义性质是自带复制起点、独立于染色体复制 <span>plasmid</span></p>
+<p class="en">It carries <b>accessory genes</b> not needed for growth: antibiotic resistance, virulence factors, extra metabolic capabilities, and the transfer functions of a <b>conjugative plasmid</b>. As a vector it needs an <b>origin</b> setting copy number, a <b>selectable marker</b> and a <b>multiple cloning site</b>.</p>
+<p class="zh2">同一个复制起点的两个质粒不相容。</p>
+
+<p class="wmove">㉑ 噬菌体是感染细菌的病毒，吸附的受体决定宿主范围 <span>bacteriophage</span></p>
+<p class="en">The genome is <b>injected</b> while the capsid stays outside, which is the observation behind the <b>Hershey and Chase</b> experiment. In the <b>lytic cycle</b> the cell lyses and releases progeny; in the <b>lysogenic cycle</b> the genome integrates as a <b>prophage</b> until stress induces lysis.</p>
+<p class="zh2">溶原正是 DE3 的原理。</p>
+
+<p class="wmove">㉒ 克隆按「接口是怎么做出来的」分组，不是按名字 ⭐ Lipovová <span>types of cloning</span></p>
+<p class="en"><b>Restriction–ligation</b> cuts compatible ends and seals them with a ligase. <b>Golden Gate</b> uses type IIS enzymes cutting outside their recognition site, so I choose the overhang. <b>Gibson assembly</b> needs no restriction enzyme: homologous overlapping ends anneal in one isothermal reaction.</p>
+<p class="zh2">再顶三个：TA／TOPO · Gateway · RF cloning。</p>
+
+<p class="wmove">㉓ 克隆菌株挑的是 DNA 稳定性和转化效率，不是表达 ⭐ Lipovová <span>DH5α · XL10-Gold</span></p>
+<p class="en"><b>DH5α</b> is the workhorse: <b>recA1</b> removes homologous recombination so repeats are not rearranged, and <b>endA1</b> removes an endonuclease that would degrade plasmid during a miniprep. <b>XL10-Gold</b> or <b>TOP10</b> strains are very highly competent and tolerate difficult DNA.</p>
+<p class="zh2">通则：克隆株 recA⁻ endA⁻，表达株带 DE3 且缺蛋白酶。</p>
+
+<p class="wmove">㉔ DE3 是染色体上的一个 λ 原噬菌体，带着 T7 RNA 聚合酶的基因 ⭐ Lipovová <span>DE3 cassette</span></p>
+<p class="en">That gene sits under a <b>lacUV5</b> promoter. My gene sits under a <b>T7 promoter</b>, which the host polymerase cannot read at all. <b>IPTG</b> relieves LacI repression, the cell makes <b>T7 RNA polymerase</b>, and only then is my gene transcribed.</p>
+<p class="zh2">菌株名里没有 (DE3)，pET 什么都不产。</p>
+
+<p class="wmove">㉕ 营养缺陷型不能自己合成某个必需化合物，所以培养基必须补 <span>auxotrophy</span></p>
+<p class="en">The opposite is a <b>prototroph</b>, which grows on minimal medium. In the laboratory auxotrophy is a <b>selectable marker needing no antibiotic</b>: a strain deleted for <b>LEU2</b> or <b>URA3</b> grows only if a plasmid restores the gene. It is also the readout of the <b>yeast two-hybrid</b> assay.</p>
+<p class="zh2">酵母工作完全靠它。</p>
+
+<p class="wmove">㉖ 多顺反子 mRNA 是一条 mRNA 编码不止一个蛋白，也是操纵子的物理基础 <span>polycistronic mRNA</span></p>
+<p class="en">Several genes with related functions share one promoter and one transcript, and each has its own <b>ribosome binding site</b> <span class="syn">(also called Shine–Dalgarno sequence)</span>, so ribosomes initiate independently. One switch controls the whole set, as the <b>lac operon</b> does. Eukaryotic mRNA is <b>monocistronic</b>, because initiation works by cap binding and scanning.</p>
+<p class="zh2">所以细菌操纵子搬进真核细胞表达不出来。</p>
+
+<p class="wmove">㉗ 细菌启动子紧凑、被直接认出；真核启动子模块化、被间接认出 <span>bacterial vs eukaryotic promoters</span></p>
+<p class="en">Two conserved elements near <b>minus ten</b> and <b>minus thirty-five</b> are read by the <b>sigma factor</b> of the holoenzyme, and swapping sigma factors switches whole gene sets. A eukaryotic core promoter such as a <b>TATA box</b> <span class="syn">(also called Goldberg–Hogness box)</span> needs general transcription factors to assemble a pre-initiation complex.</p>
+<p class="zh2">后果：表达载体分宿主，两边不通用。</p>
+
+<p class="wmove">㉘ 氨苄、卡那、环丙沙星打三个不同的靶，抗性每次都跟着靶点走 <span>ampicillin · kanamycin · ciprofloxacin</span></p>
+<p class="en"><b>Ampicillin</b>, a beta-lactam, inhibits the transpeptidases cross-linking peptidoglycan, and <b>beta-lactamase</b> hydrolyses its ring. <b>Kanamycin</b>, an aminoglycoside, binds the <b>30S</b> subunit and causes misreading; resistance phosphorylates the drug. <b>Ciprofloxacin</b>, a fluoroquinolone, inhibits <b>DNA gyrase</b>; resistance is a point mutation.</p>
+<p class="zh2">壁 · 核糖体 · DNA，三个都是杀菌性的。</p>
+
+<p class="wmove">㉙ 抗生素按靶点分五组，统一原理是选择性毒性 <span>classes of antibiotics · selective toxicity</span></p>
+<p class="en">Cell wall synthesis is hit by beta-lactams and by <b>vancomycin</b>; protein synthesis on the 30S by aminoglycosides and tetracyclines, on the <b>50S</b> by macrolides and chloramphenicol. Nucleic acid synthesis is hit by fluoroquinolones and <b>rifampicin</b>, folate synthesis by <b>sulfonamides and trimethoprim</b>, and the outer membrane by <b>polymyxins</b>.</p>
+<p class="zh2">每一类打的都是细菌有、我们没有的东西。</p>
+
+<p class="wmove">㉚ 抗生素不制造耐药，它筛选群体里本来就有的变异体 <span>antibiotic resistance</span></p>
+<p class="en">Resistance is growth at a concentration that inhibits other members of the species. Four mechanisms: <b>destroy the drug, modify it, alter the target, or keep it out</b> by low permeability and <b>efflux pumps</b>. It arises by mutation or by horizontal gene transfer, and transfer dominates clinically.</p>
+<p class="zh2">外排泵常常一次覆盖好几种不相关的药。</p>
+
+<p class="wmove">㉛ 群体感应是依赖细胞密度的基因调控，靠阈值加正反馈 <span>quorum sensing · autoinducer</span></p>
+<p class="en">Every cell constantly releases an <b>autoinducer</b>, whose outside concentration rises with the population. Above a threshold it binds a regulator and switches on a gene set, and the regulator also raises autoinducer synthesis, so the switch turns on <b>sharply</b>. Gram-negative bacteria signal with <b>acyl-homoserine lactones</b>, Gram-positive with peptides.</p>
+<p class="zh2">经典例子：费氏弧菌发光 · 毒力因子 · 生物膜 · 感受态。</p>
+
+<p class="wmove">㉜ 生物膜是附着在表面、包埋在自产基质里的群落，行为跟摇瓶里不一样 <span>biofilm</span></p>
+<p class="en">The matrix is <b>extracellular polymeric substances</b>: polysaccharide, protein and extracellular DNA. Formation runs from reversible to irreversible attachment, then maturation and dispersal. The matrix limits penetration, deep cells grow slowly and escape drugs acting on growing cells, and some are dormant <b>persisters</b>.</p>
+<p class="zh2">导管、植入物、心脏瓣膜之所以难清。</p>
+
+<p class="wmove">陷阱问法</p>
+<ul class="wdef">
+<li><b>"Do Gram-negative bacteria have peptidoglycan?"</b> — Yes, a thin layer in the periplasm; only the thickness differs. · 有，只是薄。</li>
+<li><b>"Is sporulation a form of reproduction?"</b> — No. One cell gives one spore, so the cell number does not rise. · 不是繁殖。</li>
+<li><b>"Does OD600 count living cells?"</b> — No, it measures light scattering, so live and dead cells are counted together. · 死活一起算。</li>
+<li><b>"Do you sequence the 16S rRNA?"</b> — I sequence the gene, which is DNA, not the ribosomal RNA itself. · 测的是基因。</li>
+<li><b>"Does the antibiotic create the resistance?"</b> — No, it selects variants already present in the population. · 只是筛选。</li>
+<li><b>"Is ampicillin active on cells that are not dividing?"</b> — No, it blocks building of new wall, it does not destroy existing wall. · 只杀正在长的。</li>
+<li><b>"Is anaerobic respiration the same as fermentation?"</b> — No, anaerobic respiration keeps an electron transport chain<span class="syn">（= respiratory chain = electron transport chain）</span>; fermentation has none. · 两回事。</li>
+<li><b>"Is biofilm resistance the same as antibiotic resistance?"</b> — No, biofilm tolerance is physiological and reversible; resistance is genetic. · tolerance ≠ resistance。</li>
+<li><b>"Which strain for a pET plasmid?"</b> — One carrying DE3; without it there is no T7 RNA polymerase and nothing is made. · 没 DE3 不表达。</li>
+</ul>
+
+<p class="wmove">定义</p>
+<ul class="wdef">
+<li><b>peptidoglycan (murein)</b> — the bacterial wall polymer, two alternating sugars cross-linked by short peptides · 肽聚糖</li>
+<li><b>lipid A</b> — the endotoxin part of Gram-negative lipopolysaccharide · 内毒素</li>
+<li><b>colony-forming unit</b> — one cell able to give rise to one colony · 菌落形成单位</li>
+<li><b>transformation efficiency</b> — colony-forming units obtained per microgram of plasmid DNA · 转化效率</li>
+<li><b>competent cell</b> — a cell in a state able to take up free DNA · 感受态细胞</li>
+<li><b>auxotroph</b> — an organism unable to make a compound it needs, so the medium must supply it · 营养缺陷型</li>
+<li><b>prototroph</b> — an organism that grows on minimal medium · 原养型</li>
+<li><b>polycistronic mRNA</b> — one messenger RNA encoding more than one protein · 多顺反子 mRNA</li>
+<li><b>prophage</b> — a phage genome integrated into the host chromosome · 前噬菌体</li>
+<li><b>conjugative plasmid</b> — a plasmid carrying the genes for its own transfer through a pilus · 接合型质粒</li>
+<li><b>selective medium</b> — medium that suppresses everything except the target organism · 选择性培养基</li>
+<li><b>differential medium</b> — medium on which several organisms grow but look different · 鉴别性培养基</li>
+<li><b>autoinducer</b> — the small diffusible signal molecule of quorum sensing · 自诱导物</li>
+<li><b>persister</b> — a dormant cell that survives a drug without being genetically resistant · 休眠存活细胞</li>
+<li><b>selective toxicity</b> — hitting a target bacteria have and human cells do not · 选择性毒性</li>
+</ul>
+</details>
+</article>
+
+
+
 
 <p style="font-size:13px;color:var(--dim);margin:30px 0 0;line-height:1.75">
 ⚠ 这一页只帮你想起<b>「有哪几件事」</b>。「为什么」在卡上——
@@ -4734,7 +5211,8 @@ And <b>transcription is only one layer</b>: splicing, non-coding RNA and the con
     var cnt = {main:0, wide:0};
     var ps = arts[ua].querySelectorAll('p.en');
     for (var up = 0; up < ps.length; up++){
-      var p = ps[up], cat = (p.closest && p.closest('details.wide')) ? 'wide' : 'main';
+      var lab = (arts[ua].id === 't-lab' || arts[ua].id === 't-micro');
+      var p = ps[up], cat = lab ? 'lab' : ((p.closest && p.closest('details.wide')) ? 'wide' : 'main');
       var key = arts[ua].id + ':' + cat + ':' + (cnt[cat]++);
       p.setAttribute('data-rk', key);
       UNITS.push({key:key, p:p, cat:cat, art:arts[ua]});
@@ -4967,9 +5445,10 @@ And <b>transcription is only one layer</b>: splicing, non-coding RNA and the con
   function paintPanel(){
     var on = RS.mode === 'ms';
     document.body.classList.toggle('ms-on', on);
-    var m = stat('main'), w = stat('wide');
+    var m = stat('main'), w = stat('wide'), l = stat('lab');
     side.innerHTML = '<div class="rs-h">背诵进度</div>'
-      + bar('主路线', m) + bar('广度', w)
+      + bar('生化 · 主路线', m) + bar('生化 · 广度', w)
+      + (l.tot ? bar('实验技术与微生物', l) : '')
       + '<label class="rs-tg"><input type="checkbox"' + (on ? ' checked' : '') + '> 背诵进度模式（背过的变灰，⭐ 不熟的标黄）</label>'
       + '<button class="rs-shuf">🔀 Shuffle 复习背过的</button>'
       + '<button class="rs-min" title="收起">–</button>';
