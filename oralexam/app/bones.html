@@ -93,6 +93,46 @@ details.wide .en{margin:0}
 .wstar{font-weight:400;color:var(--hot);margin-left:6px;font-size:12px}
 button.play1.para{margin-left:6px;padding:2px 7px;font-size:11px}
 .say>button.play1.para{margin:4px 0 0}
+/* ---------- 背诵进度 · Shuffle（2026-09-29） ---------- */
+.rcpanel{margin:6px 0 10px;padding:8px 10px;border:1px dashed var(--accent);border-radius:8px;font-size:12.5px}
+.rc-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.rc-row button,.qz-row button{font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--bg);color:var(--ink);cursor:pointer}
+.rc-row button.rc-ok,.qz-row button.rc-ok{border-color:var(--accent);color:var(--accent)}
+.rc-cnt{margin-left:auto;color:var(--faint);font-size:11.5px}
+.rc-out{margin-top:6px;font-size:13px;line-height:1.7}
+.rc-note{color:var(--faint)}
+.rc-heard{color:var(--dim)} .rc-heard i{color:var(--faint)}
+.rc-chips{margin-top:4px;color:var(--faint)}
+.rc-chip{display:inline-block;margin:2px 4px 0 0;padding:1px 7px;border-radius:999px;font-size:12px}
+.rc-chip.ok{background:#dcebd3;color:#35552a}
+.rc-chip.no{background:var(--line);color:var(--faint);text-decoration:line-through}
+p.en.rc-hide{color:transparent;background:var(--line);border-radius:4px;user-select:none}
+p.en.rc-hide *{color:transparent !important;background:transparent !important}
+body.ms-on p.en.rc-done{opacity:.42}
+body.ms-on p.en.rc-star{opacity:1;background:#fbf0cf;border-left:3px solid #d4a017;padding:4px 8px;border-radius:4px}
+body.ms-on p.en.rc-star::before{content:"⭐ 背了但不熟，再背";display:block;font-size:11px;font-weight:700;color:#9a6f00;margin-bottom:2px}
+#rcside{position:fixed;right:14px;top:14px;z-index:8;width:230px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:0 3px 14px rgba(0,0,0,.08);font-size:12.5px}
+#rcside .rs-h{font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--accent);margin-bottom:6px}
+#rcside .rs-lab{margin:8px 0 3px;color:var(--dim)} #rcside .rs-lab b{color:var(--ink)}
+#rcside .rs-st{color:#9a6f00}
+#rcside .rs-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+#rcside .rs-bar i{display:block;height:100%;background:var(--accent)}
+#rcside .rs-tg{display:block;margin:10px 0 8px;line-height:1.5;cursor:pointer}
+#rcside button{font-size:12.5px;padding:6px 10px;border:1px solid var(--accent);border-radius:999px;background:var(--bg);color:var(--accent);cursor:pointer;width:100%}
+#rcside .rs-min{position:absolute;top:6px;right:8px;width:auto;border:0;padding:0 6px;color:var(--faint);font-size:16px}
+#rcside.mini{width:auto} #rcside.mini>*:not(.rs-h):not(.rs-min){display:none}
+#rcside.mini .rs-h{margin:0 18px 0 0}
+#rcquiz{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.35);display:flex;align-items:flex-start;justify-content:center;padding:8vh 16px;overflow:auto}
+.qz-card{max-width:640px;width:100%;background:var(--card);border-radius:14px;padding:18px 20px;box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.qz-top{font-size:12px;color:var(--faint);letter-spacing:.04em;display:flex;align-items:center}
+.qz-x{margin-left:auto;border:0;background:none;font-size:20px;color:var(--faint);cursor:pointer}
+.qz-q{font-size:18px;font-weight:620;line-height:1.5;margin:8px 0 14px}
+.qz-row{display:flex;gap:6px;flex-wrap:wrap}
+.qz-ans{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)}
+@media (max-width:1180px){#rcside{top:auto;bottom:70px;right:10px;width:210px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body.ms-on p.en.rc-star{background:#3a3218}
+  :root:not([data-theme="light"]) .rc-chip.ok{background:#2c3d24;color:#b8d6a8}}
+
 /* 别名标注（tools/annotate_synonyms.py 插的），淡一点，不抢正文 */
 .syn{color:var(--dim);font-weight:400;font-size:.88em}
 .say .en .syn{font-size:.85em}
@@ -192,7 +232,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <h1>One page</h1>
 <p>每个主题只有三行：<b style="color:var(--accent)">MUST SAY</b> 他问到这儿你一定要说出口的那句 ·
 <b>NUMBERS</b> 一个数 · <b>HOOK</b> 一个名字，知道就行，不用解释。<br>
-英文是要念的，中文只是看懂用的。<b>这一页不记分、不算进度。</b></p>
+英文是要念的，中文只是看懂用的。<b>进度记在右边「背诵进度」里</b>：每段旁边点 🎙 背，背完点 ✓；可以关掉，关了进度也还在。</p>
 <nav>
   <a href="index.html">← 卡片</a>
   <a href="drill.html">🎙 演练台</a>
@@ -3193,6 +3233,135 @@ and mismatch repair knows which strand is new <b>because the new strand is not y
 </details>
 </article>
 
+<article id="t-vir">
+<h3>Viruses</h3>
+<p class="zh">横向卡 x-vir · <b>先问「基因组是什么形态、到 mRNA 要走几步」</b>，这一句定了它必须自带什么酶</p>
+<ol class="steps">
+<li><b class="t">定义 — 核酸装在蛋白外壳里，只能在活细胞内复制</b><span class="d">
+<b>衣壳</b>是包住基因组的蛋白外壳；有的病毒外面还有一层<b>包膜</b>，是从<b>宿主的膜</b>上带走的脂膜，病毒的表面蛋白插在上面。
+它<b>缺三样：核糖体、代谢酶、产能机制</b>，所以自己既造不出蛋白也造不出 ATP。
+⚠ 「算不算生命」的答案是<b>有争议</b>，通常说成<b>处于生命边缘的实体</b>。别说「最小的生物」。
+</span></li>
+<li><b class="t">分类 — Baltimore 七类，判据只有一句</b><span class="d">
+判据：<b>基因组是什么形态</b>，以及<b>从它到 mRNA 要走几步</b>。
+七类：<b>双链 DNA · 单链 DNA · 双链 RNA · 正链 RNA · 负链 RNA · 经过 DNA 的单链 RNA · 经过 RNA 的双链 DNA</b>。
+最后两类是<b>逆转录</b>的。⚠ 不按长相、不按宿主、不按疾病分 —— <b>先把判据说出口</b>。
+</span></li>
+<li><b class="t">复制周期 — 六步，只在第四步分家</b><span class="d">
+<b>吸附受体 → 进入 → 脱壳 → 复制与表达 → 组装 → 释放</b>（裂解或出芽）。
+七类的差别<b>只落在第四步</b>：基因组形态决定这一步必须干什么。
+<b>吸附那一步决定宿主范围</b>，因为受体决定哪些细胞能被感染。
+</span></li>
+<li><b class="t">正链与负链 — 基因组本身能不能当 mRNA 读</b><span class="d">
+<b>正链</b>：序列和方向跟 mRNA 一样，宿主核糖体<b>直接翻译</b>，所以<b>裸基因组就有感染性</b>。
+<b>负链</b>：是信使的互补链，必须先被抄成正链；<b>宿主细胞没有 RNA 依赖的 RNA 聚合酶</b>，所以<b>颗粒里必须自带</b>。
+同一个判据，两个相反的后果 —— 这是最好的一问一答。
+</span></li>
+<li><b class="t">逆转录病毒 — RNA 先变成 DNA，再插进宿主基因组</b><span class="d">
+<b>HIV</b> 这类逆转录病毒用<b>逆转录酶</b>把 RNA 基因组抄成 DNA，再由<b>整合酶</b>插进宿主染色体。
+宿主细胞<b>既没有逆转录酶，也没有整合酶</b>。
+这一类顺带把中心法则补完：<b>RNA → DNA</b> 是原始版本里没有的流向。
+</span></li>
+<li><b class="t">突变快 — 大多数 RNA 病毒的聚合酶不校对</b><span class="d">
+没有校对，每复制一次错很多，所以<b>基因组长度被保真度封住</b>。
+<b>冠状病毒是例外</b>：聚合酶复合体里有<b>带外切酶活性的校对模块</b>，基因组能到约三万个核苷酸，是已知 RNA 病毒里最长的。
+⚠ 有校对<b>不等于</b>不变异，只是每个碱基出错少。
+</span></li>
+<li><b class="t">噬菌体 — 感染细菌的病毒，两条路</b><span class="d">
+<b>裂解周期</b>：劫持宿主机器造噬菌体、组装、裂解细胞放出子代。
+<b>溶原周期</b>：基因组整合进细菌染色体成为<b>原噬菌体</b>，跟着被动复制，受到胁迫信号再转入裂解。两条路都能走的叫<b>温和噬菌体</b>，λ 是典型。
+<b>BL21(DE3) 里的 DE3 就是一个 λ 原噬菌体</b> —— 接我自己的表达菌株。
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+A <b>virus</b> is a piece of nucleic acid inside a <b>protein capsid</b>, in some viruses wrapped in a <b>lipid envelope</b> taken from the host membrane.
+It has <b>no ribosomes, no metabolism and no way to make energy</b>, so it can replicate only inside a living cell.
+Viruses are grouped by the <b>Baltimore classification</b>: by what the genome is made of, and <b>how many steps separate it from messenger RNA</b>.
+That gives seven classes.
+Every virus runs the same six steps: <b>attachment to a receptor, entry, uncoating, replication and expression, assembly, and release</b>.
+The classes differ only in step four.
+A <b>positive-strand</b> RNA genome is read directly by the ribosome, so the naked genome is infectious.
+A <b>negative-strand</b> genome must be copied first, and because <b>the host has no RNA-dependent RNA polymerase</b>, the particle carries its own.
+<b>Retroviruses</b>, such as HIV, use <b>reverse transcriptase</b> to make DNA, and <b>integrase</b> inserts that DNA into the host genome.
+</p><p class="t">约 60 秒 · 两个必说点：分类的判据是「到 mRNA 要走几步」；宿主没有 RNA 依赖的 RNA 聚合酶，所以负链病毒必须自带</p></div>
+
+<details class="wide"><summary>广度 · Say this 说完还有时间，接着往下说 · 看标题就能背 <span class="wstar">⭐ 1 位考官：Ryšlavá</span></summary>
+<p class="wmove">① 整合进宿主染色体的逆转录病毒 DNA 叫原病毒 <span>provirus</span></p>
+<p class="en">Once inserted, the retroviral DNA is called a <b>provirus</b>, and it is copied together with the host chromosome at every cell division.</p>
+<p class="zh2">和噬菌体的「原噬菌体」是同一个思路。</p>
+
+<p class="wmove">② 大多数 RNA 病毒的聚合酶不校对，所以突变快；冠状病毒有校对 <span>no proofreading</span></p>
+<p class="en">Most <b>RNA-dependent RNA polymerases have no proofreading</b>, so RNA viruses mutate fast. <b>Coronaviruses</b> are the exception: a proofreading exonuclease lets their genome reach about thirty thousand nucleotides.</p>
+<p class="zh2">保真度封住基因组长度。</p>
+
+<p class="wmove">③ RNA 病毒群体是一团相关序列，叫准种 <span>quasispecies</span></p>
+<p class="en">A <b>quasispecies</b> is an RNA virus population seen as a cloud of related sequences, and selection acts on the whole cloud rather than on one genome.</p>
+<p class="zh2">群体的单位是分布，不是一条序列。</p>
+
+<p class="wmove">④ 抗病毒药打病毒自己的酶，因为宿主没有这些酶 <span>acyclovir · AZT · protease inhibitors</span></p>
+<p class="en"><b>Acyclovir</b> against herpesviruses and <b>AZT</b> against HIV are nucleoside analogues that stop the viral DNA chain. <b>HIV protease inhibitors</b> block the cutting of the viral polyprotein; that one is general knowledge.</p>
+<p class="zh2">AZT、阿昔洛韦和 Sanger 测序同一原理。</p>
+
+<p class="wmove">⑤ 书外：奥司他韦抑制流感病毒的神经氨酸酶，新病毒放不出去 <span>oseltamivir · neuraminidase</span></p>
+<p class="en"><b>Oseltamivir</b>, an influenza drug, inhibits <b>neuraminidase</b>, the viral enzyme that releases new particles from the cell surface. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">打的是第六步「释放」。</p>
+
+<p class="wmove">⑥ 书外：疫苗让免疫系统在感染之前先见过病毒的抗原 <span>vaccines</span></p>
+<p class="en">A <b>vaccine</b> presents a killed or weakened virus, a viral protein, or an mRNA encoding that protein, so the immune system meets the antigen before the infection. That is general knowledge.</p>
+<p class="zh2">一句话够了。</p>
+
+<p class="wmove">⑦ 植物病毒遵守同样的规则；马铃薯 Y 病毒感染烟草 ⭐ Ryšlavá <span>potato virus Y</span></p>
+<p class="en">Plant viruses follow the same rules. <b>Potato virus Y</b>, a positive-strand RNA virus, makes one long polyprotein that its own <b>proteases</b> cut; that detail is general knowledge. Ryšlavá's group studies how infected tobacco changes its metabolism.</p>
+<p class="zh2">接她的主场：逆境下代谢怎么变。</p>
+
+<p class="wmove">⑧ 噬菌体只把基因组注入细菌，衣壳留在外面 <span>bacteriophage · Hershey–Chase</span></p>
+<p class="en"><b>Bacteriophages</b>, viruses of bacteria, attach to a specific surface receptor and inject only their genome, while the capsid stays outside. That observation lies behind the <b>Hershey–Chase experiment</b>.</p>
+<p class="zh2">证明遗传物质是 DNA，不是蛋白。</p>
+
+<p class="wmove">⑨ 噬菌体把宿主 DNA 带到另一个细菌里，叫转导 <span>transduction</span></p>
+<p class="en"><b>Transduction</b>, one of the three routes of horizontal gene transfer, is when a phage carries host DNA from one bacterium into another.</p>
+<p class="zh2">另外两条：转化、接合。</p>
+
+<p class="wmove">⑩ BL21(DE3) 里的 DE3 是 λ 原噬菌体，带 T7 RNA 聚合酶基因 <span>λ DE3</span></p>
+<p class="en"><b>DE3</b> is a <b>λ prophage</b> in the E. coli chromosome carrying the <b>T7 RNA polymerase</b> gene under a lacUV5 promoter, so IPTG switches on my pET construct.</p>
+<p class="zh2">没有 DE3，pET 质粒就不表达。</p>
+
+<p class="wmove">⑪ 噬菌体展示把蛋白挂在 M13 的衣壳蛋白上，基因装在颗粒里面 <span>phage display</span></p>
+<p class="en"><b>Phage display</b> fuses a protein to an <b>M13 coat protein</b>, such as pIII, so the protein is outside and its DNA is packaged inside the same particle.</p>
+<p class="zh2">蛋白和基因连在一起，筛到就能读出来。</p>
+
+<p class="wmove">⑫ 书外：病毒载体把基因送进人细胞 <span>viral vectors</span></p>
+<p class="en"><b>Viral vectors</b>, such as adenoviruses and lentiviruses with their disease genes removed, are used to deliver genes into human cells for gene therapy and vaccines. That is general knowledge.</p>
+<p class="zh2">病毒的进入本领被拿来用。</p>
+
+<p class="wmove">⑬ 书外：细菌用 CRISPR 保存噬菌体 DNA 片段，下次用 Cas9 切掉同一种噬菌体 <span>CRISPR–Cas</span></p>
+<p class="en">Bacteria store short <b>phage DNA sequences</b> in their <b>CRISPR</b> locus, and <b>Cas9</b> uses RNA copies of them to cut the same phage on the next infection. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">主动标「书外」。</p>
+
+<p class="wmove">陷阱问法</p>
+<ul class="wdef">
+<li><b>"Is a virus alive?"</b> — Disputed; it has no ribosomes, no metabolism and no energy supply, so it sits at the edge of life. · 有争议，别说「最小的生物」。</li>
+<li><b>"Does negative-strand mean damaged?"</b> — No; it is the complement of the message and needs one copying step. · 只是多走一步。</li>
+<li><b>"Does proofreading mean coronaviruses do not mutate?"</b> — No; fewer errors per base, but the genome is long and copies are many. · 少，不是没有。</li>
+<li><b>"Is programmed frameshifting a frameshift mutation?"</b> — No; it is built into the sequence and makes two proteins in a fixed ratio. · 机制，不是错误。</li>
+</ul>
+
+<p class="wmove">定义</p>
+<ul class="wdef">
+<li><b>capsid</b> — the protein shell around the viral genome · 衣壳</li>
+<li><b>envelope</b> — a lipid membrane around some viruses, taken from the host · 包膜</li>
+<li><b>RNA-dependent RNA polymerase</b> — an enzyme that copies RNA from an RNA template; host cells lack it · RNA 依赖的 RNA 聚合酶</li>
+<li><b>reverse transcriptase</b> — an enzyme that makes DNA from an RNA template · 逆转录酶</li>
+<li><b>integrase</b> — the retroviral enzyme that inserts viral DNA into the host genome · 整合酶</li>
+<li><b>provirus</b> — retroviral DNA integrated in the host chromosome · 原病毒</li>
+<li><b>prophage</b> — a phage genome integrated in the host chromosome · 原噬菌体</li>
+<li><b>temperate phage</b> — a phage that can enter either the lytic or the lysogenic cycle · 温和噬菌体</li>
+<li><b>quasispecies</b> — a virus population as a cloud of related sequences · 准种</li>
+</ul>
+</details>
+</article>
+
+
 <article id="t-tx">
 <h3>Transcription</h3>
 <p class="zh">横向卡 x-trans · <b>不需要引物</b>，这是跟复制最大的差别</p>
@@ -3757,8 +3926,14 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
       au.className = 'topaud';
       au.controls = true;
       au.preload = 'none';
-      var num = (idx + 1 < 10 ? '0' : '') + (idx + 1);
-      au.src = 'audio/onepage/' + num + '_' + art.id + '.mp3';
+      /* ⚠ 2026-09-29 插了「病毒」这个主题之后，按顺序编号就全错一位了。
+         改成按主题 id 找已有的文件；没有音频的主题（比如新加的病毒）就不放播放器。 */
+      var AUD = {'t-prot':'01','t-pro':'02','t-hb':'03','t-enz':'04','t-carb':'05','t-na':'06','t-join':'07','t-gly':'08',
+        't-ppp':'09','t-pdh':'10','t-tca':'11','t-etc':'12','t-fao':'13','t-fas':'14','t-tag':'15','t-chol':'16','t-vit':'17',
+        't-carrier':'18','t-ket':'19','t-gng':'20','t-glyco':'21','t-aa':'22','t-ps':'23','t-reg':'24','t-org':'25',
+        't-ptm':'26','t-shuttle':'27','t-rep':'28','t-tx':'29','t-tl':'30','t-gene':'31','t-tools':'32'};
+      if (!AUD[art.id]) return;
+      au.src = 'audio/onepage/' + AUD[art.id] + '_' + art.id + '.mp3';
       if (h3 && h3.parentNode) h3.parentNode.insertBefore(au, h3.nextSibling);
       else art.insertBefore(au, art.firstChild);
       TOPAUDS.push({art:art, au:au});
@@ -4130,6 +4305,228 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
   }
   paintBar();
   window.bonesWalked = function(){ var s = wkLoad(), n = 0; for (var k in s) n++; return n; };
+
+  /* ================= 背诵进度 · Shuffle 复习 =================
+     2026-09-29 她：「看着念 / 背一遍 / 然后语音识别……把我背的内容记录下来，然后进度记录」
+     「背诵 milestone 模式，背过的所有内容就变灰，右栏进度条写清楚背了多少，两个进度条，
+     一个是主路线，一个是展开广度里的。这个可以关掉，但是下次打开还是能看见我之前的进度」
+     「shuffle 复习……出我背过的卡片里的问题，我跟着提问重新背，并且可以画星号……
+     milestone 里也点亮，用和没背过的不一样的颜色，写明你背了但是不熟，再背」。
+     单位是一段英文（p.en）。主路线 ＝ 广度层以外的段落；广度 ＝ details.wide 里的段落。
+     ⚠ 上面那套三步跟读（oralexam.bones.v1）的「走过」并进这里，不再单独出进度条，免得两本账。 */
+  var RKEY = 'onepage.recite.v1';
+  function rLoad(){ try{ var o = JSON.parse(localStorage.getItem(RKEY)) || {}; o.items = o.items || {}; return o; }catch(e){ return {items:{}}; } }
+  function rSave(o){ try{ localStorage.setItem(RKEY, JSON.stringify(o)); }catch(e){} }
+  function today(){ var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth()+1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  var RS = rLoad();
+
+  var UNITS = [];
+  for (var ua = 0; ua < arts.length; ua++){
+    var cnt = {main:0, wide:0};
+    var ps = arts[ua].querySelectorAll('p.en');
+    for (var up = 0; up < ps.length; up++){
+      var p = ps[up], cat = (p.closest && p.closest('details.wide')) ? 'wide' : 'main';
+      var key = arts[ua].id + ':' + cat + ':' + (cnt[cat]++);
+      p.setAttribute('data-rk', key);
+      UNITS.push({key:key, p:p, cat:cat, art:arts[ua]});
+    }
+  }
+  /* 旧的三步跟读走过的 Say this，算作背过 */
+  (function(){
+    var old = wkLoad(), ch = false;
+    UNITS.forEach(function(u){
+      if (u.cat !== 'main' || !u.p.closest('.say')) return;
+      if (old[u.art.id] && !RS.items[u.key]){ RS.items[u.key] = {d:today(), n:old[u.art.id]}; ch = true; }
+    });
+    if (ch) rSave(RS);
+  })();
+  var wkb = document.getElementById('wkbar'); if (wkb) wkb.style.display = 'none';
+
+  function unitOf(key){ for (var i = 0; i < UNITS.length; i++) if (UNITS[i].key === key) return UNITS[i]; return null; }
+  function paintUnit(u){
+    var it = RS.items[u.key];
+    u.p.classList.toggle('rc-done', !!it);
+    u.p.classList.toggle('rc-star', !!(it && it.star));
+  }
+  function paintAll(){ UNITS.forEach(paintUnit); paintPanel(); }
+
+  /* ---- 题面：这一段在问什么 ---- */
+  function promptOf(u){
+    var h3 = u.art.querySelector('h3');
+    var topic = h3 ? h3.firstChild.textContent.trim() : u.art.id;
+    if (u.cat === 'wide'){
+      var t = u.p.previousElementSibling;
+      while (t && !(t.classList && t.classList.contains('wmove'))) t = t.previousElementSibling;
+      return {topic:topic, q: t ? t.textContent.trim() : '广度'};
+    }
+    if (u.p.closest('.say')) return {topic:topic, q:'Say this —— 整段开口说一遍：' + ((u.art.querySelector('.zh') || {}).textContent || '')};
+    var row = u.p.closest('.row'), lab = row && row.querySelector('.lab');
+    var hint = row && row.querySelector('.zh2');
+    return {topic:topic, q:(lab ? lab.textContent.trim().toUpperCase() : '这一段') + (hint ? ' —— ' + hint.textContent.trim() : '')};
+  }
+
+  /* ---- 语音识别（Chrome / Edge 的 Web Speech），不打分，只标说到了哪些加粗词 ---- */
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  function keyPhrases(p){
+    var out = [], bs = p.querySelectorAll('b');
+    for (var i = 0; i < bs.length; i++){ var t = bs[i].textContent.trim(); if (t && out.indexOf(t) < 0) out.push(t); }
+    return out;
+  }
+  function hitOf(phrase, said){
+    var ws = phrase.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(function(w){ return w.length > 3; });
+    if (!ws.length) return said.indexOf(phrase.toLowerCase()) >= 0;
+    var n = 0; ws.forEach(function(w){ if (said.indexOf(w.slice(0, Math.max(4, w.length - 2))) >= 0) n++; });
+    return n >= Math.ceil(ws.length * 0.6);
+  }
+  function listen(box, p, onEnd){
+    if (!SR){ box.innerHTML = '<span class="rc-note">这个浏览器没有语音识别 —— 用 Chrome 或 Edge 打开。背完直接点「✓ 背过了」也算。</span>'; return null; }
+    var r = new SR(); r.lang = 'en-GB'; r.continuous = true; r.interimResults = true;
+    var fin = '';
+    box.innerHTML = '<span class="rc-note">在听……说完点「■ 停」</span>';
+    r.onresult = function(e){
+      var tmp = '';
+      for (var i = e.resultIndex; i < e.results.length; i++){
+        if (e.results[i].isFinal) fin += e.results[i][0].transcript + ' '; else tmp += e.results[i][0].transcript;
+      }
+      box.innerHTML = '<span class="rc-heard">' + (fin + '<i>' + tmp + '</i>') + '</span>';
+    };
+    r.onerror = function(e){ box.innerHTML = '<span class="rc-note">语音识别出错：' + e.error + '（麦克风没开？）</span>'; };
+    r.onend = function(){
+      var said = fin.toLowerCase(), ks = keyPhrases(p);
+      var chips = ks.map(function(k){ return '<span class="rc-chip ' + (hitOf(k, said) ? 'ok' : 'no') + '">' + k + '</span>'; }).join('');
+      box.innerHTML = '<span class="rc-heard">' + (fin || '（没听到）') + '</span>'
+        + (ks.length ? '<div class="rc-chips">加粗的要点：' + chips + '</div>' : '');
+      if (onEnd) onEnd(fin);
+    };
+    try { r.start(); } catch(e){}
+    return r;
+  }
+
+  function markDone(key){
+    var it = RS.items[key] || {d:today(), n:0};
+    it.n = (it.n || 0) + 1; it.last = today(); RS.items[key] = it; rSave(RS);
+    var u = unitOf(key); if (u) paintUnit(u); paintPanel();
+  }
+  function toggleStar(key, on){
+    var it = RS.items[key] || {d:today(), n:0};
+    it.star = (on === undefined) ? !it.star : on; RS.items[key] = it; rSave(RS);
+    var u = unitOf(key); if (u) paintUnit(u); paintPanel();
+    return it.star;
+  }
+
+  /* ---- 每段一个 🎙：看着念 / 遮住背 / 开口说 / 背过 / 不熟 ---- */
+  UNITS.forEach(function(u){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'play1 para rcbtn'; b.textContent = '🎙'; b.title = '背这一段';
+    var panel = null, rec = null;
+    b.onclick = function(ev){
+      ev.stopPropagation();
+      if (panel){ panel.remove(); panel = null; u.p.classList.remove('rc-hide'); return; }
+      panel = document.createElement('div'); panel.className = 'rcpanel';
+      panel.innerHTML = '<div class="rc-row">'
+        + '<button data-a="hide">遮住背</button>'
+        + '<button data-a="mic">🎙 开口说</button>'
+        + '<button data-a="done" class="rc-ok">✓ 背过了</button>'
+        + '<button data-a="star">' + ((RS.items[u.key] && RS.items[u.key].star) ? '⭐ 不熟（再点取消）' : '☆ 不熟') + '</button>'
+        + '<span class="rc-cnt"></span></div><div class="rc-out"></div>';
+      var anchor = u.p.closest('.say') ? u.p : u.p;
+      anchor.parentNode.insertBefore(panel, anchor.nextSibling);
+      var out = panel.querySelector('.rc-out');
+      function cnt(){ var it = RS.items[u.key]; panel.querySelector('.rc-cnt').textContent = it ? '背过 ' + it.n + ' 遍' : ''; }
+      cnt();
+      panel.querySelector('[data-a=hide]').onclick = function(){
+        var h = u.p.classList.toggle('rc-hide'); this.textContent = h ? '露出来' : '遮住背';
+      };
+      panel.querySelector('[data-a=mic]').onclick = function(){
+        var btn = this;
+        if (rec){ try{ rec.stop(); }catch(e){} rec = null; btn.textContent = '🎙 开口说'; return; }
+        u.p.classList.add('rc-hide'); panel.querySelector('[data-a=hide]').textContent = '露出来';
+        rec = listen(out, u.p, function(){ rec = null; btn.textContent = '🎙 开口说'; u.p.classList.remove('rc-hide'); panel.querySelector('[data-a=hide]').textContent = '遮住背'; });
+        if (rec) btn.textContent = '■ 停';
+      };
+      panel.querySelector('[data-a=done]').onclick = function(){ markDone(u.key); cnt(); };
+      panel.querySelector('[data-a=star]').onclick = function(){
+        var on = toggleStar(u.key); this.textContent = on ? '⭐ 不熟（再点取消）' : '☆ 不熟'; cnt();
+      };
+    };
+    var after = u.p.querySelector('button.para');
+    if (after && after.parentNode === u.p) u.p.appendChild(b);
+    else u.p.parentNode.insertBefore(b, (u.p.nextSibling && u.p.nextSibling.classList && u.p.nextSibling.classList.contains('para')) ? u.p.nextSibling.nextSibling : u.p.nextSibling);
+  });
+
+  /* ---- 右栏：进度 ＋ 开关 ＋ Shuffle ---- */
+  var side = document.createElement('div'); side.id = 'rcside';
+  document.body.appendChild(side);
+  function stat(cat){
+    var tot = 0, n = 0, st = 0;
+    UNITS.forEach(function(u){ if (u.cat !== cat) return; tot++; var it = RS.items[u.key]; if (it){ n++; if (it.star) st++; } });
+    return {tot:tot, n:n, st:st};
+  }
+  function bar(lab, s){
+    var pc = s.tot ? Math.round(100 * s.n / s.tot) : 0;
+    return '<div class="rs-lab">' + lab + ' <b>' + s.n + ' / ' + s.tot + '</b> 段 · ' + pc + '%'
+      + (s.st ? ' · <span class="rs-st">⭐ 不熟 ' + s.st + '</span>' : '') + '</div>'
+      + '<div class="rs-bar"><i style="width:' + pc + '%"></i></div>';
+  }
+  function paintPanel(){
+    var on = RS.mode === 'ms';
+    document.body.classList.toggle('ms-on', on);
+    var m = stat('main'), w = stat('wide');
+    side.innerHTML = '<div class="rs-h">背诵进度</div>'
+      + bar('主路线', m) + bar('广度', w)
+      + '<label class="rs-tg"><input type="checkbox"' + (on ? ' checked' : '') + '> 背诵进度模式（背过的变灰，⭐ 不熟的标黄）</label>'
+      + '<button class="rs-shuf">🔀 Shuffle 复习背过的</button>'
+      + '<button class="rs-min" title="收起">–</button>';
+    side.querySelector('input').onchange = function(){ RS.mode = this.checked ? 'ms' : 'off'; rSave(RS); paintPanel(); };
+    side.querySelector('.rs-shuf').onclick = shuffleOpen;
+    side.querySelector('.rs-min').onclick = function(){ side.classList.toggle('mini'); };
+  }
+
+  /* ---- Shuffle：只从背过的里抽，⭐ 不熟的权重 ×3 ---- */
+  var quiz = null;
+  function pool(){
+    var out = [];
+    UNITS.forEach(function(u){ var it = RS.items[u.key]; if (!it) return; out.push(u); if (it.star){ out.push(u); out.push(u); } });
+    return out;
+  }
+  function shuffleOpen(){
+    var P = pool();
+    if (!P.length){ alert('还没有背过的段落 —— 先在段落旁边点 🎙，背完点「✓ 背过了」。'); return; }
+    if (!quiz){
+      quiz = document.createElement('div'); quiz.id = 'rcquiz';
+      document.body.appendChild(quiz);
+    }
+    var last = null, rec = null;
+    function next(){
+      var P2 = pool(), u = P2[Math.floor(Math.random() * P2.length)];
+      if (P2.length > 1) while (u === last) u = P2[Math.floor(Math.random() * P2.length)];
+      last = u;
+      var pr = promptOf(u), it = RS.items[u.key] || {};
+      quiz.innerHTML = '<div class="qz-card">'
+        + '<div class="qz-top">' + pr.topic + (it.star ? ' · <span class="rs-st">⭐ 不熟</span>' : '') + '<button class="qz-x" title="关掉">×</button></div>'
+        + '<div class="qz-q">' + pr.q + '</div>'
+        + '<div class="qz-row"><button data-a="mic">🎙 开口说</button><button data-a="show">显示答案</button>'
+        + '<button data-a="star">' + (it.star ? '⭐ 不熟（再点取消）' : '☆ 不熟') + '</button>'
+        + '<button data-a="ok" class="rc-ok">✓ 记得</button><button data-a="next">下一题 →</button></div>'
+        + '<div class="qz-out rc-out"></div><div class="qz-ans en" hidden></div></div>';
+      var ans = quiz.querySelector('.qz-ans');
+      ans.innerHTML = u.p.innerHTML.replace(/<button[\s\S]*?<\/button>/g, '');
+      quiz.querySelector('.qz-x').onclick = function(){ if (rec) try{ rec.stop(); }catch(e){} quiz.remove(); quiz = null; };
+      quiz.querySelector('[data-a=show]').onclick = function(){ ans.hidden = !ans.hidden; };
+      quiz.querySelector('[data-a=mic]').onclick = function(){
+        var btn = this;
+        if (rec){ try{ rec.stop(); }catch(e){} rec = null; btn.textContent = '🎙 开口说'; return; }
+        rec = listen(quiz.querySelector('.qz-out'), u.p, function(){ rec = null; btn.textContent = '🎙 开口说'; ans.hidden = false; });
+        if (rec) btn.textContent = '■ 停';
+      };
+      quiz.querySelector('[data-a=star]').onclick = function(){ var on = toggleStar(u.key); this.textContent = on ? '⭐ 不熟（再点取消）' : '☆ 不熟'; };
+      quiz.querySelector('[data-a=ok]').onclick = function(){ markDone(u.key); next(); };
+      quiz.querySelector('[data-a=next]').onclick = next;
+    }
+    next();
+  }
+  paintAll();
+  window.bonesRecite = {units:function(){ return UNITS.length; }, stat:stat, mark:markDone, star:toggleStar, shuffle:shuffleOpen};
 
   /* smoke 用：真的调一次朗读，但不进循环 */
   window.bonesSay = speak;
