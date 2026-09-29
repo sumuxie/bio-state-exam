@@ -4303,6 +4303,253 @@ And <b>transcription is only one layer</b>: splicing, non-coding RNA and the con
 </details>
 </article>
 
+<article id="t-pesb">
+<h3>PESB · protein engineering and synthetic biology</h3>
+<p class="zh">卡 pe-clone · pe-expr · pe-pur · pe-sys · pe-evo · pe-cfps · <b>你自己的主场，⭐ Lipovová 整块在这里</b></p>
+<ol class="steps">
+<li><b class="t">克隆 — 每一种方法都在回答同一个问题</b><span class="d">
+把<b>一段基因</b>和<b>一个载体</b>接成一个能在细胞里复制的环。七种方法听上去是七件事，其实都在答同一句：
+<b>怎么让两段 DNA 的末端互相找得到</b>。末端的来处只有四个 ——
+<b>切在位点里面</b>（经典酶切）· <b>切在位点外面</b>（Golden Gate 的 type IIS）·
+<b>外切酶啃出单链</b>（LIC 与 Gibson）· <b>根本不切</b>（Gateway 的位点特异性重组）。
+⚠ <b>基因从哪来</b>：查文献 → Addgene → RT-PCR → 全基因合成，越往后越贵。
+⚠ <b>真核基因组 DNA 里有内含子，原核没有剪接体</b> —— 直接从基因组扩出来放进大肠杆菌，表达出来是废的，所以走 mRNA 的 RT-PCR 或直接合成。
+</span></li>
+
+<li><b class="t">表达 — 几乎每一个麻烦都是同一个麻烦</b><span class="d">
+从<b>载体里的一个基因</b>到<b>管子里的蛋白</b>。整张卡的脊梁只有一句：
+<b>蛋白被造出来的速度，快过细胞折叠它的速度</b>。
+折叠是<b>分子内</b>的，一条链自己塌下去；聚集是<b>分子间</b>的，要几条链碰上 ——
+所以浓度一高，聚集的速率涨得比折叠快得多。
+启动子有<b>两个独立的轴</b>：强度和紧密性，通常互相冲突（清单在 <b>t-tools</b>，别重讲）。
+出事之后菌株表要<b>倒着背</b>：从<b>症状</b>问起，不从菌株名问起。
+⚠ <b>包涵体不是失败</b> —— 它是纯化上的好消息、产量上的坏消息。
+</span></li>
+
+<li><b class="t">纯化 — 五种模式，同样的四步</b><span class="d">
+从澄清裂解液，到<b>一管纯的、量得出来的蛋白</b>。
+所有模式都跑<b>平衡 → 结合 → 洗涤 → 洗脱</b>，模式之间只差一样：<b>树脂抓的是哪一个性质</b>。
+遇到没见过的模式就问两句：<b>它靠什么抓住？改什么它才放开？</b>
+顺序是被<b>逼出来</b>的，不是挑出来的：<b>捕获 → 中度纯化 → 精修</b>，
+因为体积从大到小，而要的分辨率从低到高。
+⚠ <b>亲和层析的判据是二元的</b> —— 它问「有没有那个标签」，不问「有多少电荷」，
+所以它能一步做完别的模式要三步做的事。
+</span></li>
+
+<li><b class="t">选宿主 — 那张表是一条曲线，不是六个选项</b><span class="d">
+<b>是蛋白需要什么在选宿主，不是你在选宿主。</b>
+第一问就分出两类问题：<b>有阶梯的</b>和<b>没有阶梯的</b> ——
+不溶有一整条阶梯可以爬，二硫键也有；<b>而缺糖基化机器连第一级都没有</b>，
+因为大肠杆菌没有糖基转移酶、也没有内质网，那是<b>能力不存在</b>，不是没调好。
+第二问：<b>糖必须像人的吗</b>。必须像人 → 哺乳动物；只是要折叠帮助 → 昆虫或酵母，便宜得多。
+剩下三问都在阵营内部问：<b>二硫键 · 毒性 · 量级</b>。
+⚠ <b>「它是真核生物所以会糖基化」是标准错答</b>：酵母、昆虫、哺乳动物的糖不是同一种糖。
+</span></li>
+
+<li><b class="t">定向进化 — 造一堆，再把好的那个找出来</b><span class="d">
+两个动作反复跑：<b>造多样性 → 把好的找出来 → 再造一次</b>。
+「<b>反复</b>」和「<b>每轮从上一轮的赢家出发</b>」这两个词是定义里最重的两个。
+脊梁一句：<b>蛋白和编码它的基因必须物理连在一起</b> ——
+因为<b>蛋白既不能扩增，也不能测序</b>，一千亿个分子里挑出那一个，没有基因你既读不出它、也做不出第二份。
+所有展示方法只差「<b>靠什么连</b>」。
+第二条轴是<b>筛选还是选择</b>，它决定了你的库能有多大。
+⚠ <b>你选什么就得到什么</b> —— 拿「谁抓得最紧」去选酶，挑出来的是<b>产物抑制最严重</b>的那些。
+</span></li>
+
+<li><b class="t">无细胞<span class="syn">（= cell-free protein synthesis = CFPS = in vitro transcription–translation）</span>与改写密码 — 先搬出来，才能改规矩</b><span class="d">
+上半场：<b>把翻译搬出细胞</b>，在管子里跑。下半场：<b>搬出来之后改它的规矩</b>。
+<b>第二件事需要第一件事</b>，这就是两讲合在一起教的原因。
+铰链只有一句：<b>重编程要的是减法</b> —— 某个天然合成酶必须<b>不在场</b>，
+否则它一直把自己的氨基酸装到自己的 tRNA 上，靠数量取胜；
+<b>而一锅粗裂解物里你拿不掉任何一样东西</b>，重构体系里你只要不加它就行了。
+无细胞的所有优点其实是<b>同一条优点：没有活细胞</b> —— 说出这一句，那张清单可以当场推出来。
+</span></li>
+</ol>
+
+<div class="say"><p class="h">Say this</p><p class="en">
+This subject is really <b>one project seen from six angles</b>.
+First I <b>join my gene to a vector</b>, and every cloning method answers one question: how the two ends are made to find each other.
+Then I <b>make the protein</b>, usually in <b>E. coli</b>, where almost every problem is the same problem — the protein is made <b>faster than the cell can fold it</b>.
+Then I <b>purify it</b>, and every mode of chromatography runs the same four steps, differing only in which property the resin binds.
+If the protein needs modifications <b>E. coli cannot make</b>, I move up the scale of hosts — <b>yeast, insect cells, mammalian cells</b> — and I pay for each step with time and money.
+Finally, if the protein works but is <b>not good enough</b>, I stop optimising the conditions and <b>change the protein itself</b>: I make a library and either screen or select it.
+And if it cannot be made in a living cell at all, I go <b>cell-free</b> <span class="syn">(also called cell-free protein synthesis, CFPS, in vitro transcription–translation)</span>.
+</p><p class="t">约 50 秒 · 一条线：装上载体 → 做出来 → 纯出来 → 不够好就进化它</p></div>
+
+<details class="wide"><summary>广度 · 六张卡压成一条线 · 看标题就能背 <span class="wstar">⭐ 3 位考官：Lipovová、Hudeček、Martínek</span></summary>
+
+<p class="wmove">① 所有克隆方法都在回答同一个问题：怎么让两段 DNA 的末端互相找得到 <span>joining two ends</span></p>
+<p class="en">Cloning joins a gene to a vector to make a circle that <b>replicates in a cell</b>. Every method answers one question: <b>what makes the two ends match</b>. There are only four answers — cut inside the site, cut outside it, chew back one strand, or do not cut at all. In <b>classical restriction cloning</b> the sites are written on the <b>primer tails</b> and the enzyme cuts <b>inside</b> its own site, so the overhang sequence is <b>dictated by the enzyme</b>. The vector is <b>dephosphorylated</b> so that it cannot close on itself, which is the largest source of background colonies.</p>
+<p class="zh2">七种方法，四个来处；磷酸酶是记账，不是化学。</p>
+
+<p class="wmove">② 基因从哪来，以及内含子那道经典题 <span>source of the gene · introns</span></p>
+<p class="en">The gene comes from the literature, from <b>Addgene</b>, from <b>RT-PCR</b>, or from <b>whole-gene synthesis</b>, in rising order of cost. ⚠ <b>Eukaryotic genomic DNA contains introns <span class="syn">(also called intervening sequence)</span> and prokaryotes have no spliceosome</b>, so I start from mRNA or synthesise the gene with <b>codon optimisation</b>.</p>
+<p class="zh2">直接从基因组扩，表达出来是废的。</p>
+
+<p class="wmove">③ Golden Gate：type IIS 酶切在识别位点外面，所以无疤痕，而且末端由你定 ⭐ Lipovová <span>Golden Gate · BsaI</span></p>
+<p class="en"><b>BsaI, BbsI and BsmBI</b> cut <b>outside</b> their recognition sequence. Two things follow: the <b>four-base overhang has a sequence I choose</b>, so several fragments assemble directionally in one tube; and the site sits on the discarded piece, so the product is <b>scarless</b>.</p>
+<p class="zh2">一件事推出两个结果。</p>
+
+<p class="wmove">④ Golden Gate 的入场费叫 domestication：先用沉默突变删掉部件内部的位点 <span>domestication</span></p>
+<p class="en">Before assembly I must remove every internal <b>BsaI, BbsI or BsmBI</b> site from my parts, or they are cut to pieces. I do that with <b>silent mutations</b>, which works only because the genetic code is <b>degenerate</b>. It is a <b>one-off cost</b>, and the parts are then reusable for ever.</p>
+<p class="zh2">付一次，永久可重用。</p>
+
+<p class="wmove">⑤ Gibson 与 LIC：把一条链啃掉，露出长到退火本身就够稳的单链 <span>Gibson assembly · LIC</span></p>
+<p class="en"><b>Gibson assembly</b> uses <b>T5 exonuclease</b> with overlaps of <b>twenty to forty base pairs</b>, in one tube at <b>fifty degrees</b>. <b>LIC</b> uses <b>T4 DNA polymerase</b> as an exonuclease and gives about <b>fifteen bases</b>, which anneal so stably that <b>no ligase is needed</b>.</p>
+<p class="zh2">末端够长，就不需要连接酶。</p>
+
+<p class="wmove">⑥ 最小质粒只要复制起点加一个选择标记，而复制起点决定拷贝数 <span>origin of replication · incompatibility</span></p>
+<p class="en">The minimal plasmid is an <b>origin of replication</b> plus a <b>selection marker</b>; the rest is added for a purpose. The <b>origin sets the copy number</b>, and ⚠ <b>two plasmids with the same origin cannot coexist in one cell</b>, which matters whenever I co-express two proteins.</p>
+<p class="zh2">共表达绝不能共转同一个复制起点。</p>
+
+<p class="wmove">⑦ 表达的脊梁：蛋白被造出来的速度快过细胞折叠它的速度 <span>folding versus aggregation</span></p>
+<p class="en">Almost every problem in bacterial expression is <b>one problem in a different place</b>. Folding is <b>intramolecular</b>, so one chain collapses on itself. Aggregation is <b>intermolecular</b>, so several chains must meet. <b>Aggregation therefore rises with concentration far more steeply than folding does.</b></p>
+<p class="zh2">所以降温、降诱导剂全是同一招。</p>
+
+<p class="wmove">⑧ 启动子有两个独立的性质：诱导后有多强，和诱导前漏多少 <span>strength versus tightness</span></p>
+<p class="en"><b>Strength</b> is how much I get after induction, and <b>tightness</b> is how little leaks before it. The two usually <b>conflict</b>, and which one matters is decided by <b>the protein, not the promoter</b> — a toxic protein needs tightness before it needs strength. The promoters themselves I have listed already.</p>
+<p class="zh2">清单在 t-tools，这里只说两个轴。</p>
+
+<p class="wmove">⑨ 菌株表要倒着背：他从症状问起，不从菌株名问起 <span>expression strains</span></p>
+<p class="en">Degraded product sends me to <b>BL21</b>, which lacks the <b>Lon and OmpT proteases</b>. A truncated eukaryotic product is <b>codon bias</b>, so <b>Rosetta</b>, which supplies rare-codon tRNAs. Cytoplasmic disulfides need <b>Origami or SHuffle</b>. All-or-none induction needs <b>Tuner</b>, which lacks <b>lacY</b>.</p>
+<p class="zh2">症状 → 菌株 → 它改了什么。</p>
+
+<p class="wmove">⑩ 包涵体不是失败，是纯化上的好消息、产量上的坏消息 ⭐ Lipovová <span>inclusion bodies</span></p>
+<p class="en"><b>Inclusion bodies</b> are aggregates of <b>misfolded recombinant protein</b> in the cytoplasm. They are high purity and stable, they let me make products that would otherwise kill the host, and they can be purified under <b>denaturing conditions</b>. ⚠ But <b>refolding yields are typically only one to five per cent</b>.</p>
+<p class="zh2">好处全在「弄出来」，没有一条解决「折回去」。</p>
+
+<p class="wmove">⑪ 不溶的对策是五个手段两族：减少供给，或提高处理能力 ⭐ Lipovová <span>solubility tags · chaperones</span></p>
+<p class="en">I <b>lower the temperature</b>, <b>lower the IPTG</b>, add a <b>solubility fusion</b> such as <b>SUMO, MBP or thioredoxin</b>, <b>co-express chaperones</b> <span class="syn">(also called heat shock protein (many of them))</span> — <b>DnaK with DnaJ and GrpE</b>, or <b>GroEL with GroES</b> — and only as a last resort change the host. The lecture's own words: <b>adjust the conditions, do not abandon the construct</b>.</p>
+<p class="zh2">融合伴侣放 N 端是机制，不是习惯 —— 它最先出核糖体、最先折好。</p>
+
+<p class="wmove">⑫ 复性的三条路其实是同一件事：把有效浓度压低，让折叠赢过聚集 <span>refolding</span></p>
+<p class="en">I solubilise in <b>six molar guanidinium chloride</b> or <b>eight molar urea</b>, then refold by <b>dialysis</b>, by <b>rapid dilution</b>, or <b>on the column</b>. A <b>glutathione redox pair</b> lets wrong disulfides reshuffle, and <b>arginine</b> suppresses aggregation intermediates. <b>On-column refolding is the best, because it makes aggregation physically impossible.</b></p>
+<p class="zh2">三条路，一个目标。</p>
+
+<p class="wmove">⑬ 二硫键有两条路绕开还原性的胞质：敲掉还原系统，或者换个房间 <span>disulfide bonds · periplasm</span></p>
+<p class="en">The <b>E. coli cytoplasm is reducing</b>, kept so by <b>thioredoxin and glutathione</b>, so disulfides do not form there. Either I remove the obstacle with an <b>Origami or SHuffle</b> strain, mutated in <b>trxB and gor</b>, or I avoid the compartment and send the protein to the <b>periplasm</b> with a signal peptide <span class="syn">(also called signal sequence)</span> such as <b>pelB or OmpA</b>.</p>
+<p class="zh2">周质天然是氧化性的，还自带 Dsb 校对系统。</p>
+
+<p class="wmove">⑭ 层析的顺序是被逼出来的：体积从大到小，分辨率从低到高 <span>capture · intermediate · polishing</span></p>
+<p class="en"><b>Capture</b> takes the target out of crude lysate, usually by <b>affinity</b>, and is chosen for <b>capacity</b>. <b>Intermediate purification</b> is <b>ion exchange or hydrophobic interaction</b>. <b>Polishing</b> is <b>size exclusion</b> <span class="syn">(also called size-exclusion chromatography, gel filtration)</span>, which must come last, because its <b>load volume cannot exceed five per cent of the column volume</b>.</p>
+<p class="zh2">那 5% 是硬的物理上限，不是习惯做法。</p>
+
+<p class="wmove">⑮ 镍柱上有两个杀手，它们不是洗脱，是把镍整个抢走 <span>EDTA · DTT strip the nickel</span></p>
+<p class="en">Beyond the imidazole elution I have already described, two reagents destroy the column. <b>EDTA</b> is a chelator and <b>strips the nickel off the resin</b>; ⚠ it is a routine lysis-buffer component, added against metal-dependent proteases. <b>DTT</b> does the same by <b>reducing the nickel</b>. The column turns white and is finished.</p>
+<p class="zh2">咪唑洗脱在 t-tools；这里说的是把柱子弄报废的两样。</p>
+
+<p class="wmove">⑯ 「中和标签」和「移除标签」是两个问题，答错就丢分 ⭐ Lipovová <span>tag removal · TEV · SUMO protease</span></p>
+<p class="en"><b>Neutralising</b> means getting the protein off the resin, and the answer is <b>imidazole</b>. <b>Removing</b> means cutting the tag off with a <b>protease</b>, afterwards, in a tube. <b>TEV</b> recognises <b>ENLYFQ</b> and leaves an extra <b>glycine</b> on my protein for ever; <b>SUMO protease</b> reads the <b>fold</b> rather than a sequence, so it leaves a <b>native N-terminus</b>.</p>
+<p class="zh2">一个在柱上，一个在柱后。</p>
+
+<p class="wmove">⑰ 收尾两个数：纯度看 SDS-PAGE，浓度用 A280 ⭐ Hudeček <span>purity and quantity</span></p>
+<p class="en"><b>SDS</b> does three jobs at once — it unfolds the chain, it gives every protein the <b>same charge-to-mass ratio</b>, and it makes everything rod-shaped — so only <b>molecular weight</b> is left to vary. <b>A280</b> needs no standard curve, because the <b>extinction coefficient is calculated from the sequence</b>, mostly from tryptophan and tyrosine.</p>
+<p class="zh2">这是它跟 Bradford 的根本差别。</p>
+
+<p class="wmove">⑱ 书外 · general：纯化表上真正的数字是比活 <span>specific activity</span></p>
+<p class="en">A purification table gives one row per step with total protein, total activity and <b>specific activity</b>, which is <b>units of activity per milligram</b>. <b>Yield</b> and <b>purification fold</b> follow from it. A gel alone cannot show this, because it says nothing about whether the target is <b>still active</b>. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">跑胶只说杂带没了，不说活性还在。</p>
+
+<p class="wmove">⑲ 选宿主的第一问，是分出「有阶梯的问题」和「没有阶梯的问题」 <span>choosing a host</span></p>
+<p class="en">Insoluble protein has a <b>ladder</b> — lower the temperature, change the strain, add a fusion, refold. Unformed disulfides also have a ladder, and it <b>stays inside E. coli</b>. ⚠ <b>Missing glycosylation machinery has no ladder at all</b>: E. coli has <b>no glycosyltransferases and no endoplasmic reticulum</b>, so the ability is absent, not badly tuned.</p>
+<p class="zh2">最常见的错答是把「有二硫键」当成「必须用真核系统」。</p>
+
+<p class="wmove">⑳ 「它会糖基化」不是一个答案，因为那不是同一种糖 <span>glycosylation is not one thing</span></p>
+<p class="en"><b>Yeast</b> builds <b>high-mannose</b> structures that are <b>immunogenic in humans</b> and vary between molecules in one batch. <b>Insect cells</b> modify, but not with human glycans either. <b>Only mammalian cells give the human complex type.</b> So the question is not whether a host glycosylates, but <b>whether it installs the glycan my protein needs</b>.</p>
+<p class="zh2">两个后果分开说：免疫原性，和异质性。</p>
+
+<p class="wmove">㉑ E. coli 是曲线的左端，而且没有哪一条优点特别突出 <span>E. coli</span></p>
+<p class="en">It is still the default after forty years because the advantages <b>add up</b>: it doubles in about <b>twenty minutes</b>, the media are cheap, scale-up is predictable, and the toolbox is enormous. It is also the <b>only practical route to isotope labelling</b>, which needs a minimal medium with one defined nitrogen and one defined carbon source.</p>
+<p class="zh2">「累加起来的」这句话本身就是答案的一部分。</p>
+
+<p class="wmove">㉒ 酵母便宜、会大部分修饰，但两个缺点都要能说 <span>yeast · Pichia pastoris</span></p>
+<p class="en">Yeast is a eukaryote, so it performs most modifications and is still cheap to culture. Its two real weaknesses are <b>high-mannose glycans</b> and a <b>cell wall that is very hard to break</b>. That is why the standard strategy in <b>Pichia pastoris</b> is <b>secretion</b>, which avoids lysis altogether.</p>
+<p class="zh2">缺点推出策略。</p>
+
+<p class="wmove">㉓ 昆虫细胞坐在酵母和哺乳动物之间：折叠和修饰都有，代价中等 <span>insect cells</span></p>
+<p class="en">Insect cells <b>fold complex proteins</b> and carry out <b>many modifications</b>, including <b>disulfide bonds</b>, at <b>moderate cost</b>. They sit between yeast and mammalian cells on the scale. I choose them when the protein needs <b>eukaryotic folding help</b> but the glycans do <b>not</b> have to be human-like.</p>
+<p class="zh2">中间那一档的存在理由，一句话。</p>
+
+<p class="wmove">㉔ 昆虫系统的载体是一个病毒，蛋白是在一次感染里被做出来的，用的是 polyhedrin 启动子 <span>baculovirus · polyhedrin promoter</span></p>
+<p class="en">The vector is a <b>baculovirus</b>, a circular double-stranded DNA virus of about <b>one hundred and twenty kilobase pairs</b>. It infects over six hundred species, mostly larvae, and ⚠ <b>it does not replicate in vertebrates</b>, which is the safety argument. The protein is made <b>during the infection</b>, not by a plasmid sitting quietly in the cell. My gene goes under the <b>polyhedrin promoter</b>, one of the strongest known: in the wild the virus must pack itself into <b>polyhedrin crystals</b> to survive outside a host, so that <b>very late</b> promoter has been pushed to be extremely strong. In culture the virus needs none of that, so <b>polyhedrin can be replaced by my gene at no cost to replication</b>.</p>
+<p class="zh2">强度和「删得起」是同一个原因。</p>
+
+<p class="wmove">㉕ 代价是要先做出一支病毒：所以昆虫系统比大肠杆菌慢得多才出第一个样品 <span>Bac-to-Bac · virus stock</span></p>
+<p class="en">In <b>Bac-to-Bac</b> the gene is cloned between <b>Tn7 sites</b>, transformed into <b>DH10Bac</b>, and transposed into a <b>bacmid</b>, a viral genome maintained in E. coli. <b>Blue-white screening takes four days</b>, the large bacmid DNA is handled gently, transfected into <b>Sf9</b>, and <b>P1 virus is harvested after four to seven days</b>, then amplified to P2 and P3.</p>
+<p class="zh2">第一个样品之前，先花掉一两周做病毒。</p>
+
+<p class="wmove">㉖ 感染时要定的是 MOI，而细胞系有三种，性格各不相同 <span>MOI · Sf9 · Sf21 · Hi5 · S2</span></p>
+<p class="en">The <b>multiplicity of infection</b> is optimised between <b>one to one and ten to one</b>. <b>Sf9 and Sf21</b>, from the fall armyworm, are the robust standard at about <b>six times ten to the sixth per millilitre</b>; <b>Hi5</b> often gives <b>higher secreted yields</b>; <b>S2</b>, from Drosophila, reaches the highest density. They grow at <b>twenty-four to twenty-seven degrees</b>.</p>
+<p class="zh2">半贴壁，很容易驯化成悬浮 —— 所以能放大。</p>
+
+<p class="wmove">㉗ 代次效应：滴度很高而表达在掉 ⭐ Lipovová <span>passage effect</span></p>
+<p class="en">⚠ Some baculoviruses <b>lose the gene of interest, especially after P3</b>. My gene is <b>pure burden</b> to the virus — extra bases to replicate, no benefit — so viruses that drop the insert replicate faster and take over. The symptom is <b>high titre with falling expression</b>. I express from <b>P1 or P2</b> and freeze a <b>low-passage seed stock</b>.</p>
+<p class="zh2">不知道这一条，现场会一头雾水。</p>
+
+<p class="wmove">㉘ 昆虫细胞往两个方向各比一次，答案才完整 <span>insect cells compared both ways</span></p>
+<p class="en">Against <b>E. coli</b>: better folding, disulfides and modifications, but <b>slower and dearer</b>, because a virus stock must be made and amplified first. Against <b>mammalian cells</b>: <b>cheaper and higher yielding</b>, but ⚠ <b>the glycans are not human</b>, which matters if the protein is a therapeutic. <b>S2</b> offers a third way — a <b>stable line</b> built in about three weeks, so no virus is made again.</p>
+<p class="zh2">两个方向都比，才不是背了一个位置。</p>
+
+<p class="wmove">㉙ 哺乳动物细胞是唯一给完整人源产物的，而瞬时和稳定回答的是两个问题 <span>CHO · HEK293 · transient versus stable</span></p>
+<p class="en">Only mammalian cells give correct folding, correct disulfide pairing and <b>complex glycosylation</b>. <b>HEK293</b> is the research line and <b>CHO</b> the production line. ⚠ <b>Transient</b> gives material in under a week but varies between batches; <b>stable</b> takes weeks to build and then varies hardly at all. So the deciding question is <b>how many times I will make this protein</b>.</p>
+<p class="zh2">不是「这一次要多少」。</p>
+
+<p class="wmove">㉚ 定向进化的脊梁：蛋白和编码它的基因必须物理连在一起 ⭐ Hudeček <span>genotype–phenotype linkage</span></p>
+<p class="en">A protein <b>cannot be amplified and cannot be sequenced</b>, so the winner is lost without its gene. <b>Phage display</b> links them in a particle: ⚠ <b>pIII at three to five copies allows monovalent display</b>, which is required for true affinity, while <b>pVIII at about 2700 copies</b> selects weak binders that win by numbers. <b>Ribosome display</b> omits the stop codon <span class="syn">(also called termination codon, nonsense codon)</span>; <b>mRNA display</b> uses <b>puromycin</b>. Yeast display I have already described.</p>
+<p class="zh2">多价会把亲和力测虚 —— Kd 要在单价上读。</p>
+
+<p class="wmove">㉛ 筛选还是选择，决定了你的库能有多大 <span>screening versus selection · library size</span></p>
+<p class="en">In a <b>screen</b> I test every variant; in a <b>selection</b> I test nothing, and the pressure does the work. Synthesis gives about <b>ten to the eighteen</b> molecules, but getting into <b>cells drops it to ten to the six or eight</b>; <b>in vitro display returns to ten to the thirteen</b>. ⚠ I must screen <b>three times the library size</b> for coverage, because sampling is with replacement.</p>
+<p class="zh2">中间那个悬崖，整个是「细胞」两个字。</p>
+
+<p class="wmove">㉜ 怎么建库，取决于你已经知道多少 ⭐ Lipovová ⭐ Martínek <span>error-prone PCR · DNA shuffling</span></p>
+<p class="en">If I know which residues, that is <b>site-directed mutagenesis</b>; if I know the positions but not the amino acids, <b>saturation mutagenesis</b>; if I want mutations but not where, <b>error-prone PCR</b>, which needs <b>Taq</b> and <b>never a proofreading polymerase</b>, biased with <b>manganese</b> and unbalanced dNTPs to give <b>one to five mutations per gene</b>. ⚠ <b>The library is never unbiased.</b> <b>DNA shuffling</b> instead recombines homologous genes with <b>DNase I</b> and a primerless PCR. <b>De novo design</b> starts from nothing at all.</p>
+<p class="zh2">太少全是野生型，太多全是死的。</p>
+
+<p class="wmove">㉝ 无细胞合成的所有优点其实是同一条：没有活细胞 <span>cell-free protein synthesis</span></p>
+<p class="en">Translation runs in a <b>tube</b>, from a crude extract (<b>top-down</b>) or a reconstituted <b>PURE</b> system (<b>bottom-up</b>). Because no cell is alive, it makes <b>toxic products</b>, it accepts a <b>linear PCR product</b> directly as template, and it is the <b>fastest of all, about one day</b>. The costs are <b>low yield, high price and unsolved scale-up</b>.</p>
+<p class="zh2">三件套：核糖体 · 氨基酸连同 tRNA 和合成酶 · 能量再生。</p>
+
+<p class="wmove">㉞ 改写密码：先说自己在答哪一个问题 <span>orthogonal pair · amber suppression · flexizyme</span></p>
+<p class="en">There are two independent questions: <b>how the monomer gets onto the tRNA</b>, and <b>which codon points to it</b>. The heavy route evolves an <b>orthogonal synthetase and tRNA pair</b> for every new monomer; the shortcut is a <b>flexizyme</b>, a ribozyme that charges tRNA by reading only an <b>activating group</b> and the <b>3-prime CCA</b>, so the synthetase question never arises. <b>Amber suppression</b> answers the second question, using <b>TAG</b>, the least-used codon in E. coli.</p>
+<p class="zh2">2026-09-01 丢掉的就是这一问 —— 他要的是 flexizyme。</p>
+
+<p class="wmove">陷阱问法</p>
+<ul class="wdef">
+<li><b>"How do you neutralise a His-tag?"</b> — Imidazole, which competes for the nickel. A protease removes the tag, which is a different question. · 洗脱层答咪唑，移除层才答蛋白酶。</li>
+<li><b>"It is a eukaryote, so glycosylation is solved?"</b> — No. Yeast, insect and mammalian glycans are different glycans, and only mammalian cells give the human complex type. · 「会糖基化」不是答案。</li>
+<li><b>"My protein has disulfide bonds, so I need a eukaryotic host?"</b> — No. I stay in E. coli and use Origami or SHuffle, or the periplasm. · 二硫键有阶梯。</li>
+<li><b>"You added IPTG to a pET plasmid and got nothing."</b> — The strain has no DE3 cassette, so the host never makes T7 RNA polymerase. · 宿主里没有那个盒子。</li>
+<li><b>"Why are the white colonies still wrong?"</b> — Blue-white screening only shows that lacZ-alpha was interrupted; it says nothing about orientation or sequence. · 白色只说明插进去了。</li>
+<li><b>"Your baculovirus titre is high but expression is falling."</b> — That is the passage effect: viruses that have lost the insert replicate faster and take over. · 用 P1 或 P2 表达。</li>
+<li><b>"You selected for binding and got a poor enzyme."</b> — You get what you select for; display selects binding, so it enriches product inhibition. Catalysts need compartmentalisation in droplets. · 选什么得什么。</li>
+</ul>
+
+<p class="wmove">定义</p>
+<ul class="wdef">
+<li><b>recombinant</b> — DNA joined together outside the organism · 重组</li>
+<li><b>heterologous expression</b> — expressing a gene in a species it does not come from · 异源表达</li>
+<li><b>type IIS enzyme</b> — a restriction enzyme that cuts outside its own recognition site, such as BsaI · IIS 型限制酶</li>
+<li><b>domestication</b> — removing internal recognition sites from a part by silent mutation · 驯化</li>
+<li><b>inclusion body</b> — an aggregate of misfolded recombinant protein in the cytoplasm · 包涵体</li>
+<li><b>solubility tag</b> — a highly soluble fusion partner such as SUMO or MBP that keeps the product soluble · 可溶性标签</li>
+<li><b>IMAC</b> — immobilised metal affinity chromatography, the mode a His-tag binds on Ni-NTA · 固定化金属亲和层析</li>
+<li><b>specific activity</b> — units of enzyme activity per milligram of total protein · 比活</li>
+<li><b>baculovirus</b> — the insect-cell expression vector; a large circular double-stranded DNA virus that does not replicate in vertebrates · 杆状病毒</li>
+<li><b>bacmid</b> — a baculovirus genome maintained as a plasmid in E. coli · 杆粒</li>
+<li><b>multiplicity of infection</b> — the ratio of infectious virus particles to cells at infection · 感染复数</li>
+<li><b>passage effect</b> — loss of the gene of interest from a baculovirus stock over successive amplifications · 代次效应</li>
+<li><b>directed evolution</b> — rounds of screening or selection separated by further diversification · 定向进化</li>
+<li><b>screen versus selection</b> — in a screen every variant is tested; in a selection only survivors remain · 筛选与选择</li>
+<li><b>error-prone PCR</b> — amplification under conditions that lower fidelity, giving one to five mutations per gene · 易错 PCR</li>
+<li><b>DNA shuffling</b> — fragmenting homologous genes with DNase I and reassembling them into chimaeras by primerless PCR · 基因重排</li>
+<li><b>orthogonal pair</b> — a synthetase and tRNA that work only with each other and not with the host's · 正交对</li>
+<li><b>amber suppression</b> — reading the stop codon<span class="syn">（= stop codon = termination codon = nonsense codon）</span> TAG as an amino acid instead of a stop · 琥珀抑制</li>
+<li><b>flexizyme</b> — an artificial ribozyme that charges any tRNA with almost any activated monomer · 柔性酶</li>
+</ul>
+</details>
+</article>
+
 <article id="t-lab">
 <h3>Lab techniques</h3>
 <p class="zh">实验技术 34 题 · <b>答案都是你自己写过的，这里压成一句一条</b></p>
@@ -5211,7 +5458,7 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
     var cnt = {main:0, wide:0};
     var ps = arts[ua].querySelectorAll('p.en');
     for (var up = 0; up < ps.length; up++){
-      var lab = (arts[ua].id === 't-lab' || arts[ua].id === 't-micro');
+      var lab = (arts[ua].id === 't-lab' || arts[ua].id === 't-micro' || arts[ua].id === 't-pesb');
       var p = ps[up], cat = lab ? 'lab' : ((p.closest && p.closest('details.wide')) ? 'wide' : 'main');
       var key = arts[ua].id + ':' + cat + ':' + (cnt[cat]++);
       p.setAttribute('data-rk', key);
@@ -5448,7 +5695,7 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
     var m = stat('main'), w = stat('wide'), l = stat('lab');
     side.innerHTML = '<div class="rs-h">背诵进度</div>'
       + bar('生化 · 主路线', m) + bar('生化 · 广度', w)
-      + (l.tot ? bar('实验技术与微生物', l) : '')
+      + (l.tot ? bar('PESB · 实验技术 · 微生物', l) : '')
       + '<label class="rs-tg"><input type="checkbox"' + (on ? ' checked' : '') + '> 背诵进度模式（背过的变灰，⭐ 不熟的标黄）</label>'
       + '<button class="rs-shuf">🔀 Shuffle 复习背过的</button>'
       + '<button class="rs-min" title="收起">–</button>';
