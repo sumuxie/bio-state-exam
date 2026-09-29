@@ -8972,6 +8972,7 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
       row.innerHTML = '<button data-a="follow">🔊 跟读</button>'
         + '<button data-a="hide">只看标题</button>'
         + '<button data-a="rec" class="rc-ok">🎙 背诵</button>'
+        + '<button data-a="ask">📋 问老师</button>'
         + '<button data-a="star">' + ((RS.items[u.key] && RS.items[u.key].star) ? '⭐ 不熟' : '☆ 不熟') + '</button>'
         + '<span class="done"></span>';
       box.appendChild(row);
@@ -9009,6 +9010,9 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
       row.querySelector('[data-a=star]').onclick = function(){
         this.textContent = toggleStar(u.key) ? '⭐ 不熟' : '☆ 不熟';
       };
+      row.querySelector('[data-a=ask]').onclick = function(){
+        copyText(this, askText(u), '📋 问老师');
+      };
       u.sayRow = row; u.sayCnt = cnt;
     })(si);
   }
@@ -9042,10 +9046,12 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
       + '<label class="rs-tg"><input type="checkbox"' + (on ? ' checked' : '') + '> 背诵进度模式（背过的变灰，⭐ 不熟的标黄）</label>'
       + '<button class="rs-shuf">🔀 Shuffle 复习背过的</button>'
       + '<button class="rs-copy">📋 复制进度给老师</button>'
+      + '<button class="rs-ask">📋 今天说的全部给老师</button>'
       + '<button class="rs-min" title="收起">–</button>';
     side.querySelector('input').onchange = function(){ RS.mode = this.checked ? 'ms' : 'off'; rSave(RS); paintPanel(); };
     side.querySelector('.rs-shuf').onclick = shuffleOpen;
     side.querySelector('.rs-copy').onclick = function(){ copyProgress(this); };
+    side.querySelector('.rs-ask').onclick = function(){ copyText(this, askAllText(), '📋 今天说的全部给老师'); };
     side.querySelector('.rs-min').onclick = function(){ side.classList.toggle('mini'); };
   }
 
@@ -9107,6 +9113,77 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
     L.push('口径：背过 ＝ 点了「✓ 背过了」或录过一次音（' + recTot + ' 条转写都还留着）。⭐ 只是标记，不是进度。');
     return L.join('\n');
   }
+  /* ---- 问老师 ----
+     2026-09-29 她：「能不能把我的 app 和你直接连起来。然后我背了之后你立马能看见我说了啥
+     然后给我意见。和我互动。」⚠ 页面是静态的、没有服务器，所以最短的路是：
+     把「原文 ＋ 她出声说的 ＋ 页面自己算出漏了哪些加粗词」一次拷走，她粘到对话里。
+     ⚠ 一定要带原文，否则老师那边得回来翻页面才能逐词对比。 */
+  function refText(p){
+    var c = p.cloneNode(true), i;
+    var sy = c.querySelectorAll('span.syn');
+    for (i = 0; i < sy.length; i++) sy[i].parentNode.removeChild(sy[i]);
+    var bs = c.querySelectorAll('b');
+    for (i = 0; i < bs.length; i++) bs[i].textContent = '*' + bs[i].textContent + '*';
+    return (c.textContent || '').replace(/\s+/g, ' ').trim();
+  }
+  function missedOf(p, text){
+    var said = (text || '').toLowerCase();
+    return keyPhrases(p).filter(function(k){ return !hitOf(k, said); });
+  }
+  function askText(u){
+    var art = u.p.closest('article'), L = [];
+    var said = saidList(u.key), last = said.length ? said[said.length - 1] : null;
+    L.push('【问老师】' + topicName(art) + ' · ' + (u.cat === 'wide' ? '广度' : u.cat === 'lab' ? '实验/微生物' : '正文'));
+    L.push('');
+    L.push('■ 原文（*…* 是加粗的要点）');
+    L.push(refText(u.p));
+    L.push('');
+    if (last){
+      L.push('■ 我出声说的（' + last.d + '，这一段第 ' + said.length + ' 次）');
+      L.push(last.t);
+      L.push('');
+      var ms = missedOf(u.p, last.t);
+      L.push('■ 页面自动比对 · 漏掉的要点：' + (ms.length ? ms.join(' · ') : '（一个没漏）'));
+    } else {
+      L.push('■ 这一段还没录过音 —— 先点 🎙 背诵 说一遍，再点「问老师」。');
+    }
+    L.push('');
+    L.push('请逐词对比：我说错了什么、漏了什么、哪个英文词卡住了。');
+    return L.join('\n');
+  }
+  function askAllText(){
+    var t = today(), all = sLoad(), L = ['【今天出声背的全部 · ' + t + '】', ''], n = 0;
+    UNITS.forEach(function(u){
+      var rows = (all[u.key] || []).filter(function(x){ return x.d === t; });
+      if (!rows.length) return;
+      n++;
+      L.push('── ' + n + ' · ' + topicName(u.p.closest('article')));
+      L.push('原文：' + refText(u.p));
+      rows.forEach(function(x){ L.push('我说：' + x.t); });
+      var ms = missedOf(u.p, rows[rows.length - 1].t);
+      L.push('漏掉：' + (ms.length ? ms.join(' · ') : '（一个没漏）'));
+      L.push('');
+    });
+    if (!n) L.push('（今天还没录过音。点 🎙 背诵 出声说一段，这个按钮才有东西。）');
+    else L.push('请逐条对比：哪些说错了、哪些漏了、哪些英文说不出来。先挑最致命的三条说。');
+    return L.join('\n');
+  }
+  function copyText(btn, txt, label){
+    function done(ok){
+      btn.textContent = ok ? '✓ 复制好了，粘给老师' : '复制不了，下面是全文';
+      if (!ok){
+        var ta = document.createElement('textarea');
+        ta.className = 'rs-out'; ta.value = txt; ta.rows = 12;
+        btn.parentNode.insertBefore(ta, btn.nextSibling); ta.select();
+      }
+      setTimeout(function(){ btn.textContent = label; }, 4000);
+    }
+    try {
+      navigator.clipboard.writeText(txt).then(function(){ done(true); }, function(){ done(false); });
+    } catch(e){ done(false); }
+  }
+  window.bonesAsk = askAllText;
+
   function copyProgress(btn){
     var txt = progressText();
     function done(ok){
