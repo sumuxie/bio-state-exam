@@ -253,6 +253,18 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
   .lab{padding-top:0}
   .en{font-size:16px}
 }
+
+/* 实时老师（coach.py 在本机 8787） */
+.coach{margin:8px 0 2px;padding:9px 11px;border-left:3px solid #b26b2e;background:#fdf6ee;
+  border-radius:0 6px 6px 0;font-size:14px;line-height:1.75}
+.coach b{color:#8a4b12}
+.coach .ch-h{font-size:12px;color:#8a7a68;margin-bottom:4px}
+.coach.wait{color:#8a7a68;font-style:italic;background:#f7f4f0;border-left-color:#ccc}
+.coach.bad{background:#fdeeee;border-left-color:#c33;color:#7a2222}
+.rs-co{display:flex;gap:6px;align-items:center;margin-top:6px;font-size:12px;flex-wrap:wrap}
+.rs-co select{font-size:12px;padding:2px 4px}
+.rs-dot{width:8px;height:8px;border-radius:50%;background:#c33;display:inline-block}
+.rs-dot.on{background:#2a8a3a}
 </style>
 </head>
 <body>
@@ -8973,6 +8985,7 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
         + '<button data-a="hide">只看标题</button>'
         + '<button data-a="rec" class="rc-ok">🎙 背诵</button>'
         + '<button data-a="ask">📋 问老师</button>'
+        + '<button data-a="drill">🔥 追问我</button>'
         + '<button data-a="star">' + ((RS.items[u.key] && RS.items[u.key].star) ? '⭐ 不熟' : '☆ 不熟') + '</button>'
         + '<span class="done"></span>';
       box.appendChild(row);
@@ -9004,6 +9017,7 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
           if ((txt || '').trim()) markDone(u.key);
           hidden = false; setMode(i, 'read', row); row.querySelector('[data-a=hide]').textContent = '只看标题';
           cnt(); if (!log.hidden) log.innerHTML = saidHtml(u.key);
+          if (CO.on && (txt || '').trim()) coachAsk(box, u, txt, 'check');
         });
         if (rec) btn.textContent = '■ 停';
       };
@@ -9012,6 +9026,10 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
       };
       row.querySelector('[data-a=ask]').onclick = function(){
         copyText(this, askText(u), '📋 问老师');
+      };
+      row.querySelector('[data-a=drill]').onclick = function(){
+        var said = saidList(u.key);
+        coachAsk(box, u, said.length ? said[said.length-1].t : '', 'followup');
       };
       u.sayRow = row; u.sayCnt = cnt;
     })(si);
@@ -9047,11 +9065,23 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
       + '<button class="rs-shuf">🔀 Shuffle 复习背过的</button>'
       + '<button class="rs-copy">📋 复制进度给老师</button>'
       + '<button class="rs-ask">📋 今天说的全部给老师</button>'
+      + '<div class="rs-co"><span class="rs-dot"></span>'
+      + '<label><input type="checkbox" class="rs-cot"' + (CO.on ? ' checked' : '') + '> 🎧 实时老师</label>'
+      + '<select class="rs-com">'
+      + '<option value="claude-sonnet-5">Sonnet 5 · 快</option>'
+      + '<option value="claude-opus-5">Opus 5 · 准</option>'
+      + '<option value="claude-haiku-4-5-20251001">Haiku</option>'
+      + '</select></div>'
       + '<button class="rs-min" title="收起">–</button>';
     side.querySelector('input').onchange = function(){ RS.mode = this.checked ? 'ms' : 'off'; rSave(RS); paintPanel(); };
     side.querySelector('.rs-shuf').onclick = shuffleOpen;
     side.querySelector('.rs-copy').onclick = function(){ copyProgress(this); };
     side.querySelector('.rs-ask').onclick = function(){ copyText(this, askAllText(), '📋 今天说的全部给老师'); };
+    var cot = side.querySelector('.rs-cot'), com = side.querySelector('.rs-com');
+    com.value = CO.model;
+    cot.onchange = function(){ CO.on = this.checked; coSave(); if (CO.on) coPing(); };
+    com.onchange = function(){ CO.model = this.value; coSave(); };
+    if (CO.on) coPing();
     side.querySelector('.rs-min').onclick = function(){ side.classList.toggle('mini'); };
   }
 
@@ -9183,6 +9213,63 @@ To name an organism I sequence the <b>16S ribosomal RNA gene</b>, the molecule <
     } catch(e){ done(false); }
   }
   window.bonesAsk = askAllText;
+
+  /* ---- 实时老师 ----
+     2026-09-29 她：「我要的是即时反馈啊」「如果能自动最好」。
+     做法：本机跑 tools/coach.py（一个几十行的 http 服务），它调 VSCode 扩展自带的
+     claude.exe -p，把「原文 ＋ 她出声说的 ＋ 漏掉的要点」送进去，14–21 秒回一段中文。
+     ⚠ 用她现有的 Claude Code 登录，不需要 API key，但**烧额度**。
+     ⚠ 实测：Haiku 又慢又漏（76 秒还漏掉致命错），默认 Sonnet 5。
+     ⚠ 实测过一个坑：模型会把「G C 变尿酸」当成简化说法放过 —— coach.py 的提示词里
+     专门加了「任何字母列举必须逐个摊开核对」才抓住。别去掉那一段。 */
+  var COKEY = 'onepage.coach.v1';
+  var CO = {on:false, model:'claude-sonnet-5', url:'http://localhost:8787/coach'};
+  try { var _c = JSON.parse(localStorage.getItem(COKEY)); if (_c){ CO.on = !!_c.on; CO.model = _c.model || CO.model; } } catch(e){}
+  function coSave(){ try{ localStorage.setItem(COKEY, JSON.stringify({on:CO.on, model:CO.model})); }catch(e){} }
+  function coDot(ok){
+    var d = document.querySelector('.rs-dot');
+    if (d){ d.className = 'rs-dot' + (ok ? ' on' : ''); d.title = ok ? '老师在线' : '没连上 —— 双击 tools/coach.bat'; }
+  }
+  function coPing(){
+    fetch(CO.url.replace('/coach',''), {method:'GET'})
+      .then(function(r){ return r.json(); })
+      .then(function(j){ coDot(!!(j && j.claude)); }, function(){ coDot(false); });
+  }
+  function fmt(t){
+    return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+      .replace(/\n/g, '<br>');
+  }
+  function coachAsk(box, u, said, mode){
+    var art = u.p.closest('article');
+    var old = box.querySelector('.coach'); if (old) old.parentNode.removeChild(old);
+    var d = document.createElement('div');
+    d.className = 'coach wait';
+    d.textContent = mode === 'followup' ? '考官在想追问……' : '老师在逐词看你刚说的……';
+    box.appendChild(d);
+    var t0 = Date.now();
+    fetch(CO.url, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        mode: mode, model: CO.model,
+        topic: topicName(art) + ' · ' + (u.cat === 'wide' ? '广度' : '正文'),
+        ref: refText(u.p), said: said || '',
+        missed: missedOf(u.p, said).join(' · ')
+      })
+    }).then(function(r){ return r.json(); }).then(function(j){
+      var secs = ((Date.now() - t0) / 1000).toFixed(0);
+      d.className = 'coach' + (j && j.ok ? '' : ' bad');
+      d.innerHTML = '<div class="ch-h">' + (mode === 'followup' ? '考官追问' : '实时老师')
+        + ' · ' + CO.model.replace(/-\d.*$/, '') + ' · ' + secs + ' 秒</div>'
+        + fmt((j && j.text) || '没回话');
+      coDot(true);
+    }, function(){
+      d.className = 'coach bad';
+      d.innerHTML = '<div class="ch-h">连不上本机老师</div>先双击 <b>oralexam/tools/coach.bat</b>，'
+        + '那个黑窗口别关，然后再点一次。';
+      coDot(false);
+    });
+  }
 
   function copyProgress(btn){
     var txt = progressText();
