@@ -402,6 +402,18 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="en">A <b>molecular dynamics</b> simulation calculates the movement of a protein in water using exactly these bonds and forces; it can propose a hypothesis, but an experiment has to test it.</p>
 <p class="zh2">「模拟提出假设，实验证明它」。</p>
 
+<p class="wmove">⑬ 高盐把蛋白析出来，这叫盐析 <span>salting out</span></p>
+<p class="en">The textbook says the solubility of a globular protein depends on <b>ionic strength</b>, and it names <b>salting in</b> and <b>salting out</b>. Salting out takes away the water the protein needs, so the protein leaves the solution without unfolding.</p>
+<p class="zh2">一条调 pH，一条调盐，两条别混。</p>
+
+<p class="wmove">⑭ 书外 · general：硫酸铵是标准的盐析试剂，沉下来的蛋白溶回去仍有活性 <span>ammonium sulfate precipitation</span></p>
+<p class="en"><b>Ammonium sulfate</b> is the usual reagent, because it is very soluble and does not denature the protein. The precipitate dissolves again with its activity intact, and that reversibility is the difference from <b>denaturation</b>. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">盐析只是把它挤出来，没有解折叠。</p>
+
+<p class="wmove">⑮ 书外 · general：伴侣蛋白是分子伴侣里带一个封闭腔的那一类 <span>chaperonin · GroEL–GroES</span></p>
+<p class="en">The textbook names <b>GroEL and GroES</b> among the chaperones, and generally that pair is called a <b>chaperonin</b>. It is a barrel with a cap, and it encloses one chain in a chamber so that the chain folds without meeting another. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">chaperone 是上位词，chaperonin 是其中一类。</p>
+
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
 <li><b>"Is the hydrophobic effect a bond?"</b> — No, it is an increase in the entropy of water. · 不是键。</li>
@@ -676,6 +688,38 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="en"><b>Ribozymes</b>, catalytic RNAs, include the <b>peptidyl transferase</b> of the ribosome, and <b>catalytic antibodies</b>, raised against a <b>transition-state analogue</b>, can catalyse the matching reaction. That is outside my textbook, so I give it as general knowledge.</p>
 <p class="zh2">后者直接证明「结合过渡态 = 催化」。</p>
 
+<p class="wmove">⑬ 双倒数作图把米氏曲线拉成直线，两个截距各给一个常数 ⭐ Hudeček <span>Lineweaver–Burk plot</span></p>
+<p class="en">Taking reciprocals of both sides of the Michaelis–Menten equation turns the hyperbola into a <b>straight line</b>, one over v against one over substrate. The <b>vertical intercept is 1/V<sub>max</sub></b>, the <b>horizontal intercept is −1/K<sub>m</sub></b>, and the slope is K<sub>m</sub>/V<sub>max</sub>.</p>
+<p class="zh2">两个截距，两个常数。</p>
+
+<p class="wmove">⑭ 用直线是为了不必测很高的底物浓度 ⭐ Hudeček <span>why linearise</span></p>
+<p class="en">The textbook's reason is practical rather than theoretical. Reading V<sub>max</sub> off the saturation curve needs measurements at very high substrate concentration, which it calls <b>inaccurate and expensive in material</b>, so the line gets both constants from the range you can actually measure.</p>
+<p class="zh2">他要的是「这个数到底怎么量出来的」。</p>
+
+<p class="wmove">⑮ 抑制类型是靠这张图上哪条截距动分开的 <span>telling the types apart</span></p>
+<p class="en">The types of inhibition were defined by <b>kinetics</b> rather than by chemistry, and on this plot each one is a pattern of intercepts. So the useful question about any inhibitor is simply <b>which of the two constants it changes</b>.</p>
+<p class="zh2">先说哪个数变，再画线，比先画线稳。</p>
+
+<p class="wmove">⑯ 分类的第一刀是可逆还是不可逆，不是竞争性还是非竞争性 <span>irreversible inhibition</span></p>
+<p class="en">The first division among inhibitors is <b>irreversible against reversible</b>, because the two are not even described by the same equations. An <b>irreversible inhibitor</b> binds firmly, usually <b>covalently</b>, and modifies a functional group, so the enzyme is permanently inactivated.</p>
+<p class="zh2">第一刀切的是「还下不下得来」。</p>
+
+<p class="wmove">⑰ 不可逆抑制让米氏方程失效，因为有活性的酶的量本身在变 <span>why Michaelis–Menten fails</span></p>
+<p class="en">The Michaelis–Menten equation assumes the <b>total enzyme concentration is constant</b>, and that only the amount in complex changes. An irreversible inhibitor removes enzyme permanently, so the concentration of the active form becomes a function of time and the premise is gone.</p>
+<p class="zh2">这一条把名字上的区别变成模型上的区别。</p>
+
+<p class="wmove">⑱ 书外 · general：自杀性抑制剂先被酶自己活化，再把活性中心封死 <span>suicide inhibitor · mechanism-based</span></p>
+<p class="en">A <b>suicide inhibitor</b>, also called mechanism-based, is a substrate analogue that the enzyme itself converts into a reactive species, which then bonds covalently in the active site. <b>Penicillin</b> acts this way on the bacterial <b>transpeptidase</b> that cross-links the cell wall. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">酶自己把凶器造出来。</p>
+
+<p class="wmove">⑲ 锁和钥匙是旧图景，诱导契合取代了它 <span>lock and key vs induced fit</span></p>
+<p class="en">The older picture was <b>lock and key</b>: the substrate fits the active site as a key fits a lock, so enzyme and substrate are already <b>complementary</b>. The textbook says they need not be, and that the enzyme <b>changes its conformation</b> to adapt on contact.</p>
+<p class="zh2">书明说旧图景已经被取代了。</p>
+
+<p class="wmove">⑳ 酶按催化的反应分六大类，名字通常写着反应和底物 <span>EC classification</span></p>
+<p class="en">There are <b>six classes</b>: <b>oxidoreductases, transferases, hydrolases, lyases, isomerases and ligases</b>. Each enzyme has a systematic name, a recommended name and an <b>EC number</b>, as <b>lactate dehydrogenase, EC 1.1.1.27</b>, systematically L-lactate:NAD⁺ oxidoreductase.</p>
+<p class="zh2">四个数字：大类 · 亚类 · 受体类型 · 顺序号。</p>
+
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
 <li><b>"Does a high k<sub>cat</sub>/K<sub>m</sub> mean tight binding?"</b> — No, it combines binding and turnover. · 不等于结合牢。</li>
@@ -701,6 +745,13 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <li><b>thermostability</b> — resistance of a protein to heat · 热稳定性</li>
 <li><b>transition-state analogue</b> — a stable molecule shaped like the transition state · 过渡态类似物</li>
 <li><b>substrate channelling</b> — passing an intermediate directly from one active site to the next · 底物通道</li>
+<li><b>Lineweaver–Burk plot</b> — one over rate against one over substrate, a straight line · 双倒数图</li>
+<li><b>irreversible inhibition</b> — the inhibitor does not come off, so the enzyme is permanently inactivated · 不可逆抑制</li>
+<li><b>suicide inhibitor</b> — a substrate analogue the enzyme activates, which then destroys that enzyme · 自杀性抑制剂</li>
+<li><b>lock and key</b> — the older picture, in which enzyme and substrate are already complementary · 锁钥模型</li>
+<li><b>EC number</b> — the four-part code identifying the reaction an enzyme catalyses · 酶学委员会编号</li>
+<li><b>lyase</b> — the fourth EC class: breaks a bond without water and without oxidation · 裂合酶</li>
+<li><b>ligase</b> — the sixth EC class: joins two molecules at the cost of ATP · 连接酶</li>
 </ul>
 </details>
 </article>
@@ -2892,6 +2943,22 @@ by writing <b>twelve waters rather than six</b>.
 <p class="en">When ATP falls, <b>AMP</b> rises and activates <b>AMP-activated protein kinase</b>, which switches on catabolic pathways and switches off synthetic ones. That is outside my textbook, so I give it as general knowledge.</p>
 <p class="zh2">主动标「书外」。</p>
 
+<p class="wmove">⑬ 激素在细胞外结合受体，cAMP 在细胞内传话 <span>adenylate cyclase cascade</span></p>
+<p class="en">In the <b>adenylate cyclase cascade</b> the hormone stays outside and binds a receptor on the surface. The level of <b>cyclic AMP</b> then rises inside, and cyclic AMP activates a <b>protein kinase</b> that phosphorylates serine and threonine residues of the target proteins.</p>
+<p class="zh2">激素不进细胞，第二信使替它进去。</p>
+
+<p class="wmove">⑭ 第二信使带来放大效应：一个激素分子改变很多个酶分子 <span>amplification</span></p>
+<p class="en">The textbook states the general point: forming a <b>second messenger</b> produces an <b>amplifying effect</b>. One hormone molecule leads to many molecules of cyclic AMP, and each activated kinase phosphorylates many enzyme molecules.</p>
+<p class="zh2">很小的信号，很大的回答。</p>
+
+<p class="wmove">⑮ 共价修饰是调节已有的酶的标准方式，最常见的是磷酸化 <span>covalent modification</span></p>
+<p class="en">Besides allosteric control, the textbook gives <b>covalent modification</b>: another enzyme changes this enzyme chemically, most often by <b>phosphorylation</b>. A phosphatase takes the group off again, so the switch works in both directions.</p>
+<p class="zh2">别构靠结合，共价修饰靠改化学结构。</p>
+
+<p class="wmove">⑯ 书外 · general：程序性细胞死亡 <span>apoptosis</span></p>
+<p class="en"><b>Apoptosis</b> is programmed cell death: the cell dismantles itself in an ordered way, without inflammation, and neighbouring cells take up the fragments. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">有程序，而且不引起炎症。</p>
+
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
 <li><b>"Is the slowest step the only control point?"</b> — No; control is usually shared by several steps. · 控制分摊在几步上。</li>
@@ -2995,6 +3062,194 @@ by writing <b>twelve waters rather than six</b>.
 <li><b>uncoupling protein 1</b> — a protein in brown fat that lets protons return without making ATP · 解偶联蛋白 1</li>
 <li><b>diabetic ketoacidosis</b> — acidic blood caused by too many ketone bodies when insulin is missing · 糖尿病酮症酸中毒</li>
 <li><b>blood–brain barrier</b> — the tight wall of brain capillaries that keeps many molecules out · 血脑屏障</li>
+</ul>
+</details>
+</article>
+
+<article id="t-mem">
+<h3>Membranes and transport</h3>
+<p class="zh">卡 x-mem · <b>先说「为什么必须半透」，四条过膜的路就自己出来了</b></p>
+<ol class="steps">
+<li><b class="t">膜是什么做的 — 四个数都是书印的</b><span class="d">
+<b>蛋白 ＋ 脂</b>，重量比 <b>1:4 到 3:1</b>；糖 <b>0,5–10%</b>，一定挂在糖蛋白或糖脂上；双层厚 <b>3,5–4,0 nm</b>。
+⚠ <b>「生物膜」不是一种材料，是一种做法</b> —— 脂双层到处一样，
+各张膜真正的差别在<b>上面插了多少蛋白、插了哪些蛋白</b>（<span class="jump">p198</span>）。
+</span></li>
+<li><b class="t">为什么会自己排成双层 — 不是脂互相吸引</b><span class="d">
+是<b>水把它们挤到一起</b>：<b>疏水效应</b>，而<b>书明说它不是一种键</b>（完整的一段在蛋白质的键那一题，这里只借用）。
+<b>一条尾巴的两亲分子堆成球，两条尾巴的堆成片</b> —— 磷脂有两条尾巴，所以它排出来的是片。
+片一封口，就是<b>脂质体</b>。
+</span></li>
+<li><b class="t">流动镶嵌模型 ＋ 膜蛋白两类 ＋ 胆固醇</b><span class="d">
+膜的组分一直在动：蛋白能<b>转</b>、能在膜平面里<b>横着走</b>，<b>但蛋白不翻转</b>（脂会）。
+<b>外周蛋白</b>只碰极性头，<b>盐就能洗下来</b>；<b>整合蛋白</b>扎进尾巴堆里，<b>要去垢剂才下来</b>。
+<b>胆固醇插在磷脂之间缓冲流动性</b>（合成那条在胆固醇那一题）。
+书还按功能分了一次：<b>结构蛋白</b>，加上<b>运输 · 催化 · 受体</b>三类动态蛋白。
+</span></li>
+<li><b class="t">为什么必须「半透」— 两个极端都不行</b><span class="d">
+<b>全不透</b> → 细胞被完全隔离，营养进不来、产物出不去；<b>全透</b> → 什么都能在任意两处之间乱跑，等于没隔开。
+⚠ <b>两个极端自然都不允许，所以膜是选择性通透的。</b>
+这段论证的好处是它自己就回答了「为什么需要运输蛋白」—— <b>不是细胞想控制，是物理上只剩这一条路</b>。
+</span></li>
+<li><b class="t">被动 · 简单扩散 — 顺梯度、不花能量、不要载体</b><span class="d">
+书给了三条路：<b>直接溶进脂双层 · 从偶发的孔里钻过 · 走整合蛋白做成的通道</b>。
+<b>能这样自己过去的只有三样：脂溶性物质、水、一部分离子。</b>
+⚠ 反过来说就是下面几条路存在的理由：<b>带电的、极性大的、分子大的，全都过不去</b>。
+⚠ 水还另有一条蛋白通道：<b>水通道蛋白</b>，书的年表里就印着（结构 1999）。
+</span></li>
+<li><b class="t">被动 · 易化扩散 — 要蛋白，但不要能量</b><span class="d">
+<b>载体</b>通常是整合蛋白，有<b>专一结合位点</b>。关键三条：<b>专一 · 可饱和 · 可抑制</b>，
+⚠ <b>所以书自己说载体「行为像一个酶」，可以用酶动力学的方程描述</b> ——
+可饱和就意味着有一个半饱和浓度，而半饱和浓度就是 <b>K<sub>m</sub></b> 的定义。
+例子：<b>GLUT</b> 运葡萄糖，只顺梯度走。
+</span></li>
+<li><b class="t">主动运输 — 初级花 ATP，次级花别人建好的梯度</b><span class="d">
+<b>永远逆着浓度梯度走</b>。初级：书叫它们 <b>ATPase 泵</b>，标准例子是<b>钠钾 ATP 酶</b> ——
+一个 ATP 送 <b>3 个 Na⁺ 出、2 个 K⁺ 进</b>，⚠ <b>个数不相等，所以这个泵是生电的</b>。
+次级：<b>SGLT</b> 让 Na⁺ 顺梯度下落，付的就是葡萄糖逆梯度上行的账。
+⚠ <b>「次级」不是「次要」，是用的二手能量 —— 最后还是 ATP 付的账，只是隔了一手。</b>
+三个方向词：<b>uniport 一个 · symport 同向 · antiport 反向</b>。
+</span></li>
+<li><b class="t">太大的走大块运输 — 胞吞与胞吐</b><span class="d">
+大分子和整颗粒子过不了双层，只能<b>把膜局部重新搭一遍</b>：<b>进来是 endocytosis，出去是 exocytosis</b>；
+显微镜下看得见的两种是 <b>pinocytosis</b> 和 <b>phagocytosis</b>。
+分泌的蛋白走的是那条现成的路：<b>信号肽 → 内质网 → 高尔基体 → 分泌囊泡 → 胞吐</b>。
+还有一类是<b>基团转位</b>：载体本身带酶活性，<b>运的时候顺手把底物磷酸化</b>，于是它再也出不去了。
+</span></li>
+<li><b class="t">膜对离子不透 —— 所以梯度才立得住</b><span class="d">
+质子<b>带电</b>，双层中间<b>明显非极性</b>，<b>它自己过不去</b>。
+所以泵出去的就留在那儿，回来只有一条路：<b>ATP 合成酶</b>。
+⚠ 同一条道理撑起<b>区室化</b>：每个区室能维持自己的 <b>pH 和离子浓度</b>，
+而<b>书说这种非平衡的离子分布本身就是一种能量储存形式</b>（<span class="jump">p017</span>）——
+<b>「细胞把能量存在 ATP 里」只讲了一半，另一半存在两个房间的差里。</b>
+</span></li>
+</ol>
+<div class="say"><p class="h">Say this</p><p class="en">
+A biological membrane is a <b>lipid bilayer</b> with proteins in it, <b>three and a half to four nanometres</b> thick.
+Nothing holds the lipids to each other: the <b>hydrophobic effect</b> arranges them,
+and a phospholipid with <b>two tails</b> packs into a sheet rather than into a droplet.
+In the <b>fluid mosaic model</b> lipids and proteins keep moving in the plane of the membrane.
+<b>Peripheral proteins</b> touch only the polar heads, <b>integral proteins</b> are sunk among the tails,
+and <b>cholesterol</b> buffers the fluidity.
+⚠ The textbook argues from both extremes: an impermeable membrane would isolate the cell completely,
+a freely permeable one would separate nothing, so membranes are <b>selectively permeable</b>.
+There are four routes across. <b>Simple diffusion</b> needs no protein and carries lipophilic substances, water and some ions.
+<b>Facilitated diffusion</b> needs a channel or a carrier, and it is <b>specific, saturable and inhibitable</b>,
+so the carrier behaves like an enzyme.
+<b>Active transport</b> always goes against the gradient: primary transport spends <b>ATP</b>,
+as the <b>sodium-potassium ATPase</b> does, and secondary transport spends a gradient that primary transport built earlier.
+Anything larger needs <b>endocytosis or exocytosis</b>, which rebuild the membrane locally.
+And because the bilayer is <b>impermeable to ions</b>, a proton gradient stays where it is pumped,
+which is what the respiratory chain <span class="syn">(also called electron transport chain)</span> and the compartments of metabolism both rest on.
+</p><p class="t">约 55 秒 · 「两个极端都不行，所以必须选择性通透」是这一段的因果</p></div>
+
+<details class="wide"><summary>广度 · Say this 说完还有时间，接着往下说 · 看标题就能背</summary>
+<p class="wmove">① 磷脂两亲，所以双层是自己排出来的 <span>amphipathic · self-assembly</span></p>
+<p class="en">A <b>phospholipid</b> is <b>amphipathic</b>: one polar head and two nonpolar tails. The textbook says the interactions between heads and between tails are <b>exclusively noncovalent</b>, so the bilayer forms by itself.</p>
+<p class="zh2">没有东西粘住它，是水不肯让它散开。</p>
+
+<p class="wmove">② 书外 · general：一条尾巴堆成胶束，两条尾巴堆成双层，封闭的双层小囊是脂质体 <span>micelle · bilayer · liposome</span></p>
+<p class="en">A single-tailed amphipathic molecule, such as a <b>soap</b>, packs into a <b>micelle</b> with the tails inside. A two-tailed one packs into a <b>bilayer</b>, and a closed bilayer vesicle is a <b>liposome</b>. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">形状决定堆法：球还是片。</p>
+
+<p class="wmove">③ 流动镶嵌模型：脂和蛋白都在膜平面里移动，但蛋白不翻转 <span>fluid mosaic model</span></p>
+<p class="en">In the <b>fluid mosaic model</b> the components of the membrane are constantly moving: a protein can <b>rotate</b> and travel <b>sideways</b> in the plane. It does <b>not flip</b> across the membrane, although lipids do.</p>
+<p class="zh2">脂会翻转，蛋白不会。</p>
+
+<p class="wmove">④ 外周蛋白用盐就能洗下来，整合蛋白要去垢剂 <span>peripheral · integral proteins</span></p>
+<p class="en"><b>Peripheral proteins</b> lie on the surface and interact only with the polar heads, and the textbook says a relatively simple procedure releases them. <b>Integral proteins</b> are held among the tails by hydrophobic interaction, so a <b>detergent</b> is needed.</p>
+<p class="zh2">判据是一个实验事实，不是一个定义。</p>
+
+<p class="wmove">⑤ 膜蛋白按功能分：结构蛋白，加上运输、催化、受体三类 <span>membrane protein functions</span></p>
+<p class="en">The textbook divides membrane proteins into <b>structural</b> and <b>dynamic</b> ones. It says three dynamic kinds are present in every type of cell: <b>transport proteins, catalytic proteins and receptor proteins</b>.</p>
+<p class="zh2">三类一报，运输、呼吸链<span class="syn">（= respiratory chain = electron transport chain）</span>、激素三道题的门都开了。</p>
+
+<p class="wmove">⑥ 胆固醇插在磷脂之间，使膜既不过软也不过硬 <span>cholesterol · fluidity</span></p>
+<p class="en"><b>Cholesterol</b> sits between the phospholipids and <b>buffers</b> the fluidity in both directions: it keeps the membrane from becoming too fluid when warm, and from becoming too rigid when cold.</p>
+<p class="zh2">是缓冲，不是单向地让膜变硬。</p>
+
+<p class="wmove">⑦ 膜必须是选择性通透的，两个极端自然都不允许 <span>selectively permeable</span></p>
+<p class="en">If membranes were <b>impermeable</b>, nutrition could not enter and products could not leave. If they were <b>freely permeable</b>, any substance could move between any two regions. Neither extreme is allowed in nature.</p>
+<p class="zh2">这段论证自己回答了「为什么需要运输蛋白」。</p>
+
+<p class="wmove">⑧ 简单扩散有三条路：直接溶进脂里、偶发的孔、整合蛋白的通道 <span>simple diffusion</span></p>
+<p class="en"><b>Simple diffusion</b> follows the gradient and spends no energy. The textbook gives three routes: straight through the bilayer, through random pores, or through a channel made by an <b>integral protein</b>.</p>
+<p class="zh2">能自己过去的只有三样：脂溶性、水、一部分离子。</p>
+
+<p class="wmove">⑨ 水有自己的通道蛋白 <span>aquaporin</span></p>
+<p class="en">Water has a protein route as well. An <b>aquaporin</b> is an integral membrane protein whose narrow pore passes water very fast while <b>keeping ions and protons out</b>. The textbook's timeline dates its structure to <b>1999</b>.</p>
+<p class="zh2">同一张年表上还有钾通道的空间结构。</p>
+
+<p class="wmove">⑩ 易化扩散的载体专一、可饱和、可抑制，所以可以用酶动力学描述 <span>facilitated diffusion · carrier</span></p>
+<p class="en">A carrier has a <b>specific binding site</b>, and the textbook says the process is <b>specific, saturable and inhibitable</b>. It adds that the carrier behaves like an enzyme and can be described by the <b>equations of enzyme kinetics</b>.</p>
+<p class="zh2">可饱和 → 有半饱和浓度 → 那就是 K<sub>m</sub><span class="syn">（= Km = Michaelis constant）</span>。</p>
+
+<p class="wmove">⑪ 离子的专门载体分两种：离子载体不是蛋白，离子通道是蛋白 <span>ionophore · ion channel</span></p>
+<p class="en">For ions the textbook names two kinds of specialised carrier. An <b>ionophore</b> is <b>not a protein</b>, while an <b>ion channel</b> is a membrane protein.</p>
+<p class="zh2">一个是小分子，一个是蛋白。</p>
+
+<p class="wmove">⑫ 初级主动运输烧 ATP，标准例子是钠钾 ATP 酶 <span>sodium-potassium ATPase</span></p>
+<p class="en">The textbook calls primary active transporters <b>ATPase pumps</b> but names none of them. Generally the standard one is the <b>sodium-potassium ATPase</b>: one ATP moves <b>three sodium ions out and two potassium ions in</b>, both against their gradients.</p>
+<p class="zh2">类别是书上的，名字是通用的。</p>
+
+<p class="wmove">⑬ 书外 · general：进出的个数不相等，所以钠钾泵是生电的；乌本苷抑制它 <span>electrogenic · ouabain</span></p>
+<p class="en">Because the counts are unequal, the pump is <b>electrogenic</b>: it builds a difference in charge as well as a difference in concentration. <b>Ouabain</b>, a cardiac glycoside, inhibits it. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">生电 ＝ 同时立起电荷差。</p>
+
+<p class="wmove">⑭ 次级主动运输花的是初级泵先建好的梯度 <span>secondary active transport · SGLT</span></p>
+<p class="en"><b>Secondary active transport</b> spends a concentration gradient of another substance, one that primary transport built earlier. Generally the <b>SGLT</b> carrier is the example: sodium running down its gradient pays for glucose moving up its own.</p>
+<p class="zh2">二手能量，最后还是 ATP 付的账。</p>
+
+<p class="wmove">⑮ 方向有三个词：单向、同向、反向 <span>uniport · symport · antiport</span></p>
+<p class="en">The names for direction are simple. <b>Uniport</b> moves one substance, <b>symport</b> moves two or more the same way, and <b>antiport</b> moves them in opposite directions.</p>
+<p class="zh2">uni 一个 · sym 同向 · anti 反向。</p>
+
+<p class="wmove">⑯ 基团转位：载体本身是酶，运的时候顺手把底物改掉 <span>group translocation</span></p>
+<p class="en">In <b>group translocation</b> the carrier also has an enzyme activity, so a chemical reaction happens during the transport itself. The textbook names <b>phosphorylation</b> and hydrolysis, with sugars, amino acids and peptides as the cargo.</p>
+<p class="zh2">糖一进来就被磷酸化，于是再也出不去。</p>
+
+<p class="wmove">⑰ 大分子和整颗粒子靠胞吞胞吐，那是把膜局部重新搭一遍 <span>endocytosis · exocytosis</span></p>
+<p class="en">Macromolecules and whole particles need a <b>local rebuilding of the membrane</b>: inwards is <b>endocytosis</b>, outwards is <b>exocytosis</b>. The forms large enough to see under a microscope are <b>pinocytosis</b> and <b>phagocytosis</b>.</p>
+<p class="zh2">唯一一条要重搭膜的路。</p>
+
+<p class="wmove">⑱ 分泌的蛋白走一条固定的路，最后一步就是胞吐 <span>secretory pathway · Golgi apparatus</span></p>
+<p class="en">A secreted protein follows a fixed route: <b>signal peptide</b> <span class="syn">(also called signal sequence)</span>, <b>endoplasmic reticulum</b>, <b>Golgi apparatus</b>, secretory vesicle, <b>exocytosis</b>. The <b>Golgi</b> is the stack where the sugar chains are finished and each protein is <b>sorted to its destination</b>.</p>
+<p class="zh2">高尔基体既是加工台，也是分拣台。</p>
+
+<p class="wmove">⑲ 溶酶体是酸性区室，胞吞进来的东西在那里被分解 <span>lysosome</span></p>
+<p class="en">The <b>lysosome</b> is the <b>acidic</b> compartment that holds the <b>degradative enzymes</b>, and material taken in by endocytosis is broken down there. Its enzymes arrive from the <b>Golgi</b>, carrying the mannose-6-phosphate tag.</p>
+<p class="zh2">酸性 ＋ 降解酶 ＋ 胞吞的终点。</p>
+
+<p class="wmove">⑳ 双层对离子不透，所以质子梯度立得住，区室也才能各有各的条件 <span>impermeable to ions · compartment</span></p>
+<p class="en">A proton carries a charge, so it cannot cross the nonpolar middle of a bilayer by itself. That is why a <b>proton gradient stays where it is pumped</b>, and why each <b>compartment</b> can hold its own pH and ion concentrations.</p>
+<p class="zh2">呼吸链和区室化共用这一条地基。</p>
+
+<p class="wmove">陷阱问法</p>
+<ul class="wdef">
+<li><b>"What is the difference between osmosis and chemiosmosis?"</b> — Osmosis is water crossing a membrane towards the higher solute concentration; chemiosmosis is Mitchell's coupling of the proton gradient to ATP synthesis. · 同一个词根，两回事。</li>
+<li><b>"Is simple diffusion really protein-free?"</b> — The textbook lists an integral-protein channel among its routes, so judge by behaviour: a carrier is specific, saturable and inhibitable, a pore is none of these. · 用行为判，不用结构判。</li>
+<li><b>"Does secondary active transport use ATP?"</b> — Yes, indirectly; the gradient it spends was built by a primary pump. · 隔了一手。</li>
+<li><b>"Why can water cross at all, if it is polar?"</b> — It is very small and uncharged, and it also has aquaporins. · 小、不带电。</li>
+<li><b>"Which transport can be saturated?"</b> — Anything using a carrier, so facilitated diffusion and active transport, but not simple diffusion. · 有载体才会饱和。</li>
+</ul>
+
+<p class="wmove">定义</p>
+<ul class="wdef">
+<li><b>amphipathic</b> — having a polar part and a nonpolar part in one molecule · 两亲性</li>
+<li><b>micelle</b> — a ball of single-tailed amphipathic molecules, tails inside · 胶束</li>
+<li><b>liposome</b> — a closed vesicle made of a lipid bilayer · 脂质体</li>
+<li><b>fluid mosaic model</b> — lipids and proteins moving in the plane of the membrane · 流动镶嵌模型</li>
+<li><b>selectively permeable</b> — some substances cross freely, others not at all · 选择性通透（半透）</li>
+<li><b>ionophore</b> — a carrier for ions that is not a protein · 离子载体</li>
+<li><b>aquaporin</b> — an integral membrane protein forming a water channel · 水通道蛋白</li>
+<li><b>electrogenic</b> — moving unequal charge, so it builds a voltage · 生电的</li>
+<li><b>uniport · symport · antiport</b> — one substance · two the same way · two in opposite directions · 单向 · 同向 · 反向</li>
+<li><b>group translocation</b> — transport in which the cargo is chemically changed on the way · 基团转位</li>
+<li><b>endocytosis · exocytosis</b> — taking material in · releasing material out, by rebuilding the membrane · 胞吞 · 胞吐</li>
+<li><b>pinocytosis · phagocytosis</b> — endocytosis of fluid · endocytosis of particles · 胞饮 · 吞噬</li>
+<li><b>osmosis</b> — water crossing a membrane towards the higher solute concentration · 渗透</li>
+<li><b>lysosome</b> — the acidic compartment holding the degradative enzymes · 溶酶体</li>
+<li><b>compartment</b> — a space whose exchange with the others is limited · 区室</li>
 </ul>
 </details>
 </article>
@@ -3365,6 +3620,22 @@ and mismatch repair knows which strand is new <b>because the new strand is not y
 <p class="wmove">⑬ 书外：细菌用 CRISPR 保存噬菌体 DNA 片段，下次用 Cas9 切掉同一种噬菌体 <span>CRISPR–Cas</span></p>
 <p class="en">Bacteria store short <b>phage DNA sequences</b> in their <b>CRISPR</b> locus, and <b>Cas9</b> uses RNA copies of them to cut the same phage on the next infection. That is outside my textbook, so I give it as general knowledge.</p>
 <p class="zh2">主动标「书外」。</p>
+
+<p class="wmove">⑭ 书外 · general：点突变分三种 —— 同义、错义、无义 <span>silent · missense · nonsense</span></p>
+<p class="en">A <b>point mutation</b> changes one base. It is <b>silent</b> when the amino acid is unchanged, <b>missense</b> when a different amino acid is put in, and <b>nonsense</b> when a stop codon <span class="syn">(also called termination codon, nonsense codon)</span> appears and the chain ends early. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">同义 · 错义 · 无义。</p>
+
+<p class="wmove">⑮ 书外 · general：插入或缺失不是三的倍数时，读框整个移位 <span>frameshift</span></p>
+<p class="en">A <b>frameshift</b> comes from an insertion or a deletion that is <b>not a multiple of three</b>, so every codon after it is misread. That usually damages the protein far more than a point mutation does. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">一个点错一个位置，移码错后面全部。</p>
+
+<p class="wmove">⑯ 书外 · general：碱基替换分转换和颠换 <span>transition · transversion</span></p>
+<p class="en">A substitution is a <b>transition</b> when a purine replaces a purine or a pyrimidine replaces a pyrimidine, and a <b>transversion</b> when a purine and a pyrimidine are exchanged. Transitions are the commoner kind. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">A↔G、C↔T 是转换，其余是颠换。</p>
+
+<p class="wmove">⑰ 书外 · general：密码子的第三位最不要紧 <span>third base · degeneracy</span></p>
+<p class="en">The <b>third base</b> of a codon matters least, because the code is <b>degenerate</b> and <b>wobble</b> pairing is allowed at that position. A change there is often <b>silent</b>. That is outside my textbook, so I give it as general knowledge.</p>
+<p class="zh2">简并和摆动都落在第三位。</p>
 
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
