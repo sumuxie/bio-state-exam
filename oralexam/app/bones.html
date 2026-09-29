@@ -91,6 +91,8 @@ details.wide>summary{cursor:pointer;font-size:13px;font-weight:620;color:var(--a
 details.wide .en{margin:0}
 .wdef{margin:4px 0 0;padding-left:18px;font-size:13.5px;line-height:1.8}
 .wstar{font-weight:400;color:var(--hot);margin-left:6px;font-size:12px}
+button.play1.para{margin-left:6px;padding:2px 7px;font-size:11px}
+.say>button.play1.para{margin:4px 0 0}
 /* 别名标注（tools/annotate_synonyms.py 插的），淡一点，不抢正文 */
 .syn{color:var(--dim);font-weight:400;font-size:.88em}
 .say .en .syn{font-size:.85em}
@@ -292,7 +294,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <div class="say"><p class="h">Say this</p><p class="en">A protein has <b>four levels of structure</b>, and the useful way to remember them is <b>by what holds each one together</b>. The <b>primary</b> structure is the covalent level: the order of residues joined by <b>peptide bonds</b> <span class="syn">(also called amide bond)</span>, including the disulfide positions. The <b>secondary</b> structure is local, and it is held by <b>hydrogen bonds of the main chain only</b> — the side chains take no part. The <b>tertiary</b> structure is the fold of one whole chain, held mainly by the <b>hydrophobic effect</b>, with ionic bonds, hydrogen bonds and disulfides as well. The <b>quaternary</b> structure is several chains together, and it is <b>entirely non-covalent</b>. ⚠ Denaturation destroys everything above the primary level, so the protein loses its activity, but <b>the peptide bonds are not broken</b>.</p><p class="t">约 40 秒 · 「按什么键把它们绑住」是这一段的骨架</p></div>
 
 <details class="wide"><summary>广度 · Say this 说完还有时间，接着往下说 · 看标题就能背 <span class="wstar">⭐ 2 位考官：Hudeček、Martínek</span></summary>
-<p class="wmove">① 肽键<span class="syn">（= peptide bond = amide bond）</span>有部分双键性质，所以是平面的、不能旋转，几乎都是反式 <span>partial double bond · planar · trans</span></p>
+<p class="wmove">① 肽键有部分双键性质，所以是平面的、不能旋转，几乎都是反式 <span>partial double bond · planar · trans</span></p>
 <p class="en">The peptide bond has <b>partial double-bond character</b>, so it is <b>planar and cannot rotate</b>, and it is almost always <b>trans</b>, with the two α-carbons on opposite sides; the cis form occurs practically only before <b>proline</b>.</p>
 <p class="zh2">一级结构里的键就是它。</p>
 
@@ -324,9 +326,9 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="en">Because the sequence survives, <b>Christian Anfinsen</b> could denature <b>ribonuclease</b> with urea and β-mercaptoethanol, remove them slowly, and the enzyme refolded and became active again, which showed that <b>the sequence determines the structure</b>. The name Anfinsen and the ribonuclease experiment are general knowledge rather than from my textbook.</p>
 <p class="zh2">「序列决定结构」的实验证据。</p>
 
-<p class="wmove">⑨ 在细胞里，很多蛋白需要 GroEL 或 Hsp70 这类分子伴侣<span class="syn">（= chaperone = heat shock protein (many of them)）</span>帮助折叠 <span>chaperones</span></p>
+<p class="wmove">⑨ 在细胞里，很多蛋白需要 GroEL 或 Hsp70 这类分子伴侣帮助折叠 <span>chaperones</span></p>
 <p class="en">In the cell, however, many proteins fold with the help of <b>chaperones</b> <span class="syn">(also called heat shock protein (many of them))</span> such as <b>Hsp70</b> and the <b>GroEL–GroES</b> complex, which bind partly folded chains and stop them from aggregating.</p>
-<p class="zh2">试管里能自己折，细胞里常需要分子伴侣。</p>
+<p class="zh2">试管里能自己折，细胞里常需要分子伴侣<span class="syn">（= chaperone = heat shock protein (many of them)）</span>。</p>
 
 <p class="wmove">⑩ 书外：折叠错误的蛋白聚成淀粉样纤维，见于阿尔茨海默病和朊病毒病 <span>amyloid · prion</span></p>
 <p class="en">When folding fails, proteins can aggregate into <b>amyloid fibres</b>, as <b>amyloid-β</b> does in <b>Alzheimer's disease</b>, and in <b>prion diseases</b> such as Creutzfeldt–Jakob disease a misfolded prion protein converts normal copies into the misfolded form. That is outside my textbook, so I give it as general knowledge.</p>
@@ -343,7 +345,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
 <li><b>"Is the hydrophobic effect a bond?"</b> — No, it is an increase in the entropy of water. · 不是键。</li>
-<li><b>"Does denaturation break peptide bonds?"</b> — No; only hydrolysis by acid or a protease does. · 不断肽键。</li>
+<li><b>"Does denaturation break peptide bonds?"</b> — No; only hydrolysis by acid or a protease does. · 不断肽键<span class="syn">（= peptide bond = amide bond）</span>。</li>
 <li><b>"Do salt bridges hold the α-helix?"</b> — No, main-chain hydrogen bonds do. · 螺旋靠主链氢键。</li>
 <li><b>"Is tertiary structure entirely non-covalent?"</b> — No, disulfide bonds are covalent. · 别忘了二硫键。</li>
 <li><b>"Can a C–H group form a hydrogen bond?"</b> — No, carbon is not electronegative enough. · C–H 不行。</li>
@@ -427,7 +429,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="en">In <b>site-directed mutagenesis</b>, replacing a residue with <b>alanine</b> removes its side chain without changing the backbone, and swapping lysine for glutamate tests a <b>salt bridge</b>.</p>
 <p class="zh2">从氨基酸表回到实验。</p>
 
-<p class="wmove">⑫ 书外：硒代半胱氨酸和吡咯赖氨酸是第 21、22 种，由终止密码子<span class="syn">（= stop codon = termination codon = nonsense codon）</span>编码 <span>selenocysteine · pyrrolysine</span></p>
+<p class="wmove">⑫ 书外：硒代半胱氨酸和吡咯赖氨酸是第 21、22 种，由终止密码子编码 <span>selenocysteine · pyrrolysine</span></p>
 <p class="en"><b>Selenocysteine</b>, found in <b>glutathione peroxidase</b>, and <b>pyrrolysine</b>, found in some archaea, are inserted at a <b>UGA or UAG stop codon</b> <span class="syn">(also called termination codon, nonsense codon)</span>. That is outside my textbook, so I give it as general knowledge.</p>
 <p class="zh2">主动标「书外」。</p>
 
@@ -453,7 +455,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <li><b>scurvy</b> — disease caused by lack of vitamin C · 坏血病</li>
 <li><b>essential amino acid</b> — one the body cannot synthesise · 必需氨基酸</li>
 <li><b>site-directed mutagenesis</b> — changing one chosen codon in a gene · 定点突变</li>
-<li><b>stop codon</b> — UAA, UAG or UGA, which normally ends translation · 终止密码子</li>
+<li><b>stop codon</b> — UAA, UAG or UGA, which normally ends translation · 终止密码子<span class="syn">（= stop codon = termination codon = nonsense codon）</span></li>
 </ul>
 </details>
 </article>
@@ -485,13 +487,13 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="en">The other gas, <b>carbon dioxide</b>, travels in blood mainly as <b>bicarbonate</b>, made in red cells by <b>carbonic anhydrase</b>, and a smaller part binds to haemoglobin itself.</p>
 <p class="zh2">接 Bohr 效应和血液 pH。</p>
 
-<p class="wmove">④ 胎儿血红蛋白与 2,3-BPG<span class="syn">（= 2,3-BPG = 2,3-bisphosphoglycerate = 2,3-DPG）</span> 结合弱，所以对氧亲和力更高 <span>foetal haemoglobin</span></p>
+<p class="wmove">④ 胎儿血红蛋白与 2,3-BPG 结合弱，所以对氧亲和力更高 <span>foetal haemoglobin</span></p>
 <p class="en"><b>Foetal haemoglobin</b>, made of two α and two γ chains, binds <b>2,3-BPG</b> weakly, so it has a higher oxygen affinity and takes oxygen from the mother's blood across the placenta.</p>
 <p class="zh2">同一个调节分子，结合弱就抓氧更牢。</p>
 
 <p class="wmove">⑤ 在高原上红细胞里的 2,3-BPG 增加，组织里放出更多氧 <span>high altitude</span></p>
 <p class="en">In adults the same molecule is used for adaptation: at <b>high altitude</b> and in <b>anaemia</b> red cells make more 2,3-BPG, so haemoglobin releases more oxygen in the tissues.</p>
-<p class="zh2">2,3-BPG 来自糖酵解<span class="syn">（= glycolysis = Embden–Meyerhof pathway）</span>的一条支路。</p>
+<p class="zh2">2,3-BPG<span class="syn">（= 2,3-BPG = 2,3-bisphosphoglycerate = 2,3-DPG）</span> 来自糖酵解<span class="syn">（= glycolysis = Embden–Meyerhof pathway）</span>的一条支路。</p>
 
 <p class="wmove">⑥ 一氧化碳和铁结合得比氧牢得多，还让其余亚基不放氧 <span>carbon monoxide</span></p>
 <p class="en"><b>Carbon monoxide</b>, a colourless poisonous gas, binds the haem iron far more tightly than oxygen, and it also keeps the other subunits in the <b>R state</b>, so the remaining oxygen is not released; it also inhibits <b>Complex IV</b> <span class="syn">(also called cytochrome c oxidase)</span> of the respiratory chain <span class="syn">(also called electron transport chain)</span>.</p>
@@ -566,7 +568,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <div class="say"><p class="h">Say this</p><p class="en">An enzyme <b>lowers the activation energy</b> and nothing else — it does <b>not</b> change the equilibrium constant and it does <b>not</b> change ΔG, so it only changes <b>how fast</b> equilibrium is reached, not <b>where</b> it lies. ⚠ The key idea is that the active site has its <b>highest affinity for the transition state</b>, not for the substrate, and the <b>binding energy</b> released is what pays for lowering the barrier. <b>K<sub>m</sub></b> is the substrate concentration at <b>half V<sub>max</sub></b>; it is characteristic of the enzyme, <b>independent of enzyme concentration</b>, and a <b>larger K<sub>m</sub> means weaker binding</b>. For inhibition: <b>competitive raises K<sub>m</sub> and leaves V<sub>max</sub></b>, <b>non-competitive lowers V<sub>max</sub> and leaves K<sub>m</sub></b>, and <b>uncompetitive lowers both</b>.</p><p class="t">约 45 秒 · 「对过渡态亲和力最高」是区分「懂」和「背」的那句</p></div>
 
 <details class="wide"><summary>广度 · Say this 说完还有时间，接着往下说 · 看标题就能背 <span class="wstar">⭐ 2 位考官：Hodek、Lipovová</span></summary>
-<p class="wmove">① k<sub>cat</sub>/K<sub>m</sub><span class="syn">（= Km = Michaelis constant）</span> 是专一性常数<span class="syn">（= specificity constant = kcat/Km = catalytic efficiency）</span>，表示底物浓度很低时酶的效率 <span>specificity constant</span></p>
+<p class="wmove">① k<sub>cat</sub>/K<sub>m</sub> 是专一性常数，表示底物浓度很低时酶的效率 <span>specificity constant</span></p>
 <p class="en">Beyond K<sub>m</sub>, the <b>specificity constant, k<sub>cat</sub>/K<sub>m</sub></b>, is the rate constant for free enzyme and free substrate going to product, so it gives the efficiency of the enzyme at <b>low substrate concentration</b>, which is the normal situation in the cell.</p>
 <p class="zh2">把结合和催化两步合成一个数。</p>
 
@@ -576,7 +578,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 
 <p class="wmove">③ 两个底物竞争同一个酶时，比较的是 k<sub>cat</sub>/K<sub>m</sub>，不是 K<sub>m</sub> <span>comparing substrates</span></p>
 <p class="en">This is also why <b>k<sub>cat</sub>/K<sub>m</sub></b> is the right number for comparing substrates: when two substrates compete for one enzyme, their rates are in the ratio of their k<sub>cat</sub>/K<sub>m</sub> values.</p>
-<p class="zh2">只看 K<sub>m</sub> 等于只看结合，不看反应。</p>
+<p class="zh2">只看 K<sub>m</sub><span class="syn">（= Km = Michaelis constant）</span> 等于只看结合，不看反应。</p>
 
 <p class="wmove">④ 活性中心用酸碱催化、共价催化、金属离子，以及把底物靠近并定向 <span>catalytic strategies</span></p>
 <p class="en">To reach such rates, active sites use <b>acid–base catalysis</b>, as by histidine; <b>covalent catalysis</b>, as by the serine of <b>chymotrypsin</b>; <b>metal ions</b>, as the zinc of <b>carbonic anhydrase</b>; and holding the substrates <b>close together in the right orientation</b>.</p>
@@ -586,11 +588,11 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="en">Many enzymes also need a <b>coenzyme</b>: <b>NAD⁺</b> comes from niacin, <b>FAD</b> from riboflavin, <b>coenzyme A</b> from pantothenic acid, and <b>pyridoxal phosphate</b> from vitamin B6.</p>
 <p class="zh2">酶蛋白 ＋ 辅因子 = 全酶。接维生素主题。</p>
 
-<p class="wmove">⑥ 细胞用别构调节、磷酸化、反馈抑制和酶原<span class="syn">（= zymogen = proenzyme）</span>激活来调节酶 <span>regulation</span></p>
+<p class="wmove">⑥ 细胞用别构调节、磷酸化、反馈抑制和酶原激活来调节酶 <span>regulation</span></p>
 <p class="en">Cells regulate enzymes by <b>allosteric effectors</b>, as ATP on phosphofructokinase; by <b>phosphorylation</b>, as in glycogen phosphorylase; by <b>feedback inhibition</b> from the end product; and by <b>zymogen <span class="syn">(also called proenzyme)</span> activation</b>, as trypsinogen is cut into trypsin.</p>
-<p class="zh2">别构 · 磷酸化 · 反馈 · 酶原。</p>
+<p class="zh2">别构 · 磷酸化 · 反馈 · 酶原<span class="syn">（= zymogen = proenzyme）</span>。</p>
 
-<p class="wmove">⑦ 同工酶<span class="syn">（= isoenzyme = isozyme）</span>催化同一反应，结构不同，血中的同工酶谱可以用于诊断 <span>isoenzymes</span></p>
+<p class="wmove">⑦ 同工酶催化同一反应，结构不同，血中的同工酶谱可以用于诊断 <span>isoenzymes</span></p>
 <p class="en"><b>Isoenzymes</b> <span class="syn">(also called isozyme)</span> catalyse the same reaction but differ in structure; <b>lactate dehydrogenase</b> has different forms in heart and in skeletal muscle, and their pattern in blood helps to diagnose which organ is damaged.</p>
 <p class="zh2">LDH 是标准例子。</p>
 
@@ -625,7 +627,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <p class="wmove">定义</p>
 <ul class="wdef">
 <li><b>k<sub>cat</sub></b> — turnover number: substrate molecules converted per enzyme molecule per second · 转换数<span class="syn">（= kcat = turnover number）</span></li>
-<li><b>specificity constant</b> — k<sub>cat</sub>/K<sub>m</sub>, the efficiency at low substrate · 专一性常数</li>
+<li><b>specificity constant</b> — k<sub>cat</sub>/K<sub>m</sub>, the efficiency at low substrate · 专一性常数<span class="syn">（= specificity constant = kcat/Km = catalytic efficiency）</span></li>
 <li><b>diffusion limit</b> — the rate at which two molecules meet in water · 扩散极限</li>
 <li><b>acid–base catalysis</b> — speeding a reaction by giving or taking a proton · 酸碱催化</li>
 <li><b>covalent catalysis</b> — the enzyme forms a temporary covalent bond with the substrate · 共价催化</li>
@@ -633,7 +635,7 @@ button.play1:hover{color:var(--accent);border-color:var(--accent)}
 <li><b>allosteric effector</b> — a molecule that binds outside the active site and changes activity · 别构效应物</li>
 <li><b>feedback inhibition</b> — the end product inhibits the first enzyme of its pathway · 反馈抑制</li>
 <li><b>zymogen</b> — an inactive enzyme precursor activated by cleavage · 酶原</li>
-<li><b>isoenzymes</b> — different proteins catalysing the same reaction · 同工酶</li>
+<li><b>isoenzymes</b> — different proteins catalysing the same reaction · 同工酶<span class="syn">（= isoenzyme = isozyme）</span></li>
 <li><b>katal</b> — the amount of enzyme converting one mole per second · 开特</li>
 <li><b>induction</b> — the cell making more of an enzyme · 诱导</li>
 <li><b>thermostability</b> — resistance of a protein to heat · 热稳定性</li>
@@ -953,9 +955,9 @@ because that is the only place where the enzyme, rather than the concentrations,
 <p class="en">In fasting, <b>glucagon</b> reverses this: the liver first breaks down glycogen, then makes glucose by <b>gluconeogenesis</b>, fat tissue releases fatty acids, and in a long fast the liver makes <b>ketone bodies</b> for the brain.</p>
 <p class="zh2">顺序：糖原 → 糖异生 → 脂肪酸 → 酮体。</p>
 
-<p class="wmove">⑥ Cori 循环<span class="syn">（= Cori cycle = lactic acid cycle）</span>：剧烈运动缺氧时肌肉产生乳酸，乳酸到肝里重新变成葡萄糖 <span>Cori cycle</span></p>
+<p class="wmove">⑥ Cori 循环：剧烈运动缺氧时肌肉产生乳酸，乳酸到肝里重新变成葡萄糖 <span>Cori cycle</span></p>
 <p class="en">The <b>Cori cycle</b> <span class="syn">(also called lactic acid cycle)</span> belongs to a third state, hard exercise: muscle runs short of oxygen and makes <b>lactate</b>, which travels to the liver and is turned back into glucose.</p>
-<p class="zh2">名字「Cori cycle」书上没有。</p>
+<p class="zh2">名字「Cori cycle<span class="syn">（= Cori cycle = lactic acid cycle）</span>」书上没有。</p>
 
 <p class="wmove">⑦ 肝能向血液释放葡萄糖，肌肉不能；脑主要用葡萄糖；脂肪组织储存和释放脂肪 <span>organ specialisation</span></p>
 <p class="en">These states look different in each organ because organs have different enzymes: the <b>liver</b> can release glucose into the blood, <b>muscle</b> cannot, the <b>brain</b> uses mainly glucose, and <b>adipose tissue</b> stores and releases fat.</p>
@@ -969,7 +971,7 @@ because that is the only place where the enzyme, rather than the concentrations,
 <p class="en">Returning to oxaloacetate: when it is withdrawn for gluconeogenesis it must be replaced by <b>anaplerotic reactions</b>, and in plants <b>PEP carboxylase and malic enzyme</b>, known from C4 photosynthesis, also do this in non-photosynthetic cells.</p>
 <p class="zh2">Ryšlavá 研究的就是这几个酶。</p>
 
-<p class="wmove">⑩ 书外：葡萄糖-丙氨酸循环<span class="syn">（= glucose–alanine cycle = Cahill cycle）</span>把肌肉的氮以丙氨酸形式运到肝 <span>glucose–alanine cycle</span></p>
+<p class="wmove">⑩ 书外：葡萄糖-丙氨酸循环把肌肉的氮以丙氨酸形式运到肝 <span>glucose–alanine cycle</span></p>
 <p class="en">The <b>glucose–alanine cycle</b> <span class="syn">(also called Cahill cycle)</span> runs next to the Cori cycle: muscle sends amino groups to the liver as <b>alanine</b>, and the liver sends glucose back. That is outside my textbook, so I give it as general knowledge.</p>
 <p class="zh2">主动标「书外」。</p>
 
@@ -1052,7 +1054,7 @@ without which the pathway would stop.
 </p><p class="t">约 55 秒 · 「再生 NAD⁺」那一句别漏</p></div>
 
 <details class="wide"><summary>广度 · Say this 说完还有时间，接着往下说 · 看标题就能背 <span class="wstar">⭐ 1 位考官：Martínek</span></summary>
-<p class="wmove">① 从细菌到人几乎所有细胞都有糖酵解<span class="syn">（= glycolysis = Embden–Meyerhof pathway）</span>，它不需要氧，也不需要线粒体 <span>universal pathway</span></p>
+<p class="wmove">① 从细菌到人几乎所有细胞都有糖酵解，它不需要氧，也不需要线粒体 <span>universal pathway</span></p>
 <p class="en">Almost every cell, from bacteria to humans, has glycolysis, and it needs <b>neither oxygen nor mitochondria</b>, so it is thought to be one of the oldest pathways.</p>
 <p class="zh2">不用氧、不用线粒体。</p>
 
@@ -1060,7 +1062,7 @@ without which the pathway would stop.
 <p class="en">Because it works without oxygen, glycolysis makes ATP by <b>substrate-level phosphorylation</b>, the direct transfer of a phosphate onto ADP: <b>phosphoglycerate kinase</b> and <b>pyruvate kinase</b> move a phosphate from a high-energy intermediate directly onto ADP.</p>
 <p class="zh2">与氧化磷酸化对比。</p>
 
-<p class="wmove">③ Buchner 证明无细胞<span class="syn">（= cell-free protein synthesis = CFPS = in vitro transcription–translation）</span>的酵母提取液也能发酵，Harden 和 Young 在里面发现了第一个辅酶 NAD <span>discovery</span></p>
+<p class="wmove">③ Buchner 证明无细胞的酵母提取液也能发酵，Harden 和 Young 在里面发现了第一个辅酶 NAD <span>discovery</span></p>
 <p class="en">This pathway is also where biochemistry started: <b>Buchner</b> showed that a <b>cell-free <span class="syn">(also called cell-free protein synthesis, CFPS, in vitro transcription–translation)</span> yeast extract</b> ferments sugar, and <b>Harden and Young</b> then found the first coenzyme, <b>NAD</b>, in that extract.</p>
 <p class="zh2">两件都在书 p009 的表里。</p>
 
@@ -1068,15 +1070,15 @@ without which the pathway would stop.
 <p class="en">In yeast, pyruvate is turned into <b>ethanol and CO₂</b>, which is why bread rises and wine contains alcohol, while working muscle turns pyruvate into <b>lactate</b>.</p>
 <p class="zh2">三个生活问题同一个答案。</p>
 
-<p class="wmove">⑤ 乳酸脱氢酶有多种同工酶<span class="syn">（= isoenzyme = isozyme）</span>，心肌和骨骼肌的不一样 <span>LDH isoenzymes</span></p>
+<p class="wmove">⑤ 乳酸脱氢酶有多种同工酶，心肌和骨骼肌的不一样 <span>LDH isoenzymes</span></p>
 <p class="en"><b>Lactate dehydrogenase</b>, the enzyme that makes lactate, exists as <b>isoenzymes</b> <span class="syn">(also called isozyme)</span> built from heart and muscle subunits, so heart and skeletal muscle handle lactate differently.</p>
-<p class="zh2">书上同工酶的标准例子（p064）。</p>
+<p class="zh2">书上同工酶<span class="syn">（= isoenzyme = isozyme）</span>的标准例子（p064）。</p>
 
 <p class="wmove">⑥ 巴斯德效应：有氧时细胞消耗的葡萄糖少得多 <span>Pasteur effect</span></p>
 <p class="en">The <b>Pasteur effect</b> is that yeast or muscle <b>uses much less glucose</b> when oxygen is present, because each glucose then gives far more ATP.</p>
 <p class="zh2">名字是通用知识。</p>
 
-<p class="wmove">⑦ 糖酵解的中间物通向糖原、磷酸戊糖途径<span class="syn">（= pentose phosphate pathway = hexose monophosphate shunt = phosphogluconate pathway）</span>、甘油和氨基酸，在肝里还能反向做糖异生 <span>links to other pathways</span></p>
+<p class="wmove">⑦ 糖酵解的中间物通向糖原、磷酸戊糖途径、甘油和氨基酸，在肝里还能反向做糖异生 <span>links to other pathways</span></p>
 <p class="en">Glycolysis is also a source of building blocks: its intermediates lead to <b>glycogen</b>, the <b>pentose phosphate pathway</b> <span class="syn">(also called hexose monophosphate shunt, phosphogluconate pathway)</span>, <b>glycerol</b> for fats and <b>alanine and serine</b>, and in the liver the pathway runs in reverse as <b>gluconeogenesis</b>.</p>
 <p class="zh2">说到哪就接到哪个主题。</p>
 
@@ -1094,7 +1096,7 @@ without which the pathway would stop.
 
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
-<li><b>"Glycolysis is anaerobic — so it runs only without oxygen?"</b> — No, it runs all the time; it simply does not need oxygen. · 一直在跑，只是不需要氧。</li>
+<li><b>"Glycolysis<span class="syn">（= glycolysis = Embden–Meyerhof pathway）</span> is anaerobic — so it runs only without oxygen?"</b> — No, it runs all the time; it simply does not need oxygen. · 一直在跑，只是不需要氧。</li>
 <li><b>"Is glucose oxidised to CO₂ in glycolysis?"</b> — No, only to pyruvate; the CO₂ is released later. · 只到丙酮酸。</li>
 <li><b>"Is lactate a waste product?"</b> — No, the liver converts it back to glucose. · 肝会把它变回葡萄糖。</li>
 </ul>
@@ -1119,7 +1121,7 @@ without which the pathway would stop.
 <div class="say"><p class="h">Say this</p><p class="en">The pentose phosphate pathway <span class="syn">(also called hexose monophosphate shunt, phosphogluconate pathway)</span> runs in the <b>cytosol</b> and has <b>two parts</b>. The <b>oxidative part is irreversible</b>: two dehydrogenations and one decarboxylation give <b>two NADPH, one CO₂ and ribulose-5-phosphate</b>. The control enzyme is <b>glucose-6-phosphate dehydrogenase</b>, and what controls it is <b>the supply of NADP-plus, not ATP</b>. The <b>non-oxidative part is reversible</b>: transketolase moves two carbons and transaldolase moves three, so the sugars can be rearranged back into <b>fructose-6-phosphate and glyceraldehyde-3-phosphate</b> <span class="syn">(also called GAP, G3P)</span>. The whole pathway <b>neither makes nor spends ATP</b>. Its two products are <b>NADPH</b>, for reductive synthesis and antioxidant defence, and <b>ribose-5-phosphate</b>, for nucleotides.</p><p class="t">约 40 秒 · 「0 ATP」和「看 NADP⁺ 不看 ATP」是两个必说</p></div>
 
 <details class="wide"><summary>广度 · Say this 说完还有时间，接着往下说 · 看标题就能背 <span class="wstar">⭐ 2 位考官：Hodek、Ryšlavá</span></summary>
-<p class="wmove">① 磷酸戊糖途径<span class="syn">（= pentose phosphate pathway = hexose monophosphate shunt = phosphogluconate pathway）</span>不产能，它为合成提供 NADPH 和核糖-5-磷酸 <span>a pathway for biosynthesis</span></p>
+<p class="wmove">① 磷酸戊糖途径不产能，它为合成提供 NADPH 和核糖-5-磷酸 <span>a pathway for biosynthesis</span></p>
 <p class="en">The pentose phosphate pathway does not oxidise glucose for energy; it produces <b>NADPH</b> and <b>ribose-5-phosphate</b> for biosynthesis.</p>
 <p class="zh2">两个产物，都用于合成。</p>
 
@@ -1147,7 +1149,7 @@ without which the pathway would stop.
 <p class="en">In the reversible part, <b>transketolase</b> needs <b>thiamine diphosphate</b>, made from vitamin B₁, the same cofactor as in pyruvate dehydrogenase.</p>
 <p class="zh2">接维生素、PDH 两个主题。</p>
 
-<p class="wmove">⑧ 光合作用的 Calvin 循环<span class="syn">（= Calvin cycle = Calvin–Benson cycle = dark reactions = light-independent reactions）</span>用同样的转酮酶和醛缩酶反应 <span>Calvin cycle</span></p>
+<p class="wmove">⑧ 光合作用的 Calvin 循环用同样的转酮酶和醛缩酶反应 <span>Calvin cycle</span></p>
 <p class="en">The same <b>transketolase and aldolase</b> reactions appear in the <b>Calvin cycle</b> <span class="syn">(also called Calvin–Benson cycle, dark reactions, light-independent reactions)</span>, where plants use them to regenerate ribulose-1,5-bisphosphate, the CO₂ acceptor.</p>
 <p class="zh2">接光合作用主题。</p>
 
@@ -1173,7 +1175,7 @@ without which the pathway would stop.
 <li><b>reactive oxygen species</b> — superoxide, hydrogen peroxide and related reactive forms of oxygen · 活性氧</li>
 <li><b>haemolysis</b> — breakdown of red blood cells · 溶血</li>
 <li><b>transketolase</b> — enzyme that transfers a two-carbon unit between sugars · 转酮酶</li>
-<li><b>Calvin cycle</b> — the pathway in which plants fix CO₂ into sugar · 卡尔文循环</li>
+<li><b>Calvin cycle</b> — the pathway in which plants fix CO₂ into sugar · 卡尔文循环<span class="syn">（= Calvin cycle = Calvin–Benson cycle = dark reactions = light-independent reactions）</span></li>
 <li><b>cytochrome P450</b> — haem enzymes that oxidise drugs and foreign compounds · 细胞色素 P450</li>
 </ul>
 </details>
@@ -1472,7 +1474,7 @@ the malate–aspartate shuttle delivers NADH and the glycerol phosphate shuttle 
 <p class="en">Sometimes an electron leaks out early, mainly at <b>Complexes I and III</b>, and reduces oxygen to <b>superoxide</b>; <b>superoxide dismutase, catalase and glutathione peroxidase</b> then remove it.</p>
 <p class="zh2">清除最终靠 NADPH，接 PPP。</p>
 
-<p class="wmove">⑦ 线粒体内膜折叠成嵴，增加了呼吸链<span class="syn">（= respiratory chain = electron transport chain）</span>和 ATP 合酶的面积 <span>cristae</span></p>
+<p class="wmove">⑦ 线粒体内膜折叠成嵴，增加了呼吸链和 ATP 合酶的面积 <span>cristae</span></p>
 <p class="en">The chain and ATP synthase <span class="syn">(also called Complex V, F₀F₁-ATPase)</span> sit in the inner membrane, which is folded into <b>cristae</b> to give a much larger surface area.</p>
 <p class="zh2">「内膜为什么折叠」。</p>
 
@@ -1490,7 +1492,7 @@ the malate–aspartate shuttle delivers NADH and the glycerol phosphate shuttle 
 
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
-<li><b>"So the respiratory chain makes the ATP?"</b> — No, it makes the proton gradient; ATP synthase makes the ATP. · 链建梯度，合酶做 ATP。</li>
+<li><b>"So the respiratory chain<span class="syn">（= respiratory chain = electron transport chain）</span> makes the ATP?"</b> — No, it makes the proton gradient; ATP synthase makes the ATP. · 链建梯度，合酶做 ATP。</li>
 <li><b>"Is oxygen burned?"</b> — No, it is reduced to water. · 氧被还原成水。</li>
 <li><b>"Does NADPH enter the chain?"</b> — No, NADPH is used for biosynthesis. · 不进。</li>
 </ul>
@@ -1582,7 +1584,7 @@ where the first oxidation gives <b>hydrogen peroxide instead of FADH₂</b>, so 
 </p><p class="t">约 70 秒 · ⚠ 开口先说「什么时候跑」，再说怎么跑 —— 考官想听的是你知道这条路为什么存在</p></div>
 
 <details class="wide"><summary>广度 · Say this 说完还有时间，接着往下说 · 看标题就能背 <span class="wstar">⭐ 1 位考官：Hodek</span></summary>
-<p class="wmove">① 脂代谢包括分解、合成、胆固醇和运输四部分，β-氧化<span class="syn">（= β-oxidation = fatty acid oxidation）</span>只是分解里的一条路 <span>lipid metabolism vs fatty acid oxidation</span></p>
+<p class="wmove">① 脂代谢包括分解、合成、胆固醇和运输四部分，β-氧化只是分解里的一条路 <span>lipid metabolism vs fatty acid oxidation</span></p>
 <p class="en"><b>Lipid metabolism</b> has four parts: breakdown by <b>lipases, β-oxidation and ketone bodies</b>; synthesis by <b>acetyl-CoA carboxylase and fatty acid synthase</b> into triacylglycerol and phospholipids; <b>cholesterol</b> synthesis via <b>HMG-CoA reductase</b>; and transport in <b>lipoproteins</b>. <b>β-oxidation</b> is one route of the breakdown part.</p>
 <p class="zh2">分解 · 合成 · 胆固醇 · 运输。</p>
 
@@ -1628,7 +1630,7 @@ where the first oxidation gives <b>hydrogen peroxide instead of FADH₂</b>, so 
 
 <p class="wmove">陷阱问法</p>
 <ul class="wdef">
-<li><b>"Is lipid metabolism the same as β-oxidation?"</b> — No, β-oxidation is one breakdown route within it. · 不是，只是分解的一条路。</li>
+<li><b>"Is lipid metabolism the same as β-oxidation<span class="syn">（= β-oxidation = fatty acid oxidation）</span>?"</b> — No, β-oxidation is one breakdown route within it. · 不是，只是分解的一条路。</li>
 <li><b>"Can the brain use fatty acids?"</b> — Almost not; it uses glucose, and ketone bodies in prolonged fasting. · 几乎不能。</li>
 <li><b>"Can fat become glucose?"</b> — Only the glycerol and the propionyl-CoA from odd chains can. · 只有甘油和奇数碳末端。</li>
 <li><b>"Does β-oxidation need oxygen?"</b> — Not directly, but its NADH and FADH₂ are reoxidised only by the respiratory chain<span class="syn">（= respiratory chain = electron transport chain）</span>. · 不直接用，没氧就停。</li>
@@ -1932,7 +1934,7 @@ Cholesterol then tunes <b>membrane fluidity</b> and is the precursor of <b>stero
 <p class="en">Fungi make <b>ergosterol</b> instead of cholesterol, and <b>azole antifungals</b>, drugs such as fluconazole, inhibit the fungal <b>P450 enzyme</b> that makes it; plants make <b>phytosterols</b> such as sitosterol.</p>
 <p class="zh2">同一条路，不同物种，可以做药。</p>
 
-<p class="wmove">⑨ 同样的五碳异戊二烯单位还合成泛醌<span class="syn">（= ubiquinone = coenzyme Q = CoQ）</span>、多萜醇、蛋白质的异戊烯基锚，植物里还合成类胡萝卜素 <span>isoprenoids</span></p>
+<p class="wmove">⑨ 同样的五碳异戊二烯单位还合成泛醌、多萜醇、蛋白质的异戊烯基锚，植物里还合成类胡萝卜素 <span>isoprenoids</span></p>
 <p class="en">Before cholesterol, the pathway makes <b>isoprene units</b>, which are also used for <b>ubiquinone</b> <span class="syn">(also called coenzyme Q, CoQ)</span>, <b>dolichol</b>, the <b>prenyl anchors</b> of proteins such as Ras, and in plants for <b>carotenoids</b>.</p>
 <p class="zh2">胆固醇只是其中一个产物。</p>
 
@@ -1963,7 +1965,7 @@ Cholesterol then tunes <b>membrane fluidity</b> and is the precursor of <b>stero
 <li><b>cytochrome P450</b> — a family of haem enzymes that insert an oxygen atom into molecules · 细胞色素 P450</li>
 <li><b>ergosterol</b> — the main sterol of fungi · 麦角固醇</li>
 <li><b>isoprene unit</b> — the five-carbon building unit of cholesterol and other isoprenoids · 异戊二烯单位</li>
-<li><b>ubiquinone</b> — the lipid electron carrier of the respiratory chain<span class="syn">（= respiratory chain = electron transport chain）</span> · 泛醌</li>
+<li><b>ubiquinone</b> — the lipid electron carrier of the respiratory chain<span class="syn">（= respiratory chain = electron transport chain）</span> · 泛醌<span class="syn">（= ubiquinone = coenzyme Q = CoQ）</span></li>
 <li><b>dolichol</b> — a long isoprenoid that carries sugars for N-glycosylation · 多萜醇</li>
 <li><b>fluorescence anisotropy</b> — a measure of how freely a fluorescent molecule rotates · 荧光各向异性</li>
 <li><b>DPH</b> — diphenylhexatriene, a fluorescent probe that enters membranes · 二苯基己三烯</li>
@@ -2138,15 +2140,15 @@ B₃ 还有个老名字 <b>vitamin PP</b>（也叫尼克酸／烟酰胺）；B�
 <p class="en">For electrons there are two carriers: NADPH has <b>one extra phosphate</b>, which takes no part in the redox chemistry but lets enzymes <b>distinguish NADPH from NADH</b>.</p>
 <p class="zh2">化学相同，被不同的酶识别。</p>
 
-<p class="wmove">⑦ 细胞让 NAD⁺ 多数处于氧化态，用于分解代谢，NADH 交给呼吸链<span class="syn">（= respiratory chain = electron transport chain）</span> <span>NAD⁺ in catabolism</span></p>
+<p class="wmove">⑦ 细胞让 NAD⁺ 多数处于氧化态，用于分解代谢，NADH 交给呼吸链 <span>NAD⁺ in catabolism</span></p>
 <p class="en">Because enzymes can tell them apart, the cell keeps <b>NAD⁺ mostly oxidised</b>, ready to accept electrons in breakdown, and the resulting NADH goes to the <b>respiratory chain</b> to make ATP.</p>
-<p class="zh2">分解 → NADH → 呼吸链。</p>
+<p class="zh2">分解 → NADH → 呼吸链<span class="syn">（= respiratory chain = electron transport chain）</span>。</p>
 
 <p class="wmove">⑧ 细胞让 NADPH 多数处于还原态，用于生物合成和抗氧化 <span>NADPH in biosynthesis and defence</span></p>
 <p class="en">At the same time it keeps <b>NADPH mostly reduced</b>, ready to donate electrons for <b>fatty-acid and cholesterol synthesis</b> and to keep <b>glutathione</b> reduced for antioxidant defence.</p>
 <p class="zh2">合成 ＋ 抗氧化。</p>
 
-<p class="wmove">⑨ NADPH 来自磷酸戊糖途径<span class="syn">（= pentose phosphate pathway = hexose monophosphate shunt = phosphogluconate pathway）</span>、苹果酸酶和光合作用的光反应 ⭐ Ryšlavá <span>sources of NADPH</span></p>
+<p class="wmove">⑨ NADPH 来自磷酸戊糖途径、苹果酸酶和光合作用的光反应 ⭐ Ryšlavá <span>sources of NADPH</span></p>
 <p class="en">NADPH is produced by the <b>pentose phosphate pathway</b> <span class="syn">(also called hexose monophosphate shunt, phosphogluconate pathway)</span>, by <b>malic enzyme</b>, and in plants by the <b>light reactions of photosynthesis</b>; NADP-malic enzyme is one of the enzymes Ryšlavá studies.</p>
 <p class="zh2">接 PPP、脂肪合成、光合作用。</p>
 
@@ -2286,7 +2288,7 @@ B₃ 还有个老名字 <b>vitamin PP</b>（也叫尼克酸／烟酰胺）；B�
 <p class="en">In fasting the liver first breaks down its <b>glycogen</b>, and when glycogen runs low, <b>gluconeogenesis</b> becomes the main source of blood glucose.</p>
 <p class="zh2">接「糖原」主题。</p>
 
-<p class="wmove">⑦ 同时肝做酮体，拆氨基酸也让尿素循环<span class="syn">（= urea cycle = ornithine cycle = Krebs–Henseleit cycle）</span>加快 <span>ketone bodies · urea cycle</span></p>
+<p class="wmove">⑦ 同时肝做酮体，拆氨基酸也让尿素循环加快 <span>ketone bodies · urea cycle</span></p>
 <p class="en">At the same time the liver makes <b>ketone bodies</b> from fatty acids, and because amino acids are being broken down, the <b>urea cycle</b> <span class="syn">(also called ornithine cycle, Krebs–Henseleit cycle)</span> runs faster.</p>
 <p class="zh2">接「酮体」「氨基酸」两个主题。</p>
 
@@ -2425,7 +2427,7 @@ B₃ 还有个老名字 <b>vitamin PP</b>（也叫尼克酸／烟酰胺）；B�
 <p class="en">Plants and bacteria take up ammonia mainly through <b>GS/GOGAT</b>, glutamine synthetase followed by glutamate synthase; and <b>nitrogenase</b>, an enzyme found only in some bacteria, turns nitrogen gas into ammonia, which is <b>nitrogen fixation</b>.</p>
 <p class="zh2">固氮在她的关键词里。</p>
 
-<p class="wmove">④ 二十种氨基酸的碳骨架只来自糖酵解<span class="syn">（= glycolysis = Embden–Meyerhof pathway）</span>、柠檬酸循环和戊糖磷酸途径的几个中间物 <span>families</span></p>
+<p class="wmove">④ 二十种氨基酸的碳骨架只来自糖酵解、柠檬酸循环和戊糖磷酸途径的几个中间物 <span>families</span></p>
 <p class="en">Once the nitrogen is in place, the carbon skeletons come from only a few intermediates of <b>glycolysis <span class="syn">(also called Embden–Meyerhof pathway)</span>, the citric acid cycle <span class="syn">(also called TCA cycle, tricarboxylic acid cycle, Krebs cycle)</span> and the pentose phosphate pathway</b> <span class="syn">(also called hexose monophosphate shunt, phosphogluconate pathway)</span>, so the amino acids are grouped into families by their starting molecule.</p>
 <p class="zh2">按出发的中间物分家族。</p>
 
@@ -2435,7 +2437,7 @@ B₃ 还有个老名字 <b>vitamin PP</b>（也叫尼克酸／烟酰胺）；B�
 
 <p class="wmove">⑥ 丙酮酸 → Ala、Val、Leu、Ile；3-磷酸甘油酸 → Ser、Gly、Cys <span>pyruvate · 3-phosphoglycerate families</span></p>
 <p class="en">From <b>pyruvate</b> come alanine, valine, leucine and isoleucine; from <b>3-phosphoglycerate</b> come serine, glycine and cysteine.</p>
-<p class="zh2">这两个都是糖酵解的中间物。</p>
+<p class="zh2">这两个都是糖酵解<span class="syn">（= glycolysis = Embden–Meyerhof pathway）</span>的中间物。</p>
 
 <p class="wmove">⑦ 甘氨酸由丝氨酸去掉一个碳生成，这个碳交给四氢叶酸 <span>serine → glycine</span></p>
 <p class="en">In that last family, <b>glycine is made from serine</b> by <b>serine hydroxymethyltransferase</b>, which removes one carbon and hands it to <b>tetrahydrofolate</b>; tetrahydrofolate then uses that carbon to make nucleotides.</p>
@@ -2662,7 +2664,7 @@ by writing <b>twelve waters rather than six</b>.
 <p class="en">A second, structural control is <b>compartmentation</b>: for example, fatty acid synthesis runs in the <b>cytosol</b> and fatty acid oxidation <span class="syn">(also called β-oxidation)</span> in the <b>mitochondria</b>.</p>
 <p class="zh2">分开放，就不会同时跑。</p>
 
-<p class="wmove">⑤ 丙二酰 CoA 抑制肉碱酰基转移酶<span class="syn">（= carnitine acyltransferase I = carnitine palmitoyltransferase I = CPT-1）</span> I，使脂肪酸不能进线粒体被氧化 <span>malonyl-CoA</span></p>
+<p class="wmove">⑤ 丙二酰 CoA 抑制肉碱酰基转移酶 I，使脂肪酸不能进线粒体被氧化 <span>malonyl-CoA</span></p>
 <p class="en">Because of that separation, the cell can control transport: <b>malonyl-CoA</b>, the first intermediate of fatty acid synthesis, inhibits <b>carnitine acyltransferase I</b> <span class="syn">(also called carnitine palmitoyltransferase I, CPT-1)</span>, so new fatty acids are not carried into the mitochondria and oxidised.</p>
 <p class="zh2">合成一开，氧化就关。</p>
 
@@ -2674,7 +2676,7 @@ by writing <b>twelve waters rather than six</b>.
 <p class="en"><b>Insulin</b> signals the fed state and promotes storage, while <b>glucagon</b> and <b>adrenaline</b> signal fasting or stress and promote release of glucose and fatty acids.</p>
 <p class="zh2">一对相反的命令。</p>
 
-<p class="wmove">⑧ 同一个反应在不同器官由不同的同工酶<span class="syn">（= isoenzyme = isozyme）</span>催化 <span>isozymes</span></p>
+<p class="wmove">⑧ 同一个反应在不同器官由不同的同工酶催化 <span>isozymes</span></p>
 <p class="en">The same reaction can be regulated differently in different tissues through <b>isozymes</b> <span class="syn">(also called isoenzyme)</span>; for example, liver uses <b>glucokinase</b> and muscle uses <b>hexokinase</b> to phosphorylate glucose.</p>
 <p class="zh2">接「器官分工」主题。</p>
 
@@ -2708,7 +2710,7 @@ by writing <b>twelve waters rather than six</b>.
 <li><b>committed step</b> — the first irreversible step unique to a pathway · 定向步骤</li>
 <li><b>compartmentation</b> — separating pathways into different parts of the cell · 区室化</li>
 <li><b>second messenger</b> — a small molecule inside the cell, such as cAMP, that carries a hormone's signal · 第二信使</li>
-<li><b>isozyme</b> — a different form of an enzyme that catalyses the same reaction · 同工酶</li>
+<li><b>isozyme</b> — a different form of an enzyme that catalyses the same reaction · 同工酶<span class="syn">（= isoenzyme = isozyme）</span></li>
 <li><b>allosteric</b> — acting at a site other than the active site by changing conformation · 别构</li>
 <li><b>Km</b> — the substrate concentration giving half the maximum rate · 米氏常数<span class="syn">（= Km = Michaelis constant）</span></li>
 <li><b>enzyme induction</b> — increased synthesis of an enzyme in response to a signal · 酶诱导</li>
@@ -2735,7 +2737,7 @@ by writing <b>twelve waters rather than six</b>.
 <p class="en">After a meal the body stores fuel; in the first hours of fasting the liver uses <b>glycogen</b>; then it relies on <b>gluconeogenesis</b>; and in long starvation <b>ketone bodies</b> take over so that less muscle protein is broken down.</p>
 <p class="zh2">时间线一句话。</p>
 
-<p class="wmove">② 脂肪组织储存甘油三酯<span class="syn">（= triacylglycerol = triglyceride = neutral fat）</span>，空腹时释放脂肪酸和甘油 <span>adipose tissue</span></p>
+<p class="wmove">② 脂肪组织储存甘油三酯，空腹时释放脂肪酸和甘油 <span>adipose tissue</span></p>
 <p class="en">The fatty acids for that come from <b>adipose tissue</b>, which stores <b>triacylglycerol</b> <span class="syn">(also called triglyceride, neutral fat)</span> and releases fatty acids and glycerol in fasting; it also secretes the hormone <b>leptin</b>. Leptin is outside my textbook, so I give it as general knowledge.</p>
 <p class="zh2">脂肪组织也分泌激素。</p>
 
@@ -2743,7 +2745,7 @@ by writing <b>twelve waters rather than six</b>.
 <p class="en">The <b>heart</b> has very many mitochondria and burns mainly <b>fatty acids</b>, but it also uses <b>lactate</b> and <b>ketone bodies</b>.</p>
 <p class="zh2">什么都能烧，主要是脂肪酸。</p>
 
-<p class="wmove">④ 慢肌纤维靠有氧氧化，快肌纤维靠糖酵解<span class="syn">（= glycolysis = Embden–Meyerhof pathway）</span> <span>slow vs fast fibres</span></p>
+<p class="wmove">④ 慢肌纤维靠有氧氧化，快肌纤维靠糖酵解 <span>slow vs fast fibres</span></p>
 <p class="en">Skeletal muscle has two main fibre types: <b>slow red fibres</b> use oxidative metabolism for long activity, and <b>fast white fibres</b> use glycolysis for short, intense activity.</p>
 <p class="zh2">红肌耐力，白肌爆发。</p>
 
@@ -2767,7 +2769,7 @@ by writing <b>twelve waters rather than six</b>.
 <p class="en">The liver is also the main site where <b>drugs, ethanol and other xenobiotics</b> are processed, mostly by <b>cytochrome P450</b> enzymes.</p>
 <p class="zh2">通往他的主场。</p>
 
-<p class="wmove">⑩ 红细胞从糖酵解的旁路做 2,3-二磷酸甘油酸，降低血红蛋白对氧的亲和力 ⭐ Martínková <span>2,3-bisphosphoglycerate</span><span class="syn">（= 2,3-BPG = 2,3-bisphosphoglycerate = 2,3-DPG）</span></p>
+<p class="wmove">⑩ 红细胞从糖酵解的旁路做 2,3-二磷酸甘油酸，降低血红蛋白对氧的亲和力 ⭐ Martínková <span>2,3-bisphosphoglycerate</span></p>
 <p class="en">Red blood cells make <b>2,3-bisphosphoglycerate</b> <span class="syn">(also called 2,3-BPG, 2,3-DPG)</span> in a side branch of glycolysis, and it <b>lowers the oxygen affinity of haemoglobin</b>, so oxygen is released in the tissues.</p>
 <p class="zh2">代谢和血红蛋白在这里接上。</p>
 
@@ -2788,12 +2790,12 @@ by writing <b>twelve waters rather than six</b>.
 
 <p class="wmove">定义</p>
 <ul class="wdef">
-<li><b>triacylglycerol</b> — the storage form of fat, three fatty acids on glycerol · 甘油三酯</li>
+<li><b>triacylglycerol</b> — the storage form of fat, three fatty acids on glycerol · 甘油三酯<span class="syn">（= triacylglycerol = triglyceride = neutral fat）</span></li>
 <li><b>leptin</b> — a hormone from adipose tissue that reports how much fat is stored · 瘦素</li>
 <li><b>creatine phosphate</b> — a high-energy phosphate compound that regenerates ATP in muscle · 磷酸肌酸</li>
 <li><b>acid–base balance</b> — keeping blood pH in its normal range · 酸碱平衡</li>
 <li><b>xenobiotic</b> — a foreign compound, such as a drug or poison · 外源物</li>
-<li><b>2,3-bisphosphoglycerate</b> — a red-cell molecule that lowers haemoglobin's oxygen affinity · 2,3-二磷酸甘油酸</li>
+<li><b>2,3-bisphosphoglycerate</b><span class="syn">（= 2,3-BPG = 2,3-bisphosphoglycerate = 2,3-DPG）</span> — a red-cell molecule that lowers haemoglobin's oxygen affinity · 2,3-二磷酸甘油酸</li>
 <li><b>uncoupling protein 1</b> — a protein in brown fat that lets protons return without making ATP · 解偶联蛋白 1</li>
 <li><b>diabetic ketoacidosis</b> — acidic blood caused by too many ketone bodies when insulin is missing · 糖尿病酮症酸中毒</li>
 <li><b>blood–brain barrier</b> — the tight wall of brain capillaries that keeps many molecules out · 血脑屏障</li>
@@ -3136,7 +3138,7 @@ and mismatch repair knows which strand is new <b>because the new strand is not y
 <p class="en">Chain termination is also a drug strategy: <b>AZT</b> against HIV and <b>acyclovir</b> against herpes are nucleoside analogues that <b>lack a usable 3′-OH</b>, like the ddNTPs in Sanger sequencing.</p>
 <p class="zh2">和 Sanger 测序同一原理。</p>
 
-<p class="wmove">⑥ 环丙沙星抑制细菌的 DNA 旋转酶<span class="syn">（= DNA gyrase = topoisomerase II (bacteria)）</span>，依托泊苷抑制人的拓扑异构酶 Ⅱ <span>ciprofloxacin · etoposide</span></p>
+<p class="wmove">⑥ 环丙沙星抑制细菌的 DNA 旋转酶，依托泊苷抑制人的拓扑异构酶 Ⅱ <span>ciprofloxacin · etoposide</span></p>
 <p class="en">Topoisomerases are drug targets too: <b>ciprofloxacin</b>, a quinolone, inhibits bacterial <b>DNA gyrase</b> <span class="syn">(also called DNA gyrase, topoisomerase II (bacteria))</span>, and the cancer drug <b>etoposide</b> inhibits human <b>topoisomerase II</b>.</p>
 <p class="zh2">接抗生素和抗癌药。</p>
 
@@ -3180,7 +3182,7 @@ and mismatch repair knows which strand is new <b>because the new strand is not y
 <li><b>deamination</b> — loss of an amino group; turns cytosine into uracil · 脱氨</li>
 <li><b>oriC</b> — the single origin of replication in E. coli · 大肠杆菌复制起点</li>
 <li><b>nucleoside analogue</b> — a drug that resembles a nucleoside and is built into DNA · 核苷类似物</li>
-<li><b>DNA gyrase</b> — the bacterial topoisomerase that relieves supercoiling · DNA 旋转酶</li>
+<li><b>DNA gyrase</b> — the bacterial topoisomerase that relieves supercoiling · DNA 旋转酶<span class="syn">（= DNA gyrase = topoisomerase II (bacteria)）</span></li>
 <li><b>DNA adduct</b> — a chemical bound covalently to DNA · DNA 加合物</li>
 <li><b>capsid</b> — the protein shell of a virus · 衣壳</li>
 <li><b>envelope</b> — a lipid membrane around some viruses, taken from the host · 包膜</li>
@@ -3258,11 +3260,11 @@ And in bacteria, because there is no nucleus, <b>transcription and translation h
 <p class="en"><b>α-Amanitin</b>, the toxin of the <b>death cap mushroom, Amanita phalloides</b>, blocks our own polymerase II; mRNA synthesis stops and the <b>liver</b> is damaged first. <b>Actinomycin D</b>, an antibiotic, instead binds DNA and blocks all transcription.</p>
 <p class="zh2">α-鹅膏蕈碱只抑制 Pol Ⅱ。</p>
 
-<p class="wmove">④ 真核的 RNA 聚合酶 Ⅱ 需要 TFIID 等通用转录因子识别 TATA 框<span class="syn">（= TATA box = Goldberg–Hogness box）</span> <span>general transcription factors</span></p>
+<p class="wmove">④ 真核的 RNA 聚合酶 Ⅱ 需要 TFIID 等通用转录因子识别 TATA 框 <span>general transcription factors</span></p>
 <p class="en">Unlike bacterial sigma, polymerase II needs <b>general transcription factors</b>, starting with <b>TFIID</b> binding the <b>TATA box</b> <span class="syn">(also called Goldberg–Hogness box)</span>, and <b>enhancers</b> far away increase transcription through DNA looping.</p>
 <p class="zh2">接「基因调控」。</p>
 
-<p class="wmove">⑤ 书外 · general：Roberts 1969 找到 ρ 因子，Shine–Dalgarno<span class="syn">（= Shine–Dalgarno sequence = ribosome binding site）</span> 1974，Pribnow 1975 找到 TATAAT，足迹法 1978，SV40 增强子 1981 <span>how the sites were found</span></p>
+<p class="wmove">⑤ 书外 · general：Roberts 1969 找到 ρ 因子，Shine–Dalgarno 1974，Pribnow 1975 找到 TATAAT，足迹法 1978，SV40 增强子 1981 <span>how the sites were found</span></p>
 <p class="en">These sites were pinned down only later, and that history is outside my textbook, so I give it as general knowledge. <b>Roberts</b> found <b>rho</b> in 1969 as the factor needed for termination in the test tube.</p>
 <p class="en"><b>Shine and Dalgarno</b> noticed in 1974 that the 3′ end of <b>16S rRNA</b> is complementary to sequences before start codons. <b>Pribnow</b> found <b>TATAAT</b> in 1975 in the protected region of many promoters.</p>
 <p class="en"><b>DNase footprinting</b>, from 1978, shows where a protein sits on DNA. <b>Enhancers</b> were found in the <b>SV40 virus</b> in 1981.</p>
@@ -3284,7 +3286,7 @@ And in bacteria, because there is no nucleus, <b>transcription and translation h
 <p class="en">Bacteria cannot remove introns, so to express a eukaryotic gene I use <b>reverse transcriptase</b> to copy mRNA into <b>cDNA</b>, which has no introns.</p>
 <p class="zh2">遗传信息也能从 RNA 流回 DNA。</p>
 
-<p class="wmove">⑩ 转录量用 RT-qPCR<span class="syn">（= qPCR = real-time PCR (≠ RT-PCR)）</span> 或 RNA-seq 测 <span>RT-qPCR · RNA-seq</span></p>
+<p class="wmove">⑩ 转录量用 RT-qPCR 或 RNA-seq 测 <span>RT-qPCR · RNA-seq</span></p>
 <p class="en">The same enzyme is used to measure transcription: RNA is reverse-transcribed and the cDNA is counted by <b>RT-qPCR</b> <span class="syn">(also called real-time PCR (≠ RT-PCR))</span>, or all transcripts are sequenced by <b>RNA-seq</b>.</p>
 <p class="zh2">「怎么测」。</p>
 
@@ -3310,13 +3312,13 @@ And in bacteria, because there is no nucleus, <b>transcription and translation h
 <p class="wmove">定义</p>
 <ul class="wdef">
 <li><b>general transcription factors</b> — proteins such as TFIID that polymerase II needs at every promoter · 通用转录因子</li>
-<li><b>TATA box</b> — a promoter sequence about 25 bases upstream of the start in many eukaryotic genes · TATA 框</li>
+<li><b>TATA box</b> — a promoter sequence about 25 bases upstream of the start in many eukaryotic genes · TATA 框<span class="syn">（= TATA box = Goldberg–Hogness box）</span></li>
 <li><b>enhancer</b> — a DNA site, often far from the gene, that increases transcription · 增强子</li>
 <li><b>histone acetyltransferase</b> — an enzyme that adds acetyl groups to histone lysines · 组蛋白乙酰转移酶</li>
 <li><b>DNase footprinting</b> — finding a protein's binding site as the DNA stretch it protects from DNase · DNase 足迹法</li>
 <li><b>archaea</b> — single-celled organisms without a nucleus, distinct from bacteria · 古菌</li>
 <li><b>cDNA</b> — DNA copied from mRNA, without introns · 互补 DNA</li>
-<li><b>RT-qPCR</b> — reverse transcription followed by quantitative PCR · 逆转录定量 PCR</li>
+<li><b>RT-qPCR</b><span class="syn">（= qPCR = real-time PCR (≠ RT-PCR)）</span> — reverse transcription followed by quantitative PCR · 逆转录定量 PCR</li>
 <li><b>AhR</b> — aryl hydrocarbon receptor, a transcription factor activated by aromatic pollutants · 芳烃受体</li>
 <li><b>ribozyme</b> — an RNA molecule with catalytic activity · 核酶</li>
 </ul>
@@ -3402,11 +3404,11 @@ Termination is done by <b>release factors</b>, which are proteins, not tRNAs.
 <p class="en">Another bacterial difference: translation starts with <b>N-formylmethionine</b>, and our neutrophils recognise <b>formylated peptides</b> as a sign of bacteria.</p>
 <p class="zh2">又一处原核真核差别。</p>
 
-<p class="wmove">⑦ 一条 mRNA 上同时有很多核糖体，分子伴侣<span class="syn">（= chaperone = heat shock protein (many of them)）</span>帮助新生肽链折叠 <span>polysome · chaperones</span></p>
+<p class="wmove">⑦ 一条 mRNA 上同时有很多核糖体，分子伴侣帮助新生肽链折叠 <span>polysome · chaperones</span></p>
 <p class="en">Many ribosomes read one mRNA at the same time as a <b>polysome</b>, and <b>chaperones</b> <span class="syn">(also called heat shock protein (many of them))</span> such as <b>DnaK and GroEL</b> in bacteria help the new chain fold.</p>
 <p class="zh2">接「蛋白折叠」。</p>
 
-<p class="wmove">⑧ 有信号肽<span class="syn">（= signal peptide = signal sequence）</span>的蛋白由 SRP 带到内质网上翻译 <span>signal peptide · SRP</span></p>
+<p class="wmove">⑧ 有信号肽的蛋白由 SRP 带到内质网上翻译 <span>signal peptide · SRP</span></p>
 <p class="en">A <b>signal peptide</b> <span class="syn">(also called signal sequence)</span>, a hydrophobic stretch at the N-terminus, decides where translation happens: <b>SRP</b> binds it and brings the ribosome to the <b>ER membrane</b>, so secreted proteins are made there.</p>
 <p class="zh2">接「翻译后修饰」。</p>
 
@@ -3439,7 +3441,7 @@ Termination is done by <b>release factors</b>, which are proteins, not tRNAs.
 <li><b>aminoglycoside</b> — the antibiotic class that includes streptomycin and kanamycin · 氨基糖苷类</li>
 <li><b>eEF2</b> — the eukaryotic elongation factor that moves the ribosome along the mRNA · 真核延伸因子 2</li>
 <li><b>polysome</b> — one mRNA with many ribosomes · 多聚核糖体</li>
-<li><b>chaperone</b> — a protein that helps other proteins fold · 分子伴侣</li>
+<li><b>chaperone</b> — a protein that helps other proteins fold · 分子伴侣<span class="syn">（= chaperone = heat shock protein (many of them)）</span></li>
 <li><b>SRP</b> — signal recognition particle, which brings ribosomes to the ER · 信号识别颗粒</li>
 <li><b>codon bias</b> — an organism's preference among synonymous codons · 密码子偏好</li>
 <li><b>non-canonical amino acid</b> — an amino acid outside the standard twenty · 非天然氨基酸</li>
@@ -3621,7 +3623,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
 <p class="en">An <b>enhancer</b> is recognised by <b>activator proteins</b>. Unlike a promoter, it works <b>at a distance</b> from the gene and in <b>either orientation</b>.</p>
 <p class="zh2">远、方向无所谓。</p>
 
-<p class="wmove">⑫ 两个例外在 RNA 上起作用：终止子是 RNA 发夹加一串 U；SD 序列和 16S rRNA 配对 <span>terminator · Shine–Dalgarno</span><span class="syn">（= Shine–Dalgarno sequence = ribosome binding site）</span></p>
+<p class="wmove">⑫ 两个例外在 RNA 上起作用：终止子是 RNA 发夹加一串 U；SD 序列和 16S rRNA 配对 <span>terminator · Shine–Dalgarno</span></p>
 <p class="en">Two elements are the exceptions, because they act as <b>RNA</b>, not as DNA. The <b>terminator</b> works as an RNA <b>hairpin followed by a run of U</b>; rho-dependent terminators use the <b>rho protein</b>. The <b>ribosome binding site</b>, or <b>Shine–Dalgarno sequence</b>, <b>pairs with 16S rRNA</b>.</p>
 <p class="zh2">先转录出来，才起作用。</p>
 
@@ -3633,7 +3635,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
 <p class="en">The finished vector enters bacteria by <b>transformation</b>. The word comes from <b>Griffith's 1928 experiment</b>: live harmless <b>R pneumococci</b> plus heat-killed virulent <b>S pneumococci</b> killed mice, so something from the dead cells had transformed R. That is outside my textbook, so I give it as general knowledge. My textbook's timeline on p009 records <b>Avery, 1944</b>: genetic information is transferred by <b>DNA</b>.</p>
 <p class="zh2">S 有荚膜，致死；R 没有。</p>
 
-<p class="wmove">⑮ 吸光度和浓度成正比：A ＝ ε·c·l ⭐ Hudeček <span>Beer–Lambert<span class="syn">（= Beer–Lambert law = Beer's law）</span> law</span></p>
+<p class="wmove">⑮ 吸光度和浓度成正比：A ＝ ε·c·l ⭐ Hudeček <span>Beer–Lambert law</span></p>
 <p class="en">To check the DNA and protein I measure absorbance, which rests on the <b>Beer–Lambert <span class="syn">(also called Beer–Lambert law, Beer's law)</span> law, A = ε·c·l</b>: absorbance equals the <b>extinction coefficient</b> times concentration times <b>path length</b>. It fails at high concentration.</p>
 <p class="zh2">Hudeček：说方法先说测的是什么物理量。</p>
 
@@ -3653,7 +3655,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
 <p class="en">In an <b>agarose gel</b> DNA separates by size, because every nucleotide carries one phosphate. Proteins need <b>SDS-PAGE</b>: <b>SDS</b> unfolds the chain and gives a <b>uniform negative charge per mass</b>, so they separate by size. A reducing agent such as <b>DTT</b> breaks <b>disulfide bonds</b>.</p>
 <p class="zh2">DNA 天生电荷均匀，蛋白要 SDS 给。</p>
 
-<p class="wmove">⑳ Western blot<span class="syn">（= Western blot = immunoblot）</span>：SDS-PAGE 后转到膜上，封闭，再用一抗和带标记的二抗检测 <span>Western blot</span></p>
+<p class="wmove">⑳ Western blot：SDS-PAGE 后转到膜上，封闭，再用一抗和带标记的二抗检测 <span>Western blot</span></p>
 <p class="en">A <b>Western blot</b> <span class="syn">(also called immunoblot)</span> starts from SDS-PAGE: the bands are transferred to a <b>nitrocellulose or PVDF membrane</b>, blocked, and probed with a <b>primary antibody</b> and a labelled <b>secondary antibody</b>. The transfer is needed because antibodies cannot enter the gel pores.</p>
 <p class="zh2">凝胶管分开，抗体管认出。</p>
 
@@ -3670,7 +3672,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
 <li><b>"Does a T7 promoter work in any E. coli?"</b> — No, only in a host that makes T7 RNA polymerase, such as BL21(DE3). · 要有 T7 聚合酶。</li>
 <li><b>"Is OD600 an absorbance?"</b> — No, it is light scattered by cells. · 是散射。</li>
 <li><b>"Can A260 tell DNA from RNA?"</b> — No, both absorb there; the ratios help, a dye assay is specific. · 分不清。</li>
-<li><b>"Is a terminator recognised as DNA?"</b> — No, it acts as RNA, like the Shine–Dalgarno sequence. · 在 RNA 上起作用。</li>
+<li><b>"Is a terminator recognised as DNA?"</b> — No, it acts as RNA, like the Shine–Dalgarno<span class="syn">（= Shine–Dalgarno sequence = ribosome binding site）</span> sequence. · 在 RNA 上起作用。</li>
 </ul>
 
 <p class="wmove">定义</p>
@@ -4006,6 +4008,43 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
       };
       h3.appendChild(b);
     })(arts[a2]);
+  }
+
+  /* ---- 每一段一个 🔊：只念这一段话 ----
+     2026-09-29 她：「每个段落有他们自己的朗读小喇叭」。广度层每段就是一两句，
+     点句子只念一句、点 ▶ 念整个主题，中间缺的就是「这一段」。
+     ⚠ Say this 那段会被跟读跟背改写 innerHTML（涂词/全遮），按钮放进去会被冲掉，
+     所以那段的喇叭放在段落后面；别的段落放在段尾。 */
+  var ENP = document.querySelectorAll('p.en');
+  for (var pi = 0; pi < ENP.length; pi++){
+    (function(p){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'play1 para'; b.textContent = '🔊';
+      b.title = '念这一段';
+      b.onclick = function(ev){
+        ev.stopPropagation();
+        var ss = p.querySelectorAll('.s');
+        RUN = true; GEN++; setBtn();
+        var g = GEN;
+        if (!ss.length){
+          speak(speechOf(p), function(){ if (g === GEN){ RUN = false; setBtn(); } });
+          return;
+        }
+        var first = parseInt(ss[0].getAttribute('data-n'), 10);
+        var last = parseInt(ss[ss.length-1].getAttribute('data-n'), 10);
+        mark(first, false);
+        (function go(){
+          if (!RUN || g !== GEN) return;
+          speak(speechOf(SENTS[cur]), function(){
+            if (!RUN || g !== GEN) return;
+            if (cur >= last){ RUN = false; setBtn(); mark(-1, false); return; }
+            mark(cur + 1, false); go();
+          });
+        })();
+      };
+      if (p.closest && p.closest('.say')) p.parentNode.insertBefore(b, p.nextSibling);
+      else p.appendChild(b);
+    })(ENP[pi]);
   }
 
   /* ================= 跟读跟背 =================
