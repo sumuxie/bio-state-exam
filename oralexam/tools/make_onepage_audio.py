@@ -86,7 +86,46 @@ def spellCodon(m):
     if s not in ('AUG', 'UAA', 'UAG', 'UGA'): return s   # 只拼起始/终止密码子，别误伤别的三字母
     return ' '.join(s)
 
+# ⚠ 2026-09-29 她听完报的：Trp/Tyr 还是念字母、α₂ββ′σ 整串不念、ΔG 念成 G、C=O 念成「c 等于 o」。
+AA3 = {'Ala':'alanine','Arg':'arginine','Asn':'asparagine','Asp':'aspartate','Cys':'cysteine',
+       'Gln':'glutamine','Glu':'glutamate','Gly':'glycine','His':'histidine','Ile':'isoleucine',
+       'Leu':'leucine','Lys':'lysine','Met':'methionine','Phe':'phenylalanine','Pro':'proline',
+       'Ser':'serine','Thr':'threonine','Trp':'tryptophan','Tyr':'tyrosine','Val':'valine'}
+AA3_RX = re.compile(r'\b(' + '|'.join(AA3) + r')\b')
+GREEK = [(u'Δ', 'delta'), (u'α', 'alpha'), (u'β', 'beta'), (u'γ', 'gamma'), (u'δ', 'delta'),
+         (u'ε', 'epsilon'), (u'κ', 'kappa'), (u'λ', 'lambda'), (u'μ', 'micro'), (u'σ', 'sigma'),
+         (u'ω', 'omega'), (u'χ', 'chi'), (u'″', 'double prime'), (u'′', 'prime')]
+# edge-tts 自己念错的普通词（她报的）：coenzyme→kinzyme、dinucleotide→低 nucleotide、
+# pyruvate→pea-ruvate、adenine→adnigh、peptide→pep-tead、threonine、malate。
+# 没法喂音标（edge-tts 会转义 SSML），只能改拼写逼它念对。
+RESPELL = [(re.compile(p, re.I), v) for p, v in [
+    (r'coenzyme', 'co-enzyme'), (r'dinucleotide', 'die-nucleotide'),
+    (r'mononucleotide', 'mono-nucleotide'), (r'pyruv', 'pie-roov'),
+    (r'\badenine', 'adda-neen'), (r'peptid', 'pep-tid'),
+    (r'threonine', 'three-oh-neen'), (r'\bmalate', 'mal-ayt')]]
+
+# 2026-09-29 静态扫描扫出来的（她没报、但一样会念错）：
+# (CH₂O)ₙ 被 H₂O 那条吃成「C water n」、A=T 念成「A equals T」、kcat/Km 的斜杠不念、
+# ⚠ 符号、G≡C、GC、罗马数字（photosystem II、Pol III、酶 I）、A260/A280、B12/B6。
+PRE = [(u'(CH₂O)ₙ', ' C H 2 O, n times '), (u'CH₂O', ' C H 2 O '),
+       (u'A=T', ' A T '), (u'G≡C', ' G C '), (u'⚠', ' '),
+       (u'A260/A280', ' the A 260 over A 280 ratio '),
+       (u'—', ', '), (u'&', ' and ')]
+ROMAN = [(r'\b(Pol|pol) I\b', 'polymerase one'), (r'\b(Pol|pol) III\b', 'polymerase three'),
+         (r'\b(Pol|pol) II\b', 'polymerase two'),
+         (r'\b(photosystem|Photosystem|acyltransferase|synthetase|polymerase) I\b', r'\1 one'),
+         (r'\bIV\b', 'four'), (r'\bIII\b', 'three'), (r'\bII\b', 'two'),
+         (r'\bI (?=makes)', 'one ')]
+POST = [(re.compile(r'k cat\s*/\s*K m'), 'k cat over K m'), (re.compile(r'\bGC\b'), 'G C'),
+        (re.compile(r'\bA(260|280)\b'), r'A \1'), (re.compile(r'\bB(12|6)\b'), lambda m: 'B ' + {'12':'twelve','6':'six'}[m.group(1)]),
+        (re.compile(r'\bi\+4\b'), 'i plus 4'), (re.compile(r'\bTATAAT\b'), 'T A T A A T'), (re.compile(r'\s/\s'), ' or '),
+        (re.compile(r'\bAMP-activated'), 'adenosine monophosphate activated')]
+
 def expandAbbr(t):
+    for k, v in PRE: t = t.replace(k, v)
+    # en dash：数字之间是范围（100–400 → to），字母之间是连接（N–H、malate–aspartate → 连字符）
+    t = re.sub(u'(\\d)\\s*–\\s*(\\d)', r'\1 to \2', t).replace(u'–', '-')
+    for p, v in ROMAN: t = re.sub(p, v, t)
     for k, v in FORMULAS: t = t.replace(k, ' ' + v + ' ')
     t = re.sub(r'\bComplex IV\b', 'Complex four', t)
     t = re.sub(r'\bComplex III\b', 'Complex three', t)
@@ -94,11 +133,16 @@ def expandAbbr(t):
     t = re.sub(r'\bComplex I\b', 'Complex one', t)
     t = CODONS.sub(spellCodon, t)
     t = ABBR_RX.sub(lambda m: ABBR_MAP[m.group(1)] + ('s' if m.group(2) else ''), t)
-    # 兜底：漏网的上下标数字，好过原样喂给合成器
+    t = AA3_RX.sub(lambda m: AA3[m.group(1)], t)
+    t = t.replace('C=O', ' C double-bond O ').replace('=', ' equals ')
+    for k, v in GREEK: t = t.replace(k, ' ' + v + ' ')
+    # 兜底：漏网的上下标数字，好过原样喂给合成器（前面空一格，α₂ 才会念成 alpha 2）
     sub = u'₀₁₂₃₄₅₆₇₈₉'
     sup = u'⁰¹²³⁴⁵⁶⁷⁸⁹'
-    for i, c in enumerate(sub): t = t.replace(c, str(i))
-    for i, c in enumerate(sup): t = t.replace(c, str(i))
+    for i, c in enumerate(sub): t = t.replace(c, ' %d ' % i)
+    for i, c in enumerate(sup): t = t.replace(c, ' %d ' % i)
+    for rx, v in RESPELL: t = rx.sub(v, t)
+    for rx, v in POST: t = rx.sub(v, t)
     return t
 
 def sayWords(t):
