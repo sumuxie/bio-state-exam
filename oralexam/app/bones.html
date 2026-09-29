@@ -100,6 +100,12 @@ button.play1.para{margin-left:6px;padding:2px 7px;font-size:11px}
 .rc-row button.rc-ok,.qz-row button.rc-ok{border-color:var(--accent);color:var(--accent)}
 .rc-cnt{margin-left:auto;color:var(--faint);font-size:11.5px}
 .rc-out{margin-top:6px;font-size:13px;line-height:1.7}
+.sd-log{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:13px;max-height:320px;overflow:auto}
+.sd-item{margin:0 0 8px;color:var(--dim);line-height:1.65}
+.sd-d{display:block;font-size:11px;color:var(--faint);letter-spacing:.04em}
+.sd-see{color:var(--accent);text-decoration:none}
+.say .wk button[data-a]{font-size:12px}
+.say .blind{display:block;line-height:1.7}
 .rc-note{color:var(--faint)}
 .rc-heard{color:var(--dim)} .rc-heard i{color:var(--faint)}
 .rc-chips{margin-top:4px;color:var(--faint)}
@@ -4247,7 +4253,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
     var box = SAYS[i].querySelector('.en');
     if (mode === 'read') box.innerHTML = ORIG[i];
     else if (mode === 'cloze') box.innerHTML = cloze(ORIG[i]);
-    else box.innerHTML = '<span class="blind">（全遮上了 —— 合上眼说一遍。想偷看就点「① 看着念」。）</span>';
+    else box.innerHTML = '<span class="blind">' + (SAYS[i].getAttribute('data-prompt') || '（正文遮起来了 —— 照着标题说一遍。）') + '</span>';
     var bs = btnRow.querySelectorAll('button[data-m]');
     for (var k = 0; k < bs.length; k++) bs[k].className = (bs[k].getAttribute('data-m') === mode) ? 'on' : '';
     /* 重新切句，朗读还要用 */
@@ -4264,46 +4270,13 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
       + '<div class="bar"><i style="width:' + pc + '%"></i></div>';
   }
 
+  /* ⚠ 2026-09-29 按钮在下面「背诵进度」那一段里重建（要用到段落的 key）。这里只留原文，
+     供「涂掉关键词 / 只看标题」来回切换。 */
   for (var i = 0; i < SAYS.length; i++){
-    (function(i){
-      var art = SAYS[i].closest ? SAYS[i].closest('article') : null;
-      var id = (art && art.id) || ('s' + i);
-      SAYS[i].setAttribute('data-id', id);
-      ORIG[i] = SAYS[i].querySelector('.en').innerHTML;
-      var row = document.createElement('div');
-      row.className = 'wk';
-      row.innerHTML = '<button data-m="read" class="on">① 看着念</button>'
-        + '<button data-m="cloze">② 涂掉关键词</button>'
-        + '<button data-m="blind">③ 全遮</button>'
-        + '<button data-m="say">🔊 念给我听</button>'
-        + '<span class="done"></span>';
-      SAYS[i].appendChild(row);
-      var bs = row.querySelectorAll('button');
-      for (var k = 0; k < bs.length; k++){
-        (function(b){
-          b.onclick = function(){
-            var m = b.getAttribute('data-m');
-            if (m === 'say'){
-              var txt = speechOf(SAYS[i].querySelector('.en'));
-              RUN = false; setBtn(); speak(txt, function(){});
-              return;
-            }
-            setMode(i, m, row);
-            if (m === 'blind'){
-              var st = wkLoad();
-              st[id] = (st[id] || 0) + 1;
-              wkSave(st);
-              paintBar();
-              row.querySelector('.done').textContent = '走过 ' + st[id] + ' 遍';
-            }
-          };
-        })(bs[k]);
-      }
-      var st0 = wkLoad();
-      if (st0[id]) row.querySelector('.done').textContent = '走过 ' + st0[id] + ' 遍';
-    })(i);
+    var art0 = SAYS[i].closest ? SAYS[i].closest('article') : null;
+    SAYS[i].setAttribute('data-id', (art0 && art0.id) || ('s' + i));
+    ORIG[i] = SAYS[i].querySelector('.en').innerHTML;
   }
-  paintBar();
   window.bonesWalked = function(){ var s = wkLoad(), n = 0; for (var k in s) n++; return n; };
 
   /* ================= 背诵进度 · Shuffle 复习 =================
@@ -4347,6 +4320,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
     var it = RS.items[u.key];
     u.p.classList.toggle('rc-done', !!it);
     u.p.classList.toggle('rc-star', !!(it && it.star));
+    if (u.sayCnt) u.sayCnt();
   }
   function paintAll(){ UNITS.forEach(paintUnit); paintPanel(); }
 
@@ -4378,7 +4352,27 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
     var n = 0; ws.forEach(function(w){ if (said.indexOf(w.slice(0, Math.max(4, w.length - 2))) >= 0) n++; });
     return n >= Math.ceil(ws.length * 0.6);
   }
-  function listen(box, p, onEnd){
+  /* ⚠ 2026-09-29 她：「背诵按钮记录我说了什么（但是这个记录不清空会一直保存）」。
+     所以转写单独一本账，只追加、不删、不覆盖，换页刷新都在。 */
+  var SKEY = 'onepage.said.v1';
+  function sLoad(){ try{ return JSON.parse(localStorage.getItem(SKEY)) || {}; }catch(e){ return {}; } }
+  function sSave(o){ try{ localStorage.setItem(SKEY, JSON.stringify(o)); }catch(e){} }
+  function saidList(key){ return sLoad()[key] || []; }
+  function saidLog(key, text){
+    text = (text || '').trim();
+    if (!key || !text) return;
+    var all = sLoad(); (all[key] = all[key] || []).push({d:today(), t:text, at:Date.now()});
+    sSave(all);
+  }
+  function saidHtml(key){
+    var L = saidList(key);
+    if (!L.length) return '<span class="rc-note">还没有录过。</span>';
+    return L.slice().reverse().map(function(x, i){
+      return '<div class="sd-item"><span class="sd-d">' + x.d + ' · 第 ' + (L.length - i) + ' 遍</span>' + x.t + '</div>';
+    }).join('');
+  }
+
+  function listen(box, p, key, onEnd){
     if (!SR){ box.innerHTML = '<span class="rc-note">这个浏览器没有语音识别 —— 用 Chrome 或 Edge 打开。背完直接点「✓ 背过了」也算。</span>'; return null; }
     var r = new SR(); r.lang = 'en-GB'; r.continuous = true; r.interimResults = true;
     var fin = '';
@@ -4396,6 +4390,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
       var chips = ks.map(function(k){ return '<span class="rc-chip ' + (hitOf(k, said) ? 'ok' : 'no') + '">' + k + '</span>'; }).join('');
       box.innerHTML = '<span class="rc-heard">' + (fin || '（没听到）') + '</span>'
         + (ks.length ? '<div class="rc-chips">加粗的要点：' + chips + '</div>' : '');
+      saidLog(key, fin);
       if (onEnd) onEnd(fin);
     };
     try { r.start(); } catch(e){}
@@ -4416,6 +4411,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
 
   /* ---- 每段一个 🎙：看着念 / 遮住背 / 开口说 / 背过 / 不熟 ---- */
   UNITS.forEach(function(u){
+    if (u.p.closest('.say')) return;   /* Say this 有自己的一排按钮，见下面 */
     var b = document.createElement('button');
     b.type = 'button'; b.className = 'play1 para rcbtn'; b.textContent = '🎙'; b.title = '背这一段';
     var panel = null, rec = null;
@@ -4441,7 +4437,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
         var btn = this;
         if (rec){ try{ rec.stop(); }catch(e){} rec = null; btn.textContent = '🎙 开口说'; return; }
         u.p.classList.add('rc-hide'); panel.querySelector('[data-a=hide]').textContent = '露出来';
-        rec = listen(out, u.p, function(){ rec = null; btn.textContent = '🎙 开口说'; u.p.classList.remove('rc-hide'); panel.querySelector('[data-a=hide]').textContent = '遮住背'; });
+        rec = listen(out, u.p, u.key, function(){ rec = null; btn.textContent = '🎙 开口说'; u.p.classList.remove('rc-hide'); panel.querySelector('[data-a=hide]').textContent = '遮住背'; });
         if (rec) btn.textContent = '■ 停';
       };
       panel.querySelector('[data-a=done]').onclick = function(){ markDone(u.key); cnt(); };
@@ -4453,6 +4449,65 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
     if (after && after.parentNode === u.p) u.p.appendChild(b);
     else u.p.parentNode.insertBefore(b, (u.p.nextSibling && u.p.nextSibling.classList && u.p.nextSibling.classList.contains('para')) ? u.p.nextSibling.nextSibling : u.p.nextSibling);
   });
+
+  /* ---- Say this 三个按钮：跟读 · 只看标题 · 背诵（转写永久保存） ----
+     2026-09-29 她：「Say this 里应该是一个是跟读，一个是隐藏正文只有标题，
+     然后背诵按钮记录我说了什么（但是这个记录不清空会一直保存）」。 */
+  for (var si = 0; si < SAYS.length; si++){
+    (function(i){
+      var box = SAYS[i], p = box.querySelector('.en');
+      var u = null;
+      for (var k = 0; k < UNITS.length; k++) if (UNITS[k].p === p){ u = UNITS[k]; break; }
+      if (!u) return;
+      var art = box.closest('article'), h3 = art && art.querySelector('h3');
+      var zh = art && art.querySelector('p.zh');
+      box.setAttribute('data-prompt', '只看标题说一遍：<b>' + (h3 ? h3.firstChild.textContent.trim() : '') + '</b>'
+        + (zh ? '<br>' + zh.textContent.trim() : ''));
+      var row = document.createElement('div');
+      row.className = 'wk';
+      row.innerHTML = '<button data-a="follow">🔊 跟读</button>'
+        + '<button data-a="hide">只看标题</button>'
+        + '<button data-a="rec" class="rc-ok">🎙 背诵</button>'
+        + '<button data-a="star">' + ((RS.items[u.key] && RS.items[u.key].star) ? '⭐ 不熟' : '☆ 不熟') + '</button>'
+        + '<span class="done"></span>';
+      box.appendChild(row);
+      var out = document.createElement('div'); out.className = 'rc-out'; box.appendChild(out);
+      var log = document.createElement('div'); log.className = 'sd-log'; log.hidden = true; box.appendChild(log);
+      var rec = null, hidden = false;
+      function cnt(){
+        var n = saidList(u.key).length, it = RS.items[u.key];
+        row.querySelector('.done').innerHTML = (it ? '背过 ' + it.n + ' 遍' : '')
+          + (n ? ' · <a href="#" class="sd-see">📝 录过 ' + n + ' 遍</a>' : '');
+        var a = row.querySelector('.sd-see');
+        if (a) a.onclick = function(e){ e.preventDefault(); log.hidden = !log.hidden; log.innerHTML = saidHtml(u.key); };
+      }
+      cnt();
+      row.querySelector('[data-a=follow]').onclick = function(){
+        setMode(i, 'read', row); hidden = false; row.querySelector('[data-a=hide]').textContent = '只看标题';
+        RUN = false; setBtn(); speak(speechOf(p), function(){});
+      };
+      row.querySelector('[data-a=hide]').onclick = function(){
+        hidden = !hidden; setMode(i, hidden ? 'blind' : 'read', row);
+        this.textContent = hidden ? '露出正文' : '只看标题';
+      };
+      row.querySelector('[data-a=rec]').onclick = function(){
+        var btn = this;
+        if (rec){ try{ rec.stop(); }catch(e){} rec = null; btn.textContent = '🎙 背诵'; return; }
+        if (!hidden){ hidden = true; setMode(i, 'blind', row); row.querySelector('[data-a=hide]').textContent = '露出正文'; }
+        rec = listen(out, p, u.key, function(txt){
+          rec = null; btn.textContent = '🎙 背诵';
+          if ((txt || '').trim()) markDone(u.key);
+          hidden = false; setMode(i, 'read', row); row.querySelector('[data-a=hide]').textContent = '只看标题';
+          cnt(); if (!log.hidden) log.innerHTML = saidHtml(u.key);
+        });
+        if (rec) btn.textContent = '■ 停';
+      };
+      row.querySelector('[data-a=star]').onclick = function(){
+        this.textContent = toggleStar(u.key) ? '⭐ 不熟' : '☆ 不熟';
+      };
+      u.sayRow = row; u.sayCnt = cnt;
+    })(si);
+  }
 
   /* ---- 右栏：进度 ＋ 开关 ＋ Shuffle ---- */
   var side = document.createElement('div'); side.id = 'rcside';
@@ -4516,7 +4571,7 @@ the <b>3′ position is a hydrogen instead of a hydroxyl</b>, so no further phos
       quiz.querySelector('[data-a=mic]').onclick = function(){
         var btn = this;
         if (rec){ try{ rec.stop(); }catch(e){} rec = null; btn.textContent = '🎙 开口说'; return; }
-        rec = listen(quiz.querySelector('.qz-out'), u.p, function(){ rec = null; btn.textContent = '🎙 开口说'; ans.hidden = false; });
+        rec = listen(quiz.querySelector('.qz-out'), u.p, u.key, function(){ rec = null; btn.textContent = '🎙 开口说'; ans.hidden = false; });
         if (rec) btn.textContent = '■ 停';
       };
       quiz.querySelector('[data-a=star]').onclick = function(){ var on = toggleStar(u.key); this.textContent = on ? '⭐ 不熟（再点取消）' : '☆ 不熟'; };
